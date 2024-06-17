@@ -7,19 +7,12 @@ body,html {
 }
 
 /* Styles for the home page only */
-body.homepage {
+.homepage {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden; 
 }
 
-body.homepage .container {
-  width: 100%;
-  max-width: 100%;  
-  padding: 0;       
-  margin: 0;
-}
 
 .heroBanner {
   background: #000;
@@ -30,12 +23,19 @@ body.homepage .container {
   padding: 0;
   height: 100vh;
   width: 100vw; 
-  border: 3px;
   box-sizing: border-box;  
+  overflow: hidden; 
 
   @include small-size {
     padding: 4rem 2rem;
   }
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;  
+  padding: 0;       
+  margin: 0;
 }
 
 .title {
