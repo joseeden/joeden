@@ -1,13 +1,17 @@
 // src\components\homepage\Hero.module.scss
 @import "../../css/mixins.scss";
 
+body,html {
+  margin: 0;
+  padding: 0;
+}
+
 /* Styles for the home page only */
 body.homepage {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow-x: hidden; 
-  overflow-y: hidden; 
+  overflow: hidden; 
 }
 
 body.homepage .container {
@@ -22,11 +26,12 @@ body.homepage .container {
   color: #fff;
   position: relative;
   text-align: left;
-  overflow: clip;
   margin: 0;
   padding: 0;
   height: 100vh;
   width: 100vw; 
+  border: 3px;
+  box-sizing: border-box;  
 
   @include small-size {
     padding: 4rem 2rem;
@@ -34,7 +39,7 @@ body.homepage .container {
 }
 
 .title {
-  font-size: 7rem;
+  font-size: 6rem;
   text-shadow: 3px 0px 30px rgba(0, 0, 0, 0.2);
   padding: 7rem 2rem 0rem 2rem;
   

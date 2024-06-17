@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5 {
   --ifm-color-primary-lighter: #31d8c4;
   --ifm-color-primary-lightest: #4eddcd;
   --docusaurus-highlighted-code-line-bg: #4eddcd;
-  --ifm-footer-background-color: #1b1b1d;
+  --ifm-footer-background-color: #000;
 }
 
 html[data-theme="dark"] {
@@ -82,7 +82,6 @@ html[data-theme="dark"] {
 .header-github-link:hover {
   opacity: 0.6;
 }
-
 
 /* Footer styling */
 footer.footer {
