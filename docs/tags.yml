@@ -1,0 +1,40 @@
+Linux:
+  label: 'Linux'
+  permalink: '/Linux'
+  description: 'Docs related to the Linux'
+DevOps:
+  label: 'DevOps'
+  permalink: '/DevOps'
+  description: 'Docs related to the DevOps'
+Red Hat:
+  label: 'Red Hat'
+  permalink: '/Red Hat'
+  description: 'Docs related to the Red Hat'
+Web Servers:
+  label: 'Web Servers'
+  permalink: '/Web Servers'
+  description: 'Docs related to Web Servers'
+Tomcat:
+  label: 'Tomcat'
+  permalink: '/Tomcat'
+  description: 'Docs related to Tomcat'
+Labs:
+  label: 'Labs'
+  permalink: '/Labs'
+  description: 'Docs related to Labs'
+Certifications:
+  label: 'Certifications'
+  permalink: '/Certifications'
+  description: 'Docs related to Certifications'
+Beginner:
+  label: 'Beginner'
+  permalink: '/Beginner'
+  description: 'Docs related to Beginners'
+Intermediate:
+  label: 'Intermediate'
+  permalink: '/Intermediate'
+  description: 'Docs related to Intermediate'
+Advanced:
+  label: 'Advanced'
+  permalink: '/Advanced'
+  description: 'Docs related to Advanced'
