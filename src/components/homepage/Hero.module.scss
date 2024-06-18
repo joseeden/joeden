@@ -8,14 +8,12 @@ body, html {
   overflow: hidden; // Prevent horizontal scroll
 }
 
-
 /* Styles for the home page only */
 .homepage {
   margin: 0;
   padding: 0;
   height: 100%;
 }
-
 
 .heroBanner {
   background: #000;
@@ -27,39 +25,43 @@ body, html {
   height: 100vh;
   width: 100vw; 
   box-sizing: border-box;  
-  overflow: hidden; 
+  // overflow: scroll; 
 
   @include small-size {
-    padding: 4rem 2rem;
+    padding: 0rem 2rem 2rem;
   }
 }
 
 .container {
   width: 100%;
   max-width: 100%;  
-  padding: 0;       
+  padding-left: 2;       
   margin: 0;
+
+  @include small-size {
+    padding: 0 2rem 3rem; 
+}    
 }
 
 .title {
-  font-size: 6rem;
+  font-size: 7.5rem;
   text-shadow: 3px 0px 30px rgba(0, 0, 0, 0.2);
-  padding: 5rem 2rem 0rem 2rem;
-  
+  padding: 3rem 0rem 0rem 2rem;
+
   @include small-size {
-    font-size: 2rem;
-    padding: 0 2rem;
+      font-size: 2.130rem;
+      padding: 0 2rem;
   }
 }
 
 .subtitle {
   font-size: 2rem;
   margin: 0;
-  padding: 0rem 2rem 11rem 2rem;
-  
+  padding: 0rem 0rem 13rem 2rem;
+
   @include small-size {
-    font-size: 1.5rem;
-    padding: 0 2rem; 
+      font-size: 1.25rem;
+      padding: 0 2rem 4.5rem; 
   }  
 }
 
@@ -69,3 +71,5 @@ body, html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+
