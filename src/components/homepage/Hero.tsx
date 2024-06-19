@@ -7,13 +7,13 @@ export const Hero: FunctionComponent = () => {
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
-      <h1 className={clsx("hero__title", styles.title)}>
+        <h1 className={clsx("hero__title", styles.title)}>
           Hi. I'm <span className={styles.highlighted}>Eden</span>.
           {/* <br />
           A Cloud and DevOps Engineer. */}
         </h1>
         <p className={clsx("hero__subtitle", styles.subtitle)}>
-          I'm a problem solver who enjoys learning things and solving challenges.
+          I'm a problem solver who enjoys learning and solving challenges.
           <br /> 
           An engineer by day, runner by night.
         </p>

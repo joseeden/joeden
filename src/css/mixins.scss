@@ -1,8 +1,36 @@
-// src\css\mixins.scss
+// // src\css\mixins.scss
+// $breakpoint: 996px;
+
+// @mixin small-size {
+//   @media (max-width: $breakpoint) {
+//     @content;
+//   }
+// }
+
+
+
+
+// src/css/mixins.scss
 $breakpoint: 996px;
 
 @mixin small-size {
   @media (max-width: $breakpoint) {
     @content;
+  }
+}
+
+@mixin respond-to($media) {
+  @if $media == 'small' {
+    @media (max-width: 600px) {
+      @content;
+    }
+  } @else if $media == 'medium' {
+    @media (min-width: 601px) and (max-width: $breakpoint) {
+      @content;
+    }
+  } @else if $media == 'large' {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
   }
 }

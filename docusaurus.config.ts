@@ -4,10 +4,10 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "Eden, Cloud and DevOps Engineer",
+  title: "Eden Jose",
   tagline: 
     "A problem solver who enjoys learning and solving challenges.",
-  favicon: 'img/favicon.ico',
+  favicon: 'img/fourth/favicon.ico',
   url: 'https://github.com',
   baseUrl: "/",
   onBrokenLinks: "throw",
@@ -57,7 +57,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: "img/logo-small.png",
+    image: "img/fourth/favicon.ico",
     metadata: [
       {
         name: "description",
@@ -76,22 +76,27 @@ const config: Config = {
       title: "EDEN",
       logo: {
         alt: "Eden Logo",
-        src: "img/favicon-32x32.png",
+        src: "img/fourth/favicon-32x32.png",
         // srcDark: "img/favicon-32x32-dark-mode.png",
       },
       items: [
+        { to: "/", label: "About", position: "left" },
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
           label: 'Documentation',
         },        
-        { to: "/blog", label: "Blog", position: "left" },
-        {
-          href: 'https://github.com/joseeden',
-          label: 'GitHub',
-          position: 'right',
-        },        
+        { to: "/", label: "Notebook", position: "left" },
+        { to: "/", label: "Gallery", position: "left" },
+        { to: "/", label: "Running", position: "left" },
+        { to: "/", label: "Arts", position: "left" },
+        { to: "https://merria.co", label: "Shop", position: "left" },
+        // {
+        //   href: 'https://github.com/joseeden',
+        //   label: 'GitHub',
+        //   position: 'right',
+        // },        
       ],
     },
     footer: {
@@ -115,7 +120,7 @@ const config: Config = {
       //     ],
       //   },
       // ],
-      copyright: `Copyright © ${new Date().getFullYear()} Eden Jose, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Eden Jose`
     },
     prism: {
       theme: themes.github,

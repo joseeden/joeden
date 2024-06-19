@@ -1,5 +1,5 @@
-// src\css\custom.scss
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import './mixins';
 
 h1, h2, h3, h4, h5 {
   font-family: "Inter", sans-serif;
@@ -11,7 +11,6 @@ h1, h2, h3, h4, h5 {
   --pk-blue: #0054ad;
   --pk-green: #b8fb3c;
 
-  // --ifm-color-primary: var(--pk-blue);
   --ifm-color-primary: #2e8555;
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
@@ -25,7 +24,6 @@ h1, h2, h3, h4, h5 {
   --ifm-font-size-base: 17px;
   --ifm-footer-background-color: #fff;
   --ifm-footer-padding-vertical: calc(var(--ifm-spacing-vertical));
-  // --ifm-footer-padding-vertical: calc(var(--ifm-spacing-vertical) * 2);
   --ifm-global-radius: 0.3rem;
 }
 
@@ -51,15 +49,58 @@ html[data-theme="dark"] {
   }
 }
 
+/* Navbar styling */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; // Ensures content starts from the left
+  padding: 0 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: top 0.3s;
 
-/* Navbar toggle when small screen */
-.navbar__toggle {
-  margin-top: 0;
-  margin-right: auto;
-  margin-left: 0;
+  .navbar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; // Ensures content starts from the left
+    width: 100%;
+  }
+
+  .navbar__brand {
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+  }
+
+  .navbar__title {
+    // margin-left: 0.5rem;
+    margin-left: 0rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .navbar__toggle {
+    margin-left: 0.5rem; // Adjust as needed
+  }
+  
+  .navbar__items {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+
+    .navbar__item {
+      margin-right: 1rem;
+
+      @include small-size {
+        margin-right: 0.5rem;
+      }
+    }
+  }
 }
 
-/* Close navbar button */
+/* Sidebar close button on small screens */
 .navbar-sidebar__close {
   align-items: end;
   width: 25px;
@@ -82,17 +123,6 @@ html[data-theme="dark"] {
 
 .header-github-link:hover {
   opacity: 0.6;
-}
-
- 
-/* Footer styling */
-.footer {
-  text-align: center;
-  position: absolute;  // Ensure it stays at the bottom of the viewport
-  bottom: 0;
-  width: 100%;
-  background: var(--ifm-footer-background-color);
-  padding: var(--ifm-footer-padding-vertical);
 }
 
 .button--outline {
@@ -132,14 +162,27 @@ html[data-theme="dark"] {
   }
 }
 
-// .theme-doc-markdown {
-//   margin-left: 0;
-//   margin-right: 0; 
-//   padding: 17px 10px 24px 10px;      // top right bottom left
-// }
+/* Optional: Add scroll-up animation */
+.navbar--hide {
+  top: -80px; // Adjust based on your navbar height
+}
 
-// /* Adjust sidebar item margin if necessary */
-// .theme-doc-sidebar-item {
-//   margin-left: 0 
-// }
+#docusaurus {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+footer.footer {
+  text-align: center;
+  background: var(--ifm-footer-background-color);
+  padding: var(--ifm-footer-padding-vertical);
+  width: 100%;
+  margin-top: auto;
+}

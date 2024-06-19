@@ -1,75 +1,69 @@
-// src\components\homepage\Hero.module.scss
+// src/components/homepage/Hero.module.scss
 @import "../../css/mixins.scss";
 
-body, html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden; // Prevent horizontal scroll
-}
-
-/* Styles for the home page only */
 .homepage {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #000;
 }
 
 .heroBanner {
-  background: #000;
-  color: #fff;
-  position: relative;
+  
+  // background: #000;
+  // color: #fff;
+  background: #EFEFEF;
+  color: #000;
   text-align: left;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 0 0;
   margin: 0;
-  padding: 0;
+  width: 100vw;
   height: 100vh;
-  width: 100vw; 
-  box-sizing: border-box;  
-  // overflow: scroll; 
+  overflow-y: hidden;
 
   @include small-size {
-    padding: 0rem 2rem 2rem;
-  }
+    padding: 0rem 0rem 0rem 0rem;
+  }  
 }
 
 .container {
-  width: 100%;
-  max-width: 100%;  
-  padding-left: 2;       
-  margin: 0;
+  
+  padding: 0 0 0 0;
 
   @include small-size {
-    padding: 0 2rem 3rem; 
-}    
+    padding: 0rem 0rem 0rem 0rem;
+  }    
 }
 
 .title {
   font-size: 7.5rem;
   text-shadow: 3px 0px 30px rgba(0, 0, 0, 0.2);
-  padding: 3rem 0rem 0rem 2rem;
+  padding: 1rem 2rem 0rem 2rem;
 
   @include small-size {
-      font-size: 2.130rem;
-      padding: 0 2rem;
+    font-size: 2.130rem;
+    padding: 0rem 2rem 0rem 2rem;
   }
 }
 
 .subtitle {
   font-size: 2rem;
   margin: 0;
-  padding: 0rem 0rem 13rem 2rem;
+  padding: 0rem 2rem 3rem 2rem;
 
   @include small-size {
-      font-size: 1.25rem;
-      padding: 0 2rem 4.5rem; 
+    font-size: 1.25rem;
+    padding: 0rem 2rem 0rem 2rem; 
   }  
 }
 
 .highlighted {
-  background: linear-gradient(to left, #0054ad 0%, #b8fb3c 100%);
+  // background: linear-gradient(to left, #0054ad 0%, #b8fb3c 100%);
+  background: linear-gradient(to left, #46c34c 10%, #FF5F1F 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-
