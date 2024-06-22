@@ -1,8 +1,10 @@
 // src/css/homepage.scss
 .homepage .container {
   margin: auto; 
+  overflow: hidden;  
 }
 
 .homepage {
-  overflow: hidden;  // Ensure no overflow
+  overflow: hidden;  
 }
+
