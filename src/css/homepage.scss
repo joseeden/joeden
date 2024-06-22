@@ -8,5 +8,8 @@
 }
 
 .homepage.main-wrapper {
-  overflow: hidden; 
+  overflow: hidden;  // Ensure no overflow
+  height: 100vh;     // Full viewport height
+  display: flex;
+  flex-direction: column;
 }
