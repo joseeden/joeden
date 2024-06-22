@@ -1,18 +1,8 @@
 // src/css/homepage.scss
 .homepage .container {
-  margin: auto;
-  height: 100vh;  // Full viewport height
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin: auto; 
 }
 
 .homepage {
   overflow: hidden;  // Ensure no overflow
-  height: 100vh;     // Full viewport height
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }

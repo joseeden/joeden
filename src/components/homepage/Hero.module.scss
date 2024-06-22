@@ -1,51 +1,57 @@
 // src/components/homepage/Hero.module.scss
 @import "../../css/mixins.scss";
+@import "../../css/homepage.scss";
 
-.heroBanner {
-    background: #EFEFEF;
-    color: #000;
-    text-align: left;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;  // Ensure no overflow
-
-    @include small-size {
-        padding: 0;
-    }
+.homepage {
+  display: flex;
+  flex-direction: column;
+  background: #000;
 }
 
-.title, .subtitle {
-    margin: 0;  // Ensure no margin causes overflow
+.heroBanner {
+  background: #EFEFEF;
+  color: #000;
+  text-align: left;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  @include small-size {
+    padding: 0;
+  }
 }
 
 .title {
-    font-size: 7.5rem;
-    text-shadow: 3px 0px 30px rgba(0, 0, 0, 0.2);
-    padding: 1rem 2rem 0rem 2rem;
+  font-size: 7.5rem;
+  text-shadow: 3px 0px 30px rgba(0, 0, 0, 0.2);
+  padding: 1rem 2rem 0rem 2rem;
 
-    @include small-size {
-        font-size: 2.130rem;
-        padding: 0rem 2rem 0rem 2rem;
-    }
+  @include small-size {
+    font-size: 2.130rem;
+    padding: 0rem 2rem 0rem 2rem;
+  }
 }
 
 .subtitle {
-    font-size: 2rem;
-    padding: 0rem 2rem 3rem 2rem;
+  font-size: 2rem;
+  margin: 0;
+  padding: 0rem 2rem 3rem 2rem;
 
-    @include small-size {
-        font-size: 1.25rem;
-        padding: 0rem 2rem 0rem 2rem;
-    }
+  @include small-size {
+    font-size: 1.25rem;
+    padding: 0rem 2rem 0rem 2rem;
+  }
 }
 
 .highlighted {
-    background: linear-gradient(to left, #46c34c 10%, #FF5F1F 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background: linear-gradient(to left, #46c34c 10%, #FF5F1F 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
