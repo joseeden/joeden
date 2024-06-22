@@ -1,10 +1,11 @@
 // src/css/homepage.scss
 .homepage .container {
   margin: auto; 
+}
+
+.homepage {
   overflow: hidden;  
   height: 100%;     // Full viewport height
   display: flex;
   flex-direction: column;
 }
-
-
