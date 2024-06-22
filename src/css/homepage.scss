@@ -1,6 +1,12 @@
 // src/css/homepage.scss
 .homepage .container {
-  margin: auto; 
+  margin: auto;
+  height: 100vh;  // Full viewport height
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;  // Add some padding to prevent overflow due to content
 }
 
 .homepage {
