@@ -8,12 +8,12 @@ const config: Config = {
   tagline: "Engineer by day, runner by night.",
   favicon: 'img/fourth/favicon.ico',
   url: 'https://github.com',
-  baseUrl: "/",
-  onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
+  baseUrl: "/joeden/",
   organizationName: 'joseeden',     // Github organization/username
   projectName: 'joeden',            // Reponame
   deploymentBranch: "master",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
 
   i18n: {
     defaultLocale: "en",
