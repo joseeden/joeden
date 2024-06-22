@@ -171,15 +171,20 @@ h1, h2, h3, h4, h5 {
 .theme-doc-markdown,
 .markdown {
   padding-top: 10px;
-  padding-right: 20px
 }
 
 /* Adjust margin for larger screens */
 @media (min-width: 1440px) {
+
   .main-wrapper .container {
     margin-left: 20px;
     margin-right: 0px;
   }
+
+  .theme-doc-markdown,
+  .markdown {
+    width: 1000px
+  }  
 }
 
 footer.footer {
