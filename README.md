@@ -79,12 +79,12 @@ The sidebar is the menu on the left side. It can be auto-generated, or manually 
 
 When renaming or adding sidebars, make sure to **`rename both the folder as well as the label in _category_.json file.`**
 
-![](../../Images/notes-sidebars-edit-both.png)
+![](static/img/main-readme/notes-sidebars-edit-both.png)
 
 
 In your IDE, folder names will appear in alphabetical order. However, we can change their order when rendered by specifying their position in the `_category_.json` file. In the example above, the folder "Cloud-Microsoft Azure" appears as the fourth folder inside the docs. But since we specified its position as 9th, it will be displayed in a different order in the browser.
 
-![](../../Images/notes-sidebars-ordering-corrected.png)
+![](static/img/main-readme/notes-sidebars-ordering-corrected.png)
 
 ### Ordering of the Sidebars 
 
@@ -216,7 +216,7 @@ After installing the packages, you can run ESLint on your project:
 
 Create the repository first:
 
-![alt text](deploy-github-pagesss.png)
+![](static/img/main-readme/deploy-github-pagesss.png)
 
 
 Going back to your local repository, modify the docusaurus.config.js.

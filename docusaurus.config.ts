@@ -5,19 +5,15 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
   title: "Eden Jose",
-  tagline: 
-    "A problem solver who enjoys learning and solving challenges.",
+  tagline: "Engineer by day, runner by night.",
   favicon: 'img/fourth/favicon.ico',
   url: 'https://github.com',
-  baseUrl: "/",
+  baseUrl: "/joeden/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'joseeden',     // Usually your GitHub org/user name.
-  projectName: 'joeden',            // Usually your repo name.
-  deploymentBranch: "gh-pages",
+  organizationName: 'joseeden',     // Github organization/username
+  projectName: 'joeden',            // Reponame
+  deploymentBranch: "master",
 
   i18n: {
     defaultLocale: "en",
@@ -45,12 +41,14 @@ const config: Config = {
         // docs: false,
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
+          showLastUpdateTime: true,          
         },        
         blog: {
           showReadingTime: true,
         },
         theme: {
           customCss: [require.resolve("./src/css/custom.scss")],
+          
         },
       } satisfies Preset.Options,
     ],
@@ -87,7 +85,7 @@ const config: Config = {
           position: 'left',
           label: 'Documentation',
         },        
-        { to: "/", label: "Notebook", position: "left" },
+        { to: "/blog", label: "Notebook", position: "left" },
         { to: "/", label: "Gallery", position: "left" },
         { to: "/", label: "Running", position: "left" },
         { to: "/", label: "Arts", position: "left" },

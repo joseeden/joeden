@@ -1,3 +1,4 @@
+// src/css/custom.scss
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 @import './mixins';
 
@@ -27,7 +28,7 @@ h1, h2, h3, h4, h5 {
   --ifm-global-radius: 0.3rem;
 }
 
-/* Dark mode. */
+/* Dark mode */
 [data-theme="dark"] {
   --ifm-color-primary: #25c1af;
   --ifm-color-primary-dark: #21ae9e;
@@ -38,14 +39,14 @@ h1, h2, h3, h4, h5 {
   --ifm-color-primary-lightest: #4eddcd;
   --docusaurus-highlighted-code-line-bg: #4eddcd;
   --ifm-footer-background-color: #1b1b1d;
-}
 
-html[data-theme="dark"] {
-  --ifm-background-color: #1b1b1d;
-  --ifm-background-surface-color: #1b1b1d;
+  html {
+    --ifm-background-color: #1b1b1d;
+    --ifm-background-surface-color: #1b1b1d;
 
-  .navbar {
-    border-bottom: 1px solid var(--ifm-color-emphasis-200);
+    .navbar {
+      border-bottom: 1px solid var(--ifm-color-emphasis-200);
+    }
   }
 }
 
@@ -53,7 +54,7 @@ html[data-theme="dark"] {
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: flex-start; // Ensures content starts from the left
+  justify-content: flex-start;
   padding: 0 1rem;
   position: sticky;
   top: 0;
@@ -63,7 +64,7 @@ html[data-theme="dark"] {
   .navbar__inner {
     display: flex;
     align-items: center;
-    justify-content: flex-start; // Ensures content starts from the left
+    justify-content: flex-start;
     width: 100%;
   }
 
@@ -74,16 +75,15 @@ html[data-theme="dark"] {
   }
 
   .navbar__title {
-    // margin-left: 0.5rem;
     margin-left: 0rem;
     font-size: 1.25rem;
     font-weight: bold;
   }
-  
+
   .navbar__toggle {
-    margin-left: 0.5rem; // Adjust as needed
+    margin-left: 0.5rem;
   }
-  
+
   .navbar__items {
     font-weight: bold;
     display: flex;
@@ -104,17 +104,12 @@ html[data-theme="dark"] {
 .navbar-sidebar__close {
   align-items: end;
   width: 25px;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
+  margin: 0;
 }
 
 /* Dark theme toggles */
 .navbar-sidebar__brand div button {
-  margin-top: 0;
   margin-left: auto;
-  margin-right: 0;
 }
 
 .navbar-sidebar__brand .navbar-sidebar__close {
@@ -164,19 +159,26 @@ html[data-theme="dark"] {
 
 /* Optional: Add scroll-up animation */
 .navbar--hide {
-  top: -80px; // Adjust based on your navbar height
+  top: -80px;
 }
 
-#docusaurus {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+/* Custom styles for thin scrollbar */
+.menu.thin-scrollbar {
+  padding: 20px 0 8.5px 8.5px !important;
 }
 
-.main-wrapper {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+/* Add 10px top padding for theme-doc-markdown and markdown classes */
+.theme-doc-markdown,
+.markdown {
+  padding-top: 10px;
+}
+
+/* Adjust margin for larger screens */
+@media (min-width: 1440px) {
+  .main-wrapper .container {
+    margin-left: 20px;
+    margin-right: 0px;
+  }
 }
 
 footer.footer {

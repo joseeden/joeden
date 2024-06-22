@@ -1,5 +1,6 @@
 // src/components/homepage/Hero.module.scss
 @import "../../css/mixins.scss";
+@import "../../css/homepage.scss";
 
 .homepage {
   display: flex;
@@ -8,9 +9,6 @@
 }
 
 .heroBanner {
-  
-  // background: #000;
-  // color: #fff;
   background: #EFEFEF;
   color: #000;
   text-align: left;
@@ -18,24 +16,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 0 0 0;
+  padding: 0;
   margin: 0;
   width: 100vw;
   height: 100vh;
-  overflow-y: hidden;
+  // overflow-y: hidden;
 
   @include small-size {
-    padding: 0rem 0rem 0rem 0rem;
-  }  
-}
-
-.container {
-  
-  padding: 0 0 0 0;
-
-  @include small-size {
-    padding: 0rem 0rem 0rem 0rem;
-  }    
+    padding: 0;
+  }
 }
 
 .title {
@@ -56,12 +45,11 @@
 
   @include small-size {
     font-size: 1.25rem;
-    padding: 0rem 2rem 0rem 2rem; 
-  }  
+    padding: 0rem 2rem 0rem 2rem;
+  }
 }
 
 .highlighted {
-  // background: linear-gradient(to left, #0054ad 0%, #b8fb3c 100%);
   background: linear-gradient(to left, #46c34c 10%, #FF5F1F 100%);
   background-clip: text;
   -webkit-background-clip: text;
