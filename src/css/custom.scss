@@ -171,6 +171,12 @@ h1, h2, h3, h4, h5 {
 .theme-doc-markdown,
 .markdown {
   padding-top: 10px;
+  padding-right: 20px;
+}
+
+.docItemContainer_Djhp {
+  margin-right: 0; // Remove margin
+  width: auto;     // Set width to auto to allow it to expand
 }
 
 /* Adjust margin for larger screens */
@@ -178,7 +184,7 @@ h1, h2, h3, h4, h5 {
 
   .main-wrapper .container {
     margin-left: 40px;
-    margin-right: 40px;
+    margin-right: 0px;
   }
 }
 
