@@ -210,18 +210,45 @@ After installing the packages, you can run ESLint on your project:
   yarn lint:fix
   ```
 
+### Dependencies lock file is not found 
+
+If your Github action deployment failed and you got this error:
+
+```bash
+Dependencies lock file is not found...
+```
+
+![](static/img/main-readme/note-missing-json-file.png)
+
+Try running install command. This will create the package-lock.json.
+
+```bash
+npm install 
+```
+
 ## Deploy 
 
-### Github Pages 
+### Github Pages via Github Actions
 
 Create the repository first:
 
 ![](static/img/main-readme/deploy-github-pagesss.png)
 
 
-Going back to your local repository, modify the docusaurus.config.js.
+Going back to your local repository, initialize it as a Github repository.
+Set the remote Github repository as the upstream repository. Commit and push.
 
 ```bash
+git init 
+git add . 
+git commit -m "first commit"
+git remote add origin https://github.com/joseeden/joeden.git 
+git push -u origin master               
+```
+
+Next, modify the docusaurus.config.js.
+
+```js
   title: 'JOEDEN',
   tagline: 'Engineer by day, Runner by night.',
   favicon: 'img/favicon.ico',
@@ -229,13 +256,86 @@ Going back to your local repository, modify the docusaurus.config.js.
   baseUrl: '/joeden/',
 
   // GitHub pages deployment config.
-  organizationName: 'joseeden', // Usually your GitHub org/user name.
-  projectName: 'joeden', // Usually your repo name.
-  deploymentBranch: "gh-pages",
+  organizationName: 'joseeden',          // Usually your GitHub org/user name.
+  projectName: 'joeden',                 // Usually your repo name.
+  deploymentBranch: "master",            // Change to the branch used 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn', 
 ```
 
+Create the workflow file. I'm using npm here, so you're configuration may change if you're using yarn.
+
+| If you're using npm             | If you're using yarn  |
+|---------------------------------|-----------------------|
+| cache: yarn                     | cache: npm            |
+| yarn install --frozen-lockfile  | npm ci                |
+| yarn build                      | npm run build         |
+
+```bash
+# deploy.yaml 
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+    # Review gh actions docs if you want to further define triggers, paths, etc
+    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
+
+jobs:
+  build:
+    name: Build Docusaurus
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+      - name: Build website
+        run: npm run build
+
+      - name: Upload Build Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write # to deploy to Pages
+      id-token: write # to verify the deployment originates from an appropriate source
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+```
+
+Commit and push.
+
+```bash
+git add; git commit 
+```
+
+In Github, check the Actions tab. We should see the workflow created.
+
+![](static/img/main-readme/notes-github-worklow-created-for-docu-site.png)
 
 ## Resources 
 
