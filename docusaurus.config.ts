@@ -8,7 +8,7 @@ const config: Config = {
   tagline: "Engineer by day, runner by night.",
   favicon: 'img/fourth/favicon.ico',
   url: 'https://github.com',
-  baseUrl: "/joeden/",
+  baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   organizationName: 'joseeden',     // Github organization/username
