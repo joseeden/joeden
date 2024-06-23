@@ -79,17 +79,17 @@ const config: Config = {
         // srcDark: "img/favicon-32x32-dark-mode.png",
       },
       items: [
-        { to: "/", label: "About", position: "left" },
+        { to: "/about", label: "About", position: "left" },
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
           label: 'Documentation',
         },        
-        { to: "/blog", label: "Notebook", position: "left" },
-        { to: "/", label: "Gallery", position: "left" },
+        { to: "/blog", label: "Blog", position: "left" },
         { to: "/", label: "Running", position: "left" },
-        { to: "/", label: "Arts", position: "left" },
+        // { to: "/", label: "Gallery", position: "left" },
+        // { to: "/", label: "Arts", position: "left" },
         { to: "https://merria.co", label: "Shop", position: "left" },
         // {
         //   href: 'https://github.com/joseeden',
