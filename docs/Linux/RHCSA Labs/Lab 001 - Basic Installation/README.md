@@ -162,6 +162,13 @@ Begin by installing VirtualBox on your local machine. We will also need to downl
 </div>
 
 
+<div>
+
+<img src="./sv-basic-install-10.png"/>
+
+</div>
+
+
 
 
 <div>
