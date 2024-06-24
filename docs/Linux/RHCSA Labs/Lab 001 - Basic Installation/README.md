@@ -148,14 +148,6 @@ Begin by installing VirtualBox on your local machine. We will also need to downl
 </div>
 
 
-
-<div>
-
-<img src="/static/img/sv-basic-install-10.png)"/>
-
-</div>
-
-
 <div>
 
 <img src="/img/sv-basic-install-10.png"/>
