@@ -1,4 +1,4 @@
----
+<!-- ---
 title: 002 - Installation with Custom Partitioning
 ---
 
@@ -63,4 +63,4 @@ Note that for this lab, we changed our hostname to **tst-rhel-local-2**.
 - [Tips for Linux Newbies: Understanding Swap Space](https://www.wired.com/2007/12/tips-for-linux-newbies-understanding-swap-space/)
 - [How does swap space work?](https://www.computerworld.com/article/2794697/how-does-swap-space-work-.html)
 - [What is the reason behind using 1,024 in (KB, MB, GB, TB, PB) memory? Where does this 1,024 belong to?](https://www.quora.com/What-is-the-reason-behind-using-1-024-in-KB-MB-GB-TB-PB-memory-Where-does-this-1-024-belong-to)
-
+ -->

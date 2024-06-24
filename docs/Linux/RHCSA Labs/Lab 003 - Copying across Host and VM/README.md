@@ -1,4 +1,4 @@
----
+<!-- ---
 title: 003 - Copying across Host and Guest Machine
 ---
 
@@ -238,4 +238,4 @@ After installing the **gcc, make**, **elfutils**, and doing the rest of the othe
 - [Installing multiple packages with one yum command](https://unix.stackexchange.com/questions/7638/installing-multiple-packages-with-one-yum-command)
 
 
-As always, happy learning! 😀
+As always, happy learning! 😀 -->

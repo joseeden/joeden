@@ -2,9 +2,12 @@
 title: 001 - Basic Installation
 tags: [Linux, DevOps, Red Hat, Labs]
 ---
+<!-- 
 
-import Pic001 from '../../img/sv-basic-install-10.png';
-import Pic002 from '../../img/vbox-setup2.png';
+import Pic001 from '../../../../static/img/sv-basic-install-10.png';
+import Pic001 from '../../../../static/img/docs/sv-basic-install-10.png'; -->
+
+<!-- import Pic002 from '../../img/vbox-setup2.png';
 import Pic003 from '../../img/vbox-setup3.png';
 import Pic004 from '../../img/vbox-setu4.png';
 import Pic005 from '../../img/vbox-setup-5.png';
@@ -25,7 +28,7 @@ import Pic019 from '../../img/vboxinstall12.png';
 import Pic020 from '../../img/vboxinstall13.png';
 import Pic021 from '../../img/vboxinstall144.png';
 import Pic022 from '../../img/vboxinstall15.png';
-import Pic023 from '../../img/vbox-complete.png';
+import Pic023 from '../../img/vbox-complete.png'; -->
 
 
 
@@ -56,11 +59,66 @@ Begin by installing VirtualBox on your local machine. We will also need to downl
 ### Configuring RHEL on VirtualBox
 
 1. Open your VirtualBox application. You should see the Virtualbox Manager menu.
+<!-- 
+
+    <img src={Pic001} style={{width: 700}} />   
+    
+    <img src={Pic001} width="700" />    -->
+
+<div>
+
+<img width="700" src="/img/docs/sv-basic-install-10.png"/>
+
+</div>
+
+<div style={{textAlign: 'center'}}>
+
+<img width="700" src="/img/docs/sv-basic-install-10.png"/>
+
+</div>
+
+<div style={{textAlign: 'center'}}>
+
+<img width="700" src="/static/img/docs/sv-basic-install-10.png"/>
+
+</div>
+
+<div style={{textAlign: 'center'}}>
+
+<img width="700" src="static/img/docs/sv-basic-install-10.png"/>
+
+</div>
+
+<div style={{textAlign: 'center'}}>
+
+<img width="700" src="../../../../static/img/docs/sv-basic-install-10.png"/>
+
+</div>
+
+<div style={{textAlign: 'center'}}>
+
+<img width="700" src="../../../../static/img/sv-basic-install-10.png"/>
+
+</div>
 
 
-    <img style={{width: 700}} src={Pic001} />
+<div style={{textAlign: 'center'}}>
+
+<img width="700" src="../../../img/sv-basic-install-10.png"/>
+
+</div>
 
 
+
+<!-- 
+    <div style={{textAlign: 'center'}}>
+
+    ![image](../../img/sv-basic-install-10.png)
+
+    </div>
+
+     -->
+<!-- 
 2. To add an image, click **New**. It will prompt you to enter a name for your VM. The distro is also detected, but you can change it. Click **Next**.
 
     <img style={{width: 500}} src={Pic002} />
@@ -189,4 +247,4 @@ Here are some few quick reminders when setting up EC2 instances in the cloud.
 - If you prefer to **use VM instances on Google Cloud Platform**, you can check this [link](https://cloud.google.com/compute/docs/instances/create-start-instance).
 
 
-
+ -->

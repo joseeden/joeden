@@ -6,7 +6,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 const config: Config = {
   title: "Eden Jose",
   tagline: "Engineer by day, runner by night.",
-  favicon: 'img/fourth/favicon.ico',
+  favicon: 'img/logo/fourth/favicon.ico',
   url: 'https://github.com',
   baseUrl: "/joeden/",
   organizationName: 'joseeden',     // Github organization/username
@@ -56,7 +56,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: "img/fourth/favicon.ico",
+    image: "img/logo/fourth/favicon.ico",
     metadata: [
       {
         name: "description",
@@ -75,7 +75,7 @@ const config: Config = {
       title: "EDEN",
       logo: {
         alt: "Eden Logo",
-        src: "img/fourth/favicon-32x32.png",
+        src: "img/logo/fourth/favicon-32x32.png",
         // srcDark: "img/favicon-32x32-dark-mode.png",
       },
       items: [

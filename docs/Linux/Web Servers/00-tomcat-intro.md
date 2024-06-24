@@ -1,4 +1,4 @@
----
+<!-- ---
 title: Tomcat Servers 
 tags: [Linux, Web Servers, Tomcat]
 --- 
@@ -92,4 +92,4 @@ http://localhost:8080/manager
 Before you can access the administrative features, you will need to add users first. 
 
 Once Tomcat is up and running, it is easy to deploy your Java application. You just need to place the **.war** file into the **/webapps** folder.
-
+ -->
