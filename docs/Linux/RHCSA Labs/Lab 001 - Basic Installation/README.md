@@ -77,6 +77,7 @@ Begin by installing VirtualBox on your local machine. We will also need to downl
 
 </div>
 
+
 <div style={{textAlign: 'center'}}>
 
 <img width="700" src="/static/img/docs/sv-basic-install-10.png"/>
@@ -105,6 +106,45 @@ Begin by installing VirtualBox on your local machine. We will also need to downl
 <div style={{textAlign: 'center'}}>
 
 <img width="700" src="../../../img/sv-basic-install-10.png"/>
+
+</div>
+
+
+
+
+<div>
+
+<img width="700" src="./sv-basic-install-10.png"/>
+
+</div>
+
+
+![Docusaurus Plushie](./sv-basic-install-10.png)
+
+<div>
+
+![Docusaurus Plushie](./sv-basic-install-10.png)
+
+</div>
+
+
+<div style={{textAlign: 'center'}}>
+
+![Docusaurus Plushie](./sv-basic-install-10.png)
+
+</div>
+
+
+<div>
+
+<img width="700" src="./sv-basic-install-10.png"/>
+
+</div>
+
+
+<div style={{textAlign: 'center'}}>
+
+<img width="700" src="./sv-basic-install-10.png"/>
 
 </div>
 
