@@ -17,10 +17,10 @@ const About: React.FC = () => {
                 I'm Eden, a DevOps Engineer currently based in the sunny island of Singapore.
               </h2>
               <p className={styles.subtitle}>
-                I have an extensive experience across various IT domains such as networking, automation, cloud, and DevOps. I am passionate about exploring and implementing cloud-native solutions, and securing the end-to-end process of my projects.
+                I have an extensive experience across various IT domains such as networking, middleware, automation, cloud, and DevOps. I am passionate about exploring and implementing cloud-native solutions, and building scalable platforms with a shift-left security approach.
               </p>
               <p className={styles.subtitle}>
-                Outside of work, I find joy in running long-distance, often participating in marathons. I also love immersing myself in great books. 
+                Outside of work, I enjoy running long-distances and joining marathon events. I also love immersing myself in great books. 
               </p>
             </div>
           </div>
