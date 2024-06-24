@@ -117,6 +117,7 @@ Begin by installing VirtualBox on your local machine. We will also need to downl
 
 ![Docusaurus Plushie](./sv-basic-install-10.png)
 
+
 <div>
 
 ![Docusaurus Plushie](./sv-basic-install-10.png)
@@ -129,6 +130,39 @@ Begin by installing VirtualBox on your local machine. We will also need to downl
 ![Docusaurus Plushie](./sv-basic-install-10.png)
 
 </div>
+
+
+
+<div style={{textAlign: 'center'}}>
+
+![Docusaurus Plushie](/static/img/sv-basic-install-10.png)
+
+</div>
+
+
+
+<div style={{textAlign: 'center'}}>
+
+![Docusaurus Plushie](/img/sv-basic-install-10.png)
+
+</div>
+
+
+
+<div>
+
+<img src="/static/img/sv-basic-install-10.png)"/>
+
+</div>
+
+
+<div>
+
+<img src="/img/sv-basic-install-10.png"/>
+
+</div>
+
+
 
 
 <div>
