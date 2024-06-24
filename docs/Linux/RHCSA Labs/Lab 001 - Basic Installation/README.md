@@ -112,11 +112,7 @@ Begin by installing VirtualBox on your local machine. We will also need to downl
 
 
 
-<div>
 
-<img width="700" src="./sv-basic-install-10.png"/>
-
-</div>
 
 
 ![Docusaurus Plushie](./sv-basic-install-10.png)
@@ -138,6 +134,12 @@ Begin by installing VirtualBox on your local machine. We will also need to downl
 <div>
 
 <img width="700" src="./sv-basic-install-10.png"/>
+
+</div>
+
+<div>
+
+<img width="200" src="./sv-basic-install-10.png"/>
 
 </div>
 
