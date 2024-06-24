@@ -133,11 +133,11 @@ Begin by installing VirtualBox on your local machine. We will also need to downl
 
 
 
-<div style={{textAlign: 'center'}}>
+<!-- <div style={{textAlign: 'center'}}>
 
 ![Docusaurus Plushie](/static/img/sv-basic-install-10.png)
 
-</div>
+</div> -->
 
 
 
