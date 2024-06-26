@@ -8,10 +8,8 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
-<Tabs>
+<Tabs className="unique-tabs">
 <TabItem value="2022" label="2022" default>
-
-> The objective below are updated as of 2022.
 
 RHCSA exam candidates should be able to accomplish the tasks below without assistance. These have been grouped into several categories.
 
