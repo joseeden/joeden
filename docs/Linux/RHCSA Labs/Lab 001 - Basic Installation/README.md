@@ -1,8 +1,9 @@
 ---
 title: 001 - Basic Installation
 tags: [Linux, DevOps, Red Hat, Labs]
+last_update:
+  date: 1/1/2000
 ---
-
 
 
 There are various ways to setup Red Hat Enterprise Linux (RHEL) for your personal lab:
@@ -32,39 +33,6 @@ For this lab, beegin by installing VirtualBox on your local machine. We will als
  
 1. Open your VirtualBox application. You should see the Virtualbox Manager menu.
 
-    <div style={{textAlign: 'center'}}>
-    <img width="700" src="/img/docs/sv-basic-install-10.png" />
-    </div>
-
-    <div class="img-center"> 
-    <img width="700" src="/img/docs/sv-basic-install-10.png" />
-    </div>
-
-    <div class="text--center">
-    <img width="700" src="/img/docs/sv-basic-install-10.png" />
-    </div>
-
-
-    <div style={{textAlign: 'center'}}>
-    <img width="700" src="../../../../static/img/docs/sv-basic-install-10.png" />
-    </div>
-
-    <div class="img-center"> 
-    <img width="700" src="../../../../static/img/docs/sv-basic-install-10.png" />
-    </div>
-
-    <div class="text--center">
-    <img width="700" src="../../../../static/img/docs/sv-basic-install-10.png" />
-    </div>
-
-
-
-
-
-    <div style={{textAlign: 'center'}}>
-    ![](/img/docs/sv-basic-install-10.png)
-    </div>
-
     <div class="img-center"> 
     
     ![](/img/docs/sv-basic-install-10.png) 
@@ -72,125 +40,144 @@ For this lab, beegin by installing VirtualBox on your local machine. We will als
     </div>
 
 
-<!-- 
 2. To add an image, click **New**. It will prompt you to enter a name for your VM. The distro is also detected, but you can change it. Click **Next**.
 
-<p align=center>
-<img width=500 src="../Images/vbox-setup2.png">
-</p>
+<div class="img-center"> 
+
+![](/img/docs/vbox-setup2.png)
+
+</div>
 
 3. Next, setup the specifications of your VM. You can simply use the defaults and click **Next > Create > Next**.
 
-<p align=center>
-<img width=500 src="../Images/vbox-setup3.png">
-</p>
-<p align=center>
-<img width=500 src="../Images/vbox-setu4.png">
-</p>
-<p align=center>
-<img width=500 src="../Images/vbox-setup5.png">
-</p>
+    <div class="img-center"> 
+    ![](/img/docs/vbox-setup3.png)
+    </div>
+
+    <div class="img-center"> 
+    ![](/img/docs/vbox-setu4.png)
+    </div>
+
+    <div class="img-center"> 
+    ![](/img/docs/vbox-setup5.png)
+    </div>
+
 
 4. For the virtual hard disk, we can set it to 20GB since the images would normally need more than 12 GB. Click **Create** and the window will close. Select the VM and click **Settings**.
 
-<p align=center>
-<img width=500 src="../Images/vbox-setup6.png">
-</p>
+    <div class="img-center"> 
+    ![](/img/docs/vbox-setup6.png)
+    </div>
+
 
 
 5. Select **Storage > Empty** then click the CD icon beside the **Optical Drive** dropdown bar. The RHEL ISO file should appear here. If not, click **Choose/Create a Virtual Optical Disk** and select the RHEL ISO file. Click **OK**.
 
-<p align=center>
-<img width=500 src="../Images/vbox-setup8.png">
-</p>
+    <div class="img-center"> 
+    ![](/img/docs/vbox-setup8.png)
+    </div>
+
 
 6. Double-click the VM to start it. You should now be see the installation page. Select the **Install** option. This will take a few minutes.
 
-<p align=center>
-<img width=500 src="../Images/vbox-install.png">
-</p>
+    <div class="img-center"> 
+    ![](/img/docs/vbox-install.png)
+    </div>
+
 
 6. Next step is to set the language and other system configuration.
 
-<p align=center>
-<img width=500 src="../Images/vboxinstall2.png">
-</p>
-<p align=center>
-<img width=500 src="../Images/vboxinstall3.png">
-</p>
+    <div class="img-center"> 
+    ![](/img/docs/vboxinstall2.png)
+    </div>
+
+    <div class="img-center"> 
+    ![](/img/docs/vboxinstall3.png)
+    </div>
+
 
 7. The **Time & Date** can also be set in this menu.
 
-<p align=center>
-<img width=500 src="../Images/vboxinstall5.png">
-</p>
+    <div class="img-center"> 
+    ![](/img/docs/vboxinstall5.png)
+    </div>
 
-8. Similarly, the **Network and Hostname** can also be modified. After changing the hostname at the bottom, click **Apply**.
-Enable the Ethernet card by toggling **On**. The NIC should auto-populate with the IP, DNS Route, and DNS.
 
-<p align=center>
-<img width=500 src="../Images/vboxinstall4.png">
-</p>
+8. Similarly, the **Network and Hostname** can also be modified. After changing the hostname at the bottom, click **Apply**. Enable the Ethernet card by toggling **On**. The NIC should auto-populate with the IP, DNS Route, and DNS.
+
+    <div class="img-center"> 
+    ![](/img/docs/vboxinstall4.png)
+    </div>
 
 9. Confirm the **Installation Destination**. We'll set up a second machine in the next Lab and set up custom partitioning. For this one, just click **Done**.
 
-<p align=center>
-<img width=500 src="../Images/vboxinstall6.png">
-</p>
+    <div class="img-center"> 
+    ![](/img/docs/vboxinstall6.png)
+    </div>
+
 
 
 10. Set the **Root Password**.
 
-<p align=center>
-<img width=500 src="../Images/vboxinstall7.png">
-</p>
+    <div class="img-center"> 
+    ![](/img/docs/vboxinstall7.png)
+    </div>
+
 
 11. Create a user through **User Creation**.
 
-<p align=center>
-<img width=500 src="../Images/vboxinstall8.png">
-</p>
-<p align=center>
-<img width=500 src="../Images/vboxinstall9.png">
-</p>
+    <div class="img-center"> 
+    ![](/img/docs/vboxinstall8.png)
+    </div>
+
+    <div class="img-center"> 
+    ![](/img/docs/vboxinstall9.png)
+    </div>
+
 
 11. Finally, click **Begin Installation**. This will take a while. After this is done, **Reboot system**.
 
-<p align=center>
-<img width=500 src="../Images/vboxinstall10.png">
-</p>
-<p align=center>
-<img width=500 src="../Images/vboxinstall1.png">
-</p>
+    <div class="img-center"> 
+    ![](/img/docs/vboxinstall10.png)
+    </div>
+
+    <div class="img-center"> 
+    ![](/img/docs/vboxinstall1.png)
+    </div>
+
 
 
 12. After VM is rebooted, you may be prompted to accept the licensing. Afterwards, click **Finish configuration**.
 
-<p align=center>
-<img width=500 src="../Images/vboxinstall12.png">
-</p>
+    <div class="img-center"> 
+    ![](/img/docs/vboxinstall12.png)
+    </div>
+
 
 13. You will then be brought to the sign-in page. Login using **root**. You will be prompted to select a language and a few more settings before you're able to **Start using Red Hat Enterprise Linux**.
 
-<p align=center>
-<img width=500 src="../Images/vboxinstall13.png">
-</p>
-<p align=center>
-<img width=500 src="../Images/vboxinstall144.png">
-</p>
-<p align=center>
-<img width=500 src="../Images/vboxinstall15.png">
-</p>
+    <div class="img-center"> 
+    ![](/img/docs/vboxinstall13.png)
+    </div>
+
+    <div class="img-center"> 
+    ![](/img/docs/vboxinstall144.png)
+    </div>
+
+    <div class="img-center"> 
+    ![](/img/docs/vboxinstall15.png)
+    </div>
+
 
 14. As a final step, make sure to remove the ISO file for now. If the ISO file is still loaded and system is rebooted, you will be prompted to go through the entire boot process again.
 
-<p align=center>
-<img width=500 src="../Images/vbox-complete.png">
-</p>
+    <div class="img-center"> 
+    ![](/img/docs/vbox-complete.png)
+    </div>
+
 
 More details about it here: [Oracle VM make me install Ubuntu every time I restart the virtual machine [closed]](https://stackoverflow.com/questions/60582106/oracle-vm-make-me-install-ubuntu-every-time-i-restart-the-virtual-machine)
 
-</details>
 
 
 ## RHEL on the cloud
@@ -247,4 +234,3 @@ Here are some few quick reminders when setting up EC2 instances in the cloud.
 
 
 As always, happy learning! 😀
- -->
