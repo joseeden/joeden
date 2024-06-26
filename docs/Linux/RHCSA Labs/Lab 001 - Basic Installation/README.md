@@ -39,7 +39,16 @@ For this lab, beegin by installing VirtualBox on your local machine. We will als
     <div style={{textAlign: 'center'}}>
     ![](/img/docs/sv-basic-install-10.png)
     </div>
+
+    <div class="img-center"> !\[\](/img/docs/sv-basic-install-10.png) </div>
+
+    <div class="img-center"> 
     
+    ![](/img/docs/sv-basic-install-10.png) 
+    
+    </div>
+
+
     ![](/img/docs/sv-basic-install-10.png)
         ![](/img/docs/sv-basic-install-10.png)
 
