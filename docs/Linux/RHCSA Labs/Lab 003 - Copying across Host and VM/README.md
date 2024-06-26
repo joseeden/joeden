@@ -1,5 +1,5 @@
 ---
-title: 003 - Copying across Host and Guest Machine
+title: Copying across Host and Guest Machine
 tags: [Linux, DevOps, Red Hat, Labs]
 last_update:
   date:  6/1/2023
@@ -34,31 +34,40 @@ Note that after you reboot, you need to click **Devices** tab on the Virtualbox 
 - Drag and Drop
 - Shared Clipboard
 
-    <div class="img-center"> 
-    [](/img/docs/vbox-bidir.png)
-    </div>
 
-    <div class="img-center"> 
-    [](/img/docs/vbox-bidir-2.png)
-    </div>
+<div class="img-center"> 
+
+![](/img/docs/vbox-bidir.png)
+
+</div>
+
+
+<div class="img-center"> 
+
+![](/img/docs/vbox-bidir-2.png)
+
+</div>
 
 
 ## The Detailed Steps
 
-If you prefer to know the steps I did (and the errors I encountered along the way), click the **Read more** below.
 
-
-
-### Enable bidirectonal on the VM menu
+### Enable bidirectional on the VM menu
 
 On the **Devices** tab, I set both **Shared Clipboard** and **Drag and Drop** to **bidirectional**. Then rebooted it.
 
-<div class="img-center"> 
-[](/img/docs/vbox-bidir.png)
-</div>
 
 <div class="img-center"> 
-[](/img/docs/vbox-bidir-2.png)
+
+![](/img/docs/vbox-bidir.png)
+
+</div>
+
+
+<div class="img-center"> 
+
+![](/img/docs/vbox-bidir-2.png)
+
 </div>
 
 Normally, this would allow the copying and pasting of text across the host and guest machine. But since this didn't worked, I had to install the Guest Additions.
@@ -67,47 +76,80 @@ Normally, this would allow the copying and pasting of text across the host and g
 
 On the **Devices** tab, click **Insert Guest Additions CD Images..**.
 
+
 <div class="img-center"> 
-[](/img/docs/vbox1.png)
+
+![](/img/docs/vbox1.png)
+
 </div>
+
 <div class="img-center"> 
-[](/img/docs/vbox2.png)
+
+![](/img/docs/vbox2.png)
+
 </div>
+
 <div class="img-center"> 
-[](/img/docs/vbox3.png)
+
+![](/img/docs/vbox3.png)
+
 </div>
 
 However, I keep getting this error:
+
 <div class="img-center"> 
-[](/img/docs/vbox4.png)
+
+![](/img/docs/vbox4.png)
+
 </div>
 
 So I tried running the command, and then inserting the guest additions image again.
+
 <div class="img-center"> 
-[](/img/docs/vbox5.png)
+
+![](/img/docs/vbox5.png)
+
 </div>
+
 <div class="img-center"> 
-[](/img/docs/vbox1.png)
+
+![](/img/docs/vbox1.png)
+
 </div>
 
 Then I got a new error message. I went to the **Optical Drives** to force unmount the disk and tried to insert the guest additions image again. This required the authentication again.
+
 <div class="img-center"> 
-[](/img/docs/vbox6.png)
+
+![](/img/docs/vbox6.png)
+
 </div>
+
 <div class="img-center"> 
-[](/img/docs/vbox7.png)
+
+![](/img/docs/vbox7.png)
+
 </div>
+
 <div class="img-center"> 
-[](/img/docs/vbox8.png)
+
+![](/img/docs/vbox8.png)
+
 </div>
+
 <div class="img-center"> 
-[](/img/docs/vbox1.png)
+
+![](/img/docs/vbox1.png)
+
 </div>
 
 I still got the same error.
 
+
 <div class="img-center"> 
-[](/img/docs/vbox9.png)
+
+![](/img/docs/vbox9.png)
+
 </div>
 
 
@@ -120,8 +162,11 @@ ls /usr/src/kernels/
 sudo yum install -y "kernel-devel-uname-r == $(uname -r)"
 ```
 
+
 <div class="img-center"> 
-[](/img/docs/sv-error-1.png)
+
+![](/img/docs/sv-error-1.png)
+
 </div>
 
 This need to be resolved first. Followed suggestions from [RH discussion](https://access.redhat.com/discussions/4656371), but this didn't helped.
@@ -133,8 +178,11 @@ sudo rm -r /var/cache/dnf
 sudo dnf upgrade
 ```
 
+
 <div class="img-center"> 
-[](/img/docs/sv-error-2.png)
+
+![](/img/docs/sv-error-2.png)
+
 </div>
 
 Went back to the original issue and re-run the install again.
@@ -143,20 +191,29 @@ Went back to the original issue and re-run the install again.
 sudo dnf install -y "kernel-devel-uname-r == $(uname -r)"
 ```
 
+
 <div class="img-center"> 
-[](/img/docs/sv-kernelerror-1.png)
+
+![](/img/docs/sv-kernelerror-1.png)
+
 </div>
 
 Then retried adding guest additions again using the same steps:
 
+
 <div class="img-center"> 
-[](/img/docs/vbox1.png)
+
+![](/img/docs/vbox1.png)
+
 </div>
 
 This time it showed a different error.
 
+
 <div class="img-center"> 
-[](/img/docs/vboxadd-2.png)
+
+![](/img/docs/vboxadd-2.png)
+
 </div>
 
 ### Error 2/3: Please install the gcc make perl packages from your distribution [RESOLVED] 
@@ -167,27 +224,42 @@ Following another link: [Guest additionals: Kernel headers not found for target 
 sudo dnf install -y gcc make perl kernel-headers kernel-devel
 ```
 
+
 <div class="img-center"> 
-[](/img/docs/vboxadd-gcc.png)
+
+![](/img/docs/vboxadd-gcc.png)
+
 </div>
+
 <div class="img-center"> 
-[](/img/docs/vboxadd-gcc-make.png)
+
+![](/img/docs/vboxadd-gcc-make.png)
+
 </div>
+
 <div class="img-center"> 
-[](/img/docs/vboxadd-gcc-make-2.png)
+
+![](/img/docs/vboxadd-gcc-make-2.png)
+
 </div>
 
 Rebooted afterwards, then tried installing Guest Additions again.
 
+
 <div class="img-center"> 
-[](/img/docs/vbox1.png)
+
+![](/img/docs/vbox1.png)
+
 </div>
 
 
 Got a new error:
 
+
 <div class="img-center"> 
-[](/img/docs/vboxadd-new-1.png)
+
+![](/img/docs/vboxadd-new-1.png)
+
 </div>
 
 

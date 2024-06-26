@@ -1,5 +1,5 @@
 ---
-title: 003 - Using Essential Tools
+title: Using Essential Tools
 tags: [Linux, Beginner]
 last_update:
   date:  6/1/2023
