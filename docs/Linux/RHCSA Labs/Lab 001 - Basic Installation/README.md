@@ -184,8 +184,6 @@ More details about it here: [Oracle VM make me install Ubuntu every time I resta
 
 As another option, you can also run Linux boxes on the cloud. This is also my preferred method since it doesn't consume resources from my laptop and instead uses the resources from the cloud provider.
 
-<details><summary> To know how to configure EC2, read more </summary>
-<br>
 
 Note that you may need to setup the **VPC** and all of its associated comoponents as well. This is useful for the succeeding labs in this series where we'll launch two or more machines that needs to talk to each other.
 
@@ -215,7 +213,6 @@ These are templates where the components are *declaratively* defined, you just n
 - [Creating EC2 instance in AWS with CloudFormation](https://octopus.com/blog/aws-cloudformation-ec2-examples)
 - [aws-vpc-cloud-formation/base-vpc-example-improved.template.yml](https://github.com/kennyk65/aws-vpc-cloud-formation/blob/master/base-vpc-example-improved.template.yml)
 
-</details>
 
 
 ## A few reminders
