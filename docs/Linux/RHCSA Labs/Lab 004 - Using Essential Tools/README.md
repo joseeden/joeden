@@ -1,6 +1,8 @@
-<!-- ---
+---
 title: 003 - Using Essential Tools
 tags: [Linux, Beginner]
+last_update:
+  date:  6/1/2023
 ---
 
 > For the this lab and the succeeding labs, we'll be using our RHEL 8 launched on Amazon EC2 instances. Feel free to do this lab in VirtualBox as well.
@@ -363,4 +365,3 @@ Red Hat Enterprise Linux release 8.5 (Ootpa)
 
 
 
- -->

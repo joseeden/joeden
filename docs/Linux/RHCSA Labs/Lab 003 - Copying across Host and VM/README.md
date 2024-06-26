@@ -47,7 +47,7 @@ Note that after you reboot, you need to click **Devices** tab on the Virtualbox 
 
 If you prefer to know the steps I did (and the errors I encountered along the way), click the **Read more** below.
 
-<details><summary> Read more... </summary>
+
 
 ### Enable bidirectonal on the VM menu
 
