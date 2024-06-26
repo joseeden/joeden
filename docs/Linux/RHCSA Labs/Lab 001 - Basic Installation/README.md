@@ -33,14 +33,16 @@ For this lab, beegin by installing VirtualBox on your local machine. We will als
 1. Open your VirtualBox application. You should see the Virtualbox Manager menu.
 
     <div style={{textAlign: 'center'}}>
-    <img width="700" src="../../../Assets/sv-basic-install-10.png" />
+    <img width="700" src="/img/docs/sv-basic-install-10.png />
+    </div>
+
+    <div class="img-center"> 
+    <img width="700" src="/img/docs/sv-basic-install-10.png />
     </div>
 
     <div style={{textAlign: 'center'}}>
     ![](/img/docs/sv-basic-install-10.png)
     </div>
-
-    <div class="img-center"> !\[\](/img/docs/sv-basic-install-10.png) </div>
 
     <div class="img-center"> 
     
@@ -48,9 +50,6 @@ For this lab, beegin by installing VirtualBox on your local machine. We will als
     
     </div>
 
-
-    ![](/img/docs/sv-basic-install-10.png)
-        ![](/img/docs/sv-basic-install-10.png)
 
 <!-- 
 2. To add an image, click **New**. It will prompt you to enter a name for your VM. The distro is also detected, but you can change it. Click **Next**.
