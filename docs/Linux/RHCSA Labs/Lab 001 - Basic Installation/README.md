@@ -38,6 +38,7 @@ For this lab, beegin by installing VirtualBox on your local machine. We will als
 
 ![](/img/ocs/sv-basic-install-10.png)
     ![](/img/docs/sv-basic-install-10.png)
+        ![](/img/docs/sv-basic-install-10.png)
 
 <!-- 
 2. To add an image, click **New**. It will prompt you to enter a name for your VM. The distro is also detected, but you can change it. Click **Next**.
