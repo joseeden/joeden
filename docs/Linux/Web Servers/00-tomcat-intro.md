@@ -1,6 +1,8 @@
 ---
 title: Tomcat Servers 
 tags: [Linux, Web Servers, Tomcat]
+last_update:
+  date:  6/1/2023
 --- 
 
 ## Introduction 
@@ -63,7 +65,9 @@ Lastly, the Tomcat application server is not Java EE certified. This means it do
 
 However, it is possible to add support for APIs such as JSF and CDI to Tomcat by integrating projects like Weld and Mojarra. A separate Apache project named TomEE allows for this support, but the basic Apache Tomcat download does not.
 
-![](../img/tomca-vs=tom33-2.png)
+<div class="img-center"> 
+![](/img/docs/tomcat-vs-tom33-2.png)
+</div>
 
 To learn more, check out [Tomcat vs. JBoss.](https://www.theserverside.com/video/Tomcat-vs-JBoss-Compare-features-of-these-Java-app-servers)
 
