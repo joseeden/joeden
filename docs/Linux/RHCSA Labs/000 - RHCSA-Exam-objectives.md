@@ -4,6 +4,12 @@ tags: [Linux, Red Hat, Certifications]
 sidebar_position: 1
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+<Tabs>
+<TabItem value="2022" label="2022" default>
 
 > The objective below are updated as of 2022.
 
@@ -101,3 +107,9 @@ RHCSA exam candidates should be able to accomplish the tasks below without assis
 As with all Red Hat performance-based exams, configurations must persist after reboot without intervention.
 
 Red Hat reserves the right to add, modify, and remove objectives. Such changes will be made public in advance through revisions to this document.
+
+</TabItem>
+
+
+
+</Tabs>
