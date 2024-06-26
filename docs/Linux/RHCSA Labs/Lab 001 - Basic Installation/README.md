@@ -36,7 +36,7 @@ For this lab, beegin by installing VirtualBox on your local machine. We will als
     <img width="700" src="../../../Assets/sv-basic-install-10.png" />
     </div>
 
-![](/img/ocs/sv-basic-install-10.png)
+![](/img/docs/sv-basic-install-10.png)
     ![](/img/docs/sv-basic-install-10.png)
         ![](/img/docs/sv-basic-install-10.png)
 
