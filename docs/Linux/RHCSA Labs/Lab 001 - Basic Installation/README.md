@@ -2,33 +2,6 @@
 title: 001 - Basic Installation
 tags: [Linux, DevOps, Red Hat, Labs]
 ---
-<!-- 
-
-import Pic001 from '../../../../static/img/sv-basic-install-10.png';
-import Pic001 from '../../../../static/img/docs/sv-basic-install-10.png'; -->
-
-<!-- import Pic002 from '../../img/vbox-setup2.png';
-import Pic003 from '../../img/vbox-setup3.png';
-import Pic004 from '../../img/vbox-setu4.png';
-import Pic005 from '../../img/vbox-setup-5.png';
-import Pic006 from '../../img/vbox-setup6.png';
-import Pic007 from '../../img/vbox-setup8.png';
-import Pic008 from '../../img/vbox-install.png';
-import Pic009 from '../../img/vboxinstall2.png';
-import Pic010 from '../../img/vboxinstall3.png';
-import Pic011 from '../../img/vboxinstall5.png';
-import Pic012 from '../../img/vboxinstall4.png';
-import Pic013 from '../../img/vboxinstall6.png';
-import Pic014 from '../../img/vboxinstall7.png';
-import Pic015 from '../../img/vboxinstall8.png';
-import Pic016 from '../../img/vboxinstall9.png';
-import Pic017 from '../../img/vboxinstall10.png';
-import Pic018 from '../../img/vboxinstall1.png';
-import Pic019 from '../../img/vboxinstall12.png';
-import Pic020 from '../../img/vboxinstall13.png';
-import Pic021 from '../../img/vboxinstall144.png';
-import Pic022 from '../../img/vboxinstall15.png';
-import Pic023 from '../../img/vbox-complete.png'; -->
 
 
 
@@ -40,17 +13,15 @@ There are various ways to setup Red Hat Enterprise Linux (RHEL) for your persona
 
 For this series of labs, we'll be utilizing:
 
-- A VM in VirtualBox VMs
-- An Amazon EC2 instance
+- a VM in VirtualBox VMs
+- an Amazon EC2 instance
 
 
 ## RHEL on VirtualBox
 
 I used VirtualBox along with GNS3 a few years ago when I studied for a Cisco exam. I then left it and didn't touch it until I decided to prepare for the RHCSA exam. Opening the application again, it prompted about the new version so I had to update it to the new version, which is 6.1.30. 
 
-### Configure RHEL Virtual machine
-
-Begin by installing VirtualBox on your local machine. We will also need to download the free-to-use Red Hat Enterprise Linux image. 
+For this lab, beegin by installing VirtualBox on your local machine. We will also need to download the free-to-use Red Hat Enterprise Linux image. 
 
 - [How to Install VirtualBox](https://www.wikihow.com/Install-VirtualBox)
 - [VirtualBox Download](https://www.virtualbox.org/wiki/Downloads)
@@ -58,230 +29,143 @@ Begin by installing VirtualBox on your local machine. We will also need to downl
 
 ### Configuring RHEL on VirtualBox
 
+ 
 1. Open your VirtualBox application. You should see the Virtualbox Manager menu.
-<!-- 
 
-    <img src={Pic001} style={{width: 700}} />   
-    
-    <img src={Pic001} width="700" />    -->
-
-<div>
-
-<img width="700" src="/img/docs/sv-basic-install-10.png"/>
-
-</div>
-
-<div style={{textAlign: 'center'}}>
-
-<img width="700" src="/img/docs/sv-basic-install-10.png"/>
-
-</div>
-
-
-<div style={{textAlign: 'center'}}>
-
-<img width="700" src="/static/img/docs/sv-basic-install-10.png"/>
-
-</div>
-
-<div style={{textAlign: 'center'}}>
-
-<img width="700" src="static/img/docs/sv-basic-install-10.png"/>
-
-</div>
-
-<div style={{textAlign: 'center'}}>
-
-<img width="700" src="../../../../static/img/docs/sv-basic-install-10.png"/>
-
-</div>
-
-<div style={{textAlign: 'center'}}>
-
-<img width="700" src="../../../../static/img/sv-basic-install-10.png"/>
-
-</div>
-
-
-<div style={{textAlign: 'center'}}>
-
-<img width="700" src="../../../img/sv-basic-install-10.png"/>
-
-</div>
-
-
-
-
-
-
-
-![Docusaurus Plushie](./sv-basic-install-10.png)
-
-
-<div>
-
-![Docusaurus Plushie](./sv-basic-install-10.png)
-
-</div>
-
-
-<div style={{textAlign: 'center'}}>
-
-![Docusaurus Plushie](./sv-basic-install-10.png)
-
-</div>
-
-
-
-<!-- <div style={{textAlign: 'center'}}>
-
-![Docusaurus Plushie](/static/img/sv-basic-install-10.png)
-
-</div> -->
-
-
-
-<div style={{textAlign: 'center'}}>
-
-![Docusaurus Plushie](/img/sv-basic-install-10.png)
-
-</div>
-
-
-<div>
-
-<img src="/img/sv-basic-install-10.png"/>
-
-</div>
-
-
-<div>
-
-<img src="./sv-basic-install-10.png"/>
-
-</div>
-
-
-<div>
-
-<img src="./sv-basic-install-10.png"/>
-
-</div>
-
-
-
-
-<div>
-
-<img width="700" src="./sv-basic-install-10.png"/>
-
-</div>
-
-<div>
-
-<img width="200" src="./sv-basic-install-10.png"/>
-
-</div>
-
-
-<div style={{textAlign: 'center'}}>
-
-<img width="700" src="./sv-basic-install-10.png"/>
-
-</div>
-
-
-
-<!-- 
     <div style={{textAlign: 'center'}}>
-
-    ![image](../../img/sv-basic-install-10.png)
-
+    <img width="700" src="../../../Assets/sv-basic-install-10.png" />
     </div>
 
-     -->
+![](/img/ocs/sv-basic-install-10.png)
+    ![](/img/ocs/sv-basic-install-10.png)
+
 <!-- 
 2. To add an image, click **New**. It will prompt you to enter a name for your VM. The distro is also detected, but you can change it. Click **Next**.
 
-    <img style={{width: 500}} src={Pic002} />
+<p align=center>
+<img width=500 src="../Images/vbox-setup2.png">
+</p>
 
 3. Next, setup the specifications of your VM. You can simply use the defaults and click **Next > Create > Next**.
 
-    <img style={{width: 500}} src={Pic003} />
-    <img style={{width: 500}} src={Pic004} />
-    <img style={{width: 500}} src={Pic005} />
+<p align=center>
+<img width=500 src="../Images/vbox-setup3.png">
+</p>
+<p align=center>
+<img width=500 src="../Images/vbox-setu4.png">
+</p>
+<p align=center>
+<img width=500 src="../Images/vbox-setup5.png">
+</p>
 
 4. For the virtual hard disk, we can set it to 20GB since the images would normally need more than 12 GB. Click **Create** and the window will close. Select the VM and click **Settings**.
 
-    <img style={{width: 500}} src={Pic006} />
+<p align=center>
+<img width=500 src="../Images/vbox-setup6.png">
+</p>
 
 
 5. Select **Storage > Empty** then click the CD icon beside the **Optical Drive** dropdown bar. The RHEL ISO file should appear here. If not, click **Choose/Create a Virtual Optical Disk** and select the RHEL ISO file. Click **OK**.
 
-    <img style={{width: 500}} src={Pic007} />
+<p align=center>
+<img width=500 src="../Images/vbox-setup8.png">
+</p>
 
 6. Double-click the VM to start it. You should now be see the installation page. Select the **Install** option. This will take a few minutes.
 
-    <img style={{width: 500}} src={Pic008} />
+<p align=center>
+<img width=500 src="../Images/vbox-install.png">
+</p>
 
 6. Next step is to set the language and other system configuration.
 
-    <img style={{width: 500}} src={Pic009} />
-    <img style={{width: 500}} src={Pic010} />
+<p align=center>
+<img width=500 src="../Images/vboxinstall2.png">
+</p>
+<p align=center>
+<img width=500 src="../Images/vboxinstall3.png">
+</p>
 
 7. The **Time & Date** can also be set in this menu.
 
-    <img style={{width: 500}} src={Pic011} />
+<p align=center>
+<img width=500 src="../Images/vboxinstall5.png">
+</p>
 
 8. Similarly, the **Network and Hostname** can also be modified. After changing the hostname at the bottom, click **Apply**.
 Enable the Ethernet card by toggling **On**. The NIC should auto-populate with the IP, DNS Route, and DNS.
 
-    <img style={{width: 500}} src={Pic012} />
+<p align=center>
+<img width=500 src="../Images/vboxinstall4.png">
+</p>
 
 9. Confirm the **Installation Destination**. We'll set up a second machine in the next Lab and set up custom partitioning. For this one, just click **Done**.
 
-    <img style={{width: 500}} src={Pic013} />
+<p align=center>
+<img width=500 src="../Images/vboxinstall6.png">
+</p>
 
 
 10. Set the **Root Password**.
 
-    <img style={{width: 500}} src={Pic014} />
+<p align=center>
+<img width=500 src="../Images/vboxinstall7.png">
+</p>
 
 11. Create a user through **User Creation**.
 
-    <img style={{width: 500}} src={Pic015} />
-    <img style={{width: 500}} src={Pic016} />
+<p align=center>
+<img width=500 src="../Images/vboxinstall8.png">
+</p>
+<p align=center>
+<img width=500 src="../Images/vboxinstall9.png">
+</p>
 
 11. Finally, click **Begin Installation**. This will take a while. After this is done, **Reboot system**.
 
-    <img style={{width: 500}} src={Pic017} />
-    <img style={{width: 500}} src={Pic018} />
+<p align=center>
+<img width=500 src="../Images/vboxinstall10.png">
+</p>
+<p align=center>
+<img width=500 src="../Images/vboxinstall1.png">
+</p>
 
 
 12. After VM is rebooted, you may be prompted to accept the licensing. Afterwards, click **Finish configuration**.
 
-    <img style={{width: 500}} src={Pic019} />
+<p align=center>
+<img width=500 src="../Images/vboxinstall12.png">
+</p>
 
 13. You will then be brought to the sign-in page. Login using **root**. You will be prompted to select a language and a few more settings before you're able to **Start using Red Hat Enterprise Linux**.
 
-    <img style={{width: 500}} src={Pic020} />
-    <img style={{width: 500}} src={Pic021} />
-    <img style={{width: 500}} src={Pic022} />
+<p align=center>
+<img width=500 src="../Images/vboxinstall13.png">
+</p>
+<p align=center>
+<img width=500 src="../Images/vboxinstall144.png">
+</p>
+<p align=center>
+<img width=500 src="../Images/vboxinstall15.png">
+</p>
 
 14. As a final step, make sure to remove the ISO file for now. If the ISO file is still loaded and system is rebooted, you will be prompted to go through the entire boot process again.
 
-    <img style={{width: 500}} src={Pic023} />
+<p align=center>
+<img width=500 src="../Images/vbox-complete.png">
+</p>
 
 More details about it here: [Oracle VM make me install Ubuntu every time I restart the virtual machine [closed]](https://stackoverflow.com/questions/60582106/oracle-vm-make-me-install-ubuntu-every-time-i-restart-the-virtual-machine)
 
-
+</details>
 
 
 ## RHEL on the cloud
 
 As another option, you can also run Linux boxes on the cloud. This is also my preferred method since it doesn't consume resources from my laptop and instead uses the resources from the cloud provider.
 
-### Configure EC2
+<details><summary> To know how to configure EC2, read more </summary>
+<br>
 
 Note that you may need to setup the **VPC** and all of its associated comoponents as well. This is useful for the succeeding labs in this series where we'll launch two or more machines that needs to talk to each other.
 
@@ -311,7 +195,7 @@ These are templates where the components are *declaratively* defined, you just n
 - [Creating EC2 instance in AWS with CloudFormation](https://octopus.com/blog/aws-cloudformation-ec2-examples)
 - [aws-vpc-cloud-formation/base-vpc-example-improved.template.yml](https://github.com/kennyk65/aws-vpc-cloud-formation/blob/master/base-vpc-example-improved.template.yml)
 
-
+</details>
 
 
 ## A few reminders
@@ -329,4 +213,5 @@ Here are some few quick reminders when setting up EC2 instances in the cloud.
 - If you prefer to **use VM instances on Google Cloud Platform**, you can check this [link](https://cloud.google.com/compute/docs/instances/create-start-instance).
 
 
+As always, happy learning! 😀
  -->
