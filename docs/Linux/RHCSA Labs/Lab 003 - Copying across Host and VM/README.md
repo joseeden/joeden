@@ -1,41 +1,18 @@
-<!-- ---
+---
 title: 003 - Copying across Host and Guest Machine
+tags: [Linux, DevOps, Red Hat, Labs]
+last_update:
+  date:  6/1/2023
 ---
 
-import Pic001 from '../../img/vbox-bidir.png';
-import Pic002 from '../../img/vbox-bidir-2.png';
-import Pic003 from '../../img/vbox-bidir.png';
-import Pic004 from '../../img/vbox-bidir-2.png';
-import Pic005 from '../../img/vbox1.png';
-import Pic006 from '../../img/vbox2.png';
-import Pic007 from '../../img/vbox3.png';
-import Pic008 from '../../img/vbox4.png';
-import Pic009 from '../../img/vbox5.png';
-import Pic010 from '../../img/vbox1.png';
-import Pic011 from '../../img/vbox6.png';
-import Pic012 from '../../img/vbox7.png';
-import Pic013 from '../../img/vbox8.png';
-import Pic014 from '../../img/vbox1.png';
-import Pic015 from '../../img/vbox9.png';
-import Pic016 from '../../img/sv-error-1.png';
-import Pic017 from '../../img/sv-error-2.png';
-import Pic018 from '../../img/sv-kernelerror-1.png';
-import Pic019 from '../../img/vbox1.png';
-import Pic020 from '../../img/vboxadd-2.png';
-import Pic021 from '../../img/vboxadd-gcc.png';
-import Pic022 from '../../img/vboxadd-gcc-make.png';
-import Pic023 from '../../img/vboxadd-gcc-make-2.png';
-import Pic024 from '../../img/vbox1.png';
-import Pic025 from '../../img/vboxadd-new-1.png';
 
+Thought I'd include this part since I used VirtualBox VMs in some of the labs in this series. I was having issues copying text from my laptop and then pasting them onto the terminal inside the VM (and then vice versa). I've also included some packages that would be helpful. Some setup doesn't come with pre-built packages like vim.
 
-Thought I'd include this part since I used VirtualBox VMs in some of the labs in this series. I was having issues copying text from my laptop and then pasting them onto the terminal inside the VM (and then vice versa).
-
-I've also included some packages that would be helpful. Some setup doesn't come with pre-built packages like vim.
-
-## The Shortcut
+## The Shortcut:
 
 If you prefer to skip the lengthy reading, here is the summary of commands I ran. This can also be turned into a script. 
+
+Summary of commands:
 
 ```bash
 sudo dnf upgrade
@@ -48,38 +25,41 @@ sudo reboot
 
 What does these commands do?
 
-- Install vim, firewalld, if they don't come pre-installed yet
+- Install vim, firewalld, if they don't come pre-installed yet.
 - Install requirements for VBOX additions, which allows copying of text across host machine and the VMs.
-- Updates all presently installed packages
+- Updates all presently installed packages.
 
 Note that after you reboot, you need to click **Devices** tab on the Virtualbox VM and enable "bidirectional" on the following options
 
 - Drag and Drop
 - Shared Clipboard
 
+    <div class="img-center"> 
+    [](/img/docs/vbox-bidir.png)
+    </div>
 
-<img style={{width: 700}} src={Pic001} />
-
-
-
-<img style={{width: 700}} src={Pic002} />
-
+    <div class="img-center"> 
+    [](/img/docs/vbox-bidir-2.png)
+    </div>
 
 
 ## The Detailed Steps
 
+If you prefer to know the steps I did (and the errors I encountered along the way), click the **Read more** below.
+
+<details><summary> Read more... </summary>
 
 ### Enable bidirectonal on the VM menu
 
 On the **Devices** tab, I set both **Shared Clipboard** and **Drag and Drop** to **bidirectional**. Then rebooted it.
 
+<div class="img-center"> 
+[](/img/docs/vbox-bidir.png)
+</div>
 
-<img style={{width: 700}} src={Pic001} />
-
-
-
-<img style={{width: 700}} src={Pic002} />
-
+<div class="img-center"> 
+[](/img/docs/vbox-bidir-2.png)
+</div>
 
 Normally, this would allow the copying and pasting of text across the host and guest machine. But since this didn't worked, I had to install the Guest Additions.
 
@@ -87,48 +67,48 @@ Normally, this would allow the copying and pasting of text across the host and g
 
 On the **Devices** tab, click **Insert Guest Additions CD Images..**.
 
-
-<img style={{width: 700}} src={Pic005} />
-
-
-<img style={{width: 700}} src={Pic006} />
-
-
-<img style={{width: 700}} src={Pic007} />
-
+<div class="img-center"> 
+[](/img/docs/vbox1.png)
+</div>
+<div class="img-center"> 
+[](/img/docs/vbox2.png)
+</div>
+<div class="img-center"> 
+[](/img/docs/vbox3.png)
+</div>
 
 However, I keep getting this error:
-
-<img style={{width: 700}} src={Pic008} />
-
+<div class="img-center"> 
+[](/img/docs/vbox4.png)
+</div>
 
 So I tried running the command, and then inserting the guest additions image again.
-
-<img style={{width: 700}} src={Pic009} />
-
-
-<img style={{width: 700}} src={Pic005} />
-
+<div class="img-center"> 
+[](/img/docs/vbox5.png)
+</div>
+<div class="img-center"> 
+[](/img/docs/vbox1.png)
+</div>
 
 Then I got a new error message. I went to the **Optical Drives** to force unmount the disk and tried to insert the guest additions image again. This required the authentication again.
-
-<img style={{width: 700}} src={Pic011} />
-
-
-<img style={{width: 700}} src={Pic012} />
-
-
-<img style={{width: 700}} src={Pic013} />
-
-
-<img style={{width: 700}} src={Pic005} />
-
+<div class="img-center"> 
+[](/img/docs/vbox6.png)
+</div>
+<div class="img-center"> 
+[](/img/docs/vbox7.png)
+</div>
+<div class="img-center"> 
+[](/img/docs/vbox8.png)
+</div>
+<div class="img-center"> 
+[](/img/docs/vbox1.png)
+</div>
 
 I still got the same error.
 
-
-<img style={{width: 700}} src={Pic015} />
-
+<div class="img-center"> 
+[](/img/docs/vbox9.png)
+</div>
 
 
 ### Error 1/3: Kernel Headers Not Found For Target Kernel Error [RESOLVED]
@@ -140,9 +120,9 @@ ls /usr/src/kernels/
 sudo yum install -y "kernel-devel-uname-r == $(uname -r)"
 ```
 
-
-<img style={{width: 700}} src={Pic016} />
-
+<div class="img-center"> 
+[](/img/docs/sv-error-1.png)
+</div>
 
 This need to be resolved first. Followed suggestions from [RH discussion](https://access.redhat.com/discussions/4656371), but this didn't helped.
 Then I tried to compare the two repo file. Turns out I was using "zero" for "Base0S" instead of "BaseOS". Corrected this and run the new commands using dnf instead of yum.
@@ -153,9 +133,9 @@ sudo rm -r /var/cache/dnf
 sudo dnf upgrade
 ```
 
-
-<img style={{width: 700}} src={Pic017} />
-
+<div class="img-center"> 
+[](/img/docs/sv-error-2.png)
+</div>
 
 Went back to the original issue and re-run the install again.
 
@@ -163,22 +143,21 @@ Went back to the original issue and re-run the install again.
 sudo dnf install -y "kernel-devel-uname-r == $(uname -r)"
 ```
 
-
-<img style={{width: 700}} src={Pic018} />
-
+<div class="img-center"> 
+[](/img/docs/sv-kernelerror-1.png)
+</div>
 
 Then retried adding guest additions again using the same steps:
 
-
-<img style={{width: 700}} src={Pic005} />
-
+<div class="img-center"> 
+[](/img/docs/vbox1.png)
+</div>
 
 This time it showed a different error.
 
-
-<img style={{width: 700}} src={Pic020} />
-
--
+<div class="img-center"> 
+[](/img/docs/vboxadd-2.png)
+</div>
 
 ### Error 2/3: Please install the gcc make perl packages from your distribution [RESOLVED] 
 
@@ -188,28 +167,28 @@ Following another link: [Guest additionals: Kernel headers not found for target 
 sudo dnf install -y gcc make perl kernel-headers kernel-devel
 ```
 
-
-<img style={{width: 700}} src={Pic021} />
-
-
-<img style={{width: 700}} src={Pic022} />
-
-
-<img style={{width: 700}} src={Pic023} />
-
+<div class="img-center"> 
+[](/img/docs/vboxadd-gcc.png)
+</div>
+<div class="img-center"> 
+[](/img/docs/vboxadd-gcc-make.png)
+</div>
+<div class="img-center"> 
+[](/img/docs/vboxadd-gcc-make-2.png)
+</div>
 
 Rebooted afterwards, then tried installing Guest Additions again.
 
-
-<img style={{width: 700}} src={Pic005} />
-
+<div class="img-center"> 
+[](/img/docs/vbox1.png)
+</div>
 
 
 Got a new error:
 
-
-<img style={{width: 700}} src={Pic025} />
-
+<div class="img-center"> 
+[](/img/docs/vboxadd-new-1.png)
+</div>
 
 
 ### Error 3/3: Look at /var/log/vboxadd-setup.log to find out what went wrong [RESOLVED]
@@ -238,4 +217,4 @@ After installing the **gcc, make**, **elfutils**, and doing the rest of the othe
 - [Installing multiple packages with one yum command](https://unix.stackexchange.com/questions/7638/installing-multiple-packages-with-one-yum-command)
 
 
-As always, happy learning! 😀 -->
+As always, happy learning! 😀
