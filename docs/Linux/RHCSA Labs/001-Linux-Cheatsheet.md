@@ -3,7 +3,7 @@ title: Linux Commands Cheatsheet
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 2
 last_update:
-  date: 24/2/2021
+  date: 2/24/2021
 ---
 
 <!-- > This is the first-part of a series of bite-sized Linux sessions.
