@@ -33,7 +33,7 @@ For this lab, beegin by installing VirtualBox on your local machine. We will als
 1. Open your VirtualBox application. You should see the Virtualbox Manager menu.
 
     <div style={{textAlign: 'center'}}>
-    <img width="700" src="/img/docs/sv-basic-install-10.png />
+    <img width="700" src="/img/docs/sv-basic-install-10.png" />
     </div>
 
     <div class="img-center"> 
