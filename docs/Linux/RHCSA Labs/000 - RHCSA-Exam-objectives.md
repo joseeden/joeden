@@ -2,6 +2,8 @@
 title: 000 - Exam Objectives
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 1
+last_update:
+  date: 1/6/2023
 ---
 
 import Tabs from '@theme/Tabs';
@@ -9,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 
 <Tabs className="unique-tabs">
-<TabItem value="2022" label="2022" default>
+<TabItem value="2022" default>
 
 RHCSA exam candidates should be able to accomplish the tasks below without assistance. These have been grouped into several categories.
 
