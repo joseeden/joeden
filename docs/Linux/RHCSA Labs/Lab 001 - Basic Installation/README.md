@@ -37,11 +37,11 @@ For this lab, beegin by installing VirtualBox on your local machine. We will als
     </div>
 
     <div class="img-center"> 
-    <img width="700" src="/img/docs/sv-basic-install-10.png />
+    <img width="700" src="/img/docs/sv-basic-install-10.png" />
     </div>
 
     <div class="text--center">
-    <img width="700" src="/img/docs/sv-basic-install-10.png />
+    <img width="700" src="/img/docs/sv-basic-install-10.png" />
     </div>
 
     <div style={{textAlign: 'center'}}>
