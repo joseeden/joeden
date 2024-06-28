@@ -6,6 +6,11 @@ last_update:
   date: 7/8/2022
 ---
 
+<!-- ***************************************************************************************************************************** -->
+
+<!-- NOTE: If you're going to update this, make sure to comment out "last_update" and "date" in the first few lines. -->
+
+<!-- ***************************************************************************************************************************** -->
 
 This labs are based on [Sander Van Vugt's O'Reailly course, "Red Hat Certified System Administrator (RHCSA), 3/e"](https://www.oreilly.com/videos/red-hat-certified/9780135656495/)
 
@@ -1207,5 +1212,29 @@ Unknown argument provided
 
 </details>
 
+
+
+
+## Lab 06 - Resizing LVM
+
+**Tasks:**
+
+Change the logical volume capacity named vo from 190M to 300M. and the size of the floating range should set between 280 and 320. (This logical volume has been mounted in advance.)
+
+<details>
+  <summary> **Solution** </summary>
+
+
+```bash
+sudo su -
+lsblk
+lsblk -f
+vgs
+umount vo
+lvextend -r -L 110M /dev/mapper/vo
+mount -a
+```
+
+</details>
 
 

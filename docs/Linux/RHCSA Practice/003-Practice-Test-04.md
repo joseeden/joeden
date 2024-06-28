@@ -6,6 +6,11 @@ last_update:
   date: 7/8/2022
 ---
 
+<!-- ***************************************************************************************************************************** -->
+
+<!-- NOTE: If you're going to update this, make sure to comment out "last_update" and "date" in the first few lines. -->
+
+<!-- ***************************************************************************************************************************** -->
 
 ## Lab 01 - Checking Jobs 
 
@@ -166,6 +171,110 @@ Find all files on your system that are owned by user eden and copy these files i
 ```bash
 mkdir -p /tmp/edendir
 find / -user eden -exec cp {} /tmp/edendir \;
+```
+
+</details>
+
+
+## Lab 05 - Grep
+
+**Tasks:**
+
+Find the rows that contain "webpagede" from file /etc/testfile, and write it to the file/tmp/testfile, and the sequence is requested as the same as /etc/testfile.
+
+<details>
+  <summary> **Solution** </summary>
+
+```bash
+cat /etc/testfile 
+grep webpagede /etc/testfile > /tmp/testfile 
+```
+
+</details>
+
+
+## Lab 06 - Autofs
+
+**Tasks:**
+
+Configure autofs to make sure after login successfully, it has the home directory autofs, which is shared as /home/ldapuser40 at the ip: 172.24.40.10. and it also requires that, other ldap users can use the home directory normally.
+
+<details>
+  <summary> **Solution** </summary>
+
+
+```bash
+sudo su -
+
+# check if autofs exist
+ll /etc/auto*
+systemctl status autofs
+
+# if the autofs are not found, install autofs
+yum search autofs
+yum install -y autofs
+ll /etc/auto*
+
+# edit the files
+cd /etc
+ll
+vim auto.master
+	/home	/etc/auto.ldap
+vim auto.ldap
+	/home/ldapuser40	-rw,soft,intr   172.24.40.10:/home/ldapuser40
+
+# restart autofs
+systemctl restart autofs
+systemctl status autofs
+showmount -e 172.24.40.10
+
+# verify by loggin-in using the user
+su - ldapuser40	
+```
+ 
+
+</details>
+
+
+## Lab 07 - LVM
+
+**Tasks:**
+
+1. Create logical volume ‘lv1’ with volume group ‘group’.
+2. The logical volume ‘lv1’ should be of size 60.
+3. PE size should be 4 mb .
+4. Filesystem type is ext4. This logical volume must be mounted at /mnt/redhat.
+5. Extend by 10M.
+
+<details>
+  <summary> **Solution** </summary>
+
+
+```bash
+sudo su -
+# create partition first, if created, proceed 
+sudo fdisk /dev/xxx
+pvcreate /dev/xxx1
+pvs
+vgcreate -s 4 group /dev/xxx1
+vgs
+lvcreate -l 60 -n lv1 group
+lvs
+mkfs.ext4 /dev/group/lv1
+
+mkdir -p /mnt/redhat
+vim /etc/fstab
+	/dev/group/lv1	/mnt/redhat	xfs	defaults		0  0
+	:wq!
+lsblk
+mount -a
+lsblk
+lsblk -f
+```
+```bash
+lvextend -l +10 /dev/group/lv1
+resize2fs /dev/group/lv1
+lsblk
 ```
 
 </details>

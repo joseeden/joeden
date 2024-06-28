@@ -6,6 +6,11 @@ last_update:
   date: 7/8/2022
 ---
 
+<!-- ***************************************************************************************************************************** -->
+
+<!-- NOTE: If you're going to update this, make sure to comment out "last_update" and "date" in the first few lines. -->
+
+<!-- ***************************************************************************************************************************** -->
 
 ## Lab 01 - Networking
 
@@ -73,10 +78,10 @@ sudo hostnamectl set-hostname phoenix.anaheim.lab.com
 
 **Tasks:**
 
-Configure you anaheim.example.com as yum client so that you can download and install package from
+Configure your anaheim.example.com as yum client so that you can download and install package from
 your yum repository at
-- http://content.example.com/rhel8.2/x86_64/dvd/BaseOS
-- http://content.example.com/rhel7.0/x86_64/dvd/AppStream
+- http://anaheim.example.com/rhel8.2/x86_64/dvd/BaseOS
+- http://anaheim.example.com/rhel7.0/x86_64/dvd/AppStream
 
 
 <details>
@@ -98,14 +103,14 @@ touch AppStream.repo
 vim BaseOS.repo
 [BaseOS]
 name=BaseOS
-baseurl=http://content.example.com/rhel8.2/x86_64/dvd/BaseOS
+baseurl=http://anaheim.example.com/rhel8.2/x86_64/dvd/BaseOS
 gpgcheck=0
 enabled=1
 
 vim AppStream.repo
 [AppStream]
 name=AppStream
-baseurl=http://content.example.com/rhel7.0/x86_64/dvd/AppStream
+baseurl=http://anaheim.example.com/rhel7.0/x86_64/dvd/AppStream
 gpgcheck=0
 enabled=1
 ```
@@ -160,7 +165,7 @@ chmod 745 update.doc
 sudo su -
 cp /etc/fstab /var/tmp/fstab
 setfacl -m u:michael:rw /var/tmp/fstab
-setfacl -m u:user pete:r /var/tmp/fstab
+setfacl -m u:pete:r /var/tmp/fstab
 setfacl -m u:tony:--- /var/tmp/fstab
 setfacl -m o:r /var/tmp/fstab
 getfacl /var/tmp/fstab
@@ -195,7 +200,7 @@ sudo su -
 groupadd uxdevs
 useradd -G uxdevs henry
 useradd -G uxdevs john
-useradd -s /sbin/nologin swill
+useradd -s /sbin/nologin will
 echo 'password' | passwd --stdin henry
 echo 'password' | passwd --stdin john
 echo 'password' | passwd --stdin will
@@ -206,47 +211,4 @@ chmod 2660 /mnt/reports
 ```
 
 </details>
-
-
-
-## Lab 
-
-**Tasks:**
-
-
-<details>
-  <summary> **Solution** </summary>
-
-
-
-</details>
-
-
-
-## Lab 
-
-**Tasks:**
-
-
-<details>
-  <summary> **Solution** </summary>
-
-
-
-</details>
-
-
-
-## Lab 
-
-**Tasks:**
-
-
-<details>
-  <summary> **Solution** </summary>
-
-
-
-</details>
-
 

@@ -6,6 +6,11 @@ last_update:
   date: 7/8/2022
 ---
 
+<!-- ***************************************************************************************************************************** -->
+
+<!-- NOTE: If you're going to update this, make sure to comment out "last_update" and "date" in the first few lines. -->
+
+<!-- ***************************************************************************************************************************** -->
 
 This labs are based on [Sander Van Vugt's O'Reailly course, "Red Hat Certified System Administrator (RHCSA), 3/e"](https://www.oreilly.com/videos/red-hat-certified/9780135656495/)
 
@@ -607,6 +612,30 @@ $ touch /.autorelabel
 ```
 
 To exit out, hit Ctrl-D twice. Once it reboot, it should prompt you to enter the new root password in the GUI.
+
+</details>
+
+
+
+## Lab 06 - Installing an FTP Server
+
+**Tasks:**
+
+Install a FTP server, and request to anonymous download from /var/ftp/finance catalog. (You need to configure yum direct to the already existing file server.)
+
+
+<details>
+  <summary> **Solution** </summary>
+
+```bash
+sudo su -
+yum install -y vsftpd
+systemctl enable --now vsftpd
+systemctl status vsftpd
+
+vim /etc/vsftpd/vsftpd.conf
+	anonymous_enalble=YES
+```
 
 </details>
 

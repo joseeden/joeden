@@ -6,6 +6,11 @@ last_update:
   date: 7/8/2022
 ---
 
+<!-- ***************************************************************************************************************************** -->
+
+<!-- NOTE: If you're going to update this, make sure to comment out "last_update" and "date" in the first few lines. -->
+
+<!-- ***************************************************************************************************************************** -->
 
 This labs are based on [Sander Van Vugt's O'Reailly course, "Red Hat Certified System Administrator (RHCSA), 3/e"](https://www.oreilly.com/videos/red-hat-certified/9780135656495/)
 

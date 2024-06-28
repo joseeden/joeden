@@ -6,6 +6,13 @@ last_update:
   date: 7/8/2022
 ---
 
+<!-- ***************************************************************************************************************************** -->
+
+<!-- NOTE: If you're going to update this, make sure to comment out "last_update" and "date" in the first few lines. -->
+
+<!-- ***************************************************************************************************************************** -->
+
+
 :::info[Note]
 
 These are some of the scenarios that I haven't tried to simulate yet. 
