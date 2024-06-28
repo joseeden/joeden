@@ -29,6 +29,7 @@ This labs are based on [Sander Van Vugt's O'Reailly course, "Red Hat Certified S
 
 Start with the settings for new users, for 1 and 2.
 
+
 ```bash
 $ sudo vim /etc/login.defs
 
@@ -40,11 +41,13 @@ PASS_WARN_AGE   7
 
 For 5, create the file in the /etc/skel.
 
+
 ```bash
 $ sudo touch /etc/skel/newfile
 ```
 
 Create users: 
+
 
 ```bash
 $ sudo useradd ted
@@ -55,12 +58,14 @@ $ sudo useradd lily
 ```
 
 Set password for ted and robin to 'himym'
+
 ```bash
 sudo echo himym | passwd --stdin ted
 sudo echo himym | passwd --stdin robin
 ```
 
 Disable password for lily, mars, and barney. To disable passwords, we can "lock" them by using the '-l' flag.
+
 ```bash
 passwd -l lily
 passwd -l mars
@@ -74,6 +79,7 @@ groupadd students
 ```
 
 Add the users to their approriate groups.
+
 ```bash
 usermod -aG profs ted
 usermod -aG profs robin
@@ -83,6 +89,7 @@ usermod -aG students barney
 ```
 
 Verify.
+
 ```bash
 $ id ted
 uid=1001(ted) gid=1001(ted) groups=1001(ted),10(wheel),1006(profs)
@@ -100,7 +107,6 @@ $ id barney
 uid=1003(barney) gid=1003(barney) groups=1003(barney),1007(students)
 ```
 
-
 </details>
 
 ## Lab 02 - Permissions
@@ -115,9 +121,11 @@ uid=1003(barney) gid=1003(barney) groups=1003(barney),1007(students)
 4. User Ted as headmaster should be able to delete everything in both /data/profs and  /data/students.
 5. Finally, members of group **profs** should be able to read all files in /data/students/
 
-**SOLUTION**
+<details>
+  <summary> **Solution** </summary>
 
 Set user-specific umask 007 for the user 'ted'. This ensures that the User and Group has access to any files that the user creates, but Others don't have access to it.
+
 ```bash
 $ sudo vim /home/ted/.bash_profile
 
@@ -125,6 +133,7 @@ umask 007
 ```
 
 Test this.
+
 ```bash
 $ su - ted
 $ touch others-cant-access-this.txt
@@ -133,6 +142,7 @@ $ ll others-cant-access-this.txt
 ```
 
 Create the new directories.
+
 ```bash
 $ mkdir -p /data/{profs,students}
 $ ll /data/
@@ -142,6 +152,7 @@ drwxr-xr-x. 2 root root 6 Mar 12 15:28 students
 ```
 
 Change permissions for the two directories. Note that the **sticky bit** restricts who can delete files in a directory.
+
 ```bash
 $ sudo chmod 3770 /data/profs
 $ sudo chmod 3770 /data/students
@@ -154,6 +165,7 @@ drwxrws--T. 2 root root 6 Mar 12 15:28 students
 At this point, the members have RW access to files inside their respective directories. In the next step, we need to grant user 'ted' rights to delete all files inside both directory.
 
 To do this with sticky bit enabled for both directories (recall that the sticky bits only allow members to delete the files that they have created), we need to give user 'Ted' ownership of both directories.
+
 ```bash
 $ sudo chown ted:students /data/students/
 $ sudo chown ted:profs /data/profs
@@ -164,11 +176,13 @@ drwxrws--T. 2 ted students 6 Mar 12 15:28 students
 ```
 
 Finally, to provide members of the group **profs** read access to all the files in /data/students, we need configure ACLs.
+
 ```bash
 $ setfacl -m d:g:profs:rx /data/students/
 ```
 
 To verify,
+
 ```bash
 $ cd /data/students
 $ getfacl .
@@ -188,9 +202,9 @@ default:other::---
 
 ```
 
-
-
 </details>
+
+
 
 ## Lab 03 - Processes 
 
@@ -205,6 +219,7 @@ default:other::---
   <summary> **Solution** </summary>
 
 Run the command below, hit Ctrl-z then type **bg** to run the job in the background.
+
 ```bash
 $ dd if=/dev/zero of=/dev/null
 ^Z
@@ -215,6 +230,7 @@ $ bg
 ```
 
 To verify that it's running,
+
 ```bash
 $ jobs
 
@@ -222,6 +238,7 @@ $ jobs
 ```
 
 Repeat this two more times.
+
 ```bash
 $ dd if=/dev/zero of=/dev/null
 ^Z
@@ -239,6 +256,7 @@ $ bg
 ```
 
 Verify.
+
 ```bash
 $ jobs
 
@@ -267,6 +285,7 @@ Press enter multiple times. We'll see that the screen didn't immediately cleared
 ![](/img/docs/plabsrenice6.png)
 
 Finally, kill all background 'dd' jobs.
+
 ```bash
 $ jobs
 [1]   Running                 dd if=/dev/zero of=/dev/null &
@@ -281,9 +300,9 @@ $ jobs
 
 ```
 
-
-
 </details>
+
+
 
 ## Lab 04 - SSH
 
@@ -295,30 +314,32 @@ $ jobs
   <summary> **Solution** </summary>
 
 Generate the keygen.
+
 ```bash
 $ ssh-keygen
 ```
 
 Before we can copy it to the localhost, we must first enable key-based authentication temporarily. Edit the /etc/ssh/sshd_config and add the **AllowUsers**. Restart sshd afterwards.
+
 ```bash
 $ sudoedit /etc/ssh/sshd_config
 
 AllowUsers root
 ```
+
 ```bash
 $ sudo systemctl restart sshd
 ```
 
 You should now be able to copy the recently generated RSA key to the localhost.
+
 ```bash
 $ ssh-copy-id localhost
 ```
 
-
-
-
-
 </details>
+
+
 
 ## Lab 05 - HTTPD and Systemd
 
@@ -331,6 +352,7 @@ $ ssh-copy-id localhost
   <summary> **Solution** </summary>
 
 Install and enable httpd.
+
 ```bash
 $ sudo yum install -y httpd
 $ sudo systemctl enable --now httpd
@@ -338,6 +360,7 @@ $ sudo systemctl status httpd
 ```
 
 Configure the service to restart after 5 seconds of being stopped.
+
 ```bash
 $ systemctl edit httpd
 
@@ -347,17 +370,20 @@ RestartSec=5s
 ```
 
 Reload the daemon.
+
 ```bash
 $ systemctl daemon-reload
 ```
 
 Enable and restart httpd again. Verify status.
+
 ```bash
 $ sudo systemctl enable --now httpd
 $ sudo systemctl status httpd
 ```
 
 Kill the httpd service and verify status. The **Active** line should now show 'activatin' which means systemd is waiting for the 5 seconds timeout before it restarts the service.
+
 ```bash
 $ killall httpd
 $ sudo systemctl status httpd
@@ -370,11 +396,9 @@ $ sudo systemctl status httpd
 
 ```
 
-
-
-
-
 </details>
+
+
 
 ## Lab 06 - Allow HTTP on Firewall
 
@@ -386,17 +410,20 @@ $ sudo systemctl status httpd
 <details>
   <summary> **Solution** </summary>
 Check the firewall.
+
 ```bash
 $ firewall-cmd --list-all
 ```
 
 Configure Firewall to allow http. This should persist across reboots.
+
 ```bash
 $ firewall-cmd --add-service={http,https}
 $ firewall-cmd --add-service={http,https} --permanent
 ```
 
 Verify.
+
 ```bash
 firewall-cmd --list-all
 public (active)
@@ -416,9 +443,11 @@ public (active)
 ```
 
 Restart firewall and verify again.
+
 ```bash
 $ sudo systemctl restart  firewalld.service
 ```
+
 ```bash
 $ firewall-cmd --list-all
 public (active)
@@ -437,10 +466,9 @@ public (active)
   rich rules:
 ```
 
-
-
-
 </details>
+
+
 
 ## Lab 07 - Configure Logging
 
@@ -451,12 +479,15 @@ public (active)
 
 <details>
   <summary> **Solution** </summary>
+
 Ensure that systemd journal is stored persistently. To do this, create first the /var/log/journal directory.
+
 ```bash
 $ mkdir /var/log/journal
 ```
 
 Journal should be rotated on a monthly basis. To do this, create a new conf file inside the /etc/logrotate.d.
+
 ```bash
 $ cd /etc/logrotate.d/
 $ vim journal
@@ -469,9 +500,9 @@ $ vim journal
 
 ```
 
-
-
 </details>
+
+
 
 ## Lab 08 - Linux Storage
 
@@ -489,6 +520,7 @@ $ vim journal
   <summary> **Solution** </summary>
 
 I currently have 3 EBS disks (xvdb, xvdc, xvdd) attached to my EC2 instances. We'll be using this for the remainder of the storage labs.
+
 ```bash
 $ lsblk
 NAME    MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
@@ -501,6 +533,7 @@ xvdd    202:48   0  10G  0 disk
 ```
 
 Create the primary and extended partitions for /dev/xvdb using fdisk. The extended partitions will be shared by the two logical partitions (the two 500M).
+
 
 ```bash
 [root@tst-rhel ~]# fdisk /dev/xvdb
@@ -521,6 +554,7 @@ Last sector, +sectors or +size{K,M,G,T,P} (2048-20971519, default 20971519): +1G
 
 Created a new partition 1 of type 'Linux' and of size 1 GiB. 
 ```
+
 ```bash
 Command (m for help): n
 Partition type
@@ -533,6 +567,7 @@ Last sector, +sectors or +size{K,M,G,T,P} (2099200-20971519, default 20971519):
 
 Created a new partition 2 of type 'Extended' and of size 9 GiB.
 ```
+
 ```bash
 Command (m for help): n
 All space for primary partitions is in use.
@@ -550,6 +585,7 @@ Last sector, +sectors or +size{K,M,G,T,P} (3127296-20971519, default 20971519): 
 
 Created a new partition 6 of type 'Linux' and of size 500 MiB.
 ```
+
 ```bash
 Command (m for help): p
 Disk /dev/xvdb: 10 GiB, 10737418240 bytes, 20971520 sectors
@@ -565,12 +601,14 @@ Device     Boot   Start      End  Sectors  Size Id Type
 /dev/xvdb5      2101248  3125247  1024000  500M 83 Linux
 /dev/xvdb6      3127296  4151295  1024000  500M 83 Linux 
 ```
+
 ```bash
 Command (m for help): w
 The partition table has been altered.
 Calling ioctl() to re-read partition table.
 Syncing disks. 
 ```
+
 ```bash
 $ lsblk
 
@@ -589,6 +627,7 @@ xvde    202:64   0   10G  0 disk
 ```
 
 Create the swap partition. For this one, use the second 500M partition. we have to change the partition type.
+
 ```bash
 [root@tstrhel8 ~]# sudo fdisk /dev/xvdb
 
@@ -635,6 +674,7 @@ Help:
    o   create a new empty DOS partition table
    s   create a new empty Sun partition table
 ```
+
 ```bash
 Command (m for help): t
 Partition number (1,2,5,6, default 6):
@@ -666,6 +706,7 @@ Hex code (type L to list all codes): L
 1c  Hidden W95 FAT3 75  PC/IX           bc  Acronis FAT32 L fe  LANstep
 1e  Hidden W95 FAT1 80  Old Minix       be  Solaris boot    ff  BBT
 ```
+
 ```bash
 Hex code (type L to list all codes): 82
 
@@ -689,9 +730,11 @@ Device     Boot   Start      End  Sectors  Size Id Type
 
 Format partition 1 to EXT4 and mount it to /mount/files.
 We must first create the mount points
+
 ```bash
 $ mkdir -p /mount/files
 ```
+
 ```bash
 $ mkfs.ext4 /dev/xvdb1
 
@@ -708,6 +751,7 @@ Writing superblocks and filesystem accounting information: done
 ```
 
 Checking the block IDs, we see that there's a UUID set for partition 1. Copy the UUID.
+
 ```bash
 $ blkid
 
@@ -719,6 +763,7 @@ $ blkid
 ```
 
 Edit the /etc/fstab to create an entry for the mountpoint.
+
 ```bash
 $ vim /etc/fstab
 
@@ -727,6 +772,7 @@ UUID="b5c219d8-6c8f-49fa-8a2f-3953977afdeb"     /mount/files    ext4    defaults
 ```
 
 Mount the partition.
+
 ```bash
 [root@tstrhel8 ~]# lsblk
 NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
@@ -756,6 +802,7 @@ xvdc    202:32   0   10G  0 disk
 xvdd    202:48   0   10G  0 disk
 ```
 
+
 ```bash
 $ mount | tail -1
 
@@ -763,6 +810,7 @@ $ mount | tail -1
 ```
 
 From the extended partion, format the first 500M partition to XFS and mount it to /mount/xfs.
+
 ```bash
 [root@tstrhel8 ~]# lsblk -a
 NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
@@ -777,6 +825,7 @@ xvdb    202:16   0   10G  0 disk
 xvdc    202:32   0   10G  0 disk
 xvdd    202:48   0   10G  0 disk
 ```
+
 ```bash
 [root@tstrhel8 ~]# mkfs.xfs /dev/xvdb5
 meta-data=/dev/xvdb5             isize=512    agcount=4, agsize=32000 blks
@@ -791,6 +840,7 @@ log      =internal log           bsize=4096   blocks=1368, version=2
 realtime =none                   extsz=4096   blocks=0, rtextents=0
 
 ```
+
 ```bash
 [root@tstrhel8 ~]# lsblk -f
 NAME    FSTYPE LABEL UUID                                 MOUNTPOINT
@@ -807,9 +857,11 @@ xvdd
 ```
 
 Create the mountpoint for xfs and then create an entry on /etc/fstab.
+
 ```bash
 $ mkdir -p /mount/xfs
 ```
+
 ```bash
 $ vim /etc/fstab
 
@@ -818,6 +870,7 @@ UUID=b6a58c0e-4b73-430d-ae79-5502121900ae       /mount/xfs      xfs     defaults
 ```
 
 Mount the partition.
+
 ```bash
 [root@tstrhel8 ~]# lsblk
 NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
@@ -832,6 +885,7 @@ xvdb    202:16   0   10G  0 disk
 xvdc    202:32   0   10G  0 disk
 xvdd    202:48   0   10G  0 disk
 ```
+
 ```bash
 [root@tstrhel8 ~]# mount -a
 [root@tstrhel8 ~]# lsblk
@@ -847,6 +901,7 @@ xvdb    202:16   0   10G  0 disk
 xvdc    202:32   0   10G  0 disk
 xvdd    202:48   0   10G  0 disk
 ```
+
 ```bash
 $ mount | tail -2
 
@@ -855,11 +910,13 @@ $ mount | tail -2
 ```
 
 Mount the swap partition. The partition is already created but we need the setup the swap area. After that, we create the entry on /etc/fstab.
+
 ```bash
 [root@tstrhel8 ~]# mkswap /dev/xvdb6
 Setting up swapspace version 1, size = 500 MiB (524283904 bytes)
 no label, UUID=244f0bab-c8a2-4321-87a0-af66457822c2
 ```
+
 ```bash
 $ vim /etc/fstab
 
@@ -868,6 +925,7 @@ UUID=244f0bab-c8a2-4321-87a0-af66457822c2       swap            swap    defaults
 ```
 
 For the swap, we need to enable the swap.
+
 ```bash
 [root@tstrhel8 ~]# free -m
 
@@ -875,6 +933,7 @@ For the swap, we need to enable the swap.
 Mem:           3729         200        1746          17        1782        3266
 Swap:             0           0           0
 ```
+
 ```bash
 [root@tstrhel8 ~]# swapon -a
 [root@tstrhel8 ~]# free -m
@@ -883,6 +942,7 @@ Swap:             0           0           0
 Mem:           3729         200        1746          17        1782        3266
 Swap:           499           0         499
 ```
+
 ```bash
 [root@tstrhel8 ~]# lsblk
 NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
@@ -899,9 +959,11 @@ xvdd    202:48   0   10G  0 disk
 ```
 
 Now, to ensure everything will persist across reboot, restart the EC2 instance.
+
 ```bash
 $ reboot
 ```
+
 ```bash
 [eden@tstrhel8 ~]$ lsblk
 NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
@@ -917,11 +979,9 @@ xvdc    202:32   0   10G  0 disk
 xvdd    202:48   0   10G  0 disk
 ```
 
-
-
-
-
 </details>
+
+
 
 ## Lab 09 - Advanced Storage
 
@@ -934,6 +994,7 @@ xvdd    202:48   0   10G  0 disk
 **SOLUTION**
 
 From our previous lab, we could use the /dev/xvdc to create the LVM.
+
 ```bash
 [eden@tstrhel8 ~]$ lsblk
 NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
@@ -950,6 +1011,7 @@ xvdd    202:48   0   10G  0 disk
 ```
 
 Create a 1G partition for the LVM
+
 ```bash
 [eden@tstrhel8 ~]$ sudo fdisk /dev/xvdc
 
@@ -970,6 +1032,7 @@ Last sector, +sectors or +size{K,M,G,T,P} (2048-20971519, default 20971519): +1G
 
 Created a new partition 1 of type 'Linux' and of size 1 GiB.
 ```
+
 ```bash
 Command (m for help): t
 Selected partition 1
@@ -1001,6 +1064,7 @@ Hex code (type L to list all codes): L
 1c  Hidden W95 FAT3 75  PC/IX           bc  Acronis FAT32 L fe  LANstep
 1e  Hidden W95 FAT1 80  Old Minix       be  Solaris boot    ff  BBT
 ```
+
 ```bash
 Hex code (type L to list all codes): 8e
 Changed type of partition 'Linux' to 'Linux LVM'.
@@ -1010,6 +1074,7 @@ The partition table has been altered.
 Calling ioctl() to re-read partition table.
 Syncing disks.
 ```
+
 ```bash
 [eden@tstrhel8 ~]$ lsblk
 NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
@@ -1027,6 +1092,7 @@ xvdd    202:48   0   10G  0 disk
 ```
 
 Create the partition for the encrypted volume.
+
 ```bash
 [root@tstrhel8 ~]# parted /dev/xvdc
 (parted) mkpart
@@ -1048,6 +1114,7 @@ Number  Start   End     Size    Type     File system  Flags
 (parted) quit
 Information: You may need to update /etc/fstab.
 ```
+
 ```bash
 [root@tstrhel8 ~]# lsblk
 NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
@@ -1066,6 +1133,7 @@ xvdd    202:48   0   10G  0 disk
 ```
 
 Create the partition for the VDO.
+
 ```bash
 [root@tstrhel8 ~]# sudo fdisk /dev/xvdc
 
@@ -1093,6 +1161,7 @@ Syncing disks.
 ```
 
 Create the LVM.
+
 ```bash
 [root@tstrhel8 ~]# vgcreate vgdc /dev/xvdc1
 WARNING: dos signature detected on /dev/xvdc1 at offset 510. Wipe it? [y/n]: y
@@ -1100,6 +1169,7 @@ WARNING: dos signature detected on /dev/xvdc1 at offset 510. Wipe it? [y/n]: y
   Physical volume "/dev/xvdc1" successfully created.
   Volume group "vgdc" successfully created
 ```
+
 ```bash
 [root@tstrhel8 ~]# lvcreate -l 100%FREE -n lvdc vgdc
 WARNING: xfs_external_log signature detected on /dev/vgdc/lvdc at offset 28672. Wipe it? [y/n]: y
@@ -1108,6 +1178,7 @@ WARNING: xfs_external_log signature detected on /dev/vgdc/lvdc at offset 28672. 
 ```
 
 Load an XFS filesystem on the LVM.
+
 ```bash
 [root@tstrhel8 ~]# mkfs.xfs /dev/vgdc/lvdc
 meta-data=/dev/vgdc/lvdc         isize=512    agcount=4, agsize=65280 blks
@@ -1123,9 +1194,11 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 ```
 
 Create mountpoint /mount/lvdb and create an entry in /etc/fstab
+
 ```bash
 [root@tstrhel8 ~]# mkdir -p /mount/lvdc
 ```
+
 ```bash
 [root@tstrhel8 ~]# vim /etc/fstab
 
@@ -1151,6 +1224,7 @@ xvdc          202:32   0   10G  0 disk
 └─xvdc2       202:34   0    1G  0 part
 xvdd          202:48   0   10G  0 disk
 ```
+
 ```bash
 [root@tstrhel8 ~]# mount -a
 [root@tstrhel8 ~]# lsblk
@@ -1171,9 +1245,11 @@ xvdd          202:48   0   10G  0 disk
 ```
 
 Encrpyt other volume (/dev/xvdc2).
+
 ```bash
 yum install -y cryptsetup
 ```
+
 ```bash
 [root@tstrhel8 ~]# cryptsetup luksFormat /dev/xvdc2
 
@@ -1187,6 +1263,7 @@ Verify passphrase:
 ```
 
 Open the volume and create a filesystem inside of it.
+
 ```bash
 [root@tstrhel8 ~]# cryptsetup luksOpen /dev/xvdc2 secret
 Enter passphrase for /dev/xvdc2:
@@ -1205,6 +1282,7 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 ```
 
 Create an entry in /etc/crypttab.
+
 ```bash
 [root@tstrhel8 ~]# vim /etc/crypttab
 
@@ -1212,20 +1290,24 @@ secret  /dev/xvdc2      none
 ```
 
 Create the mountpoint /mount/secret and then create an entry in /etc/fstab.
+
 ```bash
 mkdir -p /mount/secret 
 ```
+
 ```bash
 # EDEN: Encrypted volume
 /dev/mapper/secret                              /mount/secret   xfs     defaults        0 0
 ```
 
 Finally, let's create the 10TB thin-provisioned volume. For this one, we'll use VDO.
+
 ```bash
 sudo dnf install kmod-kvdo vdo -y
 sudo systemctl enable --now vdo
 sudo systemctl status vdo
 ```
+
 ```bash
 [eden@tst-rhcsa ~]$ sudo vdo create --name=vdo1 --device=/dev/xvdc3 --vdoLogicalSize=10T
 
@@ -1239,6 +1321,7 @@ VDO instance 0 volume is ready at /dev/mapper/vdo1
 ```
 
 Create the filesystem for VDO and use udevadm to process device creation.
+
 ```bash
 [eden@tst-rhcsa ~]$ sudo mkfs.xfs -K /dev/mapper/vdo1
 meta-data=/dev/mapper/vdo1       isize=512    agcount=10, agsize=268435455 blks
@@ -1252,14 +1335,17 @@ log      =internal log           bsize=4096   blocks=521728, version=2
          =                       sectsz=4096  sunit=1 blks, lazy-count=1
 realtime =none                   extsz=4096   blocks=0, rtextents=0
 ```
+
 ```bash
 [eden@tst-rhcsa ~]$ sudo udevadm settle
 ```
 
 Create the mountpoint /mount/vdo and add an entry in /etc/fstab.
+
 ```bash
 [root@tst-rhcsa ~]# mkdir -p /mount/vdo1
 ```
+
 ```bash
 [root@tst-rhcsa ~]# vim /etc/fstab
 
@@ -1268,6 +1354,7 @@ Create the mountpoint /mount/vdo and add an entry in /etc/fstab.
 ```
 
 Mount the VDO partition.
+
 ```bash
 [root@tst-rhcsa ~]# lsblk
 NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
@@ -1287,6 +1374,7 @@ xvdc          202:32   0   10G  0 disk
   └─vdo1      253:1    0   10T  0 vdo
 xvdd          202:48   0   10G  0 disk
 ```
+
 ```bash
 [root@tst-rhcsa ~]# mount -a
 [root@tst-rhcsa ~]# lsblk
@@ -1310,9 +1398,11 @@ xvdd          202:48   0   10G  0 disk
 ```
 
 Finally, reboot the machine and check if the changes persist.
+
 ```bash
 reboot
 ```
+
 ```bash
 [root@tst-rhcsa ~]# lsblk
 NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
@@ -1334,9 +1424,9 @@ xvdd          202:48   0   10G  0 disk
 ```
 
 
-
-
 </details>
+
+
 
 ## Lab 10 - SELinux
 
@@ -1348,6 +1438,7 @@ xvdd          202:48   0   10G  0 disk
   <summary> **Solution** </summary>
 
 Check if SELinux is set to enforcing
+
 ```bash
 [root@tst-rhcsa ~]# vim /etc/sysconfig/selinux
 
@@ -1365,12 +1456,14 @@ SELINUXTYPE=targeted
 ```
 
 You can also run,
+
 ```bash
 [root@tst-rhcsa ~]# getenforce
 Enforcing 
 ```
 
 If the /etc directory is not labelled correctly, you may run the command below which will restore the config. If there are no changes, it will not return an output.
+
 ```bash
 [root@tst-rhcsa ~]# restorecon -Rv /etc/
 
@@ -1378,10 +1471,9 @@ Relabeled /etc/sysconfig/rh-cloud-firstboot from system_u:object_r:etc_runtime_t
 Relabeled /etc/insights-client/machine-id from unconfined_u:object_r:machineid_t:s0 to unconfined_u:object_r:etc_t:s0
 ```
 
-
-
-
 </details>
+
+
 
 ## Lab 11 - Writing-Shell-Scripts
 
@@ -1398,6 +1490,7 @@ Write a shell script that:
   <summary> **Solution** </summary>
 
 Create the script.
+
 ```bash
 [root@tst-rhcsa ~]# vim run-script.sh
 
@@ -1423,11 +1516,13 @@ fi
 ```
 
 Grant an execute permission for the script.
+
 ```bash
 [root@tst-rhcsa ~]# ll
 total 4
 -rw-r--r--. 1 root root 333 Mar 13 10:34 run-script.sh
 ```
+
 ```bash
 [root@tst-rhcsa ~]# chmod +x run-script.sh
 [root@tst-rhcsa ~]# ll
@@ -1436,24 +1531,29 @@ total 4
 ```
 
 Test the script.
+
 ```bash
 [root@tst-rhcsa ~]# ./run-script.sh
 Please provide an argument.
 ```
+
 ```bash
 [root@tst-rhcsa ~]# ./run-script.sh yes
 that's nice!
 ```
+
 ```bash
 [root@tst-rhcsa ~]# ./run-script.sh no
 sorry to hear that
 ```
+
 ```bash
 [root@tst-rhcsa ~]# ./run-script.sh ohyeah
 Unknown argument provided
 ```
 
 Another way to write the script is to use **case**
+
 ```bash
 [root@tst-rhcsa ~]# cp run-script.sh run-script2.sh
 [root@tst-rhcsa ~]# ll
@@ -1461,6 +1561,7 @@ total 8
 -rwxr-xr-x. 1 root root 302 Mar 13 10:44 run-script2.sh
 -rwxr-xr-x. 1 root root 333 Mar 13 10:40 run-script.sh
 ```
+
 ```bash
 [root@tst-rhcsa ~]# vim run-script2.sh
 #!/bin/bash
@@ -1486,24 +1587,29 @@ esac
 ```
 
 Test the second script.
+
 ```bash
 [root@tst-rhcsa ~]# ./run-script2.sh
 Please provide an argument.
 ```
+
 ```bash
 [root@tst-rhcsa ~]# ./run-script2.sh yes
 that's nice!
 ```
+
 ```bash
 [root@tst-rhcsa ~]# ./run-script2.sh no
 sorry to hear that
 ```
+
 ```bash
 [root@tst-rhcsa ~]# ./run-script2.sh ohyeah
 Unknown argument provided
 ```
 
 To ensure that all provided arguments are in lowercase, we can add this to the script.
+
 ```bash
 [root@tst-rhcsa ~]# cp run-script2.sh run-script3.sh
 [root@tst-rhcsa ~]# ll
@@ -1512,6 +1618,7 @@ total 12
 -rwxr-xr-x. 1 root root 302 Mar 13 10:50 run-script3.sh
 -rwxr-xr-x. 1 root root 333 Mar 13 10:40 run-script.sh 
 ```
+
 ```bash
 [root@tst-rhcsa ~]# vim run-script3.sh
 #!/bin/bash
@@ -1541,22 +1648,25 @@ esac
 ```
 
 Test the third script.
+
 ```bash
 [root@tst-rhcsa ~]# ./run-script3.sh YES
 that's nice!
 ```
+
 ```bash
 [root@tst-rhcsa ~]# ./run-script3.sh NO
 sorry to hear that
 ```
+
 ```bash
 [root@tst-rhcsa ~]# ./run-script3.sh YEY
 Unknown argument provided
 ```
 
-
-
 </details>
+
+
 
 ## Lab 12 - Managing Partitions
 
@@ -1567,7 +1677,10 @@ Unknown argument provided
 
 <details>
   <summary> **Solution** </summary>
+
 I'll use /dev/xvdd for this lab.
+
+
 ```bash
 [root@tst-rhcsa ~]# lsblk
 NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
@@ -1605,10 +1718,11 @@ xvdc
 └─xvdc3       vdo               ab76e682-7a3d-4fb7-9781-274f8562bfdd
   └─vdo1      xfs               eed66dc5-5a34-4f25-93d1-a4dfb23f0514   /mount/vdo1
 xvdd
- 
 ```
 
 Create the partition and load the filesystem.
+
+
 ```bash
 [root@tst-rhcsa ~]# sudo fdisk /dev/xvdd
 
@@ -1638,6 +1752,7 @@ Calling ioctl() to re-read partition table.
 Syncing disks.
  
 ```
+
 ```bash
 [root@tst-rhcsa ~]# mkfs.ext4 -L dbfiles /dev/xvdd1
 mke2fs 1.45.6 (20-Mar-2020)
@@ -1651,6 +1766,7 @@ Writing inode tables: done
 Creating journal (8192 blocks): done
 Writing superblocks and filesystem accounting information: done
 ```
+
 ```bash
 [root@tst-rhcsa ~]# lsblk -f
 NAME          FSTYPE      LABEL UUID                                   MOUNTPOINT
@@ -1674,9 +1790,11 @@ xvdd
 ```
 
 Create mountpoint and create entry in /etc/fstab.
+
 ```bash
 [root@tst-rhcsa ~]# mkdir /dbfiles
 ```
+
 ```bash
 [root@tst-rhcsa ~]# vim /etc/fstab
 
@@ -1690,6 +1808,7 @@ LABEL=dbfiles              /dbfiles        ext4    defaults                     
 ```
 
 Mount the partition and verify.
+
 ```bash
 [root@tst-rhcsa ~]# mount -a
 [root@tst-rhcsa ~]#
@@ -1714,9 +1833,11 @@ xvdd          202:48   0   10G  0 disk
 ```
 
 Reboot and verify.
+
 ```bash
 reboot
 ```
+
 ```bash
 [root@tst-rhcsa ~]# lsblk
 NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
@@ -1740,6 +1861,8 @@ xvdd          202:48   0   10G  0 disk
 
 </details>
 
+
+
 ## Lab 13 - Managing LVMs
 
 **Tasks:**
@@ -1753,6 +1876,7 @@ xvdd          202:48   0   10G  0 disk
   <summary> **Solution** </summary>
 
 After the previous labs, I cleaned up the partitions and retain just the xvdd1. I currently have 3 disks ready to be used. For this lab, I'll use /dev/xvdb.
+
 ```bash
 [eden@tst-rhcsa ~]$ lsblk
 NAME    MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
@@ -1777,6 +1901,7 @@ xvdd
 ```
 
 To start with, create a 2G Partition and change the type to LVM
+
 ```bash
 [eden@tst-rhcsa ~]$ sudo fdisk /dev/xvdb
 
@@ -1836,6 +1961,7 @@ Calling ioctl() to re-read partition table.
 Syncing disks.
 
 ```
+
 ```bash
 [eden@tst-rhcsa ~]$ lsblk
 NAME    MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
@@ -1851,6 +1977,7 @@ xvdd    202:48   0  10G  0 disk
 ```
 
 Create the volume group and logical volume group.
+
 ```bash
 [root@tst-rhcsa ~]# vgcreate vgdata /dev/xvdb1
   Physical volume "/dev/xvdb1" successfully created.
@@ -1861,6 +1988,7 @@ Create the volume group and logical volume group.
 ```
 
 Create the XFS Filesystem.
+
 ```bash
 [root@tst-rhcsa ~]# mkfs.xfs /dev/vgdata/lvdata
 meta-data=/dev/vgdata/lvdata     isize=512    agcount=4, agsize=65536 blks
@@ -1876,6 +2004,7 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 ```
 
 Create the mountpoint and add an entry to /etc/fstab. 
+
 ```bash
 [root@tst-rhcsa ~]# mkdir /lvdata
 [root@tst-rhcsa ~]# vim /etc/fstab
@@ -1885,6 +2014,7 @@ Create the mountpoint and add an entry to /etc/fstab.
 ```
 
 Mount and verify.
+
 ```bash
 [root@tst-rhcsa ~]# mount -a
 [root@tst-rhcsa ~]#
@@ -1903,9 +2033,11 @@ xvdd              202:48   0  10G  0 disk
 ```
 
 Reboot and verify.
+
 ```bash
 reboot 
 ```
+
 ```bash
 [eden@tst-rhcsa ~]$ lsblk
 NAME              MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
@@ -1922,6 +2054,7 @@ xvdd              202:48   0  10G  0 disk
 ```
 
 Next is to extend the LVM to add another 500MB.
+
 ```bash
 [root@tst-rhcsa ~]# lvextend -rL +500M /dev/vgdata/lvdata
   Size of logical volume vgdata/lvdata changed from 1.00 GiB (256 extents) to <1.49 GiB (381 extents).
@@ -1938,6 +2071,7 @@ log      =internal log           bsize=4096   blocks=2560, version=2
 realtime =none                   extsz=4096   blocks=0, rtextents=0
 data blocks changed from 262144 to 390144
 ```
+
 ```bash
 [root@tst-rhcsa ~]# lsblk
 NAME              MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
@@ -1953,14 +2087,14 @@ xvdd              202:48   0   10G  0 disk
 ```
 
 Reboot and verify.
+
 ```bash
 reboot 
 ```
 
-
-
-
 </details>
+
+
 
 ## Lab 14 - Scheduling Cron Jobs
 
@@ -1972,6 +2106,7 @@ reboot
   <summary> **Solution** </summary>
 
 For this lab, we'll use **logger**. Test it first.
+
 ```bash 
 [eden@tst-rhcsa ~]$ logger -p notice "hello world"
 
@@ -1980,6 +2115,7 @@ Mar 13 11:54:51 localhost eden[1540]: hello world
 ```
 
 Now that we know the command to use, add it to the crontab.
+
 ```bash
 [eden@tst-rhcsa ~]$ crontab -e
 
@@ -1987,9 +2123,9 @@ Now that we know the command to use, add it to the crontab.
 ```
 
 
-
-
 </details>
+
+
 
 ## Lab 15 - Configuring a Repository
 
@@ -2002,6 +2138,7 @@ Now that we know the command to use, add it to the crontab.
   <summary> **Solution** </summary>
 
 Check first the memory,
+
 ```bash
 $ df -h 
 ```
@@ -2018,17 +2155,20 @@ Checking again, we see that the image is now showing for /dev/sr0.
 
 Let's create a mountpoint **/repo** and add an entry in /etc/fstab. Mount afterwards.
 
+
 ```bash
 $ mkdir /repo
 $ sudo vim /etc/fstab
 
 /dev/sr0    /repo     iso9660     defaults      0  0
 ```
+
 ```bash
 $ mount -a
 ```
 
 Since the assignment requires us to use the new repo, we have to delete the existing one/s.
+
 
 ```bash
 $ sudo yum repolist
@@ -2036,10 +2176,12 @@ $ sudo yum repolist
 ![](/img/docs/plabs15-10.png)
 
 
+
 ```bash
 $ cd /etc/yum.repos.d
 ```
 ![](/img/docs/plabs15-11.png)
+
 
 ```bash
 $ sudo rm -f *
@@ -2048,6 +2190,7 @@ $ ls
 ![](/img/docs/plabs15-12.png)
 
 Next is to create the repo files.
+
 ```bash
 $ sudo vim Base0S.repo
 
@@ -2056,6 +2199,7 @@ name=Base0S
 baseurl=file:///repo/BaseOS
 gpgcheck=0
 ```
+
 ```bash
 $ sudo vim AppStream.repo
 
@@ -2066,17 +2210,20 @@ gpgcheck=0
 ```
 
 To verify,
+
 ```bash
 $ sudo yum repolist
 ```
+
 ![](/img/docs/sv-repolist-14.png)
-
-
-
 
 </details>
 
+
+
 ## Lab 16 - Resetting the Root password
+
+**Tasks:**
 
 1. Reset the root password.
 
@@ -2085,6 +2232,7 @@ $ sudo yum repolist
 
 Note that this won't work with EC2 instances so use VirtualBox.
 To start with, run **reboot**.
+
 ```bash
 $ sudo reboot
 ```
@@ -2103,6 +2251,7 @@ Replace **rhgb quiet** with **rd.break** then press Ctrl-X.
 
 It should drop to the initramfs shell.
 Run the commands below,
+
 ```bash
 $ mount -o remount,rw /sysroot
 $ chroot /sysroot
@@ -2110,13 +2259,12 @@ $ passwd
 ```
 
 After changing the root password, ensure the filesystem will be automatically ccorrected when the system is rebooted.
+
 ```bash
 $ touch /.autorelabel
 ```
 
 To exit out, hit Ctrl-D twice. Once it reboot, it should prompt you to enter the new root password in the GUI.
 
+</details>
 
-
-
-**Tasks:**
