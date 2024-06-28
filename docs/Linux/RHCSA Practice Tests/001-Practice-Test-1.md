@@ -243,22 +243,22 @@ $ jobs
 
 To change the niceness of the first job, run **top** then hit **r** to renice the value to "-5".
 
-![](Images/plabsrenice.png)
+![](/img/docs/plabsrenice.png)
 
-![](Images/plabsrenice2.png)
+![](/img/docs/plabsrenice2.png)
 
 We can now see that the cpu utilization of the first job has increased to 50%.
 
-![](Images/plabsrenice3.png)
+![](/img/docs/plabsrenice3.png)
 
 Still from 'top', send a sigkill signal by pressing 'k' and enter the process ID of 'top' then on the next, enter '9'.
 
-![](Images/plabsrenice4.png)
+![](/img/docs/plabsrenice4.png)
 
 Press enter multiple times. We'll see that the screen didn't immediately cleared.
 
-![](Images/plabsrenice5.png)
-![](Images/plabsrenice6.png)
+![](/img/docs/plabsrenice5.png)
+![](/img/docs/plabsrenice6.png)
 
 Finally, kill all background 'dd' jobs.
 ```bash
@@ -1965,15 +1965,15 @@ Check first the memory,
 $ df -h 
 ```
 
-![](Images/plabs15-1.png)
+![](/img/docs/plabs15-1.png)
 
 Since I'm using VirtualBox, I have to load the ISO back by selecting **Devices** > **Optical Drives** > select the ISO file
 
-![](Images/plabs15-2.png)
+![](/img/docs/plabs15-2.png)
 
 Checking again, we see that the image is now showing for /dev/sr0.
 
-![](Images/plabs15-3.png)
+![](/img/docs/plabs15-3.png)
 
 Let's create a mountpoint **/repo** and add an entry in /etc/fstab. Mount afterwards.
 
@@ -1992,19 +1992,19 @@ Since the assignment requires us to use the new repo, we have to delete the exis
 ```bash
 $ sudo yum repolist
 ```
-![](Images/plabs15-10.png)
+![](/img/docs/plabs15-10.png)
 
 
 ```bash
 $ cd /etc/yum.repos.d
 ```
-![](Images/plabs15-11.png)
+![](/img/docs/plabs15-11.png)
 
 ```bash
 $ sudo rm -f *
 $ ls 
 ```
-![](Images/plabs15-12.png)
+![](/img/docs/plabs15-12.png)
 
 Next is to create the repo files.
 ```bash
@@ -2028,7 +2028,7 @@ To verify,
 ```bash
 $ sudo yum repolist
 ```
-![](Images/sv-repolist-14.png)
+![](/img/docs/sv-repolist-14.png)
 
 
 
@@ -2047,15 +2047,15 @@ $ sudo reboot
 
 When you reach this part, press "e".
 
-![](Images/plabs16-reboot1.png)
+![](/img/docs/plabs16-reboot1.png)
 
 It should bring you here:
 
-![](Images/plabs16-reboot2.png)
+![](/img/docs/plabs16-reboot2.png)
 
 Replace **rhgb quiet** with **rd.break** then press Ctrl-X.
 
-![](Images/plabs16reboot3.png)
+![](/img/docs/plabs16reboot3.png)
 
 It should drop to the initramfs shell.
 Run the commands below,
