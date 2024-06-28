@@ -409,6 +409,7 @@ $ sudo systemctl status httpd
 
 <details>
   <summary> **Solution** </summary>
+
 Check the firewall.
 
 ```bash
@@ -991,7 +992,8 @@ xvdd    202:48   0   10G  0 disk
 2. Create a 10TB Thin-provisioned volume
 3. Create an 1G encrypted volume.
 
-**SOLUTION**
+<details>
+  <summary> **Solution** </summary>
 
 From our previous lab, we could use the /dev/xvdc to create the LVM.
 
