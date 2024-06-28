@@ -1,5 +1,5 @@
 ---
-title: Practice Test 2
+title: Practice Test 02
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 1
 last_update:

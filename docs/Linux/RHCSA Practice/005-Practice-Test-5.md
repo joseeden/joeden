@@ -1,5 +1,5 @@
 ---
-title: Practice Test 5
+title: Practice Test 05
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 1
 last_update:
@@ -199,39 +199,3 @@ at -f /root/test.sh 13:20 01/18/2012
 
 
 
-## Lab 
-
-**Tasks:**
-
-
-
-<details>
-  <summary> **Solution** </summary>
-
-
-</details>
-## Lab 
-
-**Tasks:**
-
-
-
-<details>
-  <summary> **Solution** </summary>
-
-
-</details>
-
-
-
-## Lab 
-
-**Tasks:**
-
-
-
-<details>
-  <summary> **Solution** </summary>
-
-
-</details>
