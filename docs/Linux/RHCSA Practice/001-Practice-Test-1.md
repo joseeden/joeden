@@ -9,6 +9,7 @@ last_update:
 
 This labs are based on [Sander Van Vugt's O'Reailly course, "Red Hat Certified System Administrator (RHCSA), 3/e"](https://www.oreilly.com/videos/red-hat-certified/9780135656495/)
 
+
 ## Lab 01 - Users and Groups
 
 **Tasks:**
@@ -22,8 +23,6 @@ This labs are based on [Sander Van Vugt's O'Reailly course, "Red Hat Certified S
 7. Make sure Ted and Robin are in group **profs** and lily, mars, and barney are in group **students**.
 8. Ensure ted is a member of the group 'wheel'
 9. Verify.
-
-**Solution:**
 
 <details>
   <summary> **Solution** </summary>
@@ -100,6 +99,7 @@ uid=1004(mars) gid=1004(mars) groups=1004(mars),1007(students)
 $ id barney
 uid=1003(barney) gid=1003(barney) groups=1003(barney),1007(students)
 ```
+
 
 </details>
 
@@ -190,6 +190,8 @@ default:other::---
 
 
 
+</details>
+
 ## Lab 03 - Processes 
 
 **Tasks:**
@@ -199,7 +201,8 @@ default:other::---
 3. Still for 'top', send a sigkill 9 to the "top" process.
 4. Finally, kill all background 'dd' jobs.
 
-**Solution:**
+<details>
+  <summary> **Solution** </summary>
 
 Run the command below, hit Ctrl-z then type **bg** to run the job in the background.
 ```bash
@@ -280,13 +283,16 @@ $ jobs
 
 
 
+</details>
+
 ## Lab 04 - SSH
 
 **Tasks:**
  
 1. Generate a new RSA key and copy it to the localhost using root.
 
-**Solution:**
+<details>
+  <summary> **Solution** </summary>
 
 Generate the keygen.
 ```bash
@@ -312,6 +318,8 @@ $ ssh-copy-id localhost
 
 
 
+</details>
+
 ## Lab 05 - HTTPD and Systemd
 
 **Tasks:**
@@ -319,7 +327,8 @@ $ ssh-copy-id localhost
 1. Install httpd and enable it.
 2. Configure the service to restart after 5 seconds of being stopped.
 
-**Solution:**
+<details>
+  <summary> **Solution** </summary>
 
 Install and enable httpd.
 ```bash
@@ -365,6 +374,8 @@ $ sudo systemctl status httpd
 
 
 
+</details>
+
 ## Lab 06 - Allow HTTP on Firewall
 
 **Tasks:**
@@ -372,7 +383,8 @@ $ sudo systemctl status httpd
 1. Ensure firewall is running.
 2. Configure Firewall to allow http and https. This should persist across reboots.
 
-**Solution:**
+<details>
+  <summary> **Solution** </summary>
 Check the firewall.
 ```bash
 $ firewall-cmd --list-all
@@ -428,6 +440,8 @@ public (active)
 
 
 
+</details>
+
 ## Lab 07 - Configure Logging
 
 **Tasks:**
@@ -435,7 +449,8 @@ public (active)
 1. Ensure that systemd journal is stored persistently.
 2. Journal should be rotated on a monthly basis.
 
-**Solution:**
+<details>
+  <summary> **Solution** </summary>
 Ensure that systemd journal is stored persistently. To do this, create first the /var/log/journal directory.
 ```bash
 $ mkdir /var/log/journal
@@ -456,6 +471,8 @@ $ vim journal
 
 
 
+</details>
+
 ## Lab 08 - Linux Storage
 
 **Tasks:**
@@ -468,7 +485,8 @@ $ vim journal
 6. Format the first 500M (part of the extended partition) to XFS and mount it to /mount/xfs.
 7. Mount the swap partition
 
-**Solution:**
+<details>
+  <summary> **Solution** </summary>
 
 I currently have 3 EBS disks (xvdb, xvdc, xvdd) attached to my EC2 instances. We'll be using this for the remainder of the storage labs.
 ```bash
@@ -903,6 +921,8 @@ xvdd    202:48   0   10G  0 disk
 
 
 
+</details>
+
 ## Lab 09 - Advanced Storage
 
 **Tasks:**
@@ -1316,13 +1336,16 @@ xvdd          202:48   0   10G  0 disk
 
 
 
+</details>
+
 ## Lab 10 - SELinux
 
 **Tasks:**
 
 1. Ensure SELinux is booted in the appropriate way.
 
-**Solution:**
+<details>
+  <summary> **Solution** </summary>
 
 Check if SELinux is set to enforcing
 ```bash
@@ -1358,6 +1381,8 @@ Relabeled /etc/insights-client/machine-id from unconfined_u:object_r:machineid_t
 
 
 
+</details>
+
 ## Lab 11 - Writing-Shell-Scripts
 
 **Tasks:**
@@ -1369,7 +1394,8 @@ Write a shell script that:
     - if no, print 'Sorry to hear that!"
     - if neither of the two, print "unknown argument provided"
 
-**Solution:**
+<details>
+  <summary> **Solution** </summary>
 
 Create the script.
 ```bash
@@ -1530,6 +1556,8 @@ Unknown argument provided
 
 
 
+</details>
+
 ## Lab 12 - Managing Partitions
 
 **Tasks:**
@@ -1537,7 +1565,8 @@ Unknown argument provided
 1. In the remaining disk of your server, add a 1G partition. Do this in such a way that it is possible to add more partitions later.
 2. Format this partition with EXT4 filesystem and set the label "dbfiles" on the partition. Configure your system to mount this partition persistently on the directory /dbfiles, using the partition label
 
-**Solution:**
+<details>
+  <summary> **Solution** </summary>
 I'll use /dev/xvdd for this lab.
 ```bash
 [root@tst-rhcsa ~]# lsblk
@@ -1709,6 +1738,8 @@ xvdd          202:48   0   10G  0 disk
 └─xvdd1       202:49   0    1G  0 part /dbfiles  
 ```
 
+</details>
+
 ## Lab 13 - Managing LVMs
 
 **Tasks:**
@@ -1718,7 +1749,8 @@ xvdd          202:48   0   10G  0 disk
 3. Format this logical volume with XFS filesystem and mount it persistently on /lvdata
 4. Restart, and after restart, add another 500MB to the XFS file system that was created on top of the logical volume
 
-**Solution:**
+<details>
+  <summary> **Solution** </summary>
 
 After the previous labs, I cleaned up the partitions and retain just the xvdd1. I currently have 3 disks ready to be used. For this lab, I'll use /dev/xvdb.
 ```bash
@@ -1928,13 +1960,16 @@ reboot
 
 
 
+</details>
+
 ## Lab 14 - Scheduling Cron Jobs
 
 **Tasks:**
 
 1. Schedule a cron job to automatically write the text "hello world" to syslog at every 10th minute after the hour. Ensure this message is written with the "notice" priority.
 
-**Solution:**
+<details>
+  <summary> **Solution** </summary>
 
 For this lab, we'll use **logger**. Test it first.
 ```bash 
@@ -1954,6 +1989,8 @@ Now that we know the command to use, add it to the crontab.
 
 
 
+</details>
+
 ## Lab 15 - Configuring a Repository
 
 **Tasks:**
@@ -1961,7 +1998,8 @@ Now that we know the command to use, add it to the crontab.
 1. Loop mount the installation disk/ISO that you've used to setup RHEL 8. Configure the loop-mounted ISO as a repository.
 2. Configure your system to use this as the only repository.
 
-**Solution:**
+<details>
+  <summary> **Solution** </summary>
 
 Check first the memory,
 ```bash
@@ -2036,11 +2074,14 @@ $ sudo yum repolist
 
 
 
+</details>
+
 ## Lab 16 - Resetting the Root password
 
 1. Reset the root password.
 
-**Solution:**
+<details>
+  <summary> **Solution** </summary>
 
 Note that this won't work with EC2 instances so use VirtualBox.
 To start with, run **reboot**.
