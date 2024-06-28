@@ -6,10 +6,13 @@ last_update:
   date: 7/8/2022
 ---
 
-![NOTE]
+:::info[Note]
+
 These are some of the scenarios that I haven't tried to simulate yet. 
 
-## Lab 01 - Configure 
+:::
+
+## Lab 01 - Configure an HTTP Server
 
 
 **Tasks:**
@@ -35,17 +38,6 @@ firewall-cmd --reload
 ```
 
 </details>
-## Lab 
-
-**Tasks:**
-
-
-
-<details>
-  <summary> **Solution** </summary>
-
-
-</details>
 
 
 
@@ -68,17 +60,6 @@ The “createrepo” RPM and its dependent RPMs are kept in /tmp/rpm directory.
 **Tasks:**
 
 You are required to change Boot Loader’s Splash Screen to display the name of your Organization ‘webpage Corporation’ instead of the default ‘Red Hat Enterprise Linux’ at the boot time.
-
-<details>
-  <summary> **Solution** </summary>
-
-
-</details>
-## Lab 
-
-**Tasks:**
-
-
 
 <details>
   <summary> **Solution** </summary>
@@ -120,18 +101,6 @@ VM (no servers to be installed):
 
 
 </details>
-## Lab 
-
-**Tasks:**
-
-
-
-<details>
-  <summary> **Solution** </summary>
-
-
-</details>
-
 
 
 ## Lab 06 - Resizing a directory 
@@ -146,40 +115,3 @@ Resize the file system /opt from its current size of 500 MB to 400 MB. Do not lo
 
 </details>
 
-
-## Lab 
-
-**Tasks:**
-
-
-
-<details>
-  <summary> **Solution** </summary>
-
-
-</details>
-## Lab 
-
-**Tasks:**
-
-
-
-<details>
-  <summary> **Solution** </summary>
-
-
-</details>
-
-
-
-## Lab 
-
-**Tasks:**
-
-
-
-<details>
-  <summary> **Solution** </summary>
-
-
-</details>

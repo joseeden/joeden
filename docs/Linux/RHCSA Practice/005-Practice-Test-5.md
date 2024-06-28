@@ -183,18 +183,6 @@ chmod +x test.sh
 at -f /root/test.sh 13:20 01/18/2012
 ```
 
-
-</details>
-## Lab 
-
-**Tasks:**
-
-
-
-<details>
-  <summary> **Solution** </summary>
-
-
 </details>
 
 

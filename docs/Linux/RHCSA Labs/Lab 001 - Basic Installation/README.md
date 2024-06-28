@@ -22,7 +22,7 @@ For this series of labs, we'll be utilizing:
 
 I used VirtualBox along with GNS3 a few years ago when I studied for a Cisco exam. I then left it and didn't touch it until I decided to prepare for the RHCSA exam. Opening the application again, it prompted about the new version so I had to update it to the new version, which is 6.1.30. 
 
-For this lab, beegin by installing VirtualBox on your local machine. We will also need to download the free-to-use Red Hat Enterprise Linux image. 
+For this lab, begin by installing VirtualBox on your local machine. We will also need to download the free-to-use Red Hat Enterprise Linux image. 
 
 - [How to Install VirtualBox](https://www.wikihow.com/Install-VirtualBox)
 - [VirtualBox Download](https://www.virtualbox.org/wiki/Downloads)

@@ -54,17 +54,6 @@ vim budget-draft.xlxs
 ```
 
 </details>
-## Lab 
-
-**Tasks:**
-
-
-
-<details>
-  <summary> **Solution** </summary>
-
-
-</details>
 
 
 
@@ -155,19 +144,6 @@ lsblk
 
 
 </details>
-## Lab 
-
-**Tasks:**
-
-
-
-<details>
-  <summary> **Solution** </summary>
-
-
-</details>
-
-
 
 ## Lab 04 - LVM
 
@@ -248,18 +224,6 @@ lsblk
 ```
 
 </details>
-## Lab 
-
-**Tasks:**
-
-
-
-<details>
-  <summary> **Solution** </summary>
-
-
-</details>
-
 
 
 ## Lab 06 - Extend Storage
