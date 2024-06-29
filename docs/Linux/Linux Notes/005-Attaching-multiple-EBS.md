@@ -6,11 +6,9 @@ last_update:
   date: 2/27/2022
 ---
 
-
-
-## Selecting multiple EBS volumes and attaching them to the same instance
-
 ![](/img/docs/ebs-blocks.png)
+
+## Attaching multiple EBS volumes at the same time 
 
 Just a short note. I created three EBS volumes to be used for my storage labs in Linux.
 I was going to attach them to a single instance at the same time but the **Attach volume** is greyed out in the **Actions** tab.
