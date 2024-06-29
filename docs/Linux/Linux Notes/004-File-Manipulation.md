@@ -439,3 +439,50 @@ Regular expressions (regex) are patterns used to match character combinations in
 3. **Anchors**:
    - `\b`: Matches a word boundary.
    - `\B`: Matches a non-word boundary.
+
+
+### Examples
+
+1. **Match a phone number pattern**:
+   - Pattern: `\d{3}-\d{3}-\d{4}`
+   - Matches: "123-456-7890"
+
+2. **Match an email address**:
+   - Pattern: `\w+@\w+\.\w+`
+   - Matches: "example@example.com"
+
+3. **Match a URL**:
+   - Pattern: `https?://(\w+\.)*\w+`
+   - Matches: "http://example.com", "https://example.com"
+
+4. **Match a date (YYYY-MM-DD)**:
+   - Pattern: `\d{4}-\d{2}-\d{2}`
+   - Matches: "2023-06-30"
+
+5. **Match a word starting with "a" and ending with "e"**:
+   - Pattern: `\ba\w*e\b`
+   - Matches: "apple", "arise"
+
+### Using Regex with grep
+
+1. **Basic `grep`**:
+   ```bash
+   grep "pattern" file.txt
+   ```
+
+2. **Extended regex with `egrep` or `grep -E`**:
+   ```bash
+   egrep "pattern" file.txt
+   # or
+   grep -E "pattern" file.txt
+   ```
+
+3. **Case-insensitive search**:
+   ```bash
+   grep -i "pattern" file.txt
+   ```
+
+4. **Recursive search in directories**:
+   ```bash
+   grep -r "pattern" /path/to/directory
+   ```
