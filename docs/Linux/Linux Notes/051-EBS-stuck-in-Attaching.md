@@ -1,7 +1,7 @@
 ---
 title: EBS stuck in "Attaching"
 tags: [Linux, AWS, Labs]
-# sidebar_position: 99
+sidebar_position: 51
 last_update:
   date: 2/27/2022
 ---

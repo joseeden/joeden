@@ -1,7 +1,7 @@
 ---
 title: Attaching multiple EBS volumes
 tags: [Linux, AWS, Labs]
-# sidebar_position: 99
+sidebar_position: 50
 last_update:
   date: 2/27/2022
 ---
