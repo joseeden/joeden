@@ -1,5 +1,5 @@
 ---
-title: 006-Text Files
+title: 006 - Text Files
 tags: [Linux, Red Hat, Certifications]
 last_update:
   date: 2/27/2022

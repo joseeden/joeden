@@ -1,5 +1,5 @@
 ---
-title: 009-Networking
+title: 009 - Networking
 tags: [Linux, Red Hat, Certifications]
 <!-- sidebar_position: 1 -->
 last_update:

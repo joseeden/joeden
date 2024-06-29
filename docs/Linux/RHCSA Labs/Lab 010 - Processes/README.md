@@ -1,5 +1,5 @@
 ---
-title: 010-Processes
+title: 010 - Processes
 tags: [Linux, Red Hat, Certifications]
 <!-- sidebar_position: 1 -->
 last_update:

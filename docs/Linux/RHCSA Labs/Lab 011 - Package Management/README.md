@@ -1,5 +1,5 @@
 ---
-title: 011-Package Management
+title: 011 - Package Management
 tags: [Linux, Red Hat, Certifications]
 # sidebar_position: 1 
 last_update:
