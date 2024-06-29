@@ -14,7 +14,7 @@ last_update:
 
 ----
 
-## Solutions
+## Solution
 
 ### 1. Set a fixed IP address
 

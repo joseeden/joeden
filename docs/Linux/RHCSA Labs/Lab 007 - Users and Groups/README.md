@@ -16,7 +16,7 @@ last_update:
 	- TeamTed: ted, barney, marshall
 	- TeamRobin: robin, lily
 
-## Solutions
+## Solution
 
 ### 1. Set password length and validity
 

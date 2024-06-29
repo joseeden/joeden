@@ -20,7 +20,7 @@ last_update:
 	- User ted is headmaster and should be able to delete everything in both directories under /data.
 
 
-## Solutions
+## Solution
 
 ### 1. Set default deny permissions
 

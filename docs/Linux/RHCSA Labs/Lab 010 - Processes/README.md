@@ -22,7 +22,7 @@ last_update:
 6. Terminate all **dd** processes from the command line.
 
 
-## Solutions
+## Solution
 
 ### 1. Setting as a background job 
 

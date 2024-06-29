@@ -12,7 +12,7 @@ last_update:
 3. In /etc, show the files that contain the word 'root' in them.
 4. Show all lines from all files in /etc that contain exactly 2 characters.
 
-## Solutions
+## Solution
 
 ### 1. Display the fifth line of /etc/passwd
 

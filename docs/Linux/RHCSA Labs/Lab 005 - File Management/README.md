@@ -22,7 +22,7 @@ last_update:
 6. Create a compressed archive file of the /home directory
 7. Extract thi compressed archive file with relative file names in /tmp/archive
 
-## Solutions
+## Solution
 
 ### 1. Create the following directories
 
