@@ -1,4 +1,3 @@
-
 ---
 title: Scheduling Jobs
 tags: [Linux, Red Hat, Certifications]
