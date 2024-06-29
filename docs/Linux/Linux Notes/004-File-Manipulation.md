@@ -730,3 +730,190 @@ Find and process files with `find` and `awk`:
 find /path -type f -name "*.log" -exec awk '/ERROR/ { print FILENAME, $0 }' {} +
 ```
 
+
+
+## Sed
+
+`sed` (stream editor) is a powerful Unix utility for parsing and transforming text in a data stream (typically a file or input from a pipeline).
+
+```bash
+sed [options] 'script' input-file
+```
+
+Where: 
+
+- `options`: Command-line options to control the behavior of `sed`.
+- `script`: A sequence of editing commands.
+- `input-file`: The file to process. If omitted, `sed` reads from standard input.
+
+### Common Options
+
+- `-e script`: Adds the script to the commands to be executed.
+- `-f script-file`: Adds the contents of script-file to the commands to be executed.
+- `-n`: Suppresses automatic printing of pattern space.
+- `-i[SUFFIX]`: Edits files in-place (optionally creating a backup with the given suffix).
+
+### Basic Commands
+
+- `s/pattern/replacement/flags`: Substitutes `replacement` for `pattern`.
+  - `g`: Global replacement.
+  - `p`: Print the result.
+  - `i`: Ignore case.
+  - `n`: Replace the nth occurrence.
+
+- `d`: Deletes lines matching the pattern.
+
+- `p`: Prints lines matching the pattern.
+
+
+### Substitution
+
+1. Replace the first occurrence of "apple" with "orange" in each line:
+   ```bash
+   sed 's/apple/orange/' file.txt
+   ```
+
+2. Replace all occurrences of "apple" with "orange" in each line:
+   ```bash
+   sed 's/apple/orange/g' file.txt
+   ```
+
+3. Replace "apple" with "orange" only on lines containing "fruit":
+   ```bash
+   sed '/fruit/s/apple/orange/' file.txt
+   ```
+
+4. Replace "apple" with "orange" ignoring case:
+   ```bash
+   sed 's/apple/orange/I' file.txt
+   ```
+
+### Deletion
+
+1. Delete lines containing "apple":
+   ```bash
+   sed '/apple/d' file.txt
+   ```
+
+2. Delete the first line of the file:
+   ```bash
+   sed '1d' file.txt
+   ```
+
+3. Delete lines from 2 to 4:
+   ```bash
+   sed '2,4d' file.txt
+   ```
+
+### Printing
+
+1. Print lines containing "apple":
+   ```bash
+   sed -n '/apple/p' file.txt
+   ```
+
+2. Print the first line of the file:
+   ```bash
+   sed -n '1p' file.txt
+   ```
+
+3. Print lines from 2 to 4:
+   ```bash
+   sed -n '2,4p' file.txt
+   ```
+
+### In-place Editing
+
+1. Replace "apple" with "orange" in-place (modify the original file):
+   ```bash
+   sed -i 's/apple/orange/g' file.txt
+   ```
+
+2. Replace "apple" with "orange" in-place, creating a backup with a `.bak` extension:
+   ```bash
+   sed -i.bak 's/apple/orange/g' file.txt
+   ```
+
+### Multiple Commands
+
+1. Delete lines 1 to 3 and replace "apple" with "orange":
+   ```bash
+   sed '1,3d; s/apple/orange/g' file.txt
+   ```
+
+2. Replace "apple" with "orange" and "banana" with "grape":
+   ```bash
+   sed 's/apple/orange/g; s/banana/grape/g' file.txt
+   ```
+
+### Using a Script File
+
+1. Create a `sed` script file (script.sed) with multiple commands:
+   ```bash
+   # script.sed
+   1,3d
+   s/apple/orange/g
+   s/banana/grape/g
+   ```
+
+2. Run `sed` with the script file:
+   ```bash
+   sed -f script.sed file.txt
+   ```
+
+### Extracting Data
+
+1. Extract lines between patterns:
+   ```bash
+   sed -n '/START/,/END/p' file.txt
+   ```
+
+2. Extract the first 10 lines of a file:
+   ```bash
+   sed -n '1,10p' file.txt
+   ```
+
+### Combining sed with Other Commands
+
+1. Use `sed` in a pipeline to process the output of another command:
+   ```bash
+   ls -l | sed 's/^/Line: /'
+   ```
+
+2. Find and replace text in multiple files:
+   ```bash
+   find /path -type f -name "*.txt" -exec sed -i 's/apple/orange/g' {} +
+   ```
+
+### More example
+
+We want to remove all html tags file.txt. Here's a sample file:
+
+```bash
+# file.txt
+
+<html>
+<p>
+<>
+hello world
+hello galaxy
+hello universe   
+```
+
+
+We will need to search characters between angle brackets:
+
+```
+<...>
+```
+
+After search, replace them with space or nothing. then save changes.
+
+```bash
+[root@tst-rhel]# sed -i "s/<[^>]*>//" file.txt
+[root@tst-rhel]# cat file.txt
+
+hello world   
+hello galaxy  
+hello universe
+```
