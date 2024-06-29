@@ -12,16 +12,19 @@ last_update:
 Note: You will need an additional 10GiB additional ahrddisk on your virtual machine. This will be divided into three parts
 
 Part 1:
+
 1. Create a primary partition with a size of 1GiB. 
 2. Format it with **ext4**.
 3. Mount it persistently on /mount/files, using its UUID.
 
 Part 2:
+
 4. Create an extended partition that covers all remaining disk spaces.
 5. On the extended partition, create a 500MiB xfs partition.
 6. Mount it persistently on /mount/xfs using label **myxfs**.
 
 Part 3:
+
 7. Create a 500MiB swap partition.
 8. Mount it persistently.
 
