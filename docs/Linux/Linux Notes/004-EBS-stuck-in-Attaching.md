@@ -31,16 +31,19 @@ Afterwards, I deleted the volume so I can create a new one with the same.
 
 ## Creating and Attaching the new EBS volume
 
-Created a new EBS volume and gave it the same **Name**. Attached it to the same EC2 instance and reused the same device name **/dev/sdc**
+Created a new EBS volume and gave it the same **Name**. Attached it to the same EC2 instance and reused the same device name **/dev/sdc**.
+
 ![](/img/docs/ebs-volume-new.png)
 
 
 ## EBS Menu vs. EC2 Instance Menu
 
 From the EBS volume menu, the new volume is immediately transitioned to **"In-use"** state.
+
 ![](/img/docs/eb2-volume-new-stuck.png)
 
 However, it still showing as "**Attaching** from the EC2 instance menu. Refresh the menu a couple of times and it still shows the same.
+
 ![](/img/docs/eb2-volume-new-stuck-2.png)
 
 From the terminal, I also can't see the new */dev/xvdc*.
@@ -53,8 +56,12 @@ fdisk: cannot open /dev/xvdc: Input/output error
 
 Went online and immediately found this helpful article from AWS themselves. It carefully explained what may have caused the issue. Breezed through it and found the culprit:
 
+:::info[]
+
 > **The block device driver didn't release the device name**
 > If a user has initiated a forced detach of an Amazon EBS volume, the block device driver of the Amazon EC2 instance might not immediately release the device name for reuse. Attempting to use that device name when attaching a volume causes the volume to be stuck in the attaching state. You must either choose a different device name or reboot the instance.
+
+:::
 
 ### Reboot
 
