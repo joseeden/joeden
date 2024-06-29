@@ -1,5 +1,5 @@
 ---
-title: Practice Test 06
+title: Practice Test 04
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 1
 last_update:
@@ -12,7 +12,79 @@ last_update:
 
 <!-- ***************************************************************************************************************************** -->
 
-## Lab 01 - Users, Groups, and Permissions
+
+## Lab 01 - Grep 
+
+**Tasks:**
+
+Find out the list of all users in the /etc/passwd file who have not been assigned a “/bin/bash” shell. Save this list in a file named /tmp/non_bash_user_list.txt. This list should be alphabetically arranged from z-a.
+
+<details>
+  <summary> **Solution** </summary>
+
+Use grep:
+
+```bash
+grep -v "/bin/bash$" /etc/passwd | sort > /tmp/non_bash_user_list.txt
+```
+
+
+</details>
+
+
+
+
+
+
+
+## Lab 02 - Users
+
+**Tasks:**
+
+Create a user named James with UID of 3151 and default login shell as “/bin/ksh” This user’s password should e set to "P@$$w0rdabc123"
+
+<details>
+  <summary> **Solution** </summary>
+
+```bash
+useradd -s /bin/ksh -u 3151 James
+echo 'P@$$w0rdabc123' | passwd --stdin James
+```
+
+
+</details>
+
+
+
+## Lab 03 - Cron
+
+**Tasks:**
+
+Setup a cron job for user James to execute a command /bin/echo “Hi How are you” at 1:20 PM on January 18, 2012.
+
+<details>
+  <summary> **Solution** </summary>
+
+```bash
+#Cron isn't really not suited with this scenario, better to use atd
+# need to install atd first to run AT
+# create script 'test.sh' which will contain command 
+vim test.sh
+  #!/bin/bash
+  logger -p notice 'Hi How are you'
+
+# Give execute permissions
+chmod +x test.sh
+
+# Schedule time
+at -f /root/test.sh 13:20 01/18/2012
+```
+
+</details>
+
+
+
+## Lab 04 - Users, Groups, and Permissions
 
 **Tasks:**
 
@@ -63,7 +135,7 @@ vim budget-draft.xlxs
 
 
 
-## Lab 02 - Permissions
+## Lab 05 - Permissions
 
 **Tasks:**
 
@@ -123,7 +195,7 @@ ll /PLATFORM
 </details>
 
 
-## Lab 03 - Storage   
+## Lab 06 - Storage   
 
 **Tasks:**
 
@@ -151,7 +223,7 @@ lsblk
 
 </details>
 
-## Lab 04 - LVM
+## Lab 07 - LVM
 
 **Tasks:**
 
@@ -190,7 +262,7 @@ lsblk
 </details>
 
 
-## Lab 05 - Swap 
+## Lab 08 - Swap 
 
 **Tasks:**
 
@@ -232,7 +304,7 @@ lsblk
 </details>
 
 
-## Lab 06 - Extend Storage
+## Lab 09 - Extend Storage
 
 **Tasks:**
 
@@ -291,5 +363,49 @@ lsblk -f
 ```
 
 </details>
+
+
+
+## Lab 10 - Networking
+
+**Tasks:**
+
+Create a new connection with a static network connection using the settings given below. Be sure to replace the X with the correct number of your system. 
+
+Parameter Settings:
+- IP ADDRESS 172.25.250.252
+- NETMASK 255.255.255.0 
+- GATEWAY 172.25.250.254 
+- NAME SERVER 172.25.254.254
+
+<details>
+  <summary> **Solution** </summary>
+
+Use nmcli to configure: 
+
+```bash
+nmcli 
+nmcli device status 
+nmcli connection eth0 edit
+set ipv4.method manual
+set ipv4.addr 172.25.250.252/24
+set ipv4.gateway 172.25.250.254 
+set ipv4.dns 172.25.254.254
+save persistent
+```
+
+Restart: 
+
+```bash 
+nmcli connection down eth0
+nmcli connection up eth0 
+nmcli device status 
+ping gw-ip 
+ping dns-ip 
+```
+ 
+
+</details>
+
 
 

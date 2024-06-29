@@ -1,5 +1,5 @@
 ---
-title: Practice Test 08
+title: Practice Test 06
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 1
 last_update:
@@ -12,49 +12,24 @@ last_update:
 
 <!-- ***************************************************************************************************************************** -->
 
-## Lab 01 - Networking
+
+## Lab 01 - Cron
 
 **Tasks:**
 
-Create a New connection with a static network connection using the settings given below. Be sure to replace the X with the correct number of your system. 
-
-Parameter Settings:
-- IP ADDRESS 172.25.250.252
-- NETMASK 255.255.255.0 
-- GATEWAY 172.25.250.254 
-- NAME SERVER 172.25.254.254
+set a cronjob for user ben that run every 5 minutes.
 
 <details>
   <summary> **Solution** </summary>
 
-Use nmcli to configure: 
-
 ```bash
-nmcli 
-nmcli device status 
-nmcli connection eth0 edit
-set ipv4.method manual
-set ipv4.addr 172.25.250.252/24
-set ipv4.gateway 172.25.250.254 
-set ipv4.dns 172.25.254.254
-save persistent
-```
-
-Restart: 
-
-```bash 
-nmcli connection down eth0
-nmcli connection up eth0 
-nmcli device status 
-ping gw-ip 
-ping dns-ip 
+sudo su -
+cron -u ben -e 
+/5 * * * * job.sh 
+:wq! 
+crontab -u ben -l
 ```
  
-
-</details>
-
-
-
 ## Lab 02 - Hostnames
 
 **Tasks:**
@@ -212,3 +187,86 @@ chmod 2660 /mnt/reports
 
 </details>
 
+
+
+## Lab 07 - Autofs
+
+**Tasks:**
+
+Install Autofs.
+
+<details>
+  <summary> **Solution** </summary>
+
+```bash
+sudo su -
+yum install -y autofs 
+vim /etc/auto.master.d/direct.autofs 
+vim /etc/auto.direct 
+  /external   -rw,sync,fstpe=url
+systemctl enable --now autofs
+sustemctl status autofs 
+```
+
+</details>
+
+
+
+## Lab 08 - Tar
+
+**Tasks:**
+
+Create a tar file /tmp/root.tar.gz that compress the /root
+
+
+<details>
+  <summary> **Solution** </summary>
+
+
+```bash
+sudo su -
+tar -czvf /tmp/root.tar.gz /root 
+ll /tmp/*gz
+```
+
+</details>
+
+
+## Lab 09 - Find
+
+**Tasks:**
+
+Find all files owned by user Thomas, and copy it to catalog: /tmp/inventory.
+
+<details>
+  <summary> **Solution** </summary>
+
+```bash
+ls -la /tmp/inventory
+mkdir -p /tmp/inventory
+find / -user 'thomas' 
+find / -user 'thomas' -exec cp {} /tmp/inventory \;
+ll /tmp/inventory 
+```
+ 
+
+
+</details>
+
+
+## Lab 10 - Grep
+
+**Tasks:**
+
+Copy all occurence of ‘strato’ from /usr/share/dict/words to the directory /tmp/data.
+
+<details>
+  <summary> **Solution** </summary>
+
+```bash
+grep 'strato' /usr/share/dict/words > /tmp/datbudget.xlxs 
+cat /tmp/datbudget.xlxs 
+```
+
+
+</details>
