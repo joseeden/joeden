@@ -1,5 +1,5 @@
 ---
-title: Exam Objectives
+title: RHCSA Exam Objectives
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 1
 last_update:
