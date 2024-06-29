@@ -1,5 +1,5 @@
 ---
-title: Storage
+title: 015 - Storage
 tags: [Linux, Red Hat, Certifications]
 # sidebar_position: 1 
 last_update:

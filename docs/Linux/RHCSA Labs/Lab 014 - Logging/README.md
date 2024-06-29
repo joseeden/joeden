@@ -1,5 +1,5 @@
 ---
-title: Logging
+title: 014 - Logging
 tags: [Linux, Red Hat, Certifications]
 # sidebar_position: 1 
 last_update:

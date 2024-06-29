@@ -1,5 +1,5 @@
 ---
-title: Basic Installation
+title: 001-Basic Installation
 tags: [Linux, DevOps, Red Hat, Labs]
 last_update:
   date:  6/1/2023

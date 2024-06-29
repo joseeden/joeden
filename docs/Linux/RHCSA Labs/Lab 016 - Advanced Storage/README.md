@@ -1,5 +1,5 @@
 ---
-title: Advanced Storage
+title: 016 - Advanced Storage
 tags: [Linux, Red Hat, Certifications]
 # sidebar_position: 1 
 last_update:
