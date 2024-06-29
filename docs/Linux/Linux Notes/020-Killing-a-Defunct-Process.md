@@ -69,5 +69,5 @@ Verify the defunct process is gone by ps -ef | grep defunct
 ## References
 
 - [How to install htop on RHEL 8 using yum](https://www.cyberciti.biz/faq/how-to-install-htop-on-rhel-8-using-yum/)
-- [What is a <defunct> process, and why doesn't it get killed?](https://askubuntu.com/questions/201303/what-is-a-defunct-process-and-why-doesnt-it-get-killed)
+- [What is a defunct process, and why doesn't it get killed?](https://askubuntu.com/questions/201303/what-is-a-defunct-process-and-why-doesnt-it-get-killed)
 - [Zombie vs Defunct processes?](https://stackoverflow.com/questions/47977402/zombie-vs-defunct-processes)
