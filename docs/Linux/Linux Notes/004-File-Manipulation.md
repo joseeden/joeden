@@ -402,20 +402,22 @@ Regular expressions (regex) are patterns used to match character combinations in
    ```
 
 10. **Parentheses**: 
-   - Groups elements together.
-   - Example: `(hello|hi)` matches "hello" or "hi".
 
-   ```bash
-   (()) 
-   ```
+      - Groups elements together.
+      - Example: `(hello|hi)` matches "hello" or "hi".
+
+      ```bash
+      (()) 
+      ```
 
 11. **Backslash**: 
-   - Escapes a special character.
-   - Example: `hello\.` matches "hello.".
 
-   ```bash
-   (\\)
-   ```
+      - Escapes a special character.
+      - Example: `hello\.` matches "hello.".
+
+      ```bash
+      (\\)
+      ```
 
 
 ### Advanced Syntax
