@@ -1,5 +1,5 @@
 ---
-title: File Manipulation
+title: Grep, Regex, and Cut
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 4
 last_update:
