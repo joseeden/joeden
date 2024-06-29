@@ -56,10 +56,9 @@ fdisk: cannot open /dev/xvdc: Input/output error
 
 Went online and immediately found this helpful article from AWS themselves. It carefully explained what may have caused the issue. Breezed through it and found the culprit:
 
-:::info[]
+:::info[**The block device driver didn't release the device name**]
 
-> **The block device driver didn't release the device name**
-> If a user has initiated a forced detach of an Amazon EBS volume, the block device driver of the Amazon EC2 instance might not immediately release the device name for reuse. Attempting to use that device name when attaching a volume causes the volume to be stuck in the attaching state. You must either choose a different device name or reboot the instance.
+If a user has initiated a forced detach of an Amazon EBS volume, the block device driver of the Amazon EC2 instance might not immediately release the device name for reuse. Attempting to use that device name when attaching a volume causes the volume to be stuck in the attaching state. You must either choose a different device name or reboot the instance.
 
 :::
 
