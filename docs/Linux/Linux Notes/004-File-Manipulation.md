@@ -320,3 +320,200 @@ grep -i -n "error" /path/to/directory/*.log
 ```
 
 
+
+## Regex
+
+Regular expressions (regex) are patterns used to match character combinations in strings. They are supported in many programming languages and tools. 
+
+<!-- 
+![](/img/docs/sv-regex-1.png)
+![](/img/docs/sv-regex-2.png)
+![](/img/docs/sv-regex-3.png)  -->
+
+
+### Basic Syntax
+
+1. **Literal Characters**: Matches the exact characters.
+   - Example: `hello` matches the string "hello".
+
+2. **Dot (.)**: Matches any single character except newline.
+   - Example: `h.llo` matches "hello", "hallo", "hxllo".
+
+3. **Caret (^)**: Matches the start of a line.
+   - Example: `^hello` matches "hello" at the beginning of a line.
+
+4. **Dollar ($)**: Matches the end of a line.
+   - Example: `world$` matches "world" at the end of a line.
+
+5. **Asterisk (*)**: Matches zero or more occurrences of the preceding element.
+   - Example: `he*llo` matches "hello", "hllo", "heeeello".
+
+6. **Plus (+)**: Matches one or more occurrences of the preceding element.
+   - Example: `he+llo` matches "hello", "heeeello", but not "hllo".
+
+7. **Question Mark (?)**: Matches zero or one occurrence of the preceding element.
+   - Example: `he?llo` matches "hello" and "hllo".
+
+8. **Braces ({n,m})**: Matches between `n` and `m` occurrences of the preceding element.
+   - Example: `he{2,3}llo` matches "heello" and "heeello".
+
+9. **Brackets ([])**: Matches any one of the enclosed characters.
+   - Example: `h[aeiou]llo` matches "hallo", "hello", "hillo".
+
+10. **Parentheses (())**: Groups elements together.
+    - Example: `(hello|hi)` matches "hello" or "hi".
+
+11. **Backslash (\\)**: Escapes a special character.
+    - Example: `hello\.` matches "hello.".
+
+### Advanced Syntax
+
+1. **Alternation (|)**: Matches either the expression before or the expression after.
+   - Example: `cat|dog` matches "cat" or "dog".
+
+2. **Character Classes**:
+   - `\d`: Matches any digit (equivalent to `[0-9]`).
+   - `\D`: Matches any non-digit.
+   - `\w`: Matches any word character (equivalent to `[a-zA-Z0-9_]`).
+   - `\W`: Matches any non-word character.
+   - `\s`: Matches any whitespace character.
+   - `\S`: Matches any non-whitespace character.
+
+3. **Anchors**:
+   - `\b`: Matches a word boundary.
+   - `\B`: Matches a non-word boundary.
+
+### Examples
+
+1. **Match a phone number pattern**:
+   - Pattern: `\d{3}-\d{3}-\d{4}`
+   - Matches: "123-456-7890"
+
+2. **Match an email address**:
+   - Pattern: `\w+@\w+\.\w+`
+   - Matches: "example@example.com"
+
+3. **Match a URL**:
+   - Pattern: `https?://(\w+\.)*\w+`
+   - Matches: "http://example.com", "https://example.com"
+
+4. **Match a date (YYYY-MM-DD)**:
+   - Pattern: `\d{4}-\d{2}-\d{2}`
+   - Matches: "2023-06-30"
+
+5. **Match a word starting with "a" and ending with "e"**:
+   - Pattern: `\ba\w*e\b`
+   - Matches: "apple", "arise"
+
+### Using Regex with grep
+
+1. **Basic `grep`**:
+   ```bash
+   grep "pattern" file.txt
+   ```
+
+2. **Extended regex with `egrep` or `grep -E`**:
+   ```bash
+   egrep "pattern" file.txt
+   # or
+   grep -E "pattern" file.txt
+   ```
+
+3. **Case-insensitive search**:
+   ```bash
+   grep -i "pattern" file.txt
+   ```
+
+4. **Recursive search in directories**:
+   ```bash
+   grep -r "pattern" /path/to/directory
+   ```
+
+### Using Regex with sed
+
+`sed` (stream editor) is used for parsing and transforming text using regex.
+
+1. **Substitute pattern in a file**:
+   ```bash
+   sed 's/oldpattern/newpattern/g' file.txt
+   ```
+
+2. **Delete lines matching a pattern**:
+   ```bash
+   sed '/pattern/d' file.txt
+   ```
+
+### Using Regex with awk
+
+`awk` is a powerful text processing language with regex support.
+
+1. **Print lines matching a pattern**:
+   ```bash
+   awk '/pattern/ {print}' file.txt
+   ```
+
+2. **Print specific fields of lines matching a pattern**:
+   ```bash
+   awk '/pattern/ {print $1, $3}' file.txt
+   ```
+
+### More examples
+
+This is a sample **regtext** file:
+
+```bash
+$ cat regtext
+bt
+bit
+bite
+boot
+bloat
+boat
+```
+
+Search for a word with 1st character as "b" and 3rd character as "t".
+The second character can be any character.
+
+```bash
+# '.' represents a single character
+$ grep 'b.t' regtext
+bit
+bite
+```
+
+Search for 'b' followed by any single character, followed by any characters, which is then followed by 't'.
+
+```bash 
+# '*' means any character
+$ grep 'b.*t' regtext
+bt
+bit
+bite
+boot
+bloat
+boat
+```
+
+Search for any word that has 'bo', a 't', and any character in between them.
+```bash 
+$ grep 'bo*t' regtext
+bt
+boot
+```
+
+To look for any character/s which may or may not be sandwiched between 'b' and 't':
+
+```bash
+$ egrep 'b*?t' regtext
+bt
+bit
+bite
+boot
+bloat
+boat
+
+$ egrep 'b.?t' regtext
+bt
+bit
+bite
+```
