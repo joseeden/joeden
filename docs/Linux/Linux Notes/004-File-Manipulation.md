@@ -580,3 +580,153 @@ bit
 bite
 ```
 
+
+
+## Cut
+
+Useful if we want to get specific field of a line in a file.
+
+As an example, to get only "users" field in the /etc/passwd file, we can specify the field number (f1) and the character acting as the delimiter (d:):
+
+```bash
+# to get only users:
+cut -f1 -d: /etc/passwd
+
+# to get only the shells
+cut -f7 -d: /etc/passwd
+
+# to get only user, pw, uid, gid, comment 
+# here we're telling it to search everything before "/"
+# thus everything before the first "/" is field 1
+cut -f1 -d/ /etc/passwd
+```
+
+
+## awk
+
+<!-- ![](/img/docs/sv-awk.png) -->
+
+awk is a powerful text manipulation tool used for pattern scanning and processing.
+
+```bash
+awk 'pattern { action }' input-file
+```
+
+Where: 
+
+- `pattern`: A regular expression or condition that specifies which lines to match.
+- `action`: A series of commands to execute on each matched line.
+- `input-file`: The file to process. If omitted, `awk` reads from standard input.
+
+### Common Options
+
+- `-F`: Specifies the field separator.
+  ```bash
+  awk -F':' 'pattern { action }' input-file
+  ```
+
+- `-v`: Assigns a variable.
+  ```bash
+  awk -v var=value 'pattern { action }' input-file
+  ```
+
+### Field Variables
+
+- `$0`: The entire current line.
+- `$1`, `$2`, ...: The first, second, ..., field in the current line.
+
+### Print Specific Fields
+
+1. Print the first and second fields of each line:
+   ```bash
+   awk '{ print $1, $2 }' file.txt
+   ```
+
+2. Print the first and second fields, using a comma as the field separator:
+   ```bash
+   awk -F',' '{ print $1, $2 }' file.csv
+   ```
+
+### Filtering and Patterns
+
+1. Print lines containing a specific pattern:
+   ```bash
+   awk '/pattern/ { print }' file.txt
+   ```
+
+2. Print lines where the second field is greater than 100:
+   ```bash
+   awk '$2 > 100 { print }' file.txt
+   ```
+
+### Built-in Functions
+
+1. Print the length of the third field:
+   ```bash
+   awk '{ print length($3) }' file.txt
+   ```
+
+2. Calculate the sum of the second field:
+   ```bash
+   awk '{ sum += $2 } END { print sum }' file.txt
+   ```
+
+3. Convert the first field to uppercase:
+   ```bash
+   awk '{ print toupper($1) }' file.txt
+   ```
+
+### Formatting Output
+
+1. Print fields with formatted output:
+   ```bash
+   awk '{ printf "%-10s %-10s\n", $1, $2 }' file.txt
+   ```
+
+2. Add headers to the output:
+   ```bash
+   awk 'BEGIN { print "Name\tAge" } { print $1, $2 }' file.txt
+   ```
+
+
+### Calculating Averages
+
+Calculate and print the average of the second field:
+```bash
+awk '{ sum += $2; count++ } END { if (count > 0) print sum / count }' file.txt
+```
+
+### Extracting Specific Columns
+
+Extract specific columns from a CSV file and save to another file:
+```bash
+awk -F',' '{ print $1, $3, $5 }' input.csv > output.txt
+```
+
+### Conditional Processing
+
+Print lines where the first field is "John" and the second field is greater than 50:
+```bash
+awk '$1 == "John" && $2 > 50 { print }' file.txt
+```
+
+### Using External Variables
+
+Pass an external variable to `awk`:
+```bash
+threshold=100
+awk -v threshold="$threshold" '$2 > threshold { print }' file.txt
+```
+
+### Combining awk with Other Commands
+
+Use `awk` in a pipeline to process the output of another command:
+```bash
+ls -l | awk '{ print $9, $5 }'
+```
+
+Find and process files with `find` and `awk`:
+```bash
+find /path -type f -name "*.log" -exec awk '/ERROR/ { print FILENAME, $0 }' {} +
+```
+
