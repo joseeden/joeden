@@ -187,9 +187,9 @@ Going back to the original Stackoverflow discussion I've read earlier, it provid
 
 - **Use the EC2 security group firewall instead**. This is a little easier to configure, and it's already there without any additional configuration - it's part of the EC2 infrastructure where you have to permit ports to actually get to the EC2 instance. You also aren't going to lock yourself out as easily (though you can get locked out, it's trivial to fix it then because you just allow port 22 again in the rule set from the Amazon EC2 settings panel, provided you don't mess with iptables as well).
 
-- **Use a decent iptables** ruleset and don't log out from PuTTY on your EC2 until you are absolutely sure the rules you've put in place don't completely torpedo your access to the system.
+- **Use a decent iptables ruleset**  and don't log out from PuTTY on your EC2 until you are absolutely sure the rules you've put in place don't completely torpedo your access to the system.
 
-- Recommended to **not mess with the default policies** on a server, because it has some... evils... if not done correctly, and I usually only filter ingress traffic and FORWARD traffic, and permit Outgoing traffic because of time sync servers,
+- **It is not recommended to mess with the default policies** on a server, because it has some... evils... if not done correctly, and I usually only filter ingress traffic and FORWARD traffic, and permit Outgoing traffic because of time sync servers,
 
 
 ### Decent iptables - A Working Rule Set for iptables per your requirements
