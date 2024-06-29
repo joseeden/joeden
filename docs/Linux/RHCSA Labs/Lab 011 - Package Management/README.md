@@ -1,6 +1,6 @@
 ---
 title: 011 - Package Management
-tags: [Linux, Red Hat, Certifications]
+tags: [Linux, Red Hat, Certifications, Labs]
 # sidebar_position: 1 
 last_update:
   date: 2/27/2022

@@ -1,6 +1,6 @@
 ---
 title: 034 - FTP Server
-tags: [Linux, Red Hat, Certifications]
+tags: [Linux, Red Hat, Certifications, Labs]
 # sidebar_position: 1 
 last_update:
   date: 2/27/2022
@@ -183,7 +183,6 @@ ftp>
 ftp> 
 ```
 
-----------------------------------------------
 
 ## FTP Client
 
@@ -203,7 +202,6 @@ $ firewall-cmd --reload
 $ firewall-cmd --list-all
 ```
 
-----------------------------------------------
 
 ## Running FTP Commands
 
@@ -418,7 +416,6 @@ Here are some common FTP commands.
 | put | copy one file from the local to the remote machine.
 | mput | copy multiple files from the local to the remote machine.
 
-----------------------------------------------
 
 ## Errors Encountered
 
@@ -489,7 +486,6 @@ drwxrwxr-x    2 1000     1000           19 Mar 21 03:26 pub
 226 Directory send OK.
 ```
 
-----------------------------------------------
 
 ## References
 
@@ -509,4 +505,3 @@ drwxrwxr-x    2 1000     1000           19 Mar 21 03:26 pub
 
 - [227 Entering Passive Mode (124,153,94,30,242,138)](https://stackoverflow.com/questions/19603593/227-entering-passive-mode-124-153-94-30-242-138)
 
-----------------------------------------------

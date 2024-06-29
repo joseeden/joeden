@@ -1,6 +1,6 @@
 ---
 title: 007 - Users and Groups 
-tags: [Linux, Red Hat, Certifications]
+tags: [Linux, Red Hat, Certifications, Labs]
 last_update:
   date: 2/27/2022
 ---

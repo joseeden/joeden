@@ -1,6 +1,6 @@
 ---
 title: 002 - Custom Partitioning
-tags: [Linux, DevOps, Red Hat, Labs]
+tags: [Linux, Red Hat, Certifications, Labs]
 last_update:
   date:  6/1/2023
 ---

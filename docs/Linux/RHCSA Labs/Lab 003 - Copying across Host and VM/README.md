@@ -1,6 +1,6 @@
 ---
 title: 003 - Copying across Host and Guest Machine
-tags: [Linux, DevOps, Red Hat, Labs]
+tags: [Linux, Red Hat, Certifications, Labs]
 last_update:
   date:  6/1/2023
 ---
