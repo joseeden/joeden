@@ -678,28 +678,38 @@ the first occurence of the word1, and SAVE CHANGES
 
 Another complex example:
 
-Here we have file100. we want to remove all html tags. We will need to search characters "<char>", note that there should be characters between "<" and ">".
+Here we have file100. we want to remove all html tags. We will need to search characters between angle brackets:
 
-After search, replace them with space or nothing. then save changes
+```
+<...>
+```
+
+Here's a sample file:
 
 ```bash
-[root@tst-rhel eden]# cat file100
+# file100 
+
 <html>
 <p>
 <>
 hello world
 hello galaxy
-hello universe        
-[root@tst-rhel eden]# sed -i "s/<[^>]*>//" file100
-[root@tst-rhel eden]# cat file100
+hello universe   
+```
+
+After search, replace them with space or nothing. then save changes.
+
+```bash
+[root@tst-rhel]# sed -i "s/<[^>]*>//" file100
+[root@tst-rhel]# cat file100
 
 hello world   
 hello galaxy  
 hello universe
-[root@tst-rhel eden]#  
 ```
 
 Other examples:
+
 ```bash
 # changes the first occurrence in each line containing the blue word to red
 sed 's/blue/red/' colors.txt 
@@ -721,7 +731,6 @@ sed '12,$d' colors.txt
 ```
 
 
-
 ## Tee
 This allows us to return the STDOUT to the terminal and  at the same time redirect STDOUT to a file
 
@@ -729,7 +738,7 @@ This allows us to return the STDOUT to the terminal and  at the same time redire
 
 list contents of /home/eden and redirect output to a file
 
-    [root@tst-rhel eden]# ll
+    [root@tst-rhel]# ll
     total 612
     -rw-r--r--. 1 root root    153 Jul 13 13:34 file1
     -rw-r--r--. 1 root root     43 Jul 13 13:51 file100
@@ -738,8 +747,8 @@ list contents of /home/eden and redirect output to a file
     -rw-r-----. 1 root root   1786 Jul 13 11:30 sudo.conf
     -r--r-----. 1 root root   4361 Jul 13 11:30 sudoers
     -rw-r--r--. 1 root root     37 Jul 13 13:37 xab
-    [root@tst-rhel eden]#
-    [root@tst-rhel eden]# ls | tee outfile
+    [root@tst-rhel]#
+    [root@tst-rhel]# ls | tee outfile
     file1
     file100
     file101
@@ -752,7 +761,7 @@ list contents of /home/eden and redirect output to a file
 Note that the stdout will overwrite the contents of the 
 outputfile if its not empty
 
-    [root@tst-rhel eden]# ll
+    [root@tst-rhel]# ll
     total 616
     -rw-r--r--. 1 root root    153 Jul 13 13:34 file1
     -rw-r--r--. 1 root root     43 Jul 13 13:51 file100
