@@ -11,7 +11,11 @@ last_update:
 
 From [Install and configure FTP server on Linux Mint 20:](https://linuxhint.com/installing_ftp_server_linux_mint/)
 
-> FTP or the File Transfer Protocol is the most popular network protocol that is used to transfer files and information between two systems over a network. However, the FTP by default does not encrypt the traffic, which is not a secure method and can result in an attack on a server. This is where VSFTPD comes which stands for Very Secure FTP Daemon and is a secure, stable, and fast FTP server.
+:::info[**Install FTP**]
+
+FTP or the File Transfer Protocol is the most popular network protocol that is used to transfer files and information between two systems over a network. However, the FTP by default does not encrypt the traffic, which is not a secure method and can result in an attack on a server. This is where VSFTPD comes which stands for Very Secure FTP Daemon and is a secure, stable, and fast FTP server.
+
+:::
 
 Note that for this lab, I'm running two Amazon EC2-instances in my VPC.
 - storesvr - FTP server
