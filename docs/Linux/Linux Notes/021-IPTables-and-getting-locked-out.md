@@ -35,7 +35,7 @@ After some searching, I learned that I'm basically screwed. From a Stackoverflow
 
 While this was helpful, note that this answer was posted in the Stackoverflow site last 2017 and there have been other ways created to connect to the instance. To see the options on how to connect to your EC2 instance, select your instance and click **Connect**.
 
-![](Images/iptables-connect-to-your-instance.png)
+![](/img/docs/iptables-connect-to-your-instance.png)
 
 
 ## Possible solutions
@@ -44,14 +44,14 @@ While this was helpful, note that this answer was posted in the Stackoverflow si
 
 I've already used up **SSH client** when I blocked myself through iptables, so that leaves me with 3 more options.
 
-![](Images/iptables-locked-out.png)
+![](/img/docs/iptables-locked-out.png)
 
 
 ### EC2 Instance Connect
 
 This didn't worked out as well since I needed to have **EC2 Instance Connect** installed on the machine before anything else. I tried to go the link provided in the error message [Task 1: Configure network access to an instance.](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-connect-set-up.html?icmpid=docs_ec2_console#ec2-instance-connect-setup-security-group) but it tackled more about security groups which isn't the one that's restricting me.
 
-![](Images/iptables-ec2-instance-connect.png)
+![](/img/docs/iptables-ec2-instance-connect.png)
 
 
 ### Session Manager
@@ -60,20 +60,20 @@ This would have been really useful because this uses SSH to connect to the insta
 
 **NOTE**: Have this installed upon launching your instance or better yet define it in the startup script. Steps on how to install Session Manager in Linux can be read [here](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-ssm-agent.html).
 
-![](Images/iptables-session-manager.png)
+![](/img/docs/iptables-session-manager.png)
 
 
 ### EC2 Serial Console
 
 This was a new one which I haven't seen last year during my review for the Associates certification exam. It required me to allow the account to use the EC2 Serial Console so I simply clicked **Managed access** and then ticked the **Allow** box and **Update** on the next page.
 
-![](Images/iptables-ec2-serial-console-manage-access.png)
+![](/img/docs/iptables-ec2-serial-console-manage-access.png)
 
-![](Images/iptables-ec2-serial-console-allow.png)
+![](/img/docs/iptables-ec2-serial-console-allow.png)
 
 Going back to the previous EC2 instances landing page, selected my instance and hit **Connect** to see the **EC2 Serial Console** tab again. This time it showed another message - "**This instance type is not supported for the EC2 serial console.**"
 
-![](Images/iptables-ec2-serial-console-not-supported-instance-type.png)
+![](/img/docs/iptables-ec2-serial-console-not-supported-instance-type.png)
 
 I went over the provided links and breezed through them. After allowing EC2 serial console access to the account, the instance type I'm using should also one of the [supported instance type - Nitro](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html?icmpid=docs_ec2_console#ec2-nitro-instances). These are references you may check out:
 - [Instances built on the Nitro System](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html?icmpid=docs_ec2_console#ec2-nitro-instances)
@@ -178,7 +178,7 @@ $ sudo iptables -A INPUT --protocol tcp --in-interface eth0 -j REJECT && sudo ip
 
 We see the terminal crashing. 
 
-![](Images/iptables-forced.png)
+![](/img/docs/iptables-forced.png)
 
 
 ## Lesson Learned
