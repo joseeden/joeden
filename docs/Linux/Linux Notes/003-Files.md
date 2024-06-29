@@ -1,5 +1,5 @@
 ---
-title: Files
+title: Working with Text Files
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 3
 last_update:
@@ -8,9 +8,11 @@ last_update:
 
 
 ## Create numbered files
+
 This is a neat trick that I saw in one of Sander Vugt's videos.
 The command below creates "file1" up to "file15".
 It then deletes "file12" to "file14"
+
 ```bash
 $ touch file{1..15}
 $ ll
@@ -48,15 +50,15 @@ total 0
 -rw-rw-r--. 1 eden eden 0 Dec 23 23:48 file9
 ```
 
-----
+## File Editors
 
-
-## The vi editor
+### The vi editor
 
 Powerful editor, has three modes:
-    - INSERT MODE (i, allows edit of file)
-    - EX MODE 
-    - COMMAND MODE (allows commands, single-letter)
+
+- INSERT MODE (i, allows edit of file)
+- EX MODE 
+- COMMAND MODE (allows commands, single-letter)
 
 ```bash
 # enter INSERT mode               I 
@@ -109,19 +111,16 @@ Powerful editor, has three modes:
 ```
 
 
-
-## The vim
+### The vim
 
 ![](/img/docs/sv-vim-2.png)
 ![](/img/docs/sv-vim-3.png)
 
-## Commands
-```bash
-# to create a file, there's two options:        
-vi <file>
-touch <file>
 
-# vim commands
+```bash
+Some common vim commands:
+
+```bash 
 Esc                 Escape mode
 i                   insert mode
 a                   append mode
@@ -139,49 +138,87 @@ shift-G             go to last line
 $                   go to end of line
 :%s/old/new/        replace first occurence of 'old' with 'new'
 :%s/old/new/g       replace all occurence of 'old' with 'new'
-
-# to edit existing file, two editors available:  
-vi <file>
-nano <file>
-
-# to rename file          
-mv <old-name> <new-name>
-
-# to move file to another directory        
-mv <file> </new/dir>
-    
-# to delete file          
-rm <file>
-
-# to duplicate file       
-cp <file> <file-copy>
-
-# to copy file to another directory
-cp <file> </new/dir>
-
-# show last 10 lines      
-tail <file>
-
-# show last 5 lines       
-tail -5 <file>      
-tail -n 5 <file?
-
-# to show content,in pages                
-# Press UP/DOWN to move pages 
-less <file>
-
-# to show full content of a file 
-cat <file>
 ```
 
-----
+## Managing Files
+
+To create a file, there's two options:        
+
+```bash
+vi <file>
+touch <file>
+```
+
+To edit an existing file: 
+
+```bash
+vi <file>
+nano <file>
+```
+
+Rename a file: 
+
+```bash
+mv <old-name> <new-name>
+```
+
+Move file to another directory: 
+
+```bash
+mv <file> </new/dir> 
+```
+
+Delete a file:
+
+```bash
+rm <file>
+```
+
+Create a copy of a file: 
+
+```bash
+cp <file> <file-copy>
+```
+
+Copy file to another directory:
+
+```bash
+cp <file> </new/dir>
+```
+
+Show last 10 lines of a file: 
+
+```bash
+tail <file>
+```
+
+Show last 5 lines:    
+
+```bash
+tail -5 <file>      
+tail -n 5 <file?
+```
+
+Show contents of a file (in pages):
+
+```bash
+# Press UP/DOWN to move pages 
+less <file>
+```
+
+Show full content of a file:
+
+```bash
+cat <file> 
+```
+
 
 ## rm -rf /
 
-This is a dangerous command which will delete the root directory.
-This is why if you run this, it will prompt you to add another parameter to ensure that you are certain that you want to run this command.
+This is a dangerous command which will delete the root directory. This is why if you run this, it will prompt you to add another parameter to ensure that you are certain that you want to run this command.
 
 To test it, I spun up a dummy EC2 instance and run it.
+
 ```bash
 [eden@ip-172-31-19-144 ~]$ rm -rf /
 rm: it is dangerous to operate recursively on `/'
@@ -190,7 +227,8 @@ rm: use --no-preserve-root to override this failsafe
 [eden@ip-172-31-19-144 ~]$ sudo rm -rf / --no-preserve-root
 ```
 
-It basically delete all commands, thus no command can be used
+It basically delete all commands, thus no command can be used,
+
 ```bash
 [eden@ip-172-31-19-144 ~]$ ls
 -bash: /bin/ls: No such file or directory
@@ -204,97 +242,351 @@ It basically delete all commands, thus no command can be used
 -bash: /bin/rm: No such file or directory
 ```
 
-----
 
 ## Common Text Tools 
 
 ### more, less, head, tail
+
+Notes: 
+
+- **more** was the original file pager.
+- **less** was developed to offer more advanced features.
+- Use **head** to show the first 10 lines of a text file. 
+- Use **tail** to show the last 10 lines of a text file. 
+- Use "-n nn" to specify another number of lines
+
+As an example: 
+
+```bash
+$ cat sample.txt
+Shall I compare thee to a summer’s day?
+Thou art more lovely and more temperate:
+Rough winds do shake the darling buds of May,
+And summer’s lease hath all too short a date;
+Sometime too hot the eye of heaven shines,
+And often is his gold complexion dimm’d;
+And every fair from fair sometime declines,
+By chance or nature’s changing course untrimm’d;
+But thy eternal summer shall not fade,
+Nor lose possession of that fair thou ow’st;
+Nor shall death brag thou wander’st in his shade,
+When in eternal lines to time thou grow’st:
+So long as men can breathe or eyes can see,
+So long lives this, and this gives life to thee
+
+$ head sample.txt
+Shall I compare thee to a summer’s day?
+Thou art more lovely and more temperate:
+Rough winds do shake the darling buds of May,
+And summer’s lease hath all too short a date;
+Sometime too hot the eye of heaven shines,
+And often is his gold complexion dimm’d;
+And every fair from fair sometime declines,
+By chance or nature’s changing course untrimm’d;
+But thy eternal summer shall not fade,
+Nor lose possession of that fair thou ow’st;
+
+$ head -n 3 sample.txt
+Shall I compare thee to a summer’s day?
+Thou art more lovely and more temperate:
+Rough winds do shake the darling buds of May,
+
+$ head -n 5 sample.txt
+Shall I compare thee to a summer’s day?
+Thou art more lovely and more temperate:
+Rough winds do shake the darling buds of May,
+And summer’s lease hath all too short a date;
+Sometime too hot the eye of heaven shines,
+
+$ tail sample.txt
+Sometime too hot the eye of heaven shines,
+And often is his gold complexion dimm’d;
+And every fair from fair sometime declines,
+By chance or nature’s changing course untrimm’d;
+But thy eternal summer shall not fade,
+Nor lose possession of that fair thou ow’st;
+Nor shall death brag thou wander’st in his shade,
+When in eternal lines to time thou grow’st:
+So long as men can breathe or eyes can see,
+So long lives this, and this gives life to thee
+
+$ tail -n 2 sample.txt
+So long as men can breathe or eyes can see,
+So long lives this, and this gives life to thee
+
+$ tail -n 4 sample.txt
+Nor shall death brag thou wander’st in his shade,
+When in eternal lines to time thou grow’st:
+So long as men can breathe or eyes can see,
+So long lives this, and this gives life to thee 
+```
+
+
+
+<!-- 
 ![](/img/docs/sv-more-less.png)
-![](/img/docs/sv-head-tail.png)
+![](/img/docs/sv-head-tail.png) -->
 
 ### cat, tac
-![](/img/docs/sv-ca-tac.png) 
+
+Notes: 
+
+- **cat** displays the contents of a text file.
+    - Use "-A" to show all non-printable characters.
+    - Use "-b" to show number lines 
+    - Use "-s" to suppress repeated empty lines 
+
+- **tac** does the same but in reverse order.
+
+example: 
+
+```bash
+$ cat -A sample.txt
+$
+Shall I compare thee to a summerM-bM-^@M-^Ys day?$
+Thou art more lovely and more temperate:$
+$
+$
+Rough winds do shake the darling buds of May,$
+$
+And summerM-bM-^@M-^Ys lease hath all too short a date;$
+Sometime too hot the eye of heaven shines,$
+And often is his gold complexion dimmM-bM-^@M-^Yd;$
+And every fair from fair sometime declines,$
+$
+$
+$
+By chance or natureM-bM-^@M-^Ys changing course untrimmM-bM-^@M-^Yd;$
+But thy eternal summer shall not fade,$
+$
+Nor lose possession of that fair thou owM-bM-^@M-^Yst;$
+Nor shall death brag thou wanderM-bM-^@M-^Yst in his shade,$
+When in eternal lines to time thou growM-bM-^@M-^Yst:$
+$
+$
+$
+So long as men can breathe or eyes can see,$
+So long lives this, and this gives life to thee$
+```
+```bash
+$ cat -b sample.txt
+
+     1  Shall I compare thee to a summer’s day?
+     2  Thou art more lovely and more temperate:
+
+
+     3  Rough winds do shake the darling buds of May,
+
+     4  And summer’s lease hath all too short a date;
+     5  Sometime too hot the eye of heaven shines,
+     6  And often is his gold complexion dimm’d;
+     7  And every fair from fair sometime declines,
+
+
+
+     8  By chance or nature’s changing course untrimm’d;
+     9  But thy eternal summer shall not fade,
+
+    10  Nor lose possession of that fair thou ow’st;
+    11  Nor shall death brag thou wander’st in his shade,
+    12  When in eternal lines to time thou grow’st:
+
+
+
+    13  So long as men can breathe or eyes can see,
+    14  So long lives this, and this gives life to thee
+```
+```bash
+$ cat -s sample.txt
+
+Shall I compare thee to a summer’s day?
+Thou art more lovely and more temperate:
+
+Rough winds do shake the darling buds of May,
+
+And summer’s lease hath all too short a date;
+Sometime too hot the eye of heaven shines,
+And often is his gold complexion dimm’d;
+And every fair from fair sometime declines,
+
+By chance or nature’s changing course untrimm’d;
+But thy eternal summer shall not fade,
+
+Nor lose possession of that fair thou ow’st;
+Nor shall death brag thou wander’st in his shade,
+When in eternal lines to time thou grow’st:
+
+So long as men can breathe or eyes can see,
+So long lives this, and this gives life to thee 
+```
+```bash
+$ tac sample.txt
+So long lives this, and this gives life to thee
+So long as men can breathe or eyes can see,
+
+
+
+When in eternal lines to time thou grow’st:
+Nor shall death brag thou wander’st in his shade,
+Nor lose possession of that fair thou ow’st;
+
+But thy eternal summer shall not fade,
+By chance or nature’s changing course untrimm’d;
+
+
+
+And every fair from fair sometime declines,
+And often is his gold complexion dimm’d;
+Sometime too hot the eye of heaven shines,
+And summer’s lease hath all too short a date;
+
+Rough winds do shake the darling buds of May,
+
+
+Thou art more lovely and more temperate:
+Shall I compare thee to a summer’s day?
+ 
+```
 
 ### cut, sort, tr
-![](/img/docs/sv-cut-sort-tr.png)
 
-----
+Notes: 
 
-## Globbing    
+- **cut** - filters the output. 
+- **sort** - sorts the output 
+- **tr** - translates 
 
-![](/img/docs/sv-globbing.png)
+## Globbing   
 
-![](/img/docs/sv-globbing-2.png)
+File globbing in Linux is the process of using wildcard characters to match multiple files and directories.
 
-Examples:
+- A shell feature that helps matching filenames. 
+- Not the same as regex, which helps find text patterns
+- For documentation, see **man 7 glob**
+
+Common Wildcards
+
+1. `*` - Matches zero or more characters.
+2. `?` - Matches exactly one character.
+3. `[]` - Matches any one of the enclosed characters.
+4. `{}` - Matches a comma-separated list of patterns.
+
+### Using `*`
+
+1. **Match all files in a directory:**
+
+   ```bash
+   ls *
+   ```
+
+2. **Match all files with a `.txt` extension:**
+
+   ```bash
+   ls *.txt
+   ```
+
+3. **Match all files starting with `log` and ending with any extension:**
+
+   ```bash
+   ls log.*
+   ```
+
+### Using `?`
+
+1. **Match files with exactly one character followed by `.txt`:**
+
+   ```bash
+   ls ?.txt
+   ```
+
+2. **Match files starting with `file` followed by any single character:**
+
+   ```bash
+   ls file?
+   ```
+
+### Using `[]`
+
+1. **Match files starting with either `a`, `b`, or `c` and ending with `.txt`:**
+
+   ```bash
+   ls [abc]*.txt
+   ```
+
+2. **Match files starting with a digit and ending with `.log`:**
+
+   ```bash
+   ls [0-9]*.log
+   ```
+
+3. **Match files starting with either `file1`, `file2`, or `file3`:**
+
+   ```bash
+   ls file[1-3]
+   ```
+
+### Using `{}`
+
+1. **Match files with either `.txt` or `.md` extensions:**
+
+   ```bash
+   ls *.{txt,md}
+   ```
+
+2. **Match files `file1`, `file2`, and `file3` with `.txt` extension:**
+
+   ```bash
+   ls file{1,2,3}.txt
+   ```
+
+### Additional Tips
+
+1. **Recursive globbing with `**`:**
+
+   The `**` wildcard can be used for recursive globbing (matching directories and files at any depth). Note that this requires enabling the `globstar` shell option:
+
+   ```bash
+   shopt -s globstar
+   ls **/*.txt
+   ```
+
+2. **Combining patterns:**
+
+   Combine different wildcards for more complex patterns. For example, match files starting with `data` followed by any two characters and ending with `.csv`:
+
+   ```bash
+   ls data??.csv
+   ```
+
+3. **Excluding patterns:**
+
+   Use `find` or `grep` to exclude certain patterns. For example, to list all `.txt` files but exclude those containing `temp`:
+
+   ```bash
+   ls *.txt | grep -v temp
+   ```
+
+
+<!-- ![](/img/docs/sv-globbing.png)
+
+![](/img/docs/sv-globbing-2.png) -->
+
+<!-- Examples:
 
 |list command||
 |--|--|
 |ls host* | list all files/dir that starts with "host" |
 | ls ?ost | list all files/dir that start with any character, followed by  "ost" |
+ -->
 
-----
-
-## Cockpit
-
-Cockpit is a server administration tool sponsored by Red Hat, focused on providing a modern-looking and user-friendly interface to manage and administer servers.
-
-Here are some of the more important features of Cockpit:
-- Graphical and interface designers are involved in the project.
-- Cockpit is modular and can be extended by installing extra modules. You can even develop modules of your own.
-- It can support multiple servers from a single dashboard.
-- It is not intrusive. This means Cockpit works alongside other management tools without causing issues.
-- Cockpit uses a systemd socket, and it doesn’t use any memory when it is not in use.
-- Cockpit builds upon existing functionality; it doesn’t require a configuration by default.
-- Cockpit doesn’t store the state or data of servers anywhere. It utilizes the same API command-line tools use.
-- Cockpit has no special privileges and doesn’t run as root. It creates a session as the logged in user and has the same permissions as that user. So, to perform administrative tasks, the user needs permission to use sudo or PolicyKit to escalate privileges.
-- It’s free!
-
-```bash
-$ sudo yum install -y cockpit cockpit-dashboard
-$ sudo systemctl enable --now cockpit.socket
-
-Created symlink /etc/systemd/system/sockets.target.wants/cockpit.socket → /usr/lib/systemd/system/cockpit.socket.
-```
-
-Allow cockpit in firewall.
-```bash
-$ sudo firewall-cmd --add-port=9090/tcp
-$ sudo firewall-cmd --permanent --add-port=9090/tcp
-```
-
-```bash
-
-$ sudo systemctl status cockpit.socket
-
-● cockpit.socket - Cockpit Web Service Socket
-   Loaded: loaded (/usr/lib/systemd/system/cockpit.socket; enabled; vendor preset: disabled)
-   Active: active (listening) since Thu 2021-12-23 23:54:30 PST; 1min 29s ago
-     Docs: man:cockpit-ws(8)
-   Listen: [::]:9090 (Stream)
-  Process: 27262 ExecStartPost=/bin/ln -snf active.motd /run/cockpit/motd (code=exited, status=0/SUCCESS)
-  Process: 27254 ExecStartPost=/usr/share/cockpit/motd/update-motd  localhost (code=exited, status=0/SUCCESS)
-    Tasks: 0 (limit: 100840)
-   Memory: 4.0K
-   CGroup: /system.slice/cockpit.socket
-
-Dec 23 23:54:30 tst-rhel systemd[1]: Starting Cockpit Web Service Socket.
-Dec 23 23:54:30 tst-rhel systemd[1]: Listening on Cockpit Web Service Socket.
-```
-
-![](/img/docs/sv-cockpit.png)
-![](/img/docs/sv-cockpit-2.png)
-
-----
-
-## Format file by removing white spacess
+## Removing white spaces
 
 ```bash
 # to format contents of the file which has weird character spacing
 fmt -u <filename>
 ```
 
-----
+
 
 ## Getting info from files
 
@@ -322,7 +614,7 @@ split -l <no.of.lines> <file1>
 diff <file1> <file2>
 ```
 
-----
+
 
 ## When using "less file-name"
 
@@ -744,8 +1036,8 @@ list contents of /home/eden and redirect output to a file
     -rw-r--r--. 1 root root     43 Jul 13 13:51 file100
     -rw-r--r--. 1 root root      1 Jul 13 13:45 file101
     -rw-r--r--. 1 root root 594424 Aug 13  2018 nano-2.9.8-1.el8.x86_64.rpm
-    -rw-r-----. 1 root root   1786 Jul 13 11:30 sudo.conf
-    -r--r-----. 1 root root   4361 Jul 13 11:30 sudoers
+    -rw-r-. 1 root root   1786 Jul 13 11:30 sudo.conf
+    -r--r-. 1 root root   4361 Jul 13 11:30 sudoers
     -rw-r--r--. 1 root root     37 Jul 13 13:37 xab
     [root@tst-rhel]#
     [root@tst-rhel]# ls | tee outfile
@@ -768,8 +1060,8 @@ outputfile if its not empty
     -rw-r--r--. 1 root root      1 Jul 13 13:45 file101
     -rw-r--r--. 1 root root 594424 Aug 13  2018 nano-2.9.8-1.el8.x86_64.rpm
     -rw-r--r--. 1 root root     80 Jul 13 13:57 outfile
-    -rw-r-----. 1 root root   1786 Jul 13 11:30 sudo.conf
-    -r--r-----. 1 root root   4361 Jul 13 11:30 sudoers
+    -rw-r-. 1 root root   1786 Jul 13 11:30 sudo.conf
+    -r--r-. 1 root root   4361 Jul 13 11:30 sudoers
     -rw-r--r--. 1 root root     37 Jul 13 13:37 xab
 
 to just append the stdout to the outputfile
