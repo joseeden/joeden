@@ -64,16 +64,25 @@ If a user has initiated a forced detach of an Amazon EBS volume, the block devic
 
 ### Reboot
 
-I went and rebooted the instance. After it went back, I checked again the **Storage** tab in the **Instance Summary** panel. But now it showed a new error at the bottom. It also still shows the specific volume stuck in "attaching" state
+I went and rebooted the instance. After it went back, I checked again the **Storage** tab in the **Instance Summary** panel. But now it showed a new error at the bottom. It also still shows the specific volume stuck in "attaching" state.
+
 
 ![](/img/docs/ebs-volume-rebooted-ec2.png)
+
 
 ### Restart
 
 Going back to the AWS articles, it suggested to do a restart.
-> If these steps don’t resolve the issue, or if you must use the device name that isn't working, try the following procedures:
-> - Reboot the instance.
-> - Stop and start the instance to migrate it to new underlying hardware. Keep in mind that instance store data is lost when you stop and start an instance. If your instance is instance store-backed or has instance store volumes containing data, the data is lost when you stop the instance.
+
+:::info[**Additional steps**]
+
+If these steps don’t resolve the issue, or if you must use the device name that isn't working, try the following procedures:
+- Reboot the instance.
+- Stop and start the instance to migrate it to new underlying hardware. 
+
+Keep in mind that instance store data is lost when you stop and start an instance. If your instance is instance store-backed or has instance store volumes containing data, the data is lost when you stop the instance.
+
+:::
 
 I went back to the AWS Console to restart the instance. And what do you know. The new error is gone, the volume has also changed to **"Attached"** state.
 ![](/img/docs/ebs-volume-not-stuck.png)
