@@ -117,3 +117,206 @@ To see other options:
 set -o
 ```  
 
+
+## grep, egrep, and fgrep
+
+The `grep`, `egrep`, and `fgrep` commands are used for searching text using patterns. They differ mainly in the type of pattern matching they support and their default behavior.
+
+### grep 
+
+`grep` is used to search text using basic regular expressions. 
+
+- Global Regular Expression Print
+- It prints lines that match a given pattern.
+
+Syntax:
+
+```bash
+grep [options] pattern [file...]
+```
+
+Examples:
+
+1. Search for the word "hello" in a file:
+   ```bash
+   grep "hello" filename.txt
+   ```
+
+2. Search for lines that start with "hello:
+   ```bash
+   grep "^hello" filename.txt
+   ```
+
+3. Search for lines that end with "world:
+   ```bash
+   grep "world$" filename.txt
+   ```
+
+4. Search recursively in all `.txt` files in a directory:
+   ```bash
+   grep -r "hello" /path/to/directory/*.txt
+   ```
+
+5. Search for words that contain "h" inside a file:
+
+   ```bash
+   grep [h] file1.txt
+   ```
+
+6. Search for words that contain multiple specific letters inside a file:
+
+   ```bash
+   grep [hzjkl] file1.txt
+   ```
+
+7. Search for characters between "A" to "G":
+
+   ```bash
+   grep [a-g] file1
+   ```
+
+7. Search for characters between "3" to "8":
+
+   ```bash
+   grep [3-8] file1
+   ```
+             
+8. We can also put the pattern in a file and reference that file when doing grep.
+    Example: 
+
+    ```bash
+    # patternfile 
+    [4-6]
+    ```
+
+    To reference file, use "-f":
+
+    ```bash
+    grep -f patternfile file1.txt
+    ```
+
+
+### egrep 
+
+`egrep` is equivalent to `grep -E`.
+
+- Extended Global Regular Expression Print
+- Used to search text using extended regular expressions.
+
+Syntax: 
+
+```bash
+egrep [options] pattern [file...]
+```
+
+Examples: 
+
+1. Search for either "cat" or "dog":
+   ```bash
+   egrep "cat|dog" filename.txt
+   ```
+
+2. Search for words starting with "cat" and followed by any number of characters:
+   ```bash
+   egrep "cat.*" filename.txt
+   ```
+
+3. Search for for all lines that contain "hello" and "world":
+
+   ```bash
+   egrep "hello.*world" filename.txt
+   ```
+
+4. Search for lines containing a digit:
+   ```bash
+   egrep "[0-9]" filename.txt
+   ```
+
+5. Search recursively for lines that contain either "foo" or "bar":
+   ```bash
+   egrep -r "foo|bar" /path/to/directory
+   ```
+
+6. Search for all lines that DOES NOT contain either "hello" or "world":
+
+   ```bash
+   egrep -v "hello|world" filename.txt  
+   ```
+               
+7. Search for all lines that contain either "hello" or "world" but should not contain "hey": 
+
+   ```bash
+   egrep "hello|world" file1 | grep -v "hey"  
+   ```
+        
+
+
+
+### fgrep
+
+`fgrep` is equivalent to `grep -F`.
+
+- Fixed-string Global Regular Expression Print
+- Used to search text using fixed strings (no regular expressions).
+
+Syntax:
+
+```bash
+fgrep [options] string [file...]
+```
+
+Examples:
+ 
+
+1. Search for the exact string "hello.world" without interpreting `.` as a wildcard:
+   ```bash
+   fgrep "hello.world" filename.txt
+   ```
+
+2. Search for lines containing the exact phrase "error occurred":
+   ```bash
+   fgrep "error occurred" filename.txt
+   ```
+
+3. Search for lines containing any of the patterns listed in a file:
+   ```bash
+   fgrep -f patterns.txt filename.txt
+   ```
+
+
+### Common Options
+
+- `-i`: Ignore case.
+  ```bash
+  grep -i "hello" filename.txt
+  ```
+
+- `-v`: Invert match (show lines that do not match the pattern).
+  ```bash
+  grep -v "hello" filename.txt
+  ```
+
+- `-r`: Recursively search directories.
+  ```bash
+  grep -r "hello" /path/to/directory
+  ```
+
+- `-l`: Print only the names of files containing matches.
+  ```bash
+  grep -l "hello" *.txt
+  ```
+
+- `-n`: Print line numbers with output.
+  ```bash
+  grep -n "hello" filename.txt
+  ```
+
+### Combined Use
+
+To search for the pattern "error" in all `.log` files in a directory, ignoring case, and showing line numbers:
+
+```bash
+grep -i -n "error" /path/to/directory/*.log
+```
+
+
