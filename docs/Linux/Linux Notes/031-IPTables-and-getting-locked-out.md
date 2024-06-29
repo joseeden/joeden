@@ -237,6 +237,16 @@ NOTE Unless you really need to restrict things like forwarding traffic to the In
 iptables -A FORWARD -j DROP
 ```
 
+### Firewall rules doesn't persist
+
+After some hours of searching, I've also learned that my problem was really easy and it would always be solved by simply restarting the system. This is a bit difficult if you;re on an enterprise setup, more so for production, but since I own my own test EC2 instances, I can simply restart them anytime.
+
+As said, this is not enabled by default but there is an option to enable it.
+```bash
+sudo iptables-save
+```
+
+Of course, if you locked yourself out before you're able to run the command above then it means any rules that locked you out will not persist and will be flushed out when you restart the system. I was thinking of doing a forced lockout on myself and I've read different articles online. I decided to not go deep into this for now (or maybe I will) but I'll attach the helpful articles in the references section below.
 
 
 ## References
@@ -245,3 +255,7 @@ iptables -A FORWARD -j DROP
 - [Should you use iptables with EC2 instances?](https://serverfault.com/questions/88086/should-you-use-iptables-with-ec2-instances)
 - [CentOS / RHEL : How to make iptable rules persist across reboots](https://www.thegeekdiary.com/centos-rhel-how-to-make-iptable-rules-persist-across-reboots/)
 - [Why do iptables rules disappear when restarting my Debian system?](https://unix.stackexchange.com/questions/52376/why-do-iptables-rules-disappear-when-restarting-my-debian-system)
+- [Saving Iptables Firewall Rules Permanently](https://www.thomas-krenn.com/en/wiki/Saving_Iptables_Firewall_Rules_Permanently)
+- [Saving iptables firewall rules permanently on Linux](https://www.cyberciti.biz/faq/how-to-save-iptables-firewall-rules-permanently-on-linux/)
+- [How to save iptables firewall rules permanently on Linux](https://www.cyberciti.biz/faq/how-to-save-iptables-firewall-rules-permanently-on-linux/)
+- [How to make iptables rules persistent after reboot on Linux](https://linuxconfig.org/how-to-make-iptables-rules-persistent-after-reboot-on-linux)
