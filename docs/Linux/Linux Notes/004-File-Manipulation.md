@@ -917,3 +917,98 @@ hello world
 hello galaxy  
 hello universe
 ```
+
+
+
+
+## Tee
+
+`Tee` reads from standard input and writes to standard output and one or more files simultaneously. This is useful for logging or capturing command output while still displaying it on the terminal.
+
+
+```bash
+command | tee [options] file(s)
+```
+
+Where: 
+
+- `command`: The command whose output you want to capture.
+- `file(s)`: One or more files to which the output should be written.
+
+### Common Options
+
+- `-a`, `--append`: Append the output to the files, rather than overwriting them.
+- `-i`, `--ignore-interrupts`: Ignore interrupt signals.
+
+
+### Basic Usage
+
+1. Write the output of `ls` to a file:
+   ```bash
+   ls | tee output.txt
+   ```
+
+   This command lists the contents of the current directory and writes the output to `output.txt` while also displaying it on the terminal.
+
+2. Write the output of `ls` to multiple files:
+   ```bash
+   ls | tee output1.txt output2.txt
+   ```
+
+   This command lists the directory contents and writes the output to both `output1.txt` and `output2.txt`.
+
+### Append to Files
+
+1. Append the output of `ls` to a file:
+   ```bash
+   ls | tee -a output.txt
+   ```
+
+   This command lists the directory contents and appends the output to `output.txt`.
+
+### Ignoring Interrupts
+
+1. Ignore interrupt signals:
+   ```bash
+   command | tee -i output.txt
+   ```
+
+   This command will run `command`, writing the output to `output.txt` and ignoring interrupt signals (e.g., `Ctrl+C`).
+
+### Combining tee with Other Commands
+
+1. Capture the output of a pipeline:
+   ```bash
+   ps aux | grep httpd | tee processes.txt
+   ```
+
+   This command captures the output of `ps aux | grep httpd` and writes it to `processes.txt`.
+
+2. Use `tee` in a script to log output:
+   ```bash
+   #!/bin/bash
+   echo "Starting script..."
+   command1 | tee command1.log
+   command2 | tee command2.log
+   echo "Script completed."
+   ```
+
+### Redirecting stout and sterr
+
+1. Capture both standard output and standard error:
+   ```bash
+   command 2>&1 | tee output.txt
+   ```
+
+### Practical Use Cases 
+
+1. This command continuously monitors the system log and writes the output to `syslog_monitor.log` while displaying it on the terminal.
+
+   ```bash
+   tail -f /var/log/syslog | tee syslog_monitor.log
+   ```
+
+2. This command copies the configuration file and logs the backup operation to `backup.log`.
+   ```bash
+   cp /etc/config.conf /etc/config.conf.bak | tee backup.log
+   ```
