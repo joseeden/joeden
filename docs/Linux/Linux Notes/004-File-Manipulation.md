@@ -488,3 +488,95 @@ Regular expressions (regex) are patterns used to match character combinations in
    ```bash
    grep -r "pattern" /path/to/directory
    ```
+
+
+
+### Using Regex with sed
+
+`sed` (stream editor) is used for parsing and transforming text using regex.
+
+1. **Substitute pattern in a file**:
+   ```bash
+   sed 's/oldpattern/newpattern/g' file.txt
+   ```
+
+2. **Delete lines matching a pattern**:
+   ```bash
+   sed '/pattern/d' file.txt
+   ```
+
+### Using Regex with awk
+
+`awk` is a powerful text processing language with regex support.
+
+1. **Print lines matching a pattern**:
+   ```bash
+   awk '/pattern/ {print}' file.txt
+   ```
+
+2. **Print specific fields of lines matching a pattern**:
+   ```bash
+   awk '/pattern/ {print $1, $3}' file.txt
+   ```
+
+### More examples
+
+This is a sample **regtext** file:
+
+```bash
+$ cat regtext
+bt
+bit
+bite
+boot
+bloat
+boat
+```
+
+Search for a word with 1st character as "b" and 3rd character as "t".
+The second character can be any character.
+
+```bash
+# '.' represents a single character
+$ grep 'b.t' regtext
+bit
+bite
+```
+
+Search for 'b' followed by any single character, followed by any characters, which is then followed by 't'.
+
+```bash 
+# '*' means any character
+$ grep 'b.*t' regtext
+bt
+bit
+bite
+boot
+bloat
+boat
+```
+
+Search for any word that has 'bo', a 't', and any character in between them.
+```bash 
+$ grep 'bo*t' regtext
+bt
+boot
+```
+
+To look for any character/s which may or may not be sandwiched between 'b' and 't':
+
+```bash
+$ egrep 'b*?t' regtext
+bt
+bit
+bite
+boot
+bloat
+boat
+
+$ egrep 'b.?t' regtext
+bt
+bit
+bite
+```
+
