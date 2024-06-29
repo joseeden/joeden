@@ -333,75 +333,109 @@ Regular expressions (regex) are patterns used to match character combinations in
 
 ### Basic Syntax
 
-1. **Literal Characters**: Matches the exact characters.
+1. **Literal Characters**: 
+   - Matches the exact characters.
    - Example: `hello` matches the string "hello".
 
-2. **Dot**: Matches any single character except newline.
+2. **Dot**: 
+   - Matches any single character except newline.
    - Example: `h.llo` matches "hello", "hallo", "hxllo".
 
    ```bash
    .
    ```
 
-3. **Caret**: Matches the start of a line.
+3. **Caret**: 
+   - Matches the start of a line.
    - Example: `^hello` matches "hello" at the beginning of a line.
 
    ```bash
    ^
    ```
 
-4. **Dollar**: Matches the end of a line.
+4. **Dollar**: 
+   - Matches the end of a line.
    - Example: `world$` matches "world" at the end of a line.
 
    ```bash
    $
    ```
 
-5. **Asterisk**: Matches zero or more occurrences of the preceding element.
+5. **Asterisk**: 
+   - Matches zero or more occurrences of the preceding element.
    - Example: `he*llo` matches "hello", "hllo", "heeeello".
 
    ```bash
    *
    ```
 
-6. **Plus**: Matches one or more occurrences of the preceding element.
+6. **Plus**: 
+   - Matches one or more occurrences of the preceding element.
    - Example: `he+llo` matches "hello", "heeeello", but not "hllo".
 
    ```bash
    +
    ```
 
-7. **Question Mark**: Matches zero or one occurrence of the preceding element.
+7. **Question Mark**: 
+   - Matches zero or one occurrence of the preceding element.
    - Example: `he?llo` matches "hello" and "hllo".
 
    ```bash
    ?
    ```
 
-8. **Braces**: Matches between `n` and `m` occurrences of the preceding element.
+8. **Braces**: 
+   - Matches between `n` and `m` occurrences of the preceding element.
    - Example: `he{2,3}llo` matches "heello" and "heeello".
 
    ```bash
    ({n,m})
    ```
 
-9. **Brackets**: Matches any one of the enclosed characters.
+9. **Brackets**: 
+   - Matches any one of the enclosed characters.
    - Example: `h[aeiou]llo` matches "hallo", "hello", "hillo".
 
    ```bash
    ([]) 
    ```
 
-10. **Parentheses**: Groups elements together.
-    - Example: `(hello|hi)` matches "hello" or "hi".
+10. **Parentheses**: 
+   - Groups elements together.
+   - Example: `(hello|hi)` matches "hello" or "hi".
 
    ```bash
    (()) 
    ```
 
-11. **Backslash**: Escapes a special character.
-    - Example: `hello\.` matches "hello.".
+11. **Backslash**: 
+   - Escapes a special character.
+   - Example: `hello\.` matches "hello.".
 
    ```bash
    (\\)
    ```
+
+
+### Advanced Syntax
+
+1. **Alternation**: 
+   - Matches either the expression before or the expression after.
+   - Example: `cat|dog` matches "cat" or "dog".
+
+   ```bash
+   (|)
+   ```
+   
+2. **Character Classes**:
+   - `\d`: Matches any digit (equivalent to `[0-9]`).
+   - `\D`: Matches any non-digit.
+   - `\w`: Matches any word character (equivalent to `[a-zA-Z0-9_]`).
+   - `\W`: Matches any non-word character.
+   - `\s`: Matches any whitespace character.
+   - `\S`: Matches any non-whitespace character.
+
+3. **Anchors**:
+   - `\b`: Matches a word boundary.
+   - `\B`: Matches a non-word boundary.
