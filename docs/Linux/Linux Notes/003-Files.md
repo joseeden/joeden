@@ -108,7 +108,7 @@ Powerful editor, has three modes:
 # to current file                 :r /dir/file1
 ```
 
-------------------------------------------------
+
 
 ## The vim
 
@@ -357,7 +357,7 @@ cat <file1> <file2>
     cat team*
 ```
 
-------------------------------------------------
+
 
 ## Streams and Redirects
 
@@ -433,7 +433,7 @@ ls /weird/ 2> /dev/null
         set -o
 ```
 
-------------------------------------------------
+
 
 ## grep, egrep, and fgrep
 
@@ -518,7 +518,7 @@ the pattern and disregards regex characters
     contain "hello$"                fgrep "hello$" file1 
 ```
 
-------------------------------------------------
+
 
 ## Regex - Regular Expressions
 ![](/img/docs/sv-regex-1.png)
@@ -574,7 +574,7 @@ bit
 bite
 ```
 
-------------------------------------------------
+
 
 ## Cut
 
@@ -598,7 +598,7 @@ cut -f7 -d: /etc/passwd
 cut -f1 -d/ /etc/passwd
 ```
 
-------------------------------------------------
+
 
 ## awk
 ![](/img/docs/sv-awk.png)
@@ -629,7 +629,7 @@ awk 'NR==3, NR==6 {print NR,$0}' colors.txt
 awk 'NR > 1 {print}' colors.txt
 ```
 
-------------------------------------------------
+
 
 ## Sed - the Stream Editor
 
@@ -677,7 +677,8 @@ the first occurence of the word1, and SAVE CHANGES
 ```
 
 Another complex example:
-Here we have file100. we want to remove all html tags. We will need to search characters <char>, note that there should be characters between < and >.
+
+Here we have file100. we want to remove all html tags. We will need to search characters "<char>", note that there should be characters between "<" and ">".
 
 After search, replace them with space or nothing. then save changes
 
@@ -719,7 +720,7 @@ sed '5d' colors.txt
 sed '12,$d' colors.txt 
 ```
 
-------------------------------------------------
+
 
 ## Tee
 This allows us to return the STDOUT to the terminal and  at the same time redirect STDOUT to a file
@@ -767,7 +768,7 @@ to just append the stdout to the outputfile
     ls | tee -a outfile
 ```
 
-------------------------------------------------
+
 
 ## Format of "/etc/passwd"
 
