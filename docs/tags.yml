@@ -38,3 +38,7 @@ Advanced:
   label: 'Advanced'
   permalink: '/Advanced'
   description: 'Docs related to Advanced'
+AWS:
+  label: 'AWS'
+  permalink: '/AWS'
+  description: 'Docs related to AWS'

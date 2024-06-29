@@ -29,7 +29,9 @@ cron -u ben -e
 :wq! 
 crontab -u ben -l
 ```
- 
+
+</details>
+
 ## Lab 02 - Hostnames
 
 **Tasks:**
