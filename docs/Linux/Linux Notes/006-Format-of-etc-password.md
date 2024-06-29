@@ -1,7 +1,7 @@
 ---
 title: Format of `/etc/passwd`
 tags: [Linux, Red Hat, Certifications]
-sidebar_position: 5
+sidebar_position: 6
 last_update:
   date: 7/8/2022
 ---
