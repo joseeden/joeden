@@ -77,8 +77,8 @@ $ sudo firewall-cmd --list-all
 
 Since I'm using EC2, I have to configure the security group to allow FTP connections within the security group. We need to also allow some ports which will be used for the connection. Since this is a test lab, we can create a second rule which will allow ALL TCP connections from within the VPC.
 
-![](Images/lab33sgallowftp.png)
-![](Images/lab33sgallowftp3.png)
+![](/img/docs/lab33sgallowftp.png)
+![](/img/docs/lab33sgallowftp3.png)
 
 Now, to test. Try to FTP to the localhost. But first, let's create a **pub** directory in our $HOME directory. Inside **pub**, create an empty file named **sample.txt**.
 ```bash
@@ -431,7 +431,7 @@ Here are some common FTP commands.
 ```
 First things first, ensure that your EC2 instance's security group allows FTP connections from within the securty group.
 
-![](Images/lab33alowftp21.png)
+![](/img/docs/lab33alowftp21.png)
 
 
 #### 227 Entering Passive Mode and then Connection Timed Out
@@ -443,8 +443,8 @@ ftp: connect: Connection timed out
 
 The error could be caused by the passive port range being blocked on the FTP server's side. To resolve this, edit the EC2 instance's security group and create a second rule (in addition to rule for port 21) that allows a range of ports that can be used as passive ports.
 
-![](Images/lab33sgallowftp.png)
-![](Images/lab33sgallowftp3.png)
+![](/img/docs/lab33sgallowftp.png)
+![](/img/docs/lab33sgallowftp3.png)
 
 Next, ensure your machine's firewall is allowing the connection.
 ```bash
