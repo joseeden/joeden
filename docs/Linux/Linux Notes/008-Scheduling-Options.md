@@ -270,9 +270,6 @@ Dec 26 14:42:07 localhost systemd[1]: Started Discard unused blocks once a week.
 
 ## At
 
-![](/img/docs/sv-atd-1.png)
-![](/img/docs/sv-atd-2.png)
-
 The `at` command is used to schedule commands to be executed once at a particular time in the future. It uses the `atd` daemon to execute scheduled commands.
 
 ### Unit atd.service could not be found.
@@ -396,11 +393,16 @@ Since the job has ran already, it won't appear anymore.
 
 ## Managing Temporary Files
 
-![](/img/docs/sv-temp.png)
-![](/img/docs/sv-temp-2.png) 
-
 
 Systemd provides mechanisms for the creation, deletion, and cleaning of temporary files using the `tmpfiles.d` configuration.
+
+- `/usr/lib/tmpfiles.d` manages setting for creating, deleting, and cleaning up temporary files. 
+- **systemd-tmpfiles-clean.timer** unit can be configured to automatically clearn up temporary files.
+
+    - Triggers the **systemd-tmpfiles-clean.service**.
+    - Runs **systemd-tmpfiles --clean**.
+
+
 
 To view the manual for `tmpfiles.d`:
 ```bash
@@ -436,4 +438,14 @@ Documentation=man:tmpfiles.d(5) man:systemd-tmpfiles(8)
 [Timer]
 OnBootSec=15min
 OnUnitActiveSec=1d
+```
+
+### Automatic File Cleanup
+
+The `usr/lib/tmpfiles.d/tmp.conf` contains the settings for the automatic tmp file cleanup. 
+
+When making any changes, you should create a copy of `/usr/lib/tmpfiles.d/tmp.conf` to `/etc/tmpfiles.d.` After making modifications, run the command to ensure the files doesn't contain any errors:
+
+```bash
+systemd-tmpfiles --clean /etc/tmpfiles.d/tmp.conf
 ```
