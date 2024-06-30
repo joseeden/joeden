@@ -110,7 +110,7 @@ How do you create a user named ted who has access to an interactive shell?
 useradd -s /bin/bash ted
 ```
 
-Note: There are multiple interactive shells like /bin/ksh, /bin/csh, /bin/bash etc. In the above example we have assigned /bin/bash to user satish.
+Note: There are multiple interactive shells like /bin/ksh, /bin/csh, /bin/bash etc. In the above example we have assigned /bin/bash to user ted.
 
 ## Task 13
 
@@ -118,5 +118,5 @@ Create user ted with non-interactive shell.
 ```bash
 useradd ted -s /sbin/nologin  
 ```
-If you want user satish to have a non-interactive shell - in other words you don’t want user satish to log in, you must assign a shell named /sbin/nologin as follows
+If you want user ted to have a non-interactive shell - in other words you don’t want user ted to log in, you must assign a shell named /sbin/nologin as follows
 

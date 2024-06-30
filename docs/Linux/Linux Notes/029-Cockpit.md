@@ -20,6 +20,8 @@ Here are some of the more important features of Cockpit:
 - Cockpit has no special privileges and doesn’t run as root. It creates a session as the logged in user and has the same permissions as that user. So, to perform administrative tasks, the user needs permission to use sudo or PolicyKit to escalate privileges.
 - It’s free!
 
+To install:
+
 ```bash
 $ sudo yum install -y cockpit cockpit-dashboard
 $ sudo systemctl enable --now cockpit.socket
@@ -28,6 +30,7 @@ Created symlink /etc/systemd/system/sockets.target.wants/cockpit.socket → /usr
 ```
 
 Allow cockpit in firewall.
+
 ```bash
 $ sudo firewall-cmd --add-port=9090/tcp
 $ sudo firewall-cmd --permanent --add-port=9090/tcp
