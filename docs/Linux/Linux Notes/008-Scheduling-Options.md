@@ -22,30 +22,32 @@ Scheduling options:
 - `crontab -e` - use as a specific user. 
 - Can also create a cron file in /etc/cron.d 
 
-To check all CRON jobs:
-```bash
-ll | grep cron 
-```
+Examples: 
 
-To stop users from scheduling a cron, put them in `/etc/cron.deny`:
-```bash
-vim /etc/cron.deny
-```
+1. To check all CRON jobs:
+    ```bash
+    ll | grep cron 
+    ```
 
-To specify users allowed and deny the rest, put them in `/etc/cron.allow`:
-```bash
-vim /etc/cron.allow
-```
+2. To stop users from scheduling a cron, put them in `/etc/cron.deny`:
+    ```bash
+    vim /etc/cron.deny
+    ```
 
-To schedule cron job (obsolete method):
-```bash
-vim /etc/crontab
-```
+3. To specify users allowed and deny the rest, put them in `/etc/cron.allow`:
+    ```bash
+    vim /etc/cron.allow
+    ```
 
-New way to generate time-specific cron jobs:
-```bash
-vim /etc/cron.d
-```
+4. To schedule cron job (obsolete method):
+    ```bash
+    vim /etc/crontab
+    ```
+
+5. New way to generate time-specific cron jobs:
+    ```bash
+    vim /etc/cron.d
+    ```
 
 ### Crontab Format
 
@@ -61,40 +63,40 @@ The format for a cron job entry in the crontab file:
 
 Examples:
 
-Write "Hey!" to hello.txt every minute of every hour of every day:
-```bash
-* * * * * root echo "Hey!" >> /tmp/hello.txt
-```
+1. Write "Hey!" to hello.txt every minute of every hour of every day:
+    ```bash
+    * * * * * root echo "Hey!" >> /tmp/hello.txt
+    ```
 
-Run command every 5 minutes of every hour:
-```bash
-*/5 * * * * root <command>
-```
+2. Run command every 5 minutes of every hour:
+    ```bash
+    */5 * * * * root <command>
+    ```
 
-Run command at 1am and then every 5 minutes afterwards:
-```bash
-*/5 1 * * * root <command>
-```
+3. Run command at 1am and then every 5 minutes afterwards:
+    ```bash
+    */5 1 * * * root <command>
+    ```
 
-Run command every 2 minutes of every 3 hours:
-```bash
-*/2 */3 * * * root <command>
-```
+4. Run command every 2 minutes of every 3 hours:
+    ```bash
+    */2 */3 * * * root <command>
+    ```
 
-Run every 2 minutes between 12am to 3am:
-```bash
-*/2 0-3 * * * root <command>
-```
+5. Run every 2 minutes between 12am to 3am:
+    ```bash
+    */2 0-3 * * * root <command>
+    ```
 
-Run command every 2 minutes starting 1am, on the first 3 days of the month:
-```bash
-*/2 1 1-3 * * root <command>
-```
+6. Run command every 2 minutes starting 1am, on the first 3 days of the month:
+    ```bash
+    */2 1 1-3 * * root <command>
+    ```
 
-Run command every 2 minutes starting 1am on 1st and 15th day of the month:
-```bash
-*/2 1 1,15 * * root <command>
-```
+7. Run command every 2 minutes starting 1am on 1st and 15th day of the month:
+    ```bash
+    */2 1 1,15 * * root <command>
+    ```
 
 ### Cron - Simplified
 
@@ -145,15 +147,20 @@ tail -f /var/log/cron
 
 ### Anacron
 
-![](/img/docs/sv-anacron.png)
-
-
 Anacron is a periodic command scheduler, similar to cron, but it is used for running commands with a frequency of days instead of minutes or hours. Anacron ensures that jobs are run even if the machine was off during the scheduled time.
+
+- Execute jobs on a regular basis, but not at a specific time. 
+- Takes care of the jobs in:
+
+    - `/etc/cron.hourly`
+    - `/etc/cron.daily`
+    - `/etc/cron.weekly`
+    - `/etc/cron.monthly`
 
 To configure Anacron, edit the file `/etc/anacrontab`:
 
 ```bash
-[root@tst-rhel ~]# vim /etc/anacrontab
+[root@localhost ~]# vim /etc/anacrontab
 ```
 
 Example of an Anacron configuration file:
@@ -179,12 +186,13 @@ START_HOURS_RANGE=3-22
 
 ## Systemd Timers
 
-![](/img/docs/sv-systemd-timer-2.png)
-
-
 Systemd timers provide a more powerful and flexible way to schedule tasks compared to traditional cron jobs. Timers can be used to trigger systemd services at specific times or intervals.
 
+- Read **man 7 systemd-timer** for more information about systemd timers.
+- Read **man 7 systemd-timer** for specification of the time format to be used.
+
 To view the manual for systemd timers:
+
 ```bash
 man systemd.time
 ```
@@ -256,5 +264,176 @@ systemctl status fstrim.timer
   Trigger: Mon 2021-12-27 00:00:00 PST; 9h left
      Docs: man:fstrim
 
-Dec 26 14:42:07 tst-rhel systemd[1]: Started Discard unused blocks once a week.
+Dec 26 14:42:07 localhost systemd[1]: Started Discard unused blocks once a week.
+```
+
+
+## At
+
+![](/img/docs/sv-atd-1.png)
+![](/img/docs/sv-atd-2.png)
+
+The `at` command is used to schedule commands to be executed once at a particular time in the future. It uses the `atd` daemon to execute scheduled commands.
+
+### Unit atd.service could not be found.
+
+To check the status of the `atd` service:
+```bash
+user1@localhost:system $ systemctl status atd
+Unit atd.service could not be found.
+```
+
+```bash
+user1@localhost:system $ systemctl status atd.service
+Unit atd.service could not be found.
+```
+
+
+To locate `atd`:
+```bash
+user1@localhost:system $ which atd
+/usr/bin/which: no atd in (/home/user1/.local/bin:/home/user1/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin)
+```
+
+
+Following this link online: [How to install and use at job scheduling?](https://unix.stackexchange.com/questions/86016/how-to-install-and-use-at-job-scheduling)
+
+To find which package provides `atd`:
+```bash
+user1@localhost:system $ sudo yum whatprovides atd
+
+Updating Subscription Management repositories.
+Unable to read consumer identity
+
+This system is not registered with an entitlement server. You can use subscription-manager to register.
+
+Last metadata expiration check: 2:22:31 ago on Sun 26 Dec 2021 01:25:20 PM PST.
+at-3.1.20-11.el8.x86_64 : Job spooling tools
+Repo        : rhel-8-baseos-rhui-rpms
+Matched from:
+Filename    : /usr/sbin/atd
+```
+
+To get information about `atd`:
+```bash
+user1@localhost:system $ sudo yum info atd
+
+Updating Subscription Management repositories.
+Unable to read consumer identity
+
+This system is not registered with an entitlement server. You can use subscription-manager to register.
+
+Last metadata expiration check: 2:23:04 ago on Sun 26 Dec 2021 01:25:20 PM PST.
+Error: No matching Packages to lis
+```
+
+To install `at`:
+```bash
+user1@localhost:system $ sudo yum install -y at
+```
+
+To enable and start `atd`:
+```bash
+user1@localhost:system $ sudo systemctl enable atd.service
+user1@localhost:system $ sudo systemctl start atd.service
+```
+
+To check the status of `atd`:
+```bash
+user1@localhost:system $ systemctl status atd.service
+
+● atd.service - Job spooling tools
+   Loaded: loaded (/usr/lib/systemd/system/atd.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sun 2021-12-26 15:52:36 PST; 3s ago
+ Main PID: 74416 (atd)
+    Tasks: 1 (limit: 100840)
+   Memory: 372.0K
+   CGroup: /system.slice/atd.service
+           └─74416 /usr/sbin/atd -f
+
+Dec 26 15:52:36 tst-rhel systemd[1]: Started Job spooling tools.
+```
+
+### Using `atd`
+
+To schedule a job at 4 PM (teatime):
+
+```bash
+user1@localhost:system $ at teatime
+warning: commands will be executed using /bin/sh
+at> logger 'have a cup of tea'
+at> mail -s 'hello root' < .
+at>  <EOT>
+job 1 at Sun Dec 26 16:00:00 2021
+```
+
+To query all scheduled jobs, run `atq`:
+
+```bash
+user1@localhost:system $ atq
+1       Sun Dec 26 16:00:00 2021 a eden
+```
+
+To see the log:
+```bash
+$ sudo tail -f /var/log/messages
+
+Dec 26 15:59:37 localhost systemd[1]: NetworkManager-dispatcher.service: Succeeded.
+Dec 26 16:00:00 localhost systemd-logind[861]: New session 226 of user eden.
+Dec 26 16:00:00 localhost systemd[1]: Started Session 226 of user eden.
+Dec 26 16:00:00 localhost eden[74508]: have a cup of tea
+```
+
+To remove a job, use "atrm <job-num>":
+```bash
+$ atrm 1
+Cannot find jobid 1
+$ atq
+```
+
+Since the job has ran already, it won't appear anymore.
+
+## Managing Temporary Files
+
+![](/img/docs/sv-temp.png)
+![](/img/docs/sv-temp-2.png) 
+
+
+Systemd provides mechanisms for the creation, deletion, and cleaning of temporary files using the `tmpfiles.d` configuration.
+
+To view the manual for `tmpfiles.d`:
+```bash
+man tmpfile
+man tmpfiles.d
+```
+
+Example of the `tmpfiles.d` configuration files:
+```bash
+$ systemctl cat systemd-tmpfiles-
+systemd-tmpfiles-clean.service      systemd-tmpfiles-setup-dev.service
+systemd-tmpfiles-clean.timer        systemd-tmpfiles-setup.service
+```
+
+To check the `clean.timer`:
+```bash
+$ systemctl cat systemd-tmpfiles-clean.timer
+```
+```bash
+# /usr/lib/systemd/system/systemd-tmpfiles-clean.timer
+#  SPDX-License-Identifier: LGPL-2.1+
+#
+#  This file is part of systemd.
+#
+#  systemd is free software; you can redistribute it and/or modify it
+#  under the terms of the GNU Lesser General Public License as published by
+#  the Free Software Foundation; either version 2.1 of the License, or
+#  (at your option) any later version.
+
+[Unit]
+Description=Daily Cleanup of Temporary Directories
+Documentation=man:tmpfiles.d(5) man:systemd-tmpfiles(8)
+
+[Timer]
+OnBootSec=15min
+OnUnitActiveSec=1d
 ```
