@@ -368,7 +368,7 @@ The system takes the time from the hardware clock when it boots. After the boot,
 
 Almost all Linux systems are set to sync with an **NTP Server**, which provides the time and syncs all connected servers. However, if your system time is off by 1000 seconds or more, NTP time sync will not work, and you will need to troubleshoot the cause of the abnormal time gap.
 
-![](Images/sv-time.png)
+![](/img/docs/sv-time.png)
 
 
 ### date
@@ -430,7 +430,7 @@ date -s "1 Jul 1986 1:23:45"
 
 ### timedatectl
 
-![](Images/sv-timedatectl.png)
+![](/img/docs/sv-timedatectl.png)
 
 The `timedatectl` command is used to query and change the system clock and its settings.
 
