@@ -384,7 +384,8 @@ Dec 26 16:00:00 localhost systemd[1]: Started Session 226 of user eden.
 Dec 26 16:00:00 localhost eden[74508]: have a cup of tea
 ```
 
-To remove a job, use "atrm <job-num>":
+To remove a job, use "atrm job-num":
+
 ```bash
 $ atrm 1
 Cannot find jobid 1
@@ -417,8 +418,7 @@ systemd-tmpfiles-clean.timer        systemd-tmpfiles-setup.service
 To check the `clean.timer`:
 ```bash
 $ systemctl cat systemd-tmpfiles-clean.timer
-```
-```bash
+
 # /usr/lib/systemd/system/systemd-tmpfiles-clean.timer
 #  SPDX-License-Identifier: LGPL-2.1+
 #
