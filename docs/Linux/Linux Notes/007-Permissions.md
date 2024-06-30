@@ -14,7 +14,7 @@ last_update:
 ![](/img/docs/sv-permissions.png)
 ![](/img/docs/sv-permissions-2.png)
 
-### Manage permissions
+## Managing permissions
 
 | Permission | If applied to Files | If applied to Directory
 | --- | --- | --- |
