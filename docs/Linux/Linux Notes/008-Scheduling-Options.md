@@ -251,7 +251,6 @@ Dec 26 14:42:07 tst-rhel systemd[1]: Started Discard unused blocks once a week.
 
 ```
 
-------------------------------------------------
 
 ## At
 
@@ -368,7 +367,6 @@ eden@tst-rhel:system $ systemctl status atd.service
 Dec 26 15:52:36 tst-rhel systemd[1]: Started Job spooling tools.
 ```
 
-------------------------------------------------
 
 #### Using atd
 
@@ -402,7 +400,8 @@ Dec 26 16:00:00 localhost eden[74508]: have a cup of tea
 
 ```
 
-To remove the job, use **atrm <job-num>**. Since the job has ran already, it won't appear anymore.
+To remove the job, use "atrm <job-num>". Since the job has ran already, it won't appear anymore.
+
 ```bash
 $ atrm 1
 Cannot find jobid 1
