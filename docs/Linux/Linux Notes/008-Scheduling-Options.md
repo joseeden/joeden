@@ -1,3 +1,4 @@
+---
 title: Scheduling Options
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 8
@@ -6,18 +7,20 @@ last_update:
 ---
 
 
+## Cron
 
+Cron is a scheduling tool used to execute commands or scripts at specific dates, times, or intervals. 
 
-## Scheduling Options 
+- It is stateless, meaning it doesn't remember the last time a job was run. 
+- If the server is turned off at the scheduled time, the job will not run.
+- Different configuration files can be used to specify job schedule.
+- Cron does not have STDOUT.
+- Useful for re-occuring jobs, like backup jobs. 
 
-![](/img/docs/sv-cron-at.png)
-![](/img/docs/sv-cron-1.png)
-![](/img/docs/sv-cron-2.png)
+Scheduling options:
 
-
-## System Cron
-
-Cron is a scheduling tool used to execute commands or scripts at specific dates, times, or intervals. It is stateless, meaning it doesn't remember the last time a job was run. One disadvantage is that if the server is turned off at the scheduled time, the job will not run.
+- `crontab -e` - use as a specific user. 
+- Can also create a cron file in /etc/cron.d 
 
 To check all CRON jobs:
 ```bash
@@ -138,4 +141,120 @@ ll /var/spool/cron
 To check logs of cron:
 ```bash
 tail -f /var/log/cron
+```
+
+### Anacron
+
+![](/img/docs/sv-anacron.png)
+
+
+Anacron is a periodic command scheduler, similar to cron, but it is used for running commands with a frequency of days instead of minutes or hours. Anacron ensures that jobs are run even if the machine was off during the scheduled time.
+
+To configure Anacron, edit the file `/etc/anacrontab`:
+
+```bash
+[root@tst-rhel ~]# vim /etc/anacrontab
+```
+
+Example of an Anacron configuration file:
+
+```bash
+# /etc/anacrontab: configuration file for anacron
+# See anacron(8) and anacrontab(5) for details.
+
+SHELL=/bin/sh
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+# the maximal random delay added to the base delay of the jobs
+RANDOM_DELAY=45
+# the jobs will be started during the following hours only
+START_HOURS_RANGE=3-22
+
+# period in days   delay in minutes   job-identifier   command
+1       5       cron.daily              nice run-parts /etc/cron.daily
+7       25      cron.weekly             nice run-parts /etc/cron.weekly
+@monthly 45     cron.monthly            nice run-parts /etc/cron.monthly
+```
+
+
+## Systemd Timers
+
+![](/img/docs/sv-systemd-timer-2.png)
+
+
+Systemd timers provide a more powerful and flexible way to schedule tasks compared to traditional cron jobs. Timers can be used to trigger systemd services at specific times or intervals.
+
+To view the manual for systemd timers:
+```bash
+man systemd.time
+```
+
+To list all timer files:
+```bash
+ll /usr/lib/systemd/system/*timer
+```
+
+In the examples above, we see timer files. All timer files have associated service files. For example, we see `fstrim`. To view the `fstrim` service and timer files:
+
+```bash
+cd /usr/lib/systemd/system
+ll fstrim*
+```
+
+The `fstrim.timer` file specifies how often the `fstrim.service` is run:
+```bash
+cat fstrim.service
+```
+```
+[Unit]
+Description=Discard unused blocks
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/fstrim -av
+```
+
+To view the `fstrim.timer` file:
+```bash
+cat fstrim.timer
+```
+```bash
+[Unit]
+Description=Discard unused blocks once a week
+Documentation=man:fstrim
+
+[Timer]
+OnCalendar=weekly
+AccuracySec=1h
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+```
+
+To check the status of the `fstrim` service:
+```bash
+systemctl status fstrim.service
+```
+
+To check the status of the `fstrim` timer:
+```bash
+systemctl status fstrim.timer
+```
+
+To enable and start `fstrim`, you enable the timer not the service:
+
+```bash
+systemctl enable fstrim.timer
+systemctl start fstrim.timer
+systemctl status fstrim.timer
+```
+```bash
+● fstrim.timer - Discard unused blocks once a week
+   Loaded: loaded (/usr/lib/systemd/system/fstrim.timer; enabled; vendor preset: disabled)
+   Active: active (waiting) since Sun 2021-12-26 14:42:07 PST; 28s ago
+  Trigger: Mon 2021-12-27 00:00:00 PST; 9h left
+     Docs: man:fstrim
+
+Dec 26 14:42:07 tst-rhel systemd[1]: Started Discard unused blocks once a week.
 ```
