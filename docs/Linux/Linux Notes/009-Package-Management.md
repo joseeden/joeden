@@ -320,7 +320,7 @@ To extract and redirect output to a file:
 rpm2cpio <package.rpm> > <filename>
 ```
 
-### Yum modules
+### yum modules
 
 The **yum module** command is used to manage module properties:
 

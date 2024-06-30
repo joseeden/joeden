@@ -7,10 +7,6 @@ last_update:
 ---
 
 
-![](/img/docs/sv-rpm-repo.png)
-![](/img/docs/sv-rpm-repo-1.png)
-![](/img/docs/sv-rpm-repo-2.png)
-
 
 :::info[update: 30-Dec-2021]
 
