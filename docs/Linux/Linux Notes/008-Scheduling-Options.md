@@ -393,7 +393,6 @@ Since the job has ran already, it won't appear anymore.
 
 ## Managing Temporary Files
 
-
 Systemd provides mechanisms for the creation, deletion, and cleaning of temporary files using the `tmpfiles.d` configuration.
 
 - `/usr/lib/tmpfiles.d` manages setting for creating, deleting, and cleaning up temporary files. 
@@ -401,7 +400,6 @@ Systemd provides mechanisms for the creation, deletion, and cleaning of temporar
 
     - Triggers the **systemd-tmpfiles-clean.service**.
     - Runs **systemd-tmpfiles --clean**.
-
 
 
 To view the manual for `tmpfiles.d`:
@@ -449,3 +447,68 @@ When making any changes, you should create a copy of `/usr/lib/tmpfiles.d/tmp.co
 ```bash
 systemd-tmpfiles --clean /etc/tmpfiles.d/tmp.conf
 ```
+
+### Modifying tmp.conf
+
+To modify `tmp.conf` and manage temporary files using systemd's `tmpfiles.d` mechanism, follow these steps:
+
+1. **Copy the tmp.conf File**:
+   You should copy the original `tmp.conf` from `/usr/lib/tmpfiles.d/` to `/etc/tmpfiles.d/` where local modifications are intended.
+
+   ```bash
+   $ sudo cp /usr/lib/tmpfiles.d/tmp.conf /etc/tmpfiles.d/
+   ```
+
+2. **Edit tmp.conf**:
+   Use your preferred text editor (e.g., `vim`) to modify `/etc/tmpfiles.d/tmp.conf`. For example:
+
+   ```bash
+   $ sudo vim /etc/tmpfiles.d/tmp.conf
+   ```
+
+   Modify the `tmp.conf` file according to your requirements. For instance, to clean `/tmp` every 5 days instead of 10 days, adjust the `q` line:
+
+   ```ini
+   # Clear tmp directories separately, to make them easier to override
+   q /tmp 1777 root root 5d
+   q /var/tmp 1777 root root 30d
+   ```
+
+   Save and exit the editor after making your changes.
+
+3. **Cleaning Temporary Files**:
+
+   - To create and manage a custom temporary directory using a separate configuration file (`mytemp.conf`), follow these steps:
+
+     ```bash
+     $ sudo vim /etc/tmpfiles.d/mytemp.conf
+     ```
+
+     Add a line to create a temporary directory `/run/mytemp` with appropriate permissions and cleanup time:
+
+     ```ini
+     d /run/mytemp 0700 root root 30s
+     ```
+
+     Save and exit the editor.
+
+   - Apply the configuration changes using `systemd-tmpfiles`:
+
+     ```bash
+     $ sudo systemd-tmpfiles --create /etc/tmpfiles.d/mytemp.conf
+     ```
+
+   - Verify the creation of the temporary directory and file:
+
+     ```bash
+     $ sudo ls -l /run/mytemp/
+     -rw-r--r--. 1 root root 0 Dec 26 16:31 myfile
+     ```
+
+   - Clean up temporary files using `systemd-tmpfiles`:
+
+     ```bash
+     $ sudo systemd-tmpfiles --clean /etc/tmpfiles.d/tmp.conf
+     ```
+
+     This command cleans up according to the modified rules in `/etc/tmpfiles.d/tmp.conf`.
