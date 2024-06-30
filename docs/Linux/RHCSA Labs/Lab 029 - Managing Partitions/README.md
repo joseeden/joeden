@@ -1,7 +1,7 @@
 ---
-title: 029 - Managing Partitions
+title: Managing Partitions
 tags: [Linux, Red Hat, Certifications, Labs]
-# sidebar_position: 1 
+sidebar_position: 29
 last_update:
   date: 2/27/2022
 ---

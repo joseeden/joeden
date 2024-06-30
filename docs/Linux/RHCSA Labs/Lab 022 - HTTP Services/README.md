@@ -1,7 +1,7 @@
 ---
-title: 022 - HTTP Services
+title: HTTP Services
 tags: [Linux, Red Hat, Certifications, Labs]
-# sidebar_position: 1 
+sidebar_position: 22
 last_update:
   date: 2/27/2022
 ---

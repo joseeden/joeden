@@ -1,7 +1,7 @@
 ---
-title: 018 - Boot Procedure
+title: Boot Procedure
 tags: [Linux, Red Hat, Certifications, Labs]
-# sidebar_position: 1 
+sidebar_position: 18
 last_update:
   date: 2/27/2022
 ---

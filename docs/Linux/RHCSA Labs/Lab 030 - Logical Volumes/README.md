@@ -1,7 +1,7 @@
 ---
-title: 030 - Logical Volumes
+title: Logical Volumes
 tags: [Linux, Red Hat, Certifications, Labs]
-# sidebar_position: 1 
+sidebar_position: 30
 last_update:
   date: 2/27/2022
 ---

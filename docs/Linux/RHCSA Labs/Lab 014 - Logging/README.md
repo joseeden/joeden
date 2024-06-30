@@ -1,7 +1,7 @@
 ---
-title: 014 - Logging
+title: Logging
 tags: [Linux, Red Hat, Certifications, Labs]
-# sidebar_position: 1 
+sidebar_position: 14
 last_update:
   date: 2/27/2022
 ---

@@ -1,7 +1,7 @@
 ---
-title: 036 - Setting up WebMin Repository
+title: Setting up WebMin Repository
 tags: [Linux, Red Hat, Certifications]
-sidebar_position: 2
+sidebar_position: 36
 last_update:
   date: 7/8/2022
 ---

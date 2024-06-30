@@ -1,7 +1,7 @@
 ---
-title: 032 - Running Containers
+title: Running Containers
 tags: [Linux, Red Hat, Certifications, Labs]
-# sidebar_position: 1 
+sidebar_position: 32
 last_update:
   date: 2/27/2022
 ---

@@ -1,7 +1,7 @@
 ---
-title: 031 - Users and Groups
+title: Users and Groups
 tags: [Linux, Red Hat, Certifications, Labs]
-# sidebar_position: 1 
+sidebar_position: 31
 last_update:
   date: 2/27/2022
 ---

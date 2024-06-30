@@ -1,7 +1,8 @@
 ---
-title: 004 - Using Essential Tools
+title: Using Essential Tools
 tags: [Linux, Beginner]
-last_update:
+sidebar_position: 4
+last_update: 
   date:  6/1/2023
 ---
 

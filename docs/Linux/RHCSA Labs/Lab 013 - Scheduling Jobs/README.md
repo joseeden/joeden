@@ -1,7 +1,7 @@
 ---
-title: 013 - Scheduling Jobs
+title: Scheduling Jobs
 tags: [Linux, Red Hat, Certifications, Labs]
-# sidebar_position: 1 
+sidebar_position: 13
 last_update:
   date: 2/27/2022
 ---

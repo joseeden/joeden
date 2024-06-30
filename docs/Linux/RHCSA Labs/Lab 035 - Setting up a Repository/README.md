@@ -1,7 +1,7 @@
 ---
-title: 035 - Setting up a Repository
+title: Setting up a Repository
 tags: [Linux, Red Hat, Certifications]
-sidebar_position: 2
+sidebar_position: 35
 last_update:
   date: 7/8/2022
 ---
@@ -10,6 +10,7 @@ last_update:
 ![](/img/docs/sv-rpm-repo.png)
 ![](/img/docs/sv-rpm-repo-1.png)
 ![](/img/docs/sv-rpm-repo-2.png)
+
 
 > 30-Dec-2021
 > Decided to come back to this again after I installed VirtualBox again on my personal laptop, downloaded the RHEL 8 iso file from developer.redhat.com site and run a VM. I also remember the reason why i stop using VirtualBox. My laptop had a 4gb ram back then and launching VMs quickly make my laptop laggy.

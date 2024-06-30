@@ -1,6 +1,7 @@
 ---
-title: 008 - File Permissions
+title: File Permissions
 tags: [Linux, Red Hat, Certifications, Labs]
+sidebar_position: 8
 last_update:
   date: 2/27/2022
 ---

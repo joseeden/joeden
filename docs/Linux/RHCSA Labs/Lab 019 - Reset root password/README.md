@@ -1,7 +1,7 @@
 ---
-title: 019 - Reset root password
+title: Reset root password
 tags: [Linux, Red Hat, Certifications, Labs]
-# sidebar_position: 1 
+sidebar_position: 19
 last_update:
   date: 2/27/2022
 ---
