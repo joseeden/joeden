@@ -302,9 +302,6 @@ Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cm
 
 **Tuned** is a dynamic tuning daemon in Linux used to optimize system performance based on the current workload. It allows for automated, real-time adjustment of system settings to improve performance and efficiency, making it particularly useful in environments with varying workloads.
 
-![](/img/docs/sv-tuned.png)
-![](/img/docs/sv-tuned-2.png)
-
 ### Key Features
 
 1. **Dynamic Tuning:** Automatically adjusts system settings based on the current load and usage patterns.
@@ -357,3 +354,295 @@ Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cm
    ```bash
    sudo tuned-adm active
    ```
+
+
+
+
+## Date and Time
+
+The system takes the time from the hardware clock when it boots. After the boot, system time is set based on the hardware clock.
+
+- **hwclock** can be used to set the hardware clock or to sync it with system time. For system time, there are two commands:
+- **date** - old command
+- **timedatectl** - new command with more options
+
+Almost all Linux systems are set to sync with an **NTP Server**, which provides the time and syncs all connected servers. However, if your system time is off by 1000 seconds or more, NTP time sync will not work, and you will need to troubleshoot the cause of the abnormal time gap.
+
+![](Images/sv-time.png)
+
+
+### date
+
+
+The `date` command is used to display or set the system date and time.
+
+To display the date and time:
+```bash
+date
+```
+
+To display just the time:
+```bash
+date +%T
+```
+
+To display the day (shortcut):
+```bash
+date +%a
+```
+
+To display the day (full):
+```bash
+date +%A
+```
+
+To check options:
+```bash
+man date
+```
+
+To specify a string like "now" or "tomorrow":
+```bash
+date -d "now"
+date -d "tomorrow"
+```
+
+To check the last time a file was modified:
+```bash
+date -r <file>
+```
+
+To set the time:
+```bash
+date +%T -s "1:23:45"
+```
+
+To set the day:
+```bash
+date +%a -s "Mon"
+date +%A -s "Monday"
+```
+
+To set the date and time:
+```bash
+date -s "1 Jul 1986 1:23:45"
+```
+
+### timedatectl
+
+![](Images/sv-timedatectl.png)
+
+The `timedatectl` command is used to query and change the system clock and its settings.
+
+To display the current status:
+```bash
+timedatectl status
+```
+
+To list available timezones:
+```bash
+timedatectl list-timezones
+```
+
+To set the timezone:
+```bash
+sudo timedatectl set-timezone Asia/Singapore
+```
+
+To show detailed information:
+```bash
+timedatectl show
+```
+
+As an example, our system timezone is currrently set to PST. To change it to SGT:
+
+```bash
+$ timedatectl
+               Local time: Sun 2021-12-26 19:41:25 PST
+           Universal time: Sun 2021-12-26 11:41:25 UTC
+                 RTC time: Sun 2021-12-26 11:41:25
+                Time zone: Asia/Manila (PST, +0800)
+System clock synchronized: yes
+              NTP service: active
+          RTC in local TZ: no
+
+$ sudo timedatectl set-timezone Asia/
+Asia/Aden           Asia/Bishkek        Asia/Hong_Kong      Asia/Kuching        Asia/Pyongyang      Asia/Tehran
+Asia/Almaty         Asia/Brunei         Asia/Hovd           Asia/Kuwait         Asia/Qatar          Asia/Thimphu
+Asia/Amman          Asia/Chita          Asia/Irkutsk        Asia/Macau          Asia/Qostanay       Asia/Tokyo
+Asia/Anadyr         Asia/Choibalsan     Asia/Jakarta        Asia/Magadan        Asia/Qyzylorda      Asia/Tomsk
+Asia/Aqtau          Asia/Colombo        Asia/Jayapura       Asia/Makassar       Asia/Riyadh         Asia/Ulaanbaatar
+Asia/Aqtobe         Asia/Damascus       Asia/Jerusalem      Asia/Manila         Asia/Sakhalin       Asia/Urumqi
+Asia/Ashgabat       Asia/Dhaka          Asia/Kabul          Asia/Muscat         Asia/Samarkand      Asia/Ust-Nera
+Asia/Atyrau         Asia/Dili           Asia/Kamchatka      Asia/Nicosia        Asia/Seoul          Asia/Vientiane
+Asia/Baghdad        Asia/Dubai          Asia/Karachi        Asia/Novokuznetsk   Asia/Shanghai       Asia/Vladivostok
+Asia/Bahrain        Asia/Dushanbe       Asia/Kathmandu      Asia/Novosibirsk    Asia/Singapore      Asia/Yakutsk
+Asia/Baku           Asia/Famagusta      Asia/Khandyga       Asia/Omsk           Asia/Srednekolymsk  Asia/Yangon
+Asia/Bangkok        Asia/Gaza           Asia/Kolkata        Asia/Oral           Asia/Taipei         Asia/Yekaterinburg
+Asia/Barnaul        Asia/Hebron         Asia/Krasnoyarsk    Asia/Phnom_Penh     Asia/Tashkent       Asia/Yerevan
+Asia/Beirut         Asia/Ho_Chi_Minh    Asia/Kuala_Lumpur   Asia/Pontianak      Asia/Tbilisi
+$ 
+$ sudo timedatectl set-timezone Asia/Singapore
+$
+$ timedatectl
+               Local time: Sun 2021-12-26 19:41:48 +08
+           Universal time: Sun 2021-12-26 11:41:48 UTC
+                 RTC time: Sun 2021-12-26 11:41:48
+                Time zone: Asia/Singapore (+08, +0800)
+System clock synchronized: yes
+              NTP service: active
+          RTC in local TZ: no
+```
+```bash
+$ timedatectl show
+Timezone=Asia/Singapore
+LocalRTC=no
+CanNTP=yes
+NTP=yes
+NTPSynchronized=yes
+TimeUSec=Sun 2021-12-26 19:42:36 +08
+RTCTimeUSec=Sun 2021-12-26 19:42:36 +08
+```
+
+
+### Hardware Clock
+
+The hardware clock is the underlying hardware's clock, which the server uses to get time during bootup.
+
+To set the system time from the hardware clock:
+```bash
+hwclock -s
+```
+
+To set the hardware clock to the current system time:
+```bash
+hwclock -r
+```
+
+### Timezones
+
+To view the timezone file:
+```bash
+ll /etc/localtime
+```
+
+To view all timezones:
+```bash
+ll /usr/share/zoneinfo
+```
+
+To change the timezone (Method 1):
+
+1. Remove current time:
+    ```bash
+    sudo rm /etc/localtime
+    ```
+2. Go to zoneinfo:
+    ```bash
+    cd /usr/share/zoneinfo
+    ```
+3. Copy desired timezone to `/etc/localtime`:
+    ```bash
+    cp America/New_York /etc/localtime
+    ```
+4. Verify:
+    ```bash
+    date
+    ```
+
+To change the timezone (Method 2):
+
+1. Remove current time:
+    ```bash
+    sudo rm /etc/localtime
+    ```
+2. Create symlink:
+    ```bash
+    ln -s /usr/share/zoneinfo/Chicago /etc/localtime
+    ```
+3. Verify:
+    ```bash
+    date
+    ```
+
+To change the timezone (Method 3):
+
+1. List all timezones:
+    ```bash
+    timedatectl list-timezones
+    ```
+2. Change to desired timezone:
+    ```bash
+    timedatectl set-timezone Singapore
+    ```
+
+### NTP
+
+In RHEL7 and CentOS, NTP can be used to sync time to a server. In RHEL8, CHRONY is used.
+
+To install NTP on RHEL7 and CentOS:
+```bash
+yum install -y ntp
+```
+
+To install CHRONY:
+```bash
+yum install -y chrony
+```
+
+To edit the NTP configuration:
+```bash
+vi /etc/ntp.conf
+```
+
+To edit the CHRONY configuration:
+```bash
+vi /etc/chrony.conf
+```
+
+There are two files for chrony in the `/etc` directory. If you are securely connecting to a time server, you will need to define the public key in the **chrony.keys** file.
+
+To check the status of NTP:
+```bash
+service ntp status
+```
+
+To check the status of CHRONY:
+```bash
+systemctl status chronyd
+```
+
+To get more information:
+```bash
+ntpq -p
+```
+
+To check the NTP servers and see their status,
+```bash
+$ chronyc sources
+
+MS Name/IP address         Stratum Poll Reach LastRx Last sample
+===============================================================================
+^* 169.254.169.123               3   4   377    13  +9414ns[  +10us] +/-  461us
+                     
+```
+
+To enter the chrony client,
+```bash
+$ chronyc
+chrony version 4.1
+Copyright (C) 1997-2003, 2007, 2009-2021 Richard P. Curnow and others
+chrony comes with ABSOLUTELY NO WARRANTY.  This is free software, and
+you are welcome to redistribute it under certain conditions.  See the
+GNU General Public License version 2 for details.
+```
+
+To stop using the NTP server and set the time manually:
+```bash
+sudo timedatectl set-ntp false
+```
+
+Whenever you change the chrony.conf, it's recommended to restart the service to reload the config file.
+```bash
+sudo systemctl restart chronyc
+```
