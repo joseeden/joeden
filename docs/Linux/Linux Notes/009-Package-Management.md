@@ -3,7 +3,7 @@ title: Package Management
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 9
 last_update:
-  date: 7/8/2022
+  date: 12/30/2021
 ---
 
 ## Package Managers 
@@ -379,62 +379,81 @@ RHEL8 introduces application streams and modules to enhance package management.
 - Base packages are provided through the BaseOS repository
 - Appstream is provided as a separate repository
 
+**Modules**
+- Application streams are delivered in 2 formats
+  - traditional RPMs
+  - new modules
+- Modules can contain streams to make multiple versions of applications availble
+- Enabling a module stream gives access to RPM packages in that stream
+- Modules can also have profiles - a list of packages that belong to a specific use-case
+- The package list of a module can contain packages outside the module stream
+- You can use the **yum** module to manage modules
+
+
 ### rpm Commands
 
+rpm queries by default are against the database of installed packages, add '-p' to query package files
+
 ![](/img/docs/sv-rpm-queries.png)
+![](/img/docs/sv-rpm-queries-2.png)
 
-```bash
-rpm -q <package>
-rpm -qi <package>
-rpm -q --list <package>
-rpm -ql <package>
-rpm -qa --last
-rpm -qpR <pkg-name>
-rpm --rebuilddb
-rpm -qdf <path-to-package>
-rpm -Va
-```
-
+Query the RPM database to check if the specified package is installed. It returns the package name and version if found.
 ```bash
 rpm -q <package>
 ```
-Queries the RPM database to check if the specified package is installed. It returns the package name and version if found.
 
+Display detailed information about the specified installed package, including the name, version, release, size, and a description.
 ```bash
 rpm -qi <package>
 ```
-Displays detailed information about the specified installed package, including the name, version, release, size, and a description.
+
+List all files installed by the specified package.
 
 ```bash
 rpm -q --list <package>
 rpm -ql <package>
 ```
-Lists all files installed by the specified package.
+
+List all installed packages in the order they were installed, with the most recently installed packages listed first.
 
 ```bash
 rpm -qa --last
 ```
-Lists all installed packages in the order they were installed, with the most recently installed packages listed first.
+
+Display the dependencies required by the specified RPM package file (not the installed package).
 
 ```bash
 rpm -qpR <pkg-name>
 ```
-Displays the dependencies required by the specified RPM package file (not the installed package).
+
+Rebuild the RPM database. This can be useful if the database is corrupted.
 
 ```bash
 rpm --rebuilddb
 ```
-Rebuilds the RPM database. This can be useful if the database is corrupted.
+
+List all documentation files for the specified installed package.
 
 ```bash
 rpm -qdf <path-to-package>
 ```
-Lists all documentation files for the specified installed package.
+
+Verify all installed packages against their RPM database entries. It checks file sizes, permissions, types, owners, groups, and MD5 checksums.
 
 ```bash
 rpm -Va
 ```
-Verifies all installed packages against their RPM database entries. It checks file sizes, permissions, types, owners, groups, and MD5 checksums.
+
+Installing a package using the RPM file.
+
+```bash
+# -ivh vsersus -Uvh
+# i means install package
+# U means update package
+# If package doesnt exist, -Uvh installs package
+# If package exists, -Uvh updates the current package
+rpm -Uvh <package.rpm>
+```
 
 ## Red Hat Subscription Manager
 
