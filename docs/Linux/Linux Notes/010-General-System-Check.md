@@ -430,8 +430,6 @@ date -s "1 Jul 1986 1:23:45"
 
 ### timedatectl
 
-![](/img/docs/sv-timedatectl.png)
-
 The `timedatectl` command is used to query and change the system clock and its settings.
 
 To display the current status:
@@ -502,6 +500,95 @@ NTP=yes
 NTPSynchronized=yes
 TimeUSec=Sun 2021-12-26 19:42:36 +08
 RTCTimeUSec=Sun 2021-12-26 19:42:36 +08
+```
+
+
+### tzselect
+
+The `tzselect` command is an interactive utility that helps you select your time zone from a list of available time zones. It prompts you to select your geographical area and then your specific location within that area. This tool does not directly set the system's time zone but helps you determine the appropriate time zone string that can be used with other commands like `timedatectl` or for setting the `TZ` environment variable.
+
+1. Run the command:
+   ```bash
+   tzselect
+   ```
+2. Follow the prompts to select your geographical area and location.
+    
+    ```bash
+    $ tzselect
+    Please identify a location so that time zone rules can be set correctly.
+    Please select a continent or ocean.
+    1) Africa
+    2) Americas
+    3) Antarctica
+    4) Arctic Ocean
+    5) Asia
+    6) Atlantic Ocean
+    7) Australia
+    8) Europe
+    9) Indian Ocean
+    10) Pacific Ocean
+    11) none - I want to specify the time zone using the Posix TZ format.
+    #? 5
+    Please select a country.
+    1) Afghanistan          18) Israel                35) Palestine
+    2) Armenia              19) Japan                 36) Philippines
+    3) Azerbaijan           20) Jordan                37) Qatar
+    4) Bahrain              21) Kazakhstan            38) Russia
+    5) Bangladesh           22) Korea (North)         39) Saudi Arabia
+    6) Bhutan               23) Korea (South)         40) Singapore
+    7) Brunei               24) Kuwait                41) Sri Lanka
+    8) Cambodia             25) Kyrgyzstan            42) Syria
+    9) China                26) Laos                  43) Taiwan
+    10) Cyprus               27) Lebanon               44) Tajikistan
+    11) East Timor           28) Macau                 45) Thailand
+    12) Georgia              29) Malaysia              46) Turkmenistan
+    13) Hong Kong            30) Mongolia              47) United Arab Emirates
+    14) India                31) Myanmar (Burma)       48) Uzbekistan
+    15) Indonesia            32) Nepal                 49) Vietnam
+    16) Iran                 33) Oman                  50) Yemen
+    17) Iraq                 34) Pakistan
+    #? 40
+    Please select one of the following time zone regions.
+    1) Singapore
+    #? 1
+
+    The following information has been given:
+
+            Singapore
+
+    Therefore TZ='Asia/Singapore' will be used.
+    Local time is now:      Sun Jun 30 19:41:45 +08 2024.
+    Universal Time is now:  Sun Jun 30 11:41:45 UTC 2024.
+    Is the above information OK?
+    1) Yes
+    2) No
+    #? 1
+
+    You can make this change permanent for yourself by appending the line
+            TZ='Asia/Singapore'; export TZ
+    to the file '.profile' in your home directory; then log out and log in again.
+
+    Here is that TZ value again, this time on standard output so that you can
+    use it directly in an assignment:
+    Asia/Singapore
+    ```
+
+After running `tzselect` and following the prompts, you will get a time zone string like `Asia/Singapore`. You can use this string with `timedatectl` to set the system time zone:
+
+```bash
+sudo timedatectl set-timezone Asia/Singapore
+```
+
+Or set the `TZ` environment variable:
+
+```bash
+export TZ='Asia/Singapore'
+```
+
+To make the change permanent for your user session, add the following line to your `.profile`, `.bashrc`, or equivalent file in your home directory:
+
+```bash
+echo "export TZ='Asia/Singapore'" >> ~/.profile
 ```
 
 
