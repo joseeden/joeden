@@ -190,17 +190,17 @@ aptitude
 
 `dselect` is an older interface for managing packages, now largely obsolete but still available. To use `dselect`, follow these steps:
 
-1. **Install dselect** (if not already installed):
+1. Install dselect (if not already installed):
    ```bash
    sudo apt-get install dselect
    ```
 
-2. **Run dselect**:
+2. Run dselect:
    ```bash
    sudo dselect
    ```
 
-3. **Navigate through the interface** to update the package list, select packages for installation or removal, and apply changes.
+3. Navigate through the interface to update the package list, select packages for installation or removal, and apply changes.
 
 While `dselect` provides a comprehensive interface for package management, it is largely considered obsolete and has been replaced by more modern tools like `aptitude` and `apt`.
 
@@ -320,10 +320,72 @@ To extract and redirect output to a file:
 rpm2cpio <package.rpm> > <filename>
 ```
 
-### Modules and Application Streams
+### Yum modules
 
-![](/img/docs/sv-yum-modules.png)
-![](/img/docs/sv-yum-modules-2.png)
+The **yum module** command is used to manage module properties:
+
+Got it! Here are the commands with their descriptions preceding the code blocks:
+
+- List all available modules:
+    ```bash
+    yum module list
+    ```
+
+- Search for the module that provides httpd:
+    ```bash
+    yum module provides httpd
+    ```
+
+- Display detailed information about the PHP module:
+    ```bash
+    yum module info php
+    ```
+
+- Show profiles for the PHP module:
+    ```bash
+    yum module info --profile php
+    ```
+
+- Show which streams are available for the PHP module:
+    ```bash
+    yum module list php
+    ```
+
+- Install the PHP 7.1 module stream:
+    ```bash
+    yum module install php:7.1
+    yum install @php:7.1
+    ```
+
+- Install a specific profile within the PHP 7.1 module stream:
+    ```bash
+    yum module install php:7.1/devel
+    ```
+
+- Install httpd and automatically enable its module stream:
+    ```bash
+    yum install httpd
+    ```
+
+- Enable the PHP 7.1 module stream without installing it:
+    ```bash
+    yum module enable php:7.1
+    ```
+
+- Install a specific PHP module stream (e.g., PHP 7.1):
+    ```bash
+    yum module install php:7.1
+    ```
+
+- Update to the newer PHP 7.2 module stream:
+    ```bash
+    yum module install php:7.2
+    ```
+
+- Update or downgrade packages from a previous module stream that are not listed in installed profiles:
+    ```bash
+    yum distro-sync
+    ```
 
 ### yum groups
 
@@ -336,7 +398,10 @@ yum grouplist | more
 
 The rpm (Red Hat Package Manager) command is used for managing packages on Red Hat-based systems such as RHEL and CentOS. It allows you to install, update, query, verify, and remove packages. Unlike other package managers, rpm does not handle dependencies, so you might need to resolve them manually.
 
-![](/img/docs/sv-rpm-1.png)
+- Package contains an archive of files that is compressed with **cpio**, as well of metadata and a  list of package dependencies.
+- RPM packages may contain scripts as well. 
+- To install packages, repositorues are used. 
+- Individual packages may be installed, but this should be avoided. 
 
 
 To download and install a package using rpm:
@@ -392,10 +457,11 @@ RHEL8 introduces application streams and modules to enhance package management.
 
 ### rpm Commands
 
-rpm queries by default are against the database of installed packages, add '-p' to query package files
+rpm queries by default are against the database of installed packages, add '-p' to query package files. 
 
-![](/img/docs/sv-rpm-queries.png)
-![](/img/docs/sv-rpm-queries-2.png)
+- rpm is the legacy command to manage RPM packages.
+- **DO NOT USE** rpm as it doesn't consider other dependencies.
+- However, it is usefule for performing package queries .
 
 Query the RPM database to check if the specified package is installed. It returns the package name and version if found.
 ```bash
