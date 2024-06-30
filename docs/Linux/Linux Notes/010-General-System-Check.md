@@ -1,7 +1,7 @@
 ---
 title: General System Check
 tags: [Linux, Red Hat, Certifications]
-sidebar_position: 2
+sidebar_position: 10
 last_update:
   date: 7/8/2022
 ---
@@ -10,20 +10,17 @@ last_update:
 
 ## Linux Hierarchy System 
 
-An excerpt from a [GeeksforGeeks article](https://www.geeksforgeeks.org/linux-file-hierarchy-structure/):
+The Linux File Hierarchy Structure (FHS), maintained by the Linux Foundation, defines the directory structure and contents in Unix-like operating systems.
 
-:::info[Linux File Hierarchy]
+- According to the FHS, all files and directories are organized under the root directory (/), regardless of whether they reside on different physical or virtual devices.
+- Certain directories are only present if specific subsystems, such as the X Window System, are installed.
+- While most directories exist across all UNIX operating systems and serve similar purposes, the descriptions provided here are specific to the FHS and may not be authoritative for non-Linux platforms.
 
-The Linux File Hierarchy Structure or the Filesystem Hierarchy Standard (FHS) defines the directory structure and directory contents in Unix-like operating systems. It is maintained by the Linux Foundation. 
-
-- In the FHS, all files and directories appear under the root directory /, even if they are stored on different physical or virtual devices.
-- Some of these directories only exist on a particular system if certain subsystems, such as the X Window System, are installed.
-- Most of these directories exist in all UNIX operating systems and are generally used in much the same way; however, the descriptions here are those used specifically for the FHS and are not considered authoritative for platforms other than Linux.
-
-:::
-
+<div class="img-center"> 
 
 ![](/img/docs/sv-fhs.png)
+
+</div>
 
 
 ### Commands
@@ -82,8 +79,19 @@ To see previous commands in reverse:
 ctrl-r
 ```
 
-**PIPING** - pass output of previous command.
+To display the full path of the current directory you are working in
 
+```bash
+pwd 
+```
+
+To displays the username of the current user: 
+
+```bash
+whoami 
+```
+
+**Piping** - pass output of previous command.
 In the example below, we're getting the output of "ps -aux".
 And from that output, we're grepping for "java".
 
@@ -91,7 +99,6 @@ And from that output, we're grepping for "java".
 ps aux | grep java
 ```
 
-![](/img/docs/sv-cli.png)
 
 
 ### Environment Variables
@@ -116,14 +123,14 @@ To add a path to your $PATH variable:
 
 ```
 
-![](/img/docs/sv-env.png)
-
-
-
 
 ### Memory
 
-![](/img/docs/sv-memory.png)
+Linux places as many files as possible in cache to guarantee fast access to the files. 
+
+- Linux memory often shows as saturated.
+- Swap is used as an overflow buffer of emulated RAM on disk. 
+- The Linux kernel moves inactive memory to swap first. 
 
 
 To see free memory:
@@ -243,7 +250,7 @@ You'll also notice that the partition with largest size also has the largest con
 
 ### CPU Load
 
-![](/img/docs/sv-cpu-load.png)
+<!-- ![](/img/docs/sv-cpu-load.png) -->
 
 To check system uptime and load averages:
 
@@ -292,76 +299,62 @@ Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cm
 ```
 
 
+## Tuned 
 
-## Tuned
-
+**Tuned** is a dynamic tuning daemon in Linux used to optimize system performance based on the current workload. It allows for automated, real-time adjustment of system settings to improve performance and efficiency, making it particularly useful in environments with varying workloads.
 
 ![](/img/docs/sv-tuned.png)
 ![](/img/docs/sv-tuned-2.png)
 
-```bash
-[root@localhost ~]# systemctl status tuned
-● tuned.service - Dynamic System Tuning Daemon
-   Loaded: loaded (/usr/lib/systemd/system/tuned.service; enabled; vendor preset: enabled)
-   Active: active (running) since Thu 2021-12-23 22:29:27 PST; 1 day 18h ago
-     Docs: man:tuned(8)
-           man:tuned.conf(5)
-           man:tuned-adm(8)
- Main PID: 966 (tuned)
-    Tasks: 5 (limit: 100840)
-   Memory: 18.6M
-   CGroup: /system.slice/tuned.service
-           └─966 /usr/libexec/platform-python -Es /usr/sbin/tuned -l -P
+### Key Features
 
-Dec 23 22:29:26 tst-rhel systemd[1]: Starting Dynamic System Tuning Daemon...
-Dec 23 22:29:27 tst-rhel systemd[1]: Started Dynamic System Tuning Daemon.
-```
+1. **Dynamic Tuning:** Automatically adjusts system settings based on the current load and usage patterns.
+2. **Profiles:** Predefined and customizable profiles for different use cases, such as high performance, power saving, and low latency.
+3. **Pluggable Architecture:** Easy to extend with custom plugins for specific tuning needs.
 
-To see the profiles and the current active:
+### Usage
 
-```bash
-[root@localhost ~]# tuned-adm list
-Available profiles:
-- accelerator-performance     - Throughput performance based tuning with disabled higher latency STOP states
-- balanced                    - General non-specialized tuned profile
-- desktop                     - Optimize for the desktop use-case
-- hpc-compute                 - Optimize for HPC compute workloads
-- intel-sst                   - Configure for Intel Speed Select Base Frequency
-- latency-performance         - Optimize for deterministic performance at the cost of increased power consumption
-- network-latency             - Optimize for deterministic performance at the cost of increased power consumption, focused on low latency network performance
-- network-throughput          - Optimize for streaming network throughput, generally only necessary on older CPUs or 40G+ networks
-- optimize-serial-console     - Optimize for serial console use.
-- powersave                   - Optimize for low power consumption
-- throughput-performance      - Broadly applicable tuning that provides excellent performance across a variety of common server workloads
-- virtual-guest               - Optimize for running inside a virtual guest
-- virtual-host                - Optimize for running KVM guests
-Current active profile: virtual-guest
+1. If Tuned is not already installed, you can install it using your package manager.
+   ```bash
+   sudo yum install tuned          # On RHEL-based systems
+   sudo apt-get install tuned      # On Debian-based systems
+   ```
 
-```
+2. Start the Tuned service and enable it to start automatically at boot.
+   ```bash
+   sudo systemctl start tuned
+   sudo systemctl enable tuned
+   ```
 
-To change the profile:
+3. View the available tuning profiles.
+    ```bash
+    sudo tuned-adm list
+    ```
+    ```bash
+    Available profiles:
+    - accelerator-performance     - Throughput performance based tuning with disabled higher latency STOP states
+    - balanced                    - General non-specialized tuned profile
+    - desktop                     - Optimize for the desktop use-case
+    - hpc-compute                 - Optimize for HPC compute workloads
+    - intel-sst                   - Configure for Intel Speed Select Base Frequency
+    - latency-performance         - Optimize for deterministic performance at the cost of increased power consumption
+    - network-latency             - Optimize for deterministic performance at the cost of increased power consumption, focused on low latency network performance
+    - network-throughput          - Optimize for streaming network throughput, generally only necessary on older CPUs or 40G+ networks
+    - optimize-serial-console     - Optimize for serial console use.
+    - powersave                   - Optimize for low power consumption
+    - throughput-performance      - Broadly applicable tuning that provides excellent performance across a variety of common server workloads
+    - virtual-guest               - Optimize for running inside a virtual guest
+    - virtual-host                - Optimize for running KVM guests
+    
+    Current active profile: virtual-guest
+    ```
 
-```bash
-[root@localhost ~]# tuned-adm profile desktop
-[root@localhost ~]#
-[root@localhost ~]# tuned-adm active
-Current active profile: desktop
-[root@localhost ~]#
-[root@localhost ~]# tuned-adm list
-Available profiles:
-- accelerator-performance     - Throughput performance based tuning with disabled higher latency STOP states
-- balanced                    - General non-specialized tuned profile
-- desktop                     - Optimize for the desktop use-case
-- hpc-compute                 - Optimize for HPC compute workloads
-- intel-sst                   - Configure for Intel Speed Select Base Frequency
-- latency-performance         - Optimize for deterministic performance at the cost of increased power consumption
-- network-latency             - Optimize for deterministic performance at the cost of increased power consumption, focused on low latency network performance
-- network-throughput          - Optimize for streaming network throughput, generally only necessary on older CPUs or 40G+ networks
-- optimize-serial-console     - Optimize for serial console use.
-- powersave                   - Optimize for low power consumption
-- throughput-performance      - Broadly applicable tuning that provides excellent performance across a variety of common server workloads
-- virtual-guest               - Optimize for running inside a virtual guest
-- virtual-host                - Optimize for running KVM guests
+4. Change to a specific profile based on your needs.
+   ```bash
+   sudo tuned-adm profile balanced   # Applying the 'balanced' profile
+   ```
 
-Current active profile: desktop
-```
+5. Check which profile is currently active.
+   ```bash
+   sudo tuned-adm active
+   ```
