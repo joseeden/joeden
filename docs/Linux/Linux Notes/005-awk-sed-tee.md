@@ -93,47 +93,46 @@ Where:
    awk 'BEGIN { print "Name\tAge" } { print $1, $2 }' file.txt
    ```
 
+### Advanced Examples 
 
-### Calculating Averages
+1. Calculate and print the average of the second field:
 
-Calculate and print the average of the second field:
-```bash
-awk '{ sum += $2; count++ } END { if (count > 0) print sum / count }' file.txt
-```
+   ```bash
+   awk '{ sum += $2; count++ } END { if (count > 0) print sum / count }' file.txt
+   ```
 
-### Extracting Specific Columns
+2. Extract specific columns from a CSV file and save to another file:
 
-Extract specific columns from a CSV file and save to another file:
-```bash
-awk -F',' '{ print $1, $3, $5 }' input.csv > output.txt
-```
+   ```bash
+   awk -F',' '{ print $1, $3, $5 }' input.csv > output.txt
+   ```
 
-### Conditional Processing
+3. Print lines where the first field is "John" and the second field is greater than 50:
 
-Print lines where the first field is "John" and the second field is greater than 50:
-```bash
-awk '$1 == "John" && $2 > 50 { print }' file.txt
-```
+   ```bash
+   awk '$1 == "John" && $2 > 50 { print }' file.txt
+   ```
 
-### Using External Variables
+4. Pass an external variable to `awk`:
 
-Pass an external variable to `awk`:
-```bash
-threshold=100
-awk -v threshold="$threshold" '$2 > threshold { print }' file.txt
-```
+   ```bash
+   threshold=100
+   awk -v threshold="$threshold" '$2 > threshold { print }' file.txt
+   ```
 
-### Combining awk with Other Commands
+### Combining awk with other commands 
 
-Use `awk` in a pipeline to process the output of another command:
-```bash
-ls -l | awk '{ print $9, $5 }'
-```
+1. Use `awk` to process the output of another command:
 
-Find and process files with `find` and `awk`:
-```bash
-find /path -type f -name "*.log" -exec awk '/ERROR/ { print FILENAME, $0 }' {} +
-```
+   ```bash
+   ls -l | awk '{ print $9, $5 }'
+   ```
+
+2. Find and process files with `find` and `awk`:
+
+   ```bash
+   find /path -type f -name "*.log" -exec awk '/ERROR/ { print FILENAME, $0 }' {} +
+   ```
 
 
 
@@ -362,23 +361,26 @@ Where:
 
    This command lists the directory contents and writes the output to both `output1.txt` and `output2.txt`.
 
-### Append to Files
+### Examples
 
 1. Append the output of `ls` to a file:
+
    ```bash
    ls | tee -a output.txt
    ```
 
-   This command lists the directory contents and appends the output to `output.txt`.
+2. Run the command while ignoring interrupt signals (e.g., `Ctrl+C`):
 
-### Ignoring Interrupts
-
-1. Ignore interrupt signals:
    ```bash
    command | tee -i output.txt
    ```
 
-   This command will run `command`, writing the output to `output.txt` and ignoring interrupt signals (e.g., `Ctrl+C`).
+3. Capture both standard output and standard error:
+
+   ```bash
+   command 2>&1 | tee output.txt
+   ```
+
 
 ### Combining tee with Other Commands
 
@@ -396,13 +398,6 @@ Where:
    command1 | tee command1.log
    command2 | tee command2.log
    echo "Script completed."
-   ```
-
-### Redirecting stout and sterr
-
-1. Capture both standard output and standard error:
-   ```bash
-   command 2>&1 | tee output.txt
    ```
 
 ### Practical Use Cases 
