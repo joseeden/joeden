@@ -46,7 +46,7 @@ username:password:UID:GID:full_name:home_directory:shell
    - This field can contain the user's full name or other descriptive information.
    - It can include multiple comma-separated values for additional info, but typically it's just the full name.
 
-6. **home_directory**: `/home/john`
+6. **home_directory**: 
    - This is the path to the user's home directory.
    - It's where the user is placed upon logging in and where user-specific files and directories are stored.
 
