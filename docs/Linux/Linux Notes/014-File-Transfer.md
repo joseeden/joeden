@@ -7,15 +7,11 @@ last_update:
 ---
 
 
-
-
-## File Transfer
-
 When it comes to transferring files between systems or synchronizing data across different locations, several powerful tools are available in Linux. Some of these tools are SCP, SFTP, and rsync.
 
 ![](/img/docs/sv-scp.png)
 
-### SCP
+## SCP
 
 SCP (Secure Copy) is a command-line utility that allows secure file transfers between local and remote systems using the SSH protocol. It provides encryption during data transfer and authentication, making it suitable for secure file copying over networks.
 
@@ -63,7 +59,7 @@ $ ll /tmp/edenlocalfile-*
 ```
 
 
-### SFTP
+## SFTP
 
 SFTP (SSH File Transfer Protocol) is a secure file transfer protocol that provides file access, transfer, and management functionalities over SSH sessions. SFTP operates similarly to FTP but uses the SSH protocol to encrypt both authentication credentials and data, ensuring confidentiality and integrity during file transfers. 
 
@@ -99,7 +95,7 @@ Fetching /home/eden/howdy.txt to howdy-yall.txt
 sftp>
 ```
 
-### Sync files using rsync
+## Sync files using rsync
 
 Rsync is a robust file copying tool that operates over SSH or directly over the network. It efficiently synchronizes files and directories between two locations while minimizing data transfer by only copying parts of files that have cha
 
