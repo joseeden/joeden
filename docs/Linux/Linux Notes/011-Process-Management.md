@@ -6,11 +6,12 @@ last_update:
   date: 7/8/2022
 ---
 
-## Processes
+## ps command
 
 The `ps` command is used to display information about active processes. There are various options and flags to modify the output to suit your needs. 
 
-![](/img/docs/sv-ps-10.png)
+- the `ps` command has two different dialects: BSD and System5.
+- `ps -L` and `psL` are different commands. 
 
 ### Examples 
 
@@ -34,26 +35,6 @@ root           2  0.0  0.0      0     0 ?        S    Nov17   0:00 [kthreadd]
 root           3  0.0  0.0      0     0 ?        I<   Nov17   0:00 [rcu_gp]
 root           4  0.0  0.0      0     0 ?        I<   Nov17   0:00 [rcu_par_gp]
 root           6  0.0  0.0      0     0 ?        I<   Nov17   0:00 [kworker/0:0H-events_highpri]
-root           9  0.0  0.0      0     0 ?        I<   Nov17   0:00 [mm_percpu_wq]
-root          10  0.0  0.0      0     0 ?        S    Nov17   0:00 [ksoftirqd/0]
-root          11  0.0  0.0      0     0 ?        I    Nov17   0:01 [rcu_sched]
-```
-
-To see processes in a hierarchical view:
-
-```bash
-[root@server home]# ps -ef
-    PID TTY      STAT   TIME COMMAND
-  48963 pts/1    S      0:00 sudo su LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37
-  48965 pts/1    S      0:00  \_ su LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;
-  48966 pts/1    S      0:00      \_ bash LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:
-  48992 pts/1    R+     0:00          \_ ps ef LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;3
-  36120 pts/1    T      0:00 sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm -y LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:
-  36088 pts/1    T      0:03  \_ /usr/libexec/platform-python /bin/yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm LS_COLORS
-   6015 pts/1    T      0:00 sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=
-   6017 pts/1    T      0:04  \_ /usr/libexec/platform-python /bin/yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm LS_COLORS
-   1146 ttyS0    Ss+    0:00 /sbin/agetty -o -p -- \u --keep-baud 115200,38400,9600 ttyS0 vt220 LANG=en_US.UTF-8 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:
-   1145 tty1     Ss+    0:00 /sbin/agetty -o -p -- \u --noclear tty1 linux PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin INVOCATION_ID=8b2bcd3d8abf440
 ```
 
 To see processes in tree-view:
@@ -68,11 +49,82 @@ To see processes in tree-view:
    6015    6017    6015    5981 pts/1      49357 T        0   0:04          |   \_ /usr/libexec/platform-python /bin/yum inst
    5981   36086   36086    5981 pts/1      49357 T        0   0:00          \_ sudo yum install https://dl.fedoraproject.org/
   36086   36088   36086    5981 pts/1      49357 T        0   0:03          |   \_ /usr/libexec/platform-python /bin/yum inst
-   5981   36108   36108    5981 pts/1      49357 T        0   0:00          \_ sudo yum install https://dl.fedoraproject.org/
-  36108   36110   36108    5981 pts/1      49357 T        0   0:02          |   \_ /usr/libexec/platform-python /bin/yum inst
-   5981   36120   36120    5981 pts/1      49357 T        0   0:00          \_ sudo yum install https://dl.fedoraproject.org/
-  36120   36123   36120    5981 pts/1      49357 T        0   0:02          |   \_ /usr/libexec/platform-python /bin/yum inst
-   5981   42110   42110    5981 pts/1      49357 T     1000   0:28          \_ htop
+```
+
+The `-fax` combination displays all processes in a hierarchical tree format, including processes without a terminal and those of other users. This is useful for understanding the parent-child relationships between processes.
+
+```bash
+[root@server home]# ps -fax
+  PID  TTY      STAT   TIME COMMAND
+    1  ?        Ss     0:07 /sbin/init
+    2  ?        S      0:00  \_ [kthreadd]
+    3  ?        I<     0:00      \_ [rcu_gp]
+    4  ?        I<     0:00      \_ [rcu_par_gp]
+  458  ?        Ss     0:00 /usr/sbin/sshd -D
+  489  pts/0    Ss     0:00  \_ /bin/bash
+  510  pts/0    R+     0:00      \_ ps -fax
+
+```
+
+
+The `-ef` combination provides a comprehensive list of all processes in the system with detailed information. It does not show the hierarchical tree structure but is more detailed about each process's attributes.
+
+```bash
+[root@server home]# ps -ef
+    PID TTY      STAT   TIME COMMAND
+  48963 pts/1    S      0:00 sudo su LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37
+  48965 pts/1    S      0:00  \_ su LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;
+  36120 pts/1    T      0:00 sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm -y LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:
+  36088 pts/1    T      0:03  \_ /usr/libexec/platform-python /bin/yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm LS_COLORS
+   6015 pts/1    T      0:00 sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=
+   6017 pts/1    T      0:04  \_ /usr/libexec/platform-python /bin/yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm LS_COLORS
+   1145 tty1     Ss+    0:00 /sbin/agetty -o -p -- \u --noclear tty1 linux PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin INVOCATION_ID=8b2bcd3d8abf440
+```
+
+To list full-format details of processes owned by user Ted:
+
+```bash
+[root@server home]# ps -fU Ted
+
+UID        PID  PPID  C STIME TTY          TIME CMD
+Ted       1234     1  0 12:00 ?        00:00:00 /usr/bin/bash
+```
+
+To show a tree view `--forest` of sshd processes and their children in full format:
+
+```bash
+[root@server home]# ps -f --forest -C sshd
+
+UID        PID  PPID  C STIME TTY          TIME CMD
+root       101   100  0 10:00 ?        00:00:00 sshd
+root       102   101  0 10:01 ?        00:00:00  \_ sshd: root@pts/0
+```
+
+To list all the currently available format specifiers:
+
+```bash
+[root@server home]# ps L
+
+%cpu         %CPU
+%mem         %MEM
+_left        LLLLLLLL
+_left2       L2L2L2L2
+_right       RRRRRRRR
+_right2      R2R2R2R2
+_unlimited   U
+_unlimited2  U2
+```
+
+To dsplay all processes with specified columns: process ID, parent process ID, user, and command
+
+```bash
+[root@server home]# ps -eo pid,ppid,user,cmd
+    PID    PPID USER     CMD
+      1       0 root     /sbin/init
+      2       1 root     /init
+     11       2 root     plan9 --control-socket 6 --log-level 4 --server-fd 7 --pipe-fd 9 --log-truncate
+     70       1 root     /lib/systemd/systemd-journald
+     96       1 root     /lib/systemd/systemd-udevd
 ```
 
 ### Using grep
@@ -156,25 +208,33 @@ drwxr-xr-x.  2 root root    6 Sep 23 18:51 user
 
 ## Managing Services with systemd
 
-To start, stop, restart, enable, or disable services using systemd:
-
+Check status of a service:
 ```bash
-# Check status of a service
 systemctl status <service>
+```
 
-# Stop a service
+Stop a service:
+```bash
 systemctl stop <service>
+```
 
-# Start a service
+Start a service:
+```bash
 systemctl start <service>
+```
 
-# Restart a service
+Restart a service:
+```bash
 systemctl restart <service>
+```
 
-# Disable a service from starting automatically on boot
+Disable a service from starting automatically on boot:
+```bash
 systemctl disable <service>
+```
 
-# Enable a service to start automatically on boot
+Enable a service to start automatically on boot:
+```bash
 systemctl enable <service>
 ```
 
@@ -195,12 +255,105 @@ Created symlink /etc/systemd/system/multi-user.target.wants/crond.service → /u
 
 ### Shell Jobs
 
-Shell jobs are tasks initiated by the shell that can run independently of the terminal session. They can be managed using built-in shell commands, allowing users to execute multiple tasks simultaneously and monitor their status.
+In Linux, a "job" refers to a process that is started by the shell. Jobs can be managed directly from the shell, and this includes running processes in the background, bringing them to the foreground, and stopping or resuming them.
 
-![](/img/docs/sv-job-ps.png)
+- All tasks are started as processes. 
+- Processed have a PID.
+- Common process management tasks include scheduling priority and sending signals.
+- Some processes start multiple thread.
+- Individual threads cannot be managed. 
+- Tasks managed from a shell can be managed as jobs. 
+- Jobs can be started in the foreground or background.
 
-![](/img/docs/sv-job-2.png)
+### Basic Job Commands
 
-### Managing Processes
+- **&**: Run a command in the background.
+- **jobs**: List all current jobs.
+- **fg**: Bring a job to the foreground.
+- **bg**: Resume a stopped job in the background.
+- **Ctrl+Z**: Suspend the current foreground job.
+- **kill**: Terminate a job by sending a signal.
 
-![](/img/docs/sv-ps-10.png)
+### Examples
+
+1. **Running a Process in the Background**
+   
+   The "&" symbol runs `long_running_command` in the background, allowing you to continue using the shell. `1` is the job number, and `12345` is the process ID (PID).
+
+   ```bash
+   $ long_running_command &
+   [1] 12345
+   ```
+
+2. **Listing Jobs**
+
+   The `jobs` command lists all active jobs. The `+` indicates the current job, and the job number is `1`.
+
+   ```bash
+   $ jobs
+   [1]+  Running                 long_running_command &
+   ```
+
+
+3. **Bringing a Job to the Foreground**
+
+   The `fg` command followed by the job number brings job `1` to the foreground.
+
+   ```bash
+   $ fg %1
+   ```
+
+4. **Running a Stopped Job in the Background**
+
+   The `bg` command resumes a stopped job in the background. This is useful after using `Ctrl+Z` to suspend a job.
+
+   ```bash
+   $ bg %1
+   ```
+
+5. **Suspending a Foreground Job**
+
+   Press `Ctrl+Z` to suspend the current foreground job. The job is now stopped and can be resumed with `fg` or `bg`.
+
+   ```bash
+   $ long_running_command
+   Ctrl+Z
+   [1]+  Stopped                 long_running_command
+   ```
+
+6. **Terminating a Job**
+
+   The `kill` command followed by the job number terminates the specified job. You can also use the PID instead of the job number.
+
+   ```bash
+   $ kill %1
+   ```
+   ```bash
+   $ kill 12345
+   ```
+
+### Job Control Example
+
+```bash
+$ sleep 1000 &
+[1] 12345
+$ jobs
+[1]+  Running                 sleep 1000 &
+$ fg %1
+sleep 1000
+Ctrl+Z
+[1]+  Stopped                 sleep 1000
+$ bg %1
+[1]+ sleep 1000 &
+$ kill %1
+[1]+  Terminated              sleep 1000
+```
+
+In this example:
+1. `sleep 1000 &` runs the `sleep` command in the background.
+2. `jobs` lists the active job.
+3. `fg %1` brings the job to the foreground.
+4. `Ctrl+Z` suspends the job.
+5. `bg %1` resumes the job in the background.
+6. `kill %1` terminates the job.
+
