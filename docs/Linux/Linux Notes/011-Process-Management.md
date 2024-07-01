@@ -544,8 +544,6 @@ Example
 
 These commands are used to locate the paths of executables and man pages for commands.
 
-![](/img/docs/sv-which-where.png)
-
 - `which`
 
     The `which` command shows the path of the executable that would have been executed when you type the command name in the terminal.
