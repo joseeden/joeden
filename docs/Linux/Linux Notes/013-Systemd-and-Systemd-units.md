@@ -139,13 +139,12 @@ $ sudo systemd-analyze blame
 
 ## Systemd Targets
 
-Systemd target is essential in booting Linux. They are a group of unit files, but there are also **isolatable targets**
+Systemd target is essential in booting Linux. They are a group of unit files, but there are also **isolatable targets**. When enabling a unit, it is added to a specific target. 
+
 - **emergency.target** - minimal, allows troubleshooting and allows minimal services
 - **rescue.target** - for troubleshooting also, loads more services. If you can't get to prompt, you can start with rescue and then proceed with emergency
 - **multiuser.target** - this is where the server normally starts from, this is the state where all services are running, but there is no GUI
 - **graphical.target** - all services are started + GUI
-
-![](/img/docs/sv-systemd-targets.png)
 
 
 ### Target Files 
