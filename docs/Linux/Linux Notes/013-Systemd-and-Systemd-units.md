@@ -11,16 +11,28 @@ last_update:
 
 Systemd is a system and service manager for Linux operating systems, designed to replace the traditional SysVinit system. It provides a more efficient and flexible way to manage system processes, startup services, and system states. Systemd introduces the concept of units and targets, which offer a modular and unified approach to system configuration and management.
 
-![](/img/docs/sv-systemd-1.png)
+- Systemd is the manager of everything after the Linux kernel starts. 
+- Managed systems are called **units.** 
+- Different unit types include:
+  - services 
+  - mounts 
+  - timers
+  - etc. 
+
+**systemctl** is the management interface to work with **systemd**. 
+
 ![](/img/docs/sv-systemd-2.png)
 
 ### `systemd` vs `sysv init`
 
-![](/img/docs/systemd-vs-sysv.png)
-
 From [Differences between SysVinit, Upstart and Systemd](https://www.computernetworkingnotes.com/linux-tutorials/differences-between-sysvinit-upstart-and-systemd.html):
 
 > Systemd is the replacement of the SysVinit and Upstart initializer programs. In RHEL6, the Upstart initialization program was used. Before RHEL6, the SysVinit was the default initialization program.
+
+This diagram also shows the different `systemd` components: 
+
+![](/img/docs/systemd-vs-sysv.png)
+
 
 The sysv init contains various scripts:
 
@@ -238,9 +250,19 @@ graphical.target
 
 Sometimes, you may need to boot into a specific systemd target for troubleshooting or maintenance purposes. This can be done by modifying the boot parameters at startup to specify the desired target. 
 
-![](/img/docs/sv-tgt-boot.png)
+- On the Grub 2 boot prompt, use the command below to boot into a specific target:
 
-Here we'll check the grub parameters during bootup.
+  ```bash
+  systemctl.unit=xxx.target 
+  ```
+
+- To change between targets on a running system, use:
+
+  ```bash
+  systemctl isolate xxx.target
+  ```
+
+We can check the grub parameters during bootup.
 
 ![](/img/docs/sv-boot-grub-1.png)
 ![](/img/docs/sv-boot-grub-2.png)
@@ -248,7 +270,7 @@ Here we'll check the grub parameters during bootup.
 
 ### Booting into rescue.target
 
-In this example, we want to boot into rescue.target. We'll add **systemd.unit=rescue.target**
+To boot into rescue.target, add **systemd.unit=rescue.target**:
 
 ![](/img/docs/sv-boot-grub-3.png)
 
@@ -280,6 +302,5 @@ To revert back:
 systemctl start graphical.target
 ```
 
-![](/img/docs/sv-boot-grub-8.png)
 
 
