@@ -1,7 +1,7 @@
 ---
 title: IPtables and getting locked out
 tags: [Linux, Red Hat, Labs]
-sidebar_position: 31
+sidebar_position: 41
 last_update:
   date: 2/27/2022
 ---
