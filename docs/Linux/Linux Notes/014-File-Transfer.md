@@ -9,7 +9,6 @@ last_update:
 
 When it comes to transferring files between systems or synchronizing data across different locations, several powerful tools are available in Linux. Some of these tools are SCP, SFTP, and rsync.
 
-![](/img/docs/sv-scp.png)
 
 ## SCP
 
@@ -87,6 +86,7 @@ sftp> get howdy.txt
 Fetching /home/eden/howdy.txt to howdy.txt
 /home/eden/howdy.txt 
 ```
+
 Files can also be renamed: 
 ```bash 
 sftp> get howdy.txt howdy-yall.txt
@@ -95,13 +95,28 @@ Fetching /home/eden/howdy.txt to howdy-yall.txt
 sftp>
 ```
 
+To upload a file: 
+
+```bash
+sftp> put howdy.txt
+```
+
+To close and ftp session:
+
+```bash
+exit  
+```
+
+
 ## Sync files using rsync
 
-Rsync is a robust file copying tool that operates over SSH or directly over the network. It efficiently synchronizes files and directories between two locations while minimizing data transfer by only copying parts of files that have cha
+Rsync is a robust file copying tool that operates over SSH or directly over the network. It efficiently synchronizes files and directories between two locations while minimizing data transfer by only copying parts of files that have changed. 
 
-![](/img/docs/sv-rsync.png)
+- If source and target files already exists, rsync will only sync their differences. 
+- rsysc can be used with many options.
 
-On my remote EC2 machine, I created a few files:
+
+To test it out, I created a few files on my remote EC2 machine.
 
 ```bash
 $ touch /tmp/edenremotefile{1..10}
