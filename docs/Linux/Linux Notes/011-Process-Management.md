@@ -357,3 +357,166 @@ In this example:
 5. `bg %1` resumes the job in the background.
 6. `kill %1` terminates the job.
 
+
+
+## `top` and `htop` 
+
+### Using `top` 
+
+![](/img/docs/sv-top-10.png)
+
+
+The `top` command provides real-time information about system processes and resource usage. It displays details such as CPU utilization, memory usage, and process statistics.
+
+- **Time and System Status**:
+  ```
+  22:21:00  up  3:05  2 users  load ave: 0.00, 0.00, 0.00
+  ```
+  
+  where: 
+
+  - `22:21:00`: Current time
+  - `up 3:05`: System uptime
+  - `2 users`: Number of logged-in users
+  - `load ave: 0.00, 0.00, 0.00`: CPU load averages over 1, 5, and 15 minutes
+
+- **Load Averages**:
+
+  - The three numbers represent load averages over different timeframes (1 minute, 5 minutes, and 15 minutes).
+
+- **N.I. Value**:
+
+  - NICE VALUE determines the priority of processes.
+  - A value of `-20` indicates the highest priority, while `19` or `20` indicates the lowest.
+
+- **Init Process**:
+
+  - The first process in any Linux system is typically the `init` process (PID 1), which manages other processes.
+
+In this example, systemd runs as PID1 because it is the init process. It's the first process. The bulk of functionality provided by the systemd project, however, does not reside in PID1, but in a variety of services launched by init
+
+![](/img/docs/top-pid1.png)
+
+
+### `top` commands
+
+- **Sorting**:
+  - Press `Shift + M` to sort processes by memory usage.
+  - Press `Shift + R` to sort processes by CPU usage.
+
+- **Process Management**:
+  - To kill a process: Press `k` followed by the process ID (`PID`). Confirm with the signal (default is `15`).
+  - To set process priority: Press `r` and enter the process ID (`PID`) and desired priority.
+
+### Priorities and Niceness
+
+Niceness values affect process scheduling. A lower niceness value means a higher priority for the process.
+
+![](/img/docs/sv-niceness.png)
+
+To set priority:
+
+```bash
+r: 12345 -20
+- set process-id 12345 with prio equals to (-20)
+- this means highest prio
+```
+
+
+### Using htop
+
+If `htop` is not installed, it can be installed using the following commands:
+
+```bash
+sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+sudo yum update -y
+sudo yum install -y htop
+```
+
+![](/img/docs/htop.png)
+
+
+## Killing Processes
+
+Processes can be managed and terminated using various signals (`SIGTERM`, `SIGKILL`, etc.):
+
+```bash
+kill <PID>      # Sends default signal (SIGTERM)
+kill -9 <PID>   # Sends SIGKILL to force termination
+```
+
+Example:
+
+```bash
+# Here we search for cron first then kill it
+[root@server home]# ps aux | grep cron
+root        6145  0.0  0.0  36956  3692 ?        Ss   06:01   0:00 /usr/sbin/crond -n
+root       49411  0.0  0.0  12136  1136 pts/1    S+   11:22   0:00 grep --color=auto cron
+[root@server home]#
+[root@server home]# ps aux | grep cron | grep -v grep
+root        6145  0.0  0.0  36956  3692 ?        Ss   06:01   0:00 /usr/sbin/crond -n
+[root@server home]#
+[root@server home]# kill 6145
+[root@server home]# ps aux | grep cron | grep -v grep
+[root@server home]#
+```
+
+To see all the signals we can send:
+
+```bash
+[root@server home]# kill -l
+ 1) SIGHUP       2) SIGINT       3) SIGQUIT      4) SIGILL       5) SIGTRAP
+ 6) SIGABRT      7) SIGBUS       8) SIGFPE       9) SIGKILL     10) SIGUSR1
+11) SIGSEGV     12) SIGUSR2     13) SIGPIPE     14) SIGALRM     15) SIGTERM
+16) SIGSTKFLT   17) SIGCHLD     18) SIGCONT     19) SIGSTOP     20) SIGTSTP
+21) SIGTTIN     22) SIGTTOU     23) SIGURG      24) SIGXCPU     25) SIGXFSZ
+26) SIGVTALRM   27) SIGPROF     28) SIGWINCH    29) SIGIO       30) SIGPWR
+31) SIGSYS      34) SIGRTMIN    35) SIGRTMIN+1  36) SIGRTMIN+2  37) SIGRTMIN+3
+38) SIGRTMIN+4  39) SIGRTMIN+5  40) SIGRTMIN+6  41) SIGRTMIN+7  42) SIGRTMIN+8
+43) SIGRTMIN+9  44) SIGRTMIN+10 45) SIGRTMIN+11 46) SIGRTMIN+12 47) SIGRTMIN+13
+48) SIGRTMIN+14 49) SIGRTMIN+15 50) SIGRTMAX-14 51) SIGRTMAX-13 52) SIGRTMAX-12
+53) SIGRTMAX-11 54) SIGRTMAX-10 55) SIGRTMAX-9  56) SIGRTMAX-8  57) SIGRTMAX-7
+58) SIGRTMAX-6  59) SIGRTMAX-5  60) SIGRTMAX-4  61) SIGRTMAX-3  62) SIGRTMAX-2
+63) SIGRTMAX-1  64) SIGRTMAX 
+```
+
+![](/img/docs/sv-signals.png)
+![](/img/docs/sv-signals-2.png)
+
+## Parent Process (PPID)
+
+The PPID (Parent Process ID) in Linux identifies the parent process that started another process. This relationship forms a hierarchical structure where each process (except for the init process with PPID 0) has a parent process.
+
+Example
+
+1. **Identifying PPID Using `ps` Command**:
+
+   Use the `ps` command to display process information, including the PPID:
+
+   ```bash
+   ps -eo pid,ppid,cmd
+   ```
+
+   Output example:
+   ```
+   PID  PPID CMD
+   1    0    /usr/lib/systemd/systemd --system --deserialize 21
+   456  1    /usr/sbin/sshd -D
+   457  456  sshd: user@pts/0
+   ```
+
+   - In the example above:
+     - `PID 1` (`/usr/lib/systemd/systemd`) is the init process (PPID 0).
+     - `PID 456` (`/usr/sbin/sshd -D`) is started by the init process (PPID 1).
+     - `PID 457` (`sshd: user@pts/0`) is a child process of `PID 456`.
+
+2. **Understanding Parent-Child Relationship**:
+
+   When a parent process starts a child process:
+   - The child process inherits certain attributes from the parent, such as environment variables and resource limits.
+   - The parent process is responsible for managing its child processes and may wait for them to complete (if necessary).
+
+3. **Practical Use Cases**:
+
+   - **Monitoring**: Identifying the PPID helps in understanding the origin and relationship of processes, useful for troubleshooting and monitoring system behavior.
+   - **Process Control**: Some operations, like terminating a group of processes, can be efficiently handled by targeting processes with the same PPID.
