@@ -13,8 +13,6 @@ Archiving and backing up files in Linux is essential for data protection and man
 
 The `tar` command is used to create archive files and extract them. It can also compress the archives using `gzip`.
 
-![](/img/docs/sv-tar.png)
-
 
 Commands: 
 
@@ -80,9 +78,7 @@ Commands:
 
 ## `gzip`, `bzip2`, `xz`
 
-These commands are used to compress and decompress files.
-
-![](/img/docs/sv-gzip.png)
+These commands are used to compress and decompress files. `gzip` is the most common compression utility.
 
 
 ### `gzip`
