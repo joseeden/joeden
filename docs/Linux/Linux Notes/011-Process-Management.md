@@ -363,10 +363,14 @@ In this example:
 
 ### Using `top` 
 
-![](/img/docs/sv-top-10.png)
-
 
 The `top` command provides real-time information about system processes and resource usage. It displays details such as CPU utilization, memory usage, and process statistics.
+
+- Press `f` to show and select from available fields.
+- Type `M` to filter on memory usage.
+- Press `W` to save new display settings
+
+Explaining the output:
 
 - **Time and System Status**:
   ```
@@ -412,7 +416,13 @@ In this example, systemd runs as PID1 because it is the init process. It's the f
 
 Niceness values affect process scheduling. A lower niceness value means a higher priority for the process.
 
-![](/img/docs/sv-niceness.png)
+- By default, Linux processes are started with the same priority.
+- Real-time processes are started, which will always be handled with highest priority. 
+- To change priorities, use `nice` and `renice`.
+- Nice values range from -20 to 19. 
+- Negative nice values indicates increased priority.
+- Positive nice values indicates decreased priority.
+- Process priority can be set by users, but you need root access to do this.
 
 To set priority:
 
@@ -433,12 +443,22 @@ sudo yum update -y
 sudo yum install -y htop
 ```
 
+Sample `htop` output: 
+
 ![](/img/docs/htop.png)
 
 
 ## Killing Processes
 
 Processes can be managed and terminated using various signals (`SIGTERM`, `SIGKILL`, etc.):
+
+- A signal allows the OS to interrupt a process and ask it to do something.
+- Interrupts are similar to signals, but are generated from hardware. 
+- Not all signals work in all cases. 
+- The `kill` command is used to send signals to PID's. 
+- You can also use `k` from `top`. 
+
+Commands: 
 
 ```bash
 kill <PID>      # Sends default signal (SIGTERM)
@@ -480,9 +500,6 @@ To see all the signals we can send:
 63) SIGRTMAX-1  64) SIGRTMAX 
 ```
 
-![](/img/docs/sv-signals.png)
-![](/img/docs/sv-signals-2.png)
-
 ## Parent Process (PPID)
 
 The PPID (Parent Process ID) in Linux identifies the parent process that started another process. This relationship forms a hierarchical structure where each process (except for the init process with PPID 0) has a parent process.
@@ -520,3 +537,157 @@ Example
 
    - **Monitoring**: Identifying the PPID helps in understanding the origin and relationship of processes, useful for troubleshooting and monitoring system behavior.
    - **Process Control**: Some operations, like terminating a group of processes, can be efficiently handled by targeting processes with the same PPID.
+
+
+
+## `which`, `where`, `whereis`
+
+These commands are used to locate the paths of executables and man pages for commands.
+
+![](/img/docs/sv-which-where.png)
+
+- `which`
+
+    The `which` command shows the path of the executable that would have been executed when you type the command name in the terminal.
+
+    ```bash
+    which <command>
+    ```
+
+- `where`
+
+    The `where` command (on some systems like Windows, but `whereis` is more commonly used in Unix-like systems) lists all the locations in the system's PATH where the command is found.
+
+- `whereis`
+
+    The `whereis` command locates the binary, source, and manual page files for a command.
+
+    ```bash
+    whereis <command>
+    ```
+
+## `locate`
+
+The `locate` command quickly finds file paths by searching a pre-built database.
+
+- To install `locate` for CentOS:
+
+    ```bash
+    yum install -y locate
+    ```
+
+- To install `locate` for RHEL 8:
+
+    ```bash
+    yum install -y mlocate
+    ```
+
+- To manually update the database used by `locate`:
+
+    ```bash
+    sudo updatedb
+    ```
+
+- To search for a file using `locate`:
+
+    ```bash
+    locate <file>
+    ```
+
+## `find`
+
+The `find` command is more powerful and flexible, allowing you to specify detailed search criteria and perform actions on the files found.
+
+- Find all files with "motd" inside the /etc directory
+
+    ```bash
+    find /etc -name 'motd'
+    ```
+
+- Search in the current directory for files with type "file" (`f`) that start with "cron.."
+
+    ```bash
+    find . -type f -name "cron*"
+    ```
+
+- Search in the current directory for directories (`d`) that start with "cron.."
+
+    ```bash
+    find . -type d -name "cron*"
+    ```
+
+- Search in the root directory for all files with permission of 777
+
+    ```bash
+    find / -perm 777
+    ```
+
+    **Note**: 777 grants EVERYONE read-write-execute permissions, which is very INSECURE.
+
+- Execute `chmod 744` on all files with permission 777
+
+    ```bash
+    find / -perm 777 -exec chmod 744 {} \;
+    ```
+
+    This makes the files secure. The command that follows `-exec` is applied to the results of the `find` command. The `{}` refers to each file found, meaning the command is executed on each file found.
+
+- Find all files modified in the past 24 hours or more
+
+    ```bash
+    find / -mtime +1
+    ```
+
+- Find all files modified less than a day ago
+
+    ```bash
+    find / -mtime -1  
+    ```
+
+- Find all files accessed in the past 24 hours or more
+
+    ```bash
+    find / -atime +1
+    ```
+
+- Find all files accessed less than a day ago
+
+    ```bash
+    find / -atime -1
+    ```
+
+- Find all files owned by a specific group
+
+    ```bash
+    find / -group <groupname>
+    ```
+
+- Find all files with a size of 512 bytes
+
+    ```bash
+    find / -size 512c
+    ```
+
+- Find all files with a size of 1 megabyte
+
+    ```bash
+    find / -size 1M
+    ```
+
+- Ignore the case of the filename; it could return an uppercase or lowercase match
+
+    ```bash
+    find / -iname <filename>
+    ```
+
+- Find all files EXCEPT the specified filename
+
+    ```bash
+    find / -not -name <filename>
+    ```
+
+- Find all files owned by a specific user
+
+    ```bash
+    find /usr/bin -user <username>
+    ```
