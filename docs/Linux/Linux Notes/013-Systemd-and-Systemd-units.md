@@ -7,7 +7,7 @@ last_update:
 ---
 
 
-## Systemd and Systemd Units
+## Systemd
 
 Systemd is a system and service manager for Linux operating systems, designed to replace the traditional SysVinit system. It provides a more efficient and flexible way to manage system processes, startup services, and system states. Systemd introduces the concept of units and targets, which offer a modular and unified approach to system configuration and management.
 
