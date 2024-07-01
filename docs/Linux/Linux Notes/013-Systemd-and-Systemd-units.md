@@ -11,12 +11,12 @@ last_update:
 
 Systemd is a system and service manager for Linux operating systems, designed to replace the traditional SysVinit system. It provides a more efficient and flexible way to manage system processes, startup services, and system states. Systemd introduces the concept of units and targets, which offer a modular and unified approach to system configuration and management.
 
-![](Images/sv-systemd-1.png)
-![](Images/sv-systemd-2.png)
+![](/img/docs/sv-systemd-1.png)
+![](/img/docs/sv-systemd-2.png)
 
 ### `systemd` vs `sysv init`
 
-![](Images/systemd-vs-sysv.png)
+![](/img/docs/systemd-vs-sysv.png)
 
 From [Differences between SysVinit, Upstart and Systemd](https://www.computernetworkingnotes.com/linux-tutorials/differences-between-sysvinit-upstart-and-systemd.html):
 
@@ -133,7 +133,7 @@ Systemd target is essential in booting Linux. They are a group of unit files, bu
 - **multiuser.target** - this is where the server normally starts from, this is the state where all services are running, but there is no GUI
 - **graphical.target** - all services are started + GUI
 
-![](Images/sv-systemd-targets.png)
+![](/img/docs/sv-systemd-targets.png)
 
 
 ### Target Files 
