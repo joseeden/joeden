@@ -6,7 +6,7 @@ last_update:
   date: 7/8/2022
 ---
 
-# Managing Processes
+## Processes
 
 The `ps` command is used to display information about active processes. There are various options and flags to modify the output to suit your needs. 
 
