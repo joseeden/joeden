@@ -12,7 +12,7 @@ The `ps` command is used to display information about active processes. There ar
 
 ![](/img/docs/sv-ps-10.png)
 
-## Examples 
+### Examples 
 
 To see the current processes running in the terminal:
 
@@ -75,7 +75,7 @@ To see processes in tree-view:
    5981   42110   42110    5981 pts/1      49357 T     1000   0:28          \_ htop
 ```
 
-## Using grep
+### Using grep
 
 To find the process ID (PID) of a specific process using `pgrep`:
 
@@ -123,3 +123,84 @@ To count how many processes are running `http`:
 [root@server home]# ps aux | grep http | wc -l
 4
 ```
+
+## Managing Startup Processes
+
+In Linux, managing startup processes can differ based on the init system used by the distribution. Here are examples for Ubuntu using Upstart and RHEL using systemd.
+
+### Ubuntu (Upstart)
+
+To check the config files of services running during boot: 
+
+```bash
+[root@server home]# ll /etc/init.d
+lrwxrwxrwx. 1 root root 11 Jul 27 15:12 /etc/init.d -> rc.d/init.d
+```
+
+### RHEL (systemd)
+
+To check the systemd configuration directory: 
+
+```bash
+[root@server home]# ll /etc/systemd
+total 28
+-rw-r--r--.  1 root root  615 Jun 22  2018 coredump.conf
+-rw-r--r--.  1 root root 1027 Jun 22  2018 journald.conf
+-rw-r--r--.  1 root root 1052 May  5  2021 logind.conf
+-rw-r--r--.  1 root root  631 Sep 23 18:50 resolved.conf
+drwxr-xr-x. 14 root root 4096 Sep 23 18:51 system
+-rw-r--r--.  1 root root 1722 Sep 23 18:50 system.conf
+drwxr-xr-x.  2 root root    6 Sep 23 18:51 user
+-rw-r--r--.  1 root root 1130 Jun 22  2018 user.conf
+```
+
+## Managing Services with systemd
+
+To start, stop, restart, enable, or disable services using systemd:
+
+```bash
+# Check status of a service
+systemctl status <service>
+
+# Stop a service
+systemctl stop <service>
+
+# Start a service
+systemctl start <service>
+
+# Restart a service
+systemctl restart <service>
+
+# Disable a service from starting automatically on boot
+systemctl disable <service>
+
+# Enable a service to start automatically on boot
+systemctl enable <service>
+```
+
+### Example
+
+Disabling and enabling the `crond` service:
+
+```bash
+[root@server home]# systemctl disable crond
+Removed /etc/systemd/system/multi-user.target.wants/crond.service.
+[root@server home]#
+
+[root@server home]# systemctl enable crond
+Created symlink /etc/systemd/system/multi-user.target.wants/crond.service → /usr/lib/systemd/system/crond.service.
+```
+
+## Jobs and Processes
+
+### Shell Jobs
+
+Shell jobs are tasks initiated by the shell that can run independently of the terminal session. They can be managed using built-in shell commands, allowing users to execute multiple tasks simultaneously and monitor their status.
+
+![](/img/docs/sv-job-ps.png)
+
+![](/img/docs/sv-job-2.png)
+
+### Managing Processes
+
+![](/img/docs/sv-ps-10.png)
