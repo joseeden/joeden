@@ -3,7 +3,7 @@ title: "Linux Networking"
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 15
 last_update:
-  date: 7/8/2022
+  date: 11/29/2021
 ---
 
 
@@ -86,6 +86,60 @@ $ ip -s link show
     40401188   124646   0       0       0       0
 ```
 
+## Routing IP Traffic
+
+### Static Routing
+
+Static routing involves manually configuring routes in a routing table. This method is typically used when the network topology is simple or when specific paths need to be defined for traffic. Useful when routing traffic from one IP address to another using a non-default route.
+
+Display available routes. 
+The first one is typically the default gateway and the first hop in traceroute.
+
+```bash
+$ netstat -rn
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+0.0.0.0         172.31.0.1      0.0.0.0         UG        0 0          0 eth0
+172.31.0.0      0.0.0.0         255.255.240.0   U         0 0          0 eth0
+```
+
+A newer way to display IP routes:
+
+```bash
+$ ip route show
+default via 172.31.0.1 dev eth0 proto dhcp metric 100
+172.31.0.0/20 dev eth0 proto kernel scope link src 172.31.3.65 metric 100
+```
+
+Adding routes using the old method:
+
+```bash
+route add -net <network> netmask 255.255.255.0 gw <gw-addr> dev <interface>
+```
+
+Adding routes using the new method:
+
+```bash
+ip route add <dest-ip-addr> via <gw-addr> dev <interface>
+```
+
+Deleting routes:
+
+```bash
+sudo ip route delete <route-entry>
+```
+
+### Dynamic Routing
+
+Dynamic routing allows routers to communicate with each other to dynamically update routing tables based on network changes. This method is more adaptive to network changes and is commonly used in larger, more complex networks.
+
+For detailed information on dynamic routing with RedHat and Linux, refer to the following resources:
+
+- [Dynamic routing with RedHat](https://carroll.net/blog/dynamic-routing-with-redhat/)
+- [Linux - how to turn on the the RIP (dynamic routing)](https://www.unix.com/unix-for-dummies-questions-and-answers/242159-linux-how-turn-rip-dynamic-routing.html)
+- [Understand the basics of Linux routing](https://www.techrepublic.com/article/understand-the-basics-of-linux-routing/)
+- [How To Add Route In Linux](https://arstech.net/add-route-linux/)
+- [How to Add Persistent Static Routes on RHEL 6/CentOS 6](https://webhostinggeeks.com/howto/how-to-add-persistent-static-routes-on-rhel-6centos-6/)
 
 ## DNS
 
@@ -474,7 +528,7 @@ To install `bind-utils`, run:
 sudo yum -y install bind-utils
 ```
 
-### dig
+### `dig`
 
 `dig` is a network administration command-line tool for querying the Domain Name System (DNS).
 
@@ -533,7 +587,7 @@ $ dig jkljjk.kl
 ;; MSG SIZE  rcvd: 113
 ```
 
-### dig output 
+### `dig` output 
 
 Let's use the same example from above:
 
@@ -656,3 +710,238 @@ Explanation:
   ```bash
   ;; MSG SIZE  rcvd: 135
   ```
+
+
+### `ping`
+
+The `ping` command is a basic networking utility used to test the reachability of a host on an IP network. It works by sending ICMP Echo Request packets to the target host and waiting for ICMP Echo Reply packets in response.
+
+When you run the ping command, it typically produces output similar to the following:
+
+```bash
+PING google.com (142.250.183.206) 56(84) bytes of data.
+64 bytes from 142.250.183.206: icmp_seq=1 ttl=116 time=12.3 ms
+64 bytes from 142.250.183.206: icmp_seq=2 ttl=116 time=11.8 ms
+64 bytes from 142.250.183.206: icmp_seq=3 ttl=116 time=11.9 ms
+64 bytes from 142.250.183.206: icmp_seq=4 ttl=116 time=12.1 ms
+64 bytes from 142.250.183.206: icmp_seq=5 ttl=116 time=11.8 ms
+
+--- google.com ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4002ms
+rtt min/avg/max/mdev = 11.824/11.984/12.338/0.205 ms
+```
+
+Where:
+
+- `64 bytes from 142.250.183.206`: Packet size and source IP.
+- `icmp_seq=1`: Sequence number of the ICMP packet.
+- `ttl=116`: Time-to-Live value of the packet.
+- `time=12.3 ms`: Round-trip time (RTT) for the packet.
+- `5 packets transmitted, 5 received`: Number of packets sent and received.
+- `0% packet loss`: Percentage of packets lost during transmission.
+- `time 4002ms`: Total time taken for the ping operation.
+
+## Monitor Network Performance
+
+### netstat and ss
+
+Both `netstat` and `ss` are command-line tools used to display network connections, routing tables, interface statistics, masquerade connections, and multicast memberships. They provide insights into network activity and configuration on a system.
+
+The older distributions use `netstat` (network statistics) but most modern ones start to use `ss` (socket statistics).
+
+Examples: 
+
+- List the various in-use ports and the process using it: 
+
+  ```bash
+  sudo netstat -pan | grep LISTEN
+  ```
+
+- Checks all tcp ports that are open: 
+
+  ```bash
+  $ ss -t -a
+  State         Recv-Q        Send-Q               Local Address:Port                   Peer Address:Port        Process
+  LISTEN        0             128                        0.0.0.0:sunrpc                      0.0.0.0:*
+  LISTEN        0             128                        0.0.0.0:ssh                         0.0.0.0:*
+  ESTAB         0             64                     172.31.3.65:ssh                  180.190.56.162:54565
+  LISTEN        0             128                           [::]:sunrpc                         [::]:*
+  LISTEN        0             128                           [::]:ssh                            [::]:*
+  ```
+
+- Displays the number of seconds that the next expected probe will be sent.
+
+  ```bash 
+  $ ss -t -o
+  State        Recv-Q        Send-Q               Local Address:Port                  Peer Address:Port         Process
+  ESTAB        0             64                     172.31.3.65:ssh                 180.190.56.162:54565         timer:(on,344ms,0)
+  ```
+
+- Filter by socket/port:
+
+  ```bash 
+  $ ss -tn sport :22
+  State        Recv-Q        Send-Q               Local Address:Port                  Peer Address:Port         Process
+  ESTAB        0             64                     172.31.3.65:22                  180.190.56.162:54565
+  ```
+
+
+### nmap
+
+`nmap` (Network Mapper) is a powerful open-source tool used for network exploration and security auditing. It scans hosts and services on a network, discovering vulnerabilities and generating useful network maps.
+
+Examples: 
+
+- Scans the OS and provides a traceroute of everything that's running on the system: 
+
+  ```bash
+  $ nmap -A localhost
+  Starting Nmap 7.70 ( https://nmap.org ) at 2021-11-29 04:00 UTC
+  Nmap scan report for localhost (127.0.0.1)
+  Host is up (0.00078s latency).
+  Other addresses for localhost (not scanned): ::1
+  Not shown: 997 closed ports
+  PORT    STATE    SERVICE VERSION
+  22/tcp  open     ssh     OpenSSH 8.0 (protocol 2.0)
+  | ssh-hostkey:
+  |   3072 ec:2e:91:af:0b:dc:ac:3d:b2:75:86:6f:2d:93:fb:cc (RSA)
+  |   256 5d:a0:e8:60:81:d3:05:56:f8:3d:22:fe:c2:9c:aa:16 (ECDSA)
+  |_  256 7c:08:2d:69:6d:38:21:dc:0d:da:a9:20:1b:cd:02:74 (ED25519)
+  80/tcp  filtered http
+  111/tcp open     rpcbind 2-4 (RPC #100000)
+  | rpcinfo:
+  |   program version   port/proto  service
+  |   100000  2,3,4        111/tcp  rpcbind
+  |_  100000  2,3,4        111/udp  rpcbind
+
+  Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+  Nmap done: 1 IP address (1 host up) scanned in 7.77 seconds
+  ```
+
+- Scan without leaving any trace: 
+
+  ```bash
+  $ nmap -A -sS localhost
+  You requested a scan type which requires root privileges.
+  QUITTING!
+  $
+  $ sudo nmap -A -sS localhost
+  Starting Nmap 7.70 ( https://nmap.org ) at 2021-11-29 04:05 UTC
+  Nmap scan report for localhost (127.0.0.1)
+  Host is up (0.000011s latency).
+  Other addresses for localhost (not scanned): ::1
+  Not shown: 997 closed ports
+  PORT    STATE    SERVICE VERSION
+  22/tcp  open     ssh     OpenSSH 8.0 (protocol 2.0)
+  | ssh-hostkey:
+  |   3072 ec:2e:91:af:0b:dc:ac:3d:b2:75:86:6f:2d:93:fb:cc (RSA)
+  |   256 5d:a0:e8:60:81:d3:05:56:f8:3d:22:fe:c2:9c:aa:16 (ECDSA)
+  |_  256 7c:08:2d:69:6d:38:21:dc:0d:da:a9:20:1b:cd:02:74 (ED25519)
+  80/tcp  filtered http
+  111/tcp open     rpcbind 2-4 (RPC #100000)
+  | rpcinfo:
+  |   program version   port/proto  service
+  |   100000  2,3,4        111/tcp  rpcbind
+  |_  100000  2,3,4        111/udp  rpcbind
+  Device type: general purpose
+  Running: Linux 3.X
+  OS CPE: cpe:/o:linux:linux_kernel:3
+  OS details: Linux 3.7 - 3.10
+  Network Distance: 0 hops
+
+  OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+  Nmap done: 1 IP address (1 host up) scanned in 10.59 seconds
+  ```
+
+### iptraf
+
+`iptraf` (IP Traffic Monitor) is a console-based network monitoring tool for monitoring network traffic in real-time. It captures and displays various IP traffic statistics, including TCP info, UDP counts, ICMP, OSPF information, and more.
+
+To install: 
+
+```bash
+sudo yum install -y iptraf
+```
+
+Run: 
+
+```bash 
+sudo iptraf-ng
+```
+
+![](/img/docs/iptraf.png)
+
+Capture and display real-time network traffic statistics in interactive mode:
+
+```bash
+sudo iptraf-ng -i all
+```
+
+![](/img/docs/iptraf-2.png)
+
+
+### dstat
+
+`dstat` is used to retrieve information or statistics form components of the system such as network connections, IO devices, or CPU, etc. It is generally used by system administrators to retrieve a handful of information about the above-mentioned components of the system.
+
+To install: 
+
+```bash
+sudo yum install -y dstat
+```
+
+Run: 
+
+```bash 
+dstat
+```
+
+![](/img/docs/dstat.png)
+
+Examples: 
+
+- To monitor CPU statistics including system, user, idle, and wait times in real-time:
+
+    ```bash
+    dstat --cpu
+    ```
+
+- To monitor read and write operations per second on all disks:
+
+    ```bash
+    dstat --disk
+    ```
+
+- To monitor network traffic:
+
+    ```bash
+    dstat --net
+    ```
+
+- To monitor memory statistics including used, free, buffered, and cached memory:
+
+    ```bash
+    dstat --mem
+    ```
+
+- To display system load average over 1, 5, and 15 minutes:
+
+    ```bash
+    dstat --load
+    ```
+
+- To monitor process-related statistics:
+
+    ```bash
+    dstat --top-cpu --top-bio
+    ```
+
+- To specify custom interval and count:
+
+    ```bash
+    ## Runs `dstat` every 5 seconds (`-cd 5`) for a total of 10 times (`10`)
+    dstat -tcd 5 10
+    ```
+
+
+
