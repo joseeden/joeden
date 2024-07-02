@@ -1,5 +1,5 @@
 ---
-title: "IPTables and Firewall"
+title: "IPTables"
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 16
 last_update:
