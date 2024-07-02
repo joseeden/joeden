@@ -166,3 +166,25 @@ Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
    11   924 DROP       icmp --  eth0   any     anywhere             anywhere
     0     0 REJECT     icmp --  eth0   any     anywhere             anywhere             reject-with icmp-port-unreachable
 ```
+
+### Blocking Incoming HTTP Traffic
+
+In this example, we're blocking incoming TCP traffic with source port range 1024-65535 and destination port 80 (HTTP).
+
+```bash
+$ iptables -A INPUT -p tcp \
+  -s 0/0 --sport 1024:65535 \
+  -d 0/0 --dport 80 \
+  -j REJECT
+```
+
+### Blocking Outgoing HTTP Traffic
+
+Similarly, this command blocks outgoing TCP traffic with source port range 1024-65535 and destination port 80 (HTTP).
+
+```bash
+$ iptables -A OUTPUT -p tcp \
+  -s 0/0 --sport 1024:65535 \
+  -d 0/0 --dport 80 \
+  -j REJECT
+```
