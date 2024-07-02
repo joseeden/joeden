@@ -112,32 +112,32 @@ When you specify `REJECT`, the host will respond to the external server's reques
 
 - Adding a REJECT rule for ICMP packets on `eth0` interface:
 
-```bash
-$ sudo iptables -A INPUT --protocol icmp --in-interface eth0 -j REJECT
-```
+    ```bash
+    $ sudo iptables -A INPUT --protocol icmp --in-interface eth0 -j REJECT
+    ```
 
 - Verifying the REJECT rule:
 
-```bash
-$ sudo iptables -L -v
-Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
-pkts bytes target     prot opt in     out     source               destination
-    0     0 REJECT     icmp --  eth0   any     anywhere             anywhere             reject-with icmp-port-unreachable
-```
+    ```bash
+    $ sudo iptables -L -v
+    Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
+    pkts bytes target     prot opt in     out     source               destination
+        0     0 REJECT     icmp --  eth0   any     anywhere             anywhere             reject-with icmp-port-unreachable
+    ```
 
 - From an external server trying to ping the host (host returns "Destination Port Unreachable" error):
 
-```bash
-$ ping  172.31.33.29
-PING 172.31.33.29 (172.31.33.29) 56(84) bytes of data.
-From 172.31.33.29 icmp_seq=1 Destination Port Unreachable
-From 172.31.33.29 icmp_seq=2 Destination Port Unreachable
-From 172.31.33.29 icmp_seq=3 Destination Port Unreachable
-From 172.31.33.29 icmp_seq=4 Destination Port Unreachable
-^C
---- 172.31.33.29 ping statistics ---
-4 packets transmitted, 0 received, +4 errors, 100% packet loss, time 3057ms
-```
+    ```bash
+    $ ping  172.31.33.29
+    PING 172.31.33.29 (172.31.33.29) 56(84) bytes of data.
+    From 172.31.33.29 icmp_seq=1 Destination Port Unreachable
+    From 172.31.33.29 icmp_seq=2 Destination Port Unreachable
+    From 172.31.33.29 icmp_seq=3 Destination Port Unreachable
+    From 172.31.33.29 icmp_seq=4 Destination Port Unreachable
+    ^C
+    --- 172.31.33.29 ping statistics ---
+    4 packets transmitted, 0 received, +4 errors, 100% packet loss, time 3057ms
+    ```
 
 
 ## IPTables examples 
@@ -191,7 +191,7 @@ Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
 
 ## Saving Firewall Rules
 
-:::note
+:::warning[NOTE]
 This is the old method.
 :::
 

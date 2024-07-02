@@ -1,5 +1,5 @@
 ---
-title: "Systemd and Systemd units"
+title: "Systemd and sysvinit"
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 13
 last_update:
