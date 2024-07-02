@@ -94,3 +94,24 @@ Partitions, LVM, Stratis, VDO
 ## GPT vs. MBR
 
 ![](/img/docs/sv-gpt-mbr-2.png)
+
+
+## File Systems
+
+![](Images/sv-file-systems.png)
+
+Making a file systems is similar to formatting partitions in other operating systems.
+
+![](Images/sv-fs-1.png)
+
+
+### EXT4 Filesystem
+
+When to use EXT4:
+
+![](Images/whentouseEXT4.png)
+
+
+### XFS Filesystem
+
+![](Images/sv-fs-2.png)
