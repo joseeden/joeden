@@ -3,11 +3,9 @@ title: "File Transfer"
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 14
 last_update:
-  date: 7/8/2022
+  date: 11/29/2021
 ---
 
-
-When it comes to transferring files between systems or synchronizing data across different locations, several powerful tools are available in Linux. Some of these tools are SCP, SFTP, and rsync.
 
 
 ## SCP

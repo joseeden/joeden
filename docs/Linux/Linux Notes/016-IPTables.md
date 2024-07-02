@@ -3,11 +3,9 @@ title: "IPTables"
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 16
 last_update:
-  date: 7/8/2022
+  date: 11/29/2021
 ---
 
-
-## IPTables
 
 **Iptables** is a command-line firewall utility that uses policy chains to allow or block traffic. When a connection tries to establish itself on your system, iptables looks for a rule in its list to match it to. If it doesn’t find one, it resorts to the default action.
 

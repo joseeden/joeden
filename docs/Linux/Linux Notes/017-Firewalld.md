@@ -6,7 +6,6 @@ last_update:
   date: 11/29/2021
 ---
 
-## Firewalld
 
 Firewalld is a Linux management tool that provides a simpler alternative to the low-level and complex `nftables`, which replaced `iptables` in modern Linux kernels. It offers an easier way to manage firewall rules and configurations on Linux systems.
 
@@ -72,17 +71,24 @@ To install:
 ```bash
 # Check RHEL version
 $ cat /etc/redhat-release
+
 Red Hat Enterprise Linux release 8.5 (Ootpa)
-
-# Install firewalld
-$ sudo yum install -y firewalld
-
-# Start service
-$ sudo systemctl start firewalld
-$ sudo systemctl status firewalld
 ```
 
-Check the status: 
+Install firewalld: 
+
+```bash 
+sudo yum install -y firewalld
+```
+
+Start service and check the status: 
+
+```bash 
+sudo systemctl start firewalld
+sudo systemctl status firewalld
+```
+
+Another way to check the status: 
 
 ```bash
 $ sudo firewall-cmd --state
@@ -91,12 +97,9 @@ running
 
 
 
-
 ## Configuring firewall-cmd
 
-![](/img/docs/sv-fwcmd.png)
-
-Firewall manage the access through **zones**. Each of these zones have different levle of permissions assign to them. However, one of this is the default zone.
+Firewall manage the access through **zones**. Each of these zones have different level of permissions assign to them. However, one of this is the default zone.
 
 ### Basic commands
 
@@ -195,7 +198,7 @@ $ firewall-cmd --list-all | grep services
   services: cockpit dhcpv6-client ftp ssh
 ```
 
-After reloading the firewall, the output shows that FTP service is no longer listed under services. This is because any dynamically added services like FTP will be removed from the active configuration when the firewall is restarted. 
+After reloading the firewall, the output shows that FTP service is no longer listed under services. This is because any dynamically added services like FTP will only be written to runtime and wille be removed from the active configuration when the firewall is restarted. 
 
 ```bash
 $ firewall-cmd --reload
