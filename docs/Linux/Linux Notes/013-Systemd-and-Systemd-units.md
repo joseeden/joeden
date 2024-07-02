@@ -3,7 +3,7 @@ title: "Systemd and sysvinit"
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 13
 last_update:
-  date: 7/8/2022
+  date: 11/29/2021
 ---
 
 
@@ -136,6 +136,66 @@ $ sudo systemd-analyze blame
             89ms initrd-parse-etc.service
             85ms systemd-remount-fs.service
 ```
+
+
+
+## Starting Network Services on Boot
+
+### systemd 
+
+**systemd** is the default service manager for most modern Linux distributions, including CentOS 7 and higher. It manages services and processes during startup, runtime, and shutdown.
+
+- **Enabling a Service**
+
+    Enabling a service ensures it starts automatically on system boot by creating symbolic links from `/usr/lib/systemd/system` to `/etc/systemd/system`.
+
+    ```bash
+    sudo systemctl enable <service>
+    ```
+
+- **Starting a Service**
+
+    Starting a service initiates it immediately without waiting for a reboot.
+
+    ```bash
+    sudo systemctl start <service>
+    ```
+
+### sysvinit
+
+**sysvinit** was traditionally used to manage services on older Linux distributions like RHEL 5 and CentOS 6. sysvinit manages services based on runlevels, ensuring services start or stop depending on the system state.
+
+- To list services and their runlevel settings:
+
+    ```bash
+    chkconfig | more
+    ```
+
+    Sample output: 
+
+    ```bash
+    acpid           0:off   1:off   2:on    3:on    4:on    5:on    6:off
+    auditd          0:off   1:off   2:on    3:on    4:on    5:on    6:off
+    blk-availability        0:off   1:on    2:on    3:on    4:on    5:on    6:off
+    cgconfig        0:off   1:off   2:off   3:off   4:off   5:off   6:off
+    cgred           0:off   1:off   2:off   3:off   4:off   5:off   6:off
+    cloud-config    0:off   1:off   2:on    3:on    4:on    5:on    6:off
+    cloud-final     0:off   1:off   2:on    3:on    4:on    5:on    6:off
+    cloud-init      0:off   1:off   2:on    3:on    4:on    5:on    6:off
+    cloud-init-local        0:off   1:off   2:on    3:on    4:on    5:on    6:off      
+    ```
+
+- To enable a service (e.g., telnet):
+
+    ```bash
+    chkconfig telnet on
+    ```
+
+- To start a service (e.g., telnet):
+
+    ```bash
+    service telnet start
+    ```
 
 ## Systemd Targets
 
