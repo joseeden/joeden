@@ -1,9 +1,9 @@
 ---
-title: "Automatic Bug Reporting Tool"
+title: "Troubleshooting Modes"
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 21
 last_update:
   date: 7/8/2022
 ---
 
-Automatic Bug Reporting Tool
+Troubleshooting Modes

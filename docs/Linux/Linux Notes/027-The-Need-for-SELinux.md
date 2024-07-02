@@ -1,9 +1,9 @@
 ---
-title: "Running VMs on RHEL"
+title: "The Need for SELinux"
 tags: [Linux, Red Hat, Certifications]
-sidebar_position: 17
+sidebar_position: 27
 last_update:
   date: 7/8/2022
 ---
 
-Running VMs on RHEL
+The Need for SELinux

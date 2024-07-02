@@ -1,9 +1,9 @@
 ---
-title: "Automated Installations"
+title: "Running VMs on RHEL"
 tags: [Linux, Red Hat, Certifications]
-sidebar_position: 26
+sidebar_position: 18
 last_update:
   date: 7/8/2022
 ---
 
-Automated Installations
+Running VMs on RHEL

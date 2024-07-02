@@ -1,9 +1,9 @@
 ---
-title: "Boot Procedure"
+title: "Apache Configuration"
 tags: [Linux, Red Hat, Certifications]
-sidebar_position: 19
+sidebar_position: 25
 last_update:
   date: 7/8/2022
 ---
 
-Boot Procedure
+Apache Configuration

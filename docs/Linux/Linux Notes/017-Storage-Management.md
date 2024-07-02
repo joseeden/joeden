@@ -1,9 +1,9 @@
 ---
-title: "The Need for SELinux"
+title: "Storage Management"
 tags: [Linux, Red Hat, Certifications]
-sidebar_position: 25
+sidebar_position: 17
 last_update:
   date: 7/8/2022
 ---
 
-The Need for SELinux
+Storage Management

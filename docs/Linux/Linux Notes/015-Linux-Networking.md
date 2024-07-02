@@ -592,6 +592,13 @@ Explanation:
   ```
 
 - These flags indicate various details about the query and response:
+
+  ```bash
+  ;; flags: qr rd ra; QUERY: 1, ANSWER: 6, AUTHORITY: 0, ADDITIONAL: 1
+  ```
+
+  Where: 
+
   - `qr`: query response.
   - `rd`: recursion desired.
   - `ra`: recursion available.
@@ -599,10 +606,6 @@ Explanation:
   - `ANSWER: 6`: Six answers were returned.
   - `AUTHORITY: 0`: No authority records were returned.
   - `ADDITIONAL: 1`: One additional record was returned:
-
-  ```bash
-  ;; flags: qr rd ra; QUERY: 1, ANSWER: 6, AUTHORITY: 0, ADDITIONAL: 1
-  ```
 
 - This section shows the EDNS (Extension mechanisms for DNS) version and UDP payload size:
 
