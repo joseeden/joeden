@@ -20,14 +20,14 @@ last_update:
 ### 1. Add a 1GiB partition 
 
 There are two steps here: 
-
-1. **Identify the remaining disk space:**
+   
+- **Identify the remaining disk space:**
 
    Determine the available disk space and identify where you want to create the new partition. This typically involves using tools like `fdisk`, `parted`, or `gparted` to manage disk partitions.
 
    Let's assume you have identified an unallocated space on `/dev/sdb`.
 
-2. **Create a new partition:**
+- **Create a new partition:**
 
    Use `fdisk` or `parted` to create a new partition.
 
@@ -44,7 +44,7 @@ There are two steps here:
 
 ### 2. Format partition and set label
 
-1. **Format the partition with ext4:**
+- **Format the partition with ext4:**
 
    Format the newly created partition `/dev/sdb1` with ext4 filesystem:
 
@@ -52,7 +52,7 @@ There are two steps here:
    sudo mkfs.ext4 /dev/sdb1
    ```
 
-2. **Set label on the partition:**
+- **Set label on the partition:**
 
    Assign the label **Dbfiles** to the partition `/dev/sdb1` using `e2label` command:
 
@@ -63,7 +63,7 @@ There are two steps here:
 
 ### 3. Configure persistent mounting
 
-1. **Create a mount point for the partition:**
+- **Create a mount point for the partition:**
 
    Create a directory where you want to mount the partition. In this case, create `/dbfiles`:
 
@@ -71,7 +71,7 @@ There are two steps here:
    sudo mkdir /dbfiles
    ```
 
-2. **Configure persistent mount using partition label:**
+- **Configure persistent mount using partition label:**
 
    Add an entry to `/etc/fstab` for persistent mounting. Edit `/etc/fstab` with your preferred text editor:
 
@@ -93,7 +93,7 @@ There are two steps here:
    - `defaults`: Mount options (default options).
    - `0 2`: Filesystem check order during boot (0 = skip, 2 = check after root filesystem).
 
-3. **Mount the partition persistently:**
+- **Mount the partition persistently:**
 
    Mount all filesystems listed in `/etc/fstab`:
 
@@ -101,7 +101,7 @@ There are two steps here:
    sudo mount -a
    ```
 
-4. **Verify persistent mount:**
+- **Verify persistent mount:**
 
    Check if the partition `/dev/sdb1` is mounted on `/dbfiles`:
 
