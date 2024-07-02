@@ -65,7 +65,7 @@ sudo iptables --flush
 ```
 
 
-### Types of Chains
+## Types of Chains
 
 iptables uses three different chains: input, forward, and output.
 
