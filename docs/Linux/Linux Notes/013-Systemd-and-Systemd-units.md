@@ -197,6 +197,90 @@ $ sudo systemd-analyze blame
     service telnet start
     ```
 
+## Modifying systemd Service Configurations
+
+Modifying systemd service configurations allows you to customize how services run on your system. This can include changing service parameters, dependencies, and behaviors. However, it's important to follow best practices to avoid losing changes during system updates.
+
+![](/img/docs/sv-systemd-3.png)
+
+### Default Unit Files
+
+Default unit files are located in `/usr/lib/systemd/system`. It is recommended not to modify these files directly because they are managed by the system and can be overwritten during updates.
+
+```bash
+[root@server ~]# ll /usr/lib/systemd/system | head
+
+total 1128
+-rw-r--r--. 1 root root  275 Mar 18  2020 arp-ethers.service
+-rw-r--r--. 1 root root 1512 Jan  9  2020 auditd.service
+-rw-r--r--. 1 root root  628 Jul 29 03:19 auth-rpcgss-module.service
+lrwxrwxrwx. 1 root root   14 Sep 23 18:51 autovt@.service -> getty@.service
+-rw-r--r--. 1 root root  956 Sep 23 18:50 basic.target
+drwxr-xr-x. 2 root root    6 Sep 23 18:51 basic.target.wants
+-r--r--r--. 1 root root  408 Sep 20 16:30 blk-availability.service
+-rw-r--r--. 1 root root  419 Jun 22  2018 bluetooth.target
+-rw-r--r--. 1 root root  455 Sep 23 18:50 boot-complete.target
+```
+
+### Custom Unit Files
+
+If you need to modify unit files, it's best to create custom versions in `/etc/systemd/system`. This directory is intended for user-created unit files and overrides.
+
+```bash
+[root@server ~]# ll /etc/systemd/system | head
+
+total 4
+drwxr-xr-x. 2 root root   31 May  5  2021 basic.target.wants
+drwxr-xr-x. 2 root root  119 Nov 18 06:03 cloud-init.target.wants
+lrwxrwxrwx. 1 root root   41 Nov 28 17:15 dbus-org.fedoraproject.FirewallD1.service -> /usr/lib/systemd/system/firewalld.service
+lrwxrwxrwx. 1 root root   57 May  5  2021 dbus-org.freedesktop.nm-dispatcher.service -> /usr/lib/systemd/system/NetworkManager-dispatcher.service
+lrwxrwxrwx. 1 root root   41 May  5  2021 dbus-org.freedesktop.timedate1.service -> /usr/lib/systemd/system/timedatex.service
+lrwxrwxrwx. 1 root root   37 May  5  2021 default.target -> /lib/systemd/system/multi-user.target
+drwxr-xr-x. 2 root root   38 May  5  2021 dev-virtio\x2dports-org.qemu.guest_agent.0.device.wants
+drwxr-xr-x. 2 root root   32 May  5  2021 getty.target.wants
+drwxr-xr-x. 2 root root 4096 Nov 28 17:15 multi-user.target.wants
+```
+
+### Runtime Unit Files
+
+Runtime unit files, which are dynamically generated during boot, are located in `/run/systemd`. These files should not be edited directly.
+
+```bash
+[root@server ~]# ll /run/systemd | head
+total 0
+drwxr-xr-x. 2 root root   40 Dec 23 22:27 ask-password
+drwx------. 2 root root   60 Dec 23 23:54 ask-password-block
+srwx------. 1 root root    0 Dec 23 22:27 cgroups-agent
+srw-------. 1 root root    0 Dec 23 22:27 coredump
+drwxr-xr-x. 5 root root  140 Dec 23 23:54 generator
+drwxr-xr-x. 3 root root   60 Dec 23 23:54 generator.early
+drwxr-xr-x. 2 root root  100 Dec 23 23:54 generator.late
+d---------. 3 root root  160 Dec 23 22:27 inaccessible
+drwxr-xr-x. 2 root root   80 Dec 25 16:26 inhibit
+```
+
+### Editing Unit Files
+
+To edit unit files safely, use the `systemctl edit` command. This command creates an override file in `/etc/systemd/system` to ensure your changes are preserved.
+
+1. Edit the Unit File:
+
+   ```bash
+   systemctl edit <service>
+   ```
+
+2. Reload the Systemd Daemon:
+
+   ```bash
+   systemctl daemon-reload
+   ```
+
+3. Restart the Service:
+
+   ```bash
+   systemctl restart <service>
+   ```
+
 ## Systemd Targets
 
 Systemd target is essential in booting Linux. They are a group of unit files, but there are also **isolatable targets**. When enabling a unit, it is added to a specific target. 
