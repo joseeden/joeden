@@ -78,6 +78,8 @@ Tuning the kernel involves adjusting settings to optimize system performance, se
 
 The `/proc` directory is a pseudo-filesystem that provides an interface to kernel data structures. It allows users and administrators to query the system and make runtime changes to kernel parameters.
 
+The 'number' directories are PID of processes. When you run **ps**, the information will come from these files.
+
 ![Proc PID](/img/docs/sv-proc-pid.png)
 ![Tune Kernel](/img/docs/sv-tune-kernel.png)
 
@@ -87,13 +89,28 @@ proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
 systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=37,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=2903)
 ```
 
-**/proc/meminfo** provides detailed information on what's happening in memory, which can be useful for monitoring and debugging.
+`/proc/meminfo` provides detailed information on what's happening in memory, which can be useful for monitoring and debugging.
 
 ![Proc Meminfo](/img/docs/sv-proc-meminfo.png)
 
 The tuning interface is in **/proc/sys**, which allows for dynamic adjustments to various system parameters.
 
-### Tuning IP Settings
+```bash
+$ ll /proc/sys
+total 0
+dr-xr-xr-x. 1 root root 0 Jan  3 07:49 abi
+dr-xr-xr-x. 1 root root 0 Jan  2 16:19 crypto
+dr-xr-xr-x. 1 root root 0 Jan  3 07:49 debug
+dr-xr-xr-x. 1 root root 0 Jan  3 07:49 dev
+dr-xr-xr-x. 1 root root 0 Jan  2 16:19 fs
+dr-xr-xr-x. 1 root root 0 Jan  2 16:19 kernel
+dr-xr-xr-x. 1 root root 0 Jan  2 16:19 net
+dr-xr-xr-x. 1 root root 0 Jan  3 07:49 sunrpc
+dr-xr-xr-x. 1 root root 0 Jan  3 07:49 user
+dr-xr-xr-x. 1 root root 0 Jan  2 16:19 vm
+```
+
+### IP Settings
 
 You can navigate through the `/proc/sys/net/` directory to access and modify network-related settings.
 
@@ -133,16 +150,19 @@ The `ip_forward` setting determines whether the system can forward packets betwe
 ```bash
 $ ll /proc/sys/net/ipv4/ip_forward
 -rw-r--r--. 1 root root 0 Jan  3 07:50 /proc/sys/net/ipv4/ip_forward
-$
+
 $ cat /proc/sys/net/ipv4/ip_forward
 0
 ```
 
-To enable packet forwarding, set `ip_forward` to 1.
+If we want our machine to act as a router and be able to forward packets, we can set `ip_forward` to 1..
 
 ```bash
-$ echo 1 > /proc/sys/net/ipv4/ip_forward
+echo 1 > /proc/sys/net/ipv4/ip_forward
+```
+```bash
 $ cat /proc/sys/net/ipv4/ip_forward
+
 1
 ```
 
@@ -150,16 +170,18 @@ Verify the setting with `sysctl`:
 
 ```bash
 [root@server ~]# sysctl -a | grep ip_forward
+
 net.ipv4.ip_forward = 1
 net.ipv4.ip_forward_update_priority = 1
 net.ipv4.ip_forward_use_pmtu = 0
 ```
 
-To make this change persistent across reboots, add it to `/etc/sysctl.conf`.
+Note that these changes will be wiped out when system is restarted. To make them persistent across reboots, they need to be added to `/etc/sysctl.conf`.
 
 ```bash
 $ ll /etc/sysctl.
 sysctl.conf  sysctl.d/
+
 $ ll /etc/sysctl.conf
 -rw-r--r--. 1 root root 449 Dec 10 09:31 /etc/sysctl.conf
 ```
