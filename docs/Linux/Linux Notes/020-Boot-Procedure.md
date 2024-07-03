@@ -85,7 +85,7 @@ GRUB_ENABLE_BLSCFG=true
 
 ### Local VM GRUB Configuration
 
-For local VMs such as those created through VitualBox, the configuration may look different.
+For local VMs such as those created through VirtualBox, the configuration may look different.
 
 ```bash
 $ vim /etc/default/grub
