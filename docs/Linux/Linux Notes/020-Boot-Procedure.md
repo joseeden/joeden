@@ -3,7 +3,7 @@ title: "Boot Procedure"
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 20
 last_update:
-  date: 7/8/2022
+  date: 11/29/2021
 ---
 
 ## The Bootup 
@@ -28,14 +28,12 @@ Steps:
 
 GRUB2 is a powerful bootloader used in many Linux distributions. It allows you to modify boot parameters at runtime, providing flexibility in system boot options.
 
-![GRUB2 Runtime](/img/docs/sv-grub-1.png)
-
-During bootup, press **c** to open the GRUB command line interface. Press **Esc** to return to the boot menu.
+During bootup, press `c` to open the GRUB command line interface. Press `Esc` to return to the boot menu.
 
 ![GRUB2 Command Line](/img/docs/sv-gub-2.png)
 ![GRUB2 Boot Menu](/img/docs/sv-grub-3.png)
 
-To modify the default kernel parameters, press **e**.
+To modify the default kernel parameters, press `e`.
 
 ![GRUB2 Edit Mode](/img/docs/sv-grub-4.png)
 
@@ -55,8 +53,6 @@ You can remove `rhgb` and `quiet` for a more verbose boot process. Press **Ctrl-
 ## Grub2 Persistent Parameters
 
 To make persistent changes to GRUB2 boot parameters, you need to modify the GRUB configuration files. This ensures the changes remain across reboots.
-
-![GRUB2 Configuration](/img/docs/sv-grub-6.png)
 
 To check if your system uses BIOS or EFI:
 
