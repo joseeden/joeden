@@ -1,7 +1,7 @@
 ---
 title: Firewalld
 tags: [Linux, Red Hat, Certifications]
-sidebar_position: 17
+sidebar_position: 16
 last_update:
   date: 11/29/2021
 ---
