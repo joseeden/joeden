@@ -17,14 +17,16 @@ These drivers include:
 - **initramfs**: The initial RAM drive loaded when Linux boots up.
 - **systemd-udevd**: Recognizes external hardware, such as thumb drives.
 
-To maanually load the drivers, we can use `modprobe`. Once the kernel is loaded with all the drivers, you can access it through the **shell**. Commands typed into the shell send **syscalls** to the kernel.
+To manually load the drivers, we can use `modprobe`. Once the kernel is loaded with all the drivers, you can access it through the **shell**. Commands typed into the shell send **syscalls** to the kernel.
 
 ## Kernel Modules and modprobe
 
 Kernel modules are essential components that provide the necessary drivers for the system's hardware. They can be loaded and unloaded dynamically, allowing for flexibility and customization of the system.
 
-![](/img/docs/sv-kernel-modules.png)
-![](/img/docs/sv-modprobe-1.png)
+- Linux drivers are implemented as kernel modules. 
+- Most are loadeded automatically through `initramfs` or `systemd-udevd`
+- Use `modprobe` to manually load a kernel module
+- To load specific modules, edit the `/etc/modprobe.conf' file.
 
 ### Loading the Module
 
@@ -33,8 +35,16 @@ Loading a module is necessary when a particular hardware device is not automatic
 You can check if a module is loaded using `lsmod` and load it using `modprobe` if it isn't.
 
 ```bash
-$ lsmod | grep vfat
-$ modprobe vfat
+lsmod | grep vfat
+```
+
+```bash 
+modprobe vfat
+```
+
+Check for the module again:
+
+```bash 
 $ lsmod | grep vfat
 vfat                   20480  0
 fat                    81920  1 vfat
@@ -46,8 +56,18 @@ Unloading a module is useful when you no longer need a specific driver or want t
 
 To unload a module, use the `modprobe -r` command.
 
+```bash 
+$ lsmod | grep vfat
+vfat                   20480  0
+fat                    81920  1 vfat
+```
 ```bash
-$ modprobe -r vfat
+modprobe -r vfat
+```
+
+Check once again:
+
+```bash
 $ lsmod | grep vfat
 ```
 
@@ -78,10 +98,11 @@ Tuning the kernel involves adjusting settings to optimize system performance, se
 
 The `/proc` directory is a pseudo-filesystem that provides an interface to kernel data structures. It allows users and administrators to query the system and make runtime changes to kernel parameters.
 
-The 'number' directories are PID of processes. When you run **ps**, the information will come from these files.
+- `/proc` provides access to kernel information, such as PID directories and status files.
+- Write the parameters to `/etc/sysctl.conf` to make them persistent.
+<!-- The 'number' directories are PID of processes. When you run **ps**, the information will come from these files. -->
 
-![Proc PID](/img/docs/sv-proc-pid.png)
-![Tune Kernel](/img/docs/sv-tune-kernel.png)
+To display information about filesystems that are mounted on directories related to the `proc` filesystem:
 
 ```bash
 $ mount | grep proc
@@ -91,7 +112,22 @@ systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=37,pgrp=1,time
 
 `/proc/meminfo` provides detailed information on what's happening in memory, which can be useful for monitoring and debugging.
 
-![Proc Meminfo](/img/docs/sv-proc-meminfo.png)
+```bash
+$ cat /proc/meminfo
+
+MemTotal:        3918724 kB
+MemFree:         1816232 kB
+MemAvailable:    2543220 kB
+Buffers:          265312 kB
+Cached:           625512 kB
+SwapCached:         1116 kB
+Active:           568072 kB
+Inactive:        1003320 kB
+Active(anon):       2648 kB
+Inactive(anon):   681140 kB
+Active(file):     565424 kB
+Inactive(file):   322180 kB 
+```
 
 The tuning interface is in **/proc/sys**, which allows for dynamic adjustments to various system parameters.
 
@@ -166,7 +202,7 @@ $ cat /proc/sys/net/ipv4/ip_forward
 1
 ```
 
-Verify the setting with `sysctl`:
+Verify the current setting:
 
 ```bash
 [root@server ~]# sysctl -a | grep ip_forward
@@ -208,6 +244,15 @@ net.ipv4.ip_forward = 1
 
 Updating the kernel ensures you have the latest features and security patches. This is crucial for maintaining system security and stability.
 
-![UpdateKernel](/img/docs/sv-update-kernel.png)
+- Linux kernels are not technically updated, a new kernel is install beside the old one.
+- This allows sysadmins to boot the old kernels in case anything goes wrong.
+
+
+Use either of the command below to update the kernel:
+
+```bash
+yum update kernel
+yum install kernel  
+```
 
 By keeping your kernel up to date, you benefit from performance improvements, bug fixes, and enhanced hardware support, which collectively contribute to a more secure and efficient system.
