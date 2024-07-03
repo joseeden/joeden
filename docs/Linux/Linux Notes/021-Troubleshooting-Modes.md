@@ -52,15 +52,13 @@ There are many stages in the bootup process where you can interrupt to perform t
 
 ## Troubleshooting Scenarios 
 
-### 1. Changing the Root Password
+### Changing the Root Password
 
 To change the root password, you can break into the system early using the **rd.break** parameter at the GRUB menu.
 
-
 1. Add `rd.break` at GRUB:
-
-  - Enter Grub menu while booting. 
-  - Find the line that loads the Linux kernel and add `rd.break` to end of line. 
+    - Enter Grub menu while booting. 
+    - Find the line that loads the Linux kernel and add `rd.break` to end of line. 
 
     ![](/img/docs/sv-chgrootpw-2.png)
     ![](/img/docs/sv-root-pw-1.png)
@@ -109,7 +107,7 @@ To change the root password, you can break into the system early using the **rd.
     ![](/img/docs/sv-chroot-login-12.png)
 
 
-### 2. Filesystem Issues
+### Filesystem Issues
 
 To prevent any storage issues at bootup, it's better to run `mount -a` so that errors will immediately appear on the command line.
 
@@ -122,7 +120,7 @@ To prevent any storage issues at bootup, it's better to run `mount -a` so that e
   - **e4defrag**: can be used to defragment Ext4. 
 
 
-### 3. Networking Issues
+### Networking Issues
 
 For networking issues, common commands include:
 - ip`: To manage network interfaces and routing.
@@ -160,7 +158,7 @@ ip a
 ```
 
 
-### 4. Performance Issues
+### Performance Issues
 
 For performance issues, the best tool to use is **top**.
 
@@ -178,14 +176,14 @@ For performance issues, the best tool to use is **top**.
 
 You can kill the process by sending a **kill** signal or, if the process is important, **renice** it to a lower priority.
 
-### 5. Software Issues
+### Software Issues
 
 For software issues, installing packages using **yum** is recommended. This ensures proper installation and handling of dependencies.
 
 - Depency issues in RPM, can be resolved by using repositories. 
 - Library cache can be update dby running `ldconfig`. 
 
-### 6. Memory Issues
+### Memory Issues
 
 For memory issues, the best tool to use is **top**.
 
