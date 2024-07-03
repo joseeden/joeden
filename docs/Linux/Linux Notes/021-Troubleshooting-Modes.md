@@ -59,7 +59,9 @@ To change the root password, you can break into the system early using the **rd.
 
 1. Add `rd.break` at GRUB:
 
-    ![](/img/docs/sv-chgrootpw.png)
+  - Enter Grub menu while booting. 
+  - Find the line that loads the Linux kernel and add `rd.break` to end of line. 
+
     ![](/img/docs/sv-chgrootpw-2.png)
     ![](/img/docs/sv-root-pw-1.png)
 
@@ -95,8 +97,6 @@ To change the root password, you can break into the system early using the **rd.
     touch /.autorelabel
     ```
 
-    ![](/img/docs/sv-chroot-autorelabel.png)
-
 7. Exit and Reboot:
 
     To exit, hit Ctrl-D. The system will then reboot.
@@ -105,7 +105,7 @@ To change the root password, you can break into the system early using the **rd.
     ![](/img/docs/sv-chroot-login-10.png)
     
     ![](/img/docs/sv-chroot-login-11.png)  
-    
+
     ![](/img/docs/sv-chroot-login-12.png)
 
 
@@ -113,7 +113,14 @@ To change the root password, you can break into the system early using the **rd.
 
 To prevent any storage issues at bootup, it's better to run `mount -a` so that errors will immediately appear on the command line.
 
-![](/img/docs/sv-tshootfs1.png)
+- Real corruption can occur, but it can also be automatically fixed. 
+- Problems occur when making typo errors in `/etc/fstab`.
+- To fix, remount filesystem in read/write state and edit `/etc/fstab`.
+- Different tools can be used to fix fragmentation issues: 
+
+  - **xfs_fsr**: the XFS File System Reorganizer, optimizes XFS filesystems. 
+  - **e4defrag**: can be used to defragment Ext4. 
+
 
 ### 3. Networking Issues
 
@@ -152,7 +159,6 @@ dhclient
 ip a
 ```
 
-![](/img/docs/sv-tshootnet-unreach.png)
 
 ### 4. Performance Issues
 
@@ -176,9 +182,8 @@ You can kill the process by sending a **kill** signal or, if the process is impo
 
 For software issues, installing packages using **yum** is recommended. This ensures proper installation and handling of dependencies.
 
-![](/img/docs/sv-tshootsw.png)
-
-![](/img/docs/sv-tshootsw-2.png)
+- Depency issues in RPM, can be resolved by using repositories. 
+- Library cache can be update dby running `ldconfig`. 
 
 ### 6. Memory Issues
 
