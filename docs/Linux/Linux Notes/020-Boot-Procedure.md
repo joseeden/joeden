@@ -104,9 +104,8 @@ Generating grub configuration file ...
 done
 ```
 
-## Interrupting the Bootup Process 
 
-### Troubleshooting Modes
+## Troubleshooting Modes
 
 There are many stages in the bootup process where you can interrupt to perform troubleshooting. If you can't reach GRUB, you can use a **boot-cd**.
 
@@ -150,7 +149,9 @@ There are many stages in the bootup process where you can interrupt to perform t
    - `rescue.target` boots the system into a single-user mode with more services running, useful for troubleshooting issues with services.
    
 
-### Scenario 1: Changing the Root Password
+## Troubleshooting Scenarios 
+
+### 1. Changing the Root Password
 
 To change the root password, you can break into the system early using the **rd.break** parameter at the GRUB menu.
 
@@ -205,13 +206,13 @@ To change the root password, you can break into the system early using the **rd.
     ![](/img/docs/sv-chroot-login-12.png)
 
 
-### Scenario 2: Filesystem Issues
+### 2. Filesystem Issues
 
 To prevent any storage issues at bootup, it's better to run `mount -a` so that errors will immediately appear on the command line.
 
 ![](/img/docs/sv-tshootfs1.png)
 
-### Scenario 3: Networking Issues
+### 3. Networking Issues
 
 For networking issues, common commands include:
 - ip`: To manage network interfaces and routing.
@@ -250,7 +251,7 @@ ip a
 
 ![](/img/docs/sv-tshootnet-unreach.png)
 
-### Scenario 4: Performance Issues
+### 4. Performance Issues
 
 For performance issues, the best tool to use is **top**.
 
@@ -268,7 +269,7 @@ For performance issues, the best tool to use is **top**.
 
 You can kill the process by sending a **kill** signal or, if the process is important, **renice** it to a lower priority.
 
-### Scenario 5: Software Issues
+### 5. Software Issues
 
 For software issues, installing packages using **yum** is recommended. This ensures proper installation and handling of dependencies.
 
@@ -276,7 +277,7 @@ For software issues, installing packages using **yum** is recommended. This ensu
 
 ![](/img/docs/sv-tshootsw-2.png)
 
-### Scenario 6: Memory Issues
+### 6. Memory Issues
 
 For memory issues, the best tool to use is **top**.
 
