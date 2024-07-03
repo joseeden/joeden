@@ -103,7 +103,9 @@ To change the root password, you can break into the system early using the **rd.
     After this, you'll be brought to the login page. Select Not listed, and enter root.
     
     ![](/img/docs/sv-chroot-login-10.png)
-    ![](/img/docs/sv-chroot-login-11.png)
+    
+    ![](/img/docs/sv-chroot-login-11.png)  
+    
     ![](/img/docs/sv-chroot-login-12.png)
 
 
