@@ -1,5 +1,5 @@
 ---
-title: "The Need for SELinux"
+title: "Securing Linux"
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 17
 last_update:
