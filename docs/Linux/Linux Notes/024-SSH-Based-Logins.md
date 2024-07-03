@@ -22,7 +22,6 @@ To set up SSH key-based login, follow these steps:
     ssh-keygen -t rsa
     ```
 
-    ![](/img/docs/sv-sshkey2.png)
     ![](/img/docs/sv-sshkey3.png)
 
 2. Copy Public Key to Remote Server:
@@ -30,10 +29,11 @@ To set up SSH key-based login, follow these steps:
     ```bash
     ssh-copy-id user@remote_server
     ```
-
-    If the `ssh-copy-id` command doesn't work, manually copy the public key to the remote server:
-
+    
     ![](/img/docs/sv-sshkey4.png)
+
+    If the `ssh-copy-id` command doesn't work, manually copy the public key to the remote server.
+
 
 3. Test SSH Key-Based Login:
 
@@ -108,7 +108,11 @@ To enhance security and configure SSH server settings, edit the `sshd_config` fi
     -rw-r--r--. 1 root root     1770 Jul 12 08:41 /etc/ssh/ssh_config
     -rw-------. 1 root root     4268 Jan  2 13:58 /etc/ssh/sshd_config
     ```
-    ![](/img/docs/sv-sshsvroptions.png)
+
+    Note: 
+
+    - Server options are set in `/etc/ssh/sshd_config`.
+    - Client options are set in `/etc/ssh/ssh_config`.
 
 2. Edit `sshd_config` File:
 
