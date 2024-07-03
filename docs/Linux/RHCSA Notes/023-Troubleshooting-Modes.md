@@ -1,7 +1,7 @@
 ---
 title: "Troubleshooting Modes"
 tags: [Linux, Red Hat, Certifications]
-sidebar_position: 21
+sidebar_position: 23
 last_update:
   date: 11/29/2021
 ---

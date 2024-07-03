@@ -1,7 +1,7 @@
 ---
 title: "Automated Installations"
 tags: [Linux, Red Hat, Certifications]
-sidebar_position: 28
+sidebar_position: 38
 last_update:
   date: 7/8/2022
 ---

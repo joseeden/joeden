@@ -1,7 +1,7 @@
 ---
 title: "Boot Procedure"
 tags: [Linux, Red Hat, Certifications]
-sidebar_position: 20
+sidebar_position: 22
 last_update:
   date: 11/29/2021
 ---

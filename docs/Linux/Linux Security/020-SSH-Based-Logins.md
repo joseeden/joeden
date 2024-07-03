@@ -1,7 +1,7 @@
 ---
 title: SSH-Based Logins
 tags: [Linux, Red Hat, Certifications]
-sidebar_position: 17
+sidebar_position: 3
 last_update:
   date: 7/8/2022
 ---
