@@ -6,7 +6,6 @@ last_update:
   date: 11/29/2021
 ---
 
-## Linux Kernel
 
 The Linux kernel is the core of the Linux operating system, acting as a bridge between the hardware and software. It interacts with hardware devices through drivers, known as **modules**, which are essential for the system's functionality.
 
