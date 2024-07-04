@@ -1,7 +1,7 @@
 ---
 title: Expanding EBS Volumes
 tags: [Linux, AWS, Labs]
-sidebar_position: 52
+sidebar_position: 53
 last_update:
   date: 2/27/2022
 ---
