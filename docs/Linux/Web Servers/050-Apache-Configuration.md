@@ -11,14 +11,20 @@ last_update:
 
 Apache is a widely used web server software that allows you to serve web content over HTTP and HTTPS protocols. It is highly configurable, secure, and supports a wide range of features, making it a popular choice for web hosting.
 
-![](/img/docs/sv-apache.png)
+- Apache (httpd) is the leading web server on Linux. 
+- Nginx is another leading web server. 
+- The main httpd config file is `/etc/httpd/conf/httpd.conf `
+- Additional snap-in files can be stored in `/etc/httpd/conf.d`
+- The default DocumentRoot is `/var/www/htdocs`
+- Apache looks for a file with the name `index.html` in this directory.
+
 
 ## Installing Apache
 
 To install Apache, use the package manager to download and install the `httpd` package. This command installs Apache and its dependencies:
 
 ```bash
-$ yum install -y httpd
+yum install -y httpd
 ```
 
 ## Starting the service
@@ -35,7 +41,7 @@ Created symlink /etc/systemd/system/multi-user.target.wants/httpd.service → /u
 To start the Apache service:
 
 ```bash
-$ systemctl start httpd
+systemctl start httpd
 ```
 
 To check the status:
@@ -67,7 +73,7 @@ $ ll /etc/httpd/conf/httpd.conf
 ```
 
 ```bash
-$ vim /etc/httpd/conf/httpd.conf
+vim /etc/httpd/conf/httpd.conf
 ```
 
 
@@ -97,7 +103,7 @@ $ vim /etc/httpd/conf/httpd.conf
 To create a simple website, you need to place your HTML files in the document root directory. Here’s how to create a basic `index.html` file:
 
 ```bash
-$ vim /var/www/html/index.html
+vim /var/www/html/index.html
 ```
 ```html
 hello world!
