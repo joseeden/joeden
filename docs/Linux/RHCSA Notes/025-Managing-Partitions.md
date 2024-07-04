@@ -6,9 +6,10 @@ last_update:
   date: 11/29/2021
 ---
 
-## Partitions 
 
 Managing disk partitions is a critical task for organizing and utilizing storage effectively. Tools like `parted`, `gparted`, and `fdisk` are commonly used for partitioning disks.
+
+## Partitioning Tools 
 
 ### parted
 
