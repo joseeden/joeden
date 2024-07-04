@@ -89,9 +89,14 @@ From the same link,
 
 Launch a new instance for the second time around and attached the bad host's root volume but this time, I attached it as a secondary volume to the new instance.
 
-![](/img/docs/sv-ec2-ss-2.png)
+![](/img/docs/sv-ec2-ss-2.png) 
+
+Using `/dev/sdx` as device name: 
 
 ![](/img/docs/sv-ec2-ss-3.png)
+
+
+Both EBS showing "Attached" and no issues. 
 
 ![](/img/docs/sv-ec2-ss-4.png)
 
