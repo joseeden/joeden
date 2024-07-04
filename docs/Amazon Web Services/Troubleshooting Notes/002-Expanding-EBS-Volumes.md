@@ -1,7 +1,7 @@
 ---
 title: Expanding EBS Volumes
 tags: [Linux, AWS, Labs]
-sidebar_position: 53
+sidebar_position: 2
 last_update:
   date: 2/27/2022
 ---
@@ -9,7 +9,7 @@ last_update:
 
 ## Problem 
 
-I've recentlly hit a wall in one of my lab sessions on [Backup Recovery Strategies](#backup-recovery-strategies---restore-using-dd) when my server complained about insufficient memory, so I had to expand the root volume from 10G to 50G. I made sure that it'll be large enough to hold other packages and installations.
+I've recentlly hit a wall in one of my lab sessions on **Backup Recovery Strategies for Linux** when my server complained about insufficient memory, so I had to expand the root volume from 10G to 50G. I made sure that it'll be large enough to hold other packages and installations.
 
 There is a rich article from the official AWS Documentation on [how to expand EBS Volumes](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/requesting-ebs-volume-modifications.html) whicH I also followed.
 
