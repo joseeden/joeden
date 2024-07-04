@@ -6,8 +6,6 @@ last_update:
   date: 7/8/2022
 ---
 
-## Bash Scripts
-
 Bash scripts automate tasks by executing commands in a specific order, making them powerful tools for automating repetitive tasks, managing system configurations, and performing complex operations efficiently in Unix-like operating systems.
 
 - A shells cript can be as simple as a number of commands sequentially executed. 
@@ -192,8 +190,6 @@ drwx------. 3 root root 17 Jan  6 17:15 systemd-private-b028330b03854c75a7b66116
 ```
 
 ## Run script in the background
-
-## Running a Script in the Background
 
 Running a script in the background allows it to execute independently of the current shell session, freeing up your terminal for other tasks. This is useful for running long-running processes or scripts that do not require immediate interaction. When a script runs in the background, it continues to execute while allowing you to continue working interactively in your shell.
 
