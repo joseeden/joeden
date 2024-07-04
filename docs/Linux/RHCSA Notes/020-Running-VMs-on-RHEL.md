@@ -6,7 +6,6 @@ last_update:
   date: 11/29/2021
 ---
 
-
 ## Running Virtual Machines on RHEL
 
 Red Hat Enterprise Linux (RHEL) provides a robust virtualization platform utilizing several tools that together create a powerful and flexible environment for running virtual machines. These tools include:
@@ -82,3 +81,5 @@ virt-install \
 --disk path=/var/lib/libvirt//img/docs/webserver01.dsk,size=20 \
 --extra-args='console=tty0 console=ttyS0,115200n8 serial'
 ```
+
+
