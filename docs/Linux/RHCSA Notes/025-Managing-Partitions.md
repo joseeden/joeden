@@ -268,9 +268,6 @@ Command (m for help): l
 
 ## Managing Partitions
 
-Managing partitions is essential for organizing and optimizing storage. Tools like `parted`, `gparted`, and `fdisk` offer various features for different needs and preferences.
-
-
 ### Adding partitions
 
 Still on the fdisk utility, we put "n" key to add a new partition.
