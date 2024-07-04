@@ -189,7 +189,7 @@ drwx------. 3 root root 17 Jan  6 17:15 systemd-private-b028330b03854c75a7b66116
 [root@tstsvr tmp]#
 ```
 
-## Run script in the background
+## Run the script in the background
 
 Running a script in the background allows it to execute independently of the current shell session, freeing up your terminal for other tasks. This is useful for running long-running processes or scripts that do not require immediate interaction. When a script runs in the background, it continues to execute while allowing you to continue working interactively in your shell.
 
