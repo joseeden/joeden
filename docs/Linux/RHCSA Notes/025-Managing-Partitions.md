@@ -15,12 +15,60 @@ Managing disk partitions is a critical task for organizing and utilizing storage
 
 The `parted` tool is a powerful command-line utility for managing disk partitions.
 
-![](/img/docs/sv-parted.png)
+- While creating a partition, you do NOT automatically create a file system.
+- The parted file system attribute only writes some unimportant file system metadata.
+- In RHEL 8, parted is the default utility
+- Alternatively, use `fdisk` to work with MBR and gdisk to use GUID partitions
 
 Steps:
 
-![](/img/docs/sv-parted-2.png)
-![](/img/docs/sv-parted-3.png)
+1. Launch `parted` for the disk you want to partition, for example, `/dev/sdb`:
+   ```bash
+   sudo parted /dev/sdb
+   ```
+
+2. Check the current partition table with `print` to ensure there's no existing table or view details if it exists:
+   ```bash
+   (parted) print
+   ```
+
+3. Create a new partition table using `mklabel`. Choose either `msdos` or `gpt` depending on your needs:
+   ```bash
+   (parted) mklabel gpt
+   ```
+
+4. Use `mkpart` to create a new partition:
+   ```bash
+   (parted) mkpart primary ext4 1024MiB 2048MiB
+   ```
+
+   where: 
+   
+   - `part-type`: Specifies the type of partition (e.g., `primary`, `logical`, `extended` for MBR).
+   - `name`: Optional name for the partition (required for GPT).
+   - `fs-type`: Specifies the filesystem type (e.g., `ext4`).
+   - `start end`: Defines the start and end points of the partition.
+
+5. Verify the creation of the new partition with `print`:
+   ```bash
+   (parted) print
+   ```
+
+6. Exit `parted` using `quit`:
+   ```bash
+   (parted) quit
+   ```
+
+7. Ensure the new partition device is created and recognized:
+   ```bash
+   sudo udevadm settle
+   ```
+
+8. Verify the creation of the partition by checking `/proc/partitions`:
+   ```bash
+   cat /proc/partitions
+   ```
+
 
 Example using `/dev/xvdb`:
 
