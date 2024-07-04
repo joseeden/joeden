@@ -92,7 +92,7 @@ total 4
 -rw-r--r--. 1 root root 255 Dec  9 02:07 21-cloudinit.conf
 ```
 
-### Rsyslog Configuration Files
+## Rsyslog Configuration File
 
 The main configuration file for `rsyslogd` is located at `/etc/rsyslog.conf`, and additional configurations can be added in the `/etc/rsyslog.d/` directory. The configuration file is divided into modules, global directives, and rules. 
 
