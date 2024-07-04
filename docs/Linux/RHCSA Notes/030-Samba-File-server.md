@@ -11,7 +11,17 @@ last_update:
 
 Configuring a Samba server allows you to share files and printers across a network with systems running different operating systems, such as Windows, Linux, and macOS. Samba implements the SMB/CIFS networking protocol, enabling seamless file sharing and integration with Windows networks.
 
-![](/img/docs/sv-samba-1.png)
+Outline of steps: 
+
+- Install the Samba server package .
+- Create a directory to share. 
+- Create a local Linux user. 
+- Set Linux permissions. 
+- Use `smbpasswd -a` to add a Samba user account. 
+- Enable the share in `/etc/samba/smb.conf`. 
+- Use `systemctl start smb` to start the service. 
+- Allow the Samba service through the firewall.
+
 
 ## Early errors
 
@@ -77,7 +87,7 @@ Some of the issues that occured:
 
 ## Steps
 
-::: note 
+:::note 
 
 What I did is followed another link besides the tutorial video of Sander Vugt. I found this link: [How to Install and Configure Samba on CentOS 8](https://www.linuxtechi.com/install-configure-samba-centos-8/)
 
@@ -198,7 +208,12 @@ systemctl status {smb,nmb}
 
 Mounting Samba shares enables access to files and directories shared over a network using the SMB/CIFS protocol. This process allows seamless integration with Windows-based file sharing systems, facilitating easy file access and management across diverse operating environments.
 
-![](/img/docs/sv-samba-shares.png)
+Outline of steps:
+
+- Install the `cif-utils` and `samba-client` RPM packages. 
+- Use `smbclient -L //sambahost` to discover shares. 
+- Mount the share.
+- Make the mount persistent through `/etc/fstab`.
 
 
 On the client machine, let's check for the NFS client package:
