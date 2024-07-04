@@ -1,5 +1,5 @@
 ---
-title: "Storage Management"
+title: "Storage and Filesystems"
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 24
 last_update:
