@@ -1,9 +1,9 @@
 ---
-title: "NFS Server and Client"
+title: "NFS file share"
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 30
 last_update:
-  date: 7/8/2022
+  date: 1/7/2022
 ---
 
 ## What is RPCBIND?
