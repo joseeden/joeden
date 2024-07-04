@@ -6,4 +6,266 @@ last_update:
   date: 7/8/2022
 ---
 
-Bash Scripts
+## Bash Scripts
+
+Bash scripts automate tasks by executing commands in a specific order, making them powerful tools for automating repetitive tasks, managing system configurations, and performing complex operations efficiently in Unix-like operating systems.
+
+![](/img/docs/sv-bash-script.png)
+![](/img/docs/sv-bashscript.png)
+
+
+### Essential Shell Script Components
+
+Scripts will normally have ".sh" format and begins with `#!/bin/bash`. After creating script, make sure to grant execute-permission. If it's not *executable*, you will get a **permission denied** error. Here's a sample script.
+
+```bash
+[root@tstsvr ~]# cat script.sh
+#!/bin/bash
+
+echo "Line 1"
+echo "Line 2"
+echo "Line 3"
+```
+```bash
+[root@tstsvr ~]# ll
+total 20
+-rw-------. 1 root root 7194 May  4  2021 anaconda-ks.cfg
+-rw-------. 1 root root 6940 May  4  2021 original-ks.cfg
+-rw-r--r--. 1 root root   55 Jan  7 11:56 script.sh
+```
+```bash
+[root@tstsvr ~]# ./script.sh
+-bash: ./script.sh: Permission denied
+```
+
+We need to give it an execute-permission.
+
+```bash
+[root@tstsvr ~]# chmod +x script.sh
+[root@tstsvr ~]# ll
+total 20
+-rw-------. 1 root root 7194 May  4  2021 anaconda-ks.cfg
+-rw-------. 1 root root 6940 May  4  2021 original-ks.cfg
+-rwxr-xr-x. 1 root root   55 Jan  7 11:56 script.sh
+
+[root@tstsvr ~]# chmod 755 script.sh
+[root@tstsvr ~]# ll
+total 20
+-rw-------. 1 root root 7194 May  4  2021 anaconda-ks.cfg
+-rw-------. 1 root root 6940 May  4  2021 original-ks.cfg
+-rwxr-xr-x. 1 root root   55 Jan  7 11:56 script.sh
+```
+
+Now if we try to run it,
+
+```bash
+[root@tstsvr ~]# ./script.sh
+Line 1
+Line 2
+Line 3
+```
+
+Note that you need the `./` in front of the script to tell the system to runt he script from the current directory. If this is not added, then the system will try look for script from the directories that are defined in the **PATH** variable.
+
+```bash
+[root@tstsvr ~]# script.sh
+-bash: script.sh: command not found
+
+[root@tstsvr ~]# echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin
+
+[root@tstsvr ~]# pwd
+/root
+```
+
+We can also put the script in a directory that's included on the **PATH** variable.
+
+### Scripts run on a "subshell"
+
+Here's another script. Notice that it starts with `#!/bin/bash`. This means this script will always be interpreted by bash shell.
+
+```bash
+### anotherscript.sh
+
+#!/bin/bash
+
+# sample comment.
+# any lines that start with '#" or hash is a comment
+# and is not interpreted when script is ran.
+# Note that this doesn't apply to the first line, where the !/bin/bash is defined.
+# lines that doesn't start with '#' are itnerpreted, like the lines below.
+
+# The line below just prints a divider
+echo '*****************************************************'
+
+# The first line below jsut prints out a message
+echo 'Which directory do you want to activate?'
+
+# The line below will read the user input until user presses enter.
+# Input is then stored in a variable 'DIR'
+read DIR
+
+# The line below just prints a divider
+echo '*****************************************************'
+
+# The line below will 'change directory' to the directory defined in the
+# DIR variable.
+cd $DIR
+
+# Lastly, the lines below displays the current directory and it scontents
+pwd
+ls
+```
+
+Make it executable: 
+
+```bash
+[root@tstsvr ~]# chmod +x anotherscript.sh
+[root@tstsvr ~]# ll
+total 24
+-rw-------. 1 root root 7194 May  4  2021 anaconda-ks.cfg
+-rwxr-xr-x. 1 root root  691 Jan  7 12:11 anotherscript.sh
+-rw-------. 1 root root 6940 May  4  2021 original-ks.cfg
+-rwxr-xr-x. 1 root root   55 Jan  7 11:56 script.sh
+```
+
+Try running the script now. Notice that when script is run, it enters the specified directory.  The script runs in its own *subshell*. When it's done, it exits onto the the parent shell. The subshell is like its own environment that exists only during the execution of the script.
+
+```bash
+[root@tstsvr ~]# ./anotherscript.sh
+*****************************************************
+Which directory do you want to activate?
+/tmp
+*****************************************************
+/tmp
+systemd-private-b028330b03854c75a7b661162231a290-chronyd.service-SNBAPh
+```
+
+If you want to keep the directory, then you need to **source** the directory. This means script is not executed as a subshell, but is run on the current shell.
+
+### Sourcing the script
+
+We can source a script in two ways:
+
+1. source <script-name>
+2. . <script-name>
+
+```bash
+[root@tstsvr ~]# . anotherscript.sh
+*****************************************************
+Which directory do you want to activate?
+/mnt
+*****************************************************
+/mnt
+nfs_shares
+[root@tstsvr mnt]# pwd
+/mnt
+[root@tstsvr mnt]# ll
+total 0
+drwxrwxrwx. 2 root root 6 Jan  6 17:23 nfs_shares
+```
+```bash
+[root@tstsvr ~]# source anotherscript.sh
+*****************************************************
+Which directory do you want to activate?
+/tmp
+*****************************************************
+/tmp
+systemd-private-b028330b03854c75a7b661162231a290-chronyd.service-SNBAPh
+[root@tstsvr tmp]#
+[root@tstsvr tmp]# pwd
+/tmp
+[root@tstsvr tmp]# ll
+total 0
+drwx------. 3 root root 17 Jan  6 17:15 systemd-private-b028330b03854c75a7b661162231a290-chronyd.service-SNBAPh
+[root@tstsvr tmp]#
+```
+
+### Run script in the background
+
+```bash
+./anotherscript.sh &
+```
+
+### Loops in Shell scripts
+
+![](/img/docs/sv-bashloops.png)
+
+Here a second script. We'll grant it execute-permission and then run it.
+```bash
+[root@tstsvr ~]# cat secondscript.sh
+#!/bin/bash
+
+# The '-z' statement inside square brackets is called test command.
+# To learn for other test options, see 'man page'
+
+# The if condition checks if user provided an argument or a string.
+
+# If user didn't provide one, it will enter the loop and prompt a message.
+# After the prompt, there's an exit code.
+# There are two common exit codes:
+#       0 - successful
+#       1 - failed
+# In this case, its exit code 6.
+
+# We then close the if-loop with 'fi'
+if [ -z $1 ]
+then
+        echo 'Please provide an argument'
+        exit 6
+fi
+
+# Lastly the argument is printed out.
+echo the argument is $1
+
+```
+```bash
+[root@tstsvr ~]# chmod +x secondscript.sh
+[root@tstsvr ~]# ll
+total 28
+-rw-------. 1 root root 7194 May  4  2021 anaconda-ks.cfg
+-rwxr-xr-x. 1 root root  892 Jan  7 12:16 anotherscript.sh
+-rw-------. 1 root root 6940 May  4  2021 original-ks.cfg
+-rwxr-xr-x. 1 root root   55 Jan  7 11:56 script.sh
+-rwxr-xr-x. 1 root root  584 Jan  7 12:38 secondscript.sh
+```
+
+Now we run.
+```bash
+[root@tstsvr ~]# ./secondscript.sh
+Please provide an argument
+[root@tstsvr ~]#
+[root@tstsvr ~]# ./secondscript.sh what
+the argument is what
+[root@tstsvr ~]#
+[root@tstsvr ~]# ./secondscript.sh okaygotit
+the argument is okaygotit
+[root@tstsvr ~]#
+[root@tstsvr ~]# ./secondscript.sh okay got it
+the argument is okay
+```
+
+We could also rewrite the script to a if-else.
+```bash
+[root@tstsvr ~]# cat secondscript.sh
+#!/bin/bash
+
+if [ -z $1 ]
+then
+        echo 'Please provide an argument'
+        exit 6
+else
+        # Lastly the argument is printed out.
+        echo the argument is $1
+fi
+```
+```bash
+[root@tstsvr ~]# ./secondscript.sh again?
+the argument is again?
+[root@tstsvr ~]#
+[root@tstsvr ~]# ./secondscript.sh
+Please provide an argument
+```
+
+
+### Countdown scripts
