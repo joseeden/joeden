@@ -20,7 +20,7 @@ Now, onto the main material! 😃 -->
 | <code>ls </code> | Lists the contents of a directory |
 | <code>ls -la</code> | Lists the contents but also shows permissions, user, group, size, and date/time created.
 | <code>ls -latr</code> | Similar with ls -la, but the *t* flag sorts contents from newest to oldest. *r* flag does the reverse.<br/>Check out other flags by typing-in *man ls*
-| <code>ll</code> | Shortcut for *ls -l*. NOte that this doesn't always worl |
+| <code>ll</code> | Shortcut for *ls -l*. Note that this doesn't always work |
 | <code>cd</code> | Change directory, goes to the /root/ directory |
 | <code>cd ~</code> | Goes to the root directory |
 | <code>cd *directory-name*</code> | Goes to the directory selected. Change the *directory-name* to desired directory. |
