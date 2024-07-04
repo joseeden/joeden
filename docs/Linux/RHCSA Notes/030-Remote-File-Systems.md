@@ -1,5 +1,5 @@
 ---
-title: "Remote File Systems"
+title: "NFS Server and Client"
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 30
 last_update:
@@ -39,11 +39,9 @@ sudoedit /etc/nfs.conf
 ```
 
 
-## Configuring an NFS Server
+## Configuring a Base NFS Server
 
 Setting up an NFS (Network File System) server on RHEL can be a bit tricky. By default, RHEL installs the NFS client, not the NFS server. This guide walks you through configuring an NFS server from scratch.
-
-![NFS Server](/img/docs/sv-nfs.png)
 
 ### Setup 
 
@@ -163,7 +161,6 @@ For additional guidance, I followed this detailed instruction: [How to Setup NFS
 
 Mounting NFS (Network File System) shares is a crucial step in configuring an NFS client. This allows the client machine to access directories on the NFS server as if they were local. The `_netdev` option in the mount command specifies that the mount should occur only after the network has been activated, ensuring network dependencies are met.
 
-![NFS Client Configuration](/img/docs/sv-nfs-client.png)
 
 ### Setup Considerations
 
@@ -193,98 +190,98 @@ Add the following lines:
 
 1. **Install Required NFS Packages**: Install the necessary NFS utilities and ensure `rpcbind` is enabled and running.
 
-  ```bash
-  sudo dnf install nfs-utils nfs4-acl-tools -y
-  sudo systemctl enable --now rpcbind
-  sudo systemctl status rpcbind
-  ```
+    ```bash
+    sudo dnf install nfs-utils nfs4-acl-tools -y
+    sudo systemctl enable --now rpcbind
+    sudo systemctl status rpcbind
+    ```
 
 2. **Troubleshooting Showmount**: This was the part that cost me a lot of time troubleshooting. Initially, mounting doesn't also proceed. But when I moved both machine to the cloud, the mounting part occured but `showmount` still showed error. You can bypass this and check if you'll be able to mount the share. 
 
-  If you encounter issues with the `showmount` command, you can skip it and proceed with mounting the NFS share directly.
+    If you encounter issues with the `showmount` command, you can skip it and proceed with mounting the NFS share directly.
 
-  ```bash
-  showmount -e 10.0.0.195
-  clnt_create: RPC: Timed out
+    ```bash
+    showmount -e 10.0.0.195
+    clnt_create: RPC: Timed out
 
-  showmount -e nfsserver
-  clnt_create: RPC: Timed out
-  ```
+    showmount -e nfsserver
+    clnt_create: RPC: Timed out
+    ```
 
 3. **Create Mount Directories**: Create the directories where the NFS shares will be mounted.
 
-  ```bash
-  sudo mkdir -p /mnt/client_share
-  sudo mkdir -p /mnt/client_backups
-  ```
+    ```bash
+    sudo mkdir -p /mnt/client_share
+    sudo mkdir -p /mnt/client_backups
+    ```
 
 4. **Mount the NFS Shares**: Mount the NFS shares and verify they are correctly mounted.
 
-  ```bash
-  sudo mount -vvvv -t nfs 10.0.0.195:/shared/nfsshare /mnt/client_share
-  sudo mount -vvvv -t nfs 10.0.0.195:/shared/nfsshare-backups /mnt/client_backups
-  ```
+    ```bash
+    sudo mount -vvvv -t nfs 10.0.0.195:/shared/nfsshare /mnt/client_share
+    sudo mount -vvvv -t nfs 10.0.0.195:/shared/nfsshare-backups /mnt/client_backups
+    ```
 
-  Verify the mounts:
+    Verify the mounts:
 
-  ```bash
-  mount | grep /mnt/client
-  ```
+    ```bash
+    mount | grep /mnt/client
+    ```
 
 5. **Make the Mounts Persistent**: Add entries to the `/etc/fstab` file to ensure the mounts persist across reboots.
 
-  First, unmount the shares:
+    First, unmount the shares:
 
-  ```bash
-  umount /mnt/client_share
-  ```
+    ```bash
+    umount /mnt/client_share
+    ```
 
-  Edit the `/etc/fstab` file:
+    Edit the `/etc/fstab` file:
 
-  ```bash
-  vim /etc/fstab
-  ```
+    ```bash
+    vim /etc/fstab
+    ```
 
-  Add the following lines:
+    Add the following lines:
 
-  ```
-  # NFS Shares
-  10.0.0.195:/shared/nfsshare      /mnt/client_share                 nfs     _netdev         0 0
-  10.0.0.195:/shared/nfsshare-backups      /mnt/client_backups                 nfs     _netdev         0 0
-  ```
+    ```
+    # NFS Shares
+    10.0.0.195:/shared/nfsshare      /mnt/client_share                 nfs     _netdev         0 0
+    10.0.0.195:/shared/nfsshare-backups      /mnt/client_backups                 nfs     _netdev         0 0
+    ```
 
-  Verify the mounts:
+    Verify the mounts:
 
-  ```bash
-  mount | grep /mnt/client
-  ```
+    ```bash
+    mount | grep /mnt/client
+    ```
 
-  Expected output:
+    Expected output:
 
-  ```
-  10.0.0.195:/nfsshare on /mnt/client_share type nfs4 (rw,relatime,vers=4.2,rsize=524288,wsize=524288,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=10.0.0.90,local_lock=none,addr=10.0.0.195)
-  ```
+    ```
+    10.0.0.195:/nfsshare on /mnt/client_share type nfs4 (rw,relatime,vers=4.2,rsize=524288,wsize=524288,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=10.0.0.90,local_lock=none,addr=10.0.0.195)
+    ```
 
 6. **Test Persistence After Reboot**: Ensure the NFS mounts persist after a system reboot.
 
-  Unmount the share and reboot:
+    Unmount the share and reboot:
 
-  ```bash
-  umount /mnt/client_share
-  reboot
-  ```
+    ```bash
+    umount /mnt/client_share
+    reboot
+    ```
 
-  Verify the mounts again after reboot:
+    Verify the mounts again after reboot:
 
-  ```bash
-  mount | grep /mnt/client
-  ```
+    ```bash
+    mount | grep /mnt/client
+    ```
 
-  Expected output:
+    Expected output:
 
-  ```
-  10.0.0.195:/nfsshare on /mnt/client_share type nfs4 (rw,relatime,vers=4.2,rsize=524288,wsize=524288,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=10.0.0.90,local_lock=none,addr=10.0.0.195)
-  ```
+    ```
+    10.0.0.195:/nfsshare on /mnt/client_share type nfs4 (rw,relatime,vers=4.2,rsize=524288,wsize=524288,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=10.0.0.90,local_lock=none,addr=10.0.0.195)
+    ```
 
 
 ## NFS Errors
