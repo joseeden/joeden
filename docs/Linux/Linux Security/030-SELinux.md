@@ -6,44 +6,58 @@ last_update:
   date: 7/8/2022
 ---
 
+
 ## The Need for SELinux
+
+SELinux (Security-Enhanced Linux) is a security module that provides mechanisms for supporting access control security policies, including mandatory access controls (MAC). It is an essential component in securing Linux systems by ensuring that applications and processes have only the necessary permissions.
 
 ![](/img/docs/sv-selinux.png)
 
-### SELinux States and Modes
+## SELinux States and Modes
+
+SELinux operates in different states and modes to control its behavior and the level of security enforcement.
 
 ![](/img/docs/sv-selinux-2.png)
 ![](/img/docs/sv-selinux03.png)
 
-There are basically just two states: **enabled** and **disabled**.
-- To disable or enable, reboot.
-- in enabled mode, there are two modes
-    - **enforcing** - blocks those that doesnt match a rule
-    - **permissive** - will log, but will not block; should be temporary
-- to switch between enforcing and permissive: **setenforce <mode>modes</mode>
+### States
+There are two primary states:
+- **Enabled**: SELinux is active and enforcing security policies.
+- **Disabled**: SELinux is turned off and not enforcing any policies.
 
-As an example:
+To disable or enable SELinux, a system reboot is required.
+
+### Modes
+When SELinux is enabled, it can operate in one of two modes:
+- **Enforcing**: Enforces SELinux policies, blocking any actions that do not comply with the policies.
+- **Permissive**: SELinux policies are not enforced; instead, violations are logged. This mode is useful for troubleshooting and should be temporary.
+
+To switch between enforcing and permissive modes, use the `setenforce` command:
 
 ```bash
 $ getenforce
 Enforcing
+
 $ setenforce permissive
-$
+
 $ getenforce
 Permissive
 ```
 
-To see the status,
+To check the current status of SELinux, use:
+
 ```bash
 sestatus
 ```
 
-Another awesome command to see the SElinux information inside a directory.
+To view SELinux information inside a directory, use:
+
 ```bash
 ls -lZ
 ```
 
-To disable SElinux, edit the config file and change **enforcing** to **disabled**. Then reboot.
+To disable SELinux permanently, edit the configuration file and change **enforcing** to **disabled**, then reboot:
+
 ```bash
 $ vim /etc/sysconfig/selinux
 
@@ -58,32 +72,36 @@ SELINUX=enforcing
 #     minimum - Modification of targeted policy. Only selected processes are protected.
 #     mls - Multi Level Security protection.
 SELINUXTYPE=targeted
-
 ```
 
-Note that when selinux is set to disabled, **Setenforce will not work**.
+When SELinux is set to disabled, the `setenforce` command will not work:
 ```bash
 $ setenforce permissive
 setenforce: SELinux is disabled
 ```
 
 
----
 
-### Context Labels and Booleans
+## Context Labels and Booleans
+
+SELinux uses context labels and booleans to manage access controls and permissions for processes and files.
 
 ![](/img/docs/sv-selinux-labels.png)
 ![](/img/docs/sv-selinux-booleans.png)
 
-As example, we can add selinux info to the **ps** output by adding uppercase **Z**.
+### Context Labels
+
+You can add SELinux information to the `ps` output by using the uppercase **Z** option:
 ```bash
 ps auxZ
 ```
 
-In the exam below, we see the contaxt label of ssh in the first few characters. The important part here is the context type, which is **sshd_t**.
+For example, checking the context label of SSH:
+
 ![](/img/docs/sv-selinux-labels-2.png)
 
-Similarly, we can check for httpd
+To check the context labels for HTTPD (Apache):
+
 ```bash
 $ ps auxZ | grep httpd
 system_u:system_r:httpd_t:s0    root         994  0.0  0.0 275980 10956 ?        Ss   16:02   0:00 /usr/sbin/httpd -DFOREGROUND
@@ -97,10 +115,9 @@ $
 
 ![](/img/docs/sv-selinux-labels-4.png)
 
-
----
-
 ### Booleans
+
+SELinux booleans allow you to enable or disable certain SELinux policy settings without requiring a policy rebuild. To list all SELinux booleans:
 
 ```bash
 $ getsebool -a
@@ -117,7 +134,8 @@ awstats_purge_apache_log_files --> off
 boinc_execmem --> on
 ```
 
-As an example, if I want to allow web server to access home directories, I can set the following parameter to 'on'.
+To allow a web server to access home directories, set the following parameter to 'on':
+
 ```bash
 $ getsebool -a | grep http | grep homedir
 httpd_enable_homedirs --> off
@@ -128,20 +146,26 @@ $ getsebool -a | grep http | grep homedir
 httpd_enable_homedirs --> on
 ```
 
----
 
-### Using File Context Labels 
+## Using File Context Labels
+
+File context labels are used to assign security contexts to files and directories. These contexts are essential for SELinux to apply the correct security policies.
 
 ![](/img/docs/sv-seinux-filecontextlabels.png)
 
-From the man page,
+From the man page:
 ![](/img/docs/sv-selinux-labelsman.png)
 
 
-### SELinux Log Message
+## SELinux Log Messages
+
+SELinux logs messages to track policy violations and other significant events. These logs are useful for troubleshooting and monitoring SELinux activities.
+
 ![](/img/docs/sv-selinux-log.png)
 
-Here we can see **Access Vector Cache (AVC)** message is logged to the /var/log/audit/audit.log
+**Access Vector Cache** (AVC) messages are logged to the `/var/log/audit/audit.log` file.
+
+To view these logs:
 
 ```bash
 $ ll /var/log/audit/
@@ -152,42 +176,48 @@ $ grep AVC /var/log/audit/audit.log
 type=USER_AVC msg=audit(1641131903.482:81): pid=901 uid=81 auid=4294967295 ses=4294967295 subj=system_u:system_r:system_dbusd_t:s0-s0:c0.c1023 msg='avc:  denied  { send_msg } for msgtype=method_return dest=:1.21 spid=944 tpid=2299 scontext=system_u:system_r:systemd_logind_t:s0 tcontext=system_u:system_r:cloud_init_t:s0 tclass=dbus permissive=0  exe="/usr/bin/dbus-daemon" sauid=81 hostname=? addr=? terminal=?'UID="dbus" AUID="unset" SAUID="dbus"
 type=USER_AVC msg=audit(1641131928.383:125): pid=901 uid=81 auid=4294967295 ses=4294967295 subj=system_u:system_r:system_dbusd_t:s0-s0:c0.c1023 msg='avc:  denied  { send_msg } for msgtype=err
 ```
+
+To check for SELinux alerts using `journalctl`:
+
 ```bash
 $ journalctl | grep sealert
 $
 ```
 
----
 
-### Resetting Root Password and Selinux
+## Resetting Root Password and SELinux
 
-This lab goes through the exact same process in resetting the root password.
-But here we'll deep dive on what's actually happening.
+This section explains the process of resetting the root password in an SELinux-enabled system and the specific steps to ensure SELinux labels are correctly applied.
+
 ![](/img/docs/sv-chrootse1.png)
 ![](/img/docs/sv-chrootse2.png)
 
-If we check the shadow file, we see the context is set to '?'.
-This is because SElinux is still not loaded at this point.
+When checking the shadow file, the context might be set to '?' because SELinux is not yet loaded:
+
 ![](/img/docs/sv-chrootse4.png)
 
-To load selinux.
-Note that this command should only be used on tshooting mode.
+To load SELinux, use the `load_policy` command (this should be used only in troubleshooting mode):
+
 ```bash
 load_policy -i
 ```
+
 ![](/img/docs/sv-chrootse5.png)
 
-If we check the shadow file again,
+After loading SELinux, the shadow file context should change:
+
 ![](/img/docs/sv-chrootse7.png)
 
-Here we can see that the shadow file is set to **unlabeled_t**.
-To fix this,
+To fix the context:
+
 ```bash
 restorecon -v /etc/shadow
 ```
+
 ![](/img/docs/sv-chrootse8.png)
 
-To make sure every change will eb applied and labelled,
+To ensure all changes are applied and labeled correctly, create a file that triggers a full relabel on the next reboot:
+
 ```bash
 touch /.autorelabel
 ```
