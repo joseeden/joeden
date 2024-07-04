@@ -232,7 +232,7 @@ This time it showed a different error.
 
 </div>
 
-### Please install the gcc make perl packages from your distribution [RESOLVED] 
+### 2. Please install the gcc make perl packages from your distribution [RESOLVED] 
 
 Following another link: [Guest additionals: Kernel headers not found for target kernel](https://superuser.com/questions/1532590/guest-additionals-kernel-headers-not-found-for-target-kernel)
 
@@ -278,7 +278,7 @@ Got a new error:
 </div>
 
 
-### Look at /var/log/vboxadd-setup.log to find out what went wrong [RESOLVED]
+### 3. Look at /var/log/vboxadd-setup.log to find out what went wrong [RESOLVED]
 
 A quick Google search showed this: [elfutils-libelf-devel.x86_64 package on CentOS 8 / RHEL 8](https://linux-packages.com/centos-8/package/elfutils-libelf-develx86-64)
 

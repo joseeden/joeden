@@ -32,7 +32,8 @@ Nothing on it seems to show what caused the issue. Also searched specifically fo
 
 I first stopped **tst-rhel-1** and launched a new EC2 in the same zone, **tst-rhel-a2**. I then detached the first EC2's root volume and attached it the second as root. I'll try to check if I can get the second up using **tst-rhel-1**'s volume.
 
-It too return a **1/2 checks passsed**. Checked the system logs, and I also don't seem anythign wrong with it.
+It too return a **1/2 checks passsed**. Checked the system logs, and I also don't seem anything wrong with it.
+
 ![](/img/docs/sv-ec2-stuck.png)
 
 
@@ -61,10 +62,13 @@ Give root password for maintenance
 ### Instance screenshot
 
 The next one I saw was taking a screenshot of the instance while it was booting.
+
 ![](/img/docs/sv-ec2-syslogs-3.png)
+
 ![](/img/docs/sv-ec2-screenshot.png)
 
 The lines that caught my eye was these:
+
 ![](/img/docs/sv-ec2-ss.png)
 
 After some searching, I found this: [Timed out waiting for device dev-disk-by\x2duuid-C829\x2dC4C1.device](https://unix.stackexchange.com/questions/471716/timed-out-waiting-for-device-dev-disk-by-x2duuid-c829-x2dc4c1-device)
@@ -82,9 +86,13 @@ From the same link,
 > *As a filesystem with the old UUID no longer exists udev fails to find it and you get this error. Update the UUID in /etc/fstab using blkid and your system will manage to correctly boot again as this error will be gone.*
 
 ### Launched a new instance and attached the bad host's root volume
+
 Launch a new instance for the second time around and attached the bad host's root volume but this time, I attached it as a secondary volume to the new instance.
+
 ![](/img/docs/sv-ec2-ss-2.png)
+
 ![](/img/docs/sv-ec2-ss-3.png)
+
 ![](/img/docs/sv-ec2-ss-4.png)
 
 ### Created a mount point and mounted the added block device
@@ -153,13 +161,15 @@ drwxr-xr-x 2 root root 6 Jan  2 10:38 dummy
 ### Attached volume back to the bad host
 
 Attached the volume back to the bad host as **/dev/sda1**
+
 ![](/img/docs/sv-ec2-ss5.png)
 
-While waiting for it to boot up, I monitored the instance screenshot again.
-It looked promising because it showed the login stage!
+While waiting for it to boot up, I monitored the instance screenshot again. It looked promising because it showed the login stage!
+
 ![](/img/docs/sv-ec2-ss6.png)
 
 And finally!
+
 ![](/img/docs/sv-ec2-ss7.png)
 
 EDIT: This actually didn't worked. There was nothign wrong with what I added in /etc/fstab. I tried both the UUID and the '/dev' path but they both returned the same error.
