@@ -229,12 +229,12 @@ Managing disk partitions is a critical task for organizing and utilizing storage
 
 The `parted` tool is a powerful command-line utility for managing disk partitions.
 
-![](Images/sv-parted.png)
+![](/img/docs/sv-parted.png)
 
 Steps:
 
-![](Images/sv-parted-2.png)
-![](Images/sv-parted-3.png)
+![](/img/docs/sv-parted-2.png)
+![](/img/docs/sv-parted-3.png)
 
 Example using `/dev/xvdb`:
 
