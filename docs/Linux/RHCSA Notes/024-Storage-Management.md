@@ -410,7 +410,6 @@ Disk /dev/xvdb: 100 GiB, 107374182400 bytes, 209715200 sectors
 Managing partitions is essential for organizing and optimizing storage. Tools like `parted`, `gparted`, and `fdisk` offer various features for different needs and preferences.
 
 
-
 ### Adding partitions
 
 Still on the fdisk utility, we put "n" key to add a new partition.
@@ -661,3 +660,318 @@ n*2*1048576
 - [How to calculate partition Start End Sector](https://itectec.com/unixlinux/how-to-calculate-partition-start-end-sector/)
 - [[SOLVED] problem in determine partition size from number of blocks shown in fdisk command](https://www.linuxquestions.org/questions/linux-newbie-8/problem-in-determine-partition-size-from-number-of-blocks-shown-in-fdisk-command-4175442789/)
 
+
+
+### Dividing 100GB into three partitions
+
+Here we're using the second secondary-drive and dividing it into 3 equal-sized partitions.
+
+- partition 1: 33GB
+- partition 2: 33GB
+- partition 3: 34GB (almost equal)
+
+To set partition 1, we enter correct value for end sector. This value can be solved by determining the correct end sector based on desired partition size. 
+
+```bash
+1048576*2*n
+1048576*2*33gb = 69206016
+```
+
+Now, onto setting partition 1:
+
+```bash
+$ sudo fdisk /dev/xvdc
+
+Welcome to fdisk (util-linux 2.32.1).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+Device does not contain a recognized partition table.
+Created a new DOS disklabel with disk identifier 0x2a35d329.
+
+Command (m for help): n
+Partition type
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended (container for logical partitions)
+Select (default p): p
+Partition number (1-4, default 1): 1
+First sector (2048-209715199, default 2048):
+Last sector, +sectors or +size{K,M,G,T,P} (2048-209715199, default 209715199): 69206016
+
+Created a new partition 1 of type 'Linux' 
+and of size 33 GiB.
+
+## Make sure to verify and write.
+Command (m for help): v
+Remaining 140509183 unallocated 512-byte sectors.
+
+Command (m for help): w
+
+The partition table has been altered.
+Calling ioctl() to re-read partition table.
+Syncing disks.
+```
+
+To compute the end sector for partition 2, we just add the same value to the start sector. 
+Note that in our case, 33GB is equivalent to 69206016. We add this to the Start sector value
+
+```plaintext
+69206016 + 69208064 = 138414080
+```
+
+We will now use 138414080 as the end sector value for partition 2:
+
+```bash
+$ sudo fdisk /dev/xvdc
+
+Welcome to fdisk (util-linux 2.32.1).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+
+Command (m for help): n
+Partition type
+   p   primary (1 primary, 0 extended, 3 free)
+   e   extended (container for logical partitions)
+Select (default p): p
+Partition number (2-4, default 2): 2
+First sector (69206017-209715199, default 69208064):
+Last sector, +sectors or +size{K,M,G,T,P} (69208064-209715199, default 209715199): 138414080
+
+Created a new partition 2 of type 'Linux' and of size 33 GiB.
+
+Command (m for help): v
+Remaining 71303166 unallocated 512-byte sectors.
+
+Command (m for help): w
+
+The partition table has been altered.
+Calling ioctl() to re-read partition table.
+Syncing disks.
+```
+
+For the final one, partition 3, we just let everything to be set on the default value since it'll be taking the remaining space on the disk.
+
+```bash
+$ sudo fdisk /dev/xvdc
+
+Welcome to fdisk (util-linux 2.32.1).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+Command (m for help): n
+Partition type
+   p   primary (2 primary, 0 extended, 2 free)
+   e   extended (container for logical partitions)
+Select (default p): p
+Partition number (3,4, default 3): 3
+First sector (69206017-209715199, default 138416128):
+Last sector, +sectors or +size{K,M,G,T,P} (138416128-209715199, default 209715199):
+
+Created a new partition 3 of type 'Linux' and of size 34 GiB.
+
+Command (m for help): v
+Remaining 4094 unallocated 512-byte sectors.
+
+Command (m for help): w
+
+The partition table has been altered.
+Calling ioctl() 
+```
+
+Checking the information for the disk, we see that it now has 3 partitions:
+
+```bash
+$ sudo fdisk /dev/xvdc -l
+Disk /dev/xvdc: 100 GiB, 107374182400 bytes, 209715200 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x2a35d329
+
+Device     Boot     Start       End  Sectors Size Id Type
+/dev/xvdc1           2048  69206016 69203969  33G 83 Linux
+/dev/xvdc2       69208064 138414080 69206017  33G 83 Linux
+/dev/xvdc3      138416128 209715199 71299072  34G 83 Linux
+```
+
+
+### Dividing 100GB into four partitions
+
+For the third disk, it will have four partitions. We will start with setting partition 4 and create this first, then work my way up to the last, which is partition 1. The sizing will be
+
+- partition 4 - 26 GB
+- partition 3 - 32 GB
+- partition 2 - 14 GB
+- partition 1 - 28 GB
+
+Taking note of the calculations:
+
+```plaintext
+1048576*2*n
+1048576*2*26 = 54525952
+```
+
+To set partition 4 (26 GB):
+
+```bash
+$ sudo fdisk /dev/xvdd
+
+Welcome to fdisk (util-linux 2.32.1).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+Device does not contain a recognized partition table.
+Created a new DOS disklabel with disk identifier 0xe64beb89.
+
+Command (m for help): n
+Partition type
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended (container for logical partitions)
+Select (default p): p
+Partition number (1-4, default 1): 4
+First sector (2048-209715199, default 2048):
+Last sector, +sectors or +size{K,M,G,T,P} (2048-209715199, default 209715199): 54525952
+
+Created a new partition 4 of type 'Linux' and of size 26 GiB.
+
+Command (m for help): v
+Remaining 155191294 unallocated 512-byte sectors.
+
+Command (m for help): w
+
+The partition table has been altered.
+Calling ioctl() to re-read partition table.
+Syncing disks.
+```
+
+To set partition 3 (32 GB), take note of another set of calculations:
+
+```plaintext
+1048576*2*32 = 67108864
+```
+
+Add this to the first sector value:
+
+```plaintext
+67108864 + 54528000 = 121636864
+```
+
+We will now use 121636864 as last sector value:
+
+```bash
+$ sudo fdisk /dev/xvdd
+
+Welcome to fdisk (util-linux 2.32.1).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+
+Command (m for help): n
+Partition type
+   p   primary (1 primary, 0 extended, 3 free)
+   e   extended (container for logical partitions)
+Select (default p): p
+Partition number (1-3, default 1): 3
+First sector (54525953-209715199, default 54528000):
+Last sector, +sectors or +size{K,M,G,T,P} (54528000-209715199, default 209715199): 121636864
+
+Created a new partition 3 of type 'Linux' and of size 32 GiB.
+
+Command (m for help): v
+Remaining 88082429 unallocated 512-byte sectors.
+
+Command (m for help): w
+
+The partition table has been altered.
+Calling ioctl() to re-read partition table.
+Syncing disks.
+```
+
+To set partition 2 (14 GB), perform calculations:
+
+```plaintext
+1048576*2*n
+1048576*2*14 = 29360128
+```
+
+Add this to the first sector value:
+
+```plaintext
+29360128 + 121638912 = 150999040
+```
+
+We will now use 121636864 as last sector value:
+
+```bash
+$ sudo fdisk /dev/xvdd
+
+Welcome to fdisk (util-linux 2.32.1).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+
+Command (m for help): n
+Partition type
+   p   primary (2 primary, 0 extended, 2 free)
+   e   extended (container for logical partitions)
+Select (default p): p
+Partition number (1,2, default 1): 2
+First sector (54525953-209715199, default 121638912):
+Last sector, +sectors or +size{K,M,G,T,P} (121638912-209715199, default 209715199): 150999040
+
+Created a new partition 2 of type 'Linux' and of size 14 GiB.
+
+Command (m for help): v
+Remaining 58722300 unallocated 512-byte sectors.
+
+Command (m for help): w
+
+The partition table has been altered.
+Calling ioctl() to re-read partition table.
+Syncing disks.
+```
+
+When setting partition 1 (28 GB), we are just prompted with the default value since partition 1 will take up the remaining unpartitioned space in the disk.
+
+```bash
+$ sudo fdisk /dev/xvdd
+
+Welcome to fdisk (util-linux 2.32.1).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+
+Command (m for help): n
+Partition type
+   p   primary (3 primary, 0 extended, 1 free)
+   e   extended (container for logical partitions)
+Select (default e): p
+
+Selected partition 1
+First sector (54525953-209715199, default 151001088):
+Last sector, +sectors or +size{K,M,G,T,P} (151001088-209715199, default 209715199):
+
+Created a new partition 1 of type 'Linux' and of size 28 GiB.
+```
+
+Checking the details for this disk, we see that it now has 4 partitions:
+
+```bash
+$ sudo fdisk /dev/xvdd -l
+Disk /dev/xvdd: 100 GiB, 107374182400 bytes, 209715200 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xe64beb89
+
+Device     Boot     Start       End  Sectors Size Id Type
+/dev/xvdd1      151001088 209715199 58714112  28G 83 Linux
+/dev/xvdd2      121638912 150999040 29360129  14G 83 Linux
+/dev/xvdd3       54528000 121636864 67108865  32G 83 Linux
+/dev/xvdd4           2048  54525952 54523905  26G 83 Linux
+
+Partition table entries are not in disk order.
+```
