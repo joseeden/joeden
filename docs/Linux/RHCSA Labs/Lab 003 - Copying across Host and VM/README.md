@@ -9,7 +9,7 @@ last_update:
 
 Thought I'd include this part since I used VirtualBox VMs in some of the labs in this series. I was having issues copying text from my laptop and then pasting them onto the terminal inside the VM (and then vice versa). I've also included some packages that would be helpful. Some setup doesn't come with pre-built packages like vim.
 
-## The Shortcut:
+## The Shortcut
 
 If you prefer to skip the lengthy reading, here is the summary of commands I ran. This can also be turned into a script. 
 
@@ -74,6 +74,22 @@ On the **Devices** tab, I set both **Shared Clipboard** and **Drag and Drop** to
 Normally, this would allow the copying and pasting of text across the host and guest machine. But since this didn't worked, I had to install the Guest Additions.
 
 ### Install Guest Additions
+
+
+Outline:
+
+1. Start VirtualBox.
+2. Start the host in question.
+3. Once the host has booted, click Devices | Insert Guest Additions CD Image.
+4. Open up a terminal window in the guest.
+5. Mount the CD-ROM with the command sudo mount /dev/cdrom /mnt.
+6. Change into the mounted directory with the command cd /mnt.
+7. Install the necessary dependencies with the command 
+    sudo dnf install -y dkms kernel-devel kernel-devel-$(uname -r).
+8. Change to the root user with the command sudo su.
+9. Install the Guest Additions package with the command 
+    ./VBoxLinuxAdditions.run.
+10. Allow the installation to complete.
 
 On the **Devices** tab, click **Insert Guest Additions CD Images..**.
 
@@ -146,7 +162,6 @@ Then I got a new error message. I went to the **Optical Drives** to force unmoun
 
 I still got the same error.
 
-
 <div class="img-center"> 
 
 ![](/img/docs/vbox9.png)
@@ -154,7 +169,9 @@ I still got the same error.
 </div>
 
 
-### Error 1/3: Kernel Headers Not Found For Target Kernel Error [RESOLVED]
+## Errors 
+
+### 1. Kernel Headers Not Found For Target Kernel Error [RESOLVED]
 
 Google time. Went online and found [this](https://www.dev2qa.com/how-to-resolve-virtualbox-guest-additions-kernel-headers-not-found-for-target-kernel-error/).
 
@@ -162,7 +179,6 @@ Google time. Went online and found [this](https://www.dev2qa.com/how-to-resolve-
 ls /usr/src/kernels/
 sudo yum install -y "kernel-devel-uname-r == $(uname -r)"
 ```
-
 
 <div class="img-center"> 
 
@@ -192,7 +208,6 @@ Went back to the original issue and re-run the install again.
 sudo dnf install -y "kernel-devel-uname-r == $(uname -r)"
 ```
 
-
 <div class="img-center"> 
 
 ![](/img/docs/sv-kernelerror-1.png)
@@ -210,21 +225,20 @@ Then retried adding guest additions again using the same steps:
 
 This time it showed a different error.
 
-
 <div class="img-center"> 
 
+![](/img/docs/vboxadd-1.png)
 ![](/img/docs/vboxadd-2.png)
 
 </div>
 
-### Error 2/3: Please install the gcc make perl packages from your distribution [RESOLVED] 
+### Please install the gcc make perl packages from your distribution [RESOLVED] 
 
 Following another link: [Guest additionals: Kernel headers not found for target kernel](https://superuser.com/questions/1532590/guest-additionals-kernel-headers-not-found-for-target-kernel)
 
 ```bash
 sudo dnf install -y gcc make perl kernel-headers kernel-devel
 ```
-
 
 <div class="img-center"> 
 
@@ -264,7 +278,7 @@ Got a new error:
 </div>
 
 
-### Error 3/3: Look at /var/log/vboxadd-setup.log to find out what went wrong [RESOLVED]
+### Look at /var/log/vboxadd-setup.log to find out what went wrong [RESOLVED]
 
 A quick Google search showed this: [elfutils-libelf-devel.x86_64 package on CentOS 8 / RHEL 8](https://linux-packages.com/centos-8/package/elfutils-libelf-develx86-64)
 
@@ -280,8 +294,6 @@ Tried installing the guest Additions again.
 ### Success!
 
 After installing the **gcc, make**, **elfutils**, and doing the rest of the other previous steps, and restarting for the last time, I was able to finally copy and paste across my laptop and VMs in VIrtuaBox.
-
-
 
 
 ## References
