@@ -14,7 +14,7 @@ Bash scripts automate tasks by executing commands in a specific order, making th
 ![](/img/docs/sv-bashscript.png)
 
 
-### Essential Shell Script Components
+## Essential Shell Script Components
 
 Scripts will normally have ".sh" format and begins with `#!/bin/bash`. After creating script, make sure to grant execute-permission. If it's not *executable*, you will get a **permission denied** error. Here's a sample script.
 
@@ -80,12 +80,12 @@ Note that you need the `./` in front of the script to tell the system to runt he
 
 We can also put the script in a directory that's included on the **PATH** variable.
 
-### Scripts run on a "subshell"
+## Scripts run on a "subshell"
 
 Here's another script. Notice that it starts with `#!/bin/bash`. This means this script will always be interpreted by bash shell.
 
 ```bash
-### anotherscript.sh
+## anotherscript.sh
 
 #!/bin/bash
 
@@ -143,7 +143,7 @@ systemd-private-b028330b03854c75a7b661162231a290-chronyd.service-SNBAPh
 
 If you want to keep the directory, then you need to **source** the directory. This means script is not executed as a subshell, but is run on the current shell.
 
-### Sourcing the script
+## Sourcing the script
 
 We can source a script in two ways:
 
@@ -181,13 +181,13 @@ drwx------. 3 root root 17 Jan  6 17:15 systemd-private-b028330b03854c75a7b66116
 [root@tstsvr tmp]#
 ```
 
-### Run script in the background
+## Run script in the background
 
 ```bash
 ./anotherscript.sh &
 ```
 
-### Loops in Shell scripts
+## Loops in Shell scripts
 
 ![](/img/docs/sv-bashloops.png)
 
@@ -268,4 +268,4 @@ Please provide an argument
 ```
 
 
-### Countdown scripts
+## Countdown scripts
