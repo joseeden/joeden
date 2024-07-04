@@ -10,8 +10,14 @@ last_update:
 
 Bash scripts automate tasks by executing commands in a specific order, making them powerful tools for automating repetitive tasks, managing system configurations, and performing complex operations efficiently in Unix-like operating systems.
 
-![](/img/docs/sv-bash-script.png)
-![](/img/docs/sv-bashscript.png)
+- A shells cript can be as simple as a number of commands sequentially executed. 
+- Scripts normally work with variables to make them react differently in different environments. 
+- A shell will always be available to interpret code from shell scripts. 
+- If the scripts use internal commands only, they're very fast as nothing needs to be loaded. 
+- There is no need to compile anything 
+- There are no modules to be used in the bash script, which makes them rather static.
+- Bash shell scripts are not idempotent.
+- Conditional statements such as `for`, `if`, `case`, and `while` can be used. 
 
 
 ## Essential Shell Script Components
@@ -145,6 +151,8 @@ If you want to keep the directory, then you need to **source** the directory. Th
 
 ## Sourcing the script
 
+When you "source" a script in Bash, you execute the script within the current shell session. This means any changes to environment variables, functions, or aliases made by the script will persist after the script finishes executing. Sourcing is particularly useful for configuring your shell environment or loading utility functions that you want to use interactively in your terminal session.
+
 We can source a script in two ways:
 
 1. source script-name.sh
@@ -185,13 +193,17 @@ drwx------. 3 root root 17 Jan  6 17:15 systemd-private-b028330b03854c75a7b66116
 
 ## Run script in the background
 
+## Running a Script in the Background
+
+Running a script in the background allows it to execute independently of the current shell session, freeing up your terminal for other tasks. This is useful for running long-running processes or scripts that do not require immediate interaction. When a script runs in the background, it continues to execute while allowing you to continue working interactively in your shell.
+
 ```bash
 ./anotherscript.sh &
 ```
 
 ## Loops in Shell scripts
 
-![](/img/docs/sv-bashloops.png)
+Loops in shell scripts are control structures that iterate over a set of instructions repeatedly until a specific condition is met. They are fundamental for automating repetitive tasks and processing data efficiently in Bash and other shell environments. Shell scripts support various types of loops, such as `for` loops and `while` loops, providing flexibility in how tasks are repeated and managed within scripts.
 
 Here a second script. We'll grant it execute-permission and then run it.
 ```bash
@@ -269,5 +281,3 @@ the argument is again?
 Please provide an argument
 ```
 
-
-## Countdown scripts
