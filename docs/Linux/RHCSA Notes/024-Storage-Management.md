@@ -408,3 +408,256 @@ Disk /dev/xvdb: 100 GiB, 107374182400 bytes, 209715200 sectors
 ## Managing Partitions
 
 Managing partitions is essential for organizing and optimizing storage. Tools like `parted`, `gparted`, and `fdisk` offer various features for different needs and preferences.
+
+
+
+### Adding partitions
+
+Still on the fdisk utility, we put "n" key to add a new partition.
+
+It is then followed by the following
+- **Select partition type [primary | extended]** - primary are normally the bootable partitions. For now, we can select primary.
+- **Partition Number** - since this is the first partition, we can select 1.
+- **First sector** - we can set by default by leaving it blank
+- **Last sector** - defines the sizes. If we set the default, then the partition size will be the entire volume size
+
+```bash
+Command (m for help): n
+Partition type
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended (container for logical partitions)
+Select (default p): p
+Partition number (1-4, default 1): 1
+First sector (2048-209715199, default 2048):
+Last sector, +sectors or +size{K,M,G,T,P} (2048-209715199, default 209715199):
+
+Created a new partition 1 of type 'Linux' and of size 100 GiB.
+```
+
+If we print the partition again and compare with before:
+
+```bash
+# Before partitioning
+Command (m for help): p
+Disk /dev/xvdb: 100 GiB, 107374182400 bytes, 209715200 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x8fa9fd3d
+```
+
+```bash
+# After partitioning
+Command (m for help): p
+
+Disk /dev/xvdb: 100 GiB, 107374182400 bytes, 209715200 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x8fa9fd3d
+
+Device     Boot Start       End   Sectors  Size Id Type
+/dev/xvdb1       2048 209715199 209713152  100G 83 Linux
+```
+
+Now, this isn't saved yet. To write the data onto the disk, **Verify** and **Write**: 
+
+```bash
+Command (m for help): v
+
+Command (m for help): w
+The partition table has been altered.
+Calling ioctl() to re-read partition table.
+Syncing disks.
+```
+
+If we check again the fdisk:
+
+```bash
+$ sudo fdisk -l
+Disk /dev/xvda: 10 GiB, 10737418240 bytes, 20971520 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: F34B923A-6CE9-4CEF-841E-82EC5D63653C
+
+Device     Start      End  Sectors Size Type
+/dev/xvda1  2048     4095     2048   1M BIOS boot
+/dev/xvda2  4096 20971486 20967391  10G Linux filesystem
+
+
+Disk /dev/xvdb: 100 GiB, 107374182400 bytes, 209715200 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x8fa9fd3d
+
+Device     Boot Start       End   Sectors  Size Id Type
+/dev/xvdb1       2048 209715199 209713152  100G 83 Linux
+```
+
+```bash
+$ sudo fdisk -l /dev/xvdb
+Disk /dev/xvdb: 100 GiB, 107374182400 bytes, 209715200 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x8fa9fd3d
+
+Device     Boot Start       End   Sectors  Size Id Type
+/dev/xvdb1       2048 209715199 209713152  100G 83 Linux
+```
+
+
+### Deleting partitions
+
+Since we now have a partitioned `/dev/xvdb`, let's try to delete it.
+
+```bash
+$ sudo fdisk -l /dev/xvdb
+$ sudo fdisk /dev/xvdb
+
+Disk /dev/xvdb: 100 GiB, 107374182400 bytes, 209715200 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x8fa9fd3d
+
+Device     Boot Start       End   Sectors  Size Id Type
+/dev/xvdb1       2048 209715199 209713152  100G 83 Linux
+
+Command (m for help): d
+Selected partition 1
+Partition 1 has been deleted.
+
+Command (m for help): v
+Remaining 209715199 unallocated 512-byte sectors.
+
+Command (m for help): w
+
+The partition table has been altered.
+Calling ioctl() to re-read partition table.
+Syncing disks.
+```
+
+Checking again:
+
+```bash 
+$ sudo fdisk -l /dev/xvdb
+Disk /dev/xvdb: 100 GiB, 107374182400 bytes, 209715200 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x8fa9fd3d
+```
+```bash 
+$ sudo fdisk /dev/xvdb
+Welcome to fdisk (util-linux 2.32.1).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+Command (m for help):
+```
+
+### Adding multiple partitions
+
+For the succeeding sections on partitions, I decided to add two more volume to my instance **tst-rhel**, so that now it has a total of four volumes:  
+
+- 1 primary, root (/dev/sda1)
+- 1st secondary (/dev/sdb)
+- 2nd secondary (/dev/sdc)
+- 3rd secondary (/dev/sdd)
+
+
+List down the existing partitions: 
+
+```bash
+$ sudo fdisk -l
+Disk /dev/xvda: 10 GiB, 10737418240 bytes, 20971520 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: F34B923A-6CE9-4CEF-841E-82EC5D63653C
+
+Device     Start      End  Sectors Size Type
+/dev/xvda1  2048     4095     2048   1M BIOS boot
+/dev/xvda2  4096 20971486 20967391  10G Linux filesystem
+
+
+Disk /dev/xvdb: 100 GiB, 107374182400 bytes, 209715200 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0x8fa9fd3d
+
+Device     Boot Start       End   Sectors  Size Id Type
+/dev/xvdb1       2048 209715199 209713152  100G 83 Linux
+
+
+Disk /dev/xvdc: 100 GiB, 107374182400 bytes, 209715200 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/xvdd: 100 GiB, 107374182400 bytes, 209715200 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+```
+
+
+**Determining the End Sector input** 
+This is one of the challenge that I had at first when I tried doing multiple partitions on the disk. When you create partitions, **fdisk** asks you to input:
+
+- Start Sector - default is 2048
+- End Sector
+
+Not sure if its the same for all disks, but the options when I want to create a partition looks something like this:
+
+```bash
+$ sudo fdisk /dev/xvdc
+
+Welcome to fdisk (util-linux 2.32.1).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+Device does not contain a recognized partition table.
+Created a new DOS disklabel with disk identifier 0x4212ba8d.
+
+Command (m for help): n
+Partition type
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended (container for logical partitions)
+Select (default p): p
+Partition number (1-4, default 1): 1
+First sector (2048-209715199, default 2048):
+```
+
+Let's say I have 100GB disk and I want it to have multiple partitions, with one partition having 33 GB. Now, you cannot simply enter 33GB on the end sector because **fdisk** only accepts the sizes in KB. You will need to do some conversion. 
+
+```bash
+(26gb * 2) then convert to KB, or 
+(26 * 2) * 1048576
+```
+
+Thus the formula would be below, where "n" is desired size in GB:
+
+```bash
+n*2*1048576
+```
+
+**References - Partition-sizing**
+
+- [How to calculate partition Start End Sector?](https://unix.stackexchange.com/questions/510868/how-to-calculate-partition-start-end-sector)
+- [How to calculate partition Start End Sector](https://itectec.com/unixlinux/how-to-calculate-partition-start-end-sector/)
+- [[SOLVED] problem in determine partition size from number of blocks shown in fdisk command](https://www.linuxquestions.org/questions/linux-newbie-8/problem-in-determine-partition-size-from-number-of-blocks-shown-in-fdisk-command-4175442789/)
+
