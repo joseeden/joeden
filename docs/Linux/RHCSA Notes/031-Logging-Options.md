@@ -15,6 +15,8 @@ The `dmesg` command is useful for checking information about the boot process.
 - `dmesg` reads from the `/var/log/messages` file. 
 - Messages are generated on every boot, showing the drivers loaded, the order they are loaded, addresses, and other relevant details.
 
+Sample output: 
+
 ![dmesg logs](/img/docs/dmesg.png)
 
 ## Logs for Software - `syslog`
@@ -67,10 +69,21 @@ To make systemd-journald persistent:
 2. Restart systemd-journal process or restart your system
 3. After restarting, all logs will be written to /var/log/journal
 
-### Logging Configuration
+### Configuration Files 
 
-![rsyslog configuration](/img/docs/sv-rsyslog.png)
-![rsyslog configuration](/img/docs/sv-rsyslog-2.png)
+The main configuration file for rsyslogd is located at `/etc/rsyslog.conf`, and additional configurations can be added in the `/etc/rsyslog.d/` directory. The configuration file is divided into modules, global directives, and rules.
+
+- `rsyslogd` is and must be backwards compatible with the archaic syslog service. 
+- In syslog, a fixed number of facilities was defined, like kern, authpriv, cron, and more. 
+- To work with services that don't have their own facility, local (0..7) can be used. 
+- Because of the lack of facilities, some services take care of their own logging and don't use rsyslog.
+- Use `logger` command to write messages to rsyslog manually. 
+
+Each logger line contains three items:
+
+- `facility`: the specific facility that the log is created for.
+- `severity`: the severity from which should be logged. 
+- `destination`: the file of other destination the log should be written to.
 
 Check the status of the `rsyslog` service:
 
@@ -94,9 +107,7 @@ total 4
 
 ## Rsyslog Configuration File
 
-The main configuration file for `rsyslogd` is located at `/etc/rsyslog.conf`, and additional configurations can be added in the `/etc/rsyslog.d/` directory. The configuration file is divided into modules, global directives, and rules. 
-
-The important part of the rsyslog.conf is the **RULES** section:
+The main configuration file, `/etc/rsyslog.conf`, contains several sections that define how logs are handled. The important part of the rsyslog.conf is the **RULES** section:
 
 ```bash
 vi /etc/rsyslog.conf
@@ -283,8 +294,11 @@ By default, `systemd-journald` writes logs to a runtime journal, which is not pe
 
 Log rotation ensures that log files do not consume too much disk space. It is managed by the `logrotate` utility. Configuration files for log rotation are located in `/etc/logrotate.conf` and `/etc/logrotate.d/`.
 
-![log rotation](/img/docs/sv-log-rotation.png)
-![log rotation](/img/docs/sv-log-rotation-2.png)
+- Built-in log rotation for the journal runs monthly. 
+- The journal cannot grow beyond 10% of the size of the file system it is on. 
+- The journal will also make sure at least 15% of its file system will remain available as free space. 
+- These settings can be changed through `/etc/systemd/journald.conf`. 
+- Logrotate is started through **cron.daily** to ensure that log files don't grow too big. 
 
 List logrotate configurations:
 
