@@ -10,15 +10,16 @@ last_update:
 
 ## Disk Layout
 
-You can divide a disk into partitions and then assign different directories to different partitions to isolate data.
-
-Your disk will have a device name, and is normally in this format:
+You can divide a disk into partitions and then assign different directories to different partitions to isolate data. Your disk will have a device name, and is normally in this format:
 
 ```bash
 /dev/device-name
 ```
 
 Another important thing that is related to disk partitioning is the system type. There are two options:
+
+- BIOS 
+- UEFI 
 
 1. **BIOS**
   - was designed for the old systems
