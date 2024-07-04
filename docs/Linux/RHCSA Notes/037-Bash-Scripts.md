@@ -147,9 +147,11 @@ If you want to keep the directory, then you need to **source** the directory. Th
 
 We can source a script in two ways:
 
-1. source <script-name>
-2. . <script-name>
+1. source script-name.sh
+2. . script-name.sh
 
+Example: 
+  
 ```bash
 [root@tstsvr ~]# . anotherscript.sh
 *****************************************************
