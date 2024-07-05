@@ -3,7 +3,7 @@ title: "Stratis"
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 32
 last_update:
-  date: 11/29/2021
+  date: 12/31/2021
 ---
 
 
@@ -13,37 +13,22 @@ last_update:
 
 Stratis is designed to make managing storage easier for users and administrators. It provides a modern approach to storage management, combining the features of traditional file systems with the ease of use and flexibility of volume managers. 
 
-![](/img/docs/sv-stratis.png)
-![](/img/docs/sv-stratis-2.png)
+- Red Hat's answer to Btrfs and ZFS. 
+- It is built on top of any block devices, including LVM devices. 
+- Stratis Pool is created from one or more storage devices (blockdev). 
+- Stratis creates a `/dev/stratis/pool-name` directory for each pool. 
+- This directory contains links to devices that represent the filesystems.
 
 Stratis automates many tasks, such as snapshotting, thin provisioning, and data integrity checking, making it an excellent choice for modern storage needs.
 
-
-## Steps for Creating Stratis
-
-Below are the steps to create and manage storage with Stratis. 
-
-![Stratis Creation 1](/img/docs/sv-stratis-1.png)
-![Stratis Creation 2](/img/docs/sv-stratis-2.png)
-![Stratis Creation 3](/img/docs/sv-stratis-3.png)
-
-
-## Installation 
-
-Install Stratis:
-```bash
-sudo dnf install stratisd stratis-cli
-```
-
-Enable and Start Stratis Daemon:
-```bash
-sudo systemctl enable stratisd
-sudo systemctl start stratisd
-```
+- XFS filesystem is put in a volume on top of the pool. 
+- Each pool can contain one or more filesystems. 
+- Filesystems are thin provisioned and do not have a fixed size. 
+- Partitions are NOT supported, and block device must be atleast 1 GB.
 
 ## Lab Setup 
 
-I'm performing this lab on an EC2 instances with multiple EBS volumes attached.
+I'm performing this lab on an EC2 instance with multiple EBS volumes attached.
 
 ```bash
 [root@tst-rhel ~]# lsblk
@@ -59,6 +44,19 @@ xvdb              202:16   0   10G  0 disk
 └─xvdb4           202:20   0    1G  0 part
   └─vgdata-lvdata 253:0    0  1.9G  0 lvm  /mnt/diskblvm
 xvdc              202:32   0    9G  0 disk
+```
+
+## Installation 
+
+Install Stratis:
+```bash
+sudo dnf install stratisd stratis-cli
+```
+
+Enable and Start Stratis Daemon:
+```bash
+sudo systemctl enable stratisd
+sudo systemctl start stratisd
 ```
 
 ## Steps 
@@ -154,6 +152,12 @@ To list all block devices in Stratis pools:
 [root@tst-rhel ~]# stratis blockdev list
 Pool Name   Device Node   Physical Size   Tier
 mypool      /dev/xvdc             9 GiB   Data
+```
+
+To add new block devices later:
+
+```bash
+stratis blockdev add-data 
 ```
 
 To see all block devices and their respective partitions and mount points:
