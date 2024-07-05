@@ -1,7 +1,7 @@
 ---
 title: "Samba file server"
 tags: [Linux, Red Hat, Certifications]
-sidebar_position: 30
+sidebar_position: 33
 last_update:
   date: 1/7/2022
 ---
