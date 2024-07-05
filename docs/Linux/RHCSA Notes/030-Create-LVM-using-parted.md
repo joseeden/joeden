@@ -266,7 +266,7 @@ To  check the physical volume group, volume group, and LVG:
 ```
 
 
-### Format and mount
+### Make a filesystem
 
 To avoid confusion, it's always a good practice to run `lsblk` first. Here, we can see the LVM named `vgdata-lvdata` under **xvdb**.
 
@@ -301,6 +301,8 @@ log      =internal log           bsize=4096   blocks=1566, version=2
          =                       sectsz=512   sunit=0 blks, lazy-count=1
 realtime =none                   extsz=4096   blocks=0, rtextents=0
 ```
+
+### Mount it  
 
 After creating the LVM and file system, it's time to create the directory that will serve as the mount point. To make this mount persistent across reboots, we need to add an entry to `/etc/fstab`.
 
