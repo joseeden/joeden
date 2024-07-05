@@ -6,8 +6,6 @@ last_update:
   date: 11/29/2021
 ---
 
-## Resizing LVMs
-
 Resizing Logical Volume Management (LVM) allows you to increase the storage capacity of your logical volumes as needed. This is particularly useful when you start running out of space on your disks. 
 
 To check the current disk usage, you can use the `df -h` command, which shows how much space is available on your disks in a human-readable format.
