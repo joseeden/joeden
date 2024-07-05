@@ -12,9 +12,7 @@ To check the current disk usage, you can use the `df -h` command, which shows ho
 
 ![](/img/docs/sv-resizing-lvm.png)
 
-![](/img/docs/sv-resizing-lvm-2.png)
-
-If you find that a logical volume needs more space, you can use the `lvextend` command to increase its size. However, before doing so, you must ensure that there is enough free space in the volume group and the underlying physical volumes to support the size increase.
+If you find that a logical volume needs more space, you can use the `lvextend` command to increase its size. However, before doing so, you must ensure that there is enough free space in the volume group and the underlying physical volumes to support the size increase. Note that shrinking is not possible on XFS volumes.
 
 ## Method 1: Longer version 
 
