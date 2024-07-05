@@ -170,10 +170,8 @@ When we run the mount command again, the system will go through the `/etc/fstab`
 
 ## Persistently mount filesystems 
 
-In the previous sections, we did a manual mounting of partitions. To automatically mount them during system start, we specify the partitions and their respective mountpoints in the `/etc/fstab` file.
+In the previous sections, we did a manual mounting of partitions. To automatically mount them during system start, we specify the partitions and their respective mountpoints in the `/etc/fstab` file. The entries in this file is used by the **systemd-fstab-generator** utility to generate the systemd mounts. To update it, make sure to use `systemctl daemon-reload` after diting the `/etc/fstab` file. 
 
-![](/img/docs/sv-fstab.png)
- 
 ```bash
 $ vi /etc/fstab
 
@@ -361,7 +359,11 @@ xvdc
 
 Systemd provides a mechanism for managing filesystem mounts through systemd mount units. These units are configurations that specify how and where a filesystem should be mounted during the system boot process or on demand. Systemd mount units offer a more flexible options for handling dependencies, automounting, and monitoring. They are particularly useful in environments where dynamic management of mounts is required, such as with network filesystems or removable media.
 
-![](/img/docs/sv-systemd-mounts.png)
+- `/etc/fstab` mounts already are systemd mounts. 
+- Mount can be created using systemd .mount files.
+- Using .mount files allow you to be more specific in defining dependencies.
+- Use `systemctl cat tmp.mount` for an example. 
+
 
 ### Systemd mount units
 
