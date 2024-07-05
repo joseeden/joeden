@@ -595,8 +595,6 @@ Another command to see the UUIDs:
 /dev/xvdc1: UUID="d6eaa147-9986-4af3-bd28-f776b4628643" BLOCK_SIZE="4096" TYPE="ext4" PARTUUID="dc5fac76-01"
 /dev/xvda1: PARTUUID="07c6574c-7f85-4859-9689-c8090f35545a"
 /dev/xvdb1: UUID="d3e1da6b-5577-4d21-8f78-af81b31246c6" BLOCK_SIZE="512" TYPE="xfs" PARTLABEL="one" PARTUUID="56ffe2f0-90c9-4555-9d0d-49c63b2c8192"
-```
-
 
 
 ## Labeling using tune2fs
@@ -713,3 +711,191 @@ When we run the mount command again, the system will go through the `/etc/fstab`
 [root@tst-rhel ~]# mount | grep diskb1
 /dev/xvdb1 on /mnt/diskb1 type ext4 (rw,relatime,seclabel)
 ``` 
+
+## Persistently mount filesystems 
+
+In the previous sections, we did a manual mounting of partitions. To automatically mount them during system start, we specify the partitions and their respective mountpoints in the `/etc/fstab` file.
+
+![](/img/docs/sv-fstab.png)
+ 
+```bash
+$ vi /etc/fstab
+
+UUID=d35fe619-1d06-4ace-9fe3-169baad3e421 /                       xfs     defaults        0 0
+```
+
+As an example, we can mount '/dev/xvdb1' on bootup by adding its **UUID** and the mountpoint to the **fstab**.
+
+```bash
+$ ll /dev/disk/by-uuid/
+
+total 0
+lrwxrwxrwx. 1 root root 11 Dec  6 08:40 52545136-5e0e-4022-86c0-7845250d5263 -> ../../xvdc1
+lrwxrwxrwx. 1 root root 11 Dec  6 08:41 7d123d52-b4c3-4a03-b077-c03761f57d0e -> ../../xvdc2
+lrwxrwxrwx. 1 root root 10 Dec  6 08:36 b3475d34-e9cb-4e8e-9ace-a1fdf7ed508e -> ../../xvdb
+lrwxrwxrwx. 1 root root 11 Dec  6 09:19 b8c13319-646e-4933-87e0-27bf530e04ec -> ../../xvdc3
+lrwxrwxrwx. 1 root root 11 Dec  6 08:04 d35fe619-1d06-4ace-9fe3-169baad3e421 -> ../../xvda2
+```   
+
+From the output above, we can see that `/dev/xvdb1` has a `UUID=b3475d34-e9cb-4e8e-9ace-a1fdf7ed508e`. Add this to the `/etc/fstab` and indicate EXT4 as the filesystem. 
+
+```bash     
+$ sudo vi /etc/fstab
+
+UUID=d35fe619-1d06-4ace-9fe3-169baad3e421 /                       xfs     defaults        0 0
+
+# EDEN: Mount /dev/xvdb1 during bootup
+UUID=b3475d34-e9cb-4e8e-9ace-a1fdf7ed508e /mnt/diskb1             ext4    defaults        1 1
+```
+
+Before we test this, we check again the block devices:
+
+```bash
+$ lsblk -f
+NAME    FSTYPE LABEL UUID                                 MOUNTPOINT
+xvda
+├─xvda1
+└─xvda2 xfs          d35fe619-1d06-4ace-9fe3-169baad3e421 /
+xvdb    ext4         b3475d34-e9cb-4e8e-9ace-a1fdf7ed508e /mnt/diskb1
+xvdc
+├─xvdc1 ext3         52545136-5e0e-4022-86c0-7845250d5263 /mnt/diskc1
+├─xvdc2 ext3         7d123d52-b4c3-4a03-b077-c03761f57d0e /mnt/diskc2
+└─xvdc3 ext3         b8c13319-646e-4933-87e0-27bf530e04ec /mnt/diskc3
+```
+
+### Restart 
+
+As mentioned in the previous sections, we can use the `mount` command to mount the disks during runtime. This is also the recommended way because if there are issues in the `/etc/fstab`, we can immediately catch the error after running the `mount` command. 
+
+But since we only added one entry in the `/etc/fstab` file, we'll proceed with the reboot. After restarting the instance, we see that all the mounted partitions are removed except for **xvdb**.
+
+```bash
+sudo reboot 
+```
+```bash
+$ lsblk -f
+NAME    FSTYPE LABEL UUID                                 MOUNTPOINT
+xvda
+├─xvda1
+└─xvda2 xfs          d35fe619-1d06-4ace-9fe3-169baad3e421 /
+xvdb    ext4         b3475d34-e9cb-4e8e-9ace-a1fdf7ed508e /mnt/diskb1
+xvdc
+├─xvdc1 ext3         52545136-5e0e-4022-86c0-7845250d5263
+├─xvdc2 ext3         7d123d52-b4c3-4a03-b077-c03761f57d0e
+└─xvdc3 ext3         b8c13319-646e-4933-87e0-27bf530e04ec
+```
+
+### `mount -a` 
+
+We now know that the entry in `/etc/fstab` works. Let's now add the other partitions. 
+
+```bash
+$ ll /dev/disk/
+total 0
+drwxr-xr-x. 2 root root 220 Dec  6 11:05 by-partuuid
+drwxr-xr-x. 2 root root 140 Dec  6 11:05 by-uuid
+
+$ ll /dev/disk/by-uuid/
+total 0
+lrwxrwxrwx. 1 root root 11 Dec  6 11:05 52545136-5e0e-4022-86c0-7845250d5263 -> ../../xvdc1
+lrwxrwxrwx. 1 root root 11 Dec  6 11:05 7d123d52-b4c3-4a03-b077-c03761f57d0e -> ../../xvdc2
+lrwxrwxrwx. 1 root root 10 Dec  6 11:05 b3475d34-e9cb-4e8e-9ace-a1fdf7ed508e -> ../../xvdb
+lrwxrwxrwx. 1 root root 11 Dec  6 11:05 b8c13319-646e-4933-87e0-27bf530e04ec -> ../../xvdc3
+lrwxrwxrwx. 1 root root 11 Dec  6 11:05 d35fe619-1d06-4ace-9fe3-169baad3e421 -> ../../xvda2
+```
+```bash 
+$ sudo vi /etc/fstab
+
+UUID=d35fe619-1d06-4ace-9fe3-169baad3e421 /                       xfs     defaults        0 0
+UUID=b3475d34-e9cb-4e8e-9ace-a1fdf7ed508e /mnt/diskb1             ext4    defaults        1 1
+UUID=52545136-5e0e-4022-86c0-7845250d5263 /mnt/diskc1             ext3    defaults        1 1
+UUID=7d123d52-b4c3-4a03-b077-c03761f57d0e /mnt/diskc2             ext3    defaults        1 1
+UUID=b8c13319-646e-4933-87e0-27bf530e04ec /mnt/diskc3             ext3    defaults        1 1
+```
+
+Before we test again, make sure only one disk is mounted.
+
+```bash
+$ lsblk -f
+NAME    FSTYPE LABEL UUID                                 MOUNTPOINT
+xvda
+├─xvda1
+└─xvda2 xfs          d35fe619-1d06-4ace-9fe3-169baad3e421 /
+xvdb    ext4         b3475d34-e9cb-4e8e-9ace-a1fdf7ed508e /mnt/diskb1
+xvdc
+├─xvdc1 ext3         52545136-5e0e-4022-86c0-7845250d5263
+├─xvdc2 ext3         7d123d52-b4c3-4a03-b077-c03761f57d0e
+└─xvdc3 ext3         b8c13319-646e-4933-87e0-27bf530e04ec
+```
+
+This time, run the `mount -a` command and verify. This will scan the `/etc/fstab` and mount all filesystems for us instead of us manually mounting each partition. This is also especially useful when you cannot restart the server and you need to mount new disks.
+
+```bash
+sudo mount -a 
+```
+```bash
+$ lsblk -f
+NAME    FSTYPE LABEL UUID                                 MOUNTPOINT
+xvda
+├─xvda1
+└─xvda2 xfs          d35fe619-1d06-4ace-9fe3-169baad3e421 /
+xvdb    ext4         b3475d34-e9cb-4e8e-9ace-a1fdf7ed508e /mnt/diskb1
+xvdc
+├─xvdc1 ext3         52545136-5e0e-4022-86c0-7845250d5263 /mnt/diskc1
+├─xvdc2 ext3         7d123d52-b4c3-4a03-b077-c03761f57d0e /mnt/diskc2
+└─xvdc3 ext3         b8c13319-646e-4933-87e0-27bf530e04ec /mnt/diskc3 
+```
+
+This works. Now unmount the four partitions and verify that nothing is mounted.
+
+```bash
+sudo umount /mnt/diskb1 
+sudo umount /mnt/diskc1
+sudo umount /mnt/diskc2
+sudo umount /mnt/diskc3
+```
+```bash
+$ lsblk -f
+NAME    FSTYPE LABEL UUID                                 MOUNTPOINT
+xvda
+├─xvda1
+└─xvda2 xfs          d35fe619-1d06-4ace-9fe3-169baad3e421 /
+xvdb    ext4         b3475d34-e9cb-4e8e-9ace-a1fdf7ed508e 
+xvdc
+├─xvdc1 ext3         52545136-5e0e-4022-86c0-7845250d5263 
+├─xvdc2 ext3         7d123d52-b4c3-4a03-b077-c03761f57d0e 
+└─xvdc3 ext3         b8c13319-646e-4933-87e0-27bf530e04ec 
+```
+
+Restart the instance once again and see if all the partitions are automatically mounted during bootup. This last step is optional. We just want to demonstrate here that if `mount -a` worked with no errors, then we shouldn't have any issues restarting the server.
+
+```bash
+sudo reboot 
+```
+
+```bash
+$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs        7.7G     0  7.7G   0% /dev
+tmpfs           7.8G     0  7.8G   0% /dev/shm
+tmpfs           7.8G   17M  7.8G   1% /run
+tmpfs           7.8G     0  7.8G   0% /sys/fs/cgroup
+/dev/xvda2       10G  2.8G  7.3G  28% /
+/dev/xvdb        98G   61M   93G   1% /mnt/diskb1
+/dev/xvdc3       34G   49M   32G   1% /mnt/diskc3
+/dev/xvdc1       33G   49M   31G   1% /mnt/diskc1
+/dev/xvdc2       33G   49M   31G   1% /mnt/diskc2
+tmpfs           1.6G     0  1.6G   0% /run/user/1000
+```
+```bash
+$ lsblk -f
+NAME    FSTYPE LABEL UUID                                 MOUNTPOINT
+xvda
+├─xvda1
+└─xvda2 xfs          d35fe619-1d06-4ace-9fe3-169baad3e421 /
+xvdb    ext4         b3475d34-e9cb-4e8e-9ace-a1fdf7ed508e /mnt/diskb1
+xvdc
+├─xvdc1 ext3         52545136-5e0e-4022-86c0-7845250d5263 /mnt/diskc1
+├─xvdc2 ext3         7d123d52-b4c3-4a03-b077-c03761f57d0e /mnt/diskc2
+└─xvdc3 ext3         b8c13319-646e-4933-87e0-27bf530e04ec /mnt/diskc3
+```
