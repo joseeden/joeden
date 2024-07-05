@@ -213,7 +213,7 @@ Next, we need to check if the underlying volume group has enough space to suppor
   vgdata   1   1   0 wz--n- 952.00m    0
 ```
 
-### 2. Extend the Volume Group (vgextend)
+### 2. Extend VG (vgextend) 
 
 Since our LVM is on partition 3, we can extend it by adding partition 4, `/dev/xvdb4`. We run `vgextend` followed by the volume group name and the new partition to be added. Linux will handle the rest, including running `pvcreate` and assigning it to the volume group `vgdata`.
 
@@ -263,7 +263,7 @@ xvdb              202:16   0   10G  0 disk
 xvdc              202:32   0    9G  0 disk
 ```
 
-### 3. Extend the Logical Volume and Filesystem (lvextend)
+### 3. Extend LV and Filesystem (lvextend)
 
 After extending the volume group, the next step is to extend the logical volume and resize the filesystem. We'll use `lvextend` to increase the size of the logical volume and include the `-r` option to resize the filesystem automatically.
 
