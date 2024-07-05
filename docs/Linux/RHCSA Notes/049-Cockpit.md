@@ -3,7 +3,7 @@ title: Cockpit
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 49
 last_update:
-  date: 7/8/2022
+  date: 12/27/2021
 ---
 
 

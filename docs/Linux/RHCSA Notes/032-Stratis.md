@@ -232,6 +232,39 @@ blkid | grep stratis
 ```
 
 
+## Commands 
+
+To list all the block devices managed by Stratis, showing the pool name, device node, physical size, and tier:
+
+```bash
+$ stratis blockdev
+Pool Name   Device Node   Physical Size   Tier
+mypool      /dev/xvdb            10 GiB   Data
+```
+
+To list all the Stratis pools with their details such as total physical size, properties, and UUID:
+
+```bash
+$ stratis pool
+Name                     Total Physical   Properties                                   UUID
+mypool   10 GiB / 582.65 MiB / 9.43 GiB      ~Ca,~Cr   1f2ae191-f25d-4715-bf14-e80448521775
+```
+
+To list all the filesystems in Stratis pools, showing the pool name, filesystem name, size, creation date, and UUID, use this command:
+
+```bash
+$ stratis filesystem
+Pool Name   Name   Used      Created             Device                     UUID
+mypool      myfs   545 MiB   Jan 02 2022 14:08   /dev/stratis/mypool/myfs   49e5d8a1-78e5-4fde-ad6d-b5692f697058
+```
+
+It's important to note that the `df -h` command doesn't accurately reflect the available disk space for Stratis, as Stratis uses thin provisioning. For example, a block device of 10 GiB might show as 1 TiB due to thin provisioning:
+
+```bash
+$ df -h | grep diskfs
+/dev/mapper/stratis-1-1f2ae191f25d4715bf14e80448521775-thin-fs-49e5d8a178e54fdead6db5692f697058  1.0T  7.2G 1017G   1% /mnt/diskfs
+```
+
 
 ## Error: Block device appears to be owned
 

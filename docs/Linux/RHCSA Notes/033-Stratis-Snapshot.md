@@ -8,51 +8,22 @@ last_update:
 
 
 
-## Stratis Storage Features
+## Snapshots 
 
-![](/img/docs/sv-stratis-feats-1.png)
+Stratis Snapshots are a feature that allows users to capture the state of a filesystem at a specific point in time. These snapshots provide a read-only view of the filesystem as it existed when the snapshot was taken. This capability is particularly useful for data protection, system rollback, and creating consistent backups without disrupting ongoing operations.
 
-![](/img/docs/sv-stratis-feats-2.png)
+- Captures filesystem states instantly.
+- Maintains data integrity by freezing filesystems.
+- Saves space by sharing data blocks initially.
 
-![](/img/docs/sv-stratis-feats-3.png)
+Features: 
 
-![](/img/docs/sv-stratis-feats-4.png)
+- A snapshot is an individual file system that can be mounted. 
+- After creation, snapshots can be modified.
+- A snapshot and its origin are not linked.
+- The snapshotted file system can live longer than the filesystem it was created from. 
+- Each snapshot needs at least half a Gigabyte of backing storage for the XFS log.
 
-![](/img/docs/sv-stratis-feats-5.png)
-
-
-## Commands 
-
-To list all the block devices managed by Stratis, showing the pool name, device node, physical size, and tier:
-
-```bash
-$ stratis blockdev
-Pool Name   Device Node   Physical Size   Tier
-mypool      /dev/xvdb            10 GiB   Data
-```
-
-To list all the Stratis pools with their details such as total physical size, properties, and UUID:
-
-```bash
-$ stratis pool
-Name                     Total Physical   Properties                                   UUID
-mypool   10 GiB / 582.65 MiB / 9.43 GiB      ~Ca,~Cr   1f2ae191-f25d-4715-bf14-e80448521775
-```
-
-To list all the filesystems in Stratis pools, showing the pool name, filesystem name, size, creation date, and UUID, use this command:
-
-```bash
-$ stratis filesystem
-Pool Name   Name   Used      Created             Device                     UUID
-mypool      myfs   545 MiB   Jan 02 2022 14:08   /dev/stratis/mypool/myfs   49e5d8a1-78e5-4fde-ad6d-b5692f697058
-```
-
-It's important to note that the `df -h` command doesn't accurately reflect the available disk space for Stratis, as Stratis uses thin provisioning. For example, a block device of 10 GiB might show as 1 TiB due to thin provisioning:
-
-```bash
-$ df -h | grep diskfs
-/dev/mapper/stratis-1-1f2ae191f25d4715bf14e80448521775-thin-fs-49e5d8a178e54fdead6db5692f697058  1.0T  7.2G 1017G   1% /mnt/diskfs
-```
 
 
 

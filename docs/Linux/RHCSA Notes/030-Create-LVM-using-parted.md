@@ -3,7 +3,7 @@ title: "Create LVMs using parted"
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 29
 last_update:
-  date: 11/29/2021
+  date: 11/31/2021
 ---
 
 ## Logical Volume Groups 
