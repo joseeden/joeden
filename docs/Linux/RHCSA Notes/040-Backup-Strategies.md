@@ -36,12 +36,21 @@ To backup a filesystem, specify:
 Here, we're backing up `/dev/xvdb1` to an image file in our home directory:
 
 ```bash
+$ ll
+total 0
+```
+```bash
 $ sudo dd if=/dev/xvdb1 of=/home/eden/mybackup.img
 
 [sudo] password for eden:
 15215337+0 records in
 15215336+0 records out
 7790252032 bytes (7.8 GB, 7.3 GiB) copied, 71.3802 s, 109 MB/s
+```
+```bash
+$ ll
+total 7607672
+-rw-r--r--. 1 root root 7790252032 Dec  7 15:34 mybackup.img 
 ```
 
 ## Restore using `dd`
