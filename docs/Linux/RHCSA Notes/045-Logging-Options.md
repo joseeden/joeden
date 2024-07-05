@@ -1,7 +1,7 @@
 ---
 title: "Logging Options"
 tags: [Linux, Red Hat, Certifications]
-sidebar_position: 35
+sidebar_position: 45
 last_update:
   date: 7/8/2022
 ---

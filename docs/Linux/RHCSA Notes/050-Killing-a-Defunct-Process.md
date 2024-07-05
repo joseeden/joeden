@@ -1,7 +1,7 @@
 ---
 title: Killing a Defunct Process
 tags: [Linux, Red Hat, Labs, AWS]
-sidebar_position: 40
+sidebar_position: 50
 last_update:
   date: 2/27/2022
 ---

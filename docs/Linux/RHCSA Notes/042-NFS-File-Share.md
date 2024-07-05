@@ -1,7 +1,7 @@
 ---
 title: "NFS file share"
 tags: [Linux, Red Hat, Certifications]
-sidebar_position: 32
+sidebar_position: 42
 last_update:
   date: 1/7/2022
 ---

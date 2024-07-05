@@ -1,7 +1,7 @@
 ---
 title: "Bash Scripts"
 tags: [Linux, Red Hat, Certifications]
-sidebar_position: 37
+sidebar_position: 47
 last_update:
   date: 7/8/2022
 ---
