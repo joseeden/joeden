@@ -596,3 +596,120 @@ Another command to see the UUIDs:
 /dev/xvda1: PARTUUID="07c6574c-7f85-4859-9689-c8090f35545a"
 /dev/xvdb1: UUID="d3e1da6b-5577-4d21-8f78-af81b31246c6" BLOCK_SIZE="512" TYPE="xfs" PARTLABEL="one" PARTUUID="56ffe2f0-90c9-4555-9d0d-49c63b2c8192"
 ```
+
+
+
+## Labeling using tune2fs
+
+Besides getting the specific UUID of the partitions, we can also assign labels to them and we can refer to this labels. To do this, we can use the **tune2fs** utility.
+
+```bash
+[root@tst-rhel ~]# tune2fs --help
+tune2fs 1.45.6 (20-Mar-2020)
+tune2fs: invalid option -- '-'
+Usage: tune2fs [-c max_mounts_count] [-e errors_behavior] [-f] [-g group]
+        [-i interval[d|m|w]] [-j] [-J journal_options] [-l]
+        [-m reserved_blocks_percent] [-o [^]mount_options[,...]]
+        [-r reserved_blocks_count] [-u user] [-C mount_count]
+        [-L volume_label] [-M last_mounted_dir]
+        [-O [^]feature[,...]] [-Q quota_options]
+        [-E extended-option[,...]] [-T last_check_time] [-U UUID]
+        [-I new_inode_size] [-z undo_file] device
+```
+
+Note that tune2fs can only be used for ext2, ext3, and ext4 file types. For XFS types, tune2fs cannot be interpreted. When tune2fs is used on a xfs, it will return an error:
+
+```bash
+Bad magic number in super-block
+```
+
+This simply means that tune2fs doesn't understand the filesystem type. As an example, we have `/dev/xvdb1` which we set to xfs filesystem. 
+
+```bash
+[root@tst-rhel ~]# blkid | grep xvdb
+/dev/xvdb1: UUID="8371f83f-8715-4e38-a3c9-fde7d10a7c97" BLOCK_SIZE="4096" TYPE="ext4" PARTLABEL="one" PARTUUID="56ffe2f0-90c9-4555-9d0d-49c63b2c8192"
+```      
+```bash       
+[root@tst-rhel ~]# mkfs.xfs /dev/xvdb1
+mkfs.xfs: /dev/xvdb1 appears to contain an existing filesystem (ext4).
+mkfs.xfs: Use the -f option to force overwrite.
+```
+```bash 
+[root@tst-rhel ~]# mkfs.xfs /dev/xvdb1 -f
+meta-data=/dev/xvdb1             isize=512    agcount=4, agsize=65472 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=1, sparse=1, rmapbt=0
+         =                       reflink=1
+data     =                       bsize=4096   blocks=261888, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0, ftype=1
+log      =internal log           bsize=4096   blocks=1566, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+```
+```bash 
+[root@tst-rhel ~]# blkid | grep xvdb
+/dev/xvdb1: UUID="69e31de4-d231-4b80-9fcb-40ee1aef0150" BLOCK_SIZE="512" TYPE="xfs" PARTLABEL="one" PARTUUID="56ffe2f0-90c9-4555-9d0d-49c63b2c8192"
+```
+```bash 
+[root@tst-rhel ~]# tune2fs -L "Section-B" /dev/xvdb1
+tune2fs 1.45.6 (20-Mar-2020)
+tune2fs: Bad magic number in super-block while trying to open /dev/xvdb1
+/dev/xvdb1 contains a xfs file system
+```
+
+Because of this, we'll need to change the filesystem to Ext4 and retry tune2fs again.
+
+```bash
+[root@tst-rhel ~]# blkid | grep xvdb
+/dev/xvdb1: UUID="69e31de4-d231-4b80-9fcb-40ee1aef0150" BLOCK_SIZE="512" TYPE="xfs" PARTLABEL="one" PARTUUID="56ffe2f0-90c9-4555-9d0d-49c63b2c8192"
+```
+```bash
+[root@tst-rhel ~]# mkfs.ext4 /dev/xvdb1
+mke2fs 1.45.6 (20-Mar-2020)
+/dev/xvdb1 contains a xfs file system
+Proceed anyway? (y,N) y
+Creating filesystem with 261888 4k blocks and 65536 inodes
+Filesystem UUID: 53120174-378d-4db6-978b-d672660e2b06
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376
+
+Allocating group tables: done
+Writing inode tables: done
+Creating journal (4096 blocks): done
+Writing superblocks and filesystem accounting information: done
+```
+```bash
+[root@tst-rhel ~]# blkid | grep xvdb
+/dev/xvdb1: UUID="53120174-378d-4db6-978b-d672660e2b06" BLOCK_SIZE="4096" TYPE="ext4" PARTLABEL="one" PARTUUID="56ffe2f0-90c9-4555-9d0d-49c63b2c8192"
+```
+
+Retrying tune2fs again:
+
+```bash
+[root@tst-rhel ~]# tune2fs -L 'Section-B' /dev/xvdb1
+tune2fs 1.45.6 (20-Mar-2020)
+
+[root@tst-rhel ~]# blkid | grep xvdb
+/dev/xvdb1: LABEL="Section-B" UUID="53120174-378d-4db6-978b-d672660e2b06" BLOCK_SIZE="4096" TYPE="ext4" PARTLABEL="one" PARTUUID="56ffe2f0-90c9-4555-9d0d-49c63b2c8192"
+```
+
+We can now use the label in fstab to refer to this partition.
+
+```bash
+[root@tst-rhel ~]# vim /etc/fstab
+
+UUID=d35fe619-1d06-4ace-9fe3-169baad3e421 /                       xfs     defaults        0 0
+UUID=e6bcc068-628c-4555-b06e-9cda9563cf8c swap                    swap    defaults        0 0
+
+LABEL=Section-B                          /mnt/diskb1              xfs     defaults        0 0
+```
+
+When we run the mount command again, the system will go through the `/etc/fstab` and it will see the new entry for `/mnt/diskb1` which is pointing to the newly created label.
+
+```bash
+[root@tst-rhel ~]# mount | grep diskb1
+[root@tst-rhel ~]# mount -a
+[root@tst-rhel ~]# mount | grep diskb1
+/dev/xvdb1 on /mnt/diskb1 type ext4 (rw,relatime,seclabel)
+``` 
