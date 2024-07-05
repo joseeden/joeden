@@ -69,6 +69,13 @@ Create a Stratis Pool:
 sudo stratis pool create mypool /dev/xvdc
 ```
 
+:::info[note]
+
+The block device should not have partitions created on it. 
+Please see [Error: Block device appears to be owned.](#error-block-device-appears-to-be-owned)
+
+:::
+
 Verify: 
 
 ```bash
@@ -188,6 +195,42 @@ xvdc                                                                            
   └─stratis-1-private-d6ed18ce28cd4a959fb539f639616f85-flex-mdv                     253:4    0   16M  0 stratis
 ```
 
+## Persistent Stratis 
+
+To ensure that your Stratis configurations and settings remain intact after a system reboot, you need to make the Stratis setup persistent. This involves configuring your Stratis pools, filesystems, and block devices to be recognized and automatically mounted during the boot process.
+
+To start with, get the UUID of the statis pool first. Notice that when you run the command below, it will return two block devices. We need the second one.
+
+```bash
+[root@tst-rhel ~]# blkid | grep stratis
+/dev/xvdc: UUID="5ec2b078ec234af58998ee9c812a486a" POOL_UUID="d6ed18ce28cd4a959fb539f639616f85" BLOCKDEV_SECTORS="18874368" BLOCKDEV_INITTIME="1640958133" TYPE="stratis"
+/dev/mapper/stratis-1-d6ed18ce28cd4a959fb539f639616f85-thin-fs-7c73f2718b0a4aa2957e9686b3733f3a: UUID="7c73f271-8b0a-4aa2-957e-9686b3733f3a" BLOCK_SIZE="512" TYPE="xfs"
+```
+
+Since we already manually mounted the stratis pool, we need to unmount it.
+
+```bash
+sudo umount /mnt/diskmyfs
+```
+
+Add an entry in `/etc/fstab`:
+
+```bash
+[root@tst-rhel ~]# vim /etc/fstab
+
+# STRATIS
+UUID="49e5d8a1-78e5-4fde-ad6d-b5692f697058"     /mnt/diskfs       xfs     nofail,x-systemd.device-timeout=1ms 0 0
+```
+
+Restart the EC2 instance and verify once its up again.
+
+```bash
+sudo reboot  
+```
+```bash
+blkid | grep stratis 
+```
+
 
 
 ## Error: Block device appears to be owned
@@ -243,3 +286,23 @@ For this example, we'll just clear the empty block device, `/dev/xvdc`, using `w
 ```
 
 This solved the issue and I was able to create the Stratis pool on `/dev/xvdc`.
+
+## Error: fstab issue after restarting instance 
+
+I encountered this error when I was trying to mount the Stratis device persistently through `/etc/fstab`. I initially ran `mount -a` and it did not returned any issue so I was a bit sure adding the `/etc/fstab` entry will not cause any issue. 
+
+After rebooting the system, the EC2 instance became unreachable. After some troubleshooting, I attached the EBS volume to another instance, access it, and commented out the line for the stratis volume in the `/etc/fstab`. 
+
+After it worked on the test EC2 instance, I detached the EBS volume returned it to the original EC2 instance. It worked perfectly after that. At this point I double-checked the UUID of the stratis pool and nothing seems wrong.
+
+After some searching online, I found a solution that worked: [Slow boot - "a start job is running for dev-disk-by..."](https://askubuntu.com/questions/711016/slow-boot-a-start-job-is-running-for-dev-disk-by)
+
+To resolve the issue of EC2 instance being unreachable after rebooting the system, I modified the Stratis entry in the `/etc/fstab.` Instead of **defaults**, I used other options:
+
+```bash
+$ vim /etc/fstab
+
+UUID="49e5d8a1-78e5-4fde-ad6d-b5692f697058"     /mnt/diskfs       xfs     nofail,x-systemd.device-timeout=1ms 0 0
+```
+
+Afterwards, I restarted the EC2 instance, logged back, and verified that it worked.
