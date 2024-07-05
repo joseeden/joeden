@@ -95,9 +95,6 @@ major minor  #blocks  name
 
 There are several storage options available, including partitions, LVM (Logical Volume Manager), Stratis, and VDO (Virtual Data Optimizer). Each option offers different features and benefits, depending on the use case.
 
-![](/img/docs/sv-lvm-vdo.png)
-
-
 - **Partitions**
 
   - Classical solution which can be used in all cases. 
