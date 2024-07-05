@@ -899,3 +899,207 @@ xvdc
 ├─xvdc2 ext3         7d123d52-b4c3-4a03-b077-c03761f57d0e /mnt/diskc2
 └─xvdc3 ext3         b8c13319-646e-4933-87e0-27bf530e04ec /mnt/diskc3
 ```
+
+
+## Systemd Mounts
+
+Systemd provides a mechanism for managing filesystem mounts through systemd mount units. These units are configurations that specify how and where a filesystem should be mounted during the system boot process or on demand. Systemd mount units offer a more flexible options for handling dependencies, automounting, and monitoring. They are particularly useful in environments where dynamic management of mounts is required, such as with network filesystems or removable media.
+
+![](Images/sv-systemd-mounts.png)
+
+### Systemd mount units
+
+Here's an example of how you can define a systemd mount unit:
+
+```bash
+[root@tst-rhel ~]# systemctl cat tmp.mount
+
+[Unit]
+Description=Temporary Directory (/tmp)
+Documentation=man:hier(7)
+Documentation=https://www.freedesktop.org/wiki/Software/systemd/APIFileSystems
+ConditionPathIsSymbolicLink=!/tmp
+DefaultDependencies=no
+Conflicts=umount.target
+Before=local-fs.target umount.target
+After=swap.target
+
+[Mount]
+What=tmpfs
+Where=/tmp
+Type=tmpfs
+Options=mode=1777,strictatime,nosuid,nodev
+
+# Make 'systemctl enable tmp.mount' work:
+[Install]
+WantedBy=local-fs.target
+```
+
+Check the status:
+
+```bash
+[root@tst-rhel ~]# systemctl status tmp.mount
+● tmp.mount - Temporary Directory (/tmp)
+   Loaded: loaded (/usr/lib/systemd/system/tmp.mount; disabled; vendor preset: disabled)
+   Active: inactive (dead)
+    Where: /tmp
+     What: tmpfs
+     Docs: man:hier(7)
+           https://www.freedesktop.org/wiki/Software/systemd/APIFileSystems
+```
+
+Enable it: 
+
+```bash
+[root@tst-rhel ~]# systemctl enable --now tmp.mount
+Created symlink /etc/systemd/system/local-fs.target.wants/tmp.mount → /usr/lib/systemd/system/tmp.mount.
+```
+
+Checking the status again, we see that the `tmp.mount` is mounted using systemd:
+
+```bash
+[root@tst-rhel ~]# systemctl status tmp.mount
+● tmp.mount - Temporary Directory (/tmp)
+   Loaded: loaded (/usr/lib/systemd/system/tmp.mount; enabled; vendor preset: disabled)
+   Active: active (mounted) since Fri 2021-12-31 00:02:29 +08; 2min 24s ago
+    Where: /tmp
+     What: tmpfs
+     Docs: man:hier(7)
+           https://www.freedesktop.org/wiki/Software/systemd/APIFileSystems
+    Tasks: 0 (limit: 100840)
+   Memory: 4.0K
+   CGroup: /system.slice/tmp.mount
+
+Dec 31 00:02:29 tst-rhel systemd[1]: Mounting Temporary Directory (/tmp)...
+Dec 31 00:02:29 tst-rhel systemd[1]: Mounted Temporary Directory (/tmp).
+```
+
+We can also confirm that the `tmp.mount` is mounted by running the `mount` command:
+
+```bash
+[root@tst-rhel ~]# mount | grep tmp
+devtmpfs on /dev type devtmpfs (rw,nosuid,seclabel,size=8067292k,nr_inodes=2016823,mode=755)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev,seclabel)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,seclabel,mode=755)
+tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,seclabel,mode=755)
+tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=1620980k,mode=700,uid=1000,gid=1000)
+tmpfs on /tmp type tmpfs (rw,nosuid,nodev,seclabel)
+```
+
+### Mounting a partition
+
+Now that we understand how systemd mount works, we'll unmount /dev/xvdb1 and remove it's entry in /etc/fstab.
+
+```bash
+[root@tst-rhel ~]# lsblk -a
+NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0   50G  0 disk
+├─xvda1 202:1    0    1M  0 part
+└─xvda2 202:2    0   50G  0 part /
+xvdb    202:16   0    5G  0 disk
+└─xvdb1 202:17   0 1023M  0 part /mnt/diskb1
+xvdc    202:32   0   25G  0 disk
+└─xvdc1 202:33   0   25G  0 part
+```
+
+Unmount the partition and verify that it's removed. 
+
+```bash 
+[root@tst-rhel ~]# umount /mnt/diskb1
+[root@tst-rhel ~]# lsblk -a
+NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0   50G  0 disk
+├─xvda1 202:1    0    1M  0 part
+└─xvda2 202:2    0   50G  0 part /
+xvdb    202:16   0    5G  0 disk
+└─xvdb1 202:17   0 1023M  0 part
+xvdc    202:32   0   25G  0 disk
+└─xvdc1 202:33   0   25G  0 part
+```
+
+Remove the entry from `/etc/fstab`: 
+
+```bash
+[root@tst-rhel ~]# vim /etc/fstab
+
+UUID=d35fe619-1d06-4ace-9fe3-169baad3e421 /                       xfs     defaults        0 0
+UUID=e6bcc068-628c-4555-b06e-9cda9563cf8c swap                    swap    defaults        0 0
+```
+
+Create a mount file for /dev/xvdb1 by simply copying the existing `tmp.mount` to the appropriate directory  `/etc/systemd/system/` and editing it. Notice that we named the mount file **mnt-diskb1.mount**. This is because the mount point is `/mnt/diskb1`. If mount point is only `diskb1`, then the mount file should be `diskb1.mount`.
+
+```bash
+cp /usr/lib/systemd/system/tmp.mount  /etc/systemd/system/mnt-diskb1.mount
+```
+```bash
+[root@tst-rhel ~]# vim /etc/systemd/system/mnt-diskb1.mount
+
+[Unit]
+Description=Section B
+Documentation=man:hier(7)
+Conflicts=umount.target
+Before=local-fs.target umount.target
+
+[Mount]
+What=LABEL='Section-B'
+Where=/mnt/diskb1
+Type=ext4
+Options=defaults
+
+# Make 'systemctl enable tmp.mount' work:
+[Install]
+WantedBy=local-fs.target
+```
+
+Afterwards, reload the daemon and then check the status. Notice in the **Loaded** line, it uses the mount file:
+
+```bash
+[root@tst-rhel ~]# systemctl daemon-reload
+[root@tst-rhel ~]# systemctl status mnt-diskb1.mount
+● mnt-diskb1.mount - Section B
+   Loaded: loaded (/etc/systemd/system/mnt-diskb1.mount; static; vendor preset: disabled)
+   Active: inactive (dead)
+    Where: /mnt/diskb1
+     What: LABEL='Section-B'
+     Docs: man:hier(7)
+
+Dec 30 23:31:20 tst-rhel systemd[1]: mnt-diskb1.mount: Succeeded.
+Dec 30 23:46:24 tst-rhel systemd[1]: mnt-diskb1.mount: Succeeded.
+Dec 31 00:08:41 tst-rhel systemd[1]: mnt-diskb1.mount: Succeeded.
+```
+
+Enable the unit. Disregard the warning message for now. Check the status again.
+
+```bash
+[root@tst-rhel ~]# systemctl enable --now mnt-diskb1.mount
+
+The unit files have no installation config (WantedBy, RequiredBy, Also, Alias
+settings in the [Install] section, and DefaultInstance for template units).
+This means they are not meant to be enabled using systemctl.
+Possible reasons for having this kind of units are:
+1) A unit may be statically enabled by being symlinked from another unit's
+   .wants/ or .requires/ directory.
+2) A unit's purpose may be to act as a helper for some other unit which has
+   a requirement dependency on it.
+3) A unit may be started when needed via activation (socket, path, timer,
+   D-Bus, udev, scripted systemctl call, ...).
+4) In case of template units, the unit is meant to be enabled with some
+   instance name specified.
+```
+
+```BASH 
+[root@tst-rhel ~]# systemctl status mnt-diskb1.mount
+
+● mnt-diskb1.mount - Section B
+   Loaded: loaded (/etc/systemd/system/mnt-diskb1.mount; static; vendor preset: disabled)
+   Active: active (mounted) since Fri 2021-12-31 00:33:38 +08; 13s ago
+    Where: /mnt/diskb1
+     What: /dev/xvdb1
+     Docs: man:hier(7)
+    Tasks: 0 (limit: 100840)
+   Memory: 32.0K
+   CGroup: /system.slice/mnt-diskb1.mount
+
+Dec 31 00:33:37 tst-rhel systemd[1]: Mounting Section B...
+Dec 31 00:33:38 tst-rhel systemd[1]: Mounted Section B.
+```
