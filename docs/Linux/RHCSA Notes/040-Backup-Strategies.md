@@ -65,4 +65,8 @@ To restore the backup, reverse the process, specifying the backup image as **if*
 sudo dd if=/home/eden/mybackup.img of=/dev/xvdc1
 ```
 
-**Note**: Always restore to an unmounted partition (`/dev/xvdc1` in this case). This ensures data integrity and prevents conflicts with active filesystem operations.
+:::info[note]
+
+Always restore to an unmounted partition (`/dev/xvdc1` in this case). This ensures data integrity and prevents conflicts with active filesystem operations.
+
+:::
