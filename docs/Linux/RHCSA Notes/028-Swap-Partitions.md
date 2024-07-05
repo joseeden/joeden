@@ -11,7 +11,10 @@ last_update:
 
 **Swap partitions** are special partitions designed for processes and for the Linux system to use if it needs "already-ready" spaces before memory is available or in cases when memory runs out. Note that it is much slower than the RAM available in your system.
 
-![](/img/docs/sv-swap.png)
+- SWAP is RAM that is emulated on disk.
+- All Linux system should have some swap, depending on the server use.
+- Swap can be created on any block device, including swap files. 
+- To activate swap space, use `swapon`.
 
 Rule of Thumb: 
 
@@ -44,10 +47,6 @@ eden@tst-rhel:mnt $ sudo cat /proc/swaps
 Filename                                Type            Size    Used    Priority
 ```
 
-There are two tools we can use to create swap partitions: 
-
-- `fdisk`
-- `Parted`
 
 ## Lab Setup 
 
@@ -71,7 +70,15 @@ Sector size (logical/physical): 512 bytes / 512 bytes
 I/O size (minimum/optimal): 512 bytes / 512 bytes
 ```
 
-## Method 1: Using fdisk
+## Creating Swap 
+
+There are two tools we can use to create swap partitions: 
+
+- `fdisk`
+- `Parted`
+
+
+### Using fdisk
 
 Create a new partition:
 
@@ -206,7 +213,7 @@ Filename                                Type            Size    Used    Priority
 Note that if we reboot the system, the configuration we did wouldn't persist. We need to add an entry to fstab.
 
 
-## Method 2: Using parted
+### Using parted
 
 I removed the old EBS volumes and created two additional EBS volumes, attached them to my instance, and reused the same disk names - **xvdb** and **xvdc**.
 
@@ -296,7 +303,7 @@ Mem:          15829         208       15242           1         379       15358
 Swap:           953           0         953
 ```
 
-### Persistent Swap
+## Persistent Swap
 
 Before we do anything, make sure `/dev/xvdb2` is not mounted. 
 
