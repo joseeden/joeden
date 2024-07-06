@@ -11,8 +11,8 @@ last_update:
 
 Asymmetric encryption uses a pair of keys: a public key for encryption and a private key for decryption. 
 
-- <mark>**Public key encrypts data**</mark>, and only the corresponding private key can decrypt it. 
-- <mark>**Private key decrypts the data**</mark>, can be used to sign data, which the public key can verify.
+- **Public key encrypts data**, and only the corresponding private key can decrypt it. 
+- **Private key decrypts the data**, can be used to sign data, which the public key can verify.
 
 This dual-key system allows for secure communication, digital signatures, and secure key exchange without requiring shared secrets.
 

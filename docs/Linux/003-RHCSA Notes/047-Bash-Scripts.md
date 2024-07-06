@@ -916,7 +916,7 @@ find "$directory" -type f -name "*.md" -exec awk 'BEGIN { filename = ""; in_bloc
 
 ## Apply second image syntax change 
 
-This is continuation of the image syntax change above. I needed to make sure that all image are embedded the same way before I change the directory. I was going to add this onto the first script, but the first script only applies to files with the "<img>" tags. 
+This is continuation of the image syntax change above. I needed to make sure that all image are embedded the same way before I change the directory. I was going to add this onto the first script, but the first script only applies to files with the "img" tags. 
 
 This script will apply to all files that has an image link with the following format:
 

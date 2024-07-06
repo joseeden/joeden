@@ -195,8 +195,8 @@ Asymmetric cryptography uses a pair of keys:
 
 The public key can be shared openly, but the private key must remain confidential.
 
-- <mark>**Public key encrypts data**</mark>, and only the corresponding private key can decrypt it. 
-- <mark>**Private key decrypts the data**</mark>, can be used to sign data, which the public key can verify.
+- **Public key encrypts data**, and only the corresponding private key can decrypt it. 
+- **Private key decrypts the data**, can be used to sign data, which the public key can verify.
 
 
 <div class="img-center">
@@ -259,15 +259,15 @@ Types of Ciphers:
 
 Stream Ciphers encrypt data bit by bit or byte by byte in a continuous stream.
 
-- Performs encryption on <mark>**single byte at a time.**</mark>
+- Performs encryption on **single byte at a time.**
 - Uses a key stream generator to create a pseudo-random sequence of bits (the key stream).
 - The key stream is then XORed with the plaintext to produce ciphertext.
 
 **Common Features**:
 
-- <mark>**Uses same key for encryption and decryption.**</mark>
-- Implemented mostly on <mark>**hardware-based solutions**
-- Often used in <mark>**real-time applications**</mark> where data is continuously transmitted (e.g., streaming services).
+- Uses same key for encryption and decryption.
+- Implemented mostly on hardware-based solutions.
+- Often used in real-time applications where data is continuously transmitted (e.g., streaming services).
 - Vulnerable to certain types of attacks if key stream is reused or not sufficiently random.
 
 **Examples**: 
@@ -280,13 +280,13 @@ Stream Ciphers encrypt data bit by bit or byte by byte in a continuous stream.
 
 Block Ciphers break the input into fixed-size blocks (e.g., 64-bit or 128-bit) and performs the encryption on each block.
 
-- Performs encryption on <mark>**per block basis.**</mark>
+- Performs encryption on per block basis.
 - A block of plaintext is processed with a key to produce a block of ciphertext.
 - Multiple rounds of transformation can also be used (e.g., substitution and permutation).
 
 **Common Features**:
-- <mark>**Easier to implement, less susceptible to security problems.**
-- Implemented mostly on <mark>**software solutions**
+- Easier to implement, less susceptible to security problems.
+- Implemented mostly on software solutions.
 - Often used in protocols and file encryption, where data is processed in chunks.
 - Require padding when the plaintext doesn't evenly divide into block sizes.
 - Can be operated in various modes to enhance security or support specific applications.
