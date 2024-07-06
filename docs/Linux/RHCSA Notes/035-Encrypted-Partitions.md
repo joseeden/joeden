@@ -6,6 +6,8 @@ last_update:
   date: 12/31/2021
 ---
 
+## Overview 
+
 Encrypting partitions ensures data security on your systems. By encrypting partitions, you protect sensitive data from unauthorized access. In this guide, we'll set up encrypted partitions using `dm_crypt`, a Linux kernel module that provides transparent encryption of block devices.
 
 ![](/img/docs/sv-luks.png)
