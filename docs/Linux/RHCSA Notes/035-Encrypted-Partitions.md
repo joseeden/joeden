@@ -6,12 +6,19 @@ last_update:
   date: 12/31/2021
 ---
 
-## Encrypted Partitions
-
 Encrypting partitions ensures data security on your systems. By encrypting partitions, you protect sensitive data from unauthorized access. In this guide, we'll set up encrypted partitions using `dm_crypt`, a Linux kernel module that provides transparent encryption of block devices.
 
 ![](/img/docs/sv-luks.png)
-![](/img/docs/sv-luks-2.png)
+
+Outline:
+
+- Use `parted` to create partitions. 
+- Use `cryptsetup luksFormat` to format the device.
+- Run `cryptsetup luksOpen` to open device and create a device mapper name. 
+- Mount resulting device mapper name. 
+- To automate `cryptsetup luksOpen`, add an entry to `/etc/crypttab`.
+- To automate mounting, add an entry to `/etc/fstab`.
+
 
 ## Lab Setup 
 
@@ -28,9 +35,7 @@ xvdf    202:16   0  10G  0 disk
 ```
 
 
-## Steps to Encrypt Partitions
-
-### 1. Compile System to Support Encryption
+## Encryption is supported
 
 First, ensure your system supports encryption by checking if the `dm_crypt` module is compiled and loaded into your kernel.
 
@@ -89,8 +94,9 @@ dm_crypt               49152  0
 dm_mod                151552  8 dm_crypt,dm_multipath,dm_log,dm_mirror
 ```
 
+## Steps to Encrypt Partitions
 
-### 2. Format Partition
+### 1. Format Partition
 
 Formatting a partition is a necessary step to prepare it for use. In this example, we'll create and format a new partition on `/dev/xvdf`.
 
@@ -155,7 +161,7 @@ Within the `fdisk` interface, follow these steps:
     Syncing disks.
     ```
 
-### 3. Setup Partition Using `cryptsetup`
+### 2. Setup Partition Using `cryptsetup`
 
 Encrypting a partition involves setting up **LUKS (Linux Unified Key Setup)** on the partition. Note that this process will overwrite any existing data on the partition. For this lab, we're using a 10GB disk.
 
@@ -198,7 +204,7 @@ cat /proc/crypto
 ```    
 
 
-### 4. Open Partition and Format
+### 3. Open Partition and Format
 
 To access the encrypted partition, we need to open it and assign it a name. Then, we can format it with a filesystem.
 
@@ -223,7 +229,7 @@ Proceed anyway? (y,N) y
 /dev/xvdf1 is apparently in use by the system; will not make a filesystem here!
 ```
 
-### 5. Mount the Partition
+### 4. Mount the Partition
 
 After opening and formatting the encrypted partition, the next step is to mount it to a directory so that it can be used like any other filesystem. 
 
@@ -276,7 +282,7 @@ sudo umount /mnt/diskencrypt/
 sudo cryptsetup luksClose myencryption
 ```
 
-### 6. Ready to Use
+### 5. Ready to Use
 
 The real benefit of the encryption is that no one can simply access the files in the encrypted partition. To access the file, you must do the following steps.
 
@@ -356,7 +362,7 @@ mount: /mnt/disklvm: unknown filesystem type 'crypto_LUKS'.
 
 This is a quick guide to setting up encrypted partitions using LUKS (Linux Unified Key Setup) on a block device. 
 
-### Create Label and Partition
+### 1. Create Label and Partition
 
 First, we identify the block device to be partitioned and create a new partition label.
 
@@ -410,7 +416,7 @@ Number  Start   End     Size    File system  Name   Flags
 Information: You may need to update /etc/fstab.
 ```
 
-### Configure Encryption
+### 2. Configure Encryption
 
 Use `cryptsetup` to format the partition with LUKS encryption.
 Format Partition with LUKS:
@@ -428,7 +434,7 @@ Enter passphrase for /dev/xvdb1:
 Verify passphrase:
 ```
 
-### Open Encrypted Device
+### 3. Open Encrypted Device
 
 Open the encrypted partition and map it to a name.
 
@@ -446,7 +452,7 @@ crw-------. 1 root root 10, 236 Jan  2 16:19 control
 lrwxrwxrwx. 1 root root       7 Jan  2 16:47 mysecretplace -> ../dm-0
 ```
 
-### Create Filesystem
+### 4. Create Filesystem
 
 Create an XFS filesystem on the mapped encrypted device.
 
@@ -464,7 +470,7 @@ log      =internal log           bsize=4096   blocks=1566, version=2
 realtime =none                   extsz=4096   blocks=0, rtextents=0
 ```
 
-### Create Mountpoint and mount
+### 5. Create Mountpoint and mount
 
 Create a directory to mount the encrypted partition.
 
