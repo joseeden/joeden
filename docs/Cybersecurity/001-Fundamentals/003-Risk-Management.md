@@ -277,9 +277,10 @@ Risk treatment involves deciding on the most appropriate actions based on manage
   - Aligns likelihood of occurrence with impact.
   - Provides a common language for team and management.
 <br>
-    <p align=center>
-    <img width=300 src='../../Images/risk-matrix-for-prioritization.png'>
-    </p>
+
+<div class="img-center"> 
+![](/img/docs/risk-matrix-for-prioritization.png)
+</div>
 
 - **Priority Assignment Factors**
   - Business priorities.
@@ -355,9 +356,9 @@ Important terms:
 
 Example:
 
-![](../../Images/sec+-eg-computations.png)
+![](/img/docs/sec+-eg-computations.png)
 
-![](../../Images/sec+-ale-computation-example.png)
+![](/img/docs/sec+-ale-computation-example.png)
 
 
 ### Qualitative Risk Assessment
@@ -416,19 +417,19 @@ Components:
 
 Example:
 
-![](../../Images/sec+-risk-register-example.png)
+![](/img/docs/sec+-risk-register-example.png)
 
 ### Risk Heat Map 
 
 Take risk severity levels and map visually by colors.
 
-![](../../Images/sec+-risk-heat-map-example.png)
+![](/img/docs/sec+-risk-heat-map-example.png)
 
 ### Risk Matrix 
 
 Centralized table containing all the risk details.
 
-![](../../Images/sec+-risk-matrix-exampleee.png)
+![](/img/docs/sec+-risk-matrix-exampleee.png)
 
 ## Prioritizing Risks 
 
