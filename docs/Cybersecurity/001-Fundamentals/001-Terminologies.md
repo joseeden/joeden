@@ -1,10 +1,15 @@
+---
+title: "Terminologies "
+tags: [Cybersecurity]
+sidebar_position: 1
+last_update:
+  date: 1/30/2024
+---
 
-# Terminologies 
 
 This guide is based on the [Official ISC2 CC (Certified in Cybersecurity) Self-paced Training.](https://www.isc2.org/training/online-self-paced/cc-online-self-paced)
 
 | **Terms**                                     | **Definitions**                                                                                                                                                                                                                                                                                                                                                               |
-|-----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Adequate Security**                          | Security matching the risk and potential harm from information loss, misuse, or unauthorized access. (Source: OMB Circular A-130)                                                                                                                                                                                                                                              |
 | **Administrative Controls**                    | Controls through policies and procedures, e.g., access control and multi-personnel requirements for specific operations.                                                                                                                                                                                                                                                    |
 | **Adverse Events**                             | Negative consequences events, such as system crashes, network floods, or unauthorized system access.                                                                                                                                                                                                                                                                      |
@@ -121,7 +126,6 @@ This guide is based on the [Official ISC2 CC (Certified in Cybersecurity) Self-p
 | **Protocols**                                            | A set of rules (formats and procedures) to implement and control some type of association (communication) between systems. (Source: NIST SP 800-82 Rev. 2)                                                                                                                                                                                                                                      |
 | **Public Cloud**                                         | Cloud infrastructure provisioned for open use by the general public, owned, managed, and operated by various entities, existing on the premises of the cloud provider. (Source: NIST SP 800-145 )                                                                                                                                                                                            |
 | **Terms**                                | **Definitions**                                                                                                                                                                                                                                                          |
-|------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Qualitative Risk Analysis**            | A method for risk analysis based on the assignment of a descriptor such as low, medium, or high. (Source: NISTIR 8286)                                                                                                                                                  |
 | **Quantitative Risk Analysis**          | A method for risk analysis where numerical values are assigned to both impact and likelihood based on statistical probabilities and monetarized valuation of loss or gain. (Source: NISTIR 8286)                                                                        |
 | **Ransomware**                           | A type of malicious software that locks the computer screen or files, preventing or limiting a user from accessing their system and data until money is paid.                                                                                                                                                                        |

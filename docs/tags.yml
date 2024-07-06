@@ -42,3 +42,7 @@ AWS:
   label: 'AWS'
   permalink: '/AWS'
   description: 'Docs related to AWS'
+Cybersecurity:
+  label: 'Cybersecurity'
+  permalink: '/Cybersecurity'
+  description: 'Docs related to Cybersecurity'

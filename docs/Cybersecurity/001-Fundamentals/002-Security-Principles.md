@@ -1,5 +1,10 @@
-
-# Security Principles
+---
+title: "Security Principles"
+tags: [Cybersecurity]
+sidebar_position: 1
+last_update:
+  date: 1/30/2024
+---
 
 
 ## Information Security 
@@ -459,6 +464,4 @@ Ensures that the policies and procedures are properly executed.
 - **Policy administrator** - establish and manage the access policies.
 - **Policy enforcement points** - acts as gatekeeper which allow or restrict access.
 
-----------------------------------------------
 
-[Back to main page](../../README.md#security)

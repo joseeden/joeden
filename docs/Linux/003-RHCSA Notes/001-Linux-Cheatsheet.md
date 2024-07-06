@@ -41,35 +41,3 @@ Now, onto the main material! 😃 -->
 | <code>vim *file-name*</code> | Edit *file-name* through vi improved| 
 | <code>nano file-name</code> | Edit *file-name* through nano| 
 
-
-## Specific 
-
-To search for a keyword in all files within a directory and its subdirectories, excluding a specific file:
-
-```bash
-grep -r --exclude="name-of-files" "keyword" /path/to/directory 
-```
-
-Example: To check the values for "sidebar_position" for all files within the current directory, wwhile excluding dummy files called "create-a-document.md":
-
-```bash
-grep -r --exclude="create-a-document.md" "sidebar_position:" . 
-```
-
-Output:
-
-```bash
-./Amazon Web Services/Troubleshooting Notes/001-Attaching-multiple-EBS.md:sidebar_position: 1
-./Amazon Web Services/Troubleshooting Notes/002-Expanding-EBS-Volumes.md:sidebar_position: 2
-./Amazon Web Services/Troubleshooting Notes/003-EBS-stuck-in-Attaching.md:sidebar_position: 4
-./Amazon Web Services/Troubleshooting Notes/004-EC2-Stuck-in-Initializing.md:sidebar_position: 52
-./intro.md:sidebar_position: 1
-./Linux/Linux Security/001-IPTables.md:sidebar_position: 1
-./Linux/Linux Security/009-IPTables-and-getting-locked-out.md:sidebar_position: 9
-./Linux/Linux Security/010-Firewalld.md:sidebar_position: 2
-./Linux/Linux Security/020-SSH-Based-Logins.md:sidebar_position: 3
-./Linux/Linux Security/030-SELinux.md:sidebar_position: 4
-./Linux/Linux Security/040-Security-Updates.md:sidebar_position: 99
-./Linux/RHCSA Labs/Lab 000 - Exam Objectives/README.md:sidebar_position: 1
-./Linux/RHCSA Labs/Lab 001 - Basic Installation/README.md:sidebar_position: 1 
-```

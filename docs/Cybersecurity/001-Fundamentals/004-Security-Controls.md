@@ -1,6 +1,10 @@
-
-# Security Controls 
-
+---
+title: "Security Controls "
+tags: [Cybersecurity]
+sidebar_position: 1
+last_update:
+  date: 1/30/2024
+---
 
 
 ## Security Control 
@@ -153,6 +157,4 @@ Bollards are not typically considered a corrective security control.
 
 Administrative controls are implemented through policies, procedures, and training, while technical controls use technology and hardware solutions to protect systems and data.
 
-----------------------------------------------
 
-[Back to main page](../../README.md#security)    

@@ -1,6 +1,10 @@
-
-# Governance and Compliance 
-
+---
+title: "Governance and Compliance "
+tags: [Cybersecurity]
+sidebar_position: 1
+last_update:
+  date: 1/30/2024
+---
 
 
 ## Governance 
@@ -270,6 +274,4 @@ Automated compliance systems can streamline data collection, improve accuracy, a
   - Potential termination of business agreements and partnerships.
 
 
-----------------------------------------------
 
-[Back to main page](../../README.md#security)    

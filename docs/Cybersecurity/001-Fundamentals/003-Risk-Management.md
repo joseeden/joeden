@@ -1,7 +1,10 @@
-
-# Risk Management 
-
-
+---
+title: "Risk Management "
+tags: [Cybersecurity]
+sidebar_position: 1
+last_update:
+  date: 1/30/2024
+---
 
 
 ## Importance of Risk Management 
@@ -277,10 +280,14 @@ Risk treatment involves deciding on the most appropriate actions based on manage
   - Aligns likelihood of occurrence with impact.
   - Provides a common language for team and management.
 <br>
+    
+<div class="img-center">
 
-<div class="img-center"> 
-![](/img/docs/risk-matrix-for-prioritization.png)
+    ![](/img/docs/risk-matrix-for-prioritization.png)
+    
+
 </div>
+
 
 - **Priority Assignment Factors**
   - Business priorities.
@@ -642,6 +649,4 @@ Process of communicating information about risk management activities, including
 - Often presented in the form of a monthly risk report.
 - Shared with stakeholders and potentially the clients.
 
-----------------------------------------------
 
-[Back to main page](../../README.md#security)    

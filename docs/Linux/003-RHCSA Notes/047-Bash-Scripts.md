@@ -429,3 +429,726 @@ done
 ```
 
 </details>
+
+
+## Remove specific line on files 
+
+I used this script to remove a specific line on all files in the currect directory:
+
+```bash
+[Back to main page](../../README.md#security) 
+```
+
+**Usage:**
+
+```bash
+./remove_line.sh /path/to-directory
+```
+```bash
+## If current directory 
+./remove_line.sh . 
+```     
+
+**Output:** 
+
+```bash
+Removing "[Back to main page](../../README.md#security)" line in ./002-Security-Principles.md
+Removing "[Back to main page](../../README.md#security)" line in ./003-Risk-Management.md
+Removing "[Back to main page](../../README.md#security)" line in ./004-Security-Controls.md
+Removing "[Back to main page](../../README.md#security)" line in ./005-Governance-Elements.md
+Removing "[Back to main page](../../README.md#security)" line in ./006-Incident-Responses.md
+Removing "[Back to main page](../../README.md#security)" line in ./007-Business-Continuity.md
+Removing "[Back to main page](../../README.md#security)" line in ./008-Disaster-recovery.md
+```
+
+
+**Script:**
+
+<details>
+  <summary> remove_line.sh </summary>
+
+```bash
+#!/bin/bash
+
+# Search for the line in all files in the specified directory
+find "$1" -type f ! -name "create-a-document.md" -exec grep -rl "\[Back to main page\](../../README.md#security)" {} \; | while read -r file; do
+    sed -i '/\[Back to main page\](\.\.\/\.\.\/README\.md#security)/d' "$file"
+done
+```
+
+</details>
+
+
+
+## Change headings to front matter 
+
+I used this when I was migrating all my docs to Docusaurus. All docs starts with a title heading at the top of the file. Example:
+
+```
+# This is the title heading  
+```
+
+I wanted to replace the title heading  with a front matter:
+
+```bash
+---
+title: "This is the title heading"
+tags: [Cybersecurity]
+sidebar_position: 1
+last_update:
+  date: 1/30/2024
+--- 
+```
+
+**Usage:** 
+
+```bash
+./change_headings.sh /path/to-directory
+```
+```bash
+## If current directory 
+./change_headings.sh . 
+```  
+
+**Output:**
+
+```bash
+Changed headings in ./001-Terminologies.md
+Changed headings in ./002-Security-Principles.md
+Changed headings in ./003-Risk-Management.md
+Skipping ./004-Security-Controls.md as it already starts with '---'.
+Changed headings in ./005-Governance-Elements.md 
+Changed headings in ./006-Incident-Responses.md
+Changed headings in ./007-Business-Continuity.md
+Skipping ./008-Disaster-recovery.md as it already starts with '---'.
+```
+
+If the file already has a frontmatter, it will skip the file.
+
+**Script:**
+
+<details>
+  <summary> change_headings.sh </summary>
+
+```bash
+#!/bin/bash
+
+directory="$1"
+
+if [ -z "$directory" ]; then
+    echo "**Usage:** $0 /path/to/directory"
+    exit 1
+fi
+
+if [ ! -d "$directory" ]; then
+    echo "Directory $directory not found."
+    exit 1
+fi
+
+# Iterate over each .md file in the directory
+for file in "$directory"/*.md; do
+    if [ -f "$file" ]; then
+
+        # Check if the first line is "---"
+        # if yes, then file has been processed already, skip file, go to next.
+        first_line=$(head -n 1 "$file")
+        if [ "$first_line" = "---" ]; then
+            echo "Skipping $file as it already starts with '---'."
+            continue
+        fi
+
+        # Proceed with metadata insertion
+        if [ -z "$first_line" ]; then
+
+            # If first line is empty, replace with "---" and add metadata
+            sed -i '1s/^$/---/' "$file"
+            sed -i '2s/^# \(.*\)$/title: "\1"\ntags: [Cybersecurity]\nsidebar_position: 1\nlast_update:\n  date: 1\/30\/2024\n---/' "$file"
+            echo "Changed headings in $file"
+        else
+
+            # If first line is not empty, add metadata assuming existing heading
+            sed -i '1s/^/# /' "$file"  # Assuming first line is a heading
+            sed -i '2i\
+title: "Title Placeholder"\
+tags: [Cybersecurity]\
+sidebar_position: 1\
+last_update:\
+  date: 1\/30\/2024\
+---' "$file"
+            echo "Added metadata to $file"
+        fi
+    fi
+done
+
+echo "All .md files in $directory processed."
+```
+
+</details>
+
+
+## Remove TOC 
+
+I used this when I was migrating all my docs to Docusaurus. All docs starts with a front matter section, followed by the table of contents (TOC) section, then the first subheading. Example:
+
+```bash
+---
+title: "Indicators of Compromise"
+tags: [Cybersecurity]
+sidebar_position: 1
+last_update:
+  date: 1/30/2024
+---
+
+- [Account Lockouts](#account-lockouts)
+- [Concurrent Session Utilization](#concurrent-session-utilization)
+- [Blocked Content](#blocked-content)
+- [Impossible Travel](#impossible-travel)
+- [Resource Consumption](#resource-consumption)
+- [Resource Inaccessibility](#resource-inaccessibility)
+- [Out-of-Cycle Logging](#out-of-cycle-logging)
+- [Missing Logs](#missing-logs)
+- [Published or Documented Attacks](#published-or-documented-attacks)
+
+
+## Account Lockouts
+```
+
+How the script works:
+
+- It tries to find the end of the front matter section, which is delimited by the second "---".
+- It determines the line number of the second "---". Example: line 7
+- It then adds 2 to the line number (7+2), then saves it to a variable. Example: toc_start=9
+- It tries to find the first subheading, which is the first occurence of "##"
+- It determines the line number of the first "##". Example: line 39
+- It then substract 2 to the line number (39-2), then saves to variable. Example toc_end=37
+- It now determines that the TOC section is from lines 9 to 37. 
+- It proceeds this lines.
+
+**Usage:** 
+
+```bash
+remove_toc.sh /path/to-directory
+```
+```bash
+## If current directory 
+remove_toc.sh . 
+```  
+
+**Output:**
+
+```bash
+Removed TOC section in ./001-Terminologies.md
+Removed TOC section in ./002-Security-Principles.md
+Removed TOC section in ./003-Risk-Management.md
+Second front matter or first subheading not found in ./004-Security-Controls.md
+Removed TOC section in ./005-Governance-Elements.md 
+Removed TOC section in ./006-Incident-Responses.md
+No TOC section found in  ./008-Disaster-recovery.md
+Removed TOC section in ./007-Business-Continuity.md
+```
+
+**Script:**
+
+<details>
+  <summary> remove_toc.sh </summary>
+
+```bash
+#!/bin/bash
+
+directory="$1"
+
+if [ -z "$directory" ]; then
+    echo "**Usage:** $0 /path/to/directory"
+    exit 1
+fi
+
+if [ ! -d "$directory" ]; then
+    echo "Directory $directory not found."
+    exit 1
+fi
+
+# Remove TOC section between second "---" and first subheading
+remove_toc() {
+    local file="$1"
+    
+    # Get line number of second occurrence of "---"
+    front_matter_line=$(grep -m 2 -n -- '^---$' "$file" | tail -n 1 | cut -d':' -f1)
+    
+    # Get line number of first occurrence of "##"
+    first_subheading_line=$(grep -m 1 -n "^##" "$file" | cut -d':' -f1)
+    
+    # If either not found, exit
+    if [ -z "$front_matter_line" ] || [ -z "$first_subheading_line" ]; then
+        echo "Second front matter or first subheading not found in $file"
+        return 1
+    fi
+    
+    # Calculate TOC section lines to remove
+    toc_start=$(( front_matter_line + 2 ))
+    toc_end=$(( first_subheading_line - 2 ))
+    
+    # Remove lines between TOC start and end
+    if [ "$toc_start" -lt "$toc_end" ]; then
+        sed -i "${toc_start},${toc_end}d" "$file"
+        echo "Removed TOC section in $file"
+    else
+        echo "No TOC section found in $file"
+    fi
+}
+
+
+for file in "$directory"/*.md; do
+    if [ -f "$file" ]; then
+        remove_toc "$file"
+    fi
+done
+
+echo "TOC sections removed from all .md files in $directory." 
+```
+
+</details>
+
+
+## Simulate image syntax change 
+
+I used this when I was migrating all my docs to Docusaurus. Some docs have images embedded in the following way:
+
+```bash
+<img width=500 src='../../Images/sec+-relaying-the-attack.png'> 
+```
+
+or:
+
+```bash
+<img src='../../Images/sec+-relaying-the-attack.png'>  
+```
+
+Before changing anything, I just wanted to simulate how it would look like if syntax is changed to: 
+
+```bash
+![](../../Images/sec+-relaying-the-attack.png) 
+```
+
+As such, this script will just print the expected syntax change but will not modify the file. 
+
+**Usage:**
+
+```bash
+./simulate_img_syntax_change.sh /path/to-directory
+```
+```bash
+## If current directory 
+./simulate_img_syntax_change.sh . 
+```  
+
+**Output:**
+
+```bash
+File: ./048-Logging-Data.md
+Old: <img width=600  src='../../Images/sec+-rsyslog-on-central-server.png'>
+New: ![](../../Images/sec+-rsyslog-on-central-server.png)
+
+File: ./053-Security-Techniques.md
+Old: <img width=600 src='../../Images/sec+-wap-ess-configuration.png'>
+New: ![](../../Images/sec+-wap-ess-configuration.png)
+Old:     <img width=750 src='../../Images/sec+-adjacent-channel-interference-diagram.png'>
+New:     ![](../../Images/sec+-adjacent-channel-interference-diagram.png)
+```
+
+**Script:**
+
+<details>
+  <summary> simulate_img_syntax_change.sh </summary>
+
+```bash
+#!/bin/bash
+
+# Find all files in the current directory containing <img> tags with width and src attributes, excluding .sh files
+grep -rl '<img .*width=.* src=.*>' . --exclude="*.sh" | while IFS= read -r file; do
+    echo 
+    echo "File: $file"
+
+    grep '<img .*width=.* src=.*>' "$file" | while IFS= read -r line; do
+        old_line="$line"
+        new_line=$(echo "$line" | sed -E 's|<img .*width=.* src=[\"\x27]([^\"\x27]+)[\"\x27].*>|![](\1)|g')
+        echo "Old: $old_line"
+        echo "New: $new_line"
+    done
+done
+```
+
+</details>
+
+
+## Apply first image syntax change 
+
+This applies the change done in the previous simulation script (see above).
+
+**Usage:**
+
+```bash
+./change_img_syntax_1.sh /path/to-directory
+```
+```bash
+## If current directory 
+./change_img_syntax_1.sh . 
+```  
+
+**Output:**
+
+```bash
+Processing File: ./003-Risk-Management.md
+Found lines in file.
+Successfully updated: ./003-Risk-Management.md
+
+Processing File: ./016-Computer-Networking.md
+Found lines in file.
+Successfully updated: ./016-Computer-Networking.md
+
+Processing File: ./022-Attack-Frameworks.md
+Found lines in file.
+Successfully updated: ./022-Attack-Frameworks.md
+```
+
+**Verify:**
+
+```bash
+grep -rl '<img .*width=.* src=.*>' . 
+```
+
+**Script:**
+
+<details>
+  <summary> script.sh </summary>
+
+```bash
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <directory>"
+    exit 1
+fi
+
+directory="$1"
+
+# Find all files in the specified directory containing <img> tags with src attribute, excluding .sh files
+grep -rl '<img .*src=.*>' "$directory" --exclude="*.sh" | while IFS= read -r file; do
+    echo 
+    echo "Processing File: $file"
+
+    if grep -q '<img .*src=.*>' "$file"; then
+        echo "Found lines in file."
+        sed -i -E 's|<img( .*width=[^ >]*)? src=[\"\x27]([^\"\x27]+)[\"\x27][^>]*>|![](\2)|g' "$file"
+        echo "Successfully updated: $file"
+    else
+        echo "No lines found in file."
+    fi
+done
+```
+
+</details>
+
+
+## Print image links 
+
+This is continuation of the image syntax change above. This will just print all the image links in all the files in the cirrent directory. Note that the image links are in this format:
+
+```bash
+![](../../Images/sec+-eg-computations.png) 
+```
+
+**Usage:**
+
+```bash
+./print_image_links.sh /path/to-directory
+```
+```bash
+## If current directory 
+./print_image_links.sh . 
+```  
+
+**Output:**
+
+```bash
+Filename: ./002-Security-Principles.md
+![](../../Images/security-cia-triad-diagram.png)
+    ![](../../Images/sec+-accounting-audit-login-example.png)
+        ![](../../Images/sec+-windows-credential-manager.png)
+
+Filename: ./003-Risk-Management.md
+    ![](../../Images/risk-matrix-for-prioritization.png)
+![](../../Images/sec+-eg-computations.png)
+![](../../Images/sec+-ale-computation-example.png)
+
+Filename: ./006-Incident-Responses.md
+![](../../Images/sec+-irp-lifecycle.png)
+
+Filename: ./007-Business-Continuity.md
+![](../../Images/sec+-bcp-disaster-types.png)
+```
+
+**Script:**
+
+<details>
+  <summary>  </summary>
+
+```bash
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 /path/to-directory"
+    exit 1
+fi
+
+directory="$1"
+
+if [ ! -d "$directory" ]; then
+    echo "Error: Directory '$directory' not found."
+    exit 1
+fi
+
+# Find all Markdown files in the specified directory containing image links
+find "$directory" -type f -name "*.md" -exec awk 'BEGIN { filename = ""; in_block = 0; } /!\[\]\([^)]+\)/ { if (filename != FILENAME) { if (filename != "") { print ""; } print "Filename: " FILENAME; filename = FILENAME; } print $0; }' {} +
+```
+
+</details>
+
+
+## Apply second image syntax change 
+
+This is continuation of the image syntax change above. I needed to make sure that all image are embedded the same way before I change the directory. I was going to add this onto the first script, but the first script only applies to files with the "<img>" tags. 
+
+This script will apply to all files that has an image link with the following format:
+
+```bash
+![](../../Images/sec+-eg-computations.png) 
+```
+
+Before I attempted this, I first make sure to print the image links first using the script in the previous section.
+
+
+
+**Usage:**
+
+```bash
+./change_img_syntax_2.sh /path/to-directory
+```
+```bash
+## If current directory 
+./change_img_syntax_2.sh . 
+```  
+
+**Verify:**
+
+Before running the script:
+
+```bash
+$ grep -r "../Images" .
+./006-Incident-Responses.md:![](../../Images/sec+-irp-lifecycle.png)
+./007-Business-Continuity.md:![](../../Images/sec+-bcp-disaster-types.png)
+./008-Disaster-recovery.md:![](../../Images/security-datacenter-redundancy.png)
+./008-Disaster-recovery.md:  ![](../../Images/secplus-raid-0.png)
+./008-Disaster-recovery.md:  ![](../../Images/secplus-raid-1.png)
+```
+
+After running the script:
+
+```bash
+$ grep -r "../Images" .
+$ grep -r "/img/docs" .
+./006-Incident-Responses.md:![](/img/docs/sec+-irp-lifecycle.png)
+./007-Business-Continuity.md:![](/img/docs/sec+-bcp-disaster-types.png)
+./008-Disaster-recovery.md:![](/img/docs/security-datacenter-redundancy.png)
+./008-Disaster-recovery.md:  ![](/img/docs/secplus-raid-0.png)
+./008-Disaster-recovery.md:  ![](/img/docs/secplus-raid-1.png)
+```
+
+**Script:**
+
+<details>
+  <summary>  </summary>
+
+```bash
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 /path/to-directory"
+    exit 1
+fi
+
+directory="$1"
+
+if [ ! -d "$directory" ]; then
+    echo "Error: Directory '$directory' not found."
+    exit 1
+fi
+
+# Find all Markdown files in the specified directory containing image links
+find "$directory" -type f -name "*.md" -exec awk -i inplace '
+    {
+        while(match($0, /!\[\]\(\.\.\/\.\.\/Images\/([^)]+)\)/, arr)) {
+            gsub(/!\[\]\(\.\.\/\.\.\/Images\/([^)]+)\)/, "![](/img/docs/" arr[1] ")", $0);
+        }
+        print $0;
+    }' {} +
+```
+
+</details>
+
+
+
+## TODOs 
+
+### Overview 
+
+These are not scripts but are useful commands which I used for different tasks at work and in my personal labs.
+I might turn them into scripts if I need to, but for now just dumping them here.
+
+### Search for keywords 
+
+To search for a keyword in all files within a directory and its subdirectories, excluding a specific file:
+
+```bash
+grep -r --exclude="name-of-files" "keyword" /path/to/directory 
+```
+
+Example: To check the values for "sidebar_position" for all files within the current directory, wwhile excluding dummy files called "create-a-document.md":
+
+```bash
+grep -r --exclude="create-a-document.md" "sidebar_position:" . 
+```
+
+**Output:**
+
+```bash
+./Amazon Web Services/Troubleshooting Notes/001-Attaching-multiple-EBS.md:sidebar_position: 1
+./Amazon Web Services/Troubleshooting Notes/002-Expanding-EBS-Volumes.md:sidebar_position: 2
+./Amazon Web Services/Troubleshooting Notes/003-EBS-stuck-in-Attaching.md:sidebar_position: 4
+./Amazon Web Services/Troubleshooting Notes/004-EC2-Stuck-in-Initializing.md:sidebar_position: 52
+./intro.md:sidebar_position: 1
+./Linux/Linux Security/001-IPTables.md:sidebar_position: 1
+./Linux/Linux Security/009-IPTables-and-getting-locked-out.md:sidebar_position: 9
+./Linux/Linux Security/010-Firewalld.md:sidebar_position: 2
+./Linux/Linux Security/020-SSH-Based-Logins.md:sidebar_position: 3
+./Linux/Linux Security/030-SELinux.md:sidebar_position: 4
+./Linux/Linux Security/040-Security-Updates.md:sidebar_position: 99
+./Linux/RHCSA Labs/Lab 000 - Exam Objectives/README.md:sidebar_position: 1
+./Linux/RHCSA Labs/Lab 001 - Basic Installation/README.md:sidebar_position: 1 
+```
+
+### Remove divider lines 
+
+This is not a script, but I used this when I was migrating all my docs to Docusaurus. All of my MD docs has this divider at the bottom of the file.
+
+```bash
+---------------------------------------------- 
+```
+
+To remove those lines:
+
+```bash
+grep -rl -- "----------------------------------------------" . | xargs sed -i '/----------------------------------------------/d'
+```
+
+### Print line in files
+
+To print line 1 of all files in current directory:
+
+```bash
+find . -maxdepth 1 -type f -exec sh -c 'echo "File: $0"; head -n 1 "$0"' {} \; 
+```
+
+To print line 7 to 8 of all files in current directory:
+
+```bash
+for file in *; do
+    echo "---------------------------------"
+    echo "Printing lines 7 to 8 of file: $file"
+    head -n 8 "$file" | tail -n 2
+done 
+```
+
+
+### Replace p headers 
+
+I have a lot of files in the project directory that has either:
+
+```bash
+<p align=center> 
+```
+
+or:
+
+```bash
+<p> 
+```
+
+As can be seen:
+
+```bash
+$ grep -r "<p" .
+./003-Risk-Management.md:    <p align=center>
+./006-Incident-Responses.md:<p>
+./006-Incident-Responses.md:<!-- <p align=center> -->
+./008-Disaster-recovery.md:  <p align=center>
+./008-Disaster-recovery.md:  <p align=center>
+./008-Disaster-recovery.md:  <p align=center>
+./008-Disaster-recovery.md:  <p align=center>
+./008-Disaster-recovery.md:  <p align=center>
+./009-Access-Control.md:    <p>
+./009-Access-Control.md:    <p>
+./009-Access-Control.md:    <p> 
+```
+
+I need to replace them with:
+
+```bash
+<div class="img-center"> 
+```
+
+To do this, run the commands below:
+
+```bash
+find . -type f -exec sed -i 's/<p align=center>/<div class="img-center">\n/g' {} +
+find . -type f -exec sed -i 's/<p>/<div class="img-center">\n/g' {} + 
+```
+
+Output:
+
+```bash
+$ grep -r "<p" .
+$ grep -r "<div class"
+003-Risk-Management.md:    <div class="img-center">
+006-Incident-Responses.md:<div class="img-center">
+006-Incident-Responses.md:<!-- <div class="img-center"> -->
+008-Disaster-recovery.md:  <div class="img-center">
+008-Disaster-recovery.md:  <div class="img-center"> 
+```
+
+In addition to this, I also need to replace the closing headers:
+
+```bash
+$ grep -r "</p"
+003-Risk-Management.md:    </p>
+006-Incident-Responses.md:</p>
+008-Disaster-recovery.md:  </p>
+008-Disaster-recovery.md:  </p> 
+```
+
+Run:
+
+```bash
+find . -type f -exec sed -i 's/<\/p>/\n<\/div>/g' {} + 
+```
+
+Output:
+
+```bash
+$ grep -r "</p>"
+$ grep -r "</div>"
+003-Risk-Management.md:</div>
+006-Incident-Responses.md:</div>
+008-Disaster-recovery.md:</div>
+008-Disaster-recovery.md:</div>
+008-Disaster-recovery.md:</div>
+```
