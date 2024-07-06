@@ -34,13 +34,12 @@ When setting up new systems or devices, default configurations are often used to
   - Always change default passwords to strong, unique ones upon installation.
 
     <!-- 
-<div class="img-center">
+    <div class="img-center">
 
     ![](/img/docs/sec+-default-passwords.png)
     
-
-</div>
- -->
+    </div>
+    -->
 
 - **Unneeded Ports and Protocols**
 

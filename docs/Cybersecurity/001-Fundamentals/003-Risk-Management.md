@@ -1,5 +1,5 @@
 ---
-title: "Risk Management "
+title: "Risk Management"
 tags: [Cybersecurity]
 sidebar_position: 1
 last_update:

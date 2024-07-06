@@ -1454,7 +1454,12 @@ Cross-Site Scripting (XSS) is a web security vulnerability that involves injecti
 
 - Use input validation libraries or frameworks to enforce strict input requirements.
 - Encode output data before displaying in web pages, prevents execution of malicious code.
-- HTML escaping functions or libraries to encode special characters (<, >, &, etc.) into their respective HTML entities.
+- HTML escaping functions or libraries to encode special characters into their respective HTML entities.
+
+    ```bash
+    <, >, &, etc. 
+    ```
+
 - Regular security audits/code reviews, identify and fix XSS vulnerabilities in web apps.
 - Automated scanning tools and manual testing techniques to detect and remediate XSS issues.
 - Raise awareness onsafe coding practices, input validation, and output encoding techniques.
