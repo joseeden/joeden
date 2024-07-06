@@ -303,7 +303,9 @@ Please provide an argument
 
 This is a script functions as a countdown timer, starting from a specified number of seconds and counting down to zero. After reaching zero, it continues to indicate how many seconds have passed beyond the initial countdown.
 
-<details><summary> countdown.sh </summary>
+
+<details>
+  <summary> countdown.sh </summary>
 
 ```bash
 #!/bin/bash
@@ -369,10 +371,10 @@ you are now 10 seconds late
 
 Here is another version of the script that has explanations:
 
-<details><summary> countdown.sh </summary>
+<details>
+  <summary> countdown.sh </summary>
 
 ```bash
-[root@tstsvr ~]# cat countdown.sh
 #!/bin/bash
 
 # This is the argument passed. This is time, in seconds.
