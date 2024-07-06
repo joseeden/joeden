@@ -396,7 +396,7 @@ A specialized DDoS attack that allows an attacker to initiate DNS requests from 
 - High volume of packets are sent, DNS servers respond to the request.
 - Response from the DNS server takes up a lot of bandwidth.
 
-To learn more, see [DNS Amplification Attack.](#dns-amplification-attack) 
+For more information, please see [DNS Amplification Attack.](#dns-amplification-attack) 
 
 ### Stopping DDoS 
 
@@ -1049,7 +1049,7 @@ Ways to conduct on-path or interception attacks:
 
   - Manipulates the ARP cache on a local network.
   - Associates attacker's MAC address with the IP address of a legitimate device.
-  - More details found here: [ARP Cache Poisoning](#arp-cache-poisoning)
+  - For more information, please see [ARP Cache Poisoning](#arp-cache-poisoning)
 
 - **DNS Poisoning**
 

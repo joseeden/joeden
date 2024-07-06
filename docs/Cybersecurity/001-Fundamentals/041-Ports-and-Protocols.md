@@ -139,7 +139,7 @@ Network switches make traffic switching decision based on the MAC address of the
 - Randomized MAC addresses are sent to the network switch.
 - When this happens, the network switch will simply fail open.
 - When it fail-open, the switch begins to rebroadcast all traffic out to every port.
-- More details can be found here: [MAC Address Flooding](./023-Attacks.md#mac-address-flooding)
+- For more information, please see [MAC Address Flooding](./023-Attacks.md#mac-address-flooding)
 
 ### Implementing Port Security
 
@@ -197,7 +197,7 @@ EAP (Extensible Authentication Protocol) is a versatile authentication framework
 - Commonly used in wireless networks (e.g., Wi-Fi) and secure network access setups.
 - Provides strong security through certificate-based authentication.
 
-More details can be found here: [EAP](./025-Network-Authentication-Protocols.md#eap)
+For more information, please see [EAP](./025-Network-Authentication-Protocols.md#eap)
 
 
 ## Transport Method

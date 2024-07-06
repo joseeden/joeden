@@ -43,7 +43,7 @@ Ethernet (IEEE 802.3) is a standard that defines wired connections of networked 
 
 IP is currently deployed and used worldwide in two major versions. IPv4 provides a 32-bit address space, which by the late 1980s was projected to be exhausted. IPv6 was introduced in December 1995 and provides a 128-bit address space along with several other important features. 
 
-To learn more, check out [IP address](https://en.wikipedia.org/wiki/IP_address)
+For more information, check out [IP address](https://en.wikipedia.org/wiki/IP_address)
 
 
 ### Wifi 
@@ -441,7 +441,7 @@ A network appliance is a dedicated hardware device with pre-installed software t
   - Provide high availability by redirecting traffic during server failures.
   - Balance loads based on various algorithms, such as round-robin or least connections.
   - Improve response times and optimize resource usage.
-  - More details found here: [Load Balancing](./008-Disaster-recovery.md#load-balancing)
+  - For more information, please see [Load Balancing](./008-Disaster-recovery.md#load-balancing)
 
 - **Application Delivery Controllers**
   - Advanced form of a loadBalancer; can optimize application delivery.

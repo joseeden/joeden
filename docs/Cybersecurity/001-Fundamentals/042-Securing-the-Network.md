@@ -59,7 +59,7 @@ Demilitarized Zone (DMZ) is an isolated network area for outside visitors.
 
 VLANs are created by switches to logically segments a network without altering physical topology. 
 
-More details can be found here: [VLANs](./016-Computer-Networking.md#virtual-local-network)
+For more information, please see [VLANs](./016-Computer-Networking.md#virtual-local-network)
 
 ### Microsegmentation 
 

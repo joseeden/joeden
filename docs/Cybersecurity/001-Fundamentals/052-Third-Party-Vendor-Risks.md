@@ -278,6 +278,6 @@ Contracts and agreements with vendors are vital for establishing the terms and c
   - Defines the terms of collaboration and partnership.
   - Includes roles, responsibilities, and profit-sharing arrangements.
 
-More details can be found here: [Agreement Types](./003-Risk-Management.md#agreement-types)
+For more information, please see [Agreement Types](./003-Risk-Management.md#agreement-types)
 
 

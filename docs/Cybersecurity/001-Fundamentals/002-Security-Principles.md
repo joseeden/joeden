@@ -331,7 +331,7 @@ A mechanism designed to ensure that actions requiring administrative rights are 
 ### Password Security  
 
 Measures the password's ability to resist guessing and brute-force attacks.
-To learn more, please see [Common Security Policies.](./014-Common-Security-Policies.md#password-policy) 
+For more information, please see [Common Security Policies.](./014-Common-Security-Policies.md#password-policy) 
 
 ### Sensitivity 
 
@@ -395,7 +395,7 @@ The Principle of Least Privilege dictates that users or programs should be grant
 
 In cybersecurity, 'segregation', or 'segregation of duties' (SoD), is a security principle designed to prevent fraud or error by dividing tasks among multiple persons.It is an administrative control that reduces the risk of potential errors or fraud from a single person having control over all aspects of a critical process.
 
-To learn more, see [Privilege Access Management.](./011-Privilege-Access-Management.md)
+For more information, please see [Privilege Access Management.](./011-Privilege-Access-Management.md)
 
 ### Trust but Verify 
 

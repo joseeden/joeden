@@ -13,6 +13,7 @@ Understanding incident response begins with knowing the terms for various cybera
 
 
 | Terminology         | Description                                                                                                                                                                   |
+|---------------------|------------------------------------------------------------------------------------------------------------------------------
 | **Breach**          | The loss of control or unauthorized access to personally identifiable information. (NIST SP 800-53 Rev. 5)                                                                    |
 | **Event**           | Any observable occurrence in a network or system. (NIST SP 800-61 Rev. 2)                                                                                                     |
 | **Exploit**         | A specific attack that targets a system vulnerability.                                                                                                                        |
@@ -39,7 +40,7 @@ Indicators of Compromise (IOCs) are evidence or clues that suggest a computer sy
 - Suspicious File Attachments or Downloads
 - IoT Device Anomalies
 
-To learn more, see [Indicators of Compromise.](./044-Indicators-of-Compromise.md)   
+For more information, please see [Indicators of Compromise.](./044-Indicators-of-Compromise.md)   
 
 
 ## Goal of Incident Response
@@ -118,7 +119,7 @@ Analysis involves a thorough examination and evaluation of the incident.
 
 Digital forensics plays a critical role in the analysis phase of incident response, where investigators examine collected evidence to determine what happened during a security incident and how to respond. 
 
-To learn more, please see [Digital forensics.](./034-Digital-Forensics.md)
+For more information, please see [Digital forensics.](./034-Digital-Forensics.md)
 
 
 ### Containment
@@ -291,7 +292,7 @@ This is the practical exercise of incident response procedures.
 - Training teaches what to do, testing make sure you know how to do it.
 - Simulating an incident, can cost time and money
 
-To learn more, please see [Security Awareness.](./015-Security-Awareness-Training.md#incident-response-exercises)
+For more information, please see [Security Awareness.](./015-Security-Awareness-Training.md#incident-response-exercises)
 
 ## SOAR 
 

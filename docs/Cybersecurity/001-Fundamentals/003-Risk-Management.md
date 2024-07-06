@@ -52,7 +52,7 @@ Information assurance and cybersecurity are key for risk management. The require
     - Intelligence or information gatherers (could be any of the above).
     - Technology (such as free-running bots and artificial intelligence , which could be part of any of the above).
 
-  - For more details, please see [Cyber Threat and Attacks.](./017-Cyber-Threats-and-Attacks.md)
+  - For more information, please see [Cyber Threat and Attacks.](./017-Cyber-Threats-and-Attacks.md)
 
 - **Threat Vector**
 
@@ -520,7 +520,7 @@ A Business Impact Analysis (BIA) is a process used to identify and evaluate the 
 
 The goal of a BIA is to understand which functions and processes are critical to an organization's success and how they would be impacted by disruptions, such as natural disasters, cyberattacks, or equipment failures.
 
-To learn more, please see [Business Continuity](./007-Business-Continuity.md).
+For more information, please see [Business Continuity](./007-Business-Continuity.md).
 
 
 ## Agreement Types 
