@@ -1,7 +1,7 @@
 ---
 title: EC2 stuck in "Initializing"
 tags: [Linux, AWS, Labs]
-sidebar_position: 52
+sidebar_position: 4
 last_update:
   date: 2/27/2022
 ---

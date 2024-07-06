@@ -1,7 +1,7 @@
 ---
 title: "Create LVMs using parted"
 tags: [Linux, Red Hat, Certifications]
-sidebar_position: 29
+sidebar_position: 30
 last_update:
   date: 11/31/2021
 ---
