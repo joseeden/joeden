@@ -22,14 +22,19 @@ Bash scripts automate tasks by executing commands in a specific order, making th
 
 Scripts will normally have ".sh" format and begins with `#!/bin/bash`. After creating script, make sure to grant execute-permission. If it's not *executable*, you will get a **permission denied** error. Here's a sample script.
 
+<details>
+  <summary> script.sh </summary>
+  
 ```bash
-[root@tstsvr ~]# cat script.sh
 #!/bin/bash
 
 echo "Line 1"
 echo "Line 2"
 echo "Line 3"
 ```
+
+</details>
+
 ```bash
 [root@tstsvr ~]# ll
 total 20
@@ -88,6 +93,9 @@ We can also put the script in a directory that's included on the **PATH** variab
 
 Here's another script. Notice that it starts with `#!/bin/bash`. This means this script will always be interpreted by bash shell.
 
+<details>
+  <summary> script.sh </summary>
+  
 ```bash
 ## anotherscript.sh
 
@@ -120,6 +128,8 @@ cd $DIR
 pwd
 ls
 ```
+
+</details>
 
 Make it executable: 
 
@@ -202,8 +212,12 @@ Running a script in the background allows it to execute independently of the cur
 Loops in shell scripts are control structures that iterate over a set of instructions repeatedly until a specific condition is met. They are fundamental for automating repetitive tasks and processing data efficiently in Bash and other shell environments. Shell scripts support various types of loops, such as `for` loops and `while` loops, providing flexibility in how tasks are repeated and managed within scripts.
 
 Here a second script. We'll grant it execute-permission and then run it.
+
+<details>
+  <summary> secondscript.sh </summary>
+    
+
 ```bash
-[root@tstsvr ~]# cat secondscript.sh
 #!/bin/bash
 
 # The '-z' statement inside square brackets is called test command.
@@ -227,8 +241,10 @@ fi
 
 # Lastly the argument is printed out.
 echo the argument is $1
-
 ```
+
+</details>
+
 ```bash
 [root@tstsvr ~]# chmod +x secondscript.sh
 [root@tstsvr ~]# ll
@@ -256,8 +272,11 @@ the argument is okay
 ```
 
 We could also rewrite the script to a if-else.
+
+<details>
+  <summary> secondscript.sh </summary>
+    
 ```bash
-[root@tstsvr ~]# cat secondscript.sh
 #!/bin/bash
 
 if [ -z $1 ]
@@ -269,6 +288,11 @@ else
         echo the argument is $1
 fi
 ```
+
+</details>
+    
+Run:
+
 ```bash
 [root@tstsvr ~]# ./secondscript.sh again?
 the argument is again?
