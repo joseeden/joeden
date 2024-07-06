@@ -351,3 +351,226 @@ mount: /mnt/diskc1: unknown filesystem type 'crypto_LUKS'.
 $ sudo mount /dev/xvdf1 /mnt/disklvm
 mount: /mnt/disklvm: unknown filesystem type 'crypto_LUKS'.
 ```
+
+## Shortcut Version for Encrypted Partitions
+
+This is a quick guide to setting up encrypted partitions using LUKS (Linux Unified Key Setup) on a block device. 
+
+### Create Label and Partition
+
+First, we identify the block device to be partitioned and create a new partition label.
+
+```bash
+$ lsblk
+NAME    MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0  10G  0 disk
+├─xvda1 202:1    0   1M  0 part
+└─xvda2 202:2    0  10G  0 part /
+xvdb    202:16   0  10G  0 disk
+```
+
+Enter `parted` Utility:
+
+```bash
+$ parted /dev/xvdb
+GNU Parted 3.2
+Using /dev/xvdb
+Welcome to GNU Parted! Type 'help' to view a list of commands.
+(parted)
+```
+
+Create GPT Label:
+
+```bash
+(parted) mklabel gpt
+```
+
+Create Partition:
+
+```bash
+(parted) mkpart
+Partition name?  []? luks1
+File system type?  [ext2]?
+Start? 1GiB
+End? 2GiB
+```
+
+Print New Partition Table:
+
+```bash
+(parted) print
+Model: Xen Virtual Block Device (xvd)
+Disk /dev/xvdb: 10.7GB
+Sector size (logical/physical): 512B/512B
+Partition Table: gpt
+Disk Flags:
+Number  Start   End     Size    File system  Name   Flags
+ 1      1074MB  2147MB  1074MB  ext2         luks1
+(parted) quit
+Information: You may need to update /etc/fstab.
+```
+
+### Configure Encryption
+
+Use `cryptsetup` to format the partition with LUKS encryption.
+Format Partition with LUKS:
+
+```bash
+$ cryptsetup luksFormat /dev/xvdb1
+WARNING: Device /dev/xvdb1 already contains a 'xfs_external_log' superblock signature.
+
+WARNING!
+========
+This will overwrite data on /dev/xvdb1 irrevocably.
+
+Are you sure? (Type 'yes' in capital letters): YES
+Enter passphrase for /dev/xvdb1:
+Verify passphrase:
+```
+
+### Open Encrypted Device
+
+Open the encrypted partition and map it to a name.
+
+```bash
+$ cryptsetup luksOpen /dev/xvdb1 mysecretplace
+Enter passphrase for /dev/xvdb1:
+```
+
+Verify Mapping:
+
+```bash
+$ ll /dev/mapper/
+total 0
+crw-------. 1 root root 10, 236 Jan  2 16:19 control
+lrwxrwxrwx. 1 root root       7 Jan  2 16:47 mysecretplace -> ../dm-0
+```
+
+### Create Filesystem
+
+Create an XFS filesystem on the mapped encrypted device.
+
+```bash
+$ mkfs.xfs /dev/mapper/mysecretplace
+meta-data=/dev/mapper/mysecretplace isize=512    agcount=4, agsize=64512 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=1, sparse=1, rmapbt=0
+         =                       reflink=1
+data     =                       bsize=4096   blocks=258048, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0, ftype=1
+log      =internal log           bsize=4096   blocks=1566, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+```
+
+### Create Mountpoint and mount
+
+Create a directory to mount the encrypted partition.
+
+```bash
+$ mkdir /mnt/disksecret
+$ ll /mnt/
+total 0
+drwxr-xr-x. 2 root root 6 Jan  2 15:39 diskfs
+drwxr-xr-x. 2 root root 6 Jan  2 15:33 diskfs2
+drwxr-xr-x. 2 root root 6 Jan  2 16:50 disksecret
+drwxr-xr-x. 2 root root 6 Jan  2 16:24 diskvdo
+```
+
+Update the `/etc/fstab` file to mount the encrypted partition automatically.
+
+```bash
+$ vim /etc/fstab
+
+UUID=d35fe619-1d06-4ace-9fe3-169baad3e421 /                       xfs     defaults        0 0
+
+# EDEN: STRATIS
+# UUID="55355676-5973-4250-a5c3-b12d6c06b313"   /mnt/diskfs       xfs     nofail,x-systemd.device-timeout=1ms 0 0
+
+# EDEN: VDO
+#/dev/mapper/vdo1                        /mnt/diskvdo             xfs     x-systemd.requires=vdo.service      0 0
+
+# EDEN: LUKS
+/dev/mapper/mysecretplace                /mnt/disksecret          xfs     defaults        0 0
+```
+
+Mount All Filesystems:
+
+```bash
+mount -a
+```
+
+Add an entry in crypttab:
+
+```bash
+$ vim /etc/crypttab
+mysecretplace   /dev/xvdb1      none
+```
+
+Close the encrypted device:
+
+```bash
+$ cryptsetup luksClose mysecretplace
+```
+
+
+
+## Automount LUKS Encrypted Device
+
+1. Create LUKS keyfile:
+
+    ```bash
+    dd if=/dev/random of=/etc/lukskey bs=32 count=1
+    ```
+
+2. Add passphrase to LUKS keyfile:
+
+    ```bash
+    cryptsetup luksAddKey   /dev/xvdc2  /etc/lukskey
+    ```
+
+3. Close drive first if its open. Then verify you can open it using the keyfile:
+
+    ```bash
+    # secret is the name of crytsetup luksOpen storage 
+    cryptsetup luksClose secret
+
+    # Now try to open it using the keyfile 
+    cryptsetup luksOpen /dev/xvdc2 --key-file /etc/lukskey 
+    ```
+
+4. Add entry to `/etc/crypttab`: 
+
+    ```bash 
+    $ vim /etc/crypttab
+
+    secret  /dev/xvdc2    /etc/lukskey
+    ```
+    
+5. Add entry to `/etc/fstab`:
+
+    ```bash
+    $ vim /etc/fstab 
+
+    /dev/mapper/secret    /mount/secret   xfs   defaults,nofail   0   0
+    ```
+
+6. Try to mount:
+
+    ```bash
+    mount -a
+    ```
+
+7. Reboot and cross-fingers.
+
+    ```bash 
+    sudo reboot
+    ```
+
+8. When it comes back up, verify.
+
+    ```bash 
+    lsblk
+    ```
+
