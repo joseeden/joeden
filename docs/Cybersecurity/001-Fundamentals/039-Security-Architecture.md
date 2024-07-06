@@ -358,7 +358,8 @@ It is an agreement between a cloud service provider and customer that defines th
 
 - **Data Loss Prevention (DLP) Solutions**
     - Prevents data exfiltration.
-    - Azure Information Protection (AIP).<br> 
+    - Azure Information Protection (AIP).
+ 
         ![](/img/docs/sec+-dlp-solutions-azure.png)
 
 - **Cloud Monitoring**

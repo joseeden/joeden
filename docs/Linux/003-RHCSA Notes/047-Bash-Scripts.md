@@ -1152,3 +1152,21 @@ $ grep -r "</div>"
 008-Disaster-recovery.md:</div>
 008-Disaster-recovery.md:</div>
 ```
+
+### Remove br 
+
+Before:
+
+```bash
+$ grep -r "<br>" .
+./003-Risk-Management.md:<br>
+./008-Disaster-recovery.md:<br>
+./008-Disaster-recovery.md:<br>
+./008-Disaster-recovery.md:<br> 
+```
+
+To remove:
+
+```bash
+grep -r -l "<br>" . | xargs sed -i 's/<br>/\n/g' 
+```

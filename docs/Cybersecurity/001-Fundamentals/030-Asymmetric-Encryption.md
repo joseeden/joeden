@@ -150,7 +150,8 @@ Diffie-Hellman is a cryptographic protocol for secure key exchange, enabling two
 - Bob chooses a private key \( b \) and sends \( g^b \mod p \) to Alice.
 - Alice calculates \( (g^b \mod p)^a \) to get the shared secret.
 - Bob calculates \( (g^a \mod p)^b \) to get the same shared secret.
-<br>
+
+
 
     ![](/img/docs/diffie-hellman.png)
 

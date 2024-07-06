@@ -262,7 +262,8 @@ There are multiple ways to setup RAID disks, depending on the level of resilienc
 - Stripes data across multiple disks for higher performance but no redundancy.
 - Faster read and write speeds; data is split across multiple drives.
 - Focus is performance, but no fault tolerance.
-<br>
+
+
   
 <div class="img-center">
 
@@ -277,7 +278,8 @@ There are multiple ways to setup RAID disks, depending on the level of resilienc
 - "**Mirroring**"
 - Mirrors data across two disks for redundancy .
 - One disk can fail without data loss.
-<br>
+
+
   
 <div class="img-center">
 
@@ -295,7 +297,8 @@ There are multiple ways to setup RAID disks, depending on the level of resilienc
 - In case of failed disk, there will be slower speed in retrieving.
 - Slower speed because its calculating the missing data on the fly.
 - Can only lose one storage device, if more than that, it'll be difficult to rebuild missing data.
-<br>
+
+
   
 <div class="img-center">
 
@@ -312,7 +315,8 @@ There are multiple ways to setup RAID disks, depending on the level of resilienc
 - Uses two identical pieces of parity data.
 - Requires at least four storage devices.
 - Can lose two disks and still be able to rebuild the data without suffering downtime.
-<br>
+
+
   
 <div class="img-center">
 
@@ -330,7 +334,8 @@ There are multiple ways to setup RAID disks, depending on the level of resilienc
 - Requires at least four disks.
 - Faster speed because of the striping of data across two arrays.
 - Can lose two disks and still be able to rebuild the data without any downtime, as long as they're not in the same RAID 1 array.
-<br>
+
+
   
 <div class="img-center">
 

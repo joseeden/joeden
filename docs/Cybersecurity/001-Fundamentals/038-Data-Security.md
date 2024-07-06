@@ -232,7 +232,8 @@ Cryptography is a versatile tool, providing crucial services like confidentialit
    - Utilizes hash functions and digital signatures.
    - Verifies message integrity, detecting any alterations.
 
-<br>
+
+
     
 <div class="img-center">
 

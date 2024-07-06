@@ -279,7 +279,8 @@ Risk treatment involves deciding on the most appropriate actions based on manage
 - **Risk Matrix for Prioritization**
   - Aligns likelihood of occurrence with impact.
   - Provides a common language for team and management.
-<br>
+
+
     
 <div class="img-center">
 

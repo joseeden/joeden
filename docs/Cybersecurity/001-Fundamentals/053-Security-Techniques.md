@@ -90,7 +90,8 @@ When deploying multiple wireless access points in an ESS configuration, interfer
     - Happens when access points operate on overlapping channels.
     - Causes signal overlap and interference, reducing network performance.
     - Avoid by selecting non-overlapping channels (e.g., 1, 6, 11 in the 2.4 GHz band).
-    <br>
+    
+
 
     
 <div class="img-center">
