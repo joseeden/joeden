@@ -94,11 +94,9 @@ We can also put the script in a directory that's included on the **PATH** variab
 Here's another script. Notice that it starts with `#!/bin/bash`. This means this script will always be interpreted by bash shell.
 
 <details>
-  <summary> script.sh </summary>
+  <summary> anotherscript.sh </summary>
   
 ```bash
-## anotherscript.sh
-
 #!/bin/bash
 
 # sample comment.
@@ -301,3 +299,131 @@ the argument is again?
 Please provide an argument
 ```
 
+## Countdown script 
+
+This is a script functions as a countdown timer, starting from a specified number of seconds and counting down to zero. After reaching zero, it continues to indicate how many seconds have passed beyond the initial countdown.
+
+<details><summary> countdown.sh </summary>
+
+```bash
+#!/bin/bash
+
+# This is the argument passed. This is time, in seconds.
+timer=$1
+# If we want entered time to be in hour, uncomment line below.
+# timer=$(( timer * 60 ))
+
+minusone()
+{
+        timer=$(( timer - 1 ))
+        sleep 1
+}
+
+
+while [ $timer -gt 0 ]
+do
+        echo 'you have $timer seconds left'
+        minusone
+done
+
+[ $timer = 0 ] && echo 'time is up' && minusone
+[ $timer = '-1' ] && echo 'you are one second late' && minusone
+
+while true
+do
+        echo you are now ${timer#-} seconds late
+        minusone
+done
+```
+
+</details>
+
+
+Run the script and specify the number of seconds. The script will then display a countdown. To exit the script, press Ctrl-C.
+
+
+```bash
+[root@tstsvr ~]# chmod +x countdown.sh
+[root@tstsvr ~]# ll countdown.sh
+-rwxr-xr-x. 1 root root 2024 Jan  7 14:20 countdown.sh
+```
+```bash
+[root@tstsvr ~]# ./countdown.sh 3
+you have 3 seconds left
+you have 2 seconds left
+you have 1 seconds left
+time is up
+you are one second late
+you are now 2 seconds late
+you are now 3 seconds late
+you are now 4 seconds late
+you are now 5 seconds late
+you are now 6 seconds late
+you are now 7 seconds late
+you are now 8 seconds late
+you are now 9 seconds late
+you are now 10 seconds late
+^C
+[root@tstsvr ~]#
+```
+
+Here is another version of the script that has explanations:
+
+<details><summary> countdown.sh </summary>
+
+```bash
+[root@tstsvr ~]# cat countdown.sh
+#!/bin/bash
+
+# This is the argument passed. This is time, in seconds.
+timer=$1
+
+# If we want entered time to be in hour, uncomment line below.
+# timer=$(( timer * 60 ))
+
+# This is a function, which is also just a set command you define within a script.
+# The usecase of a function is that you can just define it one,
+# and then run it as many time as you can inside the script.
+# The name of function is minusone.
+# This function just decrease the timer by 1 seconds and sleep by 1 second.
+minusone()
+{
+        timer=$(( timer - 1 ))
+        sleep 1
+}
+
+# Here we're  checking if the timer is greater than zero using the test command.
+# If it is, then there's 'still time left' and it prompts with the message.
+# After it prompts message, we see the function 'minusone' being called for the first time.
+# This whil loop continues until countdown reaches zero, in which case it exits the loop.
+while [ $timer -gt 0 ]
+do
+        echo you have $timer seconds left
+        minusone
+done
+
+# As additional test to see if counter is indeed at '0', we add another logical operation.
+# Below is similar to an IF-ELSE statement.
+# The test command in the brackets is the IF,
+# then the '&&' is th else.
+# If the test statement in the bracket returns true, then the command after '&&' is executed.
+# If the test returned false, then second command is not executed.
+# First lline below checks if timer is at zero, and if it is, continues subtracting by 1
+[ $timer = 0 ] && echo 'time is up' && minusone
+[ $timer = '-1' ] && echo 'you are one second late' && minusone
+# Note that the test above returns a '-2'
+# This is then passed on to the while loop below.
+
+# In another while loop below, we're prompting user with how manys seconds he's late.
+# 'while true' means as long as TRUE is TRUE, it prints the message.
+# The 'COUNTER#-' is pattern-matching.
+# Remember that at this point, timer=-2.
+# To remove the negative sign, we use '#-' which turns the negative value to positive.
+while true
+do
+        echo you are now ${timer#-} seconds late
+        minusone
+done
+```
+
+</details>
