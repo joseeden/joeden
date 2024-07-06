@@ -148,7 +148,7 @@ Cloud computing involves accessing and utilizing computing resources and service
 ### Cloud Concepts 
 
 
-TO learn more, check out [Cloud Computing](../../README.md#cloud---fundamentals).
+TO learn more, check out **Cloud Foundations** section.
 
 
 - **Utility Model**
