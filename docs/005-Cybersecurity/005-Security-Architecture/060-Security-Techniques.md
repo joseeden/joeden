@@ -1,7 +1,7 @@
 ---
 title: "Security Techniques"
 tags: [Cybersecurity]
-sidebar_position: 1
+sidebar_position: 60
 last_update:
   date: 1/30/2024
 ---
@@ -242,7 +242,7 @@ RADIUS (Remote Authentication Dial-In User Service) is a protocol used for netwo
 - Widely used to manage network access for employees, contractors, and guests.
 - Enhances security by providing a secure method for authentication.
 
-For more information, please see [RADIUS](../005-Security-Architecture/025-Network-Authentication-Protocols.md#radius)
+For more information, please see [RADIUS](../005-Security-Architecture/020-Authentication-Protocols.md#radius)
 
 ### TACACS+
 
@@ -252,7 +252,7 @@ TACACS+ (Terminal Access Controller Access-Control System Plus) separates the fu
 - This level of separation permits the distinct handling of each component across different services.
 - Uses TCP and encrypts authentication for improved security over older AAA protocols.
 
-For more information, please see [TACACS+](../005-Security-Architecture/025-Network-Authentication-Protocols.md#tacacs)
+For more information, please see [TACACS+](../005-Security-Architecture/020-Authentication-Protocols.md#tacacs)
 
 
 ### EAP 
@@ -263,7 +263,7 @@ EAP (Extensible Authentication Protocol) is a flexible authentication framework 
 - Facilitates secure access in enterprise networks.
 - Commonly used in wireless networks for enhanced security.
 
-For more information, please see [EAP Variants](../005-Security-Architecture/025-Network-Authentication-Protocols.md#eap)
+For more information, please see [EAP Variants](../005-Security-Architecture/020-Authentication-Protocols.md#eap)
 
 ### WPS
 

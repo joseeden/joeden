@@ -1,7 +1,7 @@
 ---
 title: "Ports and Protocols"
 tags: [Cybersecurity]
-sidebar_position: 1
+sidebar_position: 50
 last_update:
   date: 1/30/2024
 ---
@@ -197,7 +197,7 @@ EAP (Extensible Authentication Protocol) is a versatile authentication framework
 - Commonly used in wireless networks (e.g., Wi-Fi) and secure network access setups.
 - Provides strong security through certificate-based authentication.
 
-For more information, please see [EAP](../005-Security-Architecture/025-Network-Authentication-Protocols.md#eap)
+For more information, please see [EAP](../005-Security-Architecture/020-Authentication-Protocols.md#eap)
 
 
 ## Transport Method
