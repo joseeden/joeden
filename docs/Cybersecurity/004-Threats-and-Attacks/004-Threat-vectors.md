@@ -1,7 +1,7 @@
 ---
-title: "Threat Vectors and Attack Surfaces"
+title: "Threat Vectors"
 tags: [Cybersecurity]
-sidebar_position: 1
+sidebar_position: 4
 last_update:
   date: 1/30/2024
 ---

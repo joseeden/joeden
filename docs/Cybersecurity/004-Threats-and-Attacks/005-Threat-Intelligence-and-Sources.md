@@ -1,13 +1,13 @@
 ---
-title: "Threat Intelligence and Sources"
+title: "Threat Intelligence"
 tags: [Cybersecurity]
-sidebar_position: 1
+sidebar_position: 5
 last_update:
   date: 1/30/2024
 ---
 
 
-## Threat Intelligence 
+## Overview
 
 Threat Intelligence is a continual process used to understand the threats faced by an organization. It is focused on analyzing evidence-based knowledge about an existing or emerging hazard to our asset. 
 
