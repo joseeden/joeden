@@ -155,7 +155,7 @@ Security Awareness Training communicates expectations, responsibilities, and ide
 
 ## Incident Response Exercises
 
-For more information about Incident Response, please see [Incident Response Plan.](./006-Incident-Responses.md)
+For more information about Incident Response, please see [Incident Response Plan.](../007-Incident-Response/006-Incident-Responses.md)
 
 
 ### Walk-Through Exercise
@@ -175,7 +175,7 @@ For more information about Incident Response, please see [Incident Response Plan
 - Simulate network intrusion based on threat scenarios.
 - There's a **specific goal in mind.**
 - Agree on methodology and rules of engagement before performing pentests.
-- For more information, please see [Penetration Testing.](./050-Audits-and-Assessments.md#penetration-testing)
+- For more information, please see [Penetration Testing.](../006-Security-Operations/050-Audits-and-Assessments.md#penetration-testing)
 
 ### Simulation Exercise
 

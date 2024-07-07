@@ -40,7 +40,7 @@ Indicators of Compromise (IOCs) are evidence or clues that suggest a computer sy
 - Suspicious File Attachments or Downloads
 - IoT Device Anomalies
 
-For more information, please see [Indicators of Compromise.](./044-Indicators-of-Compromise.md)   
+For more information, please see [Indicators of Compromise.](../004-Threats-and-Attacks/044-Indicators-of-Compromise.md)   
 
 
 ## Goal of Incident Response
@@ -119,7 +119,7 @@ Analysis involves a thorough examination and evaluation of the incident.
 
 Digital forensics plays a critical role in the analysis phase of incident response, where investigators examine collected evidence to determine what happened during a security incident and how to respond. 
 
-For more information, please see [Digital forensics.](./034-Digital-Forensics.md)
+For more information, please see [Digital forensics.](../007-Incident-Response/034-Digital-Forensics.md)
 
 
 ### Containment
@@ -292,7 +292,7 @@ This is the practical exercise of incident response procedures.
 - Training teaches what to do, testing make sure you know how to do it.
 - Simulating an incident, can cost time and money
 
-For more information, please see [Security Awareness.](./015-Security-Awareness-Training.md#incident-response-exercises)
+For more information, please see [Security Awareness.](../006-Security-Operations/015-Security-Awareness-Training.md#incident-response-exercises)
 
 ## SOAR 
 

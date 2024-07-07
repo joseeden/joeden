@@ -219,7 +219,7 @@ SCADA (Supervisory Control and Data Acquisition) is a system used to remotely mo
 
   - Vulnerability to malware infections targeting industrial control systems.
   - Risks of data theft, operational disruption, or physical damage.
-  - For more information, please see [Malware](./043-Malware.md)
+  - For more information, please see [Malware](../004-Threats-and-Attacks/043-Malware.md)
 
 - **Lack of updates**
 
@@ -372,7 +372,7 @@ Subscribe Identity Modules (SIM) cards authenticates device to carrier network. 
 
 ### Securing Mobile Devices 
 
-For more information, please see [Mobile Asset Deployments.](./051-Asset-and-Change-Management.md#mobile-asset-deployments)
+For more information, please see [Mobile Asset Deployments.](../006-Security-Operations/051-Asset-and-Change-Management.md#mobile-asset-deployments)
 
 - **Bring your own device (BYOD)**
     - Employee uses personal device for work
@@ -391,7 +391,7 @@ For more information, please see [Mobile Asset Deployments.](./051-Asset-and-Cha
 
 
 - **Mobile Device Management**
-    - For organizations, management at scale through [Mobile Device Management.](./042-Securing-the-Network.md#mobile-device-management)
+    - For organizations, management at scale through [Mobile Device Management.](../005-Security-Architecture/042-Securing-the-Network.md#mobile-device-management)
     - Employees' device just need to be registered.
     
 - **Sideloading** 

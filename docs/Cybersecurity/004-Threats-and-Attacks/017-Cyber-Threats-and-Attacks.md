@@ -11,7 +11,7 @@ last_update:
 
 A Threat Actor is defined as an individual or a group posing a threat (according to NIST SP 800-150 under Threat Actor).
 
-For more information, please see [Threat Actors](./026-Threat-Actors.md).
+For more information, please see [Threat Actors](../004-Threats-and-Attacks/026-Threat-Actors.md).
 
 ### Attacker 
 
@@ -22,7 +22,7 @@ The three most common goals of cybersecurity attackers are DAD:
 - Alteration
 - Denial
 
-For more information, please see [Attacks](./023-Attacks.md). 
+For more information, please see [Attacks](../004-Threats-and-Attacks/023-Attacks.md). 
 
 ### Hackers
 
@@ -89,7 +89,7 @@ There are many types of cyber threats to organizations. Below are several of the
 Malicious software designed to harm or exploit systems.                          
 
 - Examples are viruses, worms, trojans.
-- For more information, please see [Malware](./043-Malware.md)
+- For more information, please see [Malware](../004-Threats-and-Attacks/043-Malware.md)
 
 ### Virus 
 

@@ -151,7 +151,7 @@ Focuses on how an organization will continue its critical operations during and 
 - Focuses on recovering as quickly as possible.
 - Dealing with strategies like hardware failure and natural disasters. 
 
-For more information, please see [Business Continuity.](./007-Business-Continuity.md)
+For more information, please see [Business Continuity.](../007-Incident-Response/007-Business-Continuity.md)
 
 ### Disaster Recovery
 
@@ -160,7 +160,7 @@ Closely related to business continuity, disaster recovery focuses on how an orga
 - Outlines steps for data backup and restoration.
 - Hardware/software recovery, as well as alternative processing locations.
 
-For more information, please see [Disaster Recovery.](./008-Disaster-recovery.md)
+For more information, please see [Disaster Recovery.](../005-Security-Architecture/008-Disaster-recovery.md)
 
 
 ### Incident Response  
@@ -170,7 +170,9 @@ A plan for handling security incidents.
 - Involves steps on detecting, assessing, and responding to incidents.
 - Can include person to contact in case of data breach. 
 
-For more information, please see [Incident Response.](./006-Incident-Responses.md)
+
+For more information, please see [Incident Response.](../007-Incident-Response/006-Incident-Responses.md)
+
 
 ### SDLC Policy 
 
@@ -197,7 +199,7 @@ Essential for transitioning from current to future states, covering:
 - Confirmation of correct implementation
 - Mitigating vulnerabilities introduced by changes
 
-For more information, please see [Asset and Change Management](./051-Asset-and-Change-Management.md#change-management). 
+For more information, please see [Asset and Change Management](../006-Security-Operations/051-Asset-and-Change-Management.md#change-management). 
 
 
 

@@ -1,0 +1,51 @@
+# ./002-Security-Principles.md:For more information, please see [Common Security Policies.](./014-Common-Security-Policies.md#password-policy) 
+# ./002-Security-Principles.md:For more information, please see [Privilege Access Management.](./011-Privilege-Access-Management.md)
+# ./003-Risk-Management.md:  - For more information, please see [Cyber Threat and Attacks.](./017-Cyber-Threats-and-Attacks.md)
+# ./003-Risk-Management.md:For more information, please see [Business Continuity](./007-Business-Continuity.md).
+# ./004-Security-Controls.md:For more information, please see [Physical Security.](./009-Access-Control.md#physical-access-controls)
+# ./005-Governance-Elements.md:For more information, please see [Common Security Policies.](./014-Common-Security-Policies.md)
+# ./005-Governance-Elements.md:  - For more information, please see [Attestations of Findings](./050-Audits-and-Assessments.md#attestation-of-findings)
+# ./006-Incident-Responses.md:For more information, please see [Indicators of Compromise.](./044-Indicators-of-Compromise.md)   
+# ./006-Incident-Responses.md:For more information, please see [Digital forensics.](./034-Digital-Forensics.md)
+# ./006-Incident-Responses.md:For more information, please see [Security Awareness.](./015-Security-Awareness-Training.md#incident-response-exercises)
+# ./014-Common-Security-Policies.md:For more information, please see [Business Continuity.](./007-Business-Continuity.md)
+# ./014-Common-Security-Policies.md:For more information, please see [Disaster Recovery.](./008-Disaster-recovery.md)
+# ./014-Common-Security-Policies.md:For more information, please see [Incident Response.](./006-Incident-Responses.md)
+# ./014-Common-Security-Policies.md:For more information, please see [Asset and Change Management](./051-Asset-and-Change-Management.md#change-management). 
+# ./015-Security-Awareness-Training.md:For more information about Incident Response, please see [Incident Response Plan.](./006-Incident-Responses.md)
+# ./015-Security-Awareness-Training.md:- For more information, please see [Penetration Testing.](./050-Audits-and-Assessments.md#penetration-testing)
+# ./016-Computer-Networking.md:  - For more information, please see [Load Balancing](./008-Disaster-recovery.md#load-balancing)
+# ./017-Cyber-Threats-and-Attacks.md:For more information, please see [Threat Actors](./026-Threat-Actors.md).
+# ./017-Cyber-Threats-and-Attacks.md:For more information, please see [Attacks](./023-Attacks.md). 
+# ./017-Cyber-Threats-and-Attacks.md:- For more information, please see [Malware](./043-Malware.md)
+# ./021-Threat-Prevention.md:  - For more information, please see [Malware](./043-Malware.md)
+# ./025-Network-Authentication-Protocols.md:For more information, please see [IEEE 802.1X Protocol](./041-Ports-and-Protocols.md#ieee-8021x-protocol)
+# ./031-Hashing.md:For more information, please see [Digital Signatures in Asymmetric Encryptions.](./030-Asymmetric-Encryption.md)
+# ./031-Hashing.md:For more information, please see [Pass the Hash Attack](./023-Attacks.md#pass-the-hash-attack).
+# ./031-Hashing.md:For more information, please see [Birthday Attack](./023-Attacks.md#birthday-attack).
+# ./031-Hashing.md:For more information, please see [Rainbow Table Attack](./023-Attacks.md#rainbow-table-attack).
+# ./031-Hashing.md:For more information, please see [Dictionary Attack](./023-Attacks.md#dictionary-attack).
+# ./031-Hashing.md:For more information, please see [Brute Force  Attack](./023-Attacks.md#brute-force-attack).
+# ./036-Social-Engineering.md:For more information, please see [Cyber Threats and Attacks.](./023-Attacks.md)
+# ./038-Data-Security.md:  - For more information, please see [IPSec](./042-Securing-the-Network.md#ipsec)
+# ./040-Embedded-Systems.md:  - For more information, please see [Malware](./043-Malware.md)
+# ./040-Embedded-Systems.md:For more information, please see [Mobile Asset Deployments.](./051-Asset-and-Change-Management.md#mobile-asset-deployments)
+# ./040-Embedded-Systems.md:    - For organizations, management at scale through [Mobile Device Management.](./042-Securing-the-Network.md#mobile-device-management)
+# ./041-Ports-and-Protocols.md:- For more information, please see [MAC Address Flooding](./023-Attacks.md#mac-address-flooding)
+# ./041-Ports-and-Protocols.md:For more information, please see [EAP](./025-Network-Authentication-Protocols.md#eap)
+# ./042-Securing-the-Network.md:For more information, please see [VLANs](./016-Computer-Networking.md#virtual-local-network)
+# ./045-Vulnerabilities.md:For more information, please see [Bluetooth Attacks.](./023-Attacks.md#bluetooth-attacks)
+# ./045-Vulnerabilities.md:For more information, please see [Mobile Device Management.](./042-Securing-the-Network.md#mobile-device-management)
+# ./046-Vulnerability-Management.md:- For more information, please see [Penetration Testing.](./050-Audits-and-Assessments.md#penetration-testing)
+# ./046-Vulnerability-Management.md:For more information, please see [Quantitative Risk Assessment.](./003-Risk-Management.md)
+# ./048-Logging-Data.md:For more information, please see [NetFlow.](./047-Alerting-and-Monitoring.md#netflow-zeek-and-mrtg)
+# ./048-Logging-Data.md:- For more information, please see [SNMP](./047-Alerting-and-Monitoring.md#snmp)
+# ./048-Logging-Data.md:- For more information, please see [SIEM](./047-Alerting-and-Monitoring.md#siem)
+# ./050-Audits-and-Assessments.md:For more information, please see [Compliance as a Governance Element.](./005-Governance-Elements.md#compliance) 
+# ./051-Asset-and-Change-Management.md:For more information, please see [Mobile Device Management.](./042-Securing-the-Network.md#mobile-device-management)
+# ./051-Asset-and-Change-Management.md:- For more information, please see [Data Media Sanitization.](./038-Data-Security.md#data-media-sanitization)
+# ./052-Third-Party-Vendor-Risks.md:For more information, please see [Agreement Types](./003-Risk-Management.md#agreement-types)
+# ./053-Security-Techniques.md:For more information, please see [AAA of Security](./002-Security-Principles.md#aaa-of-security)
+# ./053-Security-Techniques.md:For more information, please see [RADIUS](./025-Network-Authentication-Protocols.md#radius)
+# ./053-Security-Techniques.md:For more information, please see [TACACS+](./025-Network-Authentication-Protocols.md#tacacs)
+# ./053-Security-Techniques.md:For more information, please see [EAP Variants](./025-Network-Authentication-Protocols.md#eap)

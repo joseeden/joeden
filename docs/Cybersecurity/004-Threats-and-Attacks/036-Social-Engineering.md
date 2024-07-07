@@ -76,7 +76,7 @@ Social Engineering refers to tenetshe manipulation of individuals or groups to g
 
 ## Attacks 
 
-For more information, please see [Cyber Threats and Attacks.](./023-Attacks.md)
+For more information, please see [Cyber Threats and Attacks.](../004-Threats-and-Attacks/023-Attacks.md)
 
 - **Website Redirection**
 

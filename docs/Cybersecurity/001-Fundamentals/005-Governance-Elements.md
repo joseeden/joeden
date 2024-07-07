@@ -101,7 +101,7 @@ Key IT Policies:
 - SDLC 
 - Change Management
 
-For more information, please see [Common Security Policies.](./014-Common-Security-Policies.md)
+For more information, please see [Common Security Policies.](../006-Security-Operations/014-Common-Security-Policies.md)
 
 ### Standards
 
@@ -235,7 +235,7 @@ Key components:
 
 - **Attestation**
   - Formal declarations confirming compliance with regulations or standards.
-  - For more information, please see [Attestations of Findings](./050-Audits-and-Assessments.md#attestation-of-findings)
+  - For more information, please see [Attestations of Findings](../006-Security-Operations/050-Audits-and-Assessments.md#attestation-of-findings)
 
 - **Acknowledgement**
   - Recognition and acceptance of compliance requirements by all relevant parties.
