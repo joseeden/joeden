@@ -1,7 +1,7 @@
 ---
 title: "DR in the Real-world"
 tags: [Cybersecurity]
-sidebar_position: 1
+sidebar_position: 2
 last_update:
   date: 1/30/2024
 ---
