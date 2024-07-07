@@ -38,10 +38,26 @@ Advanced:
   label: 'Advanced'
   permalink: '/Advanced'
   description: 'Docs related to Advanced'
+Cloud:
+  label: 'Cloud'
+  permalink: '/Cloud'
+  description: 'Docs related to Cloud'
 AWS:
   label: 'AWS'
   permalink: '/AWS'
   description: 'Docs related to AWS'
+Azure:
+  label: 'Azure'
+  permalink: '/Azure'
+  description: 'Docs related to Azure'
+GCP:
+  label: 'GCP'
+  permalink: '/GCP'
+  description: 'Docs related to GCP'
+Google:
+  label: 'Google'
+  permalink: '/Google'
+  description: 'Docs related to Google'
 Cybersecurity:
   label: 'Cybersecurity'
   permalink: '/Cybersecurity'
