@@ -160,7 +160,7 @@ Closely related to business continuity, disaster recovery focuses on how an orga
 - Outlines steps for data backup and restoration.
 - Hardware/software recovery, as well as alternative processing locations.
 
-For more information, please see [Disaster Recovery.](../005-Security-Architecture/008-Disaster-recovery.md)
+For more information, please see [Disaster Recovery.](../005-Security-Architecture/001-HA-and-DR.md)
 
 
 ### Incident Response  
