@@ -40,7 +40,7 @@ Indicators of Compromise (IOCs) are evidence or clues that suggest a computer sy
 - Suspicious File Attachments or Downloads
 - IoT Device Anomalies
 
-For more information, please see [Indicators of Compromise.](../004-Threats-and-Attacks/044-Indicators-of-Compromise.md)   
+For more information, please see [Indicators of Compromise.](../004-Threats-and-Attacks/021-Indicators-of-Compromise.md)   
 
 
 ## Goal of Incident Response
