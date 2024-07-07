@@ -16,7 +16,7 @@ There are many types of cyber threats to organizations. Below are several of the
 Malicious software designed to harm or exploit systems.                          
 
 - Examples are viruses, worms, trojans.
-- For more information, please see [Malware](../004-Threats-and-Attacks/043-Malware.md)
+- For more information, please see [Malware](../004-Threats-and-Attacks/020-Malware.md)
 
 ### Virus 
 
