@@ -484,9 +484,6 @@ Secure Access Service Edge (SASE) is a network architecture that combines WAN ca
 - Eliminates the need for multiple security solutions.
 
 
-## Network Tools 
-
-### Network Protocol Analyzers 
 
 ## Network Tools
 
