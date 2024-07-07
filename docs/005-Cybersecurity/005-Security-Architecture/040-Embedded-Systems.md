@@ -391,7 +391,7 @@ For more information, please see [Mobile Asset Deployments.](../006-Security-Ope
 
 
 - **Mobile Device Management**
-    - For organizations, management at scale through [Mobile Device Management.](../005-Security-Architecture/042-Securing-the-Network.md#mobile-device-management)
+    - For organizations, management at scale through [Mobile Device Management.](../005-Security-Architecture/051-Securing-the-Network.md#mobile-device-management)
     - Employees' device just need to be registered.
     
 - **Sideloading** 

@@ -106,5 +106,5 @@ Insecure connection methods involve using unprotected or poorly secured networks
 
 Mobile Device Management (MDM) enables organizations to manage and secure mobile devices across various platforms (smartphones, tablets).
 
-For more information, please see [Mobile Device Management.](../005-Security-Architecture/042-Securing-the-Network.md#mobile-device-management)
+For more information, please see [Mobile Device Management.](../005-Security-Architecture/051-Securing-the-Network.md#mobile-device-management)
 
