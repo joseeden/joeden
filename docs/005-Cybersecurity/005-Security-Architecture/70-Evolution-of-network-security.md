@@ -1,7 +1,7 @@
 ---
-title: "Evolution of Network Security"
+title: "Evolution of Security"
 tags: [Cybersecurity]
-sidebar_position: 57
+sidebar_position: 70
 last_update:
   date: 1/30/2024
 ---

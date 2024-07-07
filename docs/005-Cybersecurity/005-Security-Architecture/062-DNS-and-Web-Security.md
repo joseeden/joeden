@@ -9,6 +9,10 @@ last_update:
 
 ## Domain Name System (DNS)
 
+The Domain Name System (DNS) is a hierarchical and decentralized naming system used to convert human-readable domain names (like www.google.com) into IP addresses (like 192.0.2.1) that computers use to identify each other on the network. 
+
+It functions like a phonebook for the internet, allowing users to access websites using domain names instead of memorizing numerical IP addresses. 
+
 ### DNSSEC
 
 DNS Security Extensions (DNSSEC) enhance the security of the Domain Name System (DNS) by ensuring the authenticity and integrity of DNS data. It helps protect against attacks like cache poisoning.
