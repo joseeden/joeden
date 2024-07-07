@@ -1,7 +1,7 @@
 ---
 title: "IAM Concepts"
 tags: [Cybersecurity]
-sidebar_position: 22
+sidebar_position: 4
 last_update:
   date: 1/30/2024
 ---
@@ -15,6 +15,24 @@ Process of verifying the identity of the user before the account is created.
 - Checking user details against a trusted source of data
 - Request user to provide some sort of identification
 
+### Account Review 
+
+Account review is a process used to verify that employees have the necessary privileges considering their roles within the organization
+  - Verifies employees' privileges align with their roles within the organization.
+  - Periodically examines and updates permissions for relevance and necessity.
+  - Mitigates privilege creep, preventing unnecessary access accumulation.
+  - *Reference:* ISC2 Study Guide, Module 1, under Privileged Access Management.
+
+**Re-provisioning**
+
+  - Reassigns privileges to an employee who has changed roles within the organization.
+
+**Account Revocation**
+
+  - Process of revoking access privileges for a specific user account.
+
+
+
 ### Provisioning 
 
 Creating new user accounts, assigning them appropriate permissions, and providing users with access to the systems 
@@ -27,12 +45,7 @@ Removing an individual's access rights when the rights is no longer required, su
 
 Occurs when user gains more and more rights during their career progression in the company.
 
-### Interoperability 
 
-The ability of different systems, devices, and applications to work together 
-and share information.
-
-- Can involve standards such as SAML or OpenID connect
 
 ### User Account Control 
 
@@ -40,6 +53,32 @@ A mechanism designed to ensure that actions requiring administrative rights are 
 
 - Similar to a security checkpoint
 - When a user tries to install a software, a pop will appear prompting him to enter an admin user and password.
+
+
+### Privilege creep 
+
+Privilege creep occurs when an individual accumulates access rights beyond what is necessary for their current job responsibilities, often as a result of changing roles within an organization.
+
+### Decentralized Access Control
+
+Decentralized access control means that access permissions and management are scattered across different departments or systems within an organization.
+
+- Decentralized access control often leads to inconsistent control.
+- Results in varying security levels and access rights.
+- Maintaining a consistent access control policy becomes challenging.
+
+Example:
+
+- Department A may enforce strict access controls, while Department B adopts lax controls, posing security risks.
+- Varying access controls between departments pose security risks.
+- Inconsistencies may lead to unauthorized access, breaches, and challenges in auditing.
+
+### Self-service Password Reset
+
+- Decreases help desk cases related to password changes.
+- Allows users to reset passwords without help desk assistance.
+- Reduces help desk workload, increases user autonomy.
+
 
 ### Password Security  
 
@@ -118,6 +157,19 @@ The "Trust but verify" model is a method of threat protection that involves gran
 - Increasingly abandoned in favor of the Zero Trust model.
 - Other options are considered best practices in access management.
 
+
+### Need to Know 
+
+Need to know is a principle that limits access to information to only those who require it to perform their job duties (see ISC2 Study Guide, Chapter 3, Module 1). 
+
+Example:
+
+- John requests access to a database containing sensitive HR records.
+- He has high-security clearance but is denied access to HR records.
+- Access denied due to lack of business justification.
+- Upholds data confidentiality and restricts access based on job roles.
+- Ensures adherence to security principles.
+
 ### Due Care 
 
 In cybersecurity, 'due care' means taking reasonable steps to secure and protect the organization's assets, reputation and finances. 
@@ -132,3 +184,10 @@ In cybersecurity, 'due care' means taking reasonable steps to secure and protect
 ### Collusion 
 
 Collusion occurs when two or more individuals work together to circumvent the segregation of duties for fraudulent purposes.
+
+### Interoperability 
+
+The ability of different systems, devices, and applications to work together 
+and share information.
+
+- Can involve standards such as SAML or OpenID connect

@@ -7,8 +7,6 @@ last_update:
 ---
 
 
-## Principle of Least Privilege
-
 The Principle of Least Privilege dictates that users or programs should be granted the minimum access essential to fulfill their functions. Access is restricted to the specific systems and programs required for their designated job or tasks.
 
 
