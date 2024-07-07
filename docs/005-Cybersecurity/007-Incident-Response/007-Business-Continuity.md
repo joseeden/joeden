@@ -24,13 +24,7 @@ Key elements involve:
 - Maintenance of critical contact numbers for various entities.
 - Access to designated numbers and military-grade networks during severe cyberattacks or major disruptions.
 
-A Business Continuity Plan (BCP) helps the organization minimize downtime and recover from incidents efficiently.
-
-## Components of a Business Continuity Plan
-
-Business continuity planning (BCP) involves proactively developing procedures to restore operations post-disaster. It's a collaborative effort across the organization to ensure comprehensive coverage.
-
-**Key Components:**
+Key Components:
 
 - [Risk Assessment](#risk-assessment)
 - [Business Impact Analysis BIA](#business-impact-analysis-bia)
@@ -203,11 +197,9 @@ In summary:
 
 Routinely. Each individual organization must determine how often to test its BCP, but it should be tested at predefined intervals as well as when significant changes happen within the business environment. 
 
-
 ## Business Continuity in Action
 
 **What does business continuity look like in action?**
-
 Imagine that the billing department of a company suffers a complete loss in a fire. A **Business Impact Analysis (BIA)** was performed four months ago and identified the functions of the billing department as very important to the company, but not immediately affecting other areas of work.
 
 - Overnight fire leads to complete loss in billing department
@@ -222,10 +214,10 @@ In this scenario:
 - Pre-planning: alternate work area, customer service managing billing calls
 - Execution ensures no material business interruption, indicating successful continuity plan.
 
-## Business Continuity versus Disaster Recovery
+**Business Continuity vs. Disaster Recovery**
 
-Business Continuity (BC) plans focus on **proactive** measures to prevent incidents and ensure the continuous operation of critical business functions. 
+- Business Continuity (BC) plans focus on **proactive** measures to prevent incidents and ensure the continuous operation of critical business functions. 
 
-Disaster Recovery (DR) plans, on the other hand, focus on **reactive** measures to recover IT systems, applications, and data after a disaster or major incident.
+- Disaster Recovery (DR) plans, on the other hand, focus on **reactive** measures to recover IT systems, applications, and data after a disaster or major incident.
 
 
