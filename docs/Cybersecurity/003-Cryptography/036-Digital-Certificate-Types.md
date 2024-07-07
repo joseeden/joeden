@@ -7,9 +7,7 @@ last_update:
 ---
 
 
-## Digital Certificate Types 
-
-### Domain Validation Certificates (DV)
+## Domain Validation Certificates (DV)
 
 A basic SSL/TLS certificate that verifies domain ownership without authenticating organizational details.
 
@@ -20,7 +18,7 @@ A basic SSL/TLS certificate that verifies domain ownership without authenticatin
 - Suitable for blogs, personal sites, and small businesses.
 - Widely supported by web browsers.
 
-### Extended Validation Certificates (EV)
+## Extended Validation Certificates (EV)
 
 High-assurance SSL/TLS certificates that undergo rigorous validation processes to provide enhanced trust and security.
 
@@ -31,7 +29,7 @@ High-assurance SSL/TLS certificates that undergo rigorous validation processes t
 - Ideal for websites handling sensitive data or transactions, e.g. financial institutions.
 
 
-### Wildcard Certificates
+## Wildcard Certificates
 
 Wildcard certificates **secure a domain and all its subdomains** with a single certificate.
 
@@ -47,14 +45,14 @@ Disadvantage:
 - Revoking a wildcard certificate affects all subdomains, potentially causing disruptions.
 - However, re-issuing a new certificate is an quick process.
 
-### SAN Certificates
+## SAN Certificates
 
 Instead of using Wildcard, we can modify the Subject Alternate Name (SAN) field to **specify multiple domains**.
 
 - Useful for supporting different domains with a single digital certificate.
 - Different domains with different root domain, e.g. abc.com and xyz.com
 
-### Single-Sided Certificates
+## Single-Sided Certificates
 
 Single-sided certificates are issued by only one party to authenticate the identity of the recipient. This only requires the server to be validated.
 
@@ -64,7 +62,7 @@ Single-sided certificates are issued by only one party to authenticate the ident
 - Commonly used in email encryption
 - Example: S/MIME certificates for email encryption
 
-### Double-Sided Certificates
+## Double-Sided Certificates
 
 Double-sided certificates authenticate both parties involved in a transaction, providing mutual trust and security.
 
@@ -73,7 +71,7 @@ Double-sided certificates authenticate both parties involved in a transaction, p
 - Enhanced security for sensitive transactions
 - Example: SSL/TLS certificates for secure web browsing
 
-### Self-Signed Certificates
+## Self-Signed Certificates
 
 Self-signed certificates are **generated and signed by the entity itself**, used for internal testing or private networks.
 
@@ -82,7 +80,7 @@ Self-signed certificates are **generated and signed by the entity itself**, used
 - Not suitable for public-facing services due to lack of trust
 - Commonly used for local development or testing environments
 
-### Third-Party Certificates
+## Third-Party Certificates
 
 Third-party certificates are issued and signed by a trusted Certificate Authority (CA) to validate the identity of an entity, commonly used in public networks like the internet.
 
