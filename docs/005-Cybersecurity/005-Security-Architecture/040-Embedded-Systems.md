@@ -7,7 +7,7 @@ last_update:
 ---
 
 
-## Embedded Systems
+## Overview
 
 Embedded systems are **specialized** computing systems designed to perform specific functions within larger systems or devices. They are typically built with microcontrollers or microprocessors and are embedded into products to control and monitor various operations. 
 

@@ -7,7 +7,7 @@ last_update:
 ---
 
 
-## Security Architecture
+## Overview
 
 Design, structure and behavior of an organization's information security environment.
 
