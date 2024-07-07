@@ -1,5 +1,5 @@
 ---
-title: "Xero Day"
+title: "Zero Day"
 tags: [Cybersecurity]
 sidebar_position: 14
 last_update:

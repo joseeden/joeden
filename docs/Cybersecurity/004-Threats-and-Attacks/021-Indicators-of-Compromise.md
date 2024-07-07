@@ -1,7 +1,7 @@
 ---
 title: "Indicators of Compromise"
 tags: [Cybersecurity]
-sidebar_position: 1
+sidebar_position: 21
 last_update:
   date: 1/30/2024
 ---
