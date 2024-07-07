@@ -18,6 +18,88 @@ SELinux (Security-Enhanced Linux) is a security module that provides mechanisms 
 
 Due to the strict implementation of SELinux, "unknown" services will always require additional configuration to enable them in an environment where SELinux is enabled.
 
+## Features 
+
+SELinu is a powerful security module for Linux that implements Mandatory Access Control (MAC) policies. Developed by the NSA, it enhances the security of Linux systems through the following features:
+
+- **Mandatory Access Control (MAC)**
+
+  - Enforces strict policies controlling access to files, processes, and resources.
+  - Prevents unauthorized actions by users and applications.
+  - Policies are defined by the administrator and enforced by the kernel.
+
+- **Fine-Grained Security Policies**
+
+  - Allows detailed specification of security rules.
+  - Policies can be customized to fit specific security requirements.
+  - Controls access based on a wide range of attributes and contexts.
+
+- **Context-Based Permissions**
+
+  - Uses security contexts to determine access permissions.
+  - Every file, process, and system resource is labeled with a security context.
+  - Access decisions are made based on these contexts.
+
+- **Isolation and Containment**
+
+  - Helps in isolating applications and users to prevent the spread of security breaches.
+  - Limits the potential damage from compromised processes or accounts.
+  - Ensures that applications run with the minimum necessary privileges.
+
+- **Comprehensive Security Auditing**
+
+  - Provides extensive logging of security-relevant events.
+  - Enables tracking and analysis of security policy violations.
+  - Helps in incident response and forensic investigations.
+
+- **Role-Based Access Control (RBAC)**
+
+  - Integrates RBAC to manage permissions based on user roles.
+  - Simplifies the administration of access controls.
+  - Ensures users have only the permissions necessary for their role.
+
+## Context-based Permission Schemes
+
+**SELinux**
+
+- Each file, process, and system resource is labeled with a security context.
+- A security context consists of a type and a domain. 
+- Access decisions are based on these labels
+- This enforces strict policies to prevent unauthorized access and actions.
+- Sample SELinux Configuration:
+
+    ```bash
+    # Example SELinux policy rule
+    allow httpd_t user_home_t:file { read getattr };
+    ```
+
+**AppArmor**
+
+- Linux security module, offers application-level access control through the use of profiles.
+- Each profile defines a set of rules specifying the allowed resources and operations
+- This enhances security by limiting the scope of potential attacks.
+- Sample AppArmor Configuration:
+
+    ```bash
+    # Example AppArmor profile for the Apache web server
+    /usr/sbin/apache2 {
+    # Allow read access to the Apache configuration files
+    /etc/apache2/apache2.conf r,
+    /etc/apache2/conf.d/ r,
+    /etc/apache2/conf.d/** r,
+    /etc/apache2/sites-available/ r,
+    /etc/apache2/sites-available/** r,
+    
+    # Allow read access to web content directories
+    /var/www/ r,
+    /var/www/** r,
+    
+    # Allow access to log files
+    /var/log/apache2/ r,
+    /var/log/apache2/** rw,
+    }
+    ```
+
 ## SELinux States and Modes
 
 SELinux operates in different states and modes to control its behavior and the level of security enforcement.
@@ -28,26 +110,39 @@ SELinux operates in different states and modes to control its behavior and the l
 ### States
 
 There are two primary states:
+
 - **Enabled**: SELinux is active and enforcing security policies.
 - **Disabled**: SELinux is turned off and not enforcing any policies.
 
 To disable or enable SELinux, a system reboot is required.
 
 ### Modes
-When SELinux is enabled, it can operate in one of two modes:
-- **Enforcing**: Enforces SELinux policies, blocking any actions that do not comply with the policies.
-- **Permissive**: SELinux policies are not enforced; instead, violations are logged. This mode is useful for troubleshooting and should be temporary.
+
+SELinux operates in three modes:
+
+- **Enforcing Mode**
+
+  - Enforces security policies, denying actions that violate rules.
+  - Provides active protection against policy violations.
+  - Ensures strict adherence to security policies.
+
+- **Permissive Mode**
+
+  - Logs policy violations without enforcing them.
+  - Allows actions that would otherwise be denied for monitoring purposes.
+  - Provides insights into potential policy issues without affecting system behavior.
+
+- **Disabled Mode**
+
+  - Completely disables SELinux.
+  - No security policies are enforced.
+  - System operates without SELinux restrictions.
 
 To switch between enforcing and permissive modes, use the `setenforce` command:
 
 ```bash
-$ getenforce
-Enforcing
-
-$ setenforce permissive
-
-$ getenforce
-Permissive
+sudo setenforce enforcing   # Switch to enforcing mode
+sudo setenforce permissive  # Switch to permissive mode
 ```
 
 To check the current status of SELinux, use:
@@ -80,6 +175,13 @@ SELINUX=enforcing
 SELINUXTYPE=targeted
 ```
 
+If the configuration file doesn't not exist, try modifying the SELINUX value in:
+
+```bash
+sudo nano /etc/selinux/config 
+```
+
+
 When SELinux is set to disabled, the `setenforce` command will not work:
 ```bash
 $ setenforce permissive
@@ -92,14 +194,51 @@ setenforce: SELinux is disabled
 
 SELinux uses context labels and booleans to manage access controls and permissions for processes and files.
 
-- Every object is labeled with a context label. 
-
-  - `user`: user specific context
-  - `role`: role specific context
-  - `type`: flags which type of operation is allowed on this object.
-
 - Many commands support a `-Z` option to show current context information. 
 - Context types are used in the rules in the policy to define which source object has access to which target object.
+
+Every object is labeled with a context label. 
+
+- `user`: user specific context
+- `role`: role specific context
+- `type`: flags which type of operation is allowed on this object.
+
+Common User contexts:
+
+| User Context   | Description                                      |
+|----------------|--------------------------------------------------|
+| unconfined_u   | Unrestricted access to resources.                |
+| user_u         | Regular user without admin privileges.           |
+| sysadmin_u     | Access to system administration tasks.           |
+| root           | Superuser with full access to system resources.  |
+
+Common Role contexts:
+
+| Role Context   | Description                                            |
+|----------------|--------------------------------------------------------|
+| object_r       | Role assigned to objects such as files and directories.|
+| system_r       | Role assigned to system-related processes and services.|
+| user_r         | Role assigned to regular user processes.               |
+
+Common Type contexts: 
+
+| Type Context       | Description                                                    |
+| file_t             | Type assigned to regular files.                                |
+| dir_t              | Type assigned to directories.                                   |
+| process_t          | Type assigned to processes.                                     |
+
+To view the SELinux contexts for running processes:
+
+```bash
+$ ps -eZ 
+
+system_u:system_r:dhcpc_t:s0             1869 ?  00:00:00 dhclient
+system_u:system_r:sshd_t:s0-s0:c0.c1023  1882 ?  00:00:00 sshd
+system_u:system_r:gpm_t:s0               1964 ?  00:00:00 gpm
+system_u:system_r:crond_t:s0-s0:c0.c1023 1973 ?  00:00:00 crond
+system_u:system_r:kerneloops_t:s0        1983 ?  00:00:05 kerneloops
+system_u:system_r:crond_t:s0-s0:c0.c1023 1991 ?  00:00:00 atd
+```
 
 
 ### Context Labels
@@ -127,6 +266,18 @@ $
 ```
 
 ![](/img/docs/sv-selinux-labels-4.png)
+
+
+### Multi-level Security Context 
+
+SELinux provides support for multi-level security contexts through a fourth context which indicates the sensitivity levels.
+
+| Sensitivity Level | Description                                |
+|-------------------|--------------------------------------------|
+| s0                | Lowest sensitivity level                   |
+| s1                | Intermediate sensitivity level             |
+| s2                | Higher sensitivity level                   |
+| s3                | Highest sensitivity level                  |
 
 ### Booleans
 
@@ -179,6 +330,22 @@ From the man page:
 
 ![](/img/docs/sv-selinux-labelsman.png)
 
+## SELinux Policies
+
+SELinux supports various policies, including:
+
+- **Targeted Policy**
+
+  - Default policy used in Red Hat Linux and CentOS.
+  - Applies SELinux restrictions selectively to targeted processes.
+  - Leaves other processes unconfined.
+  - Offers a balance between security and flexibility.
+  
+- **Strict Policy**
+
+  - Enforces SELinux restrictions on all processes.
+  - Provides a higher level of security.
+  - May require more configuration effort to manage.
 
 ## SELinux Log Messages
 

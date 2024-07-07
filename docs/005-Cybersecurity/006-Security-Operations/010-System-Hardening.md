@@ -166,4 +166,15 @@ The process of measuring changes in the network, hardware, or software environme
 - By knowing what's normal, we can also identify what's considered a deviation.
 - Any deviations are compared to the known baseline to determine if it is expected.
 
+## SELinux 
 
+SELinux (Security-Enhanced Linux) is a security module that provides mechanisms for supporting access control security policies, including mandatory access controls (MAC). It is an essential component in securing Linux systems by ensuring that applications and processes have only the necessary permissions.
+
+- Linux security is built on UNIX security. 
+- SELinux provides a complete and mandatory security solution.
+- Most of the security solutions focus on a part of the OS.
+- If it is not specifically allowed, it will be denied. 
+
+Due to the strict implementation of SELinux, "unknown" services will always require additional configuration to enable them in an environment where SELinux is enabled.
+
+For more information, please see [SELinux.](../../003-Linux/004-Linux%20Security/030-SELinux.md)
