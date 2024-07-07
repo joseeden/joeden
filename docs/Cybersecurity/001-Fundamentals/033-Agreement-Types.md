@@ -7,9 +7,8 @@ last_update:
 ---
 
 
-## Agreement Types 
 
-### Interconnection Security Agreement 
+## Interconnection Security Agreement 
 An Interconnection Security Agreement (ISA) outlines the security requirements for two organizations that are connecting their information systems.
 
 - Details the roles, responsibilities, and technical safeguards for secure connections and data exchange.
@@ -23,7 +22,7 @@ Used for:
 - Vulnerability scan results
 - Mandatory training/certification
 
-### Basic Contract 
+## Basic Contract 
 
 In risk management and vendor selection, a well-drafted basic contract is essential for defining the terms of engagement, protecting interests, and setting expectations between parties. It serves as the foundation for the business relationship, ensuring clarity and mutual understanding.
 
@@ -31,7 +30,7 @@ In risk management and vendor selection, a well-drafted basic contract is essent
 - Outlines the conditions under which the contract can be terminated by either party
 - Ensures that both parties adhere to relevant laws and regulations throughout the engagement
 
-### Service Level Agreement 
+## Service Level Agreement 
 
 A Service Level Agreement (SLA) is a contract that defines the performance expectations and service standards between a service provider and a customer.
 
@@ -40,7 +39,7 @@ A Service Level Agreement (SLA) is a contract that defines the performance expec
 - Outlines remedies or penalties, if service provider doesn't meet agreed-upon standards.
 - Used in IT, telco, and cloud services to manage service quality and customer relationships.
 
-### MOU and MOA 
+## MOU and MOA 
 
 Both are types of agreements used in various contexts, providing a basis for collaboration and establishing the foundation for future cooperation. MOAs are typically more structured and legally binding compared to MOUs.
 
@@ -76,7 +75,7 @@ Additionally:
   - Caution required in cloud-based outsourcing, thorough legal review recommended.
 
 
-### Master Services Agreement 
+## Master Services Agreement 
 
 A Master Services Agreement (MSA) provides a standardized set of terms for all projects and services provided over time. It helps streamline interactions and ensure consistency across multiple engagements.
 
@@ -86,7 +85,7 @@ A Master Services Agreement (MSA) provides a standardized set of terms for all p
 
 For recurring client relationships, the involved parties can use an MSA instead of drafting up a new contract for every project. These agreement will contain the overarchign terms, and can be supplemented with the individual work orders or a **Statement of Work (SOW).**
 
-### Statement of Work 
+## Statement of Work 
 
 The Statement of Work (SOW) is a critical document that details the specifics of a project or service engagement, clearly defining the scope, deliverables, and timeline to ensure all parties are aligned.
 
@@ -95,7 +94,7 @@ The Statement of Work (SOW) is a critical document that details the specifics of
 - Lists the expected deliverables, project milestones, and deadlines for deliverables.
 
 
-### Non-Disclosure Agreement 
+## Non-Disclosure Agreement 
 
 A Non-Disclosure Agreement (NDA) is a legally binding contract that requires parties to keep certain information confidential.
 
@@ -104,7 +103,7 @@ A Non-Disclosure Agreement (NDA) is a legally binding contract that requires par
 - Violation can lead to legal consequences, including lawsuits and financial penalties.
 
 
-### Business Partnership Agreement
+## Business Partnership Agreement
 
 A Business Partnership Agreement (BPA) is a legally binding document that outlines the terms and conditions of a business relationship between two or more partners.
 
