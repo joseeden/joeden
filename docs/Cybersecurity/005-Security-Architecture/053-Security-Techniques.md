@@ -233,7 +233,7 @@ AAA (Authentication, Authorization, and Accounting) is a framework used in netwo
 - Authorization: Grants access based on permissions.
 - Accounting: Monitors and logs user activities for security auditing.
 
-For more information, please see [AAA of Security](../001-Fundamentals/002-Security-Principles.md#aaa-of-security)
+For more information, please see [AAA of Security](../001-Fundamentals/020-Security-Principles.md#aaa-of-security)
 
 ### RADIUS
 
