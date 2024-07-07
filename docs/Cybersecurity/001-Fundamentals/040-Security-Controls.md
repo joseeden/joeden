@@ -7,7 +7,7 @@ last_update:
 ---
 
 
-## Security Control 
+## Overview
 
 Controls ensure the confidentiality, integrity, and availability of an organization's information and technology assets, focusing on people, technology, processes, and strategy.
 

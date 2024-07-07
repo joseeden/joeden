@@ -11,20 +11,20 @@ last_update:
 
 Gap Analysis is the process of evaluating the differences betweenan organization's current performance and its desired performance. 
 
-### Steps
+## Steps
 
 1. Define the scope of analysis.
 2. Gather data on the current state of the organization.
 3. Analyze the data to identify the gaps.
 4. Develop a plan to bridge the gap.
 
-### Technical Gap Analysis
+## Technical Gap Analysis
 
 - Focuses on IT systems, infrastructure, and technical skills to identify areas for improvement.
 - Aims to find gaps in technology, security, or technical competencies that affect operations.
 - Common in IT audits, technology upgrades, cybersecurity assessments, and technical training.
 
-### Business Gap Analysis
+## Business Gap Analysis
 
 - Examines business processes, strategy, and organizational goals to find discrepancies.
 - Aims to identify gaps between current practices and business objectives or market demands.

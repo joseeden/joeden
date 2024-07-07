@@ -11,7 +11,7 @@ last_update:
 
 Zero Trust is a security model that operates on the principle that no one, whether inside or outside the organization, should be trusted by default and verification is required for everybody.
 
-### Control Plane
+## Control Plane
 Define, manage, and enforce the policies related to user and system access 
 
 - **Adaptive identity** - rely on real-time validation.
@@ -19,7 +19,7 @@ Define, manage, and enforce the policies related to user and system access
 - **Policy-driven access control** - enforce user access policies based on their roles
 - **Secured zones** - isolated environments within a network that is designed to house sensitive data.
 
-### Data Plane
+## Data Plane
 Ensures that the policies and procedures are properly executed.
 
 - **Subject/system** - individual or entity attempting to gain access.

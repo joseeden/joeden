@@ -16,7 +16,7 @@ last_update:
 - Data Protection 
 - Business Continuity
 
-### Compliance Reporting
+## Compliance Reporting
 
 Systematic process of collecting and presenting data to demonstrate adherence to compliance requirements. 
 
@@ -35,7 +35,7 @@ Types:
   - Demonstrating compliance to external entities, such as customers.
   - Often mandated by law or contract.
 
-### Compliance Monitoring
+## Compliance Monitoring
 
 The process of regularly reviewing and assessing organizational practices to ensure compliance with laws, regulations, and internal policies.
 
@@ -63,14 +63,14 @@ Key components:
   - Internally monitoring adherence to policies, procedures, and regulations through audits, reviews, and assessments.
   - Externally monitoring compliance through third-party audits, regulatory inspections, and industry certifications.
 
-### Automation in Compliance 
+## Automation in Compliance 
 
 Automated compliance systems can streamline data collection, improve accuracy, and provide real-time compliance monitoring.
 
 - Healthcare providers, for monitoring patient data privacy compliance.
 - Banks can monitor transactions for potential money laundering activities.
 
-### Consequences of Non-Compliance
+## Consequences of Non-Compliance
 
 - **Fines**
   - Financial penalties imposed by regulatory authorities.
