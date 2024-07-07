@@ -1,7 +1,7 @@
 ---
 title: "Asset and Change Management"
 tags: [Cybersecurity]
-sidebar_position: 1
+sidebar_position: 70
 last_update:
   date: 1/30/2024
 ---

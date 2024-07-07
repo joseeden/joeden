@@ -1,7 +1,7 @@
 ---
 title: "System Hardening"
 tags: [Cybersecurity]
-sidebar_position: 10
+sidebar_position: 50
 last_update:
   date: 1/30/2024
 ---

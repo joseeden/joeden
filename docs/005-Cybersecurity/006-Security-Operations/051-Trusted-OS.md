@@ -1,7 +1,7 @@
 ---
 title: "Trusted OS"
 tags: [Cybersecurity]
-sidebar_position: 11
+sidebar_position: 51
 last_update:
   date: 1/30/2024
 ---

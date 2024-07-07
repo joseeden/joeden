@@ -1,7 +1,7 @@
 ---
-title: "Data Security "
+title: "Data Security"
 tags: [Cybersecurity]
-sidebar_position: 1
+sidebar_position: 3
 last_update:
   date: 1/30/2024
 ---

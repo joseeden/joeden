@@ -1,7 +1,7 @@
 ---
 title: "Updates and Patches"
 tags: [Cybersecurity]
-sidebar_position: 12
+sidebar_position: 542
 last_update:
   date: 1/30/2024
 ---

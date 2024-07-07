@@ -1,17 +1,17 @@
 ---
 title: "Security Policies"
 tags: [Cybersecurity]
-sidebar_position: 1
+sidebar_position: 85
 last_update:
   date: 1/30/2024
 ---
 
 
-## Common Security Policies
+## Overview 
 
 Every policy should align with the organization's regulatory and contractual obligations. Balancing comprehensiveness with user-friendly simplicity can be challenging.
 
-### Employee/Contractor Hiring 
+## Employee/Contractor Hiring 
 
 **Hiring phase:**
 
@@ -53,7 +53,7 @@ Every policy should align with the organization's regulatory and contractual obl
 - Knowledge Transfer
 - Disable and delete accounts
 
-### Accounts/Credential Policy 
+## Accounts/Credential Policy 
 
 Defines who get access to what. 
 
@@ -71,7 +71,7 @@ Defines who get access to what.
 - **Geotagging** - adding location metadata to files 
 - **Impossible travel time** - if user is in one location, he can't be signed in on another location, but can be bypassed by VPN or Tor.
 
-### Data Handling Policy
+## Data Handling Policy
 
 A critical policy ensuring proper data use, including:
 
@@ -82,7 +82,7 @@ A critical policy ensuring proper data use, including:
 - Example: PCI DSS compliance for credit card data
 - Encryption requirements for classified data
 
-### Password Policy
+## Password Policy
 
 Every organization requires a comprehensive password policy for secure data access, including:
 
@@ -105,14 +105,14 @@ Password Security:
 - **Risky logins**
     - Locking accounts after a number of incorrect attempts 
 
-### Bring Your Own Device
+## Bring Your Own Device
 
 BYOD allows employee use of personally owned devices for business, requiring:
 
 - Clear policies and business rules
 - Employee agreement before system access
 
-### Privacy Policy
+## Privacy Policy
 
 Crucial for personnel with PII access, outlining:
 
@@ -122,7 +122,7 @@ Crucial for personnel with PII access, outlining:
 - References to applicable regulations
 - Creation of a public document
 
-### Acceptable Use Policy
+## Acceptable Use Policy
 
 It is a document that outlines the do's and don'ts for users when interacting with an organization's IT systems and resources.
 
@@ -134,7 +134,7 @@ It is a document that outlines the do's and don'ts for users when interacting wi
 - Internet usage
 - Company device usage
 
-### Information Security Policy
+## Information Security Policy
 
 Outlines how an organization protects its information assets from threats, both internal and external. These policies cover a range of areas, including
 
@@ -143,7 +143,7 @@ Outlines how an organization protects its information assets from threats, both 
 - Encryption 
 - Physical Security
 
-### Business Continuity Policy 
+## Business Continuity Policy 
 
 Focuses on how an organization will continue its critical operations during and after a disruption. 
 
@@ -153,7 +153,7 @@ Focuses on how an organization will continue its critical operations during and 
 
 For more information, please see [Business Continuity.](../007-Incident-Response/007-Business-Continuity.md)
 
-### Disaster Recovery
+## Disaster Recovery
 
 Closely related to business continuity, disaster recovery focuses on how an organization will recover its IT systems and data after disaster. 
 
@@ -163,7 +163,7 @@ Closely related to business continuity, disaster recovery focuses on how an orga
 For more information, please see [Disaster Recovery.](../005-Security-Architecture/001-HA-and-DR.md)
 
 
-### Incident Response  
+## Incident Response  
 
 A plan for handling security incidents. 
 
@@ -174,7 +174,7 @@ A plan for handling security incidents.
 For more information, please see [Incident Response.](../007-Incident-Response/006-Incident-Responses.md)
 
 
-### SDLC Policy 
+## SDLC Policy 
 
 A software development lifecycle (SDLC) policy guides how software is developed within an organization. It covers all stages of software development:
 
@@ -190,7 +190,7 @@ It may also include standards:
 - Code reviews
 - Software testing
 
-### Change Management Policy
+## Change Management Policy
 
 Essential for transitioning from current to future states, covering:
 
