@@ -7,7 +7,7 @@ last_update:
 ---
 
 
-### Identify Threats
+## Identify Threats
 
 Protecting against all attacks requires multiple steps, and implementing fundamental measures can guard against various threats. Here are examples of actions to safeguard networks:
 
@@ -18,7 +18,7 @@ Protecting against all attacks requires multiple steps, and implementing fundame
    - Firewalls, whether network-based or host-based, are effective defenses against various attacks. Network-based firewalls secure entire networks, while host-based firewalls protect individual systems.
 
 
-### Preventing Threats
+## Preventing Threats
 
 While there is no single step to protect against all threats, several basic measures can significantly reduce the risk of various types of threats.
 

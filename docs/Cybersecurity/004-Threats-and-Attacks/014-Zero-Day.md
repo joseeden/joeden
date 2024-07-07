@@ -9,7 +9,7 @@ last_update:
 
 
 
-## Zero-Day Vulnerabilities
+## Overview
 
 Zero-day vulnerabilities are security flaws unknown to the vendor, exploited by attackers before a patch is available. They pose significant threats due to the absence of known fixes or mitigations.
 

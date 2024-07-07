@@ -9,9 +9,9 @@ last_update:
 
 
 
-## Race Conditions 
+## Overview
 
-A software vulnerability where the outcome depends on the timing of the events not matching the developer's intended order.
+Race Conditions is a software vulnerability where the outcome depends on the timing of the events not matching the developer's intended order.
 
 - Computer is unexpectedly racing itself in the processing of certain types of data.
 - Multiple threads write the same variable in the same memory location simultaneously.

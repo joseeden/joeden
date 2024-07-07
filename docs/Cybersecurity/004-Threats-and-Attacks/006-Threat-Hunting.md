@@ -7,7 +7,7 @@ last_update:
 ---
 
 
-## Definition 
+## Overview
 
 A cyber security technique designed to detect presence of threat that have not been discovered by a normal security monitoring.
 
