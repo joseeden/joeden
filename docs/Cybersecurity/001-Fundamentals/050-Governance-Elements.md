@@ -16,16 +16,12 @@ last_update:
 - Resource Management
 - Performance Measurement
 
-### Monitoring 
-
-Involves regularly reviewing and assessing the effectiveness of the governance framework.
+**Monitoring** involves regularly reviewing and assessing the effectiveness of the governance framework.
 
 - Helps identify any gaps or weaknesses.
 - Weakness might have arisen due to changes in technology or regulations.
 
-### Revision 
-
-Involves updating the governance framework to address these gaps or weaknesses.
+**Revision** involves updating the governance framework to address these gaps or weaknesses.
 
 - Updates on regulations may require more stringent data protection. 
 - Adopting new procedures and implementing new IT systems.
@@ -91,15 +87,15 @@ Policies, influenced by laws and standards, provide strategic direction and prio
   - Policies expanded into step-by-step instructions for execution.
   - Implemented by individuals to achieve organizational goals.
 
-Key IT Policies: 
+- **Key IT Policies**
 
-- Acceptable Use Policy
-- Information Security Policy
-- Business Continuity 
-- Disaster Recovery
-- Incident Response 
-- SDLC 
-- Change Management
+  - Acceptable Use Policy
+  - Information Security Policy
+  - Business Continuity 
+  - Disaster Recovery
+  - Incident Response 
+  - SDLC 
+  - Change Management
 
 For more information, please see [Common Security Policies.](../006-Security-Operations/014-Common-Security-Policies.md)
 
@@ -130,15 +126,17 @@ Procedures typically contains the detailed steps to complete tasks supporting de
 - Address both one-time and regular occurrences.
 - Establish measurement criteria for task completion.
 
-**Emergency Evacuation Procedure**
+Examples:
 
-- Outlines steps to take in case of emergency, such as fire.
-- Evacuation routes, assembly points, and roles and responsibilities.
+- **Emergency Evacuation Procedure**
 
-**Data Backup Procedure**
+  - Outlines steps to take in case of emergency, such as fire.
+  - Evacuation routes, assembly points, and roles and responsibilities.
 
-- Details how and when data should be backed up to prevent data loss.
-- Steps for daily or incremental backups, or weekly full backups.~
+- **Data Backup Procedure**
+
+  - Details how and when data should be backed up to prevent data loss.
+  - Steps for daily or incremental backups, or weekly full backups.~
 
 
 
