@@ -46,3 +46,7 @@ Cybersecurity:
   label: 'Cybersecurity'
   permalink: '/Cybersecurity'
   description: 'Docs related to Cybersecurity'
+Networking:
+  label: 'Networking'
+  permalink: '/Networking'
+  description: 'Docs related to Networking'
