@@ -72,7 +72,7 @@ Special Publication 800-88, commonly referred to as "**Guidelines for Media Sani
     - Degaussing
     - Secure Erase
     - Cryptographic Erase 
-- For more information, please see [Data Media Sanitization.](../006-Security-Operations/038-Data-Security.md#data-media-sanitization)
+- For more information, please see [Data Media Sanitization.](../006-Security-Operations/003-Data-Security.md#data-media-sanitization)
 
 **Destruction**
 

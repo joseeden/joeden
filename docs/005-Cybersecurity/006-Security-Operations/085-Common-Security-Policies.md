@@ -199,7 +199,7 @@ Essential for transitioning from current to future states, covering:
 - Confirmation of correct implementation
 - Mitigating vulnerabilities introduced by changes
 
-For more information, please see [Asset and Change Management](../006-Security-Operations/051-Asset-and-Change-Management.md#change-management). 
+For more information, please see [Asset and Change Management](../006-Security-Operations/070-Asset-and-Change-Management.md#change-management). 
 
 
 

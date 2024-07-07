@@ -292,7 +292,7 @@ This is the practical exercise of incident response procedures.
 - Training teaches what to do, testing make sure you know how to do it.
 - Simulating an incident, can cost time and money
 
-For more information, please see [Security Awareness.](../006-Security-Operations/015-Security-Awareness-Training.md#incident-response-exercises)
+For more information, please see [Security Awareness.](../006-Security-Operations/090-Security-Awareness-Training.md#incident-response-exercises)
 
 ## SOAR 
 
