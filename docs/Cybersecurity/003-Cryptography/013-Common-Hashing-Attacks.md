@@ -17,31 +17,31 @@ A "pass the hash" attack involves using a hashed password to gain unauthorized a
 - They use these hashes to authenticate, avoiding password-based checks.
 - Common in Windows environments with NTLM authentication.
 
-For more information, please see [Pass the Hash Attack](../004-Threats-and-Attacks/023-Attacks.md#pass-the-hash-attack).
+For more information, please see [Pass the Hash Attack](../004-Threats-and-Attacks/050-Attacks.md#pass-the-hash-attack).
 
 ### Birthday Attack
 
 A "birthday attack" exploits the probability of hash function collisions, where two different inputs generate the same hash. It targets cryptographic systems to compromise security or create fake signatures.
 
-For more information, please see [Birthday Attack](../004-Threats-and-Attacks/023-Attacks.md#birthday-attack).
+For more information, please see [Birthday Attack](../004-Threats-and-Attacks/050-Attacks.md#birthday-attack).
 
 ### Rainbow Table Attack 
 
 A rainbow table attack uses precomputed hashes to find a matching hash value for a user's password (see ISC2 Study Guide, Module 2, under Types of Threats). 
 
-For more information, please see [Rainbow Table Attack](../004-Threats-and-Attacks/023-Attacks.md#rainbow-table-attack).
+For more information, please see [Rainbow Table Attack](../004-Threats-and-Attacks/050-Attacks.md#rainbow-table-attack).
 
 ### Dictionary Attack 
 
 A dictionary attack is a type of attack that uses a list of common words to guess a user's password. 
 
-For more information, please see [Dictionary Attack](../004-Threats-and-Attacks/023-Attacks.md#dictionary-attack).
+For more information, please see [Dictionary Attack](../004-Threats-and-Attacks/050-Attacks.md#dictionary-attack).
 
 ### Brute Force Attack 
 
 A brute force attack uses every possible combination of letters, numbers, and symbols to guess a user's password.
 
-For more information, please see [Brute Force  Attack](../004-Threats-and-Attacks/023-Attacks.md#brute-force-attack).
+For more information, please see [Brute Force  Attack](../004-Threats-and-Attacks/050-Attacks.md#brute-force-attack).
 
 ## Increasing Hash Security 
 

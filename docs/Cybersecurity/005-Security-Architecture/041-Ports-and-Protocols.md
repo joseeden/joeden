@@ -139,7 +139,7 @@ Network switches make traffic switching decision based on the MAC address of the
 - Randomized MAC addresses are sent to the network switch.
 - When this happens, the network switch will simply fail open.
 - When it fail-open, the switch begins to rebroadcast all traffic out to every port.
-- For more information, please see [MAC Address Flooding](../004-Threats-and-Attacks/023-Attacks.md#mac-address-flooding)
+- For more information, please see [MAC Address Flooding](../004-Threats-and-Attacks/050-Attacks.md#mac-address-flooding)
 
 ### Implementing Port Security
 
