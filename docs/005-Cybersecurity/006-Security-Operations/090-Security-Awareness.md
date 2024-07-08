@@ -7,7 +7,7 @@ last_update:
 ---
 
 
-## Security Awareness 
+## Overview
 
 Security Awareness refers to the knowledge and understanding of potential threats. The primary goal is to equip individuals with skills to recognize security threats.
 
@@ -155,7 +155,7 @@ Security Awareness Training communicates expectations, responsibilities, and ide
 
 ## Incident Response Exercises
 
-For more information about Incident Response, please see [Incident Response Plan.](../007-Incident-Response/006-Incident-Responses.md)
+For more information about Incident Response, please see [Incident Response Plan.](../007-Incident-Response/001-Incident-Responses.md)
 
 
 ### Walk-Through Exercise
@@ -175,7 +175,7 @@ For more information about Incident Response, please see [Incident Response Plan
 - Simulate network intrusion based on threat scenarios.
 - There's a **specific goal in mind.**
 - Agree on methodology and rules of engagement before performing pentests.
-- For more information, please see [Penetration Testing.](../006-Security-Operations/065-Audits-and-Assessments.md#penetration-testing)
+- For more information, please see [Penetration Testing.](../006-Security-Operations/066-Penetration-Testing.md)
 
 ### Simulation Exercise
 

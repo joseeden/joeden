@@ -171,7 +171,7 @@ A plan for handling security incidents.
 - Can include person to contact in case of data breach. 
 
 
-For more information, please see [Incident Response.](../007-Incident-Response/006-Incident-Responses.md)
+For more information, please see [Incident Response.](../007-Incident-Response/001-Incident-Responses.md)
 
 
 ## SDLC Policy 
