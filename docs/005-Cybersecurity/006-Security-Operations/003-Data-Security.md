@@ -76,8 +76,7 @@ It is the responsibility of the organization to establish and enforce a comprehe
    - Dispose of records not mandated for retention.
    - Adhere to enterprise policies and legal requirements in the destruction process.
 
-
-**Common mistake in record retention**
+### Common mistake in record retention
 
 A common mistake in record retention is applying the longest retention period without taking into account the sensitivity or importance of the corresponding information. 
 
