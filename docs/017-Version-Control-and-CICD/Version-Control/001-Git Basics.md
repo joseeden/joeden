@@ -1,6 +1,9 @@
 ---
+title: "Git Basics"
+tags: [Version Control, Git, Development]
 sidebar_position: 1
-title: Git Basics
+last_update:
+  date: 2/5/2023
 ---
 
 
@@ -80,7 +83,7 @@ Here is an informative diagram that shows the difference between the commands:
 
 <div style={{textAlign: 'center'}}>
 
-![](img/git-push--and-pulll.png)
+![](/img/docs/git-push--and-pulll.png)
 
 </div>
 

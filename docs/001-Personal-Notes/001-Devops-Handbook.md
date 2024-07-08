@@ -1,9 +1,9 @@
 ---
 title: "Notes from the DevOps Handbook"
-tags: [Cybersecurity]
+tags: [DevOps, Personal Notes]
 sidebar_position: 1
 last_update:
-  date: 1/30/2024
+  date: 3/28/2023
 ---
 
 

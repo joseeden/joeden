@@ -1,5 +1,9 @@
 ---
+title: "Branching"
+tags: [Version Control, Git, Development]
 sidebar_position: 2
+last_update:
+  date: 2/5/2023
 ---
 
 # Branching
@@ -14,7 +18,7 @@ The first branch that exists when you create a repository is the **master/main**
 
 <div style={{textAlign: 'center'}}>
 
-![](img/git-branching.png)
+![](/img/docs/git-branching.png)
 
 </div>
 

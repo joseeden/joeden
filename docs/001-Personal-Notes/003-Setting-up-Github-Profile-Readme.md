@@ -1,9 +1,9 @@
 ---
 title: "Setting up GitHub Profile README"
-tags: [Cybersecurity]
+tags: [DevOps, Personal Notes, Development, Github]
 sidebar_position: 3
 last_update:
-  date: 1/30/2024
+  date: 11/22/2023
 ---
 
 

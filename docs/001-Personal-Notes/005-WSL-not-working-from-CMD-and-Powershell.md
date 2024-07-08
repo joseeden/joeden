@@ -1,9 +1,9 @@
 ---
 title: "WSL not working from CMD and Powershell"
-tags: [Cybersecurity]
+tags: [DevOps, Personal Notes, Development]
 sidebar_position: 5
 last_update:
-  date: 1/30/2024
+  date: 11/22/2023
 ---
 
 

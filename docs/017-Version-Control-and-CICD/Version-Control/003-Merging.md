@@ -1,8 +1,10 @@
 ---
+title: "Merging"
+tags: [Version Control, Git, Development]
 sidebar_position: 3
+last_update:
+  date: 2/5/2023
 ---
-
-# Merging
 
 
 
@@ -13,7 +15,7 @@ Merging works by combining your branches into a single timeline, thus consolidat
 
 <div style={{textAlign: 'center'}}>
 
-![](img/merge2.png)
+![](/img/docs/merge2.png)
 
 </div>
 
@@ -31,7 +33,7 @@ What this means is that no other changes were introduced to the master branch si
 
 <div style={{textAlign: 'center'}}>
 
-![](img/mergeff2.png)
+![](/img/docs/mergeff2.png)
 
 </div>
 
@@ -43,7 +45,7 @@ If you did some changes on both the feature branch and the master branch, youcan
 
 <div style={{textAlign: 'center'}}>
 
-![](img/mergeff3.png)
+![](/img/docs/mergeff3.png)
 
 </div>
 

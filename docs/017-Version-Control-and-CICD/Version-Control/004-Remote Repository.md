@@ -1,6 +1,11 @@
 ---
+title: "Remote Repositories"
+tags: [Version Control, Git, Development]
 sidebar_position: 4
+last_update:
+  date: 2/5/2023
 ---
+
 
 # Remote Repositories 
 
@@ -9,7 +14,7 @@ sidebar_position: 4
 
 You can create a Github account by going to the [Github](https://github.com/) site and click Sign Up.
 
-![](img/github.png)
+![](/img/docs/github.png)
 
 The Github URL is formatted as <code>github.com/username/repository</code>.
 As example, one of my repositories has a URL like this: <code>https://github.com/joseeden/Git-Commands</code>
@@ -18,7 +23,7 @@ To search for beginner-friendly issues in Github, we can go to the search bar at
 ```bash
 label:"beginner-friendly" is:issue is:open
 ``` 
-![](img/github1.png)
+![](/img/docs/github1.png)
 
 
 
@@ -28,11 +33,11 @@ Forking means recreating a copy of a repo. This is useful if you want to make a 
 
 As an example, here we're forking a repo.
 
-![](img/fork1.png)
+![](/img/docs/fork1.png)
 
 After forking, you should have your own copy of the repo. You can now play around with these repo and this won't have any effect on the original owner's repo.
 
-![](img/fork2.png)
+![](/img/docs/fork2.png)
 
 
 ## Cloning
@@ -47,7 +52,7 @@ Cloning is a way to create a repository in your local system by copying an exist
 Going back to the repo we just forked, this repo only exists in your remote repo - in Github.
 To have a copy of the remote repo in your local environment, click "Code", then copy the HTTPS link provided.
 
-![](img/clone3.png)
+![](/img/docs/clone3.png)
 
 Now go to your terminal and type in:
 
@@ -108,7 +113,7 @@ Here is an informative diagram that shows the difference between the commands:
 
 <div style={{textAlign: 'center'}}>
 
-![](img/git-push--and-pulll.png)
+![](/img/docs/git-push--and-pulll.png)
 
 </div>
 

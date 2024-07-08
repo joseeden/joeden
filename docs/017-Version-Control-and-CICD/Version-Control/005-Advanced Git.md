@@ -1,6 +1,11 @@
 ---
+title: "Advanced Git"
+tags: [Version Control, Git, Development]
 sidebar_position: 5
+last_update:
+  date: 2/5/2023
 ---
+
 
 
 # Advanced Git

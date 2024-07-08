@@ -1,9 +1,9 @@
 ---
 title: "Tools Specifications"
-tags: [Cybersecurity]
+tags: [DevOps, Personal Notes, Development]
 sidebar_position: 4
 last_update:
-  date: 1/30/2024
+  date: 6/14/2024
 ---
 
 

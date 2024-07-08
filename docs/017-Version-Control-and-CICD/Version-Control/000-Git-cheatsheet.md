@@ -1,5 +1,11 @@
-Git Commands
-============
+---
+title: "Git Commands Cheatsheet"
+tags: [Version Control, Git, Development]
+sidebar_position: 0
+last_update:
+  date: 2/5/2023
+---
+
 
 ### Getting & Creating Projects
 

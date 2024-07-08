@@ -66,3 +66,35 @@ Networking:
   label: 'Networking'
   permalink: '/Networking'
   description: 'Docs related to Networking'
+Personal Notes:
+  label: 'Personal Notes'
+  permalink: '/Personal Notes'
+  description: 'Docs related to Personal Notes'
+Development:
+  label: 'Development'
+  permalink: '/Development'
+  description: 'Docs related to Development'
+Version Control:
+  label: 'Version Control'
+  permalink: '/Version Control'
+  description: 'Docs related to Version Control'
+Git:
+  label: 'Git'
+  permalink: '/Git'
+  description: 'Docs related to Git'
+Github:
+  label: 'Github'
+  permalink: '/Github'
+  description: 'Docs related to Github'
+Terminal:
+  label: 'Terminal'
+  permalink: '/Terminal'
+  description: 'Docs related to Terminal'
+IDE:
+  label: 'IDE'
+  permalink: '/IDE'
+  description: 'Docs related to IDE'
+Visual Studio Code:
+  label: 'Visual Studio Code'
+  permalink: '/Visual Studio Code'
+  description: 'Docs related to Visual Studio Code'
