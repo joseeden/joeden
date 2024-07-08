@@ -17,8 +17,7 @@ expertiseplease.com is a fictional reference company ran by Legal Advisory Inter
 
 ## Diagram
 
-|![](../../Images/aws-expertpleasecom-diagram.png)|
-|-|
+![](/img/docs/aws-expertpleasecom-diagram.png)
 
 ## Document Sources
 
@@ -32,33 +31,32 @@ The digital legal documents are sourced in two ways.
     - PDF files are uploaded via sFTP, and processed in batches during off peak hours. 
     - Third party companies can also log in to view contracts, and to check on the status of batch uploads. Most of the documents being stored are sensitive so there are stringent requirements. 
 
-
      
 ## Requirements
 
-**Security**
+- **Security**
 
-- Documents can only be viewed by the end customer to whom they're addressed. 
-- Data must be encrypted in transit and at rest. 
-- Business must adhere to industry standards, e.g. ISO27001, ISO27018.
+    - Documents can only be viewed by the end customer to whom they're addressed. 
+    - Data must be encrypted in transit and at rest. 
+    - Business must adhere to industry standards, e.g. ISO27001, ISO27018.
 
-**Durability**
+- **Durability**
 
-- Digital legal documents are retained for an unlimited period of time, or until a customer deletes a document, or closes the account.
-- Company have observed that less than 2% of the documents older than six months are viewed.
-- Service has to provide highly-durable storage of documents
+    - Digital legal documents are retained for an unlimited period of time, or until a customer deletes a document, or closes the account.
+    - Company have observed that less than 2% of the documents older than six months are viewed.
+    - Service has to provide highly-durable storage of documents
 
-**Availability**
+- **Availability**
 
-- End consumers access the application at any time.
-- Current target availability SLA is 99.5% for web service
-- Goal is to increase it to 99.9%.
-- Third parties can deliver digital documents at any time, 24 hour processing in SLA exists. 
+    - End consumers access the application at any time.
+    - Current target availability SLA is 99.5% for web service
+    - Goal is to increase it to 99.9%.
+    - Third parties can deliver digital documents at any time, 24 hour processing in SLA exists. 
 
-**Performance**
+- **Performance**
 
-- Customer response time to render documents is less than two seconds. 
-- Current SLA is 9.5% of transactions to meet this target. 
+    - Customer response time to render documents is less than two seconds. 
+    - Current SLA is 9.5% of transactions to meet this target. 
 
 
 ## Current Architecture
@@ -70,44 +68,54 @@ Existing architecture is a three-tier web application comprising of:
 - Oracle database
 
 Networking:
+
 - Connectivity is provided by co-location provider
 - Peak capacity 500 megabits per second
 - DNS hosted on DNS servers within the same data center 
 - No CDN used 
 
 Firewall:    
+
 - Clustered firewall appliances
 - IDS monitoring of traffic
 - Manual implementation of firewall rules to block malicious traffic
 
 LoadBalancer: 
+
 - Front end for SSL upload 
 
 Web servers:
+
 - Apache 2.2 provides static content and routine to application clusters. 
 
 Application clusters:
+
 - JBOSS 7.1
 - Two clusters providing different functions
 - Session replication by multicast. 
 
 sFTP server:
+
 - Receives documents from external third party companies 
 - Acts as batch submission gateway to the application servers. 
 
 Database cluster: 
+
 - Oracle database 11G with three nodes: Active, standby and DR target using Oracle data guard. 
 - Virtual cluster IP using multicast technology. 
 
 NAS storage:
+
 - NetApp appliance with 150 terabytes of stored documents replicated within DC. 
 - Off site tape back up to DRVC. 
 - Storage usage increasing at five terabytes per month with 35 terabyte storage remaining. 
 
 Hardware security module:
+
 - Safenet HSM manages and stores encryption master keys for database. - Oracle TDE, transparent data encryption and file level encryption. 
 
 Scanning devices and digitizers:
+
 - Scanning devices are located in the legal support center. 
 - Each scanning device is configured with the IP address of both digitizers. 
 - Scanning devices communicate with digitizers over a private network to a DC using a custom TCP protocol. 
@@ -128,42 +136,42 @@ The JAVA modules run on two different applications clusters:
 
 ## Current State - Services
 
-**Registration**
-- Registers new subscribers and set up unique subscriber encryption keys. 
-- Subscribers sign in using their email address. 
-- Password is encrypted and store in the database. 
+- **Registration**
+    - Registers new subscribers and set up unique subscriber encryption keys. 
+    - Subscribers sign in using their email address. 
+    - Password is encrypted and store in the database. 
 
-**Login**
-- Subscribers or third party company user. 
+- **Login**
+    - Subscribers or third party company user. 
 
-**Payment**
-- Processing modules for subscriptions integrates with third party digit wallet providers via internet API. 
-- No credit card data is handled within their service. 
+- **Payment**
+    - Processing modules for subscriptions integrates with third party digit wallet providers via internet API. 
+    - No credit card data is handled within their service. 
 
-**Doc manager**
-- Manages and renders digital documents. 
-- Encrypt and decrypt documents using file encryption keys. 
+- **Doc manager**
+    - Manages and renders digital documents. 
+    - Encrypt and decrypt documents using file encryption keys. 
 
-**Presentation** 
-- Delivers rendered content to subscriber devices. 
+- **Presentation** 
+    - Delivers rendered content to subscriber devices. 
 
-**Core**
-- Central business processing logic for the application for both subscribers and third party companies. 
+- **Core**
+    - Central business processing logic for the application for both subscribers and third party companies. 
 
-**Batch processing**
-- Conversion of third party company template and delivery of documents to subscribers. 
+- **Batch processing**
+    - Conversion of third party company template and delivery of documents to subscribers. 
 
-**Encryption**
-- Interface to HSM to provide access to data encryption keys for file encryption. 
+- **Encryption**
+    - Interface to HSM to provide access to data encryption keys for file encryption. 
 
-**Administration**
-- Back end portal for application administration reporting. 
+- **Administration**
+    - Back end portal for application administration reporting. 
 
-**Digitizer**
-- Ingestion processing workflow module, executes similar functionality as batch processing. 
+- **Digitizer**
+    - Ingestion processing workflow module, executes similar functionality as batch processing. 
 
-**Data access service**
-- Abstraction layer for database and document storage access. 
+- **Data access service**
+    - Abstraction layer for database and document storage access. 
 
 ## Challenges
 
@@ -185,44 +193,41 @@ The JAVA modules run on two different applications clusters:
 
 
 
-
-
-
 ## Why Consider Migrating Business Applications to Public Cloud Services?
 
 Examine some of the benefits and value points of why we might consider migration to a public cloud service. 
 
-**Ease of Use and Managed Services**
+- **Ease of Use and Managed Services**
 
-- Cloud services, being managed, eliminate the need for manual infrastructure provisioning and scaling.
-- Immediate availability of resources on a pay-per-use model speeds up application development.
+    - Cloud services, being managed, eliminate the need for manual infrastructure provisioning and scaling.
+    - Immediate availability of resources on a pay-per-use model speeds up application development.
 
-**Storage Expansion and Cost Efficiency**
+- **Storage Expansion and Cost Efficiency**
 
-- Contrast traditional IT provisioning delays with Amazon S3's elastic, on-demand storage.
-- Cloud providers like AWS allow seamless scaling up or down, with payment only for consumed services, reducing operational costs.
+    - Contrast traditional IT provisioning delays with Amazon S3's elastic, on-demand storage.
+    - Cloud providers like AWS allow seamless scaling up or down, with payment only for consumed services, reducing operational costs.
 
-**Scalability and Flexibility**
+- **Scalability and Flexibility**
 
-- Public cloud providers offer the ability to scale services dynamically based on demand.
-- AWS, Azure, and Google Cloud's vast infrastructure facilitate easy scaling compared to smaller data centers.
+    - Public cloud providers offer the ability to scale services dynamically based on demand.
+    - AWS, Azure, and Google Cloud's vast infrastructure facilitate easy scaling compared to smaller data centers.
 
-**Operational Cost Reduction and Agility**
+- **Operational Cost Reduction and Agility**
 
-- Pay-as-you-go pricing means lower operating costs for expertiseplease.com.
-- Cloud migration enables rapid iteration of business applications without provisioning servers, enhancing overall agility.
+    - Pay-as-you-go pricing means lower operating costs for expertiseplease.com.
+    - Cloud migration enables rapid iteration of business applications without provisioning servers, enhancing overall agility.
 
-**Managed Services for Reliability**
+- **Managed Services for Reliability**
 
-- Cloud providers offer managed services at scale, ensuring high service level agreements.
-- Offloading infrastructure management to specialists reduces the risk of infrastructure outages.
+    - Cloud providers offer managed services at scale, ensuring high service level agreements.
+    - Offloading infrastructure management to specialists reduces the risk of infrastructure outages.
 
-**End-to-End Security**
+- **End-to-End Security**
 
-- Cloud providers take an end-to-end approach to security, managing both physical and operational layers.
-- Shared responsibility model 
-    - Cloud providers secure the infrastructure
-    - Customers manage security in the cloud.
+    - Cloud providers take an end-to-end approach to security, managing both physical and operational layers.
+    - Shared responsibility model 
+        - Cloud providers secure the infrastructure
+        - Customers manage security in the cloud.
 
 
 ## The Cloud Transformation Maturity Model - Common Customer Journeys
@@ -284,15 +289,15 @@ Successive stages require clear plans, executive support, and leveraging cloud c
     
 ### Progressing Through Stages:
 
-**Guidance**
+- **Guidance**
 
-- Project Phase to Foundation: Develop a transformation plan.
-- Foundation to Migration: Seek executive commitment and support.
-- Migration to Reinvention: Leverage cloud capabilities for business transformation.
+    - Project Phase to Foundation: Develop a transformation plan.
+    - Foundation to Migration: Seek executive commitment and support.
+    - Migration to Reinvention: Leverage cloud capabilities for business transformation.
 
-**Assessment**
+- **Assessment**
 
-- Regularly evaluate the presence of transformation plans, executive support, and ongoing optimization efforts.
+    - Regularly evaluate the presence of transformation plans, executive support, and ongoing optimization efforts.
 
 ## Strategies and Techniques for Moving an Organization Forward in Cloud Maturity
 
@@ -300,83 +305,83 @@ Successful cloud adoption involves a balance of technology, business, and strate
 
 ### Identifying Current Stage
 
-**Assessment**
-- Evaluate current stage in the cloud maturity adoption cycle.
-- Use a brief and informal interview process to gauge experimentation levels.
-- Consolidate results into a one-pager for further discussions and experimentation.
+- **Assessment**
+    - Evaluate current stage in the cloud maturity adoption cycle.
+    - Use a brief and informal interview process to gauge experimentation levels.
+    - Consolidate results into a one-pager for further discussions and experimentation.
 
 ### Transition from Project to Foundation
 
-**Challenges**
-- Overcoming lack of executive support, budget, or planning.
+- **Challenges**
+    - Overcoming lack of executive support, budget, or planning.
 
-**Strategies**
-- Develop a clear transformation roadmap.
-- Petition for stakeholder buy-in by focusing on individual benefits.
-- Be provider-agnostic and prioritize business and project requirements over technology.
+- **Strategies**
+    - Develop a clear transformation roadmap.
+    - Petition for stakeholder buy-in by focusing on individual benefits.
+    - Be provider-agnostic and prioritize business and project requirements over technology.
 
-**Outputs**
-- Transformation roadmap, best practices for security, and a strong value management plan.
+- **Outputs**
+    - Transformation roadmap, best practices for security, and a strong value management plan.
 
 ### Foundation Stage - Building Core Competencies
 
-**Initiatives for Cloud Center of Excellence**
-- Cloud training and knowledge sharing.
-- Support and guidance for business units.
-- Creation and maintenance of security standards.
-- Development of common architecture blueprints.
-- Consolidated cloud services account management.
+- **Initiatives for Cloud Center of Excellence**
+    - Cloud training and knowledge sharing.
+    - Support and guidance for business units.
+    - Creation and maintenance of security standards.
+    - Development of common architecture blueprints.
+    - Consolidated cloud services account management.
 
-**Outputs**
-- Transformation roadmap, security and compliance architecture, and a strong value management plan.
+- **Outputs**
+    - Transformation roadmap, security and compliance architecture, and a strong value management plan.
 
 ### Transition from Migration to Reinvention
 
-**Challenges**
-- Risk, confidence drop, and potential project delays in the migration stage.
+- **Challenges**
+    - Risk, confidence drop, and potential project delays in the migration stage.
 
-**Strategies**
-- Prioritize small steps done often to minimize scope and risk.
-- Implement an agile working approach with managed sprints.
-- Establish view checkpoints to prevent program delays.
+- **Strategies**
+    - Prioritize small steps done often to minimize scope and risk.
+    - Implement an agile working approach with managed sprints.
+    - Establish view checkpoints to prevent program delays.
 
-**Outputs**
-- Effective and efficient migration strategy.
-- Agreed and robust migration process.
-- Proper cloud environment setup.
-- Balanced enthusiasm with structured processes.
+- **Outputs**
+    - Effective and efficient migration strategy.
+    - Agreed and robust migration process.
+    - Proper cloud environment setup.
+    - Balanced enthusiasm with structured processes.
 
 ### Best Practices in the Migration Stage
 
-**Key Focus Areas**
-- Effective migration strategy and planning.
-- Agreed or robust migration processes.
-- Proper cloud environment setup.
-- Avoiding the "all in" approach without structured processes.
+- **Key Focus Areas**
+    - Effective migration strategy and planning.
+    - Agreed or robust migration processes.
+    - Proper cloud environment setup.
+    - Avoiding the "all in" approach without structured processes.
 
-**Strategies**
-- Leverage external resources, vendors, and partners.
-- Over-communicate changes at fiscal and financial layers.
-- Implement small steps and rinse-and-repeat strategies.
-- Ensure executive sponsorship with resource support.
+- **Strategies**
+    - Leverage external resources, vendors, and partners.
+    - Over-communicate changes at fiscal and financial layers.
+    - Implement small steps and rinse-and-repeat strategies.
+    - Ensure executive sponsorship with resource support.
 
-**Outputs**
-- Minimized risk of project failures and maximized ROI.
-- Proven migration tools and methods.
-- Efficient cloud environment setup.
-- Balanced enthusiasm with structured processes.
+- **Outputs**
+    - Minimized risk of project failures and maximized ROI.
+    - Proven migration tools and methods.
+    - Efficient cloud environment setup.
+    - Balanced enthusiasm with structured processes.
 
 ### Conclusion
 
-**Adaptive Approach**
-Recognize the uniqueness of each situation.
-Go back to basics when faced with challenges.
-Address small problems upfront for smoother decision-making.
+- **Adaptive Approach**
+    - Recognize the uniqueness of each situation.
+    - Go back to basics when faced with challenges.
+    - Address small problems upfront for smoother decision-making.
 
-**Successful Transition**
-- The key lies in a well-defined plan, stakeholder alignment, and strategic execution.
-- Continuous evaluation and adjustment based on the organization's evolving needs.
-Closing Note:
+- **Successful Transition**
+    - The key lies in a well-defined plan, stakeholder alignment, and strategic execution.
+    - Continuous evaluation and adjustment based on the organization's evolving needs.
+    Closing Note:
 
 ## Cloud Readiness Assessment Process 
 
@@ -384,113 +389,113 @@ It is a best practice for any organization, migrating IT infra, or an app to the
 
 ### Initiating the Cloud Readiness Workshop
 
-**Background:**
-- John, Sys Ops Team Lead, aims to migrate services post a successful proof of concept.
-- Recognizes the need for a portfolio rationalization exercise before a migration project.
+- **Background:**
+    - John, Sys Ops Team Lead, aims to migrate services post a successful proof of concept.
+    - Recognizes the need for a portfolio rationalization exercise before a migration project.
 
-**Cloud Readiness Workshop:**
-- Proposal to the executive team for a workshop.
-- Invite key stakeholders for a three-hour workshop.
-- Emphasize a 360-degree view involving both business and technical teams.
+- **Cloud Readiness Workshop:**
+    - Proposal to the executive team for a workshop.
+    - Invite key stakeholders for a three-hour workshop.
+    - Emphasize a 360-degree view involving both business and technical teams.
 
 ### First Pass Portfolio Assessment: Discovery
 
-**Assessment Criteria**
-- Cloud compatibility, licensing models, compliance requirements.
+- **Assessment Criteria**
+    - Cloud compatibility, licensing models, compliance requirements.
 
-**Strategic Decision:**
-- Identify applications and dependencies for a high-level portfolio assessment.
-- Group applications based on cloud readiness.
-- Develop a draft application migration roadmap.
+- **Strategic Decision:**
+    - Identify applications and dependencies for a high-level portfolio assessment.
+    - Group applications based on cloud readiness.
+    - Develop a draft application migration roadmap.
 
 ### First Pass Execution: Workshop Details
 
-**Workshop Overview:**
-- Outline benefits of cloud services.
-- Provide basic cloud computing education for varied knowledge levels.
-- Run the first pass portfolio assessment to identify current systems.
+- **Workshop Overview:**
+    - Outline benefits of cloud services.
+    - Provide basic cloud computing education for varied knowledge levels.
+    - Run the first pass portfolio assessment to identify current systems.
 
 ### Classifying Applications into Buckets
 
-**Bucket Definitions:**
-- Cloud Native, Cloud Eligible, Cloud Friendly, Not Cloud Ready.
+- **Bucket Definitions:**
+    - Cloud Native, Cloud Eligible, Cloud Friendly, Not Cloud Ready.
 
-**Discussion and Evaluation:**
-- Evaluate each application based on compliance, licensing, dependencies, and compatibility.
-- Place applications in the defined buckets.
+- **Discussion and Evaluation:**
+    - Evaluate each application based on compliance, licensing, dependencies, and compatibility.
+    - Place applications in the defined buckets.
 
 ### Second Pass Portfolio Assessment: Migration Strategies
 
-**Migration Strategies:**
-- Rehost, Replatform, Refactor, Repurchase, Retain, Retire.
-- Qualify each application against these strategies.
+- **Migration Strategies:**
+    - Rehost, Replatform, Refactor, Repurchase, Retain, Retire.
+    - Qualify each application against these strategies.
 
-**Business Focus:**
-- Not a technical design discussion, but focused on business priorities and objectives.
+- **Business Focus:**
+    - Not a technical design discussion, but focused on business priorities and objectives.
 
 ### Qualification of Applications: Strategies Discussion
 
-**Examples:**
-- Rehosting images, core business app, IDS and IPS services.
-- Replatforming Oracle database.
-- Refactoring core business app for microservices.
+- **Examples:**
+    - Rehosting images, core business app, IDS and IPS services.
+    - Replatforming Oracle database.
+    - Refactoring core business app for microservices.
 
-**Prioritization:**
-- Retire monolithic business app and proprietary scanning services.
+- **Prioritization:**
+    - Retire monolithic business app and proprietary scanning services.
 
 ### Swim Lane Prioritization: Quick Wins, Optimization, Transform
 
-**Three Swim Lanes:**
-- Quick Wins, Optimization, Transform.
+- **Three Swim Lanes:**
+    - Quick Wins, Optimization, Transform.
 
-**Prioritization Outcomes:**
-- Group applications and strategies into respective swim lanes.
-- Identify quick wins, optimization, and transformation tasks.
+- **Prioritization Outcomes:**
+    - Group applications and strategies into respective swim lanes.
+    - Identify quick wins, optimization, and transformation tasks.
 
 ### Outcome and Outputs
 
-**Outputs of the Cloud Readiness Workshop:**
-- Business value matrix, application register, system audit, and first pass portfolio assessment.
-- Snapshot of cloud readiness: Cloud Native, Cloud Eligible, Cloud Friendly, Not Cloud Ready.
-- Second pass portfolio assessment detailing migration strategies for each application.
+- **Outputs of the Cloud Readiness Workshop:**
+    - Business value matrix, application register, system audit, and first pass portfolio assessment.
+    - Snapshot of cloud readiness: Cloud Native, Cloud Eligible, Cloud Friendly, Not Cloud Ready.
+    - Second pass portfolio assessment detailing migration strategies for each application.
 
 ### Next Steps After Workshop
 
-**Detailed Planning:**
-- Technical teams define, quantify, and prioritize a task backlog.
-- Task matrix aids in resource and budgeting decisions.
+- **Detailed Planning:**
+    - Technical teams define, quantify, and prioritize a task backlog.
+    - Task matrix aids in resource and budgeting decisions.
 
-**Green Light for Project:**
-- If approved, evaluate and select public cloud services based on the task matrix.
-- Plan, schedule, and execute migrations in repeatable sprints.
+- **Green Light for Project:**
+    - If approved, evaluate and select public cloud services based on the task matrix.
+    - Plan, schedule, and execute migrations in repeatable sprints.
 
-**Governance and Operating Model:**
-- Develop and implement cloud governance and operating model.
-- Address access, security, compliance, and automation requirements.
+- **Governance and Operating Model:**
+    - Develop and implement cloud governance and operating model.
+    - Address access, security, compliance, and automation requirements.
 
 ### Subsequent Meetings and Architecture Phase
 
-**Involving Providers:**
-- Recognize the need for expertise in cloud governance and operating model.
-- Involve providers for best practices and the latest technology in the design process.
+- **Involving Providers:**
+    - Recognize the need for expertise in cloud governance and operating model.
+    - Involve providers for best practices and the latest technology in the design process.
 
-**Objectives of Subsequent Meetings:**
-- Develop migration process for each application workload.
-- Include application migration tools, data migration tools, validation methods, and roles and responsibilities.
+- **Objectives of Subsequent Meetings:**
+    - Develop migration process for each application workload.
+    - Include application migration tools, data migration tools, validation methods, and roles and responsibilities.
 
 ### Conclusion
 
-**Strategic Roadmap:**
-- Cloud Readiness Assessment sets the foundation for a strategic migration roadmap.
-- Balancing business priorities, complexities, and migration strategies.
+- **Strategic Roadmap:**
+    - Cloud Readiness Assessment sets the foundation for a strategic migration roadmap.
+    - Balancing business priorities, complexities, and migration strategies.
 
-**Continued Collaboration:**
-- Ongoing collaboration with technical teams and providers for successful execution.
+- **Continued Collaboration:**
+    - Ongoing collaboration with technical teams and providers for successful execution.
 
-**Key Outcomes:**
-- Clear understanding of cloud readiness.
-- Prioritized tasks and a roadmap for effective migration.
-- Governance and operating model for sustained success.
+- **Key Outcomes:**
+    - Clear understanding of cloud readiness.
+    - Prioritized tasks and a roadmap for effective migration.
+    - Governance and operating model for sustained success.
 
 ## Resources 
 
