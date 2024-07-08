@@ -144,7 +144,7 @@ Cloud computing involves accessing and utilizing computing resources and service
 - Software Analytics 
 - Intelligence
 
-For more information, please see [The Basics.](../../006-Cloud-Foundations/001-Cloud-Computing/001-The-Basics.md)
+For more information, please see [The Basics.](../../006-Cloud-Computing/001-Cloud-Foundations/001-The-Basics.md)
 
 ## Virtualization 
 
