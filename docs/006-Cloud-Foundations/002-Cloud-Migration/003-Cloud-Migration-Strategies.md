@@ -1,6 +1,6 @@
 ---
 title: "Cloud Migration Strategies"
-tags: [Cloud, Migrations, Certifications]
+tags: [Cloud, Cloud Migration, Certifications]
 sidebar_position: 3
 last_update:
   date: 3/28/2023

@@ -1,6 +1,6 @@
 ---
 title: "Strategy Considerations"
-tags: [Cloud, Migrations, Certifications]
+tags: [Cloud, Cloud Migration, Certifications]
 sidebar_position: 1
 last_update:
   date: 3/28/2023

@@ -42,6 +42,10 @@ Cloud:
   label: 'Cloud'
   permalink: '/Cloud'
   description: 'Docs related to Cloud'
+Cloud Migration:
+  label: 'Cloud Migration'
+  permalink: '/Cloud Migration'
+  description: 'Docs related to Cloud Migration'
 AWS:
   label: 'AWS'
   permalink: '/AWS'
