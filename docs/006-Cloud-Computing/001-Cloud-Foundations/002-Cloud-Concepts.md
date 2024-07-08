@@ -1,5 +1,5 @@
 ---
-title: "Cloud Computing"
+title: "Cloud Concepts"
 tags: [Cloud, DevOps, Certifications]
 sidebar_position: 2
 last_update:
