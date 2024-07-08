@@ -56,7 +56,7 @@ Analysis involves a thorough examination and evaluation of the incident.
 
 Digital forensics plays a critical role in the analysis phase of incident response, where investigators examine collected evidence to determine what happened during a security incident and how to respond. 
 
-For more information, please see [Digital forensics.](../007-Incident-Response/034-Digital-Forensics.md)
+For more information, please see [Digital forensics.](../007-Incident-Response/020-Digital-Forensics.md)
 
 
 ## Containment

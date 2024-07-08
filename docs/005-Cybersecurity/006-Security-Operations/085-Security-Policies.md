@@ -151,7 +151,7 @@ Focuses on how an organization will continue its critical operations during and 
 - Focuses on recovering as quickly as possible.
 - Dealing with strategies like hardware failure and natural disasters. 
 
-For more information, please see [Business Continuity.](../007-Incident-Response/007-Business-Continuity.md)
+For more information, please see [Business Continuity.](../007-Incident-Response/010-Business-Continuity.md)
 
 ## Disaster Recovery
 
