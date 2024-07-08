@@ -14,69 +14,42 @@ Note that the application versions are subject to change with new updates.
 
 **Laptop**
 
-<table><tr>
-<th style="text-align: left;">OS</th>
-<td>Windows 10, 64-bit operating system</td>
-</tr></table>
+| Properties  | Value | 
+|-------------|-------------------------|
+| OS          | Windows 10, 64-bit operating system |
+
 
 **Visual Studio Code**
 
-<table>
-<tr>
-<th style="text-align: left;">Version</th>
-<td>1.90.0 (user setup)</td>
-</tr>
-<tr>
-<th style="text-align: left;">Date</th>
-<td>2024-06-04T19:33:54.889Z</td>
-</tr>
-<tr>
-<th style="text-align: left;">Electron</th>
-<td>29.4.0</td>
-</tr>
-<tr>
-<th style="text-align: left;">Chromium</th>
-<td>122.0.6261.156</td>
-</tr>
-<tr>
-<th style="text-align: left;">Node.js</th>
-<td>20.9.0</td>
-</tr>
-<tr>
-<th style="text-align: left;">OS</th>
-<td>Windows_NT x64 10.0.19045</td>
-</tr>
-</table>
+
+| Properties  | Value | 
+|-------------|-------------------------|
+| Version     | 1.90.0 (user setup) |
+| Date        | 2024-06-04T19:33:54.889Z |
+| Electron    | 29.4.0 |
+| Chromium    | 122.0.6261.156 |
+| Node.js     | 20.9.0 |
+| OS          | Windows_NT x64 10.0.19045 |
+
 
 **Windows Terminal** 
 
-<table>
-<tr>
-<th style="text-align: left;">Version</th>
-<td>1.20.11381.0</td>
-</tr>
-<tr>
-<th style="text-align: left;">Distribution</th>
-<td>Ubuntu 20.04.6 LTS</td>
-</tr>
-<tr>
-<th style="text-align: left;">Codename</th>
-<td>focal</td>
-</tr>
-</table>
+
+| Properties    | Value | 
+|---------------|-------------------------|
+| Version       | 1.20.11381.0 |
+| Distribution  | Ubuntu 20.04.6 LTS |
+| Codename      | focal |
+
 
 **WSL**
 
-<table>
-<tr>
-<th style='text-align: left;'>Version</th>
-<td>2.2.4.0</td>
-</tr>
-<tr>
-<th>Windows version</th>
-<td>10.0.19045.4529</td>
-</tr>
-</table>
+| Properties      | Value | 
+|-----------------|-------------------------|
+| Version         | 2.2.4.0
+| Windows version | 10.0.19045.4529
+
+
 
 
 ## Applications
