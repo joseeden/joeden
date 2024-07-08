@@ -24,23 +24,7 @@ Key elements involve:
 - Maintenance of critical contact numbers for various entities.
 - Access to designated numbers and military-grade networks during severe cyberattacks or major disruptions.
 
-Key Components:
-
-- [Risk Assessment](#risk-assessment)
-- [Business Impact Analysis BIA](#business-impact-analysis-bia)
-- [Emergency Response Plan](#emergency-response-plan)
-- [Crisis Management Plan](#crisis-management-plan)
-- [Backup and Recovery Strategies](#backup-and-recovery-strategies)
-- [Alternate Site and Facilities](#alternate-site-and-facilities)
-- [Resource and Personnel Management](#resource-and-personnel-management)
-- [Training and Awareness Programs](#training-and-awareness-programs)
-- [Supplier and Vendor Relationships](#supplier-and-vendor-relationships)
-- [Testing and Exercising](#testing-and-exercising)
-- [Documentation and Reporting](#documentation-and-reporting)
-- [Continuous Improvement](#continuous-improvement)
-
-
-### Risk Assessment
+### 1. Risk Assessment
 
 Identify potential threats and vulnerabilities.
 
@@ -50,7 +34,7 @@ Identify potential threats and vulnerabilities.
     - **Quantitative risk assessment** - to calculate the potential financial loss if a critical server fails
     - **Qualitative risk assessment** - to understand the impact on the organization's reputation.
 
-### Business Impact Analysis (BIA)
+### 2. Business Impact Analysis (BIA)
 
 Prioritize mission-critical processes:
 
@@ -131,53 +115,53 @@ Assess risks:
 - Helps determine the urgency and resources needed to restore operations within a timeframe.
 
 
-### Emergency Response Plan
+### 3. Emergency Response Plan
 
 - Define procedures for immediate response to crises.
 - Outline roles and responsibilities during emergencies.
 
-### Crisis Management Plan
+### 4. Crisis Management Plan
 
 - Ensures that decision-making is streamlined and effective during high-stress situations.
 - Involves the establishment of a command structure and responsibilities during a crisis
 - Establish communication protocols for internal and external stakeholders.
 
-### Backup and Recovery Strategies
+### 5. Backup and Recovery Strategies
 
 - Implement data backup systems and offsite storage.
 - Develop recovery strategies for IT systems and infrastructure.
 
-### Alternate Site and Facilities
+### 6. Alternate Site and Facilities
 
 - Identify alternate locations for business operations.
 - Ensure availability of necessary facilities during disruptions.
 
-### Resource and Personnel Management
+### 7. Resource and Personnel Management
 
 - Plan for workforce continuity and remote work.
 - Secure necessary resources for business recovery.
 
-### Training and Awareness Programs
+### 8. Training and Awareness Programs
 
 - Conduct regular drills and training sessions for employees.
 - Raise awareness about BCP protocols and procedures.
 
-### Supplier and Vendor Relationships
+### 9. Supplier and Vendor Relationships
 
 - Assess the continuity plans of key suppliers and vendors.
 - Develop contingency plans for supply chain disruptions.
 
-### Testing and Exercising
+### 10. Testing and Exercising
 
 - Regularly test the effectiveness of the BCP.
 - Conduct simulated Business Continuity (BC) exercises to validate response strategies.
 
-### Documentation and Reporting
+### 11. Documentation and Reporting
 
 - Maintain up-to-date documentation of the BCP.
 - Establish reporting mechanisms for incidents and recovery progress.
 
-### Continuous Improvement
+### 12. Continuous Improvement
 
 - Review and update the BCP periodically.
 - Incorporate lessons learned from real incidents or exercises.
