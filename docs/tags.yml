@@ -46,6 +46,14 @@ Cloud Migration:
   label: 'Cloud Migration'
   permalink: '/Cloud Migration'
   description: 'Docs related to Cloud Migration'
+Cloud Native:
+  label: 'Cloud Native'
+  permalink: '/Cloud Native'
+  description: 'Docs related to Cloud Native'
+Cloud Architecture:
+  label: 'Cloud Architecture'
+  permalink: '/Cloud Architecture'
+  description: 'Docs related to Cloud Architecture'
 AWS:
   label: 'AWS'
   permalink: '/AWS'

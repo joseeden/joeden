@@ -1,17 +1,10 @@
-
-# Being a Cloud Architect
-
-
-- [Cloud Architects](#cloud-architects)
-- [Cloud services and Hybrid Designs](#cloud-services-and-hybrid-designs)
-- [To be one, you must...](#to-be-one-you-must)
-    - [Be open-minded and strategic](#be-open-minded-and-strategic)
-    - [Be an effective communicator](#be-an-effective-communicator)
-    - [Understand that your solution can go against common patterns](#understand-that-your-solution-can-go-against-common-patterns)
-    - [Fully understand the nuances of any business requirement**](#fully-understand-the-nuances-of-any-business-requirement)
-    - [Be a good planner](#be-a-good-planner)
-    - [Be up-to-date](#be-up-to-date)
-- [If it all sounds too overwhelming...](#if-it-all-sounds-too-overwhelming)
+---
+title: "Being a Cloud Architect"
+tags: [Cloud, Cloud Architecture, Certifications]
+sidebar_position: 2
+last_update:
+  date: 3/28/2023
+---
 
 
 ## Cloud Architects 
@@ -75,6 +68,4 @@ Knowing the working details of cloud services and the advantages and the disadva
 
 Remember that no one is born a cloud architect. It can all be learnt.
 
-<p align=center>
-<img src="../../Images/youcandoitmemebaby.png">
-</p>
+![](/img/docs/youcandoitmemebaby.png)

@@ -1,15 +1,10 @@
-
-# Cloud Native 
-
-- [What is Cloud Native](#what-is-cloud-native)
-- [Decoupled Applications](#decoupled-applications)
-- [Serverless Computing](#serverless-computing)
-- [Scalability](#scalability)
-- [Microservices](#microservices)
-- [Twelve-Factor App](#twelve-factor-app)
-- [Standards in Cloud Native](#standards-in-cloud-native)
-- [Cloud Native Computing Foundation](#cloud-native-computing-foundation)
-- [Resources](#resources)
+---
+title: "Cloud Native"
+tags: [Cloud, Cloud Architecture, Cloud Native, Certifications]
+sidebar_position: 1
+last_update:
+  date: 3/28/2023
+---
 
 
 ## What is Cloud Native
