@@ -14,41 +14,41 @@ The order of volatility indicates the priority for collecting digital evidence, 
 
 1. **CPU Registers and Cache**
 
-  - The most volatile, quickly lost upon system shutdown.
+    - The most volatile, quickly lost upon system shutdown.
 
 2. **RAM (Memory)**
 
-  - Contains active programs and system state, disappears when the system is turned off.
-  - This may include network-related information and system processes:
-      - Routing Tables
-      - ARP Cache
-      - Process Tables   
+    - Contains active programs and system state, disappears when the system is turned off.
+    - This may include network-related information and system processes:
+        - Routing Tables
+        - ARP Cache
+        - Process Tables   
 
 3. **Swap Space/Temporary File Systems**
 
-  - Includes operating system swap files, temporary directories, and other virtual memory spaces. 
-  - Data in these areas is less volatile than RAM but still susceptible to being overwritten.
-   
+    - Includes operating system swap files, temporary directories, and other virtual memory spaces. 
+    - Data in these areas is less volatile than RAM but still susceptible to being overwritten.
+    
 4. **Persistent Mass Storage**
 
-  - Hard drives and SSDs.
-  - More stable but can be altered or deleted.
-  - Information is retained even after shutting down the device.
+    - Hard drives and SSDs.
+    - More stable but can be altered or deleted.
+    - Information is retained even after shutting down the device.
 
 5. **Remote Logging and Monitoring Data**
 
-  - Not on the system being analyzed, stored on SIEM and monitoring data.
-  - Important, because the data is still being continuously read and being written to.
+    - Not on the system being analyzed, stored on SIEM and monitoring data.
+    - Important, because the data is still being continuously read and being written to.
 
 6. **Physical Configuration and network topology**
 
-  - Useful for mapping out and collecting the information.
+    - Useful for mapping out and collecting the information.
 
 7. **Archival Media**
     
-  - External drives, cloud storage; less volatile, more durable.
-  - Backup Media, could be stored onsite or remotely.
-  - Typically the least volatile but may require additional access.
+    - External drives, cloud storage; less volatile, more durable.
+    - Backup Media, could be stored onsite or remotely.
+    - Typically the least volatile but may require additional access.
 
 
 ## Data Collection Procedures 
