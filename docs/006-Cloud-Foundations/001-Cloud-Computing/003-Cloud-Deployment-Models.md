@@ -1,5 +1,5 @@
 ---
-title: "Cloud Deployment Models "
+title: "Cloud Deployment Models"
 tags: [Cloud, DevOps, Certifications]
 sidebar_position: 3
 last_update:
