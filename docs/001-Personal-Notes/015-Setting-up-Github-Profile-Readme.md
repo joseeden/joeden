@@ -1,7 +1,8 @@
 ---
 title: "Setting up GitHub Profile README"
 tags: [DevOps, Personal Notes, Development, Github]
-sidebar_position: 3
+description: "Use Github Profile README to showcase your portfolio"
+sidebar_position: 15
 last_update:
   date: 11/22/2023
 ---

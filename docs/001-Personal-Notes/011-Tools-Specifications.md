@@ -1,7 +1,8 @@
 ---
 title: "Tools Specifications"
 tags: [DevOps, Personal Notes, Development]
-sidebar_position: 4
+description: "Record of my current setup"
+sidebar_position: 11
 last_update:
   date: 6/14/2024
 ---

@@ -1,7 +1,8 @@
 ---
 title: "Notes from the DevOps Handbook"
 tags: [DevOps, Personal Notes]
-sidebar_position: 1
+description: "Lessons learned from 'The DevOps Handbook'"
+sidebar_position: 20
 last_update:
   date: 3/28/2023
 ---

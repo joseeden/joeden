@@ -244,7 +244,7 @@ Understand the available cloud deployment models and asses which one fits your r
 
   - Public cloud for rapid scaling.
   - Hybrid cloud for occasional bursts.
-  - 
+
 - **Resilience and Management**
 
   - Evaluate criticality of data and services.
@@ -261,12 +261,12 @@ Understand the available cloud deployment models and asses which one fits your r
 
   - Align cloud vendor's SLAs with current parameters.
   - Consider impact on customers and mitigation strategies.
-  - 
+
 - **Performance Requirements**
 
   - Assess specific performance needs.
   - Ensure chosen model meets required performance levels.
-  - 
+
 - **Data Storage**
 
   - Consider the volume of data.
