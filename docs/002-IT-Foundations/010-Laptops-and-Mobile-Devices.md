@@ -1,6 +1,6 @@
-<!-- ---
-title: "Latops and Mobile Devices"
-description: "From computers to laptops, to much smaller devices"
+---
+title: "Laptops and Mobile Devices"
+description: "From computers to laptops, to palm devices"
 sidebar_position: 10
 tags: [IT Fundamentals, Computers, Operating Systems]
 last_update:
@@ -8,83 +8,63 @@ last_update:
 ---
 
 
+
 ## Laptops
 
-All of the components mentioned above make up most computers, even a mobile phone. While it might look very different from your laptop, a mobile phone just uses a smaller version of the hardware that we saw in the desktop and laptop today. 
+All the components discussed in the previous topics—such as CPUs, RAM, storage, power systems, and peripherals—are fundamental parts of computers, including mobile phones. Despite their different physical forms and sizes, a mobile phone essentially incorporates a condensed version of the hardware that powers desktops and laptops today.
 
-## Mobile Devices 
+Desktop and laptop computers are typically designed with expandability and flexibility in mind. They feature modular components that can be upgraded or replaced as needed, allowing users to customize their machines for specific tasks or performance requirements. 
 
-Mobile devices are computers too. They have CPUs, RAM, Storage, power systems, and peripherals. How are they different from a server, a desktop computer or a laptop? 
+## Mobile Devices
 
-<p align=center>
+Mobile devices, such as tablets and smartphones, are essentially miniaturized computers. They incorporate CPUs, RAM, storage, power systems, and peripherals, just like desktops and servers. However, they're distinguished by their portability and reliance on batteries.
+
+<div class="img-center"> 
+
 ![](/img/docs/laptopsmobiledevices.png)
-</p>
 
-They're portable and usually powered by batteries. Some mobile devices are general purpose computing devices like tablets or smartphones, other mobile devices are optimized to perform a specific set of tasks like fitness monitors, e-readers, and smartwatches. 
+</div>
 
-Mobile devices are usually very integrated. Remember the systems that we showed you earlier, the components can be taken out and held in your hand. Mobile devices build some or all of these components together in a way that you can't take apart. 
+These devices vary from general-purpose computing devices to specialized tools like fitness monitors and e-readers. Unlike traditional computers where components can be individually replaced, mobile devices often integrate these components directly onto the motherboard or even onto a single chip in the case of System-on-Chip (SoC) designs.
 
-The smaller the device, the more integrated the components usually are. The CPU, RAM, and storage, might be soldered directly to the devices motherboard. Very small mobile devices use a system on a chip or SoC. 
+## USB
 
-A system on a chip packs the CPU, RAM, and sometimes even the storage onto a single chip. Not only our SoC is small, they use less battery power than if those components were separated. Even though they're small, some mobile devices use peripherals. 
+For instance, a waterproof fitness tracker avoids using a vulnerable Micro-USB port by opting for a custom charging interface that can withstand submersion. Mobile devices commonly employ various standard and proprietary ports and connectors for power, data, and display needs, such as USB-C, Lightning, Mini-USB, Micro-USB, Micro-HDMI, Mini-HDMI, and Mini DisplayPort.
 
-Smartphones connect to Bluetooth headphones for example. Mobile devices can also be a peripheral. A fitness tracker is a standalone device, but it can also be a peripheral to your smartphone. That same fitness tracker might use a heart rate monitor as a peripheral. It's peripherals all the way down. 
+<div class="img-center"> 
 
-Mobile devices may use standard or proprietary ports and connectors. You might need to have a specific adapter, or connector for charging a device, or connecting your mobile device to a computer. Sometimes the physical shape or the intended use of the mobile device makes a standard connection like USB a bad choice. 
+![](/img/docs/ports-usb-etc.jpg)
 
-## USB 
+</div>
 
-For example, say you have a waterproof fitness tracker. If it had a Micro-USB port, that port would be damaged if exposed to water. So instead, it's designed with a custom charging interface that can be submerged underwater, here's some of the standard power, data, and display connector types you'll find used in mobile devices. This is a **USB-C.** 
 
-Next we have a lightening adapter, then a Mini-USB, and a Micro-USB, a Micro-HDMI, and a Mini-HDMI, and this is a Mini DisplayPort. 
+## BYOD (Bring Your Own Device)
 
-Because mobile devices are generally small and have limited access to power, they run operating systems and applications software that specifically designed to maximize their performance. 
+Many organizations permit employees to use their personal mobile devices for work, known as **Bring Your Own Device (BYOD)**. Respecting user privacy and adhering to organizational policies regarding these devices is crucial for IT support personnel.
 
-## BYOD 
+## Batteries
 
-One super important thing, mobile devices can contain a lot of personal data. Some organizations allow people to use their own personal devices for work. We call this **bring your own device** or BYOD. You should be careful to respect people's privacy when they bring their own devices to you for help. 
+Mobile technology relies on rechargeable batteries to provide portable power. These batteries may be removable with external chargers or integrated with devices using cradle stands or wireless charging pads.
 
-To know how to handle these devices is always best to refer to your organization's policy. 
+## Charge Cycles
 
-## Batteries 
-
-Mobile technology uses rechargeable batteries to carry power with the device, wherever we take it. Rechargeable devices might have an external charger for a removable batteries, or might have a cradle stand or wireless charger. So rechargeable devices might have an external charger or removable battery, or might have a cradle stand or wireless charger. 
-
-## Charge Cycles 
-
-Rechargeable batteries have a limited lifespan which is measured in charge cycles. Charge cycle is one full charge and discharge of the battery. When a battery is reaching the end of its lifespan, it may take longer to charge and might not hold as much charge as when it was new. 
-
-For some devices, compare the current cycle count of your battery with the rate at cycle count of that battery type to see how much more life to expect out of it. You need an external power source to add power to a battery. 
-
-This could come from a wall outlet, another battery, or even a solar panel. You also need a charging circuit that manages the power transfer from the external power source to the rechargeable battery. This circuit works a lot like a power supply unit or PSU.
+Rechargeable batteries have a finite lifespan measured in **charge cycles**, each comprising a complete charge and discharge. As batteries age, they may take longer to charge and hold less charge than when new. Monitoring the cycle count can help predict battery longevity.
 
 ## Power Supply Unit (Chargers)
 
-PSUs makes sure the input power is converted to the correct output power. Instead of using a large PSU, rechargeable devices use more portable power adapters, power supplies, or chargers. 
+Instead of large Power Supply Units (PSUs), portable devices use compact power adapters or chargers to manage power transfer. Using the correct charger compatible with the device is crucial to avoid damaging the battery, device, or charger.
 
-A portable power supply, powers our device while also charging the battery. This might sound obvious, but you need to make sure that you use the right charger for the right device. Mismatching chargers to devices can damage the battery, the device, and the charger. 
+## Keeping Batteries Safe and Healthy
 
-A lot of chargers and power supplies use USB connectors, but you'll see a wide variety of charging connectors. 
-
-## Keeping Batteries Safe and Healthy 
-
-Rechargeable batteries can be damaged by very cold or very hot environments. 
-
-Don't charge or discharge rechargeable batteries unless they're within their safe operating temperature range. It's not just that a damaged rechargeable battery might not perform well, it can also be very dangerous. 
-
-Batteries can swell, rupture, and sometimes even catch fire. Before working with a damaged battery, you should know how to safely handle it.  
+Rechargeable batteries are sensitive to extreme temperatures and mishandling. Operating batteries within their safe temperature range is essential to prevent damage, which can lead to swelling, leakage, or even fire hazards.
 
 Safe handling procedures vary based on the battery type, so be sure to read up on proper procedures before you work with a damaged battery. When a battery reaches the end of its life, you'll need to replace it. 
 
-## When to replace batteries 
+## When to Replace Batteries
 
-Some devices will slow themselves down when a battery is getting old, to make the battery lasts longer. If your device is running much slower than usual or shutting down unexpectedly, one thing to check is the battery life. 
+Devices may exhibit reduced performance or unexpected shutdowns as batteries near the end of their life. While some devices allow user-replaceable batteries, others, like compact laptops and mobile devices, have integrated batteries that are challenging to replace.
 
-Some devices have batteries that are designed to be replaced by the end user, other devices have batteries that are very difficult to replace like small laptops and mobile devices. 
-
-IT support specialist often have to troubleshoot battery life and device charging. The first step is to make sure the charger, the battery, and the device, are all designed to work with each other.  
-
-For iOS and Android, there are also some things that you could do to make the battery lasts as long as possible. It's a good idea for you to be familiar with these things so that you can help educate end users on the best ways to get the most out of their mobile devices. 
+IT support specialists often troubleshoot issues related to battery life and device charging. Ensuring compatibility among charger, battery, and device is fundamental. Additionally, understanding battery optimization techniques for iOS and Android devices enables IT support to educate users on maximizing battery efficiency.
 
 Check out these resources to learn more:
 
@@ -98,4 +78,4 @@ Check out these resources to learn more:
 
 - [Maximize your batteries for iOS ](https://www.apple.com/batteries/maximizing-performance/)
 
-- [Maximize your batteries for Android](https://support.google.com/android/answer/7664358) -->
+- [Maximize your batteries for Android](https://support.google.com/android/answer/7664358)
