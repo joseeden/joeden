@@ -1,6 +1,6 @@
-<!-- ---
+---
 title: "Digital Logic"
-description: Binary, ASCII, and the sorts
+description: "Binary, ASCII, and the sorts"
 sidebar_position: 5
 tags: [IT Fundamentals, Computers, Operating Systems]
 last_update:
@@ -40,7 +40,9 @@ What does the following translate to?
 
 You can try to convert it if you're already familiar on how binary conversion works, or we could also just plug it in an [online converter](https://www.rapidtables.com/convert/number/binary-to-ascii.html). This should translate to:
 
+```
 > hello 
+```
 
 By using binary, we can have unlimited communication with our computer. Everything you see on your computer right now, whether it's a video, an image, text or anything else, is nothing more than a 1 or a 0. 
 
@@ -78,6 +80,3 @@ In computerland, we use 3 characters for the RGB model. Each character represent
 With just eight combinations of zeros and ones, we're able to represent everything that you see on your computer, from a simple letter a, to basically any video you're watching in Youtube. Very cool. 
 
 
-## Next Steps 
-
-Learn how binary works in the [next page](025-Binary.md). -->

@@ -43,7 +43,7 @@ The limitations of punched cards led to innovations like magnetic tape, which al
 
 Magnetic tape revolutionized data storage and retrieval. Unlike punched cards, magnetic tape used magnetization to record information, becoming a staple for efficient and reliable data storage. 
 
-![Magnetic Tape](/img/docs/magnetictappostwar.png)
+    ![Magnetic Tape](/img/docs/magnetictappostwar.png)
 
 This technology was familiar to those who grew up with cassette tapes and vinyl records, as both used similar principles for storing and playing back music.
 
@@ -99,7 +99,7 @@ One major breakthrough was the creation of the first **compiler** by Admiral Gra
 - Enabled programmers to write code in a more understandable and higher-level language.
 - Paved the way for modern programming languages like COBOL and FORTRAN.
 
-![Compiler](/img/docs/gracehoppercompiler.png)
+  ![Compiler](/img/docs/gracehoppercompiler.png)
 
 ### Disk Drives
 
@@ -117,7 +117,7 @@ The Xerox Alto was a groundbreaking computer featuring a graphical user interfac
 - Introduced many concepts still used in modern computing, such as WYSIWYG (What You See Is What You Get) editors.
 - Although not commercially successful, it heavily influenced later systems like the Apple Macintosh.
 
-![Xerox Alto](/img/docs/xeroxzltofirstpc.png)
+    ![Xerox Alto](/img/docs/xeroxzltofirstpc.png)
 
 ### Apple
 
@@ -127,7 +127,7 @@ In the 1970s, Steve Wozniak created the Apple I, a single-board computer for hob
 - The Apple II, introduced in 1977, featured color graphics and a keyboard.
 - Apple's success helped to popularize the personal computer industry.
 
-![Apple I](/img/docs/firstpcapple.png)
+    ![Apple I](/img/docs/firstpcapple.png)
 
 ### Microsoft
 
@@ -137,7 +137,7 @@ Operating systems evolved remarkably. The IBM PC, paired with Microsoft's **Wind
 - Microsoft Windows, introduced in 1985, provided a graphical interface on top of MS-DOS.
 - Windows' widespread adoption in businesses and homes solidified Microsoft's dominance in the software market.
 
-![Windows OS](/img/docs/firstwindowsos.png)
+    ![Windows OS](/img/docs/firstwindowsos.png)
 
 As personal computers became common in workplaces and homes, the demand for IT support increased. The rise of video games also highlighted the potential of computers for entertainment.
 
@@ -183,4 +183,4 @@ Nokia's introduction of PDAs with mobile phone functionality in the late 1990s l
 
 The mobile movement exemplifies the relentless pace of technological advancement, demonstrating how innovations can rapidly transform our daily lives and redefine our interactions with technology.
 
-![Nokia PDAs](/img/docs/nokiapdas.png)
+    ![Nokia PDAs](/img/docs/nokiapdas.png)

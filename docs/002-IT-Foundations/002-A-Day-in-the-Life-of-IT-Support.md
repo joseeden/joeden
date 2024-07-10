@@ -1,5 +1,5 @@
 ---
-title: "A Day in the Life of IT Support"
+title: "A Day in the Life of an IT Support"
 description: "What's in a day like"
 sidebar_position: 2
 tags: [IT Fundamentals, Computers, Operating Systems]
