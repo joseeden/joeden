@@ -1,4 +1,4 @@
-<!-- ---
+---
 title: "BIOS"
 description: "How do devices talk to each other?"
 sidebar_position: 11
@@ -7,66 +7,46 @@ last_update:
   date: 3/28/2023
 ---
 
+## Overview
 
-## Overview 
+Now that we've explored all the key components necessary to get our computer running, let's delve into how our devices communicate with each other. We understand how programs execute, from our hard drive to our CPU, but what about basic actions like a mouse click or a keyboard press? These seemingly simple inputs need to be processed by the CPU to perform meaningful actions, but how does the CPU know what to do with them?
 
-Now we've seen all the [key components](027-Computer-Hardware.md) to get our computer running. The last thing we'll go over is how our devices talk to each other. 
+## Services and Drivers
 
-We know [how programs execute](028-Computer-Programs.md) from our hard drive to our CPU, but how do other things like a mouse click or a keyboard press get sent to our CPU for processing? 
+Basic devices like keyboards, mice, or webcams don't contain instructions that the CPU can directly interpret. Instead, they rely on intermediary programs called **services** or **drivers**. These drivers provide the necessary instructions that enable the CPU to understand and interact with external devices effectively. Whether it's translating keystrokes into actions or managing data from a webcam, these drivers ensure seamless communication between devices and the CPU.
 
-These are fairly basic devices, they don't contain any instructions that our CPU knows how to read. If you just clicked on the key from your keyboard, you'd only be sending a byte to the CPU. The CPU doesn't know what this is, because it doesn't have instructions on how to deal with it. 
+## BIOS and UEFI
 
-## Services
-
-Turns out, our devices also use programs to tell the CPU how to run them. These programs are called **services** or **drivers**. The drivers contain the instructions our CPU needs to understand external devices like keyboards, webcams, printers. 
-
-## BIOS 
-
-Our CPU doesn't know that there is a device that it can talk to, so it has to connect to something called the **BIOS**, or **basic input output services**. The BIOS is software that helps initialize the hardware in our computer and gets our operating system up and running.
+Before the CPU can interact with any devices, it needs to initialize the hardware and start the operating system. This crucial task is managed by the **BIOS** (Basic Input/Output System) or more modernly, **UEFI** (Unified Extensible Firmware Interface). The BIOS/UEFI software is stored on a special type of memory chip known as **ROM** (Read-Only Memory) directly on the motherboard. 
 
 ![](/img/docs/mobilebios.png)
 
-Unlike the programs, you're probably used to running a web browser or operating system. The BIOS isn't stored on a hard drive. Our motherboard stores the BIOS in a special type of memory called, the **read-only memory** chip, or **ROM** chip.
+Unlike RAM, ROM is non-volatile, meaning it retains its data even when the computer is powered off. The BIOS/UEFI performs essential tasks like hardware initialization and booting up the operating system.
 
-## ROM 
+## POST (Power-On Self Test)
 
-Unlike RAM, ROM is non-volatile, meaning it won't erase the data if the computer is turned off. Once the operating system loads, we're able to load drivers from non-essential devices, directly from the hard drive. 
+When you power on your computer, it undergoes a series of checks known as the **Power-On Self Test** (POST). This diagnostic process ensures that all hardware components are functioning correctly before the operating system starts loading. If any issues are detected during POST, the BIOS/UEFI may emit a series of audible beep codes to indicate the problem. Different beep patterns correspond to specific hardware errors, helping technicians diagnose and resolve issues during the boot process.
 
-## UEFI 
+**Example Beep Codes:**
 
-In today's system, there is another player for BIOS called **UEFI**, which stands for Unified Extensible Firmware Interface. UEFI performs the same function of starting your computer as a traditional BIOS. 
+  - One beep: Successful POST
+  - Two beeps: POST error (specific error code varies by manufacturer)
 
-But it's more modern and has better compatibility and support for newer hardware. Most hardware out there today comes with UEFI built in. Eventually, UEFI will become the predominant BIOS. 
+Understanding these beep codes can be invaluable for troubleshooting hardware problems, though not all computers have built-in speakers to emit these signals.
 
-## POST - Power-On Self Test 
+## CMOS Settings
 
-When you turn on a computer, you might notice a beeping from time to time. How computers run a test to make sure all the hardware is working correctly. This is called a **Power On Self Test** or **POST**. And then BIOS runs it when you boot up your computer.
+Embedded within the motherboard is a specialized chip called the **CMOS** (Complementary Metal-Oxide Semiconductor), which stores essential system configuration data. This includes settings such as the system date, time, and startup preferences. Users can access and modify these settings through the BIOS/UEFI setup menu, typically by pressing a designated key during the initial boot process. 
 
-The POST figures out what hardware is on the computer. So it happens before the BIOS initializes any hardware or loads up essential drivers. If there is an issue with anything at that point, there is no way to display it on the screen, since things like the video driver haven't been loaded. 
+Adjusting these settings can influence how the computer boots and which devices are prioritized during startup.
 
-Instead, the computer can usually produce a series of beeps, almost like Morse code, which will help identify the problem. Different manufacturers have different beep codes. 
+## Reimaging Computers
 
-- If your computer successfully boots up, you may hear a single beep.
-- If you hear two beeps, it could mean a POST error.
-
-It's best to refer to your motherboard manual to find out what each code means. Also, you should know that not all machines have built-in speakers, so don't worry if your computer boots without a beep.
-
-If it does have a built-in speaker, being able to distinguish what the beep codes mean is an extremely helpful tool when troubleshooting boot issues.
-
-## CMOS/BIOS Settings 
-
-There is a special chip on our motherboard called the CMOS chip. It stores basic data about booting your computer like the date, time and how you wanted to start up. You can change these settings by booting into CMOS or BIOS setting menu. 
-
-It varies in different computers, but usually when you boot the computer, there will be a quick screen that tells you what button to push to get into the settings. From there, you can change the basic BIOS settings of your machine.
-
-BIOS settings control which devices to boot to and in an IT role, you might need to change the settings more often than not. 
-
-## Reimaging Computers 
-
-A frequently performed IT task is the reimaging of a computer. The term refers to a disk image which is a copy of an operating system. So the process of reimaging involves wiping and reinstalling an operating system. 
+In IT environments, a common task involves **reimaging** computers. This process refers to wiping and reinstalling an operating system using a disk image—a snapshot of a fully configured system. Reimaging is often necessary to restore a computer to a known, stable state or to deploy a standardized software configuration across multiple machines. 
 
 ![](/img/docs/mobiledevicereimage.png)
 
-This procedure is typically performed using a program that's stored on some external device like a USB memory stick, or a CD ROM, or even a server accessible through the network. To access these programs and perform the reimage, you'll need to use the BIOS to tell the computer to boot up from that external device.
+To initiate a reimaging process, technicians typically boot the computer from an external device such as a USB drive or CD-ROM containing the disk image. This boot sequence is configured through the BIOS/UEFI settings to prioritize external boot devices over internal storage.
 
-For more details, check [How To Reimage A Computer On Windows?](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.technewstoday.com%2Freimaging-computer%2F&psig=AOvVaw25CjSwSoB972Z_QQ7w7tz3&ust=1692245035084000&source=images&cd=vfe&opi=89978449&ved=0CBIQjhxqFwoTCMCz9ZOm4IADFQAAAAAdAAAAABAz) -->
+
+For more details, check [How To Reimage A Computer On Windows?](https://www.technewstoday.com/reimaging-computer/)
