@@ -2,7 +2,7 @@
 title: "IT Fundamentals"
 description: "Taking the first step"
 sidebar_position: 1
-tags: IT Fundamentals, Computers, Operating Systems
+tags: [T Fundamentals, Computers, Operating Systems]
 last_update:
   date: 3/28/2023
 ---

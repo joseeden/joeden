@@ -2,7 +2,7 @@
 title: "Digital Logic"
 description: Binary, ASCII, and the sorts
 sidebar_position: 5
-tags: IT Fundamentals, Computers, Operating Systems
+tags: [T Fundamentals, Computers, Operating Systems]
 last_update:
   date: 3/28/2023
 ---

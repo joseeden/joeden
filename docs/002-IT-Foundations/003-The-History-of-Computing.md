@@ -2,7 +2,7 @@
 title: "The History of Computing"
 description: "Take a tour on a world before computers"
 sidebar_position: 3
-tags: IT Fundamentals, Computers, Operating Systems
+tags: [T Fundamentals, Computers, Operating Systems]
 last_update:
   date: 3/28/2023
 ---

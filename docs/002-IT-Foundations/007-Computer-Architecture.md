@@ -2,7 +2,7 @@
 title: "Computer Architecture"
 description: "An overview of the different parts of a computer"
 sidebar_position: 7
-tags: IT Fundamentals, Computers, Operating Systems
+tags: [T Fundamentals, Computers, Operating Systems]
 last_update:
   date: 3/28/2023
 ---

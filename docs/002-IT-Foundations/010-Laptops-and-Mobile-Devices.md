@@ -2,7 +2,7 @@
 title: "Latops and Mobile Devices"
 description: "From computers to laptops, to much smaller devices"
 sidebar_position: 10
-tags: IT Fundamentals, Computers, Operating Systems
+tags: [T Fundamentals, Computers, Operating Systems]
 last_update:
   date: 3/28/2023
 ---
