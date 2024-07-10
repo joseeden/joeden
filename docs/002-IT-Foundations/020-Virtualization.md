@@ -1,9 +1,10 @@
 ---
 title: "Virtualization"
-tags: [Cybersecurity]
+description: "From hardware to virtualized appliances"
 sidebar_position: 20
+tags: IT Fundamentals, Computers, Operating Systems
 last_update:
-  date: 1/30/2024
+  date: 3/28/2023
 ---
 
 

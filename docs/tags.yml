@@ -1,3 +1,15 @@
+IT Fundamentals:
+  label: 'IT Fundamentals'
+  permalink: '/IT Fundamentals'
+  description: 'Docs related to the IT Fundamentals'
+Computers:
+  label: 'Computers'
+  permalink: '/Computers'
+  description: 'Docs related to the Computers'
+Operating Systems:
+  label: 'Operating Systems'
+  permalink: '/Operating Systems'
+  description: 'Docs related to the Operating Systems'
 Linux:
   label: 'Linux'
   permalink: '/Linux'
