@@ -1,4 +1,4 @@
-<!-- ---
+---
 title: "Computer Hardware"
 description: "A deeper view on the different components of a computer"
 sidebar_position: 8
@@ -7,6 +7,8 @@ last_update:
   date: 3/28/2023
 ---
 
+
+<!-- 
 
 ## Computer Hardware 
 
