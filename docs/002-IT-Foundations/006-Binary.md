@@ -16,9 +16,8 @@ Imagine a simple light bulb connected to a switch. When the switch is flipped on
 
 Now, expand this concept to eight light bulbs and switches, collectively representing eight bits with each bulb capable of being on (1) or off (0). This binary system traces its origins back to Jacquard's loom, which used punch cards with holes to control the weaving of intricate patterns: a hole signified on, and no hole signified off — a foundational binary concept.
 
-<p align=center>
 ![](/img/docs/binaryjacquardpunchcards.png)
-</p>
+
 
 Essentially:
 - A hole in the punch card indicated a one.
@@ -52,9 +51,8 @@ Consider the positional values in binary:
 
 Each position represents a doubling sequence from right to left. Adding these values together gives the maximum decimal value of 255.
 
-<p align=center>
 ![](/img/docs/binarypositionnumbers.png)
-</p>
+
 
 Remember:
 

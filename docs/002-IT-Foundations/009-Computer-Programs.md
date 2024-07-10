@@ -1,4 +1,4 @@
-<!-- ---
+---
 title: "Computer Programs"
 description: "Understanding how computer programs work"
 sidebar_position: 9
@@ -10,13 +10,11 @@ last_update:
 
 ## Programs 
 
-Recall that our computer can only communicate in [binary](025-Binary.md), using ones and zeroes. Our computers speak in machine language, but we of course speak in human languages, like English, Spanish, Mandarin. 
+Computers communicate exclusively in binary, utilizing ones and zeroes, which form the fundamental language of computing. While humans speak languages like English, Spanish, or Mandarin, computers rely on this binary system. To bridge this gap, we use programs, which act as translators enabling us to interact with our machines effectively.
 
-If we want to communicate with our machines, we have to have some translation dictionary. Just if I wanted to say something in Spanish, I'd look it up in an English-Spanish dictionary. Our computers does the same when it checks its built-in translation book. 
+- **Programs**: These are sets of instructions that direct the computer on what tasks to perform. Stored primarily in RAM (Random Access Memory), programs enable efficient and quick access for the CPU (Central Processing Unit).
 
-They are referred to as **Programs**. Programs are basic instructions that tell the computer what to do. We typically store programs on durable media like RAM
-
-Remember that RAM is our computer's short-term memory. It stores information in a location our CPU can access faster than it could with our hard drive. Now we can give our chef one or two recipes at a time, instead of reciting the entire cookbook to her. 
+- **RAM**: Acts as the computer's short-term memory, facilitating rapid access to instructions and data compared to slower storage options like hard drives. 
 
 ## Instructions 
 
@@ -27,98 +25,104 @@ As analogy, let' say we have a chef and we want her to make a peanut butter and 
 3. Put jelly on another slice. 
 4. Combine the two slices of bread. 
 
-Our chef can only communicate with us in ones and zeroes. So instead of sending something readable, like the recipe for a peanut butter and jelly sandwich, we have to send her something like this. 
+Our chef can only interact with us using only ones and zeroes. Instead of conveying readable instructions, such as a recipe for a peanut butter and jelly sandwich, we can transmit instructions in binary format like this:
 
-> 00110001 00101110 00100000 01000111 01100101 01110100 00100000 01110100 01110111 01101111 00100000 01110011 
+```
+00110001 00101110 00100000 01000111 01100101 01110100 00100000 01110100 01110111 01101111 00100000 01110011 
+```
 
-In reality, this process is a little more complicated. Our CPU is constantly taking instructions and executing them. These instructions are written in binary but how do they travel around the computer? 
+However, the process is more complex than this simplified example suggests. The CPU continuously receives and executes these binary instructions. But how exactly do these instructions traverse throughout the computer system?
 
 ## External Data Bus 
 
-In our computer, we have something called the **External Data Bus** or **EDB**. It's a row of wires that interconnect the parts of our computer, kind of the veins in our body. 
+In our computer system, we utilize a critical component known as the **External Data Bus** or **EDB**. This is analogous to the veins in our body, connecting various parts of the computer.
 
-<p align=center>
-![](/img/docs/comphwedb.png)
-</p>
+![External Data Bus](/img/docs/comphwedb.png)
 
-When you send a voltage to one of the wires, we say the state of the wire is on, or represented by a 1. If there's no voltage, then we say that the state is off, represented by a 0. This is how we send around our ones and zeroes. 
+The EDB consists of a series of wires. When a voltage is applied to these wires, they switch states: 
 
-Sound familiar? This is the same way transistors help us to send voltages. The EDB comes in different sizes: 8 bit, 16 bit, 32, even 64. 
+- on, represented by a 1, and 
+- off, represented by a 0. 
+
+This mechanism allows us to transmit binary information throughout the computer system. This method of transmitting signals through the EDB is similar to how transistors operate, facilitating the movement of voltages within the computer. EDBs can vary in size, commonly found in configurations such as:
+
+- 8-bit
+- 16-bit
+- 32-bit
+- 64-bit
+
+
 ## Registers
 
-Okay so now, our CPU is receiving a byte and it needs to get to work. Inside the CPU there are components known as **Registers**.
+Now, as our CPU receives a byte of data, it's time for it to swing into action. Deep within the CPU are components known as **Registers**.
 
-They let us store the data that our CPU works with. If for example, our CPU wanted to add two numbers, one number would be stored in a register a. Another number would be stored in register b. The result of those two numbers would be stored in register c. 
+Registers serve as storage units for data that the CPU manipulates. For instance, if our CPU needs to perform an addition operation, it might store one number in register A and another in register B, with the result stored in register C.
 
-<p align=center>
 ![](/img/docs/compprogramsregisters.png)
-</p>
 
-Imagine the register is one of our chef's work tables. Since she has a place to work, she can start to cook. To do so she uses a translation book to translate her binary into tasks that she can perform.
+Think of registers as analogous to worktables for our chef. With designated places to work, she can efficiently begin preparing meals. Just as she uses a recipe book to interpret instructions into actionable tasks, registers allow the CPU to translate binary data into operations it can execute.
 
-Remember that our programs are copied into RAM for the CPU to read. RAM is memory that is randomly accessed, allowing our CPU to read from any part of RAM as quickly as any other part. We don't actually send data from RAM over the EDB. There would be way to much stuff. RAM can hold millions, even billions, of rows of data. 
+It's important to note that when programs are loaded into the CPU's active memory, they reside in **RAM (Random Access Memory)**. RAM enables the CPU to swiftly retrieve data from any location, as opposed to sequential access methods like hard drives. However, contrary to the EDB, RAM doesn't directly transmit data across wires because that would be too much stuff - millions, even billions, of data rows.
 
 ## Memory Controller Chip 
 
-Despite our sandwich example, most of our recipes aren't simple at all. There can be thousands of lines long. We want to process them and we don't actually go in any particular order. Since we can only send one line of data through the EDB at the time, we need the help of another component, the Memory Controller Chip or MCC. 
+In our earlier analogy with sandwiches, we simplified the idea of recipes. But in reality, most of our computer programs are far more complex and often spanning thousands of lines of instructions. To efficiently process these instructions which aren't necessarily in sequential order, we rely on a component known as the **Memory Controller Chip** or **MCC**.
 
-<p align=center>
 ![](/img/docs/compprogrammcc3.png)
-</p>
 
-The **MCC** is a bridge between the CPU and the RAM. You can think of it, a nerve in your brain connecting to your memories. The CPU talks to the MCC, and says, 
+The **MCC** acts as a vital link between the CPU and the RAM, similar to a nerve connecting our brain to memories. When the CPU needs specific data or instructions, such as fetching step three of a recipe, it communicates with the MCC:
 
-> "hey, I need the instructions for step number three of this recipe."
+```
+"Hey, I need the instructions for step number three of this recipe."
+```
 
-The MCC finds the instructions for step number three in RAM, grabs the data, and sends it through the EDB. 
+Upon receiving this request, the MCC locates the corresponding data within the RAM, retrieves it, and then facilitates its transmission through the External Data Bus (EDB) to the CPU for processing. This seamless interaction between the CPU, MCC, and RAM ensures that the instructions and data needed for computation are swiftly accessed and delivered.
 
 ## Address Bus 
 
-And then there's another bus, the **Address Bus** which connects the CPU to the MCC, and sends over the location of the data, but not the data itself. Then the MCC takes the address and looks for the data. And then data is then sent over the EDB.
+In addition to the External Data Bus (EDB), another important component in our computer architecture is the **Address Bus**. While the EDB transfers actual data between components, the Address Bus serves a different yet equally vital function—it transmits addresses.
 
-A more complete picture:
-
-<p align=center>
 ![](/img/docs/compprogramaddressbus.png)
-</p>
+
+The **Address Bus** connects the CPU directly to the Memory Controller Chip (MCC). Rather than transferring data, it sends specific memory addresses. These addresses indicate where in the RAM the desired data or instructions are located, without actually sending the data itself.
+
 
 
 ## Cache 
 
-RAM isn't the fastest way we can get more data to our CPU for processing. The CPU also uses something known as Cache.
+While RAM serves as the main memory for our computer, it's not the quickest way to deliver data to the CPU. Enter **Cache**, a smaller but incredibly fast memory storage located directly on the CPU.
 
-**Cache** is smaller than RAM, but it let's us store data that we use often, and let's us quickly reference it. Think of RAM like a refrigerator full of food. It's easy to get into, but it takes time to get something out. 
-
-<p align=center>
 ![](/img/docs/compprogramaddrbus.png)
-</p>
 
 
-On the flip side of that, Cache is like the stuff we have in our pockets. It's used to store recently or frequently accessed data. There are three different cache levels in a CPU, L1, L2, and L3. L1 is the smallest and fastest cache. 
+**Cache** acts like a high-speed storage area for frequently accessed data and instructions. Imagine RAM as a refrigerator full of food—it's spacious but takes time to retrieve items. In contrast, Cache is more like the essentials we keep in our pockets, readily accessible for quick use. Modern CPUs feature multiple levels of cache (L1, L2, and L3), with L1 being the fastest and smallest.
+
 
 ## Clock Wires
 
-So now we understand how our RAM interacts with our CPU. But how does our CPU know when the set of instruction ends, and a new one begins. Our CPU has an internal clock that keeps its operations in sync. 
+Understanding how our CPU interacts with RAM is one thing, but how does it know when to start and stop processing instructions? This is where the **Clock wire** comes into play.
 
-It connects to a special wire called **Clock wire**. When you send or receive data, it sends a voltage to that clock wire to let the CPU know it can start doing calculations. 
+The CPU operates on a synchronized internal clock that governs its activities. The Clock wire carries signals to the CPU, indicating the timing for operations. When data is sent or received, a voltage signal on the Clock wire triggers the CPU to initiate calculations and execute instructions. 
 
 ## Clock Cycles 
 
-Think of our clock wires as the ticking of a clock. For every tick, the CPU does one cycle of operations. When you send a voltage to the clock wire, it's referred to as a **clock cycle**. 
+Imagine the Clock wire as the ticking of a clock in your CPU. Each tick represents a **clock cycle**, which is the basic unit of operation for the CPU.
 
-If you have lots of data you need to process in a command. You need to run lots of clock cycles. 
+For every clock cycle, the CPU performs a specific operation—fetching, decoding, executing, and storing data. The speed at which these cycles occur is crucial for computing performance, especially when handling large amounts of data or complex tasks.
+
+  [](/img/docs/rsflipflopholdone.png)
+
 
 ## Clock Speed 
 
-Have you ever seen a CPU in the store and has something labeled 3.4ghz?
+When you see a CPU labeled with something like 3.4 GHz, it refers to the **Clock speed**, which indicates how many clock cycles the CPU can execute per second under optimal conditions.
 
-This number refers to the **Clock speed** of the CPU, which is a maximum number of clock cycles that it can handle in a set in a certain time period. 
+[](/img/docs/1850-front.small.jpg)
 
-3.40 gigahertz is 3.4 billion cycles per second. That's super fast. But just because it can run at this speed, doesn't mean it does. It just means that it can't exceed this number. Still, that number doesn't stop some people from trying. 
+3.40 gigahertz means the CPU can perform 3.4 billion cycles per second. However, it's important to note that this speed represents the maximum capability of the CPU, not necessarily its continuous operational speed. Actual performance can vary based on workload and system conditions.
 
 ## Overclocking
 
-There's a way you can exceed the number of clock cycles on your CPU on almost any device. It's referred to as **Overclocking** and it increases the rate of your CPU clock cycles in order to perform more tasks. This is commonly used to increase the performance in low-end CPUs. 
+For those seeking additional performance from their CPU, there's a practice called **Overclocking**. This involves increasing the clock speed beyond the manufacturer's specifications to boost computational power.
 
-Let's say you're a gamer and you want to have better graphics and less lag while playing. You might want to overclock your CPU when you play the game, but there are cons to doing this, like potentially overheating your CPU.
- -->
+Overclocking is often used by enthusiasts, gamers, and professionals seeking enhanced performance, especially in resource-intensive applications like gaming or video editing. However, it comes with risks, such as increased heat generation and potential hardware instability, which can damage the CPU if not managed properly.

@@ -1,4 +1,4 @@
-<!-- ---
+---
 title: "Computer Architecture"
 description: "An overview of the different parts of a computer"
 sidebar_position: 7
@@ -10,67 +10,45 @@ last_update:
 
 ## Abstraction 
 
-When we interact with our computers we use our mouse, keyboard or even a touch screen. We don't tell it the actual zeros and ones it needs to understand something. But wait, we actually do. We just don't ever have to worry about it. 
-
-We use the concept of abstraction to take a relatively complex system and simplify it for our use. You use abstraction every day in the real world, and you may not even know it. 
+When we engage with computers through our mouse, keyboard, or touch screen, we're not directly commanding it with zeros and ones, although underneath, that's exactly what happens. This concept of abstraction simplifies the complexity of computer systems for everyday use, a principle ubiquitous in our daily lives.
 
 <p align=center>
 ![](/img/docs/comparchunderthehood.png)
 </p>
 
+Consider driving a car: you operate it using familiar controls like the steering wheel, pedals, and gear stick, regardless of the intricacies under the hood, which can vary greatly between different car manufacturers. This is the essence of abstraction—providing a simplified interface while hiding underlying complexity.
 
-If you've ever driven a car, you don't need to know how to operate the transmission or the engine directly. There's a steering wheel, some pedals, maybe a gear stick. If you buy a car from a different manufacturer, you operate it in pretty much the same way even though the stuff under the hood might be completely different. This is the essence of abstraction. 
+In computing, **abstraction** enables us to handle complex tasks without needing to understand the intricate details of how the system works. Interfaces like the mouse and keyboard shield us from the technical complexities, allowing users to interact with computers effortlessly.
 
-**Abstraction** hides complexity by providing a common interface, the steering wheel, pedals, gear stick, and gauges in our car example.
+We employ abstraction in computing by breaking down complex problems into simpler, manageable concepts organized into layers. This layered approach is foundational in computer science and IT, enabling us to build and operate sophisticated systems effectively.
 
-The same thing happens in our computer. We don't need to know how works underneath the hood. We have a mouse and a keyboard we can use to interact with it. Thanks to abstractions, the average computer user doesn't have to worry about the technical details. 
-
-
-In computing, we use abstraction to make a very complex problem, like how to make computers work, easier to think about. We do that by breaking it apart into simpler ideas that describe single concepts or individual jobs that need to be done, and then stack them in layers. It's a fundamental concept in the computing world. 
-
-One other simple example of abstraction in an IT role that you might see a lot is an error message. We don't have to dig through someone else's code and find a bug. This has been abstracted out for us already in the form of an error message. 
-
+An everyday example of abstraction in IT is the use of **error messages**. Instead of delving into intricate code to diagnose a problem, error messages like "file not found" abstractly convey vital information, facilitating quicker problem-solving and reducing downtime.
 
 <p align=center>
 ![](/img/docs/comparchfilenotfound.png)
 </p>
 
-A simple error message like "file not found" actually tells us a lot of information and saves us time to figure out a solution. Can you imagine if instead of abstracting an error message our computer did nothing and we had no clue where to start looking for answers? 
-
-Abstraction helps us in many ways that we don't even realize.
-
-## Breaking down into Parts   
-
-A computer can be cut into four main layers:
-
-- hardware 
-- operating system 
-- software 
-- users 
+Imagine the alternative—dealing with a system that provides no feedback or guidance. Abstraction not only simplifies our interactions with technology but also enhances efficiency and usability in countless ways.
 
 
-### Hardware 
+## Breaking Down into Parts
 
-The hardware layer is made up of the physical components of a computer. These are objects you can physically hold in your hand. Laptops, phones, monitors, keyboards, you get the idea. 
+A computer system can be dissected into four main layers:
 
-### Operating system 
+### Hardware
 
-The operating system allows hardware to communicate with the system. Hardware is created by many different manufacturers. The operating system allows them to be used with our system, regardless of where it came from. 
+The hardware layer comprises the physical components of a computer system—devices like laptops, phones, monitors, and keyboards that we can touch and manipulate.
 
+### Operating System
 
-### Software 
+The operating system acts as an intermediary between the hardware and software, facilitating communication and enabling diverse hardware components to function seamlessly within the system.
 
-The software layer is how we as humans interact with our computers. When you use a computer, you're given a vast amount of software that you interact with, whether it's a mobile app, a web browser, a word processor, or the operating system itself. 
+### Software
 
+Software represents the applications and programs that enable human-computer interaction. From mobile apps to web browsers and productivity software, this layer encompasses everything users interact with to perform tasks on their devices.
 
-### User 
+### User
 
-The last layer may not seem like it's part of the system, but it's an essential layer of the computer architecture, the user. 
+At the topmost layer is the user, an integral part of the computer architecture. Users not only interact with the system but also operate, maintain, and sometimes even develop software for it. The user layer underscores the human element in computing, emphasizing user experience and interaction as pivotal aspects of IT.
 
-The user interacts with the computer and she can do more than that. She can operate, maintain, and even program the computer. The user layer is one of the most important layers we'll learn about. 
-
-When you step into the field of IT, you may have your hands full with the technical aspects, but the most important part of IT is the human element. While we work with computers every day, it is the user interaction that makes up most of our job, from responding to user emails to fixing their computers. 
-
-## Next Steps 
-
-Let's now jump onto the first layer: the [hardware](./027-Computer-Hardware.md). -->
+In the realm of IT, while technical proficiency is crucial, understanding and catering to user needs and interactions are equally paramount. Whether troubleshooting issues or developing new software, the user remains central to the functionality and success of computer systems.
