@@ -51,8 +51,11 @@ Consider the positional values in binary:
 
 Each position represents a doubling sequence from right to left. Adding these values together gives the maximum decimal value of 255.
 
+<div class="img-center"> 
+
 ![](/img/docs/binarypositionnumbers.png)
 
+</div>
 
 Remember:
 

@@ -44,7 +44,11 @@ Adjusting these settings can influence how the computer boots and which devices 
 
 In IT environments, a common task involves **reimaging** computers. This process refers to wiping and reinstalling an operating system using a disk image—a snapshot of a fully configured system. Reimaging is often necessary to restore a computer to a known, stable state or to deploy a standardized software configuration across multiple machines. 
 
+<div class="img-center"> 
+
 ![](/img/docs/mobiledevicereimage.png)
+
+</div>
 
 To initiate a reimaging process, technicians typically boot the computer from an external device such as a USB drive or CD-ROM containing the disk image. This boot sequence is configured through the BIOS/UEFI settings to prioritize external boot devices over internal storage.
 

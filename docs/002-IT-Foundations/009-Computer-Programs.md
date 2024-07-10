@@ -58,7 +58,11 @@ Now, as our CPU receives a byte of data, it's time for it to swing into action. 
 
 Registers serve as storage units for data that the CPU manipulates. For instance, if our CPU needs to perform an addition operation, it might store one number in register A and another in register B, with the result stored in register C.
 
+<div class="img-center"> 
+
 ![](/img/docs/compprogramsregisters.png)
+
+</div>
 
 Think of registers as analogous to worktables for our chef. With designated places to work, she can efficiently begin preparing meals. Just as she uses a recipe book to interpret instructions into actionable tasks, registers allow the CPU to translate binary data into operations it can execute.
 

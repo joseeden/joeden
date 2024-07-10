@@ -113,7 +113,7 @@ The Common Criteria (CC) standards evaluate the security controls in an operatin
 
 Security-Enhanced Linux (SELinux) is a set of controls that are installed on top of another Linux distribution like CentOS or Red Hat Linux. 
 
-Please see [Security-Enhanced Linux.](#security-enhanced-linux-selinux)
+For more information, please see [Security-Enhanced Linux.](../../003-Linux/004-Linux%20Security/030-SELinux.md)
 
 ## Trusted Solaris
 

@@ -119,7 +119,7 @@ Subscribe Identity Modules (SIM) cards authenticates device to carrier network. 
 
 ## Securing Mobile Devices 
 
-For more information, please see [Mobile Asset Deployments.](../006-Security-Operations/070-Asset-and-Change-Management.md#mobile-asset-deployments)
+For more information, please see [Mobile Asset Deployments.](../006-Security-Operations/073-Mobile-Asset-Deployments.md)
 
 - **Bring your own device (BYOD)**
     - Employee uses personal device for work
@@ -138,7 +138,7 @@ For more information, please see [Mobile Asset Deployments.](../006-Security-Ope
 
 
 - **Mobile Device Management**
-    - For organizations, management at scale through [Mobile Device Management.](../005-Security-Architecture/051-Securing-the-Network.md#mobile-device-management)
+    - For organizations, management at scale through [Mobile Device Management.](../005-Security-Architecture/070-Evolution-of-Security.md#mobile-device-management)
     - Employees' device just need to be registered.
     
 - **Sideloading** 

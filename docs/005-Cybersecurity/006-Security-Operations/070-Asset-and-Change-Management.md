@@ -56,7 +56,7 @@ Assignment and accounting in asset management involve the proper allocation and 
 
 Mobile Device Management (MDM) enables organizations to manage and secure mobile devices across various platforms (smartphones, tablets).
 
-For more information, please see [Mobile Device Management.](../005-Security-Architecture/051-Securing-the-Network.md#mobile-device-management)
+For more information, please see [Mobile Device Management.](../005-Security-Architecture/070-Evolution-of-Security.md#mobile-device-management)
 
 ### Asset Disposal and Decommissioning 
 
@@ -72,7 +72,7 @@ Special Publication 800-88, commonly referred to as "**Guidelines for Media Sani
     - Degaussing
     - Secure Erase
     - Cryptographic Erase 
-- For more information, please see [Data Media Sanitization.](../006-Security-Operations/003-Data-Security.md#data-media-sanitization)
+- For more information, please see [Data Media Sanitization.](../006-Security-Operations/004-Destroying-Data.md#data-media-sanitization)
 
 **Destruction**
 
