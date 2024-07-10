@@ -1,4 +1,4 @@
-<!-- ---
+---
 title: "The Modern Computers"
 description: "Computers of the first kind"
 sidebar_position: 4
@@ -10,171 +10,177 @@ last_update:
 
 ## Computers of the First Kind
 
-The progress of computing had been steadily advancing since the invention of the Analytical Engine, but it wasn't until World War II that a major breakthrough was achieved. At that time, computing research was extremely expensive and electronic components were large, requiring a lot of them to compute anything of value. As a result, computers were massive and many research efforts were underfunded and unable to make significant progress.
+The progress of computing steadily advanced after the invention of the Analytical Engine, but it wasn't until World War II that a significant breakthrough occurred. During this time, computing research was expensive, and electronic components were bulky, making computers enormous and limiting research progress.
 
-However, when the war broke out, governments began to invest heavily in computing research in order to develop technologies that would provide them with an edge over other countries. This led to a surge in research efforts and advancements were made in fields such as cryptography.
+However, the war prompted governments to invest heavily in computing research to gain technological advantages. This surge in funding led to significant advancements in fields like cryptography.
 
 ### Cryptography
 
-During World War II, **cryptography** became an essential tool in processing secret messages from enemies, making computers a valuable resource in this field. Cryptography is still critical to secure communication today, and plays an important role in computer security.
+During World War II, **cryptography** became crucial for processing secret messages, making computers indispensable. Cryptography remains vital for secure communication and computer security today.
 
-<p align=center>
-![](/img/docs/cryptographyworldwar2.png)
-</p>
+- Used for decoding encrypted enemy communications during the war.
+- Led to the **Colossus** computer, the world's first programmable digital computer.
+- Enabled breakthroughs in both mathematical algorithms and electronic hardware.
 
+After the war, companies like IBM and Hewlett Packard rapidly advanced their technologies, extending their reach from academia to businesses and governments. The 20th century saw tremendous advancements in computing, driven by the interests of governments, scientists, and corporations.
 
-In the post-war era, companies such as IBM and Hewlett Packard rapidly advanced their technologies, expanding their reach from academia to business and government sectors. Throughout the 20th century, significant technological advancements were made in computing, fueled by the interests of governments, scientists, and corporations.
-
-
-### Punch Cards 
-
-New data storage methods were invented by organizations, leading to a surge in computational power. Punched cards were popular until the 1950s for data storage, where operators had decks of ordered punched cards for data processing. However, a single mistake like dropping the deck could lead to the cards getting out of order and making it nearly impossible to sort them again.
-
-<p align=center>
-![](/img/docs/punchcardspostwar.png)
-</p>
+![Cryptography](/img/docs/cryptographyworldwar2.png)
 
 
-But limitations of punched cards led to new technological innovations such as magnetic tape, which allowed people to store more data on more reliable media.
+### Punch Cards
 
-### Magnetic Tapes 
+New data storage methods emerged, significantly boosting computational power. Punched cards were popular until the 1950s, used for data processing with decks of ordered punched cards. However, a single mistake, like dropping the deck, could lead to chaos and make sorting the cards a nightmare.
 
-Magnetic tape revolutionized the way data was stored and retrieved. In the past, punched cards were commonly used to store data, but their limitations were clear. Magnetic tape, on the other hand, used magnetization to record information onto a tape.
+- Invented by Herman Hollerith and first used in the 1890 U.S. Census.
+- Read by mechanical card readers and translated into binary code.
 
-The concept of magnetic tape may sound familiar to those who grew up in the 1970s and 80s, as cassette tapes and vinyl records also used this technology to store and play back music. As magnetic tape became more prevalent, it replaced punched cards and allowed for more efficient and reliable storage of data.
+The limitations of punched cards led to innovations like magnetic tape, which allowed for more reliable and extensive data storage.
 
-<p align=center>
-![](/img/docs/magnetictappostwar.png)
-</p>
-
+![Punch Cards](/img/docs/punchcardspostwar.png)
 
 
-### Vaccuum Tubes 
+### Magnetic Tapes
 
-As we have explored, early computers were massive in size and used racks of vacuum tubes to help process data. Vacuum tubes controlled the flow of electricity in all electronics like televisions and radios, but these tubes were problematic and frequently broke down.
+Magnetic tape revolutionized data storage and retrieval. Unlike punched cards, magnetic tape used magnetization to record information, becoming a staple for efficient and reliable data storage. 
 
-IT support in those days might have involved crawling inside massive machines filled with dust and other unsavory things, or replacing vacuum tubes and sorting through stacks of punched cards. Debugging back then might have literally involved identifying and removing creepy crawly creatures from the machine!
+![Magnetic Tape](/img/docs/magnetictappostwar.png)
 
-<p align=center>
-![](/img/docs/postwarvacuumtubes.png)
-</p>
+This technology was familiar to those who grew up with cassette tapes and vinyl records, as both used similar principles for storing and playing back music.
 
-
-Thankfully, modern computing has come a long way since those early days, and the role of an IT specialist has evolved to address the unique challenges of today's technology landscape. 
-
-### So that's where "computer bug" came from 
-
-Admiral Grace Hopper, a renowned computer scientist, often shared a memorable anecdote about a group of engineers who were troubleshooting the Harvard Mark 2 computer. They eventually found out that a moth was causing a relay malfunction, leading to the popular phrase "debugging" to describe the process of fixing computer problems.
-
-<p align=center>
-![](/img/docs/postwardebugging.png)
-</p>
+- Introduced in the 1950s and quickly adopted by businesses for data storage.
+- Allowed for sequential access to large amounts of data.
+- Magnetic tapes could store more data than punched cards and were less prone to physical damage.
 
 
+### Vacuum Tubes
 
-### ENIAC 
+Early computers were enormous and used racks of vacuum tubes for data processing. These tubes controlled electrical flow in all electronics but were prone to frequent breakdowns. IT support involved dealing with massive, dusty machines and often required physical crawling inside them to replace tubes or sort through punched cards. The term "debugging" literally involved removing insects from these machines.
 
-The ENIAC, one of the earliest general-purpose computers, was a massive collection of electronic components and wires that spanned an entire room. With 17,000 vacuum tubes and requiring 1,800 square feet of floor space, it was a true behemoth of a machine.
+- Fundamental to early electronic devices, including radios and televisions.
+- Generated a lot of heat and were less reliable than modern transistors.
 
-<p align=center>
-![](/img/docs/psotwareniac.png)
-</p>
+Vacuum tubes were replaced by transistors in the late 1950s, leading to smaller and more efficient computers.
 
+![Vacuum Tubes](/img/docs/postwarvacuumtubes.png)
 
+### The Origin of "Computer Bug"
 
-## The Start of Electronics 
+Admiral Grace Hopper shared a famous story about engineers troubleshooting the Harvard Mark 2 computer. They discovered a moth causing a relay malfunction, coining the term "debugging" to describe fixing computer problems.
 
-As time went on, the use of transistors to regulate electricity voltages became prevalent in the industry. Today, this technology serves as a fundamental component in all electronic devices.
+- The moth was preserved and taped into the computer's logbook.
+- This highlighted the literal and figurative "bugs" in early computer systems.
 
-Although they perform similar functions to vacuum tubes, transistors are significantly more compact and efficient. It's now possible to fit billions of transistors onto a single small computer chip.
+    ![Debugging](/img/docs/postwardebugging.png)
 
+### ENIAC
 
-### Compilers 
+The ENIAC, one of the earliest general-purpose computers, was a massive machine with 17,000 vacuum tubes, requiring 1,800 square feet of space. It was a giant leap forward in computing.
 
-Over time, there were numerous breakthroughs in the field of computing, including the creation of the first-ever **compiler** by Admiral Grace Hopper. This innovation paved the way for translating human language into programming language and then into machine code, marking a significant milestone in computing history.
+- Developed by John Mauchly and J. Presper Eckert at the University of Pennsylvania.
+- Used primarily for calculations related to artillery firing tables for the U.S. Army.
 
-Thanks to this development, programming languages are now much more accessible to people around the world, as we no longer have to write machine code in binary form.
+The ENIAC is capable of performing thousands of calculations per second which is considered a significant achievement at the time.
 
-![](/img/docs/gracehoppercompiler.png)
+![ENIAC](/img/docs/psotwareniac.png)
 
-### Disk Drives 
+## The Start of Electronics
 
-Over time, the industry evolved to include the development of the first hard disk drives and microprocessors. Programming languages began to take center stage as the primary means for engineers to create computer software.
+As time progressed, transistors replaced vacuum tubes, revolutionizing the industry. Transistors perform similar functions but are much smaller and more efficient, allowing billions to fit on a single computer chip.
 
-With continued advancements in electronic components, computers were becoming smaller and smaller. They no longer took up entire rooms like the ENIAC, and were now small enough to fit on tabletops.
+- Invented in 1947 by John Bardeen, Walter Brattain, and William Shockley at Bell Labs.
+- Marked the beginning of the semiconductor era, enabling the development of integrated circuits.
+- Transistors consume less power and are more reliable, leading to the miniaturization of electronic devices.
 
-### Xerox Alto 
+### Compilers
 
-The Xerox Alto was a groundbreaking computer that resembled modern computers, and was the first to feature a graphical user interface that used icons, a mouse, and windows. While it was previously mainly found in military and university research facilities, the consumer age of computing began when companies like Xerox started building machines that were more affordable and compact.
+One major breakthrough was the creation of the first **compiler** by Admiral Grace Hopper. This innovation translated human language into programming language and then into machine code, making programming more accessible.
 
+- Grace Hopper's compiler was known as A-0, developed in the early 1950s.
+- Enabled programmers to write code in a more understandable and higher-level language.
+- Paved the way for modern programming languages like COBOL and FORTRAN.
 
-<p align=center>
-![](/img/docs/xeroxzltofirstpc.png)
-</p>
+![Compiler](/img/docs/gracehoppercompiler.png)
+
+### Disk Drives
+
+The development of hard disk drives and microprocessors marked significant advancements. Computers shrank from room-sized machines to devices small enough to fit on tabletops.
+
+- The first hard disk drive, the IBM 350, was introduced in 1956.
+- Hard disks provided random access to data, unlike magnetic tapes.
+- Microprocessors, like Intel's 4004, integrated all the functions of a computer's central processing unit (CPU) onto a single chip.
+
+### Xerox Alto
+
+The Xerox Alto was a groundbreaking computer featuring a graphical user interface with icons, a mouse, and windows. It marked the consumer age of computing, making technology more affordable and compact.
+
+- Developed in 1973 at Xerox PARC (Palo Alto Research Center).
+- Introduced many concepts still used in modern computing, such as WYSIWYG (What You See Is What You Get) editors.
+- Although not commercially successful, it heavily influenced later systems like the Apple Macintosh.
+
+![Xerox Alto](/img/docs/xeroxzltofirstpc.png)
 
 ### Apple
 
-In the 1970s, an engineer named Steve Wozniak created the Apple I, a single-board computer aimed at hobbyists, and founded a company called Apple Computer with his friend Steve Jobs. Their next release, the Apple II, was designed for the average consumer and proved to be a huge success, selling for nearly two decades and making personal computers accessible to a new generation.
+In the 1970s, Steve Wozniak created the Apple I, a single-board computer for hobbyists. He and Steve Jobs founded Apple Computer, and their next release, the Apple II, was designed for average consumers, becoming a huge success and making personal computers mainstream.
 
-<p align=center>
-![](/img/docs/firstpcapple.png)
-</p>
+- The Apple I was sold as a kit; users had to assemble it themselves.
+- The Apple II, introduced in 1977, featured color graphics and a keyboard.
+- Apple's success helped to popularize the personal computer industry.
 
-This marked a turning point in the industry, as computers became affordable for the middle class and began to infiltrate both homes and offices. In the 1980s, IBM introduced its personal computer, which came with a rudimentary operating system called MS-DOS or Microsoft Disk Operating System. With beautiful icons, words, and images like what we see on our smartphones today, personal computing became more user-friendly and accessible to a wider audience.
+![Apple I](/img/docs/firstpcapple.png)
 
-### Microsoft 
+### Microsoft
 
-The evolution of operating systems from their inception to their present state is truly remarkable. Moving back to the IBM PC, it was widely adopted and made more accessible to consumers through a partnership with Microsoft.
+Operating systems evolved remarkably. The IBM PC, paired with Microsoft's **Windows operating system**, became widely adopted due to its hardware compatibility, dominating the industry.
 
-Bill Gates, the founder of Microsoft, went on to create the **Windows operating system** which became the preferred operating system in the workplace and dominated the computing industry due to its compatibility with any hardware.
+- The original IBM PC was released in 1981 and used MS-DOS, an operating system developed by Microsoft.
+- Microsoft Windows, introduced in 1985, provided a graphical interface on top of MS-DOS.
+- Windows' widespread adoption in businesses and homes solidified Microsoft's dominance in the software market.
 
-<p align=center>
-![](/img/docs/firstwindowsos.png)
-</p>
+![Windows OS](/img/docs/firstwindowsos.png)
 
+As personal computers became common in workplaces and homes, the demand for IT support increased. The rise of video games also highlighted the potential of computers for entertainment.
 
-As more computers were introduced into the workplace, the need for IT support increased, leading to a demand for skilled workers who could provide technical assistance. In addition to personal computers entering households for the first time, a new form of computing was emerging - video games.
+## The Gaming Era
 
-## The Gaming Era  
+In the 1970s and 80s, arcades featuring coin-operated games like Atari's Pong became immensely popular. Atari's Video Computer System brought video game consoles into homes, proving that computers could be used for fun as well as work.
 
-In the 1970s and 80s, arcades, which were coin-operated entertainment machines, gained immense popularity. One of the pioneers in this field was Atari, which developed a game called Pong in 1972. Pong became so popular that people queued up for hours at bars and recreational centers just to play it. This marked the beginning of the video game era.
+- Atari, founded by Nolan Bushnell and Ted Dabney, was a pioneer in the video game industry.
+- Pong, released in 1972, was one of the first commercially successful video games.
+- The Atari 2600, launched in 1977, brought video games to a broader audience and helped establish the home gaming market.
 
-<p align=center>
-![](/img/docs/ataripong.png)
-</p>
+The gaming era marked an important milestone for the computing industry, transforming computers from tools primarily used in workplaces and research institutions into essential household entertainment devices.
 
-Atari went on to launch the video computer system, which helped to bring video game consoles into people's homes. Video games played a significant role in the evolution of computers by proving that they didn't always have to be used solely for work purposes; they could also serve as a source of entertainment. This was an important milestone for the computing industry, as computers were primarily used in workplaces or research institutions at the time.
+![Atari Pong](/img/docs/ataripong.png)
 
-## The Unix 
+## The Unix
 
-As Apple, Macintosh, and Microsoft Windows dominated the operating system market, Richard Stallman began working on a new project to develop a free Unix-like operating system. **Unix**, which was originally created by Ken Thompson and Dennis Ritchie, was expensive and not widely accessible. Stallman's new operating system was called **GNU** and aimed to provide similar functionality to Unix but be free for anyone to use.
+While Apple, Macintosh, and Microsoft Windows dominated the OS market, Richard Stallman worked on a free Unix-like operating system called **GNU**. This open-source project laid the groundwork for **Linux**, a major open-source OS developed by Linus Torvalds.
 
-Unlike Windows and Macintosh, which were owned by companies, GNU's code was open source, allowing anyone to modify and share it. Although GNU did not evolve into a complete operating system, it laid the groundwork for the creation of **Linux**, one of the largest open-source operating systems today, which was developed by Linus Torvalds.
+- Unix, developed in the late 1960s by Ken Thompson and Dennis Ritchie, became the foundation for many modern operating systems.
+- GNU aimed to create a free software alternative to Unix, emphasizing user freedom.
+- Linux, started by Linus Torvalds in 1991, combined with GNU software to form a complete operating system used worldwide.
 
-## The Mobile Movement 
+## The Mobile Movement
 
-It is highly probable that you have encountered open-source software if you have worked in IT or used a computer. For instance, you may already be utilizing a web browser like Mozilla Firefox. During the early 90s, computers continued to decrease in size, and a major innovator emerged on the scene.
+By the early 90s, computers were getting smaller, leading to the advent of personal digital assistants (PDAs) that allowed computing on-the-go.
 
+- PDAs offered portable computing with features like calendars and contact management.
+- Enabled users to perform tasks like email and note-taking outside of traditional computing environments.
+- Paved the way for the development of smartphones by integrating computing and communication functions.
 
-<p align=center>
-![](/img/docs/pdasevolution.png)
-</p>
+As the technology landscape continues to evolve, the legacy of these early advancements is evident in today's mobile devices, which combine the power of traditional computers with the convenience of portability. 
 
-Personal digital assistants (PDAs) were introduced, enabling computing on-the-go. These mobile devices combined a variety of features, including portable media players, word processors, email clients, web browsers, and more into a convenient handheld device.
+![PDAs](/img/docs/pdasevolution.png)
 
-## Connecting People 
+## Connecting People
 
-Nokia's introduction of PDAs with mobile phone functionality in the late 1990s sparked the development of pocketable computers, which we now refer to as smartphones. The progress from room-sized, heavy computers to powerful ones that can fit in our pockets has occurred in just a few decades, which is astonishing. And this is just the beginning.
+Nokia's introduction of PDAs with mobile phone functionality in the late 1990s led to the development of smartphones. The rapid evolution from room-sized computers to powerful handheld devices in just a few decades is astonishing.
 
-<p align=center>
-![](/img/docs/nokiapdas.png)
-</p>
+- Nokia's Communicator series set the stage for modern smartphones.
+- Convergence of mobile phones and PDAs enabled web browsing, email, and multimedia.
+- Apple's iPhone in 2007 revolutionized the smartphone industry with its touch interface and app ecosystem.
 
+The mobile movement exemplifies the relentless pace of technological advancement, demonstrating how innovations can rapidly transform our daily lives and redefine our interactions with technology.
 
-It is crucial for those entering the IT industry to comprehend how to maintain and service the ever-evolving technology demands. IT support from 50 years ago involved tasks such as replacing vacuum tubes and arranging punch cards, which are no longer applicable in today's IT world. 
-
-## Next Steps 
-
-While computers evolve in both complexity and prevalence, so did knowledge required to support and maintain them. In 10 years IT support could require working through virtual reality lenses. You never know. 
-
-Dive deeper on to how computers work in the [next page.](024-The-Digital-Logic.md)  -->
+![Nokia PDAs](/img/docs/nokiapdas.png)
