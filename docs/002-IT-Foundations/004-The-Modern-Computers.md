@@ -2,7 +2,7 @@
 title: "The Modern Computers"
 description: "Computers of the first kind"
 sidebar_position: 4
-tags: [T Fundamentals, Computers, Operating Systems]
+tags: [IT Fundamentals, Computers, Operating Systems]
 last_update:
   date: 3/28/2023
 ---
