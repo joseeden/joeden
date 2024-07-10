@@ -12,9 +12,11 @@ last_update:
 
 When we engage with computers through our mouse, keyboard, or touch screen, we're not directly commanding it with zeros and ones, although underneath, that's exactly what happens. This concept of abstraction simplifies the complexity of computer systems for everyday use, a principle ubiquitous in our daily lives.
 
-<p align=center>
+<div class="img-center"> 
+
 ![](/img/docs/comparchunderthehood.png)
-</p>
+
+</div>
 
 Consider driving a car: you operate it using familiar controls like the steering wheel, pedals, and gear stick, regardless of the intricacies under the hood, which can vary greatly between different car manufacturers. This is the essence of abstraction—providing a simplified interface while hiding underlying complexity.
 
@@ -24,9 +26,11 @@ We employ abstraction in computing by breaking down complex problems into simple
 
 An everyday example of abstraction in IT is the use of **error messages**. Instead of delving into intricate code to diagnose a problem, error messages like "file not found" abstractly convey vital information, facilitating quicker problem-solving and reducing downtime.
 
-<p align=center>
+<div class="img-center"> 
+
 ![](/img/docs/comparchfilenotfound.png)
-</p>
+
+</div>
 
 Imagine the alternative—dealing with a system that provides no feedback or guidance. Abstraction not only simplifies our interactions with technology but also enhances efficiency and usability in countless ways.
 
