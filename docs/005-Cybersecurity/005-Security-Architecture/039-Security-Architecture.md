@@ -150,7 +150,7 @@ For more information, please see [The Basics.](../../006-Cloud-Computing/001-Clo
 
 Virtualization involves creating virtual instances of computing resources, such as servers, storage devices, or networks, to maximize resource utilization and flexibility.
 
-For more information, please see [Virtualization](../../002-IT-Foundations/020-Virtualization.md)
+For more information, please see [Virtualization](../../002-IT-Foundations/040-Virtualization.md)
 
 
 ## Containerization 
