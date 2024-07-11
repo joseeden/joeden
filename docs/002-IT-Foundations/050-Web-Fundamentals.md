@@ -157,6 +157,8 @@ Port numbers act as gateways, allowing or rejecting data based on firewall setti
 The document path indicates where the resource is located within the web service directory. If the document path is omitted from the URL, it defaults to the site's home page, which is server and configuration dependent (e.g., index.html or default.html).
 
 <div class="img-center"> 
-<img width="500" src="/img/docs/010urlsandfirewalls.png">
+
+![](/img/docs/010urlsandfirewalls.png)
+
 </div>
 
