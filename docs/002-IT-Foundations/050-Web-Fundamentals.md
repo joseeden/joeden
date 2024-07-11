@@ -87,6 +87,38 @@ Servers run this software to handle HTTP requests from clients, ensuring that we
 Popular websites, like Google.com, face high demand, requiring exceptionally powerful servers to manage the influx of requests. While any computer could be set up as a server, dedicated servers are often highly specialized for performance.
 
 
+## URLs
+
+Uniform Resource Locators (URLs) are essential for the web's hypertext system. They provide the information a browser needs to send a request to a server and specify the desired resource.
+
+URLs are divided into two main parts separated by a colon: the scheme and the path.
+
+- **Scheme:** Specifies the protocol the browser should use to retrieve the resource. Examples include:
+  - HTTP
+  - HTTPS
+  - FTP
+  - Email protocols like POP3 and IMAP
+
+- **Path:** Provides the location of the server and the specific resource.
+
+Example URL
+
+```
+https://www.qa.com/web-development-fundamentals-html-and-css-qahtmlcss
+```
+
+Where: 
+
+- Scheme: HTTPS
+- Path: www.qa.com/web-development-fundamentals-html-and-css-qahtmlcss
+
+### Simplified URL Entry
+
+When entering URLs into browsers, it's common not to type the scheme. Browsers often add the default scheme (usually HTTP or HTTPS) automatically.
+
+As common practice, many users omit the scheme (HTTP or HTTPS) when entering URLs directly into browsers. This simplifies the entry process and is commonly seen when typing addresses like www.qa.com instead of specifying http://www.qa.com explicitly.
+
+Browsers will then automatically prepend the default scheme (typically HTTP or HTTPS) if it's omitted. This practice reduces the burden on users to remember and type out the full URL scheme.
 
 
 ### HTTP URL Syntax
