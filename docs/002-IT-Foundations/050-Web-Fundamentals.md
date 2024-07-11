@@ -87,3 +87,44 @@ Servers run this software to handle HTTP requests from clients, ensuring that we
 Popular websites, like Google.com, face high demand, requiring exceptionally powerful servers to manage the influx of requests. While any computer could be set up as a server, dedicated servers are often highly specialized for performance.
 
 
+
+
+### HTTP URL Syntax
+
+HTTP and HTTPS URLs have their own syntax, which includes the hostname, port, and document path.
+
+Syntax: 
+
+```
+hostname:port/document-path
+```
+
+where: 
+
+- **Hostname:** 
+  - Represents the name of the accessed website. 
+  - Commonly starts with "www," but this is not mandatory.
+
+- **Port:** 
+  - Follows the hostname and may include a port number (e.g., www.example.com:80).
+  - If no port is specified, HTTP defaults to port 80 and HTTPS to port 443.
+
+- **Document Path:** 
+  - The location of the resource in the web service directory.
+
+### Importance of Port Numbers
+
+Port numbers act as gateways, allowing or rejecting data based on firewall settings. Common port numbers include:
+
+- **Port 80:** HTTP
+- **Port 443:** HTTPS
+- **Port 25:** Email
+
+### Document Path
+
+The document path indicates where the resource is located within the web service directory. If the document path is omitted from the URL, it defaults to the site's home page, which is server and configuration dependent (e.g., index.html or default.html).
+
+<div class="img-center"> 
+<img width="500" src="/img/docs/010urlsandfirewalls.png">
+</div>
+
