@@ -43,19 +43,23 @@ This project will be broken down into seven sprints.
 <!-- 
 ## NOTES 
 
+
 ✔️ Copy the check sign when done with a task for a sprint.  -->
 
 
 
 ## Sprint 01
 
-:::note[TODOs]
+:::tip[TODOs]
 
-✔️ Create a Github Repo and clone it locally 
 
-✔️ Setup Github repo according to best practices 
-✔️ Code the application locally 
-✔️ Test the application locally
+✔️ Create a Github Repo and clone it locally.
+
+✔️ Setup Github repo according to best practices.
+
+✔️ Code the application locally.
+
+✔️ Test the application locally.
 
 :::
 
@@ -318,9 +322,11 @@ This project will be broken down into seven sprints.
 
 ## Sprint 02
 
-:::note[TODOs]
+:::tip[TODOs]
+
 
 ✔️ Setting up a GKE cluster.
+
 ✔️ Verify connection to the GKE cluster.
 
 :::
@@ -374,9 +380,11 @@ This project will be broken down into seven sprints.
 
 ## Sprint 03
 
-:::note[TODOs]
+:::tip[TODOs]
+
 
 ✔️ Design Discussions
+
 ✔️ Explore CICD options
 
 :::
@@ -420,9 +428,11 @@ Architecture:
 
 ## Sprint 04
 
-:::note[TODOs]
+:::tip[TODOs]
+
 
 ✔️ Connect Cloud Build to Github repository 
+
 ✔️ Automate Docker image build process 
 
 :::
@@ -526,12 +536,17 @@ Once triggered, Cloud Build will check the Cloudbuild.yaml which will contain th
 
 ## Sprint 05
 
-:::note[TODOs]
+:::tip[TODOs]
+
 
 ✔️ Create the namespace in the GKE cluster
+
 ✔️ Create the deployment manifest 
+
 ✔️ Expose the application via endpoint
+
 ✔️ Update the Cloud Build code for deployment
+
 ✔️ Validate the deployment
 
 :::
@@ -618,12 +633,17 @@ Once triggered, Cloud Build will check the Cloudbuild.yaml which will contain th
 
 ## Sprint 06
 
-:::note[TODOs]
+:::tip[TODOs]
+
 
 ✔️ Create the development branch
+
 ✔️ Create the development Cloud Build YAML file
+
 ✔️ Create the Cloud Build trigger for the development branch
+
 ✔️ Create the development namespace 
+
 ✔️ Push changes to development 
 
 :::
