@@ -1,5 +1,6 @@
 ---
 title: "Secure Automation"
+description: "Securing each step of the automation"
 tags: [Linux, DevOps, Cloud, SRE]
 sidebar_position: 2
 last_update:

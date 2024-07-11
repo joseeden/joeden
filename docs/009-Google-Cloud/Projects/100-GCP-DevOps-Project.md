@@ -1,5 +1,13 @@
+--
+title: "GCP DevOps Project"
+tags: [Google Cloud, DevOps, Cloud]
+sidebar_position: 1
+last_update:
+  date: 1/30/2024
+---
 
-# GCP DevOps Project 
+
+
 
 
 ## Pre-requisites 
@@ -41,20 +49,22 @@ This project will be broken down into seven sprints.
 
 ## Sprint 01
 
-```
-TODO: 
+:::note[TODOs]
+
 ✔️ Create a Github Repo and clone it locally 
 ✔️ Setup Github repo according to best practices 
 ✔️ Code the application locally 
 ✔️ Test the application locally
-```
 
-<details><summary> See sprint details </summary>
+:::
+
+<details>
+    <summary> See sprint details </summary>
  
 
 1. Create the Github repository. 
     
-    ![](../../Images/gcp-devops-project-1.png)
+    ![](/img/docs/gcp-devops-project-1.png)
 
 2. Clone the repository locally.
 
@@ -86,24 +96,21 @@ TODO:
 3. Enable branch protection on the main branch. 
 
 
-    <p>
-    <img width=600  src='../../Images/gcp-devops-project-enable-branch-protections-how-it-is.png'>
-    </p>
-
-    ![]()
+    ![](/img/docs/gcp-devops-project-enable-branch-protections-how-it-is.png)
 
     To do this, go back to the Github repo > Settings > Branches > Add branch protection rule
 
 
-    ![](../../Images/gcp-devops-projct-enabled-branch-protection-settings.png)
+    ![](/img/docs/gcp-devops-projct-enabled-branch-protection-settings.png)
+
 
     Put in "master" for branch  name and then tick the box for "Require a pull reqeust before merging. Click Create at the bottom.
 
 
-    ![](../../Images/gcp-devops-project-enabled-branch-protection-require-pull-request-with-borders.png)
+    ![](/img/docs/gcp-devops-project-enabled-branch-protection-require-pull-request-with-borders.png)
 
 
-    ![](../../Images/gcp-devops-project-enabled-branch-protection-doneee.png)
+    ![](/img/docs/gcp-devops-project-enabled-branch-protection-doneee.png)
 
 
     **Note**: In a team setting, you may need to add an "Approval" stage so that any changes will be reviewed by another team member before it is pushed to the master branch.
@@ -157,20 +164,15 @@ TODO:
 
 7. Back at the Github repo, a new message will appear. Click the "Compare & pull request". The original text and the changes will appear at the bottom, highlighted with red and green. In the "Add a description" box, specify the change made and then click "Create pull request".
 
-    |![](../../Images/gcp-devops-project-add-simple-change-to-readme.png)|
-    |-|
+    ![](/img/docs/gcp-devops-project-add-simple-change-to-readme.png)
 
-    |![](../../Images/gcp-devops-project-create-pull-requestsss.png)|
-    |-|
+    ![](/img/docs/gcp-devops-project-create-pull-requestsss.png)
 
 8. In a team setting, a review will be done by another team member before it is merged. The members names will appear in the "Reviewer" section at the left. This is a self project, simply clik the Merge pull request > Confirm merge.
 
-    |![](../../Images/merging-pull-request-for-self-project.png)|
-    |-|
-    </p>
+    ![](/img/docs/merging-pull-request-for-self-project.png)
 
-    |![](../../Images/gcp-devops-project-merged-pull-request-done-self-projectsssss.png)|
-    |-|
+    ![](/img/docs/gcp-devops-project-merged-pull-request-done-self-projectsssss.png)
     
     There is an option to delete the branch after every merge to the master branch, as this is a common practice. Whenever changes are merged to the master branch, it means that all changes have undergone testing, has been reviewed, and no additional change is needed. 
 
@@ -178,9 +180,7 @@ TODO:
 
 9. Back in the project directory, create the files. 
 
-    app.py:
-
-    ```python
+    ```python title="app.py"
     from flask import flask 
     app = Flask(__name__) 
 
@@ -189,15 +189,12 @@ TODO:
         return 'This is a simple Flask application' 
     ```
 
-    requirements.txt:
 
-    ```bash
+    ```bash title="requirements.txt"
     flask 
     ```
 
-    Dockerfile:
-
-    ```Dockerfile
+    ```Dockerfile title="Dockerfile"
     FROM python:3.8-slim-buster 
 
     WORKDIR /app
@@ -241,8 +238,7 @@ TODO:
     localhost:5000 
     ```
 
-    |![](../../Images/gcp-devops-project-flask-application-is-alive-can-be-accessed-through-browser.png)|
-    |-|
+    ![](/img/docs/gcp-devops-project-flask-application-is-alive-can-be-accessed-through-browser.png)
 
 12. Since the application is running locally, we can now commit the changes. But first, make sure to check your current branch and verify the changes. Afterwards, commit and push the changes. 
 
@@ -302,22 +298,18 @@ TODO:
 
 13. Back at the Github repo, switch to the feature branch and open a pull request. 
 
-    |![](../../Images/gcp-devops-project-working-app-pushing-committing-changes-to-github.png)|
-    |-|
+    ![](/img/docs/gcp-devops-project-working-app-pushing-committing-changes-to-github.png)
 
-    |![](../../Images/gcp-devops-project-opened-pull-requests-for-changes-in-the-flask-app.png)|
-    |-|
+    ![](/img/docs/gcp-devops-project-opened-pull-requests-for-changes-in-the-flask-app.png)
 
     Merge the PR.
 
-    |![](../../Images/gcp-devops-project-merged-working-changes-to-the-repo.png)|
-    |-|
+    ![](/img/docs/gcp-devops-project-merged-working-changes-to-the-repo.png)
 
 
 14. At this point, we can now safely delete the feature branch. Click Delete branch.
 
-    |![](../../Images/gcp-devops-project-safely-deletee-feature-branch-sprint-01.png)|
-    |-|
+    ![](/img/docs/gcp-devops-project-safely-deletee-feature-branch-sprint-01.png)
 
 
 </details>
@@ -325,19 +317,20 @@ TODO:
 
 ## Sprint 02
 
-```
-TODO: 
+:::note[TODOs]
+
 ✔️ Setting up a GKE cluster
 ✔️ Verify connection to the GKE cluster
-```
 
-<details><summary> See sprint details </summary>
+:::
+
+<details>
+    <summary> See sprint details </summary>
 
 
 1. Login to your GCP account and go to the GKE menu. Click CREATE > Standard: You manage your cluster > CONFIGURE. 
 
-    |![](../../Images/gcp-devops-project-create-gke-cluster.png)|
-    |-|
+    ![](/img/docs/gcp-devops-project-create-gke-cluster.png)
 
 2. Provide the following specifics for the cluster:
 
@@ -347,14 +340,12 @@ TODO:
     - Location type: Zonal 
     - Zone: asia-southeast1-a
 
-    |![](../../Images/gcp-devops-project-create-gke-cluster-clsuter-1-asia.png)
-    |-|
+    ![](/img/docs/gcp-devops-project-create-gke-cluster-clsuter-1-asia.png)
 
 
 3. The cluster creation may take up 5-10 mins. Once done, it should appear in the Clusters menu. Click the clsuter name to see details of the cluster. 
 
-    |![](../../Images/gcp-devops-project-cluster-1-created-yeyy.png)
-    |-|
+    ![](/img/docs/gcp-devops-project-cluster-1-created-yeyy.png)
 
 4. **Maintenance window**. For production environments, it is recommended to change the maintenance window from Any time to xx.  
 
@@ -363,8 +354,7 @@ TODO:
 
 5. To connect to the cluster, click CONNECT. It will show the available options to connect to the cluster. Click RUN IN CLOUD SHELL. This will open a Linux terminal.
 
-    |![](../../Images/gcp-devops-project-connect-the-gke-cluster-cluster-1.png)
-    |-|
+    ![](/img/docs/gcp-devops-project-connect-the-gke-cluster-cluster-1.png)
 
     In the "Authorize Cloud Shell" window, click AUTHORIZE. A kubeconfig will then be generated.  
 
@@ -383,13 +373,15 @@ TODO:
 
 ## Sprint 03
 
-```
-TODO: 
+:::note[TODOs]
+
 ✔️ Design Discussions
 ✔️ Explore CICD options
-```
 
-<details><summary> See sprint details </summary>
+:::
+
+<details>
+    <summary> See sprint details </summary>
 
 What we have: 
 
@@ -418,8 +410,7 @@ Available GCP Tools:
 
 Architecture:
 
-|![](../../Images/gcp-devops-project-architecture-flow-how-app-will-be-deployed.png)|
-|-|
+![](/img/docs/gcp-devops-project-architecture-flow-how-app-will-be-deployed.png)
 
 </details>
 
@@ -428,38 +419,39 @@ Architecture:
 
 ## Sprint 04
 
-```
-TODO: 
+:::note[TODOs]
+
 ✔️ Connect Cloud Build to Github repository 
 ✔️ Automate Docker image build process 
-```
 
-<details><summary> See sprint details </summary>
+:::
+
+<details>
+    <summary> See sprint details </summary>
 
 **Notes**
 
 In traditional Jenkins, we use **Webhooks** to monitor activities in a repository. The Jenkins job will be triggered when new changes are committed. 
 
-|![](../../Images/gcp-devops-projet-how-traditional-jenkins-works.png)|
-|-|
+![](/img/docs/gcp-devops-projet-how-traditional-jenkins-works.png)
 
 In Cloud Build, we can use a **Cloud Build Trigger.** This will be the event that will start the Cloud Build job. This can be any push that is done on the main/master branch. This can also be configured for other branches.
 
-|![](../../Images/gcp-devops-project-how-cloud-buikld-trigger-works.png)|
-|-|
+![](/img/docs/gcp-devops-project-how-cloud-buikld-trigger-works.png)
 
 Once triggered, Cloud Build will check the Cloudbuild.yaml which will contain the instructions. This is the CD code.
 
-<p>
-<img width=500 src='../../Images/gcp-devops-project-flow-make-code-changes-up-to-storing-docker-image.png'>
-</p>
+<div class="img-center"> 
+
+![](/img/docs/gcp-devops-project-flow-make-code-changes-up-to-storing-docker-image.png)
+
+</div>
 
 **Connecting Github repo to Cloud Build**
 
 1. First, search for Cloud Build. If this is the first you've used it, you'll need to enable the Cloud Build API. Refresh the window or try searching Cloud Build from the search bar again. 
 
-    |![](../../Images/gcp-devops-project-enable-cloudbuild-api.png)|
-    |-|
+    ![](/img/docs/gcp-devops-project-enable-cloudbuild-api.png)
 
 
 2. In the Cloud Build homepage, go to Triggers > MANAGE REPOSITORIES > CONNECT REPOSITORY.
@@ -497,17 +489,17 @@ Once triggered, Cloud Build will check the Cloudbuild.yaml which will contain th
 
 3. Create the cloudbuild.yaml.
 
-```yaml
-  
-```
+    ```yaml
+    
+    ```
 
 4. Commit the change to your Github repository. 
 
-```bash
-git add .
-git commit -m "Created the cloudbuild yaml file"
-git push  
-```
+    ```bash
+    git add .
+    git commit -m "Created the cloudbuild yaml file"
+    git push  
+    ```
 
 5. Open a PR and then merge it to the master branch. 
 
@@ -533,17 +525,18 @@ git push
 
 ## Sprint 05
 
-```
-TODO: 
+:::note[TODOs]
+
 ✔️ Create the namespace in the GKE cluster
 ✔️ Create the deployment manifest 
 ✔️ Expose the application via endpoint
 ✔️ Update the Cloud Build code for deployment
 ✔️ Validate the deployment
 
-```
+:::
 
-<details><summary> See sprint details </summary>
+<details>
+    <summary> See sprint details </summary>
 
 1. In the Cloud Build menu, select your clsuter and connect to it via Cloudshell. Create the namespace.
 
@@ -554,8 +547,7 @@ TODO:
 
     From the GCP console, go to Workloads > SHOW SYSTEM WORKLOADS > Namespace dropdown bar.
 
-    |![](../../Images/gcp-devops-proj-create-namspace-gcp-devops-prod.png)|
-    |-|
+    ![](/img/docs/gcp-devops-proj-create-namspace-gcp-devops-prod.png)
 
 
 2. Back in your local terminal, create another branch. 
@@ -625,16 +617,18 @@ TODO:
 
 ## Sprint 06
 
-```
-TODO: 
+:::note[TODOs]
+
 ✔️ Create the development branch
 ✔️ Create the development Cloud Build YAML file
 ✔️ Create the Cloud Build trigger for the development branch
 ✔️ Create the development namespace 
 ✔️ Push changes to development 
-```
 
-<details><summary> See sprint details </summary>
+:::
+
+<details>
+    <summary> See sprint details </summary>
 
 1. Do a git pull for the main branch.
 

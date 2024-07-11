@@ -1,5 +1,6 @@
 ---
 title: "Requests and Responses"
+description: "Clients requests and server responses"
 tags: [IT Fundamentals, Web]
 sidebar_position: 51
 last_update:
