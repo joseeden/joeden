@@ -1,4 +1,4 @@
---
+---
 title: "GCP DevOps Project"
 tags: [Google Cloud, DevOps, Cloud]
 sidebar_position: 1
@@ -52,6 +52,7 @@ This project will be broken down into seven sprints.
 :::note[TODOs]
 
 ✔️ Create a Github Repo and clone it locally 
+
 ✔️ Setup Github repo according to best practices 
 ✔️ Code the application locally 
 ✔️ Test the application locally
@@ -319,8 +320,8 @@ This project will be broken down into seven sprints.
 
 :::note[TODOs]
 
-✔️ Setting up a GKE cluster
-✔️ Verify connection to the GKE cluster
+✔️ Setting up a GKE cluster.
+✔️ Verify connection to the GKE cluster.
 
 :::
 
