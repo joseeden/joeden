@@ -168,7 +168,7 @@ The **Random Access Memory** (RAM) is a type of volatile memory that the CPU use
 
 ![](/img/docs/comphwram.png)
 
-</p>
+</div>
 
 We use RAM to store data that we want to access quickly. This data changes all the time so it isn't permanent. Almost all RAM is volatile, which means that once we power off our machines, the data stored in RAM is cleared.
 
@@ -274,7 +274,7 @@ As computers process data, they generate heat. Effective cooling systems, such a
 
 ![](/img/docs/comphwcpuheatsinkandfan.png)
 
-</p>
+</div>
 
 ## Power Supply
 
