@@ -138,3 +138,7 @@ Prometheus:
   label: 'Prometheus'
   permalink: '/Prometheus'
   description: 'Docs related to Prometheus'
+Web:
+  label: 'Web'
+  permalink: '/Web'
+  description: 'Docs related to Web'
