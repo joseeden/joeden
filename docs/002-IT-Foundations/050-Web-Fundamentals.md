@@ -162,3 +162,96 @@ The document path indicates where the resource is located within the web service
 
 </div>
 
+
+
+## HTTP and its Interactions    
+
+The client-server model operates under the Hypertext Transfer Protocol (HTTP). 
+
+- HTTP is a lightweight application-level protocol established in 1990, currently at version 1.1.
+- Built on top of the Transmission Control Protocol (TCP), HTTP ensures reliable handling of large volumes of data.
+- HTTP operates in a stateless manner, treating each request independently without storing persistent information about the client or server.
+
+Despite its simplicity in handling document requests, HTTP presents challenges for applications requiring identity tracking. When a client accesses a website, it sends a request to the server that includes:
+
+- The method of the request (e.g., GET, POST).
+- The Uniform Resource Identifier (URI) specifying the resource location.
+- The HTTP protocol version.
+
+Additionally, the client may send headers specifying the content type and other metadata relevant to the request. 
+
+Upon receiving the request, the server responds to the client with:
+
+- A status line indicating the HTTP protocol version and an internet standard error code, if applicable.
+- A message containing the requested resource or an appropriate response.
+
+Sample Interaction Diagram:
+
+<div class="img-center"> 
+
+![](/img/docs/010httpuriinteractions.png)
+
+</div>
+
+
+
+## Client Requests
+
+Key Components of HTTP Client Requests
+
+- HTTP client requests consist of a method, URI, HTTP version, and a MIME-like message, which are essential for the functionality of HTTP in handling client requests.
+
+### Request Formats
+
+HTTP defines three primary methods for client requests: GET, HEAD, and POST.
+
+- **GET:** Retrieves information identified by the URI.
+- **HEAD:** Fetches header information about the URI.
+- **POST:** Submits a stream of information to the URI's identified resource.
+
+Diagram:
+
+<div class="img-center"> 
+
+![](/img/docs/010clienrequestsformats.png)
+
+</div>
+
+
+### Understanding URIs
+
+URIs, or Uniform Resource Identifiers, are formatted strings used to identify networked resources.
+
+- **Absolute URIs:** Contain all necessary information, including scheme, host name, and port number.
+- **Relative URIs:** Begin with the path, with other elements relative to the hosting page.
+- **Best Practice:** Use relative URIs when referring to resources within your site to maintain flexibility amid changes in scheme or host name.
+
+### HTTP Versions
+
+HTTP version numbers consist of a major and a minor part, indicating advancements or changes in message format handling. Higher minor numbers indicate iterative advancements without altering how requests are processed.
+
+<div class="img-center"> 
+
+![](/img/docs/010httpversions1-2.png)
+
+</div>
+
+Note that major number changes reflect changes in message format.
+
+- **Version 1.1:** Most widely adopted, supporting common browsers and websites.
+- **Version 0.9:** The original HTTP version supporting only the GET method without MIME usage.
+- **Version 2.0:** Widely supported, enhancing efficiency and security in data transfer.
+- **Version 3.0:** Currently under development, aiming to further optimize data transfer capabilities.
+
+    <div class="img-center"> 
+
+    ![](/img/docs/010httpv0923.png)
+
+    </div>
+
+### MIME-like Messages
+
+MIME-like messages in HTTP requests include modifiers and form data.
+
+- These messages enable the transfer of various types of data, such as audio, video, images, and applications, as part of the request.
+- They are crucial for transmitting attachments and enhancing the versatility of HTTP requests.
