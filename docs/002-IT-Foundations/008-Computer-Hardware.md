@@ -8,371 +8,314 @@ last_update:
 ---
 
 
-<!-- 
 
-## Computer Hardware 
+## Overview
 
-Computers are everywhere. You come into contact with them at home, work, the airport, the grocery store, you're using some type of computer to read this page. There's probably one in your pocket right now. While computers are complex and can seem daunting to learn, they ultimately just calculate, process, and store data. Let's check out a typical desktop setup.
+Computers are everywhere. From the moment you wake up to the time you go to bed, you interact with computers in various forms. At home, at work, in the airport, or even at the grocery store, computers are there, helping to process transactions, manage data, and provide information. The device you're using to read this is a computer, and there's likely another one in your pocket right now. 
 
-## Desktops 
+Despite their complexity, computers fundamentally calculate, process, and store data. Let's explore the components of a typical desktop setup to better understand how they work.
 
-Desktops are just computers that can fit on or under our desks. So here we have a monitor, a keyboard, a mouse, and a desktop.
+## Desktops and Laptops
 
-<p align=center>
+Desktops are powerful computers designed to fit on or under a desk. A typical desktop setup includes a monitor, a keyboard, a mouse, and the desktop tower itself.
+
+<div class="img-center">
+
 ![](/img/docs/comphwdesktops2.png)
-</p>
 
-<br> 
+</div>
 
-Sometimes you might even add a webcam, speakers, or a printer set up. We'll call these physical components, hardware. 
+In addition to these core components, you might also find peripherals like a webcam, speakers, or a printer. These physical components are collectively known as **hardware**.
 
-At the back of the computer, you can see common connectors here, the power outlet here, and the common ports here. Ports are connection points that we can connect devices to that extend the functionality of our computer. 
+At the back of the desktop tower, you'll find various connectors and ports. The power outlet connects the computer to an electrical power source. Common ports include USB ports for connecting devices like keyboards, mice, and external drives, HDMI or VGA ports for the monitor, and audio jacks for speakers or headphones. These ports extend the functionality of your computer by allowing you to connect various devices.
 
-This is the basically the same setup as in a laptop. There are also physical components inside the laptop case that are hidden for portability. Once you figure out how one computer works, you can figure out how any other computer works. 
+<div class="img-center">
 
-### CPU 
+![](/img/docs/backpanel.jpg)
 
-You could think of the CPU as the brain of our computer. The CPU does all the calculations and data processing. It uses instruction sets to translate and perform functions on our data. Lastly, the CPU communicates pretty heavily with the RAM or Random Access Memory, which you can see below.
+</div>
 
-### Instruction Sets
+Laptops are portable computers that integrate the components of a desktop into a single, compact case. They include a built-in monitor, keyboard, and touchpad (which serves as a mouse). Despite their smaller size, laptops contain many of the same internal components as desktops, including a CPU, RAM, and storage. The primary difference is that laptops are designed for mobility, with components optimized for low power consumption and compactness.
 
-An instruction set is literally just a list of instructions that our CPU is able to run. Functions like adding, subtracting, copying data are all instructions that our CPU can carry out. 
+<div class="img-center">
 
-Every single program on your computer, while extremely complex, is broken down into very small and simple instructions found in our instruction set. Instruction sets are hard-coded into our CPU. So different CPU manufacturers may use different instructions sets. But they generally perform the same functions.
+![](/img/docs/basics-laptop-sample-photo-parts.png)
 
-### Motherboard 
+</div>
+
+## CPU
+
+The **Central Processing Unit** (CPU) is often referred to as the brain of the computer. It performs all the calculations and data processing needed to run applications and execute commands. The CPU handles instruction sets, which are collections of commands that it can execute to perform operations on data.
+
+<div class="img-center">
+
+![](/img/docs/Intel-CPU1.jpg)
+
+</div>
+
+## Instruction Sets
+
+An **instruction set** is a list of instructions that the CPU can execute. These instructions include basic operations like adding, subtracting, and copying data. Every program on your computer, regardless of its complexity, is ultimately broken down into these simple instructions. Instruction sets are hard-coded into the CPU, meaning they are built into the hardware itself. Different CPU manufacturers may use different instruction sets, but they generally provide similar functionalities.
+
+<div class="img-center">
+
+![](/img/docs/8085-instruction-set.png)
+
+</div>
+
+## Motherboard
 
 When you select your CPU, you need to make sure it's compatible with your **motherboard** - the circuit board that connects all your components together. 
 
-The motherboard holds everything in place and lets our components communicate with each other. It's the foundation of our computer. You can think of the motherboard as the body or circulatory system of the computer that connects all the pieces together.
+The **motherboard** is the main circuit board that connects all the components of the computer. It houses the CPU, RAM, and storage devices, and provides connectors for other peripherals. The motherboard includes a chipset that manages data flow between the CPU, memory, and peripheral devices, ensuring efficient communication and operation.
 
-![](/img/docs/comphwcpumotherboard.png)
+<div class="img-center">
 
-Note that you can't just buy a bunch of parts and expect them to work together. There are different ways CPUs fit on motherboards using different sockets. Your CPU might have lots of tiny pins that either stick out or have contact points that look like dots. 
+![](/img/docs/the-motherboard-diagram.jpg)
 
-#### Expansion Cards 
+</div>
 
-The motherboard lets us expand our computer's functionality by adding expansion cards. It routes power from the power supply and it allows the different parts of the computer to communicate with each other.
-
-<p align=center>
-![](/img/docs/comphwexpansioncards.png)
-</p>
-
-#### Chipsets 
-
-Every motherboard has a few key characteristics. First is the chipset, which decides how components talk to each other on our machine. The chipset on motherboards is made up of two chips:
-
-- **Northbridge chip** interconnects stuff like RAM and video cards. 
-
-- **Southbridge chip** which maintains our IO or input/output controllers, like hard drives and USB devices that input and output data. 
-
-In some modern CPUs, the Northbridge has been directly integrated into the CPU so there isn't a separate Northbridge chipset. 
-
-A chipset is a key component of our motherboard that allows us to manage data between our CPU, RAM, and peripherals. Peripherals are the external devices we connect to our computer like: a mouse, keyboard, and a monitor. 
-
-<p align=center>
-![](/img/docs/comphwchipsets.png)
-</p>
+It's important to note that you can't simply purchase a collection of parts and expect them to work together seamlessly. CPUs are designed to fit into motherboards using specific socket types, and these sockets can vary. Some CPUs have numerous small pins that protrude, while others have contact points that resemble dots.
 
 
-#### Expansion Slots 
+### Expansion Cards
 
-In addition to the expansion cards and chipsets, motherboards have another key characteristic which allows the use of expansion slots. Expansion slots also give us the ability to increase the functionality of our computer. 
+Motherboards enable us to enhance our computer's capabilities by adding expansion cards. They distribute power from the power supply and facilitate communication between various computer components.
 
-If you want to upgrade your graphics card, you could purchase one and just install it on your motherboard through the expansion slot. The standard for an expansion slot today is the **PCI Express** or **Peripheral Component Interconnect Express**. 
+<div class="img-center">
 
-A PCIe bus looks like a slot on the motherboard and a PCIe base expansion card looks like a smaller circuit board. 
+  ![](/img/docs/comphwexpansioncards.png)
 
+</div>
 
-#### CPU Sockets 
+### Chipsets
 
-Depending on your motherboard, you need to make sure the CPUs fit correctly in the socket. There are currently two major types of CPU sockets:
+Motherboards have several essential features, one of which is the chipset. The chipset determines how the components interact with each other within the system. It typically comprises two main chips:
 
-- Land Grid Array also known as LGA, and 
-- Pin Grid Array, also known as PGA. 
+  - **Northbridge chip**: Connects high-speed components such as RAM and video cards.
+  - **Southbridge chip**: Manages input/output (IO) controllers, including hard drives and USB devices.
 
-In an LGA socket, there are pins that stick out of the motherboard. 
+In many modern CPUs, the Northbridge is integrated directly into the CPU, eliminating the need for a separate Northbridge chip.
 
-The other type of socket is the PGA socket, where the pins are located on the processor itself.
+<div class="img-center">
 
-The socket size may vary. So always make sure you CPU and socket are compatible before hand. When you purchase the CPU or motherboard, they will tell you right on the box what type of socket it has. Make sure your CPU and motherboard socket also both match. If it's not listed on the box, you can go to the manufacturer's website where it usually list what types of CPUs are compatible with the motherboard. 
-
-![](/img/docs/comphwcpusocket.png)
-
-
-#### Form Factor 
-
-There are different size of motherboards that are available today. These sizes of form factors determine the amount of stuff we can put in it and the amount of space we'll have. The most common form factor for motherboards is **ATX** which stands for **Advanced Technology eXtended**. ATX actually comes in different sizes too. In desktops, you'll commonly see full sized ATX's. 
-
-If you don't want to use an ATX form factor, you could use an **ITX** or **Information Technology eXtended** form factor. ITXs are much smaller than ATX boards. For example, the Intel NUC uses a variation of the ITX board which comes in three board sizes; mini-ITX, nano-ITX, and pico-ITX. 
-
-![](/img/docs/comphwformfactor.png)
+  ![](/img/docs/comphwchipsets.png)
+  
+</div>
 
 
-When building your computer, you will need to keep in mind what type of form factor you want. Do you want to build something small that can't handle as much workload? Or, do you want a powerhouse workstation that you can add lots of functionality to? 
-
-The form factor will also play a role into what expansion slots you might want to use. Understanding motherboards and their characteristics can be a big plus when fixing hardware issues, since things like the type of RAM module or processor socket are dependent on the kind of motherboard they need to fit into. 
-
-Let's say you're responding to a ticket for a user who is having video problems, you don't want to make it all the way to their desk only to realize the graphics card you brought as a replacement doesn't fit the motherboard their computer uses. 
+The chipset is crucial for managing data flow between the CPU, RAM, and peripherals. Peripherals are external devices like a mouse, keyboard, and monitor that connect to the computer.
 
 
-----------------------------------------------
+### Expansion Slots
+
+Motherboards also feature expansion slots, which allow us to further enhance the computer's functionality. For instance, if you want to upgrade your graphics card, you can simply install a new one in an available expansion slot. The current standard for expansion slots is **PCI Express** (Peripheral Component Interconnect Express). A PCIe bus appears as a slot on the motherboard, and a PCIe expansion card resembles a small circuit board.
+
+<div class="img-center">
+
+  ![](/img/docs/PCI-slot.jpg)
+  
+</div>
 
 
-### RAM 
+<div class="img-center">
 
-RAM is our computer's short-term memory. We use this component when we want to store data temporarily. Like let's say, you're typing something into a chat or a piece of text in a word processor. This information is stored in the RAM.
+  ![](/img/docs/PCI-e-slotx16-600x450.jpg)
+  
+</div>
 
-<p align=center>
+
+
+
+
+### CPU Sockets
+
+The compatibility of your CPU with your motherboard depends on the CPU socket type. There are two major types of CPU sockets:
+
+- **Land Grid Array (LGA)**: Pins are located on the motherboard.
+- **Pin Grid Array (PGA)**: Pins are on the processor itself.
+
+The socket size can vary, so it's essential to ensure compatibility between the CPU and the motherboard. The type of socket will be indicated on the packaging of the CPU and motherboard, and detailed compatibility information can also be found on the manufacturer's website.
+
+<div class="img-center">
+
+  ![](/img/docs/comphwcpusocket.png)
+
+</div>
+
+### Form Factor
+
+Motherboards come in various sizes known as form factors, which determine the number of components that can be installed and the available space. The most common form factor is **ATX** (Advanced Technology Extended), which itself has several size variations. In desktop systems, the full-sized ATX is prevalent.
+
+Alternatively, you might choose an **ITX** (Information Technology Extended) form factor, which is much smaller than ATX boards. For example, the Intel NUC uses a variation of the ITX board, available in mini-ITX, nano-ITX, and pico-ITX sizes.
+
+<div class="img-center">
+
+  ![](/img/docs/comphwformfactor.png)
+
+</div>
+
+When building a computer, consider the form factor that suits your needs. A smaller form factor may limit the workload capacity, whereas a larger form factor can accommodate more functionality. The form factor also influences the types of expansion slots available.
+
+Understanding motherboards and their features is advantageous when addressing hardware issues, as components like RAM modules and processors must fit the specific motherboard type. For example, if you're responding to a support ticket about video problems, you wouldn't want to arrive at the user's desk only to find that the replacement graphics card is incompatible with their motherboard.
+
+
+## RAM
+
+The **Random Access Memory** (RAM) is a type of volatile memory that the CPU uses to store data temporarily while processing instructions. Unlike storage devices like hard drives or SSDs, RAM provides fast access to data, enabling quick read and write operations. This speed is crucial for the smooth operation of applications and the overall system.
+
+<div class="img-center">
+
 ![](/img/docs/comphwram.png)
-</p>
 
-Our computer is comprised of [programs](028-Computer-Programs.md). To run a program, we need to make a copy of it in RAM so our CPU can process it. When you see a new phone or laptop that's says it has 16 gigs of RAM, that means it can run up to 16 gigs of programs, meaning you can run lots of programs at the same time. 
+</p>
 
 We use RAM to store data that we want to access quickly. This data changes all the time so it isn't permanent. Almost all RAM is volatile, which means that once we power off our machines, the data stored in RAM is cleared.
 
-Good to know concepts:
 
-- [DRAM](#dram)
-- [DIMM](#dimm)
-- [SDRAM](#sdram)
-- [DDR](#ddr)
+### DRAM
 
+There are many types of RAM, with **DRAM** (Dynamic Random Access Memory) being a common type found in computers. DRAM stores each bit of data in a tiny capacitor that holds a charge or discharges, representing a one or zero. These semiconductors are housed in chips on the RAM modules that store our data. There are also various types of memory sticks that DRAM chips can be mounted on.
 
-<p align=center>
-![](/img/docs/comphwdram.png)
-</p>
+### DIMM
 
-#### DRAM 
+Modern RAM sticks, known as **DIMM** (Dual Inline Memory Module), come with different pin configurations. When purchasing RAM, it's typically labeled by its capacity, such as an 8GB stick of RAM, rather than the number of DRAM chips it contains.
 
-There are lots of types of RAM. A common RAM found in computers is **DRAM** or dynamic random access memory. A one or zero is sent to DRAM, which then stores each bit in a microscopic capacitor. 
+### SDRAM
 
-This is either the charge or discharge represented by one or zero. These semiconductors are put into chips that are on the RAM and store our data. There are also different types of memory sticks that DRAM chips can be put on. 
+After the creation of DRAM, manufacturers developed **SDRAM** (Synchronous DRAM). This type of RAM is synchronized with the system's clock speed, allowing for faster data processing.
 
-#### DIMM 
+### DDR
 
-Modern **DIMM** sticks, which usually stands for Dual Inline Memory Module, have different sizes of pins on them. Note that we don't really buy RAM based on the number of DRAM chips they have. They are labeled by the capacity of RAM on a stake, like an 8 gig stick of RAM. 
-
-
-#### SDRAM 
-
-After DRAM was created, RAM manufacturers build something called **SDRAM** which stands for Synchronous DRAM. This type of RAM is synchronized to our systems' clock speed allowing quicker processing of data. 
-
-#### DDR 
-
-In today's system, we use another type of RAM, called double data rate SDRAM, or DDR SDRAM for short. Most people refer to this RAM as DDR, even shorter. There were lots of iterations of DDR:
+In modern systems, another type of RAM used is **DDR SDRAM** (Double Data Rate Synchronous DRAM), commonly referred to as **DDR**. There have been several iterations of DDR:
 
 - DDR1
 - DDR2
-- DDR3 
-- DDR4. 
+- DDR3
+- DDR4
 
-DDR is faster, takes up less power, and has a larger capacity than earlier SDRAM versions. The latest version, DDR4, is the fastest type of short term memory currently available for your computer. 
+Each iteration of DDR is faster, more power-efficient, and has greater capacity than the previous versions. The latest version, **DDR4**, is currently the fastest type of short-term memory available for computers. Faster RAM means programs can run more quickly, and more programs can run simultaneously. 
 
-And faster RAM means that programs can be run faster and that more programs can run at the same time. Keep in mind that any RAM sticks you use need a compatible motherboard with a different number of pins aligned with the motherboard RAM slots. 
+It's important to ensure that the RAM sticks you use are compatible with your motherboard, as they have a different number of pins that must align with the motherboard's RAM slots.
 
-----------------------------------------------
+## Storage
 
-### Storage  
+In addition to RAM, computers use storage devices like **Hard Disk Drives** (HDDs) or **Solid State Drives** (SSDs) to store data persistently. HDDs use spinning disks to read and write data, while SSDs use flash memory for faster performance and greater durability. The storage device holds the operating system, applications, and user data, retaining information even when the computer is turned off.
 
-As we've learned from previous [pages](024-The-Digital-Logic.md), the smallest unit of a data storage is a **bit**. A bit can store one binary digit, so it can store a one or zero. 
+<div class="img-center">
 
-The next largest unit of storage is called a **byte**, which is comprised of 8 bits. A single byte can hold a letter, number or symbol. The next largest unit is refer to as kibibyte, but we typically use the term kilobyte. A kilobyte is made up of 1,024 bytes. 
+![](/img/docs/ssd-vs-hdd-hero-1688630547197.jpeg)
 
-Let's take a look at the size of an average music file, which is about three megabytes. On a 500 gigabyte machine, that's approximately 165,000 music files. That's a lot of music. We store all of our computer's data on our long-term memory hard drive, which allows us to store our programs, music, pictures, etc. 
+</div>
 
-Good to know concepts:
+## Peripherals
 
-- [HDDs](#hdds)
-- [SSDs](#ssds)
-- [SATA](#sata)
-- [NVMe](#nvme)
-- [Backups](#backups)
+Peripherals are external devices that connect to the computer to extend its functionality. Common peripherals include:
 
-<p align=center>
-![](/img/docs/comphwdifftypesofstorage.png)
-</p>
+- **Input Devices**: Keyboards, mice, and webcams.
+- **Output Devices**: Monitors, printers, and speakers.
+- **Storage Devices**: External hard drives and USB flash drives.
 
+These peripherals communicate with the computer through various ports and interfaces, allowing users to interact with the system and access additional features.
 
-#### HDDs 
+### USB
 
-There are two basic hard drive types used today. **Hard disk drives**, or **HDDs**, use a spinning platter and a mechanical arm to read and write information. The speed that the platter rotate allows you to read and write data faster. This is commonly referred to as **RPM**, or revolution per minute. 
+**USB (Universal Serial Bus)** devices are the most common connections for our gadgets. USB has evolved significantly since its inception:
 
-A hard drive with a higher RPM is faster, so if you go out and buy a hard drive today, you might see something like a 500 gigabyte with 5400 RPM. HDDs are prone to a lot more damage because there are a lot of moving parts. This susceptibility to damage went away with a new type of storage called solid state drive, or SSD
+- **USB 2.0:** Transfer speeds of 480 megabits per second.
+- **USB 3.0:** Transfer speeds of 5 gigabits per second.
+- **USB 3.1:** Transfer speeds of 10 gigabits per second.
 
-#### SSDs 
+It's important to note the difference between units. **Mb/s** (megabits per second) is a measure of data transfer rate, while **MB** (megabytes) is a unit of data storage. One byte equals 8 bits, so to transfer 1 megabyte of data in a second, you need an 8 megabits per second connection. For example, transferring 40 megabytes of data per second requires a 320 megabits per second connection.
 
-SSDs have no moving parts. SSDs are created in a similar way as USB sticks. The information is stored on microchips and data travels a lot faster than HDDs. The form factor for SSDs is also slimmer compared to their HDD cousins. 
+Your USB ports also need to match the device capabilities to achieve maximum transfer speeds. Plugging a USB 2.0 device into a USB 3.0 port won't give you 3.0 speeds, but the device will still work because USB is backward compatible. Generally, USB 2.0 ports are black, USB 3.0 ports are blue, and USB 3.1 ports are teal, though this may vary by manufacturer. The latest USB connector is **Type-C**, designed to replace many peripheral connections.
 
-Sounds great, doesn't it? So why doesn't everyone use SSDs? Well, both have their pros and cons. HDDs are more affordable, but they're more prone to damage. SSDs are less risky when it comes to losing data, but they're also more expensive.
+### Displays
 
-#### SATA 
+In addition to USB peripherals, display peripherals are essential to understand. Common input standards include:
 
-There are a few interfaces that hard drives use to connect to our system. ATA interfaces are the most common ones. The most popular ATA drive is a **serial ATA**, or **SATA**, which uses one cable for data transfers. 
+- **DVI (Digital Visual Interface):** Primarily outputs video.
+- **HDMI (High-Definition Multimedia Interface):** Outputs both video and audio, and is common in modern televisions and computers.
+- **DisplayPort:** Also outputs both video and audio, becoming increasingly popular.
 
-<p align=center>
-![](/img/docs/comphwsatainterface.png)
-</p>
+### Projectors
 
-SATA drives are hot swappable. It means you don't have to turn off your machine to plug in a SATA drive. SATA drives also move data faster and use a more efficient cable than it's predecessors which makes it the de facto interface for HDDs today.
+Projectors are useful for sharing information with a group in the same location. They function similarly to other display devices and can experience similar issues like dead pixels or image burn-in.
 
-#### NVMe 
+### Connectors and Cables
 
-People quickly found that using a SATA cable wasn't good enough for some of the blazing fast SSDs that were coming on the market. The interface couldn't keep up with speed of the newest SSDs. So another interface standard was created called **NVM Express**, or **NVMe**.
-
-
-<p align=center>
-![](/img/docs/comphwnvmeslot.png)
-</p>
-
-Instead of using a cable to connect your drive to your machine, the drive was added as an expansion slot, which allows for greater throughput of data and increased efficiency.
-
-#### Backups 
-
-Have you ever had an issue with your computer and lost all the data that was on your hard drive? This actually happens a lot and you'll probably encounter it as an IT support specialist. Make sure you backup your data to be safe. This means you should copy or save your data somewhere else, just in case something goes wrong and your hard drive crashes. That way, you won't lose all your data.
-
-Here are some useful links on how to backup your data:
-
-- [What are the 3 types of backup?](https://iosafe.com/data-protection-topics/3-types-of-backup/)
-
-- [How to Back Up Your Computer](https://www.nytimes.com/wirecutter/guides/how-to-back-up-your-computer/)
-
-
-----------------------------------------------
-
-### Peripherals 
-
-As we've learned, we can plug in different objects like a mouse, keyboard, and a monitor on ports and connectors. These devies are known as peripherals. A **peripheral** is basically anything that you connect to your computer externally that adds functionality. 
-
-- [USB](#usb)
-- [Display](#display)
-- [Projectors](#projectors)
-- [Connectors and Cables](#connectors-and-cables)
-- [Device Drivers](#device-drivers)
-- [Lighting](#lighting)
-- [Calibration](#calibration)
-
-#### USB 
-
-**USB**, also known as Universal Serial Bus devices are the most popular connections for our gadgets. USB has gone through lots of changes since inception:
-
-- USB 2.0 - transfers speeds of 480 megabytes per second
-- USB 3.0 - transfers speeds of five gigabytes per second
-- USB 3.1 - transfers speeds of 10 gigabytes per second
-
-Using capital M lowercase b forward slash s instead of using capital M capital B to reference transfer speed. These are actually different units. 
-
-MB is megabyte or unit of data storage, while capital M lower case b forward slash s is a megabit per second, which is a unit of data transfer rate. 
-
-People often mistake speeds of 40 megabit per second to mean that you can transfer 40 megabytes of data per second. Remember, that one byte is 8 bits, so to transfer a one megabyte file in a second you need an 8 megabits per second connection speed. 
-
-So, to transfer 40 megabytes of data in a second, you need a transfer speed of 240 megabits per second. You'll also need comparable USB ports to go with your devices. If you connect a USB 2.0 device into a USB 3.0 port, you won't get 3.0 transfer speeds. But you can still use the port since it's backward compatible, meaning older hardware work with newer hardware. 
-
-The ports are easy to differentiate. In general, USB 2.0 are black and USB 3.0 are blue and 3.1 ports are teal. This may change depending on manufacturers. There are lots of types of USB connectors. The most recent one is the type C connector which is meant to replace many peripheral connections. 
-
-#### Display
-
-In addition to USB peripherals, you should also be aware of display peripherals. There are some common inputs standards to know. 
-
-Most computer monitors will have one or more of these connections, but you might encounter some older standards too. **DVI**. 
-
-DVI cables generally just output video. If you need to hook up a monitor or projector for a slide presentation and you want audio too, you may be out of luck. Instead, you want to look at one of the following cables. 
-
-**HDMI**. This has become a standard in lots of televisions and computers nowadays and outputs both video and audio. Another standard that's become popular among manufacturers is a **displayPort** which also outputs audio and video. 
-
-
-#### Projectors 
-
-Projectors are display devices for when you need to share information with people in the same location! Most projectors can be used just like any other display on a computer, and with a few differences, can be troubleshot just like any other display device. For example, projectors can have dead or stuck pixels, and can acquire image burn-in, just like other types of displays.
-
-#### Connectors and Cables 
-
-You will connect a computer to a projector using a display cable like VGA, DVI, HDMI, or DisplayPort. When you do this, the computer's operating system will detect that a new display has been added. Depending on what your computer's video adapter supports, this new display can be extended or mirrored just like if you had added a second monitor
+Connecting a computer to a projector involves using a display cable like VGA, DVI, HDMI, or DisplayPort. The computer's operating system will detect the new display, allowing it to be extended or mirrored like a second monitor:
 
 - [Windows - How to connect to a projector or PC](https://support.microsoft.com/help/27911/windows-10-connect-to-a-projector-or-pc)
-
-- [MacOS - How to connect a display, TV or projector to Mac](https://support.apple.com/guide/mac-help/mchl5fdd37ce/mac)
-
+- [MacOS - How to connect a display, TV, or projector to Mac](https://support.apple.com/guide/mac-help/mchl5fdd37ce/mac)
 - [Ubuntu - How to connect another monitor to your computer](https://help.ubuntu.com/stable/ubuntu-help/display-dual-monitors.html)
 
-A lot of times, display issues with projectors come down to the connectors and the cables that you are using. Because people frequently connect and disconnect from projectors, the cables and connectors can become worn out or damaged. Always consider this early in your troubleshooting if the projection display flickers or disappears.
+Frequent connections and disconnections can wear out or damage projector cables and connectors, so check these first if the display flickers or disappears.
 
-#### Device Drivers
+### Device Driver
 
-Just like other display devices, if your computer does not correctly recognize the display resolution of the projector it may default to a very low-resolution VGA mode like 640x480 or 1024x768. If this happens, your computer may need a device driver for your projector. Take a look at the support website for your projector's manufacturer.
+If your computer doesn't recognize the projector's display resolution, it may default to a low resolution like 640x480 or 1024x768. In this case, you may need a device driver from the projector manufacturer's support website.
 
-#### Lighting
-Projectors often rely on expensive, hot, very bright incandescent bulbs, or lamps. If a projector gets too hot for the lamp to safely operate, the projector will shut down. If the lamp burns out, the projector will either not work or will shut itself down. It is increasingly common for projectors to rely on LED lights, rather than incandescent lamps. These LED lights have far fewer issues with overheating, and have much longer lifespans than incandescent lamps.
+### Lighting
 
-#### Calibration
-Sometimes, like when a projector is first installed, reset, or moved, you will need to calibrate the projector image to account for the distance and angle that the projector is installed at. If the image is skewed or keystoned, you might need to recalibrate the projector geometry. Calibrating the image involves focusing the image, and making adjustments to the image to make it square and aligned with the projection surface. Every projector is a little different, so refer to the vendor documentation to complete this task!
+Projectors often use bright, hot incandescent bulbs, which can cause overheating. If a projector gets too hot, it will shut down to protect the lamp. LED projectors are becoming more common, as they have fewer overheating issues and longer lifespans than incandescent bulbs.
 
+### Calibration
 
-----------------------------------------------
-
-### Heat Sinks 
-
-When we install our CPU, we need to do a few things to it to keep it cool. Since it does a lot of work, it's prone to overheating. We have to make sure to include a heat sink, too, which takes the heat from our CPU and dissipates it through a fan or another medium. 
+Projectors may need calibration when first installed, reset, or moved. Calibration adjusts the image for distance and angle, ensuring it's square and aligned with the projection surface. This involves focusing the image and making geometric adjustments. Refer to the projector's vendor documentation for specific calibration instructions.
 
 
-<p align=center>
+## Cooling Systems
+
+As computers process data, they generate heat. Effective cooling systems, such as fans and heatsinks, are crucial for maintaining optimal operating temperatures and preventing overheating. Advanced cooling solutions like liquid cooling systems are used in high-performance and gaming computers to manage the heat generated by powerful components.
+
+
+<div class="img-center">
+
 ![](/img/docs/comphwcpuheatsinkandfan.png)
+
 </p>
 
-----------------------------------------------
+## Power Supply
 
-### The Power Supply 
+The **Power Supply Unit** (PSU) converts electrical power from an outlet into a usable form for the computer's components. It provides the necessary voltages and currents to power the CPU, motherboard, storage devices, and peripherals. A reliable PSU is essential for the stable operation of the computer.
 
-Finally, the power supply converts electricity from our wall outlet onto a format that our computer can use.  There are two types of electricity:
+There are two types of electricity:
 
-- **DC**, or direct current, which flows in one direction, and 
+- **DC (Direct Current):** Flows in one direction.
+- **AC (Alternating Current):** Changes direction constantly.
 
-- **AC**, or alternating current, which changes directions constantly. 
+Our computers use DC voltage, so the PSU converts the AC voltage from our power company into usable DC voltage.
 
-Our computers use DC voltage, so we have to have a way to convert the AC voltage from our power company to something we can use. That's what our power supply does. 
+### Fans
 
-#### Fans 
+Most power supplies have a fan to keep them cool. They also provide voltage information, usually listed underneath or on the side, and cables to power the motherboard.
 
-Most power supply units have a fan. They also has voltage information just normally listed underneath or on the side, and cables to power your motherboard, 
+### Voltage (220v and 110v)
 
-#### Volts - 220v and 110v
+Understanding electricity can be simplified with a water pipe analogy. Imagine our sinks connected to a pressurized water tank. When we turn on the faucet, water flows out, similar to how electricity works. 
 
-To understand electricity, we must use the example of water pipes. Our sinks have a faucet that's connected to a pressurized water tank. When we turn on the faucet, water comes out. This is sort of like how electricity works. 
+<div class="img-center">
 
-**Analogy:**
-
-<p align=center>
 ![](/img/docs/comphwvoltsampwatts.png)
-</p>
 
-When we plug an appliance into a wall outlet and turn it on, a flow of electricity comes out. If we added more pressure to our water tank, would more water come out of it? The higher the pressure, the more water there will be. 
+</div>
 
-When it comes to electricity, we refer to the pressure as **voltage**. If you plug in a 120 volt appliance into a 220 volt outlet, the power will come busting through and fry your appliance.
+If we increase the pressure in the water tank, more water flows out. In electricity terms, this pressure is referred to as **voltage**. 
 
-If it was the other way around, and a 220 volt appliance was plugged into a 120 volt outlet, the appliance would still be able to get electricity, but slowly. This would be similar to if a water tank whose only half pressurized, it will drew water, but slowly. 
+**Example:** If you plug a 120-volt appliance into a 220-volt outlet, it will overload and fry the appliance. Conversely, a 220-volt appliance in a 120-volt outlet will work, but inefficiently, similar to a half-pressurized water tank. Using the proper voltage for your electronics is crucial to avoid damage.
 
-In some cases though, this can deteriorate the performance of the device and cause damage in the long term. As a general rule, be sure to use the proper voltage for your electronics. 
+### Amps
 
-#### Amps 
+The amount of electricity flowing is called **current** or **amperage**, measured in amps. Amps are like pulling electricity, whereas voltage pushes it. Amps pull as much electricity as needed, while voltage provides everything available.
 
-We refer to the amount of electricity coming out as current or **amperage**, and it's measured in amps. We can think of amps as pulling electricity, as opposed to voltage, which pushes electricity. Amps will pull as much electricity needed, but voltage will just give you everything. 
+**Example:** Look at your device chargers; they may show something like 1 or 2.1 amps. Charging with 2.1 amps will charge a device faster than using a 1 amp charger.
 
-Look on the back of the one of your device charges, you might see something like 1 or 2.1a. Charging a device with 2.1 amps will actually charge a device faster because it's able to put current from a 2.1 amp than a 1 amp charger. 
+### Watts
 
-#### Watts 
+**Wattage** is the product of volts and amps, indicating the total power a device needs. A PSU with too low wattage won't power your computer effectively, so it's important to have enough wattage.
 
-Finally, the other important part of the electricity that we need to know is the wattage. Wattage is the amount of volts and amps that a device needs. If your power supply has too low of a wattage, you won't be able to power your computer, so make sure you have enough. 
+**Insight:** Having a larger PSU doesn't mean you'll overpower your computer. PSUs only supply the amount of power your system needs. It's better to have a larger PSU than a smaller one. A basic desktop can usually run on a 500-watt PSU, but more demanding tasks like high-resolution gaming or video production may require a higher wattage.
 
-This doesn't mean that if you have a large power supply, you'll overpower your computer. Power supplies just give you the amount that your system needs. It's best to error on the side of large power supplies. 
 
-You can power most basic desktops with a 500 watt power supply, but if you're doing something more demanding on your computer, like playing a high-resolution video game or doing a lot of video production and rendering, you'll likely need a bigger power supply for your computer. 
 
-On the other hand, if all you're doing is just browsing the Web, the power supply that comes with your computer should be fine. All kinds of issues are caused by a bad power supply. Sometimes the computer doesn't even turn on at all. 
-
-Since power supplies can fail for lots of reasons like burnouts, power surges, or even lightning strikes, knowing how to diagnose power issues and replace a failed power supply is a skill every IT support specialist should have in their toolbox. 
-
-## Bits and Pieces  
-
-Before we fully close this page, let's do a high-level view of 32-bits and 64-bits. If you purchase a CPU, you'll see that it has either a **32 bit** or **64 bit** architecture.
-
-We know we can process 8 bits in binary. Now, imagine how we can process with 32 or even 64 bits. CPUs that have 32 bit or 64 bit architecture are just specifying **how much data it can efficiently handle**. You can read more about the differences between 32 bit and 64 bit architecture [here](https://support.microsoft.com/en-us/help/15056/windows-7-32-64-bit-faq). -->
