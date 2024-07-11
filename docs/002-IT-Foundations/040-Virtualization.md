@@ -1,7 +1,7 @@
 ---
 title: "Virtualization"
 description: "From hardware to virtualized appliances"
-sidebar_position: 20
+sidebar_position: 40
 tags: [IT Fundamentals, Computers, Operating Systems]
 last_update:
   date: 3/28/2023

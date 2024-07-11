@@ -1,7 +1,7 @@
 ---
 title: "Laptops and Mobile Devices"
 description: "From computers to laptops, to palm devices"
-sidebar_position: 10
+sidebar_position: 21
 tags: [IT Fundamentals, Computers, Operating Systems]
 last_update:
   date: 3/28/2023

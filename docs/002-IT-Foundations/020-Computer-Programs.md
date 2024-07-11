@@ -1,7 +1,7 @@
 ---
 title: "Computer Programs"
 description: "Understanding how computer programs work"
-sidebar_position: 9
+sidebar_position: 20
 tags: [IT Fundamentals, Computers, Operating Systems]
 last_update:
   date: 3/28/2023

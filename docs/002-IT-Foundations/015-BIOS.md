@@ -1,7 +1,7 @@
 ---
 title: "BIOS"
 description: "How do devices talk to each other?"
-sidebar_position: 11
+sidebar_position: 15
 tags: [IT Fundamentals, Computers, Operating Systems]
 last_update:
   date: 3/28/2023
