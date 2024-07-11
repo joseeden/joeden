@@ -41,12 +41,14 @@ Key Differences:
 
 To access specific websites, a Uniform Resource Locator (URL) is used. The URL is a web address that directs the browser to a specific resource on the internet.
 
-- **Components of a URL:**
+Components of a URL:
+
   - **Protocol:** Indicates the method of access, such as HTTP or HTTPS.
   - **Domain Name:** The main address of the website (e.g., www.example.com).
   - **Path:** Specifies the exact resource or page on the website (e.g., /about-us).
 
-- **Example:**
+Example:
+
   - URL: `https://www.example.com/about-us`
   - **Protocol:** HTTPS
   - **Domain Name:** www.example.com
@@ -76,11 +78,20 @@ This cycle is repeated for each new request made by the client, enabling seamles
 Server software plays a critical role in handling and responding to client requests. This software is designed to manage web traffic, process requests, and deliver content efficiently.
 
 Examples of Server Software:
-  - **Apache HTTP Server:** One of the most popular web server software, known for its flexibility and wide usage.
-  - **Nginx:** Known for its high performance and ability to handle a large number of simultaneous connections.
-  - **Microsoft IIS (Internet Information Services):** A web server software for Windows Server, offering a robust platform for hosting web applications.
+
+  - **Apache HTTP Server:** 
+    - One of the most popular web server software.
+    - Known for its flexibility and wide usage.
+
+  - **Nginx:** 
+    - High performance, can handle a large number of simultaneous connections.
+
+  - **Microsoft IIS (Internet Information Services):** 
+    - A web server software for Windows Server.
+    - Offers a robust platform for hosting web applications.
 
 Servers run this software to handle HTTP requests from clients, ensuring that web pages and resources are delivered promptly and reliably.
+
 
 ### Handling Demand
 
@@ -89,9 +100,7 @@ Popular websites, like Google.com, face high demand, requiring exceptionally pow
 
 ## URLs
 
-Uniform Resource Locators (URLs) are essential for the web's hypertext system. They provide the information a browser needs to send a request to a server and specify the desired resource.
-
-URLs are divided into two main parts separated by a colon: the scheme and the path.
+Uniform Resource Locators (URLs) are essential for the web's hypertext system. They provide the information a browser needs to send a request to a server and specify the desired resource. URLs are divided into two main parts separated by a colon: the scheme and the path.
 
 - **Scheme:** Specifies the protocol the browser should use to retrieve the resource. Examples include:
   - HTTP
@@ -180,13 +189,6 @@ Despite its simplicity in handling document requests, HTTP presents challenges f
 
 Additionally, the client may send headers specifying the content type and other metadata relevant to the request. 
 
-Upon receiving the request, the server responds to the client with:
-
-- A status line indicating the HTTP protocol version and an internet standard error code, if applicable.
-- A message containing the requested resource or an appropriate response.
-
-Sample Interaction Diagram:
-
 <div class="img-center"> 
 
 ![](/img/docs/010httpuriinteractions.png)
@@ -194,14 +196,12 @@ Sample Interaction Diagram:
 </div>
 
 
+Upon receiving the request, the server responds to the client with:
 
-## Client Requests
+- A status line indicating the HTTP protocol version and an internet standard error code, if applicable.
+- A message containing the requested resource or an appropriate response.
 
-Key Components of HTTP Client Requests
-
-- HTTP client requests consist of a method, URI, HTTP version, and a MIME-like message, which are essential for the functionality of HTTP in handling client requests.
-
-### Request Formats
+## Request Formats
 
 HTTP defines three primary methods for client requests: GET, HEAD, and POST.
 
@@ -209,7 +209,9 @@ HTTP defines three primary methods for client requests: GET, HEAD, and POST.
 - **HEAD:** Fetches header information about the URI.
 - **POST:** Submits a stream of information to the URI's identified resource.
 
-Diagram:
+## Client Requests
+
+HTTP client requests consist of a method, URI, HTTP version, and a MIME-like message, which are essential for the functionality of HTTP in handling client requests.
 
 <div class="img-center"> 
 
@@ -218,7 +220,7 @@ Diagram:
 </div>
 
 
-### Understanding URIs
+### URIs
 
 URIs, or Uniform Resource Identifiers, are formatted strings used to identify networked resources.
 
@@ -255,3 +257,138 @@ MIME-like messages in HTTP requests include modifiers and form data.
 
 - These messages enable the transfer of various types of data, such as audio, video, images, and applications, as part of the request.
 - They are crucial for transmitting attachments and enhancing the versatility of HTTP requests.
+
+
+## Server Response
+
+After receiving an HTTP request from a client, the server can issue either a simple or a full response. A simple response occurs when the server supports only HTTP 0.9 and provides a file or data.
+
+<div class="img-center"> 
+
+![](/img/docs/010svrresponsesimpleresponse.png)
+
+</div>
+
+For servers using HTTP 1.0 and above, a full response includes a status line as its first part. The status line consists of:
+
+- The HTTP version,
+- A standard status code, and
+- A reason phrase.
+
+    <div class="img-center"> 
+
+    ![](/img/docs/010svrresponsefullresponse.png)
+
+    </div>
+
+### Components of a Full Response
+
+A full HTTP response comprises several key components that provide essential information about the response:
+
+- **HTTP Version:** Can be 1.0, 1.1, or 2.0.
+- **Status Code:** A standard three-digit internet server format.
+- **Reason Phrase:** A textual representation of the status code.
+
+Diagram:
+
+<div class="img-center"> 
+
+![](/img/docs/010httpstatuscodefixedphoto.png)
+
+</div>
+
+### Common HTTP Status Codes
+
+- **404 Not Found:** Indicates that the requested resource could not be found.
+- **200 OK:** Signifies that the request was successful.
+- **304 Not Modified:** Indicates that the resource has not been modified since the last requested.
+- **403 Forbidden:** Indicates that the server understood the request but refuses to authorize it.
+- **503 Service Unavailable:** Indicates that the server is currently unable to handle the request due to temporary overload or maintenance.
+
+### MIME-like Message
+
+The second part of a full HTTP response is the MIME-like message generated by the server. This message includes various header fields separated from the message body by a carriage return line feed (CRLF) pair.
+
+- **HTTP Header Information**
+
+    - Provides contextual information about the response.
+    - Content type (e.g., text/plain, application/JSON), expiry date, and server software.
+    - Enhances security measures.
+
+- **Message Body and MIME**
+
+    - Contains the requested resource.
+    - Can be dynamically generated, especially for backend server scripts.
+    - Interacts with other programs or resources on the web server.
+
+An example includes creating new information in a database, ensuring the response contains a valid MIME message with appropriate header fields.
+
+<div class="img-center"> 
+
+![](/img/docs/010examplehttpserverresponsedatabase.png)
+
+</div>
+
+## MIME and HTTP
+
+Originally designed for email and adapted for HTTP in web applications, MIME enables the sending of rich media, such as images and videos, through websites.
+
+Resource Delivery in Web Applications:
+
+- Modern web applications utilize various resources like images, videos, and animations.
+- These assets need to be attached to HTTP requests to deliver a complete interactive experience.
+
+MIME Features in HTTP:
+
+- Adapted from email MIME format for HTTP use.
+- No requirement for the message body to be seven-bit ASCII data, unlike some email systems.
+
+MIME Message Components:
+
+- Consists of a header with colon-separated fields.
+- Simplest document includes a content-type line followed by a CRLF pair and the message body.
+
+Content-Type Header Line:
+
+- Identifies the data in the body.
+- Comprises type and subtype fields, such as content-type: text/html.
+- Used by the browser to select the appropriate application for displaying returned data.
+
+Official Content Types:
+
+- Defined by the Internet Assigned Numbers Authority (IANA).
+- Growing list of content types to accommodate various data formats.
+
+Some of the most common types are application, or JSON, plain, or text, and image, maybe PNG, for instance. 
+
+<div class="img-center"> 
+
+![](/img/docs/0101commontypeofapps.png)
+
+</div>
+
+Experimental content types are normally preceded by letters although as browsers and servers can negotiate acceptable types, this is not enforced. MIME also allows the server to send multipart messages. The message body can contain multiple MIME messages, each with a header specifying the type of body data. 
+
+<div class="img-center"> 
+
+![](/img/docs/010mimesenddifftypeofappdata.png)
+
+</div>
+
+
+## HTTP Usage vs. Email
+
+In HTTP, each submessage can contain a comprehensive set of HTTP header fields, unlike email, which typically focuses on the content field alone. This allows for more detailed and specific communication between clients and servers.
+
+
+**Example Scenario: File Upload**
+Consider the process of uploading multiple photos to a website. The typical steps include:
+
+- Selecting multiple files via a web interface.
+- Each file is uploaded as a separate part within the HTTP message.
+- Each part clearly defines the file data, ensuring proper handling and identification.
+
+Importance of Multipart Messages:
+
+- Multipart messages enable the uploading of multiple files simultaneously.
+- Without this feature, users would be limited to uploading one file at a time.
