@@ -142,3 +142,7 @@ Web:
   label: 'Web'
   permalink: '/Web'
   description: 'Docs related to Web'
+SRE:
+  label: 'SRE'
+  permalink: '/SRE'
+  description: 'Docs related to SRE'
