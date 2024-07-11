@@ -17,12 +17,6 @@ In addition to RAM, computers use storage devices like **Hard Disk Drives** (HDD
 
 </div>
 
-<div class="img-center">
-
-![](/img/docs/comphwdifftypesofstorage.png)
-
-</div>
-
 
 ### HDDs
 
