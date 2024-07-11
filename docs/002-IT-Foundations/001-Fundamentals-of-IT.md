@@ -44,10 +44,10 @@ Time to dive into more interesting concepts in IT.
 
 - [Computer Hardware](./008-Computer-Hardware.md)
 
-- [Computer Programs](./009-Computer-Programs.md)
+- [Computer Programs](./020-Computer-Programs.md)
 
-- [Laptops and Mobile Devices](./010-Laptops-and-Mobile-Devices.md)
+- [Laptops and Mobile Devices](./021-Laptops-and-Mobile-Devices.md)
 
-- [BIOS](./011-BIOS.md)
+- [BIOS](./015-BIOS.md)
 
-- [Operating Systems](./012-Operating-Systems.md)
+- [Operating Systems](./030-Operating-Systems.md)
