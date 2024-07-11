@@ -392,3 +392,63 @@ Importance of Multipart Messages:
 
 - Multipart messages enable the uploading of multiple files simultaneously.
 - Without this feature, users would be limited to uploading one file at a time.
+
+
+## Security Issues and HTTPS
+
+As the internet has evolved, security has become a paramount concern. HTTP alone is insufficient for protecting data from interception and unauthorized access. This gap is bridged by HTTPS, which provides a secure layer over HTTP.
+
+<div class="img-center"> 
+
+![](/img/docs/010httphttpsdiff.png)
+
+</div>
+
+HTTPS encrypts data at the source, ensuring that only the intended recipient with the correct encryption key can decrypt it.
+
+- Web servers need an SSL certificate from a reputable Certification Authority (CA).
+- The server holds a private key (never transmitted) and a public key.
+- The public key is returned to the client upon request.
+- Subsequent communications are encrypted using the public key.
+
+This data can only be decrypted using the private key stored securely on the server. The public key on the client end can only decrypt data that has been encrypted by the private key, ensuring the data's origin and integrity.
+
+<div class="img-center"> 
+
+![](/img/docs/010publicprivatekeys.png)
+
+</div>
+
+
+
+## Common Security Threats
+
+### Eavesdropping 
+
+Data transmitted over unsecured networks is susceptible to interception. Attackers can capture the data being sent between a client and a server, gaining access to sensitive information such as login credentials, personal details, and financial data.
+
+<div class="img-center"> 
+
+![](/img/docs/a010eavesdroppingggg.png)
+
+</div>
+  
+### Modification or Fabrication 
+    
+Intercepted messages can be altered or fabricated to deceive recipients. Attackers may modify the data being sent, leading to incorrect information being displayed, or fabricate messages to trick users into taking harmful actions, such as providing additional sensitive information or downloading malware.    
+
+<div class="img-center"> 
+
+![](/img/docs/010fabrication-modification.png)
+
+</div>
+  
+### Impersonation 
+    
+Attackers can impersonate systems or users to gain unauthorized access to resources. By pretending to be a legitimate user or system, attackers can exploit vulnerabilities to access restricted areas, steal data, or perform malicious actions without being detected.    
+  
+<div class="img-center"> 
+
+![](/img/docs/010impoersonationsss.png)
+
+</div>
