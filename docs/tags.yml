@@ -82,6 +82,10 @@ Google:
   label: 'Google'
   permalink: '/Google'
   description: 'Docs related to Google'
+Google Cloud:
+  label: 'Google Cloud'
+  permalink: '/Google Cloud'
+  description: 'Docs related to Google Cloud'
 Cybersecurity:
   label: 'Cybersecurity'
   permalink: '/Cybersecurity'
