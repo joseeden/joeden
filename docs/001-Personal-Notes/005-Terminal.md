@@ -1,6 +1,6 @@
 ---
 title: "Terminal"
-sidebar_position: 1
+sidebar_position: 5
 description: "Notes on Terminal and CLI Tools"
 tags: [Development, Terminal, IDE, Visual Studio Code, DevOps]
 last_update:

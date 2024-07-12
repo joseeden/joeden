@@ -2,7 +2,7 @@
 title: "WSL not working from CMD and Powershell"
 tags: [DevOps, Personal Notes, Development]
 description: "WSL suddenly stopped working on both Command Prompt and Powershell"
-sidebar_position: 3
+sidebar_position: 7
 last_update:
   date: 11/22/2023
 ---
