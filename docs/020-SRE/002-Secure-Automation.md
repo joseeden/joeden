@@ -8,57 +8,43 @@ last_update:
 ---
 
 
-
-
 ## Overview
 
-With automation, we can remove the chance of human error or "willful sabotage".
+Automation minimizes the risk of human error and potential "willful sabotage" by standardizing processes.
 
 ## Secure Builds
 
-- We can secure automated steps but we cannot provenly secure manual steps
+Implementing secure automated steps in the build process is essential. Manual steps are prone to security risks, but automated ones can be consistently protected.
 
-- Generated artifacts can be validated and checked for compliance
-
-- All build artifacts should be digitally signed with approved organization certificates
-
-- DevSecOps works to secure the delivery  pipeline
-
-- Every should be in code - Infra-as-code, config-as-code, etc. 
-
-- Code should be held in secure code repositories with regualted access
+- Validate and check generated artifacts for compliance.
+- Digitally sign all build artifacts with approved organization certificates.
+- DevSecOps ensures security in the delivery pipeline.
+- Implement infrastructure-as-code and configuration-as-code practices.
+- Store code in secure repositories with regulated access.
 
 ## Secure Tests
 
-- Deployed artifacts should be the same acorss all environments  
+Ensuring the security of deployed artifacts across all environments is crucial.
 
-- Using environment variables and configuration to handle differences when deploying artifacts 
-
-- Using secure and insecure test data to test the security boundaries of the service
+- Use environment variables and configurations to handle differences in deployment.
+- Test the security boundaries of the service with both secure and insecure test data.
 
 ## Secure Staging
 
-- Immutable staging environments 
+Staging environments must be immutable to maintain consistency and security.
 
-- Staging/pre-prod is typically where dependencies and integrations are tested.
-
-- Same artifact should be deployed to staging/pre-prod environment 
-
-- Consider how data-handling rules like GDPR apply on staging data   
-
-- PCI compliance may need to be considered for financial and payment-related data
+- Test dependencies and integrations in the staging/pre-prod environment.
+- Deploy the same artifact to both staging and production.
+- Consider data-handling rules like GDPR and PCI compliance for financial and payment-related data.
 
 ## Secure Production
 
-- Production environments are immutable 
+Production environments should also be immutable to prevent unauthorized changes.
 
-- Same artifacts are deployed to prod
-
-- Ensure data security compliance (e.g. GDPR, PCI, SOX) are met
-
-- Failure testing can help with audit compliance
-
-- Dedicated security scanning to uncover security vulnerabilites
+- Deploy the same artifacts to production as used in staging.
+- Ensure compliance with data security regulations such as GDPR, PCI, and SOX.
+- Conduct failure testing to aid audit compliance.
+- Use dedicated security scanning to identify and address vulnerabilities.
 
 
 ## Resources 
