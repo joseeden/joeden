@@ -12,7 +12,7 @@ last_update:
 
 This is a guide written by AWS that helps to describe key concepts for designing and running workloads in the cloud. This helps us determines what to look for in a service, in an architecture, and in the solutions we are building.
 
-## Operational Excellence
+## 1. Operational Excellence
 
 Its goal is to focus on running, monitoring, and designing our systems programmatically.
 
@@ -26,7 +26,7 @@ Its goal is to focus on running, monitoring, and designing our systems programma
 
 - Continuously improve them, and monitor those changes in the system.
 
-## Security
+## 2. Security
 
 Its goal is to ensure that security is everyone's  responsibility when building architectures. We need to secure our environments as much as we can, because failure to do so can be catastrophic for both your users, and your company. 
 
@@ -40,7 +40,7 @@ Its goal is to ensure that security is everyone's  responsibility when building 
 
 - Provide security both at rest, and in transit for our data.
 
-## Reliability
+## 3. Reliability
 
 Its goal is to ensure that our designs and architectures should be able to function correctly and consistently through its entire lifecycle. 
 
@@ -48,7 +48,7 @@ Its goal is to ensure that our designs and architectures should be able to funct
 
 - Systems should be automated to reduce downtime and remove human error from the equation 
 
-## Performance Efficiency
+## 4. Performance Efficiency
 
 Its goal is to encourage us to constantly look for new ways to improve our systems.
 
@@ -58,7 +58,7 @@ Its goal is to encourage us to constantly look for new ways to improve our syste
 
 - Understand when it's time to switch from one to the other, or when a combined approach might be beneficial.
 
-## Cost Optimization
+## 5. Cost Optimization
 
 Its goal is to ensure that we can technically complete the design specification of a project in a cost-effective way. 
 
