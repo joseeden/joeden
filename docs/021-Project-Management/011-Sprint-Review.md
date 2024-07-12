@@ -12,13 +12,9 @@ last_update:
 
 ## Overview
 
-The sprint review meeting is your team’s opportunity to showcase the sprint’s accomplishments through product demos.
-
-The goal is to gather feedback from the sponsor on delivered user stories and ensure they align with desired goals and value. It's also a chance to reassess the project vision if necessary.
+The sprint review meeting is your team’s opportunity to showcase the sprint’s accomplishments through product demos. The goal is to gather feedback from the sponsor on delivered user stories and ensure they align with desired goals and value. It's also a chance to reassess the project vision if necessary.
 
 ## Preparation Matters
-
-To make a strong impression:
 
 - Assign each team member a specific area to present.
 - Conduct a thorough run-through before the meeting to ensure everyone is prepared.

@@ -51,6 +51,10 @@ Creating a talent and skills spreadsheet is essential to list the skills needed 
 
 Consider the geographical distribution of the team members.
 
+<div class="img-center"> 
+
 ![](/img/docs/talentskillspreadsheet.png)  
+
+</div>
 
 Building a team is an ongoing process that requires a mix of different skill sets and abilities. Ensure that the team collectively represents all the necessary skills for the project's success.

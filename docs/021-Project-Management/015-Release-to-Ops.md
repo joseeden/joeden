@@ -12,8 +12,11 @@ last_update:
 
 This step ensures the project has achieved its goals and meets customer requirements. At this stage, your sponsor has determined that no new features will yield a return on investment, and the product transitions to operations.
 
+<div class="img-center"> 
+
 ![](/img/docs/releasetoopsbottleopened.png)
 
+</div>
 
 ## Wrapping It Up
 

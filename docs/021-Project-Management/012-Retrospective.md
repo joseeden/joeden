@@ -11,11 +11,14 @@ last_update:
 
 ## The Goal
 
-The retrospective aims for continuous improvement by evaluating all aspects of team performance during the sprint, identifying successes, and implementing necessary changes.
+The retrospective aims for continuous improvement by evaluating all aspects of team performance during the sprint, identifying successes, and implementing necessary changes. As a Product Owner, prioritize actions based on the team’s insights from the sprint.
+
+<div class="img-center"> 
 
 ![](/img/docs/sprintretrospectivephoto.png)
 
-As a Product Owner, prioritize actions based on the team’s insights from the sprint.
+</div>
+
 
 ## Cultivating Openness
 

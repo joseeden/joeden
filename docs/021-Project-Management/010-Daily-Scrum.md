@@ -16,9 +16,7 @@ The daily scrum, or daily coordination meeting, is a crucial part of agile metho
 - What do I plan to do today?
 - Is there anything blocking my work?
 
-Team members update their task progress on the Scrum board, moving tasks from “To Do” to “In Progress”, “Blocked”, or “Done”.
-
-Typically held in the morning, this meeting lasts 10-15 minutes and focuses on work coordination rather than status updates.
+Team members update their task progress on the Scrum board, moving tasks from “To Do” to “In Progress”, “Blocked”, or “Done”. Typically held in the morning, this meeting lasts 10-15 minutes and focuses on work coordination rather than status updates.
 
 ## Attendance Matters
 

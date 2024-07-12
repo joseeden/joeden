@@ -44,7 +44,11 @@ Tasks Derived from User Story:
 
 These tasks are visualized on your Scrum board.
 
+<div class="img-center"> 
+
 ![](/img/docs/examplebreakingdownuserstorytotasks.png)
+
+</div>
 
 ## Using the Fibonacci Sequence for Task Points
 
@@ -52,20 +56,20 @@ Tasks are assigned points (1, 3, 5, 8, 13) based on their complexity, not time. 
 
 Example 1:
 
-**Task:** Coordinate a meeting with our feedback group.
-**Acceptance criteria:** A meeting is scheduled with 95% attendee confirmation.
-**Story point:** 1 (indicating minimal effort required)
+- **Task:** Coordinate a meeting with our feedback group.
+- **Acceptance criteria:** A meeting is scheduled with 95% attendee confirmation.
+- **Story point:** 1 (indicating minimal effort required)
 
 Example 2:
 
-**Task:** Create a mock-up of a user interface.
-**Acceptance criteria:** Mock-up is high-fidelity and functional on mobile.
-**Story point:** 5 (indicating moderate effort required)
+- **Task:** Create a mock-up of a user interface.
+- **Acceptance criteria:** Mock-up is high-fidelity and functional on mobile.
+- **Story point:** 5 (indicating moderate effort required)
 
 Example 3:
 
-**Task:** Write programming code to trigger the sun shade.
-**Acceptance criteria:** Shade activates based on sunlight intensity.
-**Story point:** 13 (indicating substantial effort required)
+- **Task:** Write programming code to trigger the sun shade.
+- **Acceptance criteria:** Shade activates based on sunlight intensity.
+- **Story point:** 13 (indicating substantial effort required)
 
 Each task must have defined acceptance criteria before being added to the sprint backlog, ensuring clarity and alignment with project goals.

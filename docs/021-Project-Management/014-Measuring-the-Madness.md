@@ -12,7 +12,11 @@ last_update:
 
 At the start of each sprint, the team forecasts the amount of work they can realistically complete. The objective is to ensure all forecasted work is finished by the end of the sprint.
 
+<div class="img-center"> 
+
 ![](/img/docs/measuringthemadnessstayingontrack.png)
+
+</div>
 
 To monitor progress throughout the sprint, it's essential to have effective tools and metrics in place.
 

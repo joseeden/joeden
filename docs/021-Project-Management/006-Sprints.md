@@ -11,13 +11,21 @@ last_update:
 
 This is where the magic happens. You’ll establish short working cycles, often one or two weeks long. At the end of each cycle, you'll deliver an updated, working product. These cycles, called **sprints** or **iterations**, allow for immediate customer feedback, helping you ensure the project is on the right track.
 
+<div class="img-center"> 
+
 ![](/img/docs/sprintsimmediatefeedback.png)
+
+</div>
 
 ## The Sprint
 
 A typical project might take six sprints, or twelve weeks, to complete. Agile approaches are ideal for producing a product incrementally, especially when there's an urgent need for delivery.
 
+<div class="img-center"> 
+
 ![](/img/docs/thesprintcycles.png)
+
+</div>
 
 During each sprint, you'll continuously assess progress toward your goals:
 
@@ -33,4 +41,6 @@ To set up a two-week sprint cycle, follow these steps:
 - **Daily Scrum Meetings**: Schedule a 15-minute meeting every morning.
 - **Retrospective Meeting**: Schedule this for Friday afternoon at the end of each sprint.
 
+    
     ![](/img/docs/createyoursprintschedule.png)
+

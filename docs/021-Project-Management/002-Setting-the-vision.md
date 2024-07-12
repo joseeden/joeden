@@ -48,11 +48,6 @@ Engaging with stakeholders ensures that the project aligns with their expectatio
 
 Agile projects focus on delivering a working product to users quickly and enhancing it based on user feedback. Short cyclic scheduling allows for continuous improvement of your product. The Stakeholder Vision Document should include:
 
-- High-level release scope
-- High-level release plan
-- Customer identification
-- Feedback gathering methods
-- Acceptance criteria
 
 - **High-level Release Scope**
 
