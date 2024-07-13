@@ -41,30 +41,30 @@ Amazon API Gateway is an AWS service for creating, publishing, maintaining, moni
 ![](/img/docs/aws-building-serverless-api.png)
 
 
-### 1. Outside of VPC
+- **Outside of VPC**
 
-- Lambda Functions:
+    - Lambda Functions:
 
-    - It can invoke Lambda functions.
-    - Easy way to expose REST API backed by AWS Lambda.
+        - It can invoke Lambda functions.
+        - Easy way to expose REST API backed by AWS Lambda.
 
-- HTTP:
+    - HTTP:
 
-    - Exposes HTTP endpoints in the back-end. 
-    - Example: internal HTTP API on premise, Application Load Balancer, etc. 
-    - Add features like rate limiting, user authentication, API keys to existing back-ends.
+        - Exposes HTTP endpoints in the back-end. 
+        - Example: internal HTTP API on premise, Application Load Balancer, etc. 
+        - Add features like rate limiting, user authentication, API keys to existing back-ends.
 
-- AWS Service:
+    - AWS Service:
 
-    - Expose any AWS API through API Gateway.
-    - Examples: API for starting a Step Function workflow, API for posting a message to SQS.
+        - Expose any AWS API through API Gateway.
+        - Examples: API for starting a Step Function workflow, API for posting a message to SQS.
 
-### 2. Inside of VPC
+- **Inside of VPC**
 
-- AWS Lambda in your VPC 
-- EC2 endpoints in your VPC 
+    - AWS Lambda in your VPC 
+    - EC2 endpoints in your VPC 
 
- 
+    
 
 
 ## Mapping Templates 
@@ -124,44 +124,44 @@ Amazon API Gateway is an AWS service for creating, publishing, maintaining, moni
 
 ## Endpoint Types
 
-### Edge-Optimized (default)
+- **Edge-Optimized (default)**
 
-- For global clients.
-- Requests are routed through the CloudFormation Edge locations.
-- The API Gateway still lives in only one region.
+    - For global clients.
+    - Requests are routed through the CloudFormation Edge locations.
+    - The API Gateway still lives in only one region.
 
-### Regional
+- **Regional**
 
-- For clients within the same region.
-- Could manually be combined with CloudFront having more control over caching strategies and distributions.
+    - For clients within the same region.
+    - Could manually be combined with CloudFront having more control over caching strategies and distributions.
 
-### Private
+- **Private**
 
-- Can only be accessed from a VPC using an ENI.
-- We can use resource policies to define access.
+    - Can only be accessed from a VPC using an ENI.
+    - We can use resource policies to define access.
 
 
 
 ## Logging, Monitoring, Tracing 
 
-### CloudWatch Logs
+- **CloudWatch Logs**
 
-- Enable CloudWatch logging at the stage level (with log level).
-- Can override settings on a per API basis.
-- Log contains information about request/resposne body.
+    - Enable CloudWatch logging at the stage level (with log level).
+    - Can override settings on a per API basis.
+    - Log contains information about request/resposne body.
 
-### CloudWatch Metrics
+- **CloudWatch Metrics**
 
-- Metrics are by stage.
-- Detailed metrics can be enabled.
+    - Metrics are by stage.
+    - Detailed metrics can be enabled.
 
-### X-ray
+- **X-ray**
 
-- Enable tracing to get extra information about requests.
-- X-Ray + API Gateway + AWS Lambda gives you the full picture.
+    - Enable tracing to get extra information about requests.
+    - X-Ray + API Gateway + AWS Lambda gives you the full picture.
 
- 
-## API Gateway - Cross-Origin Resource Sharing 
+    
+## Cross-Origin Resource Sharing 
 
 - CORS must be enabled when you receive API calls from another domain. 
 - Can be enabled through the console. 
@@ -174,17 +174,17 @@ Amazon API Gateway is an AWS service for creating, publishing, maintaining, moni
 
 ## Limit customer usage 
 
-### Usage Plans 
+- **Usage Plans**
 
-- Set overall capacity and burst capacity (Throttle).
-- Set number of requests that can be made per day/week/month (Quotas).
-- Associate with desired API stages.
+    - Set overall capacity and burst capacity (Throttle).
+    - Set number of requests that can be made per day/week/month (Quotas).
+    - Associate with desired API stages.
 
-### API Keys 
+- **API Keys**
 
-- Generate one per customer.
-- Associate with usage plans.
-- Track usage for API keys.
+    - Generate one per customer.
+    - Associate with usage plans.
+    - Track usage for API keys.
 
  
 
@@ -203,8 +203,9 @@ Amazon API Gateway is an AWS service for creating, publishing, maintaining, moni
     ![](/img/docs/aws-apigw-sec-iam.png)
 
 
-### Lambda Authorizer (Custom Authorizer)
+### Lambda Authorizer 
 
+- Also known as **Custom Authorizer**.
 - Great for 3rd party tokens.
 - Very flexible in terms of what IAM policy is returned.
 - Handles authentication + authorization.
