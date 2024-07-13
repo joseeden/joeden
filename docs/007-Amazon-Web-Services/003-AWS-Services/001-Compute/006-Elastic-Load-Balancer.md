@@ -60,14 +60,23 @@ Stickiness ensures that the same client is always redirected to the same instanc
 
 Load is distribtued evenly across all registered instances in all availability zone. 
 
+<div class="img-center"> 
+
 ![](/img/docs/aws-cross-zone-lb.png)
+
+</div>
 
 
 ## SSL Certificates 
 
 SSL certificates can be used to encrypt the traffic between clients and the loadbalancer. 
 
+
+<div class="img-center"> 
+
 ![](/img/docs/aws-els-sslcerts.png)
+
+</div>
 
 The loadbalancer uses an X.509 certificate and can eb managed using AWS Certificate Manager (ACM).
 
@@ -79,15 +88,20 @@ The loadbalancer uses an X.509 certificate and can eb managed using AWS Certific
 
 SNI solves the problem of lading multiple SSL certificates onto one web server. By using SNI, clients can indicate the hostname to connect to. It supports multiple secure websites using a single secure listener.
 
-![](/img/docs/aws-elb-sni.png)
+<div class="img-center"> 
 
+![](/img/docs/sni-2024.png)
+
+</div>
 
 ## Connection Draining 
 
 Refers to the time to complete "in-flight requests" while the instance is de-registering or unhealthy. 
+<div class="img-center"> 
 
 ![](/img/docs/aws-elb-connection-draining.png)
 
+</div>
 
 When enabled, new requests will  not being sent to the intance being de-registered.
 

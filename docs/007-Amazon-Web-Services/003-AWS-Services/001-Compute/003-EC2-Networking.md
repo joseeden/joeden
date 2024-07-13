@@ -21,30 +21,28 @@ To see the complete documentation, please go to: [AWS documentation](https://doc
 
 EC2 instances are not aware of their public IP address. It only knows it's private IP address. On the other hand, the Internet Gateway is the only component that knows all of the public IP addresses of instances.
 
-![](/img/docs/aws-public-private-ip.png)
+- **Public IP address**
 
+  - Lost when the instance is stopped
+  - Used in Public Subnets
+  - No charge
+  - Associated with a private IP address on the Instance
 
-| Name                | Description |
-|---------------------|----------------|
-| Public IP address   | [Lost when the instance is stopped,Used in Public Subnets,No charge] 
-| Private address     |
-| Elastic IP address  |
+- **Private address**
 
+  - Retained when the instance is stopped
+  - Used in Public and Private Subnets
 
-<!-- 
-Associated with a private IP address on the Instance
-Retained when the instance is stopped
-Used in Public and Private Subnets
-Static Public IP address
-You are charged if not used
-Associated with a private IP address on the instance -->
+- **Elastic IP address**
+
+  - Static Public IP address
+  - You are charged if not used
+  - Associated with a private IP address on the instance
 
 
 ## Enhanced Networking 
 
 Uses single root I/O virtualization (SR-IOV) to provide high-performance networking capabilities on supported instance types.
-
-Features:
 
 - More Packets per Second >> PPS
 - Lower Latency
@@ -81,6 +79,22 @@ An EFA is similar to ENA but with added capabilities.
 
 ## ENI vs ENA vs EFA 
 
-![](/img/docs/aws-eni-efa-ena.png)
+- **When to use ENI:**
+
+  - This is the basic adapter type for when you don't have any high-performance requirements. 
+  - Can use with all instance types.  
+
+- **When to use ENA:**
+
+  - Good for use cases that require higher bandwidth and lower inter-instance latency. 
+  - Supported for limited instance types (HVM only).  
+
+- **When to use EFA:**
+
+  - High Performance Computing. 
+  - MPL and ML use cases.
+  - Tightly coupled applications. 
+  - Can use with all instance types.
+
 
   

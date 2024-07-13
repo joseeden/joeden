@@ -29,12 +29,20 @@ An Auto Scaling group contains a collection of EC2 instances that are treated as
 
 Auto Scaling Group in AWS:
 
+<div class="img-center"> 
+
 ![](/img/docs/aws-asg-in-aws.png)
+
+</div>
 
 
 Auto Scaling Group in AWS with LoadBalancer:
 
+<div class="img-center"> 
+
 ![](/img/docs/aws-asg-in-aws-with-lb.png)
+
+</div>
 
 
 
@@ -59,7 +67,11 @@ Scaling policies determine when, if, and how the ASG scales and shrinks.
 
 After your Auto Scaling group launches or terminates instances, it waits for a cooldown period to end before any further scaling activities initiated by simple scaling policies can start. 
 
-![](/img/docs/aws-asg-scaling-cooldown.png)
+<div class="img-center"> 
+
+![](/img/docs/scalingcooldown-2024.png)
+
+</div>
 
 
 The intention of the cooldown period is to prevent your Auto Scaling group from launching or terminating additional instances before the effects of previous activities are visible.
@@ -90,9 +102,13 @@ By adding a launch lifecycle hook to your Auto Scaling group, you can ensure tha
 
 ## Auto Scaling Alarms 
 
+
 It is possible to scale an ASG based on CloudWatch alarms which monitors a set metric, such as average CPU. Note that metrics are computed for overall ASG instances. 
+
+<div class="img-center"> 
 
 ![](/img/docs/aws-elb-alarms-based-on-cw-alarm.png)
 
 
+</div>
   

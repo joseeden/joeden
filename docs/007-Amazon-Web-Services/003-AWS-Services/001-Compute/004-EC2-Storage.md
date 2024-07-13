@@ -22,7 +22,11 @@ To see the complete documentation, please go to: [AWS documentation](https://doc
 
 Instance store provides temporary block-level storage for your instance. This storage is located on disks that are physically attached to the host computer.
 
+<div class="img-center"> 
+
 ![](/img/docs/aws-instance-store.png)
+
+</div>
 
 Table:
 
@@ -37,7 +41,11 @@ To learn more, please see [Amazon EC2 instance store](https://docs.aws.amazon.co
 
 Persistent block storage volumes. You can attach multiiple Ebs volumes to a single instance.
 
+<div class="img-center"> 
+
 ![](/img/docs/aws-ebs-diag.png)
+
+</div>
 
 
 To learn more, please see [Amazon EBS volumes](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes.html).
@@ -73,7 +81,11 @@ To learn more, please see [Amazon EBS volumes](https://docs.aws.amazon.com/AWSEC
 
 Amazon EFS provides scalable file storage for use with Amazon EC2. You can use an EFS file system as a common data source for workloads and applications running on multiple instances. 
 
+<div class="img-center"> 
+
 ![](/img/docs/aws-efs-filesystem.png)
+
+</div>
 
 To learn more, please see [Amazon EFS](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEFS.html).
 
