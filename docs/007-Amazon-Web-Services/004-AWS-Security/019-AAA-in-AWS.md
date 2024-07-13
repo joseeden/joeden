@@ -71,7 +71,7 @@ The following are the available authentication mechanisms in AWS.
 - Key Pairs 
 - Federation 
 
-### Username-Password + MFA
+### Password + MFA
 
 - This is the most basic authentication. 
 - Usernames must be unique and can't be duplicated within the same account.
