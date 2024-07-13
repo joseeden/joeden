@@ -23,6 +23,23 @@ EC2 instances are not aware of their public IP address. It only knows it's priva
 
 ![](/img/docs/aws-public-private-ip.png)
 
+
+| Name                | Description |
+|---------------------|----------------|
+| Public IP address   | [Lost when the instance is stopped,Used in Public Subnets,No charge] 
+| Private address     |
+| Elastic IP address  |
+
+
+<!-- 
+Associated with a private IP address on the Instance
+Retained when the instance is stopped
+Used in Public and Private Subnets
+Static Public IP address
+You are charged if not used
+Associated with a private IP address on the instance -->
+
+
 ## Enhanced Networking 
 
 Uses single root I/O virtualization (SR-IOV) to provide high-performance networking capabilities on supported instance types.

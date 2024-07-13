@@ -19,7 +19,11 @@ To see the complete documentation, please go to: [AWS documentation](https://doc
 
 ## Instance Type Naming Convention
 
+<div class="img-center"> 
+
 ![](/img/docs/aws-instance-type-naming-convention.png)
+
+</div>
 
 ## Instance Types based on pricing
 
