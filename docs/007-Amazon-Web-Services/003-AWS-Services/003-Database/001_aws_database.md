@@ -46,10 +46,10 @@ The following are some of the guideline questions to ask when choosing the datab
 
 Database Types | AWS Service | Description |
 ---------|----------|----------|
-| RDBMS (SQL/OLTP) | RDS <br> Aurora | Great for joins and normalized data |
-| NoSQL | DynamoDB <br> ElastiCache (key/value pairs) <br> Neptune (graphs) <br> DocumentDB (json) | No joins, no SQL
-| Object Store | S3 (for big objects) <br> Glacier (for backups, archive) | For object storage and archival
-| Data Warehouse | Redshift (OLAP) <br> Athena | SQL Analytics / BI Use cases
+| RDBMS (SQL/OLTP) | RDS <br /> Aurora | Great for joins and normalized data |
+| NoSQL | DynamoDB <br /> ElastiCache (key/value pairs) <br /> Neptune (graphs) <br /> DocumentDB (json) | No joins, no SQL
+| Object Store | S3 (for big objects) <br /> Glacier (for backups, archive) | For object storage and archival
+| Data Warehouse | Redshift (OLAP) <br /> Athena | SQL Analytics / BI Use cases
 | Search | ElasticSearch (JSON) | Free text, unstructured searches |
 | Graphs | Neptune | Displays relationships between data |
 
