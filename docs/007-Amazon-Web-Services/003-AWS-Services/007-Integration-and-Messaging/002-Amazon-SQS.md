@@ -36,7 +36,7 @@ To see the complete documentation, please go to: [AWS documentation](https://doc
         - default retention period is 4 days
         - maximum is 14 days
     - Low latency: 
-        - <10 ms on publish and receive
+        - Less than 10 ms on publish and receive
     - Limitation for message size: 
         - maximum size of a message is 256KB
 
