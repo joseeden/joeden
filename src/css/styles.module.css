@@ -3,39 +3,41 @@
     color: black;
   }
   
+
   .red {
     /* Default text color for unselected tab */
-    color: red;
+    color: black;
   }
   
   .red[aria-selected='true'] {
     /* Background color for selected tab */
-    background-color: red;
+    background-color: #ff8686;
     /* Text color for selected tab */
     color: black;
   }
-  
-  .orange {
-    /* Default text color for unselected tab */
-    color: orange;
-  }
-  
-  .orange[aria-selected='true'] {
-    /* Background color for selected tab */
-    background-color: orange;
-    /* Text color for selected tab */
-    color: black;
-  }
+
   
   .yellow {
     /* Default text color for unselected tab */
-    color: yellow;
+    color: black;
   }
   
   .yellow[aria-selected='true'] {
     /* Background color for selected tab */
-    background-color: yellow;
+    background-color: #fed871;
     /* Text color for selected tab */
     color: black;
   }
   
+
+  .gray {
+    /* Default text color for unselected tab */
+    color: black;
+  }
+  
+  .gray[aria-selected='true'] {
+    /* Background color for selected tab */
+    background-color: #fed871;
+    /* Text color for selected tab */
+    color: black;
+  }
