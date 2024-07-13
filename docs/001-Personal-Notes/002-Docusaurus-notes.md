@@ -11,7 +11,7 @@ tags: [Docusaurus]
 
 ## Prerequisites 
 
-- [Install NodeJS and NPX](./005-Tools-Specifications.md#nodejs)
+- [Install NodeJS and NPX](./011-Tools-Specifications.md#nodejs)
 
 
 ## Docusaurus
