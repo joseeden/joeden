@@ -20,8 +20,11 @@ To see the complete documentation, please go to: [AWS documentation](https://doc
 
 When we start deploying multiple applications, they will inevitable result in the necessity to communicate with one another. 
 
+<div class="img-center"> 
+
 ![](/img/docs/aws-integ-msging.png)
 
+</div>
 
 There are 2 types of integration communication patterns:
 

@@ -20,7 +20,11 @@ To see the complete documentation, please go to: [AWS documentation](https://doc
 
 ## Simple Queue Service (SQS)
 
+<div class="img-center">
+
 ![](/img/docs/aws-sqs.png)
+
+</div>
 
 
 ## Standard Queue
@@ -54,7 +58,11 @@ To see the complete documentation, please go to: [AWS documentation](https://doc
 - Exactly-once send capability (by activating content-based deduplication).
 - The name of the FIFO queue must end with the `.fifo`.
 
+    <div class="img-center">
+
     ![](/img/docs/aws-sqs-fifo-queueueue.png)
+
+    </div>
 
 
    
@@ -67,7 +75,11 @@ To see the complete documentation, please go to: [AWS documentation](https://doc
 - Message retention: default 4 days, up to 14 days.
 - SQS standard has unlimited throughput.
 
+    <div class="img-center">
+
     ![](/img/docs/aws-sqs-producemsgs.png)
+
+    </div>
 
 
 ## Consuming messages
@@ -82,7 +94,11 @@ To see the complete documentation, please go to: [AWS documentation](https://doc
 - SQS with Auto Scaling Group:
     - We can scale based on the **ApproximateNumberOfMessages** metric by creating a CloudWatch alarm.
 
+    <div class="img-center">
+
     ![](/img/docs/aws-sqs-consumemssgs.png)
+
+    </div>
 
 
 
@@ -106,7 +122,11 @@ To see the complete documentation, please go to: [AWS documentation](https://doc
 - DLQs are useful for debugging.        
 - We have to make sure the messages are processed in DLQ before expiring. It is not a good idea to set a short expiration time for the DLQ.     
 
+    <div class="img-center">
+
     ![](/img/docs/aws-sqs-dlqsss.png)
+
+    </div>
 
 
 ## Long Polling 
@@ -116,12 +136,20 @@ To see the complete documentation, please go to: [AWS documentation](https://doc
 - Wait time can be between 1 sec to 20 sec. 
 - Long polling is preferable than short polling.
 
+    <div class="img-center">
+
     ![](/img/docs/aws-sqs-long-pollinggggggg.png)
+
+    </div>
 
 
 ## Message Consumption Flow
 
+<div class="img-center">
+
 ![](/img/docs/aws-sqs-consumption-flow.png)
+
+</div>
 
 
 
@@ -133,7 +161,11 @@ Allows scaling the number of EC2 instances based on the available messages in th
 - In order to accomplish auto scaling we have to create a CloudWatch custom metric representing the number of available messages on the queue divided by the number of EC2 instances. 
 - This metric is pushed from an EC2 instance
 
+    <div class="img-center">
+
     ![](/img/docs/aws-sqs-asggg.png)
+
+    </div>
 
 
 If the variable goes above the threshold value, this may mean:
@@ -157,13 +189,21 @@ When the variable goes above the threshold value, then alarms are breached and i
 - Message size limit is 256KB, how to send large messages?
 - For this, use SQS Extended CLient (Java library)
 
+    <div class="img-center">
+
     ![](/img/docs/aws-sqs-extended-client.png)
+
+    </div>
 
 
 
 ## Decouple application tiers 
 
+<div class="img-center">
+
 ![](/img/docs/aws-sqs-decouple-app-tiers.png)
+
+</div>
 
 
 

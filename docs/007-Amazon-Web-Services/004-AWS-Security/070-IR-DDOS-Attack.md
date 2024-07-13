@@ -1,5 +1,5 @@
 ---
-title: "Managing Incident Response"
+title: "DDOS Attacks"
 description: "Detecting and remediating incidents"
 tags: [Cloud, AWS, Cloud, DevOps, Security, Certifications]
 sidebar_position: 70

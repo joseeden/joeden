@@ -26,7 +26,11 @@ It is a big data stream tool, which allows to stream application logs, metrics, 
 - Compatible with many streaming frameworks (Spark, NiFi, etc.)
 - Data is automatically replicated to 3 AZ
 
+    <div class="img-center"> 
+
     ![](/img/docs/aws-kinesissss.png)
+
+    </div>
 
 
 Kinesis offers 3 types of products:
@@ -57,7 +61,11 @@ Features:
 - The number of shards can evolve over time (reshard/merge).
 - **Records are ordered per shard!**
 
+    <div class="img-center"> 
+
     ![](/img/docs/aws-kinesis-streams-shardsss.png)
+
+    </div>
 
    
 
@@ -109,7 +117,11 @@ Features:
 - In order to reduce costs, we can use batching with PutRecords API.
 - It the limits are reached, we get a *ProvisionedThroughputException*.
 
+    <div class="img-center"> 
+
     ![](/img/docs/aws-kinesis-putrecordsss.png)
+
+    </div>
 
 
 
@@ -129,7 +141,11 @@ Features:
 - Kinesis Client Library (KCL) uses DynamoDB to checkpoint offsets.
 - KCL uses DynamoDB to track other workers and share work amongst shards.
 
+    <div class="img-center"> 
+
     ![](/img/docs/aws-kinesis-api-consumers.png)
+
+    </div>
 
 
    
@@ -159,7 +175,11 @@ aws kinesis help
 aws kinesis get-shard-iterator help  
 ```
 
+<div class="img-center"> 
+
 ![](/img/docs/aws-kinesis-cli-retrieverecords1.png)
+
+</div>
 
 Retrieves a shard iterator for a specified shard:
 
@@ -167,7 +187,11 @@ Retrieves a shard iterator for a specified shard:
 aws kinesis get-shard-iterator --stream-name <name> --shard-id <shard id> --shard-iterator-type TRIM_HORIZON 
 ```
 
+<div class="img-center"> 
+
 ![](/img/docs/aws-kinesis-cli-getshardddd.png)
+
+</div>
 
 
 Displays usage instructions, options, and examples:
@@ -176,7 +200,11 @@ Displays usage instructions, options, and examples:
 aws kinesis get-records help 
 ```
 
+<div class="img-center"> 
+
 ![](/img/docs/aws-kinesis-cli-getrecords.png)
+
+</div>
 
    
 
@@ -197,4 +225,8 @@ aws kinesis get-records help
 
 ## Ordering data into SQS 
 
+<div class="img-center"> 
+
 ![](/img/docs/aws-kinessi-ordering-into-sqs.png)
+
+</div>

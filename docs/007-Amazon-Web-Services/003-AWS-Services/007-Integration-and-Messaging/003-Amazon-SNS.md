@@ -21,8 +21,12 @@ To see the complete documentation, please go to: [AWS documentation](https://doc
 
 ## Simple Notification Service (SNS)
 
+<div class="img-center"> 
+
 |![](/img/docs/aws-snssss.png)|
 |-|
+
+</div>
 
 Features:
 
@@ -68,7 +72,11 @@ Features:
 
 ## SNS + SQS Fan Out
 
+<div class="img-center">
+
 ![](/img/docs/aws-sns-sqssss.png)
+
+</div>
 
 Features:
 
