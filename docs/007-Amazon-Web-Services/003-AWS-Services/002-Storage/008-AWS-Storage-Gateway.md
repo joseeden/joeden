@@ -38,7 +38,7 @@ Bridge between on-premise data and cloud data in S3
     - Volume Gateway
     - Tape Gateway
 
-![](/img/docs/aws-s3-storage-gw-choices.png)
+        ![](/img/docs/aws-s3-storage-gw-choices.png)
 
 
 ## Types of Storage Gateway
