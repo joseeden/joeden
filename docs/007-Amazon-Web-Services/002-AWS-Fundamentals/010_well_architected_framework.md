@@ -7,6 +7,13 @@ last_update:
   date: 4/30/2023
 ---
 
+:::info[NOTES]
+
+This is not an exhaustive documentation of all the existing AWS Services. These are summarized notes that I used for the AWS Certifications.
+
+To see the complete documentation, please go to: [AWS documentation](https://docs.aws.amazon.com/)</small>
+
+:::
 
 ## Overview 
 
