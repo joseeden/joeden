@@ -110,14 +110,6 @@ Version Control:
   label: 'Version Control'
   permalink: '/Version Control'
   description: 'Docs related to Version Control'
-Git:
-  label: 'Git'
-  permalink: '/Git'
-  description: 'Docs related to Git'
-Github:
-  label: 'Github'
-  permalink: '/Github'
-  description: 'Docs related to Github'
 Terminal:
   label: 'Terminal'
   permalink: '/Terminal'
