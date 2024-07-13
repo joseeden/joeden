@@ -1,10 +1,12 @@
 ---
-title: "AWS Security - Quick Starts"
-tags: [Cybersecurity]
+title: "AWS Security"
+description: "Quickstarts"
+tags: [Cloud, AWS, DevOps, Security, Certifications]
 sidebar_position: 1
 last_update:
-  date: 1/30/2024
+  date: 8/30/2020
 ---
+
 
 
 ## First Steps on Securing your AWS account

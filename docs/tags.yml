@@ -90,6 +90,10 @@ Cybersecurity:
   label: 'Cybersecurity'
   permalink: '/Cybersecurity'
   description: 'Docs related to Cybersecurity'
+Security:
+  label: 'Security'
+  permalink: '/Security'
+  description: 'Docs related to Security'
 Networking:
   label: 'Networking'
   permalink: '/Networking'
@@ -150,6 +154,10 @@ SRE:
   label: 'SRE'
   permalink: '/SRE'
   description: 'Docs related to SRE'
+Serverless:
+  label: 'Serverless'
+  permalink: '/Serverless'
+  description: 'Docs related to Serverless'
 Scrum:
   label: 'Scrum'
   permalink: '/Scrum'
