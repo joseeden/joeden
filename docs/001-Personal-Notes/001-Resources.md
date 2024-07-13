@@ -1,6 +1,6 @@
 ---
 title: "Resources"
-sidebar_position: 5
+sidebar_position: 1
 description: "Resources, bookmarks"
 tags: [Development, Terminal, DevOps, Linux, Cloud]
 last_update:

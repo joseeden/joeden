@@ -198,3 +198,7 @@ Messaging:
   label: 'Messaging'
   permalink: '/Messaging'
   description: 'Docs related to Messaging'
+Docusaurus:
+  label: 'Docusaurus'
+  permalink: '/Docusaurus'
+  description: 'Docs related to Docusaurus'
