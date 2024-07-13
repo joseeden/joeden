@@ -59,23 +59,23 @@ To see the complete documentation, please go to: [AWS documentation](https://doc
 - AWS service integration with S3, EFS, FSx for Windows servers.
 - Pay as you use product.
 
-**AWS DataSync Components**
+### Components
 
-Task
-- job within datasync
-- defines what is being synced how quickly
-- defines two locations involved in the job
+- **Task**
+    - job within datasync
+    - defines what is being synced how quickly
+    - defines two locations involved in the job
 
-Agent
-- software to read and write to on prem such as NFS or SMB
-- used to pull data off that store and move into AWS or vice versa
+- **Agent**
+    - software to read and write to on prem such as NFS or SMB
+    - used to pull data off that store and move into AWS or vice versa
 
-Location
-- every task has two locations FROM and TO
-- example locations:
-    - network file systems (NFS), common in Linux or Unix
-    - server message block (SMB), common in Windows environments
-    - AWS storage services (EFS, FSx, and S3)
+- **Location**
+    - every task has two locations FROM and TO
+    - example locations:
+        - network file systems (NFS), common in Linux or Unix
+        - server message block (SMB), common in Windows environments
+        - AWS storage services (EFS, FSx, and S3)
 
  
 
