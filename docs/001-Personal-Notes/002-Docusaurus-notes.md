@@ -79,3 +79,7 @@ import styles from '../../../src/css/styles.module.css';
   </TabItem>
 </Tabs> 
 ```
+
+Build and deploy. It should look like this:
+
+![](/gif/docs/changing-heading-colors-for-tabs.gif)
