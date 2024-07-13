@@ -91,17 +91,19 @@ Then CloudFormation creates those for you, in the right order, with the exact co
 
 ## Building Blocks
 
-- Templates components (one course section for each):
-    1. Resources: your AWS resources declared in the template (MANDATORY)
-    2. Parameters: the dynamic inputs for your template
-    3. Mappings: the static variables for your template
-    4. Outputs: References to what has been created
-    5. Conditionals: List of conditions to perform resource creation
-    6. Metadata
+Templates components (one course section for each):
 
-- Templates helpers:
-    1. References
-    2. Functions
+1. Resources: your AWS resources declared in the template (MANDATORY)
+2. Parameters: the dynamic inputs for your template
+3. Mappings: the static variables for your template
+4. Outputs: References to what has been created
+5. Conditionals: List of conditions to perform resource creation
+6. Metadata
+
+Templates helpers:
+
+1. References
+2. Functions
 
 ## Resources
 
