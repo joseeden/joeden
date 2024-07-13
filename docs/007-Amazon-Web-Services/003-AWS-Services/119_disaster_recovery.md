@@ -1,14 +1,10 @@
-<!-- # AWS Disaster Recovery
-
-> <small>This is not an exhaustive documentation of all the existing AWS Services. These are summarized notes for the AWS Certifications.<br>To see the complete documentation, please go to: [AWS documentation](https://docs.aws.amazon.com/)</small>
-
-- [Disaster](#disaster)
-- [RPO and RTO](#rpo-and-rto)
-- [Disaster Recovery Strategies](#disaster-recovery-strategies)
-- [Disaster Recovery Tips](#disaster-recovery-tips)
-- [On-Premise Strategy with AWS](#on-premise-strategy-with-aws)
-- [DMS - Database Migration Service](#dms---database-migration-service)
-- [AWS Schema Conversion Tool SCT](#aws-schema-conversion-tool-sct)
+<!-- ---
+title: "AWS Disaster Recovery"
+tags: [Cybersecurity]
+sidebar_position: 1
+last_update:
+  date: 1/30/2024
+---
 
 
 ## Disaster 
@@ -25,12 +21,12 @@
 - RPO - Recovery Point Objective: How often we create backups. Time between the RPO and the disaster is the data loss
 - RTO - Recovery Time Objective: The point in time when the recovery finishes. The time between the disaster and the RTO is downtime
 
-<small>[Back to the top](#aws-disaster-recovery)</small>
+  
 
 
 ## Disaster Recovery Strategies
 
-|![](../../Images/aws-dr-stratsgies-asterrto.png)|
+|![](/img/docs/aws-dr-stratsgies-asterrto.png)|
 |-|
 
 All strategies are available for Multi-region. 
@@ -38,7 +34,7 @@ All strategies are available for Multi-region.
 **Backup and Restore**
 - High RPO, cheap, easy to manage and accomplish
 
-|![](../../Images/aws-backuprestore-highrpo.png)|
+|![](/img/docs/aws-backuprestore-highrpo.png)|
 |-|
 
 **Pilot Light**
@@ -47,24 +43,24 @@ All strategies are available for Multi-region.
 - Similar to backup and restore strategy
 - Faster than backup and restore as critical system are already running
 
-|![](../../Images/aws-pilotlight-drrr.png)|
+|![](/img/docs/aws-pilotlight-drrr.png)|
 |-|
 
 **Warm Standby**
 - Full system is up and running but at a minimal size
 - Upon disaster we can scale to production load
 
-|![](../../Images/aws-warm-standby-drrrr.png)|
+|![](/img/docs/aws-warm-standby-drrrr.png)|
 |-|
 
 **Hot Site / Multi Site Approach**
 - Very low RTO - very expensive
 - Full production scale is running on the cloud
 
-|![](../../Images/aws-multisite-approach.png)|
+|![](/img/docs/aws-multisite-approach.png)|
 |-|
 
-<small>[Back to the top](#aws-disaster-recovery)</small>
+  
 
 
 ## Disaster Recovery Tips
@@ -92,7 +88,7 @@ All strategies are available for Multi-region.
 **Chaos**
 - Netflix has a "simian-army" randomly terminating EC2 instances
 
-<small>[Back to the top](#aws-disaster-recovery)</small>
+  
 
 
 ## On-Premise Strategy with AWS
@@ -118,7 +114,7 @@ All strategies are available for Multi-region.
 **AWS Server Migration Service (SMS)**
 - Incremental replication of on-premise live servers to AWS
 
-<small>[Back to the top](#aws-disaster-recovery)</small>
+  
 
 
 ## DMS - Database Migration Service
@@ -134,7 +130,7 @@ All strategies are available for Multi-region.
 
 ### DMS Sources and Targets
 
-|![](../../Images/aws-schematool-howitworksss.png)|
+|![](/img/docs/aws-schematool-howitworksss.png)|
 |-|
 
 **Sources**
@@ -153,7 +149,7 @@ All strategies are available for Multi-region.
 - Kinesis Data Streams
 - DocumentDB
 
-<small>[Back to the top](#aws-disaster-recovery)</small>
+  
 
 
 ## AWS Schema Conversion Tool (SCT)
@@ -162,5 +158,5 @@ All strategies are available for Multi-region.
 - We do not need to use SCT if we are migration from the same DB engine to the same DB engine
 
 
-<small>[Back to the top](#aws-disaster-recovery)</small>
+  
  -->

@@ -1,67 +1,10 @@
-<!-- 
-# AWS Serverless 
-
-> <small>This is not an exhaustive documentation of all the existing AWS Services. These are summarized notes for the AWS Certifications.<br>To see the complete documentation, please go to: [AWS documentation](https://docs.aws.amazon.com/)</small>
-
-
-- [What is Serverless](#what-is-serverless)
-- [Serverless in AWS](#serverless-in-aws)
-- [AWS Lambda](#aws-lambda)
-    - [Benefits](#benefits)
-    - [Supported Languages](#supported-languages)
-    - [AWS Lambda Integrations](#aws-lambda-integrations)
-    - [AWS Lambda Pricing](#aws-lambda-pricing)
-    - [AWS Lambda Limits - per region](#aws-lambda-limits---per-region)
-    - [AWS Lambda Configuration](#aws-lambda-configuration)
-    - [Concurrency](#concurrency)
-    - [Throttling](#throttling)
-    - [Retries and Dead Letter Queue DLQ](#retries-and-dead-letter-queue-dlq)
-    - [Monitoring and Tracing](#monitoring-and-tracing)
-    - [Best Practices](#best-practices)
-- [AWS Lambda@Edge](#aws-lambdaedge)
-- [Amazon DynamoDB](#amazon-dynamodb)
-    - [How DynamoDB works](#how-dynamodb-works)
-    - [Supported data types](#supported-data-types)
-    - [Provisioned Throughput](#provisioned-throughput)
-    - [DynamoDB DAX - DynamoDB Accelerator](#dynamodb-dax---dynamodb-accelerator)
-    - [DynamoDB Streams](#dynamodb-streams)
-    - [Concurrency](#concurrency)
-    - [Throttling](#throttling)
-    - [Basic APIs](#basic-apis)
-    - [Consistency Model](#consistency-model)
-    - [Primary Keys](#primary-keys)
-    - [New Features](#new-features)
-    - [Other Features](#other-features)
-- [Amazon API Gateway](#amazon-api-gateway)
-    - [Integrations](#integrations)
-    - [Mapping Templates](#mapping-templates)
-    - [Deployment Stages](#deployment-stages)
-        - [Stage variables](#stage-variables)
-        - [Canary Deployment](#canary-deployment)
-    - [Caching API Responses](#caching-api-responses)
-    - [Endpoint Types](#endpoint-types)
-    - [Logging, Monitoring, Tracing](#logging-monitoring-tracing)
-    - [API Gateway - Cross-Origin Resource Sharing](#api-gateway---cross-origin-resource-sharing)
-    - [Limit customer usage](#limit-customer-usage)
-        - [Usage Plans](#usage-plans)
-        - [API Keys](#api-keys)
-    - [Security](#security)
-        - [IAM](#iam)
-        - [Lambda Authorizer Custom Authorizer](#lambda-authorizer-custom-authorizer)
-        - [Cognito User Pools](#cognito-user-pools)
-- [AWS Cognito](#aws-cognito)
-    - [AWS Cognito User Pools](#aws-cognito-user-pools)
-    - [AWS Cognito Federated Identity Pools](#aws-cognito-federated-identity-pools)
-    - [AWS Cognito Sync - Deprecated](#aws-cognito-sync---deprecated)
-- [AWS SAM - Serverless Application Model](#aws-sam---serverless-application-model)
-- [Serverless Architectures](#serverless-architecture)
-    - [Mobile App: MyTodoList](#mobile-app-mytodolist)
-    - [Mobile App: REST API Layer](#mobile-app-rest-api-layer)
-    - [Mobile App: Giving users access to S3](#mobile-app-giving-users-access-to-s3)
-    - [Mobile App: High-read Throughput, Static data](#mobile-app-high-read-throughput-static-data)
-    - [Mobile App: Caching at the API Gateway](#mobile-app-caching-at-the-api-gateway)
-    - [Website: MyBlog.com](#website-myblogcom)
-
+<!-- ---
+title: "AWS Serverless "
+tags: [Cybersecurity]
+sidebar_position: 1
+last_update:
+  date: 1/30/2024
+---
 
 
 ## What is Serverless 
@@ -129,7 +72,7 @@ Main ones:
 - AWS Cognito
 
 
-<small>[Back to the top](#aws-serverless)</small>
+ 
 
 
 ### AWS Lambda Pricing
@@ -172,7 +115,7 @@ Configuration | Description
  IAM Execution Role | IAM Role used by the function |
 
 
-<small>[Back to the top](#aws-serverless)</small>
+ 
 
 
 ### Concurrency  
@@ -195,7 +138,7 @@ Configuration | Description
 - This makes it easy to debug what's wrong with the function
 
 
-<small>[Back to the top](#aws-serverless)</small>
+ 
 
 
 ### Monitoring and Tracing 
@@ -220,7 +163,7 @@ Configuration | Description
 - Don't attach a Lambda function to a VPC unless you have to
 
 
-<small>[Back to the top](#aws-serverless)</small>
+ 
 
 
 ## AWS Lambda@Edge
@@ -249,7 +192,7 @@ Used for running global Lambda functions alongside edge locations (for CDN for e
 - User tracking and analytics
 
 
-<small>[Back to the top](#aws-serverless)</small>
+ 
 
 
 ## Amazon DynamoDB
@@ -302,7 +245,7 @@ Amazon DynamoDB is a fully managed NoSQL database service that provides fast and
 - If there are no more burst credits, we may get a "_ProvisionedThroughputExceptions_" in which case it is advised to do exponential back-off retry
 
 
-<small>[Back to the top](#aws-serverless)</small>
+ 
 
 
 ### DynamoDB DAX - DynamoDB Accelerator
@@ -316,11 +259,11 @@ Amazon DynamoDB is a fully managed NoSQL database service that provides fast and
 - Multi AZ (3 nodes minimum recommended for production)
 - It is secure (Encryption at rest with KMC, VPC, IAM, CloudTrail)
 
-|![](../../Images/aws-dynamodb-dax.png)|
+|![](/img/docs/aws-dynamodb-dax.png)|
 |-|
 
 
-<small>[Back to the top](#aws-serverless)</small>
+ 
 
 
 ### DynamoDB Streams
@@ -341,11 +284,11 @@ Amazon DynamoDB is a fully managed NoSQL database service that provides fast and
 - This means you can ensure an item has not changed before altering it 
 - This makes DynamoDB optimistic locking/concurrency database 
 
-|![](../../Images/aws-dynamodb-concurrency.png)|
+|![](/img/docs/aws-dynamodb-concurrency.png)|
 |-|
 
 
-<small>[Back to the top](#aws-serverless)</small>
+ 
 
 
 ### Throttling 
@@ -413,7 +356,7 @@ Amazon DynamoDB is a fully managed NoSQL database service that provides fast and
 - For faster performance, use parallel scans 
 
 
-<small>[Back to the top](#aws-serverless)</small>
+ 
 
 
 ### Consistency Model 
@@ -426,11 +369,11 @@ Amazon DynamoDB is a fully managed NoSQL database service that provides fast and
     - Query 
     - Scan
 
-|![](../../Images/aws-ddb-consistency-model.png)|
+|![](/img/docs/aws-ddb-consistency-model.png)|
 |-|
 
 
-<small>[Back to the top](#aws-serverless)</small>
+ 
 
 
 ### Primary Keys 
@@ -441,7 +384,7 @@ Amazon DynamoDB is a fully managed NoSQL database service that provides fast and
 - Partition key must be diverse so that data is distributed 
 - Example: user_id for a users table 
 
-|![](../../Images/aws-ddb-option1.png)|
+|![](/img/docs/aws-ddb-option1.png)|
 |-|
 
 
@@ -454,10 +397,10 @@ Amazon DynamoDB is a fully managed NoSQL database service that provides fast and
     - user_id for partition key 
     - game_id for sort key
 
-|![](../../Images/aws-ddb-option2.png)|
+|![](/img/docs/aws-ddb-option2.png)|
 |-|
 
-<small>[Back to the top](#aws-serverless)</small>
+ 
 
 
 ### New Features
@@ -501,7 +444,7 @@ Amazon DynamoDB is a fully managed NoSQL database service that provides fast and
 - DMS can be used to migrate data to DynamoDB (from Mongo, Oracle, MySQL, st3, etc.)
 
 
-<small>[Back to the top](#aws-serverless)</small>
+ 
 
 
 ## Amazon API Gateway
@@ -522,7 +465,7 @@ Amazon API Gateway is an AWS service for creating, publishing, maintaining, moni
 
 ### Integrations
 
-|![](../../Images/aws-building-serverless-api.png)|
+|![](/img/docs/aws-building-serverless-api.png)|
 |-|
 
 **Outside of VPC**
@@ -543,7 +486,7 @@ Amazon API Gateway is an AWS service for creating, publishing, maintaining, moni
 - AWS Lambda in your VPC 
 - EC2 endpoints in yoru VPC 
 
-<small>[Back to the top](#aws-serverless)</small>
+ 
 
 
 ### Mapping Templates 
@@ -571,11 +514,11 @@ Amazon API Gateway is an AWS service for creating, publishing, maintaining, moni
     - Parameter mapping templates 
 - Can also be used to indicate corresponding Lambda alias 
 
-|![](../../Images/aws-apigw-stage-vars.png)|
+|![](/img/docs/aws-apigw-stage-vars.png)|
 |-|
 
 
-<small>[Back to the top](#aws-serverless)</small>
+ 
 
 
 #### Canary Deployment
@@ -587,7 +530,7 @@ Amazon API Gateway is an AWS service for creating, publishing, maintaining, moni
 
 
 <p>
-<img width=500 src="../../Images/aws-apigw-canarydeployment.png">
+![](/img/docs/aws-apigw-canarydeployment.png)
 </p>
 
 
@@ -601,11 +544,11 @@ Amazon API Gateway is an AWS service for creating, publishing, maintaining, moni
 - Entire cache can be flused or invalidated immediately 
 - Clients can invalidate the cache using the header **Cache-Control: max-age=0**
 
-|![](../../Images/aws-apigw-cache-api-responses.png)|
+|![](/img/docs/aws-apigw-cache-api-responses.png)|
 |-|
 
 
-<small>[Back to the top](#aws-serverless)</small>
+ 
 
 
 ### Endpoint Types
@@ -642,7 +585,7 @@ Amazon API Gateway is an AWS service for creating, publishing, maintaining, moni
 - Enable tracing to get extra information about requests 
 - X-Ray + API Gateway + AWS Lambda gives you the full picture 
 
-<small>[Back to the top](#aws-serverless)</small>
+ 
 
 
 ### API Gateway - Cross-Origin Resource Sharing 
@@ -668,7 +611,7 @@ Amazon API Gateway is an AWS service for creating, publishing, maintaining, moni
 - Associate with usage plans 
 - Track usage for API keys
 
-<small>[Back to the top](#aws-serverless)</small>
+ 
 
 
 ### Security
@@ -683,10 +626,10 @@ Amazon API Gateway is an AWS service for creating, publishing, maintaining, moni
 - Good practice to provide access within own infrastructure
 - It leverages Sig v4 signatures by adding the signature to a header 
 
-|![](../../Images/aws-apigw-sec-iam.png)|
+|![](/img/docs/aws-apigw-sec-iam.png)|
 |-|
 
-<small>[Back to the top](#aws-serverless)</small>
+ 
 
 
 #### Lambda Authorizer (Custom Authorizer)
@@ -700,10 +643,10 @@ Amazon API Gateway is an AWS service for creating, publishing, maintaining, moni
 - The lambda must return an IAM policy for the user
 - We pay per lambda invocation
 
-|![](../../Images/aws-apigw-sec-lambda-auth.png)|
+|![](/img/docs/aws-apigw-sec-lambda-auth.png)|
 |-|
 
-<small>[Back to the top](#aws-serverless)</small>
+ 
 
 
 #### Cognito User Pools
@@ -714,11 +657,11 @@ Amazon API Gateway is an AWS service for creating, publishing, maintaining, moni
 - Cognito only helps with authentication, not authorization
 - Authorization in the backend must be implemented
 
-|![](../../Images/aws-apigw-congnitouserpools.png)|
+|![](/img/docs/aws-apigw-congnitouserpools.png)|
 |-|
 
 
-<small>[Back to the top](#aws-serverless)</small>
+ 
 
 
 ## AWS Cognito 
@@ -749,7 +692,7 @@ Cognito is used for giving users an identity to be able to communicate with a sy
 - Sends back a JSON Web Token (JWT)
 - Can be integrated with API Gateway for authentication
 
-|![](../../Images/aws-cognito-userpools.png)|
+|![](/img/docs/aws-cognito-userpools.png)|
 |-|
 
 
@@ -762,7 +705,7 @@ Cognito is used for giving users an identity to be able to communicate with a sy
 - Examples:
     - Provide temporary access to write to a S3 bucket using Facebook login
 
-|![](../../Images/aws-cognito-identitypool.png)|
+|![](/img/docs/aws-cognito-identitypool.png)|
 |-|    
 
 ### AWS Cognito Sync - Deprecated
@@ -774,7 +717,7 @@ Cognito is used for giving users an identity to be able to communicate with a sy
 - Data is stored in datasets, each dataset can have up to 1MB of data. We can have up to 20 datasets to synchronize
 
 
-<small>[Back to the top](#aws-serverless)</small>
+ 
 
 
 ## AWS SAM - Serverless Application Model
@@ -793,7 +736,7 @@ It is framework for developing and deploying serverless applications in AWS.
 
 Here’s an example of a basic serverless application. This application processes requests to get all items from a database through an HTTP request. 
 
-![](../../Images/aws-sam-deploy.png)
+![](/img/docs/aws-sam-deploy.png)
 
 It consists of the following parts:
 
@@ -836,41 +779,41 @@ Resources:
 To learn more, please see [What is the AWS Serverless Application Model (AWS SAM)?](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html)
 
 
-<small>[Back to the top](#aws-serverless)</small>
+ 
 
 
 ## Serverless Architecture 
 
 ### Mobile App: MyTodoList 
 
-|![](../../Images/aws-serverless-solarch1.png)|
+|![](/img/docs/aws-serverless-solarch1.png)|
 |-|
 
 ### Mobile App: REST API Layer
 
-|![](../../Images/aws-serverless-solarch2.png)|
+|![](/img/docs/aws-serverless-solarch2.png)|
 |-|
 
 ### Mobile App: Giving users access to S3 
 
-|![](../../Images/aws-serverless-solarch3.png)|
+|![](/img/docs/aws-serverless-solarch3.png)|
 |-|
 
 ### Mobile App: High-read Throughput, Static data 
 
-|![](../../Images/aws-serverless-solrach4.png)|
+|![](/img/docs/aws-serverless-solrach4.png)|
 |-|
 
 ### Mobile App: Caching at the API Gateway 
 
-|![](../../Images/aws-serverless-solarch5.png)|
+|![](/img/docs/aws-serverless-solarch5.png)|
 |-|
 
 ### Website: MyBlog.com 
 
-|![](../../Images/aws-serverless-solarch6.png)|
+|![](/img/docs/aws-serverless-solarch6.png)|
 |-|
 
 
-<small>[Back to the top](#aws-serverless)</small>
+ 
  -->

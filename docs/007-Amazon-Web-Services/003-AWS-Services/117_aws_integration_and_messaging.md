@@ -1,51 +1,17 @@
-<!-- 
-# AWS Integration and Messaging 
-
-> <small>This is not an exhaustive documentation of all the existing AWS Services. These are summarized notes for the AWS Certifications.<br>To see the complete documentation, please go to: [AWS documentation](https://docs.aws.amazon.com/)</small>
-
-- [Integration and Messaging](#integration-and-messaging)
-- [SQS - Simple Queue Service](#sqs---simple-queue-service)
-    - [SQS - Standard Queue](#sqs---standard-queue)
-    - [SQS - Delay Queue](#sqs---delay-queue)
-    - [SQS - FIFO Queue](#sqs---fifo-queue)
-    - [Producing Messages](#producing-messages)
-    - [Consuming messages](#consuming-messages)
-    - [Message Visibility Timeout](#message-visibility-timeout)
-    - [Dead Letter Queues](#dead-letter-queues)
-    - [Long Polling](#long-polling)
-    - [Message Consumption Flow](#message-consumption-flow)
-    - [SQS With Auto Scaling Group](#sqs-with-auto-scaling-group)
-    - [SQS Extended Client](#sqs-extended-client)
-    - [Decouple application tiers](#decouple-application-tiers)
-    - [Data Ordering in SQS](#data-ordering-in-sqs)
-    - [Security](#security)
-- [SNS - Simple Notification Service](#sns---simple-notification-service)
-    - [AWS SNS](#aws-sns)
-    - [Integrations](#integrations)
-    - [Publishing events](#publishing-events)
-    - [SNS + SQS Fan Out](#sns--sqs-fan-out)
-- [AWS Kinesis](#aws-kinesis)
-    - [Kinesis Streams](#kinesis-streams)
-    - [Kinesis Data Firehose](#kinesis-data-firehose)
-    - [Kinesis Data Analytics](#kinesis-data-analytics)
-    - [AWS Kinesis API](#aws-kinesis-api)
-        - [Put Records](#put-records)
-        - [Exceptions](#exceptions)
-        - [Consumers](#consumers)
-    - [AWS Kinesis CLI](#aws-kinesis-cli)
-    - [Security](#security)
-    - [Ordering data into Kinesis](#ordering-data-into-kinesis)
-    - [Ordering data into SQS](#ordering-data-into-sqs)
-- [Summary - SQS vs SNS vs Kinesis](#summary---sqs-vs-sns-vs-kinesis)
-- [Amazon MQ](#amazon-mq)
-
+<!-- ---
+title: "AWS Integration and Messaging "
+tags: [Cybersecurity]
+sidebar_position: 1
+last_update:
+  date: 1/30/2024
+---
 
 
 ## Integration and Messaging
 
 When we start deploying multiple applications, they will inevitable result in the necessity to communicate with one another 
 
-|![](../../Images/aws-integ-msging.png)|
+|![](/img/docs/aws-integ-msging.png)|
 |-|
 
 - There are 2 types of integration communication patterns:
@@ -60,12 +26,12 @@ When we start deploying multiple applications, they will inevitable result in th
     - SNS: pub/sub model
     - Kinesis: real-time streaming model
 
-<small>[Back to the top](#aws-integration-and-messaging)</small>
+   
 
 
 ## SQS - Simple Queue Service
 
-|![](../../Images/aws-sqs.png)|
+|![](/img/docs/aws-sqs.png)|
 |-|
 
 ### SQS - Standard Queue
@@ -98,10 +64,10 @@ When we start deploying multiple applications, they will inevitable result in th
 - Exactly-once send capability (by activating content-based deduplication)
 - The name of the FIFO queue must end with the `.fifo`
 
-|![](../../Images/aws-sqs-fifo-queueueue.png)|
+|![](/img/docs/aws-sqs-fifo-queueueue.png)|
 |-|
 
-<small>[Back to the top](#aws-integration-and-messaging)</small>
+   
 
 
 ### Producing Messages
@@ -111,7 +77,7 @@ When we start deploying multiple applications, they will inevitable result in th
 - Message retention: default 4 days, up to 14 days
 - SQS standard has unlimited throughput
 
-|![](../../Images/aws-sqs-producemsgs.png)|
+|![](/img/docs/aws-sqs-producemsgs.png)|
 |-|
 
 ### Consuming messages
@@ -126,11 +92,11 @@ When we start deploying multiple applications, they will inevitable result in th
 - SQS with Auto Scaling Group:
     - We can scale based on the **ApproximateNumberOfMessages** metric by creating a CloudWatch alarm
 
-|![](../../Images/aws-sqs-consumemssgs.png)|
+|![](/img/docs/aws-sqs-consumemssgs.png)|
 |-|
 
 
-<small>[Back to the top](#aws-integration-and-messaging)</small>
+   
 
 
 ### Message Visibility Timeout
@@ -152,10 +118,10 @@ When we start deploying multiple applications, they will inevitable result in th
 - DLQs are useful for debugging
 - We have to make sure the messages are processed in DLQ before expiring. It is not a good idea to set a short expiration time for the DLQ
 
-![](../../Images/aws-sqs-dlqsss.png)
+![](/img/docs/aws-sqs-dlqsss.png)
 
 
-<small>[Back to the top](#aws-integration-and-messaging)</small>
+   
 
 
 ### Long Polling 
@@ -165,18 +131,18 @@ When we start deploying multiple applications, they will inevitable result in th
 - Wait time can be between 1 sec to 20 sec 
 - Long polling is preferable than short polling 
 
-|![](../../Images/aws-sqs-long-pollinggggggg.png)|
+|![](/img/docs/aws-sqs-long-pollinggggggg.png)|
 |-|
 
 ### Message Consumption Flow
 
-|![](../../Images/aws-sqs-consumption-flow.png)|
+|![](/img/docs/aws-sqs-consumption-flow.png)|
 |-|
 
 
 ### SQS With Auto Scaling Group
 
-|![](../../Images/aws-sqs-asggg.png)|
+|![](/img/docs/aws-sqs-asggg.png)|
 |-|
 
 Allows scaling the number of EC2 instances based on the available messages in the queue
@@ -197,7 +163,7 @@ When the variable goes above the threshold value, then alarms are breached and i
 - Cloudwatch alarm can be assigned with a scaling policy on your ASG. 
 - It can scale your ASG accordingly.
 
-<small>[Back to the top](#aws-integration-and-messaging)</small>
+   
 
 
 ### SQS Extended Client 
@@ -205,16 +171,16 @@ When the variable goes above the threshold value, then alarms are breached and i
 - Message size limit is 256KB, how to send large messages?
 - For this, use SQS Extended CLient (Java library)
 
-|![](../../Images/aws-sqs-extended-client.png)|
+|![](/img/docs/aws-sqs-extended-client.png)|
 |-|
 
 
 ### Decouple application tiers 
 
-|![](../../Images/aws-sqs-decouple-app-tiers.png)|
+|![](/img/docs/aws-sqs-decouple-app-tiers.png)|
 |-|
 
-<small>[Back to the top](#aws-integration-and-messaging)</small>
+   
 
 
 ### Data Ordering in SQS
@@ -244,12 +210,12 @@ When the variable goes above the threshold value, then alarms are breached and i
 
 
 
-<small>[Back to the top](#aws-integration-and-messaging)</small>
+   
 
 
 ## SNS - Simple Notification Service
 
-|![](../../Images/aws-snssss.png)|
+|![](/img/docs/aws-snssss.png)|
 |-|
 
 ### AWS SNS 
@@ -274,7 +240,7 @@ When the variable goes above the threshold value, then alarms are breached and i
 - S3 (bucket events)
 - CloudFormation (state changes)
 
-<small>[Back to the top](#aws-integration-and-messaging)</small>
+   
 
 
 ### Publishing events 
@@ -292,12 +258,12 @@ When the variable goes above the threshold value, then alarms are breached and i
 - Publish to the platform endpoint
 - Works with Google GCM, Apple APNS, Amazon ADM
 
-<small>[Back to the top](#aws-integration-and-messaging)</small>
+   
 
 
 ### SNS + SQS Fan Out
 
-|![](../../Images/aws-sns-sqssss.png)|
+|![](/img/docs/aws-sns-sqssss.png)|
 |-|
 
 - Send a message to multiple SQS queues using SNS
@@ -315,12 +281,12 @@ When the variable goes above the threshold value, then alarms are breached and i
 - In case we want to send the same S3 event to many SQS queues, we must use SNS fan-out
 
 
-<small>[Back to the top](#aws-integration-and-messaging)</small>
+   
 
 
 ## AWS Kinesis
 
-|![](../../Images/aws-kinesissss.png)|
+|![](/img/docs/aws-kinesissss.png)|
 |-|
 
 It is a big data stream tool, which allows to stream application logs, metrics, IoT data, click streams, etc.
@@ -333,7 +299,7 @@ It is a big data stream tool, which allows to stream application logs, metrics, 
     - **Kinesis Analytics**: perform real-time analytics on streams using SQL
     - **Kinesis Firehose**: load streams into S3, Redshift, ElasticSearch
 
-<small>[Back to the top](#aws-integration-and-messaging)</small>
+   
 
 
 ### Kinesis Streams
@@ -347,7 +313,7 @@ It is a big data stream tool, which allows to stream application logs, metrics, 
 
 **Kinesis Stream Shards**
 
-|![](../../Images/aws-kinesis-streams-shardsss.png)|
+|![](/img/docs/aws-kinesis-streams-shardsss.png)|
 |-|
 
 - One stream is made of many different shards
@@ -358,7 +324,7 @@ It is a big data stream tool, which allows to stream application logs, metrics, 
 - The number of shards can evolve over time (reshard/merge)
 - **Records are ordered per shard!**
 
-<small>[Back to the top](#aws-integration-and-messaging)</small>
+   
 
 
 ### Kinesis Data Firehose
@@ -384,7 +350,7 @@ It is a big data stream tool, which allows to stream application logs, metrics, 
     - Scales automatically
     - It provides no data storage
 
-<small>[Back to the top](#aws-integration-and-messaging)</small>
+   
 
 
 ### Kinesis Data Analytics
@@ -409,10 +375,10 @@ It is a big data stream tool, which allows to stream application logs, metrics, 
 - In order to reduce costs, we can use batching with PutRecords API
 - It the limits are reached, we get a *ProvisionedThroughputException*
 
-|![](../../Images/aws-kinesis-putrecordsss.png)|
+|![](/img/docs/aws-kinesis-putrecordsss.png)|
 |-|
 
-<small>[Back to the top](#aws-integration-and-messaging)</small>
+   
 
 
 #### Exceptions
@@ -431,10 +397,10 @@ It is a big data stream tool, which allows to stream application logs, metrics, 
 - Kinesis Client Library (KCL) uses DynamoDB to checkpoint offsets
 - KCL uses DynamoDB to track other workers and share work amongst shards
 
-|![](../../Images/aws-kinesis-api-consumers.png)|
+|![](/img/docs/aws-kinesis-api-consumers.png)|
 |-|
 
-<small>[Back to the top](#aws-integration-and-messaging)</small>
+   
 
 
 ### AWS Kinesis CLI 
@@ -461,25 +427,25 @@ aws kinesis help
 aws kinesis get-shard-iterator help  
 ```
 
-|![](../../Images/aws-kinesis-cli-retrieverecords1.png)|
+|![](/img/docs/aws-kinesis-cli-retrieverecords1.png)|
 |-|
 
 ```bash
 aws kinesis get-shard-iterator --stream-name <name> --shard-id <shard id> --shard-iterator-type TRIM_HORIZON 
 ```
 
-|![](../../Images/aws-kinesis-cli-getshardddd.png)|
+|![](/img/docs/aws-kinesis-cli-getshardddd.png)|
 |-|
 
 ```bash
 aws kinesis get-records help 
 ```
 
-|![](../../Images/aws-kinesis-cli-getrecords.png)|
+|![](/img/docs/aws-kinesis-cli-getrecords.png)|
 |-|
 
 
-<small>[Back to the top](#aws-integration-and-messaging)</small>
+   
 
 
 ### Security
@@ -498,7 +464,7 @@ aws kinesis get-records help
 
 ### Ordering data into SQS 
 
-![](../../Images/aws-kinessi-ordering-into-sqs.png)
+![](/img/docs/aws-kinessi-ordering-into-sqs.png)
 
 ## Summary - SQS vs SNS vs Kinesis
 
@@ -530,7 +496,7 @@ aws kinesis get-records help
 - Data expires after X days
 - Must provision throughput
 
-<small>[Back to the top](#aws-integration-and-messaging)</small>
+   
 
 
 ## Amazon MQ 
@@ -544,5 +510,5 @@ aws kinesis get-records help
 - It has both queue anf topic features
 
 
-<small>[Back to the top](#aws-integration-and-messaging)</small>
+   
  -->

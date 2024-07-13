@@ -1,13 +1,10 @@
-<!-- 
-# AWS Security - Quick Starts
-
-
-- [First Steps on Securing your AWS account](#first-steps-on-securing-your-aws-account)
-- [AWS Own Security Practices](#aws-own-security-practices)
-- [AWS Shared Responsibility Model](#aws-shared-responsibility-model)
-- [AWS Config](#aws-config)
-- [AWS CloudTrail](#aws-cloudtrail)
-- [Data Control](#data-control)
+<!-- ---
+title: "AWS Security - Quick Starts"
+tags: [Cybersecurity]
+sidebar_position: 1
+last_update:
+  date: 1/30/2024
+---
 
 
 ## First Steps on Securing your AWS account
@@ -31,7 +28,7 @@ Resources:
 
 ## AWS Shared Responsibility Model 
 
-![](../../Images/awssharedresponsbilitymodel.png)
+![](/img/docs/awssharedresponsbilitymodel.png)
 
 Security and compliance is a shared responsibility between AWS and the customer.
 
@@ -53,11 +50,11 @@ Security and compliance is a shared responsibility between AWS and the customer.
 
 AWS categorized the services into three:
 
-![](../../Images/awssecuritycategoriesofawsservices.png)
+![](/img/docs/awssecuritycategoriesofawsservices.png)
 
 Shared responsibility chart:
 
-![](../../Images/awssharedresponsibilitychart.png)
+![](/img/docs/awssharedresponsibilitychart.png)
 
 ## AWS Config 
 

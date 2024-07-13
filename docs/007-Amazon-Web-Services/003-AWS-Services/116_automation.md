@@ -1,64 +1,10 @@
-<!-- # AWS Automation 
-
-> <small>This is not an exhaustive documentation of all the existing AWS Services. These are summarized notes for the AWS Certifications.<br>To see the complete documentation, please go to: [AWS documentation](https://docs.aws.amazon.com/)</small>
-
-
-- [AWS CLI: Command Line Interface](#aws-cli-command-line-interface)
-- [SDK: Software Development Kit](#sdk-software-development-kit)
-    - [Key points](#key-points)
-    - [SDK Credentials Security](#sdk-credentials-security)
-    - [Exponential Backoff](#exponential-backoff)
-- [AWS Elastic Beanstalk](#aws-elastic-beanstalk)
-    - [Elastic Beanstalk Under the Hood](#elastic-beanstalk-under-the-hood)
-    - [Deployment Modes](#deployment-modes)
-    - [Deployment Updates](#deployment-updates)
-    - [Elastic Beanstalk CLI](#elastic-beanstalk-cli)
-    - [Elastic Beanstalk Lifecycle Policy](#elastic-beanstalk-lifecycle-policy)
-    - [Elastic Beanstalk Extensions](#elastic-beanstalk-extensions)
-    - [Elastic Beanstalk Cloning and Migrations](#elastic-beanstalk-cloning-and-migrations)
-    - [Elastic Beanstalk and Docker](#elastic-beanstalk-and-docker)
-    - [Elastic Beanstalk and HTTPS](#elastic-beanstalk-and-https)
-- [AWS CloudFormation](#aws-cloudformation)
-    - [Benefits of CloudFormation](#benefits-of-cloudformation)
-    - [How CloudFormation works](#how-cloudformation-works)
-    - [Deploying CloudFormation templates](#deploying-cloudformation-templates)
-    - [CloudFormation Stacks and StackSets](#cloudformation-stacks-and-stacksets)
-    - [CloudFormation Building Blocks](#cloudformation-building-blocks)
-    - [CloudFormation Resources](#cloudformation-resources)
-    - [CloudFormation Parameters](#cloudformation-parameters)
-    - [CloudFormation Mappings](#cloudformation-mappings)
-    - [When would you use Mapping vs. Parameters?](#when-would-you-use-mapping-vs-parameters)
-    - [CloudFormation Outputs](#cloudformation-outputs)
-    - [Cross Stack Reference](#cross-stack-reference)
-    - [CloudFormation Conditions](#cloudformation-conditions)
-    - [CloudFormation Transforms](#cloudformation-transforms)
-    - [CloudFormation Intrinsic Functions](#cloudformation-intrinsic-functions)
-    - [CloudFormation Rollbacks](#cloudformation-rollbacks)
-- [Continuous Integration / Continuous Delivery](#continuous-integration--continuous-delivery---basics)
-    - [Why use CICD?](#why-use-cicd)
-    - [AWS Services for CICD](#aws-services-for-cicd)
-- [AWS CodeCommit](#aws-codecommit)
-    - [Github vs. CodeCommit](#github-vs-codecommit)
-    - [AWS CodeCommit Security](#aws-codecommit-security)
-    - [AWS CodeCommit Notifications](#aws-codecommit-notifications)
-- [AWS CodeBuild](#aws-codebuild)
-    - [CodeBuild Supported Environments](#codebuild-supported-environments)
-    - [How does CodeBuild work?](#how-does-codebuild-work)
-    - [CodeBuild BuildSpec](#codebuild-buildspec)
-    - [CodeBuild Local Build](#codebuild-local-build)
-- [AWS CodeDeploy](#aws-codedeploy)
-    - [CodeDeploy - How it works](#codedeploy---how-it-works)
-    - [CodeDeploy - Additional information](#codedeploy---additional-information)
-    - [CodeDeploy - Primary Components](#codedeploy---primary-components)
-    - [CodeDeploy AppSpec](#codedeploy-appspec)
-    - [CodeDeploy Deployment Config](#codedeploy-deployment-config)
-    - [Deployment types](#deployment-types)
-    - [CodeDeploy to EC2](#codedeploy-to-ec2)
-    - [CodeDeploy to ASG](#codedeploy-to-asg)
-    - [CodeDeploy Rollbacks](#codedeploy-rollbacks)
-- [AWS CodePipeline](#aws-codepipeline)
-    - [CodePipeline Artifacts](#codepipeline-artifacts)
-    - [CodePipeline Troubleshooting](#codepipeline-troubleshooting)
+<!-- ---
+title: "AWS Automation"
+tags: [Cybersecurity]
+sidebar_position: 1
+last_update:
+  date: 1/30/2024
+---
 
 
 ## AWS CLI: Command Line Interface
@@ -101,7 +47,7 @@ If you don't specify the aws profile, the commands will be executed to your **de
     ```
 - your IAM user must have the correct permissions to use this command by adding the `STS` service to your policy
 
-<small>[Back to the top](#aws-automation)</small>
+  
 
 
 
@@ -141,11 +87,11 @@ Official SDKs:
 - These apply to rate limited API
 - Retry mechanism is included in SDK API calls
 
-|![](../../Images/aws-sdk-exponentialbackoff.png)|
+|![](/img/docs/aws-sdk-exponentialbackoff.png)|
 |-|
 
 
-<small>[Back to the top](#aws-automation)</small>
+  
 
 
 ## AWS Elastic Beanstalk
@@ -204,10 +150,10 @@ AWS Elastic Beanstalk is a developer centric view of deploying application on AW
 **High Availability with Load Balancer**
 - Great for production, we have an ASG across multiple AZs
 
-|![](../../Images/aws-elasticbeanstalk-deployment-modes.png)|
+|![](/img/docs/aws-elasticbeanstalk-deployment-modes.png)|
 |-|
 
-<small>[Back to the top](#aws-automation)</small>
+  
 
 
 ### Deployment Updates
@@ -217,7 +163,7 @@ AWS Elastic Beanstalk is a developer centric view of deploying application on AW
 - No additional cost is applied while deploying
 
 <p align=center>
-<img width=350 src="../../Images/awsdepl-allatonce.png">
+![](/img/docs/awsdepl-allatonce.png)
 </p>
 
 
@@ -228,7 +174,7 @@ AWS Elastic Beanstalk is a developer centric view of deploying application on AW
 - No additional cost is encountered during deployment
 
 <p align=center>
-<img width=600 src="../../Images/aws-depl-rollingdeplyyyy.png">
+![](/img/docs/aws-depl-rollingdeplyyyy.png)
 </p>
 
 
@@ -239,7 +185,7 @@ AWS Elastic Beanstalk is a developer centric view of deploying application on AW
 - Minor additional cost may be encountered since the additional batch will be present until the deployment is finished.
 
 <p align=center>
-<img width=600 src="../../Images/aws-depl-addtionalbatchesss.png">
+![](/img/docs/aws-depl-addtionalbatchesss.png)
 </p>
 
 
@@ -250,7 +196,7 @@ AWS Elastic Beanstalk is a developer centric view of deploying application on AW
 - The additional cost encountered while deploying is the highest compared to other deployment types.
 
 <p align=center>
-<img width=500 src="../../Images/aws-depl-immutableeee.png">
+![](/img/docs/aws-depl-immutableeee.png)
 </p>
 
 
@@ -264,11 +210,11 @@ AWS Elastic Beanstalk is a developer centric view of deploying application on AW
 - This is a manual feature, it's not directly embedded in EB
 
 <p align=center>
-<img width=500 src="../../Images/aws-blueeegreen-deplll.png">
+![](/img/docs/aws-blueeegreen-deplll.png)
 </p>
 
 
-<small>[Back to the top](#aws-automation)</small>
+  
 
 
 ### Elastic Beanstalk CLI
@@ -311,7 +257,7 @@ AWS Elastic Beanstalk is a developer centric view of deploying application on AW
 - Resources managed by .ebextensions get deleted if the environment goes away
 - The .ebextensions folder goes to the root of your project
 
-<small>[Back to the top](#aws-automation)</small>
+  
 
 
 ### Elastic Beanstalk Cloning and Migrations
@@ -338,7 +284,7 @@ AWS Elastic Beanstalk is a developer centric view of deploying application on AW
     5. Terminate the old EB stack (RDS wont be deleted because of the protection)
     6. Delete CloudFormation stack (it will be in DELETE_FAILED state)
 
-<small>[Back to the top](#aws-automation)</small>
+  
 
 
 ### Elastic Beanstalk and Docker
@@ -360,7 +306,7 @@ AWS Elastic Beanstalk is a developer centric view of deploying application on AW
     - Dockerrun.aws.json is used to generate the ECS task definition
     - Docker images should be pre-build and stored in ECR, DockerHub, etc.
 
-<small>[Back to the top](#aws-automation)</small>
+  
 
 
 ### Elastic Beanstalk and HTTPS
@@ -374,7 +320,7 @@ AWS Elastic Beanstalk is a developer centric view of deploying application on AW
 - Or ALB can be configured with a rule as well
 - Health checks should ne be redirected from the ALB
 
-<small>[Back to the top](#aws-automation)</small>
+  
 
 
 
@@ -651,7 +597,7 @@ For example, within a CloudFormation template, you want to:
 - AWS CodeBuild: To build and test code
 - AWS CodeDeploy: deploying code to EC2 fleets (not Beanstalk)
 
-![](../../Images/aws-tech-stack-for-cicd.png)
+![](/img/docs/aws-tech-stack-for-cicd.png)
 
 
 ## AWS CodeCommit
@@ -765,7 +711,7 @@ AWS CodeBuild is a fully managed continuous integration service that compiles so
 
 ### How does CodeBuild work?
 
-|![](../../Images/aws-codebuildworkshow.png)|
+|![](/img/docs/aws-codebuildworkshow.png)|
 |-|
 
 - Two ways to run CodeBuild
@@ -812,7 +758,7 @@ AWS CodeDeploy is a fully managed deployment service that automates software dep
 - There are several ways to handle deployments using open source tools (Ansible, Terraform, Chef, Puppet, etc...)
 - CodeDeploy is the alternative to these tools
 
-|![](../../Images/aws-codedeployhowitworks.png)|
+|![](/img/docs/aws-codedeployhowitworks.png)|
 |-|
 
 ### CodeDeploy - How it works
@@ -886,7 +832,7 @@ AWS CodeDeploy is a fully managed deployment service that automates software dep
 
 **In place deployment**
 
-|![](../../Images/aws-coddeploy-halftatatime.png)|
+|![](/img/docs/aws-coddeploy-halftatatime.png)|
 |-|
 
 **Blue / Green Deployment**
@@ -894,7 +840,7 @@ AWS CodeDeploy is a fully managed deployment service that automates software dep
 - new auto scaling group of instances created (green)
 - if it passes the health checks, version 1 (original asg) is deleted (blue)
 
-|![](../../Images/aws-coddeploybluegreen.png)|
+|![](/img/docs/aws-coddeploybluegreen.png)|
 |-|
 
 ### CodeDeploy to EC2
@@ -947,7 +893,7 @@ AWS CodePipeline is a fully managed continuous delivery service that helps you a
 
 When you first use the CodePipeline console in a region to create a pipeline, CodePipeline automatically generates this S3 bucket in the AWS region
 
-|![](../../Images/aws-codepipelineartifacts.png)|
+|![](/img/docs/aws-codepipelineartifacts.png)|
 |-|
 
 ### CodePipeline Troubleshooting

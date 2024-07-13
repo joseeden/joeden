@@ -1,13 +1,10 @@
-<!-- 
-# AWS Container Services 
-
-
-> <small>This is not an exhaustive documentation of all the existing AWS Services. These are summarized notes for the AWS Certifications.<br>To see the complete documentation, please go to: [AWS documentation](https://docs.aws.amazon.com/)</small>
-
-
-- [Amazon Elastic Container service ECS](#amazon-elastic-container-service-ecs)
-- [Amazon Elastic Container Registry ECR](#amazon-elastic-container-registry-ecr)
-- [Amazon Elastic Kubernetes Service EKS](#amazon-elastic-kubernetes-service-eks)
+<!-- ---
+title: "AWS Container Services "
+tags: [Cybersecurity]
+sidebar_position: 1
+last_update:
+  date: 1/30/2024
+---
 
 
 ## Amazon Elastic Container service (ECS)
@@ -35,10 +32,10 @@ ECS is container orchestration service
 - ECS tasks + definition: containers running to create the application
 - ECS IAM roles: roles assigned to ECS tasks
 
-![](../../Images/aws-ecs-conceptssss.png)
+![](/img/docs/aws-ecs-conceptssss.png)
 
 
-<small>[Back to the top](#aws-container-services)</small>
+     
 
 
 ### ECS Setup and Config file
@@ -60,11 +57,11 @@ ECS is container orchestration service
     - Maximize utilization of CPU cores
     - Ability to perform rolling updates without impacting application uptime
 
-![](../../Images/aws-ec-alb-intergationss.png)    
+![](/img/docs/aws-ec-alb-intergationss.png)    
 
 
 
-<small>[Back to the top](#aws-container-services)</small>
+     
 
 
 ### ECS-IAM Task Roles
@@ -74,7 +71,7 @@ ECS is container orchestration service
 - ECS IAM task role: role dedicated to each task separately
 - Define a tas role: we can use the `taskRoleArn` parameter in the task definition
 
-![](../../Images/aws-ec2-iam-taskroless.png)
+![](/img/docs/aws-ec2-iam-taskroless.png)
 
 ### Fargate
 
@@ -84,7 +81,7 @@ ECS is container orchestration service
 - To scale we just have to increase the task number
 
 
-<small>[Back to the top](#aws-container-services)</small>
+     
 
 
 ## Amazon Elastic Container Registry (ECR)
@@ -94,10 +91,10 @@ Amazon Elastic Container Registry (ECR) is a fully managed Docker container regi
 - Fully integrated with IAM and ECS
 - Data is sent over HTTPS and encrypted at rest
 
-|![](../../Images/aws-ecrrr.png)|
+|![](/img/docs/aws-ecrrr.png)|
 |-|
 
-<small>[Back to the top](#aws-container-services)</small>
+     
 
 
 ## Amazon Elastic Kubernetes Service (EKS)
@@ -110,6 +107,6 @@ Amazon Elastic Kubernetes Service (EKS) is a managed service and certified Kuber
 - EKS supports EC2 if we want to deploy worker nodes or Fargate to deploy serverless containers
 
 
-<small>[Back to the top](#aws-container-services)</small>
+     
 
  -->

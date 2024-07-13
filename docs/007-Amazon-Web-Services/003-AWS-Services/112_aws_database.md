@@ -1,30 +1,10 @@
-<!-- 
-# AWS Databases
-
-> <small>This is not an exhaustive documentation of all the existing AWS Services. These are summarized notes for the AWS Certifications.<br>To see the complete documentation, please go to: [AWS documentation](https://docs.aws.amazon.com/)</small>
-
-- [Choosing the Right Database](#choosing-the-right-database)
-- [Database Types on AWS](#database-types-on-aws)
-- [Amazon Relational Databases RDS](#amazon-relational-databases-rds)
-    - [DB Engines supported](#db-engines-supported)
-    - [Advantages and Disadvantages](#advantages-and-disadvantages)
-    - [Use cases](#use-cases)
-    - [RDS Backups](#rds-backups)
-    - [RDS Read Replicas](#rds-read-replicas)
-    - [RDS Multi AZ Disaster Recovery](#rds-multi-az-disaster-recovery)
-    - [RDS Security](#rds-security)
-        - [Encryption](#encryption)
-        - [Network Security and IAM](#network-security-and-iam)
-        - [Security Summary](#security-summary)
-- [Aurora](#aurora)
-- [ElastiCache](#elasticache)
-- [DynamoDB](#dynamodb)
-- [Redshift](#redshift)
-- [Neptune](#neptune)
-- [OpenSearch](#opensearch)
-
-
-
+<!-- ---
+title: "AWS Databases"
+tags: [Cybersecurity]
+sidebar_position: 1
+last_update:
+  date: 1/30/2024
+---
 
 
 ## Choosing the Right Database
@@ -48,7 +28,7 @@ The following are some of the guideline questions to ask when choosing the datab
 - What are the license costs? 
 - Can we switch to a cloud native database such as Aurora, DynamoDB, etc?
 
-<small>[Back to the top](#aws-databases)</small>
+ 
 
 
 ## Database Types on AWS
@@ -144,7 +124,7 @@ A DB engine is the specific relational database software that runs on your DB in
 - Multi AZ is not used for scaling
 - The read replicas can be set up as Multi AZ for Disaster Recovery
 
-<small>[Back to the top](#aws-databases)</small>
+ 
 
 ### RDS Security
 
@@ -205,7 +185,7 @@ A DB engine is the specific relational database software that runs on your DB in
     - IAM is used to centrally manage users instead of DB credentials
     - We can manage IAM roles and EC2 instance profiles for easy integration
 
-<small>[Back to the top](#aws-databases)</small>
+ 
 
 ## Aurora
 
@@ -225,7 +205,7 @@ Amazon Aurora (Aurora) is a fully managed relational database engine that's comp
 
 - Similar to RDS, but with less maintenance, more flexibly, more performant at a higher cost
 
-<small>[Back to the top](#aws-databases)</small>
+ 
 
 ## ElastiCache
 
@@ -248,7 +228,7 @@ Managed Redis or Memcached which provides a high performance, resizable, and cos
 - Cache results for DB queries
 - Store session data for websites
 
-<small>[Back to the top](#aws-databases)</small>
+ 
 
 ## DynamoDB
 
@@ -272,7 +252,7 @@ Amazon DynamoDB is a fully managed NoSQL database service that provides fast and
 - Serverless application development
 - Distributed serverless cache
 
-<small>[Back to the top](#aws-databases)</small>
+ 
 
 ## Redshift
 
@@ -309,7 +289,7 @@ Amazon Redshift is a fast, fully managed, petabyte-scale data warehouse service 
 - We must have a Redshift cluster available to start the query
 - The query is then submitted to thousands of Redshift Spectrum nodes
 
-<small>[Back to the top](#aws-databases)</small>
+ 
 
 ## Neptune
 
@@ -325,7 +305,7 @@ Amazon Neptune is a fast, reliable, fully managed graph database service that ma
 - Social networking
 - Knowledge graphs
 
-<small>[Back to the top](#aws-databases)</small>
+ 
 
 ## OpenSearch
 
@@ -341,4 +321,4 @@ OpenSearch is a fully open-source search and analytics engine for use cases such
 - Security through Cognito and IAM, KMS encryption, SSL and VPC
 - Comes with Kibana and Logstahs - ELK stack
 
-<small>[Back to the top](#aws-databases)</small> -->
+  -->
