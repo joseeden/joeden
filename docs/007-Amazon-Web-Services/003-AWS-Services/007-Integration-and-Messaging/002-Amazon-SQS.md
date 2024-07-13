@@ -2,7 +2,7 @@
 title: "Amazon SQS"
 description: "Distributed message queuing service"
 tags: [Cloud, AWS, DevOps, Integration, Messaging, Certifications]
-sidebar_position: 1
+sidebar_position: 2
 last_update:
   date: 8/30/2020
 ---
