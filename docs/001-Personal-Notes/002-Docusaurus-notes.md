@@ -83,7 +83,7 @@ By default, a browser window will open at http://localhost:3000.
 
 Create the repository first:
 
-![](static/img/main-readme/deploy-github-pagesss.png)
+![](/img/docs/deploy-github-pagesss.png)
 
 
 Going back to your local repository, initialize it as a Github repository.
@@ -186,7 +186,7 @@ git add; git commit
 
 In Github, check the Actions tab. We should see the workflow created.
 
-![](static/img/main-readme/notes-github-worklow-created-for-docu-site.png)
+![](/img/docs/notes-github-worklow-created-for-docu-site.png)
 
 
 
@@ -198,7 +198,7 @@ The sidebar is the menu on the left side. It can be auto-generated, or manually 
 
 When renaming or adding sidebars, <s>make sure to **`rename both the folder as well as the label in _category_.json file.`**</s> the folder name and label name does not need to match. 
 
-<!-- ![](static/img/main-readme/notes-sidebars-edit-both.png) -->
+<!-- ![](/img/docs/notes-sidebars-edit-both.png) -->
 
 ![](/img/docs/sidebar-naming-foldersss.png)
 
@@ -532,7 +532,7 @@ If your Github action deployment failed and you got this error:
 Dependencies lock file is not found...
 ```
 
-![](static/img/main-readme/note-missing-json-file.png)
+![](/img/docs/note-missing-json-file.png)
 
 Try running install command. This will create the package-lock.json.
 
