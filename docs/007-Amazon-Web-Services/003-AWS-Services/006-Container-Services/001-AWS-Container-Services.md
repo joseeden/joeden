@@ -1,10 +1,21 @@
 ---
 title: "AWS Container Services"
-tags: [Cybersecurity]
+description: "Running containers in AWS"
+tags: [Cloud, AWS, DevOps, Automation, Containers, Certifications]
 sidebar_position: 1
 last_update:
-  date: 1/30/2024
+  date: 8/30/2020
 ---
+
+
+:::info[NOTES]
+
+This is not an exhaustive documentation of all the existing AWS Services. These are summarized notes that I used for the AWS Certifications.
+
+To see the complete documentation, please go to: [AWS documentation](https://docs.aws.amazon.com/)
+
+:::
+
 
 
 ## Amazon Elastic Container service (ECS)
