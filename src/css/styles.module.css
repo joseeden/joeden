@@ -24,7 +24,7 @@
   
   .yellow[aria-selected='true'] {
     /* Background color for selected tab */
-    background-color: #fed871;
+    background-color: #d3d3d3;
     /* Text color for selected tab */
     color: black;
   }
