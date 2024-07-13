@@ -250,7 +250,7 @@ Evaluation order of Policies:
 
 For more details, check out [Policy evaluation logic](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html).
 
-![](../Images/policyevaluationlogic.png)
+![](/img/docs/policyevaluationlogic.png)
 
 
 ## Active Directory Federation within AWS 
