@@ -166,6 +166,10 @@ Infrastructure as Code:
   label: 'Infrastructure as Code'
   permalink: '/Infrastructure as Code'
   description: 'Docs related to Infrastructure as Code'
+CICD:
+  label: 'CICD'
+  permalink: '/CICD'
+  description: 'Docs related to CICD'
 Scrum:
   label: 'Scrum'
   permalink: '/Scrum'
