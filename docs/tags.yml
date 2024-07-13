@@ -158,6 +158,10 @@ Serverless:
   label: 'Serverless'
   permalink: '/Serverless'
   description: 'Docs related to Serverless'
+Automation:
+  label: 'Automation'
+  permalink: '/Automation'
+  description: 'Docs related to Automation'
 Scrum:
   label: 'Scrum'
   permalink: '/Scrum'
