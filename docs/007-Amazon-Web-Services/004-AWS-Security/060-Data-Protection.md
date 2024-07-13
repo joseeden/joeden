@@ -1,12 +1,22 @@
-<!-- ---
+---
 title: "Data Protection"
-tags: [Cybersecurity]
-sidebar_position: 1
+description: "Ways to protect your data in AWS"
+tags: [Cloud, AWS, Cloud, DevOps, Security, Certifications]
+sidebar_position: 60
 last_update:
-  date: 1/30/2024
+  date: 8/30/2020
 ---
 
 
+:::info[NOTES]
+
+This is not an exhaustive documentation of all the existing AWS Services. These are summarized notes that I used for the AWS Certifications.
+
+To see the complete documentation, please go to: [AWS documentation](https://docs.aws.amazon.com/)
+
+:::
+
+<!-- 
 ## Overview of Encryption 
 
 Unencrypted data can be read and seen by anyone who has access to it and data stored at rest or sent between two locations in transit is known as plain text or clear text data. The data is plain to see and could be seen and understood by any recipient. 

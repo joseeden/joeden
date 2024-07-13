@@ -1,11 +1,22 @@
-<!-- ---
-title: "Logging and Monitoring "
-tags: [Cybersecurity]
-sidebar_position: 1
+---
+title: "Logging and Monitoring"
+description: "Logging and monitoring options in AWS"
+tags: [Cloud, AWS, Cloud, DevOps, Security, Certifications]
+sidebar_position: 40
 last_update:
-  date: 1/30/2024
+  date: 8/30/2020
 ---
 
+
+:::info[NOTES]
+
+This is not an exhaustive documentation of all the existing AWS Services. These are summarized notes that I used for the AWS Certifications.
+
+To see the complete documentation, please go to: [AWS documentation](https://docs.aws.amazon.com/)
+
+:::
+
+<!-- 
 
 ## Logging options in AWS 
 
@@ -928,7 +939,7 @@ As this feature was only released at the end of April 2017, It's only possible t
 Findings are generated from the results of an assessment run. A finding is a potential security issue or risk against one of your EC2 instances within the assessment target. For each finding, an explanation of the issue is given, along with guidance on how to remediate the problem. 
 
 
-### Service Limitatins 
+### Service Limitations 
 
 These are the service limitations per account. Note that you can raise a request to AWS to increase the limits .
 

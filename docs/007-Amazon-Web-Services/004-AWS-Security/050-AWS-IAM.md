@@ -1,12 +1,22 @@
-<!-- ---
-title: "AWS Identity and Access Management "
-tags: [Cybersecurity]
-sidebar_position: 1
+---
+title: "IAM in AWS"
+description: "Identity and Access Management"
+tags: [Cloud, AWS, Cloud, DevOps, Security, Certifications]
+sidebar_position: 50
 last_update:
-  date: 1/30/2024
+  date: 8/30/2020
 ---
 
 
+:::info[NOTES]
+
+This is not an exhaustive documentation of all the existing AWS Services. These are summarized notes that I used for the AWS Certifications.
+
+To see the complete documentation, please go to: [AWS documentation](https://docs.aws.amazon.com/)
+
+:::
+
+<!-- 
 ## Identity and Access Management 
 
 IAM is used to manage access to AWS services and resources securely through users, groups, and permissions to allow and deny access to AWS resources. Important concepts to know:

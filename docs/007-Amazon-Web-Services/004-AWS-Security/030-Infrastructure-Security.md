@@ -1,12 +1,22 @@
-<!-- ---
-title: "Infrastructure Security "
-tags: [Cybersecurity]
-sidebar_position: 1
+---
+title: "Infrastructure Security"
+description: "Securing your AWS Infrastructure"
+tags: [Cloud, AWS, Cloud, DevOps, Security, Certifications]
+sidebar_position: 30
 last_update:
-  date: 1/30/2024
+  date: 8/30/2020
 ---
 
 
+:::info[NOTES]
+
+This is not an exhaustive documentation of all the existing AWS Services. These are summarized notes that I used for the AWS Certifications.
+
+To see the complete documentation, please go to: [AWS documentation](https://docs.aws.amazon.com/)
+
+:::
+
+<!-- 
 ## EC2 Keypairs 
 
 Keypairs are used to interact with EC2 instances without entering any username or passwords. 

@@ -1,9 +1,10 @@
-<!-- ---
-title: "AWS Security Specialty Exam: Resources "
-tags: [Cybersecurity]
-sidebar_position: 1
+---
+title: "AWS Security Specialty Exam"
+description: "Resources for the exam"
+tags: [Cloud, AWS, Cloud, DevOps, Security, Certifications]
+sidebar_position: 99
 last_update:
-  date: 1/30/2024
+  date: 8/30/2020
 ---
 
 
@@ -87,4 +88,4 @@ last_update:
 
 - [Labs, exam scenarios and ALL you need for AWS Security Specialty Certification](https://towardsaws.com/labs-exam-scenarios-and-all-you-need-for-aws-security-specialty-certification-501d37815e46)
 
- -->
+
