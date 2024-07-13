@@ -170,6 +170,18 @@ CICD:
   label: 'CICD'
   permalink: '/CICD'
   description: 'Docs related to CICD'
+Git:
+  label: 'Git'
+  permalink: '/Git'
+  description: 'Docs related to Git'
+Gitlab:
+  label: 'Gitlab'
+  permalink: '/Gitlab'
+  description: 'Docs related to Gitlab'
+Github:
+  label: 'Github'
+  permalink: '/Github'
+  description: 'Docs related to Github'
 Scrum:
   label: 'Scrum'
   permalink: '/Scrum'

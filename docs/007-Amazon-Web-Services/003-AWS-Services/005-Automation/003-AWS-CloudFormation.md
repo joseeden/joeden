@@ -243,9 +243,13 @@ How to reference a parameter:
     - `Fn::Sub`, or `!Sub` as a shorthand, is used to substitute variables from a text. 
     - It's a very handy function that will allow you to fully customize your templates.
     - For example, you can combine `Fn::Sub` with References or AWS Pseudo variables
-    - String must contain ${VariableName} and will substitute them
+    - String must contain variable name and will substitute them.
 
-- Condition Functions (`Fn::If`, `Fn::Not`, `Fn::Equals`, etc...)
+        ```bash
+        ${VariableName}
+        ```
+
+- Condition Functions (`Fn::If`, `Fn::Not`, `Fn::Equals`, etc.)
     - The logical ID is for you to choose. It's how you name condition.
     - The intrinsic function (logical) can be any of the following:
         - `Fn::And`
