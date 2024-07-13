@@ -182,8 +182,11 @@ Amazon DynamoDB is a fully managed NoSQL database service that provides fast and
     - Query 
     - Scan
 
+<div class="img-center"> 
+
 ![](/img/docs/aws-ddb-consistency-model.png)
 
+</div>
 
 
  ## Primary Keys 

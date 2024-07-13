@@ -41,7 +41,7 @@ Amazon API Gateway is an AWS service for creating, publishing, maintaining, moni
 ![](/img/docs/aws-building-serverless-api.png)
 
 
-### Outside of VPC
+### 1. Outside of VPC
 
 - Lambda Functions:
 
@@ -59,7 +59,7 @@ Amazon API Gateway is an AWS service for creating, publishing, maintaining, moni
     - Expose any AWS API through API Gateway.
     - Examples: API for starting a Step Function workflow, API for posting a message to SQS.
 
-### Inside of VPC
+### 2. Inside of VPC
 
 - AWS Lambda in your VPC 
 - EC2 endpoints in your VPC 
