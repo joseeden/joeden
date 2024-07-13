@@ -190,3 +190,11 @@ Containers:
   label: 'Containers'
   permalink: '/Containers'
   description: 'Docs related to Containers'
+Integration:
+  label: 'Integration'
+  permalink: '/Integration'
+  description: 'Docs related to Integration'
+Messaging:
+  label: 'Messaging'
+  permalink: '/Messaging'
+  description: 'Docs related to Messaging'
