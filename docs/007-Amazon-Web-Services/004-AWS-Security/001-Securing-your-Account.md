@@ -1,5 +1,5 @@
 ---
-title: "AWS Security"
+title: "First steps"
 description: "Quickstarts"
 tags: [Cloud, AWS, DevOps, Security, Certifications]
 sidebar_position: 1
@@ -9,11 +9,11 @@ last_update:
 
 
 
-## First Steps on Securing your AWS account
+## Securing your AWS account
 
-- Enable multi-factor authentication (MFA)
-- Enable Cloudtrail for auditing 
-- Use IAM for every future action 
+- Enable multi-factor authentication (MFA).
+- Enable Cloudtrail for auditing. 
+- Use IAM for every future action.
 
 ## AWS Own Security Practices 
 
@@ -50,9 +50,9 @@ Protection of infrastructure that run all the offered services:
 
 Responsibility and management of:
 
-- guest OS of EC2 compute instances
-- other application software
-- configuration of the AWS provided security group firewall 
+- Guest OS of EC2 compute instances
+- Other application software
+- Configuration of the AWS provided security group firewall 
 
 AWS categorized their services into three:
 
@@ -66,9 +66,9 @@ Shared responsibility chart:
 
 Records and evaluate configurations of your AWS resources.
 
-- assess, audiit, and evaluate configurations. 
-- continuously monitors and records your AWS resource configurations. 
-- allows to automate evaluation of recorded configurations against their desired configurations.
+- Assess, audiit, and evaluate configurations. 
+- Continuously monitors and records your AWS resource configurations. 
+- Allows to automate evaluation of recorded configurations against their desired configurations.
 
 ## AWS CloudTrail 
 
