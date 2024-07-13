@@ -19,20 +19,20 @@ When renaming or adding sidebars, <s>make sure to **`rename both the folder as w
 
 <!-- ![](static/img/main-readme/notes-sidebars-edit-both.png) -->
 
-![](static/img/sidebar-naming-foldersss.png)
+![](/img/docs/sidebar-naming-foldersss.png)
 
 
 ### Naming of files 
 
 Similar with folders, the filenames does not need to match the actual titles of the files. The title of the markdown file can be written with the "#" to signify the title heading, or use the `title` in the Frontmatter (see section below).
 
-![](static/img/sidebar-naming-files.png)
+![](/img/docs/sidebar-naming-files.png)
 
 ### Changing the ordering
 
 In your IDE, folder names will appear in alphabetical order. However, we can change their order when rendered by specifying their position in the `_category_.json` file. In the example above, the folder "Microsoft Azure" appears as the fourth folder inside the docs. But since we specified its position as 9th, it will be displayed in a different order in the browser.
 
-![](static/img/main-readme/notes-sidebars-ordering-corrected.png)
+![](/img/docs/notes-sidebars-ordering-corrected.png)
 
 ### Ordering of the Sidebars 
 
@@ -263,4 +263,4 @@ import styles from '../../../src/css/styles.module.css';
 
 Build and deploy. It should look like this:
 
-![](/gif/docs/changing-heading-colors-for-tabs.gif)
+![](/gif/docs/changing-label-heading-colors-for-tabs.gif)

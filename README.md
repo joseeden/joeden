@@ -73,8 +73,6 @@ npm start
 By default, a browser window will open at http://localhost:3000.
 
 
-### Sidebars
-
 
 ## Troubleshooting 
 
