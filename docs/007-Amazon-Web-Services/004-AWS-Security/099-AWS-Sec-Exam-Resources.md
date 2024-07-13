@@ -37,7 +37,7 @@ last_update:
 
 - [Identity and Access Management](https://aws.amazon.com/iam/faqs/)
 
-- [Cognito](-https://aws.amazon.com/cognito/faqs/)
+- [Cognito](https://aws.amazon.com/cognito/faqs/)
 
 - [Amazon Guarduty](https://aws.amazon.com/guardduty/faqs/)
 
