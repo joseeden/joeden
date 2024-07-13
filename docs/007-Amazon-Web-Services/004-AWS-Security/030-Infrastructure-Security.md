@@ -1,18 +1,10 @@
-<!-- 
-# Infrastructure Security 
-
-- [EC2 Keypairs](#ec2-keypairs)
-- [Hypervisors, Isolation, and Dedicated Instances](#hypervisors-isolation-and-dedicated-instances)
-    - [Hypervisors](#hypervisors)
-    - [Isolations](#isolations)
-    - [Dedicated Hosts vs. Dedicated Instances](#dedicated-hosts-vs-dedicated-instances)
-- [AWS Systems Manager - SSM](#aws-systems-manager-ssm)
-    - [AWS Systems Manager: Parameter Store](#aws-systems-manager-parameter-store)
-    - [AWS Systems Manager: Run Command](#aws-systems-manager-run-command)
-- [AWS VPC](#aws-vpc)
-    - [NACLs vs. Security Groups](#nacls-vs-security-groups)
-    - [VPC Connecitivity Options](#vpc-connecitivity-options)
-- [AWS Marketplace Security Products](#aws-marketplace-security-products)
+<!-- ---
+title: "Infrastructure Security "
+tags: [Cybersecurity]
+sidebar_position: 1
+last_update:
+  date: 1/30/2024
+---
 
 
 ## EC2 Keypairs 
@@ -101,7 +93,7 @@ A dedicated host gives you control about instance placement in that physical hos
 - visibility over CPU cores, sockers, etc.
 - billing is per host
 
-![](../../Images/dedicatedhosts-vs-dedicated-instances.png)
+![](/img/docs/dedicatedhosts-vs-dedicated-instances.png)
 
 ## AWS Systems Manager (SSM)
 
@@ -143,7 +135,7 @@ Amazon Virtual Private Cloud (Amazon VPC) enables you to launch AWS resources in
 - can have one or more subnets (either public or private)
 - a subnet is availability zone-scope within the same VPC region
 
-![](../../Images/awsvpcdiagramscope.png)
+![](/img/docs/awsvpcdiagramscope.png)
 
 
 ### NACLs vs. Security Groups 
@@ -188,7 +180,7 @@ Direct Connect
 
 See [AWS Direct Connect + VPN.](https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/aws-direct-connect-vpn.html)
 
-![](../../Images/vpnvsdirectconnectaws.png)
+![](/img/docs/vpnvsdirectconnectaws.png)
 
 ## AWS Marketplace Security Products
 

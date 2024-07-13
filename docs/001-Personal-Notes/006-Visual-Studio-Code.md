@@ -36,7 +36,7 @@ To add nested folder, type the subsequent folders after "/".
 
 ## Hidden Files 
 
-Some hidden files normally start with "." and are excluded from view. You can more excluded files by:
+Some hidden files normally start with "." and are excluded from view. You can add more excluded files by:
 
 - Click gear icon at the bottom left ⚙
 - Select Settings

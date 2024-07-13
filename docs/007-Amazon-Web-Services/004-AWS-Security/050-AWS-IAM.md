@@ -1,21 +1,11 @@
-<!-- 
-# AWS Identity and Access Management 
+<!-- ---
+title: "AWS Identity and Access Management "
+tags: [Cybersecurity]
+sidebar_position: 1
+last_update:
+  date: 1/30/2024
+---
 
-- [Identity and Access Management](#identity-and-access-management)
-- [IAM User created through AWS CLI or AWS API](#iam-user-created-through-aws-cli-or-aws-api)
-- [IAM Roles](#iam-roles)
-    - [Service Roles](#service-roles)
-    - [Service-linked Roles](#service-linked-roles)
-        - [Limited number of cases when Service-linked Roles can be modified](#limited-number-of-cases-when-service-linked-roles-can-be-modified)
-- [IAM Policies](#iam-policies)
-- [Sample IAM Scenario: Conflicting Policies](#sample-iam-scenario-conflicting-policies)
-- [EC2 Instances with IAM Profile](#ec2-instances-with-iam-profile)
-- [Cross-Account Access](#cross-account-access)
-- [AWS Organizations](#aws-organizations)
-- [Service Control Policies](#service-control-policies)
-- [Policy Evaluation Logic](#policy-evaluation-logic)
-- [Active Directory Federation within AWS](#active-directory-federation-within-aws)
-- [AWS Cognito and Web Identity Federation](#aws-cognito-and-web-identity-federation)
 
 ## Identity and Access Management 
 
@@ -50,7 +40,7 @@ Best practices:
 - Utilize granular permissions for IAM users 
 - For temporary access, use AWS STS
 
-![](../../Images/awsiamusersgroupsrolespolicies.png)
+![](/img/docs/awsiamusersgroupsrolespolicies.png)
 
 
 ## IAM User created through AWS CLI or AWS API 
@@ -65,7 +55,7 @@ By default, a brand new IAM user created using AWS CLI or AWS API has no access 
 
 Roles are created and assigned to AWS resources. These roles grant resources some permissions to access other AWS resources.
 
-![](../../Images/awsiamroles.png)
+![](/img/docs/awsiamroles.png)
 
 
 ### Service Roles
@@ -160,7 +150,7 @@ We can designate an IAM role to attach to an EC2 instance when launching the ins
 
 Example screenshot below when manuelly creating EC2 instances in the AWS Management Console:
 
-![](../../Images/ec2instanceswithiamprofilescreenshotsample.png)
+![](/img/docs/ec2instanceswithiamprofilescreenshotsample.png)
 
 ## Cross-Account Access 
 
@@ -194,7 +184,7 @@ AWS Organizations is a managed services that allows you to centrally govern you 
 - Govern maximum permissions granted to accounts or Organization Units (OU)
 - SCPs can be viewed in the IAM menu but can only be modified through the AWS Organizations menu
 
-![](../../Images/awsorganizationbasics.png)
+![](/img/docs/awsorganizationbasics.png)
 
 ## Service Control Policies 
 
@@ -254,7 +244,7 @@ Open standard that enables the exchange of identity information between provider
 - ADFS needs to be a trusted ID provider in AWS
 - AWS is a trusted relying party in AWS 
 
-![](../../Images/activedirectoryfederation.png)
+![](/img/docs/activedirectoryfederation.png)
 
 **How it works:**
 - User authenticates with ADFS/AD and receives a SAML token
@@ -277,7 +267,7 @@ Manages user sign-in and sign-out directly or via web identity providers (same a
 **Cognito Identity Pool**
 Enables identity creation for users and authentication with providers
 
-![](../../Images/awscognitoandwebidentityfederation.png)
+![](/img/docs/awscognitoandwebidentityfederation.png)
 
 **How it works:**
 

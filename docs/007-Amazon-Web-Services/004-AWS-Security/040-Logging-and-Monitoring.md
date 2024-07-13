@@ -1,85 +1,11 @@
-<!-- 
-# Logging and Monitoring 
+<!-- ---
+title: "Logging and Monitoring "
+tags: [Cybersecurity]
+sidebar_position: 1
+last_update:
+  date: 1/30/2024
+---
 
-
-- [Logging options in AWS](#logging-options-in-aws)
-- [Amazon CloudWatch](#amazon-cloudwatch)
-    - [Main components](#main-components)
-    - [Getting started with CloudWatch](#getting-started-with-cloudwatch)
-    - [CloudWatch Dashboards](#cloudwatch-dashboards)
-        - [Dashboards and Widgets](#dashboards-and-widgets)
-        - [Dashboard Features](#dashboard-features)
-        - [Annotations](#annotations)
-        - [Linking Dashboards](#linking-dashboards)
-        - [Limits](#limits)
-        - [Best Practices](#best-practices)
-    - [CloudWatch Metrics](#cloudwatch-metrics)
-    - [Anomaly Detection](#anomaly-detection)
-    - [CloudWatch Alarms](#cloudwatch-alarms)
-        - [Alarm States](#alarm-states)
-        - [Integration](#integration)
-    - [CloudWatch EventBridge](#cloudwatch-eventbridge)
-        - [Rules](#rules)
-        - [Targets](#targets)
-        - [Event Buses](#event-buses)
-    - [CloudWatch Logs](#cloudwatch-logs)
-    - [CloudWatch Insights](#cloudwatch-insights)
-        - [Log Insights](#log-insights)
-        - [Container Insights](#container-insights)
-        - [Lambda Insights](#lambda-insights)
-- [AWS CloudTrail](#aws-cloudtrail)
-    - [Who did what and when](#who-did-what-and-when)
-    - [Log File Integrity](#log-file-integrity)
-    - [CloudTrail Process Flow](#cloudtrail-process-flow)
-    - [Lifecycle of an API call in CloudTrail](#lifecycle-of-an-api-call-in-cloudtrail)
-    - [CloudTrail Permissions](#cloudtrail-permissions)
-    - [CloudTrail Logs](#cloudtrail-logs)
-    - [CloudTrail Trails](#cloudtrail-trails)
-    - [CloudTrail Log Files](#cloudtrail-log-files)
-    - [Log Aggregation to a Single Account](#log-aggregation-to-a-single-account)
-    - [Accessing Cross-Account Log Files](#accessing-cross-account-log-files)
-    - [Monitoring](#monitoring)
-    - [Similarities with other AWS services](#similarities-with-other-aws-services)
-- [AWS Config](#aws-config)
-    - [Use Cases](#use-cases)
-    - [Key Components](#key-components)
-        - [AWS resources](#aws-resources)
-        - [Configuration Items](#configuration-items)
-        - [Configuration Streams](#configuration-streams)
-        - [Configuration History](#configuration-history)
-        - [Configuration Snapshots](#configuration-snapshots)
-        - [Configuration Recorder](#configuration-recorder)
-        - [Config Rules](#config-rules)
-        - [Resource Relationships](#resource-relationships)
-        - [SNS Topics](#sns-topics)
-        - [S3 Bucket](#s3-bucket)
-        - [AWS Config Permissions](#aws-config-permissions)
-- [AWS Inspector](#aws-inspector)
-    - [Agent Based](#agent-based)
-    - [Types of assessments](#types-of-assessments)
-    - [Assessment report sample](#assessment-report-sample)
-    - [How to get started](#how-to-get-started)
-    - [Key Components](#key-components)
-        - [Amazon Inspector Role](#amazon-inspector-role)
-        - [Assessment Targets](#assessment-targets)
-        - [AWS Agents](#aws-agents)
-        - [Assessment Templates](#assessment-templates)
-        - [Rules Packages](#rules-packages)
-        - [Assessment Run](#assessment-run)
-        - [Telemetry](#telemetry)
-        - [Assessment Reports](#assessment-reports)
-        - [Findings](#findings)
-    - [Service Limitatins](#service-limitatins)
-- [Athena](#athena)
-- [AWS GuardDuty](#aws-guardduty)
-- [AWS Trusted Advisor](#aws-trusted-advisor)
-    - [Categories](#categories)
-    - [Features](#features)
-    - [Security Groups - Specific Ports Unrestricted](#security-groups---specific-ports-unrestricted)
-
-
-
-----------------------------------------------
 
 ## Logging options in AWS 
 
@@ -144,7 +70,7 @@ There are two ways that you can create a dashboard.:
 
 Both methods allow you to pick from many different media types called **widgets**. There are currently 8 flavors of these widgets and they are as follows:
 
-![](../../Images/creatingCloudwatchdashboards.png)
+![](/img/docs/creatingCloudwatchdashboards.png)
 
 **Line charts** - A line chart is a type of chart which displays information as a series of data points connected by straight line segments. It is a basic type of chart common in many fields.
 
@@ -182,7 +108,7 @@ Your dashboard code is written as a string in JSON formatting and can include an
 
 When you're building your charts and after you have them completed you have the ability to add annotations to your graphs. This is helpful for displaying when a certain event has taken place in the past which could help give other members of your team insight and exposure to certain peaks and valleys in your information. Just like writing good code requires comments it's especially important to make sure your graphs and charts also have that advantage.
 
-![](../../Images/cwdashboardsannotations.png) 
+![](/img/docs/cwdashboardsannotations.png) 
 
 You can have both horizontal and vertical annotations in your graphs - each having their own purpose. For example, horizontal annotations can denote reasonable top and bottom bounds for a service’s CPU load while vertical annotations are great for noting when a specific event happened in the past.
 
@@ -342,7 +268,7 @@ This feature provides you the opportunity to gain a deeper understanding of your
 
 To enable Lambda Insights, you need to enable the feature per Lambda function that you create within Monitoring Tools section of your function:
 
-![](../../Images/lambdainsights.png)
+![](/img/docs/lambdainsights.png)
 
 This ensures that a CloudWatch extension is enabled for your function allowing it to collate system-level metrics which are recorded every time the function is invoked.
 
@@ -558,7 +484,7 @@ CloudWatch Configuration:
     - **AWS Config** - Configuration of your environment 
     - **AWS VPC Flow Logs** - Network traffic in VPCs 
 
-![](../../Images/loggingmonitoringcloudtrail.png)
+![](/img/docs/loggingmonitoringcloudtrail.png)
 
 ----------------------------------------------
 
@@ -654,7 +580,7 @@ A configuration item or CI is comprised of a JSON file that holds the configurat
 - CI is then sent to configuration stream
 
 <p align=center>
-<img src="../../Images/aws-config-config-item.png">
+![](/img/docs/aws-config-config-item.png)
 </p>
 
 Sections of a Configuration Item:
@@ -761,7 +687,7 @@ An SNS topic is used as a configuration stream for notifications of various even
 
 
 <p align=center>
-<img src="../../Images/aws-config-sns-topic.png">
+![](/img/docs/aws-config-sns-topic.png)
 </p>
 
 
@@ -807,7 +733,7 @@ Amazon Inspector requires software agents to be installed on any EC2 instance th
 
 ### Assessment report sample
 
-![](../../Images/awsinspectorsamplereport.png)
+![](/img/docs/awsinspectorsamplereport.png)
 
 ### How to get started
 
@@ -963,7 +889,7 @@ This rules package looks for weaknesses in common security best practices. Howev
 As assessment run can happen once you have configured your Amazon Inspector role, installed the agents and configured your Assessment Target and Assessment Templates. Once these components are in place, you are then able to run the configured assessment on your assessment targets. This process is known as the **assessment run.**
 
 <p align=center>
-<img src="../../Images/aws-config-assessment-run.png">
+![](/img/docs/aws-config-assessment-run.png)
 </p>
 
 During this time, telemetry data will be sent back to Amazon Inspector and S3 to assess the data against the specified rules packages defined within the assessment template
@@ -1056,7 +982,7 @@ It is an intelligent threat detection service that uses AI/Machine Learning to m
     - DNS 
     - VPC Flow logs 
 
-![](../../Images/awsguarddutyloggingandmonitoring.png)    
+![](/img/docs/awsguarddutyloggingandmonitoring.png)    
 
 **Use-cases**
 
@@ -1093,7 +1019,7 @@ The type of AWS account support plan in place determines how many checks AWS Tru
 
 In the Trusted Advisor, we can see the recommendations in each of the four categories checked by Trusted Advisor.
 
-![](../../Images/awstrsutedadvisorconsoleview.png)
+![](/img/docs/awstrsutedadvisorconsoleview.png)
 
 The six checks included without a support plan fall under the Performance and Security categories. Under each category, the number of checks that fall into each recommendation status category are shown. The recommendation statuses by color are:
 
@@ -1103,7 +1029,7 @@ The six checks included without a support plan fall under the Performance and Se
 
 We can also see the recommended actions (if there are any): 
 
-![](../../Images/awstrustedadvisorrecommendedactions.png)
+![](/img/docs/awstrustedadvisorrecommendedactions.png)
 
 Trusted Advisor will automatically perform all of the checks without manual intervention. This feature is useful because we can trigger CloudWatch Events to send us emails when the status of a check changes. However, the intervals for each check vary greatly. 
 
@@ -1149,7 +1075,7 @@ For every check that Trusted Advisor provides, you will see:
 - Recommended Action
 - Additional Resources
 
-![](../../Images/awsloggingandmonitoringtrustedadvisor.png)    
+![](/img/docs/awsloggingandmonitoringtrustedadvisor.png)    
 
 ### Security Groups - Specific Ports Unrestricted
 

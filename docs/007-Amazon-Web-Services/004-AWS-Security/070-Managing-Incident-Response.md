@@ -1,31 +1,10 @@
-<!-- 
-# Managing Incident Response 
-
-
-
-- [Distributed Denial of Service DDoS Attack](#distributed-denial-of-service-ddos-attack)
-- [AWS WAF, Shield, and Shield Advanced](#aws-waf-shield-and-shield-advanced)
-    - [AWS WAF](#aws-waf)
-    - [AWS Shield and Shield Advanced](#aws-shield-and-shield-advanced)
-- [Throttling and Caching in API Gateway](#throttling-and-caching-in-api-gateway)
-    - [Throttling](#throttling)
-    - [Caching](#caching)
-- [Compliance Requirements using AWS Artifact and Macie](#compliance-requirements-using-aws-artifact-and-macie)
-    - [AWS Macie](#aws-macie)
-    - [AWS Artifact](#aws-artifact)
-- [Managing Incident Responses](#managing-incident-responses)
-    - [Detection Mechanisms](#detection-mechanisms)
-    - [Isolation](#isolation)
-        - [Security Group Isolation](#security-group-isolation)
-            - [Tracked vs. Untracked Connections](#tracked-vs-untracked-connections)
-        - [NACL Isolation](#nacl-isolation)
-        - [Route Table Isolation](#route-table-isolation)
-        - [Internet Gateway Isolation](#internet-gateway-isolation)
-    - [Compromised Instance Incident Run Book](#compromised-instance-incident-run-book)
-    - [Incident Response Resources](#incident-response-resources)
-
-
-
+<!-- ---
+title: "Managing Incident Response "
+tags: [Cybersecurity]
+sidebar_position: 1
+last_update:
+  date: 1/30/2024
+---
 
 
 ## Distributed Denial of Service (DDoS) Attack 
@@ -96,7 +75,7 @@ Shield Advanced is a paid version:
     - **Block all** - with exceptions 
     - **Count** the ones that match certain properties
 
-![](../../Images/awswafshieldshieldadvanced.png)
+![](/img/docs/awswafshieldshieldadvanced.png)
 
 
 ## Throttling and Caching in API Gateway
@@ -120,7 +99,7 @@ The API Gateway Throttling feature prevents your API from being overwhelmed with
     - request per second 
     - burst of requests 
 
-![](../../Images/awsapigwthrottlinefeature.png)
+![](/img/docs/awsapigwthrottlinefeature.png)
 
 ### Caching 
 
@@ -203,7 +182,7 @@ Since security groups are stateful, they keep track of certain connections to al
 - deleting a security group
 
 <p align=center>
-<img width=800 src="../../Images/Devops-SRE-untracked-conn.png">
+![](/img/docs/Devops-SRE-untracked-conn.png)
 </p>
 
 **Tracked connections** apply to any traffic that has a specific IP or CIDR rule within the security group. This would be something like allowing 203.0.113.1/32 for example. This is a specific IP address that has been allowed on the security. This type of traffic will NOT be immediately interrupted if a rule that has previously allowed its traffic to flow is removed.
@@ -232,7 +211,7 @@ Unlike security groups, NACLs cannot be used in a **targeted** manner because wh
 To isolation using NACL, simply add a DENY rule for ALL traffic in the inbound and outbound rule. Another option is to create a dedicated NACL with all the DENY rules and replace the existing NACL with this new dedicated NACLs.
 
 <p align=center>
-<img width=900 src="../../Images/nacl-isolation.png">
+![](/img/docs/nacl-isolation.png)
 </p>
 
 #### Route Table Isolation
@@ -265,19 +244,19 @@ Tag any resources you create with the key **IncidentStatus** and the value **Iso
 2. Create a new security group that disallows both inbound and outbound traffic (if one doesn't already exist)
 3. Remove the instance's current security group and replace it with the group that blocks inbound and outbound traffic.
 
-    ![](../../Images/change-sec-groups-to-isoalte-instance.png) 
+    ![](/img/docs/change-sec-groups-to-isoalte-instance.png) 
 
 4. Remove the IAM role from the instance (ensure no role is associated)
 
-    ![](../../Images/modify-iam-role-to-isolate-ec2.png)
+    ![](/img/docs/modify-iam-role-to-isolate-ec2.png)
 
 5. Snapshot the instance's root volume for later analysis.
 
-    ![](../../Images/snapshot-ebs-vol.png)
+    ![](/img/docs/snapshot-ebs-vol.png)
 
 6. Create an AMI of the instance for later analysis.
 
-    ![](../../Images/create-an-ami-for-ec2.png)
+    ![](/img/docs/create-an-ami-for-ec2.png)
 
 
 ### Incident Response Resources 

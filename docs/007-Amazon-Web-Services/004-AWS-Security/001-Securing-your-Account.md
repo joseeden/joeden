@@ -1,12 +1,11 @@
 ---
 title: "First steps"
-description: "Quickstarts"
-tags: [Cloud, AWS, DevOps, Security, Certifications]
+description: "Securing your AWS Account"
+tags: [Cloud, AWS, Cloud, DevOps, Security, Certifications]
 sidebar_position: 1
 last_update:
   date: 8/30/2020
 ---
-
 
 
 ## Securing your AWS account
@@ -34,25 +33,26 @@ Compliance:
 
 Security and compliance is a shared responsibility between AWS and the customer.
 
-- AWS is responsible for the security "of" the cloud 
-- customer is responsible for the security "in" the cloud
+- AWS is responsible for the security "of" the cloud. 
+- customer is responsible for the security "in" the cloud.
 
-![](/img/docs/awssharedresponsbilitymodel.png)
+  ![](/img/docs/awssharedresponsbilitymodel.png)
 
 
 ### Security of the Cloud
 
 Protection of infrastructure that run all the offered services:
-- Hardware, software, networking, and facilities 
-- Software services provided by AWS (Managed services)
+
+- Hardware, software, networking, and facilities. 
+- Software services provided by AWS (Managed services).
 
 ### Security in the Cloud
 
 Responsibility and management of:
 
-- Guest OS of EC2 compute instances
-- Other application software
-- Configuration of the AWS provided security group firewall 
+- Guest OS of EC2 compute instances.
+- Other application software.
+- Configuration of the AWS provided security group firewall. 
 
 AWS categorized their services into three:
 

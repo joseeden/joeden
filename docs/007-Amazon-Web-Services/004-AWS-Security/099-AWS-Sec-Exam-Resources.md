@@ -1,6 +1,10 @@
-<!-- 
-# AWS Security Specialty Exam: Resources 
-
+<!-- ---
+title: "AWS Security Specialty Exam: Resources "
+tags: [Cybersecurity]
+sidebar_position: 1
+last_update:
+  date: 1/30/2024
+---
 
 
 ## Exam Guides

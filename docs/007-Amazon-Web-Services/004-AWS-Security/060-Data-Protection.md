@@ -1,56 +1,10 @@
-<!-- 
-# Data Protection
-
-
-- [Overview of Encryption](#overview-of-encryption)
-    - [Symmetric Encryption](#symmetric-encryption)
-    - [Asymmetric Encryption](#asymmetric-encryption)
-    - [How Public and Private keys work](#how-public-and-private-keys-work)
-- [Key Management Service - KMS](#key-management-service---kms)
-    - [Encryption-at-rest Only](#encryption-at-rest-only)
-    - [Compliance and Regulations](#compliance-and-regulations)
-    - [Region-specific and Multi-region Keys](#region-specific-and-multi-region-keys)
-    - [Customer Master Key CMK](#customer-master-key-cmk)
-        - [Access](#access)
-        - [Key Policies](#key-policies)
-        - [Creating CMKs](#creating-cmks)
-        - [Sharing CMKs across accouts](#sharing-cmks-across-accouts)
-    - [Best practices](#best-practices)
-    - [Key Rotation](#key-rotation)
-- [AWS Secrets Manager](#aws-secrets-manager)
-    - [What is considered a secret](#what-is-considered-a-secret)
-    - [Secrets Rotation](#secrets-rotation)
-    - [Integration](#integration)
-    - [Access](#access)
-    - [AWS Secrets Manager vs. AWS Systems Manager Parameter Store](#aws-secrets-manager-vs-aws-systems-manager-parameter-store)
-- [AWS Macie](#aws-macie)
-    - [How does Macie works](#how-does-macie-works)
-    - [Metadata](#metadata)
-    - [Bucket Policy Findings](#bucket-policy-findings)
-    - [Reviewing the findings](#reviewing-the-findings)
-    - [Discover sensitive data within your buckets](#discover-sensitive-data-within-your-buckets)
-    - [Severity Level](#severity-level)
-    - [Analyzing encrypted object](#analyzing-encrypted-object)
-    - [Supported file formats for sensitive data discovery](#supported-file-formats-for-sensitive-data-discovery)
-    - [Integrations with AWS organizations](#integrations-with-aws-organizations)
-    - [Cost](#cost)
-- [Restrict S3 Buckets Access](#restrict-s3-buckets-access)
-    - [Bucket Policies](#bucket-policies)
-    - [S3 ACLs](#s3-acls)
-    - [AWS S3 Pre-signed URLs](#aws-s3-pre-signed-urls)
-    - [Enable Vault Lock in AWS Glacier](#enable-vault-lock-in-aws-glacier)
-    - [Forcing S3 to use CloudFront](#forcing-s3-to-use-cloudfront)
-        - [Securing an S3 Origin in CloudFront](#securing-an-s3-origin-in-cloudfront)
-        - [TLS/SSL Certificate Options with CloudFront](#tlsssl-certificate-options-with-cloudfront)
-- [S3 Encryption Mechanisms](#s3-encryption-mechanisms)
-- [AWS Certificate Manager](#aws-certificate-manager)
-- [Security Features of AWS Loadbalancers](#security-features-of-aws-loadbalancers)
-    - [Security Policy of HTTPS Listeners](#security-policy-of-https-listeners)
-    - [TLS/SSL Termination Options](#tlsssl-termination-options)
-
-
-
-----------------------------------------------
+<!-- ---
+title: "Data Protection"
+tags: [Cybersecurity]
+sidebar_position: 1
+last_update:
+  date: 1/30/2024
+---
 
 
 ## Overview of Encryption 
