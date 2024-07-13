@@ -1,5 +1,6 @@
 ---
 title: "Proxy"
+description: "Learn what proxy is"
 tags: [Networking,Cybersecurity]
 sidebar_position: 2
 last_update:

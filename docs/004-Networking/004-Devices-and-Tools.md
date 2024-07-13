@@ -1,5 +1,6 @@
 ---
 title: "Devices and Tools"
+description: "Networking devices and tools"
 tags: [Networking,Cybersecurity]
 sidebar_position: 4
 last_update:

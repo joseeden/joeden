@@ -1,5 +1,6 @@
 ---
 title: "Networking Models"
+description: "The different networking models"
 tags: [Networking,Cybersecurity]
 sidebar_position: 3
 last_update:

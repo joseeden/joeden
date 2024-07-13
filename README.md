@@ -75,66 +75,6 @@ By default, a browser window will open at http://localhost:3000.
 
 ### Sidebars
 
-The sidebar is the menu on the left side. It can be auto-generated, or manually defined in the **sidebar.js**. It is recommended to have it automatically generated.
-
-When renaming or adding sidebars, make sure to **`rename both the folder as well as the label in _category_.json file.`**
-
-![](static/img/main-readme/notes-sidebars-edit-both.png)
-
-
-In your IDE, folder names will appear in alphabetical order. However, we can change their order when rendered by specifying their position in the `_category_.json` file. In the example above, the folder "Cloud-Microsoft Azure" appears as the fourth folder inside the docs. But since we specified its position as 9th, it will be displayed in a different order in the browser.
-
-![](static/img/main-readme/notes-sidebars-ordering-corrected.png)
-
-### Ordering of the Sidebars 
-
-These are the current ordering:
-
-Order   | Sidebar                       | 
---------|-------------------------------|
- 01     | Welcome                       | 
- 02     | Personal Notes                | 
- 03     | IT Foundations                | 
- 04     | Linux                         | 
- 05     | Networking                    | 
- 06     | Cybersecurity                 | 
- 07     | Cloud-Foundations             | 
- 08     | Cloud-Amazon Web Services     | 
- 09     | Cloud-Microsoft Azure         | 
- 10     | Containerization              | 
- 11     | Insfrastructure as Code       | 
- 12     | CICD                          | 
- 13     | Observability                 | 
- 14     | DevSecOps                     | 
- 15     | Project Management            | 
-
-### Front Matter 
-
-Specify properties for the docs files. It is the YAML file at the top of the docs page.
-
-```bash
----
-title: Put Main Title of Page here
-sidebar_position: 2                   # Ordering of display on the sidebar
-toc_min_heading_level: 1              # TOC at the right, shows min Header 1 level
-toc_max_heading_level: 6              # TOC at the right, shows max Header 6 level
---- 
-```
-
-If you want to also show the TOC at the main page, besides the TOC at the right, add the following after the front matter section, like this:
-
-```bash
----
-title: Put Main Title of Page here
-sidebar_position: 2                   # Ordering of display on the sidebar
-toc_min_heading_level: 1              # TOC at the right, shows min Header 1 level
-toc_max_heading_level: 6              # TOC at the right, shows max Header 6 level
---- 
-
-import TOCInline from '@theme/TOCInline
-
-<TOCInline toc={toc} minHeadingLevel=}{2} maxHeadingLevel=}{6} />>
-```
 
 ## Troubleshooting 
 
