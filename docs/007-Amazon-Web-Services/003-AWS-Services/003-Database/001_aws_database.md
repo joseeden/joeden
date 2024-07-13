@@ -1,10 +1,21 @@
-<!-- ---
+---
 title: "AWS Databases"
-tags: [Cybersecurity]
+description: "Different database options in AWS"
+tags: [Cloud, AWS, DevOps, Certifications]
 sidebar_position: 1
 last_update:
-  date: 1/30/2024
+  date: 8/30/2020
 ---
+
+
+:::info[NOTES]
+
+This is not an exhaustive documentation of all the existing AWS Services. These are summarized notes that I used for the AWS Certifications.
+
+To see the complete documentation, please go to: [AWS documentation](https://docs.aws.amazon.com/)
+
+:::
+
 
 
 ## Choosing the Right Database
@@ -50,143 +61,6 @@ Amazon RDS is a managed database service for relational databases
 - AWS manages common database administration tasks.
 - AWS provisions an EC2 instance behind the scenes and EBS Volume
 
-
-### DB Engines supported
-
-A DB engine is the specific relational database software that runs on your DB instance. Amazon RDS currently supports the following engines:
-
-- MySQL
-- PostreSQL
-- Oracle
-- Microsoft SQL Server
-- Aurora
-- MariaDB
-
-### Advantages and Disadvantages
-
-**Advantages**
-
-- Security through IAM, security groups, KMS, SSL
-- Backup/Snapshot/Point in time restore functionality
-- Support for multi AZ deployment 
-- Read replicas
-- Monitoring happens through CloudWatch
-- Managed and scheduled maintenance
-- Pay per hour based on provisioned EC2 and EBS
-- Scaling capability (vertical and horizontal)
-- Storage backed by EBS (GP2 or IO)
-
-**Disadvantages**
-
-- No SSH into the instance which hosts the database
-
-
-### Use cases
-
-- Store relational datasets
-- Perform SQL queries
-- Transactional inserts, deletes, updates
-
-### RDS Backups
-
-- Backups are automatically enabled in RDS
-- AWS RDS provides automated backups:
-    - Daily fill backup of the database (during the maintenance window)
-    - Transaction logs are backed-up by RDS every 5 minutes which provides the ability to do point in time restores
-    - There is a 7 day retention for the backups which can be increased to 35 days
-- DB Snapshots:
-    - There are manually triggered backups by the users
-    - Retention can be as long as the user wants
-    - Helpful for retaining the state of the database for longer period of time
-
-### RDS Read Replicas
-
-- Read replicas helps to scale the read operations
-- We can create up to 5 read replicas
-- These replicas can be within AZ, cross AZ or in different regions
-- The data between the main database and the read replicas is replicated **asynchronously** => reads are eventually consistent
-- Read replicas can be promoted into their own database
-- Use case for read replicas:
-    - Production database is up and running taking on normal load
-    - There is a new feature for running some reporting for analytics which may cause slow downs and may overload the database
-    - To fix this we can create read replicas for reporting
-- Read replicas are used for SELECT operations (not INSERT, UPDATE, DELETE)
-- Network cost for read replicas:
-    - In AWS there is network cost if data goes from one AZ to another
-    - In case of cross AZ replication, additional costs may incur because of network traffic
-    - To reduce costs, we could have the read replicas in the same AZ
-
-### RDS Multi AZ (Disaster Recovery)
-
-- RDS Multi AZ replication is done using **synchronous** replication
-- In case of multi AZ configuration we get one DNS name
-- In case of the main database goes down, the traffic is automatically re-routed to the failover database
-- Multi AZ is not used for scaling
-- The read replicas can be set up as Multi AZ for Disaster Recovery
-
- 
-
-### RDS Security
-
-#### Encryption at rest
-
-- Possibility to encrypt the master and read replicas with AWS KMS - AES-256 encryption
-- Encryption has to be defined at the launch time
-- **If the master is not encrypted, the read replicas cannot be encrypted**
-- Transparent Data Encryption (TDE) is available for Oracle and SQL Server
-
-#### Encryption in flight
-
-- Uses SSL certificates to encrypt data from client to RDS in flight
-- It is required SSL a trust certificate when connecting to database
-- To enforce SSL:
-    - PostgeSQL: 
-    
-        ```bash
-        rds.force_ssl=1 in the AWS RDS Console (Parameter Groups)
-        ```
-
-    - MySQL: 
-    
-        ```bash
-        GRANT USAGE ON *.* To 'user'@'%' REQUIRE SSL; 
-        ```
-
-#### Encrypting RDS backups
-
-- Snapshots of un-encrypted RDS databases are un-encrypted
-- Snapshots of encrypted RDS databases are encrypted
-- We can copy an un-encrypted snapshot into an encrypted one
-
-#### Encrypt an un-encrypted RDS database
-
-- Create a snapshot
-- Copy the snapshot and enable encryption for the snapshot
-- Restore the database from the encrypted snapshot
-- Migrate application from the old database to the new one and delete the old database
-
-#### Network Security and IAM
-
-**Network security**
-- RDS databases are usually deployed within a private subnet
-- RDS security works by leveraging security groups (similar to EC2), they control who can communicate with the database instance
-
-**Access management**
-- There are IAM policies which help control who can manage an AWS RDS database (through the RDS API)
-- Traditional username/password can be used to login into the database
-- IAM-based authentication can be used to login into MySQL and PostgreSQL 
-
-**IAM authentication**
-- IAM database authentication works with MySQL and PostgreSQL
-- We don't need a password to authenticate, just an authentication token obtained through IAM and RDS API calls
-- The token has a lifetime of 15 minutes
-- Benefits:
-    - Network in/out must be encrypted using SSL
-    - IAM is used to centrally manage users instead of DB credentials
-    - We can manage IAM roles and EC2 instance profiles for easy integration
-
- 
-
 ## Aurora
 
 Amazon Aurora (Aurora) is a fully managed relational database engine that's compatible with MySQL and PostgreSQL.
@@ -201,7 +75,7 @@ Amazon Aurora (Aurora) is a fully managed relational database engine that's comp
 - Same security, monitoring and maintenance features as RDS
 - Aurora has a serverless option
 
-**Use cases**
+Use cases:
 
 - Similar to RDS, but with less maintenance, more flexibly, more performant at a higher cost
 
@@ -247,7 +121,7 @@ Amazon DynamoDB is a fully managed NoSQL database service that provides fast and
 - Monitoring is done through CloudWatch
 - The tables can only be queried on primary key, sort key or indexes
 
-**Use cases**
+Use cases:
 
 - Serverless application development
 - Distributed serverless cache
@@ -299,7 +173,7 @@ Amazon Neptune is a fast, reliable, fully managed graph database service that ma
 - Provides point-in-time recovery, continuous back-up to S3
 - Support for KMS encryption at rest + HTTPS
 
-**Use cases**
+Use cases:
 
 - Highly relational data
 - Social networking
@@ -321,4 +195,4 @@ OpenSearch is a fully open-source search and analytics engine for use cases such
 - Security through Cognito and IAM, KMS encryption, SSL and VPC
 - Comes with Kibana and Logstahs - ELK stack
 
-  -->
+ 
