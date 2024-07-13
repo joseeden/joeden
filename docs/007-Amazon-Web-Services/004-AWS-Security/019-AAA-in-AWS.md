@@ -342,7 +342,21 @@ Notes:
 - **Security Group Rules** 
     
     - Each rule set is composed of the following fields:
+
+        | Field                     | Description                   | 
+        |---------------------------|-------------------------------|
+        | Name                      | As expected this allows you to add a name for the rule up to 255 characters in length.
+        | Security Group Rule ID    | This is automatically created and set a unique identifier for the security group rule.
+        | IP Version                | Here you can select which IP version that the security group apples to, V4 or V6.
+        | Type                      | This dropdown list allows you to select common protocols like SSH, RDP, HTTP. <br />You can also choose custom protocols. 
+        | Protocol                  | This is typically grayed out, as it's covered by most type choices.<br />However, if you create a custom rule, you can specify your protocol here.
+        | Port range                | Usually pre-filled, reflecting the default port range for your chosen protocol. <br />However, there might be times when you prefer to use custom ports. 
+        | Source                    | This can be a net or subnet range, a specific IP address, or another AWS security group. <br /> You can also leave access open to the entire internet using the Anywhere value. 
+        | Description               | This simply allows you to add a description for the rule itself.
             
+
+
+
         - **Name**
             - As expected this allows you to add a name for the rule up to 255 characters in length.
 
