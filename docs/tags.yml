@@ -198,6 +198,10 @@ Messaging:
   label: 'Messaging'
   permalink: '/Messaging'
   description: 'Docs related to Messaging'
+Disaster Recovery:
+  label: 'Disaster Recovery'
+  permalink: '/Disaster Recovery'
+  description: 'Docs related to Disaster Recovery'
 Docusaurus:
   label: 'Docusaurus'
   permalink: '/Docusaurus'
