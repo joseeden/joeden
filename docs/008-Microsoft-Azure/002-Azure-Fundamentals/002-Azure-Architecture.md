@@ -88,7 +88,12 @@ Management groups provide a governance scope above subscriptions. You organize s
 
 The following diagram shows an example of creating a hierarchy for governance using management groups.
 
+
+<div class="img-center"> 
+
 ![](/img/docs/azure-fundamentals-mggroups.png)
+
+</div>
 
 ### Update Domain 
 
