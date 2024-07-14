@@ -1,14 +1,22 @@
-<!-- ---
-title: "Azure Troubleshooting, Governance, and Compliance"
-tags: [Cybersecurity]
-sidebar_position: 1
-last_update:
-  date: 1/30/2024
 ---
+title: "Troubleshooting, Governance, and Compliance"
+description: "Tools for troubleshooting, governance, and ensuring compliance"
+tags: [Cloud, Microsoft Azure, DevOps, Certifications]
+sidebar_position: 15
+last_update:
+  date: 11/16/2020
+---
+
+:::info[NOTES]
+
+This is not an exhaustive documentation of all the existing Azure Services. These are summarized notes for the Azure Certifications.
+
+To see the complete documentation, please go to: [Azure documentation](https://learn.microsoft.com/en-us/azure/?product=popular)
+
+:::
 
 
 ## Overview 
-
 
 Azure provides various tools and services for troubleshooting, governance, and ensuring compliance. Here's an overview of key concepts:
 
@@ -20,17 +28,18 @@ Azure provides various tools and services for troubleshooting, governance, and e
 
 
 ## Platform Logs
+
 - **Resource Logs:** (formerly diagnostic logs) Record information about activities within an Azure resource (e.g., database access).
 - **Activity Logs:** Provide subscription-level details about external activities on resources (e.g., shutting down a database).
 - **Azure Active Directory Logs:** Capture activities related to Azure Active Directory, such as logins and user additions.
 
 ## Resource Locks
 
+- **Hierarchy:** Locks can be applied at the resource, resource group, or subscription level.
+- **Inheritance:** Most restrictive lock takes precedence; administrators must remove locks to delete resources.
 - **Types:** 
     - Delete lock (prevents deletion) 
     - Read-only lock (prevents modification and deletion).
-- **Hierarchy:** Locks can be applied at the resource, resource group, or subscription level.
-- **Inheritance:** Most restrictive lock takes precedence; administrators must remove locks to delete resources.
 
 ## Azure Policy Service
 
@@ -58,7 +67,6 @@ Additional resources for trust, compliance, and eligibility for specialized inst
 - [Service Trust Portal](https://servicetrust.microsoft.com/)
 
 
-
 ## Resources 
 
-- [Learning About Azure](https://cloudacademy.com/learning-paths/learning-about-azure-5663/) -->
+- [Learning About Azure](https://cloudacademy.com/learning-paths/learning-about-azure-5663/)
