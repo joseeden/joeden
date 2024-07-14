@@ -115,41 +115,41 @@ Azure Cost Management provides essential features for managing and controlling c
 
 By leveraging Azure Cost Management, organizations can gain insights into their spending patterns, set proactive budgets, and receive alerts to prevent budget overruns. 
 
-### Cost Analysis
+- **Cost Analysis**
 
-- **Functionality:** Allows detailed analysis of costs, breaking down spending by service, region, and subscription.
-- **Usage:** View cost changes on a daily or monthly basis through charts and tables.
-- **Forecasting:** Provides a forecast of future spending based on current resource usage.
+    - **Functionality:** Allows detailed analysis of costs, breaking down spending by service, region, and subscription.
+    - **Usage:** View cost changes on a daily or monthly basis through charts and tables.
+    - **Forecasting:** Provides a forecast of future spending based on current resource usage.
 
-### Budgets and Alerts
+- **Budgets and Alerts**
 
-- **Budget Setup:** Establish monthly spending expectations by setting budgets.
-- **Alerts:** Configure alerts to notify when costs approach or exceed specified thresholds.
-- **Granularity:** Multiple alerts at different levels, e.g., 75%, 90%, and 100% of the budgeted amount.
-- **Forecast Alerts:** Receive alerts based on the forecasted spending percentage.
+    - **Budget Setup:** Establish monthly spending expectations by setting budgets.
+    - **Alerts:** Configure alerts to notify when costs approach or exceed specified thresholds.
+    - **Granularity:** Multiple alerts at different levels, e.g., 75%, 90%, and 100% of the budgeted amount.
+    - **Forecast Alerts:** Receive alerts based on the forecasted spending percentage.
 
-### Hierarchical Cost Tracking
+- **Hierarchical Cost Tracking**
 
-- **Levels:** Utilize three management levels for better cost tracking:
-- **Resource Groups:** Contain related resources (e.g., services for a specific application).
-- **Subscriptions:** Group resource groups; can be organized by teams or projects.
-- **Management Groups:** Aggregate subscriptions (useful for departments).
+    - **Levels:** Utilize three management levels for better cost tracking:
+    - **Resource Groups:** Contain related resources (e.g., services for a specific application).
+    - **Subscriptions:** Group resource groups; can be organized by teams or projects.
+    - **Management Groups:** Aggregate subscriptions (useful for departments).
 
-### Tagging
+- **Tagging**
 
-- **Functionality:** Apply tags to Azure resources to categorize and organize them.
-- **Usage:** Tags provide a mechanism to track the total cost of resources with the same tag.
-- **Flexibility:** Enables fine-grained cost attribution and analysis.
+    - **Functionality:** Apply tags to Azure resources to categorize and organize them.
+    - **Usage:** Tags provide a mechanism to track the total cost of resources with the same tag.
+    - **Flexibility:** Enables fine-grained cost attribution and analysis.
 
-### Azure Advisor Recommendations
+- **Azure Advisor Recommendations**
 
-- **Integration:** Azure Cost Management integrates with Azure Advisor for additional recommendations.
-- **Optimization:** Leverage Advisor suggestions for optimizing costs and improving resource efficiency.
-  
-### Regular Monitoring
+    - **Integration:** Azure Cost Management integrates with Azure Advisor for additional recommendations.
+    - **Optimization:** Leverage Advisor suggestions for optimizing costs and improving resource efficiency.
+    
+- **Regular Monitoring**
 
-- **Proactive Approach:** Instead of daily analysis, set up budgets and alerts for proactive cost control.
-- **Prevention:** Early warnings and alerts help prevent unexpected cost overruns.
+    - **Proactive Approach:** Instead of daily analysis, set up budgets and alerts for proactive cost control.
+    - **Prevention:** Early warnings and alerts help prevent unexpected cost overruns.
 
 
 ## Resources 
