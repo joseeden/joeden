@@ -70,10 +70,10 @@ AWS:
   label: 'AWS'
   permalink: '/AWS'
   description: 'Docs related to AWS'
-Azure:
-  label: 'Azure'
-  permalink: '/Azure'
-  description: 'Docs related to Azure'
+Microsoft Azure:
+  label: 'Microsoft Azure'
+  permalink: '/Microsoft Azure'
+  description: 'Docs related to Microsoft Azure'
 GCP:
   label: 'GCP'
   permalink: '/GCP'

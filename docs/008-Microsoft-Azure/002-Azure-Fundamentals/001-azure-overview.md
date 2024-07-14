@@ -1,10 +1,19 @@
 ---
 title: "Microsoft Azure Overview"
-tags: [Cybersecurity]
+description: "A 10,000 ft view of Microsoft Azure"
+tags: [Cloud, Microsoft Azure, DevOps, Certifications]
 sidebar_position: 1
 last_update:
-  date: 1/30/2024
+  date: 11/16/2020
 ---
+
+:::info[NOTES]
+
+This is not an exhaustive documentation of all the existing Azure Services. These are summarized notes for the Azure Certifications.
+
+To see the complete documentation, please go to: [Azure documentation](https://learn.microsoft.com/en-us/azure/?product=popular)
+
+:::
 
 
 ## Overview 
