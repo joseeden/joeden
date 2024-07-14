@@ -1,5 +1,5 @@
 <!-- ---
-title: "Azure Compute "
+title: "Azure Compute"
 tags: [Cybersecurity]
 sidebar_position: 1
 last_update:
@@ -333,4 +333,4 @@ Regular assessments of scaling strategies and the chosen pricing tier help maint
 
 
 
-
+ -->
