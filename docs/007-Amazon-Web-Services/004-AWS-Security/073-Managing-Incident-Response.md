@@ -67,7 +67,7 @@ If an instance has multiple active security groups that overlap, AWS will apply 
 3. As correct measure, remove any existing security group from the instance or delete all rules of the security groups attached to the instance.
 3. Once we removed the rules, attach a new blank security group to the instance to ensure no traffic is coming in or out of the instance.
 
-#### Tracked vs. Untracked Connections
+### Tracked vs. Untracked Connections
 
 Since security groups are stateful, they keep track of certain connections to allow traffic back into the network. Having said, we need to understand the difference between tracked and untracked connections.
 
