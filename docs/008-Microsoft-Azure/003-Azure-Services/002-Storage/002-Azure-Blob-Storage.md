@@ -50,7 +50,7 @@ Blob data stands for **Binary Large Object** data. Blob data and can represent a
    - **Page Blobs**
      - Used for storing random access files up to 8 TiB.
      - Ideal for storing VHD files, serving as disks for Azure virtual machines.
-     <br>
+        
 
       <div class="img-center">
 

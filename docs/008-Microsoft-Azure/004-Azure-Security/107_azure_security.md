@@ -231,7 +231,7 @@ Used to filter network traffic to and from Azure resources connected to a virtua
   - You can create as many custom rules as you need.
   - Defines allowed or denied traffic based on source, destination, and port.
   - Enhances security by controlling communication between resources.
-  <br>
+     
 
     <p>
     <img 
@@ -252,7 +252,7 @@ Virtual network gateway facilitating encrypted traffic between Azure virtual net
   - Supports multiple connections to a single gateway.
   - Deployed with specialized VMs in a dedicated subnet (gateway subnet).
   - Supports VNet-to-VNet, Site-to-Site, and Point-to-Site connections.
-  <br>
+     
 
     <p>
     <img 
@@ -277,13 +277,13 @@ You can deploy VPN gateways in Azure Availability Zones so they can benefit from
 Once you’ve deployed a VPN gateway, you can:
 
 - Create an IPsec/IKE VPN connection between the VPN gateway and another endpoint, which could be another VPN gateway (to form a VNet-to-VNet connection).
-<br>
+   
 
     <p align=center>
     ![](/img/docs/azure-vnetgw-ipsec-ike.png)
     </p>
 
-<br>
+   
 
 - Create an IPsec/IKE VPN connection between the VPN gateway and an on-prem VPN device (to create a Site-to-Site connection). 
 
@@ -316,7 +316,7 @@ Provides centralized protection for web applications against malicious attacks.
 
 - Simplifies security management by patching known vulnerabilities centrally.
 - Included in Application Gateway service and Front Door service.
-<br>
+   
 
     <p>
     ![](/img/docs/azure-wafff.png)
@@ -334,7 +334,7 @@ Cloud-based network security service for protecting Azure Virtual Network resour
   - Centrally creates, enforces, and logs application and network connectivity policies.
   - Uses a static public IP address for easy identification of traffic from the virtual network.
   - Integrated with Azure Monitor for logging and analytics.
-  <br>
+     
 
     <p align=center>
     <img width=300  src="../../Images/azure-firwall-different-from-azure-waf.png">

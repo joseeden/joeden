@@ -98,3 +98,61 @@ Detailed information on the different storage accounts available at: [https://do
 
 
  
+
+## Performance Levels
+
+Aside from the redundancy level and the default access tier, there’s yet another option you need to set when you create a storage account: the performance level.
+
+- **Standard (Default)**
+
+   - **Account Type:** General-purpose v2 account.
+   - **Recommendation:** Suitable for most cases.
+
+- **Premium**
+
+   - **Account Type:** Higher-performance option.
+   - **Consideration:** More expensive and limits redundancy options.
+   - **Usage:** Recommended only if significantly faster performance is necessary.
+
+
+## Data Transfer into Azure Storage
+
+- **Azure Portal**
+
+   - **Use:** For uploading a small number of files from the desktop.
+   - **Capability:** Allows file upload and download directly through the portal.
+
+- **AzCopy (Command-Line Utility)**
+
+   - **Use:** For faster upload/download, especially for a large number of files.
+   - **Capability:** Supports file and folder copying, including cross-cloud transfers.
+
+- **Azure Storage Explorer (Graphical User Interface)**
+
+   - **Use:** For managing files, changing access tiers, and copying files using a graphical interface.
+   - **Capability:** Provides file management features beyond simple copying.
+
+- **Azure File Sync**
+
+   - **Use:** Specialized use case for creating a local cache of Azure Files on Windows servers.
+   - **Capability:** Enhances access speed to an Azure file share in an on-premises environment.
+
+## Migration Tools
+
+
+- **Azure Migrate**
+
+   - **Use:** Comprehensive tool for discovering, assessing, and migrating on-premises servers, web apps, and databases to Azure.
+   - **Process:** Discovers on-premises resources, assesses size and cost of equivalent Azure services, facilitates migration.
+
+- **Azure Data Box**
+
+   - **Use:** For sending a large amount of data during migration.
+   - **Process:** Microsoft ships a Data Box storage device, data is copied to the device, shipped back to Microsoft, and data is transferred to the Azure storage account.
+   - **Consideration:** Typically used for data transfers exceeding 40 terabytes due to time and expense involved.
+
+ 
+
+## Resources 
+
+- [Learning About Azure](https://cloudacademy.com/learning-paths/learning-about-azure-5663/)

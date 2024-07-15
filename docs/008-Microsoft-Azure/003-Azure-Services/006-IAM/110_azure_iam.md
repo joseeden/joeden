@@ -267,7 +267,7 @@ Microsoft Entra Domain Services or previously known as Azure AD Domain Services 
     - Kerberos
     - NTLM Authentication
     - Group Policy support
-    <br>
+       
 
     ![](/img/docs/azure-adds-sync-onprem-to-azure-ad.png)
 
@@ -287,7 +287,7 @@ Two-step verification for enhanced security, requiring multiple authentication m
    - Protects data and applications without compromising user experience.
    - Included in Azure AD Premium, Microsoft 365 Business, Azure AD Free, and standalone Office 365 licenses.
    - Additional features in premium versions, including Conditional Access policies.
-   <br>
+      
 
     ![](/img/docs/azure-mfa-how-to-get.png)
 

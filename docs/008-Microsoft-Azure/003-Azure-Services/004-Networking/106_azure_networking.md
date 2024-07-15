@@ -137,7 +137,7 @@ Connect a single computer to the virtual network.
 
 - For each on-prem computer or client, a separate connection is used
 - Typically used for remote worker access.
-<br>
+   
 
     <p>
     <img width=700 
@@ -153,7 +153,7 @@ Connect entire on-prem network to Azure virtual network.
 
 - Secure, encrypted connection over the internet.
 - Utilizes Azure VPN Gateway.
-<br>
+   
 
     <p>
     <img width=700 
@@ -169,7 +169,7 @@ Private connection between on-prem network and Azure.
 
 - No internet flow, established through an ExpressRoute partner.
 - Offers a more robust and dedicated connection.
-<br> 
+    
 
     <p>
     <img width=700 
