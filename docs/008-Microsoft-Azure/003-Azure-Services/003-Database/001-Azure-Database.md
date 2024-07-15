@@ -1,10 +1,19 @@
-<!-- ---
-title: "Azure Database"
-tags: [Cybersecurity]
+---
+title: "Databases on Azure"
+description: "A 10,000 ft view of Microsoft Azure"
+tags: [Cloud, Microsoft Azure, DevOps, Certifications]
 sidebar_position: 1
 last_update:
-  date: 1/30/2024
+  date: 7/18/2020
 ---
+
+:::info[NOTES]
+
+This is not an exhaustive documentation of all the existing Azure Services. These are summarized notes for the Azure Certifications.
+
+To see the complete documentation, please go to: [Azure documentation](https://learn.microsoft.com/en-us/azure/?product=popular)
+
+:::
 
 
 ## Evolution of Databases 
@@ -28,7 +37,7 @@ Microsoft Azure Synapse Analytics bridges the gap between structured and unstruc
   - Tailored for querying both structured and unstructured data using Apache Spark.
   - Ideal for data lake use-cases
 
-###  Azure Synapse Pipelines 
+##  Azure Synapse Pipelines 
 
 Azure Synapse Analytics extends its capabilities with **Azure Synapse Pipelines**, a robust tool for data extraction and transformation. 
 - Stripped-down version of Azure Data Factory
@@ -40,11 +49,11 @@ For example, a pipeline could:
 - Store the results in a SQL pool.  
 
 
-### Building Pipelines: Code or No-Code
+## Building Pipelines: Code or No-Code
 
 There are a couple of different approaches you could take to building a pipeline: one using code and the other without using code.
 
-#### Code Method
+### Code Method
 
 1. Create a Synapse Workspace which will be used for secure analytics.
 
@@ -62,7 +71,7 @@ There are a couple of different approaches you could take to building a pipeline
 
 5. Schedule notebook execution for recurring tasks.
 
-#### No-Code Method
+### No-Code Method
 
 1. Create a Synapse Workspace which will be used for secure analytics.
 
@@ -79,7 +88,7 @@ There are a couple of different approaches you could take to building a pipeline
   
 
 
-### Cost Management for Spark and SQL Pools
+## Cost Management for Spark and SQL Pools
 
 Both Spark and SQL pools operate as clusters of virtual machines, impacting costs. Azure provides mechanisms for cost control:
 
@@ -98,10 +107,8 @@ Both Spark and SQL pools operate as clusters of virtual machines, impacting cost
       - Query data in various formats without paying for dedicated compute resources.
       - Automatically created with Azure Synapse Workspace, charging only for processed data.
 
-Azure Synapse Analytics emerges as a unified solution, eliminating the silos between structured and unstructured data analytics, and offering flexibility in data orchestration through pipelines. 
-
 For more information: [Azure Synapse Analytics documentation](https://docs.microsoft.com/en-us/azure/synapse-analytics/).
 
 ## Resources 
 
-- [Learning About Azure](https://cloudacademy.com/learning-paths/learning-about-azure-5663/) -->
+- [Learning About Azure](https://cloudacademy.com/learning-paths/learning-about-azure-5663/)
