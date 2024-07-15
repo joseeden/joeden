@@ -7,6 +7,14 @@ last_update:
   date: 7/18/2020
 ---
 
+:::info[NOTES]
+
+This is not an exhaustive documentation of all the existing Azure Services. These are summarized notes for the Azure Certifications.
+
+To see the complete documentation, please go to: [Azure documentation](https://learn.microsoft.com/en-us/azure/?product=popular)
+
+:::
+
 ## Compute Services 
 
 Azure compute is an on-demand computing service for running cloud-based applications.
