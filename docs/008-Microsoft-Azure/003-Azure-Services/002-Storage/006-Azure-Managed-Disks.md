@@ -38,7 +38,7 @@ Azure Managed Disks provide a virtualized, scalable, and highly available storag
         - Designed for 99.999% availability with three replicas of data per disk, protecting against two failures of disk replicas.
   2. **Scalability**
         - Supports up to 50,000 VM disks of a specific type per region in each subscription, enabling the creation of numerous virtual machines.
-  3. **Integration:**
+  3. **Integration**
         - With availability sets: 
             - Isolation of VM disks within an availability set, guarding against a single point of failure within an Azure data center.
         - With availability zones: 

@@ -21,7 +21,8 @@ To see the complete documentation, please go to: [Azure documentation](https://l
 Traditionally, databases focused on transaction processing. However, the need for efficient data analysis led to the creation of data warehouses, specifically designed for reporting, utilizing SQL for querying.
 
 **Enter Data Lakes and Big Data**
-As unstructured data gained prominence, data lakes became pivotal for comprehensive data storage. Big data analytics, often powered by Apache Spark, provided insights into diverse data types like documents and images.
+As unstructured data gained prominence, data lakes became pivotal for comprehensive data storage. Big data analytics, often powered by Apache Spark, provided insights into diverse data types like documents and 
+es.
 
   
 
