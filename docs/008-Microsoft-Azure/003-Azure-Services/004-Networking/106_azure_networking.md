@@ -51,7 +51,7 @@ While IP addresses are crucial, referring to resources by name is often more pra
 
 - **Custom DNS Servers:** For resolving names of systems in an on-premises environment, users can utilize their own DNS servers or **Azure DNS**, capable of acting as a full DNS service.
 
-<small>[Back to the top](#azure-networking)</small>
+  
 
 ### Key Concepts
 
@@ -72,7 +72,7 @@ While IP addresses are crucial, referring to resources by name is often more pra
 **Subscriptions**
 - Each virtual network is scoped to a specific subscription.
 
-<small>[Back to the top](#azure-networking)</small>
+  
 
 ### Best Practices for Virtual Networks
 
@@ -94,7 +94,7 @@ While IP addresses are crucial, referring to resources by name is often more pra
 
 For more information: [Learn more about Network Security Groups](https://docs.microsoft.com/en-us/azure/virtual-network/security-overview).
 
-<small>[Back to the top](#azure-networking)</small>
+(#azure-networking)</small>
 
 ## Internet Communication
 
@@ -127,7 +127,7 @@ Connect two virtual networks, enabling communication between Azure resources.
 
 For more information: [vNet Peering](#vnet-peering)
 
-<small>[Back to the top](#azure-networking)</small>
+  
  
 ## Communication with On-Prem Networks
 
@@ -178,7 +178,7 @@ Private connection between on-prem network and Azure.
 
 For more information: [Azure ExpressRoute](#expressroute)
 
-<small>[Back to the top](#azure-networking)</small>
+  
 
 ## Filtering and Routing
 
@@ -228,7 +228,7 @@ Propagates on-prem BGP routes to Azure virtual networks, through the use of:
 For more information: [BGP Routes](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-bgp-overview?toc=/azure/virtual-network/toc.json)
 
 
-<small>[Back to the top](#azure-networking)</small>
+  
 
 ## vNet Peering 
 
@@ -271,7 +271,7 @@ In scenarios requiring seamless connectivity between distinct Azure virtual netw
 
 Whether opting for local or global peering, both choices offer low-latency, high-bandwidth connectivity. This connectivity spans across virtual networks in diverse Azure subscriptions, Azure Active Directory tenants, and Azure regions.
 
-<small>[Back to the top](#azure-networking)</small>
+  
 
 ## VPN Gateway 
 
@@ -301,7 +301,7 @@ Once the VPN Gateway is deployed, you can create an IPSec or IKE VPN tunnel betw
 
 For more information: [Azure VPN Gateway Documentation](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways)
 
-<small>[Back to the top](#azure-networking)</small>
+  
 
 
 ## Point-to-Site VPNs 
@@ -357,7 +357,7 @@ Refer to the table below for Azure gateway SKUs supporting Point-to-Site VPNs:
 
 For more information: [official documentation](https://docs.microsoft.com/en-us/azure/vpn-gateway/point-to-site-about). 
 
-<small>[Back to the top](#azure-networking)</small>
+  
 
 ## Site-to-Site VPNs 
 
@@ -395,7 +395,7 @@ When bridging on-premises networks to Azure virtual networks, the go-to solution
 6. **Verification of Connection:**
    - After provisioning the VPN connection, thorough verification is crucial to ensure a seamless and secure link between on-premises and Azure networks.
 
-<small>[Back to the top](#azure-networking)</small>
+  
 
 ## Routing Options for VPNs 
 
@@ -528,7 +528,7 @@ Choose from a range of ExpressRoute circuit bandwidths:
 
 For more information: [ExpressRoute FAQ](https://docs.microsoft.com/en-us/azure/expressroute/expressroute-faqs)
 
-<small>[Back to the top](#azure-networking)</small>
+  
 
 ## Private Endpoints 
 
@@ -583,7 +583,7 @@ Whether your VNet is peered to another VNet or connected to an on-premises envir
 
 ![](/img/docs/azure-peered-vnets-onprem.png)
 
-<small>[Back to the top](#azure-networking)</small>
+  
 
 
 

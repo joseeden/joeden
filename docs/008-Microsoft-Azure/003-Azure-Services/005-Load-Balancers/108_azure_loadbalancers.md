@@ -40,7 +40,7 @@ In the realm of networking, "load balancing" is the art of efficiently distribut
 |![](/img/docs/azure-loadbalancer-public-internal.png)|
 |-|
 
-<small>[Back to the top](#azure-loadbalancers)</small>
+   
 
 
 ## Load Balancer SKUs
@@ -60,7 +60,7 @@ In the realm of networking, "load balancing" is the art of efficiently distribut
 **Microsoft's Recommendation**
 Microsoft recommends using **Standard Load Balancers** whenever possible due to their built-in security features and extended capabilities, providing a robust solution for diverse scenarios.
 
-<small>[Back to the top](#azure-loadbalancers)</small>
+   
 
 ## Components of Azure LoadBalancers 
 
@@ -119,7 +119,7 @@ Azure Load Balancers are composed of several key components, each playing a cruc
   - Supported only on the standard load balancer
   - Not supported on the basic load balancer.
 
-<small>[Back to the top](#azure-loadbalancers)</small>
+   
 
 
 
@@ -164,7 +164,7 @@ Unlike the Load Balancer, Application Gateway makes routing decisions based on a
 
 For more information: [Azure Application Gateway Features](documentation-url)  
 
-<small>[Back to the top](#azure-loadbalancers)</small>
+   
 
 
 ### Components of an Application Gateway 
@@ -219,7 +219,7 @@ Azure Application Gateway comprises various components that collectively contrib
 For more information: [Azure Application Gateway Components Documentation](documentation-url)
 
 
-<small>[Back to the top](#azure-loadbalancers)</small>
+   
 
 ### Enabling WAF 
 
@@ -288,7 +288,7 @@ Azure Front Door is a service delivered from the edge of Microsoft's global netw
 
 For more information: [Azure Front Door Features Documentation](documentation-url)
 
-<small>[Back to the top](#azure-loadbalancers)</small>
+   
 
 
 ## Azure Web Application Firewall 
@@ -329,7 +329,7 @@ Azure Front Door seamlessly integrate with:
 For more information: [Azure WAF Documentation](documentation-url)
 
 
-<small>[Back to the top](#azure-loadbalancers)</small>
+   
 
 
 ## Azure Traffic Manager
@@ -343,7 +343,7 @@ Unlike other load balancer offerings, Azure Traffic Manager is a DNS-specific lo
 Through this mechanism, Azure Traffic Manager enhances application availability and responsiveness for users in various geographical locations.
 
 
-<small>[Back to the top](#azure-loadbalancers)</small>
+   
 
 ### Key Features
 
@@ -374,7 +374,7 @@ Through this mechanism, Azure Traffic Manager enhances application availability 
    - Directs clients to endpoints; traffic passes directly between clients and endpoints.
 
 
-<small>[Back to the top](#azure-loadbalancers)</small>
+   
 
 
 ### Typical Client-Endpoint Connection
@@ -410,7 +410,7 @@ Through this mechanism, Azure Traffic Manager enhances application availability 
 
 For more information: [Azure Traffic Manager Documentation](https://learn.microsoft.com/en-us/azure/traffic-manager/traffic-manager-overview).
 
-<small>[Back to the top](#azure-loadbalancers)</small>
+   
 
 ## Resources 
 

@@ -54,7 +54,7 @@ Kubernetes is a container orchestrator that addresses the challenges of managing
 - **Control Plane:**
   - Manages nodes and pods, ensuring desired state and handling orchestration.
 
-<small>[Back to the top](#container-services)</small>
+   
 
 ## Azure Kubernetes Service (AKS)
 
@@ -81,7 +81,7 @@ You can create an AKS cluster using:
 - AKS Public Community Channel: https://twitter.com/theakscommunity
 - Updates about the service, including new features and new Azure regions: AKS feed in Azure Updates
 
-<small>[Back to the top](#container-services)</small>
+   
 
 
 

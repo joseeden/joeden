@@ -14,7 +14,7 @@ Traditionally, databases focused on transaction processing. However, the need fo
 **Enter Data Lakes and Big Data**
 As unstructured data gained prominence, data lakes became pivotal for comprehensive data storage. Big data analytics, often powered by Apache Spark, provided insights into diverse data types like documents and images.
 
-<small>[Back to the top](#azure-database)</small>
+  
 
 ## Azure Synapse Analytics
 
@@ -76,7 +76,7 @@ There are a couple of different approaches you could take to building a pipeline
 
 6. Set up pipelines for automatic execution at specified intervals.
 
-<small>[Back to the top](#azure-database)</small>
+  
 
 
 ### Cost Management for Spark and SQL Pools

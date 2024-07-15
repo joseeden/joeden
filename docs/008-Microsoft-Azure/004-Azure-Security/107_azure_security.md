@@ -54,7 +54,7 @@ The shared responsibility model outlines the distribution of security responsibi
     - Shared responsibility for managing users and endpoint devices.
     - Provider handles underlying components, emphasizing service delivery.
 
-<small>[Back to the top](#azure-security)</small>
+  
 
 ## Azure Security Services 
 
@@ -115,7 +115,7 @@ Microsoft Defender for Cloud is a security posture management and threat protect
 - **Microsoft Defender Open-Source Relational Databases**
     - Provide alerts when it detects suspicious database access and query patterns, or when it detects suspicious database activities.
 
-<small>[Back to the top](#azure-security)</small>
+  
 
 ### Azure Key Vault
 
@@ -131,7 +131,7 @@ Azure Key Vault is a cloud solution for centrally storing and managing secrets, 
 - Authorization via role-based access control (RBAC) or Key Vault access policies.
 - Supports hardware security modules (HSMs) and FIPS 140-2 Level 2 validated HSMs.
 
-<small>[Back to the top](#azure-security)</small>
+  
 
 ### Azure Monitor
 
@@ -179,7 +179,7 @@ Azure Monitor collects resource and activity logs and other monitoring data that
    - Use Azure Monitor Logs to build workflows.
    - Retrieve log data and copy it to external locations using tools like Logic Apps.
 
-<small>[Back to the top](#azure-security)</small>
+  
 
 ### Azure Sentinel
 
@@ -205,7 +205,7 @@ Azure Sentinel is a cloud-based security information event management (SIEM) sol
 - Available connectors for Microsoft solutions and other sources.
 - After connecting, monitor your data with  .
 
-<small>[Back to the top](#azure-security)</small>
+  
 
 ## Identity and Access Management 
 
@@ -241,7 +241,7 @@ Used to filter network traffic to and from Azure resources connected to a virtua
 
 For more information: [Azure services compatible with NSG](https://docs.microsoft.com/azure/virtual-network/virtual-network-for-azure-services).
 
-<small>[Back to the top](#azure-security)</small>
+  
 
 
 ### Azure VPN Gateway
@@ -291,7 +291,7 @@ Once you’ve deployed a VPN gateway, you can:
 
 For more information: [Azure VPN Gateway Documentation](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways)
 
-<small>[Back to the top](#azure-security)</small>
+  
 
 ### Azure ExpressRoute
 
@@ -308,7 +308,7 @@ Private, dedicated connection between on-premises networks and Microsoft Cloud s
 
     For more information: [Azure ExpressRoute FAQs](https://docs.microsoft.com/azure/expressroute/expressroute-faqs)
 
-<small>[Back to the top](#azure-security)</small>
+  
 
 ### Web Application Firewall (WAF)
 
@@ -324,7 +324,7 @@ Provides centralized protection for web applications against malicious attacks.
 
     For more information: [Web Application Firewall Overview](https://docs.microsoft.com/azure/web-application-firewall/overview)
 
-<small>[Back to the top](#azure-security)</small>
+  
 
 ### Azure Firewall
 
@@ -342,7 +342,7 @@ Cloud-based network security service for protecting Azure Virtual Network resour
 
 For more information: [Azure Firewall Documentation](https://docs.microsoft.com/azure/firewall/)
 
-<small>[Back to the top](#azure-security)</small>
+  
 
 ### Azure DDoS Protection
 
@@ -367,7 +367,7 @@ To help mitigate these threats, you can leverage Azure DDoS Protection. By combi
 
 For more information: [Azure DDoS Protection Overview](https://docs.microsoft.com/azure/virtual-network/ddos-protection-overview)
 
-<small>[Back to the top](#azure-security)</small>
+  
 
 ### Virtual Network Service Endpoints
 
@@ -379,7 +379,7 @@ Extends the private address space of an Azure virtual network.
 
 For more information: [Virtual Network Service Endpoints Overview](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview)
 
-<small>[Back to the top](#azure-security)</small>
+  
 
 ## Storage Security
 
@@ -398,7 +398,7 @@ Automatically encrypts data in Azure Storage to meet security and compliance req
 
 For more information: [Azure Storage Service Encryption](https://docs.microsoft.com/azure/storage/common/storage-service-encryption)
 
-<small>[Back to the top](#azure-security)</small>
+  
 
 ### Shared Access Signatures (SAS)
 
@@ -429,7 +429,7 @@ Provides secure granular access to storage resources without compromising data s
 
 ![](/img/docs/azure-sas-how-it-worksss.png)
 
-<small>[Back to the top](#azure-security)</small>
+  
 
 ### Storage Account Keys
 
@@ -440,7 +440,7 @@ When you create a storage account, Azure generates two 512-bit keys which you ca
 - Key rotations can be performed without interrupting the applications that use them
 - Storage accoun access are essentially root passwords; protect them by not distributing, saving in plain text, or hard coding in apps.
 
-<small>[Back to the top](#azure-security)</small>
+  
 
 ### Azure Storage Analytics
 
@@ -452,7 +452,7 @@ Performs logging and provides metrics data for storage accounts.
 
 For more information: [Azure Storage Analytics](https://docs.microsoft.com/en-us/azure/storage/common/storage-analytics)
 
-<small>[Back to the top](#azure-security)</small>
+  
 
 ## Database Security
 
@@ -460,7 +460,7 @@ These security options provide a comprehensive approach to securing Azure SQL Da
 
 Properly configuring and utilizing these features enhances the overall security posture of database environments on Azure.
 
-<small>[Back to the top](#azure-security)</small>
+  
 
 ### Azure SQL Firewall Rules
 
@@ -488,7 +488,7 @@ Controls access to the Azure SQL Database server's public endpoint through IP fi
 
 For more information: [SQL Database Firewall Rules Configuration](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure)
 
-<small>[Back to the top](#azure-security)</small>
+  
 
 ### Azure SQL Always Encrypted
 
@@ -501,7 +501,7 @@ Encrypts sensitive data (e.g., credit card numbers) within client applications, 
 
 For more information: [Always Encrypted Documentation](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine)
 
-<small>[Back to the top](#azure-security)</small>
+  
 
 ### Azure SQL Transparent Data Encryption (TDE)
 
@@ -514,7 +514,7 @@ Encrypts Azure SQL Databases, Azure SQL Managed Instances, and Azure Synapse dat
 
 For more information: [Transparent Data Encryption Documentation](https://docs.microsoft.com/azure/sql-database/transparent-data-encryption-azure-sql)
 
-<small>[Back to the top](#azure-security)</small>
+  
 
 ### Azure SQL Database Auditing
 
@@ -537,7 +537,7 @@ Azure SQL Database Auditing tracks database events, logging them to an audit log
     - Each database will have different retention period
 - Recommended to enable server-level blob auditing only, unless there's a specific need for database-level auditing  
 
-<small>[Back to the top](#azure-security)</small>
+  
 
 ## Dynamic Data Masking in Azure SQL
 
@@ -547,7 +547,7 @@ Dynamic Data Masking (DDM) is a technology supported by Azure SQL Database, Azur
 - DDM operates as a policy-based security feature, concealing specific sensitive data returned from database queries 
 - DDM hides sensitive data without altering the data stored in the database.
 
-<small>[Back to the top](#azure-security)</small>
+  
 
 ### Use Case
 
@@ -586,7 +586,7 @@ An example scenario for DDM involves a call center employee who needs to identif
     - Determines how data is exposed under specific conditions.
 
 
-<small>[Back to the top](#azure-security)</small>
+  
 
 ### Masking Functions
 
@@ -601,7 +601,7 @@ An example scenario for DDM involves a call center employee who needs to identif
 | Number             | Shows a random portion of a number.                      |
 
 
-<small>[Back to the top](#azure-security)</small>
+  
 
 For more information: [Azure Official Documentation](https://docs.microsoft.com/azure/sql-database/sql-database-dynamic-data-masking-get-started).
 

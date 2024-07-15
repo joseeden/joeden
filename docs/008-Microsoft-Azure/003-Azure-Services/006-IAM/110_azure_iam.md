@@ -31,7 +31,7 @@ RBAC is an authorization system built on Azure Resource Manager, providing fine-
 
 
 
-<small>[Back to the top](#azure-iam)</small>
+  
 
 
 ## Microsoft Entra ID (previously "Azure Active Directory")
@@ -62,7 +62,7 @@ When you set up an environment on Azure, instead of using Active Directory, you 
    - Automatic Azure AD tenants for services like Microsoft 365, Office 365, and Azure.
 
 
-<small>[Back to the top](#azure-iam)</small>
+  
 
 
 ## Identity Protection 
@@ -89,7 +89,7 @@ This feature automatically detects and assesses risks associated with user login
     - Export risk detection data to Security Information and Event Management (SIEM) systems for additional analysis.
 
 
-<small>[Back to the top](#azure-iam)</small>
+  
 
 
 ## Privileged Identity Management (PIM)
@@ -124,7 +124,7 @@ Eligible users request activation of elevated roles only when needed. Activation
 Maintains a detailed audit trail of administrator activities for accountability and security monitoring.    
 
 
-<small>[Back to the top](#azure-iam)</small>
+  
 
 
 ## External Identities
@@ -148,7 +148,7 @@ For scenarios where external users, such as partners, suppliers, or customers, r
 - Functions as a separate service built on Azure AD technology.
 
 
-<small>[Back to the top](#azure-iam)</small>
+  
 
 
 ## Azure AD Connect 
@@ -195,7 +195,7 @@ If you want to move an existing subscription to a central tenant
 
 
 
-<small>[Back to the top](#azure-iam)</small>
+  
 
 
 ## Azure AD Services
@@ -219,7 +219,7 @@ If you want to move an existing subscription to a central tenant
     ![](/img/docs/azure-b2ccc.png)
 
 
-<small>[Back to the top](#azure-iam)</small>
+  
 
 
 ### Microsoft Entra Domain Services (formerly Azure AD Domain Services)
@@ -273,7 +273,7 @@ Microsoft Entra Domain Services or previously known as Azure AD Domain Services 
 
 
 
-<small>[Back to the top](#azure-iam)</small>
+  
 
 
 ## Azure Multi-Factor Authentication (MFA)
@@ -354,7 +354,7 @@ Defines conditions for user access based on various factors.
 - Provided by Microsoft, this automatically adds or removes users in groups based on predefined rules.
 - Example: "All users" rule to ensure all users are subject to conditional access policies.
 
-<small>[Back to the top](#azure-iam)</small>
+  
 
 
 ## Resources 

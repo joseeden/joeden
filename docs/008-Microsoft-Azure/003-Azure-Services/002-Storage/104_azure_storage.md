@@ -42,7 +42,7 @@ last_update:
 - Ideal for structured NoSQL data with a key/attribute store and a schema-less design.
 
 
-<small>[Back to the top](#azure-storage)</small>
+ 
 
 
 
@@ -73,7 +73,7 @@ last_update:
 </p>
 
 
-<small>[Back to the top](#azure-storage)</small>
+ 
 
 
 ### Key Features
@@ -91,7 +91,7 @@ last_update:
 Detailed information on the different storage accounts available at: [https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview).
 
 
-<small>[Back to the top](#azure-storage)</small>
+ 
 
 ## Azure Blob Storage 
 
@@ -136,7 +136,7 @@ Blob data stands for **Binary Large Object** data. Blob data and can represent a
 The storage account, containers, and blobs have a hierarchical relationship, forming a structured organization for your data.
 
 
-<small>[Back to the top](#azure-storage)</small>
+ 
 
 ### Access Tiers 
 
@@ -224,7 +224,7 @@ In the example below, we can see the important details in the **Overview** secti
 For more information: [Azure Blob Storage Introduction](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction).
 
 
-<small>[Back to the top](#azure-storage)</small>
+ 
 
 ### Lifecycle Management 
 
@@ -271,7 +271,7 @@ Effectively configuring Azure Blob Storage lifecycle management policies is cruc
    - Policies take up to 24 hours to go into effect.
 
 
-<small>[Back to the top](#azure-storage)</small>
+ 
 
 
 ## Azure Files 
@@ -299,7 +299,7 @@ Azure Files makes file shares available in the cloud, offering a fully managed s
 By leveraging Azure Files, organizations can simplify file storage management, enhance accessibility, and ensure reliability without the overhead of traditional on-premises file servers. 
 
 
-<small>[Back to the top](#azure-storage)</small>
+ 
 
 
 ## Azure Queues 
@@ -329,7 +329,7 @@ Azure Queue Storage provides a scalable and reliable solution for managing messa
     - Messages play a crucial role in enabling communication between different components of a distributed application.
 
 
-<small>[Back to the top](#azure-storage)</small>
+ 
 
 
 ## Azure Table Storage 
@@ -373,7 +373,7 @@ Azure Table Storage is a NoSQL datastore, providing a schema-less and flexible a
 - **Access:** The URL serves as the means to access the entire structure.
 
 
-<small>[Back to the top](#azure-storage)</small>
+ 
 
 
 ## Azure Managed Disks 
@@ -443,7 +443,7 @@ Azure Managed Disks provide a virtualized, scalable, and highly available storag
          |-|
 
 
-<small>[Back to the top](#azure-storage)</small>
+ 
 
 
 
@@ -513,7 +513,7 @@ Naturally, each of these redundancy options has a different price.
 
 ![](/img/docs/azure-cost-redundancy-options-complete.png)
 
-<small>[Back to the top](#azure-storage)</small>
+ 
 
 
 
@@ -569,7 +569,7 @@ Aside from the redundancy level and the default access tier, there’s yet anoth
    - **Process:** Microsoft ships a Data Box storage device, data is copied to the device, shipped back to Microsoft, and data is transferred to the Azure storage account.
    - **Consideration:** Typically used for data transfers exceeding 40 terabytes due to time and expense involved.
 
-<small>[Back to the top](#azure-storage)</small>
+ 
 
 ## Resources 
 

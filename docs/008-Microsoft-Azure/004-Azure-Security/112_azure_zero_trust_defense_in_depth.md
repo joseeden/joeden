@@ -83,7 +83,7 @@ This illustration provides a representation of the primary elements that contrib
 
 To learn more: [Zero Trust architecture](https://learn.microsoft.com/en-us/azure/security/fundamentals/zero-trust#zero-trust-architecture)
 
-<small>[Back to the top](#zero-trust-and-defense-in-depth)</small>
+  
 
 
 
@@ -162,7 +162,7 @@ The goal is to create multiple layers of protection so that even if one layer is
     - Utilizes a combination of Azure services and user implementation to fortify data protection.
 
 
-<small>[Back to the top](#zero-trust-and-defense-in-depth)</small>
+  
 
 
 ## Resources 
