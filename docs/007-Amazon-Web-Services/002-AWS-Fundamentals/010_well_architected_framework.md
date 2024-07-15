@@ -1,6 +1,6 @@
 ---
 title: "Five Pillars of Well-Architected Frameworks"
-description: "A Guides designing and running workloads in the cloud"
+description: "A guide in designing and running workloads in the cloud"
 tags: [AWS, Cloud, DevOps, Certifications]
 sidebar_position: 10
 last_update:
