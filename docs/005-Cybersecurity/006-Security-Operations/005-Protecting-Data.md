@@ -8,6 +8,14 @@ last_update:
 
 ## Ways to Protect Data
 
+### Data Security Controls 
+
+Data security controls are essential measures implemented to protect data from unauthorized access, alteration, or destruction. These controls help ensure the confidentiality, integrity, and availability of data within an organization, safeguarding sensitive information and complying with regulatory requirements.
+
+- Clear policiesand procedures covering data use and security.
+- Encryption to protect sensitive information.
+- Access controls on stored data.
+
 ### Anonymization 
 
 Anonymization of data is the process of removing or altering personally identifiable information (PII) to ensure that the data cannot be traced back to specific individuals.

@@ -47,7 +47,7 @@ Each type of data encryption serves a specific purpose and can be used individua
 
 ## Data-in-Transit Encryption
 
-Secures data while it's being transmitted over networks to prevent interception or eavesdropping.
+Secures data while it's being transmitted over networks (or between two systems) to prevent interception or eavesdropping.
 
 - **SSL/TLS**
   - Establish secure connections between clients and servers over the internet.

@@ -11,7 +11,6 @@ last_update:
 
 In general, data can be classified as:
 
-
 - **Public Data** 
 
    - Data that has no impact on the company if released.
@@ -51,6 +50,8 @@ In general, data can be classified as:
 
 ## Government Classifications 
 
+Government classifications are used to categorize information based on its sensitivity and the potential impact of its unauthorized disclosure. These classifications help ensure that information is appropriately protected and only accessible to individuals with the necessary clearance.
+
 - **Unclassified**
   - Publicly available information.
   - General government publications or press releases.
@@ -77,6 +78,28 @@ In general, data can be classified as:
   - Nuclear launch codes.
   - Identities of undercover operatives in enemy territories.
   - Comprehensive intelligence assessments of foreign governments.
+
+
+## Business Classification
+
+Business classification levels are used to categorize information within an organization based on its sensitivity and the need for protection. These classifications help ensure that data is appropriately secured and accessed only by authorized individuals.
+
+- **Highly Sensitive**
+  - Information that, if disclosed, could cause significant harm to the organization.
+  - Examples: trade secrets, strategic plans, and personal data of executives.
+
+- **Sensitive**
+  - Information that requires protection due to its potential impact on the organization.
+  - Examples: customer data, financial records, and intellectual property.
+
+- **Internal**
+  - Information meant for internal use within the organization.
+  - Examples: internal memos, employee handbooks, and internal project plans.
+
+- **Public**
+  - Information that can be freely shared without causing harm to the organization.
+  - Examples: marketing materials, press releases, and publicly available reports.
+
 
 ## Data Ownership 
 
