@@ -2,7 +2,7 @@
 title: "CIA Triad"
 description: "Confidentiality, Integrity, and Availability"
 tags: [Security, Cybersecurity, Risk Management]
-sidebar_position: 20
+sidebar_position: 2
 last_update:
   date: 1/30/2024
 ---

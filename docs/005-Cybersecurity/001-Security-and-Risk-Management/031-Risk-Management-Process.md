@@ -2,7 +2,7 @@
 title: "Risk Management Process"
 description: "Identify, assess, and prioritize risk"
 tags: [Security, Cybersecurity, Risk Management]
-sidebar_position: 32
+sidebar_position: 31
 last_update:
   date: 1/30/2024
 ---

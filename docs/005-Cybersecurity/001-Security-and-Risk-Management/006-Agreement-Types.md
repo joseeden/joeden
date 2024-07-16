@@ -115,5 +115,27 @@ A Business Partnership Agreement (BPA) is a legally binding document that outlin
 - Goal is to prevent conflicts by clearly outlining the rights and responsibilities of each partner.
 
 
+## Software License Agreement 
 
+add intro here, 2 to 3 sentences. 
 
+- add more details, do not repeat intro
+- add more details, do not repeat intro
+- add more details, do not repeat intro
+
+Types:
+
+- **Negotiated contracts**
+
+  - add details
+  - add details
+
+- **Click-through agreements**
+
+  - add details
+  - add details
+  - 
+- **Shrink-wrap agreements**
+
+  - add details
+  - add details

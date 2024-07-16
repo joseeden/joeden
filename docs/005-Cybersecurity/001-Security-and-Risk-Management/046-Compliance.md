@@ -95,3 +95,65 @@ Automated compliance systems can streamline data collection, improve accuracy, a
   - Potential termination of business agreements and partnerships.
 
 
+## Compliance Obligations
+
+### Criminal Law
+
+Criminal law encompasses statutes and regulations that define offenses against the state or society, punishable by fines, imprisonment, or other penalties. 
+
+- Establishes criminal offenses for unauthorized access to computer systems.
+- Defines penalties for hacking, data breaches, and cybercrimes.
+- Has one characteristic that is not found in any other type of law - its punishment.
+- Violations may be punishable by deprivation of liberty, such as jail sentence or probation.
+- Must be created by a legislative body at the national state, or local level.
+
+### Civil Law
+
+Civil law deals with disputes between individuals or organizations, where plaintiffs seek compensation or specific performance rather than criminal penalties. 
+
+- Covers almost any matter that is not addressed by criminal law.
+- This includes liability claims, estate probate, contractual disputes, etc.
+- Must be passed by a legislative body, but does not provide the possibility of jail time.
+- Most outcomes of are monetary damages or orders by the court that someone perform or refrain from action.
+
+
+### Administrative Law
+
+Administrative law governs the activities of administrative agencies of government. 
+
+- Often provide details missing from the law.
+- Defines regulatory requirements imposed by government agencies.
+- Specifies standards and procedures for compliance audits and assessments.
+- Enforces penalties or fines for non-compliance with regulatory standards.
+- At the federal level, administrative law is found in the **Code of Federal Regulations (CFR)**
+
+### Private Regulations
+
+Private regulations refer to rules and standards established by non-governmental entities, such as industry associations or professional bodies. In information security:
+
+- Sets forth industry-specific standards for data protection and cybersecurity.
+- Requires adherence to codes of conduct and ethical guidelines.
+- Provides frameworks for self-regulation and certification programs to demonstrate compliance.
+- An example is the PCI-DSS credit card processing compliance.
+
+## Fourth Amendment
+
+The Fourth Amendment to the United States Constitution protects the right of people to be secure in their persons, houses, papers, and effects against unreasonable searches and seizures. In terms of IT security, the Fourth Amendment influences discussions and practices related to privacy rights and government surveillance of digital information. Key aspects include:
+
+- **Protection Against Unlawful Searches:** It establishes the principle that individuals have a right to be secure against unreasonable searches and seizures of their electronic data by government entities.
+  
+- **Requirement for Warrants:** Law enforcement must obtain warrants based on probable cause before conducting searches of electronic devices, accessing private communications, or seizing digital information.
+  
+- **Impact on Digital Privacy:** Shapes legal interpretations and discussions regarding the privacy rights of individuals concerning their electronic communications, data stored in the cloud, and digital devices.
+
+
+
+## FISMA
+
+FISMA stands for the Federal Information Security Management Act. It is a United States federal law passed in 2002 as part of the Electronic Government Act. FISMA outlines comprehensive requirements for securing information and information systems within federal agencies and provides a framework for managing information security risks.
+
+- Established to improve federal agency cybersecurity.
+- Requires implementation of a Risk Management Framework (RMF).
+- Mandates NIST-defined security controls.
+- Requires annual information security program reporting.
+- Monitored by DHS and OMB for compliance and improvement.
