@@ -1,11 +1,11 @@
 ---
 title: "Cryptography Basics"
-tags: [Cybersecurity]
+description: "Securing information through encoding"
+tags: [Security, Cybersecurity, Cryptography]
 sidebar_position: 1
 last_update:
   date: 1/30/2024
 ---
-
 
 ## Cryptography
 

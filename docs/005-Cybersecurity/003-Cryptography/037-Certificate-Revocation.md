@@ -1,6 +1,7 @@
 ---
 title: "Certificate Revocation"
-tags: [Cybersecurity]
+description: "Verifying and Invalidating"
+tags: [Security, Cybersecurity, Cryptography]
 sidebar_position: 37
 last_update:
   date: 1/30/2024

@@ -1,10 +1,12 @@
 ---
 title: "Digital Certificate Types"
-tags: [Cybersecurity]
+description: "Types of digital certificates for enterprise"
+tags: [Security, Cybersecurity, Cryptography]
 sidebar_position: 36
 last_update:
   date: 1/30/2024
 ---
+
 
 
 ## Domain Validation Certificates (DV)

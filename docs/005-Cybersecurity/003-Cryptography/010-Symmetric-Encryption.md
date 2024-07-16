@@ -1,6 +1,7 @@
 ---
 title: "Symmetric Encryption"
-tags: [Cybersecurity]
+description: "Using the same key"
+tags: [Security, Cybersecurity, Cryptography]
 sidebar_position: 10
 last_update:
   date: 1/30/2024

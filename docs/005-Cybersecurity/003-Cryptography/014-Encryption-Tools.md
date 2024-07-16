@@ -1,7 +1,8 @@
 ---
 title: "Encryption Tools"
-tags: [Cybersecurity]
-sidebar_position: 13
+description: "Securing data through various methods"
+tags: [Security, Cybersecurity, Cryptography]
+sidebar_position: 14
 last_update:
   date: 1/30/2024
 ---

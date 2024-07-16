@@ -9,7 +9,11 @@ last_update:
 
 ## Overview 
 
-<small> The complete article can be found in the [ISC2 Code of Ethics](https://www.isc2.org/ethics) page.</small>
+:::info[note]
+
+The complete article can be found in the [ISC2 Code of Ethics](https://www.isc2.org/ethics) page.
+
+:::
 
 There are only four mandatory canons in the Code. By necessity, such high-level guidance is not intended to be a substitute for the ethical judgment of the professional.
 

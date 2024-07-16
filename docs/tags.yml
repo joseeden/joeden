@@ -93,7 +93,11 @@ Access Management:
 Access Control:
   label: 'Access Control'
   permalink: '/Access Control'
-  description: 'Docs related to Access Control'    
+  description: 'Docs related to Access Control' 
+Cryptography:
+  label: 'Cryptography'
+  permalink: '/Cryptography'
+  description: 'Docs related to Cryptography'     
 Cybersecurity:
   label: 'Cybersecurity'
   permalink: '/Cybersecurity'

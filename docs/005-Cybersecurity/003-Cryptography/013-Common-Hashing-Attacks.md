@@ -1,11 +1,11 @@
 ---
 title: "Common Hashing Attacks"
-tags: [Cybersecurity]
-sidebar_position: 1
+description: "Common Hashing Attacks"
+tags: [Security, Cybersecurity, Cryptography]
+sidebar_position: 13
 last_update:
   date: 1/30/2024
 ---
-
 
 ## Common Attacks 
 
