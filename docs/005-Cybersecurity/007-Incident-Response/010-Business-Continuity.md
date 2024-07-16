@@ -34,7 +34,7 @@ Identify potential threats and vulnerabilities.
     - **Quantitative risk assessment** - to calculate the potential financial loss if a critical server fails
     - **Qualitative risk assessment** - to understand the impact on the organization's reputation.
 
-### 2. Business Impact Analysis (BIA)
+### 2. Business Impact Analysis
 
 Prioritize mission-critical processes:
 
@@ -126,7 +126,7 @@ Assess risks:
 - Involves the establishment of a command structure and responsibilities during a crisis
 - Establish communication protocols for internal and external stakeholders.
 
-### 5. Backup and Recovery Strategies
+### 5. Backup and Recovery 
 
 - Implement data backup systems and offsite storage.
 - Develop recovery strategies for IT systems and infrastructure.
@@ -136,17 +136,17 @@ Assess risks:
 - Identify alternate locations for business operations.
 - Ensure availability of necessary facilities during disruptions.
 
-### 7. Resource and Personnel Management
+### 7. Resource Management
 
 - Plan for workforce continuity and remote work.
 - Secure necessary resources for business recovery.
 
-### 8. Training and Awareness Programs
+### 8. Training/Awareness Programs
 
 - Conduct regular drills and training sessions for employees.
 - Raise awareness about BCP protocols and procedures.
 
-### 9. Supplier and Vendor Relationships
+### 9. Supplier/Vendor Relationships
 
 - Assess the continuity plans of key suppliers and vendors.
 - Develop contingency plans for supply chain disruptions.

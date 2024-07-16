@@ -8,7 +8,7 @@ last_update:
 ---
 
 
-## Benefits of Automation within SRE
+## Benefits of Automation 
 
 Automation in Site Reliability Engineering (SRE) offers significant advantages by streamlining operations and enhancing efficiency. By reducing human error and speeding up responses, automation ensures more consistent and reliable service delivery.
 
@@ -52,7 +52,7 @@ Automation effort is "Ops" lead, which means shifting operations at the early st
 - Easy to reproduce errors in test environment.
 - All codes can be rebuilt from code repositories. 
 
-### 2. Automated Functional and Non-functional Tests 
+### 2. Functional and Non-functional Tests 
 
 In SRE practices, automation plays a crucial role in ensuring the reliability and stability of systems. This includes conducting a variety of tests across different stages of the development and deployment lifecycle.
 
@@ -71,7 +71,7 @@ In SRE practices, automation plays a crucial role in ensuring the reliability an
     - Can I connect? 
 
 
-### 3. Canary Testing and Blue-Green Deployments 
+### 3. Canary and Blue-Green
 
 Canary testing and blue-green deployments are essential strategies for managing deployments and minimizing risk during software updates. These deployment strategies minimize downtime and reduce disruptions by providing a mechanism to validate changes before they impact a wide audience. 
 
@@ -121,7 +121,7 @@ Tools for aggregating log files for failure analysis:
     
 - Logstash 
 
-### 6. Performance Testing for Future Growth
+### 6. Performance Testing 
 
 Performance testing is essential for evaluating how well a service can scale to accommodate anticipated future growth.
 
