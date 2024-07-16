@@ -87,7 +87,7 @@ Below is a simple web server architecture that has many single point of failure.
 
 To eliminate the points of failure, we can replace the web server with a web server cluster. This ensures that if one server goes down, another server in the cluster can still serve the traffic. In addition to this, we can also replace firewall with a pair of highly-available firewall where one serves as the primary firewall while the other one serves as a backup firewall. Lastly, we can also introduce redundancy to the internal and external connections to ensure that the service continues to operate even if one link fails.
 
-|![alt text](img/docs/cissp-spof-analysis-ha.png)|
+|![alt text](/img/docs/cissp-spof-analysis-ha.png)|
 |-|
 
 
