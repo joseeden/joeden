@@ -1,5 +1,5 @@
 ---
-title: "Standards, Frameworks, Laws"
+title: "Standards, Frameworks, and Laws"
 description: "GDPR, HIPAA,PCI DSS, etc."
 tags: [Security, Cybersecurity, Risk Management]
 sidebar_position: 5

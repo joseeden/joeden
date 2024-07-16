@@ -2,7 +2,7 @@
 title: "Agreement Types"
 description: "The different agreement types you'll encounter when working in Cybersecurity"
 tags: [Security, Cybersecurity, Risk Management]
-sidebar_position: 33
+sidebar_position: 6
 last_update:
   date: 1/30/2024
 ---
