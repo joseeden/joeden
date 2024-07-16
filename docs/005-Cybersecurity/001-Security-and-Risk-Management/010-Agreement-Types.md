@@ -2,7 +2,7 @@
 title: "Agreement Types"
 description: "The different agreement types you'll encounter when working in Cybersecurity"
 tags: [Security, Cybersecurity, Risk Management]
-sidebar_position: 6
+sidebar_position: 10
 last_update:
   date: 1/30/2024
 ---
@@ -113,7 +113,6 @@ A Business Partnership Agreement (BPA) is a legally binding document that outlin
 - Includes ownership, roles, profit-sharing, decision-making, and dispute resolution.
 - Also addresses capital contributions, management, and exit or dissolution processes.
 - Goal is to prevent conflicts by clearly outlining the rights and responsibilities of each partner.
-
 
 
 ## Software License Agreement
