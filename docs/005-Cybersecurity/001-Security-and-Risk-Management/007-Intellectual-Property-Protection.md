@@ -18,7 +18,7 @@ Intellectual Property Protection is crucial for safeguarding creations of the mi
 
 ## Copyrights
 
-Copyrights protect original works of authorship fixed in a tangible medium of expression. They grant creators exclusive rights to their work, preventing unauthorized use. Key aspects include:
+Copyrights protect original works of authorship fixed in a tangible medium of expression. They grant creators exclusive rights to their work, preventing unauthorized use. 
 
 - Rights to reproduce, distribute, and display the work.
 - Protection extends to literary, artistic, musical, and other creative works.
@@ -26,7 +26,7 @@ Copyrights protect original works of authorship fixed in a tangible medium of ex
 
 ## Trademarks
 
-Trademarks safeguard brand identities, distinguishing goods and services from competitors. They can include logos, slogans, and brand names. Key aspects include:
+Trademarks safeguard brand identities, distinguishing goods and services from competitors. They can include logos, slogans, and brand names. 
 
 - Identify and distinguish goods or services in the marketplace.
 - Provide exclusive rights to use and prevent unauthorized use by others.
@@ -42,7 +42,7 @@ Patents protect inventions and new processes, granting exclusive rights to inven
 
 ## Trade Secrets
 
-Trade secrets protect confidential business information, providing competitive advantage. They can include formulas, techniques, or customer lists. Key aspects include:
+Trade secrets protect confidential business information, providing competitive advantage. They can include formulas, techniques, or customer lists. 
 
 - Information must be kept confidential and provide economic value.
 - No registration required; protection lasts as long as the information remains secret.
