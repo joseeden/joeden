@@ -1,6 +1,7 @@
 ---
 title: "Logical Access"
-tags: [Cybersecurity]
+description: "Electronic methods to restrict access"
+tags: [Security, Cybersecurity, Access Management, Access Control]
 sidebar_position: 3
 last_update:
   date: 1/30/2024

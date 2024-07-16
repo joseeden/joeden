@@ -1,10 +1,12 @@
 ---
 title: "IAM Concepts"
-tags: [Cybersecurity]
+description: "Identity and Access Management"
+tags: [Security, Cybersecurity, Access Management, IAM]
 sidebar_position: 4
 last_update:
   date: 1/30/2024
 ---
+
 
 
 

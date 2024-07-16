@@ -1,6 +1,7 @@
 ---
 title: "Access Control"
-tags: [Cybersecurity]
+description: "Protective measures for C-I-A"
+tags: [Security, Cybersecurity, Access Management, Access Control]
 sidebar_position: 1
 last_update:
   date: 1/30/2024

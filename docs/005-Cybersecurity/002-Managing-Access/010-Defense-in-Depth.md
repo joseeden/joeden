@@ -1,7 +1,8 @@
 ---
 title: "Defense in Depth"
-tags: [Cybersecurity]
-sidebar_position: 1
+description: "Identity and Access Management"
+tags: [Security, Cybersecurity, Access Management, Access Control, IAM]
+sidebar_position: 10
 last_update:
   date: 1/30/2024
 ---

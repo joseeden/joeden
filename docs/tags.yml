@@ -86,6 +86,14 @@ Google Cloud:
   label: 'Google Cloud'
   permalink: '/Google Cloud'
   description: 'Docs related to Google Cloud'
+Access Management:
+  label: 'Access Management'
+  permalink: '/Access Management'
+  description: 'Docs related to Access Management'    
+Access Control:
+  label: 'Access Control'
+  permalink: '/Access Control'
+  description: 'Docs related to Access Control'    
 Cybersecurity:
   label: 'Cybersecurity'
   permalink: '/Cybersecurity'
@@ -126,6 +134,10 @@ Communication and Network Security:
   label: 'Communication and Network Security'
   permalink: '/Communication and Network Security'
   description: 'Docs related to Communication and Network Security'  
+PAM:
+  label: 'PAM'
+  permalink: '/PAM'
+  description: 'Docs related to PAM'    
 IAM:
   label: 'IAM'
   permalink: '/IAM'

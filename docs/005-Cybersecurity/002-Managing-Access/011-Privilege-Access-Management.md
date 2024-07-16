@@ -1,10 +1,12 @@
 ---
 title: "Privileged Access Management"
-tags: [Cybersecurity]
-sidebar_position: 1
+description: "Implementing Principle of Least Privilege"
+tags: [Security, Cybersecurity, Access Management, Access Control, IAM]
+sidebar_position: 11
 last_update:
   date: 1/30/2024
 ---
+
 
 
 The Principle of Least Privilege dictates that users or programs should be granted the minimum access essential to fulfill their functions. Access is restricted to the specific systems and programs required for their designated job or tasks.
