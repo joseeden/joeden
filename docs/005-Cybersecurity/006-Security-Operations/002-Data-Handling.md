@@ -103,11 +103,15 @@ Business classification levels are used to categorize information within an orga
 
 ## Data Ownership 
 
-- **Data Owner**
+- **Data Owner**  
 
    - Legal data owner.
    - **Not the creator of the file, but a senior executive**.
    - Sets policies on how data will be managed.
+   - Business leaders with overall responsibility for data.
+   - Nitty-gritty decisions are delegated to a data steward. 
+   - In most cases, there is a reporting relationship between the data owner and data steward.
+   - Ensures that the data comply with the privacy requirements.
 
 - **Data Controller**
 
@@ -127,8 +131,8 @@ Business classification levels are used to categorize information within an orga
    - Day-to-day management of data.
    - Is aligned with policies set by data owner. 
    - Owner sets rules, custodian enacts the rules.
-   - Data custodian could be the system administrator.
-   - Permissions, backup, etc.
+   - Data custodian could be the system administrator or IT staff.
+   - Permissions, backup, access controls, etc.
 
 - **Data Privacy Officer (DPO)**
 
