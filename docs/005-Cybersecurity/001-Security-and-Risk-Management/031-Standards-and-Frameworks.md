@@ -1,6 +1,7 @@
 ---
 title: "Standards and Frameworks"
-tags: [Cybersecurity]
+description: "GDPR, HIPAA,PCI DSS, etc."
+tags: [Security, Cybersecurity, Risk Management]
 sidebar_position: 31
 last_update:
   date: 1/30/2024

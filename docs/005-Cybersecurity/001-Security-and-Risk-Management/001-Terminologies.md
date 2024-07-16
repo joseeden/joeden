@@ -1,10 +1,12 @@
 ---
-title: "Terminologies "
-tags: [Cybersecurity]
+title: "Terminologies"
+description: "Summary of cybersecurity terms"
+tags: [Security, Cybersecurity, Risk Management]
 sidebar_position: 1
 last_update:
   date: 1/30/2024
 ---
+
 
 
 This guide is based on the [Official ISC2 CC (Certified in Cybersecurity) Self-paced Training.](https://www.isc2.org/training/online-self-paced/cc-online-self-paced)

@@ -1,10 +1,12 @@
 ---
 title: "Zero Trust"
-tags: [Cybersecurity]
+description: "No one should be trusted by default"
+tags: [Security, Cybersecurity, Risk Management]
 sidebar_position: 24
 last_update:
   date: 1/30/2024
 ---
+
 
 
 ## Overview

@@ -34,19 +34,26 @@ A digital signature is a cryptographic method for verifying the authenticity and
 - Uses a private key to create the signature and a public key to verify it.
 - The signature confirms the sender's identity, ensures the message hasn't been altered, and provides proof that the signer can't deny signing.
 
-**How It Works**
+### Creating a Digital Signature
 
-- A hash function creates a fixed-size hash from the message.
-- The private key is used to sign the hash, creating the digital signature.
-- The public key is used to verify the signature and check the message's integrity.
+1. Use the hash function to create a fixed-size hash from the message.
+2. Use the user's private key to encrypt and sign the hash, creating the digital signature.
 
-**Benefits**
+### Verifying the Digital Signature 
+
+1. The recipient can use the sender's public key to decrypt the signature.
+2. The hash value of the message can then be computed. 
+3. Compare the values from step 1 and 2.
+4. If both values match, then the message is authentic. 
+
+### Benefits
 
 - **Authentication**: Confirms the identity of the signer.
 - **Integrity**: Ensures the message hasn't been changed.
 - **Non-Repudiation**: Prevents the signer from denying their signature.
 
-**Use Cases**
+### Use Cases
+
 - **Email Encryption**: Verifies email sources.
 - **Software Distribution**: Confirms software integrity.
 - **Legal Documents**: Validates digital contracts and agreements.
@@ -57,11 +64,13 @@ A digital signature is a cryptographic method for verifying the authenticity and
 
 Each algorithm supports a range of key sizes that directly influence the security and efficiency of encryption and key exchange. Generally, **larger key sizes offer more security but require more computational resources.**
 
-**RSA and DSA:**
+### RSA and DSA
+
 - RSA is the **most widely used**, offering compatibility with a range of systems.
 - DSA is optimized for **digital signatures**.
 
-**ECC:**
+### ECC
+
 - Mostly used in **mobile devices and low-power computing devices.**
 - Provides similar security with **smaller key sizes**, leading to efficiency gains. 
 - ECC with a 256-bit key is just as secure as RSA with 2048-bit key.
@@ -69,6 +78,7 @@ Each algorithm supports a range of key sizes that directly influence the securit
 Summarized table:
 
 | Algorithm                             | Key Structure             | Supported Key Sizes   | Use Cases                                         | Strengths                                                     | Weaknesses                                                                        |
+|---------------------------------------|---------------------------|-----------------------|---------------------------------------------------|----------------------------------------------------
 | RSA                                   | Public-private key pair   | 1024-4096 bits        | Secure communication, digital signatures          | Established, widely used; supports large key sizes            | Slower than symmetric methods; susceptible to certain attacks with smaller keys   |
 | ECC (Elliptic Curve Cryptography)     | Public-private key pair   | 160-521 bits          | Secure communication, digital signatures          | Smaller key sizes; heavily used in mobile devices             | More complex mathematical basis; not as widely adopted as RSA                     |
 | DSA (Digital Signature Algorithm)     | Public-private key pair   | 1024-3072 bits        | Digital signatures, authentication                | Fast for signature generation; widely accepted                | Slower for verification; requires secure parameter selection                      |
@@ -132,19 +142,22 @@ Diffie-Hellman is a cryptographic protocol for secure key exchange, enabling two
 - An **asymmetric algorithm**, but **doesn't provide the actual encryption.**
 - It is **key exchange protocol**,
 
-**Use Cases**:
+### Use Cases
+
 - Often used to set up shared encryption keys.
 - Used when setting up VPN tunnels or other encryption tunnels.
 - Applied in SSL/TLS, IPsec, and VPNs.
 
-**How It Works**:
+### How It Works
+
 - Both parties agree on a base (generator) and a prime modulus.
 - Each party chooses a private key. 
 - Public key is derived by raising the base to the power of the private key, modulo the prime.
 - The public keys are then exchanged.
 - Each party calculates the shared secret using the other's public key and their own private key.
 
-**Example**:
+### Example
+
 - Parties agree on a common base \( g \) and a prime modulus \( p \).
 - Alice chooses a private key \( a \) and sends \( g^a \mod p \) to Bob.
 - Bob chooses a private key \( b \) and sends \( g^b \mod p \) to Alice.
@@ -201,6 +214,7 @@ The specific characteristics of the group influence the security and performance
 
 - Larger prime numbers generally provide more security 
 - But it also require more computational resources, affecting speed and efficiency.
+
 
 
 

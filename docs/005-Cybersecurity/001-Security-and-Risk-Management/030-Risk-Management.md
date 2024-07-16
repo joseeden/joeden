@@ -1,11 +1,11 @@
 ---
 title: "Risk Management"
-tags: [Cybersecurity]
+description: "Managing and Prioritizing Risks"
+tags: [Security, Cybersecurity, Risk Management]
 sidebar_position: 30
 last_update:
   date: 1/30/2024
 ---
-
 
 ## Importance of Risk Management 
 

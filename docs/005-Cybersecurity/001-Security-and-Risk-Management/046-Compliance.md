@@ -1,10 +1,12 @@
 ---
 title: "Compliance"
-tags: [Cybersecurity]
-sidebar_position: 45
+description: "Adherence to laws, regulations, standards, and policies"
+tags: [Security, Cybersecurity, Risk Management]
+sidebar_position: 46
 last_update:
   date: 1/30/2024
 ---
+
 
 
 ## Overview 

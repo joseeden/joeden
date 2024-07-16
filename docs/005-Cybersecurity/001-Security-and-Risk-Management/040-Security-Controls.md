@@ -1,11 +1,11 @@
 ---
-title: "Security Controls "
-tags: [Cybersecurity]
+title: "Security Controls"
+description: "Physical, Technical, Administrative, etc."
+tags: [Security, Cybersecurity, Risk Management]
 sidebar_position: 40
 last_update:
   date: 1/30/2024
 ---
-
 
 ## Overview
 

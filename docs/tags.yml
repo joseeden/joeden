@@ -94,6 +94,46 @@ Security:
   label: 'Security'
   permalink: '/Security'
   description: 'Docs related to Security'
+Risk Management:
+  label: 'Risk Management'
+  permalink: '/Risk Management'
+  description: 'Docs related to Risk Management'
+Asset Security:
+  label: 'Asset Security'
+  permalink: '/Asset Security'
+  description: 'Docs related to Asset Security'
+Security Architecture:
+  label: 'Security Architecture'
+  permalink: '/Security Architecture'
+  description: 'Docs related to Security Architecture'  
+Security Engineering:
+  label: 'Security Engineering'
+  permalink: '/Security Engineering'
+  description: 'Docs related to Security Engineering'  
+Communication and Network Security:
+  label: 'Communication and Network Security'
+  permalink: '/Communication and Network Security'
+  description: 'Docs related to Communication and Network Security'  
+IAM:
+  label: 'IAM'
+  permalink: '/IAM'
+  description: 'Docs related to IAM'  
+Security Assessment and Testing:
+  label: 'Security Assessment and Testing'
+  permalink: '/Security Assessment and Testing'
+  description: 'Docs related to Security Assessment and Testing'  
+Security Operations:
+  label: 'Security Operations'
+  permalink: '/Security Operations'
+  description: 'Docs related to Security Operations'  
+Software Development Security:
+  label: 'Software Development Security'
+  permalink: '/Software Development Security'
+  description: 'Docs related to Software Development Security'  
+Incident Response:
+  label: 'Incident Response'
+  permalink: '/Incident Response'
+  description: 'Docs related to Incident Response'  
 Networking:
   label: 'Networking'
   permalink: '/Networking'

@@ -1,6 +1,7 @@
 ---
 title: "Agreement Types"
-tags: [Cybersecurity]
+description: "The different agreement types you'll encounter when working in Cybersecurity"
+tags: [Security, Cybersecurity, Risk Management]
 sidebar_position: 33
 last_update:
   date: 1/30/2024
@@ -9,6 +10,7 @@ last_update:
 
 
 ## Interconnection Security Agreement 
+
 An Interconnection Security Agreement (ISA) outlines the security requirements for two organizations that are connecting their information systems.
 
 - Details the roles, responsibilities, and technical safeguards for secure connections and data exchange.

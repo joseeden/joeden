@@ -1,10 +1,13 @@
 ---
 title: "Gap Analysis"
-tags: [Cybersecurity]
+description: "Current performance versus desired performance"
+tags: [Security, Cybersecurity, Risk Management]
 sidebar_position: 23
 last_update:
   date: 1/30/2024
 ---
+
+
 
 
 ## Overview

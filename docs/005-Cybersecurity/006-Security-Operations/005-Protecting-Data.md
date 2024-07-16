@@ -99,9 +99,10 @@ A digital signature is the result of a cryptographic transformation of data whic
 - data integrity
 - non-repudiation of the signer 
 
-See NIST SP 800-12 Rev. 1 under Digital Signature.
-
 However, digital signatures **cannot guarantee confidentiality** (i.e. the property of data or information not being made available or disclosed).
+
+For more information, please see [Digital Signatures in Asymmetric Encryptions.](../003-Cryptography/011-Asymmetric-Encryption.md)
+
 
 ### Message Digests 
 

@@ -1,6 +1,7 @@
 ---
 title: "Governance"
-tags: [Cybersecurity]
+description: "Overall management of the organization's IT resources"
+tags: [Security, Cybersecurity, Risk Management]
 sidebar_position: 45
 last_update:
   date: 1/30/2024
@@ -186,4 +187,19 @@ Regulations and associated fines and penalties can be imposed by governments at 
 - Managing governance across multiple jurisdictions.
 - Ensuring consistent governance standards globally while accommodating local variations.
 
+## Corporate Acquisitions
 
+Corporate acquisitions present unique challenges and opportunities for implementing and integrating security controls. Effective management of these processes ensures that security is maintained while business operations are seamlessly integrated.
+
+- Require integration of controls, need to evaluate the security controls.
+- Eliminate redundancy and ensure compatibility between security systems.
+- Threats to employment can have serious negative impacts on productivity.
+
+## Corporate Divestitures
+
+Corporate divestitures involve spinning off a part of the business into a separate organization. This requires careful separation and management of security controls to ensure both entities remain secure.
+
+- A part of the business is spun off as a separate organization.
+- Require separation of controls.
+- Those staying at the divested company need to ensure that the new organization has adequate controls in place.
+- Those staying in the parent company need to ensure all security ties are cut and that there isn’t any unintentional access leftover.
