@@ -143,6 +143,8 @@ Outlines how an organization protects its information assets from threats, both 
 - Encryption 
 - Physical Security
 
+It contains a clear designation of a specific individual who will be responsible for information security matters. This doesn't need to include the name of the person, but the responsibility is assigned to a role, such as the CISO or Chief Information Security Officer. The policy will also inclue the roles and responsibilities of the managers, employees, and other officers within the organization.
+
 ## Business Continuity Policy 
 
 Focuses on how an organization will continue its critical operations during and after a disruption. 
