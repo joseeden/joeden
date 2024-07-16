@@ -1,10 +1,12 @@
 ---
 title: "Security Awareness"
-tags: [Cybersecurity]
+description: "Understanding of potential threats"
+tags: [Security, Cybersecurity, Security Operations]
 sidebar_position: 90
 last_update:
   date: 1/30/2024
 ---
+
 
 
 ## Overview

@@ -1,6 +1,7 @@
 ---
 title: "Network Traffic Flow"
-tags: [Cybersecurity]
+description: "Packet Captures and the sorts"
+tags: [Security, Cybersecurity, Security Operations, Networking]
 sidebar_position: 34
 last_update:
   date: 1/30/2024

@@ -1,6 +1,7 @@
 ---
 title: "SOAR"
-tags: [Cybersecurity]
+description: "Security Orchestration, Automation, and Response"
+tags: [Security, Cybersecurity, Incident Response, Automation]
 sidebar_position: 4
 last_update:
   date: 1/30/2024

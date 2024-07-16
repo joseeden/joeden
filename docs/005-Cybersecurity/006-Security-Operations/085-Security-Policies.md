@@ -1,11 +1,11 @@
 ---
 title: "Security Policies"
-tags: [Cybersecurity]
+description: "Common security policies"
+tags: [Security, Cybersecurity, Security Operations]
 sidebar_position: 85
 last_update:
   date: 1/30/2024
 ---
-
 
 ## Overview 
 

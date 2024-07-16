@@ -1,6 +1,7 @@
 ---
 title: "Digital Forensics"
-tags: [Cybersecurity]
+description: "Investigating devices to unucover evidence"
+tags: [Security, Cybersecurity, Incident Response, Digital Forensics]
 sidebar_position: 20
 last_update:
   date: 1/30/2024

@@ -1,6 +1,7 @@
 ---
 title: "Vendor Selection"
-tags: [Cybersecurity]
+description: "Assessing, selecting, and monitoring vendors"
+tags: [Security, Cybersecurity, Security Operations]
 sidebar_position: 81
 last_update:
   date: 1/30/2024

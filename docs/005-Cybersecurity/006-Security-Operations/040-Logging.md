@@ -1,10 +1,12 @@
 ---
 title: "Logging"
-tags: [Cybersecurity]
+description: "Centralizing and Investigating Logs"
+tags: [Security, Cybersecurity, Security Operations, Networking, Vulnerability Management]
 sidebar_position: 40
 last_update:
   date: 1/30/2024
 ---
+
 
 
 ## Logs and Metadata

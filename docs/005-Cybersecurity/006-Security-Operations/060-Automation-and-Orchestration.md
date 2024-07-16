@@ -1,10 +1,12 @@
 ---
 title: "Automation and Orchestration"
-tags: [Cybersecurity]
+description: "When to Automate and Orchestrate"
+tags: [Security, Cybersecurity, Security Operations, Automation]
 sidebar_position: 60
 last_update:
   date: 1/30/2024
 ---
+
 
 
 ## Overview

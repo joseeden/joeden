@@ -1,11 +1,11 @@
 ---
 title: "Mobile Assets Deployment"
-tags: [Cybersecurity]
+description: "BYOD, COPE, and CYOD"
+tags: [Security, Cybersecurity, Security Operations]
 sidebar_position: 73
 last_update:
   date: 1/30/2024
 ---
-
 
 ## BYOD
 

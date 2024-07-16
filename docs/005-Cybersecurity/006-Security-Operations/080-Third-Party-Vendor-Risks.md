@@ -1,10 +1,13 @@
 ---
 title: "Third-Party Vendor Risks"
-tags: [Cybersecurity]
+description: "Potential security from external entities"
+tags: [Security, Cybersecurity, Security Operations]
 sidebar_position: 80
 last_update:
   date: 1/30/2024
 ---
+
+
 
 
 ## Overview

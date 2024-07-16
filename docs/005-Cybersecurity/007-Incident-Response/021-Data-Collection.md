@@ -1,10 +1,12 @@
 ---
 title: "Data Collection"
-tags: [Cybersecurity]
+description: "Order of Volatility and Data Collection Procedures"
+tags: [Security, Cybersecurity, Incident Response]
 sidebar_position: 21
 last_update:
   date: 1/30/2024
 ---
+
 
 
 

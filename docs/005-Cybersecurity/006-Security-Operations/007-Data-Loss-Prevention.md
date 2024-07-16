@@ -1,6 +1,7 @@
 ---
 title: "Data Loss Prevention"
-tags: [Cybersecurity]
+description: "Identify, monitor, and protect sensitive data"
+tags: [Security, Cybersecurity, Security Operations, Data Security]
 sidebar_position: 7
 last_update:
   date: 1/30/2024

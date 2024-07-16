@@ -1,11 +1,11 @@
 ---
 title: "Data Encryption"
-tags: [Cybersecurity]
+description: "Encrypting data at rest and in motion"
+tags: [Security, Cybersecurity, Security Operations, Data Security]
 sidebar_position: 6
 last_update:
   date: 1/30/2024
 ---
-
 
 
 ## Data-at-Rest Encryption

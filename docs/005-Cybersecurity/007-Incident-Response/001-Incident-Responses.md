@@ -1,6 +1,7 @@
 ---
 title: "Incident Response"
-tags: [Cybersecurity]
+description: "Summary of Incident Response Terminologies"
+tags: [Security, Cybersecurity, Incident Response]
 sidebar_position: 1
 last_update:
   date: 1/30/2024

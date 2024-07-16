@@ -1,6 +1,7 @@
 ---
 title: "SCAP"
-tags: [Cybersecurity]
+description: "Security Content Automation Protocol"
+tags: [Security, Cybersecurity, Security Operations, Networking]
 sidebar_position: 33
 last_update:
   date: 1/30/2024

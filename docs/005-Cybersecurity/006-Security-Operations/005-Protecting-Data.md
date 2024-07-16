@@ -1,6 +1,7 @@
 ---
 title: "Protecting Data"
-tags: [Cybersecurity]
+description: "Protecting and Mishandling Data"
+tags: [Security, Cybersecurity, Security Operations, Data Security]
 sidebar_position: 5
 last_update:
   date: 1/30/2024

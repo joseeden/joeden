@@ -1,6 +1,7 @@
 ---
 title: "Penetration Testing"
-tags: [Cybersecurity]
+description: "Simulated cyber attack"
+tags: [Security, Cybersecurity, Security Operations, Penetration Testing]
 sidebar_position: 66
 last_update:
   date: 1/30/2024

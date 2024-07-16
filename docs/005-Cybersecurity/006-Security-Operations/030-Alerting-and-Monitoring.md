@@ -1,6 +1,7 @@
 ---
 title: "Alerting and Monitoring"
-tags: [Cybersecurity]
+description: "Alert, monitor, and scan"
+tags: [Security, Cybersecurity, Security Operations, Vulnerability Management]
 sidebar_position: 30
 last_update:
   date: 1/30/2024

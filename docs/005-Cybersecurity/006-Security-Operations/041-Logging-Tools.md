@@ -1,11 +1,11 @@
 ---
 title: "Logging Tools"
-tags: [Cybersecurity]
+description: "Tools for Logs"
+tags: [Security, Cybersecurity, Security Operations, Networking, Vulnerability Management]
 sidebar_position: 41
 last_update:
   date: 1/30/2024
 ---
-
 
 ## Tools 
 

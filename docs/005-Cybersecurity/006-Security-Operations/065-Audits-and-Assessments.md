@@ -1,10 +1,12 @@
 ---
 title: "Audits and Assessments"
-tags: [Cybersecurity]
+description: "Internal and external assessments"
+tags: [Security, Cybersecurity, Security Operations, Vulnerability Management]
 sidebar_position: 65
 last_update:
   date: 1/30/2024
 ---
+
 
 
 ## Internal Audits

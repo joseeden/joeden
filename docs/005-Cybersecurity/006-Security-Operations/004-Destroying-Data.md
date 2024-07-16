@@ -1,10 +1,12 @@
 ---
 title: "Destroying Data"
-tags: [Cybersecurity]
+description: "Sanitizing and destroying data"
+tags: [Security, Cybersecurity, Security Operations, Data Security]
 sidebar_position: 4
 last_update:
   date: 1/30/2024
 ---
+
 
 
 

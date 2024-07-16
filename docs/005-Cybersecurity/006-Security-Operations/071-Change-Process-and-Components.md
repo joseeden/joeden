@@ -1,6 +1,7 @@
 ---
 title: "Change Process and Components"
-tags: [Cybersecurity]
+description: "Change Management Process and Owners"
+tags: [Security, Cybersecurity, Security Operations]
 sidebar_position: 71
 last_update:
   date: 1/30/2024

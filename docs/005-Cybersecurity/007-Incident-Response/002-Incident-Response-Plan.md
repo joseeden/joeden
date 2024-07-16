@@ -1,10 +1,12 @@
 ---
 title: "Incident Response Plan"
-tags: [Cybersecurity]
+description: "Processes and tools used in incident response"
+tags: [Security, Cybersecurity, Incident Response]
 sidebar_position: 2
 last_update:
   date: 1/30/2024
 ---
+
 
 
 ## Overview
@@ -13,6 +15,7 @@ The incident response policy aligns with the plan, outlining procedures and stan
 
 The phases of incident response:
 
+- [Overview](#overview)
 - [Preparation](#preparation)
 - [Detection](#detection)
 - [Analysis](#analysis)

@@ -1,6 +1,7 @@
 ---
 title: "Trusted OS"
-tags: [Cybersecurity]
+description: "Enhanced security features in real-time"
+tags: [Security, Cybersecurity, Security Operations, Networking]
 sidebar_position: 51
 last_update:
   date: 1/30/2024
