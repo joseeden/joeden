@@ -106,6 +106,14 @@ Security:
   label: 'Security'
   permalink: '/Security'
   description: 'Docs related to Security'
+Business Continuity:
+  label: 'Business Continuity'
+  permalink: '/Business Continuity'
+  description: 'Docs related to Business Continuity'  
+System Hardening:
+  label: 'System Hardening'
+  permalink: '/System Hardening'
+  description: 'Docs related to System Hardening'  
 Risk Management:
   label: 'Risk Management'
   permalink: '/Risk Management'
