@@ -198,6 +198,18 @@ In this scenario:
 - Pre-planning: alternate work area, customer service managing billing calls
 - Execution ensures no material business interruption, indicating successful continuity plan.
 
+The output of a business impact assessment is a prioritized listing of risks that might disrupt the organization's business, similar to the table shown below:
+
+| Risk                              | Annualized Loss Expectancy    | 
+|-----------------------------------|-------------------------------|
+| Hurricane damage to a datacenter  | $145,000                      | 
+| Fire in a data center             | $18,000                       |
+| Power outage                      | $12,000                       | 
+| Theft of equipment                | $3,400                        |
+
+The planners can then use this information to select controls that mitigate the risks facing the organization within acceptable expense limits.
+As seen in the example above, the expected loss are in descending order , where the highest priority is the first risk which has the highest expected loss.
+
 **Business Continuity vs. Disaster Recovery**
 
 - Business Continuity (BC) plans focus on **proactive** measures to prevent incidents and ensure the continuous operation of critical business functions. 
