@@ -115,27 +115,21 @@ A Business Partnership Agreement (BPA) is a legally binding document that outlin
 - Goal is to prevent conflicts by clearly outlining the rights and responsibilities of each partner.
 
 
-## Software License Agreement 
 
-add intro here, 2 to 3 sentences. 
+## Software License Agreement
 
-- add more details, do not repeat intro
-- add more details, do not repeat intro
-- add more details, do not repeat intro
+A Software License Agreement is a legal contract between a software developer or vendor and the end-user, outlining the terms and conditions under which the software can be used. It governs the rights, obligations, and restrictions regarding the software's usage and distribution.
 
 Types:
 
-- **Negotiated contracts**
+- **Negotiated Contracts**
+  - Involve direct negotiation between the software vendor and the customer.
+  - Allow for customization of terms based on specific needs and usage scenarios.
 
-  - add details
-  - add details
+- **Click-through Agreements**
+  - Users agree to terms by clicking "I Agree" before installing or using the software.
+  - Typically outline usage rights, restrictions, and disclaimers for software downloaded or accessed online.
 
-- **Click-through agreements**
-
-  - add details
-  - add details
-  - 
-- **Shrink-wrap agreements**
-
-  - add details
-  - add details
+- **Shrink-wrap Agreements**
+  - Found in packaged software where terms are enclosed inside the product packaging.
+  - Acceptance of terms occurs by opening the shrink-wrap or using the software, covering usage, warranties, and limitations of liability.

@@ -140,11 +140,14 @@ Private regulations refer to rules and standards established by non-governmental
 
 The Fourth Amendment to the United States Constitution protects the right of people to be secure in their persons, houses, papers, and effects against unreasonable searches and seizures. In terms of IT security, the Fourth Amendment influences discussions and practices related to privacy rights and government surveillance of digital information. Key aspects include:
 
-- **Protection Against Unlawful Searches:** It establishes the principle that individuals have a right to be secure against unreasonable searches and seizures of their electronic data by government entities.
+- **Protection Against Unlawful Searches** 
+   - It establishes the principle that individuals have a right to be secure against unreasonable searches and seizures of their electronic data by government entities.
   
-- **Requirement for Warrants:** Law enforcement must obtain warrants based on probable cause before conducting searches of electronic devices, accessing private communications, or seizing digital information.
+- **Requirement for Warrants** 
+  - Law enforcement must obtain warrants based on probable cause before conducting searches of electronic devices, accessing private communications, or seizing digital information.
   
-- **Impact on Digital Privacy:** Shapes legal interpretations and discussions regarding the privacy rights of individuals concerning their electronic communications, data stored in the cloud, and digital devices.
+- **Impact on Digital Privacy** 
+  - Shapes legal interpretations and discussions regarding the privacy rights of individuals concerning their electronic communications, data stored in the cloud, and digital devices.
 
 
 
