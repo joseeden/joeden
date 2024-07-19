@@ -1,6 +1,7 @@
 ---
 title: "Mobile Systems"
-tags: [Cybersecurity]
+description: "The different types of mobile communications systems"
+tags: [Security, Cybersecurity, Security Architecture, Security Engineering]
 sidebar_position: 41
 last_update:
   date: 1/30/2024

@@ -1,10 +1,12 @@
 ---
 title: "Security Architecture"
-tags: [Cybersecurity]
+description: "Different types of secure architectures"
+tags: [Security, Cybersecurity, Security Architecture, Security Engineering]
 sidebar_position: 39
 last_update:
   date: 1/30/2024
 ---
+
 
 
 ## Overview
@@ -43,10 +45,22 @@ When it comes to data centers, there are two primary options: organizations can 
 
 Components of a Datacenter:
 
-- [Heating, Ventilation and Air Conditioning HVAC / Environmental](#heating-ventilation-and-air-conditioning-hvac--environmental)
-- [Data Center/Closets](#data-centerclosets)
-- [Power](#power)
-- [Fire Suppression](#fire-suppression)
+- [Overview](#overview)
+- [On-Premises Data Centers](#on-premises-data-centers)
+  - [Heating, Ventilation and Air Conditioning (HVAC) / Environmental](#heating-ventilation-and-air-conditioning-hvac--environmental)
+  - [Data Center/Closets](#data-centerclosets)
+  - [Power](#power)
+  - [Fire Suppression](#fire-suppression)
+  - [Using Robust Systems](#using-robust-systems)
+- [Cloud Computing](#cloud-computing)
+- [Virtualization](#virtualization)
+- [Containerization](#containerization)
+- [Serverless](#serverless)
+  - [Vendor Lock-in](#vendor-lock-in)
+- [Microservices](#microservices)
+  - [Monolithic vs Microservices](#monolithic-vs-microservices)
+  - [Benefits](#benefits)
+  - [Challenges](#challenges)
 
 
 ### Heating, Ventilation and Air Conditioning (HVAC) / Environmental

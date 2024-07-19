@@ -1,7 +1,8 @@
 ---
 title: "RAID"
-tags: [Cybersecurity]
-sidebar_position: 3
+description: "Redundant Array of Independent Disks"
+tags: [Security, Cybersecurity, Security Architecture, Security Engineering]
+sidebar_position: 13
 last_update:
   date: 1/30/2024
 ---

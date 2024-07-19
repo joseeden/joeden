@@ -1,6 +1,7 @@
 ---
 title: "Firewalls"
-tags: [Cybersecurity]
+description: "Firewalls - Its uses and types"
+tags: [Security, Cybersecurity, Security Architecture, Security Engineering]
 sidebar_position: 55
 last_update:
   date: 1/30/2024

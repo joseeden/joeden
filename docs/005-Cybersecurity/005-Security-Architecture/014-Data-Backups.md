@@ -1,10 +1,12 @@
 ---
 title: "Data Backups"
-tags: [Cybersecurity]
-sidebar_position: 4
+description: "Backup Types and Considerations"
+tags: [Security, Cybersecurity, Security Architecture, Security Engineering]
+sidebar_position: 14
 last_update:
   date: 1/30/2024
 ---
+
 
 
 ## Considerations

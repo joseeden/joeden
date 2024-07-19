@@ -1,6 +1,7 @@
 ---
 title: "Infrastructure Controls"
-tags: [Cybersecurity]
+description: "Selecting Infrastructure Controls"
+tags: [Security, Cybersecurity, Security Architecture, Security Engineering]
 sidebar_position: 52
 last_update:
   date: 1/30/2024

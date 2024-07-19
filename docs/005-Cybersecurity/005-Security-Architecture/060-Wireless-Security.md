@@ -1,6 +1,7 @@
 ---
 title: "Wireless Security"
-tags: [Cybersecurity]
+description: "Securing wireless infrastructure"
+tags: [Security, Cybersecurity, Security Architecture, Security Engineering]
 sidebar_position: 60
 last_update:
   date: 1/30/2024

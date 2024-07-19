@@ -1,6 +1,7 @@
 ---
 title: "Embedded Systems"
-tags: [Cybersecurity]
+description: "Specialized computing systems with specific functions"
+tags: [Security, Cybersecurity, Security Architecture, Security Engineering]
 sidebar_position: 40
 last_update:
   date: 1/30/2024

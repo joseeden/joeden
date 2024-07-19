@@ -1,10 +1,12 @@
 ---
 title: "Authentication Protocols"
-tags: [Cybersecurity]
+description: "PAP, NTLM, Kerberos, and the sorts"
+tags: [Security, Cybersecurity, Security Architecture, Security Engineering]
 sidebar_position: 20
 last_update:
   date: 1/30/2024
 ---
+
 
 
 ## Overview 

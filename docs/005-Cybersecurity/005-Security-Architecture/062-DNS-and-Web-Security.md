@@ -1,6 +1,7 @@
 ---
 title: "DNS and Web Security"
-tags: [Cybersecurity]
+description: "Hierarchical and decentralized naming system"
+tags: [Security, Cybersecurity, Security Architecture, Security Engineering]
 sidebar_position: 62
 last_update:
   date: 1/30/2024

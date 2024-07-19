@@ -1,7 +1,8 @@
 ---
 title: "Email Security"
-tags: [Cybersecurity]
-sidebar_position: 62
+description: "Protecting email accounts and systems"
+tags: [Security, Cybersecurity, Security Architecture, Security Engineering]
+sidebar_position: 63
 last_update:
   date: 1/30/2024
 ---

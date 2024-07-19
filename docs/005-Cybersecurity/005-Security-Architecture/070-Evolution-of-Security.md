@@ -1,10 +1,12 @@
 ---
 title: "Evolution of Security"
-tags: [Cybersecurity]
+description: "Security Information and Event Management"
+tags: [Security, Cybersecurity, Security Architecture, Security Engineering]
 sidebar_position: 70
 last_update:
   date: 1/30/2024
 ---
+
 
 
 

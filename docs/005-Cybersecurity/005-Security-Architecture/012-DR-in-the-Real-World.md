@@ -1,10 +1,12 @@
 ---
 title: "DR in the Real-world"
-tags: [Cybersecurity]
-sidebar_position: 2
+description: "Real-world Disaster Recovery"
+tags: [Security, Cybersecurity, Security Architecture, Security Engineering]
+sidebar_position: 12
 last_update:
   date: 1/30/2024
 ---
+
 
 
 ## Disaster Recovery in the Real World
