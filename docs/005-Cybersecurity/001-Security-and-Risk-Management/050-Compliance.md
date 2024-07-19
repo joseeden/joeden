@@ -56,7 +56,7 @@ Key components:
 
 - **Attestation**
   - Formal declarations confirming compliance with regulations or standards.
-  - For more information, please see [Attestations of Findings](../006-Security-Operations/068-Attestation-of-Findings.md)
+  - For more information, please see [Attestations of Findings](../008-Security-Operations/068-Attestation-of-Findings.md)
 
 - **Acknowledgement**
   - Recognition and acceptance of compliance requirements by all relevant parties.

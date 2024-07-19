@@ -45,7 +45,7 @@ Physical controls addresses security needs with hardware like badge readers and 
     - door release mechanisms
     - access control systems 
 
-For more information, please see [Physical Security.](../002-Managing-Access/002-Physical-Access.md)
+For more information, please see [Physical Security.](../006-Identity-and-Access-Management/002-Physical-Access.md)
 
 
 ### Technical Controls

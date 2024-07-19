@@ -52,7 +52,7 @@ Information assurance and cybersecurity are key for risk management. The require
     - Intelligence or information gatherers (could be any of the above).
     - Technology (such as free-running bots and artificial intelligence , which could be part of any of the above).
 
-  - For more information, please see [Cyber Threat and Attacks.](../004-Threats-and-Attacks/002-Threat-Actors.md)
+  - For more information, please see [Cyber Threat and Attacks.](../011-Threats-and-Attacks/002-Threat-Actors.md)
 
 - **Threat Vector**
 
