@@ -84,3 +84,25 @@ Protects data while it's being accessed or used by applications or users.
   - Hardware-based security technology for creating secure enclaves within the CPU.
   - Protect data from unauthorized access or modification.
 
+
+## Demo: AESCrypt 
+
+As an example, we can try to use AESCrypt to encrypt a file.
+I'm running WSL 2 on my Windows laptop. To install AESCrypt on the terminal:
+
+```bash
+wget https://www.aescrypt.com/download/v3/linux/AESCrypt-GUI-3.11-Linux-x86_64-Install.gz
+gunzip AESCrypt-GUI-3.11-Linux-x86_64-Install.gz
+chmod +x AESCrypt-GUI-3.11-Linux-x86_64-Install
+./AESCrypt-GUI-3.11-Linux-x86_64-Install
+```
+
+A window prompt will appear. Click Yes > Next > Next > Finish.
+
+![](/img/docs/cissp-aescrypt-1.png)
+
+![](/img/docs/cissp-aescrypt-2.png)
+
+![](/img/docs/cissp-aescrypt-3.png)
+
+![](/img/docs/cissp-aescrypt-4.png)
