@@ -37,7 +37,6 @@ Each type of data encryption serves a specific purpose and can be used individua
   - Encrypts data within databases.
   - Protects against unauthorized access. 
   - Can be done at the column, row, or table level.
-  - Assists with GDPR, HIPAA compliance.
 
 - **Record Encryption**
   - Encrypts individual database records or fields.
@@ -106,3 +105,77 @@ A window prompt will appear. Click Yes > Next > Next > Finish.
 ![](/img/docs/cissp-aescrypt-3.png)
 
 ![](/img/docs/cissp-aescrypt-4.png)
+
+Going back to the terminal, type `aescrypt` then press tab.
+
+```bash
+$ aescrypt
+aescrypt         aescrypt-gui     aescrypt_keygen 
+```
+
+Create a sample with the following content:
+
+```bash
+$ cat test-file.txt
+This is a file encrypted using aescrypt utility.
+Once encrypted, the contents should become gibberish. 
+```
+
+Encrypte the file using AESCrypt. Provide a password when prompted.
+
+```bash
+$ aescrypt -e test-file.txt
+Enter password:
+Re-Enter password:
+```
+
+A second file should be created. This is encrypted file. You can now delete the original file.
+
+```bash
+$ ll | grep test
+-rwxrwxrwx 1 joseeden joseeden        103 Jul 19 20:19 test-file.txt*
+-rwxrwxrwx 1 joseeden joseeden        404 Jul 19 20:21 test-file.txt.aes* 
+
+$ rm -rf test-file.txt
+
+$ ll | grep test
+-rwxrwxrwx 1 joseeden joseeden        404 Jul 19 20:21 test-file.txt.aes* 
+```
+
+Check the encrypted file:
+
+```bash
+$ cat test-file.txt.aes
+AESCREATED_BYaescrypt 3.11�r.�@j�x�;�eH�I�s���K���a�q�Y6�̵���9�:ĸS���w�4��P)\3O+���J��?2����fޘ_"o����x�R6�ن�xd�[/�$��y̙"bpL��-b��&�g-r��!�Z�J�����٩��3G�r�      P���p#�[Gp�og�c�EA�s    <R�g�in���̓ׄh��l���%�����`).
+                                                                                            /��!h��
+                                                                                                   �cv�ClYC?    ���1v�␦&U
+```
+
+To decrypt the file, use the `aescrypt` utility with the `-d` flag. Note that if you entered an incorrect password, you'll get this warning message:
+
+```bash
+$ aescrypt -d test-file.txt.aes
+Enter password:
+Error: Message has been altered or password is incorrect 
+```
+
+Now provide the correct password. It will not return any response but it will create the original file.
+
+```bash
+$ aescrypt -d test-file.txt.aes
+
+$ ll | grep test
+-rwxrwxrwx 1 joseeden joseeden        103 Jul 19 21:04 test-file.txt*
+-rwxrwxrwx 1 joseeden joseeden        404 Jul 19 20:21 test-file.txt.aes*
+
+$ cat test-file.txt
+This is a file encrypted using aescrypt utility.
+Once encrypted, the contents should become gibberish.
+```
+
+## Demo: FileVault 
+
+For MacOS, we can use the **FileVault** utility. Go to System Preferences > Security & Privacy > FileVault. Note that is on by default.
+
+![](/img/docs/cissp-filevault.png)
+
