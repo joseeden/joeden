@@ -1,6 +1,6 @@
 ---
-title: "Security Baseline"
-description: "Verifying and Invalidating"
+title: "Baselines and Standards"
+description: "Security Baselines and Security Standards"
 tags: [Security, Cybersecurity, Data Security]
 sidebar_position: 49
 last_update:
@@ -89,3 +89,27 @@ Once the baseline requirements are set and deployed across the enterprise, admin
 - Attackers might undermine security or any number of other activities that may cause deviation from the baseline.
 
 As a solution, administrators can leverage automated monitoring solutions to rapidly check thousands of systems against the baseline and quickly identify any deviations that require further investigations.
+
+## Industry Standards on Security
+
+Industry standards on security provide a set of guidelines and best practices that organizations can follow to protect their information systems. These standards help ensure a consistent and effective approach to security across different industries and sectors. They are often developed by 
+
+- Vendors 
+- Government agencies
+- Independent organizations
+
+Organizations can also customize industry standards according to their specific requirements by creating their own security standards that reference and modify existing standards. This allows for flexibility while still adhering to recognized best practices. For example:
+
+
+:::info[company standard]
+
+Company XYZ will adopt the Center for Intenet Security Benchmark Standard for Windows Server 2012 R2 systems, dated April 28, 2016, with the following modifications:
+
+**Change Requirement**:
+    
+**Section 1.1.2**: Use a 180-day password expiration instead of the standard's default 60-day expiration period.
+
+**Section 1.2.2**: Lock out accounts after five incorrect logins instead of the standard's default 10-attempt threshold
+
+:::
+
