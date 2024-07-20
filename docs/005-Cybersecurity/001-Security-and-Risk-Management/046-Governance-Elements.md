@@ -38,7 +38,7 @@ Policies, influenced by laws and standards, provide strategic direction and prio
   - SDLC 
   - Change Management
 
-For more information, please see [Common Security Policies.](../001-Security-and-Risk-Management/085-Security-Policies.md)
+For more information, please see [Common Security Policies.](../001-Security-and-Risk-Management/070-Security-Policies.md)
 
 ## Standards
 

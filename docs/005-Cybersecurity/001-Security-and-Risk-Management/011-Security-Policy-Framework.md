@@ -94,4 +94,4 @@ The effectiveness and design of a security policy are influenced by various fact
   - Regulatory requirements can dictate specific security controls and practices.
   - Failure to comply can result in legal penalties, fines, and reputational damage.
 
-For common security policies that may be implemented by ogranization to protect their data and assets, please see [Security Policies.](../001-Security-and-Risk-Management/085-Security-Policies.md)
+For common security policies that may be implemented by ogranization to protect their data and assets, please see [Security Policies.](../001-Security-and-Risk-Management/070-Security-Policies.md)

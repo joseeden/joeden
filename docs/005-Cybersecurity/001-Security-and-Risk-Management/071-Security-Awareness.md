@@ -2,7 +2,7 @@
 title: "Security Awareness"
 description: "Understanding of potential threats"
 tags: [Security, Cybersecurity, Security Operations]
-sidebar_position: 90
+sidebar_position: 71
 last_update:
   date: 1/30/2024
 ---
@@ -141,9 +141,9 @@ Key components:
     - It helps employees develop the skills and abilities to protect the organization from threats
 
 
-## Security Awareness Training
+## Security Training
 
-Security Awareness Training communicates expectations, responsibilities, and identifies potential risks to align information security goals with the organization's mission and vision.
+Security Training communicates expectations, responsibilities, and identifies potential risks to align information security goals with the organization's mission and vision.
 
 - **Education**
     - The objective is to enhance learners' comprehension of concepts and their application to real-world scenarios.
@@ -154,6 +154,22 @@ Security Awareness Training communicates expectations, responsibilities, and ide
 - **Awareness**
     - Engages learners by introducing them to aspects of an issue, concern, problem, or need to capture their attention.
 
+## Security Training Methods 
+
+Effective security training is essential for ensuring that employees understand and adhere to security policies and practices. Various methods can be employed to deliver security training, each suited to different organizational needs and contexts.
+
+- Instruction in on-site classes.
+- Integration with orientations.
+- Education through online providers.
+- Participation in vendor-provided classroom training.
+
+While all users should receive some degree of security education, organizations should also customize training to meet specific role-based requirements. For example, employees handling credit card information should receive training on PCI DSS requirements.
+
+Lastly, organizations also need to think about the frequency of their training efforts. They need to balance the time required to conduct the training with the benefit gained by reminding the users of their security responsibilities.
+
+- Conduct initial training for new employees.
+- Training can also be provided when employee assumes a new role.
+- Refresher training can also be done on an annual basis.
 
 ## Incident Response Exercises
 
