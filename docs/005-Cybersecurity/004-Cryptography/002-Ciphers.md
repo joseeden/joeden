@@ -1,5 +1,5 @@
 ---
-title: "Ciphers"
+title: "Code versus Ciphers"
 description: "Algorithm for encrypting and decrypting information"
 tags: [Security, Cybersecurity, Cryptography]
 sidebar_position: 2
@@ -8,8 +8,27 @@ last_update:
 ---
 
 
+## Code 
 
-## Overview
+A system that substitutes one word or phrase for another. Codes are intended to provide secrecy and/or efficiency. An example of a code is the "Ten" code which is used by the police and other organizations who communicate by radio
+
+The Ten-Code, also known as ten signals, is a set of code words used to represent common phrases in voice communication, particularly in law enforcement and emergency services. These codes help simplify and standardize radio communications, making them more efficient and reducing misunderstandings.
+
+Here are some examples:
+
+- **10-1**: Signal Weak
+- **10-2**: Signal Good
+- **10-3**: Stop Transmitting
+- **10-4**: Acknowledgment (OK)
+- **10-5**: Relay
+- **10-6**: Busy
+- **10-7**: Out of Service
+- **10-8**: In Service
+- **10-9**: Repeat
+- **10-10**: Fight in Progress
+
+
+## Ciphers
 
 A cipher is an algorithm used to encrypt and decrypt information, transforming plain text into coded (cipher) text and vice versa. 
 
@@ -30,14 +49,14 @@ Stream Ciphers encrypt data bit by bit or byte by byte in a continuous stream.
 - Uses a key stream generator to create a pseudo-random sequence of bits (the key stream).
 - The key stream is then XORed with the plaintext to produce ciphertext.
 
-**Common Features**:
+Common Features:
 
 - Uses same key for encryption and decryption.
 - Implemented mostly on hardware-based solutions.
 - Often used in real-time applications where data is continuously transmitted (e.g., streaming services).
 - Vulnerable to certain types of attacks if key stream is reused or not sufficiently random.
 
-**Examples**: 
+Examples:
 
 - RC4
 - Salsa20
@@ -63,6 +82,26 @@ Block Ciphers break the input into fixed-size blocks (e.g., 64-bit or 128-bit) a
 - DES
 - 3DES
 
+
+## Building Blocks of Modern Cryptography
+
+Encryption and decryption are fundamental processes in securing data. They transform readable data into an unreadable format and vice versa, ensuring that sensitive information remains confidential during transmission and storage. Two primary methods used in these processes are substitution ciphers and transposition ciphers.
+
+### Substitution Cipher
+
+A substitution cipher replaces elements of the plaintext with corresponding elements of the ciphertext based on a predetermined system.
+
+- Each letter or group of letters in the plaintext is replaced with another letter or group of letters.
+- The Caesar cipher is a well-known substitution cipher where each letter in the plaintext is shifted a certain number of places down the alphabet.
+- Substitution ciphers can be simple monoalphabetic ciphers or more complex polyalphabetic ciphers, which use multiple substitution alphabets.
+
+### Transposition Cipher
+
+A transposition cipher rearranges the characters of the plaintext according to a specific system to produce the ciphertext.
+
+- The order of the characters is changed, but the characters themselves remain the same.
+- One common type is the rail fence cipher, where the plaintext is written in a zigzag pattern across multiple "rails" and then read row by row.
+- Another example is the columnar transposition cipher, which arranges the plaintext into columns and then permutes the columns according to a key.
 
 ## Common Ciphers
 
