@@ -2,7 +2,7 @@
 title: "Penetration Testing"
 description: "Simulated cyber attack"
 tags: [Security, Cybersecurity, Security Operations, Penetration Testing]
-sidebar_position: 66
+sidebar_position: 67
 last_update:
   date: 1/30/2024
 ---
