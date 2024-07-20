@@ -1,5 +1,5 @@
 ---
-title: "Vendor Selection"
+title: "Vendor Management"
 description: "Assessing, selecting, and monitoring vendors"
 tags: [Security, Cybersecurity, Security Operations]
 sidebar_position: 81
@@ -63,6 +63,16 @@ Used to dive deep into a vendor's entire supply chain and assess the security an
 
 - Vendor' security is not just about their practices, but also their entire supply chain's integrity.
 - Scrutinize the locations where hardware vendors source their parts.
+
+
+## Vendor Management Lifecycle 
+
+add intro, explanation 
+
+1. Vendor Selection
+2. Onboarding 
+3. Monitoring
+4. Offboarding
 
 
 ## Vendor Selection and Monitoring 
