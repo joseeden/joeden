@@ -8,9 +8,8 @@ last_update:
 ---
 
 
-## Overview
 
-### Risk Identification 
+## Risk Identification 
 
 - **Risk Identification in Cybersecurity**
   - Proactively identifying cyber risks requires constant attention.
@@ -23,7 +22,7 @@ last_update:
   - Assist in system-level risk assessment, focusing on processes, controls, monitoring, or incident response.
   - Contribute to risk management in smaller organizations lacking mitigation plans.
 
-### Risk Assessment 
+## Risk Assessment 
 
 Risk Assessment is the process of identifying, estimating, and **prioritizing** risks to an organization's operations, assets, individuals, and mission.
 
@@ -40,7 +39,13 @@ Risk Assessment is the process of identifying, estimating, and **prioritizing** 
   - Consider inherent or residual risks 
 
 
-### Risk Treatment 
+Note: 
+
+There is no risk if both the vulnerability and threat is missing.
+
+![](/img/docs/cissp-risk-vuln-threat.png)
+
+## Risk Treatment 
 
 Risk treatment involves deciding on the most appropriate actions based on management's risk attitude and the availability and cost of mitigation measures.
 
@@ -67,7 +72,7 @@ Risk treatment involves deciding on the most appropriate actions based on manage
     - Commonly done through insurance policies.    
 
 
-### Risk Priorities 
+## Risk Priorities 
 
 - **Prioritizing and Analyzing Risks**
   - Essential step post-risk identification.
@@ -149,24 +154,56 @@ Quantitative risk assessment is a risk analysis approach that uses numerical val
 
 Important terms: 
 
-- **Asset Value (AV)** - value of an asset, financial loss if asset fails
-- **Exposure Factor (EF)** - Percentage of asset considered loss when negative incident occurs.
+- **Asset Value (AV)** 
 
-  ```bash
-  EF = Risk of downtime (hours) / 24 hours
-  ```
-- **Single Loss Expectancy (SLE)** - How much loss is experienced during one negative incident?
+  - Value of an asset, financial loss if asset fails
+  - Risk assessors determine an asset's value using different options:
+  
+    - **Original Cost**
+      - Simply looking at the invoice of an asset purchase.
+      - The purchase price is then used to determine the asset value.
+      - Easiest technique to perform, but is criticized.
+      - The cost of replacing an asset may be slightly higher or lower.
 
-  ```bash
-  SLE = AV * EF
-  ```
+    - **Depreciated Cost**
+      - An accounting favorite, it reduces the value of an asset as it ages.
+      - Uses an estimate of the asset's useful life and gradually decrease asset value until it reaches zero at the end of the projected lifespan.
+    
+    - **Replacement Cost**
+      - Most popular, produces results closest to the actual costs.
+      - Uses current supplier prices to determine the actual cost of replacing an asset, then uses this cost as the asset's value.  
+  
+- **Exposure Factor (EF)** 
+  
+  - Percentage of asset considered loss when negative incident occurs.
+  - Percentage of damage to an asset when a risk materializes.
 
-- **Annualized Rate of Occurrence (ARO)** - Expected number of yearly occurrences.
-- **Annualized Loss Expectancy (ALE)** - Total yearly cost of bad things happening.
+    ```bash
+    EF = Risk of downtime (hours) / 24 hours
+    ```
 
-  ```bash
-  ALE = SLE * ARO
-  ```
+- **Single Loss Expectancy (SLE)** 
+
+  - How much loss is experienced during one negative incident?
+  - Actual damage we expect to occur if a risks occurs one time.
+
+    ```bash
+    SLE = AV * EF
+    ```
+
+- **Annualized Rate of Occurrence (ARO)** 
+
+  - Expected number of yearly occurrences.
+  - In cases of floods, we can consult records of yearly floods for the location.
+
+- **Annualized Loss Expectancy (ALE)** 
+
+  - Total yearly cost of bad things happening.
+  - Amount of money we expect to lose each year from the risk.
+
+    ```bash
+    ALE = SLE * ARO
+    ```
 
 Example:
 

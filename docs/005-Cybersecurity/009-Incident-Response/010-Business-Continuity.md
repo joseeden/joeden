@@ -58,62 +58,7 @@ Assess risks:
     - Escalation requirements 
     - Data exfiltration
 
-**Failed Component Impact:**
-
-- **Mean Time Between Failures (MTBF)**
-
-    - Average time a system or component operates without failure
-    - Calculated by dividing the total operational time by the number of failures over a given period. 
-    - Higher MTBF values indicate greater reliability 
-
-
-- **Mean Time To Failure (MTTF)** 
-
-    - Average time a non-repairable system or component operates before it permanently fails. 
-
-    - Assess the expected lifespan or reliability of products 
-
-    - Calculated by dividing the total operational time by the number of failures
-
-    - Applies to **non-repairable components**
-
-- **Mean Time To Repair (MTTR)** 
-
-    - Measures the average time required to repair a failed system or component.
-    - Calculated by dividing the total repair time by the number of repair events within a specific period.
-
-    - Used to evaluate maintenance efficiency and system reliability,
-    
-    - Lower MTTR = faster repair times.
-
-**Locating Critical Sources:**
-
-- **Data discovery and classifications** 
-    
-    - Where is our sensitive data?
-    - On-premise or in the cloud?
-
-- **Privacy Threshold Assessment (PTA)**    
-
-    - First step, determine nature of sensitive data
-    - Understand first, before taking steps to protect the data
-
-- **Privacy Impact Assessment (PIA)**
-
-    - If exfiltrated or data fell to wrong hands
-    - Determine impact and how to respond+
-
-
-**Recovery Point Objective**
-
-- Maximum amount of data loss that is acceptable during a disruption, usually expressed in time (e.g., 4 hours).
-- Related to backup and data replication strategies 
-- Backups ensure critical data can be restored without exceeding the acceptable loss.
-
-**Recovery Time Objective** 
-
-- Maximum amount of time tolerable for system recovery after a disruption or failure.
-- Helps determine the urgency and resources needed to restore operations within a timeframe.
+For failed components, see [Failed Component Impacts.](010-Business-Continuity.md#failed-component-impacts)
 
 
 ### 3. Emergency Response Plan
@@ -177,6 +122,63 @@ In summary:
 - Guidance for management, including designated authority
 - Activation criteria and timelines
 - Contact numbers for critical supply chain members
+
+
+## Failed Component Impacts
+
+### Mean Time To Failure (MTTF) 
+
+    - For **non-repairable components**
+    - Average time a non-repairable system or component operates before it permanently fails. 
+    - Assess the expected lifespan or reliability of products 
+    - Total operational time divided by the number of failures
+
+### Mean Time Between Failures (MTBF)
+
+    - For **repairable components**
+    - Average time a system or component operates without failure
+    - Total operational time divided by the number of failures over a given period. 
+    - Higher MTBF values indicate greater reliability 
+
+### Mean Time To Repair (MTTR) 
+
+    - Measures the average time required to repair a failed system or component.
+    - Total repair time divided by the number of repair events within a specific period.
+    - Used to evaluate maintenance efficiency and system reliability,
+    - Lower MTTR = faster repair times.
+
+
+## Locating Critical Sources
+
+- **Data discovery and classifications** 
+    
+    - Where is our sensitive data?
+    - On-premise or in the cloud?
+
+- **Privacy Threshold Assessment (PTA)**    
+
+    - First step, determine nature of sensitive data
+    - Understand first, before taking steps to protect the data
+
+- **Privacy Impact Assessment (PIA)**
+
+    - If exfiltrated or data fell to wrong hands
+    - Determine impact and how to respond+
+
+
+## RTO and RPO 
+
+- **Recovery Point Objective**
+
+    - Maximum amount of data loss that is acceptable during a disruption, usually expressed in time (e.g., 4 hours).
+    - Related to backup and data replication strategies 
+    - Backups ensure critical data can be restored without exceeding the acceptable loss.
+
+- **Recovery Time Objective** 
+
+    - Maximum amount of time tolerable for system recovery after a disruption or failure.
+    - Helps determine the urgency and resources needed to restore operations within a timeframe.
+
 
 ## How often should an organization test its business continuity plan?
 

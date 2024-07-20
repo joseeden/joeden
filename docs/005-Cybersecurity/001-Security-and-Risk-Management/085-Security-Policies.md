@@ -22,6 +22,7 @@ Every policy should align with the organization's regulatory and contractual obl
     - Unpaid fines
     - Credit check
     - Interview with references 
+    - Employment and education verification
 
 **User Onboarding:**
 
