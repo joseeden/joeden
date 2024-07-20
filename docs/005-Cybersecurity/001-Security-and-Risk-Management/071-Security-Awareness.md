@@ -147,12 +147,16 @@ Security Training communicates expectations, responsibilities, and identifies po
 
 - **Education**
     - The objective is to enhance learners' comprehension of concepts and their application to real-world scenarios.
+    - Degree and certificate programs for security practitioners.
 
 - **Training**
-    - Aims at developing proficiency in specific skills, encompassing decision-making capabilities on when and how to apply these skills, ranging from low-level to complex tasks.
+    - Aims at developing proficiency in specific skills.
+    - Decision-making capabilities on when and how to apply these skills, ranging from low-level to complex tasks.
+    - In-person and online classes for employees and stakeholders.
 
 - **Awareness**
     - Engages learners by introducing them to aspects of an issue, concern, problem, or need to capture their attention.
+    - Reminders of security responsibilities.
 
 ## Security Training Methods 
 
