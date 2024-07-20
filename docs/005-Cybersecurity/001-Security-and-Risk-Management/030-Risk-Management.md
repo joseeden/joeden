@@ -154,7 +154,6 @@ Components:
 - **Risk Description**
   A summary of a risk, outlining its nature, causes, and potential consequences if it occurs.
 
-
 - **Risk Impact**
   The potential consequences if risks materialize, usually measured in number of losses.
 

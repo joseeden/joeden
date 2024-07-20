@@ -18,6 +18,8 @@ Defense in Depth is an approach in cybersecurity in which a series of defensive 
 - Avoids a monolithic security stance.
 - If one mechanism fails, the next layer steps up and stops attack
 
+To learn more, please see [Defense in Depth](../006-Identity-and-Access-Management/010-Defense-in-Depth.md)
+
 ### Zero Trust Model 
 
 The Zero Trust Model, also known as **Perimeterless security**, focuses on "**Never trust, always verify** concept whereby users and devices should not be trusted by default.

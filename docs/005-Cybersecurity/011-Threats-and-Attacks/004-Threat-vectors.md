@@ -21,7 +21,7 @@ last_update:
 
     - The "**Where**" of the attack
 
-### Messages 
+## Messages 
 
 - **Phishing** 
     - Deceptive messages tricking users into revealing sensitive information.
@@ -36,7 +36,7 @@ last_update:
     - Phishing attacks via SMS or text messaging.
     
 
-### Images 
+## Images 
 
 - **Steganography** 
     - Hiding malicious code or data within images.
@@ -48,7 +48,7 @@ last_update:
     - Use of specific image file formats to exploit vulnerabilities in viewers or editors.
 
 
-### Files
+## Files
 
 - **Malicious Attachments** 
     - Files containing malware or harmful scripts.
@@ -63,7 +63,7 @@ last_update:
     - Files with macros or embedded code that can be exploited.
 
 
-### Voice Calls
+## Voice Calls
 
 - **Vishing** 
     - Voice phishing, where callers pose as trusted entities to extract information.
@@ -75,7 +75,7 @@ last_update:
     - Automated voice calls designed to trick or manipulate.
 
 
-### Removable Devices
+## Removable Devices
 
 - **USB-based Malware** 
     - Infectious code stored on USB drives.
@@ -87,7 +87,7 @@ last_update:
     - Using removable devices to manipulate system behavior.
 
 
-### Unsecure Networks
+## Unsecure Networks
 
 - **Eavesdropping** 
     - Intercepting data transmitted over unsecured networks.
@@ -102,7 +102,7 @@ last_update:
     - Fake network access points designed to steal information.
 
 
-### Bluetooth Exploits 
+## Bluetooth Exploits 
 
 - **BlueBorne** 
 

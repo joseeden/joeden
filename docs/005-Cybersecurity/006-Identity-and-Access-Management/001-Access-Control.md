@@ -50,12 +50,19 @@ Access rules guide whether a subject can access an object based on their validat
 
 ## Controls Assessment 
 
-Risk reduction relies on the control's efficacy, adapting to changing situations. In securing a repurposed office space for confidential file storage, consider the following:
+Risk reduction relies on the control's efficacy, adapting to changing situations. As an example, in securing a repurposed office space for confidential file storage, consider the following:
 
-* Evaluate the necessity of biometric scanners on all doors.
-* Conduct a site assessment to determine optimal scanner placement.
-* Consider permanently securing or replacing non-critical doors.
-* Ensure control implementation aligns with the value of the protected assets.
+- Evaluate the necessity of biometric scanners on all doors.
+- Conduct a site assessment to determine optimal scanner placement.
+- Consider permanently securing or replacing non-critical doors.
+- Ensure control implementation aligns with the value of the protected assets.
+
+There are many ways organizations can evaluate their control's effectiveness:
+
+- Track the number of compromised end-user accounts. 
+- Track number of detected vulnerabilities.
+- Monitor critical findings in initial web scans.
+- Track number of data breaches requiring notifications.
 
 ## Privileged Access Management 
 

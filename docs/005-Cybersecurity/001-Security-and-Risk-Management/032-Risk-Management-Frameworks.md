@@ -41,7 +41,7 @@ SSAE SOC 2 (Statement on Standards for Attestation Engagements) is an auditing s
 - Financial statement integrity
 - Internal controls; Type I and Type II
 
-## NIST SP-800 
+## NIST SP 800 
 
 The NIST Special Publications (SP) 800 series contains cybersecurity guidelines, best practices, and technical standards from the National Institute of Standards and Technology.
 - Addresses various cybersecurity topics, such as risk management, data protection, and incident response.
@@ -50,3 +50,87 @@ The NIST Special Publications (SP) 800 series contains cybersecurity guidelines,
 
   - **SP 800-53** for federal security controls and 
   - **SP 800-171** for non-federal handling of controlled unclassified information.
+
+
+## NIST SP 800-37
+
+NIST Special Publication 800-37 provides a structured approach to managing security and privacy risks. It outlines a comprehensive risk management framework (RMF) that helps organizations identify, assess, and mitigate risks to their information systems.
+
+- Titled "Guide for Applying the Risk Management Framework to Federal Information Systems"
+- Focuses on integrating security and risk management activities into the system development life cycle.
+- Encourages continuous monitoring of information systems to address security and privacy risks in real-time.
+- Provides guidelines for selecting, implementing, and assessing security controls.
+
+Before beginning the risk management process, the organization needs to gather the following information first:
+
+- **Technology Architecture**
+
+  - Includes references models, segment and solutions Architecture
+  - Includes business process information and information system boundaries
+
+- **Organizational Inputs**
+
+  - Organization-specific information
+  - Laws, regulations, and policies 
+  - Strategy, priorities, resource availability, and supply chain information
+
+After gathering all the required information, the organization can then proceed with the six-step Risk Management Framework (RMF):
+
+1. **Categorize** 
+
+    - Define the information system and categorize it based on impact levels.
+    - Normally done by performing an impact assessment.
+
+2. **Select** 
+
+    - Choose appropriate security controls to protect the system.
+    - The selection is based upon on the system's categorization from step 1.
+    - Organization selects a baseline control, adding or removing specific controls to tailor the baseline.
+
+3. **Implement** 
+
+    - Put the selected security controls into practice.
+    - Document the implementation details.
+    - Integrate controls into existing systems and processes. 
+
+## NIST SP 800-37
+
+NIST Special Publication 800-37, titled "Guide for Applying the Risk Management Framework to Federal Information Systems," provides a structured approach to managing security and privacy risks. It outlines a comprehensive risk management framework (RMF) that helps organizations identify, assess, and mitigate risks to their information systems.
+
+- Focuses on integrating security and risk management activities into the system development life cycle.
+- Encourages continuous monitoring of information systems to address security and privacy risks in real-time.
+- Provides guidelines for selecting, implementing, and assessing security controls.
+
+The six-step Risk Management Framework (RMF) process includes:
+
+1. **Categorize**
+   - Define the information system.
+   - Determine impact levels based on potential adverse effects.
+
+2. **Select**
+   - Choose security controls based on risk assessment.
+   - Tailor controls to the specific needs of the organization.
+
+3. **Implement**
+   - Put the selected security controls into practice.
+   - Document the implementation details.
+   - Integrate controls into existing systems and processes.
+
+4. **Assess**
+   - Evaluate the effectiveness of the security controls.
+   - Conduct security control assessments.
+   - Identify and address control deficiencies.
+   - Are the controls implemented correctly?
+   - Are they operating correctly
+   - Do they meet the security requirements?
+
+5. **Authorize**
+   - Make a risk-based decision to authorize the system for operation.
+   - Prepare an authorization package.
+   - Grant or deny system operation based on risk assessment.
+
+6. **Monitor**
+   - Continuously monitor to ensure ongoing effectiveness.
+   - Conduct periodic assessments and updates.
+   - If monitoring detects significant issues, the cycle may begin anew.
+   - Report security status to stakeholders.
