@@ -129,3 +129,63 @@ Embeddings are like fingerprints that help the model recognize specific patterns
 - This makes them a versatile tool in advanced AI training.
 
 ## Model Evaluation
+
+Evaluating is essential for assessing the performance and effectiveness of these models. Despite their ability to produce useful content, evaluation provides several key benefits:
+
+- **Progress Measurement** 
+
+    - Tracks improvements as models are trained longer or redesigned.
+
+- **Comparison** 
+
+    - Allows for rigorous comparison between models.
+    - Identify which performs best for specific tasks.
+    - 
+- **Benchmarking** 
+
+    - Helps compare AI capabilities with human performance.
+    - Guides the effective use of both intelligences.
+
+Several methods are used to evaluate generative AI, each offering different insights and having its limitations:
+
+- **Quantitative Metrics** 
+
+    - Discriminative metrics (like accuracy) 
+    - Generative model-specific metrics
+
+- **Human-Centered Metrics** 
+
+    - Human performance comparison
+    - Intelligent evaluation.
+
+
+### Discriminative Techniques
+
+Discriminative evaluation focuses on well-defined tasks with clear metrics, similar to scoring darts on a dartboard. These techniques are widely used for their simplicity but are less effective for evaluating subjective qualities, such as artistic beauty.
+
+- Metrics can be used when outputs can be categorized.
+- Like shooting darts; closer to bulls-eye is better.
+- But cannot answer: "How to measure beauty of a painting?"
+
+### Generative Model-Specific Metrics
+
+Generative model-specific metrics are designed to assess nuanced criteria like realism, diversity, and novelty. These metrics are useful for comparing models but often fail to capture subjective features and may not generalize across different models and tasks.
+
+### Human Performance Comparison
+
+Comparing AI performance with human scores on standardized tests provides insights into the model's ability to interpret information and apply knowledge. While this comparison highlights the strengths and limitations of AI, it can be unfair due to differing strengths between AI and humans.
+
+- Benchmarks against human abilities 
+- Demonstrates practical applicability 
+- Unfair comparison between humans and AI
+
+It is important to note that generative AIs are now competing and winning in human competitions. 
+
+- Stable Diffusion won an art competition
+- GPT-4 surpassed average human performance on various standardized tests
+
+To conclude, evaluating AI through human assessment is considered the gold standard. This method captures subjective aspects and evaluates outputs based on user needs. However, it is slow, costly, and introduces biases and irregularities.
+
+### Turing’s Classic Test
+
+The Turing Test is a well-known example of human evaluation that is proposed by Alan Turing. It involves a human evaluator conversing with both a human and an AI. If the human evaluator cannot distinguish between the two, the AI passes the test. However, this method is criticized because human behavior can be unintelligent, and intelligent behavior might seem inhuman.
