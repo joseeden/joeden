@@ -282,6 +282,10 @@ Disaster Recovery:
   label: 'Disaster Recovery'
   permalink: '/Disaster Recovery'
   description: 'Docs related to Disaster Recovery'
+Docusaurus:
+  label: 'Docusaurus'
+  permalink: '/Docusaurus'
+  description: 'Docs related to Docusaurus'  
 Generative AI:
   label: 'Generative AI'
   permalink: '/Generative AI'
