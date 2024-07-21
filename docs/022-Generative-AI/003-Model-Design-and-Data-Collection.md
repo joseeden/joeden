@@ -111,7 +111,8 @@ Training a foundational AI model is just the start. Advanced techniques are used
    - Negative feedback discourages them.
    - Example: A thumbs-up feedback tells the chatbot to generate a similar response for similar prompts while a thumbs-down does the opposite.
 
-    ![](/img/docs/gen-ai-rlhf-thumbs-down.png)
+    |![](/img/docs/gen-ai-rlhf-thumbs-down.png)|
+    |-|
 
 3. **Embeddings**
    - Create unique representations of data entities within the model.
