@@ -88,8 +88,6 @@ With enough data, the model can tell the difference between new images, but it c
 
 <div class="img-center"> 
 
-
-
 ![](/img/docs/gen-ai-generative-models.png)
 
 </div>
