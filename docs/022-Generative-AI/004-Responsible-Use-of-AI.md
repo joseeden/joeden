@@ -146,16 +146,16 @@ Generative AI can be used maliciously to manipulate society, especially during c
 
 - **Deepfakes**
   - Synthetic media depicting events that never happened.
+  - Defame individuals, influence public opinion, and undermine truth.
   - Example: A viral image of Pope Francis in a puffer jacket.
-  - Impact: Defame individuals, influence public opinion, and undermine truth.
 
 - **Misinformation Campaigns**
   - AI can create and spread false content on social media.
-  - Goal: Manipulate opinions or decisions.
+  - Manipulate opinions or decisions.
 
 - **Enhanced Hacking**
   - Malicious actors using AI to access critical infrastructure.
-  - Consequences: Devastating impacts if poorly moderated AI is used irresponsibly.
+  - Devastating impacts if poorly moderated AI is used irresponsibly.
 
 ### Prevention
 
@@ -171,10 +171,12 @@ To prevent negative outcomes, apply these principles:
 
 - **Regular Review and Updates**
   - Continuously update AI products to address new problems and norms.
-  
+
+### Access Controls 
+
 Developers can adopt practices like **Know Your Customer (KYC)** to verify user identities at sign-up. This first line of defense helps prevent fraud and illicit use by ensuring only legitimate entities gain access.
 
-### Monitor Prompts and Responses 
+### Prompts and Responses 
 
 In addition to practices mentioned above, developers should also monitor both prompts and responses for abuse:
 
@@ -182,9 +184,9 @@ In addition to practices mentioned above, developers should also monitor both pr
   - Ban offending users.
   
 - **Screen Generated Responses**
-  - Prevent users from subverting guidelines with jailbreaking prompts.
+  - Prevent users from subverting guidelines with jailbreaking prompts. 
 
-### Ensure Application Security
+### Application
 
 Despite best efforts, malicious actors might misuse AI for illegal or unethical activities. Developers can:
 
@@ -194,9 +196,9 @@ Despite best efforts, malicious actors might misuse AI for illegal or unethical 
 - **Law Enforcement Intervention**
   - Address activities beyond developers' control.
 
-### Engage and Communicate
+### Communications and Feedback
 
-As generative AI evolves, so will best practices for responsibility. Developers need to engage key stakeholders through:
+Best practices for responsibility needs to evolve as generative AI evolves. Developers need to engage key stakeholders through:
 
 - **Clear Usage Guidelines**
   - Provide accessible guidelines for customers, end users, and regulators.
