@@ -126,3 +126,28 @@ A data catalog is essential for managing the data in a data lake due to its unst
 ### Database vs. Data Warehouse
 
 The term "database" is broad and refers to any organized data stored and accessed on a computer. A data warehouse is a specific type of database designed for storing and querying structured data to support business analytics.
+
+
+## Cloud Computing 
+
+### On-Premises and the Cloud 
+
+Traditionally, companies manage data processing with on-premises servers in dedicated rooms. This setup involves high costs for equipment, space, electricity, and maintenance. Cloud computing presents a more flexible and cost-effective alternative.
+
+- **On-Premises**
+  - High initial investment and ongoing maintenance costs
+  - Logistical challenges with moving and scaling
+  - Risk of underutilization during low-traffic periods
+
+- **Cloud Computing**
+  - Flexible resource usage with rental model
+  - Cost-effective and reduces physical infrastructure needs
+  - Improved latency with global server distribution
+
+### Cloud Computing for Data Storage
+
+Cloud computing also enhances database reliability by enabling data replication across various geographic locations, protecting against local disasters. However, storing sensitive or confidential data on external servers introduces risks related to security and government surveillance.
+
+### Multicloud Strategy
+
+Using multiple cloud providers, known as multicloud, helps reduce dependency on a single vendor, optimize costs, and comply with local regulations. It also provides redundancy to mitigate the impact of outages.
