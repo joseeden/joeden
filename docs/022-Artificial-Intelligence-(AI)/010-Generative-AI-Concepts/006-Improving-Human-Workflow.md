@@ -44,7 +44,7 @@ To effectively integrate AI into workflows, there are a few steps to follow.
 4. **Implement it on a larger scale.** Trial the AI with a small team to see if it's helpful.
 
 
-### Embracing a New Way of Working
+## Embracing a New Way of Working
 
 Generative AI creates a new way of working. Instead of viewing AI as a competitor, see it as a partner that can generate ideas and handle routine tasks. 
 

@@ -290,3 +290,7 @@ Generative AI:
   label: 'Generative AI'
   permalink: '/Generative AI'
   description: 'Docs related to Generative AI'
+Data Engineering:
+  label: 'Data Engineering'
+  permalink: '/Data Engineering'
+  description: 'Docs related to Data Engineering'  
