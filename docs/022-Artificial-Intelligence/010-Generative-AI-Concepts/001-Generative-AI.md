@@ -12,7 +12,6 @@ sidebar_position: 1
 
 Generative AI is a new domain producing technologies that can bring our ideas to life using various models. These tools range from those that create magazine covers to others that converse as humans would. Generative AI tools are rapidly bringing new creative capabilities to the mainstream.
 
-**What is Generative AI?**
 - Machine learning models that generate new content based on data they've seen.
 - Examples:
     - Google Bard: Generates text in response to user questions.
@@ -51,7 +50,7 @@ Examples:
 
 ### Real-World Applications
 
-They can:
+Some real-world applications of generative AI:
 
 - Draft sales outreach emails
 - Analyze financial data
@@ -110,7 +109,7 @@ GANs train a generative model and a discriminative model together. They compete,
 
 </div>
 
-:::Info[remember]
+:::info[remember]
 
 GAN consists of two models in competition:
 
@@ -136,7 +135,6 @@ A goal of AI is to create AGI, which exhibits human-like intelligence. AGI would
 ### Choosing the Right Tool
 
 Understanding the differences helps in choosing the right model:
-
 
 - **Discriminative Models:** 
 
