@@ -1,31 +1,36 @@
-<!-- ---
-title: "Container Services "
-tags: [Cybersecurity]
+---
+title: "Container Services"
+description: "Containerization in Azure"
+tags: [Cloud, Microsoft Azure, DevOps, Certifications]
 sidebar_position: 1
 last_update:
-  date: 1/30/2024
+  date: 7/18/2020
 ---
 
 
-## Overview 
 
-### Containers 
+## Containers 
 
 Containers provide a lightweight and efficient way to package and deploy applications.
 
 - Containers are a preferred method for building, testing, and deploying applications.
 - They encapsulate an application and its dependencies, excluding the operating system.
 
-**Challenges in Containerized Deployments**
+**Challenges in Containerized Deployments:**
 
-- **Single Container Limitation:** Running a single instance of a container is usually insufficient for production applications.
+- Single Container Limitation 
 
-- **Microservices Architecture:** Modern applications adopt a microservices architecture, dividing applications into separate containers.
+  - Running a single instance of a container is usually insufficient for production applications.
+
+- Microservices Architecture
+
+  - Modern applications adopt a microservices architecture, dividing applications into separate containers.
 
 **Container Orchestrator**
+
 - Manage multiple containers, ensuring scalability, high availability, and efficient deployment.
 
-### Kubernetes
+## Kubernetes
 
 Kubernetes is a container orchestrator that addresses the challenges of managing multiple containers in production. 
 - Open-source container orchestrator.
@@ -72,7 +77,7 @@ You can create an AKS cluster using:
 - Azure portal
 - Template-driven deployment options, like Azure Resource Manager templates, Bicep, and Terraform.
 
-**Important links**
+## Important links
 
 - AKS Roadmap: http://aka.ms/aks/roadmap
 - AKS hybrid deployment options: https://aka.ms/aks-hybrid
@@ -80,10 +85,6 @@ You can create an AKS cluster using:
 - AKS Preview Features: https://aka.ms/aks/preview-features
 - AKS Public Community Channel: https://twitter.com/theakscommunity
 - Updates about the service, including new features and new Azure regions: AKS feed in Azure Updates
-
-   
-
-
 
 
 ## Resources 
