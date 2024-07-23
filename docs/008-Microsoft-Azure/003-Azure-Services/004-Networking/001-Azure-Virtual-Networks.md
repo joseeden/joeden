@@ -77,9 +77,7 @@ Understanding these key concepts is essential for effectively managing and utili
 - **Subscriptions**
   - Each virtual network is scoped to a specific subscription
 
-Diagram:
-
-![Azure Virtual Network Diagram](https://docs.microsoft.com/en-us/azure/virtual-network/media/virtual-networks-overview/virtual-network-diagram.png)
+For more information, please see [Azure Virtual Network Diagram](https://docs.microsoft.com/en-us/azure/virtual-network/media/virtual-networks-overview/virtual-network-diagram.png)
 
 ## Best Practices for Virtual Networks
 

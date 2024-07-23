@@ -32,14 +32,14 @@ Resources such as Virtual Machines (VMs), Scale Sets, and App Service Environmen
 
 Service Endpoints enable secure and direct connectivity from a virtual network to Azure resources over the Azure backbone network. This ensures a secure and optimized route for traffic.
 
-For more information: [Service Endpoints Overview](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview)
+For more information, please see [Service Endpoints Overview](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview)
 
 
 ### Private Links
 
 Private Links allow private access to specific service instances from a virtual network or on-premises. This enhances security by eliminating exposure to the public internet.
 
-For more information: [Private Link Overview](https://docs.microsoft.com/en-us/azure/private-link/private-link-overview)
+For more information, please see [Private Link Overview](https://docs.microsoft.com/en-us/azure/private-link/private-link-overview)
 
 
 ### VNet Peering
@@ -49,7 +49,7 @@ VNet Peering connects two virtual networks, enabling resources to communicate ac
 - Enables communication between resources in different VNets
 - Facilitates resource sharing across virtual networks
 
-For more information: [VNet Peering](./004-VNet-Peering.md)
+For more information, please see [VNet Peering](./004-VNet-Peering.md)
 
 ## Communication with On-Prem Networks
 
@@ -62,9 +62,8 @@ Point-to-Site VPN allows individual computers to connect to the virtual network.
 - Connects a single computer to the virtual network
 - Uses separate connections for each on-premises computer or client
 
-For more information: [Point-to-Site VPNs](./005-VPN-Options.md)
+For more information, please see [Point-to-Site VPNs](./005-VPN-Options.md)
 
-Diagram: 
 
 ![Point-to-Site VPN](/img/docs/azure-vnet-p2s-vpn-with-border.png)
 
@@ -76,9 +75,8 @@ Site-to-Site VPN connects an entire on-premises network to an Azure virtual netw
 - Connects entire on-premises network to Azure
 - Secure, encrypted connection over the internet
 
-For more information: [Site-to-Site VPNs](./005-VPN-Options.md)
+For more information, please see [Site-to-Site VPNs](./005-VPN-Options.md)
 
-Diagram: 
 
 ![Site-to-Site VPN](/img/docs/azure-vnet-s2s-vpn-with-border.png)
 
@@ -89,9 +87,7 @@ Diagram:
 Azure ExpressRoute provides a private connection between an on-premises network and Azure. It offers a more robust and dedicated connection by avoiding the public internet, established through an ExpressRoute partner.
 
 
-For more information: [Azure ExpressRoute](./006-Azure-ExpressRoute.md)
-
-Diagram:
+For more information, please see [Azure ExpressRoute](./006-Azure-ExpressRoute.md)
 
 ![Azure ExpressRoute](/img/docs/azure-expressroute-with-border.png)
 
