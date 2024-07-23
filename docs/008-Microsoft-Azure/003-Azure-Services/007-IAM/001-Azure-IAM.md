@@ -30,7 +30,7 @@ Example Scenario:
   - Allow different user groups to manage distinct resources (e.g., VMs, virtual networks, SQL databases) based on their roles.
   - Enables segregation of duties within your organization by allowing only the least amount of access that is needed by users to do their jobs.
 
-![](/img/docs/azure-rbac-recommended-by-azure.png)
+    ![](/img/docs/azure-rbac-recommended-by-azure.png)
 
 
 
@@ -69,21 +69,21 @@ Usage:
 This feature automatically detects and assesses risks associated with user logins, including potential intrusion attempts. Key functionalities include:
 
 
-- **Automated Risk Detection:**
+- **Automated Risk Detection**
 
     - Identifies suspicious activities such as logins from anonymous IP addresses or unexpected locations.
     - Detects password spray attacks where an attacker attempts the same password across multiple accounts.
 
-- **Automated Remediation:**
+- **Automated Remediation**
 
     - Configurable actions triggered upon detecting risky login attempts.
     - Options include requiring multifactor authentication or blocking the login attempt.
 
-- **Manual Investigation:**
+- **Manual Investigation**
 
     - Organizations can choose to investigate detected risks manually if they opt not to use automated remediation.
 
-- **Integration with SIEM:**
+- **Integration with SIEM**
 
     - Export risk detection data to Security Information and Event Management (SIEM) systems for additional analysis.
 
@@ -102,7 +102,7 @@ This requires the regular reviews of the list of administrators to ensure only n
 
 Eligible users request activation of elevated roles only when needed. Activation may require multifactor authentication, role activation approval, and a specified reason.
 
-**How it works:**
+**How it works**
 
 1. Certain users are designated as eligible to perform administrator tasks but don’t have those permissions all the time. 
 

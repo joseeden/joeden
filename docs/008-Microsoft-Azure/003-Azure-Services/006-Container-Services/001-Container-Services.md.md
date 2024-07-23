@@ -1,6 +1,6 @@
 ---
-title: "Container Services"
-description: "Containerization in Azure"
+title: "Containers in Azure"
+description: "Containers in Azure"
 tags: [Cloud, Microsoft Azure, DevOps, Certifications]
 sidebar_position: 1
 last_update:
@@ -16,7 +16,7 @@ Containers provide a lightweight and efficient way to package and deploy applica
 - Containers are a preferred method for building, testing, and deploying applications.
 - They encapsulate an application and its dependencies, excluding the operating system.
 
-**Challenges in Containerized Deployments:**
+**Challenges in Containerized Deployments**
 
 - Single Container Limitation 
 
@@ -39,24 +39,24 @@ Kubernetes is a container orchestrator that addresses the challenges of managing
 
 **Kubernetes Features**
 
-- **Scalability:**
+- **Scalability**
   - Easily scale the number of containers to meet demand.
 
-- **High Availability:**
+- **High Availability**
   - Ensures applications are available and responsive, even in the face of failures.
 
-- **Microservices Support:**
+- **Microservices Support**
   - Supports the deployment of applications as microservices in separate containers.
 
 **Kubernetes Components**
 
-- **Nodes:**
+- **Nodes**
   - Virtual machines in the cluster, each capable of running one or more pods.
 
-- **Pods:**
+- **Pods**
   - Basic deployment unit, containing one or more containers.
 
-- **Control Plane:**
+- **Control Plane**
   - Manages nodes and pods, ensuring desired state and handling orchestration.
 
    
