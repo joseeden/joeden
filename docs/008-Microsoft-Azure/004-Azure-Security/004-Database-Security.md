@@ -33,7 +33,8 @@ Controls access to the Azure SQL Database server's public endpoint through IP fi
 - Has Server-level and Database-level Firewall rules
 
 
-![](/img/docs/azure-sql-firewall-rules-server-level-database-level-fw-rules.png)
+|![](/img/docs/azure-sql-firewall-rules-server-level-database-level-fw-rules.png)|
+|-|
 
 
 ### Levels

@@ -21,8 +21,12 @@ To see the complete documentation, please go to: [Azure documentation](https://l
 
 In the realm of cybersecurity, the traditional approach of relying solely on perimeter defenses to keep networks secure is deemed insufficient. 
 
+<div class="img-center"> 
+
 |![](/img/docs/azure-zero-trust-never-trust-always-verify.png)|
 |-|
+
+</div>
 
 A paradigm shift to a "**zero trust**" model is advocated, where trust is not automatically granted based on location or network boundaries. Microsoft employs specific principles in its zero-trust architecture, emphasizing a more secure and robust approach.
 
@@ -99,7 +103,11 @@ To learn more: [Zero Trust architecture](https://learn.microsoft.com/en-us/azure
 
 Implementing a zero-trust philosophy in your Azure infrastructure involves a strategic approach known as **defense in depth**. This strategy focuses on safeguarding data by ensuring confidentiality, integrity, and availability. 
 
+<div class="img-center"> 
+
 ![](/img/docs/azure-defense-in-depthhhhh.png)
+
+</div>
 
 The goal is to create multiple layers of protection so that even if one layer is breached, others remain resilient, slowing down attackers and increasing the likelihood of detection.
 

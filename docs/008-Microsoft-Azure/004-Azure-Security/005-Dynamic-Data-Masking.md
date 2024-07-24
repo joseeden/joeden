@@ -42,8 +42,8 @@ An example scenario for DDM involves a call center employee who needs to identif
 - **For SQL Database**
     - Use the Dynamic Data Masking blade under Security in the SQL Database configuration pane.
 
-    ![](/img/docs/azure-sql-dynamic-data-masking.png)
-    
+        ![](/img/docs/azure-sql-dynamic-data-masking.png)
+        
 
 - **For SQL Managed Instance** 
     - Configuration is performed using PowerShell or REST API.

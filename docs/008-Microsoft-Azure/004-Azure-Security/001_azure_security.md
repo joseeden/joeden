@@ -79,8 +79,7 @@ Microsoft Defender for Cloud is a security posture management and threat protect
     - Aggregated value representing security posture.
     - Higher score indicates lower identified risk.
 
-        |![](/img/docs/azure-secure-scoreee.png)|
-        |-|
+        |[](/img/docs/azure-secure-scoreee.png)
 
 - **Security Recommendations**
     - Guidance and tasks to harden resources.

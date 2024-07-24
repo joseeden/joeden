@@ -98,7 +98,8 @@ These are roles that are not confined to a particular service but strethc their 
 
 ## Built-in Roles 
 
-![](/img/docs/azure-builtin-rolesss.png)
+|![](/img/docs/azure-builtin-rolesss.png)|
+|-|
 
 
 **1. Global Administrator**
