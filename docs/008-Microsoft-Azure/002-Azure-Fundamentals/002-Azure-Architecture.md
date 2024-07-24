@@ -122,4 +122,76 @@ The Microsoft Azure portal is a browser-based graphical user interface (GUI) to 
 To login: [Azure Portal](https://go.microsoft.com/fwlink/p?linkid=2165195&clcid=0x409)
 
 
-  
+## Availability of Services 
+
+### Azure Region Types
+
+The availability of Azure services depends on the region type. Azure has two types of regions: recommended and alternate.
+
+- **Recommended Regions**
+  - Offer the broadest range of services.
+  - Support availability zones.
+  - Ideal for most deployment scenarios.
+
+- **Alternate Regions**
+  - Extend Azure's footprint within a data residency boundary where a recommended region exists.
+  - Help optimize latency and provide a second region for recovery.
+  - Do not support availability zones.
+
+### Service Categories
+
+Azure services are grouped into three categories: foundational, mainstream, and strategic.
+
+- **Foundational Services**
+  - Available in all regions and alternate regions when generally available.
+  - Examples: Azure Virtual Machines, Azure Storage, Azure SQL Database.
+
+- **Mainstream Services**
+  - Accessible in all recommended regions for deployment.
+  - Examples: Azure App Service, Azure Kubernetes Service, Azure Cognitive Services.
+
+- **Strategic Services**
+  - Targeted offerings aimed at specific industries.
+  - Examples: Azure Healthcare APIs, Azure Financial Services Compliance Program.
+
+![](/img/docs/azure-availability-of-services-3-types.png)
+
+To check the availability of a specific service in a region using Azure CLI:
+
+```bash
+az account list-locations --query "[].{Region:name, Recommended:metadata.regionType == 'Recommended', ServicesAvailable:servicesAvailable}"
+```
+
+Output:
+
+```json
+[
+  {
+    "Region": "eastus",
+    "Recommended": true,
+    "ServicesAvailable": [
+      "Microsoft.Compute",
+      "Microsoft.Storage",
+      "Microsoft.Sql"
+    ]
+  },
+  {
+    "Region": "centralus",
+    "Recommended": true,
+    "ServicesAvailable": [
+      "Microsoft.Compute",
+      "Microsoft.Storage",
+      "Microsoft.Sql",
+      "Microsoft.AppService"
+    ]
+  },
+  {
+    "Region": "westus",
+    "Recommended": false,
+    "ServicesAvailable": [
+      "Microsoft.Compute",
+      "Microsoft.Storage"
+    ]
+  }
+]
+```

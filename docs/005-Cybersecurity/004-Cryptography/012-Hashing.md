@@ -9,7 +9,7 @@ last_update:
 
 
 
-## Hashing
+## Overview
 
 Hashing is a process of converting data (like a file or a message) into a fixed-size value or string, typically using a hash function.
 
@@ -17,10 +17,11 @@ Hashing is a process of converting data (like a file or a message) into a fixed-
 - The same input always produces the same hash output.
 - **Fixed Size**: Hash outputs are of fixed length, regardless of input size.
 - **Fast Computation**: Hash functions are designed to be quick to compute.
-- **Irreversible**: Not feasible to reverse-engineer the original input from the hash.
+- **Irreversible**: One-way hashing, cannot   reverse-engineer the original input from the hash.
 - **Collision Resistance**: Unlikely for two different inputs to produce the same hash (a "collision").
   
-**Common Uses**
+### Common Uses     
+
 - Verify data hasn't been altered (e.g., checksums).
 - Securely store passwords, often with added salt.
 - Create digital signatures by compressing data before signing.
