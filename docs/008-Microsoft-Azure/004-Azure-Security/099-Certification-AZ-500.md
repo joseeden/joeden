@@ -1,7 +1,7 @@
 ---
 title: "Certification - AZ-500"
 description: "Notes for the Microsoft Azure Security Technologies (AZ-500)"
-tags: [Cloud, Microsoft Azure, DevOps, Certifications]
+tags: [Cloud, Microsoft Azure, DevOps, Security, Certifications]
 sidebar_position: 99
 last_update:
   date: 7/18/2020
