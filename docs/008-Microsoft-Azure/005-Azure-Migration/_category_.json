@@ -1,0 +1,8 @@
+{
+  "label": "Azure Migration",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Migrating to Azure"
+  }
+}
