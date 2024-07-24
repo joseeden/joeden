@@ -66,10 +66,46 @@ The shared responsibility model outlines the distribution of security responsibi
     - Provider handles underlying components, emphasizing service delivery.
 
   
+## Data Protection and Identity
+
+Azure provides various measures for data protection and identity management.
+- Includes tools like encryption, access control, Key Vaults, and information protection.
+- Ensures secure handling of sensitive information and identity management.
+- Supports compliance and enhances overall security posture.
+
+
+## Role-Based Access Control (RBAC)
+
+RBAC allows precise control over permissions within your Azure environment.
+- Defines custom or pre-defined roles to manage user access.
+- Assigns roles to users or groups, ensuring appropriate access levels.
+- Includes roles such as contributor, owner, reader, and various administrative roles.
 
 ## Azure Security Services 
 
 These Azure security services collectively provide a comprehensive approach to securing workloads, managing secrets, monitoring and analyzing data, and responding to security threats across the enterprise.
+
+### Azure Security Center
+
+Azure Security Center is your go-to for comprehensive security management across your resources.
+- Provides unified security management and advanced threat protection.
+- Offers actionable recommendations and insights to enhance security.
+- Foundational layer for monitoring the security of your Azure resources.
+
+
+### Azure Policy
+
+Azure Policy ensures that your deployments and configurations comply with organizational standards.
+- Enforces rules and standards across your Azure environment.
+- Assesses compliance with corporate and regulatory standards like GDPR.
+- Helps maintain consistent governance and compliance at scale.
+
+### Azure Blueprints
+
+Azure Blueprints streamline the process of deploying resources according to organizational standards.
+- Combines templates and policies to ensure consistent deployments.
+- Includes predefined blueprints like the Security and Compliance GDPR Blueprint.
+- Facilitates adherence to best practices and regulatory requirements.
 
 ### Microsoft Defender for Cloud
 
@@ -125,6 +161,13 @@ Microsoft Defender for Cloud is a security posture management and threat protect
     - Provide alerts when it detects suspicious database access and query patterns, or when it detects suspicious database activities.
 
     
+
+## Managing Security
+
+Azure provides several tools for managing security effectively.
+- Azure Sentinel detects and manages threats with comprehensive monitoring.
+- Azure Information Protection helps classify and protect sensitive information.
+- Azure Key Vault securely stores keys, passwords, and other secrets.
 
 ### Azure Key Vault
 
@@ -213,7 +256,27 @@ Azure Sentinel is a cloud-based security information event management (SIEM) sol
 - Available connectors for Microsoft solutions and other sources.
 - After connecting, monitor your data with  .
 
-  
+## Firewall
+
+Azure Firewall enhances security by filtering network traffic.
+- Provides advanced threat protection for your Azure environment.
+- Analyzes and controls traffic, allowing only safe connections.
+- Helps protect against various network-based attacks.  
+
+## DDoS Protection
+
+Azure DDoS Protection safeguards against distributed denial-of-service attacks.
+- Filters malicious traffic to prevent disruptions to your services.
+- Ensures legitimate traffic can access your applications.
+- Continuously protects against large-scale attacks to maintain service availability.
+
+## Compliance
+
+Azure complies with a range of global standards and certifications.
+- Adheres to ISO, IEC, and GDPR requirements.
+- Ensures that your operations meet rigorous regulatory standards.
+- Provides assurance of data protection and legal compliance.
+
 
 ## Identity and Access Management 
 
