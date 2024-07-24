@@ -1,10 +1,20 @@
-<!-- ---
-title: "Securing Azure Solutions with Azure Active Directory"
-tags: [Cybersecurity]
-sidebar_position: 1
-last_update:
-  date: 1/30/2024
 ---
+title: "Securing Azure Solutions"
+description: "Securing Azure Solutions with Azure Active Directory"
+tags: [Cloud, Microsoft Azure, DevOps, Security, Certifications]
+sidebar_position: 10
+last_update:
+  date: 7/18/2020
+---
+
+
+:::info[NOTES]
+
+This is not an exhaustive documentation of all the existing Azure Services. These are summarized notes for the Azure Certifications.
+
+To see the complete documentation, please go to: [Azure documentation](https://learn.microsoft.com/en-us/azure/?product=popular)
+
+:::
 
 
 ## Azure Active Directory 
@@ -20,31 +30,31 @@ Main features:
 - Hybrid Identities 
 - Seamless Integration with Azure Services and Third-party Services 
 
-To learn more, check out [Azure Identity and Access Management (IAM)](110_azure_iam.md)
+To learn more, check out [Azure Identity and Access Management (IAM)](../003-Azure-Services/007-IAM/010-Azure-AD.md)
 
 
 ## Azure AD vs. Azure AD DS vs. ADDS
 
-**Azure AD (Azure Active Directory)**
-- Cloud-based identity and access management service.
-- Manages user identities and authentication for cloud applications.
-- Supports single sign-on (SSO) and multi-factor authentication (MFA).
-- Focuses on modern authentication and authorization for cloud resources.
-- Enable collaboration with B2B and B2C
+- **Azure AD (Azure Active Directory)**
+    - Cloud-based identity and access management service.
+    - Manages user identities and authentication for cloud applications.
+    - Supports single sign-on (SSO) and multi-factor authentication (MFA).
+    - Focuses on modern authentication and authorization for cloud resources.
+    - Enable collaboration with B2B and B2C
 
-**Azure AD DS (Azure Active Directory Domain Services)**
-- Fully-managed domain service 
-- Enables domain-joined resources in Azure 
-- Supports LDAP, Kerberos, and NTLM authentication 
-- Useful for lift-and-shift scenarios  
-- Integrates with existing Azure AD tenant for user sign-in and control
-- Scalability and Disaster recovery with multiple replica sets in different Azure regions
+- **Azure AD DS (Azure Active Directory Domain Services)**
+    - Fully-managed domain service 
+    - Enables domain-joined resources in Azure 
+    - Supports LDAP, Kerberos, and NTLM authentication 
+    - Useful for lift-and-shift scenarios  
+    - Integrates with existing Azure AD tenant for user sign-in and control
+    - Scalability and Disaster recovery with multiple replica sets in different Azure regions
 
-**ADDS (Active Directory Domain Services)**
-- On-premises Windows Server-based directory service.
-- Provides authentication and authorization services 
-- Requires on-premises domain controllers.
-- Integrates with Azure AD for hybrid identity scenarios.
+- **ADDS (Active Directory Domain Services)**
+    - On-premises Windows Server-based directory service.
+    - Provides authentication and authorization services 
+    - Requires on-premises domain controllers.
+    - Integrates with Azure AD for hybrid identity scenarios.
 
 ## Roles in Azure AD 
 
@@ -88,9 +98,7 @@ These are roles that are not confined to a particular service but strethc their 
 
 ## Built-in Roles 
 
-<p align=center>
 ![](/img/docs/azure-builtin-rolesss.png)
-</p>
 
 
 **1. Global Administrator**
@@ -134,4 +142,3 @@ Cons:
 - Limited network integration 
 - Availability may vary based on regions 
 - Cost considerations 
- -->

@@ -1,10 +1,20 @@
-<!-- ---
-title: "Zero Trust and Defense in Depth"
-tags: [Cybersecurity]
-sidebar_position: 1
-last_update:
-  date: 1/30/2024
 ---
+title: "Zero Trust Concepts"
+description: "Zero Trust Concepts"
+tags: [Cloud, Microsoft Azure, DevOps, Security, Certifications]
+sidebar_position: 6
+last_update:
+  date: 7/18/2020
+---
+
+
+:::info[NOTES]
+
+This is not an exhaustive documentation of all the existing Azure Services. These are summarized notes for the Azure Certifications.
+
+To see the complete documentation, please go to: [Azure documentation](https://learn.microsoft.com/en-us/azure/?product=popular)
+
+:::
 
 
 ## Zero Trust
@@ -16,9 +26,9 @@ In the realm of cybersecurity, the traditional approach of relying solely on per
 
 A paradigm shift to a "**zero trust**" model is advocated, where trust is not automatically granted based on location or network boundaries. Microsoft employs specific principles in its zero-trust architecture, emphasizing a more secure and robust approach.
 
-### Key Principles of Zero Trust
+## Key Principles of Zero Trust
 
-**1. Verify Explicitly**
+### 1. Verify Explicitly
 
 - **Identity Verification**
 
@@ -36,7 +46,7 @@ A paradigm shift to a "**zero trust**" model is advocated, where trust is not au
     - Exercise extra precautions, especially with administrator access.
     - Leverage services like Privileged Identity Management for controlled and monitored access.
 
-**2. Use "Least Privilege" Access**
+### 2. Use "Least Privilege" Access
 
     
 - **Minimal Access**
@@ -54,7 +64,7 @@ A paradigm shift to a "**zero trust**" model is advocated, where trust is not au
     - Exercise caution with administrator access.
     - Implement just-in-time access through Privileged Identity Management.
 
-**3. Assume Breach**
+### 3. Assume Breach
 
     
 - **Designing for Breach**
@@ -72,7 +82,7 @@ A paradigm shift to a "**zero trust**" model is advocated, where trust is not au
     - Run threat detection services to identify and respond to breaches.
     - Ensure encryption for all network traffic to heighten the complexity for attackers.
 
-### Zero Trust Architecture
+## Zero Trust Architecture
 
 A Zero Trust approach extends throughout the entire digital estate and serves as an integrated security philosophy and end-to-end strategy.
 
@@ -82,8 +92,6 @@ This illustration provides a representation of the primary elements that contrib
 |-|
 
 To learn more: [Zero Trust architecture](https://learn.microsoft.com/en-us/azure/security/fundamentals/zero-trust#zero-trust-architecture)
-
-  
 
 
 
@@ -160,9 +168,6 @@ The goal is to create multiple layers of protection so that even if one layer is
 - **Collaborative Effort**
 
     - Utilizes a combination of Azure services and user implementation to fortify data protection.
-
-
-  
 
 
 ## Resources 
