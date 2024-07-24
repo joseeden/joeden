@@ -1,10 +1,20 @@
-<!-- ---
-title: "Microsoft Azure Security Technologies (AZ-500)"
-tags: [Cybersecurity]
-sidebar_position: 1
-last_update:
-  date: 1/30/2024
 ---
+title: "Certification - AZ-500"
+description: "Notes for the Microsoft Azure Security Technologies (AZ-500)"
+tags: [Cloud, Microsoft Azure, DevOps, Certifications]
+sidebar_position: 15
+last_update:
+  date: 7/18/2020
+---
+
+
+:::info[NOTES]
+
+This is not an exhaustive documentation of all the existing Azure Services. These are summarized notes for the Azure Certifications.
+
+To see the complete documentation, please go to: [Azure documentation](https://learn.microsoft.com/en-us/azure/?product=popular)
+
+:::
 
 
 ## Topics for the certification
@@ -37,4 +47,4 @@ last_update:
 
 - Azure AD is now Microsoft Entra ID 
 - Azure AD Connect is now Microsoft Entra Connect 
-- All services which had AD in their name will be replaced with "Entra ID" -->
+- All services which had AD in their name will be replaced with "Entra ID" 
