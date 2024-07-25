@@ -294,3 +294,8 @@ Data Engineering:
   label: 'Data Engineering'
   permalink: '/Data Engineering'
   description: 'Docs related to Data Engineering'  
+Data Science:
+  label: 'Data Science'
+  permalink: '/Data Science'
+  description: 'Docs related to Data Science'  
+  
