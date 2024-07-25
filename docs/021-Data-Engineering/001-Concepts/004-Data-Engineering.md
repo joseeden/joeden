@@ -69,9 +69,11 @@ Parallel processing frameworks like PySpark are used behind the scenes for opera
 
 Parallel processing with clusters of machines:
 
-<p align=center>
-<img src='../../Images/data-engineering-parallel-processing.png'>
-</p>
+<div class="img-center">
+
+![](/img/docs/data-engineering-parallel-processing.png)
+
+</div>
 
 
 ### Scheduling
@@ -105,9 +107,11 @@ The data engineering pipeline involves extracting data from various sources, pro
 - External APIs or other file formats can also serve as data sources.
 <br>
 
-<p align=center>
-<img width=700 src='../../Images/data-pipeliness.png'>
-</p>
+<div class="img-center">
+
+![](/img/docs/data-pipeliness.png)
+
+</div>
 
 ## Cloud Providers
 
