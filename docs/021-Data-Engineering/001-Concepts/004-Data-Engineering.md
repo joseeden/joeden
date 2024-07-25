@@ -102,6 +102,7 @@ Scheduling:
 
 ## Data Pipeline
 
+
 The data engineering pipeline involves extracting data from various sources, processing it with a cluster computing framework, and loading it into an analytical database.
 - Scheduling frameworks like Airflow ensure tasks run in a specific order.
 - External APIs or other file formats can also serve as data sources.
