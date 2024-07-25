@@ -61,3 +61,26 @@ last_update:
 ## Infrastructure as Code 
 
 - [Terraformer](https://github.com/GoogleCloudPlatform/terraformer)
+
+## Data Engineering
+
+Databases:
+
+- [Fundamentals of Database Engineering](https://www.udemy.com/course/database-engines-crash-course/)
+
+- [Getting Started with MongoDB and NoSQL LiveLessons](https://www.oreilly.com/library/view/getting-started-with/9780136535959/)
+
+- [MongoDB - The Complete Developer's Guide 2022](https://www.udemy.com/course/mongodb-the-complete-developers-guide/)
+
+
+Apache Flink:
+
+- [Understanding Apache Flink](https://www.pluralsight.com/courses/understanding-apache-flink)
+
+- [Conceptualizing the Processing Model for Apache Flink](https://www.pluralsight.com/courses/conceptualizing-processing-model-apache-flink)
+
+- [Exploring the Apache Flink API for Processing Streaming Data](https://www.pluralsight.com/courses/exploring-apache-flink-api-processing-streaming-data)
+
+- [Processing Streaming Data Using Apache Flink](https://www.pluralsight.com/courses/processing-streaming-data-apache-flink)
+
+

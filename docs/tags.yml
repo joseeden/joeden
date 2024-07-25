@@ -298,4 +298,19 @@ Data Science:
   label: 'Data Science'
   permalink: '/Data Science'
   description: 'Docs related to Data Science'  
-  
+Databases:
+  label: 'Databases'
+  permalink: '/Databases'
+  description: 'Docs related to Databases'    
+Big Data:
+  label: 'Big Data'
+  permalink: '/Big Data'
+  description: 'Docs related to Big Data'    
+Apache Flink:
+  label: 'Apache Flink'
+  permalink: '/Apache Flink'
+  description: 'Docs related to Apache Flink'  
+MongoDB:
+  label: 'MongoDB'
+  permalink: '/MongoDB'
+  description: 'Docs related to MongoDB'      

@@ -1,0 +1,50 @@
+
+
+
+
+## Apache Flink 
+
+- Big Data Technologies 
+
+- Batch Data vs. Streaming Data
+
+- Stream-first Processing Model
+
+- The Flink Architecture
+
+- Three Types of Flink Deployments
+
+- Run Flink Streaming Applications
+
+- Integrate Flink with Apache Kafka
+
+- Using Windowing Operations
+
+- Using Join Operations
+
+- Stateless vs. Stateful Stream Transformations
+
+- Granular Operations on Input Streams
+
+- Performing Transformations
+
+- State Persistence and Fault Tolerance
+
+- Checkpointing Architecture
+
+- Unit-Testing and End-to-end Testing of Flink Pipelines
+
+
+
+## Data Engineering 
+
+- [What is Data Engineering](pages/00-Data-Engineering/001-what-is-data-engineering.md) 
+
+- [Databases](.)
+
+    - [Fundamentals of Databases](pages/00-Data-Engineering/002-Fundamentals.md)
+
+    - [Structured and Unstructured Data](pages/00-Data-Engineering/003-Structured-Unstructured-Data.md)
+
+    - [MongoDB Basics](pages/00-Data-Engineering/050-MongoDB.md)
+
