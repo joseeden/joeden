@@ -448,6 +448,26 @@ Build and deploy. It should look like this:
 ![](/gif/docs/changing-label-heading-colors-for-tabs.gif)
 
 
+## Admonitions 
+
+### Removing the icon 
+
+Use this syntax to remove the icon:
+
+```bash
+import Admonition from '@theme/Admonition';
+
+<Admonition type="info" title={null} icon={null}>
+  <p>Some information</p>
+</Admonition> 
+```
+
+Sample:
+
+![](/img/docs/sample-docusaurus-admonition-removing-icon.png)
+
+Reference: https://github.com/facebook/docusaurus/issues/8568
+
 
 
 ## Troubleshooting 
