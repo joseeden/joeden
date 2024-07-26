@@ -2,7 +2,7 @@
 title: "Processing Data"
 description: "Notes from DataCamp's Understanding Engineering Course"
 tags: [Data Engineering]
-sidebar_position: 3
+sidebar_position: 6
 last_update:
   date: 2/27/2022
 ---

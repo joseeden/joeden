@@ -1,8 +1,8 @@
 ---
-title: "Storing Data"
+title: "Data Collection and Storage"
 description: "Notes from DataCamp's Understanding Engineering Course"
 tags: [Data Engineering]
-sidebar_position: 2
+sidebar_position: 5
 last_update:
   date: 2/27/2022
 ---
