@@ -34,7 +34,6 @@ import Admonition from '@theme/Admonition';
   <p> Ready for a game-changer? Discover how data science can catapult your career to new heights and transform your life. This field is not just about numbers—it's about unlocking hidden patterns, making groundbreaking discoveries, and creating solutions that can change the world. Click now to find out how you can be part of this thrilling revolution! </p>
 </Admonition>
 
-
 To test this, you randomly split your audience so each group sees a different title.
 
 - Randomly divide the audience into two groups
@@ -43,28 +42,71 @@ To test this, you randomly split your audience so each group sees a different ti
 - Determine which title performs better or if results are inconclusive
 
 ## A/B Testing
-A/B Testing, also called Champion/Challenger testing, is used to compare two options and make a choice. Here’s a breakdown of the process.
 
-- Define the metric to track, like click-through rate
-- Calculate sample size based on baseline metrics
-- Run the experiment until sample size is reached
-- Check results for statistical significance to ensure they aren't due to chance
+A/B Testing, also called Champion/Challenger testing, is used to compare two options and make a choice. 
+- **Sample size** - number of data points used
+- **Statistical significance** - result is not likely due to chance
 
-## Key Steps in A/B Testing
-The main steps in A/B testing include picking a metric, calculating sample size, running the experiment, and checking for significance.
-
-- Pick a metric: For example, click-through rate
-- Calculate sample size: Depends on how often people usually click
-- Run the experiment: Ensure it reaches the calculated sample size
-- Check for significance: Verify if observed differences are meaningful
-
-## Handling Non-Significant Results
-Sometimes, the results may not show a significant difference. This means that any differences are too small to be relevant.
-
-- Determine if observed differences are below the threshold of significance
-- Understand that running the test longer won’t help if differences are too small
-- Recognize that insignificant differences don't impact decision-making
-
-
+<div class="img-center"> 
 
 ![](/img/docs/data-eng-ab-testingg.png)
+
+</div>
+
+The main steps in A/B testing include picking a metric, calculating sample size, running the experiment, and checking for significance.
+
+- Pick a metric
+- Calculate sample size
+- Run the experiment
+- Check for significance
+
+### Pick a metric 
+
+In the previous example of the blog titles, the metric we can use is the click-through rate, which is the percentage of people who lcicked on the link after viewing the title.
+
+<div class="img-center"> 
+
+![](/img/docs/data-engg-sample-size-calculate-pick-a-metric.png)
+
+</div>
+
+### Calculate sample size
+
+Next, we'll continue the experiment until we achieve a sample size that is sufficient to ensure that our results aren't due to random chance. This size is determined by a "**baseline metric**".
+
+This baseline metric measures typical behavior - the usual frequency of clicks on our blog links. If this click-rate deviates significantly from 50%, a larger sample size is required. Given that our click-rate typically hovers below a small percentage, a substantial sample size will be necessary.
+
+<div class="img-center"> 
+
+![](/img/docs/data-engg-calculated-sample-size-if-big-or-small.png)
+
+</div>
+
+The sample size we need depends on the sensitivity we’re aiming for. Sensitivity shows how small of a change we can detect in our metric. Larger samples help us spot tinier differences. While you might think we want high sensitivity, it's more practical to aim for what's meaningful to our question. 
+
+### Run the experiment
+
+As mentioned, if 5% of viewers click on the first title and 5.01% click on the second, that extra 0.01% isn't significant for us. We'll run the experiment until we hit the calculated sample size. Stopping it too early or too late could skew our results.
+
+
+<div class="img-center"> 
+
+![](/img/docs/data-engg-run-the-experiment.png)
+
+</div>
+
+### Check for significance
+
+Once we reach the target sample size, we examine our metric. We might see some differences between the titles, but how can we tell if they're meaningful? We do this by performing a test of statistical significance. If the differences are significant, we can be reasonably confident that they’re due to an actual difference in preference and not just random chance.
+
+<div class="img-center"> 
+
+![](/img/docs/data-engg-check-for-significance-11.png)
+
+</div>
+
+What if the results aren't significant? If there are differences in click rates, they're smaller than the threshold we set for sensitivity. Extending the test won't help because it would only detect smaller differences, which we’ve already decided are irrelevant. There might still be a difference in click rates between the titles, but it's not significant enough to impact our decision-making.
+
+
+
+
