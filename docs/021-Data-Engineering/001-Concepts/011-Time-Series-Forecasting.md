@@ -1,5 +1,5 @@
 ---
-title: "A/B Testing"
+title: "Time-Series Forecasting"
 description: "Notes from DataCamp's Understanding Data Science Course"
 tags: [Data Engineering,  Data Science]
 sidebar_position: 11
