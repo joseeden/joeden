@@ -2,7 +2,7 @@
 title: "Data Pipelines"
 description: "Notes from DataCamp's Understanding Engineering Course"
 tags: [Data Engineering, Data Science]
-sidebar_position: 4
+sidebar_position: 5
 last_update:
   date: 2/27/2022
 ---
