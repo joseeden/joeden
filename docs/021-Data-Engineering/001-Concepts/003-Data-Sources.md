@@ -1,7 +1,7 @@
 ---
 title: "Data Sources"
 description: "Notes from DataCamp's Understanding Engineering Course"
-tags: [Data Engineering]
+tags: [Data Engineering, Data Science]
 sidebar_position: 3
 last_update:
   date: 2/27/2022
