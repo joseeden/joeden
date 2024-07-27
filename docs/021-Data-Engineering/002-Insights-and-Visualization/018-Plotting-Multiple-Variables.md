@@ -101,3 +101,22 @@ Above is a parallel coordinates plot shows multiple variables, including the hum
 </div>
 
 By segmenting the dataset by continent, distinct patterns emerge. For example, South American countries show consistent metrics, while European countries have high values across all metrics. African countries display low GNIs with a broad range in other metrics. This plot allows for easy comparison of many variables simultaneously.
+
+
+### Case Study: Fatty acid levels in olive oils
+
+This dataset contains fatty acid levels from olive oil samples sourced from six different regions in Italy. Each line in the plot corresponds to a single oil sample. Because the region is a categorical variable, there are six parallel coordinates plots, with one plot for each region.
+
+<div class='img-center'>
+
+![](/img/docs/case-study-fatty-acids-olive-oils-italyyyy.png)
+
+</div>
+
+Reference: [Graphics of large datasets](https://www.springer.com/gp/book/9780387329062)
+
+Observations:
+
+- Sardinian oils have low elcosenoic acid and high linoleic acid levels.
+- Calabrian oils show a wide range of elcosenoic and stearic acid levels.
+- Northern oils have high oleic acid levels.
