@@ -1,5 +1,5 @@
 ---
-title: "Histograms and Box Plots"
+title: "Visualizing one variable"
 description: "Notes from DataCamp's Understanding Data Visualization Course"
 tags: [Data Engineering,  Data Science, Data Visualization]
 sidebar_position: 11
