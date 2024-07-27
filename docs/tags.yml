@@ -314,3 +314,11 @@ MongoDB:
   label: 'MongoDB'
   permalink: '/MongoDB'
   description: 'Docs related to MongoDB'      
+Artificial Intelligence:
+  label: 'Artificial Intelligence'
+  permalink: '/Artificial Intelligence'
+  description: 'Docs related to Artificial Intelligence'     
+Machine Learning:
+  label: 'Machine Learning'
+  permalink: '/Machine Learning'
+  description: 'Docs related to Machine Learning'     

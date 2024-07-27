@@ -1,7 +1,7 @@
 ---
 title: "Supervised Machine Learning"
 description: "Notes from DataCamp's Understanding Data Science Course"
-tags: [Data Engineering,  Data Science]
+tags: [Data Engineering, Data Science, Machine Learning]
 sidebar_position: 12
 last_update:
   date: 2/27/2022
