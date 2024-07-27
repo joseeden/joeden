@@ -2,12 +2,12 @@
 title: "Clustering Algorithm"
 description: "Notes from DataCamp's Understanding Data Science Course"
 tags: [Data Engineering,  Data Science]
-sidebar_position: 13
+sidebar_position: 10
 last_update:
   date: 2/27/2022
 ---
 
-### Introduction to Clustering
+## Overview 
 
 Clustering uses machine learning algorithms to group data into categories, or clusters. This technique reveals patterns in complex datasets, aiding in tasks such as customer segmentation, image categorization, and behavior analysis.
 
@@ -31,7 +31,7 @@ Unsupervised Learning's features makes clustering especially useful when detaile
 </div>
 
 
-### Example: Identifying New Flower Species
+## Example: Identifying New Flower Species
 
 Scenario: You are a botanist exploring a new island and you discover several types of flowers you haven’t seen before. You want to determine how many new species you’ve found and how to classify them. 
 

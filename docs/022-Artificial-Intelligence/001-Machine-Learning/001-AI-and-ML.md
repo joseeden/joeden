@@ -1,11 +1,13 @@
 ---
 title: "AI and ML"
+description: "Notes from DataCamp's Understanding Machine Learning Course"
 tags: [Data Science, Machine Learning, Artificial Intelligence]
 sidebar_position: 1
 last_update:
   date: 2/27/2022
 ---
 
+## Overview 
 
 Artificial intelligence (AI) is transforming various fields, including medicine, marketing, HR, and even art. This potential has led to significant investment in AI research and education. But how does AI and machine learning relate to each other?
 

@@ -1,6 +1,6 @@
 ---
 title: "Machine Learning Workflow"
-# description: "Notes from DataCamp's Understanding Machine Learning Course"
+description: "Notes from DataCamp's Understanding Machine Learning Course"
 tags: [Data Science, Machine Learning, Artificial Intelligence]
 sidebar_position: 3
 last_update:

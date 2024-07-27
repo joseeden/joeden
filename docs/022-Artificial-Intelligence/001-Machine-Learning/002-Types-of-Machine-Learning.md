@@ -1,12 +1,13 @@
 ---
 title: "Types of Machine Learning"
-# description: "Notes from DataCamp's Understanding Machine Learning Course"
+description: "Notes from DataCamp's Understanding Machine Learning Course"
 tags: [Data Science, Machine Learning, Artificial Intelligence]
 sidebar_position: 2
 last_update:
   date: 2/27/2022
 ---
 
+## Overview 
 
 Machine learning can be divided into three main types: reinforcement learning, supervised learning, and unsupervised learning. Reinforcement learning involves making sequential decisions and won't be covered further. Both supervised and unsupervised learning are common types and they differ mainly in their training data.
 
