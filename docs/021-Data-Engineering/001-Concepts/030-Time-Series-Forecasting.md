@@ -2,7 +2,7 @@
 title: "Time-Series Forecasting"
 description: "Notes from DataCamp's Understanding Data Science Course"
 tags: [Data Engineering,  Data Science]
-sidebar_position: 11
+sidebar_position: 30
 last_update:
   date: 2/27/2022
 ---

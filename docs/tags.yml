@@ -326,3 +326,7 @@ Deep Learning:
   label: 'Deep Learning'
   permalink: '/Deep Learning'
   description: 'Docs related to Deep Learning'       
+Data Visualization:
+  label: 'Data Visualization'
+  permalink: '/Data Visualization'
+  description: 'Docs related to Data Visualization'       
