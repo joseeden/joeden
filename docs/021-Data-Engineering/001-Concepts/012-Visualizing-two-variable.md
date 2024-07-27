@@ -113,7 +113,11 @@ Line plots can compare multiple lines, like showing COVID-19 cases in different 
 
 Trend lines from linear regression help analyze line plots. In China, March 2020 data showed a linear increase in cases post-quarantine. 
 
+<div class="img-center"> 
+
 ![](/img/docs/line-plotssss-3.png)
+
+</div>
 
 For other countries, using a logarithmic scale showed exponential growth in cases, fitting the trend line better.
 
@@ -125,11 +129,20 @@ A time axis doesn't always mean a line plot is suitable. For instance, a scatter
 
 By the way: The top-rated hip-hop song of all time was "Juicy" by The Notorious B.I.G.
 
+<div class="img-center"> 
+
 ![](/img/docs/line-plotssss-5.png)
+
+</div>
+
 
 Sometimes, plots with a time axis may not be effective. For example, a plot of juvenile offenders in Switzerland by age group over time may not provide clear insights. Alternative approaches without a time x-axis might work better.
 
+<div class="img-center"> 
+
 ![](/img/docs/line-plotssss-5.png)
+
+</div>
 
 ### Case Study: Technology Adoption in the US
 

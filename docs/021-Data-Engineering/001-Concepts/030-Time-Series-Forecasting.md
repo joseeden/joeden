@@ -82,4 +82,8 @@ Predictions:
 
 Here’s the forecast from the predictive model. The blue line shows the predicted trend, indicating continued increases in pea prices with visible seasonal fluctuations. Two shaded blue areas represent confidence intervals: 80% and 95%. The model is 80% confident the true value will fall within the 80% interval and 95% confident within the 95% interval. These intervals help account for uncertainty when making significant decisions.
 
+<div class="img-center"> 
+
 ![](/img/docs/data-engg-time-series-pea-prices-rwanda.png)
+
+</div>

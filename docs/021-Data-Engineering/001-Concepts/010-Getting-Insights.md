@@ -35,7 +35,11 @@ When calculating the mean of the x values in each dataset, you’ll find similar
 
 Visualizing the datasets reveals differences that calculations alone miss. Scatter plots of each dataset show distinct patterns. The datasets, including lines, circles, a star, and a dinosaur, emphasize the importance of plotting data.
 
+<div class="img-center"> 
+
 ![](/img/docs/visual-datasets-exampless.png)
+
+</div>
 
 ## Continuous and Categorical Variables
 

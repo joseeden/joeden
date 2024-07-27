@@ -24,7 +24,7 @@ Histograms display age data by grouping it into intervals or "bins". The x-axis 
 - Age bins like 0-5 years, 5-10 years, etc.
 - No monarchs began ruling between ages 45 and 50
 
-![](/img/docs/datasets-histogram-kings-queens-englad.png)
+    ![](/img/docs/datasets-histogram-kings-queens-englad.png)
 
 ### Binwidth
 The binwidth affects the histogram's clarity and informativeness. Testing various binwidths can help find the most useful representation.
@@ -47,8 +47,11 @@ Modality refers to the number of peaks in the histogram's distribution.
 
 For instance, the age distribution of monarchs is unimodal, peaking between 25 and 35 years.
 
+<div class="img-center"> 
+
 ![](/img/docs/datasets-kings-queens-histogram-uni-modality.png)
 
+</div>
 
 
 ### Skewness
@@ -120,22 +123,35 @@ Box plots offer a more efficient way to compare distributions. They summarize th
 - **Box**: Extends from the lower quartile to the upper quartile. The inter-quartile range (IQR) is the difference between these quartiles.
 - **Whiskers**: Extend up to 1.5 times the IQR from the quartiles, or to the nearest data point within this range. Points beyond the whiskers are considered extreme values.
 
+  <div class="img-center"> 
+
   ![](/img/docs/box-plotsssss.png)
+
+  </div>
 
 ### Case Study: Monarch Ages 
 
 In a box plot of royal houses from the Monarch ages data set from the previous sections, each house's box shows the median and quartiles of ages when monarchs ascended to the throne. The plot illustrates a trend of increasing ages over time since the Plantagenets, with some houses like Godwin and Blois having single data points. The house of Denmark has an outlier, Sweyn, who ascended unusually late at age 53.
 
+<div class="img-center"> 
+
 ![](/img/docs/box-plots-monarch-agessss.png)
 
+</div>
 
 ### Case Study: Cigarette Consumption
 
 These box plots show cigarette consumption per person in the USA from 1985 to 1995, excluding Alaska and Hawaii. Each plot represents the average number of cigarette packs smoked per person per year in 48 states.
 
+<div class="img-center"> 
+
 ![](/img/docs/case-study-Cigarette-consumption-US.png)
 
 Reference: [Stock, James H. and Mark W. Watson (2003)](https://www.rdocumentation.org/packages/Ecdat/topics/Cigarette)
+
+
+</div>
+
 
 Observations: 
 
