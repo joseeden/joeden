@@ -24,7 +24,8 @@ A 3D scatter plot might seem like a solution, but it often complicates interpret
 
 <div class='img-center'>
 
-![](/img/docs/casestudy-un-life-expectancy-scatter-plotssss-3d.png)
+|![](/img/docs/casestudy-un-life-expectancy-scatter-plotssss-3d.png)|
+|-|
 
 </div>
 
@@ -32,7 +33,8 @@ We can also rotate the plot but it doesn’t really make it more clearer.
 
 <div class='img-center'>
 
-![](/img/docs/casestudy-un-life-expectancy-scatter-plotssss-3d-rotate.png)
+|![](/img/docs/casestudy-un-life-expectancy-scatter-plotssss-3d-rotate.png)|
+|-|
 
 </div>
 

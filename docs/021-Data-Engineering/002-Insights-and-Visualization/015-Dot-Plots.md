@@ -29,7 +29,11 @@ This dataset features the stars closest to Earth, with distances measured in lig
 
 The bar plot shows star masses from the nearest to the furthest star. The wide range in bar lengths and the visibility issues with shorter bars make a logarithmic scale more appropriate. However, bar plots cannot use a logarithmic scale because the logarithm of zero is undefined. 
 
+<div class='img-center'>
+
 ![](/img/docs/casestudy-stars-closest-to-earthhh-bar-dot.png)
+
+</div>
 
 Instead, a dot plot can be used to represent this data, where each dot corresponds to the top of the respective bar.
 

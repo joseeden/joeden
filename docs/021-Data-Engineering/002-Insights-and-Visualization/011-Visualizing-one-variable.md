@@ -147,10 +147,10 @@ These box plots show cigarette consumption per person in the USA from 1985 to 19
 
 ![](/img/docs/case-study-Cigarette-consumption-US.png)
 
+</div>
+
 Reference: [Stock, James H. and Mark W. Watson (2003)](https://www.rdocumentation.org/packages/Ecdat/topics/Cigarette)
 
-
-</div>
 
 
 Observations: 

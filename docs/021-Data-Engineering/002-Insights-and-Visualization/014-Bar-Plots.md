@@ -61,7 +61,11 @@ Sorting bars by count helps in easily identifying rankings, such as Spain and In
 
 From the 2018 Health Survey for England, this dataset shows the number of fruit and vegetable portions children consume daily. The data is categorized by portions eaten and year, presented as percentages.
 
+<div class='img-center'>
+
 ![](/img/docs/casestudy-fruit-veg-consumption-children.png)
+
+</div>
 
 Reference: [Health Survey for England 2018 Dataset](https://digital.nhs.uk/data-and-information/publications/statistical/health-survey-for-england/2018/health-survey-for-england-2018-data-tables)
 
