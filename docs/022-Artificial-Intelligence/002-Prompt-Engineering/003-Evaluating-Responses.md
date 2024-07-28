@@ -29,7 +29,12 @@ These help critically evaluate outputs.
 
 Responses should be coherent.
 
-- Example: Listing "minimal maintenance" as both a benefit and drawback of solar energy shows inconsistency.
+- Example: 
+
+    ```
+    Listing "minimal maintenance" as both a benefit and drawback of solar energy shows inconsistency.
+    ```
+
 - Ensure responses make logical sense.
 
 ### Accuracy and Hallucination Tendency
@@ -37,7 +42,14 @@ Responses should be coherent.
 ChatGPT can provide confident but incorrect answers.
 
 - Verify facts to avoid inaccuracies.
-- Example: If asked, "Who was the first person to walk on the moon?" and it answers "Buzz Aldrin," it’s wrong. The correct answer is Neil Armstrong.
+- Example: If asked, 
+
+    ```
+    Who was the first person to walk on the moon?
+    ```
+
+    and it answers "Buzz Aldrin," it’s wrong. 
+    The correct answer is Neil Armstrong.
 
 ### Relevance
 

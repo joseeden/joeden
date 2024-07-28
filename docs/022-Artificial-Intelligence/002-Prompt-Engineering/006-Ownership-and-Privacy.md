@@ -2,7 +2,7 @@
 title: "Ownership and Privacy"
 description: "Adopting ChatGPT"
 tags: [Machine Learning, Artificial Intelligence, Prompt Engineering]
-sidebar_position: 13
+sidebar_position: 6
 # last_update:
 #   date: 7/7/2022
 ---
