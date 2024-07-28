@@ -329,4 +329,9 @@ Deep Learning:
 Data Visualization:
   label: 'Data Visualization'
   permalink: '/Data Visualization'
-  description: 'Docs related to Data Visualization'       
+  description: 'Docs related to Data Visualization'     
+Prompt Engineering:
+  label: 'Prompt Engineering'
+  permalink: '/Prompt Engineering'
+  description: 'Docs related to Prompt Engineering'     
+  
