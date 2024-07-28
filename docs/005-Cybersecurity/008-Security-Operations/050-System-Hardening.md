@@ -177,4 +177,4 @@ SELinux (Security-Enhanced Linux) is a security module that provides mechanisms 
 
 Due to the strict implementation of SELinux, "unknown" services will always require additional configuration to enable them in an environment where SELinux is enabled.
 
-For more information, please see [SELinux.](../../003-Linux/004-Linux%20Security/030-SELinux.md)
+For more information, please see [SELinux.](../../003-Linux/004-Linux-Security/030-SELinux.md)
