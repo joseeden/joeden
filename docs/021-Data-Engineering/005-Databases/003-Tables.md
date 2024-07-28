@@ -35,7 +35,7 @@ Best practices for naming fields:
     | 234567   | Jane Smith     | 2020        | 5.00       |
     | 345678   | Alice Johnson  | 2019        | 0.00       |
     | 456789   | Bob Brown      | 2022        | 7.50       |
-    | 567890   | Charlie Davis  | 2023        | 12.30      |
+    | 567890   | Charlie Davis  | 2021        | 12.30      |
 
 ## Unique Identifiers
 
@@ -47,7 +47,7 @@ A unique identifier, or "key," is a unique value that distinguishes each record 
 | 234567   | Jane Smith     | 2020        | 5.00       |
 | 345678   | Alice Johnson  | 2019        | 0.00       |
 | 456789   | Bob Brown      | 2022        | 7.50       |
-| 567890   | Charlie Davis  | 2023        | 12.30      |
+| 567890   | Charlie Davis  | 2021        | 12.30      |
 
 ## Separating Data into Tables
 
@@ -65,17 +65,17 @@ For instance, consider a **patrons** table like this:
 | 234567   | Jane Smith     | 2020        | 5.00       |
 | 345678   | Alice Johnson  | 2019        | 0.00       |
 | 456789   | Bob Brown      | 2022        | 7.50       |
-| 567890   | Charlie Davis  | 2023        | 12.30      |
+| 567890   | Charlie Davis  | 2021        | 12.30      |
 
 A **checkouts** table:
 
 | id    | start_date | due_date   | card_num | book_id  |
 |-------|------------|------------|----------|----------|
-| 1001  | 01-07-2023 | 15-07-2023 | 123456   | AB1234Z  |
-| 1002  | 05-07-2023 | 19-07-2023 | 234567   | CD5678X  |
-| 1003  | 10-07-2023 | 24-07-2023 | 345678   | EF9101Y  |
-| 1004  | 15-07-2023 | 29-07-2023 | 456789   | GH2345W  |
-| 1005  | 20-07-2023 | 03-08-2023 | 567890   | IJ6789V  |
+| 1001  | 01-07-2021 | 15-07-2021 | 123456   | AB1234Z  |
+| 1002  | 05-07-2021 | 19-07-2021 | 234567   | CD5678X  |
+| 1003  | 10-07-2021 | 24-07-2021 | 345678   | EF9101Y  |
+| 1004  | 15-07-2021 | 29-07-2021 | 456789   | GH2345W  |
+| 1005  | 20-07-2021 | 03-08-2021 | 567890   | IJ6789V  |
 
 Since both tables are related, we can see information for each record clearly in both tables. As an example, we can find the year that Bob Brown started in the **patrons** table. If we want to see if he borrowed a book and when it is due, we can use his card number and check it on the **checkouts** table. 
 
@@ -83,13 +83,13 @@ Now if we combine both tables into one, the data becomes less clear. Each row no
 
 | card_num | name           | member_year | total_fine | id    | start_date | due_date   | book_id  |
 |----------|----------------|-------------|------------|-------|------------|------------|----------|
-| 123456   | John Doe       | 2021        | 15.75      | 1001  | 01-07-2023 | 15-07-2023 | AB1234Z  |
-| 234567   | Jane Smith     | 2020        | 5.00       | 1002  | 05-07-2023 | 19-07-2023 | CD5678X  |
-| 345678   | Alice Johnson  | 2019        | 0.00       | 1003  | 10-07-2023 | 24-07-2023 | EF9101Y  |
-| 456789   | Bob Brown      | 2022        | 7.50       | 1004  | 15-07-2023 | 29-07-2023 | GH2345W  |
-| 567890   | Charlie Davis  | 2023        | 12.30      | 1005  | 20-07-2023 | 03-08-2023 | IJ6789V  |
-| 123456   | John Doe       | 2021        | 15.75      | 1006  | 01-08-2023 | 15-08-2023 | KL1122M  |
-| 234567   | Jane Smith     | 2020        | 5.00       | 1007  | 05-08-2023 | 19-08-2023 | MN2233N  |
+| 123456   | John Doe       | 2021        | 15.75      | 1001  | 01-07-2021 | 15-07-2021 | AB1234Z  |
+| 234567   | Jane Smith     | 2020        | 5.00       | 1002  | 05-07-2021 | 19-07-2021 | CD5678X  |
+| 345678   | Alice Johnson  | 2019        | 0.00       | 1003  | 10-07-2021 | 24-07-2021 | EF9101Y  |
+| 456789   | Bob Brown      | 2022        | 7.50       | 1004  | 15-07-2021 | 29-07-2021 | GH2345W  |
+| 567890   | Charlie Davis  | 2021        | 12.30      | 1005  | 20-07-2021 | 03-08-2021 | IJ6789V  |
+| 123456   | John Doe       | 2021        | 15.75      | 1006  | 01-08-2021 | 15-08-2021 | KL1122M  |
+| 234567   | Jane Smith     | 2020        | 5.00       | 1007  | 05-08-2021 | 19-08-2021 | MN2233N  |
 
 
 
