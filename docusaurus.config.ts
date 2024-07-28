@@ -22,7 +22,9 @@ const config: Config = {
   },
 
   plugins: [
+
     "docusaurus-plugin-sass",
+
     [
       "@docusaurus/plugin-ideal-image",
       {
@@ -33,6 +35,7 @@ const config: Config = {
         disableInDev: false,
       },
     ],
+    
   ],
 
   presets: [
