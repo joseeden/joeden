@@ -2,7 +2,7 @@
 title: "Tables"
 description: "Tables"
 tags: [Data Engineering, Databases]
-sidebar_position: 2
+sidebar_position: 3
 last_update:
   date: 2/27/2022
 ---
