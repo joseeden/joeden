@@ -1,6 +1,6 @@
 ---
 title: "Database Fundamentals"
-description: "Database Fundamentals"
+description: "SQL Fundamentals"
 tags: [Data Engineering, Databases]
 sidebar_position: 1
 last_update:
@@ -63,3 +63,60 @@ An applications's structure can vary from application to application and differe
 ![](/img/docs/db-howdataisobtained.png)
 
 </div>
+
+
+
+## Structured and Unstructured
+
+Data can come in different forms, each with its own characteristics and uses.
+
+- **Structured Data**
+
+  - Uses well-defined schema and tables
+  - Organized in a fixed format
+  - Easily searchable and queryable
+  - Examples include databases and spreadsheets
+
+- **Unstructured Data**
+
+  - Lacks a predefined data model
+  - Not easily organized or queried
+  - Examples include text documents, images, and videos
+  - No fixed structure or format
+
+## SQL versus NoSQL
+
+There's no one-size-fits-all database solution. Each type has its own use case, so it's important to understand when to use which.
+
+
+<div class="img-center"> 
+
+![](/img/docs/db-sql-vs-nosql.png)
+
+</div> 
+
+**SQL** or Standard Query Language Databases refers to structured, relational databases. With structure data, we have:
+
+- The more tables, the more inserts are required 
+- Joins are required to retrieve data
+- Structure is hard to break
+- Organized data reduces redundant information
+- Data model cannot change easily
+- Data model needs to be thought of upfront to ensure consistency 
+- Requires more work for developers
+
+**NoSQL**, on the other hand, refers to unstructured, non-relational databases. With NoSQL, we can:
+
+- Easily next data, allowing related details to be in one spot
+- Nested files solves the issue of needing to join documents 
+- Flexible structure allows for easy iterations
+- Structure can change
+- Could use structured on unstructured data
+- Less time focusing on the database, more time to code
+
+ 
+<div class="img-center">
+
+![](/img/docs/dbsqlnosqlnotacompetition.png)
+
+</div> 

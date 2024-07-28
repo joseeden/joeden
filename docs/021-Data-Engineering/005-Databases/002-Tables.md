@@ -1,6 +1,6 @@
 ---
 title: "Tables"
-description: "Tables"
+description: "SQL Fundamentals"
 tags: [Data Engineering, Databases]
 sidebar_position: 3
 last_update:
@@ -31,11 +31,11 @@ Best practices for naming fields:
 
     | card_num | name           | member_year | total_fine |
     |----------|----------------|-------------|------------|
-    | 123456   | John Doe       | 2021        | 15.75      |
-    | 234567   | Jane Smith     | 2020        | 5.00       |
-    | 345678   | Alice Johnson  | 2019        | 0.00       |
-    | 456789   | Bob Brown      | 2022        | 7.50       |
-    | 567890   | Charlie Davis  | 2021        | 12.30      |
+    | 123456   | John           | 2021        | 15.75      |
+    | 234567   | Jane           | 2020        | 5.00       |
+    | 345678   | Alice          | 2019        | 0.00       |
+    | 456789   | Bob            | 2022        | 7.50       |
+    | 567890   | Charlie        | 2021        | 12.30      |
 
 ## Unique Identifiers
 
