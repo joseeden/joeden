@@ -2,7 +2,7 @@
 title: "Structured and Unstructured Data"
 description: "Structured and Unstructured Data"
 tags: [Data Engineering, Databases]
-sidebar_position: 2
+sidebar_position: 3
 last_update:
   date: 2/27/2022
 ---
@@ -13,14 +13,14 @@ last_update:
 
 Data can come in different forms, each with its own characteristics and uses.
 
-- **Structured Data:**
+- **Structured Data**
 
   - Uses well-defined schema and tables
   - Organized in a fixed format
   - Easily searchable and queryable
   - Examples include databases and spreadsheets
 
-- **Unstructured Data:**
+- **Unstructured Data**
 
   - Lacks a predefined data model
   - Not easily organized or queried

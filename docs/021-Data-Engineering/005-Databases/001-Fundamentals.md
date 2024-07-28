@@ -51,7 +51,6 @@ An application consist of two main components: the frontend and the backend.
 
 An applications's structure can vary from application to application and different organizations will have different ways of building applications, but in general, this is how data is obtained. 
 
-
 1. User opens the application through a browser/device.
 2. Application reach outs to API or backend server.
 3. Backend server talks to the data layer, including the database.
