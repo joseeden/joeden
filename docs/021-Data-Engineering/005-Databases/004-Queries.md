@@ -31,7 +31,6 @@ Keywords are reserved words that specify the operation we want to perform. The t
 
 Below is A SAMPLE **patrons** table:
 
-<div class='img-center'>
 
 | card_num | name           | member_year | total_fine |
 |----------|----------------|-------------|------------|
@@ -41,7 +40,6 @@ Below is A SAMPLE **patrons** table:
 | 456789   | Bob            | 2022        | 7.50       |
 | 567890   | Charlie        | 2021        | 12.30      |
 
-</div>
 
 
 To list all library patrons, the query starts with the SELECT statement followed by the FROM statement on the next line. It's best practice to end the query with a semicolon to indicate it's complete.
@@ -53,8 +51,6 @@ FROM patrons;
 
 Expected Output:
 
-<div class='img-center'>
-
 | name          |
 |---------------|
 | John Doe      |
@@ -63,7 +59,6 @@ Expected Output:
 | Bob Brown     |
 | Charlie Davis |
 
-</div>
 
 
 Note:
@@ -81,10 +76,6 @@ SELECT card_num, name
 FROM patrons;
 ```
 
-Expected Output:
-
-<div class='img-center'>
-
 
 | card_num | name         |
 |----------|--------------|
@@ -93,8 +84,6 @@ Expected Output:
 | 345678   | Alice Johnson|
 | 456789   | Bob Brown    |
 | 567890   | Charlie Davis|
-
-</div>
 
 
 ## Selecting All Fields
