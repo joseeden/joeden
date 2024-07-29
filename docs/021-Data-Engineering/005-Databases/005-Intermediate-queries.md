@@ -12,7 +12,8 @@ last_update:
 
 We'll use a **films** database with the four tables listed below. 
 
-<details><summary>`films` table</summary>
+<details>
+    <summary>`films` table</summary>
 
 | id | title        | release_year | country     | duration | language | certification | gross      | budget     |
 |----|--------------|--------------|-------------|----------|----------|---------------|------------|------------|
@@ -27,7 +28,8 @@ We'll use a **films** database with the four tables listed below.
 
 
 
-<details><summary>`people` table</summary>
+<details>
+    <summary>`people` table</summary>
 
     | id | name              | birthdate  | deathdate  |
     |----|-------------------|------------|------------|
@@ -47,7 +49,8 @@ We'll use a **films** database with the four tables listed below.
 
 
 
-<details><summary>`reviews` table</summary>
+<details>
+    <summary>`reviews` table</summary>
 
     | id | film_id | num_user | num_critic | imdb_score | num_votes | facebook_likes |
     |----|---------|----------|------------|------------|-----------|----------------|
@@ -64,7 +67,8 @@ We'll use a **films** database with the four tables listed below.
 
 
 
-<details><summary>`roles` table</summary>
+<details>
+    <summary>`roles` table</summary>
 
     | id | film_id | person_id | role        |
     |----|---------|-----------|-------------|
