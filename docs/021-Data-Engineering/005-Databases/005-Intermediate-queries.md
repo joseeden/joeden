@@ -12,46 +12,81 @@ last_update:
 
 We'll use a **films** database with the four tables listed below. 
 
+<details><summary>`films` table</summary>
 
-- `films` table
+| id | title        | release_year | country     | duration | language | certification | gross      | budget     |
+|----|--------------|--------------|-------------|----------|----------|---------------|------------|------------|
+| 1  | Inception    | 2010         | USA         | 148      | English  | PG-13         | 829895144  | 160000000  |
+| 2  | Parasite     | 2019         | South Korea | 132      | Korean   | R             | 257590152  | 11400000   |
+| 3  | The Godfather| 1972         | USA         | 175      | English  | R             | 246120986  | 6000000    |
+| 4  | Amélie       | 2001         | France      | 122      | French   | R             | 174200000  | 10000000   |
+| 5  | Coco         | 2017         | USA         | 105      | Spanish  | PG            | 807082196  | 175000000  |
 
-    | id   | title             | release_year | country   | duration | language | certification | gross     | budget     |
-    |------|-------------------|--------------|-----------|----------|----------|---------------|-----------|------------|
-    | 1    | Inception         | 2010         | USA       | 148      | English  | PG-13         | 829895144 | 160000000  |
-    | 2    | Parasite          | 2019         | South Korea | 132    | Korean   | R             | 257590152 | 11400000   |
-    | 3    | The Godfather     | 1972         | USA       | 175      | English  | R             | 246120986 | 6000000    |
-    | 4    | Spirited Away     | 2001         | Japan     | 125      | Japanese | PG            | 395580000 | 19000000   |
-    | 5    | Interstellar      | 2014         | USA       | 169      | English  | PG-13         | 701729206 | 165000000  |
 
-- `people` table
+</details>
 
-    | id   | name              | birthdate  | deathdate  |
-    |------|-------------------|------------|------------|
-    | 1    | Leonardo DiCaprio | 1974-11-11 | NULL       |
-    | 2    | Bong Joon-ho      | 1969-09-14 | NULL       |
-    | 3    | Marlon Brando     | 1924-04-03 | 2004-07-01 |
-    | 4    | Hayao Miyazaki    | 1941-01-05 | NULL       |
-    | 5    | Christopher Nolan | 1970-07-30 | NULL       |
 
-- `reviews` table
 
-    | id   | film_id | num_user | num_critic | imdb_score | num_votes | facebook_likes |
-    |------|---------|----------|------------|------------|-----------|----------------|
-    | 1    | 1       | 10000    | 250        | 8.8        | 2050000   | 1500000        |
-    | 2    | 2       | 8500     | 300        | 8.6        | 600000    | 1200000        |
-    | 3    | 3       | 7500     | 150        | 9.2        | 1600000   | 900000         |
-    | 4    | 4       | 9000     | 200        | 8.6        | 650000    | 800000         |
-    | 5    | 5       | 9500     | 275        | 8.6        | 1500000   | 1000000        |
+<details><summary>`people` table</summary>
 
-- `roles` table
+    | id | name              | birthdate  | deathdate  |
+    |----|-------------------|------------|------------|
+    | 1  | Leonardo DiCaprio | 1974-11-11 | NULL       |
+    | 2  | Bong Joon-ho      | 1969-09-14 | NULL       |
+    | 3  | Marlon Brando     | 1924-04-03 | 2004-07-01 |
+    | 4  | Hayao Miyazaki    | 1941-01-05 | NULL       |
+    | 5  | Christopher Nolan | 1970-07-30 | NULL       |
+    | 6  | Tom Hardy         | 1977-09-14 | NULL       |
+    | 7  | Quentin Tarantino | 1963-03-27 | NULL       |
+    | 8  | Sofia Coppola     | 1971-05-14 | NULL       |
+    | 9  | Natalie Portman   | 1981-06-09 | NULL       |
+    | 10 | Ridley Scott      | 1937-11-30 | NULL       |
+    | 11 | Emma Watson       | 1990-04-15 | NULL       |
 
-    | id   | film_id | person_id | role            |
-    |------|---------|-----------|-----------------|
-    | 1    | 1       | 1         | Actor           |
-    | 2    | 2       | 2         | Director        |
-    | 3    | 3       | 3         | Actor           |
-    | 4    | 4       | 4         | Director        |
-    | 5    | 5       | 5         | Director        |
+</details>
+
+
+
+<details><summary>`reviews` table</summary>
+
+    | id | film_id | num_user | num_critic | imdb_score | num_votes | facebook_likes |
+    |----|---------|----------|------------|------------|-----------|----------------|
+    | 1  | 1       | 10000    | 250        | 8.8        | 2050000   | 1500000        |
+    | 2  | 2       | 8500     | 300        | 8.6        | 600000    | 1200000        |
+    | 3  | 3       | 7500     | 150        | 9.2        | 1600000   | 900000         |
+    | 4  | 4       | 9000     | 200        | 8.6        | 650000    | 800000         |
+    | 5  | 5       | 9500     | 275        | 8.6        | 1500000   | 1000000        |
+    | 6  | 1       | 11000    | 260        | 9.0        | 2100000   | 1550000        |
+    | 7  | 2       | 8700     | 310        | 8.7        | 620000    | 1250000        |
+    | 8  | 3       | 7600     | 160        | 9.3        | 1650000   | 950000         |
+
+</details>
+
+
+
+<details><summary>`roles` table</summary>
+
+    | id | film_id | person_id | role        |
+    |----|---------|-----------|-------------|
+    | 1  | 1       | 1         | Actor       |
+    | 2  | 2       | 2         | Director    |
+    | 3  | 3       | 3         | Actor       |
+    | 4  | 4       | 4         | Director    |
+    | 5  | 5       | 5         | Director    |
+    | 6  | 1       | 6         | Actor       |
+    | 7  | 2       | 7         | Director    |
+    | 8  | 3       | 8         | Actor       |
+    | 9  | 4       | 9         | Director    |
+    | 10 | 5       | 10        | Director    |
+    | 11 | 1       | 11        | Actor       |
+    | 12 | 2       | 1         | Actor       |
+    | 13 | 3       | 2         | Director    |
+    | 14 | 4       | 3         | Actor       |
+    | 15 | 5       | 4         | Director    |
+    | 16 | 1       | 5         | Actor       |
+
+</details>
+
 
 The database schema outlines table names, field names, and data types.
 
@@ -95,9 +130,9 @@ Expected output:
 
 | count_birthdates |
 |------------------|
-| 5                |
+| 11               |
 
-## COUNT  Multiple Fields
+## COUNT Multiple Fields
 
 To count more than one field, use COUNT multiple times. For example, to count names and birth dates:
 
@@ -110,7 +145,7 @@ Expected Output:
 
 | count_names | count_birthdates |
 |-------------|------------------|
-| 5           | 5                |
+| 11          | 11               |
 
 ## Using * with COUNT 
 
@@ -125,7 +160,7 @@ Expected Output:
 
 | total_records |
 |---------------|
-| 5             |
+| 11            |
 
 ## DISTINCT
 
@@ -138,14 +173,14 @@ FROM films;
 
 Expected Output:
 
-| language  |
-|-----------|
-| English   |
-| French    |
-| Spanish   |
-| ...       |
+| language |
+|----------|
+| English  |
+| Korean   |
+| French   |
+| Spanish  |
 
-## COUNT  with DISTINCT
+## COUNT with DISTINCT
 
 Combining COUNT with DISTINCT counts the number of unique values in a field. For instance, to count distinct birth dates in the people table:
 
@@ -158,7 +193,7 @@ Expected Output:
 
 | unique_birthdates |
 |-------------------|
-| 5                 |
+| 10                |
 
 
 The number of unique birth dates differs from the total count because some people share the same birthday.
