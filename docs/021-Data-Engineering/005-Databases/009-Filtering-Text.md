@@ -32,7 +32,7 @@ In real-world scenarios, we often need to search for patterns rather than specif
 - Search for patterns
 - Use SQL keywords
 
-## Using LIKE
+### Using LIKE
 
 The `LIKE` operator, combined with the `WHERE` clause, helps search for patterns in a field using wildcards as placeholders. There are two wildcards: percent (%) and underscore (_). The percent wildcard matches zero, one, or many characters, while the underscore wildcard matches a single character.
 
@@ -69,7 +69,7 @@ Output:
 | Eva               |
 
 
-## Using NOT LIKE
+### Using NOT LIKE
 
 The NOT LIKE operator helps find records that don't match a specified pattern. This operation is case-sensitive, so be mindful of the query's case.
 
@@ -97,7 +97,7 @@ Output:
 | Emma Watson       |
 
 
-## Wildcard Placement
+### Wildcard Placement
 
 Wildcards can be placed anywhere in the pattern to find values that start, end, or contain specific characters. They can also be combined to search for records of a certain length.
 
@@ -121,7 +121,7 @@ Output:
 | Quentin Tarantino |
 | Ridley Scott      |
 
-## Using WHERE and OR
+### Using WHERE and OR
 
 To filter based on multiple conditions or a range of numbers, we can chain several `OR` conditions to the `WHERE` clause. However, this can become messy with many conditions.
 
@@ -142,7 +142,7 @@ Output:
 | Bong Joon-ho      |
 | Tom Hardy         |
 
-## Using IN
+### Using IN
 
 The IN operator simplifies specifying multiple values in a WHERE clause, making it easier and quicker to set multiple conditions. For example, instead of chaining OR conditions, use WHERE birthdate IN ('1969-09-14', '1974-11-11').
 
@@ -162,7 +162,7 @@ Output:
 | Bong Joon-ho      |
 | Tom Hardy         |
 
-## Text Field Example with IN
+### Text Field Example with IN
 
 Using IN with text fields helps find records where a field matches any value in a specified list. For example, find titles where the associated country is either Germany or France.
 
@@ -180,3 +180,98 @@ Output:
 |-------------------|
 | Leonardo DiCaprio |
 | Emma Watson       |
+
+
+## Handling Missing Values in SQL
+
+In SQL, `NULL` represents a missing or unknown value. It's common to encounter NULL values in databases due to various reasons like human error or unavailable information. Knowing how to handle these fields is essential for accurate data analysis.
+
+- Identify missing values
+- Handle NULLs effectively
+
+As a recap:
+
+- `COUNT(field_name)` includes only non-missing values
+- `COUNT(*)` includes missing values
+
+When using the `COUNT` keyword, the presence of an asterisk includes all values, while specifying a field name excludes NULLs. 
+
+## Using NULL
+
+To analyze posthumous success using the people table, we may assume that the deathdate field contains data for everyone. However, many records have NULL in the deathdate field, leading to inaccurate conclusions.
+
+Example: 
+
+```sql
+SELECT COUNT(*) 
+FROM people 
+WHERE deathdate IS NULL;
+```
+
+Output:
+
+| count |
+|-------|
+| 8     |
+
+### Using IS NULL
+
+To quickly see how much data is missing, use the IS NULL operator with the WHERE clause. This helps identify records with missing values in a particular field.
+
+Example: 
+
+```sql
+SELECT name 
+FROM people 
+WHERE deathdate IS NULL;
+```
+
+Output:
+
+| name              |
+|-------------------|
+| Leonardo DiCaprio |
+| Bong Joon-ho      |
+| Hayao Miyazaki    |
+| Christopher Nolan |
+| Tom Hardy         |
+| Quentin Tarantino |
+| Sofia Coppola     |
+| Natalie Portman   |
+| Emma Watson       |
+
+### Using IS NOT NULL
+
+Sometimes, you need to filter out missing values to get results that are not NULL. The IS NOT NULL operator helps achieve this.
+
+Example:
+
+```sql
+SELECT COUNT(*) 
+FROM people 
+WHERE deathdate IS NOT NULL;
+```
+
+Output:
+
+| count |
+|-------|
+| 1     |
+
+### COUNT vs. IS NOT NULL
+
+There is no difference between using COUNT with a field name and using COUNT with a WHERE clause combined with IS NOT NULL. Both count non-missing values.
+
+Example:
+
+```sql
+SELECT COUNT(deathdate) 
+FROM people;
+```
+
+Output:
+
+| count |
+|-------|
+| 1     |
+
