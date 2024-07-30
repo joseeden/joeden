@@ -93,23 +93,45 @@ Output:
 
 Combining `GROUP BY` with `ORDER BY` allows you to group data, perform calculations, and then sort the results. 
 
-To group and sort by film count:
+- To group and sort by film count:
 
-```sql
-SELECT certification, COUNT(title) AS film_count
-FROM films
-GROUP BY certification
-ORDER BY film_count DESC;
-```
-Output:
+    ```sql
+    SELECT certification, COUNT(title) AS film_count
+    FROM films
+    GROUP BY certification
+    ORDER BY film_count DESC;
+    ```
+    Output:
 
-| certification | film_count |
-|---------------|------------|
-| R             | 3          |
-| PG-13         | 1          |
-| PG            | 1          |
+    | certification | film_count |
+    |---------------|------------|
+    | R             | 3          |
+    | PG-13         | 1          |
+    | PG            | 1          |
 
-**Explanation**: The `ORDER BY` clause is used after `GROUP BY` to sort the results based on the aggregated data. The query shows that there are more films with an R rating compared to other certifications.
+    **Explanation**: The `ORDER BY` clause is used after `GROUP BY` to sort the results based on the aggregated data. The query shows that there are more films with an R rating compared to other certifications.
+
+- Select the release_year, country, and the maximum budget aliased as max_budget for each year and each country; sort your results by release_year and country.
+
+
+    ```sql
+    SELECT release_year, country, MAX(budget) AS max_budget
+    FROM films 
+    GROUP BY release_year, country
+    ORDER BY release_year, country;
+    ```
+
+    Output: 
+
+    | release_year | country      | max_budget |
+    |--------------|--------------|------------|
+    | 1972         | USA          | 6000000    |
+    | 2001         | France       | 10000000   |
+    | 2010         | USA          | 160000000  |
+    | 2017         | USA          | 175000000  |
+    | 2019         | South Korea  | 11400000   |
+
+
 
 ## Order of Execution
 
