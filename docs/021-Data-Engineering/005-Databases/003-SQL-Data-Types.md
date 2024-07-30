@@ -1,8 +1,8 @@
 ---
 title: "SQL Data Types"
 description: "SQL Fundamentals"
-tags: [Data Engineering, Databases]
-sidebar_position: 4
+tags: [Data Engineering, Databases, SQL]
+sidebar_position: 3
 last_update:
   date: 2/27/2022
 ---

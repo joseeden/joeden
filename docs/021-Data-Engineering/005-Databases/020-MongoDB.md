@@ -1,7 +1,7 @@
 ---
 title: "MongoDB"
 description: "The Humongous Database"
-tags: [Data Engineering, Databases, MongoDB]
+tags: [Data Engineering, Databases, MongoDB, NoSQL]
 sidebar_position: 20
 last_update:
   date: 2/27/2022

@@ -334,4 +334,11 @@ Prompt Engineering:
   label: 'Prompt Engineering'
   permalink: '/Prompt Engineering'
   description: 'Docs related to Prompt Engineering'     
-  
+SQL:
+  label: 'SQL'
+  permalink: '/SQL'
+  description: 'Docs related to SQL'     
+NoSQL:
+  label: 'NoSQL'
+  permalink: '/NoSQL'
+  description: 'Docs related to NoSQL'     

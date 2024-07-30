@@ -1,7 +1,7 @@
 ---
 title: "Queries"
 description: "SQL Fundamentals"
-tags: [Data Engineering, Databases]
+tags: [Data Engineering, Databases, SQL]
 sidebar_position: 4
 last_update:
   date: 2/27/2022
