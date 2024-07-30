@@ -137,3 +137,100 @@ Output:
 | 2010         | 148.0        |
 | 2017         | 105.0        | 
 ```
+
+### Scenario 3 
+
+To do:
+
+- Select country from the films table, and get the distinct count of certification aliased as certification_count.
+- Group the results by country.
+- Filter the unique count of certifications to only results greater than 2.
+
+Solution:
+
+```sql
+SELECT country, COUNT(DISTINCT certification) AS certification_count
+FROM films
+GROUP by country
+HAVING COUNT(DISTINCT certification) > 2;
+```
+
+Output:
+
+```bash
+country | certification_count
+--------|----------------------
+USA     | 3
+```
+
+### Scenario 4
+
+To do:
+
+- Select the country and the average budget as `average_budget`, rounded to two decimal, from films.
+- Group the results by country.
+- Filter the results to countries with an average budget of more than one billion (1000000000).
+- Sort by descending order of the `average_budget`.
+
+Solution:
+
+```sql
+SELECT country, ROUND(AVG(budget),2) AS average_budget
+FROM films 
+GROUP BY country 
+HAVING ROUND(AVG(budget),2) > 10000000 
+ORDER BY average_budget DESC;  
+```
+
+Output:
+
+```bash
+| country      | average_budget |
+|--------------|----------------|
+| USA          | 337500000.00   |
+| South Korea  | 11400000.00    |
+```
+
+
+
+### Scenario 5
+
+Select the `release_year` for each film in the films table, filter for records released after 1990, and group by `release_year`.
+
+```sql
+SELECT release_year
+FROM films 
+WHERE release_year > 1990 
+GROUP BY release_year; 
+```
+
+Modify the query to include the average budget aliased as `avg_budget` and average gross aliased as `avg_gross` for the results we have so far.
+
+```sql
+SELECT release_year, AVG(budget) AS avg_budget, AVG(gross) AS avg_gross
+FROM films
+WHERE release_year > 1990
+GROUP BY release_year;
+```
+
+Modify the query once more so that only years with an average budget of greater than 60 million are included.
+
+```sql
+SELECT release_year, AVG(budget) AS avg_budget, AVG(gross) AS avg_gross
+FROM films
+WHERE release_year > 1990
+GROUP BY release_year
+HAVING AVG(budget) > 60000000; 
+```
+
+Finally, order the results from the highest average gross and limit to one.
+
+```sql
+SELECT release_year, AVG(budget) AS avg_budget, AVG(gross) AS avg_gross
+FROM films
+WHERE release_year > 1990
+GROUP BY release_year
+HAVING AVG(budget) > 60000000
+ORDER BY AVG(gross) DESC
+LIMIT 1;
+```
