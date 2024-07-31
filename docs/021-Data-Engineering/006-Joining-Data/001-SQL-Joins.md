@@ -136,8 +136,11 @@ Click each table to see the records. Each table has a varied number of records.
 
 To download the actual files, you can get them from my Github repository.
 
-- [states.csv](/files/datasets/states.csv)
+- ![states.csv](/files/datasets/states.csv)
 - presidents.csv
 - prime_ministers.csv
 - prime_minister_terms.csv
 - monarchs.csv
+
+
+- <a target="_blank" href={ require("/files/datasets/presidents.csv").default } download>presidents.csv</a>
