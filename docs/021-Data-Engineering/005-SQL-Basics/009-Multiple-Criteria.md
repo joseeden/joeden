@@ -2,7 +2,7 @@
 title: "Multiple Criteria"
 description: "SQL Fundamentals"
 tags: [Data Engineering, Databases, SQL]
-sidebar_position: 8
+sidebar_position: 9
 last_update:
   date: 2/27/2022
 ---

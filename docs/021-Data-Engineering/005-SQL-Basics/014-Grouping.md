@@ -2,7 +2,7 @@
 title: "Grouping"
 description: "SQL Fundamentals"
 tags: [Data Engineering, Databases, SQL]
-sidebar_position: 13
+sidebar_position: 14
 last_update:
   date: 2/27/2022
 ---

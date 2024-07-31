@@ -9,7 +9,7 @@ last_update:
 
 ## Types of Data
 
-For more information, please see [Database Fundamentals.]( ../001-Fundamentals.md#types-of-data)
+For more information, please see [Database Fundamentals.]( ../Start-Here.md#types-of-data)
 
 - **Structured Data**: Uses well-defined schema and tables
 
@@ -35,7 +35,7 @@ SQL (Structured Query Language) is essential for interacting with relational dat
 - Data engineers use SQL to create and maintain databases.
 - Data scientists use it to query databases.
 
-For more information, please see [Database Fundamentals.]( ../001-Fundamentals.md)
+For more information, please see [Database Fundamentals.]( ../Start-Here.md)
 
 ### Usage 
 
@@ -72,7 +72,7 @@ For more information, please see [Database Fundamentals.](../005-SQL-Basics/001-
 
 Various SQL implementations exist, with minor differences. Switching between them is like switching keyboard layouts or dialects of English; mostly similar with a few changes.
 
-For more information, please see [Database Fundamentals.]( ../001-Fundamentals.md)
+For more information, please see [Database Fundamentals.]( ../Start-Here.md)
 
 
 ## Data Lakes and Data Warehouses
