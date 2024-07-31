@@ -1,6 +1,6 @@
 ---
 title: "Relationships"
-description: "SQL Fundamentals"
+description: "Advanced SQL"
 tags: [Data Engineering, Databases, SQL]
 sidebar_position: 2
 last_update:

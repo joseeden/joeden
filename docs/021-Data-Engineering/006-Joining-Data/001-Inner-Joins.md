@@ -1,6 +1,6 @@
 ---
-title: "SQL Joins"
-description: "SQL Fundamentals"
+title: "Inner Joins"
+description: "Advanced SQL"
 tags: [Data Engineering, Databases, SQL]
 sidebar_position: 1
 last_update:
@@ -136,11 +136,11 @@ Click each table to see the records. Each table has a varied number of records.
 
 To download the actual files, you can get them from my [Github repository](https://github.com/joseeden/joeden/tree/master/assets/datasets).
 
-- [states.csv](@site/assets/datasets/states.csv)
-- [presidents.csv](@site/assets/datasets/presidents.csv)
-- [prime_ministers.csv](@site/assets/datasets/prime_ministers.csv)
-- [prime_minister_terms.csv](@site/assets/datasets/prime_minister_terms.csv)
-- [monarchs.csv](@site/assets/datasets/monarchs.csv)
+- [states.csv](@site/assets/datasets/world-leaders-database/states.csv)
+- [presidents.csv](@site/assets/datasets/world-leaders-database/presidents.csv)
+- [prime_ministers.csv](@site/assets/datasets/world-leaders-database/prime_ministers.csv)
+- [prime_minister_terms.csv](@site/assets/datasets/world-leaders-database/prime_minister_terms.csv)
+- [monarchs.csv](@site/assets/datasets/world-leaders-database/monarchs.csv)
 
 
 ## `INNER JOIN` 

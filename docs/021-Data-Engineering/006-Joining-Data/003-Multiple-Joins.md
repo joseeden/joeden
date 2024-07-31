@@ -1,6 +1,6 @@
 ---
 title: "Multiple Joins"
-description: "SQL Fundamentals"
+description: "Advanced SQL"
 tags: [Data Engineering, Databases, SQL]
 sidebar_position: 3
 last_update:
@@ -136,11 +136,11 @@ Click each table to see the records. Each table has a varied number of records.
 
 To download the actual files, you can get them from my [Github repository](https://github.com/joseeden/joeden/tree/master/assets/datasets).
 
-- [states.csv](@site/assets/datasets/states.csv)
-- [presidents.csv](@site/assets/datasets/presidents.csv)
-- [prime_ministers.csv](@site/assets/datasets/prime_ministers.csv)
-- [prime_minister_terms.csv](@site/assets/datasets/prime_minister_terms.csv)
-- [monarchs.csv](@site/assets/datasets/monarchs.csv)
+- [states.csv](@site/assets/datasets/world-leaders-database/states.csv)
+- [presidents.csv](@site/assets/datasets/world-leaders-database/presidents.csv)
+- [prime_ministers.csv](@site/assets/datasets/world-leaders-database/prime_ministers.csv)
+- [prime_minister_terms.csv](@site/assets/datasets/world-leaders-database/prime_minister_terms.csv)
+- [monarchs.csv](@site/assets/datasets/world-leaders-database/monarchs.csv)
 
 
 
@@ -150,16 +150,16 @@ To download the actual files, you can get them from my [Github repository](https
 
 We can also use SQL to combine multiple joins in a single query. Start with an `INNER JOIN`, then add another `INNER JOIN` to the result. Adjust table and field names based on which table's id you're using for the join.
 
-```sql
+``sql
 SELECT *
 
 FROM left_table 
-INNER JOIN right_table
+`INNER JOIN` right_table
 ON left_table.id = right_table.id 
 
-INNER JOIN another_table 
+`INNER JOIN` another_table 
 ON left_table.id = another_table.id;
-```
+``
 
 
 ### First Join 
@@ -168,15 +168,15 @@ For example, to identify countries that have both a president and a prime minist
 
 We can use `INNER JOIN` between the `presidents` and `prime_ministers` tables, and use the country as the matching value. This join provides a combined table of countries with both a president and a prime minister. We'll also add the country names and the continent fields to provide more details.
 
-```sql
+``sql
 SELECT p1.country, 
        p1.continent,
        prime_minister 
        president, 
 FROM prime_ministers as p1  
-INNER JOIN presidents as p2 
+`INNER JOIN` presidents as p2 
 USING (country);
-```
+``
 
 
 Output: 
@@ -197,7 +197,7 @@ Output:
 
 Next, join this result with the `prime_minister_terms` table on the `prime_minister` field. The final output will show countries with both leaders and the years their prime ministers took office. 
 
-```sql
+``sql
 SELECT p1.country, 
        p1.continent,
        president, 
@@ -205,12 +205,12 @@ SELECT p1.country,
        pm_start
 
 FROM prime_ministers as p1  
-INNER JOIN presidents as p2 
+`INNER JOIN` presidents as p2 
 USING (country)
 
-INNER JOIN prime_minister_terms as p3 
+`INNER JOIN` prime_minister_terms as p3 
 USING (prime_minister);
-```
+``
 
 Output: 
 
@@ -230,13 +230,13 @@ Output:
 
 Note that the values in the join fields don’t always match one-to-one between tables. Sometimes, multiple records in the right table correspond to a single record in the left table.
 
-```sql
+``sql
 SELECT *
 FROM left_table 
-INNER JOIN right_table
+`INNER JOIN` right_table
 ON left_table.id = right_table.id 
     AND left_table.date = right_table.date
-```
+``
 
 To refine your results, add another join condition using the AND keyword in the ON clause. For instance, you might join on both id and date fields. This approach ensures that records match on both criteria.
 
@@ -245,3 +245,5 @@ To refine your results, add another join condition using the AND keyword in the 
 ![](/img/docs/db-rs-joining-multiple-keysss.png)
 
 </div>
+
+
