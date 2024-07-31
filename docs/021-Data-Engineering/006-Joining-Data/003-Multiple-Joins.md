@@ -1,8 +1,8 @@
 ---
-title: "SQL Joins"
+title: "Multiple Joins"
 description: "SQL Fundamentals"
 tags: [Data Engineering, Databases, SQL]
-sidebar_position: 1
+sidebar_position: 3
 last_update:
   date: 2/27/2022
 ---
@@ -143,77 +143,105 @@ To download the actual files, you can get them from my [Github repository](https
 - [monarchs.csv](@site/assets/datasets/monarchs.csv)
 
 
-## `INNER JOIN` 
 
-`INNER JOIN` is one of the two most common joins, along with `LEFT JOIN`. To understand it, imagine two tables, "left_table" and "right_table", both containing a column named "id" which acts as the key. Keys uniquely identify records in a table. These tables also have columns called left_val and right_val. 
 
-<div class='img-center'>
 
-![](/img/docs/sample-table-for-inner-joinssss.png)
+## Multiple Joins
 
-</div>
-
-When performing an `INNER JOIN`, we look for matching values in the key column across both tables. You can join tables on any field, not just key fields. In our example, the `INNER JOIN` matches records in both tables where the "id" values are the same. The `INNER JOIN` results in records with ids 1 and 4.
-
-<div class='img-center'>
-
-![](/img/docs/sample-table-for-inner-joinssss-result.png)
-
-</div>
-
-For example, to find countries that has both Presidents and Prime Ministers:
+We can also use SQL to combine multiple joins in a single query. Start with an `INNER JOIN`, then add another `INNER JOIN` to the result. Adjust table and field names based on which table's id you're using for the join.
 
 ```sql
-SELECT prime_ministers.country, prime_ministers.continent, prime_minister, president
-FROM prime_ministers
-INNER JOIN presidents
-ON prime_ministers.country = presidents.country;
+SELECT *
+
+FROM left_table 
+INNER JOIN right_table
+ON left_table.id = right_table.id 
+
+INNER JOIN another_table 
+ON left_table.id = another_table.id;
 ```
 
-To understand this, look at the query in this order:
 
-- `FROM`: defines the first table (or left table)
-- `INNER JOIN`: defines the second table that has the matching value/s (or right table)
-- `ON`: defines the values found in both tables. 
-- `SELECT`: specifiy the fields
+### First Join 
 
-Output: 
+For example, to identify countries that have both a president and a prime minister, and then find out the year each prime minister started their term, we can use the `prime_minister_terms` table, which includes prime ministers' names and their start years.
 
-| country        | continent    | prime_minister          | president                |
-|----------------|--------------|-------------------------|--------------------------|
-| India          | Asia         | Narendra Modi           | Ram Nath Kovind          |
-| Germany        | Europe       | Angela Merkel           | Frank-Walter Steinmeier  |
-| Italy          | Europe       | Mario Draghi            | Sergio Mattarella        |
-
-:::info[note]
-
-The 'table.column_name` format must be used when selecting columns that exist in both tables to avoid SQL error.
-
-:::
-
-## Aliasing 
-
-To simplify our query, we can alias table names with the AS keyword, just like we do with columns. This helps avoid repetitive typing. 
-
-Using the previous example, we can shorten the query:
+We can use `INNER JOIN` between the `presidents` and `prime_ministers` tables, and use the country as the matching value. This join provides a combined table of countries with both a president and a prime minister. We'll also add the country names and the continent fields to provide more details.
 
 ```sql
-SELECT p1.country, p1.continent, prime_minister, president
-FROM prime_ministers AS p1
-INNER JOIN presidents AS p2 
-ON p1.country = p2.country;
-```
-
-## `USING` 
-
-For an even more concise query, use the `USING` command when joining on identical column names. Since both tables have a "country" column, `USING` (country) can replace the `ON` clause.
-
-```sql
-SELECT p1.country, p1.continent, prime_minister, president
-FROM prime_ministers AS p1
-INNER JOIN presidents AS p2 
+SELECT p1.country, 
+       p1.continent,
+       prime_minister 
+       president, 
+FROM prime_ministers as p1  
+INNER JOIN presidents as p2 
 USING (country);
 ```
 
 
+Output: 
 
+| country  | continent    | prime_minister | president                |
+|----------|--------------|----------------|--------------------------|
+| India    | Asia         | Narendra Modi  | Ram Nath Kovind          |
+| Germany  | Europe       | Angela Merkel  | Frank-Walter Steinmeier  |
+| Germany  | Europe       | Angela Merkel  | Frank-Walter Steinmeier  |
+| Germany  | Europe       | Angela Merkel  | Frank-Walter Steinmeier  |
+| Germany  | Europe       | Angela Merkel  | Frank-Walter Steinmeier  |
+| Italy    | Europe       | Mario Draghi   | Sergio Mattarella        |
+
+
+
+
+### Extending the Join
+
+Next, join this result with the `prime_minister_terms` table on the `prime_minister` field. The final output will show countries with both leaders and the years their prime ministers took office. 
+
+```sql
+SELECT p1.country, 
+       p1.continent,
+       president, 
+       prime_minister,
+       pm_start
+
+FROM prime_ministers as p1  
+INNER JOIN presidents as p2 
+USING (country)
+
+INNER JOIN prime_minister_terms as p3 
+USING (prime_minister);
+```
+
+Output: 
+
+| country  | continent    | prime_minister | president                |
+|----------|--------------|----------------|--------------------------|
+| India    | Asia         | Narendra Modi  | Ram Nath Kovind          |
+| Germany  | Europe       | Angela Merkel  | Frank-Walter Steinmeier  |
+| Germany  | Europe       | Angela Merkel  | Frank-Walter Steinmeier  |
+| Germany  | Europe       | Angela Merkel  | Frank-Walter Steinmeier  |
+| Germany  | Europe       | Angela Merkel  | Frank-Walter Steinmeier  |
+| Italy    | Europe       | Mario Draghi   | Sergio Mattarella        |
+
+
+
+
+## Joining Multiple Keys 
+
+Note that the values in the join fields don’t always match one-to-one between tables. Sometimes, multiple records in the right table correspond to a single record in the left table.
+
+```sql
+SELECT *
+FROM left_table 
+INNER JOIN right_table
+ON left_table.id = right_table.id 
+    AND left_table.date = right_table.date
+```
+
+To refine your results, add another join condition using the AND keyword in the ON clause. For instance, you might join on both id and date fields. This approach ensures that records match on both criteria.
+
+<div class='img-center'>
+
+![](/img/docs/db-rs-joining-multiple-keysss.png)
+
+</div>
