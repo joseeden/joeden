@@ -1,5 +1,5 @@
 ---
-title: "Database Fundamentals"
+title: "Start here"
 description: "SQL Fundamentals"
 tags: [Data Engineering, Databases, SQL]
 sidebar_position: 0

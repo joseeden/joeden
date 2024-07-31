@@ -12,7 +12,11 @@ last_update:
 
 Here is the schema for the sample **leaderships** table:
 
+<div class='img-center'>
+
 ![](/img/docs/sample-database-schemaaa.png)
+
+</div>
 
 Click each table to see the records. Each table has a varied number of records. 
 
@@ -132,7 +136,7 @@ Click each table to see the records. Each table has a varied number of records.
 
 To download the actual files, you can get them from my Github repository.
 
-- states.csv
+- [states.csv](/files/datasets/states.csv)
 - presidents.csv
 - prime_ministers.csv
 - prime_minister_terms.csv
