@@ -10,7 +10,7 @@ last_update:
 
 ## Sample Tables
 
-Here is the schema for the sample **leaderships** table:
+Here is the schema for the sample **World Leaders** table:
 
 <div class='img-center'>
 
