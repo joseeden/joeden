@@ -22,7 +22,6 @@ We'll use a **films** table for th examples.
 | 5  | Coco         | 2017         | USA         | 105      | Spanish  | PG            | 807082196  | 175000000  |
 
 
-
 ## Filtering grouped data
 
 In SQL, the `WHERE` clause cannot be used to filter results based on aggregate functions. For instance, if we want to filter results based on the number of films released per year, using WHERE won’t work. To address this, SQL provides the HAVING clause, specifically designed to filter grouped data. 

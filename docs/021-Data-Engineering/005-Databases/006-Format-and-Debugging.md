@@ -42,6 +42,8 @@ SELECT title, country duration
 FROM films;
 ```
 
+![](/img/docs/handling-errors-missing-commmaaa.png)
+
 ![](/img/docs/handling-comma-errorssss.png)
 
 The correct statement would be:
@@ -62,7 +64,7 @@ SELCT title, country, duration
 FROM films;
 ```
 
-![](/img/docs/handling-errors-keywordssss.png)
+![](/img/docs/handling-errors-misspelling.png)
 
 The correct statement would be:
 
