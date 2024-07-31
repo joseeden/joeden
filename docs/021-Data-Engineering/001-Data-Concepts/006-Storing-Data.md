@@ -7,31 +7,15 @@ last_update:
   date: 2/27/2022
 ---
 
-
 ## Types of Data
 
-For more information, please see [Database Fundamentals.](../005-Databases/001-Fundamentals.md)
+For more information, please see [Database Fundamentals.]( ../001-Fundamentals.md#types-of-data)
 
-- **Structured Data**
+- **Structured Data**: Uses well-defined schema and tables
 
-    - Easily searchable and organized, like a spreadsheet with set columns.
-    - Relational databases, queried using SQL (Structured Query Language).
-    - About 20% of data is structured.
-    - Example: Employee tables, where each row represents an employee and columns hold specific information.
+- **Semi-Structured Data**: Resembles structured data but allows more flexibility
 
-- **Semi-Structured Data**
-
-    - Resembles structured data but allows more flexibility, often stored in NoSQL databases.
-    - Formats include JSON, XML, YAML.
-    - NoSQL databases as storage
-    - Example:JSON file of users’ favorite artists, where each user ID contains varied numbers of favorite artists.
-
-- **Unstructured Data**
-
-    - Data that doesn’t follow a model, making it hard to search and organize.
-    - Typically found in data lakes, sometimes in data warehouses or databases.
-    - Extremely valuable but requires machine learning and AI for effective extraction.
-    - Example: Lyrics, songs, album pictures, artist profile pictures, music videos.
+- **Unstructured Data**: No fixed structure or format
 
 ## Enhancing Unstructured Data
 
@@ -51,7 +35,7 @@ SQL (Structured Query Language) is essential for interacting with relational dat
 - Data engineers use SQL to create and maintain databases.
 - Data scientists use it to query databases.
 
-For more information, please see [Database Fundamentals.](../005-Databases/001-Fundamentals.md)
+For more information, please see [Database Fundamentals.]( ../001-Fundamentals.md)
 
 ### Usage 
 
@@ -81,14 +65,14 @@ WHERE role LIKE '%Data%'
 
 Databases consist of multiple related tables. The schema defines relationships between these tables.
 
-For more information, please see [Database Fundamentals.](../005-Databases/001-Fundamentals.md)
+For more information, please see [Database Fundamentals.](../005-SQL-Basics/001-Schema.md)
 
 
 ### SQL Implementations
 
 Various SQL implementations exist, with minor differences. Switching between them is like switching keyboard layouts or dialects of English; mostly similar with a few changes.
 
-For more information, please see [Database Fundamentals.](../005-Databases/001-Fundamentals.md)
+For more information, please see [Database Fundamentals.]( ../001-Fundamentals.md)
 
 
 ## Data Lakes and Data Warehouses

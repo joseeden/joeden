@@ -70,20 +70,28 @@ An applications's structure can vary from application to application and differe
 
 Data can come in different forms, each with its own characteristics and uses.
 
+
 - **Structured Data**
 
-  - Uses well-defined schema and tables
-  - Organized in a fixed format
-  - Easily searchable and queryable
-  - Examples include databases and spreadsheets
+    - Easily searchable and organized, like a spreadsheet with set columns.
+    - Relational databases, queried using SQL (Structured Query Language).
+    - About 20% of data is structured.
+    - Example: Employee tables, where each row represents an employee and columns hold specific information.
+
+- **Semi-Structured Data**
+
+    - Resembles structured data but allows more flexibility, often stored in NoSQL databases.
+    - Formats include JSON, XML, YAML.
+    - NoSQL databases as storage
+    - Example:JSON file of users’ favorite artists, where each user ID contains varied numbers of favorite artists.
 
 - **Unstructured Data**
 
-  - Lacks a predefined data model
-  - Not easily organized or queried
-  - Examples include text documents, images, and videos
-  - No fixed structure or format
-
+    - Data that doesn’t follow a model, making it hard to search and organize.
+    - Typically found in data lakes, sometimes in data warehouses or databases.
+    - Extremely valuable but requires machine learning and AI for effective extraction.
+    - Example: Lyrics, songs, album pictures, artist profile pictures, music videos.
+  
 ## SQL versus NoSQL
 
 There's no one-size-fits-all database solution. Each type has its own use case, so it's important to understand when to use which.
