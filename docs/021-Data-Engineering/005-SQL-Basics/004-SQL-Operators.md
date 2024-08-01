@@ -71,11 +71,11 @@ Comparison operators are used in conditions that compare one expression with ano
 
 Logical operators combine multiple conditions.
 
-- AND: TRUE if all conditions separated by AND are TRUE
+- `AND`: TRUE if all conditions separated by AND are TRUE
 
-- OR: TRUE if any of the conditions separated by OR is TRUE
+- `OR`: TRUE if any of the conditions separated by OR is TRUE
 
-- NOT: TRUE if the following condition is FALSE
+- `NOT`: TRUE if the following condition is FALSE
 
 ## Bitwise Operators
 

@@ -43,11 +43,19 @@ Output:
 
 A one-to-one relationship involves a unique pairing between entities, making it less common. An example is fingerprints: each fingerprint is unique to one person. 
 
+<div class='img-center'>
+
 ![](/img/docs/db-rs-one-to-one-colored-image.png)
+
+</div>
 
 In the context of an airport's border control, a database might have a "people" table and a "fingerprints" table. Each person’s fingerprint is linked to their record in the "people" table via their passport number. 
 
+<div class='img-center'>
+
 ![](/img/docs/db-rs-one-to-one.png)
+
+</div>
 
 Even though an individual has multiple fingerprints, they can be stored as different fields in a single record, maintaining a one-to-one relationship between a person and their set of fingerprints.
 
@@ -56,6 +64,11 @@ Even though an individual has multiple fingerprints, they can be stored as diffe
 
 Many-to-many relationships occur when multiple entities can be associated with multiple other entities. An example is languages and countries. 
 
+<div class='img-center'>
+
 ![](/img/docs/db-rs-many-to-many-colored-diagram.png)
+
+</div>
+
 
 Consider Germany, Belgium, and the Netherlands: each country can have multiple official languages, and a language can be official in multiple countries. For example, Belgium's official languages are French, German, and Dutch, while Dutch is also official in the Netherlands.

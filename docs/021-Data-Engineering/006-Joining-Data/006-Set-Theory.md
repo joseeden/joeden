@@ -198,8 +198,12 @@ FROM right_table;
 
 Note that the columns selected from both tables must be the same in number and data type. For instance, we can't stack a number field on top of a character field.
 
-![](/img/docs/set-operations-union-same-field-typesss.png)
+<div class='img-center'>
+
 ![](/img/docs/set-operations-union-same-field-typesss-with-commentsss.png)
+
+</div>
+
 
 
 ## Examples of Union 

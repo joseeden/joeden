@@ -207,7 +207,12 @@ Note that the `NULL` values can appear in both columns.
 
 A `CROSS JOIN` creates all possible combinations of rows between two tables. This results in a *Cartesian* product, where each row from the first table is combined with every row from the second table.
 
+<div class='img-center'>
+
 ![](/img/docs/sample-diagram-cross-joinsssssss.png)
+
+</div>
+
 
 Syntax: 
 

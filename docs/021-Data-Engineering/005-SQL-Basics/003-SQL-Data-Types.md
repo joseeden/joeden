@@ -90,7 +90,7 @@ These are used to store date, time, timestamp data.
 Here are some common operations:
 
 - Date arithmetic: +, -
-- Date functions: NOW(), DATE(), YEAR(), MONTH(), DAY()
+- Date functions: `NOW()`, `DATE()`, `YEAR()`, `MONTH()`, `DAY()`
 - Interval calculations
 
 

@@ -291,7 +291,13 @@ Various SQL implementations exist, with minor differences. Switching between the
 
     - Clauses are components of a SQL statement. 
     - They refine SQL statements by providing additional parameters or conditions. 
-    - For example, in the statement SELECT * FROM Employees WHERE Age > 30;, WHERE is a clause that restricts the data returned.
+    - For example, in the statement:
+
+        ```sql
+        SELECT * FROM Employees WHERE Age > 30;
+        ```
+        
+        `WHERE` is a clause that restricts the data returned.
 
 **3. SQL Expressions**
 
@@ -382,10 +388,23 @@ Here are some types of SQL expressions:
 **5. Date Expressions**
 
     - Date expressions manipulate date values. 
-    - For example, to extract the year from a date column: EXTRACT(YEAR FROM OrderDate).
+    - For example, to extract the year from a date column: 
+        
+        ```sql
+        EXTRACT(YEAR FROM OrderDate)
+        ```
 
 **6. Case Expressions**
 
     - Case expressions implement conditional logic by executing different expressions based on a condition. 
-    - The syntax is: CASE WHEN condition THEN result [WHEN ...] [ELSE result] END. 
-    - For example, to categorize employees by salary: CASE WHEN Salary > 50000 THEN 'High' ELSE 'Low' END.
+    - The syntax is:  
+
+        ```sql
+        CASE WHEN condition THEN result [WHEN ...] [ELSE result] END
+        ```
+
+    - For example, to categorize employees by salary: 
+
+        ```sql
+        CASE WHEN Salary > 50000 THEN 'High' ELSE 'Low' END
+        ```
