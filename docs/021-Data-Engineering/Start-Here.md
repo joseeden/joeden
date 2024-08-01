@@ -311,7 +311,24 @@ Various SQL implementations exist, with minor differences. Switching between the
 **6. SQL Operators**
 
     - Operators are symbols that specify an operation to be performed on the data. 
-    - SQL includes various types of operators such as Arithmetic operators (+, -, *, /), Comparison operators (>, <, =, <=, >=, <>) and Logical operators (AND, OR, NOT).
+    - SQL includes various types of operators such as:
+        - Arithmetic operators 
+
+            ```bash
+            +, -, *, /
+            ```
+        
+        - Comparison operators 
+
+            ```bash
+            >, <, =, <=, >=, <>
+            ```
+        
+        - Logical operators (AND, OR, NOT).
+
+            ```bash
+            AND, OR, NOT
+            ```
 
 An example SQL query using these components might look like this:
 

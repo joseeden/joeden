@@ -46,9 +46,18 @@ These include integers, decimals, and floating-point numbers. Here are some comm
 
 Operations:
 
-- Arithmetic operations: +, -, *, /
+- Arithmetic operations: 
 
-- Comparison operations: <, >, <=, >=, =, <>
+    ```bash
+    +, -, *, /
+    ```
+
+- Comparison operations: 
+
+    ```bash
+    <, >, <=, >=, =, <>
+    ```
+
 
 ### Integers
 
