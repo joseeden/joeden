@@ -1,0 +1,101 @@
+curr_id,code,basic_unit,curr_code,frac_unit,frac_perbasic
+1,AFG,Afghan afghani,AFN,Pul,100
+2,ALB,Albanian lek,ALL,Qindarke,100
+3,DZA,Algerian dinar,DZD,Santeem,100
+4,AND,Euro,EUR,Cent,100
+5,AGO,Angolan kwanza,AOA,Centimo,100
+6,AIA,East Caribbean dollar,XCD,Cent,100
+7,ATG,East Caribbean dollar,XCD,Cent,100
+8,ARG,Argentine peso,ARS,Centavo,100
+9,ARM,Armenian dram,AMD,Luma,100
+10,ABW,Aruban florin,AWG,Cent,100
+11,AUS,Australian dollar,AUD,Cent,100
+12,AUT,Euro,EUR,Cent,100
+13,AZE,Azerbaijani manat,AZN,Qəpik,100
+14,BHR,Bahraini dinar,BHD,Fils,1000
+15,BGD,Bangladeshi taka,BDT,Paisa,100
+16,BRB,Barbadian dollar,BBD,Cent,100
+17,BLR,New Belarusian ruble,BYN,Kapyeyka,100
+18,BLR,Old Belarusian ruble,BYR,Kapyeyka,100
+19,BEL,Euro,EUR,Cent,100
+20,BLZ,Belize dollar,BZD,Cent,100
+21,BEN,West African CFA franc,XOF,Centime,100
+22,BMU,Bermudian dollar,BMD,Cent,100
+23,BTN,Bhutanese ngultrum,BTN,Chetrum,100
+24,BTN,Indian rupee,INR,Paisa,100
+25,BOL,Bolivian boliviano,BOB,Centavo,100
+26,BIH,Bosnia and Herzegovina convertible mark,BAM,Fening,100
+27,BWA,Botswana pula,BWP,Thebe,100
+28,BRA,Brazilian real,BRL,Centavo,100
+29,IOT,United States dollar,USD,Cent,100
+30,BRN,Brunei dollar,BND,Sen,100
+31,BRN,Singapore dollar,SGD,Cent,100
+32,BGR,Bulgarian lev,BGN,Stotinka,100
+33,BFA,West African CFA franc,XOF,Centime,100
+34,BDI,Burundian franc,BIF,Centime,100
+35,KHM,Cambodian riel,KHR,Sen,100
+36,KHM,United States dollar,USD,Cent,100
+37,CMR,Central African CFA franc,XAF,Centime,100
+38,CAN,Canadian dollar,CAD,Cent,100
+39,CPV,Cape Verdean escudo,CVE,Centavo,100
+40,CYM,Cayman Islands dollar,KYD,Cent,100
+41,CAF,Central African CFA franc,XAF,Centime,100
+42,TCD,Central African CFA franc,XAF,Centime,100
+43,CHL,Chilean peso,CLP,Centavo,100
+44,CHN,Chinese yuan,CNY,Fen,100
+45,CCK,Australian dollar,AUD,Cent,100
+46,COL,Colombian peso,COP,Centavo,100
+47,COM,Comorian franc,KMF,Centime,100
+48,COD,Congolese franc,CDF,Centime,100
+49,COG,Central African CFA franc,XAF,Centime,100
+50,COK,New Zealand dollar,NZD,Cent,100
+51,CRI,Costa Rican colon,CRC,Centimo,100
+52,CIV,West African CFA franc,XOF,Centime,100
+53,HRV,Croatian kuna,HRK,Lipa,100
+54,CUB,Cuban convertible peso,CUC,Centavo,100
+55,CUB,Cuban peso,CUP,Centavo,100
+56,CYP,Euro,EUR,Cent,100
+57,CZE,Czech koruna,CZK,Haler,100
+58,DNK,Danish krone,DKK,Ore,100
+59,DJI,Djiboutian franc,DJF,Centime,100
+60,DMA,East Caribbean dollar,XCD,Cent,100
+61,DOM,Dominican peso,DOP,Centavo,100
+62,TMP,United States dollar,USD,Cent,100
+63,ECU,United States dollar,USD,Cent,100
+64,EGY,Egyptian pound,EGP,Piastre,100
+65,SLV,United States dollar,USD,Cent,100
+66,GNQ,Central African CFA franc,XAF,Centime,100
+67,ERI,Eritrean nakfa,ERN,Cent,100
+68,EST,Euro,EUR,Cent,100
+69,ETH,Ethiopian birr,ETB,Santim,100
+70,FLK,Falkland Islands pound,FKP,Penny,100
+71,FRO,Danish krone,DKK,Ore,100
+72,FIN,Euro,EUR,Cent,100
+73,FRA,Euro,EUR,Cent,100
+74,PYF,CFP franc,XPF,Centime,100
+75,GAB,Central African CFA franc,XAF,Centime,100
+76,GEO,Georgian lari,GEL,Tetri,100
+77,DEU,Euro,EUR,Cent,100
+78,GHA,Ghanaian cedi,GHS,Pesewa,100
+79,GIB,Gibraltar pound,GIP,Penny,100
+80,GRC,Euro,EUR,Cent,100
+81,GRD,East Caribbean dollar,XCD,Cent,100
+82,GTM,Guatemalan quetzal,GTQ,Centavo,100
+83,GIN,Guinean franc,GNF,Centime,100
+84,GNB,West African CFA franc,XOF,Centime,100
+85,GUY,Guyanese dollar,GYD,Cent,100
+86,HTI,Haitian gourde,HTG,Centime,100
+87,HND,Honduran lempira,HNL,Centavo,100
+88,HKG,Hong Kong dollar,HKD,Cent,100
+89,HUN,Hungarian forint,HUF,Filler,100
+90,ISL,Icelandic krona,ISK,Eyrir,100
+91,IND,Indian rupee,INR,Paisa,100
+92,IDN,Indonesian rupiah,IDR,Sen,100
+93,IRN,Iranian rial,IRR,Dinar,100
+94,IRQ,Iraqi dinar,IQD,Fils,1000
+95,IRL,Euro,EUR,Cent,100
+96,ISR,Israeli new shekel,ILS,Agora,100
+97,ITA,Euro,EUR,Cent,100
+98,JAM,Jamaican dollar,JMD,Cent,100
+99,JPN,Japanese yen,JPY,Sen,100
+100,JOR,Jordanian dinar,JOD,Piastre,100

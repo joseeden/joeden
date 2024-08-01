@@ -1,0 +1,117 @@
+code,name,continent,region,surface_area,indep_year,local_name,gov_form,capital,cap_long,cap_lat
+AFG,Afghanistan,Asia,Southern and Central Asia,652090,1919,Afganistan/Afqanestan,Islamic Emirate,Kabul,69.1761,34.5228
+NLD,Netherlands,Europe,Western Europe,41526,1581,Nederland,Constitutional Monarchy,Amsterdam,4.89095,52.3738
+ALB,Albania,Europe,Southern Europe,28748,1912,Shqiperia,Republic,Tirane,19.8172,41.3317
+DZA,Algeria,Africa,Northern Africa,2381740,1962,Al-Jazaïr/Algerie,Republic,Algiers,3.05097,36.7397
+ASM,American Samoa,Oceania,Polynesia,199,null,Amerika Samoa,US Territory,Pago Pago,-170.691,-14.2846
+AND,Andorra,Europe,Southern Europe,468,1278,Andorra,Parliamentary Coprincipality,Andorra la Vella,1.5218,42.5075
+AGO,Angola,Africa,Central Africa,1246700,1975,Angola,Republic,Luanda,13.242,-8.81155
+ATG,Antigua and Barbuda,North America,Caribbean,442,1981,Antigua and Barbuda,Constitutional Monarchy,Saint John's,-61.8456,17.1175
+ARE,United Arab Emirates,Asia,Middle East,83600,1971,Al-Imarat al-‘Arabiya al-Muttahida,Emirate Federation,Abu Dhabi,54.3705,24.4764
+ARG,Argentina,South America,South America,2780400,1816,Argentina,Federal Republic,Buenos Aires,-58.4173,-34.6118
+ARM,Armenia,Asia,Middle East,29800,1991,Hajastan,Republic,Yerevan,44.509,40.1596
+ABW,Aruba,North America,Caribbean,193,null,Aruba,Nonmetropolitan Territory of The Netherlands,Oranjestad,-70.0167,12.5167
+AUS,Australia,Oceania,Australia and New Zealand,7741220,1901,Australia,"Constitutional Monarchy,  Federation",Canberra,149.129,-35.282
+AZE,Azerbaijan,Asia,Middle East,86600,1991,Azarbaycan,Federal Republic,Baku,49.8932,40.3834
+BHS,Bahamas,North America,Caribbean,13878,1973,The Bahamas,Constitutional Monarchy,Nassau,-77.339,25.0661
+BHR,Bahrain,Asia,Middle East,694,1971,Al-Bahrayn,Monarchy (Emirate),Manama,50.5354,26.1921
+BGD,Bangladesh,Asia,Southern and Central Asia,143998,1971,Bangladesh,Republic,Dhaka,90.4113,23.7055
+BRB,Barbados,North America,Caribbean,430,1966,Barbados,Constitutional Monarchy,Bridgetown,-59.6105,13.0935
+BEL,Belgium,Europe,Western Europe,30518,1830,Belgie/Belgique,"Constitutional Monarchy,  Federation",Brussels,4.36761,50.8371
+BLZ,Belize,North America,Central America,22696,1981,Belize,Constitutional Monarchy,Belmopan,-88.7713,17.2534
+BEN,Benin,Africa,Western Africa,112622,1960,Benin,Republic,Porto-Novo,2.6323,6.4779
+BMU,Bermuda,North America,North America,53,null,Bermuda,Dependent Territory of the UK,Hamilton,-64.706,32.3293
+BTN,Bhutan,Asia,Southern and Central Asia,47000,1910,Druk-Yul,Monarchy,Thimphu,89.6177,27.5768
+BOL,Bolivia,South America,South America,1098580,1825,Bolivia,Republic,La Paz,-66.1936,-13.9908
+BIH,Bosnia and Herzegovina,Europe,Southern Europe,51197,1992,Bosna i Hercegovina,Federal Republic,Sarajevo,18.4214,43.8607
+BWA,Botswana,Africa,Southern Africa,581730,1966,Botswana,Republic,Gaborone,25.9201,-24.6544
+BRA,Brazil,South America,South America,8547400,1822,Brasil,Federal Republic,Brasilia,-47.9292,-15.7801
+GBR,United Kingdom,Europe,British Islands,242900,1066,United Kingdom,Constitutional Monarchy,London,-0.126236,51.5002
+VGB,"Virgin Islands,  British",North America,Caribbean,151,null,British Virgin Islands,Dependent Territory of the UK,Road Town,-64.623055,18.431389
+BRN,Brunei,Asia,Southeast Asia,5765,1984,Brunei Darussalam,Monarchy (Sultanate),Bandar Seri Begawan,114.946,4.94199
+BGR,Bulgaria,Europe,Eastern Europe,110994,1908,Balgarija,Republic,Sofia,23.3238,42.7105
+BFA,Burkina Faso,Africa,Western Africa,274000,1960,Burkina Faso,Republic,Ouagadougou,-1.53395,12.3605
+BDI,Burundi,Africa,Eastern Africa,27834,1962,Burundi/Uburundi,Republic,Bujumbura,29.3639,-3.3784
+CYM,Cayman Islands,North America,Caribbean,264,null,Cayman Islands,Dependent Territory of the UK,George Town,-81.3857,19.3022
+CHL,Chile,South America,South America,756626,1810,Chile,Republic,Santiago,-70.6475,-33.475
+CRI,Costa Rica,North America,Central America,51100,1821,Costa Rica,Republic,San Jose,-84.0089,9.63701
+DJI,Djibouti,Africa,Eastern Africa,23200,1977,Djibouti/Jibuti,Republic,Djibouti,43.1425,11.5806
+DMA,Dominica,North America,Caribbean,751,1978,Dominica,Republic,Roseau,-61.39,15.2976
+DOM,Dominican Republic,North America,Caribbean,48511,1844,Republica Dominicana,Republic,Santo Domingo,-69.8908,18.479
+ECU,Ecuador,South America,South America,283561,1822,Ecuador,Republic,Quito,-78.5243,-0.229498
+EGY,Egypt,Africa,Northern Africa,1001450,1922,Misr,Republic,Cairo,31.2461,30.0982
+SLV,El Salvador,North America,Central America,21041,1841,El Salvador,Republic,San Salvador,-89.2073,13.7034
+ERI,Eritrea,Africa,Eastern Africa,117600,1993,Ertra,Republic,Asmara,38.9183,15.3315
+ESP,Spain,Europe,Southern Europe,505992,1492,Espana,Constitutional Monarchy,Madrid,-3.70327,40.4167
+ZAF,South Africa,Africa,Southern Africa,1221040,1910,South Africa,Republic,Pretoria,28.1871,-25.746
+ETH,Ethiopia,Africa,Eastern Africa,1104300,-1000,YeItyop‘iya,Republic,Addis Ababa,38.7468,9.02274
+FJI,Fiji Islands,Oceania,Melanesia,18274,1970,Fiji Islands,Republic,Suva,178.399,-18.1149
+PHL,Philippines,Asia,Southeast Asia,300000,1946,Pilipinas,Republic,Manila,121.035,14.5515
+FRO,Faroe Islands,Europe,Nordic Countries,1399,null,Foroyar,Part of Denmark,Torshavn,-6.91181,61.8926
+GAB,Gabon,Africa,Central Africa,267668,1960,Le Gabon,Republic,Libreville,9.45162,0.38832
+GMB,Gambia,Africa,Western Africa,11295,1965,The Gambia,Republic,Banjul,-16.5885,13.4495
+GEO,Georgia,Asia,Middle East,69700,1991,Sakartvelo,Republic,Tbilisi,44.793,41.71
+GHA,Ghana,Africa,Western Africa,238533,1957,Ghana,Republic,Accra,-0.2056,5.5605
+GIB,Gibraltar,Europe,Southwest Europe,6,1704,Gibraltar,British Overseas Territory,Gibraltar,-5.347,36.143
+GRD,Grenada,North America,Caribbean,344,1974,Grenada,Constitutional Monarchy,St. George's,-61.7511,12.056
+GRC,Greece,Europe,Southern Europe,131990,1830,Ellada,Republic,Athens,23.7267,37.9795
+GRL,Greenland,North America,Nordic Countries,2166086,1979,Grønland,Autonomous Territory of Denmark,Nuuk,-51.75,64.183
+GTG,Guatemala,North America,Central America,108889,1847,Guatemala,Republic,Guatemala City,-90.5148,14.6349
+GUY,Guyana,South America,South America,214969,1966,Guyana,Republic,Georgetown,-58.1551,6.8017
+HTI,Haiti,North America,Caribbean,27750,1804,Haiti,Republic,Port-au-Prince,-72.333,18.539
+HND,Honduras,North America,Central America,112492,1821,Honduras,Republic,Tegucigalpa,-87.1857,14.0728
+HUN,Hungary,Europe,Eastern Europe,93028,1920,Magyarország,Republic,Budapest,19.0416,47.498
+ISL,Iceland,Europe,Nordic Countries,103000,1944,Island,Republic,Reykjavik,-21.8954,64.1355
+IND,India,Asia,Southern and Central Asia,3287263,1947,Bharat,Republic,New Delhi,77.2167,28.6667
+IDN,Indonesia,Asia,Southeast Asia,1904569,1945,Republik Indonesia,Republic,Jakarta,106.845,-6.2146
+IRL,Ireland,Europe,Western Europe,70273,1922,Eire,Republic,Dublin,-6.2489,53.3331
+IRQ,Iraq,Asia,Middle East,438317,1932,Al-Iraq,Republic,Baghdad,44.4006,33.3152
+IRN,Iran,Asia,Middle East,1648195,1925,Iran,Islamic Republic,Tehran,51.3889,35.713
+ISV,US Virgin Islands,North America,Caribbean,473,null,US Virgin Islands,Dependent Territory of the US,Charlotte Amalie,-64.9315,18.3406
+KAZ,Kazakhstan,Asia,Southern and Central Asia,2724900,1991,Qazaqstan,Republic,Astana,71.433,51.167
+KEN,Kenya,Africa,Eastern Africa,580367,1963,Kenya,Republic,Nairobi,36.8219,-1.2921
+KIR,Kiribati,Oceania,Micronesia,811,1979,Kiribati,Republic,Tarawa,-157.398,1.328
+KWT,Kuwait,Asia,Middle East,17818,1961,Al-Kuwait,Emirate,Kuwait City,47.9774,29.3697
+KGZ,Kyrgyzstan,Asia,Southern and Central Asia,199951,1991,Kyrgyz Respublikasy,Republic,Bishkek,74.6471,42.8378
+LAO,Laos,Asia,Southeast Asia,236800,1953,Prathet Lao,People's Democratic Republic,Vientiane,102.633,17.9754
+LVA,Latvia,Europe,Baltic States,64559,1918,Latvija,Republic,Riga,24.1059,56.946
+LBN,Lebanon,Asia,Middle East,10452,1943,Lubnan,Republic,Beirut,35.4954,33.8872
+LSO,Lesotho,Africa,Southern Africa,30355,1966,Lesotho,Kingdom,Maseru,28.4811,-29.31
+LBR,Liberia,Africa,Western Africa,111369,1847,Liberia,Republic,Monrovia,-10.7959,6.2903
+LIB,Libya,Africa,Northern Africa,1759540,1951,Libya,Republic,Tripoli,13.1875,32.8752
+LIE,Liechtenstein,Europe,Western Europe,160,1806,Liechtenstein,Principality,Liechtenstein,9.5213,47.141
+LTU,Lithuania,Europe,Baltic States,65300,1918,Lietuva,Republic,Vilnius,25.2797,54.6872
+LUX,Luxembourg,Europe,Western Europe,2586,1815,Lëtzebuerg,Constitutional Monarchy, Luxembourg City,6.1304,49.6117
+MKD,Macedonia,Europe,Southern Europe,25713,1991,Makedonija,Republic,Skopje,21.4333,41.995
+MDG,Madagascar,Africa,Eastern Africa,587041,1960,Madagasikara,Republic,Antananarivo,47.523,-18.8792
+MAS,Mayotte,Africa,Eastern Africa,376,null,Mayotte,Overseas Department of France,Dzaoudzi,45.2381,-12.8314
+MEX,Mexico,North America,Central America,1964375,1810,Mexico,Republic,Mexico City,-99.1332,19.4326
+MHL,Marshall Islands,Oceania,Micronesia,181,1986,Marshall Islands,Republic,Majuro,171.188,7.098
+MRT,Mauritania,Africa,Western Africa,1030700,1960,Mauritania,Islamic Republic,Nouakchott,-15.978,18.079
+MUS,Mauritius,Africa,Eastern Africa,2040,1968,Moris,Republic,Port Louis,63.5444,-20.3484
+MYS,Malaysia,Asia,Southeast Asia,329847,1957,Malaysia,Constitutional Monarchy,Kuala Lumpur,101.6869,3.139
+MDV,Maldives,Asia,Southern and Central Asia,298,1965,Maldives,Republic,Malé,73.5089,3.2028
+MLI,Mali,Africa,Western Africa,1240192,1960,Mali,Republic,Bamako,-7.9811,12.639
+MLT,Malta,Europe,Southern Europe,316,1964,Malta,Republic,Valletta,14.5147,35.8997
+MAR,Morocco,Africa,Northern Africa,446550,1956,Maroc,Kingdom,Rabat,-6.8498,34.0209
+MOZ,Mozambique,Africa,Eastern Africa,801590,1975,Mocambique,Republic,Maputo,32.5704,-25.9655
+MNG,Mongolia,Asia,Southern and Central Asia,1564116,1921,Mongol Uls,Republic,Ulaanbaatar,106.922,47.919
+MRT,Mauritania,Africa,Western Africa,1030700,1960,Mauritania,Islamic Republic,Nouakchott,-15.978,18.079
+MSR,Montserrat,North America,Caribbean,102,null,Montserrat,Dependent Territory of the UK,Brades,-62.2081,16.789
+MTQ,Martinique,North America,Caribbean,1128,null,Martinique,Overseas Department of France,Fort-de-France,-61.0246,14.6278
+MEX,Mexico,North America,Central America,1964375,1810,Mexico,Republic,Mexico City,-99.1332,19.4326
+NCL,New Caledonia,Oceania,Melanesia,18575,1958,Nouvelle-Calédonie,Overseas Territory of France,Nouméa,165.207,-22.275
+NCL,New Caledonia,Oceania,Melanesia,18575,1958,New Caledonia,Overseas Territory of France,Nouméa,165.207,-22.275
+NGA,Nigeria,Africa,Western Africa,923768,1960,Nigeria,Republic,Abuja,7.49508,9.082
+NIU,Niue,Oceania,Polynesia,260,1974,Niue,Self-Governing in Free Association with NZ,Niue,-169.855,-19.057
+NPL,Nepal,Asia,Southern and Central Asia,147516,1951,Nepal,Constitutional Monarchy,Kathmandu,85.324,27.7172
+NRU,Nauru,Oceania,Micronesia,21,1968,Nauru,Republic,Yaren,166.917,-0.522
+NZL,New Zealand,Oceania,Australia and New Zealand,268838,1907,New Zealand,Constitutional Monarchy,Wellington,174.783,-41.288
+NIC,Nicaragua,North America,Central America,130375,1821,Nicaragua,Republic,Managua,-86.2511,12.6358
+NER,Niger,Africa,Western Africa,1267000,1960,Niger,Republic,Niamey,2.1127,13.5128
+NGA,Nigeria,Africa,Western Africa,923768,1960,Nigeria,Republic,Abuja,7.49508,9.082
+NPL,Nepal,Asia,Southern and Central Asia,147516,1951,Nepal,Constitutional Monarchy,Kathmandu,85.324,27.7172
+NRU,Nauru,Oceania,Micronesia,21,1968,Nauru,Republic,Yaren,166.917,-0.522
+NZL,New Zealand,Oceania,Australia and New Zealand,268838,1907,New Zealand,Constitutional Monarchy,Wellington,174.783,-41.288
+NIC,Nicaragua,North America,Central America,130375,1821,Nicaragua,Republic,Managua,-86.2511,12.6358
+NER,Niger,Africa,Western Africa,1267000,1960,Niger,Republic,Niamey,2.1127,13.5128
