@@ -33,15 +33,15 @@ Comparison operators are used in conditions that compare one expression with ano
 
 - Equal to (=)
 
-- Not equal to (<> or !=)
+- Not equal to ("<>" or "!=")
 
-- Greater than (>)
+- Greater than (">")
 
-- Less than (<)
+- Less than ("<")
 
-- Greater than or equal to (>=)
+- Greater than or equal to (">=")
 
-- Less than or equal to (<=)
+- Less than or equal to ("<=")
 
 ## Logical Operators
 
