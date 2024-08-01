@@ -355,12 +355,22 @@ Here are some types of SQL expressions:
 
 **2. Comparison Expressions**
 
-    - Comparison expressions result in a value of TRUE, FALSE, or UNKNOWN. 
-    - They involve comparison operators like =, <>, >, <, >=, <=. For example, Salary > 50000 is a comparison expression.
+    - Comparison expressions result in a value of `TRUE`, `FALSE`, or `UNKNOWN`. 
+    - They involve comparison operators like:
+    
+        ```bash
+        =, <>, >, <, >=, <=. 
+        ```
+
+    - For example, a comparison expression:
+
+        ```bash
+        Salary > 50000 
+        ```
 
 **3. Logical Expressions**
 
-    - Logical expressions combine boolean values (TRUE, FALSE, and UNKNOWN) and yield a result of the same type. 
+    - Logical expressions combine boolean values (`TRUE`, `FALSE`, and `UNKNOWN`) and yield a result of the same type. 
     - They involve logical operators like AND, OR, and NOT. 
     - For example, (Salary > 50000 AND Department = 'Sales') is a logical expression.
 

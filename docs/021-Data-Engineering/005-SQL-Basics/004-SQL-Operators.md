@@ -31,17 +31,41 @@ For more information, please see [Arithmetic Operations.](./011-Arithmetic-Opera
 
 Comparison operators are used in conditions that compare one expression with another. The result of a comparison can be TRUE, FALSE, or UNKNOWN.
 
-- Equal to (=)
+- Equal to 
 
-- Not equal to ("<>" or "!=")
+    ```bash 
+    =
+    ```
 
-- Greater than (">")
+- Not equal to 
 
-- Less than ("<")
+    ```bash 
+    <>  or  !=
+    ```
 
-- Greater than or equal to (">=")
+- Greater than
 
-- Less than or equal to ("<=")
+    ```bash 
+    >
+    ```
+
+- Less than
+
+    ```bash 
+    <
+    ```
+
+- Greater than or equal to 
+
+    ```bash 
+    >=
+    ```
+    
+- Less than or equal to 
+
+    ```bash 
+    <=
+    ```
 
 ## Logical Operators
 
