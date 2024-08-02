@@ -305,3 +305,35 @@ The other way to write is by inserting manually. You can insert new columns as w
 INSERT INTO new_table (column_a, column_b) 
 VALUES ("values_a", "values_b",)
 ```
+
+## `DROP TABLE` 
+
+Note before dropping any table:
+
+- Ensure you have a recent backup of the table data.
+- Verify if the table is referenced by other tables (foreign key constraints). 
+- Verify if the table is used in views, stored procedures, or functions.
+- Confirm you have the necessary permissions to drop the table.
+- Double-check the table to ensure you are dropping the correct one.
+- Inform team members or stakeholders about the table drop.
+- Document the reason for dropping the table and the steps to be taken.
+- If possible, test the drop command in a development or staging environment.
+
+
+To drop tables and its data, use the command below. 
+
+```sql
+DROP TABLE table_name; 
+```
+
+Note that it will return an error if the table doesn't exist.
+
+```bash
+table "table_name" does not exist 
+```
+
+Use this command instead to drop table if it already exists.
+
+```sql
+DROP TABLE IF EXISTS table_name; 
+```
