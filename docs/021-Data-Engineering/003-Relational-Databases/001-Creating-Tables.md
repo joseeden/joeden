@@ -176,6 +176,8 @@ This will help in organizing the data more efficiently and reduce redundancy by 
 ## Creating New Tables
 
 The `CREATE TABLE` command helps define new tables with appropriate columns and data types.
+For more information, please see [Specifying Types upon Table Creation.](./002-Data-Consistency.md#specifying-types)
+
 
 ```sql
 CREATE TABLE table_name (
