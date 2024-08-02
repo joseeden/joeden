@@ -96,3 +96,151 @@ Output:
 | indep_year        | integer          |
 | fert_rate         | real             |
 | women_parli_perc  | real             |
+
+
+
+## Redundancies
+
+In the `economies.csv` file, you might notice repeated information about economic data and their related attributes.
+
+- Economic data and related attributes are repeated in the same table.
+- Indicates redundancy due to mixing different types of data.
+
+For instance, economic metrics such as GDP per capita and inflation rate are stored together, leading to potential redundancy. This can become evident when sorting or querying the data, showing repeated entries for the same country across different years.
+
+We can see this when we sort by year. The output below shows economic data for a specific year but there are many more records in this table.
+
+```sql
+SELECT * FROM economies
+ORDER BY year;
+```
+
+| Econ ID | Code | Year | Income Group        | GDP per Capita | Gross Savings | Inflation Rate | Total Investment | Unemployment Rate | Exports | Imports |
+|---------|------|------|---------------------|-----------------|---------------|----------------|------------------|-------------------|---------|---------|
+| 191     | LBN  | 2010 | Upper middle income | 8,755.85        | 3.847         | 3.983          | NULL             | NULL              | -18.267 | -1.825  |
+| 97      | ECU  | 2010 | Upper middle income | 4,633.25        | 25.757        | 3.552          | 28.037           | 5.019             | 1.109   | 14.283  |
+| 193     | LBR  | 2010 | Low income          | 341.985         | NULL          | 7.291          | NULL             | NULL              | -0.398  | 10.189  |
+| 5       | ALB  | 2010 | Upper middle income | 4,098.13        | 20.011        | 3.605          | 31.305           | 14                | 10.645  | -8.013  |
+| 195     | LBY  | 2010 | Upper middle income | 12,149.59       | NULL          | 2.458          | 39.086           | NULL              | -0.838  | 9.906   |
+| 99      | EGY  | 2010 | Lower middle income | 2,921.76        | 19.421        | 11.69          | 21.298           | 9.21              | 3.628   | 11.663  |
+| 197     | LCA  | 2010 | Upper middle income | 7,491.66        | 11.734        | 3.25           | 28.06            | NULL              | 5.423   | 18.427  |
+| 51      | BTN  | 2010 | Lower middle income | 1,998.75        | 44.674        | 5.726          | 66.906           | 3.3               | -0.579  | 25.991  |
+| 199     | LKA  | 2010 | Lower middle income | 2,779.74        | 28.457        | 6.218          | 30.352           | 5                 | 13.791  | 16.52   |
+| 101     | ERI  | 2010 | Low income          | 395.645         | -9.257        | 11.228         | 9.299            | NULL              | 18.085  | 11.854  |
+
+
+
+## Entity Types
+
+The `economies` table currently stores various types of economic information in a single table, which may lead to some redundancy. For example, it includes `gdp_percapita`, `gross_savings`, and other economic indicators all mixed in one table.
+
+[](/img/docs/db-economies-schemaaa-drawio.png)
+
+Currently, the database holds different types of data (economic indicators, trade data) in the same table. To reduce redundancy, we can separate these into different tables, ensuring each table focuses on a specific aspect of economic data.
+
+A better approach is to divide the data into separate tables: 
+
+- economic_summary
+
+    | **Column Name**    | **Data Type**       |
+    |---------------------|---------------------|
+    | `econ_id`           | integer             |
+    | `code`              | character varying   |
+    | `year`              | integer             |
+    | `income_group`      | character varying   |
+
+- economic_indicators
+
+    | **Column Name**    | **Data Type**       |
+    |---------------------|---------------------|
+    | `econ_id`           | integer             |
+    | `gdp_percapita`     | real                |
+    | `gross_savings`     | real                |
+    | `inflation_rate`    | real                |
+    | `total_investment`  | real                |
+    | `unemployment_rate` | real                |
+
+- trade_data
+
+    | **Column Name**    | **Data Type**       |
+    |---------------------|---------------------|
+    | `econ_id`           | integer             |
+    | `exports`           | real                |
+    | `imports`           | real                |
+
+This will help in organizing the data more efficiently and reduce redundancy by storing each type of information in its respective table. The new database model could look like this:
+
+[](/img/docs/db-economies-schemaaa-drawio-divided-into-3.png)
+
+
+## Creating New Tables
+
+The `CREATE TABLE` command helps define new tables with appropriate columns and data types.
+
+```sql
+CREATE TABLE table_name (
+ column_a data_type,
+ column_b data_type,
+ column_c data_type
+);
+```
+
+To create the three new databases:
+
+```sql
+CREATE TABLE economic_summary (
+	econ_id integer,
+	code character varying,
+	year integer,
+	income_group character varying
+);
+
+
+SELECT * FROM economic_summary;
+```
+
+Output:
+
+| econ_id |	code | year |income_group |
+|---|---|---|---|
+|   |   |   |   |
+
+
+```sql
+CREATE TABLE economic_indicators (
+	econ_id integer,
+	gdp_percapita real,
+	gross_savings real,
+	inflation_rate real,
+	total_investment real,
+	unemployment_rate real
+);
+
+SELECT * FROM economic_indicators;
+```
+
+Output:
+
+| econ_id |	gdp_percapita | gross_savings | inflation_rate | total_investment | unemployment_rate |
+|---|---|---|---|---|---|
+|   |   |   |   |   |   |
+
+
+
+```sql
+
+CREATE TABLE trade_data (
+	econ_id integer,
+	exports real,
+	imports real
+);
+
+SELECT * FROM trade_data;
+```
+
+
+Output:
+
+| econ_id |	exports | imports |
+|---|---|---|
+|   |   |   | 
