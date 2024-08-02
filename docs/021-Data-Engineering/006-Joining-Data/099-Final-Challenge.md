@@ -44,6 +44,11 @@ Note:
 
 ## Solution 
 
+
+<details>
+    <summary>See solution</summary>
+
+
 ```sql
 SELECT 
     name, 
@@ -65,6 +70,9 @@ AND metroarea_pop IS NOT NULL
 ORDER BY city_perc DESC
 LIMIT 10;
 ```
+
+</details>
+
 
 
 Output (some records might not shown):
