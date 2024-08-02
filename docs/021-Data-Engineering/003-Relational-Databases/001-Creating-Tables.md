@@ -1,5 +1,5 @@
 ---
-title: "Introduction"
+title: "Creating Tables"
 description: "Relational Database"
 tags: [Data Engineering, Databases, SQL]
 sidebar_position: 1
