@@ -44,7 +44,7 @@ We can begin with a single table and expand it by adding rules like constraints 
 
 An example of database is PostgreSQL. To explore a PostgreSQL database, we need to use SQL queries. The `information_schema` database has lots of useful details about our database’s setup and works in systems like MySQL and SQL Server.
 
-## Looking at Table Columns
+## Table Columns
 
 To check out table columns, use the `information_schema` database. The "columns" table shows you a table’s column details once you know its name, like how the "products" table might hold columns for product name and price.
 
@@ -244,3 +244,64 @@ Output:
 | econ_id |	exports | imports |
 |---|---|---|
 |   |   |   | 
+
+## Column operations
+
+- To add a new column to an existing table:
+    
+    ```sql
+    ALTER TABLE table_name
+    ADD COLUMN column_name data_type; 
+    ```
+
+- To rename columns:
+
+    ```sql
+    ALTER TABLE table_name
+    RENAME COLUMN old_name TO new_name; 
+    ```
+
+- To delete columns:
+
+    ```sql
+    ALTER TABLE table_name
+    DROP COLUMN column_name; 
+    ```
+
+## `INSERT INTO`
+
+After changing the database structure, the next step is to migrate the records from the old table to the new table. To do this, we use the `INSERT_INTO` command, followed by the target table. We then use the `SELECT DISTINCT` command followed by the columns or attributes that we want to migrate over.
+
+```sql
+INSERT INTO new_table 
+SELECT DISTINCT 
+    column_1_to_be_moved,
+    column_2_to_be_moved,
+FROM old_table 
+```
+
+It should return an output like the one below. The "1892" specify the number of records inserted to the new table.
+
+```bash
+Output: INSERT 0 1892 
+```
+
+Note that if we don't use `DISTINCT`, duplicate records will be migrated as well.
+
+```sql
+INSERT INTO new_table 
+SELECT 
+    column_1_to_be_moved,
+    column_2_to_be_moved,
+FROM old_table 
+```
+```bash
+Output: INSERT 0 2105 
+```
+
+The other way to write is by inserting manually. You can insert new columns as well as new values for those columns.
+
+```sql
+INSERT INTO new_table (column_a, column_b) 
+VALUES ("values_a", "values_b",)
+```
