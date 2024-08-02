@@ -21,11 +21,11 @@ Here is the schema for the sample **leaderships** table:
 
 To download the actual files, you can get them from my [Github repository](https://github.com/joseeden/joeden/tree/master/assets/datasets).
 
-- [states.csv](@site/assets/datasets/world-leaders-database/states.csv)
-- [presidents.csv](@site/assets/datasets/world-leaders-database/presidents.csv)
-- [prime_ministers.csv](@site/assets/datasets/world-leaders-database/prime_ministers.csv)
-- [prime_minister_terms.csv](@site/assets/datasets/world-leaders-database/prime_minister_terms.csv)
-- [monarchs.csv](@site/assets/datasets/world-leaders-database/monarchs.csv)
+- [states.csv](@site/assets/datasets/world-database/states.csv)
+- [presidents.csv](@site/assets/datasets/world-database/presidents.csv)
+- [prime_ministers.csv](@site/assets/datasets/world-database/prime_ministers.csv)
+- [prime_minister_terms.csv](@site/assets/datasets/world-database/prime_minister_terms.csv)
+- [monarchs.csv](@site/assets/datasets/world-database/monarchs.csv)
 
 
 
@@ -242,9 +242,9 @@ The **World Economies** database contain the tables below. To limit the number o
 
 To download the actual files, you can get them from my [Github repository](https://github.com/joseeden/joeden/tree/master/assets/datasets).
 
-- [countries.csv](@site/assets/datasets/world-economies-database/countries.csv)
-- [cities.csv](@site/assets/datasets/world-economies-database/cities.csv)
-- [economies.csv](@site/assets/datasets/world-economies-database/economies.csv)
+- [countries.csv](@site/assets/datasets/world-database/countries.csv)
+- [cities.csv](@site/assets/datasets/world-database/cities.csv)
+- [economies.csv](@site/assets/datasets/world-database/economies.csv)
 
 
 ### Left Join 
