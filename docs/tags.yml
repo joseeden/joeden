@@ -309,11 +309,7 @@ Big Data:
 Apache Flink:
   label: 'Apache Flink'
   permalink: '/Apache Flink'
-  description: 'Docs related to Apache Flink'  
-MongoDB:
-  label: 'MongoDB'
-  permalink: '/MongoDB'
-  description: 'Docs related to MongoDB'      
+  description: 'Docs related to Apache Flink'      
 Artificial Intelligence:
   label: 'Artificial Intelligence'
   permalink: '/Artificial Intelligence'
@@ -337,8 +333,16 @@ Prompt Engineering:
 SQL:
   label: 'SQL'
   permalink: '/SQL'
-  description: 'Docs related to SQL'     
+  description: 'Docs related to SQL'    
+PostgreSQL:
+  label: 'PostgreSQL'
+  permalink: '/PostgreSQL'
+  description: 'Docs related to PostgreSQL'      
 NoSQL:
   label: 'NoSQL'
   permalink: '/NoSQL'
   description: 'Docs related to NoSQL'     
+MongoDB:
+  label: 'MongoDB'
+  permalink: '/MongoDB'
+  description: 'Docs related to MongoDB' 
