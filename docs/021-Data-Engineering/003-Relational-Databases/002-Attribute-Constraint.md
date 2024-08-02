@@ -1,5 +1,5 @@
 ---
-title: "Attribute Constraints"
+title: "Attribute Constraint"
 description: "Relational Database"
 tags: [Data Engineering, Databases, SQL]
 sidebar_position: 2
