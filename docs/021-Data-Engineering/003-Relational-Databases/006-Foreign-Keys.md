@@ -253,6 +253,8 @@ This approach allows you to enforce referential integrity across your database, 
 
 Going back to the previous examples, we currently have two tables: **manufacturers** and **cars**. We'll create a third table called **drivers** with three columns: `license_no`, `name`, and `car_model'.
 
+[](/img/docs/sample-databases-cars-manufacturrers-drivers.png)
+
 To create the third table:
 
 ```sql
@@ -305,3 +307,25 @@ SELECT * FROM drivers;
 
 
 ![](/img/docs/foreign-key-violation-because-car-model-doesnt-exist.png)
+
+
+### `JOIN` tables linked by a foreign key
+
+While foreign keys and primary keys are not strictly necessary for join queries, they greatly help by telling you what to expect. For instance, you can be sure that records referenced from table A will always be present in table B – so a join from table A will always find something in table B. If not, the foreign key constraint would be violated.
+
+```sql
+SELECT manufacturers.country, cars.manufacturer_name, cars.model
+FROM cars
+INNER JOIN manufacturers
+ON cars.manufacturer_name = manufacturers.name;
+```
+
+| Country | Manufacturer Name | Model  |
+|---------|-------------------|--------|
+| USA     | Ford              | Mustang|
+| Germany | Volkswagen        | Golf   |
+| USA     | General Motors    | Camaro |
+| Japan   | Toyota            | Corolla|
+| Japan   | Nissan            | Altima |
+| Germany | Volkswagen        | Passat |
+
