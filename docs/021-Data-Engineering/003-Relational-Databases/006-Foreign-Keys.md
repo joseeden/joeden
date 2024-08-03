@@ -8,7 +8,7 @@ last_update:
 ---
 
 
-## Sample Table A
+## Sample Tables A
 
 This is our current database model. We have the following entity types with primary keys:
 
@@ -112,11 +112,15 @@ CREATE TABLE enrollments (
 );
 ```
 
-## Sample Table B
+## Sample Tables B
 
-A second set of tables are also use in some of the example.
+A second set of tables are also use in some of the examples.
+
+<div class='img-center'>
 
 [](/img/docs/sample-databases-cars-manufacturrers-drivers.png)
+
+</div>
 
 
 ## Foreign Keys
@@ -160,7 +164,7 @@ CREATE TABLE table_b (
 
 ### Example: Foreign Keys
 
-Let's create two tables from **Sample Table B** : manufacturers and cars. 
+Let's create two tables from **Sample Tables B** : manufacturers and cars. 
 
 The **manufacturers** table will contain two columns, the `name` column being the primary key for this table.
 
@@ -334,4 +338,9 @@ ON cars.manufacturer_name = manufacturers.name;
 | Japan   | Toyota            | Corolla|
 | Japan   | Nissan            | Altima |
 | Germany | Volkswagen        | Passat |
+
+
+## More example 
+
+For this one, we'll use the set of tables from  **Sample Tables A**.
 
