@@ -10,53 +10,40 @@ last_update:
 
 ## Sample Tables A
 
-This is our current database model. We have the following entity types with primary keys:
-
-- **Courses**: This table includes information about the courses offered.
-
-- **Instructors**: This table includes data about instructors who teach courses.
-
-- **Students**: This table lists students enrolled in the institution.
-
-- **Enrollments**: This table tracks which students are enrolled in which courses.
-
-### Schemas 
+These tables will be created in the succeeding sections below.
 
 - `courses` table
 
-    | Column Name   | Data Type    | Constraints           | Description                            |
-    |---------------|--------------|------------------------|----------------------------------------|
-    | `course_id`    | `SERIAL`      | `PRIMARY KEY`          | Unique identifier for the course        |
-    | `course_name`  | `VARCHAR(100)`| `NOT NULL`             | Name of the course                      |
-    | `credits`      | `INTEGER`     | `NOT NULL`             | Number of credits for the course        |
+    | Column Name   | Data Type    | Constraints           | 
+    |---------------|--------------|-----------------------|
+    | `course_id`    | `SERIAL`      | `PRIMARY KEY`       | 
+    | `course_name`  | `VARCHAR(100)`| `NOT NULL`          |
+    | `credits`      | `INTEGER`     | `NOT NULL`          |
 
 - `instructors` table
 
-    | Column Name    | Data Type    | Constraints           | Description                            |
-    |----------------|--------------|------------------------|----------------------------------------|
-    | `instructor_id` | `SERIAL`      | `PRIMARY KEY`          | Unique identifier for the instructor   |
-    | `instructor_name`| `VARCHAR(100)`| `NOT NULL`            | Name of the instructor                 |
+    | Column Name    | Data Type    | Constraints           |
+    |----------------|--------------|-----------------------|
+    | `instructor_id` | `SERIAL`      | `PRIMARY KEY`       |
+    | `instructor_name`| `VARCHAR(100)`| `NOT NULL`         |
 
 - `students` table
 
-    | Column Name    | Data Type    | Constraints            | Description                            |
-    |----------------|--------------|------------------------|----------------------------------------|
-    | `student_id`    | `SERIAL`      | `PRIMARY KEY`          | Unique identifier for the student      |
-    | `student_name`  | `VARCHAR(100)`| `NOT NULL`             | Name of the student                    |
-    | `email`         | `VARCHAR(100)`| `UNIQUE`, `NOT NULL`   | Email address of the student           |
+    | Column Name    | Data Type    | Constraints            |
+    |----------------|--------------|------------------------|
+    | `student_id`    | `SERIAL`      | `PRIMARY KEY`        |
+    | `student_name`  | `VARCHAR(100)`| `NOT NULL`           |
+    | `email`         | `VARCHAR(100)`| `UNIQUE`, `NOT NULL` |
 
 - `enrollments` table
 
-    | Column Name   | Data Type    | Constraints                            | Description                                |
-    |---------------|--------------|----------------------------------------|--------------------------------------------|
-    | `enrollment_id`| `SERIAL`      | `PRIMARY KEY`                           | Unique identifier for the enrollment       |
-    | `student_id`   | `INTEGER`     | `NOT NULL`, `REFERENCES students(student_id)` | Foreign key referencing the students table |
-    | `course_id`    | `INTEGER`     | `NOT NULL`, `REFERENCES courses(course_id)`  | Foreign key referencing the courses table  |
-    | `enrollment_date` | `DATE`    | `NOT NULL`                              | Date when the student enrolled in the course |
+    | Column Name   | Data Type    | Constraints    |
+    |---------------|--------------|----------------|
+    | `enrollment_id`| `SERIAL`      | `PRIMARY KEY`|
+    | `student_id`   | `INTEGER`     | `NOT NULL`   |
+    | `course_id`    | `INTEGER`     | `NOT NULL`   |
+    | `enrollment_date` | `DATE`    | `NOT NULL`    |
 
-
-
-### The Database Model
 
 Each student can enroll in multiple courses, and each course can have multiple students enrolled in it. This many-to-many relationship is represented in the diagram below with a rhombus, showing the **cardinality**: a student can be enrolled in zero or more courses, and a course can have zero or more students.
 
@@ -66,51 +53,7 @@ Each student can enroll in multiple courses, and each course can have multiple s
 
 </div>
 
-### Creating the Tables 
 
-**Courses** Table
-`course_id` is a surrogate key automatically generated as a serial number.
-
-```sql
-CREATE TABLE courses (
-    course_id SERIAL PRIMARY KEY,
-    course_name VARCHAR(100) NOT NULL,
-    credits INTEGER NOT NULL
-);
-```
-
-
-**Instructors** Table
-`instructor_id` is a surrogate key, ensuring each instructor has a unique identifier.
-
-```sql
-CREATE TABLE instructors (
-    instructor_id SERIAL PRIMARY KEY,
-    instructor_name VARCHAR(100) NOT NULL
-);
-```
-
-
-**Students** Table
-
-```sql
-CREATE TABLE students (
-    student_id SERIAL PRIMARY KEY,
-    student_name VARCHAR(100) NOT NULL,
-    email VARCHAR(100) UNIQUE NOT NULL
-);
-```
-
-**Enrollments** Table
-`enrollment_id` is a surrogate key.
-
-```sql
-CREATE TABLE enrollments (
-    enrollment_id SERIAL PRIMARY KEY,
-    student_id INTEGER REFERENCES students(student_id),
-    course_id INTEGER REFERENCES courses(course_id)
-);
-```
 
 ## Sample Tables B
 
@@ -121,6 +64,9 @@ A second set of tables are also use in some of the examples.
 [](/img/docs/sample-databases-cars-manufacturrers-drivers.png)
 
 </div>
+
+These tables will be created in the succeeding sections below.
+
 
 
 ## Foreign Keys
@@ -254,7 +200,7 @@ Adding foreign keys to existing tables follows the same syntax as adding primary
 
 ```sql
 ALTER TABLE table_b
-ADD CONSTRAINT fk_b FOREIGN KEY (column_b3) REFERENCES table_a (column_a1);
+ADD CONSTRAINT  fkey_b FOREIGN KEY (column_b3) REFERENCES table_a (column_a1);
 ```
 
 This approach allows you to enforce referential integrity across your database, ensuring that relationships between tables are accurately maintained.
@@ -342,5 +288,173 @@ ON cars.manufacturer_name = manufacturers.name;
 
 ## More example 
 
-For this one, we'll use the set of tables from  **Sample Tables A**.
+For this one, we'll use the set of tables from  **Sample Tables A**. 
+Start with creating the individual tables:
 
+- **Courses** Table
+    `course_id` is a surrogate key automatically generated as a serial number.
+
+    ```sql
+    CREATE TABLE courses (
+        course_id INT PRIMARY KEY,
+        course_name VARCHAR(100),
+        credits INT NOT NULL
+    );
+
+    SELECT * FROM courses;
+    ```
+
+    ![](/img/docs/second-example-for-foreign-keysss-table-courses.png)
+
+
+- **Instructors** Table
+    `instructor_id` is a surrogate key, ensuring each instructor has a unique identifier.
+
+    ```sql
+    CREATE TABLE instructors (
+        instructor_id INT PRIMARY KEY,
+        instructor_name VARCHAR(100) NOT NULL
+    );
+
+    SELECT * FROM instructors;
+    ```
+
+    ![](/img/docs/second-example-for-foreign-keysss-table-instructors.png)
+
+
+- **Students** Table
+
+    ```sql
+    CREATE TABLE students (
+        student_id INT PRIMARY KEY,
+        student_name VARCHAR(100),
+        email VARCHAR(100)
+    );
+    
+    SELECT * FROM students;
+    ```
+
+    ![](/img/docs/second-example-for-foreign-keysss-table-students.png)
+
+- **Enrollments** Table
+
+    ```sql
+    CREATE TABLE enrollments (
+        enrollment_id INT PRIMARY KEY,
+        student_id INT,
+        course_id INT,
+        enrollment_date DATE,
+    );
+    
+    SELECT * FROM enrollments;
+    ```
+
+    ![](/img/docs/second-example-for-foreign-keysss-table-enrollments.png)
+
+Add the sample records:
+
+```sql
+-- Insert records into Courses table
+INSERT INTO courses (course_id, course_name, credits) VALUES
+(101, 'Introduction to SQL', 3),
+(102, 'Data Structures', 4),
+(103, 'Operating Systems', 4),
+(104, 'Database Management', 3),
+(105, 'Computer Networks', 3),
+(106, 'Web Development', 2),
+(107, 'Artificial Intelligence', 3),
+(108, 'Machine Learning', 3);
+```
+
+![](/img/docs/courses-table-sample-records.png)
+
+
+```sql
+-- Insert records into Instructors table
+INSERT INTO instructors (instructor_id, instructor_name) VALUES
+(201, 'Dr. John Smith'),
+(202, 'Dr. Emily Johnson'),
+(203, 'Dr. Sarah Brown'),
+(204, 'Dr. Michael Davis'),
+(205, 'Dr. Linda Wilson'),
+(206, 'Dr. Richard Taylor'),
+(207, 'Dr. Laura Lee'),
+(208, 'Dr. Robert White');
+```
+
+![](/img/docs/instructors-table-sample-records.png)
+
+
+```sql
+-- Insert records into Students table
+INSERT INTO students (student_id, student_name, email) VALUES
+(301, 'Alice Johnson', 'alice.johnson@email.com'),
+(302, 'Bob Smith', 'bob.smith@email.com'),
+(303, 'Charlie Brown', 'charlie.brown@email.com'),
+(304, 'David Williams', 'david.williams@email.com'),
+(305, 'Emma Thomas', 'emma.thomas@email.com'),
+(306, 'Fiona Davis', 'fiona.davis@email.com'),
+(307, 'George Miller', 'george.miller@email.com'),
+(308, 'Hannah Wilson', 'hannah.wilson@email.com');
+```
+
+![](/img/docs/students-table-sample-records.png)
+
+
+```sql
+-- Insert records into Enrollments table
+INSERT INTO enrollments (enrollment_id, student_id, course_id, enrollment_date) VALUES
+(401, 301, 101, '2024-01-15'),
+(402, 302, 102, '2024-01-16'),
+(403, 303, 101, '2024-01-17'),
+(404, 304, 103, '2024-01-18'),
+(405, 305, 102, '2024-01-19'),
+(406, 306, 104, '2024-01-20'),
+(407, 307, 105, '2024-01-21'),
+(408, 308, 106, '2024-01-22'); 
+```
+
+![](/img/docs/enrollments-table-sample-records.png)
+
+After creating the tables and adding the sample records, we can specify the foreign keys. Among our tables, the **enrollments** table has foreign keys:
+
+- `students` - points to the `student_id` key from the **students** table.
+- `courses` - points to the `course_id` key from the **courses** table.
+
+Diagram:
+
+
+Since the tables are already created, we can use the `ALTER` command to specify the foreign keys.
+
+```sql
+ALTER TABLE enrollments
+ADD CONSTRAINT fkey_student FOREIGN KEY (student_id) REFERENCES students(student_id);
+
+ALTER TABLE enrollments
+ADD CONSTRAINT fkey_course FOREIGN KEY (course_id) REFERENCES courses(course_id);
+```
+
+Now let's try to add invalid records on the **enrollments** table. 
+
+- Try inserting an enrollment record where the `student_id` does not exist in the **students** table.
+
+    ```sql
+    INSERT INTO enrollments (enrollment_id, student_id, course_id, enrollment_date) 
+    VALUES
+        (409, 999, 101, '2024-02-01');  -- Assuming 999 is not a valid student_id
+    ```
+
+    ![](/img/docs/insert-value-error-enrollments.png)
+
+- Try inserting an enrollment record where the `course_id` does not exist in the **courses** table.
+
+    ```sql
+    INSERT INTO enrollments (enrollment_id, student_id, course_id, enrollment_date) 
+    VALUES
+        (410, 301, 999, '2024-02-01');  -- Assuming 999 is not a valid course_id
+    ```
+
+    ![](/img/docs/insert-value-error-enrollments-2.png)
+
+
+By trying to insert invalid data, we are able to confirm that the foreign key constraints are correctly set up and that they effectively enforce data integrity between related tables.
