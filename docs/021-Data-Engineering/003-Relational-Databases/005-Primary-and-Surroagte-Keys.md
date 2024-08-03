@@ -1,5 +1,5 @@
 ---
-title: "Primary and Surrogate Keys"
+title: "Primary and Surroagte Keys"
 description: "Relational Database"
 tags: [Data Engineering, Databases, SQL]
 sidebar_position: 5
