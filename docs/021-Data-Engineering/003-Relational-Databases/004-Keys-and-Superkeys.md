@@ -180,7 +180,8 @@ The steps are below:
     |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|
     | 273   | 273   | 273   | 273   | 273   | 273   | 273   | 273   | 273   | 273   |   
 
-
+    These combinations are **NOT** superkeys
+    
 6. Check distinct combinations of single columns.
 
     ```sql
