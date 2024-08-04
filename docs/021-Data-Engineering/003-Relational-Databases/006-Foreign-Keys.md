@@ -54,7 +54,7 @@ To implement the relationships between the tables, we can use foreign keys. Fore
 
     - Foreign keys are not actual keys, it can have duplicates and null values, unlike primary keys.
 
-### Specifying Foreign Keys for New Tables
+## Specifying Foreign Keys for New Tables
 
 When creating a new table, you can specify a foreign key similarly to a primary key. 
 We can create the first table and specify the first column as the primary key.
@@ -76,7 +76,7 @@ CREATE TABLE table_b (
 )
 ```
 
-### Example: Foreign Keys
+## Example: Foreign Keys
 
 Let's create two tables from **Sample Tables B** : manufacturers and cars. 
 
@@ -162,7 +162,7 @@ SELECT * FROM cars;
 
 
 
-### Specifying Foreign Keys for Existing Tables
+## Specifying Foreign Keys for Existing Tables
 
 Adding foreign keys to existing tables follows the same syntax as adding primary keys and unique constraints:
 
@@ -173,7 +173,7 @@ ADD CONSTRAINT  fkey_b FOREIGN KEY (column_b3) REFERENCES table_a (column_a1);
 
 This approach allows you to enforce referential integrity across your database, ensuring that relationships between tables are accurately maintained.
 
-### Example: Foreign Keys on Existing Tables
+## Example: Foreign Keys on Existing Tables
 
 Going back to the previous examples, we currently have two tables: **manufacturers** and **cars**. We'll create a third table called **drivers** with three columns: `license_no`, `name`, and `car_model'.
 
@@ -233,7 +233,7 @@ SELECT * FROM drivers;
 ![](/img/docs/foreign-key-violation-because-car-model-doesnt-exist.png)
 
 
-### `JOIN` tables linked by a foreign key
+## `JOIN` tables linked by a foreign key
 
 While foreign keys and primary keys are not strictly necessary for join queries, they greatly help by telling you what to expect. For instance, you can be sure that records referenced from table A will always be present in table B – so a join from table A will always find something in table B. If not, the foreign key constraint would be violated.
 
