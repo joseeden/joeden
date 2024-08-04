@@ -65,7 +65,7 @@ WHERE role LIKE '%Data%'
 
 Databases consist of multiple related tables. The schema defines relationships between these tables.
 
-For more information, please see [Database Fundamentals.](../005-SQL-Basics/001-Schema.md)
+For more information, please see [Database Fundamentals.](../003-SQL-Basics/001-Schema.md)
 
 
 ### SQL Implementations
