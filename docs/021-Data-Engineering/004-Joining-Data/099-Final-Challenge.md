@@ -18,12 +18,12 @@ This is the final challenge in the **Joining Data in SQL** course in Datacamp.
 
 Below are the tables used for this challenge. 
 
-- [populations.csv](@site/assets/datasets/world-database/populations.csv)
-- [currencies.csv](@site/assets/datasets/world-database/currencies.csv)
-- [cities.csv](@site/assets/datasets/world-database/cities.csv)
-- [countries.csv](@site/assets/datasets/world-database/countries.csv)
-- [languages.csv](@site/assets/datasets/world-database/languages.csv)
-- [economies.csv](@site/assets/datasets/world-database/economies.csv)
+- [populations.csv](@site/assets/datasets/datacamp-world-database/populations.csv)
+- [currencies.csv](@site/assets/datasets/datacamp-world-database/currencies.csv)
+- [cities.csv](@site/assets/datasets/datacamp-world-database/cities.csv)
+- [countries.csv](@site/assets/datasets/datacamp-world-database/countries.csv)
+- [languages.csv](@site/assets/datasets/datacamp-world-database/languages.csv)
+- [economies.csv](@site/assets/datasets/datacamp-world-database/economies.csv)
 
 ## Instructions 
 

@@ -57,7 +57,7 @@ There's a very basic way of finding out what qualifies for a key in an existing,
 
 We'll use the **languages** table. The dataset can be downloaded from my [Github repository](https://github.com/joseeden/joeden/tree/master/assets/datasets). 
 
-- [languages.csv](@site/assets/datasets/world-database/languages.csv)
+- [languages.csv](@site/assets/datasets/datacamp-world-database/languages.csv)
 
 A preview of the table:
 

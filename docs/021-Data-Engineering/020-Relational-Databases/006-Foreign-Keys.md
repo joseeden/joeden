@@ -54,7 +54,7 @@ To implement the relationships between the tables, we can use foreign keys. Fore
 
     - Foreign keys are not actual keys, it can have duplicates and null values, unlike primary keys.
 
-### Specifying Foreign Keys for New Tables
+### Foreign Keys in New Tables
 
 When creating a new table, you can specify a foreign key similarly to a primary key. 
 We can create the first table and specify the first column as the primary key.
@@ -162,7 +162,7 @@ SELECT * FROM cars;
 
 
 
-### Specifying Foreign Keys for Existing Tables
+### Foreign Keys in Existing Tables
 
 Adding foreign keys to existing tables follows the same syntax as adding primary keys and unique constraints:
 
@@ -173,7 +173,7 @@ ADD CONSTRAINT  fkey_b FOREIGN KEY (column_b3) REFERENCES table_a (column_a1);
 
 This approach allows you to enforce referential integrity across your database, ensuring that relationships between tables are accurately maintained.
 
-### Example: Foreign Keys on Existing Tables
+### Example: Adding Foreign Keys
 
 Going back to the previous examples, we currently have two tables: **manufacturers** and **cars**. We'll create a third table called **drivers** with three columns: `license_no`, `name`, and `car_model'.
 
