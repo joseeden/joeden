@@ -10,40 +10,13 @@ last_update:
 
 ## Sample Tables A
 
-These tables will be created in the succeeding sections below.
+This is the first set of tables that will be used in the examples in this guide. These tables will be created in the succeeding sections below.
 
-- `courses` table
+<div class='img-center'>
 
-    | Column Name   | Data Type    | Constraints           | 
-    |---------------|--------------|-----------------------|
-    | `course_id`    | `SERIAL`      | `PRIMARY KEY`       | 
-    | `course_name`  | `VARCHAR(100)`| `NOT NULL`          |
-    | `credits`      | `INTEGER`     | `NOT NULL`          |
+![](/img/docs/sample-databases-courses-students-instructors-enrollments.png)
 
-- `instructors` table
-
-    | Column Name    | Data Type    | Constraints           |
-    |----------------|--------------|-----------------------|
-    | `instructor_id` | `SERIAL`      | `PRIMARY KEY`       |
-    | `instructor_name`| `VARCHAR(100)`| `NOT NULL`         |
-
-- `students` table
-
-    | Column Name    | Data Type    | Constraints            |
-    |----------------|--------------|------------------------|
-    | `student_id`    | `SERIAL`      | `PRIMARY KEY`        |
-    | `student_name`  | `VARCHAR(100)`| `NOT NULL`           |
-    | `email`         | `VARCHAR(100)`| `UNIQUE`, `NOT NULL` |
-
-- `enrollments` table
-
-    | Column Name   | Data Type    | Constraints    |
-    |---------------|--------------|----------------|
-    | `enrollment_id`| `SERIAL`      | `PRIMARY KEY`|
-    | `student_id`   | `INTEGER`     | `NOT NULL`   |
-    | `course_id`    | `INTEGER`     | `NOT NULL`   |
-    | `enrollment_date` | `DATE`    | `NOT NULL`    |
-
+</div>
 
 Each student can enroll in multiple courses, and each course can have multiple students enrolled in it. This many-to-many relationship is represented in the diagram below with a rhombus, showing the **cardinality**: a student can be enrolled in zero or more courses, and a course can have zero or more students.
 
@@ -53,20 +26,15 @@ Each student can enroll in multiple courses, and each course can have multiple s
 
 </div>
 
-
-
 ## Sample Tables B
 
-A second set of tables are also use in some of the examples.
+This is the second set of tables that will be used in the examples in this guide. These tables will be created in the succeeding sections below.
 
 <div class='img-center'>
 
-!(/img/docs/sample-databases-cars-manufacturrers-drivers.png)
+![](/img/docs/sample-databases-cars-manufacturrers-drivers.png)
 
 </div>
-
-These tables will be created in the succeeding sections below.
-
 
 
 ## Foreign Keys
