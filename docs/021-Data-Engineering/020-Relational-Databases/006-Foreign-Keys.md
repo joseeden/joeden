@@ -372,14 +372,14 @@ INSERT INTO students (student_id, student_name, email) VALUES
 ```sql
 -- Insert records into Enrollments table
 INSERT INTO enrollments (enrollment_id, student_id, course_id, enrollment_date) VALUES
-(401, 301, 101, '2024-01-15'),
-(402, 302, 102, '2024-01-16'),
-(403, 303, 101, '2024-01-17'),
-(404, 304, 103, '2024-01-18'),
-(405, 305, 102, '2024-01-19'),
-(406, 306, 104, '2024-01-20'),
-(407, 307, 105, '2024-01-21'),
-(408, 308, 106, '2024-01-22'); 
+(401, 301, 101, '2021-01-15'),
+(402, 302, 102, '2021-01-16'),
+(403, 303, 101, '2021-01-17'),
+(404, 304, 103, '2021-01-18'),
+(405, 305, 102, '2021-01-19'),
+(406, 306, 104, '2021-01-20'),
+(407, 307, 105, '2021-01-21'),
+(408, 308, 106, '2021-01-22'); 
 ```
 
 ![](/img/docs/enrollments-table-sample-records.png)
@@ -409,7 +409,7 @@ Now let's try to add invalid records on the **enrollments** table.
     ```sql
     INSERT INTO enrollments (enrollment_id, student_id, course_id, enrollment_date) 
     VALUES
-        (409, 999, 101, '2024-02-01');  -- Assuming 999 is not a valid student_id
+        (409, 999, 101, '2021-02-01');  -- Assuming 999 is not a valid student_id
     ```
 
     ![](/img/docs/insert-value-error-enrollments.png)
@@ -419,7 +419,7 @@ Now let's try to add invalid records on the **enrollments** table.
     ```sql
     INSERT INTO enrollments (enrollment_id, student_id, course_id, enrollment_date) 
     VALUES
-        (410, 301, 999, '2024-02-01');  -- Assuming 999 is not a valid course_id
+        (410, 301, 999, '2021-02-01');  -- Assuming 999 is not a valid course_id
     ```
 
     ![](/img/docs/insert-value-error-enrollments-2.png)

@@ -346,3 +346,8 @@ MongoDB:
   label: 'MongoDB'
   permalink: '/MongoDB'
   description: 'Docs related to MongoDB' 
+Database Design:
+  label: 'Database Design'
+  permalink: '/Database Design'
+  description: 'Docs related to Database Design'     
+

@@ -103,7 +103,7 @@ Expected Output:
 | 234567   | Jane Smith   | 2020        | 5.00       |
 | 345678   | Alice Johnson| 2019        | 0.00       |
 | 456789   | Bob Brown    | 2022        | 7.50       |
-| 567890   | Charlie Davis| 2023        | 12.30      |
+| 567890   | Charlie Davis| 2017        | 12.30      |
 
 
 
