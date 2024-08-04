@@ -548,7 +548,7 @@ This updated structure accommodates complex relationships and ensures that refer
 
 
 
-### Check constraints 
+## Check constraints 
 
 For Sample Tables A:
 
@@ -582,5 +582,20 @@ WHERE constraint_type = 'FOREIGN KEY';
 :::info[Same command]
 
 We can use the same SQL query to check the constraints for any table, as seen in both sample tables.
+
+:::
+
+## Delete constraints 
+
+Sometimes, it may be necessary to remove or delete a constraint from a table. This could be due to changes in the database design, requirements updates, or correcting issues with the existing constraints.
+
+```sql
+ALTER TABLE table_name
+DROP CONSTRAINT name_of_constraint_key; 
+```
+
+:::warning[note]
+
+Keep in mind that removing constraints should be done with caution as it can affect the integrity of your data.
 
 :::
