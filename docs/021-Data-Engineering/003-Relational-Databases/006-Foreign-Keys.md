@@ -49,7 +49,7 @@ Each student can enroll in multiple courses, and each course can have multiple s
 
 <div class='img-center'>
 
-[](/img/docs/sample-databases-courses-with-n-to-n-cardinality.png)
+![](/img/docs/sample-databases-courses-with-n-to-n-cardinality.png)
 
 </div>
 
@@ -61,7 +61,7 @@ A second set of tables are also use in some of the examples.
 
 <div class='img-center'>
 
-[](/img/docs/sample-databases-cars-manufacturrers-drivers.png)
+!(/img/docs/sample-databases-cars-manufacturrers-drivers.png)
 
 </div>
 
