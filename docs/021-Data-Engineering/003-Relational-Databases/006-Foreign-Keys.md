@@ -545,3 +545,42 @@ Output:
 
 
 This updated structure accommodates complex relationships and ensures that referential integrity is maintained within the database.
+
+
+
+### Check constraints 
+
+For Sample Tables A:
+
+```sql
+SELECT 
+    constraint_name, 
+    table_name,
+    constraint_type
+FROM information_schema.table_constraints
+WHERE constraint_type = 'FOREIGN KEY'; 
+```
+
+![](/img/docs/check-constraints-sample-table-a.png)
+
+
+For Sample Tables B:
+
+```sql
+SELECT 
+    constraint_name, 
+    table_name,
+    constraint_type
+FROM information_schema.table_constraints
+WHERE constraint_type = 'FOREIGN KEY'; 
+```
+
+
+![](/img/docs/check-constraints-sample-table-b.png)
+
+
+:::info[Same command]
+
+We can use the same SQL query to check the constraints for any table, as seen in both sample tables.
+
+:::
