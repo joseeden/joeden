@@ -41,8 +41,33 @@ A few notes:
 
 - 64-bit block size, but in reality its 56-bits because 8-bits is for overhead/parity.
 - The larger the block size, the faster the encryption.
-- Number of rounds refers to how many rounds the data went through encryption. It is a pretty good clue as to how robust encryption is.
+- Number of rounds refers to how many rounds the data went through encryption. 
+- Number of rounds is a pretty good clue as to how robust encryption is.
 - Blowfish and twofish were both released as open source products.
+
+Individual notes:
+
+- **3DES**
+
+  - Running an algorithm like DES twice or thrice is subject to a man-in-the-middle attack. 
+  - Secure method used in keying mode one, up to 2030.
+  - When used with 3 different keys, it has effective length of 112 bits.
+
+- **AES**
+
+  - Like DES, AES uses combination of substitution and transpositions.
+  - Same key is used to encrypt and decrypt a file.
+ 
+- **Blowfish**
+
+  - Public domain algorithm, can be used freely.
+  - Not considered secure anymore, its own creator recommends the use of Twofish instead.
+
+- **Twofish**
+
+  - Public domain algorithm, can be used freely.
+  - Still considered secure for use today.
+
 
 ### Streaming Ciphers
 
@@ -54,7 +79,7 @@ Also known as **RC Cipher Suites**, the streaming ciphers comprises a range of c
 
 Unlike block ciphers, streaming ciphers encrypt one bit a time. It is wideless in encrypting wireless networks.
 
-| Algorithm  | Cipher Type   | Block Size        | Number of Rounds      | Key Size                  | Description                                                                                |                                                                |
+| Algorithm  | Cipher Type   | Block Size        | Number of Rounds      | Key Size                  | Description                                                                                |                                                                
 |------------|---------------|-------------------|-----------------------|---------------------------|--------------------------------------------------------------------------------------------|
 | RC2        | Block Cipher  | 64-bit            | Variable rounds       | 8-128 bit (variable)      | Early block cipher; adjustable key size, mostly used in legacy applications.               |
 | RC4        | Stream Cipher | N/A               | Variable              | 40-2048 bit (variable)    | Used in SSL and WEP; now considered insecure due to vulnerabilities in key scheduling.     |
