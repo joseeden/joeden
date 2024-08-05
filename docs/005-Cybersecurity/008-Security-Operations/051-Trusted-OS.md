@@ -74,41 +74,7 @@ This specific operating system is also rated as **EAL6.**
 
 The Common Criteria (CC) standards evaluate the security controls in an operating system to assess their effectiveness. The evaluation is categorized into seven Evaluation Assurance Levels (EALs), each with increasing rigor and assurance.
 
-- **EAL1: Functionally Tested**
-
-  - Basic testing to ensure the system functions as claimed.
-  - Suitable for systems requiring minimal assurance.
-
-- **EAL2: Structurally Tested**
-
-  - Analysis of design and testing of security features.
-  - Useful for systems where developers' cooperation is available.
-
-- **EAL3: Methodically Tested and Checked**
-
-  - Focuses on testing and checking the system's security functions.
-  - Requires evidence of developer testing and a review of the development environment.
-
-- **EAL4: Methodically Designed, Tested, and Reviewed**
-
-  - Involves a thorough review of the system's design and implementation.
-  - Requires rigorous testing and development practices.
-
-- **EAL5: Semiformally Designed and Tested**
-
-  - Employs semiformally specified design and analysis methods.
-  - Suitable for high assurance applications requiring rigorous validation.
-
-- **EAL6: Semiformally Verified Design and Tested**
-
-  - Requires detailed and comprehensive design and testing, including formal methods.
-  - Ideal for systems requiring high levels of trust and security.
-
-- **EAL7: Formally Verified Design and Tested**
-
-  - The highest level, involving formal design verification and extensive testing.
-  - Ensures the highest degree of security assurance.
-  - Suitable for extremely sensitive applications.
+For more information, please see [Security Requirements.](../003-Security-Architecture/003-Security-Requirements.md#common-criteria)
 
 ## SELinux 
 

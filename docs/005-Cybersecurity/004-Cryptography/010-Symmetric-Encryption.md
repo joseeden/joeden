@@ -29,6 +29,7 @@ Symmetric encryption is generally faster and less computationally intensive comp
 ### Block Ciphers
 
 | Algorithm                                             | Cipher Type   | Block Size        | Number of Rounds      | Key Size                  | Description                                                                               |
+|-------------------------------------------------------|---------------|-------------------|-----------------------|---------------------------|-------------------------------------------------------------------------------------------|
 | DES (Data Encryption Standard)                        | Block Cipher  | 64-bit            | 16 rounds             | 56-bit                    | Legacy block cipher; once widely used but now considered insecure.                        |
 | 3DES (Triple DES)                                     | Block Cipher  | 64-bit            | 48 rounds (3x16)      | 168-bit                   | 3DES repeats DES process 3 times, hence 56*3 = 168-bit key size.                          |
 | IDEA (International Data Encryption Algorithm)        | Block Cipher  | 64-bit            | 8 rounds              | 128-bit                   | 128-bit key size makes it harder to break, but is not widely utilized.                    |
@@ -36,7 +37,7 @@ Symmetric encryption is generally faster and less computationally intensive comp
 | Blowfish                                              | Block Cipher  | 64-bit            | 16 rounds             | 32-448 bit (variable)     | Developed as DES replacement; fast and flexible block cipher with variable key length.    |
 | Twofish                                               | Block Cipher  | 128-bit           | 16 rounds             | 128/192/256-bit           | A finalist in the AES competition, released as open source along with Blowfish.           |
 
-**A few notes:** 
+A few notes:
 
 - 64-bit block size, but in reality its 56-bits because 8-bits is for overhead/parity.
 - The larger the block size, the faster the encryption.
