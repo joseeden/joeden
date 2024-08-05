@@ -176,16 +176,6 @@ Infrastructure considerations play a pivotal role in the efficiency and security
     - Configured to only listen to network activity
     - Captures data for analysis without impacting the actual traffic
 
-## Failure Modes 
-
-Failover mode determines how devices will act in case something goes wrong.
-
-- **Fail-open**
-  - Allows all traffic to pass through in the event of failure
-  - Will not inspect or filter, ensuring no disruption to the network service
-- **Fail-closed**
-  - Blocks all traffic in the event of failure.
-  - Ensure security of the network is intact, but will impact network connectivity.
 
 
 

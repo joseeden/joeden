@@ -100,7 +100,7 @@ Key characteristics:
 
   - Isolating embedded systems within segmented networks.
   - Limit exposure to external threats.
-  - Restricting access to critical systems through firewalls and access controls.
+  - For more information, please see [Isolation and Segmentation.](../003-Security-Architecture/005-Security-Design.md#isolation-and-segmentation)
 
 - **Wrappers**
 
