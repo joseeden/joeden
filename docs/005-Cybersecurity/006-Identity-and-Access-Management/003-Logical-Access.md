@@ -15,7 +15,7 @@ Physical access controls utilize tangible methods to limit entry to specific are
 - Biometrics (implemented on systems like smartphones or laptops)
 - Badge/token readers linked to a system
 
-These electronic tools play a crucial role in restricting logical access to an asset, independent of an individual's physical access.
+These electronic tools play an important role in restricting logical access to an asset, independent of an individual's physical access.
 
 ## Discretionary Access Control (DAC)
 
@@ -28,7 +28,7 @@ Discretionary Access Control (DAC) is an access control policy governing subject
 - Adjust rules governing access control (with restrictions in mandatory access controls)
 - Assigns permissions based on data owners' decisions
 
-**DAC in the Workplace**
+### DAC in the Workplace
 
 - In a DAC system, users can share or pass files at their discretion. 
 - Asset owners decide access permissions, from digital file-sharing to low-tech measures like visitor's badges issued at the security desk.
@@ -46,7 +46,7 @@ Unlike Discretionary Access Control (DAC), MAC mandates access rights rather tha
 - Governs security attributes of new objects.
 - Resources are labelled and permissions are based on the assigned labels
 
-**MAC in the Workplace**
+### MAC in the Workplace
 
 Determines access uniformly based on policies, often associated with government agencies.
 
@@ -58,17 +58,11 @@ Determines access uniformly based on policies, often associated with government 
 - Separation of duties is common.
 - Role-based access control often utilized.
 
-**Bell and LaPadula access control modeel**
+### Bell and LaPadula 
 
 The Bell and LaPadula access control model arranges subjects and objects into security levels and defines access specifications, whereby subjects can only access objects at certain levels based on their security level.
 
-- It employs a State Machine Model with Security Levels and Access Modes.
-- Basic principle: "No Read Up, No Write Down."
-- Rules include Simple Security Property and Star Property.
-- Enforcement through Access Control Lists, Labels, and Clearances.
-- Commonly used in military and government contexts.
-- Limitations: Primarily addresses confidentiality, can be complex to implement.
-
+For more information, please see [Bell-LaPadula Model.](../003-Security-Architecture/002-Security-Models.md#bell-lapadula-model)
 
 
 ## Attribute-Based Access Control (ABAC)
@@ -88,7 +82,7 @@ Assigns user permissions based on predefined roles, streamlining access manageme
 - Simplifies administration tasks.
 - Enhances security and reduces complexity.
 
-**RBAC in the Workplace**
+### RBAC in the Workplace
 
 Role-based access control tailors user privileges based on their organizational roles, ensuring appropriate access.
 
@@ -102,7 +96,7 @@ Role-based access control tailors user privileges based on their organizational 
 - Standard roles for new user creation to avoid issues.
 - Ensures employees have necessary access for their roles.
 
-Role-Based Access Control (RBAC) defines user access based on roles, while Rule-Based Access Control defines access based on rules. Here's a distinction between the two:
+**Role-Based Access Control (RBAC)** defines user access based on roles, while **Rule-Based Access Control** defines access based on rules. Here's a distinction between the two:
 
 ## Rule-Based Access Control (RBAC)
 
