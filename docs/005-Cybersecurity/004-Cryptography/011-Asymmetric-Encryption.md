@@ -65,10 +65,40 @@ A digital signature is a cryptographic method for verifying the authenticity and
 
 Each algorithm supports a range of key sizes that directly influence the security and efficiency of encryption and key exchange. Generally, **larger key sizes offer more security but require more computational resources.**
 
-### RSA and DSA
 
+### RSA
+
+RSA is a widely-used public key encryption algorithm that provides secure data transmission. It relies on the mathematical difficulty of factoring large prime numbers, making it a robust choice for encryption and digital signatures.
+
+- Utilizes a pair of keys: a public key for encryption and a private key for decryption
+- Commonly used for securing sensitive data and establishing secure connections
+- Supports digital signatures, ensuring data authenticity and integrity
 - RSA is the **most widely used**, offering compatibility with a range of systems.
 - DSA is optimized for **digital signatures**.
+
+### DSA 
+
+DSA is a federal standard for digital signatures, providing a method for verifying the authenticity and integrity of digital messages. Unlike RSA, it is not used for encryption but solely for creating digital signatures.
+
+- Generates a digital signature to authenticate the sender of a message
+- Relies on the discrete logarithm problem for its security
+- Used in various applications, including email and software distribution
+
+### PGP and GnuPG
+
+PGP (Pretty Good Privacy) and GnuPG (GNU Privacy Guard) are encryption programs used for securing emails and files. PGP was developed as a commercial encryption solution, while GnuPG is an open-source alternative that implements the OpenPGP standard.
+
+- **PGP**
+  - Combines symmetric and asymmetric encryption for enhanced security
+  - Offers data encryption, decryption, and digital signatures
+  - Widely used for securing email communications
+
+- **GnuPG**
+  - Open-source implementation of the OpenPGP standard
+  - Provides compatibility with PGP and other OpenPGP-compliant systems
+  - Available for various platforms, offering flexible encryption solutions
+
+
 
 ### ECC
 
@@ -90,47 +120,48 @@ Summarized table:
 
 Elliptic Curve Cryptography (ECC) is a type of public-key cryptography that relies on the mathematical properties of elliptic curves to secure communications. Within ECC, there are several variations that offer different approaches and benefits.
 
-### ECDSA 
 
-- ECDSA (Elliptic Curve Digital Signature Algorithm)
-- **A variant of the Digital Signature Algorithm (DSA)** that uses elliptic curves for digital signatures.
-- Often used in secure communications, blockchain technology, and software signing.
-- Provides strong security with smaller key sizes compared to RSA. 
-- Efficient for generating digital signatures.
-- Requires careful selection of curve parameters and robust implementation to avoid vulnerabilities.
+- **ECDSA**
 
-### ECDH 
+    - ECDSA (Elliptic Curve Digital Signature Algorithm)
+    - **A variant of the Digital Signature Algorithm (DSA)** that uses elliptic curves for digital signatures.
+    - Often used in secure communications, blockchain technology, and software signing.
+    - Provides strong security with smaller key sizes compared to RSA. 
+    - Efficient for generating digital signatures.
+    - Requires careful selection of curve parameters and robust implementation to avoid vulnerabilities.
 
-- ECDH (Elliptic Curve Diffie-Hellman)
-- **A variation of the Diffie-Hellman key exchange** that uses elliptic curves.
-- Used to establish shared secret keys for secure communication.
-- Offers secure key exchange with reduced computational overhead compared to traditional Diffie-Hellman.
-- Like ECDSA, requires careful parameter selection to ensure security.
+- **ECDH**
 
-### ECMQV
+    - ECDH (Elliptic Curve Diffie-Hellman)
+    - **A variation of the Diffie-Hellman key exchange** that uses elliptic curves.
+    - Used to establish shared secret keys for secure communication.
+    - Offers secure key exchange with reduced computational overhead compared to traditional Diffie-Hellman.
+    - Like ECDSA, requires careful parameter selection to ensure security.
 
-- ECMQV (Elliptic Curve Menezes-Qu-Vanstone)
-- An elliptic curve-based key agreement protocol.
-- Used in situations requiring authenticated key exchange.
-- Provides authenticated key exchange with lower computational requirements than traditional MQV.
-- Less commonly used than ECDSA or ECDH. 
-- Robustness depends on correct parameter choices and secure implementation.
+- **ECMQV**
 
-### EdDSA 
+    - ECMQV (Elliptic Curve Menezes-Qu-Vanstone)
+    - An elliptic curve-based key agreement protocol.
+    - Used in situations requiring authenticated key exchange.
+    - Provides authenticated key exchange with lower computational requirements than traditional MQV.
+    - Less commonly used than ECDSA or ECDH. 
+    - Robustness depends on correct parameter choices and secure implementation.
 
-- EdDSA (Edwards-curve Digital Signature Algorithm)
-- **A digital signature algorithm based on the Edwards curve family**.
-- Increasingly used in modern cryptographic systems for digital signatures.
-- High security and simplicity; resistant to several types of attacks, with rapid signature verification.
-- Relatively new, but gaining adoption due to its efficiency and security characteristics.
+- **EdDSA**
 
-### Secp256k1
+    - EdDSA (Edwards-curve Digital Signature Algorithm)
+    - **A digital signature algorithm based on the Edwards curve family**.
+    - Increasingly used in modern cryptographic systems for digital signatures.
+    - High security and simplicity; resistant to several types of attacks, with rapid signature verification.
+    - Relatively new, but gaining adoption due to its efficiency and security characteristics.
 
-- A specific elliptic curve used in ECC.
-- Widely used in blockchain and cryptocurrency applications, notably in Bitcoin.
-- Offers a strong level of security with smaller key sizes, optimized for efficient computation.
-- Selection of this curve over others is driven by specific community choices
-- Less versatile outside blockchain applications.
+- **Secp256k1**
+
+    - A specific elliptic curve used in ECC.
+    - Widely used in blockchain and cryptocurrency applications, notably in Bitcoin.
+    - Offers a strong level of security with smaller key sizes, optimized for efficient computation.
+    - Selection of this curve over others is driven by specific community choices
+    - Less versatile outside blockchain applications.
 
 
 ## Diffie-Hellman
@@ -143,13 +174,13 @@ Diffie-Hellman is a cryptographic protocol for secure key exchange, enabling two
 - An **asymmetric algorithm**, but **doesn't provide the actual encryption.**
 - It is **key exchange protocol**,
 
-### Use Cases
+Use Cases:
 
 - Often used to set up shared encryption keys.
 - Used when setting up VPN tunnels or other encryption tunnels.
 - Applied in SSL/TLS, IPsec, and VPNs.
 
-### How It Works
+How It Works:
 
 - Both parties agree on a base (generator) and a prime modulus.
 - Each party chooses a private key. 
@@ -157,7 +188,7 @@ Diffie-Hellman is a cryptographic protocol for secure key exchange, enabling two
 - The public keys are then exchanged.
 - Each party calculates the shared secret using the other's public key and their own private key.
 
-### Example
+Example:
 
 - Parties agree on a common base \( g \) and a prime modulus \( p \).
 - Alice chooses a private key \( a \) and sends \( g^a \mod p \) to Bob.
@@ -165,23 +196,20 @@ Diffie-Hellman is a cryptographic protocol for secure key exchange, enabling two
 - Alice calculates \( (g^b \mod p)^a \) to get the shared secret.
 - Bob calculates \( (g^a \mod p)^b \) to get the same shared secret.
 
-
-
-    ![](/img/docs/diffie-hellman.png)
-
-
-**Strengths**: 
+Strengths: 
 
 - Secure key exchange without revealing the key
 - Resistant to eavesdropping and man-in-the-middle attacks when implemented correctly.
 
-**Weaknesses**: 
+Weaknesses: 
 
 - Vulnerable to attacks like the man-in-the-middle if proper authentication is not implemented
-
 - Depends on the difficulty of solving the discrete logarithm problem.
-
 - To be truly secure, it should be combined with additional mechanisms
+
+
+    ![](/img/docs/diffie-hellman.png)
+
 
 
 ## Diffie-Hellman Groups 
