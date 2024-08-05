@@ -54,11 +54,12 @@ Also known as **RC Cipher Suites**, the streaming ciphers comprises a range of c
 
 Unlike block ciphers, streaming ciphers encrypt one bit a time. It is wideless in encrypting wireless networks.
 
-| Algorithm  | Cipher Type   | Block Size        | Number of Rounds      | Key Size                  | Description                                                                                                   |
-| RC2        | Block Cipher  | 64-bit            | Variable rounds       | 8-128 bit (variable)      | Early block cipher; adjustable key size, mostly used in legacy applications.                                  |
-| RC4        | Stream Cipher | N/A               | Variable              | 40-2048 bit (variable)    | Used in SSL and WEP; now considered insecure due to vulnerabilities in key scheduling.   |
-| RC5        | Block Cipher  | 32/64/128-bit     | Variable rounds       | 0-2040 bit (variable)     | Highly flexible block cipher with variable block size, key size, and rounds.                                  |
-| RC6        | Block Cipher  | 128-bit           | 20 rounds             | 128/192/256-bit           | Extended version of RC5; designed for high security and was a finalist in the AES competition.                |
+| Algorithm  | Cipher Type   | Block Size        | Number of Rounds      | Key Size                  | Description                                                                                |                                                                |
+|------------|---------------|-------------------|-----------------------|---------------------------|--------------------------------------------------------------------------------------------|
+| RC2        | Block Cipher  | 64-bit            | Variable rounds       | 8-128 bit (variable)      | Early block cipher; adjustable key size, mostly used in legacy applications.               |
+| RC4        | Stream Cipher | N/A               | Variable              | 40-2048 bit (variable)    | Used in SSL and WEP; now considered insecure due to vulnerabilities in key scheduling.     |
+| RC5        | Block Cipher  | 32/64/128-bit     | Variable rounds       | 0-2040 bit (variable)     | Highly flexible block cipher with variable block size, key size, and rounds.               |
+| RC6        | Block Cipher  | 128-bit           | 20 rounds             | 128/192/256-bit           | Extended version of RC5; designed for high security and was a finalist in the AES competition. |
 
 A few notes:
 
