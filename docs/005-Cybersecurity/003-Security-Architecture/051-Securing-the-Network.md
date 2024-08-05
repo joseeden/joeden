@@ -154,7 +154,7 @@ Infrastructure considerations play a pivotal role in the efficiency and security
   - **Security zones** - Isolating or segmenting networks 
   - **Screened subnet** - previously referred to as **Demilitarized Zone (DMS)**
 
-## Understand device attributes
+## Understand Device Attributes
 
   - **Active**
     - Monitor and act on suspicious network traffic by influencing data flows
