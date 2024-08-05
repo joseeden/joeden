@@ -88,7 +88,7 @@ Below is another variation of the Cyber Kill Chain which focuses on a detailed r
 - Concealing malicious activities and evade detection by security tools and forensic analysis.
 - Example: 
     - Encrypting malware payloads to evade antivirus detection 
-    - Using steganography to hide malicious code within image files
+    - Using [steganography](../004-Cryptography/001-Cryptography-Basics.md#steganography) to hide malicious code within image files
 
 ### Denial of Service
 

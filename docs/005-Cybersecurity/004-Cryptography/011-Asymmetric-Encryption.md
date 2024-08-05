@@ -79,7 +79,7 @@ Each algorithm supports a range of key sizes that directly influence the securit
 Summarized table:
 
 | Algorithm                             | Key Structure             | Supported Key Sizes   | Use Cases                                         | Strengths                                                     | Weaknesses                                                                        |
-|---------------------------------------|---------------------------|-----------------------|---------------------------------------------------|----------------------------------------------------
+|---------------------------------------|---------------------------|-----------------------|---------------------------------------------------|---------------------------------------------------------------|-----------------------------------------------------------------------------------|
 | RSA                                   | Public-private key pair   | 1024-4096 bits        | Secure communication, digital signatures          | Established, widely used; supports large key sizes            | Slower than symmetric methods; susceptible to certain attacks with smaller keys   |
 | ECC (Elliptic Curve Cryptography)     | Public-private key pair   | 160-521 bits          | Secure communication, digital signatures          | Smaller key sizes; heavily used in mobile devices             | More complex mathematical basis; not as widely adopted as RSA                     |
 | DSA (Digital Signature Algorithm)     | Public-private key pair   | 1024-3072 bits        | Digital signatures, authentication                | Fast for signature generation; widely accepted                | Slower for verification; requires secure parameter selection                      |

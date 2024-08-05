@@ -44,8 +44,8 @@ Obfuscation is a technique to make code, data, or communications harder to under
 
 Steganography and obfuscation are techniques used to conceal information, but they differ in their methods and objectives.
 
-- Steganography hides a message within another medium to keep its existence secret.
-- Obfuscation makes code or information difficult to understand
+- **Steganography** hides a message within another medium to keep its existence secret.
+- **Obfuscation** makes code or information difficult to understand
 
 Derived from Greek word, meaning "covered writing", Steganography hides secret data within ordinary, non-secret files or messages. Its purpose is not to prevent unauthorized access, but to avoid suspicions.
 
