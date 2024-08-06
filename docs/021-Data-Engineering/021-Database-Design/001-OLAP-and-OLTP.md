@@ -7,6 +7,13 @@ last_update:
   date: 2/27/2022
 ---
 
+## How should we manage data?
+
+- **Schemas**: *How should my data be logically organized?*
+- **Normalization**: *Should my data have minimal dependency and redundancy?*
+- **Views**: *What joins will be done most often?*
+- **Access Control**: *Should all users of the data have the same level of access?*
+- **DBMS**: *How do I pick between all the SQL and NoSQL options?*
 
 ## Approaches to Data Processing 
 
@@ -32,10 +39,10 @@ OLTP and OLAP systems complement each other to enhance data management.
   - OLAP insights refine business practices and influence OLTP transactions.
   - Their synergy turns transactional data into strategic insights.
 
-## Key Takeaways
-
 Choosing the right data processing approach is essential for a functional database system.
 
-  - Identify business requirements to guide database design.
-  - Choose OLTP, OLAP, or both based on your goals.
-  - Understanding both approaches helps create adaptable databases.
+<div class='img-center'>
+
+![](/img/docs/olap-oltp-diagram.png)
+
+</div>
