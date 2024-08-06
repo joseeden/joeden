@@ -7,7 +7,7 @@ last_update:
   date: 1/30/2024
 ---
 
-
+## Overview
 
 The Principle of Least Privilege dictates that users or programs should be granted the minimum access essential to fulfill their functions. Access is restricted to the specific systems and programs required for their designated job or tasks.
 
@@ -76,7 +76,7 @@ Privileged accounts extend beyond regular user permissions, catering to diverse 
 **Risk Mitigation Measures**
 - **Detailed Logging**
   - Crucial for deterrent and administrative control.
-- **Stringent Access Control**
+- **String  ent Access Control**
   - Nonprivileged users require MFA.
   - Additional authentication for privileged users.
   - Explore just-in-time identity for specific access needs.
