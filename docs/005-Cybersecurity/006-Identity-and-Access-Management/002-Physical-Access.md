@@ -220,6 +220,10 @@ Alarm systems aim to promptly notify relevant authorities in case of unexpected 
 A visitor management policy is a vital component of physical access controls, as it helps organizations track and manage visitor access.
 
   - Ensures legitimacy and monitors movements for facility and asset security.
+  - Describe purpose of visits and explain visit approval authority.
+  - Describe requirements for unescorted access and who may escort visitors.
+  - Visits should be logged, e.g. signing on record book or electroniccally
+  - Vistors must wear the visitor badge at all times while inside.
   - *Reference:* ISC2 Study Guide, Module 2, Physical Access Controls.
   
 

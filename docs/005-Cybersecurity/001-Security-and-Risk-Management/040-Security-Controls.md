@@ -97,11 +97,11 @@ Types of Administrative Controls:
 
 - **Procedural Controls**
 
-  Controls that are initiated by the organization.
+  - Controls that are initiated by the organization.
 
 - **Legal or Regulatory Controls**
 
-  Controls mandated by the law.
+  - Controls mandated by the law.
 
 ### Preventative Controls
 
