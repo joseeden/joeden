@@ -22,7 +22,7 @@ Bring Your Own Device (BYOD) policies allow employees to use their personal devi
 - **Drawbacks**
   - Raises concerns about data security and privacy.
   - Employees own and control the security of their devices.
-  - Requires robust security policies and mobile device management (MDM) solutions.
+  - Requires robust security policies and [mobile device management (MDM)](../003-Security-Architecture/059-Mobile-Systems.md#mobile-device-management) solutions.
 
 
 ## COPE
@@ -77,7 +77,7 @@ Choose Your Own Device (CYOD) policies allow employees to select from a range of
 
   - **Data Protection**
     - Implement robust security measures to protect sensitive data.
-    - Use mobile device management (MDM) solutions to enforce security policies.
+    - Use [mobile device management (MDM)](../003-Security-Architecture/059-Mobile-Systems.md#mobile-device-management) solutions to enforce security policies.
 
   - **Access Control**
     - Ensure proper authentication and authorization mechanisms are in place.

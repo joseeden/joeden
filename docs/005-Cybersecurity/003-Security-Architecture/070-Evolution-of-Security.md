@@ -124,24 +124,6 @@ User and Entities Behavior Analytics (UEBA) extends the principles of traditiona
 - Utilizes machine learning to detect anomalies and potential security incidents.
 - Provides context to understand the relationships and interactions between users and entities.
 
-
-## Mobile Device Management 
-
-Mobile Device Management (MDM) enables organizations to manage and secure mobile devices across various platforms (smartphones, tablets).
-
-- Allows remote management and wiping of devices for data protection.
-- Tracks device usage and location for monitoring and control.
-- Enforce configuration to ensure devices are meeting the security benchmarks.
-- Enforces security policies to enhance device security.
-- Lowers risks tied to unsecured or outdated devices.
-
-Example features:
-
-- Disable a device's ability to sideload programs.
-- Detect if a device has been jailbroken or rooted.
-- Force each device to use a VPN connection.
-
-
 ## Software Defined Networking
 
 Software Defined Networking (SDN) is a networking approach that centralizes network control, enabling programmability and automation for improved network management and efficiency.

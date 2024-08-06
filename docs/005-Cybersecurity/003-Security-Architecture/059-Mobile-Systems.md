@@ -2,7 +2,7 @@
 title: "Mobile Systems"
 description: "The different types of mobile communications systems"
 tags: [Security, Cybersecurity, Security Architecture, Security Engineering]
-sidebar_position: 41
+sidebar_position: 59
 last_update:
   date: 1/30/2024
 ---
@@ -18,7 +18,9 @@ Mobile Device Wireless Communications:
 - Bluetooth 
 - Near Field Communication (NFC)    
 
-## GPS 
+## Technology 
+
+### GPS 
 
 GPS (Global Positioning System) is a satellite-based navigation system that provides precise location and time information to users worldwide. It consists of a network of satellites orbiting the Earth and user receivers that calculate their position using signals from these satellites. 
 
@@ -35,7 +37,7 @@ Security Implications:
   - **Dependency:** Reliance on GPS for critical functions can pose risks if the system becomes unavailable or inaccurate.
 
 
-## Cellular 4G
+### Cellular 4G
 
 4G, or fourth-generation, cellular technology is a wireless communication standard that offers faster data speeds, improved reliability, and enhanced capabilities compared to previous generations. 
 
@@ -58,7 +60,7 @@ Security Implications:
 - Firmware Over-the-air (OTA) updates
 
 
-## Cellular 5G
+### Cellular 5G
 
 5G, or fifth-generation, cellular technology is the latest standard in wireless communication, succeeding 4G. 5G networks leverage advanced technologies such as millimeter-wave frequencies, massive MIMO (Multiple Input Multiple Output), and network slicing to deliver high-bandwidth, low-latency connectivity for a wide range of applications.
 
@@ -73,7 +75,7 @@ Security Implications of 5G:
 - User privacy and data protection concerns on massive data transmitted over 5G networks
 - Over-reliance on equipment from potentially untrusted vendors.
 
-## WiFi Direct 
+### WiFi Direct 
 
 WiFi Direct is a peer-to-peer wireless technology that allows devices to connect and communicate with each other directly, without the need for a traditional WiFi network or internet connection. 
 
@@ -118,7 +120,7 @@ Subscribe Identity Modules (SIM) cards authenticates device to carrier network. 
 - Reuse device on a different carrier network
 - Switching between mobile providers
 
-## Securing Mobile Devices 
+## Mobile Security 
 
 For more information, please see [Mobile Asset Deployments.](../008-Security-Operations/073-Mobile-Asset-Deployments.md)
 
@@ -135,11 +137,10 @@ For more information, please see [Mobile Asset Deployments.](../008-Security-Ope
     - Can be used for work purposes, and for personal use
     - Device can be partitioned (containers) for personal and corporate apps 
 
-## Hardening Mobile Devices
-
+### Hardening Mobile Devices
 
 - **Mobile Device Management**
-    - For organizations, management at scale through [Mobile Device Management.](../003-Security-Architecture/070-Evolution-of-Security.md#mobile-device-management)
+    - For organizations, management at scale through [Mobile Device Management.](#mobile-device-management)
     - Employees' device just need to be registered.
     
 - **Sideloading** 
@@ -162,4 +163,20 @@ For more information, please see [Mobile Asset Deployments.](../008-Security-Ope
     - Use strong authentication  
     - Enable full device encryption
 
+
+### Mobile Device Management 
+
+Mobile Device Management (MDM) enables organizations to manage and secure mobile devices across various platforms (smartphones, tablets).
+
+- Allows remote management and wiping of devices for data protection.
+- Tracks device usage and location for monitoring and control.
+- Enforce configuration to ensure devices are meeting the security benchmarks.
+- Enforces security policies to enhance device security.
+- Lowers risks tied to unsecured or outdated devices.
+
+Example features:
+
+- Disable a device's ability to sideload programs.
+- Detect if a device has been jailbroken or rooted.
+- Force each device to use a VPN connection.
 

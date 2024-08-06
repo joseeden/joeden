@@ -57,7 +57,7 @@ Assignment and accounting in asset management involve the proper allocation and 
 
 Mobile Device Management (MDM) enables organizations to manage and secure mobile devices across various platforms (smartphones, tablets).
 
-For more information, please see [Mobile Device Management.](../003-Security-Architecture/070-Evolution-of-Security.md#mobile-device-management)
+For more information, please see [Mobile Device Management.](../003-Security-Architecture/059-Mobile-Systems.md#mobile-device-management)
 
 ### Asset Disposal and Decommissioning 
 

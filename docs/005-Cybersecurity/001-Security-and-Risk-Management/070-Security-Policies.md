@@ -36,7 +36,7 @@ Every policy should align with the organization's regulatory and contractual obl
 - Clean desk policies 
 - Shredding of sensitive documents
 - Secure personally-owned devices 
-- MDM (Mobile Device Management)
+- [MDM (Mobile Device Management)](../003-Security-Architecture/059-Mobile-Systems.md#mobile-device-management)
 - BYOD (Bring your own device)
 
 **User Training:**
