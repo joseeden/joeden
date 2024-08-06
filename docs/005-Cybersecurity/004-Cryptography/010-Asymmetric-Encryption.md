@@ -2,7 +2,7 @@
 title: "Asymmetric Encryption"
 description: "Using a pair of keys"
 tags: [Security, Cybersecurity, Cryptography]
-sidebar_position: 11
+sidebar_position: 10
 last_update:
   date: 1/30/2024
 ---
@@ -174,13 +174,13 @@ Diffie-Hellman is a cryptographic protocol for secure key exchange, enabling two
 - An **asymmetric algorithm**, but **doesn't provide the actual encryption.**
 - It is **key exchange protocol**,
 
-Use Cases:
+**Use Cases:**
 
 - Often used to set up shared encryption keys.
 - Used when setting up VPN tunnels or other encryption tunnels.
 - Applied in SSL/TLS, IPsec, and VPNs.
 
-How It Works:
+**How It Works:**
 
 - Both parties agree on a base (generator) and a prime modulus.
 - Each party chooses a private key. 
@@ -188,7 +188,7 @@ How It Works:
 - The public keys are then exchanged.
 - Each party calculates the shared secret using the other's public key and their own private key.
 
-Example:
+**Example:**
 
 - Parties agree on a common base \( g \) and a prime modulus \( p \).
 - Alice chooses a private key \( a \) and sends \( g^a \mod p \) to Bob.
@@ -196,12 +196,12 @@ Example:
 - Alice calculates \( (g^b \mod p)^a \) to get the shared secret.
 - Bob calculates \( (g^a \mod p)^b \) to get the same shared secret.
 
-Strengths: 
+**Strengths:** 
 
 - Secure key exchange without revealing the key
 - Resistant to eavesdropping and man-in-the-middle attacks when implemented correctly.
 
-Weaknesses: 
+**Weaknesses:** 
 
 - Vulnerable to attacks like the man-in-the-middle if proper authentication is not implemented
 - Depends on the difficulty of solving the discrete logarithm problem.

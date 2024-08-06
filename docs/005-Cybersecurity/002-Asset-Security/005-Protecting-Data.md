@@ -110,7 +110,7 @@ A digital signature is the result of a cryptographic transformation of data whic
 
 However, digital signatures **cannot guarantee confidentiality** (i.e. the property of data or information not being made available or disclosed).
 
-For more information, please see [Digital Signatures in Asymmetric Encryptions.](../004-Cryptography/011-Asymmetric-Encryption.md)
+For more information, please see [Digital Signatures in Asymmetric Encryptions.](../004-Cryptography/010-Asymmetric-Encryption.md)
 
 
 ### Message Digests 

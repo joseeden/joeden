@@ -37,7 +37,7 @@ The digital signature is the encrypted hash which is sent along with the message
 - This ensures the message hasn't been altered.
 - **Non-repudiation** - signer can't deny signing because there's proof.
 
-For more information, please see [Digital Signatures in Asymmetric Encryptions.](../004-Cryptography/011-Asymmetric-Encryption.md)
+For more information, please see [Digital Signatures in Asymmetric Encryptions.](../004-Cryptography/010-Asymmetric-Encryption.md)
 
 
 

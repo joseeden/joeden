@@ -2,7 +2,7 @@
 title: "Symmetric Encryption"
 description: "Using the same key"
 tags: [Security, Cybersecurity, Cryptography]
-sidebar_position: 10
+sidebar_position: 9
 last_update:
   date: 1/30/2024
 ---
