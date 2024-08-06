@@ -158,12 +158,68 @@ Key terms:
     - Total loss of power for a given period of time.
     - When power is restored, it can cause a power spike.
 
-## Fire Suppression
+## Fire Protection
+
+### Elements 
+
+Fire poses a significant threat to data centers, where even a small fire can cause extensive damage to sensitive equipment and lead to costly downtime. The three key ingredients that fire needs to ignite and continue burning are heat, fuel, and oxygen.
+
+- **Heat** 
+  - initial energy source that raises temperature of materials to their ignition point.
+  - Can originate from electrical equipment failures, overheating, or sparks.
+
+- **Fuel** 
+  - Any combustible material that feeds the fire, e.g. paper, plastics, etc.
+  - In data centers, cables, and other components can act as fuel.
+
+- **Oxygen** 
+  - Supports the chemical reactions that sustain a fire.
+  - Generally abundant unless actively controlled by suppression systems.
+
+### Suppression
 
 Choose appropriate fire detection/suppression considering room size and equipment risks.
 
-- Be cautious of water-based suppression's potential harm to electronic components.
-- Consider gas-based systems for electronics-friendly suppression, but be mindful of potential human toxicity.
+- Water-based suppression can harm electronic components.
+- Consider gas-based systems for electronics-friendly suppression.
+- Be mindful of potential human toxicity.
+
+### Fire Extinguishers 
+
+Fire extinguishers are classified based on the type of fire they are designed to extinguish. Knowing the right type of extinguisher to use for different fire classes ensures effective fire suppression and minimizes damage.
+
+- **Class A**: 
+  - Designed for fires involving ordinary combustibles such as wood, paper, and textiles.
+  - Uses water or foam to cool and quench the flames.
+
+- **Class B**: 
+  - Targets fires fueled by flammable liquids like gasoline, oil, and grease.
+  - Extinguishers contain foam, carbon dioxide, or dry chemical agents to smother the fire.
+
+- **Class C**: 
+  - Used for fires involving electrical equipment, which may pose an electrocution risk.
+  - Employs non-conductive extinguishing agents like carbon dioxide or dry chemicals.
+
+- **Class D**: 
+  - Specifically for fires involving combustible metals such as magnesium, titanium, and sodium.
+  - Utilizes specialized dry powder agents to absorb heat and prevent the fire from spreading.
+
+- **Class K**: 
+  - Designed for kitchen fires involving cooking oils and fats.
+  - Uses wet chemical extinguishers that cool and create a barrier between the fuel and oxygen.
+
+### Water-Based Fire Suppression
+
+Water-based fire suppression systems are effective for controlling fires in various environments, including data centers. These systems use water to cool the fire and prevent it from spreading. 
+
+- **Wet Pipe System**
+  - Pipes are filled with water, ready for immediate discharge when a fire is detected.
+  - Best for environments where pipes won't freeze, allowing quick response to fires.
+
+- **Dry Pipe System**
+  - Pipes contain pressurized air; water is released when a fire triggers the system.
+  - Suitable for areas where freezing might occur, as water enters the pipes only when needed.
+
 
 ## Using Robust Systems
 
