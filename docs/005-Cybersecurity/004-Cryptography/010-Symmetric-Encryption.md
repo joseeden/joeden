@@ -8,6 +8,21 @@ last_update:
 ---
 
 
+
+## Out-of-Band Key Exchange
+
+Out-of-Band (OOB) key exchange is a method for securely sharing cryptographic keys outside the regular communication channel used for encrypted data transfer. This approach enhances security by reducing the risk of key interception through the primary channel.
+
+- Face-to-face meeting, if both parties know each other by sight
+- Physically mail the drive containing the key
+- Telephone call, if both parties know each other's voices
+
+## In-Band Key Exchange
+
+Out-of-Band methods can be time-consuming. For instance, if Alice and Bob are far apart, a physical meeting might not be practical. Sending a physical letter with the key takes days, and reading a long encryption key over the phone is difficult.
+
+As a solution, we can use **In-Band Key Exchange** for key exchange over the same network used for communication, even if secure methods of communication are unavailable. This method simplifies the process but requires careful implementation to maintain security.
+
 ## Symmetric Cryptosystems 
 
 Symmetric cryptography uses the same key for both encryption and decryption. The sender and receiver must share this key, keeping it secret from others.
