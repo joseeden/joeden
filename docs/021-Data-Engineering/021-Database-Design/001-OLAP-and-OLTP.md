@@ -7,6 +7,8 @@ last_update:
   date: 2/27/2022
 ---
 
+
+
 ## How should we manage data?
 
 - **Schemas**: *How should my data be logically organized?*
