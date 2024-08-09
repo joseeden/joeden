@@ -215,7 +215,11 @@ The snowflake schema builds on the star schema by adding more tables and normali
 
 The star schema extends one dimension, while the snowflake schema extends over more than one dimension. This is because the dimension tables are normalized.
 
+<div class='img-center'>
+
 ![](/img/docs/sample-snowflakeeees.png)
+
+</div>
 
 
 ## Normalization
@@ -257,3 +261,57 @@ Combining all normalized dimensions together:
 ![](/img/docs/snowflake-schema-breakdown-dim-putting-it-all-together.png)
 
 </div>
+
+
+
+## Eliminating Redundancy  
+
+Normalization reduces data redundancy, which might seem counterintuitive given the increase in the number of tables. 
+
+- Normalized databases use more tables but eliminate data redundancy.
+- In denormalized structures, repeated entries cause redundancy.
+- Normalization reduces repeated entries by using separate tables.
+
+In the denormalized table below, repeated entries like "USA," "California," and "Brooklyn" are common, leading to data redundancy.
+
+<div class='img-center'>
+
+![](/img/docs/eliminate-redundancy-denormalized-database.png)
+
+</div>
+
+In a normalized schema, redundancy is eliminated. For example, "Brooklyn" is stored only once. States like "California" are also stored separately, as many cities share the same state and country. 
+
+<div class='img-center'>
+
+![](/img/docs/eliminate-redundancy-normalized-database.png)
+
+</div>
+
+
+
+## Enhancing Data Integrity 
+
+Normalization improves data integrity by enforcing consistency and simplifying data modifications. It reduces duplicates, making updates easier and safer. 
+
+- Ensures data consistency and simplifies modifications.
+- Reduces duplicates, making updates easier and safer.
+- Smaller tables make schema alterations easier.
+
+
+## Pros and Cons 
+
+Normalization offers benefits like easier maintenance and reduced redundancy. However, it requires more joins, complicating queries and potentially slowing indexing and data reading. 
+
+- Provides easier maintenance and reduces redundancy.
+- Requires more joins, complicating queries.
+- Decision depends on database read or write intensity.
+
+
+## OLTP vs. OLAP Preferences
+
+OLTP and OLAP have different preferences regarding normalization. OLTP is write-intensive while OLAP focuses on read-intensive analytics.
+
+- OLTP benefits from normalization for quick, consistent data addition.
+- OLAP avoids normalization to prioritize fast read queries.
+- Preferences depend on read or write focus.
