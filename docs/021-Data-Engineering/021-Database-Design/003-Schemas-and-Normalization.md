@@ -473,7 +473,7 @@ LINE 1: SELECT dim_state_sf.state, SUM(sales_amount)
                ^ 
 ```
 
-This error is related to the 'SUM` function in the `SELECT` statement. When we use aggregate functions like SUM() and also select other columns, those columns must either be included in a GROUP BY clause or used within an aggregate function themselves. This ensures that the query knows how to group the non-aggregated data.
+This error is related to the `SUM` function in the `SELECT` statement. When we use aggregate functions like SUM() and also select other columns, those columns must either be included in a GROUP BY clause or used within an aggregate function themselves. This ensures that the query knows how to group the non-aggregated data.
 
 Basically, the `SUM(sales_amount)` is aggregated but `dim_state_sf.state` is not. So we need to group the results by `dim_state_sf.state`:
 
