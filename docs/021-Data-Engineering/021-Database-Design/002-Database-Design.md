@@ -83,16 +83,19 @@ Alternative design choices can reduce complexity or enhance data integrity. For 
     </div>
 
 
+
 ## Dimensional Models 
 
-Dimensional modeling adapts the relational model for data warehouses, focusing on OLAP queries. It uses the star schema, which is straightforward and flexible for analytical tasks, enhancing usability for data analysts.
-
-- **Dimensional modeling**: Optimized for OLAP queries in data warehouses.
-- **Star schema**: Simple, extendable schema used for analysis.
-
-## Elements of Dimensional Modeling
-Dimensional models include fact and dimension tables, each serving distinct purposes. Fact tables contain metrics and change frequently, while dimension tables describe attributes with infrequent changes. In a song analysis scenario, the fact table could list songs, while dimension tables detail albums and artists.
+Dimensional modeling adapts the relational model for data warehouses, focusing on OLAP queries. It uses the **star schema**, which is straightforward and flexible for analytical tasks, enhancing usability for data analysts. Dimensional models include these two models which serve distinct purposes. 
 
 - **Fact tables**: Hold metrics and change often, with foreign keys to dimension tables.
 - **Dimension tables**: Describe attributes, changing less frequently.
-- **Example**: Songs in fact tables, albums and artists in dimension tables.
+
+In a song analysis scenario, the fact table could list songs, while dimension tables detail albums and artists.
+
+
+<div class='img-center'>
+
+![](/img/docs/database-design-sample-creating-songs-table-facts-dimensions.png)
+
+</div>
