@@ -347,7 +347,7 @@ FROM
 WHERE  
 ```
 
-The first filter we want it for novel genres, so we'll define this in the `WHERE` command: 
+The filter we want is for novel genres, so we'll define this in the `WHERE` command: 
 
 ```sql
 SELECT
