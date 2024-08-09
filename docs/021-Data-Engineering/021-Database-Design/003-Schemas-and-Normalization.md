@@ -363,7 +363,7 @@ FROM fact_booksales
 WHERE dim_genre_sf.genre = 'novel'
 ```
 
-This is not yet finish because we have to use JOINs to get the `genre` and `state`.  Let's begin with the `state`. From the "base" table, we can trace the foreign keys-to-primary keys until we reach the table that contains the `state` attribute.
+This is not yet finish because we have to get the `genre` and `state`.  Let's begin with the `state`. From the "base" table, we can trace the foreign keys-to-primary keys until we reach the table that contains the `state` attribute.
 
 Note that we can also do the other way around - start from the dimension table that contains the `state` attribute and trace the tables until we reach the facts table.
 
