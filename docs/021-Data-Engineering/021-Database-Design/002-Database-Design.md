@@ -42,18 +42,19 @@ Data modeling is the initial step in database design and outlines a data model a
 
 An example of database design involves storing song information, with entities like songs, albums, and artists represented as tables. 
 
+<center>Conceptual Model</center>
+
+
 <div class='img-center'>
 
-Conceptual Model
 
 ![](/img/docs/database-design-sample-creating-songs-table.png)
 
 </div>
 
+<center>Logical Model</center>
 
 <div class='img-center'>
-
-Logical Model
 
 ![](/img/docs/database-design-sample-creating-songs-table-logicall.png)
 
@@ -93,9 +94,10 @@ Dimensional modeling adapts the relational model for data warehouses, focusing o
 
 In a song analysis scenario, the fact table could list songs, while dimension tables detail albums and artists.
 
-
 <div class='img-center'>
 
 ![](/img/docs/database-design-sample-creating-songs-table-facts-dimensions.png)
 
 </div>
+
+## Running Example
