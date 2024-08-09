@@ -101,3 +101,57 @@ In a song analysis scenario, the fact table could list songs, while dimension ta
 </div>
 
 ## Running Example
+
+You'll use running data as example here. You want to collect the data from our weekly running routine to track how long you are running each week, as well as the route and distances of each run.
+
+These would be the attributes:
+
+| Columns		| Data Type 	|
+|---------------|---------------|
+| duration_mins | float			| 
+| week 			| int			| 
+| month 		| varchar(160)	| 
+| year 			| int			| 
+| park_name 	| varchar(160)	| 
+| city_name 	| varchar(160)	| 
+| distance_km 	| float			| 
+| route_name 	| varchar(160)	| 
+
+Create a dimension table called **route** that will hold the route information.
+
+```sql
+CREATE TABLE route(
+	route_id INTEGER PRIMARY KEY,
+    park_name VARCHAR(160) NOT NULL,
+    city_name VARCHAR(160) NOT NULL,
+    distance_km FLOAT NOT NULL,
+    route_name VARCHAR(160) NOT NULL
+);
+
+SELECT * FROM route;
+```
+
+![](/img/docs/running-example-dimension-table-route.png)
+
+
+Create a dimension table called **week** that will hold the week information.
+
+```sql
+CREATE TABLE week(
+	week_id INTEGER PRIMARY KEY,
+    week INTEGER NOT NULL,
+    month VARCHAR(160) NOT NULL,
+    year INTEGER NOT NULL
+);
+```
+
+![](/img/docs/running-example-dimension-table-week.png)
+
+
+If we are to redesign the tables, we can up with the facts table and two dimension tables.
+
+<div class='img-center'>
+
+![](/img/docs/running-example-dimension-table-facts-table-redesign.png)
+
+</div>
