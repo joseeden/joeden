@@ -196,6 +196,9 @@ In data warehousing, a star schema is often used. It optimizes analytical databa
     
     </div>
 
+For more information, please see [Schemas and Normalization](../021-Database-Design/003-Schemas-and-Normalization.md)
+
+
 
 ## Database Storage
 
