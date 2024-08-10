@@ -1,0 +1,295 @@
+---
+title: "Normal Forms"
+description: "Database Design"
+tags: [Data Engineering, Databases, Database Design]
+sidebar_position: 4
+last_update:
+  date: 2/27/2022
+---
+
+
+
+## Normal Forms (NF)
+
+Normal forms are used in normalizing a database, which involves organizing the data to reduce redundancy and improve integrity. Each normal form builds on the previous one, introducing stricter rules for how data should be structured. By following these rules, databases become easier to maintain and less prone to errors, such as update anomalies or data inconsistencies.
+
+To learn more about normalization, please see [Schemas and Normalization.](./003-Schemas-and-Normalization.md)
+
+## Types of Normal Forms 
+
+### First Normal Form (1NF)
+
+First Normal Form ensures that each column contains atomic values and that there are no repeating groups of data. This means every entry in a column is indivisible, and each record must be unique.
+
+Consider a table of students and their courses before 1NF:
+
+| Student_id | Name      | Courses       |
+|------------|-----------|---------------|
+| 101        | Alice     | Math, English |
+| 102        | Bob       | Science       |
+| 103        | Carol     | Math, History |
+
+To convert this to 1NF, ensure that each course is in a separate row, splitting it into two tables:
+
+**Student Table**
+
+| Student_id | Name  |
+|------------|-------|
+| 101        | Alice |
+| 102        | Bob   |
+| 103        | Carol |
+
+**Student-Course Table**
+
+| Student_id | Course  |
+|------------|---------|
+| 101        | Math    |
+| 101        | English |
+| 102        | Science |
+| 103        | Math    |
+| 103        | History |
+
+
+
+
+### Second Normal Form (2NF)
+
+Second Normal Form builds on 1NF by removing partial dependencies, meaning all non-key attributes must be fully dependent on the primary key. In a table with a composite primary key, every non-key attribute should depend on the whole key, not just part of it.
+
+- Must satisfy 1NF First
+- If primary key is one column, then automatically satisfies 2NF 
+- If there is a composite primary key, then each non-key column must be dependent on all the keys 
+
+Consider a table that tracks student progress in various courses:
+
+| Student_id | Course_id | Instructor_id | Instructor | Progress |
+|------------|-----------|---------------|------------|----------|
+| 101        | 2021      | 301           | Dr. Smith  | 85%      |
+| 101        | 2042      | 302           | Dr. Jones  | 90%      |
+| 102        | 2021      | 301           | Dr. Smith  | 75%      |
+| 103        | 2053      | 303           | Dr. Brown  | 88%      |
+
+
+The primary keys are:
+
+- `Student_id` 
+- `Course_id`
+
+The non-key columns:
+
+- `Instructor`
+
+    - Dependent only on `Course_id`
+    - Instructors depends on the courses, not the students taking the course.
+
+- `Instructor_id` 
+
+    - Similar with `Instructor` in terms of dependency.
+    - Dependent only on `Course_id`
+    - Instructors depends on the courses, not the students taking the course.
+
+- `Progress`
+
+    - Dependent on both `Student_id` and `Course_id`
+
+
+To achieve 2NF, separate the data into two tables:
+
+**Student-Course Table**
+
+| Student_id | Course_id | Progress |
+|------------|-----------|----------|
+| 101        | 2021      | 85%      |
+| 101        | 2042      | 90%      |
+| 102        | 2021      | 75%      |
+| 103        | 2053      | 88%      |
+
+**Instructor-Course Table**
+
+| Course_id | Instructor_id | Instructor |
+|-----------|---------------|------------|
+| 2021      | 301           | Dr. Smith  |
+| 2042      | 302           | Dr. Jones  |
+| 2053      | 303           | Dr. Brown  |
+
+
+In these tables:
+
+- **Student-Course Table**: 
+
+    - The `Progress` is fully dependent on the composite key (`Student_id`, `Course_id`).
+    
+- **Instructor-Course Table**: 
+
+    - `Course_id` is the primary key here.
+    - `Instructor` and  `Instructor_id` is fully dependent on the `Course_id`.
+    - This ensures there are no partial dependencies.
+
+This separation resolves partial dependencies, ensuring that each non-key attribute is related to the entire primary key in its respective table, thus achieving 2NF.
+
+
+
+### Third Normal Form (3NF)
+
+Third Normal Form eliminates transitive dependencies, ensuring non-key attributes are not dependent on other non-key attributes.
+
+- Must satisfy 2NF first 
+- Non-key columns should not depend on other non-key columns.
+
+In the sample table below, the primary key is the `Course ID`.
+
+- `Instructor` is dependent on `Instructor ID`
+-  This creates a transitive dependency since `Instructor` can be derived from `Instructor ID` instead of directly from `Course ID`.
+
+| Course ID | Instructor ID | Instructor | Technology  |
+|-----------|---------------|------------|-------------|
+| 2021      | 301           | Dr. Smith  | Python      |
+| 2042      | 302           | Dr. Jones  | Java        |
+| 2053      | 303           | Dr. Brown  | JavaScript  |
+| 2064      | 304           | Dr. White  | C++         |
+| 2075      | 305           | Dr. Green  | Ruby        |
+
+To achieve 3NF, we separate the table into two tables to eliminate transitive dependencies:
+
+**Courses Table**
+
+| Course ID | Instructor | Technology  |
+|-----------|------------|-------------|
+| 2021      | Dr. Smith  | Python      |
+| 2042      | Dr. Jones  | Java        |
+| 2053      | Dr. Brown  | JavaScript  |
+| 2064      | Dr. White  | C++         |
+| 2075      | Dr. Green  | Ruby        |
+
+**Instructors Table**
+
+| Instructor ID | Instructor |
+|---------------|------------|
+| 301           | Dr. Smith  |
+| 302           | Dr. Jones  |
+| 303           | Dr. Brown  |
+| 304           | Dr. White  |
+| 305           | Dr. Green  |
+
+In these tables:
+
+- **Courses Table**: 
+
+    - Attributes `Instructor` and `Technology` are now directly related to `Course ID` without depending on any other non-key attribute.
+
+- **Instructors Table**: 
+
+    - The instructor information is separated into its own table.
+    - This removes the transitive dependency on `Instructor ID`.
+
+This structure ensures that all non-key attributes in the `Courses` table are directly dependent on the primary key, `Course ID`, and eliminates transitive dependencies.
+
+
+## Other Normal Forms 
+
+The first three normal forms are commonly used in normalization, but there are other normal forms as well.
+
+
+### Boyce-Codd Normal Form (BCNF)
+
+BCNF is a stricter version of 3NF, ensuring every determinant is a candidate key.
+
+Consider a table where a professor can only teach one subject in a particular room, but a room can host different professors at different times:
+
+| Professor | Subject | Room |
+|-----------|---------|------|
+| Dr. Smith | Math    | 101  |
+| Dr. Jones | English | 102  |
+| Dr. Smith | Science | 101  |
+
+This table violates BCNF because Room determines the Subject. To achieve BCNF:
+
+**Room-Subject Table**
+
+| Room | Subject |
+|------|---------|
+| 101  | Math    |
+| 102  | English |
+
+**Professor-Assignment Table**
+
+| Professor | Room |
+|-----------|------|
+| Dr. Smith | 101  |
+| Dr. Jones | 102  |
+
+### Fourth Normal Form (4NF)
+
+Fourth Normal Form eliminates multi-valued dependencies, ensuring that there are no non-trivial multi-valued dependencies other than a candidate key.
+
+Suppose a student can have multiple hobbies and skills independently:
+
+| Student_id | Hobby    | Skill   |
+|------------|----------|---------|
+| 101        | Cycling  | Python  |
+| 101        | Painting | SQL     |
+| 102        | Cycling  | Java    |
+| 102        | Drawing  | Python  |
+
+This table has a multi-valued dependency because hobbies and skills are independent attributes. To achieve 4NF, separate these into two tables:
+
+**Hobby Table**
+
+| Student_id | Hobby    |
+|------------|----------|
+| 101        | Cycling  |
+| 101        | Painting |
+| 102        | Cycling  |
+| 102        | Drawing  |
+
+**Skill Table**
+
+| Student_id | Skill   |
+|------------|---------|
+| 101        | Python  |
+| 101        | SQL     |
+| 102        | Java    |
+| 102        | Python  |
+
+### Fifth Normal Form (5NF)
+
+Fifth Normal Form focuses on eliminating join dependencies, ensuring that all join dependencies are implied by candidate keys.
+
+Suppose a project requires multiple employees with different skills, and each skill needs specific tools:
+
+| Project | Employee | Skill   | Tool  |
+|---------|----------|---------|-------|
+| A       | Alice    | Coding  | Laptop|
+| A       | Bob      | Testing | Toolkit|
+| B       | Alice    | Testing | Toolkit|
+| B       | Carol    | Design  | Sketchpad|
+
+To achieve 5NF, decompose this table:
+
+**Project-Employee Table**
+
+| Project | Employee |
+|---------|----------|
+| A       | Alice    |
+| A       | Bob      |
+| B       | Alice    |
+| B       | Carol    |
+
+**Employee-Skill Table**
+
+| Employee | Skill   |
+|----------|---------|
+| Alice    | Coding  |
+| Bob      | Testing |
+| Carol    | Design  |
+
+**Skill-Tool Table**
+
+| Skill   | Tool    |
+|---------|---------|
+| Coding  | Laptop  |
+| Testing | Toolkit |
+| Design  | Sketchpad|
+
+
+

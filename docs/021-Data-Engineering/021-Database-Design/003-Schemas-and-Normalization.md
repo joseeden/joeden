@@ -276,7 +276,7 @@ Combining all normalized dimensions together:
 
 
 
-## Eliminating Redundancy  
+### Eliminating Redundancy  
 
 Normalization reduces data redundancy, which might seem counterintuitive given the increase in the number of tables. 
 
@@ -302,7 +302,7 @@ In a normalized schema, redundancy is eliminated. For example, "Brooklyn" is sto
 
 
 
-## Enhancing Data Integrity 
+### Enhancing Data Integrity 
 
 Normalization improves data integrity by enforcing consistency and simplifying data modifications. It reduces duplicates, making updates easier and safer. 
 
@@ -311,7 +311,7 @@ Normalization improves data integrity by enforcing consistency and simplifying d
 - Smaller tables make schema alterations easier.
 
 
-## Pros and Cons 
+### Pros and Cons 
 
 Normalization offers benefits like easier maintenance and reduced redundancy. However, it requires more joins, complicating queries and potentially slowing indexing and data reading. 
 
@@ -320,7 +320,7 @@ Normalization offers benefits like easier maintenance and reduced redundancy. Ho
 - Decision depends on database read or write intensity.
 
 
-## OLTP vs. OLAP Preferences
+### OLTP vs. OLAP Preferences
 
 OLTP and OLAP have different preferences regarding normalization. OLTP is write-intensive while OLAP focuses on read-intensive analytics.
 
@@ -494,3 +494,5 @@ GROUP BY dim_state_sf.state;
 Finally, it returns an output:
 
 ![](/img/docs/snowflake-schema-tracing-from-facts-table-to-dimension-table-success.png)
+
+
