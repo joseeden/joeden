@@ -14,34 +14,8 @@ Views in SQL can be as simple or complex as needed, incorporating aggregations, 
 
 For more information, please see [Database Views.](./006-Database-Views.md)
 
-## Granting and Revoking Access
 
-Views are useful for controlling access to data. Use the `GRANT` and `REVOKE` commands to manage user permissions. These commands allow you to specify which users have access to perform actions on database objects.
 
-```sql
-GRANT privilege ON object TO role;
-REVOKE privilege ON object FROM role;
-```
-
-Types of privileges commonly used:
-
-- `SELECT`
-- `INSERT`
-- `UPDATE`
-- `DELETE`
-
-Objects:
-
-- table 
-- schema 
-- view, etc
-
-Here's an example of how you can use the `GRANT` and `REVOKE` commands:
-
-```sql
-GRANT UPDATE ON ratings TO PUBLIC;
-REVOKE INSERT ON films FROM db_user;
-```
 
 ## Updating a View
 
@@ -275,28 +249,6 @@ SELECT * FROM top_artists_2017;
 </details>
 
 
-### Revoking and granting access 
-
-To-dos:
-
-1. Revoke all database users' update and insert privileges on the `long_reviews` view.
-2. Grant the `editor` user update and insert privileges on the `long_reviews` view.
-
-
-<details>
-    <summary>Solution</summary>
-
-The correct queries are:
-
-```sql
--- Revoke everyone's update and insert privileges
-REVOKE UPDATE, INSERT ON long_reviews FROM PUBLIC; 
-
--- Grant the editor update and insert privileges 
-GRANT UPDATE, INSERT ON long_reviews TO editor;  
-```
-
-</details>
 
 
 ### Redefining a View
