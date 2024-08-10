@@ -292,4 +292,52 @@ To achieve 5NF, decompose this table:
 | Design  | Sketchpad|
 
 
+## More examples 
 
+Below is a denormalized table called **customers** containing car rental records:
+
+
+| customer_id | customer_name  | cars_rented             | invoice_id         | premium_member | salutation |
+|-------------|----------------|-------------------------|--------------------|----------------|------------|
+| 2871        | Alex Johnson   | 7XY123                  | 5498               | false          | Dr         |
+| 3924        | Mia Chen       | 3TH678                  | 7623               | false          | Mr         |
+| 4785        | Noah Wilson    | 9JK234, 8LM567, 1BC890  | 1839, 9462, 2750   | true           | Ms         |
+| 5648        | Emma Garcia    | 2DE345, 6GH789          | 3847, 5129         | true           | Mrs        |
+
+To do:
+
+1. `cars_rented` holds one or more `car_ids` and `invoice_id` holds multiple values. 
+2. Create a new table to hold individual `car_ids` and `invoice_ids` of the `customer_ids` who've rented those cars.
+3. Drop two columns from customers table to satisfy 1NF
+
+<details>
+    <summary>Solution</summary>
+
+Run the SQL commands below:
+
+```sql
+-- Create a new table to hold the cars rented by customers
+CREATE TABLE cust_rentals (
+  customer_id INT NOT NULL,
+  car_id VARCHAR(128) NULL,
+  invoice_id VARCHAR(128) NULL
+);
+
+-- Drop two columns from customers table to satisfy 1NF
+ALTER TABLE customers
+DROP COLUMN cars_rented,
+DROP COLUMN invoice_id;
+
+SELECT * FROM cust_rentals;
+```
+
+![](/img/docs/more-example-car-cust-rental.png)
+
+We now have two tables: 
+
+- **customers** which holds customer information 
+- **cust_rentals** which holds the car_ids rented by different `customer_ids`. 
+
+This satisfies 1NF. In a real situation, we would need to fill the new table before dropping any columns.
+
+</details>
