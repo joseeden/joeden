@@ -114,15 +114,16 @@ The database schema includes a main table named `Reviews`, which contains:
 
 The `reviewid` field acts as a foreign key linking to several other tables: 
 
-- `content`, 
-- `genres`, 
-- `artist`,  
+- `content` 
+- `genres` 
+- `artist`  
 - `labels`
 
 The `content` table holds the text of the review.
 
 Reference: https://www.kaggle.com/nolanbconaway/pitchfork-data
 
+### Create the View 
 
 Create a view called `high_scores` that holds reviews with scores above a 9.
 
