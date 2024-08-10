@@ -15,4 +15,10 @@ Go to [SQLite Viewer](https://inloop.github.io/sqlite-viewer/) and upload your .
 
 From here you can also run and test SQL queries.
 
+<div class='img-center'>
+
 ![](/img/docs/sqlite-view-it-online-just-upload-sqlite-file.png)
+
+
+</div>
+
