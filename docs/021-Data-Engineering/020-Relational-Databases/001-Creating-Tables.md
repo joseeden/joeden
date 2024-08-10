@@ -98,6 +98,15 @@ Output:
 | women_parli_perc  | real             |
 
 
+## Checking the Schema 
+
+The command below can be used to check the schema of a given table.
+
+```sql
+SELECT column_name, data_type
+FROM information_schema.columns
+WHERE table_name = 'add_table_name_here'; 
+```
 
 ## Redundancies
 

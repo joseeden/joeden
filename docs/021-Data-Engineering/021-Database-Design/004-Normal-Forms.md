@@ -294,6 +294,8 @@ To achieve 5NF, decompose this table:
 
 ## More examples 
 
+### 1NF
+
 Below is a denormalized table called **customers** containing car rental records:
 
 
@@ -304,7 +306,7 @@ Below is a denormalized table called **customers** containing car rental records
 | 4785        | Noah Wilson    | 9JK234, 8LM567, 1BC890  | 1839, 9462, 2750   | true           | Ms         |
 | 5648        | Emma Garcia    | 2DE345, 6GH789          | 3847, 5129         | true           | Mrs        |
 
-To do:
+To-dos:
 
 1. `cars_rented` holds one or more `car_ids` and `invoice_id` holds multiple values. 
 2. Create a new table to hold individual `car_ids` and `invoice_ids` of the `customer_ids` who've rented those cars.
@@ -317,7 +319,7 @@ Run the SQL commands below:
 
 ```sql
 -- Create a new table to hold the cars rented by customers
-CREATE TABLE cust_rentals (
+CREATE TABLE customer_rentals (
   customer_id INT NOT NULL,
   car_id VARCHAR(128) NULL,
   invoice_id VARCHAR(128) NULL
@@ -328,7 +330,7 @@ ALTER TABLE customers
 DROP COLUMN cars_rented,
 DROP COLUMN invoice_id;
 
-SELECT * FROM cust_rentals;
+SELECT * FROM customer_rentals;
 ```
 
 ![](/img/docs/more-example-car-cust-rental.png)
@@ -336,8 +338,165 @@ SELECT * FROM cust_rentals;
 We now have two tables: 
 
 - **customers** which holds customer information 
-- **cust_rentals** which holds the car_ids rented by different `customer_ids`. 
+- **customer_rentals** which holds the car_ids rented by different `customer_ids`. 
 
 This satisfies 1NF. In a real situation, we would need to fill the new table before dropping any columns.
+
+</details>
+
+
+### 2NF 
+
+Below is an expanded version of the **customer_rentals** table:
+
+| customer_id | car_id  | start_date | end_date   | model       | manufacturer | type_car    | condition | color  |
+|-------------|---------|------------|------------|-------------|--------------|-------------|-----------|--------|
+| 3210        | 7XM245  | 2020-05-10 | 2020-05-15 | Focus 2020  | Ford         | sedan       | good      | white  |
+| 4521        | 8QN365  | 2021-06-12 | 2021-06-18 | Mustang 2021| Ford         | convertible | excellent | black  |
+| 3827        | 6LB457  | 2021-07-19 | 2021-07-21 | RAV4 2021   | Toyota       | SUV         | excellent | silver |
+| 3827        | 6LB457  | 2021-08-01 | 2021-08-12 | RAV4 2021   | Toyota       | SUV         | excellent | silver |
+| 3827        | 5ZX673  | 2020-09-05 | 2020-09-10 | RAV4 2021   | Toyota       | SUV         | good      | black  |
+| 4938        | 7XM245  | 2020-11-11 | 2020-11-15 | Focus 2020  | Ford         | sedan       | good      | white  |
+| 4938        | 7XM245  | 2021-01-04 | 2021-01-10 | Focus 2020  | Ford         | sedan       | fair      | white  |
+
+To-dos:
+
+1. Create a new table for the non-key columns that were conflicting with 2NF criteria.
+2. Drop those non-key columns from customer_rentals.
+
+<details>
+    <summary>Solution</summary>
+
+We can use the query below to check the primary keys in the given **customer_rentals** table:
+
+```sql
+SELECT 
+    kcu.column_name, 
+    tc.constraint_type
+FROM 
+    information_schema.table_constraints AS tc 
+JOIN 
+    information_schema.key_column_usage AS kcu
+ON 
+    tc.constraint_name = kcu.constraint_name
+WHERE 
+    tc.table_name = 'customer_rentals' 
+    AND tc.constraint_type = 'PRIMARY KEY'; 
+```
+
+![](/img/docs/2nf-hearing-customer-rentals-checking-the-primary-keyssss.png)
+
+Based on the output above, the following columns are the primary keys:
+
+- `customer_id` 
+- `start_date`
+- `car_id`
+
+The following non-key columns depend on `car_id`, but are independent of the other two primary keys:
+
+- `model`
+- `manufacturer`
+- `type_car`
+- `conditions`
+- `colors` 
+
+The customer or start date cannot change these attributes. We can put these columns in a new table and dropped them from **customer_rentals** table.
+
+Create the table to store details about each car: 
+
+```sql
+CREATE TABLE cars (
+  car_id VARCHAR(256) NULL,
+  model VARCHAR(128),
+  manufacturer VARCHAR(128),
+  type_car VARCHAR(128),
+  condition VARCHAR(128),
+  color VARCHAR(128)
+);
+```
+
+![](/img/docs/more-examples-2nf-created-carssss.png)
+
+Modify the **customer_rentals** table by dropping the columns that were moved to the cars table. This will ensure the table satisfies 2NF by eliminating partial dependencies.
+
+```sql
+ALTER TABLE customer_rentals
+  DROP COLUMN model,
+  DROP COLUMN manufacturer, 
+  DROP COLUMN type_car,
+  DROP COLUMN condition,
+  DROP COLUMN color; 
+```
+
+![](/img/docs/more-examples-2nf-alter-table-customer-rentalssss.png)
+
+</details>
+
+
+### 3NF 
+
+We have expanded the **cars** table from above and created the **rental_cars** table below which uses the `car_id` attributes as the primary key.
+
+| car_id | model        | manufacturer | type_car    | condition | color  |
+|--------|--------------|--------------|-------------|-----------|--------|
+| 6XZ123 | Focus 2020   | Ford         | sedan       | excellent | white  |
+| 7PQ789 | Accord 2019  | Honda        | sedan       | good      | silver |
+| 8LM456 | Model S 2021 | Tesla        | electric    | new       | black  |
+| 9AB654 | Mustang 2020 | Ford         | convertible | fair      | red    |
+
+To-dos:
+
+1. Create a new table for the non-key columns that were conflicting with 3NF criteria.
+2. Drop those non-key columns from rental_cars.
+
+
+<details>
+    <summary>Solution</summary>
+
+Confirm the primary keys first:
+
+```sql
+SELECT 
+    kcu.column_name, 
+    tc.constraint_type
+FROM 
+    information_schema.table_constraints AS tc 
+JOIN 
+    information_schema.key_column_usage AS kcu
+ON 
+    tc.constraint_name = kcu.constraint_name
+WHERE 
+    tc.table_name = 'rental_cars' 
+    AND tc.constraint_type = 'PRIMARY KEY';  
+```
+
+![](/img/docs/3nf-new-example-verify-the-primary-key-first.png)
+
+
+Create a new table to satisfy 3NF:
+
+```sql
+CREATE TABLE car_model(
+  model VARCHAR(128),
+  manufacturer VARCHAR(128),
+  type_car VARCHAR(128)
+);
+```
+
+![](/img/docs/3nf-example-rental-cars-create-new-table-car_model.png)
+
+Drop columns in **rental_cars** to satisfy 3NF:
+
+```sql
+ALTER TABLE rental_cars
+DROP COLUMN condition,
+DROP COLUMN color;
+
+SELECT * FROM rental_cars; 
+```
+
+![](/img/docs/3nf-example-rental-cars-drop-columnssssss.png)
+
+From here we can see that creating 3NF tables help reduce data redundancy and potential data anomalies.
 
 </details>

@@ -585,9 +585,19 @@ We can use the same SQL query to check the constraints for any table, as seen in
 
 :::
 
-## Check primary keys 
+## Check schema and keys 
 
-Similarly, we can use the same command to see all keys in the table:
+The query below can be used to check the schema of a given table.
+
+```sql
+SELECT 
+    column_name, 
+    data_type
+FROM information_schema.columns
+WHERE table_name = 'add_table_name_here';   -- specify the table name here
+```
+
+We can use the same query from previous section to see the constraints in the table:
 
 ```sql
 SELECT 
@@ -596,6 +606,46 @@ SELECT
     constraint_type
 FROM information_schema.table_constraints;
 ```
+
+Query to show primary keys:
+
+```sql
+SELECT 
+    kcu.column_name, 
+    tc.constraint_type
+FROM 
+    information_schema.table_constraints AS tc 
+JOIN 
+    information_schema.key_column_usage AS kcu
+ON 
+    tc.constraint_name = kcu.constraint_name
+WHERE 
+    tc.table_name = 'add_table_name_here'   -- specify the table name here
+    AND tc.constraint_type = 'PRIMARY KEY'; 
+```
+
+Query to show foreign keys:
+
+```sql
+SELECT 
+    kcu.column_name, 
+    ccu.table_name AS foreign_table_name,
+    ccu.column_name AS foreign_column_name
+FROM 
+    information_schema.table_constraints AS tc 
+JOIN 
+    information_schema.key_column_usage AS kcu
+ON 
+    tc.constraint_name = kcu.constraint_name
+JOIN 
+    information_schema.constraint_column_usage AS ccu
+ON 
+    ccu.constraint_name = tc.constraint_name
+WHERE 
+    tc.table_name = 'add_table_name_here'   -- specify the table name here
+    AND tc.constraint_type = 'FOREIGN KEY';
+```
+
 
 ## Delete constraints 
 
