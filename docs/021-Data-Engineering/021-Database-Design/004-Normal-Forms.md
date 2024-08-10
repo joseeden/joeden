@@ -9,7 +9,7 @@ last_update:
 
 
 
-## Normal Forms (NF)
+## Overview
 
 Normal forms are used in normalizing a database, which involves organizing the data to reduce redundancy and improve integrity. Each normal form builds on the previous one, introducing stricter rules for how data should be structured. By following these rules, databases become easier to maintain and less prone to errors, such as update anomalies or data inconsistencies.
 
