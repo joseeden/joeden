@@ -585,6 +585,18 @@ We can use the same SQL query to check the constraints for any table, as seen in
 
 :::
 
+## Check primary keys 
+
+Similarly, we can use the same command to see all keys in the table:
+
+```sql
+SELECT 
+    constraint_name, 
+    table_name,
+    constraint_type
+FROM information_schema.table_constraints;
+```
+
 ## Delete constraints 
 
 Sometimes, it may be necessary to remove or delete a constraint from a table. This could be due to changes in the database design, requirements updates, or correcting issues with the existing constraints.
