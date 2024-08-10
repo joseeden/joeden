@@ -82,6 +82,10 @@ FROM INFORMATION_SCHEMA.views
 WHERE table_schema NOT IN ('pg_catalog', 'information_schema'); 
 ```
 
+The output would look something like this:
+
+![](/img/docs/managing-views-select-all-from-infromation-schema-views.png)
+
 ## Benefits of Using Views
 
 Views offer several advantages:
@@ -89,3 +93,54 @@ Views offer several advantages:
 - **Minimal Storage**: Views only store the query, saving space.
 - **Access Control**: Limit user access to specific data without exposing sensitive information.
 - **Simplified Queries**: Abstract complex joins and operations, especially in normalized databases, making it easier for users to work with the data.
+
+
+## Example: Database View
+
+We will use a database of Pitchfork reviews sourced from Kaggle. Pitchfork is a music magazine known for publishing reviews. 
+
+<div class='img-center'>
+
+![](/img/docs/database-view-sample-tables-pithfork-from-kaggleeee.png)
+
+</div>
+
+The database schema includes a main table named `Reviews`, which contains:
+
+- URL of the review
+- The title of the work being reviewed
+- score. 
+- Details about the author and the publication date. 
+
+The `reviewid` field acts as a foreign key linking to several other tables: 
+
+- `content`, 
+- `genres`, 
+- `artist`,  
+- `labels`
+
+The `content` table holds the text of the review.
+
+Reference: https://www.kaggle.com/nolanbconaway/pitchfork-data
+
+
+Create a view called `high_scores` that holds reviews with scores above a 9.
+
+```sql
+-- Create a view for reviews with a score above 9
+CREATE VIEW high_scores AS
+SELECT * 
+FROM reviews
+WHERE score > 9; 
+```
+
+Count the number of records in `high_scores` that are `self-released` in the `label` field of the **labels** table.
+
+```sql
+SELECT COUNT(*) 
+FROM labels
+INNER JOIN high_scores ON high_scores.reviewid = labels.reviewid
+WHERE label = 'self-released'; 
+```
+
+![](/img/docs/database-view-sample-tables-pithfork-from-kaggleeee-count-number-of-recordsss.png)
