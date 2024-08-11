@@ -17,7 +17,12 @@ Table partitioning helps manage large datasets efficiently. As tables grow into 
 
 Partitioning is part of the physical data model but doesn't alter the logical structure of data. This means that data remains logically unchanged but is distributed across multiple physical entities.
 
+<div class='img-center'>
+
 ![](/img/docs/database-partitioning-simple-diagrammmm.png)
+
+</div>
+
 
 ## Vertical Partitioning
 
