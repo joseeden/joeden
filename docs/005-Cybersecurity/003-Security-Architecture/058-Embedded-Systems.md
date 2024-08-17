@@ -102,13 +102,13 @@ Key characteristics:
   - Limit exposure to external threats.
   - For more information, please see [Isolation and Segmentation.](../003-Security-Architecture/001-Security-Design.md#isolation-and-segmentation)
 
-- **Wrappers**
+- **Security Wrappers**
 
   - Using protective wrappers or sandboxes to encapsulate embedded systems.
   - This shields the systems from potential security threats.
   - Detect and mitigate attacks in real-time using runtime protection mechanisms.
 
-- **Firmware Code Control**
+- **Firmware Version Control**
 
   - Strict control over firmware code development, deployment, and updates
   - Prevent unauthorized modifications.
@@ -186,12 +186,12 @@ A network of interconnected devices, sensors, and actuators that communicate and
 
 Industrial Control Systems  or ICS is a type of control systems used to monitor and control industrial processes ranging from simple systems to complex systems. 
 
-- **DCS (Distributed Control System)**:
+- **DCS (Distributed Control System)**
     - Utilizes networked computers to coordinate and control industrial processes or manufacturing operations.
     - Centralized control, monitoring, and data acquisition capabilities across distributed field devices.
     - Typically used in large-scale industrial settings such as power plants, chemical plants, and oil refineries.
 
-- **PLCs (Programmable Logic Controllers)**:
+- **PLCs (Programmable Logic Controllers)**
     - Specialized industrial computers used to automate electromechanical processes, e.g. assembly lines, robotic systems.
     - Designed for real-time operation in harsh industrial environments.
     - Programmable using ladder logic or other programming languages to control machinery and processes.

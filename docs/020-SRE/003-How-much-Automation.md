@@ -203,7 +203,7 @@ last_update:
 
     - Fuzzing or fuzz testing is an automated software testing technique.
     - Involves providing invalid, unexpected, or random data as inputs to a service and then watching the results.
-    - For more information, please see [Fuzz Testing](/docs/005-Cybersecurity/003-Security-Architecture/061-Application-Security.md)
+    - For more information, please see [Fuzz Testing](/docs/005-Cybersecurity/003-Security-Architecture/061-Application-Security.md#dynamic-code-analysis)
 
 ## Release
 
