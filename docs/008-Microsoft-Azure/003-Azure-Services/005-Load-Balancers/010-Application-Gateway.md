@@ -143,14 +143,14 @@ Rulesets protect web applications against common vulnerabilities and attacks.
 
 ![](/img/docs/azure-app-gw-enable-waf-rulesets.png)
 
-- The OWASP core 3.2 ruleset provides updated protection against Java infections and reduces false positives.
+The OWASP core 3.2 ruleset provides updated protection against Java infections and reduces false positives.
 
 ### Log Destination
 
 Logs from WAF can be stored in either a Storage Account or Log Analytics Workspace. To set this up, go to **Diagnostic settings** and add a diagnostic setting to specify:
 
-- **Logs**
-- **Metrics**
+- Logs
+- Metrics
 
 Choose the destination as either Log Analytics Workspace or Storage Account.
 

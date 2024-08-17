@@ -1399,7 +1399,7 @@ The Heartbleed bug is a flaw in the heartbeat extension of TLS and DTLS protocol
 
 ### Cross-Site Scripting
 
-Cross-Site Scripting (XSS) is a web security vulnerability that involves injecting malicious scripts into web pages viewed by other users, allowing the attackers to circumvent the browser's security model or trusted zones.
+Cross-Site Scripting (XSS) is a web security vulnerability that involves injecting malicious scripts into web pages viewed by other users. This allows the attackers to circumvent the browser's security model or trusted zones.
 
 - Attackers inject malicious scripts into web pages.
 - Scripts execute in the context of the victim's browser (client-side)
