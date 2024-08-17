@@ -21,7 +21,7 @@ The three most common goals of cybersecurity attackers are DAD:
 - Alteration
 - Denial
 
-For more information, please see [Attacks](../011-Threats-and-Attacks/050-Attacks.md). 
+For more information, please see [Attacks](../012-List-of-Attacks/). 
 
 ### Hackers
 

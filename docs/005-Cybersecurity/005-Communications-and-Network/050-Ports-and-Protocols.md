@@ -129,18 +129,21 @@ Network switches make traffic switching decision based on the MAC address of the
 - Switches prevent collisions by ensuring each port is its own collision domain.
 - This allows switches to operate in full duplex mode.
 
-**Full duplex** 
+#### Full duplex
+
 - This means a port can both receive and send data at the same time.
 
-**CAM Table**
+#### CAM Table
+
 - Content Address Memory (CAM) Table
 - Stores information about the MAC addresses available on any given port.
 
-**MAC Flooding**
+#### MAC Flooding
+
 - Randomized MAC addresses are sent to the network switch.
 - When this happens, the network switch will simply fail open.
 - When it fail-open, the switch begins to rebroadcast all traffic out to every port.
-- For more information, please see [MAC Address Flooding](../011-Threats-and-Attacks/050-Attacks.md#mac-address-flooding)
+- For more information, please see [MAC Address Flooding](../012-List-of-Attacks/012-Layer-2-Attacks.md#mac-address-flooding)
 
 ### Implementing Port Security
 
