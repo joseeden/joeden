@@ -42,10 +42,22 @@ A digital signature is a cryptographic method for verifying the authenticity and
 
 ### Verifying the Digital Signature 
 
-1. The recipient can use the sender's public key to decrypt the signature.
-2. The hash value of the message can then be computed. 
-3. Compare the values from step 1 and 2.
-4. If both values match, then the message is authentic. 
+Below are the steps to verify the digital signature: 
+
+1. Receiver gets the message and the digital signature.
+2. Rceiver uses the same hash function and the message to compute the hash value.
+3. Receiver uses sender's public key to decrypt the digital signature, resulting to the message digest.
+4. Receiver compares the values from step 2 (hash value) and 3 (message digest).
+6. If both values match, then the message is authentic. 
+
+How it looks like:
+
+<div class='img-center'>
+
+![](/img/docs/verifying-digital-signature-from-the-recepients-side.png)
+
+</div>
+
 
 ### Benefits
 

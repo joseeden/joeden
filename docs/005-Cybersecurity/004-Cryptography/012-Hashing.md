@@ -49,12 +49,11 @@ DSS, or the Digital Signature Standard, is a cryptographic standard used for gen
 - Ensures authenticity, integrity, and non-repudiation for digital data through digital signatures.
 - Relies upon a 160-bit message digest created by the Digital Signature Algorithm (DSA)
 
+How it works:
 
-**How it works:**
-
-  - Public-private key pairs is created for signing and verifying.
-  - Private key is used to generate a digital signature from a message hash.
-  - The public key verifies the digital signature and check the message's integrity.
+- Public-private key pairs is created for signing and verifying.
+- Private key is used to generate a digital signature from a message hash.
+- The public key verifies the digital signature and check the message's integrity.
 
 
 ### Code Signing
@@ -65,38 +64,46 @@ Code signing is the process of digitally signing software code or executables to
 - Ensures the code hasn't been modified since it was signed.
 - Protects users from malicious software and unauthorized code changes.
 
-**How It Works**:
+How It Works:
 
-  - A software developer uses a private key to create a digital signature for their code.
-  - The digital signature is attached to the code, forming a certificate.
-  - A user or system uses the public key to verify the signature.
-  - The public key confirms the software's source and that it hasn't been tampered with.
+- A software developer uses a private key to create a digital signature for their code.
+- The digital signature is attached to the code, forming a certificate.
+- A user or system uses the public key to verify the signature.
+- The public key confirms the software's source and that it hasn't been tampered with.
 
-**Use Cases**:
-  - Software distribution, ensuring safe installation of programs and updates.
-  - Application stores, confirming that apps meet security standards.
-  - Operating systems, allowing signed drivers and system software.
+Use Cases:
 
-**Common Tools**:
+- Software distribution, ensuring safe installation of programs and updates.
+- Application stores, confirming that apps meet security standards.
+- Operating systems, allowing signed drivers and system software.
 
-  - **Certificate Authorities (CAs)**: Organizations that issue digital certificates to verify the identity of the signer.
-  - **Code Signing Certificates**: Certificates issued to developers for signing their code.
+Common Tools:
 
-**Challenges**:
+- **Certificate Authorities (CAs)**: Organizations that issue digital certificates to verify the identity of the signer.
+- **Code Signing Certificates**: Certificates issued to developers for signing their code.
 
-  - **Certificate Management**: Properly handling and securing code signing certificates.
-  - **Revocation**: Handling compromised or invalid certificates.
-  - **Cost**: Obtaining code signing certificates from reputable CAs can be expensive.
-  
+Challenges:
+
+- **Certificate Management**: Properly handling and securing code signing certificates.
+- **Revocation**: Handling compromised or invalid certificates.
+- **Cost**: Obtaining code signing certificates from reputable CAs can be expensive.
+
 
 
 ## Hash Functions 
 
-Hash functions convert input data into a fixed-size hash value. Below are some of the common algorithms used for hashing.
+Hash functions convert input data into a fixed-size hash value. A cryptographic hash function should have the following characteristic: 
+
+- unique 
+- deterministic
+- useful 
+- tamper-evident 
+- non-reversible
+
 
 ### MD5
 
-An older hash function, MD5 is now considered insecure due to known collisions.
+Message Digest 5 (MD5) is an older hash function, MD5 is now considered insecure due to known collisions.
 
 - Creates a 128-bit hash value unique to the input file.
 - 128-bits long means it can only create limited values, which can lead to collisions.
@@ -106,15 +113,15 @@ An older hash function, MD5 is now considered insecure due to known collisions.
 
 ### SHA Family  
 
-A family of cryptographic hash functions designed by the National Security Agency (NSA).
+A family of cryptographic hash functions designed by the National Security Agency (NSA) as a government standard for use in federal computing applications.
 
-- **SHA-1**: 
+- **SHA-1** 
     
     - Creates a 160-bit hash digest, reducing chance of collisions.
     - More secure than MD5, but also deprecated due to vulnerabilities.
     - Formerly used for digital signatures; now discouraged.
 
-- **SHA-2**: 
+- **SHA-2** 
 
     - Hash family containing longer hash digests.
     - Includes:
@@ -123,13 +130,13 @@ A family of cryptographic hash functions designed by the National Security Agenc
         - SHA-384
         - SHA-512
 
-- **SHA-256**: 
+- **SHA-256** 
 
    - Part of the SHA-2 family, SHA-256 offers a 256-bit output.
    - Stronger security, highly collision-resistant, and a commonly used standard.
    - Secure communication, SSL/TLS, and blockchain.
 
-- **SHA-3**: 
+- **SHA-3** 
 
    - A newer family of hash functions
    - Hash digest can go between **224 to 512 bits.**
@@ -141,11 +148,11 @@ A family of cryptographic hash functions designed by the National Security Agenc
 
 ### RIPEMD
 
-
 RIPEMD stands for **Race Integrity Primitives Evaluation Message Digest.** It is a family of cryptographic hash functions designed to ensure data integrity and secure hashing.
 
 - A family of cryptographic hash functions developed in Europe.
-- Comes in **160/256/320-bit versions**
+- Comes in **128/160/256/320-bit versions**
+- The 128-bit version have been found to contain security flaws.
 - **RIPEMD-160** is the most known, with a 160-bit output.
 - Offers strong security and is used as an alternative to SHA-1.
 
@@ -159,8 +166,7 @@ Stands for "Hash-based Message Authentication Code", HMAC uses a hash function c
 
 Commonly paired with other algorithms for additional security:
 
-
-- **HMAC-MD5**: 
+ - **HMAC-MD5**: 
 
     - Historically used for message authentication and checksum verification.
     - Now considered insecure due to the vulnerabilities in MD5

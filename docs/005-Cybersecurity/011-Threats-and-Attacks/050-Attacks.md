@@ -19,24 +19,24 @@ Attempts to gain unauthorized access by cracking or stealing passwords.
 
 A brute force attack uses every possible combination of letters, numbers, and symbols to guess a user's password.
 
-**Mitigations** 
+#### Mitigations
 
-  - Enforce strong and complex password creation policies.
-  - Temporarily lock accounts after a certain number of unsuccessful login attempts.
-  - Restrict the number of login attempts within a specific time frame.
-  - Keep systems and software up-to-date to address vulnerabilities.
+- Enforce strong and complex password creation policies.
+- Temporarily lock accounts after a certain number of unsuccessful login attempts.
+- Restrict the number of login attempts within a specific time frame.
+- Keep systems and software up-to-date to address vulnerabilities.
 
 ### Dictionary Attack 
 
 A dictionary attack is a type of attack that uses a list of common words to guess a user's password. 
 
-**Mitigations** 
+#### Mitigations
 
-  - Enforce strong and complex password creation policies.
-  - Temporarily lock accounts after a certain number of unsuccessful login attempts.
-  - Use a secure hashing algorithm with a unique salt for each password.
-  - Keep systems and software up-to-date to address vulnerabilities.
-  - Add an additional authentication layer - MFA
+- Enforce strong and complex password creation policies.
+- Temporarily lock accounts after a certain number of unsuccessful login attempts.
+- Use a secure hashing algorithm with a unique salt for each password.
+- Keep systems and software up-to-date to address vulnerabilities.
+- Add an additional authentication layer - MFA
 
 ### Password Spraying 
 
@@ -46,7 +46,7 @@ A form of brute force attack that involves trying a small number of commonly use
 - In a large group of user, there's a good chance some of them uses very common and weak passwords.
 - Slower (per-account basis), since each common password is tried on each user first.
 
-**Mitigation:**
+#### Mitigations
 
 - Rate limiting on login attempts to slow down brute force attacks.
 - Regular password changes to minimize risks from compromised accounts.
@@ -57,7 +57,7 @@ A form of brute force attack that involves trying a small number of commonly use
 
 Blends brute force and dictionary techniques by using common passwords with variations, such as adding numbers and special characters.
 
-**Mitigation:**
+#### Mitigation
 
 - Encourage complex passwords - less susceptible to variations.
 - Recommend long, randomly generated passwords.
@@ -69,26 +69,26 @@ Blends brute force and dictionary techniques by using common passwords with vari
 
 Cybercriminals use birthday attacks to trick systems by cracking digital authentication methods.
 
-**The Birthday Paradox**
+#### The Birthday Paradox
 
   - High odds of at least two will share a birthday in a random group of people. 
   - Easier to find two colliding results of different inputs than generating all possible outputs.
 
-**Birthday Attack in Cybersecurity**
+#### Birthday Attack in Cybersecurity
 
   - Attackers aim to find hash collisions to break security. 
   - Used to crack weak hash functions or forge digital signatures.
 
-**Finding the Collision**
+#### Finding the Collision
 
   1. A program repeatedly runs the hash function on randomly selected inputs.
   2. Every input-output pair is stored in a database.
   3. Each output is checked to find collisions (different inputs produce the same output).
   4. Attackers then exploit hash collisions to trick the system into treating different messages as identical.
 
-**Mitigations**
+#### Mitigations
   
-  - Use hash functions with large bit sizes; avoid outdated algorithms.
+- Use hash functions with large bit sizes; avoid outdated algorithms.
 
 
 <small>Reference: https://atlasvpn.com/blog/birthday-attack</small>
@@ -106,7 +106,7 @@ In simplests terms, we can perform cryptographic attacks by:
 
 Also known as **version rollback attack**, downgrade attacks force a system to use a less secure version of a protocol, making it vulnerable to known exploits. 
 
-**How it works**
+#### How it works
 
 - Attacker manipulates communication exchanges.
 - This makes the parties believe they should use a less secure version of a protocol or a weaker encryption algorithm.
@@ -115,12 +115,13 @@ Also known as **version rollback attack**, downgrade attacks force a system to u
   - Exploiting fallback mechanisms
   - Exploiting vulnerabilities in protocol negotiation.
 
-**Examples**
+#### Examples
+
   - In HTTPS, an attacker could force a secure connection to revert to an older SSL version with known vulnerabilities.
   - In wireless networks, an attacker might trick a device into connecting to a less secure network.
   - **POODLE Attack** - Padding Oracle on Downgraded Legacty Encryption, which targeted SSL 3.0.
 
-**Mitigations**
+#### Mitigations
 
 - **Protocol Hardening**: 
   - Ensure protocols do not support older, insecure versions. 
@@ -145,30 +146,30 @@ Collision attacks find two different inputs that produce the same hash, potentia
 - To breach the integrity of a cryptographic system.
 - Exploit vulnerabilities in hash-based security.
 
-**How It Works**
+#### How It Works
 
 - The attacker tries to find two different inputs that yield the same hash.
 - This can be used to forge digital signatures, tamper with data, or bypass security checks.
 
-**Examples**
+#### Examples
 
 - MD5 and SHA-1 hash functions have known vulnerabilities allowing collision attacks.
 - Birthday Attacks
 - Certificate forgery, where an attacker can create a fraudulent certificate with the same hash as a legitimate one.
 
-**Mitigations**
+#### Mitigations
 
-- **Use Secure Hash Functions**:
+- **Use Secure Hash Functions**
   - Choose hash functions with no known vulnerabilities. 
   - Avoid MD5 and SHA-1; opt for SHA-256 or stronger.
 
-- **Implement Collision-Resistant Algorithms**: 
+- **Implement Collision-Resistant Algorithms** 
   - Employ algorithms designed to resist collisions, especially in digital signatures and certificate generation.
 
-- **Detect Anomalies**: 
+- **Detect Anomalies** 
   - Implement mechanisms to detect unusual patterns that might indicate a collision attack.
 
-- **Regularly Update Security Practices**: 
+- **Regularly Update Security Practices** 
   - Stay updated with the latest cryptographic standards and replace vulnerable hash functions as necessary.
 
 
@@ -178,7 +179,7 @@ Collision attacks find two different inputs that produce the same hash, potentia
 
 Quantum computing poses a threat to traditional cryptography by potentially breaking key cryptographic algorithms. 
   
-**How It Works**
+#### How It Works
 
 - Quantum computers use qubits, which can represent multiple states simultaneously.
 - This enables parallel processing at a massive scale.
@@ -197,23 +198,23 @@ Quantum computing poses a threat to traditional cryptography by potentially brea
   - SPHINCS+
 
 
-**Mitigations**
+#### Mitigations
 
-- **Transition to Post-Quantum Cryptography**: 
+- **Transition to Post-Quantum Cryptography** 
 
   - Adopt cryptographic algorithms designed to withstand quantum attacks.
   - Examples are lattice-based or hash-based algorithms.
 
-- **Use Larger Key Sizes**: 
+- **Use Larger Key Sizes** 
 
   - Increase key sizes in symmetric encryption.
   - This provides a greater buffer against quantum computing threats.
 
-- **Hybrid Cryptographic Systems**: 
+- **Hybrid Cryptographic Systems** 
 
   - Implement systems that use a mix of traditional and post-quantum cryptographic techniques.
 
-- **Monitor Quantum Advancements**: 
+- **Monitor Quantum Advancements** 
 
   - Keep informed about developments in quantum computing and adapt security strategies accordingly.
 
@@ -221,7 +222,7 @@ Quantum computing poses a threat to traditional cryptography by potentially brea
 
 A rainbow table attack uses precomputed hashes to find a matching hash value for a user's password (see ISC2 Study Guide, Module 2, under Types of Threats). 
 
-**Mitigations** 
+#### Mitigations
 
   - Add a unique random value (salt) to each password before hashing.
   - Choose robust cryptographic hash functions resistant to rainbow tables.
@@ -239,19 +240,19 @@ A "pass the hash" attack involves using a hashed password to gain unauthorized a
 - Common in Windows environments with NTLM authentication.
 
 
-**Mimikatz**
+#### Mimikatz
 
   - An open-source tool for security testing and penetration testing.
   - Extracts plaintext passwords, hashes, and Kerberos tickets from memory.
   - Enables "pass the hash" and "pass the ticket" attacks.
   - Manipulates Windows authentication tokens.
 
-**Common Use Cases of Mimikatz**
+#### Common Use Cases of Mimikatz
 
   - Used by penetration testers to assess security on Windows systems.
   - Often exploited by hackers for unauthorized access.
 
-**Mitigation Measures**
+#### Mitigation Measures
 
   - Apply multi-factor authentication.
   - Keep Windows systems updated with security patches.
@@ -272,7 +273,7 @@ Redirecting users from legitimate websites to malicious ones without their knowl
   - **DNS Poisoning** - compromising a DNS server and create fake domains
   - **URL Hijacking** - Redirects traffic from legitimate URLs to malicious or fraudulent websites.
 
-Mitigation:
+Mitigations:
 
 - Implementing secure coding practices
 - Regular website security audits
@@ -286,7 +287,7 @@ Considered as a passive attack, Watering Hole attacks target websites that are f
 - Often used to compromise organizations by infecting their employees' devices or stealing sensitive information.
 - Mimics the behavior of predators waiting near water sources to ambush prey, hence "watering hole" attack.
   
-Mitigation:
+Mitigations:
 
 - Regularly updating website software
 - Implementing web application firewalls
@@ -332,7 +333,7 @@ Attacker registers a domain name similar to a popular website. The "copycat" dom
 
 An attack that attempts to overload a network or website with traffic to make it unavailable.
 
-Mitigation:
+Mitigations:
 
 - **Load Balancers**: Distribute traffic across multiple servers.
 - **Rate Limiting**: Limit requests per user or IP address.
@@ -359,7 +360,7 @@ Variations:
   - Server replies to establish the 3-way handshake but no one responds.
   - Server reserves resouces to wait for these acknowledgements from these clients.
   - With enough requests, server will run out of resources.
-  - Mitigation:
+  - Mitigations:
     - Flood guards - detect SYN floods and block request at the network boundary.
     - Timeouts - stop connections after a period of time, e.g. 10, 15, 30 seconds
     - IPS - can detect and respond to SYN floods.
@@ -434,7 +435,7 @@ Example of spoofing attacks:
 - Facial Spoofing
 - Man-in-the-middle attack 
 
-**Mitigations** 
+#### Mitigations
 
 - **Email Security**: Use SPF, DKIM, and DMARC.
 - **User Training**: Educate on recognizing suspicious communications.
@@ -450,7 +451,7 @@ Example of spoofing attacks:
 
 Impersonating a trusted IP address to gain unauthorized access. 
 
-**Mitigations** 
+#### Mitigations
 
 - **Packet Filtering**: Block spoofed IP addresses.
 - **Secure Routing**: Use SBGP to validate routing.
@@ -460,44 +461,45 @@ Impersonating a trusted IP address to gain unauthorized access.
 
 ### Session Hijacking 
 
-**Session Management**
+#### Session Management
 
 - A fundamental security component that enables web applications to identify a user.
 - Uniquely identify user across requests while keeping the state of the data.
 - Data generated by the user is ensured to be assigned to that user only.
 - Information can be stored in database or cookies.
 
-**Cookies**
+#### Cookies
 
 - HTTP is a stateless protocol, server doesn't preserve any info about the client.
 - To store the client information, store it in a cookie or database.
 - Cookies allow web app to retain information about the users. 
 - Any subsequest request headers sent by the client will contain the cookie.
 - Needs to encrypt cookies to protect the session.
-- Types: 
 
-  - **Session Cookies**
+#### Types of Cookies
 
-    - Non-persistent, only stored in the browser.
-    - When browser is closed, cookies are deleted.
+- **Session Cookies**
 
-  - **Persistent Cookies**
+  - Non-persistent, only stored in the browser.
+  - When browser is closed, cookies are deleted.
 
-    - Stay around even after the browser is closed.
-    - Stored in the browser cache until they're deleted by the user.
-    - Delete when user "Clear cookies", or when they pass the defined expiration date.
+- **Persistent Cookies**
 
-**Session Hijacking**
+  - Stay around even after the browser is closed.
+  - Stored in the browser cache until they're deleted by the user.
+  - Delete when user "Clear cookies", or when they pass the defined expiration date.
+
+#### Session Hijacking
 
 - Spoofing attack where host is disconnected and replaced by the attacker.
 - Occurs through theft or modification of cookies.
 
-**Session Prediction**
+#### Session Prediction
 
 - Attacker attempts to predict session token to hijack the session.
 - If token is predictable, they can be guessed, attackers can take over the session.
 
-**Cookie Poisoning**
+#### Cookie Poisoning
 
 - Modifying the contents of the cookies to be sent to a client's browser.
 - Modified cookie can be used to exploit vulnerabilities in a web app
@@ -509,7 +511,7 @@ Attacker intercepts and retransmits a valid data transmission to trick the recei
 - Interception and retransmission of valid data packets.
 - Unauthorized access, data manipulation, session hijacking.
 
-**Mitigations**:
+#### Mitigations
 
 - Time-stamped tokens or nonces, ensures each transaction is unique and only valid for a short period.
 - Use TLS/SSL to encrypt data and make interception more difficult.
@@ -518,7 +520,7 @@ Attacker intercepts and retransmits a valid data transmission to trick the recei
 - Replay detection mechanisms to identify and block replayed messages.
 - Use WPA3 to avoid replay attacks.
 
-**Difference with Session Hijacking**
+#### Difference with Session Hijacking
 
 - Replay Attacks - attacker intercepts data, decides whether to retransmit it later.
 - Session Hijacking - attacker alters data transmission in real-time.
@@ -534,7 +536,7 @@ Targets applications which construct LDAP statements based on user input. By inj
 - Unauthorized access to sensitive information, data leakage, privilege escalation.
 - Anomalous LDAP query patterns, unexpected changes in directory data.
 
-**Mitigations**:
+#### Mitigations
 
 - Input validation and sanitization, ensure only valid data is processed.
 - Use parameterized queries and prepared statements.
@@ -549,7 +551,7 @@ Attacker inserts arbitrary commands into a program that are then executed by the
 - Unauthorized command execution, data theft, system compromise, denial of service.
 - Unusual command executions, system logs showing unexpected command activity.
 
-**Mitigations**:
+#### Mitigations
 
 - Input validation and sanitization to prevent execution of arbitrary commands.
 - Least privilege principles, ensuring applications run with necessary permissions.
@@ -564,27 +566,27 @@ Attackers insert malicious SQL code into a query. This can allow unauthorized ac
 - Data leakage, unauthorized database access, data manipulation, system compromise.
 - Monitoring for unusual SQL query patterns, database activity monitoring.
 
-**Structured Query Language**
+#### Structured Query Language
 
 - SQL, or Structured Query Language
 - Used for managing and manipulating relational databases. 
 - Allows users to perform various operations.
 
-**Main SQL Actions**
+#### Main SQL Actions
 
 - **SELECT**: Retrieves data from one or more tables based on specified criteria.
 - **INSERT**: Adds new rows of data into a table.
 - **UPDATE**: Modifies existing data in a table based on specified conditions.
 - **DELETE**: Removes rows of data from a table based on specified conditions.
 
-**Injecting SQL Commands**
+#### Injecting SQL Commands
 
 - Entering data 
 - Modifying cookies
 - Changing POST data
 - Using HTTP headers 
 
-**Mitigations**:
+#### Mitigations
 
 - Use parameterized queries and prepared statements to prevent SQL injection.
 - Implement strict input validation and sanitization.
@@ -600,33 +602,34 @@ XML Injection exploits vulnerabilities in XML (eXtensible Markup Language) parse
 - Data manipulation, information leakage, denial of service.
 - Unexpected behavior in XML parsing, error messages revealing XML structure.
 
-**eXtensible Markup Language**
+#### eXtensible Markup Language
 
-- XML, or eXtensible Markup Language.
-- Defines rules for encoding in human-readable and machine-readable. 
+XML, or eXtensible Markup Language defines rules for encoding in human-readable and machine-readable. 
+
 - Structures data in a hierarchical format using tags, similar to HTML. 
 - Commonly used for data exchange between different systems and platforms.
-- Sample XML data:
 
-    ```xml
-    <library>    
-      <book>
-        <title>The Great Gatsby</title>
-        <author>F. Scott Fitzgerald</author>
-        <genre>Classic</genre>
-        <year>1925</year>
-      </book>
-      
-      <book>
-        <title>To Kill a Mockingbird</title>
-        <author>Harper Lee</author>
-        <genre>Fiction</genre>
-        <year>1960</year>
-      </book>
-    </library>
-    ```
+Sample XML data:
 
-**Mitigations**:
+```xml
+<library>    
+  <book>
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <genre>Classic</genre>
+    <year>1925</year>
+  </book>
+  
+  <book>
+    <title>To Kill a Mockingbird</title>
+    <author>Harper Lee</author>
+    <genre>Fiction</genre>
+    <year>1960</year>
+  </book>
+</library>
+```
+
+#### Mitigations
 
 - Input validation and input sanitization.
 - Parameterized queries and prepared statements when incorporating XML data into database operations.
@@ -673,7 +676,7 @@ Another form of XML Bomb:
 </root>
  ```
 
-**Mitigations**: 
+#### Mitigations
 
 - Use secure XML parsers.
 - Limit entity expansion.
@@ -700,7 +703,7 @@ When the below XML document is processed by an XML parser, it attempts to resolv
 </data>
 ```
 
-**Mitigations**: 
+#### Mitigations
 
 - Disable external entity processing.
 - Use secure XML parsers.
@@ -715,7 +718,7 @@ Malicious code is injected into a legitimate process to evade detection and exec
 - Stealthy execution of malicious code, evasion of security mechanisms, data theft.
 - Monitoring for unusual process behavior, changes in process memory.
 
-**Ways to inject code:**
+#### Ways to inject code
 
 - Injection through DLLs 
 - Thread Execution Hijacking
@@ -724,7 +727,7 @@ Malicious code is injected into a legitimate process to evade detection and exec
 - Asynchronous Procedure Calls
 - Portable Execution Injections
 
-**Mitigations**:
+#### Mitigations
 
 - Endpoint protection tools that detect and block process injection techniques.
 - Use process integrity monitoring to detect changes in process behavior.
@@ -739,9 +742,7 @@ Also known as **Path Traversal**, it exploits insufficient security validation/s
 - Unauthorized access to files and directories, data leakage, system compromise.
 - Unusual file access patterns, log entries showing traversal sequences like `../`.
 
-
 How it looks like:
-
 
 <div class="img-center">
 
@@ -751,25 +752,25 @@ How it looks like:
 </div>
 
 
-**Hiding the traversal**
+#### Hiding the traversal
 
-- Attackers can still hide traversal attempts by masking "../" with:
+Attackers can still hide traversal attempts by masking "../" with:
 
-  ```bash
-  %2e%2e%2f
-  ```
+```bash
+%2e%2e%2f
+```
 
-**File Inclusion**
+#### File Inclusion
 
-- Allows an attacker to download files or upload an executable for backdoor.
-- Types:
-  - **Remote File Inclusion**
-    - Attacker executes a script to inject a remote file into the web app.
-    
-  - **Local File Inclusion**
-    - Attacker tries to add a file that already exists.
+File inclusion allows an attacker to download files or upload an executable for backdoor. 
 
-**Mitigations**:
+- **Remote File Inclusion**
+  - Attacker executes a script to inject a remote file into the web app.
+  
+- **Local File Inclusion**
+  - Attacker tries to add a file that already exists.
+
+#### Mitigations
 
 - Validate and sanitize user inputs to ensure only safe characters are allowed.
 - Secure APIs to abstract file paths and prevent direct access to the filesystem.
@@ -784,7 +785,7 @@ How it looks like:
 
 Intercepting and possibly altering communication between two parties.
 
-Mitigation:
+Mitigations:
 
 - **Encryption**: Use HTTPS, SSL/TLS, and VPNs.
 - **Public Key Infrastructure (PKI)**: Verify certificate authenticity.
@@ -796,7 +797,7 @@ Mitigation:
 
 Illegally intercepting and examining unencrypted data packets.
 
-**Mitigations** 
+Mitigations:
 
 - **Encryption**: Secure data in transit with HTTPS or VPNs.
 - **Secure Wi-Fi**: Use WPA3 for wireless networks.
@@ -808,7 +809,7 @@ Illegally intercepting and examining unencrypted data packets.
 
 Oversized packet attacks involve sending data packets that exceed the maximum allowable size, exploiting vulnerabilities in network protocols.   
 
-**Mitigations** 
+Mitigations:
 
 - **Packet Size Limits**: Enforce maximum packet sizes.
 - **Network Monitoring**: Detect oversized packet patterns.
@@ -819,7 +820,7 @@ Oversized packet attacks involve sending data packets that exceed the maximum al
 
 Fragmented packet attacks involve breaking down data into smaller fragments to bypass network security measures, exploiting vulnerabilities in reassembly processes.
 
-**Mitigations** 
+Mitigations:
 
 - **Reassembly Timeouts**: Set timeouts for reassembly.
 - **Fragmentation Limits**: Limit fragment size and count.
@@ -833,7 +834,7 @@ A reverse shell is a malicious connection where the target machine initiates a c
 - Attackers establish a connection from the victim's machine to their own, avoiding security controls.
 - Methods include exploiting vulnerabilities or using social engineering to run malicious code.
 
-Mitigation
+Mitigations:
 
 - Implement egress filtering to control outbound connections.
 - Regularly update and patch software to fix exploitable vulnerabilities.
@@ -857,7 +858,7 @@ Also known as **DNS spoofing**, is a type of attack where false DNS information 
 - Redirects users to fraudulent websites, phishing attacks, malware distribution.
 - Monitoring DNS traffic for unusual patterns, unexpected DNS responses.
 
-**Mitigations**:
+Mitigations:
 
 - **DNSSEC** (Domain Name System Security Extensions), verifies authenticity of DNS data.
 - Use secure DNS resolvers and regularly clear and update DNS cache.
@@ -872,7 +873,7 @@ DNS Amplification Attack is a type of DDoS attack that uses open DNS resolvers t
 - Service outages, network congestion, degraded performance.
 - Unusually high DNS traffic, traffic originating from multiple sources.
 
-**Mitigations**:
+Mitigations:
 
 - Configure DNS servers to prevent recursion for unauthorized users.
 - Rate limiting on DNS requests and anomaly detection mechanisms.
@@ -887,7 +888,7 @@ DNS Tunneling involves encoding the data within DNS queries and responses to byp
 - Data exfiltration, bypassing security controls, command and control for malware.
 - Unusual DNS query patterns, large volume of DNS traffic, long domain names.
 
-**Mitigations**:
+Mitigations:
 
 - Monitor and analyze DNS traffic for unusual patterns.
 - Implement deep packet inspection (DPI) to detect tunneled traffic.
@@ -902,7 +903,7 @@ Domain Hijacking involves the unauthorized acquisition of a domain name. Attacke
 - Loss of domain control, website defacement, phishing, etc.
 - Configure alerts for unauthorized changes to domain registration, WHOIS records.
 
-**Mitigations**:
+Mitigations:
 
 - Enable two-factor authentication (2FA) for domain registrar accounts.
 - Use strong, unique passwords for domain accounts.
@@ -917,7 +918,7 @@ Attackers successfully requests a copy of the DNS zone data from a DNS server. T
 - Exposure of sensitive network information, reconnaissance for further attacks.
 - Monitoring for unauthorized zone transfer requests, unusual query patterns.
 
-**Mitigations**:
+Mitigations:
 
 - Restrict zone transfers to specific IP addresses/authorized secondary DNS servers.
 - Implement access controls and authentication for DNS zone transfers.
@@ -1034,7 +1035,7 @@ An on-path Attack is an attack that attempts to position between two devices (e.
 - Differs from DDoS attacks involving numerous unsuspecting secondary victims.
 - Primary goal is to gain system access by impersonating a legitimate user or device.
 
-**Mitigations** 
+Mitigations:
 
 - Use HTTPS, SSL/TLS to protect data.
 - Network Segmentation, limit access to critical systems.
@@ -1131,7 +1132,7 @@ MAC address flooding overwhelms a network switch with fake MAC addresses.
 - Results in potential data exposure and network congestion.
 - Used to intercept data in a switched network environment.
 
-**Fail-open**
+#### Fail-open
 
 - When MAC flooding occurs, the network switch will simply fail open.
 - When it fail-open, the switch begins to rebroadcast all traffic out to every port.
@@ -1151,7 +1152,7 @@ Can be caused by:
 - Faulty switch, network card ("jabber")
 - Redundant links between switches
 
-Mitigation:
+Mitigations:
 
 - Configure STP (Spanning Tree Protocol) on the switch.
 
@@ -1173,10 +1174,12 @@ Mitigating Layer 2 attacks involves implementing various security measures.
 
 ## Driver Attacks
 
-**Driver**:
+#### Driver
+
 A driver is software that allows the operating system to communicate with hardware devices, enabling the functionality of peripherals such as printers, graphics cards, and network adapters.
 
-**Driver Attacks**:
+#### Driver Attacks
+
 Driver attacks exploit vulnerabilities within these drivers to gain unauthorized access or control over a system, potentially leading to data breaches, system instability, and other security issues.
 
 ### Driver Shimming
@@ -1212,7 +1215,7 @@ Arbitrary Code Execution is an attack where an attacker exploits vulnerabilities
 - Unauthorized actions on the target system.
 - Monitoring for unusual or unexpected process activity.
 
-**Mitigations**:
+Mitigations:
 
 - Regularly update and patch software to fix known vulnerabilities.
 - Employ input validation and sanitization.
@@ -1227,7 +1230,7 @@ Remote Code Execution (RCE) is an attack where an attacker exploits vulnerabilit
 - Full control over the target system.
 - Unusual network traffic and process activity.
 
-**Mitigations**:
+Mitigations:
 
 - Apply security patches and updates promptly.
 - Disable unnecessary network services.
@@ -1242,7 +1245,7 @@ Privilege Escalation is an attack where an attacker gains elevated access to res
 - Unauthorized access to privileged information or functionality.
 - Monitoring for changes in user permissions and role assignments.
 
-**Types**:
+Types:
 
 - **Vertical Privilege Escalation**:
   - Attacker gains higher-level privileges than those initially granted.
@@ -1252,7 +1255,7 @@ Privilege Escalation is an attack where an attacker gains elevated access to res
   - Attacker accesses resources at same privilege level, but as another user.
   - Example: A user accessing another user’s account details without proper authorization.
 
-**Mitigations**:
+Mitigations:
 
 - Apply the principle of least privilege (PoLP).
 - Regularly update and patch systems.
@@ -1268,7 +1271,7 @@ Rootkits are malicious software designed to hide the existence of certain proces
 - Stealthy control over the infected system, difficult detection and removal.
 - Anomalous system behavior, discrepancies in system and kernel data.
 
-**Types**:
+Types:
 
 - **Kernel Mode**
 
@@ -1282,7 +1285,7 @@ Rootkits are malicious software designed to hide the existence of certain proces
   - Manipulate system processes and user-level functions.
   - Easier to detect compared to kernel mode rootkits but still pose a significant threat to system security.
 
-**Mitigations**:
+Mitigations:
 
 - Use rootkit detection tools.
 - Regularly update and patch operating systems and software.
@@ -1315,13 +1318,13 @@ A Buffer Overflow attack involves sending malicious data to an application or sy
 - Allow attackers to send malicious data that exceeds the size of the allocated memory buffer.
 - Causes the application or system to crash or become unresponsive.
 
-**Buffer**
+#### Buffer
 
 - A temporary storage area where a program stores its data.
 - A program reserves a chunk of system memory when started up, this area is called a **stack.**
 - Stacks stores the return addresses from function calls
 
-**Smashing the Stack**
+#### Smashing the Stack
 
 - Occurs when malicious code overwrites the return address.
 - Attacker fills the buffer with **NOP** (Non-operation) instruction.
@@ -1330,7 +1333,7 @@ A Buffer Overflow attack involves sending malicious data to an application or sy
 - The pointer now points to the area in the stack which contains the malicious code.
 - It will "slide down" up to the last instruction, causing the pointer to branch out to the memory address where the malicious code is.
 
-**Mitigations** 
+#### Mitigations
 
 - Implement strict checks for input length.
 - Regularly audit code for vulnerabilities.
@@ -1353,7 +1356,7 @@ The Heartbleed bug is a flaw in the heartbeat extension of TLS and DTLS protocol
 - Discovered in April 2014 and is officially designated as CVE-2014-0160
 - Affects the heartbeat extension implemented in OpenSSL, hence the name "Heartbleed."
 
-**How it works:**
+#### How it works
 
 1. **Heartbeat Request**: 
    - A client sends a heartbeat request to the server, which includes a payload (a small piece of data) and specifies the payload's length.
@@ -1368,7 +1371,7 @@ The Heartbleed bug is a flaw in the heartbeat extension of TLS and DTLS protocol
    - The server will then respond with the payload plus additional data from its memory buffer, up to the specified length.
    - This can result in the server inadvertently sending back sensitive data from its memory, including private keys, user passwords, session tokens, and other confidential information.
 
-**Example Scenario:**
+#### Example Scenario
 
 1. **Normal Heartbeat Request:**
 
@@ -1380,7 +1383,7 @@ The Heartbleed bug is a flaw in the heartbeat extension of TLS and DTLS protocol
   - Attacker: "A" (1 byte) with length field = 65,535
   - Server: "A" followed by up to 65,534 bytes of adjacent memory data
 
-**Mitigation and Response:**
+#### Mitigation and Response
 
 - **Patch OpenSSL**: 
   - Updating OpenSSL to a version that patches the Heartbleed bug (versions 1.0.1g and later) is crucial.
@@ -1406,7 +1409,7 @@ Cross-Site Scripting (XSS) is a web security vulnerability that involves injecti
 - Allows session hijacking, data theft, defacement.
 - Exploitations include phishing attacks, cookie theft, form manipulation.
 
-**Steps in an XSS Attack:**
+#### Steps in an XSS Attack
 
 1. Attacker identifies input validation vulnerability within a trusted website.
 2. Attacker crafts a URL to perform code injection against the trusted website.
@@ -1415,7 +1418,7 @@ Cross-Site Scripting (XSS) is a web security vulnerability that involves injecti
 5. Malicious code is ran in client's browser with permission level of trusted site.
 
 
-**Types**: 
+#### Types
 
 - **Reflected XSS**
   - Malicious script is part of the request sent to the server.
@@ -1450,7 +1453,7 @@ Cross-Site Scripting (XSS) is a web security vulnerability that involves injecti
     document.location 
     ```
 
-**Mitigations**:
+#### Mitigations
 
 - Use input validation libraries or frameworks to enforce strict input requirements.
 - Encode output data before displaying in web pages, prevents execution of malicious code.
@@ -1489,7 +1492,7 @@ Cross-Site Request Forgery (XSRF) is a malicious script host on the attacker's s
 - Exploits the trust relationship between the user and the web application.
 - Impact include account takeover, unauthorized transactions.
 
-**Mitigations**:
+Mitigations:
 
 - Use of user-specific CSRF tokens in all form submissions.
 - Add randomness and prompt for additional information.
@@ -1505,7 +1508,7 @@ Server-side request forgery (SSRF) allows an attacker to make unauthorized reque
 - Accessing sensitive data, exploiting services, or unauthorized actions.
 - Data breaches, service disruptions, or unauthorized data manipulation.
 
-**Mitigations**:
+Mitigations:
 
 - Rigorously validate input data, especially URLs and addresses.
 - Prevent user-supplied data in URLs used for server-side requests.
@@ -1521,7 +1524,7 @@ Side channel attacks exploit unintended information leakage from a system's phys
 
 Examples: Timing attacks, power analysis attacks, and electromagnetic analysis attacks.
 
-**Mitigations** 
+Mitigations:
 
 - Constant-time algorithms, noise injection, and secure hardware design.
 - This countermeasures reduce the risk of information leakage from side channels. 

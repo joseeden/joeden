@@ -89,29 +89,9 @@ Cryptography is a versatile tool, providing crucial services like confidentialit
 
 ### Cryptographic Hash Function 
 
-A hash function is a mathematical function that takes an input or 'message' and generates an output or 'hash value', usually much smaller than the original message, typically of a fixed-size (see ISC2 Study Guide, Module 1, under Encryption Overview).
+A hash function is a mathematical function that takes an input or 'message' and generates an output or 'hash value', usually much smaller than the original message, typically of a fixed-size. Hash functions are used to generate unique representations of data or verify data integrity and are a crucial element of cryptographic systems.
 
-Hash functions are used to generate unique representations of data or verify data integrity and are a crucial element of cryptographic systems.
-
-A cryptographic hash function should have the following characteristic: 
-
-- unique 
-- deterministic
-- useful 
-- tamper-evident 
-- non-reversible
-
-### Digital Signatures 
-
-A digital signature is the result of a cryptographic transformation of data which is useful for providing: 
-- data origin authentication
-- data integrity
-- non-repudiation of the signer 
-
-However, digital signatures **cannot guarantee confidentiality** (i.e. the property of data or information not being made available or disclosed).
-
-For more information, please see [Digital Signatures in Asymmetric Encryptions.](../004-Cryptography/010-Asymmetric-Encryption.md)
-
+For more information, please see [Hashing](/docs/005-Cybersecurity/004-Cryptography/012-Hashing.md#hash-functions)
 
 ### Message Digests 
 
@@ -122,6 +102,27 @@ Message digesting ensures data integrity by maintaining accuracy and consistency
 - When downloading a file, a Web site may provide a hash value.
 - Users can perform the same hash function on the downloaded file.
 - Matching digests confirm the file's integrity, indicating no alteration during transmission.
+
+::: info[note]
+
+In some resources, message digests are interchangeable with hashes or hash value.
+
+:::
+
+
+### Digital Signatures 
+
+A digital signature uses assymetric cryptography to transform data to achieve: 
+
+- data origin authentication
+- data integrity
+- non-repudiation of the signer 
+
+However, digital signatures **cannot guarantee confidentiality** (i.e. the property of data or information not being made available or disclosed).
+
+For more information, please see [Digital Signatures in Asymmetric Encryptions.](../004-Cryptography/010-Asymmetric-Encryption.md#digital-signature)
+
+
 
 ### Message Authentication Code 
 
