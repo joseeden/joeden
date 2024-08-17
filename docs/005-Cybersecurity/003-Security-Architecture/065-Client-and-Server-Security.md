@@ -65,23 +65,23 @@ Two approaches to manage data flow:
 ### Database Servers
 Database servers store information for retrieval, often supporting large datasets used for analytics. Data warehouses, in particular, handle massive amounts of data, making them prime targets for attackers due to the valuable information they hold.
 
-#### Aggregation Attack
-An attacker with low-level clearance can combine seemingly harmless pieces of information to reveal sensitive data.
+- **Aggregation Attack**
 
-- Example: An outsider can access a public report, staff directory, and a maintenance schedule
-- Individually, these are harmless, but combined, they reveal information about company security protocols
-- This piecing together of random data forms a larger sensitive picture
+  - An attacker with low-level clearance can combine seemingly harmless pieces of information to reveal sensitive data.
+  - Example: An outsider can access a public report, staff directory, and a maintenance schedule
+  - Individually, these are harmless, but combined, they reveal information about company security protocols
+  - This piecing together of random data forms a larger sensitive picture
 
-#### Inference Attack
-In inference attacks, attackers deduce sensitive information from the facts they have.
+- **Inference Attack**
+  
+  - In inference attacks, attackers deduce sensitive information from the facts they have.
+  - Example scenario: A hospital report indicates a high number of patients with a rare illness in one department.
+  = Another source shows that a specific VIP recently visited the same hospital.
+  - By correlating these facts, an attacker can infer that the VIP might have that rare illness.
+  - Attackers deduce private information by correlating seemingly unrelated facts
 
-- Example scenario:
-   1. A hospital report indicates a high number of patients with a rare illness in one department.
-   2. Another source shows that a specific VIP recently visited the same hospital.
-   3. By correlating these facts, an attacker can infer that the VIP might have that rare illness.
-- Attackers deduce private information by correlating seemingly unrelated facts
+To protect against aggregation and inference attacks:
 
-#### Protection Against Aggregation and Inference
 - Implement need-to-know access policies, limiting data exposure
 - Encrypt sensitive data, even when stored in smaller, less obvious forms
 - Apply traffic analysis tools to detect unusual patterns that might indicate these attacks
