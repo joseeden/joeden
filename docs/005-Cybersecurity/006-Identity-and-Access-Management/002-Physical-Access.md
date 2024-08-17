@@ -241,7 +241,7 @@ Example:
 - Simplicity and efficiency are secondary considerations.
 - Aesthetic appeal is irrelevant to the primary function of access control.
 
-**Primary consideration when choosing physical access controls**
+Primary consideration when choosing physical access controls:
 
 - While building, equipment, and network security matter, **personnel security is the top priority.**
 - Examples of Controls: Locks, security cameras, and security personnel.
@@ -268,27 +268,27 @@ Example:
 
 ## Physical Attacks
 
-**Attacking with Brute Force**
+- **Attacking with Brute Force**
 
-- Forcible entry like disabling locks
-- Tampering with security devices 
-- Confronting or attacking the security personnel
-- Ramming a barrier with a vehicle
+  - Forcible entry like disabling locks
+  - Tampering with security devices 
+  - Confronting or attacking the security personnel
+  - Ramming a barrier with a vehicle
 
-**Bypassing surveillance systems**
+- **Bypassing surveillance systems**
 
-- Visual obstructions 
-- Blinding sensors and Cameras
-- Interfering with acoustics
-- Electronic interference 
-- Physical environment attack, e.g. causing fire
+  - Visual obstructions 
+  - Blinding sensors and Cameras
+  - Interfering with acoustics
+  - Electronic interference 
+  - Physical environment attack, e.g. causing fire
 
-**Access badge cloning**
+- **Access badge cloning**
 
-- Refers to copying data from a badge to a blank device
-- Cloned badge can then be used to trick the system
-- How attackers clone badges:
-  - Scanning 
-  - Data exfiltration 
-  - Writing to a new card 
-  - Using a cloned access badge
+  - Refers to copying data from a badge to a blank device
+  - Cloned badge can then be used to trick the system
+  - How attackers clone badges:
+    - Scanning 
+    - Data exfiltration 
+    - Writing to a new card 
+    - Using a cloned access badge

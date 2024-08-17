@@ -17,9 +17,9 @@ Attempts to gain unauthorized access by cracking or stealing passwords.
 
 ### Brute Force Attack 
 
-A brute force attack uses every possible combination of letters, numbers, and symbols to guess a user's password.
+A brute force attack, also called as a known ciphertext attack, uses every possible combination of letters, numbers, and symbols to guess a user's password.
 
-#### Mitigations
+Mitigations:
 
 - Enforce strong and complex password creation policies.
 - Temporarily lock accounts after a certain number of unsuccessful login attempts.
@@ -30,7 +30,7 @@ A brute force attack uses every possible combination of letters, numbers, and sy
 
 A dictionary attack is a type of attack that uses a list of common words to guess a user's password. 
 
-#### Mitigations
+Mitigations:
 
 - Enforce strong and complex password creation policies.
 - Temporarily lock accounts after a certain number of unsuccessful login attempts.
@@ -46,7 +46,7 @@ A form of brute force attack that involves trying a small number of commonly use
 - In a large group of user, there's a good chance some of them uses very common and weak passwords.
 - Slower (per-account basis), since each common password is tried on each user first.
 
-#### Mitigations
+Mitigations:
 
 - Rate limiting on login attempts to slow down brute force attacks.
 - Regular password changes to minimize risks from compromised accounts.
@@ -57,7 +57,7 @@ A form of brute force attack that involves trying a small number of commonly use
 
 Blends brute force and dictionary techniques by using common passwords with variations, such as adding numbers and special characters.
 
-#### Mitigation
+Mitigations:
 
 - Encourage complex passwords - less susceptible to variations.
 - Recommend long, randomly generated passwords.
@@ -186,7 +186,7 @@ Quantum computing poses a threat to traditional cryptography by potentially brea
 - This allows quantum computers to run algorithms that can break traditional cryptographic methods.
 - Example: Shor's algorithm for integer factorization.
   
-**Implications for Cryptography**
+#### Implications for Cryptography
 
 - Quantum computing threatens public-key encryption algorithms like RSA and ECC.
 - RSA and ECC rely on computational hardness (e.g., factoring large numbers).
@@ -222,7 +222,7 @@ Quantum computing poses a threat to traditional cryptography by potentially brea
 
 A rainbow table attack uses precomputed hashes to find a matching hash value for a user's password (see ISC2 Study Guide, Module 2, under Types of Threats). 
 
-#### Mitigations
+Mitigations:
 
   - Add a unique random value (salt) to each password before hashing.
   - Choose robust cryptographic hash functions resistant to rainbow tables.
