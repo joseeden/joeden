@@ -122,6 +122,35 @@ Subscribe Identity Modules (SIM) cards authenticates device to carrier network. 
 
 ## Mobile Security 
 
+### Mobile Security Controls
+
+Implementing strong security measures on mobile devices is important to protect personal and sensitive information. Here are the key controls you should enable: 
+
+- **Access Control Mechanisms**  
+  - Every mobile device should have access controls like passcodes or biometrics.
+  - Passcodes: Default is often a 4-digit pin, but it's weak.
+  - Strong Passwords: Use complex passwords like on computers.
+
+- **Biometric Authentication**  
+  - Some devices offer fingerprint or facial recognition to ease access.
+  - Apple’s Touch ID: Common for iOS devices.
+  - Android: Fingerprint options available but less common.
+
+- **Encryption**  
+  - Encrypt data on your device to protect it if lost or stolen.
+  - iOS and Android: Enable encryption by setting a password.
+  - Default since: Android Gingerbread and iOS 8.
+
+- **Remote Wiping**  
+  - Enable remote wiping to erase data if your device is lost.
+  - Works if the device is connected to a network.
+  - Available on both Android and iOS.
+
+- **Screen Lock and Inactivity Timeout**  
+  - Set your device to lock automatically after inactivity.
+  - Limits access if the device is idle.
+  - Locks out users after multiple incorrect passcode attempts.
+
 ### Mobile Asset Deployments
 
 For more information, please see [Mobile Asset Deployments.](../008-Security-Operations/073-Mobile-Asset-Deployments.md)
@@ -138,6 +167,65 @@ For more information, please see [Mobile Asset Deployments.](../008-Security-Ope
     - Phone issued by the company
     - Can be used for work purposes, and for personal use
     - Device can be partitioned (containers) for personal and corporate apps 
+
+
+### Mobile Device Management 
+
+Mobile Device Management (MDM) enables organizations to manage and secure mobile devices across various platforms (smartphones, tablets).
+
+- Enforces alphanumeric passcodes and encryption.
+- Disables unused features to enhance security.
+- Remote wipe functionality for lost or stolen devices.
+- Revokes access quickly when employees leave.
+- Disable a device's ability to sideload programs.
+- Detect if a device has been jailbroken or rooted.
+- Force each device to use a VPN connection.
+
+MDM also allows admins to control the applications installed on devices, enhancing security and productivity.
+
+- **Blacklist approach**: Prohibits specific apps; users can install any others.
+- **Whitelist approach**: Only allows specified apps; all others are blocked.
+
+MDM solutions like Google Mobile Management provide tools to configure network and device settings remotely.
+
+- Add and configure Wi-Fi networks across multiple devices
+- Push updates without user intervention
+- Control synchronization, passwords, and encryption settings
+
+
+### Mobile Device Tracking 
+
+- **Impact of Lost or Stolen Devices**
+   - When devices are lost or stolen, organizations face two types of losses:
+      - Loss of the physical device (financial cost).
+      - Potential loss of data if encryption isn’t enabled.
+
+- **Device Costs**
+   - High-end devices can cost over $1,000, making their loss significant.
+   - Over 3.1 million mobile devices are stolen annually in the U.S.
+
+- **Asset Tracking Software**
+   - Helps organizations manage the lifecycle of computing assets.
+   - Covers smartphones, laptops, desktops, servers, and printers.
+   - Often integrated with device management or IT service management solutions.
+
+- **Lifecycle Management**
+   - Asset tracking software covers the entire lifecycle of a device:
+      - Includes initial request, ordering, receiving, and configuration.
+      - Applies security policies and labels devices as organizational property.
+      - Assigns devices to users and reassigns as needed.
+      - Ensures secure decommissioning by removing data and discarding devices.
+
+- **Real-Time Tracking for Certain Industries**
+   - Some industries, like delivery services, use GPS tracking to:
+      - Manage driver performance.
+      - Optimize routes.
+
+- **Privacy Concerns with GPS Tracking**
+   - Organizations must disclose GPS tracking to employees.
+   - Implement access restrictions to GPS data.
+   - Provide the ability to disable tracking outside of working hours.
+   - Establish clear policies on the use of location data.
 
 ### Hardening Mobile Devices
 
@@ -165,20 +253,4 @@ For more information, please see [Mobile Asset Deployments.](../008-Security-Ope
     - Use strong authentication  
     - Enable full device encryption
 
-
-### Mobile Device Management 
-
-Mobile Device Management (MDM) enables organizations to manage and secure mobile devices across various platforms (smartphones, tablets).
-
-- Allows remote management and wiping of devices for data protection.
-- Tracks device usage and location for monitoring and control.
-- Enforce configuration to ensure devices are meeting the security benchmarks.
-- Enforces security policies to enhance device security.
-- Lowers risks tied to unsecured or outdated devices.
-
-Example features:
-
-- Disable a device's ability to sideload programs.
-- Detect if a device has been jailbroken or rooted.
-- Force each device to use a VPN connection.
 
