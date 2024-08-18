@@ -14,14 +14,13 @@ Threat actors are individuals or groups that carry out malicious activities to c
 
 ### Attacker 
 
-An Attacker is always an individual, but a Threat Actor can be either a group or an entity.
-The three most common goals of cybersecurity attackers are DAD:
+An Attacker is always an individual, but a Threat Actor can be either a group or an entity. The three most common goals of cybersecurity attackers are DAD:
 
 - Disclosure
 - Alteration
 - Denial
 
-For more information, please see [Attacks](../012-List-of-Attacks/). 
+For more information, please see [Threats and Attacks](../011-Threats-and-Attacks/050-Attacks.md). 
 
 ### Hackers
 
