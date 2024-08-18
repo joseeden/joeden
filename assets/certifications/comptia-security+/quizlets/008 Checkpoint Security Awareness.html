@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+
+    <style>
+      body {
+        font-family: sf pro text, -apple-system, BlinkMacSystemFont, Roboto,
+          segoe ui, Helvetica, Arial, sans-serif, apple color emoji,
+          segoe ui emoji, segoe ui symbol;
+        font-weight: 400;
+        line-height: 22.4px;
+        font-size: 16px;
+      }
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      ul,
+      ol {
+        font-size: 16px;
+        font-weight: 400;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        max-width: none;
+      }
+      code {
+        background-color: #fff;
+        border: 1px solid #d1d7dc;
+        color: #b4690e;
+        font-size: 90%;
+        padding: 0.2rem 0.4rem;
+      }
+      .quiz-content {
+        padding: 2.4rem;
+        word-break: break-word;
+        max-width: 86rem;
+        margin: 0 auto;
+      }
+      .quiz-container {
+        margin: 0 auto;
+        max-width: 84rem;
+        padding: 0;
+      }
+      .question {
+        margin-bottom: 5rem;
+      }
+      .question span {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .question-prompt {
+        margin-top: 0.8rem;
+        font-weight: 700;
+      }
+      .question-answer {
+        margin-top: 1.6rem;
+        padding-left: 0;
+        box-sizing: border-box;
+      }
+      .question-answer label {
+        max-width: 80rem;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        min-width: 18rem;
+        border: solid #1c1d1f 2px;
+      }
+      .question-answer div {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        width: 100%;
+      }
+      .question-answer div:hover {
+        background-color: #f5f5f5;
+      }
+      .question-answer input {
+        display: none;
+      }
+      .question-answer span {
+        width: 1rem;
+        height: 1rem;
+        margin-right: 1.6rem;
+        top: 0;
+        border-radius: 50%;
+        display: inline-block;
+        flex-shrink: 0;
+        border: 0.2rem solid #1c1d1f;
+        position: relative;
+      }
+      .selected {
+        background: #1c1d1f;
+        box-shadow: 0 0 0 0.4rem #fff inset;
+      }
+      .score {
+              position: fixed;
+            }
+    </style>
+  </head>
+
+  <body onload="main()">
+    <div id="score" class="score">
+      <span>Score: N/A of N/A</span>
+    </div>
+    <div id="quiz-container" class="quiz-content"></div>
+
+    <script>
+      const quizData = {"pass_percent": 70, "questions": [{"_class": "assessment", "id": 71771458, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Jenna, a new hire at Dion Training, wants to ensure her work conversations remain confidential and are not susceptible to eavesdropping or shoulder surfing attacks. Which of the following should she do?</p>", "relatedLectureIds": "", "feedbacks": ["", "Holding discussions in secure areas equipped with privacy measures is crucial for maintaining confidentiality. Secure areas prevent unauthorized access and are less prone to surveillance, significantly reducing the risk of eavesdropping or shoulder surfing attacks. These measures ensure that sensitive information is not inadvertently exposed to individuals who might exploit it, thereby maintaining the integrity of the conversation and protecting organizational data.", "", ""], "answers": ["<p>Use the public Wi-Fi at the coffee shop for her remote meetings to improve performance</p>", "<p>Hold confidential discussions in secure areas equipped with privacy measures</p>", "<p>Regularly change discussion venues to avoid pattern tracking by potential eavesdroppers</p>", "<p>Obfuscate the conversation by speaking in codes or jargon when outside the office</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "Jenna, a new hire at Dion Training, wants to ensure her work conversations remain confidential and are not susceptible to eavesdropping or shoulder surfing attacks. Which of the following should she do?", "related_lectures": []}, {"_class": "assessment", "id": 71771502, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Lisa, an executive at Dion Training, is using a password manager to maintain different strong passwords for her accounts. What additional step should she take to ensure the security of her password manager?</p>", "relatedLectureIds": "", "feedbacks": ["", "", "Enabling multi-factor authentication (MFA) adds an extra layer of security to Lisa's password manager. This approach requires another piece of evidence besides the master password, making unauthorized access much more difficult even if the master password is compromised. MFA could involve something you know (password), something you have (a secure device), or something you are (biometric verification) to significantly enhance the security of your sensitive account information.", ""], "answers": ["<p>Use a simple master password for easy recall</p>", "<p>Share the master password with a trusted friend</p>", "<p>Use a password manager with multi-factor authentication</p>", "<p>Write down the master password and store it someplace safe</p>"]}, "correct_response": ["c"], "section": "", "question_plain": "Lisa, an executive at Dion Training, is using a password manager to maintain different strong passwords for her accounts. What additional step should she take to ensure the security of her password manager?", "related_lectures": []}, {"_class": "assessment", "id": 71771506, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Derek, a senior manager at Dion Training, discovers a USB drive in the parking lot and wants to identify the owner. Considering the risks, what should be his course of action?</p>", "relatedLectureIds": "", "feedbacks": ["", "", "Giving the USB drive to the IT department is the safest action to take since the IT professionals are equipped with the right tools and protocols to examine the drive safely without risking a potential security breach. Plugging an unknown USB into a computer could introduce malware into the network, while ignoring it or asking around doesn't mitigate the risk of malicious content or ensure the device's proper handling. The IT department can take precautionary measures to safeguard your organization's security.", ""], "answers": ["<p>Plug the USB into his office computer to check its contents</p>", "<p>Ignore the UBS drive and leave it where it is currently located</p>", "<p>Give it to the IT department for further investigation</p>", "<p>Ask around the office to see if anyone lost a USB drive</p>"]}, "correct_response": ["c"], "section": "", "question_plain": "Derek, a senior manager at Dion Training, discovers a USB drive in the parking lot and wants to identify the owner. Considering the risks, what should be his course of action?", "related_lectures": []}, {"_class": "assessment", "id": 71771612, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Sandra, a team leader at Dion Training, is concerned about phishing attempts targeting her team members working remotely. To address this threat, what approach should she advocate for within the team?</p>", "relatedLectureIds": "", "feedbacks": ["Ignoring unsolicited emails requesting sensitive data is vital in defending against phishing attempts. Phishing typically tricks individuals into divulging personal information, often arriving via email. These emails may appear genuine but contain deceptive content, urging quick actions like clicking links or sharing passwords or bank details. By dismissing such requests, teams can lower the risk of unintentionally compromising security. It's essential not to interact with these messages as they often lead to fraudulent sites aimed at data theft.", "", "", ""], "answers": ["<p>Ignore unsolicited emails that request sensitive information</p>", "<p>Click on all of the links in emails to verify the sender's claims</p>", "<p>Respond to all emails promptly</p>", "<p>Share sensitive information only over phone calls and not emails</p>"]}, "correct_response": ["a"], "section": "", "question_plain": "Sandra, a team leader at Dion Training, is concerned about phishing attempts targeting her team members working remotely. To address this threat, what approach should she advocate for within the team?", "related_lectures": []}, {"_class": "assessment", "id": 71771724, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Chris, the head of the IT department at Dion Training, wants to fortify the company's defense against social engineering attacks. Which strategy should he incorporate to enhance the overall security culture?</p>", "relatedLectureIds": "", "feedbacks": ["", "Regular training and simulated cyber-attacks are crucial for bolstering defenses against social engineering. This proactive approach enhances employee awareness and response skills. Simulated attacks provide real-world experience without actual risk, testing and reinforcing correct reactions to threats. These practices cultivate a robust security culture, where everyone plays a role in preventing breaches, strengthening the overall defense strategy.", "", ""], "answers": ["<p>Implement host-based firewall software on every workstation</p>", "<p>Hold regular training and conduct simulated cyber-attacks</p>", "<p>Advise employees to deal with security threats independently</p>", "<p>Limit additional high security protocols only to system administrators</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "Chris, the head of the IT department at Dion Training, wants to fortify the company's defense against social engineering attacks. Which strategy should he incorporate to enhance the overall security culture?", "related_lectures": []}]};
+      var correct = 0;
+      var total = 0;
+      const questionData = quizData.questions
+      const passPercent = quizData.pass_percent
+
+      function main() {
+        total = questionData.length;
+
+        var questions = [];
+        for (var i = 0; i < questionData.length; i++) {
+          var question = questionData[i];
+          var questionText = question.prompt.question;
+          var answers = question.prompt.answers;
+          var correctAnswer = question.correct_response[0];
+          var correctAnswerText = answers[correctAnswer.charCodeAt(0) - 97];
+          var questionObj = {
+            question: questionText,
+            correctAnswer: correctAnswerText,
+            answers: answers,
+            id: question.id,
+          };
+          questions.push(questionObj);
+        }
+
+        updateScore();
+
+        // display the questions
+        var questionsContainer = document.getElementById("quiz-container");
+        for (var i = 0; i < questions.length; i++) {
+          var question = questions[i];
+          var questionElement = document.createElement("form");
+          questionElement.className = "question";
+          questionElement.innerHTML =
+            "<span>Question " +
+            (i + 1) +
+            ":</span>" +
+            '<div class="question-prompt">' +
+            question.question +
+            "</div>";
+          questionElement.id = question.id;
+          questionElement.classList.add("quiz-container");
+          var answersElement = document.createElement("ul");
+          answersElement.className = "answers";
+          for (var j = 0; j < question.answers.length; j++) {
+            var answer = question.answers[j];
+            var answerElement = document.createElement("li");
+            answerElement.className = "answer";
+            answerElement.innerHTML =
+              '<label for="input-' +
+              question.id +
+              "-" +
+              j +
+              '"><div onclick="select(' +
+              question.id +
+              ", " +
+              j +
+              ')"><span></span><input id="input-' +
+              question.id +
+              "-" +
+              j +
+              '" type="radio" name="question' +
+              i +
+              '" value="' +
+              j +
+              '">' +
+              answer +
+              "</input></div></label>";
+            answerElement.classList.add("question-answer");
+            answersElement.appendChild(answerElement);
+          }
+
+          questionElement.appendChild(answersElement);
+
+          // add a submit button
+          var submitButton = document.createElement("button");
+          submitButton.className = "submit";
+          submitButton.innerHTML = "Submit";
+          submitButton.classList.add("submit-button");
+
+          submitButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            var questionElement = e.target.parentElement;
+            var questionId = questionElement.id;
+            var question = questions.filter(function (q) {
+              return q.id == questionId;
+            })[0];
+
+            // set the border color of all answers to black
+            var answers = questionElement.getElementsByClassName("answer");
+            for (var i = 0; i < answers.length; i++) {
+              console.log(answers[i]);
+              answers[i].children[0].style.borderColor = "#1c1d1f";
+            }
+
+            var answer = questionElement.querySelector(
+              'input[type="radio"]:checked'
+            );
+            if (answer) {
+              var answerIndex = answer.value;
+              var answerText = question.answers[answerIndex];
+              if (answerText == question.correctAnswer) {
+                answer.parentElement.parentElement.style.borderColor =
+                  "limegreen";
+                // alert("Correct!");
+                correct++;
+                updateScore();
+              } else {
+                answer.parentElement.parentElement.style.borderColor = "red";
+                // alert("Incorrect!");
+              }
+            } else {
+              alert("Please select an answer.");
+            }
+          });
+
+          // add button
+          questionElement.appendChild(submitButton);
+
+          questionsContainer.appendChild(questionElement);
+        }
+      }
+
+      function select(question, answer) {
+        var questionElement = document.getElementById(question);
+        var answers = questionElement.getElementsByClassName("answer");
+        for (var i = 0; i < answers.length; i++) {
+          var span = answers[i].children[0].children[0].children[0];
+          var input = answers[i].children[0].children[0].children[1];
+          span.classList.remove("selected");
+          input.checked = false;
+        }
+        var span = answers[answer].children[0].children[0].children[0];
+        var input = answers[answer].children[0].children[0].children[1];
+        span.classList.add("selected");
+        input.checked = true;
+      }
+
+      function updateScore() {
+        var scoreElem = document.getElementById("score");
+        const score = (correct / total) * 100;
+        scoreElem.innerHTML = "Score: " + score + "/" + passPercent + "%";
+      }
+    </script>
+  </body>
+</html>

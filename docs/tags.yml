@@ -38,6 +38,14 @@ Certifications:
   label: 'Certifications'
   permalink: '/Certifications'
   description: 'Docs related to Certifications'
+CISSP:
+  label: 'CISSP'
+  permalink: '/CISSP'
+  description: 'Docs related to CISSP'   
+Comptia Security:
+  label: 'Comptia Security'
+  permalink: '/Comptia Security'
+  description: 'Docs related to Comptia Security'   
 Beginner:
   label: 'Beginner'
   permalink: '/Beginner'

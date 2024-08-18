@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+
+    <style>
+      body {
+        font-family: sf pro text, -apple-system, BlinkMacSystemFont, Roboto,
+          segoe ui, Helvetica, Arial, sans-serif, apple color emoji,
+          segoe ui emoji, segoe ui symbol;
+        font-weight: 400;
+        line-height: 22.4px;
+        font-size: 16px;
+      }
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      ul,
+      ol {
+        font-size: 16px;
+        font-weight: 400;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        max-width: none;
+      }
+      code {
+        background-color: #fff;
+        border: 1px solid #d1d7dc;
+        color: #b4690e;
+        font-size: 90%;
+        padding: 0.2rem 0.4rem;
+      }
+      .quiz-content {
+        padding: 2.4rem;
+        word-break: break-word;
+        max-width: 86rem;
+        margin: 0 auto;
+      }
+      .quiz-container {
+        margin: 0 auto;
+        max-width: 84rem;
+        padding: 0;
+      }
+      .question {
+        margin-bottom: 5rem;
+      }
+      .question span {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .question-prompt {
+        margin-top: 0.8rem;
+        font-weight: 700;
+      }
+      .question-answer {
+        margin-top: 1.6rem;
+        padding-left: 0;
+        box-sizing: border-box;
+      }
+      .question-answer label {
+        max-width: 80rem;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        min-width: 18rem;
+        border: solid #1c1d1f 2px;
+      }
+      .question-answer div {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem;
+        width: 100%;
+      }
+      .question-answer div:hover {
+        background-color: #f5f5f5;
+      }
+      .question-answer input {
+        display: none;
+      }
+      .question-answer span {
+        width: 1rem;
+        height: 1rem;
+        margin-right: 1.6rem;
+        top: 0;
+        border-radius: 50%;
+        display: inline-block;
+        flex-shrink: 0;
+        border: 0.2rem solid #1c1d1f;
+        position: relative;
+      }
+      .selected {
+        background: #1c1d1f;
+        box-shadow: 0 0 0 0.4rem #fff inset;
+      }
+      .score {
+              position: fixed;
+            }
+    </style>
+  </head>
+
+  <body onload="main()">
+    <div id="score" class="score">
+      <span>Score: N/A of N/A</span>
+    </div>
+    <div id="quiz-container" class="quiz-content"></div>
+
+    <script>
+      const quizData = {"pass_percent": 70, "questions": [{"_class": "assessment", "id": 71771188, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Jessica, a cybersecurity analyst at Dion Training, wants to streamline the process of responding to incidents where employees click on links in phishing emails to ensure that certain steps are automated while others require human analysis. Which of the following should they utilize to achieve this?</p>", "relatedLectureIds": "", "feedbacks": ["", "A runbook is essentially an automated version of a playbook that includes clearly defined interaction points for human intervention and analysis, making it the ideal choice for Jessica's needs to automate certain steps in incident response while still requiring human judgment at specific stages.", "", ""], "answers": ["<p>Continuous integration</p>", "<p>Runbook</p>", "<p>SIEM</p>", "<p>Playbook</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "Jessica, a cybersecurity analyst at Dion Training, wants to streamline the process of responding to incidents where employees click on links in phishing emails to ensure that certain steps are automated while others require human analysis. Which of the following should they utilize to achieve this?", "related_lectures": []}, {"_class": "assessment", "id": 71771314, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Michael, a lead software engineer at Dion Training, is tasked with optimizing a complex deployment process that involves coordinating multiple automated tasks across various systems to achieve a synchronized, efficient workflow. Which of the following should he focus on to ensure a seamless integration of these tasks?</p>", "relatedLectureIds": "", "feedbacks": ["", "Orchestration involves the coordinated and sequenced execution of multiple automated tasks, ensuring they work harmoniously within a larger, complex process.", "", ""], "answers": ["<p>Automation</p>", "<p>Orchestration</p>", "<p>Escalation</p>", "<p>Provisioning</p>"]}, "correct_response": ["b"], "section": "", "question_plain": "Michael, a lead software engineer at Dion Training, is tasked with optimizing a complex deployment process that involves coordinating multiple automated tasks across various systems to achieve a synchronized, efficient workflow. Which of the following should he focus on to ensure a seamless integration of these tasks?", "related_lectures": []}, {"_class": "assessment", "id": 71771444, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Jordan, a system administrator at Dion Training, is tasked with optimizing the process of regularly updating software applications on all company workstations. These updates are released at predictable intervals and require the same series of repetitive and consistent steps to install the software updates across multiple systems. Which of the following strategies should they choose to ensure these updates are applied efficiently and reliably every time they are released?</p>", "relatedLectureIds": "", "feedbacks": ["Given that the software updates are regular, predictable, and require the same steps for each system, setting up automation would allow these tasks to be completed efficiently without the need for manual intervention each time. Automation excels in managing repetitive tasks that do not require complex, multi-step solutions or human decision-making during each stage.", "", "", ""], "answers": ["<p>Automation</p>", "<p>Orchestration</p>", "<p>Manual updates</p>", "<p>Ad-hoc scripting</p>"]}, "correct_response": ["a"], "section": "", "question_plain": "Jordan, a system administrator at Dion Training, is tasked with optimizing the process of regularly updating software applications on all company workstations. These updates are released at predictable intervals and require the same series of repetitive and consistent steps to install the software updates across multiple systems. Which of the following strategies should they choose to ensure these updates are applied efficiently and reliably every time they are released?", "related_lectures": []}, {"_class": "assessment", "id": 71771450, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Which of these practices specifically involves an administrator setting up a system to assign and manage system permissions. Once established, it won't require further administrative actions to ensure that consistent access controls based on individuals' roles within the organization are being utilized?</p>", "relatedLectureIds": "", "feedbacks": ["", "", "", "Automating RBAC (Role-based Access Controls) directly relates to the systematic management of system permissions which is an essential aspect of an organization\u2019s cybersecurity strategy. This automation ensures that individuals have appropriate access levels consistent with their roles to enhance your security by preventing unauthorized access. Automated provisioning and de-provisioning in RBAC allow for the dynamic updating of permissions when individuals join, change roles, or leave the organization to ensure that you maintain tight control over who has access to sensitive information."], "answers": ["<p>Implementing guardrails</p>", "<p>Managing security groups</p>", "<p>Enabling or disabling services</p>", "<p>Automating RBAC assignments</p>"]}, "correct_response": ["d"], "section": "", "question_plain": "Which of these practices specifically involves an administrator setting up a system to assign and manage system permissions. Once established, it won't require further administrative actions to ensure that consistent access controls based on individuals' roles within the organization are being utilized?", "related_lectures": []}, {"_class": "assessment", "id": 71771454, "assessment_type": "multiple-choice", "prompt": {"question": "<p>Which of the following best describes the difference between Continuous Delivery and Continuous Deployment in CI/CD?</p>", "relatedLectureIds": "", "feedbacks": ["", "", "Continuous Delivery is a software development practice where new code changes are automatically tested and prepared for a release that allows for reliable, manual deployments to a production environment at any chosen time. Continuous Deployment is a practice that extends Continuous Delivery so that automatic deployment of every validated change is made directly to the production environment so that the time to go live is reduced while eliminating the need for manual interventions in deployments.", ""], "answers": ["<p>Continuous Delivery merges code changes in a central repository, while Continuous Deployment handles automated testing</p>", "<p>Continuous Deployment requires manual deployment to production, whereas Continuous Delivery automates the deployment process through to production</p>", "<p>Continuous Delivery requires manual deployment to production, whereas Continuous Deployment automates the deployment process through to production</p>", "<p>Continuous Deployment merges code changes in a central repository, while Continuous Delivery handles automated testing</p>"]}, "correct_response": ["c"], "section": "", "question_plain": "Which of the following best describes the difference between Continuous Delivery and Continuous Deployment in CI/CD?", "related_lectures": []}]};
+      var correct = 0;
+      var total = 0;
+      const questionData = quizData.questions
+      const passPercent = quizData.pass_percent
+
+      function main() {
+        total = questionData.length;
+
+        var questions = [];
+        for (var i = 0; i < questionData.length; i++) {
+          var question = questionData[i];
+          var questionText = question.prompt.question;
+          var answers = question.prompt.answers;
+          var correctAnswer = question.correct_response[0];
+          var correctAnswerText = answers[correctAnswer.charCodeAt(0) - 97];
+          var questionObj = {
+            question: questionText,
+            correctAnswer: correctAnswerText,
+            answers: answers,
+            id: question.id,
+          };
+          questions.push(questionObj);
+        }
+
+        updateScore();
+
+        // display the questions
+        var questionsContainer = document.getElementById("quiz-container");
+        for (var i = 0; i < questions.length; i++) {
+          var question = questions[i];
+          var questionElement = document.createElement("form");
+          questionElement.className = "question";
+          questionElement.innerHTML =
+            "<span>Question " +
+            (i + 1) +
+            ":</span>" +
+            '<div class="question-prompt">' +
+            question.question +
+            "</div>";
+          questionElement.id = question.id;
+          questionElement.classList.add("quiz-container");
+          var answersElement = document.createElement("ul");
+          answersElement.className = "answers";
+          for (var j = 0; j < question.answers.length; j++) {
+            var answer = question.answers[j];
+            var answerElement = document.createElement("li");
+            answerElement.className = "answer";
+            answerElement.innerHTML =
+              '<label for="input-' +
+              question.id +
+              "-" +
+              j +
+              '"><div onclick="select(' +
+              question.id +
+              ", " +
+              j +
+              ')"><span></span><input id="input-' +
+              question.id +
+              "-" +
+              j +
+              '" type="radio" name="question' +
+              i +
+              '" value="' +
+              j +
+              '">' +
+              answer +
+              "</input></div></label>";
+            answerElement.classList.add("question-answer");
+            answersElement.appendChild(answerElement);
+          }
+
+          questionElement.appendChild(answersElement);
+
+          // add a submit button
+          var submitButton = document.createElement("button");
+          submitButton.className = "submit";
+          submitButton.innerHTML = "Submit";
+          submitButton.classList.add("submit-button");
+
+          submitButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            var questionElement = e.target.parentElement;
+            var questionId = questionElement.id;
+            var question = questions.filter(function (q) {
+              return q.id == questionId;
+            })[0];
+
+            // set the border color of all answers to black
+            var answers = questionElement.getElementsByClassName("answer");
+            for (var i = 0; i < answers.length; i++) {
+              console.log(answers[i]);
+              answers[i].children[0].style.borderColor = "#1c1d1f";
+            }
+
+            var answer = questionElement.querySelector(
+              'input[type="radio"]:checked'
+            );
+            if (answer) {
+              var answerIndex = answer.value;
+              var answerText = question.answers[answerIndex];
+              if (answerText == question.correctAnswer) {
+                answer.parentElement.parentElement.style.borderColor =
+                  "limegreen";
+                // alert("Correct!");
+                correct++;
+                updateScore();
+              } else {
+                answer.parentElement.parentElement.style.borderColor = "red";
+                // alert("Incorrect!");
+              }
+            } else {
+              alert("Please select an answer.");
+            }
+          });
+
+          // add button
+          questionElement.appendChild(submitButton);
+
+          questionsContainer.appendChild(questionElement);
+        }
+      }
+
+      function select(question, answer) {
+        var questionElement = document.getElementById(question);
+        var answers = questionElement.getElementsByClassName("answer");
+        for (var i = 0; i < answers.length; i++) {
+          var span = answers[i].children[0].children[0].children[0];
+          var input = answers[i].children[0].children[0].children[1];
+          span.classList.remove("selected");
+          input.checked = false;
+        }
+        var span = answers[answer].children[0].children[0].children[0];
+        var input = answers[answer].children[0].children[0].children[1];
+        span.classList.add("selected");
+        input.checked = true;
+      }
+
+      function updateScore() {
+        var scoreElem = document.getElementById("score");
+        const score = (correct / total) * 100;
+        scoreElem.innerHTML = "Score: " + score + "/" + passPercent + "%";
+      }
+    </script>
+  </body>
+</html>
