@@ -1,7 +1,7 @@
 ---
 title: "CISSP Preparation"
 description: "Preparing for the CISSP Exam"
-tags: [Security, Cybersecurity, CertificationS, CISSP]
+tags: [Security, Cybersecurity, Certifications, CISSP]
 sidebar_position: 2
 # last_update:
 #   date: 1/30/2024
