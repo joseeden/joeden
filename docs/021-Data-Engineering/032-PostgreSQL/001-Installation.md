@@ -8,7 +8,7 @@ last_update:
 ---
 
 
-## Install on Windows
+## Install PostgreSQL on Windows
 
 1. Go to the site [Enterprisedb PostgreSQL](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads) and download the version that's compatible with your Windows machine. There are installers for both 32-bit and 64-bit systems.
 
@@ -55,3 +55,60 @@ last_update:
     ![](/img/docs/postgresql-install-on-windows-using-edb-sumarrry.png)
 
     ![](/img/docs/postgresql-install-on-windows-using-edb-finisssh.png)
+
+8. After the installation is done, you should see the **Completing the PostgreSQL Setup Wizard** step. Uncheck the `Launch Builder at exit?` and click Finish.
+
+    ![](/img/docs/postgresql-install-on-windows-using-edb-finish-last-steppsss.png)
+
+## Connect to PostgreSQL using SQL Shell 
+
+In your Windows machine, search for **SQL Shell (psql)**. Click to open. You should see a terminal similar to your command prompt. If the SQL Shell doesn't appear, simply click Start and find the PostgreSQL folder. Open this folder and click SQL Shell.
+
+<div class='img-center'>
+
+![](/img/docs/postgresql-install-on-windows-using-edb-open-sql-shellll.png)
+
+</div>
+
+If you used the default values during the installation steps, you can simply hit Enter four times and then provide the password for your PostgreSQL database.
+
+<div class='img-center'>
+
+![](/img/docs/postgresql-install-on-windows-using-edb-sql-shell-login.png)
+
+</div>
+
+
+## Connect to PostgreSQL using pgAdmin 
+
+We can also pgAdmin to connect to the PostgreSQL database. Search for pgAdmin and click to open. You should see this:
+
+<div class='img-center'>
+
+![](/img/docs/postgresql-install-on-windows-using-edb-pgadmin-open-welcome.png)
+
+</div>
+
+Provide the password:
+
+<div class='img-center'>
+
+![](/img/docs/postgresql-install-on-windows-using-edb-pgadmin-passworddd.png)
+
+</div>
+
+You should see the **Server connected** message at the bottom.
+
+<div class='img-center'>
+
+![](/img/docs/postgresql-install-on-windows-using-edb-pgadmin-server-connected.png)
+
+</div>
+
+To disconnect from the database, right-click on Postgresql, and click **Disconnect from server**. 
+
+<div class='img-center'>
+
+![](/img/docs/postgresql-install-on-windows-using-edb-pgadmin-disconnect.png)
+
+</div>
