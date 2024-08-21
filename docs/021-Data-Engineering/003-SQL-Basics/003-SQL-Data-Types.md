@@ -155,7 +155,7 @@ For example, the schema for the **patrons** and **checkouts** table would look s
 
 Below is an example of a series of SQL commands to create a schema for **Customer** and **Order** tables:
 
-```bash
+```sql
 -- Creating a Customer table schema
 CREATE TABLE Customer (
     CustomerID INT PRIMARY KEY,

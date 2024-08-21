@@ -319,10 +319,13 @@ Run the SQL commands below:
 
 ```sql
 -- Create a new table to hold the cars rented by customers
-CREATE TABLE customer_rentals (
-  customer_id INT NOT NULL,
-  car_id VARCHAR(128) NULL,
-  invoice_id VARCHAR(128) NULL
+-- Creating a Customer table schema
+CREATE TABLE Customer (
+    CustomerID INT PRIMARY KEY,
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50),
+    Email VARCHAR(100) UNIQUE,
+    Phone VARCHAR(15)
 );
 
 -- Drop two columns from customers table to satisfy 1NF
