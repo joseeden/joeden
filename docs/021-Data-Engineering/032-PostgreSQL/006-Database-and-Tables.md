@@ -74,6 +74,8 @@ CREATE TABLE customer_rentals (
 ); 
 ```
 
+For more information on constraints, please see [Integrity Constraints.](/docs/021-Data-Engineering/020-Relational-Databases/002-Attribute-Constraint.md)
+
 
 ## Understanding Schemas 
 
@@ -84,6 +86,7 @@ Schemas in PostgreSQL are like directories that organize tables and other databa
 ![](/img/docs/postgresql-understanding-schemaasss.png)
 
 </div>
+
 
 
 ### Key Uses of Schemas
