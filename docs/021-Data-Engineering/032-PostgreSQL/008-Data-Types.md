@@ -1,6 +1,6 @@
 ---
-title: "Data Types in PostgreSQL"
-description: "PostgreSQL"
+title: "Data Types"
+description: "Text, numeric, temporal, and boolean data types in PostgreSQL"
 tags: [Data Engineering, Databases, SQL, PostgreSQL]
 sidebar_position: 8
 last_update:
