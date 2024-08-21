@@ -87,7 +87,11 @@ When integrating data, it’s important to ensure data integrity. Automated test
 - After each transformation, aggregate the data to ensure it aligns with expectations, such as total sales figures remaining consistent
 - If any discrepancies arise during transformation, proactive alerts can notify the team to address issues before they escalate
 
+<div class='img-center'>
+
 ![](/img/docs/data-integrations-automated-testing-and-alertsssss.png)
+
+</div>
 
 ## Security and Data Access
 
@@ -105,5 +109,8 @@ An example of this is anonymizing credit card information during the ETL process
 
 Effective data governance involves tracking data lineage—knowing where the data originated and how it is being used throughout the integration process. This is important for audit purposes and ensuring compliance with data management policies.
 
+<div class='img-center'>
 
 ![](/img/docs/data-integrations-data-governance-and-lineagesssss.png)
+
+</div>
