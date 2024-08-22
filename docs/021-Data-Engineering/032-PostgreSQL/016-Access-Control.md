@@ -208,12 +208,50 @@ ALTER GROUP family
 ADD USER ted, better_half, user1, user2, user3;
 ```
 
-
-
-
 ### Shared and Individual Data Access
 
 With schemas and groups, you can manage both shared and personal data access efficiently.
 
 - Group has access to all public schema tables
 - Each member can have a separate schema for personal data management
+
+
+## Removing Access 
+
+### Rollback Privileges
+
+If a user accidentally deletes data or misuses their access, you might need to adjust their privileges. To prevent unwanted actions like data deletion, you can remove specific privileges.
+
+Use the command to revoke DELETE and TRUNCATE privileges to all tables in specific schema: 
+
+```sql
+REVOKE DELETE, TRUNCATE ON schema_name.* FROM user;
+```
+
+To revoke all access on all tables in the `public` schema:
+
+```sql
+REVOKE DELETE, TRUNCATE ON ALL TABLES IN SCHEMA public FROM user;
+```
+
+### Resetting and Adjusting Privileges
+
+If a user should have very limited access, reset their privileges and grant only what’s needed.
+
+- Reset all privileges with the command: 
+
+  ```sql
+  REVOKE ALL PRIVILEGES ON schema_name.* FROM user;
+  ```
+
+- Restore only SELECT rights with: 
+
+  ```sql
+  GRANT SELECT ON schema_name.* FROM user;
+  ```
+
+- Remove the user from groups if necessary with: 
+
+  ```sql
+  REVOKE group_name FROM user;
+  ```
