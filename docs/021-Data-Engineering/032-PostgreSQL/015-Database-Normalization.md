@@ -697,7 +697,7 @@ Sample Table Records:
 | 104 | Dana Lee          |
 | 105 | Evan Martin       |
 
-#### 1NF 
+#### 1. 1NF 
 
 Instructions for 1NF:
 
@@ -734,7 +734,7 @@ Sample Table Records (After 1NF):
 </details>
 
 
-#### 2NF 
+#### 2. 2NF 
 
 The loan table currently has a `bank_zip` column, which can cause redundancy and anomalies. To address this, we will move the `bank_zip` data into the bank table.
 
@@ -799,5 +799,52 @@ Sample Table After Normalization:
 </details>
 
 
-#### 3NF 
+#### 3. 3NF 
 
+To track the type of program for each loan, create a new table called `program`. This table will store details like program ID, description, and maximum loan amount. 
+
+The maximum loan amount depends only on the loan's program. By referencing the `program_id` in the `loan` table, we can eliminate the need for storing the program and max amount directly in the `loan` table. This change satisfies 3NF.
+
+<details>
+    <summary>Solution</summary>
+
+Create the `program` table and alter the `loan` tgable:
+
+```sql
+-- Define 'program' table with max amount for each program
+CREATE TABLE program (
+  	id serial PRIMARY KEY,
+  	description text NOT NULL,
+  	max_amount DECIMAL(9,2) NOT NULL
+);
+
+-- Alter the 'loan' table to satisfy 3NF
+ALTER TABLE loan
+ADD COLUMN program_id INTEGER REFERENCES program(id), 
+DROP COLUMN program,
+DROP COLUMN max_amount;
+```
+
+The sample records for the `program` and `loan` tables after applying 3NF normalization should look like this:
+
+- `program` Table (After 3NF Normalization)
+
+    | id  | description              | max_amount |
+    |-----|--------------------------|------------|
+    | 1   | Small Business Loan       | 50000.00   |
+    | 2   | Startup Loan              | 100000.00  |
+    | 3   | Expansion Loan            | 150000.00  |
+    | 4   | Emergency Relief Program  | 25000.00   |
+    | 5   | Agricultural Loan         | 75000.00   |
+
+- `loan` Table (After 3NF Normalization)
+
+    | id   | borrower_id | bank_id | program_id |
+    |------|-------------|---------|------------|
+    | 1001 | 501         | 301     | 1          |
+    | 1002 | 502         | 302     | 2          |
+    | 1003 | 503         | 303     | 3          |
+    | 1004 | 504         | 304     | 4          |
+    | 1005 | 505         | 305     | 5          |
+
+</details>
