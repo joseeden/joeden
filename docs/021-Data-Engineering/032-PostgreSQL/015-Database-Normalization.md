@@ -643,7 +643,7 @@ CREATE TABLE zip (
 );
 ```
 
-Sample output: 
+Output table with sample records: 
 
 | code | city        | state      |
 |------|-------------|------------|
@@ -662,7 +662,7 @@ CREATE TABLE university (
 );
 ```
 
-Sample output: 
+Output table with sample records: 
 
 | id  | name         | street_address    | zip_code |
 |-----|--------------|-------------------|----------|
