@@ -297,48 +297,48 @@ To download the actual files, you can get them from my [Github repository](https
 
 2. Change the code to perform a `LEFT JOIN` instead of an `INNER JOIN`. After executing this query, have a look at how many records the query result contains.
 
-<details>
-    <summary>Solution</summary>
+    <details>
+        <summary>Solution</summary>
 
-    Run the command below:
+        Run the command below:
 
-    ```sql
-    SELECT 
-        c1.name AS city, 
-        code, 
-        c2.name AS country,
-        region, 
-        city_proper_pop
-    FROM cities AS c1
-    LEFT JOIN countries AS c2 
-    ON c1.country_code = c2.code
-    ORDER BY code DESC;
-    ```
+        ```sql
+        SELECT 
+            c1.name AS city, 
+            code, 
+            c2.name AS country,
+            region, 
+            city_proper_pop
+        FROM cities AS c1
+        LEFT JOIN countries AS c2 
+        ON c1.country_code = c2.code
+        ORDER BY code DESC;
+        ```
 
-    Output (some records may not shown):
+        Output (some records may not shown):
 
-    | city             | code | country             | region                     | city_proper_pop |
-    |------------------|------|---------------------|----------------------------|-----------------|
-    | Taichung         | null | null                | null                       | 2752413         |
-    | Tainan           | null | null                | null                       | 1885252         |
-    | Kaohsiung        | null | null                | null                       | 2778918         |
-    | Bucharest        | null | null                | null                       | 1883425         |
-    | Taipei           | null | null                | null                       | 2704974         |
-    | New Taipei City  | null | null                | null                       | 3954929         |
-    | Harare           | ZWE  | Zimbabwe            | Eastern Africa             | 1606000         |
-    | Lusaka           | ZMB  | Zambia              | Eastern Africa             | 1742979         |
-    | Cape Town        | ZAF  | South Africa        | Southern Africa            | 3740026         |
-    | Ekurhuleni       | ZAF  | South Africa        | Southern Africa            | 3178470         |
-    | Durban           | ZAF  | South Africa        | Southern Africa            | 3442361         |
-    | Johannesburg     | ZAF  | South Africa        | Southern Africa            | 4434827         |
+        | city             | code | country             | region                     | city_proper_pop |
+        |------------------|------|---------------------|----------------------------|-----------------|
+        | Taichung         | null | null                | null                       | 2752413         |
+        | Tainan           | null | null                | null                       | 1885252         |
+        | Kaohsiung        | null | null                | null                       | 2778918         |
+        | Bucharest        | null | null                | null                       | 1883425         |
+        | Taipei           | null | null                | null                       | 2704974         |
+        | New Taipei City  | null | null                | null                       | 3954929         |
+        | Harare           | ZWE  | Zimbabwe            | Eastern Africa             | 1606000         |
+        | Lusaka           | ZMB  | Zambia              | Eastern Africa             | 1742979         |
+        | Cape Town        | ZAF  | South Africa        | Southern Africa            | 3740026         |
+        | Ekurhuleni       | ZAF  | South Africa        | Southern Africa            | 3178470         |
+        | Durban           | ZAF  | South Africa        | Southern Africa            | 3442361         |
+        | Johannesburg     | ZAF  | South Africa        | Southern Africa            | 4434827         |
 
-</details>
+    </details>
 
 
 3. Order the result set by the average GDP per capita from highest to lowest. Return only the first 10 records in your result.
 
-<details>
-    <summary>Solution</summary>
+    <details>
+        <summary>Solution</summary>
 
         Run the command below:
 
@@ -368,40 +368,42 @@ To download the actual files, you can get them from my [Github repository](https
         | Baltic Countries         | 12631.029947916666|
         | Caribbean                | 11413.339454064002|
 
-</details>
+    </details>
 
 
 ### Right Join 
 
 1. Write a new query using RIGHT JOIN that produces an identical result to the LEFT JOIN provided.
 
-Answer:
 
-```sql
-SELECT countries.name AS country, languages.name AS language, percent
-FROM languages
-RIGHT JOIN countries
-USING(code)
-ORDER BY language;
-```
+    <details>
+        <summary>Solution</summary>
 
-Output (some records may not shown):
+        Run the command below:
 
+        ```sql
+        SELECT countries.name AS country, languages.name AS language, percent
+        FROM languages
+        RIGHT JOIN countries
+        USING(code)
+        ORDER BY language;
+        ```
 
-| Country                | Language         | Percent |
-|------------------------|------------------|---------|
-| Ethiopia               | Afar             | 1.7     |
-| Djibouti               | Afar             | null    |
-| Eritrea                | Afar             | null    |
-| Namibia                | Afrikaans        | 10.4    |
-| South Africa           | Afrikaans        | 13.5    |
-| Ghana                  | Akyem            | 3.2     |
-| Albania                | Albanian         | 98.8    |
-| Macedonia              | Albanian         | 25.1    |
-| Switzerland            | Albanian         | 3       |
-| France                 | Alsatian         | null    |
-| Honduras               | Amerindian       | null    |
+        Output (some records may not shown):
 
 
+        | Country                | Language         | Percent |
+        |------------------------|------------------|---------|
+        | Ethiopia               | Afar             | 1.7     |
+        | Djibouti               | Afar             | null    |
+        | Eritrea                | Afar             | null    |
+        | Namibia                | Afrikaans        | 10.4    |
+        | South Africa           | Afrikaans        | 13.5    |
+        | Ghana                  | Akyem            | 3.2     |
+        | Albania                | Albanian         | 98.8    |
+        | Macedonia              | Albanian         | 25.1    |
+        | Switzerland            | Albanian         | 3       |
+        | France                 | Alsatian         | null    |
+        | Honduras               | Amerindian       | null    |
 
-
+    </details>
