@@ -222,17 +222,17 @@ With schemas and groups, you can manage both shared and personal data access eff
 
 If a user accidentally deletes data or misuses their access, you might need to adjust their privileges. To prevent unwanted actions like data deletion, you can remove specific privileges.
 
-Use the command to revoke DELETE and TRUNCATE privileges to all tables in specific schema: 
+- Use the command to revoke DELETE and TRUNCATE privileges to all tables in specific schema: 
 
-```sql
-REVOKE DELETE, TRUNCATE ON schema_name.* FROM user;
-```
+  ```sql
+  REVOKE DELETE, TRUNCATE ON schema_name.* FROM user;
+  ```
 
-To revoke all access on all tables in the `public` schema:
+- To revoke all access on all tables in the `public` schema:
 
-```sql
-REVOKE DELETE, TRUNCATE ON ALL TABLES IN SCHEMA public FROM user;
-```
+  ```sql
+  REVOKE DELETE, TRUNCATE ON ALL TABLES IN SCHEMA public FROM user;
+  ```
 
 ### Resetting and Adjusting Privileges
 
