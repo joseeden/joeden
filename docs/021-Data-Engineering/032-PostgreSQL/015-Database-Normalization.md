@@ -736,11 +736,9 @@ Sample Table Records (After 1NF):
 
 #### 2. 2NF 
 
-The loan table currently has a `bank_zip` column, which can cause redundancy and anomalies. To address this, we will move the `bank_zip` data into the bank table.
+The `loan` table currently has a `bank_zip` column, which can cause redundancy and anomalies. To address this, we will move the `bank_zip` data into the bank table.
 
-Sample Table Before Normalization:
-
-**loan**
+Sample `loan` table before normalization:
 
 | loan_id | borrower_id | bank_id | bank_zip | amount |
 |---------|-------------|---------|----------|--------|
@@ -827,7 +825,7 @@ DROP COLUMN max_amount;
 
 The sample records for the `program` and `loan` tables after applying 3NF normalization should look like this:
 
-- `program` Table (After 3NF Normalization)
+- `program` table (after 3NF normalization)
 
     | id  | description              | max_amount |
     |-----|--------------------------|------------|
@@ -837,7 +835,7 @@ The sample records for the `program` and `loan` tables after applying 3NF normal
     | 4   | Emergency Relief Program  | 25000.00   |
     | 5   | Agricultural Loan         | 75000.00   |
 
-- `loan` Table (After 3NF Normalization)
+- `loan` table (after 3NF normalization)
 
     | id   | borrower_id | bank_id | program_id |
     |------|-------------|---------|------------|
