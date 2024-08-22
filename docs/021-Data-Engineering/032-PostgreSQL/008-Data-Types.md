@@ -56,7 +56,7 @@ Here is a table format:
 
 Text data types in PostgreSQL are used to store and manage various types of text information. The three main text data types are `TEXT`, `VARCHAR`, and `CHAR`. Each type serves different purposes depending on the nature of the text data you want to store.
 
-### TEXT Data Type
+### TEXT 
 
 The `TEXT` data type is the most flexible option for storing text in PostgreSQL.
 
@@ -74,7 +74,7 @@ CREATE TABLE customers (
 ```
 
 
-### VARCHAR Data Type
+### VARCHAR 
 
 The `VARCHAR` data type is similar to `TEXT` but allows for specifying a maximum length.
 
@@ -95,7 +95,7 @@ CREATE TABLE customers (
 );
 ```
 
-### CHAR Data Type
+### CHAR 
 
 The `CHAR` data type is used for fixed-length text.
 
@@ -158,7 +158,7 @@ CREATE TABLE employees (
 );
 ```
 
-We can also use `DEFAULT` values if no value is set for the column. Here's an example of an SBA campaign:
+We can also use `DEFAULT` values if no value is set for the column. Here's an example of an small businesses administration (SBA) loans:
 
 ```sql
 CREATE TABLE campaign (
@@ -175,7 +175,7 @@ CREATE TABLE campaign (
 
 ## Bool and Temporal
 
-### Boolean Data Type
+### Boolean
 
 The `BOOLEAN` data type in PostgreSQL is ideal for binary decisions or flags within your database. It is used to represent:
 
@@ -193,7 +193,7 @@ CREATE TABLE products (
 ```
 
 
-### Temporal Data Types
+### Temporal 
 
 Temporal data types are used to store dates, times, or both, making them essential for tracking events or time-sensitive data.
 
