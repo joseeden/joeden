@@ -251,107 +251,124 @@ To download the actual files, you can get them from my [Github repository](https
 
 1. Perform an inner join with cities AS c1 on the left and countries as c2 on the right. Use code as the field to merge your tables on.
 
-Answer: 
-
-```sql
-SELECT 
-    c1.name AS city,
-    code,
-    c2.name AS country,
-    region,
-    city_proper_pop
-FROM cities AS c1
-INNER JOIN countries AS c2 
-ON c1.country_code = c2.code
-ORDER BY code DESC; 
-```
-
-Output (some records may not shown):
-
-| city             | code | country          | region                     | city_proper_pop |
-|------------------|------|------------------|----------------------------|-----------------|
-| Harare           | ZWE  | Zimbabwe         | Eastern Africa             | 1606000         |
-| Lusaka           | ZMB  | Zambia           | Eastern Africa             | 1742979         |
-| Cape Town        | ZAF  | South Africa     | Southern Africa            | 3740026         |
-| Johannesburg     | ZAF  | South Africa     | Southern Africa            | 4434827         |
-| Durban           | ZAF  | South Africa     | Southern Africa            | 3442361         |
-| Ekurhuleni       | ZAF  | South Africa     | Southern Africa            | 3178470         |
-| Sana'a           | YEM  | Yemen            | Middle East                | 1937451         |
-| Ho Chi Minh City | VNM  | Vietnam          | Southeast Asia             | 7681700         |
-| Hanoi            | VNM  | Vietnam          | Southeast Asia             | 6844100         |
-| Caracas          | VEN  | Venezuela        | South America              | 1943901         |
-| Maracaibo        | VEN  | Venezuela        | South America              | 1599940         |
-| Tashkent         | UZB  | Uzbekistan       | Southern and Central Asia  | 2309600         |
-| Chicago          | USA  | United States    | North America              | 2695598         |
-| Los Angeles      | USA  | United States    | North America              | 3884307         |
-| Philadelphia     | USA  | United States    | North America              | 1567872         |
-| Phoenix          | USA  | United States    | North America              | 1563025         |
+    <details>
+        <summary>Solution</summary>
 
 
-2. Change the code to perform a LEFT JOIN instead of an INNER JOIN. After executing this query, have a look at how many records the query result contains.
+        Run the command below:
 
-Answer: 
+        ```sql
+        SELECT 
+            c1.name AS city,
+            code,
+            c2.name AS country,
+            region,
+            city_proper_pop
+        FROM cities AS c1
+        INNER JOIN countries AS c2 
+        ON c1.country_code = c2.code
+        ORDER BY code DESC; 
+        ```
 
-```sql
-SELECT 
-	c1.name AS city, 
-    code, 
-    c2.name AS country,
-    region, 
-    city_proper_pop
-FROM cities AS c1
-LEFT JOIN countries AS c2 
-ON c1.country_code = c2.code
-ORDER BY code DESC;
-```
+        Output (some records may not shown):
 
-Output (some records may not shown):
+        | city             | code | country          | region                     | city_proper_pop |
+        |------------------|------|------------------|----------------------------|-----------------|
+        | Harare           | ZWE  | Zimbabwe         | Eastern Africa             | 1606000         |
+        | Lusaka           | ZMB  | Zambia           | Eastern Africa             | 1742979         |
+        | Cape Town        | ZAF  | South Africa     | Southern Africa            | 3740026         |
+        | Johannesburg     | ZAF  | South Africa     | Southern Africa            | 4434827         |
+        | Durban           | ZAF  | South Africa     | Southern Africa            | 3442361         |
+        | Ekurhuleni       | ZAF  | South Africa     | Southern Africa            | 3178470         |
+        | Sana'a           | YEM  | Yemen            | Middle East                | 1937451         |
+        | Ho Chi Minh City | VNM  | Vietnam          | Southeast Asia             | 7681700         |
+        | Hanoi            | VNM  | Vietnam          | Southeast Asia             | 6844100         |
+        | Caracas          | VEN  | Venezuela        | South America              | 1943901         |
+        | Maracaibo        | VEN  | Venezuela        | South America              | 1599940         |
+        | Tashkent         | UZB  | Uzbekistan       | Southern and Central Asia  | 2309600         |
+        | Chicago          | USA  | United States    | North America              | 2695598         |
+        | Los Angeles      | USA  | United States    | North America              | 3884307         |
+        | Philadelphia     | USA  | United States    | North America              | 1567872         |
+        | Phoenix          | USA  | United States    | North America              | 1563025         |
 
-| city             | code | country             | region                     | city_proper_pop |
-|------------------|------|---------------------|----------------------------|-----------------|
-| Taichung         | null | null                | null                       | 2752413         |
-| Tainan           | null | null                | null                       | 1885252         |
-| Kaohsiung        | null | null                | null                       | 2778918         |
-| Bucharest        | null | null                | null                       | 1883425         |
-| Taipei           | null | null                | null                       | 2704974         |
-| New Taipei City  | null | null                | null                       | 3954929         |
-| Harare           | ZWE  | Zimbabwe            | Eastern Africa             | 1606000         |
-| Lusaka           | ZMB  | Zambia              | Eastern Africa             | 1742979         |
-| Cape Town        | ZAF  | South Africa        | Southern Africa            | 3740026         |
-| Ekurhuleni       | ZAF  | South Africa        | Southern Africa            | 3178470         |
-| Durban           | ZAF  | South Africa        | Southern Africa            | 3442361         |
-| Johannesburg     | ZAF  | South Africa        | Southern Africa            | 4434827         |
+
+    </details>
+
+
+2. Change the code to perform a `LEFT JOIN` instead of an `INNER JOIN`. After executing this query, have a look at how many records the query result contains.
+
+<details>
+    <summary>Solution</summary>
+
+    Run the command below:
+
+    ```sql
+    SELECT 
+        c1.name AS city, 
+        code, 
+        c2.name AS country,
+        region, 
+        city_proper_pop
+    FROM cities AS c1
+    LEFT JOIN countries AS c2 
+    ON c1.country_code = c2.code
+    ORDER BY code DESC;
+    ```
+
+    Output (some records may not shown):
+
+    | city             | code | country             | region                     | city_proper_pop |
+    |------------------|------|---------------------|----------------------------|-----------------|
+    | Taichung         | null | null                | null                       | 2752413         |
+    | Tainan           | null | null                | null                       | 1885252         |
+    | Kaohsiung        | null | null                | null                       | 2778918         |
+    | Bucharest        | null | null                | null                       | 1883425         |
+    | Taipei           | null | null                | null                       | 2704974         |
+    | New Taipei City  | null | null                | null                       | 3954929         |
+    | Harare           | ZWE  | Zimbabwe            | Eastern Africa             | 1606000         |
+    | Lusaka           | ZMB  | Zambia              | Eastern Africa             | 1742979         |
+    | Cape Town        | ZAF  | South Africa        | Southern Africa            | 3740026         |
+    | Ekurhuleni       | ZAF  | South Africa        | Southern Africa            | 3178470         |
+    | Durban           | ZAF  | South Africa        | Southern Africa            | 3442361         |
+    | Johannesburg     | ZAF  | South Africa        | Southern Africa            | 4434827         |
+
+</details>
 
 
 3. Order the result set by the average GDP per capita from highest to lowest. Return only the first 10 records in your result.
 
-Answer:
+<details>
+    <summary>Solution</summary>
 
-```sql
-SELECT region, AVG(gdp_percapita) AS avg_gdp
-FROM countries AS c
-LEFT JOIN economies AS e
-USING(code)
-WHERE year = 2010
-GROUP BY region
-ORDER BY avg_gdp DESC 
-LIMIT 10; 
-```
+        Run the command below:
 
-Output (some records may not shown):
+        ```sql
+        SELECT region, AVG(gdp_percapita) AS avg_gdp
+        FROM countries AS c
+        LEFT JOIN economies AS e
+        USING(code)
+        WHERE year = 2010
+        GROUP BY region
+        ORDER BY avg_gdp DESC 
+        LIMIT 10; 
+        ```
 
-| Region                   | Avg_GDP           |
-|--------------------------|-------------------|
-| Western Europe           | 58130.96149553572 |
-| Nordic Countries         | 57073.99765625    |
-| North America            | 47911.509765625   |
-| Australia and New Zealand| 44792.384765625   |
-| British Islands          | 43588.330078125   |
-| Eastern Asia             | 24962.8076171875  |
-| Southern Europe          | 22926.410910866478|
-| Middle East              | 18204.641515395222|
-| Baltic Countries         | 12631.029947916666|
-| Caribbean                | 11413.339454064002|
+        Output (some records may not shown):
+
+        | Region                   | Avg_GDP           |
+        |--------------------------|-------------------|
+        | Western Europe           | 58130.96149553572 |
+        | Nordic Countries         | 57073.99765625    |
+        | North America            | 47911.509765625   |
+        | Australia and New Zealand| 44792.384765625   |
+        | British Islands          | 43588.330078125   |
+        | Eastern Asia             | 24962.8076171875  |
+        | Southern Europe          | 22926.410910866478|
+        | Middle East              | 18204.641515395222|
+        | Baltic Countries         | 12631.029947916666|
+        | Caribbean                | 11413.339454064002|
+
+</details>
 
 
 ### Right Join 

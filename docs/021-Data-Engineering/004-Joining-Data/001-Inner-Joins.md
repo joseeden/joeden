@@ -76,18 +76,62 @@ The 'table.column_name` format must be used when selecting columns that exist in
 
 :::
 
-## Aliasing 
+## Aliasing with `AS`
 
-To simplify our query, we can alias table names with the AS keyword, just like we do with columns. This helps avoid repetitive typing. 
-
-Using the previous example, we can shorten the query:
+To simplify our query, we can alias table names with the `AS` keyword, just like we do with columns. This helps avoid repetitive typing. Using the previous example, we can shorten the query:
 
 ```sql
-SELECT p1.country, p1.continent, prime_minister, president
+SELECT 
+  p1.country, 
+  p1.continent, 
+  prime_minister, 
+  president
 FROM prime_ministers AS p1
 INNER JOIN presidents AS p2 
 ON p1.country = p2.country;
 ```
+
+## Aliasing without `AS`
+
+Note that the `AS` keyword is entirely optional as SQL will still read it the same way without the keyword:
+
+```sql
+SELECT 
+  p1.country, 
+  p1.continent, 
+  prime_minister, 
+  president
+FROM prime_ministers p1
+INNER JOIN presidents p2 
+ON p1.country = p2.country;
+```
+
+According to ANSI/ISO SQL the AS keyword is optional. But some relational database management systems (RDBMS) products want it, while others don't want it. However, its main purpose are the following:
+
+1. **Readability**. Imagine your query have 20, 50 or even 100 columns. using As will help anyone reading the query to know what is a column and what is an alias.
+
+2. **Compatability**. If you plan on ever moving to a RDBMS, that RDBMS might not support short-hand aliasing.
+
+As an example, if we have the `SELECT` statement with many columns:
+
+```sql
+SELECT a, b, c, d
+. . . 
+```
+
+It is very easy to occasionally skip the comma:
+
+```sql
+SELECT a b, c, d
+. . . 
+```
+
+If you don't use `AS` then this looks like correct code and it can be difficult to figure out. If you always use `AS` for column aliases, then you know it is incorrect. For more information, you can read the links below:
+
+- [What is the point using "AS" keyword in SQL when aliasing can be done without it?](https://stackoverflow.com/questions/42326469/what-is-the-point-using-as-keyword-in-sql-when-aliasing-can-be-done-without-it)
+
+- [Bad Habits to Kick: AS instead of = for column aliases](https://sqlblog.org/2012/01/23/bad-habits-to-kick-using-as-instead-of-for-column-aliases)
+
 
 ## `USING` 
 

@@ -38,11 +38,11 @@ We can also use SQL to combine multiple joins in a single query. Start with an `
 ```sql
 SELECT *
 FROM left_table 
-`INNER JOIN` right_table
+INNER JOIN right_table
 ON left_table.id = right_table.id 
-`INNER JOIN` another_table 
+INNER JOIN another_table 
 ON left_table.id = another_table.id;
-``
+```
 
 
 ### First Join 
@@ -118,7 +118,7 @@ Note that the values in the join fields don’t always match one-to-one between 
 ```sql
 SELECT *
 FROM left_table 
-`INNER JOIN` right_table
+INNER JOIN right_table
 ON left_table.id = right_table.id 
     AND left_table.date = right_table.date
 ```
