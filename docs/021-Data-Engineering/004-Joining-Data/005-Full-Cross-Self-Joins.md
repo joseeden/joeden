@@ -126,7 +126,7 @@ Self joins allow you to compare rows within the same table. They are useful for 
 
 ## Examples on Self Join 
 
-Let's say we want to pair countries with other countries in the same continent using the `prime_ministers` table.
+Let's say we want to pair countries with other countries in the same continent using the `prime_ministers` table. 
 
 ```sql
 SELECT 
@@ -139,6 +139,14 @@ ON p1.continent = p2.continent
     AND p1.country <> p2.country
 LIMIT 10;
 ```
+
+Note that "not equal to" can be written with either operators:
+
+```sql
+!= 
+<> 
+``` 
+
 
 Output:
 

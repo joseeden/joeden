@@ -71,10 +71,6 @@ ORDER BY city_perc DESC
 LIMIT 10;
 ```
 
-</details>
-
-
-
 Output (some records might not shown):
 
 | Name       | Country Code | City Proper Pop | Metro Area Pop | City Perc (%) |
@@ -89,3 +85,5 @@ Output (some records might not shown):
 | Brasilia   | BRA          | 2,556,149       | 3,919,864      | 65.21         |
 | London     | GBR          | 8,673,713       | 13,879,757     | 62.49         |
 | Budapest   | HUN          | 1,759,407       | 2,927,944      | 60.09         |
+
+</details>

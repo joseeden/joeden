@@ -123,7 +123,7 @@ ON left_table.id = right_table.id
     AND left_table.date = right_table.date
 ```
 
-To refine your results, add another join condition using the AND keyword in the ON clause. For instance, you might join on both id and date fields. This approach ensures that records match on both criteria.
+To refine your results, add another join condition using the `AND` keyword in the `ON` clause. For instance, you might join on both id and date fields. This approach ensures that records match on both criteria.
 
 <div class='img-center'>
 

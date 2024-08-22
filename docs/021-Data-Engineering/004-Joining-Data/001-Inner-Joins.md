@@ -49,7 +49,11 @@ When performing an `INNER JOIN`, we look for matching values in the key column a
 For example, to find countries that has both Presidents and Prime Ministers:
 
 ```sql
-SELECT prime_ministers.country, prime_ministers.continent, prime_minister, president
+SELECT 
+  prime_ministers.country, 
+  prime_ministers.continent, 
+  prime_minister, 
+  president
 FROM prime_ministers
 INNER JOIN presidents
 ON prime_ministers.country = presidents.country;
@@ -106,9 +110,9 @@ INNER JOIN presidents p2
 ON p1.country = p2.country;
 ```
 
-According to ANSI/ISO SQL the AS keyword is optional. But some relational database management systems (RDBMS) products want it, while others don't want it. However, its main purpose are the following:
+According to ANSI/ISO SQL the `AS` keyword is optional. But some relational database management systems (RDBMS) products want it, while others don't want it. However, its main purpose are the following:
 
-1. **Readability**. Imagine your query have 20, 50 or even 100 columns. using As will help anyone reading the query to know what is a column and what is an alias.
+1. **Readability**. Imagine your query have 20, 50 or even 100 columns. Using `AS` will help anyone reading the query to know what is a column and what is an alias.
 
 2. **Compatability**. If you plan on ever moving to a RDBMS, that RDBMS might not support short-hand aliasing.
 
@@ -138,7 +142,11 @@ If you don't use `AS` then this looks like correct code and it can be difficult 
 For an even more concise query, use the `USING` command when joining on identical column names. Since both tables have a "country" column, `USING` (country) can replace the `ON` clause.
 
 ```sql
-SELECT p1.country, p1.continent, prime_minister, president
+SELECT 
+  p1.country, 
+  p1.continent, 
+  prime_minister, 
+  president
 FROM prime_ministers AS p1
 INNER JOIN presidents AS p2 
 USING (country);
