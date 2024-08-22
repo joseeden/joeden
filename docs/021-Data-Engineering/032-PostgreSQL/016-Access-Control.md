@@ -198,10 +198,14 @@ After this, individual user accounts can be created/added to the `family` group:
 
 ```sql
 ALTER GROUP family 
-ADD USER ted;
+ADD USER ted, better_half;
+```
 
+If there are more users to add in the group:
+
+```sql
 ALTER GROUP family 
-ADD USER better_half;
+ADD USER ted, better_half, user1, user2, user3;
 ```
 
 
