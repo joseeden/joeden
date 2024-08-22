@@ -141,7 +141,7 @@ Normalization reduces redundancy, enhances consistency, and improves data organi
 - Identifies repeating data groups and create new tables.
 - Organizes data effectively with new tables.
 
-There is an in-depth explanation on how Normalization fully works on the [Schemas and Normalization](/docs/021-Data-Engineering/021-Database-Design/003-Schemas-and-Normalization.md#normalization) page.
+There is an in-depth explanation on how normalization fully works on the [Schemas and Normalization](/docs/021-Data-Engineering/021-Database-Design/003-Schemas-and-Normalization.md#normalization) page.
 
 
 ### Example: Object-Data Mapping 
