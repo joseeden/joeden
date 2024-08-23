@@ -1,6 +1,6 @@
 ---
 title: "File converters"
-description: "Security Information and Event Management"
+description: "File converters"
 sidebar_position: 1
 ---
 
