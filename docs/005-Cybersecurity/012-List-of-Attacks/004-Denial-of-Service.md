@@ -76,8 +76,6 @@ A specialized DDoS attack that allows an attacker to initiate DNS requests from 
 - High volume of packets are sent, DNS servers respond to the request.
 - Response from the DNS server takes up a lot of bandwidth.
 
-For more information, please see [DNS Amplification Attack.](#dns-amplification-attack) 
-
 ## Stopping DDoS 
 
 - **Blackhole/Sinkhole**
