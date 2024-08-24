@@ -14,3 +14,4 @@ last_update:
 
 ## Set Theory 
 
+![](/img/docs/cheatsheet-sql-set-theory.png)
