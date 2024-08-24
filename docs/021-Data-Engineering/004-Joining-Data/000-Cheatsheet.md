@@ -7,5 +7,10 @@ last_update:
   date: 2/27/2022
 ---
 
-## `JOIN`
+## Joins 
+
+![](/img/docs/cheatsheet-sql-joinsss.md)
+
+
+## Set Theory 
 
