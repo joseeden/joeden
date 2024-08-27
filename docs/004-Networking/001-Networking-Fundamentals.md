@@ -1,5 +1,5 @@
 ---
-title: "Networking Basics"
+title: "Networking Fundamentals"
 description: "Learn the basics of Networking"
 tags: [Networking,Cybersecurity]
 sidebar_position: 1
