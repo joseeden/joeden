@@ -1,8 +1,8 @@
 ---
-title: "Devices and Tools"
-description: "Networking devices and tools"
+title: "Network Appliances"
+description: "Network Appliances"
 tags: [Networking,Cybersecurity]
-sidebar_position: 4
+sidebar_position: 50
 last_update:
   date: 1/30/2024
 ---

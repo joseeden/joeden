@@ -27,25 +27,66 @@ Ethernet (IEEE 802.3) is a standard that defines wired connections of networked 
 
 ## Device Address
 
-**Media Access Control (MAC) Address** -
+**Media Access Control (MAC) Address**
+
 - Assigned to every network device.
 - Example: 00-13-02-1F-58-F5.
 - First 3 bytes (24 bits) denote the vendor or manufacturer of the physical network interface.
 - No two devices can have the same MAC address in the same local network.
 
-**Internet Protocol (IP) Address** -
+**Internet Protocol (IP) Address**
+
 - Logical address associated with a unique network interface.
 - MAC addresses are assigned in the firmware, while IP addresses are logical.
 - Helps maintain communications when physical devices are swapped.
 - Examples: 192.168.1.1 and 2001:db8::ffff:0:1.
 
 
-## Internet Protocol (IPv4 and IPv6)
+## IP Addressing
 
-IP is currently deployed and used worldwide in two major versions. IPv4 provides a 32-bit address space, which by the late 1980s was projected to be exhausted. IPv6 was introduced in December 1995 and provides a 128-bit address space along with several other important features. 
+IP addressing is used to assign unique identifiers to devices on a network, allowing them to communicate with each other. Each IP address consists of a set of numbers that identify both the network and the specific device (host) on that network.
 
-For more information, check out [IP address](https://en.wikipedia.org/wiki/IP_address)
+- 32-bit numbers, usually represented in dotted decimal format
+- 128-bit, designed to accommodate more devices with a larger address space
+- Used for routing data packets to their correct destination across networks
 
+### Dotted Quad Notation
+
+Dotted quad notation is a way of representing IPv4 addresses as four decimal numbers separated by periods, each representing 8 bits of the address. For example, the IP address `192.168.1.10` is written in dotted quad notation.
+
+- `192.168` - network address
+- 1.10 - host address
+
+Note: The division between the network and host address can vary, depending on the network's configuration.
+
+### Source and Destination
+
+Source and destination IP addresses indicate where a packet is coming from and where it is going. These addresses guide the routing of data across networks.
+
+- They play a crucial role in directing traffic on the internet
+- The roles can be interchanged depending on the direction of communication
+
+### IPv6
+
+IPv6 is the most recent version of the Internet Protocol, designed to replace IPv4. It provides a vastly larger address space to accommodate the growing number of internet-connected devices.
+
+- IPv6 addresses are 128-bit, represented as eight groups of four hexadecimal digits
+- No need for Network Address Translation (NAT), IPv6 provides unique address for each device
+- It includes built-in security features and improved routing efficiency
+
+An example of an IPv6 address is:
+
+```bash 
+2001:0db8:85a3:0000:0000:8a2e:0370:7334
+```
+
+This address is divided into eight groups of four hexadecimal digits, separated by colons. Each group represents 16 bits of the 128-bit IPv6 address. 
+
+For simplicity, leading zeros in each group can be omitted, so the address can also be written as:
+
+`2001:db8:85a3::8a2e:370:7334`
+
+The double colon (`::`) represents a consecutive group of zeroes that can be compressed to save space.
 
 ## Wifi 
 
@@ -75,8 +116,6 @@ Widely adopted for its easy deployment and cost-effectiveness, wireless networki
 - Server Farm:
     - Different VLANs for web servers, database servers, ensuring segmentation.
 
-
-
 Sample diagram:
 
 <div class="img-center">
@@ -93,56 +132,6 @@ Quality of Service (QoS) refers to the technology that allows the network to pri
 
 - Prioritizes critical traffic like VoIP or video conferencing.
 - Uses mechanisms like classes of service (CoS), packet classification, and traffic shaping.
-
-## Network Address Translation (NAT)
-
-Network Address Translation (NAT) translates private IP addresses to a public IP address, allowing multiple devices on a local network to access the internet using a single public IP.
-
-- Conserves public IP addresses.
-- Hides internal network structure.
-- Provides a basic level of security.
-- Enables internal IP address management.
-- Supports dynamic and static NAT configurations.
-
-Sample diagram:
-
-
-<div class="img-center">
-
-![](/img/docs/all-things-devops-NAT-3.png)
-
-
-</div>
-
-
-
-## Port Address Translation (PAT)
-
-Port Address Translation (PAT), a subset of NAT, maps multiple private IP addresses to a single public IP address using different ports, allowing multiple devices to share one public IP address simultaneously.
-
-- Can be a hardware or software configuration.
-- Normally enabled on the router, PAT hides the internal IPs.
-- Enables multiple connections from different devices.
-- Uses port numbers to differentiate traffic.
-- Supports large-scale networks with limited public IPs.
-- Often referred to as "NAT overload", or "NAT Gateway"
-
-Almost similar to a forward proxy, but their differences are:
-
-- PAT is Layer 4, while Forward Proxy is Layer 7 of the OSI Model.
-- Forward proxy can cache the retrieved content from the internet, PAT doesn't.
-- Forward proxy can force users to authenticate before fetching requests.
-
-Sample diagram:
-
-
-<div class="img-center">
-
-![](/img/docs/all-things-devops-PAT.png)
-
-
-</div>
-
 
 
 ## Networking Tools 
