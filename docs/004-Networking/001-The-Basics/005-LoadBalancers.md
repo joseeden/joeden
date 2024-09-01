@@ -42,6 +42,25 @@ Load Balancers prevent overloading of any single resource by distributing the in
   - Higher weights meant servers can handle more traffic or have better performance capabilities.
   - Allows for more fine-tuned control over how traffic is distributed across servers.
 
+## Security Functions 
+
+- **SSL Certificate Management**
+  
+  - Handles the encryption of data exchanged between servers and clients
+  - Manages certificate issuance, renewal, and revocation
+  - Ensures secure data transmission by encrypting and decrypting traffic
+
+- **URL Filtering**
+
+  - Controls access to specific web resources based on URL patterns
+  - Blocks or allows traffic based on predefined URL rules
+  - Helps prevent access to malicious or inappropriate websites
+
+- **Other Web Application Security Tasks**
+
+  - Protection against web-based attacks such as SQL injection and cross-site scripting (XSS)
+  - Monitors and analyzes traffic for suspicious behavior
+  - Implements application firewalls to block unauthorized access
 
 ## Application Delivery Controllers
 
