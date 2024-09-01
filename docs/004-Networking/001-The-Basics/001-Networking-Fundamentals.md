@@ -102,7 +102,7 @@ Widely adopted for its easy deployment and cost-effectiveness, wireless networki
 ![](/img/docs/security-wifi.png)
 
 
-## Virtual Local Network
+## Virtual Local Area Network
 
 **VLANs** are created by switches to logically segments a network without altering physical topology. 
 
