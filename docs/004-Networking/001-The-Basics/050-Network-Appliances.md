@@ -13,68 +13,6 @@ last_update:
 
 A network appliance is a dedicated hardware device with pre-installed software that is designed to provide specific networking services.
 
-### Common Network Devices
-
-- **Hubs**
-  - Connect multiple devices in a network, commonly found in home networks.
-  - Less intelligent compared to switches or routers.
-
-- **Switches**
-  - Also known as intelligent hubs.
-  - Know the addresses of connected devices and route traffic efficiently.
-  - Wired devices.
-
-- **Routers**
-  - Control traffic flow on networks.
-  - Connect similar networks and manage traffic between them.
-  - Wired or wireless and can connect multiple switches.
-  - Determine the most efficient route for network traffic.
-
-- **Firewalls**
-  - Essential for managing and controlling network traffic.
-  - Filter traffic based on predefined rules.
-  - Deployed between private networks and the internet or within segmented networks in an organization.
-
-- **Server**
-  - Provides information to other computers on a network.
-  - Common types include web servers, email servers, print servers, database servers, and file servers.
-  - Secured differently than workstations.
-
-- **Endpoints**
-  - Ends of a network communication link.
-  - One end often at a server with a resource, the other end a client making a request.
-  - Can be servers, desktops, laptops, tablets, mobile phones, or other end-user devices.
-
-- **Load Balancers**
-  - Distribute incoming network traffic across multiple servers.
-  - Provide high availability by redirecting traffic during server failures.
-  - Balance loads based on various algorithms, such as round-robin or least connections.
-  - Improve response times and optimize resource usage.
-  - For more information, please see [Load Balancing](../005-Cybersecurity/003-Security-Architecture/011-HA-and-DR.md#load-balancing)
-
-- **Application Delivery Controllers**
-  - Advanced form of a loadBalancer; can optimize application delivery.
-  - Load balancing, SSL termination, content caching, and HTTP compression
-  - Integrated firewall and DDoS protection.
-
-- **Proxy Servers**
-  - Act as intermediaries between clients and servers, hiding client IP addresses.
-  - Cache content to improve load times and reduce bandwidth usage.
-  - Filter web traffic to enforce organizational policies.
-  - Implement user authentication protocols and secure tunnels
-
-- **Network Sensors**
-  - Monitor network traffic and detect anomalies and potential threats in real-time.
-  - Collect data for analysis and reporting.
-  - Integrate with other security systems to automate alerts and responses.
-
-- **Jump Servers**
-  - Also known as "Jump box", it serves as secure access points for admin tasks.
-  - Isolate administrative activities from regular network traffic.
-  - Log and monitor all administrative actions for auditing purposes.
-  - Usually hosts a wide range of tools and scripts that system administrators can use.
-
-
 ### SD-WAN
 
 Software-Defined Wide Area Network (SD-WAN) is a virtualized network architecture that allows enterprises to leverage any combination of transport services, including MPLS, LTE, and broadband internet services, to securely connect users to applications.

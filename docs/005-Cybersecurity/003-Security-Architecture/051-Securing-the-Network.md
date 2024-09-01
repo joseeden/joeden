@@ -48,20 +48,14 @@ A Demilitarized Zone (DMZ) is an isolated network area for outside visitors.
 - Hosts public servers like web, email, and file servers
 - Provides a buffer zone between the internal network and the internet
 
-By separating public-facing services from the internal network, the DMZ helps protect sensitive internal systems from potential external threats. Any unauthorized access or attacks are contained within the DMZ, reducing the risk to the internal network.
-
-<div class="img-center">
-
-![](/img/docs/security-dmz-simplified-dmz-diagrammm.png)
-
-</div>
+For more information, please see [Firewalls.](/docs/005-Cybersecurity/003-Security-Architecture/055-Firewalls.md#demilitarized-zone)
 
 
 ## Virtual Local Network
 
 VLANs are created by switches to logically segments a network without altering physical topology. 
 
-For more information, please see [VLANs](../../004-Networking/001-Networking-Basics.md#virtual-local-network)
+For more information, please see [VLANs](/docs/004-Networking/001-Networking-Basics.md#virtual-local-network)
 
 ## Microsegmentation 
 

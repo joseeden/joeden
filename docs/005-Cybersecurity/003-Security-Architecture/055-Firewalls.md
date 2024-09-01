@@ -15,6 +15,41 @@ Firewalls safeguard networks by monitoring and controlling traffic based on pred
 - Can be hardware-based or specialized software installed on the client or server
 - By placing in front of the network segment, it creates a **screened subnet.**
 
+It is often placed between the router and the internet, firewalls evaluate anything crossing the network perimeter.
+
+<div class='img-center'>
+
+![](/img/docs/networking-basics-devices-fiewallssss.png)
+
+</div>
+
+
+## Connecting Three Networks
+
+Firewalls often connect three networks: the internet, the internal network, and a DMZ (demilitarized zone).
+
+<div class='img-center'>
+
+![](/img/docs/networking-basics-devices-firewalls-connect-three-networksss.png)
+
+</div>
+
+## Demilitarized Zone
+
+A Demilitarized Zone (DMZ) is an isolated network area for outside visitors.
+
+- Also called "screened subnets"
+- Hosts public servers like web, email, and file servers
+- Provides a buffer zone between the internal network and the internet
+
+By separating public-facing services from the internal network, the DMZ helps protect sensitive internal systems from potential external threats. Any unauthorized access or attacks are contained within the DMZ, reducing the risk to the internal network.
+
+<div class="img-center">
+
+![](/img/docs/security-dmz-simplified-dmz-diagrammm.png)
+
+</div>
+
 ## Concepts
 
 - **Screened Subnet** 
@@ -28,6 +63,20 @@ Firewalls safeguard networks by monitoring and controlling traffic based on pred
   - A firewall with in-depth inspection may slow down due to time taken.
   - Each packet goes through all the rules, increasing the network latency.
   - On the other hand, less depth inspection can mean less security.
+
+- **Stateful Inspection**
+
+  - Stateful Inspection Tracks the state of active connections.
+  - It makes filtering decisions based on the context of traffic.
+  - It Monitors incoming and outgoing traffic over time.
+  - It More dynamic than simple packet filtering.
+
+- **Implicit Deny Rule**
+
+  - Blocks all network traffic by default unless explicitly allowed by other rules.
+  - It ensures that only authorized traffic is permitted.
+  - Reduces the risk of unauthorized access by denying unlisted traffic.
+
 
 ## Types of Firewall 
 
@@ -60,27 +109,6 @@ Firewalls safeguard networks by monitoring and controlling traffic based on pred
   - Operates at the application layer (Layer 7) of the OSI model.
   - Can provide caching, content filtering, and access control.
 
-
-## Types of Proxy 
-
-- **Circuit Level Proxy**
-
-  - Like a SOCKS firewall
-  - Operate at Layer 5 (Session layer)
-
-- **Application Level Proxy**
-
-  - Deeper packet inspection
-  - Conducts various proxy function for each type of application
-  - Best positioned inside of the network, as closely as possible to the application server
-
-- **Kernel Proxy**
-
-  - Known as a "5th Generation Firewall".
-  - Minimal impact on network performance but thorough inspects packets across all layers.
-  - Uses the operating system's kernel to process and filter packets.
-  - Often used in high-throughput environments requiring granular control and speed.
-  - Best positioned as close as possible to the application server.
 
 ## Evolution of Firewalls 
 
@@ -121,7 +149,7 @@ Firewalls safeguard networks by monitoring and controlling traffic based on pred
 
 - **Web Application Firewall (WAF)**
 
-  - Specifically designed to protect web applications, focused on HTTP/HTTPS inspection.
+  - Specifically psrotect web applications, focused on HTTP/HTTPS inspection.
   - Defends against common web threats like SQL injection, XSS, and CSRF.
   - Operates at the application layer (Layer 7) of the OSI model.
 
