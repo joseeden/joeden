@@ -15,17 +15,19 @@ Firewalls safeguard networks by monitoring and controlling traffic based on pred
 - Can be hardware-based or specialized software installed on the client or server
 - By placing in front of the network segment, it creates a **screened subnet.**
 
-**Screened Subnet** 
+## Concepts
 
-- Also known as a **Dual-homed Host Configuration**.
-- Acts a protective barrier between external untrusted networks and internal trusted networks.
-- Often equipped with a packet-filtering firewall or other security mechanisms.
+- **Screened Subnet** 
 
-**In-depth Inspection**
+  - Also known as a **Dual-homed Host Configuration**.
+  - Acts a protective barrier between external untrusted networks and internal trusted networks.
+  - Often equipped with a packet-filtering firewall or other security mechanisms.
 
-- A firewall with in-depth inspection may slow down due to time taken.
-- Each packet goes through all the rules, increasing the network latency.
-- On the other hand, less depth inspection can mean less security.
+- **In-depth Inspection**
+
+  - A firewall with in-depth inspection may slow down due to time taken.
+  - Each packet goes through all the rules, increasing the network latency.
+  - On the other hand, less depth inspection can mean less security.
 
 ## Types of Firewall 
 
@@ -57,15 +59,20 @@ Firewalls safeguard networks by monitoring and controlling traffic based on pred
   - Filters requests and responses based on content and protocol.
   - Operates at the application layer (Layer 7) of the OSI model.
   - Can provide caching, content filtering, and access control.
-  - Types:
-    - **Circuit Level Proxy**
-      - Like a SOCKS firewall
-      - Operate at Layer 5 (Session layer)
 
-    - **Application Level Proxy**
-      - Deeper packet inspection
-      - Conducts various proxy function for each type of application
-      - Best positioned inside of the network, as closely as possible to the application server
+
+## Types of Proxy 
+
+- **Circuit Level Proxy**
+
+  - Like a SOCKS firewall
+  - Operate at Layer 5 (Session layer)
+
+- **Application Level Proxy**
+
+  - Deeper packet inspection
+  - Conducts various proxy function for each type of application
+  - Best positioned inside of the network, as closely as possible to the application server
 
 - **Kernel Proxy**
 
@@ -117,17 +124,20 @@ Firewalls safeguard networks by monitoring and controlling traffic based on pred
   - Specifically designed to protect web applications, focused on HTTP/HTTPS inspection.
   - Defends against common web threats like SQL injection, XSS, and CSRF.
   - Operates at the application layer (Layer 7) of the OSI model.
-  - Types of configuration:
-   
-    - **Inline Configuration**
-      - Device will between the network firewall and the web servers.
-      - Prevent live attacks, but slow down web traffic.
-      - Can block legitimate traffic by mistake.
 
-    - **Out-of-band Configuration**
-      - Device receives a mirrored copy of the web server traffic.
-      - Non-intrusive way of conducting web application filtering.
-      - Cannot block live web traffic, works more of an IDS and then alert on it.
+## WAF Configurations
+   
+- **Inline Configuration**
+
+  - Device will between the network firewall and the web servers.
+  - Prevent live attacks, but slow down web traffic.
+  - Can block legitimate traffic by mistake.
+
+- **Out-of-band Configuration**
+
+  - Device receives a mirrored copy of the web server traffic.
+  - Non-intrusive way of conducting web application filtering.
+  - Cannot block live web traffic, works more of an IDS and then alert on it.
 
 ## Access Control Lists 
 
@@ -140,11 +150,13 @@ Access Control Lists (ACLs) is a rule set that is placed on firewalls, routers, 
 - Some ACL includes a DENY ALL rule at the end of the ACL.
 
 Information contained in ACLs:
+
   - Type 
   - Source 
   - Destination 
   - Action
 
 ACLs can be configured through:
+
   - Web-based interface 
   - Text-based command line interface

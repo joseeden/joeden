@@ -105,6 +105,7 @@ Widely adopted for its easy deployment and cost-effectiveness, wireless networki
 ## Virtual Local Network
 
 **VLANs** are created by switches to logically segments a network without altering physical topology. 
+
 **VLAN Trunking** is when you have VLANs spanning multiple switches to extend the reach of that VLAN.
 
 - Corporate Network:

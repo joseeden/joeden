@@ -42,16 +42,17 @@ Involves isolating a network from outside communications.
 
 ## Demilitarized Zone
 
-Demilitarized Zone (DMZ) is an isolated network area for outside visitors.
+A Demilitarized Zone (DMZ) is an isolated network area for outside visitors.
 
-- Also called as **"screened subnets"**
-- Hosts public servers like web, email, and files.
+- Also called "screened subnets"
+- Hosts public servers like web, email, and file servers
+- Provides a buffer zone between the internal network and the internet
 
+By separating public-facing services from the internal network, the DMZ helps protect sensitive internal systems from potential external threats. Any unauthorized access or attacks are contained within the DMZ, reducing the risk to the internal network.
 
 <div class="img-center">
 
 ![](/img/docs/security-dmz-simplified-dmz-diagrammm.png)
-
 
 </div>
 
