@@ -55,55 +55,61 @@ Both IDS and IPS have similar types based on how they are deployed.
 
 ## IDS Detection Methods 
 
-- **Signature-based IDS**
+### Signature-based IDS
 
-  - Detects intrusions by comparing traffic to a database of known attack patterns or signatures.
-  - Can only detect attacks based on previously identified attacks in the database.
-  - Highly effective at identifying known threats.
-  - Low false-positive rate for known attacks.
-  - Requires regular updates to maintain a current database of signatures.
-  - Limited in detecting new, unknown threats or variations of known attacks.
-  - Types:
+Signature-based IDS works by comparing network traffic against a database of known attack patterns.
 
-    - **Pattern-matching**
-      - Specific patterns of steps recognized during an attack.
-      - More common in NIDS and WIDS.
+- Detects intrusions by matching traffic to known signatures.
+- Effective at identifying known threats.
+- Low false-positive rate for known attacks.
+- Requires regular updates to the signature database.
+- Limited in detecting new or modified attacks.
 
-    - **Stateful-matching**
-      - Focus on known system baseline, reporting any changes to that state.
-      - More common in HIDS.
+Types:
 
-- **Anomaly-based IDS**
-  - Also known as "Behavioral-based IDS".
-  - Identifies intrusions by detecting deviations from normal network behavior or baseline.
-  - Higher false-positive rate due to variations in activities that deviate from the established norm.
-  - Effective at discovering new and unknown threats.
-  - Can adapt to changing network conditions and behaviors.
-  - Types
+- **Pattern-matching**
+  - Specific patterns of steps recognized during an attack.
+  - More common in NIDS and WIDS.
 
-    - **Statistical**
-      - Uses statistical models to define normal behavior.
-      - Detects unusual patterns; useful for known and unknown threats.
-      - False positives if activity is variable; requires model updates.
+- **Stateful-matching**
+  - Focus on known system baseline, reporting any changes to that state.
+  - More common in HIDS.
 
-    - **Protocol**
-      - Monitors adherence to protocol standards.
-      - Detects protocol-specific attacks; ensures protocol compliance.
-      - Limited to protocol violations; may miss sophisticated attacks.
+### Anomaly-based IDS
 
-    - **Traffic**
-      - Analyzes network traffic patterns and volumes.
-      - Detects large-scale attacks like DDoS; monitors network health.
-      - False positives in high-traffic environments; requires traffic analysis.
+Anomaly-based IDS detects intrusions by identifying deviations from established network behavior.
 
-    - **Rule/Heuristic**
-      - Uses predefined rules and heuristics.
-      - Tailored detection; effective for complex patterns.
-      - Requires rule updates; may miss novel attacks.
+- Also known as "Behavioral-based IDS."
+- Detects deviations from normal network behavior or baseline.
+- Higher false-positive rate due to variations in normal activities.
+- Effective at discovering new and unknown threats.
+- Adapts to changing network conditions and behaviors.
 
-    - **Application-based**
-      - Monitors specific applications.
-      - Detects application-specific threats; deep insight into behavior.
-      - Limited to monitored applications; requires knowledge of normal behavior.
+Types:
+
+- **Statistical**
+  - Uses statistical models to define normal behavior.
+  - Detects unusual patterns; useful for known and unknown threats.
+  - False positives if activity is variable; requires model updates.
+
+- **Protocol**
+  - Monitors adherence to protocol standards.
+  - Detects protocol-specific attacks; ensures protocol compliance.
+  - Limited to protocol violations; may miss sophisticated attacks.
+
+- **Traffic**
+  - Analyzes network traffic patterns and volumes.
+  - Detects large-scale attacks like DDoS; monitors network health.
+  - False positives in high-traffic environments; requires traffic analysis.
+
+- **Rule/Heuristic**
+  - Uses predefined rules and heuristics.
+  - Tailored detection; effective for complex patterns.
+  - Requires rule updates; may miss novel attacks.
+
+- **Application-based**
+  - Monitors specific applications.
+  - Detects application-specific threats; deep insight into behavior.
+  - Limited to monitored applications; requires knowledge of normal behavior.
 
 
