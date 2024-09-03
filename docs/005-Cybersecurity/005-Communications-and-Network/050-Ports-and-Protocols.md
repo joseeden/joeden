@@ -129,21 +129,25 @@ Network switches make traffic switching decision based on the MAC address of the
 - Switches prevent collisions by ensuring each port is its own collision domain.
 - This allows switches to operate in full duplex mode.
 
-#### Full duplex
+Concepts:
 
-- This means a port can both receive and send data at the same time.
+- **Full duplex**
 
-#### CAM Table
+  - This means a port can both receive and send data at the same time.
 
-- Content Address Memory (CAM) Table
-- Stores information about the MAC addresses available on any given port.
+- **CAM Table**
 
-#### MAC Flooding
+  - Content Address Memory (CAM) Table
+  - Stores information about the MAC addresses available on any given port.
 
-- Randomized MAC addresses are sent to the network switch.
-- When this happens, the network switch will simply fail open.
-- When it fail-open, the switch begins to rebroadcast all traffic out to every port.
-- For more information, please see [MAC Address Flooding](../012-List-of-Attacks/012-Layer-2-Attacks.md#mac-address-flooding)
+- **MAC Flooding**
+
+  - Randomized MAC addresses are sent to the network switch.
+  - When this happens, the network switch will simply fail open.
+  - When it fail-open, the switch begins to rebroadcast all traffic out to every port.
+  - For more information, please see [MAC Address Flooding](../012-List-of-Attacks/012-Layer-2-Attacks.md#mac-address-flooding)
+
+
 
 ### Implementing Port Security
 
@@ -169,7 +173,7 @@ With port security, administrators can link MAC addresses of certain devices to 
 - Common in corporate environments to enhance security.
 - Uses authentication mechanisms such as RADIUS and TACACS+.
 
-**Components**
+### Components of 802.1X 
 
 - **Supplicant** 
   - Client device trying to connect.

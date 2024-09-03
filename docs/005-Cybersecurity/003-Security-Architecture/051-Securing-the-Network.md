@@ -69,45 +69,77 @@ Microsegmentation addresses modern cyber threats exploiting traditional security
 
 ## Network Access Control 
 
-Network Access Control (NAC) scans devices for thir security status before granting network access, safeguarding against both known and unknown devices. 
+Network Access Control (NAC) scans devices for their security status before granting network access.
 
   - Identifies connections, isolates noncompliant devices, and supports incident response.
-  - Limits endpoint access to the network and provides network visibility for potential incident response.
-  - Ensures compliance with organization policies before allowing devices to join the network.
+  - Limits endpoint access to the network and provides network visibility.
+  - Ensures compliance with policies before allowing devices to join the network.
 
-**NAC Policy typically contains:**
-  - Device/OS type 
-  - Device location
-  - Checks host-based firewall 
-  - Antivirus/update status
+NAC uses 802.x authentication to perform access control tasks and it uses different components.
 
-**Use Cases for NAC Deployment:**
+![](/img/docs/networking-basics-network-access-control-nacccc.png)
+
+For more information, please see [IEEE 802.1X Protocol](/docs/005-Cybersecurity/005-Communications-and-Network/050-Ports-and-Protocols.md#ieee-8021x-protocol)
+
+### Use Cases
+
+Use Cases for NAC Deployment:
 
   - Medical devices
   - IoT devices
   - BYOD/mobile devices (laptops, tablets, smartphones)
   - Guest users and contractors
 
-**Onboarding Process Importance:**
-
-  - Emphasizes the importance of an onboarding process for all mobile devices.
-  - Device identification and interrogation to ensure compliance with organization policies during network connection.
-
-**NAC Deployments:**
+### NAC Deployments
 
 - **Persistent Agents**
+
   - Software installed on a device requesting network access.
   - Continuously monitor the security state of devices.
   - Works well in a corporate environment, where the organization owns all devices.
   - Doesn't work well in BYOD environments.
 
 - **Non-Persistent Agents**
+
   - Popular in BYOD environments, such as college campuses.
   - Users connect to WiFi, access a web portal, and click login link.
   - Once link is clicked, a temporary agent is installed on the device.
   - Agents scans device for compliance and delete itself after inspection.
   - Provide a quick evaluation without ongoing monitoring.
   - Typically used for initial security checks at connection time.
+
+### NAC Policy 
+
+NAC Policy typically contains:
+
+  - Device/OS type 
+  - Device location
+  - Checks host-based firewall 
+  - Antivirus/update status
+
+### NAC Roles 
+
+Network Access Control (NAC) manages network security by enforcing policies on users and devices seeking access.
+
+- **User and device authentication**
+
+  - Verifies identities using credentials or certificates.
+  - Ensures only authorized users and devices gain access.
+
+- **Role-based access**
+
+  - Assigns network permissions based on user roles.
+  - Restricts access to resources according to predefined roles and responsibilities.
+
+- **Posture checking**
+
+  - Assesses the security state of devices before granting access.
+  - Ensures devices meet compliance standards like antivirus updates or security patches.
+  - Validating current signatures and proper firewall configuration.
+  - If device fails posture checks, device is placed on a quarantine VLAN.
+  - Quarantined device will be patched and then ran through posture checks again.
+
+
 
 ## DHCP Snooping 
 

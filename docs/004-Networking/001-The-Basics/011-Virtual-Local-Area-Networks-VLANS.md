@@ -1,5 +1,5 @@
 ---
-title: "Virtual Local Area Networks"
+title: "VLANs"
 description: "Learn the basics of Networking"
 tags: [Networking,Cybersecurity]
 sidebar_position: 11
@@ -8,7 +8,7 @@ last_update:
 ---
 
 
-## VLANs
+## Virtual Local Area Networks (VLANs)
 
 Virtual Local Area Networks (VLANs) allow switches to segment a network logically without changing the physical setup.
 
@@ -25,13 +25,13 @@ For example, VLANs can separate the network of one department from another, enha
 
 Configuring VLANs involves setting up and managing VLANs on network switches to ensure proper traffic segmentation and network efficiency.
 
-- Enable VLAN Trunking
+- **Enable VLAN Trunking**
 
     - Extends VLANs across multiple switches.
     - This allows VLANs to span different network locations.
     - Uses trunk ports to carry traffic for multiple VLANs over a single link.
 
-- Assign switchport to VLANs
+- **Assign switchport to VLANs**
 
     - Configure switchports to belong to specific VLANs.
     - This ensures traffic is correctly segmented.

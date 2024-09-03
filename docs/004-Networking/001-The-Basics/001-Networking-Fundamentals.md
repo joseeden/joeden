@@ -54,8 +54,6 @@ Widely adopted for its easy deployment and cost-effectiveness, wireless networki
 ![](/img/docs/security-wifi.png)
 
 
-
-
 ## Quality of Service 
 
 Quality of Service (QoS) refers to the technology that allows the network to prioritize certain types of traffic over others. 
