@@ -95,6 +95,18 @@ Anomaly-based IDS detects intrusions by identifying deviations from established 
 - Effective at discovering new and unknown threats.
 - Adapts to changing network conditions and behaviors.
 
+
+:::info[NOTES]
+
+The following terms are sometimes used interchangeably:
+
+- Anomaly detection 
+- Behavior-based detection
+- Heuristic detection
+
+:::
+
+
 Types:
 
 - **Statistical**
@@ -123,3 +135,18 @@ Types:
   - Limited to monitored applications; requires knowledge of normal behavior.
 
 
+## IPS Deployment Methods 
+
+- **In-band (inline) deployments**
+
+  - Device sits in the path of network communications 
+  - IPS can block suspicious traffic from entering the network
+  - Allows active response, but its also a single-point of failure
+  - If IPS has an issue, it can disrupt communications
+
+- **Out-of-band (passive) deployments**
+
+  - IPS is not in the network path, sits outside of the path instead
+  - Connects to a SPAN port of a switch, receiving copies of traffic
+  - "Passive", device reacts after suspicious traffic enters the network
+  - This means it cannot stop any attacks from entering the network

@@ -130,6 +130,9 @@ Using the same example on fraudulent transactions, we can tally the true positiv
 
 ![](/img/docs/ml-confusion-matrix-more-detailed.png)
 
+For more information, please see [Analyzing Vulnerabilities](/docs/005-Cybersecurity/008-Security-Operations/020-Vulnerability-Management.md#analyzing-vulnerabilities)
+
+
 
 ### Sensitivity and Specificity
 
