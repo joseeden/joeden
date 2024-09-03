@@ -54,29 +54,6 @@ Widely adopted for its easy deployment and cost-effectiveness, wireless networki
 ![](/img/docs/security-wifi.png)
 
 
-## Virtual Local Area Network
-
-**VLANs** are created by switches to logically segments a network without altering physical topology. 
-
-**VLAN Trunking** is when you have VLANs spanning multiple switches to extend the reach of that VLAN.
-
-- Corporate Network:
-    - Departments like HR, Finance, and IT each on separate VLANs.
-- Guest Wi-Fi:
-    - Isolate guest devices from internal network using a dedicated VLAN.
-- Voice over IP (VoIP):
-    - Separate VLAN for VoIP traffic to prioritize voice communication.
-- Server Farm:
-    - Different VLANs for web servers, database servers, ensuring segmentation.
-
-Sample diagram:
-
-<div class="img-center">
-
-![](/img/docs/security-vlan-simplifieddd.png)
-
-
-</div>
 
 
 ## Quality of Service 
