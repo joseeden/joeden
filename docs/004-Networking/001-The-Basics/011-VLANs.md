@@ -47,3 +47,21 @@ How it looks like:
 
 </div>
 
+
+## Private VLANs 
+
+Private VLANs (PVLANs), also known as **Port Isolation**, enhance network security by isolating ports within the same VLAN.
+
+- Isolate devices within the same VLAN
+- Prevent direct communication between devices
+- Reduce risk of internal attacks
+
+Port isolation restricts traffic from a source port to a single destination port. This means that if a device is plugged into a particular isolated port (source port), it can only connect to the specified destination port and will not be able to connect to other devices.
+
+<div class='img-center'>
+
+![](/img/docs/networking-basics-private-vlans-port-isolationssss.png)
+
+</div>
+
+Port isolation is not recommended on a corporate network where devices often need to communicate with each other, share resources, or access multiple services. In contrast, it works very well on hotel guest room networks where guests should be isolated from each other to ensure privacy and prevent unauthorized access to other guests' devices.
