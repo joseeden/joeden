@@ -8,9 +8,9 @@ last_update:
 ---
 
 
-In access control, organizations employ a defense-in-depth strategy, integrating people, technology, and operations across multiple layers. This aims to prevent or deter cyberattacks by implementing various permissions in building, server rooms, networks, and applications.
+In access control, organizations employ a defense-in-depth strategy which integrates people, technology, and operations across multiple layers. This aims to prevent or deter cyberattacks by implementing various permissions in building, server rooms, networks, and applications.
 
-* **Multi-Factor Authentication (MFA) Example**
+* **Multi-Factor Authentication (MFA)**
   - Combines username/password with a phone-sent code.
   - Implements two-layered authentication: something you have and something you know.
 
@@ -29,9 +29,7 @@ For a non-technical example, consider the multiple layers of access required to 
 * **Administrative Control (Policy)**
   - Defines access rules for authorized individuals.
 
-This layered approach ensures comprehensive protection, combining physical, technical, and administrative controls.
-
-
+The goal is to create multiple layers of protection so that even if one layer is breached, others remain resilient, slowing down attackers and increasing the likelihood of detection.
 
 <div class="img-center">
 

@@ -113,22 +113,14 @@ The goal is to create multiple layers of protection so that even if one layer is
 
 ### Three Types of Data Protection
 
+- **Confidentiality** - Ensures only authorized users can access the data.
 
-- **Confidentiality**
+- **Integrity** - Guarantees the data has not been altered by malicious users.
 
-    - Ensures only authorized users can access the data.
-
-- **Integrity**
-
-    - Guarantees the data has not been altered by malicious users.
-
-- **Availability**
-
-    - Ensures authorized users can access the data, defending against denial-of-service attacks.
+- **Availability** - Ensures authorized users can access the data, defending against denial-of-service attacks.
 
 
 ### Layers of Defense in Depth in Azure
-
 
 - **Physical Security**
 
