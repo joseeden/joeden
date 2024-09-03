@@ -173,6 +173,7 @@ While there is no single step to protect against all threats, several basic meas
 - **Intrusion Detection and Prevention**
   - Implement systems that observe and detect threats.
   - Provide alerts and can block or stop attacks.
+  - For more information, please see [IDS and IPS.](/docs/005-Cybersecurity/003-Security-Architecture/056-IDS-and-IPS.md)
 
 - **Anti-Malware Software**
   - Utilize up-to-date anti-malware software.

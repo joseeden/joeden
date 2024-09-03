@@ -245,6 +245,7 @@ According to the ISC2 Study Guide (chapter 5, module 1, under Data Handling Prac
 - **Firewalls**
    - Surveillance and assessment of inbound communications traffic.
    - Logging and alerting capabilities for monitoring access attempts.
+   - For more information, please see [Firewalls.](/docs/005-Cybersecurity/003-Security-Architecture/055-Firewalls.md)
 
 - **Gateways**
    - Control points for monitoring and regulating inbound traffic.
@@ -259,6 +260,7 @@ According to the ISC2 Study Guide (chapter 5, module 1, under Data Handling Prac
    - Identify and prevent unauthorized access with logging and alert features.
    - IPS monitors network traffic and detects potential threats.
    - IPS then takes action to prevent unauthorized or malicious activities.
+   - For more information, please see [IDS and IPS.](/docs/005-Cybersecurity/003-Security-Architecture/056-IDS-and-IPS.md)
 
 - **SIEM Solutions**
    - Security Information and Event Management.

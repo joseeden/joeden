@@ -248,6 +248,7 @@ SCADA (Supervisory Control and Data Acquisition) is a system used to remotely mo
 
   - Deploy firewalls to control network traffic.
   - Utilize intrusion detection systems.
+  - For more information, please see [Firewalls](/docs/005-Cybersecurity/003-Security-Architecture/055-Firewalls.md) and [IDS](/docs/005-Cybersecurity/003-Security-Architecture/056-IDS-and-IPS.md)
 
 - **Regular security audits**
 
