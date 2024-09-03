@@ -29,6 +29,16 @@ Intrusion Detection Systems (IDS) and Intrusion Prevention Systems (IPS) are bot
   - Can block the traffic or prevent the application from running.
   - Should be placed at the border of the network, behind the firewall.
 
+## Positives and Negatives
+
+- **False Negative** - An attack occurs but is not detected, allowing it to proceed unnoticed.
+- **False Positive** - Legitimate activity is incorrectly flagged as malicious, triggering unnecessary alerts.
+- **True Positive** - A real attack is correctly identified and flagged by the IDS.
+- **True Negative** - Normal, non-malicious activity is correctly identified as safe, with no alerts triggered.
+
+For more information, please see [Analyzing Vulnerabilities](/docs/005-Cybersecurity/008-Security-Operations/020-Vulnerability-Management.md#analyzing-vulnerabilities)
+
+
 ## Types of IDS/IPS
 
 Both IDS and IPS have similar types based on how they are deployed.
