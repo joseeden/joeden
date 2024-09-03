@@ -12,8 +12,6 @@ last_update:
 
 A network refers to the connection of two or more computers for the purpose of sharing data, information, or resources.
 
-## Types of Networks
-
 - **Local Area Network (LAN)**
    - Typically spans a single floor or building.
    - Limited geographical area.
