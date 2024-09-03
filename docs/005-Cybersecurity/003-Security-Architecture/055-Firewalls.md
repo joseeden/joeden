@@ -78,95 +78,6 @@ By separating public-facing services from the internal network, the DMZ helps pr
   - Reduces the risk of unauthorized access by denying unlisted traffic.
 
 
-## Types of Firewall 
-
-- **Packet Filtering**
-
-  - Most efficient in terms of maximizing throughput.
-  - Minimum level of inspection, only inspects the header of the packet.
-  - Filters based on source and destination IP addresses, ports, and protocols.
-  - Operates at the network layer (Layer 4) of the OSI model.
-  - Simple and fast but lacks deep inspection capabilities.
-
-- **Stateful**
-
-  - Tracks the state of active connections and requests.
-  - Inspects packets within the context of the traffic flow.
-  - Operates at the transport layer (Layer 4) of the OSI model.
-  - More secure than packet filtering, ensures packets are part of a valid session.
-
-- **Dynamic Packet Filtering**
-
-  - Adapts filtering rules dynamically based on traffic patterns.
-  - Monitors ongoing connections and updates rules in real-time.
-  - Offers higher security by adjusting to current network conditions.
-  - More complex and resource-intensive than static packet filtering.
-
-- **Proxy**
-
-  - Acts as an intermediary between users and the internet.
-  - Filters requests and responses based on content and protocol.
-  - Operates at the application layer (Layer 7) of the OSI model.
-  - Can provide caching, content filtering, and access control.
-
-
-## Evolution of Firewalls 
-
-- **Layer 4 Firewall**
-
-  - Operates at the transport layer of the OSI model.
-  - Filters traffic based on TCP/UDP ports and IP addresses.
-  - Monitors traffic without inspecting the content of packets.
-  - Simple and efficient for basic traffic control.
-  - Limited in detecting application-specific attacks.
-
-- **Layer 7 Firewall**
-
-  - Operates at the application layer of the OSI model; application proxy.
-  - Inspects, filters, and controls traffic based on the content and context of the application.
-  - Detailed control over web and application trafficl.
-  - Detect and block application-specific threats.
-  - Resource-intensive but offers higher security and functionality compared to lower-layer firewalls.
-
-- **Next Generation Firewall (NGFW)**
-
-  - Combines traditional firewall capabilities with advanced features.
-  - Includes deep packet inspection (DPI), also integrates intrusion prevention systems (IPS).
-  - Provides application awareness and control; can distinguish types of traffic.
-  - Operates fast with minimal network performance impact.
-  - Full-stack visibility and granular control over traffic through custom signatures.
-  - **Single engine**
-
-- **Unified Threat Management Firewall (UTM)**
-
-  - Also known as **Secure Web Gateway (SWG)**.
-  - Consolidates multiple security functions into a single device.
-  - Firewall, antivirus, anti-spam, content filtering, and intrusion detection/prevention.
-  - Simplifies network security management, ideal for small to medium-sized businesses.
-  - Lower upfront costs, maintenance, and power consumption.
-  - Becomes single point of failure; if it fails, multiple functions are also lost.
-  - **Separate individual engines**
-
-- **Web Application Firewall (WAF)**
-
-  - Specifically psrotect web applications, focused on HTTP/HTTPS inspection.
-  - Defends against common web threats like SQL injection, XSS, and CSRF.
-  - Operates at the application layer (Layer 7) of the OSI model.
-
-## WAF Configurations
-   
-- **Inline Configuration**
-
-  - Device will between the network firewall and the web servers.
-  - Prevent live attacks, but slow down web traffic.
-  - Can block legitimate traffic by mistake.
-
-- **Out-of-band Configuration**
-
-  - Device receives a mirrored copy of the web server traffic.
-  - Non-intrusive way of conducting web application filtering.
-  - Cannot block live web traffic, works more of an IDS and then alert on it.
-
 ## Access Control Lists 
 
 Access Control Lists (ACLs) is a rule set that is placed on firewalls, routers, and other network infrastructure devices that permit or allow traffice through a particular interface.
@@ -188,3 +99,102 @@ ACLs can be configured through:
 
   - Web-based interface 
   - Text-based command line interface
+
+
+## Types of Firewall 
+
+### Packet Filtering
+
+Packet filtering firewalls offer a basic level of security by inspecting only the packet headers.
+
+  - Most efficient, mximizes throughput with minimal processing
+  - Filters based on IP addresses, ports, and protocols
+  - Operates at Layer 4 (Network Layer) of the OSI model
+  - Simple and fast but lacks deep packet inspection
+
+### Stateful
+
+Stateful firewalls enhance security by tracking active connections and the state of network traffic.
+
+  - Monitors the state of connections for more context-aware filtering
+  - Inspects packets within the flow of the connection
+  - Operates at Layer 4 (Transport Layer) of the OSI model
+  - More secure than packet filtering, ensures packets belong to a valid session
+
+### Dynamic Packet Filtering
+
+Dynamic packet filtering firewalls adjust their filtering rules in real-time based on network activity.
+
+  - Modifies filtering rules dynamically in response to traffic patterns
+  - Monitors ongoing connections and adapts rules accordingly
+  - Provides higher security by responding to changing conditions
+  - More resource-intensive and complex than static packet filtering
+
+### Proxy
+
+Proxy firewalls act as intermediaries, inspecting and filtering traffic at a deeper level.
+
+  - Filters requests and responses at the application level (Layer 7)
+  - Provides content filtering, caching, and access control
+  - Operates as an intermediary between users and the internet
+  - Offers detailed inspection but can slow down traffic due to processing
+
+## Evolution of Firewalls
+
+### Layer 4 Firewall
+
+Layer 4 firewalls focus on controlling traffic based on transport-layer information like TCP/UDP ports.
+
+  - Filters traffic based on IP addresses and port numbers
+  - Operates at the transport layer of the OSI model
+  - Simple and efficient for basic traffic filtering
+  - Limited in detecting application-specific threats
+
+### Layer 7 Firewall
+
+Layer 7 firewalls provide deeper inspection by analyzing the content of the traffic at the application layer.
+
+  - Controls traffic based on the content and context of the application
+  - Operates at the application layer of the OSI model
+  - Offers detailed control over web and application traffic
+  - Detects and blocks application-specific threats, though resource-intensive
+
+### Next Generation Firewall (NGFW)
+
+Next Generation Firewalls combine traditional firewall functions with advanced security features.
+
+  - Integrates deep packet inspection (DPI) and intrusion prevention systems (IPS)
+  - Provides application awareness and traffic control
+  - Operates with minimal impact on network performance
+  - Offers full-stack visibility and granular control using a single engine
+
+### Unified Threat Management Firewall (UTM)
+
+Unified Threat Management firewalls consolidate multiple security functions into a single device.
+
+  - Known as Secure Web Gateways (SWG)
+  - Combines firewall, antivirus, content filtering, and intrusion prevention
+  - Ideal for small to medium-sized businesses with simplified management
+  - Lower cost and maintenance but can be a single point of failure with separate engines
+
+## Web Application Firewall (WAF)
+
+Web Application Firewalls (WAF) are specialized firewalls designed to protect web applications.
+
+  - Focuses on HTTP/HTTPS traffic to defend against common web threats
+  - Operates at Layer 7 (Application Layer) of the OSI model
+  - Protects against SQL injection, XSS, CSRF, and other web vulnerabilities
+
+### WAF Configurations
+   
+- **Inline Configuration**
+
+  - Device will between the network firewall and the web servers.
+  - Prevent live attacks, but slow down web traffic.
+  - Can block legitimate traffic by mistake.
+
+- **Out-of-band Configuration**
+
+  - Device receives a mirrored copy of the web server traffic.
+  - Non-intrusive way of conducting web application filtering.
+  - Cannot block live web traffic, works more of an IDS and then alert on it.
