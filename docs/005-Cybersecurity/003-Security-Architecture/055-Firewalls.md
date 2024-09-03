@@ -172,10 +172,29 @@ Next Generation Firewalls combine traditional firewall functions with advanced s
 
 Unified Threat Management firewalls consolidate multiple security functions into a single device.
 
-  - Known as Secure Web Gateways (SWG)
+  - Known as **Secure Web Gateways (SWG)**
   - Combines firewall, antivirus, content filtering, and intrusion prevention
   - Ideal for small to medium-sized businesses with simplified management
   - Lower cost and maintenance but can be a single point of failure with separate engines
+
+Basic UTM functions:
+
+- Protecting network against attacks
+- Blocking unsolicited traffic
+- Routing traffic to and from the internet
+
+Additional security features:
+
+- VPN connectivity
+- Intrusion detection
+- Intrusion prevention
+
+Small business features:
+
+- URL filtering 
+- Content inspection 
+- Malware inspection 
+- Email and spam filtering
 
 ## Web Application Firewall (WAF)
 
