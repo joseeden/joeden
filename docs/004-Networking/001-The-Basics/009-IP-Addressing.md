@@ -81,3 +81,43 @@ Private IP Addresses have the following types:
 | **Class B**   | 172.16.0.0 - 172.31.255.255   | Medium-sized networks                 | Over 1 million                   |
 | **Class C**   | 192.168.0.0 - 192.168.255.255 | Small networks (e.g., home networks)  | Up to 65,536                  |
 | **Class D**   | 224.0.0.0 - 239.255.255.255   | Multicast groups (e.g., streaming, video conferencing) | N/A |
+
+
+
+## Subnetting
+
+Subnetting divides a large network into smaller, more manageable sub-networks (subnets).
+
+- Helps in managing IP address allocation within a network.
+- Enhances security by isolating network segments.
+- Optimizes network performance by reducing broadcast traffic.
+
+For example, subnetting can be used to divide departments within an organization into separate, isolated networks.
+
+![](/img/docs/networking-basics-ip-addressinggggg-subnetting.png)
+
+
+### Subnet Mask Notation
+
+A subnet mask is used to define which portion of an IP address is the network part and which part is the host part. It plays a crucial role in dividing networks into subnets.
+
+- Typically represented in dotted decimal format, like `255.255.255.0`.
+- Helps in determining the size of a subnet and the number of possible hosts.
+- Essential for network routing and segmentation.
+
+Example:
+
+- **IP Address:** `192.168.1.10`
+- **Subnet Mask:** `255.255.255.0`
+
+### Slash Notation
+
+Slash notation, or CIDR (Classless Inter-Domain Routing) notation, represents the subnet mask by specifying the number of bits used for the network portion.
+
+- Denoted as a suffix to the IP address, such as `/24` for a subnet mask of `255.255.255.0`.
+- Simplifies the representation of subnet masks.
+- Widely used in modern networking for efficient IP address allocation.
+
+Example:
+
+- **IP Address:** `192.168.1.10/24`
