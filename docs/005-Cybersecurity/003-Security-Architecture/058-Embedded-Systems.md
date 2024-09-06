@@ -243,6 +243,7 @@ SCADA (Supervisory Control and Data Acquisition) is a system used to remotely mo
 
   - Keep software and firmware up-to-date.
   - Maintain a robust patch management process.
+  - For more information, please [Patch Management.](/docs/005-Cybersecurity/008-Security-Operations/052-Updates-and-Patches.md)
 
 - **Firewall and IDS**
 

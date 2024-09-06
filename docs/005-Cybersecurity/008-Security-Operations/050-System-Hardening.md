@@ -16,8 +16,7 @@ Hardening is the process of applying secure configurations (to reduce the attack
 - Disable unnecessary services 
 - Adopt best practices
 
-**Reducing system elements**
-Reducing the number of system elements is a system hardening technique that removes unnecessary software and services to reduce the attack surface. 
+**Reducing system elements**. Reducing the number of system elements is a system hardening technique that removes unnecessary software and services to reduce the attack surface. 
 
 ## Configurations 
 
@@ -126,22 +125,22 @@ Whenever a device is found not compliant with the security baseline, it may be d
 
 ### Filtering Applications
 
-**Whitelisting/Allowlisting**
+- **Whitelisting/Allowlisting**
 
-- Allows only authorized applications; blocks all others.
-- Requires creating a list of approved applications.
-- Greater control, prevents malware, and unauthorized applications.
+  - Allows only authorized applications; blocks all others.
+  - Requires creating a list of approved applications.
+  - Greater control, prevents malware, and unauthorized applications.
 
-**Blacklisting/Blocklisting**
+- **Blacklisting/Blocklisting**
 
-- Preventing listed applications from running.
-- Blocks known malicious software.
-- Doesn't prevent unknown threats.
+  - Preventing listed applications from running.
+  - Blocks known malicious software.
+  - Doesn't prevent unknown threats.
 
-**Graylisting**
+- **Graylisting**
 
-- Temporarily blocks emails from unknown senders.
-- Requires the sender to resend the email.
+  - Temporarily blocks emails from unknown senders.
+  - Requires the sender to resend the email.
 
 
 
@@ -157,6 +156,105 @@ A group policy is a set of rules or policies that can be applied to a set of use
   - Application restrictions
 - Used to create a secure baseline as part of configuration management
 - Active Directory Domain Controllers hava advanced Group Policy Editor.
+
+### AppLocker 
+
+AppLocker is a security feature in Active Directory that allows administrators to control which applications can run within a network. It is used to create rules that specify allowed or blocked applications, helping to prevent unauthorized software from being executed.
+
+
+Steps to Configure AppLocker: 
+
+1. Open Group Policy Management by typing `gpmc.msc` in the Run dialog (`Win + R`).
+2. Click on your domain, right-click on Group Policy Object (GPO), and then select New.
+3. Enter the name for the new GPO. 
+
+    <div class='img-center'>
+
+    ![](/img/docs/networking-basics-add-new-gpo-for-application-restrictionss.png)
+
+    </div>
+
+4. Edit the new GPO by right-clicking it and selecting "Edit."
+5. Open `Computer Configuration > Policies > Windows Settings > Security Settings > Application Control Policies > AppLocker`.
+
+    <div class='img-center'>
+
+    ![](/img/docs/networking-basics-add-applocker-from-gpo.png)
+   
+    </div>
+
+6. Right-click on "Executable Rules" and select "Create New Rules". 
+
+    <div class='img-center'>
+
+    ![](/img/docs/networking-basics-add-executable-rules-create-new-rulesss.png)
+
+    </div>
+
+7.  A wizard will appear. For this example, we want to prevent all users from using the Wireshark application.
+8.  Click Next to go to Permissions. Make sure Action is set to Deny, and it is applied to "Everyone". Click Next.
+
+
+    <div class='img-center'>
+
+    ![](/img/docs/networking-basics-add-applocker-permissions-deny.png)
+
+    </div>
+
+
+9.  In the Conditions step, select Path and then click Next.
+
+    <div class='img-center'>
+
+    ![](/img/docs/networking-basics-add-applocker-conditions-path.png)
+
+    </div>
+
+
+10. Click browse files in the Path step. 
+
+    <div class='img-center'>
+
+    ![](/img/docs/networking-basics-add-applocker-path-browse-files.png)
+
+    </div>
+
+
+
+11. Search for the Wireshark application and select it.
+
+    <div class='img-center'>
+
+    ![](/img/docs/networking-basics-add-applocker-add-wireshark-applicationsss.png)
+
+    </div>
+
+
+12. The absolute path for the application should auto-populate. Click Create.
+
+    <div class='img-center'>
+
+    ![](/img/docs/networking-basics-add-applocker-add-wireshark-path-auto-populate.png)
+
+    </div>
+
+13. A popup warning about missing default rules will appear. Click Yes to create the default rules.
+
+    <div class='img-center'>
+
+    ![](/img/docs/networking-basics-add-applocker-add-wireshark-auto-default-rules.png)
+
+    </div>
+
+
+14. Back in Executable Rules, we can see the default rules and rule that stops users from running the Wireshark tool.
+
+    <div class='img-center'>
+
+    ![](/img/docs/networking-basics-add-applocker-add-wireshark-create-finish-summary.png)
+
+    </div>
+
 
 ### Baselining 
 
