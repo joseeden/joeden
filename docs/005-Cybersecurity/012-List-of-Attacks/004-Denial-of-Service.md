@@ -61,20 +61,57 @@ A large number of processes is created to use up a computer's available processi
 - **Not a worm**, they don't infect programs and don't spread in the network.
 - Instead they spread to the processor's cache on a single computer.
 
-
-## Distributed DoS
+## Distributed DoS (DDoS)
 
 With DDoS, more machines are used to launch an attack simultaneously against a single server to create a denial of service condition.
 
 - Usually the machines don't also know they're part of the attack.
 - Machines can become zombies or bots inside a large botnet
 
-## DNS Amplification 
+## Smurf Attack 
 
-A specialized DDoS attack that allows an attacker to initiate DNS requests from a spoof IP address to flood a website.
+When a device sends a ping command to another device, it sends an ICMP echo request, similar to asking "Hey are you there?". The device receiving the system then sends an ICMP echo reply, similar to replying "Yes, I am".
+
+<div class='img-center'>
+
+![](/img/docs/networking-basics-ping-commandddd.png)
+
+</div>
+
+In a smurf attack, the attacker sends large amounts of ICMP (ping) traffic ato the victim's IP address.
+
+- Attacker sends ICMP requests with a spoofed source address, which is the victim's IP.
+- The network devices respond, creating a flood of replies that overwhelm the victim.
+- Causes network congestion and service disruption. 
+
+As an example, a bot can send ICMP (ping) requests with the victim's IP address as the source. These requests are sent to third-party servers, which then send the ICMP replies back to the victim. Since many servers respond at once, the victim is overwhelmed by the flood of responses, leading to network congestion or disruption.
+
+<div class='img-center'>
+
+![](/img/docs/networking-basics-smurf-attack-fake-ip-flood-dns-servers.png)
+
+</div>
+
+
+## Amplified DDoS
+
+Also known as **DNS Amplification**, Amplified DDoS is a specialized attack that allows an attacker to initiate DNS requests from a spoof IP address to flood a website.
 
 - High volume of packets are sent, DNS servers respond to the request.
 - Response from the DNS server takes up a lot of bandwidth.
+
+An attacker carefully chooses reqeusts that will have very large responses. The attacker can then sends very small requests to the DNS servers using the victim's IP address as the source of the request. The DNS servers then returns the large replies to the actual victim.
+
+<div class='img-center'>
+
+![](/img/docs/networking-basics-ddos-amplified-ddosss.png)
+
+</div>
+
+## Amplification Factor 
+
+
+
 
 ## Stopping DDoS 
 
