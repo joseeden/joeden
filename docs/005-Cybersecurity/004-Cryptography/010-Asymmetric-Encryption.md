@@ -8,7 +8,7 @@ last_update:
 ---
 
 
-## Asymmetric Encryption 
+## Overview
 
 Asymmetric encryption uses a pair of keys: a public key for encryption and a private key for decryption. 
 
@@ -17,15 +17,23 @@ Asymmetric encryption uses a pair of keys: a public key for encryption and a pri
 
 This dual-key system allows for secure communication, digital signatures, and secure key exchange without requiring shared secrets.
 
-
 <div class="img-center">
-
 
 ![](/img/docs/sec+-asymmetric-encryption-example-diagran.png)
 
-
 </div>
 
+## Advantages and Disadvantages 
+
+Advantages: 
+
+- No need to share the private key, reducing the risk of key compromise.
+- Allows for digital signatures and public key infrastructure (PKI).
+
+Disadvantages: 
+
+- Slower and more resource-intensive than symmetric cryptography. 
+- Less efficient for large amounts of data.
 
 
 ## Digital Signature

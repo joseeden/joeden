@@ -88,6 +88,7 @@ Emphasizes the critical role of security in the cloud migration strategy plan.
 
   - Determine if data needs encryption at rest and in transit.
   - Consider security compliance reasons and apply the correct level of encryption.
+  - For more information, please see [Data Encryption.](/docs/005-Cybersecurity/002-Asset-Security/006-Data-Encryption.md)
 
 - **Encryption Management**
 

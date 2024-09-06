@@ -7,9 +7,50 @@ last_update:
   date: 1/30/2024
 ---
 
+## Overview 
+
+Symmetric cryptography uses the same key for both encryption and decryption. The sender and receiver must share this key, keeping it secret from others.
+
+- **Session key** - single key is used to encrypt and decrypt data. 
+- Both parties must have this key.
+
+Symmetric encryption is generally faster and less computationally intensive compared to asymmetric cryptography. It is also effective for encrypting large volumes of data.
 
 
-## Out-of-Band Key Exchange
+<div class="img-center">
+
+![](/img/docs/sec+-symmetric-encryption-example-photo.png)
+
+</div>
+
+
+## Advantages and Disadvantages 
+
+Advantages:
+
+- Secure communication within closed networks
+- Encrypting files or databases
+- Securing backups
+
+Disadvantages:
+
+- Key distribution and management can be challenging
+- If the key is compromised, the entire system is at risk.
+
+## Key Exchanges
+
+Sending the key:
+
+- **In-band** 
+    - Sending the key along with the encrypted data
+    - Risky, vulnerable to sniffing 
+
+- **Out-of-band** 
+    - Providing the key separately from the encrypted data
+    - Can be provided beforehand or via phone/SMS
+    - 
+    - 
+### Out-of-Band Key Exchange
 
 Out-of-Band (OOB) key exchange is a method for securely sharing cryptographic keys outside the regular communication channel used for encrypted data transfer. This approach enhances security by reducing the risk of key interception through the primary channel.
 
@@ -17,7 +58,7 @@ Out-of-Band (OOB) key exchange is a method for securely sharing cryptographic ke
 - Physically mail the drive containing the key
 - Telephone call, if both parties know each other's voices
 
-## In-Band Key Exchange
+### In-Band Key Exchange
 
 Out-of-Band methods can be time-consuming. For instance, if Alice and Bob are far apart, a physical meeting might not be practical. Sending a physical letter with the key takes days, and reading a long encryption key over the phone is difficult.
 
@@ -32,11 +73,9 @@ Symmetric cryptography uses the same key for both encryption and decryption. The
 
 Symmetric encryption is generally faster and less computationally intensive compared to asymmetric cryptography. It is also effective for encrypting large volumes of data.
 
-
 <div class="img-center">
 
 ![](/img/docs/sec+-symmetric-encryption-example-photo.png)
-
 
 </div>
 

@@ -64,6 +64,8 @@ Encryption is essential for data security as it ensures that sensitive informati
    - Enables the exchange of digitally signed contracts.
    - Validates the binding nature and authenticity of digital contracts.
 
+For more information, please see [Data Encryption.](/docs/005-Cybersecurity/002-Asset-Security/006-Data-Encryption.md)
+
 ### Cryptography
 
 Cryptography is a versatile tool, providing crucial services like confidentiality and integrity for enhanced system security.
@@ -78,13 +80,13 @@ Cryptography is a versatile tool, providing crucial services like confidentialit
 
 
 
-    
-<div class="img-center">
+         
+      <div class="img-center">
 
-    ![](/img/docs/security-encryption-cryptograpghy.png)
-    
+      ![](/img/docs/security-encryption-cryptograpghy.png)
 
-</div>
+
+      </div>
 
 
 ### Cryptographic Hash Function 
@@ -120,7 +122,7 @@ A digital signature uses assymetric cryptography to transform data to achieve:
 
 However, digital signatures **cannot guarantee confidentiality** (i.e. the property of data or information not being made available or disclosed).
 
-For more information, please see [Digital Signatures in Asymmetric Encryptions.](../004-Cryptography/010-Asymmetric-Encryption.md#digital-signature)
+For more information, please see [Digital Signatures in Asymmetric Encryption.](../004-Cryptography/010-Asymmetric-Encryption.md#digital-signature)
 
 
 

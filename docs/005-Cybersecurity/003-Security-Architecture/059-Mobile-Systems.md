@@ -140,6 +140,7 @@ Implementing strong security measures on mobile devices is important to protect 
   - Encrypt data on your device to protect it if lost or stolen.
   - iOS and Android: Enable encryption by setting a password.
   - Default since: Android Gingerbread and iOS 8.
+  
 
 - **Remote Wiping**  
   - Enable remote wiping to erase data if your device is lost.

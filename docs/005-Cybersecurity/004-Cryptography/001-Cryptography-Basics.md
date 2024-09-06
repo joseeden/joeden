@@ -106,7 +106,7 @@ Then check the properties of the original photo and the encoded photo. We can se
 
 Tokenization replaces sensitive information with non-sensitive tokens, enhancing data security by removing direct exposure to confidential data.
 
-  **How It Works**
+**How It Works**
 
 - Sensitive data is swapped for unique tokens stored in a secure token vault.
 - The original data is stored somewehere.
@@ -156,35 +156,14 @@ Symmetric cryptography uses the same key for both encryption and decryption. The
 
 Symmetric encryption is generally faster and less computationally intensive compared to asymmetric cryptography. It is also effective for encrypting large volumes of data.
 
-
 <div class="img-center">
 
 ![](/img/docs/sec+-symmetric-encryption-example-photo.png)
 
-
 </div>
 
+For more information, please see [Symmetric Encryption.](/docs/005-Cybersecurity/004-Cryptography/009-Symmetric-Encryption.md)
 
-Sending the key:
-
-- **In-band** 
-    - Sending the key along with the encrypted data
-    - Risky, vulnerable to sniffing 
-
-- **Out-of-band** 
-    - Providing the key separately from the encrypted data
-    - Can be provided beforehand or via phone/SMS
-
-Disadvantages:
-
-- Key distribution and management can be challenging
-- If the key is compromised, the entire system is at risk.
-
-Use Cases:
-
-- Secure communication within closed networks
-- Encrypting files or databases
-- Securing backups.
 
 ### Asymmetric Encryption
 
@@ -195,39 +174,14 @@ Asymmetric cryptography uses a pair of keys:
 
 The public key can be shared openly, but the private key must remain confidential.
 
-- **Public key encrypts data**, and only the corresponding private key can decrypt it. 
-- **Private key decrypts the data**, can be used to sign data, which the public key can verify.
-
-
 <div class="img-center">
 
 ![](/img/docs/sec+-asymmetric-encryption-example-diagran.png)
 
-
 </div>
 
+For more information, please see [Asymmetric Encryption.](/docs/005-Cybersecurity/004-Cryptography/010-Asymmetric-Encryption.md)
 
-
-Example Algorithms:
-
-- **RSA** (Rivest-Shamir-Adleman)
-- **ECC** (Elliptic Curve Cryptography)
-- **DSA** (Digital Signature Algorithm).
-
-
-Advantages: 
-
-- No need to share the private key, reducing the risk of key compromise.
-- Allows for digital signatures and public key infrastructure (PKI).
-
-Disadvantages: 
-
-- Slower and more resource-intensive than symmetric cryptography. 
-- Less efficient for large amounts of data.
-
-Use Cases: 
-
-- Secure communication over public networks, digital signatures, certificate authorities, and secure key exchange. 
 
 ### Hybrid Implementation 
 
