@@ -17,7 +17,7 @@ TLS or Transport Layer Security is a protocol that provides cryptography securit
 - Commonly used for securing web traffic (HTTPS).
 - Works with multiple protocols like HTTP, SMTP, and IMAP.
 
-TLS is not a cryptographic algirithm itself; it is only a protocol that depends on other cryptographic algorithms. It depends on pairings of encryption and hash functions known as **cipher suites.**
+TLS is not a cryptographic algirithm itself; it is only a protocol that depends on other cryptographic algorithms. TLS relies on pairings of encryption and hash functions known as **cipher suites.**
 
 - This means we cannot encrypt something with TLS.
 - We can use TLS to apply other encryption algorithms.
