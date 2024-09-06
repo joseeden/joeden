@@ -58,7 +58,7 @@ When setting up new systems or devices, default configurations are often used to
   - Use firewall rules to restrict access to essential ports only.
 
 
-### Configuration management 
+### Configuration Management 
 
 Configuration management ensures that authorized and validated changes are the only ones made to a system. It involves decision-making and control procedures, focusing on aspects like identification, establishing baselines, and applying updates and patches.
 
