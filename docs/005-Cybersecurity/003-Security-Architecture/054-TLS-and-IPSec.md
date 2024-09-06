@@ -17,6 +17,35 @@ TLS or Transport Layer Security is a protocol that provides cryptography securit
 - Commonly used for securing web traffic (HTTPS).
 - Works with multiple protocols like HTTP, SMTP, and IMAP.
 
+TLS is not a cryptographic algirithm itself; it is only a protocol that depends on other cryptographic algorithms. It depends on pairings of encryption and hash functions known as **cipher suites.**
+
+- This means we cannot encrypt something with TLS.
+- We can use TLS to apply other encryption algorithms.
+
+### The TLS Handshake
+
+How it works:
+
+1. Client sends a request to the server to initiate a session. The request includes the cipher suites supported by the client.
+2. The server receives the request and compares the client's proposed cipher suites to the server's supported algorithms.
+3. Once the server finds a match, it sends a reply to the client.
+4. The respond contains two things: the **cipher suite** and the **server's digital certificate** which contains the server's public encryption key.
+5. The client receives the server's digital certificate and checks what Certificate Authority (CA) issued the certificate and uses the CA's public key to verify the digital certificate. It also checks with the CA if the cetificate is expired or revoked.
+6. If all is okay, the client knows it has the correct public key of the server.
+7. Once the client is satisifed, the clients creates a symmetric **session key** and uses the server's public key to encrypt the session key.
+8. The client then send the encrypted session key to the server.
+9. The server receives the encrypted sessions key and uses its own private key to decrypt it.
+10. The two systems can no continue the communication using the session key.
+11. Once they close the session, the session key is destroyed.
+12. The TLS handshake starts over the next time the two system wish to communicate.
+
+:::info[NOTE]
+
+Session keys are also known as **ephemeral keys.**
+
+:::
+
+
 ### TCP 
 
 TLS uses the Transmission Control Protocol (TCP) to establish secure communications between a client and a server.
@@ -49,7 +78,7 @@ To secure the communication between two endpoints, we can utilized the following
 - Pre-Shared Key (PSK)
 
 
-### Establishing an IPSec Tunnel
+## Establishing an IPSec Tunnel
 
 1. Request to start Internet Key Exchange (IKE).
     - PC1 Initiates trafffic to PC2.
@@ -68,13 +97,14 @@ To secure the communication between two endpoints, we can utilized the following
 5. Tunnel Termination
     - Tunnel is torn down, deleting IPSec security associations
 
+## IPSec Modes
 
-### IPSec Tunnel Mode
+### Tunnel Mode
 
 **IPSec Tunnel Mode** secures data transmission between two networks over the internet by encapsulating and encrypting the entire original IP packet within a new IP packet. This ensures both the payload and the original IP header are protected, commonly used in VPNs to create secure connections between gateways.
 
 - Packets are encapsulated within new ones, increasing the actual packet size.
-- Ideal for connecting remote networks securely; site-to-site VPNS.
+- Ideal for connecting remote networks securely; **site-to-site VPNS**.
 - Secures the entire original IP packet **using packet encapsulation.**
 
 Workaround for the packetsize:
@@ -88,13 +118,13 @@ At source and destination:
   - **Source side:** Encapsulates the encrypted packet within a new IP packet.
   - **Destination side:** VPN concentrator removes outer header, decrypts content, and routes internally.
 
-### IPSec Transport Mode
+### Transport Mode
 
 **IPSec Transport Mode** secures end-to-end communication between two devices by encrypting only the payload of the IP packet, while leaving the original IP header intact. This mode is commonly used for securing communication between two hosts or between a host and a gateway. 
 
 - Slightly less overhead than Tunnel Mode since only the payload is encrypted.
 - Commonly used within a secure network where the IP header does not need encryption.
-- Used for end-to-end communication between hosts, e.g. client-to-site VPNs
+- Used for end-to-end communication between hosts, e.g. **client-to-site VPNs**
 - Secures the data portion of the IP packet, **no packet encapsulation.**
 
 Packet size:
@@ -102,6 +132,8 @@ Packet size:
 - Works well when you want to increase packet size, exceeding the MTU size
 - **Max Transmission Size (MTU)** - set at only 1500 bytes
 - Anything beyond MTU, packet gets fragmented and causes VPN problems.
+
+## IPSec Protocols
 
 ### Authentication Header (AH)
 
@@ -126,3 +158,9 @@ In tunneling mode, ESP can be used along with authentication headers.
 - AH provides integrity for TCP header, ESP encrypts TCP header and payload.
 
 Since the payload is encrypted, some details like the type of traffic, e.g. whether it is TCP or UDP, and the port numbers are hidden. This is all well and good, but it might get blocked by a firewall since the firewall will have to check the traffic type and ports.
+
+:::info[NOTE]
+
+**ESP can be used together with AH** to provide confidentiality for packet payloads and integrity verification for the entire packet, including the header.
+
+:::
