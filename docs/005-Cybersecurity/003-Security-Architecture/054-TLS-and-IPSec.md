@@ -22,7 +22,7 @@ TLS is not a cryptographic algirithm itself; it is only a protocol that depends 
 - This means we cannot encrypt something with TLS.
 - We can use TLS to apply other encryption algorithms.
 
-### The TLS Handshake
+### TLS Handshake
 
 How it works:
 
