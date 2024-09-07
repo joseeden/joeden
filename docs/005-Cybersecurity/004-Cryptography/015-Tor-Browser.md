@@ -40,6 +40,11 @@ How it works:
 9. The response follows the same path back to the client
 10. The route maintains the client's anonymity
 
+How it looks like:
+
+![](/img/docs/networking-basics-how-tor-browser-works-behind-the-scenessss.png)
+
+
 ## Request Chain
 
 The request chain in Tor ensures privacy through multiple layers of encryption:
@@ -50,6 +55,12 @@ The request chain in Tor ensures privacy through multiple layers of encryption:
 4. Node 1 forwards the request to Node 2
 5. Node 2 decrypts the envelope and sends it to Node 3
 6. Node 3 decrypts the final envelope and forwards the request to the website
+
+How it looks like:
+
+![](/img/docs/networking-basics-how-tor-browser-works-request-chainsss.png)
+
+
 
 ## Hidden Services
 
