@@ -19,9 +19,17 @@ Simple Network Management Protocol (SNMP) is a widely used protocol for network 
 - Authentication and access control mechanisms.
 
 Sample diagram:
+
+<div class='img-center'>
+
 ![](/img/docs/sec+-snmp-sample-diagram.png)
 
+</div>
+
+
 ## Components
+
+The common components:
 
 - **SNMP Manager**
 
@@ -39,6 +47,16 @@ Sample diagram:
 
     - Network devices, such as routers, switches, and servers.
     - Devices monitored and managed using SNMP.
+
+How it looks like:
+
+<div class='img-center'>
+
+![](/img/docs/sec+-snmp-sample-diagram-2.png)
+
+</div>
+
+
 
 ## Operations
 

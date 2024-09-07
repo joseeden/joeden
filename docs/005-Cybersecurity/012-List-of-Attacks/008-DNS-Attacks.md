@@ -10,8 +10,11 @@ last_update:
 
 ## Domain Name System 
 
-Domain Name System or DNS is responsible for translating human-friendly domain names into IP addresses that computers understand.
+The Domain Name System (DNS) is a hierarchical and decentralized naming system used to convert human-readable domain names (like www.google.com) into IP addresses (like 192.0.2.1) that computers use to identify each other on the network. 
 
+It functions like a phonebook for the internet, allowing users to access websites using domain names instead of memorizing numerical IP addresses. 
+
+For more information, please see [Domain Name System (DNS).](/docs/004-Networking/001-The-Basics/003-Domain-Name-System-DNS.md)
 
 ## DNS Cache Poisoning
 

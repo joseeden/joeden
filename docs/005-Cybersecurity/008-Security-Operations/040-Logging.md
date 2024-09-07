@@ -41,7 +41,7 @@ NetFlow is a Cisco-developed means of reporting network flow information to a st
 - Volume
 - Paths
 
-For more information, please see [NetFlow.](../008-Security-Operations/034-Network-Traffic-Flow.md#netflow-zeek-and-mrtg)
+For more information, please see [NetFlow.](/docs/005-Cybersecurity/008-Security-Operations/034-Network-Traffic-Flow.md#netflow-zeek-and-mrtg)
 
 ### Sampled Flow
 
@@ -65,7 +65,7 @@ Simple Network Management Protocol (SNMP) is a widely used protocol for monitori
 - Software agent or built into firmware; uses a manager/agent architecture.
 - SNMP traps provide real-time alerts and notify management stations.
 
-For more information, please see [SNMP](../008-Security-Operations/031-SNMP.md)
+For more information, please see [SNMP](/docs/005-Cybersecurity/008-Security-Operations/031-SNMP.md)
 
 ### Windows Logs
 
@@ -83,7 +83,7 @@ Security Information and Event Management (SIEM) systems aggregate and analyze s
 - Collects log and event data from multiple sources and uses correlation to detect threats.
 - Provides dashboards, alerts, and reports for alerts, packet captures, malware alerts, etc.
 
-For more information, please see [SIEM](../008-Security-Operations/032-SIEM.md)
+For more information, please see [SIEM](/docs/005-Cybersecurity/008-Security-Operations/032-SIEM.md)
 
 
 
