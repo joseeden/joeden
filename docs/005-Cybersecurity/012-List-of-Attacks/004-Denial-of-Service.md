@@ -110,8 +110,19 @@ An attacker carefully chooses reqeusts that will have very large responses. The 
 
 ## Amplification Factor 
 
+The amplification factor is the degree to which the attack increases in size.
 
+- If response is twice the size of reqeust, then amplification factor is 2.
+- If the designed request is 64 bytes and AF is 8, then reply will be in 512 bytes.
 
+In form:
+
+<div class='img-center'>
+
+![](/img/docs/networking-basics-ddos-amplified-ddosss-amplification-factor.png)
+
+</div>
+ 
 
 ## Stopping DDoS 
 

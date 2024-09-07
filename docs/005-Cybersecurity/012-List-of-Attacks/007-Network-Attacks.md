@@ -32,6 +32,35 @@ Illegally intercepting and examining unencrypted data packets.
 - **Network Monitoring**: Detect unauthorized packet sniffing.
 
 
+## Christmas Tree Packet Attack 
+
+Packets are the basic unit of network communications. Every time information is transferred over the network, it is divided up into small packets of information that are then reassembled once they reach the destination system.
+
+- Packets contain data payload to be sent, but also includes header information
+- Packet headers are like "envelopes" that carry the data
+- Headers include information such as source, destination, and flags 
+
+Flags are single-bit fields that contain either a `1` or a `0`. If a field is set to `1`, it indicates a special purpose packet. As an example, if the SYN flag is set to `1`, a connection is established, while a FIN flag set to `1` means connection is tear down.
+
+A typical packet only has one or two flags set to a value of `1`.
+
+<div class='img-center'>
+
+![](/img/docs/networking-basics-packet-flags-set-to-one.png)
+
+</div>
+
+In a christmas tree packet, all of the flags are set to `1`. It is simlar to having a "christmas tree" all lit up.
+
+![](/img/docs/networking-basics-packet-flags-set-to-one-christmas-tree.png)
+
+Attackers send this kind of packet because some systems crash when they receive a christmas tree packets. These systems may have  apoorly designed network stack that can't handle the packet when all the flags are set to a value of `1`.
+
+- All flags set to `1` are similar to a denial of service attack.
+- Attackers can determine the type of OS depending on the response of the server.
+- Useful for conducting pre-attack reconnaissance.
+
+
 ## Oversized Packet Attack 
 
 Oversized packet attacks involve sending data packets that exceed the maximum allowable size, exploiting vulnerabilities in network protocols.   
