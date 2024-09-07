@@ -90,4 +90,4 @@ add simple intro explanation...
   - Allows administrators to restrict which devices can connect to which port.
   - Connection can be based on the network interface card's MAC address.
   - Limits the MAC address that may be used on particular switchport.
-  - For more information, please see [Port Security.](/docs/005-Cybersecurity/005-Communications-and-Network/050-Ports-and-Protocols.md#port-security)
+  - For more information, please see [Port Security.](/docs/004-Networking/001-The-Basics/020-Ports-and-Protocols.md#port-security)

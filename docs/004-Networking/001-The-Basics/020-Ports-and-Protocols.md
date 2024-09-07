@@ -1,8 +1,8 @@
 ---
 title: "Ports and Protocols"
 description: "Physical, logical, and secure ports"
-tags: [Security, Cybersecurity, Security Architecture, Security Engineering]
-sidebar_position: 50
+tags: [Networking, Security, Cybersecurity, Security Architecture, Security Engineering]
+sidebar_position: 20
 last_update:
   date: 1/30/2024
 ---

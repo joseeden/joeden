@@ -79,7 +79,7 @@ NAC uses 802.x authentication to perform access control tasks and it uses differ
 
 ![](/img/docs/networking-basics-network-access-control-nacccc.png)
 
-For more information, please see [IEEE 802.1X Protocol](/docs/005-Cybersecurity/005-Communications-and-Network/050-Ports-and-Protocols.md#ieee-8021x-protocol)
+For more information, please see [IEEE 802.1X Protocol](/docs/004-Networking/001-The-Basics/020-Ports-and-Protocols.md#ieee-8021x-protocol)
 
 ### Use Cases
 
