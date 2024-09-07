@@ -51,10 +51,37 @@ The request chain in Tor ensures privacy through multiple layers of encryption:
 5. Node 2 decrypts the envelope and sends it to Node 3
 6. Node 3 decrypts the final envelope and forwards the request to the website
 
-## Hidden Sites
+## Hidden Services
 
-Hidden sites are websites accessible only via Tor, providing anonymity for both users and servers.
+Hidden services, also known as "onion services" in the Tor network, are websites that can only be accessed via the Tor browser. These sites use the .onion domain and are designed to provide privacy for both the host and the user.
 
 - The server’s location and identity are also concealed.
 - Instead of domain names (like google.com), it uses strange URLs (like xyz123abc.onion)
 - Ideal for privacy-sensitive activities, like accessing censored information
+
+## How to access onion sites
+
+On your computer: 
+
+1. **Connect to a VPN first**. This one is a must.
+2. Download Tor Browser from the official Tor website: [Tor.](https://www.torproject.org/download/)
+3. Install Tor Browser by opening the file you downloaded and following the prompts.
+4. Open Tor Browser and click “Connect” on the Tor startup page.
+
+    <div class='img-center'>
+
+    ![](/img/docs/networking-basics-tor-browser-downloadeddd.png)
+
+    </div>
+
+5. Wait for the connection to be established. Once done, you should see:
+
+
+    <div class='img-center'>
+
+    ![](/img/docs/networking-basics-tor-browser-connecteddd.png)
+
+    </div>
+
+
+There is some example links that you can try accessing here: [Dark Web Links: The best .onion and Tor sites in 2024](https://www.expressvpn.com/blog/best-onion-sites-on-dark-web/)
