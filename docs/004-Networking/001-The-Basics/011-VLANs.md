@@ -65,3 +65,29 @@ Port isolation restricts traffic from a source port to a single destination port
 </div>
 
 Port isolation is not recommended on a corporate network where devices often need to communicate with each other, share resources, or access multiple services. In contrast, it works very well on hotel guest room networks where guests should be isolated from each other to ensure privacy and prevent unauthorized access to other guests' devices.
+
+## VLAN Security 
+
+add simple intro explanation...
+
+- **VLAN Pruning**
+
+  - Limit unnecessary exposure of VLANs.
+  - Limit the number of switches where they are trunked.
+  - Useful for sensitive VLANs.
+  - add more information
+  - add more information
+
+- **VLAN Trunk Negotiation**
+
+  - Attackers may attempt VLAN hopping to switch between VLANs.
+  - These attacks relies on pretending to be a switch and asking the switch to trunk VLANs
+  - As countermeasure, switches should be configured to deny the use of automatic negotiation.
+  - This limits the effectiveness of VLAN hoppign attacks.
+
+- **Port Security**
+
+  - Allows administrators to restrict which devices can connect to which port.
+  - Connection can be based on the network interface card's MAC address.
+  - Limits the MAC address that may be used on particular switchport.
+  - For more information, please see [Port Security.](/docs/005-Cybersecurity/005-Communications-and-Network/050-Ports-and-Protocols.md#port-security)

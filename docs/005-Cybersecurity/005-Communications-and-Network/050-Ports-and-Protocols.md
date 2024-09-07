@@ -151,18 +151,22 @@ Concepts:
 
 ### Implementing Port Security
 
-With port security, administrators can link MAC addresses of certain devices to specific network interfaces for enhanced security.
+Port security works in two modes:
 
-- Any other unregistered device that tries to plug to the switchport will be rejected.
-- Can be a lengthy process because each MAC address needs to be determined.
-- To simplify the process, we can use "sticky MAC"
+- **Static Port Security**
 
-**Sticky MAC**
+  - Manually link MAC addresses of devices to specific network interfaces for enhanced security.
+  - Any other unregistered device that tries to plug to the switchport will be rejected.
+  - Can be a lengthy process because each MAC address needs to be determined.
+  - To simplify the process, we can use "sticky MAC"
 
-- Also known as **Persistent MAC Learning**
-- Dynamically associate the first MAC address connected to switchport as authorized.
-- This prevents other MAC addresses from connecting to the specific switch port.
-- Can still be bypassed through MAC spoofing or resetting MAC Addresses.
+- **Dynamic Port Security**
+
+  - Also known as **Persistent MAC Learning** and **Sticky Mode**
+  - Dynamically associate the first MAC address connected to switchport as authorized.
+  - Switches memorize the first MAC address they see on each port and limit access to the port.
+  - This prevents other MAC addresses from connecting to the specific switch port.
+  - Can still be bypassed through MAC spoofing or resetting MAC Addresses.
 
 ### IEEE 802.1X Protocol
 
