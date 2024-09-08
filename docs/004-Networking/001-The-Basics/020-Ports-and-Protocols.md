@@ -145,7 +145,7 @@ Concepts:
   - Randomized MAC addresses are sent to the network switch.
   - When this happens, the network switch will simply fail open.
   - When it fail-open, the switch begins to rebroadcast all traffic out to every port.
-  - For more information, please see [MAC Address Flooding](../012-List-of-Attacks/012-Layer-2-Attacks.md#mac-address-flooding)
+  - For more information, please see [MAC Address Flooding](/docs/005-Cybersecurity/012-List-of-Attacks/012-Layer-2-Attacks.md#mac-address-flooding)
 
 
 
@@ -209,7 +209,7 @@ EAP (Extensible Authentication Protocol) is a versatile authentication framework
 - Commonly used in wireless networks (e.g., Wi-Fi) and secure network access setups.
 - Provides strong security through certificate-based authentication.
 
-For more information, please see [EAP](../003-Security-Architecture/020-Authentication-Protocols.md#eap)
+For more information, please see [EAP](/docs/005-Cybersecurity/003-Security-Architecture/020-Authentication-Protocols.md#eap)
 
 
 ## Transport Method
