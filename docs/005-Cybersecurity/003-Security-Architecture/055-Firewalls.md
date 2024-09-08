@@ -78,6 +78,77 @@ By separating public-facing services from the internal network, the DMZ helps pr
   - Reduces the risk of unauthorized access by denying unlisted traffic.
 
 
+## Firewall Rules 
+
+Firewall rules define how the firewall should act when it sees a new connection request. The firewall consults a list of rule maintained by the system administrator. Iif it finds a rule that matches the description of the attempted connection, it then follows the action specified by that rule.
+
+- If there's no explicit instructions, it follows the default deny principle.
+- The default deny principle blocks the traffic.
+
+Firewall administrators must watch for rule configuration errors. Rule sets will often contain hundreds of rules and the security professional should be able manage those rules correctly. Some of the common rule errors are:
+
+- Shadowed Rules
+- Promiscuous Rules
+
+### Shadowed Rules
+
+Shadowed Rules occurs when there is a rule that will never be executed because of its order of placement. Remember that firewall rules are executed in a top-down approach. This means it will check the first on the list first, then proceed to the next rules below it until it reach a match.
+
+As an example, we may have the following rules defining the traffic via port 80. We want to deny traffic going to 1.2.3.4 on TCP port 80. But since the first rule is a permissive rule, the traffic will be allowed and the specific deny rule will never be executed.
+
+<div class='img-center'>
+
+![](/img/docs/networking-basics-firewall-rules-shadowed-rulesss.png)
+
+</div>
+
+To fix this error, we can rearrange the rule set so that the more specific rule will appear first on the list. This will ensure that any traffic going to 1.2.3.4 via port 80 will be denied, while the rest of the traffic through port 80 will be allowed.
+
+<div class='img-center'>
+
+![](/img/docs/networking-basics-firewall-rules-shadowed-rulesss-fixed.png)
+
+</div>
+
+### Promiscuous Rules
+
+Promiscuous rules allows more rules than necessary. This could be a result of poorly designed firewall rules, a lack of understanding of how firewall rules works, or a simple typo error which could result to too much access being allowed. 
+
+<div class='img-center'>
+
+![](/img/docs/networking-basics-firewall-rules-shadowed-rulesss.png)
+
+</div>
+
+This is similar to a permissive rules being placed in before a restrictive rule. To fix this, we can remove any overly permissive rules to ensure that only the required access is allowed.
+
+<div class='img-center'>
+
+![](/img/docs/networking-basics-firewall-rules-promiscuous-fixed.png)
+
+</div>
+
+
+### Orphaned Rules
+
+Orphaned rules allow access to decommissioned systems or services. This occurs when a device or a system is removed but the rules associated with that system was never removed. In some instance, this rules lead to a *black hole* because some traffic may still be going to the destination IP address specified in the rule but the traffic is just going to the void. 
+
+<div class='img-center'>
+
+![](/img/docs/networking-basics-firewall-rules-orphaned-rulesss.png)
+
+</div>
+
+Another challenge that orphaned rules present is the previous IP address may be reused in the future. A previously created ALLOW rule intended for the decommissioned device may unintentionally allow access to the newly installed device. 
+
+<div class='img-center'>
+
+![](/img/docs/networking-basics-firewall-rules-orphaned-rulesss-unintentionally-allowing-access.png)
+
+</div>
+
+
+
 ## Access Control Lists 
 
 Access Control Lists (ACLs) is a rule set that is placed on firewalls, routers, and other network infrastructure devices that permit or allow traffice through a particular interface.
@@ -99,6 +170,17 @@ ACLs can be configured through:
 
   - Web-based interface 
   - Text-based command line interface
+
+
+:::info[NOTE]
+
+ACL does a **stateless inspection**, while Firewall handles a **stateful inspection**. 
+
+The ACL will only look at a packet and will not have anything to do with the conversation that this packet belongs to. 
+
+The firewall will analyze whether there is a proper beginning (Encapsulation) for the packets to pass through.
+
+:::
 
 
 ## Types of Firewall 
