@@ -69,6 +69,7 @@ Certainly! Here is a comprehensive reference sheet for ports and protocols that 
 Certainly! Here is the modified reference sheet with an additional column indicating whether the protocol uses UDP, TCP, or both:
 
 | Port | UDP/TCP | Service/Protocol                                | Description                                                     |
+|------|---------|-------------------------------------------------|-----------------------------------------------------------------|
 | 20   | TCP     | FTP (File Transfer Protocol) Data               | Transfers data in FTP                                           |
 | 21   | TCP     | FTP (File Transfer Protocol) Control            | Controls communication in FTP                                   |
 | 22   | TCP     | SSH (Secure Shell)                              | Secure remote login and other secure network services over an unsecured network |
