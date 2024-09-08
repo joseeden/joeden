@@ -149,6 +149,8 @@ Another challenge that orphaned rules present is the previous IP address may be 
 
 
 
+
+
 ## Access Control Lists 
 
 Access Control Lists (ACLs) is a rule set that is placed on firewalls, routers, and other network infrastructure devices that permit or allow traffice through a particular interface.
