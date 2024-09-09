@@ -68,26 +68,28 @@ Port isolation is not recommended on a corporate network where devices often nee
 
 ## VLAN Security 
 
-add simple intro explanation...
+VLAN security protects network segments from unauthorized access and attacks.
 
 - **VLAN Pruning**
 
-  - Limit unnecessary exposure of VLANs.
-  - Limit the number of switches where they are trunked.
-  - Useful for sensitive VLANs.
-  - add more information
-  - add more information
+  - Limits VLAN exposure to only necessary switches.
+  - Helps secure sensitive VLANs by restricting unnecessary trunking.
+  - Prevents VLAN traffic from spreading across the entire network.
+  - Reduces the risk of attackers accessing sensitive VLANs.
+  - Regularly review and update pruning configurations to maintain security.
 
 - **VLAN Trunk Negotiation**
 
-  - Attackers may attempt VLAN hopping to switch between VLANs.
-  - These attacks relies on pretending to be a switch and asking the switch to trunk VLANs
-  - As countermeasure, switches should be configured to deny the use of automatic negotiation.
-  - This limits the effectiveness of VLAN hoppign attacks.
+  - Attackers may use VLAN hopping to switch between VLANs.
+  - This attack tricks switches into trunking unauthorized VLANs.
+  - Disable automatic trunk negotiation to block VLAN hopping attempts.
+  - Manually configure trunks to only authorized VLANs.
+  - Use static VLAN assignments to further reduce risk.
 
 - **Port Security**
 
   - Allows administrators to restrict which devices can connect to which port.
   - Connection can be based on the network interface card's MAC address.
   - Limits the MAC address that may be used on particular switchport.
+  - Trigger alerts or disable ports if unauthorized devices attempt to connect.
   - For more information, please see [Port Security.](/docs/004-Networking/001-The-Basics/020-Ports-and-Protocols.md#port-security)
