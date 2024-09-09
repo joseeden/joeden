@@ -90,9 +90,9 @@ The Principle of Least Privilege dictates that users or programs should be grant
 
 ## Segregation of Duties 
 
-In cybersecurity, 'segregation', or 'segregation of duties' (SoD), is a security principle designed to prevent fraud or error by dividing tasks among multiple persons.It is an administrative control that reduces the risk of potential errors or fraud from a single person having control over all aspects of a critical process.
+In cybersecurity, 'segregation', or 'segregation of duties', or 'separation of duties' (SoD), is a security principle designed to prevent fraud or error by dividing tasks among multiple persons.It is an administrative control that reduces the risk of potential errors or fraud from a single person having control over all aspects of a critical process.
 
-For more information, please see [Privilege Access Management.](../006-Identity-and-Access-Management/011-Privilege-Access-Management.md)
+For more information, please see [Privilege Access Management.](/docs/005-Cybersecurity/006-Identity-and-Access-Management/011-Privilege-Access-Management.md)
 
 ## Trust but Verify 
 
