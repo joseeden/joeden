@@ -11,7 +11,7 @@ last_update:
 
 ## User Account Control 
 
-A mechanism designed as a security checkpoint to ensure that actions requiring administrative rights are explicitly authorized by the user. When a user tries to install a software, a pop will appear prompting him to enter an admin user and password.
+A mechanism designed as a security checkpoint to ensure that actions requiring administrative rights are explicitly authorized by the user. When a user tries to install a software, a pop-up will appear prompting him to enter an admin user and password.
 
 ## Decentralized Access Control
 

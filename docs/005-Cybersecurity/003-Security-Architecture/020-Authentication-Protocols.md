@@ -25,6 +25,14 @@ PAP (Password Authentication Protocol) is a basic authentication protocol that h
 - Legacy use, common in older systems where security measures were less advanced.
 - Offers minimal protection against attacks such as eavesdropping.
 
+## CHAP 
+
+add simple 1-2 sentence explanation 
+
+- add more info
+- add more info
+- add more info
+
 ## MS-CHAPv2 
 
 MS-CHAPv2 is a more secure version of the Challenge-Handshake Authentication Protocol, designed to provide enhanced security in network environments. 
