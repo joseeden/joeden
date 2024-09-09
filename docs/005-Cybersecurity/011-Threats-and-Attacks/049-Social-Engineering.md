@@ -45,27 +45,35 @@ Social Engineering refers to tenetshe manipulation of individuals or groups to g
   - Following authorized personnel into secure areas without proper authentication.
   - Exploits social norms or politeness to gain unauthorized access to restricted areas.
 
-## Motivational Triggers 
+## Social Engineering Tactics
 
 - **Authority**
   - People tend to comply with requests from perceived authority figures or institutions.
   - Attackers exploit this trigger by posing as authority figures to gain trust and compliance.
 
-- **Urgency**
-  - Urgent situations or deadlines can prompt individuals to act quickly without thoroughly evaluating the situation.
-  - The sense of urgency pressure targets into making hasty decisions or disclosing sensitive information.
+- **Intimidation**
 
-- **Social Proof**
-  - Individuals often look to others for guidance or validation, especially in uncertain situations.
-  - Attackers use social proof by presenting fake testimonials, reviews, or endorsements to gain trust and credibility.
+  - Attackers use threats or coercion to pressure victims into compliance.
+  - Fear of negative consequences, such as job loss or legal action.
+  - This tactic aims to bypass logical thinking by creating anxiety and stress.
+
+- **Urgency**
+  - Urgent situations prompt hasty actions without proper evaluation.
+  - Attackers create pressure to force quick decisions or information disclosure.
+
+
+- **Consensus/Social Proof**
+  - People follow others' actions in uncertain situations.
+  - "Wisdom of the crowd", "Herd mentality"
+  - Attackers use fake testimonials, reviews, or endorsements to gain trust and credibility.
 
 - **Scarcity**
   - People value items or opportunities that are perceived as scarce or in high demand.
-  - Attackers exploit scarcity by creating artificial scarcity or deadlines to encourage immediate action or compliance.
+  - Attackers create artificial scarcity or deadlines to encourage immediate action or compliance.
 
-- **Likeability**
-  - Individuals are more likely to comply with requests from people they like or feel a connection with.
-  - Attackers use charm, flattery, or sympathy to build rapport and manipulate targets into complying with their requests.
+- **Likeability/Familiarity**
+  - People are more likely to comply with requests from those they like or trust.
+  - Attackers use charm or flattery to build rapport and manipulate targets.
 
 - **Fear**
   - Fear of loss, harm, or negative consequences can override logical decision-making.
