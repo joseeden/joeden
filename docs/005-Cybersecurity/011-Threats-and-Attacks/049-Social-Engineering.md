@@ -107,70 +107,70 @@ Influence campaigns aim to sway perceptions and attitudes on a wide scale, often
 
 Creating an anti-phishing campaign is crucial for raising awareness and educating people about the dangers of phishing attacks. Here's a step-by-step guide to developing an effective campaign:
 
-1. **Identify Goals**: 
+1. **Identify Goals** 
 
     - Determine what you want to achieve with your campaign. 
 
     - Whether it's increasing awareness, or changing behaviors, clear goals will guide your efforts.
 
-2. **Understand Your Audience**: 
+2. **Understand Your Audience** 
 
     - Know who you're targeting with your campaign. 
 
     - Consider demographics, tech-savviness, and common phishing targets within your organization.
 
-3. **Educational Materials**: 
+3. **Educational Materials** 
 
     - Develop engaging and informative materials that explain what phishing is and how to recognize it.
 
     - This could include infographics, videos, quizzes, and interactive modules.
 
-4. **Training Sessions**: 
+4. **Training Sessions** 
 
     - Organize training sessions where participants can learn about phishing tactics.
     - Learning how to identify suspicious emails, and what to do if they encounter a phishing attempt.
 
-5. **Simulated Phishing Attacks**: 
+5. **Simulated Phishing Attacks** 
 
     - Conduct simulated phishing attacks to test employees' awareness and responses. 
 
     - This helps identify weak points and provides opportunities for additional training.
 
-6. **Regular Updates**: 
+6. **Regular Updates** 
 
     - Keep your audience informed about the latest phishing trends, techniques, and examples. 
 
     - Phishing tactics evolve, so ongoing education is essential.
 
-7. **Promote Reporting**: 
+7. **Promote Reporting** 
 
     - Encourage employees to report suspicious emails or activities promptly. 
 
     - Implement clear reporting procedures and ensure that reports are taken seriously.
 
-8. **Incentives and Recognition**: 
+8. **Incentives and Recognition** 
 
     - Offer incentives or recognition for employees who demonstrate awareness of phishing attempts. 
 
     - Positive reinforcement can boost participation and engagement.
 
-9. **Partnerships**: 
+9. **Partnerships** 
 
     - Collaborate with IT security teams, industry experts, or other organizations.
     - Goal is to enhance the effectiveness of your campaign and access additional resources.
 
-10. **Evaluation and Feedback**: 
+10. **Evaluation and Feedback** 
 
     - Continuously monitor and evaluate the effectiveness of your campaign. 
     - Solicit feedback from participants to identify areas for improvement.
 
-11. **Follow-Up**: 
+11. **Follow-Up** 
 
     - Phishing awareness is an ongoing process. 
 
     - Follow up with regular refreshers, updates on new threats, and reinforcement of best practices.
 
-12. **Measurement**: 
+12. **Measurement** 
 
     - Define key metrics to measure the success of your campaign.
     - Examples:
