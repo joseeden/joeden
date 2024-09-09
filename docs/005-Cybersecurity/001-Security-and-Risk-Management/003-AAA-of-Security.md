@@ -8,7 +8,6 @@ last_update:
 ---
 
 
-
 ## The AAA
 
 ### Authentication
@@ -39,10 +38,11 @@ Often called **auditing**, it involves tracking of data, computer usage, and net
 ## Authentication 
 
 This is the process of verifying the identity of a user who has stated their identity. 
+
 - Proving the identity of the requestor.
 - Enhances security by ensuring authorized access.
 
-### Methods of Authentication
+Ther are two common methods of authentication:
 
 - **Single-Factor Authentication (SFA)**
   - Relies on only one method of authentication.
@@ -50,66 +50,104 @@ This is the process of verifying the identity of a user who has stated their ide
 - **Multi-Factor Authentication (MFA)**
   - Requires successful demonstration of two or more authentication methods.
 
-### Common Authentication Techniques
+## Common Authentication Techniques
 
-- **Knowledge-based**
-  - Uses a passphrase or secret code.
-  - Vulnerable to attacks; often requires additional authentication methods for better security.
-  - Examples:
-    - **Password Managers**
-      - Also called "password vaults"
-      - a master key protects the vault - DON'T FORGET IT!
-      - Examples: LastPass, cloud-based vaults to store password keys
-      - For Windows, we can use Credentials Manager - NOT RECOMMENDED
+### Knowledge-based
 
-        ![](/img/docs/sec+-windows-credential-manager.png)
+Knowledge-based authentication uses a passphrase or secret code. It is vulnerable to attacks and often requires additional authentication methods for better security.
 
-    - **One-time Password (OTP)**
-      - Unique password code generated for single use 
-      - Static code sent by email or SMS
+- **One-time Password (OTP)**
 
-    - **Time-based OTP**
-      - Code is only valid for a short period of time
+  - Unique password code generated for single use 
+  - Static code sent by email or SMS
 
-    - **Push Notifications**
-      - Phone call, SMS, or email
+- **HMAC-based OTP**
 
-    - **HMAC OTP**
-      - HMAC encrypts a hash to ensure authenticity
-      
-- **Certificate-based**
-  - PKI certificates are issued by a trusted authority to an individual entity
-  - Device, VPN, app access 
-  - Can be stored in a smart card
-  - **Common Access Card** - can authenticate to everything
+  - Uses a shared secret and an incremented counter to generate the code
+  - HMAC encrypts a hash to ensure authenticity
+  - In hardware token devices, the code changes whenever the button is pushed
+  - The code is valid until it is used.
 
-- **Token-based**
-  - Involves tokens, memory cards, or smart cards.
+- **Time-based OTP**
 
-- **SSH Public Keys**
-  - Sign-in with username + private key + passphrase for private key
-  - Private key is not a password for the user, its used to decrypt the private key 
-  - Public key is stored in the client
-  - Private key is stored in the admin device
-  - Commonly used in Linux servers 
+  - Instead of using a counter, it uses the time of day in conjunction with the shared secret
+  - Code is only valid for a short period of time, until a new code is generated
+  - Token device and authentication system must have synchronized clocks  
+  - Google Authenticator uses TOTP
 
-- **Characteristic-based**
-  - Relies on measurable characteristics, such as biometrics.
-  - Biometrics like:
-    - Fingerprint 
-    - Retina
-    - Iris
-    - Facial
-    - Voice 
-    - Vein 
-    - Gait analysis (how you walk)
-  - Efficacy rates:
-    - False acceptance  
-    - False rejection rate 
-    - Crossover error rate
+In addition to OTPs, there are Knowledge-based authentication can also be in the following forms:
+
+- **Push Notifications**
+
+  - Phone call, SMS, or email
+
+- **Password Managers**
+
+  - Also called "password vaults"
+  - a master key protects the vault - DON'T FORGET IT!
+  - Examples: LastPass, cloud-based vaults to store password keys
+  - For Windows, we can use Credentials Manager - NOT RECOMMENDED
+
+    ![](/img/docs/sec+-windows-credential-manager.png)
+
+  
+### Certificate-based 
+
+Certificate-based uses PKI certificates whichare issued by a trusted authority to an individual entity. It can be stored in a smart card. 
+
+- add more info
+- add more info
+- **Common Access Card** - can authenticate to everything.
+
+### Token-based
+
+Token-based authentication uses physical devices like tokens, memory cards, or smart cards to verify a user's identity.
+
+- Tokens generate a temporary code that users enter to authenticate.
+- Memory and smart cards can store user credentials and cryptographic data.
+- Offers a more secure alternative to password-based systems, as physical possession is required.
+
+Token-based Authentication has two types:
+
+- **Synchronous**
+  - Generates codes at fixed intervals without a server challenge.
+  - Security token produces a new code every 30 seconds.
+  - Server and token stay synchronized for code expectations.
+
+- **Asynchronous**
+  - Does not generate codes at fixed intervals.
+  - Requires a server challenge for each code.
 
 
-### Multi-Factor Authentication
+### SSH Public Keys
+
+SSH public key authentication secures remote access by using a cryptographic key pair.
+
+- Sign-in requires a username, private key, and passphrase for the private key.
+- The private key is not a password for the user but is used to decrypt the authentication process.
+- The public key is stored on the server, and the private key is stored on the admin device.
+- Commonly used in Linux servers for secure, passwordless login.
+
+
+### Characteristic-based
+
+Characteristic-based authentication relies on unique, measurable physical or behavioral traits for identity verification.
+
+- Fingerprint 
+- Retina
+- Iris
+- Facial
+- Voice 
+- Vein 
+- Gait analysis (how you walk)
+
+It also has the following efficacy rates:
+
+- False acceptance rate (incorrectly accepting an unauthorized user).
+- False rejection rate (incorrectly rejecting an authorized user).
+- Crossover error rate (the point where false acceptance and false rejection rates are equal).
+
+## Multi-Factor Authentication
 
 Multifactor Authentication (MFA) is a security system that requires more than one method of a authentication from independent categories of credentials to verify the user's identity. 
 
@@ -138,7 +176,7 @@ Factors:
   - IP address verification, geolocation, GPS tracking
   - Access can be restricted based on a user's location
 
-### Types of MFA 
+Types of MFA:
 
 - **Single-Factor Authentication**
   - Using a single authentication factor to access a user account
@@ -153,18 +191,7 @@ Factors:
   - Using two or more factors for authentication
   - The more factors used, the safer it is, but the more complex it becomes 
 
-### Token-based Authentication 
-
-- **Synchronous**
-  - Generates codes at fixed intervals without a server challenge.
-  - Security token produces a new code every 30 seconds.
-  - Server and token stay synchronized for code expectations.
-
-- **Asynchronous**
-  - Does not generate codes at fixed intervals.
-  - Requires a server challenge for each code.
-
-### Password-less Authentication 
+## Password-less Authentication 
 
 Provides improved security and a more user-friendly experience.
 
@@ -190,7 +217,7 @@ Provides improved security and a more user-friendly experience.
   - Integrates with browser or OS
   - Can also user biometrics as login method 
 
-### Best Practices
+## Best Practices
 
 Implement at least two of the three common authentication techniques for better security.
 
