@@ -12,6 +12,26 @@ last_update:
 
 Wireless attacks target vulnerabilities in wireless networks to disrupt service or gain unauthorized access.
 
+## Jamming and Interference
+
+Jamming and interference occur when a strong or disruptive signal overwhelms a wireless network, making communication difficult or impossible.
+
+- Denial of Service attacks are easy on wireless networks by flooding the airwaves
+- The radio spectrum is open but limited, making it vulnerable to interference
+- The loudest signal dominates, overpowering legitimate transmissions
+
+## War Driving
+
+War driving involves searching for Wi-Fi networks by driving around with software that detects and collects data on nearby networks.
+
+- War drivers use software to capture information like network names and security types
+- This data can be combined with GPS to map the locations of Wi-Fi networks
+
+Common tools:
+
+- iStumbler
+- wigle.net
+
 ## Deauthentication and Deassociation
 
 Deauthentication and deassociation attacks force devices to disconnect from a wireless network.
@@ -57,3 +77,10 @@ Evil Twin attacks involve setting up a rogue access point that mimics a legitima
 - Users unknowingly connect to the rogue access point.
 - Allows attackers to capture sensitive information like passwords and emails.
 - Often used in phishing attacks to steal login credentials.
+
+Karma toolkit: 
+
+- Automates the evil twin process
+- Searches for adjacent networks
+- Creates a matching fake network
+- Redirects traffic to phony sites and captures credentials

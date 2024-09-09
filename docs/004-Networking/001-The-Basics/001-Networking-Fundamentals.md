@@ -50,6 +50,7 @@ Widely adopted for its easy deployment and cost-effectiveness, wireless networki
 - **Security Considerations**
     - Despite its benefits, wireless networks introduce additional vulnerabilities. Unlike wired networks, intrusions can occur remotely, without physical access to the network.
 
+For more information, please see [Wireless Networking.](/docs/004-Networking/001-The-Basics/060-Wireless-Networking.md)
 
 ![](/img/docs/security-wifi.png)
 

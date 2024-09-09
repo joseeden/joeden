@@ -1,7 +1,7 @@
 ---
 title: "Wireless Security"
 description: "Securing wireless infrastructure"
-tags: [Security, Cybersecurity, Security Architecture, Security Engineering]
+tags: [Security, Cybersecurity, Security Architecture, Security Engineering, Wireless]
 sidebar_position: 60
 last_update:
   date: 1/30/2024
@@ -12,9 +12,11 @@ last_update:
 
 Wireless infrastructure security is crucial for protecting networks from unauthorized access and cyber threats. Effective security measures ensure the integrity, confidentiality, and availability of wireless communications. 
 
-### Wireless Access Points
+### Securing WAPs
 
-Wireless access points (WAPs) are essential components in wireless networks, providing connectivity for various devices. Securing them is critical for protecting the network against unauthorized access and potential attacks.
+Wireless access points (WAPs) extend a wireless network's coverage by broadcasting a signal from a wired connection. For more information, please see [WAPs.](/docs/004-Networking/001-The-Basics/060-Wireless-Networking.md)
+
+To secure WAPs:
 
 - Implement strong encryption protocols (WPA3) to secure wireless communications.
 - Regularly update firmware to protect against vulnerabilities.
@@ -106,7 +108,7 @@ When deploying multiple wireless access points in an ESS configuration, interfer
 
 ### Site Survey
 
-Conducting a site survey is essential for optimizing the placement and configuration of wireless access points. It helps identify potential interference sources, assess signal strength, and ensure comprehensive coverage.
+Conducting a site survey is important for optimizing the placement and configuration of wireless access points. It helps identify potential interference sources, assess signal strength, and ensure comprehensive coverage.
 
 - Evaluate physical environment and identify obstacles.
 - Measure existing signal strength and coverage areas.
@@ -163,11 +165,11 @@ Wi-Fi discovery and mapping involve techniques used to locate and document the p
 
 ## Wireless Security Settings 
 
-Implementing robust security settings is essential for protecting wireless networks from unauthorized access and attacks. Key security protocols and settings include WPA3, AAA, RADIUS, and EAP.
+Key security protocols and settings include WPA3, AAA, RADIUS, and EAP.
 
-### Wireless Encryption
+### WEP and WPA
 
-Wireless encryption nad cryptographic protocols protect wireless networks and safeguarda it from unauthorized access by securing data from interception.
+Wireless encryption and cryptographic protocols protect wireless networks and safeguards it from unauthorized access by securing data from interception.
 
 - **WEP (Wired Equivalent Privacy)**
   - Outdated 1999 wireless security standard, meant to match wired LAN security.
@@ -276,7 +278,7 @@ Wi-Fi Protected Setup (WPS) is a network security standard that aims to simplify
 
 Methods: 
 
-- Push Button Method - Users press a physical button on the router to connect devices.
-- PIN Method - Involves entering an 8-digit PIN, which is susceptible to brute-force attacks.
-- NFC Method - Connects devices via Near Field Communication; easier access but limited security.
+- **Push Button Method** - Users press a physical button on the router to connect devices.
+- **PIN Method** - Involves entering an 8-digit PIN, which is susceptible to brute-force attacks.
+- **NFC Method** - Connects devices via Near Field Communication; easier access but limited security.
 

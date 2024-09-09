@@ -42,6 +42,7 @@ Some devices connect to the network wirelessly via Wireless Access Points (WAPs)
 
 </div>
 
+For more information, please see [WAPs.](/docs/004-Networking/001-The-Basics/060-Wireless-Networking.md)
 
 ## Routers
 
