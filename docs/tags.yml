@@ -358,6 +358,10 @@ Database Design:
   label: 'Database Design'
   permalink: '/Database Design'
   description: 'Docs related to Database Design'     
+SQLite:
+  label: 'SQLite'
+  permalink: '/SQLite'
+  description: 'Docs related to SQLite' 
 Wireless:
   label: 'Wireless'
   permalink: '/Wireless'
