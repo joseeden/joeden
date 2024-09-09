@@ -11,9 +11,6 @@ last_update:
 
 The Principle of Least Privilege dictates that users or programs should be granted the minimum access essential to fulfill their functions. Access is restricted to the specific systems and programs required for their designated job or tasks.
 
-
-## PAM  
-
 To ensure confidentiality, integrity, and availability of information, the Principle of Least Privilege is employed through **Privileged Acces Management**. Users receive access only to essential items, limiting exposure.
 
 - **Access Control Examples**
@@ -38,18 +35,7 @@ To ensure confidentiality, integrity, and availability of information, the Princ
 
 ## Use Case 
 
-This example emphasizes the importance of PAM in enhancing security by transitioning from static to just-in-time access. 
-
-**Key Points**
-
-- **Static Privileges**
-    - Continuous 24/7 access with full privileges.
-    - Security relies on the login process.
-
-- **Just-in-Time PAM**
-    - Role-based subset privileges triggered on-demand.
-
-The scenario at ABC, Inc., highlights the risks of excessive privileges leading to a ransomware attack and underscores the need for controlled access.
+Excessive privileges leading to a ransomware attack and underscores the need for controlled access.
 
 - **Excessive Privileges**
   - IT department's inclusion in Domain Admins group.
@@ -58,6 +44,16 @@ The scenario at ABC, Inc., highlights the risks of excessive privileges leading 
 - **Damage Limitation**
   - Administrator privileges used selectively.
   - Routine tasks performed with standard access, reducing potential harm.
+
+To enhance security, we can transition from static to just-in-time access. 
+
+- **Static Privileges**
+    - Continuous 24/7 access with full privileges.
+    - Security relies on the login process.
+
+- **Just-in-Time PAM**
+    - Role-based subset privileges triggered on-demand.
+
 
 
 ## Privileged Accounts
@@ -92,7 +88,7 @@ Mitigating risks tied to privileged accounts involves strict access control and 
   - Privileged users require additional layers of authentication.
   - Explore just-in-time identity for specific access needs.
 
-**Trust Verification**
+- **Trust Verification**
   - Background checks, nondisclosure agreements, and policies.
   - Financial investigations with periodic updates for privileged accounts.
 
@@ -147,15 +143,15 @@ Authentication ensures the subject's legitimacy, and authorization determines th
 
 Provisioning new user accounts or altering privileges is essential in various scenarios:
 
-- **New Employee Onboarding:**
+- **New Employee Onboarding**
     - Hiring manager requests new user ID creation from the security administrator.
     - Request specifies access levels, with potential need for additional authorization.
   
-- **Change of Position:**
+- **Change of Position**
     - Employee promotion triggers adjustments in permissions and access rights.
     - New role defines added privileges, and unnecessary access is revoked.
 
-- **Separation of Employment:**
+- **Separation of Employment**
     - Upon termination, accounts are disabled, adhering to company policy.
     - Disabled accounts may be retained for a period before deletion for audit trail integrity.
     - Removal from security roles and access profiles prevents unauthorized data access.
