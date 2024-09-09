@@ -9,57 +9,9 @@ last_update:
 
 
 
-
-## Identity Proofing
-
-Process of verifying the identity of the user before the account is created.
-
-- Checking user details against a trusted source of data
-- Request user to provide some sort of identification
-
-## Account Review 
-
-Account review is a process used to verify that employees have the necessary privileges considering their roles within the organization
-  - Verifies employees' privileges align with their roles within the organization.
-  - Periodically examines and updates permissions for relevance and necessity.
-  - Mitigates privilege creep, preventing unnecessary access accumulation.
-  - *Reference:* ISC2 Study Guide, Module 1, under Privileged Access Management.
-
-**Re-provisioning**
-
-  - Reassigns privileges to an employee who has changed roles within the organization.
-
-**Account Revocation**
-
-  - Process of revoking access privileges for a specific user account.
-
-
-
-## Provisioning 
-
-Creating new user accounts, assigning them appropriate permissions, and providing users with access to the systems 
-
-## Deprovisioning 
-
-Removing an individual's access rights when the rights is no longer required, such as when they move to a different team or when they leave the company. 
-
-## Permission/Authorization Creep 
-
-Occurs when user gains more and more rights during their career progression in the company.
-
-
-
 ## User Account Control 
 
-A mechanism designed to ensure that actions requiring administrative rights are explicitly authorized by the user.
-
-- Similar to a security checkpoint
-- When a user tries to install a software, a pop will appear prompting him to enter an admin user and password.
-
-
-## Privilege creep 
-
-Privilege creep occurs when an individual accumulates access rights beyond what is necessary for their current job responsibilities, often as a result of changing roles within an organization.
+A mechanism designed as a security checkpoint to ensure that actions requiring administrative rights are explicitly authorized by the user. When a user tries to install a software, a pop will appear prompting him to enter an admin user and password.
 
 ## Decentralized Access Control
 
@@ -75,17 +27,10 @@ Example:
 - Varying access controls between departments pose security risks.
 - Inconsistencies may lead to unauthorized access, breaches, and challenges in auditing.
 
-## Self-service Password Reset
-
-- Decreases help desk cases related to password changes.
-- Allows users to reset passwords without help desk assistance.
-- Reduces help desk workload, increases user autonomy.
-
-
 ## Password Security  
 
 Measures the password's ability to resist guessing and brute-force attacks.
-For more information, please see [Common Security Policies.](../001-Security-and-Risk-Management/070-Security-Policies.md#password-policy) 
+For more information, please see [Common Security Policies.](/docs/005-Cybersecurity/001-Security-and-Risk-Management/070-Security-Policies.md#password-policy) 
 
 ## Sensitivity 
 
@@ -93,9 +38,7 @@ Sensitivity is also defined as the measure of the importance assigned to informa
 
 ## Non-repudiation
 
-Non-repudiation is a legal term that refers to protecting against false denial of a specific action by an individual.
-
-  - Determines whether an individual performed actions like creating, approving, or sending/receiving information.
+Non-repudiation is a legal term that refers to protecting against false denial of a specific action by an individual. It determines whether an individual performed actions like creating, approving, or sending/receiving information.
 
 - **Relevance in E-commerce**
   - Crucial in the context of e-commerce and electronic transactions.
