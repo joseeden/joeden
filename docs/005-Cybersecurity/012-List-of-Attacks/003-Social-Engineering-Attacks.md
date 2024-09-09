@@ -41,12 +41,19 @@ Redirecting users from legitimate websites to malicious ones without their knowl
 
 ## Watering Hole Attack
 
-Considered as a passive attack, Watering Hole attacks target websites that are frequently visited by a specific group of users, such as employees of a company or members of a community.
+Considered as a passive attack, **Watering Hole attacks** target websites that are frequently visited by a specific group of users, such as employees of a company or members of a community.
 
 - Exploits vulnerabilities in these websites to launch phishing attacks against the targeted group.
 - Often used to compromise organizations by infecting their employees' devices or stealing sensitive information.
 - Mimics the behavior of predators waiting near water sources to ambush prey, hence "watering hole" attack.
   
+**How it works:**
+
+1. Identify and compromise a highly targeted website.
+2. Choose a client exploit and bundle a botnet.
+3. Place the malware on the compromised website.
+4. Wait for infected systems to connect to the botnet.
+
 **Mitigations:**
 
 - Regularly updating website software
