@@ -111,7 +111,7 @@ Wireless encryption and cryptographic protocols protect wireless networks and sa
   - Latest standard with AES GCMP encryption.
   - Introduces SAE and enhanced cryptographic protocols.
 
-For more information, please see [Wireless Encryption.](/docs/005-Cybersecurity/003-Security-Architecture/060-Wireless-Security.md#wireless-encryption)
+For more information, please see [Wireless Encryption.](/docs/005-Cybersecurity/003-Security-Architecture/060-Wireless-Security.md#wep-and-wpa)
 
 
 ## Wireless Authentication 
