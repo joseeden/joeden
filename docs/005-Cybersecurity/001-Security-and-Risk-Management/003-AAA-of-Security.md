@@ -91,13 +91,14 @@ In addition to OTPs, there are Knowledge-based authentication can also be in the
     ![](/img/docs/sec+-windows-credential-manager.png)
 
   
-### Certificate-based 
+### Certificate-based
 
-Certificate-based uses PKI certificates whichare issued by a trusted authority to an individual entity. It can be stored in a smart card. 
+Certificate-based authentication relies on Public Key Infrastructure (PKI) certificates, which are issued by a trusted Certificate Authority (CA) to verify the identity of an individual or device. These certificates ensure secure communication and authentication.
 
-- add more info
-- add more info
-- **Common Access Card** - can authenticate to everything.
+- Certificates are typically stored on devices like smart cards or in secure storage.
+- Certificate are validated against a trusted CA and ensuring it hasn’t been revoked.
+- Used for secure access to systems, encrypted communication, and digital signatures.
+- **Common Access Card** – A widely used smart card that can authenticate a user to multiple systems and services, providing both identification and authentication.
 
 ### Token-based
 
@@ -190,6 +191,15 @@ Types of MFA:
 - **Multi-Factor Authentication**
   - Using two or more factors for authentication
   - The more factors used, the safer it is, but the more complex it becomes 
+
+:::info[NOTE]
+
+When implementing MFA, make sure that the factors used are not the same. 
+Prompting the user to enter a password and a passphrase are both **something you know**.
+
+:::
+
+
 
 ## Password-less Authentication 
 

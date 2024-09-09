@@ -25,13 +25,14 @@ PAP (Password Authentication Protocol) is a basic authentication protocol that h
 - Legacy use, common in older systems where security measures were less advanced.
 - Offers minimal protection against attacks such as eavesdropping.
 
-## CHAP 
+## CHAP
 
-add simple 1-2 sentence explanation 
+CHAP (Challenge Handshake Authentication Protocol) is a more secure authentication method compared to PAP, using a challenge-response process to avoid transmitting passwords in plaintext.
 
-- add more info
-- add more info
-- add more info
+- The server sends a random challenge to the client.
+- The client responds with a hash value created from the challenge and the user's password.
+- The server compares the received hash with its own calculated hash to authenticate the user.
+- Repeated challenges during a session reduce the risk of replay attacks.
 
 ## MS-CHAPv2 
 
