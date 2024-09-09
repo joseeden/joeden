@@ -76,57 +76,7 @@ Social Engineering refers to tenetshe manipulation of individuals or groups to g
 
 ## Attacks 
 
-For more information, please see [Cyber Threats and Attacks.](../011-Threats-and-Attacks/050-Attacks.md)
-
-- **Website Redirection**
-
-    - Redirecting users from legitimate websites to malicious ones without their knowledge or consent.
-
-- **Watering Hole Attack**
-
-    - Targeting websites that are frequently visited by a specific group of users, such as employees of a company or members of a community.
-
-- **Adversarial Artificial Intelligence**
-
-    - AI systems designed to deceive, manipulate, or exploit vulnerabilities in other AI systems or human users.
-
-- **Spam**
-
-    - Mass mailing of unsolicited messages.
-
-
-- **Phishing**
-
-    - Sending deceptive emails or messages to trick recipients into divulging personal information or clicking malicious links.
-
-- **Typosquatting**        
-
-    - Attacker registers a domain name similar to a popular website.
-    - The "copycat" usually contains some kind of common typographical errors.
-    - Goal is to victimize users who might accidentally mistype a URL.
-    - Example: Registering "gnail.com" to impersonate gmail.com
-
-## Fraud and Scams
-
-- **Identity Fraud**
-  - Unauthorized use of someone else's personal information.
-  - Often for financial gain.
-  - Can lead to financial losses and damage to credit history.
-
-- **Identity Theft**
-  - Stolen personal information used without consent.
-  - Can involve impersonation, financial fraud, or accessing bank accounts.
-  - Can result from various methods like phishing, data breaches, or physical theft.
-
-- **Scams**
-  - Fraudulent schemes or deceptive practices.
-  - Designed to trick individuals or organizations.
-  - Common types include lottery scams, romance scams, and investment scams.
-
-- **Invoice Scam**
-  - Fake or fraudulent invoices for goods or services not ordered or received.
-  - Often appear legitimate with logos and contact information.
-  - Scammers impersonate suppliers to request payment for fictitious products or services.
+For more information, please see [Social Engineering Attacks.](/docs/005-Cybersecurity/012-List-of-Attacks/003-Social-Engineering-Attacks.md)
 
 ## Influence Campaigns
 

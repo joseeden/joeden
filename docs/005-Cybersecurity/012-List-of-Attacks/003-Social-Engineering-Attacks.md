@@ -1,5 +1,5 @@
 ---
-title: "Social Engineering"
+title: "Social Engineering Attacks"
 tags: [Cybersecurity]
 sidebar_position: 3
 last_update:
@@ -7,6 +7,21 @@ last_update:
 ---
 
 
+## Overview 
+
+Social Engineering refers to tenetshe manipulation of individuals or groups to gain confidential information or unauthorized access to systems, often exploiting psychological vulnerabilities.
+
+- Creates familiarity with the target or victims.
+- Creating a sense of urgency to pressure people.
+
+## Overlap with Impersonation Attacks 
+
+Social engineering and impersonation attacks share similarities, as both exploit trust and deception to manipulate individuals. 
+
+- **Social Engineering** often uses psychological tactics to gain trust. 
+- **Impersonation Attacks** specifically involve pretending to be someone else to deceive victims into revealing sensitive information or granting unauthorized access.
+
+Both techniques rely on convincing the victim that the attacker is a legitimate authority or trusted individual,  and it is often done through phone calls, emails, or face-to-face interactions.
 
 ## Website Redirection
 
@@ -53,11 +68,12 @@ Spam refers to mass mailing of unsolicited messages.
 - Usually used to promote products or services or collect information.
 - Can also be used to trick users into clicking links.
 
+Another form of spam is **spims** which is basically just spam sent over instant messaging and SMS.
+
 ## Phishing
 
-Sending deceptive emails or messages to trick recipients into divulging personal information or clicking malicious links.
+Sending deceptive emails or messages to trick recipients into divulging personal information or clicking malicious links. Common technique used is to intentionally deceive people to create a sense of urgency or legitimacy.
 
-- Intentionally deceiving people to create a sense of urgency or legitimacy.
 - **Smishing** - Phishing through SMS text messages.
 - **Vishing** - Phishing over the phone or through call.
 - **Spear Phishing** - Targeted phishing on certain individuals.
@@ -71,3 +87,32 @@ Attacker registers a domain name similar to a popular website. The "copycat" dom
 - Can trick users pretty easily, if they're not looking carefully at the URL.
 - Example: Registering "gnail.com" to impersonate gmail.com
 
+## Pharming 
+
+A pharming attack redirects users from legitimate websites to malicious ones by compromising DNS settings or the website itself.
+
+- Often involves poisoning the DNS cache to reroute traffic.
+- Users may unknowingly enter sensitive data, such as login credentials, on fake sites.
+- Difficult to detect as the malicious sites often appear identical to the real ones.
+
+## Fraud and Scams
+
+- **Identity Fraud**
+  - Unauthorized use of someone else's personal information.
+  - Often for financial gain.
+  - Can lead to financial losses and damage to credit history.
+
+- **Identity Theft**
+  - Stolen personal information used without consent.
+  - Can involve impersonation, financial fraud, or accessing bank accounts.
+  - Can result from various methods like phishing, data breaches, or physical theft.
+
+- **Scams**
+  - Fraudulent schemes or deceptive practices.
+  - Designed to trick individuals or organizations.
+  - Common types include lottery scams, romance scams, and investment scams.
+
+- **Invoice Scam**
+  - Fake or fraudulent invoices for goods or services not ordered or received.
+  - Often appear legitimate with logos and contact information.
+  - Scammers impersonate suppliers to request payment for fictitious products or services.
