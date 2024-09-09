@@ -62,33 +62,47 @@ The scenario at ABC, Inc., highlights the risks of excessive privileges leading 
 
 ## Privileged Accounts
 
-Privileged accounts extend beyond regular user permissions, catering to diverse roles such as systems administrators, IT support, security analysts, and project-specific teams. Delegated authority must align with trustworthiness, as misuse can harm the organization.
+Privileged accounts extend beyond regular user permissions, catering to diverse roles such as systems administrators, IT support, security analysts, and project-specific teams. 
 
-**Classes of Privileged Users**
+### Classes of Privileged Users
+
+Privileged users have varied responsibilities depending on their role.
+
 - Systems administrators: Oversee OS, applications, and performance.
 - Help desk/IT support: Manage endpoints, servers, and applications.
 - Security analysts: Quick access to IT infrastructure and data.
 
-**Delegation Considerations**
-- Authority delegated aligns with trustworthiness.
-- Contingent on preventing misuse or abuse.
+### Delegation Considerations
 
-**Risk Mitigation Measures**
+When delegating authority, it's important to ensure alignment with the user's level of trust.
+
+- Delegated authority should match the user’s trustworthiness.
+- Measures should focus on preventing misuse or abuse of privileges.
+
+
+### Risk Mitigation Measures
+
+Mitigating risks tied to privileged accounts involves strict access control and monitoring.
+
 - **Detailed Logging**
-  - Crucial for deterrent and administrative control.
-- **String  ent Access Control**
-  - Nonprivileged users require MFA.
-  - Additional authentication for privileged users.
+  - Essential for tracking actions and enforcing administrative controls.
+
+- **Stringent Access Control**
+  - Nonprivileged users should use MFA.
+  - Privileged users require additional layers of authentication.
   - Explore just-in-time identity for specific access needs.
 
 **Trust Verification**
-- Background checks, nondisclosure agreements, and policies.
-- Financial investigations with periodic updates for privileged accounts.
+  - Background checks, nondisclosure agreements, and policies.
+  - Financial investigations with periodic updates for privileged accounts.
 
-**Audit Enhancement**
+### Audit Enhancement
+
+Privileged accounts require stronger audit measures to ensure proper use.
+
 - **Monitoring and Auditing**
-  - Intensive monitoring for privileged accounts.
-  - Increased audit frequency and depth compared to regular users.
+  - Privileged accounts need more frequent and detailed monitoring.
+  - Audit logs should be regularly reviewed with increased scrutiny compared to standard accounts.
 
 ## Segregation of Duties 
 
@@ -113,8 +127,6 @@ Separation of duties ensures that sensitive administrative tasks are split among
 
 ## Authorized Versus Unauthorized Personnel
 
-**Authorization Process Overview:**
-
 Authentication ensures the subject's legitimacy, and authorization determines their allowed actions. This is typically governed by a security matrix indicating pre-approved access levels.
 
 - **Example: Physical Access Control**
@@ -132,8 +144,6 @@ Authentication ensures the subject's legitimacy, and authorization determines th
     - Displays error message and retains file if unauthorized.
 
 ## How Users Are Provisioned
-
-**User Account Provisioning and Changes:**
 
 Provisioning new user accounts or altering privileges is essential in various scenarios:
 
