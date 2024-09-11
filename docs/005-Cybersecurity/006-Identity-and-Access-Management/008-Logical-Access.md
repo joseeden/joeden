@@ -19,14 +19,14 @@ These electronic tools play an important role in restricting logical access to a
 
 ## Discretionary Access Control (DAC)
 
-Discretionary Access Control (DAC) is an access control policy governing subjects and objects in an information system. 
+Discretionary Access Control (DAC) is an access control policy that allows users to assign access permissions to other users. The owners of files, computers, and other resources have the discretion to configure permissions as they see fit. This is the most common form of access controls because they provide the organization with needed flexibility.
 
+- Assigns permissions based on data owners' decisions
 - Share information with other subjects or objects
 - Grant its privileges to other subjects
 - Modify security attributes on various entities
 - Define security attributes for newly created or revised objects
 - Adjust rules governing access control (with restrictions in mandatory access controls)
-- Assigns permissions based on data owners' decisions
 
 ### DAC in the Workplace
 

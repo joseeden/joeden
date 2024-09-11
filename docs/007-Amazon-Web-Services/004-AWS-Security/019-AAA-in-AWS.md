@@ -187,8 +187,10 @@ AWS supports two types of identity providers:
 - **SAML 2.0 based federation**
 
     - You can use your existing Active Directory.
-    - SAML stands for Security Assertion Markup Language
-    - Allows for the exchange of security data, including authentication authorization tokens to take place between an identity provider and a service provider.
+    - SAML stands for Security Assertion Markup Language.
+    - Allows for the exchange of security data.
+    - Includes authentication authorization tokens to take place between an identity provider and a service provider.
+    - For more information, please see [SAML.](/docs/005-Cybersecurity/003-Security-Architecture/021-Identity-Federation.md#saml)
 
 
 ### Identity Federation Standards

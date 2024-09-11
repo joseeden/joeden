@@ -269,7 +269,7 @@ Active Directory Federation Service or ADFS provides the SSO and identity broker
 
 ### SAML 2.0
 
-Open standard that enables the exchange of identity information between providers and applications. This also enables the SSO in AWS accounts.
+Open standard that enables the exchange of identity information between providers and applications. This also enables the SSO in AWS accounts. For more information, please see [SAML.](/docs/005-Cybersecurity/003-Security-Architecture/021-Identity-Federation.md#saml)
 
 ### Two-way trust
 
