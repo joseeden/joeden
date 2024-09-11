@@ -128,6 +128,40 @@ The level of identity proofing can vary between organizations.
 - Fingerprinting
 - Background checks 
 
+
+
+## Account Management Tasks 
+
+Information security professionals are also responsible for performing account and privilege management tasks. These tasks includes implementing the following:
+
+- **Principle of Least Privilege**
+
+  - Grant users the minimum access essential to fulfill their function.
+  - For more information, please see [Principle of Least Privilege](/docs/005-Cybersecurity/006-Identity-and-Access-Management/005-IAM-Concepts.md#principle-of-least-privilege).
+
+- **Separation of Duties**
+
+  - Sensitive functions should require action by two separate users.
+  - For more information, please see [Separation of Duties](/docs/005-Cybersecurity/006-Identity-and-Access-Management/005-IAM-Concepts.md#segregation-of-duties).
+
+- **Job Rotation**
+
+  - Regularly move people between jobs to prevent fraud
+  - This provides teams with a diverse set of experiences
+  - Allows personnel to experience different aspects of the organization.
+
+- **Mandatory Vacation Policies**
+
+  - Requiring staff to take a number of vacation days per year
+  - Enforces a period of time when employees have no access to systems.
+
+- **Account Lifecycle Management** 
+
+  - Provisioning new user
+  - Modifying roles when user changes jobs
+  - Reviewing access on a regular basis and modifying discrepancies
+  - Removing access of terminated users
+
 ## Managing Accounts
 
 - **Provisioning**
@@ -166,7 +200,6 @@ The level of identity proofing can vary between organizations.
   - When user gains more and more rights during their career progression in the company.
   - often as a result of changing roles within an organization.
   - Also called as "Privilege Creep".
-
 
 ## Errors in Authentication
 
