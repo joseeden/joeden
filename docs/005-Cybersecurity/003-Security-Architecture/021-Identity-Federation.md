@@ -118,20 +118,6 @@ Protocols used:
     - Trust relationships does not automatically transfer across domains.
     - If Domain 1 trusts Domain 2, and Domain 2 trusts Domain 3, then Domain 1 and Domain 3 doesn't trust each other unless the administrator explicity creates the trust.
 
-### OAuth
-
-OAuth (Open Authorization) is a standard for token-based authentication and authorization, enabling secure interactions between services without exposing user credentials.
-
-- Allows third-party applications to access user data securely without exposing user credentials
-- Allows secure information exchange between different sites via JWT (JSON Web Tokens)
-
-How it works: 
-
-- Client app or server needs to register with authorization server
-- Authorization server provides a redirect URL +  ID + Secret
-- Token is received by the user 
-- User can use the token to access the requested resource
-
 
 ### SAML 
 
@@ -203,12 +189,38 @@ How it looks like:
 </div>
 
 
+### OAuth
+
+OAuth (Open Authorization) is a standard for token-based authorization, enabling secure interactions between services without exposing user credentials. It's not performing authentication, only authorization.
+
+- Allows third-party applications to access user data securely without exposing user credentials
+- Allows secure information exchange between different sites via JWT (JSON Web Tokens)
+
+How it works: 
+
+- Client app or server needs to register with authorization server
+- Authorization server provides a redirect URL +  ID + Secret
+- Token is received by the user 
+- User can use the token to access the requested resource
+
+
+
 ### OIDC
 
-OpenID Connect (OIDC)
+OpenID Connect (OIDC) is an identification and authentication protocol that helps users prove their identity to other services.
 
 - An authentication layer built on top of OAuth 2.0.
 - Provides additional user identity information along with authorization.
+
+:::info[NOTE]
+
+OAuth and OIDC work together. 
+OIDC is for authentication.
+OAuth if for authorization.
+
+
+:::
+
 
 ## IDaaS  
 
