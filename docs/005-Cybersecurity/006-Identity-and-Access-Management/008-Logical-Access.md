@@ -35,16 +35,18 @@ Discretionary Access Control (DAC) is an access control policy that allows users
 
 ## Mandatory Access Control (MAC)
 
-Mandatory Access Control (MAC) ensures a uniform policy across an information system, restricting specific actions to trusted security administrators. 
+Mandatory Access Control (MAC) is the most stringent type of access control. In MAC, the operating system itself restricts the permissions that can be granted to users and processes on system resources. Users cannot modify these permissions, which makes MAC systems less suitable for production environments outside of highly secure settings.
 
-Unlike Discretionary Access Control (DAC), MAC mandates access rights rather than relying on owner discretion.
+It ensures a uniform policy across an information system, restricting specific actions to trusted security administrators. 
 
-- Relies on the user's clearance and security classification 
+- Relies on the user's clearance and security classification or labels.
 - Only trusted admins modify security rules.
 - Subjects have restricted privileges.
 - Restricts granting of privileges.
 - Governs security attributes of new objects.
 - Resources are labelled and permissions are based on the assigned labels
+
+Unlike Discretionary Access Control (DAC), MAC mandates access rights rather than relying on owner discretion.
 
 ### MAC in the Workplace
 

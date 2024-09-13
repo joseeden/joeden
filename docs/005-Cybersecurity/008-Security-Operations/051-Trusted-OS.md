@@ -13,7 +13,7 @@ last_update:
 Trusted Operating Systems (TOS) are designed with enhanced security features to ensure a higher level of protection and integrity for the system. These systems are particularly suitable for environments where security is a critical concern.
 
 - Implement fine-grained access control mechanisms.
-- Use mandatory access controls (MAC) to enforce strict policies.
+- Use [mandatory access controls (MAC)](/docs/005-Cybersecurity/006-Identity-and-Access-Management/008-Logical-Access.md#mandatory-access-control-mac) to enforce strict policies.
 - Ensure the boot process is secure to prevent unauthorized changes.
 - Use cryptographic checks to validate system integrity at startup.
 - Run applications in isolated environments to limit the impact of potential breaches.
@@ -28,6 +28,7 @@ Trusted Operating Systems (TOS) incorporate advanced security features to ensure
   - Enforces strict policies that control access to resources based on security labels.
   - Prevents unauthorized users from accessing sensitive information.
   - Centralized control over security policies, reducing the risk of data breaches.
+  - For more information, please see [Mandatory Access Control (MAC)](/docs/005-Cybersecurity/006-Identity-and-Access-Management/008-Logical-Access.md#mandatory-access-control-mac)
 
 - **Security Auditing**
 

@@ -266,7 +266,7 @@ The process of measuring changes in the network, hardware, or software environme
 
 ## SELinux 
 
-SELinux (Security-Enhanced Linux) is a security module that provides mechanisms for supporting access control security policies, including mandatory access controls (MAC). It is an essential component in securing Linux systems by ensuring that applications and processes have only the necessary permissions.
+SELinux (Security-Enhanced Linux) is a security module that provides mechanisms for supporting access control security policies, including [mandatory access controls (MAC)](/docs/005-Cybersecurity/006-Identity-and-Access-Management/008-Logical-Access.md#mandatory-access-control-mac). It is an essential component in securing Linux systems by ensuring that applications and processes have only the necessary permissions.
 
 - Linux security is built on UNIX security. 
 - SELinux provides a complete and mandatory security solution.
