@@ -228,3 +228,40 @@ Note that both FAR and FRR are not good measures of the strength of an authentic
 </div>
 
 The middle point where both thresholds meet is called the **Crossover Error Rate (CER)**. This is a balanced measure of authentication strength which provides the error frequency that occurs when administrators tune the system to have equal FAR and FRR.
+
+
+## Session Management 
+
+Session Management ensures integrity of user connections by using timeouts and screensavers to disconnect user sessions that have gone idle. 
+
+- This prevents unauthorized individuals from taking control of an abandoned session.
+- Ensures accountability, preventing unintended users from using authenticated sessions
+
+
+### Timeouts 
+
+Timeouts are simple but effective security controls. They come in three different forms:
+
+1. Disconnect user sessions after a pre-determined time. 
+
+    - Easy to implement but causes user dissatisfaction. 
+    - Example: Disconnect every 2 hours 
+
+2. Disconnect user sessions after a period of inactivity. 
+
+    - Once user goes idle, system starts a timer set to a predefined value. 
+    - If no activity is detected, the system disconnects the session 
+    - Example: Disconnect after 10 minutes of inactivity  
+
+3. Require re-authentication for sensitive activities. 
+
+    - System prevents users from performing sensitive actions instead of diconnecting session
+    - Friendly approach to timeouts that is less disruptive.
+
+
+### Screensavers 
+
+Screensavers are common timeout mechanisms on workstations. Instead of disconnecting sessions after a period of inactivity, the screensaver simply activates and then requires the user to authenticate to deactivate the screensaver.
+
+- After re-authentication, user is returned to the session that was already in progress. 
+- To activate screensavers in Windows, configure it in **Control Panel** then **Appearance and Personalization**.
