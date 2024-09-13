@@ -72,8 +72,8 @@ IPSec (Internet Protocol Security) is the most famous protocol used today for es
 
 To secure the communication between two endpoints, we can utilized the following mechanisms:
 
-- Kerberos 
-- NTLMv2
+- [Kerberos](/docs/005-Cybersecurity/003-Security-Architecture/020-Authentication-Protocols.md#kerberos)
+- [NTLMv2](/docs/005-Cybersecurity/003-Security-Architecture/020-Authentication-Protocols.md#ntlm)
 - PKI Certificates 
 - Pre-Shared Key (PSK)
 

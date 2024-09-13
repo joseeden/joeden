@@ -156,7 +156,7 @@ A "pass the hash" attack involves using a hashed password to gain unauthorized a
 ### Mimikatz
 
   - An open-source tool for security testing and penetration testing.
-  - Extracts plaintext passwords, hashes, and Kerberos tickets from memory.
+  - Extracts plaintext passwords, hashes, and [Kerberos](/docs/005-Cybersecurity/003-Security-Architecture/020-Authentication-Protocols.md#kerberos) tickets from memory.
   - Enables "pass the hash" and "pass the ticket" attacks.
   - Manipulates Windows authentication tokens.
 

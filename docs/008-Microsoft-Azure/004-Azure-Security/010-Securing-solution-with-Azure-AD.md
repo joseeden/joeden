@@ -45,7 +45,7 @@ To learn more, check out [Azure Identity and Access Management (IAM)](../003-Azu
 - **Azure AD DS (Azure Active Directory Domain Services)**
     - Fully-managed domain service 
     - Enables domain-joined resources in Azure 
-    - Supports LDAP, Kerberos, and NTLM authentication 
+    - Supports [LDAP](/docs/005-Cybersecurity/003-Security-Architecture/020-Authentication-Protocols.md#ldap), [Kerberos](/docs/005-Cybersecurity/003-Security-Architecture/020-Authentication-Protocols.md#kerberos), and NTLM authentication 
     - Useful for lift-and-shift scenarios  
     - Integrates with existing Azure AD tenant for user sign-in and control
     - Scalability and Disaster recovery with multiple replica sets in different Azure regions
@@ -126,7 +126,7 @@ These are roles that are not confined to a particular service but strethc their 
 Pros:
 
 - Simplified domain service without managing domain controllers 
-- Supports LDAP, Kerberos, and NTLM authentication 
+- Supports [LDAP](/docs/005-Cybersecurity/003-Security-Architecture/020-Authentication-Protocols.md#ldap), [Kerberos](/docs/005-Cybersecurity/003-Security-Architecture/020-Authentication-Protocols.md#kerberos), and NTLM authentication 
 - Integrates with existing Azure AD tenant for user sign-in and control
 - Enables domain-joined resources in Azure 
 - Scalability and Disaster recovery with multiple replica sets in different Azure regions
