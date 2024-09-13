@@ -210,5 +210,23 @@ OpenID Connect (OIDC)
 - An authentication layer built on top of OAuth 2.0.
 - Provides additional user identity information along with authorization.
 
+## IDaaS  
 
+Identity as a Service (IDaas) providers allow organizations to move some or all their IAM to the cloud, eliminating the need for employing costly and hard-to-find IAM specialists. DaaS started by offering SSO for web-based services. These services integrate with two different types of platforms to help organizations improve their IAM infrastructure:
 
+- **Directory Integration**
+
+  - Synchronize with an organization's existing directory to obtain user information.
+  - Existing directory service could be on-premise Active Directory or LDAP, or Cloud-based directory service.
+  - Information is synced in real time, allowing organizations to quickly provision/deprovision users.
+
+- **Application Integration** 
+
+  - Replace authentication for many SaaS products, simplifies user and administration experience.
+  - Users don't need to manage different accounts for each of the services.
+  - The organization won't need to invest in building and maintaining authentication integration. 
+
+Before proceeding with an IDaaS approach, organization must consider the following:
+
+- Does product satisfy business requirements for IAM?
+- Has a thorough security review been done on the product under consideration?
