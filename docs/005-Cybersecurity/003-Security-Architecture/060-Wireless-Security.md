@@ -235,7 +235,7 @@ AAA (Authentication, Authorization, and Accounting) is a framework used in netwo
 - Authorization: Grants access based on permissions.
 - Accounting: Monitors and logs user activities for security auditing.
 
-For more information, please see [AAA of Security](../001-Security-and-Risk-Management/003-AAA-of-Security.md)
+For more information, please see [AAA of Security](/docs/005-Cybersecurity/001-Security-and-Risk-Management/003-AAA-of-Security.md)
 
 ### RADIUS
 
@@ -244,7 +244,7 @@ RADIUS (Remote Authentication Dial-In User Service) is a protocol used for netwo
 - Widely used to manage network access for employees, contractors, and guests.
 - Enhances security by providing a secure method for authentication.
 
-For more information, please see [RADIUS](../003-Security-Architecture/020-Authentication-Protocols.md#radius)
+For more information, please see [RADIUS](/docs/005-Cybersecurity/003-Security-Architecture/020-Authentication-Protocols.md#radius)
 
 ### TACACS+
 
@@ -254,7 +254,7 @@ TACACS+ (Terminal Access Controller Access-Control System Plus) separates the fu
 - This level of separation permits the distinct handling of each component across different services.
 - Uses TCP and encrypts authentication for improved security over older AAA protocols.
 
-For more information, please see [TACACS+](../003-Security-Architecture/020-Authentication-Protocols.md#tacacs)
+For more information, please see [TACACS+](/docs/005-Cybersecurity/003-Security-Architecture/020-Authentication-Protocols.md#tacacs)
 
 
 ### EAP 
@@ -265,7 +265,7 @@ EAP (Extensible Authentication Protocol) is a flexible authentication framework 
 - Facilitates secure access in enterprise networks.
 - Commonly used in wireless networks for enhanced security.
 
-For more information, please see [EAP Variants](../003-Security-Architecture/020-Authentication-Protocols.md#eap)
+For more information, please see [EAP Variants](/docs/005-Cybersecurity/003-Security-Architecture/020-Authentication-Protocols.md#eap)
 
 ### WPS
 

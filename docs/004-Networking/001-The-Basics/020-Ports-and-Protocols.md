@@ -178,7 +178,7 @@ Port security works in two modes:
 - Common in corporate environments to enhance security.
 - Uses authentication mechanisms such as RADIUS and TACACS+.
 
-### Components of 802.1X 
+#### Components of 802.1X 
 
 - **Supplicant** 
   - Client device trying to connect.
@@ -190,17 +190,19 @@ Port security works in two modes:
 - **Authentication Server**  
   - Usually RADIUS, performs authentications
 
-**Authentication Mechanisms**
+#### Authentication Mechanisms
 
 - **RADIUS** 
   - Cross-platform
   - Does NOT support remote access protocol, NetBIOS, or X.25 PAD connections
   - Ideal for mixed network infrastructure.
+  - For more information, please see [RADIUS](/docs/005-Cybersecurity/003-Security-Architecture/020-Authentication-Protocols.md#radius)
 
 - **TACACS+**
   - Cisco-proprietary protocol
   - Slower, relies on TCP, but adds security
   - Supports all networking protocols
+  - For more information, please see [TACACS+](/docs/005-Cybersecurity/003-Security-Architecture/020-Authentication-Protocols.md#tacacs)
 
 ### EAP
 

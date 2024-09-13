@@ -85,7 +85,7 @@ Examples:
 - PKI certificate authentication
 - Smart card authentication
 
-## EAP Variants 
+### EAP Variants 
 
 All variants are considered cross-platform, except for LEAP. 
 
@@ -163,33 +163,72 @@ RADIUS (Remote Authentication Dial-In User Service) is a networking protocol tha
 - Used to control access to network services in enterprise environments.
 - Supports various authentication methods, such as username/password and certificates.
 
-Components:
-
-- **RADIUS Supplicants** - devices trying to authenticate to RADIUS
-- **RADIUS Clients** - edgepoint devices, not devices authenticating to RADIUS
-    - Ethernet switches 
-    - WIFI routers 
-    - VPN appliances
-
 Variations:
 
   - TACACS
   - TACACS+
   - XTACACS
 
-How it works:
+### Disadvantages 
 
-  - If edge point device (like a router) is IEEE 802.1x compliant, it will handover the authentication to RADIUS server.
-  - Note that the router has limited memory, so it's useful to handoff the authentication.
-  - The router will not be storing the credentials as well.
+RADIUS has couple of downsides:
 
-    ![](/img/docs/sec+-radius-diagram-how-it-works.png)
+- RADIUS relies on UDP, which has reduced reliability.
+- Provides cryptographic protection for the password, but does not encrypt the entire authentication sequence.
+
+### Authentication 
+
+Successful authentication: 
+
+<div class='img-center'>
+
+![](/img/docs/authentication-protocols-radius-sample-diagramsss.png)
+
+</div>
+
+If password is incorrect: 
+
+<div class='img-center'>
+
+![](/img/docs/authentication-protocols-radius-sample-diagramsss-unsuccesful.png)
+
+</div>
+
+
+### Components
+
+In a RADIUS architecture, several key components work together to ensure secure network access:
+
+- **RADIUS Supplicants** 
+
+  - Devices trying to authenticate to RADIUS
+  - End-user, application server
+
+- **RADIUS Clients** 
+
+  - Edgepoint devices, not devices authenticating to RADIUS
+  - Ethernet switches, WIFI routers, VPN appliances
+
+### How RADIUS works
+
+RADIUS operates by delegating authentication tasks from edge devices to the RADIUS server:
+
+- If edge point device (like a router) is IEEE 802.1x compliant, it will handover the authentication to RADIUS server.
+- Note that the router has limited memory, so it's useful to handoff the authentication.
+- The router will not be storing the credentials as well.
+
+  ![](/img/docs/sec+-radius-diagram-how-it-works.png)
 
 ## TACACS+
 
-TACACS+ (Terminal Access Controller Access-Control System Plus) is a protocol used for centralizing authentication, authorization, and accounting management for users who access network services.
+TACACS+ (Terminal Access Controller Access-Control System Plus) is a protocol used for centralizing authentication, authorization, and accounting management for users who access network services. 
 
 - Provides separate access control, accounting, and authentication services.
 - Typically used for managing remote access to network devices like routers and switches.
 - Enhances security by centralizing management of user credentials and access controls.
-- Similar to RADIUS, but allows for more detailed control over AAA functions.
+
+TACACS+ is an alternative to RADIUS, since it performas similar functions but with some improvements:
+
+- Uses a reliable TCP connection instead of a less-reliable UDP
+- Allows for more detailed control over AAA functions
+- Fully encrypts the entire authentication session 
