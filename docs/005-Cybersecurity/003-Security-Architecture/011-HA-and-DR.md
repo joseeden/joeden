@@ -109,7 +109,7 @@ Design systems with duplicate components for backup in case of failure.
 Failover involves establishing an alternate location, such as a secondary data center or cloud infrastructure, where critical business functions can continue in case the primary site becomes unavailable due to a disaster or incident.
 
 
-### Disaster Recovery Sites 
+### DR Sites 
 
 - **Hot Site**
 
@@ -146,11 +146,19 @@ Failover involves establishing an alternate location, such as a secondary data c
     - Virtual Warm Site - Partially replicated and scalable
     - Virtual Cold Site - Minimal activation to minimize costs
 
-### Disaster Recovery Tests 
+### DR Tests 
 
+- **Read-through Exercises**
+
+  - Simplest form of DR test, also known as **checklist reviews.**
+  - Each team member reviews their roles in the DR process.
+  - Personnel provides feedbacks about any updates needed.
+  - Evaluates procedures and protocols, not technical recovery aspects.
 
 - **Tabletop Exercises**
 
+  - Also known as **walk-throughs,** tabletop involves getting everyone aroung the same table.
+  - Achieve same results as read-throughs, but are generally more effective.
   - Focuses on assessing procedures and protocols rather than technical recovery.
   - Presenting a scenario, prompting team members to discuss and plan their responses.
   - **Least impact on system operations** - does not involve actual disruption or cost-effective.
@@ -159,6 +167,7 @@ Failover involves establishing an alternate location, such as a secondary data c
 
   - Computer-generated representations of real-world scenarios.
   - Provides a realistic scenario to assess practical incident handling.
+  - Still a theoretical exercise to gather all possible respond to a a specific disaster.
 
 - **Failover Test**
 
@@ -167,6 +176,7 @@ Failover involves establishing an alternate location, such as a secondary data c
 
 - **Parallel Test**
 
+  - Activates the DR plan, bringing up a hot or warm site.
   - Runs primary and alternate processing facilities simultaneously.
   - Primary site continues normal operations while alternate site processes backup transactions.
   - Evaluates compatibility and backup system support.
@@ -174,15 +184,12 @@ Failover involves establishing an alternate location, such as a secondary data c
 
 - **Full Interruption Test**
 
+  - Most effective test, but its also has most impact to operations
   - Shuts down primary site, relies entirely on the alternate site.
   - More disruptive and costly compared to a parallel test.
 
-- **Checklist Reviews**
 
-  - Evaluates procedures and protocols, not technical recovery aspects.
-
-
-### Disaster Recovery Plan
+### DR Plan
 
 Organizations often maintain diverse documents for different audiences in their Disaster Recovery Planning (DRP) efforts. These include:
 
