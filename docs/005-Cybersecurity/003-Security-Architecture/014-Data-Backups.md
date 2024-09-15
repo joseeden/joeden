@@ -33,7 +33,6 @@ Data Backup involves creating duplicate copies of critical data and storing them
 
 ## Data Recovery Process 
 
-
 1. **Selection of Backup**
    - Identify the most recent and relevant backup.
    - Ensure backup integrity and completeness.
@@ -96,3 +95,23 @@ Data Backup involves creating duplicate copies of critical data and storing them
   - Involves storing data in an offsite cloud environment.
   - Enhances data accessibility and provides a secure offsite backup solution.
 
+
+## Validating Backups
+
+Validating backups is important to ensure they are completed successfully and that critical business operations can continue in the event of a disaster. Without proper validation, backups may fail unnoticed, risking data loss and downtime.
+
+- **Built-in Backup Verification Mechanisms**
+  - Use software's built-in verification
+  - Enable it, if it is not on by default.
+  - Review backup logs for errors or warnings.
+  - Log any backup failures as incidents in the ITSM system for follow-up.
+
+- **Regularly Test Backups**
+  - Perform simple restoration tests to verify backup integrity.
+  - Schedule regular full restore drills to ensure backups work in real scenarios.
+  - Document and analyze test results to improve future processes.
+
+## Resources 
+
+- [What are the 3 types of backup?](https://iosafe.com/data-protection-topics/3-types-of-backup/)
+- [How to Back Up Your Computer](https://www.nytimes.com/wirecutter/guides/how-to-back-up-your-computer/)

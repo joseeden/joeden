@@ -56,7 +56,5 @@ NVMe drives connect directly to the motherboard via an expansion slot, providing
 
 Data loss from hard drive failures is a common issue. To prevent this, it's essential to back up your data regularly. This means copying or saving your data to another location to avoid losing it in case of a hard drive crash. 
 
-Here are some useful links on how to back up your data:
+For more information, please see [Data Backups](/docs/005-Cybersecurity/003-Security-Architecture/014-Data-Backups.md)
 
-- [What are the 3 types of backup?](https://iosafe.com/data-protection-topics/3-types-of-backup/)
-- [How to Back Up Your Computer](https://www.nytimes.com/wirecutter/guides/how-to-back-up-your-computer/)

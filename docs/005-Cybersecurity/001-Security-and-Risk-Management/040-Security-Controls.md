@@ -146,7 +146,6 @@ Compensating controls offer alternative methods to meet security requirements wh
 Corrective security controls are measures used to address security vulnerabilities or weaknesses already identified. Backups, patches, and Disaster Recovery Plans are all corrective security controls (see ISC2 Study Guide, chapter 3, module 2). 
 
 - Backups can help ensure that important information is not lost in the event of an incident. 
-
 - Patches can help fix vulnerabilities and improve security. 
 - Disaster Recovery Plans are administrative security controls that establish the corrective measures to be implemented in case of a disaster. 
 
