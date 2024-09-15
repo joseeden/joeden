@@ -96,16 +96,16 @@ Kerberos operates through a series of steps that ensure secure communication and
 
 3. The AS looks up the user in its database and replies to the client with the following:
 
-  - Random session key 
-  
-    - Used for future communication between client and ticket-granting server
-    - Encrypted with client's password  
+    - Random session key 
+    
+      - Used for future communication between client and ticket-granting server
+      - Encrypted with client's password  
 
-  - Ticket granting ticket. 
+    - Ticket granting ticket. 
 
-    - Includes information of the client
-    - Includes a copy of the client ticket-granting server's (TGS) session key
-    - Encrypted using a key known only to the ticket-granting server 
+      - Includes information of the client
+      - Includes a copy of the client ticket-granting server's (TGS) session key
+      - Encrypted using a key known only to the ticket-granting server 
 
 
 4. The client decrypts the session key using the user’s password, gaining access to the client-TGS session key.

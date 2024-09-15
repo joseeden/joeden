@@ -265,3 +265,33 @@ Screensavers are common timeout mechanisms on workstations. Instead of disconnec
 
 - After re-authentication, user is returned to the session that was already in progress. 
 - To activate screensavers in Windows, configure it in **Control Panel** then **Appearance and Personalization**.
+
+
+## NTFS Permissions
+
+NTFS (New Technology File System) permissions are used to control access to files and folders on Windows systems. These permissions specify what actions users or groups can perform on a specific file or directory. Below are the common NTFS permissions:
+
+- **Full Control**  
+  
+  - Grants complete access to the file or folder.
+  - Allows the user to read, write, modify, and delete the file or folder.
+  - Users with full control can also change permissions and take ownership.
+
+- **Read**  
+  
+  - Allows the user to view the contents of the file or folder. 
+  - The user can open the file for reading, but cannot modify or delete it.
+
+- **Read & Execute**  
+  
+  - Allows the user to read the contents of a file or folder and execute programs or scripts within the folder.
+
+- **Write**  
+  
+  - Enables the user to write data to the file or folder, including creating new files and modifying existing files. 
+  - However, it does not include the ability to delete files.
+
+- **Modify**  
+  
+  - Combines the permissions of Read, Write, and Read & Execute. - 
+  - Additionally, it allows the user to delete files and make changes to existing content.
