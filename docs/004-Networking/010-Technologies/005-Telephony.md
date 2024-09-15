@@ -7,7 +7,7 @@ last_update:
   date: 1/30/2024
 ---
 
-## Telephony
+## Overview
 
 Telephony refers to the technology that allows for voice communication over distances. It includes traditional landline systems, mobile networks, and modern digital methods like VoIP.
 
