@@ -20,13 +20,13 @@ Cloud computing involves accessing and utilizing computing resources and service
 - Software Analytics 
 - Intelligence
 
-For more information, please see [The Basics.](../../006-Cloud-Computing/001-Cloud-Foundations/001-The-Basics.md)
+For more information, please see [The Basics.](/docs/006-Cloud-Computing/001-Cloud-Foundations/001-The-Basics.md)
 
 ## Virtualization 
 
 Virtualization involves creating virtual instances of computing resources, such as servers, storage devices, or networks, to maximize resource utilization and flexibility.
 
-For more information, please see [Virtualization](../../002-IT-Foundations/040-Virtualization.md)
+For more information, please see [Virtualization](/docs/002-IT-Foundations/040-Virtualization.md)
 
 
 ## Containerization 

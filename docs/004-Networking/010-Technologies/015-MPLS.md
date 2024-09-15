@@ -19,9 +19,8 @@ MPLS (Multiprotocol Label Switching) is a high-performance method for directing 
 
 MPLS uses fixed paths determined by the first router in the path. The first MPLS router that encounters a packet attaches a label to the packet corresponding to a fixed path to the final destination. Subsequent routers read the label and forward the packet without performing additional lookups.
 
-![](/img/docs/networking-tech-mpls-core-network-how-it-worksss.png)
 
-## MPLS as Tunnels
+## MPLS Tunnels
 
 MPLS can be viewed as creating virtual tunnels between points in the network, using labels to guide traffic.
 
@@ -42,6 +41,9 @@ MPLS can be viewed as creating virtual tunnels between points in the network, us
 
 The MPLS tunnel between the LER and the Egress Node may pass through several LSRs. These intermediate routers do not need to perform complex lookups, as they only need to read the label and forward the packet to the next router, ensuring a faster and more efficient data flow.
 
+![](/img/docs/networking-tech-mpls-core-network-how-it-worksss.png)
+
+
 ## MPLS Routing Protocols
 
 MPLS relies on specific routing protocols to manage label distribution and ensure efficient data flow. There are two primary MPLS routing protocols:
@@ -53,7 +55,7 @@ MPLS relies on specific routing protocols to manage label distribution and ensur
    - Commonly used for standard deployments where traffic engineering is not required.
 
 - **Reservation Resource Protocol - Traffic Engineering (RSVP-TE)**  
-- 
+
    - Advanced traffic engineering, reservES resources along the MPLS path.
    - Ensures specific paths are available for critical traffic
    - Optimizes bandwidth usage

@@ -81,4 +81,4 @@ VSANs provide isolated virtual storage networks within a physical SAN infrastruc
 
 - Enable private, segmented storage networks within a shared physical SAN.
 - Enhance security by isolating traffic between different storage environments.
-- Allowa multiple virtual networks on the same physical infrastructure.
+- Allows multiple virtual networks on the same physical infrastructure.
