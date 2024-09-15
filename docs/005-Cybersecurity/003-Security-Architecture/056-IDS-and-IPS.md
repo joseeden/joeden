@@ -31,13 +31,14 @@ Intrusion Detection Systems (IDS) and Intrusion Prevention Systems (IPS) are bot
 
 ## Positives and Negatives
 
+In security, understanding the different outcomes of detection systems is important to ensure accurate threat identification and response.
+
 - **False Negative** - An attack occurs but is not detected, allowing it to proceed unnoticed.
 - **False Positive** - Legitimate activity is incorrectly flagged as malicious, triggering unnecessary alerts.
 - **True Positive** - A real attack is correctly identified and flagged by the IDS.
 - **True Negative** - Normal, non-malicious activity is correctly identified as safe, with no alerts triggered.
 
 For more information, please see [Analyzing Vulnerabilities](/docs/005-Cybersecurity/008-Security-Operations/020-Vulnerability-Management.md#analyzing-vulnerabilities)
-
 
 ## Types of IDS/IPS
 

@@ -28,7 +28,7 @@ Multiple sessions active from different locations for a single user account.
 Legitimate content being blocked by security mechanisms.
 
 - Access to safe websites or services is denied.
-- Frequent false positives by security filters.
+- Frequent [false positives](/docs/005-Cybersecurity/008-Security-Operations/020-Vulnerability-Management.md#analyzing-vulnerabilities) by security filters.
 - Users reporting inability to access necessary resources.
 
 ## Impossible Travel
