@@ -77,7 +77,7 @@ Code reviews involve examining the source code to identify and address security 
 - Detects potential vulnerabilities before the code is deployed.
 - Improves code quality and reduces the risk of security flaws.
 
-Mature organizations integrate pper-based code reviews into their software promotion and release processes. They also use design reviews to vet development plans prior to creating code.
+For more information, please see [Code Reviews](/docs/005-Cybersecurity/003-Security-Architecture/061-Application-Security.md#code-review)
 
 ### Architecture Reviews
 
