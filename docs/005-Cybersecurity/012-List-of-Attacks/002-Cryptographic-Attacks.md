@@ -155,17 +155,20 @@ A "pass the hash" attack involves using a hashed password to gain unauthorized a
 
 ### Mimikatz
 
-  - An open-source tool for security testing and penetration testing.
+Mimikatz is an open-source tool for security testing and [penetration testing](/docs/005-Cybersecurity/007-Assessment-and-Testing/067-Penetration-Testing.md).
+
   - Extracts plaintext passwords, hashes, and [Kerberos](/docs/005-Cybersecurity/003-Security-Architecture/020-Authentication-Protocols.md#kerberos) tickets from memory.
   - Enables "pass the hash" and "pass the ticket" attacks.
   - Manipulates Windows authentication tokens.
 
-### Common Use Cases of Mimikatz
+Common Use Cases:
 
   - Used by penetration testers to assess security on Windows systems.
   - Often exploited by hackers for unauthorized access.
 
 ### Mitigations
+
+Mitigations:
 
   - Apply multi-factor authentication.
   - Keep Windows systems updated with security patches.

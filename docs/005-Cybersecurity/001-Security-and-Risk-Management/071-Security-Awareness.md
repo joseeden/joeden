@@ -177,7 +177,7 @@ Lastly, organizations also need to think about the frequency of their training e
 
 ## Incident Response Exercises
 
-For more information about Incident Response, please see [Incident Response Plan.](../009-Incident-Response/001-Incident-Responses.md)
+For more information about Incident Response, please see [Incident Response Plan.](/docs/005-Cybersecurity/009-Incident-Response/001-Incident-Responses.md)
 
 
 ### Walk-Through Exercise
@@ -197,7 +197,7 @@ For more information about Incident Response, please see [Incident Response Plan
 - Simulate network intrusion based on threat scenarios.
 - There's a **specific goal in mind.**
 - Agree on methodology and rules of engagement before performing pentests.
-- For more information, please see [Penetration Testing.](../007-Assessment-and-Testing/067-Penetration-Testing.md)
+- For more information, please see [Penetration Testing.](/docs/005-Cybersecurity/007-Assessment-and-Testing/067-Penetration-Testing.md)
 
 ### Simulation Exercise
 

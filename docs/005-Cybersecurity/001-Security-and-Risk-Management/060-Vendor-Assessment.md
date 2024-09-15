@@ -36,6 +36,8 @@ Penetration Testings are simulated cyberattacks against the supplier's system to
 - If a vulnerability is found, this could indicate that the supplier's software could be a risk to your systems.
 - The goal is to validate the service provider, since their risks could become the company's risks.
 
+For more information, please see [Penetration Testing.](/docs/005-Cybersecurity/007-Assessment-and-Testing/067-Penetration-Testing.md)
+
 ## Review the Contracts 
 
 When reviewing the contracts, you should verify that you have the **right to audit clause** included in the contract. This will grant your organization the right to evaluate vendor's internal processes and ensure that they're in compliance with the agreed upon standards.

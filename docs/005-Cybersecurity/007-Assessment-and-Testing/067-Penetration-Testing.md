@@ -17,12 +17,7 @@ Penetration Testing is a simulated cyber attack that helps in the assessment of 
 - Normally triggers IDS/IPS alerts. If it doesn't, then this should also be reported.
 - There's a **specific goal in mind.**
 
-Types:
-
-- Physical Pentesting
-- Offensive Pentesting
-- Defensive Pentesting
-- Integrated Pentesting
+## Types of Pentesting
 
 ### Physical Pentesting
 

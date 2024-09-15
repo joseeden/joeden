@@ -123,7 +123,7 @@ Risk assessments scheduled at regular intervals, such as annually or semi-annual
 
 - Normally part of an organization's standard operating procedures.
 - Ensures risks are continually identified and managed effectively
-- An example is a recurring penetration testing.
+- An example is a recurring [penetration testing](/docs/005-Cybersecurity/007-Assessment-and-Testing/067-Penetration-Testing.md).
 
 ### One-Time 
 
