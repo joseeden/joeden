@@ -129,7 +129,7 @@ Failover involves establishing an alternate location, such as a secondary data c
 
   - Basic facility with power and cooling.
   - Requires significant time to become operational.
-  - No hardware, software, data, personnel
+  - **No hardware, software, data, personnel**
   - Longest switchover, but cheapest option.
 
 - **Mobile Site**
