@@ -128,21 +128,7 @@ User and Entities Behavior Analytics (UEBA) extends the principles of traditiona
 
 Software Defined Networking (SDN) is a networking approach that centralizes network control, enabling programmability and automation for improved network management and efficiency.
 
-- **Data Plane**
-  - Handles the **actual forwarding of data** packets within the network.
-  - Performs packet switching or routing based on instructions received from the control plane.
-  - Consists of switches, routers, and other network devices.
-
-- **Control Plane**
-  - Centralized controller that manages the behavior of the data plane.
-  - Responsible for **making forwarding decisions** and configuring network devices.
-  - Uses software-based algorithms and protocols to communicate with network devices.
-
-- **Application Plane**
-  - Interfaces with the control plane to define network policies and configurations.
-  - Enables network administrators to deploy applications for specific network functions.
-  - Examples include network monitoring, security, and traffic optimization applications.
-
+For more information, please see [Software Defined Networking](/docs/004-Networking/010-Technologies/050-SDN.md)
 
 
 

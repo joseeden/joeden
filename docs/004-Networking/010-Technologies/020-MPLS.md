@@ -2,7 +2,7 @@
 title: "MPLS"
 description: "Networking Technologies"
 tags: [Networking, Networking Technologies]
-sidebar_position: 10
+sidebar_position: 20
 last_update:
   date: 1/30/2024
 ---
