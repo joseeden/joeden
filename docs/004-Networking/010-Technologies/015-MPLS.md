@@ -1,5 +1,5 @@
 ---
-title: "MPLS
+title: "MPLS"
 description: "Networking Technologies"
 tags: [Networking, Networking Technologies]
 sidebar_position: 10
@@ -7,43 +7,54 @@ last_update:
   date: 1/30/2024
 ---
 
-## MPLS 
-
-Add simple explanation intro 
-
-- add more info
-- add more info
-- add more info
-
-MPLS uses fixed paths determined by the first router in the path. The first MPLS router that encounters the packet will attach a label to the packet that corresponds to a fixed path to the final destination. Other routers in the path simply reads the label on the packet and use that label to determine where the packet should go next without performing any lookups. 
 
 
-## MPLS as Tunnels 
+## Overview
 
-Add simple explanation intro 
+MPLS (Multiprotocol Label Switching) is a high-performance method for directing data through a network. Instead of relying on traditional IP routing, MPLS uses labels to create predetermined paths for data packets, improving speed and efficiency.
 
-- Label Edge Router (LER) is the first router, and is in charged of ...
-- Label Switching Router (LSR) ...
-- There could be multiple LSRs...
-- The final destination router is known as the Egress Node, removes labels...  
+- Efficiently routes traffic by avoiding complex lookups at every router.
+- Used widely in service provider networks for delivering voice, video, etc.
+- Supports Quality of Service (QoS); allows prioritization of certain traffic.
 
-The MPLS tunnel between LER and the Egress Node is actually comprised of one or more LSRs that are selected by the LER when it attaches the label. These LSRs don't need to know much and they simply need to look at the label in the packet and then send the label to the next, until it reaches the EGress node. 
+MPLS uses fixed paths determined by the first router in the path. The first MPLS router that encounters a packet attaches a label to the packet corresponding to a fixed path to the final destination. Subsequent routers read the label and forward the packet without performing additional lookups.
 
+![](/img/docs/networking-tech-mpls-core-network-how-it-worksss.png)
 
-## MPLS Routing Protocols 
+## MPLS as Tunnels
 
+MPLS can be viewed as creating virtual tunnels between points in the network, using labels to guide traffic.
 
-Add simple explanation intro ..... There are two MPLS routing protocols: 
+- **Label Edge Router (LER)**  
 
-- Label Distribution Protocol 
+   - The first router in the MPLS path
+   - Responsible for determining the path and attaching a label to the packet
+  
+- **Label Switching Router (LSR)**  
 
-    - add more info
-    - add more info
-    - add more info 
+   - Routers along the MPLS path that simply read the label
+   - Then forwards the packet to the next LSR
+  
+- **Egress Node** 
+ 
+   - The final destination router
+   - Removes the label once the packet has reached its destination.
 
-- Reservation Resource Protocol - Traffic Engineering (RSVP-TE)
+The MPLS tunnel between the LER and the Egress Node may pass through several LSRs. These intermediate routers do not need to perform complex lookups, as they only need to read the label and forward the packet to the next router, ensuring a faster and more efficient data flow.
 
-    - add more info
-    - add more info
-    - add more info 
+## MPLS Routing Protocols
 
+MPLS relies on specific routing protocols to manage label distribution and ensure efficient data flow. There are two primary MPLS routing protocols:
+
+- **Label Distribution Protocol (LDP)**  
+
+   - Responsible for distributing labels between routers.
+   - Ensures routers along the path have the correct labels for packet forwarding.
+   - Commonly used for standard deployments where traffic engineering is not required.
+
+- **Reservation Resource Protocol - Traffic Engineering (RSVP-TE)**  
+- 
+   - Advanced traffic engineering, reservES resources along the MPLS path.
+   - Ensures specific paths are available for critical traffic
+   - Optimizes bandwidth usage
+   - Used in scenarios where Quality of Service (QoS) and traffic prioritization are important.
