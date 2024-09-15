@@ -17,7 +17,6 @@ A Public Cloud model is where a vendor makes available use of shared infrastruct
 
 - It makes sense from a design perspective to host your infrastructure as close to the geographical region as your customers or end users are, as this will provide the best overall performance for them. 
 
-
 As a general rule, you can access your services on the Public Cloud from anywhere as long as you have an internet connection. 
 
 ## Private Cloud 

@@ -68,6 +68,31 @@ Multiple computers and multiple storage devices are grouped together to work as 
 
 ## Disaster Recovery
 
+### The Goal of Disaster Recovery
+
+Disaster recovery capabilities are designed to restore business to normal operations as quickly as possible. 
+
+- Initial response is to contain the damage caused by the disaster.
+- Recover whatever capacity may be immediately restored.
+- Activities may vary widely depending upon the nature of the disaster.
+
+During disaster recovery efforts, the focus shifts from normal business activity to a concentrated effort to restore operations.
+
+- Employee responsibilities may change temporarily.
+- Flexibility is key during a disaster response.
+- Organizations should plan out responsibilities in advance.
+- Employees should be provided training in advance.
+
+After the immediate danger passes, the team shifts to assessment mode. The goal of this phase is to triage the damage to the organization and develop a plan to recover operations on a permanent basis.
+
+
+:::info[NOTE]
+
+Disaster Recovery efforts only end when the business is back to operating normally in its primary facility. 
+
+:::
+
+
 ### Redundancy
 
 Design systems with duplicate components for backup in case of failure.
@@ -77,19 +102,12 @@ Design systems with duplicate components for backup in case of failure.
 - Backup power sources include batteries and generators.
 - In high-availability environments, generators should be redundant and fueled by different sources.
 
-
 ![](/img/docs/security-datacenter-redundancy.png)
 
 ### Failover 
 
 Failover involves establishing an alternate location, such as a secondary data center or cloud infrastructure, where critical business functions can continue in case the primary site becomes unavailable due to a disaster or incident.
 
-### The Goal of Disaster Recovery
-
-- Complements Business Continuity for IT and communication service restoration
-- Guides emergency response for full recovery
-- Aims to restore to last-known reliable operations
-- Critical for overall business operation recovery
 
 ### Disaster Recovery Sites 
 
@@ -176,6 +194,9 @@ Organizations often maintain diverse documents for different audiences in their 
   - Critical disaster recovery team members
   - IT personnel
   - Managers and public relations personnel
+
+
+
 
 
 ## BC vs DR

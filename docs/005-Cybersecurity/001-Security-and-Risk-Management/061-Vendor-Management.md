@@ -132,6 +132,7 @@ Vendor questionnaires are tools used to collect detailed information from vendor
 - **Disaster Recovery Plans**
   - Review vendors' plans for disaster recovery to understand how they handle unforeseen disruptions.
   - Evaluate the effectiveness of these plans in maintaining business continuity.
+  - For more information, please see [Disaster Recovery.](/docs/005-Cybersecurity/003-Security-Architecture/011-HA-and-DR.md)
 
 
 ### Rules of Engagement

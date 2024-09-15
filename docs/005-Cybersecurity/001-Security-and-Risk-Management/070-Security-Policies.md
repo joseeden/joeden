@@ -36,7 +36,7 @@ Every policy should align with the organization's regulatory and contractual obl
 - Clean desk policies 
 - Shredding of sensitive documents
 - Secure personally-owned devices 
-- [MDM (Mobile Device Management)](../003-Security-Architecture/059-Mobile-Systems.md#mobile-device-management)
+- [MDM (Mobile Device Management)](/docs/005-Cybersecurity/003-Security-Architecture/059-Mobile-Systems.md#mobile-device-management)
 - BYOD (Bring your own device)
 
 **User Training:**
@@ -154,7 +154,7 @@ Focuses on how an organization will continue its critical operations during and 
 - Focuses on recovering as quickly as possible.
 - Dealing with strategies like hardware failure and natural disasters. 
 
-For more information, please see [Business Continuity.](../009-Incident-Response/010-Business-Continuity.md)
+For more information, please see [Business Continuity.](/docs/005-Cybersecurity/009-Incident-Response/010-Business-Continuity.md)
 
 ## Disaster Recovery
 
@@ -163,7 +163,7 @@ Closely related to business continuity, disaster recovery focuses on how an orga
 - Outlines steps for data backup and restoration.
 - Hardware/software recovery, as well as alternative processing locations.
 
-For more information, please see [Disaster Recovery.](../003-Security-Architecture/011-HA-and-DR.md)
+For more information, please see [Disaster Recovery.](/docs/005-Cybersecurity/003-Security-Architecture/011-HA-and-DR.md)
 
 
 ## Incident Response  
@@ -174,7 +174,7 @@ A plan for handling security incidents.
 - Can include person to contact in case of data breach. 
 
 
-For more information, please see [Incident Response.](../009-Incident-Response/001-Incident-Responses.md)
+For more information, please see [Incident Response.](/docs/005-Cybersecurity/009-Incident-Response/001-Incident-Responses.md)
 
 
 ## SDLC Policy 
@@ -202,7 +202,7 @@ Essential for transitioning from current to future states, covering:
 - Confirmation of correct implementation
 - Mitigating vulnerabilities introduced by changes
 
-For more information, please see [Asset and Change Management](../008-Security-Operations/070-Asset-and-Change-Management.md#change-management). 
+For more information, please see [Asset and Change Management](/docs/005-Cybersecurity/008-Security-Operations/070-Asset-and-Change-Management.md#change-management). 
 
 
 

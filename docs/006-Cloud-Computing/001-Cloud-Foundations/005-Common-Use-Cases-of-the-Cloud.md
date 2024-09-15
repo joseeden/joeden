@@ -34,6 +34,9 @@ For example, using Amazon Web Services S3 service, you can implement a policy to
 
 These storage services are often replicated by the vendor to ensure its durability. Couple that with a very low cost of storage, and you can see why more and more enterprises are adopting cloud computing for this very reason. 
 
+For more information, please see [Disaster Recovery.](/docs/005-Cybersecurity/003-Security-Architecture/011-HA-and-DR.md)
+
+
 ## Web Hosting
 
 Many organizations choose to host their web services on the cloud due to its ability to load balance across multiple instances as well as scale up and down quickly and automatically as traffic increases and decreases with demand. 
