@@ -43,6 +43,51 @@ A group of people responsible for supervising the organization's audit and compl
 - Ensures the organization is in compliance with legal regulatory requirements.
 - Addresses any issues raised by auditors.
 
+
+## Assessment Techniques 
+
+### Baseline Reporting
+
+Baseline reporting involves establishing a standard for system performance and security, which serves as a reference for identifying deviations and potential issues.
+
+- Provides an initial review of a system's security status.
+- Helps in tracking changes and detecting anomalies.
+- Used to ensure compliance with security policies and standards.
+
+For more information, please [Security Baselines](/docs/005-Cybersecurity/008-Security-Operations/049-Security-Baseline.md)
+
+
+
+### Attack Surface Review
+
+An attack surface review assesses all potential entry points that an attacker could exploit within a system.
+
+- Identifies and evaluates all possible vulnerabilities and exposure points.
+- Helps in prioritizing security measures based on risk.
+- Aims to reduce the number of potential attack vectors.
+
+These reviews make heavy use of port, vulnerability, and application scanners. They adopt the mindset of an attacker, seeking possible ways to exploit the system.
+
+
+### Code Reviews
+
+Code reviews involve examining the source code to identify and address security vulnerabilities and coding errors.
+
+- Ensures that code adheres to security best practices and standards.
+- Detects potential vulnerabilities before the code is deployed.
+- Improves code quality and reduces the risk of security flaws.
+
+Mature organizations integrate pper-based code reviews into their software promotion and release processes. They also use design reviews to vet development plans prior to creating code.
+
+### Architecture Reviews
+
+Architecture reviews assess the design and structure of a system to identify potential security weaknesses.
+
+- Evaluates the overall system design for security gaps and risks.
+- Ensures that security principles are integrated into the architecture.
+- Helps in identifying and addressing potential issues early in the design phase.
+
+
 ## Internal Assessments
 
 An in-depth analysis to identify and assess potential risks and vulnerabilities in an organization's information systems.

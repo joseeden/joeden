@@ -9,7 +9,7 @@ last_update:
 
 ## Overview 
 
-A security baseline is a set of basic security controls and practices that must be implemented across an organization to ensure a minimum level of security. It serves as a foundation for additional security measures and is essential for maintaining consistent security standards.
+A security baseline is a set of basic security controls and practices that ensures a minimum level of security in an organization. 
 
 - A named individual or officer is responsible for the security of devices.
 - The devices should be protected against unauthorized access attempt.

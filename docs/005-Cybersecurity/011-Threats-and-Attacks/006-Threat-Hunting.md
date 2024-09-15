@@ -16,6 +16,8 @@ A cyber security technique designed to detect presence of threat that have not b
 
 ## Phases of Threat Hunting
 
+The following are phases followed in threat hunting:
+
 - Establishing a hypothesis
 - Profiling Threat Actors and Activities
 - Actual Threat Hunting  

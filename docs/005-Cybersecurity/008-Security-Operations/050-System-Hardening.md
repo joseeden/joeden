@@ -70,7 +70,7 @@ Configuration management ensures that authorized and validated changes are the o
 
     - A security baseline is a reference point that sets the minimum accepted level of security requirements. 
     - It ensures updates adhere to essential security standards.
-    - Security baselines are used to guarantee that network devices, software, hardware and endpoints are configured consistently. 
+    - For more information, please [Security Baselines](/docs/005-Cybersecurity/008-Security-Operations/049-Security-Baseline.md)
 
 - **Change Control**   
 

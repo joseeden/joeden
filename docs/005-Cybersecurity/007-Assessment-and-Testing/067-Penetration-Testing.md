@@ -56,6 +56,18 @@ Integrated pentesting, also known as **purple teaming**, combines both offensive
 - Enhances coordination between offensive and defensive security teams.
 - Provides a thorough analysis of an organization's security posture.
 
+
+## Pentesting Environments 
+
+There are different types of pentesting environments. The classifications for these environments define the level of information available to the tester about the target system.
+
+- **White-box Testing**: Attackers have full knowledge of the environment
+- **Black-box Testing**: Attackers have no knowledge of the environment 
+- **Gray-box Testing**: Attackers have some knowledge of the environment
+
+For more information, please see [Environment Classifications.](/docs/005-Cybersecurity/007-Assessment-and-Testing/066-Reconnaisance-in-Pentesting.md#environment-classifications)
+
+
 ## Penetration Testing Process 
 
 Penetration testing is a structured approach to identifying and exploiting vulnerabilities in a system to assess its security.

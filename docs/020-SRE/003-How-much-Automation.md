@@ -80,6 +80,7 @@ last_update:
 
     - The ability to perform peer code-reviews to check quality can be enforced through tools.
     - Sample tools: Gerrit, Team Foundation Service, Crucible, Gitlab
+    - For more information, please see [Code Reviews](/docs/005-Cybersecurity/007-Assessment-and-Testing/065-Audits-and-Assessments.md#code-reviews)
 
 - **Wiki**
 
