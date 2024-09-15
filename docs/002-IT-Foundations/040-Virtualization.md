@@ -86,3 +86,12 @@ Securing VMs are almost similar with how we secure physical servers.
 - Consider VM distribution across different servers.
 - Beware of **VM Sprawl** - Provisioning VMs without proper oversight.
 - Enable encryption of the file that hosts the VM.
+
+
+## VDI 
+
+VDI (Virtual Desktop Infrastructure) allows users to access virtual desktops hosted on centralized servers, enabling remote work and centralized management.
+
+- Centralized management for easier updates and maintenance
+- Enhanced security as data is stored on central servers
+- Flexible access from multiple devices, improving mobility
