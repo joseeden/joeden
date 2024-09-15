@@ -227,7 +227,7 @@ A visitor management policy is a vital component of physical access controls, as
   - *Reference:* ISC2 Study Guide, Module 2, Physical Access Controls.
   
 
-## Considerations on Choosing an Access Control System
+## Choosing an Access Control System
 
 The following are some considerations:
 

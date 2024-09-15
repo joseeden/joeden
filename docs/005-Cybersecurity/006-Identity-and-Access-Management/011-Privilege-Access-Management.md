@@ -1,5 +1,5 @@
 ---
-title: "Privileged Access Management"
+title: "Privilege Access Management"
 description: "Implementing Principle of Least Privilege"
 tags: [Security, Cybersecurity, Access Management, Access Control, IAM]
 sidebar_position: 11
