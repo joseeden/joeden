@@ -57,18 +57,95 @@ NTLM is a Microsoft proprietary authentication protocol that has evolved over ti
 
 ## Kerberos
 
-Kerberos is a network authentication protocol that uses a ticket-based system to secure communications, widely used in enterprise environments.
+Kerberos is a ticketbased authentication system that allows users to authenticate to a centralized service and use tickets to gain access to distributed services.
 
 - Primarily used for single sign-on (SSO) in enterprise environments.
 - Commonly used in Microsoft Active Directory authentication.
 - Users are provided with a "ticket" for accessing resources securely.
 
-Components include:
+### Kerberos Components 
 
-  - Kerberos Key Distribution Center (KDC)
-  - Authentication Service (AS)
-  - Ticket-Granting Service (TGS)
-  - Ticket-Granting Ticket (TGT)
+The following components are essential for Kerberos to function:
+
+- **Kerberos Key Distribution Center (KDC)**  
+  
+  - The central authority that issues and manages security credentials.
+  
+- **Authentication Service (AS)**  
+  
+  - A part of the KDC
+  - Responsible for verifying a user's credentials and issuing a Ticket-Granting Ticket (TGT).
+  
+- **Ticket-Granting Service (TGS)**  
+  
+  - Another part of the KDC that issues service-specific tickets
+  - Allows users to access different services after their identity is authenticated.
+  
+- **Ticket-Granting Ticket (TGT)**  
+  
+  - A token that the client receives after initial authentication
+  - Allows it to request access to various services without re-entering credentials.
+
+### How Kerberos Works 
+
+Kerberos operates through a series of steps that ensure secure communication and authentication between a client and a service.
+
+1. The end user uses a Kerberos client to provide their username and password.
+
+2. The client sends a clear authentication request to an Authentication Server (AS).
+
+3. The AS looks up the user in its database and replies to the client with the following:
+
+  - Random session key 
+  
+    - Used for future communication between client and ticket-granting server
+    - Encrypted with client's password  
+
+  - Ticket granting ticket. 
+
+    - Includes information of the client
+    - Includes a copy of the client ticket-granting server's (TGS) session key
+    - Encrypted using a key known only to the ticket-granting server 
+
+
+4. The client decrypts the session key using the user’s password, gaining access to the client-TGS session key.
+
+5. To access a service, the client contacts the TGS and sends:
+
+    - A copy of the TGT and the identity of the requested service.
+
+    - An authenticator containing the client's ID and current time, encrypted with the client-TGS session key.
+
+6. The TGS decrypts the TGT to retrieve the client-TGS session key.
+
+7. Using this key, the TGS decrypts the authenticator and retrieves the client ID and timestamp.
+
+8. The TGS generates a random client-server session key for communication between the client and the service.
+
+9. The TGS sends two messages to the client:
+ 
+    - A **client-server ticket**, encrypted with the service's secret key, containing the client-server session key.
+  
+    - A copy of the client-server session key, encrypted with the client-TGS session key.
+
+10. Upon receiving these messages, the client is ready to complete the authentication process.
+
+11. The client sends the following to the service:
+
+    - The **client-server ticket** (received from the TGS).
+    - A new authenticator encrypted with the client-server session key.
+
+12. The service decrypts the client-server ticket to retrieve the session key and uses it to decrypt the authenticator, validating the client.
+
+13. Once the service validates the client, the client is granted access to the service.
+
+How it looks like: 
+
+<div class='img-center'>
+
+![](/img/docs/sec+-kerberos-diagram-how-it-works-detailed-version.png)
+
+</div>
 
 ## EAP
 
@@ -142,8 +219,22 @@ LDAP (Lightweight Directory Access Protocol) is a protocol designed for accessin
 
 Supports:
 
-  - LDAP over SSL
-  - StartTLS 
+- LDAP over SSL
+- StartTLS 
+
+Ports: 
+
+- Kerberos uses port 88 
+- LDAP uses port 389
+- Secure LDAP uses port 636 
+
+:::info[NOTE]
+
+Active Directory uses Kerberos in conjunction with LDAP.
+Kerberos handles authentication, while LDAP provides the means to query the information stored in Active Directory.
+
+:::
+
 
 ## IEEE 802.1X
 
@@ -195,7 +286,7 @@ If password is incorrect:
 </div>
 
 
-### Components
+### RADIUS Components
 
 In a RADIUS architecture, several key components work together to ensure secure network access:
 
@@ -217,7 +308,12 @@ RADIUS operates by delegating authentication tasks from edge devices to the RADI
 - Note that the router has limited memory, so it's useful to handoff the authentication.
 - The router will not be storing the credentials as well.
 
+  <div class='img-center'>
+
   ![](/img/docs/sec+-radius-diagram-how-it-works.png)
+
+  </div>
+
 
 ## TACACS+
 
