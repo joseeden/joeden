@@ -366,3 +366,7 @@ Wireless:
   label: 'Wireless'
   permalink: '/Wireless'
   description: 'Docs related to Wireless' 
+Networking Technologies:
+  label: 'Networking Technologies'
+  permalink: '/Networking Technologies'
+  description: 'Docs related to Networking Technologies' 

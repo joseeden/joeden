@@ -101,7 +101,7 @@ Kerberos operates through a series of steps that ensure secure communication and
       - Used for future communication between client and ticket-granting server
       - Encrypted with client's password  
 
-    - Ticket granting ticket. 
+    - Ticket granting ticket
 
       - Includes information of the client
       - Includes a copy of the client ticket-granting server's (TGS) session key
