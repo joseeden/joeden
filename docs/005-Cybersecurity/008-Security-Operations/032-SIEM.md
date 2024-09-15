@@ -10,7 +10,7 @@ last_update:
 
 ## Overview
 
-SIEM, or Security Information and Event Management, is a comprehensive approach to security management that combines SIM (Security Information Management) and SEM (Security Event Management) functions into a single, integrated solution.
+**SIEM** or **Security Information and Event Management**, is a comprehensive approach to security management that combines SIM (Security Information Management) and SEM (Security Event Management) functions into a single, integrated solution.
 
 SIEM can provide details such as:
 
@@ -89,7 +89,7 @@ It can also be agent-based or agent-less.
 
 ## Recommendations
 
-Recommendations: 
+It is important to establish clear procedures and use reliable tools for effective threat detection and response.
 
 - Log all relevant events and filter irrelevant data.
 - Establish and document scope of events.
