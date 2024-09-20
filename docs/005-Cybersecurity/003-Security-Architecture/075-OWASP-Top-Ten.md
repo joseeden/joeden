@@ -31,7 +31,7 @@ Reference: https://owasp.org/www-project-top-ten/
 
 3. **Cross-Site Scripting (XSS)**
    - Attackers embed scripts in third-party websites that execute in victims’ browsers  
-   - More details covered in later discussions
+   - For more information, please see [Cross-Site Scripting (XSS)](/docs/005-Cybersecurity/012-List-of-Attacks/099-Other-Attacks.md)
 
 4. **Insecure Direct Object References**
    - Developers expose internal functions without proper security checks  

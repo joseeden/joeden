@@ -40,7 +40,7 @@ Azure Application Gateway offers several powerful features designed to enhance a
 
 3. **Web Application Firewall (WAF)**
    - Provides centralized protection against common vulnerabilities and attacks.
-   - Defends against SQL injection, cross-site scripting, and other exploits.
+   - Defends against SQL injection, [cross-site scripting](/docs/005-Cybersecurity/012-List-of-Attacks/099-Other-Attacks.md), and other exploits.
 
 4. **Zone Redundancy**
    - Standard V2 Application Gateway spans multiple availability zones.

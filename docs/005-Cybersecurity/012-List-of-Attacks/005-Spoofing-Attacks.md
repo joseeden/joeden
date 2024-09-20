@@ -66,7 +66,7 @@ Cookies are important for managing state in web applications, as HTTP is a state
 - Cookies store information about users for future requests.
 - Every request from the client includes the stored cookie.
 - Encrypting cookies helps protect session data.
-- For more information, please see [Secure Cookies.](/docs/005-Cybersecurity/003-Security-Architecture/061-Application-Security.md#secure-cookies)
+- For more information, please see [Secure Cookies.](/docs/005-Cybersecurity/010-Software-Development/012-Code-Reviews.md#secure-cookies)
 
 **Types of Cookies:**
 
@@ -83,18 +83,23 @@ Cookies are important for managing state in web applications, as HTTP is a state
 
 ### Session Hijacking
 
-- Spoofing attack where host is disconnected and replaced by the attacker.
+Session hijacking is a spoofing attack where the host is disconnected and replaced by the attacker.
+
 - Occurs through theft or modification of cookies.
+- Can be performed when user is currently logged in to a web session.
 
 ### Session Prediction
 
-- Attacker attempts to predict session token to hijack the session.
-- If token is predictable, they can be guessed, attackers can take over the session.
+In session prediction, an attacker attempts to predict session token to hijack the session.
+
+- If token is predictable, they can be guessed.
+- Attackers can take over the session.
 
 ### Cookie Poisoning
 
-- Modifying the contents of the cookies to be sent to a client's browser.
-- Modified cookie can be used to exploit vulnerabilities in a web app
+Cookie poisoning involves modifying the contents of the cookies to be sent to a client's browser.
+
+- Modified cookie can be used to exploit vulnerabilities.
 
 ## Replay Attack
 

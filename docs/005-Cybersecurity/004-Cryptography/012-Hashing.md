@@ -64,30 +64,7 @@ Code signing is the process of digitally signing software code or executables to
 - Ensures the code hasn't been modified since it was signed.
 - Protects users from malicious software and unauthorized code changes.
 
-How It Works:
-
-- A software developer uses a private key to create a digital signature for their code.
-- The digital signature is attached to the code, forming a certificate.
-- A user or system uses the public key to verify the signature.
-- The public key confirms the software's source and that it hasn't been tampered with.
-
-Use Cases:
-
-- Software distribution, ensuring safe installation of programs and updates.
-- Application stores, confirming that apps meet security standards.
-- Operating systems, allowing signed drivers and system software.
-
-Common Tools:
-
-- **Certificate Authorities (CAs)**: Organizations that issue digital certificates to verify the identity of the signer.
-- **Code Signing Certificates**: Certificates issued to developers for signing their code.
-
-Challenges:
-
-- **Certificate Management**: Properly handling and securing code signing certificates.
-- **Revocation**: Handling compromised or invalid certificates.
-- **Cost**: Obtaining code signing certificates from reputable CAs can be expensive.
-
+For more information, please see [Application Security.](/docs/005-Cybersecurity/010-Software-Development/012-Code-Reviews.md#code-signing)
 
 
 ## Hash Functions 

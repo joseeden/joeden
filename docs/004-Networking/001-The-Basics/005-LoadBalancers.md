@@ -58,7 +58,7 @@ Load Balancers prevent overloading of any single resource by distributing the in
 
 - **Other Web Application Security Tasks**
 
-  - Protection against web-based attacks such as SQL injection and cross-site scripting (XSS)
+  - Protection against web-based attacks such as SQL injection and [cross-site scripting (XSS)](/docs/005-Cybersecurity/012-List-of-Attacks/099-Other-Attacks.md)
   - Monitors and analyzes traffic for suspicious behavior
   - Implements application firewalls to block unauthorized access
 
