@@ -18,6 +18,10 @@ Red Hat:
   label: 'Red Hat'
   permalink: '/Red Hat'
   description: 'Docs related to the Red Hat'
+Web:
+  label: 'Web'
+  permalink: '/Web'
+  description: 'Docs related to Web'  
 Web Servers:
   label: 'Web Servers'
   permalink: '/Web Servers'

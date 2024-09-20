@@ -21,6 +21,9 @@ Organizations assess their security programs through specific metrics to measure
 
 Security programs utilize two main types of metrics:
 
+- Key Performance Indicators (KPIs)
+- Key Risk Indicators (KRIs)
+
 ### Key Performance Indicators (KPIs)
 
 KPIs help organizations track their security program’s performance by measuring how well it achieves its objectives. They focus is on historical performance to ensure continuous improvement.

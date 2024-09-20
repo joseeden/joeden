@@ -33,48 +33,76 @@ Hypervisors are software or firmware that create and manage virtual machines (VM
 
 ## VM Vulnerabilities 
 
-- **VM Escape**
+### VM Escape
 
-    - Exploiting vulnerabilities to break out of a virtual machine's isolation.
-    - Allows unauthorized access to the host system or other VMs.
-    - *Example:* 
-        - CVE-2018-3646: A vulnerability in Intel CPUs allowed malicious code running in a virtual machine to access memory outside its allocated space, potentially compromising the host system.
-    - *Mitigation:* 
-        - Regularly update hypervisor software to patch known vulnerabilities. 
-        - Implement strict access controls and isolation techniques.
+VM escape involves exploiting vulnerabilities to break out of a virtual machine's isolation, allowing unauthorized access to the host system or other VMs.
 
-- **Privilege Escalation**
+- Exploits vulnerabilities in virtualization software.
+- Can lead to data breaches and loss of integrity.
 
-    - Elevating user privileges within a virtualized environment.
-    - Grants unauthorized access to sensitive resources or capabilities.
-    - *Example:* 
-        - CVE-2019-14849: A vulnerability in the Linux Kernel allowed users with lower privileges to escalate their privileges and gain root access within a virtual machine.
-    - *Mitigation:* 
-        - Apply operating system patches and security updates promptly. 
-        - Implement least privilege principles.
-        - Regularly audit user permissions to prevent unauthorized privilege escalation.
+**Example:**
 
-- **Live VM Migration**
+- CVE-2018-3646: A vulnerability in Intel CPUs that allowed malicious code running in a VM to access memory outside its allocated space, potentially compromising the host system.
 
-    - Intercepting data during the migration process.
-    - Potentially exposing sensitive information to unauthorized entities.
-    - *Example:* 
-        - Insecure VM migration protocols or misconfigured network settings may expose sensitive data during live VM migrations.
-    - *Mitigation:* 
-        - Encrypt data during VM migration to prevent interception. 
-        - Implement secure network configurations.
-        - Restrict access to migration interfaces.
+**Mitigation:**
 
-- **Resource Reuse**
+- Regularly update hypervisor software to patch known vulnerabilities.
+- Implement strict access controls and isolation techniques.
 
-    - Exploiting leftover resources from previously used virtual machines.
-    - Can lead to unauthorized access or data leakage.
-    - *Example:* 
-        - Residual data left in memory or storage after a VM is terminated may be exploited to access sensitive information.
-    - *Mitigation:* 
-        - Use secure deletion techniques to ensure that data remnants are properly erased. 
-        - Implement memory and disk scrubbing mechanisms to prevent residual data exploitation. 
-        - Regularly monitor and audit resource allocation to detect and mitigate resource reuse vulnerabilities.    
+
+### Privilege Escalation
+
+Privilege escalation occurs when users gain elevated privileges within a virtualized environment, granting unauthorized access to sensitive resources.
+
+- Exploits weaknesses in operating system or application configurations.
+- Can lead to unauthorized actions that compromise system security.
+- For more information, please see [Privilege Escalation.](/docs/005-Cybersecurity/012-List-of-Attacks/014-Execution-and-Escalation.md#privilege-escalation)
+
+**Example:**
+
+- CVE-2019-14849: A vulnerability in the Linux Kernel that allowed users with lower privileges to escalate their privileges and gain root access within a VM.
+
+**Mitigation:**
+
+- Apply operating system patches and security updates promptly.
+- Implement least privilege principles.
+- Regularly audit user permissions to prevent unauthorized privilege escalation.
+
+### Live VM Migration
+
+Live VM migration refers to the process of moving a VM from one host to another while it's still running, during which data can be intercepted.
+
+- Potentially exposes sensitive information to unauthorized entities.
+- Risks increase with insecure migration protocols or misconfigured networks.
+
+**Example:**
+
+- Insecure VM migration protocols may expose sensitive data during live migrations.
+
+**Mitigation:**
+
+- Encrypt data during VM migration to prevent interception.
+- Implement secure network configurations.
+- Restrict access to migration interfaces.
+
+### Resource Reuse
+
+Resource reuse involves exploiting leftover resources from previously used VMs, which can lead to unauthorized access or data leakage.
+
+- Residual data can be left in memory or storage after a VM is terminated.
+- Can lead to potential exploitation of sensitive information.
+
+**Example:**
+
+- Data remnants in memory or storage from a terminated VM may be accessed by unauthorized users.
+
+**Mitigation:**
+
+- Use secure deletion techniques to ensure that data remnants are properly erased.
+- Implement memory and disk scrubbing mechanisms to prevent residual data exploitation.
+- Regularly monitor and audit resource allocation to detect and mitigate resource reuse vulnerabilities.
+
+
 
 ## Securing VMs 
 

@@ -2,12 +2,10 @@ Networking:
   label: 'Networking'
   permalink: '/Networking'
   description: 'Docs related to Networking'
-
 Networking Technologies:
   label: 'Networking Technologies'
   permalink: '/Networking Technologies'
   description: 'Docs related to Networking Technologies'
-
 Wireless:
   label: 'Wireless'
   permalink: '/Wireless'

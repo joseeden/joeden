@@ -6,6 +6,46 @@ Version Control:
   label: 'Version Control'
   permalink: '/Version Control'
   description: 'Docs related to Version Control'  
+Git:
+  label: 'Git'
+  permalink: '/Git'
+  description: 'Docs related to Git'
+Gitlab:
+  label: 'Gitlab'
+  permalink: '/Gitlab'
+  description: 'Docs related to Gitlab'
+Github:
+  label: 'Github'
+  permalink: '/Github'
+  description: 'Docs related to Github'
+CICD:
+  label: 'CICD'
+  permalink: '/CICD'
+  description: 'Docs related to CICD'
+Infrastructure as Code:
+  label: 'Infrastructure as Code'
+  permalink: '/Infrastructure as Code'
+  description: 'Docs related to Infrastructure as Code'
+Containers:
+  label: 'Containers'
+  permalink: '/Containers'
+  description: 'Docs related to Containers'    
+Containerization:
+  label: 'Containerization'
+  permalink: '/Containerization'
+  description: 'Docs related to Containerization'
+Kubernetes:
+  label: 'Kubernetes'
+  permalink: '/Kubernetes'
+  description: 'Docs related to Kubernetes'
+Rancher:
+  label: 'Rancher'
+  permalink: '/Rancher'
+  description: 'Docs related to Rancher'
+Openshift:
+  label: 'Openshift'
+  permalink: '/Openshift'
+  description: 'Docs related to Openshift'
 Observability:
   label: 'Observability'
   permalink: '/Observability'
@@ -21,35 +61,7 @@ APM:
 Prometheus:
   label: 'Prometheus'
   permalink: '/Prometheus'
-  description: 'Docs related to Prometheus'
-Web:
-  label: 'Web'
-  permalink: '/Web'
-  description: 'Docs related to Web'
-Containers:
-  label: 'Containers'
-  permalink: '/Containers'
-  description: 'Docs related to Containers'  
-Infrastructure as Code:
-  label: 'Infrastructure as Code'
-  permalink: '/Infrastructure as Code'
-  description: 'Docs related to Infrastructure as Code'
-CICD:
-  label: 'CICD'
-  permalink: '/CICD'
-  description: 'Docs related to CICD'
-Git:
-  label: 'Git'
-  permalink: '/Git'
-  description: 'Docs related to Git'
-Gitlab:
-  label: 'Gitlab'
-  permalink: '/Gitlab'
-  description: 'Docs related to Gitlab'
-Github:
-  label: 'Github'
-  permalink: '/Github'
-  description: 'Docs related to Github'
+  description: 'Docs related to Prometheus'  
 SRE:
   label: 'SRE'
   permalink: '/SRE'

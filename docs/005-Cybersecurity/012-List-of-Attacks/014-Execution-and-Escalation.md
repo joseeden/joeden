@@ -40,6 +40,7 @@ Remote Code Execution (RCE) is an attack where an attacker exploits vulnerabilit
 
 **Mitigations:**
 
+- Limit administrative access.
 - Apply security patches and updates promptly.
 - Disable unnecessary network services.
 - Use firewalls to restrict network access.

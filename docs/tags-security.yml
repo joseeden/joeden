@@ -26,10 +26,18 @@ Data Security:
   label: 'Data Security'
   permalink: '/Data Security'
   description: 'Docs related to Data Security'   
+Application Security:
+  label: 'Application Security'
+  permalink: '/Application Security'
+  description: 'Docs related to Application Security'     
 Software Development Security:
   label: 'Software Development Security'
   permalink: '/Software Development Security'
   description: 'Docs related to Software Development Security'       
+Security Assessment:
+  label: 'Security Assessment'
+  permalink: '/Security Assessment'
+  description: 'Docs related to Security Assessment'   
 Vulnerability Management:
   label: 'Vulnerability Management'
   permalink: '/Vulnerability Management'
@@ -38,10 +46,6 @@ Penetration Testing:
   label: 'Penetration Testing'
   permalink: '/Penetration Testing'
   description: 'Docs related to Penetration Testing'   
-Security Assessment:
-  label: 'Security Assessment'
-  permalink: '/Security Assessment'
-  description: 'Docs related to Security Assessment'   
 Digital Forensics:
   label: 'Digital Forensics'
   permalink: '/Digital Forensics'
@@ -62,7 +66,6 @@ Security Engineering:
   label: 'Security Engineering'
   permalink: '/Security Engineering'
   description: 'Docs related to Security Engineering'    
-
 Security Testing:
   label: 'Security Testing'
   permalink: '/Security Testing'
@@ -75,14 +78,6 @@ IAM:
   label: 'IAM'
   permalink: '/IAM'
   description: 'Docs related to IAM'  
-Risk Management:
-  label: 'Risk Management'
-  permalink: '/Risk Management'
-  description: 'Docs related to Risk Management'
-Business Continuity:
-  label: 'Business Continuity'
-  permalink: '/Business Continuity'
-  description: 'Docs related to Business Continuity'  
 System Hardening:
   label: 'System Hardening'
   permalink: '/System Hardening'
@@ -103,3 +98,11 @@ Disaster Recovery:
   label: 'Disaster Recovery'
   permalink: '/Disaster Recovery'
   description: 'Docs related to Disaster Recovery'
+Business Continuity:
+  label: 'Business Continuity'
+  permalink: '/Business Continuity'
+  description: 'Docs related to Business Continuity'    
+Risk Management:
+  label: 'Risk Management'
+  permalink: '/Risk Management'
+  description: 'Docs related to Risk Management'  

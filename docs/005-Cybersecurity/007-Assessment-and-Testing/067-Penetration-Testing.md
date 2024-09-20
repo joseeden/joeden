@@ -104,6 +104,8 @@ In this stage, testers aim to increase their access within the system, establish
 - Install backdoors for future access if permitted.
 - Use the compromised system to access other network areas.
 
+For more information, please see [Privilege Escalation.](/docs/005-Cybersecurity/012-List-of-Attacks/014-Execution-and-Escalation.md#privilege-escalation)
+
 ### Cleanup
 
 After completing the testing, it is essential to ensure that no trace of the penetration test remains on the target system. This prevents any disruption to normal operations and maintains the integrity of the system.
