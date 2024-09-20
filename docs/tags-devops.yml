@@ -1,0 +1,76 @@
+DevOps:
+  label: 'DevOps'
+  permalink: '/DevOps'
+  description: 'Docs related to the DevOps'
+Version Control:
+  label: 'Version Control'
+  permalink: '/Version Control'
+  description: 'Docs related to Version Control'  
+Observability:
+  label: 'Observability'
+  permalink: '/Observability'
+  description: 'Docs related to Observability'
+Monitoring:
+  label: 'Monitoring'
+  permalink: '/Monitoring'
+  description: 'Docs related to Monitoring'
+APM:
+  label: 'APM'
+  permalink: '/APM'
+  description: 'Docs related to APM'
+Prometheus:
+  label: 'Prometheus'
+  permalink: '/Prometheus'
+  description: 'Docs related to Prometheus'
+Web:
+  label: 'Web'
+  permalink: '/Web'
+  description: 'Docs related to Web'
+Containers:
+  label: 'Containers'
+  permalink: '/Containers'
+  description: 'Docs related to Containers'  
+Infrastructure as Code:
+  label: 'Infrastructure as Code'
+  permalink: '/Infrastructure as Code'
+  description: 'Docs related to Infrastructure as Code'
+CICD:
+  label: 'CICD'
+  permalink: '/CICD'
+  description: 'Docs related to CICD'
+Git:
+  label: 'Git'
+  permalink: '/Git'
+  description: 'Docs related to Git'
+Gitlab:
+  label: 'Gitlab'
+  permalink: '/Gitlab'
+  description: 'Docs related to Gitlab'
+Github:
+  label: 'Github'
+  permalink: '/Github'
+  description: 'Docs related to Github'
+SRE:
+  label: 'SRE'
+  permalink: '/SRE'
+  description: 'Docs related to SRE'
+Serverless:
+  label: 'Serverless'
+  permalink: '/Serverless'
+  description: 'Docs related to Serverless'
+Automation:
+  label: 'Automation'
+  permalink: '/Automation'
+  description: 'Docs related to Automation'  
+Scrum:
+  label: 'Scrum'
+  permalink: '/Scrum'
+  description: 'Docs related to Scrum'
+Agile:
+  label: 'Agile'
+  permalink: '/Agile'
+  description: 'Docs related to Agile'
+Project Management:
+  label: 'Project Management'
+  permalink: '/Project Management'
+  description: 'Docs related to Project Management'

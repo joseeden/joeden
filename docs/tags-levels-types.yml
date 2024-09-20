@@ -1,0 +1,20 @@
+Beginner:
+  label: 'Beginner'
+  permalink: '/Beginner'
+  description: 'Docs related to Beginners'
+Intermediate:
+  label: 'Intermediate'
+  permalink: '/Intermediate'
+  description: 'Docs related to Intermediate'
+Advanced:
+  label: 'Advanced'
+  permalink: '/Advanced'
+  description: 'Docs related to Advanced'
+Labs:
+  label: 'Labs'
+  permalink: '/Labs'
+  description: 'Docs related to Labs'
+Certifications:
+  label: 'Certifications'
+  permalink: '/Certifications'
+  description: 'Docs related to Certifications'  

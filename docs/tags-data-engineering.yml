@@ -1,0 +1,44 @@
+SQL:
+  label: 'SQL'
+  permalink: '/SQL'
+  description: 'Docs related to SQL'    
+PostgreSQL:
+  label: 'PostgreSQL'
+  permalink: '/PostgreSQL'
+  description: 'Docs related to PostgreSQL'      
+NoSQL:
+  label: 'NoSQL'
+  permalink: '/NoSQL'
+  description: 'Docs related to NoSQL'     
+MongoDB:
+  label: 'MongoDB'
+  permalink: '/MongoDB'
+  description: 'Docs related to MongoDB'  
+SQLite:
+  label: 'SQLite'
+  permalink: '/SQLite'
+  description: 'Docs related to SQLite' 
+Databases:
+  label: 'Databases'
+  permalink: '/Databases'
+  description: 'Docs related to Databases'    
+Database Design:
+  label: 'Database Design'
+  permalink: '/Database Design'
+  description: 'Docs related to Database Design'      
+Big Data:
+  label: 'Big Data'
+  permalink: '/Big Data'
+  description: 'Docs related to Big Data'  
+Data Engineering:
+  label: 'Data Engineering'
+  permalink: '/Data Engineering'
+  description: 'Docs related to Data Engineering'  
+Data Science:
+  label: 'Data Science'
+  permalink: '/Data Science'
+  description: 'Docs related to Data Science'       
+Data Visualization:
+  label: 'Data Visualization'
+  permalink: '/Data Visualization'
+  description: 'Docs related to Data Visualization'     

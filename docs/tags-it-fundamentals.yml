@@ -1,0 +1,28 @@
+IT Fundamentals:
+  label: 'IT Fundamentals'
+  permalink: '/IT Fundamentals'
+  description: 'Docs related to the IT Fundamentals'
+Computers:
+  label: 'Computers'
+  permalink: '/Computers'
+  description: 'Docs related to the Computers'
+Operating Systems:
+  label: 'Operating Systems'
+  permalink: '/Operating Systems'
+  description: 'Docs related to the Operating Systems'
+Linux:
+  label: 'Linux'
+  permalink: '/Linux'
+  description: 'Docs related to the Linux'  
+Red Hat:
+  label: 'Red Hat'
+  permalink: '/Red Hat'
+  description: 'Docs related to the Red Hat'
+Web Servers:
+  label: 'Web Servers'
+  permalink: '/Web Servers'
+  description: 'Docs related to Web Servers'
+Tomcat:
+  label: 'Tomcat'
+  permalink: '/Tomcat'
+  description: 'Docs related to Tomcat'  

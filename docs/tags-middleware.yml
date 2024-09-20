@@ -1,0 +1,12 @@
+Messaging:
+  label: 'Messaging'
+  permalink: '/Messaging'
+  description: 'Docs related to Messaging'
+Integration:
+  label: 'Integration'
+  permalink: '/Integration'
+  description: 'Docs related to Integration'  
+Apache Flink:
+  label: 'Apache Flink'
+  permalink: '/Apache Flink'
+  description: 'Docs related to Apache Flink'    

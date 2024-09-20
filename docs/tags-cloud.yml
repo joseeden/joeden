@@ -1,0 +1,36 @@
+Cloud:
+  label: 'Cloud'
+  permalink: '/Cloud'
+  description: 'Docs related to Cloud'
+Cloud Migration:
+  label: 'Cloud Migration'
+  permalink: '/Cloud Migration'
+  description: 'Docs related to Cloud Migration'
+Cloud Native:
+  label: 'Cloud Native'
+  permalink: '/Cloud Native'
+  description: 'Docs related to Cloud Native'
+Cloud Architecture:
+  label: 'Cloud Architecture'
+  permalink: '/Cloud Architecture'
+  description: 'Docs related to Cloud Architecture'
+AWS:
+  label: 'AWS'
+  permalink: '/AWS'
+  description: 'Docs related to AWS'
+Microsoft Azure:
+  label: 'Microsoft Azure'
+  permalink: '/Microsoft Azure'
+  description: 'Docs related to Microsoft Azure'
+GCP:
+  label: 'GCP'
+  permalink: '/GCP'
+  description: 'Docs related to GCP'
+Google:
+  label: 'Google'
+  permalink: '/Google'
+  description: 'Docs related to Google'
+Google Cloud:
+  label: 'Google Cloud'
+  permalink: '/Google Cloud'
+  description: 'Docs related to Google Cloud'

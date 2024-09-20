@@ -1,0 +1,29 @@
+Personal Notes:
+  label: 'Personal Notes'
+  permalink: '/Personal Notes'
+  description: 'Docs related to Personal Notes'
+Development:
+  label: 'Development'
+  permalink: '/Development'
+  description: 'Docs related to Development'
+Terminal:
+  label: 'Terminal'
+  permalink: '/Terminal'
+  description: 'Docs related to Terminal'
+IDE:
+  label: 'IDE'
+  permalink: '/IDE'
+  description: 'Docs related to IDE'
+Visual Studio Code:
+  label: 'Visual Studio Code'
+  permalink: '/Visual Studio Code'
+  description: 'Docs related to Visual Studio Code'
+Docusaurus:
+  label: 'Docusaurus'
+  permalink: '/Docusaurus'
+  description: 'Docs related to Docusaurus'  
+
+ 
+    
+
+
