@@ -133,7 +133,15 @@ Vulnerability Management:
 Penetration Testing:
   label: 'Penetration Testing'
   permalink: '/Penetration Testing'
-  description: 'Docs related to Penetration Testing'      
+  description: 'Docs related to Penetration Testing'   
+Security Assessment:
+  label: 'Security Assessment'
+  permalink: '/Security Assessment'
+  description: 'Docs related to Security Assessment'    
+Security Testing:
+  label: 'Security Testing'
+  permalink: '/Security Testing'
+  description: 'Docs related to Security Testing'  
 Asset Security:
   label: 'Asset Security'
   permalink: '/Asset Security'
@@ -162,10 +170,6 @@ IAM:
   label: 'IAM'
   permalink: '/IAM'
   description: 'Docs related to IAM'  
-Security Assessment and Testing:
-  label: 'Security Assessment and Testing'
-  permalink: '/Security Assessment and Testing'
-  description: 'Docs related to Security Assessment and Testing'  
 Security Operations:
   label: 'Security Operations'
   permalink: '/Security Operations'
