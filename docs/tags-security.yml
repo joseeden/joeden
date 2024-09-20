@@ -1,0 +1,8 @@
+Penetration Testing:
+  label: 'Penetration Testing'
+  permalink: '/Penetration Testing'
+  description: 'Docs related to Penetration Testing'   
+Security Assessment:
+  label: 'Security Assessment'
+  permalink: '/Security Assessment'
+  description: 'Docs related to Security Assessment'   

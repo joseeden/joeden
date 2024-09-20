@@ -130,14 +130,14 @@ Vulnerability Management:
   label: 'Vulnerability Management'
   permalink: '/Vulnerability Management'
   description: 'Docs related to Vulnerability Management'  
-Penetration Testing:
-  label: 'Penetration Testing'
-  permalink: '/Penetration Testing'
-  description: 'Docs related to Penetration Testing'   
-Security Assessment:
-  label: 'Security Assessment'
-  permalink: '/Security Assessment'
-  description: 'Docs related to Security Assessment'    
+# Penetration Testing:
+#   label: 'Penetration Testing'
+#   permalink: '/Penetration Testing'
+#   description: 'Docs related to Penetration Testing'   
+# Security Assessment:
+#   label: 'Security Assessment'
+#   permalink: '/Security Assessment'
+#   description: 'Docs related to Security Assessment'    
 Security Testing:
   label: 'Security Testing'
   permalink: '/Security Testing'
