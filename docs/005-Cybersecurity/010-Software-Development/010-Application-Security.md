@@ -12,54 +12,6 @@ last_update:
 
 Application security focuses on protecting software applications from security threats by implementing measures to prevent, detect, and respond to vulnerabilities and attacks.
 
-## Misuse Case Testing
-
-Misuse case testing focuses on identifying and addressing potential security vulnerabilities by simulating how a system might be misused. It helps in detecting weaknesses that attackers could exploit.
-
-- Simulates malicious or unintended uses to find vulnerabilities.
-- Complements traditional testing by focusing on misuse scenarios.
-- Helps improve system resilience against abuse.
-
-The most critical step in misuse case testing is defining the test cases. Testers need to think like attackers and figure out all the ways that someone might try to undermine the security of a system. 
-
-- Ask developers: How could someone break into the system?
-- Developers who worked on the sofwtare bring an in-depth understanding.
-- Others who are not involved in the project brings fresh eyes and perspectives.
-
-Misuse case examples: 
-
-- Unexpected input (in size or format)
-- Missing input
-- Injection attacks
-- Unavailable funds
-
-## Interface Testing
-
-Interface Testing ensures that different software components or systems interact correctly and reliably. This type of testing focuses on validating the data exchanges, communication protocols, and integration points between systems.
-
-- Ensure that data sent between systems is accurate and complete.
-- Test the adherence to defined protocols and formats for communication.
-- Confirm that error messages are properly handled and communicated.
-
-### Types of Interfaces
-
-- **Application Programming Interface (API)**
-
-  - Allows different software systems to communicate programmatically
-  - Defines methods and data formats for interactions
-  - Enables integration and functionality across various applications
-
-- **User Interface (UI)**
-
-  - Involves interactions between users and software through visual elements
-  - Includes components like buttons, menus, and forms
-  - Focuses on usability, accessibility, and user experience
-
-- **Physical Interfaces**
-
-  - Connects hardware devices or hardware to software
-  - Examples include ports, connectors, and cables
-  - Facilitates data transfer and device interaction
 
 ## Input Validation
 
