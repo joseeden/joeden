@@ -63,6 +63,8 @@ Input validation is crucial for protecting applications from malicious data by e
 - Both HttpOnly and SameSite attributes to prevent XSS and CSRF attacks.
 - Limits the lifespan of cookies to minimize potential risks.
 
+
+
 ## Static Code Analysis
 
 Static code analysis, also known as **Static Application Security Testing (SAST)**, involves examining the source code for vulnerabilities without executing the program, helping to identify security flaws early in the development process.
