@@ -44,7 +44,10 @@ A **hash** is produced using a mathematical algorithm to create a unique represe
 - Hashes remain consistent over time if the file is unchanged.
 - Even minor alterations to a file will result in a completely different hash value.
 
-Hash values computed at the time of evidence collection can be recomputed during analysis to confirm consistency. This allows analysts to verify the integrity of evidence.
+Hash values computed at the time of evidence collection can be recomputed during analysis to confirm consistency. This allows analysts to verify the integrity of evidence. 
+
+For more information, please see [Hashing](/docs/005-Cybersecurity/004-Cryptography/012-Hashing.md#)
+
 
 ## Order of Volatility
 
