@@ -28,8 +28,7 @@ Components:
   - Behavioral Monitoring
   - Endpoint Monitoring
 
-
-## Monitoring Resources
+## Resource Monitoring
 
 Monitoring resources involves continuously tracking and analyzing various system and network components to ensure optimal performance and security.
 
@@ -60,6 +59,9 @@ Infrastructure monitoring involves the continuous observation and analysis of an
 - Using Solarwinds or PRTG to monitor network infrastructure.
 - Determine bandwodth utilization, network traffic, status of devices, etc. 
 - Overloaded device could mean a need for additional capacity.
+
+
+## Continuous Monitoring
 
 
 ## Alerting and Monitoring Activities 
