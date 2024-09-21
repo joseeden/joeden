@@ -10,9 +10,6 @@ last_update:
 
 ## Terminologies
 
-Understanding incident response begins with knowing the terms for various cyberattacks.
-
-
 | Terminology         | Description                                                                                                                                                                   |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------
 | **Breach**          | The loss of control or unauthorized access to personally identifiable information. (NIST SP 800-53 Rev. 5)                                                                    |
@@ -25,6 +22,7 @@ Understanding incident response begins with knowing the terms for various cybera
 | **Attacks**         | Deliberate actions or activities carried out by threat actors with the intent to exploit vulnerabilities. |
 | **Zero Day**        | An unknown system vulnerability that could be exploited without typical detection or prevention.                                                                              |
 | **Impact**          | The expected harm from unauthorized data disclosure, modification, or loss.                                                                                                   |
+
 
 ## Indicators of Compromise 
 
@@ -43,7 +41,6 @@ Indicators of Compromise (IOCs) are evidence or clues that suggest a computer sy
 
 For more information, please see [Indicators of Compromise.](../011-Threats-and-Attacks/021-Indicators-of-Compromise.md)   
 
-
 ## Goal of Incident Response
 
 The objectives of Incident Response:
@@ -58,7 +55,6 @@ The objectives of Incident Response:
 
 ## Incident Response Lifecycle
 
-
 <div class="img-center">
 
 <!-- 
@@ -70,5 +66,59 @@ The objectives of Incident Response:
 </div>
 
 
+## Incident Response Program
+
+### Security Incidents
+
+Even with preparation, security incidents can happen. Security teams must prepare by building an incident response program.
+
+- Security professionals build programs to respond to incidents.
+- NIST is a key authority for incident response guidelines.
+- Refer to NIST SP 800-61 for guidance.
+
+### Key Components
+
+The incident response plan should include several key elements.
+
+1. Incident response policy and plan documentation
+2. Procedures for incident handling and reporting 
+3. Guidelines for external communication
+4. Structure for staffing model for the team.
+5. Description of relationships with other groups.
 
 
+### Incident Response Policy
+
+The policy is the cornerstone of an effective incident response plan.
+
+- It defines the authority and scope of the incident response team.
+- Provides the basis for quick decision-making during incidents.
+- Includes a system for prioritizing incidents based on severity.
+
+### Incident Response Procedures
+
+These procedures offer specific guidance on how to handle incidents.
+
+- Incident notification 
+- Escalation 
+- Reporting 
+- System isolation 
+- Forensic analysis 
+- Evidence handling 
+
+### Communication Guidelines
+
+Clear communication is essential during an incident.
+
+- Guidelines for notifying senior leadership, public relations, and law enforcement.
+- Reporting to law enforcement can have legal and public implications.
+
+## Building the Incident Response Team
+
+A dedicated team is needed to handle incidents effectively.
+
+- Include representatives from management, security, and technical experts.
+- Ensure legal, PR, and physical security staff are involved.
+- The team must be ready to respond 24/7 with backup personnel.
+
+For more information, please see [Incident Response Teams.](/docs/005-Cybersecurity/009-Incident-Response/003-IR-Models-and-Exercises.md#incident-response-teams)

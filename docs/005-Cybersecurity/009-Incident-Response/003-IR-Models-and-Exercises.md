@@ -37,7 +37,7 @@ The hybrid incident response model integrates both internal and external resourc
 - Utilizes both in-house teams and external support as needed.
 - Offers flexibility and scalability in managing incidents effectively.
 
-## Incident Response Team
+## Incident Response Teams
 
 Establishing a Security Operations Center (SOC) necessitates the creation of an efficient incident response team. 
 
