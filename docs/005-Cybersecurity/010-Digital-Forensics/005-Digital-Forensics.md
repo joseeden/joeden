@@ -56,6 +56,76 @@ Time is crucial in digital investigations, as determining the timing of events i
 - Recording time offsets aids in later analysis.
 - Tracking is vital for client billing and resource management.
 
+## Forensics in Action 
+
+### Network Forensics
+
+Network forensics involves capturing and analyzing communications sent over a network. This helps forensic investigators piece together a suspect's digital interactions.
+
+- Sent as digital signals (ones and zeros) over various media (copper, fiber-optic, wireless).
+- Attackers can tap cables, intercept wireless signals, etc.or 
+- Network devices can be compromised to capture communications.
+
+Protocol analyzers like Wireshark perform **full packet capture**, recording all network traffic for further analysis. Note that full packat captures have some limitations:
+
+- Requires significant storage capacity; impractical for long-term retention.
+- Filtering relevant data requires prior knowledge of potential forensic needs.
+- Incorrect filtering often leads to missed information after incidents.
+
+As an alternative, **Netflow** data can be used to capture high-level communication details without retaining content, reducing storage needs.
+
+- Details can include source/destination IPs, timestamps, data volumes
+- Similar to a phone bill, it provides "who talked to whom" not the specific details.
+
+
+### Software Forensics 
+
+Software code can serve as crucial evidence in investigations, and software forensic techniques are employed to analyze this code for expert opinions.
+
+Major uses of software forensics:
+
+- **Resolving Intellectual Property Disputes**
+  - Scenario: 
+    -  A developer moves to a competitor.
+  - Dispute: 
+    - The former employer accuses the competitor of code theft, 
+    - The competitor claims independent development
+  - Expert Role:
+    - Forensic specialists analyze code.
+    - Determine origins and similarities.
+
+- **Identifying Origins of Malware**
+  - Analysis: 
+    - Experts compare malware with known threats for authorship.
+  - Case: 
+    - A 2016 report linked Russian hackers to specific code signatures.
+  - Challenge: 
+    - Public signatures can be spoofed, complicating attribution.
+
+### Embedded Devices Forensics
+
+Embedded devices are specialized computer systems found in various objects, both personal and industrial.
+
+- CombineS hardware and software to perform specific functions.
+- Connects to cloud services for data storage and added features.
+
+Examples of Embedded Devices:
+
+- **Modern Vehicles**
+  - Cars contain numerous embedded systems, from climate control to GPS.
+  - GPS data can track vehicle locations over time, aiding investigations.
+
+- **Smart Home Devices**
+  - Includes security systems, smart thermostats, and smart lighting.
+  - Track presence in buildings and environmental conditions.
+  - Useful for investigations (e.g., time of death).
+
+- **Smart Assistants**
+  - Devices like Amazon Alexa and Google Home gather user data and can record audio.
+  - Investigators may subpoena recordings relevant to criminal cases.
+  - Example: Bentonville murder investigation.
+
+
 
 ## Data Acquisition 
 
@@ -65,15 +135,8 @@ The method and tools used to create a forensically sound copy of the data from a
 - How to collect data, e.g. shutdown, collect while device is powered on.
 - There could be evidence loss if device is shut down.
 
-## Chain of Custody
+For more information, please see [Data Collection.](/docs/005-Cybersecurity/010-Digital-Forensics/010-Data-Collection.md)
 
-The Chain of Custody is the documented process that tracks the handling, transfer, and storage of evidence from its collection to its final presentation in court or other legal settings. 
-
-- **Documentation** - Records each step of evidence collection, transfer, and storage.
-- **Evidence Handling** - Ensures evidence is handled consistently to prevent tampering or contamination.
-- **Transfer of Evidence** - Logs when evidence changes hands, including who, when, and why.
-- **Storage Security** - Maintains secure storage of evidence to prevent unauthorized access or loss.
-- **Legal Validity** - A clear chain of custody helps ensure evidence is admissible in court by demonstrating its integrity.
 
 ## Code of Ethics 
 
