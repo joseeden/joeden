@@ -7,24 +7,44 @@ last_update:
   date: 2/5/2023
 ---
 
-## What is Agile
 
-Agile is an iterative approach to project delivery designed to quickly create something of value. Unlike traditional project management, which involves a lengthy planning phase, Agile methodologies focus on producing working, viable products in short, incremental cycles. This approach relies on customer input to rapidly launch and improve the product, ensuring that value is delivered to the customer immediately. Feedback from the customer is used from the beginning, shaping and refining the product at every stage to ensure it meets their needs.
+## The Agile Manifesto
 
-There are numerous Agile frameworks, tools, and methods that teams can experiment with and adopt for different projects. The variety of Agile implementations can be overwhelming, but the core focus remains on delivering the most value in the shortest time. This requires staying fast and flexible.
+The Agile Manifesto is a set of guiding values and principles for software development that was created in 2001. It emphasizes a customer-focused, iterative approach to software development, with a focus on delivering working software quickly and responding to change in a flexible and adaptive manner.
 
-Each step in this playbook offers a glimpse into the Agile process, covering essential considerations and how to ensure each area is effectively addressed.
+- **Individuals and interactions**   
+Agile prioritizes individuals and interactions over processes and tools, emphasizing the importance of collaboration, communication, and teamwork.
 
-## Things to Keep in Mind
+- **Working software**   
+Agile values working software over comprehensive documentation, recognizing that delivering a functional product that meets the customer's needs is more important than exhaustive documentation.
 
-Your project should focus on delivering benefits and value, whether that is customer value, business value, or financial value. Pay attention to what senior leadership measures and reports, as this will help you understand where you can make the greatest impact. It's important to ask your group’s leadership which business outcomes matter most and where investments should be directed.
+- **Customer collaboration**   
+Agile promotes customer collaboration throughout the development process, emphasizing the importance of frequent feedback, iteration, and continuous improvement.
 
-The Agile Manifesto, written in 2001 to guide and improve software development, is based on four values and twelve principles. The four core values of Agile are:
+- **Responding to change**    
+Agile values the ability to respond to change over following a plan, recognizing that changing requirements and evolving circumstances are a natural part of software development.
 
-- Individuals and interactions over processes and tools
-- Working software over comprehensive documentation
-- Customer collaboration over contract negotiations
-- Responding to change over following a plan
+- **Embracing uncertainty**   
+Agile embraces uncertainty and complexity, acknowledging that software development is an inherently unpredictable and complex process that requires adaptive, flexible approaches.
+
+## The Agile Infrastructure and Velocity Movement
+
+The Agile Infrastructure and Velocity Movement is an extension of the Agile Manifesto that focuses on applying Agile principles to IT infrastructure and operations. The movement emphasizes the use of automation and collaboration to deliver infrastructure services and support at a faster pace, with greater reliability and efficiency.
+
+- **Infrastructure as code**  
+Agile infrastructure emphasizes the use of code and automation to manage and provision infrastructure, enabling greater speed, efficiency, and consistency.
+
+- **Collaboration and communication**   
+Agile infrastructure values collaboration and communication across teams and departments, with a focus on breaking down silos and promoting cross-functional collaboration.
+
+- **Continuous delivery**   
+Agile infrastructure promotes continuous delivery, enabling teams to deliver value to customers faster and more frequently by automating the delivery pipeline.
+
+- **Velocity measurement**  
+Agile infrastructure emphasizes the measurement and optimization of velocity, with a focus on identifying and eliminating bottlenecks and inefficiencies to accelerate delivery and improve quality.
+
+- **Resilience and scalability**  
+Agile infrastructure emphasizes the importance of resilience and scalability, with a focus on designing systems that can adapt to changing demands and withstand unexpected failures.
 
 ## Good Questions
 
