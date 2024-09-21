@@ -1,7 +1,7 @@
 ---
 title: "Code Analysis"
 description: "Static, Dynamic, and Test Coverage"
-tags: [Security, Cybersecurity, Security Architecture, Security Engineering, Application Security]
+tags: [Computer Science, Application Development, Software Development, Application Security]
 sidebar_position: 11
 last_update:
   date: 1/30/2024

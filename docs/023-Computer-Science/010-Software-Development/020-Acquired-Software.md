@@ -1,7 +1,7 @@
 ---
 title: "Acquired Software"
 description: "Software acquired from vendors"
-tags: [Security, Cybersecurity, Security Operations, Application Security]
+tags: [Computer Science, Application Development, Software Development, Application Security]
 sidebar_position: 20
 last_update:
   date: 1/30/2024

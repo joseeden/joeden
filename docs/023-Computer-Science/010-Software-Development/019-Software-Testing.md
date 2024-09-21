@@ -1,7 +1,7 @@
 ---
 title: "Software Testing"
 description: "Software Testing in Development"
-tags: [Security, Cybersecurity, Security Operations, Application Security]
+tags: [Computer Science, Application Development, Software Development, Application Security]
 sidebar_position: 19
 last_update:
   date: 1/30/2024

@@ -1,7 +1,7 @@
 ---
 title: "Code Reviews"
 description: "Examining the source code"
-tags: [Security, Cybersecurity, Security Architecture, Security Engineering, Application Security]
+tags: [Computer Science, Application Development, Software Development, Application Security]
 sidebar_position: 12
 last_update:
   date: 1/30/2024

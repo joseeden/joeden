@@ -1,7 +1,7 @@
 ---
 title: "Risk Analysis and Mitigation"
 description: "Security Risks in Software Development"
-tags: [Security, Cybersecurity, Security Operations, Application Security]
+tags: [Computer Science, Application Development, Software Development, Application Security]
 sidebar_position: 21
 last_update:
   date: 1/30/2024

@@ -1,0 +1,12 @@
+Computer Science:
+  label: 'Computer Science'
+  permalink: '/Computer Science'
+  description: 'Docs related to Computer Science'  
+Application Development:
+  label: 'Application Development'
+  permalink: '/Application Development'
+  description: 'Docs related to Application Development'  
+Software Development:
+  label: 'Software Development'
+  permalink: '/Software Development'
+  description: 'Docs related to Software Development'      
