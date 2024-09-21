@@ -106,6 +106,17 @@ Initiating the change management process with an RFC, including:
 - Formalized management and decision-making
 - Documented results in accounting or log entries
 
+The RFC should contain the following:
+
+- Description of change
+- Explanation of the change
+- Expected impact
+- Risk assessment
+- Rollback plan
+- Identity of those involved
+- Proposed schedule
+- List of affected configuration items
+
 ### Approval 
 
 Key steps in the approval process involve:
