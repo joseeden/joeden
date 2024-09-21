@@ -34,10 +34,6 @@ To ensure confidentiality, integrity, and availability of information, the Princ
 
 ## Features 
 
-Here's a more concise version:
-
-## Features 
-
 ### Password Vaulting
 
 Password vaulting is a crucial component of PAM, providing secure storage for sensitive credentials and ensuring that only authorized users can access them.
