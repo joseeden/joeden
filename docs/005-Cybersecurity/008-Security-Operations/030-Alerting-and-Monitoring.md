@@ -63,10 +63,64 @@ Infrastructure monitoring involves the continuous observation and analysis of an
 
 ## Continuous Monitoring
 
+Continuous security monitoring approaches provide real-time analysis of security events, moving beyond periodic reviews.
+
+- Analyzes logs in real time.
+- Automatically responds to suspicious activities.
+- Enhances organizational risk management through continuous awareness.
+
+NIST defines continuous monitoring as maintaining awareness of vulnerabilities and threats to inform risk management.
+
+- Adapts to changing security landscapes.
+- Aligns with organizational risk tolerance.
+- Requires active management involvement.
+
+Information Security Continuous Monitoring (ISCM) based on NIST SP 800-137:
+
+![](/img/docs/all-things-security-NIST-800-137.png)
+
+
+### NIST SP 800-137
+
+NIST outlines six essential steps for developing continuous monitoring:
+
+1. **Define Strategy**: Tailor the strategy to risk tolerance, covering assets, vulnerabilities, and business impact.
+2. **Establish Program**: Set metrics and monitoring frequency for security assessments.
+3. **Implement Program**: Automate metrics collection, assessments, and reporting.
+4. **Analyze Data**: Review and report findings from the collected data.
+5. **Respond to Findings**: Mitigate, avoid, transfer, or accept identified risks.
+6. **Review Program**: Continuously adjust and mature the program.
+
+
+### Security Data Analytics
+
+Security analytics in continuous monitoring aggregates data from various sources, helping detect incidents and identify anomalies.
+
+- **Anomaly Analysis**
+  - Also known as **Heuristic Analysis**
+  - Identifies outliers based on data points that stand out
+  - Example: Unusual traffic spikes.
+  - Compares real-time data with baseline behavior.
+  - Detects potential breaches or irregular system usage.
+
+- **Trend Analysis**
+  - Tracks historical changes, like fluctuations in account compromises.
+  - Reveals patterns that may indicate security gaps or improvements.
+  
+- **Behavioral Analysis**
+  - Analyzes user behavior to spot suspicious actions
+  - Example: Logging in at abnormal hours.
+  - Can flag unauthorized access attempts or compromised credentials.
+
+- **Availability Analysis**
+  - Monitors system uptime against service level agreements (SLAs).
+  - Depends on monitoring systems that continuously monitor system status.
+  - Detects and reports periods of downtime to ensure high system performance.
+
 
 ## Alerting and Monitoring Activities 
 
-Alerting and monitoring activities are crucial for maintaining the integrity, availability, and performance of an organization's infrastructure.
+Alerting and monitoring activities are important for maintaining the integrity, availability, and performance of an organization's infrastructure.
 
 - Log Aggregation 
 - Alerting
