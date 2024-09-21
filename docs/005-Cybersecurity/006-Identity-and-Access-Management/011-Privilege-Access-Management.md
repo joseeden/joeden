@@ -32,6 +32,43 @@ To ensure confidentiality, integrity, and availability of information, the Princ
 - **Security Measures**
   - Multi-factor authentication for critical access.
 
+## Features 
+
+Here's a more concise version:
+
+## Features 
+
+### Password Vaulting
+
+Password vaulting is a crucial component of PAM, providing secure storage for sensitive credentials and ensuring that only authorized users can access them.
+
+- Centralized vaults protect credentials from unauthorized access.
+- Passwords can be automatically rotated to enhance security.
+- User access can be granularly controlled based on roles.
+
+### Command Proxying
+
+Command proxying is a method used in PAM to control access to sensitive commands and scripts, ensuring that only authorized personnel can execute them.
+
+- Permissions are granted based on user roles.
+- Commands executed through the proxy can be monitored in real time.
+- Activities performed via the proxy can be recorded for audits.
+
+### Monitoring
+
+Monitoring is an essential aspect of PAM, involving the tracking of user activities to detect unauthorized access.
+
+- Logs provide insights into user behavior and system performance.
+- Real-time alerts notify admins of suspicious activities.
+- Audit trails ensure compliance and aid investigations.
+
+### Credential Management
+
+Credential management within PAM focuses on securely storing and controlling access to user credentials.
+
+- Centralized storage reduces the risk of credential theft.
+- Role-based access limits visibility to necessary credentials.
+- Regular audits help maintain security by removing outdated credentials.
 
 ## Use Case 
 
