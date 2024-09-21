@@ -34,7 +34,7 @@ To demonstrate that evidence has not been tampered with, forensic investigators 
 - Physical evidence is stored in sealed containers.
 - The digital equivalent involves generating hashes, which serve as unique signatures for files.
 
-For more information, please see [Preserving the Evidence.](#preserving-the-evidence)
+For more information, please see [Preserving the Evidence.](/docs/005-Cybersecurity/010-Digital-Forensics/012-Preserving-Evidence.md)
 
 
 ## Hashing 

@@ -44,9 +44,6 @@ Input validation is crucial for protecting applications from malicious data by e
 - Limits the lifespan of cookies to minimize potential risks.
 
 
-
-
-
 ## Code Signing
 
 Code signing is used to verify the authenticity and integrity of software code, ensuring that it has not been tampered with.
