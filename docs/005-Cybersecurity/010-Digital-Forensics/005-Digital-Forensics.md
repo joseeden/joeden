@@ -39,7 +39,7 @@ The order in which evidence is collected is important for an effective investiga
 - Then system configurations, process information, and temporary files.
 - Finally, collect logs and archived records.
 
-For more information, please see [Order of Volatility.](/docs/005-Cybersecurity/010-Digital-Forensics/010-Data-Collection.md#order-of-volatility)
+For more information, please see [Order of Volatility.](/docs/005-Cybersecurity/010-Digital-Forensics/011-Collecting-Evidence.md#order-of-volatility)
 
 ## Non-Digital Evidence
 
@@ -102,11 +102,26 @@ Major uses of software forensics:
   - Challenge: 
     - Public signatures can be spoofed, complicating attribution.
 
+### Mobile Forensics 
+
+Mobile device forensics involves the investigation and analysis of digital evidence stored on mobile devices, such as smartphones, tablets, and other portable electronics.
+
+- Prevent wirelesss communications 
+- Enable airplane mode 
+- Faraday bag/cage 
+- Keep devices charged to preserve battery
+
+Analysis:
+
+- GPS Tagging - when/where pictures and videos taken
+- Social media posts
+
+
 ### Embedded Devices Forensics
 
 Embedded devices are specialized computer systems found in various objects, both personal and industrial.
 
-- CombineS hardware and software to perform specific functions.
+- Combines hardware and software to perform specific functions.
 - Connects to cloud services for data storage and added features.
 
 Examples of Embedded Devices:
@@ -135,7 +150,7 @@ The method and tools used to create a forensically sound copy of the data from a
 - How to collect data, e.g. shutdown, collect while device is powered on.
 - There could be evidence loss if device is shut down.
 
-For more information, please see [Data Collection.](/docs/005-Cybersecurity/010-Digital-Forensics/010-Data-Collection.md)
+For more information, please see [Collecting Evidence.](/docs/005-Cybersecurity/010-Digital-Forensics/011-Collecting-Evidence.md)
 
 
 ## Code of Ethics 
@@ -167,5 +182,5 @@ Proper handling of evidence is essential to maintain its integrity throughout th
 - Handle evidence in a way that maintains its integrity.
 - Follow procedures to avoid contamination, tampering, or loss of evidence.
 
-
+For more information, please see [Preserving Evidence.](/docs/005-Cybersecurity/010-Digital-Forensics/012-Preserving-Evidence.md)
 

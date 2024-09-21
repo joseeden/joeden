@@ -1,8 +1,8 @@
 ---
-title: "Data Collection"
+title: "Collecting Evidence"
 description: "Order of Volatility and Data Collection Procedures"
 tags: [Security, Cybersecurity, Incident Response]
-sidebar_position: 21
+sidebar_position: 11
 last_update:
   date: 1/30/2024
 ---
@@ -143,53 +143,4 @@ Investigators may also gather supplementary details from the target system.
 - Techniques include taking screenshots or photographs of displays.
 - Memory contents, process tables, and system configurations can be collected if the system is running.
 
-
-## Preserving the Evidence 
-
-### Legal Hold
-
-Also known as a **litigation hold**, legal hold is a formal notice requiring an organization to preserve all relevant information and data for potential or ongoing litigation, investigations, or legal proceedings. 
-
-- **Prevent evidence loss or tampering.**
-- Initiated when litigation is anticipated or pending, or when an investigation is underway.
-- Notify relevant individuals to ensure preservation compliance.
-- Document all communications and actions related to the legal hold.
-- Ensures continued preservation throughout the legal process.
-
-**Lifting the Hold** refers to the process of removing a hold. This action typically occurs when the legal proceedings or investigation have concluded or reached a resolution. It allows previously restricted activities or information to resume normal operation or accessibility. 
-
-
-### Preservation 
-
-The goal of preservation is to maintain the integrity of the electronic information, which is essential for building a strong case or responding to legal requests.
-
-Preservation could include: 
-
-- Making backup copies 
-- Isolating critical systems 
-- Implementing access controls
-
-### Electronic Discovery 
-
-Commonly known as **eDiscovery**, Electronic Discovery is the process of identifying, collecting, reviewing, and producing electronically stored information (ESI) for legal or investigative purposes. 
-
-- Emails, documents, databases, social media, text messages, multimedia files, and other digital content.
-- Utilizes specialized eDiscovery tools to manage and analyze large volumes of data.
-- **Legal Requirement**: Laws and regulations define how evidence must be managed and disclosed during litigation.
-- **Collaboration with Legal Teams**: Coordination between IT, legal, and compliance teams.
-- **Chain of Custody**: Maintains a clear record of evidence handling to ensure integrity and admissibility in court.
-
-### Mobile Devices 
-
-Mobile device forensics involves the investigation and analysis of digital evidence stored on mobile devices, such as smartphones, tablets, and other portable electronics.
-
-- Prevent wirelesss communications 
-- Enable airplane mode 
-- Faraday bag/cage 
-- Keep devices charged to preserve battery
-
-Analysis:
-
-- GPS Tagging - when/where pictures and videos taken
-- Social media posts
 

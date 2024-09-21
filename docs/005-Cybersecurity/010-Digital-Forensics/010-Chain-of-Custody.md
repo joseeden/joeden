@@ -2,7 +2,7 @@
 title: "Chain of Custody"
 description: "The paper trail for evidence handling"
 tags: [Security, Cybersecurity, Incident Response, Digital Forensics]
-sidebar_position: 11
+sidebar_position: 10
 last_update:
   date: 1/30/2024
 ---
