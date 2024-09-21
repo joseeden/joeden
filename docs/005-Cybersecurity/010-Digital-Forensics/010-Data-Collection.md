@@ -9,6 +9,42 @@ last_update:
 
 
 
+## Principles of Evidence Collection
+
+Forensic investigators must adhere to strict principles to preserve the integrity of evidence.
+
+- Actions must not alter the evidence, preventing misinterpretation.
+- Physical evidence should only be worked on when absolutely necessary, using copies or images for analysis.
+
+## Creating Evidence Images
+
+When creating an image of a hard drive or other media, analysts must use specialized techniques.
+
+- Analysts connect devices to copy data while preventing any alterations.
+- **Write blockers** are utilized to intercept requests and protect the original data from being modified.
+
+Write blockers are also known as **forensic disk controllers**. They prevent accidental modification of disks during imaging. For more information, please see [Data Collection Procedures.](#data-collection-procedures)
+
+![](/img/docs/digital-forensics-write-blockers-forensic-disk-controllers.png)
+
+## Ensuring Evidence Integrity
+
+To demonstrate that evidence has not been tampered with, forensic investigators employ various methods.
+
+- Physical evidence is stored in sealed containers.
+- The digital equivalent involves generating hashes, which serve as unique signatures for files.
+
+For more information, please see [Preserving the Evidence.](#preserving-the-evidence)
+
+
+## Hashing 
+
+A **hash** is produced using a mathematical algorithm to create a unique representation of a file.
+
+- Hashes remain consistent over time if the file is unchanged.
+- Even minor alterations to a file will result in a completely different hash value.
+
+Hash values computed at the time of evidence collection can be recomputed during analysis to confirm consistency. This allows analysts to verify the integrity of evidence.
 
 ## Order of Volatility
 
@@ -96,6 +132,13 @@ File carving is a technique used to extract files from a disk image without rely
 - **File Fragmentation** - Can reassemble files that are broken into multiple fragments.
 - **Forensic Tools** - Requires specialized software designed for file carving.
 - **Application** - Useful when the file system is damaged or unavailable. 
+
+### Evidence Collection Techniques
+
+Investigators may also gather supplementary details from the target system.
+
+- Techniques include taking screenshots or photographs of displays.
+- Memory contents, process tables, and system configurations can be collected if the system is running.
 
 
 ## Preserving the Evidence 
