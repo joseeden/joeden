@@ -22,10 +22,6 @@ Asset management is a systematic process of developing, operating, maintaining, 
 - Facilitates compliance with regulatory requirements.
 - Improves lifecycle management from acquisition to disposal.
 
-Components of asset management:
-
-1. Assignment/Accounting 
-2. Monitoring/Tracking 
 
 ### Assignment/Accounting
 
@@ -35,6 +31,14 @@ Assignment and accounting in asset management involve the proper allocation and 
 - Ensures proper documentation and accountability.
 - Plans for asset acquisition, maintenance, and disposal.
 - Assets are also classified based on function, value, or other relevant parameters.
+
+### Build an Asset Inventory
+
+Creating an asset inventory involves identifying and documenting all physical and digital assets within an organization to ensure proper oversight, maintenance, and compliance.
+
+- Identify all assets, including hardware, software, and data  
+- Categorize assets based on type, function, and criticality  
+- Use asset management tools for real-time tracking and updates  
 
 ### Monitoring/Asset Tracking
 
