@@ -235,7 +235,8 @@ It is an agreement between a cloud service provider and customer that defines th
     - Prevents data exfiltration.
     - Azure Information Protection (AIP).
  
-        ![](/img/docs/sec+-dlp-solutions-azure.png)
+      ![](/img/docs/sec+-dlp-solutions-azure.png)
+      
 
 - **Cloud Monitoring**
     - Detect abnormalities or suspicious activities.

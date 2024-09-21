@@ -7,7 +7,14 @@ last_update:
   date: 1/30/2024
 ---
 
-## Overview
+## Handling Sensitive Information
+
+Organizations handle sensitive information like trade secrets, business plans, health records, and PII.
+
+- Types include trade secrets, business plans, health records, and PII
+- Risks include security incidents, fines, and reputational damage
+
+## Data Loss Prevention (DLP)
 
 DLP is a technology used to identify, monitor, and protect sensitive data to prevent unauthorized access, use, or transmission.
 
@@ -17,9 +24,32 @@ DLP is a technology used to identify, monitor, and protect sensitive data to pre
 - Protects against data leakage across channels like email, web, and endpoints.
 - Involves content discovery, classification, encryption, and policy enforcement.
 
-## Endpoint DLP System 
+### DLP Mechanisms 
 
-An Endpoint Data Loss Prevention (DLP) system is a security solution designed to monitor and control data transfers on endpoint devices such as laptops, desktops, smartphones, and tablets.
+DLP solutions use the following mechanisms in action:
+
+- **Pattern matching**  
+
+   - Detects sensitive formats like credit card and Social Security numbers  
+   - Scans for terms like "confidential", "proprietary", or "top secret"
+   - Uses algorithms to minimize false positives  
+
+- **Watermarking**  
+
+   - Labels documents with electronic tags for tracking  
+   - Monitors movement across networks to enforce policy  
+   - Logs access and sharing of sensitive files for compliance  
+
+### Identity Finder
+
+Identity Finder is a host-based tool that scans systems for sensitive information.
+
+- Scans for data like Social Security numbers, passwords, and credit card numbers
+- Users can delete or encrypt sensitive files based on the findings
+
+## Endpoint DLP 
+
+Also known as **Host-based DLP**, the Endpoint DLP system is a security solution designed to monitor and control data transfers on endpoint devices such as laptops, desktops, smartphones, and tablets.
 
   - Detects sensitive data based on predefined rules.
   - Prevents unauthorized data transfers.
@@ -27,12 +57,14 @@ An Endpoint Data Loss Prevention (DLP) system is a security solution designed to
   - Works like an IDS/IPS but for data 
   - Can be set to **detection mode** or **prevention mode**
 
-## Network DLP System 
+## Network DLP  
 
 A Network Data Loss Prevention (DLP) system is a piece of software or hardware that monitors and control data transfers within a network infrastructure.
 
 - Placed at the perimeter of the network.
 - Detects **data-in-transit**; focused on things going out of the network.
+- Scans for unencrypted sensitive data and blocks unauthorized transmissions
+- Can automatically encrypt content, especially for email-related DLP systems
 
 ## Storage DLP
 
