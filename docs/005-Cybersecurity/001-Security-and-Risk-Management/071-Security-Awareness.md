@@ -66,6 +66,8 @@ Best practices for creating strong, unique passwords and securely managing crede
 Understanding and adherence to organizational policies and procedures related to cybersecurity.
 
 - **Policy**
+
+
     - Systems of rules that ensures compliance with organizational standards.
     - Guides the decisions and actions of people within the organization.
 
@@ -79,10 +81,12 @@ Understanding and adherence to organizational policies and procedures related to
 Considerations for different work environments, including remote and hybrid setups.
 
 - **Remote Work**
+
     - Security measures and protocols for remote work settings.
     - Awareness of unique security challenges associated with remote work.
 
 - **Hybrid Work**
+
     - Security considerations for environments that combine remote and in-person work.
 
 ### Culture of Security

@@ -150,7 +150,6 @@ The Fourth Amendment to the United States Constitution protects the right of peo
   - Shapes legal interpretations and discussions regarding the privacy rights of individuals concerning their electronic communications, data stored in the cloud, and digital devices.
 
 
-
 ## FISMA
 
 FISMA stands for the Federal Information Security Management Act. It is a United States federal law passed in 2002 as part of the Electronic Government Act. FISMA outlines comprehensive requirements for securing information and information systems within federal agencies and provides a framework for managing information security risks.

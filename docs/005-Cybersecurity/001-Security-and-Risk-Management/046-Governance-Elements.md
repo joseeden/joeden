@@ -10,39 +10,101 @@ last_update:
 
 ## Policies
 
-Policies, influenced by laws and standards, provide strategic direction and priorities , guiding decision-making and compliance.
+Policies, influenced by laws and standards, provide strategic direction and priorities, guiding decision-making and compliance.
+
+- Top tier of security documentation
+- Strategic in nature, broad outlines of security goals and practices
+
+### Security Policy Categories 
+
+Security policies are categorized based on their purpose, scope, and the level of enforcement they require. These categories help in managing various aspects of security across an organization.
+
+- **Regulatory Policies**
+  - External policies imposed by external government or regulatory bodies.
+  - Mandatory compliance with specific legal requirements (e.g., GDPR, HIPAA).
+  - Ensure protection of sensitive data and adherence to industry standards.
+  - Legal requirements that an organization must follow to avoid penalties.
 
 - **Governance Policies**
-  - Shape decision-making processes for senior executives.
-  - Ensure compliance and guide the creation of other policies.
+  - Internal policies by an organization to guide its overall direction and operations
+  - Ensures an organization runs effectively and in alignment with its strategic goals.
+  - Internal management and accountability within the organization.
 
-- **Organization-wide Policies**
+- **Compliance-driven Policies**
+  - Ensure both internal and external compliance obligations are met.
+  - Imposed by laws, regulations, or contracts.
+  - Documented and assessed for effective organizational use.
+  - May include audits and assessments to verify adherence.
+
+- **Advisory Policies**  
+  - Provide guidance or recommendations on best practices.
+  - Typically non-mandatory, but highly encouraged.
+  - Help employees make informed decisions about security measures.
+  - Example: Advising secure configurations or specific use cases for tools.
+
+- **Informative Policies**  
+  - Share general information about the organization’s security stance.
+  - Typically non-enforceable, used for awareness purposes.
+  - Explain the rationale behind security measures or updates.
+  - Example: Informing staff about recent cybersecurity threats.
+
+### Security Policy Types 
+
+Security policies are also classified based on the focus and scope of their application within the organization.
+
+- **Organizational Policies**  
+  - Focus on organization-wide aspects.
   - Direct behavior and activities toward specific or general goals.
   - Cover areas like human resources, finance, accounting, security, etc.
 
-- **Compliance-driven Policies**
-  - Imposed by laws, regulations, or contracts.
-  - Documented and assessed for effective organizational use.
+- **Issue-specific Policies**  
+  - Focus on specific aspects (e.g., department, service, etc.).
+  - Includes data encryption, incident response, or acceptable use.
+  - Ensure clarity and control over specific security issues.
+  - Regularly updated to reflect changing security threats.
 
-- **Implementation through Procedures**
-  - Policies expanded into step-by-step instructions for execution.
-  - Implemented by individuals to achieve organizational goals.
+- **System-specific Policies**  
+  - Focus on secure handling of specific systems or types of systems.
+  - Establish guidelines for the configuration and management of IT systems.
+  - Include system-specific access control, backup, and recovery protocols.
 
-- **Key IT Policies**
 
-  - Acceptable Use Policy
-  - Information Security Policy
-  - Business Continuity 
-  - Disaster Recovery
-  - Incident Response 
-  - SDLC 
-  - Change Management
+### Implementation through Procedures
 
-For more information, please see [Common Security Policies.](../001-Security-and-Risk-Management/070-Security-Policies.md)
+Security policies are implemented through detailed procedures that transform policy directives into actionable steps.
+
+- Policies expanded into step-by-step instructions for execution.
+- Implemented by individuals to achieve organizational goals.
+- Ensure consistency and adherence to security measures across operations.
+
+
+### Key IT Policies
+
+Organizational security policies provide guidelines and rules to protect an organization’s assets, data, and systems. These policies ensure that employees, contractors, and other stakeholders follow best practices to minimize security risks. Below are some of the common policies:
+
+- Employee/Contractor Hiring Policy
+- Accounts/Credential Policy 
+- Password Policy
+- Data Handling Policy
+- Bring Your Own Device
+- Privacy Policy
+- Acceptable Use Policy
+- Information Security Policy
+- Business Continuity Policy
+- Disaster Recovery Policy
+- Incident Response Policy
+- SDLC Policy
+- Change Management Policy
+
+For more information, please see [Common Security Policies.](/docs/005-Cybersecurity/001-Security-and-Risk-Management/070-Security-Policies.md)
 
 ## Standards
 
 Organizations use standards as compliance documents and guidelines, which defines the specific technical requirements for security controls, including incident response procedures.
+
+### Common Standards 
+
+These are widely recognized standards that provide guidelines and best practices for various industries, especially in information security and technology.
 
 - **International Organization for Standardization (ISO)**
   - Develops international standards on various technical subjects, including information systems and security.
@@ -59,13 +121,35 @@ Organizations use standards as compliance documents and guidelines, which define
 - **Institute of Electrical and Electronics Engineers (IEEE)**
   - Sets standards for telecommunications, computer engineering, and related disciplines.
 
+### Baselines 
+
+These are rules that define a minimum level of security that is required throughout the organization. Baselines ensure consistency and compliance across different systems and platforms.
+
+- Platform-specific, based on industry or government standards.
+- Establish basic security settings and configurations.
+- Used to measure compliance and identify risks.
+- Updated regularly to address new threats.
+
+For more information, please see [Security Baselines.](/docs/005-Cybersecurity/008-Security-Operations/049-Security-Baseline.md)
+
+
+## Guidelines 
+
+Guidelines are general statements used to recommend an approach in implementing policy and standard objectives.
+
+- Offer advice on best practices and preferred methods for implementing security controls.
+- Allow for discretion and adaptability based on specific circumstances and needs.
+- **Flexible**, does not specify controls or configuration settings, customizable.
+- **Not mandatory**, they are only recommendations to be considered.
+
 ## Procedures 
 
-Procedures typically contains the detailed steps to complete tasks supporting departmental or organizational policies.
+Procedures define specifically how policies, standards, and guidelines will be implemented in a given situation. They typically contain the detailed steps to complete tasks supporting departmental or organizational policies.
 
 - Provide supporting data and decision criteria.
 - Address both one-time and regular occurrences.
-- Establish measurement criteria for task completion.
+- May focus on a single component or an entire system. 
+- **Mandatory**, establish measurement criteria for task completion.
 
 Examples:
 

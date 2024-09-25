@@ -36,7 +36,7 @@ Monitoring resources involves continuously tracking and analyzing various system
 
 Observing server and application performance metrics such as utlization and consumption of its resources in order for us to identify any potential issues that could affect the system's stability.
 
-**Baseline** are established performance metrics for standard behavior of a system or application.
+**Baselines** are established performance metrics for standard behavior of a system or application.
 
   - CPU Usage, memory utilization, disk activity, network traffic, etc.
   - Reference point to compare against when monitoring systems over time.
