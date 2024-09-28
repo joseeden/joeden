@@ -51,7 +51,6 @@ Information assurance and cybersecurity are key for risk management. The require
     - Formal entities that are political (such as terrorists, nation-states, and hacktivists).
     - Intelligence or information gatherers (could be any of the above).
     - Technology (such as free-running bots and artificial intelligence , which could be part of any of the above).
-
   - For more information, please see [Cyber Threat and Attacks.](../011-Threats-and-Attacks/002-Threat-Actors.md)
 
 - **Threat Vector**
@@ -96,7 +95,7 @@ Information assurance and cybersecurity are key for risk management. The require
 
       - This is the weighted factor based on a subjective analysis of the probability that a given threat or set of threats is capable of exploiting a given vulnerability or set of vulnerabilities.
 
-  - **Assessing Impact:**
+  - **Assessing Impact**
 
       - Impact is the magnitude of harm resulting from unauthorized actions like disclosure, modification, destruction, or loss of information or system availability.
       - Consideration: Potential results if a threat materializes and an event occurs.  
@@ -124,6 +123,7 @@ Information assurance and cybersecurity are key for risk management. The require
   - Usually conducted by organized groups, often linked to nation-states.
   - They focus on maintaining long-term access to a target's network.
   - APTs often aim to gather intelligence, steal data, or disrupt operations.
+  - For more information, please see [APTs.](/docs/005-Cybersecurity/011-Threats-and-Attacks/002-Threat-Actors.md#advanced-persistent-threats)
 
 - **Advance Tactics, Techniques, and Procedures**
 

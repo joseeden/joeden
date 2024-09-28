@@ -7,7 +7,6 @@ last_update:
 ---
 
 
-
 ## Overview
 
 Password attacks attempts to gain unauthorized access by cracking or stealing passwords.

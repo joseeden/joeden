@@ -23,16 +23,16 @@ Multi-level security (MLS) enforces security policies that segregate access to d
 
 The Bell-LaPadula Model is focused on maintaining data **confidentiality**. It enforces rules that prevent unauthorized access and disclosure of information.
 
-**Simple Security Rule**  
+- **Simple Security Rule**  
 
-- "No Read Up" 
-- Ensures that users cannot access information at a higher security level
-- Widely used in environments where confidentiality is critical
+  - "No Read Up" 
+  - Ensures that users cannot access information at a higher security level
+  - Widely used in environments where confidentiality is critical
 
-***-Property**
+- ***-Property**
 
-- "No Write Down"
-- A subject on one security level shouldn't be able to write to objects with lower security levels
+  - "No Write Down"
+  - A subject on one security level shouldn't be able to write to objects with lower security levels
 
 This model arranges subjects and objects into security levels and defines access specifications, whereby subjects can only access objects at certain levels based on their security level.
 
@@ -49,16 +49,16 @@ Limitations:
 
 The Biba Integrity Model focuses on maintaining data **integrity** by preventing unauthorized data modification. It enforces rules that ensure only authorized users can alter information.
 
-**Simple Security Rule**  
+- **Simple Security Rule**  
 
-- "No Read Down" 
-- A subject should not be able to read an object at security level lower than the subject's security clearance.
-- Prevents the corruption of integrity of information accessed.
+  - "No Read Down" 
+  - A subject should not be able to read an object at security level lower than the subject's security clearance.
+  - Prevents the corruption of integrity of information accessed.
 
-***-Integrity Property**
+- ***-Integrity Property**
 
-- "No Write Up"
-- A subject should not be able to write an information to an object at security level lower than the subject's security clearance.
-- A user with secret clearance should not be able to write information to a top secret file.
-- Ensures that data cannot be modified by lower integrity levels
-- Often used in environments where data accuracy and reliability are critical
+  - "No Write Up"
+  - A subject should not be able to write an information to an object at security level lower than the subject's security clearance.
+  - A user with secret clearance should not be able to write information to a top secret file.
+  - Ensures that data cannot be modified by lower integrity levels
+  - Often used in environments where data accuracy and reliability are critical
