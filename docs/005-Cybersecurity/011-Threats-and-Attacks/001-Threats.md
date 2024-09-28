@@ -1,5 +1,5 @@
 ---
-title: "Threats "
+title: "Threats"
 tags: [Cybersecurity]
 sidebar_position: 1
 last_update:
@@ -7,102 +7,188 @@ last_update:
 ---
 
 
-## Types of Threats 
 
-There are many types of cyber threats to organizations. Below are several of the most common types: 
-
-### Malware
+## Malware
 
 Malicious software designed to harm or exploit systems.                          
 
 - Examples are viruses, worms, trojans.
 - For more information, please see [Malware](/docs/005-Cybersecurity/011-Threats-and-Attacks/020-Malware.md)
 
-### Virus 
+## Virus 
 
-A virus **requires user interaction**, such as opening an infected file or running a malicious program, to spread.
+A virus **requires user interaction**, such as opening an infected file or running a malicious program, to spread. They require a "host" application that they embed themselves in and they cannot replicate on their own. Some common types of viruses:
 
-Types of viruses:
+- Master Boot Record viruses
+- Macro viruses
+- Multipartite
+- Polymorphic
+- Metamorphic
 
-- **Boot Sector**
-    - Stored in the first sector of a hard drive and is then loaded into memory during boot up.
-    - Infects the master boot record; spreads when the system boots from an infected disk.
-    - Difficult to detect because they're installed before OS boots up.
-    - Mitigation:
-        - Use an antivirus that specifically looks for boot sector viruses.
-        - These AVs are usually ran from a network AV scanning engine.
+### Master Boot Record Viruses
 
-- **Macro**
-    - A form of code that allows virus to be embedded inside documents.
-    - Infects macros within documents or spreadsheet applications.
-    - They spread when these files are opened.
-    - By default, they aren't maliciousl; they're used to add functions to documents
+These viruses infect the master boot record (MBR) of a hard drive, making them particularly dangerous.
 
-- **Program**
-    - Attaches itself to executable files and spreads when the infected program is run.
-    - Target program/apps because they can infect the system anytime the user opens the compromised application.
+- Stored in the first sector of the hard drive and loaded into memory during boot-up.
+- Infects the MBR and spreads when the system boots from an infected disk.
+- Hard to detect because they're installed before the operating system boots.
 
-- **Multipartite**
-    - Combines boot sector and file viruses, spreading in multiple ways.
-    - Gets loaded up every time the computer boots up.
-    - It can then install itself within a program, when run, will infect every time.
-    - This ensures that the virus persists in your machine.
+**Mitigation:**
+- Use antivirus software that scans specifically for boot sector viruses.
+- Run antivirus scans from a network AV engine.
 
-- **Encrypted**
-    - Encrypted, to evade detection by antivirus software, decrypting itself when executed.
-    - Malicious code is scrambled into cipher text, unreadable to user and AV software.
+### Macro Viruses
 
-- **Polymorphic**
-    - Advance version of encrypted virus, but it also alter the decryption module.
-    - This changes its code each time it infects a new system to avoid detection.
-    - Ensures it can evade detection.
+Macro viruses exploit document-embedded code, often found in word processing and spreadsheet applications.
 
-- **Metamorphic**
-    - Advance version of a polymorphic virus. 
-    - Rewrites its own code to appear different each time it infects.
-    - Changes entirely before it attempts to infect a given file.
-    - This maakes it hard to detect.
+- Embedded inside document macros.
+- Infects when files with macros are opened.
+- Macros are not malicious by default; they're designed to automate functions in documents.
 
-- **Stealth**
-    - More of a technique used to prevent the virus from being detected.
-    - Hides its presence by intercepting and modifying system calls and antivirus queries.
+**Mitigation:**
+- Disable macros by default in document applications.
+- Use antivirus software that scans macro-enabled documents.
 
-- **Armor**
-    - Have a layer of protection to confuse a program or a person trying to analyse it.  
-    - Uses complex code to shield itself from detection and removal by security tools.
+### File Infector Viruses
 
-- **Hoax**
-    - Not a virus, but a form of social engineering technique.
-    - Often used to trick users into spreading misinformation or buying unnecessary software.
+File infector viruses are one of the most common types, targeting executable files and spreading when these files are accessed or run.
 
-### Worm
+- Infects executable files (.exe, .com, .dll, etc.).
+- Spreads when infected programs are launched or accessed.
+- Can overwrite, corrupt, or modify files, leading to system damage or data loss.
+
+**Mitigation:**
+- Regularly scan and monitor executable files with up-to-date antivirus software.
+- Avoid running untrusted programs or files from unknown sources.
+
+### Service Injection Viruses
+
+Service injection viruses insert malicious code into legitimate system processes or services during runtime, making them harder to detect and remove.
+
+- Injects itself into legitimate system processes, like those that run in the background.
+- Avoids detection by antivirus tools by blending with normal system activity.
+- Can persist through reboots and continue spreading without being easily identified.
+
+**Mitigation:**
+- Use antivirus software with behavior-based detection to monitor process integrity.
+- Regularly monitor system processes and services for unusual activity.
+
+
+### Multipartite Viruses
+
+Multipartite viruses combine elements of both boot sector and file viruses, infecting systems in multiple ways.
+
+- Uses more than one propagation technique.
+- Combines boot sector and file infections.
+- Spreads every time the computer boots or a specific program runs.
+
+**Mitigation:**
+- Run comprehensive antivirus scans that check both boot sectors and files.
+- Keep antivirus software and system security patches up to date.
+
+### Encrypted Viruses
+
+Encrypted viruses use encryption to evade detection, decrypting themselves only when executed.
+
+- Encrypt themselves to avoid detection.
+- Malware is scrambled into unreadable cipher text.
+
+**Mitigation:**
+- Use antivirus software that can detect and decrypt these viruses.
+- Employ security tools that focus on encrypted threats.
+
+### Polymorphic Viruses
+
+These viruses change their code slightly every time they infect a new system, making detection difficult.
+
+- Encrypts itself and alters its decryption module each time it infects a new system.
+- Continuously changes to avoid detection.
+
+**Mitigation:**
+- Use advanced antivirus software capable of recognizing behavior-based signatures.
+- Employ heuristic-based detection systems.
+
+### Metamorphic Viruses
+
+Metamorphic viruses go beyond polymorphic viruses by completely rewriting their code to appear different each time.
+
+- Rewrites its own code with each infection.
+- Appears entirely different with each infection, making detection extremely hard.
+
+**Mitigation:**
+- Utilize advanced heuristic and behavior-based antivirus systems.
+- Conduct regular system monitoring for anomalies.
+
+### Stealth Viruses
+
+These viruses employ techniques to hide their presence from detection tools by intercepting and modifying system calls.
+
+- Hides by modifying system calls and antivirus queries.
+- Prevents detection by security tools.
+
+**Mitigation:**
+- Use antivirus solutions with rootkit detection capabilities.
+- Regularly update antivirus software to detect new stealth techniques.
+
+### Armor Viruses
+
+Armor viruses use complex techniques to shield themselves from detection and removal.
+
+- Confuses attempts to analyze or remove the virus.
+- Uses layered protections to evade security tools.
+
+**Mitigation:**
+- Deploy sophisticated antivirus software with deep analysis capabilities.
+- Ensure frequent updates to antivirus tools for new protection techniques.
+
+### Hoaxes
+
+Hoax viruses aren't actual viruses but social engineering tactics that trick users into spreading false information.
+
+- A form of social engineering, not a real virus.
+- Designed to trick users into spreading misinformation or purchasing unnecessary software.
+
+**Mitigation:**
+- Educate users to verify suspicious messages or alerts.
+- Use security awareness programs to prevent falling for hoaxes.
+
+
+## Worm
 
 A worm can replicate and spread automatically **without user intervention**.
 
+- No "host" application needed, nor human interaction. 
 - Takes advantage of vulnerabilities in systems and applications.
 - Dangerous, can infect computers and computing assets. 
 - Cause disruptions because they constantly try to replicate and spread.
 - Consumes network, compute resources, power when it spread, slowing down the system.
 
-### Trojan
+Known examples:
 
-Trojans can also create backdoors but are only active while a specific application is running.
+- The Internet worm
+- Code Red worm
+- Nimda
+- Stuxnet
+
+## Trojan
+
+Trojan Horses is a computer program that appears to have a useful function, but also has a hidden and potentially malicious function. It can also create backdoors but are only active while a specific application is running.
 
 - Malware disguised as a piece of harmless or desirable software. 
 - Not as effective as a rootkit, which maintain root-level access while concealing malicious activity.
+- Examples: fake antivirus, games, and utilities/productivity tools.
 
-**RAT (Remote Access Trojan)**
+A **RAT (Remote Access Trojan)** is a widely used threat because it provides the attacker with remote control of the machine.
 
-- Widely used because it provides the attacker with remote control of the machine.
 - Earliest version is a testris game which infected with the trojan.
 - The game is installed into floppy disks and share between friends.
 
-Mitigation:
+**Mitigation:**
 
 - Use an AV or Anti-malware prior to opening or installing any program.
 - Ensure your system is patched against any vulnerabilities.
 
-### Ransomware
+## Ransomware
 
 Malware that encrypts files, demanding payment for their release.                               
 
@@ -116,22 +202,25 @@ Mitigation:
 - Provide security awareness training.
 - Implementing MFA for the systems.
 
-### Zombies and Botnets 
+## Zombies and Botnets 
+
+### Botnet
 
 A **botnet** is a network of compromised computers, known as **zombies** or **bots** , which are remotely controlled by malicious actors.
 
 - Created using other types of malwares to gain access to a system and victimize it. 
 - Zombies are used to perform tasks using remote commands.
 
-**Command and Control Node (C2 Node)**
+### C2 Node 
 
-- Used for managing and coordinating the activities of the zombies. 
+A **Command and Control Node (C2 Node)** is used for managing and coordinating the activities of the zombies. 
+
 - Can use zombies as pivot points to gain access to new victims.
 - Can use a zombie to make it look like the infected computer is performing the attach.
 - It can also store illegal media on the infected machines inside of the botnet.
 - Commonly used to perform a DDoS attack.
 
-### Rootkits
+## Rootkits
 
 A rootkit tries to maintain root-level access while concealing malicious activity. 
 
@@ -139,49 +228,70 @@ A rootkit tries to maintain root-level access while concealing malicious activit
 - A rootkit remains active while the system is running.
 - Digs into the OS deeply, making it difficult for AV systems to detect it.
 
-**DLL Injection**
-
-- Run arbitrary code within the address space of another process.
-- This forces it to load a dynamic-link library
-- DLLs are often provided by default inside of the Windows OS.
-- DLLs are designed to load everytime the Windows machine is loaded, using a shim.
-
-**Shim**
-
-- Software code that is placed between two components
-- Intercepts call between the two components and redirect those calls 
-
-Mitigation:
+**Mitigation:**
 
 - Conduct an external system scan.
 - Continuous vigilance and security measures.
 
-### Backdoors and Logic Bombs 
+### DLL Injection
 
-**Backdoors**
+DLL injection is a technique used to run malicious code within another process by forcing it to load a dynamic-link library (DLL).
 
-- Covert method to bypass normal security and authentication functions of the systems.
-- Backdoors are originally created to do maintenance and repairs.
-- An example is the Remote Access Trojan (RAT) 
+- Runs arbitrary code within the address space of another process.
+- Forces the target process to load a specific DLL.
+- DLLs are often part of the default Windows OS environment.
+- Uses a shim to load the DLL automatically every time the Windows machine starts.
 
-**Easter Eggs**
+### Shim
 
-- Insecure coding practice used to provide a joke or gag gift to users.
-- Closely related to logic bombs. 
-- Example: Type "barrel roll" in the Google search bar.
+A shim is a small piece of software that sits between two components to alter their interaction.
 
-**Logic Bombs**
+- Placed between two software components.
+- Intercepts calls between the components and redirects them as needed.
 
-- Malicious code intentionally inserted into a software system.
-- Triggers a negative function when certain conditions are met. 
-- Typically not installed by logic bombs, instead planted by people with inside access.
-- Mitigation:
-    - Restrict system access to authorized personnel.
-    - Regularly review code for malicious inserts.
-    - Monitor for unusual system behavior.
-    - Educate on cybersecurity best practices.
+## Backdoors and Logic Bombs 
 
-### Key Logger 
+### Backdoors
+
+Backdoors are covert methods used to bypass normal security and authentication controls on a system.
+
+- Allow unauthorized access by bypassing regular security measures.
+- Originally created for maintenance or repair purposes.
+- Example: Remote Access Trojan (RAT) allows remote control of infected systems.
+
+**Mitigation:**
+- Use intrusion detection systems to monitor unauthorized access.
+- Regularly patch and update systems to close known vulnerabilities.
+
+
+### Easter Eggs
+
+Easter eggs are hidden features or jokes intentionally embedded in software.
+
+- An insecure coding practice often meant as a harmless joke or "gift" to users.
+- Related to logic bombs, but typically non-malicious.
+- Example: Typing "do a barrel roll" in Google's search bar triggers a visual effect.
+
+**Mitigation:**
+- Conduct regular code reviews to remove unintended or insecure features.
+- Enforce strict coding standards to prevent unnecessary hidden functions.
+
+### Logic Bombs
+
+Logic bombs are malicious code inserted into software that is triggered by specific conditions.
+
+- Executes harmful functions when triggered by certain events.
+- Typically inserted by insiders with malicious intent, such as disgruntled employees.
+- Not installed directly by malware but hidden within existing code.
+
+**Mitigation:**
+
+- Restrict system access to authorized personnel.
+- Regularly review code for malicious inserts.
+- Monitor for unusual system behavior.
+- Educate on cybersecurity best practices.
+
+## Key Logger 
 
 A piece of a software or hardware that records every single keystroke made on the device. 
 
@@ -189,7 +299,7 @@ A piece of a software or hardware that records every single keystroke made on th
 - Recorded key strokes are sent back to the threat actor without the user's consent.
 - Can lead to identity theft, financial fraud, and corporate espionage
 
-Mitigation:
+**Mitigation:**
 
 - Perform regular updates and patches.
 - Use quality AV and Anti-malware solutions.
@@ -198,26 +308,31 @@ Mitigation:
 - Encrypt keystrokes being sent to the systems.
 - Perform physical checks on desktops, laptops, and servers.
 
-### Spyware and Bloatware
+## Spyware and Bloatware
 
-**Spyware**
-- Gather and send information about a user or organization
-- Can be installed as a bundle with other software, or through a malicious website.
-- Invades privacy; can also slow down the system
-- Mitigation:
-    - Use reputable AV and anti-spyware that are regularly updated. 
-    - Only use software from trusted sources.
-    - Always read the End-User License Agreement (EULA).
-    - Ensure your OS is up-to-date and patched.
+### Spyware
 
-**Bloatware**
+Spyware is malicious software designed to gather and transmit information about a user or organization without consent.
 
-- Any software that comes pre-installed on a new computer or smartphone.
-- Users did not request or need this software, but are bundled with the main software.
-- Not dangerous, but takes up resources such as RAM.
-- Mitigation:
-    - Manually remove them.
-    - Use bloatware removal tools.
-    - Perform a clean OS installation.
+- Collects and sends data, often without the user’s knowledge.
+- Can be bundled with legitimate software or downloaded from malicious websites.
+- Invades privacy and can slow down system performance.
 
+**Mitigation:**
+- Use antivirus/anti-spyware tools that are regularly updated.
+- Download software only from trusted sources.
+- Read the End-User License Agreement (EULA) carefully.
+- Keep your operating system and software up-to-date with patches.
 
+### Bloatware
+
+Bloatware refers to unnecessary software pre-installed on devices, often taking up valuable system resources.
+
+- Comes pre-installed on new computers or smartphones.
+- Bundled with other software, often unwanted or unneeded by the user.
+- Not harmful, but consumes resources like RAM and storage.
+
+**Mitigation:**
+- Manually uninstall bloatware from the system.
+- Use specialized bloatware removal tools.
+- Perform a clean installation of the operating system if needed.
