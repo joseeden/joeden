@@ -123,3 +123,12 @@ A pharming attack redirects users from legitimate websites to malicious ones by 
   - Fake or fraudulent invoices for goods or services not ordered or received.
   - Often appear legitimate with logos and contact information.
   - Scammers impersonate suppliers to request payment for fictitious products or services.
+
+
+## Rubber Hose Attacks
+
+Rubber hose attacks refer to physical coercion or psychological tactics used to extract sensitive information, such as passwords or encryption keys, from individuals.
+
+- Involves physical/psychological threats to force someone to disclose sensitive information.
+- Targets human vulnerability rather than breaking cryptographic systems.
+- Difficult to defend against as it bypasses technical security measures.

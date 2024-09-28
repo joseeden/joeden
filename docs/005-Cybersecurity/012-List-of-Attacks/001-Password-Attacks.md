@@ -32,7 +32,7 @@ Knowledge-based attacks are more sophisticated than brute-force attacks, using a
 This type of attack analyzes the statistical patterns in cipher text to detect vulnerabilities.
 
 - Common letters in English: E, T, O, A, I, and N
-- If the letter X appears frequently, it may represent E in a simple substitution cipher
+- If letter X appears frequently, it may represent E in a simple substitution cipher
 - Digraphs (letter pairs) like T-H, H-E, I-N, or E-R can provide additional clues
 
 ### Known-Plaintext Attack
