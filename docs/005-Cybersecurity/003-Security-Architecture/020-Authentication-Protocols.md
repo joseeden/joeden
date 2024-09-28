@@ -147,6 +147,17 @@ How it looks like:
 
 </div>
 
+
+## SESAME
+
+**SESAME (Secure European System for Applications in a Multi-vendor Environment)** is a single sign-on technology designed to improve security and streamline access management across systems.
+
+- Uses public key encryption to enhance authentication security.
+- Combines both symmetric and asymmetric encryption to protect credentials.
+- Supports role-based access control, allowing for more granular permission settings.
+
+While SESAME is designed as an improvement to Kerberos, it is still vulnerable to impersonation attacks and password guessing.
+
 ## EAP
 
 EAP (Extensible Authentication Protocol) is a flexible authentication framework used in network access protocols. It supports multiple authentication methods and is commonly used in wireless networks and point-to-point connections.
