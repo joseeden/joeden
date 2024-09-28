@@ -27,7 +27,7 @@ A brute force attack, also called as a known ciphertext attack, uses every possi
 
 Knowledge-based attacks are more sophisticated than brute-force attacks, using available information and cryptanalytic techniques to break encryption.
 
-### Frequency Analysis Attack
+### Frequency Analysis 
 
 This type of attack analyzes the statistical patterns in cipher text to detect vulnerabilities.
 
@@ -35,19 +35,36 @@ This type of attack analyzes the statistical patterns in cipher text to detect v
 - If letter X appears frequently, it may represent E in a simple substitution cipher
 - Digraphs (letter pairs) like T-H, H-E, I-N, or E-R can provide additional clues
 
-### Known-Plaintext Attack
+### Chosen Plain-text 
+
+In this scenario, the attacker encrypts a selected message using the algorithm and key.
+
+- Attacker has both encrypted and decrypted text
+- Allows the attacker to study the encryption process
+- Aims to learn the encryption key for further exploitation
+
+### Chosen Cipher-text Attack
+
+A chosen cipher-text attack occurs when an attacker can access both encrypted and decrypted versions of some text, using this information to decrypt other encrypted data.
+
+- Attacker has both encrypted and decrypted versions of some text.
+- Exploits decryption process vulnerabilities to reveal encrypted information.
+- Commonly used against encryption schemes like RSA.
+
+### Cipher-text Only Attack
+
+In a cipher-text only attack, the attacker only has access to the encrypted message and attempts to break the encryption algorithm without knowing the plain text.
+
+- Attacker has captured only cipher-text, with no access to the plain text.
+- Uses statistical analysis within the encryption to break the cipher.
+- Effective mainly against weak or improperly implemented encryption algorithms.
+
+### Known Plain-text 
 
 If an attacker has both encrypted and unencrypted versions of a message, they can use that information to crack the encryption key.
 
 - Helps in decrypting other messages
 - The attacker exploits patterns between plaintext and ciphertext
-
-### Chosen-Plaintext Attack
-
-In this scenario, the attacker encrypts a selected message using the algorithm and key.
-
-- Allows the attacker to study the encryption process
-- Aims to learn the encryption key for further exploitation
 
 
 ## Dictionary Attack 
