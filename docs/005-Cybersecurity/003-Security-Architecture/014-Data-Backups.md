@@ -63,22 +63,66 @@ Data Backup involves creating duplicate copies of critical data and storing them
    - Provide details on the restored data and any discrepancies.
    - Communicate any follow-up actions required.
 
+## Data Backup Strategies 
+
+add simple intro here...
+
+- **Robotic Tape Changers**
+  - Automate the process of managing and swapping tape storage.
+  - Increase efficiency in data backup and retrieval processes.
+
+- **Offsite Backups**
+  - Store backup data at a geographically separate location.
+  - Protect data from local disasters, such as fire or flooding.
+
+- **Hot Backups**
+  - Also known as **quiescent or snapshots**.
+  - Data is backed up while system remains operational; less downtime.
+
+- **On-demand Backups**
+  - Initiated manually or based on specific user requests.
+  - Provide flexibility for immediate data protection when needed.
+
+- **Disk-to-disk Backups**
+  - Transfer data directly from one disk to another, speeds up process.
+  - Facilitate faster recovery times compared to tape backups.
+
+- **Remote Journalling**
+
+  - Log shipping for database recovery
+  - Only transaction information is captured, not the whole copy.
+  - Quick recovery of recent transactions in case of data loss.
+
+- **Electronic Vaulting**
+
+  - Data is backed up locally to a tape, then copied to a remote site.
+  - The backup could be copied electronically over the internet.
+  - Uses a lot of internet resources and bandwidth.
+  - Encryption (VPN) must be used while transferring over internet.
+  - Ensures data is regularly updated and protected from loss.
+
+
 ## Data Backup Types
 
-- **Full Backup**
+- **Normal/Full Backup**
 
   - Copies all selected files and data.
   - Provides a complete snapshot at a specific point in time.
+  - Archive bit is reset to indicate each file has been backup.
 
 - **Incremental Backup**
 
   - Copies only the data that has changed since the last backup.
+  - All sets are used to restore the data; **fast to backup but slow to restore.**
   - Efficient in terms of storage space but may require multiple backups for a complete restore.
+  - Archive bit is reset to indicate each file has been backup.
 
 - **Differential Backup**
 
   - Copies all the data that has changed since the last full backup.
+  - Requires two sets to restore the data; **slow to backup but faster to restore.**
   - Requires less time for restoration compared to incremental backups.
+  - Archive bit is NOT reset - differential don't reset bit.
 
 - **Mirror Backup**
 
