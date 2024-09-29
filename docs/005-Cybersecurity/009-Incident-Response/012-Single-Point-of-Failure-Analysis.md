@@ -2,7 +2,7 @@
 title: "SPOF and IT Contingency"
 description: "SPOF Analysis and IT Contingency Plans"
 tags: [Security, Cybersecurity, Incident Response, Business Continuity]
-sidebar_position: 11
+sidebar_position: 12
 last_update:
   date: 1/30/2024
 ---
@@ -122,4 +122,11 @@ Having comprehensive IT Contingency Plans ensures that organizations can quickly
 
 ## Personnel Succession Planning
 
-An often overlooked aspect of business continuity planning is personnel succession planning. IT operations depend on highly skilled team members who develop, configure, and maintain systems and processes. IT leadership should collaborate with human resources to identify essential team members and potential successors for their positions. This proactive approach ensures that when someone leaves the organization, management has already considered potential replacements and ideally provided those successors with necessary professional development.
+## Personnel Succession Planning
+
+Personnel succession planning is a crucial but often overlooked part of business continuity, ensuring key roles are maintained within IT operations.
+
+- IT leadership should work with HR to identify essential team members.
+- Plan for potential successors to key roles in case of turnover.
+- Provide successors with necessary training and development.
+- Ensures continuity when key personnel leave the organization.

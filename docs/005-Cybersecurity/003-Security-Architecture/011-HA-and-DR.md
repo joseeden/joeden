@@ -212,6 +212,7 @@ Organizations often maintain diverse documents for different audiences in their 
 
 - Focuses on proactive measures to prevent incidents.
 - Ensures the continuous operation of critical business functions. 
+- For more information, please see [Business Continuity.](/docs/005-Cybersecurity/009-Incident-Response/010-Business-Continuity.md)
 
 **Disaster Recovery (DR) plans**
 

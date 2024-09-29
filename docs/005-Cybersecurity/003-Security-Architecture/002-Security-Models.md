@@ -100,7 +100,11 @@ Also known as the **Chinese Wall**, the Brewer and Nash Model is designed to pre
 
 In this model, there is a wall to segment data types and develops set of rules that ensure that no subject accesses the objects on the other side of the wall. These dynamic rules can change as the subject accesses different information.
 
+<div class='img-center'>
+
 ![](/img/docs/security-models-brewer-and-nash-model.png)
+
+</div>
 
 
 ## Graham-Denning Model
