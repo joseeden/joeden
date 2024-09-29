@@ -41,3 +41,35 @@ The final phase where findings from the analysis are documented and presented.
 - Prepare a detailed and coherent report of findings.
 - Ensure the report is accessible to non-technical audiences.
 - Include necessary information for legal proceedings, such as evidence handling and conclusions.
+
+## After Action Review (AAR)
+
+An After Action Review (AAR) is a structured process for analyzing incidents or exercises to improve future performance. 
+
+- Evaluate response effectiveness.
+- Identify lessons learned.
+- Foster continuous improvement.
+
+### Key Components
+
+- **Participation**: Involve all relevant stakeholders for diverse insights.
+- **Documentation**: Collect data, timelines, decisions, and actions.
+- **Analysis**: Assess successes and failures in processes and outcomes.
+
+### Steps in Conducting an AAR
+
+1. **Preparation**: 
+   - Schedule shortly after the incident.
+   - Gather reports, logs, and communications.
+
+2. **Conducting the Review**: 
+   - Facilitate open discussions.
+   - Use guiding questions to evaluate intentions vs. outcomes.
+
+3. **Documenting Findings**: 
+   - Summarize key findings and recommendations.
+   - Highlight successful strategies and areas needing improvement.
+
+4. **Follow-Up**: 
+   - Share the report with stakeholders.
+   - Monitor implementation of action items.
