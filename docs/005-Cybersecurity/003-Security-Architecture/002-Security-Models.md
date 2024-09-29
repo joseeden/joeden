@@ -62,3 +62,85 @@ The Biba Integrity Model focuses on maintaining data **integrity** by preventing
   - A user with secret clearance should not be able to write information to a top secret file.
   - Ensures that data cannot be modified by lower integrity levels
   - Often used in environments where data accuracy and reliability are critical
+
+## Clark-Wilson Integrity Model
+
+The Clark-Wilson model maintains data integrity through controlled access and well-formed transactions, focusing on integrity verification for constrained items.
+
+- Enforces proper processes for authorized users.
+- Ensures separation of duties and auditability.
+- Applications control user access to programs.
+
+It uses **Transformation Procedures (TPs)** and **Constrained Data Items (CDIs)** to safeguard integrity:
+
+- Requires "well-formed transactions."
+- Steps must be performed in the correct order.
+- Individuals executing steps must be authenticated.
+
+The model is also considered a **Take-Grant Model**, which:
+
+- Grants permissions based on predefined rules.
+- It is up to the subject and object to take, grant, or revoke rights.
+- Adds more layers of security for controlled data access.
+
+The model addresses three key integrity goals:
+
+- Authentication and authorization (Access Control Lists).
+- Prevents authorized users from making immproper modifications.
+- Maintains internal and external consistency through "well-formed transactions."
+
+## Brewer and Nash Model
+
+Also known as the **Chinese Wall**, the Brewer and Nash Model is designed to prevent conflicts of interest in environments where access to sensitive information from multiple organizations must be controlled.
+
+- Permissions are dynamically changing based on RBAC.
+- Ensures users cannot access conflicting data sets (e.g., competing companies).
+- Used primarily in financial and consulting sectors.
+- Prevents information flow between competing entities.
+
+In this model, there is a wall to segment data types and develops set of rules that ensure that no subject accesses the objects on the other side of the wall. These dynamic rules can change as the subject accesses different information.
+
+![](/img/docs/security-models-brewer-and-nash-model.png)
+
+
+## Graham-Denning Model
+
+The Graham-Denning model defines a set of rights for managing interactions between subjects (users) and objects (resources) in a secure system.
+
+- Controls how subjects create, delete, and manage access to objects.
+- Focuses on secure resource management and access control.
+- Emphasizes rules for assigning and revoking access rights.
+
+The model defines eight specific protection rights:
+
+1. Create an object
+2. Delete an object
+3. Create a subject
+4. Delete a subject
+5. Read access rights
+6. Grant access rights
+7. Delete access rights
+8. Transfer access rights
+
+
+## Harrison-Ruzzo-Ullman (HRU) Model
+
+Similar to the Graham-Denning Model, the HRU model defines rules for access control and managing rights within a system.
+
+- Focuses on the creation, deletion, and modification of rights.
+- Allows for dynamic changes in permissions.
+- Analyzes whether unauthorized access can occur.
+
+When configuring the HRU Model, we use a table, or **matrix**, containing:
+
+- Current subjects (S).
+- Current objects (O).
+- Access Matrix (P) or Access Control List (ACL).
+
+Sample Matrix:
+
+|   | Object 1 | Object 2 | Object 3 |
+|---|----------|----------|----------|
+| S1 | Read     | Write    | Execute  |
+| S2 | Write    | None     | Read     |
+| S3 | Execute  | Write    | None     |
