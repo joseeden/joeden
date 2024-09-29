@@ -109,7 +109,7 @@ Criminal law encompasses statutes and regulations that define offenses against t
 
 ### Civil Law
 
-Civil law deals with disputes between individuals or organizations, where plaintiffs seek compensation or specific performance rather than criminal penalties. 
+Also known as **Tort Law**, Civil law deals with disputes between individuals or organizations, where plaintiffs seek compensation or specific performance rather than criminal penalties. 
 
 - Covers almost any matter that is not addressed by criminal law.
 - This includes liability claims, estate probate, contractual disputes, etc.
@@ -136,9 +136,21 @@ Private regulations refer to rules and standards established by non-governmental
 - Provides frameworks for self-regulation and certification programs to demonstrate compliance.
 - An example is the PCI-DSS credit card processing compliance.
 
+## Reporting of Breaches 
+
+Organizations are often legally required to report data breaches to authorities, protecting affected individuals and maintaining compliance.
+
+- **Breach**
+  - Unauthorized access that could lead to disclosure of confidential data
+  - Triggers notification requirements under laws like GDPR, HIPAA, or state regulations
+
+- **Data Disclosure**
+  - Data was exposed and actively disclosed to unauthorized parties
+  - Obligates organizations to inform impacted individuals and authorities promptly
+
 ## Fourth Amendment
 
-The Fourth Amendment to the United States Constitution protects the right of people to be secure in their persons, houses, papers, and effects against unreasonable searches and seizures. In terms of IT security, the Fourth Amendment influences discussions and practices related to privacy rights and government surveillance of digital information. Key aspects include:
+The Fourth Amendment to the United States Constitution protects the right of people to be secure in their persons, houses, papers, and effects against unreasonable searches and seizures. Key aspects include:
 
 - **Protection Against Unlawful Searches** 
    - It establishes the principle that individuals have a right to be secure against unreasonable searches and seizures of their electronic data by government entities.
@@ -149,7 +161,6 @@ The Fourth Amendment to the United States Constitution protects the right of peo
 - **Impact on Digital Privacy** 
   - Shapes legal interpretations and discussions regarding the privacy rights of individuals concerning their electronic communications, data stored in the cloud, and digital devices.
 
-
 ## FISMA
 
 FISMA stands for the Federal Information Security Management Act. It is a United States federal law passed in 2002 as part of the Electronic Government Act. FISMA outlines comprehensive requirements for securing information and information systems within federal agencies and provides a framework for managing information security risks.
@@ -159,3 +170,63 @@ FISMA stands for the Federal Information Security Management Act. It is a United
 - Mandates NIST-defined security controls.
 - Requires annual information security program reporting.
 - Monitored by DHS and OMB for compliance and improvement.
+
+## U.S. Legal and Regulatory Compliance
+
+Compliance with legal and regulatory standards ensures organizations operate within U.S. laws while protecting sensitive information.
+
+- **Sarbanes-Oxley (SOX)**
+  - Mandates accurate financial reporting for public companies
+  - Requires internal controls for financial data integrity
+  - Holds executives personally accountable for fraud
+
+- **Gramm-Leach-Bliley (GLB)**
+  - Protects personal financial information
+  - Requires financial institutions to implement safeguards
+  - Involves consumer privacy notices and data protection measures
+
+- **Basel II**
+  - Regulates international banking standards
+  - Focuses on risk management for financial institutions
+  - Ensures capital adequacy and effective risk controls
+
+
+## Laws, Directives, Regulations 
+
+A variety of U.S. laws govern privacy, data protection, and computer security, ensuring compliance and safeguarding sensitive information.
+
+- **The Federal Privacy Act of 1974**
+  - Regulates the collection, maintenance, and use of personal information by federal agencies
+  - Ensures transparency and privacy protections for U.S. citizens
+
+- **The Computer Security Act of 1987**
+  - Established requirements for securing federal computer systems
+  - Mandates the protection of sensitive but unclassified information
+
+- **Electronic Communications Privacy Act of 1986**
+  - Protects electronic communications from unauthorized access and interception
+  - Extends privacy protections to emails, phone calls, and electronic data
+
+- **HIPAA**
+  - Sets standards for protecting health information
+  - Ensures confidentiality, integrity, and availability of healthcare data
+
+- **The Computer Fraud and Abuse Act**
+  - Criminalizes unauthorized access to federal or protected computers
+  - Addresses cybercrimes including hacking and fraud
+
+- **Federal Information and Resources Management Regulation**
+  - Governs the use and management of federal information resources
+  - Ensures federal agencies maintain security and efficiency in resource use
+
+- **Office of Management and Budget Circular A-130**
+  - Provides guidance on managing federal information resources
+  - Focuses on the need for securing federal information systems
+
+- **1991 US Federal Sentencing Guidelines**
+  - Introduces penalties for corporate crimes, including cybersecurity violations
+  - Encourages companies to adopt effective compliance programs
+
+- **The Economic Espionage Act of 1996**
+  - Criminalizes the theft or misappropriation of trade secrets
+  - Protects businesses from economic espionage and intellectual property theft

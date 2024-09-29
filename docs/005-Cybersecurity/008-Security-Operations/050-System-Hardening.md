@@ -142,6 +142,20 @@ Whenever a device is found not compliant with the security baseline, it may be d
   - Temporarily blocks emails from unknown senders.
   - Requires the sender to resend the email.
 
+### Whitelisting Modes 
+
+Whitelisting is a security technique that only allows approved applications or processes to run on a system.
+
+- **Enforcement Mode**
+  - Strictly allows only whitelisted applications to run
+  - Blocks all other applications from executing
+  - Ensures maximum security by preventing unauthorized programs
+  - Causes problems when updating/patching host-based security systems.
+
+- **Audit Mode**
+  - Monitors and logs attempts to run non-whitelisted applications
+  - Does not block execution but provides visibility into activities
+  - Useful for testing and refining the whitelist
 
 
 ## Group Policies 
