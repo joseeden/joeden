@@ -65,7 +65,7 @@ Data Backup involves creating duplicate copies of critical data and storing them
 
 ## Data Backup Strategies 
 
-add simple intro here...
+Effective data backup strategies help organizations recover from data loss incidents and minimize downtime.
 
 - **Robotic Tape Changers**
   - Automate the process of managing and swapping tape storage.

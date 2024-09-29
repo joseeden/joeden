@@ -29,6 +29,8 @@ Classification involves assessing potential impacts on confidentiality, integrit
    - Enables efficient security processes.
    - Similar levels share common controls.
 
+For more information, please see [Data Classification.](/docs/005-Cybersecurity/002-Asset-Security/002-Data-Handling.md)
+
 ## Labeling
 
 Label information to enforce appropriate access controls.
@@ -48,6 +50,9 @@ Label information to enforce appropriate access controls.
 
 4. **Unrestricted Public Data**
     - Already published; no harm from further dissemination or disclosure.
+
+For more information, please see [Data Classification.](/docs/005-Cybersecurity/002-Asset-Security/002-Data-Handling.md)
+
 
 ## Retention
 

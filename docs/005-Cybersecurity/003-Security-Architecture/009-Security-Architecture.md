@@ -1,6 +1,6 @@
 ---
-title: "Security Architecture"
-description: "Different types of secure architectures"
+title: "On-premise Security"
+description: "Securing on-premise datacenters"
 tags: [Security, Cybersecurity, Security Architecture, Security Engineering]
 sidebar_position: 9
 last_update:
@@ -117,6 +117,14 @@ This configuration helps data centers improve cooling efficiency, reduce energy 
 </div>
 
 
+### Positive Pressurization
+
+Positive pressurization is a strategy used to maintain a controlled environment within datacenters. It is used to allow air to go out an open door instead of going in. This is helpful in a fire situation, as smoke must go out of the building.
+
+- Prevents dust and pollutants from entering
+- Ensures consistent distribution of cool air
+- Enhances airflow for better cooling efficiency
+
 ## Closets
 
 Protect access to the physical layer for information system security.
@@ -133,7 +141,7 @@ Ensure constant and consistent power delivery to data centers.
 - Size backup generators for the critical load and use battery backups for stabilization.
 - Regularly test alternate power sources for effective failover.
 
-Key terms:
+### Key terms
 
 - **Surges**
     - Small and unexpected increase in the amount of voltage being provided.
@@ -157,6 +165,51 @@ Key terms:
     - Usually referred to as "blackouts".
     - Total loss of power for a given period of time.
     - When power is restored, it can cause a power spike.
+
+### Reliable Electrical Source
+
+A dependable electrical source is essential in datacenters to prevent disruptions and ensure continuous operation of critical systems.
+
+- **Primary power source**
+  - Supplies regular, uninterrupted power for daily operations
+  - Separate, dedicated feeders from two utility substations for redundancy
+
+- **Alternate power source**
+  - Activates when the primary source fails
+  - Power lines should handle inrush as recharge begins
+  - Includes a properly sized generator with adequate fuel supply
+  - Uses UPS systems as immediate backup power.
+
+### UPS Systems
+
+Uninterruptible Power Supplies (UPS) provide immediate backup power during outages to protect equipment from power disruptions.
+
+- **Inline UPS**
+  - Continuously supplies conditioned power to devices
+  - Provides instant power transfer during an outage
+
+- **Standby UPS**
+  - Remains idle until a power failure occurs
+  - Switches on during power loss, with a slight delay
+
+
+### Electrical Interference
+
+- **Electromagnetic Interference (EMI)**
+
+    - Line noise from external magnetism.
+    - Often caused by lighting or electrical motors.
+    - Caused by difference in wires or improper wiring.
+
+- **Radio Frequency Interference (RFI)**
+
+    - Line noise from flourescent lighting and electrical cables.
+    - Could be cause by components within an electrical system. 
+
+- **Transient Noise**
+
+    - Disturbance imposed on a power line by something starting.
+    - Could be cause by a large motor or a piece of a heavy equipment.
 
 ## Fire Protection
 
