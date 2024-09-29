@@ -17,8 +17,6 @@ Coaxial cabling is a type of electrical cable used primarily in radio frequency 
 - Shielded and commonly used for cable television and satellite.
 - More resistant to interference and signal degradation over long distances.
 
-How it looks like:
-
 <div class='img-center'>
 
 ![](/img/docs/network-cabling-coaxial-cablinggg.png)

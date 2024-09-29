@@ -19,6 +19,72 @@ Multi-level security (MLS) enforces security policies that segregate access to d
 - Commonly used in military and government settings
 - Prevents unauthorized access to sensitive data
 
+## State Machine Model
+
+The State Machine Model ensures that a system remains in a secure state by defining allowable states and transitions between them. This model is critical in maintaining security through structured access controls.
+
+- Defines specific states for users and data.
+- Transitions between states must follow strict security policies.
+- Helps prevent unauthorized access by maintaining valid state conditions.
+
+The State Machine model works with security levels, classifications, and clearances:
+
+- **Single-state Machine**
+
+  - There's a policy in place that dictates the security levels
+  - System will only process data from a single security level.
+  - No way to separate classifications, all are at the same security level.
+  - All users must have full clearance and formal access approval.
+
+- **Multi-state Machine**
+
+  - Less secure, but are more flexible.
+  - Processing of data at two or more levels without the risk of compromising security.
+  - Data can be classified or unclassified and not all users are required full clearance.
+
+## Lattice-based Model 
+
+The Lattice-based Model provides a framework for access control based on user and data classification levels. It establishes a hierarchical structure for permissions, ensuring that access is determined by both sensitivity and user clearance.
+
+- Uses a lattice structure to define levels of access.
+- Employs rules to control data flow between different security levels.
+- Facilitates mandatory access control, reducing risks of data leakage.
+
+This model uses a two dimensional matrix that defines which subjectsare permitted to access which objects at what permission level.
+
+- This model uses pair of elements (subject and object).
+- Each pairs have a set with greatest lower bound and least upper bound of access rights.
+- Bounds can be confidentiality levels (classifications or clearance levels) or integrity levels.
+- Lattice-based access control allows security controls for complex environments.
+
+<div class='img-center'>
+
+![](/img/docs/security-models-lattice-based-modellll.png)
+
+</div>
+
+
+## Non-Interference Model
+
+The Non-Interference Model focuses on preventing actions at one security level from affecting actions at another. This model ensures that high-security operations do not interfere with lower-security operations, maintaining operational integrity.
+
+- Enforces strict separation between different security levels.
+- Ensures that lower-level users cannot observe higher-level actions.
+- Protects sensitive operations from potential interference or influence.
+
+The theory here is that users are restricted to working in different areas called **domains**, which is a set of object  that a user is allowed to access. The user at one level cannot determine what's happening at a higher security level and users at the higher security level cannot affect or interfere with individuals at levels below them.
+
+## Information Flow Model
+
+The Information Flow Model emphasizes the secure transfer of information within a system. It analyzes how information flows between different entities to prevent unauthorized access or data leakage.
+
+- Monitors paths of information flow between processes and users.
+- Implements policies to ensure information is not improperly shared.
+- Helps in designing systems that maintain confidentiality and integrity during data exchanges.
+
+This model is based on the Lattice model. Everytime there is na input into the system, there's a state transition, and there's a specific output. Instead of access control lists, we use flow rules to restrict the information from flowing in ways that would go against the security policy.
+
+
 ## Bell-LaPadula Model
 
 The Bell-LaPadula Model is focused on maintaining data **confidentiality**. It enforces rules that prevent unauthorized access and disclosure of information.
