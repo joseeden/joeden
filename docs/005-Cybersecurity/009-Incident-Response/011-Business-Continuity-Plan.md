@@ -113,21 +113,21 @@ Managing supplier and vendor relationships is key for maintaining supply chain c
 - Assess the continuity plans of key suppliers and vendors.
 - Develop contingency plans for supply chain disruptions.
 
-##  Testing and Exercising
+## Testing and Exercising
 
 Regular testing and exercising of the BCP validate the effectiveness of response strategies.
 
 - Conduct regular tests to evaluate the BCP's effectiveness.
 - Simulate Business Continuity exercises to practice response strategies.
 
-##  Documentation and Reporting
+## Documentation and Reporting
 
 Documentation and reporting ensure transparency and accountability in incident management.
 
 - Maintain up-to-date documentation of the BCP.
 - Establish reporting mechanisms for incidents and recovery progress.
 
-##  Continuous Improvement
+## Continuous Improvement
 
 Continuous improvement involves regularly updating the BCP based on insights gained from incidents and exercises.
 
