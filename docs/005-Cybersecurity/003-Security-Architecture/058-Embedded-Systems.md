@@ -22,6 +22,8 @@ Examples:
 
 Embedded systems often operate in **real-time** and have resource constraints such as limited memory, processing power, and energy. 
 
+## Embedded Systems
+
 ### Types of Embedded Systems 
 
 Types: 
@@ -66,7 +68,7 @@ Key characteristics:
   - Uses message queues for asynchronous communication.
   - Employs semaphores and event flags for synchronization and mutual exclusion.
 
-### Risks
+### Risks of Embedded Systems
 
 - **Hardware Failure**
 
