@@ -9,7 +9,7 @@ last_update:
 
 
 
-> *This notes is based on Atlassian's course on [Jira Fundamentals](https://university.atlassian.com/student/path/815443-Jira-fundamentals?utm_source=facebook&utm_medium=paid-social&utm_campaign=utm_campaign%3DP%3Auni-ondemand*O%3Auniversity*H%3Afy22*I%3Aimc-atlasuniversity*A%3Aimage*&utm_content=P%3Aatlassian%7CO%3Auniversity%7CV%3Afacebook%7CG%3Aallg%7CL%3Aen%7CF%3Aaware%7CT%3Ainterest%7CI%3Aimc-atlasuniversity%7CA%3Aimage%7CD%3Aalld%7CU%3Alookalike_newsfeed-Jirafundamentals-na-a&fbclid=IwAR0UZQKRy8eJLIOfqV9RuPFffo2VCc3YdEwLl1L4x_aQ0ljzXZdlpS8DSLc)*
+> *This notes is based on Atlassian's course on [Jira Fundamentals](https://community.atlassian.com/t5/Training-Certification-articles/Atlassian-University-Series-Jira-Fundamentals/ba-p/2204206)*
 
 
 ## Jira Products 
