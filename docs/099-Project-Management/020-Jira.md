@@ -897,11 +897,11 @@ You probably spend a lot of time with issues. Creating. Updating. Managing. Whil
 
 The summary is the title of an issue. Summaries are required for every new issue you create. The best practice is to keep each summary between 4-7 words. Write them in crisp and precise language so anyone on your team can understand at a glance. Here are a few suggested writing formats to try:
 
-🟡 **Tasks** - Write task summaries like this: "<ACTION> <ACTIVITY/THING>." (e.g., "Build new homepage")
+**Tasks** - Write task summaries like this: "<ACTION> <ACTIVITY/THING>." (e.g., "Build new homepage")
 
-🟡 **Stories** - Write story summaries like this: "As a <PERSONA>, I want <THING>." (e.g., "As a user, I want a back button")
+**Stories** - Write story summaries like this: "As a <PERSONA>, I want <THING>." (e.g., "As a user, I want a back button")
 
-🟡 **Bugs** - Write bug summaries like this: "<FEATURE> should do <X>, but does <Y>." (e.g., "Menu button should show menu, but errors out")
+**Bugs** - Write bug summaries like this: "<FEATURE> should do <X>, but does <Y>." (e.g., "Menu button should show menu, but errors out")
 
 <div class='img-center'>
 
