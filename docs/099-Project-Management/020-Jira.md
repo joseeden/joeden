@@ -12,7 +12,7 @@ last_update:
 > *This notes is based on Atlassian's course on [Jira Fundamentals](https://community.atlassian.com/t5/Training-Certification-articles/Atlassian-University-Series-Jira-Fundamentals/ba-p/2204206)*
 
 
-## Jira Products 
+## Overview
 
 Jira offers several products for different types of team management:
 
@@ -23,11 +23,8 @@ Jira offers several products for different types of team management:
 
 This guide focuses on **Jira Software**.
 
-<div class='img-center'>
+![](/img/docs/jira-software-landing-pageeee.png)
 
-![](/img/docs/jirasoftware.png)  
-
-</div>
 
 
 ### What is Jira Software?
@@ -38,42 +35,49 @@ Jira Software helps teams manage and track work, acting like a team-wide to-do l
 - **Efficiency:** Teams can plan and track start and end dates.
 - **Collaboration:** Keeps team discussions and comments well-organized.
 
-<div class='img-center'>
-
-![](/img/docs/howjirahelpsteams.png)  
-
-</div>
-
-<div class='img-center'>
-
-![](/img/docs/howjirahelps.png)  
-
-</div>
-
 
 ### Jira Work Management
 
+Jira Work Management is designed to help teams manage business projects and processes efficiently.
+
+- Tailored for non-technical teams like marketing and finance
+- Simplifies tracking, approvals, and reporting across teams
+
+
 <div class='img-center'>
 
-![](/img/docs/jiraworkmgt.png)  
+![](/img/docs/jira-work-management-sample-pageee.png)
 
 </div>
 
 
 ### Jira Service Management
 
+
+Jira Service Management is used for IT and customer service teams to manage requests and incidents.
+
+- Streamlines support requests and incident handling
+- Integrates with ITSM workflows for better support 
+
+
 <div class='img-center'>
 
-![](/img/docs/servmgt.png)  
+![](/img/docs/jira-service-management-sample-pageee.png)
 
 </div>
 
 
 ### Jira Align
 
+Jira Align connects business strategy to technical execution, aligning teams and projects.
+
+- Helps scale Agile practices across teams
+- Tracking of project progress and alignment with goals
+
+
 <div class='img-center'>
 
-![](/img/docs/jiraalign.png)  
+![](/img/docs/jira-align-sample-pageee.png)
 
 </div>
 
@@ -82,15 +86,6 @@ Jira Software helps teams manage and track work, acting like a team-wide to-do l
 ## Jira Roles
 
 Jira has two primary roles:
-
-- **Users**
-- **Administrators**
-
-<div class='img-center'>
-
-![](/img/docs/jirausersadmins.png)  
-
-</div>
 
 <div class='img-center'>
 
@@ -108,7 +103,7 @@ Your main responsibility is to update work items (called "issues") daily. Issues
 - Use issues to ask questions or add notes.
 - Regularly update issues to reflect progress.
 
-Issues vary in size—some may take hours, others months. Each issue has an assigned person responsible for updating it.
+Issues may vary in size—some may take hours, others months. Each issue has an assigned person responsible for updating it.
 
 
 ## Working in Jira
@@ -116,5 +111,54 @@ Issues vary in size—some may take hours, others months. Each issue has an assi
 <div class='img-center'>
 
 ![](/img/docs/jiratour.png)  
+
+</div>
+
+## Jira Project
+
+A project in Jira is a collection of issues that helps organize work. Every issue belongs to a project, which is named based on how your team structures its work.
+
+- Project name is visible under the Jira logo.
+- View all projects via the 'Projects' dropdown in the navigation bar.
+
+<div class='img-center'>
+
+![](/img/docs/jiraprojectview1.png)
+
+</div>
+
+
+
+### Project Names
+
+Project names give insight into how work is organized in Jira.
+
+- Projects can be named after teams or specific deliverables.
+- Helps identify how work is structured within Jira.
+
+<div class='img-center'>
+
+![](/img/docs/jiraprojectnaming.png)
+
+</div>
+
+### Types of Jira Projects
+
+There are two main types of Jira projects:
+
+- **Team-managed projects**: for smaller teams controlling their own processes.
+- **Company-managed projects**: standardized for larger teams, managed by Jira admins.
+
+<div class='img-center'>
+
+![](/img/docs/jiratypesofproejcts.png)
+
+</div>
+
+These types determine how workflows and team management are handled in Jira.
+
+<div class='img-center'>
+
+![](/img/docs/openjiraproject.png)
 
 </div>
