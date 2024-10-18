@@ -10,8 +10,8 @@ last_update:
 
 ## Check Disk and CPU Usage 
 
+Get the script here: [Sample python scripts.](https://github.com/joseeden/joeden/tree/master/public/code/python/basics)
 
-Get the script here: 
 
 This Python script checks disk and CPU usage using the `shutil` and `psutil` modules:
 

@@ -48,13 +48,11 @@ python3 script-name.py
 **Functions** perform specific tasks in code.  
 
 - Example: `print()` outputs a message to the screen.
-- More functions will be introduced later.
 
 **Keywords** are reserved words used to form instructions in Python.
 
 - Examples: `for`, `in`, `if`, `def`.
 - Full list includes: `False`, `True`, `None`, `return`, `break`, etc.
-- No need to memorize; each will be covered as needed.
 
 ## Implicit vs. Explicit Conversion
 
@@ -77,8 +75,6 @@ Use `return` to send data back to the caller. Functions can return several value
 
 Python uses standard and special operators for math operations.
 
-Here's a table summarizing the arithmetic operators in Python:
-
 | Operator | Description                           | Example                  |
 |----------|---------------------------------------|--------------------------|
 | `+`      | Addition                              | `a + b`                  |
@@ -92,23 +88,25 @@ Here's a table summarizing the arithmetic operators in Python:
 ### Comparison Operators
 
 Comparison operators return boolean results (True/False).
-  
-| Operator | Description                         |
-|----------|-------------------------------------|
-| `==`     | Equal                               |
-| `!=`     | Not equal                           |
-| `<`      | Less than                           |
-| `<=`     | Less than or equal                  |
-| `>`      | Greater than                        |
-| `>=`     | Greater than or equal               |
+
+| Operator | Description             | Example                        |
+|----------|-------------------------|--------------------------------|
+| `==`     | Equal                   | `5 == 5` → `True`              |
+| `!=`     | Not equal               | `5 != 3` → `True`              |
+| `<`      | Less than               | `3 < 5` → `True`               |
+| `<=`     | Less than or equal      | `3 <= 3` → `True`              |
+| `>`      | Greater than            | `5 > 3` → `True`               |
+| `>=`     | Greater than or equal   | `5 >= 5` → `True`              |
 
 ### Logical Operators
 
-Used to combine conditional statements and determine the truth value of expressions. 
+Logical operators are used to combine conditional statements and determine the truth value of expressions.
 
-  - `and`: True if both sides are True.
-  - `or`: True if either side is True.
-  - `not`: Inverts the boolean value.
+| Operator | Description                | Example                                  |
+|----------|----------------------------|------------------------------------------|
+| `and`    | True if both sides are True | `True and False` → `False`               |
+| `or`     | True if either side is True | `True or False` → `True`                 |
+| `not`    | Inverts the boolean value   | `not True` → `False`, `not False` → `True` |
 
 ### Modulo Operator
 
@@ -117,65 +115,88 @@ Example: `5 % 2` returns `1`.
 
 ## If and Else
 
-- **If Statement**: 
+An **If Statement** begins with `if`, followed by a condition and a colon. The indented code runs if the condition is True.
 
-  - Begins with `if`, followed by a condition and a colon.
-  - Indented code runs if the condition is True.
+```python
+if x > 5:
+    print("x is greater than 5")
+```
 
-- **Else Statement**: 
+#### Else Statement
 
-  - Executes code when the preceding `if` evaluates to False.
+An **Else Statement** executes code when the preceding `if` condition evaluates to False.
 
-- **Branching Syntax**:
+```python
+if x > 5:
+    print("x is greater than 5")
+else:
+    print("x is less than or equal to 5")
+```
 
-    ```python
-    if condition1:
-        if-block
-    elif condition2:
-        elif-block
-    else:
-        else-block
-    ```
+#### Branching Syntax
 
+In the example below, multiple conditions are checked using `if`, `elif`, and `else`:
+
+```python
+if condition1:
+    # if-block
+elif condition2:
+    # elif-block
+else:
+    # else-block
+```
+
+If `condition1` is not met, `condition2` is checked. If both are not met, then it goes through the `else` block.
 
 ## Loops 
 
 ### While Loop
 
-**While Loop** executes as long as the condition is True.
+A **While Loop** executes as long as the specified condition is True.
 
 ```python
-while condition:
-    body
+while x < 5:
+    print(x)
+    x += 1
 ```
 
-### For Loops Recap
+### For Loop
 
-**For Loop** iterates over a sequence.
+A **For Loop** iterates over a sequence (like a list or a string).
 
-  ```python
-  for variable in sequence:
-      body
-  ```
+```python
+for i in range(5):
+    print(i)
+```
 
 ### Break & Continue
 
-Ways to stop loops:
+Ways to stop or control loops:
 
-- **break**: Exits the loop.
-- **continue**: Skips to the next iteration.
+- **break**: Exits the loop entirely.
+- **continue**: Skips to the next iteration of the loop.
+
+Example:
+
+```python
+for i in range(5):
+    if i == 3:
+        break  # Loop stops when i equals 3
+    print(i)
+```
 
 
 ## Recursion
 
-**Recursive Functions** must have a base case and a recursive case.
+**Recursive Functions** call themselves with modified parameters and must have a base case to stop the recursion.
 
-  ```python
-  def recursive_function(parameters):
-      if base_case_condition(parameters):
-          return base_case_value
-      recursive_function(modified_parameters)
-  ```
+```python
+def recursive_function(n):
+    if n <= 1:  # Base case
+        return 1
+    else:
+        return n * recursive_function(n - 1)  # Recursive case
+```
 
 ## Common Pitfalls
 
