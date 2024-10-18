@@ -76,3 +76,45 @@ Jira Software helps teams manage and track work, acting like a team-wide to-do l
 ![](/img/docs/Jiraalign.png)  
 
 </div>
+
+
+
+## Jira Roles
+
+Jira has two primary roles:
+
+- **Users**
+- **Administrators**
+
+<div class='img-center'>
+
+![](/img/docs/Jirausersadmins.png)  
+
+</div>
+
+<div class='img-center'>
+
+![](/img/docs/Jirausersadminswhattheydo.png)  
+
+</div>
+
+
+
+### As a User
+
+Your main responsibility is to update work items (called "issues") daily. Issues track progress, questions, and notes.
+
+- Update issues when work is completed.
+- Use issues to ask questions or add notes.
+- Regularly update issues to reflect progress.
+
+Issues vary in size—some may take hours, others months. Each issue has an assigned person responsible for updating it.
+
+
+## Working in Jira
+
+<div class='img-center'>
+
+![](/img/docs/Jiratour.png)  
+
+</div>
