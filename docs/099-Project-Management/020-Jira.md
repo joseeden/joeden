@@ -25,7 +25,7 @@ This guide focuses on **Jira Software**.
 
 <div class='img-center'>
 
-![](/img/docs/Jirasoftware.png)  
+![](/img/docs/jirasoftware.png)  
 
 </div>
 
@@ -40,13 +40,13 @@ Jira Software helps teams manage and track work, acting like a team-wide to-do l
 
 <div class='img-center'>
 
-![](/img/docs/howJirahelpsteams.png)  
+![](/img/docs/howjirahelpsteams.png)  
 
 </div>
 
 <div class='img-center'>
 
-![](/img/docs/howJirahelps.png)  
+![](/img/docs/howjirahelps.png)  
 
 </div>
 
@@ -55,7 +55,7 @@ Jira Software helps teams manage and track work, acting like a team-wide to-do l
 
 <div class='img-center'>
 
-![](/img/docs/Jiraworkmgt.png)  
+![](/img/docs/jiraworkmgt.png)  
 
 </div>
 
@@ -73,7 +73,7 @@ Jira Software helps teams manage and track work, acting like a team-wide to-do l
 
 <div class='img-center'>
 
-![](/img/docs/Jiraalign.png)  
+![](/img/docs/jiraalign.png)  
 
 </div>
 
@@ -88,13 +88,13 @@ Jira has two primary roles:
 
 <div class='img-center'>
 
-![](/img/docs/Jirausersadmins.png)  
+![](/img/docs/jirausersadmins.png)  
 
 </div>
 
 <div class='img-center'>
 
-![](/img/docs/Jirausersadminswhattheydo.png)  
+![](/img/docs/jirausersadminswhattheydo.png)  
 
 </div>
 
@@ -115,6 +115,6 @@ Issues vary in size—some may take hours, others months. Each issue has an assi
 
 <div class='img-center'>
 
-![](/img/docs/Jiratour.png)  
+![](/img/docs/jiratour.png)  
 
 </div>
