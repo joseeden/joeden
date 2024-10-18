@@ -170,36 +170,29 @@ These types determine how workflows and team management are handled in Jira.
 
 ## Boards 
 
-Boards are the most common way to see your work.
+Boards visually track work progress with columns for statuses like "To Do" and "Done."
 
-You got a sneak peek of  boards  earlier. What's a board, again? A board is a visual display of work progress, often with 3-4 columns. 
+- **Workflow:** Issues move through stages (e.g., `To Do → Done`).
+- **Moving Issues:** Drag issue cards across columns to update progress.
+
+### Moving Issue Cards
 
 These board columns have headers at the top representing the  status  of each issue. For example, statuses could be: 
 
-- To Do, 
-- In Progress, 
-- In Review, 
+- To Do
+- In Progress
+- In Review
 - Done
 
-Statuses are customized by each team, so yours may look different from the examples.
+Issues can move forward and backward in a workflow, depending on how the work gets done.
 
-### Move issue cards across the board as work gets done.
 
-The different status columns together represent a  **workflow**. A workflow is the path of statuses an issue will go through from start to finish. An example of a simple workflow is an issue moving from
+### Board Names
 
-```bash 
-To Do --> In Progress --> Done.
-```
+Boards are part of projects and named after teams or deliverables.
 
-When an issue is ready to be updated, the person responsible for the work can simply drag-and-drop the issue card to a different column on the board. This updates the issue's status so everyone on the team can be in the loop. Issues can move forward and backward in a workflow, depending on how the work gets done.
-
-### How are boards named?
-
-Just like projects, boards have specific names.
-
-Boards sit within projects. A single Jira project can have several boards. A board is often named after a larger deliverable or team of people. 
-
-In this example, you can see the project name is "Game design team" (the name of their team). And the board name is "Farm Harvest (Video Game)" (a larger deliverable).
+- Boards exist within projects and may have multiple boards.
+- Board names focus on teams or deliverables.
 
 <div class='img-center'>
 
@@ -228,39 +221,12 @@ You probably have more than one board. Each Jira project often has multiple boar
 </div>
 
 
+### Board Types
 
-### Board Types 
+Boards help organize work.
 
-<div class='img-center'>
-
-![](/img/docs/jiraboardtypes2.png)  
-
-</div>
-
-add short intro... 
-
-- **Kanban Boards**
-
-    - add info
-    - add info
-    - add info
-
-- **Scrum Boards**
-    - add info
-    - add info
-    - add info
-
-    - add info
-    - add info
-    - add info
-
-### Kanban Boards 
-
-The example screens you've seen so far have shown a  Kanban board . Kanban boards are used by all types of teams. They illustrate a continuous flow of work. Issues continuously move in and out of the board from the start of the project until the end of the project.
-
-### Scrum Boards 
-
-Scrum boards  are mostly used by agile software development teams. Scrum boards bring in groups of issues that the team will attempt to complete during a fixed period of time, often a two-week "sprint." After a sprint is completed, a new scrum board is created for the next batch of issues in the project.
+- **Kanban:** Continuous workflow without fixed deadlines.
+- **Scrum:** Work done in sprints, ideal for agile teams.
 
 ## Agile and Scrum
 
@@ -965,7 +931,7 @@ You can add a flag to any issue to indicate its importance. When a flag is added
 
 It's a great way to bring awareness to any issue that requires escalation. You may need to flag an issue that is in danger of missing its delivery date. Or flag an issue that's blocked by another task or problem.
 
-🚩To add a flag to an issue:
+To add a flag to an issue:
 
 * Open an issue
 * Select the ellipses ••• and select Add flag
@@ -993,7 +959,7 @@ Use comments to document any update, question, or request, even if it feels triv
 
 The best practice is to use comments to communicate progress, ask questions, find resources, ask for opinions, get ideas, request feedback, and @mention teammates. When used consistently, comments create a source of truth for your work. They gather updates in one place and allow anyone on your team to get up to speed quickly.
 
-💥 If there's one best practice to take away from this lesson, use the Jira comments. For every communication!
+If there's one best practice to take away from this lesson, use the Jira comments. For every communication!
 
 <div class='img-center'>
 
@@ -1104,7 +1070,7 @@ Applying these best practices will save you time finding and organizing work in 
 
 As you're using Jira each day, default to the board view. It is the most practical view, giving you a quick snapshot of all current and upcoming work.
 
-👉 **Give this a try** - Filter to see only your issues. This feature helps you cut through the clutter and focus on your work only. To do this, select your profile icon above the board. Or select the 'Only My Issues' button.
+**Give this a try** - Filter to see only your issues. This feature helps you cut through the clutter and focus on your work only. To do this, select your profile icon above the board. Or select the 'Only My Issues' button.
 
 <div class='img-center'>
 
@@ -1119,7 +1085,7 @@ Take complete control of how your issues are organized on your board. Within a s
 
 Some users prefer to organize their issues by date. Others prefer to organize by large initiative. Test out a few different strategies and see what you like.
 
-👉 **Give this a try** - Find any column on your board and drag an issue above another issue to change its order.
+**Give this a try** - Find any column on your board and drag an issue above another issue to change its order.
 
 <div class='img-center'>
 
@@ -1132,7 +1098,7 @@ Some users prefer to organize their issues by date. Others prefer to organize by
 
 Jira's basic search feature allows you to save filters for future use. A filter groups issues into a single view based on a set of search criteria. A saved filter can be shared with teammates, pulled as a report, or displayed in a dashboard (which you'll learn more about below).
 
-👉 Give this a try - Save a search as a filter:
+Give this a try - Save a search as a filter:
 
 * Set your search specs and click 'Search' 
 * Near the top of the page, click 'Save as'
@@ -1183,7 +1149,7 @@ Gadgets are the building blocks of your dashboard. There are dozens of gadgets t
 * At the top right of your window, select Add gadget
 * Scroll through the available gadgets and select Add gadget
 
-⭐ **What are the most popular gadgets for users?** It depends on how you use Jira. If you're not sure where to start, here are the four gadgets we recommend.
+**What are the most popular gadgets for users?** It depends on how you use Jira. If you're not sure where to start, here are the four gadgets we recommend.
 
 * **Issues in progress**: Shows all your issues currently in progress.
 * **Assigned to Me:** Shows all unresolved issues assigned to you.
