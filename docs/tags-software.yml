@@ -10,3 +10,15 @@ Software Development:
   label: 'Software Development'
   permalink: '/Software Development'
   description: 'Docs related to Software Development'      
+Python:
+  label: 'Python'
+  permalink: '/Python'
+  description: 'Docs related to Python'  
+Java:
+  label: 'Java'
+  permalink: '/Java'
+  description: 'Docs related to Java'  
+Javascript:
+  label: 'Javascript'
+  permalink: '/Javascript'
+  description: 'Docs related to Javascript'      
