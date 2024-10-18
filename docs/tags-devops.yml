@@ -74,15 +74,3 @@ Automation:
   label: 'Automation'
   permalink: '/Automation'
   description: 'Docs related to Automation'  
-Scrum:
-  label: 'Scrum'
-  permalink: '/Scrum'
-  description: 'Docs related to Scrum'
-Agile:
-  label: 'Agile'
-  permalink: '/Agile'
-  description: 'Docs related to Agile'
-Project Management:
-  label: 'Project Management'
-  permalink: '/Project Management'
-  description: 'Docs related to Project Management'

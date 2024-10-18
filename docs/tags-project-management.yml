@@ -1,0 +1,16 @@
+Scrum:
+  label: 'Scrum'
+  permalink: '/Scrum'
+  description: 'Docs related to Scrum'
+Agile:
+  label: 'Agile'
+  permalink: '/Agile'
+  description: 'Docs related to Agile'
+Project Management:
+  label: 'Project Management'
+  permalink: '/Project Management'
+  description: 'Docs related to Project Management'
+Jira:
+  label: 'Jira'
+  permalink: '/Jira'
+  description: 'Docs related to Jira'
