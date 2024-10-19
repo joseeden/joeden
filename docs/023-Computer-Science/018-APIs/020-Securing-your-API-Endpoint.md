@@ -53,8 +53,11 @@ Basic authentication involves sending user credentials encoded in base-64 with e
 - Encoding is not encryption; credentials are sent in clear text.
 - Requires TLS for secure transmission.
 
+<div class='img-center'>
 
 ![Basic Authentication](/img/docs/codemash-api-basicauth.png)  
+
+</div>
 
 ### HTTP Digest Authentication
 
@@ -71,8 +74,11 @@ HTTP Digest Authentication enhances security by never sending the password over 
 - MD5-hash can be cracked, raising security concerns.
 - Servers cannot store passwords, making it less common for use.
 
+<div class='img-center'>
+
 ![HTTP Digest Authentication](/img/docs/codemash-api-digest.png)
 
+</div>
 
 
 
@@ -97,6 +103,13 @@ API keys can be used like passwords but require TLS for security.
 - Headers do not appear in logs
 
 
+<div class='img-center'>
+
+![](/img/docs/codemash-api-bearer.png)
+
+</div>
+
+
 ### Tradeoffs of Bearer Tokens
 
 Using bearer tokens offers convenience, but there are tradeoffs regarding security and management.
@@ -104,12 +117,6 @@ Using bearer tokens offers convenience, but there are tradeoffs regarding securi
 - Need secure storage for API keys
 - Or allow users to view their keys
 
-
-<div class='img-center'>
-
-![](/img/docs/codemash-api-bearer.png)
-
-</div>
 
 
 ### API Keys as Cryptographic keys (HMAC) 
@@ -140,12 +147,6 @@ API keys can be used as HMAC, enhancing security without sending keys over the w
 
 </div>
 
-
-<div class='img-center'>
-
-![](/img/docs/codemash-api-hmac-reverse.png)
-
-</div>
 
 
 
@@ -180,19 +181,29 @@ JWTs are a compact and secure way to transmit information between parties as a J
 - The token is sent to the browser
 - The browser includes the token in subsequent requests
 
+### Secure tokens for clients
 
-<div class='img-center'>
-
-![](/img/docs/codemash-jwt.png)
-
-</div>
-
+Secure tokens are important for maintaining user identity and ensuring authorized access to resources in client applications. They help facilitate secure communication between the client and server while minimizing exposure to potential security threats.
 
 <div class='img-center'>
 
 ![](/img/docs/codemash-jwt-2.png)
 
 </div>
+
+### Token Format 
+
+A JWT (JSON Web Token) consists of three parts that are separated by dots. The format is as follows:
+
+```bash
+<header>.<payload>.<signature>
+```
+
+For a sample JWT, the structure might look like this:
+
+```bash
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+```
 
 
 <div class='img-center'>
@@ -201,7 +212,15 @@ JWTs are a compact and secure way to transmit information between parties as a J
 
 </div>
 
+### Storing JWT on JS Client 
 
+When storing JWTs on the client side, it's important to consider their security against various threats such as XSS and CSRF. The following table outlines different storage methods and their security implications:
+
+| Storage Method       | Safe from XSS | Safe from CSRF | App can access payload |
+|----------------------|---------------|----------------|------------------------|
+| LocalStorage          | No            | Yes            | Yes                    |
+| httOnly Secure Cookie | Yes           | Yes            | No                     |
+ 
 <div class='img-center'>
 
 ![](/img/docs/codemash-jwt-5.png)
@@ -217,15 +236,6 @@ JWTs are a compact and secure way to transmit information between parties as a J
 
 OAuth is a standard for access delegation commonly used for allowing third-party applications to access user data without exposing passwords. It facilitates secure authorization in a user-friendly way, enabling different applications to interact with user data seamlessly.
 
-OAuth is particularly beneficial in scenarios where multiple parties (resource owner, client application, and resource server) need to interact securely. This three-party setup allows users to grant limited access to their resources without sharing their credentials.
-
-
-<div class='img-center'>
-
-![](/img/docs/codemash-oauth-1.png)
-
-</div>
-
 <div class='img-center'>
 
 ![](/img/docs/codemash-oauth-3.png)
@@ -237,6 +247,8 @@ OAuth is particularly beneficial in scenarios where multiple parties (resource o
 ![](/img/docs/codemash-oauth-4.png)
 
 </div>
+
+OAuth is particularly beneficial in scenarios where multiple parties (resource owner, client application, and resource server) need to interact securely. This three-party setup allows users to grant limited access to their resources without sharing their credentials.
 
 <div class='img-center'>
 
@@ -264,46 +276,14 @@ OAuth 2.0 is a more streamlined version of the protocol, designed to be easier t
 - Access tokens do not reveal user identity
 - Considered a framework rather than a strict protocol
 
+Drawbacks:
+
+- Vulnerable to threats if not implemented correctly
+- Complex, leading to potential misuse or leakage
 
 <div class='img-center'>
 
 ![](/img/docs/codemash-oauth-10.png)
-
-</div>
-
-<div class='img-center'>
-
-![](/img/docs/codemash-oauth-11.png)
-
-</div>
-
-<div class='img-center'>
-
-![](/img/docs/codemash-oauth-12.png)
-
-</div>
-
-<div class='img-center'>
-
-![](/img/docs/codemash-oauth-13.png)
-
-</div>
-
-<div class='img-center'>
-
-![](/img/docs/codemash-oauth-14.png)
-
-</div>
-
-<div class='img-center'>
-
-![](/img/docs/codemash-oauth-15.png)
-
-</div>
-
-<div class='img-center'>
-
-![](/img/docs/codemash-oauth-16.png)
 
 </div>
 
