@@ -1,5 +1,5 @@
 ---
-title: "Jira Boards"
+title: "Boards"
 description: "Jira Boards"
 tags: [Scrum, Agile, Project Management, Jira]
 sidebar_position: 12
@@ -13,7 +13,7 @@ last_update:
 
 
 
-## Boards 
+## Overview 
 
 Boards visually track work progress with columns for statuses like "To Do" and "Done."
 

@@ -1,5 +1,5 @@
 ---
-title: "Jira Navigation"
+title: "Navigating Jira"
 description: "Jira Navigation"
 tags: [Scrum, Agile, Project Management, Jira]
 sidebar_position: 13
