@@ -14,8 +14,6 @@ last_update:
 
 Making Jira part of your daily routine can improve your productivity and team collaboration. 
 
-## Using it Daily 
-
 - **Stay organized**: See all your work in one place and prioritize tasks effectively.
 
 - **Track performance**: Use Jira data to review your progress and discuss career growth with your manager.
