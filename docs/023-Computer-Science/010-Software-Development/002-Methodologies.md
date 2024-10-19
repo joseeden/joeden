@@ -7,6 +7,17 @@ last_update:
   date: 3/14/2022
 ---
 
+## Software Development Methodologies
+
+A software development methodology, or Software Development Life Cycle (SDLC) model, consists of a framework of rules, steps, roles, and principles for software development. While many methodologies are available, the three most common are:
+
+- Waterfall
+- Agile
+- Lean
+
+Each methodology has its advantages and disadvantages. The choice of methodology depends on factors like project type, duration, and team size.
+
+
 ## Importance of Clear Requirements
 
 Every software project should start with clear requirements. Developers and customers must work together to define these needs, which are essential for project success.
@@ -38,6 +49,7 @@ This model is linear and can be inflexible, making it hard to adapt to changes d
 
 ![](/img/docs/software-dev-methodologies-waterfall-method.png)
 
+Since each phase's outcome is crucial for the next, a single misstep can disrupt the entire process. If requirements change during an iteration, they cannot be addressed until the following cycle, potentially leading to increased costs and delays in delivering features to users.
 
 ## Spiral Model
 
