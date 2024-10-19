@@ -153,19 +153,31 @@ Of these, Agile Scrum is the most widely used, with common Scrum concepts adopte
 
 ## Sprints
 
-In the Agile model, the software development life cycle still applies. Unlike the waterfall method, where there is one long iteration of the SDLC, Agile is many quick iterations of the SDLC.
+In Agile, the software development life cycle (SDLC) consists of many quick iterations called **sprints**. Unlike the waterfall method, which has one long iteration, Agile emphasizes frequent delivery of working software.
 
-These quick iterations are called sprints, and the purpose of sprints is to accomplish the frequent delivery of working software principle of the Agile manifesto. A sprint is a specific period of time (time-boxed) which is usually between two weeks and four weeks, but preferably as short as possible. The duration of the sprint should be determined before the process begins and should rarely change.
+- **Sprint Duration**  
+  - Time-boxed to 2 to 4 weeks, ideally as short as possible.  
+  - Duration should be decided beforehand and rarely changed.
 
-During a sprint, each team takes on as many tasks, also known as user stories, as they feel they can accomplish within the time-boxed duration of the sprint. When the sprint is over, the software should be working and deliverable, but that doesn't necessarily mean that it will be delivered; a sprint doesn't always lead to a release, but Agile requires the software to remain deliverable.
+- **Sprint Goals**  
+  - Teams take on tasks that can be completed within the sprint.  
+  - Software must be working and deliverable by end of sprint.
+  - Software doesn't necessarily need to be always released.
 
 ## Backlog
 
-It is the role of the product owner to create the backlog. This backlog is made up of all of the features for the software, in a prioritized list. The features in the backlog are a result of the Requirements & Analysis phase, and include features that won't necessarily be in the immediate release. New features can be added to the backlog at any time, and the product owner can reprioritize the backlog based on customer feedback.
+The **backlog** is a prioritized list of features created by the product owner, derived from the Requirements & Analysis phase. 
+
+- Includes features not in the immediate release.  
+- New features can be added anytime.
+- Product owner can reprioritize based on feedback.
 
 ## User stories
 
-When a feature gets close to the top of the priority list, it gets broken down into smaller tasks called user stories. Each user story should be small enough that a single team can finish it within a single sprint. If it's too large to be completed in a single sprint, the team should break it down further. Because the software must be deliverable at the end of each sprint, a user story must also abide by those rules.
+As features rise in priority, they are broken down into **user stories**. 
+
+- Should be small enough to complete in a single sprint.  
+- If too large, it should be divided further.
 
 A user story is a simple statement of what a user (or a role) needs, and why. The suggested template for a user story is:
 
@@ -175,12 +187,18 @@ A user story is a simple statement of what a user (or a role) needs, and why. Th
 
 </div>
 
-Completing a user story requires completing all of the phases of the SDLC. The user story itself should already have the requirements defined by the product owner, and the team taking on the user story needs to come up with a design for the task, implement it and test it.
+Completing a user story requires completing all of the phases of the SDLC, with defined requirements from the product owner. The team taking on the user story needs to come up with a design for the task, implement it and test it.
+
 
 ## Scrum Teams
 
-Scrum teams are cross-functional, collaborative, self-managed and self-empowered. Ideally, these scrum teams should not be larger than 10 individuals, but they should be big enough to finish a user story within a sprint.
+**Scrum teams** are collaborative, self-managed groups ideally no larger than 10 members. 
 
-Every day, each scrum team should have a daily standup. A standup is a meeting that should last no longer than 15 minutes, and should take place at the same time every day. In fact, it's called a "standup" because ideally it should be short enough for the team to accomplish it without having to sit down.
+- **Daily Standups**  
+  - Short meetings (max 15 minutes) held at the same time daily.  
+  - Sync team members on accomplishments, goals, and obstacles.  
 
-The goal of the daily standup is to keep all team members in sync with what each person has accomplished since the last standup, what they are going to work on until the next standup, and what obstacles they have that may be preventing them from finishing their task. The scrum master facilitates these standups, and their job is to report and/or help remove obstacles.
+- **Facilitation**  
+  - The scrum master facilitates standups and helps remove obstacles.
+
+Fun fact: it's called a "standup" because ideally it should be short enough for the team to accomplish it without having to sit down.
