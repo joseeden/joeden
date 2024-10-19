@@ -62,4 +62,4 @@ The Agile method is favored for its adaptability and speed. Key Agile principles
 - Encouraging customer collaboration
 - Being open to changing requirements
 
-Agile promotes frequent delivery of working software, teamwork, and sustainable development. For more information, please see [What is Agile.](/docs/099-Project-Management/001-Agile.md)
+Agile promotes frequent delivery of working software, teamwork, and sustainable development. For more information, please see [What is Agile.](/docs/099-Project-Management/010-Introduction/001-Agile.md)
