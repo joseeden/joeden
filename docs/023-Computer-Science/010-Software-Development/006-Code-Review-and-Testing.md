@@ -250,8 +250,97 @@ Ran 1 test in 0.000s
 OK
 ```
 
-### Key Points
+#### Key Points
 
 - **Subclassing**: By subclassing `TestCase`, your test class inherits all its methods.
 - **Assertions**: Use `assertEqual` to compare expected and actual values.
 - **Command-line Execution**: The `unittest.main()` function allows you to run tests from the command line.
+
+
+## Integration Testing
+
+Integration testing ensures that individual units work together correctly as a whole system. For example, you might need to check how an application interacts with a web service to retrieve configuration data. This can be tested with a simple script in PyTest.
+
+#### Example: Testing Web Service Integration
+
+Here's an example using PyTest to verify this integration:
+
+```python
+import requests  # module for web requests
+
+def get_config():
+    return requests.get("http://localhost/get_config").content
+
+def set_config(dbhost):
+    requests.get(f"http://localhost/config_action?dbhost={dbhost}")
+
+save_dbhost = ""
+
+def setUp():
+    global save_dbhost
+    save_dbhost = get_config()
+
+def tearDown():
+    global save_dbhost
+    set_config(save_dbhost)
+
+def test_setconfig():
+    setUp()
+    set_config("TESTVAL")
+    assert get_config() == "TESTVAL"
+    tearDown()
+```
+
+This test checks if the system interacts with the web service correctly by getting and setting configuration data.
+
+- **setUp/tearDown**: These functions run before and after the test, resetting the environment.
+- **Assertions**: Check if the system's response is as expected.
+
+#### Running the Test
+
+Executing this with PyTest gives detailed feedback, such as whether the `assert` passes or fails. Example output for a failed test:
+
+
+```bash
+============================== test session starts ===============================
+platform linux2 -- Python 2.7.15+, pytest-3.3.2, py-1.5.2, pluggy-0.6.0
+rootdir: /home/ubuntu/deploysample, inifile:
+collected 1 item                                                                 
+test_sample_app.py F                                                       [100%]
+==================================== FAILURES ====================================
+    def test_setconfig():
+        setUp()
+        set_config("TESTVAL")
+>       assert get_config() == "ESTVAL"
+E       AssertionError: assert 'TESTVAL' == 'ESTVAL'
+E         - TESTVAL
+E         ? -
+E         + ESTVAL
+test_sample_app.py:21: AssertionError
+------------------------------- Captured log call --------------------------------
+connectionpool.py          225 DEBUG    Starting new HTTP connection (1): localhost:80
+connectionpool.py          437 DEBUG    http://localhost:80 "GET /get_config HTTP/1.1" 200 7
+connectionpool.py          225 DEBUG    Starting new HTTP connection (1): localhost:80
+connectionpool.py          437 DEBUG    http://localhost:80 "GET /config_action?dbhost=TESTVAL HTTP/1.1" 200 30
+_________________________________ test_setconfig __________
+_______________________
+connectionpool.py          225 DEBUG    Starting new HTTP connection (1): localhost:80
+connectionpool.py          437 DEBUG    http://localhost:80 "GET /get_config HTTP/1.1" 200 7
+============================ 1 failed in 0.09 seconds ============================
+```
+
+
+Once fixed, the output shows success:
+
+```bash
+============================== test session starts ===============================
+platform linux2 -- Python 2.7.15+, pytest-3.3.2, py-1.5.2, pluggy-0.6.0
+rootdir: /home/ubuntu/deploysample, inifile:
+collected 1 item                                                                 
+test_sample_app.py .                                                       [100%]
+============================ 1 passed in 0.07 seconds ============================
+```
+
+Run your integration tests at the start of the day, after significant changes, and before wrapping up. In Continuous Integration, fix any errors immediately.
+
+**Note:** You can run this script on your VM using pytest, but error handling is outside the course scope.
