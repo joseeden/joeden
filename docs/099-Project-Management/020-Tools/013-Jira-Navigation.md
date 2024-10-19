@@ -35,39 +35,28 @@ These tools help you quickly find and manage your tasks and projects.
 
 
 
-
-## Main Navigation Bar
+## Jira Main Navigation Bar
 
 <div class='img-center'>
 
-![](/img/docs/jira-getting-around-main-navigation-barrr.png)
+![](/img/docs/jira-getting-around-main-navigation-barrr.png)  
 
 </div>
 
 
-1. **Product switcher:** Allows you to switch to other Atlassian products your team may be using, like Confluence or Bitbucket.
-
-2. **Your work:** Shows issues, projects, and boards you’ve recently visited. And allows you to view all work assigned to you.
-
-3. **Projects:** Shows a list of all of your projects. And includes a button to create new projects.
-
-4. **Filters and Dashboards:** View any saved or starred filters and dashboards to see your work. You'll learn more about filters and dashboards in future courses.
-
-5. **People:** Shows a list of the people and teams you interact with most.
-
-6. **Plans, Insight, and Apps:** Allows you to manage your plans and see apps installed on your Jira instance (for premium users only).
-
-7. **Create:** A quick way to create new issues.
-
-8. **Search:** Open text search field to help you find issues, projects, boards, queues, filters, and people.
-
-9. **Settings and Profile**: Customize your personal settings, set up your profile, and control email notifications.
+1. **Product switcher**: Switch between Confluence or Bitbucket.
+2. **Your work**: View recent issues, projects, and assigned tasks.
+3. **Projects**: Access all projects and create new ones.
+4. **Filters and Dashboards**: View saved filters and dashboards.
+5. **People**: See your most frequent collaborators.
+6. **Plans, Insight, and Apps**: Manage plans and apps (for premium users).
+7. **Create**: Quickly create new issues.
+8. **Search**: Find issues, projects, boards, and people.
+9. **Settings and Profile**: Manage your profile and notifications.
 
 ## Starred items
 
-You may notice some items with stars beside them. In Jira, you can  star  your most important projects, boards, and filters so you can easily find them later. 
-
-Specifically in the 'Your work' and 'Projects' dropdowns, Jira organizes your starred items and shows them first. You can reorder your starred items by going to Your work > Starred.
+Star important projects, boards, and filters to access them quickly from the 'Your work' and 'Projects' dropdowns.
 
 <div class='img-center'>
 
@@ -84,20 +73,11 @@ Specifically in the 'Your work' and 'Projects' dropdowns, Jira organizes your st
 
 </div>
 
-
-1. **Project name:** Shows the current project you are in.
-
-2. **Board switcher:** Select this dropdown to switch between different boards in this project.
-
-3. **Backlog:** Shows a list of issues that have not yet been started. Depending on your settings, the backlog may also contain some issues currently on the board.
-
-4. **Board view:** Brings you to a view of the selected board.
-
-5. **Reports:** Shows you all the available reports you can create. You'll learn more about reports in future courses.
-
-6. **Lower menu options:** The 'Issues' button shows you all issues in the project. The 'Components, Releases, and Project pages' buttons are more advanced features of Jira. Check with your Jira admin if you need to learn about these.
-
-7. **Project settings:** You may not be able to see this option. It is mostly used by Jira admins and project managers to edit project details, update permissions, and create workflows.
-
-8. **Project type indicator:** Jira projects can be created as either team-managed or company-managed. The core functionality of these project types is the same, but you may find a few differences based on your project type.
-
+1. **Project name**: Displays the current project.
+2. **Board switcher**: Switch between different boards in the project.
+3. **Backlog**: View issues that haven’t started yet.
+4. **Board view**: Access the selected board.
+5. **Reports**: View available reports.
+6. **Lower menu options**: Access issues, components, releases, and project pages.
+7. **Project settings**: Mainly for Jira admins and project managers to manage project details.
+8. **Project type indicator**: Identifies if the project is team-managed or company-managed.

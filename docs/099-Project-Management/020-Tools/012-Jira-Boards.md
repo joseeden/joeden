@@ -12,18 +12,6 @@ last_update:
 
 
 
-## Agile and Scrum
-
-**Agile** is a project management methodology focusing on iterative development, continuous releases, and regular updates based on feedback.
-
-- Increases delivery speed and collaboration
-- Helps teams adapt to market changes
-
-**Scrum** is an agile framework, primarily used by software teams, organizing work into short, focused periods called sprints.
-
-- Focuses on completing a batch of issues within a sprint
-- Emphasizes team collaboration and incremental progress
-
 
 ## Boards 
 
@@ -32,7 +20,7 @@ Boards visually track work progress with columns for statuses like "To Do" and "
 - **Workflow:** Issues move through stages (e.g., `To Do → Done`).
 - **Moving Issues:** Drag issue cards across columns to update progress.
 
-### Moving Issue Cards
+## Moving Issue Cards
 
 These board columns have headers at the top representing the  status  of each issue. For example, statuses could be: 
 
@@ -44,7 +32,7 @@ These board columns have headers at the top representing the  status  of each is
 Issues can move forward and backward in a workflow, depending on how the work gets done.
 
 
-### Board Names
+## Board Names
 
 Boards are part of projects and named after teams or deliverables.
 
@@ -58,7 +46,7 @@ Boards are part of projects and named after teams or deliverables.
 </div>
 
 
-### Board Views
+## Board Views
 
 To view all your boards, use the left project sidebar and select the board dropdown. Projects can have multiple boards, often named after deliverables.
 
@@ -70,7 +58,7 @@ To view all your boards, use the left project sidebar and select the board dropd
 
 
 
-### Board Types
+## Board Types
 
 Boards help organize work.
 

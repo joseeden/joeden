@@ -12,7 +12,20 @@ last_update:
 
 
 
-## Overview
+
+## Agile and Scrum
+
+**Agile** is a project management methodology focusing on iterative development, continuous releases, and regular updates based on feedback.
+
+- Increases delivery speed and collaboration
+- Helps teams adapt to market changes
+
+**Scrum** is an agile framework, primarily used by software teams, organizing work into short, focused periods called sprints.
+
+- Focuses on completing a batch of issues within a sprint
+- Emphasizes team collaboration and incremental progress
+
+## Jira
 
 Jira offers several products for different types of team management:
 
@@ -150,14 +163,6 @@ There are two main types of Jira projects:
 
 
 These types determine how workflows and team management are handled in Jira.
-
-<div class='img-center'>
-
-![](/img/docs/openjiraproject.png)
-
-</div>
-
-
 
 
 
