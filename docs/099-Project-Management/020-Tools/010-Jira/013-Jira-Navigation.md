@@ -43,7 +43,6 @@ These tools help you quickly find and manage your tasks and projects.
 
 </div>
 
-
 1. **Product switcher**: Switch between Confluence or Bitbucket.
 2. **Your work**: View recent issues, projects, and assigned tasks.
 3. **Projects**: Access all projects and create new ones.
