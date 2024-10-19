@@ -47,17 +47,18 @@ Basic authentication involves sending user credentials encoded in base-64 with e
 - Username and password are concatenated and encoded, then sent as a header.
 - Decodes the header to authenticate the request.
 
+<div class='img-center'>
+
+![Basic Authentication](/img/docs/codemash-api-basicauth.png)  
+
+</div>
 
 **Drawbacks**:
 - Credentials sent with each API call create a dependency.
 - Encoding is not encryption; credentials are sent in clear text.
 - Requires TLS for secure transmission.
 
-<div class='img-center'>
 
-![Basic Authentication](/img/docs/codemash-api-basicauth.png)  
-
-</div>
 
 ### HTTP Digest Authentication
 
@@ -70,15 +71,17 @@ HTTP Digest Authentication enhances security by never sending the password over 
     - Nonce
     - MD5-hash
 
-**Drawbacks**:
-- MD5-hash can be cracked, raising security concerns.
-- Servers cannot store passwords, making it less common for use.
-
 <div class='img-center'>
 
 ![HTTP Digest Authentication](/img/docs/codemash-api-digest.png)
 
 </div>
+
+**Drawbacks**:
+- MD5-hash can be cracked, raising security concerns.
+- Servers cannot store passwords, making it less common for use.
+
+
 
 
 
@@ -221,12 +224,6 @@ When storing JWTs on the client side, it's important to consider their security 
 | LocalStorage          | No            | Yes            | Yes                    |
 | httOnly Secure Cookie | Yes           | Yes            | No                     |
  
-<div class='img-center'>
-
-![](/img/docs/codemash-jwt-5.png)
-
-</div>
-
 
 
 
@@ -281,11 +278,6 @@ Drawbacks:
 - Vulnerable to threats if not implemented correctly
 - Complex, leading to potential misuse or leakage
 
-<div class='img-center'>
-
-![](/img/docs/codemash-oauth-10.png)
-
-</div>
 
 
 
