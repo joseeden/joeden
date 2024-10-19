@@ -58,7 +58,7 @@ Parsing means analyzing a message, breaking it into its component parts, and und
 
 Serializing is roughly the opposite of parsing. To communicate information with a REST interface, for example, you may be called upon to take locally-stored data (e.g., data stored in Python dictionaries) and output this as equivalent JSON, YAML, or XML in string form for presentation to the remote resource.
 
-### An Example
+#### An Example
 
 For example, imagine you wanted to send an initial query to some remote REST endpoint, inquiring about the status of running services. To do this, typically, you would need to authenticate to the REST API, providing your username (email), plus a permission key obtained via an earlier transaction. You might have stored username and key in a Python dictionary, like this:
 ```json
