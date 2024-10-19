@@ -83,7 +83,7 @@ For the moment, ignore the first line of the document, which is a special part k
 
 Notice how individual data elements within the body (readable character strings) are surrounded by symmetrical pairs of tags, the opening tag surrounded by < and > symbols, and the closing tag, which is similar, but with a "/" (slash) preceding the closing tag name.
 
-Notice also that some tag pairs surround multiple instances of tagged data (for example, the <vm> and corresponding <code><vm></code> tags). The main body of the document, as a whole, is always surrounded by an outermost tag pair (for example, the <code><'vms'>...<'/vms'></code> tag pair) or root tag pair.
+Notice also that some tag pairs surround multiple instances of tagged data (for example, the `<vm>` and corresponding `<code><vm></code>` tags). The main body of the document, as a whole, is always surrounded by an outermost tag pair (for example, the `<code><'vms'>...<'/vms'></code>` tag pair) or root tag pair.
 
 The structure of the document body is like a tree, with branches coming off the root, containing possible further branches, and finally leaf nodes, containing actual data. Moving back up the tree, each tag pair in an XML document has a parent tag pair, and so on, until you reach the root tag pair.
 
