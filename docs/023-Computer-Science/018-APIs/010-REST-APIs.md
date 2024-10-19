@@ -66,7 +66,7 @@ A GET request, for example, allows you to retrieve a representation of the state
 
 When the client and server exchange messages; the client server architectural style is the first of the architectural constraints in the REST architectural style.
 
-For more information, please see this [StackOverflow discussion](https://stackoverflow.com/questions/48116321/what-is-representation-state-and-transfer-in-representational-state-trans).
+Reference: [StackOverflow discussion](https://stackoverflow.com/questions/48116321/what-is-representation-state-and-transfer-in-representational-state-trans).
 
 
 ## Data Format
@@ -77,12 +77,6 @@ Representational state that you may receive from a database could be in the form
 - JSON
 - HTML
 - JPEG, PDF, TXT, etc
-
-<div class='img-center'>
-
-![](/img/docs/acme-api-data-format.png)
-
-</div>
 
 
 ## When is API "RESTful"?
@@ -111,9 +105,3 @@ Here's an excerpt from [Stoplight's article on API](https://stoplight.io/api-typ
   - Similar to open APIs but with restricted access.  
   - Often controlled via a third-party API gateway.  
   - Typically used for specific purposes, like paid services.  
-
-<div class='img-center'>
-
-![](/img/docs/acme-types-of-api.png)
-
-</div>

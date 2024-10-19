@@ -68,3 +68,90 @@ HTTP Digest Authentication enhances security by never sending the password over 
 - Servers cannot store passwords, making it less common for use.
 
 ![HTTP Digest Authentication](/img/docs/codemash-api-digest.png)
+
+
+
+
+## Using API Keys
+
+### API Keys
+
+API keys provide a more secure and flexible method for authentication.
+
+- Use alternatives to primary account credentials
+- Unique and random, assigned by the site
+
+
+### API Keys as Bearer Tokens 
+
+API keys can be used like passwords but require TLS for security.
+
+- Sent as plain text
+- Can be added in headers or query strings
+- Use query strings for testing
+- Use headers for security
+- Headers do not appear in logs
+
+
+### Tradeoffs of Bearer Tokens
+
+Using bearer tokens offers convenience, but there are tradeoffs regarding security and management.
+
+- Need secure storage for API keys
+- Or allow users to view their keys
+
+![](/img/docs/codemash-api-bearer.png)
+
+
+### API Keys as Cryptographic keys (HMAC) 
+
+API keys can be used as HMAC, enhancing security without sending keys over the wire.
+
+- Prevents message modification during transit
+- A custom version of digest authentication
+- Add expiration timeouts if necessary
+- API keys sign requests instead of passwords
+
+**Steps**
+- Concatenate message and key, then hash to create a signature
+- Send the signature as a header with the request
+- Server processes the request in reverse
+
+![](/img/docs/codemash-api-hmac.png)
+
+![](/img/docs/codemash-api-hmac-2.png)
+
+![](/img/docs/codemash-api-hmac-reverse.png)
+
+
+
+### Server-based Clients vs. JS Clients 
+
+API keys work well for server-based clients but pose challenges for JavaScript clients.
+
+- Server can respond with the key after user login
+- JavaScript cannot securely store the received key due to security limitations
+
+![](/img/docs/codemash-api-keys-2.png)
+![](/img/docs/codemash-api-keys-3.png)
+
+
+
+## JSON Web Tokens (JWT)
+
+add intro...
+
+- claims are basically any data
+- server will cryptographically sign the claims, which then creates a token
+- token is sent to the browser
+- browser then responds back with request + token
+
+![](/img/docs/codemash-jwt.png)
+
+![](/img/docs/codemash-jwt-2.png)
+
+![](/img/docs/codemash-jwt-4.png)
+
+![](/img/docs/codemash-jwt-5.png)
+
+
