@@ -22,3 +22,7 @@ Javascript:
   label: 'Javascript'
   permalink: '/Javascript'
   description: 'Docs related to Javascript'      
+REST APIs:
+  label: 'REST APIs'
+  permalink: '/REST APIs'
+  description: 'Docs related to REST APIs'  
