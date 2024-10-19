@@ -197,135 +197,61 @@ Even trivial functions can have significant impacts, especially when called by h
 
 ### Simple Unit Testing with unittest
 
-The unittest framework demands a different syntax than PyTest. For unittest , you need to subclass the built-in TestCase class and test by overriding its built-in methods or adding new methods whose names begin with 'test_'. The examp
+The `unittest` framework requires a different syntax compared to PyTest. To use `unittest`, you subclass the built-in `TestCase` class and define test methods that start with `test_`. 
+
+#### Example Function to Test
+
+Let’s say we want to test the function `add5()`, which adds 5 to a given value:
 
 ```python
-import unittest
 def add5(v):
-    myval = v + 5
-    return myval
+    return v + 5
+```
+
+#### Testing with unittest
+
+You can create a test class called `tests_add5` that subclasses `unittest.TestCase`:
+
+```python
+### tests_mytest.py
+
+import unittest
+
+def add5(v):
+    return v + 5
+
 class tests_add5(unittest.TestCase):
     def test_add5(self):
-        self.assertEqual(add5(1),6)
-        self.assertEqual(add5(5),10)
-        self.assertEqual(add5(10.102645),15.102645)
+        self.assertEqual(add5(1), 6)
+        self.assertEqual(add5(5), 10)
+        self.assertEqual(add5(10.102645), 15.102645)
+
 if __name__ == '__main__':
     unittest.main()
 ```
 
-As with PyTest, you import the unittest module to start. Your function follows.
+#### Running the Tests
 
-To subclass the TestCase class, pass it to your own (derived) test class (again called tests_add5, though this is now a class, rather than a function), causing the latter to inherit all characteristics of the former. For more on Python object-oriented programming (OOP), see the documentation.
+1. Save the file as `tests_mytest.py`.
+2. Ensure the file is executable (e.g., using `chmod +x tests_mytest.py` on Linux).
+3. Run it with the `-v` option for a verbose report:
 
-Next, use unittest's assertEqual method (this is one of a wide range of built-in test methods) in the same way that you used Python's native assert in the PyTest example. Basically, you are running your function with different arguments, and checking to see if returned values match expectations.
-
-The last stanza is a standard way of enabling command-line execution of our program, by calling its main function; which, in this case, is defined by unittest.
-
-Save this file (again as tests_mytest.py ), ensure that it is executable (for example, in Linux, using chmod +x tests_mytest.py ) and execute it, adding the -v argument to provide a verbose report:
-
-```python
+```bash
 python3 tests_mytest.py -v
+```
+
+You should see an output like this:
+
+```plaintext
 test_add5 (__main__.tests_add5) ... ok
 ----------------------------------------------------------------------
 Ran 1 test in 0.000s
+
 OK
 ```
 
+### Key Points
 
-
-## Integration Testing
-
-After unit testing comes integration testing, which makes sure that all of those individual units you have been building fit together properly to make a complete application. For example, suppose an application that you are writing needs to consult a local web service to obtain configuration data, including the name of a relevant database host. You might want to test the values of variables set when these functions are called. If you were using PyTest, you could do that like this:
-```python
-
-import requests   # python module that simplifies making web requests
-def get_config():
-    return requests.get("http://localhost/get_config").content
-def set_config(dbhost):
-    requests.get("http://localhost/config_action?dbhost="+dbhost)
-save_dbhost = ""
-def setUp():
-    global save_dbhost
-    save_dbhost = get_config()
-def tearDown():
-    global save_dbhost
-    set_config(save_dbhost)
-def test_setconfig():
-    setUp()
-    set_config("TESTVAL")
-    assert get_config() == "ESTVAL"
-    tearDown()
-```
-
-Note that your test_setconfig() method deliberately calls your setUp() function before running tests, and your tearDown() function afterward. In unittest, methods called setUp() and tearDown() are provided by the TestCase class, can be overridden in your defined subclass, and are executed automatically.
-
-Running this code with PyTest might produce output like this:
-```python
-============================== test session starts ===============================
-platform linux2 -- Python 2.7.15+, pytest-3.3.2, py-1.5.2, pluggy-0.6.0
-rootdir: /home/ubuntu/deploysample, inifile:
-collected 1 item                                                                 
-test_sample_app.py F                                                       [100%]
-==================================== FAILURES ====================================
-    def test_setconfig():
-        setUp()
-        set_config("TESTVAL")
->       assert get_config() == "ESTVAL"
-E       AssertionError: assert 'TESTVAL' == 'ESTVAL'
-E         - TESTVAL
-E         ? -
-E         + ESTVAL
-test_sample_app.py:21: AssertionError
-------------------------------- Captured log call --------------------------------
-connectionpool.py          225 DEBUG    Starting new HTTP connection (1): localhost:80
-connectionpool.py          437 DEBUG    http://localhost:80 "GET /get_config HTTP/1.1" 200 7
-connectionpool.py          225 DEBUG    Starting new HTTP connection (1): localhost:80
-connectionpool.py          437 DEBUG    http://localhost:80 "GET /config_action?dbhost=TESTVAL HTTP/1.1" 200 30
-_________________________________ test_setconfig __________
-_______________________
-connectionpool.py          225 DEBUG    Starting new HTTP connection (1): localhost:80
-connectionpool.py          437 DEBUG    http://localhost:80 "GET /get_config HTTP/1.1" 200 7
-============================ 1 failed in 0.09 seconds ============================
-```
-
-If you fix the broken test, you can see that everything runs perfectly:
-```python
-============================== test session starts ===============================
-platform linux2 -- Python 2.7.15+, pytest-3.3.2, py-1.5.2, pluggy-0.6.0
-rootdir: /home/ubuntu/deploysample, inifile:
-collected 1 item                                                                 
-test_sample_app.py .                                                       [100%]
-============================ 1 passed in 0.07 seconds ============================
-```
-
-Again, you should run your integration tests before you make any changes for the day, whenever you make significant changes, and before you close out for the day. If you are using Continuous Integration, any errors you find must be corrected before you do anything else.
-
-**Note:** You can run this script on your VM using pytest. However, understanding the output and fixing any errors is beyond the scope of this course.
-
-
-
-
-## Test-Driven Development (TDD)
-
-Building small, simple unit and integration tests around small bits of code helps in two ways:
-
-* It ensures that units are fit for purpose. In other words, you make sure that units are doing what requirements dictate, within the context of your evolving solution.
-* It catches bugs locally and fixes them early, saving trouble later on when testing or using higher-order parts of your solution that depend on these components.
-
-The first of these activities is as important as the second, because it lets testing validate system design or, failing that, guide local refactoring, broader redesign, or renegotiation of requirements.
-
-Testing to validate design intention in light of requirements implies that you should write testing code before you write application code . Having expressed requirements in your testing code, you can then write application code until it passes the tests you have created in the testing code.
-
-This is the principle of Test-Driven Development (sometimes called Test-First Development). The basic pattern of TDD is a five-step, repeating process:
-
-1. Create a new test (adding it to existing tests, if they already exist). The idea here is to capture some requirement of the unit of application code you want to produce.
-2. Run tests to see if any fail for unexpected reasons. If this happens, correct the tests. Note that expected failures, here, are acceptable (for example, if your new test fails because the function it is designed to test does not yet exist, that is an acceptable failure at this point).
-3. Write application code to pass the new test. The rule here is to add nothing more to the application besides what is required to pass the test.
-4. Run tests to see if any fail. If they do, correct the application code and try again.
-5. Refactor and improve application code. Each time you do, re-run the tests and correct application code if you encounter any failures.
-
-By proceeding this way, the test harness leads and grows in lockstep with your application. This may be on a line-by-line basis, providing very high test coverage and high assurance that both the test harness and the application are correct at any given stopping-point. Co-evolving test and application code this way:
-
-* Obliges developers to consistently think about requirements (and how to capture them in tests).
-* Helps clarify and constrain what code needs to do (because it just has to pass tests), speeding development and encouraging simplicity and good use of design patterns.
-* Mandates creation of highly-testable code. This is code that, for example, breaks operations down into pure functions that can be tested in isolation, in any order, etc.
+- **Subclassing**: By subclassing `TestCase`, your test class inherits all its methods.
+- **Assertions**: Use `assertEqual` to compare expected and actual values.
+- **Command-line Execution**: The `unittest.main()` function allows you to run tests from the command line.
