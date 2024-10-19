@@ -344,3 +344,35 @@ test_sample_app.py .                                                       [100%
 Run your integration tests at the start of the day, after significant changes, and before wrapping up. In Continuous Integration, fix any errors immediately.
 
 **Note:** You can run this script on your VM using pytest, but error handling is outside the course scope.
+
+
+## Test-Driven Development (TDD)
+
+Test-driven development (TDD) is a process where you write tests before writing the actual application code. This method helps ensure that your code meets requirements and catches bugs early, improving development efficiency and quality.
+
+The TDD cycle involves five key steps:
+
+1. **Write a new test:**  
+    - Capture a specific requirement.  
+    - Add the test to the existing suite.
+
+2. **Run tests:**  
+    - Check for any unexpected failures.  
+    - Accept expected failures for incomplete functions.
+
+3. **Write application code:**  
+    - Code only to pass the new test.  
+    - Avoid adding unnecessary functionality.
+4. **Run tests again:**  
+    - Correct any failures in the application code.  
+    - Re-run tests to confirm fixes.
+
+5. **Refactor code:**  
+    - Clean up and optimize the code.  
+    - Ensure all tests still pass after refactoring.
+
+By adopting this approach, the test harness develops in tandem with the application, frequently at a line-by-line level. This leads to extensive test coverage and greater assurance of accuracy for both the tests and the application. 
+
+- Focuses on requirements and their representation in tests.
+- Clarifies code purpose, streamlining development.
+- Requires highly testable code, pure functions tested independently.
