@@ -66,7 +66,7 @@ Cookies are important for managing state in web applications, as HTTP is a state
 - Cookies store information about users for future requests.
 - Every request from the client includes the stored cookie.
 - Encrypting cookies helps protect session data.
-- For more information, please see [Secure Cookies.](/docs/023-Computer-Science/010-Software-Development/010-Application-Security.md#secure-cookies)
+- For more information, please see [Secure Cookies.](/docs/023-Computer-Science/019-Software-Security/010-Application-Security.md#secure-cookies)
 
 **Types of Cookies:**
 

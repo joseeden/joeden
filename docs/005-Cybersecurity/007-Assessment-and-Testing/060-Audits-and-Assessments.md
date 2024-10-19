@@ -77,7 +77,7 @@ Code reviews involve examining the source code to identify and address security 
 - Detects potential vulnerabilities before the code is deployed.
 - Improves code quality and reduces the risk of security flaws.
 
-For more information, please see [Code Reviews](/docs/023-Computer-Science/010-Software-Development/012-Code-Reviews.md)
+For more information, please see [Code Reviews](/docs/023-Computer-Science/019-Software-Security/012-Code-Reviews.md)
 
 ### Architecture Reviews
 

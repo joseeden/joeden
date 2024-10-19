@@ -11,7 +11,7 @@ last_update:
 
 ## Creating a Module
 
-Get the script here: [Sample python scripts.](https://github.com/joseeden/joeden/tree/master/public/code/python/basics)
+Get the script here: [Sample python scripts.](https://github.com/joseeden/joeden/tree/master/assets/code/python/basics)
 
 
 This section guides you through creating a Python module for testing network connections.
@@ -26,7 +26,7 @@ This section guides you through creating a Python module for testing network con
 
 - Step 2: Create the `custom_network_module.py` Module
 
-    - Code can be found here: [Sample python scripts.](https://github.com/joseeden/joeden/tree/master/public/code/python/basics)
+    - Code can be found here: [Sample python scripts.](https://github.com/joseeden/joeden/tree/master/assets/code/python/basics)
 
     - **`check_localhost`**: Verifies if localhost is correctly configured by checking if the IP is `127.0.0.1`.
 
@@ -37,7 +37,7 @@ This section guides you through creating a Python module for testing network con
 - Step 3: This module can not be used by another script. 
 
     - Create `check-disk-cpu-usage.py` and use the `custom_network_module` module.
-    - Code can be found here: [Sample python scripts.](https://github.com/joseeden/joeden/tree/master/public/code/python/basics)
+    - Code can be found here: [Sample python scripts.](https://github.com/joseeden/joeden/tree/master/assets/code/python/basics)
     - Run code:
 
         ```python
