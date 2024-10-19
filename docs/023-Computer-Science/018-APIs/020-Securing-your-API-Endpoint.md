@@ -4,7 +4,7 @@ description: "Securing your API Endpoint"
 tags: [Computer Science, Application Development, Software Development, APIs]
 sidebar_position: 20
 last_update:
-  date: 1/30/2024
+  date: 12/8/2021
 ---
 
 ## Identity, Authentication, and Authorization
@@ -19,7 +19,12 @@ These three concepts are essential for securing applications and managing user a
 
 The simplest way to authenticate the API call is to use the built-in authentications method in your system.
 
+
+<div class='img-center'>
+
 ![](/img/docs/codemash-api-2.png)
+
+</div>
 
 
 ## Built-in Schemes
@@ -40,7 +45,7 @@ Client certificates offer a method for verifying user identity without usernames
 Basic authentication involves sending user credentials encoded in base-64 with each request.
 
 - Username and password are concatenated and encoded, then sent as a header.
-- *Decodes the header to authenticate the request.
+- Decodes the header to authenticate the request.
 
 
 **Drawbacks**:
@@ -50,7 +55,6 @@ Basic authentication involves sending user credentials encoded in base-64 with e
 
 
 ![Basic Authentication](/img/docs/codemash-api-basicauth.png)  
-![Basic Authentication on Windows](/img/docs/codemash-api-basicauth-windows.png)  
 
 ### HTTP Digest Authentication
 
@@ -100,7 +104,12 @@ Using bearer tokens offers convenience, but there are tradeoffs regarding securi
 - Need secure storage for API keys
 - Or allow users to view their keys
 
+
+<div class='img-center'>
+
 ![](/img/docs/codemash-api-bearer.png)
+
+</div>
 
 
 ### API Keys as Cryptographic keys (HMAC) 
@@ -117,11 +126,26 @@ API keys can be used as HMAC, enhancing security without sending keys over the w
 - Send the signature as a header with the request
 - Server processes the request in reverse
 
+
+<div class='img-center'>
+
 ![](/img/docs/codemash-api-hmac.png)
+
+</div>
+
+
+<div class='img-center'>
 
 ![](/img/docs/codemash-api-hmac-2.png)
 
+</div>
+
+
+<div class='img-center'>
+
 ![](/img/docs/codemash-api-hmac-reverse.png)
+
+</div>
 
 
 
@@ -132,26 +156,179 @@ API keys work well for server-based clients but pose challenges for JavaScript c
 - Server can respond with the key after user login
 - JavaScript cannot securely store the received key due to security limitations
 
+
+<div class='img-center'>
+
 ![](/img/docs/codemash-api-keys-2.png)
+
+</div>
+
+<div class='img-center'>
+
 ![](/img/docs/codemash-api-keys-3.png)
+
+</div>
 
 
 
 ## JSON Web Tokens (JWT)
 
-add intro...
+JWTs are a compact and secure way to transmit information between parties as a JSON object. They are commonly used for authentication and information exchange.
 
-- claims are basically any data
-- server will cryptographically sign the claims, which then creates a token
-- token is sent to the browser
-- browser then responds back with request + token
+- Claims represent any data
+- Server cryptographically signs the claims to create a token
+- The token is sent to the browser
+- The browser includes the token in subsequent requests
+
+
+<div class='img-center'>
 
 ![](/img/docs/codemash-jwt.png)
 
+</div>
+
+
+<div class='img-center'>
+
 ![](/img/docs/codemash-jwt-2.png)
+
+</div>
+
+
+<div class='img-center'>
 
 ![](/img/docs/codemash-jwt-4.png)
 
+</div>
+
+
+<div class='img-center'>
+
 ![](/img/docs/codemash-jwt-5.png)
+
+</div>
+
+
+
+
+## OAuth
+
+### Designed for 3-party scenario
+
+OAuth is a standard for access delegation commonly used for allowing third-party applications to access user data without exposing passwords. It facilitates secure authorization in a user-friendly way, enabling different applications to interact with user data seamlessly.
+
+OAuth is particularly beneficial in scenarios where multiple parties (resource owner, client application, and resource server) need to interact securely. This three-party setup allows users to grant limited access to their resources without sharing their credentials.
+
+
+<div class='img-center'>
+
+![](/img/docs/codemash-oauth-1.png)
+
+</div>
+
+<div class='img-center'>
+
+![](/img/docs/codemash-oauth-3.png)
+
+</div>
+
+<div class='img-center'>
+
+![](/img/docs/codemash-oauth-4.png)
+
+</div>
+
+<div class='img-center'>
+
+![](/img/docs/codemash-oauth-5.png)
+
+</div>
+
+
+### OAuth 1.0a
+
+OAuth 1.0a is the original version of the OAuth protocol. It is more complex but provides robust security through signed requests.
+
+- Uses signed requests; TLS not required
+- Best suited for web-based clients
+- Drawback: Complex to implement; libraries are recommended
+
+
+### OAuth 2.0
+
+OAuth 2.0 is a more streamlined version of the protocol, designed to be easier to use while supporting a broader range of client types.
+
+- Simpler and supports non-web clients
+- Not backward compatible with OAuth 1.0a
+- Lacks HMAC signatures; easier to implement
+- Access tokens do not reveal user identity
+- Considered a framework rather than a strict protocol
+
+
+<div class='img-center'>
+
+![](/img/docs/codemash-oauth-10.png)
+
+</div>
+
+<div class='img-center'>
+
+![](/img/docs/codemash-oauth-11.png)
+
+</div>
+
+<div class='img-center'>
+
+![](/img/docs/codemash-oauth-12.png)
+
+</div>
+
+<div class='img-center'>
+
+![](/img/docs/codemash-oauth-13.png)
+
+</div>
+
+<div class='img-center'>
+
+![](/img/docs/codemash-oauth-14.png)
+
+</div>
+
+<div class='img-center'>
+
+![](/img/docs/codemash-oauth-15.png)
+
+</div>
+
+<div class='img-center'>
+
+![](/img/docs/codemash-oauth-16.png)
+
+</div>
+
+
+
+## OpenID Connect
+
+OpenID Connect is an identity layer built on top of OAuth 2.0. It allows clients to verify user identity and obtain basic profile information.
+
+- Provides authentication in addition to authorization
+- Uses JWTs for transmitting user identity information
+
+
+<div class='img-center'>
+
+![](/img/docs/codemash-openid.png)
+
+</div>
+
+## SAML
+
+SAML (Security Assertion Markup Language) is a protocol for exchanging authentication and authorization data between parties, often used in enterprise settings.
+
+- Similar to JWT but uses SOAP and XML over HTTP
+- Older and more complex than JWT
+- Commonly employed for Single Sign-On (SSO) solutions
 
 
