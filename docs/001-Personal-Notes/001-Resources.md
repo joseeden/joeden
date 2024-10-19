@@ -83,4 +83,11 @@ Apache Flink:
 
 - [Processing Streaming Data Using Apache Flink](https://www.pluralsight.com/courses/processing-streaming-data-apache-flink)
 
+MongoDB:
 
+- [REST API Design, Development & Management](https://www.udemy.com/course/rest-api/)
+- [What is an API? In English, please.](https://www.freecodecamp.org/news/what-is-an-api-in-english-please-b880a3214a82/)
+- [REST (REpresentational State Transfer)](https://searchapparchitecture.techtarget.com/definition/REST-REpresentational-State-Transfer)
+- [What is "representation", "state" and "transfer" in Representational State Transfer (REST)?](https://stackoverflow.com/questions/48116321/what-is-representation-state-and-transfer-in-representational-state-trans)
+- [Roy Fielding's Thesis on Architectural Styles and the Design of Network-based Software Architectures](https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)
+- [Types of APIs & Popular REST API Protocol](https://stoplight.io/api-types/)
