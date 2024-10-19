@@ -78,6 +78,12 @@ Provides a space for detailed information to help explain the issue and its requ
 
 Jira categorizes issues by size and type to help teams organize work. The issue type defines the category and scope of the task.
 
+<div class='img-center'>
+
+![](/img/docs/defaulttypeofissues.png)  
+
+</div>
+
 - **Epic**
 
     A large initiative that contains smaller tasks or issues. Used for breaking down significant work.
@@ -98,11 +104,7 @@ Jira categorizes issues by size and type to help teams organize work. The issue 
 
     A smaller work item that is part of a task, story, or bug. It cannot exist independently.
     
-<div class='img-center'>
 
-![](/img/docs/defaulttypeofissues.png)  
-
-</div>
 
 
 
@@ -134,14 +136,6 @@ Teams organize work using different issue types like epics, tasks, stories, bugs
 
 </div>
 
-
-Ready to explore an issue yourself?
-
-<div class='img-center'>
-
-![](/img/docs/readytoexploreiissue.png)  
-
-</div>
 
 
 ## Update Issues
@@ -242,17 +236,6 @@ Ready to update an issue yourself?
 
 ## Search for Issues
 
-<div class='img-center'>
-
-![](/img/docs/seachbarbasicsearch.png)  
-
-</div>
-
-<div class='img-center'>
-
-![](/img/docs/searchbardemo.png)  
-
-</div>
 
 ### Search Bar 
 
@@ -260,6 +243,13 @@ Located at the top right of the screen, the search bar displays recent issues, b
 
 - Suggests matches as you type.
 - Searches within descriptions and comments.
+
+<div class='img-center'>
+
+![](/img/docs/seachbarbasicsearch.png)  
+
+</div>
+
 
 
 ### Basic Search
@@ -294,9 +284,3 @@ Try basic search if the search bar didn't work for you. In basic search, you can
 ### JQL (Jira Query Language)
 
 If basic search doesn’t work, try JQL for advanced searches. Learn more about JQL [here](https://support.atlassian.com/jira-software-cloud/docs/what-is-advanced-searching-in-jira-cloud/).
-
-<div class='img-center'>
-
-![](/img/docs/readysearch.png)  
-
-</div>
