@@ -2,7 +2,7 @@
 title: "Operations and Maintenance"
 description: "Post-deployment of software"
 tags: [Computer Science, Application Development, Software Development]
-sidebar_position: 5
+sidebar_position: 8
 last_update:
   date: 3/14/2022
 ---
@@ -10,7 +10,6 @@ last_update:
 ## Overview 
 
 After software development concludes, it enters the operations and maintenance phase. This phase ensures the continued functionality, stability, and evolution of the software, whether it's for internal use or customer sales.
-
 
 ## Key Phases
 

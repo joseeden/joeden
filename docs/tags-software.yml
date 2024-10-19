@@ -26,3 +26,7 @@ REST APIs:
   label: 'REST APIs'
   permalink: '/REST APIs'
   description: 'Docs related to REST APIs'  
+Lean Management:
+  label: 'Lean Management'
+  permalink: '/Lean Management'
+  description: 'Docs related to Lean Management'   

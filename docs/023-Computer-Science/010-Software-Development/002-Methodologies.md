@@ -7,7 +7,7 @@ last_update:
   date: 3/14/2022
 ---
 
-## Software Development Methodologies
+## Overview
 
 A software development methodology, or Software Development Life Cycle (SDLC) model, consists of a framework of rules, steps, roles, and principles for software development. While many methodologies are available, the three most common are:
 
@@ -62,10 +62,14 @@ Introduced in the 1980s, the Spiral Model improves on the Waterfall approach by 
 
 In the Spiral mode, developers begin in the first phase and then move through each of the phases, multiple times, until they have a satisfactory finished product.
 
+<div class='img-center'>
+
 ![](/img/docs/software-development-methodologies-spiral-method.png)
 
+</div>
 
-## Agile Approach
+
+## Agile Method
 
 The Agile method is favored for its adaptability and speed. Key Agile principles include:
 
@@ -75,3 +79,17 @@ The Agile method is favored for its adaptability and speed. Key Agile principles
 - Being open to changing requirements
 
 Agile promotes frequent delivery of working software, teamwork, and sustainable development. For more information, please see [What is Agile.](/docs/099-Project-Management/010-Introduction/001-Agile.md)
+
+## Lean Software Development
+
+Lean software development is based on Lean Manufacturing principles, which are focused on minimizing waste and maximizing value to the customer. There are seven principles for lean:
+
+* Eliminate waste
+* Amplify learning
+* Decide as late as possible
+* Deliver as fast as possible
+* Empower the team
+* Build integrity in
+* Optimize the whole
+
+For more information, please see [Lean Principles.](/docs/023-Computer-Science/010-Software-Development/003-Lean-Principles.md)
