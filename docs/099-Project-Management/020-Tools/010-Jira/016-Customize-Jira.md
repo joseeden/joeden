@@ -153,3 +153,54 @@ Create a dashboard for a comprehensive view of Jira activity.
 ![](/img/docs/viewusedashboardtoseeall.png)  
 
 </div>
+
+
+
+## Creating dashboards
+
+### 1. Create a New Dashboard  
+
+Start by setting up your dashboard.  
+
+- Navigate to **Dashboards > Create dashboard** in the main menu  
+- Name your dashboard, add a description, and select **Save**  
+
+<div class='img-center'>
+
+![](/img/docs/createstep1.png)  
+
+</div>
+
+### 2. Add Gadgets  
+
+Gadgets are essential components of your dashboard.  
+
+- Click **Add gadget** at the top right of the window  
+- Browse available gadgets and select the ones you want to add  
+
+Recommended Gadgets:
+
+- **Issues in Progress:** Displays all current issues you're working on  
+- **Assigned to Me:** Lists unresolved issues assigned to you  
+- **Activity Stream:** Shows recent project activity  
+- **Created vs. Resolved Chart:** Compares created and resolved issues
+
+<div class='img-center'>
+
+![](/img/docs/createstep2.png)  
+
+</div>
+
+
+### 3. Organize and Test Your Dashboard  
+
+Finalize your dashboard layout and functionality.  
+
+- Drag and drop gadgets to arrange them as you like  
+- Remove any gadgets that aren’t useful and replace them as needed  
+
+<div class='img-center'>
+
+![](/img/docs/createstep3.png)  
+
+</div>
