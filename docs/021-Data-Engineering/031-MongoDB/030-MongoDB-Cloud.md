@@ -35,7 +35,7 @@ For the connection, I chose to connect from my local environment for now. Afterw
 
 ![](/img/docs/acme-mongo-active.png)
 
-Once acive, click the cluster name, **Cluster0**, and then open the **Collections** tab. Hit **Add my Own Data**.
+Once active, click the cluster name, **Cluster0**, and then open the **Collections** tab. Hit **Add my Own Data**.
 
 ![](/img/docs/acme-mongo-new-collections.png)
 
