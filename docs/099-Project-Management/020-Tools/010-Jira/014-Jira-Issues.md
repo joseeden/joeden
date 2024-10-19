@@ -215,3 +215,93 @@ Ready to update an issue yourself?
 </div>
 
 
+
+## Views and Search
+
+Switch views to see your work. Search for issues you can't find.
+
+## Backlog and Roadmap
+
+- **Backlog**
+
+  - Lists issues that haven’t started yet.
+  - Access it from the project sidebar.
+  - Some teams show the backlog as a column on the board.
+
+- **Roadmap**
+
+  - Displays issues on a timeline to show start, end, and overlaps.
+  - Useful for mapping dependencies and planning.
+  - Access it from the sidebar or under "Plans" in the navigation bar.
+
+> Note: If you don’t see these views, check with your Jira admin.
+
+
+<div class='img-center'>
+
+![](/img/docs/backlogsroadmaps.png)  
+
+</div>
+
+
+
+## Search for Issues
+
+<div class='img-center'>
+
+![](/img/docs/seachbarbasicsearch.png)  
+
+</div>
+
+<div class='img-center'>
+
+![](/img/docs/searchbardemo.png)  
+
+</div>
+
+### Search Bar 
+
+Located at the top right of the screen, the search bar displays recent issues, boards, and projects.
+
+- Suggests matches as you type.
+- Searches within descriptions and comments.
+
+
+### Basic Search
+
+Try basic search if the search bar didn't work for you. In basic search, you can filter and sort issues by specific criteria.
+
+<div class='img-center'>
+
+![](/img/docs/bsaicsearch1.png)  
+
+</div>
+
+<div class='img-center'>
+
+![](/img/docs/basicsearch2.png)  
+
+</div>
+
+<div class='img-center'>
+
+![](/img/docs/basicsearch3.png)  
+
+</div>
+
+<div class='img-center'>
+
+![](/img/docs/basicsearch4.png)  
+
+</div>
+
+
+### JQL (Jira Query Language)
+
+If basic search doesn’t work, try JQL for advanced searches. Learn more about JQL [here](https://support.atlassian.com/jira-software-cloud/docs/what-is-advanced-searching-in-jira-cloud/).
+
+<div class='img-center'>
+
+![](/img/docs/readysearch.png)  
+
+</div>
