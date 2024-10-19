@@ -49,8 +49,8 @@ Basic authentication involves sending user credentials encoded in base-64 with e
 - Requires TLS for secure transmission.
 
 
-![Basic Authentication](img/docs/codemash-api-basicauth.png)  
-![Basic Authentication on Windows](img/docs/codemash-api-basicauth-windows.png)  
+![Basic Authentication](/img/docs/codemash-api-basicauth.png)  
+![Basic Authentication on Windows](/img/docs/codemash-api-basicauth-windows.png)  
 
 ### HTTP Digest Authentication
 
@@ -67,4 +67,4 @@ HTTP Digest Authentication enhances security by never sending the password over 
 - MD5-hash can be cracked, raising security concerns.
 - Servers cannot store passwords, making it less common for use.
 
-![HTTP Digest Authentication](img/docs/codemash-api-digest.png)
+![HTTP Digest Authentication](/img/docs/codemash-api-digest.png)
