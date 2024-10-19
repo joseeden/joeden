@@ -208,7 +208,7 @@ Finalize your dashboard layout and functionality.
 
 ## Connecting Jira with Other Tools  
 
-### 1. Connect with Confluence for Project Management  
+### 1. Connect with Confluence 
 
 Integrate Jira with Confluence to streamline project management.  
 
