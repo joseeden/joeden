@@ -204,3 +204,63 @@ Finalize your dashboard layout and functionality.
 ![](/img/docs/createstep3.png)  
 
 </div>
+
+
+## Connecting Jira with Other Tools  
+
+### 1. Connect with Confluence for Project Management  
+
+Integrate Jira with Confluence to streamline project management.  
+
+- Confluence enables team collaboration.  
+- 76% of Jira users report faster project delivery.  
+
+<div class='img-center'>
+
+![](/img/docs/integrateconfluence.png)  
+
+</div>
+
+
+### 2. Use Slack for Communication  
+
+Integrate Jira with Slack for real-time project updates.  
+
+- Get instant notifications for issue changes.  
+- Create new Jira issues directly from Slack.  
+
+
+<div class='img-center'>
+
+![](/img/docs/integrateslack.png)  
+
+</div>
+
+
+### 3. Collaborate with Microsoft Teams  
+
+Jira and Microsoft Teams integration simplifies collaboration.  
+
+- Create issue tabs within Teams.  
+- Track progress easily.  
+- Administrator access is required.  
+
+<div class='img-center'>
+
+![](/img/docs/integratemsteams.png)  
+
+</div>
+
+### 4. Schedule Meetings with Zoom  
+
+Integrate Zoom with Jira to schedule meetings effortlessly.  
+
+- Set up meetings directly from Jira issues.  
+- Add all watchers to the invite.  
+- Meeting details will appear in issue comments.  
+
+<div class='img-center'>
+
+![](/img/docs/integratezoom.png)  
+
+</div>
