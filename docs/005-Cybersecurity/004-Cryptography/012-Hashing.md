@@ -64,7 +64,7 @@ Code signing is the process of digitally signing software code or executables to
 - Ensures the code hasn't been modified since it was signed.
 - Protects users from malicious software and unauthorized code changes.
 
-For more information, please see [Code Signing.](/docs/023-Software-Engineering/019-Software-Security/010-Application-Security.md#code-signing)
+For more information, please see [Code Signing.](/docs/021-Software-Engineering/019-Software-Security/010-Application-Security.md#code-signing)
 
 
 ## Hash Functions 

@@ -52,4 +52,4 @@ Sandboxing provides a controlled environment for development and testing, minimi
 - Allows modification and testing without accessing production resources
 - Works in conjunction with code repositories for version control
 
-For more information, please see [Sandboxing.](/docs/023-Software-Engineering/019-Software-Security/010-Application-Security.md#sandboxing)
+For more information, please see [Sandboxing.](/docs/021-Software-Engineering/019-Software-Security/010-Application-Security.md#sandboxing)

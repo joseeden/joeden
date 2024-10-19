@@ -141,7 +141,7 @@ Normalization reduces redundancy, enhances consistency, and improves data organi
 - Identifies repeating data groups and create new tables.
 - Organizes data effectively with new tables.
 
-There is an in-depth explanation on how normalization fully works on the [Schemas and Normalization](/docs/021-Data-Engineering/021-Database-Design/003-Schemas-and-Normalization.md#normalization) page.
+There is an in-depth explanation on how normalization fully works on the [Schemas and Normalization](/docs/022-Data-Engineering/021-Database-Design/003-Schemas-and-Normalization.md#normalization) page.
 
 
 ### Example: Object-Data Mapping 
@@ -191,7 +191,7 @@ This structure enhances data organization, making it easier to manage contacts a
 
 The first step in database normalization is ensuring each table is in 1st Normal Form (1NF), which requires that table values be atomic, meaning each value is indivisible.
 
-To learn more, please see the deep dive on [Normal Forms.](/docs/021-Data-Engineering/021-Database-Design/004-Normal-Forms.md)
+To learn more, please see the deep dive on [Normal Forms.](/docs/022-Data-Engineering/021-Database-Design/004-Normal-Forms.md)
 
 
 ### Example: Student Records
@@ -256,7 +256,7 @@ This final design includes five columns and fully satisfies 1NF.
 
 To ensure a database is in 2nd Normal Form (2NF), it must first meet the requirements of 1st Normal Form (1NF) and then ensure that all non-key columns depend only on the table's primary key.
 
-To learn more, please see the deep dive on [Normal Forms.](/docs/021-Data-Engineering/021-Database-Design/004-Normal-Forms.md)
+To learn more, please see the deep dive on [Normal Forms.](/docs/022-Data-Engineering/021-Database-Design/004-Normal-Forms.md)
 
 ### Example: Textbook Records
 
@@ -350,7 +350,7 @@ How the revised tables should look like with records:
 - This reduces data redundancy and improves database integrity.
 - This eliminates any indirect, or transitive, dependencies.
 
-To learn more, please see the deep dive on [Normal Forms.](/docs/021-Data-Engineering/021-Database-Design/004-Normal-Forms.md)
+To learn more, please see the deep dive on [Normal Forms.](/docs/022-Data-Engineering/021-Database-Design/004-Normal-Forms.md)
 
 ### Transitive Dependencies
 

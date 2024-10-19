@@ -74,6 +74,6 @@ CREATE TABLE customer_rentals (
 ); 
 ```
 
-For more information on constraints, please see [Integrity Constraints.](/docs/021-Data-Engineering/020-Relational-Databases/002-Attribute-Constraint.md)
+For more information on constraints, please see [Integrity Constraints.](/docs/022-Data-Engineering/020-Relational-Databases/002-Attribute-Constraint.md)
 
 

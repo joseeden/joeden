@@ -115,7 +115,7 @@ Key characteristics:
   - Strict control over firmware code development, deployment, and updates
   - Prevent unauthorized modifications.
   - Code signing and integrity verification - ensure authenticity and integrity of updates.
-  - For more information, please see [Code Signing.](/docs/023-Software-Engineering/019-Software-Security/010-Application-Security.md#code-signing)
+  - For more information, please see [Code Signing.](/docs/021-Software-Engineering/019-Software-Security/010-Application-Security.md#code-signing)
 
 - **Inability to Patch**
 
