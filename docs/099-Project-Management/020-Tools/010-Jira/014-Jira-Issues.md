@@ -215,11 +215,6 @@ Ready to update an issue yourself?
 </div>
 
 
-
-## Views and Search
-
-Switch views to see your work. Search for issues you can't find.
-
 ## Backlog and Roadmap
 
 - **Backlog**
