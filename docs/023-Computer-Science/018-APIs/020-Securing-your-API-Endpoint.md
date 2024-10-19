@@ -279,8 +279,6 @@ Drawbacks:
 - Complex, leading to potential misuse or leakage
 
 
-
-
 ## OpenID Connect
 
 OpenID Connect is an identity layer built on top of OAuth 2.0. It allows clients to verify user identity and obtain basic profile information.
