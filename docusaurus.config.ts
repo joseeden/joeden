@@ -7,8 +7,8 @@ const config: Config = {
   title: "Eden Jose",
   tagline: "Engineer by day, runner by night.",
   favicon: 'img/logo/fourth/favicon.ico',
-  url: 'https://github.com',
-  baseUrl: "/joeden/",
+  url: 'https://github.com/joeden/',
+  baseUrl: "/",
   organizationName: 'joseeden',     // Github organization/username
   projectName: 'joeden',            // Reponame
   deploymentBranch: "master",
