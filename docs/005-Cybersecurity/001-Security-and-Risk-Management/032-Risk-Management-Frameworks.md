@@ -31,15 +31,25 @@ ISO/IEC refers to standards developed by the International Organization for Stan
 - Establish best practices and frameworks for technology, information security, and related fields.
 - **ISO/IEC 27001** - Information Security Management Systems (ISMS), providing a framework to protect sensitive information.
 
-## SSAE SOC 2  
+## SSAE 18 SOC 2 and 3
 
-SSAE SOC 2 (Statement on Standards for Attestation Engagements) is an auditing standard designed for service organizations to assess their data security practices.
+SSAE 18 SOC 2 (Statement on Standards for Attestation Engagements) is an auditing standard designed for service organizations to assess their data security practices.
 
-- "Trust Services Criteria" of security, availability, processing integrity, confidentiality, and privacy.
-- The audit evaluates whether a service organization’s controls and processes meet these criteria, providing assurance to clients and stakeholders.
-- A **SOC 2 report** is often required in industries with sensitive data handling to demonstrate strong data security and compliance.
-- Financial statement integrity
+- "Trust Services Criteria" - availability, integrity, confidentiality, and privacy.
+- Audit evaluates controls and processes to meet these criteria
+- SOC 2 report is required for industries handling sensitive data
+- Financial statement integrity ensures accurate, reliable data
 - Internal controls; Type I and Type II
+
+SOC 2 has two types of reports that assess internal controls.
+
+- **Type I** evaluates controls at a specific point in time
+- **Type II** evaluates controls over a period (6 to 12 months)
+
+SOC 3 is a public report summarizing SOC 2 findings without disclosing sensitive details. It's used to demonstrate security compliance to a general audience.
+
+- Assures compliance for marketing and client trust  
+- Ideal for clients needing basic security confirmation
 
 ## NIST SP 800 
 

@@ -1,0 +1,34 @@
+
+
+
+## Apache Flink 
+
+- Big Data Technologies 
+
+- Batch Data vs. Streaming Data
+
+- [Stream-first Processing Model](pages/02-Apache-Flink/003-Strem-first-processing-model.md)
+
+- [The Flink Architecture](pages/02-Apache-Flink/004-The-Flink-Architecture.md)
+
+- [Three Types of Flink Deployments](pages/02-Apache-Flink/005-Flink-Deployments.md)
+
+- Run Flink Streaming Applications
+
+- Integrate Flink with Apache Kafka
+
+- Using Windowing Operations
+
+- Using Join Operations
+
+- Stateless vs. Stateful Stream Transformations
+
+- Granular Operations on Input Streams
+
+- Performing Transformations
+
+- State Persistence and Fault Tolerance
+
+- Checkpointing Architecture
+
+- Unit-Testing and End-to-end Testing of Flink Pipelines

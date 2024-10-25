@@ -6,9 +6,6 @@ last_update:
   date: 2/5/2023
 ---
 
-# Branching
-
-
 
 ## Git Branch
 

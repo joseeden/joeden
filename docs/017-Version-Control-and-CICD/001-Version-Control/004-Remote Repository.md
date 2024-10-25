@@ -7,8 +7,6 @@ last_update:
 ---
 
 
-# Remote Repositories 
-
 
 ## Github
 

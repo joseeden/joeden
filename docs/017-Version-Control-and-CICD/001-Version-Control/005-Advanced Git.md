@@ -8,10 +8,6 @@ last_update:
 
 
 
-# Advanced Git
-
-
-
 
 ## Stashing
 

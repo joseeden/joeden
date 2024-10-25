@@ -72,6 +72,13 @@ Databases:
 
 - [MongoDB - The Complete Developer's Guide 2022](https://www.udemy.com/course/mongodb-the-complete-developers-guide/)
 
+Courses on Databases:
+
+- [Fundamentals of Database Engineering](https://www.udemy.com/course/database-engines-crash-course/)
+
+- [Getting Started with MongoDB and NoSQL LiveLessons](https://www.oreilly.com/library/view/getting-started-with/9780136535959/)
+
+- [MongoDB - The Complete Developer's Guide 2022](https://www.udemy.com/course/mongodb-the-complete-developers-guide/)
 
 Apache Flink:
 
