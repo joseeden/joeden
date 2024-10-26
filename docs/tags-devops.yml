@@ -2,6 +2,10 @@ DevOps:
   label: 'DevOps'
   permalink: '/DevOps'
   description: 'Docs related to the DevOps'
+DevSecOps:
+  label: 'DevSecOps'
+  permalink: '/DevSecOps'
+  description: 'Docs related to the DevSecOps'  
 Version Control:
   label: 'Version Control'
   permalink: '/Version Control'
