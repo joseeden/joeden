@@ -67,6 +67,21 @@ Resolving deltas: 100% (29/29), done.
 Another way to clone a repo is by downloading it as a zip file. This is essentially like zipping up a file, download it to your local machine, and unzip it. To do this, just click the **Download zip** from the Code tab.
 
 
+## `git remote`
+
+The `git remote` command lists all your remotes, which are other repositories that share the same codebase. This allows you to push and pull code between repositories, showcasing Git's distributed nature. When you clone a repository, its location is set as your first remote, named `origin`.
+
+To add another remote, use the following commands:
+
+```bash
+additional_remote_url=git://ec2-35-34-68-144.us-west-2.compute.amazonaws.com/lab.git
+git remote add second_remote $additional_remote_url
+git remote
+```
+
+These commands add a new remote called `second_remote` using the specified URL. The `git remote` command then confirms that the new remote has been successfully added.
+
+
 ## Upstream 
 
 In Git, upstream refers to the main repository from which your repository was forked. It is essentially the source repository that you want to keep in sync with. By default, when you clone a repository, the remote named origin is created, pointing to the URL of the cloned repository.

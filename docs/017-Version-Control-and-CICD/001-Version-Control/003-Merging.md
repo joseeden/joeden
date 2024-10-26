@@ -10,8 +10,7 @@ last_update:
 
 ## Merging
 
-Merging works by combining your branches into a single timeline, thus consolidating the commit history. Think of this as the opposite of branching. While branching allows you create multiple versions and commit independent changes on those versions, merging combines all those version into one timeline.
-
+Merging combines branches into a single timeline, unifying the commit history. It serves as the opposite of branching: while branching creates separate versions with independent changes, merging brings all those versions together.
 
 <div style={{textAlign: 'center'}}>
 
@@ -19,10 +18,32 @@ Merging works by combining your branches into a single timeline, thus consolidat
 
 </div>
 
-There are two branches involved in every merge:
-- **Target branch** - where changes are being pulled from; feature branch
-- **Receiving branch** - where changes are being pulled into; current directory
+Every merge involves two branches:
 
+- **Target Branch**: The branch from which changes are pulled (e.g., the feature branch).
+- **Receiving Branch**: The branch where changes are applied (the current branch).
+
+To merge your branch into the master branch, run:
+
+```bash
+git merge add-about-page
+```
+
+Sample output:
+
+```bash
+Updating 2dca417..cc021b0
+Fast-forward
+ about.html | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 about.html
+ca-labs:~/example-git-repo$ git log --oneline
+cc021b0 (HEAD -> master, add-about-page) add an about page
+2dca417 (origin/master, origin/HEAD) Merge pull request 
+f2d9c95 (origin/feature/update-title) update title 
+```
+
+Notice that you ran the git merge command from inside the master branch. The branch you run a merge command from is the branch that will accept the changes from another branch.
 
 ## Fast-forward Merge
 

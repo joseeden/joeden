@@ -116,6 +116,13 @@ In repositories that are newly cloned with no changes, all files are tracked and
 
 **Commiting** saves changes to your local repository. A commit captures the state of your project at a specific point in time.
 
+<div style={{textAlign: 'center'}}>
+
+![](/img/docs/git-push--and-pulll.png)
+
+</div>
+
+
 ## `git add`
 
 The `git add` command moves a file to the staging area, preparing it for the next commit. Files in the staging area will be included in the next commit, meaning Git will start tracking changes in that file.
@@ -126,62 +133,7 @@ git add about.html
 
 Before committing, make sure to [set up your user information first](#user-configuration) so Git can attribute the changes to you.
 
-
-## `git commit`
-
-The `git commit` command saves your changes to the local repository. It creates a snapshot of the current state of your files, allowing you to track changes over time.
-
-```bash
-git commit -m "Add an about file" 
-```
-
-This command creates a commit with a message describing the changes. Once committed, your modifications are recorded in the repository's history.
-
-
-## `git log`
-
-Here's the revised version with the images included:
-
----
-
-## git log
-
-The `git log` command displays a list of commits made to the repository. Using the `--oneline` flag provides a simple, summarized view:
-
-```bash
-git log --oneline
-```
-
-Each commit shows a short ID, branch names (e.g., `master`, `origin/feature/update-title`), and a commit message. Branches can be seen as pointers to specific commits, allowing you to track changes across different branches.
-
-For a visual of branch history, add the `--graph` flag:
-
-```bash
-git log --oneline --graph
-```
-
-This version includes a graphical representation of branch history. Notice the `origin/feature/update-title` branch next to one of the commits:
-
-<div class='img-center'>
-
-![](/img/docs/gitlogonelinecommits.png)  
-
-</div>
-
-You can see that the commit the branch points to splits from the main branch (the `master` branch). This shows where changes on the `origin/feature/update-title` branch began, and any changes made there do not affect the `master` branch.
-
-Later, the `origin/feature/update-title` branch rejoins the `master` branch in the next commit, which is noted as a merge:
-
-<div class='img-center'>
-
-![](/img/docs/commitssaymerged.png)  
-
-</div>
-
-This indicates that the changes from the `origin/feature/update-title` branch were successfully merged back into the `master` branch.
-
-
-## Common Commands
+Other common commands:
 
 - Stage changes for all files.
 
@@ -194,6 +146,19 @@ This indicates that the changes from the `origin/feature/update-title` branch we
     ```bash
     git add /directory/files  
     ```
+
+
+## `git commit`
+
+The `git commit` command saves your changes to the local repository. It creates a snapshot of the current state of your files, allowing you to track changes over time.
+
+```bash
+git commit -m "Add an about file" 
+```
+
+This command creates a commit with a message describing the changes. Once committed, your modifications are recorded in the repository's history.
+
+Other common commands:
 
 - Commit the change and provide the commit message inline.
 
@@ -213,25 +178,31 @@ This indicates that the changes from the `origin/feature/update-title` branch we
     git commit --amend -m "Updated commit message"
     ```    
 
-Here is an informative diagram that shows the difference between the commands:
-
-<div style={{textAlign: 'center'}}>
-
-![](/img/docs/git-push--and-pulll.png)
-
-</div>
 
 
+## `git push`
 
+The `git push` command is used to send your local changes to a remote repository. The command specifies both the remote name and the branch name, indicating where to push your changes.
 
+For example, this command pushes commits from your local `master` branch to the `master` branch on the `origin` remote:
 
-## References
+```bash
+git push origin master
+```
 
-- [Introduction to Git and Github](https://www.coursera.org/learn/introduction-git-github#syllabus)
-- [Collaborate with Git](https://www.cbtnuggets.com/it-training/skills/collaborate-git)
-- [Git for Developers using Github](https://www.coursera.org/projects/git-for-developers-using-github)
-- [Git Commands](https://github.com/joseeden/Git-Commands)
+Sample Output:
 
+```bash
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 450 bytes | 450.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+To https://github.com/username/repo.git
+   1234567..89abcdef  master -> master
+```
+
+This command pushes any commits that the remote `master` branch does not yet have, making it match your local `master` branch.
 
 
 
