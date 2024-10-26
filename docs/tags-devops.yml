@@ -26,6 +26,18 @@ CICD:
   label: 'CICD'
   permalink: '/CICD'
   description: 'Docs related to CICD'
+Continuous Integration:
+  label: 'Continuous Integration'
+  permalink: '/Continuous Integration'
+  description: 'Docs related to Continuous Integration'  
+Continuous Delivery:
+  label: 'Continuous Delivery'
+  permalink: '/Continuous Delivery'
+  description: 'Docs related to Continuous Delivery'  
+Continuous Deployment:
+  label: 'Continuous Deployment'
+  permalink: '/Continuous Deployment'
+  description: 'Docs related to Continuous Deployment'
 Infrastructure as Code:
   label: 'Infrastructure as Code'
   permalink: '/Infrastructure as Code'
