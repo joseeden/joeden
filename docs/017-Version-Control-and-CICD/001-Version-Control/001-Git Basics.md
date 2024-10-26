@@ -67,7 +67,10 @@ Commits are snapshots of the codebase at different points in time. They allow yo
 
 <div class='img-center'>
 
-![](/img/docs/001-gitcommits.png)  
+<!-- ![](/img/docs/001-gitcommits.png)   -->
+
+
+![](/img/docs/001-gitcommits-1026-2.png)
 
 </div>
 
@@ -137,12 +140,45 @@ This command creates a commit with a message describing the changes. Once commit
 
 ## `git log`
 
-The git log command displays all commits made, with the newest commits on top. As expected, the two commits you made are the first and second commits in the output.
+Here's the revised version with the images included:
 
+---
+
+## git log
+
+The `git log` command displays a list of commits made to the repository. Using the `--oneline` flag provides a simple, summarized view:
 
 ```bash
-git log 
+git log --oneline
 ```
+
+Each commit shows a short ID, branch names (e.g., `master`, `origin/feature/update-title`), and a commit message. Branches can be seen as pointers to specific commits, allowing you to track changes across different branches.
+
+For a visual of branch history, add the `--graph` flag:
+
+```bash
+git log --oneline --graph
+```
+
+This version includes a graphical representation of branch history. Notice the `origin/feature/update-title` branch next to one of the commits:
+
+<div class='img-center'>
+
+![](/img/docs/gitlogonelinecommits.png)  
+
+</div>
+
+You can see that the commit the branch points to splits from the main branch (the `master` branch). This shows where changes on the `origin/feature/update-title` branch began, and any changes made there do not affect the `master` branch.
+
+Later, the `origin/feature/update-title` branch rejoins the `master` branch in the next commit, which is noted as a merge:
+
+<div class='img-center'>
+
+![](/img/docs/commitssaymerged.png)  
+
+</div>
+
+This indicates that the changes from the `origin/feature/update-title` branch were successfully merged back into the `master` branch.
 
 
 ## Common Commands

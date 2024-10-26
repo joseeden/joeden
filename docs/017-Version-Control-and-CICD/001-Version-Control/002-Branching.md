@@ -7,11 +7,25 @@ last_update:
 ---
 
 
-## Git Branch
+## Branching
 
-**Git Branch** allows you to create parallel timelines that don't interfere with one another. Each branches will have their own set of commits that don't affect commits on another timeline.
+Branches in Git are essential because they allow you to make changes without impacting the main codebase until you choose to merge them.
 
-The first branch that exists when you create a repository is the **master/main** branch. You can have multiple branches stemming from the master which will have the similar code in it.
+## `git branch`
+
+The `git branch` command will output a list of branches. If you haven't created any other branches, there is only one branch in the output of your command. The default branch for any Git repository is usually master, though you can change which branch is the default if needed.
+
+```bash
+git branch
+```
+
+Sample output:
+
+```bash
+* master
+```
+
+The * next to "master" shows which branch you're currently on. Checking out a branch means choosing where your changes will apply. Since you’re on "master," any changes will affect that branch until you switch to another.
 
 <div style={{textAlign: 'center'}}>
 
@@ -20,19 +34,29 @@ The first branch that exists when you create a repository is the **master/main**
 </div>
 
 
-From there you can work on your own feature branch while others can work on other feature branches. Some useful commands are:
+You can have multiple branches stemming from the master which will have the similar code in it. From there you can work on your own feature branch while others can work on other feature branches. 
 
-## Head
 
-An important concept to understand in Git is the **HEAD** of the branch. 
 
-When you first create a repository, the HEAD is pointed at the default branch, which is usually the `master` or `main` branch. The HEAD is essentially a reference to the current branch or commit that you are working on.
+## HEAD
 
-When you create a new branch and switch to that branch, the HEAD will now be pointing to that new branch. This means any new commits you make will be added to this new branch. The process of switching branches is often done using the `git checkout` or `git switch` commands. For example:
+In Git, **HEAD** points to your current branch or commit.
 
-```sh
-git checkout -b new-feature
+When you create a repository, HEAD usually points to the main branch, like `master` or `main`. If you create and switch to a new branch, HEAD will point to that branch, so new commits go there.
+
+To create and switch to a new branch, use:
+
+```bash
+git checkout -b new-branch
 ```
+
+Sample output:
+
+```bash
+Switched to a new branch 'new-branch'
+```
+
+
 
 ## Common Commands 
 
