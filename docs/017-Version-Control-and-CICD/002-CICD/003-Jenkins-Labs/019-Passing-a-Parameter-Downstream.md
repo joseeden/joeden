@@ -14,7 +14,11 @@ last_update:
 
 From the previous lab, we have two projects currently inside **Test-builds**.
 
-![](Images/lalaobupdp2.png)
+<div class='img-center'>
+
+![](/img/docs/lalaobupdp2.png)
+
+</div>
 
 
 ## Install the Parameterized Plugin
@@ -27,8 +31,16 @@ Manage Jenkins --> Manage Plugins --> Available --> Search for 'Parameterized Tr
 
 Check the box beside the plugin and hit **Download now and install after restart**. In the next page, also check the box for **Restart Jenkins when installation is complete and no jobs are running.**
 
-![](Images/lalab09pluginpara.png)
-![](Images/lalab09pluginpara2.png)
+<div class='img-center'>
+
+![](/img/docs/lalab09pluginpara.png)
+
+</div>
+<div class='img-center'>
+
+![](/img/docs/lalab09pluginpara2.png)
+
+</div>
 
 Once it's done, you will need to log in again. 
 
@@ -44,7 +56,11 @@ This project is parameterized --> Add Parameter --> String Parameter
 
 Set a variable called `IMPORTANT_PARAM`:
 
-![](Images/lalab09importparam.png)
+<div class='img-center'>
+
+![](/img/docs/lalab09importparam.png)
+
+</div>
 
 In the **Build Triggers** section, make sure that none of the boxes are checked. 
 
@@ -57,7 +73,11 @@ echo 'Received this current build number from Upstream:' $IMPORTANT_PARAM
 
 Hit **Save** afterwards.
 
-![](Images/lalab09dp1workingimportparam.png)
+<div class='img-center'>
+
+![](/img/docs/lalab09dp1workingimportparam.png)
+
+</div>
 
 
 ## Configure the Upstream Job with the Parameter to be passed
@@ -71,7 +91,11 @@ echo 'I am the upstream project'
 echo 'Current build number of upstream project:' $BUILD_NUMBER
 ```
 
-![](Images/lalab09backtobuildnumber.png)
+<div class='img-center'>
+
+![](/img/docs/lalab09backtobuildnumber.png)
+
+</div>
 
 Still in **Build step**, add a second step.
 
@@ -91,7 +115,11 @@ Set the variable to the build number. Click **Save** afterwards.
 IMPORTANT_PARAM=$BUILD_NUMBER
 ```
 
-![](Images/lalab09upimportparambuildnumber.png)
+<div class='img-center'>
+
+![](/img/docs/lalab09upimportparambuildnumber.png)
+
+</div>
 
 Click **Build now** to test if it works. Then click the latest build under the **Build History** in the left panel and click the **Console Output**.
 
@@ -100,7 +128,11 @@ We see this line:
 Current build number of upstream project: 24 
 ```
 
-![](Images/lalab09buildnowup2.png)
+<div class='img-center'>
+
+![](/img/docs/lalab09buildnowup2.png)
+
+</div>
 
 Exit out to the folder **Test-builds** then go to your **job-downtream** again. Then click the latest build under the **Build History** in the left panel and click the **Console Output**.
 
@@ -109,5 +141,9 @@ We see this line:
 Received this current build number from Upstream: 24
 ```
 
-![](Images/lalab09buildnowdp.png)
+<div class='img-center'>
+
+![](/img/docs/lalab09buildnowdp.png)
+
+</div>
 
