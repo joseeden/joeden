@@ -26,7 +26,7 @@ KPU moved from monthly to daily deployments but still faced challenges with risi
 
 <div class='img-center'>
 
-![](/img/docs/012-usecasedevopsKPU.png)
+![](/img/docs/012-usecasedevopsapu.png)
 
 </div>  
 
@@ -46,7 +46,7 @@ Manual troubleshooting by multiple teams slowed deployment and lacked automation
 
 <div class='img-center'>
 
-![](/img/docs/012-usecaseKPU500error.png)
+![](/img/docs/012-usecaseapu500error.png)
 
 </div>  
 
@@ -84,7 +84,7 @@ With Jenkins, KPU implemented continuous integration:
 
 <div class='img-center'>
 
-![](/img/docs/012-usecaseKPU-featuretoggle.png)
+![](/img/docs/012-usecaseapu-featuretoggle.png)
 
 </div>  
 
@@ -96,7 +96,7 @@ This new approach enabled multiple stable deployments per day.
 
 <div class='img-center'>
 
-![](/img/docs/012-usecaseKPUelastic.png)
+![](/img/docs/012-usecaseapuelastic.png)
 
 </div>  
 
@@ -104,7 +104,7 @@ Autoscaling triggered new servers built with Spinnaker, and the blue-green deplo
 
 <div class='img-center'>
 
-![](/img/docs/012-usecaseKPU-bluegreen.png)
+![](/img/docs/012-usecaseapu-bluegreen.png)
 
 </div>  
 
