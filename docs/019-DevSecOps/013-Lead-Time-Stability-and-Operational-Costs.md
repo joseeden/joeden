@@ -3,7 +3,7 @@ title: "Lead Time, Stability, and Operational Costs"
 tags: [DevOps, Cloud, Automation, DevSecOps]
 sidebar_position: 13
 last_update:
-  date: 2/5/2023
+  date: 3/21/2021
 ---
 
 
