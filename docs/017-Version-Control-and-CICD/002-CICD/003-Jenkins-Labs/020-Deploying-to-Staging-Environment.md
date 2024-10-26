@@ -138,11 +138,10 @@ If ever you get an error when you try to trigger the second job that will deploy
 
 ## Error when triggering second job 
 
-Reference: [Jenkins [Error]](https://www.programmerall.com/article/4885370730/)
+Reference: [ERROR: Build step failed with exception](https://www.programmerall.com/article/4885370730/)
 
 I've been getting this issue even though I entered the correct Tomcat URL and the correct credentials
 
-<details><summary> ERROR: Build step failed with exception </summary>
  
 ```bash
 org.codehaus.cargo.container.ContainerException: Failed to redeploy [/var/lib/jenkins/workspace/test-maven-deploy/webapp/target/webapp.war]
