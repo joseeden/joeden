@@ -36,13 +36,13 @@ As an example, let's install the Ansible plugin. Just search for "Ansible" and t
 
 </div>
 
-So what's the difference between this two? 
-
-:::info[From a [Stackoverflow link](https://stackoverflow.com/questions/53910252/jenkins-plugin-installation-with-and-without-restart-difference#:~:text=1%20Answer&text=The%20main%20difference%20between%20'with,builds%20are%20running%20as%20well)]
+:::info[So what's the difference between this two?]
 
 The main difference between 'with restart' and 'without restart' plugin installation is that you cannot upgrade or uninstall plugins without restart (because of the architectural choice made in Jenkins).
 
 So, new plugin can be installed without restart (and when other builds are running as well).
+
+Reference: [Stackoverflow link](https://stackoverflow.com/questions/53910252/jenkins-plugin-installation-with-and-without-restart-difference#:~:text=1%20Answer&text=The%20main%20difference%20between%20'with,builds%20are%20running%20as%20well)
 
 :::
 
