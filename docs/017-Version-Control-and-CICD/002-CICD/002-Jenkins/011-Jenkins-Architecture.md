@@ -64,6 +64,24 @@ Slave nodes execute tasks assigned by the master node, distributing workloads.
    - A computational resource for executing builds on a node.  
    - Each node can have multiple executors for parallel processing.  
 
+## Executor
+
+An executor is a crucial component in Jenkins that enables builds to run on nodes efficiently.
+
+- Represents a resource unit for executing builds on a node.
+- Indicates the maximum number of concurrent builds.
+- Set the number of executors to match CPU cores for optimal performance.  
+- More executors can increase throughput but may lengthen individual build times.  
+- Enables simultaneous CPU-bound and I/O-bound builds for better resource use.
+
+## Label Nodes
+
+In certain scenarios, specific nodes may be reserved for particular job types. 
+
+- For example, performance tests might need a dedicated machine.
+- Label test jobs to restrict them to specific machine.
+- Labeling prevent other jobs from using the test jobs
+
 ## Build Steps and Build Triggers
 
 Build steps define the actions taken during a build process, while build triggers determine when builds are initiated.
