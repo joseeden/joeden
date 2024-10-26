@@ -3,7 +3,7 @@ title: "Companies practicing DevOps"
 tags: [DevOps, Cloud, Automation, DevSecOps]
 sidebar_position: 14
 last_update:
-  date: 3/21/2021
+  date: 3/17/2021
 ---
 
 
@@ -63,3 +63,15 @@ Spinnaker uses **Aminator** to bake an AMI with the artifact, deploying to stagi
 In a large-scale, failure-prone environment, Netflix uses **Simian Army** tools like **Chaos Monkey** to test system resilience by randomly terminating services to ensure redundancy.
 
 The Simian Army also includes **Janitor Monkey** for resource cleanup and **Conformity Monkey** to ensure all instances follow best practices, making failure handling a core part of Netflix’s strategy.
+
+
+
+## Amazon 
+
+Amazon initially operated as a monolithic application but transitioned to a microservices model for scalability and innovation.
+
+- Adopting a "two-pizza teams" model, Amazon formed small teams (6-8 people) responsible for each product's full lifecycle.
+- Teams gained autonomy in tool selection, taking responsibility for running their services in production and resolving issues, leading to a strong culture of thorough testing.
+- A fully automated continuous delivery pipeline enabled extensive automation of testing and deployments, totaling over 50 million deployments in 2014 across thousands of teams.
+
+Amazon shares its journey and practices on its tech blog, offering insights into its evolution toward a highly efficient development and deployment pipeline, with a distinct approach to achieving efficiency.

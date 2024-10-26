@@ -3,7 +3,7 @@ title: "Lead Time, Stability, and Operational Costs"
 tags: [DevOps, Cloud, Automation, DevSecOps]
 sidebar_position: 13
 last_update:
-  date: 3/21/2021
+  date: 3/17/2021
 ---
 
 
@@ -22,15 +22,7 @@ Detecting issues early saves time and reduces costs, as fixing them in productio
 
 ### Case Study: Kio Products Unlimited (KPU)
 
-KPU moved from monthly to daily deployments but still faced challenges with rising traffic on their marketplace. 
-
-<div class='img-center'>
-
-![](/img/docs/012-usecasedevopsapu.png)
-
-</div>  
-
-They wanted to add features like user forums and new products but were cautious due to past deployment issues causing long downtimes.
+KPU moved from monthly to daily deployments but still faced challenges with rising traffic on their marketplace. They wanted to add features like user forums and new products but were cautious due to past deployment issues causing long downtimes.
 
 - **Development Cycle**: 
 

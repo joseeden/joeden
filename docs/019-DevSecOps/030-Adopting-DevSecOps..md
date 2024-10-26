@@ -3,7 +3,7 @@ title: "Adopting DevSecOps"
 tags: [DevOps, Cloud, Automation, DevSecOps]
 sidebar_position: 30
 last_update:
-  date: 3/21/2021
+  date: 3/17/2021
 ---
 
 
@@ -107,3 +107,37 @@ DevSecOps signifies a shift in security as it orchestrates and integrates config
 
 </div>
 
+
+## Business-Driven Strategies
+
+- **1. Build Security Champions in DevOps**  
+    - Promote respect between developers, security, and business.
+    - Include security experts in DevOps to balance priorities.
+    - Understand security concerns and learn product vulnerabilities.
+
+- **2. Embed Security in DevOps Processes**  
+    - Align processes for quick delivery.
+    - Treat features and defects equally.
+    - Foster collaboration and prioritize incremental improvements.
+
+- **3. Integrate Security Tools in DevOps**  
+    - "Shift-left" to consider security early.
+    - Use automatic audit trails and security gates.
+    - Utilize data from security tools and test readiness with security exercises.
+
+
+## OWASP Security Guidelines
+
+The Open Web Application Security Project® (OWASP) is a nonprofit focused on enhancing software security. It offers resources on security methodologies, tools, and technologies.
+
+The [OWASP Top 10](https://owasp.org/www-project-top-ten/) is a widely accepted resource for developers and security professionals. It highlights the most critical security risks facing web applications.
+
+<div class='img-center'>
+
+![](/img/docs/owasp-top-10.png)
+
+</div>
+
+## Resources 
+
+- [Practical DevOps Security](https://www.packtpub.com/product/practical-devops-security-video/9781788394901)
