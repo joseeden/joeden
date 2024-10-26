@@ -122,10 +122,13 @@ PGP (Pretty Good Privacy) and GnuPG (GNU Privacy Guard) are encryption programs 
 
 ### ECC
 
-- Mostly used in **mobile devices and low-power computing devices.**
-- Provides similar security with **smaller key sizes**, leading to efficiency gains. 
-- ECC with a 256-bit key is just as secure as RSA with 2048-bit key.
+### ECC
 
+Elliptic Curve Cryptography (ECC) is an efficient, high-security encryption method used widely in modern, low-power devices.
+
+- Primarily used in **mobile and low-power computing devices**
+- Similar security with **smaller key sizes**, making it more efficient
+- A 256-bit ECC key offers the same security level as a 2048-bit RSA key
 Summarized table:
 
 | Algorithm                             | Key Structure             | Supported Key Sizes   | Use Cases                                         | Strengths                                                     | Weaknesses                                                                        |

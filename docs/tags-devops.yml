@@ -38,6 +38,10 @@ Continuous Deployment:
   label: 'Continuous Deployment'
   permalink: '/Continuous Deployment'
   description: 'Docs related to Continuous Deployment'
+Jenkins:
+  label: 'Jenkins'
+  permalink: '/Jenkins'
+  description: 'Docs related to Jenkins'  
 Infrastructure as Code:
   label: 'Infrastructure as Code'
   permalink: '/Infrastructure as Code'
