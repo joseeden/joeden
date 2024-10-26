@@ -1,7 +1,7 @@
 ---
 title: "Source Control Polling"
 tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins, Maven]
-sidebar_position: 3
+sidebar_position: 13
 last_update:
   date: 7/7/2022
 ---

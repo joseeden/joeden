@@ -1,7 +1,7 @@
 ---
-title: Archive Build Artifacts"
+title: "Archive Build Artifacts"
 tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins, Maven, Git, Github]
-sidebar_position: 6
+sidebar_position: 16
 last_update:
   date: 7/7/2022
 ---

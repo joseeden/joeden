@@ -1,7 +1,7 @@
 ---
 title: "Git Hooks"
 tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins, Maven, Git, Github]
-sidebar_position: 4
+sidebar_position: 14
 last_update:
   date: 7/7/2022
 ---
