@@ -9,13 +9,6 @@ last_update:
 
 ## Overview
 
-:::info[NOTE]
-
-> *This lab is based on* *[Linux Academy: Jenkins Quickstart]()*
-> Note that there may be some difference on the Github and Jenkins UI since they may get updated.
-
-:::
-
 As a recap of the previous lab, SCM polling provides a more efficient way than periodically checking for updates in the source code. Another option is to use **git hooks**
 
 With Git Hooks, our feedback loop is much shorter, thus we can deploy builds much faster.
