@@ -13,17 +13,21 @@ last_update:
 DevOps helps stabilize software development by addressing issues caused by frequent updates. Automating early error detection prevents minor issues from becoming major production problems.
 
 <div class='img-center'>
-<img src="/img/docs/012-failfastttttttt.png">
+
+![](/img/docs/012-failfastttttttt.png)
+
 </div>  
 
 Detecting issues early saves time and reduces costs, as fixing them in production is much more expensive. Lead time in DevOps refers to the period from idea generation to release.
 
-### Case Study: Acme Products Unlimited (APU)
+### Case Study: Kio Products Unlimited (KPU)
 
-APU moved from monthly to daily deployments but still faced challenges with rising traffic on their marketplace. 
+KPU moved from monthly to daily deployments but still faced challenges with rising traffic on their marketplace. 
 
 <div class='img-center'>
-<img src="/img/docs/012-usecasedevopsapu.png">
+
+![](/img/docs/012-usecasedevopsKPU.png)
+
 </div>  
 
 They wanted to add features like user forums and new products but were cautious due to past deployment issues causing long downtimes.
@@ -41,39 +45,47 @@ They wanted to add features like user forums and new products but were cautious 
 Manual troubleshooting by multiple teams slowed deployment and lacked automation, which hindered efficiency.
 
 <div class='img-center'>
-<img src="/img/docs/012-usecaseapu500error.png">
+
+![](/img/docs/012-usecaseKPU500error.png)
+
 </div>  
 
 
 
 ### DevOps Transformation
 
-Under a new CTO, APU embraced DevOps. Key changes included:
+Under a new CTO, KPU embraced DevOps. Key changes included:
 
 1. **Baseline Metrics**: Lead time, uptime, deployment frequency, MTTD, and MTTR were tracked.
 2. **Cross-Functional Teams**: Developers, QA, security, and operations worked together with no hand-offs.
 3. **Full Ownership**: Each team managed its product from development through production.
 
 <div class='img-center'>
-<img src="/img/docs/012-usecase-nosilos.png">
+
+![](/img/docs/012-usecase-nosilos.png)
+
 </div>  
 
 ### Continuous Integration
 
-With Jenkins, APU implemented continuous integration:
+With Jenkins, KPU implemented continuous integration:
 
 - Code was automatically built and tested
 - Code is marked successful if all tests passed
 - QA and security teams helped set up load and security tests.
 
 <div class='img-center'>
-<img src="/img/docs/012-usecase-jenkins.png">
+
+![](/img/docs/012-usecase-jenkins.png)
+
 </div>  
 
 **Feature Toggles** allowed safe deployment of unfinished features without affecting production, keeping the main branch as the main code source.
 
 <div class='img-center'>
-<img src="/img/docs/012-usecaseapu-featuretoggle.png">
+
+![](/img/docs/012-usecaseKPU-featuretoggle.png)
+
 </div>  
 
 This new approach enabled multiple stable deployments per day.
@@ -83,13 +95,17 @@ This new approach enabled multiple stable deployments per day.
 - Supported elastic scaling, adding servers based on demand.
 
 <div class='img-center'>
-<img src="/img/docs/012-usecaseapuelastic.png">
+
+![](/img/docs/012-usecaseKPUelastic.png)
+
 </div>  
 
 Autoscaling triggered new servers built with Spinnaker, and the blue-green deployment model allowed quick rollbacks when needed.
 
 <div class='img-center'>
-<img src="/img/docs/012-usecaseapu-bluegreen.png">
+
+![](/img/docs/012-usecaseKPU-bluegreen.png)
+
 </div>  
 
 ### Key Takeaways on Lead Time Improvement
@@ -103,3 +119,16 @@ Optimizing lead time requires reducing constraints in the entire pipeline. DevOp
    - Shifted to a collaborative, automated DevOps culture.
    - Automated continuous delivery.
 
+## Enhancing Stability
+
+Using Kio Products Unlimited’s move from monthly to daily deployments as an example, here’s how DevOps improved stability.
+
+Frequent changes often introduce risks to stability. KPU's manual processes and siloed teams led to extended downtimes and burnout. Through DevOps, KPU achieved a more stable system by implementing key changes:
+
+1. **Cultural Shift**: Breaking down silos and forming cross-functional teams enabled developers, operations, QA, and security to solve issues collaboratively, improving quality and stability.
+
+2. **Metrics**: Tracking metrics provided a baseline for performance, helping teams spot and fix issues quickly, leading to a more resilient system.
+
+3. **Automation**: KPU automated testing and deployment, using continuous integration to catch errors before production. Elastic infrastructure adapted to traffic demands, while blue-green deployments and immutable servers enabled smoother transitions.
+
+In short, DevOps enhances stability by embedding quality into processes, automating infrastructure, and ensuring predictable, reliable deployments.
