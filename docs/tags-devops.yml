@@ -42,6 +42,18 @@ Jenkins:
   label: 'Jenkins'
   permalink: '/Jenkins'
   description: 'Docs related to Jenkins'  
+Maven:
+  label: 'Maven'
+  permalink: '/Maven'
+  description: 'Docs related to Maven'  
+Gradle:
+  label: 'Gradle'
+  permalink: '/Gradle'
+  description: 'Docs related to Gradle'  
+Apache Ant:
+  label: 'Apache Ant'
+  permalink: '/Apache Ant'
+  description: 'Docs related to Apache Ant'  
 Infrastructure as Code:
   label: 'Infrastructure as Code'
   permalink: '/Infrastructure as Code'

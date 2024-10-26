@@ -15,13 +15,15 @@ To create a job, we can click the **New Item** on the left panel or simply click
 
 </div>
 
-Enter a project name in the field. For this example, we'll just select **Freestyle project** and then **Ok**. You can then configure the job in the next page where you will see different sections.
+Enter a project name in the field. For this example, we'll just select **Freestyle project** and then **Ok**. 
 
 <div class='img-center'>
 
 ![](/img/docs/jen1job1.png)
 
 </div>
+
+You can then configure the job in the next page where you will see different sections.
 
 - **Discard old builds** - this allows limiting the number of builds stored in history. This ensures that the builds doesn't take up space/memory.
 
@@ -104,10 +106,3 @@ Check the finished build under the **Build History**. Then on the build page, cl
 ![](/img/docs/jen1buildnow2.png)
 
 </div>
-
-<div class='img-center'>
-
-![](/img/docs/tjenplugins1.png)
-
-</div>
-

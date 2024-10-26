@@ -1,6 +1,6 @@
 ---
 title: "Maven-based Job"
-tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins]
+tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins, Maven]
 sidebar_position: 2
 last_update:
   date: 7/7/2022
@@ -14,6 +14,17 @@ Maven's build lifecycle outlines the stages for building and managing projects.
 - **Default lifecycle**: compile, test, package, and install for building and testing.
 - **Clean lifecycle**: Removes build artifacts.
 - **Site lifecycle**: Generates project documentation.
+
+In the default lifecycle, the phases are executed sequentially. To execute, we just need to call the last build phase.
+
+- **Validate** - Ensure the project is correct and complete.  
+- **Compile** - Compile the project's source code.  
+- **Test** - Test the compiled code with a unit testing framework.  
+- **Package** - Package the compiled code into a distributable format.  
+- **Verify** - Run checks on integration test results for quality assurance.  
+- **Install** - Install the package into the local repository for other projects.  
+- **Deploy** - Copy the final package to a remote repository for sharing.  
+
 
 ## Setting up a Maven-based Job 
 
@@ -157,23 +168,15 @@ drwxr--r-- 1 joseeden joseeden 512 Jan 15 00:47 two/
 
 Our **maven-project** folder looks like this:
 
-tree-output of maven-project:
-
-
-<div class='img-center'>
-
 ![](/img/docs/maventree.png)
 
-</div>
 
 An important file is the **pom.xml**.
 
-
-<div class='img-center'>
-
-![](/img/docs/mavenpom.png)
-
-</div>
+- This file describes the software being built
+- Shows the dependencies on external modules
+- Shows directory structure and required plugins
+- Predefined targets for certain tasks
 
 
 Now let's test an empty commit and push.
