@@ -1,5 +1,5 @@
 ---
-title: "Deploying to Staging Environment"
+title: "Deploy to Staging Environment"
 tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins, Tomcat]
 sidebar_position: 20
 last_update:
@@ -88,7 +88,7 @@ In the **Build** section, click the dropdown menu and select **Copy artifacts fr
 
 In the **Post-build Actions**, click the dropdown menu and select **Deploy war/ear to a container**. Then enter the values:
 
-| WAR/EAR files | **/*.war |
+| WAR/EAR files | `**/*.war` |
 | :--- | :--- |
 | **Containers** | Select the highest version of Tomcat | 
 | **Tomcat URL** | http://13.228.99.157:8081 |
@@ -263,13 +263,15 @@ http://13.228.99.157:8081/webapp/
 
 </div>
 
-Going back to the TOmcat Web Application Manager, I clicked the **Undeploy** for /webapp.
+Going back to the Tomcat Web Application Manager, I clicked the **Undeploy** for /webapp.
 
 <div class='img-center'>
 
 ![](/img/docs/warhelloworldundeploy.png)
 
 </div>
+
+The webapp should disappear from the table:
 
 <div class='img-center'>
 
