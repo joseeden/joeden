@@ -73,11 +73,45 @@ If you did some changes on both the feature branch and the master branch, youcan
 
 ## Conflicts
 
-While git will try to merge the changes seamlessly, there will be some conflicts that will arise sometimes. These conflicts will need to be resolved manually. If errors are encountered during merging, you can stop before anything permanent is done in the code in your current working branch
+Sometimes, when merging changes, Git may encounter conflicts that it can't resolve automatically. These conflicts must be fixed manually. If you run into errors during a merge, you can cancel the merge process and revert to the previous state of your branch with the following command:
 
 ```bash
 git merge --abort
 ```
+
+Sample output:
+
+```bash
+Merge failed. Please resolve conflicts and try again.
+Aborting merge.
+```
+
+This command stops the merge before any changes are made, ensuring your current working branch remains intact.
+
+
+## `git diff`
+
+The `git diff` command is used to show the differences between files in your working directory and the last commit. This is helpful for reviewing changes before staging or committing them.
+
+
+```bash
+git diff
+```
+
+Sample output:
+
+```bash 
+diff --git a/index.html b/index.html
+index 69ab9f0..256eea0 100644
+--- a/index.html
++++ b/index.html
+@@ -358,3 +358,4 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+ 
+        </body>
+ </html>
+```
+
+In the output, you can see a detailed log of any tracked changes since your last commit. The lines prefixed with a `+` indicate additions, while those prefixed with a `-` (if present) would indicate deletions. Notice the green "new line" text corresponding to the change you made in the last Lab step.
 
 ## Common Commands
 
