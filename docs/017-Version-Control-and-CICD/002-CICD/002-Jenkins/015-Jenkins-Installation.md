@@ -11,25 +11,24 @@ last_update:
 
 ## Pre-requisites
 
-**Configure Java_Home on Windows:**
+**Configure `JAVA_HOME` on Windows:**
 
 - Right click My Computer and select Properties
 - On the Advanced tab, select Environment Variables
-- Edit JAVA_HOME to point to where the JDK software is located
-- For example, C:\Program Files\Java\jdk1.6.0_02
+- Edit `JAVA_HOME` to point to where the JDK software is located
+- For example, `C:\Program Files\Java\jdk1.6.0_02`
 
 **Configure Java_Home on Linux:**
 - Login to your account and open the startup script file 
-- The script is usually ~/.bash_profile  file 
+- The script is usually `~/.bash_profile`  file 
 - It can also be the .bashrc depending on your envrionment settings
 
     ```bash
     vi ~/.bash_profile
     ```
 
-- In the startup script, set JAVA_HOME  and PATH 
+- In the startup script, set `JAVA_HOME` and `PATH` 
 
-    **C shell:**
     ```bash
     setenv JAVA_HOME jdk-install-dir
     setenv PATH $JAVA_HOME/bin:$PATH
@@ -38,19 +37,21 @@ last_update:
 
 - jdk-install-dir is the JDK installation director, which should be something similar to /usr/java/jdk1.5.0_07/bin/java
 
-    **Bourne shell:**
-    ```bash
-    JAVA_HOME=jdk-install-dir
-    export JAVA_HOME
-    PATH=$JAVA_HOME/bin:$PATH
-    export PATH
-    ```
+    - **Bourne shell:**
 
-    **Korn and bash shells:**
-    ```bash
-    export JAVA_HOME=jdk-install-dir
-    export PATH=$JAVA_HOME/bin:$PATH
-    ```
+      ```bash
+      JAVA_HOME=jdk-install-dir
+      export JAVA_HOME
+      PATH=$JAVA_HOME/bin:$PATH
+      export PATH
+      ```
+
+    - **Korn and bash shells:**
+      
+      ```bash
+      export JAVA_HOME=jdk-install-dir
+      export PATH=$JAVA_HOME/bin:$PATH
+      ```
 
 - Type the following command to activate the new path settings immediately:
 
@@ -64,8 +65,6 @@ last_update:
     echo $JAVA_HOME
     echo $PATH
     ```
-
-
 
 
 ## Install using Ansible 
@@ -198,3 +197,61 @@ http://14.214.11.123:8080/jenkins-lab
 
 </div>
 
+
+
+
+## Install using Docker
+
+This section outlines how to set up Jenkins using Docker, providing a quick and efficient way to run Jenkins in a containerized environment.
+
+```yaml title="docker-compose-jenkins.yml"
+# docker-compose-jenkins.yml
+
+version: '3'
+services:
+  jenkins:
+    container_name: jenkins
+    image: jenkins/jenkins
+    ports:
+      - "8080:8080"
+    volumes:
+      - $PWD/jenkins_home:/var/jenkins_home
+    networks:
+      - net
+networks:
+  net: 
+```
+
+**Steps to Install Jenkins using Docker**
+
+1. Save YAML configuration as `docker-compose-jenkins.yml`.
+
+2. Open a terminal and navigate to the directory containing the YAML file.
+
+3. Execute the following command to start Jenkins:  
+
+     ```bash
+     docker-compose up -d
+     ```
+
+
+
+## Access the Jenkins UI  
+
+After you install Jenkins, you can access the Jenkins portal:
+
+1. Open a web browser and go to `http://localhost:8080`.  
+
+2. This will load the Jenkins setup page.
+
+3. Retrieve the initial admin password by running:  
+
+     ```bash
+     docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+     ```  
+
+4. Copy the password and paste it into the setup page to unlock Jenkins.
+
+5. Follow the instructions to install recommended plugins and set up your admin user.
+
+9. Once the setup is complete, you can now start creating jobs.
