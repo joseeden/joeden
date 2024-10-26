@@ -188,7 +188,7 @@ After the plugins are installed, Jenkins will now prompt you to create the first
 Next, you will need to configure the URL. Afterwards click **Save and Finish**.
 
 ```bash
-http://14.214.11.123:8080/jenkins-lab 
+http://13.228.99.157:8080/jenkins-lab 
 ```
 
 <div class='img-center'>

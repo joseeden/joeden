@@ -131,7 +131,7 @@ A credential provider is a location that has been configured for Jenkins to retr
 
 ## Managing Users 
 
-To manage users;
+To manage users:
 
 ```bash
 Manage Jenkins --> Manage Users 
