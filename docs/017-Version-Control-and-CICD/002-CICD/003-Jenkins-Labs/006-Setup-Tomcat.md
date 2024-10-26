@@ -17,7 +17,7 @@ Apache Tomcat can serve as an effective staging environment for testing applicat
 - Enables integration testing with other services in a near-production setting.
 
 
-## Install Tomcat 
+## Install Tomcat using Ansible
  
 For labbing purpose, we'll just install the Tomcat in the same Jenkins server. Currently, our Jenkins server is on a RHEL 8 Machine. Following this links:
 
