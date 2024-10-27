@@ -8,7 +8,7 @@ last_update:
 
 
 
-## Tomcat as Staging Environment
+## Overview
 
 Apache Tomcat can serve as an effective staging environment for testing applications before production. By deploying to Tomcat, teams can evaluate application functionality in a controlled setting, ensuring it meets quality standards before full release. 
 
@@ -16,6 +16,21 @@ Apache Tomcat can serve as an effective staging environment for testing applicat
 - Allows for validation of deployment processes and troubleshooting.
 - Enables integration testing with other services in a near-production setting.
 
+## Lab Environment
+
+We are utilizing Amazon EC2 instances as our machines:
+
+- jenkinsmaster1
+
+You can opt for a virtual machine in your computer or you could also setup instances in the cloud. I prefer to utilize Amazon EC2 instances which is what I use in almost all of my labs.
+
+<div class='img-center'>
+
+![](/img/docs/ansible-lab-diagram-4.png)
+
+</div>
+
+Note that for this lab, we'll only be using **jenkinsmaster1** and you can disregard the other **tstsvrs** and **jenkinsslave1** for now.
 
 ## Install Tomcat using Ansible
  

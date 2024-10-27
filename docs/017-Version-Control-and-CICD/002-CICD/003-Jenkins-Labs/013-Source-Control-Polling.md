@@ -7,6 +7,29 @@ last_update:
 ---
 
 
+## Lab Environment
+
+We are utilizing Amazon EC2 instances as our machines:
+
+- jenkinsmaster1
+
+You can opt for a virtual machine in your computer or you could also setup instances in the cloud. I prefer to utilize Amazon EC2 instances which is what I use in almost all of my labs.
+
+<div class='img-center'>
+
+![](/img/docs/ansible-lab-diagram-4.png)
+
+</div>
+
+Note that for this lab, we'll only be using **jenkinsmaster1** and you can disregard the other **tstsvrs** and **jenkinsslave1** for now.
+
+## Setting Up Jenkins using Ansible
+
+If you have your Jenkins server already setup, you can skip this section. For this one, we'll just run the following Ansible playbook/s on **jenkinsmaster1**. The playbook will perform the entire installation of Jenkins on this machine.
+
+To setup Jenkins using Ansible, please see [Setting up Ansible and Jenkins.](/docs/017-Version-Control-and-CICD/002-CICD/003-Jenkins-Labs/005-Setup-Ansible-and-Jenkins.md)
+
+
 ## Polling
 
 > **This is continuation of the Maven-based Jenkins lab.**

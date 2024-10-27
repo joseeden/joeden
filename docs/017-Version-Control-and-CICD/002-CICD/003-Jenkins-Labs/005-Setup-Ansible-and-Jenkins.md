@@ -9,7 +9,100 @@ last_update:
 
 ## Overview 
 
-To speed up the creation of testing environment for Jenkins, you can use Ansible playbooks. These playbooks contains the configuration that will be used by Jenkins. You just need to run the playbook and Ansible will take care of the entire installation process.
+To speed up the creation of testing environment for Jenkins, you can use Ansible playbooks. This playbook contains the configuration that will be used by Jenkins. You just need to run the playbook and Ansible will take care of the entire installation process.
+
+## Lab Environment 
+
+We are utilizing Amazon EC2 instances as our machines:
+
+- jenkinsmaster1
+
+You can opt for a virtual machine in your computer or you could also setup instances in the cloud. I prefer to utilize Amazon EC2 instances which is what I use in almost all of my labs.
+
+<div class='img-center'>
+
+![](/img/docs/ansible-lab-diagram-4.png)
+
+</div>
+
+<!-- Note that for this lab, we'll only be using **jenkinsmaster1** and you can disregard the other **tstsvrs** and **jenkinsslave1** for now.
+ -->
+
+## Configuration Files
+
+We also used Ansible playbooks to setup the Jenkins lab. Currently we have Project **One**. The tree-structure of our Project **One** currently looks like this. These are the files from the previous labs. 
+
+- **Project One** 
+
+  Note that we have alot of inventory files (.inv) inside the **inventories** folder. The file that will be using for this lab is **edenjen.inv** which is also shown next. 
+  
+  <div class='img-center'>
+
+  ![](/img/docs/jenslab07tree.png)
+  
+  </div>
+ 
+- **ansible.cfg**
+
+  You can replace the **edendev.inv** with **edenjen.inv** with the path since that is the inventory file that we'll be using. If you rename the file, replace the **inventory** with the */path/to/your/inventoryfile*.
+
+    ```bash
+    # ansible.cfg
+
+    [defaults]
+    # E: variables for my personal lab
+    inventory = ~/proj-ansible-1/one/inventories/edendev.inv
+    remote_user = eden
+    private_key_file = ~/.ssh/id_rsa
+    host_key_checking = False
+    retry_files_enabled = False
+    timeout = 24
+    gather_facts = smart
+
+    [privilege_escalation]
+    become_method = sudo
+    become=True
+    become_user=root
+    become_ask_pass=True
+
+    #ansible_managed = "# This file is managed by Ansible, all local changes will be lost !"
+    #allow_world_readable_tmpfiles = True
+    #precedence = all_plugins_play, all_inventory, groups_plugins_play, groups_inventory, all_plugins_inventory, groups_plugins_inventory
+    #any_errors_fatal = True
+    #timeout = 24
+
+    [paramiko_connection]
+    #record_host_keys = False
+
+    [ssh_connection]
+    scp_if_ssh = True
+    pipelining = True
+    ```
+    
+- **edenjen.inv** 
+
+    We have an option to set this inventory file as our default one but since our uses different inventory files, we'll just specify the inventory when we run the playbook.
+
+
+    ```bash
+    [webservers]
+
+    [jenkins]
+    jenkinsmaster     ansible_host=13.228.99.157
+
+    [local]
+    localhost   ansible_connection=local
+    ```
+
+
+## Create Symlink (optional) 
+
+To shorten the commands, you can also create a symlink in your root directory that points to the projects folder:
+
+```bash
+$ ls -la | grep "\->"
+lrwxrwxrwx  1 joseeden joseeden    70 Jan 14 23:03 proj-ansible-1 -> /mnt/c/Users/Eden Jose/4-Projects
+```
 
 
 ## Install Ansible 
@@ -106,6 +199,66 @@ To run the playbook, run the command below. Note that my playbook is inside the 
 ```bash
 ansible-playbook playbooks/install-jenkins.yml -i inventories/edenjen.inv
 ```
+
+
+## Install Packages 
+
+Next, create another playbook that will install other packages on the Jenkins server. You can simply copy the playbook provided below. These are additional packages that will be used in the other labs.
+ 
+```yaml title="install-maven-others.yml"
+# install-maven-others.yml
+---
+
+- name: Install other packages on the Jenkins server
+  hosts: jenkins
+  become: true
+  tasks:
+
+    - name: Download files for Maven
+      get_url:
+        url: https://www-eu.apache.org/dist/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+        dest: /opt
+    
+    - name: Extract downloaded archive
+      ansible.builtin.unarchive:
+        src: /opt/apache-maven-3.6.3-bin.tar.gz
+        dest: /opt
+        remote_src: yes        
+
+    - name: Create symbolic link 
+      file:
+        src: "apache-maven-3.6.3"
+        dest: "/opt/maven"
+        state: link
+
+    - name: Create file
+      ansible.builtin.blockinfile:
+        path: /etc/profile.d/maven.sh
+        create: yes
+        mode: '0755'
+        insertbefore: BOF
+        block: |
+          export M2_HOME=/opt/maven
+          export PATH=${M2_HOME}/bin:${PATH}
+
+    - name: Source the maven script
+      shell: "source /etc/profile.d/maven.sh"
+
+    - name: Installs git
+      yum:  
+        name: 
+          - git
+          - tidy
+        state: present
+```
+
+Run the playbook:
+
+
+```bash
+ansible-playbook playbooks/install-maven-others.yml -i inventories/edenjen.inv
+```
+
 
 ## Set Password for Jenkins User
 

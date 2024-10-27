@@ -11,7 +11,7 @@ last_update:
 
 ## Lab Environment
 
-We'll be using the same setup we used during the previous labs for Jenkins and Ansible. We are utilizing Amazon EC2 instances as our remote machines:
+We are utilizing Amazon EC2 instances as our machines:
 
 - jenkinsmaster1
 
@@ -25,87 +25,9 @@ You can opt for a virtual machine in your computer or you could also setup insta
 
 Note that for this lab, we'll only be using **jenkinsmaster1** and you can disregard the other **tstsvrs** and **jenkinsslave1** for now.
 
-## Files used in this lab
-
-We also used Ansible playbooks to setup the Jenkins lab. Currently we have Project **One**. The tree-structure of our Project **One** currently looks like this. Don't worry if you see that there's already a lot of files in the directory. These are the files from the previous labs in this series. 
-
-- **Project One** 
-
-  Note that we have alot of inventory files (.inv) inside the **inventories** folder. The file that will be using for this lab is **edenjen.inv** which is also shown next. 
-  
-  <div class='img-center'>
-
-  ![](/img/docs/jenslab07tree.png)
-  
-  </div>
- 
-- **ansible.cfg**
-
-  You can replace the **edendev.inv** with **edenjen.inv** with the path since that is the inventory file that we'll be using. If you rename the file, replace the **inventory** with the */path/to/your/inventoryfile*.
-
-    ```bash
-    # ansible.cfg
-
-    [defaults]
-    # E: variables for my personal lab
-    inventory = ~/proj-ansible-1/one/inventories/edendev.inv
-    remote_user = eden
-    private_key_file = ~/.ssh/id_rsa
-    host_key_checking = False
-    retry_files_enabled = False
-    timeout = 24
-    gather_facts = smart
-
-    [privilege_escalation]
-    become_method = sudo
-    become=True
-    become_user=root
-    become_ask_pass=True
-
-    #ansible_managed = "# This file is managed by Ansible, all local changes will be lost !"
-    #allow_world_readable_tmpfiles = True
-    #precedence = all_plugins_play, all_inventory, groups_plugins_play, groups_inventory, all_plugins_inventory, groups_plugins_inventory
-    #any_errors_fatal = True
-    #timeout = 24
-
-    [paramiko_connection]
-    #record_host_keys = False
-
-    [ssh_connection]
-    scp_if_ssh = True
-    pipelining = True
-    ```
-    
-- **edenjen.inv** 
-
-    We have an option to set this inventory file as our default one but since our uses different inventory files, we'll just specify the inventory when we run the playbook.
-
-
-    ```bash
-    [webservers]
-
-    [jenkins]
-    jenkinsmaster     ansible_host=13.228.99.157
-
-    [local]
-    localhost   ansible_connection=local
-    ```
-
-
-## Create Symlink (optional) 
-
-To shorten the commands, you can also create a symlink in your root directory that points to the projects folder:
-
-```bash
-$ ls -la | grep "\->"
-lrwxrwxrwx  1 joseeden joseeden    70 Jan 14 23:03 proj-ansible-1 -> /mnt/c/Users/Eden Jose/4-Projects
-```
-
-
-
 ## Setting Up Ansible and Jenkins
 
-If you have your Jenkins server already setup, you can skip this section. For this one, we'll just run the following Ansible playbook/s on our **jenkinsmaster1**. 
+If you have your Jenkins server already setup, you can skip this section. For this one, we'll just run the following Ansible playbook/s on **jenkinsmaster1**. The playbook will perform the entire installation of Jenkins on this machine.
 
 To setup Jenkins using Ansible, please see [Setting up Ansible and Jenkins.](/docs/017-Version-Control-and-CICD/002-CICD/003-Jenkins-Labs/005-Setup-Ansible-and-Jenkins.md)
 
