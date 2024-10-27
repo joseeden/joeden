@@ -98,3 +98,17 @@ MongoDB:
 - [What is "representation", "state" and "transfer" in Representational State Transfer (REST)?](https://stackoverflow.com/questions/48116321/what-is-representation-state-and-transfer-in-representational-state-trans)
 - [Roy Fielding's Thesis on Architectural Styles and the Design of Network-based Software Architectures](https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)
 - [Types of APIs & Popular REST API Protocol](https://stoplight.io/api-types/)
+
+
+## Jenkins
+
+
+- [Jenkins 2 Bootcamp: Fully Automate Builds to Deployment 2020](https://www.udemy.com/course/jenkins-continuous-integration-bootcamp/)
+
+- [Jenkins, From Zero To Hero: Become a DevOps Jenkins Master](https://www.udemy.com/course/jenkins-from-zero-to-hero/)
+
+- [ACloud Guru: Certified Jenkins Engineer By Michael McClaren](https://acloudguru.com/course/certified-jenkins-engineer)
+
+- [Installing Jenkins](https://www.jenkins.io/doc/book/installing/linux/#red-hat-centos)
+
+- [Ansible, right way to enable EPEL: yum_repository vs yum?](https://unix.stackexchange.com/questions/560024/ansible-right-way-to-enable-epel-yum-repository-vs-yum)

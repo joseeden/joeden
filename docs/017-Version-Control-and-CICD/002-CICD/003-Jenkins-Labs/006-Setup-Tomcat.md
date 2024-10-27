@@ -20,7 +20,7 @@ Apache Tomcat can serve as an effective staging environment for testing applicat
 
 We are utilizing Amazon EC2 instances as our machines:
 
-- jenkinsmaster1
+- jenkinsmaster
 
 You can opt for a virtual machine in your computer or you could also setup instances in the cloud. I prefer to utilize Amazon EC2 instances which is what I use in almost all of my labs.
 
@@ -30,7 +30,7 @@ You can opt for a virtual machine in your computer or you could also setup insta
 
 </div>
 
-Note that for this lab, we'll only be using **jenkinsmaster1** and you can disregard the other **tstsvrs** and **jenkinsslave1** for now.
+Note that for this lab, we'll only be using **jenkinsmaster** and you can disregard the other **tstsvrs** and **jenkinsslave1** for now.
 
 ## Install Tomcat using Ansible
  

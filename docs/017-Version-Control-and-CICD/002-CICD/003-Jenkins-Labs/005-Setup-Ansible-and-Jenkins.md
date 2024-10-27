@@ -15,7 +15,7 @@ To speed up the creation of testing environment for Jenkins, you can use Ansible
 
 We are utilizing Amazon EC2 instances as our machines:
 
-- jenkinsmaster1
+- jenkinsmaster
 
 You can opt for a virtual machine in your computer or you could also setup instances in the cloud. I prefer to utilize Amazon EC2 instances which is what I use in almost all of my labs.
 
@@ -25,7 +25,7 @@ You can opt for a virtual machine in your computer or you could also setup insta
 
 </div>
 
-<!-- Note that for this lab, we'll only be using **jenkinsmaster1** and you can disregard the other **tstsvrs** and **jenkinsslave1** for now.
+<!-- Note that for this lab, we'll only be using **jenkinsmaster** and you can disregard the other **tstsvrs** and **jenkinsslave1** for now.
  -->
 
 ## Configuration Files
@@ -88,10 +88,12 @@ We also used Ansible playbooks to setup the Jenkins lab. Currently we have Proje
     [webservers]
 
     [jenkins]
-    jenkinsmaster     ansible_host=13.228.99.157
+    jenkinsmaster  ansible_host=13.228.99.157
 
-    [local]
-    localhost   ansible_connection=local
+    [jenkinsslave]
+    jenkinsslave1   ansible_host=54.255.28.202
+
+    localhost       ansible_connection=local
     ```
 
 
@@ -121,12 +123,12 @@ ansible 2.9.6
   python version = 3.8.10 (default, Jun  2 2021, 10:49:15) [GCC 9.4.0] 
 ```
 
-Next, create your inventory file. You can simply use/copy the **edenjen.inv** file and just replace the IP of the **jenkinsmaster1** with the IP of your remote machine.
+Next, create your inventory file. You can simply use/copy the **edenjen.inv** file and just replace the IP of the **jenkinsmaster** with the IP of your remote machine.
 
 
-## Run the playbooks
+## Install Jenkins
 
-Create the **install-jenkins.yml** playbook. You can simply use the playbook below. 
+Create the playbook.
 
 ```yaml title="install-jenkins.yml"
 # installs jenkins
@@ -200,6 +202,90 @@ To run the playbook, run the command below. Note that my playbook is inside the 
 ansible-playbook playbooks/install-jenkins.yml -i inventories/edenjen.inv
 ```
 
+## Install Jenkins Slave 
+
+The Jenkins slave is used for distributed builds, which are agents running on nodes separate from the master. This additional nodes helps in running builds in parallel. For more information, please see [Distributed Builds.](/docs/017-Version-Control-and-CICD/002-CICD/002-Jenkins-Notes/022-Distributed-Builds.md)
+
+Create the playbook.
+
+```yaml title="install-jenkins-slave.yml"
+# install-jenkins-slave.yml
+---
+
+- name: Run steps on Jenkins slave
+  hosts: jenkinsslave
+  become: true
+  tasks:
+
+    - name: Create group "jenkins"
+      ansible.builtin.group:
+        name: jenkins
+        state: present
+        system: true
+
+    - name: Add user and change shell for user 'jenkins'
+      ansible.builtin.user:
+        name: jenkins
+        group: jenkins
+        comment: Jenkins Automation Server
+        home: /var/lib/jenkins
+        shell: /bin/bash
+        state: present 
+
+    - name: Create a workspace directory
+      ansible.builtin.file:
+        path: /var/lib/jenkins/jenkins_workspace
+        state: directory
+        mode: '0755'
+        owner: jenkins
+        group: jenkins
+
+    - name: Download files for Maven
+      get_url:
+        url: https://www-eu.apache.org/dist/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+        dest: /opt
+    
+    - name: Extract downloaded archive
+      ansible.builtin.unarchive:
+        src: /opt/apache-maven-3.6.3-bin.tar.gz
+        dest: /opt
+        remote_src: yes        
+
+    - name: Create symbolic link 
+      file:
+        src: "apache-maven-3.6.3"
+        dest: "/opt/maven"
+        state: link
+
+    - name: Create file
+      ansible.builtin.blockinfile:
+        path: /etc/profile.d/maven.sh
+        create: yes
+        mode: '0755'
+        insertbefore: BOF
+        block: |
+          export M2_HOME=/opt/maven
+          export PATH=${M2_HOME}/bin:${PATH}
+
+    - name: Source the maven script
+      shell: "source /etc/profile.d/maven.sh"
+
+    - name: Installs git, java
+      yum:  
+        name: 
+          - git
+          - java-11-openjdk-devel
+        state: present
+```
+
+
+To run the playbook, run the command below. 
+
+```bash
+ansible-playbook playbooks/install-jenkins-slave.yml -i inventories/edenjen.inv
+```
+
+
 
 ## Install Packages 
 
@@ -267,6 +353,26 @@ Since this is for labbing purposes only, I enabled shell login for the jenkins u
 ```bash
 passwd jenkins 
 ```
+
+
+## Add User on Slave Node
+
+On **jenkinsslave1**, add the **jenkins** user. Set the user to `NOPASSWD` through `visudo` since this is for labbing purposes only.
+
+
+```bash
+sudo useradd jenkins
+sudo passwd jenkins 
+```
+```bash
+$ visudo
+
+## Allow root to run any commands anywhere
+root    ALL=(ALL)       ALL
+jenkins ALL=(ALL)       NOPASSWD: ALL
+```
+
+
 
 ## Setup Jenkins Console 
  
