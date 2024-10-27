@@ -2,7 +2,7 @@
 title: "User Management and Security"
 description: "Managing users and security in Jenkins"
 tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins]
-sidebar_position: 16
+sidebar_position: 13
 last_update:
   date: 7/7/2022
 ---

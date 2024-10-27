@@ -2,7 +2,7 @@
 title: "Skip Default Checkout"
 description: "Jenkins automatically pulls the code"
 tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins]
-sidebar_position: 24
+sidebar_position: 32
 last_update:
   date: 7/7/2022
 ---

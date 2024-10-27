@@ -2,7 +2,7 @@
 title: "Jenkins Build Triggers"
 description: "Triggers when Jenkins should run a Job"
 tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins]
-sidebar_position: 13
+sidebar_position: 15
 last_update:
   date: 7/7/2022
 ---

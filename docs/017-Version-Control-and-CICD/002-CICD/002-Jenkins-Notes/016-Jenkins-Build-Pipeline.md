@@ -2,7 +2,7 @@
 title: "Build Pipeline"
 description: "Automate software development using pipelines"
 tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins]
-sidebar_position: 21
+sidebar_position: 16
 last_update:
   date: 7/7/2022
 ---
