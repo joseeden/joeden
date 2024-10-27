@@ -15,7 +15,7 @@ Jenkins parameters allow users to pass inputs into a pipeline, enabling more dyn
 - Can be defined in the Jenkinsfile and used in different stages
 - Common types include string, boolean, choice, and file parameters
 
-As an example, you can define the parameter `ENVIRONMENT`, allows you to specify the target deployment environment., and `RUN_TESTS`, which  controls whether tests are executed based on the user's input.
+As an example, you can define the parameter `ENVIRONMENT`, which allows you to specify the target deployment environment, and `RUN_TESTS`, which  controls whether tests are executed based on the user's input.
 
 ![](/img/docs/1027-jenkins-parameters-sample-diagrams.png)
 
@@ -64,7 +64,7 @@ To use paramters, we can select the **Build with Parameters** from the Jenkins U
 
 You can then pass the input that you want in the parameter:
 
-<!-- ![](/img/docs/1027-jenkins-pass-the-parameter-in-the-input.png) -->
+![](/img/docs/1027-jenkins-pass-the-parameter-in-the-input.png)
 
 ![](/img/docs/1027-jenkins-pass-the-parameter-in-the-input-2.png)
 
