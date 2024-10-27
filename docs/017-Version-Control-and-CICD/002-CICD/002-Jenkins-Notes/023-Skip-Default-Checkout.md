@@ -17,7 +17,7 @@ pipeline {
     agent any
     stages {
 
-        stage('Checkout') {
+        stage('Checkout Code') {
             steps {
                 git url: 'https://github.com/joseeden/test-project.git', branch: 'main'
                 sh "ls -lrt"
@@ -47,7 +47,7 @@ pipeline {
     }
     stages {
 
-        stage('Checkout') {
+        stage('Checkout Code') {
             steps {
                 git url: 'https://github.com/joseeden/test-project.git', branch: 'main'
                 sh "ls -lrt"
