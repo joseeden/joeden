@@ -60,11 +60,11 @@ pipeline {
 
 To use paramters, we can select the **Build with Parameters** from the Jenkins UI.
 
-![](/img/docs/1027-jenkins-build-with-parametersss.png)
+<!-- ![](/img/docs/1027-jenkins-build-with-parametersss.png) -->
 
 You can then pass the input that you want in the parameter:
 
-![](/img/docs/1027-jenkins-pass-the-parameter-in-the-input.png)
+<!-- ![](/img/docs/1027-jenkins-pass-the-parameter-in-the-input.png) -->
 
 ![](/img/docs/1027-jenkins-pass-the-parameter-in-the-input-2.png)
 
