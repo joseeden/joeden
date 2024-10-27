@@ -16,7 +16,11 @@ Environment variables in Jenkins provide dynamic data for builds, storing essent
 - Make scripts flexible by avoiding hardcoding of values
 - Allow customized environments for specific job requirements
 
+<div class='img-center'>
+
 ![](/img/docs/1027-jenkins-env-varsss.png)
+
+</div>
 
 
 ## Variables in Jenkins

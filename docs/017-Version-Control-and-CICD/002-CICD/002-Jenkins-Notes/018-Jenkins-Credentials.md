@@ -32,19 +32,35 @@ Understanding the scope of credentials helps ensure proper usage:
 
 To create credentials, go to **Manage Jenkins** and click **Credentials**.
 
+<div class='img-center'>
+
 ![](/img/docs/1027-jenkins-creating-credentials.png)
+
+</div>
 
 In the next page, choose **global** to create a global credentials that can be accessed within the Jenkins pipeline.
 
+<div class='img-center'>
+
 ![](/img/docs/1027-jenkins-creating-gloabl-credentialssss.png)
+
+</div>
 
 Click **Add Credentials**.
 
+<div class='img-center'>
+
 ![](/img/docs/1027-jenkins-add-credentials-step.png)
+
+</div>
 
 In the **New credentials**, you can select the kind of credentials in the dropdown bar. Choose **Username with password**.
 
+<div class='img-center'>
+
 ![](/img/docs/1027-jenkins-new-credentials-choose-kind.png)
+
+</div>
 
 Then fill in the fields using the details below. Note that the user depends on the user configured on the Jenkins server. Click **Create** afterwards.
 
@@ -54,7 +70,11 @@ Then fill in the fields using the details below. Note that the user depends on t
 | **Password** | Enter a secure password here   |
 | **ID**       | server-creds                   |
 
+<div class='img-center'>
+
 ![](/img/docs/1027-jenkins-create0server-credsss.png)
+
+</div>
 
 ## Access Credentials using Variables
 
