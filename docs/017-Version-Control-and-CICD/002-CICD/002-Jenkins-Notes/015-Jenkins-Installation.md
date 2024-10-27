@@ -1,5 +1,6 @@
 ---
 title: "Jenkins Installation"
+description: "Different ways to install Jenkins"
 tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins]
 sidebar_position: 15
 last_update:

@@ -1,5 +1,6 @@
 ---
 title: "First Jenkins Job"
+description: "Running your first Jenkins Job"
 tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins]
 sidebar_position: 11
 last_update:

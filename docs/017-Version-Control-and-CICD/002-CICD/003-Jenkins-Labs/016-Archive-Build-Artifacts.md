@@ -1,5 +1,6 @@
 ---
 title: "Archive Build Artifacts"
+description: "Using a CI Workflow to store artifacts"
 tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins, Maven, Git, Github]
 sidebar_position: 16
 last_update:

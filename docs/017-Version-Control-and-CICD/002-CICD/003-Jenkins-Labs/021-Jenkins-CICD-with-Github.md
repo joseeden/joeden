@@ -1,5 +1,6 @@
 ---
 title: "Jenkins CICD with Github"
+description: "A primer on using Jenkins CICD with Github"
 tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins, Git, Github]
 sidebar_position: 21
 last_update:

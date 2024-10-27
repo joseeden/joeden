@@ -1,5 +1,6 @@
 ---
 title: "Source Control Polling"
+description: "Polling the source repository for any update"
 tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins, Maven]
 sidebar_position: 13
 last_update:

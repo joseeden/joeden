@@ -1,5 +1,6 @@
 ---
 title: "Artifacts and Fingerprints"
+description: "Securing build outputs with fingerprints"
 tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins]
 sidebar_position: 20
 last_update:

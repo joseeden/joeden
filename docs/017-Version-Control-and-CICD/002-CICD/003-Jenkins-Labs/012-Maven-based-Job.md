@@ -1,5 +1,6 @@
 ---
 title: "Maven-based Job"
+description: "Running a Mavens-based Jenkins Job"
 tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins, Maven]
 sidebar_position: 12
 last_update:

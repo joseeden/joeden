@@ -1,5 +1,6 @@
 ---
 title: "Checkstyle"
+description: "Adhering to coding practices using checkstyle"
 tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins]
 sidebar_position: 18
 last_update:

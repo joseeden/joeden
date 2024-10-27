@@ -1,5 +1,6 @@
 ---
 title: "Distributed Builds"
+description: "Parallel builds using Jenkins agents"
 tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins]
 sidebar_position: 22
 last_update:

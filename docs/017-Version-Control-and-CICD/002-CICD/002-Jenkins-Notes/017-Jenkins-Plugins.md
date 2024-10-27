@@ -1,5 +1,6 @@
 ---
 title: "Jenkins Plugins"
+description: "Enhancing Jenkins functionality using add-ons"
 tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins]
 sidebar_position: 17
 last_update:

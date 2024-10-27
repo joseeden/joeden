@@ -1,5 +1,6 @@
 ---
 title: "Passing a Parameter Downstream"
+description: "Passing parameters across Jenkins Jobs"
 tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins, Maven, Git, Github]
 sidebar_position: 19
 last_update:
