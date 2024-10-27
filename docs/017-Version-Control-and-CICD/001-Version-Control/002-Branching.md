@@ -1,5 +1,6 @@
 ---
 title: "Branching"
+description: "Creating different branches in Git"
 tags: [Version Control, Git, Development]
 sidebar_position: 2
 last_update:

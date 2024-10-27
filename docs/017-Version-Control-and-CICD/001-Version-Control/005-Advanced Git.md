@@ -1,5 +1,6 @@
 ---
 title: "Advanced Git"
+description: "More advance Git commands"
 tags: [Version Control, Git, Development]
 sidebar_position: 5
 last_update:

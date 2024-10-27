@@ -1,5 +1,6 @@
 ---
 title: "Merging"
+description: "Combining branches into a single timeline"
 tags: [Version Control, Git, Development]
 sidebar_position: 3
 last_update:

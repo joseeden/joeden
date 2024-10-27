@@ -1,5 +1,6 @@
 ---
 title: "Git Basics"
+description: "Fundamentals of Git"
 tags: [Version Control, Git, Development]
 sidebar_position: 1
 last_update:

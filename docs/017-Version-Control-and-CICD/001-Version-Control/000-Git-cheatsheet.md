@@ -1,5 +1,6 @@
 ---
 title: "Git Commands Cheatsheet"
+description: "Git Cheatsheet"
 tags: [Version Control, Git, Development]
 sidebar_position: 0
 last_update:

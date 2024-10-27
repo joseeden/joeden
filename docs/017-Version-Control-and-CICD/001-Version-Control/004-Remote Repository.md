@@ -1,5 +1,6 @@
 ---
 title: "Remote Repositories"
+description: "Using remote repositories"
 tags: [Version Control, Git, Development]
 sidebar_position: 4
 last_update:
