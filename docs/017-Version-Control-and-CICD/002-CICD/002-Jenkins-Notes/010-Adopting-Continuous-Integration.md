@@ -48,6 +48,4 @@ These steps repeat until the code passes and Jenkins deploys the code to the env
 
 ## Why Jenkins? 
 
-add simple short intro...
-
 ![](/img/docs/1027-jenkins-why-jenkinsss.png)

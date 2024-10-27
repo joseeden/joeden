@@ -65,11 +65,7 @@ Slave nodes execute tasks assigned by the master node, distributing workloads.
    - A computational resource for executing builds on a node.  
    - Each node can have multiple executors for parallel processing.  
 
-## Jobs 
 
-Jenkins jobs are a set of instructions that you can configure for Jenkins to perform in an automated fashion.
-
-![](/img/docs/1027-jenkins-jobsssss.png)
 
 ## Executor
 
