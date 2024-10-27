@@ -2,7 +2,7 @@
 title: "Jenkins Workspace"
 description: "Where Jenkins saves all its configuration"
 tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins]
-sidebar_position: 21
+sidebar_position: 23
 last_update:
   date: 7/7/2022
 ---

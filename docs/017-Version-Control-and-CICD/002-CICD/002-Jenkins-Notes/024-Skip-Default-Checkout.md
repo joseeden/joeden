@@ -2,7 +2,7 @@
 title: "Skip Default Checkout"
 description: "Jenkins automatically pulls the code"
 tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins]
-sidebar_position: 21
+sidebar_position: 24
 last_update:
   date: 7/7/2022
 ---
@@ -24,7 +24,7 @@ pipeline {
             }
         }
 
-        stage('Setup') {
+        stage('Set Up Environment') {
             steps {
                 sh "pip install -r requirements.txt"
             }
@@ -54,7 +54,7 @@ pipeline {
             }
         }
 
-        stage('Setup') {
+        stage('Set Up Environment') {
             steps {
                 sh "pip install -r requirements.txt"
             }
@@ -76,7 +76,7 @@ pipeline {
     agent any
     stages {
 
-        stage('Setup') {
+        stage('Set Up Environment') {
             steps {
                 sh "pip install -r requirements.txt"
             }
