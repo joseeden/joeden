@@ -205,7 +205,7 @@ ansible-playbook playbooks/install-jenkins.yml -i inventories/edenjen.inv
 
 ## Install Jenkins Slave 
 
-The Jenkins slave is used for distributed builds, which are agents running on nodes separate from the master. This additional nodes helps in running builds in parallel. For more information, please see [Distributed Builds.](/docs/017-Version-Control-and-CICD/002-CICD/002-Jenkins-Notes/022-Distributed-Builds.md)
+The Jenkins slave is used for distributed builds, which are agents running on nodes separate from the master. This additional nodes helps in running builds in parallel. For more information, please see [Distributed Builds.](/docs/017-Version-Control-and-CICD/002-CICD/002-Jenkins-Notes/030-Distributed-Builds.md)
 
 Create the playbook.
 

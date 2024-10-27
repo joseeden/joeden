@@ -2,7 +2,7 @@
 title: "Jenkins Plugins"
 description: "Enhancing Jenkins functionality using add-ons"
 tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins]
-sidebar_position: 26
+sidebar_position: 25
 last_update:
   date: 7/7/2022
 ---
@@ -107,6 +107,16 @@ Scroll down to the **Upload Plugin** section. Click *Choose File** and select th
 Going back to the **Plugin Manager**, you should now see the plugin under the **Installed** tab.
 
 
+## Install from the CLI 
+
+You can also install the plugin from the commandline. As an example, you can install the Docker plugin by running:
+
+```bash
+java -jar jenkins-cli.jar \
+  -s http://localhost:8085 \
+  -auth 'admin:Adm!n321' \
+  install-plugin docker-plugin 
+```
 
 ## Update the plugin
 
