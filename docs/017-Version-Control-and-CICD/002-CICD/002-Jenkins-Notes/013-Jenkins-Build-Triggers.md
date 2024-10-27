@@ -22,52 +22,52 @@ Jenkins Build Triggers provide automatic ways to start builds based on specific 
     - Starts a job after other specified jobs finish successfully
     - Useful for chaining builds that rely on each other
 
-<div class='img-center'>
+        <div class='img-center'>
 
-![](/img/docs/1027-jenkins-build-after-projects-are-built.png)
+        ![](/img/docs/1027-jenkins-build-after-projects-are-built.png)
 
-</div>
+        </div>
 
 
 - **Builds periodically**
     - Runs builds on a fixed schedule, using cron-style expressions
     - Ideal for automated nightly or scheduled builds
 
-<div class='img-center'>
+        <div class='img-center'>
 
-![](/img/docs/1027-jenkins-build-periodically.png)
+        ![](/img/docs/1027-jenkins-build-periodically.png)
 
-</div>
+        </div>
 
 
 - **GitHub hook trigger for GITScm polling**
     - Initiates a build based on push events in GitHub
     - Useful for continuous integration when code changes
 
-<div class='img-center'>
+        <div class='img-center'>
 
-![](/img/docs/1027-jenkins-github-hook-trigger.png)
+        ![](/img/docs/1027-jenkins-github-hook-trigger.png)
 
-</div>
+        </div>
 
 
 - **Poll SCM**
     - Regularly checks for source control changes and triggers builds if changes are detected
     - Helps keep builds up-to-date with the latest codebase changes
 
-<div class='img-center'>
+        <div class='img-center'>
 
-![](/img/docs/1027-jenkins-poll-scmmm.png)
+        ![](/img/docs/1027-jenkins-poll-scmmm.png)
 
-</div>
+        </div>
 
 
 - **Trigger builds remotely**
     - Allows external systems to initiate builds through a unique URL or token
     - Suitable for triggering builds from scripts, webhooks, or other systems
 
-<div class='img-center'>
+        <div class='img-center'>
 
-![](/img/docs/1027-jenkins-Trigger-builds-remotely.png)
+        ![](/img/docs/1027-jenkins-Trigger-builds-remotely.png)
 
-</div>
+        </div>
