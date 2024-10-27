@@ -67,7 +67,7 @@ You can then configure the job in the next page where you will see different sec
 
     </div>
 
-- **Build Triggers** - if no option is selected, then the buidl will be triggered manually. In our example, we'll trigger the job manually.
+- **Build Triggers** - if no option is selected, then the build will be triggered manually. In our example, we'll trigger the job manually.
 
     <div class='img-center'>
 
@@ -120,13 +120,16 @@ To run our first Jenkins job, select the job and click **Build Now** on the left
 
 </div>
 
-Check the finished build under the **Build History**. Then on the build page, click the **Console Output** on the left panel to see the output.
+Check the finished build under the **Build History**. 
 
 <div class='img-center'>
 
 ![](/img/docs/jen1buildnow.png)
 
 </div>
+
+On the build page, click the **Console Output** on the left panel to see the output.
+
 <div class='img-center'>
 
 ![](/img/docs/jen1buildnow2.png)
