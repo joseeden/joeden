@@ -14,10 +14,19 @@ Continuous Integration (CI) is the practice of frequently merging developers’ 
 - Developers push code to a repository (CodeCommit)
 - A testing/build server checks the code as soon as it’s pushed (CodeBuild)
 - Developers receive immediate feedback on build and test results
-- CI helps:
-    - Catch and fix bugs early
-    - Enable faster delivery with built-in testing
-    - Support frequent deployments
+
+Continuous Integration helps:
+
+- Catch and fix bugs early
+- Enable faster delivery with built-in testing
+- Support frequent deployments
+
+<div class='img-center'>
+
+![](/img/docs/1027-jenkins-cicd-continuous-integration.png)
+
+</div>
+
 
 ## Continuous Delivery
 
@@ -28,6 +37,15 @@ Continuous Delivery (CD) ensures that code is always in a deployable state, read
 - Moves from “one release every few months” to “multiple releases a day”
 - Achieved through automated deployment tools (CodeDeploy)
 
+The main difference of Continuous Delivery with Continuous Deployment is that **Continuous Delivery requires manual approval** before deploying the code to staging or production environment.
+
+<div class='img-center'>
+
+![](/img/docs/1027-jenkins-cicd-continuous-delivery.png)
+
+</div>
+
+
 ## Continuous Deployment
 
 Continuous Deployment (CD) automatically releases every change that passes tests to production, enabling rapid delivery of features and bug fixes.
@@ -36,6 +54,11 @@ Continuous Deployment (CD) automatically releases every change that passes tests
 - Reduces time between code completion and deployment.
 - This allows for quick user feedback.
 
+<div class='img-center'>
+
+![](/img/docs/1027-jenkins-cicd-continuous-deployment.png)
+
+</div>
 
 
 ## Build Steps and Build Triggers
