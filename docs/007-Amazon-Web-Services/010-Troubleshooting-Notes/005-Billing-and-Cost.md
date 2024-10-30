@@ -48,7 +48,14 @@ To get more details on the breakdown, change **Dimension** to **Usage Type**
 
 ![](/img/docs/1030-aws-bill-cost-and-usage-report-filter-dimension-to-usage-type-now-showing-detailed-breakdown.png)
 
-Lesson Learned: Always make sure public IPs are released after any testing!
+
+:::warning[Lesson Learned]
+
+Always make sure public IPs are released after any testing!
+
+:::
+
+
 
 Reference: [How to break down VPC costs?](https://repost.aws/questions/QUelBAhchWSm-9IcmSv3IybQ/how-to-break-down-vpc-costs)
 
