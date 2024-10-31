@@ -56,5 +56,9 @@ Untracked files:
 ```
  
 
-I haven't done any changes yet in the subrepo so I don't have to commit anything. But on the parent repo, it sees the new subrepo as a new change so I need to commit it.
+I haven't done any changes yet in the subrepo so I don't have to commit anything. But on the parent repo, it sees the new subrepo as a new change so I need to commit it. However when I try to commit it, I get a message:
+
+```bash
+  
+```
 
