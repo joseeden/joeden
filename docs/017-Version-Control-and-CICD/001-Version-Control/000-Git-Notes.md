@@ -222,13 +222,50 @@ rm -rf .git/modules/path/to/submodule-name
             active = true
     ```
 
-5. At this point, the submodule directory is now converted into a normal directory. Go inside it and initialize it. Commit the changes.
+5. At this point, the submodule directory is now converted into a normal directory. There is now only one repo, which is the parent repo. Commit and push the changes to the parent repo's remote repo.
+
+```bash
+git add . 
+git commit -m "Converted submodule  to a normal directory inside the parent repo"
+```
+
+6. Verify in Github if the *pointer* is now converted to a directory. The folder icon should not have the "arrow pointing right" and you should be able to open it after clicking.
+
+<div class='img-center'>
+
+![](/img/docs/1031-convnerted-submodule-to-normal-directory-but-not-yet-initializeddd.png)
+
+</div>
+
+
+
+7. Back in your terminal, go inside the converted submodule directory it and initialize it. Commit the changes.
 
     ```bash
-    cd submodule-name       ## submodule-name is not a submodule anymore 
+    cd parent-repo/submodule-name       ## submodule-name is not a submodule anymore 
     git init 
-    git commit -m "Converted submodule directory to a normal subrepo"
+    git add .
+    git commit -m "Initialize project directory to its own git repo inside a parent repo."
     ```
+
+    Verify the status:
+
+    ```bash
+    $ git status
+    On branch master
+    nothing to commit, working tree clean    
+    ```
+
+8. Go back to the parent repo and verify the status first. Make sure that it detects the initialized subrepo as a chang. Commit the changes as well. Make sure to push.
+
+    ```bash
+    cd parent-repo
+    git add .
+
+    git commit -m "Initialize project directory to its own git repo inside a parent repo."
+    git push
+    ```
+
 
 ## Deleting a Submodule 
 
