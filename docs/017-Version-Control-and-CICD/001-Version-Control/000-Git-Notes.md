@@ -237,9 +237,13 @@ git commit -m "Converted submodule  to a normal directory inside the parent repo
 
 </div>
 
+:::info[NOTE]
 
 
-7. Back in your terminal, go inside the converted submodule directory it and initialize it. Commit the changes.
+:::
+
+
+~~7. Back in your terminal, go inside the converted submodule directory it and initialize it. Commit the changes.
 
     ```bash
     cd parent-repo/submodule-name       ## submodule-name is not a submodule anymore 
@@ -264,7 +268,7 @@ git commit -m "Converted submodule  to a normal directory inside the parent repo
 
     git commit -m "Initialize project directory to its own git repo inside a parent repo."
     git push
-    ```
+    ```~~
 
 
 ## Deleting a Submodule 
