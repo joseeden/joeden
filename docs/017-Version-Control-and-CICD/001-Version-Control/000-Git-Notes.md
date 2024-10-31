@@ -182,6 +182,22 @@ To convert the embedded subrepo to a submodule, you need to do this steps:
 
 ## Convert Submodule to a Normal Directory 
 
+
+:::info[NOTE]
+
+After an entire day of playing around nested repos, I figure it's way easier to use Submodules than using subrepos inside parent repos. There are workarounds to make subrepos work especially in Jenkins pipelines and when cloning code, but it still requires additional steps to ensure that the GIt history of the parent repo and the nested repos inside doesn't mess with each other. 
+
+Having said, I choose to use submodules moving forward for the following reasons:
+
+- **Separate Git History**: Each submodule retains its own history independently, which prevents conflicts or complexity in the parent repo's Git history.
+  
+- **Easier CI/CD Integration**: In Jenkins pipelines, you can reference the submodule’s remote repository directly if you only need to work with that specific project.
+
+- **Selective Updates**: With submodules, you can control when to update or pull changes for each project, This makes it easy to keep some submodules stable while actively developing others.
+
+:::
+
+
 1. Go to your submodule directory and delete the .git folder.
 
     ```bash
@@ -237,13 +253,8 @@ git commit -m "Converted submodule  to a normal directory inside the parent repo
 
 </div>
 
-:::info[NOTE]
 
-
-:::
-
-
-~~7. Back in your terminal, go inside the converted submodule directory it and initialize it. Commit the changes.
+7. Back in your terminal, go inside the converted submodule directory it and initialize it. Commit the changes.
 
     ```bash
     cd parent-repo/submodule-name       ## submodule-name is not a submodule anymore 
@@ -260,15 +271,6 @@ git commit -m "Converted submodule  to a normal directory inside the parent repo
     nothing to commit, working tree clean    
     ```
 
-8. Go back to the parent repo and verify the status first. Make sure that it detects the initialized subrepo as a chang. Commit the changes as well. Make sure to push.
-
-    ```bash
-    cd parent-repo
-    git add .
-
-    git commit -m "Initialize project directory to its own git repo inside a parent repo."
-    git push
-    ```~~
 
 
 ## Deleting a Submodule 
