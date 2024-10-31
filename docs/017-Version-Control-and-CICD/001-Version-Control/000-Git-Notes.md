@@ -110,6 +110,99 @@ git submodule add git@github.com:username/submodule-name.git submodule-name
 
 Note that when you added a submodule inside another Git repository, you need to commit and push the changes from inside the submodule directory, then you also need to commit and push the changes from the root of the parent repo.
 
+Go inside the submodule directory: 
+
+```bash
+cd parent-repo/submodule-name 
+git add .
+git commit -m "Added submodule inside parent repo"
+git push  
+```
+
+Then go up to the root of the parent repo:
+
+
+```bash
+cd parent-repo
+git add .
+git commit -m "Update changes on the submodule-name"
+git push  
+```
+
+## Cloning Parent Repo with Submodules 
+
+> The assumption here is you want to clone the parent repo from another machine.
+
+When you clone a parent repository from a remote source like GitHub, you can successfully pull down the main repository. However, the contents of the submodules are not automatically included. If you check the GitHub repository and click on a submodule, you will be directed to a separate remote repository.
+
+<div class='img-center'>
+
+![](/img/docs/1031-recall-remote-github-repo-submodules-are-pointerss.png)
+
+</div>
+
+
+Essentially, submodules in the remote repository act as pointers. Thus, when you clone the parent repository, the submodules will be empty.
+
+```bash
+$ tree test-repos/
+test-repos/
+├── go-webapp-sample
+├── jenkins-project
+└── test-static-site
+
+4 directories, 0 files 
+```
+
+## Cloning Specific Nested Repo 
+
+> The assumption here is you want to clone the parent repo from another machine.
+
+Let's say in your remote Github repository, you have a Git repo nested inside another Git repo:
+
+```bash
+REPO-A
+  /.git
+  /otherFiles
+  /nested-repo
+    /.git
+    /moreFiles
+```
+
+If you want other users to pull down just the nested repo without pulling down the entire parent repo, you can use the `--no-checkout` flag when you clone the main repo. This will not pull the contents yet, just the `.git` directory inside.
+
+:::info[Note]
+
+Before doing this, make sure you have the absolute path of the nested repo inside the parent repo. You can check this in the remote GIthub repository.
+
+:::
+
+```bash
+git clone --no-checkout https://github.com/joseeden/joeden.git
+```
+```bash
+$ ls -al joeden/
+total 0
+drwxrwxrwx 1 joseeden joseeden 512 Oct 31 18:38 .
+drwxrwx--- 1 joseeden joseeden 512 Oct 31 18:38 ..
+drwxrwxrwx 1 joseeden joseeden 512 Oct 31 18:40 .git 
+```
+
+Go inside the parent repo and run the `sparse-checkout` commands:
+
+```bash 
+cd REPO-A
+git sparse-checkout init --cone
+```
+
+Run the same command but specify the absolute path of the specific nested repo.
+
+```bash 
+git sparse-checkout set master0Fnone_classes/1_x86_Demystified
+git pull origin master
+```
+
+
 ## Not Intended for Submodule 
 
 However, I didn’t want to set up the repository as a submodule on my local machine. I just want it to be a child repo inside of the a parent repo. So locally, it’s not a submodule and isn’t linked to any remote repository. Yet, when I commit and push the parent repo, the embedded subrepo gets treated as a submodule. That’s why I can see the subrepo on GitHub, but I can’t open it.
@@ -183,7 +276,6 @@ To convert the embedded subrepo to a submodule, you need to do this steps:
 
 
 ## Convert Submodule to a Normal Directory 
-
 
 :::info[NOTE]
 
