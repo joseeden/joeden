@@ -118,12 +118,6 @@ However, I didn’t want to set up the repository as a submodule on my local mac
 
 To convert the embedded subrepo to a submodule, you need to do this steps:
 
-1. Delete the folder of the subrepo. 
-
-    ```bash
-    rm -rf submodule-name 
-    ```
-
 1. Add the directory a submodule using the command below. It will clone the remote repository to this directory.
 
     ```bash
@@ -195,14 +189,20 @@ To convert the embedded subrepo to a submodule, you need to do this steps:
     rm -rf .git 
     ```
 
-2. Go back to your parent repo and clear the .gitmodules file. Note that if you have other submodules inside the parent repo, don't run the `cat` command below as it will delete the contents of the .gitmodules files. Instead just delete the specific submodule.
+2. Go one level up and remove the submodule from Git index. 
+
+    ```bash
+    git rm --cached submodule-name
+    ```
+
+3. Go back to your parent repo and clear the .gitmodules file. Note that if you have other submodules inside the parent repo, don't run the `cat` command below as it will delete the contents of the .gitmodules files. Instead just delete the specific submodule.
 
     ```bash
     cd parent-repo
     cat > .gitmodules   # then click Ctrl-D 
     ```
 
-3. Still in the root of the parent repo, locate any modules folder. Delete the specific modules folder.
+4. Still in the root of the parent repo, locate any modules folder. Delete the specific modules folder.
 
 ```bash
 rm -rf .git/modules/path/to/submodule-name

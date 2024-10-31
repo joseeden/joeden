@@ -1,3 +1,0 @@
-[submodule "docs/021-Software-Engineering/099-Test-Repos/jenkins-project"]
-	path = docs/021-Software-Engineering/099-Test-Repos/jenkins-project
-	url = git@github.com:joseeden/jenkins-project.git
