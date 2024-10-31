@@ -43,7 +43,7 @@ origin  git@github.com:joseeden/joeden.git (fetch)
 origin  git@github.com:joseeden/joeden.git (push)
 ```
 
-git status:
+git status of parent repo:
 
 ```bash
 joeden$ git status
@@ -52,13 +52,13 @@ Your branch is up to date with 'origin/master'.
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
-        docs/021-Software-Engineering/099-Test-Repos/jenkins-project/
+        jenkins-project/
 ```
  
 
-I haven't done any changes yet in the subrepo so I don't have to commit anything. But on the parent repo, it sees the new subrepo as a new change so I need to commit it. However when I try to commit it, I get a message:
+I haven't done any changes yet in the subrepo so I don't have to commit anything yet. But on the parent repo, it sees the new subrepo as a new change so I need to commit it. However when I try to commit it, I get a message:
 
 ```bash
-  
+git add .;git commit -m "Added subrepo"; git push
 ```
 
