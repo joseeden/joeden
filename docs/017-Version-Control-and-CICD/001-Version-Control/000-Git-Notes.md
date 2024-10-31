@@ -114,7 +114,7 @@ However, I didn’t want to set up the repository as a submodule on my local mac
 
 
 
-## Convert Directory to Submodule 
+## Convert Directory to a Submodule 
 
 To convert the embedded subrepo to a submodule, you need to do this steps:
 
@@ -186,7 +186,7 @@ To convert the embedded subrepo to a submodule, you need to do this steps:
     ![](/img/docs/1031-added-submodule-successss.png)
 
 
-## Converting a Submodule to a Normal Directory 
+## Convert Submodule to a Normal Directory 
 
 1. Go to your submodule directory and delete the .git folder.
 
@@ -202,16 +202,33 @@ To convert the embedded subrepo to a submodule, you need to do this steps:
     cat > .gitmodules   # then click Ctrl-D 
     ```
 
-3. 
+3. Still in the root of the parent repo, locate any modules folder. Delete the specific modules folder.
+
+```bash
 rm -rf .git/modules/path/to/submodule-name
+```
 
+4. Note that the parent repo's own .git/config file may also be referencing the deleted submodule. Make sure to delete the reference.
 
-[submodule "docs/021-Software-Engineering/099-Test-Repos/jenkins-project/jenkins-project"]
-        url = https://github.com/joseeden/jenkins-project
-        active = true
-[submodule "docs/021-Software-Engineering/099-Test-Repos/jenkins-project"]
-        url = git@github.com:joseeden/jenkins-project.git
-        active = true
+    ```bash
+    cat .git/config  
+    ```
+
+    If you find these lines, remove them.
+
+    ```bash
+    [submodule "parent-repo/submodule-name"]
+            url = git@github.com:username/submodule-name.git
+            active = true
+    ```
+
+5. At this point, the submodule directory is now converted into a normal directory. Go inside it and initialize it. Commit the changes.
+
+    ```bash
+    cd submodule-name       ## submodule-name is not a submodule anymore 
+    git init 
+    git commit -m "Converted submodule directory to a normal subrepo"
+    ```
 
 ## Deleting a Submodule 
 
