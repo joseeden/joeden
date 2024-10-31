@@ -108,6 +108,8 @@ If you are using SSH keys to authenticate to Github, use this command:
 git submodule add git@github.com:username/submodule-name.git submodule-name
 ```
 
+Note that when you 
+
 ## Not Intended for Submodule 
 
 However, I didn’t want to set up the repository as a submodule on my local machine. I just want it to be a child repo inside of the a parent repo. So locally, it’s not a submodule and isn’t linked to any remote repository. Yet, when I commit and push the parent repo, the embedded subrepo gets treated as a submodule. That’s why I can see the subrepo on GitHub, but I can’t open it.
