@@ -7,6 +7,7 @@ last_update:
   date: 2/5/2023
 ---
 
+
 ## Cloning a Subrepo Inside a Parent Repo
 
 The goal was to consolidate all repositories into a single central monorepo. Inside the parent repo, I tried to clone a remote repository:
@@ -91,7 +92,7 @@ For submodules, the remote repository doesn’t display the subrepo inside it bu
 
 <div class='img-center'>
 
-![](/img/docs/all-things-devops-sub-module.png.png)
+![](/img/docs/all-things-devops-sub-module.png)
 
 </div>
 
