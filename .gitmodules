@@ -4,3 +4,6 @@
 [submodule "test-repos/go-webapp-sample"]
 	path = test-repos/go-webapp-sample
 	url = git@github.com:joseeden/go-webapp-sample.git
+[submodule "test-repos/test-static-site"]
+	path = test-repos/test-static-site
+	url = git@github.com:joseeden/testrepo1.git
