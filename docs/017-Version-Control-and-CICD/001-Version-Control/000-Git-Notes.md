@@ -154,26 +154,29 @@ test-repos/
 4 directories, 0 files 
 ```
 
-## Cloning Specific Nested Repo 
+## Cloning Specific Directory 
 
 > The assumption here is you want to clone the parent repo from another machine.
 
-Let's say in your remote Github repository, you have a Git repo nested inside another Git repo:
+Let's say you have the following in your remote Github repository:
 
 ```bash
 REPO-A
   /.git
   /otherFiles
-  /nested-repo
-    /.git
+  /nested-directory
     /moreFiles
 ```
 
-If you want other users to pull down just the nested repo without pulling down the entire parent repo, you can use the `--no-checkout` flag when you clone the main repo. This will not pull the contents yet, just the `.git` directory inside.
+If you want other users to pull down just the nested directory without pulling down the entire parent repo, you can use the `--no-checkout` flag when you clone the main repo. This will not pull the contents yet, just the `.git` directory inside.
 
 :::info[Note]
 
-Before doing this, make sure you have the absolute path of the nested repo inside the parent repo. You can check this in the remote GIthub repository.
+Before doing this, make sure you have the absolute path of the nested directory inside the parent repo. You can check this in the remote GIthub repository. In this example, the absolute path is:
+
+```bash
+REPO-A/nested-directory
+```
 
 :::
 
