@@ -14,11 +14,11 @@ To speed up the creation of testing environment for Jenkins, you can use Ansible
 
 ## Lab Environment 
 
-We are utilizing Amazon EC2 instances as our machines:
+In this lab, we have the following machines, and we will use a local computer (laptop) to connect to them.
 
 - jenkinsmaster
 
-You can opt for a virtual machine in your computer or you could also setup instances in the cloud. I prefer to utilize Amazon EC2 instances which is what I use in almost all of my labs.
+You can choose to set up a virtual machine on your computer or create instances in the cloud. In this case, EC2 instances are used.
 
 <div class='img-center'>
 

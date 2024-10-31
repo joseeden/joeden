@@ -12,19 +12,18 @@ last_update:
 
 ## Lab Environment
 
-We are utilizing Amazon EC2 instances as our machines:
+In this lab, we have the following machines, and we will use a local computer (laptop) to connect to each of them. The code is stored in a remote GitHub repository, which will be clone locally for development and testing.
 
-- **jenkinsmaster**
+- jenkinsmain
+- prodserver
 
-You can opt for a virtual machine in your computer or you could also setup instances in the cloud. I prefer to utilize Amazon EC2 instances which is what I use in almost all of my labs.
+You can choose to set up a virtual machine on your computer or create instances in the cloud. In this case, EC2 instances are used.
 
 <div class='img-center'>
 
-![](/img/docs/ansible-lab-diagram-4.png)
+![](/img/docs/jenkins-lab-diagram-jenkinsmain-prodserver.png)
 
 </div>
-
-For simplicity, we'll deploy the application in the Jenkins server.
 
 
 ## Setting Up Jenkins using Ansible
@@ -35,8 +34,10 @@ To setup Jenkins using Ansible, please see [Setting up Ansible and Jenkins.](/do
 
 ## Pre-requisites 
 
-- You will need to have a Github account.
-- You will need to install the following on the server:
+Pre-requisites: 
+
+- A Github account.
+- Install the following on the Jenkins server:
 
     - Python
 
@@ -61,6 +62,8 @@ To setup Jenkins using Ansible, please see [Setting up Ansible and Jenkins.](/do
 
 ## Pre-Deployment Steps 
 
+Perform the following in the production server:
+
 1. Create a directory for the application and go to the project directory.
 
     ```bash
@@ -68,7 +71,7 @@ To setup Jenkins using Ansible, please see [Setting up Ansible and Jenkins.](/do
     cd /opt/app 
     ```
 
-2. Create a python virtual environment. This is to ensure the application will not interfere with other applications running inside the server,
+2. Create a python virtual environment. This is to ensure the application will not interfere with other applications running inside the produserver.
 
     ```bash
     python3 -m venv venv
@@ -106,7 +109,7 @@ To setup Jenkins using Ansible, please see [Setting up Ansible and Jenkins.](/do
     ```bash
     sudo systemctl daemon-reload
     susdo systemctl enable flaskapp.service  
-    susdo systemctl status flaskapp.service  
+    sudo systemctl status flaskapp.service  
     ```
 
 
@@ -207,11 +210,19 @@ The sample project can be found here:
 https://github.com/joseeden/jenkins-project 
 ```
 
-Click Fork and confirm the details.
+
+:::info[Use git credentials when cloning]
+
+In August 2021, Github removed support for using your account password from the cli.
+You can either use [Personal Access Tokens (PAT)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) or [SSH keys.](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
+
+:::
+
+After you sign in to Github, fork the repo and confirm the details.
 
 ![](/img/docs/1029-jenkins-single-server-deployment-fork-repository.png)
 
-Clone it to your local machine and change the Jenkinsfile. 
+Clone it to your local computer and change the Jenkinsfile. 
 
 
 ## Create the Jenkinsfile 
