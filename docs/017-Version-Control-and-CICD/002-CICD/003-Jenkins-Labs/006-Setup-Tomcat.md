@@ -33,7 +33,7 @@ You can choose to set up a virtual machine on your computer or create instances 
 
 Note that for this lab, we'll only be using **jenkinsmaster** and you can disregard the other **tstsvrs** and **jenkinsslave1** for now.
 
-## Install Tomcat using Ansible
+## Install Tomcat 
  
 For labbing purpose, we'll just install the Tomcat in the same Jenkins server. Currently, our Jenkins server is on a RHEL 8 Machine. Following this links:
 
