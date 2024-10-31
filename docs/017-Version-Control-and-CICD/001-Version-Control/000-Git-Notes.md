@@ -124,7 +124,7 @@ To convert the embedded subrepo to a submodule, you need to do this steps:
     rm -rf submodule-name 
     ```
 
-2. Add it as a submodule using the command below. It will clone the remote repository to this directory.
+1. Add the directory a submodule using the command below. It will clone the remote repository to this directory.
 
     ```bash
     git submodule add git@github.com:username/submodule-name submodule-name  
@@ -136,13 +136,28 @@ To convert the embedded subrepo to a submodule, you need to do this steps:
     git submodule add git@github.com:username/submodule-name.git submodule-name
     ```
 
-3. If you encounter an error, remove the deleted submodule from Git index and then try doing step 2 again.
+2. In some instances, you may need to delete the folder of the subrepo. 
+
+    ```bash
+    rm -rf submodule-name 
+    ```
+
+3. If you encounter an error, you can try removing the deleted submodule from Git index and then try doing step 2 again.
 
     ```bash
     git rm --cached submodule-name
     ```
 
-4. The parent repo and submodule should now be pointing to different remote repositories. 
+4. To verify if the submodule was created, run the command below. It should return something like this:
+
+    ```bash
+    $ git submodule
+
+    721fbdf8a89ec49f0c494ad4261d31b4335dcbd5 submodule-name
+    (heads/main)
+    ```
+
+5. The parent repo and submodule should now be pointing to different remote repositories. 
     From your parent repo:
 
     ```bash
@@ -160,15 +175,20 @@ To convert the embedded subrepo to a submodule, you need to do this steps:
     origin  git@github.com:username/submodule-name (push)
     ```
 
-5. From the root of the parent repo, push the changes to Github.
+6. From the root of the parent repo, push the changes to Github.
 
     ```bash
     git add .; git commit -m "Added submodule"; git push 
     ```
 
-6. In Github, you can see the submodule inside the parent repo. In my case, the submodule name is **jenkins-project** but the name will appear different because it's actually a pointer.
+7. In Github, you can see the submodule inside the parent repo. In my case, the submodule name is **jenkins-project** but the name will appear different because it's actually a pointer.
 
     ![](/img/docs/1031-added-submodule-successss.png)
+
+
+## Converting a Submodule to a Normal Directory 
+
+Note that when you convert a submodule to a normal subrepo inside a parent repo, the change is only updated locally. If the remote repo of the parent repo originally contains the submodule, and you converted the submodule to an embeded repo locally and push the change to the remote repo, 
 
 ## Deleting a Submodule 
 
