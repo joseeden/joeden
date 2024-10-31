@@ -161,7 +161,7 @@ test-repos/
 Let's say you have the following in your remote Github repository:
 
 ```bash
-REPO-A
+main-repo
   /.git
   /otherFiles
   /nested-directory
@@ -175,26 +175,26 @@ If you want other users to pull down just the nested directory without pulling d
 Before doing this, make sure you have the absolute path of the nested directory inside the parent repo. You can check this in the remote GIthub repository. In this example, the absolute path is:
 
 ```bash
-REPO-A/nested-directory
+main-repo/nested-directory
 ```
 
 :::
 
 ```bash
-git clone --no-checkout https://github.com/joseeden/joeden.git
+git clone --no-checkout https://github.com/username/main-repo.git
 ```
 ```bash
-$ ls -al joeden/
+$ ls -al main-repo/
 total 0
-drwxrwxrwx 1 joseeden joseeden 512 Oct 31 18:38 .
-drwxrwx--- 1 joseeden joseeden 512 Oct 31 18:38 ..
-drwxrwxrwx 1 joseeden joseeden 512 Oct 31 18:40 .git 
+drwxrwxrwx 1 username username 512 Oct 31 18:38 .
+drwxrwx--- 1 username username 512 Oct 31 18:38 ..
+drwxrwxrwx 1 username username 512 Oct 31 18:40 .git 
 ```
 
 Go inside the parent repo and run the `sparse-checkout` commands:
 
 ```bash 
-cd REPO-A
+cd main-repo
 git sparse-checkout init --cone
 ```
 
