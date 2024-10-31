@@ -188,7 +188,7 @@ To convert the embedded subrepo to a submodule, you need to do this steps:
 
 ## Converting a Submodule to a Normal Directory 
 
-Note that when you convert a submodule to a normal subrepo inside a parent repo, the change is only updated locally. If the remote repo of the parent repo originally contains the submodule, and you converted the submodule to an embeded repo locally and push the change to the remote repo, 
+
 
 ## Deleting a Submodule 
 
