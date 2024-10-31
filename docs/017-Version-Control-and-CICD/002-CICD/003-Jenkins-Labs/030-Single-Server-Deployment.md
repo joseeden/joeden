@@ -14,14 +14,14 @@ last_update:
 
 In this lab, we have the following machines, and we will use a local computer (laptop) to connect to each of them. The code is stored in a remote GitHub repository, which will be clone locally for development and testing.
 
-- jenkinsmain
+- jenkinsmaster
 - prodserver
 
 You can choose to set up a virtual machine on your computer or create instances in the cloud. In this case, EC2 instances are used.
 
 <div class='img-center'>
 
-![](/img/docs/jenkins-lab-diagram-jenkinsmain-prodserver.png)
+![](/img/docs/jenkins-lab-diagram-jenkinsmaster-prodserver.png)
 
 </div>
 
