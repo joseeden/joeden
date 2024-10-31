@@ -188,15 +188,30 @@ To convert the embedded subrepo to a submodule, you need to do this steps:
 
 ## Converting a Submodule to a Normal Directory 
 
+1. Go to your submodule directory and delete the .git folder.
 
-cd parent-repo/submodule-name 
-rm -rf .git 
+    ```bash
+    cd parent-repo/submodule-name 
+    rm -rf .git 
+    ```
 
-cd parent-repo
-cat > .gitmodules   # then click Ctrl-D 
+2. Go back to your parent repo and clear the .gitmodules file. Note that if you have other submodules inside the parent repo, don't run the `cat` command below as it will delete the contents of the .gitmodules files. Instead just delete the specific submodule.
 
+    ```bash
+    cd parent-repo
+    cat > .gitmodules   # then click Ctrl-D 
+    ```
+
+3. 
 rm -rf .git/modules/path/to/submodule-name
 
+
+[submodule "docs/021-Software-Engineering/099-Test-Repos/jenkins-project/jenkins-project"]
+        url = https://github.com/joseeden/jenkins-project
+        active = true
+[submodule "docs/021-Software-Engineering/099-Test-Repos/jenkins-project"]
+        url = git@github.com:joseeden/jenkins-project.git
+        active = true
 
 ## Deleting a Submodule 
 
