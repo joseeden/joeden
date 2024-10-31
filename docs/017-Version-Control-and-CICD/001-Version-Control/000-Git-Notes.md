@@ -195,6 +195,8 @@ Having said, I choose to use submodules moving forward for the following reasons
 
 - **Selective Updates**: With submodules, you can control when to update or pull changes for each project, This makes it easy to keep some submodules stable while actively developing others.
 
+I may still use nested repos on some cases where I don't need to use pipelines on the individual project repositories. 
+
 :::
 
 
