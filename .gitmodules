@@ -1,3 +1,6 @@
 [submodule "test-repos/jenkins-project"]
 	path = test-repos/jenkins-project
 	url = git@github.com:joseeden/jenkins-project.git
+[submodule "test-repos/go-webapp-sample"]
+	path = test-repos/go-webapp-sample
+	url = git@github.com:joseeden/go-webapp-sample.git
