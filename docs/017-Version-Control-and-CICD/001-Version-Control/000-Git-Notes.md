@@ -161,9 +161,13 @@ To convert the embedded subrepo to a submodule, you need to do this steps:
 
 5. From the root of the parent repo, push the changes to Github.
 
-```bash
-git add .; git commit -m "Added submodule"; git push 
-```
+    ```bash
+    git add .; git commit -m "Added submodule"; git push 
+    ```
+
+6. In Github, you can see the submodule inside the parent repo. In my case, the submodule name is **jenkins-project** but the name will appear different because it's actually a pointer.
+
+    ![](/img/docs/1031-added-submodule-successss.png)
 
 ## Deleting a Submodule 
 
