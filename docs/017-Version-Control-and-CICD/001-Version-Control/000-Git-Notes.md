@@ -189,6 +189,14 @@ To convert the embedded subrepo to a submodule, you need to do this steps:
 ## Converting a Submodule to a Normal Directory 
 
 
+cd parent-repo/submodule-name 
+rm -rf .git 
+
+cd parent-repo
+cat > .gitmodules   # then click Ctrl-D 
+
+rm -rf .git/modules/path/to/submodule-name
+
 
 ## Deleting a Submodule 
 
