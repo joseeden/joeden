@@ -1,4 +1,3 @@
-
 [submodule "test-repos/jenkins-project"]
 	path = test-repos/jenkins-project
 	url = git@github.com:joseeden/jenkins-project.git
