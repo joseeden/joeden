@@ -154,34 +154,42 @@ test-repos/
 4 directories, 0 files 
 ```
 
-## Cloning Specific Directory 
+## Cloning Specific Directory (With Trailing Directories)
 
 > The assumption here is you want to clone the parent repo from another machine.
 
 Let's say you have the following in your remote Github repository:
 
 ```bash
-main-repo
-  /.git
-  /otherFiles
-  /nested-directory
-    /moreFiles
+$ tree main-repo
+
+    └── .git
+    └── directory-a
+        └── file-x.txt
+        └── file-y.txt
+    └── directory-b
+        └── directoryc
+            └── nested-directory
+                ├── README.md
+                ├── test1.txt
+                └── test2.txt
+                └── test3.txt
 ```
 
-If you want other users to pull down just the nested directory without pulling down the entire parent repo, you can use the `--no-checkout` flag when you clone the main repo. This will not pull the contents yet, just the `.git` directory inside.
+If you want other users to pull down just the `nested-directory` without pulling down the entire parent repo, you can use the commands below to pull down the code
 
 :::info[Note]
 
 Before doing this, make sure you have the absolute path of the nested directory inside the parent repo. You can check this in the remote GIthub repository. In this example, the absolute path is:
 
 ```bash
-main-repo/nested-directory
+directory-b/directory-c/nested-directory
 ```
 
 :::
 
 ```bash
-git clone --no-checkout https://github.com/username/main-repo.git
+git clone  -n --depth=1 --filter=tree:0 https://github.com/username/main-repo.git
 ```
 ```bash
 $ ls -al main-repo/
@@ -195,15 +203,57 @@ Go inside the parent repo and run the `sparse-checkout` commands:
 
 ```bash 
 cd main-repo
-git sparse-checkout init --cone
+git sparse-checkout set --no-cone directory-b/directory-c/nested-directory
+git checkout
 ```
 
-Run the same command but specify the absolute path of the specific nested repo.
+Note that this will include the first layers "directory-b/directory-c/nested-directory".
 
-```bash 
-git sparse-checkout set master0Fnone_classes/1_x86_Demystified
-git pull origin master
+```bash
+$ tree main-repo
+
+    └── .git
+    └── directory-b
+        └── directory-c
+            └── nested-directory
+                ├── README.md
+                ├── test1.txt
+                └── test2.txt
+                └── test3.txt
 ```
+
+## Cloning Specific Directory (Without Trailing Directories)
+
+:::info[Note]
+
+The steps here actually pulls the entire parent repo and remove the unnecessary files, leaving only the specific directory. I wouldn't recommend this since the code base could be large and downloading all of it might take time and network bandwidth.
+
+:::
+
+There is another way to rewrite the repo so that only the specific directory is cloned even if that directory is nested deep inside layers of directories.
+
+```bash
+git clone --depth 1 https://github.com/username/main-repo.git nested-directory
+cd nested-directory
+```
+
+Then use the `filter-branch` to delete all other files/directories except the desired sub-directory.
+
+```bash
+git filter-branch --prune-empty --subdirectory-filter directory-b/directory-c/nested-directory HEAD 
+```
+
+```bash
+$ tree nested-directory
+
+    ├── README.md
+    ├── test1.txt
+    └── test2.txt
+    └── test3.txt
+```
+
+
+Reference: [Rewriting the repo](https://askubuntu.com/a/729798/1547382)
 
 
 ## Not Intended for Submodule 
