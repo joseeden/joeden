@@ -108,7 +108,7 @@ If you are using SSH keys to authenticate to Github, use this command:
 git submodule add git@github.com:username/submodule-name.git submodule-name
 ```
 
-Note that when you 
+Note that when you added a submodule inside another Git repository, you need to commit and push the changes from inside the submodule directory, then you also need to commit and push the changes from the root of the parent repo.
 
 ## Not Intended for Submodule 
 
