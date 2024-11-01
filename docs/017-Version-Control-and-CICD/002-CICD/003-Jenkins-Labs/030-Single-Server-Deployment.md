@@ -26,6 +26,12 @@ You can choose to set up a virtual machine on your computer or create instances 
 </div>
 
 
+:::info[main.pem]
+
+I'm using a single keypair or pem file to access all servers. This pem file will also be used when configuring the pipeline.
+
+:::
+
 ## Setting Up Jenkins
 
 If you have your Jenkins server already setup, you can skip this section. There's an option to manually install Jenkins on a Linux machine or you can also use Ansible playbooks to perform the entire installation of Jenkins on this machine.
@@ -61,6 +67,14 @@ Pre-requisites:
         ```bash
         sudo apt install -y python3-pip
         ```
+
+    - Zip
+
+        ```bash
+        sudo apt update
+        sudo apt install zip -y
+        ```
+
 
 
 ## Pre-Deployment Steps 
