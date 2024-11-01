@@ -9,6 +9,14 @@ last_update:
 
 
 
+:::info[UPDATE]
+
+A working lab on Git SCM Polling can be found in [Single-server Deployment.](/docs/017-Version-Control-and-CICD/002-CICD/003-Jenkins-Labs/030-Single-Server-Deployment.md)
+
+:::
+
+
+
 ## Lab Environment
 
 In this lab, we have the following Linux machines, and we will use a local computer (laptop) to connect to them.
@@ -173,3 +181,9 @@ In addition to this, I also ensured Jenkins is accessible from the internet, but
 
 
 > *Pausing on this lab for now.**
+
+:::info[UPDATE]
+
+A working lab on Git SCM Polling can be found in [Single-server Deployment.](/docs/017-Version-Control-and-CICD/002-CICD/003-Jenkins-Labs/030-Single-Server-Deployment.md)
+
+:::
