@@ -84,15 +84,15 @@ Perform the following in the production server:
 1. Create a directory for the application and go to the project directory.
 
     ```bash
-    mkdir /opt/app 
-    cd /opt/app 
+    mkdir /tmp/app 
+    cd /tmp/app 
     ```
 
 2. Create a python virtual environment. This is to ensure the application will not interfere with other applications running inside the produserver.
 
     ```bash
     python3 -m venv venv
-    ls -la /opt/app/venv    ## Verify
+    ls -la /tmp/app/venv    ## Verify
     ```
 
 3. Depending on the machine you're using, you need configure firewall to allow port 500. If you're using a virtual machine in the cloud, you need to allow the port in the security group.
@@ -112,9 +112,9 @@ Perform the following in the production server:
     [Service]
     User=root
     Group=root
-    WorkingDirectory=/opt/app/
-    Environment-"PATH=/opt/app/venv/bin"
-    Execstart=/opt/app/venv/bin/python3 /opt/app/app.py
+    WorkingDirectory=/tmp/app/
+    Environment-"PATH=/tmp/app/venv/bin"
+    Execstart=/tmp/app/venv/bin/python3 /tmp/app/app.py
 
 
     [Install]
@@ -155,10 +155,10 @@ If you're in an environment without systemd (like many Docker containers), many 
     # Description:       Enable service for Flask app
     ### END INIT INFO
 
-    APP_PATH="/opt/app"
+    APP_PATH="/tmp/app"
     APP_USER="root"
     APP_GROUP="root"
-    VENV_PATH="/opt/app/venv/bin"
+    VENV_PATH="/tmp/app/venv/bin"
     PYTHON_EXEC="$VENV_PATH/python3"
     APP_SCRIPT="$APP_PATH/app.py"
 
@@ -278,9 +278,9 @@ Create the Jenkinsfile inside the project directory. Note that if you're not usi
                         sh '''
                         scp -i $MY_SSH_KEY -o StrictHostKeyChecking=no myapp.zip  ${username}@${SERVER_IP}:/opt/
                         ssh -i $MY_SSH_KEY -o StrictHostKeyChecking=no ${username}@${SERVER_IP} << EOF
-                            unzip -o /opt/myapp.zip -d /opt/app/
+                            unzip -o /opt/myapp.zip -d /tmp/app/
                             source app/venv/bin/activate
-                            cd /opt/app/
+                            cd /tmp/app/
                             pip install -r requirements.txt
                             sudo systemctl restart flaskapp.service
                         EOF
@@ -327,17 +327,13 @@ Configure the following details. For the **Secret** field, enter the public IP a
 
 ![](/img/docs/1029-jenkins-single-server-deployment-configure-credentials-on-jenkins.png)
 
-Add a second credentials with the following details.
+Add a second credentials with the following details. Change the username based on the username in your production server. in my case, the **Ubuntu** user is the default user in my production server.
+
+![](/img/docs/1101-jenkins-single-server-deployment-configure-credentials-on-jenkins-ssh-key.png)
 
 ![](/img/docs/1029-jenkins-single-server-deployment-configure-credentials-on-jenkins-ssh-key.png)
 
-For the SSH key, generate a new SSH key in the production server and copy the contents of the private key in the **Key** field. 
-
-```bash
-sudo su
-ssh-keygen -t rsa
-cat ~/.ssh/id_rsa 
-```
+For the SSH key, you can use the same keypair or .pem file you used to access the servers.
 
 
 ## Setup the Pipeline
