@@ -75,6 +75,14 @@ Pre-requisites:
         sudo apt install zip -y
         ```
 
+If you're using EC2 instances, make sure the security group:
+
+- Allows SSH from within the subnet
+- Allows SSH from your IP or 0.0.0.0
+- Allows 8080 from your IP or 0.0.0.0
+- Allows 5000 from your IP or 0.0.0.0
+
+If specifying your IP doesn't work, you can use a wider range like `0.0.0.0`.
 
 
 ## Pre-Deployment Steps 
@@ -106,16 +114,15 @@ Perform the following in the production server:
     ```bash
     [Unit]
     Description=flask app
-    After-network.target
+    After=network.target
     # Service will only start after network is initialized.
 
     [Service]
-    User=Ubuntu
-    Group=Ubuntu
+    User=ubuntu
+    Group=ubuntu
     WorkingDirectory=/tmp/app/
-    Environment-"PATH=/tmp/app/venv/bin"
-    Execstart=/tmp/app/venv/bin/python3 /tmp/app/app.py
-
+    Environment=PATH=/tmp/app/venv/bin
+    ExecStart=/tmp/app/venv/bin/python3 /tmp/app/app.py
 
     [Install]
     WantedBy=multi-user.target
@@ -227,7 +234,6 @@ The sample project can be found here:
 https://github.com/joseeden/jenkins-project 
 ```
 
-
 :::info[Use git credentials when cloning]
 
 In August 2021, Github removed support for using your account password from the cli.
@@ -237,77 +243,44 @@ You can either use [Personal Access Tokens (PAT)](https://docs.github.com/en/aut
 
 After you sign in to Github, fork the repo and confirm the details.
 
+
+<div class='img-center'>
+
 ![](/img/docs/1029-jenkins-single-server-deployment-fork-repository.png)
 
-Clone it to your local computer and change the Jenkinsfile. 
+</div>
+
+
+Clone it to your local computer. 
+
+## Configure Web Hook 
+
+On your Github repository, go to **Settings** > **Webhooks** > **Add webhook**. Specify the payload URL as:
+
+```bash
+http://jenkins-ip:8080/github-webhook/ 
+```
+
+Specify the details and click **Update webhook**.
+
+<div class='img-center'>
+
+![](/img/docs/1101-jenkins-single-server-deployment-config-webhook-on-github-repo.png)
+
+</div>
+
+Once you configure the pipeline in the succeeding steps, you can check the **Recent Deliveries**.
+
+![](/img/docs/1101-jenkins-single-server-deployment-recent-Deliveries.png)
+
 
 
 ## Create the Jenkinsfile 
 
 Create the Jenkinsfile inside the project directory. Note that if you're not using `systemd`, change the `systemd` command to `sudo service flaskapp restart'. **DO NOT** push yet.
 
-    ```bash
-    pipeline {
-        agent any
+See file here: [Jenkinsfile](https://github.com/joseeden/jenkins-project/blob/main/Jenkinsfile)
 
-        environment {
-            SERVER_IP = credentials('prod-server-ip')
-        }
-        stages {
-            stage('Setup') {
-                steps {
-                    // Create and activate a virtual environment, then install dependencies
-                    sh '''
-                    python3 -m venv venv
-                    . venv/bin/activate
-                    pip install -r requirements.txt
-                    '''
-                }
-            }
-            stage('Test') {
-                steps {
-                    // Activate the virtual environment and run tests
-                    sh '''
-                    . venv/bin/activate
-                    pytest
-                    '''
-                }
-            }
-
-            stage('Package code') {
-                steps {
-                    sh "zip -r myapp.zip ./* -x '*.git*' -x 'venv/*'"
-                    sh "ls -lart"
-                }
-            }
-
-            stage('Deploy to Prod') {
-                steps {
-                    withCredentials([sshUserPrivateKey(credentialsId: 'ssh-key', keyFileVariable: 'MY_SSH_KEY', usernameVariable: 'username')]) {
-                        sh '''
-                        scp -i $MY_SSH_KEY -o StrictHostKeyChecking=no myapp.zip ${username}@${SERVER_IP}:/opt/
-                        
-                        # Deploy to prodserver
-                        ssh -i $MY_SSH_KEY -o StrictHostKeyChecking=no ${username}@${SERVER_IP} << EOF
-                            unzip -o /opt/myapp.zip -d /tmp/app/
-                            
-                            if [ ! -d "/tmp/app/venv" ]; then
-                                python3 -m venv /tmp/app/venv
-                            fi
-                            
-                            . /tmp/app/venv/bin/activate
-                            pip install -r /tmp/app/requirements.txt
-                            
-                            sudo service flaskapp restart
-                        EOF
-                        '''
-
-                    }
-                }
-            }
-        }
-    }
-    ```
 
 ## Configuration Steps
 
@@ -397,7 +370,7 @@ Set the ScriptPath > Jenkinsfile
 
 ## Commit and Push 
 
-Back in your local machine, commit and push the changes you did (if any).s
+Back in your local machine, commit and push the changes you did (if any).
 
 ```bash
 git add .
@@ -407,8 +380,11 @@ git push
 
 Go to the your job in the Jenkins dashboard. You should now see a job getting triggered.
 
-![](/img/docs/1029-jenkins-single-server-deployment-triggeringgg.png)
+![](/img/docs/1101-jenkins-single-server-deployment-triggeringgg.png)
 
+If successful, you should see a green check mark. 
+
+![](/img/docs/1101-jenkins-single-server-deployment-successsss.png)
 
 ## Test the App 
 
