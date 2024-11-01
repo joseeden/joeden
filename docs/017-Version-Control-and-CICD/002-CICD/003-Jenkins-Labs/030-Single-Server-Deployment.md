@@ -350,6 +350,9 @@ Build Triggers > Github hook trigger for GITScm polling
 </div>
 
 
+Next, configure the pipeline section. Note the branch name. The common name is **main** but your branch could be using **master**. You can also specify a different branch name here.
+
+
 ```
 Pipeline > Pipeline script from SCM > SCM > Git > Repository URL > Enter URL
 Set the branch to main
@@ -358,7 +361,9 @@ Set the ScriptPath > Jenkinsfile
 
 <div class='img-center'>
 
-![](/img/docs/1101-jenkins-single-server-deployment-configure-pipeline-triggers-etc.png)
+![](/img/docs/1101-jenkins-single-server-deployment-configure-pipeline-triggers-using-main.png)
+
+<!-- ![](/img/docs/1101-jenkins-single-server-deployment-configure-pipeline-triggers-etc.png) -->
 
 <!-- ![](/img/docs/1029-jenkins-single-server-deployment-configure-pipeline-triggers-etc.png) -->
 
