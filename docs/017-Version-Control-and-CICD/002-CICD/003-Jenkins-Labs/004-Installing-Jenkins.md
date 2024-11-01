@@ -10,7 +10,7 @@ last_update:
 
 ## Lab Environment 
 
-In this lab, we have the following machines, and we will use a local computer (laptop) to connect to each of them. 
+In this lab, we have the following Linux machines, and we will use a local computer (laptop) to connect to each of them. 
 
 - jenkinsmaster
 - prodserver

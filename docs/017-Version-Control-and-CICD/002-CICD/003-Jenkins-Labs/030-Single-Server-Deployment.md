@@ -12,7 +12,7 @@ last_update:
 
 ## Lab Environment
 
-In this lab, we have the following machines, and we will use a local computer (laptop) to connect to each of them. The code is stored in a remote GitHub repository, which will be clone locally for development and testing.
+In this lab, we have the following Linux machines, and we will use a local computer (laptop) to connect to each of them. The code is stored in a remote GitHub repository, which will be clone locally for development and testing.
 
 - jenkinsmaster
 - prodserver
@@ -40,7 +40,7 @@ To setup Jenkins:
 Pre-requisites: 
 
 - A Github account.
-- Install the following on the Jenkins server:
+- Install the following on the the servers:
 
     - Python
 
@@ -53,7 +53,7 @@ Pre-requisites:
     - Python Virtual Environment 
 
         ```bash
-        sudo apt install -y python3.11-venv 
+        sudo apt install -y python3.12-venv 
         ```
 
     - Pip
@@ -282,7 +282,7 @@ Create the Jenkinsfile inside the project directory. Note that if you're not usi
     } 
     ```
 
-## Configure Pipeline
+## Configuration Steps
 
 The pipeline steps:
 
@@ -309,7 +309,7 @@ On the Jenkins dashboard, go to:
 Manage Jenkins > Credentials > global > Add credentials
 ```
 
-Configure the following details. If you're using the Jenkins server as the production server, you can simply put `127.0.0.1` in the **Secret** field. If you have another machine as the production server, enter the production server IP address in this field.
+Configure the following details. For the **Secret** field, enter the public IP address of the production server.
 
 ![](/img/docs/1029-jenkins-single-server-deployment-configure-credentials-on-jenkins.png)
 
@@ -317,30 +317,54 @@ Add a second credentials with the following details.
 
 ![](/img/docs/1029-jenkins-single-server-deployment-configure-credentials-on-jenkins-ssh-key.png)
 
-For the SSH key, you can generate a new one and copy the contents of the private key in the **Key** field. 
+For the SSH key, generate a new SSH key in the production server and copy the contents of the private key in the **Key** field. 
 
 ```bash
-ssh-keygen 
+sudo su
+ssh-keygen -t rsa
 cat ~/.ssh/id_rsa 
 ```
 
 
 ## Setup the Pipeline
 
-Back on the Jenkins dashboard, click New Item and enter "single-server-pipeline" for the Item name. Select Pipeline and click OK.
+Back on the Jenkins dashboard, click New Item and enter "single-server-pipeline" for the Item name. Select **Pipeline** and click **OK**.
+
+<div class='img-center'>
 
 ![](/img/docs/1029-jenkins-single-server-deployment-pipeline.png) 
+
+</div>
+
 
 Check the box for the following and then click Save.
 
 ```
 Build Triggers > Github hook trigger for GITScm polling
+```
+
+<div class='img-center'>
+
+![](/img/docs/1101-jenkins-single-server-deployment-github-hook-trigger-gitscm-polling.png)
+
+</div>
+
+
+```
 Pipeline > Pipeline script from SCM > SCM > Git > Repository URL > Enter URL
 Set the branch to main
 Set the ScriptPath > Jenkinsfile
 ```
 
-![](/img/docs/1029-jenkins-single-server-deployment-configure-pipeline-triggers-etc.png)
+<div class='img-center'>
+
+![](/img/docs/1101-jenkins-single-server-deployment-configure-pipeline-triggers-etc.png)
+
+<!-- ![](/img/docs/1029-jenkins-single-server-deployment-configure-pipeline-triggers-etc.png) -->
+
+</div>
+
+
 
 
 ## Commit and Push 

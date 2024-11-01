@@ -19,7 +19,7 @@ Apache Tomcat can serve as an effective staging environment for testing applicat
 
 ## Lab Environment
 
-In this lab, we have the following machines, and we will use a local computer (laptop) to connect to them.
+In this lab, we have the following Linux machines, and we will use a local computer (laptop) to connect to them.
 
 - jenkinsmaster
 
