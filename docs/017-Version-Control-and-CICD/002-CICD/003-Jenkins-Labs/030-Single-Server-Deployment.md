@@ -388,9 +388,9 @@ If successful, you should see a green check mark.
 
 ## Test the App 
 
-Copy the server IP and open it a web browser. You should be able to access the sample application.
+Copy the server IP and open it a web browser. You should be able to access the sample application. Try adding a new task by clicking the "Add Task".
 
-![](/img/docs/1029-jenkins-single-server-deployment-working-apppp.png)
+![](/img/docs/1101-jenkins-single-server-deployment-working-apppp-added-taskss.png)
 
 ## Verify Triggers 
 
@@ -408,10 +408,11 @@ git commit -m "Updated to v2"
 git push 
 ```
 
-Back in the pipeline, a second build should be triggered.
+Back in the pipeline, a second build should be triggered. Once done, click the build number to view the details.
 
-![](/img/docs/1029-jenkins-single-server-deployment-second-triggere.png)
+![](/img/docs/1101-jenkins-single-server-deployment-updated-to-v2.png)
+
 
 Open the web browser and refresh. It should now show version 2.
 
-![](/img/docs/1029-jenkins-single-server-deployment-app-version-2.png)
+![](/img/docs/1101-jenkins-single-server-deployment-app-version-2.png)
