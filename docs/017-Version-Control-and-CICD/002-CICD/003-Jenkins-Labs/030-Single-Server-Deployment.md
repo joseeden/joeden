@@ -78,11 +78,20 @@ Pre-requisites:
 If you're using EC2 instances, make sure the security group:
 
 - Allows SSH from within the subnet
-- Allows SSH from your IP or 0.0.0.0
-- Allows 8080 from your IP or 0.0.0.0
-- Allows 5000 from your IP or 0.0.0.0
+- Allows SSH from your IP 
+- Allows 5000 from your IP 
+- Allows 8080 from `0.0.0.0/0`
+
+
+You may encounter some network connectivity issues when connecting to the Linux machines and when attempting to trigger the webhook. 
+
+- SSH connections (from local to Linux machines) - uses port 22
+- Access Jenkins UI (from local to Jenkins) - uses port 8080 
+- Access application UI (from local to Prod) - uses port 5000 
+- Trigger webhook (from Github to Jenkins) - uses port 8080  
 
 If specifying your IP doesn't work, you can use a wider range like `0.0.0.0`.
+
 
 
 ## Pre-Deployment Steps 
