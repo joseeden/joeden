@@ -110,8 +110,8 @@ Perform the following in the production server:
     # Service will only start after network is initialized.
 
     [Service]
-    User=root
-    Group=root
+    User=Ubuntu
+    Group=Ubuntu
     WorkingDirectory=/tmp/app/
     Environment-"PATH=/tmp/app/venv/bin"
     Execstart=/tmp/app/venv/bin/python3 /tmp/app/app.py
@@ -156,8 +156,8 @@ If you're in an environment without systemd (like many Docker containers), many 
     ### END INIT INFO
 
     APP_PATH="/tmp/app"
-    APP_USER="root"
-    APP_GROUP="root"
+    APP_USER="Ubuntu"
+    APP_GROUP="Ubuntu"
     VENV_PATH="/tmp/app/venv/bin"
     PYTHON_EXEC="$VENV_PATH/python3"
     APP_SCRIPT="$APP_PATH/app.py"
@@ -256,18 +256,27 @@ Create the Jenkinsfile inside the project directory. Note that if you're not usi
         stages {
             stage('Setup') {
                 steps {
-                    sh "pip install -r requirements.txt"
+                    // Create and activate a virtual environment, then install dependencies
+                    sh '''
+                    python3 -m venv venv
+                    . venv/bin/activate
+                    pip install -r requirements.txt
+                    '''
                 }
             }
             stage('Test') {
                 steps {
-                    sh "pytest"
+                    // Activate the virtual environment and run tests
+                    sh '''
+                    . venv/bin/activate
+                    pytest
+                    '''
                 }
             }
 
             stage('Package code') {
                 steps {
-                    sh "zip -r myapp.zip ./* -x '*.git*'"
+                    sh "zip -r myapp.zip ./* -x '*.git*' -x 'venv/*'"
                     sh "ls -lart"
                 }
             }
@@ -276,24 +285,28 @@ Create the Jenkinsfile inside the project directory. Note that if you're not usi
                 steps {
                     withCredentials([sshUserPrivateKey(credentialsId: 'ssh-key', keyFileVariable: 'MY_SSH_KEY', usernameVariable: 'username')]) {
                         sh '''
-                        scp -i $MY_SSH_KEY -o StrictHostKeyChecking=no myapp.zip  ${username}@${SERVER_IP}:/opt/
+                        scp -i $MY_SSH_KEY -o StrictHostKeyChecking=no myapp.zip ${username}@${SERVER_IP}:/opt/
+                        
+                        # Deploy to prodserver
                         ssh -i $MY_SSH_KEY -o StrictHostKeyChecking=no ${username}@${SERVER_IP} << EOF
                             unzip -o /opt/myapp.zip -d /tmp/app/
-                            source app/venv/bin/activate
-                            cd /tmp/app/
-                            pip install -r requirements.txt
-                            sudo systemctl restart flaskapp.service
+                            
+                            if [ ! -d "/tmp/app/venv" ]; then
+                                python3 -m venv /tmp/app/venv
+                            fi
+                            
+                            . /tmp/app/venv/bin/activate
+                            pip install -r /tmp/app/requirements.txt
+                            
+                            sudo service flaskapp restart
                         EOF
                         '''
+
                     }
                 }
             }
-        
-            
-        
-            
         }
-    } 
+    }
     ```
 
 ## Configuration Steps
