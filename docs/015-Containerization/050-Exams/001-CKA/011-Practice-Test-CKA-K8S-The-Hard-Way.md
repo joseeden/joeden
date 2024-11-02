@@ -35,7 +35,8 @@ export now="--force --grace-period=0"
 
     Use the exact version of 1.27.0-2.1 for both.
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     Complete steps can be found here:
     https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
@@ -108,7 +109,8 @@ export now="--force --grace-period=0"
 
     Once done, set up the default kubeconfig file and wait for node to be part of the cluster.
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     Complete steps can be found here:
     https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/ 
@@ -156,7 +158,8 @@ export now="--force --grace-period=0"
 
 3. After controlplane is bootstrapped, join the node01 to the cluster.
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     Run the kubeadm join command which was returned by the kubeadm output. 
 
@@ -185,7 +188,8 @@ export now="--force --grace-period=0"
 
 
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     Download the YAML file. 
 

@@ -39,7 +39,8 @@ export now="--force --grace-period=0"
     node01         Ready    <none>          14m   v1.27.0
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k describe no controlplane  | grep -i ip
@@ -60,7 +61,8 @@ export now="--force --grace-period=0"
     node01         Ready    <none>          14m   v1.27.0
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get no -o wide
@@ -87,7 +89,8 @@ export now="--force --grace-period=0"
     node01         Ready    <none>          14m   v1.27.0
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     Need to ssh to node01. 
 
@@ -106,7 +109,8 @@ export now="--force --grace-period=0"
 
 4. We use Containerd as our container runtime. What is the interface/bridge created by Containerd on the controlplane node?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✖ ip link show | grep -i cni
@@ -130,7 +134,8 @@ export now="--force --grace-period=0"
     node01         Ready    <none>          14m   v1.27.0
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  ip route
@@ -143,7 +148,8 @@ export now="--force --grace-period=0"
 
 6. What is the port the kube-scheduler is listening on in the controlplane node?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  netstat -tulpn | grep -i sched
@@ -156,7 +162,8 @@ export now="--force --grace-period=0"
 
 7. Notice that ETCD is listening on two ports. Which of these have more client connections established?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     2379 is the port of ETCD to which all control plane components connect to. 2380 is only for etcd peer-to-peer connectivity when you have multiple controlplane nodes.
 
@@ -183,7 +190,8 @@ export now="--force --grace-period=0"
 
 8. Inspect the kubelet service and identify the container runtime endpoint value is set for Kubernetes.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     Answer is unix:///var/run/containerd/containerd.sock.
 
@@ -198,7 +206,8 @@ export now="--force --grace-period=0"
 
 9. What is the path configured with all binaries of CNI supported plugins?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  ls -la /opt/cni
@@ -237,7 +246,8 @@ export now="--force --grace-period=0"
 
 10. What is the CNI plugin configured to be used on this kubernetes cluster?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  ls -la /etc/cni/
@@ -262,7 +272,8 @@ export now="--force --grace-period=0"
 
 12. What binary executable file will be run by kubelet after a container and its associated namespace are created?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  ls -l /etc/cni/
@@ -307,7 +318,8 @@ export now="--force --grace-period=0"
 
     NOTE: - We already have provided a weave manifest file under the /root/weave directory.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     The pod cannot start because networking is not yet configured. 
 
@@ -350,7 +362,8 @@ export now="--force --grace-period=0"
 
 14. What is the Networking Solution used by this cluster?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  ls -la /etc/cni/net.d/
@@ -384,7 +397,8 @@ export now="--force --grace-period=0"
 
 15. How many weave agents/peers are deployed in this cluster?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po -n kube-system 
@@ -411,7 +425,8 @@ export now="--force --grace-period=0"
 
 16. Identify the name of the bridge network/interface created by weave on each node.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  ip addr | grep weave
@@ -429,7 +444,8 @@ export now="--force --grace-period=0"
 
 17. What is the default gateway configured on the PODs scheduled on node01?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     We are interested with the route for weave, which shows default gateway of 10.244.0.1.
 
@@ -447,7 +463,8 @@ export now="--force --grace-period=0"
 
 18. What is the range of IP addresses configured for PODs on this cluster? The network is configured with weave.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     Check the pod for weave and see the logs. It should show the ip allocation range.
 
@@ -476,7 +493,8 @@ export now="--force --grace-period=0"
 
 19. What is the IP Range configured for the services within the cluster?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     From here we can see the the servuces are configured in the 10.96.0.x range. 
 
@@ -504,7 +522,8 @@ export now="--force --grace-period=0"
 
 20. What type of proxy is the kube-proxy configured to use?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po -n kube-system | grep kube-proxy
@@ -522,7 +541,8 @@ export now="--force --grace-period=0"
 
 21. How does this Kubernetes cluster ensure that a kube-proxy pod runs on all nodes in the cluster?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     kube-proxy is managed through a DaemonSet. 
     
@@ -542,7 +562,8 @@ export now="--force --grace-period=0"
 
 22. Identify the DNS solution implemented in this cluster.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✖ k get po -A | grep dns
@@ -559,7 +580,8 @@ export now="--force --grace-period=0"
 
 23. What is the IP of the CoreDNS server that should be configured on PODs to resolve services?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get svc -n kube-system 
@@ -576,7 +598,8 @@ export now="--force --grace-period=0"
 
 24. Where is the configuration file located for configuring the CoreDNS service?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po -n kube-system | grep dns
@@ -596,7 +619,8 @@ export now="--force --grace-period=0"
 
 25. How is the Corefile passed into the CoreDNS POD?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po -n kube-system | grep dns
@@ -643,7 +667,8 @@ export now="--force --grace-period=0"
 
 26. Since we know that the Corefile is passed as a ConfigMap object, determine the root domain/zone configured for this kubernetes cluster.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     The root domain is **cluster.local**.
 
@@ -731,7 +756,8 @@ export now="--force --grace-period=0"
     payroll       web-service    ClusterIP   10.96.157.205   <none>        80/TCP                   13m 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     Remove the -A flag so that it only shows the resources in the default namespace where the hr pod is.
 
@@ -786,7 +812,8 @@ export now="--force --grace-period=0"
     web-service    ClusterIP   10.108.205.43   <none>        80/TCP         19m
       
     ```
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k exec -it test -- curl web-service:80
@@ -832,7 +859,8 @@ export now="--force --grace-period=0"
     test                1/1     Running   0          26m
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
         
     ```bash
     controlplane ~ ➜  k exec -it test -- curl web-service.payroll:80
@@ -883,7 +911,8 @@ export now="--force --grace-period=0"
     payroll        web                                    1/1     Running   0          30m 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     From the given above, we can see that the web-app and mysql are in different namespaces. There are two options here:
     - Make sure both are in the same namespace
@@ -941,7 +970,8 @@ export now="--force --grace-period=0"
     web-service   ClusterIP   10.96.157.205   <none>        80/TCP     43m
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k exec -it hr -- nslookup mysql.payroll
@@ -974,7 +1004,8 @@ export now="--force --grace-period=0"
 
 32. Which namespace is the Ingress Controller deployed in?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get all -A | grep -i ingress
@@ -998,7 +1029,8 @@ export now="--force --grace-period=0"
 
 33. What is the name of the ingress resource deployed?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k api-resources | grep -i ingress
@@ -1019,7 +1051,8 @@ export now="--force --grace-period=0"
 
 34. What is the Host configured on the Ingress Resource?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     All Hosts (*)
 
@@ -1068,7 +1101,8 @@ export now="--force --grace-period=0"
     app-space   ingress-wear-watch   <none>   *       10.103.62.71   80      7m48s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k edit -n app-space ingress ingress-wear-watch  
@@ -1142,7 +1176,8 @@ export now="--force --grace-period=0"
     app-space   ingress-wear-watch   <none>   *       10.103.62.71   80      11m    
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k edit -n app-space ingress ingress-wear-watch  
@@ -1216,7 +1251,8 @@ export now="--force --grace-period=0"
     app-space   ingress-wear-watch   <none>   *       10.103.62.71   80      17m    
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     Do not modify the existing ingress resource. Simply create a new one. 
 
@@ -1269,7 +1305,8 @@ export now="--force --grace-period=0"
       - Path: /watch
 
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k create ns ingress-nginx

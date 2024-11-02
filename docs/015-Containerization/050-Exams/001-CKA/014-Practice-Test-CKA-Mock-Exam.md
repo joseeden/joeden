@@ -32,9 +32,10 @@ export now="--force --grace-period=0"
 
 1. Upgrade the current version of kubernetes from 1.26.0 to 1.27.0 exactly using the kubeadm utility. Make sure that the upgrade is carried out one node at a time starting with the controlplane node. To minimize downtime, the deployment gold-nginx should be rescheduled on an alternate node before upgrading each node.
 
-    Upgrade controlplane node first and drain node node01 before upgrading it. Pods for gold-nginx should run on the controlplane node subsequently.
+  Upgrade controlplane node first and drain node node01 before upgrading it. Pods for gold-nginx should run on the controlplane node subsequently.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     Start with the controlplane first. 
 
@@ -249,7 +250,8 @@ export now="--force --grace-period=0"
 
 
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✦2 ➜  k get ns
@@ -453,7 +455,8 @@ export now="--force --grace-period=0"
 
 3. A kubeconfig file called admin.kubeconfig has been created in /root/CKA. There is something wrong with the configuration. Troubleshoot and fix it.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     Make sure the port for the kube-apiserver is correct. So for this change port from 4380 to 6443.
 
@@ -493,7 +496,8 @@ export now="--force --grace-period=0"
 
 4. Create a new deployment called nginx-deploy, with image nginx:1.16 and 1 replica. Next upgrade the deployment to version 1.17 using rolling update.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✦2 ➜  k create deployment nginx-deploy --image nginx:1.16 --replicas 1
@@ -526,7 +530,8 @@ export now="--force --grace-period=0"
 
 5. A new deployment called alpha-mysql has been deployed in the alpha namespace. However, the pods are not running. Troubleshoot and fix the issue. The deployment should make use of the persistent volume alpha-pv to be mounted at /var/lib/mysql and should use the environment variable MYSQL_ALLOW_EMPTY_PASSWORD=1 to make use of an empty root password.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✖ k get all -n alpha 
@@ -641,7 +646,8 @@ export now="--force --grace-period=0"
 6. Take the backup of ETCD at the location /opt/etcd-backup.db on the controlplane node.
 
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✦2 ➜  k describe -n kube-system po kube-apiserver-controlplane | grep -i ca
@@ -683,7 +689,8 @@ export now="--force --grace-period=0"
 
     The container should mount a read-only secret volume called secret-volume at the path /etc/secret-volume. The secret being mounted has already been created for you and is called dotfile-secret.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     k run secret-1401 -n admin1401 --image=busybox --dry-run=client -oyaml --command -- sleep 4800 > admin.yaml
@@ -739,7 +746,8 @@ export now="--force --grace-period=0"
     - NodePort: 30082
 
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✦ ➜  k get po
@@ -797,7 +805,8 @@ export now="--force --grace-period=0"
 
 9. Create a static pod named static-busybox on the controlplane node that uses the busybox image and the command sleep 1000.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     kubectl run --restart=Never --image=busybox static-busybox --dry-run=client -oyaml --command -- sleep 1000 > /etc/kubernetes/manifests/static-busybox.yaml
@@ -831,7 +840,8 @@ export now="--force --grace-period=0"
 
     - Host path: /pv/data-analytics
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     ## pv.yml 
@@ -865,7 +875,8 @@ export now="--force --grace-period=0"
 
     The osImages are under the nodeInfo section under status of each node.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get no -o jsonpath='{.items[*].status.nodeInfo}'
@@ -896,7 +907,8 @@ export now="--force --grace-period=0"
 
 12. Create a new pod called super-user-pod with image busybox:1.28. Allow the pod to be able to set system_time. Pod should sleep for 4800 seconds.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```YAML 
     ## super.yml
@@ -966,7 +978,8 @@ export now="--force --grace-period=0"
     ```
 
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     Check the PV. 
 
@@ -1098,7 +1111,8 @@ export now="--force --grace-period=0"
 
     - Access: User 'john' has appropriate permissions    
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     Follow steps here: 
     https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/
@@ -1219,7 +1233,8 @@ export now="--force --grace-period=0"
 
 15. Create a nginx pod called nginx-resolver using image nginx, expose it internally with a service called nginx-resolver-service. Test that you are able to look up the service and pod names from within the cluster. Use the image: busybox:1.28 for dns lookup. Record results in /root/CKA/nginx.svc and /root/CKA/nginx.pod
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~/CKA ➜  k run nginx-resolver --image nginx
@@ -1314,7 +1329,8 @@ export now="--force --grace-period=0"
 
     Use /etc/kubernetes/manifests as the Static Pod path for example.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     Read carefully again. 
     The static pod needs to be created in node01, not in the controlplane. 
@@ -1368,7 +1384,8 @@ export now="--force --grace-period=0"
 17. Create a new service account with the name pvviewer. Grant this Service account access to list all PersistentVolumes in the cluster by creating an appropriate cluster role called pvviewer-role and ClusterRoleBinding called pvviewer-role-binding.
 Next, create a pod called pvviewer with the image: redis and serviceAccount: pvviewer in the default namespace.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k create sa pvviewer --dry-run=client -o yaml > pvviewer.yml
@@ -1524,7 +1541,8 @@ Next, create a pod called pvviewer with the image: redis and serviceAccount: pvv
     InternalIP of controlplane<space>InternalIP of node01 (in a single line)
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get no
@@ -1571,7 +1589,8 @@ Next, create a pod called pvviewer with the image: redis and serviceAccount: pvv
     - Container 2:
         - name: beta
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k run multi-pod --image nginx $do > multi-pod.yml
@@ -1667,7 +1686,8 @@ Next, create a pod called pvviewer with the image: redis and serviceAccount: pvv
 
     - fsGroup: 2000
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k run non-root-pod --image redis:alpine $do > non-root-pod.yml
@@ -1708,7 +1728,8 @@ Next, create a pod called pvviewer with the image: redis and serviceAccount: pvv
 21. We have deployed a new pod called np-test-1 and a service called np-test-service. Incoming connections to this service are not working. Troubleshoot and fix it.
 Create NetworkPolicy, by the name ingress-to-nptest that allows incoming connections to the service over port 80.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po
@@ -1787,7 +1808,8 @@ Create NetworkPolicy, by the name ingress-to-nptest that allows incoming connect
     - value: production
     - operator: Equal and effect: NoSchedule
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k taint node controlplane env_type=production:NoSchedule-
@@ -1875,7 +1897,8 @@ Create NetworkPolicy, by the name ingress-to-nptest that allows incoming connect
 
     Use appropriate labels and create all the required objects if it does not exist in the system already.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k create ns hr
@@ -1922,7 +1945,8 @@ Create NetworkPolicy, by the name ingress-to-nptest that allows incoming connect
 
 24. A kubeconfig file called super.kubeconfig has been created under /root/CKA. There is something wrong with the configuration. Troubleshoot and fix it.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  ls -la CKA

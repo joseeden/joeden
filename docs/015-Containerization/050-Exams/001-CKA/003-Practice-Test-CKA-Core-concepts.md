@@ -32,7 +32,8 @@ export now="--force --grace-period=0"
 
 1. Create a new pod with the nginx image.
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     k run nginx --image=nginx  
@@ -54,7 +55,8 @@ export now="--force --grace-period=0"
     webapp          1/2     ImagePullBackOff   0          3m41s
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash 
     controlplane ~ ➜  k describe po webapp | grep agentx -A 5
@@ -73,7 +75,8 @@ export now="--force --grace-period=0"
 
 3. What does the READY column in the output of the kubectl get pods command indicate?
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     Running containers in pod/Total containers in pod 
@@ -90,7 +93,8 @@ export now="--force --grace-period=0"
     webapp          1/2     ImagePullBackOff   0          3m41s
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     k delete po webapp --force --grace-period=0  
@@ -101,7 +105,8 @@ export now="--force --grace-period=0"
 
 5. Create a new pod with the name redis and the image redis123. Use a pod-definition YAML file. 
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k run redis --image=redis123 --dry-run=client -o yaml > redis.yml
@@ -122,7 +127,8 @@ export now="--force --grace-period=0"
 6. Deploy a redis pod using the redis:alpine image with the labels set to tier=db 
 
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ✖ k run redis --image="redis:alpine" --labels="tier=db" --dry-run=client
@@ -157,7 +163,8 @@ export now="--force --grace-period=0"
          name: nginx  
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k apply -f nginx.yaml 
@@ -182,7 +189,8 @@ export now="--force --grace-period=0"
     new-replica-set-9qn8h   0/1     ImagePullBackOff   0          84s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k get rs
@@ -207,7 +215,8 @@ export now="--force --grace-period=0"
     new-replica-set-9qn8h   0/1     ImagePullBackOff   0          84s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     The image BUSYBOX777 doesn't exist
 
@@ -253,7 +262,8 @@ export now="--force --grace-period=0"
           - name: nginx
             image: nginx
     ```
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k apply -f replicaset-definition-1.yaml 
@@ -322,7 +332,8 @@ export now="--force --grace-period=0"
             image: nginx 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k apply -f replicaset-definition-2.yaml 
@@ -376,7 +387,8 @@ export now="--force --grace-period=0"
     replicaset-2      2         2         2       66s
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k delete rs replicaset-1
@@ -395,7 +407,8 @@ export now="--force --grace-period=0"
 
 13. Fix the original replica set **new-replica-set** to use the correct busybox image.
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k get rs
@@ -491,7 +504,8 @@ export now="--force --grace-period=0"
     new-replica-set   4         4         4       33s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k edit rs new-replica-set 
@@ -517,7 +531,8 @@ export now="--force --grace-period=0"
     ```
 
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k get po
@@ -542,7 +557,8 @@ export now="--force --grace-period=0"
     frontend-deployment   0/4     4            0           103s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     The image BUSYBOX888 doesn't exist
 
@@ -593,7 +609,8 @@ export now="--force --grace-period=0"
             - "-c"
             - echo Hello Kubernetes! && sleep 3600 
     ```
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k apply -f deployment-definition-1.yaml 
@@ -625,7 +642,8 @@ export now="--force --grace-period=0"
     - Replicas: 3
     - Image: httpd:2.4-alpine
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k create deploy httpd-frontend --image="httpd:2.4-alpine" --replicas=3 --dry-run=client
@@ -647,7 +665,8 @@ export now="--force --grace-period=0"
 
 19. Create a new deployment called redis-deploy in the dev-ns namespace with the redis image. It should have 2 replicas.
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  export dr="--dry-run=client"
@@ -673,7 +692,8 @@ export now="--force --grace-period=0"
 
 20. How many pods exist in the research namespace? 
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k get po -n research
@@ -688,7 +708,8 @@ export now="--force --grace-period=0"
     - Name: redis
     - Image name: redis
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k run redis --image=redis --namespace=finance --dry-run=client
@@ -708,7 +729,8 @@ export now="--force --grace-period=0"
 22. Which namespace has the blue pod in it?
 
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k get po -A | grep blue
@@ -732,7 +754,8 @@ export now="--force --grace-period=0"
     db-service     NodePort   10.43.187.8   <none>        6379:31378/TCP   5m53s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     Since the blue application and the db-service are in the same namespace, we can simply use the service name to access the database.
 
@@ -756,7 +779,8 @@ export now="--force --grace-period=0"
     db-service   ClusterIP   10.43.48.220   <none>        6379/TCP   7m19s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     Since the blue application and the db-service are in different namespaces. In this case, we need to use the service name along with the namespace to access the database. The FQDN (fully Qualified Domain Name) for the db-service in this example would be db-service.dev.svc.cluster.local.
 
@@ -770,7 +794,8 @@ export now="--force --grace-period=0"
 
 25. Create a new namespace called dev-ns. 
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k create ns dev-ns
@@ -796,7 +821,8 @@ export now="--force --grace-period=0"
     kubernetes   ClusterIP   10.43.0.1    <none>        443/TCP   6m33s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k describe svc kubernetes
@@ -831,7 +857,8 @@ export now="--force --grace-period=0"
          name: simple-webapp
 
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     Create the file and apply. 
 
@@ -868,7 +895,8 @@ export now="--force --grace-period=0"
 28. Create a service redis-service to expose the redis application within the cluster on port 6379.
 
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k get deploy
@@ -895,7 +923,8 @@ export now="--force --grace-period=0"
 
 29. Create a new pod called custom-nginx using the nginx image and expose it on container port 8080.
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k run custom-nginx --image=nginx --port=8080
@@ -907,7 +936,8 @@ export now="--force --grace-period=0"
 
 30. Create a pod called httpd using the image httpd:alpine in the default namespace. Next, create a service of type ClusterIP by the same name (httpd). The target port for the service should be 80.
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  export dr="--dry-run=client"
@@ -941,7 +971,8 @@ export now="--force --grace-period=0"
 
 31. Get the list of nodes in JSON format and store it in a file at /opt/outputs/nodes.json.
 
-        <details><summary> Answer </summary>
+        <details>
+            <summary> Answer </summary>
         
         ```bash
         controlplane ~ ➜  k get no -o json > /opt/outputs/nodes.json

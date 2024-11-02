@@ -33,7 +33,8 @@ export now="--force --grace-period=0"
 
 1. Deploy metrics-server to monitor the PODs and Nodes.
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po
@@ -81,7 +82,8 @@ export now="--force --grace-period=0"
 
 2. Identify the POD that consumes the most Memory(bytes) in default namespace.
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po
@@ -108,7 +110,8 @@ export now="--force --grace-period=0"
     webapp-1   1/1     Running   0          108s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✖ k logs webapp-1 | grep WARNING
@@ -130,7 +133,8 @@ export now="--force --grace-period=0"
     webapp-2   2/2     Running   0          17s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k logs webapp-2 | grep WARNING

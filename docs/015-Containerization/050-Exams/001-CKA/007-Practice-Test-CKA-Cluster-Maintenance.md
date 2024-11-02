@@ -47,7 +47,8 @@ export now="--force --grace-period=0"
     blue-6b478c8dbf-znjvb   1/1     Running   0          44s     10.244.0.6   controlplane   <none>           <none>    
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  kubectl drain --ignore-daemonsets node01
@@ -83,7 +84,8 @@ export now="--force --grace-period=0"
     node01         Ready,SchedulingDisabled   <none>          19m   v1.27.0 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     resume scheduling new pods onto the node, we need to uncordon the node. 
 
@@ -118,7 +120,8 @@ export now="--force --grace-period=0"
     node01         Ready    <none>          25m   v1.27.0 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     From the output below, we can see that there is a pod deployed on node01, and this pod is not part of a replicaset. This pod prevents the draining of the node. 
     We need to force the draining. 
@@ -178,7 +181,8 @@ export now="--force --grace-period=0"
     hr-app-6d6df76fc-259sn   1/1     Running   0          2m2s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k cordon node01 
@@ -202,7 +206,8 @@ export now="--force --grace-period=0"
 
 5. What is the current version of the cluster?
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get no -o wide
@@ -221,7 +226,8 @@ export now="--force --grace-period=0"
 
 6. How many nodes can host workloads in this cluster?
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k describe no node01 | grep -i taints
@@ -240,7 +246,8 @@ export now="--force --grace-period=0"
 
 7. The clsuter is managed via kubeadm. Check the latest stable version of Kubernetes as of today.
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     The latest version is the remote version in the output below.
 
@@ -268,7 +275,8 @@ export now="--force --grace-period=0"
 
 8. What is the latest version available for an upgrade with the current version of the kubeadm tool installed?
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     The latest version available is the target version.
 
@@ -309,7 +317,8 @@ export now="--force --grace-period=0"
     node01         Ready                      <none>          122m   v1.26.0
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     Drain the node first and verify.
 
@@ -459,7 +468,8 @@ export now="--force --grace-period=0"
     node01         Ready    <none>          138m   v1.26.0   192.11.110.6   <none>        Ubuntu 20.04.5 LTS   5.4.0-1106-gcp   containerd://1.6.6 
     ```
         
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     Drain the worker node.
 
@@ -587,7 +597,8 @@ export now="--force --grace-period=0"
 
 11. What is the version of ETCD running on the cluster?
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po -A | grep etc
@@ -606,7 +617,8 @@ export now="--force --grace-period=0"
 
 12. At what address can you reach the ETCD cluster from the controlplane node?
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     Describe the etcd pod and look for the listen-client-url.
 
@@ -625,7 +637,8 @@ export now="--force --grace-period=0"
 
 
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po -n kube-system | grep etc
@@ -647,7 +660,8 @@ export now="--force --grace-period=0"
 
 13. Where is the ETCD CA Certificate file located?
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po -n kube-system | grep etc
@@ -667,7 +681,8 @@ export now="--force --grace-period=0"
 
     Store the backup file at location /opt/snapshot-pre-boot.db
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     The command is from K8S docs: 
 
@@ -728,7 +743,8 @@ export now="--force --grace-period=0"
 
 15. Restore the original state of the cluster using the backup file /opt/snapshot-pre-boot.db
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     The command from the K8S docs:
 
@@ -829,7 +845,8 @@ export now="--force --grace-period=0"
     student-node ~ ➜   
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     student-node ~ ➜  k config get-contexts
@@ -844,7 +861,8 @@ export now="--force --grace-period=0"
 
 17. How many nodes (both controlplane and worker) are part of cluster1?
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     student-node ~ ➜  k get no
@@ -859,7 +877,8 @@ export now="--force --grace-period=0"
 
 18. Switch to cluster2 and check how many nodes.
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     student-node ~ ➜  k config use-context cluster2
@@ -881,7 +900,8 @@ export now="--force --grace-period=0"
 
 19. How is ETCD configured for cluster1?
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     student-node ~ ➜  k config use-context cluster1
@@ -903,7 +923,8 @@ export now="--force --grace-period=0"
 
 20. Check for the etcd of cluster2. You are currently connected to cluster1.
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     student-node ~ ➜  k config use-context cluster2
@@ -948,7 +969,8 @@ export now="--force --grace-period=0"
 
 21. Take a backup of etcd on cluster1 and save it on the student-node at the path /opt/cluster1.db
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     student-node ~ ✖ k config get-contexts
@@ -1048,7 +1070,8 @@ export now="--force --grace-period=0"
     - The snapshot was taken when there were objects created in the critical namespace on cluster2. These objects should be available post restore.
 
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     First, copy the backup file to the etcd-server.
 

@@ -33,7 +33,8 @@ export now="--force --grace-period=0"
 
 1. Identify the certificate file used for the kube-api server.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po -A
@@ -77,7 +78,8 @@ export now="--force --grace-period=0"
 
 2. Identify the Certificate file used to authenticate kube-apiserver as a client to ETCD Server.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po -A
@@ -101,7 +103,8 @@ export now="--force --grace-period=0"
 
 3. Identify the key used to authenticate kubeapi-server to the kubelet server.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po -A
@@ -126,7 +129,8 @@ export now="--force --grace-period=0"
 
 4. Identify the ETCD Server Certificate used to host ETCD server.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po -A
@@ -151,7 +155,8 @@ export now="--force --grace-period=0"
 5. Identify the ETCD Server CA Root Certificate used to serve ETCD Server.
     ETCD can have its own CA. So this may be a different CA certificate than the one used by kube-api server.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po -A
@@ -177,7 +182,8 @@ export now="--force --grace-period=0"
 
 6. What is the Common Name (CN) configured on the Kube API Server Certificate?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     Find the kube-api server cert first. 
 
@@ -218,7 +224,8 @@ export now="--force --grace-period=0"
 
 7. What are the alternate names configured on the Kube API Server Certificate?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  openssl x509  -noout -text -in /etc/kubernetes/pki/apiserver.crt | grep -i alternative -A 10
@@ -232,7 +239,8 @@ export now="--force --grace-period=0"
 
 8. What is the Common Name (CN) configured on the ETCD Server certificate?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po -A
@@ -270,7 +278,8 @@ export now="--force --grace-period=0"
 
 9. How long, from the issued date, is the Kube-API Server Certificate valid for?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po -A
@@ -307,7 +316,8 @@ export now="--force --grace-period=0"
 
 10. How long, from the issued date, is the Root CA Certificate valid for?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po -A
@@ -348,7 +358,8 @@ export now="--force --grace-period=0"
 
     You are asked to investigate and fix the issue. Once you fix the issue wait for sometime for kubectl to respond. Check the logs of the ETCD container.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     Check the certs. 
 
@@ -387,7 +398,8 @@ export now="--force --grace-period=0"
 
 12. The kube-api server stopped again! Check it out. Inspect the kube-api server logs and identify the root cause and fix the issue. Hint: Find the kube-apiserver container.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     We can use crictl. 
 
@@ -488,7 +500,8 @@ export now="--force --grace-period=0"
 
     - Approve the CSR Request
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  ls -l
@@ -555,7 +568,8 @@ export now="--force --grace-period=0"
     csr-fnjbq     24m     kubernetes.io/kube-apiserver-client-kubelet   system:node:controlplane   <none>              Approved,Issued 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get csr agent-smith -o yaml
@@ -615,7 +629,8 @@ export now="--force --grace-period=0"
 
 15. Where is the default kubeconfig file located in the current environment?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     The answer is /root/.kube/config
     ```bash
@@ -651,7 +666,8 @@ export now="--force --grace-period=0"
 
 16. In the default kubeconfig file, what is the user configured in the current context?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~/.kube ➜  grep -i context config
@@ -673,7 +689,8 @@ export now="--force --grace-period=0"
 
 17. A new kubeconfig file named my-kube-config is created. It is placed in the /root directory. How many clusters are defined in that kubeconfig file?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  ls -l
@@ -701,7 +718,8 @@ export now="--force --grace-period=0"
 
 18. In the new my-kube-config, what user is configured in the research context?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  grep -A 5 research my-kube-config 
@@ -717,7 +735,8 @@ export now="--force --grace-period=0"
 
 19. In the new my-kube-config, what is the name of the client-certificate file configured for the aws-user?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  grep -A 10 aws-user  my-kube-config
@@ -737,7 +756,8 @@ export now="--force --grace-period=0"
 
     Once the right context is identified, use the kubectl config use-context command.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✖ k config --kubeconfig my-kube-config get-contexts
@@ -764,7 +784,8 @@ export now="--force --grace-period=0"
 
 21. We don't want to have to specify the kubeconfig file option on each command. Make the my-kube-config file the default kubeconfig.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     There is no kubectl command to do this. Simply copy the contents of the custom kubeconfig to the default kubeconfig file.
 
@@ -780,7 +801,8 @@ export now="--force --grace-period=0"
 
     Try running the kubectl get pods command and look for the error. All users certificates are stored at /etc/kubernetes/pki/users.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✖ k config get-contexts 
@@ -820,7 +842,8 @@ export now="--force --grace-period=0"
 
 23. Inspect the environment and identify the authorization modes configured on the cluster.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po -A
@@ -849,7 +872,8 @@ export now="--force --grace-period=0"
 
 24. How many roles exist in the default namespace?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k api-resources | grep -i role
@@ -868,7 +892,8 @@ export now="--force --grace-period=0"
 
 25. How many roles exist in all namespaces together?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get roles -A
@@ -894,7 +919,8 @@ export now="--force --grace-period=0"
 26. What are the resources the kube-proxy role in the kube-system namespace is given access to?
 
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get roles -A
@@ -928,7 +954,8 @@ export now="--force --grace-period=0"
 
 27. Which account is the kube-proxy role assigned to?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     It is binded to a group: system:bootstrappers:kubeadm:default-node-token
 
@@ -966,7 +993,8 @@ export now="--force --grace-period=0"
 
     Use the --as dev-user option with kubectl to run commands as the dev-user.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po --as dev-user
@@ -993,7 +1021,8 @@ export now="--force --grace-period=0"
 
     - RoleBinding: Bound to dev-user
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```yaml
     ## role-rolebinding.yaml 
@@ -1051,7 +1080,8 @@ export now="--force --grace-period=0"
     dev-user-binding   Role/developer   26m 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k get po dark-blue-app -n blue --as dev-user
@@ -1140,7 +1170,8 @@ export now="--force --grace-period=0"
     developer   2023-12-30T16:01:43Z 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get role -n blue developer -o yaml > blue-dev-role.yaml 
@@ -1200,7 +1231,8 @@ export now="--force --grace-period=0"
 
 32. How many ClusterRoles do you see defined in the cluster?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get clusterroles --no-headers | wc -l
@@ -1213,7 +1245,8 @@ export now="--force --grace-period=0"
 
 33. What user/groups are the cluster-admin role bound to?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get clusterrole | grep admin
@@ -1247,7 +1280,8 @@ export now="--force --grace-period=0"
 
 34. What permissions does the clusterrole **cluster-admin** have?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get clusterrole | grep admin
@@ -1273,7 +1307,8 @@ export now="--force --grace-period=0"
 
 35. A new user michelle joined the team. She will be focusing on the nodes in the cluster. Create the required ClusterRoles and ClusterRoleBindings so she gets access to the nodes.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     ## michelle-clusterrole.yaml 
@@ -1345,7 +1380,8 @@ export now="--force --grace-period=0"
 
     - ClusterRoleBinding Role: storage-admin
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     ## storage-admin-clusterrole.yaml 
@@ -1420,7 +1456,8 @@ export now="--force --grace-period=0"
     dev       0         76s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k describe sa default 
@@ -1447,7 +1484,8 @@ export now="--force --grace-period=0"
     web-dashboard-97c9c59f6-f6krx   1/1     Running   0          43s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k describe po web-dashboard-97c9c59f6-f6krx | grep -i service
@@ -1468,7 +1506,8 @@ export now="--force --grace-period=0"
     web-dashboard-97c9c59f6-f6krx   1/1     Running   0          43s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     ## dashboard-sa.yaml 
@@ -1509,7 +1548,8 @@ export now="--force --grace-period=0"
     dashboard-sa   0         4m26s
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     k edit deployments.apps web-dashboard  
@@ -1554,7 +1594,8 @@ export now="--force --grace-period=0"
 
 41. What secret type must we choose for docker registry?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     root@controlplane ~ ➜  k create secret --help | grep docker
@@ -1574,7 +1615,8 @@ export now="--force --grace-period=0"
     web    2/2     2            2           104s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     We simply need to append at the beginning of the image. 
 
@@ -1603,7 +1645,8 @@ export now="--force --grace-period=0"
 
     Secret Type: docker-registry
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     Based on: https://kubernetes.io/docs/concepts/configuration/secret/
 
@@ -1673,7 +1716,8 @@ export now="--force --grace-period=0"
     web    2/2     1            2           13m 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     ```bash
     root@controlplane ~ ➜  k get deployments.apps web -o yaml > web.yaml
@@ -1723,7 +1767,8 @@ export now="--force --grace-period=0"
     ubuntu-sleeper   1/1     Running   0          76s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     Enter the pod and run whoami.
 
@@ -1745,7 +1790,8 @@ export now="--force --grace-period=0"
     ubuntu-sleeper   1/1     Running   0          76s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po ubuntu-sleeper -o yaml > ubuntu-sleeper.yaml
@@ -1806,7 +1852,8 @@ export now="--force --grace-period=0"
     ubuntu-sleeper   1/1     Running   0          2m48s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po ubuntu-sleeper -o yaml > ubuntu-sleeper.yaml
@@ -1858,7 +1905,8 @@ export now="--force --grace-period=0"
 
 48. How many network policies do you see in the environment?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k api-resources | grep -i network
@@ -1883,7 +1931,8 @@ export now="--force --grace-period=0"
     payroll-policy   name=payroll   37s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k describe networkpolicies.networking.k8s.io payroll-policy 
@@ -1921,7 +1970,8 @@ export now="--force --grace-period=0"
 
     - MySQL Port: 3306
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     ## internal-policy.yaml

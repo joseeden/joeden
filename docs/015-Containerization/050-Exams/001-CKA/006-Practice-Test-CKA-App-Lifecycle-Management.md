@@ -39,7 +39,8 @@ export now="--force --grace-period=0"
     frontend   4/4     4            4           84s  
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k describe deployments.apps frontend | grep -i strategy
@@ -54,7 +55,8 @@ export now="--force --grace-period=0"
 
 2. Upgrade the application by setting the image on the deployment to kodekloud/webapp-color:v2. Do not delete and re-create the deployment. Only set the new image name for the existing deployment.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k edit deployments.apps frontend 
@@ -113,7 +115,8 @@ export now="--force --grace-period=0"
     frontend   4/4     4            4           6m30s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✦ ➜  k describe deployments.apps frontend | grep -i unavailable
@@ -134,7 +137,8 @@ export now="--force --grace-period=0"
     frontend   4/4     4            4           6m30s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✦ ➜  k get deployments.apps 
@@ -193,7 +197,8 @@ export now="--force --grace-period=0"
     ubuntu-sleeper   1/1     Running   0          22s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po ubuntu-sleeper -o yaml | grep -i command -A 5
@@ -212,7 +217,8 @@ export now="--force --grace-period=0"
 
 6. Create a pod with the ubuntu image to run a container to sleep for 5000 seconds.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     ## ubuntu-sleeper-2.yaml 
@@ -261,7 +267,8 @@ export now="--force --grace-period=0"
         - 1200  
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     Commands should be enclosed in quotes. 
 
@@ -301,7 +308,8 @@ export now="--force --grace-period=0"
     - Image: kodekloud/webapp-color
     - Command line arguments: --color=green
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✦2 ➜  k run webapp-green --image  kodekloud/webapp-color $do -o yaml > green.yml
@@ -354,7 +362,8 @@ export now="--force --grace-period=0"
     webapp-color   1/1     Running   0          19s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k describe po webapp-color | grep -i env -A 5
@@ -376,7 +385,8 @@ export now="--force --grace-period=0"
     db-config          3      9s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✦ ➜  k describe cm db-config 
@@ -416,7 +426,8 @@ export now="--force --grace-period=0"
 
     - Data: APP_OTHER=disregard
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✦ ➜  k create cm webapp-config-map $do > webapp-color.yml
@@ -478,7 +489,8 @@ export now="--force --grace-period=0"
     ```
 
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     ```bash
     controlplane ~ ✦ ➜  k get cm
@@ -545,7 +557,8 @@ export now="--force --grace-period=0"
     ```
 
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k describe secrets dashboard-token 
@@ -578,7 +591,8 @@ export now="--force --grace-period=0"
 
     - Secret 3: DB_Password=password123
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  kubectl create secret generic db-secret \
@@ -622,7 +636,8 @@ export now="--force --grace-period=0"
 
     - Env From: Secret=db-secret
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po
@@ -692,7 +707,8 @@ export now="--force --grace-period=0"
     ```
 
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k describe po blue
@@ -760,7 +776,8 @@ export now="--force --grace-period=0"
     - Container 2 Image: redis
 
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     ontrolplane ~ ➜  k run yellow --image busybox $do
@@ -906,7 +923,8 @@ export now="--force --grace-period=0"
 17. Inspect the app pod and identify the number of containers in it. It is deployed in the elastic-stack namespace.
 
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po -n elastic-stack
@@ -960,7 +978,8 @@ export now="--force --grace-period=0"
     elastic-stack   kibana                                 1/1     Running   0          18m
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k -n elastic-stack exec -it app -- tail -10 /log/app.log
@@ -1005,7 +1024,8 @@ export now="--force --grace-period=0"
     elastic-stack   kibana                                 1/1     Running   0          18m
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po app -n elastic-stack -o yaml > elastic-app.yml 
@@ -1077,7 +1097,8 @@ export now="--force --grace-period=0"
     blue    1/1     Running   0          32s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k describe po blue
@@ -1132,7 +1153,8 @@ export now="--force --grace-period=0"
     purple   0/1     Init:0/2   0          40s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k describe po purple | grep -i status
@@ -1156,7 +1178,8 @@ export now="--force --grace-period=0"
     purple   0/1     Init:0/2   0          3m6s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po red  -o yaml > red.yml
@@ -1240,7 +1263,8 @@ export now="--force --grace-period=0"
     orange   0/1     Init:Error   1 (6s ago)   7s 
     ``` 
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✦2 ➜  k logs orange 

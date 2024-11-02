@@ -40,7 +40,8 @@ export now="--force --grace-period=0"
 
     - Volume Mount: /log
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po
@@ -140,7 +141,8 @@ export now="--force --grace-period=0"
 
     - Reclaim Policy: Retain 
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     ## pv-log.yaml
@@ -180,7 +182,8 @@ export now="--force --grace-period=0"
 
     - Access Modes: ReadWriteMany
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     ## pvc-log.yaml
@@ -230,7 +233,8 @@ export now="--force --grace-period=0"
     claim-log-1   Bound    pv-log   100Mi      RWX                           35m                       30m 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po webapp -o yaml > webapp.yml 
@@ -286,7 +290,8 @@ export now="--force --grace-period=0"
     pv-log   100Mi      RWX            Retain           Bound    default/claim-log-1                           7m27s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✦2 ➜  k describe pv pv-log 
@@ -307,7 +312,8 @@ export now="--force --grace-period=0"
 
 6. How many storage classes are there in the cluster?
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get sc
@@ -330,7 +336,8 @@ export now="--force --grace-period=0"
     portworx-io-priority-high   kubernetes.io/portworx-volume   Delete          Immediate              false                  36s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✖ k describe sc local-storage 
@@ -362,7 +369,8 @@ export now="--force --grace-period=0"
 
     - PVC requests volume size = 500Mi?
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get pv
@@ -427,7 +435,8 @@ export now="--force --grace-period=0"
     local-pvc   Pending                                      local-storage   5m17s 
     ```
         
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k run nginx --image nginx:alpine $do > nginx.yaml
@@ -484,7 +493,8 @@ export now="--force --grace-period=0"
 
     - volumeBindingMode: WaitForFirstConsumer
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     ## delayed-volume-sc.yaml 

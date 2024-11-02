@@ -51,7 +51,8 @@ export now="--force --grace-period=0"
         name: nginx  
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     Check the details of all pods, including pods in the kube-system namespace. Here we can see that there is no scheduler pod. Without this scheduler pod, all other pods in the default namespace will remain in pending state forever.
 
@@ -140,7 +141,8 @@ export now="--force --grace-period=0"
     db-2-ds4b8    1/1     Running   0          106s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k get po --show-labels=true
@@ -172,7 +174,8 @@ export now="--force --grace-period=0"
 3. How many PODs are in the finance business unit (bu)?
 
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k get po --show-labels=true | grep "bu=finance"
@@ -188,7 +191,8 @@ export now="--force --grace-period=0"
 
 4. How many objects are in the prod environment including PODs, ReplicaSets and any other objects?
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k get all --show-labels=true | grep "env=prod"
@@ -206,7 +210,8 @@ export now="--force --grace-period=0"
 5. Identify the POD which is part of the prod environment, the finance BU and of frontend tier?
 
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k get po -l bu=finance,env=prod,tier=frontend
@@ -218,7 +223,8 @@ export now="--force --grace-period=0"
 
 6. How many labels does node01 have?
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k describe  no node01 | grep Labels -A 10
@@ -239,7 +245,8 @@ export now="--force --grace-period=0"
 
 7. Apply a label color=blue to node node01
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k label no node01 color=blue
@@ -267,7 +274,8 @@ export now="--force --grace-period=0"
     ```
 
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k describe no node01 | grep Taints
@@ -283,7 +291,8 @@ export now="--force --grace-period=0"
     - value of mortein
     - effect of NoSchedule
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k taint no node01 spray=mortein:NoSchedule
@@ -297,7 +306,8 @@ export now="--force --grace-period=0"
 
 10. Create another pod named bee with the nginx image, which has a toleration set to the taint mortein.
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     Generate the YAML file first. 
 
@@ -360,7 +370,8 @@ export now="--force --grace-period=0"
     node01         Ready    <none>          34m   v1.27.0 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k describe no controlplane | grep Taint
@@ -378,7 +389,8 @@ export now="--force --grace-period=0"
 
 12. Set Node Affinity to the deployment to place the pods on node01 only.
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     Get the YAML file and modify by adding the parameters for the node affinity. See K8s docs for format.
 
@@ -441,7 +453,8 @@ export now="--force --grace-period=0"
     Use the label key - node-role.kubernetes.io/control-plane - which is already set on the controlplane node.
 
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     Verify label.
     ```bash
@@ -519,7 +532,8 @@ export now="--force --grace-period=0"
     rabbit   0/1     CrashLoopBackOff   4 (31s ago)   118s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k describe po rabbit | grep -A 5 -i requests
@@ -537,7 +551,8 @@ export now="--force --grace-period=0"
     elephant   0/1     CrashLoopBackOff   3 (33s ago)   86s
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     The status OOMKilled indicates that it is failing because the pod ran out of memory. Identify the memory limit set on the POD. 
 
@@ -566,7 +581,8 @@ export now="--force --grace-period=0"
     elephant   0/1     CrashLoopBackOff   3 (33s ago)   86s
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ✦ ➜  k get po -o yaml > el.yaml
@@ -622,7 +638,8 @@ export now="--force --grace-period=0"
 
 17. How many DaemonSets in all namespaces?
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k get ds -A
@@ -636,7 +653,8 @@ export now="--force --grace-period=0"
 
 18. What is the image used by the POD deployed by the kube-flannel-ds DaemonSet?
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k get ds -A
@@ -658,7 +676,8 @@ export now="--force --grace-period=0"
     - Namespace: kube-system
     - Image: registry.k8s.io/fluentd-elasticsearch:1.20
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     Copy the FluentD YAML from K8S docs and modify. Apply afterwards.
 
@@ -727,7 +746,8 @@ export now="--force --grace-period=0"
 
 20. How many static pods exist in this cluster in all namespaces? 
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k get po -A | grep controlplane
@@ -741,7 +761,8 @@ export now="--force --grace-period=0"
 
 21. On which nodes are the static pods created currently?
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k get po -o wide -A | grep controlplane
@@ -756,7 +777,8 @@ export now="--force --grace-period=0"
 
 22. What is the path of the directory holding the static pod definition files?
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     First idenity the kubelet config file (--config):
 
@@ -777,7 +799,8 @@ export now="--force --grace-period=0"
 
 23. How many pod definition files are present in the manifests directory?
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  ls -la /etc/kubernetes/manifests/
@@ -794,7 +817,8 @@ export now="--force --grace-period=0"
 
 24. What is the docker image used to deploy the kube-api server as a static pod?
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  ls -la /etc/kubernetes/manifests/
@@ -817,7 +841,8 @@ export now="--force --grace-period=0"
 
 25. Create a static pod named static-busybox that uses the busybox image and the command sleep 1000
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k run po static-busy-box --image busybox $do > bb.yml
@@ -878,7 +903,8 @@ export now="--force --grace-period=0"
 
 26. We just created a new static pod named static-greenbox. Prevent this pod from restarting when it is deleted.
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane /etc/kubernetes/manifests ✦2 ➜  k get po
@@ -932,7 +958,8 @@ export now="--force --grace-period=0"
 
 27. What is the image used in the scheduler pod?
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k get po -A
@@ -960,7 +987,8 @@ export now="--force --grace-period=0"
 28. Create a configmap that the new scheduler will employ using the concept of ConfigMap as a volume.
 We have already given a configMap definition file called my-scheduler-configmap.yaml at /root/ path that will create a configmap with name my-scheduler-config using the content of file /root/my-scheduler-config.yaml.
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  ls -l
@@ -1001,7 +1029,8 @@ We have already given a configMap definition file called my-scheduler-configmap.
 29. Deploy an additional scheduler to the cluster following the given specification.
     Use the manifest file provided at /root/my-scheduler.yaml. Use the same image as used by the default kubernetes scheduler.
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  ls -l
@@ -1064,7 +1093,8 @@ We have already given a configMap definition file called my-scheduler-configmap.
 
 30. Modify the nginx-pod.yml file POD to create a POD with the new custom scheduler.
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✦ ➜  k get po -A
