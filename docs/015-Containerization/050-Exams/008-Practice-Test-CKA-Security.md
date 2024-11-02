@@ -1,5 +1,5 @@
 ---
-title: CKA: Security
+title: "CKA: Security"
 tags: [Containerization, Containers, Kubernetes, Certifications, CKA, CKAD, CKSS]
 sidebar_position: 8
 last_update:

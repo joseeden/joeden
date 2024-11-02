@@ -1,5 +1,5 @@
 ---
-title: CKAD: Additional Updates
+title: "CKAD: Additional Updates"
 tags: [Containerization, Containers, Kubernetes, Certifications, CKA, CKAD, CKSS]
 sidebar_position: 
 last_update:

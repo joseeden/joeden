@@ -1,5 +1,5 @@
 ---
-title: CKAD: Configuration
+title: "CKAD: Configuration"
 tags: [Containerization, Containers, Kubernetes, Certifications, CKA, CKAD, CKSS]
 sidebar_position: 16
 last_update:

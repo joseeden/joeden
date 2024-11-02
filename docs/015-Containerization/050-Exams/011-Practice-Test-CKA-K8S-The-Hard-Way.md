@@ -1,5 +1,5 @@
 ---
-title: CKA: The Hard Way
+title: "CKA: Kubernetes The Hard Way"
 tags: [Containerization, Containers, Kubernetes, Certifications, CKA, CKAD, CKSS]
 sidebar_position: 
 last_update:

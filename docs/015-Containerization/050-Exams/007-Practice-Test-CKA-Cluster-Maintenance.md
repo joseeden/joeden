@@ -1,5 +1,5 @@
 ---
-title: CKA: Cluster Maintenance
+title: "CKA: Cluster Maintenance"
 tags: [Containerization, Containers, Kubernetes, Certifications, CKA, CKAD, CKSS]
 sidebar_position: 7
 last_update:
