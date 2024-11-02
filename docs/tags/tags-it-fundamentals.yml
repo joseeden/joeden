@@ -30,3 +30,12 @@ Tomcat:
   label: 'Tomcat'
   permalink: '/Tomcat'
   description: 'Docs related to Tomcat'  
+Windows Server:
+  label: 'Windows Server'
+  permalink: '/Windows Server'
+  description: 'Docs related to Windows Server'  
+Active Directory:
+  label: 'Active Directory'
+  permalink: '/Active Directory'
+  description: 'Docs related to Active Directory'  
+  
