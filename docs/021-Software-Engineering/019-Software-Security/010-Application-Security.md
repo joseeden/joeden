@@ -18,7 +18,7 @@ Application security focuses on protecting software applications from security t
 Input validation is crucial for protecting applications from malicious data by ensuring that only safe and expected inputs are processed.
 
 - Serves as quality control of data to ensure every piece of information is valid and secure.
-- Prevents common vulnerabilities like SQL injection and [cross-site scripting (XSS)](/docs/005-Cybersecurity/012-List-of-Attacks/099-Other-Attacks.md)
+- Prevents common vulnerabilities like SQL injection and [cross-site scripting (XSS)](/docs/007-Cybersecurity/012-List-of-Attacks/099-Other-Attacks.md)
 - Ensures data integrity and application stability, early in the process.
 
 **Validation Rules** delineate acceptable and unacceptable inputs.

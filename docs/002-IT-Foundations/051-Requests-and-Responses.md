@@ -252,4 +252,4 @@ Attackers can impersonate systems or users to gain unauthorized access to resour
 
 </div>
 
-For more information, please see [Social Engineering Attacks.](/docs/005-Cybersecurity/012-List-of-Attacks/003-Social-Engineering-Attacks.md)
+For more information, please see [Social Engineering Attacks.](/docs/007-Cybersecurity/012-List-of-Attacks/003-Social-Engineering-Attacks.md)

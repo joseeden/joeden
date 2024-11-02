@@ -27,7 +27,7 @@ SELinu is a powerful security module for Linux that implements Mandatory Access 
   - Enforces strict policies controlling access to files, processes, and resources.
   - Prevents unauthorized actions by users and applications.
   - Policies are defined by the administrator and enforced by the kernel.
-  - For mroe information, please see [Mandatory Access Control (MAC)](/docs/005-Cybersecurity/006-Identity-and-Access-Management/008-Logical-Access.md#mandatory-access-control-mac)
+  - For mroe information, please see [Mandatory Access Control (MAC)](/docs/007-Cybersecurity/006-Identity-and-Access-Management/008-Logical-Access.md#mandatory-access-control-mac)
 
 - **Fine-Grained Security Policies**
 

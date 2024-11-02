@@ -31,10 +31,10 @@ Security must be embedded throughout the software development lifecycle (SDLC), 
 
 Developers should be aware of various security vulnerabilities to avoid them effectively. Key risks include:
 
-- [SQL injection](/docs/005-Cybersecurity/012-List-of-Attacks/006-Injection-Attacks.md)
-- [Cross-site scripting (XSS)](/docs/005-Cybersecurity/012-List-of-Attacks/099-Other-Attacks.md)
-- [Cross-site request forgery (CSRF)](/docs/005-Cybersecurity/012-List-of-Attacks/099-Other-Attacks.md)
-- [Buffer overflows](/docs/005-Cybersecurity/012-List-of-Attacks/015-Overflow-Attacks.md)
+- [SQL injection](/docs/007-Cybersecurity/012-List-of-Attacks/006-Injection-Attacks.md)
+- [Cross-site scripting (XSS)](/docs/007-Cybersecurity/012-List-of-Attacks/099-Other-Attacks.md)
+- [Cross-site request forgery (CSRF)](/docs/007-Cybersecurity/012-List-of-Attacks/099-Other-Attacks.md)
+- [Buffer overflows](/docs/007-Cybersecurity/012-List-of-Attacks/015-Overflow-Attacks.md)
 
 ## Risk Mitigation Strategies  
 
