@@ -15,7 +15,7 @@ last_update:
 
 - [POD Design](/docs/015-Containerization/050-Exams/002-CKAD/018-Practice-Test-CKAD-Pod-Design.md)
 
-- [Services & Networking](/docs/015-Containerization/050-Exams/002-CKAD/019-Practice-Test-CKAD-Services-Networking,md)
+- [Services & Networking](/docs/015-Containerization/050-Exams/002-CKAD/019-Practice-Test-CKAD-Services-Networking.md)
 
 - [State Persistence](/docs/015-Containerization/050-Exams/002-CKAD/020-Practice-Test-CKAD-State-Persistence.md)
 

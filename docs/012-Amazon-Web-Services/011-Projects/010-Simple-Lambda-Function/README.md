@@ -173,13 +173,15 @@ Click **View CloudWatch logs**.
 
 </div>
 
-Select the latest log stream. The log events will be displayed here. You can click each event to see more details about the event
+Select the latest log stream to view log events. 
 
 <div class='img-center'>
 
 ![](/img/docs/1102-aws-sample-lambda-function-cloudwatch-select-latest-logstream.png)
 
 </div>
+
+You can click each event for more details.
 
 <div class='img-center'>
 
