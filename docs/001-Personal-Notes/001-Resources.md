@@ -53,10 +53,6 @@ last_update:
 - [Getting Hands-On with Azure CLI](https://cloudacademy.com/learning-paths/azure-cli-3377/)
 
 
-## Containers and Kubernetes
-
-- [Certified Kubernetes Administrator (CKA) Exam Preparation](https://cloudacademy.com/learning-paths/certified-kubernetes-administrator-exam-preparation-242/)
-
 
 ## Infrastructure as Code 
 
@@ -102,7 +98,6 @@ MongoDB:
 
 ## Jenkins
 
-
 - [Jenkins 2 Bootcamp: Fully Automate Builds to Deployment 2020](https://www.udemy.com/course/jenkins-continuous-integration-bootcamp/)
 
 - [Jenkins, From Zero To Hero: Become a DevOps Jenkins Master](https://www.udemy.com/course/jenkins-from-zero-to-hero/)
@@ -112,3 +107,144 @@ MongoDB:
 - [Installing Jenkins](https://www.jenkins.io/doc/book/installing/linux/#red-hat-centos)
 
 - [Ansible, right way to enable EPEL: yum_repository vs yum?](https://unix.stackexchange.com/questions/560024/ansible-right-way-to-enable-epel-yum-repository-vs-yum)
+
+
+
+## Containers and Kubernetes
+
+**Docker Courses**:
+
+- [Docker in Production Using Amazon Web Services](https://www.pluralsight.com/courses/docker-production-using-amazon-web-services)
+
+- [Building, Deploying, and Running Containers in Production](https://cloudacademy.com/learning-paths/building-deploying-and-running-containers-in-production-1-888/#)
+
+- [Docker and Kubernetes: The Complete Guide](https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/)
+
+- [Docker in Production Using Amazon Web Services](https://www.pluralsight.com/courses/docker-production-using-amazon-web-services)
+
+- [The Complete Practical Docker Guide](https://www.oreilly.com/library/view/the-complete-practical/9781803247892/)
+
+- [Complete AWS ECS Bootcamp (Beginner friendly)](https://www.udemy.com/course/aws-ecs-devops-masterclass/)
+
+ 
+**Kubernetes Courses**:
+
+- [Getting Started with Kubernetes LiveLessons, 2nd Edition](https://www.oreilly.com/library/view/getting-started-with/9780136787709/)
+
+- [Hands-on Kubernetes](https://www.oreilly.com/library/view/hands-on-kubernetes/9780136702887/)
+
+- [Learning Path - Kubernetes Administration](https://www.pluralsight.com/paths/kubernetes-administration)
+
+- [Learning Path - Using Kubernetes as a Developer](https://www.pluralsight.com/paths/using-kubernetes-as-a-developer)
+
+- [Learn DevOps: The Complete Kubernetes Course](https://www.udemy.com/course/learn-devops-the-complete-kubernetes-course/)
+
+- [Cloud Native Fundamentals by SUSE](https://www.udacity.com/course/cloud-native-fundamentals--ud064)
+
+- [Running Kubernetes on AWS (EKS)](https://www.linkedin.com/learning/running-kubernetes-on-aws-eks)
+
+- [Hands-On Amazon Elastic Kubernetes Service (EKS) LiveLessons: Running Microservices](https://www.oreilly.com/library/view/hands-on-amazon-elastic/9780137446667/)
+
+- [Packaging Applications with Helm for Kubernetes](https://www.pluralsight.com/courses/kubernetes-packaging-applications-helm)
+
+- [Certified Kubernetes Administrator (CKA) Exam Preparation](https://cloudacademy.com/learning-paths/certified-kubernetes-administrator-exam-preparation-242/)
+
+
+**Other resources on Docker**:
+
+- [Dockerfile reference](https://docs.docker.com/engine/reference/builder/#from)
+
+- [Best practices for writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+
+- [Docker Build command](https://docs.docker.com/engine/reference/commandline/build/)
+
+- [Docker Run command](https://docs.docker.com/engine/reference/commandline/run/)
+
+- [Introduction to Docker registry](https://docs.docker.com/registry/introduction/)
+
+- [Docker Tag command](https://docs.docker.com/engine/reference/commandline/tag/)
+
+- [Docker Push command](https://docs.docker.com/engine/reference/commandline/push/)
+
+- [Open Container Initiative (OCI) Specifications](https://www.docker.com/blog/demystifying-open-container-initiative-oci-specifications/)
+
+- [Buildpacks: An App’s Brief Journey from Source to Image](https://buildpacks.io/docs/app-journey/)
+
+
+**Other resources on Kubernetes**:
+
+- [DNS for Services and Pods](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/)
+
+- [Custom Resources or CRDs](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/)
+
+- [Autoscaling in Kubernetes](https://kubernetes.io/blog/2016/07/autoscaling-in-kubernetes/)
+
+- [Kubernetes Components](https://kubernetes.io/docs/concepts/overview/components/)
+
+- [eksctl - Config file schema](https://eksctl.io/usage/schema/#config-file-schema)
+
+
+**Github repositories**:
+
+- [Kubernetes Autoscaler](https://github.com/kubernetes/autoscaler)
+
+- [kubernetes/kops](https://github.com/kubernetes/kops)
+
+- [wardviaene/kubernetes-course](https://github.com/wardviaene/kubernetes-course)
+
+- [wardviaene/devops-box (devops box with pre-built tools)](https://github.com/wardviaene/devops-box)
+
+- [kelseyhightower/kubernetes-the-hard-way](https://github.com/kelseyhightower/kubernetes-the-hard-way)
+
+- [mmumshad/kubernetes-the-hard-way](https://github.com/mmumshad/kubernetes-the-hard-way)
+
+- [yankils/Simple-DevOps-Project](https://github.com/yankils/Simple-DevOps-Project)
+
+- [phcollignon/helm](https://github.com/phcollignon/helm)
+
+- [phcollignon/helm3](https://github.com/phcollignon/helm3)
+
+
+
+Metrics, Logging, Health Checks, and Tracing:
+
+- [Pattern: Health Check API](https://microservices.io/patterns/observability/health-check-api.html)
+
+- [Best Practice on Metric Naming](https://prometheus.io/docs/instrumenting/writing_exporters/#metrics)
+
+- [How to Log a Log: Application Logging Best Practices](https://logz.io/blog/logging-best-practices/)
+
+- [log4j - Logging Levels](https://www.tutorialspoint.com/log4j/log4j_logging_levels.htm)
+
+- [Enabling Distributed Tracing for Microservices With Jaeger in Kubernetes](https://containerjournal.com/topics/container-ecosystems/enabling-distributed-tracing-for-microservices-with-jaeger-in-kubernetes/)
+
+
+## DNS 
+
+Free DNS Service using [freedns](https://freedns.afraid.org/)
+
+- Sign up at http://freedns.afraid.org/
+- Choose for subdomain hosting
+- Enter the AWS nameservers given to you in route53 as nameservers for the subdomain
+
+Free DNS Service using [dot.tk](http://www.dot.tk)
+
+- provides a free .tk domain name you can use
+- you can point it to the amazon AWS nameservers
+
+Free DNS Service using [Namecheap](https://www.namecheap.com/)
+- often has promotions for tld’s like .co for just a couple of bucks
+
+**Certification Exams**:
+
+- [Open Source Curriculum for CNCF Certification Courses](https://github.com/cncf/curriculum)
+
+- [Certified Kubernetes Administrator (CKA)](https://www.cncf.io/certification/cka/)
+
+- [Certified Kubernetes Application Developer (CKAD)](https://www.cncf.io/training/certification/ckad/)
+
+- [Certified Kubernetes Security Specialist (CKS)](https://www.cncf.io/training/certification/cks/)
+
+- [Important Instructions: CKA and CKAD](https://docs.linuxfoundation.org/tc-docs/certification/tips-cka-and-ckad)
+
+- [Linux Foundation Certification Exam: Candidate Handbook](https://docs.linuxfoundation.org/tc-docs/certification/lf-handbook2)
