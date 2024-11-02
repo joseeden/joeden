@@ -2,7 +2,7 @@
 title: "AWS SAM"
 description: "Build and deploy serverless applications"
 tags: [Cloud, AWS, DevOps, Serverless, Certifications]
-sidebar_position: 5
+sidebar_position: 25
 last_update:
   date: 8/30/2020
 ---

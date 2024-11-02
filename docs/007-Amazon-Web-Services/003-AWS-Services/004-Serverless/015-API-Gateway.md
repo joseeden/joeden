@@ -2,7 +2,7 @@
 title: "Amazon API Gateway"
 description: "Fully managed 'front-door' for applications"
 tags: [Cloud, AWS, DevOps, Serverless, Certifications]
-sidebar_position: 3
+sidebar_position: 15
 last_update:
   date: 8/30/2020
 ---
