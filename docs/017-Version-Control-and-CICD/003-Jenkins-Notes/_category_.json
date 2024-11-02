@@ -1,6 +1,6 @@
 {
-  "label": "CICD",
-  "position": 2,
+  "label": "Jenkins Notes",
+  "position": 3,
   "link": {
     "type": "generated-index"
   }

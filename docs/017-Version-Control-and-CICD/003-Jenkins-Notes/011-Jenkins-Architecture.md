@@ -97,7 +97,7 @@ Build steps define the actions taken during a build process, while build trigger
    - Automate build initiation based on events, such as code commits.  
    - Supports scheduled builds and manual triggers.  
 
-For more information, please see [Jenkins Build Triggers.](/docs/017-Version-Control-and-CICD/002-CICD/002-Jenkins-Notes/015-Jenkins-Build-Triggers.md)
+For more information, please see [Jenkins Build Triggers.](/docs/017-Version-Control-and-CICD/002-CICD/003-Jenkins-Notes/015-Jenkins-Build-Triggers.md)
 
 ## Artifacts and Repositories
 

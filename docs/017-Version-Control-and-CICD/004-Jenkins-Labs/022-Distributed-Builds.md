@@ -46,7 +46,7 @@ The link above set up both the Jenkins master and Jenkins slave using Ansible. I
 
 Distributed builds allow build jobs to run on separate agents (nodes), while the master controls and assigns specific builds to specific agents, enhancing parallelism and supporting multiconfiguration setups.
 
-For more information, please see [Distributed Builds.](/docs/017-Version-Control-and-CICD/002-CICD/002-Jenkins-Notes/030-Distributed-Builds.md)
+For more information, please see [Distributed Builds.](/docs/017-Version-Control-and-CICD/002-CICD/003-Jenkins-Notes/030-Distributed-Builds.md)
 
 
 ## Install Jenkins Agent on Slave Node Manually
