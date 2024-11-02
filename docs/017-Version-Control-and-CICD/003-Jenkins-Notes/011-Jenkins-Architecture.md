@@ -97,7 +97,7 @@ Build steps define the actions taken during a build process, while build trigger
    - Automate build initiation based on events, such as code commits.  
    - Supports scheduled builds and manual triggers.  
 
-For more information, please see [Jenkins Build Triggers.](/docs/017-Version-Control-and-CICD/002-CICD/003-Jenkins-Notes/015-Jenkins-Build-Triggers.md)
+For more information, please see [Jenkins Build Triggers.](/docs/017-Version-Control-and-CICD/003-Jenkins-Notes/015-Jenkins-Build-Triggers.md)
 
 ## Artifacts and Repositories
 
@@ -142,4 +142,4 @@ There are different tests developers can run on their code:
 - Functional Test
 - Acceptance Test
 
-For more information, please see [Types of Tests.](/docs/017-Version-Control-and-CICD/002-CICD/CICD-Overview.md#types-of-tests)
+For more information, please see [Types of Tests.](/docs/017-Version-Control-and-CICD/CICD-Overview.md#types-of-tests)

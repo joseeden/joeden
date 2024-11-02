@@ -31,8 +31,8 @@ If you have your Jenkins server already setup, you can skip this section. There'
 
 To setup Jenkins:
 
-- [Install Jenkins on Linux](/docs/017-Version-Control-and-CICD/002-CICD/004-Jenkins-Labs/004-Installing-Jenkins.md)
-- [Setting up Ansible and Jenkins.](/docs/017-Version-Control-and-CICD/002-CICD/004-Jenkins-Labs/005-Setup-Ansible-and-Jenkins.md)
+- [Install Jenkins on Linux](/docs/017-Version-Control-and-CICD/004-Jenkins-Labs/004-Installing-Jenkins.md)
+- [Setting up Ansible and Jenkins.](/docs/017-Version-Control-and-CICD/004-Jenkins-Labs/005-Setup-Ansible-and-Jenkins.md)
 
 
 
@@ -209,7 +209,7 @@ Select the repository to be used. This is the repo that you just cloned in the p
 
 :::info[NOTE]
 
-If you [used Ansible to setup Jenkins](/docs/017-Version-Control-and-CICD/002-CICD/004-Jenkins-Labs/005-Setup-Ansible-and-Jenkins.md), the pipeline should be created successfully. If you already have a Jenkins server set up, you might encounter an error when creating the pipeline in Blue Ocean.
+If you [used Ansible to setup Jenkins](/docs/017-Version-Control-and-CICD/004-Jenkins-Labs/005-Setup-Ansible-and-Jenkins.md), the pipeline should be created successfully. If you already have a Jenkins server set up, you might encounter an error when creating the pipeline in Blue Ocean.
 
 Don't worry, you just need to install the [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [tidy](https://snapcraft.io/install/tidy/rhel) package on your Jenkins server. Note that since I'm using a RHEL 8 machine, I'm using `yum` and/or dnf for any package installation. If you're using Ubuntu, use `apt`.
 
