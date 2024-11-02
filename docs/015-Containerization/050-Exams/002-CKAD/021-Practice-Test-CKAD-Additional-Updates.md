@@ -290,8 +290,11 @@ export now="--force --grace-period=0"
       
 
 
-8. Inspect the environment and identify the authorization modes configured on the cluster.<details>
-    <summary> Answer </summary>
+8. Inspect the environment and identify the authorization modes configured on the cluster.
+
+
+    <details>
+        <summary> Answer </summary>
 
     ```bash
     controlplane ~ ✦ ➜  k get po -n kube-system 
@@ -304,9 +307,6 @@ export now="--force --grace-period=0"
     kube-proxy-65s6j                       1/1     Running   0          8m31s
     kube-scheduler-controlplane            1/1     Running   0          8m43s 
     ```
-    
-    <details>
-        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✦ ✖ k describe -n kube-system po kube-apiserver-controlplane | grep -i auth
