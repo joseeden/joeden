@@ -1,5 +1,5 @@
 ---
-title: "CKA: Storage"
+title: "Storage"
 tags: [Containerization, Containers, Kubernetes, Certifications, CKA, CKAD, CKSS]
 sidebar_position: 9
 last_update:

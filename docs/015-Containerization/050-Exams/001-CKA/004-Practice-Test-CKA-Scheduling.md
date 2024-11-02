@@ -1,5 +1,5 @@
 ---
-title: "CKA: Scheduling"
+title: "Scheduling"
 tags: [Containerization, Containers, Kubernetes, Certifications, CKA, CKAD, CKSS]
 sidebar_position: 4
 last_update:

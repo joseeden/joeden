@@ -1,5 +1,5 @@
 ---
-title: "CKA: App Lifecycle and Management"
+title: "App Lifecycle and Management"
 tags: [Containerization, Containers, Kubernetes, Certifications, CKA, CKAD, CKSS]
 sidebar_position: 6
 last_update:

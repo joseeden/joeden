@@ -1,5 +1,5 @@
 ---
-title: "CKAD: Multi-Container Pods"
+title: "Multi-Container Pods"
 tags: [Containerization, Containers, Kubernetes, Certifications, CKA, CKAD, CKSS]
 sidebar_position: 17
 last_update:

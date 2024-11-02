@@ -1,5 +1,5 @@
 ---
-title: "CKAD: Services and Networking"
+title: "Services and Networking"
 tags: [Containerization, Containers, Kubernetes, Certifications, CKA, CKAD, CKSS]
 sidebar_position: 19
 last_update:

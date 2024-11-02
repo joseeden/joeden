@@ -1,5 +1,5 @@
 ---
-title: "CKA: Mock Exam"
+title: "Mock Exam"
 tags: [Containerization, Containers, Kubernetes, Certifications, CKA, CKAD, CKSS]
 sidebar_position: 14
 last_update:

@@ -1,5 +1,5 @@
 ---
-title: "CKAD: State Persistence"
+title: "State Persistence"
 tags: [Containerization, Containers, Kubernetes, Certifications, CKA, CKAD, CKSS]
 sidebar_position: 20
 last_update:

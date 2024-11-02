@@ -1,5 +1,5 @@
 ---
-title: "CKA: Logging and Monitoring"
+title: "Logging and Monitoring"
 tags: [Containerization, Containers, Kubernetes, Certifications, CKA, CKAD, CKSS]
 sidebar_position: 5
 last_update:

@@ -1,5 +1,5 @@
 ---
-title: "CKA: Core Concepts"
+title: "Core Concepts"
 tags: [Containerization, Containers, Kubernetes, Certifications, CKA, CKAD, CKSS]
 sidebar_position: 3
 last_update:
