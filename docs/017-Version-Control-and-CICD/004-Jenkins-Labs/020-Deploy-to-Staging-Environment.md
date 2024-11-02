@@ -30,15 +30,15 @@ If you have your Jenkins server already setup, you can skip this section. There'
 
 To setup Jenkins:
 
-- [Install Jenkins on Linux](/docs/017-Version-Control-and-CICD/002-CICD/003-Jenkins-Labs/004-Installing-Jenkins.md)
-- [Setting up Ansible and Jenkins.](/docs/017-Version-Control-and-CICD/002-CICD/003-Jenkins-Labs/005-Setup-Ansible-and-Jenkins.md)
+- [Install Jenkins on Linux](/docs/017-Version-Control-and-CICD/002-CICD/004-Jenkins-Labs/004-Installing-Jenkins.md)
+- [Setting up Ansible and Jenkins.](/docs/017-Version-Control-and-CICD/002-CICD/004-Jenkins-Labs/005-Setup-Ansible-and-Jenkins.md)
 
 
 ## Tomcat as Staging Environment
 
 Apache Tomcat can serve as an effective staging environment for testing applications before production. By deploying to Tomcat, teams can evaluate application functionality in a controlled setting, ensuring it meets quality standards before full release. 
 
-To install Tomcat, please see [Setup Tomcat.](/docs/017-Version-Control-and-CICD/002-CICD/003-Jenkins-Labs/006-Setup-Tomcat.md)
+To install Tomcat, please see [Setup Tomcat.](/docs/017-Version-Control-and-CICD/002-CICD/004-Jenkins-Labs/006-Setup-Tomcat.md)
 
 
 ## Install Plugins 

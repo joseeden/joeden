@@ -11,7 +11,7 @@ last_update:
 
 :::info[UPDATE]
 
-A working lab on Git SCM Polling can be found in [Single-server Deployment.](/docs/017-Version-Control-and-CICD/002-CICD/003-Jenkins-Labs/030-Single-Server-Deployment.md)
+A working lab on Git SCM Polling can be found in [Single-server Deployment.](/docs/017-Version-Control-and-CICD/002-CICD/004-Jenkins-Labs/030-Single-Server-Deployment.md)
 
 :::
 
@@ -39,13 +39,13 @@ If you have your Jenkins server already setup, you can skip this section. There'
 
 To setup Jenkins:
 
-- [Install Jenkins on Linux](/docs/017-Version-Control-and-CICD/002-CICD/003-Jenkins-Labs/004-Installing-Jenkins.md)
-- [Setting up Ansible and Jenkins.](/docs/017-Version-Control-and-CICD/002-CICD/003-Jenkins-Labs/005-Setup-Ansible-and-Jenkins.md)
+- [Install Jenkins on Linux](/docs/017-Version-Control-and-CICD/002-CICD/004-Jenkins-Labs/004-Installing-Jenkins.md)
+- [Setting up Ansible and Jenkins.](/docs/017-Version-Control-and-CICD/002-CICD/004-Jenkins-Labs/005-Setup-Ansible-and-Jenkins.md)
 
 
 ## Using Git Hooks
 
-As a recap of the previous lab on [Source Control Polling](/docs/017-Version-Control-and-CICD/002-CICD/003-Jenkins-Labs/013-Source-Control-Polling.md), SCM polling provides a more efficient way than periodically checking for updates in the source code. Another option is to use **git hooks**
+As a recap of the previous lab on [Source Control Polling](/docs/017-Version-Control-and-CICD/002-CICD/004-Jenkins-Labs/013-Source-Control-Polling.md), SCM polling provides a more efficient way than periodically checking for updates in the source code. Another option is to use **git hooks**
 
 With Git Hooks, our feedback loop is much shorter, thus we can deploy builds much faster.
 
@@ -184,6 +184,6 @@ In addition to this, I also ensured Jenkins is accessible from the internet, but
 
 :::info[UPDATE]
 
-A working lab on Git SCM Polling can be found in [Single-server Deployment.](/docs/017-Version-Control-and-CICD/002-CICD/003-Jenkins-Labs/030-Single-Server-Deployment.md)
+A working lab on Git SCM Polling can be found in [Single-server Deployment.](/docs/017-Version-Control-and-CICD/002-CICD/004-Jenkins-Labs/030-Single-Server-Deployment.md)
 
 :::

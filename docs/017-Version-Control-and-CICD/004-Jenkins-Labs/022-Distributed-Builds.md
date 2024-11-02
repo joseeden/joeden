@@ -31,8 +31,8 @@ If you have your Jenkins server already setup, you can skip this section. There'
 
 To setup Jenkins:
 
-- [Install Jenkins on Linux](/docs/017-Version-Control-and-CICD/002-CICD/003-Jenkins-Labs/004-Installing-Jenkins.md)
-- [Setting up Ansible and Jenkins.](/docs/017-Version-Control-and-CICD/002-CICD/003-Jenkins-Labs/005-Setup-Ansible-and-Jenkins.md)
+- [Install Jenkins on Linux](/docs/017-Version-Control-and-CICD/002-CICD/004-Jenkins-Labs/004-Installing-Jenkins.md)
+- [Setting up Ansible and Jenkins.](/docs/017-Version-Control-and-CICD/002-CICD/004-Jenkins-Labs/005-Setup-Ansible-and-Jenkins.md)
 
 
 :::info[NOTE]
@@ -90,7 +90,7 @@ To enable SSH login without password, please see [Configure Build Accounts.](#co
 
 I recommend following the link below to install Jenkins using Ansible.
 
-- [Setting up Ansible and Jenkins.](/docs/017-Version-Control-and-CICD/002-CICD/003-Jenkins-Labs/005-Setup-Ansible-and-Jenkins.md)
+- [Setting up Ansible and Jenkins.](/docs/017-Version-Control-and-CICD/002-CICD/004-Jenkins-Labs/005-Setup-Ansible-and-Jenkins.md)
 
 
 ## Add User on Slave Node
