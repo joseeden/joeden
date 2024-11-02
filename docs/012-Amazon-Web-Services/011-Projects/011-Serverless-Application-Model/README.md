@@ -26,7 +26,7 @@ You will need to install the following in your local terminal:
 - Install Python.
 
     ```bash
-    sudo apt install python3.12
+    sudo apt install =y python3.12
     ```
 
 - Install AWS CLI. [More details here.](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
