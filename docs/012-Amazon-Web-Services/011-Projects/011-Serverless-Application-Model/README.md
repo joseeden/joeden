@@ -21,11 +21,33 @@ For more information, please see [AWS SAM.](/docs/012-Amazon-Web-Services/003-AW
 
 ## Pre-requisites 
 
-The detailed steps can be found here: [Getting started with AWS SAM](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-getting-started.html)
+You will need to install the following in your local terminal:
 
-- Download the [AWS SAM Cli file.](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-getting-started.html)
+- Install Python.
 
-- Unzip the file and install.
+    ```bash
+    sudo apt install python3.12
+    ```
+
+- Install AWS CLI. [More details here.](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+
+    ```bash
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+    unzip awscliv2.zip
+    sudo ./aws/install 
+    ```
+
+- Verify AWS CLI installation.
+
+    ```bash
+    $ aws --version
+
+    aws-cli/2.19.1 Python/3.12.6 Linux/5.15.153.1-microsoft-standard-WSL2 exe/x86_64.ubuntu.22  
+    ```
+
+- Download the [AWS SAM CLI file.](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-getting-started.html)
+
+- Unzip the AWS SAM file and install.
 
     ```bash
     unzip aws-sam-cli-linux-x86_64.zip -d sam-installation  
@@ -44,6 +66,48 @@ The detailed steps can be found here: [Getting started with AWS SAM](https://doc
     SAM CLI, version 1.127.0  
     ```
 
+
+## Authenticate your CLI 
+
+Create a user in IAM and provide it the necessary permissions to run AWS SAM. For testing purposes, you can provide it administrator access for now but note that **limited permissions should always be provided to IAM users.**
+
+```
+IAM user >  Create user > Enter user name > Next > Next > Create User 
+```
+
+Select your user and go to Security credentials and then under Access keys, click **Create access key.** Select CLI for use case and chekc the confirmation statement at the bottom. Click **Next** and then Create **Access key.**
+
+<div class='img-center'>
+
+![](/img/docs/1102-aws-sam-auth-cli.png)
+
+</div>
+
+<div class='img-center'>
+
+![](/img/docs/1102-aws-sam-auth-cli-create-access-key.png)
+
+</div>
+
+In the **Retrieve access keys**, click Show to see the secret access key. This is the only time the secreat access key will be shown. Make sure to note it down. Click **Done.**
+
+![](/img/docs/1102-aws-sam-auth-cli-create-access-key-show-secret-access-key.png)
+
+To configure your CLI, run:
+
+```bash
+aws configure  
+```
+
+Then enter the access key and secret access key:
+
+```bash
+AWS Access Key ID [None]: AKIA4LE56APQMRZJEIEV
+AWS Secret Access Key [None]: ****************************************
+Default region name [None]: 
+Default output format [None]: 
+```
+
 ## Create the Base Configuration File
 
 We can create our own base configuration file, but we can also let AWS SAM initialize a base config file.
@@ -60,8 +124,6 @@ It will return the following response. Enter 1 to select quickstart templates fo
 ![](/gif/docs/sample-aws-sam.gif)
 
 </div>
-
-
 
 It will create a directory that contains the configuration files.
 
@@ -128,19 +190,14 @@ def lambda_handler(event, context):
  
 ```
 
-## Authenticate your CLI 
-
-Create a user in IAM and provide it the necessary permissions to run AWS SAM. For testing purposes, you can provide it administrator access for now but note that **limited permissions should always be provided to IAM users.**
-
-
-
-
 
 ## Build and Package the Application 
 
 After initializing the project, the next step is to build and package the application. Go to the project directory and run:
 
 ```bash
+cd sam-app
 sam build
 sam deploy 
 ```
+
