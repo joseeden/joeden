@@ -148,7 +148,7 @@ Essentially, submodules in the remote repository act as pointers. Thus, when you
 $ tree test-repos/
 test-repos/
 ├── go-webapp-sample
-├── jenkins-project
+├── test-jenkins-project
 └── test-static-site
 
 4 directories, 0 files 
@@ -323,7 +323,7 @@ To convert the embedded subrepo to a submodule, you need to do this steps:
     git add .; git commit -m "Added submodule"; git push 
     ```
 
-7. In Github, you can see the submodule inside the parent repo. In my case, the submodule name is **jenkins-project** but the name will appear different because it's actually a pointer.
+7. In Github, you can see the submodule inside the parent repo. In my case, the submodule name is **test-jenkins-project** but the name will appear different because it's actually a pointer.
 
     ![](/img/docs/1031-added-submodule-successss.png)
 

@@ -240,7 +240,7 @@ If you're in an environment without systemd (like many Docker containers), many 
 The sample project can be found here: 
 
 ```bash
-https://github.com/joseeden/jenkins-project 
+https://github.com/joseeden/test-jenkins-project 
 ```
 
 :::info[Use git credentials when cloning]
@@ -288,7 +288,7 @@ Once you configure the pipeline in the succeeding steps, you can check the **Rec
 
 Create the Jenkinsfile inside the project directory. Note that if you're not using `systemd`, change the `systemd` command to `sudo service flaskapp restart'. **DO NOT** push yet.
 
-See file here: [Jenkinsfile](https://github.com/joseeden/jenkins-project/blob/main/Jenkinsfile)
+See file here: [Jenkinsfile](https://github.com/joseeden/test-jenkins-project/blob/main/Jenkinsfile)
 
 
 ## Configuration Steps

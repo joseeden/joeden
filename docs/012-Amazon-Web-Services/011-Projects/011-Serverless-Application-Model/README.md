@@ -64,12 +64,23 @@ You will need to install the following in your local terminal:
 - Install Python.
 
     ```bash
-    sudo apt install -y python3
+    sudo apt install -y python3.12
     ```
+
+- Install pip.
+
+```bash
+sudo apt install python3.12-venv
+python3.12 -m ensurepip --upgrade
+
+## Ensure Python 3.12 and its pip are in your PATH
+which python3.12
+which pip3.12
+```
 
 
 If you are using Ubuntu 22.04, you might only be able to install Python 3.10.
-To install Python 3.12L
+To install Python 3.12:
 
 ```bash
 ## This is required to run add-apt-repository
@@ -81,6 +92,13 @@ sudo apt update
 
 ## Install 
 sudo apt install -y python3.12
+```
+
+Verify:
+
+```bash
+$ python3.12 --version
+Python 3.12.7
 ```
 
 
@@ -117,12 +135,12 @@ To configure your CLI, run:
 aws configure  
 ```
 
-Then enter the access key and secret access key:
+Then enter the access key and secret access key. You can change the region to other AWS regions.
 
 ```bash
 AWS Access Key ID [None]: AKIA4LE56APQMRZJEIEV
 AWS Secret Access Key [None]: ****************************************
-Default region name [None]: 
+Default region name [None]: ap-southeast-1
 Default output format [None]: 
 ```
 
@@ -142,6 +160,8 @@ It will return the following response. Enter 1 to select quickstart templates fo
 ![](/gif/docs/sample-aws-sam.gif)
 
 </div>
+
+
 
 It will create a directory that contains the configuration files.
 
@@ -219,3 +239,66 @@ sam build
 sam deploy 
 ```
 
+
+<div class='img-center'>
+
+![](/gif/docs/sample-aws-sam-build-deploy.gif)
+
+</div>
+
+
+After it's done, it will print the outputs, including the application URL.
+
+```bash
+CloudFormation outputs from deployed stack
+-------------------------------------------------------------------------------------------------------------   
+Outputs                                                                                                         
+-------------------------------------------------------------------------------------------------------------   
+Key                 HelloWorldFunctionIamRole                                                                   
+Description         Implicit IAM Role created for Hello World function                                          
+Value               arn:aws:iam::848587260896:role/sam-app-HelloWorldFunctionRole-ojmSC0FUjVZg                  
+
+Key                 HelloWorldApi                                                                               
+Description         API Gateway endpoint URL for Prod stage for Hello World function                            
+Value               https://6doirma1pc.execute-api.ap-southeast-1.amazonaws.com/Prod/hello/                     
+
+Key                 HelloWorldFunction                                                                          
+Description         Hello World Lambda Function ARN                                                             
+Value               arn:aws:lambda:ap-southeast-1:848587260896:function:sam-app-HelloWorldFunction-             
+Nob9YL9Sg1YW                                                                                                    
+-------------------------------------------------------------------------------------------------------------
+```
+
+Open a web browser and enter the URL:
+
+```bash
+https://6doirma1pc.execute-api.ap-southeast-1.amazonaws.com/Prod/hello/                     
+```
+
+![](/img/docs/1102-aws-sam-deployed-appsss.png)
+
+In the AWS dashboard, we should also see the created Lambda function.
+
+![](/img/docs/1102-aws-sam-deployed-appsss-seen-from-landa-dashboard.png)
+
+![](/img/docs/1102-aws-sam-deployed-appsss-seen-open-details.png)
+
+## Deleting the Function 
+
+To delete the function:
+
+```bash
+sam delete 
+```
+
+Enter `y` twice to confirm:
+
+```bash
+Are you sure you want to delete the stack sam-app in the region ap-southeast-1 ? [y/N]: y
+Do you want to delete the template file 0cfc681b8281d439d475f4ca2090e4ac.template in S3? [y/N]: y
+- Deleting S3 object with key 472b4bdb4a2b33287061ad1bf41a08ed
+- Deleting S3 object with key 0cfc681b8281d439d475f4ca2090e4ac.template
+- Deleting Cloudformation stack sam-app
+
+Deleted successfully 
+```
