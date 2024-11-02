@@ -16,7 +16,7 @@ Using Jenkins to deploy a serverless application streamlines automation and enab
 - Set environment variables for AWS access
 - Add testing and validation before deployment
 
-To deploy an AWS Serverless Application Model (SAM) application manually first, you can check out the previous lab on [AWS SAM.](/docs/012-Amazon-Web-Services/011-Projects/011-Serverless-Application-Model/README.md)
+To deploy an AWS Serverless Application Model (SAM) application manually first, you can check out the previous lab on [AWS SAM.](/docs/012-Amazon-Web-Services/010-Projects/011-Serverless-Application-Model/README.md)
 
 
 
@@ -25,13 +25,9 @@ To deploy an AWS Serverless Application Model (SAM) application manually first, 
 You will need to install the following in your local computer:
 
 - [AWS Account](https://aws.amazon.com/resources/create-account/)
-
 - [AWS CLI](/docs/001-Personal-Notes/005-Project-Pre-requisites/001-AWS.md#aws-cli)
-
 - [AWS SAM CLI](/docs/001-Personal-Notes/005-Project-Pre-requisites/001-AWS.md#aws-sam-cli)
-
 - [Python 3.10](/docs/001-Personal-Notes/005-Project-Pre-requisites/005-Software.md#python-310)
-
 - [Pip](/docs/001-Personal-Notes/005-Project-Pre-requisites/005-Software.md#pip)
 
 
