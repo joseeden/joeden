@@ -32,7 +32,8 @@ export now="--force --grace-period=0"
 
 1. How many container images are in the host?
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     $ docker images
@@ -66,7 +67,8 @@ export now="--force --grace-period=0"
     drwxr-xr-x 2 root root 4096 Jan  6 04:18 templates 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     $ docker build -t webapp-color webapp-color/
@@ -109,7 +111,8 @@ export now="--force --grace-period=0"
     webapp-color                    latest        ea2b85406064   2 minutes ago   913MB 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     Use docker run, and then for exposing the port: 
 
@@ -149,7 +152,8 @@ export now="--force --grace-period=0"
     python                          3.6           54260638d07c   2 years ago     902MB 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     $ docker run python:3.6 cat /etc/*release*
@@ -198,7 +202,8 @@ export now="--force --grace-period=0"
     ENTRYPOINT ["python", "app.py"] 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     Edit the Dockerfile. 
 
@@ -244,7 +249,8 @@ export now="--force --grace-period=0"
     webapp-color                    lite          a56a7c8ff6ff   About a minute ago   51.9MB 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     docker run -p 8383:8080 webapp-color:lite
@@ -265,7 +271,8 @@ export now="--force --grace-period=0"
             test-user@production         production          test-user  
     ```
         
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k config use-context research --kubeconfig my-kube-config
@@ -283,7 +290,8 @@ export now="--force --grace-period=0"
       
 
 
-8. Inspect the environment and identify the authorization modes configured on the cluster.<details><summary> Answer </summary>
+8. Inspect the environment and identify the authorization modes configured on the cluster.<details>
+    <summary> Answer </summary>
 
     ```bash
     controlplane ~ ✦ ➜  k get po -n kube-system 
@@ -297,7 +305,8 @@ export now="--force --grace-period=0"
     kube-scheduler-controlplane            1/1     Running   0          8m43s 
     ```
     
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✦ ✖ k describe -n kube-system po kube-apiserver-controlplane | grep -i auth
@@ -311,7 +320,8 @@ export now="--force --grace-period=0"
 
 9. What are the resources the kube-proxy role in the kube-system namespace is given access to?
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✦ ➜  k get roles -A | grep kube-proxy
@@ -333,7 +343,8 @@ export now="--force --grace-period=0"
 
 10. Which account is the kube-proxy role assigned to?
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✦ ➜  k get rolebinding -A | grep kube-proxy
@@ -372,7 +383,8 @@ export now="--force --grace-period=0"
 
     - RoleBinding: Bound to dev-user
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```yaml
     controlplane ~ ✦ ➜  k create role developer --verb "list,create,delete" --resource "pods" $do
@@ -419,7 +431,8 @@ export now="--force --grace-period=0"
 
 12. Which admission controller is enabled by default?
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k describe -n kube-system po kube-apiserver-controlplane  | grep -i admission
@@ -435,7 +448,8 @@ export now="--force --grace-period=0"
 
     Enable the NamespaceAutoProvision admission controller.
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  ls -l /etc/kubernetes/manifests/
@@ -518,7 +532,8 @@ export now="--force --grace-period=0"
 14. Disable DefaultStorageClass admission controller
     This admission controller observes creation of PersistentVolumeClaim objects that do not request any specific storage class and automatically adds a default storage class to them. This way, users that do not request any special storage class do not need to care about them at all and they will get the default one.
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     apiVersion: v1
@@ -555,7 +570,8 @@ export now="--force --grace-period=0"
 
     - Key : /root/keys/webhook-server-tls.key
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k create secret tls webhook-server-tls --namespace webhook-demo --cert /root/keys/webhook-server-tls.crt --key /root/keys/webhook-server-tls.key 
@@ -578,7 +594,8 @@ export now="--force --grace-period=0"
     Set the dataField length to 2 and access permission should be true
 
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
 
     ```yaml
@@ -615,7 +632,8 @@ export now="--force --grace-period=0"
     frontend   5/5     5            5           95s 
     ```
         
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k describe deployments.apps frontend | grep -i strategy
@@ -638,7 +656,8 @@ export now="--force --grace-period=0"
     ```
 
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k describe svc frontend-service | grep -i selector
@@ -662,7 +681,8 @@ export now="--force --grace-period=0"
     frontend-v2   2/2     2            2           21s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
 
     The frontend deployment currently has 7 replicas
     The frontend-v2 deployment currently has 2 replicas
@@ -706,7 +726,8 @@ export now="--force --grace-period=0"
 
 21. Search for a wordpress helm chart package from the Artifact Hub.
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  helm search --help
@@ -737,7 +758,8 @@ export now="--force --grace-period=0"
 
     - chart repo name - https://charts.bitnami.com/bitnami
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  helm repo add --help
@@ -764,7 +786,8 @@ export now="--force --grace-period=0"
 
 23. What command is used to search for the joomla package from the added repository?
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  helm repo list
@@ -801,7 +824,8 @@ export now="--force --grace-period=0"
 
     - Chart name should be bitnami/drupal.
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  helm install --help
@@ -831,7 +855,8 @@ export now="--force --grace-period=0"
 
 25. Uninstall the drupal helm package which was installed in the previous question.
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  helm uninstall bravo
@@ -853,7 +878,8 @@ export now="--force --grace-period=0"
     hashicorp       https://helm.releases.hashicorp.com    
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+        <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  helm search repo apache

@@ -37,7 +37,8 @@ export now="--force --grace-period=0"
     kubernetes   ClusterIP   10.43.0.1    <none>        443/TCP   6m50s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k describe svc kubernetes 
@@ -87,7 +88,8 @@ export now="--force --grace-period=0"
     simple-webapp-deployment   4/4     4            4           49s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k expose deployment simple-webapp-deployment --name webapp-service --type NodePort --port 8080 --target-port 8080 $do
@@ -150,7 +152,8 @@ export now="--force --grace-period=0"
     payroll-policy   name=payroll   21s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get netpol payroll-policy -o yaml | grep -i policyTypes
@@ -176,7 +179,8 @@ export now="--force --grace-period=0"
 
     - MySQL Port: 3306
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     ## internal-policy.yaml
@@ -237,7 +241,8 @@ export now="--force --grace-period=0"
 
 5. Which namespace is the Ingress Controller deployed in?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get all -A | grep -i ingress
@@ -263,7 +268,8 @@ export now="--force --grace-period=0"
     app-space   ingress-wear-watch   <none>   *       10.99.14.178   80      4m20s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     All Hosts (*)
 
@@ -308,7 +314,8 @@ export now="--force --grace-period=0"
     app-space   ingress-wear-watch   <none>   *       10.103.62.71   80      7m48s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k edit -n app-space ingress ingress-wear-watch  
@@ -382,7 +389,8 @@ export now="--force --grace-period=0"
     app-space   ingress-wear-watch   <none>   *       10.103.62.71   80      11m    
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k edit -n app-space ingress ingress-wear-watch  
@@ -454,7 +462,8 @@ export now="--force --grace-period=0"
     app-space   ingress-wear-watch   <none>   *       10.103.62.71   80      17m    
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     Do not modify the existing ingress resource. Simply create a new one. 
 
@@ -507,7 +516,8 @@ export now="--force --grace-period=0"
       - Path: /watch
 
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  export do="--dry-run=client -o yaml"

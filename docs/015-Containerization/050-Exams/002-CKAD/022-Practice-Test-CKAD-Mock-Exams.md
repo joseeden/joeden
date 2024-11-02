@@ -36,7 +36,8 @@ export now="--force --grace-period=0"
     Mount this in a pod called logger at the location /var/www/nginx. This pod should use the image nginx:alpine.
 
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po
@@ -177,7 +178,8 @@ Troubleshoot why this is happening.
     secure-service   ClusterIP   10.101.166.125   <none>        80/TCP    25m 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```yaml
     apiVersion: networking.k8s.io/v1
@@ -224,7 +226,8 @@ Troubleshoot why this is happening.
     - The path /opt/time on the pod should mount a volume that lasts the lifetime of this pod.
 
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✦ ➜  k create ns dvl1987
@@ -327,7 +330,8 @@ Troubleshoot why this is happening.
     - Finally, once all pods are updated, undo the update and go back to the previous version.
 
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     ## nginx-deploy.yml 
@@ -436,7 +440,8 @@ Troubleshoot why this is happening.
     uid: a378978a-d271-46dc-89e4-ea8d22551471
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     ```yaml 
     ## redis.yml 
@@ -533,7 +538,8 @@ Troubleshoot why this is happening.
     pod-kab87   1/1     Running   0          30m 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get -n dev1401 po nginx1401 -o yaml > nginx1401.yml
@@ -600,7 +606,8 @@ Troubleshoot why this is happening.
 
     - If the task is not completed within 20 seconds the job should fail and pods should be terminated.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```yaml
     ## cron-dice.yml 
@@ -644,7 +651,8 @@ Troubleshoot why this is happening.
 
     - Make sure that the pod is scheduled on controlplane and no other node in the cluster.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     Check the labels of the controlplane first. We'll use this label as nodeSelector for the pod. 
 
@@ -722,7 +730,8 @@ Troubleshoot why this is happening.
     ```
 
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     There is a trick here, specifically on the port used. The port 30093 is the port used by the Ingress Controller, but we should not specify it in the Ingress resource. Instead, we use the port specified in the service, which is 8080. 
 
@@ -814,7 +823,8 @@ Troubleshoot why this is happening.
     dev-pod-dind-878516                3/3     Running     0          28m 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k logs dev-pod-dind-878516 -c log-x > /opt/dind-878516_logs.txt
@@ -834,7 +844,8 @@ Troubleshoot why this is happening.
 
 11. Create a service messaging-service to expose the redis deployment in the marketing namespace within the cluster on port 6379.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k expose -n marketing deploy redis --name messaging-service --port 6379 --type ClusterIP --target-port 6379 $do
@@ -879,7 +890,8 @@ Troubleshoot why this is happening.
     - Data: DB_PORT=3306
 
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k create cm cm-3392845 $do 
@@ -930,7 +942,8 @@ Troubleshoot why this is happening.
     - Secret 3: DB_Password=password123
 
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k create secret generic db-secret-xxdf --from-literal DB_Host=sql01 --from-literal DB_User=root --from-literal DB_Password=password123 $do
@@ -981,7 +994,8 @@ Troubleshoot why this is happening.
     app-sec-kff3345   1/1     Running   0          14m 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po app-sec-kff3345 -o yaml > app-sec-kff3345.yml
@@ -1032,7 +1046,8 @@ Troubleshoot why this is happening.
 
 15. Create a redis deployment using the image redis:alpine with 1 replica and label app=redis. Expose it via a ClusterIP service called redis on port 6379. Create a new Ingress Type NetworkPolicy called redis-access which allows only the pods with label access=redis to access the deployment.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k create deployment redis --image redis:alpine --replicas 1 $do
@@ -1172,7 +1187,8 @@ Troubleshoot why this is happening.
     - Container 2: Name sonic with image nginx and Environment variable: NGINX_PORT with the value 8080.
 
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```yaml
     controlplane ~ ➜  k run sega --image busybox $do
@@ -1235,7 +1251,8 @@ Troubleshoot why this is happening.
     Create a pod called alpha, image: redis with toleration to node01.
 
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k taint node node01 app_type=alpha:NoSchedule
@@ -1294,7 +1311,8 @@ Troubleshoot why this is happening.
     node01         Ready    <none>          27m   v1.27.0 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get no --show-labels 
@@ -1413,7 +1431,8 @@ Troubleshoot why this is happening.
     my-video-service    ClusterIP   10.106.189.83   <none>        8080/TCP       116s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```yaml
     ## ingress.yml 
@@ -1494,7 +1513,8 @@ Troubleshoot why this is happening.
     webapp-video-55fcd88897-h49ft   1/1     Running   0          7m15s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po pod-with-rprobe -o yaml > podprobe.yml
@@ -1556,7 +1576,8 @@ Troubleshoot why this is happening.
 
 21. Create a new pod called nginx1401 in the default namespace with the image nginx. Add a livenessProbe to the container to restart it if the command ls /var/www/html/probe fails. This check should start after a delay of 10 seconds and run every 60 seconds.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k run nginx1401 --image nginx $do 
@@ -1624,7 +1645,8 @@ Troubleshoot why this is happening.
     - restartPolicy: Never
 
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```yaml
     ## job.yml 

@@ -31,7 +31,8 @@ export now="--force --grace-period=0"
 
 1. Create a pod with the ubuntu image to run a container to sleep for 5000 seconds. 
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     ## ubuntu-sleeper-2.yml
@@ -79,7 +80,8 @@ export now="--force --grace-period=0"
     CMD ["--color", "red"] 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     oython app.py --color red
@@ -126,7 +128,8 @@ export now="--force --grace-period=0"
         command: ["--color","green"] 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     --color green
@@ -138,7 +141,8 @@ export now="--force --grace-period=0"
 
 4. Create a pod with the given specifications. By default it displays a blue background. Set the given command line arguments to change it to green.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k run webapp-green --image kodekloud/webapp-color --dry-run=client -o yaml 
@@ -201,7 +205,8 @@ export now="--force --grace-period=0"
     webapp-color   1/1     Running   0          6s 
       ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```YAML
     controlplane ~ ➜  k get po webapp-color -o yaml
@@ -234,7 +239,8 @@ export now="--force --grace-period=0"
     db-config          3      5s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k describe cm db-config 
@@ -272,7 +278,8 @@ export now="--force --grace-period=0"
 
     - Data: APP_OTHER=disregard
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k create cm webapp-config-map $do
@@ -367,7 +374,8 @@ export now="--force --grace-period=0"
     Events:  <none> 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po
@@ -432,7 +440,8 @@ export now="--force --grace-period=0"
     dashboard-token   kubernetes.io/service-account-token   3      16s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k describe secrets dashboard-token 
@@ -470,7 +479,8 @@ export now="--force --grace-period=0"
     sql01            ClusterIP   10.43.130.206   <none>        3306/TCP         29s
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     ```bash
     controlplane ~ ➜  k create secret generic db-secret \
@@ -566,7 +576,8 @@ export now="--force --grace-period=0"
     ```
     
         
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k exec -it ubuntu-sleeper -- whoami
@@ -586,7 +597,8 @@ export now="--force --grace-period=0"
     ```
         
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po ubuntu-sleeper -o yaml > ubuntu-sleeper.yml
@@ -644,7 +656,8 @@ export now="--force --grace-period=0"
     multi-pod        2/2     Running   0          7s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✖ k exec -it multi-pod -c web -- whoami
@@ -658,7 +671,8 @@ export now="--force --grace-period=0"
 
 14. Create pod **ubuntu-sleeper** to run as Root user and with the SYS_TIME capability.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```yaml
     ## ubuntu-sleeper.yaml
@@ -702,7 +716,8 @@ export now="--force --grace-period=0"
     elephant   0/1     OOMKilled   1 (2s ago)   5s
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
 
     The elephant pod runs a process that consumes 15Mi of memory. Increase the limit of the elephant pod to 20Mi.
 
@@ -767,7 +782,8 @@ export now="--force --grace-period=0"
     web-dashboard-97c9c59f6-p9gvc   1/1     Running   0          69s
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po -o yaml | grep -i service
@@ -791,7 +807,8 @@ export now="--force --grace-period=0"
     node01         Ready    <none>          3m18s   v1.27.0 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k taint node node01 spray=mortein:NoSchedule
@@ -814,7 +831,8 @@ export now="--force --grace-period=0"
     node01         Ready    <none>          8m27s   v1.27.0 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k describe nodes controlplane | grep -i tain
@@ -849,7 +867,8 @@ export now="--force --grace-period=0"
     node01         Ready    <none>          2m31s   v1.27.0 
     ```
         
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get nodes 
@@ -891,7 +910,8 @@ export now="--force --grace-period=0"
     node01         Ready    <none>          3m33s   v1.27.0 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     ontrolplane ~ ➜  k label nodes node01 color=blue
@@ -936,7 +956,8 @@ export now="--force --grace-period=0"
     blue   3/3     3            3           59s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get deployments.apps blue -o yaml > dep1.yml
@@ -1031,7 +1052,8 @@ export now="--force --grace-period=0"
     node01         Ready    <none>          16m   v1.27.0 
     ```
         
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k describe no controlplane 

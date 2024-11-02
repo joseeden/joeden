@@ -39,7 +39,8 @@ export now="--force --grace-period=0"
 
     - Volume Mount: /log
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po
@@ -129,7 +130,8 @@ export now="--force --grace-period=0"
 
     - Reclaim Policy: Retain 
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     ## pv-log.yaml
@@ -169,7 +171,8 @@ export now="--force --grace-period=0"
 
     - Access Modes: ReadWriteMany
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     ## pvc-log.yaml
@@ -211,7 +214,8 @@ export now="--force --grace-period=0"
     portworx-io-priority-high   kubernetes.io/portworx-volume   Delete          Immediate              false                  36s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✖ k describe sc local-storage 
@@ -241,7 +245,8 @@ export now="--force --grace-period=0"
 
     - PVC requests volume size = 500Mi?
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get pv
@@ -305,7 +310,8 @@ export now="--force --grace-period=0"
     local-pvc   Pending                                      local-storage   5m17s 
     ```
         
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  export do="--dry-run=client -o yaml"
@@ -366,7 +372,8 @@ export now="--force --grace-period=0"
 
     - volumeBindingMode: WaitForFirstConsumer
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     ## delayed-volume-sc.yaml 

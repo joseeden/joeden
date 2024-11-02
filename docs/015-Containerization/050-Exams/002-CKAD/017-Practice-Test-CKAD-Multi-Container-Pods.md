@@ -42,7 +42,8 @@ export now="--force --grace-period=0"
     - Container 2 Image: redis
 
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k run yellow --image busybox $do > yellow.yml
@@ -110,7 +111,8 @@ export now="--force --grace-period=0"
     simple-webapp-2   1/1     Running   0          111s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k get po simple-webapp-2 -o yaml > simple-webapp-2.yml
@@ -209,7 +211,8 @@ export now="--force --grace-period=0"
     ```
 
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✦ ➜  k get po simple-webapp-1 -o yaml > simple-webapp-1.yml

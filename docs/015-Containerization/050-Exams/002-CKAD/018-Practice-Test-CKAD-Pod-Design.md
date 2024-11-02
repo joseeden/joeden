@@ -38,7 +38,8 @@ export now="--force --grace-period=0"
     frontend   4/4     4            4           6m46s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✦ ✖ k set image deploy frontend simple-webapp=kodekloud/webapp-color:v2
@@ -62,7 +63,8 @@ export now="--force --grace-period=0"
     frontend   4/4     4            4           6m46s 
     ```
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✦2 ➜  k get deployments.apps 
@@ -142,7 +144,8 @@ export now="--force --grace-period=0"
 
     Then update the job definition to run as many times as required to get 3 successful 6's
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ➜  k apply  -f throw-dice-pod.yaml 
@@ -243,7 +246,8 @@ export now="--force --grace-period=0"
     throw-dice-job   3/3           15s        40s 
     ```
         
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
     
     ```bash
     controlplane ~ ✦2 ➜  k delete job throw-dice-job 
@@ -279,7 +283,8 @@ export now="--force --grace-period=0"
 
 5. Using the same YAML file from the previous question, schedule that job to run at 21:30 hours every day.
 
-    <details><summary> Answer </summary>
+    <details>
+      <summary> Answer </summary>
         
     ```yaml 
     ## cronjob.yml
