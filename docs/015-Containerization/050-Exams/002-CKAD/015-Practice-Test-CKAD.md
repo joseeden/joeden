@@ -11,7 +11,7 @@ last_update:
 
 - [Configuration](/docs/015-Containerization/050-Exams/002-CKAD/016-Practice-Test-CKAD-Configuration.md) 
 
-- [Multi-Container PODs](/docs/015-Containerization/050-Exams/002-CKAD/017-Practice-Test-CKAD-Multi-Container-Pods.md)
+- [Multi-Container Pods](/docs/015-Containerization/050-Exams/002-CKAD/017-Practice-Test-CKAD-Multi-Container-Pods.md)
 
 - [POD Design](/docs/015-Containerization/050-Exams/002-CKAD/018-Practice-Test-CKAD-Pod-Design.md)
 
