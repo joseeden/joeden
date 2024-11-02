@@ -23,12 +23,6 @@ For more information, please see [AWS SAM.](/docs/012-Amazon-Web-Services/003-AW
 
 You will need to install the following in your local terminal:
 
-- Install Python.
-
-    ```bash
-    sudo apt install =y python3.12
-    ```
-
 - Install AWS CLI. [More details here.](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 
     ```bash
@@ -46,6 +40,7 @@ You will need to install the following in your local terminal:
     ```
 
 - Download the [AWS SAM CLI file.](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-getting-started.html)
+
 
 - Unzip the AWS SAM file and install.
 
@@ -65,6 +60,29 @@ You will need to install the following in your local terminal:
     ```bash
     SAM CLI, version 1.127.0  
     ```
+
+- Install Python.
+
+    ```bash
+    sudo apt install -y python3
+    ```
+
+
+If you are using Ubuntu 22.04, you might only be able to install Python 3.10.
+To install Python 3.12L
+
+```bash
+## This is required to run add-apt-repository
+sudo apt install -y software-properties-common
+
+## Add the deadsnakes PPA repository.
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+
+## Install 
+sudo apt install -y python3.12
+```
+
 
 
 ## Authenticate your CLI 
