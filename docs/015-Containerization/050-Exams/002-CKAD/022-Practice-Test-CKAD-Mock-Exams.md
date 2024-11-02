@@ -1680,5 +1680,5 @@ Troubleshoot why this is happening.
 
 
 
-[Back to the top](#practice-test-ckad)    
+   
 

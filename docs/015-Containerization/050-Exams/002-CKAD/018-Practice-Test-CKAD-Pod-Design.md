@@ -1,5 +1,5 @@
 ---
-title: CKAD:Pod Design
+title: Pod Design
 tags: [Containerization, Containers, Kubernetes, Certifications, CKA, CKAD, CKSS]
 sidebar_position: 18
 last_update:
@@ -321,5 +321,5 @@ export now="--force --grace-period=0"
 
 
 
-[Back to the top](#practice-test-ckad)    
+   
 
