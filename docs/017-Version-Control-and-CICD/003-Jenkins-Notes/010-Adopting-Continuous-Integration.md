@@ -22,7 +22,7 @@ Continuous Integration (CI) automates building and testing code with each commit
 
 ![](/img/docs/1027-jenkins-cicd-complete-end-to-end.png)
 
-For more information, please see [CICD Overview.](/docs/017-Version-Control-and-CICD/CICD-Overview.md)
+For more information, please see [CICD Overview.](/docs/017-Version-Control-and-CICD/002-CICD-Overview.md)
 
 ## Jenkins 
 

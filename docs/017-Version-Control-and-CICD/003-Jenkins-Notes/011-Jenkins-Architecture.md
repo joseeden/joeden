@@ -142,4 +142,4 @@ There are different tests developers can run on their code:
 - Functional Test
 - Acceptance Test
 
-For more information, please see [Types of Tests.](/docs/017-Version-Control-and-CICD/CICD-Overview.md#types-of-tests)
+For more information, please see [Types of Tests.](/docs/017-Version-Control-and-CICD/002-CICD-Overview.md#types-of-tests)
