@@ -1,5 +1,5 @@
 ---
-title: Serverless Application Model
+title: Simple AWS SAM Application
 tags: [Linux, AWS, Labs]
 sidebar_position: 2
 # last_update:
