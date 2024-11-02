@@ -21,17 +21,19 @@ To see the complete documentation, please go to: [AWS documentation](https://doc
 
 ## AWS Serverless Application Model (SAM)
 
-It is framework for developing and deploying serverless applications in AWS.
+AWS Serverless Application Model (SAM) is framework for developing and deploying serverless applications in AWS.
 
 - All the configuration for SAM is stored in YAML code. 
-- The configurations can contain settings for:
-    - Lambda Functions
-    - DynamoDB tables
-    - API Gateway
-    - Cognito User Pools
-- Deploy the services above automatically (similar to CloudFormation).
+- Deploy the services automatically (similar to CloudFormation).
 - Help to run Lambda, API Gateway and DynamoDB locally.
 - SAM can used CodeDeploy for quick deployments and pipelines.
+
+The configurations can contain settings for:
+
+- Lambda Functions
+- DynamoDB tables
+- API Gateway
+- Cognito User Pools
 
 Here’s an example of a basic serverless application. This application processes requests to get all items from a database through an HTTP request. 
 
