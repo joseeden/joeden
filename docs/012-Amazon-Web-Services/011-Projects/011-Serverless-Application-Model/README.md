@@ -54,7 +54,14 @@ sam init
 
 It will return the following response. Enter 1 to select quickstart templates for testing and then choose the Hello World example. You can choose the runtime as well as enable tX-Ray tracing and CloudWatch Insights. For lab purposes, we just need the structured logging.
 
+
+<div class='img-center'>
+
 ![](/gif/docs/sample-aws-sam.gif)
+
+</div>
+
+
 
 It will create a directory that contains the configuration files.
 
