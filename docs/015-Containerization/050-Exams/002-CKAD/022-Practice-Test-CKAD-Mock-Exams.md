@@ -14,8 +14,7 @@ last_update:
 :::info[NOTE]
 
 CKAD and CKA can have similar scenario questions. 
-It is recommended to go through the [CKA practice tests.](/docs/015-Containerization/050-Exams/002-Practice-Test-CKA.md)
-
+It is recommended to go through the [CKA practice tests.](/docs/015-Containerization/050-Exams/001-CKA/002-Practice-Test-CKA.md)
 :::
 
 

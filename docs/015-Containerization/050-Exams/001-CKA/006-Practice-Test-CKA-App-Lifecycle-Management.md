@@ -1,4 +1,3 @@
-
 ---
 title: "CKA: App Lifecycle and Management"
 tags: [Containerization, Containers, Kubernetes, Certifications, CKA, CKAD, CKSS]
@@ -15,7 +14,7 @@ last_update:
 :::info[NOTE]
 
 CKAD and CKA can have similar scenario questions. 
-It is recommended to go through the [CKAD practice tests.](/docs/015-Containerization/050-Exams/015-Practice-Test-CKAD.md)
+It is recommended to go through the [CKAD practice tests.](/docs/015-Containerization/050-Exams/002-CKAD/015-Practice-Test-CKAD.md)
 
 :::
 

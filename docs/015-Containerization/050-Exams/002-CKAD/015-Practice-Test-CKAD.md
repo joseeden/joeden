@@ -1,8 +1,12 @@
-
-# "Practice Test: CKA"D
+---
+title: "Practice Test: CKAD" 
+tags: [Containerization, Containers, Kubernetes, Certifications, CKA, CKAD, CKSS]
+sidebar_position: 0
+last_update:
+  date: 12/29/2023
+---
 
 > *Some of the scenario questions here are based on [Kodekloud's CKAD course labs](https://kodekloud.com/courses/labs-certified-kubernetes-application-developer/?utm_source=udemy&utm_medium=labs&utm_campaign=kubernetes).*
-
 
 
 - [Configuration](/docs/015-Containerization/050-Exams/016-Practice-Test-CKAD-Configuration.md) 

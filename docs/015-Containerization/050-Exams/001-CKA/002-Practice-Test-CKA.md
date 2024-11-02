@@ -1,7 +1,7 @@
 ---
 title: "Practice Test: CKA" 
 tags: [Containerization, Containers, Kubernetes, Certifications, CKA, CKAD, CKSS]
-sidebar_position: 2
+sidebar_position: 0
 last_update:
   date: 12/29/2023
 ---
