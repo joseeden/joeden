@@ -12,7 +12,7 @@ last_update:
 
 <div class='img-center'>
 
-![](/img/docs/udacity-suse-1.JPG)
+![](/img/docs/udacity-suse-1.jpg)
 
 </div>
 
