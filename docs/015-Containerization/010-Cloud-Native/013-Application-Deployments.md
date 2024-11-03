@@ -9,7 +9,7 @@ last_update:
 
 ## Best Practices
 
-After selecting the best model and reviewing requirements for monoliths vs. microservices, the next step is **implementation**.
+After selecting the best model and reviewing requirements for monoliths vs. microservices, the next step is **implementation**. Understanding and following best practices during the release and maintenance phases is essential for building resilient and highly available solutions. While strategies vary by organization, these guidelines help ensure stability.
 
 <div class='img-center'>
 
@@ -17,7 +17,7 @@ After selecting the best model and reviewing requirements for monoliths vs. micr
 
 </div>
 
-Understanding and following best practices during the release and maintenance phases is essential for building resilient and highly available solutions. While strategies vary by organization, these guidelines help ensure stability.
+
 
 ## Health Checks
 
@@ -41,13 +41,13 @@ Aggregated logs provide insight into application operations over time.
 - Collected through standard outputs (STDOUT, STDERR) and tools like Splunk
 - Often include timestamps for precise tracking of events
 
-| **Logging Levels** | Description |
-|--------------------|-------------|
-| **DEBUG**          | Fine-grained application events |
-| **INFO**           | High-level operational events |
-| **WARN**           | Potential issues to monitor |
-| **ERROR**          | Errors that don’t stop the app |
-| **FATAL**          | Critical errors that halt operation |
+  | **Logging Levels** | Description |
+  |--------------------|-------------|
+  | **DEBUG**          | Fine-grained application events |
+  | **INFO**           | High-level operational events |
+  | **WARN**           | Potential issues to monitor |
+  | **ERROR**          | Errors that don’t stop the app |
+  | **FATAL**          | Critical errors that halt operation |
 
 ## Tracing
 

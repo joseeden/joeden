@@ -12,7 +12,7 @@ last_update:
 
 <div class='img-center'>
 
-![](/img/docs/udacity-suse-1.jpg)
+![](/img/docs/udacity-suse-1=new-photo-2024-building-reflect-clouds.png)
 
 </div>
 
@@ -26,11 +26,11 @@ In its simplest terms, **Cloud native** refers to building and managing applicat
 
 Now, when we hear containers, it is also often followed by another buzzword: **microservices**.
 
-<div class='img-center'>
+<!-- <div class='img-center'>
 
 ![](/img/docs/udacity-suse-1-microservices.png)
 
-</div>
+</div> -->
 
 ## Microservices
 
