@@ -2,7 +2,7 @@
 title: "Tagging the Image"
 description: "Adding tags to container images"
 tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
-sidebar_position: 7
+sidebar_position: 8
 last_update:
   date: 7/7/2022
 ---
