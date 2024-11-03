@@ -38,6 +38,13 @@ If you are using Ubuntu 22.04, you might only be able to install Python 3.10.
 
 - [Python 3.12](/docs/001-Personal-Notes/005-Project-Pre-requisites/005-Software.md#python-312)
 
+:::info[Note]
+
+The SAM `template.yaml` is using Python 3.12 as runtime. If you want to use a different Python version in your Jenkins server, you need to change the runtime.
+
+:::
+
+
 If you're using EC2 instance for the Jenkins server, make sure the security group:
 
 - Allows SSH from within the subnet
@@ -89,8 +96,6 @@ Specify the details and click **Update webhook**.
 </div>
 
 Once you configure the pipeline in the succeeding steps, you can check the **Recent Deliveries**.
-
-![](/img/docs/1101-jenkins-single-server-deployment-recent-Deliveries.png)
 
 
 ## Generate Access Keys
