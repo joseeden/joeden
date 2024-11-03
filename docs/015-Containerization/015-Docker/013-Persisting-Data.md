@@ -101,8 +101,27 @@ docker run -d \
     <image>
 ```
 
+
 ## tmpfs (Temporary Filesystem)
 
-The `tmpfs` option creates an in-memory filesystem that exists only as long as the container is running. Data stored in `tmpfs` is not persistent and will be lost once the container stops.
+The `tmpfs` option creates an in-memory filesystem that exists only while the container is running. Data stored in `tmpfs` is not persistent and will be lost once the container stops. This is useful for temporary data that does not need long-term storage.
 
-![Temporary Filesystem](/img/docs/dp-st3-tmpfs.png)
+- **Performance**  
+  - Offers faster read and write speeds compared to disk storage.  
+  - Ideal for applications requiring high-speed data access.
+
+- **Memory Limitations**  
+  - Size can be controlled with the `size` option (e.g., `size=100m` for 100 MB).  
+  - Helps manage memory usage effectively.
+
+- **Use Cases**  
+  - Suitable for transient data and caching.  
+  - Useful for maintaining state in applications that handle sensitive information.
+
+To define a `tmpfs` mount in a Docker container using the `--tmpfs` option:  
+
+```bash
+docker run -d --tmpfs /app/tmp:rw,size=100m my-image
+```  
+
+This creates a writable `tmpfs` mount at `/app/tmp` with a 100 MB size limit.

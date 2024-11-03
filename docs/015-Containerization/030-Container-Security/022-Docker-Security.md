@@ -1,25 +1,24 @@
 ---
 title: "Container Security"
-description: "BContainer Security"
+description: "Container Security"
 tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
 sidebar_position: 22
 last_update:
   date: 7/7/2022
 ---
 
-# Container Security 
 
-## Security Risks 
+## Security Risks
 
-add intro ...
+When using containers, it's important to keep an eye on potential risks:
 
-- Containers address the same kernel 
-- Containers running as root 
-- Public images may contain malicious software
+- Containers share the same kernel, increasing exposure to vulnerabilities.  
+- Running containers as root can lead to privilege escalation.  
+- Public images may harbor malicious software, putting systems at risk.  
 
 ## Cloud Native Security 
 
-In Cloud Native Security, four layers are identified:
+Cloud Native Security consists of four key layers to protect applications:
 
 - Cloud/Colocation/Corporate datacenter
 - Cluster
@@ -28,37 +27,24 @@ In Cloud Native Security, four layers are identified:
 
 ## Docker Security 
 
-These are the security features that Docker uses under the hood.
+Docker implements several security features:
 
 - **Swarm mode** 
-
-    - security settings are turned-on by default
-    - uses PKI infrastructure for handling certificates 
-    - tunnel are created between endpoints on the containers
+  - Security settings are enabled by default.
+  - Utilizes PKI for managing certificates.
+  - Creates secure tunnels between container endpoints.
 
 - **Docker Content Trust** 
+  - Ensures image integrity through signing:
+    ```bash
+    export DOCKER_CONTENT_TRUST=1 
+    ```
 
-    - Sign images for integrity verification
+- **Security Scanning** 
+  - Automatically scans images for vulnerabilities.
 
-        ```bash
-        export DOCKER_CONTENT_TRUST=1 
-        ```
-
-- **Security Scanning**
-
-    - scans images for vulnerabilities
-
-- **Secrets**
-
-    - data is encrypted and stored
-
-        ```bash
-        docker secret 
-        ```
-
-
-
-
- 
-
- 
+- **Secrets** 
+  - Encrypts and securely stores sensitive data:
+    ```bash
+    docker secret 
+    ```

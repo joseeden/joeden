@@ -1,10 +1,11 @@
-
-
-# Container Best Practices 
-
-
-- [Writing Dockerfiles](#writing-dockerfiles)
-- [Container Security](#container-security)
+---
+title: "Container Best Practices"
+description: "Container Best Practices"
+tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+sidebar_position: 23
+last_update:
+  date: 7/7/2022
+---
 
 
 
@@ -66,6 +67,8 @@ To learn more, check out [Best practices for writing Dockerfiles](https://docs.d
     ```
 
 ## Container Security 
+
+add intro.... 
 
 - Include as little as possible in the container images
 - Run rootless containers
