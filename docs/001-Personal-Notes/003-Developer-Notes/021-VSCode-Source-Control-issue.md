@@ -65,8 +65,14 @@ To upload the key, go to GitHub > Settings > SSH and GPG Keys.
 Next, I rescanned the key and saved it to the `known_hosts` file on the C drive.
 
 ```bash
-ssh-keyscan -t rsa github.com >> /mnt/c/Users/Eden.Jose/.ssh/known_hosts 
+ssh-keyscan -t ecdsa github.com >> /mnt/c/Users/Eden.Jose/.ssh/known_hosts 
 ```
+
+:::info
+
+If you are using RSA keys, use `ssh-keyscan -t rsa`
+:::
+
 
 I then confirmed the connection from the terminal:
 
