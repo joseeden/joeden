@@ -1,8 +1,17 @@
+---
+title: "Container Security"
+description: "BContainer Security"
+tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+sidebar_position: 22
+last_update:
+  date: 7/7/2022
+---
 
-# Container Security
-
+# Container Security 
 
 ## Security Risks 
+
+add intro ...
 
 - Containers address the same kernel 
 - Containers running as root 
@@ -21,35 +30,32 @@ In Cloud Native Security, four layers are identified:
 
 These are the security features that Docker uses under the hood.
 
-**Swarm mode** 
+- **Swarm mode** 
 
-- security settings are turned-on by default
-- uses PKI infrastructure for handling certificates 
-- tunnel are created between endpoints on the containers
+    - security settings are turned-on by default
+    - uses PKI infrastructure for handling certificates 
+    - tunnel are created between endpoints on the containers
 
-**Docker Content Trust** 
+- **Docker Content Trust** 
 
-- Sign images for integrity verification
+    - Sign images for integrity verification
 
-    ```bash
-    export DOCKER_CONTENT_TRUST=1 
-    ```
+        ```bash
+        export DOCKER_CONTENT_TRUST=1 
+        ```
 
-**Security Scanning**
+- **Security Scanning**
 
-- scans images for vulnerabilities
+    - scans images for vulnerabilities
 
-**Secrets**
+- **Secrets**
 
-- data is encrypted and stored
+    - data is encrypted and stored
 
-    ```bash
-    docker secret 
-    ```
+        ```bash
+        docker secret 
+        ```
 
-## Best Practices 
-
-To learn more about container security best practices, check out [Container Best Practices.](./023-Container-Best-Practices.md)
 
 
 

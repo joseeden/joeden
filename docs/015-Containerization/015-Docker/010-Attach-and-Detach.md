@@ -7,7 +7,7 @@ last_update:
   date: 7/7/2022
 ---
 
-## Attach and Detach Mode
+## Overview
 
 In Docker, containers can be run in two main modes: **attach** mode and **detach** mode.
 

@@ -10,11 +10,11 @@ last_update:
 
 ## Overview
 
-<div class='img-center'>
+<!-- <div class='img-center'>
 
 ![](/img/docs/udacity-suse-1=new-photo-2024-building-reflect-clouds.png)
 
-</div>
+</div> -->
 
 As defined by [Cloud Native Computing Foundation (CNCF)](https://www.cncf.io/about/charter/) 
 
