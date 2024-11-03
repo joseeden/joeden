@@ -32,10 +32,65 @@ On your local computer and on the Jenkins server, install:
 - [AWS SAM CLI](/docs/001-Personal-Notes/005-Project-Pre-requisites/001-AWS.md#aws-sam-cli)
 - [Python 3.10](/docs/001-Personal-Notes/005-Project-Pre-requisites/005-Software.md#python-310)
 - [Pip](/docs/001-Personal-Notes/005-Project-Pre-requisites/005-Software.md#pip)
+- [Python Virtual Environment](/docs/001-Personal-Notes/005-Project-Pre-requisites/005-Software.md#python-virtual-environment)
 
 If you are using Ubuntu 22.04, you might only be able to install Python 3.10.
 
 - [Python 3.12](/docs/001-Personal-Notes/005-Project-Pre-requisites/005-Software.md#python-312)
+
+If you're using EC2 instance for the Jenkins server, make sure the security group:
+
+- Allows SSH from within the subnet
+- Allows SSH from your IP 
+- Allows 5000 from your IP 
+- Allows 8080 from `0.0.0.0/0`
+
+You may encounter some network connectivity issues when connecting to the Linux machines and when attempting to trigger the webhook. 
+
+- SSH connections (from local to Linux machines) - uses port 22
+- Access Jenkins UI (from local to Jenkins) - uses port 8080 
+- Access application UI (from local to Prod) - uses port 5000 
+- Trigger webhook (from Github to Jenkins) - uses port 8080  
+
+If specifying your IP doesn't work, you can use a wider range like `0.0.0.0`.
+
+
+## Fork the Repository 
+
+The sample project can be found here: 
+
+```bash
+https://github.com/joseeden/test-aws-sam-hello-app 
+```
+
+:::info[Use git credentials when cloning]
+
+In August 2021, Github removed support for using your account password from the cli.
+You can either use [Personal Access Tokens (PAT)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) or [SSH keys.](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
+
+:::
+
+After you sign in to Github, fork the repo and confirm the details. Clone it to your local computer. 
+
+## Configure Web Hook 
+
+On your Github repository, go to **Settings** > **Webhooks** > **Add webhook**. Specify the payload URL as:
+
+```bash
+http://<jenkins-ip>:8080/github-webhook/ 
+```
+
+Specify the details and click **Update webhook**.
+
+<div class='img-center'>
+
+![](/img/docs/1103-aws-jenkins-aws-sam-config-webhook-on-github-repo.png)
+
+</div>
+
+Once you configure the pipeline in the succeeding steps, you can check the **Recent Deliveries**.
+
+![](/img/docs/1101-jenkins-single-server-deployment-recent-Deliveries.png)
 
 
 ## Generate Access Keys
@@ -49,7 +104,6 @@ For more information, see [IAM Users and Access Keys](/docs/001-Personal-Notes/0
 
 
 ## Configure Credentials on Jenkins 
-
 
 On the Jenkins dashboard, go to:
 
@@ -79,35 +133,65 @@ The pipeline steps:
 Note that the Jenkins server will need the AWS Credentials.
 
 
-## Create the Base Configuration File
 
+## Setup the Pipeline
 
-## Build and Package the Application 
+Back on the Jenkins dashboard, click New Item and enter "aws-sam-pipeline" for the Item name. Select **Pipeline** and click **OK**.
 
-After initializing the project, the next step is to build and package the application. Go to the project directory and run:
+![](/img/docs/11032024-aws-jenkins-create-pipelineee.png)
 
-```bash
-cd sam-app
-sam build
-sam deploy 
+Check the box for the following and then click Save.
+
+```
+Build Triggers > Github hook trigger for GITScm polling
 ```
 
-## Deleting the Function 
+<div class='img-center'>
 
-To delete the function:
+![](/img/docs/1101-jenkins-single-server-deployment-github-hook-trigger-gitscm-polling.png)
 
-```bash
-sam delete 
+</div>
+
+Next, configure the pipeline section. Note the branch name. The common name is **main** but your branch could be using **master**. You can also specify a different branch name here.
+
+Click **Create** afterwards.
+
+```
+Pipeline > Pipeline script from SCM > SCM > Git > Repository URL > Enter URL
+Set the branch to main
+Set the ScriptPath > Jenkinsfile
 ```
 
-Enter `y` twice to confirm:
+<div class='img-center'>
+
+![](/img/docs/11032024-aws-jenkins-conofigure-pipeline-master.png)
+
+</div>
+
+
+
+## Create the Jenkinsfile 
+
+Create the Jenkinsfile inside the project directory. 
+
+See file here: [Jenkinsfile](https://github.com/joseeden/test-aws-sample-hello-app/blob/main/Jenkinsfile)
+
+
+## Commit and Push 
+
+Back in your local machine, commit and push the changes you did.
 
 ```bash
-Are you sure you want to delete the stack sam-app in the region ap-southeast-1 ? [y/N]: y
-Do you want to delete the template file 0cfc681b8281d439d475f4ca2090e4ac.template in S3? [y/N]: y
-- Deleting S3 object with key 472b4bdb4a2b33287061ad1bf41a08ed
-- Deleting S3 object with key 0cfc681b8281d439d475f4ca2090e4ac.template
-- Deleting Cloudformation stack sam-app
-
-Deleted successfully 
+git add .
+git commit -m "Added Jenkinsfile. Testing webhook" 
+git push 
 ```
+
+Go to the your job in the Jenkins dashboard. You should now see a job getting triggered. If successful, you should see a green check mark. 
+
+![](/img/docs/1103-aws-jenkins-aws-sam-triggeringgg.png)
+
+
+
+
+## Test the App 

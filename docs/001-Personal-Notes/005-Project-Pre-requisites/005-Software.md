@@ -70,3 +70,11 @@ To install Python 3.12:
     which python3.12
     which pip3.12
     ```
+
+## Python Virtual Environment  
+
+- Install Python Virtual Environment 
+
+    ```bash
+    sudo apt install -y python3.12-venv 
+    ```

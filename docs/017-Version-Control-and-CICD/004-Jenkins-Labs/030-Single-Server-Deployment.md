@@ -82,7 +82,6 @@ If you're using EC2 instances, make sure the security group:
 - Allows 5000 from your IP 
 - Allows 8080 from `0.0.0.0/0`
 
-
 You may encounter some network connectivity issues when connecting to the Linux machines and when attempting to trigger the webhook. 
 
 - SSH connections (from local to Linux machines) - uses port 22
@@ -284,11 +283,6 @@ Once you configure the pipeline in the succeeding steps, you can check the **Rec
 
 
 
-## Create the Jenkinsfile 
-
-Create the Jenkinsfile inside the project directory. Note that if you're not using `systemd`, change the `systemd` command to `sudo service flaskapp restart'. **DO NOT** push yet.
-
-See file here: [Jenkinsfile](https://github.com/joseeden/test-jenkins-project/blob/main/Jenkinsfile)
 
 
 ## Configuration Steps
@@ -357,6 +351,8 @@ Build Triggers > Github hook trigger for GITScm polling
 
 Next, configure the pipeline section. Note the branch name. The common name is **main** but your branch could be using **master**. You can also specify a different branch name here.
 
+Click **Create** afterwards.
+
 
 ```
 Pipeline > Pipeline script from SCM > SCM > Git > Repository URL > Enter URL
@@ -375,11 +371,16 @@ Set the ScriptPath > Jenkinsfile
 </div>
 
 
+## Create the Jenkinsfile 
+
+Create the Jenkinsfile inside the project directory. Note that if you're not using `systemd`, change the `systemd` command to `sudo service flaskapp restart'. **DO NOT** push yet.
+
+See file here: [Jenkinsfile](https://github.com/joseeden/test-jenkins-project/blob/main/Jenkinsfile)
 
 
 ## Commit and Push 
 
-Back in your local machine, commit and push the changes you did (if any).
+Back in your local machine, commit and push the changes you did.
 
 ```bash
 git add .
