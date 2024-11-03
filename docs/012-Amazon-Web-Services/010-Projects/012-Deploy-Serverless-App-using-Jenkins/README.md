@@ -22,27 +22,41 @@ To deploy an AWS Serverless Application Model (SAM) application manually first, 
 
 ## Pre-requisites 
 
-You will need to install the following in your local computer:
+Accounts needed:
 
 - [AWS Account](https://aws.amazon.com/resources/create-account/)
+
+On your local computer and on the Jenkins server, install:
+
 - [AWS CLI](/docs/001-Personal-Notes/005-Project-Pre-requisites/001-AWS.md#aws-cli)
 - [AWS SAM CLI](/docs/001-Personal-Notes/005-Project-Pre-requisites/001-AWS.md#aws-sam-cli)
 - [Python 3.10](/docs/001-Personal-Notes/005-Project-Pre-requisites/005-Software.md#python-310)
 - [Pip](/docs/001-Personal-Notes/005-Project-Pre-requisites/005-Software.md#pip)
-
 
 If you are using Ubuntu 22.04, you might only be able to install Python 3.10.
 
 - [Python 3.12](/docs/001-Personal-Notes/005-Project-Pre-requisites/005-Software.md#python-312)
 
 
-## Authenticate Your CLI
+## Generate Access Keys
 
-To use the AWS SAM CLI, first create an IAM user in the AWS Console and generate access keys for that user. Attach the `AdministratorAccess` policy to this user temporarily to ensure they have the necessary permissions to run AWS SAM CLI commands.
+To use the Jenkins server first create an IAM user in the AWS Console and generate access keys for that user. Attach the `AdministratorAccess` policy to this user temporarily to ensure they have the necessary permissions to run..
 
 For more information, see [IAM Users and Access Keys](/docs/001-Personal-Notes/005-Project-Pre-requisites/001-AWS.md#iam-users-and-access-keys).
 
 
+
+## Pipeline Stages 
+
+The pipeline steps:
+
+1. Checkout code 
+2. Install dependencies
+3. Test code 
+4. Build code (`sam build`)
+4. Deploy code (`sam deploy`)
+
+Note that the Jenkins server will need the AWS Credentials.
 
 
 ## Create the Base Configuration File
