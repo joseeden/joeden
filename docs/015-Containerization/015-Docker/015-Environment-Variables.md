@@ -13,7 +13,7 @@ Environment variables allow us to use configurable values in our code without mo
 
 <div class='img-center'>
 
-![](/img/docs/Images/docker-env-vars.png)
+![](/img/docs/docker-env-vars.png)
 
 </div>
 

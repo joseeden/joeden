@@ -8,56 +8,52 @@ last_update:
 ---
 
 
-## CMD and ENTRYPOINT
+## Overview
 
-Containers are not meant to host operating systems. Thus when you launch a container of a Linux Image like Ubuntu, it's default command or CMD is bash. This can be seen from the dockerfile itself. 
+Containers are designed to run specific applications rather than host full operating systems. For instance, when you launch a Linux image like Ubuntu, its default command (CMD) is `bash`. If there’s no terminal detected, the container will stop.
 
-However if it doesn't detect any terminal, it just stops the process which also stops the container.
+## `CMD`
 
-## CMD
+You can define a default command for the container using the `CMD` keyword in the Dockerfile. For example, to make the container sleep for 60 seconds:
 
-If you want to define a default command or instruction to run besides the bash when the container is ran, you can specify it in the dockerfile using the CMD keyword.
-
-As an example, we can set the container to sleep for 60 seconds when it is ran by:
-
-```bash 
+```bash
 docker run ubuntu sleep 60
 ```
 
-An easier way to do this is by including the command itself when creating the **Dockerfile.**
+You can also include this command directly in the Dockerfile:
 
 ```bash
-$ cat > dockerfile 
+$ cat > Dockerfile 
 
 FROM ubuntu
 CMD sleep 60
 ```
 
-There are ways to specify a command in the dockerfile
+**Command Formats:**
 
-```bash 
-CMD <command> <parameter1>
-CMD ["<command>", "<parameter1>"]                   <<< JSON format
-```
+- `CMD <command> <parameter1>`
+- `CMD ["<command>", "<parameter1>"]` (JSON format)
 
-## ENTRYPOINT
+## `ENTRYPOINT`
 
-We can also use a parameter from the commandline itself. This can be done by using ENTRYPOINT in the **dockerfile**.
+To allow parameters from the command line, use `ENTRYPOINT` in the Dockerfile:
 
-```bash 
+```bash
 FROM ubuntu
 ENTRYPOINT ["sleep"]
 ```
 
-Now when you run the container, you'll just have to define the parameter.
+When running the container, provide the parameter:
 
 ```bash
 docker run ubuntu-sleeper 60
 ```
 
-Note that you'll get an error when you don't append a parameter in the _docker run_ command because the ENTRYPOINT is expecting a parameter.
+If no parameter is given, you'll encounter an error since ENTRYPOINT requires one.
 
-To include a default value in case user doesn't provide a parameter along with the _docker run_ command, you can use CMD and ENTRYPOINT together
+**Default Parameter:**
+
+To set a default parameter if none is provided, combine `CMD` and `ENTRYPOINT`:
 
 ```bash
 FROM ubuntu
@@ -65,16 +61,10 @@ ENTRYPOINT ["sleep"]
 CMD ["60"]
 ```
 
-**Overriding ENTRYPOINT**
+## Overriding `ENTRYPOINT`
 
-You can also override the entrypoint during runtime by using the "--entrypoint" flag
+You can override the ENTRYPOINT at runtime using the `--entrypoint` flag:
 
 ```bash
 docker run --entrypoint sleep2.0 ubuntu-sleeper 60
 ```
-
-
-
- 
-
- 
