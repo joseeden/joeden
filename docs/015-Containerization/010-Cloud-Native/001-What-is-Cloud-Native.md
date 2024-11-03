@@ -10,7 +10,7 @@ last_update:
 
 ## Being Cloud Native 
 
-<p align=center>
+<div class='img-center'>
 
 ![](/img/docs/udacity-suse-1.JPG)
 
@@ -26,17 +26,27 @@ In its simplest terms, **Cloud native** refers to building and managing applicat
 
 Now, when we hear containers, it is also often followed by another buzzword: **microservices**.
 
-<p align=center>
+<div class='img-center'>
 
 ![](/img/docs/udacity-suse-1-microservices.png)
 
 </div>
 
-## Microservices 
+## Microservices
 
-**Microservices** are simply a collection of small, independent, and containerized applications. Read below to learn about the difference between monolitic applications and microservices.
+**Microservices** are small, independent, and containerized applications, each handling a specific function and running as separate processes.
 
-We'll get to explore how microservices ties in with Cloud-native in the labs.
+- Independent Development and Deployment
+  - Services can be developed and updated separately
+  - Faster release cycles without impacting other services
+
+- Scalability and Flexibility
+  - Services scale individually based on demand
+  - Allows for diverse tech stacks across services
+
+- Fault Isolation
+  - Failure in one service doesn't affect the whole system
+  - Resilient to partial failures, reducing downtime
 
 
 
