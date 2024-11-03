@@ -100,7 +100,7 @@ Once you configure the pipeline in the succeeding steps, you can check the **Rec
 
 ## Generate Access Keys
 
-To use the Jenkins server first create an IAM user in the AWS Console and generate access keys for that user. Attach the `AdministratorAccess` policy to this user temporarily to ensure they have the necessary permissions to run. Once you generate the key, you should have the following:
+To use the Jenkins server, first create an IAM user in the AWS Console and generate access keys for that user. Attach the `AdministratorAccess` policy to this user temporarily to ensure they have the necessary permissions to run. Once you generate the key, you should have the following:
 
 - AWS Access Key 
 - AWS Secret Key
@@ -194,7 +194,7 @@ Set the ScriptPath > Jenkinsfile
 
 Create the Jenkinsfile inside the project directory. 
 
-See file here: [Jenkinsfile](https://github.com/joseeden/test-aws-sample-hello-app/blob/main/Jenkinsfile)
+See file here: [Jenkinsfile](https://github.com/joseeden/test-aws-sam-hello-app/blob/master/Jenkinsfile)
 
 
 ## Commit and Push 
