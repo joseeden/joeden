@@ -185,7 +185,9 @@ In the AWS dashboard, we should also see the created Lambda function.
 
 ![](/img/docs/1102-aws-sam-deployed-appsss-seen-open-details.png)
 
-## Deleting the Function 
+
+
+## Cleanup
 
 To delete the function:
 
