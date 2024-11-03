@@ -40,11 +40,30 @@ If you are using Ubuntu 22.04, you might only be able to install Python 3.10.
 
 ## Generate Access Keys
 
+To use the Jenkins server first create an IAM user in the AWS Console and generate access keys for that user. Attach the `AdministratorAccess` policy to this user temporarily to ensure they have the necessary permissions to run. Once you generate the key, you should have the following:
 
-To use the Jenkins server first create an IAM user in the AWS Console and generate access keys for that user. Attach the `AdministratorAccess` policy to this user temporarily to ensure they have the necessary permissions to run..
+- AWS Access Key 
+- AWS Secret Key
 
 For more information, see [IAM Users and Access Keys](/docs/001-Personal-Notes/005-Project-Pre-requisites/001-AWS.md#iam-users-and-access-keys).
 
+
+## Configure Credentials on Jenkins 
+
+
+On the Jenkins dashboard, go to:
+
+```
+Manage Jenkins > Credentials > global > Add credentials
+```
+
+Configure the following details. For the **Secret** field, enter the AWS Access key generated from the previous step. Click **Create.**
+
+![](/img/docs/11032024-aws-jenkins-creds-access-key.png)
+
+Add a second credentials with the following details. Enter the AWS Secret key associated with the AWS Access key. Click **Create.**
+
+![](/img/docs/11032024-aws-jenkins-creds-secret-key.png)
 
 
 ## Pipeline Stages 

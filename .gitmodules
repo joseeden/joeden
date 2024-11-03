@@ -7,3 +7,6 @@
 [submodule "test-repos/test-go-webapp-sample"]
 	path = test-repos/test-go-webapp-sample
 	url = git@github.com:joseeden/test-go-webapp-sample.git
+[submodule "test-repos/test-aws-sam-hello-app"]
+	path = test-repos/test-aws-sam-hello-app
+	url = git@github.com:joseeden/test-aws-sam-hello-app.git
