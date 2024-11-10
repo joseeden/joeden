@@ -90,14 +90,14 @@ http://$SERVER/api/v1/namespaces/default/pods/$PODNAME/binding
 
 Besides specifying the `nodeName` property in the Pod manifest, Pod scheduling on nodes in a cluster can be controlled using several mechanisms:
 
-- [DaemonSets]()
-- [Taint and Tolerations]()
-- [Node Selectors and Node Affinity]()
-- [Pod Affinity]()
+- [DaemonSets](/docs/015-Containerization/020-Kubernetes/012-DaemonSets.md)
+- [Taint and Tolerations](/docs/015-Containerization/020-Kubernetes/013-Taints-and-tolerations.md)
+- [Node Selectors and Node Affinity](/docs/015-Containerization/020-Kubernetes/014-Node-Selectors-and-Node-Affinity.md)
+- [Pod Affinity](/docs/015-Containerization/020-Kubernetes/015-Pod-affinity.md)
 
 In addition to these, there are other concepts that we can use to influence the scheduling of Pods.
 
-- [Container Resource Requirements]() 
+- [Container Resource Requirements](/docs/015-Containerization/020-Kubernetes/016-Container-resource-requirements.md) 
 - [Static Pods](/docs/015-Containerization/020-Kubernetes/009-Static-Pods.md) 
 - [Custom Scheduling](https://kubernetes.io/docs/tasks/administer-cluster/configure-multiple-schedulers/)
 
