@@ -1,5 +1,5 @@
 ---
-title: "Pods
+title: "Pods"
 description: "The building blocks of Kubernetes"
 tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
 sidebar_position: 8
