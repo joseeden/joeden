@@ -100,12 +100,6 @@ With the rise of containers, better management tools became essential. Leading c
 - Abstracts infrastructure management
 - Enforces a *desired state* to define end-state configurations
 
-<div class='img-center'>
-
-![](/img/docs/pluralsightwhatiskubernetesfordevs.png)
-
-</div>
-
 **Additional Functionalities**
 
 - Runtime management

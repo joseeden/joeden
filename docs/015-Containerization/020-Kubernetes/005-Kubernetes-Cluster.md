@@ -55,52 +55,54 @@ The master node manages core control functions of the cluster.
 
 ### API Server
 
-- essentially the commmunication hub
-- core to all the operationa
-- all configuration changes pass through the API server
-- simple REST API interface
-- verifies the operation and updates the etcd
+The **API Server** is the central hub for all Kubernetes communication and operations.
+
+- Acts as a REST API interface
+- Routes all configuration changes
+- Verifies operations and updates **etcd**
 
 ### etcd (Cluster store)
 
-- persists the state of the Kubernetes objects
-- objects are persisted into a key-value store called **etcd**
-- implements watches on the stored keys
-- all other services are stateless and grab from API server
+**etcd** is the persistent storage for the Kubernetes cluster.
+
+- Saves Kubernetes object states in key-value pairs
+- Monitors object state with **watches** on keys
+- Stateless services retrieve data via the API server
 
 ### Scheduler
 
-- manages which Nodes to start Pods on
-- watches the API server for unsceduled Pods,
-- evaluates the resources required by a Pod,
-- handles the resource constraints that we define,
-- and then schedule the Pods on nodes
-- 2-steps process
+The **Scheduler** assigns Pods to Nodes based on resource needs.
 
-    - **Filtering** - find feasible nodes where resources could fit 
-    - **Score** - Rank each node to choose the most suitable Pod placement
+- Monitors API server for unscheduled Pods
+- Matches Pods to Nodes based on resource constraints
+
+Scheduling process:
+
+- **Filtering** – Finds Nodes with required resources
+- **Scoring** – Ranks Nodes to pick the best match for each Pod
 
 ### Controller Manager
 
-- handles lifecycle functions of the Controllers
-- constantly running the controller loops
-- watch the current state of the system
-- update the API server based on the desired state
-- types:
+The **Controller Manager** maintains system state via Controllers.
 
-    - **Node controller** - noticing and responding to nodes 
-    - **Replication Controller** - maintain the correct number of Pods 
-    - **Endpoints Controller** - populates endpoint objects (join servces and Pods)
-    - **Service Account and Token Controllers** - create default accounts and API access tokens for namespaces
+- Runs controller loops to monitor
+- Update system state based on desired configurations
 
-### Cloud Controller Manager - for EKS Setup only
+Controller types:
 
-- handles communication with AWS
-- autoscaling for bringing up more nodes 
-- provision EBS to back container volumes 
-- provision loadbalancers
+- **Node Controller** – Manages node availability
+- **Replication Controller** – Maintains correct Pod counts
+- **Endpoints Controller** – Links services and Pods
+- **Service Account and Token Controllers** – Manages default accounts and tokens for namespaces
 
-In addition to these five, we'll also mention **kubectl**, which isn't a part of the control plane but is necessary to interact with the API Server.
+### Cloud Controller Manager (for EKS Setup only)
+
+The **Cloud Controller Manager** manages cloud-based resources for AWS EKS.
+
+- Manages autoscaling and cloud integrations
+- Provisions EBS volumes and load balancers
+
+Additionally, **kubectl** is essential for interacting with the API Server, though it is not part of the control plane itself.
 
 ## Worker Node  
 
