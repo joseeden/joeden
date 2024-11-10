@@ -1,5 +1,5 @@
 ---
-title: "Pods: The Building Blocks"
+title: "Pods
 description: "The building blocks of Kubernetes"
 tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
 sidebar_position: 8
@@ -8,7 +8,7 @@ last_update:
 ---
 
 
-## Pods
+## Overview
 
 A **Pod** is the smallest unit in Kubernetes. It can contain one or more containers that always run together. If you run single containers, think of a Pod as just one container.
 
@@ -125,7 +125,7 @@ Both containers need to run together. If either container fails, the Pod restart
 
 However, some tasks may only need to run once, such as pulling code from a repository before the main application starts. These tasks can be handled using **initContainers**.
 
-For more information, please see [Probes and InitContainers](/docs/015-Containerization/020-Kubernetes/020-Probes-and-MultiContainer-Pods.md).
+For more information, please see [Probes and InitContainers](/docs/015-Containerization/020-Kubernetes/021-Probes-and-MultiContainer-Pods.md).
 
 
  

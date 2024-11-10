@@ -2,7 +2,7 @@
 title: "Enabling API versions"
 description: "Enabling API versions"
 tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
-sidebar_position: 11
+sidebar_position: 41
 last_update:
   date: 7/7/2022
 ---

@@ -2,7 +2,7 @@
 title: "Changing deprecated API versions"
 description: "Changing deprecated API versions"
 tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
-sidebar_position: 12
+sidebar_position: 42
 last_update:
   date: 7/7/2022
 ---

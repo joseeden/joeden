@@ -2,7 +2,7 @@
 title: "Kubernetes API"
 description: "Container Management Challenges"
 tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
-sidebar_position: 10
+sidebar_position: 40
 last_update:
   date: 7/7/2022
 ---
