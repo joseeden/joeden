@@ -2,7 +2,7 @@
 title: "Kubernetes Cluster"
 description: "Container Management Challenges"
 tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
-sidebar_position: 1
+sidebar_position: 3
 last_update:
   date: 7/7/2022
 ---

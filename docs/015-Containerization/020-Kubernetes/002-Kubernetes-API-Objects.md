@@ -2,7 +2,7 @@
 title: "Kubernetes API Objects"
 description: "Kubernetes API Objects"
 tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
-sidebar_position: 4
+sidebar_position: 2
 last_update:
   date: 7/7/2022
 ---
