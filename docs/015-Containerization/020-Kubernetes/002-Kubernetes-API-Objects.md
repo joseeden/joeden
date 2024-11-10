@@ -7,8 +7,6 @@ last_update:
   date: 7/7/2022
 ---
 
-## Overview
-
 <div class='img-center'>
 
 ![](/img/docs/k8s-object.png)

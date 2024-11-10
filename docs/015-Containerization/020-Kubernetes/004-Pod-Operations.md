@@ -12,10 +12,6 @@ last_update:
 
 When deploying a cluster with a ReplicaSet of 5 using kubectl, the steps are as follows:
 
-<div class='img-center'>
-![](/img/docs/k8sscenario1.png)
-</div>
-
 1. The request is sent from kubectl to the API Server.
 2. The API Server logs the info to the cluster store.
 3. The Controller Manager spins up 5 Pods per the ReplicaSet, then sends this to the Scheduler.
@@ -24,18 +20,23 @@ When deploying a cluster with a ReplicaSet of 5 using kubectl, the steps are as 
 6. Node 1 starts three Pods, and Node 2 starts the remaining two.
 7. The Controller Manager tracks the state of the replicas.
 
-If Node 2 fails:
-
 <div class='img-center'>
-![](/img/docs/node2goesdownk8sscenario.png)
+![](/img/docs/k8sscenario1.png)
 </div>
+
+
+## One Node Fails
+
+If Node 2 fails:
 
 1. Node 2 stops responding, and the Controller Manager identifies a state mismatch.
 2. The Controller Manager requests rescheduling from the Scheduler.
 3. The Scheduler assigns the two down Pods to Node 1.
 4. Node 1’s kubelet detects the state change and starts the additional Pods.
 
-
+<div class='img-center'>
+![](/img/docs/node2goesdownk8sscenario.png)
+</div>
 
  
 
