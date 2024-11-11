@@ -1,5 +1,5 @@
 ---
-title: "Kubernetes Networking"
+title: "Kubernetes Services"
 description: "Services, ClusterIP, NodePort, and LoadBalancers"
 tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
 sidebar_position: 21
