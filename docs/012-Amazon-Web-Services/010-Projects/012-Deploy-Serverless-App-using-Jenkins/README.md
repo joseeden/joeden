@@ -31,7 +31,7 @@ On your local computer and on the Jenkins server, install:
 - [AWS CLI](/docs/001-Personal-Notes/005-Project-Pre-requisites/001-AWS.md#aws-cli)
 - [AWS SAM CLI](/docs/001-Personal-Notes/005-Project-Pre-requisites/001-AWS.md#aws-sam-cli)
 - [Python 3.10](/docs/001-Personal-Notes/005-Project-Pre-requisites/005-Software.md#python-310)
-- [Pip](/docs/001-Personal-Notes/005-Project-Pre-requisites/005-Software.md#pip)
+- [Pip](/docs/001-Personal-Notes/005-Project-Pre-requisites/005-Software.md#pip-312)
 - [Python Virtual Environment](/docs/001-Personal-Notes/005-Project-Pre-requisites/005-Software.md#python-virtual-environment)
 
 If you are using Ubuntu 22.04, you might only be able to install Python 3.10.

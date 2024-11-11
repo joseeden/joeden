@@ -31,7 +31,7 @@ You will need to install the following in your local computer:
 
 - [Python 3.10](/docs/001-Personal-Notes/005-Project-Pre-requisites/005-Software.md#python-310)
 
-- [Pip](/docs/001-Personal-Notes/005-Project-Pre-requisites/005-Software.md#pip)
+- [Pip](/docs/001-Personal-Notes/005-Project-Pre-requisites/005-Software.md#pip-312)
 
 
 If you are using Ubuntu 22.04, you might only be able to install Python 3.10.
