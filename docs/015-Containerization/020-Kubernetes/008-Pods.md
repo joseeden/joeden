@@ -125,7 +125,7 @@ Both containers need to run together. If either container fails, the Pod restart
 
 However, some tasks may only need to run once, such as pulling code from a repository before the main application starts. These tasks can be handled using **initContainers**.
 
-For more information, please see [Probes and InitContainers](/docs/015-Containerization/020-Kubernetes/021-Probes-and-MultiContainer-Pods.md).
+For more information, please see [Probes and InitContainers](/docs/015-Containerization/020-Kubernetes/020-Probes-and-MultiContainer-Pods.md).
 
 
  

@@ -2,7 +2,7 @@
 title: "Deployments"
 description: "Deployments"
 tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
-sidebar_position: 19
+sidebar_position: 18
 last_update:
   date: 7/7/2022
 ---
@@ -117,7 +117,7 @@ Key highlights from the output:
   - **max unavailable**: Limits unavailable Pods during updates
   - **max surge**: Limits Pods exceeding the desired count during updates
 
-For more information, please see [Rollouts and Rollbacks.](/docs/015-Containerization/020-Kubernetes/020-Rollouts-and-Rollbacks.md)
+For more information, please see [Rollouts and Rollbacks.](/docs/015-Containerization/020-Kubernetes/019-Rollouts-and-Rollbacks.md)
 
 
 
