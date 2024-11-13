@@ -1,6 +1,6 @@
 ---
-title: "Audit Logs to Monitor Access"
-description: "Mutable and Immutable Infrastructure"
+title: "Audit Logs for Access Monitoring"
+description: "Audit Logs for Access Monitoring"
 tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
 sidebar_position: 11
 last_update:
