@@ -78,6 +78,18 @@ Openshift:
   label: 'Openshift'
   permalink: '/Openshift'
   description: 'Docs related to Openshift'
+Helm:
+  label: 'Helm'
+  permalink: '/Helm'
+  description: 'Docs related to Helm'
+ArgoCD:
+  label: 'ArgoCD'
+  permalink: '/ArgoCD'
+  description: 'Docs related to ArgoCD'
+Istio:
+  label: 'Istio'
+  permalink: '/Istio'
+  description: 'Docs related to Istio'
 Observability:
   label: 'Observability'
   permalink: '/Observability'
