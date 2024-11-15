@@ -22,12 +22,12 @@ For more information, please see [Admission Controllers.](/docs/015-Containeriza
 
 Admission Controllers validate and potentially reject requests based on predefined policies.  
 
-**After Authorization, Before Persistence**  
+**After Authorization, Before Persistence:**  
 
   - Triggered after requests are authenticated and authorized.  
   - Validates before saving to the cluster.  
 
-**Use Cases**  
+**Use Cases:**  
 
 - **Security Policies**  
   - Enforce pod security contexts.  
@@ -45,12 +45,12 @@ Admission Controllers validate and potentially reject requests based on predefin
 
 Mutating admission controllers modify requests before they are persisted in the cluster.  
 
-**Before Persistence**  
+**Before Persistence:**  
 
   - Triggered after authentication and validation.  
   - Alters object content before saving.  
 
-**Use Cases**  
+**Use Cases:**  
 
 - **Default Values**  
   - Add default field values to objects.  
