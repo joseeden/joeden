@@ -68,7 +68,7 @@ Processes can drop specific capabilities to reduce their privileges after they h
 
 | **Capability**            | **Description**                                         |  
 |----------------------------|---------------------------------------------------------|  
-| **CAP_NET_BIND_SERVICE**   | Bind to ports <1024 without root.                       |  
+| **CAP_NET_BIND_SERVICE**   | Bind to ports `<1024` without root.                       |  
 | **CAP_DAC_READ_SEARCH**    | Bypass file read and directory search permission checks. |  
 | **CAP_SYS_ADMIN**          | Perform various administrative tasks.                  |  
 | **CAP_SYS_PTRACE**         | Trace and debug arbitrary processes.                   |  
