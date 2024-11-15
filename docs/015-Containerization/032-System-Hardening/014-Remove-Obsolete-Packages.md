@@ -18,7 +18,7 @@ To reduce security risks, remove unnecessary packages and services from Kubernet
 
       <div class='img-center'>
 
-      ![](/img/docs/nstall-only-required-packages.png)
+      ![](/img/docs/install-only-required-packages.png)
 
       </div>
 
