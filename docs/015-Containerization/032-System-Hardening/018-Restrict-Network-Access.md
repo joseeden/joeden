@@ -7,17 +7,6 @@ last_update:
   date: 7/7/2022
 ---
 
-- [Network-wide Security](#network-wide-security)
-- [Server-Level Security](#server-level-security)
-- [Uncomplicated Firewall (UFW)](#uncomplicated-firewall-ufw)
-- [Basic UFW Commands](#basic-ufw-commands)
-- [Usage Examples](#usage-examples)
-- [Installing UFW](#installing-ufw)
-- [Sample UFW Rules](#sample-ufw-rules)
-- [Deleting UFW Rules](#deleting-ufw-rules)
-
-
-
 
 ## Network-wide Security 
 
