@@ -8,7 +8,7 @@ last_update:
 ---
 
 
-# Overview
+## Overview
 
 To control image source security, we can leverage various options to restrict users from pulling images from unapproved registries.
 
@@ -64,8 +64,7 @@ allow {
 }
 ```
 
-OPA policies can be integrated with Kubernetes to extend control over image access.
-
+For more information, please see [OPA.](/docs/015-Containerization/033-Microservice-Vulnerabilities/040-Open-Policy-Agent.md)
 
 ## Built-In Image Policy Webhook
 
