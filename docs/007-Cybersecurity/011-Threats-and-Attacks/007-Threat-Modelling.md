@@ -116,7 +116,7 @@ The STRIDE model is a framework used to understand and categorize different type
 - **Elevation of Privilege**
   - Gaining unauthorized access to higher privileges than originally granted.
   - Examples include exploiting software vulnerabilities to gain administrative access.
-  - Mitigation: Implement least privilege access and secure coding practices.
+  - Mitigation: Implement [least privilege](/docs/007-Cybersecurity/006-Identity-and-Access-Management/005-IAM-Concepts.md#principle-of-least-privilege) access and secure coding practices.
 
 
 ## Reduction Analysis

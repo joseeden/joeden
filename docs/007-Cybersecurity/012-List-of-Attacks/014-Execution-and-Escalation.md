@@ -66,7 +66,7 @@ Privilege Escalation is an attack where an attacker gains elevated access to res
 
 **Mitigations:**
 
-- Apply the principle of least privilege (PoLP).
+- Apply the [principle of least privilege (PoLP)](/docs/007-Cybersecurity/006-Identity-and-Access-Management/005-IAM-Concepts.md#principle-of-least-privilege).
 - Regularly update and patch systems.
 - Monitor and log access to critical systems and data.
 - Use security tools to detect and prevent privilege escalation attempts.

@@ -42,7 +42,7 @@ To enhance security, developers should implement controls to mitigate potential 
 
 - Input validation on user input
 - Encrypt sensitive data in databases
-- Enforce the principle of least privilege for user accounts
+- Enforce the [principle of least privilege](/docs/007-Cybersecurity/006-Identity-and-Access-Management/005-IAM-Concepts.md#principle-of-least-privilege) for user accounts
 - Conduct thorough code testing
 
 ## Using Sandboxing for Safety  

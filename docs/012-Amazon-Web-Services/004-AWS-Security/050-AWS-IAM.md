@@ -152,7 +152,7 @@ Types:
 
 - **AWS-Managed Policies**
     - Standalone policy created and managed by AWS.
-    - Hard to follow the least privilege principle.
+    - Hard to follow the [least privilege principle](/docs/007-Cybersecurity/006-Identity-and-Access-Management/005-IAM-Concepts.md#principle-of-least-privilege).
     - Cannot be modified by customer.
     
 - **Customer Managed Policies**

@@ -174,4 +174,4 @@ Mitigations:
   - Keep Windows systems updated with security patches.
   - Limit administrative access and use secure password management.
   - Ensure only trusted OS are allowed to connect to your servers.
-  - Implement least privilege for all user accounts.
+  - Implement [least privilege](/docs/007-Cybersecurity/006-Identity-and-Access-Management/005-IAM-Concepts.md#principle-of-least-privilege) for all user accounts.

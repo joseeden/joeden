@@ -70,7 +70,7 @@ Attackers insert malicious SQL code into a query. This can allow unauthorized ac
 
 - Use parameterized queries and prepared statements to prevent SQL injection.
 - Implement strict input validation and sanitization.
-- Employ least privilege access controls for database accounts.
+- Employ [least privilege](/docs/007-Cybersecurity/006-Identity-and-Access-Management/005-IAM-Concepts.md#principle-of-least-privilege) access controls for database accounts.
 - Regularly audit and review database queries and security configurations.
 - Use web application firewalls (WAF) to filter and monitor SQL injection attempts.
 

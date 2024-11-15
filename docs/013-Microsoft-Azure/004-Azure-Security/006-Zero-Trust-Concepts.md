@@ -56,7 +56,7 @@ A paradigm shift to a "**zero trust**" model is advocated, where trust is not au
 - **Minimal Access**
 
     - Grant the minimum level of access required for specific tasks.
-    - Adopt the principle of least privilege to limit potential damage.
+    - Adopt the [principle of least privilege](/docs/007-Cybersecurity/006-Identity-and-Access-Management/005-IAM-Concepts.md#principle-of-least-privilege) to limit potential damage.
 
 - **Role-Based Access**
 

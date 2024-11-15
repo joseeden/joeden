@@ -20,10 +20,11 @@ Azure provides a comprehensive suite of access management and identity services,
 ## Role-Based Access Control (RBAC)
 
 RBAC is an authorization system built on Azure Resource Manager, providing fine-grained access management for Azure resources.
-- Manages user access to specific Azure resources, defining their permissions and scope.
-- Enables segregation of duties, granting users the least privilege needed for their tasks.
-- Minimizes security risks by granting least privilege.
-- Effective in complex organizations with diverse resource needs.
+- Manages user access to specific Azure resources, 
+- Define their permissions and scope.
+- Enables segregation of duties
+- Grant users the [least privilege](/docs/007-Cybersecurity/006-Identity-and-Access-Management/005-IAM-Concepts.md#principle-of-least-privilege) needed for their tasks.
+- Effective in organizations with diverse resource needs.
 
 Example Scenario:
 
