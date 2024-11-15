@@ -33,8 +33,7 @@ Kubernetes provides several admission controllers for specific use cases:
 
 - **NamespaceLifecycle**  
   - Manages namespace lifecycle policies.  
-  - Handles namespace creation rules.  
-  - Ensures proper namespace deletion.  
+  - Handles namespace creation rules and deletion.  
 
 - **ResourceQuota**  
   - Enforces resource usage limits.  
@@ -42,8 +41,7 @@ Kubernetes provides several admission controllers for specific use cases:
 
 - **PodSecurityPolicy**  
   - Applies Pod security rules.  
-  - Validates privilege levels.  
-  - Checks file system permissions.  
+  - Validates privilege levels and system permissions.  
 
 - **MutatingAdmissionWebhook**  
   - Modifies resources via webhooks.  
@@ -51,7 +49,7 @@ Kubernetes provides several admission controllers for specific use cases:
   - Supports dynamic updates.  
 
 - **ValidatingAdmissionWebhook**  
-  - Validates resources via webhooks.  
+  - Validates resources using webhooks.  
   - Rejects invalid requests.  
   - Ensures compliance with policies.  
 
