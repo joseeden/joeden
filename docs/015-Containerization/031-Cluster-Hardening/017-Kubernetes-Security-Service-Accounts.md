@@ -39,7 +39,7 @@ kubectl create serviceaccount sample-sa
 
 <div class='img-center'>
 
-![](/img/docs/k8sk8s-security-create-sa-sample-sa.png)
+![](/img/docs/k8s-security-create-sa-sample-sa.png)
 
 </div>
 
