@@ -20,13 +20,13 @@ With the introduction of Hyper-V, this gave way for **Docker Desktop for Windows
 
 **NOTE:** Running containers on Windows machines is suited for local development purposes only and is NOT RECOMMENDED FOR PRODUCTION USE.
 
-- [Install Docker on WSL2 without Docker Desktop](/docs/001-Personal-Notes/005-Project-Pre-requisites/010-Docker/001-Install-Docker-on-WSL2-without-Docker-Desktop.md)
+- [Install Docker on WSL2 without Docker Desktop](/docs/001-Personal-Notes/005-Project-Pre-requisites/010-Containers/001-Install-Docker-on-WSL2-without-Docker-Desktop.md)
 
-- [Install Docker on RHEL/CentOS](/docs/001-Personal-Notes/005-Project-Pre-requisites/010-Docker/002-Install-Docker-on-RHEL-CentOS.md)
+- [Install Docker on RHEL/CentOS](/docs/001-Personal-Notes/005-Project-Pre-requisites/010-Containers/002-Install-Docker-on-RHEL-CentOS.md)
 
-- [Install Docker on Ubuntu](/docs/001-Personal-Notes/005-Project-Pre-requisites/010-Docker/003-Install-Docker-on-Ubuntu.md)
+- [Install Docker on Ubuntu](/docs/001-Personal-Notes/005-Project-Pre-requisites/010-Containers/003-Install-Docker-on-Ubuntu.md)
 
-- [Install Docker on Ubuntu using Terraform](/docs/001-Personal-Notes/005-Project-Pre-requisites/010-Docker/003-Install-Docker-on-Ubuntu.md) 
+- [Install Docker on Ubuntu using Terraform](/docs/001-Personal-Notes/005-Project-Pre-requisites/010-Containers/003-Install-Docker-on-Ubuntu.md) 
 
 
 
