@@ -105,7 +105,7 @@ This token can then be used as an authentication bearer token when making REST c
 
 Key points about the JWT (token):
 
-- No expiration (in Kubernetes <1.24)
+- No expiration (in Kubernetes versions below v1.24)
 - Not audience-bound
 - Not object-bound
 
