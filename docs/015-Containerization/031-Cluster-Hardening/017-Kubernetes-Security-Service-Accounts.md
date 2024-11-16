@@ -86,7 +86,7 @@ Whenever a pod is created, the default service account and its created token are
 
 <div class='img-center'>
 
-![](/img/docs/k8sdefault-svc-accounts-auto-mounted.png)
+![](/img/docs/default-svc-accounts-auto-mounted.png)
 
 </div>
 
