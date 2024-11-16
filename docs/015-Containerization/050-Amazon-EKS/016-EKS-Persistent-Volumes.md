@@ -51,7 +51,7 @@ For multi-AZ storage, use **Amazon EFS**, which supports cross-AZ access.
 
 <div class='img-center'>
 
-![](/img/docs/Lab57-ebs-efs.png)
+![](/img/docs/lab57-ebs-efs.png)
 
 </div>
 
