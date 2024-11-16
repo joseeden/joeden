@@ -16,68 +16,64 @@ last_update:
 
 ## Ciphers 
 
-TLS works by use of Public Key Encryption, and the encryption is performed by cryptographic mathematical algorithms known as ciphers. Mathematicians discover new ciphers from time to time that are more secure than their predecessors.
+TLS uses Public Key Encryption, which relies on cryptographic algorithms called ciphers. As mathematicians discover stronger ciphers, they gradually replace older ones.
 
-Each time a new cipher is discovered, it has to work its way into general usage, that is, that the software libraries that implement encryption need to be updated with the new cipher, whilst remaining compatible with the existing well-known ciphers.
-
-These updates have to find their way into all software that makes use of HTTPS (TLS) protocols including, but not limited to:
+To adopt a new cipher, software libraries must be updated, ensuring compatibility with older ciphers. This update affects various software that uses TLS, including:
 
 - Browsers
-- Web clients (e.g. curl, wget)
-- Web servers (e.g. IIS, nginx, apache etc)
-- Layer 7 appliances (e.g. AWS Application Load Balancer, Web Application Firewalls)
-- Kubernetes components (API server, controller manager, kubelet, scheduler)
+- Web clients (e.g., curl, wget)
+- Web servers (e.g., IIS, nginx, Apache)
+- Layer 7 appliances (e.g., AWS ALB, WAFs)
+- Kubernetes components (e.g., API server, kubelet)
 - etcd
 
-When a TLS connection is established, the cipher to use is negotiated between the two ends, and usually the strongest possible cipher that both ends know is selected. The ciphers available to each end of the connection depend on how old that software is, and thus which ciphers are known to it.
+When a TLS connection is established, both ends negotiate which cipher to use, typically choosing the strongest common cipher. The ciphers available depend on the software versions at each end.
 
-Most TLS aware software packages, and for the purpose of CKS, this includes all the control plane components and etcd, have the ability to limit which ciphers should be available for negotiation when a connection is being established. Limiting the available ciphers to the newer (stronger) ones prevents older clients that do not have the newer ciphers from establishing a connection which may be able to be compromised due to use of an older (weaker) cipher for which a known exploit is available.
+Software often allows limiting the available ciphers to stronger ones, preventing older clients (with weaker ciphers) from connecting, reducing the risk of exploitation.
 
 
 ## Kubernetes Control Plane
 
-All the control plane components (API server, controller manager, kubelet, scheduler) have the following two optional arguments:
+The Kubernetes control plane components (API server, controller manager, kubelet, scheduler) have two optional settings:
 
-- `--tls-min-version` – This argument sets the minimum version of TLS that may be used during connection negotiation. Possible values      
-    
+- `--tls-min-version`: Sets the minimum TLS version allowed for connections. Options:
     - `VersionTLS10` (default)
     - `VersionTLS11`
     - `VersionTLS12`
     - `VersionTLS13`
+  
+- `--tls-cipher-suites`: Specifies a comma-separated list of allowed cipher suites for connection negotiation. If not set, the default list from GoLang is used.
 
-- `--tls-cipher-suites` – This argument sets a comma-separated list of cipher suites that may be used during connection negotiation. There are many of these, and the full list may be found on the api server argument page. If this argument is omitted, the default value is the list provided by the GoLang cipher suites package.
+`etcd` also supports a `--cipher-suites` argument to control which ciphers are allowed for API server → etcd communication. It's recommended to use the newest/strongest ciphers.
 
+- `--cipher-suites`: Sets a list of allowed ciphers, defaulting to GoLang's list if not set.
 
-`etcd` also has a command line argument to set cipher suites. Thus it is possible to secure api server → etcd communication to use only specific ciphers that they have in common. You would most likely want to select the newest/strongest.
+Note: Not all cipher suites and TLS versions are compatible. For example, if `--tls-min-version` is set to `VersionTLS13`, some ciphers may not work. Using an incompatible cipher will prevent the API server from starting.
 
-- `--cipher-suites` – This argument sets a comma-separated list of cipher suites that may be used during connection negotiation. If this argument is omitted, the default value is the list provided by the GoLang cipher suites package.
-
-Be aware that not all combinations of cipher suites and TLS versions are compatible with each other. If you set --tls-min-version to VersionTLS13, there will be certain ciphers that can’t be used so explicitly specifying an incompatible cipher with --tls-cipher-suites would cause API server to not come back up.
 
 ## Sample Scenario 
 
-Restrict communication between etcd and api server. Use the following:
+To restrict communication between `etcd` and the API server using TLS 1.2 and a specific cipher:
 
-- **cipher**: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
-- **TLS version**: TLS 1.2
+1. **Cipher**: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256  
+2. **TLS Version**: TLS 1.2
 
-Solution:
+**Solution**:
 
-- Edit the API server manifest and add the following two arguments:
+1. Edit the API server manifest and add:
 
     ```bash
     --tls-min-version=VersionTLS12
     --tls-cipher-suites=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
     ```
 
-- Edit the etcd manifest and add the following argument.
+2. Edit the `etcd` manifest and add:
 
     ```bash
-    --cipher-suites=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256  
+    --cipher-suites=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
     ```
 
-- Wait for both pods to restart. This may take a minute or more.
-
+3. Restart both pods, which may take a minute or more.
 
 
 
