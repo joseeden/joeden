@@ -28,7 +28,6 @@ sudo usermod -aG docker ubuntu
 
 For more information, please see [official Docker installation guide](https://docs.docker.com/engine/install/ubuntu/) for more details.
   
-</details>
 
 ## Using Terraform 
 

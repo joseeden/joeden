@@ -47,8 +47,8 @@ A primary container writes log files, while a sidecar container sends the logs t
 
 </div>
 
-<small><center> Photo from [Multi-Container Pods](https://ansilh.com/08-multi_container_pod/04-pod-patterns/) 
-</center></small>
+<!-- Photo from [Multi-Container Pods](https://ansilh.com/08-multi_container_pod/04-pod-patterns/)  -->
+
 
 ### Ambassador Pattern
 
@@ -74,8 +74,8 @@ As an example, we could have a web app (primary container), and a database proxy
 
 </div>
 
-<small><center> Photo from [Kubernetes multi-container patterns](https://raghavramesh.github.io/posts/kubernetes-multi-container-patterns/)
-</center></small>
+<!-- Photo from [Kubernetes multi-container patterns](https://raghavramesh.github.io/posts/kubernetes-multi-container-patterns/) -->
+
 
 
 
@@ -102,8 +102,8 @@ If an application needs to transform heterogeneous monitoring data into a unifie
 
 </div>
 
-<small><center> Photo from [Adapter containers](https://kubernetes.io/blog/2015/06/the-distributed-system-toolkit-patterns/#example-3-adapter-containers)
-</center></small>
+<!-- Photo from [Adapter containers](https://kubernetes.io/blog/2015/06/the-distributed-system-toolkit-patterns/#example-3-adapter-containers) -->
+
 
 
 ## Networking 
