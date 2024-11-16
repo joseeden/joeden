@@ -78,7 +78,7 @@ Every namespace automatically creates a **default** service account. This servic
 
 <div class='img-center'>
 
-![](/img/docs/k8sk8s-security-default-svc-account-created-every-namespace.png)
+![](/img/docs/k8s-security-default-svc-account-created-every-namespace.png)
 
 </div>
 
@@ -115,7 +115,7 @@ Starting with Kubernetes 1.24, tokens are no longer auto-generated. Tokens must 
 
 <div class='img-center'>
 
-![](/img/docs/k8sk8s-security-update-124.png)
+![](/img/docs/k8s-security-update-124.png)
 
 </div>
 
@@ -129,7 +129,7 @@ This creates a separate secret (token) that needs to be associated with the Pod.
 
 <div class='img-center'>
 
-![](/img/docs/k8sk8s-security-create-separate-token.png)
+![](/img/docs/k8s-security-create-separate-token.png)
 
 </div>
 
