@@ -70,6 +70,18 @@ Kubernetes:
   label: 'Kubernetes'
   permalink: '/Kubernetes'
   description: 'Docs related to Kubernetes'
+Amazon EKS:
+  label: 'Amazon EKS'
+  permalink: '/Amazon EKS'
+  description: 'Docs related to Amazon EKS'
+Azure Kubernetes Service:
+  label: 'Azure Kubernetes Service'
+  permalink: '/Azure Kubernetes Service'
+  description: 'Docs related to Azure Kubernetes Service'
+Google Kubernetes Engine:
+  label: 'Google Kubernetes Engine'
+  permalink: '/Google Kubernetes Engine'
+  description: 'Docs related to Google Kubernetes Engine'
 Rancher:
   label: 'Rancher'
   permalink: '/Rancher'
