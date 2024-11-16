@@ -15,7 +15,7 @@ last_update:
 ---
 
 
-## Control Plane Logging to CloudWatch
+## Overview
 
 Since AWS manages the Control Plane, we can't directly access the hosts that manage the logs. However, we can view these logs in CloudWatch by enabling the log types we want to send.
 
