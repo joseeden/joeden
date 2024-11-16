@@ -20,7 +20,13 @@ systemctl status apparmor
 
 To use AppArmor, the AppArmor kernel module must first be loaded on all the nodes where the containers will run. To check:
 
-![](../../Images/check-if-apparmor-is-loaded-or-not.png)
+<div class='img-center'>
+
+![](/img/docs/check-if-apparmor-is-loaded-or-not.png)
+
+</div>
+
+
 
 Check the loaded profiles:
 
@@ -30,7 +36,13 @@ sudo aa-status
 
 To apply AppArmor, we also use a profile which must be loaded into the kernel. To check the profiles loaded:
 
-![](../../Images/check-apparmor-profiles-loaded-onto-the-kernel.png)
+<div class='img-center'>
+
+![](/img/docs/check-apparmor-profiles-loaded-onto-the-kernel.png)
+
+</div>
+
+
 
 
 ## Installing AppArmor
@@ -145,7 +157,13 @@ Kubernetes supports AppArmor starting from version 1.4. Prerequisites:
    sudo aa-status
    ```
 
-   ![](../../Images/apparmor-verify-if-profile-is-loaded-before-running.png)
+   <div class='img-center'>
+
+   ![](/img/docs/apparmor-verify-if-profile-is-loaded-before-running.png)
+
+   </div>
+
+
 
 
 3. Add an annotation in the Pod manifest:
