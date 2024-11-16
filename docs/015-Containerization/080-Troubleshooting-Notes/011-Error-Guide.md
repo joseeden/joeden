@@ -14,6 +14,28 @@ last_update:
 ---
 
 
+## Error: Cannot connect to the Docker daemon
+
+In case you encounter this message when you test Docker for the first time:
+
+```bash
+docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+```
+
+To resolve this, start the docker service and docker daemon,
+
+```bash
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo systemctl status docker
+```
+```bash
+sudo dockerd
+```
+
+You can checkout this [Stackoverflow discussion](https://stackoverflow.com/questions/44678725/cannot-connect-to-the-docker-daemon-at-unix-var-run-docker-sock-is-the-docker) to know more.
+
+
 ## Error: Cannot View Kubernetes Nodes 
 
 You might get the following error when checking the EKS cluster through the AWS Console.
