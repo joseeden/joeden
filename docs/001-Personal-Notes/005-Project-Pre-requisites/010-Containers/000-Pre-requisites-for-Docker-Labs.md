@@ -1,6 +1,6 @@
 ---
-title: "Pre-requisites for Docker Labs"
-description: "Pre-requisites for Docker Labs"
+title: "Pre-requisites for Container Labs"
+description: "Pre-requisites for Container Labs"
 tags: 
   - Cloud
   - DevOps
