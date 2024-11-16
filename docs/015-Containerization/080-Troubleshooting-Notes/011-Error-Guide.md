@@ -1,13 +1,20 @@
+---
+title: "Error Guides"
+description: "Error Guides"
+tags: 
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
+sidebar_position: 11
+last_update:
+  date: 7/7/2022
+---
 
-# Error: Cannot View Kubernetes Nodes 
 
-- [Problem](#problem)
-- [Cause](#cause)
-- [Solution 1](#solution-1)
-- [Solution 2](#solution-2)
-
-
-## Problem
+## Error: Cannot View Kubernetes Nodes 
 
 You might get the following error when checking the EKS cluster through the AWS Console.
 
@@ -15,7 +22,7 @@ You might get the following error when checking the EKS cluster through the AWS 
 Your current user or role does not have access to Kubernetes objects on this EKS cluster 
 ```
 
-## Cause 
+### Cause 
 
 You might be using two different IAM user accounts:
 
@@ -26,20 +33,20 @@ In the terminal, you set up the CLI access to connect to your AWS resources by e
 the credentials file. 
 
 ```bash
-$ vim ~/.aws/credentials 
+vim ~/.aws/credentials 
 ```
 
 Check the identity.
 
 ```bash
-$ aws sts get-caller-identity  
+aws sts get-caller-identity  
 ```
 
 If the user returned is the same as the user currently logged-in the AWS Management Console, then you shouldn't have any issue.
 
 If they're different users, then that means the user in the CLI (this is the user you used to create the EKS cluster) has different permissions from the user logged in the console.
 
-## Solution 1 
+### Solution 1 
 
 Before anything else, run the command below  to make sure you are connected to the correct EKS cluster (if you have multiple clusters). The cluster with the '*' under the CURRENT column is the cluster that you are currently accessing.
 
@@ -51,7 +58,7 @@ CURRENT   NAME                                                  CLUSTER         
           k8s-admin@eksops-unmanaged.ap-southeast-1.eksctl.io   eksops-unmanaged.ap-southeast-1.eksctl.io   k8s-admin@eksops-unmanaged.ap-southeast-1.eksctl.io
 ```
 
-Edit eh ConfigMap. Add the **mapUsers** block with your **userarn**.
+Edit the ConfigMap. Add the `mapUsers` block with your `userarn`.
 
 ```bash
 kubectl edit configmap aws-auth -n kube-system 
@@ -71,13 +78,18 @@ data:
       - system:masters 
 ```
 
-## Solution 2 
+### Solution 2 
 
 You may try to log-in to the console using the same identity that you used in the CLI. If error still appeared, you may need to attach the inline policy to the group.
 
-![](../../Images/labxx-attachinlinepolicytogroupjson.png)  
+<div class='img-center'>
 
-In the next page, choose the JSON tab and enter the following policy. Make sure to replace 111122223333 with your account ID.
+![](/img/docs/labxx-attachinlinepolicytogroupjson.png)  
+
+</div>
+
+
+In the next page, choose the JSON tab and enter the following policy. Make sure to replace `111122223333` with your account ID.
 
 ```bash
 {
@@ -114,19 +126,19 @@ Click **Review Policy**, then in the next page, create a name for the policy. Cl
 Next, create a rolebinding. If you need to change the Kubernetes group name, namespace, permissions, or any other configuration in the file, then download the file and edit it before applying it to your cluster
 
 ```bash
-$ curl -o eks-console-full-access.yaml https://s3.us-west-2.amazonaws.com/amazon-eks/docs/eks-console-full-access.yaml
+curl -o eks-console-full-access.yaml https://s3.us-west-2.amazonaws.com/amazon-eks/docs/eks-console-full-access.yaml
 ```
 ```bash
-$ curl -o eks-console-restricted-access.yaml https://s3.us-west-2.amazonaws.com/amazon-eks/docs/eks-console-restricted-access.yaml 
+curl -o eks-console-restricted-access.yaml https://s3.us-west-2.amazonaws.com/amazon-eks/docs/eks-console-restricted-access.yaml 
 ```
 
 You can apply any of the two YAML files.
 
 ```bash
-$ kubectl apply -f eks-console-full-access.yaml
+kubectl apply -f eks-console-full-access.yaml
 ```
 ```bash
-$ kubectl apply -f eks-console-restricted-access.yaml
+kubectl apply -f eks-console-restricted-access.yaml
 ```
 
 Next, map the IAM user or role to the Kubernetes user or group in the aws-auth ConfigMap using eksctl.

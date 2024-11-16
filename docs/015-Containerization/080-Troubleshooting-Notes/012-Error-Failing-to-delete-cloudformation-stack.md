@@ -1,9 +1,17 @@
-
-# Error: Failing to Delete CloudFormation Stack 
-
-- [Problem](#problem)
-- [Cause](#cause)
-- [Solution](#solution)
+---
+title: "Error: Failing to Delete CloudFormation Stack"
+description: "Error: Failing to Delete CloudFormation Stack"
+tags: 
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
+sidebar_position: 12
+last_update:
+  date: 7/7/2022
+---
 
 
 ## Problem
@@ -11,10 +19,10 @@
 When you try to delete the cluster using the command below, you get an error that says it failed to delete the cluster.
 
 ```bash
-$ eksctl delete cluster -f manifest.yml 
+eksctl delete cluster -f manifest.yml 
 ```
 
-When you go to > CloudFormation dashboard > Stacks > *eksctl-yourcluster*, and then check the Events, you might see this two errors:
+When you go to **CloudFormation dashboard > Stacks >** **eksctl-yourcluster**, and then check the Events, you might see this two errors:
 
 When CloudFormation tries to create the node instance profile: 
 

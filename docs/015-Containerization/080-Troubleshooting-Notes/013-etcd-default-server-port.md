@@ -1,5 +1,19 @@
+---
+title: "etcd Default Server Port"
+description: "etcd Default Server Port"
+tags: 
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
+sidebar_position: 13
+last_update:
+  date: 7/7/2022
+---
 
-# etcd Default Server Port 
+
 
 The official etcd ports are **2379** for client requests and **2380** for peer communication. The etcd ports can be set to accept TLS traffic, non-TLS traffic, or both TLS and non-TLS traffic.
 
