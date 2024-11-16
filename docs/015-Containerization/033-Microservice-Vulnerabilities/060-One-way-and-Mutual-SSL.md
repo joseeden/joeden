@@ -1,7 +1,13 @@
 ---
 title: "One-way and Mutual SSL"
 description: "Authenticating client and server communication"
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+tags:
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
 sidebar_position: 60
 last_update:
   date: 7/7/2022

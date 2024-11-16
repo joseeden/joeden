@@ -111,7 +111,8 @@ All strategies are available for Multi-region.
 
 -**Automation**
 
-    - CloudFormation/Elastic Beanstalk to recreate a whole new environment.
+ 
+  - CloudFormation/Elastic Beanstalk to recreate a whole new environment.
     - Recover/Reboot EC2 instances with CloudWatch if alarm is in fail state (ALARM).
     - AWS Lambda for customized automation.
 

@@ -199,13 +199,15 @@ Examine some of the benefits and value points of why we might consider migration
 
 - **Ease of Use and Managed Services**
 
-    - Cloud services, being managed, eliminate the need for manual infrastructure provisioning and scaling.
+ 
+  - Cloud services, being managed, eliminate the need for manual infrastructure provisioning and scaling.
     - Immediate availability of resources on a pay-per-use model speeds up application development.
 
 - **Storage Expansion and Cost Efficiency**
 
     - Contrast traditional IT provisioning delays with Amazon S3's elastic, on-demand storage.
-    - Cloud providers like AWS allow seamless scaling up or down, with payment only for consumed services, reducing operational costs.
+ 
+  - Cloud providers like AWS allow seamless scaling up or down, with payment only for consumed services, reducing operational costs.
 
 - **Scalability and Flexibility**
 
@@ -215,18 +217,22 @@ Examine some of the benefits and value points of why we might consider migration
 - **Operational Cost Reduction and Agility**
 
     - Pay-as-you-go pricing means lower operating costs for expertiseplease.com.
-    - Cloud migration enables rapid iteration of business applications without provisioning servers, enhancing overall agility.
+ 
+  - Cloud migration enables rapid iteration of business applications without provisioning servers, enhancing overall agility.
 
 - **Managed Services for Reliability**
 
-    - Cloud providers offer managed services at scale, ensuring high service level agreements.
+ 
+  - Cloud providers offer managed services at scale, ensuring high service level agreements.
     - Offloading infrastructure management to specialists reduces the risk of infrastructure outages.
 
 - **End-to-End Security**
 
-    - Cloud providers take an end-to-end approach to security, managing both physical and operational layers.
+ 
+  - Cloud providers take an end-to-end approach to security, managing both physical and operational layers.
     - Shared responsibility model 
-        - Cloud providers secure the infrastructure
+     
+  - Cloud providers secure the infrastructure
         - Customers manage security in the cloud.
 
 
@@ -326,7 +332,8 @@ Successful cloud adoption involves a balance of technology, business, and strate
 ### Foundation Stage - Building Core Competencies
 
 - **Initiatives for Cloud Center of Excellence**
-    - Cloud training and knowledge sharing.
+ 
+  - Cloud training and knowledge sharing.
     - Support and guidance for business units.
     - Creation and maintenance of security standards.
     - Development of common architecture blueprints.
@@ -401,7 +408,8 @@ It is a best practice for any organization, migrating IT infra, or an app to the
 ### First Pass Portfolio Assessment: Discovery
 
 - **Assessment Criteria**
-    - Cloud compatibility, licensing models, compliance requirements.
+ 
+  - Cloud compatibility, licensing models, compliance requirements.
 
 - **Strategic Decision:**
     - Identify applications and dependencies for a high-level portfolio assessment.
@@ -418,7 +426,8 @@ It is a best practice for any organization, migrating IT infra, or an app to the
 ### Classifying Applications into Buckets
 
 - **Bucket Definitions:**
-    - Cloud Native, Cloud Eligible, Cloud Friendly, Not Cloud Ready.
+ 
+  - Cloud Native, Cloud Eligible, Cloud Friendly, Not Cloud Ready.
 
 - **Discussion and Evaluation:**
     - Evaluate each application based on compliance, licensing, dependencies, and compatibility.
@@ -486,7 +495,8 @@ It is a best practice for any organization, migrating IT infra, or an app to the
 ### Conclusion
 
 - **Strategic Roadmap:**
-    - Cloud Readiness Assessment sets the foundation for a strategic migration roadmap.
+ 
+  - Cloud Readiness Assessment sets the foundation for a strategic migration roadmap.
     - Balancing business priorities, complexities, and migration strategies.
 
 - **Continued Collaboration:**

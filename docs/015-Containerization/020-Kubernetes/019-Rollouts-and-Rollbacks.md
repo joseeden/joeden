@@ -1,7 +1,13 @@
 ---
 title: "Rollouts and Rollbacks"
 description: "Rollouts and Rollbacks"
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+tags:
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
 sidebar_position: 19
 last_update:
   date: 7/7/2022

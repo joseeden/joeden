@@ -1,7 +1,13 @@
 ---
 title: "Docker Compose"
 description: "Managing multiple containers"
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+tags:
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
 sidebar_position: 18
 last_update:
   date: 7/7/2022

@@ -1,7 +1,13 @@
 ---
 title: "Linux Privilege Escalation"
 description: "Linux Privilege Escalation"
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+tags: 
+    - Cloud
+    - DevOps
+    - Containers
+    - Containerization
+    - Kubernetes
+    - Cybersecurity
 sidebar_position: 13
 last_update:
   date: 7/7/2022

@@ -142,5 +142,6 @@ In form:
   - Cloud providers charge you based on resources used.
   - No return on investment, these traffic are wasted, they don't generate revenue.
   - There are specialized cloud providers for DDoS protection:
-    - CloudFlare 
+ 
+  - CloudFlare 
     - Akamai

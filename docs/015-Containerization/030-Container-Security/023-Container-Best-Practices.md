@@ -1,7 +1,13 @@
 ---
 title: "Container Best Practices"
 description: "Container Best Practices"
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+tags:
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
 sidebar_position: 23
 last_update:
   date: 7/7/2022

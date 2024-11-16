@@ -1,7 +1,13 @@
 ---
 title: "Validating and Mutating Admission Controllers"
 description: "Checking and enforcing policies with Admission Controllers"
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+tags:
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
 sidebar_position: 11
 last_update:
   date: 7/7/2022

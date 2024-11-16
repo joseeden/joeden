@@ -1,7 +1,13 @@
 ---
 title: "Logging"
 description: "Container Logging"
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+tags:
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
 sidebar_position: 14
 last_update:
   date: 7/7/2022

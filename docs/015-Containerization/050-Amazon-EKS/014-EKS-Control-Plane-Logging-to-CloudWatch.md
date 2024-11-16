@@ -2,7 +2,8 @@
 title: "Logging to CloudWatch"
 description: "Control Plane Logging to CloudWatch"
 tags: 
-    - Cloud
+ 
+  - Cloud
     - DevOps
     - Containers
     - Containerization

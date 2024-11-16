@@ -1,7 +1,13 @@
 ---
 title: "Pod Security Admission"
 description: ""
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+tags:
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
 sidebar_position: 21
 last_update:
   date: 7/7/2022

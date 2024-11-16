@@ -21,7 +21,8 @@ last_update:
     - Implement mechanisms to ensure appropriate access to tools are in place.
     - User and Password Management 
     - Multi-factor Authentication
-    - Cloud-specific IAM
+ 
+  - Cloud-specific IAM
 
 - **DevOps Score**
 

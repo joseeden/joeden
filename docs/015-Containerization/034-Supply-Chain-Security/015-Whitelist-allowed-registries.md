@@ -1,7 +1,13 @@
 ---
 title: "Whitelist Allowed Registries"
 description: "Limit image sources to trusted registries only."
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+tags:
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
 sidebar_position: 15
 last_update:
   date: 7/7/2022

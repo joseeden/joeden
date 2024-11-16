@@ -24,7 +24,8 @@ AWS GuardDuty is an intelligent threat detection service that uses AI/Machine Le
 - Leverages third-party feeds from cybersecurity partners
 - Automate response and alerting using CloudWatch and Lamdba
 - Monitors different sources of data:
-    - CloudTrail
+ 
+  - CloudTrail
     - DNS 
     - VPC Flow logs 
 

@@ -1,7 +1,13 @@
 ---
 title: "Containers and Kubernetes"
 description: "Container Management Challenges"
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+tags:
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
 sidebar_position: 1
 last_update:
   date: 7/7/2022

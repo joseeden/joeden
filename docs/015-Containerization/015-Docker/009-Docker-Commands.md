@@ -1,7 +1,13 @@
 ---
 title: "Docker Cheatsheet"
 description: "Docker Cheatsheet"
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+tags:
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
 sidebar_position: 9
 last_update:
   date: 7/7/2022

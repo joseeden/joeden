@@ -1,7 +1,13 @@
 ---
 title: "Secrets"
 description: "Storing sensitive information"
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+tags:
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
 sidebar_position: 25
 last_update:
   date: 7/7/2022

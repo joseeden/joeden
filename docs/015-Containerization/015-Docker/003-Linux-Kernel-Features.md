@@ -1,7 +1,13 @@
 ---
 title: "Linux Kernel Features"
 description: "The Linux kernel enhances resource management."
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+tags:
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
 sidebar_position: 3
 last_update:
   date: 7/7/2022

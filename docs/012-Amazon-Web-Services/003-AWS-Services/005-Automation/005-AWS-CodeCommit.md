@@ -91,4 +91,5 @@ You can trigger notifications in CodeCommit using AWS SNS(Simple Notification Se
 - **Use cases for CloudWatch Event Rules**
     - Trigger for pull request updates (created/updated/deleted/commented).
     - Commit comment events.
-    - CloudWatch Event Rules goes into an SNS topic.
+ 
+  - CloudWatch Event Rules goes into an SNS topic.

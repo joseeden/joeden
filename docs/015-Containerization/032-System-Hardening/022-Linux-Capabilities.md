@@ -1,7 +1,15 @@
 ---
 title: "Linux Capabilities"
 description: "Leveraging linux features"
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+tags:
+  - Cloud
+
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
 sidebar_position: 22
 last_update:
   date: 7/7/2022

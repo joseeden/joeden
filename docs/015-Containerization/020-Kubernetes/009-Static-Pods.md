@@ -1,7 +1,13 @@
 ---
 title: "Static Pods"
 description: "Pods managed directly by the kubelet"
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+tags:
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
 sidebar_position: 9
 last_update:
   date: 7/7/2022

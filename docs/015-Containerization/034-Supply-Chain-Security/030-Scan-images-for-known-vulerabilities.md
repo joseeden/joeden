@@ -1,7 +1,13 @@
 ---
 title: "Scan Images for Known Vulnerabilities"
 description: "Detect security vulnerabilities in container images."
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+tags:
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
 sidebar_position: 30
 last_update:
   date: 7/7/2022

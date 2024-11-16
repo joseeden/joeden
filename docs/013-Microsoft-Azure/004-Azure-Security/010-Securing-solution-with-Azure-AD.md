@@ -36,7 +36,8 @@ To learn more, check out [Azure Identity and Access Management (IAM)](../003-Azu
 ## Azure AD vs. Azure AD DS vs. ADDS
 
 - **Azure AD (Azure Active Directory)**
-    - Cloud-based identity and access management service.
+ 
+  - Cloud-based identity and access management service.
     - Manages user identities and authentication for cloud applications.
     - Supports single sign-on (SSO) and multi-factor authentication (MFA).
     - Focuses on modern authentication and authorization for cloud resources.

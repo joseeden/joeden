@@ -1,7 +1,13 @@
 ---
 title: "Docker Objects"
 description: "Docker Objects"
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+tags:
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
 sidebar_position: 6
 last_update:
   date: 7/7/2022

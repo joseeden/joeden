@@ -1,7 +1,13 @@
 ---
 title: "Taints and Tolerations"
 description: "Influencing the scheduling of Pods"
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+tags:
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
 sidebar_position: 13
 last_update:
   date: 7/7/2022

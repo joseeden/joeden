@@ -1,7 +1,13 @@
 ---
 title: "Docker on Windows"
 description: "Running Docker on Windows"
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+tags:
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
 sidebar_position: 5
 last_update:
   date: 7/7/2022

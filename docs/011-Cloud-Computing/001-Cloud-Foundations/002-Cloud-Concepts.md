@@ -67,19 +67,22 @@ Cloud computing offers several key characteristics that make it a powerful and f
 
 - **On-demand Resourcing**
 
-    - Cloud resources are available almost instantly when you need them. 
+ 
+  - Cloud resources are available almost instantly when you need them. 
     - You no longer have to wait for hardware to be ordered, installed, and configured.
 
 - **Scalability**
 
-    - Cloud computing allows you to quickly adjust your resources up or down based on demand.
+ 
+  - Cloud computing allows you to quickly adjust your resources up or down based on demand.
     - **Scaling up and down**: Changes the power and performance of individual instances.
     - **Scaling in and out**: Adds or removes instances to adjust your compute resources.
     - 
 
 - **Economy of Scale**
 
-    - Cloud services leverage shared resources across many organizations.
+ 
+  - Cloud services leverage shared resources across many organizations.
     - This leads to lower costs for end users compared to traditional hosting.
 
 - **Flexibility and Elasticity**
@@ -89,7 +92,8 @@ Cloud computing offers several key characteristics that make it a powerful and f
 
 - **Growth**
 
-    - Cloud computing supports organizational growth by offering a wide range of resources and global reach. 
+ 
+  - Cloud computing supports organizational growth by offering a wide range of resources and global reach. 
     - On-demand provisioning reduces growth constraints compared to traditional on-premise setups.
 
 - **Utility-based Metering** 
@@ -101,7 +105,8 @@ Cloud computing offers several key characteristics that make it a powerful and f
 
 - **Shared Infrastructure**
 
-    - Cloud environments are virtualized, allowing multiple tenants to share the same hardware. 
+ 
+  - Cloud environments are virtualized, allowing multiple tenants to share the same hardware. 
     - This reduces physical hardware needs and related costs for power, cooling, and space.
 
 - **Highly Available**
@@ -110,5 +115,6 @@ Cloud computing offers several key characteristics that make it a powerful and f
 
 - **Security**
 
-    - Cloud vendors like AWS and Microsoft Azure often offer higher security standards than typical data centers. 
+ 
+  - Cloud vendors like AWS and Microsoft Azure often offer higher security standards than typical data centers. 
     - They adhere to global compliance standards and provide robust infrastructure security, while you are responsible for securing your cloud-based applications and data.

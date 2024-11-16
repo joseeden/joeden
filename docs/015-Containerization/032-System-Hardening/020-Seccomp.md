@@ -1,7 +1,13 @@
 ---
 title: "Seccomp"
 description: "Filter system calls to enhance application security"
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+tags:
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
 sidebar_position: 20
 last_update:
   date: 7/7/2022

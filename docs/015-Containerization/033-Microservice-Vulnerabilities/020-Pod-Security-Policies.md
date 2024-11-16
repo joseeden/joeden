@@ -1,7 +1,13 @@
 ---
 title: "Pod Security Policies"
 description: "Security rules for pod deployments"
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+tags:
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
 sidebar_position: 20
 last_update:
   date: 7/7/2022

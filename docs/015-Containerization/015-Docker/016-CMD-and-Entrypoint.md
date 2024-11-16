@@ -1,7 +1,13 @@
 ---
 title: "CMD and ENTRYPOINT"
 description: "Defining default commands on containers"
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+tags:
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
 sidebar_position: 16
 last_update:
   date: 7/7/2022

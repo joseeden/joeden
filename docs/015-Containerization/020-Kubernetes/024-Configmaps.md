@@ -1,7 +1,13 @@
 ---
 title: "ConfigMaps"
 description: "Storing non-sensitive data"
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+tags:
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
 sidebar_position: 24
 last_update:
   date: 7/7/2022

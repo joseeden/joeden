@@ -1,7 +1,13 @@
 ---
 title: "Docker Registry"
 description: "Where you store and share container images"
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+tags:
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
 sidebar_position: 7
 last_update:
   date: 7/7/2022

@@ -1,7 +1,13 @@
 ---
 title: "Custom Resource"
 description: "Custom Kuberenetes resource types"
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+tags:
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
 sidebar_position: 43
 last_update:
   date: 7/7/2022

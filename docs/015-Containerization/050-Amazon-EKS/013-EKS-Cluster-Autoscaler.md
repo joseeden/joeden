@@ -2,7 +2,8 @@
 title: "Cluster AutoScaler"
 description: "Cluster AutoScaler in EKS"
 tags: 
-    - Cloud
+ 
+  - Cloud
     - DevOps
     - Containers
     - Containerization

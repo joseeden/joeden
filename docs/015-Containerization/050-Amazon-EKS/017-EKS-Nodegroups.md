@@ -2,7 +2,8 @@
 title: "Self-managed vs. Managed Nodegroups"
 description: "Self-managed vs. Managed Nodegroups"
 tags: 
-    - Cloud
+ 
+  - Cloud
     - DevOps
     - Containers
     - Containerization

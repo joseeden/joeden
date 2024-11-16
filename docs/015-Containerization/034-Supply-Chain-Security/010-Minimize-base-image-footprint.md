@@ -1,7 +1,13 @@
 ---
 title: "Minimize Base Image Footprint"
 description: "Best practices for securing container images"
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+tags:
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
 sidebar_position: 10
 last_update:
   date: 7/7/2022

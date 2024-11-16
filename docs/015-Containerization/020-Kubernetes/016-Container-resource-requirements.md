@@ -1,7 +1,13 @@
 ---
 title: "Container Resource Requirements"
 description: "Container Resource Requirements"
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes]
+tags:
+  - Cloud
+  - DevOps
+  - Containers
+  - Containerization
+  - Kubernetes
+  - Cybersecurity
 sidebar_position: 16
 last_update:
   date: 7/7/2022

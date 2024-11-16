@@ -48,7 +48,8 @@ The shared responsibility model outlines the distribution of security responsibi
 - **Cloud Provider Responsibility:**
     - Responsibilities from IaaS.
     - Additional responsibility for managing and securing network controls.
-    - Cloud provider assumes more responsibilities compared to IaaS.
+ 
+  - Cloud provider assumes more responsibilities compared to IaaS.
 
 - **Customer Responsibility:**
     - Partial responsibility for securing and managing applications.
@@ -137,7 +138,8 @@ Microsoft Defender for Cloud is a security posture management and threat protect
     - Discovers and helps mitigate database vulnerabilities
 
 - **Microsoft Defender for Containers**
-    - Cloud-native solution for securing containers.
+ 
+  - Cloud-native solution for securing containers.
 
 - **Microsoft Defender for App Service**
     - identifies attacks that target apps running on the app service
