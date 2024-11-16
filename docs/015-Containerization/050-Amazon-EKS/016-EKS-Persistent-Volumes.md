@@ -22,7 +22,9 @@ last_update:
   When using EBS volumes with deployments, the volume must be attached to a specific node. As a result, Pods can only run on that node to access the volume.
 
   <div class='img-center'>
-  <img src="../../Images/persistenvolumes-deployments.png">
+  
+  ![](/img/docs/persistenvolumes-deployments.png)
+
   </div>
 
 - **StatefulSet with Persistent Volumes**  
@@ -30,7 +32,9 @@ last_update:
   StatefulSets are ideal for applications like Kafka, Zookeeper, and Cassandra. They allow multiple Pods to run across different nodes, with each Pod having its own attached persistent volume.
 
   <div class='img-center'>
-  <img src="../../Images/persistenvolumes-statefulsets.png">
+  
+  ![](/img/docs/persistenvolumes-statefulsets.png)
+
   </div>
 
 
@@ -46,7 +50,9 @@ Key points about using EBS volumes for persistent storage in EKS:
 For multi-AZ storage, use **Amazon EFS**, which supports cross-AZ access.
 
 <div class='img-center'>
-<img width=700 src="../../Images/Lab57-ebs-efs.png">
+
+![](/img/docs/Lab57-ebs-efs.png)
+
 </div>
 
 ## Amazon EFS
@@ -58,7 +64,11 @@ For multi-AZ storage, use **Amazon EFS**, which supports cross-AZ access.
 - Highly scalable, available, but is very expensive
 - You pay per amount of storage you use 
 
-![](../../Images/what-is-efs-file-system.png)  
+<div class='img-center'>
+
+![](/img/docs/what-is-efs-file-system.png)  
+
+</div>
 
 
 ## EFS for Kubernetes
