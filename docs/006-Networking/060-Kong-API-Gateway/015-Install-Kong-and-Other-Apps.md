@@ -143,7 +143,7 @@ localhost:5050
 
 <div class='img-center'>
 
-![](img/docs/11172024-kong-pgadmin-dashboard.png)
+![](/img/docs/11172024-kong-pgadmin-dashboard.png)
 
 </div>
 
@@ -155,7 +155,7 @@ localhost:1337
 
 <div class='img-center'>
 
-![](img/docs/11172024-kong-konga-dashboard.png)
+![](/img/docs/11172024-kong-konga-dashboard.png)
 
 </div>
 
