@@ -153,4 +153,8 @@ Kong Plugins extend Kong's functionality with additional features.
 
 The Kong Ingress Controller is a Kubernetes-native API gateway designed to manage traffic and security for containerized applications. As part of Kong’s ecosystem, it integrates seamlessly within the **Data Plane** alongside the Kong Gateway and Kong Mesh, providing robust traffic control for microservices running in Kubernetes. 
 
+<div class='img-center'>
+
 ![](/img/docs/11172024-kong-ingress-controller.png)
+
+</div>

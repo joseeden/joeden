@@ -13,7 +13,7 @@ last_update:
 
 
 
-## Containerized Kong and Other Applications
+## Kong and Other Applications
 
 Reference: [joseeden/test-kong-gateway](https://github.com/joseeden/test-kong-gateway/tree/master)
 
@@ -58,15 +58,16 @@ To check the images used:
 $ docker images
 
 REPOSITORY          TAG         IMAGE ID       CREATED         SIZE
-postgres            16-alpine   9ff53a21c37a   2 days ago      251MB
-prom/prometheus     latest      4f7c13071e39   2 days ago      292MB
-grafana/grafana     latest      c048ea6f48b7   4 days ago      485MB
-openzipkin/zipkin   latest      3bd3d5c9013e   5 weeks ago     183MB
-kong                3.7.1       084144a5b676   4 months ago    299MB
-logstash            8.11.3      a97f65931a6d   11 months ago   770MB
-elasticsearch       8.11.3      ac1eef415132   11 months ago   1.41GB
-kibana              8.11.3      bb428a138a34   11 months ago   1.03GB
-pantsel/konga       latest      113950dafdbb   4 years ago     409MB
+postgres            16-alpine   0366402213df   2 days ago      359MB
+prom/prometheus     latest      3b9b2a15d376   2 days ago      410MB
+grafana/grafana     latest      784ae5030ff7   4 days ago      646MB
+dpage/pgadmin4      latest      561c1f8f99f2   6 days ago      746MB
+openzipkin/zipkin   latest      32599e9a9972   5 weeks ago     295MB
+kong                3.7.1       4f011c1f306e   4 months ago    421MB
+kibana              8.11.3      7566abb21618   11 months ago   1.67GB
+elasticsearch       8.11.3      58a3a280935d   11 months ago   2.1GB
+logstash            8.11.3      9ac3570f9be8   11 months ago   1.25GB
+pantsel/konga       latest      c8172b75607d   4 years ago     776MB
 ```
 
 To check the running containers:
@@ -74,16 +75,19 @@ To check the running containers:
 ```bash
 $ docker ps -a
 
-CONTAINER ID   IMAGE                      COMMAND                  CREATED          STATUS                             PORTS                                                                                                                             NAMES
-aaf14e1dd5ce   pantsel/konga              "/app/start.sh"          49 seconds ago   Up 43 seconds                      0.0.0.0:1337->1337/tcp, :::1337->1337/tcp                                                                                         konga_web
-b5427200f5ba   kong:3.7.1                 "/docker-entrypoint.…"   49 seconds ago   Exited (0) 21 seconds ago                                                                                                                                            test-kong-gateway-kong-migrations-1
-f07f291e9a8a   kong:3.7.1                 "/docker-entrypoint.…"   49 seconds ago   Up 18 seconds (health: starting)   8000-8001/tcp, 8443-8444/tcp                                                                                                      test-kong-gateway-kong-migrations-up-1
-aa101b1c8ada   kibana:8.11.3              "/bin/tini -- /usr/l…"   53 seconds ago   Up 44 seconds                      0.0.0.0:5601->5601/tcp, :::5601->5601/tcp                                                                                         kibana
-d63ee6af0977   logstash:8.11.3            "/usr/local/bin/dock…"   53 seconds ago   Up 44 seconds                      0.0.0.0:5044->5044/tcp, :::5044->5044/tcp, 0.0.0.0:9600->9600/tcp, :::9600->9600/tcp, 0.0.0.0:5555->5555/udp, :::5555->5555/udp   logstash
-c6ac131840c8   prom/prometheus:latest     "/bin/prometheus --c…"   53 seconds ago   Up 45 seconds                      0.0.0.0:9090->9090/tcp, :::9090->9090/tcp                                                                                         prometheus
-8f2640a6c393   grafana/grafana:latest     "/run.sh"                53 seconds ago   Up 46 seconds                      0.0.0.0:3000->3000/tcp, :::3000->3000/tcp                                                                                         test-kong-gateway-grafana-1
-92a11ea62c1d   postgres:16-alpine         "docker-entrypoint.s…"   53 seconds ago   Up 47 seconds (healthy)            5432/tcp                                                                                                                          test-kong-gateway-kong-database-1
-a1707db325ef   elasticsearch:8.11.3       "/bin/tini -- /usr/l…"   53 seconds ago   Up 47 seconds                      0.0.0.0:9200->9200/tcp, :::9200->9200/tcp, 0.0.0.0:9300->9300/tcp, :::9300->9300/tcp                                              elasticsearch
+CONTAINER ID   IMAGE                      COMMAND                  CREATED         STATUS                            PORTS                                                                                                          NAMES
+24d8e7be6ca3   dpage/pgadmin4:latest      "/entrypoint.sh"         2 minutes ago   Up 2 minutes                      443/tcp, 0.0.0.0:5050->80/tcp                                                                                  pgadmin
+4039e934d55e   kong:3.7.1                 "/docker-entrypoint.…"   2 minutes ago   Up 3 seconds (health: starting)   8000-8001/tcp, 8443-8444/tcp                                                                                   test-kong-gateway-kong-migrations-up-1
+ba734489221e   kong:3.7.1                 "/docker-entrypoint.…"   2 minutes ago   Exited (0) 2 minutes ago                                                                                                                         test-kong-gateway-kong-migrations-1
+186e016e27b5   pantsel/konga              "/app/start.sh"          2 minutes ago   Up 2 minutes                      0.0.0.0:1337->1337/tcp                                                                                         konga_web
+5b1692e61091   postgres:16-alpine         "docker-entrypoint.s…"   2 minutes ago   Up 2 minutes (healthy)            5432/tcp                                                                                                       test-kong-gateway-kong-database-1
+c18b1674cb82   kibana:8.11.3              "/bin/tini -- /usr/l…"   2 minutes ago   Up 2 minutes                      0.0.0.0:5601->5601/tcp                                                                                         kibana
+9babae500860   logstash:8.11.3            "/usr/local/bin/dock…"   2 minutes ago   Up 2 minutes                      0.0.0.0:5044->5044/tcp, 0.0.0.0:9600->9600/tcp, 0.0.0.0:5555->5555/udp                                         logstash
+6da6cbeb4c8b   grafana/grafana:latest     "/run.sh"                2 minutes ago   Up 2 minutes                      0.0.0.0:3000->3000/tcp                                                                                         test-kong-gateway-grafana-1
+e887161e1da9   openzipkin/zipkin:latest   "start-zipkin"           2 minutes ago   Up 2 minutes (unhealthy)          9410/tcp, 0.0.0.0:9411->9411/tcp                                                                               zipkin
+7c76f041c3d9   prom/prometheus:latest     "/bin/prometheus --c…"   2 minutes ago   Up 2 minutes                      0.0.0.0:9090->9090/tcp                                                                                         prometheus
+7f445f63aed9   elasticsearch:8.11.3       "/bin/tini -- /usr/l…"   2 minutes ago   Up 2 minutes                      0.0.0.0:9200->9200/tcp, 0.0.0.0:9300->9300/tcp                                                                 elasticsearch
+b9b5911ded49   kong:3.7.1                 "/docker-entrypoint.…"   2 minutes ago   Up 2 minutes (healthy)            0.0.0.0:8000->8000/tcp, 127.0.0.1:8001-8002->8001-8002/tcp, 0.0.0.0:8443->8443/tcp, 127.0.0.1:8444->8444/tcp   test-kong-gateway-kong-1
 ```
 
 To filter the columns:
@@ -96,34 +100,94 @@ It should now return the selected columns:
 
 ```bash
 CONTAINER ID   IMAGE                      STATUS                             NAMES
-aaf14e1dd5ce   pantsel/konga              Up 4 minutes                       konga_web
-b5427200f5ba   kong:3.7.1                 Exited (0) 3 minutes ago           test-kong-gateway-kong-migrations-1
-f07f291e9a8a   kong:3.7.1                 Up 12 seconds (health: starting)   test-kong-gateway-kong-migrations-up-1
-aa101b1c8ada   kibana:8.11.3              Up 4 minutes                       kibana
-d63ee6af0977   logstash:8.11.3            Up 4 minutes                       logstash
-c6ac131840c8   prom/prometheus:latest     Up 4 minutes                       prometheus
-8f2640a6c393   grafana/grafana:latest     Up 4 minutes                       test-kong-gateway-grafana-1
-92a11ea62c1d   postgres:16-alpine         Up 4 minutes (healthy)             test-kong-gateway-kong-database-1
-a1707db325ef   elasticsearch:8.11.3       Up 4 minutes                       elasticsearch
-9b8b2464a76e   kong:3.7.1                 Up 4 minutes (healthy)             test-kong-gateway-kong-1
-8a253ce5e570   openzipkin/zipkin:latest   Up 4 minutes (healthy)             zipkin 
+24d8e7be6ca3   dpage/pgadmin4:latest      Up 3 minutes                       pgadmin
+4039e934d55e   kong:3.7.1                 Up 21 seconds (health: starting)   test-kong-gateway-kong-migrations-up-1
+ba734489221e   kong:3.7.1                 Exited (0) 2 minutes ago           test-kong-gateway-kong-migrations-1
+186e016e27b5   pantsel/konga              Up 3 minutes                       konga_web
+5b1692e61091   postgres:16-alpine         Up 3 minutes (healthy)             test-kong-gateway-kong-database-1
+c18b1674cb82   kibana:8.11.3              Up 3 minutes                       kibana
+9babae500860   logstash:8.11.3            Up 3 minutes                       logstash
+6da6cbeb4c8b   grafana/grafana:latest     Up 3 minutes                       test-kong-gateway-grafana-1
+e887161e1da9   openzipkin/zipkin:latest   Up 3 minutes (healthy)             zipkin
+7c76f041c3d9   prom/prometheus:latest     Up 3 minutes                       prometheus
+7f445f63aed9   elasticsearch:8.11.3       Up 3 minutes                       elasticsearch
+b9b5911ded49   kong:3.7.1                 Up 3 minutes (healthy)             test-kong-gateway-kong-1
 ```
 
 
-##  Checking on Docker Desktop 
+## Checking on Docker Desktop 
 
 If you have Docker Desktop installed on your local computer, you can also view the images and containers from the Docker Desktop console.
 
-![](/img/docs/11172024-docker-desktop-images.png)
+<div class='img-center'>
 
-![](/img/docs/11172024-docker-desktop-containers-running.png)
+![](/img/docs/11172024-docker-desktop-images-2.png)
 
+</div>
+
+
+<div class='img-center'>
+
+![](/img/docs/11172024-docker-desktop-containers-running-2.png)
+
+</div>
+
+
+## Access the Dashboards
+
+Open a web browser and access the pgAdmin dashboard:
+
+```bash
+localhost:5050 
+```
+
+<div class='img-center'>
+
+![](img/docs/11172024-kong-pgadmin-dashboard.png)
+
+</div>
+
+Similarly, access the Konga dashboard on another tab:
+
+```bash
+localhost:1337
+```
+
+<div class='img-center'>
+
+![](img/docs/11172024-kong-konga-dashboard.png)
+
+</div>
+
+
+## Connect to the Kong Database 
+
+Access the pgAdmin dashboard from the web browser and login using the credentials specified in the `docker-compose.yaml` file. If you have pgAdmin installed on your local computer, you can also use it to connect to the Kong database. 
+
+```bash
+localhost:5050 
+```
+
+Right-click on Servers > Register > Server. Fill-in the fields with the details below and click Save afterwards.
+
+| Tab         | Field                 | Value            |
+|-------------|-----------------------|------------------|
+| General     | Name                 | Kong             |
+| Connection  | Hostname             | kong-database    |
+| Connection  | Port                 | 5432             |
+| Connection  | Maintenance database | kong             |
+| Connection  | Username             | kong             |
+| Connection  | Password             | mykongpassword   |
+
+<div class='img-center'>
+
+![](/img/docs/11172024-kong-connect-to-kong-db-via-pgadmin.png)
+
+</div>
 
 ## Test using an API 
 
-
 ```bash
-git clone https://github.com/joseeden/test-kong-gateway.git
 cd test-kong-gateway
 pip install -r requirements.txt
 python main.py
