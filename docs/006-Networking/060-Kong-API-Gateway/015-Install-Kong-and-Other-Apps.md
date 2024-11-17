@@ -12,9 +12,10 @@ last_update:
 ---
 
 
-## Kong and Other Applications
 
-Reference: [joseeden/test-kong-gateway](https://github.com/joseeden/test-kong-gateway/tree/master)
+
+
+## Pre-requisites
 
 This guide shows how to install a containerized Kong along with the other applications locally in your computer. Make sure to install the following first:
 
@@ -22,6 +23,34 @@ This guide shows how to install a containerized Kong along with the other applic
 - [Docker](https://docs.docker.com/engine/install/)
 - [Docker Compose](https://docs.docker.com/compose/install/standalone/)  
 - [Docker Desktop (Optional)](https://docs.docker.com/desktop/)
+- [pgAdmin (Optional)](https://www.pgadmin.org/download/)
+
+## Required Ports
+
+The following port must be opened:
+
+| **Port** | **Service**           | **Description**                                                                 |
+|----------|-----------------------|---------------------------------------------------------------------------------|
+| 5432     | PostgreSQL            | Used by PostgreSQL. If a running server is present, it must be stopped for Docker PostgreSQL. |
+| 5050, 80 | PgAdmin 4             | UI interface to visualize the Postgres database.                                |
+| 8000     | Kong Gateway (HTTP)   | Kong gateway via plain HTTP.                                                    |
+| 8443     | Kong Gateway (HTTPS)  | Kong gateway via HTTPS.                                                        |
+| 8001     | Kong Admin API        | Kong Admin API interface.                                                       |
+| 8002     | Kong Manager UI       | Kong Manager UI interface.                                                      |
+| 5000     | FastAPI Endpoint      | FastAPI endpoint for the application.                                           |
+
+
+Optional ports:
+
+| **Port** | **Service**                  | **Description**                                                            |
+|----------|------------------------------|----------------------------------------------------------------------------|
+| 9411     | Zipkin                        | Used for distributed tracing (optional).                       |
+| 9200, 9600, 5555, 5601 | Elastic Stack (Elasticsearch, Logstash, Kibana) | Used for API analytics (optional). |
+
+
+## Using `docker-compose`
+
+<small> Reference: [joseeden/test-kong-gateway](https://github.com/joseeden/test-kong-gateway/tree/master) </small>
 
 Clone the repository and go inside the folder. Run `docker-compose`.
 

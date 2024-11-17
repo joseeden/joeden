@@ -84,21 +84,10 @@ The following port must be opened:
 | **Port** | **Service**           | **Description**                                                                 |
 |----------|-----------------------|---------------------------------------------------------------------------------|
 | 5432     | PostgreSQL            | Used by PostgreSQL. If a running server is present, it must be stopped for Docker PostgreSQL. |
-| 5050, 80 | PgAdmin 4             | UI interface to visualize the Postgres database.                                |
 | 8000     | Kong Gateway (HTTP)   | Kong gateway via plain HTTP.                                                    |
 | 8443     | Kong Gateway (HTTPS)  | Kong gateway via HTTPS.                                                        |
 | 8001     | Kong Admin API        | Kong Admin API interface.                                                       |
 | 8002     | Kong Manager UI       | Kong Manager UI interface.                                                      |
-| 5000     | FastAPI Endpoint      | FastAPI endpoint for the application.                                           |
-
-
-Optional ports:
-
-| **Port** | **Service**                  | **Description**                                                            |
-|----------|------------------------------|----------------------------------------------------------------------------|
-| 9411     | Zipkin                        | Used for distributed tracing (optional).                       |
-| 9200, 9600, 5555, 5601 | Elastic Stack (Elasticsearch, Logstash, Kibana) | Used for API analytics (optional). |
-
 
 ## Kong Manager 
 
