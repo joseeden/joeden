@@ -20,11 +20,27 @@ last_update:
 
 These are the steps I followed when uninstalling Docker in WSL2.
 
+Check the packages installed:
+
+```bash
+$ dpkg -l | grep -i docker
+
+ii  docker-buildx-plugin              0.17.1-1~ubuntu.22.04~jammy             amd64        Docker Buildx cli plugin.
+ii  docker-ce                         5:27.3.1-1~ubuntu.22.04~jammy           amd64        Docker: the open-source application container engine
+ii  docker-ce-cli                     5:27.3.1-1~ubuntu.22.04~jammy           amd64        Docker CLI: the open-source application container engine
+ii  docker-ce-rootless-extras         5:27.3.1-1~ubuntu.22.04~jammy           amd64        Rootless support for Docker.
+ii  docker-compose-plugin             2.29.7-1~ubuntu.22.04~jammy             amd64        Docker Compose (V2) plugin for the Docker CLI.
+```
+
+Uninstall:
+
 ```bash
 sudo systemctl stop docker
-sudo apt-get purge docker-ce docker-ce-cli containerd.io
-sudo apt-get purge docker docker-engine docker.io containerd runc
+sudo apt-get purge -y docker-engine docker docker.io docker-ce docker-ce-cli docker-compose-plugin docker-buildx-plugin
+sudo apt-get autoremove -y --purge docker-engine docker docker.io docker-ce docker-compose-plugin docker-buildx-plugin
 ```
+
+Run the `dpkg` command again to verify that all Docker-related packages are removed.
 
 If you get this error, please see [Packages no longer required.](#packages-no-longer-required)
 
@@ -119,6 +135,22 @@ sudo rm -f /etc/systemd/system/docker.socket.d
     - Remove Docker data (optional):
 
 2. You might also want to delete Docker's storage directories manually, typically found in your user profile under C:\Users\[YourUsername]\.docker or the location specified in Docker settings.
+
+## Remove other files
+
+The previous commands will not remove images, containers, volumes, or user created configuration files on your host. If you wish to delete all images, containers, and volumes run the following commands:
+
+```bash
+sudo umount /var/lib/docker/
+sudo rm -rf /var/lib/docker /etc/docker
+sudo rm -rf /usr/local/bin/docker-compose
+sudo rm /etc/apparmor.d/docker
+sudo groupdel docker
+sudo rm -rf /var/run/docker.sock
+sudo rm -rf /var/lib/containerd
+sudo rm -r ~/.docker 
+```
+
 
 ### Verify 
 
