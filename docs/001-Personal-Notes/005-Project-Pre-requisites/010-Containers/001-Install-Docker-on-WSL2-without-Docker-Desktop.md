@@ -166,7 +166,7 @@ $ wsl.exe -l -v
   Ubuntu-22.04    Running         2 
 ```
 
-Add the script below to your .bashrc file. Make sure the DISTRO matches yours.
+Add the script below to your `.bashrc` file. Make sure the DISTRO matches yours.
 
 ```bash
 ##Create Launch Script for Dockerd

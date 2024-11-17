@@ -90,7 +90,6 @@ kong                3.7.1       084144a5b676   4 months ago    299MB
 logstash            8.11.3      a97f65931a6d   11 months ago   770MB
 elasticsearch       8.11.3      ac1eef415132   11 months ago   1.41GB
 kibana              8.11.3      bb428a138a34   11 months ago   1.03GB
-hello-world         latest      d2c94e258dcb   18 months ago   13.3kB
 pantsel/konga       latest      113950dafdbb   4 years ago     409MB
 ```
 
@@ -133,6 +132,10 @@ a1707db325ef   elasticsearch:8.11.3       Up 4 minutes                       ela
 9b8b2464a76e   kong:3.7.1                 Up 4 minutes (healthy)             test-kong-gateway-kong-1
 8a253ce5e570   openzipkin/zipkin:latest   Up 4 minutes (healthy)             zipkin 
 ```
+
+
+##  Checking on Docker Desktop 
+
 
 
 
