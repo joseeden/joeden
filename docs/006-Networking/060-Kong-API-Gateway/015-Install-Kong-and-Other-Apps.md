@@ -1,41 +1,17 @@
 ---
-title: "Install Kong on Containers"
-description: "Introduction to Kong"
+title: "Install Kong and Other Applications"
+description: "Install Kong and Other Applications"
 tags: 
   - Cloud
   - DevOps
   - Networking 
   - Kong API Gateway
-sidebar_position: 11
+sidebar_position: 15
 last_update:
   date: 7/7/2022
 ---
 
-## Kong Installation  
 
-Kong can be installed across various environments to suit your infrastructure needs.
-
-- **Container**  
-    - Using Docker or Kubernetes for containerized environments.  
-
-- **Bare Metal**  
-    - Deploy directly on physical or virtual machines.  
-
-- **Cloud Providers**  
-    - Install from cloud platforms like AWS, Azure, or GCP.  
-
-- **Helm Chart**  
-    - Use Helm to deploy Kong in Kubernetes clusters.  
-
-- **Package Manager**  
-    - Using package managers like apt (Debian/Ubuntu) or yum (RHEL/CentOS).  
-
-
-## Install Kong Gateway on Docker
-
-Kong can be installed on Docker with a PostgreSQL database. There is also an option to use Kong without a database.
-
-For more information, please see [Install Kong Gateway on Docker](https://docs.konghq.com/gateway/latest/install/docker/)
 
 ## Containerized Kong and Other Applications
 
@@ -136,7 +112,11 @@ a1707db325ef   elasticsearch:8.11.3       Up 4 minutes                       ela
 
 ##  Checking on Docker Desktop 
 
+If you have Docker Desktop installed on your local computer, you can also view the images and containers from the Docker Desktop console.
 
+![](/img/docs/11172024-docker-desktop-images.png)
+
+![](/img/docs/11172024-docker-desktop-containers-running.png)
 
 
 ## Test using an API 
