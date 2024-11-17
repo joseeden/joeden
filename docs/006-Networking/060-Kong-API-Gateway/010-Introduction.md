@@ -4,10 +4,8 @@ description: "Introduction to Kong"
 tags: 
   - Cloud
   - DevOps
-  - Containers
-  - Containerization
-  - Kubernetes
-  - Cybersecurity
+  - Networking 
+  - Kong API Gateway
 sidebar_position: 10
 last_update:
   date: 7/7/2022

@@ -7,7 +7,6 @@ tags:
   - Containers
   - Containerization
   - Kubernetes
-  - Cybersecurity
 sidebar_position: 2
 last_update:
   date: 7/7/2022
