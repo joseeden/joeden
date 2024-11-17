@@ -10,3 +10,6 @@
 [submodule "test-repos/test-aws-sam-hello-app"]
 	path = test-repos/test-aws-sam-hello-app
 	url = git@github.com:joseeden/test-aws-sam-hello-app.git
+[submodule "test-repos/test-kong-gateway"]
+	path = test-repos/test-kong-gateway
+	url = git@github.com:joseeden/test-kong-gateway.git

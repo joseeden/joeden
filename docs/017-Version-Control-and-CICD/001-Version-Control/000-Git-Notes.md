@@ -154,6 +154,13 @@ test-repos/
 4 directories, 0 files 
 ```
 
+If you need to get the contents of the submodules, you need to go inside each submodule and then do a `git pull` to pull the contents of that repo.
+
+```bash
+cd test-static-site
+git pull
+```
+
 ## Cloning Specific Directory (With Trailing Directories)
 
 > The assumption here is you want to clone the parent repo from another machine.
