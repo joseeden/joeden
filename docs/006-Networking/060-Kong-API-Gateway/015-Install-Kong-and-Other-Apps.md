@@ -12,7 +12,6 @@ last_update:
 ---
 
 
-
 ## Kong and Other Applications
 
 Reference: [joseeden/test-kong-gateway](https://github.com/joseeden/test-kong-gateway/tree/master)
