@@ -1,6 +1,6 @@
 ---
-title: "Install Kong and Other Applications"
-description: "Install Kong and Other Applications"
+title: "Containerized Kong and Other Applications"
+description: "Containerized Kong and Other Applications"
 tags: 
   - Cloud
   - DevOps
@@ -10,7 +10,6 @@ sidebar_position: 15
 last_update:
   date: 7/7/2022
 ---
-
 
 
 
@@ -161,9 +160,9 @@ If you have Docker Desktop installed on your local computer, you can also view t
 </div>
 
 
-## Access the Dashboards
+## Connect to the Kong Database 
 
-Open a web browser and access the pgAdmin dashboard:
+Access the pgAdmin dashboard from the web browser and login using the credentials specified in the `docker-compose.yaml` file.  
 
 ```bash
 localhost:5050 
@@ -175,26 +174,6 @@ localhost:5050
 
 </div>
 
-Similarly, access the Konga dashboard on another tab:
-
-```bash
-localhost:1337
-```
-
-<div class='img-center'>
-
-![](/img/docs/11172024-kong-konga-dashboard.png)
-
-</div>
-
-
-## Connect to the Kong Database 
-
-Access the pgAdmin dashboard from the web browser and login using the credentials specified in the `docker-compose.yaml` file. If you have pgAdmin installed on your local computer, you can also use it to connect to the Kong database. 
-
-```bash
-localhost:5050 
-```
 
 Right-click on Servers > Register > Server. Fill-in the fields with the details below and click Save afterwards.
 
@@ -207,20 +186,111 @@ Right-click on Servers > Register > Server. Fill-in the fields with the details 
 | Connection  | Username             | kong             |
 | Connection  | Password             | mykongpassword   |
 
+
+
+If you have pgAdmin installed on your local computer, you can also use it to connect to the Kong database. Use the same values except the **Hostname**.
+
+| Tab         | Field                | Value            |
+|-------------|----------------------|------------------|
+| Connection  | Hostname             | localhost        |
+
+
 <div class='img-center'>
 
 ![](/img/docs/11172024-kong-connect-to-kong-db-via-pgadmin.png)
 
 </div>
 
-## Test using an API 
+
+After you login, you'll see the main dashboard.
+
+<div class='img-center'>
+
+![](/img/docs/11172024-kong-pgadmin-connected.png)
+
+</div>
+
+
+## Connect to Konga
+
+Open another tab to access the Konga dashboard.
 
 ```bash
-cd test-kong-gateway
+localhost:1337
+```
+
+Enter a username, email, and password, then click Create Admin. You will need to login using the new username and password.
+
+<div class='img-center'>
+
+![](/img/docs/11172024-kong-konga-dashboard.png)
+
+</div>
+
+In the Welcome page, enter the details below and click **CREATE CONNECTION**.
+
+| **Field**           | **Value**                           |
+|---------------------|-------------------------------------|
+| **Name**            | DEV                                 |
+| **Kong Admin URL**  | `http://host.docker.internal:8001`  |
+
+![](/img/docs/11182024-kong-konga-connecteddd.png)
+
+The main dashboard:
+
+<div class='img-center'>
+
+![](/img/docs/11182024-kong-konga-dashboard-full-detailss.png)
+
+</div>
+
+
+## Setup the API Endpoint 
+
+The  FastAPI application can be found here: [test-fastapi-simple-app](https://github.com/joseeden/test-fastapi-simple-app)
+
+```bash
+git clone https://github.com/joseeden/test-fastapi-simple-app.git
+cd test-fastapi-simple-app.
 pip install -r requirements.txt
 python main.py
 ```
 
+Output:
+
+```bash
+INFO:     Uvicorn running on http://localhost:5000 (Press CTRL+C to quit)
+INFO:     Started reloader process [5367] using StatReload
+INFO:     Started server process [5370]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete 
+```
+
+Open a web browser and navigate to the endpoint:
+
+```bash
+http://localhost:5000/healthy 
+```
+
+It should return:
+
+![](/img/docs/11182024-fastapi-endpoint-working.png)
+
+Checking the docs:
+
+```bash
+http://localhost:5000/docs
+```
+
+![](/img/docs/11182024-fastapi-endpoint-docs-working.png)
+
+Back in the terminal, you should see the logs:
+
+```bash
+INFO:     127.0.0.1:57982 - "GET /healthy HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45662 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39750 - "GET /openapi.json HTTP/1.1" 200 OK
+```
 
 ## Remove Containers 
 

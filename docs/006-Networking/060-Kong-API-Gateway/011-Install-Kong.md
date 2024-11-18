@@ -11,7 +11,7 @@ last_update:
   date: 7/7/2022
 ---
 
-## Kong Installation  
+## Installation Methods
 
 Kong can be installed across various environments to suit your infrastructure needs.
 
@@ -36,3 +36,25 @@ Kong can be installed across various environments to suit your infrastructure ne
 Kong can be installed on Docker with a PostgreSQL database. There is also an option to use Kong without a database.
 
 For more information, please see [Install Kong Gateway on Docker](https://docs.konghq.com/gateway/latest/install/docker/)
+
+
+
+## Install Konga 
+
+Konga is a third-party UI for managing Kong API Gateway which supports monitoring and troubleshooting APIs.
+
+To install Kong, you need to [install NPM first.](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+
+
+:::info[NOTE]
+
+As of May 2024, the [official Github repository for Konga](https://github.com/pantsel/konga) has been archived. This usually happens when the development has been continued
+
+Other options:
+
+- [Konga on Docker](https://hub.docker.com/r/pantsel/konga) 
+- [Kong Enterprise (Free Edition)](https://konghq.com/)
+- [KrakenD](https://www.krakend.io/)
+- [Tyk](https://tyk.io/)
+
+:::

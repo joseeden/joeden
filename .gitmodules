@@ -13,3 +13,6 @@
 [submodule "test-repos/test-kong-gateway"]
 	path = test-repos/test-kong-gateway
 	url = git@github.com:joseeden/test-kong-gateway.git
+[submodule "test-repos/test-fastapi-simple-app"]
+	path = test-repos/test-fastapi-simple-app
+	url = git@github.com:joseeden/test-fastapi-simple-app.git

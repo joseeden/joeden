@@ -123,6 +123,8 @@ Konga is a third-party UI for managing Kong API Gateway.
 - Simplifies setting up services, routes, and plugins.  
 - Supports monitoring and troubleshooting APIs. 
 
+To install Konga, please see [Install Kong](/docs/006-Networking/060-Kong-API-Gateway/011-Install-Kong.md)
+
 ## Kong Plugins 
 
 Kong Plugins extend Kong's functionality with additional features.  
