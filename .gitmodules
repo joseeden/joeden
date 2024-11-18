@@ -1,0 +1,24 @@
+[submodule "submodules/gcp-devops-project"]
+	path = submodules/gcp-devops-project
+	url = git@github.com:joseeden/gcp-devops-project.git
+[submodule "submodules/test-fastapi-simple-app"]
+	path = submodules/test-fastapi-simple-app
+	url = git@github.com:joseeden/test-fastapi-simple-app.git
+[submodule "submodules/test-go-webapp-sample"]
+	path = submodules/test-go-webapp-sample
+	url = git@github.com:joseeden/test-go-webapp-sample.git
+[submodule "submodules/test-jenkins-project"]
+	path = submodules/test-jenkins-project
+	url = git@github.com:joseeden/test-jenkins-project.git
+[submodule "submodules/test-kong-gateway"]
+	path = submodules/test-kong-gateway
+	url = git@github.com:joseeden/test-kong-gateway.git
+[submodule "submodules/test-static-site"]
+	path = submodules/test-static-site
+	url = git@github.com:joseeden/test-static-site.git
+[submodule "submodules/test-aws-sam-hello-app"]
+	path = submodules/test-aws-sam-hello-app
+	url = git@github.com:joseeden/test-aws-sam-hello-app.git
+[submodule "submodules/joseeden"]
+	path = submodules/joseeden
+	url = git@github.com:joseeden/joseeden.git
