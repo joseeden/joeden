@@ -5,6 +5,7 @@ tags:
   - Cloud
   - DevOps
   - Networking 
+  - API Gateway
   - Kong API Gateway
 sidebar_position: 10
 last_update:
@@ -97,6 +98,13 @@ Kong Manager is a web-based GUI for managing and monitoring Kong API Gateway.
 - Provides insights into API traffic and performance.  
 - Allows quick setup of routes, services, and plugins.  
 
+Once you setup Kong, you'll be able to access the Kong Manager via:
+
+```bash
+<server-ip>:8002
+```
+
+![](/img/docs/11202024-kong-manager-access-dashboard.png)
 
 ## Kong Admin API 
 

@@ -130,7 +130,15 @@ Automation:
   label: 'Automation'
   permalink: '/Automation'
   description: 'Docs related to Automation'  
+API Gateway:
+  label: 'API Gateway'
+  permalink: '/API Gateway'
+  description: 'Docs related to API Gateway'
 Kong API Gateway:
   label: 'Kong API Gateway'
   permalink: '/Kong API Gateway'
   description: 'Docs related to Kong API Gateway'
+FastAPI:
+  label: 'FastAPI'
+  permalink: '/FastAPI'
+  description: 'Docs related to FastAPI'

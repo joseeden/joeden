@@ -5,6 +5,7 @@ tags:
   - Cloud
   - DevOps
   - Networking 
+  - API Gateway
   - Kong API Gateway
 sidebar_position: 11
 last_update:

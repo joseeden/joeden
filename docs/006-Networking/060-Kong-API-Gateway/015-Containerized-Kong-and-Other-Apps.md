@@ -5,14 +5,27 @@ tags:
   - Cloud
   - DevOps
   - Networking 
+  - API Gateway
   - Kong API Gateway
 sidebar_position: 15
 last_update:
   date: 7/7/2022
 ---
 
+## Lab Environment  
 
+This lab installs the following containerized applications locally on a Windows 10 machine using Docker Compose.  
 
+- Kong API Gateway  
+- Kong Database  
+- pgAdmin  
+- Konga  
+- Grafana  
+- Prometheus  
+- Kibana  
+- Logstash  
+- Elasticsearch  
+- Zipkin
 
 ## Pre-requisites
 
@@ -21,6 +34,7 @@ This guide shows how to install a containerized Kong along with the other applic
 - [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install) 
 - [Docker](https://docs.docker.com/engine/install/)
 - [Docker Compose](https://docs.docker.com/compose/install/standalone/)  
+- [Postman](https://www.postman.com/downloads/)
 - [Docker Desktop (Optional)](https://docs.docker.com/desktop/)
 - [pgAdmin (Optional)](https://www.pgadmin.org/download/)
 
@@ -244,53 +258,25 @@ The main dashboard:
 
 </div>
 
+## Connect to Kong Manager 
 
-## Setup the API Endpoint 
-
-The  FastAPI application can be found here: [test-fastapi-simple-app](https://github.com/joseeden/test-fastapi-simple-app)
-
-```bash
-git clone https://github.com/joseeden/test-fastapi-simple-app.git
-cd test-fastapi-simple-app.
-pip install -r requirements.txt
-python main.py
-```
-
-Output:
+The Kong Manager can be accessed via:
 
 ```bash
-INFO:     Uvicorn running on http://localhost:5000 (Press CTRL+C to quit)
-INFO:     Started reloader process [5367] using StatReload
-INFO:     Started server process [5370]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete 
+<server-ip>:8002
 ```
 
-Open a web browser and navigate to the endpoint:
+![](/img/docs/11202024-kong-manager-access-dashboard.png)
 
-```bash
-http://localhost:5000/healthy 
-```
 
-It should return:
+## Testing Kong with API Endpoints  
 
-![](/img/docs/11182024-fastapi-endpoint-working.png)
+Kong can be tested by interacting with its API endpoints to verify its functionality and ensure proper configuration. This includes testing features like routing, authentication, rate limiting, and logging by sending sample requests to defined services and routes.
 
-Checking the docs:
+For more information, please see:
 
-```bash
-http://localhost:5000/docs
-```
+- [Testing with a FastAPI Endpoint](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md)
 
-![](/img/docs/11182024-fastapi-endpoint-docs-working.png)
-
-Back in the terminal, you should see the logs:
-
-```bash
-INFO:     127.0.0.1:57982 - "GET /healthy HTTP/1.1" 200 OK
-INFO:     127.0.0.1:45662 - "GET /docs HTTP/1.1" 200 OK
-INFO:     127.0.0.1:39750 - "GET /openapi.json HTTP/1.1" 200 OK
-```
 
 ## Remove Containers 
 
