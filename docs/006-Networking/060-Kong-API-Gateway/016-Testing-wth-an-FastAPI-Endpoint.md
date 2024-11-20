@@ -17,7 +17,7 @@ last_update:
 
 ## Lab Environment
 
-This lab tests a Kong API Gateway deployment using a FastAPI Endpoint. To simplify, both the Kong API Gateway and the FastAPI Endpoint is installed locally in a Winodws 10 machine.
+This lab tests a Kong API Gateway deployment using a FastAPI Endpoint. To simplify, both the Kong API Gateway and the FastAPI Endpoint is installed locally in a Windows 10 machine.
 
 To setup a containerized Kong, please see [Containerized Kong and Other Applications.](/docs/006-Networking/060-Kong-API-Gateway/015-Containerized-Kong-and-Other-Apps.md)
 
@@ -79,7 +79,6 @@ INFO:     127.0.0.1:39750 - "GET /openapi.json HTTP/1.1" 200 OK
 
 Open Postman and create a new workspace by clicking the **My Workspaces** and select New. Enter "Api Testing" as the name of the workspace and click **Create Workspace**.
 
-
 <div class='img-center'>
 
 ![](/img/docs/11182024-fastapi-postman-create-workspace.png)
@@ -94,6 +93,7 @@ Click **+ New Collection** and add "Kong" as collection name. Click Create.
 ![](/img/docs/11182024-fastapi-postman-new-collection-kong-2.png)
 
 </div>
+
 
 Click **Add requests** and then enter:
 
