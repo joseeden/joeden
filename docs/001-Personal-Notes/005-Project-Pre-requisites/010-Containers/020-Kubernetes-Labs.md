@@ -88,47 +88,53 @@ When you click the links, it should bring you to the official installation pages
 
 If you're using **WSL running Ubuntu in a Windows laptop**, you may simply use these commands:
 
-```bash
-# aws cli
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-sudo apt install unzip
-unzip awscliv2.zip
-sudo ./aws/install
-```
-```bash
-# eksctl
-curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
-sudo mv /tmp/eksctl /usr/local/bin
-```
-```bash
-# kubectl
-sudo apt-get update
-echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+- AWS CLI 
 
-curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+  ```bash
+  # aws cli
+  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+  sudo apt install unzip
+  unzip awscliv2.zip
+  sudo ./aws/install
+  ```
 
-sudo apt update
+  To verify the AWS CLI version:
 
-sudo apt install -y kubectl
-```
+  ```bash
+  aws --version 
+  ```
 
-To verify the AWS CLI version:
+- eksctl 
 
-```bash
-aws --version 
-```
+  ```bash
+  curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+  sudo mv /tmp/eksctl /usr/local/bin
+  ```
 
-To verify the eksctl version:
+  To verify the eksctl version:
 
-```bash
-eksctl version 
-```
+  ```bash
+  eksctl version 
+  ```
 
-To verify the kubectl version:
+- kubectl 
 
-```bash
-kubectl version --output=json  
-```
+  ```bash
+  curl https://storage.googleapis.com/kubernetes-release/release/stable.txt > ./stable.txt
+  export KUBECTL_VERSION=$(cat stable.txt)
+  curl -LO https://storage.googleapis.com/kubernetes-release/release/$KUBECTL_VERSION/bin/linux/amd64/kubectl
+  chmod +x ./kubectl
+  sudo mv ./kubectl /usr/local/bin/kubectl
+  mkdir -p ~/.kube
+  ln -sf "/mnt/c/users/$USER/.kube/config" ~/.kube/config
+  rm ./stable.txt
+  ```
+
+  To verify the kubectl version:
+
+  ```bash
+  kubectl version --output=json  
+  ```
 
 We can also enable eksctl bash completion:
 

@@ -52,10 +52,55 @@ Start > Settings > Accounts > Sign-in options > Password > Change and follow dir
 
 ## Set Admin Privileges for Powershell in Windows Terminal 
 
-Open Windows Terminal and follow the steps below:
+As best practice, create a new profile by opening Windows Terminal > Settings > Add a new profile.
+
+You should see a **Duplicate a profile** with a dropdown menu next to it. Select the profile that you want to duplicate and click **Duplicate > Save.**
+
+Configure the new profile to run as administrator.
 
 ```bash
 Settings > Profiles > Windows Powershell > Run this profile as Administrator > Turn On 
+```
+
+Make sure to save it and then click the main dropdown bar at the top and verify that the profile is added.
+
+:::info 
+
+When you select the profile with elevated privileges, it will open a User Account Control (UAC) window asking you to confirm. After you click yes, it will open another instance of Windows Terminal with the privileged profile. It is currently impossible to open an elevated session in another tab in the same Windows Terminal.
+
+Based on this [Megathread: sudo, runas, mixed elevation of tabs, etc](https://github.com/microsoft/terminal/issues/1032):
+
+*If you want something running as administrator, a new process is required.*
+
+:::
+
+## Organize profiles in Windows Terminal 
+
+To organize the ordering of the profiles on the dropdown bar, open Windows Terminal, click the dropdown bar, and then click Settings. At the bottom of the right menu, click **Open JSON File**. Edit the JSON file to change the ordering of the profiles and then save. 
+
+```json
+"profiles": 
+{
+    "defaults": {},
+    "list": 
+    [
+        {
+            "colorScheme": "Campbell Powershell",
+            "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+            "experimental.rightClickContextMenu": false,
+            "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+            "hidden": false,
+            "name": "Windows PowerShell"
+        },
+        {
+            "commandline": "%SystemRoot%\\System32\\cmd.exe",
+            "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+            "hidden": false,
+            "name": "Command Prompt"
+        }
+        .....
+    ]
+}            
 ```
 
 ## Install WSL 
@@ -63,51 +108,72 @@ Settings > Profiles > Windows Powershell > Run this profile as Administrator > T
 Install WSL through Windows Terminal. Open Powershell as Administrator.
 Link: [How to install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install) 
 
-```powershell 
-wsl --install
-```
 
-Output:
+1. Choose the distro 
 
-```bash
-Installing: Virtual Machine Platform
-Virtual Machine Platform has been installed.
-Installing: Windows Subsystem for Linux
-Windows Subsystem for Linux has been installed.
-Installing: Windows Subsystem for Linux
-Windows Subsystem for Linux has been installed.
-Installing: Ubuntu
-Ubuntu has been installed.
-The requested operation is successful. Changes will not be effective until the system is rebooted. 
-```
+    ```powershell 
+    wsl --list --online
+    ```
 
-Reboot laptop. After reboot, search for Ubuntu and click it.
-You'll be prompted to enter a new UNIX username and password. 
+    Sample output:
 
-```bash
-Ubuntu is already installed.
-Launching Ubuntu...
-Installing, this may take a few minutes...
-Please create a default UNIX user account. The username does not need to match your Windows username.
-For more information visit: https://aka.ms/wslusers
-Enter new UNIX username: johnsmith
-New password:
-Retype new password:
-passwd: password updated successfully
-Installation successful!
-To run a command as administrator (user "root"), use "sudo <command>".
-See "man sudo_root" for details.
+    ```powershell 
+    NAME                            FRIENDLY NAME
+    Ubuntu                          Ubuntu
+    Debian                          Debian GNU/Linux
+    kali-linux                      Kali Linux Rolling
+    Ubuntu-18.04                    Ubuntu 18.04 LTS
+    Ubuntu-20.04                    Ubuntu 20.04 LTS
+    Ubuntu-22.04                    Ubuntu 22.04 LTS
+    Ubuntu-24.04                    Ubuntu 24.04 LTS
+    OracleLinux_7_9                 Oracle Linux 7.9
+    OracleLinux_8_7                 Oracle Linux 8.7
+    OracleLinux_9_1                 Oracle Linux 9.1
+    openSUSE-Leap-15.6              openSUSE Leap 15.6
+    SUSE-Linux-Enterprise-15-SP5    SUSE Linux Enterprise 15 SP5
+    SUSE-Linux-Enterprise-15-SP6    SUSE Linux Enterprise 15 SP6
+    openSUSE-Tumbleweed             openSUSE Tumbleweed
+    ```  
 
-Welcome to Ubuntu 22.04.2 LTS (GNU/Linux 5.15.133.1-microsoft-standard-WSL2 x86_64)
+2. Then choose which distro to install:
 
- * Documentation:  https://help.ubuntu.com
- * Management:     https://landscape.canonical.com
- * Support:        https://ubuntu.com/advantage
+    ```powershell 
+    wsl --install Ubuntu-20.04
+    ```     
+
+3. If the install is stuck at 0%, you may need to update WSL and specify the complete installation command:
+
+    ```powershell 
+    wsl --update --web-download
+    wsl --install -d Ubuntu-20.04 --web-download
+    ```     
+
+4. Reboot computer. After reboot, search for Ubuntu and click it. You'll be prompted to enter a new UNIX username and password. 
+
+    ```bash
+    Ubuntu is already installed.
+    Launching Ubuntu...
+    Installing, this may take a few minutes...
+    Please create a default UNIX user account. The username does not need to match your Windows username.
+    For more information visit: https://aka.ms/wslusers
+    Enter new UNIX username: johnsmith
+    New password:
+    Retype new password:
+    passwd: password updated successfully
+    Installation successful!
+    To run a command as administrator (user "root"), use "sudo <command>".
+    See "man sudo_root" for details.
+
+    Welcome to Ubuntu 22.04.2 LTS (GNU/Linux 5.15.133.1-microsoft-standard-WSL2 x86_64)
+
+    * Documentation:  https://help.ubuntu.com
+    * Management:     https://landscape.canonical.com
+    * Support:        https://ubuntu.com/advantage
 
 
-This message is shown once a day. To disable it please create the
-/home/johnsmith/.hushlogin file. 
-```
+    This message is shown once a day. To disable it please create the
+    /home/johnsmith/.hushlogin file. 
+    ```
 
 
 ## Customize bashrc file
@@ -164,7 +230,16 @@ complete -C /usr/bin/terraform terraform
 complete -C /usr/local/bin/terraform terraform 
 ```
 
+## Add Timestamps Permanently 
 
+By default, timestamps are not preserved when the shell session ends. To make timestamps persistent across sessions, append the following to `.bashrc` or `.zshrc`:
+
+```bash
+export HISTTIMEFORMAT='%F %T '
+export HISTSIZE=10000          # Adjust the number of commands to keep
+export HISTFILESIZE=20000      # Adjust the size of the history file
+shopt -s histappend            # Append history instead of overwriting
+```
 
 ## Sync VS Code Settings
 
