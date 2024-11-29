@@ -51,7 +51,7 @@ newgrp docker
 It is convenient to not have to terminate your current ssh session by using newgrp, but terminating the ssh session and logging in again will work just as well. In some instances, you may need to restart the Docker daemon by entering:
 
 ```bash
-sudo systemctl restart docker.
+sudo systemctl restart docker
 ```
 
 Now try to run docker commands without issuing sudo:

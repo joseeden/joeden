@@ -20,7 +20,9 @@ If you're using Ubuntu, you can install docker-compose by simply running the two
 
 ```bash
 sudo apt-get update 
-sudo apt-get install -y docker-compose 
+sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
 ```
 
 For more information, please see [Install Docker Compose CLI plugin page.](https://docs.docker.com/compose/install/compose-plugin/#installing-compose-on-linux-systems)
