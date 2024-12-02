@@ -36,10 +36,10 @@ Simply installing Docker in WSL2 without Docker Desktop may introduce some issue
 
 ## Pre-requisites 
 
-- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-- [Kong API Gateway](/docs/006-Networking/060-Kong-API-Gateway/015-Containerized-Kong-and-Other-Apps.md)
-- [Kong Manager OSS Access](/docs/006-Networking/060-Kong-API-Gateway/015-Containerized-Kong-and-Other-Apps.md)
 - [Postman](https://www.postman.com/downloads/)
+- [Setup the Kong API Gateway](/docs/006-Networking/060-Kong-API-Gateway/015-Containerized-Kong-and-Other-Apps.md)
+- [Setup the FastAPI Endpoint](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md#setup-the-api-endpoint)
+- [Kong Manager OSS Access](/docs/006-Networking/060-Kong-API-Gateway/015-Containerized-Kong-and-Other-Apps.md)
 - [Configure the Routes and Services](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md)
 
 ## Import the Postman Collection 
@@ -53,7 +53,7 @@ To setup Postman, please see [Testing with Postman](/docs/006-Networking/060-Kon
 Click the hamburger menu on the upper left and click File > Import > Click the Select Files.
 The Kong API collection can be found here:
 
-- Kong CE Admin API V2.0
+- [Kong CE Admin API V2.0](https://github.com/joseeden/joeden/tree/master/assets/postman-collections/kong)
 
 Once imported, you should see the entire collection.
 

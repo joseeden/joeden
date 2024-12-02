@@ -34,8 +34,8 @@ Simply installing Docker in WSL2 without Docker Desktop may introduce some issue
 ## Pre-requisites 
 
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-- [Kong API Gateway](/docs/006-Networking/060-Kong-API-Gateway/015-Containerized-Kong-and-Other-Apps.md)
 - [Postman](https://www.postman.com/downloads/)
+- [Setup Kong API Gateway](/docs/006-Networking/060-Kong-API-Gateway/015-Containerized-Kong-and-Other-Apps.md)
 
 ## Setup the API Endpoint 
 

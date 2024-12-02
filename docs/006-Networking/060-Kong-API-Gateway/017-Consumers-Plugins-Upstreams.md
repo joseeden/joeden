@@ -34,13 +34,6 @@ This lab focuses on Kong consumers, plugins, and upstreams.
   - Use load balancing to distribute requests across multiple targets.  
   - Improve reliability by automatically handling healthy and unhealthy targets.  
 
-For more information, please see the following:
-
-- [Containerized Kong and Other Applications.](/docs/006-Networking/060-Kong-API-Gateway/015-Containerized-Kong-and-Other-Apps.md)
-- [Testing with a FastAPI Endpoint](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md)
-- [Configuring the Routes and Services](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md)
-
-
 ## Lab Environment
 
 This lab tests a Kong API Gateway deployment using a FastAPI Endpoint. To simplify, both the Kong API Gateway and the FastAPI Endpoint is installed locally in a Windows 10 machine.
@@ -56,9 +49,8 @@ Simply installing Docker in WSL2 without Docker Desktop may introduce some issue
 
 ## Pre-requisites 
 
-- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-- [Kong API Gateway](/docs/006-Networking/060-Kong-API-Gateway/015-Containerized-Kong-and-Other-Apps.md)
 - [Postman](https://www.postman.com/downloads/)
+- [Setup Kong API Gateway](/docs/006-Networking/060-Kong-API-Gateway/015-Containerized-Kong-and-Other-Apps.md)
 - [Configure the Routes and Services](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md)
 
 ## Setup the API Endpoint 
