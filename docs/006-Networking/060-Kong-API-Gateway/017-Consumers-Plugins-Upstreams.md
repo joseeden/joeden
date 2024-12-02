@@ -41,6 +41,10 @@ For more information, please see the following:
 - [Configuring the Routes and Services](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md)
 
 
+## Lab Environment
+
+This lab tests a Kong API Gateway deployment using a FastAPI Endpoint. To simplify, both the Kong API Gateway and the FastAPI Endpoint is installed locally in a Windows 10 machine.
+
 :::info 
 
 Make sure that you have installed Docker Desktop. 
@@ -111,9 +115,11 @@ Set this plugin as a global plugin and enter the following details:
 
 :::info [Setup Postman]
 
-To setup Postman, please see [Testing with a FastAPI Endpoint](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md)
+To setup Postman, please see [Testing with Postman](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md#testing-with-postman)
 
 :::
+
+
 
 Run the request 5 times consecutively. It should retun a healthy status:
 
@@ -155,12 +161,12 @@ host.docker.internal:5000
 
 ## Test the Upstream 
 
-
 :::info [Setup Postman]
 
-To setup Postman, please see [Testing with a FastAPI Endpoint](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md)
+To setup Postman, please see [Testing with Postman](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md#testing-with-postman)
 
 :::
+
 
 Create a new request with the new link:
 
