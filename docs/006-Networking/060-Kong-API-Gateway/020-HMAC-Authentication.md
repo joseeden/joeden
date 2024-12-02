@@ -1,6 +1,6 @@
 ---
-title: "Kong Authentication"
-description: "Kong Authentication"
+title: "HMAC Authentication"
+description: "Using HMAC Authentication in Kong"
 tags: 
   - Cloud
   - DevOps
@@ -9,7 +9,7 @@ tags:
   - Kong API Gateway
   - FastAPI 
   - Postman
-sidebar_position: 19
+sidebar_position: 20
 last_update:
   date: 7/7/2022
 ---
@@ -17,12 +17,17 @@ last_update:
 
 ## Overview
 
-Kong Authentication secures APIs by validating the identity of clients accessing them.
+HMAC (Hash-based Message Authentication Code) authentication ensures secure API access by verifying the integrity and authenticity of requests.
 
-- Ensures only authorized clients can interact with APIs.  
-- Supports various authentication methods like API keys, JWT, and OAuth2.  
+- Uses cryptographic hashing to validate request headers and payloads.  
+- Requires clients to include a signature generated with a shared secret.  
+- Protects against tampering and replay attacks.  
 
-We can enable different methods authentication to ensure that the API is only exposed to intended users.
+Flow of authentication: 
+
+1. Client generates an HMAC signature using a shared secret.  
+2. Signature and additional headers are sent with the API request.  
+3. Kong verifies the signature and processes the request if valid.  
 
 ## Lab Environment
 
@@ -45,71 +50,7 @@ Simply installing Docker in WSL2 without Docker Desktop may introduce some issue
 - [Create the Routes and Services](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md)
 - [Create the Consumer](/docs/006-Networking/060-Kong-API-Gateway/017-Consumers-Plugins-Upstreams.md#create-the-kong-consumer)
 
-## Basic Authentication  
-
-### Enable the Basic Auth Plugin 
-
-To enable the plugin, go to Kong Manager > Plugins > New Plugin > Select Basic Authentication.
-
-![](/img/docs/12022024-kong-gw-basic-auth-plugin.png)
-
-Leave the default settings and click Save. It should appear on the plugin list.
-
-![](/img/docs/12022024-kong-gw-basic-auth-plugin-on-the-list.png)
-
-### Configure the Basic Auth Credentials 
-
-To create a consumer, please see [Create the Consumer](/docs/006-Networking/060-Kong-API-Gateway/017-Consumers-Plugins-Upstreams.md#create-the-kong-consumer).
-
-![](/img/docs/12022024-kong-gw-consumer-created-already.png)
-
-Select the consumer and click Credentials > New Basic Auth Credential. Enter the details below and click Save
-
-| Field     | Value           |
-|-----------|-----------------|
-| Password  | `!Qwaszxerdfcv` |
-| Username  | johnsmith       |
-
-![](/img/docs/12022024-kong-gw-consumer-add-credentialss.png)
-
-### Test Basic Auth 
-
-:::info [Setup Postman]
-
-To setup Postman, please see [Testing with Postman](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md#testing-with-postman)
-
-:::
-
-Open Postman and create a new request. Rename it to **Testing FastAPI via Kong - Basic Auth**. Enter the URL below and click Send.
-
-```bash
-http://localhost:8000/kong/healthy 
-```
-
-It will return the **unauthorized** message.
-
-![](/img/docs/12022024-kong-gw-unauthorized-error.png)
-
-Click the **Authorization** tab, click the **Auth Type** dropdown bar, and select **Basic Auth**. Enter the username and password. Click Send.
-
-![](/img/docs/12022024-kong-gw-authorized-with-credentials.png)
-
-
-## HMAC Authentication 
-
-HMAC (Hash-based Message Authentication Code) authentication ensures secure API access by verifying the integrity and authenticity of requests.
-
-- Uses cryptographic hashing to validate request headers and payloads.  
-- Requires clients to include a signature generated with a shared secret.  
-- Protects against tampering and replay attacks.  
-
-Flow of authentication: 
-
-1. Client generates an HMAC signature using a shared secret.  
-2. Signature and additional headers are sent with the API request.  
-3. Kong verifies the signature and processes the request if valid.  
-
-### Enable the HMAC Auth Plugin 
+## Enable the HMAC Auth Plugin 
 
 To enable the plugin, go to Kong Manager > Plugins > New Plugin > Select HMAC Authentication.
 
@@ -137,7 +78,7 @@ It should now appear in the plugin list.
 ![](/img/docs/12022024-kong-gw-hmac-auth-plugin-disable-basic-auth.png)
 
 
-### Conflicting Global Authentication Methods 
+## Conflicting Global Authentication Methods 
 
 When enabling authentication plugins, make sure that only one is enabled **globally**. This is because when two plugins are globally enabled, any consumer request must satify both authentication methods. To make it granular, you can also configure the each plugin to be **Scoped** and specify the specific service or routes that will be using it. This is a better way to ensure that gateway services won't be trying all global plugins.
 
@@ -148,13 +89,13 @@ Order of Execution:
 - If any authentication method fails, Kong denies the request with a `401 Unauthorized` error.
 
 
-### Configure the HMAC Auth Credentials 
+## Configure the HMAC Auth Credentials 
 
 To create a consumer, please see [Create the Consumer](/docs/006-Networking/060-Kong-API-Gateway/017-Consumers-Plugins-Upstreams.md#create-the-kong-consumer).
 
 ![](/img/docs/12022024-kong-gw-consumer-created-already.png)
 
-Select the consumer and click Credentials > New HMAC Credential. Enter the details below and click Save
+Select the consumer and click Credentials > New HMAC Credential. Enter the details below and click Save.
 
 | Field     | Value           |
 |-----------|-----------------|
@@ -164,7 +105,7 @@ Select the consumer and click Credentials > New HMAC Credential. Enter the detai
 ![](/img/docs/12022024-kong-gw-hmac-auth-config-consumer.png)
 
 
-### Get the GMT Date 
+## Get the GMT Date 
 
 The `date` will be used when calculating the MAC signature, as well as sending the request. It should also be the same as the time in your system. To verify, you can run this in WSL/Linux terminal:
 
@@ -193,7 +134,7 @@ Mon, 02 Dec 2024 16:23:54 GMT
 ```
 
 
-### Calculate HMAC Signature
+## Calculate HMAC Signature
 
 :::info
 
@@ -224,7 +165,13 @@ It will return the encoded results. Copy the Base64 output:
 lmCENhBAr+WhCzoL21aqRU44Y0C5HjS5sAU8zkmAoPE=
 ```
 
-### Test HMAC Auth 
+## Test HMAC Auth 
+
+:::info [Setup Postman]
+
+To setup Postman, please see [Testing with Postman](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md#testing-with-postman)
+
+:::
 
 Go back to Postman and create a new request. Rename it to **Testing FastAPI via Kong - HMAC Auth**. Enter the URL below.
 
@@ -250,71 +197,3 @@ Click Send. It should return the `Healthy` status.
 
 ![](/img/docs/12022024-kong-gw-hmac-auth-working-after-3-hours.png)
 
-
-## Key Authentication  
-
-Key Authentication secures APIs by requiring clients to include an API key in requests. Kong validates the key to allow access.  
-
-- Simple to set up and manage.  
-- Clients send the API key via headers, query strings, or cookies.
-
-
-### Enable the Key Auth Plugin 
-
-To enable the plugin, go to Kong Manager > Plugins > New Plugin > Select Key Authentication.
-
-![](/img/docs/12022024-kong-gw-basic-auth-plugin.png)
-
-Set this plugin as a global plugin and enable the following under Plugin Configuration.
-
-- Key In Header
-- Key In Query
-
-Under key names, specify:
-
-- apikey
-- token
-
-Under Advanced parameters, enter the following details. Click Save afterwards.
-
-| Field         | Value                                 |
-|---------------|---------------------------------------|
-| Instance Name | key-authentication                    |  
-
-Make sure to disable other **global authentication methods**.
-
-![](/img/docs/12022024-kong-gw-key-auth-plugin.png)
-
-
-### Configure the Key Auth Credentials 
-
-To create a consumer, please see [Create the Consumer](/docs/006-Networking/060-Kong-API-Gateway/017-Consumers-Plugins-Upstreams.md#create-the-kong-consumer).
-
-![](/img/docs/12022024-kong-gw-consumer-created-already.png)
-
-Select the consumer and click Credentials > New Key Auth Credential. We can provide our own key or we can let Kong generate a key by simply clicking Save. 
-
-![](/img/docs/12022024-kong-gw-key-auth-genrate-own-key.png)
-
-The new key should now appear in the credentials page. Copy the key.
-
-![](/img/docs/12022024-kong-gw-key-auth-genrate-own-key-appear.png)
-
-
-### Test Key Auth 
-
-Go back to Postman and create a new request. Rename it to **Testing FastAPI via Kong - Key Auth**. Enter the URL below.
-
-```bash
-http://localhost:8000/kong/healthy 
-```
-
-Click the **Headers** tab and add the following:
-
-| Key             | Value                         |
-|-----------------|-------------------------------|
-| apikey          | add the API key here          |
-
-Hit Send.
-
-![](/img/docs/12022024-kong-gw-key-auth-working-in-postman.png)
