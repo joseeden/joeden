@@ -241,6 +241,14 @@ export HISTFILESIZE=20000      # Adjust the size of the history file
 shopt -s histappend            # Append history instead of overwriting
 ```
 
+## Add SSH Keys 
+
+Majority of systems will require some sort of keys, instead of using a username and password. Generate the SSH key:
+
+```bash
+ssh-keygen -t ed25519
+```
+
 ## Sync VS Code Settings
 
 Use built-in **Settings Sync** in VS Code. 
