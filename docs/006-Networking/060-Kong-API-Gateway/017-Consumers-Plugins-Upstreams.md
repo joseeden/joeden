@@ -105,7 +105,7 @@ Set this plugin as a global plugin and enter the following details:
 
 ## Test the Plugin
 
-:::info [Setup Postman]
+:::info[Setup Postman]
 
 To setup Postman, please see [Testing with Postman](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md#testing-with-postman)
 
@@ -153,7 +153,7 @@ host.docker.internal:5000
 
 ## Test the Upstream 
 
-:::info [Setup Postman]
+:::info[Setup Postman]
 
 To setup Postman, please see [Testing with Postman](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md#testing-with-postman)
 

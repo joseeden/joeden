@@ -167,7 +167,7 @@ lmCENhBAr+WhCzoL21aqRU44Y0C5HjS5sAU8zkmAoPE=
 
 ## Test HMAC Auth 
 
-:::info [Setup Postman]
+:::info[Setup Postman]
 
 To setup Postman, please see [Testing with Postman](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md#testing-with-postman)
 

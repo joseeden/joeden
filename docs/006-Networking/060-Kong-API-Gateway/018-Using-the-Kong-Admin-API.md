@@ -44,7 +44,7 @@ Simply installing Docker in WSL2 without Docker Desktop may introduce some issue
 
 ## Import the Postman Collection 
 
-:::info [Setup Postman]
+:::info[Setup Postman]
 
 To setup Postman, please see [Testing with Postman](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md#testing-with-postman)
 
