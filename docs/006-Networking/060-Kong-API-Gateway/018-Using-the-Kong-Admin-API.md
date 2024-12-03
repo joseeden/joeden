@@ -93,7 +93,7 @@ Click the Body tab and paste the details below. You can customize this. Click Tr
 
 It should return:
 
-![](/img/docs/12022024-kong-gw-kong-admin-api-new-service.png)
+![](/img/docs/12022024-kong-gw-kong-admin-api-new-service-correct.png)
 
 To retrieve the service, go to Service Object > Retrieve Service > Retrieve Service.
 

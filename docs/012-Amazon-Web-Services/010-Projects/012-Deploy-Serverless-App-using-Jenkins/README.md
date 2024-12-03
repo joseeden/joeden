@@ -105,7 +105,7 @@ To use the Jenkins server, first create an IAM user in the AWS Console and gener
 - AWS Access Key 
 - AWS Secret Key
 
-For more information, see [IAM Users and Access Keys](/docs/001-Personal-Notes/005-Project-Pre-requisites/001-AWS.md#iam-users-and-access-keys).
+For more information, see [IAM Users and Access Keys](/docs/001-Personal-Notes/005-Project-Pre-requisites/001-AWS.md#access-keys).
 
 
 ## Configure Credentials on Jenkins 

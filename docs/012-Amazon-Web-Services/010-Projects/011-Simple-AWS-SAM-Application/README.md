@@ -43,7 +43,7 @@ If you are using Ubuntu 22.04, you might only be able to install Python 3.10.
 
 To use the AWS SAM CLI, first create an IAM user in the AWS Console and generate access keys for that user. Attach the `AdministratorAccess` policy to this user temporarily to ensure they have the necessary permissions to run AWS SAM CLI commands.
 
-For more information, see [IAM Users and Access Keys](/docs/001-Personal-Notes/005-Project-Pre-requisites/001-AWS.md#iam-users-and-access-keys).
+For more information, see [IAM Users and Access Keys](/docs/001-Personal-Notes/005-Project-Pre-requisites/001-AWS.md#access-keys).
 
 
 ## Create the Base Configuration File

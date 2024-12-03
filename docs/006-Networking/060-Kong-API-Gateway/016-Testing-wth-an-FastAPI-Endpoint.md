@@ -134,7 +134,7 @@ Enter the Name and then choose Protocol, Host, Port and Path. Enter the details 
 |-----------|-----------------------|
 | Name      | fastapi-service       |
 | Protocol  | http                  |
-| Host      | host.docker.internal  |
+| Host      | `host.docker.internal`  |
 | Path      | `/healthy`            |
 | Port      | 5000                  |
 

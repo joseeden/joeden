@@ -93,7 +93,7 @@ sudo rm -rf /var/lib/docker
 sudo rm -rf /var/lib/containerd 
 ```
 
-If you get this error, please see [Cannot remove docker directory](#Cannot-remove-docker-directory).
+If you get this error, please see [Cannot remove docker directory](#cannot-remove-docker-directory).
 
 ```bash
 rm: cannot remove '/var/lib/docker': Device or resource busy 
