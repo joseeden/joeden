@@ -248,7 +248,7 @@ http://localhost:8000/kong/healthy
 
 Click the **Authorization** tab > **Auth Type** dropdown bar, and select **Bearer Token**. Paste the token from the previous step in the Token field and click Send. It should return:
 
-![](/img/docs/12022024-kong-gw-consumer-add-credentialss.png)
+![](/img/docs/12022024-kong-gw-working-token.png)
 
 
 :::info 
@@ -256,6 +256,7 @@ Click the **Authorization** tab > **Auth Type** dropdown bar, and select **Beare
 If you got a `token expired` error, try using the [scripted approach](#create-the-token-via-script) to generate the token and use the token for the Postman request.
 
 :::
+
 
 if you change the token to anything else, you'll get a `bad token` error: 
 
