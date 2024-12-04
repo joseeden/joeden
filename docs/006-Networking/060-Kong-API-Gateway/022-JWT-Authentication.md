@@ -58,7 +58,7 @@ To enable the plugin, go to Kong Manager > Plugins > New Plugin > Select JWT Aut
 
 ![](/img/docs/12022024-kong-gw-basic-auth-plugin.png)
 
-Configure the following settings and click Save. 
+Configure the following settings under Advanced Parameters and click Save. 
 
 | Field                           | value               |
 |---------------------------------|---------------------|
@@ -69,7 +69,7 @@ Configure the following settings and click Save.
 
 It should now appear on the plugin list.
 
-> insert-photo-here
+![](/img/docs/12042024-kong-gw-jwt-auth-plugin.png)
 
 Make sure to disable other **global authentication methods**. For more information, please see [Conflicting Global Authentication Methods](/docs/006-Networking/060-Kong-API-Gateway/020-HMAC-Authentication.md#conflicting-global-authentication-methods)
 
@@ -88,17 +88,27 @@ Select the consumer and click Credentials > New JWT Credential. Enter the detail
 | Secret      | `!Qwaszxerdfcv` |
 | Algorithm   | HS256           |
 
-> insert-photo-here
+<!-- ![](/img/docs/12042024-kong-gw-jwt-auth-config-credentials-on-consumers.png) -->
 
-## Create the Token
+![](/img/docs/12042024-kong-gw-jwt-auth-config-credentials-on-consumers-2.png)
+
+
+## Create the Token (via jwt.io)
+
+:::info
+
+Initially, I encountered an `token expired` error in the Postman request when I try to use the token generated from jwt.io. 
+Another way to generate the token is to use the script in the next step.
+
+:::
 
 First, go to an [online epochconverter](https://www.epochconverter.com/) and get the current epoch time (this may change):
 
 ```bash
-1733183007  
+1733279271  
 ```
 
-Next, go to jwt.io and set the following:
+Next, go to [jwt.io](https://jwt.io/) and set the following:
 
 - Header:
 
@@ -114,7 +124,7 @@ Next, go to jwt.io and set the following:
 
   ```json
   {
-    "exp": "1733183007",
+    "exp": 1733279271,
     "iss": "jwttoken"
   }    
   ```
@@ -130,11 +140,97 @@ Next, go to jwt.io and set the following:
   ) secret base64 encoded
   ```
 
-Under the Encoded section, copy the output:
+Under the Encoded section, copy the token:
 
 ```bash
 eyJhbGci*****************************
 ```
+
+## Create the Token (via script)
+
+:::info 
+
+First, [use Postman](#test-jwt-auth) to test the JWT Auth token generated in the previous step. 
+If it did not work, use the scripted approach to generate a token
+
+:::
+
+
+Save the script below as `get-iat-exp.py`:
+
+```python
+import time
+import jwt  # Install with `pip install pyjwt`
+
+# Prompt user for inputs
+try:
+    EXPIRATION_SECONDS = int(input("Enter the maximum expiration time in seconds: "))
+except ValueError:
+    print("Invalid input! Please enter a valid number for expiration time.")
+    exit(1)
+
+SECRET_KEY = input("Enter the secret key: ")
+if not SECRET_KEY:
+    print("Secret key cannot be empty.")
+    exit(1)
+
+ISSUER = input("Enter the issuer: ")
+if not ISSUER:
+    print("Issuer cannot be empty.")
+    exit(1)
+
+# Generate iat and exp
+iat = int(time.time())          # Current epoch time
+exp = iat + EXPIRATION_SECONDS  # Expiration time
+
+payload = {
+    "iat": iat,
+    "exp": exp,
+    "iss": ISSUER
+}
+
+# Generate JWT token
+token = jwt.encode(payload, SECRET_KEY, algorithm="HS256")
+
+if isinstance(token, bytes):
+    token = token.decode('utf-8')
+
+
+print("---------------------------------")
+print("Generated Timestamps:")
+print("iat (Issued At):", iat)
+print("exp (Expiration):", exp)
+print("---------------------------------")
+print("Generated JWT Token:")
+print(token)
+```
+
+Run the script:
+
+```bash
+python3 get-iat-exp.py
+```
+
+When prompted, enter the details below. These are the [credentials configured on the Kong consumer](#configure-the-jwt-auth-credentials).
+
+```bash
+Enter the maximum expiration time in seconds: 600
+Enter the secret key: 
+Enter the issuer: jwttoken 
+```
+
+The script will print the following. Copy the token:
+
+```bash
+---------------------------------
+Generated Timestamps:
+iat (Issued At): 1733285147
+exp (Expiration): 1733285747
+---------------------------------
+Generated JWT Token:
+eyJ0eXAiOsjdkjhsfkjshfkjshdfjhfdkjhdfkjshdfkjshdfkjsdhfjkshfkjsdhfkshdfkjsdhfkjshdfkshdfkj 
+```
+
 
 ## Test JWT Auth 
 
@@ -144,17 +240,25 @@ To setup Postman, please see [Testing with Postman](/docs/006-Networking/060-Kon
 
 :::
 
-Open Postman and create a new request. Rename it to **Testing FastAPI via Kong - JWT Auth**. Enter the URL below.
+Open Postman and create a new request. Rename it to **FastAPI via Kong - JWT Auth**. Enter the URL below.
 
 ```bash
 http://localhost:8000/kong/healthy 
 ```
 
-Click the **Authorization** tab, click the **Auth Type** dropdown bar, and select **Bearer Token**. Paste the token from the previous step in the Token field and click Send.
+Click the **Authorization** tab, click the **Auth Type** dropdown bar, and select **Bearer Token**. Paste the token from the previous step in the Token field and click Send. It should return:
 
-> insert-photo-here
+![](/img/docs/12042024-kong-gw-jwt-token-working-on-postman.png)
+
+
+:::info 
+
+If you got a `token expired` error, try using the [scripted approach](#create-the-token-via-script) to generate the token and use the token for the Postman request.
+:::
+
 
 if you change the token to anything else, you'll get a `bad token` error:
 
-> insert-photo-here
+![](/img/docs/12042024-kong-gw-jwt-token-bad-token-failing-on-postman.png)
+
 
