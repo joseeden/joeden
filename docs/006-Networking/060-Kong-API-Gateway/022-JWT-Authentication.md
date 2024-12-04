@@ -248,7 +248,9 @@ http://localhost:8000/kong/healthy
 
 Click the **Authorization** tab > **Auth Type** dropdown bar, and select **Bearer Token**. Paste the token from the previous step in the Token field and click Send. It should return:
 
-![](/img/docs/12022024-kong-gw-working-token.png)
+![](/img/docs/Screenshot2024Dec04.png)
+
+<!-- ![](/img/docs/12022024-kong-gw-consumer-add-credentialss.png) -->
 
 
 If you change the token to anything else, you'll get a `bad token` error: 
