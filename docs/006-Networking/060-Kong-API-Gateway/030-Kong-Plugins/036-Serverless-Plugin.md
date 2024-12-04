@@ -73,7 +73,7 @@ First, you will need to purchase credits.
 
 Once you see the success message, you can start using OpenAI API. Follow the steps below to get an API key:
 
-1. Click **Dashboar** > **API keys**.
+1. Click **Dashboard** > **API keys**.
 2. Click **Create new secret key**.
 
     ![](/img/docs/12042024-get-chatgpt-api-key.png)
@@ -162,11 +162,7 @@ Click **Body** > Raw, and enter the message below:
     "messages": [
         {
             "role": "system",
-            "content": "You are a good scientist"
-        },
-        {
-            "role": "user",
-            "content": "Explain the theory of relativity in 10 words or less."            
+            "content": "Hello OpenAI!"
         }
     ]
 }
