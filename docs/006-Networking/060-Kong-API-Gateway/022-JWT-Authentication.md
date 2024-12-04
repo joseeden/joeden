@@ -250,7 +250,8 @@ Click the **Authorization** tab, click the **Auth Type** dropdown bar, and selec
 
 ![](/img/docs/12042024-kong-gw-jwt-token-working-on-postman.png)
 
-
+ 
+ 
 :::info 
 
 If you got a `token expired` error, try using the [scripted approach](#create-the-token-via-script) to generate the token and use the token for the Postman request.
