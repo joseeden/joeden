@@ -1,6 +1,6 @@
 ---
-title: "Traffic Control Plugins"
-description: "Using Traffic Control Plugins in Kong"
+title: "ACL Plugin"
+description: "Using Access Control List (ACL) Plugin in Kong"
 tags: 
   - Cloud
   - DevOps
@@ -25,6 +25,12 @@ Traffic Control in Kong plugins help manage and regulate traffic to your service
 
 ![](/img/docs/12042024-kong-gw-traffic-control-plugin.png)
 
+The ACL (Access Control List) plugin restricts or grants access to services based on consumer group membership.  
+
+- Allows or denies requests using whitelisted or blacklisted groups.  
+- Requires consumers to belong to predefined groups for access.  
+
+
 ## Lab Environment
 
 This lab tests a Kong API Gateway deployment using a FastAPI Endpoint. To simplify, both the Kong API Gateway and the FastAPI Endpoint is installed locally in a Windows 10 machine.
@@ -46,11 +52,8 @@ Simply installing Docker in WSL2 without Docker Desktop may introduce some issue
 - [Create the Routes and Services](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md)
 - [Enable the Basic Authentication Plugin](/docs/006-Networking/060-Kong-API-Gateway/019-Basic-Authentication.md)
 
-## ACL Plugin
 
-The ACL (Access Control List) plugin restricts or grants access to services based on consumer group membership
-
-### Create the Consumers 
+## Create the Consumers 
 
 Go to Kong Manager > Consumers > New Consumer. You need to create two consumers. Make sure to click Save.
 
@@ -59,7 +62,7 @@ Go to Kong Manager > Consumers > New Consumer. You need to create two consumers.
 
 ![](/img/docs/12042024-kong-gw-2-consumers.png)
 
-### Configure the Consumer Credentials 
+## Configure the Consumer Credentials 
 
 :::info
 
@@ -86,7 +89,7 @@ As an example, below are the credentials for the `marketing` consumer.
 ![](/img/docs/12042024-kong-gw-2-consumers-config-credentials.png)
 
 
-### Enable the ACL Plugin
+## Enable the ACL Plugin
 
 To enable the plugin, go to Kong Manager > Plugins > New Plugin > Traffic Control > Select ACL.
 Set it **Global** and under the **Deny** field, add `marketing`, Click Save.
@@ -94,7 +97,7 @@ Set it **Global** and under the **Deny** field, add `marketing`, Click Save.
 ![](/img/docs/12042024-kong-gw-acl-deny-marketing.png)
 
 
-### Test ACL Plugin via Postman
+## Test the plugin via Postman
 
 :::info[Setup Postman]
 
@@ -116,65 +119,4 @@ Now, enter the credentials for the `marketing` consumer. It should return an err
 
 ![](/img/docs/12042024-kong-gw-acl-working-marketing.png)
 
-
-## AI Prompt Guard Plugin
-
-The AI Prompt Guard plugin helps monitor and filter AI-generated or user-submitted content for compliance or security purposes.  
-
-- Detects and blocks harmful or prohibited prompts.  
-- Integrates AI models to analyze and validate input data.  
-
-### Enable AI Prompt Guard Plugin
-
-To enable the plugin, go to Kong Manager > Plugins > New Plugin > Traffic Control > Select AI Prompt Guard.
-As an example, we can allow any prompts related to Python while blocking prompts pertaining to Java. To do this, specify them in the Allow and Deny Patterns:
-
-| Field         | Value         |
-|---------------|---------------|
-| Allow Pattern | `.*Python.*`  |
-| Deny Patterns | `.*Java.*`    |
-
-![](/img/docs/12042024-kong-gw-ai-prompt-guard-configured.png)
-
-:::info 
-
-You can disable all other plugins for now. 
-
-:::
-
-### Test Prompt Guard Plugin via Postman
-
-:::info[Setup Postman]
-
-To setup Postman, please see [Testing with Postman](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md#testing-with-postman)
-
-:::
-
-Open Postman and create a new request. Rename it to **FastAPI via Kong - AI Prompt Guard**. Enter the URL below:
-
-```bash
-http://localhost:8000/kong/healthy 
-```
-
-In the Body tab, select raw and add the prompt:
-
-```bash
-{
-    "messages": [
-        {
-            "role": "user",
-            "content": "How do you run a Python script?"
-        }
-    ]
-} 
-```
-
-
-Click Send. Note that it doesn't return any answer to the question/prompt, it will just return "healthy".
-
-![](/img/docs/12042024-kong-gw-ai-prompt-guard-check-python.png)
-
-If we change the prompt to ask about Java, we'll get `Bad Request` error.
-
-![](/img/docs/12042024-kong-gw-ai-prompt-guard-check-java.png)
 
