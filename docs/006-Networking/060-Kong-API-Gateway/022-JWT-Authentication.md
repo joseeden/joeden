@@ -250,7 +250,7 @@ Click the **Authorization** tab, click the **Auth Type** dropdown bar, and selec
 
 <!-- ![](/img/docs/12042024-kong-jwttokenworking.png) -->
 
-![](/img/docs/12022024-kong-gw-consumer-created-already.png)
+![](/img/docs/12022024-kong-gw-jwttoken-working.png)
 
 
 
