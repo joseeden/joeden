@@ -50,7 +50,7 @@ Simply installing Docker in WSL2 without Docker Desktop may introduce some issue
 - [Setup the FastAPI Endpoint](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md#setup-the-api-endpoint)
 - [Kong Manager OSS Access](/docs/006-Networking/060-Kong-API-Gateway/015-Containerized-Kong-and-Other-Apps.md)
 - [Create the Routes and Services](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md)
-- [Enable the Basic Authentication Plugin](/docs/006-Networking/060-Kong-API-Gateway/021-Basic-Authentication.md)
+- [Enable the Basic Authentication Plugin](/docs/006-Networking/060-Kong-API-Gateway/020-Kong-Authentication/021-Basic-Authentication.md)
 
 
 ## Create the Consumers 
@@ -66,7 +66,7 @@ Go to Kong Manager > Consumers > New Consumer. You need to create two consumers.
 
 :::info
 
-Make sure you [enabled the Basic Authentication Plugin](/docs/006-Networking/060-Kong-API-Gateway/021-Basic-Authentication.md).
+Make sure you [enabled the Basic Authentication Plugin](/docs/006-Networking/060-Kong-API-Gateway/020-Kong-Authentication/021-Basic-Authentication.md).
 
 :::
 

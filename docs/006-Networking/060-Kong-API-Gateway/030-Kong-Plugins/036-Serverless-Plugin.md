@@ -33,11 +33,11 @@ This plugin provides a unified solution to manage AI-related operations, streaml
 
 ## Lab Environment
 
-<!-- :::info[Requires OpenAI Credits]
+:::info[Requires OpenAI Credits]
 
-This lab requires OpenAI credits. You must first create an OpenAI account and purchase credits.
+This lab requires OpenAI credits. You must first [create an OpenAI account and purchase credits](#get-a-chatgpt-api-key).
 
-::: -->
+:::
 
 This lab tests a Kong API Gateway deployment using a FastAPI Endpoint. To simplify, both the Kong API Gateway and the FastAPI Endpoint is installed locally in a Windows 10 machine.
 
@@ -56,18 +56,29 @@ Simply installing Docker in WSL2 without Docker Desktop may introduce some issue
 - [Kong Manager OSS Access](/docs/006-Networking/060-Kong-API-Gateway/015-Containerized-Kong-and-Other-Apps.md)
 
 
+Here’s the corrected version:
+
+---
+
 ## Get a ChatGPT API Key
 
-Follow the steps below to get an API Key:
+First, you will need to purchase credits. 
 
-1. Go to [OpenAI’s official site.](https://platform.openai.com/docs/api-reference/chat/create)
-2. Login using your email.
-3. Click the gear icon on the top right to open the settings then click API keys.
-4. Click Create new secret key.
+1. Go to [OpenAI’s official site](https://platform.openai.com/docs/api-reference/chat/create) and log in using your email.
+3. Proceed to the [billing page](https://platform.openai.com/account/billing).
+4. On the Overview page, click **Add payment details**.
+5. Choose **Personal** use and add your credit card information.
+6. Next, click **Add to credit balance** and specify the amount. You can start with $5.
+7. Click **Continue**. 
+
+Once you see the success message, you can start using OpenAI API. Follow the steps below to get an API key:
+
+1. Click **Dashboar** > **API keys**.
+2. Click **Create new secret key**.
 
     ![](/img/docs/12042024-get-chatgpt-api-key.png)
 
-5. Copy the secret key. 
+3. Copy the secret key. 
 
 ## Configure the Service and Route
 
