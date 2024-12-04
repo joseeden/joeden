@@ -246,11 +246,11 @@ Open Postman and create a new request. Rename it to **FastAPI via Kong - JWT Aut
 http://localhost:8000/kong/healthy 
 ```
 
-Click the **Authorization** tab, click the **Auth Type** dropdown bar, and select **Bearer Token**. Paste the token from the previous step in the Token field and click Send. It should return:
+Click the **Authorization** tab > **Auth Type** dropdown bar, and select **Bearer Token**. Paste the token from the previous step in the Token field and click Send. It should return:
 
 <!-- ![](/img/docs/12042024-kong-jwttokenworking.png) -->
 
-![](/img/docs/12022024-kong-gw-jwttoken-working.png)
+<!-- ![](/img/docs/12022024-kong-gw-jwttoken-working.png) -->
 
 <!-- 
 
