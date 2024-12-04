@@ -251,16 +251,17 @@ Click the **Authorization** tab > **Auth Type** dropdown bar, and select **Beare
 ![](/img/docs/12022024-kong-gw-working-token.png)
 
 
-:::info 
-
-If you got a `token expired` error, try using the [scripted approach](#create-the-token-via-script) to generate the token and use the token for the Postman request.
-
-:::
-
-
-if you change the token to anything else, you'll get a `bad token` error: 
+If you change the token to anything else, you'll get a `bad token` error: 
 
 <!-- ![](/img/docs/12042024-kong-gw-jwt-token-bad-token-failing-on-postman.png) -->
 
 
 ![](/img/docs/12022024-kong-gw-consumer-add-credentialss.png)
+
+
+
+:::info 
+
+If you got a `token expired` error, try using the [scripted approach](#create-the-token-via-script) to generate the token and use the token for the Postman request.
+
+:::
