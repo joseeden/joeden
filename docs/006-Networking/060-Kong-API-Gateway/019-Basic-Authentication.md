@@ -45,7 +45,6 @@ Simply installing Docker in WSL2 without Docker Desktop may introduce some issue
 - [Create the Routes and Services](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md)
 - [Create the Consumer](/docs/006-Networking/060-Kong-API-Gateway/017-Consumers-Plugins-Upstreams.md#create-the-kong-consumer)
 
-## Basic Authentication  
 
 ## Enable the Basic Auth Plugin 
 

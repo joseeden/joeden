@@ -250,9 +250,8 @@ Click the **Authorization** tab > **Auth Type** dropdown bar, and select **Beare
 
 <!-- ![](/img/docs/12042024-kong-jwttokenworking.png) -->
 
-<!-- ![](/img/docs/12022024-kong-gw-jwttoken-working.png) -->
 
-![](/img/docs/12022024-kong-gw-consumer-add-credentialss.png)
+![](/img/docs/12022024-kong-gw-token.png)
 
 
 :::info 
