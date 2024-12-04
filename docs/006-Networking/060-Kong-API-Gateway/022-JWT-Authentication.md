@@ -261,6 +261,6 @@ If you got a `token expired` error, try using the [scripted approach](#create-th
 
 if you change the token to anything else, you'll get a `bad token` error:
 
-![](/img/docs/12042024-kong-gw-jwt-token-bad-token-failing-on-postman.png)
+<!-- ![](/img/docs/12042024-kong-gw-jwt-token-bad-token-failing-on-postman.png) -->
 
 
