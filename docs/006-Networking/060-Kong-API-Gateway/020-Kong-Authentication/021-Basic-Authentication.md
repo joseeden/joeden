@@ -9,7 +9,7 @@ tags:
   - Kong API Gateway
   - FastAPI 
   - Postman
-sidebar_position: 19
+sidebar_position: 21
 last_update:
   date: 7/7/2022
 ---
