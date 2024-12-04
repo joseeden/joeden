@@ -43,3 +43,80 @@ Simply installing Docker in WSL2 without Docker Desktop may introduce some issue
 - [Kong Manager OSS Access](/docs/006-Networking/060-Kong-API-Gateway/015-Containerized-Kong-and-Other-Apps.md)
 - [Create the Routes and Services](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md)
 - [Create the Consumer](/docs/006-Networking/060-Kong-API-Gateway/017-Consumers-Plugins-Upstreams.md#create-the-kong-consumer)
+
+## Request Size Limit Plugin 
+
+The Request Size Limiting plugin restricts the size of client requests to protect services from large payloads.  
+
+- Blocks requests exceeding a specified size limit.  
+- Configurable size thresholds for flexibility.  
+
+### Enable Request Size Limit Plugin 
+
+To enable the plugin, go to Kong Manager > Plugins > New Plugin > Select Request Size Limiting.
+
+Configure the following:
+
+| Field                           | value                   |
+|---------------------------------|-------------------------|
+| Instance Name                   | request-size-limiting   |
+| Size Unit                       | bytes                   |
+| Allowed Payload Size            | 100                     |
+
+This ensures any file larger than 100 bytes is rejected.
+
+
+### Test Request Size Limit Plugin via Postman 
+
+:::info
+
+To setup Postman, please see [Testing with Postman](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md#testing-with-postman)
+
+:::
+
+Open Postman and create a new request. Rename it to **FastAPI via Kong - Request Size Limit**. Enter the URL below.
+
+```bash
+http://localhost:8000/kong/healthy 
+```
+
+Click the **Body** tab > form-data > File > Upload a file. Then hit Send.
+
+![](/img/docs/12022024-kong-gw-request-limit-size.png)
+
+
+## Request Termination Plugin
+
+The Request Termination plugin halts incoming requests based on predefined conditions.  
+
+- Returns a custom status code and optional message to the client.  
+- Useful for rejecting requests during maintenance or enforcing access policies.  
+
+### Enable Request Termination Plugin 
+
+To enable the plugin, go to Kong Manager > Plugins > New Plugin > Select Request Termination.
+
+Configure the following:
+
+| Field                    | value                              |
+|--------------------------|------------------------------------|
+| Message                  | `Sorry, site is down until Monday` |
+| Status Code              | 503                                |
+
+
+
+### Test Request Termination Plugin via Postman 
+
+:::info
+
+To setup Postman, please see [Testing with Postman](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md#testing-with-postman)
+
+:::
+
+Open Postman and create a new request. Rename it to **FastAPI via Kong - Request Termination**. Enter the URL below and click Send.
+
+```bash
+http://localhost:8000/kong/healthy 
+```
+
+![](/img/docs/12022024-kong-gw-request-termination.png)
