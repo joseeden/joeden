@@ -68,7 +68,7 @@ As an example, we can block any Postman agent by specifying this regex in the De
 ^Postman 
 ```
 
-### Testing Bot Detection Plugin in Postman 
+### Testing Bot Detection Plugin via Postman 
 
 :::info[Setup Postman]
 
@@ -105,7 +105,7 @@ For the Allow and Deny list, we can specify the IP Addresses. As an example, we 
 ![](/img/docs/12042024-kong-gw-security-plugin-ip-restriction-deny-all.png)
 
 
-### Testing IP Restriction Plugin in Postman 
+### Testing IP Restriction Plugin via Postman 
 
 :::info[Setup Postman]
 
