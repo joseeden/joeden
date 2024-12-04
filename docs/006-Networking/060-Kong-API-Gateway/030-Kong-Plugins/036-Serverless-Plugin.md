@@ -153,7 +153,7 @@ http://localhost:8000/openai-chat
 
 Click **Authorization** > **Auth Type**: Bearer Token, and paste your token in the Token field.
 
-![](/img/docs/12042024-ai-proxy-bearer-token.png)
+![](/img/docs/Screenshot-2024-12-05-005842.png)
 
 Click **Body** > Raw, and enter the message below:
 
