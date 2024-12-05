@@ -118,6 +118,22 @@ Prometheus:
   label: 'Prometheus'
   permalink: '/Prometheus'
   description: 'Docs related to Prometheus'  
+Grafana:
+  label: 'Grafana'
+  permalink: '/Grafana'
+  description: 'Docs related to Grafana'  
+Kibana:
+  label: 'Kibana'
+  permalink: '/Kibana'
+  description: 'Docs related to Kibana'    
+Logstash:
+  label: 'Logstash'
+  permalink: '/Logstash'
+  description: 'Docs related to Logstash'  
+ELK Stack:
+  label: 'ELK Stack'
+  permalink: '/ELK Stack'
+  description: 'Docs related to ELK Stack'  
 SRE:
   label: 'SRE'
   permalink: '/SRE'

@@ -56,10 +56,6 @@ Simply installing Docker in WSL2 without Docker Desktop may introduce some issue
 - [Kong Manager OSS Access](/docs/006-Networking/060-Kong-API-Gateway/015-Containerized-Kong-and-Other-Apps.md)
 
 
-Here’s the corrected version:
-
----
-
 ## Get a ChatGPT API Key
 
 First, you will need to purchase credits. 
