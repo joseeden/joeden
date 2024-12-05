@@ -11,6 +11,7 @@ tags:
   - Postman
   - Serverless
   - Prometheus
+  - Grafana
 sidebar_position: 37
 last_update:
   date: 7/7/2022
@@ -107,27 +108,35 @@ Open a web browser and nvaigate to the Prometheus page:
 http://localhost:9090/
 ```
 
-Click the gear icon on the right and make sure the following settings are enabled.
+Click the gear icon on the right and make sure the following settings are enabled. Type in 'kong` and it should show the available metrics.
 
 ![](/img/docs/12052024-prometheus-grafana-enabled-toggles.png)
 
-On the query field, enter the metric below and click Execute. Click on the Graph tab. At the moment, there's not much data showing in the dashboard.
+On the query field, enter the metric below. Type in 'kong` and it should show the available metrics. Click Execute. 
 
 ```bash
-kong_request_latency_ms_count 
+kong_nginx_requests_total
 ```
+
+![](/img/docs/12052024-prometheus-grafana-autocomplete-kong-metrics.png)
+
+
+:::info 
+
+If you don't see the Kong metrics, please see [troubleshooting section](#troubleshooting).
+
+:::
 
 
 Click on the Graph tab. At the moment, there's not much data showing in the dashboard.
 
-
+![](/img/docs/12052024-prometheus-grafana-autocomplete-kong-metrics-graph-2.png)
 
 
 
 ## Create the Grafana Dashboard
 
 Follow the steps below to add the data source and create the dashboard:
-
 
 1. On another browser tab, open the Grafana page:
 
@@ -143,7 +152,12 @@ Follow the steps below to add the data source and create the dashboard:
 
 3. In the **Connection** settings, specify the server URL:
 
-    ![](/img/docs/12052024-prometheus-grafana-add-server-url.png)
+    ```bash
+    http://prometheus:9090 
+    ```
+
+    ![](/img/docs/12052024-prometheus-grafana-add-server-url-2.png)
+
 
 4. Under **Alerting**, set the following intervals.
 
@@ -157,28 +171,56 @@ Follow the steps below to add the data source and create the dashboard:
 
     ![](/img/docs/12052024-prometheus-grafana-left-panel-create-dashboard.png)
 
-7. Add a name to your dashboard then click Save.
+7. If prompted, discard any unsaved dashboard for now. 
 
-    ![](/img/docs/12052024-prometheus-grafana-name-dashboard.png)
-
-8. Click the **Import dashboard** once again. 
-
-    ![](/img/docs/12052024-prometheus-grafana-add-new-dashboard-2.png)
-
-9. Go to [Kong (official) - Grafana Labs](https://grafana.com/grafana/dashboards/7424-kong-official/) and copy the dashboard ID.
+8. Go to [Kong (official) - Grafana Labs](https://grafana.com/grafana/dashboards/7424-kong-official/) and copy the dashboard ID.
 
     ![](/img/docs/12052024-prometheus-grafana-copy-id.png)
 
-10. Enter the dashboard code `7424` and click **Load**.
+9. Enter the dashboard code `7424` and click **Load**.
 
     ![](/img/docs/12052024-prometheus-grafana-load-7424.png)
 
+10. Select Prometheus as the data source. You may also change the dashboard name to "Kong Metrics". Click **Import**.
 
-11. Select Prometheus as the data source and click **Import**
+    ![](/img/docs/12052024-prometheus-grafana-imported-7424-2.png)
 
-    ![](/img/docs/12052024-prometheus-grafana-imported-7424.png)
+11. You should see more data coming in now:
+
+    ![](/img/docs/12052024-prometheus-grafana-data-coming-in.png)
 
 
 
+## Troubleshooting
 
+Verify that the config file is being moutned correctly:
 
+```bash
+$ docker inspect prometheus | grep -A 10 "Mounts"
+
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/path/to/config/prometheus.yml",
+                "Destination": "/etc/prometheus/prometheus.yml",
+                "Mode": "ro",
+                "RW": false,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "volume", 
+```
+
+The config file should also be pointing to the correct container name for Kong. In the docker-compose file, the container name is `test-kong-gateway_kong_1`.
+
+```bash
+$ docker exec -it prometheus cat /etc/prometheus/prometheus.yml
+
+global:
+  scrape_interval: 30s
+
+scrape_configs:
+  - job_name: kong-prometheus
+    static_configs:
+      - targets: ['test-kong-gateway_kong_1:8001'] 
+```
