@@ -71,7 +71,7 @@ It should now appear on the plugin list.
 
 ![](/img/docs/12042024-kong-gw-jwt-auth-plugin.png)
 
-Make sure to disable other **global authentication methods**. For more information, please see [Conflicting Global Authentication Methods](/docs/006-Networking/060-Kong-API-Gateway/020-Kong-Authentication/022-HMAC-Authentication.md#conflicting-global-authentication-methods)
+Make sure to disable other **global authentication methods**. For more information, please see [Conflicting Global Authentication Methods](/docs/006-Networking/060-Kong-API-Gateway/030-Kong-Authentication/022-HMAC-Authentication.md#conflicting-global-authentication-methods)
 
 
 ## Configure the JWT Auth Credentials 

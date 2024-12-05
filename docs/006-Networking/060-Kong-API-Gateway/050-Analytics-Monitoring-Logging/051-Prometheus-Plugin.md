@@ -1,5 +1,5 @@
 ---
-title: "Prometheus Plugins"
+title: "Prometheus Plugin"
 description: "Using Prometheus Plugin in Kong"
 tags: 
   - Cloud
@@ -12,7 +12,7 @@ tags:
   - Serverless
   - Prometheus
   - Grafana
-sidebar_position: 37
+sidebar_position: 51
 last_update:
   date: 7/7/2022
 ---
@@ -48,8 +48,8 @@ Simply installing Docker in WSL2 without Docker Desktop may introduce some issue
 
 - [Postman](https://www.postman.com/downloads/)
 - [Setup the Kong API Gateway](/docs/006-Networking/060-Kong-API-Gateway/015-Containerized-Kong-and-Other-Apps.md)
-- [Setup the Prometheus](/docs/006-Networking/060-Kong-API-Gateway/015-Containerized-Kong-and-Other-Apps.md#lab-environment)
-- [Setup the Grafana](/docs/006-Networking/060-Kong-API-Gateway/015-Containerized-Kong-and-Other-Apps.md#lab-environment)
+- [Setup Prometheus](/docs/006-Networking/060-Kong-API-Gateway/015-Containerized-Kong-and-Other-Apps.md#lab-environment)
+- [Setup Grafana](/docs/006-Networking/060-Kong-API-Gateway/015-Containerized-Kong-and-Other-Apps.md#lab-environment)
 - [Setup the FastAPI Endpoint](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md#setup-the-api-endpoint)
 - [Kong Manager OSS Access](/docs/006-Networking/060-Kong-API-Gateway/015-Containerized-Kong-and-Other-Apps.md)
 - [Create the Routes and Services](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md)
@@ -66,7 +66,7 @@ Enable the following and click Save.
 - Status Code Metrics
 - Upstream Health Metrics
 
-![](/img/docs/12052024-prometheus-plugin.png)
+![](/img/docs/12052024-prometheus-plugin-2.png)
 
 ## Generate Logs 
 
@@ -102,21 +102,22 @@ For this to work, you need to have the [FastAPI Endpoint setup](/docs/006-Networ
 
 ## Check Logs in Prometheus
 
-Open a web browser and nvaigate to the Prometheus page:
+Open a web browser and navigate to the Prometheus page:
 
 ```bash
 http://localhost:9090/
 ```
 
-Click the gear icon on the right and make sure the following settings are enabled. Type in 'kong` and it should show the available metrics.
+Click the gear icon on the right and make sure the following settings are enabled. 
 
 ![](/img/docs/12052024-prometheus-grafana-enabled-toggles.png)
 
-On the query field, enter the metric below. Type in 'kong` and it should show the available metrics. Click Execute. 
+On the query field, type in 'kong` to show the available metrics. Select the correct one and click Execute.
 
 ```bash
 kong_nginx_requests_total
 ```
+
 
 ![](/img/docs/12052024-prometheus-grafana-autocomplete-kong-metrics.png)
 
@@ -138,7 +139,12 @@ Click on the Graph tab. At the moment, there's not much data showing in the dash
 
 Follow the steps below to add the data source and create the dashboard:
 
-1. On another browser tab, open the Grafana page:
+1. Go to [Kong (official) - Grafana Labs](https://grafana.com/grafana/dashboards/7424-kong-official/) and copy the dashboard ID. This will be used for later steps.
+
+    ![](/img/docs/12052024-prometheus-grafana-copy-id.png)
+
+
+2. On another browser tab, open the Grafana page:
 
     ```bash
     http://localhost:300    
@@ -146,11 +152,11 @@ Follow the steps below to add the data source and create the dashboard:
 
     ![](/img/docs/12052024-prometheus-grafana-landing-page.png)
 
-2. Click **Add your first data source** > Choose **Prometheus** as data source.
+3. Click **Add your first data source** > Choose **Prometheus** as data source.
 
     ![](/img/docs/12052024-prometheus-grafana-add-data-source.png)
 
-3. In the **Connection** settings, specify the server URL:
+4. In the **Connection** settings, specify the server URL:
 
     ```bash
     http://prometheus:9090 
@@ -159,25 +165,21 @@ Follow the steps below to add the data source and create the dashboard:
     ![](/img/docs/12052024-prometheus-grafana-add-server-url-2.png)
 
 
-4. Under **Alerting**, set the following intervals.
+5. Under **Alerting**, set the following intervals.
 
     ![](/img/docs/12052024-prometheus-grafana-set-intervals.png)
 
-5. Click **Save & test**. Once its done, you should see the Success message.
+6. Click **Save & test**. Once its done, you should see the Success message.
 
     ![](/img/docs/12052024-prometheus-grafana-run-and-test.png)
 
-6. Click Dashboard on the left panel > Create dashboard
+7. Click Dashboard on the left panel > Create dashboard
 
     ![](/img/docs/12052024-prometheus-grafana-left-panel-create-dashboard.png)
 
-7. If prompted, discard any unsaved dashboard for now. 
+8. If prompted, discard any unsaved dashboard for now. 
 
-8. Go to [Kong (official) - Grafana Labs](https://grafana.com/grafana/dashboards/7424-kong-official/) and copy the dashboard ID.
-
-    ![](/img/docs/12052024-prometheus-grafana-copy-id.png)
-
-9. Enter the dashboard code `7424` and click **Load**.
+9. Enter the dashboard code from step 1. This code will be `7424`. Click **Load**.
 
     ![](/img/docs/12052024-prometheus-grafana-load-7424.png)
 

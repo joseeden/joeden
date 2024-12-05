@@ -134,6 +134,14 @@ ELK Stack:
   label: 'ELK Stack'
   permalink: '/ELK Stack'
   description: 'Docs related to ELK Stack'  
+Zipkin:
+  label: 'Zipkin'
+  permalink: '/Zipkin'
+  description: 'Docs related to Zipkin'
+Distributed Tracing:
+  label: 'Distributed Tracing'
+  permalink: '/Distributed Tracing'
+  description: 'Docs related to Distributed Tracing'  
 SRE:
   label: 'SRE'
   permalink: '/SRE'

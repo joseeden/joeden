@@ -65,7 +65,7 @@ Under Advanced parameters, enter the following details. Click Save afterwards.
 |---------------|---------------------------------------|
 | Instance Name | key-authentication                    |  
 
-Make sure to disable other **global authentication methods**. For more information, please see [Conflicting Global Authentication Methods](/docs/006-Networking/060-Kong-API-Gateway/020-Kong-Authentication/022-HMAC-Authentication.md#conflicting-global-authentication-methods)
+Make sure to disable other **global authentication methods**. For more information, please see [Conflicting Global Authentication Methods](/docs/006-Networking/060-Kong-API-Gateway/030-Kong-Authentication/022-HMAC-Authentication.md#conflicting-global-authentication-methods)
 
 ![](/img/docs/12022024-kong-gw-key-auth-plugin.png)
 
