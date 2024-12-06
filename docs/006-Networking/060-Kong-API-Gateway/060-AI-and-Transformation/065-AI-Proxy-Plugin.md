@@ -1,6 +1,6 @@
 ---
-title: "Serverless Plugins"
-description: "Using Serverless Plugins in Kong"
+title: "AI Proxy Plugin"
+description: "Using AI Proxy Plugin in Kong"
 tags: 
   - Cloud
   - DevOps
@@ -39,7 +39,7 @@ This lab requires OpenAI credits. You must first [create an OpenAI account and p
 
 :::
 
-This lab tests a Kong API Gateway deployment using a FastAPI Endpoint. To simplify, both the Kong API Gateway and the FastAPI Endpoint is installed locally in a Windows 10 machine.
+This lab tests a Kong API Gateway deployment using a FastAPI endpoint. To simplify, both the containerized Kong API Gateway and the FastAPI endpoint are installed locally on a Windows 10 machine. A Docker Compose file is used to deploy Kong, along with other applications like Prometheus, Zipkin, the ELK Stack, and more.
 
 :::info 
 

@@ -7,9 +7,7 @@ tags:
   - Networking 
   - API Gateway
   - Kong API Gateway
-  - FastAPI 
   - Postman
-  - Serverless
 sidebar_position: 61
 last_update:
   date: 7/7/2022
@@ -22,13 +20,7 @@ Transformation plugins in Kong allow you to modify requests and responses as the
 
 ## Lab Environment
 
-:::info[Requires OpenAI Credits]
-
-This lab requires OpenAI credits. You must first [create an OpenAI account and purchase credits](#get-a-chatgpt-api-key).
-
-:::
-
-This lab tests a Kong API Gateway deployment using a FastAPI Endpoint. To simplify, both the Kong API Gateway and the FastAPI Endpoint is installed locally in a Windows 10 machine.
+This lab deploys Kong API Gateway and other applications in a Windows 10 machine using a docker compose file. 
 
 :::info 
 
