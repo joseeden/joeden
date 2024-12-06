@@ -122,16 +122,16 @@ Restart the logstash container:
 docker restart logstash 
 ```
 
-
+<!-- 
 Go to the Logstash UI and verify that it is accessible:
 
 ```bash
 http://localhost:5044 
-```
+``` -->
 
 
 
-## Copy the certificate
+## Copy the Certificate
 
 First, find the self-signed SSL certificate and copy it to the container files:
 
@@ -194,7 +194,7 @@ To setup Postman, please see [Testing with Postman](/docs/006-Networking/060-Kon
 
 :::
 
-Open Postman and create a folder called **Logstash**. Right-click on the this folder and create a new `GET` request called **Prometheus Plugin**. Use this URL for the API request:
+Open Postman and create a folder called **Logstash**. Right-click on the this folder and create a new `GET` request called **FastAPI Endpoint**. Use this URL for the API request:
 
 ```bash
 http://localhost:8000/kong/healthy 
@@ -219,3 +219,19 @@ For this to work, you need to have the [FastAPI Endpoint setup](/docs/006-Networ
 
 
 ## Create the Dashboard in Kibana
+
+Go back to the Kibana dashboard, click the hamburger menu on the left > Analytics > Discover > Create data view.
+
+The kong logs should appear on the right side as a log source. Specify the details below and clcik Save data view to Kibana.
+
+| Field           | Value           |
+|-----------------|-----------------|
+| Name            | Kong            |
+| Index pattern   | `kong*`         |
+| Timestamp field | `@timestamp`    |
+
+![](/img/docs/12072024-kong-logs-kibana-source-2.png)
+
+You should see the data coming in. Re-run the log generation in Postman in the previous step or change the iteration to a much higher number like 5000 to generate more traffic.
+
+![](/img/docs/12072024-kong-logs-kibana-more-data-coming-in.png)

@@ -87,5 +87,5 @@ Login to the Kong Manager and confirm that the AI Prompt Decorator plugin is ena
 
 Now, open Postman and play around.
 
-![](/gif/docs/LLM-AI-Prompt-Decorator-GIF.gif.png)
+![](/gif/docs/LLM-AI-Prompt-Decorator-GIF.gif)
 
