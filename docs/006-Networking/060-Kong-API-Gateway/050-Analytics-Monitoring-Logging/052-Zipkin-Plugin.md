@@ -97,7 +97,7 @@ This will automatically create a loop and run the API requests 1000 times.
 ![](/img/docs/12052024-prometheus-postman-request-run-1000.png)
 
 
-:::info[Setup Postman]
+:::info
 
 For this to work, you need to have the [FastAPI Endpoint setup](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md#setup-the-api-endpoint) and the [routes and gateway services must be configured](/docs/006-Networking/060-Kong-API-Gateway/016-Testing-wth-an-FastAPI-Endpoint.md).
 
