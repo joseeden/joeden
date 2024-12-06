@@ -14,8 +14,8 @@ tags:
   - Kibana
   - ELK Stack
 sidebar_position: 53
-last_update:
-  date: 7/7/2022
+# last_update:
+#   date: 4/5/2024
 ---
 
 
@@ -234,4 +234,12 @@ The kong logs should appear on the right side as a log source. Specify the detai
 
 You should see the data coming in. Re-run the log generation in Postman in the previous step or change the iteration to a much higher number like 5000 to generate more traffic.
 
-![](/img/docs/12072024-kong-logs-kibana-more-data-coming-in.png)
+![](/img/docs/12072024-kong-logs-kibana-more-data-coming-in-2.png)
+
+## Create Visualization
+
+On the the Kibana dashboard, click the hamburger menu on the left > Analytics > Visualize Library > Create a dashboard > Create Visualization.
+
+Select any of the metrics on the left panel and drag it to the middle.
+
+![](/img/docs/12072024-kong-logs-kibana-create-visualsss.png)
