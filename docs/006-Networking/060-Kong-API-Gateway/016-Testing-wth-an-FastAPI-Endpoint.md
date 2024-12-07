@@ -295,10 +295,10 @@ Check the container logs for Kong. Find the container first:
 docker ps -a --format "table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"
 ```
 
-In my case, the container name is `test-kong-gateway-kong-1`. Check the logs:
+In my case, the container name is ` kong-1`. Check the logs:
 
 ```bash
-docker logs test-kong-gateway-kong-1
+docker logs  kong-1
 ```
 
 Output:
