@@ -231,6 +231,18 @@ Ctrl + Shift + p
 
 ![](/img/docs/ide-terminal-linkededitign.png)
 
+## Auto Save 
+
+Go to File  > Preferences > Settings 
+
+![](/img/docs/ide-autosave.png)
+
+## Format on Save 
+
+Go to File  > Preferences > Settings 
+
+![](/img/docs/ide-formatonsave.png)
+
 ## Shortcut for Keyboard Shortcuts 
 
 Open the keyboard shortcuts page for the first time by
