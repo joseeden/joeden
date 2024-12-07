@@ -86,7 +86,6 @@ Provide the enrollment token when prompted:
 ![](/img/docs/12072024-kibana-enrollment-token.png)
 
 
-
 Next, provide the verification code:
 
 ![](/img/docs/12072024-kibana-verification-code.png)
@@ -240,7 +239,7 @@ You should see the data coming in. Re-run the log generation in Postman in the p
 
 ## Create Visualization
 
-On the the Kibana dashboard, click the hamburger menu on the left > Analytics > Visualize Library > Create a dashboard > Create Visualization.
+On the Kibana dashboard, click the hamburger menu on the left > Analytics > Visualize Library > Create a dashboard > Create Visualization.
 
 Select any of the metrics on the left panel and drag it to the middle.
 
