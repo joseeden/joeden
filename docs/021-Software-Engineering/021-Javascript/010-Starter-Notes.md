@@ -179,6 +179,7 @@ In JavaScript, values are either objects or primitive data types. These are the 
   let bigIntVal = 9007199254740991n; // 'n' denotes a BigInt
   console.log(bigIntVal); // Output: 9007199254740991n
   ```
+
 ## Dynamic Typing
 
 In JavaScript, variables don’t need explicit data type declarations. This means you don't need to specify the data type of the value that a variable contains.
@@ -197,17 +198,16 @@ Javscript will completely ignore the comments during execution.
 
 ## Type Checking
 
-We cabse the `typeof` operator to check the type of a value. As an example, to print the data type of an object:
+We can use the `typeof` operator to check the type of a value. As an example, to print the data type of an object:
 
 ```bash
 console.log(typeof true) 
 ```
 
-When run in the browser, this will return boolean.
+When ran in the browser, this will return boolean.
 
 ![](/img/docs/12082024-typeofexample.png)
 
-  - **Bug with `null`**: `typeof null` returns "object" (a legacy issue).
 
 ## Undeclared Variable 
 
@@ -221,3 +221,10 @@ When calling an undeclared variable, we'll get an error:
 When defining a variable for the first time, we need to use the keyword `let`. If we need to change the value of an existing variable, we don't need to use `let` anymore.
 
 ![](/img/docs/12082024-js-changing-value-of-vars.png)
+
+## `typeof` bug 
+
+When you run `typeof` with `null`, it should return `null`. But it will evaluate it as an object, which is actually wrong. This wasn't corrected for legacy reasons, but instead treated as a bug.
+
+![](/img/docs/12082024-js-typeof-bug.png)
+
