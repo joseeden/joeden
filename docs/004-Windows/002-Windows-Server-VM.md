@@ -17,4 +17,45 @@ To download the Window Server ISO file, go to [Microsoft Evaluation Center.](htt
 
 ## Create the Windows Server VM 
 
-Open VirtualBox > New
+Open VirtualBox > New > Enter the name and choose the ISO image.
+
+![](/img/docs/12072024-vbox-vm-windows-server.png)
+
+![](/img/docs/12072024-vbox-vm-windows-server-unattended-os.png)
+
+Enter username and password. Click Next > Next > Finish
+
+![](/img/docs/12072024-vbox-vm-windows-server-creds.png)
+
+![](/img/docs/12072024-vbox-vm-windows-server-mem.png)
+
+![](/img/docs/12072024-vbox-vm-windows-server-finish.png)
+
+
+## Setup the Windows Server VM
+
+Start the VM:
+
+![](/img/docs/12072024-vbox-vm-windows-server-start-vm.png)
+
+A new window will open. In the starup page, select the Language, Time, and Keyboard method, and click Next > Install Now.
+
+![](/img/docs/12072024-vbox-vm-windows-setup.png)
+
+Select the Windows Server 2019 Standard Evaluation. Accept the licensing agreement and click Next.
+
+![](/img/docs/12072024-vbox-vm-windows-SELECT-OS.png)
+
+Select Custom Install > Next. It will now go through the installation. Once done, the VM will reboot.
+
+![](/img/docs/12072024-vbox-vm-windows-custom-install.png)
+
+After reboot, you'll be prompted to change the administrator's password. Click OK.
+
+![](/img/docs/12072024-vbox-vm-windows-CHANGE-PW.png)
+
+Enter the password, then press Tab to proceed to the next line. Confirm the password by typing again, then hit Enter.
+
+![](/img/docs/12072024-vbox-vm-windows-CHANGE-PW-2.png)
+
+Next, click
