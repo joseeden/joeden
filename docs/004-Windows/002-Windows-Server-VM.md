@@ -13,7 +13,11 @@ last_update:
 
 Windows Server is a robust operating system designed for managing network resources, hosting applications, and providing enterprise services. Using VirtualBox, you can set up a virtual environment to install and explore Windows Server features for safe and flexible testing or training without affecting physical systems.  
 
+:::info
+
 To download the Window Server ISO file, go to [Microsoft Evaluation Center.](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019).
+
+:::
 
 ## Windows Server Core (No GUI)
 
@@ -93,47 +97,3 @@ On adapter 1, set **Attached to** to Host-only Adapter, then click OK.
 
 ![](/img/docs/12072024-vbox-vm-windows-HOSTONLY-ADAPTER.png)
 
-
-## Windows Server Desktop Experience 
-
-This is another edition of Windows Server 2019 that has a GUI console. To setup, follow the same steps of importing the ISO file and configuring the VM. You can keep the defaults and click Finish.
-
-![](/img/docs/12082024-windows-gui.png)
-
-From the Oracle VirtualBox, select the new VM and click Start. Go through the same setup steps. Click Next > Install.
-
-![](/img/docs/12072024-vbox-vm-windows-setup.png)
-
-Choose the "..Desktop Experience" edition then click Next > Accept the licensing terms > Next
-
-![](/img/docs/12072024-vbox-vm-windows--desktop-exp.png)
-
-Select Custom Install > Next. It will now go through the installation. Once done, the VM will reboot.
-
-![](/img/docs/12072024-vbox-vm-windows-custom-install.png)
-
-After reboot, set the administrator password and click Finish.
-
-![](/img/docs/12072024-vbox-vm-windows-set-admin-pw.png)
-
-You should now see the welcome page. To unlock, go to Input > Keyboard.
-
-![](/img/docs/12072024-vbox-vm-windows-unlock-via-Keyboard.png)
-
-![](/img/docs/12072024-vbox-vm-windows-unlock-enter-pw.png)
-
-Upon login, the server manager will automatically start. You can close this for now.
-
-![](/img/docs/12072024-vbox-vm-windows-server-manager.png)
-
-Next, click Devices > Insert Guest Additions CD Image. It should open the CD drive.
-
-![](/img/docs/12072024-vbox-vm-vboxguest-editionsclick.png)
-
-Double-click on `VBOxWindowsAdditions.exe` > Next > Next > Install.
-
-![](/img/docs/12072024-vbox-vm-vboxguest-editionsclick-next.png)
-
-Once done, click **Reboot now** then **Finish.**
-
-![](/img/docs/12072024-vbox-vm-vboxguest-editionsclick-reboot-now.png)
