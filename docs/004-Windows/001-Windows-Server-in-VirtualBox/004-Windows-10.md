@@ -1,5 +1,5 @@
 ---
-title: "Windows 10 in VirtualBox"
+title: "Windows 10"
 description: "Running Windows 10 in VirtualBox"
 tags: 
   - Windows Server
@@ -57,3 +57,7 @@ Choose Windows 10 Pro > Next.
 Accept the license terms > Next > Select Custom install > Next
 
 ![](/img/docs/12082024-windows-10-install-4.png)
+
+Select the region > Next > Select keyboard layout > Yes > Skip
+
+![](/img/docs/12082024-windows-10-install-5.png)

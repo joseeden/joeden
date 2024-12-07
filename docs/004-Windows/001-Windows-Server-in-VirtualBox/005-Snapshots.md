@@ -1,5 +1,5 @@
 ---
-title: "Snapshot in VirtualBox"
+title: "Snapshots"
 description: "Running Snapshot in VirtualBox"
 tags: 
   - Windows Server

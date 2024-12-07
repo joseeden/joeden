@@ -1,5 +1,5 @@
 ---
-title: "Windows Server in VirtualBox"
+title: "Windows Server Core"
 description: "Running Windows Server in VirtualBox"
 tags: 
   - Windows Server
