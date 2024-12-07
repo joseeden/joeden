@@ -85,6 +85,8 @@ Provide the enrollment token when prompted:
 
 ![](/img/docs/12072024-kibana-enrollment-token.png)
 
+
+
 Next, provide the verification code:
 
 ![](/img/docs/12072024-kibana-verification-code.png)
