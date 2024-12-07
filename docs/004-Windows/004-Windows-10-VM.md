@@ -46,7 +46,11 @@ A new window will open. In the startup page, select the Language, Time, and Keyb
 
 ![](/img/docs/12082024-windows-10-install-1.png)
 
+In the Activate Windows page, click **I don't have a product key** > Next.
+
 ![](/img/docs/12082024-windows-10-install-2.png)
+
+Choose Windows 10 Pro > Next.
 
 ![](/img/docs/12082024-windows-10-install-3.png)
 

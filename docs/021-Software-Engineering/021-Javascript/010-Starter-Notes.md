@@ -20,7 +20,7 @@ A pop-up window will appear at the top. This is the alert window.
 
 ![](/img/docs/12072024-js-hello-world.png)
 
-Type in the command below and hit enter. NOtice that it won't open an alert window. This is because it is evaluating the `if` condition. Since the `if` condition is not met, then it did not evaluate the alert message.
+Type in the command below and hit enter. Notice that it won't open an alert window. This is because it is evaluating the `if` condition. Since the `if` condition is not met, then it did not evaluate the alert message.
 
 ```bash
 let js = 'boring'
