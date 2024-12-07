@@ -83,7 +83,7 @@ http://localhost:5601
 
 Provide the enrollment token when prompted:
 
-![](/img/docs/12072024-kibana-enrollment-token.png)
+![](/img/docs/Screenshot-2024-12-07-163207.png)
 
 
 Next, provide the verification code:
