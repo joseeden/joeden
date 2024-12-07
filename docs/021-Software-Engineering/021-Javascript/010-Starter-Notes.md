@@ -197,5 +197,27 @@ Javscript will completely ignore the comments during execution.
 
 ## Type Checking
 
-  - Use the `typeof` operator to check the type of a value. 
+We cabse the `typeof` operator to check the type of a value. As an example, to print the data type of an object:
+
+```bash
+console.log(typeof true) 
+```
+
+When run in the browser, this will return boolean.
+
+![](/img/docs/12082024-typeofexample.png)
+
   - **Bug with `null`**: `typeof null` returns "object" (a legacy issue).
+
+## Undeclared Variable 
+
+When calling an undeclared variable, we'll get an error: 
+
+![](/img/docs/12082024-js-undeclared0varss.png)
+
+
+## Changing the value of a variable 
+
+When defining a variable for the first time, we need to use the keyword `let`. If we need to change the value of an existing variable, we don't need to use `let` anymore.
+
+![](/img/docs/12082024-js-changing-value-of-vars.png)
