@@ -8,8 +8,8 @@ tags:
     - Continuous Deployment
     - GitLab
 sidebar_position: 1
-last_update:
-  date: 7/2/2024
+# last_update:
+#   date: 7/2/2024
 ---
 
 
@@ -88,15 +88,6 @@ Creating a GitLab account allows you to access repositories, run CI/CD pipelines
 5. Complete the setup by adding additional details (optional).  
 6. Start using GitLab for your projects.
 
-## Projects  
-
-Projects in GitLab are similar to repositories and serve as containers for your code, issues, CI/CD pipelines, and other resources. Each project can be used to manage a single application or multiple components of a larger system.  
-
-1. Create a project to store and organize your code.  
-2. Set up project settings, including access control and permissions.  
-3. Manage issues, merge requests, and CI/CD pipelines within the project.  
-4. Collaborate with team members and track project progress.  
-
 ## Limits 
 
 GitLab's free trial offers a limited set of features and quotas.
@@ -108,3 +99,37 @@ GitLab's free trial offers a limited set of features and quotas.
 Each trial account has access of up to 400 compute units every month, which are used for running CI/CD jobs and other compute tasks. Make sure to monitor your usage to avoid hitting the monthly limit. For more information, please see [Compute minutes administration](https://docs.gitlab.com/ee/administration/cicd/compute_minutes.html).
 
 ![](/img/docs/12082024-gitlab-trial-limits.png)
+
+
+## Groups 
+
+In GitLab, groups are used to organize and manage multiple projects. A group allows teams to collaborate on related projects, share permissions, and centralize management. Groups help simplify user access and security by applying settings across all projects within the group.
+
+To create a new group, go to Groups > New Group > Create Group
+
+![](/img/docs/12082024-gitlab-groups.png)
+
+Specify the details then click Create Group. 
+
+![](/img/docs/12082024-gitlab-new-group.png)
+
+## Projects  
+
+Projects in GitLab are similar to repositories and serve as containers for your code, issues, CI/CD pipelines, and other resources. Each project can be used to manage a single application or multiple components of a larger system.  
+
+1. Create a project to store and organize your code.  
+2. Set up project settings, including access control and permissions.  
+3. Manage issues, merge requests, and CI/CD pipelines within the project.  
+4. Collaborate with team members and track project progress.  
+
+To create a project, select the group > New project > Create blank project
+
+![](/img/docs/12082024-gitlab-new-project.png)
+
+Add a name to your project. You can choose to set it to private and you can also let it initialize a README file. Click Create project.
+
+![](/img/docs/12082024-gitlab-new-project-details.png)
+
+You should now see the README file of your new repository.
+
+![](/img/docs/12082024-gitlab-new-project-details-2.png)
