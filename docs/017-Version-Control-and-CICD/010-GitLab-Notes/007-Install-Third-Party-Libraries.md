@@ -46,3 +46,37 @@ ascii_job:
 Go to Jobs > Click the `ascii_job`.
 
 ![](/img/docs/12082024-gitlab-ascii-job.png)
+
+## Using Scripts
+
+Go back to main page and open the `.gitlab-ci.yml` file > Edit > Open in Web IDE.
+
+![](/img/docs/12082024-gitlab-ascii-job-edit-in-web-ide.png)
+
+In the Web IDE, create `ascii_script.sh` and move the contents of the script section here.
+
+![](/img/docs/12082024-gitlab-ascii-job-edit-in-web-ide-add-script.png)
+
+Modify the `.gitlab-ci.yml` file.
+
+```yaml
+workflow:
+    name: Generate ASCII Framework 
+
+ascii_job:
+    before_script:
+        - gem install cowsay
+        - chmod +x ./ascii_script.sh
+    script:
+        - ./ascii_script.sh
+    after_script:
+        - echo "Done executing."
+```
+
+Click the Source Control icon on the left > Add commit message > Commit and push. 
+
+![](/img/docs/12082024-gitlab-ascii-job-edit-in-web-ide-add-script-commit-4.png)
+
+Go to Jobs and click the most recent `ascii_job`.
+
+![](/img/docs/12082024-gitlab-ascii-job-edit-in-web-ide-add-script-commit-4-passed.png)
