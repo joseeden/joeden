@@ -61,3 +61,7 @@ Accept the license terms > Next > Select Custom install > Next
 Select the region > Next > Select keyboard layout > Yes > Skip
 
 ![](/img/docs/12082024-windows-10-install-5.png)
+
+
+
+Accept > Accept > Skip > Accept
