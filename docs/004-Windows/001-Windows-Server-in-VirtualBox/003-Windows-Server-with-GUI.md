@@ -12,7 +12,7 @@ last_update:
 ## Pre-requites 
 
 - [Install VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-- [Download the Windows Server 2019 ISO File.](/docs/004-Windows/002-Windows-Server-VM.md#overview)
+- [Download the Windows Server 2019 ISO File.](/docs/004-Windows/001-Windows-Server-in-VirtualBox/002-Windows-Server-Core.md#overview)
 
 ## Windows Server Desktop Experience 
 
