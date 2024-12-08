@@ -85,3 +85,8 @@ You may need to provide three security questions.
 For the last few steps, simply click Accept > Accept > Skip > Accept
 
 ![](/img/docs/12082024-windows-10-install-accept.png)
+
+When prompted if you want your computer to be discoverable, you can select No for now, then click Continue. 
+You should now be able to access the features of the Windows 10 machine.
+
+![](/img/docs/12082024-windows-10-install-see-properties.png)
