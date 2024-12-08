@@ -52,7 +52,7 @@ deploy:
     - echo "Deploying the application"
 ```
 
-For more information, please see [Pipelines.]()
+For more information, please see [Pipelines.](/docs/017-Version-Control-and-CICD/010-GitLab-Notes/003-Pipelines.md)
 
 ## Stages  
 
