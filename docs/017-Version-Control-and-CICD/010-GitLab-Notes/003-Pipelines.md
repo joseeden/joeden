@@ -84,7 +84,7 @@ GitLab offers different types of pipelines to suit various workflows:
 
 :::info
 
-A group and project has been created for this example. To create the group and project, please see [GitLab CiCD.](/docs/017-Version-Control-and-CICD/010-GitLab/001-GitLab-CICD.md#groups)
+A group and project has been created for this example. To create the group and project, please see [GitLab CiCD.](/docs/017-Version-Control-and-CICD/010-GitLab-Notes/001-GitLab-CICD.md#groups)
 
 :::
 
