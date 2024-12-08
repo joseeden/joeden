@@ -27,6 +27,10 @@ Continuous Integration helps:
 
 </div>
 
+On a deeper level, the Continuous Integration phase involves unit testing the code, scanning for dependencies, building the artifacts, and finally scanning the code before it is deployed.
+
+![](/img/docs/12082024-jenkins-cicd-ci-deeper-level.png)
+
 
 ## Continuous Delivery
 
