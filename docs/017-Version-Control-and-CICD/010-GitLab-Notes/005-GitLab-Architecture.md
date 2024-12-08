@@ -7,7 +7,7 @@ tags:
     - Continuous Delivery
     - Continuous Deployment
     - GitLab
-sidebar_position: 4
+sidebar_position: 5
 last_update:
   date: 7/2/2024
 ---

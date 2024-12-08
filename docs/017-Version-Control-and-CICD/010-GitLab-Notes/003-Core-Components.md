@@ -7,7 +7,7 @@ tags:
     - Continuous Delivery
     - Continuous Deployment
     - GitLab
-sidebar_position: 2
+sidebar_position: 3
 last_update:
   date: 7/2/2024
 ---
@@ -52,7 +52,7 @@ deploy:
     - echo "Deploying the application"
 ```
 
-For more information, please see [Pipelines.](/docs/017-Version-Control-and-CICD/010-GitLab-Notes/003-Pipelines.md)
+For more information, please see [Pipelines.](/docs/017-Version-Control-and-CICD/010-GitLab-Notes/004-Pipelines.md)
 
 ## Stages  
 
