@@ -14,10 +14,10 @@ Git:
   label: 'Git'
   permalink: '/Git'
   description: 'Docs related to Git'
-Gitlab:
-  label: 'Gitlab'
-  permalink: '/Gitlab'
-  description: 'Docs related to Gitlab'
+GitLab:
+  label: 'GitLab'
+  permalink: '/GitLab'
+  description: 'Docs related to GitLab'
 Github:
   label: 'Github'
   permalink: '/Github'
