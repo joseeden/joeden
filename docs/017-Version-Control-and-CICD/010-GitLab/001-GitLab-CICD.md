@@ -96,7 +96,9 @@ GitLab's free trial offers a limited set of features and quotas.
 2. Click your profile photo > Edit Profile > Usage Quotas
 4. Review the available usage limits for pipelines, storage, and other features.  
 
-Each trial account has access of up to 400 compute units every month, which are used for running CI/CD jobs and other compute tasks. Make sure to monitor your usage to avoid hitting the monthly limit. For more information, please see [Compute minutes administration](https://docs.gitlab.com/ee/administration/cicd/compute_minutes.html).
+Each trial account has access of up to 400 compute units every month, which are used for running CI/CD jobs and other compute tasks. Make sure to monitor your usage to avoid hitting the monthly limit. 
+
+For more information, please see [Compute minutes administration](https://docs.gitlab.com/ee/administration/cicd/compute_minutes.html).
 
 ![](/img/docs/12082024-gitlab-trial-limits.png)
 
