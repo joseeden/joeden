@@ -62,6 +62,26 @@ Select the region > Next > Select keyboard layout > Yes > Skip
 
 ![](/img/docs/12082024-windows-10-install-5.png)
 
+Choose Setup for personal use.
 
+![](/img/docs/12082024-windows-10-install-6.png)
 
-Accept > Accept > Skip > Accept
+Since this is for lab purpose, select Offline account for now.
+
+![](/img/docs/12082024-windows-10-install-offline.png)
+
+Select Limited experience.
+
+![](/img/docs/12082024-windows-10-install-limited-exp.png)
+
+Provide an admin account.
+
+![](/img/docs/12082024-windows-10-install-admin-account.png)
+
+You may need to provide three security questions.
+
+![](/img/docs/12082024-windows-10-install-security-question.png)
+
+For the last few steps, simply click Accept > Accept > Skip > Accept
+
+![](/img/docs/12082024-windows-10-install-accept.png)
