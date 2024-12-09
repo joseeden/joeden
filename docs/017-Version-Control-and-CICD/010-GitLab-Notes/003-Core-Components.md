@@ -13,7 +13,7 @@ last_update:
 ---
 
 
-## GitLab Core Components  
+## Overview 
 
 GitLab CI/CD is made up of several core components that work together to automate the software development process, including pipelines, stages, jobs, and scripts.  
 

@@ -13,7 +13,7 @@ last_update:
 ---
 
 
-## GitLab Architecture
+## Overview
 
 GitLab's architecture includes the GitLab server, runners, and executors, which work together to manage code and automate tasks.
 
