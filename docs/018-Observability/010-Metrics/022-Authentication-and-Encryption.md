@@ -25,5 +25,5 @@ To mitigate this, it's important to implement security measures such as authenti
 
 ## Pre-requisites  
 
-- [Setup Prometheus](/docs/018-Observability/020-Installation.md)
-- [Setup Node Exporter on the nodes](/docs/018-Observability/021-Setting-up-Exporters.md)
+- [Setup Prometheus](/docs/018-Observability/010-Metrics/020-Installation.md)
+- [Setup Node Exporter on the nodes](/docs/018-Observability/010-Metrics/021-Setting-up-Exporters.md)

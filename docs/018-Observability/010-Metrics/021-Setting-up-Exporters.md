@@ -22,7 +22,7 @@ Exporters are installed on target nodes to expose metrics that Prometheus can sc
 
 ## Pre-requisites  
 
-- [Setup Prometheus](/docs/018-Observability/020-Installation.md)
+- [Setup Prometheus](/docs/018-Observability/010-Metrics/020-Installation.md)
 - Two Linux nodes to be configured as targets
 
 ## Steps  

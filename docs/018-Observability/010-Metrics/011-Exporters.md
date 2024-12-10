@@ -37,7 +37,7 @@ Many exporters are developed by the community or the Prometheus project. They ar
 
 ## Setting up a Node Exporter 
 
-Exporters act as intermediaries between the target nodes and the Prometheus server. It is installed on the target nodoe and it translates system or application data into Prometheus-compatible formats. To setup a node exporter on a Linux node, please see [Setting up Exporters.](/docs/018-Observability/021-Setting-up-Exporters.md)
+Exporters act as intermediaries between the target nodes and the Prometheus server. It is installed on the target nodoe and it translates system or application data into Prometheus-compatible formats. To setup a node exporter on a Linux node, please see [Setting up Exporters.](/docs/018-Observability/010-Metrics/021-Setting-up-Exporters.md)
 
 ## Types of Exporters 
 
