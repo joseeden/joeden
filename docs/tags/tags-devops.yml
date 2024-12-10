@@ -122,14 +122,18 @@ Grafana:
   label: 'Grafana'
   permalink: '/Grafana'
   description: 'Docs related to Grafana'  
-Kibana:
-  label: 'Kibana'
-  permalink: '/Kibana'
-  description: 'Docs related to Kibana'    
+Elasticsearch:
+  label: 'Elasticsearch'
+  permalink: '/Elasticsearch'
+  description: 'Docs related to Elasticsearch'    
 Logstash:
   label: 'Logstash'
   permalink: '/Logstash'
   description: 'Docs related to Logstash'  
+Kibana:
+  label: 'Kibana'
+  permalink: '/Kibana'
+  description: 'Docs related to Kibana'    
 ELK Stack:
   label: 'ELK Stack'
   permalink: '/ELK Stack'
