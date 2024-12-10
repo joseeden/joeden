@@ -193,7 +193,46 @@ Server configurations can be viewed through the web UI on the server.
 - For a complete system health view, connect Grafana to Prometheus to visualize data.
 - In-built alerting system to set rules for sending emails or creating tickets when triggered.
 
-<!-- ## Counters and Gauges  -->
+To view the configuration file, login to the server and go to `/etc/prometheus/prometheus.yml`:
 
+```yaml
+# Global configuration
+global:
+  scrape_interval: 15s      # Default, can be changed
+  evaluation_interval: 15s  # Default, can be changed
 
-<!-- ## Resources  -->
+# Alerting configuration
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: ['localhost:9093'] 
+
+# Scrape configurations
+scrape_configs:
+
+  # Scrape Prometheus itself
+  - job_name: 'prometheus'
+    scrape_interval: 15s      # Overrides global config if defined
+    scrape_timeout: 5s        
+    sample_limit: 1000        
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # List of nodes with Node Exporter installed
+  - job_name: 'node_exporter'
+    sample_limit: 1000        
+    scheme: https
+    metrics_path: /stats/metrics      ## Custom path
+    static_configs:
+      - targets: ['node1_ip:9100', 'node2_ip:9100'] 
+
+  # List of application endpoints exposed for Prometheus scraping
+  - job_name: 'custom_app'
+    static_configs:
+      - targets: ['app1_ip:8080', 'app2_ip:8080'] 
+
+  # Additional: MySQL exporter on the target node
+  - job_name: 'mysql_exporter'
+    static_configs:
+      - targets: ['mysql_host:9104'] 
+```
