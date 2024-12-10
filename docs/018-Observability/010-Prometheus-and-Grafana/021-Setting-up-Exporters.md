@@ -18,11 +18,18 @@ last_update:
 
 Exporters are installed on target nodes to expose metrics that Prometheus can scrape. They act as intermediaries that translate system or application data into Prometheus-compatible formats.  
 
+## Lab Environment 
+
+<div class='img-center'>
+
 ![](/img/docs/prometheus=lab-environment.png) 
+
+</div>
+
 
 ## Pre-requisites  
 
-- [Setup Prometheus](/docs/018-Observability/010-Metrics/020-Installation.md)
+- [Setup Prometheus](/docs/018-Observability/010-Prometheus-and-Grafana/020-Installation.md)
 - Two Linux nodes to be configured as targets
 
 ## Steps  

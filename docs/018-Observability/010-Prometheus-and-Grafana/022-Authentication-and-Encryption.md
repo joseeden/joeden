@@ -20,10 +20,18 @@ Prometheus, by default, does not have built-in authentication mechanisms. If aut
 
 To mitigate this, it's important to implement security measures such as authentication and encryption to restrict access and secure the data flow.
 
+
+## Lab Environment 
+
+<div class='img-center'>
+
 ![](/img/docs/prometheus=lab-environment.png) 
+
+</div>
+
 
 
 ## Pre-requisites  
 
-- [Setup Prometheus](/docs/018-Observability/010-Metrics/020-Installation.md)
-- [Setup Node Exporter on the nodes](/docs/018-Observability/010-Metrics/021-Setting-up-Exporters.md)
+- [Setup Prometheus](/docs/018-Observability/010-Prometheus-and-Grafana/020-Installation.md)
+- [Setup Node Exporter on the nodes](/docs/018-Observability/010-Prometheus-and-Grafana/021-Setting-up-Exporters.md)

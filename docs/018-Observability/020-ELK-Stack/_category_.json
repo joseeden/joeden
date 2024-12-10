@@ -1,5 +1,5 @@
 {
-  "label": "Logging",
+  "label": "ELK Stack",
   "position": 20,
   "link": {
     "type": "generated-index"

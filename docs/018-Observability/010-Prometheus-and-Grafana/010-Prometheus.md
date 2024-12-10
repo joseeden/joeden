@@ -108,7 +108,7 @@ Prometheus collects metrics by sending HTTP requests to the `/metrics` endpoint 
 - Converts metrics to a format expected by Prometheus
 - Exposes `/metrics` endpoint so Prometheus can scrape the data.
 
-For more information, please see [Exporters in Prometheus.](/docs/018-Observability/010-Metrics/011-Exporters.md)
+For more information, please see [Exporters in Prometheus.](/docs/018-Observability/010-Prometheus-and-Grafana/011-Exporters.md)
 
 
 ## Pushgateways  
