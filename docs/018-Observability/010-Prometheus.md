@@ -108,30 +108,8 @@ Prometheus collects metrics by sending HTTP requests to the `/metrics` endpoint 
 - Converts metrics to a format expected by Prometheus
 - Exposes `/metrics` endpoint so Prometheus can scrape the data.
 
-It can monitor various systems, including:
+For more information, please see [Exporters in Prometheus.](/docs/018-Observability/011-Exporters.md)
 
-- Websites running on Windows
-- Batch processes on Linux
-- Servers on both Windows and Linux
-  
-Many exporters are developed by the community or the Prometheus project. They are available for various use cases, including:
-
-- Databases
-- Message queues
-- Cloud services
-- Hardware, etc.
-  
-For example, to monitor a Linux server, you would run a **node exporter** on it. This exporter provides an HTTP endpoint that returns all current metric values in the Prometheus format.
-
-```bash
-<metric name>{<label name>=<label value>, ...} 
-```
-
-An example of a time series could be an entry with the metric name `api_http_requests_total` and the labels `method="POST"` and `handler="/messages"`.
-
-```bash
-api_http_requests_total{method="POST", handler="/messages"}  
-```
 
 ## Pushgateways  
 
@@ -159,7 +137,7 @@ PromQL is Prometheus's powerful query language designed for analyzing time-serie
 
 Sample PromQL statements:  
 
-```promql
+```bash
 # Retrieve the average CPU usage over 5 minutes
 avg(rate(node_cpu_seconds_total[5m]))
 

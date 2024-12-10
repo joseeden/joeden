@@ -8,7 +8,7 @@ tags:
 - APM
 - Prometheus
 - DevOps
-sidebar_position: 12
+sidebar_position: 21
 last_update:
   date: 3/28/2023
 ---
@@ -18,10 +18,12 @@ last_update:
 
 Exporters are installed on target nodes to expose metrics that Prometheus can scrape. They act as intermediaries that translate system or application data into Prometheus-compatible formats.  
 
+![](/img/docs/prometheus=lab-environment.png) 
+
 ## Pre-requisites  
 
-- [Setup Prometheus](/docs/018-Observability/011-Installation.md)
-- Two nodes configured as targets for Prometheus to monitor
+- [Setup Prometheus](/docs/018-Observability/020-Installation.md)
+- Two Linux nodes to be configured as targets
 
 ## Steps  
 
