@@ -71,7 +71,20 @@ Exporters are installed on target nodes to expose metrics that Prometheus can sc
     promhttp_metric_handler_requests_total{code="503"} 0
     ```
 
-6. Create a systemd service for the exporter  
+
+6. For security, create a dedicated user:  
+
+   ```bash
+   sudo useradd --no-create-home --shell /bin/false node_exporter
+   ```  
+
+7. Change permissions of the binary:
+
+   ```bash
+   sudo chown node_exporter:node_exporter /usr/local/bin/node_exporter 
+   ```
+
+8. Create a systemd service for the exporter  
 
    ```bash
    sudo vi /etc/systemd/system/node_exporter.service
@@ -82,28 +95,32 @@ Exporters are installed on target nodes to expose metrics that Prometheus can sc
    ```ini
    [Unit]
    Description=Node Exporter
+   Wants=network.target
    After=network.target
 
    [Service]
-   User=nobody
+   User=node_exporter
+   Group=node_exporter
+   Type=simple
    ExecStart=/usr/local/bin/node_exporter
 
    [Install]
    WantedBy=multi-user.target
    ```  
 
-7. Start the exporter and enable it to run at boot:  
-   ```bash
-   sudo systemctl daemon-reload
-   sudo systemctl start node_exporter
-   sudo systemctl enable node_exporter
-   ```  
+9.  Start the exporter and enable it to run at boot:  
 
-8. Open a browser and navigate to `http://<node_ip>:9100/metrics` to confirm the exporter is running and exposing metrics.  
+    ```bash
+    sudo systemctl daemon-reload
+    sudo systemctl enable --now node_exporter
+    sudo systemctl status node_exporter
+    ```  
+
+10. Open a browser and navigate to `http://<node_ip>:9100/metrics` to confirm the exporter is running and exposing metrics.  
 
     ![/img/docs/12102024-observability-prometheus-node-exporter-1-2](image.png)
 
-9.  Add the node IP and port to Prometheus's `prometheus.yml` file under `scrape_configs`:  
+11. Add the node IP and port to Prometheus's `prometheus.yml` file under `scrape_configs`:  
 
    ```yaml
    scrape_configs:
@@ -119,7 +136,7 @@ Exporters are installed on target nodes to expose metrics that Prometheus can sc
    sudo systemctl status prometheus
    ```  
 
-10. Check Prometheus’s web interface to verify the targets are listed and metrics are being collected.  
+12. Check Prometheus’s web interface to verify the targets are listed and metrics are being collected.  
 
     ```bash
     http://<your_vm_ip>:9090`
