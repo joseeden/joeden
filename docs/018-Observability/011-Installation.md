@@ -1,5 +1,6 @@
 ---
-title: "Installation"
+title: "Installing Prometheus"
+description: "Installing Prometheus on virtual machines"
 tags: 
 - Linux
 - Observability
@@ -109,6 +110,12 @@ Prometheus can be installed on a virtual machine (VM) to monitor system performa
    sudo systemctl status prometheus
    ```  
 
-11. Access the Prometheus web interface by visiting `http://<your_vm_ip>:9090` in your browser. To ensure it is working correctly, we can type `up` in the expression field and then hit **Execute.** It should return the following output, and a value of 1 at the right side. By default, Prometheus is configured to scrape and monitor its own metrics.
+11. Open a web browser and navigate to the link below:
 
-![](/img/docs/12102024-observability-prometheus-working-now-up-1.png)
+    ```bash
+    http://<your_vm_ip>:9090`
+    ```
+    
+    To ensure it is working correctly, we can type `up` in the expression field and then hit **Execute.** It should return the following output, and a value of 1 at the right side. By default, Prometheus is configured to scrape and monitor its own metrics.
+
+    ![](/img/docs/12102024-observability-prometheus-working-now-up-1.png)
