@@ -1,5 +1,6 @@
 ---
-title: "Prometheus Basics"
+title: "Prometheus"
+description: "Basics of Prometheus"
 tags: 
 - Linux
 - Observability
@@ -88,14 +89,14 @@ Prometheus' architecture is built around these key components.
   - Provides a query language (PromQL) for data analysis.  
   - Serves metrics data to dashboards and alerting systems.  
 
-Expanding the architecture a bit further, we also have other components:
+Additional components:
 
-- Service discovery provides the list of targets to Prometheus.
-- Retrieval node pulls metrics from exporters  
-- For short-lived jobs, data is pushed through **pushgateways**
-- Prometheus then query data from the pushgateways
-- Prometheus push alerts to **alertmanager**
-- Prometheus or Grafana can then be used to query the data using **promql**
+- Service discovery, which supplies the list of targets to Prometheus.
+- The retrieval node, responsible for pulling metrics from exporters.
+- For short-lived jobs, data is pushed via **Pushgateway**.
+- Prometheus queries the data from the Pushgateway.
+- Alerts from Prometheus are sent to **Alertmanager**.
+- Finally, Prometheus or Grafana can be used to query the data using **PromQL**.
 
 ![](/img/docs/12102024-observability-prometheus-architecture-diagram.png)
 

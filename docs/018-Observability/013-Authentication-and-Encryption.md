@@ -1,0 +1,26 @@
+---
+title: "Authentication and Encryption"
+description: "Authentication and Encryption in  Prometheus"
+tags: 
+- Linux
+- Observability
+- Monitoring 
+- APM
+- Prometheus
+- DevOps
+sidebar_position: 12
+last_update:
+  date: 3/28/2023
+---
+
+
+## Overview
+
+Prometheus, by default, does not have built-in authentication mechanisms. If authentication is not configured, Prometheus can freely scrape metrics from target nodes. However, this also means that unauthorized or rogue servers can scrape metrics from those nodes, potentially exposing sensitive information. 
+
+To mitigate this, it's important to implement security measures such as authentication and encryption to restrict access and secure the data flow.
+
+## Pre-requisites  
+
+- [Setup Prometheus](/docs/018-Observability/011-Installation.md)
+- [Setup Node Exporter on the nodes](/docs/018-Observability/012-Setting-up-Exporters.md)

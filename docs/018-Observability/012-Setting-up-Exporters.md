@@ -118,23 +118,23 @@ Exporters are installed on target nodes to expose metrics that Prometheus can sc
 
 10. Open a browser and navigate to `http://<node_ip>:9100/metrics` to confirm the exporter is running and exposing metrics.  
 
-    ![/img/docs/12102024-observability-prometheus-node-exporter-1-2](image.png)
+    ![](/img/docs/12102024-observability-prometheus-node-exporter-1-2.png)
 
 11. Add the node IP and port to Prometheus's `prometheus.yml` file under `scrape_configs`:  
 
-   ```yaml
-   scrape_configs:
-     - job_name: "node_exporter"
-       static_configs:
-         - targets: ["<node1_ip>:9100", "<node2_ip>:9100"]
-   ```  
+      ```yaml
+      scrape_configs:
+      - job_name: "node_exporter"
+         static_configs:
+            - targets: ["<node1_ip>:9100", "<node2_ip>:9100"]
+      ```  
 
-   Restart Prometheus to apply the configuration:  
+    Restart Prometheus to apply the configuration:  
 
-   ```bash
-   sudo systemctl restart prometheus
-   sudo systemctl status prometheus
-   ```  
+      ```bash
+      sudo systemctl restart prometheus
+      sudo systemctl status prometheus
+      ```  
 
 12. Check Prometheus’s web interface to verify the targets are listed and metrics are being collected.  
 
