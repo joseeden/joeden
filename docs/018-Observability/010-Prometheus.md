@@ -13,48 +13,112 @@ last_update:
 ---
 
 
-## What is Prometheus 
+## Overview
 
-Prometheus is a server-based monitoring system where typically, you run one instance per environment.
+Prometheus is an open source server-based monitoring system where typically, you run one instance per environment.
 
 - Cross-platform, works with Linux and Windows
-- Gather metrics exposed in your systems
 - Provides metrics on CPU, memory, disk use, etc.
-- Stores this data in a time-series database on the same server.
+- Scrapes targets who expose metrics through an HTTP endpoint.
+- Data is stored in a time-series database on the same server.
 
-### Time-series data
+Metrics that Prometheus can monitor:
+
+- CPU/Memory utilization
+- Disk space 
+- Service uptime 
+- Application-specific data, e.g. number of exceptions, latency..
+
+## Time-series data
+
+Prometheus is designed to monitor time-series data that is numeric.
 
 - This means that all metrics recorded have a timestamp.
 - This makes it easier to see trends and spikes over a period of time. 
 - Timestamps are added when the data is fetched.
 - This makes them easy to query using time ranges.
 
-### PromQL
+This means Prometheus is NOT INTENDED to monitor: 
 
-- Prometheus also has its own query language called PromQL. 
-- This is because time-series data doesn't work well with standard SQL.
-- Queries can be ran using the HTTP API running in the server.
+- Events 
+- System Logs 
+- Traces 
 
-### Server Configurations
+For application-level metrics, Prometheus also supports several client libraries, including:
 
-- Server configurations can be viewed through the web UI on the server.
-- The Web UI can be used for administrative tasks, like verifying reachability of the monitored systems.
-- The web UI is limited and not a comprehensive dashboard.
-- For a complete system health view, connect Grafana to Prometheus to visualize data.
-- In-built alerting system to set rules for sending emails or creating tickets when triggered.
+- Python
+- Node.js
+- Go
+- Java
+- Microsoft .NET
 
-## Exporters 
+## Push-based vs. Pull based 
 
-To monitor systems with Prometheus, you need to run an exporter on each system. 
+In a push-based system, the monitored applications actively send metrics data to a central monitoring server. Push-based systems include:
 
-- The exporter creates an HTTP endpoint that provides metrics.
-- Metrics are then collected and stored by the Prometheus server a regular schedule.
-- Prometheus doesn't interpret what the system or metrics represent.
-- It simply collects them in a standardized format.
-- It can monitor various systems, including:
-  - Websites running on Windows
-  - Batch processes on Linux
-  - Servers on both Windows and Linux
+- Logstash
+- Graphite 
+- OpenTSDB 
+
+In a pull-based system, the monitoring server fetches metrics data from monitored applications at regular intervals. Pull-based systems include:
+
+- Zabbix  
+- Nagios  
+
+
+## Prometheus Architecture
+
+Prometheus' architecture is built around these key components.
+
+- **Retrieval**  
+  
+  - Responsible for gathering metrics data from monitored targets.  
+  - Uses a pull-based approach via HTTP endpoints.  
+  - Supports service discovery and static configurations for target identification.  
+
+- **Time-series Database (TSDB)**  
+  
+  - Stores collected metrics as time-series data for efficient querying.  
+  - Optimized for high-performance writes and compact storage.  
+  - Retains historical data for analysis and visualization.  
+
+- **HTTP Server**  
+  
+  - Exposes Prometheus's functionality to users and integrations.  
+  - Provides a query language (PromQL) for data analysis.  
+  - Serves metrics data to dashboards and alerting systems.  
+
+Expanding the architecture a bit further, we also have other components:
+
+- Service discovery provides the list of targets to Prometheus.
+- Retrieval node pulls metrics from exporters  
+- For short-lived jobs, data is pushed through **pushgateways**
+- Prometheus then query data from the pushgateways
+- Prometheus push alerts to **alertmanager**
+- Prometheus or Grafana can then be used to query the data using **promql**
+
+![](/img/docs/12102024-observability-prometheus-architecture-diagram.png)
+
+## Exporters
+
+Prometheus collects metrics by sending HTTP requests to the `/metrics` endpoint of each target. The endpoint can also be changed and Prometheus can be configured to use a different path other than `/metrics` Note that most systems don't expose metrics on an HTTP endpoint. For these instances, we can install **exporters** on the targets which:
+
+- Collects metrics from the service
+- Converts metrics to a format expected by Prometheus
+- Exposes `/metrics` endpoint so Prometheus can scrape the data.
+
+It can monitor various systems, including:
+
+- Websites running on Windows
+- Batch processes on Linux
+- Servers on both Windows and Linux
+  
+Many exporters are developed by the community or the Prometheus project. They are available for various use cases, including:
+
+- Databases
+- Message queues
+- Cloud services
+- Hardware, etc.
   
 For example, to monitor a Linux server, you would run a **node exporter** on it. This exporter provides an HTTP endpoint that returns all current metric values in the Prometheus format.
 
@@ -68,20 +132,66 @@ An example of a time series could be an entry with the metric name `api_http_req
 api_http_requests_total{method="POST", handler="/messages"}  
 ```
 
-The entire monitoring stack runs on a single, lightweight server. Additionally, many exporters, developed by the community or the Prometheus project, are available for various use cases, including:
+## Pushgateways  
 
-- Databases
-- Message queues
-- Cloud services
-- Hardware, etc.
+Pushgateways act as intermediaries for Prometheus to receive and temporarily store metrics.  
 
-For application-level metrics, Prometheus also supports several client libraries, including:
+- Enables metric collection from short-lived jobs or batch processes.  
+- Accepts metrics through a push mechanism instead of Prometheus's pull model.  
+- Helps maintain metrics data even if the job has already completed.  
 
+## Alertmanager  
+
+Alertmanager handles alerts generated by Prometheus based on defined rules.  
+
+- Manages, de-duplicates, and routes alerts to various notification channels.  
+- Supports silencing and grouping to reduce alert fatigue.  
+- Integrates with email, PagerDuty, Slack, and other tools for alert delivery.  
+
+## PromQL  
+
+PromQL is Prometheus's powerful query language designed for analyzing time-series data.  
+
+- Built specifically for working with time-series data, unlike traditional SQL.  
+- Allows users to extract, aggregate, and visualize metrics efficiently.  
+- Queries are executed via the HTTP API on the Prometheus server.  
+
+Sample PromQL statements:  
+
+```promql
+# Retrieve the average CPU usage over 5 minutes
+avg(rate(node_cpu_seconds_total[5m]))
+
+# Count the number of active HTTP requests
+count(http_requests_total)
+
+# Calculate the 95th percentile of request durations
+histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[1m]))
+```  
+
+## Client Libraries  
+
+Client libraries enable custom applications to monitor and expose their own metrics for Prometheus to collect. 
+
+- Provide pre-built functions and tools to define and expose custom metrics.  
+- Support common metric types like counters, gauges, histograms, and summaries.  
+
+Language support: 
+
+- Go 
+- Java 
 - Python
-- Node.js
-- Go
-- Java
-- Microsoft .NET
+- Ruby 
+- Rust
+
+## Server Configurations
+
+Server configurations can be viewed through the web UI on the server.
+
+- The Web UI can be used for administrative tasks, like verifying reachability of the monitored systems.
+- The web UI is limited and not a comprehensive dashboard.
+- For a complete system health view, connect Grafana to Prometheus to visualize data.
+- In-built alerting system to set rules for sending emails or creating tickets when triggered.
 
 <!-- ## Counters and Gauges  -->
 
