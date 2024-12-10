@@ -1,7 +1,13 @@
 ---
 title: "Prometheus Basics"
-tags: [Linux, Observability, Monitoring, APM, Prometheus, DevOps]
-sidebar_position: 1
+tags: 
+- Linux
+- Observability
+- Monitoring 
+- APM
+- Prometheus
+- DevOps
+sidebar_position: 10
 last_update:
   date: 3/28/2023
 ---
