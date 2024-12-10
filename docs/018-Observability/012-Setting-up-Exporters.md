@@ -145,3 +145,7 @@ Exporters are installed on target nodes to expose metrics that Prometheus can sc
     In the expression field, type `up` and click **Execute**. If the value on the right are all zeroes, it means the metrics are not being scraped. If the valueis `1`, then metrics are successfully scraped.
 
     ![](/img/docs/12102024-observability-prometheus-node-exporter-1-2-working.png)
+
+13. Click Status > Targets to see the scrape status. You may need to refresh it to reflect all the targets.
+
+   ![](/img/docs/12102024-observability-prometheus-node-exporter-targets-scrape-status.png)
