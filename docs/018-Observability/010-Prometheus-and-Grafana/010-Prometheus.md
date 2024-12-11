@@ -167,12 +167,14 @@ Language support:
 
 Server configurations can be viewed through the web UI on the server.
 
-- The Web UI can be used for administrative tasks, like verifying reachability of the monitored systems.
+- Used for administrative tasks, like verifying reachability of monitored systems.
 - The web UI is limited and not a comprehensive dashboard.
 - For a complete system health view, connect Grafana to Prometheus to visualize data.
 - In-built alerting system to set rules for sending emails or creating tickets when triggered.
 
-To view the configuration file, login to the server and go to `/etc/prometheus/prometheus.yml`:
+To access the server configuration from the Prometheus console, go to Status > Configuration.
+
+To view the configuration file from the terminal, login to the server and open `/etc/prometheus/prometheus.yml`:
 
 ```yaml
 # Global configuration
