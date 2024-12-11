@@ -18,7 +18,10 @@ last_update:
 
 Console templates enable you to create custom HTML dashboards for visualizing Prometheus metrics. They offer flexibility by allowing tailored displays of collected data and can be designed using the Go templating language. In this lab, we'll set up a `node-stats.html` console template which displays:
 
-
+- `memory size` and `memory utilization` of the nodes
+- `CPU stats` and `cpu utilization` of the nodes
+- Graph of the `cpu utilization`
+- Graph of the `received bytes`
 
 ## Lab Environment 
 
@@ -57,7 +60,7 @@ Console templates enable you to create custom HTML dashboards for visualizing Pr
     ![](/img/docs/12112024-Observability-prometheus-console-template-custom-10.png)
 
 
-3. Update the template and add `memory stats` for the nodes
+3. Update the template and add `memory stats` of the nodes
 
     ```html
     {{template "head" .}}
@@ -255,6 +258,6 @@ Console templates enable you to create custom HTML dashboards for visualizing Pr
     {{template "tail"}}
     ```
 
-13. Refresh the Prometheus console page:
+14. Refresh the Prometheus console page:
 
     ![](/img/docs/12112024-Observability-prometheus-console-template-custom-19.png)
