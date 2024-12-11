@@ -26,9 +26,13 @@ Breakdown of the Metric:
 | **Component**   | **Example**                   | **Description**                                                                 |
 |------------------|-------------------------------|---------------------------------------------------------------------------------|
 | **Metric Name**  | `node_cpu_seconds_total`      | Represents the name of the metric being recorded. It measures the total CPU time in seconds. |
-| **Labels**       | `{cpu="0", mode="idle"}`      | Provides additional context or dimensions to the metric: <br> - `cpu="0"` specifies the CPU core. <br> - `mode="idle"` indicates the CPU mode being measured. |
+| **Labels**       | `{cpu="0", mode="idle"}`      | Provides additional context or dimensions to the metric. |
 | **Value**        | `12345.67`                    | The actual numeric measurement for the metric (e.g., total idle CPU time in seconds). |
 
+Labels:
+
+- `cpu="0"` specifies the CPU core.  
+- `mode="idle"` indicates the CPU mode being measured. 
 
 ## Metrics for Multiple CPUs 
 
