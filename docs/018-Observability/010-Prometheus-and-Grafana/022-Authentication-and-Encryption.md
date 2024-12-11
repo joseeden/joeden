@@ -16,10 +16,9 @@ last_update:
 
 ## Overview
 
-Prometheus, by default, does not have built-in authentication mechanisms. If authentication is not configured, Prometheus can freely scrape metrics from target nodes. However, this also means that unauthorized or rogue servers can scrape metrics from those nodes, potentially exposing sensitive information. 
+Prometheus does not have built-in authentication mechanisms by default/ If authentication is not configured, Prometheus can freely scrape metrics from target nodes. However, this also means that unauthorized or rogue servers can scrape metrics from those nodes, potentially exposing sensitive information. 
 
 To mitigate this, it's important to implement security measures such as authentication and encryption to restrict access and secure the data flow.
-
 
 ## Lab Environment 
 
@@ -30,7 +29,7 @@ To mitigate this, it's important to implement security measures such as authenti
 </div>
 
 
-## nabling TLS on Node Exporter 
+## Enabling TLS on Node Exporter 
 
 
 ## Enabling TLS on Prometheus
