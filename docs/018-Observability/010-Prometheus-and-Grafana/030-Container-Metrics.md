@@ -26,7 +26,22 @@ Container metrics provide insights into the performance and health of containers
 - [Setup Docker](https://docs.docker.com/engine/install/)
 - [Run sample containers](https://docs.docker.com/reference/cli/docker/container/run/#examples)
 
-## Getting the Metrics
+## Docker Engine Metrics vs cAdvisor Metrics 
+
+Docker Engine and cAdvisor provide different sets of metrics for monitoring containers. While Docker Engine focuses on overall Docker performance, cAdvisor offers detailed metrics specific to individual containers.
+
+- **Docker Engine Metrics**
+    - CPU usage by Docker
+    - Total failed image builds
+    - Time to process container actions
+    - No container-specific metrics
+
+- **cAdvisor Metrics**
+    - CPU and memory usage per container
+    - Number of processes running in a container
+    - Uptime for each running container
+
+## Docker Engine Metrics
 
 1. Create or edit the `/etc/docker/daemon.json` file:
 
@@ -116,7 +131,7 @@ Container metrics provide insights into the performance and health of containers
 
 To collect container-level metrics, run a cAdvisor container on the Docker host. cAdvisor exposes metrics like CPU usage, memory, and network traffic, which Prometheus can scrape for monitoring.
 
-1. Create the docker compose file for the cAdvisor.
+1. Create the docker compose file for the cAdvisor. Note that this container is exposed on port 8070.
 
     ```yaml
     version: '3.4'
