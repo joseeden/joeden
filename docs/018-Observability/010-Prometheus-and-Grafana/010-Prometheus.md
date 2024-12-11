@@ -148,6 +148,30 @@ count(http_requests_total)
 histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[1m]))
 ```  
 
+## Promtools
+
+Promtools is a utility tool that comes with Prometheus to help check and validate configuration files, debug issues, and test rules.
+
+- Validates `prometheus.yml` and rule files.  
+- Performs queries on the Prometheus server.  
+- Can be used to debug and profile the Prometheus server.  
+- Runs unit tests for recording or alerting rules.
+- Validate metrics to ensure they are formatted correctly.
+
+As an example, we can use the command below to validate the configuration file:
+
+```bash
+promtool check config /etc/prometheus/prometheus.yml
+``` 
+
+If the configuration file is valid, it should return:
+
+```bash
+Checking prometheus.yml
+ SUCCESS: prometheus.yml is valid prometheus config file syntax
+``` 
+
+
 ## Client Libraries  
 
 Client libraries enable custom applications to monitor and expose their own metrics for Prometheus to collect. 
