@@ -101,7 +101,7 @@ Exporters are installed on target nodes to expose metrics that Prometheus can sc
 
    Add the following content:  
 
-   ```ini
+   ```bash
    [Unit]
    Description=Node Exporter
    Wants=network.target
