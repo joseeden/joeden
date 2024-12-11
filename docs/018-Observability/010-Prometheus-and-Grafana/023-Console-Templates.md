@@ -208,24 +208,23 @@ Console templates enable you to create custom HTML dashboards for visualizing Pr
     ![](/img/docs/12112024-Observability-prometheus-console-template-custom-16.png)
 
 
-
-
+13. Let's just add one more graph for a new metric that tracks all received bytes on all interfaces:
 
     ```html
     {{template "head" .}}
     {{template "prom_content_head" .}}
 
     <h1>Node Stats</h1>
-    <h3>Memory</h3>
 
+    <h3>Memory</h3>
     <strong>Memory utilization:</strong> {{template "prom_query_drilldown" (args
     "100- (node_memory_MemAvailable_bytes/node_memory_MemTotal_bytes*100)" "%") }}
     <br/>
 
     <strong>Memory Size:</strong> {{template "prom_query_drilldown" (args
     "node_memory_MemTotal_bytes/1000000" "Mb") }}
-    <h3>CPU</h3>
 
+    <h3>CPU</h3>
     <strong>CPU Count:</strong> {{template "prom_query_drilldown" (args
     "count(node_cpu_seconds_total{mode='idle'})") }}
     <br/>
@@ -256,10 +255,6 @@ Console templates enable you to create custom HTML dashboards for visualizing Pr
     {{template "tail"}}
     ```
 
-13. Open the web browser and proceed to the page below:
+13. Refresh the Prometheus console page:
 
-    ```bash
-    https://<prometheus-url>/consoles/node-stats.html 
-    ```
-
-    ![](/img/docs/12112024-Observability-prometheus-console-template-custom-1.png)
+    ![](/img/docs/12112024-Observability-prometheus-console-template-custom-19.png)
