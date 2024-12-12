@@ -23,14 +23,6 @@ Console templates enable you to create custom HTML dashboards for visualizing Pr
 - Graph of the `cpu utilization`
 - Graph of the `received bytes`
 
-## Lab Environment 
-
-<div class='img-center'>
-
-![](/img/docs/prometheus=lab-environment.png) 
-
-</div>
-
 
 ## Pre-requisites  
 
