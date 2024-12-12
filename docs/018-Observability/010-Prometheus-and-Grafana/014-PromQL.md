@@ -245,13 +245,13 @@ The offset modifier allows you to shift the evaluation of a query by a specific 
 
 As an example, adding `offset 5m' to the expression below will give the value of the expression 5 minutes ago.
 
-```bash
+```json
 node_memory_Active_bytes{instance="node1"}  offset 5m       
 ```
 
 Sample output:
 
-```bash
+```json
 node_memory_Active_bytes{instance="node1"} 8456789120 1671067500
 ```
 
@@ -269,7 +269,7 @@ We can use the following time units:
 
 For values that are not exact, we can combine them:
 
-```bash
+```json
 node_memory_Active_bytes{instance="node1"}  offset 1h17m       
 ```
 
@@ -277,25 +277,25 @@ node_memory_Active_bytes{instance="node1"}  offset 1h17m
 
 To go back to a specific timestamp, we can use `@modifier` where `modifier` is the Unix timestamp:
 
-```bash
+```json
 node_memory_Active_bytes{instance="node1"} @1663265188
 ```
 
 Similarly, we can combine the `@modifier` and the offset modifier:
 
-```bash
+```json
 node_memory_Active_bytes{instance="node1"} @1663265188 offset 5m
 ```
 
 In this example, the value at the exact timestamp specified by `@` (1663265188) will be evaluated, and then the `offset 5m` will shift the evaluation to 5 minutes before that specified timestamp. Note that the order doesn't matter, so we can shift the places and it will still display the same output.
 
-```bash
+```json
 node_memory_Active_bytes{instance="node1"} offset 5m @1663265188 
 ```
 
 The `@modifier` and offset modifier can also work with range vectors. In the example below, the query retrieves values for the range 12 minutes before the timestamp 1663265188 and evaluates data for the preceding 3-minute period.
 
-```bash
+```json
 node_memory_Active_bytes{instance="node1"}[3m] offset 12m @1663265188 
 ```
 
