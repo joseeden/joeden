@@ -8,7 +8,7 @@ tags:
 - APM
 - Prometheus
 - DevOps
-sidebar_position: 13
+sidebar_position: 30
 last_update:
   date: 11/20/2022
 ---
@@ -183,4 +183,4 @@ https://ip-address-of-prometheus-server:9090/consoles/name-of-template
 
 ### Creating the Template 
 
-To learn how to create a console template, please see [Console Tempaltes.](/docs/018-Observability/010-Prometheus-and-Grafana/023-Console-Templates.md)
+To learn how to create a console template, please see [Console Tempaltes.](/docs/018-Observability/010-Prometheus-and-Grafana/031-Console-Templates.md)

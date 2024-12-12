@@ -78,7 +78,7 @@ node_network_flags{device="eth1", instance="node2"} 200
 ```
 
 
-## Bool Operator 
+## Bool Operators
 
 The `bool` operator in PromQL is used to return a true or false value instead of filtering time series based on a condition. It allows checking conditions without excluding any data. It;s also mostly used for generating alerts.
 
@@ -106,7 +106,7 @@ node_filesystem_avail_bytes{device="/dev/sda1", instance="node2"} 1
 node_filesystem_avail_bytes{device="/dev/sda2", instance="node2"} 0  
 ```
 
-## Logical Operator 
+## Logical Operators 
 
 Logical operators are used to combine conditions or evaluate boolean expressions. They help filter time series data based on logical relationships such as equality or negation.
 
@@ -174,7 +174,7 @@ node_filesystem_avail_bytes{device="/dev/sda7", instance="node1", mountpoint="/o
 ```
 
 
-## Operator Precedence
+## Binary Operator Precedence
 
 When you have more than one operator in a PromQL query, they are evaluated in a specific order of precedence. The order is as follows:
 
@@ -214,3 +214,4 @@ This will be evaluated in this order:
 3 ^ 2 = 9
 2 ^ 9 = 512
 ```
+

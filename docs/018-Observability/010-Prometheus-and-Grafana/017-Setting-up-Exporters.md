@@ -8,7 +8,7 @@ tags:
 - APM
 - Prometheus
 - DevOps
-sidebar_position: 21
+sidebar_position: 17
 last_update:
   date: 11/20/2022
 ---
@@ -29,7 +29,7 @@ Exporters are installed on target nodes to expose metrics that Prometheus can sc
 
 ## Pre-requisites  
 
-- [Setup Prometheus](/docs/018-Observability/010-Prometheus-and-Grafana/020-Installation.md)
+- [Setup Prometheus](/docs/018-Observability/010-Prometheus-and-Grafana/011-Installation.md)
 - Two Linux nodes to be configured as targets
 
 ## Steps  

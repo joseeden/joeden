@@ -8,7 +8,7 @@ tags:
 - APM
 - Prometheus
 - DevOps
-sidebar_position: 11
+sidebar_position: 16
 last_update:
   date: 11/20/2022
 ---
@@ -37,7 +37,7 @@ Many exporters are developed by the community or the Prometheus project. They ar
 
 ## Setting up a Node Exporter 
 
-Exporters act as intermediaries between the target nodes and the Prometheus server. It is installed on the target nodoe and it translates system or application data into Prometheus-compatible formats. To setup a node exporter on a Linux node, please see [Setting up Exporters.](/docs/018-Observability/010-Prometheus-and-Grafana/021-Setting-up-Exporters.md)
+Exporters act as intermediaries between the target nodes and the Prometheus server. It is installed on the target nodoe and it translates system or application data into Prometheus-compatible formats. To setup a node exporter on a Linux node, please see [Setting up Exporters.](/docs/018-Observability/010-Prometheus-and-Grafana/017-Setting-up-Exporters.md)
 
 ## Types of Exporters 
 

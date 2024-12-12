@@ -8,7 +8,7 @@ tags:
 - APM
 - Prometheus
 - DevOps
-sidebar_position: 22
+sidebar_position: 18
 last_update:
   date: 11/20/2022
 ---
@@ -31,8 +31,8 @@ To mitigate this, it's important to implement security measures such as authenti
 
 ## Pre-requisites  
 
-- [Setup Prometheus](/docs/018-Observability/010-Prometheus-and-Grafana/020-Installation.md)
-- [Setup Node Exporter on the nodes](/docs/018-Observability/010-Prometheus-and-Grafana/021-Setting-up-Exporters.md)
+- [Setup Prometheus](/docs/018-Observability/010-Prometheus-and-Grafana/011-Installation.md)
+- [Setup Node Exporter on the nodes](/docs/018-Observability/010-Prometheus-and-Grafana/017-Setting-up-Exporters.md)
 
 
 ## Generate the Certificate

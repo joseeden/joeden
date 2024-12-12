@@ -10,7 +10,7 @@ tags:
 - Containers
 - Containerization
 - DevOps
-sidebar_position: 30
+sidebar_position: 20
 last_update:
   date: 11/20/2022
 ---
@@ -22,7 +22,7 @@ Container metrics provide insights into the performance and health of containers
 
 ## Pre-requisites  
 
-- [Setup Prometheus](/docs/018-Observability/010-Prometheus-and-Grafana/020-Installation.md)
+- [Setup Prometheus](/docs/018-Observability/010-Prometheus-and-Grafana/011-Installation.md)
 - [Setup Docker](https://docs.docker.com/engine/install/)
 - [Run sample containers](https://docs.docker.com/reference/cli/docker/container/run/#examples)
 
