@@ -149,7 +149,7 @@ histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[1m]))
 ```  
 
 
-For more information, please see [PromQL.](/docs/018-Observability/010-Prometheus/050-PromQL/010-PromQL.md)
+For more information, please see [PromQL.](/docs/018-Observability/010-Prometheus/040-PromQL/010-PromQL.md)
 
 
 ## Promtools
