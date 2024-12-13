@@ -108,7 +108,7 @@ Prometheus collects metrics by sending HTTP requests to the `/metrics` endpoint 
 - Converts metrics to a format expected by Prometheus
 - Exposes `/metrics` endpoint so Prometheus can scrape the data.
 
-For more information, please see [Exporters in Prometheus.](/docs/018-Observability/010-Prometheus-and-Grafana/016-Exporters.md)
+For more information, please see [Exporters in Prometheus.](/docs/018-Observability/010-Prometheus/016-Exporters.md)
 
 
 ## Pushgateways  
@@ -148,6 +148,10 @@ count(http_requests_total)
 histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[1m]))
 ```  
 
+
+For more information, please see [PromQL.](/docs/018-Observability/010-Prometheus/035-PromQL.md)
+
+
 ## Promtools
 
 Promtools is a utility tool that comes with Prometheus to help check and validate configuration files, debug issues, and test rules.
@@ -186,6 +190,9 @@ Language support:
 - Python
 - Ruby 
 - Rust
+
+For more information, please see [Client Libraries.](/docs/018-Observability/010-Prometheus/021-Client-Libraries.md)
+
 
 ## Server Configurations
 

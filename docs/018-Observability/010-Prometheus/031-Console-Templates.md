@@ -26,8 +26,8 @@ Console templates enable you to create custom HTML dashboards for visualizing Pr
 
 ## Pre-requisites  
 
-- [Setup Prometheus](/docs/018-Observability/010-Prometheus-and-Grafana/011-Installation.md)
-- [Setup Node Exporter on the nodes](/docs/018-Observability/010-Prometheus-and-Grafana/017-Setting-up-Exporters.md)
+- [Setup Prometheus](/docs/018-Observability/010-Prometheus/011-Installation.md)
+- [Setup Node Exporter on the nodes](/docs/018-Observability/010-Prometheus/017-Setting-up-Exporters.md)
 
 ## Steps 
 

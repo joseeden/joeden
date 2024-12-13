@@ -31,8 +31,8 @@ To mitigate this, it's important to implement security measures such as authenti
 
 ## Pre-requisites  
 
-- [Setup Prometheus](/docs/018-Observability/010-Prometheus-and-Grafana/011-Installation.md)
-- [Setup Node Exporter on the nodes](/docs/018-Observability/010-Prometheus-and-Grafana/017-Setting-up-Exporters.md)
+- [Setup Prometheus](/docs/018-Observability/010-Prometheus/011-Installation.md)
+- [Setup Node Exporter on the nodes](/docs/018-Observability/010-Prometheus/017-Setting-up-Exporters.md)
 
 
 ## Generate the Certificate

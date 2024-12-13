@@ -22,7 +22,7 @@ Container metrics provide insights into the performance and health of containers
 
 ## Pre-requisites  
 
-- [Setup Prometheus](/docs/018-Observability/010-Prometheus-and-Grafana/011-Installation.md)
+- [Setup Prometheus](/docs/018-Observability/010-Prometheus/011-Installation.md)
 - [Setup Docker](https://docs.docker.com/engine/install/)
 - [Run sample containers](https://docs.docker.com/reference/cli/docker/container/run/#examples)
 
