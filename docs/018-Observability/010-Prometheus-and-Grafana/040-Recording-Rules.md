@@ -8,7 +8,7 @@ tags:
 - APM
 - Prometheus
 - DevOps
-sidebar_position: 39
+sidebar_position: 40
 last_update:
   date: 11/20/2022
 ---
@@ -25,7 +25,7 @@ Recording rules allow you to precompute frequently used queries and store the re
 With Recording Rules, you don't have to evaluate the expressions on the fly since they are stored in the database. 
 
 
-## Recording Rules Configuration
+## Rules Configuration
 
 Recording rules are stored in a `rules.yml` file, which is then referenced in the main `prometheus.yml` file.
 
@@ -85,54 +85,6 @@ Remember, after making changes to a rule file, you need to restart the Prometheu
 sudo systemctl restart prometheus 
 sudo systemctl status prometheus 
 ```
-
-## Using Recording Rules 
-
-In the example below, we are using a recording rule to store the result of a rate calculation for HTTP requests over a 5-minute period.
-
-```yaml
-groups:
-
-  - name: http_requests
-    rules:
-      - interval: 1m
-        record: http_requests_rate_5m
-        expr: rate(http_requests_total[5m])
-        labels:
-          job: 'api-server'
-
-      - interval: 1m
-        record: http_requests_rate_1m
-        expr: rate(http_requests_total[1m])
-        labels:
-          job: 'api-server'
-
-  - name: memory_usage
-    rules:
-      - interval: 1m
-        record: avg_memory_usage
-        expr: avg(node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes) by (instance)
-        labels:
-          job: 'node-exporter'
-```
-
-Explanation:
-
-- `http_requests_rate_5m`: 
-
-    - Calculates the rate of HTTP requests over a 5-minute window. 
-    - Stores the result as `http_requests_rate_5m`. 
-
-- `http_requests_rate_1m`: 
-
-    - Similar to the previous rule but for a 1-minute rate.
-
-- `avg_memory_usage`: 
-
-    - Calculates the average memory usage across instances.
-    - Shows the ratio of available memory to total memory.
-
-These recording rules help optimize queries by precomputing, storing the results,  and making it easier to retrieve them later.
 
 
 ## Record Rule Naming
@@ -211,3 +163,125 @@ groups:
           job: 'node-exporter'
 ```
 
+## Example: Using Recording Rules
+
+In the example below, we are using a recording rule to store the result of a rate calculation for HTTP requests over a 5-minute period.
+
+```yaml
+groups:
+
+  - name: http_requests
+    rules:
+      - interval: 1m
+        record: http_requests_rate_5m
+        expr: rate(http_requests_total[5m])
+        labels:
+          job: 'api-server'
+
+      - interval: 1m
+        record: http_requests_rate_1m
+        expr: rate(http_requests_total[1m])
+        labels:
+          job: 'api-server'
+
+  - name: memory_usage
+    rules:
+      - interval: 1m
+        record: avg_memory_usage
+        expr: avg(node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes) by (instance)
+        labels:
+          job: 'node-exporter'
+```
+
+Explanation:
+
+- `http_requests_rate_5m`: 
+
+    - Calculates the rate of HTTP requests over a 5-minute window. 
+    - Stores the result as `http_requests_rate_5m`. 
+
+- `http_requests_rate_1m`: 
+
+    - Similar to the previous rule but for a 1-minute rate.
+
+- `avg_memory_usage`: 
+
+    - Calculates the average memory usage across instances.
+    - Shows the ratio of available memory to total memory.
+
+These recording rules help optimize queries by precomputing, storing the results,  and making it easier to retrieve them later.
+
+
+## Example: Recording Rules in Action
+
+In this example, we're using recording rules that calculate network rates and average latency. 
+
+1. Create the `/etc/prometheus/api-rules.yaml` rules file.
+
+    ```yaml
+    groups:
+    - name: node
+        interval: 15s
+        rules:
+        - record: node_network_receive_bytes_rate
+            expr: rate(node_network_receive_bytes_total{job="nodes"}[2m])
+        - record: node_network_receive_bytes_rate_avg
+            expr: avg by(instance) (node_network_receive_bytes_rate)
+        - record: node_filesystem_free_percent
+            expr: 100 * node_filesystem_free_bytes{job="nodes"} / node_filesystem_size_bytes{job="nodes"} 
+    ```
+
+2. Reference them in the `/etc/prometheus/prometheus.yml` file.
+
+    ```yaml
+    rule_files:
+        - "node-rules.yaml"
+    ```
+
+3. Save the file and restart Prometheus service:
+
+    ```bash
+    systemctl restart prometheus  
+    systemctl status prometheus  
+    ```
+
+4. To verify, login to the Prometheus console and go to Status > Rules.
+
+    ![](/img/docs/12132024-Observability-prometheus-recording-rules-2.png)
+
+
+4. Create a second rule that will track the average latency for past 2 minutes:
+
+    ```bash
+    cat > /etc/prometheus/api-rules.yaml 
+    ```
+
+    Add the rules:
+
+    ```yaml
+    groups:
+    - name: api
+        interval: 15s
+        rules:
+        - record: avg_latency_2m
+            expr: rate(http_request_total_sum{job="api"}[2m]) / rate(http_request_total_count{job="api"}[2m]) 
+    ```
+
+5. Specify them in the Prometheus configuration file.
+
+    ```yaml
+    rule_files:
+        - "node-rules.yaml"
+        - "api-rules.yaml"
+    ```
+
+6. Restart Prometheus service once again:
+
+    ```bash
+    systemctl restart prometheus  
+    systemctl status prometheus  
+    ```
+
+7. Go back to the Prometheus console and verify that all the rule are showing `OK`.
+
+    ![](/img/docs/12132024-Observability-prometheus-recording-rules-3.png)
