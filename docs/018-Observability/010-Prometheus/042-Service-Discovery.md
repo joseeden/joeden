@@ -124,3 +124,53 @@ scrape_configs:
 ``` 
 
 This will map the public IP of the EC2 instances to the `instance_ip` label when the Prometheus server is outside the EC2 environment.
+
+
+## Re-labelling 
+
+Re-labeling in Prometheus allows you to modify or create new labels for metrics based on existing ones. This is useful for grouping, filtering, or enriching metrics during collection.
+
+For example, we have the following nodes with labels:
+
+| **Node** | **Instance**           | **Region**            |
+|----------|------------------------|-----------------------|
+| node1    | instance="node1:9100"  | region="ap-southeast-1" |
+| node2    | instance="node2:9100"  | region="ap-southeast-1" |
+
+We can use re-labelling to:
+
+1. Drop the `region` label and rename the `instance` label, so that:
+
+    | **Node** | **Instance**           |
+    |----------|------------------------|
+    | node1    | instance="node1"       |
+    | node2    | instance="node2"       |
+
+2. Grab the `http_errors_total` metric after the scrape and rename it to `http_failures_total`.
+
+You can configure re-labeling in the `scrape_configs` section of the `prometheus.yml` file.
+
+- `relabel_configs`: Relabelling is done before a scrape and only has access to labels from Service Discovery.
+- `metric_relabel_configs`: Relabelling is done after the scrape and has access to all metrics and labels.
+
+Here's a sample `prometheus.yml` file:
+
+```yaml
+scrape_configs:
+  - job_name: 'example-job'
+    static_configs:
+      - targets: ['node1:9100', 'node2:9100']
+    relabel_configs:
+      - source_labels: [region]
+        action: labeldrop
+      - source_labels: [instance]
+        target_label: instance
+        action: replace
+        replacement: '${1}'
+    metric_relabel_configs:
+      - source_labels: [__name__]              
+        target_label: __name__                 
+        regex: 'http_errors_total'                 
+        action: replace 
+        replacement: 'http_failures_total'  
+```
