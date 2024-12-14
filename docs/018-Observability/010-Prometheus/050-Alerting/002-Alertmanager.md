@@ -38,7 +38,7 @@ The Prometheus server sends alerts to the Alertmanager API. From there, it goes 
 
 ## Installing Alertmanager
 
-To install Alertmanager, follow these steps:
+Login to the Prometheus server as **root** user and follow the steps below:
 
 1. Download Alertmanager from the [official download page](https://prometheus.io/download/#alertmanager) using `wget` or `curl`.
   
@@ -56,27 +56,27 @@ To install Alertmanager, follow these steps:
 3. Add a dedicated user for the Alertmanager service.
 
     ```bash
-    useradd --no-create-hole --shell /bin/false alertmanager 
     groupadd -f alertmanager
+    useradd --no-create-home --shell /bin/false -g alertmanager alertmanager
     ```
 
 4. Create the directory where the Alertmanager data will be stored.
 
     ```bash
-    sudo mkdir /var/lib/alertmanager
+    mkdir /var/lib/alertmanager
     mkdir -p /etc/alertmanager/templates
     ```
 
 5. Copy over the required files and change the permissions.
 
     ```bash
-    sudo cp alertmanager.yml /etc/alertmanager 
-    sudo cp alertmanager /usr/bin
-    sudo cp amtool /usr/bin
-    sudo chown -R alertmanager:alertmanager /etc/alertmanager 
-    sudo chown -R alertmanager:alertmanager /var/lib/alertmanager 
-    sudo chown alertmanager:alertmanager /usr/bin/alertmanager
-    sudo chown alertmanager:alertmanager /usr/bin/amtool
+    cp alertmanager.yml /etc/alertmanager 
+    cp alertmanager /usr/bin
+    cp amtool /usr/bin
+    chown -R alertmanager:alertmanager /etc/alertmanager 
+    chown -R alertmanager:alertmanager /var/lib/alertmanager 
+    chown alertmanager:alertmanager /usr/bin/alertmanager
+    chown alertmanager:alertmanager /usr/bin/amtool
     ```
 
 7. Start Alertmanager by running the command below. 
@@ -119,7 +119,9 @@ To install Alertmanager, follow these steps:
     Group=alertmanager
     Type=simple
     ExecStart=/usr/bin/alertmanager \
-        --config.file=/
+        --config.file=/etc/alertmanager/alertmanager.yml \
+        --storage.path=/var/lib/alertmanager \
+        --log.level=info
     Restart=always
 
     [Install]
@@ -129,15 +131,15 @@ To install Alertmanager, follow these steps:
 10. Update permissions of the systemd unit file.
 
     ```bash
-    chmod 664 /usr/lib/systemd/system/alertmanager.service 
+    chmod 664 /etc/systemd/system/alertmanager.service
     ```
 
 11. Enable and start the Alertmanager service.
 
     ```bash
     systemctl daemon-reload
-    sudo systemctl enable --now alertmanager
-    sudo systemctl status alertmanager
+    systemctl enable --now alertmanager
+    systemctl status alertmanager
     ```
 
 12. Verify that the Alertmanager server is running. 
@@ -197,6 +199,6 @@ alerting:
 Restart Prometheus:
 
 ```bash
-sudo systemctl restart prometheus 
-sudo systemctl status prometheus 
+systemctl restart prometheus 
+systemctl status prometheus 
 ```

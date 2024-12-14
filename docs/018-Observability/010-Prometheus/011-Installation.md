@@ -25,6 +25,8 @@ Prometheus can be installed on a virtual machine (VM) to monitor system performa
 
 ## Steps  
 
+Login to the Prometheus server as **root** user and follow the steps below:
+
 1. Download the Prometheus tar file from the Prometheus [official download page](https://prometheus.io/download/).
 
    ```bash
@@ -35,25 +37,25 @@ Prometheus can be installed on a virtual machine (VM) to monitor system performa
 
    ```bash
    tar xvf prometheus-2.40.1.linux-amd64.tar.gz
+   cd prometheus-2.40.1.linux-amd64
    ```  
 
 4. For security, create a dedicated user to run Prometheus:  
 
    ```bash
-   sudo useradd --no-create-home --shell /bin/false prometheus
+   useradd --no-create-home --shell /bin/false prometheus
    ```  
 
 5. Create directories for Prometheus data:
 
     ```bash
-    sudo mkdir -p /etc/prometheus
-    sudo mkdir /var/lib/prometheus 
+    mkdir -p /etc/prometheus
+    mkdir /var/lib/prometheus 
     ```
 
 6. Copy files to `/usr/local/bin` or a custom directory:  
 
    ```bash
-   cd prometheus-2.40.1.linux-amd64
    cp prometheus promtool /usr/local/bin/
    cp prometheus.yml /etc/prometheus/
    ```  
@@ -61,23 +63,23 @@ Prometheus can be installed on a virtual machine (VM) to monitor system performa
 7. Copy the directories `consoles` and `console_libraries`:
 
     ```bash
-    cp -r /root/prometheus-2.40.1.linux-amd64/consoles /etc/prometheus
-    cp -r /root/prometheus-2.40.1.linux-amd64/console_libraries /etc/prometheus 
+    cp -r consoles /etc/prometheus
+    cp -r console_libraries /etc/prometheus 
     ```
 
 8. Assign the correct permissions:  
    
    ```bash
-   sudo chown prometheus:prometheus /usr/local/bin/prometheus
-   sudo chown prometheus:prometheus /usr/local/bin/promtool
-   sudo chown prometheus:prometheus /var/lib/prometheus
-   sudo chown -R prometheus:prometheus /etc/prometheus
+   chown prometheus:prometheus /usr/local/bin/prometheus
+   chown prometheus:prometheus /usr/local/bin/promtool
+   chown prometheus:prometheus /var/lib/prometheus
+   chown -R prometheus:prometheus /etc/prometheus
    ```  
 
 9.  Define a systemd unit file to manage Prometheus as a service:  
    
    ```bash
-   sudo vi /etc/systemd/system/prometheus.service
+   vi /etc/systemd/system/prometheus.service
    ```  
    
    Add the following content:  
@@ -105,9 +107,9 @@ Prometheus can be installed on a virtual machine (VM) to monitor system performa
 10. Reload systemd, start Prometheus, and enable it on boot:  
 
    ```bash
-   sudo systemctl daemon-reload
-   sudo systemctl enable --now prometheus
-   sudo systemctl status prometheus
+   systemctl daemon-reload
+   systemctl enable --now prometheus
+   systemctl status prometheus
    ```  
 
 11. Open a web browser and navigate to the link below:

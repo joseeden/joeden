@@ -34,6 +34,8 @@ Exporters are installed on target nodes to expose metrics that Prometheus can sc
 
 ## Steps  
 
+Login to the individual nodes as **root** user and follow the steps below:
+
 1. Identify the Node Exporter (for system metrics) or application-specific exporters like MySQL Exporter.  
 
 2. On each target node, download the relevant exporter from the [Prometheus exporter repository](https://prometheus.io/docs/instrumenting/exporters/).  
@@ -47,7 +49,7 @@ Exporters are installed on target nodes to expose metrics that Prometheus can sc
    ```bash
    tar xvf node_exporter-1.4.0.linux-amd64.tar.gz
    cd node_exporter-1.4.0.linux-amd64 
-   mv node_exporter /usr/local/bin/
+   cp node_exporter /usr/bin/
    ```  
 
 4. Test it by running the exporter:
@@ -59,9 +61,8 @@ Exporters are installed on target nodes to expose metrics that Prometheus can sc
     Output:
 
     ```bash
-    ts=2023-2-17T12:03:05.552Z caller=node_exporter.go:108 level=info msg="Enabled collectors" 
-    ....
-    ts=2023-2-17T12:03:05.552Z caller=node_exporter.go:108 level=info msg="Listening on" address=:9100 
+   caller=node_exporter.go:199 level=info msg="Listening on" address=:9100
+   caller=tls_config.go:195 level=info msg="TLS is disabled." http2=false
     ```
 
 5. Open another terminal and run a `curl` command:
@@ -81,29 +82,31 @@ Exporters are installed on target nodes to expose metrics that Prometheus can sc
     ```
 
 
-6. For security, create a dedicated user:  
+6. For security, create a dedicated user and group:  
 
    ```bash
-   sudo useradd --no-create-home --shell /bin/false node_exporter
+   groupadd -f node_exporter
+   useradd --no-create-home --shell /bin/false -g node_exporter node_exporter
    ```  
+
 
 7. Change permissions of the binary:
 
    ```bash
-   sudo chown node_exporter:node_exporter /usr/local/bin/node_exporter 
+   chown node_exporter:node_exporter /usr/bin/node_exporter 
    ```
 
 8. Create a systemd service for the exporter  
 
    ```bash
-   sudo vi /etc/systemd/system/node_exporter.service
+   vi /etc/systemd/system/node_exporter.service
    ```  
 
    Add the following content:  
 
    ```bash
    [Unit]
-   Description=Node Exporter
+   Description=NodeExporter
    Wants=network.target
    After=network.target
 
@@ -111,41 +114,49 @@ Exporters are installed on target nodes to expose metrics that Prometheus can sc
    User=node_exporter
    Group=node_exporter
    Type=simple
-   ExecStart=/usr/local/bin/node_exporter
+   ExecStart=/usr/bin/node_exporter
 
    [Install]
    WantedBy=multi-user.target
    ```  
 
-9.  Start the exporter and enable it to run at boot:  
+9. Update permissions of the systemd unit file.
 
     ```bash
-    sudo systemctl daemon-reload
-    sudo systemctl enable --now node_exporter
-    sudo systemctl status node_exporter
+    chmod 664 /etc/systemd/system/node_exporter.service
+    ```
+
+10. Start the exporter and enable it to run at boot:  
+
+    ```bash
+    systemctl daemon-reload
+    systemctl enable --now node_exporter
+    systemctl status node_exporter
     ```  
 
-10. Open a browser and navigate to `http://<node_ip>:9100/metrics` to confirm the exporter is running and exposing metrics.  
+11. Open a browser and navigate to `http://<node_ip>:9100/metrics` to confirm the exporter is running and exposing metrics.  
 
     ![](/img/docs/12102024-observability-prometheus-node-exporter-1-2.png)
 
-11. Add the node IP and port to Prometheus's `prometheus.yml` file under `scrape_configs`:  
+12. Login to the Prometheus server. Add the node IP and port to Prometheus's `/etc/prometheus/prometheus.yml` file under `scrape_configs`:  
 
       ```yaml
       scrape_configs:
       - job_name: "node_exporter"
          static_configs:
-            - targets: ["<node1_ip>:9100", "<node2_ip>:9100"]
+            - targets: 
+               - <node1_ip>:9100
+               - <node2_ip>:9100
       ```  
 
     Restart Prometheus to apply the configuration:  
 
       ```bash
-      sudo systemctl restart prometheus
-      sudo systemctl status prometheus
+      systemctl restart prometheus
+      systemctl status prometheus
       ```  
 
-12. Check Prometheus’s web interface to verify the targets are listed and metrics are being collected.  
+13. Check Prometheus’s web interface to verify the targets are listed and metrics are being collected.  
 
     ```bash
     http://<your_vm_ip>:9090`
@@ -155,6 +166,6 @@ Exporters are installed on target nodes to expose metrics that Prometheus can sc
 
     ![](/img/docs/12102024-observability-prometheus-node-exporter-1-2-working.png)
 
-13. Click Status > Targets to see the scrape status. You may need to refresh it to reflect all the targets.
+14. Click Status > Targets to see the scrape status. You may need to refresh it to reflect all the targets.
 
    ![](/img/docs/12102024-observability-prometheus-node-exporter-targets-scrape-status.png)
