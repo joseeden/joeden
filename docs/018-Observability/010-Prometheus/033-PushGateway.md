@@ -9,8 +9,6 @@ tags:
 - Prometheus
 - DevOps
 sidebar_position: 33
-last_update:
-  date: 11/20/2022
 ---
 
 ## Overview 
@@ -29,53 +27,99 @@ To install PushGateway, follow these steps:
 1. Download PushGateway from the [official download page](https://prometheus.io/download/#pushgateway) using `wget` or `curl`.
   
    ```bash
-   wget https://github.com/prometheus/pushgateway/releases/download/v1.4.0/pushgateway-1.4.0.linux-amd64.tar.gz
+   wget https://github.com/prometheus/pushgateway/releases/download/v1.5.0/pushgateway-1.5.0.linux-amd64.tar.gz
    ```
 
-2. After downloading, extract the files:
+2. After downloading, extract the files and copy the binary to `/usr/local/bin`.
   
    ```bash
-   tar -xvzf pushgateway-1.4.0.linux-amd64.tar.gz
-   cd pushgateway-1.4.0.linux-amd64
+   tar xvfz pushgateway-1.5.0.linux-amd64.tar.gz
+   cp pushgateway-1.5.0.linux-amd64/pushgateway /usr/local/bin/
    ```
 
-3. Start PushGateway by running the command below. By default, PushGateway will start listening on port `9091`.
+3. Add a dedicated user for the PushGateway service.
+
+    ```bash
+    useradd -M -r -s /bin/false pushgateway 
+    ```
+
+4. Change the permission of the copied binary.
+
+    ```bash
+    chown pushgateway:pushgateway /usr/local/bin/pushgateway 
+    ```
+
+5. Start PushGateway by running the command below. 
   
    ```bash
-   ./pushgateway
+   pushgateway
    ```
 
-4. Open a browser or use `curl` to verify that PushGateway is running:
+   By default, PushGateway will start listening on port `9091`.
 
    ```bash
-   curl http://localhost:9091
+    ts=2024-12-14T03:42:41.088Z caller=main.go:100 level=info msg="starting pushgateway" version="(version=1.5.0, branch=HEAD, revision=d3f80b822d188f90bef74f2e55a3e5f01bba08d2)"
+    ts=2024-12-14T03:42:41.088Z caller=main.go:101 level=info build_context="(go=go1.19.3, user=root@8d0a3fca0bee, date=20221124-12:52:19)"
+    ts=2024-12-14T03:42:41.090Z caller=tls_config.go:232 level=info msg="Listening on" address=[::]:9091
+    ts=2024-12-14T03:42:41.090Z caller=tls_config.go:235 level=info msg="TLS is disabled." http2=false address=[::]:9091
    ```
 
-5. To run PushGateway as a service, create a systemd unit file in `/etc/systemd/system/pushgateway.service`:
+6. Open a browser or use `curl` to verify that PushGateway is running:
 
-  ```bash
+   ```bash
+   http://localhost:9091
+   ```
+
+   ![](/img/docs/12142024-Observability-prometheus-pushgw-working.png)
+
+7. To run PushGateway as a service, create a systemd unit file in `/etc/systemd/system/pushgateway.service`:
+
+    ```bash
     [Unit]
-    Description=PushGateway
-    After=network.target
+    Description=Pushgateway
+    Wants=network-online.target
+    After=network-online.target
 
     [Service]
-    ExecStart=/path/to/pushgateway/pushgateway
-    WorkingDirectory=/path/to/pushgateway
+    User=pushgateway
+    Group=pushgateway
+    Type=simple
+    ExecStart=/usr/local/bin/pushgateway
     Restart=always
 
     [Install]
     WantedBy=multi-user.target
-  ```
+    ```
 
-6. Enable and start the PushGateway service.
+8. Enable and start the PushGateway service.
 
+    ```bash
+    sudo systemctl enable pushgateway
+    sudo systemctl start pushgateway
+    sudo systemctl status pushgateway
+    ```
 
-  ```bash
-  sudo systemctl enable pushgateway
-  sudo systemctl start pushgateway
-  sudo systemctl status pushgateway
-  ```
+9. Verify that the PushGateway server is running by sending a request to the `/metrics` endpoint. 
 
+    ```bash
+    $ curl localhost:9091/metrics
+
+    # HELP go_gc_duration_seconds A summary of the pause duration of garbage collection cycles.
+    # TYPE go_gc_duration_seconds summary
+    go_gc_duration_seconds{quantile="0"} 0.000205514
+    go_gc_duration_seconds{quantile="0.25"} 0.000205514
+    go_gc_duration_seconds{quantile="0.5"} 0.000232829
+    go_gc_duration_seconds{quantile="0.75"} 0.000232829
+    go_gc_duration_seconds{quantile="1"} 0.000232829 
+    ```
+
+10. Go back to the PushGateway console and append the `/metrics` to the site URL.
+
+    ```bash
+    http:localhost:9091/metrics 
+    ```
+
+    ![](/img/docs/12142024-Observability-prometheus-pushgw-metricsss.png)
 
 ## Configure Prometheus to Scrape PushGateway
 
@@ -85,13 +129,13 @@ After PushGateway is installed and running, you need to configure Prometheus to 
 
    ```yaml
    scrape_configs:
-     - job_name: 'batch_jobs'
+     - job_name: 'pushgateway'
        honor_labels: true
        static_configs:
-         - targets: ['pushgateway:9091']
+         - targets: ['pushgateway-ip:9091']
    ```
 
-   The `honor_labels` ensures that the metric labels from the batch job are retained and not overwritten by those of PushGateway.
+   The `honor_labels` ensures that the metric labels from any batch job sending to the PushGateway are retained and not overwritten by those of PushGateway.
 
 2. Restart Prometheus to apply the changes:
 
@@ -99,13 +143,9 @@ After PushGateway is installed and running, you need to configure Prometheus to 
    sudo systemctl restart prometheus
    ```
 
-   Or, if you're running Prometheus manually:
+3. Access the Prometheus console and go to Status > Targets. You should see the pushgateway here.
 
-   ```bash
-   ./prometheus --config.file=/etc/prometheus/prometheus.yml
-   ```
-
-
+    ![](/img/docs/12142024-Observability-prometheus-configured-prometheus-yml.png)
 
 ## Push Metrics from Batch Jobs
 
@@ -144,28 +184,50 @@ push_to_gateway('pushgateway:9091', job='batch_jobs', registry=registry)
 
 This will push the metric `batch_job_duration_seconds` with a value of `3.14` to the PushGateway.
 
-## Examples: Sending HTTP Requests  
+## Sending HTTP Requests  
 
-1. Push metric "example_metric 1234" with a job label of `{job="db_backup"}.
+### Sending a Metric
 
-    ```bash
-    echo "example_metric 1234" | curl --data-binary @-http://prometheus:9001/metrics/job/db_backup
-    ```
+Push a metric "processing_time_seconds 120" with a job label of `video_processing`.
 
-    In this example, the metric has to be passed as a binary data. The `@-` then tells curl to read the binary data from standard input.
+```bash
+echo "processing_time_seconds 120" | curl --data-binary @- http://localhost:9091/metrics/job/video_processing
+```
 
-2. Pushing multiple metrics.
+In this example, the metric has to be passed as a binary data. The `@-` then tells curl to read the binary data from standard input.
 
-    ```bash
-    cat << EOF | curl --data-binary @-http://prometheus:9001/metrics/job/job1/instance/instance1
+Open the PushGateway console and go to Metrics. Click the new job to display the pushed metrics.
 
-    # TYPE metric_one gauge
-    metric_one{label="value1"}  23 
-    # TYPE metric_two counter 
-    # HELP metric_two Another example
-    metric_two  41
-    EOF
-    ```
+![](/img/docs/12142024-Observability-prometheus-job-video-processing.png)
+
+### Sending Multiple Metrics
+
+Let's now push multiple metrics to the same job.
+
+```bash
+cat << EOF | curl --data-binary @- http://localhost:9091/metrics/job/video_processing
+
+# TYPE metric_one gauge
+metric_one{label="value1"} 23
+# TYPE metric_two counter
+# HELP metric_two Another example
+metric_two 41
+EOF
+```
+
+Go back to the Pushgateway console and verify that the new metrics have been added.
+
+![](/img/docs/12142024-Observability-prometheus-job-video-processing-2.png)
+
+### Verify that Prometheus scraped the Metrics
+
+Now open the Prometheus console and enter the metrics name in the expression browser.
+
+```bash
+{__name__=~"processing_time_seconds|metric_one|metric_two"} 
+```
+
+![](/img/docs/12142024-Observability-prometheus-showing-all-metrics-of-pushgw.png)
 
 ## Grouping 
 
@@ -180,7 +242,7 @@ http://<push-gateway-address>:<port>/metrics/job/<job-name>/<label1>/<value1>/<l
 The following example sends metrics for the `backup` job:
 
 ```bash
-cat << EOF | curl --data-binary @- http://prometheus:9001/metrics/job/backup/db/psql
+cat << EOF | curl --data-binary @- http://localhost:9001/metrics/job/backup/db/psql
 # TYPE metric_one counter
 metric_one{label="value1"}  11
 # TYPE metric_two gauge
@@ -201,7 +263,7 @@ Here:
 Now, send another request for the `backup` job, but with a different URL:
 
 ```bash
-cat << EOF | curl --data-binary @- http://prometheus:9001/metrics/job/backup/app/web
+cat << EOF | curl --data-binary @- http://localhost:9001/metrics/job/backup/app/web
 # TYPE metric_one counter
 metric_one{label="value1"}  22
 # TYPE metric_two gauge
@@ -251,7 +313,7 @@ metric_two{app="web", instance="", job="backup"}  100
 Send a new request to update a metric in the `/job/backup/app/web` group:
 
 ```bash
-cat << EOF | curl --data-binary @-http://prometheus:9001/metrics/job/backup/app/web
+cat << EOF | curl --data-binary @-http://localhost:9001/metrics/job/backup/app/web
 # TYPE metric_one counter
 metric_one{label="value1"}  44
 EOF
@@ -288,7 +350,7 @@ metric_three{app="web", instance="", job="archive"}  300
 To update metrics in the `/job/archive/app/web` group, send a `PUT` request with the new data:
 
 ```bash
-cat << EOF | curl -X PUT --data-binary @- http://prometheus:9001/metrics/job/archive/app/web
+cat << EOF | curl -X PUT --data-binary @- http://localhost:9001/metrics/job/archive/app/web
 # TYPE metric_one counter
 metric_one{label="value1"}  53
 EOF
@@ -326,7 +388,7 @@ metric_three{app="web", instance="", job="archive"}  300
 To delete all metrics in the `/job/archive/app/web` group, send a `DELETE` request:
 
 ```bash
-curl -X DELETE http://prometheus:9001/metrics/job/archive/app/web
+curl -X DELETE http://localhost:9001/metrics/job/archive/app/web
 ```
 
 After the `DELETE` request, all metrics in the `/job/archive/app/web` group are removed, leaving only metrics from other groups:
