@@ -144,16 +144,6 @@ push_to_gateway('pushgateway:9091', job='batch_jobs', registry=registry)
 
 This will push the metric `batch_job_duration_seconds` with a value of `3.14` to the PushGateway.
 
-
-## Verify Push in Prometheus
-
-Prometheus should now scrape the metrics from the PushGateway and make them available for monitoring and alerting.
-
-1. After the batch job pushes metrics to PushGateway, go to the Prometheus web UI.
-2. Use the Prometheus query interface to query for metrics from the batch job, such as `batch_job_duration_seconds`.
-
-
-
 ## Examples: Sending HTTP Requests  
 
 1. Push metric "example_metric 1234" with a job label of `{job="db_backup"}.
@@ -169,10 +159,185 @@ Prometheus should now scrape the metrics from the PushGateway and make them avai
     ```bash
     cat << EOF | curl --data-binary @-http://prometheus:9001/metrics/job/job1/instance/instance1
 
-    # TYPE first_metric gauge
-    first_metric{label="value1"}  23 
-    # TYPE second_metric counter 
-    # HELP second_metric Another example
-    second_metric  41
+    # TYPE metric_one gauge
+    metric_one{label="value1"}  23 
+    # TYPE metric_two counter 
+    # HELP metric_two Another example
+    metric_two  41
     EOF
     ```
+
+## Grouping 
+
+The URL path `job_name + labels` acts as a grouping key in PushGateway. Groups allow you to update or delete multiple metrics at once. All metrics sent to the same URL path are part of the same group.
+
+```bash
+http://<push-gateway-address>:<port>/metrics/job/<job-name>/<label1>/<value1>/<label2>/<value2>
+```
+
+### Sending Metrics to Groups
+
+The following example sends metrics for the `backup` job:
+
+```bash
+cat << EOF | curl --data-binary @- http://prometheus:9001/metrics/job/backup/db/psql
+# TYPE metric_one counter
+metric_one{label="value1"}  11
+# TYPE metric_two gauge
+# HELP metric_two Another example
+metric_two  100
+EOF
+```
+
+Here:
+- The job name is `backup`, and the URL represents one group:
+  ```bash
+  /job/backup/db/psql
+  ```
+- Metrics in this group:
+  - `metric_one{label="value1"}  11`
+  - `metric_two  100`
+
+Now, send another request for the `backup` job, but with a different URL:
+
+```bash
+cat << EOF | curl --data-binary @- http://prometheus:9001/metrics/job/backup/app/web
+# TYPE metric_one counter
+metric_one{label="value1"}  22
+# TYPE metric_two gauge
+# HELP metric_two Another example
+metric_two  100
+EOF
+```
+
+Since the URL is different, this creates a new group:
+```bash
+/job/backup/app/web
+```
+
+Metrics in this group:
+- `metric_one{label="value1"}  22`
+- `metric_two  100`
+
+### Viewing the Metrics
+
+When filtering for the `backup` job on the Prometheus server, metrics are grouped by their respective URLs:
+
+```bash
+$ curl prometheus-ip:9091/metrics | grep backup
+
+metric_one{db="psql", instance="", job="backup", label="value1"}  11
+metric_two{db="psql", instance="", job="backup"}  100
+metric_one{app="web", instance="", job="backup", label="value1"}  22
+metric_two{app="web", instance="", job="backup"}  100
+```
+
+
+## Using `POST`
+
+When sending a `POST` request, only metrics with the same name in the same group are replaced. Other metrics remain unaffected.
+
+Consider the initial metrics for the `backup` job: 
+
+```bash
+$ curl prometheus-ip:9091/metrics | grep backup 
+
+metric_one{db="psql", instance="", job="backup", label="value1"}  11
+metric_two{db="psql", instance="", job="backup"}  100
+metric_one{app="web", instance="", job="backup", label="value1"}  22
+metric_two{app="web", instance="", job="backup"}  100
+```
+
+Send a new request to update a metric in the `/job/backup/app/web` group:
+
+```bash
+cat << EOF | curl --data-binary @-http://prometheus:9001/metrics/job/backup/app/web
+# TYPE metric_one counter
+metric_one{label="value1"}  44
+EOF
+```
+
+After the update, only the specified metric in the group is replaced:
+
+```bash
+$ curl prometheus-ip:9091/metrics | grep backup 
+
+metric_one{db="psql", instance="", job="backup", label="value1"}  11
+metric_two{db="psql", instance="", job="backup"}  100
+metric_one{app="web", instance="", job="backup", label="value1"}  44
+metric_two{app="web", instance="", job="backup"}  100
+```
+
+
+## Using `PUT` 
+
+When sending a `PUT` request, all metrics within a specific group are replaced by the new metrics being pushed. This operation removes all pre-existing metrics in the group and replaces them entirely.
+
+Consider the initial metrics for the `archive` job which includes multiple metrics across different groups:
+
+```bash
+$ curl prometheus-ip:9091/metrics | grep archive
+
+metric_one{db="psql", instance="", job="archive", label="value1"}  11
+metric_two{db="psql", instance="", job="archive"}  100
+metric_one{app="web", instance="", job="archive", label="value1"}  22
+metric_two{app="web", instance="", job="archive"}  100
+metric_three{app="web", instance="", job="archive"}  300
+```
+
+To update metrics in the `/job/archive/app/web` group, send a `PUT` request with the new data:
+
+```bash
+cat << EOF | curl -X PUT --data-binary @- http://prometheus:9001/metrics/job/archive/app/web
+# TYPE metric_one counter
+metric_one{label="value1"}  53
+EOF
+```
+
+After the `PUT` request, only the new metric is retained in the `/job/archive/app/web` group. All pre-existing metrics in this group are removed:
+
+```bash
+$ curl prometheus-ip:9091/metrics | grep archive
+
+metric_one{db="psql", instance="", job="archive", label="value1"}  11
+metric_two{db="psql", instance="", job="archive"}  100
+metric_one{app="web", instance="", job="archive", label="value1"}  53
+```
+
+The metrics `metric_two` and `metric_three` from the `/job/archive/app/web` group are deleted and replaced by the newly pushed `metric_one`.
+
+
+## Using `DELETE` 
+
+When you send a `DELETE` request, all metrics within the specified group are removed.
+
+Let's use the same `archive` job from the previous example.
+
+```bash
+$ curl prometheus-ip:9091/metrics | grep archive
+
+metric_one{db="psql", instance="", job="archive", label="value1"}  11
+metric_two{db="psql", instance="", job="archive"}  100
+metric_one{app="web", instance="", job="archive", label="value1"}  22
+metric_two{app="web", instance="", job="archive"}  100
+metric_three{app="web", instance="", job="archive"}  300
+```
+
+To delete all metrics in the `/job/archive/app/web` group, send a `DELETE` request:
+
+```bash
+curl -X DELETE http://prometheus:9001/metrics/job/archive/app/web
+```
+
+After the `DELETE` request, all metrics in the `/job/archive/app/web` group are removed, leaving only metrics from other groups:
+
+```bash
+$ curl prometheus-ip:9091/metrics | grep archive
+
+metric_one{db="psql", instance="", job="archive", label="value1"}  11
+metric_two{db="psql", instance="", job="archive"}  100
+```
+
+Metrics `metric_one`, `metric_two`, and `metric_three` from the `/job/archive/app/web` group are successfully deleted.
+
+## Using Client Libraries
