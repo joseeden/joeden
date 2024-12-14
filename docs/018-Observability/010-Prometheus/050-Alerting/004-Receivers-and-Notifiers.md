@@ -140,3 +140,7 @@ The `Alerts` field contains more detailed information about each alert:
 - **Status**: The status of the alert, indicating whether it is currently firing or resolved.
 - **StartsAt**: The timestamp when the alert first started firing.
 - **EndsAt**: The timestamp when the alert was resolved or dismissed.
+
+## Silences 
+
+Alerts can be silenced to prevent generating notifications for a period of time.....
