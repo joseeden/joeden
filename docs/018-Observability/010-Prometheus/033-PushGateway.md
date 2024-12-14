@@ -341,3 +341,51 @@ metric_two{db="psql", instance="", job="archive"}  100
 Metrics `metric_one`, `metric_two`, and `metric_three` from the `/job/archive/app/web` group are successfully deleted.
 
 ## Using Client Libraries
+
+Client libraries can be used to push metrics to PushGateway. The table below summarizes the key functions available in the client library:
+
+| **Function** | **Description**                                                                 | **Equivalent HTTP Request** |
+|--------------|---------------------------------------------------------------------------------|-----------------------------|
+| `push`       | Removes existing metrics for a job and adds the new metrics pushed             | `PUT`                      |
+| `pushadd`    | Pushes metrics, overriding only metrics with the same name. Others remain unchanged | `POST`                     |
+| `delete`     | Deletes all metrics in a specified group                                       | `DELETE`                   |
+
+Below is an example of how to use these functions in Python with the `prometheus_client` library:
+
+```python
+from prometheus_client import CollectorRegistry, Counter, push_to_gateway, delete_from_gateway
+
+registry = CollectorRegistry()
+c = Counter('example_metric', 'An example metric', registry=registry)
+
+c.inc()
+
+# Push metrics using `push` (replaces the entire group)
+push_to_gateway('http://localhost:9091', job='example_job', registry=registry)
+print("Metrics pushed using 'push'")
+
+# Push metrics using `pushadd` (overrides only metrics with the same name)
+push_to_gateway('http://localhost:9091', job='example_job', registry=registry, method='POST')
+print("Metrics pushed using 'pushadd'")
+
+# Delete metrics for the specified job
+delete_from_gateway('http://localhost:9091', job='example_job')
+print("Metrics deleted for 'example_job'")
+```
+
+Explanation:
+
+1. **Initialize Registry and Metric**:
+   - A `CollectorRegistry` is created to store the metrics.
+   - A `Counter` metric (`example_metric`) is defined and incremented using `c.inc()`.
+
+2. **Using `push`**:
+   - Metrics are pushed to the PushGateway using the `push_to_gateway` function. 
+   - This replaces all existing metrics for the specified job with the new metrics in the registry.
+
+3. **Using `pushadd`**:
+   - The same `push_to_gateway` function is used, but with `method='POST'`.
+   - This adds or updates only the metrics in the registry while leaving other metrics in the same group unchanged.
+
+4. **Using `delete`**:
+   - Metrics for the specified job are deleted from PushGateway using `delete_from_gateway`.
