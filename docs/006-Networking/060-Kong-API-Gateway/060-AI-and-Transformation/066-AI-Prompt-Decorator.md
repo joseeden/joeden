@@ -31,7 +31,7 @@ Before proceeding, ensure the [AI Proxy plugin is enabled](/docs/006-Networking/
 
 :::info[Requires OpenAI Credits]
 
-This lab requires OpenAI credits. You must first [create an OpenAI account and purchase credits](#get-a-chatgpt-api-key).
+This lab requires OpenAI credits. You must first [create an OpenAI account and purchase credits](/docs/006-Networking/060-Kong-API-Gateway/060-AI-and-Transformation/065-AI-Proxy-Plugin.md#get-a-chatgpt-api-key).
 
 :::
 
