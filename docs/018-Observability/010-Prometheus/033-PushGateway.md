@@ -121,7 +121,7 @@ To install PushGateway, follow these steps:
 
     ![](/img/docs/12142024-Observability-prometheus-pushgw-metricsss.png)
 
-## Configure Prometheus to Scrape PushGateway
+## Configure Prometheus 
 
 After PushGateway is installed and running, you need to configure Prometheus to scrape it.
 
