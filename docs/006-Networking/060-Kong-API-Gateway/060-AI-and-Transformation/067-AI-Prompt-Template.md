@@ -31,9 +31,10 @@ Before proceeding, ensure the [AI Proxy plugin is enabled](/docs/006-Networking/
 
 :::info[Requires OpenAI Credits]
 
-This lab requires OpenAI credits. You must first [create an OpenAI account and purchase credits](#get-a-chatgpt-api-key).
+This lab requires OpenAI credits. You must first [create an OpenAI account and purchase credits](/docs/006-Networking/060-Kong-API-Gateway/060-AI-and-Transformation/065-AI-Proxy-Plugin.md#get-a-chatgpt-api-key).
 
 :::
+
 
 This lab tests a Kong API Gateway deployment using a FastAPI endpoint. To simplify, both the containerized Kong API Gateway and the FastAPI endpoint are installed locally on a Windows 10 machine. A Docker Compose file is used to deploy Kong, along with other applications like Prometheus, Zipkin, the ELK Stack, and more.
 
