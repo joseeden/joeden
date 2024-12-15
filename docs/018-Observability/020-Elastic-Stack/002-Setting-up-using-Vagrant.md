@@ -1,5 +1,5 @@
 ---
-title: "Setting up Elastic using Vagrant"
+title: "Setting up Elastic"
 description: "Setting up Elastic Stack using Vagrant"
 tags: 
 - Linux
@@ -146,5 +146,29 @@ On Node1, perform the steps below:
     ```bash
     sudo systemctl daemon-reload
     sudo systemctl enable --now elasticsearch.service
+    sudo systemctl status elasticsearch.service 
+    ```
+
+
+## Tune Down the Memory (Optional)
+
+Since we're using virtual machines on a Windows computer, we can set the memory limit used by Elasticsearch. 
+
+1. Login to Node1 and edit the config file:
+
+    ```bash
+    sudo vi /etc/default/elasticsearch
+    ```
+
+2. Set the max and minimum memory to 512MB. Save afterwards.
+
+    ```bash
+    ES_JAVA_OPTS="-Xms512m -Xmx512m"
+    ```
+
+3. Restart the service.
+
+    ```bash
+    sudo systemctl restart elasticsearch.service 
     sudo systemctl status elasticsearch.service 
     ```
