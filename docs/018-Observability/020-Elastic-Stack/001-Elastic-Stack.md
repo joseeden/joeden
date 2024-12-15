@@ -42,7 +42,6 @@ In recent years, Elastic has shifted focus to direct integrations, reducing depe
   - A newer, versatile log collection and processing tool.  
   - Optimized for high-performance data pipelines.  
   - Often used as an alternative to Logstash in modern deployments.  
-  - Integrates with various outputs, including Elasticsearch and cloud platforms.  
 
 ## Centralized Logging  
 
@@ -56,3 +55,37 @@ With Kibana, we can enable filtering, complex queries, and data visualization.
 
   - Search for keywords like "error" to pinpoint issues.  
   - Visualize patterns and spikes for faster insights.  
+
+## Elastic Agent 
+
+Elastic Stack provides powerful tools for collecting, processing, storing, and analyzing data. Modern setups often use **Elastic Agent** for data ingestion, with Beats or Logstash as complementary tools.  
+
+- **Elastic Agent**:  
+  - Simplifies data ingestion and acts as a wrapper around Beats.  
+  - Provides an integrated method to ship data to Elasticsearch.  
+
+- **Beats**:  
+  - Lightweight tools focused on specific data types.
+  - Filebeat for log files, Metricbeat for metrics.
+  - Includes official Elastic-maintained Beats and community-developed options.  
+
+While Elastic has moved away from requiring **Logstash**, it remains useful for advanced data transformations.  
+
+  - Converts plain text logs into structured data objects for Elasticsearch.  
+  - Resource-intensive but capable of processing complex transformations.  
+
+## Elasticsearch Clustering
+
+Elasticsearch uses clusters to distribute data across shards for redundancy and scalability.  
+
+  - It stores and indexes data and makes it searchable.  
+  - Enables efficient storage and retrieval, even in degraded states.  
+
+## Kibana as Frontend
+
+Kibana serves as the Elastic Stack's front end and enables interaction with data.  
+
+  - Supports ad hoc searches, visualizations, and dashboards.  
+  - Includes features for observability and security (some require paid versions).  
+
+In recent updates, Kibana has evolved into a central UI for managing and configuring the Elastic Stack, streamlining operations.  
