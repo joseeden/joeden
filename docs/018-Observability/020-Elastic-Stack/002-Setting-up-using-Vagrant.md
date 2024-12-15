@@ -158,20 +158,41 @@ On Node1, switch to **root** user and perform the steps below:
     Press `y` when prompted and then provide your new password.
 
     ```bash
-      
+    Please confirm that you would like to continue [y/N]y
+
+    Enter password for [elastic]:
+    Re-enter password for [elastic]:
+    Password for the [elastic] user successfully reset.      
     ```
 
 7. Verify the access:
 
-```bash
-curl -k -u elastic:<add-password>  https://localhost:9200
-```
+    ```bash
+    curl -k -u elastic:<add-password>  https://localhost:9200
+    curl -k -u elastic:elastic https://localhost:9200
+    ```
 
-Output:
+    Output:
 
-```bash
-  
-```
+    ```bash
+    {
+      "name" : "node1",
+      "cluster_name" : "elasticsearch",
+      "cluster_uuid" : "fXtr5JJZSHGcVV5p19OCqQ",
+      "version" : {
+        "number" : "8.17.0",
+        "build_flavor" : "default",
+        "build_type" : "deb",
+        "build_hash" : "2b6a7fed44faa321997703718f07ee0420804b41",
+        "build_date" : "2024-12-11T12:08:05.663969764Z",
+        "build_snapshot" : false,
+        "lucene_version" : "9.12.0",
+        "minimum_wire_compatibility_version" : "7.17.0",
+        "minimum_index_compatibility_version" : "7.0.0"
+      },
+      "tagline" : "You Know, for Search"
+    }
+    ```
 
 ## Tune Down the Memory (Optional)
 
@@ -195,3 +216,13 @@ Since we're using virtual machines on a Windows computer, we can set the memory 
     sudo systemctl restart elasticsearch.service 
     sudo systemctl status elasticsearch.service 
     ```
+
+## Configure SSL on Elasticsearch
+
+To establish the trust relationship, perform the steps below:
+
+1. Copy the certificate to the trusted certificates directory:
+
+```bash
+cp /etc/elasticsearch/certs/http_ca.crt /usr/share/ca-certificates/elastic-ca.crt 
+```
