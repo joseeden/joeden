@@ -223,7 +223,7 @@ To establish the trust relationship, perform the steps below:
 1. Copy the certificate to the trusted certificates directory:
 
     ```bash
-    cp /etc/elasticsearch/certs/http_ca.crt /usr/share/ca-certificates/elastic-ca.crt 
+    cp /usr/share/ca-certificates/elastic-ca.crt 
     ```
 
 2. If you're using Ubuntu or Debian-based system, run the command below.
