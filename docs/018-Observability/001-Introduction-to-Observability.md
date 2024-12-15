@@ -165,6 +165,25 @@ Core Web Vitals are **user experience metrics** that measure website performance
 | **First Input Delay**        | Tracks interactivity by measuring the delay in responding to the first user input.    |
 | **Cumulative Layout Shift**  | Evaluates visual stability by measuring unexpected layout shifts during loading.      |
 
+## Methods of Collecting Metrics 
+
+Metrics can be collected using different approaches depending on the system's design and monitoring needs.  
+
+- **Push Method**  
+  - Systems actively send metrics to a central monitoring server.  
+  - Ideal for applications behind firewalls or NAT.  
+  - Allows controlled, periodic data transmission.  
+
+- **Scrape Method**  
+  - A monitoring server requests metrics from systems at regular intervals.  
+  - Commonly used in environments like Prometheus.  
+  - Ensures up-to-date data by pulling it on demand.  
+
+Which method to choose? Consider the following:
+
+- The type of systems or applications
+- Scalability requirements
+- Complexity of implementation
 
 ## Service Level Concepts
 
