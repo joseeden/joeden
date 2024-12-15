@@ -116,7 +116,7 @@ This lab demonstrates how to set up the Elastic Stack using Vagrant and VirtualB
 
 ## Install Elasticsearch 8.17 
 
-On Node1, perform the steps below:
+On Node1, switch to **root** user and perform the steps below:
 
 1. Download and install the public signing key:
 
@@ -149,6 +149,29 @@ On Node1, perform the steps below:
     sudo systemctl status elasticsearch.service 
     ```
 
+6. Reset the password for the `elastic` user.
+
+    ```bash
+    /usr/share/elasticsearch/bin/elasticsearch-reset-password -i -u elastic 
+    ```
+
+    Press `y` when prompted and then provide your new password.
+
+    ```bash
+      
+    ```
+
+7. Verify the access:
+
+```bash
+curl -k -u elastic:<add-password>  https://localhost:9200
+```
+
+Output:
+
+```bash
+  
+```
 
 ## Tune Down the Memory (Optional)
 
