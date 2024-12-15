@@ -43,8 +43,68 @@ This lab demonstrates how to set up the Elastic Stack using Vagrant and VirtualB
 
 4. Run the `vagrant` command below to list the VMs:
 
+    ```bash
+    vagrant ssh-config 
+    ```
+
+    Output:
+
+    ```bash
+    Host node1
+      HostName 127.0.0.1
+      User vagrant
+      Port 2222
+      UserKnownHostsFile /dev/null
+      StrictHostKeyChecking no
+      PasswordAuthentication no
+      IdentityFile C:/virtual-machines/elastic/.vagrant/machines/node1/virtualbox/private_key
+      IdentitiesOnly yes
+      LogLevel FATAL
+      PubkeyAcceptedKeyTypes +ssh-rsa
+      HostKeyAlgorithms +ssh-rsa
+
+    Host node2
+      HostName 127.0.0.1
+      User vagrant
+      Port 2200
+      UserKnownHostsFile /dev/null
+      StrictHostKeyChecking no
+      PasswordAuthentication no
+      IdentityFile C:/virtual-machines/elastic/.vagrant/machines/node2/virtualbox/private_key
+      IdentitiesOnly yes
+      LogLevel FATAL
+      PubkeyAcceptedKeyTypes +ssh-rsa
+      HostKeyAlgorithms +ssh-rsa
+
+    Host node3
+      HostName 127.0.0.1
+      User vagrant
+      Port 2201
+      UserKnownHostsFile /dev/null
+      StrictHostKeyChecking no
+      PasswordAuthentication no
+      IdentityFile C:/virtual-machines/elastic/.vagrant/machines/node3/virtualbox/private_key
+      IdentitiesOnly yes
+      LogLevel FATAL
+      PubkeyAcceptedKeyTypes +ssh-rsa
+      HostKeyAlgorithms +ssh-rsa
+
+    Host node4
+      HostName 127.0.0.1
+      User vagrant
+      Port 2202
+      UserKnownHostsFile /dev/null
+      StrictHostKeyChecking no
+      PasswordAuthentication no
+      IdentityFile C:/virtual-machines/elastic/.vagrant/machines/node4/virtualbox/private_key
+      IdentitiesOnly yes
+      LogLevel FATAL
+      PubkeyAcceptedKeyTypes +ssh-rsa
+      HostKeyAlgorithms +ssh-rsa      
+    ```
 
 4. Open VirtualBox. You should see all VMs running.
 
     ![](/img/docs/12152021-vm-setup-virtualbox-vagrant.png)
+
 
