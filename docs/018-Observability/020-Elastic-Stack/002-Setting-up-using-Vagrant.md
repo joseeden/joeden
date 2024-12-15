@@ -169,7 +169,6 @@ On Node1, switch to **root** user and perform the steps below:
 
     ```bash
     curl -k -u elastic:<add-password>  https://localhost:9200
-    curl -k -u elastic:elastic https://localhost:9200
     ```
 
     Output:
@@ -223,6 +222,48 @@ To establish the trust relationship, perform the steps below:
 
 1. Copy the certificate to the trusted certificates directory:
 
-```bash
-cp /etc/elasticsearch/certs/http_ca.crt /usr/share/ca-certificates/elastic-ca.crt 
-```
+    ```bash
+    cp /etc/elasticsearch/certs/http_ca.crt /usr/share/ca-certificates/elastic-ca.crt 
+    ```
+
+2. If you're using Ubuntu or Debian-based system, run the command below.
+
+    ```bash
+    dpkg-reconfigure ca-certificates
+    ```
+
+4.  When prompted, click Yes. 
+
+![](/img/docs/12152024-Observability-elastic-config-ssl.png)
+
+4. Select the copied certificate by pressing spacebar > Enter 
+
+![](/img/docs/12152024-Observability-elastic-config-ssl-2.png)
+
+5. Verify that the SSL certificate works.
+
+    ```bash
+    curl -u elastic:<add-password>  https://localhost:9200
+    ```
+
+    Output:
+
+    ```bash
+    {
+      "name" : "node1",
+      "cluster_name" : "elasticsearch",
+      "cluster_uuid" : "fXtr5JJZSHGcVV5p19OCqQ",
+      "version" : {
+        "number" : "8.17.0",
+        "build_flavor" : "default",
+        "build_type" : "deb",
+        "build_hash" : "2b6a7fed44faa321997703718f07ee0420804b41",
+        "build_date" : "2024-12-11T12:08:05.663969764Z",
+        "build_snapshot" : false,
+        "lucene_version" : "9.12.0",
+        "minimum_wire_compatibility_version" : "7.17.0",
+        "minimum_index_compatibility_version" : "7.0.0"
+      },
+      "tagline" : "You Know, for Search"
+    }
+    ```
