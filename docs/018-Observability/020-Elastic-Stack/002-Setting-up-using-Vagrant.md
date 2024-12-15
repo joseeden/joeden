@@ -103,8 +103,48 @@ This lab demonstrates how to set up the Elastic Stack using Vagrant and VirtualB
       HostKeyAlgorithms +ssh-rsa      
     ```
 
-4. Open VirtualBox. You should see all VMs running.
+5. Open VirtualBox. You should see all VMs running.
 
     ![](/img/docs/12152021-vm-setup-virtualbox-vagrant.png)
 
+6. To login to the node, run:
 
+    ```bash
+    vagrant ssh node1 
+    ```
+
+
+## Install Elasticsearch 8.17 
+
+On Node1, perform the steps below:
+
+1. Download and install the public signing key:
+
+    ```bash
+    wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
+    ```
+
+2. Install the `apt-transport-https` package on Debian before proceeding:
+
+    ```bash
+    sudo apt-get install apt-transport-https
+    ```
+
+3. Save the repository definition to `/etc/apt/sources.list.d/elastic-8.x.list:`
+
+    ```bash
+    echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee /etc/apt/sources.list.d/elastic-8.x.list 
+    ```
+4. Install the Elasticsearch Debian package
+
+    ```bash
+    sudo apt-get update && sudo apt-get install elasticsearch 
+    ```
+
+5. Enable and start the service.
+
+    ```bash
+    sudo systemctl daemon-reload
+    sudo systemctl enable --now elasticsearch.service
+    sudo systemctl status elasticsearch.service 
+    ```
