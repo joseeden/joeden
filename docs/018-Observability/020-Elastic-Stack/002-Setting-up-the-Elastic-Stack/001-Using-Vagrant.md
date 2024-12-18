@@ -1,5 +1,5 @@
 ---
-title: "Setting up Elastic"
+title: "Setting up Elastic Stack using Vagrant"
 description: "Setting up Elastic Stack using Vagrant"
 tags: 
 - Linux
@@ -8,7 +8,7 @@ tags:
 - APM
 - Elasticsearch
 - DevOps
-sidebar_position: 2
+sidebar_position: 1
 last_update:
   date: 3/28/2023
 ---
@@ -20,13 +20,18 @@ This lab demonstrates how to set up the Elastic Stack using Vagrant and VirtualB
 
 ## Pre-requisites 
 
-- Install VirtualBox 
-- Install Vagrant on Windows 
+- [Install VirtualBox](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-Vagrant.md#virtualbox)
+- [Install Vagrant on Windows](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-Vagrant.md#install-vagrant-on-windows)
 
 ## Setup the Virtual Machines 
 
-1. Download the Vagrant files here:
+1. Download the Vagrant files here: [Project Files](https://github.com/joseeden/joeden/tree/master/docs/018-Observability/100-Project-Files)
 2. Unzip the Files. Open Powershell and proceed to Elastic directory.
+
+    ```bash
+    cd elastic 
+    ```
+
 3. Run the command below. This will create four virtual machines in VirtualBox
 
     ```bash
@@ -127,7 +132,7 @@ On Node1, switch to **root** user and perform the steps below:
 2. Install the `apt-transport-https` package on Debian before proceeding:
 
     ```bash
-    sudo apt-get install apt-transport-https
+    sudo apt-get install -y apt-transport-https
     ```
 
 3. Save the repository definition to `/etc/apt/sources.list.d/elastic-8.x.list:`
@@ -135,10 +140,11 @@ On Node1, switch to **root** user and perform the steps below:
     ```bash
     echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee /etc/apt/sources.list.d/elastic-8.x.list 
     ```
+
 4. Install the Elasticsearch Debian package
 
     ```bash
-    sudo apt-get update && sudo apt-get install elasticsearch 
+    sudo apt-get update && sudo apt-get install -y elasticsearch 
     ```
 
 5. Enable and start the service.
@@ -175,10 +181,10 @@ On Node1, switch to **root** user and perform the steps below:
 
     ```bash
     {
-      "name" : "node1",
-      "cluster_name" : "elasticsearch",
-      "cluster_uuid" : "fXtr5JJZSHGcVV5p19OCqQ",
-      "version" : {
+    "name" : "node1",
+    "cluster_name" : "elasticsearch",
+    "cluster_uuid" : "KgmIzJXSRBaUMxIaIGBZlg",
+    "version" : {
         "number" : "8.17.0",
         "build_flavor" : "default",
         "build_type" : "deb",
@@ -188,8 +194,8 @@ On Node1, switch to **root** user and perform the steps below:
         "lucene_version" : "9.12.0",
         "minimum_wire_compatibility_version" : "7.17.0",
         "minimum_index_compatibility_version" : "7.0.0"
-      },
-      "tagline" : "You Know, for Search"
+    },
+    "tagline" : "You Know, for Search"
     }
     ```
 
@@ -223,7 +229,7 @@ To establish the trust relationship, perform the steps below:
 1. Copy the certificate to the trusted certificates directory:
 
     ```bash
-    cp /usr/share/ca-certificates/elastic-ca.crt 
+    cp /etc/elasticsearch/certs/http_ca.crt /usr/share/ca-certificates/elastic-ca.crt 
     ```
 
 2. If you're using Ubuntu or Debian-based system, run the command below.
@@ -250,10 +256,10 @@ To establish the trust relationship, perform the steps below:
 
     ```bash
     {
-      "name" : "node1",
-      "cluster_name" : "elasticsearch",
-      "cluster_uuid" : "fXtr5JJZSHGcVV5p19OCqQ",
-      "version" : {
+    "name" : "node1",
+    "cluster_name" : "elasticsearch",
+    "cluster_uuid" : "KgmIzJXSRBaUMxIaIGBZlg",
+    "version" : {
         "number" : "8.17.0",
         "build_flavor" : "default",
         "build_type" : "deb",
@@ -263,7 +269,9 @@ To establish the trust relationship, perform the steps below:
         "lucene_version" : "9.12.0",
         "minimum_wire_compatibility_version" : "7.17.0",
         "minimum_index_compatibility_version" : "7.0.0"
-      },
-      "tagline" : "You Know, for Search"
+    },
+    "tagline" : "You Know, for Search"
     }
     ```
+
+## 

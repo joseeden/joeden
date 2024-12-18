@@ -14,54 +14,70 @@ last_update:
 ---
 
 
-## Elasticsearch and its Evolution  
+## Overview  
 
-Elasticsearch is a distributed search and analytics engine, originally built for full-text search but now widely used for log analysis, metrics monitoring, and real-time data processing.
+Elasticsearch is a distributed search and analytics engine initially designed for full-text search, now widely used for log analysis, metrics monitoring, and real-time data processing.  
 
-- Initially designed for search, now supports analytics and logging.
-- Built on the **Apache Lucene** library for indexing and search.
-- A key component of the **ELK stack** for log and metric management.
+- Built on **Apache Lucene** for indexing and search.  
+- Core of the **ELK stack** for managing logs and metrics.  
 
-Timeline:
+## Timeline  
 
-1. **2010**: Created by Shay Banon, released as open-source.
-2. **2012**: Version 0.9 introduced multi-tenancy and clustering.
-3. **2013**: Elastic was founded, Elasticsearch 1.0 released.
-4. **2015**: Widely adopted for log aggregation in the **ELK stack**.
-5. **2016**: X-Pack added for security and monitoring.
-6. **2020**: Introduced machine learning, enhancing its capabilities.
+1. **2010**: Created by Shay Banon, released as open source.  
+2. **2012**: Added multi-tenancy and clustering (v0.9).  
+3. **2013**: Elastic founded; Elasticsearch 1.0 released.  
+4. **2015**: Popular for log aggregation in the **ELK stack**.  
+5. **2016**: X-Pack introduced for security and monitoring.  
+6. **2020**: Machine learning capabilities added.  
 
 ## Logical Concepts 
 
-Elasticsearch organizes and processes data through key logical concepts, making it efficient for search and analytics.
+Elasticsearch organizes and processes data through key logical concepts, which makes it efficient for search and analytics.
 
-- **Documents**  
-    - Represent the items you're searching for.  
-    - Each document has a unique ID and type.  
-    - Stores data in JSON format for flexibility.  
-    - Serves as the smallest unit of data in Elasticsearch.  
+### Documents  
 
-- **Index**  
-    - Groups documents to enable searching within a collection.  
-    - Acts as a database for storing similar types of data.  
-    - Supports multiple indices for organizing data.  
-    - **Inverted Indices**: Allows fast full-text search by mapping terms to document locations.  
-    - **Mappings**: Define schemas for the data structure within an index.  
+Data is stored as JSON **documents**, the smallest unit in Elasticsearch.  
 
-## How Elasticsearch Scales  
+- Each document is a unit of search and retrieval.  
+- Each document has a unique ID and type.  
+- Grouped into **indices** with unique IDs and types.  
 
-Elasticsearch scales by distributing data across shards. Documents are hashed to a specific shard, ensuring efficient data storage and retrieval.  
+### Indexing  
 
-- An index is divided into smaller units called shards.  
-- Each shard can reside on a different node within a cluster.  
-- Every shard operates as an independent Lucene index.  
+Indexing stores documents for fast retrieval using inverted indices.  
 
-This design allows shards to spread across multiple machines in a cluster. As demand grows, additional machines can be added to the cluster, and more shards can be created to balance the load efficiently.
+- Acts as a database for similar data types.  
+- Supports multiple indices for organization.  
 
-- Elasticsearch supports replication, ensuring data is available even if a node fails.  
-- Queries are distributed across shards for faster search and retrieval.  
-- Horizontal scaling is seamless, enabling easy capacity expansion.  
-- The system ensures balanced resource utilization across nodes.
+When a document is indexed, Elasticsearch creates an inverted index which allows for fast, full-text searches.
+
+### Searching 
+
+Elasticsearch uses **Lucene** for efficient queries.  
+
+- Supports term, match, and boolean queries.  
+- Optimized for both simple and complex searches.  
+
+### Mapping 
+
+Mapping specifies how documents and their fields are stored, indexed, and queried in Elasticsearch.  
+
+- Similar to a schema in SQL, defining data types and field properties.  
+- Ensures efficient storage and accurate search results.  
+
+## Scalability  
+
+Elasticsearch is designed to scale horizontally, which means it can grow by adding more nodes to the cluster. It scales by distributing data across shards which ensures efficient storage and retrieval.
+
+- Indexes are split into smaller units called **shards**
+- Each shard functions as an independent Lucene index.
+- Shards are spread across multiple nodes in a cluster
+
+As demand increases, additional nodes can be added to the cluster, and more shards can be created for better scaling.
+
+- Replication ensures data is available even if a node fails.  
+- Queries are spread across shards for faster search and retrieval.  
+- Horizontal scaling, easy capacity expansion.  
 
 
 ## Primary and Replica Shards 
@@ -87,7 +103,6 @@ If **Node-1** goes down, Elasticsearch promotes a replica from **Node-2** or **N
 - Requests are distributed round-robin to balance the load.  
 - More replicas increase read capacity.  
 - Write capacity is limited by the number of primary shards.  
-
 
 
 ## Number of Primary Shards cannot be changed later
