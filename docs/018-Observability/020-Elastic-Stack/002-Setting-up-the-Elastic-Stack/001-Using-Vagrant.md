@@ -355,13 +355,13 @@ Download the file below. This bulk indexing file contains lines from Shakespeare
 Run the following command to index the data into Elasticsearch:
 
 ```bash
-curl -u elastic:elastic -H 'Content-Type: application/json' -XPOST 'localhost:9200/shakespeare/_bulk?pretty' --data-binary @shakespeare_7.0.json
+curl -u elastic:<password> -H 'Content-Type: application/json' -XPOST 'localhost:9200/shakespeare/_bulk?pretty' --data-binary @shakespeare_7.0.json
 ```
 
 After indexing, you can search for the famous line "to be or not to be" using this query:
 
 ```bash
-curl -u elastic:elastic -H 'Content-Type: application/json' -XGET \
+curl -u elastic:<password> -H 'Content-Type: application/json' -XGET \
 'https://127.0.0.1:9200/shakespeare/_search?pretty' -d '
 {
   "query": {
