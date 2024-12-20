@@ -25,7 +25,7 @@ This lab demonstrates how to set up the Elastic Stack using Vagrant and VirtualB
 
 ## Setup the Virtual Machines 
 
-1. Download the Vagrant files here: [Project Files](https://github.com/joseeden/joeden/tree/master/docs/018-Observability/100-Project-Files)
+1. Download the Vagrant files here: [Project Files](/assets/elastic-stack/elastic.zip)
 2. Unzip the Files. Open Powershell and proceed to Elastic directory.
 
     ```bash
@@ -147,7 +147,22 @@ On Node1, switch to **root** user and perform the steps below:
     sudo apt-get update && sudo apt-get install -y elasticsearch 
     ```
 
-5. Enable and start the service.
+5. Configure Elasticsearch configuration file.
+
+    ```bash
+    sudo vi vi /etc/elasticsearch/elasticsearch.yml 
+    ```
+
+    Specify the following:
+
+    ```bash
+    node.name: node-1
+    network.host: 0.0.0.0
+    discovery.seed_hosts: ["127.0.0.1"]
+    cluster.initial_master_nodes: ["node-1"] 
+    ```
+
+6. Enable and start the service.
 
     ```bash
     sudo systemctl daemon-reload
@@ -155,7 +170,7 @@ On Node1, switch to **root** user and perform the steps below:
     sudo systemctl status elasticsearch.service 
     ```
 
-6. Reset the password for the `elastic` user.
+7. Reset the password for the `elastic` user.
 
     ```bash
     /usr/share/elasticsearch/bin/elasticsearch-reset-password -i -u elastic 
@@ -171,7 +186,7 @@ On Node1, switch to **root** user and perform the steps below:
     Password for the [elastic] user successfully reset.      
     ```
 
-7. Verify the access:
+8. Verify the access:
 
     ```bash
     curl -k -u elastic:<add-password>  https://localhost:9200
@@ -181,9 +196,9 @@ On Node1, switch to **root** user and perform the steps below:
 
     ```bash
     {
-    "name" : "node1",
+    "name" : "elasticsearch",
     "cluster_name" : "elasticsearch",
-    "cluster_uuid" : "KgmIzJXSRBaUMxIaIGBZlg",
+    "cluster_uuid" : "Lmfoq9mbRBqis3GvrLVTZw",
     "version" : {
         "number" : "8.17.0",
         "build_flavor" : "default",
@@ -198,6 +213,16 @@ On Node1, switch to **root** user and perform the steps below:
     "tagline" : "You Know, for Search"
     }
     ```
+
+9. Another way to verify access: Open a web browser in your computer (host) and navigate to:
+
+    ```bash
+    https://localhost:9200/ 
+    ```
+
+    It will prompt you to enter the username and password. If successful, you should see the same output.
+
+    ![](/img/docs/12202024-es-port-forwarding-works.png)
 
 ## Tune Down the Memory (Optional)
 
@@ -256,9 +281,9 @@ To establish the trust relationship, perform the steps below:
 
     ```bash
     {
-    "name" : "node1",
+    "name" : "elasticsearch",
     "cluster_name" : "elasticsearch",
-    "cluster_uuid" : "KgmIzJXSRBaUMxIaIGBZlg",
+    "cluster_uuid" : "Lmfoq9mbRBqis3GvrLVTZw",
     "version" : {
         "number" : "8.17.0",
         "build_flavor" : "default",
@@ -274,4 +299,113 @@ To establish the trust relationship, perform the steps below:
     }
     ```
 
-## 
+## Sample Search Index 
+
+Create the Shakespeare dataset below. This will be used to test how Elasticsearch index data with various fields.
+
+:::info 
+
+This is taken from [Sundog's Elasticsearch Course. ](https://www.sundog-education.com/elasticsearch/). The structure has been update for Elasticsearch 8
+
+:::
+
+
+```json title="shakes-mapping.json "
+{
+  "mappings": {
+    "properties": {
+      "speaker": {
+        "type": "keyword"
+      },
+      "play_name": {
+        "type": "keyword"
+      },
+      "line_id": {
+        "type": "integer"
+      },
+      "speech_number": {
+        "type": "integer"
+      }
+    }
+  }
+}
+```
+
+
+Submit the mapping to Elasticsearch.
+
+```bash
+curl -u elastic:<password> \
+-k -X PUT -H 'Content-Type: application/json' \
+https://localhost:9200/shakespeare --data-binary @shakes-mapping.json -X PUT
+```
+
+It should return:
+
+```bash
+{"acknowledged":true,"shards_acknowledged":true,"index":"shakespeare"} 
+```
+
+## Sample Bulk Indexing 
+
+Download the file below. This bulk indexing file contains lines from Shakespeare's plays, formatted for compatibility with Elasticsearch's Bulk API.
+
+- [shakespeare_8.0.json](/assets/elastic-stack/shakespeare_8.0.json)
+
+Run the following command to index the data into Elasticsearch:
+
+```bash
+curl -u elastic:elastic -H 'Content-Type: application/json' -XPOST 'localhost:9200/shakespeare/_bulk?pretty' --data-binary @shakespeare_7.0.json
+```
+
+After indexing, you can search for the famous line "to be or not to be" using this query:
+
+```bash
+curl -u elastic:elastic -H 'Content-Type: application/json' -XGET \
+'https://127.0.0.1:9200/shakespeare/_search?pretty' -d '
+{
+  "query": {
+    "match_phrase": {
+      "text_entry": "to be or not to be"
+    }
+  }
+}' 
+```
+
+If the data was indexed correctly, the query should return the following result:
+
+```bash
+{
+  "took" : 18,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : {
+      "value" : 1,
+      "relation" : "eq"
+    },
+    "max_score" : 13.889601,
+    "hits" : [
+      {
+        "_index" : "shakespeare",
+        "_id" : "34229",
+        "_score" : 13.889601,
+        "_source" : {
+          "type" : "line",
+          "line_id" : 34230,
+          "play_name" : "Hamlet",
+          "speech_number" : 19,
+          "line_number" : "3.1.64",
+          "speaker" : "HAMLET",
+          "text_entry" : "To be, or not to be: that is the question:"
+        }
+      }
+    ]
+  }
+}  
+```
