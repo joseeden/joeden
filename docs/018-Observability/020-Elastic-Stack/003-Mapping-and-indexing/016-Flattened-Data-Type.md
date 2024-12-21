@@ -149,7 +149,12 @@ curl -s -u elastic:<password> \
 
 As a recap, an Elasticsearch cluster consists of a master node that sends the latest cluster state to all other nodes. When a node receives the updated state, it acknowledges the master node.
 
+<div class="img-center"> 
+
 ![](/img/docs/12222024-es-cluster-state.png)
+
+</div>
+
 
 When new fields are added to documents, Elasticsearch creates new mappings, which also update the cluster state. Regularly adding fields can cause the cluster state to grow, leading to delays and performance issues.
 
