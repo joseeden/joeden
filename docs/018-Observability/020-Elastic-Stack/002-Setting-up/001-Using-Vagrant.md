@@ -1,5 +1,5 @@
 ---
-title: "Setting up Elastic Stack using Vagrant"
+title: "Using Vagrant  and VirtualBox"
 description: "Setting up Elastic Stack using Vagrant"
 tags: 
 - Linux
