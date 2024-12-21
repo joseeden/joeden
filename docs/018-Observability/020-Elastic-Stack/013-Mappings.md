@@ -41,6 +41,7 @@ curl -XPUT https://127.0.0.1:9200/movies -d '
 
 Mappings define how data is structured and optimized for Elasticsearch.
 
+
 ### Field Types
 
 Field types specify the format for each field in Elasticsearch. 
@@ -100,6 +101,8 @@ curl -XPUT https://127.0.0.1:9200/movies -d '
 '
 ```
 
+## Sample Field Analyzers
+
 Field analyzers can include components like character filters, tokenizers, and token filters.
 
 - **Character Filters**  
@@ -115,3 +118,23 @@ Field analyzers can include components like character filters, tokenizers, and t
   - Process tokens after tokenization.  
   - Lower-casing, stemming, synonyms, stopwords
   - Examples: remove stop words, modify token case, etc.
+
+Common choices for analyzers:
+
+- **Standard**
+
+  - Split on word boundaries, remove punctuation, lowercases
+  - Good choice if language is unknown 
+
+- **Simple**
+
+  - Splits on anything that isn't a letter, and lowercase 
+
+- **Whitespace**
+
+  - Splits on whitespaces but don't lowercase
+
+- **Language**
+
+  - Example: English
+  - Accounts for language-specific stopwords and stemming.
