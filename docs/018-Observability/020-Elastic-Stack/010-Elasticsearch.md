@@ -65,6 +65,57 @@ Mapping specifies how documents and their fields are stored, indexed, and querie
 - Similar to a schema in SQL, defining data types and field properties.  
 - Ensures efficient storage and accurate search results.  
 
+### Inverted Index 
+
+An inverted index is a key data structure used in Elasticsearch for fast text searching. It breaks text into terms and maps each term to the documents where it appears, along with its frequency.
+
+As an example:
+
+```plaintext title="Star Wars"
+The power of the Force will be with you always.
+```
+
+```plaintext title="Spiderman"
+With great power comes great responsibility.
+```
+
+Elasticsearch tokenizes these documents into terms and creates a search index.
+
+| Word          | Appears in Document |
+|---------------|---------------------|
+| power         | 1, 2                |
+| great         | 2                   |
+| comes         | 2                   |
+| responsibility | 2                   |
+| force         | 1                   |
+| will          | 1                   |
+| be            | 1                   |
+| with          | 1                   |
+| you           | 1                   |
+| always        | 1                   |
+
+## Term importance
+
+Below are some key concepts used to measure the importance of these terms in search indexing.
+
+- **TF-IDF**  
+  - **Term Frequency** (TF) and **Inverse Document Frequency** (IDF).
+  - Measures word importance in a document.  
+
+- **Term Frequency**  
+  - How often a word appears in a **given** document.  
+  - More frequent words are considered more important.
+
+- **Document Frequency**  
+  - How often a word appears in a **all** documents.  
+  - Counts how many documents contain a specific word.  
+  - Helps identify common and rare terms.
+
+- **Term Frequency/Document Frequency**  
+  - The ratio of **Term Frequency** to **Document Frequency**.  
+  - Highlights important terms in one document, rare across others.
+
+
 ## Scalability  
 
 Elasticsearch is designed to scale horizontally, which means it can grow by adding more nodes to the cluster. It scales by distributing data across shards which ensures efficient storage and retrieval.
