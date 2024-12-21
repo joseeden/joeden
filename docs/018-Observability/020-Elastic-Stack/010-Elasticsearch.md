@@ -65,6 +65,7 @@ Mapping specifies how documents and their fields are stored, indexed, and querie
 - Similar to a schema in SQL, defining data types and field properties.  
 - Ensures efficient storage and accurate search results.  
 
+For more information, please see [Mappings.](/docs/018-Observability/020-Elastic-Stack/013-Mappings.md)
 
 ## Scalability  
 
