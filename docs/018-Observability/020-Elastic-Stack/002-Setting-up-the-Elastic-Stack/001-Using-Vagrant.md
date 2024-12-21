@@ -25,7 +25,7 @@ This lab demonstrates how to set up the Elastic Stack using Vagrant and VirtualB
 
 ## Setup the Virtual Machines 
 
-1. Download the Vagrant files here: [Project Files](/assets/elastic-stack/elastic.zip)
+1. Download the Vagrant files here: [Project Files](@site/assets/elastic-stack/elastic.zip)
 2. Unzip the Files. Open Powershell and proceed to Elastic directory.
 
     ```bash
@@ -350,7 +350,7 @@ It should return:
 
 Download the file below. This bulk indexing file contains lines from Shakespeare's plays, formatted for compatibility with Elasticsearch's Bulk API.
 
-- [shakespeare_8.0.json](/assets/elastic-stack/shakespeare_8.0.json)
+- [shakespeare_8.0.json](@site/assets/elastic-stack/shakespeare_8.0.json)
 
 Run the following command to index the data into Elasticsearch:
 
