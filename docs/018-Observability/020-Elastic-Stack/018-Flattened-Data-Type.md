@@ -324,8 +324,6 @@ The response shows that since the field is flattened, it doesn't allow partial s
 ```
 
 
-## Supported Queries 
-
 ## Supported Queries
 
 Below are supported queries for the flattened data type:
