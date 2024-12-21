@@ -66,7 +66,7 @@ Output:
 } 
 ```
 
-We can update this document to "Interstellar" and restrict the update to this sequence number, which in this case is `7`. If someone else try to update the document, they will get fail message.
+We can update this document to "Interstellar" while restricting the update to the sequence number `7`. If someone else attempts to update the document, they will receive an error.
 
 ```bash
 curl -s -u elastic:elastic \
@@ -77,10 +77,9 @@ curl -s -u elastic:elastic \
     "title": "Interstellar",
     "year": 2014
 }' | jq
- 
 ```
 
-It will return the seult as "updated" and with a new sequence number.
+The result will indicate that the document was "updated" and show a new sequence number.
 
 ```json
 {
@@ -98,7 +97,7 @@ It will return the seult as "updated" and with a new sequence number.
 } 
 ```
 
-If we try to re-run the same `XPUT` request, we'll be faced with an error.
+If we attempt to rerun the same `XPUT` request, an error will occur.
 
 ```json
 {
@@ -122,5 +121,91 @@ If we try to re-run the same `XPUT` request, we'll be faced with an error.
 } 
 ```
 
+## Using Retry 
+
+First, retrieve the document and take note of the current `version` and `sequence number`.
+
+```bash
+curl -u elastic:elastic \
+-H 'Content-Type: application/json' \
+-XGET https://localhost:9200/movies/_doc/109487?pretty | jq
+```
+
+Output:
+
+```json 
+{
+  "_index": "movies",
+  "_id": "109487",
+  "_version": 9,
+  "_seq_no": 14,
+  "_primary_term": 1,
+  "found": true,
+  "_source": {
+    "genre": [
+      "IMAX",
+      "Sci-Fi"
+    ],
+    "title": "Interstellar",
+    "year": 2014
+  }
+}
+```
+
+Open two terminals. In the first terminal, paste the following but do not execute it yet.
+
+```bash
+curl -s -u elastic:elastic \
+-H 'Content-Type: application/json' \
+-XPOST "https://localhost:9200/movies/_update/109487?retry_on_conflict=5" \
+-d '{
+    "doc": {
+        "title": "Terminator 2: Judgment Day",
+        "year": 1991    
+        }
+}' | jq
+```
+
+On the second terminal, paste the following command to update it to a different movie title but still use the `retry_on_conflict` parameter. Run the commands in both terminals consecutively.
 
 
+```bash
+curl -s -u elastic:elastic \
+-H 'Content-Type: application/json' \
+-XPOST "https://localhost:9200/movies/_update/109487?retry_on_conflict=5" \
+-d '{
+    "doc": {
+        "title": "Terminator 3: Rise of the Machines",
+        "year": 2003    
+        }
+}' | jq
+```
+
+Both requests will return similar outputs. To check if both succeeded, retrieve the document again using the `XGET` command.
+
+```bash
+curl -s -u elastic:elastic \
+-H 'Content-Type: application/json' \
+-XGET https://localhost:9200/movies/_doc/109487?pretty
+```
+
+The document have been updated twice, as seen in the version number (previously 9, now 11).
+
+```json
+{
+  "_index": "movies",
+  "_id": "109487",
+  "_version": 11,
+  "_seq_no": 16,
+  "_primary_term": 1,
+  "found": true,
+  "_source": {
+    "genre": [
+      "IMAX",
+      "Sci-Fi"
+    ],
+    "title": "Terminator 3: Rise of the Machines",
+    "year": 2003
+  }
+} 
+```
