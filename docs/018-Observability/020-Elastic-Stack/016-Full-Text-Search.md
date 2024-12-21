@@ -13,9 +13,18 @@ last_update:
   date: 3/28/2023
 ---
 
+## Overview
 
-## Using Analyzers to Cotrol Full-Text Search in Elasticsearch
+Analyzers in Elasticsearch help to control how text is indexed and searched. They can be customized for exact or partial matches to improve search accuracy and relevance.
 
-add simplified short intro...2 sentences..
+- **Exact Match**
+    - Matches the exact text.
+    - Use keyword mapping instead of text.
+    - Ideal for precise searches like product IDs.
 
+- **Partial Match**
+    - Matches parts of the text.
+    - Useful for flexible searches like titles or descriptions.
+
+## Searching Keywords 
 
