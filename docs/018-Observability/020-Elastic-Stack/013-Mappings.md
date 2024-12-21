@@ -37,12 +37,8 @@ curl -XPUT https://127.0.0.1:9200/movies -d '
 '
 ```
 
-## Common Mappings 
 
-Mappings define how data is structured and optimized for Elasticsearch.
-
-
-### Field Types
+## Field Types
 
 Field types specify the format for each field in Elasticsearch. 
 
@@ -63,7 +59,7 @@ curl -XPUT https://127.0.0.1:9200/movies -d '
 '
 ```
 
-### Field Index
+## Field Index
 
 Field indexing controls how data is indexed and searched. 
 
@@ -82,7 +78,7 @@ curl -XPUT https://127.0.0.1:9200/movies -d '
 '
 ```
 
-### Field Analyzer
+## Field Analyzer
 
 Field analyzers define how text is processed for indexing and search, affecting how documents are stored and queried. 
 
