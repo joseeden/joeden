@@ -8,7 +8,7 @@ tags:
 - APM
 - Elasticsearch
 - DevOps
-sidebar_position: 16
+sidebar_position: 14
 last_update:
   date: 3/28/2023
 ---
@@ -30,7 +30,7 @@ Analyzers in Elasticsearch help to control how text is indexed and searched. The
 
 :::info 
 
-The example below is tested on a running Elasticsearch 8, and uses a dataset containing movie ratings. For more information, please see [Importing by Bulk.](/docs/018-Observability/020-Elastic-Stack/014-Updating-Data.md#importing-by-bulk)
+The example below is tested on a running Elasticsearch 8, and uses a dataset containing movie ratings. For more information, please see [Importing by Bulk.](/docs/018-Observability/020-Elastic-Stack/003-Mapping-and-indexing/012-Updating-Data.md#importing-by-bulk)
 
 :::
 

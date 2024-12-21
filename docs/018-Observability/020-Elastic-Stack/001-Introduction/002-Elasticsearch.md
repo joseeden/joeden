@@ -8,7 +8,7 @@ tags:
 - APM
 - Elasticsearch
 - DevOps
-sidebar_position: 10
+sidebar_position: 2
 last_update:
   date: 3/28/2023
 ---
@@ -65,7 +65,7 @@ Mapping specifies how documents and their fields are stored, indexed, and querie
 - Similar to a schema in SQL, defining data types and field properties.  
 - Ensures efficient storage and accurate search results.  
 
-For more information, please see [Mappings.](/docs/018-Observability/020-Elastic-Stack/013-Mappings.md)
+For more information, please see [Mappings.](/docs/018-Observability/020-Elastic-Stack/003-Mapping-and-indexing/011-Mappings.md)
 
 ## Scalability  
 
