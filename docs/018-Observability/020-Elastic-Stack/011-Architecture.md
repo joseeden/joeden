@@ -1,5 +1,5 @@
 ---
-title: "Elasticsearch Architecture"
+title: "Architecture"
 description: "Elasticsearch Archietcture"
 tags: 
 - Linux
