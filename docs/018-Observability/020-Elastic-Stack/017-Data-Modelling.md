@@ -32,7 +32,11 @@ Normalized data reduces redundancy by dividing information into smaller, related
 
 Consider the diagram below. 
 
+<div class="img-center"> 
+
 ![](/img/docs/12222024-Observability-normalized-data.png)
+
+</div>
 
 This diagram shows how normalized data minimizes duplication:  
 
@@ -53,7 +57,11 @@ Denormalized data combines related information into a single document for faster
 
 Using the previous example, the title is included in every rating record. This allows retrieving both the rating and title in one query.
 
+<div class="img-center"> 
+
 ![](/img/docs/12222024-Observability-denormalized-data.png)
+
+</div>
 
 As shown, titles are duplicated, which uses more storage space, but the benefit is that all required information can be retrieved in a single query.
 

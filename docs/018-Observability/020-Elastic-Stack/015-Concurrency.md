@@ -25,7 +25,7 @@ When two clients send requests to update the same document in an index simultane
 
 Elasticsearch uses a sequence number and primary term to handle simultaneous updates to the same document. These ensure updates are applied in order to avoid conflicts between requests.  
 
-![](/img/docs/12212024-es-dealing-with-concurrency.png)
+![](/img/docs/12212024-es-dealing-with-concurrency-2.png)
 
 To automatically retry failed updates due to conflicts, use `retry_on_conflicts=N`, where `N` is the number of retries:  
 
