@@ -4,10 +4,12 @@ description: "Flattened Data Type in Elasticsearch"
 tags: 
 - Linux
 - Observability
+- DevOps
 - Monitoring 
 - APM
 - Elasticsearch
-- DevOps
+- Elastic Stack
+- ELK Stack
 sidebar_position: 16
 last_update:
   date: 3/28/2023
@@ -26,7 +28,7 @@ Download the dataset below:
 Index the dataset from the `demo-default.json` file into the Elasticsearch.
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XPUT "https://127.0.0.1:9200/demo-default/_doc/1" \
 -d @demo-default.json | jq
@@ -53,7 +55,7 @@ Output:
 Next, you can check the mappings of the `demo-default` index:
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET "https://127.0.0.1:9200/demo-default/_mapping?pretty=true" | jq 
 ```
@@ -140,7 +142,7 @@ The returned output shows the automatically assigned field types by Elasticsearc
 You can check the state of the Elasticsearch cluster using the following command:
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET "https://127.0.0.1:9200/_cluster/state?pretty=true" | jq >> es-cluster-state.json
 ```
@@ -165,7 +167,7 @@ The flattened data type allows us to index complex, nested JSON objects while ke
 First, create the index `demo-flattened`:
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XPUT https://localhost:9200/demo-flattened | jq
 ```
@@ -183,7 +185,7 @@ Output:
 Next, define the mapping for the `host` field as a flattened type:
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XPUT "https://localhost:9200/demo-flattened/_mapping" -d '{
   "properties": {
@@ -199,7 +201,7 @@ curl -s -u elastic:elastic \
 Now, index the same `demo-default.json` file from the previous example into the `demo-flattened` index:
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XPUT "https://127.0.0.1:9200/demo-flattened/_doc/1" \
 -d @demo-default.json | jq
@@ -228,7 +230,7 @@ Output;
 To verify the mapping of the `host` field, run the following command:
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET "https://127.0.0.1:9200/demo-flattened/_mapping?pretty=true" | jq 
 ```
@@ -246,7 +248,7 @@ You should see the following for the `host` field:
 Next, let's add new inner fields to the `host` field:
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -X POST "https://127.0.0.1:9200/demo-flattened/_update/1" -d '{
   "doc": {
@@ -263,7 +265,7 @@ You would expect the inner fields to be added to the mapping. However, because t
 To confirm this, check the mapping again:
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET "https://127.0.0.1:9200/demo-flattened/_mapping?pretty=true" | jq 
 ```
@@ -288,7 +290,7 @@ While flattened fields are great for structured data, they are not ideal for ful
 To demonstrate the limitation, run a query on a flattened field from the previous example:
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET "https://127.0.0.1:9200/demo-flattened/_search?pretty=true" -d'
 {

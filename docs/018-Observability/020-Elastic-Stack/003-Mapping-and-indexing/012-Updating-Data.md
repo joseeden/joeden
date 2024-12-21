@@ -4,10 +4,12 @@ description: "Updating Data in Elasticsearch"
 tags: 
 - Linux
 - Observability
+- DevOps
 - Monitoring 
 - APM
 - Elasticsearch
-- DevOps
+- Elastic Stack
+- ELK Stack
 sidebar_position: 12
 last_update:
   date: 3/28/2023

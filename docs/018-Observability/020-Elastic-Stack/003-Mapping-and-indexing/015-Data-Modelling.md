@@ -4,10 +4,12 @@ description: "Data Modelling and Parent-Child Relationships in Elasticsearch"
 tags: 
 - Linux
 - Observability
+- DevOps
 - Monitoring 
 - APM
 - Elasticsearch
-- DevOps
+- Elastic Stack
+- ELK Stack
 sidebar_position: 15
 last_update:
   date: 3/28/2023

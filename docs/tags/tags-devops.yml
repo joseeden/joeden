@@ -138,6 +138,10 @@ ELK Stack:
   label: 'ELK Stack'
   permalink: '/ELK Stack'
   description: 'Docs related to ELK Stack'  
+Elastic Stack:
+  label: 'Elastic Stack'
+  permalink: '/Elastic Stack'
+  description: 'Docs related to Elastic Stack'  
 Zipkin:
   label: 'Zipkin'
   permalink: '/Zipkin'

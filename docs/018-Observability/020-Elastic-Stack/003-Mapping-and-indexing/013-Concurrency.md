@@ -4,10 +4,12 @@ description: "Dealing with Concurrency in Elasticsearch"
 tags: 
 - Linux
 - Observability
+- DevOps
 - Monitoring 
 - APM
 - Elasticsearch
-- DevOps
+- Elastic Stack
+- ELK Stack
 sidebar_position: 13
 last_update:
   date: 3/28/2023
