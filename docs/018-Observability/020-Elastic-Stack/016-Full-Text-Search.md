@@ -37,7 +37,7 @@ The example below is tested on a running Elasticsearch 8, and uses a dataset con
 Search the index for "Star Trek" movies.
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET https://localhost:9200/movies/_search?pretty -d '
 {
@@ -108,7 +108,7 @@ Notice that this query returns documents for both "Star Trek" and "Star Wars". T
 Try another qeury. Search for movies with "sci-fi" genre.
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET https://localhost:9200/movies/_search?pretty -d '
 {
@@ -196,7 +196,7 @@ This query will return all movies with the "Sci-Fi" genre. Since the index isnâ€
 To enforce an exact match, we need to modify the index mappings. In this case, we will delete the existing index and reindex the data.
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XDELETE https://localhost:9200/movies
 ```
@@ -210,7 +210,7 @@ Output:
 Next, we re-define the mappings. The `genre` field will be of type `keyword` for exact matches, and the `title` field will use the `text` type to allow partial matches. We will also apply the English analyzer to handle stopwords and synonyms specific to the language.
 
 ```bash
-curl -u elastic:elastic \
+curl -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XPUT https://127.0.0.1:9200/movies -d '
 {
@@ -237,7 +237,7 @@ Output:
 Now, we reindex the data using the [movies.json](@site/assets/elastic-stack/movies.json) file.
 
 ```bash
-curl -u elastic:elastic \
+curl -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XPUT https://localhost:9200/_bulk?pretty \
 --data-binary @movies.json 
@@ -246,7 +246,7 @@ curl -u elastic:elastic \
 Next, search for movies with the "sci-fi" genre.
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET https://localhost:9200/movies/_search?pretty -d '
 {
@@ -284,7 +284,7 @@ Since we have set the `genre` field to `keyword` type, there will be no partial 
 Finally, search for "star wars" using the `title` field.
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET https://localhost:9200/movies/_search?pretty -d '
 {

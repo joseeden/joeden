@@ -30,7 +30,7 @@ In the following examples, we'll be using movie datasets to test Elasticsearch f
 Connect to your Elasticsearch node and run the following command. This sets up a mapping for the `movies` index.  
 
 ```bash
-curl -u elastic:elastic \
+curl -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XPUT https://127.0.0.1:9200/movies -d '
 {
@@ -53,7 +53,7 @@ Output:
 To verify the mappings, run the following `GET` request:
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET https://127.0.0.1:9200/movies/_mapping | jq
 ```
@@ -86,7 +86,7 @@ You need to [install `jq`](https://www.scaler.com/topics/linux-jq/) to format th
 Insert a `movie` document into the movies index using the following command:
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XPOST https://127.0.0.1:9200/movies/_doc/109487 -d '
 {
@@ -117,7 +117,7 @@ Output:
 To retrieve the document, run this search query:
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET https://127.0.0.1:9200/movies/_search?pretty | jq 
 ```
@@ -170,7 +170,7 @@ For this example, download the following datasets:
 To import the dataset into Elasticsearch:
 
 ```bash
-curl -u elastic:elastic \
+curl -u elastic:<password> \
 -H 'Content-Type: application/json' \
 --data-binary @movies.json \
 -XPUT https://localhost:9200/_bulk?pretty 
@@ -253,7 +253,7 @@ Output:
 After importing, you can retrieve all documents using a `GET` request:
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET https://127.0.0.1:9200/movies/_search?pretty | jq 
 ```
@@ -276,7 +276,7 @@ When an update request is sent:
 As an example, let's retrieve a specific movie from our `movie` index:
 
 ```bash
-curl -u elastic:elastic \
+curl -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET https://localhost:9200/movies/_doc/109487?pretty
 ```
@@ -305,7 +305,7 @@ It will return the movie "Interstellar":
 we can update the movie title for the id `109487` by running:
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XPUT https://localhost:9200/movies/_doc/109487?pretty -d '
 {
@@ -346,7 +346,7 @@ Deleting data in Elasticsearch is straightforward. You can delete a single docum
 To use as example, search the `id` of the movie "The Dark Knight".
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET https://localhost:9200/movies/_search?q=Dark | jq
 ```
@@ -377,7 +377,7 @@ Output:
 Delete this movie from the index by running:
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XDELETE  https://localhost:9200/movies/_doc/58559?pretty
 ```
@@ -403,7 +403,7 @@ Output:
 Now try to search the keyword "Dark" It shuld not return any hits this time.
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET https://localhost:9200/movies/_search?q=Dark | jq
 ```

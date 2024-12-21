@@ -40,7 +40,7 @@ The example below is tested on a running Elasticsearch 8, and uses a dataset con
 Retrieve the movie details for id `109487`.
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET https://127.0.0.1:9200/movies/_doc/109487?pretty | jq
 ```
@@ -69,7 +69,7 @@ Output:
 We can update this document to "Interstellar" while restricting the update to the sequence number `7`. If someone else attempts to update the document, they will receive an error.
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XPUT "https://localhost:9200/movies/_doc/109487?if_seq_no=7&if_primary_term=1" \
 -d '{
@@ -126,7 +126,7 @@ If we attempt to rerun the same `XPUT` request, an error will occur.
 First, retrieve the document and take note of the current `version` and `sequence number`.
 
 ```bash
-curl -u elastic:elastic \
+curl -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET https://localhost:9200/movies/_doc/109487?pretty | jq
 ```
@@ -155,7 +155,7 @@ Output:
 Open two terminals. In the first terminal, paste the following but do not execute it yet.
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XPOST "https://localhost:9200/movies/_update/109487?retry_on_conflict=5" \
 -d '{
@@ -170,7 +170,7 @@ On the second terminal, paste the following command to update it to a different 
 
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XPOST "https://localhost:9200/movies/_update/109487?retry_on_conflict=5" \
 -d '{
@@ -184,7 +184,7 @@ curl -s -u elastic:elastic \
 Both requests will return similar outputs. To check if both succeeded, retrieve the document again using the `XGET` command.
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET https://localhost:9200/movies/_doc/109487?pretty
 ```
