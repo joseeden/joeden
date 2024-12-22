@@ -22,7 +22,7 @@ The `match_phrase_prefix` query helps to match phrases at the prefix level, whic
 Consider an index of films. We can use `match_phrase_prefix` to match partial phrases in the title.
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET "https://localhost:9200/movies/_search?pretty" -d '
 {
@@ -62,7 +62,7 @@ In this example, we will test the autocomplete search functionality in Elasticse
 3. Create a Mapping for the `movies` Index.
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XPUT 'https://localhost:9200/movies'
     ```
@@ -70,7 +70,7 @@ In this example, we will test the autocomplete search functionality in Elasticse
 4. Import the Data into Elasticsearch.
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XPUT https://localhost:9200/_bulk?pretty \
     --data-binary @movies.json | jq
@@ -79,7 +79,7 @@ In this example, we will test the autocomplete search functionality in Elasticse
 5. Analyze the Text with a Custom Tokenizer
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XPOST 'https://localhost:9200/movies/_analyze?pretty' \
     -d '{
@@ -94,7 +94,7 @@ In this example, we will test the autocomplete search functionality in Elasticse
 6. Create the `autocomplete` index with search-as-you-type functionality for the `title` and `genre` fields.
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XPUT 'https://localhost:9200/autocomplete' \
     -d '{
@@ -126,7 +126,7 @@ In this example, we will test the autocomplete search functionality in Elasticse
 7. Reindex Data from `movies` to `autocomplete` for faster searches.
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XPOST 'https://localhost:9200/_reindex?pretty' -d '
     {
@@ -152,7 +152,7 @@ In this example, we will test the autocomplete search functionality in Elasticse
 8. Check the Mappings of the `autocomplete` Index.
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XGET "https://localhost:9200/autocomplete/_mapping?pretty=true" | jq
     ```
@@ -195,7 +195,7 @@ In this example, we will test the autocomplete search functionality in Elasticse
 9. Perform a Search Using the `multi_match` Query
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XGET 'https://localhost:9200/autocomplete/_search?pretty' -d'
     {
@@ -232,7 +232,7 @@ In this example, we will test the autocomplete search functionality in Elasticse
     IFS= read -rsn1 char
     INPUT=$INPUT$char
     echo $INPUT
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XGET 'https://localhost:9200/autocomplete/_search' \
     -d '{

@@ -41,7 +41,7 @@ Sorting on analyzed string fields isn’t possible as they are stored as terms i
 Using the previous example, try sorting by `title`. Since titles are stored as analyzed strings, running the query below will result in an error:
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET "https://127.0.0.1:9200/movies/_search?sort=title&pretty"
 ```

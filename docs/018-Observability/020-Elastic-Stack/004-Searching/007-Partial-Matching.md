@@ -33,7 +33,7 @@ Prefix matching is used to search for documents that have a field value starting
 Consider an index containing films with different genres. We can use the prefix query to match films with a specific prefix in the year field.
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET "https://localhost:9200/movies/_search?pretty" -d '
 {
@@ -58,7 +58,7 @@ Wildcard queries allow for more flexible pattern matching using `*` (matches any
 Using the previous example, we can use the wildcard query to match movies from years that start with `2`.
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET "https://localhost:9200/movies/_search?pretty" -d '
 {

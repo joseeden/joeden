@@ -154,7 +154,7 @@ N-gram indexing is used to optimize search, allowing for efficient partial match
 2. Create the Movies Index with a custom autocomplete analyzer. This analyzer uses edge n-grams to enhance search functionality. 
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XPUT https://localhost:9200/movies?pretty -d '
     {
@@ -195,7 +195,7 @@ N-gram indexing is used to optimize search, allowing for efficient partial match
 3. Test the autocomplete analyzer on the term "Sta" and check the n-gram tokenization:
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H "Content-Type: application/json" \
     -XGET https://127.0.0.1:9200/movies/_analyze?pretty -d '
     {
@@ -237,7 +237,7 @@ N-gram indexing is used to optimize search, allowing for efficient partial match
 4. Map the `autocomplete` analyzer to the `title` field of the movies index to ensure it's used during indexing:
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H "Content-Type: application/json" \
     -XPUT https://127.0.0.1:9200/movies/_mapping?pretty -d'
     {
@@ -261,7 +261,7 @@ N-gram indexing is used to optimize search, allowing for efficient partial match
 5. Import the `movies.json` dataset into Elasticsearch using the bulk API:
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XPUT https://localhost:9200/_bulk?pretty \
     --data-binary @movies.json | jq 
@@ -270,7 +270,7 @@ N-gram indexing is used to optimize search, allowing for efficient partial match
 6. Finally, execute a search query using the `standard` analyzer on the query side, while the `autocomplete` analyzer is used on the index side. This ensures the query does not split into n-grams:
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XGET https://127.0.0.1:9200/movies/_search?pretty -d'
     {

@@ -88,7 +88,7 @@ The `must_not` clause excludes documents that match certain conditions. It is of
 In the example below, the query searches for Sci-Fi movies released between 2000 and 2015 but excludes any with "trek" in the title:  
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET "https://localhost:9200/movies/_search?pretty" -d '
 {
