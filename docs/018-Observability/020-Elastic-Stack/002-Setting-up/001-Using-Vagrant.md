@@ -121,6 +121,7 @@ This lab demonstrates how to set up the Elastic Stack using Vagrant and VirtualB
     ```
 
 
+
 ## Install Elasticsearch 8.17 
 
 On Node1, switch to **root** user and perform the steps below:
@@ -300,6 +301,43 @@ To establish the trust relationship, perform the steps below:
     "tagline" : "You Know, for Search"
     }
     ```
+
+
+## Share the Certificate to Other VMs (Optional)
+
+If you plan to use the Elasticsearch VM with the Logstash and Kibana virtual machines, you will need to allow the other two VMs...
+
+1. On the Elasticsearch VM, generate the SSH key.
+
+    ```bash
+    ssh-keygen -t ecdsa -b 521 -f ~/.ssh/id_ecdsa 
+    ```
+
+2. Get the public key.
+
+    ```bash
+    cat ~/.ssh/id_ecdsa.pub
+    ```
+
+3. On the other VM, add the Elasticsearch VM's public key to the `authorized_keys` file.
+
+    ```bash
+    cat >> .ssh/authorized_keys 
+    ```
+
+4. From the Elasticsearch VM, hare the certificate to the other VM using `scp`.
+
+    ```bash
+    scp /etc/elasticsearch/certs/http_ca.crt vagrant@192.168.56.103:/tmp
+    ```
+
+5. Go back to the other VM and move the shared certificate.
+
+    ```bash
+    sudo su 
+    mv /tmp/http_ca.crt /usr/share/ca-certificates/elastic-ca.crt
+    ```
+
 
 ## Sample Search Index 
 
