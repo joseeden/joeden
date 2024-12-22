@@ -1,6 +1,6 @@
 ---
-title: "Logstash"
-description: "Logstash"
+title: "Installing Logstash"
+description: "Installing Logstash on a Virtual Machine"
 tags: 
 - Linux
 - Observability
@@ -28,7 +28,7 @@ Logstash is an open-source tool for processing logs and events. It can import, t
 ![](/img/docs/12232024-es-logstash-intro.png)
 
 
-It’s more than plumbing:
+It’s more than just plumbing:
 
 - Parses, transforms, and filters data.
 - Derives structure from unstructured data.
