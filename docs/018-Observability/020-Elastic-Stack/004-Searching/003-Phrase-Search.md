@@ -69,4 +69,177 @@ The query above will match these records:
 - "Star Wars Beyond"
 - "Beyond Star"
 
-## Proximity
+## Proximity Queries
+
+Proximity queries allow you to search for terms that are close to each other in a document. These queries rank results based on how close the terms are, with terms closer together being ranked higher.
+
+- Since it's a query, results are sorted by relevance.  
+- You can use slop to control how far apart the terms can be.  
+
+To get documents containing the words in your phrase but with closer terms receiving a higher score, you can use a high slop value:
+
+```bash
+curl -s -u elastic:elastic \
+-H 'Content-Type: application/json' \
+-XGET https://localhost:9200/movies/_search?pretty -d '
+{
+  "query": {
+    "match_phrase": {
+      "title": {
+        "query": "star beyond", "slop": 100
+        }
+     }
+  }
+}' | jq
+```
+
+## Examples 
+
+:::info 
+
+The following examples have been tested on Elasticsearch 8.
+
+:::
+
+
+#### Keyword Matching
+
+Import the **movies** dataset.
+
+```bash
+curl -s -u elastic:elastic \
+-H 'Content-Type: application/json' \
+-XPUT https://localhost:9200/_bulk?pretty \
+--data-binary @movies.json 
+```
+
+Run the query below to search for "Star Wars" films.
+
+```bash
+curl -s -u elastic:elastic \
+-H 'Content-Type: application/json' \
+-XGET "https://127.0.0.1:9200/movies/_search?pretty=true" -d'
+{
+  "query": {
+    "match": {
+      "title": "star wars"
+    }
+  }
+}' | jq
+```
+
+Notice that the query returned both "Star Wars" and "Star Trek" movies. This is because the query treats "star" and "wars" independently, so it matches any title containing either term. 
+
+```json
+{
+  "took": 5,
+  "timed_out": false,
+  "_shards": {
+    "total": 1,
+    "successful": 1,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": {
+      "value": 2,
+      "relation": "eq"
+    },
+    "max_score": 1.5458014,
+    "hits": [
+      {
+        "_index": "movies",
+        "_id": "122886",
+        "_score": 1.5458014,
+        "_source": {
+          "id": "122886",
+          "title": "Star Wars: Episode VII - The Force Awakens",
+          "year": 2015,
+          "genre": [
+            "Action",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "IMAX"
+          ]
+        }
+      },
+      {
+        "_index": "movies",
+        "_id": "135569",
+        "_score": 0.8025915,
+        "_source": {
+          "id": "135569",
+          "title": "Star Trek Beyond",
+          "year": 2016,
+          "genre": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ]
+        }
+      }
+    ]
+  }
+} 
+```
+
+
+#### Phrase Matching
+
+Now, let's use phrase matching to get more precise results:
+
+```bash
+curl -s -u elastic:elastic \
+-H 'Content-Type: application/json' \
+-XGET "https://127.0.0.1:9200/movies/_search?pretty=true" -d'
+{
+  "query": {
+    "match_phrase": {
+      "title": "star wars"
+    }
+  }
+}' | jq
+```
+
+This time, we only get the correct match because `match_phrase` requires the terms to appear in the exact order.
+
+```json
+{
+  "took": 7,
+  "timed_out": false,
+  "_shards": {
+    "total": 1,
+    "successful": 1,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": {
+      "value": 1,
+      "relation": "eq"
+    },
+    "max_score": 1.5458014,
+    "hits": [
+      {
+        "_index": "movies",
+        "_id": "122886",
+        "_score": 1.5458014,
+        "_source": {
+          "id": "122886",
+          "title": "Star Wars: Episode VII - The Force Awakens",
+          "year": 2015,
+          "genre": [
+            "Action",
+            "Adventure",
+            "Fantasy",
+            "Sci-Fi",
+            "IMAX"
+          ]
+        }
+      }
+    ]
+  }
+} 
+```
+
