@@ -1,11 +1,100 @@
-{ "create" : { "_index" : "movies", "_type" : "movie", "_id" : "135569" } }
-{ "id": "135569", "title" : "Star Trek Beyond", "year":2016 , "genre":["Action", "Adventure", "Sci-Fi"] }
-{ "create" : { "_index" : "movies", "_type" : "movie", "_id" : "122886" } }
-{ "id": "122886", "title" : "Star Wars: Episode VII - The Force Awakens", "year":2015 , "genre":["Action", "Adventure", "Fantasy", "Sci-Fi", "IMAX"] }
-{ "create" : { "_index" : "movies", "_type" : "movie", "_id" : "109487" } }
-{ "id": "109487", "title" : "Interstellar", "year":2014 , "genre":["Sci-Fi", "IMAX"] }
-{ "create" : { "_index" : "movies", "_type" : "movie", "_id" : "58559" } }
-{ "id": "58559", "title" : "Dark Knight, The", "year":2008 , "genre":["Action", "Crime", "Drama", "IMAX"] }
-{ "create" : { "_index" : "movies", "_type" : "movie", "_id" : "1924" } }
-{ "id": "1924", "title" : "Plan 9 from Outer Space", "year":1959 , "genre":["Horror", "Sci-Fi"] }
-
+{ "create" : { "_index" : "movies", "_id" : "1" } }
+{ "id": "1", "title": "Star Wars: Episode IV - A New Hope", "year": 1977, "genre": ["Action", "Adventure", "Fantasy", "Sci-Fi"] }
+{ "create" : { "_index" : "movies", "_id" : "2" } }
+{ "id": "2", "title": "Star Wars: Episode V - The Empire Strikes Back", "year": 1980, "genre": ["Action", "Adventure", "Fantasy", "Sci-Fi"] }
+{ "create" : { "_index" : "movies", "_id" : "3" } }
+{ "id": "3", "title": "Star Wars: Episode VI - Return of the Jedi", "year": 1983, "genre": ["Action", "Adventure", "Fantasy", "Sci-Fi"] }
+{ "create" : { "_index" : "movies", "_id" : "4" } }
+{ "id": "4", "title": "Star Wars: Episode I - The Phantom Menace", "year": 1999, "genre": ["Action", "Adventure", "Fantasy", "Sci-Fi"] }
+{ "create" : { "_index" : "movies", "_id" : "5" } }
+{ "id": "5", "title": "Star Wars: Episode II - Attack of the Clones", "year": 2002, "genre": ["Action", "Adventure", "Fantasy", "Sci-Fi"] }
+{ "create" : { "_index" : "movies", "_id" : "6" } }
+{ "id": "6", "title": "Star Wars: Episode III - Revenge of the Sith", "year": 2005, "genre": ["Action", "Adventure", "Fantasy", "Sci-Fi"] }
+{ "create" : { "_index" : "movies", "_id" : "7" } }
+{ "id": "7", "title": "Star Wars: Episode VII - The Force Awakens", "year": 2015, "genre": ["Action", "Adventure", "Fantasy", "Sci-Fi"] }
+{ "create" : { "_index" : "movies", "_id" : "8" } }
+{ "id": "8", "title": "Star Wars: Episode VIII - The Last Jedi", "year": 2017, "genre": ["Action", "Adventure", "Fantasy", "Sci-Fi"] }
+{ "create" : { "_index" : "movies", "_id" : "9" } }
+{ "id": "9", "title": "Star Wars: Episode IX - The Rise of Skywalker", "year": 2019, "genre": ["Action", "Adventure", "Fantasy", "Sci-Fi"] }
+{ "create" : { "_index" : "movies", "_id" : "10" } }
+{ "id": "10", "title": "Star Wars: The Clone Wars", "year": 2008, "genre": ["Action", "Adventure", "Animation", "Fantasy", "Sci-Fi"] }
+{ "create" : { "_index" : "movies", "_id" : "11" } }
+{ "id": "11", "title": "Star Trek: The Motion Picture", "year": 1979, "genre": ["Action", "Adventure", "Sci-Fi"] }
+{ "create" : { "_index" : "movies", "_id" : "12" } }
+{ "id": "12", "title": "Star Trek II: The Wrath of Khan", "year": 1982, "genre": ["Action", "Adventure", "Sci-Fi"] }
+{ "create" : { "_index" : "movies", "_id" : "13" } }
+{ "id": "13", "title": "Star Trek III: The Search for Spock", "year": 1984, "genre": ["Action", "Adventure", "Sci-Fi"] }
+{ "create" : { "_index" : "movies", "_id" : "14" } }
+{ "id": "14", "title": "Star Trek IV: The Voyage Home", "year": 1986, "genre": ["Action", "Adventure", "Sci-Fi"] }
+{ "create" : { "_index" : "movies", "_id" : "15" } }
+{ "id": "15", "title": "Star Trek V: The Final Frontier", "year": 1989, "genre": ["Action", "Adventure", "Sci-Fi"] }
+{ "create" : { "_index" : "movies", "_id" : "16" } }
+{ "id": "16", "title": "Star Trek VI: The Undiscovered Country", "year": 1991, "genre": ["Action", "Adventure", "Sci-Fi"] }
+{ "create" : { "_index" : "movies", "_id" : "17" } }
+{ "id": "17", "title": "Star Trek: Generations", "year": 1994, "genre": ["Action", "Adventure", "Sci-Fi"] }
+{ "create" : { "_index" : "movies", "_id" : "18" } }
+{ "id": "18", "title": "Star Trek: First Contact", "year": 1996, "genre": ["Action", "Adventure", "Sci-Fi"] }
+{ "create" : { "_index" : "movies", "_id" : "19" } }
+{ "id": "19", "title": "Star Trek: Insurrection", "year": 1998, "genre": ["Action", "Adventure", "Sci-Fi"] }
+{ "create" : { "_index" : "movies", "_id" : "20" } }
+{ "id": "20", "title": "Star Trek: Nemesis", "year": 2002, "genre": ["Action", "Adventure", "Sci-Fi"] }
+{ "create" : { "_index" : "movies", "_id" : "21" } }
+{ "id": "21", "title": "Star Trek (2009)", "year": 2009, "genre": ["Action", "Adventure", "Sci-Fi"] }
+{ "create" : { "_index" : "movies", "_id" : "22" } }
+{ "id": "22", "title": "Star Trek Into Darkness", "year": 2013, "genre": ["Action", "Adventure", "Sci-Fi"] }
+{ "create" : { "_index" : "movies", "_id" : "23" } }
+{ "id": "23", "title": "Star Trek Beyond", "year": 2016, "genre": ["Action", "Adventure", "Sci-Fi"] }
+{ "create" : { "_index" : "movies", "_id" : "24" } }
+{ "id": "24", "title": "The Terminator", "year": 1984, "genre": ["Action", "Sci-Fi", "Thriller"] }
+{ "create" : { "_index" : "movies", "_id" : "25" } }
+{ "id": "25", "title": "Terminator 2: Judgment Day", "year": 1991, "genre": ["Action", "Sci-Fi", "Thriller"] }
+{ "create" : { "_index" : "movies", "_id" : "26" } }
+{ "id": "26", "title": "Terminator 3: Rise of the Machines", "year": 2003, "genre": ["Action", "Sci-Fi", "Thriller"] }
+{ "create" : { "_index" : "movies", "_id" : "27" } }
+{ "id": "27", "title": "Terminator Salvation", "year": 2009, "genre": ["Action", "Sci-Fi", "Thriller"] }
+{ "create" : { "_index" : "movies", "_id" : "28" } }
+{ "id": "28", "title": "Terminator Genisys", "year": 2015, "genre": ["Action", "Sci-Fi", "Thriller"] }
+{ "create" : { "_index" : "movies", "_id" : "29" } }
+{ "id": "29", "title": "Harry Potter and the Sorcerer's Stone", "year": 2001, "genre": ["Adventure", "Family", "Fantasy"] }
+{ "create" : { "_index" : "movies", "_id" : "30" } }
+{ "id": "30", "title": "Harry Potter and the Chamber of Secrets", "year": 2002, "genre": ["Adventure", "Family", "Fantasy"] }
+{ "create" : { "_index" : "movies", "_id" : "31" } }
+{ "id": "31", "title": "Harry Potter and the Prisoner of Azkaban", "year": 2004, "genre": ["Adventure", "Family", "Fantasy"] }
+{ "create" : { "_index" : "movies", "_id" : "32" } }
+{ "id": "32", "title": "Harry Potter and the Goblet of Fire", "year": 2005, "genre": ["Adventure", "Family", "Fantasy"] }
+{ "create" : { "_index" : "movies", "_id" : "33" } }
+{ "id": "33", "title": "Harry Potter and the Order of the Phoenix", "year": 2007, "genre": ["Adventure", "Family", "Fantasy"] }
+{ "create" : { "_index" : "movies", "_id" : "34" } }
+{ "id": "34", "title": "Harry Potter and the Half-Blood Prince", "year": 2009, "genre": ["Adventure", "Family", "Fantasy"] }
+{ "create" : { "_index" : "movies", "_id" : "35" } }
+{ "id": "35", "title": "Harry Potter and the Deathly Hallows – Part 1", "year": 2010, "genre": ["Adventure", "Family", "Fantasy"] }
+{ "create" : { "_index" : "movies", "_id" : "36" } }
+{ "id": "36", "title": "Harry Potter and the Deathly Hallows – Part 2", "year": 2011, "genre": ["Adventure", "Family", "Fantasy"] }
+{ "create" : { "_index" : "movies", "_id" : "37" } }
+{ "id": "37", "title": "The Lord of the Rings: The Fellowship of the Ring", "year": 2001, "genre": ["Action", "Adventure", "Fantasy"] }
+{ "create" : { "_index" : "movies", "_id" : "38" } }
+{ "id": "38", "title": "The Lord of the Rings: The Two Towers", "year": 2002, "genre": ["Action", "Adventure", "Fantasy"] }
+{ "create" : { "_index" : "movies", "_id" : "39" } }
+{ "id": "39", "title": "The Lord of the Rings: The Return of the King", "year": 2003, "genre": ["Action", "Adventure", "Fantasy"] }
+{ "create" : { "_index" : "movies", "_id" : "40" } }
+{ "id": "40", "title": "The Hobbit: An Unexpected Journey", "year": 2012, "genre": ["Action", "Adventure", "Fantasy"] }
+{ "create" : { "_index" : "movies", "_id" : "41" } }
+{ "id": "41", "title": "The Hobbit: The Desolation of Smaug", "year": 2013, "genre": ["Action", "Adventure", "Fantasy"] }
+{ "create" : { "_index" : "movies", "_id" : "42" } }
+{ "id": "42", "title": "The Hobbit: The Battle of the Five Armies", "year": 2014, "genre": ["Action", "Adventure", "Fantasy"] }
+{ "create" : { "_index" : "movies", "_id" : "43" } }
+{ "id": "43", "title": "Mad Max: Fury Road", "year": 2015, "genre": ["Action", "Adventure", "Sci-Fi"] }
+{ "create" : { "_index" : "movies", "_id" : "44" } }
+{ "id": "44", "title": "The Matrix", "year": 1999, "genre": ["Action", "Sci-Fi"] }
+{ "create" : { "_index" : "movies", "_id" : "45" } }
+{ "id": "45", "title": "Inception", "year": 2010, "genre": ["Action", "Sci-Fi", "Thriller"] }
+{ "create" : { "_index" : "movies", "_id" : "46" } }
+{ "id": "46", "title": "The Dark Knight", "year": 2008, "genre": ["Action", "Crime", "Drama", "Thriller"] }
+{ "create" : { "_index" : "movies", "_id" : "47" } }
+{ "id": "47", "title": "Interstellar", "year": 2014, "genre": ["Adventure", "Drama", "Sci-Fi"] }
+{ "create" : { "_index" : "movies", "_id" : "48" } }
+{ "id": "48", "title": "Edge of Tomorrow", "year": 2014, "genre": ["Action", "Sci-Fi", "Thriller"] }
+{ "create" : { "_index" : "movies", "_id" : "49" } }
+{ "id": "49", "title": "Blade Runner 2049", "year": 2017, "genre": ["Action", "Drama", "Sci-Fi"] }
+{ "create" : { "_index" : "movies", "_id" : "50" } }
+{ "id": "50", "title": "The Fifth Element", "year": 1997, "genre": ["Action", "Adventure", "Sci-Fi"] }
