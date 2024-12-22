@@ -27,7 +27,7 @@ Request body searches in Elasticsearch use structured JSON to define search para
 Here’s an example of a request body search where we query for movies with "Star" in the title:
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET https://localhost:9200/movies/_search?pretty -d '
 {
@@ -54,7 +54,7 @@ Filters are more efficient and cacheable This makes them suitable for repeated o
 Suppose you want to search for action movies released after 2000 and group results by genre. You can use the following query:
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET "https://localhost:9200/movies/_search?pretty" \
 -d '{

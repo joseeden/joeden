@@ -71,7 +71,7 @@ First, import the datasets:
 2. Import the dataset into Elasticsearch:
 
   ```bash
-  curl -u elastic:elastic \
+  curl -u elastic:<password> \
   -H 'Content-Type: application/json' \
   --data-binary @movies.json \
   -XPUT https://localhost:9200/_bulk?pretty 
@@ -82,7 +82,7 @@ Start using the query lite:
 1. Run the command below to search for movies with "Star" in the title:
 
     ```bash
-    curl -u elastic:elastic \
+    curl -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XGET "https://localhost:9200/movies/_search?q=title:star&pretty"
     ```
@@ -146,7 +146,7 @@ Start using the query lite:
 2. Now search for movies released after 2010 with "Trek" in the title
 
     ```bash
-    curl -u elastic:elastic \
+    curl -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XGET "https://localhost:9200/movies/_search?q=+year>2010+title:trek&pretty"
     ```

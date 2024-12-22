@@ -82,7 +82,7 @@ The example below is tested on a running Elasticsearch 8.
 1. Create the mapping:
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -X PUT 'https://localhost:9200/microservice-logs' \
     --data-raw '{
@@ -111,7 +111,7 @@ The example below is tested on a running Elasticsearch 8.
 2. Try to index data where the `port` is set to a string instead of a numeric value:
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XPOST 'https://localhost:9200/microservice-logs/_doc?pretty' \
     --data-raw '{
@@ -144,7 +144,7 @@ The example below is tested on a running Elasticsearch 8.
 3. Now try setting `port` to `NONE`:
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XPOST 'https://localhost:9200/microservice-logs/_doc?pretty' \
     --data-raw '{
@@ -186,7 +186,7 @@ There is no single solution to solve exceptions, but here is a method to handle 
 1. Close the index:
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XPOST 'https://localhost:9200/microservice-logs/_close' | jq
     ```
@@ -208,7 +208,7 @@ There is no single solution to solve exceptions, but here is a method to handle 
 2. Change the setting to allow malformed data:
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XPUT 'https://localhost:9200/microservice-logs/_settings' \
     --data-raw '{
@@ -219,7 +219,7 @@ There is no single solution to solve exceptions, but here is a method to handle 
 3. Reopen the index:
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XPOST 'https://localhost:9200/microservice-logs/_open' | jq
     ```
@@ -227,7 +227,7 @@ There is no single solution to solve exceptions, but here is a method to handle 
 4. Now try rerunning the previous erroneous command. It will now be accepted:
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XPOST 'https://localhost:9200/microservice-logs/_doc?pretty' \
     --data-raw '{
@@ -264,7 +264,7 @@ The `ignore_malformed` setting cannot handle JSON input that doesn't match the e
 1. Run the following command to attempt indexing the document:
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XPOST 'https://localhost:9200/microservice-logs/_doc?pretty' \
     --data-raw '{
@@ -309,7 +309,7 @@ This example shows how an unexpected structure in the payload causes a mapping e
 1. Add a document with a payload field:
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XPOST 'https://localhost:9200/microservice-logs/_doc?pretty' \
     --data-raw '{
@@ -348,7 +348,7 @@ This example shows how an unexpected structure in the payload causes a mapping e
 2. Check the mapping to verify how the `payload` field is mapped:
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XGET 'https://localhost:9200/microservice-logs/_mapping?pretty' 
     ```
@@ -378,7 +378,7 @@ This example shows how an unexpected structure in the payload causes a mapping e
 3. Attempt to index another document, this time with a different structure for `received`:
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XPOST 'https://localhost:9200/microservice-logs/_doc?pretty' \
     -d '{
@@ -433,7 +433,7 @@ To test the field limit:
 2. Create the index:
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XPUT 'https://localhost:9200/big-objects' 
     ```
@@ -441,7 +441,7 @@ To test the field limit:
 3. Try to import the data with over 1000 fields:
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XPOST 'https://localhost:9200/big-objects/_doc?pretty' \
     -d "$thousandone_fields_json"
@@ -472,7 +472,7 @@ To test the field limit:
 5. Increase the field limit (with caution due to potential performance implications):
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XPUT 'https://localhost:9200/big-objects/_settings' \
     -d '{
@@ -483,7 +483,7 @@ To test the field limit:
 6. Reindex the data, which should now be allowed:
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XPOST 'https://localhost:9200/big-objects/_doc?pretty' \
     -d "$thousandone_fields_json"

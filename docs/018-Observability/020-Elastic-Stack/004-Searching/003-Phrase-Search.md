@@ -26,7 +26,7 @@ Phrase search looks for terms in the exact order and ensures more accurate resul
 For example, you can use this query to search for "Star Wars":
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET https://localhost:9200/movies/_search?pretty -d '
 {
@@ -49,7 +49,7 @@ Slop allows for flexibility in the word order while still finding relevant resul
 Using the previous example, we can specify `slop` to allow some flexibility in the word order:
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET https://localhost:9200/movies/_search?pretty -d '
 {
@@ -79,7 +79,7 @@ Proximity queries allow you to search for terms that are close to each other in 
 To get documents containing the words in your phrase but with closer terms receiving a higher score, you can use a high slop value:
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET https://localhost:9200/movies/_search?pretty -d '
 {
@@ -107,7 +107,7 @@ The following examples have been tested on Elasticsearch 8.
 Import the **movies** dataset.
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XPUT https://localhost:9200/_bulk?pretty \
 --data-binary @movies.json 
@@ -116,7 +116,7 @@ curl -s -u elastic:elastic \
 Run the query below to search for "Star Wars" films.
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET "https://127.0.0.1:9200/movies/_search?pretty=true" -d'
 {
@@ -190,7 +190,7 @@ Notice that the query returned both "Star Wars" and "Star Trek" movies. This is 
 Now, let's use phrase matching to get more precise results:
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET "https://127.0.0.1:9200/movies/_search?pretty=true" -d'
 {
