@@ -213,3 +213,7 @@ output {
   }
 }
 ```
+
+
+## Lab: Sample Pipeline 
+
