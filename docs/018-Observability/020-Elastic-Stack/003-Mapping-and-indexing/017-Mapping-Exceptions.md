@@ -79,12 +79,7 @@ The example below is tested on a running Elasticsearch 8.
 
 :::
 
-
-1. Download the dataset:
-
-    - [microservices-logs.json](@site/assets/elastic-stack/microservices-logs.json)
-
-2. Create the mapping:
+1. Create the mapping:
 
     ```bash
     curl -s -u elastic:elastic \
@@ -113,7 +108,7 @@ The example below is tested on a running Elasticsearch 8.
     }      
     ```
 
-3. Try to index data where the `port` is set to a string instead of a numeric value:
+2. Try to index data where the `port` is set to a string instead of a numeric value:
 
     ```bash
     curl -s -u elastic:elastic \
@@ -146,7 +141,7 @@ The example below is tested on a running Elasticsearch 8.
     } 
     ```
 
-4. Now try setting `port` to `NONE`:
+3. Now try setting `port` to `NONE`:
 
     ```bash
     curl -s -u elastic:elastic \
