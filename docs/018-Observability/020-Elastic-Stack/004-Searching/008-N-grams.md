@@ -61,7 +61,8 @@ N-gram indexing is used to optimize search, allowing for efficient partial match
    Setup a custom analyzer for autocomplete. The `edge_ngram` filter breaks down the text into smaller chunks (e.g., `s`, `st`, `sta`) for fast matching.
 
    ```bash
-   curl -XPUT 127.0.0.1:9200/movies?pretty -H "Content-Type: application/json" -d '
+   curl -XPUT 127.0.0.1:9200/movies?pretty \
+   -H "Content-Type: application/json" -d '
    {
      "settings": {
        "analysis": {
@@ -92,7 +93,8 @@ N-gram indexing is used to optimize search, allowing for efficient partial match
    This command applies the custom `autocomplete` analyzer to the `title` field during indexing.
 
    ```bash
-   curl -XPUT '127.0.0.1:9200/movies/_mapping?pretty' -H "Content-Type: application/json" -d '
+   curl -XPUT '127.0.0.1:9200/movies/_mapping?pretty' \
+   -H "Content-Type: application/json" -d '
    {
      "properties": {
        "title": {
@@ -108,7 +110,8 @@ N-gram indexing is used to optimize search, allowing for efficient partial match
    To avoid splitting the query into n-grams, use the standard analyzer on the search query. This ensures that only the indexed n-grams are used for matching.
 
    ```bash
-   curl -XGET 127.0.0.1:9200/movies/_search?pretty -H "Content-Type: application/json" -d '
+   curl -XGET 127.0.0.1:9200/movies/_search?pretty \
+   -H "Content-Type: application/json" -d '
    {
      "query": {
        "match": {
@@ -121,12 +124,15 @@ N-gram indexing is used to optimize search, allowing for efficient partial match
    }'
    ```
 
+   In this query, we use "sta" as the search term for "Star Wars", and by specifying the standard analyzer, we ensure it is not broken down into n-grams.
+
 4. **Use Completion Suggesters**
 
    You can also pre-load lists of potential completions using **completion suggesters**. This allows you to efficiently suggest options like "star" while typing.
 
    ```bash
-   curl -XPUT 127.0.0.1:9200/movies/_mapping?pretty -H "Content-Type: application/json" -d '
+   curl -XPUT 127.0.0.1:9200/movies/_mapping?pretty \
+   -H "Content-Type: application/json" -d '
    {
      "properties": {
        "title_suggest": {
@@ -135,3 +141,148 @@ N-gram indexing is used to optimize search, allowing for efficient partial match
      }
    }'
    ```
+
+  
+
+
+## Lab: N-grams in Action 
+
+1. Download the `movies.json` dataset.
+
+   - [movies.json](@site/assets/elastic-stack/movies.json)
+
+2. Create the Movies Index with a custom autocomplete analyzer. This analyzer uses edge n-grams to enhance search functionality. 
+
+    ```bash
+    curl -s -u elastic:elastic \
+    -H 'Content-Type: application/json' \
+    -XPUT https://localhost:9200/movies?pretty -d '
+    {
+      "settings": {
+        "analysis": {
+          "filter": {
+            "autocomplete_filter": {
+              "type": "edge_ngram",
+              "min_gram": 1,
+              "max_gram": 20
+            }
+          },
+          "analyzer": {
+            "autocomplete": {
+              "type": "custom",
+              "tokenizer": "standard",
+              "filter": [
+                "lowercase",
+                "autocomplete_filter"
+              ]
+            }
+          }
+        }
+      }
+    }' | jq
+    ```
+
+    Output:
+
+    ```json
+    {
+      "acknowledged": true,
+      "shards_acknowledged": true,
+      "index": "movies"
+    } 
+    ```
+
+3. Test the autocomplete analyzer on the term "Sta" and check the n-gram tokenization:
+
+    ```bash
+    curl -s -u elastic:elastic \
+    -H "Content-Type: application/json" \
+    -XGET https://127.0.0.1:9200/movies/_analyze?pretty -d '
+    {
+      "analyzer": "autocomplete",
+      "text": "Sta"
+    }' | jq
+    ```
+
+   The output will show how the term "Sta" is split into tokens by the edge n-gram analyzer:
+
+    ```json
+    {
+      "tokens": [
+        {
+          "token": "s",
+          "start_offset": 0,
+          "end_offset": 3,
+          "type": "<ALPHANUM>",
+          "position": 0
+        },
+        {
+          "token": "st",
+          "start_offset": 0,
+          "end_offset": 3,
+          "type": "<ALPHANUM>",
+          "position": 0
+        },
+        {
+          "token": "sta",
+          "start_offset": 0,
+          "end_offset": 3,
+          "type": "<ALPHANUM>",
+          "position": 0
+        }
+      ]
+    }  
+    ```
+
+4. Map the `autocomplete` analyzer to the `title` field of the movies index to ensure it's used during indexing:
+
+    ```bash
+    curl -s -u elastic:elastic \
+    -H "Content-Type: application/json" \
+    -XPUT https://127.0.0.1:9200/movies/_mapping?pretty -d'
+    {
+      "properties": {
+         "title": {
+           "type": "text",
+           "analyzer": "autocomplete"
+         }
+      }
+    }' | jq
+    ```
+
+    Output:
+
+    ```json
+    {
+       "acknowledged": true
+    }     
+    ```
+
+5. Import the `movies.json` dataset into Elasticsearch using the bulk API:
+
+    ```bash
+    curl -s -u elastic:elastic \
+    -H 'Content-Type: application/json' \
+    -XPUT https://localhost:9200/_bulk?pretty \
+    --data-binary @movies.json | jq 
+    ```
+
+6. Finally, execute a search query using the `standard` analyzer on the query side, while the `autocomplete` analyzer is used on the index side. This ensures the query does not split into n-grams:
+
+    ```bash
+    curl -s -u elastic:elastic \
+    -H 'Content-Type: application/json' \
+    -XGET https://127.0.0.1:9200/movies/_search?pretty -d'
+    {
+      "query": {
+        "match": {
+          "title": {
+            "query": "sta",
+            "analyzer": "standard"
+          }
+        }
+      }
+    }' | jq
+    ```
+
+   This will return all movie entries related to the "Star Wars" and "Star Trek" franchises, demonstrating the autocomplete functionality with the edge n-gram analyzer.

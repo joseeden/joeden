@@ -45,7 +45,7 @@ Search-as-you-type enables real-time, incremental searches as users type. It is 
 - Fast, partial matching during user input.
 - Optimized using special field types like `search_as_you_type` in mappings.
 
-## Example: Autocomplete
+## Lab: Autocomplete
 
 In this example, we will test the autocomplete search functionality in Elasticsearch.
 
@@ -55,7 +55,7 @@ In this example, we will test the autocomplete search functionality in Elasticse
     sudo apt-get install jq
     ```
 
-2. Download the `movies.json` dataset, which contains movie data. This file contains movie data that we will import into Elasticsearch.
+2. Download the `movies.json` dataset, which contains movie data that we will import into Elasticsearch.
 
     - [movies.json](@site/assets/elastic-stack/movies.json)
 
