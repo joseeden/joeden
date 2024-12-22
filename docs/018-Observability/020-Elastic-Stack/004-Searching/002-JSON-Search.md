@@ -49,7 +49,7 @@ Elasticsearch uses queries and filters to retrieve and refine data effectively. 
 
 Filters are more efficient and cacheable This makes them suitable for repeated or non-scoring conditions.  
 
-#### Query Example
+### Query Example
 
 Suppose you want to search for action movies released after 2000 and group results by genre. You can use the following query:
 
@@ -80,6 +80,27 @@ Filters are wrapped in `"filter": {}` block.
 
 :::
 
+
+### Using `must_not` 
+
+The `must_not` clause excludes documents that match certain conditions. It is often combined with other clauses for fine-tuned queries.  
+
+In the example below, the query searches for Sci-Fi movies released between 2000 and 2015 but excludes any with "trek" in the title:  
+
+```bash
+curl -s -u elastic:elastic \
+-H 'Content-Type: application/json' \
+-XGET "https://localhost:9200/movies/_search?pretty" -d '
+{
+  "query": {
+    "bool": {
+      "must": { "match": { "genre": "Sci-Fi" } },
+      "must_not": { "match": { "title": "trek" } },
+      "filter": { "range": { "year": { "gt": 2000, "lt": 2015 } } }
+    }
+  }
+}' | jq
+```  
 
 
 ## Common Filters 
