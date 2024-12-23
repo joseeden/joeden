@@ -19,19 +19,25 @@ last_update:
 
 ## Overview
 
-In this lab, we'll have two nodes: Elasticsearch and Logstash.
+This lab focuses on using a sample Apache web server log file with Logstash and Elasticsearch. 
+
+- Configure Logstash to ingest log data from the sample file
+- Verify successful indexing in Elasticsearch
+- Query the indexed data.
+
+## Lab Environment 
 
 | Node    | Hostname       | IP Address       | 
 |---------|----------------|------------------|
 | Node 1  | elasticsearch  |  192.168.56.101  |
 | Node 2  | logstash       |  192.168.56.103  |
 
-Notes:
+Setup details:
 
 - The nodes are created in VirtualBox using Vagrant.
-- SSH key is generated on the Elasticsearch node
-- The Elasticsearch node's SSH key is shared to the Logstash node.
-- Logstash node can reach Elasticsearch node via port 9200 
+- An SSH key is generated on the Elasticsearch node
+- The SSH key is shared to the Logstash node.
+- The Logstash node can reach Elasticsearch node via port 9200 
 
 
 ## Pre-requisites 
@@ -184,7 +190,6 @@ Login to Elasticsearch node and switch to **root**:
 
     ```bash
     health status index             uuid                   pri rep docs.count docs.deleted store.size pri.store.size dataset.size
-
     yellow open   sample-access-log 6KvdkUlvT3mdPP0JjyudLw   1   1      31250            0     14.9mb         14.9mb       14.9mb
     ```
 
