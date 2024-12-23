@@ -215,5 +215,4 @@ output {
 ```
 
 
-## Lab: Sample Pipeline 
 
