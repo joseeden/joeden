@@ -168,7 +168,7 @@ Elasticsearch provides client libraries for most programming languages. This mak
 6. Run a query to verify if the index has been created and populated.
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XGET 'https://localhost:9200/ratings/_search?pretty' | jq
     ```

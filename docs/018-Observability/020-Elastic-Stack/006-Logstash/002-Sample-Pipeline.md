@@ -29,8 +29,9 @@ In this lab, we'll have two nodes: Elasticsearch and Logstash.
 Notes:
 
 - The nodes are created in VirtualBox using Vagrant.
+- SSH key is generated on the Elasticsearch node
 - The Elasticsearch node's SSH key is shared to the Logstash node.
-- Logstash node can reach Elasticsearch via port 9200 
+- Logstash node can reach Elasticsearch node via port 9200 
 
 
 ## Pre-requisites 
@@ -42,7 +43,7 @@ Notes:
 - [Share Elasticsearch CA cert to Logstash](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/001-Using-Vagrant.md#share-the-certificate-to-other-vms-optional)
 - [Install jq on Elasticsearch node](https://www.scaler.com/topics/linux-jq/)
 
-## Instructions 
+## Steps 
 
 Login to the Logstash node, switch to **root** user, and perform the following:
 
@@ -81,7 +82,7 @@ Login to the Logstash node, switch to **root** user, and perform the following:
     Manually verify the certificate works using curl:
 
     ```bash
-    curl --cacert /usr/share/ca-certificates/elastic-ca.crt -u elastic:elastic https://192.168.56.101:9200
+    curl --cacert /usr/share/ca-certificates/elastic-ca.crt -u elastic:<password> https://192.168.56.101:9200
     ```
 
     Output:
@@ -113,7 +114,13 @@ Login to the Logstash node, switch to **root** user, and perform the following:
     sudo vi /etc/logstash/conf.d/logstash.conf 
     ```
 
-    Use the following configuration to process the sample access log file stored on the Logstash node. This configuration reads the file from the beginning, applies a Grok filter to parse the log entries, sends the processed data to Elasticsearch, and prints it to the standard output.
+    Use the following configuration to process the sample access log file located on the Logstash node. This configuration will:
+
+    - Set the index name to `sample-access-log` 
+    - Read the file from the start
+    - Apply a Grok filter to parse the log entries
+    - Send the processed data to Elasticsearch
+    - Output the results to the standard output
 
     Make sure to set the password.
 
@@ -169,7 +176,7 @@ Login to Elasticsearch node and switch to **root**:
 1. Login to Elasticsearch and switch to root. Check if data has been indexed by Logstash
 
     ```bash
-    curl -u elastic:elastic --insecure \
+    curl -u elastic:<password> --insecure \
     -X GET "https://192.168.56.101:9200/_cat/indices?v"
     ```
 
@@ -184,7 +191,7 @@ Login to Elasticsearch node and switch to **root**:
 2. Check the `sample-access-log` and confirm that it contains the sample Apache web server log data:
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XGET "https://192.168.56.101:9200/sample-access-log/_search?pretty=true" | jq
     ```

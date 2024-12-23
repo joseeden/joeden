@@ -90,7 +90,7 @@ Steps:
 4. Import the new dataset into Elasticsearch.
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XPUT https://localhost:9200/_bulk?pretty \
     --data-binary @other-movies.json | jq 
@@ -99,7 +99,7 @@ Steps:
 5. Now try to query for a movie title.
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password> \
     -H 'Content-Type: application/json' \
     -XGET 'https://localhost:9200/movies/_search?q=shrek' | jq
     ```
