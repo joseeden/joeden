@@ -424,8 +424,7 @@ Login to the Logstash node and switch to **root** user:
     sudo vi /etc/logstash/conf.d/mysql.conf 
     ```
 
-    ...explain briefly the config below. simplify,... 
-
+    Use the configuration file below:
 
     ```bash
     input {
@@ -454,7 +453,15 @@ Login to the Logstash node and switch to **root** user:
     }
     ```
 
-6. Start Logstash with the updated configuration:n
+    This configuration:
+    
+    - Retrieves data from the movies table in a MySQL database 
+    - Sends data to Elasticsearch 
+    - JDBC input plugin connects to the database using the credentials 
+    - Output plugin sends data to `movielens-sql` index with SSL encryption.
+
+
+6. Start Logstash with the updated configuration:
 
     ```bash
     /usr/share/logstash/bin/logstash -f /etc/logstash/conf.d/mysql.conf
