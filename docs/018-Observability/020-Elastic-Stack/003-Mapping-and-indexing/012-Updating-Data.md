@@ -23,7 +23,7 @@ In the following examples, we'll be using movie datasets to test Elasticsearch f
 
 ## Pre-requisites 
 
-- [Setup Elasticsearch](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/001-Using-Vagrant.md)
+- [Setup Elasticsearch](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/001-Using-Vagrant-and-VirtualBox.md)
 - [Install jq](https://www.scaler.com/topics/linux-jq/)
 
 

@@ -42,11 +42,11 @@ Setup details:
 
 ## Pre-requisites 
 
-- [Create the nodes in VirtualBox](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/001-Using-Vagrant.md#setup-the-virtual-machines)
-- [Install Elasticsearch on node 1](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/001-Using-Vagrant.md#install-elasticsearch-817)
+- [Create the nodes in VirtualBox](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/001-Using-Vagrant-and-VirtualBox.md#setup-the-virtual-machines)
+- [Install Elasticsearch on node 1](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/001-Using-Vagrant-and-VirtualBox.md#install-elasticsearch-817)
 - [Install Logstash on node 2](/docs/018-Observability/020-Elastic-Stack/006-Logstash/001-Installing-Logstash.md)
-- [Configure SSL on Elasticsearch](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/001-Using-Vagrant.md#configure-ssl-on-elasticsearch)
-- [Share Elasticsearch CA cert to Logstash](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/001-Using-Vagrant.md#share-the-certificate-to-other-vms-optional)
+- [Configure SSL on Elasticsearch](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/001-Using-Vagrant-and-VirtualBox.md#configure-ssl-on-elasticsearch)
+- [Share Elasticsearch CA cert to Logstash](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/001-Using-Vagrant-and-VirtualBox.md#share-the-certificate-to-other-vms-optional)
 - [Install jq on Elasticsearch node](https://www.scaler.com/topics/linux-jq/)
 
 ## Steps 
@@ -76,7 +76,7 @@ Login to the Logstash node, switch to **root** user, and perform the following:
     Escape character is '^]'.  
     ```
 
-4. Ensure that [Elasticsearch CA cert is shared to Logstash.](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/001-Using-Vagrant.md#share-the-certificate-to-other-vms-optional)
+4. Ensure that [Elasticsearch CA cert is shared to Logstash.](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/001-Using-Vagrant-and-VirtualBox.md#share-the-certificate-to-other-vms-optional)
 
     Set the permissions and ownership.
 

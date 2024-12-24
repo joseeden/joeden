@@ -96,7 +96,7 @@ It’s more than just plumbing:
 
 In my current lab setup, I use Vagrant to provision virtual machines in VirtualBox.
 
-For further details, refer to [Using Vagrant to Setup Elastic Stack.](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/001-Using-Vagrant.md).
+For further details, refer to [Using Vagrant to Setup Elastic Stack.](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/001-Using-Vagrant-and-VirtualBox.md).
 :::
 
 1. Login to your Logstash node and install the Java.
