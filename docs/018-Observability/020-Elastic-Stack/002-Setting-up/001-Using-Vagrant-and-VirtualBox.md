@@ -435,7 +435,7 @@ Download the file below. This bulk indexing file contains lines from Shakespeare
 Run the following command to index the data into Elasticsearch:
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XPOST https://localhost:9200/shakespeare/_bulk?pretty \
 --data-binary @shakespeare_8.0.json | jq
