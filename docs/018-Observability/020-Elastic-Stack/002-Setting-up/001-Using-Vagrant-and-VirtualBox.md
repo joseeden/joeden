@@ -351,7 +351,7 @@ To establish the trust relationship, perform the steps below:
 6. On the other VM, test the connection:
 
     ```bash
-    $ curl -s -k  -u elastic:elastic https://192.168.56.101:9200 | jq
+    $ curl -s -k  -u elastic:<password> https://192.168.56.101:9200 | jq
 
     {
       "name": "node1",
@@ -410,7 +410,7 @@ This is taken from [Sundog's Elasticsearch Course. ](https://www.sundog-educatio
 Submit the mapping to Elasticsearch.
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XPUT https://localhost:9200/shakespeare-sample \
 --data-binary @shakespeare-mapping.json  | jq
