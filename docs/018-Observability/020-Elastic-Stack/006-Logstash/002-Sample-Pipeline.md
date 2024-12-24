@@ -57,7 +57,7 @@ Login to the Logstash node, switch to **root** user, and perform the following:
 
     You can configure a fileshare in the VM's settings, map it to a local folder in your computer, and place the access log in that folder. Then, confirm the VM can access the fileshare and copy the log to `/tmp` within the VM.
 
-    For more information, please see [Shared Folders - Oracle® VM VirtualBox.](https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/sharedfolders.html)
+    For more information, please see [Setup Fileshare](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-VirtualBox.md#setup-fileshare)
 
 2. Change the permissions of the sample log file.
 

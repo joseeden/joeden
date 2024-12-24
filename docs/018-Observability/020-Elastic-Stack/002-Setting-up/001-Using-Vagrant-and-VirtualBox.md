@@ -22,8 +22,9 @@ This lab demonstrates how to set up the Elastic Stack using Vagrant and VirtualB
 
 ## Pre-requisites 
 
-- [Install VirtualBox](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-Vagrant.md#virtualbox)
-- [Install Vagrant on Windows](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-Vagrant.md#install-vagrant-on-windows)
+- [Install VirtualBox](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-VirtualBox.md#install-virtualbox)
+- [Install Vagrant on Windows](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-VirtualBox.md#install-vagrant-on-windows)
+- [Install jq on Elasticsearch node](https://www.scaler.com/topics/linux-jq/)
 
 ## Setup the Virtual Machines 
 
@@ -124,7 +125,7 @@ This lab demonstrates how to set up the Elastic Stack using Vagrant and VirtualB
 
 ## Install Elasticsearch 8.17 
 
-On Node1, switch to **root** user and perform the steps below:
+On Node 1, switch to **root** user and perform the steps below:
 
 1. Download and install the public signing key:
 
@@ -135,6 +136,7 @@ On Node1, switch to **root** user and perform the steps below:
 2. Install the `apt-transport-https` package on Debian before proceeding:
 
     ```bash
+    sudo apt-get update
     sudo apt-get install -y apt-transport-https
     ```
 
@@ -153,7 +155,7 @@ On Node1, switch to **root** user and perform the steps below:
 5. Configure Elasticsearch configuration file.
 
     ```bash
-    sudo vi vi /etc/elasticsearch/elasticsearch.yml 
+    sudo vi /etc/elasticsearch/elasticsearch.yml 
     ```
 
     Specify the following:
@@ -164,6 +166,13 @@ On Node1, switch to **root** user and perform the steps below:
     discovery.seed_hosts: ["127.0.0.1"]
     cluster.initial_master_nodes: ["node-1"] 
     ```
+
+    :::info 
+
+    The `cluster.initial_master_nodes` may already be set at the end of the file. 
+    Confirm first to avoid duplicate fields.
+
+    :::
 
 6. Enable and start the service.
 
@@ -231,7 +240,7 @@ On Node1, switch to **root** user and perform the steps below:
 
 Since we're using virtual machines on a Windows computer, we can set the memory limit used by Elasticsearch. 
 
-1. Login to Node1 and edit the config file:
+1. Login to Node 1 and edit the config file:
 
     ```bash
     sudo vi /etc/default/elasticsearch
@@ -305,8 +314,6 @@ To establish the trust relationship, perform the steps below:
 
 ## Share the Certificate to Other VMs (Optional)
 
-If you plan to use the Elasticsearch VM with the Logstash and Kibana virtual machines, you will need to allow the other two VMs...
-
 1. On the Elasticsearch VM, generate the SSH key.
 
     ```bash
@@ -325,7 +332,10 @@ If you plan to use the Elasticsearch VM with the Logstash and Kibana virtual mac
     cat >> .ssh/authorized_keys 
     ```
 
-4. From the Elasticsearch VM, hare the certificate to the other VM using `scp`.
+    Paste the copied public key and hit `Ctrl + D`.
+
+4. From the Elasticsearch VM, share the certificate to the other VM using `scp`.
+    Make sure to change the IP address of the other VM.
 
     ```bash
     scp /etc/elasticsearch/certs/http_ca.crt vagrant@192.168.56.103:/tmp
@@ -338,6 +348,31 @@ If you plan to use the Elasticsearch VM with the Logstash and Kibana virtual mac
     mv /tmp/http_ca.crt /usr/share/ca-certificates/elastic-ca.crt
     ```
 
+6. On the other VM, test the connection:
+
+    ```bash
+    $ curl -s -k  -u elastic:elastic https://192.168.56.101:9200 | jq
+
+    {
+      "name": "node1",
+      "cluster_name": "elasticsearch",
+      "cluster_uuid": "QyCE0sgfQci-KgVx7mc5bA",
+      "version": {
+        "number": "8.17.0",
+        "build_flavor": "default",
+        "build_type": "deb",
+        "build_hash": "2b6a7fed44faa321997703718f07ee0420804b41",
+        "build_date": "2024-12-11T12:08:05.663969764Z",
+        "build_snapshot": false,
+        "lucene_version": "9.12.0",
+        "minimum_wire_compatibility_version": "7.17.0",
+        "minimum_index_compatibility_version": "7.0.0"
+      },
+      "tagline": "You Know, for Search"
+    } 
+    ```
+
+    Elasticsearch node has the IP: 192.168.56.101
 
 ## Sample Search Index 
 
@@ -350,7 +385,7 @@ This is taken from [Sundog's Elasticsearch Course. ](https://www.sundog-educatio
 :::
 
 
-```json title="shakes-mapping.json "
+```json title="shakespeare-mapping.json"
 {
   "mappings": {
     "properties": {
@@ -375,15 +410,20 @@ This is taken from [Sundog's Elasticsearch Course. ](https://www.sundog-educatio
 Submit the mapping to Elasticsearch.
 
 ```bash
-curl -u elastic:<password> \
--k -X PUT -H 'Content-Type: application/json' \
-https://localhost:9200/shakespeare --data-binary @shakes-mapping.json -X PUT
+curl -s -u elastic:elastic \
+-H 'Content-Type: application/json' \
+-XPUT https://localhost:9200/shakespeare-sample \
+--data-binary @shakespeare-mapping.json  | jq
 ```
 
 It should return:
 
 ```bash
-{"acknowledged":true,"shards_acknowledged":true,"index":"shakespeare"} 
+{
+  "acknowledged": true,
+  "shards_acknowledged": true,
+  "index": "shakespeare"
+}
 ```
 
 ## Sample Bulk Indexing 
@@ -395,14 +435,18 @@ Download the file below. This bulk indexing file contains lines from Shakespeare
 Run the following command to index the data into Elasticsearch:
 
 ```bash
-curl -u elastic:<password> -H 'Content-Type: application/json' -XPOST 'localhost:9200/shakespeare/_bulk?pretty' --data-binary @shakespeare_7.0.json
+curl -s -u elastic:elastic \
+-H 'Content-Type: application/json' \
+-XPOST https://localhost:9200/shakespeare/_bulk?pretty \
+--data-binary @shakespeare_8.0.json | jq
 ```
 
 After indexing, you can search for the famous line "to be or not to be" using this query:
 
 ```bash
-curl -u elastic:<password> -H 'Content-Type: application/json' -XGET \
-'https://127.0.0.1:9200/shakespeare/_search?pretty' -d '
+curl -u elastic:<password> \
+-H 'Content-Type: application/json' \
+-XGET 'https://127.0.0.1:9200/shakespeare/_search?pretty' -d '
 {
   "query": {
     "match_phrase": {

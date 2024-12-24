@@ -1,17 +1,30 @@
 ---
 sidebar_position: 11
-title: Vagrant 
+title: VirtualBox 
 ---
 
 
 
-## VirtualBox 
+## Install VirtualBox 
 
 VirtualBox releases updates every couple of years so it's best  to rely on the official documentation on how to install VirtualBox.
 
 For more information, please see [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
-## WSL2 
+## Setup Fileshare 
+
+To map a local folder to a fileshare in your Linux VM:
+
+1. Open VirtualBox Manager > Right-click on your VM > Settings 
+2. Go to Shared Folders > Click Add new folder on the left.
+3. Specify the folder path in your computer, folder name, and mount point. You don't have to create this mountpoint inside your VM, VirtualBox will create it for you.
+4. Enable **Auto-mount** and **Make Permanent**, then click OK.
+
+    ![](/img/docs/12242024-virtualbox-enable-fileshare-linux.png)
+
+5. Login to your VM, switch to root user, and verify that you can access the fileshare.
+
+## Vagrant on WSL2 
 
 ### Install WSL2 
 
@@ -19,7 +32,7 @@ Some of the projects and labs will performed using WSL2 as terminal.
 
 For more information, please see [How to install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
 
-### Install Vagrant on WSL2
+### Install Vagrant on WSL2 
 
 > Reference: [How to run Vagrant + VirtualBox on WSL 2 (2021)](https://thenets.org/how-to-run-vagrant-on-wsl-2/)
 
@@ -86,17 +99,19 @@ vagrant plugin install virtualbox_WSL2
 ```
 
 
-## Windows 
+## Vagrant on Windows 
 
 ### Install Vagrant on Windows 
 
-**Install Vagrant:**
+Install Vagrant:
 
 - Download Vagrant: https://developer.hashicorp.com/vagrant/install
 - Install Vagrant with the default settings
 - Reboot Windows
 
-**Install Vagrant Plugins:**
+### Install Vagrant Plugins
+
+Install Vagrant Plugins:
 
 - Open your Git Bash or your Powershell, which should also work
 - For fast NFS shares
