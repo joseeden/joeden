@@ -2,6 +2,14 @@ SQL:
   label: 'SQL'
   permalink: '/SQL'
   description: 'Docs related to SQL'    
+SQLite:
+  label: 'SQLite'
+  permalink: '/SQLite'
+  description: 'Docs related to SQLite' 
+MySQL:
+  label: 'MySQL'
+  permalink: '/MySQL'
+  description: 'Docs related to MySQL' 
 PostgreSQL:
   label: 'PostgreSQL'
   permalink: '/PostgreSQL'
@@ -14,10 +22,6 @@ MongoDB:
   label: 'MongoDB'
   permalink: '/MongoDB'
   description: 'Docs related to MongoDB'  
-SQLite:
-  label: 'SQLite'
-  permalink: '/SQLite'
-  description: 'Docs related to SQLite' 
 Databases:
   label: 'Databases'
   permalink: '/Databases'

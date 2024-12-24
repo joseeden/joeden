@@ -141,7 +141,7 @@ For further details, refer to [Using Vagrant to Setup Elastic Stack.](/docs/018-
 
     ```bash
     Using bundled JDK: /usr/share/logstash/jdk
-    logstash 7.17.26      
+    logstash 8.17.0   
     ```
 
 7. Enable and start the Logstash service.
