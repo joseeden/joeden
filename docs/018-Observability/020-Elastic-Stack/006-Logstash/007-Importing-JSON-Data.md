@@ -70,7 +70,6 @@ Setup details:
 - [Install jq on Elasticsearch node](https://www.scaler.com/topics/linux-jq/)
 
 
-
 ## Importing the Logs 
 
 On a computer with internet access:
