@@ -54,11 +54,21 @@ To make it clearer, see the diagram below.
 ![](/img/docs/additive-joins-inner-joinsssss.png)
 
 
-## Using Subqueries in SQL
+## Subqueries
 
-Subqueries in SQL allows you to nest queries within other queries. This provides more flexibility and control over your data retrieval processes. They are often used to filter and manipulate data efficiently.
+Subqueries are nested queries inside another query. They can simplify results and improve readability.  
 
-### Semi Join
+- Can be used in **SELECT**, **FROM**, and **WHERE** clauses.  
+- Often return single results instead of multiple rows.  
+- Provide a more readable alternative to complex joins.  
+
+:::info 
+
+**Performance note:** Subqueries in **FROM** clauses limit optimization and may reduce readability.  
+
+::::
+
+## Semi Join
 
 Semi joins differ from traditional joins in that they don't add columns from the right table. Instead, they filter the left table based on a condition in the right table. They return all rows from the left table where a specified condition is met in the right table.
 
@@ -70,7 +80,7 @@ Semi joins differ from traditional joins in that they don't add columns from the
 
 </div>
 
-#### Examples on Semi Join
+#### Example on Semi Join
 
 Consider the **presidents** and **states** table. Identify which countries gained independence before 1800, and then identify the presidents of those countries.
 
@@ -97,12 +107,11 @@ WHERE country IN
 
 
 
-### Anti Join
+## Anti Join
 
 An anti join filters the left table by excluding rows that match a condition in the right table. It returns rows from the left table where a specified condition is NOT met in the right table.
 
 ![](/img/docs/anti-joinss.png)
-
 
 #### Example of Anti Join
 
@@ -119,6 +128,21 @@ WHERE continent LIKE '%America'
     WHERE indep_year < 1800
   );
 ```
+
+## Types of Subqueries  
+
+1. **SELECT Subqueries**  
+   - Used in the SELECT clause to calculate values.  
+   - Avoids generating large result sets from full outer joins.  
+   - Example: Compare average word length in a movie script and the English language.  
+
+2. **WHERE Subqueries**  
+   - Applied in the WHERE clause to act as dynamic filters.  
+   - Example: Filter English words found in a movie script dynamically.  
+
+3. **FROM Subqueries**  
+   - Creates temporary result sets for the main query.  
+   - Better rewritten as joins for better readability and performance.  
 
 
 ## Subqueries in `WHERE` Clause
