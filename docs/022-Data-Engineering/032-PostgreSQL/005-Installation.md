@@ -256,6 +256,14 @@ On the airgapped server, switch to **root** user :
     sudo apt-get install -f
     ```
 
+4. Enable and start the service.
+
+    ```bash
+    sudo systemctl enable --now postgresql 
+    sudo systemctl status postgresql 
+    ```
+
+
 ### Troubleshooting 
 
 #### No version information available
@@ -359,6 +367,12 @@ If you used the default values during the installation steps, you can simply hit
 
 
 ## Connect using pgAdmin 
+
+:::info 
+
+If you're running PostgreSQL on a virtual machine in VirtualBox, you will need to [enable port forwarding](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-VirtualBox.md#enable-port-forwarding) to access PostgreSQL from your local computer.
+
+:::
 
 We can also pgAdmin to connect to the PostgreSQL database. Search for pgAdmin and click to open. You should see this:
 

@@ -24,6 +24,25 @@ To map a local folder to a fileshare in your Linux VM:
 
 5. Login to your VM, switch to root user, and verify that you can access the fileshare.
 
+
+## Enable Port Forwarding
+
+Port forwarding allows your VirtualBox VM to communicate with your local computer via a specified port. This is essential for accessing services like PostgreSQL running on the VM from your host machine.
+
+1. Open VirtualBox Manager, select your VM, and go to **Settings** > **Network**.  
+
+2. Under **Adapter 1**, ensure the network is set to **NAT**.  
+
+3. Click **Advanced** > **Port Forwarding** and add a new rule. As example, allow PostgreSQL port.
+
+     - **Name**: PostgreSQL  
+     - **Protocol**: TCP  
+     - **Host Port**: `5432` (or another unused port)  
+     - **Guest Port**: `5432`  
+
+4. Save the changes, start the VM, and proceed with configuring the service inside the VM.  
+5. From your local computer, use pgAdmin to connect to the PostgreSQL database in your VM.
+
 ## Vagrant on WSL2 
 
 ### Install WSL2 
