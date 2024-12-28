@@ -60,7 +60,7 @@ last_update:
 
     ![](/img/docs/postgresql-install-on-windows-using-edb-finish-last-steppsss.png)
 
-## Connect to PostgreSQL using SQL Shell 
+## Connect using SQL Shell 
 
 In your Windows machine, search for **SQL Shell (psql)**. Click to open. You should see a terminal similar to your command prompt. If the SQL Shell doesn't appear, simply click Start and find the PostgreSQL folder. Open this folder and click SQL Shell.
 
@@ -79,7 +79,7 @@ If you used the default values during the installation steps, you can simply hit
 </div>
 
 
-## Connect to PostgreSQL using pgAdmin 
+## Connect using pgAdmin 
 
 We can also pgAdmin to connect to the PostgreSQL database. Search for pgAdmin and click to open. You should see this:
 
