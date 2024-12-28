@@ -60,6 +60,285 @@ last_update:
 
     ![](/img/docs/postgresql-install-on-windows-using-edb-finish-last-steppsss.png)
 
+
+<!-- ## Install PostgreSQL on Ubuntu 22.04
+
+Virtual machine:
+
+```bash
+$ cat /etc/os-release
+
+PRETTY_NAME="Ubuntu 22.04.5 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION="22.04.5 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=jammy 
+``` -->
+
+
+
+## Offline Install on Ubuntu 22.04
+
+Offline install is useful when you need to install PostgreSQL on a server that doesn't have internet access. For the example below, PostgreSQL will be installed on a virtual machine running on VirtualBox. 
+
+Virtual machine:
+
+```bash
+$ cat /etc/os-release
+
+PRETTY_NAME="Ubuntu 22.04.5 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION="22.04.5 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=jammy 
+```
+
+Local computer installed with WSL2:
+
+```bash
+$ cat /etc/os-release
+
+PRETTY_NAME="Ubuntu 22.04.5 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION="22.04.5 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=jammy 
+```
+
+
+### Download the Packages 
+
+On a computer with internet access:
+
+1. If your system is not configured to use Ubuntu 22.04 repositories, you can add them explicitly.
+
+    ```bash
+    echo "deb http://archive.ubuntu.com/ubuntu jammy main restricted universe multiverse" | sudo tee /etc/apt/sources.list.d/ubuntu-jammy.list
+    sudo apt update
+    ```
+
+2. Download the PostgreSQL repository key:
+
+   ```bash
+   wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | gpg --dearmor > postgresql.gpg
+   ```
+
+3. Move the key to a trusted location:
+
+   ```bash
+   sudo mv postgresql.gpg /etc/apt/trusted.gpg.d/
+   ```
+
+4. Add the PostgreSQL repository:
+
+   ```bash
+   echo "deb http://apt.postgresql.org/pub/repos/apt/ jammy-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list
+   ```
+
+5. Update package lists:
+
+   ```bash
+   sudo apt update
+   ```
+
+6. Download the PostgreSQL 16 package and its dependencies:
+
+   ```bash
+   mkdir postgresql-16
+   cd postgresql-16
+   sudo apt-get download postgresql-16 \
+   postgresql-client-16  \
+   postgresql-common libpq5 \
+   libpq5 
+   ```
+<!-- 
+7. You may also need additional dependencies depending on your VM. 
+
+   ```bash
+   apt-cache depends postgresql-16
+   ```
+
+   In my case, these are the dependencies:
+
+    ```bash
+    joseeden@TOWER-1:postgresql-packages$ apt-cache depends postgresql-16
+    postgresql-16
+    |Depends: locales
+    Depends: locales-all
+    Depends: postgresql-client-16
+    Depends: postgresql-common
+    Depends: ssl-cert
+    Depends: tzdata
+    |Depends: debconf
+    Depends: <debconf-2.0>
+        cdebconf
+        debconf
+    Depends: libc6
+    Depends: libgcc-s1
+    Depends: libgssapi-krb5-2
+    Depends: <libicu70>
+    Depends: <libldap-2.5-0>
+    Depends: <libllvm15>
+    Depends: liblz4-1
+    Depends: libpam0g
+    Depends: libpq5
+    Depends: libselinux1
+    Depends: <libssl3>
+    Depends: libstdc++6
+    Depends: libsystemd0
+    Depends: libuuid1
+    Depends: libxml2
+    Depends: libxslt1.1
+    Depends: libzstd1
+    Depends: zlib1g
+    Breaks: dbconfig-common
+    Recommends: sysstat 
+    ```   
+
+    Download its direct dependencies:
+
+    ```bash
+    apt-get download \
+    locales locales-all \
+    postgresql-client-16 postgresql-common ssl-cert \
+    tzdata debconf libc6 libgcc-s1 libgssapi-krb5-2 \
+    libsystemd0 libuuid1 libxml2 libxslt1.1 libzstd1 zlib1g sysstat \
+    liblz4-1 libpam0g libpq5 libselinux1  libstdc++6 \
+    libicu70 libldap-2.5-0 libssl3 libllvm15
+    ``` -->
+
+7. Copy the files to the virtual machine. [You can map local folder to a fileshare in you VM](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-VirtualBox.md#setup-fileshare).
+
+
+
+
+### Install PostgreSQL on Ubuntu 
+
+On the airgapped server, switch to **root** user :
+
+1. Update the system’s default applications and packages.
+
+    ```bash
+    sudo apt update && sudo apt upgrade -y 
+    ```
+
+2. Navigate to the directory containing the `.deb` files. Install all packages using `dpkg`.
+
+    ```bash
+    cp -r /mnt/database/postgres* /tmp/postgresql-packages
+    cd /tmp/postgresql-packages
+    sudo dpkg -i *.deb
+    ```
+3. If there are any missing dependencies, use `dpkg` to list them.
+
+    ```bash
+    sudo apt-get install -f
+    ```
+
+### Troubleshooting 
+
+#### No version information available
+
+If you get this error when running `systemctl` commands, your airgapped Ubuntu system is using an older version of `libstdc++.so.6`, and the required version `GLIBCXX_3.4.29` is missing.
+
+```bash
+systemctl: /lib/x86_64-linux-gnu/libselinux.so.1: no version information available (required by systemctl) 
+```
+
+Solution:
+
+1. Verify the installed version on the airgapped system.
+
+    ```bash
+    strings /lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX
+    ```
+
+    Look for `GLIBCXX_3.4.29` in the output. If it’s missing, proceed with step 2.
+
+    ```bash
+    GLIBCXX_3.4
+    GLIBCXX_3.4.1
+    GLIBCXX_3.4.2
+    GLIBCXX_3.4.3
+    GLIBCXX_3.4.4
+    GLIBCXX_3.4.5
+    GLIBCXX_3.4.6
+    GLIBCXX_3.4.7
+    GLIBCXX_3.4.8
+    GLIBCXX_3.4.9
+    GLIBCXX_3.4.10
+    GLIBCXX_3.4.11
+    GLIBCXX_3.4.12
+    GLIBCXX_3.4.13
+    GLIBCXX_3.4.14
+    GLIBCXX_3.4.15
+    GLIBCXX_3.4.16
+    GLIBCXX_3.4.17
+    GLIBCXX_3.4.18
+    GLIBCXX_3.4.19
+    GLIBCXX_3.4.20
+    GLIBCXX_3.4.21
+    GLIBCXX_3.4.22
+    GLIBCXX_3.4.23
+    GLIBCXX_3.4.24
+    GLIBCXX_3.4.25
+    GLIBCXX_3.4.26
+    GLIBCXX_3.4.27
+    GLIBCXX_3.4.28
+    GLIBCXX_DEBUG_MESSAGE_LENGTH 
+    ```
+
+2.  Check the GCC version on the airgapped server:
+
+    ```bash
+    gcc --version
+    ```
+
+    For Ubuntu 22.04, you should have at least GCC 11 to support `GLIBCXX_3.4.29`.
+
+    ```bash
+    gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+    Copyright (C) 2021 Free Software Foundation, Inc.
+    This is free software; see the source for copying conditions.  There is NO
+    warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOS 
+    ```
+
+3. On a machine with internet access, download the necessary GCC or `libstdc++` package. 
+
+    ```bash
+    sudo apt update
+    sudo apt-get download gcc-11        ## ignore if GCC-11 already installed.
+    sudo apt-get download libstdc++6
+    ```
+
+4. Transfer the package to your airgapped server.
+5. On the airgapped server, navigate to the directory where the .deb files are stored and install.
+
+```bash
+sudo dpkg -i libstdc++6*.deb 
+```
+
 ## Connect using SQL Shell 
 
 In your Windows machine, search for **SQL Shell (psql)**. Click to open. You should see a terminal similar to your command prompt. If the SQL Shell doesn't appear, simply click Start and find the PostgreSQL folder. Open this folder and click SQL Shell.

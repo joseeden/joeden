@@ -89,6 +89,7 @@ On the MySQL VM:
 8. Install the packages at once.
 
     ```bash
+    sudo apt update
     sudo dpkg -i *.deb 
     ```
 
@@ -97,8 +98,9 @@ On the MySQL VM:
     ![](/img/docs/12242024-database-mysql-provide-root-pw.png)
 
 
-10. Verify if MySQL is installed and running.
+10. Enable and verify if MySQL is installed and running.
 
     ```bash
+    sudo systemctl enable --now mysql 
     sudo systemctl status mysql 
     ```
