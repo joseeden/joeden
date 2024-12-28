@@ -47,6 +47,8 @@ On a computer with internet access:
 4. Open a terminal and download the other pre-requisites package.
 
     ```bash
+    mkdir mysql-prerequisites
+    cd mysql-prerequisites
     apt download libmecab2 libc6 \
     mecab-ipadic-utf8 mecab-ipadic mecab-utils \
     libcrypt1 libgcc-s1 libmecab2 libstdc++6 gcc-12-base

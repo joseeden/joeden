@@ -525,3 +525,50 @@ When to Use:
 
 - Use **subqueries** for simple calculations or dynamic filtering.  
 - Use **CTEs** for complex logic or large datasets needing optimization.  
+
+#### Climate Data for Southern Hemisphere Olympic Regions
+
+Countries like Canada, Russia, and Mongolia have freezing temperatures year-round, while others experience winter cold for a few months, still supporting training for winter sports like skiing and bobsledding. Below are the sample datasets:
+
+- [athletes_recent.csv](@site/assets/datasets/datacamp-athletes-climate/athletes_recent.csv)
+- [oclimate.csv](@site/assets/datasets/datacamp-athletes-climate/oclimate.csv)
+
+Examine temperature data for Olympic countries and focus on the southern hemisphere, which sees lower Winter Olympics participation.
+
+- Write a CTE for the southern hemisphere.
+- Find the average June temperature and precipitation.
+- Join the data to see winter month temperatures for all regions.
+
+**Solution:**
+
+The CTE Calculates the average June temperature and precipitation for the specified regions. The `JOIN` Combines this data with athlete info for the winter season Finally, the `GROUP` and `ORDER` Groups results by region and averages, ordering by temperature.
+
+```sql
+WITH south_cte AS (
+  SELECT region,
+         ROUND(AVG(temp_06), 2) AS avg_winter_temp,
+         ROUND(AVG(precip_06), 2) AS avg_winter_precip
+  FROM oclimate
+  WHERE region IN ('Africa', 'South America', 'Australia and Oceania')
+  GROUP BY region
+)
+
+SELECT south.region, 
+       south.avg_winter_temp, 
+       south.avg_winter_precip,
+       COUNT(DISTINCT ath.athlete_id)
+FROM south_cte AS south
+INNER JOIN athletes_recent ath
+  ON south.region = ath.region
+  AND ath.season = 'Winter'
+GROUP BY south.region, south.avg_winter_temp, south.avg_winter_precip
+ORDER BY south.avg_winter_temp;
+``` 
+
+Sample output:
+
+| Region                | Avg Winter Temp (°C) | Avg Winter Precip (mm) | Count |
+|-----------------------|----------------------|-------------------------|-------|
+| South America         | 18.50                | 156.23                  | 31    |
+| Australia and Oceania | 19.87                | 137.92                  | 76    |
+| Africa                | 23.99                | 73.98                   | 5     |
