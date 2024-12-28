@@ -29,7 +29,6 @@ To download the actual files, you can get them from my [Github repository](https
 - [monarchs.csv](@site/assets/datasets/datacamp-world-database/monarchs.csv)
 
 
-
 ## Additive Joins
 
 In SQL, joins are typically used to combine data from two or more tables. The joins discussed in the previous pages are "additive," meaning they add columns to the original left table.
@@ -57,8 +56,7 @@ To make it clearer, see the diagram below.
 
 ## Using Subqueries in SQL
 
-Subqueries are a powerful tool in SQL that allow you to nest queries within other queries, providing more flexibility and control over your data retrieval processes. They are often used to filter and manipulate data efficiently.
-
+Subqueries in SQL allows you to nest queries within other queries. This provides more flexibility and control over your data retrieval processes. They are often used to filter and manipulate data efficiently.
 
 ### Semi Join
 
@@ -72,7 +70,7 @@ Semi joins differ from traditional joins in that they don't add columns from the
 
 </div>
 
-### Examples on Semi Join
+#### Examples on Semi Join
 
 Consider the **presidents** and **states** table. Identify which countries gained independence before 1800, and then identify the presidents of those countries.
 
@@ -106,7 +104,7 @@ An anti join filters the left table by excluding rows that match a condition in 
 ![](/img/docs/anti-joinss.png)
 
 
-### Example of Anti Join
+#### Example of Anti Join
 
 Consider the **presidents** and **states** table. Identify countries in the Americas founded after 1800.
 
@@ -150,10 +148,11 @@ WHERE column_name IN (
 );
 ```
 
-
 ## Subqueries in `SELECT` Clause
 
 Subqueries can also be placed inside the `SELECT` clause to calculate or retrieve additional data that complements each row in the main query. Subqueries in the `SELECT` clause are often used to perform calculations or aggregations that would be cumbersome with a direct join.
+
+
 
 ## Example on Subqueries 
 
@@ -223,7 +222,7 @@ Output:
 | Africa       | 0             |
 
 
-## More examples 
+
 
 ### Populations 
 
@@ -303,10 +302,9 @@ Output:
 | 374    | SWE          | 2015 | 1.88           | 82.551216       | 9,799,186 |
 
 
-### Urban area population for capital cities
+### Population in capital cities
 
 Use both tables below:
-
 
 Below is the **populations** table with 20 records inside.
 
@@ -432,7 +430,7 @@ WHERE left_table.id = right_table.id
 
 </div>
 
-## Example on subqueries inside `FROM`
+### Continents with Monarchs
 
 Suppose we want to find all continents with monarchs, along with the most recent country to gain independence in each continent. 
 
@@ -479,3 +477,4 @@ Output:
 |----------------|-------------------------------|
 | Asia           | 1991                          |
 | Europe         | 1993                          |
+
