@@ -13,7 +13,7 @@ last_update:
 
 ## Overview 
 
-This lab covers the offline installation of MySQL. This is suited for private networks where nodes doesn't have internet access. 
+This lab covers the offline installation of MySQL. This is suitable for private networks where nodes doesn't have internet access. 
 
 Virtual machine used:
 
@@ -34,7 +34,7 @@ PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-poli
 UBUNTU_CODENAME=jammy 
 ```
 
-Steps: 
+## Download the Packages 
 
 On a computer with internet access:
 
@@ -52,6 +52,9 @@ On a computer with internet access:
 
 5. Copy the files to the [local folder mapped to a fileshare in you VM](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-VirtualBox.md#setup-fileshare).
 
+
+## Install on Air-gapped Server
+
 On the MySQL VM:
 
 1. Copy the file from the fileshare to `/tmp`. Untar the file. 
@@ -61,7 +64,7 @@ On the MySQL VM:
     cd /tmp
     ```
 
-7. The bundle will contain the following packages.
+2. The bundle will contain the following packages.
 
     ```bash
     $ ls -la
@@ -86,19 +89,19 @@ On the MySQL VM:
     -rwxrwx--- 1 root vboxsf     58818 Sep 24 12:46 mysql-testsuite_9.1.0-1ubuntu22.04_amd64.deb
     ```
 
-8. Install the packages at once.
+3. Install the packages at once.
 
     ```bash
     sudo apt update
     sudo dpkg -i *.deb 
     ```
 
-9. Provide root password when prompted.
+4. Provide root password when prompted.
 
     ![](/img/docs/12242024-database-mysql-provide-root-pw.png)
 
 
-10. Enable and verify if MySQL is installed and running.
+5. Enable and verify if MySQL is installed and running.
 
     ```bash
     sudo systemctl enable --now mysql 

@@ -164,69 +164,16 @@ On a computer with internet access:
 
 6. Download the PostgreSQL 16 package and its dependencies:
 
-   ```bash
-   mkdir postgresql-16
-   cd postgresql-16
-   sudo apt-get download postgresql-16 \
-   postgresql-client-16  \
-   postgresql-common libpq5 \
-   libpq5 
-   ```
-<!-- 
-7. You may also need additional dependencies depending on your VM. 
-
-   ```bash
-   apt-cache depends postgresql-16
-   ```
-
-   In my case, these are the dependencies:
-
     ```bash
-    joseeden@TOWER-1:postgresql-packages$ apt-cache depends postgresql-16
-    postgresql-16
-    |Depends: locales
-    Depends: locales-all
-    Depends: postgresql-client-16
-    Depends: postgresql-common
-    Depends: ssl-cert
-    Depends: tzdata
-    |Depends: debconf
-    Depends: <debconf-2.0>
-        cdebconf
-        debconf
-    Depends: libc6
-    Depends: libgcc-s1
-    Depends: libgssapi-krb5-2
-    Depends: <libicu70>
-    Depends: <libldap-2.5-0>
-    Depends: <libllvm15>
-    Depends: liblz4-1
-    Depends: libpam0g
-    Depends: libpq5
-    Depends: libselinux1
-    Depends: <libssl3>
-    Depends: libstdc++6
-    Depends: libsystemd0
-    Depends: libuuid1
-    Depends: libxml2
-    Depends: libxslt1.1
-    Depends: libzstd1
-    Depends: zlib1g
-    Breaks: dbconfig-common
-    Recommends: sysstat 
-    ```   
-
-    Download its direct dependencies:
-
-    ```bash
-    apt-get download \
-    locales locales-all \
-    postgresql-client-16 postgresql-common ssl-cert \
-    tzdata debconf libc6 libgcc-s1 libgssapi-krb5-2 \
-    libsystemd0 libuuid1 libxml2 libxslt1.1 libzstd1 zlib1g sysstat \
-    liblz4-1 libpam0g libpq5 libselinux1  libstdc++6 \
-    libicu70 libldap-2.5-0 libssl3 libllvm15
-    ``` -->
+    mkdir postgresql-16
+    cd postgresql-16
+    sudo apt-get download postgresql-16 \
+    postgresql-client-16  \
+    postgresql-common libpq5 \
+    libpq5 ssl-cert libjson-perl \
+    libipc-run-perl libio-pty-perl libllvm15 \
+    postgresql-client-common=267.pgdg22.04+1
+    ```
 
 7. Copy the files to the virtual machine. [You can map local folder to a fileshare in you VM](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-VirtualBox.md#setup-fileshare).
 
@@ -262,6 +209,123 @@ On the airgapped server, switch to **root** user :
     sudo systemctl enable --now postgresql 
     sudo systemctl status postgresql 
     ```
+
+5. Verify version.
+
+    ```bash
+    $ psql --version
+    ```
+
+    Output:
+
+    ```bash 
+    psql (PostgreSQL) 16.6 (Ubuntu 16.6-1.pgdg22.04+1) 
+    ```
+
+6. PostgreSQL runs under a dedicated system user named `postgres`. Switch to this user:
+
+    ```bash
+    sudo -i -u postgres
+    ```
+
+7. Launch the psql command-line interface:
+
+    ```bash
+    psql 
+    ```
+
+8. Set a password for the default `postgres` superuser account:
+
+    ```sql
+    ALTER USER postgres PASSWORD 'your_secure_password';
+    ```
+
+    To exit the shell:
+
+    ```bash
+    \q 
+    ```
+
+
+### Edit the Configuration Files
+
+Two key files determine PostgreSQL's behavior:
+
+- **`postgresql.conf`:** Controls database server settings.
+- **`pg_hba.conf`:** Manages client authentication.
+
+Steps: 
+
+1. Find the configuration files, usually under `/etc/postgresql/<version>/main/`:
+
+   ```bash
+   sudo find /etc -name postgresql.conf
+   sudo find /etc -name pg_hba.conf
+   ```
+
+2. Modify as needed, for example, to change the listening address:
+
+   ```bash
+   sudo vi /etc/postgresql/<version>/main/postgresql.conf
+   ```
+
+   Set:
+
+   ```plaintext
+   listen_addresses = '0.0.0.0'  # Use 127.0.0.1 - only listeni on the local loopback interface.
+   ```
+
+3. Configure client access rules:
+
+   ```bash
+   sudo vi /etc/postgresql/<version>/main/pg_hba.conf
+   ```
+
+   Common settings:
+
+   ```plaintext
+   # TYPE  DATABASE        USER            ADDRESS                 METHOD
+   host    all             all             127.0.0.1/32           md5
+   host    all             all             0.0.0.0/0              md5
+   ```
+
+4. Apply the changes by restarting the service:
+
+   ```bash
+   sudo systemctl restart postgresql
+   ```
+
+5. Create a new database and a user with appropriate permissions.
+
+   ```bash
+   sudo -i -u postgres
+   createdb mydatabase
+   psql
+   ```
+
+6. Create a User:
+
+
+   ```sql
+   CREATE USER operator WITH PASSWORD 'mypassword';
+   ```
+
+   Grant Permissions:
+
+   ```sql
+   GRANT ALL PRIVILEGES ON DATABASE mydatabase TO operator;
+   ```
+
+   Exit the shell:
+   ```sql
+   \q
+   ```
+
+7. Test the Connection from the same machine:
+
+   ```bash
+   psql -U operator -d mydatabase -h 127.0.0.1
+   ```
 
 
 ### Troubleshooting 
