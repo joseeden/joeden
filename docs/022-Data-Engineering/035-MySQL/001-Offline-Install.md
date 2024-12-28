@@ -44,10 +44,12 @@ On a computer with internet access:
 
 3. When prompted to sign up, click **No thanks, just start my download.**
 
-4. Open a terminal and download the `libmecab2` package
+4. Open a terminal and download the other pre-requisites package.
 
     ```bash
-    apt download libmecab2
+    apt download libmecab2 libc6 \
+    mecab-ipadic-utf8 mecab-ipadic mecab-utils \
+    libcrypt1 libgcc-s1 libmecab2 libstdc++6 gcc-12-base
     ```
 
 5. Copy the files to the [local folder mapped to a fileshare in you VM](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-VirtualBox.md#setup-fileshare).
