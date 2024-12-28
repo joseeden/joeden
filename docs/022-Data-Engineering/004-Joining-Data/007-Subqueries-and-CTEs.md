@@ -1,5 +1,5 @@
 ---
-title: "Subqueries in SQL"
+title: "Subqueries and CTEs"
 description: "Advanced SQL"
 tags: [Data Engineering, Databases, SQL]
 sidebar_position: 7
@@ -176,7 +176,11 @@ WHERE column_name IN (
 
 Subqueries can also be placed inside the `SELECT` clause to calculate or retrieve additional data that complements each row in the main query. Subqueries in the `SELECT` clause are often used to perform calculations or aggregations that would be cumbersome with a direct join.
 
+:::info 
 
+Subqueries in `SELECT` and `WHERE` statements are analogous to `JOINs`
+
+:::
 
 ## Example on Subqueries 
 
@@ -502,3 +506,22 @@ Output:
 | Asia           | 1991                          |
 | Europe         | 1993                          |
 
+## Common Table Expressions (CTEs)  
+
+CTEs create temporary, reusable result sets using the **WITH** keyword. They are ideal for large or complex datasets.  
+
+- Alternative to using `JOINs`.
+- Creates a temporary table and gets executed only once.
+- Improve readability by isolating query logic.  
+- Reduce redundant computations for better performance.  
+
+Example Use of CTEs:
+
+- Aggregating word lengths in the English language using a CTE.  
+- Final query compares English word counts to movie script word counts.  
+- CTE improves speed by pre-aggregating data before joining.  
+
+When to Use:
+
+- Use **subqueries** for simple calculations or dynamic filtering.  
+- Use **CTEs** for complex logic or large datasets needing optimization.  
