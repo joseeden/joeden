@@ -9,7 +9,7 @@ last_update:
 
 ## Overview 
 
-Understanding the workflow of machine learning is key to building effective models. Training data allows a model to learn and make predictions, but there are essential steps in between. These steps will be better explained in the sample scenario in the next section.
+In machine learning, having a clear workflow is key to getting good results. The order in which steps are done plays a big role. Rearranging these steps will help you better understand their importance and how they fit into a typical machine learning project.
 
 <div class='img-center'>
 
@@ -17,10 +17,16 @@ Understanding the workflow of machine learning is key to building effective mode
 
 </div>
 
+In the sample diagram above, the workflow begins with raw data, which is transformed into features and labels. 
 
-For simplicity, we won't be splitting the data sets into three. Instead, we'll only divide it into training and testing data sets.
+- These are split into training, validation, and testing datasets. 
+- Training and validation datasets are used for model training and hyperparameter tuning.
+- The testing dataset evaluates the final model. 
 
-## Scenario
+The process results in a trained model capable of generating predicted labels.
+
+
+## Sample Scenario
 
 <div class='img-center'>
 
@@ -57,3 +63,13 @@ New York City releases monthly records of apartment sales, including details lik
         - No, tune the model by tweaking options or features and repeat the training.
 
 
+## The Complete ML Workflow
+
+A clear workflow consists of steps that build on each other, taking the process from data collection to deploying a reliable model.
+
+1. Requirements Gathering  
+2. Data Preparation  
+3. Model Development  
+4. Model Evaluation and Tuning  
+5. Model Testing  
+6. Model Deployment  
