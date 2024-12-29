@@ -30,22 +30,22 @@ For simplicity, we won't be splitting the data sets into three. Instead, we'll o
 
 New York City releases monthly records of apartment sales, including details like square footage, neighborhood, year built, and sale price. We aim to predict future sale prices, making this a supervised learning problem.
 
-## Step 1: Extract Features
+- **Step 1: Extract Features**
 
     - Datasets often need reformatting to extract clear features.
     - Decide on relevant features like square feet, neighborhood, and proximity to subway stations.
 
-## Step 2: Split Dataset
+- **Step 2: Split Dataset**
 
     - Split the dataset into training and testing sets.
     - Two datasets are essential for effective model evaluation.
 
-## Step 3: Train Model
+- **Step 3: Train Model**
 
     - Input the training dataset into a selected machine learning model.
     - Choose from various models like neural networks or logistic regression based on use-cases and complexity.
 
-## Step 4: Evaluate
+- **Step 4: Evaluate**
 
     - Evaluate the model using the test dataset (unseen data).
     - Various metrics can assess performance, such as:
