@@ -8,14 +8,20 @@ tags:
   - Containerization
   - Kubernetes
   - Cybersecurity
-sidebar_position: 31
+sidebar_position: 1
 last_update:
   date: 7/7/2022
 ---
 
-## Using Docker Compose
+## Overview
 
-**Docker Compose** simplifies the management of multiple containers by allowing you to define and run them using a single configuration file. Here’s a comparison between running multiple containers using individual `RUN` commands and using Docker Compose.
+Docker Compose is a tool that helps define and manage multi-container applications with the Docker engine. It simplifies configuration and deployment using a single file.  
+
+- Configuration is stored in `compose.yml` or `compose.yaml`.  
+- Older formats use `docker-compose.yml` or `docker-compose.yaml`.  
+- Makes it easy to share or demo applications.  
+
+Here’s a comparison between running multiple containers using individual `RUN` commands and using Docker Compose.
 
 - **First Method - Multiple RUNs**
 
@@ -57,7 +63,7 @@ docker-compose up
 :::
 
 
-## Adding More Details to docker-compose.yml
+## Adding More Details 
 
 You can enhance the `docker-compose.yml` file with additional configurations:
 
@@ -86,7 +92,6 @@ services:
           - redis
 ```
 
-Explore the labs in this repository to learn more about Docker Compose.
 
 ## Docker Compose Versions
 
@@ -150,40 +155,66 @@ There are three versions of a Docker Compose file. For versions 2 and 3, you mus
 
 The **docker-compose** commands outlined here are essential for managing your containerized applications. The `--build` option rebuilds the images specified in the docker-compose file before starting the containers.
 
-To run containers in the background, use:
+To start an application, navigate to the directory containing the `docker-compose.yaml` file.  
 
-```bash
-docker-compose up -d 
-```
+- Run the following command:  
 
-To stop the containers, use:
+  ```bash
+  docker compose up
+  ```
 
-```bash
-docker-compose down 
-```
+- For older systems, use:  
 
-To view the running containers, run this command in the directory containing your docker-compose file. This command checks the docker-compose file for the container list and their status:
+  ```bash
+  docker-compose up
+  ```
 
-```bash
-docker-compose ps 
-```
+- Use the `-f` option to specify a file with a different name or location:  
 
-If executed in a directory without a docker-compose file, you'll see an error:
+  ```bash
+  docker compose -f custom-file.yaml up
+  ```
 
-```bash
-docker-compose ps
-```
+- Add `-d` to detach and run containers in the background:  
 
-Output:
+  ```bash
+  docker compose up -d
+  ```
 
-```bash
-ERROR:
-        Can't find a suitable configuration file in this directory or any
-        parent. Are you in the right directory?
+    :::info 
 
-        Supported filenames: docker-compose.yml, docker-compose.yaml, compose.yml, compose.yaml 
-```
-  
- 
+    Running `docker compose up` creates containers and their network automatically.
+
+    :::
+
+
+- To view the running containers:
+
+    ```bash
+    docker-compose ps 
+    ```
+
+    If executed in a directory without a docker-compose file, you'll see an error:
+
+    ```bash
+    ERROR:
+            Can't find a suitable configuration file in this directory or any
+            parent. Are you in the right directory?
+
+            Supported filenames: docker-compose.yml, docker-compose.yaml, compose.yml, compose.yaml 
+    ```
+    
+- To shut down all running resources, including containers and networks:  
+
+  ```bash
+  docker compose down
+  ```
+
+- Use the `-f` option if it was used during startup:  
+
+  ```bash
+  docker compose -f custom-file.yaml down
+  ```
+   
 
  
