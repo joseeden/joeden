@@ -1,6 +1,6 @@
 {
-  "label": "Docker Compose",
-  "position": 30,
+  "label": "Docker Swarms",
+  "position": 7,
   "link": {
     "type": "generated-index"
   }
