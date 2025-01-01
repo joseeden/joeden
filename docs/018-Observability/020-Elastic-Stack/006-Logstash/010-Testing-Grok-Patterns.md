@@ -81,9 +81,7 @@ Login to the Logstash node, switch to **root** user, and perform the following:
     sudo vi /etc/logstash/conf.d/grok-linux-log.conf
     ```
 
-    Use the configuration file below:
-
-    - [grok-linux-log.conf](/docs/018-Observability/020-Elastic-Stack/006-Logstash/Logstash-config-files/grok-linux-log.conf)
+    Use this configuration file: [grok-linux-log.conf](/docs/018-Observability/020-Elastic-Stack/006-Logstash/Logstash-config-files/grok-linux-log.conf)
 
 2. Start Logstash with the updated configuration:
 
@@ -220,9 +218,7 @@ From the Logstash node:
     sudo vi /etc/logstash/conf.d/grok-linux-log-2.conf
     ```
 
-    Use the configuration file below:
-
-    - [grok-linux-log-2.conf](/docs/018-Observability/020-Elastic-Stack/006-Logstash/Logstash-config-files/grok-linux-log-2.conf)
+    Use this configuration file: [grok-linux-log-2.conf](/docs/018-Observability/020-Elastic-Stack/006-Logstash/Logstash-config-files/grok-linux-log-2.conf)
 
 
 3. Create the index.
@@ -324,9 +320,7 @@ From the Logstash node:
     sudo vi /etc/logstash/conf.d/grok-linux-log-3.conf
     ```
 
-    Use the configuration file below:
-
-    - [grok-linux-log-3.conf](/docs/018-Observability/020-Elastic-Stack/006-Logstash/Logstash-config-files/grok-linux-log-3.conf)
+    Use this configuration file: [grok-linux-log-3.conf](/docs/018-Observability/020-Elastic-Stack/006-Logstash/Logstash-config-files/grok-linux-log-3.conf)
 
 
 3. Create the index.

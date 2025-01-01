@@ -54,7 +54,6 @@ Setup details:
 Login to the Logstash node, switch to **root** user, and perform the following:
 
 1. Download the sample Apache web server log file below: [access_log.log](@site/assets/elastic-stack/sample-logs/access_log.log)
-1. Download the sample Apache web server log file below: [access_log.log](/assets/elastic-stack/sample-logs/access_log.log)
 
     You can configure a fileshare in the VM's settings, map it to a local folder in your computer, and place the access log in that folder. Then, confirm the VM can access the fileshare and copy the log to `/tmp` within the VM.
 
