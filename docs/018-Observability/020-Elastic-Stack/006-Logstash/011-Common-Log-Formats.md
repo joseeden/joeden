@@ -72,9 +72,6 @@ On a computer with internet access:
     - [elasticsearch.log](@site/assets/elastic-stack/sample-logs/elasticsearch.log)
     - [es_slowlog.log](@site/assets/elastic-stack/sample-logs/es_slowlog.log)
     - [mysql-slow.log](@site/assets/elastic-stack/sample-logs/mysql-slow.log)
-    <!-- - [aws-elb.log](@site/assets/elastic-stack/sample-logs/aws-elb.log)
-    - [aws-alb.log](@site/assets/elastic-stack/sample-logs/aws-alb.log)
-    - [aws-cloudfront.log](@site/assets/elastic-stack/sample-logs/aws-cloudfront.log) -->
 
 2. Transfer the files to your virtual machine. 
 
