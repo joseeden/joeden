@@ -50,7 +50,7 @@ This lab focuses on importing JSON data using Logstash and Elasticsearch.
 | Node    | Hostname       | IP Address       | 
 |---------|----------------|------------------|
 | Node 1  | elasticsearch  |  192.168.56.101  |
-| Node 2  | logstash       |  192.168.56.103  |
+| Node 2  | logstash       |  192.168.56.102  |
 
 Setup details:
 
@@ -74,7 +74,7 @@ Setup details:
 
 On a computer with internet access:
 
-1. Download the sample datasets: [sample-json.log](@site/assets/elastic-stack/sample-json.log)
+1. Download the sample datasets: [sample-json.log](@site/assets/elastic-stack/sample-logs/sample-json.log)
 
 2. Transfer the files to your virtual machine. 
 

@@ -31,7 +31,7 @@ This lab focuses on integrating Logstash with MySQL to ingest data into Elastics
 | Node    | Hostname       | IP Address       | Port  |
 |---------|----------------|------------------|-------|
 | Node 1  | elasticsearch  |  192.168.56.101  | 9200  |
-| Node 2  | logstash       |  192.168.56.103  |       |
+| Node 2  | logstash       |  192.168.56.102  |       |
 | Node 4  | mysql          |  192.168.56.104  | 3306  |
 
 Setup details:

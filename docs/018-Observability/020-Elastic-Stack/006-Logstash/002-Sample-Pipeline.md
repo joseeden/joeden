@@ -30,7 +30,7 @@ This lab focuses on using a sample Apache web server log file with Logstash and 
 | Node    | Hostname       | IP Address       | 
 |---------|----------------|------------------|
 | Node 1  | elasticsearch  |  192.168.56.101  |
-| Node 2  | logstash       |  192.168.56.103  |
+| Node 2  | logstash       |  192.168.56.102  |
 
 Setup details:
 
@@ -53,7 +53,7 @@ Setup details:
 
 Login to the Logstash node, switch to **root** user, and perform the following:
 
-1. Download the sample Apache web server log file below: [access_log.log](@site/assets/elastic-stack/access_log.log)
+1. Download the sample Apache web server log file below: [access_log.log](@site/assets/elastic-stack/sample-logs/access_log.log)
 
     You can configure a fileshare in the VM's settings, map it to a local folder in your computer, and place the access log in that folder. Then, confirm the VM can access the fileshare and copy the log to `/tmp` within the VM.
 
