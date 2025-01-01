@@ -197,7 +197,7 @@ IIS server logs are used for monitoring web traffic, identifying potential issue
 
     Use the configuration file below:
 
-    - [grok-iis-server.conf](/docs/018-Observability/020-Elastic-Stack/006-Logstash/Logstash-config-files/grok-iis-server.conf)
+    - [grok-iis-server.conf](@site/docs/018-Observability/020-Elastic-Stack/006-Logstash/Logstash-config-files/grok-iis-server.conf)
 
     :::info 
 
@@ -306,7 +306,7 @@ MongoDB logs are useful for tracking the operational status, performance, and is
 
     Use the configuration file below:
 
-    - [grok-mongodb.conf](/docs/018-Observability/020-Elastic-Stack/006-Logstash/Logstash-config-files/grok-mongodb.conf)
+    - [grok-mongodb.conf](@site/docs/018-Observability/020-Elastic-Stack/006-Logstash/Logstash-config-files/grok-mongodb.conf)
 
     :::info 
 
@@ -410,7 +410,7 @@ In this scenario, we will use Apache access logs.
 
     Use the configuration file below:
 
-    - [grok-apache-access.conf](/docs/018-Observability/020-Elastic-Stack/006-Logstash/Logstash-config-files/grok-apache-access.conf)
+    - [grok-apache-access.conf](@site/docs/018-Observability/020-Elastic-Stack/006-Logstash/Logstash-config-files/grok-apache-access.conf)
 
     :::info 
 
