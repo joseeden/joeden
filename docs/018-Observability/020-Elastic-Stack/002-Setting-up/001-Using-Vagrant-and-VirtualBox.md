@@ -178,8 +178,8 @@ On Node 1, switch to **root** user and perform the steps below:
 
     ```bash
     sudo systemctl daemon-reload
-    sudo systemctl enable --now elasticsearch.service
-    sudo systemctl status elasticsearch.service 
+    sudo systemctl enable --now elasticsearch
+    sudo systemctl status elasticsearch
     ```
 
 7. Reset the password for the `elastic` user.
@@ -196,6 +196,12 @@ On Node 1, switch to **root** user and perform the steps below:
     Enter password for [elastic]:
     Re-enter password for [elastic]:
     Password for the [elastic] user successfully reset.      
+    ```
+
+    If you encounter the error below, you may need to [adjust the heap size.](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/001-Using-Vagrant-and-VirtualBox.md#adjust-the-heap-size)
+
+    ```bash
+    ERROR: Failed to determine the health of the cluster. Unexpected http status [503], with exit code 65
     ```
 
 8. Verify the access:
@@ -255,8 +261,58 @@ Since we're using virtual machines on a Windows computer, we can set the memory 
 3. Restart the service.
 
     ```bash
-    sudo systemctl restart elasticsearch.service 
-    sudo systemctl status elasticsearch.service 
+    sudo systemctl restart elasticsearch
+    sudo systemctl status elasticsearch
+    ```
+
+## Adjust the Heap Size 
+
+The heap size for Elasticsearch is dependent on the available resources of your virtual machine (VM), and configuring it correctly is critical for optimal performance.
+
+**General Rule:** The Elasticsearch heap size should be set to 50% of the total available memory, up to a maximum of 32GB. Never exceed 50% of the machine's RAM to ensure enough memory is left for the operating system and filesystem caching.
+
+If your VM has **less than 4GB of RAM**, setting the heap to 1GB is a reasonable starting point. To check your memory:
+
+```bash
+df -h
+```
+
+Sample output:
+```bash 
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           392M  988K  391M   1% /run
+/dev/sda1        39G  3.3G   36G   9% / 
+```
+
+To update the heap size:
+
+1. Open the JVM options file:
+
+  ```bash
+  sudo vi /etc/elasticsearch/jvm.options
+  ```
+
+2. Adjust these values based on your VM's memory. For example:
+
+    - If your VM has 2GB RAM:
+
+      ```bash
+      -Xms1g
+      -Xmx1g
+      ```
+
+    - If your VM has 4GB RAM:
+
+      ```bash
+      -Xms2g
+      -Xmx2g
+      ```
+
+3. Restart Elasticsearch:
+
+    ```bash
+    sudo systemctl restart elasticsearch
+    sudo systemctl status elasticsearch
     ```
 
 ## Configure SSL on Elasticsearch
@@ -329,7 +385,7 @@ To establish the trust relationship, perform the steps below:
 3. On the other VM, add the Elasticsearch VM's public key to the `authorized_keys` file.
 
     ```bash
-    cat >> .ssh/authorized_keys 
+    cat >> ~/.ssh/authorized_keys 
     ```
 
     Paste the copied public key and hit `Ctrl + D`.
@@ -338,7 +394,7 @@ To establish the trust relationship, perform the steps below:
     Make sure to change the IP address of the other VM.
 
     ```bash
-    scp /etc/elasticsearch/certs/http_ca.crt vagrant@192.168.56.103:/tmp
+    scp /etc/elasticsearch/certs/http_ca.crt root@192.168.56.103:/tmp
     ```
 
 5. Go back to the other VM and move the shared certificate.
@@ -348,7 +404,24 @@ To establish the trust relationship, perform the steps below:
     mv /tmp/http_ca.crt /usr/share/ca-certificates/elastic-ca.crt
     ```
 
-6. On the other VM, test the connection:
+    ```
+
+6. Similar to the Elasticsearch node, reconfigure the CA certificates on the other VM to trust the new cert.
+
+    ```bash
+    dpkg-reconfigure ca-certificates
+    ```
+
+7.  When prompted, click Yes. 
+
+    ![](/img/docs/12152024-Observability-elastic-config-ssl.png)
+
+8. Select the copied certificate by pressing spacebar > Enter 
+
+    ![](/img/docs/12152024-Observability-elastic-config-ssl-2.png)
+
+
+9. From the other VM, test the connection:
 
     ```bash
     $ curl -s -k  -u elastic:<password> https://192.168.56.101:9200 | jq

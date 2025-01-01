@@ -18,3 +18,7 @@ Generative AI:
   label: 'Generative AI'
   permalink: '/Generative AI'
   description: 'Docs related to Generative AI'  
+MLOps:
+  label: 'MLOps'
+  permalink: '/MLOps'
+  description: 'Docs related to MLOps'    

@@ -72,7 +72,7 @@ If you are using cloud compute instances, you can skip this section.
     vagrant ssh node1 
     ```
 
-## Install Elasticsearch 8.17 
+## Download the Packages
 
 1. On a computer with internet access, download the Debian package for Elasticsearch v8.17.0.
 
@@ -85,21 +85,23 @@ If you are using cloud compute instances, you can skip this section.
 
 2. Copy the files to the virtual machine. [You can map local folder to a fileshare in you VM](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-VirtualBox.md#setup-fileshare).
 
-3. Login to the Elasticsearch node, switch to **root**, and move the files from fileshare to `/tmp`.
+## Install Elasticsearch 8.17 
+
+1. Login to the Elasticsearch node, switch to **root**, and move the files from fileshare to `/tmp`.
 
     ```bash
     cp -r /mnt/fileshare/elastic* /tmp 
     cd /tmp/elastic*
     ```
 
-4. Install the packages.
+2. Install the packages.
 
     ```bash
     sudo dpkg -i elasticsearch-8.17.0-amd64.deb 
     ```
 
 
-5. Configure Elasticsearch configuration file.
+3. Configure Elasticsearch configuration file.
 
     ```bash
     sudo vi /etc/elasticsearch/elasticsearch.yml 
@@ -121,7 +123,7 @@ If you are using cloud compute instances, you can skip this section.
 
     :::
 
-6. Enable and start the service.
+4. Enable and start the service.
 
     ```bash
     sudo systemctl daemon-reload
@@ -130,7 +132,7 @@ If you are using cloud compute instances, you can skip this section.
     ```
 
 
-7. Reset the password for the `elastic` user.
+5. Reset the password for the `elastic` user.
 
     ```bash
     /usr/share/elasticsearch/bin/elasticsearch-reset-password -i -u elastic 
@@ -146,7 +148,13 @@ If you are using cloud compute instances, you can skip this section.
     Password for the [elastic] user successfully reset.      
     ```
 
-8. Verify the access:
+    If you encounter the error below, you may need to [adjust the heap size.](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/001-Using-Vagrant-and-VirtualBox.md#adjust-the-heap-size)
+
+    ```bash
+    ERROR: Failed to determine the health of the cluster. Unexpected http status [503], with exit code 65
+    ```
+
+6. Verify the access:
 
     ```bash
     curl -k -u elastic:<add-password>  https://localhost:9200
@@ -174,7 +182,7 @@ If you are using cloud compute instances, you can skip this section.
     }
     ```
 
-9. Another way to verify access: Open a web browser in your computer (host) and navigate to:
+7. Another way to verify access: Open a web browser in your computer (host) and navigate to:
 
     ```bash
     https://localhost:9200/ 
@@ -238,6 +246,7 @@ To establish the trust relationship, perform the steps below:
 
 ## Next Steps 
 
+- [Adjust the Heap Size](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/001-Using-Vagrant-and-VirtualBox.md#share-the-certificate-to-other-vms-optional)
 - [Share the Certificate to Other VMs (Optional)](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/001-Using-Vagrant-and-VirtualBox.md#share-the-certificate-to-other-vms-optional)
 - [Sample Search Index](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/001-Using-Vagrant-and-VirtualBox.md#sample-search-index)
 - [Sample Bulk Indexing](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/001-Using-Vagrant-and-VirtualBox.md#sample-bulk-indexing)
