@@ -29,6 +29,7 @@ This lab focuses on testing Grok patterns on a sample log and configuring Logsta
 - MongoDB logs
 - User Agent and IP-to-Geolocation mapping logs
 - Elasticsearch logs
+- Elasticsearch Slow logs
 - AWS Elastic Load Balancer (ELB) logs
 - AWS Application Load Balancer (ALB) logs
 - AWS CloudFront logs
@@ -69,6 +70,7 @@ On a computer with internet access:
     - [mongodb.log](@site/assets/elastic-stack/sample-logs/mongodb.log)
     - [apache-access.log](@site/assets/elastic-stack/sample-logs/apache-access.log)
     - [elasticsearch.log](@site/assets/elastic-stack/sample-logs/elasticsearch.log)
+    - [es_slowlog.log](@site/assets/elastic-stack/sample-logs/es_slowlog.log)
     - [aws-elb.log](@site/assets/elastic-stack/sample-logs/aws-elb.log)
     - [aws-alb.log](@site/assets/elastic-stack/sample-logs/aws-alb.log)
     - [aws-cloudfront.log](@site/assets/elastic-stack/sample-logs/aws-cloudfront.log)
@@ -157,7 +159,7 @@ Login to the Elasticsearch node and switch to **root** user:
 
     The log file has been successfully parsed, and you should see a response similar to the one below.
 
-    ```bash
+    ```json
         "_source": {
           "response_code": "200",
           "body_sent_bytes": "131",
@@ -252,7 +254,7 @@ IIS server logs are used for monitoring web traffic, identifying potential issue
 
     If the IIS log has been parsed correctly, you should see output similar to the following:
 
-    ```bash
+    ```json
     "hits": [
       {
         "_index": "iis-server-log",
@@ -362,7 +364,7 @@ MongoDB logs are useful for tracking the operational status, performance, and is
 
     This output confirms that MongoDB log data has been indexed correctly and is ready for search and analysis.
 
-    ```bash
+    ```json
     "hits": [
       {
         "_index": "mongodb-log",
@@ -479,7 +481,7 @@ Elasticsearch generates multi-line logs, where a single event can span multiple 
 
     Below is the configuration file:
 
-    ```bash
+    ```json
     input {
       file {
         path => "/mnt/fileshare/logs/elasticsearch.log"    ## sample csv file
@@ -654,7 +656,7 @@ Elasticsearch generates multi-line logs, where a single event can span multiple 
 
     Output:
 
-    ```bash
+    ```json
     {
       "took": 13,
       "timed_out": false,
@@ -713,4 +715,145 @@ Elasticsearch generates multi-line logs, where a single event can span multiple 
 
 ## Elasticsearch Slow Logs 
 
-Elasticsearch also generate **slow logs**, which are used to optimize Elasticsearch
+Elasticsearch also generate **slow logs**, which are used to optimize Elasticsearch search indexing and operations. These logs are simpler to process as they do not contain multi-line messages.
+
+1. On the Logstash node, create the configuration file:
+
+    ```bash
+    sudo vi /etc/logstash/conf.d/grok-es_slowlog.conf
+    ```
+
+    **Note**: Update the file path and Elasticsearch node details in the configuration.
+
+    Below is the configuration file:
+
+    ```json
+    input {
+      file {
+        path => "/mnt/fileshare/logs/es_slowlog.log"    ## sample csv file
+        type => "elasticsearch"
+        start_position => "beginning" 
+        sincedb_path => "/dev/null"
+        codec => plain {
+            charset => "ISO-8859-15" #Reads plaintext with no delimiting between events
+        }
+      }
+    }
+
+    filter {
+      grok {
+        match => { "message" => ['\[%{TIMESTAMP_ISO8601:timestamp}\]\[%{LOGLEVEL:level}\]\[%{HOSTNAME:type}\]%{SPACE}\[%{HOSTNAME:[node_name]}\]%{SPACE}\[%{WORD:[index_name]}\]%{NOTSPACE}%{SPACE}took\[%{NUMBER:took_micro}%{NOTSPACE}\]%{NOTSPACE}%{SPACE}%{NOTSPACE}%{NOTSPACE}%{SPACE}%{NOTSPACE}%{NOTSPACE}%{SPACE}%{NOTSPACE}%{NOTSPACE}%{SPACE}search_type\[%{WORD:search_type}\]%{NOTSPACE}%{SPACE}total_shards\[%{NUMBER:total_shards}\]%{NOTSPACE}%{SPACE}source%{GREEDYDATA:query}\Z']}
+      }
+      
+      mutate{
+        remove_field => ["@version","@timestamp","host","path","logTook"] 
+      }
+    } 
+
+    output {
+        stdout { codec => rubydebug }
+        elasticsearch {
+            hosts => ["https://192.168.56.101:9200"]                  ## address of elasticsearch node
+            index => "es-slow-logs"
+            user => "elastic"
+            password => "enter-password-here"
+            ssl => true
+            ssl_certificate_authorities => "/usr/share/ca-certificates/elastic-ca.crt"   ## Shared Elasticsearch CA certificate path
+        }
+    }
+    ```
+
+
+2. After creating the configuration file, start Logstash:
+
+    ```bash
+    /usr/share/logstash/bin/logstash -f /etc/logstash/conf.d/grok-es_slowlog.conf
+    ```
+
+3. Log in to the Elasticsearch node as the **root** user and verify that the `es-slow-logs` index has been created:
+
+    ```bash
+    curl -s -u elastic:elastic \
+    -H 'Content-Type: application/json' \
+    -XGET https://localhost:9200/_cat/indices?v
+    ```
+
+    Output:
+
+    ```bash
+    health status index             uuid                   pri rep docs.count docs.deleted store.size pri.store.size dataset.size
+    yellow open   mongodb-log       T-btzMB8RLeQ3dXh2AiTcQ   1   1       1000            0    301.8kb        301.8kb      301.8kb
+    yellow open   es-slow-logs      WDPpwGWjT6yF6tIupd725Q   1   1        999            0    547.5kb        547.5kb      547.5kb
+    yellow open   es-test-logs      vEhLIHYBRSmErz9AKdN8zA   1   1        134            0      102kb          102kb        102kb
+    yellow open   nginx-access      5S4no-NuTVOSUilwgntuCg   1   1        995            0    552.6kb        552.6kb      552.6kb
+    yellow open   iis-server-log    imBZpDsxTjqEGcYSLOQnxQ   1   1        145            0     86.5kb         86.5kb       86.5kb
+    yellow open   apache-access-log OIix9FX3SiCDeiMf9FtEWA   1   1     102972            0     34.3mb         34.3mb       34.3mb
+    ```             
+
+4. Confirm that the logs has been parsed, ingested, and indexed.
+
+    ```bash
+    curl -s -u elastic:elastic \
+    -H 'Content-Type: application/json' \
+    -XGET https://localhost:9200/es-slow-logs/_search?pretty=true -d'
+    {  
+      "size": 1
+    }'
+    ```
+
+    Output:
+
+    ```json
+    {
+      "took" : 6,
+      "timed_out" : false,
+      "_shards" : {
+        "total" : 1,
+        "successful" : 1,
+        "skipped" : 0,
+        "failed" : 0
+      },
+      "hits" : {
+        "total" : {
+          "value" : 999,
+          "relation" : "eq"
+        },
+        "max_score" : 1.0,
+        "hits" : [
+          {
+            "_index" : "es-slow-logs",
+            "_id" : "LyPPIZQBoqYOKoM-HgUh",
+            "_score" : 1.0,
+            "_ignored" : [
+              "event.original.keyword",
+              "message.keyword",
+              "query.keyword"
+            ],
+            "_source" : {
+              "index_name" : "inv_02",
+              "timestamp" : "2018-03-13T00:01:09,811",
+              "took_micro" : "198.8",
+              "node_name" : "node23",
+              "log" : {
+                "file" : {
+                  "path" : "/mnt/fileshare/logs/es_slowlog.log"
+                }
+              },
+              "total_shards" : "105",
+              "event" : {
+                "original" : "[2018-03-13T00:01:09,811][TRACE][index.search.slowlog.query] [node23] [inv_02][2] took[198.8micros], took_millis[0], types[], stats[], search_type[QUERY_THEN_FETCH], total_shards[105], source[{\"size\":1000,\"query\":{\"has_parent\":{\"query\":{\"bool\":{\"must\":[{\"terms\":{\"id_receipt\":[234707456,234707458],\"boost\":1.0}},{\"term\":{\"receipt_key\":{\"value\":6799,\"boost\":1.0}}},{\"term\":{\"code_receipt\":{\"value\":\"TKMS\",\"boost\":1.0}}}],\"disable_coord\":false,\"adjust_pure_negative\":true,\"boost\":1.0}},\"parent_type\":\"receipts\",\"score\":false,\"ignore_unmapped\":false,\"boost\":1.0}},\"version\":true,\"_source\":false,\"sort\":[{\"_doc\":{\"order\":\"asc\"}}]}], "
+              },
+              "search_type" : "QUERY_THEN_FETCH",
+              "query" : "[{\"size\":1000,\"query\":{\"has_parent\":{\"query\":{\"bool\":{\"must\":[{\"terms\":{\"id_receipt\":[234707456,234707458],\"boost\":1.0}},{\"term\":{\"receipt_key\":{\"value\":6799,\"boost\":1.0}}},{\"term\":{\"code_receipt\":{\"value\":\"TKMS\",\"boost\":1.0}}}],\"disable_coord\":false,\"adjust_pure_negative\":true,\"boost\":1.0}},\"parent_type\":\"receipts\",\"score\":false,\"ignore_unmapped\":false,\"boost\":1.0}},\"version\":true,\"_source\":false,\"sort\":[{\"_doc\":{\"order\":\"asc\"}}]}], ",
+              "message" : "[2018-03-13T00:01:09,811][TRACE][index.search.slowlog.query] [node23] [inv_02][2] took[198.8micros], took_millis[0], types[], stats[], search_type[QUERY_THEN_FETCH], total_shards[105], source[{\"size\":1000,\"query\":{\"has_parent\":{\"query\":{\"bool\":{\"must\":[{\"terms\":{\"id_receipt\":[234707456,234707458],\"boost\":1.0}},{\"term\":{\"receipt_key\":{\"value\":6799,\"boost\":1.0}}},{\"term\":{\"code_receipt\":{\"value\":\"TKMS\",\"boost\":1.0}}}],\"disable_coord\":false,\"adjust_pure_negative\":true,\"boost\":1.0}},\"parent_type\":\"receipts\",\"score\":false,\"ignore_unmapped\":false,\"boost\":1.0}},\"version\":true,\"_source\":false,\"sort\":[{\"_doc\":{\"order\":\"asc\"}}]}], ",
+              "level" : "TRACE",
+              "type" : [
+                "elasticsearch",
+                "index.search.slowlog.query"
+              ]
+            }
+          }
+        ]
+      }
+    }
+    ```
