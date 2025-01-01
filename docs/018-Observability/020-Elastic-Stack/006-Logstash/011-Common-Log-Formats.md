@@ -100,7 +100,7 @@ Login to the Logstash node, switch to **root** user, and perform the following:
 
     Use the configuration file below:
 
-    - [grok-nginx.conf](/docs/018-Observability/020-Elastic-Stack/006-Logstash/Logstash-config-files/grok-nginx.conf)
+    - [grok-nginx.conf](@site/docs/018-Observability/020-Elastic-Stack/006-Logstash/Logstash-config-files/grok-nginx.conf)
 
     :::info 
 

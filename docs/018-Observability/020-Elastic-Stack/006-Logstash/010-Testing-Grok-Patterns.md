@@ -81,7 +81,35 @@ Login to the Logstash node, switch to **root** user, and perform the following:
     sudo vi /etc/logstash/conf.d/grok-linux-log.conf
     ```
 
-    Use this configuration file: [grok-linux-log.conf](/docs/018-Observability/020-Elastic-Stack/006-Logstash/Logstash-config-files/grok-linux-log.conf)
+    Use this configuration file: 
+
+    ```json
+    input {
+      file {
+        path => "/mnt/fileshare/logs/linux-system-log.log"    ## sample csv file
+        start_position => "beginning"
+        sincedb_path => "/dev/null"
+      }
+    }
+
+    filter {
+      grok {
+        match => { "message" => ['%{TIMESTAMP_ISO8601:time} %{LOGLEVEL:logLevel} %{GREEDYDATA:logMessage}'] }
+      }
+    }
+
+    output {
+        stdout { codec => json_lines }
+        elasticsearch {
+            hosts => ["https://192.168.56.101:9200"]                  ## address of elasticsearch node
+            index => "demo-grok"
+            user => "elastic"
+            password => "enter-password-here"
+            ssl => true
+            cacert => "/usr/share/ca-certificates/elastic-ca.crt"   ## Shared Elasticsearch CA certificate path
+        }
+    }
+    ```
 
 2. Start Logstash with the updated configuration:
 
@@ -218,7 +246,35 @@ From the Logstash node:
     sudo vi /etc/logstash/conf.d/grok-linux-log-2.conf
     ```
 
-    Use this configuration file: [grok-linux-log-2.conf](/docs/018-Observability/020-Elastic-Stack/006-Logstash/Logstash-config-files/grok-linux-log-2.conf)
+    Use this configuration file: 
+
+    ```json
+    input {
+      file {
+        path => "/mnt/fileshare/logs/linux-system-log-2.log"    ## sample csv file
+        start_position => "beginning"
+        sincedb_path => "/dev/null"
+      }
+    }
+
+    filter {
+      grok {
+        match => { "message" => ['%{TIMESTAMP_ISO8601:time} %{LOGLEVEL:logLevel} %{GREEDYDATA:logMessage}'] }
+      }
+    }
+
+    output {
+        stdout { codec => json_lines }
+        elasticsearch {
+            hosts => ["https://192.168.56.101:9200"]                  ## address of elasticsearch node
+            index => "demo-grok-2"
+            user => "elastic"
+            password => "enter-password-here"
+            ssl => true
+            cacert => "/usr/share/ca-certificates/elastic-ca.crt"   ## Shared Elasticsearch CA certificate path
+        }
+    }
+    ```
 
 
 3. Create the index.
@@ -320,8 +376,39 @@ From the Logstash node:
     sudo vi /etc/logstash/conf.d/grok-linux-log-3.conf
     ```
 
-    Use this configuration file: [grok-linux-log-3.conf](/docs/018-Observability/020-Elastic-Stack/006-Logstash/Logstash-config-files/grok-linux-log-3.conf)
+    Use this configuration file: 
 
+    ```json
+    input {
+      file {
+        path => "/mnt/fileshare/logs/linux-system-log-2.log"    ## sample csv file
+        start_position => "beginning"
+        sincedb_path => "/dev/null"
+      }
+    }
+
+    filter {
+      grok {
+        match => { "message" => [
+                  '%{TIMESTAMP_ISO8601:time} %{LOGLEVEL:logLevel} %{GREEDYDATA:logMessage}',
+                  '%{IP:clientIP} %{WORD:httpMethod} %{URIPATH:url}'
+                  ] }
+    }
+    }
+
+    output {
+        stdout { codec => json_lines }
+        elasticsearch {
+            hosts => ["https://192.168.56.101:9200"]                  ## address of elasticsearch node
+            index => "demo-grok-3"
+            user => "elastic"
+            password => "enter-password-here"
+            ssl => true
+            cacert => "/usr/share/ca-certificates/elastic-ca.crt"   ## Shared Elasticsearch CA certificate path
+        }
+    }
+
+    ```
 
 3. Create the index.
 
