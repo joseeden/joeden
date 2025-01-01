@@ -124,7 +124,7 @@ Login to the Elasticsearch node and switch to **root** user:
 1. Verify that the `demo-json` index has been created.
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password>  \
     -H 'Content-Type: application/json' \
     -XGET https://localhost:9200/_cat/indices?v
     ```
@@ -140,7 +140,7 @@ Login to the Elasticsearch node and switch to **root** user:
 2. Verify index data:
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password>  \
     -H 'Content-Type: application/json' \
     -XGET https://localhost:9200/demo-grok/_search?pretty=true -d'
     {
@@ -288,7 +288,7 @@ Back at the Elasticsearch node:
 1. Verify the index.
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password>  \
     -H 'Content-Type: application/json' \
     -XGET https://localhost:9200/_cat/indices?v
     ```
@@ -305,7 +305,7 @@ Back at the Elasticsearch node:
 2. Check the index data:
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password>  \
     -H 'Content-Type: application/json' \
     -XGET https://localhost:9200/demo-grok-2/_search?pretty=true -d'
     { }' | jq
@@ -421,7 +421,7 @@ Back at the Elasticsearch node:
 1. Verify the index.
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password>  \
     -H 'Content-Type: application/json' \
     -XGET https://localhost:9200/_cat/indices?v
     ```
@@ -439,7 +439,7 @@ Back at the Elasticsearch node:
 2. Check the index data:
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password>  \
     -H 'Content-Type: application/json' \
     -XGET https://localhost:9200/demo-grok-3/_search?pretty=true -d'
     { 
@@ -475,3 +475,14 @@ Back at the Elasticsearch node:
         "@version": "1"
     }
     ```    
+
+
+## Cleanup 
+
+Use the command below to delete the indices after the lab. Make sure to replace `enter-name` with the index name.
+
+```bash
+curl -s -u elastic:<password>  \
+-H 'Content-Type: application/json' \
+-XDELETE "https://127.0.0.1:9200/enter-name" | jq
+```

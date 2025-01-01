@@ -643,3 +643,13 @@ MySQL generates **slow logs** for optimizing database performance. These logs di
     } 
     ```
 
+
+## Cleanup 
+
+Use the command below to delete the indices after the lab. Make sure to replace `enter-name` with the index name.
+
+```bash
+curl -s -u elastic:<password>  \
+-H 'Content-Type: application/json' \
+-XDELETE "https://127.0.0.1:9200/enter-name" | jq
+```

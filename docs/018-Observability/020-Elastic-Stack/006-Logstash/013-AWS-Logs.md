@@ -13,7 +13,7 @@ tags:
 - Logstash
 - Cloud 
 - AWS
-sidebar_position: 12
+sidebar_position: 13
 last_update:
   date: 3/28/2023
 ---
@@ -552,3 +552,14 @@ Steps to Process ALB Logs:
       "ssl_protocol": "-"
     }
     ```
+
+
+## Cleanup 
+
+Use the command below to delete the indices after the lab. Make sure to replace `enter-name` with the index name.
+
+```bash
+curl -s -u elastic:<password>  \
+-H 'Content-Type: application/json' \
+-XDELETE "https://127.0.0.1:9200/enter-name" | jq
+```

@@ -11,7 +11,7 @@ tags:
 - Elastic Stack
 - ELK Stack
 - Logstash
-sidebar_position: 10
+sidebar_position: 11
 last_update:
   date: 3/28/2023
 ---
@@ -111,7 +111,7 @@ Login to the Elasticsearch node and switch to **root** user:
 1. Verify that the `nginx-access` index has been created. 
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password>  \
     -H 'Content-Type: application/json' \
     -XGET https://localhost:9200/_cat/indices?v
     ```
@@ -127,7 +127,7 @@ Login to the Elasticsearch node and switch to **root** user:
 2. Verify index data. 
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password>  \
     -H 'Content-Type: application/json' \
     -XGET https://localhost:9200/nginx-access/_search?pretty=true -d'
     {
@@ -206,7 +206,7 @@ IIS server logs are used for monitoring web traffic, identifying potential issue
 3. Log in to the Elasticsearch node as the root user and verify that the `iis-server-log` index has been created:
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password>  \
     -H 'Content-Type: application/json' \
     -XGET https://localhost:9200/_cat/indices?v
     ```
@@ -222,7 +222,7 @@ IIS server logs are used for monitoring web traffic, identifying potential issue
 4. To verify the data in the `iis-server-log` index:
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password>  \
     -H 'Content-Type: application/json' \
     -XGET https://localhost:9200/iis-server-log/_search?pretty=true -d'
     {
@@ -315,7 +315,7 @@ MongoDB logs are useful for tracking the operational status, performance, and is
 3. Log in to the Elasticsearch node as the **root** user and verify that the `mongodb-log` index has been created:
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password>  \
     -H 'Content-Type: application/json' \
     -XGET https://localhost:9200/_cat/indices?v
     ```
@@ -332,7 +332,7 @@ MongoDB logs are useful for tracking the operational status, performance, and is
 4. To verify the data inside the `mongodb-log` index, use the following query:
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password>  \
     -H 'Content-Type: application/json' \
     -XGET https://localhost:9200/mongodb-log/_search?pretty=true -d'
     {
@@ -419,7 +419,7 @@ In this scenario, we will use Apache access logs.
 3. Log in to the Elasticsearch node as the **root** user and verify that the `apache-access-log` index has been created:
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password>  \
     -H 'Content-Type: application/json' \
     -XGET https://localhost:9200/_cat/indices?v
     ```
@@ -437,7 +437,7 @@ In this scenario, we will use Apache access logs.
 4. Use the following query to verify the data inside the `apache-access-log`index:
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password>  \
     -H 'Content-Type: application/json' \
     -XGET https://localhost:9200/apache-access-log/_search?pretty=true -d'
     {
@@ -457,3 +457,13 @@ In this scenario, we will use Apache access logs.
     }' | jq
     ```
 
+
+## Cleanup 
+
+Use the command below to delete the indices after the lab. Make sure to replace `enter-name` with the index name.
+
+```bash
+curl -s -u elastic:<password>  \
+-H 'Content-Type: application/json' \
+-XDELETE "https://127.0.0.1:9200/enter-name" | jq
+```

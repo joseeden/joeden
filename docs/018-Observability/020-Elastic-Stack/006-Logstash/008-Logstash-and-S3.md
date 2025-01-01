@@ -196,7 +196,7 @@ Login to the Elasticsearch node and switch to **root** user:
 2. Run a sample query. This should return the apache logs in the sample log file puloaded to S3.
 
     ```bash
-    curl -s -u elastic:elastic \
+    curl -s -u elastic:<password>  \
     -H 'Content-Type: application/json' \
     -XGET "https://127.0.0.1:9200/s3-logs/_search?pretty=true" | jq 
     ```
