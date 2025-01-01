@@ -281,7 +281,7 @@ The `split` filter in Logstash is useful when your data includes arrays (multipl
         index => "json-split"
         user => "elastic"
         #password => "enter-password-here"
-        password => "elastic"
+        password => "enter-password-here"
         ssl => true
         cacert => "/usr/share/ca-certificates/elastic-ca.crt"   ## Shared Elasticsearch CA certificate path
       }

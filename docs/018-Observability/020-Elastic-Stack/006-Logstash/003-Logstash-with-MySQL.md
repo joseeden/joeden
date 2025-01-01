@@ -445,7 +445,7 @@ Login to the Logstash node and switch to **root** user:
             hosts => ["https://192.168.56.101:9200"]    ## address of elasticsearch node
             index => "movielens-sql"
             user => "elastic"
-            password => "elastic"
+            password => "enter-password-here"
             ## password => enter-password-here
             ssl => true
             cacert => "/usr/share/ca-certificates/elastic-ca.crt"   ## Shared Elasticsearch CA certificate path

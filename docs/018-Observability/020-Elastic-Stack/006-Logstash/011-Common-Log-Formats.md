@@ -28,6 +28,7 @@ This lab focuses on testing Grok patterns on a sample log and configuring Logsta
 - IIS Server logs
 - MongoDB logs
 - User Agent and IP-to-Geolocation mapping logs
+- Elasticsearch logs
 - AWS Elastic Load Balancer (ELB) logs
 - AWS Application Load Balancer (ALB) logs
 - AWS CloudFront logs
@@ -67,6 +68,7 @@ On a computer with internet access:
     - [iis-server.log](@site/assets/elastic-stack/sample-logs/iis-server.log)
     - [mongodb.log](@site/assets/elastic-stack/sample-logs/mongodb.log)
     - [apache-access.log](@site/assets/elastic-stack/sample-logs/apache-access.log)
+    - [elasticsearch.log](@site/assets/elastic-stack/sample-logs/elasticsearch.log)
     - [aws-elb.log](@site/assets/elastic-stack/sample-logs/aws-elb.log)
     - [aws-alb.log](@site/assets/elastic-stack/sample-logs/aws-alb.log)
     - [aws-cloudfront.log](@site/assets/elastic-stack/sample-logs/aws-cloudfront.log)
@@ -447,7 +449,7 @@ In this scenario, we will use Apache access logs.
     -H 'Content-Type: application/json' \
     -XGET https://localhost:9200/apache-access-log/_search?pretty=true -d'
     {
-      "size": 1,
+      "size": 10,
       "track_total_hits": true,
       "query": {
       "bool": {
@@ -463,62 +465,252 @@ In this scenario, we will use Apache access logs.
     }' | jq
     ```
 
-    This confirms that the data from the Apache access logs is correctly indexed and ready for use.
+## Elasticsearch Logs (Multi-line)
+
+Elasticsearch generates multi-line logs, where a single event can span multiple lines. These logs use square brackets to indicate where an event begins and ends. Logstash processes these events using the multiline input codec.
+
+1. Log in to the Logstash node as the **root** user and create the configuration file:
 
     ```bash
-    "hits": {
-      "total": {
-        "value": 8750,
-        "relation": "eq" 
-      },
-      "max_score": 0,
-      "hits": [
-        {
-          "_index": "apache-access-log",
-          "_id": "5CGYIZQBoqYOKoM-DHMF",
-          "_score": 0,
-          "_source": {
-            "user_agent": {
-              "original": "WordPress"
-            },
-            "http": {
-              "request": {
-                "method": "GET",
-                "referrer": "http://sundog-soft.com/clients/fs-aero/"
-              },
-              "version": "1.1",
-              "response": {
-                "status_code": 200,
-                "body": {
-                  "bytes": 13338
-                }
-              }
-            },
-            "tags": [
-              "_geoip_lookup_failure"
-            ],
-            "@version": "1",
-            "log": {
-              "file": {
-                "path": "/mnt/fileshare/logs/apache-access.log"
-              }
-            },
-            "host": {
-              "name": "node2"
-            },
-            "event": {
-              "original": "54.210.20.202 - - [30/Apr/2017:05:24:05 +0000] \"GET /clients/fs-aero/ HTTP/1.1\" 200 13338 \"http://sundog-soft.com/clients/fs-aero/\" \"WordPress\""
-            },
-            "read_timestamp": "2025-01-01T11:19:53.612670899Z",
-            "source": {
-              "address": "54.210.20.202"
-            },
-            "url": {
-              "original": "/clients/fs-aero/"
-            },
-            "@timestamp": "2017-04-30T05:24:05.000Z"
+    sudo vi /etc/logstash/conf.d/grok-es-logs.conf
+    ```
+
+    **Note**: Update the file path and Elasticsearch node details in the configuration.
+
+    Below is the configuration file:
+
+    ```bash
+    input {
+      file {
+        path => "/mnt/fileshare/logs/elasticsearch.log"    ## sample csv file
+        type => "elasticsearch"
+        start_position => "beginning" 
+        sincedb_path => "/dev/null"
+        codec => multiline {
+          pattern => "^\["
+          negate => true
+          what => "previous"
+        }
+      }
+    }
+
+    filter {
+      if [type] == "elasticsearch" {
+        grok {
+          match => [ "message", "\[%{TIMESTAMP_ISO8601:timestamp}\]\[%{DATA:severity}%{SPACE}\]\[%{DATA:source}%{SPACE}\]%{SPACE}(?<message>(.|\r|\n)*)" ]
+          overwrite => [ "message" ]
+        }
+
+        if "_grokparsefailure" not in [tags] {
+          grok {  
+            match => [
+              "message", "^\[%{DATA:node}\] %{SPACE}\[%{DATA:index}\]%{SPACE}(?<short_message>(.|\r|\n)*)",
+              "message", "^\[%{DATA:node}\]%{SPACE}(?<short_message>(.|\r|\n)*)" ]
+            tag_on_failure => []
           }
         }
-      ]
-    }  
-    ```    
+      }
+    }
+
+    output {
+        stdout { codec => rubydebug }
+        elasticsearch {
+            hosts => ["https://192.168.56.101:9200"]                  ## address of elasticsearch node
+            index => "es-test-logs"
+            user => "elastic"
+            password => "enter-password-here"
+            ssl => true
+            ssl_certificate_authorities => "/usr/share/ca-certificates/elastic-ca.crt"   ## Shared Elasticsearch CA certificate path
+        }
+    }
+    ```
+
+    This configuration processes multi-line logs and extracts key details:
+
+    - Multiline codec handles logs starting with "["
+    - Continues until a line without "["
+    - Grok filter extracts timestamp, severity, and node
+    - Applies predefined patterns for processing
+
+2. After creating the configuration file, start Logstash:
+
+    ```bash
+    /usr/share/logstash/bin/logstash -f /etc/logstash/conf.d/grok-es-logs.conf
+    ```
+
+3. Log in to the Elasticsearch node as the **root** user and verify that the `es-test-logs` index has been created:
+
+    ```bash
+    curl -s -u elastic:elastic \
+    -H 'Content-Type: application/json' \
+    -XGET https://localhost:9200/_cat/indices?v
+    ```
+
+    Output:
+
+    ```bash
+    health status index             uuid                   pri rep docs.count docs.deleted store.size pri.store.size dataset.size
+    yellow open   mongodb-log       T-btzMB8RLeQ3dXh2AiTcQ   1   1       1000            0    301.8kb        301.8kb      301.8kb
+    yellow open   nginx-access      5S4no-NuTVOSUilwgntuCg   1   1        995            0    552.6kb        552.6kb      552.6kb
+    yellow open   es-test-logs      vEhLIHYBRSmErz9AKdN8zA   1   1        134            0    101.8kb        101.8kb      101.8kb
+    yellow open   iis-server-log    imBZpDsxTjqEGcYSLOQnxQ   1   1        145            0     86.5kb         86.5kb       86.5kb
+    yellow open   apache-access-log OIix9FX3SiCDeiMf9FtEWA   1   1     102972            0     34.3mb         34.3mb       34.3mb
+    ```             
+
+4. To filter non-multi-line log events, use the following query:
+
+    ```bash
+    curl -s -u elastic:elastic \
+    -H 'Content-Type: application/json' \
+    -XGET https://localhost:9200/es-test-logs/_search?pretty=true -d'
+    {
+      "size": 1, 
+      "query": {
+        "bool": {
+          "must_not": [
+            {
+              "match": {
+                "tags": "multiline"
+              }
+            }
+          ]
+        }
+      }
+    }' | jq
+    ```
+
+    This query filters out logs tagged as "multiline."
+
+    ```json
+    {
+      "took": 25,
+      "timed_out": false,
+      "_shards": {
+        "total": 1,
+        "successful": 1,
+        "skipped": 0,
+        "failed": 0
+      },
+      "hits": {
+        "total": {
+          "value": 124,
+          "relation": "eq"
+        },
+        "max_score": 0,
+        "hits": [
+          {
+            "_index": "es-test-logs",
+            "_id": "qSO1IZQBoqYOKoM-_QRQ",
+            "_score": 0,
+            "_source": {
+              "log": {
+                "file": {
+                  "path": "/mnt/fileshare/logs/elasticsearch.log"
+                }
+              },
+              "severity": "INFO",
+              "node": "node-1",
+              "timestamp": "2020-06-15T01:30:00,000",
+              "@version": "1",
+              "source": "o.e.x.m.MlDailyMaintenanceService",
+              "short_message": "triggering scheduled [ML] maintenance tasks",
+              "@timestamp": "2025-01-01T11:52:40.113091128Z",
+              "type": "elasticsearch",
+              "event": {
+                "original": "[2020-06-15T01:30:00,000][INFO ][o.e.x.m.MlDailyMaintenanceService] [node-1] triggering scheduled [ML] maintenance tasks"
+              },
+              "message": "[node-1] triggering scheduled [ML] maintenance tasks",
+              "host": {
+                "name": "node2"
+              }
+            }
+          }
+        ]
+      }
+    }      
+    ```
+
+5. Similarly, to filter only multi-line log events, use the `must` parameter:
+
+    ```bash
+    curl -s -u elastic:elastic \
+    -H 'Content-Type: application/json' \
+    -XGET https://localhost:9200/es-test-logs/_search?pretty=true -d'
+    {
+      "size": 1, 
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "match": {
+                "tags": "multiline"
+              }
+            }
+          ]
+        }
+      }
+    }' | jq
+    ```
+
+    Output:
+
+    ```bash
+    {
+      "took": 13,
+      "timed_out": false,
+      "_shards": {
+        "total": 1,
+        "successful": 1,
+        "skipped": 0,
+        "failed": 0
+      },
+      "hits": {
+        "total": {
+          "value": 10,
+          "relation": "eq"
+        },
+        "max_score": 0.046520013,
+        "hits": [
+          {
+            "_index": "es-test-logs",
+            "_id": "4iO1IZQBoqYOKoM-_QRQ",
+            "_score": 0.046520013,
+            "_ignored": [
+              "event.original.keyword",
+              "message.keyword",
+              "short_message.keyword"
+            ],
+            "_source": {
+              "log": {
+                "file": {
+                  "path": "/mnt/fileshare/logs/elasticsearch.log"
+                }
+              },
+              "severity": "WARN",
+              "node": "node-1",
+              "timestamp": "2020-06-15T17:13:35,451",
+              "@version": "1",
+              "source": "r.suppressed",
+              "short_message": "path: /.kibana_task_manager/_count, params: {index=.kibana_task_manager}\norg.elasticsearch.action.search.SearchPhaseExecutionException: all shards failed\n\tat org.elasticsearch.action.search.AbstractSearchAsyncAction.onPhaseFailure(AbstractSearchAsyncAction.java:551) [elasticsearch-7.7.0.jar:7.7.0]\n\tat org.elasticsearch.action.search.AbstractSearchAsyncAction.executeNextPhase(AbstractSearchAsyncAction.java:309) [elasticsearch-7.7.0.jar:7.7.0]\n\tat org.elasticsearch.action.search.AbstractSearchAsyncAction.onPhaseDone(AbstractSearchAsyncAction.java:580) [elasticsearch-7.7.0.jar:7.7.0]\n\tat org.elasticsearch.action.search.AbstractSearchAsyncAction.onShardFailure(AbstractSearchAsyncAction.java:393) [elasticsearch-7.7.0.jar:7.7.0]\n\tat org.elasticsearch.action.search.AbstractSearchAsyncAction.lambda$performPhaseOnShard$0(AbstractSearchAsyncAction.java:223) [elasticsearch-7.7.0.jar:7.7.0]\n\tat org.elasticsearch.action.search.AbstractSearchAsyncAction$2.doRun(AbstractSearchAsyncAction.java:288) [elasticsearch-7.7.0.jar:7.7.0]\n\tat org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37) [elasticsearch-7.7.0.jar:7.7.0]\n\tat org.elasticsearch.common.util.concurrent.TimedRunnable.doRun(TimedRunnable.java:44) [elasticsearch-7.7.0.jar:7.7.0]\n\tat org.elasticsearch.common.util.concurrent.ThreadContext$ContextPreservingAbstractRunnable.doRun(ThreadContext.java:692) [elasticsearch-7.7.0.jar:7.7.0]\n\tat org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37) [elasticsearch-7.7.0.jar:7.7.0]\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) [?:?]\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) [?:?]\n\tat java.lang.Thread.run(Thread.java:832) [?:?]",
+              "@timestamp": "2025-01-01T11:52:40.368678903Z",
+              "tags": [
+                "multiline"
+              ],
+              "type": "elasticsearch",
+              "event": {
+                "original": "[2020-06-15T17:13:35,451][WARN ][r.suppressed             ] [node-1] path: /.kibana_task_manager/_count, params: {index=.kibana_task_manager}\norg.elasticsearch.action.search.SearchPhaseExecutionException: all shards failed\n\tat org.elasticsearch.action.search.AbstractSearchAsyncAction.onPhaseFailure(AbstractSearchAsyncAction.java:551) [elasticsearch-7.7.0.jar:7.7.0]\n\tat org.elasticsearch.action.search.AbstractSearchAsyncAction.executeNextPhase(AbstractSearchAsyncAction.java:309) [elasticsearch-7.7.0.jar:7.7.0]\n\tat org.elasticsearch.action.search.AbstractSearchAsyncAction.onPhaseDone(AbstractSearchAsyncAction.java:580) [elasticsearch-7.7.0.jar:7.7.0]\n\tat org.elasticsearch.action.search.AbstractSearchAsyncAction.onShardFailure(AbstractSearchAsyncAction.java:393) [elasticsearch-7.7.0.jar:7.7.0]\n\tat org.elasticsearch.action.search.AbstractSearchAsyncAction.lambda$performPhaseOnShard$0(AbstractSearchAsyncAction.java:223) [elasticsearch-7.7.0.jar:7.7.0]\n\tat org.elasticsearch.action.search.AbstractSearchAsyncAction$2.doRun(AbstractSearchAsyncAction.java:288) [elasticsearch-7.7.0.jar:7.7.0]\n\tat org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37) [elasticsearch-7.7.0.jar:7.7.0]\n\tat org.elasticsearch.common.util.concurrent.TimedRunnable.doRun(TimedRunnable.java:44) [elasticsearch-7.7.0.jar:7.7.0]\n\tat org.elasticsearch.common.util.concurrent.ThreadContext$ContextPreservingAbstractRunnable.doRun(ThreadContext.java:692) [elasticsearch-7.7.0.jar:7.7.0]\n\tat org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37) [elasticsearch-7.7.0.jar:7.7.0]\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) [?:?]\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) [?:?]\n\tat java.lang.Thread.run(Thread.java:832) [?:?]"
+              },
+              "message": "[node-1] path: /.kibana_task_manager/_count, params: {index=.kibana_task_manager}\norg.elasticsearch.action.search.SearchPhaseExecutionException: all shards failed\n\tat org.elasticsearch.action.search.AbstractSearchAsyncAction.onPhaseFailure(AbstractSearchAsyncAction.java:551) [elasticsearch-7.7.0.jar:7.7.0]\n\tat org.elasticsearch.action.search.AbstractSearchAsyncAction.executeNextPhase(AbstractSearchAsyncAction.java:309) [elasticsearch-7.7.0.jar:7.7.0]\n\tat org.elasticsearch.action.search.AbstractSearchAsyncAction.onPhaseDone(AbstractSearchAsyncAction.java:580) [elasticsearch-7.7.0.jar:7.7.0]\n\tat org.elasticsearch.action.search.AbstractSearchAsyncAction.onShardFailure(AbstractSearchAsyncAction.java:393) [elasticsearch-7.7.0.jar:7.7.0]\n\tat org.elasticsearch.action.search.AbstractSearchAsyncAction.lambda$performPhaseOnShard$0(AbstractSearchAsyncAction.java:223) [elasticsearch-7.7.0.jar:7.7.0]\n\tat org.elasticsearch.action.search.AbstractSearchAsyncAction$2.doRun(AbstractSearchAsyncAction.java:288) [elasticsearch-7.7.0.jar:7.7.0]\n\tat org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37) [elasticsearch-7.7.0.jar:7.7.0]\n\tat org.elasticsearch.common.util.concurrent.TimedRunnable.doRun(TimedRunnable.java:44) [elasticsearch-7.7.0.jar:7.7.0]\n\tat org.elasticsearch.common.util.concurrent.ThreadContext$ContextPreservingAbstractRunnable.doRun(ThreadContext.java:692) [elasticsearch-7.7.0.jar:7.7.0]\n\tat org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37) [elasticsearch-7.7.0.jar:7.7.0]\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) [?:?]\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) [?:?]\n\tat java.lang.Thread.run(Thread.java:832) [?:?]",
+              "host": {
+                "name": "node2"
+              }
+            }
+          }
+        ]
+      }
+    } 
+    ```
+
+## Elasticsearch Slow Logs 
+
+Elasticsearch also generate **slow logs**, which are used to optimize Elasticsearch
