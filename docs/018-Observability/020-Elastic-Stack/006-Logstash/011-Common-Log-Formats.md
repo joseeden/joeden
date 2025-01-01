@@ -71,6 +71,7 @@ On a computer with internet access:
     - [apache-access.log](@site/assets/elastic-stack/sample-logs/apache-access.log)
     - [elasticsearch.log](@site/assets/elastic-stack/sample-logs/elasticsearch.log)
     - [es_slowlog.log](@site/assets/elastic-stack/sample-logs/es_slowlog.log)
+    - [mysql-slow.log](@site/assets/elastic-stack/sample-logs/mysql-slow.log)
     <!-- - [aws-elb.log](@site/assets/elastic-stack/sample-logs/aws-elb.log)
     - [aws-alb.log](@site/assets/elastic-stack/sample-logs/aws-alb.log)
     - [aws-cloudfront.log](@site/assets/elastic-stack/sample-logs/aws-cloudfront.log) -->
@@ -715,7 +716,7 @@ Elasticsearch generates multi-line logs, where a single event can span multiple 
 
 ## Elasticsearch Slow Logs 
 
-Elasticsearch also generate **slow logs**, which are used to optimize Elasticsearch search indexing and operations. These logs are simpler to process as they do not contain multi-line messages.
+Elasticsearch generate **slow logs**, which are used to optimize Elasticsearch search indexing and operations. These logs are simpler to process as they do not contain multi-line messages.
 
 1. On the Logstash node, create the configuration file:
 
@@ -860,3 +861,177 @@ Elasticsearch also generate **slow logs**, which are used to optimize Elasticsea
 
 
 ## MySQL Slow Logs (Multi-line)
+
+MySQL generates **slow logs** for optimizing database performance. These logs differ from Elasticsearch slow logs as they include multi-line entries, requiring the multi-line codec for proper ingestion into Logstash and indexing into Elasticsearch.
+
+1. On the Logstash node, create the configuration file:
+
+    ```bash
+    sudo vi /etc/logstash/conf.d/grok-mysql-slowlogs.conf
+    ```
+
+    **Note**: Update the file path and Elasticsearch node details in the configuration.
+
+    Use the configuration file below:
+
+    ```json
+    input {
+      file {
+        path => "/mnt/fileshare/logs/mysql-slow.log"    ## sample csv file
+        type => "elasticsearch"
+        start_position => "beginning" 
+        sincedb_path => "/dev/null"
+        codec => multiline {
+            pattern => "^# Time: %{TIMESTAMP_ISO8601}"
+            negate => true
+            what => "previous"
+          }
+      }
+    }
+
+    filter {
+          mutate {
+            gsub => [
+              "message", "#", "",
+              "message", "\n", " "
+            ]
+            remove_field => "host"
+          }
+          grok {
+            match => { "message" => [
+                  "Time\:%{SPACE}%{TIMESTAMP_ISO8601:timestamp}%{SPACE}User\@Host\:%{SPACE}%{WORD:user}\[%{NOTSPACE}\] \@ %{NOTSPACE:host} \[\]%{SPACE}Id\:%{SPACE}%{NUMBER:sql_id}%{SPACE}Query_time\:%{SPACE}%{NUMBER:query_time}%{SPACE}Lock_time\:%{SPACE}%{NUMBER:lock_time}%{SPACE}Rows_sent\:%{SPACE}%{NUMBER:rows_sent}%{SPACE}Rows_examined\:%{SPACE}%{NUMBER:rows_examined}%{SPACE}%{GREEDYDATA}; %{GREEDYDATA:command}\;%{GREEDYDATA}" 
+          ] }
+          }
+          
+          mutate {
+            add_field => { "read_timestamp" => "%{@timestamp}" }
+            #remove_field => "message"
+          }
+    }
+
+    output {
+        stdout { codec => rubydebug }
+        elasticsearch {
+            hosts => ["https://192.168.56.101:9200"]                  ## address of elasticsearch node
+            index => "mysql-slowlogs"
+            user => "elastic"
+            password => "enter-password-here"
+            ssl => true
+            ssl_certificate_authorities => "/usr/share/ca-certificates/elastic-ca.crt"   ## Shared Elasticsearch CA certificate path
+        }
+    }
+    ```
+
+    Each section of the configuration file serves a specific purpose:
+
+    - If the line begins with `# Time:`, it's the start of a new log event.
+    - Otherwise, append the line to the previous log event.
+    - Extract key details like timestamp, user, query time, and rows.
+
+2. After creating the configuration file, start Logstash:
+
+    ```bash
+    /usr/share/logstash/bin/logstash -f /etc/logstash/conf.d/grok-mysql-slowlogs.conf
+    ```
+
+3. Log in to the Elasticsearch node as the **root** user and verify that the `mysql-slowlogs` index has been created:
+
+    ```bash
+    curl -s -u elastic:elastic \
+    -H 'Content-Type: application/json' \
+    -XGET https://localhost:9200/_cat/indices?v
+    ```
+
+    Output:
+
+    ```bash
+    health status index             uuid                   pri rep docs.count docs.deleted store.size pri.store.size dataset.size
+    yellow open   mongodb-log       T-btzMB8RLeQ3dXh2AiTcQ   1   1       1000            0    301.8kb        301.8kb      301.8kb
+    yellow open   es-slow-logs      WDPpwGWjT6yF6tIupd725Q   1   1        999            0      548kb          548kb        548kb
+    yellow open   es-test-logs      vEhLIHYBRSmErz9AKdN8zA   1   1        134            0      102kb          102kb        102kb
+    yellow open   mysql-slowlogs    dyAGjXMAQeOIqz5BhbKinQ   1   1          5            0     39.5kb         39.5kb       39.5kb
+    yellow open   nginx-access      5S4no-NuTVOSUilwgntuCg   1   1        995            0    552.6kb        552.6kb      552.6kb
+    yellow open   iis-server-log    imBZpDsxTjqEGcYSLOQnxQ   1   1        145            0     86.5kb         86.5kb       86.5kb
+    yellow open   apache-access-log OIix9FX3SiCDeiMf9FtEWA   1   1     102972            0     34.3mb         34.3mb       34.3mb
+    ```             
+
+4. Confirm that the logs has been parsed, ingested, and indexed.
+
+    ```bash
+    curl -s -u elastic:elastic \
+    -H 'Content-Type: application/json' \
+    -XGET https://localhost:9200/mysql-slowlogs/_search?pretty=true -d'
+    {
+
+      "size":1,
+      "query": {
+        "bool": {
+        "must_not": [
+          {
+            "term": {
+              "tags.keyword": "_grokparsefailure"
+            }
+          }
+        ]
+      }
+      }
+
+    }'
+    ```
+
+    Output:
+
+    ```json
+    {
+      "took" : 4,
+      "timed_out" : false,
+      "_shards" : {
+        "total" : 1,
+        "successful" : 1,
+        "skipped" : 0,
+        "failed" : 0
+      },
+      "hits" : {
+        "total" : {
+          "value" : 4,
+          "relation" : "eq"
+        },
+        "max_score" : 0.0,
+        "hits" : [
+          {
+            "_index" : "mysql-slowlogs",
+            "_id" : "FiPmIZQBoqYOKoM-ygnd",
+            "_score" : 0.0,
+            "_source" : {
+              "query_time" : "2.064824",
+              "lock_time" : "0.000000",
+              "@timestamp" : "2025-01-01T12:46:00.349405856Z",
+              "command" : "SELECT SLEEP(2)",
+              "tags" : [
+                "multiline"
+              ],
+              "@version" : "1",
+              "rows_examined" : "0",
+              "timestamp" : "2020-06-03T06:03:33.675799Z",
+              "read_timestamp" : "2025-01-01T12:46:00.349405856Z",
+              "sql_id" : "4",
+              "log" : {
+                "file" : {
+                  "path" : "/mnt/fileshare/logs/mysql-slow.log"
+                }
+              },
+              "host" : "localhost",
+              "rows_sent" : "1",
+              "message" : " Time: 2020-06-03T06:03:33.675799Z  User@Host: root[root] @ localhost []  Id:     4  Query_time: 2.064824  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0 SET timestamp=1591164213; SELECT SLEEP(2);",
+              "event" : {
+                "original" : "# Time: 2020-06-03T06:03:33.675799Z\n# User@Host: root[root] @ localhost []  Id:     4\n# Query_time: 2.064824  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 0\nSET timestamp=1591164213;\nSELECT SLEEP(2);"
+              },
+              "type" : "elasticsearch",
+              "user" : "root"
+            }
+          }
+        ]
+      }
+    } 
+    ```
+

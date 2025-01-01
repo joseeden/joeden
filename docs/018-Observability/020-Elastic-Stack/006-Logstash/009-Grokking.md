@@ -1,5 +1,5 @@
 ---
-title: "Parsing and Filtering with Grok"
+title: "Parsing with Grok "
 description: "Parsing and Filtering with Grok"
 tags: 
 - Linux
