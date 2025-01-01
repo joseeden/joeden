@@ -37,7 +37,7 @@ Example JSON:
 }
 ```
 
-::info 
+:::info 
 
 Logstash has a built-in JSON filter plugin that parses JSON data and converts it into a structured Logstash event. Without this plugin, JSON data will be ingested into Elasticsearch as a single line event.
 

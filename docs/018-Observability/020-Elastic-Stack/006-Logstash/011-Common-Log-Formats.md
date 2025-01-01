@@ -71,9 +71,9 @@ On a computer with internet access:
     - [apache-access.log](@site/assets/elastic-stack/sample-logs/apache-access.log)
     - [elasticsearch.log](@site/assets/elastic-stack/sample-logs/elasticsearch.log)
     - [es_slowlog.log](@site/assets/elastic-stack/sample-logs/es_slowlog.log)
-    - [aws-elb.log](@site/assets/elastic-stack/sample-logs/aws-elb.log)
+    <!-- - [aws-elb.log](@site/assets/elastic-stack/sample-logs/aws-elb.log)
     - [aws-alb.log](@site/assets/elastic-stack/sample-logs/aws-alb.log)
-    - [aws-cloudfront.log](@site/assets/elastic-stack/sample-logs/aws-cloudfront.log)
+    - [aws-cloudfront.log](@site/assets/elastic-stack/sample-logs/aws-cloudfront.log) -->
 
 2. Transfer the files to your virtual machine. 
 
@@ -857,3 +857,6 @@ Elasticsearch also generate **slow logs**, which are used to optimize Elasticsea
       }
     }
     ```
+
+
+## MySQL Slow Logs (Multi-line)
