@@ -18,6 +18,12 @@ last_update:
 
 ## Overview 
 
+The Heartbeat Input Plugin in Logstash generates regular events to test pipelines and monitor systems. It’s useful for debugging, automation, and checking data flow.  
+
+- Creates events at set intervals for testing pipelines.  
+- Check if logstash is up and running without any issue.
+- Send periodic messages to Elasticsearch or any description.
+
 This lab focuses on testing input plugins in Logstash and integrating them with Elasticsearch for log processing and data visualization. 
 
 
@@ -45,14 +51,6 @@ Setup details:
 - [Share Elasticsearch CA cert to Logstash](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/001-Using-Vagrant-and-VirtualBox.md#share-the-certificate-to-other-vms-optional)
 - [Install jq on Elasticsearch node](https://www.scaler.com/topics/linux-jq/)
 
-
-## Hearbeat Input Plugin
-
-The Heartbeat Input Plugin in Logstash generates regular events to test pipelines and monitor systems. It’s useful for debugging, automation, and checking data flow.  
-
-- Creates events at set intervals for testing pipelines.  
-- Check if logstash is up and running without any issue.
-- Send periodic messages to Elasticsearch or any description.
 
 ## Sending Messages at Set Intervals
 
