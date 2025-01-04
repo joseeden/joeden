@@ -317,135 +317,17 @@ To update the heap size:
 
 ## Configure SSL on Elasticsearch
 
-To establish the trust relationship, perform the steps below:
+When configuring SSL/TLS for secure communication between Elasticsearch and clients, it is important to trust the Certificate Authority (CA) certificate to ensure the authenticity of the server. 
 
-1. Copy the certificate to the trusted certificates directory:
-
-    ```bash
-    cp /etc/elasticsearch/certs/http_ca.crt /usr/share/ca-certificates/elastic-ca.crt 
-    ```
-
-2. If you're using Ubuntu or Debian-based system, run the command below.
-
-    ```bash
-    dpkg-reconfigure ca-certificates
-    ```
-
-4.  When prompted, click Yes. 
-
-    ![](/img/docs/12152024-Observability-elastic-config-ssl.png)
-
-4. Select the copied certificate by pressing spacebar > Enter 
-
-    ![](/img/docs/12152024-Observability-elastic-config-ssl-2.png)
-
-5. Verify that the SSL certificate works.
-
-    ```bash
-    curl -u elastic:<add-password>  https://localhost:9200
-    ```
-
-    Output:
-
-    ```bash
-    {
-    "name" : "elasticsearch",
-    "cluster_name" : "elasticsearch",
-    "cluster_uuid" : "Lmfoq9mbRBqis3GvrLVTZw",
-    "version" : {
-        "number" : "8.17.0",
-        "build_flavor" : "default",
-        "build_type" : "deb",
-        "build_hash" : "2b6a7fed44faa321997703718f07ee0420804b41",
-        "build_date" : "2024-12-11T12:08:05.663969764Z",
-        "build_snapshot" : false,
-        "lucene_version" : "9.12.0",
-        "minimum_wire_compatibility_version" : "7.17.0",
-        "minimum_index_compatibility_version" : "7.0.0"
-    },
-    "tagline" : "You Know, for Search"
-    }
-    ```
-
+For more information, please see [SSL Configuration.](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/003-SSL-Configuration.md)
 
 ## Share the Certificate to Other VMs (Optional)
 
-1. On the Elasticsearch VM, generate the SSH key.
+If you want other VMs to trust the Elasticsearch SSL certificate, you need to share the CA certificate. This allows them to securely connect to Elasticsearch using the same certificate.
 
-    ```bash
-    ssh-keygen -t ecdsa -b 521 -f ~/.ssh/id_ecdsa 
-    ```
-
-2. Get the public key.
-
-    ```bash
-    cat ~/.ssh/id_ecdsa.pub
-    ```
-
-3. On the other VM, add the Elasticsearch VM's public key to the `authorized_keys` file.
-
-    ```bash
-    cat >> ~/.ssh/authorized_keys 
-    ```
-
-    Paste the copied public key and hit `Ctrl + D`.
-
-4. From the Elasticsearch VM, share the certificate to the other VM using `scp`.
-    Make sure to change the IP address of the other VM.
-
-    ```bash
-    scp /etc/elasticsearch/certs/http_ca.crt root@192.168.56.103:/tmp
-    ```
-
-5. Go back to the other VM and move the shared certificate.
-
-    ```bash
-    sudo su 
-    mv /tmp/http_ca.crt /usr/share/ca-certificates/elastic-ca.crt
-    ```
-
-    ```
-
-6. Similar to the Elasticsearch node, reconfigure the CA certificates on the other VM to trust the new cert.
-
-    ```bash
-    dpkg-reconfigure ca-certificates
-    ```
-
-7.  When prompted, click Yes. 
-
-    ![](/img/docs/12152024-Observability-elastic-config-ssl.png)
-
-8. Select the copied certificate by pressing spacebar > Enter 
-
-    ![](/img/docs/12152024-Observability-elastic-config-ssl-2.png)
+For more information, please see [Sharing the Certificate.](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/003-SSL-Configuration.md#share-the-ca-certificate-to-other-vms-optional)
 
 
-9. From the other VM, test the connection:
-
-    ```bash
-    $ curl -s -k  -u elastic:<password> https://192.168.56.101:9200 | jq
-
-    {
-      "name": "node1",
-      "cluster_name": "elasticsearch",
-      "cluster_uuid": "QyCE0sgfQci-KgVx7mc5bA",
-      "version": {
-        "number": "8.17.0",
-        "build_flavor": "default",
-        "build_type": "deb",
-        "build_hash": "2b6a7fed44faa321997703718f07ee0420804b41",
-        "build_date": "2024-12-11T12:08:05.663969764Z",
-        "build_snapshot": false,
-        "lucene_version": "9.12.0",
-        "minimum_wire_compatibility_version": "7.17.0",
-        "minimum_index_compatibility_version": "7.0.0"
-      },
-      "tagline": "You Know, for Search"
-    } 
-    ```
-
-    Elasticsearch node has the IP: 192.168.56.101
 
 ## Sample Search Index 
 

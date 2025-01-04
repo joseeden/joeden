@@ -194,55 +194,16 @@ If you are using cloud compute instances, you can skip this section.
 
 ## Configure SSL on Elasticsearch
 
-To establish the trust relationship, perform the steps below:
+When configuring SSL/TLS for secure communication between Elasticsearch and clients, it is important to trust the Certificate Authority (CA) certificate to ensure the authenticity of the server. 
 
-1. Copy the certificate to the trusted certificates directory:
+For more information, please see [SSL Configuration.](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/003-SSL-Configuration.md)
 
-    ```bash
-    cp /etc/elasticsearch/certs/http_ca.crt /usr/share/ca-certificates/elastic-ca.crt 
-    ```
+## Share the Certificate to Other VMs (Optional)
 
-2. If you're using Ubuntu or Debian-based system, run the command below.
+If you want other VMs to trust the Elasticsearch SSL certificate, you need to share the CA certificate. This allows them to securely connect to Elasticsearch using the same certificate.
 
-    ```bash
-    dpkg-reconfigure ca-certificates
-    ```
+For more information, please see [Sharing the Certificate.](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/003-SSL-Configuration.md#share-the-ca-certificate-to-other-vms-optional)
 
-4.  When prompted, click Yes. 
-
-    ![](/img/docs/12152024-Observability-elastic-config-ssl.png)
-
-4. Select the copied certificate by pressing spacebar > Enter 
-
-    ![](/img/docs/12152024-Observability-elastic-config-ssl-2.png)
-
-5. Verify that the SSL certificate works.
-
-    ```bash
-    curl -u elastic:<add-password>  https://localhost:9200
-    ```
-
-    Output:
-
-    ```bash
-    {
-    "name" : "elasticsearch",
-    "cluster_name" : "elasticsearch",
-    "cluster_uuid" : "Lmfoq9mbRBqis3GvrLVTZw",
-    "version" : {
-        "number" : "8.17.0",
-        "build_flavor" : "default",
-        "build_type" : "deb",
-        "build_hash" : "2b6a7fed44faa321997703718f07ee0420804b41",
-        "build_date" : "2024-12-11T12:08:05.663969764Z",
-        "build_snapshot" : false,
-        "lucene_version" : "9.12.0",
-        "minimum_wire_compatibility_version" : "7.17.0",
-        "minimum_index_compatibility_version" : "7.0.0"
-    },
-    "tagline" : "You Know, for Search"
-    }
-    ```
 
 ## Next Steps 
 
