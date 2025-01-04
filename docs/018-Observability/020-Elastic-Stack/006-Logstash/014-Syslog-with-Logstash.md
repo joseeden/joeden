@@ -11,7 +11,7 @@ tags:
 - Elastic Stack
 - ELK Stack
 - Logstash
-sidebar_position: 20
+sidebar_position: 14
 last_update:
   date: 3/28/2023
 ---

@@ -1,6 +1,6 @@
 ---
-title: "Input Plugin: Heartbeat"
-description: "Input Plugin: Heartbeat"
+title: "Heartbeat Plugin"
+description: "Heartbeat Plugin"
 tags: 
 - Linux
 - Observability
@@ -11,7 +11,7 @@ tags:
 - Elastic Stack
 - ELK Stack
 - Logstash
-sidebar_position: 15
+sidebar_position: 1
 last_update:
   date: 3/28/2023
 ---
@@ -71,7 +71,7 @@ output {
       hosts => ["https://192.168.56.101:9200"]                  ## address of elasticsearch node
       index => "heartbeat"
       user => "elastic"
-      password => "elastic"
+      password => "enter-password-here"
       ssl => true
       ssl_certificate_authorities => "/usr/share/ca-certificates/elastic-ca.crt"   ## Shared Elasticsearch CA certificate path
     }
@@ -205,7 +205,7 @@ output {
       hosts => ["https://192.168.56.101:9200"]                  ## Elasticsearch node address
       index => "heartbeat-epoch"
       user => "elastic"
-      password => "elastic"
+      password => "enter-password-here"
       ssl => true
       ssl_certificate_authorities => "/usr/share/ca-certificates/elastic-ca.crt"   ## Shared Elasticsearch CA certificate path
     }
@@ -322,7 +322,7 @@ output {
       hosts => ["https://192.168.56.101:9200"]
       index => "heartbeat-sequence"
       user => "elastic"
-      password => "elastic"
+      password => "enter-password-here"
       ssl => true
       ssl_certificate_authorities => "/usr/share/ca-certificates/elastic-ca.crt"
     }
@@ -414,3 +414,14 @@ curl -s -u elastic:elastic  \
   }]
 }' | jq
 ``` 
+
+
+## Cleanup 
+
+Use the command below to delete the indices after the lab. Make sure to replace `enter-name` with the index name.
+
+```bash
+curl -s -u elastic:<password>  \
+-H 'Content-Type: application/json' \
+-XDELETE "https://127.0.0.1:9200/enter-name" | jq
+```
