@@ -427,3 +427,21 @@ Login to the Hadoop node.
     ```bash
     hadoop jar test-maven-project-1.0.jar hadoop-apache-access.log
     ```
+
+## Verify the Index 
+
+Login to the Elasticsearch node and switch to **root**. 
+
+Verify the index is created:
+
+```bash
+curl -u elastic:elastic --insecure \
+-X GET "https://192.168.56.101:9200/_cat/indices?v"
+```
+
+Output:
+
+```bash
+health status index uuid                   pri rep docs.count docs.deleted store.size pri.store.size dataset.size
+yellow open   logs  wpxLIsW1TCOqAnpUl2SGKg   1   1      10000                       0        805.2kb      805.2kb     
+```
