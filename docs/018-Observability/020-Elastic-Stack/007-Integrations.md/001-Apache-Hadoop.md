@@ -31,6 +31,28 @@ This lab demonstrates how to integrate Elasticsearch with Apache Hadoop to proce
 - Write a simple MapReduce job to ingest the file with Hadoop  
 - Index the ingested data into Elasticsearch  
 
+## Lab Environment 
+
+| Node    | Hostname       | IP Address       | 
+|---------|----------------|------------------|
+| Node 1  | elasticsearch  |  192.168.56.101  |
+| Node 2  | logstash       |  192.168.56.102  |
+| Node 3  | kibana         |  192.168.56.103  |
+| Node 4  | hadoop         |  192.168.56.104  |
+
+Setup details:
+
+- The nodes are created in VirtualBox using Vagrant.
+- An SSH key is generated on the Elasticsearch node
+- The SSH key is shared to the Logstash node.
+
+## Pre-requisites 
+
+- [Create the nodes in VirtualBox](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/001-Using-Vagrant-and-VirtualBox.md#setup-the-virtual-machines)
+- [Install Elasticsearch on node 1](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/001-Using-Vagrant-and-VirtualBox.md#install-elasticsearch-817)
+- [Install Logstash on node 2](/docs/018-Observability/020-Elastic-Stack/006-Logstash/001-Installing-Logstash.md)
+- [Configure SSL on Elasticsearch](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/003-SSL-Configuration.md)
+- [Install jq on the nodes](https://www.scaler.com/topics/linux-jq/)
 
 ## Choosing the Right Tool
 
@@ -444,4 +466,20 @@ Output:
 ```bash
 health status index uuid                   pri rep docs.count docs.deleted store.size pri.store.size dataset.size
 yellow open   logs  wpxLIsW1TCOqAnpUl2SGKg   1   1      10000                       0        805.2kb      805.2kb     
+```
+
+## Visualize in Kibana 
+
+TODO....
+
+
+
+## Cleanup 
+
+Use the command below to delete the indices after the lab. Make sure to replace `enter-name` with the index name.
+
+```bash
+curl -s -u elastic:<password>  \
+-H 'Content-Type: application/json' \
+-XDELETE "https://127.0.0.1:9200/enter-name" | jq
 ```
