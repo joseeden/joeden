@@ -174,3 +174,15 @@ FastAPI:
   label: 'FastAPI'
   permalink: '/FastAPI'
   description: 'Docs related to FastAPI'
+Apache Hadoop:
+  label: 'Apache Hadoop'
+  permalink: '/Apache Hadoop'
+  description: 'Docs related to Apache Hadoop'  
+Apache Kafka:
+  label: 'Apache Kafka'
+  permalink: '/Apache Kafka'
+  description: 'Docs related to Apache Kafka'  
+Apache Spark:
+  label: 'Apache Spark'
+  permalink: '/Apache Spark'
+  description: 'Docs related to Apache Spark'  
