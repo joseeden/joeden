@@ -246,7 +246,7 @@ Download the file here: [hadoop-apache-access.log](@site/assets/elastic-stack/sa
 After you download the log file, you can transfer the file to your node. [If you are using VirtualBox in your computer, you can map local folder to a fileshare in you VM](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-VirtualBox.md#setup-fileshare).
 
 
-## Create the MapReduce Project 
+## MapReduce Project 
 
 :::info 
 
@@ -322,7 +322,7 @@ To compile the MapReduce code into a JAR file, we'll need throws use Maven. In a
     ```
 
 
-## Clone the Project Repository
+## Build the JAR File
 
 Github repository: [test-maven-project](https://github.com/joseeden/test-maven-project)
 
@@ -406,13 +406,14 @@ health status index uuid                   pri rep docs.count docs.deleted store
 yellow open   logs  wpxLIsW1TCOqAnpUl2SGKg   1   1          0            0       227b           227b         227b
 ```
 
-## add short title..
+## Running the Hadoop Job
 
-Login to the Hadoop node and switch to root.
+Login to the Hadoop node.
 
-1. Ensure both the sample log file and the JAR file is copied over.
+1. Switch to `hadoop` user. Ensure both the sample log file and the JAR file is copied over.
 
     ```bash
+    su - hadoop
     mkdir /tmp/hadoop
     cp /mnt/fileshare/logs/hadoop-apache-access.log /tmp/hadoop/
     cp /mnt/fileshare/hadoop/test-maven-project-1.0.jar /tmp/hadoop/
@@ -421,28 +422,8 @@ Login to the Hadoop node and switch to root.
 
     In this step, I created the `/tmp/hadoop` directory and copied over both files.
 
-2. ...add step...
+2. Execute the Hadoop JAR file with the log file as input.  
 
     ```bash
     hadoop jar test-maven-project-1.0.jar hadoop-apache-access.log
     ```
-
-```bash
-
-```
-
-```bash
-
-```
-
-```bash
-
-```
-
-```bash
-
-```
-
-```bash
-
-```
