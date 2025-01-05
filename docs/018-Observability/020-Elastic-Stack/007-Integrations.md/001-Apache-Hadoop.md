@@ -1,6 +1,6 @@
 ---
-title: "Placeholder"
-description: "Placeholder"
+title: "Apache Hadoop"
+description: "Apache Hadoop"
 tags: 
 - Linux
 - Observability
@@ -10,6 +10,7 @@ tags:
 - Elasticsearch
 - Elastic Stack
 - ELK Stack
+- Apache Hadoop
 sidebar_position: 1
 last_update:
   date: 3/28/2023

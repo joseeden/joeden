@@ -51,7 +51,7 @@ Setup details:
 
 ## Download the  Sample Data 
 
-The sample dataset can be downloaded here: [sample-data-dlq.json](/assets/elastic-stack/sample-logs/sample-data-dlq.json)
+The sample dataset can be downloaded here: [sample-data-dlq.json](@site/assets/elastic-stack/sample-logs/sample-data-dlq.json)
 
 ```json 
 {"age":39,"full_name":"Shelley Bangs","gender":"Female"}
