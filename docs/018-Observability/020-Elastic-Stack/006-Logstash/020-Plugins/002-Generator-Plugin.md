@@ -95,14 +95,14 @@ This will output generated log events to the console and index them into Elastic
 To verify the indexed data in Elasticsearch:
 
 ```bash
-curl -u elastic:elastic --insecure \
+curl -u elastic:<password> --insecure \
 -X GET "https://192.168.56.101:9200/_cat/indices?v"
 ```
 
 Query Elasticsearch to retrieve the data:
 
 ```bash
-curl -s -u elastic:elastic  \
+curl -s -u elastic:<password>  \
 -H 'Content-Type: application/json' \
 -XGET https://localhost:9200/generator/_search?pretty=true -d'
 {

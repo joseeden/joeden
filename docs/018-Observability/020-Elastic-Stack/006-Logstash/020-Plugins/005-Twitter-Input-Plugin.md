@@ -57,11 +57,11 @@ To test the Twitter plugin in Logstash, you need the API keys and tokens from Tw
 
 1. Go to [developer.x.com/en/apps](https://developer.x.com/en/apps) and sign in with your Twitter account.
 
-  :::info 
+    :::info 
 
-  Twitter changed to "X" in mid-2023.
+    Twitter changed to "X" in mid-2023.
 
-  :::
+    :::
 
 2. Click **Create an App**. If this is your first time, you may need to apply for a Twitter developer account. Click **Apply** > **Sign up for Free Account**
 
@@ -146,14 +146,14 @@ If you encounter the error below, it means that your account may have limited ac
 To verify the indexed data in Elasticsearch:
 
 ```bash
-curl -u elastic:elastic --insecure \
+curl -u elastic:<password> --insecure \
 -X GET "https://192.168.56.101:9200/_cat/indices?v"
 ```
 
 Query Elasticsearch to retrieve the data:
 
 ```bash
-curl -s -u elastic:elastic  \
+curl -s -u elastic:<password>  \
 -H 'Content-Type: application/json' \
 -XGET https://localhost:9200/twitter/_search?pretty=true -d'
 {

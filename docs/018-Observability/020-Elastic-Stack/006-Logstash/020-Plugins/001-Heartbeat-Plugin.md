@@ -91,7 +91,7 @@ This configuration sets the `heartbeat` type to be sent every 5 seconds. Save th
 You should see the output printed every 5 seconds, like this:
 
 ```bash
-curl -u elastic:elastic --insecure \
+curl -u elastic:<password> --insecure \
 -X GET "https://192.168.56.101:9200/_cat/indices?v"
 ```
 
@@ -137,7 +137,7 @@ yellow open   heartbeat m4-s-GupTaWqLtQoR-VdHg   1   1          6            0  
 Check the data in Elasticsearch:
 
 ```bash
-curl -s -u elastic:elastic  \
+curl -s -u elastic:<password>  \
 -H 'Content-Type: application/json' \
 -XGET https://localhost:9200/heartbeat/_search?pretty=true -d'
 {
@@ -227,7 +227,7 @@ Start Logstash with the configuration:
 Run the following command on the Elasticsearch node to confirm that the index was created:
 
 ```bash
-curl -u elastic:elastic --insecure \
+curl -u elastic:<password> --insecure \
 -X GET "https://192.168.56.101:9200/_cat/indices?v"
 ```
 
@@ -242,7 +242,7 @@ yellow open   heartbeat-epoch i_Cqj6SVTVa6YfXke8uq7A   1   1         53         
 Query Elasticsearch to view the indexed data:
 
 ```bash
-curl -s -u elastic:elastic  \
+curl -s -u elastic:<password>  \
 -H 'Content-Type: application/json' \
 -XGET https://localhost:9200/heartbeat-epoch/_search?pretty=true -d'
 {
@@ -387,7 +387,7 @@ Logstash will output messages every 5 seconds, each with an incrementing `sequen
 To verify, check the index in Elasticsearch:
 
 ```bash
-curl -u elastic:elastic --insecure \
+curl -u elastic:<password> --insecure \
 -X GET "https://192.168.56.101:9200/_cat/indices?v"
 ```
 
@@ -403,7 +403,7 @@ yellow open   heartbeat-epoch    i_Cqj6SVTVa6YfXke8uq7A   1   1        132      
 Query Elasticsearch to view the indexed data:
 
 ```bash
-curl -s -u elastic:elastic  \
+curl -s -u elastic:<password>  \
 -H 'Content-Type: application/json' \
 -XGET https://localhost:9200/heartbeat-sequence/_search?pretty=true -d'
 {

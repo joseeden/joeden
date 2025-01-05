@@ -150,7 +150,7 @@ Run the configuration using Logstash. We need to add the `path.settings` paramet
 To verify the indexed data in Elasticsearch:
 
 ```bash
-curl -u elastic:elastic --insecure \
+curl -u elastic:<password> --insecure \
 -X GET "https://192.168.56.101:9200/_cat/indices?v"
 ```
 
@@ -165,7 +165,7 @@ yellow open   dlq-1              nMAzva42Ti6FjaZqzswoHA   1   1         10      
 Next, let's inspect the indexed documents. The dataset contains 18 documents in total. However, some documents contain an incorrect `age` value, which causes Logstash to reject them. As a result, only 10 valid documents are successfully indexed into Elasticsearch.
 
 ```bash
-curl -s -u elastic:elastic  \
+curl -s -u elastic:<password>  \
 -H 'Content-Type: application/json' \
 -XGET https://localhost:9200/dlq-1/_search?pretty=true -d'
 {
@@ -225,7 +225,7 @@ Run the configuration using Logstash.
 As always, verify the indexed data in Elasticsearch:
 
 ```bash
-curl -u elastic:elastic --insecure \
+curl -u elastic:<password> --insecure \
 -X GET "https://192.168.56.101:9200/_cat/indices?v"
 ```
 
@@ -241,7 +241,7 @@ yellow open   dlq-1     nMAzva42Ti6FjaZqzswoHA   1   1         10            0  
 Check the indexed data:
 
 ```bash
-curl -s -u elastic:elastic  \
+curl -s -u elastic:<password>  \
 -H 'Content-Type: application/json' \
 -XGET https://localhost:9200/dlq-2/_search?pretty=true -d'
 {

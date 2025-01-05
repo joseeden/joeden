@@ -125,10 +125,22 @@ For further details, refer to [Using Vagrant to Setup Elastic Stack.](/docs/018-
     sudo apt install -y logstash
     ```
 
-5. Add the `/usr/share/logstash/bin` to your PATH.
+5. Add the `/usr/share/logstash/bin` to your `~/.bashrc` file.
+
+    ```bash
+    cat >>  ~/.bashrc
+    ```
+
+    Enter the following: 
 
     ```bash
     export PATH=$PATH:/usr/share/logstash/bin
+    ```
+
+    Reload the shell:
+
+    ```bash
+    source ~/.bashrc 
     ```
 
 6. Verify the installation by checking the Logstash version.

@@ -108,7 +108,7 @@ server-timing: cfL4;desc="?proto=TCP&rtt=32666&min_rtt=16439&rtt_var=17041&sent=
 Next, we can test the Elasticsearch API by checking the health of the cluster. Send a `GET` request to retrieve the cluster health information.
 
 ```bash
-curl -s -u elastic:elastic --insecure -XGET https://192.168.56.101:9200/_cluster/health | jq 
+curl -s -u elastic:<password> --insecure -XGET https://192.168.56.101:9200/_cluster/health | jq 
 ```
 
 Output:
@@ -174,7 +174,7 @@ Logstash will continue running unless manually stopped with `Ctrl-C`. Let it run
 To verify the indexed data in Elasticsearch:
 
 ```bash
-curl -u elastic:elastic --insecure \
+curl -u elastic:<password> --insecure \
 -X GET "https://192.168.56.101:9200/_cat/indices?v"
 ```
 
@@ -189,7 +189,7 @@ yellow open   http-poller-api       aTMDXr4iS4qstbra9Siv3A   1   1        805   
 Next, to inspect the external API data:
 
 ```bash
-curl -s -u elastic:elastic  \
+curl -s -u elastic:<password>  \
 -H 'Content-Type: application/json' \
 -XGET https://localhost:9200/http-poller-api/_search?pretty=true -d'
 {
@@ -209,7 +209,7 @@ curl -s -u elastic:elastic  \
 You can also check the Elasticsearch cluster health:
 
 ```bash
-curl -s -u elastic:elastic \
+curl -s -u elastic:<password> \
 -H 'Content-Type: application/json' \
 -XGET https://localhost:9200/http-poller-es-health/_search?pretty=true -d'
 {
