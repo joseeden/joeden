@@ -149,7 +149,7 @@ When configuring SSL/TLS for secure communication between Elasticsearch and clie
 
 ## Share the CA Certificate to Other VMs (Optional)
 
-..short intro why we need this..2 sentences
+To enable secure communication between Elasticsearch and other VMs, you need to share and configure the Elasticsearch SSL certificate on those VMs. 
 
 To use the Elasticsearch SSL certificate on other VMs, follow these steps:
 
@@ -192,7 +192,7 @@ To use the Elasticsearch SSL certificate on other VMs, follow these steps:
 6. Similar to the Elasticsearch node, reconfigure the CA certificates on the other VM to trust the new cert.
 
     ```bash
-    dpkg-reconfigure ca-certificates
+    ~~dpkg-reconfigure ca-certificates~~
     ```
 
 7.  When prompted, click Yes. 

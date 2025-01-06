@@ -44,7 +44,7 @@ Setup details:
 
 - The nodes are created in VirtualBox using Vagrant.
 - An SSH key is generated on the Elasticsearch node
-- The SSH key is shared to the Logstash node.
+ 
 
 ## Pre-requisites 
 
