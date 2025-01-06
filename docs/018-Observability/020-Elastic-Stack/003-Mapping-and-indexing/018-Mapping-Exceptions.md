@@ -10,7 +10,7 @@ tags:
 - Elasticsearch
 - Elastic Stack
 - ELK Stack
-sidebar_position: 17
+sidebar_position: 18
 last_update:
   date: 3/28/2023
 ---
