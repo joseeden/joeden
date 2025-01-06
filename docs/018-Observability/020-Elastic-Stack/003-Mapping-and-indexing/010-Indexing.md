@@ -50,6 +50,31 @@ Elasticsearch tokenizes these documents into terms and creates a search index.
 | always        | 1                   |
 
 
+## How Inverted Indexing Works 
+
+Elasticsearch uses a series of steps to build an inverted index, as seen in the `Star Wars` and  `Spiderman` quotes in the previous example.
+
+1. **Tokenization**
+
+    - Sentences are broken into individual words (tokens).
+    - Each token forms the basis for creating the search index.
+
+2. **Normalization**
+
+    - Tokens are converted to lowercase for consistency.
+    - This ensures case-insensitive searches.
+
+3. **Stop Words Removal**
+
+    - Common words like "the," "is," and "at" are removed.
+    - These words doesnt add any significant meaning to the text.
+    - Removing these stop words improves search relevance. 
+
+4. **Index Creation**
+
+    - Elasticsearch maps each term to the documents where it appears.
+    - This structure allows for fast and efficient text searches.
+
 ## Term importance
 
 Below are some key concepts used to measure the importance of these terms in search indexing.

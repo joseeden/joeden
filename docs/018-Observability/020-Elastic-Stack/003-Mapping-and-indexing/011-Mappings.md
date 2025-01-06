@@ -39,6 +39,18 @@ curl -XPUT https://127.0.0.1:9200/movies -d '
 '
 ```
 
+## Dynamic and Explicit Mapping  
+
+**Dynamic mapping** in Elasticsearch automatically detects and maps fields in your data as they are indexed. This simplifies setup and allows Elasticsearch to adapt to changing data structures.  
+
+- Automatically assigns data types based on content.
+- Maps new fields without manual intervention.
+
+On the other hand, **explicit mapping** gives you full control over field definitions and data types.  
+
+- Specifies field properties, such as data type and analyzers.  
+- Ensures consistency in how data is indexed and queried.
+- Prevents unexpected mappings by defining them in advance.
 
 ## Field Types
 

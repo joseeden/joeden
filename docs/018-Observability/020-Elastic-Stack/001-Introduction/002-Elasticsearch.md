@@ -69,25 +69,57 @@ Mapping specifies how documents and their fields are stored, indexed, and querie
 
 For more information, please see [Mappings.](/docs/018-Observability/020-Elastic-Stack/003-Mapping-and-indexing/011-Mappings.md)
 
-## Scalability  
+## Sharding  
 
 Elasticsearch is designed to scale horizontally, which means it can grow by adding more nodes to the cluster. It scales by distributing data across shards which ensures efficient storage and retrieval.
 
-- Indexes are split into smaller units called **shards**
-- Each shard functions as an independent Lucene index.
-- Shards are spread across multiple nodes in a cluster
+![](/img/docs/01062025-elasticsearch-sharding.png)
 
 As demand increases, additional nodes can be added to the cluster, and more shards can be created for better scaling.
 
-- Replication ensures data is available even if a node fails.  
-- Queries are spread across shards for faster search and retrieval.  
-- Horizontal scaling, easy capacity expansion.  
+- **Shards**  
+  Indexes are divided into smaller units called shards. Each shard acts as an independent, self-contained index, distributed across multiple nodes in the cluster.
 
+- **Scalability**  
+  As demand increases, additional nodes can be added to the cluster. Elasticsearch can create more shards to handle the growing workload effectively.
 
-## Primary and Replica Shards 
+- **Parallel Processing**  
+  Elasticsearch allows search and indexing operations to run concurrently by distributing data across shards, improving speed and efficiency.
 
-Elasticsearch uses primary and replica shards to store and balance data. In a cluster with multiple nodes, **primary shards** hold the main data, while **replica shards** provide redundancy and improve read performance.  
+- **Fault Tolerance**  
+  In case of node failure, Elasticsearch relocates affected shards to other live nodes, maintaining system availability and performance.
 
+- **Rebalancing**  
+  Elasticsearch monitors the cluster continuously, moving shards automatically to optimize resource utilization. Processing happens across different nodes based on their assigned labels.
+
+- **Shard Sizing**  
+  Larger shards are better for bulk indexing, while smaller shards improve flexibility for scaling and rebalancing. Choosing the right shard size depends on the hardware and specific use case.
+
+## Primary and Replica Shards  
+
+Elasticsearch uses primary and replica shards to store and balance data. **Primary shards** hold the main data, while **replica shards** provide redundancy and improve read performance in a cluster with multiple nodes.  
+
+- **Data Redundancy**  
+  Replicas create multiple copies of your data across different nodes. This ensures data availability even if a node fails.  
+
+- **High Availability**  
+  Redundant data ensures uninterrupted service by keeping your data accessible at all times.  
+
+- **Increased Read Capacity**  
+  Read requests are distributed across multiple copies of the data, reducing the load on individual nodes and enabling simultaneous query handling.  
+
+- **Configurable per Index**  
+  The number of replica shards can be set for each index based on redundancy and performance requirements. More replicas improve availability but consume additional storage space.  
+
+- **Automatic Shard Allocation**  
+  Elasticsearch automatically assigns shards to nodes in the cluster. This ensures optimal resource utilization and load balancing.  
+
+- **Shard Recovery**  
+  When a primary shard fails, Elasticsearch promotes a replica shard to primary. It then rebalances the cluster to maintain data integrity and continuity.  
+
+- **Zero Downtime Scaling**  
+  Elasticsearch allows scaling without downtime. New nodes can be added to the cluster, and shards are redistributed seamlessly.  
+  
 In the example below, the cluster has three nodes, each with two shards:  
 
 - **Node-1**: Primary shard (primary-1) and a replica (replica-0).  
