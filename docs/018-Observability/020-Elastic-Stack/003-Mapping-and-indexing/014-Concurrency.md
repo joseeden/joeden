@@ -35,7 +35,7 @@ To automatically retry failed updates due to conflicts, use `retry_on_conflicts=
 
 :::info 
 
-The example below is tested on a running Elasticsearch 8, and uses a dataset containing movie ratings. For more information, please see [Importing by Bulk.](/docs/018-Observability/020-Elastic-Stack/003-Mapping-and-indexing/012-Updating-Data.md#importing-by-bulk)
+The example below is tested on a running Elasticsearch 8, and uses a dataset containing movie ratings. For more information, please see [Importing by Bulk.](/docs/018-Observability/020-Elastic-Stack/ 003-Mapping-and-indexing/013-Updating-Data.md#importing-by-bulk)
 
 :::
 
