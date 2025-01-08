@@ -130,3 +130,24 @@ Histograms are a great way to explore data distributions. They divide data into 
 6. Each bin gets a bar whose height corresponds to the count of points in that bin.
 
     ![](/img/docs/01092025-python-matplotlib-histograms.png)
+
+## Create Histograms in Matplotlib  
+
+You can use Matplotlib's `pyplot.hist()` function to create histograms. Consider the example below:  
+
+```python
+import matplotlib.pyplot as plt
+data = [0,0.6,1.4,1.6,2.2,2.5,2.6,3.2,3.5,3.9,4.2,6]
+plt.hist(data, bins=6)
+plt.show()
+```  
+
+Key arguments in the `plt.hist`: 
+
+- `x`: The data to plot.  
+- `bins`: Number of bins (default is 10).  
+
+Output:
+
+![](/img/docs/01092025-python-matplotlib-histograms-2.png)
+
