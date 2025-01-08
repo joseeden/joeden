@@ -14,6 +14,14 @@ Python:
   label: 'Python'
   permalink: '/Python'
   description: 'Docs related to Python'  
+NumPy:
+  label: 'NumPy'
+  permalink: '/NumPy'
+  description: 'Docs related to NumPy'    
+Matplotlib:
+  label: 'Matplotlib'
+  permalink: '/Matplotlib'
+  description: 'Docs related to Matplotlib'    
 Java:
   label: 'Java'
   permalink: '/Java'

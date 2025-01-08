@@ -6,6 +6,7 @@ tags:
 - Application Development
 - Software Development
 - Python
+- NumPy
 sidebar_position: 23
 last_update:
   date: 6/13/2020
