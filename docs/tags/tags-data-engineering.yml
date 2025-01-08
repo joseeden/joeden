@@ -42,6 +42,10 @@ Data Science:
   label: 'Data Science'
   permalink: '/Data Science'
   description: 'Docs related to Data Science'       
+Data Analysis:
+  label: 'Data Analysis'
+  permalink: '/Data Analysis'
+  description: 'Docs related to Data Analysis' 
 Data Visualization:
   label: 'Data Visualization'
   permalink: '/Data Visualization'

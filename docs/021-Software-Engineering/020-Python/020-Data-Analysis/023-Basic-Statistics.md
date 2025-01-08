@@ -7,6 +7,7 @@ tags:
 - Software Development
 - Python
 - NumPy
+- Data Analysis
 sidebar_position: 23
 last_update:
   date: 6/13/2020

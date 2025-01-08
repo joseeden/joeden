@@ -7,6 +7,8 @@ tags:
 - Software Development
 - Python
 - Matplotlib
+- Data Analysis
+- Data Visualization
 sidebar_position: 30
 last_update:
   date: 6/13/2020
@@ -177,7 +179,7 @@ Output:
 ![](/img/docs/01092025-python-matplotlib-3.png)
 
 
-#### Labels 
+### Labels 
 
 To customize this, you can add axis labels using `xlabel` and `ylabel`. This step helps people quickly understand what the axes represent. 
 
@@ -199,7 +201,7 @@ Output:
 ![](/img/docs/01092025-python-matplotlib-4.png)
 
 
-#### Axis Ticks 
+### Axis Ticks 
 
 After adding labels, you can also adjust the y-axis ticks for clarity, ensuring they reflect billions by modifying tick names.
 
@@ -222,7 +224,7 @@ Output:
 ![](/img/docs/01092025-python-matplotlib-5.png)
 
 
-#### Adding Data points
+### Adding Data points
 
 To provide a fuller picture of population trends, you can also add historical data points (e.g., years 1800, 1850, 1900) and append them to the existing lists. This creates a more comprehensive visual representation of the population explosion over time.
 

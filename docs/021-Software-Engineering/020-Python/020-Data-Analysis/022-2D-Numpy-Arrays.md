@@ -6,6 +6,7 @@ tags:
 - Application Development
 - Software Development
 - Python
+- Data Analysis
 sidebar_position: 21
 last_update:
   date: 6/13/2020
