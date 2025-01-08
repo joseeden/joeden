@@ -119,18 +119,18 @@ Histograms are a great way to explore data distributions. They divide data into 
    ```  
 
 2. Split the number line into equal chunks (bins). For example, 3 bins of width 2:  
-3. 
+
    - Bin 1: 0–2  
    - Bin 2: 2–4  
    - Bin 3: 4–6  
 
-4. Next, count the data points in each bins: 
+3. Next, count the data points in each bins: 
 
    - Bin 1: 4 points  
    - Bin 2: 6 points  
    - Bin 3: 2 points  
 
-6. Each bin gets a bar whose height corresponds to the count of points in that bin.
+4. Each bin gets a bar whose height corresponds to the count of points in that bin.
 
     ![](/img/docs/01092025-python-matplotlib-histograms.png)
 
