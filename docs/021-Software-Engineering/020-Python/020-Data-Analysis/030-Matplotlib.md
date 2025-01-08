@@ -85,6 +85,9 @@ Click `Run All` to run the cells. It will go through each cell, installing the `
 
 ## Scatter Plot 
 
+> Code can be downloaded here: [001-sample-matplotlib.ipynb](@site/docs/022-Data-Engineering/000-Projects\001-Sample-Matplotlib/001-sample-matplotlib.ipynb)
+
+
 When you have a time scale along the horizontal axis, the line plot is useful. But in many other cases, when you're trying to assess if there's a correlation between two variables, for example, the scatter plot is the better choice.
 
 Using the previous example:
@@ -133,6 +136,9 @@ Histograms are a great way to explore data distributions. They divide data into 
 
 ## Create Histograms in Matplotlib  
 
+> Code can be downloaded here: [001-sample-matplotlib.ipynb](@site/docs/022-Data-Engineering/000-Projects\001-Sample-Matplotlib/001-sample-matplotlib.ipynb)
+
+
 You can use Matplotlib's `pyplot.hist()` function to create histograms. Consider the example below:  
 
 ```python
@@ -151,3 +157,92 @@ Output:
 
 ![](/img/docs/01092025-python-matplotlib-histograms-2.png)
 
+
+## Customizing the Plot
+
+Customizing plots involves adjusting elements like colors, shapes, and labels, depending on the data and the story you want to tell. Although line plots are informative, we can enhance them by adding labels and a clearer focus on the population explosion. Consider the example below:
+
+```python
+import matplotlib.pyplot as plt
+
+years = [1950, 2000, 2050, 2100]
+pop = [2.5, 6.1, 9.0, 10.5]
+
+plt.plot(years, pop)
+plt.show()
+```
+
+Output:
+
+![](/img/docs/01092025-python-matplotlib-3.png)
+
+
+#### Labels 
+
+To customize this, you can add axis labels using `xlabel` and `ylabel`. This step helps people quickly understand what the axes represent. 
+
+```python
+import matplotlib.pyplot as plt
+
+years = [1950, 2000, 2050, 2100]
+pop = [2.5, 6.1, 9.0, 10.5]
+
+plt.plot(years, pop)
+plt.xlabel('Year')
+plt.ylabel('Population (Billions)')
+plt.title('World Population Projections')
+plt.show()
+```
+
+Output:
+
+![](/img/docs/01092025-python-matplotlib-4.png)
+
+
+#### Axis Ticks 
+
+After adding labels, you can also adjust the y-axis ticks for clarity, ensuring they reflect billions by modifying tick names.
+
+```python
+import matplotlib.pyplot as plt
+
+years = [1950, 2000, 2050, 2100]
+pop = [2.5, 6.1, 9.0, 10.5]
+
+plt.plot(years, pop)
+plt.xlabel('Year')
+plt.ylabel('Population (Billions)')
+plt.title('World Population Projections')
+plt.yticks([0, 2, 4, 6, 8, 10], ['0', '2B', '4B', '6B', '8B', '10B'])
+plt.show()
+```
+
+Output:
+
+![](/img/docs/01092025-python-matplotlib-5.png)
+
+
+#### Adding Data points
+
+To provide a fuller picture of population trends, you can also add historical data points (e.g., years 1800, 1850, 1900) and append them to the existing lists. This creates a more comprehensive visual representation of the population explosion over time.
+
+```python
+import matplotlib.pyplot as plt
+
+years = [1950, 2000, 2050, 2100]
+pop = [2.5, 6.1, 9.0, 10.5]
+
+years = [1800, 1850, 1900] + years
+pop = [1.0, 1.3, 1.6] + pop
+
+plt.plot(years, pop)
+plt.xlabel('Year')
+plt.ylabel('Population (Billions)')
+plt.title('World Population Projections')
+plt.yticks([0, 2, 4, 6, 8, 10], ['0', '2B', '4B', '6B', '8B', '10B'])
+plt.show()
+```
+
+Output:
+
+![](/img/docs/01092025-python-matplotlib-6.png)
