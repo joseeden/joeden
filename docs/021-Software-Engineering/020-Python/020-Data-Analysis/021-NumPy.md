@@ -187,3 +187,58 @@ array([26.83267587, 26.10120408, 24.94331066])
 ```
 
 
+## Comparison and Boolean Operators 
+
+Operational operators like `<` and `>=` worked with NumPy arrays out of the box. They allow you to perform element-wise comparisons without additional modifications. 
+
+Example:
+
+```python
+import numpy as np
+my_array = np.array([10, 15, 20, 25])
+print(my_array > 15)  
+```
+
+Output:
+
+```python
+[False False  True  True]  
+```
+
+Unfortunately, this is not true for the boolean operators like `and`, `or`, and `not`. To use these operators with NumPy, you will need to use the  equivalent:
+
+-  `np.logical_and()`
+-  `np.logical_or()`
+-  `np.logical_not()`
+
+Consider two NumPy arrays representing house areas:
+
+```python
+import numpy as np
+house_x = np.array([18.0, 20.0, 10.75, 9.50])
+huose_y = np.array([14.0, 24.0, 14.25, 9.0]) 
+```
+
+To determine the areas in `house_x` which greater than 18.5 but smaller than 10:
+
+```bash
+print(np.logical_or(house_x > 18.5, house_x < 10))
+```
+
+Output:
+
+```python
+[False  True False  True]
+```
+
+To find areas smaller than 11 in both `house_x` and `huose_y`:
+
+```python
+print(np.logical_and(house_x < 11, huose_y < 11))
+```
+
+Output:
+
+```python
+[False False False  True]  
+```

@@ -29,7 +29,7 @@ Discriminative AI focuses on classification tasks and predictions based on model
 
 Discriminative models learn the relationship between input data and labels, often predicting a number, class, or probability. An example is detecting machine anomalies based on sensor data.
 
-![Discriminative AI](img/docs/01082025-ai-discriminative-ai.png)
+![Discriminative AI](/img/docs/01082025-ai-discriminative-ai.png)
 
 
 ## Generative AI
@@ -41,4 +41,4 @@ Generative AI, on the other hand, is trained using unsupervised or semi-supervis
 
 Generative AI models focus on understanding the patterns within data and producing new, similar content. For instance, it can generate text in natural language such as English.
 
-![Generative AI](img/docs/01082025-ai-generativee-ai.png)
+![Generative AI](/img/docs/01082025-ai-generativee-ai.png)
