@@ -535,7 +535,7 @@ Examples:
     Name: area, dtype: bool 
     ```
 
-2. To display the specific countries:
+2. To display/subset the specific countries:
 
     ```python
     import numpy as np
