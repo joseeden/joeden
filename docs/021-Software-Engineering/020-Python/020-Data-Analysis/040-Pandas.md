@@ -444,3 +444,16 @@ To select the countries with area over 8 million square kilometers:
 2. Perform a comparison
 3. Use result to select the countries 
 
+
+install
+
+import JupyterCell from '@theme/JupyterCell';
+
+<JupyterCell 
+  source={`print('Hello world')
+for i in range(10):
+  print(i)
+`}
+  jupyterServerUrl='http://localhost:8686/api/jupyter-server'
+  jupyterServerToken='60c1661cc408f978c309d04157af55c9588ff9557c9380e4fb50785750703da6'
+/>
