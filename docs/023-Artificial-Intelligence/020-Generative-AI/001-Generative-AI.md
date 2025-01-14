@@ -10,7 +10,7 @@ sidebar_position: 1
 
 ## Overview 
 
-Generative AI is a new domain producing technologies that can bring our ideas to life using various models. These tools range from those that create magazine covers to others that converse as humans would. Generative AI tools are rapidly bringing new creative capabilities to the mainstream.
+Generative AI is a new domain technology that can bring ideas to life using various models. These tools range from those that create magazine covers to others that converse as humans would. Generative AI tools are rapidly bringing new creative capabilities to the mainstream.
 
 - Machine learning models that generate new content based on data they've seen.
 - Examples:
