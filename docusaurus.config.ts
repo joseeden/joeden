@@ -35,6 +35,8 @@ const config: Config = {
         disableInDev: false,
       },
     ],
+
+    "@datalayer/jupyter-docusaurus-plugin", // Add this line
     
   ],
 

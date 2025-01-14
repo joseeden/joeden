@@ -423,4 +423,37 @@ CH        China      Beijing                 9.6                  1393
     CH        China      Beijing   
     ```
 
+## Filtering 
 
+Consider the previous example:
+
+```python
+        country      capital  area (million km²)  population (millions)  
+BR       Brazil     Brasília                 8.5                   211  
+RU       Russia       Moscow                17.1                   144  
+IN        India    New Delhi                 3.3                  1380  
+CH        China      Beijing                 9.6                  1393  
+SA  South Africa    Pretoria                 1.2                    58  
+```
+
+To select the countries with area over 8 million square kilometers:
+
+1. Select the area column
+
+
+2. Perform a comparison
+3. Use result to select the countries 
+
+
+install
+
+import JupyterCell from '@theme/JupyterCell';
+
+<JupyterCell 
+  source={`print('Hello world')
+for i in range(10):
+  print(i)
+`}
+  jupyterServerUrl='http://localhost:8686/api/jupyter-server'
+  jupyterServerToken='60c1661cc408f978c309d04157af55c9588ff9557c9380e4fb50785750703da6'
+/>
