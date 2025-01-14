@@ -137,13 +137,13 @@ Data scientists often work with large datasets, usually in a table format like a
 
 Consider the BRICS table below.
 
-| Country        | Capital      | Area (million km²) | Population (millions) |  
-|----------------|--------------|---------------------|-----------------------|  
-| Brazil         | Brasília     | 8.5                 | 211                   |  
-| Russia         | Moscow       | 17.1                | 144                   |  
-| India          | New Delhi    | 3.3                 | 1380                  |  
-| China          | Beijing      | 9.6                 | 1393                  |  
-| South Africa   | Pretoria     | 1.2                 | 58                    |  
+| Country      | Capital   | Area (million km²) | Population (millions) |
+| ------------ | --------- | ------------------ | --------------------- |
+| Brazil       | Brasília  | 8.5                | 211                   |
+| Russia       | Moscow    | 17.1               | 144                   |
+| India        | New Delhi | 3.3                | 1380                  |
+| China        | Beijing   | 9.6                | 1393                  |
+| South Africa | Pretoria  | 1.2                | 58                    |
 
 For these cases, the **Pandas** library is a better choice. It is built on NumPy and it provides advanced tools for data manipulation. In Pandas, tabular data is stored in a **DataFrame**.
 
@@ -426,6 +426,23 @@ CH        China      Beijing                 9.6                  1393
 ## Filtering 
 
 Consider the previous example:
+        
+```python
+import pandas as pd
+
+data = {
+    "country": ["Brazil", "Russia", "India", "China", "South Africa"],
+    "capital": ["Brasília", "Moscow", "New Delhi", "Beijing", "Pretoria"],
+    "area": [8.5, 17.1, 3.3, 9.6, 1.2],
+    "population": [211, 144, 1380, 1393, 58]
+}
+
+brics = pd.DataFrame(data)
+brics.index = ["BR", "RU", "IN", "CH", "SA"]
+print(brics) 
+```
+
+Output:
 
 ```python
         country      capital  area (million km²)  population (millions)  
@@ -440,20 +457,98 @@ To select the countries with area over 8 million square kilometers:
 
 1. Select the area column
 
+    ```python
+    brics["area"] 
+    ```
+
+    Output:
+
+    ```python
+    BR     8.5
+    RU    17.1
+    IN     3.3
+    CH     9.6
+    SA     1.2
+    Name: area, dtype: float64 
+    ```
 
 2. Perform a comparison
-3. Use result to select the countries 
 
+    ```python
+    brics["area"] > 8
+    ```
 
-install
+    Output:
 
-import JupyterCell from '@theme/JupyterCell';
+    ```python
+    BR     True
+    RU     True
+    IN    False
+    CH     True
+    SA    False
+    Name: area, dtype: bool
+    ```
 
-<JupyterCell 
-  source={`print('Hello world')
-for i in range(10):
-  print(i)
-`}
-  jupyterServerUrl='http://localhost:8686/api/jupyter-server'
-  jupyterServerToken='60c1661cc408f978c309d04157af55c9588ff9557c9380e4fb50785750703da6'
-/>
+3. Use result to select the countries.
+
+    ```python
+    brics[brics["area"] > 8] 
+    ```
+
+    Output:
+
+    ```python
+        country	capital	  area	population
+    BR	Brazil	Brasília	8.5	  211
+    RU	Russia	Moscow	  17.1	144
+    CH	China	  Beijing	  9.6	  1393
+    ```
+
+## Boolean Operators 
+
+Since Pandas is built on top of NumPy, we can use operational operators (like `<` and `>=`), as well as boolean operators (`and`, `or`, and `not`). To do boolean operation, use"
+
+-  `np.logical_and()`
+-  `np.logical_or()`
+-  `np.logical_not()`
+
+Examples:
+
+1. To get the countries with areas larger than 8 million km² but smaller than 100 million :
+
+    ```python
+    import numpy as np
+    np.logical_and(
+      brics["area"] > 8,
+      brics["area"] < 10
+    ) 
+    ```
+
+    Output:
+
+    ```python
+    BR     True
+    RU    False
+    IN    False
+    CH     True
+    SA    False
+    Name: area, dtype: bool 
+    ```
+
+2. To display the specific countries:
+
+    ```python
+    import numpy as np
+    np.logical_and(
+      brics["area"] > 8,
+      brics["area"] < 10
+    ) 
+    ```
+
+    Output:
+
+    ```python
+        country	capital	area	population
+    BR	Brazil	Brasília	    8.5	211
+    CH	China	  Beijing	      9.6	1393
+    ```
