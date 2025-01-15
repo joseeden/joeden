@@ -54,6 +54,7 @@ plt.show()
 ## Running in VS Code 
 
 > Code can be downloaded here: [001-sample-matplotlib.ipynb](@site/docs/022-Data-Engineering/000-Projects\001-Sample-Matplotlib/001-sample-matplotlib.ipynb)
+> Code can be downloaded here: [001-sample-matplotlib.ipynb](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/001-Sample-Notebooks/001-sample-matplotlib.ipynb)
 
 If you are using Visual Studio Code, you must first do the following:
 
