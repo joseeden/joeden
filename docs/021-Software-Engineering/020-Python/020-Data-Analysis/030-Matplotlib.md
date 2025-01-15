@@ -53,8 +53,7 @@ plt.show()
 
 ## Running in VS Code 
 
-> Code can be downloaded here: [001-sample-matplotlib.ipynb](@site/docs/022-Data-Engineering/000-Projects\001-Sample-Matplotlib/001-sample-matplotlib.ipynb)
-> Code can be downloaded here: [001-sample-matplotlib.ipynb](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/001-Sample-Notebooks/001-sample-matplotlib.ipynb)
+> Code can be viewed here: [001-sample-matplotlib.ipynb](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/021-Jupyter-Notebooks/001-Sample-Notebooks)
 
 If you are using Visual Studio Code, you must first do the following:
 
@@ -88,7 +87,6 @@ Click `Run All` to run the cells. It will go through each cell, installing the `
 
 ## Scatter Plot 
 
-> Code can be downloaded here: [001-sample-matplotlib.ipynb](@site/docs/022-Data-Engineering/000-Projects\001-Sample-Matplotlib/001-sample-matplotlib.ipynb)
 
 
 When you have a time scale along the horizontal axis, the line plot is useful. But in many other cases, when you're trying to assess if there's a correlation between two variables, for example, the scatter plot is the better choice.
@@ -139,7 +137,6 @@ Histograms are a great way to explore data distributions. They divide data into 
 
 ## Create Histograms in Matplotlib  
 
-> Code can be downloaded here: [001-sample-matplotlib.ipynb](@site/docs/022-Data-Engineering/000-Projects\001-Sample-Matplotlib/001-sample-matplotlib.ipynb)
 
 
 You can use Matplotlib's `pyplot.hist()` function to create histograms. Consider the example below:  
