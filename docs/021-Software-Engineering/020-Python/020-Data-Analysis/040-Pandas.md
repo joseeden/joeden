@@ -207,13 +207,10 @@ brics = pd.read_csv("brics.csv", index_col=0)
 The `read_csv` function reads the CSV file, while the `index_col` parameter specifies that the first column (country) should be used as row labels (indexes).
 
 
-## Pandas Methods 
 
-Som
 
-## Column access using brackets
 
-### Retrieve Single Column 
+## Retrieve Single Column 
 
 To select a single column, use square brackets. Using the previous example:
 
@@ -274,7 +271,7 @@ Output:
 pandas.core.frame.DataFrame 
 ```
 
-### Retrieve Multiple Columns
+## Retrieve Multiple Columns
 
 You can also select multiple columns by passing a list of column labels inside double brackets:  
 
@@ -294,7 +291,7 @@ SA  South Africa    Pretoria
 ```
 
 
-## Row Access Using `[]`  
+## Retrieve Rows  
 
 Using the same example:
 

@@ -9,7 +9,7 @@ tags:
 - Pandas
 - Data Analysis
 - Data Visualization
-sidebar_position: 41
+sidebar_position: 50
 last_update:
   date: 6/13/2020
 ---
