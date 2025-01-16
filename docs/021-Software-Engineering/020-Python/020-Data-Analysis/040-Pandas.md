@@ -207,6 +207,9 @@ brics = pd.read_csv("brics.csv", index_col=0)
 The `read_csv` function reads the CSV file, while the `index_col` parameter specifies that the first column (country) should be used as row labels (indexes).
 
 
+## Pandas Methods 
+
+Som
 
 ## Column access using brackets
 
