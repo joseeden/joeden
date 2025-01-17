@@ -53,7 +53,7 @@ plt.show()
 
 ## Running in VS Code 
 
-> Code can be viewed here: [001-sample-matplotlib.ipynb](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/021-Jupyter-Notebooks/001-Sample-Notebooks)
+> Code can be viewed here: [001-sample_matplotlib.ipynb](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/021-Jupyter-Notebooks/001-Sample-Notebooks)
 
 If you are using Visual Studio Code, you must first do the following:
 
