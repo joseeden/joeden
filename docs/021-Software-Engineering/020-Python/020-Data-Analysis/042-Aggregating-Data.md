@@ -73,6 +73,7 @@ my_dataframe['weight'].cumsum()
 ```
 
 ## Cumulative Statistics  
+
 Other cumulative methods include `.cummax()`, `.cummin()`, and `.cumprod()`. These return cumulative maximum, minimum, and product values, respectively.  
 
 ```python
@@ -81,7 +82,98 @@ my_dataframe['weight'].cummin()
 my_dataframe['weight'].cumprod()
 ```
 
-## Statistics in Action 
+
+## Avoiding Double Counting  
+
+Counting can be tricky when items appear multiple times in your data. Consider the DataFrame below which shows vet visits.
+
+```python
+     Name             Breed   Visit Date
+0     Ted           Labrador   2023-01-10
+1  Stella   Golden Retriever   2023-01-12
+2     Ted          Chow Chow   2023-01-15
+3   Robin             Poodle   2023-01-18
+4     Ted           Labrador   2023-01-20
+5  Stella   Golden Retriever   2023-01-22
+```
+
+Note that some pets, like Ted and Stella, have visited multiple times. To count Breeds correctly, we must address duplicates.
+
+### Dropping Duplicate Names  
+
+We can remove rows with duplicate names using `drop_duplicates()`. By setting `subset` to the name column, we ensure each name appears only once. However, if two pets share the same name but are different Breeds, this method might not work.  
+
+```python
+vet_dataframe.drop_duplicates(subset='Name')
+```
+
+Output:
+
+```python
+	Name	            Breed	  Visit Date
+0	Ted	            Labrador	2023-01-10
+1	Stella  Golden Retriever	2023-01-12
+3	Robin	            Poodle	2023-01-18 
+```
+
+### Dropping Duplicate Pairs  
+
+To handle duplicates more accurately, drop rows based on both `name` and `Breed` by passing both columns to `subset`. This ensures all unique name-Breed combinations are retained.
+
+```python
+vet_dataframe.drop_duplicates(subset=['Name', 'Breed'])
+```
+
+Output:
+
+```python
+	Name	            Breed	  Visit Date
+0	Ted	            Labrador	2023-01-10
+1	Stella  Golden Retriever	2023-01-12
+2	Ted	           Chow Chow	2023-01-15
+3	Robin	            Poodle	2023-01-18 
+```
+
+
+### Counting Breeds  
+
+Use the `value_counts()` method on the Breed column to count each Breed, and add `sort=True` to display the most common Breeds first.
+
+```python
+vet_dataframe['Breed'].value_counts(sort=True)
+```
+
+Output:
+
+```python
+Breed
+Labrador            2
+Golden Retriever    2
+Chow Chow           1
+Poodle              1
+Name: count, dtype: int64
+```
+
+### Proportions  
+
+Set `normalize=True` in `value_counts()` to calculate proportions, showing percentages instead of raw counts. For example, 25% of the pets might be Labradors.  
+
+```python
+vet_dataframe['Breed'].value_counts(normalize=True)
+```
+
+Output:
+
+```python
+Breed
+Labrador            0.333333
+Golden Retriever    0.333333
+Chow Chow           0.166667
+Poodle              0.166667
+Name: proportion, dtype: float64 
+```
+
+## See Jupyter Notebook
 
 To see how these functions work, access the Jupyter notebook here: [Sample Notebooks](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/021-Jupyter-Notebooks/001-Sample-Notebooks)
 
