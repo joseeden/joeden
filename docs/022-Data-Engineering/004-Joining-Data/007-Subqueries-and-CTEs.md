@@ -22,11 +22,11 @@ Here is the schema for the sample **World** table:
 
 To download the actual files, you can get them from my [Github repository](https://github.com/joseeden/joeden/tree/master/assets/datasets).
 
-- [states.csv](@site/assets/datasets/datacamp-world-database/states.csv)
-- [presidents.csv](@site/assets/datasets/datacamp-world-database/presidents.csv)
-- [prime_ministers.csv](@site/assets/datasets/datacamp-world-database/prime_ministers.csv)
-- [prime_minister_terms.csv](@site/assets/datasets/datacamp-world-database/prime_minister_terms.csv)
-- [monarchs.csv](@site/assets/datasets/datacamp-world-database/monarchs.csv)
+- [states.csv](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/states.csv)
+- [presidents.csv](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/presidents.csv)
+- [prime_ministers.csv](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/prime_ministers.csv)
+- [prime_minister_terms.csv](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/prime_minister_terms.csv)
+- [monarchs.csv](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/monarchs.csv)
 
 
 ## Additive Joins
@@ -530,8 +530,8 @@ When to Use:
 
 Countries like Canada, Russia, and Mongolia have freezing temperatures year-round, while others experience winter cold for a few months, still supporting training for winter sports like skiing and bobsledding. Below are the sample datasets:
 
-- [athletes_recent.csv](@site/assets/datasets/datacamp-athletes-climate/athletes_recent.csv)
-- [oclimate.csv](@site/assets/datasets/datacamp-athletes-climate/oclimate.csv)
+- [athletes_recent.csv](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/000-Sample-Datasets/datacamp-athletes-climate/athletes_recent.csv)
+- [oclimate.csv](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/000-Sample-Datasets/datacamp-athletes-climate/oclimate.csv)
 
 Examine temperature data for Olympic countries and focus on the southern hemisphere, which sees lower Winter Olympics participation.
 
