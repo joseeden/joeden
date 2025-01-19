@@ -70,7 +70,7 @@ Output:
 
 :::info 
 
-To see more examples, please see [Merging Data with Pandas Notebook.](/docs/021-Software-Engineering/021-Jupyter-Notebooks/001-Sample-Notebooks/007-merging-data-with-pandas.ipynb)
+To see more examples, please see [Merging Data with Pandas Notebook.](/docs/021-Software-Engineering/021-Jupyter-Notebooks/001-Sample-Notebooks)
 
 :::
 
@@ -89,3 +89,36 @@ print(merged_data_custom)
 |-----|-----|-----|-----|-----|  
 | 1   | 10  | 20  | 50  | 100 |  
 | 2   | 15  | 25  | 60  | 110 |  
+
+
+## Merging Multiple DataFrames
+
+Merging multiple DataFrames allows you to combine related data from different tables into a single table for analysis. This is useful when data is spread across multiple sources.
+
+To merge two tables:  
+
+```python
+merged_df = df1.merge(df2, on='id')
+```  
+
+To merge three tables:
+
+```python
+merged_df = df1.merge(df2, on='id') \
+  .merge(df3, on='id')
+```  
+
+
+To merge four tables (and so on):
+
+```python
+merged_df = df1.merge(df2, on='id') \
+  .merge(df3, on='id') \
+  .merge(df4, on='id')
+```  
+
+:::info 
+
+To see more examples, please see [Merging Data with Pandas Notebook.](/docs/021-Software-Engineering/021-Jupyter-Notebooks/001-Sample-Notebooks)
+
+:::
