@@ -400,6 +400,207 @@ Pivot tables offer a powerful way to calculate grouped summaries, similar to tho
     All	      28.0	    25.5	            31.0	    20.0	  26.833333
     ```
 
+
+## Explicit Indexes
+
+Indexes provide an efficient way to manage and subset data in pandas DataFrames. They offer efficient filtering, but they have limitations: they add complexity and break "tidy data" rules. 
+
+Consider the dataset below:
+
+```python
+       Name             Breed           Color   Visit Date  Weight
+0      Ted           Labrador          Black  2023-01-10      30
+1   Stella   Golden Retriever          Golden  2023-01-12      25
+2      Ted          Chow Chow          Brown  2023-01-15      28
+3    Robin             Poodle          White  2023-01-18      20
+4      Ted           Labrador          Black  2023-01-20      32
+5   Stella   Golden Retriever          Golden  2023-01-22      26
+```
+
+Indexing operations:
+
+- **Accessing Columns and Index**
+
+      You can access column names and row indexes directly.  
+
+      ```python
+      print(dogs.columns)  # Access column names
+      print(dogs.index)    # Access row index
+      ```
+
+      Output:  
+
+      ```plaintext
+      Index(['Name', 'Breed', 'Color', 'Visit Date', 'Weight'], dtype='object')
+      RangeIndex(start=0, stop=6, step=1)
+      ```
+
+
+- **Setting an Index**
+
+      Set a column (e.g., `Name`) as the index.  
+      ```python
+      dogs_indexed = dogs.set_index("Name")
+      print(dogs_indexed)
+      ```
+
+      Output:  
+
+      ```plaintext
+                  Breed           Color   Visit Date  Weight
+      Name                                                
+      Ted      Labrador          Black  2023-01-10      30
+      Stella   Golden Retriever  Golden  2023-01-12      25
+      Ted      Chow Chow          Brown  2023-01-15      28
+      Robin    Poodle            White   2023-01-18      20
+      Ted      Labrador          Black  2023-01-20      32
+      Stella   Golden Retriever  Golden  2023-01-22      26
+      ```
+
+- **Resetting the Index**
+
+      Reset the index to move it back to the DataFrame body.  
+
+      ```python
+      dogs_reset = dogs_indexed.reset_index()
+      print(dogs_reset)
+      ```
+
+      Output:  
+
+      ```plaintext
+            Name             Breed           Color   Visit Date  Weight
+      0      Ted           Labrador          Black  2023-01-10      30
+      1   Stella   Golden Retriever          Golden  2023-01-12      25
+      2      Ted          Chow Chow          Brown  2023-01-15      28
+      3    Robin             Poodle          White  2023-01-18      20
+      4      Ted           Labrador          Black  2023-01-20      32
+      5   Stella   Golden Retriever          Golden  2023-01-22      26
+      ```
+
+
+- **Dropping an Index**
+
+      Remove the index entirely using the `drop` argument.  
+
+      ```python
+      dogs_dropped = dogs_indexed.reset_index(drop=True)
+      print(dogs_dropped)
+      ```
+
+      Output:  
+
+      ```plaintext
+                  Breed           Color   Visit Date  Weight
+      0      Labrador          Black  2023-01-10      30
+      1   Golden Retriever  Golden  2023-01-12      25
+      2      Chow Chow          Brown  2023-01-15      28
+      3      Poodle            White   2023-01-18      20
+      4      Labrador          Black  2023-01-20      32
+      5   Golden Retriever  Golden  2023-01-22      26
+      ```
+
+
+- **Subsetting with Indexes**
+
+      Indexes make filtering data simpler. For example, filter rows where `Name` is "Ted."  
+
+      ```python
+      ted_rows = dogs_indexed.loc["Ted"]
+      print(ted_rows)
+      ```
+
+      Output:  
+
+      ```plaintext
+                  Breed   Color   Visit Date  Weight
+      Name                                            
+      Ted      Labrador  Black  2023-01-10      30
+      Ted      Chow Chow  Brown  2023-01-15      28
+      Ted      Labrador  Black  2023-01-20      32
+      ```
+
+- **Multi-Level Indexing**
+
+      Set multiple columns (e.g., `Breed` and `Color`) as the index.  
+
+      ```python
+      dogs_multi = dogs.set_index(["Breed", "Color"])
+      print(dogs_multi)
+      ```
+
+      Output:  
+
+      ```plaintext
+                                    Name   Visit Date  Weight
+      Breed            Color                                    
+      Labrador         Black               Ted  2023-01-10      30
+      Golden Retriever Golden           Stella  2023-01-12      25
+      Chow Chow        Brown               Ted  2023-01-15      28
+      Poodle           White             Robin  2023-01-18      20
+      Labrador         Black               Ted  2023-01-20      32
+      Golden Retriever Golden           Stella  2023-01-22      26
+      ```
+
+- **Subsetting Multi-Level Indexes**
+
+      Subset rows using outer and inner indexes.  
+
+      **Outer Index**: Filter rows for "Labrador."  
+
+      ```python
+      labs = dogs_multi.loc["Labrador"]
+      print(labs)
+      ```
+
+      Output:  
+
+      ```plaintext
+                  Name   Visit Date  Weight
+      Color                                  
+      Black           Ted  2023-01-10      30
+      Black           Ted  2023-01-20      32
+      ```
+
+      **Inner Index**: Filter rows for specific combinations (e.g., Labrador and Black). 
+      
+      ```python
+      brown_labs = dogs_multi.loc[[("Labrador", "Black")]]
+      print(brown_labs)
+      ```
+
+      Output:  
+
+      ```plaintext
+                              Name   Visit Date  Weight
+      Breed      Color                                  
+      Labrador   Black             Ted  2023-01-10      30
+      Labrador   Black             Ted  2023-01-20      32
+      ```
+
+- **Sorting Indexes**
+
+      Sort rows by index values using `sort_index()`.  
+
+      ```python
+      sorted_dogs = dogs_multi.sort_index()
+      print(sorted_dogs)
+      ```
+
+      Output:  
+
+      ```plaintext
+                                    Name   Visit Date  Weight
+      Breed            Color                                    
+      Chow Chow        Brown               Ted  2023-01-15      28
+      Golden Retriever Golden           Stella  2023-01-12      25
+      Golden Retriever Golden           Stella  2023-01-22      26
+      Labrador         Black               Ted  2023-01-10      30
+      Labrador         Black               Ted  2023-01-20      32
+      Poodle           White             Robin  2023-01-18      20
+      ``` 
+
+
 ## See Jupyter Notebook
 
 To see how these functions work, access the Jupyter notebook here: [Sample Notebooks](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/021-Jupyter-Notebooks/001-Sample-Notebooks)
