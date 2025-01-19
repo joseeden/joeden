@@ -391,3 +391,89 @@ Operations:
   2023-01-12  Stella Golden Retriever
   2023-01-15     Ted         Chow Chow
   ```
+
+## Pivoting and Summary Stats
+
+Pivot tables are created using `.pivot_table()`. The `values` argument specifies the column to aggregate, while `index` and `columns` define row and column grouping. The default aggregation is mean.
+
+Consider the dogs data:
+
+```python
+        breed     color  age  weight date_of_birth  height
+0    Labrador     Brown    3      25    2016-01-01      23
+1   Chow Chow       Tan    4      18    2015-06-15      20
+2      Poodle     White    2      12    2017-03-20      20
+3    Labrador     Black    7      30    2014-09-10      23
+4      Beagle     Brown    5      10    2015-12-01      21
+5   Chihuahua      Grey    1       3    2018-05-05      18
+6      Poodle     Brown    3      20    2017-03-20      22
+7    Labrador     Black    6      28    2014-09-10      24
+8      Beagle     White    4      12    2015-12-01      21
+9   Chow Chow       Tan    5      17    2015-06-15      19
+```
+
+- **Pivoting**  
+
+  You can create a pivot table to group and aggregate data by rows and columns.
+  
+  ```python
+  dogs.pivot_table(values='height', index='breed', columns='color', aggfunc='mean')
+  ```
+  
+  Output:
+  
+  ```
+  color         Black  Brown  Grey   Tan  White
+  breed
+  Beagle        NaN    21.0   NaN   NaN   21.0
+  Chihuahua     NaN    NaN    18.0   NaN   NaN
+  Chow Chow     NaN    NaN    NaN    19.5  NaN
+  Labrador      23.5   23.0   NaN    NaN   NaN
+  Poodle        NaN    22.0   NaN    NaN   20.0
+  ```
+
+- **.loc[] + slicing is a power combo**  
+
+  Pivot tables are DataFrames with sorted indexes, so slicing and `.loc[]` functionality can be used for subsetting.
+  
+  ```python
+  dogs.loc[dogs['breed'] == 'Poodle', ['height']]
+  ```
+  
+  Output:
+  
+  ```
+    height
+  2	20
+  6	22
+  ```
+
+- **The axis argument**  
+
+  Use the `axis` argument to specify whether to calculate summary stats across rows (`axis=0`, default) or columns (`axis=1`).
+  
+  ```python
+  dogs.mean(axis="index")  # Across rows
+  ```
+  
+  Output:
+  
+  ```
+  height   22.5
+  ```
+
+- **Calculating summary stats across columns**  
+
+  Set `axis=1` to calculate summary stats across columns, useful when all columns contain the same data type.
+  
+  ```python
+  dogs.mean(axis=1)  # Across columns
+  ```
+  
+  Output:
+  
+  ```
+  breed
+  Labrador  22.5
+  Poodle    21.0
+  ```
