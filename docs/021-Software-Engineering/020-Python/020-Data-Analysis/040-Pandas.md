@@ -149,7 +149,7 @@ For these cases, the **Pandas** library is a better choice. It is built on NumPy
 
 ## Creating a DataFrame  
 
-### From a Dictionary  
+### From a Dictionary of Lists
 
 You can create a DataFrame from a dictionary, where keys are column labels, and values are lists of column data. For example:  
 
@@ -183,6 +183,38 @@ RU       Russia       Moscow                17.1                   144
 IN        India    New Delhi                 3.3                  1380  
 CH        China      Beijing                 9.6                  1393  
 SA  South Africa    Pretoria                 1.2                    58  
+```
+
+### From a List of Dictionaries
+
+You can also create a DataFrame from a list of dictionaries, where each dictionary represents a row, and the keys correspond to column labels. This approach is helpful when data is naturally structured as rows.  
+
+```python
+import pandas as pd
+
+# Data represented as a list of dictionaries
+data = [
+    {"country": "Brazil", "capital": "Brasília", "area": 8.5, "population": 211},
+    {"country": "Russia", "capital": "Moscow", "area": 17.1, "population": 144},
+    {"country": "India", "capital": "New Delhi", "area": 3.3, "population": 1380},
+    {"country": "China", "capital": "Beijing", "area": 9.6, "population": 1393},
+    {"country": "South Africa", "capital": "Pretoria", "area": 1.2, "population": 58},
+]
+
+brics = pd.DataFrame(data)
+brics.index = ["BR", "RU", "IN", "CH", "SA"]
+print(brics)
+```
+
+The result is the same BRICS table as shown previously:  
+
+```plaintext
+        country      capital  area  population
+BR       Brazil     Brasília   8.5         211
+RU       Russia       Moscow  17.1         144
+IN        India    New Delhi   3.3        1380
+CH        China      Beijing   9.6        1393
+SA  South Africa     Pretoria   1.2          58
 ```
 
 ### From a CSV File  
