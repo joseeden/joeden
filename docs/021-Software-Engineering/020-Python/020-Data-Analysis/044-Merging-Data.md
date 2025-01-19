@@ -70,7 +70,7 @@ Output:
 
 :::info 
 
-To see more examples, please see [Merging Data with Pandas Notebook.](/docs/021-Software-Engineering/021-Jupyter-Notebooks/001-Sample-Notebooks)
+To see more examples, please see [Merging Data with Pandas Notebook.](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/021-Jupyter-Notebooks/001-Sample-Notebooks)
 
 :::
 
@@ -119,6 +119,6 @@ merged_df = df1.merge(df2, on='id') \
 
 :::info 
 
-To see more examples, please see [Merging Data with Pandas Notebook.](/docs/021-Software-Engineering/021-Jupyter-Notebooks/001-Sample-Notebooks)
+To see more examples, please see [Merging Data with Pandas Notebook.](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/021-Jupyter-Notebooks/001-Sample-Notebooks)
 
 :::
