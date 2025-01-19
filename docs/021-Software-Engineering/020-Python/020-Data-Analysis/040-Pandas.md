@@ -238,7 +238,13 @@ brics = pd.read_csv("brics.csv", index_col=0)
 
 The `read_csv` function reads the CSV file, while the `index_col` parameter specifies that the first column (country) should be used as row labels (indexes).
 
+### From DataFrame to CSV 
 
+You can also export a DataFrame to a CSV file using the `to_csv` method. This allows you to save your data in a widely used format for sharing or further analysis.
+
+```python
+brics.tocsv("/path/to/brics_new.csv")
+```
 
 
 
