@@ -87,8 +87,6 @@ Click `Run All` to run the cells. It will go through each cell, installing the `
 
 ## Scatter Plot 
 
-
-
 When you have a time scale along the horizontal axis, the line plot is useful. But in many other cases, when you're trying to assess if there's a correlation between two variables, for example, the scatter plot is the better choice.
 
 Using the previous example:
@@ -136,8 +134,6 @@ Histograms are a great way to explore data distributions. They divide data into 
     ![](/img/docs/01092025-python-matplotlib-histograms.png)
 
 ## Create Histograms in Matplotlib  
-
-
 
 You can use Matplotlib's `pyplot.hist()` function to create histograms. Consider the example below:  
 
