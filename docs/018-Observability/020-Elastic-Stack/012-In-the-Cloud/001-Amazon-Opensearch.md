@@ -185,13 +185,13 @@ Back at the AWS Console, click the OpenSearch Dashboards link.
 
 1. Login using the master username and password.
 
-  ![](/img/docs/01232025-opensearch-login.png)
+    ![](/img/docs/01232025-opensearch-login.png)
 
 2. Choose Explore on my own. 
 
-  ![](/img/docs/01232025-opensearch-login-2.png)
+    ![](/img/docs/01232025-opensearch-login-2.png)
 
 3. Click the hamburger button at the right > Management > Index Management > Indexes
 4. You should see the `movie` index here.
 
-  ![](/img/docs/01232025-opensearch-login-3.png)
+    ![](/img/docs/01232025-opensearch-login-3.png)
