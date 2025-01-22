@@ -114,69 +114,69 @@ On the console, select the Domain endpoint link.
 
 1. Open a terminal and run the following:
 
-  ```bash
-  curl -XGET https://my-openseardh-qwertyuiasdfghjjkl.us-east-1.es.amazonaws.com \
-  -u 'admin:add-password-here'
-  ```
+    ```bash
+    curl -u 'admin:add-password-here' -XGET https://my-openseardh-qwertyuiasdfghjjkl.us-east-1.es.amazonaws.com 
+    ```
 
-  Output:
+    Output:
 
-  ```json
-  {
-    "name" : "******************",   
-    "cluster_name" : "12345678910:my-opensearch",
-    "cluster_uuid" : ""******************",     
-    "version" : {
-      "distribution" : "opensearch",
-      "number" : "2.17.0",
-      "build_type" : "tar",
-      "build_hash" : "unknown",
-      "build_date" : "2023-12-17T11:14:55.776568428Z",
-      "build_snapshot" : false,
-      "lucene_version" : "9.11.1",
-      "minimum_wire_compatibility_version" : "7.10.0",
-      "minimum_index_compatibility_version" : "7.0.0"
-    },
-    "tagline" : "The OpenSearch Project: https://opensearch.org/"
-  }
-  ```
+    ```json
+    {
+      "name" : "******************",   
+      "cluster_name" : "12345678910:my-opensearch",
+      "cluster_uuid" : ""******************",     
+      "version" : {
+        "distribution" : "opensearch",
+        "number" : "2.17.0",
+        "build_type" : "tar",
+        "build_hash" : "unknown",
+        "build_date" : "2023-12-17T11:14:55.776568428Z",
+        "build_snapshot" : false,
+        "lucene_version" : "9.11.1",
+        "minimum_wire_compatibility_version" : "7.10.0",
+        "minimum_index_compatibility_version" : "7.0.0"
+      },
+      "tagline" : "The OpenSearch Project: https://opensearch.org/"
+    }
+    ```
 
-2. Import data to Opensearch.
+2. Import data to Opensearch. Download the movie datasets here: [movies.json](@site/assets/elastic-stack/movies.json)
 
-  ```bash
-  curl -s -u 'admin:add-password-here' \
-  -H 'Content-Type: application/json' \
-  -XPUT https://my-openseardh-qwertyuiasdfghjjkl.us-east-1.es.amazonaws.com/_bulk?pretty \
-  --data-binary "@movies.json"
-  ```
+
+    ```bash
+    curl -s -u 'admin:add-password-here' \
+    -H 'Content-Type: application/json' \
+    -XPUT https://my-openseardh-qwertyuiasdfghjjkl.us-east-1.es.amazonaws.com/_bulk?pretty \
+    --data-binary "@movies.json"
+    ```
 
 3. Verify that the index has been created.
 
 
-  ```bash
-  curl -s -u 'admin:add-password-here' \
-  -H 'Content-Type: application/json' \
-  -XGET https://my-openseardh-qwertyuiasdfghjjkl.us-east-1.es.amazonaws.com/_cat/indices?v
-  ```
+    ```bash
+    curl -s -u 'admin:add-password-here' \
+    -H 'Content-Type: application/json' \
+    -XGET https://my-openseardh-qwertyuiasdfghjjkl.us-east-1.es.amazonaws.com/_cat/indices?v
+    ```
 
-  Output:
+    Output:
 
-  ```bash
-  health status index                             uuid                   pri rep docs.count docs.deleted store.size pri.store.size
-  green  open   .plugins-ml-model-group           iWVJMeUPRC2NgneFjLR8fA   1   0          1            0     13.4kb         13.4kb
-  green  open   .plugins-flow-framework-state     0MfLPDJiQp62lV6ZzOpTJg   5   0          2            0     29.3kb         29.3kb
-  green  open   .ql-datasources                   Px1yzKDGQ_uhfrTu7DplwQ   1   0          0            0       208b           208b
-  green  open   .plugins-ml-agent                 8iJMHmt6Q060xQNn08Dl-A   1   0          1            0     16.7kb         16.7kb
-  green  open   .plugins-ml-task                  umTG4B5yT0GQyPCTUh6-3Q   1   0          3            0     52.5kb         52.5kb
-  green  open   .plugins-flow-framework-templates RszEIIN8SKaDh87VfTPyiw   5   0          2            0     18.8kb         18.8kb
-  green  open   .kibana_1                         2gVRUPA2RSi4M7HmIlwZ5Q   1   0          1            0      5.2kb          5.2kb
-  green  open   .opendistro_security              eh8sqjVARICaGTVPqDAW-A   1   0         10            2     76.7kb         76.7kb
-  yellow open   movies                            rKzq_O6rTRmiZtI4p3LETw   5   1         50            0     39.1kb         39.1kb
-  green  open   .opensearch-observability         _ml656htS4iLp_RRciEFpQ   1   0          0            0       208b           208b
-  green  open   .plugins-ml-config                QbvYbTMTSvWGArG-48LSRQ   1   0          2            0      8.6kb          8.6kb
-  green  open   .plugins-ml-model                 xklLhm_XSKexHNMjXCAo7Q   1   0          1            0    160.9kb        160.9kb
-  green  open   .plugins-flow-framework-config    ClN-4X7ITSWadUYwbAIXQw   5   0          1            0      4.7kb          4.7kb 
-  ```
+    ```bash
+    health status index                             uuid                   pri rep docs.count docs.deleted store.size pri.store.size
+    green  open   .plugins-ml-model-group           iWVJMeUPRC2NgneFjLR8fA   1   0          1            0     13.4kb         13.4kb
+    green  open   .plugins-flow-framework-state     0MfLPDJiQp62lV6ZzOpTJg   5   0          2            0     29.3kb         29.3kb
+    green  open   .ql-datasources                   Px1yzKDGQ_uhfrTu7DplwQ   1   0          0            0       208b           208b
+    green  open   .plugins-ml-agent                 8iJMHmt6Q060xQNn08Dl-A   1   0          1            0     16.7kb         16.7kb
+    green  open   .plugins-ml-task                  umTG4B5yT0GQyPCTUh6-3Q   1   0          3            0     52.5kb         52.5kb
+    green  open   .plugins-flow-framework-templates RszEIIN8SKaDh87VfTPyiw   5   0          2            0     18.8kb         18.8kb
+    green  open   .kibana_1                         2gVRUPA2RSi4M7HmIlwZ5Q   1   0          1            0      5.2kb          5.2kb
+    green  open   .opendistro_security              eh8sqjVARICaGTVPqDAW-A   1   0         10            2     76.7kb         76.7kb
+    yellow open   movies                            rKzq_O6rTRmiZtI4p3LETw   5   1         50            0     39.1kb         39.1kb
+    green  open   .opensearch-observability         _ml656htS4iLp_RRciEFpQ   1   0          0            0       208b           208b
+    green  open   .plugins-ml-config                QbvYbTMTSvWGArG-48LSRQ   1   0          2            0      8.6kb          8.6kb
+    green  open   .plugins-ml-model                 xklLhm_XSKexHNMjXCAo7Q   1   0          1            0    160.9kb        160.9kb
+    green  open   .plugins-flow-framework-config    ClN-4X7ITSWadUYwbAIXQw   5   0          1            0      4.7kb          4.7kb 
+    ```
 
 
 ## Access the Dashboard 
