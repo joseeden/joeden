@@ -10,6 +10,7 @@ tags:
 - Elasticsearch
 - Elastic Stack
 - ELK Stack
+- Opensearch
 sidebar_position: 1
 last_update:
   date: 3/28/2023
@@ -31,7 +32,7 @@ Amazon OpenSearch was previously known as Amazon Elasticsearch because it origin
 
 
 
-## Configuring Opensearch 
+## Configure Opensearch 
 
 For customers in the AWS Free Tier, OpenSearch Service provides free usage of up to 750 hours per month of a t2.small.search or t3.small.search instance. For more information, please see [Amazon OpenSearch Service Pricing.](https://aws.amazon.com/opensearch-service/pricing/)
 
@@ -40,24 +41,24 @@ For customers in the AWS Free Tier, OpenSearch Service provides free usage of up
 3. **Set a Cluster Name**: Enter a name for your cluster.  
 4. **Configure Domain Settings**:  
 
-| Setting                    | Value                  |  
-|----------------------------|------------------------|  
-| Domain creation method     | Standard create        |  
-| Templates                  | Dev/test               |  
-| Deployment option          | Domain without standby |  
-| Availability zone          | 1-AZ                  |  
-| Engine options             | Latest version         |  
+    | Setting                    | Value                  |  
+    |----------------------------|------------------------|  
+    | Domain creation method     | Standard create        |  
+    | Templates                  | Dev/test               |  
+    | Deployment option          | Domain without standby |  
+    | Availability zone          | 1-AZ                  |  
+    | Engine options             | Latest version         |  
 
 5. **Configure Data Nodes**:  
 
-| Setting                   | Value                        |  
-|---------------------------|------------------------------|  
-| Instance family           | Memory optimized            |  
-| Instance type             | r5.large.search             |  
-| Number of data nodes      | 1                            |  
-| Storage type              | EBS                          |  
-| EBS volume type           | General Purpose (SSD) - gp3 |  
-| Advanced volume options   | Default                      |  
+    | Setting                   | Value                        |  
+    |---------------------------|------------------------------|  
+    | Instance family           | Memory optimized            |  
+    | Instance type             | r5.large.search             |  
+    | Number of data nodes      | 1                            |  
+    | Storage type              | EBS                          |  
+    | EBS volume type           | General Purpose (SSD) - gp3 |  
+    | Advanced volume options   | Default                      |  
 
 6. **Master Nodes**: Leave **Enable dedicated master nodes** unchecked.  
 
@@ -73,38 +74,38 @@ For production setups, always use VPC access for enhanced security.
 
 8. **Fine-Grained Access Control**:  
 
-| Setting                      | Value                        |  
-|------------------------------|------------------------------|  
-| Enable fine-grained access   | Yes                          |  
-| Master user                  | Use IAM ARN or create a user |  
-| IAM ARN                      | Provide IAM ARN              |  
-| Master username/password     | Set credentials              |  
+    | Setting                      | Value                        |  
+    |------------------------------|------------------------------|  
+    | Enable fine-grained access   | Yes                          |  
+    | Master user                  | Use IAM ARN or create a user |  
+    | IAM ARN                      | Provide IAM ARN              |  
+    | Master username/password     | Set credentials              |  
 
 9. **Access Policy**: Select **Configure domain-level access policy > JSON** and paste the following policy. Update the `Resource` field with your resource ARN.
 
-```json title="Access Policy"  
-{
-  "Version": "2012-10-17",
-  "Statement": [
+    ```json title="Access Policy"  
     {
-      "Effect": "Allow",
-      "Principal": {
-        "AWS": "*"
-      },
-      "Action": "es:ESHttpGet",
-      "Resource": "arn:aws:es:us-east-1:12345678910:domain/my-opensearch/*"
-    },
-    {
-      "Effect": "Allow",
-      "Principal": {
-        "AWS": "*"
-      },
-      "Action": "es:*",
-      "Resource": "arn:aws:es:us-east-1:12345678910:domain/my-opensearch/*"
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "*"
+          },
+          "Action": "es:ESHttpGet",
+          "Resource": "arn:aws:es:us-east-1:12345678910:domain/my-opensearch/*"
+        },
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "*"
+          },
+          "Action": "es:*",
+          "Resource": "arn:aws:es:us-east-1:12345678910:domain/my-opensearch/*"
+        }
+      ]
     }
-  ]
-}
-```  
+    ```  
 
 10. **Review and Create**: Review the configuration and click **Create**.  
 

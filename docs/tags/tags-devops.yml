@@ -125,7 +125,11 @@ Grafana:
 Elasticsearch:
   label: 'Elasticsearch'
   permalink: '/Elasticsearch'
-  description: 'Docs related to Elasticsearch'    
+  description: 'Docs related to Elasticsearch'   
+Opensearch:
+  label: 'Opensearch'
+  permalink: '/Opensearch'
+  description: 'Docs related to Opensearch'     
 Logstash:
   label: 'Logstash'
   permalink: '/Logstash'
