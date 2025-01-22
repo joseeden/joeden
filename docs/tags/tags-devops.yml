@@ -130,6 +130,10 @@ Opensearch:
   label: 'Opensearch'
   permalink: '/Opensearch'
   description: 'Docs related to Opensearch'     
+Elastic Cloud:
+  label: 'Elastic Cloud'
+  permalink: '/Elastic Cloud'
+  description: 'Docs related to Elastic Cloud'    
 Logstash:
   label: 'Logstash'
   permalink: '/Logstash'
