@@ -276,7 +276,7 @@ This section covers the theory behind the MapReduce project.
 
 To save time, you can clone the GitHub repository that contains the sample source code.
 
-For more information, please see [Clone the Project Repository](#clone-the-project-repository).
+For more information, please see [Clone the Project Repository](#build-the-jar-file).
 
 ::: 
 
