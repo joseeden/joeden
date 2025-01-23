@@ -1,6 +1,6 @@
 ---
-title: "Setting up Exporters"
-description: "Setting up Exporters"
+title: "Setting up Prometheus Exporters"
+description: "Setting up Prometheus Exporters"
 tags: 
 - Linux
 - Observability

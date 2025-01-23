@@ -96,8 +96,30 @@ It should now succeed.
 
 ## Import Log File 
 
-Click on the Kibana endpoint link to open Kibana in a new tab. 
+Login to the Elastic page and perform the following:
 
-1. Login to Kibana using the credentials from the previous section.
-2. Click Import a CSV, NDJSON, or log file.
-3. Select the file you want to upload. You can download the dataset here: [movies.json](@site/assets/elastic-stack/movies.json)
+1. On the Overview page, scroll down to **Ingest your content** and click Upload a file.
+
+    ![](/img/docs/01232025-elasticsearch-import-log-file.png)
+
+2. Click Select or drag and drop a file, and select the dataset. You can download the dataset here: [movies.json](@site/assets/elastic-stack/movies.json)
+
+3. It will display a sample from the dataset, as well as the summary. 
+
+    ![](/img/docs/01232025-elasticsearch-import-log-file-2.png)
+
+4. The File stays section also displays details about fields in the uploaded datasets.
+
+    ![](/img/docs/01232025-elasticsearch-import-log-file-3.png)
+
+5. After reviewing, click Import. Provide an index name > Import.
+
+    ![](/img/docs/01232025-elasticsearch-import-log-file-4.png)
+
+6. You should see all steps are cleared. 
+
+    ![](/img/docs/01232025-elasticsearch-import-log-file-5.png)
+
+7. On the left panel, click Discover. You should now see the `movies` index created.
+
+    ![](/img/docs/01232025-elasticsearch-import-log-file-6.png)
