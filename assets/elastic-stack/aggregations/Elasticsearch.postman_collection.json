@@ -1,0 +1,534 @@
+{
+	"info": {
+		"_postman_id": "2cb74c1a-1992-4e4c-9462-fa0246030ec6",
+		"name": "Elasticsearch",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10679031"
+	},
+	"item": [
+		{
+			"name": "aggregations",
+			"item": [
+				{
+					"name": "total market capacity dsl",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{elastic_password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{elastic_username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": {\r\n        \"match_all\": {}\r\n    },\r\n    \"size\":0,\r\n    \"aggs\" : {\r\n        \"total_market_capacity\" : { \"sum\" : { \"field\" : \"Market Cap\" } }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{elastic_endpoint}}/companies/_search",
+							"host": [
+								"{{elastic_endpoint}}"
+							],
+							"path": [
+								"companies",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "companies per sector dsl",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{elastic_password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{elastic_username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": {\r\n        \"match_all\": {}\r\n    },\r\n    \"size\":0,\r\n    \"aggs\": {\r\n    \"group_by_sector\": {\r\n      \"terms\": {\r\n        \"field\": \"Sector.keyword\",\r\n        \"size\": 1,\r\n        \"shard_size\": 1,\r\n        \"show_term_doc_count_error\": true\r\n      }\r\n    }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{elastic_endpoint}}/companies/_search",
+							"host": [
+								"{{elastic_endpoint}}"
+							],
+							"path": [
+								"companies",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "avg p/e and earnings/share in each sector",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{elastic_password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{elastic_username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": {\r\n        \"match_all\": {}\r\n    },\r\n    \"size\": 0,\r\n    \"aggs\": {\r\n        \"group_by_sector\": {\r\n            \"terms\": {\r\n                \"field\": \"Sector.keyword\",\r\n                \"size\": 15\r\n            },\r\n            \"aggs\": {\r\n                \"avg_pe\": {\r\n                    \"avg\": {\r\n                        \"field\": \"Price/Earnings\"\r\n                    }\r\n                },\r\n                \"avg_earnings_per_share\": {\r\n                    \"avg\": {\r\n                        \"field\": \"Earnings/Share\"\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }\r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{elastic_endpoint}}/companies/_search",
+							"host": [
+								"{{elastic_endpoint}}"
+							],
+							"path": [
+								"companies",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "avg p/e and earnings/share in each sector with sort",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{elastic_password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{elastic_username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": {\r\n        \"match_all\": {}\r\n    },\r\n    \"size\":0,\r\n    \"aggs\": {\r\n        \"group_by_sector\": {\r\n            \"terms\": {\r\n                \"field\": \"Sector.keyword\",\r\n                \"size\": 15\r\n            },\r\n            \"aggs\" : {\r\n                \"avg_pe\" : { \r\n                    \"avg\" : { \r\n                        \"field\" : \"Price/Earnings\" \r\n                    } \r\n                },\r\n                \"avg_earnings_per_share\" : { \r\n                    \"avg\" : { \r\n                        \"field\" : \"Earnings/Share\" \r\n                    } \r\n                },\r\n                \"bucket_sort_by_pe\": {\r\n                    \"bucket_sort\": {\r\n                        \"sort\": [{\r\n                            \"avg_pe\": {\r\n                                \"order\": \"desc\"\r\n                            }\r\n                        }],\r\n                        \"size\": 15\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{elastic_endpoint}}/companies/_search",
+							"host": [
+								"{{elastic_endpoint}}"
+							],
+							"path": [
+								"companies",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "avg p/e and earnings/share in each sector with order",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{elastic_password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{elastic_username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": {\r\n        \"match_all\": {}\r\n    },\r\n    \"size\":0,\r\n    \"aggs\": {\r\n        \"group_by_sector\": {\r\n            \"terms\": {\r\n                \"field\": \"Sector.keyword\",\r\n                \"size\": 15,\r\n                \"order\": [{ \"avg_pe\": \"desc\" }, { \"_key\": \"asc\" }]\r\n            },\r\n            \"aggs\" : {\r\n                \"avg_pe\" : { \"avg\" : { \"field\" : \"Price/Earnings\" } },\r\n                \"avg_earnings_per_share\" : { \"avg\" : { \"field\" : \"Earnings/Share\" } }\r\n    \t    }\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{elastic_endpoint}}/companies/_search",
+							"host": [
+								"{{elastic_endpoint}}"
+							],
+							"path": [
+								"companies",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "avg p/e and earnings/share in each sector with sort generated by spring",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{elastic_password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{elastic_username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"size\": 0,\r\n    \"query\": {\r\n        \"match_all\": {\r\n            \"boost\": 1.0\r\n        }\r\n    },\r\n    \"aggregations\": {\r\n        \"group_by_sector\": {\r\n            \"terms\": {\r\n                \"field\": \"Sector.keyword\",\r\n                \"size\": 15,\r\n                \"min_doc_count\": 1,\r\n                \"shard_min_doc_count\": 0,\r\n                \"show_term_doc_count_error\": false,\r\n                \"order\": [\r\n                    {\r\n                        \"_count\": \"desc\"\r\n                    },\r\n                    {\r\n                        \"_key\": \"asc\"\r\n                    }\r\n                ]\r\n            },\r\n            \"aggregations\": {\r\n                \"avg_pe\": {\r\n                    \"avg\": {\r\n                        \"field\": \"Price/Earnings\"\r\n                    }\r\n                },\r\n                \"avg_earnings_per_share\": {\r\n                    \"avg\": {\r\n                        \"field\": \"Earnings/Share\"\r\n                    }\r\n                },\r\n                \"bucket_sort_by_pe\": {\r\n                    \"bucket_sort\": {\r\n                        \"sort\": [\r\n                            {\r\n                                \"avg_pe\": {\r\n                                    \"order\": \"desc\"\r\n                                }\r\n                            }\r\n                        ],\r\n                        \"from\": 0,\r\n                        \"gap_policy\": \"SKIP\"\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{elastic_endpoint}}/companies/_search",
+							"host": [
+								"{{elastic_endpoint}}"
+							],
+							"path": [
+								"companies",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "avg p/e and earnings/share in each sector with order generated by spring",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{elastic_password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{elastic_username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"size\": 0,\r\n    \"query\": {\r\n        \"match_all\": {\r\n            \"boost\": 1.0\r\n        }\r\n    },\r\n    \"aggregations\": {\r\n        \"group_by_sector\": {\r\n            \"terms\": {\r\n                \"field\": \"Sector.keyword\",\r\n                \"size\": 15,\r\n                \"min_doc_count\": 1,\r\n                \"shard_min_doc_count\": 0,\r\n                \"show_term_doc_count_error\": false,\r\n                \"order\": [\r\n                    {\r\n                        \"avg_pe\": \"desc\"\r\n                    },\r\n                    {\r\n                        \"_key\": \"asc\"\r\n                    }\r\n                ]\r\n            },\r\n            \"aggregations\": {\r\n                \"avg_pe\": {\r\n                    \"avg\": {\r\n                        \"field\": \"Price/Earnings\"\r\n                    }\r\n                },\r\n                \"avg_earnings_per_share\": {\r\n                    \"avg\": {\r\n                        \"field\": \"Earnings/Share\"\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{elastic_endpoint}}/companies/_search",
+							"host": [
+								"{{elastic_endpoint}}"
+							],
+							"path": [
+								"companies",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ratio_percentage_of_EBITDA_when_PE_greater_than_20_by_sector",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{elastic_password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{elastic_username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"size\": 0,\r\n    \"query\": {\r\n        \"match_all\": {\r\n            \"boost\": 1.0\r\n        }\r\n    },\r\n    \"aggregations\": {\r\n        \"group_by_sector\": {\r\n            \"terms\": {\r\n                \"field\": \"Sector.keyword\",\r\n                \"size\": 15,\r\n                \"min_doc_count\": 1\r\n            },\r\n            \"aggregations\": {\r\n                \"total_EBITDA\": {\r\n                    \"sum\": {\r\n                        \"field\": \"EBITDA\"\r\n                    }\r\n                },\r\n                \"PEGreater\": {\r\n                    \"filter\": {\r\n                        \"range\": {\r\n                            \"Price/Earnings\": {\r\n                                \"from\": 20,\r\n                                \"to\": null,\r\n                                \"include_lower\": false,\r\n                                \"include_upper\": true,\r\n                                \"boost\": 1.0\r\n                            }\r\n                        }\r\n                    },\r\n                    \"aggregations\": {\r\n                        \"total_EBITDA\": {\r\n                            \"sum\": {\r\n                                \"field\": \"EBITDA\"\r\n                            }\r\n                        }\r\n                    }\r\n                },\r\n                \"EBITDA_percentage\": {\r\n                    \"bucket_script\": {\r\n                        \"buckets_path\": {\r\n                            \"filteredEBITDA\": \"PEGreater>total_EBITDA\",\r\n                            \"totalEBITDA\": \"total_EBITDA\"\r\n                        },\r\n                        \"script\": {\r\n                            \"source\": \"(params.filteredEBITDA / params.totalEBITDA) * 100\",\r\n                            \"lang\": \"painless\"\r\n                        },\r\n                        \"gap_policy\": \"skip\"\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{elastic_endpoint}}/companies/_search",
+							"host": [
+								"{{elastic_endpoint}}"
+							],
+							"path": [
+								"companies",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ratio_percentage_of_EBITDA_when_PE_greater_than_20_by_sector query generated by spring",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{elastic_password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{elastic_username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"size\": 0,\r\n    \"query\": {\r\n        \"match_all\": {\r\n            \"boost\": 1.0\r\n        }\r\n    },\r\n    \"aggregations\": {\r\n        \"group_by_sector\": {\r\n            \"terms\": {\r\n                \"field\": \"Sector.keyword\",\r\n                \"size\": 15,\r\n                \"min_doc_count\": 1,\r\n                \"shard_min_doc_count\": 0,\r\n                \"show_term_doc_count_error\": false,\r\n                \"order\": [\r\n                    {\r\n                        \"_count\": \"desc\"\r\n                    },\r\n                    {\r\n                        \"_key\": \"asc\"\r\n                    }\r\n                ]\r\n            },\r\n            \"aggregations\": {\r\n                \"total_EBITDA\": {\r\n                    \"sum\": {\r\n                        \"field\": \"EBITDA\"\r\n                    }\r\n                },\r\n                \"PEGreater\": {\r\n                    \"filter\": {\r\n                        \"range\": {\r\n                            \"Price/Earnings\": {\r\n                                \"from\": 20,\r\n                                \"to\": null,\r\n                                \"include_lower\": false,\r\n                                \"include_upper\": true,\r\n                                \"boost\": 1.0\r\n                            }\r\n                        }\r\n                    },\r\n                    \"aggregations\": {\r\n                        \"total_EBITDA\": {\r\n                            \"sum\": {\r\n                                \"field\": \"EBITDA\"\r\n                            }\r\n                        }\r\n                    }\r\n                },\r\n                \"EBITDA_percentage\": {\r\n                    \"bucket_script\": {\r\n                        \"buckets_path\": {\r\n                            \"filteredEBITDA\": \"PEGreater>total_EBITDA\",\r\n                            \"totalEBITDA\": \"total_EBITDA\"\r\n                        },\r\n                        \"script\": {\r\n                            \"source\": \"(params.filteredEBITDA / params.totalEBITDA) * 100\",\r\n                            \"lang\": \"painless\"\r\n                        },\r\n                        \"gap_policy\": \"skip\"\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{elastic_endpoint}}/companies/_search",
+							"host": [
+								"{{elastic_endpoint}}"
+							],
+							"path": [
+								"companies",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "index info",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{elastic_password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{elastic_username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{elastic_endpoint}}/companies",
+					"host": [
+						"{{elastic_endpoint}}"
+					],
+					"path": [
+						"companies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete index",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{elastic_password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{elastic_username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{elastic_endpoint}}/companies",
+					"host": [
+						"{{elastic_endpoint}}"
+					],
+					"path": [
+						"companies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create index with shards",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{elastic_password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{elastic_username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-ndjson",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/C:/Users/joseeden/OneDrive/Desktop/Git/4-Test-repos/joeden/assets/elastic-stack/aggregations/sp500-companies.json"
+					}
+				},
+				"url": {
+					"raw": "{{elastic_endpoint}}/companies/_bulk",
+					"host": [
+						"{{elastic_endpoint}}"
+					],
+					"path": [
+						"companies",
+						"_bulk"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
