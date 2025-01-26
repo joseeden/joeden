@@ -80,7 +80,7 @@ We need an index with sample data for analysis. You can download the Postman col
 
 ## Create the Data View in Kibana 
 
-On your Elastic Cloud account, go to Stack Management > Kibana > Data Views > Create data view. Use "S&P 500 Companies" as the dtaa view name and set the index pattern to the index name "companies". Click Svae data view to Kibana.
+On your Elastic Cloud account, go to Stack Management > Kibana > Data Views > Create data view. Use "S&P 500 Companies" as the data view name and set the index pattern to the index name "companies". Click Save data view to Kibana.
 
 ![](/img/docs/01252025-elastic-cloud-postman-6.png)
 
