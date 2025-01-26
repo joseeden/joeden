@@ -57,7 +57,7 @@ For this demo, I've deleted the deployment created during sign up and created a 
 Use the Elasticsearch endpoint and run the following command
 
 ```bash
-curl -XGET https://c21e45fcb6ca4c9594c0cc05f8a03c76.asia-southeast1.gcp.elastic-cloud.com:443
+curl -XGET https://add-elastic-endpoint-here:443
 ```
 
 As expected, this will return an error. This is because Elasticsearch is using X-PACK... 
@@ -69,7 +69,7 @@ As expected, this will return an error. This is because Elasticsearch is using X
 To authenticate to the cluster, provide the credentials:
 
 ```bash
-curl -XGET https://c21e45fcb6ca4c9594c0cc05f8a03c76.asia-southeast1.gcp.elastic-cloud.com:443 -u elastic:add-password-here 
+curl -XGET https://add-elastic-endpoint-here:443 -u elastic:add-password-here 
 ```
 
 It should now succeed.
@@ -77,14 +77,14 @@ It should now succeed.
 ```bash
 {
   "name" : "instance-0000000000",
-  "cluster_name" : "c21e45fcb6ca4c9594c0cc05f8a03c76",
+  "cluster_name" : "dfkhsfkjhdfksdkfjshdfkhsdfkjh",
   "cluster_uuid" : "QMwQk4tIQyidcGrNoJyp0A",
   "version" : {
     "number" : "8.17.1",
     "build_flavor" : "default",
     "build_type" : "docker",
-    "build_hash" : "d4b391d925c31d262eb767b8b2db8f398103f909",
-    "build_date" : "2025-01-10T10:08:26.972230187Z",
+    "build_hash" : "fldjkajdflkajklsdjflkjdasflkajlkjalkdsjas",
+    "build_date" : "2023-01-10T10:08:26.972230187Z",
     "build_snapshot" : false,
     "lucene_version" : "9.12.0",
     "minimum_wire_compatibility_version" : "7.17.0",

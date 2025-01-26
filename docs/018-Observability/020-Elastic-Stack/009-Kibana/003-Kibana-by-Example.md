@@ -11,7 +11,7 @@ tags:
 - Elastic Stack
 - ELK Stack
 - Kibana
-sidebar_position: 2
+sidebar_position: 3
 last_update:
   date: 3/28/2023
 ---
@@ -26,11 +26,10 @@ This guide shows how to use a dataset of Shakespeare's plays in Kibana to:
  
 ## Pre-requisites 
 
-This guide uses Elastic Cloud to for the hosted Elasticsearch cluster...Kibana...
+This guide uses Elastic Cloud for the hosted Elasticsearch cluster and Kibana.
 
 - [Sign up for Elastic Cloud account](https://www.elastic.co/cloud/elasticsearch-service/signup) 
 - [Create a hosted deployment](https://www.elastic.co/guide/en/cloud/current/ec-create-deployment.html)
-- [Install Postman](https://www.postman.com/downloads/)
 
 ## Import the Dataset 
 
