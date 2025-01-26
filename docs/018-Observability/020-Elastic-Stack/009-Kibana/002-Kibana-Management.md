@@ -43,7 +43,7 @@ To switch between spaces, just click the same green icon at th eupper left and s
 You can also access the space via API. You can run the command below in your terminal to see details about the space.
 
 ```bash
-curl -s -u elastic:D0EjlfnxZbQ1RMQf39NTfSVh \
+curl -s -u elastic:add-password-here \
 https://kibana-endpoint-link/api/spaces/space/platform-engineering | jq
 ```
 
