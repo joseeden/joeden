@@ -34,7 +34,7 @@ To modify the spaces, click the green icon with `D` and click Manage spaces. To 
 
 ![](/img/docs/01262025-elastic-cloud-managing-space.png)
 
-To switch between spaces, just click the same green icon at th eupper left and select your space.
+To switch between spaces, just click the same green icon at the upper left and select your space.
 
 ![](/img/docs/01262025-elastic-cloud-managing-space-2.png)
 
@@ -68,3 +68,42 @@ To get your endpoint link, login to your Elastic Cloud console and click the ham
 
 
 ## Migrating Saved Objects 
+
+When you log in to Kibana, you are automatically placed in the `default` space. You can move saved objects between spaces either by copying them directly or exporting and importing them as files.  
+
+#### Copying Saved Objects to Another Space  
+
+1. In the `default` space, go to **Stack Management > Saved Objects**.  
+2. Select the object, click the three dots under **Actions**, then choose **Copy to spaces**.  
+3. Under **Select spaces**, choose the target space and click **Copy to 1 Space**.  
+
+    ![](/img/docs/01292025-elastic-cloud-importing-object-4.png)  
+
+4. Once the import is complete, click **Finish**.  
+
+    ![](/img/docs/01292025-elastic-cloud-importing-object-5.png)  
+
+5. Switch to the target space and go to **Stack Management > Saved Objects**.  
+6. The copied object should now be visible.  
+
+    ![](/img/docs/01292025-elastic-cloud-importing-object-6.png)  
+
+#### Exporting and Importing Saved Objects  
+
+1. In the `default` space, go to **Stack Management > Saved Objects**.  
+2. Select the object and click **Export**. This will download an `export.ndjson` file.  
+
+    ![](/img/docs/01292025-elastic-cloud-importing-object.png)  
+
+3. Switch to the target space by clicking the green icon at the top left. In this example, the second space is **Platform Engineering**.  
+
+    ![](/img/docs/01262025-elastic-cloud-managing-space-2.png)  
+
+4. In the second space, go to **Stack Management > Saved Objects > Import**.  
+5. Select the downloaded file from step 2 and click **Import**.  
+
+    ![](/img/docs/01292025-elastic-cloud-importing-object-2.png)  
+
+6. Once the import is complete, click **Done**.  
+
+    ![](/img/docs/01292025-elastic-cloud-importing-object-3.png)  
