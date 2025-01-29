@@ -111,3 +111,5 @@ curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 ```
 
 If there are no errors during indexing, it should return `false`.
+
+## Create the Canvas Workpad 
