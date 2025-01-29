@@ -31,7 +31,6 @@ This guide uses Elastic Cloud for the hosted Elasticsearch cluster and Kibana.
 
 - [Sign up for Elastic Cloud account](https://www.elastic.co/cloud/elasticsearch-service/signup) 
 - [Create a hosted deployment](https://www.elastic.co/guide/en/cloud/current/ec-create-deployment.html)
-- [Install Postman](https://www.postman.com/downloads/)
 - [Set up a Linux VM for testing](https://aws.amazon.com/getting-started/launch-a-virtual-machine-B-0/)
 
 You can use either a cloud-based instance or a local virtual machine for the Linux setup.
