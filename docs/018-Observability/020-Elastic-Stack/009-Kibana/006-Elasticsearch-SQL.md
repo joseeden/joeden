@@ -131,16 +131,19 @@ curl -s -u "$ELASTIC_USER:$ELASTIC_PW" \
 -XGET $ELASTIC_ENDPOINT:9200/_cat/indices?v 
 ```
 
-## Using Self-hosted Elasticsearch
+## Using Self-Hosted Elasticsearch
 
-Check...
+To interact with Elasticsearch and run SQL-like queries, you can use the following cURL commands.
+
+Example: Use this command to describe the `movies` index:
 
 ```bash
 curl -s -u "$ELASTIC_USER:$ELASTIC_PW" \
--XPOST $ELASTIC_ENDPOINT:9200/_xpack/sql -d '
+   -H "Content-Type: application/json" \
+   -XPOST "$ELASTIC_ENDPOINT:9200/_sql" -d '
 {
   "query": "DESCRIBE movies"
-}'
+}' | jq
 ```
 
 :::info 
@@ -160,7 +163,7 @@ curl -s -u "$ELASTIC_USER:$ELASTIC_PW" \
 }' | jq
 ```
 
-This will return the columns...we can use `jq` to make it format it to make it easier to read, but we can still make it more easier to read by using the `format` option.
+Output:
 
 ```bash
 {
@@ -218,7 +221,7 @@ This will return the columns...we can use `jq` to make it format it to make it e
 } 
 ```
 
-Add the  `format` to format it...
+You can also format the results for better readability:
 
 ```bash
 curl -s -u "$ELASTIC_USER:$ELASTIC_PW" \
@@ -229,7 +232,7 @@ curl -s -u "$ELASTIC_USER:$ELASTIC_PW" \
 }' 
 ```
 
-It should now be in table format, similar like how in SQL...
+This will display the results in a table format, similar to SQL:
 
 ```bash
     column     |     type      |    mapping
@@ -244,9 +247,9 @@ year           |BIGINT         |long
 ```
 
 
-Other sample SQL statements you can run:
+#### Other Example Queries
 
-- Check first 10 movie titles in the `movies` index.
+- To get the first 10 movie titles from the `movies` index.
 
     ```bash
     curl -s -u "$ELASTIC_USER:$ELASTIC_PW" \
@@ -274,7 +277,7 @@ Other sample SQL statements you can run:
     GoldenEye 
     ```
 
-- Retrieve title and year for movies released before 1920, sorted by year of release
+- To retrieve the title and year for movies released before 1920, sorted by release year:
 
     ```bash
     curl -s -u "$ELASTIC_USER:$ELASTIC_PW" \
@@ -304,17 +307,16 @@ Other sample SQL statements you can run:
 
 ## Using Elastic Cloud 
 
-You can also test SQL commands on indexes in ELastic Cloud...
-
-Do the same steps...on another termina, save variables...
+You can also run SQL commands on indexes in Elastic Cloud.
+Same as before, set your variables first in a new terminal:
 
 ```bash
 ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
 ELASTIC_USER="your-username"
 ELASTIC_PW="your-password"
-```  
+```
 
-Make sure to import the same movie dataset...
+Next, ensure the movie dataset is imported:
 
 ```bash
 curl -s -u $ELASTIC_USER:$ELASTIC_PW \
@@ -325,7 +327,7 @@ curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 
 You can run the same SQL statements:
 
-- see movies...
+- To describe the `movies` index:
 
     ```bash
     curl -s -u "$ELASTIC_USER:$ELASTIC_PW" \
@@ -350,7 +352,7 @@ You can run the same SQL statements:
     year           |BIGINT         |long 
     ```
 
-- Check first 10 movie titles in the `movies` index.
+- To get the first 10 movie titles in the `movies` index:
 
     ```bash
     curl -s -u "$ELASTIC_USER:$ELASTIC_PW" \
@@ -378,7 +380,7 @@ You can run the same SQL statements:
     GoldenEye 
     ```
 
-- Retrieve title and year for movies released before 1920, sorted by year of release.
+- To get the title and year of movies released before 1920, sorted by release year:
 
     ```bash
     curl -s -u "$ELASTIC_USER:$ELASTIC_PW" \
@@ -409,7 +411,7 @@ You can run the same SQL statements:
 
 ## Translate SQL to DSL 
 
-If you want to see the DSL....the actual JSON quey is executed under the hood...the command works both on self-host elasticsearch cluster and on Elastic Cloud deployment..just make sure you're using correct endpoint URL...
+To view the DSL (the underlying JSON query), use this command. It works on both self-hosted Elasticsearch clusters and Elastic Cloud deployments. Just ensure you're using the correct endpoint URL.
 
 ```bash
 curl -s -u "$ELASTIC_USER:$ELASTIC_PW" \
@@ -457,19 +459,65 @@ Output:
 
 ## Using the SQL Client 
 
+You can use the standalone SQL client for running SQL queries, which is similar to querying a database. However, note that this is only available on self-hosted Elasticsearch clusters, as you need access to the executable.
 
-You can also use the standalone SQL client that makes running similar to querying a database...note that his is only available on self-hosted Elasticsearch cluster since you need access the executable itself.
+Same as before, set your variables first in a new terminal:
 
-To run...
+```bash
+ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+ELASTIC_USER="your-username"
+ELASTIC_PW="your-password"
+```
+
+To run the SQL client:
 
 ```bash
 sudo /usr/share/elasticsearch/bin/elasticsearch-sql-cli
 ```
 
-If you've enabled HTTPs and using username and password...
+If you're using HTTPS with a username and password, use this command. Provide the keystore password when prompted.
 
 ```bash
 /usr/share/elasticsearch/bin/elasticsearch-sql-cli  \
-https://$ELASTIC_USER:$ELASTIC_PW@$ELASTIC_ENDPOINT:9200 -c -d -v
+https://$ELASTIC_USER:$ELASTIC_PW@$ELASTIC_ENDPOINT:9200 \
+-k /etc/elasticsearch/certs/elasticsearch.p12 
 ```
 
+Once the command runs, you’ll be in the SQL prompt:
+
+```bash
+                       asticElasticE
+                     ElasticE  sticEla
+          sticEl  ticEl            Elast
+        lasti Elasti                   tic
+      cEl       ast                     icE
+     icE        as                       cEl
+     icE        as                       cEl
+     icEla     las                        El
+   sticElasticElast                     icElas
+ las           last                    ticElast
+El              asti                 asti    stic
+El              asticEla           Elas        icE
+El            Elas  cElasticE   ticEl           cE
+Ela        ticEl         ticElasti              cE
+ las     astic               last              icE
+   sticElas                   asti           stic
+     icEl                      sticElasticElast
+     icE                       sticE   ticEla
+     icE                       sti       cEla
+     icEl                      sti        Ela
+      cEl                      sti       cEl
+       Ela                    astic    ticE
+         asti               ElasticElasti
+           ticElasti  lasticElas
+              ElasticElast
+
+                       SQL
+                      8.17.0
+
+sql>
+```
+
+Running some sample queries:
+
+![](/gif/docs/01312025-elastic-cloud-sql-cli.gif)

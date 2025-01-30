@@ -310,22 +310,31 @@ openssl req -x509 -nodes -new -sha256 -days 365 -subj "/CN=Elasticsearch-CA" \
 
     ```ini
     [ req ]
+    default_bits       = 2048
+    default_keyfile    = elasticsearch.key
     distinguished_name = req_distinguished_name
-    x509_extensions = v3_ca
-    prompt = no
+    x509_extensions    = v3_req
 
     [ req_distinguished_name ]
-    C = US
-    ST = Some-State
-    O = Internet Widgits Pty Ltd
-    CN = 127.0.0.1
+    countryName            = Country Name (2 letter code)
+    countryName_default    = US
+    stateOrProvinceName    = State or Province Name (full name)
+    stateOrProvinceName_default = California
+    localityName           = Locality Name (eg, city)
+    localityName_default   = San Francisco
+    organizationName       = Organization Name (eg, company)
+    organizationName_default = Elastic
+    organizationalUnitName = Organizational Unit Name (eg, section)
+    organizationalUnitName_default = IT
+    commonName             = Common Name (eg, fully qualified host name)
+    commonName_default     = elasticsearch.local
 
-    [ v3_ca ]
+    [ v3_req ]
     subjectAltName = @alt_names
 
     [ alt_names ]
+    DNS.1 = elasticsearch.local
     IP.1 = 127.0.0.1
-    DNS.1 = localhost
     ``` 
 
 3. Set Permissions for `openssl.cnf`
@@ -353,13 +362,22 @@ openssl req -x509 -nodes -new -sha256 -days 365 -subj "/CN=Elasticsearch-CA" \
 
 ### Generate the Certificate Signing Request (CSR)
 
-1. Generate the private key and CSR for Elasticsearch. Provide PEM pass phrase when prompted.
+1. Generate the private key and certificate for Elasticsearch. Provide PEM pass phrase when prompted.
 
     ```bash
-    openssl req -new -nodes -newkey rsa:4096 \
+    openssl req -new -x509 -days 365 \
     -keyout /etc/elasticsearch/certs/elasticsearch.key \
-    -out /etc/elasticsearch/certs/elasticsearch.csr \
-    -config /etc/elasticsearch/certs/openssl.cnf
+    -config /etc/elasticsearch/certs/openssl.cnf \
+    -out /etc/elasticsearch/certs/elasticsearch.crt 
+    ```
+
+2. Next, generate the signing request.
+
+    ```bash
+    openssl req -new  -nodes -newkey rsa:2048 -days 365 \
+    -keyout /etc/elasticsearch/certs/elasticsearch.key \
+    -config /etc/elasticsearch/certs/openssl.cnf \
+    -out /etc/elasticsearch/certs/elasticsearch.csr  
     ```
 
 3. Use the root CA's private key and certificate to sign the Elasticsearch CSR:
@@ -370,7 +388,8 @@ openssl req -x509 -nodes -new -sha256 -days 365 -subj "/CN=Elasticsearch-CA" \
     -CA /etc/elasticsearch/certs/ca.crt \
     -CAkey /etc/elasticsearch/certs/ca.key \
     -CAcreateserial -days 365 \
-    -out /etc/elasticsearch/certs/elasticsearch.crt 
+    -extensions v3_req  -extfile /etc/elasticsearch/certs/openssl.cnf \
+    -out /etc/elasticsearch/certs/elasticsearch.crt
     ```
 
     This will sign the CSR and generate the `elasticsearch.crt` certificate.
@@ -379,8 +398,7 @@ openssl req -x509 -nodes -new -sha256 -days 365 -subj "/CN=Elasticsearch-CA" \
 
     ```bash
     Certificate request self-signature ok
-    subject=C = US, ST = Some-State, O = Internet Widgits Pty Ltd, CN = 127.0.0.1
-    root@node1:/etc/elasticsearch/certs# ls -la      
+    subject=C = US, ST = California, L = San Francisco, O = Elastic, OU = IT, CN = elasticsearch.local  
     ```
 
 ### Verify the Generated Files
@@ -404,20 +422,18 @@ openssl req -x509 -nodes -new -sha256 -days 365 -subj "/CN=Elasticsearch-CA" \
     openssl x509 -noout -text -in /etc/elasticsearch/certs/ca.crt
     ```
 
+3. Verify the signed Elasticsearch Certificate.
+
+    ```bash
+    openssl x509 -noout -text -in /etc/elasticsearch/certs/elasticsearch.crt
+    ```
+
     Look for the X509v3 Subject Alternative Name field. If it's missing, you need to regenerate the certificate with the correct SAN entries.
 
     ```bash
      X509v3 extensions:
         X509v3 Subject Alternative Name:
-            IP Address:127.0.0.1, DNS:localhost
-        X509v3 Subject Key Identifier:
-            90:E8:C1:C0:E0:EE:20:D3:99:56:50:40:B1:4C:27:5D:EF:07:FE:CE 
-    ```
-
-3. Verify the signed Elasticsearch Certificate.
-
-    ```bash
-    openssl x509 -noout -text -in /etc/elasticsearch/certs/elasticsearch.crt
+            DNS:elasticsearch.local, IP Address:127.0.0.1
     ```
 
 4. Verify the CSR.
@@ -436,7 +452,7 @@ openssl req -x509 -nodes -new -sha256 -days 365 -subj "/CN=Elasticsearch-CA" \
 
     ```bash
     openssl x509 -noout -modulus -in /etc/elasticsearch/certs/elasticsearch.crt | openssl md5
-    openssl rsa -noout -modulus -in /etc/elasticsearch/certs/elasticsearch.key | openssl md5
+    openssl rsa -noout -modulus -in /etc/elasticsearch/certs/elasticsearc   h.key | openssl md5
     ```
 
     The outputs should be identical. If they differ, the private key does not match the certificate.
@@ -507,8 +523,6 @@ update-ca-certificates
 
 This will install the CA certificate into the system’s trusted store.
 
-
-
 ### Configure Elasticsearch
 
 Edit the Elasticsearch configuration file to enable security features.
@@ -530,6 +544,7 @@ xpack.security.enrollment.enabled: true
 # Enable encryption for HTTP API client connections, such as Kibana, Logstash, and Agents
 xpack.security.http.ssl:
   enabled: true
+  #enabled: false
   certificate_authorities: [ "/etc/elasticsearch/certs/ca.crt" ]
   keystore.path: /etc/elasticsearch/certs/elasticsearch.p12
   keystore.password: elastic
@@ -550,7 +565,14 @@ xpack.security.transport.ssl:
   #keystore.path: /etc/elasticsearch/certs/elasticsearch.p12
   #truststore.path: /etc/elasticsearch/certs/truststore.p12
   #keystore.password: elastic
-  #truststore.password: elastic 
+  #truststore.password: elastic
+# Create a new cluster with the current node only
+# Additional nodes can still join the cluster later
+cluster.initial_master_nodes: ["node1"]
+
+# Allow HTTP API connections from anywhere
+# Connections are encrypted and require user authentication
+http.host: 0.0.0.0
 ```
 
 ### Restart and Verify 
