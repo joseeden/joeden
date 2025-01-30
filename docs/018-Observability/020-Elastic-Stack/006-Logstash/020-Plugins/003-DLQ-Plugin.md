@@ -126,7 +126,7 @@ filter {
 
 output {
     elasticsearch {
-      hosts => ["https://192.168.56.101:9200"]    ## address of elasticsearch node
+      hosts => ["$ELASTIC_ENDPOINT:9200"]    ## address of elasticsearch node
       index => "dlq-1"
       user => "elastic"
       password => "enter-password-here"
@@ -147,11 +147,23 @@ Run the configuration using Logstash. We need to add the `path.settings` paramet
 -f /etc/logstash/conf.d/plugin-dlq.conf
 ```
 
+:::info 
+
+Store the Elasticsearch endpoint and credentials in variables:  
+
+```bash
+ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+ELASTIC_USER="your-username"
+ELASTIC_PW="your-password"
+```  
+
+:::
+
 To verify the indexed data in Elasticsearch:
 
 ```bash
-curl -u elastic:<password> --insecure \
--X GET "https://192.168.56.101:9200/_cat/indices?v"
+curl -u $ELASTIC_USER:$ELASTIC_PW --insecure \
+-X GET "$ELASTIC_ENDPOINT:9200/_cat/indices?v"
 ```
 
 Output:
@@ -165,9 +177,9 @@ yellow open   dlq-1              nMAzva42Ti6FjaZqzswoHA   1   1         10      
 Next, let's inspect the indexed documents. The dataset contains 18 documents in total. However, some documents contain an incorrect `age` value, which causes Logstash to reject them. As a result, only 10 valid documents are successfully indexed into Elasticsearch.
 
 ```bash
-curl -s -u elastic:<password>  \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
 -H 'Content-Type: application/json' \
--XGET https://localhost:9200/dlq-1/_search?pretty=true -d'
+-XGET $ELASTIC_ENDPOINT:9200/dlq-1/_search?pretty=true -d'
 {
   "track_total_hits": "true",
   "size": "0"
@@ -201,7 +213,7 @@ input {
 
 output {
     elasticsearch {
-      hosts => ["https://192.168.56.101:9200"]    ## address of elasticsearch node
+      hosts => ["$ELASTIC_ENDPOINT:9200"]    ## address of elasticsearch node
       index => "dlq-2"
       user => "elastic"
       password => "enter-password-here"
@@ -225,8 +237,8 @@ Run the configuration using Logstash.
 As always, verify the indexed data in Elasticsearch:
 
 ```bash
-curl -u elastic:<password> --insecure \
--X GET "https://192.168.56.101:9200/_cat/indices?v"
+curl -u $ELASTIC_USER:$ELASTIC_PW --insecure \
+-X GET "$ELASTIC_ENDPOINT:9200/_cat/indices?v"
 ```
 
 Output:
@@ -241,9 +253,9 @@ yellow open   dlq-1     nMAzva42Ti6FjaZqzswoHA   1   1         10            0  
 Check the indexed data:
 
 ```bash
-curl -s -u elastic:<password>  \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
 -H 'Content-Type: application/json' \
--XGET https://localhost:9200/dlq-2/_search?pretty=true -d'
+-XGET $ELASTIC_ENDPOINT:9200/dlq-2/_search?pretty=true -d'
 {
   "size": 1
 }' | jq
@@ -312,7 +324,7 @@ input {
 Use the command below to delete the indices after the lab. Make sure to replace `enter-name` with the index name.
 
 ```bash
-curl -s -u elastic:<password>  \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
 -H 'Content-Type: application/json' \
--XDELETE "https://127.0.0.1:9200/enter-name" | jq
+-XDELETE "$ELASTIC_ENDPOINT:9200/enter-name" | jq
 ```

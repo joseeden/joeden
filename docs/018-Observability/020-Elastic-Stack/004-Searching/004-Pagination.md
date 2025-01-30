@@ -40,12 +40,20 @@ Result 9: Avatar
 Result 10: Inception
 ```
 
+First, store the Elasticsearch endpoint and credentials in variables:  
+
+```bash
+ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+ELASTIC_USER="your-username"
+ELASTIC_PW="your-password"
+```  
+
 To specify pagination, use `from` and `size` parameters:
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET https://localhost:9200/movies/_search?pretty -d '
+-XGET $ELASTIC_ENDPOINT:9200/movies/_search?pretty -d '
 {
   "from": 3,
   "size": 2,
@@ -56,6 +64,7 @@ curl -s -u elastic:<password> \
   }
 }' | jq
 ```
+
 
 The `from` parameter specifies the cutting point (3rd result), and `size` defines the number of results to return (2 results). The pagination will cut after the cutting point, which will return:
 

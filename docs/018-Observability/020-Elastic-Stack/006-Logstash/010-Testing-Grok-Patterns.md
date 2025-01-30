@@ -101,7 +101,7 @@ Login to the Logstash node, switch to **root** user, and perform the following:
     output {
         stdout { codec => json_lines }
         elasticsearch {
-            hosts => ["https://192.168.56.101:9200"]                  ## address of elasticsearch node
+            hosts => ["$ELASTIC_ENDPOINT:9200"]                  ## address of elasticsearch node
             index => "demo-grok"
             user => "elastic"
             password => "enter-password-here"
@@ -121,12 +121,20 @@ Login to the Logstash node, switch to **root** user, and perform the following:
 
 Login to the Elasticsearch node and switch to **root** user:
 
-1. Verify that the `demo-json` index has been created.
+1. First, store the Elasticsearch endpoint and credentials in variables:  
 
     ```bash
-    curl -s -u elastic:<password>  \
+    ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+    ELASTIC_USER="your-username"
+    ELASTIC_PW="your-password"
+    ```  
+
+2. Verify that the `demo-json` index has been created.
+
+    ```bash
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/_cat/indices?v
+    -XGET $ELASTIC_ENDPOINT:9200/_cat/indices?v
     ```
 
     Output:
@@ -137,12 +145,12 @@ Login to the Elasticsearch node and switch to **root** user:
     yellow open   demo-grok iaCaAbTXS-6TjGPUgEN8HA   1   1          4            0     12.6kb         12.6kb       12.6kb
     ```             
 
-2. Verify index data:
+3. Verify index data:
 
     ```bash
-    curl -s -u elastic:<password>  \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/demo-grok/_search?pretty=true -d'
+    -XGET $ELASTIC_ENDPOINT:9200/demo-grok/_search?pretty=true -d'
     {
       "_source": [
         "logLevel",
@@ -266,7 +274,7 @@ From the Logstash node:
     output {
         stdout { codec => json_lines }
         elasticsearch {
-            hosts => ["https://192.168.56.101:9200"]                  ## address of elasticsearch node
+            hosts => ["$ELASTIC_ENDPOINT:9200"]                  ## address of elasticsearch node
             index => "demo-grok-2"
             user => "elastic"
             password => "enter-password-here"
@@ -288,9 +296,9 @@ Back at the Elasticsearch node:
 1. Verify the index.
 
     ```bash
-    curl -s -u elastic:<password>  \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/_cat/indices?v
+    -XGET $ELASTIC_ENDPOINT:9200/_cat/indices?v
     ```
 
     Output:
@@ -305,9 +313,9 @@ Back at the Elasticsearch node:
 2. Check the index data:
 
     ```bash
-    curl -s -u elastic:<password>  \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/demo-grok-2/_search?pretty=true -d'
+    -XGET $ELASTIC_ENDPOINT:9200/demo-grok-2/_search?pretty=true -d'
     { }' | jq
     ```
 
@@ -399,7 +407,7 @@ From the Logstash node:
     output {
         stdout { codec => json_lines }
         elasticsearch {
-            hosts => ["https://192.168.56.101:9200"]                  ## address of elasticsearch node
+            hosts => ["$ELASTIC_ENDPOINT:9200"]                  ## address of elasticsearch node
             index => "demo-grok-3"
             user => "elastic"
             password => "enter-password-here"
@@ -421,9 +429,9 @@ Back at the Elasticsearch node:
 1. Verify the index.
 
     ```bash
-    curl -s -u elastic:<password>  \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/_cat/indices?v
+    -XGET $ELASTIC_ENDPOINT:9200/_cat/indices?v
     ```
 
     Output:
@@ -439,9 +447,9 @@ Back at the Elasticsearch node:
 2. Check the index data:
 
     ```bash
-    curl -s -u elastic:<password>  \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/demo-grok-3/_search?pretty=true -d'
+    -XGET $ELASTIC_ENDPOINT:9200/demo-grok-3/_search?pretty=true -d'
     { 
       "_source": {
         "excludes": [
@@ -482,7 +490,7 @@ Back at the Elasticsearch node:
 Use the command below to delete the indices after the lab. Make sure to replace `enter-name` with the index name.
 
 ```bash
-curl -s -u elastic:<password>  \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
 -H 'Content-Type: application/json' \
--XDELETE "https://127.0.0.1:9200/enter-name" | jq
+-XDELETE "$ELASTIC_ENDPOINT:9200/enter-name" | jq
 ```

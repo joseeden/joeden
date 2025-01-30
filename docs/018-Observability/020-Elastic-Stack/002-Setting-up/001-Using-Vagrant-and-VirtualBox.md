@@ -207,7 +207,7 @@ On Node 1, switch to **root** user and perform the steps below:
 8. Verify the access:
 
     ```bash
-    curl -k -u elastic:<add-password>  https://localhost:9200
+    curl -k -u elastic:<add-password>  $ELASTIC_ENDPOINT:9200
     ```
 
     Output:
@@ -235,7 +235,7 @@ On Node 1, switch to **root** user and perform the steps below:
 9. Another way to verify access: Open a web browser in your computer (host) and navigate to:
 
     ```bash
-    https://localhost:9200/ 
+    $ELASTIC_ENDPOINT:9200/ 
     ```
 
     It will prompt you to enter the username and password. If successful, you should see the same output.
@@ -361,13 +361,20 @@ This is taken from [Sundog's Elasticsearch Course. ](https://www.sundog-educatio
 }
 ```
 
+First, store the Elasticsearch endpoint and credentials in variables:  
+
+```bash
+ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+ELASTIC_USER="your-username"
+ELASTIC_PW="your-password"
+```  
 
 Submit the mapping to Elasticsearch.
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XPUT https://localhost:9200/shakespeare-sample \
+-XPUT $ELASTIC_ENDPOINT:9200/shakespeare-sample \
 --data-binary @shakespeare-mapping.json  | jq
 ```
 
@@ -390,18 +397,18 @@ Download the file below. This bulk indexing file contains lines from Shakespeare
 Run the following command to index the data into Elasticsearch:
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XPOST https://localhost:9200/shakespeare/_bulk?pretty \
+-XPOST $ELASTIC_ENDPOINT:9200/shakespeare/_bulk?pretty \
 --data-binary @shakespeare_8.0.json | jq
 ```
 
 After indexing, you can search for the famous line "to be or not to be" using this query:
 
 ```bash
-curl -u elastic:<password> \
+curl -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET 'https://127.0.0.1:9200/shakespeare/_search?pretty' -d '
+-XGET $ELASTIC_ENDPOINT:9200/shakespeare/_search?pretty -d '
 {
   "query": {
     "match_phrase": {

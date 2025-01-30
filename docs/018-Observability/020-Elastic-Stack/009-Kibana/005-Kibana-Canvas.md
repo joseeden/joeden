@@ -11,7 +11,7 @@ tags:
 - Elastic Stack
 - ELK Stack
 - Kibana
-sidebar_position: 6
+sidebar_position: 5
 last_update:
   date: 3/28/2023
 ---

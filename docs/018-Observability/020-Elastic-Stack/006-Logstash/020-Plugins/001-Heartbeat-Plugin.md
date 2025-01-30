@@ -68,7 +68,7 @@ input {
 output {
   if [type] == "heartbeat" {
     elasticsearch {
-      hosts => ["https://192.168.56.101:9200"]                  ## address of elasticsearch node
+      hosts => ["$ELASTIC_ENDPOINT:9200"]                  ## address of elasticsearch node
       index => "heartbeat"
       user => "elastic"
       password => "enter-password-here"
@@ -91,9 +91,22 @@ This configuration sets the `heartbeat` type to be sent every 5 seconds. Save th
 You should see the output printed every 5 seconds, like this:
 
 ```bash
-curl -u elastic:<password> --insecure \
--X GET "https://192.168.56.101:9200/_cat/indices?v"
+curl -u $ELASTIC_USER:$ELASTIC_PW --insecure \
+-X GET "$ELASTIC_ENDPOINT:9200/_cat/indices?v"
 ```
+
+:::info 
+
+Store the Elasticsearch endpoint and credentials in variables:  
+
+```bash
+ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+ELASTIC_USER="your-username"
+ELASTIC_PW="your-password"
+```  
+
+:::
+
 
 Output:
 
@@ -137,9 +150,9 @@ yellow open   heartbeat m4-s-GupTaWqLtQoR-VdHg   1   1          6            0  
 Check the data in Elasticsearch:
 
 ```bash
-curl -s -u elastic:<password>  \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
 -H 'Content-Type: application/json' \
--XGET https://localhost:9200/heartbeat/_search?pretty=true -d'
+-XGET $ELASTIC_ENDPOINT:9200/heartbeat/_search?pretty=true -d'
 {
   "size": 1
 }' | jq
@@ -202,7 +215,7 @@ input {
 output {
   if [type] == "heartbeat" {
     elasticsearch {
-      hosts => ["https://192.168.56.101:9200"]                  ## Elasticsearch node address
+      hosts => ["$ELASTIC_ENDPOINT:9200"]                  ## Elasticsearch node address
       index => "heartbeat-epoch"
       user => "elastic"
       password => "enter-password-here"
@@ -227,8 +240,8 @@ Start Logstash with the configuration:
 Run the following command on the Elasticsearch node to confirm that the index was created:
 
 ```bash
-curl -u elastic:<password> --insecure \
--X GET "https://192.168.56.101:9200/_cat/indices?v"
+curl -u $ELASTIC_USER:$ELASTIC_PW --insecure \
+-X GET "$ELASTIC_ENDPOINT:9200/_cat/indices?v"
 ```
 
 Sample Output:
@@ -242,9 +255,9 @@ yellow open   heartbeat-epoch i_Cqj6SVTVa6YfXke8uq7A   1   1         53         
 Query Elasticsearch to view the indexed data:
 
 ```bash
-curl -s -u elastic:<password>  \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
 -H 'Content-Type: application/json' \
--XGET https://localhost:9200/heartbeat-epoch/_search?pretty=true -d'
+-XGET $ELASTIC_ENDPOINT:9200/heartbeat-epoch/_search?pretty=true -d'
 {
   "size": 1
 }' | jq
@@ -319,7 +332,7 @@ filter {
 output {
   if [type] == "heartbeat" {
     elasticsearch {
-      hosts => ["https://192.168.56.101:9200"]
+      hosts => ["$ELASTIC_ENDPOINT:9200"]
       index => "heartbeat-sequence"
       user => "elastic"
       password => "enter-password-here"
@@ -387,8 +400,8 @@ Logstash will output messages every 5 seconds, each with an incrementing `sequen
 To verify, check the index in Elasticsearch:
 
 ```bash
-curl -u elastic:<password> --insecure \
--X GET "https://192.168.56.101:9200/_cat/indices?v"
+curl -u $ELASTIC_USER:$ELASTIC_PW --insecure \
+-X GET "$ELASTIC_ENDPOINT:9200/_cat/indices?v"
 ```
 
 Example output:
@@ -403,9 +416,9 @@ yellow open   heartbeat-epoch    i_Cqj6SVTVa6YfXke8uq7A   1   1        132      
 Query Elasticsearch to view the indexed data:
 
 ```bash
-curl -s -u elastic:<password>  \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
 -H 'Content-Type: application/json' \
--XGET https://localhost:9200/heartbeat-sequence/_search?pretty=true -d'
+-XGET $ELASTIC_ENDPOINT:9200/heartbeat-sequence/_search?pretty=true -d'
 {
   "sort": [{
       "@timestamp": {
@@ -421,7 +434,7 @@ curl -s -u elastic:<password>  \
 Use the command below to delete the indices after the lab. Make sure to replace `enter-name` with the index name.
 
 ```bash
-curl -s -u elastic:<password>  \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
 -H 'Content-Type: application/json' \
--XDELETE "https://127.0.0.1:9200/enter-name" | jq
+-XDELETE "$ELASTIC_ENDPOINT:9200/enter-name" | jq
 ```

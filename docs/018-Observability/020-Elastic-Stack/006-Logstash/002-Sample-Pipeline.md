@@ -85,10 +85,24 @@ Login to the Logstash node, switch to **root** user, and perform the following:
     sudo chmod 640 /usr/share/ca-certificates/elastic-ca.crt
     ```
 
+
+    :::info 
+
+    Store the Elasticsearch endpoint and credentials in variables:  
+
+    ```bash
+    ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+    ELASTIC_USER="your-username"
+    ELASTIC_PW="your-password"
+    ```  
+
+    :::
+
+
     Manually verify the certificate works using curl:
 
     ```bash
-    curl --cacert /usr/share/ca-certificates/elastic-ca.crt -u elastic:<password> https://192.168.56.101:9200
+    curl --cacert /usr/share/ca-certificates/elastic-ca.crt -u $ELASTIC_USER:$ELASTIC_PW $ELASTIC_ENDPOINT:9200
     ```
 
     Output:
@@ -150,7 +164,7 @@ Login to the Logstash node, switch to **root** user, and perform the following:
     }
     output {
       elasticsearch {
-        hosts => ["https://192.168.56.101:9200"]
+        hosts => ["$ELASTIC_ENDPOINT:9200"]
         index => "sample-access-log"
         user => elastic 
         password => enter-password-here
@@ -182,8 +196,8 @@ Login to Elasticsearch node and switch to **root**:
 1. Login to Elasticsearch and switch to root. Check if data has been indexed by Logstash
 
     ```bash
-    curl -u elastic:<password> --insecure \
-    -X GET "https://192.168.56.101:9200/_cat/indices?v"
+    curl -u $ELASTIC_USER:$ELASTIC_PW --insecure \
+    -X GET "$ELASTIC_ENDPOINT:9200/_cat/indices?v"
     ```
 
     Output:
@@ -196,9 +210,9 @@ Login to Elasticsearch node and switch to **root**:
 2. Check the `sample-access-log` and confirm that it contains the sample Apache web server log data:
 
     ```bash
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XGET "https://192.168.56.101:9200/sample-access-log/_search?pretty=true" | jq
+    -XGET "$ELASTIC_ENDPOINT:9200/sample-access-log/_search?pretty=true" | jq
     ```
 
     If the indexing was successful, the output should show something like this:

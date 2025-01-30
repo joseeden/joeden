@@ -157,7 +157,7 @@ If you are using cloud compute instances, you can skip this section.
 6. Verify the access:
 
     ```bash
-    curl -k -u elastic:<add-password>  https://localhost:9200
+    curl -k -u elastic:<add-password>  $ELASTIC_ENDPOINT:9200
     ```
 
     Output:
@@ -185,7 +185,7 @@ If you are using cloud compute instances, you can skip this section.
 7. Another way to verify access: Open a web browser in your computer (host) and navigate to:
 
     ```bash
-    https://localhost:9200/ 
+    $ELASTIC_ENDPOINT:9200/ 
     ```
 
     It will prompt you to enter the username and password. If successful, you should see the same output.

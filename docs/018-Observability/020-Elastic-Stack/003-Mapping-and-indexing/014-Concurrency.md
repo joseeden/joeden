@@ -39,12 +39,20 @@ The example below is tested on a running Elasticsearch 8, and uses a dataset con
 
 :::
 
+First, store the Elasticsearch endpoint and credentials in variables:  
+
+```bash
+ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+ELASTIC_USER="your-username"
+ELASTIC_PW="your-password"
+```  
+
 Retrieve the movie details for id `109487`.
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET https://127.0.0.1:9200/movies/_doc/109487?pretty | jq
+-XGET $ELASTIC_ENDPOINT:9200/movies/_doc/109487?pretty | jq
 ```
 
 Output:
@@ -71,9 +79,9 @@ Output:
 We can update this document to "Interstellar" while restricting the update to the sequence number `7`. If someone else attempts to update the document, they will receive an error.
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XPUT "https://localhost:9200/movies/_doc/109487?if_seq_no=7&if_primary_term=1" \
+-XPUT "$ELASTIC_ENDPOINT:9200/movies/_doc/109487?if_seq_no=7&if_primary_term=1" \
 -d '{
     "genre": ["IMAX", "Sci-Fi"],
     "title": "Interstellar",
@@ -128,9 +136,9 @@ If we attempt to rerun the same `XPUT` request, an error will occur.
 First, retrieve the document and take note of the current `version` and `sequence number`.
 
 ```bash
-curl -u elastic:<password> \
+curl -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET https://localhost:9200/movies/_doc/109487?pretty | jq
+-XGET $ELASTIC_ENDPOINT:9200/movies/_doc/109487?pretty | jq
 ```
 
 Output:
@@ -157,9 +165,9 @@ Output:
 Open two terminals. In the first terminal, paste the following but do not execute it yet.
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XPOST "https://localhost:9200/movies/_update/109487?retry_on_conflict=5" \
+-XPOST "$ELASTIC_ENDPOINT:9200/movies/_update/109487?retry_on_conflict=5" \
 -d '{
     "doc": {
         "title": "Terminator 2: Judgment Day",
@@ -172,9 +180,9 @@ On the second terminal, paste the following command to update it to a different 
 
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XPOST "https://localhost:9200/movies/_update/109487?retry_on_conflict=5" \
+-XPOST "$ELASTIC_ENDPOINT:9200/movies/_update/109487?retry_on_conflict=5" \
 -d '{
     "doc": {
         "title": "Terminator 3: Rise of the Machines",
@@ -186,9 +194,9 @@ curl -s -u elastic:<password> \
 Both requests will return similar outputs. To check if both succeeded, retrieve the document again using the `XGET` command.
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET https://localhost:9200/movies/_doc/109487?pretty
+-XGET $ELASTIC_ENDPOINT:9200/movies/_doc/109487?pretty
 ```
 
 The document have been updated twice, as seen in the version number (previously 9, now 11).

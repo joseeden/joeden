@@ -26,7 +26,7 @@ Mapping defines how Elasticsearch stores, indexes, and queries document fields.
 A mapping is a **schema definition**. Elasticsearch has default settings, but you may customize it. For example, the following `POST` request:
 
 ```bash
-curl -XPUT https://127.0.0.1:9200/movies -d '
+curl -XPUT $ELASTIC_ENDPOINT:9200/movies -d '
 {
   "mappings": {
     "properties": {
@@ -57,7 +57,7 @@ On the other hand, **explicit mapping** gives you full control over field defini
 Field types specify the format for each field in Elasticsearch. 
 
 ```bash
-curl -XPUT https://127.0.0.1:9200/movies -d '
+curl -XPUT $ELASTIC_ENDPOINT:9200/movies -d '
 {
   "mappings": {
     "properties": {
@@ -78,7 +78,7 @@ curl -XPUT https://127.0.0.1:9200/movies -d '
 Field indexing controls how data is indexed and searched. 
 
 ```bash
-curl -XPUT https://127.0.0.1:9200/movies -d '
+curl -XPUT $ELASTIC_ENDPOINT:9200/movies -d '
 {
   "mappings": {
     "properties": {
@@ -97,7 +97,7 @@ curl -XPUT https://127.0.0.1:9200/movies -d '
 Field analyzers define how text is processed for indexing and search, affecting how documents are stored and queried. 
 
 ```bash
-curl -XPUT https://127.0.0.1:9200/movies -d '
+curl -XPUT $ELASTIC_ENDPOINT:9200/movies -d '
 {
   "mappings": {
     "properties": {

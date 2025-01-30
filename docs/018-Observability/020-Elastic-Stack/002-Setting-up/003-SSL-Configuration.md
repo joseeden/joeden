@@ -121,7 +121,7 @@ When configuring SSL/TLS for secure communication between Elasticsearch and clie
 5. Verify that the SSL certificate works.
 
     ```bash
-    curl -u elastic:<add-password>  https://localhost:9200
+    curl -u elastic:<add-password>  $ELASTIC_ENDPOINT:9200
     ```
 
     Output:
@@ -207,7 +207,14 @@ To use the Elasticsearch SSL certificate on other VMs, follow these steps:
 9. From the other VM, test the connection:
 
     ```bash
-    $ curl -s -k  -u elastic:<password> https://192.168.56.101:9200 | jq
+    ## Store the Elasticsearch endpoint and credentials in variables:  
+    ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+    ELASTIC_USER="your-username"
+    ELASTIC_PW="your-password"
+    ```
+
+    ```bash
+    $ curl -s -k  -u $ELASTIC_USER:$ELASTIC_PW $ELASTIC_ENDPOINT:9200 | jq
 
     {
       "name": "node1",

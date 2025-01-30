@@ -126,7 +126,7 @@ Elasticsearch generates multi-line logs, where a single event can span multiple 
     output {
         stdout { codec => rubydebug }
         elasticsearch {
-            hosts => ["https://192.168.56.101:9200"]                  ## address of elasticsearch node
+            hosts => ["$ELASTIC_ENDPOINT:9200"]                  ## address of elasticsearch node
             index => "es-test-logs"
             user => "elastic"
             password => "enter-password-here"
@@ -151,10 +151,22 @@ Elasticsearch generates multi-line logs, where a single event can span multiple 
 
 3. Log in to the Elasticsearch node as the **root** user and verify that the `es-test-logs` index has been created:
 
+    :::info 
+    
+    Store the Elasticsearch endpoint and credentials in variables:  
+
     ```bash
-    curl -s -u elastic:<password>  \
+    ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+    ELASTIC_USER="your-username"
+    ELASTIC_PW="your-password"
+    ```  
+
+    :::
+
+    ```bash
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/_cat/indices?v
+    -XGET $ELASTIC_ENDPOINT:9200/_cat/indices?v
     ```
 
     Output:
@@ -171,9 +183,9 @@ Elasticsearch generates multi-line logs, where a single event can span multiple 
 4. To filter non-multi-line log events, use the following query:
 
     ```bash
-    curl -s -u elastic:<password>  \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/es-test-logs/_search?pretty=true -d'
+    -XGET $ELASTIC_ENDPOINT:9200/es-test-logs/_search?pretty=true -d'
     {
       "size": 1, 
       "query": {
@@ -244,9 +256,9 @@ Elasticsearch generates multi-line logs, where a single event can span multiple 
 5. Similarly, to filter only multi-line log events, use the `must` parameter:
 
     ```bash
-    curl -s -u elastic:<password>  \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/es-test-logs/_search?pretty=true -d'
+    -XGET $ELASTIC_ENDPOINT:9200/es-test-logs/_search?pretty=true -d'
     {
       "size": 1, 
       "query": {
@@ -362,7 +374,7 @@ Elasticsearch generate **slow logs**, which are used to optimize Elasticsearch s
     output {
         stdout { codec => rubydebug }
         elasticsearch {
-            hosts => ["https://192.168.56.101:9200"]                  ## address of elasticsearch node
+            hosts => ["$ELASTIC_ENDPOINT:9200"]                  ## address of elasticsearch node
             index => "es-slow-logs"
             user => "elastic"
             password => "enter-password-here"
@@ -382,9 +394,9 @@ Elasticsearch generate **slow logs**, which are used to optimize Elasticsearch s
 3. Log in to the Elasticsearch node as the **root** user and verify that the `es-slow-logs` index has been created:
 
     ```bash
-    curl -s -u elastic:<password>  \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/_cat/indices?v
+    -XGET $ELASTIC_ENDPOINT:9200/_cat/indices?v
     ```
 
     Output:
@@ -402,9 +414,9 @@ Elasticsearch generate **slow logs**, which are used to optimize Elasticsearch s
 4. Confirm that the logs has been parsed, ingested, and indexed.
 
     ```bash
-    curl -s -u elastic:<password>  \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/es-slow-logs/_search?pretty=true -d'
+    -XGET $ELASTIC_ENDPOINT:9200/es-slow-logs/_search?pretty=true -d'
     {  
       "size": 1
     }'
@@ -520,7 +532,7 @@ MySQL generates **slow logs** for optimizing database performance. These logs di
     output {
         stdout { codec => rubydebug }
         elasticsearch {
-            hosts => ["https://192.168.56.101:9200"]                  ## address of elasticsearch node
+            hosts => ["$ELASTIC_ENDPOINT:9200"]                  ## address of elasticsearch node
             index => "mysql-slowlogs"
             user => "elastic"
             password => "enter-password-here"
@@ -545,9 +557,9 @@ MySQL generates **slow logs** for optimizing database performance. These logs di
 3. Log in to the Elasticsearch node as the **root** user and verify that the `mysql-slowlogs` index has been created:
 
     ```bash
-    curl -s -u elastic:<password>  \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/_cat/indices?v
+    -XGET $ELASTIC_ENDPOINT:9200/_cat/indices?v
     ```
 
     Output:
@@ -566,9 +578,9 @@ MySQL generates **slow logs** for optimizing database performance. These logs di
 4. Confirm that the logs has been parsed, ingested, and indexed.
 
     ```bash
-    curl -s -u elastic:<password>  \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/mysql-slowlogs/_search?pretty=true -d'
+    -XGET $ELASTIC_ENDPOINT:9200/mysql-slowlogs/_search?pretty=true -d'
     {
 
       "size":1,
@@ -649,7 +661,7 @@ MySQL generates **slow logs** for optimizing database performance. These logs di
 Use the command below to delete the indices after the lab. Make sure to replace `enter-name` with the index name.
 
 ```bash
-curl -s -u elastic:<password>  \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
 -H 'Content-Type: application/json' \
--XDELETE "https://127.0.0.1:9200/enter-name" | jq
+-XDELETE "$ELASTIC_ENDPOINT:9200/enter-name" | jq
 ```

@@ -62,7 +62,7 @@ Follow these steps to install Kibana on your system.
      If Kibana is not running on the same node as Elasticsearch, you will need to specify the Elasticsearch nodes as well.
 
      ```bash
-     elasticsearch.hosts: ["https://192.168.56.101:9200"] 
+     elasticsearch.hosts: ["$ELASTIC_ENDPOINT:9200"] 
      ```
 
      **Note:** SSL is enabled on Elasticsearch node, so I used `https` here.
@@ -126,7 +126,7 @@ Offline installation is useful in pproduction environments with restricted inter
      If Kibana is not running on the same node as Elasticsearch, you will need to specify the Elasticsearch nodes as well.
 
      ```bash
-     elasticsearch.hosts: ["https://192.168.56.101:9200"] 
+     elasticsearch.hosts: ["$ELASTIC_ENDPOINT:9200"] 
      ```
 
      **Note:** SSL is enabled on Elasticsearch node, so I used `https` here.

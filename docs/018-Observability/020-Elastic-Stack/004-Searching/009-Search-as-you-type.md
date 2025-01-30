@@ -21,10 +21,24 @@ The `match_phrase_prefix` query helps to match phrases at the prefix level, whic
 
 Consider an index of films. We can use `match_phrase_prefix` to match partial phrases in the title.
 
+
+:::info 
+
+Store the Elasticsearch endpoint and credentials in variables:  
+
 ```bash
-curl -s -u elastic:<password> \
+ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+ELASTIC_USER="your-username"
+ELASTIC_PW="your-password"
+```  
+
+:::
+
+
+```bash
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET "https://localhost:9200/movies/_search?pretty" -d '
+-XGET "$ELASTIC_ENDPOINT:9200/movies/_search?pretty" -d '
 {
   "query": {
     "match_phrase_prefix": {
@@ -62,26 +76,26 @@ In this example, we will test the autocomplete search functionality in Elasticse
 3. Create a Mapping for the `movies` Index.
 
     ```bash
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XPUT 'https://localhost:9200/movies'
+    -XPUT $ELASTIC_ENDPOINT:9200/movies
     ```
 
 4. Import the Data into Elasticsearch.
 
     ```bash
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XPUT https://localhost:9200/_bulk?pretty \
+    -XPUT $ELASTIC_ENDPOINT:9200/_bulk?pretty \
     --data-binary @movies.json | jq
     ```
 
 5. Analyze the Text with a Custom Tokenizer
 
     ```bash
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XPOST 'https://localhost:9200/movies/_analyze?pretty' \
+    -XPOST $ELASTIC_ENDPOINT:9200/movies/_analyze?pretty \
     -d '{
       "tokenizer" : "standard",
       "filter": [{"type":"edge_ngram", "min_gram": 1, "max_gram": 5}],
@@ -94,9 +108,9 @@ In this example, we will test the autocomplete search functionality in Elasticse
 6. Create the `autocomplete` index with search-as-you-type functionality for the `title` and `genre` fields.
 
     ```bash
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XPUT 'https://localhost:9200/autocomplete' \
+    -XPUT $ELASTIC_ENDPOINT:9200/autocomplete \
     -d '{
       "mappings": {
           "properties": {
@@ -126,9 +140,9 @@ In this example, we will test the autocomplete search functionality in Elasticse
 7. Reindex Data from `movies` to `autocomplete` for faster searches.
 
     ```bash
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XPOST 'https://localhost:9200/_reindex?pretty' -d '
+    -XPOST $ELASTIC_ENDPOINT:9200/_reindex?pretty -d '
     {
       "source": {
         "index": "movies"
@@ -152,9 +166,9 @@ In this example, we will test the autocomplete search functionality in Elasticse
 8. Check the Mappings of the `autocomplete` Index.
 
     ```bash
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XGET "https://localhost:9200/autocomplete/_mapping?pretty=true" | jq
+    -XGET "$ELASTIC_ENDPOINT:9200/autocomplete/_mapping?pretty=true" | jq
     ```
 
     We can see the mappings confirm the fields `title` and `genre` are set to `search_as_you_type`, ensuring that Elasticsearch is optimized for autocomplete.
@@ -195,9 +209,9 @@ In this example, we will test the autocomplete search functionality in Elasticse
 9. Perform a Search Using the `multi_match` Query
 
     ```bash
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XGET 'https://localhost:9200/autocomplete/_search?pretty' -d'
+    -XGET $ELASTIC_ENDPOINT:9200/autocomplete/_search?pretty -d'
     {
       "size": 5,
       "query": {
@@ -232,9 +246,9 @@ In this example, we will test the autocomplete search functionality in Elasticse
     IFS= read -rsn1 char
     INPUT=$INPUT$char
     echo $INPUT
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XGET 'https://localhost:9200/autocomplete/_search' \
+    -XGET $ELASTIC_ENDPOINT:9200/autocomplete/_search \
     -d '{
         "size": 5,
         "query": {

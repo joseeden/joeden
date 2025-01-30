@@ -107,8 +107,20 @@ server-timing: cfL4;desc="?proto=TCP&rtt=32666&min_rtt=16439&rtt_var=17041&sent=
 
 Next, we can test the Elasticsearch API by checking the health of the cluster. Send a `GET` request to retrieve the cluster health information.
 
+:::info 
+
+Store the Elasticsearch endpoint and credentials in variables:  
+
 ```bash
-curl -s -u elastic:<password> --insecure -XGET https://192.168.56.101:9200/_cluster/health | jq 
+ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+ELASTIC_USER="your-username"
+ELASTIC_PW="your-password"
+```  
+
+:::
+
+```bash
+curl -s -u $ELASTIC_USER:$ELASTIC_PW --insecure -XGET $ELASTIC_ENDPOINT:9200/_cluster/health | jq 
 ```
 
 Output:
@@ -174,8 +186,8 @@ Logstash will continue running unless manually stopped with `Ctrl-C`. Let it run
 To verify the indexed data in Elasticsearch:
 
 ```bash
-curl -u elastic:<password> --insecure \
--X GET "https://192.168.56.101:9200/_cat/indices?v"
+curl -u $ELASTIC_USER:$ELASTIC_PW --insecure \
+-X GET "$ELASTIC_ENDPOINT:9200/_cat/indices?v"
 ```
 
 Output:
@@ -189,9 +201,9 @@ yellow open   http-poller-api       aTMDXr4iS4qstbra9Siv3A   1   1        805   
 Next, to inspect the external API data:
 
 ```bash
-curl -s -u elastic:<password>  \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
 -H 'Content-Type: application/json' \
--XGET https://localhost:9200/http-poller-api/_search?pretty=true -d'
+-XGET $ELASTIC_ENDPOINT:9200/http-poller-api/_search?pretty=true -d'
 {
   "query": {
     "match_all": {}
@@ -209,9 +221,9 @@ curl -s -u elastic:<password>  \
 You can also check the Elasticsearch cluster health:
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET https://localhost:9200/http-poller-es-health/_search?pretty=true -d'
+-XGET $ELASTIC_ENDPOINT:9200/http-poller-es-health/_search?pretty=true -d'
 {
   "query": {
     "match_all": {}
@@ -287,7 +299,7 @@ Output:
                     "hostname" : "node2"
                   },
                   "original" : {
-                    "url" : "https://192.168.56.101:9200/_cluster/health",
+                    "url" : "$ELASTIC_ENDPOINT:9200/_cluster/health",
                     "headers" : {
                       "Authorization" : "Basic ZWxhc3RpYzplbGFzdGlj",
                       "Accept" : "application/json"
@@ -325,7 +337,7 @@ Output:
 Use the command below to delete the indices after the lab. Make sure to replace `enter-name` with the index name.
 
 ```bash
-curl -s -u elastic:<password>  \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
 -H 'Content-Type: application/json' \
--XDELETE "https://127.0.0.1:9200/enter-name" | jq
+-XDELETE "$ELASTIC_ENDPOINT:9200/enter-name" | jq
 ```

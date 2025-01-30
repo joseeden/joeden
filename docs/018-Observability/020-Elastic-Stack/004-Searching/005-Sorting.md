@@ -24,11 +24,27 @@ Sorting allows you to order search results based on specific fields. You can sor
 
 Consider an index containing films with different genres. We can sort the films by release dates by running:
 
+:::info 
+
+Store the Elasticsearch endpoint and credentials in variables:  
+
 ```bash
-curl -s -u elastic:<password> \
+ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+ELASTIC_USER="your-username"
+ELASTIC_PW="your-password"
+```  
+
+:::
+
+
+```bash
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET "https://127.0.0.1:9200/movies/_search?sort=year&pretty"
+-XGET "$ELASTIC_ENDPOINT:9200/movies/_search?sort=year&pretty"
 ```
+
+
+
 
 ## Dealing with Strings  
 
@@ -41,9 +57,9 @@ Sorting on analyzed string fields isn’t possible as they are stored as terms i
 Using the previous example, try sorting by `title`. Since titles are stored as analyzed strings, running the query below will result in an error:
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET "https://127.0.0.1:9200/movies/_search?sort=title&pretty"
+-XGET "$ELASTIC_ENDPOINT:9200/movies/_search?sort=title&pretty"
 ```
 
 Expected error:
@@ -83,9 +99,9 @@ Like recreating the number of shards, deleting the mapping to add a subfield req
 For example:  
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XPUT "https://127.0.0.1:9200/movies/" -d '
+-XPUT "$ELASTIC_ENDPOINT:9200/movies/" -d '
 {
   "mappings": {
     "properties": {
@@ -107,9 +123,9 @@ This setup allows sorting on `title.raw` while keeping `title` for full-text sea
 To sort on the raw keyword field:
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET "https://127.0.0.1:9200/movies/_search?sort=title.raw&pretty"
+-XGET "$ELASTIC_ENDPOINT:9200/movies/_search?sort=title.raw&pretty"
 ```
 
  

@@ -65,7 +65,7 @@ Elasticsearch provides client libraries for most programming languages. This mak
 
     - SSL is enabled on the Elasticsearch cluster in this example.
     - Authentication is done using a username and password, without certificates.
-    - The default cluster URL is `https://localhost:9200`.
+    - The default cluster URL is `$ELASTIC_ENDPOINT:9200`.
     
     :::
 
@@ -116,7 +116,7 @@ Elasticsearch provides client libraries for most programming languages. This mak
         movies_path = sys.argv[1]
         ratings_path = sys.argv[2]
         
-        es_host = "https://localhost:9200"
+        es_host = "$ELASTIC_ENDPOINT:9200"
         es_username = input("Enter Elasticsearch username: ")
         es_password = getpass.getpass("Enter Elasticsearch password: ")
 
@@ -160,17 +160,31 @@ Elasticsearch provides client libraries for most programming languages. This mak
 
     :::info 
 
-    The Elasticsearch host is set to `https://localhost:9200`.  
+    The Elasticsearch host is set to `$ELASTIC_ENDPOINT:9200`.  
     If your cluster uses a different address, you may need to update the script accordingly.
 
     :::
 
 6. Run a query to verify if the index has been created and populated.
 
+
+    :::info 
+
+    Store the Elasticsearch endpoint and credentials in variables:  
+
     ```bash
-    curl -s -u elastic:<password> \
+    ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+    ELASTIC_USER="your-username"
+    ELASTIC_PW="your-password"
+    ```  
+
+    :::
+
+
+    ```bash
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XGET 'https://localhost:9200/ratings/_search?pretty' | jq
+    -XGET $ELASTIC_ENDPOINT:9200/ratings/_search?pretty | jq
     ```
     
     Output:

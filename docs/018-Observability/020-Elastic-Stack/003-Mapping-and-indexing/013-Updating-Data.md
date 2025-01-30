@@ -29,12 +29,20 @@ In the following examples, we'll be using movie datasets to test Elasticsearch f
 
 ## Adding a Mapping 
 
+First, store the Elasticsearch endpoint and credentials in variables:  
+
+```bash
+ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+ELASTIC_USER="your-username"
+ELASTIC_PW="your-password"
+```  
+
 Connect to your Elasticsearch node and run the following command. This sets up a mapping for the `movies` index.  
 
 ```bash
-curl -u elastic:<password> \
+curl -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XPUT https://127.0.0.1:9200/movies -d '
+-XPUT $ELASTIC_ENDPOINT:9200/movies -d '
 {
   "mappings": {
     "properties": {
@@ -55,9 +63,9 @@ Output:
 To verify the mappings, run the following `GET` request:
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET https://127.0.0.1:9200/movies/_mapping | jq
+-XGET $ELASTIC_ENDPOINT:9200/movies/_mapping | jq
 ```
 
 Output:
@@ -88,9 +96,9 @@ You need to [install `jq`](https://www.scaler.com/topics/linux-jq/) to format th
 Insert a `movie` document into the movies index using the following command:
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XPOST https://127.0.0.1:9200/movies/_doc/109487 -d '
+-XPOST $ELASTIC_ENDPOINT:9200/movies/_doc/109487 -d '
 {
     "genre": ["IMAX", "Sci-Fi"],
     "title": "Interstellar",
@@ -119,9 +127,9 @@ Output:
 To retrieve the document, run this search query:
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET https://127.0.0.1:9200/movies/_search?pretty | jq 
+-XGET $ELASTIC_ENDPOINT:9200/movies/_search?pretty | jq 
 ```
 
 Output:
@@ -172,10 +180,10 @@ For this example, download the following datasets:
 To import the dataset into Elasticsearch:
 
 ```bash
-curl -u elastic:<password> \
+curl -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
 --data-binary @movies.json \
--XPUT https://localhost:9200/_bulk?pretty 
+-XPUT $ELASTIC_ENDPOINT:9200/_bulk?pretty 
 ```
 
 Output:
@@ -255,9 +263,9 @@ Output:
 After importing, you can retrieve all documents using a `GET` request:
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET https://127.0.0.1:9200/movies/_search?pretty | jq 
+-XGET $ELASTIC_ENDPOINT:9200/movies/_search?pretty | jq 
 ```
 
 
@@ -278,9 +286,9 @@ When an update request is sent:
 As an example, let's retrieve a specific movie from our `movie` index:
 
 ```bash
-curl -u elastic:<password> \
+curl -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET https://localhost:9200/movies/_doc/109487?pretty
+-XGET $ELASTIC_ENDPOINT:9200/movies/_doc/109487?pretty
 ```
 
 It will return the movie "Interstellar":
@@ -307,9 +315,9 @@ It will return the movie "Interstellar":
 we can update the movie title for the id `109487` by running:
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XPUT https://localhost:9200/movies/_doc/109487?pretty -d '
+-XPUT $ELASTIC_ENDPOINT:9200/movies/_doc/109487?pretty -d '
 {
     "genre": ["IMAX", "Sci-Fi"],
     "title": "The Terminator",
@@ -348,9 +356,9 @@ Deleting data in Elasticsearch is straightforward. You can delete a single docum
 To use as example, search the `id` of the movie "The Dark Knight".
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET https://localhost:9200/movies/_search?q=Dark | jq
+-XGET $ELASTIC_ENDPOINT:9200/movies/_search?q=Dark | jq
 ```
 
 Output:
@@ -379,9 +387,9 @@ Output:
 Delete this movie from the index by running:
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XDELETE  https://localhost:9200/movies/_doc/58559?pretty
+-XDELETE  $ELASTIC_ENDPOINT:9200/movies/_doc/58559?pretty
 ```
 
 Output:
@@ -405,9 +413,9 @@ Output:
 Now try to search the keyword "Dark" It shuld not return any hits this time.
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET https://localhost:9200/movies/_search?q=Dark | jq
+-XGET $ELASTIC_ENDPOINT:9200/movies/_search?q=Dark | jq
 ```
 
 Output:

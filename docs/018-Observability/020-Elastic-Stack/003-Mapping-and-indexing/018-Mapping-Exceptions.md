@@ -79,12 +79,20 @@ The example below is tested on a running Elasticsearch 8.
 
 :::
 
-1. Create the mapping:
+1. First, store the Elasticsearch endpoint and credentials in variables:  
 
     ```bash
-    curl -s -u elastic:<password> \
+    ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+    ELASTIC_USER="your-username"
+    ELASTIC_PW="your-password"
+    ```  
+
+2. Create the mapping:
+
+    ```bash
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -X PUT 'https://localhost:9200/microservice-logs' \
+    -X PUT '$ELASTIC_ENDPOINT:9200/microservice-logs' \
     --data-raw '{
       "mappings": {
           "properties": {
@@ -108,12 +116,12 @@ The example below is tested on a running Elasticsearch 8.
     }      
     ```
 
-2. Try to index data where the `port` is set to a string instead of a numeric value:
+3. Try to index data where the `port` is set to a string instead of a numeric value:
 
     ```bash
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XPOST 'https://localhost:9200/microservice-logs/_doc?pretty' \
+    -XPOST $ELASTIC_ENDPOINT:9200/microservice-logs/_doc?pretty \
     --data-raw '{
       "timestamp": "2020-04-11T12:34:56.789Z", 
       "service": "XYZ", 
@@ -141,12 +149,12 @@ The example below is tested on a running Elasticsearch 8.
     } 
     ```
 
-3. Now try setting `port` to `NONE`:
+4. Now try setting `port` to `NONE`:
 
     ```bash
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XPOST 'https://localhost:9200/microservice-logs/_doc?pretty' \
+    -XPOST $ELASTIC_ENDPOINT:9200/microservice-logs/_doc?pretty \
     --data-raw '{
       "timestamp": "2020-04-11T12:34:56.789Z", 
       "service": "XYZ", 
@@ -186,9 +194,9 @@ There is no single solution to solve exceptions, but here is a method to handle 
 1. Close the index:
 
     ```bash
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XPOST 'https://localhost:9200/microservice-logs/_close' | jq
+    -XPOST $ELASTIC_ENDPOINT:9200/microservice-logs/_close | jq
     ```
 
     Output:
@@ -208,9 +216,9 @@ There is no single solution to solve exceptions, but here is a method to handle 
 2. Change the setting to allow malformed data:
 
     ```bash
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XPUT 'https://localhost:9200/microservice-logs/_settings' \
+    -XPUT $ELASTIC_ENDPOINT:9200/microservice-logs/_settings \
     --data-raw '{
       "index.mapping.ignore_malformed": true
     }' | jq
@@ -219,17 +227,17 @@ There is no single solution to solve exceptions, but here is a method to handle 
 3. Reopen the index:
 
     ```bash
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XPOST 'https://localhost:9200/microservice-logs/_open' | jq
+    -XPOST $ELASTIC_ENDPOINT:9200/microservice-logs/_open | jq
     ```
 
 4. Now try rerunning the previous erroneous command. It will now be accepted:
 
     ```bash
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XPOST 'https://localhost:9200/microservice-logs/_doc?pretty' \
+    -XPOST $ELASTIC_ENDPOINT:9200/microservice-logs/_doc?pretty \
     --data-raw '{
       "timestamp": "2020-04-11T12:34:56.789Z", 
       "service": "XYZ", 
@@ -264,9 +272,9 @@ The `ignore_malformed` setting cannot handle JSON input that doesn't match the e
 1. Run the following command to attempt indexing the document:
 
     ```bash
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XPOST 'https://localhost:9200/microservice-logs/_doc?pretty' \
+    -XPOST $ELASTIC_ENDPOINT:9200/microservice-logs/_doc?pretty \
     --data-raw '{
         "timestamp": "2020-04-11T12:34:56.789Z", 
         "service": "ABC", 
@@ -309,9 +317,9 @@ This example shows how an unexpected structure in the payload causes a mapping e
 1. Add a document with a payload field:
 
     ```bash
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XPOST 'https://localhost:9200/microservice-logs/_doc?pretty' \
+    -XPOST $ELASTIC_ENDPOINT:9200/microservice-logs/_doc?pretty \
     --data-raw '{
       "timestamp": "2020-04-11T12:34:56.789Z", 
       "service": "ABC", 
@@ -348,9 +356,9 @@ This example shows how an unexpected structure in the payload causes a mapping e
 2. Check the mapping to verify how the `payload` field is mapped:
 
     ```bash
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XGET 'https://localhost:9200/microservice-logs/_mapping?pretty' 
+    -XGET $ELASTIC_ENDPOINT:9200/microservice-logs/_mapping?pretty 
     ```
 
     The mapping shows the `payload` field as an object with nested properties:
@@ -378,9 +386,9 @@ This example shows how an unexpected structure in the payload causes a mapping e
 3. Attempt to index another document, this time with a different structure for `received`:
 
     ```bash
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XPOST 'https://localhost:9200/microservice-logs/_doc?pretty' \
+    -XPOST $ELASTIC_ENDPOINT:9200/microservice-logs/_doc?pretty \
     -d '{
       "timestamp": "2020-04-11T12:34:56.789Z", 
       "service": "ABC", 
@@ -433,18 +441,18 @@ To test the field limit:
 2. Create the index:
 
     ```bash
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XPUT 'https://localhost:9200/big-objects' 
+    -XPUT $ELASTIC_ENDPOINT:9200/big-objects
     ```
 
 3. Try to import the data with over 1000 fields:
 
     ```bash
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XPOST 'https://localhost:9200/big-objects/_doc?pretty' \
-    -d "$thousandone_fields_json"
+    -XPOST $ELASTIC_ENDPOINT:9200/big-objects/_doc?pretty \
+    -d "@thousandone_fields_json"
     ```
 
 4. Expected error due to exceeding the field limit:
@@ -472,9 +480,9 @@ To test the field limit:
 5. Increase the field limit (with caution due to potential performance implications):
 
     ```bash
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XPUT 'https://localhost:9200/big-objects/_settings' \
+    -XPUT $ELASTIC_ENDPOINT:9200/big-objects/_settings \
     -d '{
         "index.mapping.total_fields.limit": 1001
     }' | jq
@@ -483,10 +491,10 @@ To test the field limit:
 6. Reindex the data, which should now be allowed:
 
     ```bash
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XPOST 'https://localhost:9200/big-objects/_doc?pretty' \
-    -d "$thousandone_fields_json"
+    -XPOST $ELASTIC_ENDPOINT:9200/big-objects/_doc?pretty \
+    -d "@thousandone_fields_json"
     ```
 
     Output (Successful import):

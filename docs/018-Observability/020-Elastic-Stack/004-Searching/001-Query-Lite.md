@@ -62,29 +62,35 @@ Using simple queries is convenient for experimenting, but they come with risks:
 
 ## Examples 
 
-First, import the datasets:
-
 1. For the following examples, download the datasets:
 
     - [series.json](@site/assets/elastic-stack/series.json)
 
-2. Import the dataset into Elasticsearch:
+2. First, store the Elasticsearch endpoint and credentials in variables:  
 
-  ```bash
-  curl -u elastic:<password> \
-  -H 'Content-Type: application/json' \
-  --data-binary @movies.json \
-  -XPUT https://localhost:9200/_bulk?pretty 
-  ```
+    ```bash
+    ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+    ELASTIC_USER="your-username"
+    ELASTIC_PW="your-password"
+    ```  
+
+3. Import the dataset into Elasticsearch:
+
+    ```bash
+    curl -u $ELASTIC_USER:$ELASTIC_PW \
+    -H 'Content-Type: application/json' \
+    --data-binary @movies.json \
+    -XPUT $ELASTIC_ENDPOINT:9200/_bulk?pretty 
+    ```
 
 Start using the query lite:
 
 1. Run the command below to search for movies with "Star" in the title:
 
     ```bash
-    curl -u elastic:<password> \
+    curl -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XGET "https://localhost:9200/movies/_search?q=title:star&pretty"
+    -XGET "$ELASTIC_ENDPOINT:9200/movies/_search?q=title:star&pretty"
     ```
 
     Output:
@@ -146,9 +152,9 @@ Start using the query lite:
 2. Now search for movies released after 2010 with "Trek" in the title
 
     ```bash
-    curl -u elastic:<password> \
+    curl -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XGET "https://localhost:9200/movies/_search?q=+year>2010+title:trek&pretty"
+    -XGET "$ELASTIC_ENDPOINT:9200/movies/_search?q=+year>2010+title:trek&pretty"
     ```
 
     Output:

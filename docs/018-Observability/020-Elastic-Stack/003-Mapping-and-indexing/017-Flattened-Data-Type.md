@@ -25,12 +25,20 @@ Download the dataset below:
 
 - [demo-default.json](@site/assets/elastic-stack/demo-default.json)
 
+First, store the Elasticsearch endpoint and credentials in variables:  
+
+```bash
+ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+ELASTIC_USER="your-username"
+ELASTIC_PW="your-password"
+```  
+
 Index the dataset from the `demo-default.json` file into the Elasticsearch.
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XPUT "https://127.0.0.1:9200/demo-default/_doc/1" \
+-XPUT "$ELASTIC_ENDPOINT:9200/demo-default/_doc/1" \
 -d @demo-default.json | jq
 ```
 
@@ -55,9 +63,9 @@ Output:
 Next, you can check the mappings of the `demo-default` index:
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET "https://127.0.0.1:9200/demo-default/_mapping?pretty=true" | jq 
+-XGET "$ELASTIC_ENDPOINT:9200/demo-default/_mapping?pretty=true" | jq 
 ```
 
 The returned output shows the automatically assigned field types by Elasticsearch for each field. We didn’t explicitly define any field types, but Elasticsearch inferred the types based on the data provided.
@@ -142,9 +150,9 @@ The returned output shows the automatically assigned field types by Elasticsearc
 You can check the state of the Elasticsearch cluster using the following command:
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET "https://127.0.0.1:9200/_cluster/state?pretty=true" | jq >> es-cluster-state.json
+-XGET "$ELASTIC_ENDPOINT:9200/_cluster/state?pretty=true" | jq >> es-cluster-state.json
 ```
 
 As a recap, an Elasticsearch cluster consists of a master node that sends the latest cluster state to all other nodes. When a node receives the updated state, it acknowledges the master node.
@@ -172,9 +180,9 @@ The flattened data type allows us to index complex, nested JSON objects while ke
 First, create the index `demo-flattened`:
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XPUT https://localhost:9200/demo-flattened | jq
+-XPUT $ELASTIC_ENDPOINT:9200/demo-flattened | jq
 ```
 
 Output:
@@ -190,9 +198,9 @@ Output:
 Next, define the mapping for the `host` field as a flattened type:
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XPUT "https://localhost:9200/demo-flattened/_mapping" -d '{
+-XPUT "$ELASTIC_ENDPOINT:9200/demo-flattened/_mapping" -d '{
   "properties": {
     "host": {
       "type": "flattened"
@@ -206,9 +214,9 @@ curl -s -u elastic:<password> \
 Now, index the same `demo-default.json` file from the previous example into the `demo-flattened` index:
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XPUT "https://127.0.0.1:9200/demo-flattened/_doc/1" \
+-XPUT "$ELASTIC_ENDPOINT:9200/demo-flattened/_doc/1" \
 -d @demo-default.json | jq
 ```
 
@@ -235,9 +243,9 @@ Output;
 To verify the mapping of the `host` field, run the following command:
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET "https://127.0.0.1:9200/demo-flattened/_mapping?pretty=true" | jq 
+-XGET "$ELASTIC_ENDPOINT:9200/demo-flattened/_mapping?pretty=true" | jq 
 ```
 
 You should see the following for the `host` field:
@@ -253,9 +261,9 @@ You should see the following for the `host` field:
 Next, let's add new inner fields to the `host` field:
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--X POST "https://127.0.0.1:9200/demo-flattened/_update/1" -d '{
+-X POST "$ELASTIC_ENDPOINT:9200/demo-flattened/_update/1" -d '{
   "doc": {
     "host": {
       "osVersion": "Bionic Beaver",
@@ -270,9 +278,9 @@ You would expect the inner fields to be added to the mapping. However, because t
 To confirm this, check the mapping again:
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET "https://127.0.0.1:9200/demo-flattened/_mapping?pretty=true" | jq 
+-XGET "$ELASTIC_ENDPOINT:9200/demo-flattened/_mapping?pretty=true" | jq 
 ```
 
 As seen below, the flattened data type does not dynamically add new fields to the mapping when inner fields are added. This is a limitation of the flattened type, but this also significantly reduces the size of the mapping and reduces the risk of mapping explosions.
@@ -295,9 +303,9 @@ While flattened fields are great for structured data, they are not ideal for ful
 To demonstrate the limitation, run a query on a flattened field from the previous example:
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET "https://127.0.0.1:9200/demo-flattened/_search?pretty=true" -d'
+-XGET "$ELASTIC_ENDPOINT:9200/demo-flattened/_search?pretty=true" -d'
 {
   "query": {
     "term": {

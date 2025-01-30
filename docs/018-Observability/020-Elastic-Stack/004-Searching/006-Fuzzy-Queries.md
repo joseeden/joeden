@@ -26,10 +26,24 @@ Fuzzy matching finds terms that are similar to the search term, which makes it u
 
 In the example below, we are searching for the movie "Interstellar" and we've set the fuzziness to 2, allowing for up to two typos or misspellings.
 
+
+:::info 
+
+Store the Elasticsearch endpoint and credentials in variables:  
+
 ```bash
-curl -s -u elastic:<password> \
+ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+ELASTIC_USER="your-username"
+ELASTIC_PW="your-password"
+```  
+
+:::
+
+
+```bash
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET "https://localhost:9200/movies/_search?pretty" -d '
+-XGET "$ELASTIC_ENDPOINT:9200/movies/_search?pretty" -d '
 {
   "query": {
     "fuzzy": {
@@ -41,6 +55,8 @@ curl -s -u elastic:<password> \
   }
 }' | jq
 ```  
+
+
 
 
 
@@ -80,9 +96,9 @@ Auto fuzziness automatically adjusts the fuzziness level based on the length of 
 Using the previous example, we can set the fuzzines to `auto':
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET "https://localhost:9200/movies/_search?pretty" -d '
+-XGET "$ELASTIC_ENDPOINT:9200/movies/_search?pretty" -d '
 {
   "query": {
     "fuzzy": {

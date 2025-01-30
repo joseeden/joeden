@@ -150,7 +150,7 @@ Login to the Logstash node, switch to **root** user, and perform the following:
           codec => rubydebug
         }
         elasticsearch {
-            hosts => ["https://192.168.56.101:9200"]                  ## address of elasticsearch node
+            hosts => ["$ELASTIC_ENDPOINT:9200"]                  ## address of elasticsearch node
             index => "s3-logs"
             user => "elastic"
             password => "enter-password-here"
@@ -171,12 +171,20 @@ Login to the Logstash node, switch to **root** user, and perform the following:
 
 Login to the Elasticsearch node and switch to **root** user:
 
-1. Verify that the `s3-logs` index has been created.
+1. First, store the Elasticsearch endpoint and credentials in variables:  
 
     ```bash
-    curl -s -u elastic:<password> \
+    ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+    ELASTIC_USER="your-username"
+    ELASTIC_PW="your-password"
+    ```  
+
+2. Verify that the `s3-logs` index has been created.
+
+    ```bash
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/_cat/indices?v
+    -XGET $ELASTIC_ENDPOINT:9200/_cat/indices?v
     ```
 
     Output:
@@ -196,7 +204,7 @@ Login to the Elasticsearch node and switch to **root** user:
 2. Run a sample query. This should return the apache logs in the sample log file puloaded to S3.
 
     ```bash
-    curl -s -u elastic:<password>  \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
     -H 'Content-Type: application/json' \
-    -XGET "https://127.0.0.1:9200/s3-logs/_search?pretty=true" | jq 
+    -XGET "$ELASTIC_ENDPOINT:9200/s3-logs/_search?pretty=true" | jq 
     ```

@@ -25,10 +25,23 @@ Phrase search looks for terms in the exact order and ensures more accurate resul
 
 For example, you can use this query to search for "Star Wars":
 
+:::info 
+
+Store the Elasticsearch endpoint and credentials in variables:  
+
 ```bash
-curl -s -u elastic:<password> \
+ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+ELASTIC_USER="your-username"
+ELASTIC_PW="your-password"
+```  
+
+:::
+
+
+```bash
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET https://localhost:9200/movies/_search?pretty -d '
+-XGET $ELASTIC_ENDPOINT:9200/movies/_search?pretty -d '
 {
   "query": {
     "match_phrase": {
@@ -49,9 +62,9 @@ Slop allows for flexibility in the word order while still finding relevant resul
 Using the previous example, we can specify `slop` to allow some flexibility in the word order:
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET https://localhost:9200/movies/_search?pretty -d '
+-XGET $ELASTIC_ENDPOINT:9200/movies/_search?pretty -d '
 {
   "query": {
     "match_phrase": {
@@ -79,9 +92,9 @@ Proximity queries allow you to search for terms that are close to each other in 
 To get documents containing the words in your phrase but with closer terms receiving a higher score, you can use a high slop value:
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET https://localhost:9200/movies/_search?pretty -d '
+-XGET $ELASTIC_ENDPOINT:9200/movies/_search?pretty -d '
 {
   "query": {
     "match_phrase": {
@@ -107,18 +120,18 @@ The following examples have been tested on Elasticsearch 8.
 Import the **movies** dataset.
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XPUT https://localhost:9200/_bulk?pretty \
+-XPUT $ELASTIC_ENDPOINT:9200/_bulk?pretty \
 --data-binary @movies.json 
 ```
 
 Run the query below to search for "Star Wars" films.
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET "https://127.0.0.1:9200/movies/_search?pretty=true" -d'
+-XGET "$ELASTIC_ENDPOINT:9200/movies/_search?pretty=true" -d'
 {
   "query": {
     "match": {
@@ -190,9 +203,9 @@ Notice that the query returned both "Star Wars" and "Star Trek" movies. This is 
 Now, let's use phrase matching to get more precise results:
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET "https://127.0.0.1:9200/movies/_search?pretty=true" -d'
+-XGET "$ELASTIC_ENDPOINT:9200/movies/_search?pretty=true" -d'
 {
   "query": {
     "match_phrase": {

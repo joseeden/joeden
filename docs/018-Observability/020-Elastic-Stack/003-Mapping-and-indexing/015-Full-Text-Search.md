@@ -36,12 +36,20 @@ The example below is tested on a running Elasticsearch 8, and uses a dataset con
 
 :::
 
+First, store the Elasticsearch endpoint and credentials in variables:  
+
+```bash
+ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+ELASTIC_USER="your-username"
+ELASTIC_PW="your-password"
+```  
+
 Search the index for "Star Trek" movies.
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET https://localhost:9200/movies/_search?pretty -d '
+-XGET $ELASTIC_ENDPOINT:9200/movies/_search?pretty -d '
 {
     "query": {
         "match": {
@@ -110,9 +118,9 @@ Notice that this query returns documents for both "Star Trek" and "Star Wars". T
 Try another qeury. Search for movies with "sci-fi" genre.
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET https://localhost:9200/movies/_search?pretty -d '
+-XGET $ELASTIC_ENDPOINT:9200/movies/_search?pretty -d '
 {
     "query": {
         "match": {
@@ -198,9 +206,9 @@ This query will return all movies with the "Sci-Fi" genre. Since the index isnâ€
 To enforce an exact match, we need to modify the index mappings. In this case, we will delete the existing index and reindex the data.
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XDELETE https://localhost:9200/movies
+-XDELETE $ELASTIC_ENDPOINT:9200/movies
 ```
 
 Output:
@@ -212,9 +220,9 @@ Output:
 Next, we re-define the mappings. The `genre` field will be of type `keyword` for exact matches, and the `title` field will use the `text` type to allow partial matches. We will also apply the English analyzer to handle stopwords and synonyms specific to the language.
 
 ```bash
-curl -u elastic:<password> \
+curl -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XPUT https://127.0.0.1:9200/movies -d '
+-XPUT $ELASTIC_ENDPOINT:9200/movies -d '
 {
   "mappings": {
     "properties": {
@@ -239,18 +247,18 @@ Output:
 Now, we reindex the data using the [movies.json](@site/assets/elastic-stack/movies.json) file.
 
 ```bash
-curl -u elastic:<password> \
+curl -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XPUT https://localhost:9200/_bulk?pretty \
+-XPUT $ELASTIC_ENDPOINT:9200/_bulk?pretty \
 --data-binary @movies.json 
 ```
 
 Next, search for movies with the "sci-fi" genre.
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET https://localhost:9200/movies/_search?pretty -d '
+-XGET $ELASTIC_ENDPOINT:9200/movies/_search?pretty -d '
 {
     "query": {
         "match": {
@@ -286,9 +294,9 @@ Since we have set the `genre` field to `keyword` type, there will be no partial 
 Finally, search for "star wars" using the `title` field.
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET https://localhost:9200/movies/_search?pretty -d '
+-XGET $ELASTIC_ENDPOINT:9200/movies/_search?pretty -d '
 {
     "query": {
         "match": {

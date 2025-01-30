@@ -149,14 +149,22 @@ N-gram indexing is used to optimize search, allowing for efficient partial match
 
 1. Download the `movies.json` dataset.
 
-   - [movies.json](@site/assets/elastic-stack/movies.json)
+    - [movies.json](@site/assets/elastic-stack/movies.json)
 
-2. Create the Movies Index with a custom autocomplete analyzer. This analyzer uses edge n-grams to enhance search functionality. 
+2. First, store the Elasticsearch endpoint and credentials in variables:  
 
     ```bash
-    curl -s -u elastic:<password> \
+    ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+    ELASTIC_USER="your-username"
+    ELASTIC_PW="your-password"
+    ```  
+
+3. Create the Movies Index with a custom autocomplete analyzer. This analyzer uses edge n-grams to enhance search functionality. 
+
+    ```bash
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XPUT https://localhost:9200/movies?pretty -d '
+    -XPUT $ELASTIC_ENDPOINT:9200/movies?pretty -d '
     {
       "settings": {
         "analysis": {
@@ -192,12 +200,12 @@ N-gram indexing is used to optimize search, allowing for efficient partial match
     } 
     ```
 
-3. Test the autocomplete analyzer on the term "Sta" and check the n-gram tokenization:
+4. Test the autocomplete analyzer on the term "Sta" and check the n-gram tokenization:
 
     ```bash
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H "Content-Type: application/json" \
-    -XGET https://127.0.0.1:9200/movies/_analyze?pretty -d '
+    -XGET $ELASTIC_ENDPOINT:9200/movies/_analyze?pretty -d '
     {
       "analyzer": "autocomplete",
       "text": "Sta"
@@ -234,12 +242,12 @@ N-gram indexing is used to optimize search, allowing for efficient partial match
     }  
     ```
 
-4. Map the `autocomplete` analyzer to the `title` field of the movies index to ensure it's used during indexing:
+5. Map the `autocomplete` analyzer to the `title` field of the movies index to ensure it's used during indexing:
 
     ```bash
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H "Content-Type: application/json" \
-    -XPUT https://127.0.0.1:9200/movies/_mapping?pretty -d'
+    -XPUT $ELASTIC_ENDPOINT:9200/movies/_mapping?pretty -d'
     {
       "properties": {
          "title": {
@@ -258,21 +266,21 @@ N-gram indexing is used to optimize search, allowing for efficient partial match
     }     
     ```
 
-5. Import the `movies.json` dataset into Elasticsearch using the bulk API:
+6. Import the `movies.json` dataset into Elasticsearch using the bulk API:
 
     ```bash
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XPUT https://localhost:9200/_bulk?pretty \
+    -XPUT $ELASTIC_ENDPOINT:9200/_bulk?pretty \
     --data-binary @movies.json | jq 
     ```
 
-6. Finally, execute a search query using the `standard` analyzer on the query side, while the `autocomplete` analyzer is used on the index side. This ensures the query does not split into n-grams:
+7. Finally, execute a search query using the `standard` analyzer on the query side, while the `autocomplete` analyzer is used on the index side. This ensures the query does not split into n-grams:
 
     ```bash
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XGET https://127.0.0.1:9200/movies/_search?pretty -d'
+    -XGET $ELASTIC_ENDPOINT:9200/movies/_search?pretty -d'
     {
       "query": {
         "match": {

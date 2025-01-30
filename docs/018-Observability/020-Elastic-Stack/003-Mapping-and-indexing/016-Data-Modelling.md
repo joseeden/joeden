@@ -92,13 +92,21 @@ You also need to [install jq](https://www.scaler.com/topics/linux-jq/)
 
 #### Step 1: Create the Mapping
 
+First, store the Elasticsearch endpoint and credentials in variables:  
+
+```bash
+ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+ELASTIC_USER="your-username"
+ELASTIC_PW="your-password"
+```  
+
 Start by creating the mapping for the `series` index with a `join` field that will support the parent-child relationship between franchises and films:
 
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XPUT https://127.0.0.1:9200/series -d '
+-XPUT $ELASTIC_ENDPOINT:9200/series -d '
 {
   "mappings": {
     "properties": {
@@ -133,9 +141,9 @@ Download the dataset below:
 Populate the index with the dataset using the command below.
 
 ```bash
-curl -u elastic:<password> \
+curl -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XPUT https://localhost:9200/_bulk?pretty \
+-XPUT $ELASTIC_ENDPOINT:9200/_bulk?pretty \
 --data-binary @series.json 
 ```
 
@@ -144,9 +152,9 @@ curl -u elastic:<password> \
 Now that the data is indexed, we can search for all movies belonging to the Star Wars franchise using the `has_parent` query.
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
   -H 'Content-Type: application/json' \
-  -X GET "https://localhost:9200/series/_search?pretty" -d '{
+  -X GET "$ELASTIC_ENDPOINT:9200/series/_search?pretty" -d '{
     "query": {
       "has_parent": {
         "parent_type": "franchise",
@@ -236,9 +244,9 @@ It will return...
 You can also reverse the query to find the franchise associated with a specific film. For example, searching for the franchise associated with "A New Hope":
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
   -H 'Content-Type: application/json' \
-  -X GET "https://localhost:9200/series/_search?pretty" -d '{
+  -X GET "$ELASTIC_ENDPOINT:9200/series/_search?pretty" -d '{
     "query": {
       "has_child": {
         "type": "film",

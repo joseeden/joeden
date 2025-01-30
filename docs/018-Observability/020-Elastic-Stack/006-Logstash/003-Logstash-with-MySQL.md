@@ -442,7 +442,7 @@ Login to the Logstash node and switch to **root** user:
     output {
         stdout { codec => json_lines }
         elasticsearch {
-            hosts => ["https://192.168.56.101:9200"]    ## address of elasticsearch node
+            hosts => ["$ELASTIC_ENDPOINT:9200"]    ## address of elasticsearch node
             index => "movielens-sql"
             user => "elastic"
             password => "enter-password-here"
@@ -479,12 +479,20 @@ Login to the Logstash node and switch to **root** user:
 
 Login to the Elasticsearch node and switch to **root** user:
 
-1. Verify that the `movielens-sql` index has been created.
+1. First, store the Elasticsearch endpoint and credentials in variables:  
 
     ```bash
-    curl -s -u elastic:<password> \
+    ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+    ELASTIC_USER="your-username"
+    ELASTIC_PW="your-password"
+    ```  
+
+2. Verify that the `movielens-sql` index has been created.
+
+    ```bash
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/_cat/indices?v
+    -XGET $ELASTIC_ENDPOINT:9200/_cat/indices?v
     ```
 
     Output:
@@ -496,12 +504,12 @@ Login to the Elasticsearch node and switch to **root** user:
     yellow open   shakespeare-sample Z1Akxga4SqKT8mmrhScvyw   1   1          0            0       249b           249b         249b 
     ```
 
-2. To search for a specific movie, run the following:
+3. To search for a specific movie, run the following:
 
     ```bash
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XGET 'https://127.0.0.1:9200/movielens-sql/_search?q=title:Terminator&pretty' | jq
+    -XGET $ELASTIC_ENDPOINT:9200/movielens-sql/_search?q=title:Terminator&pretty | jq
     ```
 
     Sample output:

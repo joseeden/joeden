@@ -108,12 +108,20 @@ Login to the Logstash node, switch to **root** user, and perform the following:
 
 Login to the Elasticsearch node and switch to **root** user:
 
-1. Verify that the `nginx-access` index has been created. 
+1. First, store the Elasticsearch endpoint and credentials in variables:  
 
     ```bash
-    curl -s -u elastic:<password>  \
+    ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+    ELASTIC_USER="your-username"
+    ELASTIC_PW="your-password"
+    ```  
+
+2. Verify that the `nginx-access` index has been created. 
+
+    ```bash
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/_cat/indices?v
+    -XGET $ELASTIC_ENDPOINT:9200/_cat/indices?v
     ```
 
     Output:
@@ -124,12 +132,12 @@ Login to the Elasticsearch node and switch to **root** user:
     yellow open   demo-grok    dBhwHfiJSty9Gog0vwWQXw   1   1          4            0     12.6kb         12.6kb       12.6kb
     ```             
 
-2. Verify index data. 
+3. Verify index data. 
 
     ```bash
-    curl -s -u elastic:<password>  \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/nginx-access/_search?pretty=true -d'
+    -XGET $ELASTIC_ENDPOINT:9200/nginx-access/_search?pretty=true -d'
     {
       "size": 1,
       "track_total_hits": true,
@@ -206,9 +214,9 @@ IIS server logs are used for monitoring web traffic, identifying potential issue
 3. Log in to the Elasticsearch node as the root user and verify that the `iis-server-log` index has been created:
 
     ```bash
-    curl -s -u elastic:<password>  \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/_cat/indices?v
+    -XGET $ELASTIC_ENDPOINT:9200/_cat/indices?v
     ```
 
     Output:
@@ -222,9 +230,9 @@ IIS server logs are used for monitoring web traffic, identifying potential issue
 4. To verify the data in the `iis-server-log` index:
 
     ```bash
-    curl -s -u elastic:<password>  \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/iis-server-log/_search?pretty=true -d'
+    -XGET $ELASTIC_ENDPOINT:9200/iis-server-log/_search?pretty=true -d'
     {
       "size": 1, 
       "track_total_hits": true,
@@ -315,9 +323,9 @@ MongoDB logs are useful for tracking the operational status, performance, and is
 3. Log in to the Elasticsearch node as the **root** user and verify that the `mongodb-log` index has been created:
 
     ```bash
-    curl -s -u elastic:<password>  \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/_cat/indices?v
+    -XGET $ELASTIC_ENDPOINT:9200/_cat/indices?v
     ```
 
     Output:
@@ -332,9 +340,9 @@ MongoDB logs are useful for tracking the operational status, performance, and is
 4. To verify the data inside the `mongodb-log` index, use the following query:
 
     ```bash
-    curl -s -u elastic:<password>  \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/mongodb-log/_search?pretty=true -d'
+    -XGET $ELASTIC_ENDPOINT:9200/mongodb-log/_search?pretty=true -d'
     {
       "size": 1, 
       "track_total_hits": true,
@@ -419,9 +427,9 @@ In this scenario, we will use Apache access logs.
 3. Log in to the Elasticsearch node as the **root** user and verify that the `apache-access-log` index has been created:
 
     ```bash
-    curl -s -u elastic:<password>  \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/_cat/indices?v
+    -XGET $ELASTIC_ENDPOINT:9200/_cat/indices?v
     ```
 
     Output:
@@ -437,9 +445,9 @@ In this scenario, we will use Apache access logs.
 4. Use the following query to verify the data inside the `apache-access-log`index:
 
     ```bash
-    curl -s -u elastic:<password>  \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/apache-access-log/_search?pretty=true -d'
+    -XGET $ELASTIC_ENDPOINT:9200/apache-access-log/_search?pretty=true -d'
     {
       "size": 10,
       "track_total_hits": true,
@@ -463,7 +471,7 @@ In this scenario, we will use Apache access logs.
 Use the command below to delete the indices after the lab. Make sure to replace `enter-name` with the index name.
 
 ```bash
-curl -s -u elastic:<password>  \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
 -H 'Content-Type: application/json' \
--XDELETE "https://127.0.0.1:9200/enter-name" | jq
+-XDELETE "$ELASTIC_ENDPOINT:9200/enter-name" | jq
 ```

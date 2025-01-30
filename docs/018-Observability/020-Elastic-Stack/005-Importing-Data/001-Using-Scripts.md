@@ -89,19 +89,32 @@ Steps:
   
 4. Import the new dataset into Elasticsearch.
 
+    :::info 
+
+    Store the Elasticsearch endpoint and credentials in variables:  
+
     ```bash
-    curl -s -u elastic:<password> \
+    ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+    ELASTIC_USER="your-username"
+    ELASTIC_PW="your-password"
+    ```  
+
+    :::
+
+
+    ```bash
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XPUT https://localhost:9200/_bulk?pretty \
+    -XPUT $ELASTIC_ENDPOINT:9200/_bulk?pretty \
     --data-binary @other-movies.json | jq 
     ```
 
 5. Now try to query for a movie title.
 
     ```bash
-    curl -s -u elastic:<password> \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
-    -XGET 'https://localhost:9200/movies/_search?q=shrek' | jq
+    -XGET $ELASTIC_ENDPOINT:9200/movies/_search?q=shrek | jq
     ```
 
     Output:

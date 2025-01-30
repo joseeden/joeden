@@ -114,7 +114,7 @@ Steps to Process ELB Logs:
     output {
         stdout { codec => rubydebug }
         elasticsearch {
-            hosts => ["https://192.168.56.101:9200"]                  ## address of elasticsearch node
+            hosts => ["$ELASTIC_ENDPOINT:9200"]                  ## address of elasticsearch node
             index => "aws-elb-logs"
             user => "elastic"
             password => "enter-password-here"
@@ -133,10 +133,22 @@ Steps to Process ELB Logs:
 
 3. Log in to the Elasticsearch node as the **root** user and verify that the `aws-alb-logs` index has been created:
 
+    :::info 
+    
+    Store the Elasticsearch endpoint and credentials in variables:  
+
     ```bash
-    curl -s -u elastic:<password>  \
+    ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+    ELASTIC_USER="your-username"
+    ELASTIC_PW="your-password"
+    ```  
+
+    :::
+
+    ```bash
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/_cat/indices?v
+    -XGET $ELASTIC_ENDPOINT:9200/_cat/indices?v
     ```
 
     Output:
@@ -149,9 +161,9 @@ Steps to Process ELB Logs:
 4. Confirm that the logs has been parsed, ingested, and indexed.
 
     ```bash
-    curl -s -u elastic:<password>  \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/aws-elb-logs/_search?pretty=true -d'
+    -XGET $ELASTIC_ENDPOINT:9200/aws-elb-logs/_search?pretty=true -d'
     {
       "size": 1,
       "query": {
@@ -272,7 +284,7 @@ Steps to Process ALB Logs:
     output {
         stdout { codec => rubydebug }
         elasticsearch {
-            hosts => ["https://192.168.56.101:9200"]                  ## address of elasticsearch node
+            hosts => ["$ELASTIC_ENDPOINT:9200"]                  ## address of elasticsearch node
             index => "aws-alb-logs"
             user => "elastic"
             password => "enter-password-here"
@@ -292,9 +304,9 @@ Steps to Process ALB Logs:
 3. Log in to the Elasticsearch node as the **root** user and verify the `aws-alb-logs` index:
 
     ```bash
-    curl -s -u elastic:<password>  \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/_cat/indices?v
+    -XGET $ELASTIC_ENDPOINT:9200/_cat/indices?v
     ```
 
     Output:
@@ -308,9 +320,9 @@ Steps to Process ALB Logs:
 4. Ensure logs are correctly parsed and indexed:
 
     ```bash
-    curl -s -u elastic:<password>  \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/aws-alb-logs/_search?pretty=true -d'
+    -XGET $ELASTIC_ENDPOINT:9200/aws-alb-logs/_search?pretty=true -d'
     {
       "size": 1,
       "query": {
@@ -444,7 +456,7 @@ Steps to Process ALB Logs:
     output {
         stdout { codec => rubydebug }
         elasticsearch {
-            hosts => ["https://192.168.56.101:9200"]                  ## address of elasticsearch node
+            hosts => ["$ELASTIC_ENDPOINT:9200"]                  ## address of elasticsearch node
             index => "aws-cloudfront-logs"
             user => "elastic"
             password => "enter-password-here"
@@ -464,9 +476,9 @@ Steps to Process ALB Logs:
 3. Log in to the Elasticsearch node as the **root** user and verify the `aws-cloudfront-logs` index:
 
     ```bash
-    curl -s -u elastic:<password>  \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/_cat/indices?v
+    -XGET $ELASTIC_ENDPOINT:9200/_cat/indices?v
     ```
 
     Output:
@@ -481,9 +493,9 @@ Steps to Process ALB Logs:
 4. Check the parsed logs in Elasticsearch:
 
     ```bash
-    curl -s -u elastic:<password>  \
+    curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
     -H 'Content-Type: application/json' \
-    -XGET https://localhost:9200/aws-cloudfront-logs/_search?pretty=true -d'
+    -XGET $ELASTIC_ENDPOINT:9200/aws-cloudfront-logs/_search?pretty=true -d'
     {
       "query": {
         "bool": {
@@ -559,7 +571,7 @@ Steps to Process ALB Logs:
 Use the command below to delete the indices after the lab. Make sure to replace `enter-name` with the index name.
 
 ```bash
-curl -s -u elastic:<password>  \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
 -H 'Content-Type: application/json' \
--XDELETE "https://127.0.0.1:9200/enter-name" | jq
+-XDELETE "$ELASTIC_ENDPOINT:9200/enter-name" | jq
 ```

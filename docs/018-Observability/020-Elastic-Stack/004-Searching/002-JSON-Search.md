@@ -26,10 +26,23 @@ Request body searches in Elasticsearch use structured JSON to define search para
 
 Here’s an example of a request body search where we query for movies with "Star" in the title:
 
+:::info 
+
+Store the Elasticsearch endpoint and credentials in variables:  
+
 ```bash
-curl -s -u elastic:<password> \
+ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+ELASTIC_USER="your-username"
+ELASTIC_PW="your-password"
+```  
+
+:::
+
+
+```bash
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET https://localhost:9200/movies/_search?pretty -d '
+-XGET $ELASTIC_ENDPOINT:9200/movies/_search?pretty -d '
 {
   "query": {
     "match": {
@@ -38,6 +51,7 @@ curl -s -u elastic:<password> \
   }
 }' | jq
 ```
+
 
 
 ## Queries and Filters  
@@ -54,9 +68,9 @@ Filters are more efficient and cacheable This makes them suitable for repeated o
 Suppose you want to search for action movies released after 2000 and group results by genre. You can use the following query:
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET "https://localhost:9200/movies/_search?pretty" \
+-XGET "$ELASTIC_ENDPOINT:9200/movies/_search?pretty" \
 -d '{
   "query": {
     "bool": {
@@ -88,9 +102,9 @@ The `must_not` clause excludes documents that match certain conditions. It is of
 In the example below, the query searches for Sci-Fi movies released between 2000 and 2015 but excludes any with "trek" in the title:  
 
 ```bash
-curl -s -u elastic:<password> \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW \
 -H 'Content-Type: application/json' \
--XGET "https://localhost:9200/movies/_search?pretty" -d '
+-XGET "$ELASTIC_ENDPOINT:9200/movies/_search?pretty" -d '
 {
   "query": {
     "bool": {

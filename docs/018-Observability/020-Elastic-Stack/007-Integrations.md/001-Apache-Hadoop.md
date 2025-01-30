@@ -387,7 +387,7 @@ Login to the Elasticsearch node and run the following command to create an Elast
 ```bash
 curl -s -u elastic:elastic \
 -H 'Content-Type: application/json' \
--X PUT "https://192.168.56.101:9200/logs?pretty" -d'  
+-X PUT "$ELASTIC_ENDPOINT:9200/logs?pretty" -d'  
 {
   "mappings": {
     "properties": {
@@ -418,7 +418,7 @@ Another way it to check the indices:
 
 ```bash 
 curl -u elastic:elastic --insecure \
--X GET "https://192.168.56.101:9200/_cat/indices?v"
+-X GET "$ELASTIC_ENDPOINT:9200/_cat/indices?v"
 ```
 
 Output:
@@ -458,7 +458,7 @@ Verify the index is created:
 
 ```bash
 curl -u elastic:elastic --insecure \
--X GET "https://192.168.56.101:9200/_cat/indices?v"
+-X GET "$ELASTIC_ENDPOINT:9200/_cat/indices?v"
 ```
 
 Output:
@@ -472,6 +472,17 @@ yellow open   logs  wpxLIsW1TCOqAnpUl2SGKg   1   1      10000                   
 
 TODO....
 
+:::info 
+
+Store the Elasticsearch endpoint and credentials in variables:  
+
+```bash
+ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+ELASTIC_USER="your-username"
+ELASTIC_PW="your-password"
+```  
+
+:::
 
 
 ## Cleanup 
@@ -479,7 +490,7 @@ TODO....
 Use the command below to delete the indices after the lab. Make sure to replace `enter-name` with the index name.
 
 ```bash
-curl -s -u elastic:<password>  \
+curl -s -u $ELASTIC_USER:$ELASTIC_PW  \
 -H 'Content-Type: application/json' \
--XDELETE "https://127.0.0.1:9200/enter-name" | jq
+-XDELETE "$ELASTIC_ENDPOINT:9200/enter-name" | jq
 ```
