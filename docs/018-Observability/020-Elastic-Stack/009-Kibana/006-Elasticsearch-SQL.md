@@ -37,13 +37,31 @@ curl -XPOST https://add-your-endpoint-here/_xpack/sql?format=txt -d '
 
 Elasticsearch SQL processes queries in several steps:  
 
-1. Parses the SQL query into an internal abstract syntax tree (AST) and validates it.  
-2. Analyzes the query to match tables, columns, and functions with indices, generating a logical execution plan.  
-3. Optimizes the query by removing redundant operations and creating a physical execution plan.  
-4. Executes the physical plan to retrieve the requested data.  
-5. Returns the results to the client.  
+1. **Parser**: Converts the SQL query into an internal abstract syntax tree (AST) and validates it.  
+2. **Analyzer**: Matches tables, columns, and functions to the underlying indices and creates a logical execution plan.  
+3. **Query Planner**: Optimizes the logical plan by removing redundant operations and generates a physical plan.  
+4. **Query Executor**: Runs the physical plan to execute the query. Returns the query results to the client.  
 
-...diagram describing the steps..
+Here’s a diagram illustrating the Elasticsearch SQL query execution process:
+
+```graphql
+SQL Query  
+    │  
+    ▼  
+Parser  
+    │  
+    ▼  
+Analyzer  
+    │  
+    ▼  
+Query Planner  
+    │  
+    ▼  
+Query Executor  
+    │  
+    ▼  
+Query Results  
+```
 
 
 ## Pre-requisites 
