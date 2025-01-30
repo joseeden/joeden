@@ -36,7 +36,6 @@ Setup details:
 
 - The nodes are created in VirtualBox using Vagrant.
 - An SSH key is generated on the Elasticsearch node
- 
 - The Logstash node can reach Elasticsearch node via port 9200 
 - The Logstash node needs to have internet access for this lab.
 

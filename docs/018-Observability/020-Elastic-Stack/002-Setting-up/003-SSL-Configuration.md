@@ -39,8 +39,17 @@ xpack.security.transport.ssl:
   truststore.path: certs/transport.p12 
 ```
 
+:::info 
 
-## Built-in Certificates 
+I revisited this page and chose to use my own CA and self-signed certificates. 
+
+You can skip the next sections and go directly to the [Using Self-signed Certificates](#using-self-signed-certificates) section.
+
+:::
+
+## Following Elastic Documentation
+
+### Built-in Certificates 
 
 These certificates are typically self-signed by Elasticsearch during the initial setup if no custom certificates are provided. 
 
@@ -60,7 +69,7 @@ These certificates are typically self-signed by Elasticsearch during the initial
     - Used between Elasticsearch nodes in the cluster.
 
 
-## Custom Certificates
+### Custom Certificates
 
 You can replace the auto-generated server certificates with your own custom certificates by modifying the configuration file.
 
@@ -80,7 +89,7 @@ For node-to-node encryption in Elasticsearch:
 - Secure the private key to prevent unauthorized access.
 
 
-## Trust the CA Certificate
+### Trust the CA Certificate
 
 When configuring SSL/TLS for secure communication between Elasticsearch and clients, it is important to trust the Certificate Authority (CA) certificate to ensure the authenticity of the server. 
 
@@ -120,8 +129,21 @@ When configuring SSL/TLS for secure communication between Elasticsearch and clie
 
 5. Verify that the SSL certificate works.
 
+
+    :::info 
+
+    **Store the Elasticsearch endpoint and credentials in variables**
+
+    ```bash 
+    ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+    ELASTIC_USER="your-username"
+    ELASTIC_PW="your-password"
+    ```
+
+    :::
+
     ```bash
-    curl -u elastic:<add-password>  $ELASTIC_ENDPOINT:9200
+    curl -u $ELASTIC_USER:$ELASTIC_PW  $ELASTIC_ENDPOINT:9200
     ```
 
     Output:
@@ -147,7 +169,7 @@ When configuring SSL/TLS for secure communication between Elasticsearch and clie
     ```
 
 
-## Share the CA Certificate to Other VMs (Optional)
+### Share the CA Certificate to Other VMs (Optional)
 
 To enable secure communication between Elasticsearch and other VMs, you need to share and configure the Elasticsearch SSL certificate on those VMs. 
 
@@ -207,13 +229,6 @@ To use the Elasticsearch SSL certificate on other VMs, follow these steps:
 9. From the other VM, test the connection:
 
     ```bash
-    ## Store the Elasticsearch endpoint and credentials in variables:  
-    ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
-    ELASTIC_USER="your-username"
-    ELASTIC_PW="your-password"
-    ```
-
-    ```bash
     $ curl -s -k  -u $ELASTIC_USER:$ELASTIC_PW $ELASTIC_ENDPOINT:9200 | jq
 
     {
@@ -238,7 +253,7 @@ To use the Elasticsearch SSL certificate on other VMs, follow these steps:
     Elasticsearch node has the IP: 192.168.56.101
 
 
-## Creating a Truststore
+### Creating a Truststore
 
 In Logstash, you may need to configure a truststore if you're using SSL/TLS communication with Elasticsearch, especially when working with self-signed certificates. A truststore ensures that Logstash can trust the server certificate from Elasticsearch for secure communication.
 
@@ -253,7 +268,7 @@ If you have a self-signed certificate, you'll need to convert your server’s ce
     Replace MYURL with your server's URL and MYPORT with the port number (usually 443 for HTTPS). For example:
 
     ```bash
-    openssl s_client -showcerts -connect 192.168.56.101:9200 </dev/null 2>/dev/null  | openssl x509 -outform PEM > downloaded_cert.pem 
+    openssl s_client -showcerts -connect 127.0.0.1:9200 </dev/null 2>/dev/null  | openssl x509 -outform PEM > downloaded_cert.pem 
     ```
 
     This will save the certificate in the `downloaded_cert.pem` file.
@@ -267,3 +282,342 @@ If you have a self-signed certificate, you'll need to convert your server’s ce
     You’ll be prompted to enter a password for the keystore. Store this password in a secure location.
 
 This truststore will allow Logstash to securely communicate with Elasticsearch using SSL/TLS by trusting the server’s certificate.    
+
+
+## Using Self-signed Certificates
+
+This guide explains the process for generating and configuring SSL certificates for Elasticsearch
+
+### Generate the Root Certificate Authority (CA)
+
+Generate the certificates ensuring the CA is properly set:
+
+```bash
+openssl req -x509 -nodes -new -sha256 -days 365 -subj "/CN=Elasticsearch-CA" \
+    -keyout /etc/elasticsearch/certs/ca.key \
+    -out /etc/elasticsearch/certs/ca.crt
+```
+
+### Create the `openssl.cnf` Configuration File
+
+1. The `openssl.cnf` file is essential for configuring OpenSSL to generate certificates, keys, and CSRs.
+
+    ```bash
+    vi /etc/elasticsearch/certs/openssl.cnf
+    ```
+
+2. Add the following configuration content to the file:
+
+    ```ini
+    [ req ]
+    distinguished_name = req_distinguished_name
+    x509_extensions = v3_ca
+    prompt = no
+
+    [ req_distinguished_name ]
+    C = US
+    ST = Some-State
+    O = Internet Widgits Pty Ltd
+    CN = 127.0.0.1
+
+    [ v3_ca ]
+    subjectAltName = @alt_names
+
+    [ alt_names ]
+    IP.1 = 127.0.0.1
+    DNS.1 = localhost
+    ``` 
+
+3. Set Permissions for `openssl.cnf`
+
+    ```bash
+    chown root:elasticsearch /etc/elasticsearch/certs/openssl.cnf
+    chmod 644 /etc/elasticsearch/certs/openssl.cnf
+    ```
+
+4. Verify the configuration file.
+
+    ```bash
+    openssl req -config /etc/elasticsearch/certs/openssl.cnf \
+    -new -keyout /etc/elasticsearch/certs/test.key \
+    -out /etc/elasticsearch/certs/test.csr
+    ```
+
+    Provide PEM pass phrase when prompted.
+
+    If successful, this will generate a test private key and CSR without errors. Delete test files.
+
+    ```bash
+    rm -rf test* 
+    ```
+
+### Generate the Certificate Signing Request (CSR)
+
+1. Generate the private key and CSR for Elasticsearch. Provide PEM pass phrase when prompted.
+
+    ```bash
+    openssl req -new -nodes -newkey rsa:4096 \
+    -keyout /etc/elasticsearch/certs/elasticsearch.key \
+    -out /etc/elasticsearch/certs/elasticsearch.csr \
+    -config /etc/elasticsearch/certs/openssl.cnf
+    ```
+
+3. Use the root CA's private key and certificate to sign the Elasticsearch CSR:
+
+    ```bash
+    openssl x509 -req \
+    -in /etc/elasticsearch/certs/elasticsearch.csr \
+    -CA /etc/elasticsearch/certs/ca.crt \
+    -CAkey /etc/elasticsearch/certs/ca.key \
+    -CAcreateserial -days 365 \
+    -out /etc/elasticsearch/certs/elasticsearch.crt 
+    ```
+
+    This will sign the CSR and generate the `elasticsearch.crt` certificate.
+
+    Expected output:
+
+    ```bash
+    Certificate request self-signature ok
+    subject=C = US, ST = Some-State, O = Internet Widgits Pty Ltd, CN = 127.0.0.1
+    root@node1:/etc/elasticsearch/certs# ls -la      
+    ```
+
+### Verify the Generated Files
+
+1. At this point, we now have the following files.
+
+    ```bash
+    $  ls -la
+
+    -rw-r--r-- 1 root root          1269 Jan 30 14:28 ca.crt
+    -rw------- 1 root root          1874 Jan 30 14:27 ca.key
+    -rw-r--r-- 1 root root          1180 Jan 30 14:33 elasticsearch.crt
+    -rw-r--r-- 1 root root           985 Jan 30 14:29 elasticsearch.csr
+    -rw------- 1 root root          1874 Jan 30 14:28 elasticsearch.key
+    -rw-r--r-- 1 root elasticsearch  272 Jan 30 14:26 openssl.cnf
+    ```
+
+2. Verify the Root Certificate.
+
+    ```bash
+    openssl x509 -noout -text -in /etc/elasticsearch/certs/ca.crt
+    ```
+
+    Look for the X509v3 Subject Alternative Name field. If it's missing, you need to regenerate the certificate with the correct SAN entries.
+
+    ```bash
+     X509v3 extensions:
+        X509v3 Subject Alternative Name:
+            IP Address:127.0.0.1, DNS:localhost
+        X509v3 Subject Key Identifier:
+            90:E8:C1:C0:E0:EE:20:D3:99:56:50:40:B1:4C:27:5D:EF:07:FE:CE 
+    ```
+
+3. Verify the signed Elasticsearch Certificate.
+
+    ```bash
+    openssl x509 -noout -text -in /etc/elasticsearch/certs/elasticsearch.crt
+    ```
+
+4. Verify the CSR.
+
+    ```bash
+    openssl req -noout -text -in /etc/elasticsearch/certs/elasticsearch.csr
+    ```
+
+5. Check if the certificate details match the Elasticsearch certificate:
+
+    ```bash
+    openssl s_client -connect 127.0.0.1:9200 -CAfile /etc/elasticsearch/certs/ca.crt
+    ```
+
+6. Another way to verify is to check if key and certificate match:
+
+    ```bash
+    openssl x509 -noout -modulus -in /etc/elasticsearch/certs/elasticsearch.crt | openssl md5
+    openssl rsa -noout -modulus -in /etc/elasticsearch/certs/elasticsearch.key | openssl md5
+    ```
+
+    The outputs should be identical. If they differ, the private key does not match the certificate.
+
+### Convert the Private Key to PKCS#8 Format (Optional)
+
+If the key is in an incompatible format, convert it to PKCS#8:
+
+```bash
+openssl pkcs8 -topk8 -nocrypt \
+-in /etc/elasticsearch/certs/elasticsearch.key \
+-out /etc/elasticsearch/certs/elasticsearch.key.pkcs8
+
+mv /etc/elasticsearch/certs/elasticsearch.key.pkcs8 /etc/elasticsearch/certs/elasticsearch.key
+chmod 600 /etc/elasticsearch/certs/elasticsearch.key
+```
+
+### Create the PKCS#12 File (Optional)
+
+If needed, create a PKCS#12 file that combines the Elasticsearch certificate and its private key.
+
+```bash
+openssl pkcs12 -export \
+-inkey /etc/elasticsearch/certs/elasticsearch.key \
+-in /etc/elasticsearch/certs/elasticsearch.crt \
+-certfile /etc/elasticsearch/certs/ca.crt \
+-out /etc/elasticsearch/certs/elasticsearch.p12
+``` 
+
+<!-- ```bash
+openssl pkcs12 -export \
+-inkey /etc/elasticsearch/certs/elasticsearch.key \
+-in /etc/elasticsearch/certs/elasticsearch.crt \
+-CAfile /etc/elasticsearch/certs/ca.crt -caname root \
+-out /etc/elasticsearch/certs/elasticsearch.p12 
+``` -->
+
+You will be prompted for a password for the `.p12` file.
+
+
+
+### Set Appropriate Permissions and Ownership
+
+Ensure that the certificate files are properly secured by setting the correct permissions:
+
+```bash
+chown root:elasticsearch /etc/elasticsearch/certs/*.crt 
+chown root:elasticsearch /etc/elasticsearch/certs/*.key
+chown root:elasticsearch /etc/elasticsearch/certs/*.p12
+chmod 644 /etc/elasticsearch/certs/*.key
+chmod 644 /etc/elasticsearch/certs/*.crt
+chmod 644 /etc/elasticsearch/certs/*.p12
+```
+
+This ensures the certificates and private keys are readable only by root and the `elasticsearch` group.
+
+### Manually Trust the CA Certificate
+
+To ensure the root certificate is trusted by systems or browsers, you should add it to the trusted certificate store.
+
+To add the CA certificate to the system’s trust store (for Ubuntu):
+
+```bash
+cp /etc/elasticsearch/certs/ca.crt /usr/share/ca-certificates/elastic-ca.crt 
+dpkg-reconfigure ca-certificates
+update-ca-certificates
+```
+
+This will install the CA certificate into the system’s trusted store.
+
+
+
+### Configure Elasticsearch
+
+Edit the Elasticsearch configuration file to enable security features.
+
+```bash
+vi /etc/elasticsearch/elasticsearch.yml
+```
+
+Add these settings:
+
+```bash
+# Enable security features
+xpack.security.enabled: true
+#xpack.security.enabled: false
+
+xpack.security.enrollment.enabled: true
+#xpack.security.enrollment.enabled: false
+
+# Enable encryption for HTTP API client connections, such as Kibana, Logstash, and Agents
+xpack.security.http.ssl:
+  enabled: true
+  certificate_authorities: [ "/etc/elasticsearch/certs/ca.crt" ]
+  keystore.path: /etc/elasticsearch/certs/elasticsearch.p12
+  keystore.password: elastic
+  #keystore.path: certs/http.p12
+  #truststore.path: /etc/elasticsearch/certs/truststore.p12
+  #truststore.password: elastic
+
+# Enable encryption and mutual authentication between cluster nodes
+xpack.security.transport.ssl:
+  enabled: true
+  verification_mode: certificate
+  certificate: "/etc/elasticsearch/certs/elasticsearch.crt"
+  key: "/etc/elasticsearch/certs/elasticsearch.key"
+  certificate_authorities: [ "/etc/elasticsearch/certs/ca.crt" ]
+  #keystore.path: certs/transport.p12
+  #truststore.path: certs/transport.p12
+  #verification_mode: certificate
+  #keystore.path: /etc/elasticsearch/certs/elasticsearch.p12
+  #truststore.path: /etc/elasticsearch/certs/truststore.p12
+  #keystore.password: elastic
+  #truststore.password: elastic 
+```
+
+### Restart and Verify 
+
+Restart Elasticsearch and check its status:
+
+```bash
+systemctl restart elasticsearch 
+systemctl status elasticsearch 
+```
+
+Verify the connection. First, define environment variables for authentication:
+
+```bash 
+ELASTIC_ENDPOINT="https://your-elasticsearch-endpoint"
+ELASTIC_USER="your-username"
+ELASTIC_PW="your-password"
+```
+
+Use curl with `-k` to bypass certificate validation:
+
+```bash
+curl -k -u $ELASTIC_USER:$ELASTIC_PW -XGET $ELASTIC_ENDPOINT:9200
+```
+
+Output:
+
+```bash
+{
+  "name" : "node1",
+  "cluster_name" : "elasticsearch",
+  "cluster_uuid" : "UYlLyPlmRkGGSHGZQxUIhw",
+  "version" : {
+    "number" : "8.17.0",
+    "build_flavor" : "default",
+    "build_type" : "deb",
+    "build_hash" : "2b6a7fed44faa321997703718f07ee0420804b41",
+    "build_date" : "2024-12-11T12:08:05.663969764Z",
+    "build_snapshot" : false,
+    "lucene_version" : "9.12.0",
+    "minimum_wire_compatibility_version" : "7.17.0",
+    "minimum_index_compatibility_version" : "7.0.0"
+},
+```
+
+Now remove `-k` to validate the certificate. The output should remain the same:
+
+```bash
+curl -u $ELASTIC_USER:$ELASTIC_PW -XGET $ELASTIC_ENDPOINT:9200
+```
+
+Output:
+
+```bash
+{
+  "name" : "node1",
+  "cluster_name" : "elasticsearch",
+  "cluster_uuid" : "UYlLyPlmRkGGSHGZQxUIhw",
+  "version" : {
+    "number" : "8.17.0",
+    "build_flavor" : "default",
+    "build_type" : "deb",
+    "build_hash" : "2b6a7fed44faa321997703718f07ee0420804b41",
+    "build_date" : "2024-12-11T12:08:05.663969764Z",
+    "build_snapshot" : false,
+    "lucene_version" : "9.12.0",
+    "minimum_wire_compatibility_version" : "7.17.0",
+    "minimum_index_compatibility_version" : "7.0.0"
+},
+```

@@ -84,7 +84,7 @@ Steps:
 3. Run the Python script and forward it to a file.
 
     ```bash
-    python3 movies-to-json.py > other-movies.json 
+    python3 movies-to-json.py > movies-2.json 
     ```
   
 4. Import the new dataset into Elasticsearch.
@@ -106,7 +106,7 @@ Steps:
     curl -s -u $ELASTIC_USER:$ELASTIC_PW \
     -H 'Content-Type: application/json' \
     -XPUT $ELASTIC_ENDPOINT:9200/_bulk?pretty \
-    --data-binary @other-movies.json | jq 
+    --data-binary @movies-2.json | jq 
     ```
 
 5. Now try to query for a movie title.
