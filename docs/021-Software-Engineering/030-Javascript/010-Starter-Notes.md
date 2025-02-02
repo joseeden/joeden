@@ -260,23 +260,12 @@ Javscript will completely ignore the comments during execution.
   - **Single-line comments**: Use `//` to comment out a line.
   - **Multi-line comments**: Use `/* */` to comment multiple lines of code.
 
-## Type Checking
 
-We can use the `typeof` operator to check the type of a value. As an example, to print the data type of an object:
+## Transpiling to ES5 
 
-```bash
-console.log(typeof true) 
-```
+During development, you can use the latest features in JavaScript, such as ES6+, by testing in modern browsers like Google Chrome. However, in production, you need to transpile your code to ES5 using tools like **Babel** to ensure compatibility with older browsers.
 
-When ran in the browser, this will return boolean.
+- **ES5** is supported in all browsers, for broad compatibility.
+- **ES6+** is supported in **most modern browsers** but may not work in older versions.
 
-![](/img/docs/12082024-typeofexample.png)
-
-
-
-## `typeof` bug 
-
-When you run `typeof` with `null`, it should return `null`. But it will evaluate it as an object, which is actually wrong. This wasn't corrected for legacy reasons, but instead treated as a bug.
-
-![](/img/docs/12082024-js-typeof-bug.png)
-
+**Babel** is a tool that converts ES6+ code into ES5, which ensures your code runs across a wide range of browsers.

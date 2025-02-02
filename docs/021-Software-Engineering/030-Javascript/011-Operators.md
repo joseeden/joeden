@@ -11,6 +11,24 @@ last_update:
   date: 12/21/2020
 ---
 
+## Type Checking
+
+We can use the `typeof` operator to check the type of a value. As an example, to print the data type of an object:
+
+```bash
+console.log(typeof true) 
+```
+
+When ran in the browser, this will return boolean.
+
+![](/img/docs/12082024-typeofexample.png)
+
+
+## `typeof` bug 
+
+When you run `typeof` with `null`, it should return `null`. But it will evaluate it as an object, which is actually wrong. This wasn't corrected for legacy reasons, but instead treated as a bug.
+
+![](/img/docs/12082024-js-typeof-bug.png)
 
 
 ## Assignment Operators  
