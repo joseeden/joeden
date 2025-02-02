@@ -22,6 +22,10 @@ Github:
   label: 'Github'
   permalink: '/Github'
   description: 'Docs related to Github'
+Azure DevOps:
+  label: 'Azure DevOps'
+  permalink: '/Azure DevOps'
+  description: 'Docs related to Azure DevOps'  
 CICD:
   label: 'CICD'
   permalink: '/CICD'
