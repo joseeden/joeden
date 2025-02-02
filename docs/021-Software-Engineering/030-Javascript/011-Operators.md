@@ -96,6 +96,22 @@ console.log(x >= y); // Greater than or equal to: true
 console.log(x <= y); // Less than or equal to: false
 ```
 
+## Equality Operators 
+
+JavaScript provides two main equality operators to compare values:
+
+| Operator | Description                                                 |
+|----------|-------------------------------------------------------------|
+| `==`     | Loose equality; compares values after type coercion.        |
+| `===`    | Strict equality; compares values without type coercion.     |
+
+Example:
+
+```js
+console.log(5 == "5");  // true (because of type coercion)
+console.log(5 === "5"); // false (no type coercion, different types)
+```
+
 ## Boolean Operators  
 
 Boolean operators are used to combine or manipulate boolean values (`true` or `false`). 
@@ -108,7 +124,25 @@ console.log(a && b);  // AND: false (both must be true)
 console.log(a || b);  // OR: true (at least one must be true)
 console.log(!a);      // NOT: false (inverts the value)
 console.log(!b);      // NOT: true
+
+let c = true;
+console.log(a && b && c);  // false
+console.log(a && b || c);  // true
+console.log(a || b && c);  // true
+console.log(a || b || c);  // true
 ```
+
+## Ternary Operators 
+
+The ternary operator is a shorthand for an `if-else` statement. It evaluates a condition and returns one value if true, and another if false.
+
+```js
+const age = 18;
+const canVote = age >= 18 ? "Yes, you can vote" : "No, you can't vote";
+console.log(canVote);  // Output: Yes, you can vote
+```
+
+In this example, the ternary operator checks if `age` is greater than or equal to 18. If true, it returns `"Yes, you can vote"`, otherwise, it returns `"No, you can't vote"`.
 
 ## Operator Precedence  
 

@@ -39,8 +39,106 @@
 // console.log(Number(year) + 35);
 
 
-console.log(`45` - `13` - `8`);
-console.log(`24` / `2`);
-console.log(`100` * `2`);
-console.log(`25` < `49`);         // Output: True
+// console.log(`45` - `13` - `8`);
+// console.log(`24` / `2`);
+// console.log(`100` * `2`);
+// console.log(`25` < `49`);         // Output: True
 
+
+// console.log(Boolean(0));       // false
+// console.log(Boolean(``));      // false
+// console.log(Boolean(`Jonas`)); // true
+// console.log(Boolean({}));      // true
+
+
+// let money = 0;
+// if (money) {
+//   console.log(`Don't spend it all!`);
+// } else {
+//   console.log(`You should get a job.`); // This runs because 0 is falsy
+// }
+
+
+// let height;
+// if (height) {
+//   console.log(`Yay! Height is defined.`);
+// } else {
+//   console.log(`Height is undefined.`);
+// } 
+
+
+// height = 0;
+// if (height) {
+//   console.log(`Height is defined.`);
+// } else {
+//   console.log(`Height is undefined.`); // This also runs because 0 is falsy
+// } 
+
+
+// let a = true;
+// let b = false;
+
+// console.log(a && b);    // AND: false (both must be true)
+// console.log(a || b);    // OR:  true (at least one must be true)
+// console.log(!a);        // NOT: false (inverts the value)
+// console.log(!b);        // NOT: true
+// console.log(a && !b);   // AND: true
+// console.log(a || !b);   // OR:  true
+
+// let a = true;
+// let b = false;
+// let c = true;
+// console.log(a && b && c);  // false
+// console.log(a && b || c);  // true
+// console.log(a || b && c);  // true
+// console.log(a || b || c);  // true
+
+
+// const licensed = true;
+// const clearVision = false; 
+
+// console.log(licensed && clearVision);   // false 
+// console.log(licensed || clearVision);   // true
+
+// const shouldDrive = licensed && clearVision;
+
+// if (shouldDrive) {
+//   console.log(`You are able to drive.`);
+// } else {
+//   console.log(`You are not able to drive.`);
+// }
+
+
+// const day = prompt("What day is it today?");
+
+// switch (day) {
+//   case 'Monday':
+//     console.log(`Attend the sprint retroactive today.`);
+//     break;
+//   case 'Tuesday':
+//     console.log(`Work on the feature requests today.`);
+//     break;
+//   case 'Wednesday':
+//     console.log(`Meeting with the Vendor in the afternoon.`);
+//     break;
+//   case 'Thursday':
+//     console.log(`Test the changes in Dev environment`);
+//     break;
+//   case 'Friday':
+//     console.log(`Update the team`);
+//     break;
+//   default:
+//     console.log("Invalid day");
+// }
+
+
+
+// const age = 18;
+// const canVote = age >= 18 ? 'Yes, you can vote' : 'No, you cannot vote';
+// console.log(canVote);
+
+const bill = prompt("How much is the bill?");
+const tip = (bill >= 50 && bill <= 300) ? bill * 0.15 : bill * 0.20;
+const total = Number(bill) + Number(tip);
+
+console.log(`The bill was ${bill}, the tip was ${tip}, and the total value is ${total} `);
