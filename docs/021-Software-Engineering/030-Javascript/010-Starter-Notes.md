@@ -261,6 +261,31 @@ Javscript will completely ignore the comments during execution.
   - **Multi-line comments**: Use `/* */` to comment multiple lines of code.
 
 
+## Activating Strict Mode
+
+Strict mode in JavaScript helps catch common coding mistakes and improves performance by enforcing stricter parsing and error handling. 
+
+**Example 1: Global Strict Mode**
+
+```js
+"use strict";     // Enables strict mode for the entire script
+
+x = 10;           // Throws an error because 'x' is not declared
+```
+
+**Example 2: Function-Level Strict Mode**
+
+```js
+function myFunction() {
+  "use strict";   // Enables strict mode within this function
+  y = 20;         // Throws an error because 'y' is not declared
+}
+myFunction();
+``` 
+
+Strict mode helps avoid issues like using undeclared variables or assigning values to read-only properties.
+
+
 ## Transpiling to ES5 
 
 During development, you can use the latest features in JavaScript, such as ES6+, by testing in modern browsers like Google Chrome. However, in production, you need to transpile your code to ES5 using tools like **Babel** to ensure compatibility with older browsers.

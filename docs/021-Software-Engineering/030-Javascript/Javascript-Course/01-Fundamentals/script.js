@@ -137,8 +137,83 @@
 // const canVote = age >= 18 ? 'Yes, you can vote' : 'No, you cannot vote';
 // console.log(canVote);
 
-const bill = prompt("How much is the bill?");
-const tip = (bill >= 50 && bill <= 300) ? bill * 0.15 : bill * 0.20;
-const total = Number(bill) + Number(tip);
+// const bill = prompt("How much is the bill?");
+// const tip = (bill >= 50 && bill <= 300) ? bill * 0.15 : bill * 0.20;
+// const total = Number(bill) + Number(tip);
 
-console.log(`The bill was ${bill}, the tip was ${tip}, and the total value is ${total} `);
+// console.log(`The bill was ${bill}, the tip was ${tip}, and the total value is ${total} `);
+
+
+// function logger() {
+//   console.log("My name is John");
+// }
+
+// logger();
+
+// function greet(name) {
+//   console.log(`Hello, ${name}!`);
+// }
+
+// greet("Alice");  // Output: Hello, Alice!
+
+'use strict'
+
+// function fruitjuices(apples, oranges) {
+//   const drinks = `Order for ${apples} apple juice and ${oranges} orange juice.`; 
+//   return drinks;
+// }
+
+// const drinkOrders = fruitjuices(6,3)
+// console.log(drinkOrders);
+
+// const getAge = function (birthYear) {
+//   return 2025 - birthYear;
+// }
+
+// const actualAge = getAge(1990);
+// console.log(actualAge);
+
+// logger();             // Output: "My name is John"
+
+// function logger() {
+//   console.log("My name is John");
+// }
+
+
+
+// const actualAge = getAge(1990);
+
+// const getAge = function (birthYear) {
+//   return 2025 - birthYear;
+// }
+
+// console.log(actualAge); 
+
+
+// const getAge = birthYear => 2025 - birthYear;
+// const actualAge = getAge(1990);
+// console.log(actualAge);
+
+
+
+// const yearsBeforeRetirement = birthYear => {
+//   const getAge = 2025 - birthYear;
+//   const retirement = 65 - getAge;
+//   return retirement;
+// }
+
+// const actualAge = yearsBeforeRetirement(1990);
+// console.log(actualAge);
+
+
+
+const yearsBeforeRetirement = (birthYear, firstName) => {
+  const getAge = 2025 - birthYear;
+  const retirement = 65 - getAge;
+  return `${firstName} will retire in ${retirement} years`;
+}
+
+console.log(yearsBeforeRetirement(1990, 'John'));
+console.log(yearsBeforeRetirement(1988, 'Ted'));
+console.log(yearsBeforeRetirement(1997, 'Andy'));
+console.log(yearsBeforeRetirement(1979, 'Robin'));
