@@ -46245,7 +46245,7 @@ require("core-js/stable");
 
 require("regenerator-runtime/runtime");
 
-var _Jonas;
+var _John;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46362,8 +46362,8 @@ var Person = function Person(name) {
   console.log("".concat(_classPrivateFieldGet(this, _greeting), ", ").concat(this.name));
 };
 
-var jonas = new Person('Jonas');
-console.log((_Jonas = 'Jonas') !== null && _Jonas !== void 0 ? _Jonas : null);
+var John = new Person('John');
+console.log((_John = 'John') !== null && _John !== void 0 ? _John : null);
 console.log(_shoppingCart.cart.find(function (el) {
   return el.quantity >= 2;
 }));

@@ -7,7 +7,7 @@
 /////////////////////////////////////////////////
 // Data
 const account1 = {
-  owner: 'Jonas Schmedtmann',
+  owner: 'John Smith',
   movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
   interestRate: 1.2, // %
   pin: 1111,
@@ -290,8 +290,8 @@ console.log(arr[arr.length - 1]);
 console.log(arr.slice(-1)[0]);
 console.log(arr.at(-1));
 
-console.log('jonas'.at(0));
-console.log('jonas'.at(-1));
+console.log('John'.at(0));
+console.log('John'.at(-1));
 
 
 ///////////////////////////////////////
@@ -722,7 +722,7 @@ console.log(heaviestFetchBreed);
 // Sorting Arrays
 
 // Strings
-const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
+const owners = ['John', 'Zach', 'Adam', 'Martha'];
 console.log(owners.sort());
 console.log(owners);
 
@@ -900,7 +900,7 @@ YOUR TASKS:
 1. Loop over the array containing dog objects, and for each dog, calculate the recommended food portion (recFood) and add it to the object as a new property. Do NOT create a new array, simply loop over the array (We never did this before, so think about how you can do this without creating a new array).
 2. Find Sarah's dog and log to the console whether it's eating too much or too little. HINT: Some dogs have multiple users, so you first need to find Sarah in the owners array, and so this one is a bit tricky (on purpose) 🤓
 3. Create an array containing all owners of dogs who eat too much (ownersTooMuch) and an array with all owners of dogs who eat too little (ownersTooLittle).
-4. Log a string to the console for each array created in 3., like this: "Matilda and Alice and Bob's dogs eat too much!" and "Sarah and John and Michael's dogs eat too little!"
+4. Log a string to the console for each array created in 3., like this: "Jane and Alice and Bob's dogs eat too much!" and "Sarah and John and Michael's dogs eat too little!"
 5. Log to the console whether there is ANY dog eating EXACTLY the amount of food that is recommended (just true or false)
 6. Log to the console whether ALL of the dogs are eating an OKAY amount of food (just true or false)
 7. Create an array containing the dogs that are eating an OKAY amount of food (try to reuse the condition used in 6.)
@@ -914,7 +914,7 @@ HINT 2: Being within a range 10% above and below the recommended portion means: 
 TEST DATA:
 const dogs = [
   { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
-  { weight: 8, curFood: 200, owners: ['Matilda'] },
+  { weight: 8, curFood: 200, owners: ['Jane'] },
   { weight: 13, curFood: 275, owners: ['Sarah', 'John', 'Leo'] },
   { weight: 18, curFood: 244, owners: ['Joe'] },
   { weight: 32, curFood: 340, owners: ['Michael'] },
@@ -926,7 +926,7 @@ GOOD LUCK 😀
 /*
 const dogs = [
   { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
-  { weight: 8, curFood: 200, owners: ['Matilda'] },
+  { weight: 8, curFood: 200, owners: ['Jane'] },
   { weight: 13, curFood: 275, owners: ['Sarah', 'John', 'Leo'] },
   { weight: 18, curFood: 244, owners: ['Joe'] },
   { weight: 32, curFood: 340, owners: ['Michael'] },

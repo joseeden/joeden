@@ -14,18 +14,18 @@ const Person = function (firstName, birthYear) {
   // };
 };
 
-const jonas = new Person('Jonas', 1991);
-console.log(jonas);
+const John = new Person('John', 1991);
+console.log(John);
 
 // 1. New {} is created
 // 2. function is called, this = {}
 // 3. {} linked to prototype
 // 4. function automatically return {}
 
-const matilda = new Person('Matilda', 2017);
+const jane = new Person('Jane', 2017);
 const jack = new Person('Jack', 1975);
 
-console.log(jonas instanceof Person);
+console.log(John instanceof Person);
 
 Person.hey = function () {
   console.log('Hey there 👋');
@@ -41,31 +41,31 @@ Person.prototype.calcAge = function () {
   console.log(2037 - this.birthYear);
 };
 
-jonas.calcAge();
-matilda.calcAge();
+John.calcAge();
+jane.calcAge();
 
-console.log(jonas.__proto__);
-console.log(jonas.__proto__ === Person.prototype);
+console.log(John.__proto__);
+console.log(John.__proto__ === Person.prototype);
 
-console.log(Person.prototype.isPrototypeOf(jonas));
-console.log(Person.prototype.isPrototypeOf(matilda));
+console.log(Person.prototype.isPrototypeOf(John));
+console.log(Person.prototype.isPrototypeOf(jane));
 console.log(Person.prototype.isPrototypeOf(Person));
 
 // .prototyeOfLinkedObjects
 
 Person.prototype.species = 'Homo Sapiens';
-console.log(jonas.species, matilda.species);
+console.log(John.species, jane.species);
 
-console.log(jonas.hasOwnProperty('firstName'));
-console.log(jonas.hasOwnProperty('species'));
+console.log(John.hasOwnProperty('firstName'));
+console.log(John.hasOwnProperty('species'));
 
 
 ///////////////////////////////////////
 // Prototypal Inheritance on Built-In Objects
-console.log(jonas.__proto__);
+console.log(John.__proto__);
 // Object.prototype (top of prototype chain)
-console.log(jonas.__proto__.__proto__);
-console.log(jonas.__proto__.__proto__.__proto__);
+console.log(John.__proto__.__proto__);
+console.log(John.__proto__.__proto__.__proto__);
 
 console.dir(Person.prototype.constructor);
 
@@ -192,7 +192,7 @@ const walter = new PersonCl('Walter White', 1965);
 ///////////////////////////////////////
 // Setters and Getters
 const account = {
-  owner: 'Jonas',
+  owner: 'John',
   movements: [200, 530, 120, 300],
 
   get latest() {
@@ -516,7 +516,7 @@ class Account {
   }
 }
 
-const acc1 = new Account('Jonas', 'EUR', 1111);
+const acc1 = new Account('John', 'EUR', 1111);
 
 // acc1.movements.push(250);
 // acc1.movements.push(-140);
@@ -585,7 +585,7 @@ class Account {
   }
 }
 
-const acc1 = new Account('Jonas', 'EUR', 1111);
+const acc1 = new Account('John', 'EUR', 1111);
 // acc1.deposit(300);
 // acc1.withdraw(100);
 const movements = acc1

@@ -1,19 +1,19 @@
 'use strict';
 
 const budget = Object.freeze([
-  { value: 250, description: 'Sold old TV 📺', user: 'jonas' },
-  { value: -45, description: 'Groceries 🥑', user: 'jonas' },
-  { value: 3500, description: 'Monthly salary 👩‍💻', user: 'jonas' },
-  { value: 300, description: 'Freelancing 👩‍💻', user: 'jonas' },
-  { value: -1100, description: 'New iPhone 📱', user: 'jonas' },
-  { value: -20, description: 'Candy 🍭', user: 'matilda' },
-  { value: -125, description: 'Toys 🚂', user: 'matilda' },
-  { value: -1800, description: 'New Laptop 💻', user: 'jonas' },
+  { value: 250, description: 'Sold old TV 📺', user: 'John' },
+  { value: -45, description: 'Groceries 🥑', user: 'John' },
+  { value: 3500, description: 'Monthly salary 👩‍💻', user: 'John' },
+  { value: 300, description: 'Freelancing 👩‍💻', user: 'John' },
+  { value: -1100, description: 'New iPhone 📱', user: 'John' },
+  { value: -20, description: 'Candy 🍭', user: 'jane' },
+  { value: -125, description: 'Toys 🚂', user: 'jane' },
+  { value: -1800, description: 'New Laptop 💻', user: 'John' },
 ]);
 
 const spendingLimits = Object.freeze({
-  jonas: 1500,
-  matilda: 100,
+  John: 1500,
+  jane: 100,
 });
 // spendingLimits.jay = 200;
 
@@ -26,7 +26,7 @@ const addExpense = function (
   limits,
   value,
   description,
-  user = 'jonas'
+  user = 'John'
 ) {
   const cleanUser = user.toLowerCase();
 
@@ -41,7 +41,7 @@ const newBudget2 = addExpense(
   spendingLimits,
   100,
   'Going to movies 🍿',
-  'Matilda'
+  'Jane'
 );
 const newBudget3 = addExpense(newBudget2, spendingLimits, 200, 'Stuff', 'Jay');
 

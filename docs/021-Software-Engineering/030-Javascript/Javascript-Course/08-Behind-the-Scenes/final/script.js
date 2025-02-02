@@ -36,7 +36,7 @@ function calcAge(birthYear) {
   return age;
 }
 
-const firstName = 'Jonas';
+const firstName = 'John';
 calcAge(1991);
 // console.log(age);
 // printAge();
@@ -50,7 +50,7 @@ console.log(me);
 // console.log(job);
 // console.log(year);
 
-var me = 'Jonas';
+var me = 'John';
 let job = 'teacher';
 const year = 1991;
 
@@ -105,32 +105,32 @@ const calcAgeArrow = birthYear => {
 };
 calcAgeArrow(1980);
 
-const jonas = {
+const John = {
   year: 1991,
   calcAge: function () {
     console.log(this);
     console.log(2037 - this.year);
   },
 };
-jonas.calcAge();
+John.calcAge();
 
-const matilda = {
+const jane = {
   year: 2017,
 };
 
-matilda.calcAge = jonas.calcAge;
-matilda.calcAge();
+jane.calcAge = John.calcAge;
+jane.calcAge();
 
-const f = jonas.calcAge;
+const f = John.calcAge;
 f();
 
 
 ///////////////////////////////////////
 // Regular Functions vs. Arrow Functions
-// var firstName = 'Matilda';
+// var firstName = 'Jane';
 
-const jonas = {
-  firstName: 'Jonas',
+const John = {
+  firstName: 'John',
   year: 1991,
   calcAge: function () {
     // console.log(this);
@@ -156,8 +156,8 @@ const jonas = {
     console.log(`Hey ${this.firstName}`);
   },
 };
-jonas.greet();
-jonas.calcAge();
+John.greet();
+John.calcAge();
 
 // arguments keyword
 const addExpr = function (a, b) {

@@ -7,7 +7,7 @@
     "start": "parcel index.html",
     "build": "parcel build index.html --dist-dir ./dist"
   },
-  "author": "Jonas Schedtmann",
+  "author": "John Schedtmann",
   "license": "ISC",
   "devDependencies": {
     "parcel": "^2.0.0-beta.1",

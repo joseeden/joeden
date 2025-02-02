@@ -9,6 +9,6 @@ const timeout = function (s) {
 };
 
 // NEW API URL (instead of the one shown in the video)
-// https://forkify-api.jonas.io
+// https://forkify-api.John.io
 
 ///////////////////////////////////////

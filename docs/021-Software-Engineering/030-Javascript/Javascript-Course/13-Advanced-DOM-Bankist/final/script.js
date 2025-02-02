@@ -386,7 +386,7 @@ logo.classList.toggle('c');
 logo.classList.contains('c'); // not includes
 
 // Don't use
-logo.clasName = 'jonas';
+logo.clasName = 'John';
 
 
 ///////////////////////////////////////

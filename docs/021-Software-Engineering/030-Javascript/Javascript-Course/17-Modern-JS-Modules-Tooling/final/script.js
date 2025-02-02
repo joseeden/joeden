@@ -130,9 +130,9 @@ class Person {
     console.log(`${this.#greeting}, ${this.name}`);
   }
 }
-const jonas = new Person('Jonas');
+const John = new Person('John');
 
-console.log('Jonas' ?? null);
+console.log('John' ?? null);
 
 console.log(cart.find(el => el.quantity >= 2));
 Promise.resolve('TEST').then(x => console.log(x));

@@ -7,7 +7,7 @@
     "start": "parcel index.html",
     "build": "parcel build index.html"
   },
-  "author": "Jonas",
+  "author": "John",
   "license": "ISC",
   "dependencies": {
     "core-js": "^3.6.5",

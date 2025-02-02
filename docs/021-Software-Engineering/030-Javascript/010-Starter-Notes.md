@@ -1,7 +1,11 @@
 ---
 title: "Starter Notes"
 description: "Notes on Javascript"
-tags: [Computer Science, Application Development, Software Development, Javascript]
+tags: 
+- Computer Science
+- Application Development
+- Software Development
+- Javascript
 sidebar_position: 10
 last_update:
   date: 12/21/2020
@@ -77,7 +81,9 @@ An inline script is the Javascript code that is embedded another HTML file. To s
 <script src="/path/to/name-of-script.js"></script>
 ```
 
-## Declaring a variable 
+## Variables 
+
+### Declaring Variables 
 
 To declare a variable, use:
 
@@ -91,6 +97,8 @@ To print in a browser:
 ```bash
 console.log(firstName);
 ```
+
+### Illegal Naming 
 
 Illegal variable names:
 
@@ -112,18 +120,76 @@ Illegal variable names:
   let new = 123;
   ```
 
-
-On the other hand, variables starting with an uppercase letter are not reallyy illegal and will still be allowed, but this is reserved for contants which will never change.
+On the other hand, variables starting with an uppercase letter are not really illegal and will still be allowed, but this is reserved for contants which will never change.
 
 ```JavaScript
 let Collector = "John";   
 ```
 
-An example of constant is the number `Pi`:
+### Undeclared Variables 
+
+When calling an undeclared variable, we'll get an error: 
+
+![](/img/docs/12082024-js-undeclared0varss.png)
+
+### Changing the Value of a Variable 
+
+When defining a variable for the first time, we need to use the keyword `let`. If we need to change the value of an existing variable, we don't need to use `let` anymore.
+
+![](/img/docs/12082024-js-changing-value-of-vars.png)
+
+Note that when we use `let` to assign a value to a variable, we can change that value later, as seen below:
 
 ```bash
-let PI = 3.1415; 
+let x = 3;
+x = 24; 
+x = 51; 
+x = 72; 
 ```
+
+If we use `const`, the variable becomes fixed, meaning its value can't be changed. Trying to update it will cause an `Uncaught TypeError`.
+
+```bash
+const name = 'Ken'
+name = 'Barbie` 
+```
+
+![](/img/docs/02022025-js-error.png)
+
+`var` is the old way of defining variables prior to ES6, working the same way as `let`.
+
+```bash
+var job = 'developer';
+job = 'architect';  
+```
+
+The main difference between the two is that:
+
+- `var` is **function-scoped**, meaning it’s only accessible inside the function where it’s declared.
+- `let` is **block-scoped**, which means it’s limited to the block `{}` where it’s defined.
+
+Example of `var` (function-scoped):  
+
+```bash
+function example() {
+  var name = "Alice";
+  console.log(name);    // Works inside the function
+}
+console.log(name);      // Error: name is not defined
+```  
+
+Example of `let` (block-scoped):  
+
+```bash
+if (true) {
+  let age = 30;
+  console.log(age);     // Works inside the block
+}
+console.log(age);       // Error: age is not defined
+```  
+
+Because of this, `let` is safer to use in modern JavaScript.
+
 
 ## Data Types 
 
@@ -207,18 +273,6 @@ When ran in the browser, this will return boolean.
 ![](/img/docs/12082024-typeofexample.png)
 
 
-## Undeclared Variable 
-
-When calling an undeclared variable, we'll get an error: 
-
-![](/img/docs/12082024-js-undeclared0varss.png)
-
-
-## Changing the value of a variable 
-
-When defining a variable for the first time, we need to use the keyword `let`. If we need to change the value of an existing variable, we don't need to use `let` anymore.
-
-![](/img/docs/12082024-js-changing-value-of-vars.png)
 
 ## `typeof` bug 
 

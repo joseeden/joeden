@@ -34,8 +34,8 @@ createBooking('LH123', undefined, 1000);
 ///////////////////////////////////////
 // How Passing Arguments Works: Values vs. Reference
 const flight = 'LH234';
-const jonas = {
-  name: 'Jonas Schmedtmann',
+const John = {
+  name: 'John Smith',
   passport: 24739479284,
 };
 
@@ -50,20 +50,20 @@ const checkIn = function (flightNum, passenger) {
   }
 };
 
-// checkIn(flight, jonas);
+// checkIn(flight, John);
 // console.log(flight);
-// console.log(jonas);
+// console.log(John);
 
 // Is the same as doing...
 // const flightNum = flight;
-// const passenger = jonas;
+// const passenger = John;
 
 const newPassport = function (person) {
   person.passport = Math.trunc(Math.random() * 100000000000);
 };
 
-newPassport(jonas);
-checkIn(flight, jonas);
+newPassport(John);
+checkIn(flight, John);
 
 
 ///////////////////////////////////////
@@ -93,7 +93,7 @@ const high5 = function () {
   console.log('👋');
 };
 document.body.addEventListener('click', high5);
-['Jonas', 'Martha', 'Adam'].forEach(high5);
+['John', 'Martha', 'Adam'].forEach(high5);
 
 
 ///////////////////////////////////////
@@ -105,15 +105,15 @@ const greet = function (greeting) {
 };
 
 const greeterHey = greet('Hey');
-greeterHey('Jonas');
+greeterHey('John');
 greeterHey('Steven');
 
-greet('Hello')('Jonas');
+greet('Hello')('John');
 
 // Challenge
 const greetArr = greeting => name => console.log(`${greeting} ${name}`);
 
-greetArr('Hi')('Jonas');
+greetArr('Hi')('John');
 
 
 ///////////////////////////////////////
@@ -131,7 +131,7 @@ const lufthansa = {
   },
 };
 
-lufthansa.book(239, 'Jonas Schmedtmann');
+lufthansa.book(239, 'John Smith');
 lufthansa.book(635, 'John Smith');
 
 const eurowings = {
@@ -178,7 +178,7 @@ const bookLX = book.bind(swiss);
 bookEW(23, 'Steven Williams');
 
 const bookEW23 = book.bind(eurowings, 23);
-bookEW23('Jonas Schmedtmann');
+bookEW23('John Smith');
 bookEW23('Martha Cooper');
 
 // With Event Listeners
