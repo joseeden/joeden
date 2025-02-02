@@ -18,10 +18,10 @@ For more information, please see [Manage runners.](https://docs.gitlab.com/ee/ci
 
 ## Pre-requisites 
 
-- [Create a GitLab account](/docs/017-Version-Control-and-CICD/010-GitLab-Notes/001-GitLab-CICD.md#create-a-gitlab-account)
-- [Create a Group](/docs/017-Version-Control-and-CICD/010-GitLab-Notes/001-GitLab-CICD.md#groups)
-- [Create a Project](/docs/017-Version-Control-and-CICD/010-GitLab-Notes/001-GitLab-CICD.md#projects)
-- [Create a Pipeline](/docs/017-Version-Control-and-CICD/010-GitLab-Notes/004-Pipelines.md#creating-a-pipeline)
+- [Create a GitLab account](/docs/017-Version-Control-and-CICD/010-GitLab/001-GitLab-CICD.md#create-a-gitlab-account)
+- [Create a Group](/docs/017-Version-Control-and-CICD/010-GitLab/001-GitLab-CICD.md#groups)
+- [Create a Project](/docs/017-Version-Control-and-CICD/010-GitLab/001-GitLab-CICD.md#projects)
+- [Create a Pipeline](/docs/017-Version-Control-and-CICD/010-GitLab/004-Pipelines.md#creating-a-pipeline)
 
 ## Modify the pipeline
 
