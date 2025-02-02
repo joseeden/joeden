@@ -53,25 +53,10 @@ console.log(a % b);  // Modulo (remainder): 0
 console.log(a ** b); // Exponentiation: 100000
 ```
 
-## Comparison Operators  
-
-Comparison operators are used to compare values and return `true` or `false` based on the result.
-
-```js
-let x = 10;
-let y = 5;
-
-console.log(x > y);  // Greater than: true
-console.log(x < y);  // Less than: false
-console.log(x == y); // Equal to: false
-console.log(x != y); // Not equal to: true
-console.log(x >= y); // Greater than or equal to: true
-console.log(x <= y); // Less than or equal to: false
-```
 
 ## Concatenating Strings 
 
-One use case for the `+` operator is string concatenation, which means joining strings together.  
+Another use case for the `+` operator is string concatenation, which means joining strings together.  
 
 For example, we can create two variables:  
 
@@ -95,3 +80,63 @@ console.log(firstName + " " + lastName);
 This results in "John Smith".  
 
 
+## Comparison Operators  
+
+Comparison operators are used to compare values and return `true` or `false` based on the result.
+
+```js
+let x = 10;
+let y = 5;
+
+console.log(x > y);  // Greater than: true
+console.log(x < y);  // Less than: false
+console.log(x == y); // Equal to: false
+console.log(x != y); // Not equal to: true
+console.log(x >= y); // Greater than or equal to: true
+console.log(x <= y); // Less than or equal to: false
+```
+
+## Boolean Operators  
+
+Boolean operators are used to combine or manipulate boolean values (`true` or `false`). 
+
+```js
+let a = true;
+let b = false;
+
+console.log(a && b);  // AND: false (both must be true)
+console.log(a || b);  // OR: true (at least one must be true)
+console.log(!a);      // NOT: false (inverts the value)
+console.log(!b);      // NOT: true
+```
+
+## Operator Precedence  
+
+Operator precedence determines the order in which operations are performed in an expression. 
+
+```js
+let result = 10 + 5 * 2;  
+console.log(result);  // 20 (Multiplication (*) happens before Addition (+))
+
+let result2 = (10 + 5) * 2;  
+console.log(result2);  // 30 (Parentheses change the order)
+```
+
+Most commonly used operators in order of precedence:
+
+
+| **Operator**                  | **Symbols**                     | **Description** |
+|-------------------------------|---------------------------------|----------------|
+| **Parentheses**               | `()`                            | Controls execution order, highest precedence |
+| **Unary**                     | `++` `--` `!` `-`               | Increment, decrement, logical NOT, negation |
+| **Multiplication & Division** | `*` `/` `%`                     | Evaluated before addition and subtraction |
+| **Addition & Subtraction**    | `+` `-`                         | Evaluated after multiplication and division |
+| **Comparison**                | `>` `<` `>=` `<=` `===` `==`    | Compares values |
+| **Logical AND & OR**          | `&&` `||`                       | AND (`&&`) has higher precedence than OR (`||`) |
+| **Ternary**                   | `? :`                           | Shorthand for `if-else` conditions |  
+
+
+When operators have the same precedence, JavaScript evaluates them based on **associativity**:  
+
+- **Left to Right**: Most operators, such as `+`, `-`, `*`, `/`, `%`, etc.  
+- **Right to Left**: Assignment (`=`) and exponentiation (`**`).  
