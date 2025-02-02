@@ -34,13 +34,11 @@ if (js === 'amazing') alert('Javascript is FUN!')
  
 JavaScript is a high-level, object-oriented, and multi-paradigm programming language that powers the dynamic and interactive aspects of web development. Here's a summary of its role:
 
-- **Programming Language**- Enables developers to write code that instructs computers to perform tasks.
+- **High-Level Language**- Simplify complex processes like memory management using abstractions.
 
-- **High-Level Language**- Simplifies complex processes like memory management using abstractions, making it easier to learn and write.
+- **Object-Oriented**- Uses objects to organize and store data; foundation for programming techniques.
 
-- **Object-Oriented**- Uses objects to organize and store data, forming a foundation for programming techniques.
-
-- **Multi-Paradigm**- Supports various coding styles, including imperative and declarative programming.
+- **Multi-Paradigm**- Supports coding styles, including imperative and declarative programming.
 
 In web development, JavaScript complements HTML (content) and CSS (style) by:
 
@@ -73,7 +71,7 @@ JavaScript has evolved from ES5 to modern versions, starting with ES6 in 2015. F
 
 ## Inline and External scripts
 
-An inline script is the javascript code that is embedded another HTML file. To separate the website conten from the JavaScript logic, we can use external Javascript files and link them to the HTML file like this:
+An inline script is the Javascript code that is embedded another HTML file. To separate the website conten from the JavaScript logic, we can use external Javascript files and link them to the HTML file like this:
 
 ```bash
 <script src="/path/to/name-of-script.js"></script>
