@@ -233,28 +233,87 @@
 
 
 // Practice 1 - Compare BMI
-const dataAlex = { weight: 95, height: 1.88};
-const dataJake = { weight: 85, height: 1.76};
+// const dataAlex = { weight: 95, height: 1.88};
+// const dataJake = { weight: 85, height: 1.76};
 
-function getBMI(weight, height) {
-  return (weight / (height * height)).toFixed(2);
-}
+// function getBMI(weight, height) {
+//   return (weight / (height * height)).toFixed(2);
+// }
 
-const bmiAlex = getBMI(dataAlex.weight, dataAlex.height)
-const bmiJake = getBMI(dataJake.weight, dataJake.height)
+// const bmiAlex = getBMI(dataAlex.weight, dataAlex.height)
+// const bmiJake = getBMI(dataJake.weight, dataJake.height)
 
-console.log(`Alex has BMI of ${bmiAlex}`);
-console.log(`Jake has BMI of ${bmiJake}`);
+// console.log(`Alex has BMI of ${bmiAlex}`);
+// console.log(`Jake has BMI of ${bmiJake}`);
 
-function finalBMI() {
-  if ( bmiAlex > bmiJake) {
-    console.log(`Alex has a higher BMI than Jake.`);
-  } else {
-    console.log(`Jake has a higher BMI than Alex.`);
-  }
-}
+// function finalBMI() {
+//   if ( bmiAlex > bmiJake) {
+//     console.log(`Alex has a higher BMI than Jake.`);
+//   } else {
+//     console.log(`Jake has a higher BMI than Alex.`);
+//   }
+// }
 
-finalBMI();
+// finalBMI();
 
 
 
+
+// const massAlex = 78, massJake = 92;
+// const heightAlex = 1.69, heightJake = 1.95;
+
+// const BMIAlex = (massAlex / (heightAlex ** 2)).toFixed(2);
+// const BMIJake = (massJake / (heightJake ** 2)).toFixed(2);
+// const higherBMI = BMIAlex > BMIJake;
+
+// function finalBMI() {
+//   if  (BMIAlex > BMIJake) {
+//     console.log(`Alex has a higher BMI than Jake.`);
+//   } else {
+//     console.log(`Jake has a higher BMI than Alex.`);
+//   }
+// }
+
+// console.log(`Alex has a BMI of ${BMIAlex}`);
+// console.log(`Jake has a BMI of ${BMIJake}`);
+// // console.log(`Does Alex have a higher BMI than Jake? ${higherBMI}`);
+// finalBMI();
+
+
+
+// Practice 3 
+// const scoreLions= [97, 112, 101], scoreTigers = [109, 95, 123];
+
+// const getScore = (sum, score) => sum + score;
+// const getAverage = scores => scores.reduce(getScore, 0) / scores.length;
+
+// function getWinner(lions, tigers) {
+  
+//   const avgLions = getAverage(scoreLions).toFixed(2);
+//   const avgTigers = getAverage(scoreTigers).toFixed(2);
+
+//   console.log(`Lions average score: ${avgLions},\nTigers average score: ${avgTigers}
+//   `);
+
+//   if (avgLions > avgTigers && avgLions >= 100) {
+//     console.log("Lions win the trophy! 🏆");
+//   } else if (avgLions < avgTigers && avgTigers >= 100) {
+//     console.log("Tigers win the trophy! 🏆");
+//   } else if (avgLions === avgTigers && avgLions >= 100 && avgTigers >= 100) {
+//     console.log("It's a draw! 🏆");
+//   } else {
+//     console.log("No team wins the trophy! 😢");
+//   }
+// }
+
+// getWinner(scoreLions, scoreTigers);
+
+
+
+// Practice 4 
+const bill = 430
+
+const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.20; 
+const total = bill + tip;
+
+console.log(`Bill: ${bill}\nTip: ${tip}\nTotal: ${total}`)
