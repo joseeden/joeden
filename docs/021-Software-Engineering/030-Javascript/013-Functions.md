@@ -180,4 +180,29 @@ Robin will retire in 19 years
 ```
 
 
-## Calling other functions 
+## Calling Other Functions  
+
+A function can call another function to reuse code and keep the logic organized.  
+
+```js
+const getAge = birthYear => 2025 - birthYear;
+
+const yearsBeforeRetirement = (birthYear, firstName) => {
+  const age = getAge(birthYear);
+  const retirement = 65 - age;
+  return `${firstName} will retire in ${retirement} years`;
+}
+
+console.log(yearsBeforeRetirement(1990, 'John'));
+console.log(yearsBeforeRetirement(1985, 'Sarah'));
+```
+
+Output:
+
+```
+John will retire in 30 years
+Sarah will retire in 35 years
+```
+  
+
+              

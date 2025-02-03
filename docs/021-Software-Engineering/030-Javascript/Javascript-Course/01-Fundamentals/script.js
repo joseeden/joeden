@@ -207,13 +207,26 @@
 
 
 
+// const yearsBeforeRetirement = (birthYear, firstName) => {
+//   const getAge = 2025 - birthYear;
+//   const retirement = 65 - getAge;
+//   return `${firstName} will retire in ${retirement} years`;
+// }
+
+// console.log(yearsBeforeRetirement(1990, 'John'));
+// console.log(yearsBeforeRetirement(1988, 'Ted'));
+// console.log(yearsBeforeRetirement(1997, 'Andy'));
+// console.log(yearsBeforeRetirement(1979, 'Robin'));
+
+
+// Calling Other Functions  
+const getAge = birthYear => 2025 - birthYear;
+
 const yearsBeforeRetirement = (birthYear, firstName) => {
-  const getAge = 2025 - birthYear;
-  const retirement = 65 - getAge;
+  const age = getAge(birthYear);
+  const retirement = 65 - age;
   return `${firstName} will retire in ${retirement} years`;
 }
 
 console.log(yearsBeforeRetirement(1990, 'John'));
-console.log(yearsBeforeRetirement(1988, 'Ted'));
-console.log(yearsBeforeRetirement(1997, 'Andy'));
-console.log(yearsBeforeRetirement(1979, 'Robin'));
+console.log(yearsBeforeRetirement(1985, 'Sarah'));  
