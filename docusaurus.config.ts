@@ -84,7 +84,8 @@ const config: Config = {
         // srcDark: "img/favicon-32x32-dark-mode.png",
       },
       items: [
-        { to: "/about", label: "About", position: "left" },
+        // { to: "/about", label: "About", position: "left" },
+        { to: "/", label: "About", position: "left" },
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
