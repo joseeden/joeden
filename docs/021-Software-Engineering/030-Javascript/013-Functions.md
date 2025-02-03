@@ -197,7 +197,7 @@ console.log(yearsBeforeRetirement(1990, 'John'));
 console.log(yearsBeforeRetirement(1985, 'Sarah'));
 ```
 
-Output:
+In this example, the  `yearsBeforeRetirement` function  is invoked twice with different inputs. This function will then invoke the `getAge` the age before computing for the remaining years before retirement.
 
 ```
 John will retire in 30 years

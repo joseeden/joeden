@@ -220,13 +220,41 @@
 
 
 // Calling Other Functions  
-const getAge = birthYear => 2025 - birthYear;
+// const getAge = birthYear => 2025 - birthYear;
 
-const yearsBeforeRetirement = (birthYear, firstName) => {
-  const age = getAge(birthYear);
-  const retirement = 65 - age;
-  return `${firstName} will retire in ${retirement} years`;
+// const yearsBeforeRetirement = (birthYear, firstName) => {
+//   const age = getAge(birthYear);
+//   const retirement = 65 - age;
+//   return `${firstName} will retire in ${retirement} years`;
+// }
+
+// console.log(yearsBeforeRetirement(1990, 'John'));
+// console.log(yearsBeforeRetirement(1985, 'Sarah'));  
+
+
+// Practice 1 - Compare BMI
+const dataAlex = { weight: 95, height: 1.88};
+const dataJake = { weight: 85, height: 1.76};
+
+function getBMI(weight, height) {
+  return (weight / (height * height)).toFixed(2);
 }
 
-console.log(yearsBeforeRetirement(1990, 'John'));
-console.log(yearsBeforeRetirement(1985, 'Sarah'));  
+const bmiAlex = getBMI(dataAlex.weight, dataAlex.height)
+const bmiJake = getBMI(dataJake.weight, dataJake.height)
+
+console.log(`Alex has BMI of ${bmiAlex}`);
+console.log(`Jake has BMI of ${bmiJake}`);
+
+function finalBMI() {
+  if ( bmiAlex > bmiJake) {
+    console.log(`Alex has a higher BMI than Jake.`);
+  } else {
+    console.log(`Jake has a higher BMI than Alex.`);
+  }
+}
+
+finalBMI();
+
+
+
