@@ -1,6 +1,6 @@
 // src/css/custom.scss
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
-@import './mixins';
+@import './mixins.scss';
 
 h1, h2, h3, h4, h5 {
   font-family: "Inter", sans-serif;
@@ -181,10 +181,23 @@ h1, h2, h3, h4, h5 {
 /* Adjust margin for larger screens */
 @media (min-width: 1440px) {
 
-  .main-wrapper .container {
-    margin-left: 40px;
-    margin-right: 0px;
+  // .main-wrapper .container {
+  //   margin-left: 40px;
+  //   margin-right: 0px;
+  // }
+
+  .main-wrapper {
+    display: flex;
+    justify-content: center;
   }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+
+
 }
 
 footer.footer {
@@ -201,7 +214,7 @@ footer.footer {
 .img-center {
   display: flex;
   justify-content: center;
-  width: 100%,
+  width: 100%;
   }
 
 
