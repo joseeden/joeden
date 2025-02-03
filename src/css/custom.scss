@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5 {
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: center;  /* Centers the navbar */
+  justify-content: space-between; /* Adjusted to space between items */
   padding: 0 1rem;
   position: sticky;
   top: 0;
@@ -64,18 +64,21 @@ h1, h2, h3, h4, h5 {
   .navbar__inner {
     display: flex;
     align-items: center;
-    justify-content: center;  /* Center items inside the navbar */
+    justify-content: center; /* Center aligned content */
     width: 100%;
   }
 
   .navbar__brand {
-    display: none;  /* Remove the logo/icon */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Ensures the logo is centered */
+    padding-left: 0;
   }
 
   .navbar__title {
+    margin-left: 0rem;
     font-size: 1.25rem;
     font-weight: bold;
-    margin-left: 0rem;
   }
 
   .navbar__toggle {
@@ -86,15 +89,14 @@ h1, h2, h3, h4, h5 {
     font-weight: bold;
     display: flex;
     align-items: center;
-    justify-content: center;  /* Center the navbar items */
     margin-left: auto;
-  }
 
-  .navbar__item {
-    margin-right: 1rem;
+    .navbar__item {
+      margin-right: 1rem;
 
-    @include small-size {
-      margin-right: 0.5rem;
+      @include small-size {
+        margin-right: 0.5rem;
+      }
     }
   }
 }
@@ -180,6 +182,11 @@ h1, h2, h3, h4, h5 {
 /* Adjust margin for larger screens */
 @media (min-width: 1440px) {
 
+  // .main-wrapper .container {
+  //   margin-left: 40px;
+  //   margin-right: 0px;
+  // }
+
   .main-wrapper {
     display: flex;
     flex-direction: column;
@@ -196,7 +203,6 @@ h1, h2, h3, h4, h5 {
     flex-direction: column;
     align-items: center;
   }
-
 }
 
 footer.footer {
