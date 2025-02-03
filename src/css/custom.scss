@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5 {
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;  /* Centers the navbar */
   padding: 0 1rem;
   position: sticky;
   top: 0;
@@ -64,20 +64,18 @@ h1, h2, h3, h4, h5 {
   .navbar__inner {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;  /* Center items inside the navbar */
     width: 100%;
   }
 
   .navbar__brand {
-    display: flex;
-    align-items: center;
-    padding-left: 0;
+    display: none;  /* Remove the logo/icon */
   }
 
   .navbar__title {
-    margin-left: 0rem;
     font-size: 1.25rem;
     font-weight: bold;
+    margin-left: 0rem;
   }
 
   .navbar__toggle {
@@ -88,14 +86,15 @@ h1, h2, h3, h4, h5 {
     font-weight: bold;
     display: flex;
     align-items: center;
+    justify-content: center;  /* Center the navbar items */
     margin-left: auto;
+  }
 
-    .navbar__item {
-      margin-right: 1rem;
+  .navbar__item {
+    margin-right: 1rem;
 
-      @include small-size {
-        margin-right: 0.5rem;
-      }
+    @include small-size {
+      margin-right: 0.5rem;
     }
   }
 }
@@ -181,11 +180,6 @@ h1, h2, h3, h4, h5 {
 /* Adjust margin for larger screens */
 @media (min-width: 1440px) {
 
-  // .main-wrapper .container {
-  //   margin-left: 40px;
-  //   margin-right: 0px;
-  // }
-
   .main-wrapper {
     display: flex;
     flex-direction: column;
@@ -203,8 +197,6 @@ h1, h2, h3, h4, h5 {
     align-items: center;
   }
 
-
-
 }
 
 footer.footer {
@@ -215,13 +207,8 @@ footer.footer {
   margin-top: auto;
 }
 
-
-
-
 .img-center {
   display: flex;
   justify-content: center;
   width: 100%;
-  }
-
-
+}
