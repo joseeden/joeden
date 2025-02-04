@@ -12,12 +12,12 @@
   // }
 
   &:hover {
-    transform: translateY(-10px) scale(1.05); /* Moves the card up and scales it */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow effect */
-    width: 85%; /* Optional: slightly expand width on hover */
+    transform: translateY(-10px) scale(1.05); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    width: 85%; 
   }
 
-  
+
   &Container {
     margin-bottom: calc(var(--ifm-spacing-horizontal) * 2);
   }
