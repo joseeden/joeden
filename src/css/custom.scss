@@ -174,15 +174,19 @@ h1, h2, h3, h4, h5 {
 /* Add 10px top padding for theme-doc-markdown and markdown classes */
 .theme-doc-markdown,
 .markdown {
-  // width: 100%;     // Set width to auto to allow it to expand
-  margin-right: 0; // Remove margin
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto; 
   overflow-wrap: break-word;
   word-wrap: break-word;
   padding-left: 20px;
   padding-right: 3px;
   padding-top: 10px;
-  margin-left: 0;
-  margin-right: 0;
+}
+
+.theme-doc-markdown {
+  flex: 2;
+  min-width: 600px; /* Ensures markdown content doesn't shrink too much */
 }
 
 /* Adjust margin for larger screens */
