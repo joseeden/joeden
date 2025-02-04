@@ -63,7 +63,7 @@ h1, h2, h3, h4, h5 {
   .navbar__inner {
     display: flex;
     align-items: center;
-    justify-content: space-between;  /* Space between logo (left) and navbar items (centered) */
+    justify-content: center;  /* Space between logo (left) and navbar items (centered) */
     width: 100%;
   }
 
@@ -71,7 +71,7 @@ h1, h2, h3, h4, h5 {
     display: flex;  /* Make sure logo is visible */
     align-items: center;
     justify-content: flex-start;  /* Align the logo to the left */
-    margin-right: auto;  /* Push other items to the center */
+    margin-right: 0px; 
   }
 
   .navbar__title {
