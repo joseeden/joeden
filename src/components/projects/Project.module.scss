@@ -1,27 +1,31 @@
 .row {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* Aligns items to the left, remove centering */
   flex-wrap: wrap;
-  gap: 7px 7px; 
+  margin-left: -10px;  /* Offset the left margin to align first card */
+  margin-right: -10px; /* Offset the right margin to align last card */
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;  /* Centers the card inside the container */
+  padding: 0;
+  margin: 0;
+  width: 220px;  
+  flex-shrink: 0;  /* Prevents shrinking when wrapping */
 }
 
 .card {
   border: 1px solid var(--ifm-color-emphasis-300);
   box-shadow: none;
   height: 100%;
-  width: 220px;
-  margin-right: 10px;
-  margin-bottom: 10px; 
-  // transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  width: 220px;  
+  margin: 5px;  
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, width 0.3s ease-in-out;
 
-  .card:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  }
-
-  &Container {
-    margin-bottom: calc(var(--ifm-spacing-horizontal) * 2);
+  &:hover {
+    transform: translateY(-10px) scale(1.05); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
   }
 }
 
