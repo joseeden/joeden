@@ -52,7 +52,7 @@ export default function Projects(): JSX.Element {
     <Layout title={title}>
       <main className="container container--fluid margin-vert--lg">
         <h1>{title}</h1>
-        <p>{description}</p>
+        {/* <p>{description}</p> */}
 
         <div className="row">
           {projects.map((project) => (
