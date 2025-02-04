@@ -10,14 +10,15 @@
   box-shadow: none;
   height: 100%;
   width: 220px;
+  margin-right: 10px;
+  margin-bottom: 10px; 
   // transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, width 0.3s ease-in-out;
 
-  &:hover {
-    transform: translateY(-10px) scale(1.05); 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+  .card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   }
-
 
   &Container {
     margin-bottom: calc(var(--ifm-spacing-horizontal) * 2);
