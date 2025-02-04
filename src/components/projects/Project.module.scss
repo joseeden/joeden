@@ -2,8 +2,9 @@
   display: flex;
   justify-content: flex-start; /* Aligns items to the left, remove centering */
   flex-wrap: wrap;
-  margin-left: -10px;  /* Offset the left margin to align first card */
-  margin-right: -10px; /* Offset the right margin to align last card */
+  margin-left: -10px;  
+  margin-right: -10px; 
+  gap: 7px; 
 }
 
 .cardContainer {
