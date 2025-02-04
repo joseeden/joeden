@@ -23,7 +23,7 @@ const projects: ProjectData[] = [
   },
   {
     title: "End-to-End DevSecOps Pipeline",
-    description: "Secure CI/CD pipeline integrated with security scanning, automated testing, and compliance checks.",
+    description: "CI/CD pipeline integrated with security scanning, automated testing, and compliance checks.",
     url: "",
     image: require(`${assetsDir}/devsecops.png`),
     // role: "Author",

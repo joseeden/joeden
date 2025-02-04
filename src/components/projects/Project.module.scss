@@ -40,6 +40,13 @@
     }
   }
 
+  .card__footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+
   .image {
     background: #f7f7f7;
     position: relative;
