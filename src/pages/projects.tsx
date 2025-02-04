@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "@theme/Layout";
+import styles from "../components/projects/Project.module.scss";
 
 import { Project, ProjectData } from "../components/projects/Project";
 
@@ -44,17 +45,13 @@ const projects: ProjectData[] = [
 ];
 
 const title = "Projects";
-// const description = "Featured projects I was/am involved in.";
 
 export default function Projects(): JSX.Element {
   return (
-    // <Layout title={title} description={description}>
     <Layout title={title}>
-      <main className="container container--fluid margin-vert--lg">
-        <h1 className="projects-title">{title}</h1>
-        {/* <p>{description}</p> */}
-
-        <div className="row">
+      <main className={`${styles.projectsPage} container container--fluid margin-vert--lg`}>
+        <h1 className={styles.projectsTitle}>{title}</h1>
+        <div className={styles.row}>
           {projects.map((project) => (
             <Project key={project.title} {...project} />
           ))}
