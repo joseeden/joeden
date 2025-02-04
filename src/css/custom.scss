@@ -55,7 +55,8 @@ h1, h2, h3, h4, h5 {
   display: flex;
   align-items: center;
   justify-content: center; /* Center align all navbar elements */
-  padding: 0 1rem;
+  padding: 0;
+  // padding: 0 1rem;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -94,9 +95,9 @@ h1, h2, h3, h4, h5 {
   display: flex;
   align-items: center;
   margin-left: auto;
-  width: 100%
-  justify-content: center 
-  flex-grow: 1
+  width: 100%;
+  justify-content: center;
+  flex-grow: 1;
 
   .navbar__item {
     // margin-right: 1rem;
