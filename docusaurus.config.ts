@@ -62,10 +62,10 @@ const config: Config = {
 
   themeConfig: {
     image: "img/logo/fourth/favicon.ico",
-    metadata: [
-      {
-        name: "description",
-        content: "I am an engineer who loves to learn things and solve technical challenges.",
+      metadata: [
+        {
+          name: "description",
+          content: "I am an engineer who loves to learn things and solve technical challenges.",
       },
       {
         name: "keywords",
@@ -92,8 +92,8 @@ const config: Config = {
           position: 'left',
           label: 'Documentation',
         },        
-        { to: "/projects", label: "Projects", position: "left" },
         { to: "/blog", label: "Blog", position: "left" },
+        { to: "/projects", label: "Projects", position: "left" },
         { to: "/", label: "Running", position: "left" },
         // { to: "/", label: "Gallery", position: "left" },
         // { to: "/", label: "Arts", position: "left" },
