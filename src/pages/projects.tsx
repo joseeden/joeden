@@ -44,11 +44,12 @@ const projects: ProjectData[] = [
 ];
 
 const title = "Projects";
-const description = "Featured projects I was/am involved in.";
+// const description = "Featured projects I was/am involved in.";
 
 export default function Projects(): JSX.Element {
   return (
-    <Layout title={title} description={description}>
+    // <Layout title={title} description={description}>
+    <Layout title={title}>
       <main className="container container--fluid margin-vert--lg">
         <h1>{title}</h1>
         <p>{description}</p>
