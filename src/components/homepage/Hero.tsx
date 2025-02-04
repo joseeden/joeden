@@ -19,7 +19,7 @@ export const Hero: FunctionComponent = () => {
           </p>
         </div>
         <div className={styles.imageContainer}>
-          <img src="img/about/me-3.jpg" alt="Eden Jose" className={styles.heroImage} />
+          <img src="img/about/me-4.jpg" alt="Eden Jose" className={styles.heroImage} />
         </div>
       </div>
     </header>

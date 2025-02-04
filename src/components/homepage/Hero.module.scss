@@ -10,8 +10,6 @@
 }
 
 .heroBanner {
-  // background: #EFEFEF;
-  // color: #000;
   background: #000;
   color: #EFEFEF;
   text-align: left;
@@ -23,11 +21,36 @@
   margin: 0;
   width: 100vw;
   height: 100vh;
-  // overflow: hidden;
 
   @include small-size {
     padding: 0;
   }
+}
+
+.heroContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.textContainer {
+  flex: 1;
+}
+
+.imageContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.heroImage {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
 .title {
@@ -53,7 +76,6 @@
 }
 
 .highlighted {
-  // background: linear-gradient(to left, #46c34c 10%, #FF5F1F 100%);
   background: linear-gradient(to left, #46c34c 10%, #FF5F1F 100%);
   background-clip: text;
   -webkit-background-clip: text;
