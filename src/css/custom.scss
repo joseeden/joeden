@@ -71,8 +71,7 @@ h1, h2, h3, h4, h5 {
   .navbar__brand {
     // display: none;  /* Remove the logo/icon */
     display: flex;
-    align-items: center;
-    justify-content: center;  /* Center items inside the navbar */
+    align-items: left;
     width: 100%;    
   }
 
@@ -176,9 +175,9 @@ h1, h2, h3, h4, h5 {
   padding-top: 10px;
 }
 
-.docItemContainer_Djhp {
+.docItemContainer {
   margin-right: 0; // Remove margin
-  width: auto;     // Set width to auto to allow it to expand
+  width: 100%;     // Set width to auto to allow it to expand
 }
 
 /* Adjust margin for larger screens */
