@@ -1,6 +1,7 @@
 .row {
   display: flex;
-  justify-content: center; 
+  // justify-content: center;
+  justify-content: space-between;  
   flex-wrap: wrap;
   gap: 7px; 
 }
@@ -10,14 +11,12 @@
   box-shadow: none;
   height: 100%;
   width: 220px;
-  // width: 80%;
   // transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, width 0.3s ease-in-out;
 
   &:hover {
     transform: translateY(-10px) scale(1.05); 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
-    // width: 85%; 
   }
 
 
