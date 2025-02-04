@@ -31,12 +31,11 @@ export const Project: FunctionComponent<ProjectData> = ({
             </span>
           )} */}
         </div>
-        {/* <div className="card__body"> */}
-        <div className={styles.card__body}>
+        <div className="card__body">
           <h2>{title}</h2>
           <p>{description}</p>
         </div>
-        <div className={styles.cardFooter}>
+        <div className="card__footer" style={{ textAlign: "center" }}>
           <a
             href={url}
             target="_blank"
