@@ -69,7 +69,7 @@ h1, h2, h3, h4, h5 {
 
   .navbar__brand {
     display: flex;  /* Make sure logo is visible */
-    align-items: center;
+    align-items: left;
     justify-content: flex-start;  /* Align the logo to the left */
     margin-right: 0px; 
   }
