@@ -92,6 +92,7 @@ const config: Config = {
           position: 'left',
           label: 'Documentation',
         },        
+        { to: "/projects", label: "Projects", position: "left" },
         { to: "/blog", label: "Blog", position: "left" },
         { to: "/", label: "Running", position: "left" },
         // { to: "/", label: "Gallery", position: "left" },
