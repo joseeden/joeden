@@ -1,30 +1,25 @@
 .row {
   display: flex;
-  // justify-content: center;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 17px;
-  margin-left: 0;
-  margin-right: 0;
+  gap: 16px; /* Space between cards */
+  width: 100%;
+  max-width: 1000px; /* Adjust based on container width */
+  margin: auto;
 }
 
 .cardContainer {
+  flex: 1 1 calc(25% - 16px); /* 25% per column, considering gap */
+  max-width: 220px; /* Prevents stretching */
   display: flex;
   justify-content: center;
-  padding: 0;
-  margin: 0;
-  flex-basis: calc(25% - 17px);
-  width: auto;
-  flex-shrink: 0;
-  margin-bottom: calc(var(--ifm-spacing-horizontal) * 2);
 }
 
 .card {
   border: 1px solid var(--ifm-color-emphasis-300);
   box-shadow: none;
-  height: 100%;
-  width: 220px;
-  margin: 5px 0 10px 0;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, width 0.3s ease-in-out;
+  width: 100%; /* Make the card fully occupy its container */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
   &:hover {
     transform: translateY(-10px) scale(1.05);
