@@ -74,7 +74,7 @@ h1, h2, h3, h4, h5 {
 .navbar__brand {
   display: flex;
   align-items: center;
-  justify-content: center; /* Ensures the logo is centered */
+  justify-content: left; /* Ensures the logo is centered */
   padding-left: 0;
 }
 
@@ -95,7 +95,8 @@ h1, h2, h3, h4, h5 {
   margin-left: auto;
 
   .navbar__item {
-    margin-right: 1rem;
+    // margin-right: 1rem;
+    margin-right: 0;
 
     @include small-size {
       margin-right: 0.5rem;

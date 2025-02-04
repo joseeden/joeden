@@ -85,18 +85,18 @@ const config: Config = {
       },
       items: [
         // { to: "/about", label: "About", position: "left" },
-        { to: "/", label: "Home", position: "center" },
+        { to: "/", label: "Home", position: "left" },
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
           label: 'Documentation',
         },        
-        { to: "/blog", label: "Blog", position: "center" },
-        { to: "/", label: "Running", position: "center" },
+        { to: "/blog", label: "Blog", position: "left" },
+        { to: "/", label: "Running", position: "left" },
         // { to: "/", label: "Gallery", position: "left" },
         // { to: "/", label: "Arts", position: "left" },
-        { to: "https://merria.co", label: "Shop", position: "center" },
+        { to: "https://merria.co", label: "Shop", position: "left" },
         // {
         //   href: 'https://github.com/joseeden',
         //   label: 'GitHub',
