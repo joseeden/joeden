@@ -51,7 +51,7 @@ export default function Projects(): JSX.Element {
     // <Layout title={title} description={description}>
     <Layout title={title}>
       <main className="container container--fluid margin-vert--lg">
-        <h1>{title}</h1>
+        <h1 className="projects-title">{title}</h1>
         {/* <p>{description}</p> */}
 
         <div className="row">

@@ -1,17 +1,21 @@
+.projects-title {
+  text-align: center;
+}
+
 .row {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 17px; 
   width: 100%;
-  // max-width: 1000px; 
   margin: 30px 30px 30px 30px;
 }
 
 .cardContainer {
-  max-width: 220px; /* Prevents stretching */
+  max-width: 220px; 
   display: flex;
   justify-content: center;
+  align-items: center;
   // flex: 1 1 calc(25% - 16px); /* 25% per column, considering gap */
   flex-basis: calc(25% - 17px);
   margin-bottom: calc(var(--ifm-spacing-horizontal) * 2);
