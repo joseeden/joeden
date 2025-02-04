@@ -10,6 +10,8 @@
 }
 
 .heroBanner {
+  // background: #EFEFEF;
+  // color: #000;
   background: #EFEFEF;
   color: #000;
   text-align: left;
@@ -51,6 +53,7 @@
 }
 
 .highlighted {
+  // background: linear-gradient(to left, #46c34c 10%, #FF5F1F 100%);
   background: linear-gradient(to left, #46c34c 10%, #FF5F1F 100%);
   background-clip: text;
   -webkit-background-clip: text;
