@@ -67,10 +67,10 @@ h1, h2, h3, h4, h5 {
 .navbar__inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   // justify-content: center; /* Center align the navbar inner content */
-  width: 100%;
-  max-width: 1200px; /* Optionally constrain the width of the navbar */
+  // width: 100%;
+  // max-width: 1200px; 
 }
 
 .navbar__brand {
