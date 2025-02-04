@@ -3,7 +3,7 @@ import Layout from "@theme/Layout";
 
 import { Project, ProjectData } from "../components/projects/Project";
 
-const assetsDir = "./assets/projects/";
+const assetsDir = "./assets/projects";
 const projects: ProjectData[] = [
   {
     title: "Botkube",
