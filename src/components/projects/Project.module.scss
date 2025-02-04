@@ -4,16 +4,17 @@
   flex-wrap: wrap;
   gap: 17px; 
   width: 100%;
-  max-width: 1000px; /* Adjust based on container width */
+  // max-width: 1000px; 
   margin: auto;
 }
 
 .cardContainer {
-  flex: 1 1 calc(25% - 16px); /* 25% per column, considering gap */
   max-width: 220px; /* Prevents stretching */
   display: flex;
   justify-content: center;
-  // flex-basis: calc(25% - 17px);
+  // flex: 1 1 calc(25% - 16px); /* 25% per column, considering gap */
+  flex-basis: calc(25% - 17px);
+  margin-bottom: calc(var(--ifm-spacing-horizontal) * 2);
 }
 
 .card {
