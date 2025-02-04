@@ -54,54 +54,44 @@ h1, h2, h3, h4, h5 {
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: center; /* Center align all navbar elements */
-  padding: 0;
-  // padding: 0 1rem;
+  justify-content: center;  /* Centers the navbar */
+  padding: 0 1rem;
   position: sticky;
   top: 0;
   z-index: 1000;
   transition: top 0.3s;
-  width: 100%; /* Ensure it spans the entire width of the page */
-}
 
-.navbar__inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  // justify-content: center; /* Center align the navbar inner content */
-  // width: 100%;
-  // max-width: 1200px; 
-}
+  .navbar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;  /* Center items inside the navbar */
+    width: 100%;
+  }
 
-.navbar__brand {
-  display: flex;
-  align-items: center;
-  justify-content: left; /* Ensures the logo is centered */
-  padding-left: 0;
-}
+  .navbar__brand {
+    display: none;  /* Remove the logo/icon */
+  }
 
-.navbar__title {
-  margin-left: 0rem;
-  font-size: 1.25rem;
-  font-weight: bold;
-}
+  .navbar__title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-left: 0rem;
+  }
 
-.navbar__toggle {
-  margin-left: 0.5rem;
-}
+  .navbar__toggle {
+    margin-left: 0.5rem;
+  }
 
-.navbar__items {
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-  width: 100%;
-  justify-content: center;
-  flex-grow: 1;
+  .navbar__items {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;  /* Center the navbar items */
+    margin-left: auto;
+  }
 
   .navbar__item {
-    // margin-right: 1rem;
-    margin-right: 0;
+    margin-right: 1rem;
 
     @include small-size {
       margin-right: 0.5rem;
@@ -166,10 +156,12 @@ h1, h2, h3, h4, h5 {
   }
 }
 
+/* Optional: Add scroll-up animation */
 .navbar--hide {
   top: -80px;
 }
 
+/* Custom styles for thin scrollbar */
 .menu.thin-scrollbar {
   padding: 20px 0 8.5px 8.5px !important;
 }
@@ -180,23 +172,13 @@ h1, h2, h3, h4, h5 {
   padding-top: 10px;
 }
 
-.docItemCol {
-  padding-right: 17px;
-  padding-left: 34px;
+.docItemContainer_Djhp {
+  margin-right: 0; // Remove margin
+  width: auto;     // Set width to auto to allow it to expand
 }
-
-// .docItemContainer_Djhp {
-//   margin-right: 0; // Remove margin
-//   width: auto;     // Set width to auto to allow it to expand
-// }
 
 /* Adjust margin for larger screens */
 @media (min-width: 1440px) {
-
-  // .main-wrapper .container {
-  //   margin-left: 40px;
-  //   margin-right: 0px;
-  // }
 
   .main-wrapper {
     display: flex;
@@ -214,6 +196,7 @@ h1, h2, h3, h4, h5 {
     flex-direction: column;
     align-items: center;
   }
+
 }
 
 footer.footer {
