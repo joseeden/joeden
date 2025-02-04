@@ -69,7 +69,11 @@ h1, h2, h3, h4, h5 {
   }
 
   .navbar__brand {
-    display: none;  /* Remove the logo/icon */
+    // display: none;  /* Remove the logo/icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;  /* Center items inside the navbar */
+    width: 100%;    
   }
 
   .navbar__title {
