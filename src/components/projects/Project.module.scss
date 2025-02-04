@@ -1,6 +1,6 @@
 .row {
   display: flex;
-  justify-content: flex-start; /* Aligns items to the left, remove centering */
+  justify-content: flex-start; 
   flex-wrap: wrap;
   margin-left: -10px;  
   margin-right: -10px; 
@@ -13,7 +13,8 @@
   padding: 0;
   margin: 0;
   width: 220px;  
-  flex-shrink: 0;  /* Prevents shrinking when wrapping */
+  flex-shrink: 0;  
+  margin-bottom: calc(var(--ifm-spacing-horizontal) * 2);
 }
 
 .card {
@@ -21,7 +22,7 @@
   box-shadow: none;
   height: 100%;
   width: 220px;  
-  margin: 5px;  
+  margin: 5px 0 10px 0;  
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, width 0.3s ease-in-out;
 
   &:hover {
