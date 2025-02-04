@@ -1,20 +1,24 @@
+.row {
+  display: flex;
+  justify-content: center; /* Centers the row */
+  flex-wrap: wrap;
+  gap: 20px; /* Adjust the gap between cards */
+}
+
 .card {
   border: 1px solid var(--ifm-color-emphasis-300);
   box-shadow: none;
   height: 100%;
-  width: 80%;
+  width: calc(25% - 20px);
+  // width: 80%;
   // transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-
-  // &:hover {
-  //   transform: translateY(-5px); // Moves the card up
-  //   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); // Adds a subtle shadow effect
-  // }
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, width 0.3s ease-in-out;
 
   &:hover {
     transform: translateY(-10px) scale(1.05); 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
-    width: 85%; 
+    // width: 85%; 
+    width: calc(25% - 20px);
   }
 
 
