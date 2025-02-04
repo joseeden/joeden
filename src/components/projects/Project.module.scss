@@ -2,12 +2,21 @@
   border: 1px solid var(--ifm-color-emphasis-300);
   box-shadow: none;
   height: 100%;
+  width: 80%;
+  // transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
+  // &:hover {
+  //   transform: translateY(-5px); // Moves the card up
+  //   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); // Adds a subtle shadow effect
+  // }
+
   &:hover {
-    transform: translateY(-5px); // Moves the card up
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); // Adds a subtle shadow effect
+    transform: translateY(-10px) scale(1.05); /* Moves the card up and scales it */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow effect */
+    width: 85%; /* Optional: slightly expand width on hover */
   }
+
   
   &Container {
     margin-bottom: calc(var(--ifm-spacing-horizontal) * 2);
