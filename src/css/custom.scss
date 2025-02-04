@@ -215,3 +215,13 @@ footer.footer {
   justify-content: center;
   width: 100%;
 }
+
+/* Fix for double left margin/padding on .container */
+.container.padding-top--md.padding-bottom--lg {
+  .row.ai-style-change-1 {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+}
