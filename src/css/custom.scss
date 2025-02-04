@@ -1,4 +1,3 @@
-// src/css/custom.scss
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 @import './mixins.scss';
 
@@ -64,15 +63,15 @@ h1, h2, h3, h4, h5 {
   .navbar__inner {
     display: flex;
     align-items: center;
-    justify-content: center;  /* Center items inside the navbar */
+    justify-content: space-between;  /* Space between logo (left) and navbar items (centered) */
     width: 100%;
   }
 
   .navbar__brand {
-    // display: none;  /* Remove the logo/icon */
-    display: flex;
-    align-items: left;
-    width: 100%;    
+    display: flex;  /* Make sure logo is visible */
+    align-items: center;
+    justify-content: flex-start;  /* Align the logo to the left */
+    margin-right: auto;  /* Push other items to the center */
   }
 
   .navbar__title {
