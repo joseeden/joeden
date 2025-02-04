@@ -1,9 +1,8 @@
 .row {
   display: flex;
-  // justify-content: center;
-  justify-content: space-between;  
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 7px; 
+  gap: 7px 7px; 
 }
 
 .card {
