@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5 {
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: space-between; 
   padding: 0 1rem;
   position: sticky;
   top: 0;
@@ -64,21 +64,22 @@ h1, h2, h3, h4, h5 {
   .navbar__inner {
     display: flex;
     align-items: center;
-    justify-content: center;  
+    justify-content: space-between;  
     width: 100%;
   }
 
   .navbar__brand {
     display: flex;
-    align-items: left;
+    align-items: center;
     justify-content: flex-start;
+    margin-right: 0px;
   }
 
   .navbar__title {
     font-size: 1.25rem;
     font-weight: bold;
-    margin-left: 0rem;
-    margin-right: 1.5rem;
+    margin-left: 1rem;
+    margin-right: auto;
   }
 
   .navbar__toggle {
@@ -201,6 +202,47 @@ h1, h2, h3, h4, h5 {
   }
 
 }
+
+/* Styles for small mobile screens */
+@media (max-width: 600px) {
+
+  .navbar {
+    flex-direction: column; 
+    align-items: flex-start; 
+    padding: 0.5rem;
+  }
+
+  .navbar__title {
+    font-size: 1.1rem; 
+    margin-left: 0;
+  }
+
+  .navbar-sidebar__close {
+    width: 20px; 
+  }
+
+  footer.footer {
+    padding: 1rem; 
+  }
+
+  .theme-doc-markdown {
+    width: 100%; 
+    padding-left: 10px; 
+    padding-right: 10px; 
+  }
+
+  /* Adjust button sizes */
+  .button--primary {
+    padding: 0.5rem 1rem; /* Smaller buttons */
+    font-size: 0.875rem; /* Smaller font size */
+  }
+
+  .button__icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
 
 footer.footer {
   text-align: center;
