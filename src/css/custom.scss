@@ -176,20 +176,22 @@ h1, h2, h3, h4, h5 {
   padding-left: 20px;
   padding-right: 3px;
   padding-top: 10px;
+  width: 100%;
   box-sizing: border-box;
 }
 
 
 
-/* Adjust margin for larger screens */
+/* Adjust for larger screens */
 @media (min-width: 1440px) {
-
   .main-wrapper {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    // justify-content: center;
+    justify-content: flex-start;
     width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
   }
 
   .container {
@@ -197,15 +199,15 @@ h1, h2, h3, h4, h5 {
     width: 100%;
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    box-sizing: border-box;
   }
 
 }
 
 /* Styles for small mobile screens */
 @media (max-width: 600px) {
-
   .navbar {
     flex-direction: column; 
     align-items: flex-start; 
