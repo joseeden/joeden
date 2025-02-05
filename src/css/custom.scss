@@ -1,3 +1,4 @@
+// src/css/custom.scss
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 @import './mixins.scss';
 
@@ -37,12 +38,10 @@ h1, h2, h3, h4, h5 {
   --ifm-color-primary-lighter: #31d8c4;
   --ifm-color-primary-lightest: #4eddcd;
   --docusaurus-highlighted-code-line-bg: #4eddcd;
-  // --ifm-footer-background-color: #1b1b1d;
-  --ifm-footer-background-color: #181818;
+  --ifm-footer-background-color: #1b1b1d;
 
   html {
-    // --ifm-background-color: #1b1b1d;
-    --ifm-background-color: #181818;
+    --ifm-background-color: #1b1b1d;
     --ifm-background-surface-color: #1b1b1d;
 
     .navbar {
@@ -55,7 +54,7 @@ h1, h2, h3, h4, h5 {
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; 
   padding: 0 1rem;
   position: sticky;
   top: 0;
@@ -65,7 +64,7 @@ h1, h2, h3, h4, h5 {
   .navbar__inner {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center;  
     width: 100%;
   }
 
@@ -73,7 +72,6 @@ h1, h2, h3, h4, h5 {
     display: flex;
     align-items: left;
     justify-content: flex-start;
-    margin-right: 0px; 
   }
 
   .navbar__title {
@@ -91,7 +89,7 @@ h1, h2, h3, h4, h5 {
     font-weight: bold;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center;  
     margin-left: auto;
   }
 
@@ -171,40 +169,37 @@ h1, h2, h3, h4, h5 {
   padding: 20px 0 8.5px 8.5px !important;
 }
 
+
 .theme-doc-markdown,
 .markdown {
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto; 
   padding-left: 20px;
   padding-right: 3px;
   padding-top: 10px;
   box-sizing: border-box;
 }
 
-.theme-doc-markdown {
-  flex: 2;
-  min-width: 600px; 
-}
+
 
 /* Adjust margin for larger screens */
 @media (min-width: 1440px) {
+
   .main-wrapper {
-    align-items: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
     // justify-content: center;
     width: 100%;
   }
 
   .container {
-    max-width: 1100px;
+    max-width: 1200px;
     width: 100%;
-    // margin: 0;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
 }
 
 footer.footer {
