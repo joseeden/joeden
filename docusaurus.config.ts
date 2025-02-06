@@ -8,9 +8,10 @@ const config: Config = {
   tagline: "Engineer by day, runner by night.",
   favicon: 'img/logo/fourth/favicon.ico',
   url: 'https://github.com',
-  baseUrl: "/joeden/",
-  organizationName: 'joseeden',     // Github organization/username
-  projectName: 'joeden',            // Reponame
+  // baseUrl: "/joeden/",
+  baseUrl: "/",
+  organizationName: 'joseeden',     
+  projectName: 'joeden',            
   deploymentBranch: "master",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
@@ -36,7 +37,7 @@ const config: Config = {
       },
     ],
 
-    "@datalayer/jupyter-docusaurus-plugin", // Add this line
+    "@datalayer/jupyter-docusaurus-plugin", 
     
   ],
 
