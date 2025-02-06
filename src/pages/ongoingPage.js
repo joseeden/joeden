@@ -1,6 +1,6 @@
 // src/pages/OngoingPage.js
 import React from 'react';
-import './ongoing.scss';  // Import the SCSS file for styles
+import './ongoing.scss';  
 
 const OngoingPage = () => {
   return (
