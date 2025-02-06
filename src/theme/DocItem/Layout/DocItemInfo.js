@@ -1,5 +1,5 @@
 import React from 'react';
-import ReadingTime from '../../../components/ReadingTime';
+import ReadingTime from '../../../components/documentation/ReadingTime';
 import ShareButton from '../ShareButton';
 import { useDoc } from '@docusaurus/theme-common/internal';
 
