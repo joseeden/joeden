@@ -1,11 +1,17 @@
 .projectsPage {
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  width: auto;
+  max-width: 100%;
 
   .projectsTitle {
     text-align: center;
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 1.5rem;
+    flex: none;
   }
 
   .row {
@@ -15,10 +21,11 @@
     gap: 17px;
     width: 100%;
     margin: 0;
+    flex: none;
   }
 
   .cardContainer {
-    max-width: 300px; 
+    max-width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,13 +47,11 @@
     }
   }
 
-
-
   .image {
     background: #f7f7f7;
     position: relative;
     padding: 10px;
-    width: 100%; // start here
+    width: 100%;
     height: 180px;
     display: flex;
     justify-content: center;
@@ -55,35 +60,34 @@
     img {
       width: 100%;
       height: 100%;
-      object-fit: cover; 
-      border-radius: 8px; 
-    }    
+      object-fit: cover;
+      border-radius: 8px;
+    }
   }
 
   .card__body {
     padding: 10px;
     h2 {
-      font-size: 1.2rem; 
+      font-size: 1.2rem;
       margin-bottom: 0.5rem;
     }
     p {
-      font-size: 0.9rem;  
+      font-size: 0.9rem;
     }
   }
 
   .card__footer {
     display: flex;
-    justify-content: center;  
-    align-items: center;      
+    justify-content: center;
+    align-items: center;
     padding: 10px;
     width: 100%;
     text-align: center;
   }
-  
-  
+
   // .card__footer .button {
-  //   display: block;  
-  //   margin: 0 auto;  
+  //   display: block;
+  //   margin: 0 auto;
   // }
 
   // .role {
