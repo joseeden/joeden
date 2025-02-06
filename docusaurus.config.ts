@@ -12,8 +12,8 @@ const config: Config = {
   organizationName: 'joseeden',     // Github organization/username
   projectName: 'joeden',            // Reponame
   deploymentBranch: "master",
-  onBrokenLinks: "ignore",
-  onBrokenMarkdownLinks: "ignore",
+  onBrokenLinks: "warn",
+  onBrokenMarkdownLinks: "warn",
 
   
   i18n: {
