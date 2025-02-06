@@ -1,0 +1,14 @@
+// src/pages/Ongoing.scss
+.ongoing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #d8d8d8;
+  margin: 0;
+}
+
+.ongoing-image {
+  max-width: 80%;  // Adjust this value to control the size
+  height: auto;
+}
