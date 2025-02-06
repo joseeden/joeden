@@ -59,9 +59,9 @@ export default function DocItemLayout({ children }) {
         <Giscus
           id="comments"
           repo="joseeden/joeden"
-          repoId=" "
+          repoId="R_kgDOMKoS2w"
           category="Comments"
-          categoryId="DIC_kwDOEFKzp84CPOcp"
+          categoryId="DIC_kwDOMKoS284Cmto9"
           mapping="pathname"
           reactionsEnabled="1"
           emitMetadata="0"
