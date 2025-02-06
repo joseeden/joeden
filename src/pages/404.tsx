@@ -1,7 +1,12 @@
-// src/pages/404.tsx
 import React from 'react';
-import { Redirect } from '@docusaurus/router';
+import '../ongoing/ongoing.scss';
 
-export default function NotFound() {
-  return <Redirect to="../ongoing" />;
-}
+const Error404Page: React.FC = () => {
+  return (
+    <div className="ongoing-container">
+      <img src={require('../ongoing/ongoing.png').default} alt="Ongoing" className="ongoing-image" />
+    </div>
+  );
+};
+
+export default Error404Page;
