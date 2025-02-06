@@ -94,7 +94,7 @@ const config: Config = {
         },        
         { to: "/blog", label: "Blog", position: "left" },
         { to: "/projects", label: "Projects", position: "left" },
-        { to: "/ongoing", label: "Running", position: "left" },
+        { to: "/404", label: "Running", position: "left" },
         // { to: "/", label: "Gallery", position: "left" },
         // { to: "/", label: "Arts", position: "left" },
         { to: "https://merria.co", label: "Shop", position: "left" },
