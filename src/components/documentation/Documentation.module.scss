@@ -1,7 +1,7 @@
 /* src/components/documentation/Documentation.module.scss */
 
 .documentationContainer {
-  max-width: 800px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -15,4 +15,21 @@
 .documentationContent {
   line-height: 1.6;
   font-size: 1rem;
+}
+
+
+/* Adjust for larger screens */
+@media (min-width: 1440px) {
+  .main-wrapper {
+    display: flex;
+    /* width: 1440px; */
+    width: 100%;
+    box-sizing: border-box;
+    margin-inline: auto;
+  }
+
+  // .container {
+
+  // }
+
 }
