@@ -1,6 +1,6 @@
 import React from 'react';
 import ReadingTime from '../../../components/documentation/ReadingTime';
-import ShareButton from '../ShareButton';
+// import ShareButton from '../ShareButton';
 import { useDoc } from '@docusaurus/theme-common/internal';
 
 function DocItemInfo() {
@@ -8,7 +8,7 @@ function DocItemInfo() {
   return (
     <div className="flex justify-between">
       <ReadingTime />
-      <ShareButton title={metadata.title} />
+      {/* <ShareButton title={metadata.title} /> */}
     </div>
   );
 }
