@@ -181,31 +181,6 @@ h1, h2, h3, h4, h5 {
 }
 
 
-
-/* Adjust for larger screens */
-@media (min-width: 1440px) {
-  .main-wrapper {
-    // display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  .container {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    // display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    box-sizing: border-box;
-  }
-
-}
-
 /* Styles for small mobile screens */
 @media (max-width: 600px) {
   .navbar {

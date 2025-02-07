@@ -2,9 +2,6 @@
 # Building a Documentation Website
 
 
-
-
-
 ## Prerequisites 
 
 - [Install NodeJS and NPX](./005-Tools-Specifications.md#nodejs)
