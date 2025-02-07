@@ -17,19 +17,33 @@
   font-size: 1rem;
 }
 
-
 /* Adjust for larger screens */
 @media (min-width: 1440px) {
   .main-wrapper {
     display: flex;
-    width: 1440px; 
-    // width: 100%;
+    justify-content: center; /* Center everything */
+    align-items: flex-start; /* Align items at the top */
+    width: 1440px;
     box-sizing: border-box;
-    margin-inline: auto;
+    margin: 0 auto;
   }
 
-  // .container {
+  .sidebar,
+  .article,
+  .toc {
+    flex-shrink: 0;
+  }
 
-  // }
+  .sidebar {
+    width: 20%; /* Adjust as needed */
+  }
 
+  .article {
+    width: 60%; /* Adjust as needed */
+    padding: 0 20px;
+  }
+
+  .toc {
+    width: 20%; /* Adjust as needed */
+  }
 }
