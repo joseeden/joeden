@@ -57,7 +57,7 @@ h1, h2, h3, h4, h5 {
   // justify-content: space-between;
   justify-content: center;
   margin: 0 auto;
-  width: 1440px;
+  max-width: 1440px;
   padding: 0 1rem;
   position: sticky;
   top: 0;
@@ -67,7 +67,7 @@ h1, h2, h3, h4, h5 {
   .navbar__inner {
     display: flex;
     align-items: center;
-    justify-content: center;
+    // justify-content: space-between;
     width: 100%;
   }
 
@@ -81,7 +81,7 @@ h1, h2, h3, h4, h5 {
   .navbar__title {
     font-size: 1.25rem;
     font-weight: bold;
-    margin-left: 0.5rem;
+    margin-left: 0;
     margin-right: 1rem;
   }
 
@@ -93,8 +93,8 @@ h1, h2, h3, h4, h5 {
     font-weight: bold;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
     // justify-content: center;
+    justify-content: flex-start;
     // margin-left: auto;
   }
 
@@ -295,7 +295,7 @@ footer.footer {
 @media (min-width: 1440px) {
   .theme-doc-container {
     display: flex;
-    width: 1440px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 20px; 
   }
@@ -307,7 +307,7 @@ footer.footer {
 
   .theme-doc-markdown, .markdown {
     flex: 1; 
-    width: 1440px; 
+    max-width: 1440px; 
     margin-left: auto;
     margin-right: auto;
     
