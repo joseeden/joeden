@@ -170,8 +170,6 @@ h1, h2, h3, h4, h5 {
   padding: 20px 0 8.5px 8.5px !important;
 }
 
-
-
 /* Sidebar */
 /* Section title*/
 .theme-doc-sidebar-menu .menu__list-item-collapsible .menu__link {
@@ -218,14 +216,13 @@ h1, h2, h3, h4, h5 {
 @media (max-width: 600px) {
   .theme-doc-sidebar-menu .menu__list-item-collapsible .menu__link,
   .theme-doc-sidebar-menu .menu__list-item > a.menu__link {
-    font-size: 14px; 
-    line-height: 14px; 
+    font-size: 14px;
+    line-height: 14px;
   }
 }
 /* Sidebar: end */
 
 
-/* Custom styles for footer */
 footer.footer {
   text-align: center;
   background: var(--ifm-footer-background-color);
@@ -299,9 +296,13 @@ footer.footer {
     padding: 0 20px; 
   }
 
+  .theme-doc-sidebar { 
+    flex: 0 0 auto; 
+    margin-right: 20px; 
+  }
+
   .theme-doc-markdown, .markdown {
     flex: 1; 
     max-width: none; 
   }
-
 }
