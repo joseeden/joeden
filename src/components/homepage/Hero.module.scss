@@ -88,11 +88,11 @@
 /* Dark Mode */
 [data-theme="dark"] {
   .homepage-wrapper {
-    background: var(--ifm-background-color-dark);
+    background: #1a202c;
   }
 
   .heroBanner {
-    background: var(--ifm-background-color-dark);
-    color: var(--ifm-font-color-base-dark);
+    background: #1a202c;
+    color: #1a202c;
   }
 }
