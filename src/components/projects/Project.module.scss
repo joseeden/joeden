@@ -113,3 +113,19 @@
 //     }
 //   }
 }
+
+[data-theme="dark"] {
+
+  .projectsPage {
+    background-color: #1a202c;
+  }
+
+  .card {
+    background: #242526;
+    border: 1px solid var(--ifm-color-emphasis-400);
+  }
+
+  .image {
+    background: #3a3b3c;
+  }
+}
