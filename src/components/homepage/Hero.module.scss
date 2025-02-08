@@ -84,3 +84,15 @@
 //   }
 
 // }
+
+/* Dark Mode */
+[data-theme="dark"] {
+  .homepage-wrapper {
+    background: var(--ifm-background-color-dark);
+  }
+
+  .heroBanner {
+    background: var(--ifm-background-color-dark);
+    color: var(--ifm-font-color-base-dark);
+  }
+}
