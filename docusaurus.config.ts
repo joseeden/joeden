@@ -15,14 +15,6 @@ const config: Config = {
   onBrokenLinks: "throw",             /* throw | warn | ignore */
   onBrokenMarkdownLinks: "throw",     /* throw | warn | ignore */
 
-  
-  webpack: {
-    configure: (webpackConfig, { env, paths }) => {
-      webpackConfig.devtool = "source-map"; // Enable source maps
-      return webpackConfig;
-    },
-  },
-  
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
@@ -62,8 +54,8 @@ const config: Config = {
         },
         theme: {
           customCss: [require.resolve("./src/css/custom.scss")],
-          
         },
+        
       } satisfies Preset.Options,
     ],
   ],
@@ -144,6 +136,13 @@ const config: Config = {
       darkTheme: themes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+
+  customFields: {
+    webpackConfig: (config, isServer) => {
+      config.devtool = "source-map"; // Enable source maps for easier debugging
+      return config;
+    },
+  },  
 };
 
 module.exports = config;
