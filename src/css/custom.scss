@@ -182,21 +182,14 @@ h1, h2, h3, h4, h5 {
 }
 
 @media (min-width: 1440px) {
+  
   .theme-doc-markdown,
   .markdown {
-    display: flex;
     width: 100%;
-    max-width: 1440px;
-    box-sizing: border-box;
-    justify-content: center;
-    align-items: flex-start;
+    max-width: 1440px; 
     margin: 0 auto;
-
-    > * {
-      display: block; /* Ensures children behave as normal block elements */
-      max-width: 100%;
-    }
   }
+
 }
 
 /* Styles for small mobile screens */
@@ -222,8 +215,8 @@ h1, h2, h3, h4, h5 {
 
   .theme-doc-markdown {
     width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 
   /* Adjust button sizes */

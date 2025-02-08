@@ -17,23 +17,3 @@
   font-size: 1rem;
 }
 
-
-/* Adjust for larger screens */
-@media (min-width: 1440px) {
-  .main-wrapper {
-    display: flex;
-    // width: 1440px; 
-    width: 100%;
-    box-sizing: border-box;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 0 auto;
-    max-width: 1440px;
-    /* margin-inline: auto; */
-  }
-
-  // .container {
-
-  // }
-
-}
