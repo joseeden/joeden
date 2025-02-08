@@ -5,6 +5,7 @@
 
 @media (min-width: 997px) {
   .docItemCol {
+    padding-top: 2rem !important;
     max-width: 75% !important;
   }
 } 
