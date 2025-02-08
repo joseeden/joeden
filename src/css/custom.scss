@@ -202,22 +202,11 @@ footer.footer {
     padding: 0 20px; // Add some padding to the container
   }
 
-  .theme-doc-sidebar-container { // Target sidebar container
-    width: 250px; // Or desired width
-    flex-shrink: 0; // Prevent sidebar from shrinking
-    margin-right: 20px; // Space between sidebar and content
-  }
-
   .theme-doc-markdown, .markdown {
     flex: 1; // Allow markdown content to take remaining space
     max-width: none; // Remove max-width from markdown
   }
 
-  .theme-doc-toc-desktop { // Target TOC on desktop
-    width: 300px; // Or desired width
-    flex-shrink: 0; // Prevent shrinking
-    margin-left: 20px; // Space between content and TOC
-  }
 }
 
 
