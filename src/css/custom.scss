@@ -73,6 +73,22 @@ h1, h2, h3, h4, h5 {
     width: 100%;
   }
 
+  .navbar__items {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: auto;
+  }
+
+  .navbar__item {
+    margin-right: 1rem;
+
+    @include small-size {
+      margin-right: 0.5rem;
+    }
+  }
+
   .navbar__brand {
     display: flex;
     align-items: center;
@@ -91,21 +107,7 @@ h1, h2, h3, h4, h5 {
     margin-left: 0.5rem;
   }
 
-  .navbar__items {
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto;
-  }
-
-  .navbar__item {
-    margin-right: 1rem;
-
-    @include small-size {
-      margin-right: 0.5rem;
-    }
-  }
+  
 }
 
 /* Sidebar close button on small screens */
