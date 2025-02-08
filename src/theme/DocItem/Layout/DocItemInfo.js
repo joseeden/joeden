@@ -2,7 +2,7 @@ import React from 'react';
 import ReadingTime from '../../../components/documentation/ReadingTime';
 // import ShareButton from '../ShareButton';
 // import { useDoc } from '@docusaurus/theme-common/internal';
-import { useDoc } from '@docusaurus/theme-common/internal';
+import { useDoc } from '@docusaurus/theme-common'; 
 
 function DocItemInfo() {
   const { metadata } = useDoc();
