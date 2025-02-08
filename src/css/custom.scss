@@ -1,8 +1,8 @@
 // src/css/custom.scss
 // @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 // @import './mixins.scss';
-@use url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
-@use './mixins.scss';
+@use "https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" as *; 
+@use "./mixins.scss" as *;
 
 h1, h2, h3, h4, h5 {
   font-family: "Inter", sans-serif;

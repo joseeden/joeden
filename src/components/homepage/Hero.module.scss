@@ -1,8 +1,8 @@
 // src/components/homepage/Hero.module.scss
 // @import "../../css/mixins.scss";
 // @import "../../css/homepage.scss";
-@use "../../css/mixins.scss";
-@use "../../css/homepage.scss";
+@use "../../css/mixins.scss" as *;
+@use "../../css/homepage.scss" as *;
 
 .homepage {
   display: flex;
