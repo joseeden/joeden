@@ -12,8 +12,8 @@ const config: Config = {
   organizationName: 'joseeden',     
   projectName: 'joeden',            
   deploymentBranch: "master",
-  onBrokenLinks: "warn",
-  onBrokenMarkdownLinks: "warn",
+  onBrokenLinks: "throw",             /* throw | warn | ignore */
+  onBrokenMarkdownLinks: "throw",     /* throw | warn | ignore */
 
   
   i18n: {
