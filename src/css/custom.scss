@@ -55,7 +55,8 @@ h1, h2, h3, h4, h5 {
   display: flex;
   align-items: center;
   // justify-content: space-between;
-  justify-content: flex-start;
+  justify-content: center;
+  margin: 0 auto;
   max-width: 1440px;
   padding: 0 1rem;
   position: sticky;
@@ -80,8 +81,8 @@ h1, h2, h3, h4, h5 {
   .navbar__title {
     font-size: 1.25rem;
     font-weight: bold;
-    margin-left: 1rem;
-    margin-right: auto;
+    margin-left: 0.5rem;
+    margin-right: 1rem;
   }
 
   .navbar__toggle {
@@ -92,9 +93,9 @@ h1, h2, h3, h4, h5 {
     font-weight: bold;
     display: flex;
     align-items: center;
-    // justify-content: center;
     justify-content: flex-start;
-    margin-left: auto;
+    // justify-content: center;
+    // margin-left: auto;
   }
 
   .navbar__item {
