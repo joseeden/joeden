@@ -73,6 +73,9 @@ const config: Config = {
         content: "fullstack,frontend,backend,developer,engineer,go,golang,javascript,graphql,grpc,rest,react,reactjs,kubernetes,devops,cloud,cloud-native,cka,ckad,open-source,gophers,linux,python,ansible,devsecops,cybersecurity",
       },
     ],
+    stylesheets: [
+      "https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+    ],
     colorMode: {
       respectPrefersColorScheme: true,
     },
