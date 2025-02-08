@@ -10,9 +10,9 @@ function ReadingTime(props) {
     );
   });
   return (
-    <div>
+    <div style={{ marginBottom: '0.5rem' }}>
       {/* <span className="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-small text-gray-800"> */}
-      <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-small" style={{ backgroundColor: '#f0f0f0', color: '#c8bcb8', fontSize: '0.75rem' }}> {/* Apply styles */}
+      <span className="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-small" style={{ color: '#c8bcb8', fontSize: '0.75rem',  backgroundColor: 'transparent' }}> {/* Removed background color */}
         {readingTimeInWords}
       </span>
     </div>
