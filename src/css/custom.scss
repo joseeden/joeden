@@ -294,12 +294,14 @@ footer.footer {
   .theme-doc-container {
     display: flex;
     max-width: 1440px;
+    width: 1440px;
     margin: 0 auto;
     padding: 0 20px; 
   }
 
   .theme-doc-sidebar { 
     flex: 0 0 auto; 
+    margin-right: 20px; 
     margin-right: 20px; 
   }
 

@@ -16,6 +16,13 @@ const config: Config = {
   onBrokenMarkdownLinks: "throw",     /* throw | warn | ignore */
 
   
+  webpack: {
+    configure: (webpackConfig, { env, paths }) => {
+      webpackConfig.devtool = "source-map"; // Enable source maps
+      return webpackConfig;
+    },
+  },
+  
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
