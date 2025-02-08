@@ -40,14 +40,15 @@ h1, h2, h3, h4, h5 {
   --ifm-color-primary-lighter: #31d8c4;
   --ifm-color-primary-lightest: #4eddcd;
   --docusaurus-highlighted-code-line-bg: #4eddcd;
-  --ifm-footer-background-color: #1b1b1d;
+  --ifm-footer-background-color: #1a202c;
 
   html {
-    --ifm-background-color: #1b1b1d;
-    --ifm-background-surface-color: #1b1b1d;
+    --ifm-background-color: #1a202c;
+    --ifm-background-surface-color: #1a202c;
 
     .navbar {
-      border-bottom: 1px solid var(--ifm-color-emphasis-200);
+      // border-bottom: 1px solid var(--ifm-color-emphasis-200);
+      background-color: #1a202c;
     }
   }
 }
