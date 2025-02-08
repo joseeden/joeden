@@ -185,13 +185,9 @@ h1, h2, h3, h4, h5 {
   
   .theme-doc-markdown,
   .markdown {
-    display: flex;
-    width: 100%; /* Changed from 1440px to 100% */
-    box-sizing: border-box;
-    justify-content: center;
-    align-items: flex-start;
+    width: 100%;
+    max-width: 1440px; 
     margin: 0 auto;
-    max-width: 1440px; /* Added max-width */
   }
 
 }
