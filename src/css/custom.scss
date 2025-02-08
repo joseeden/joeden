@@ -214,6 +214,14 @@ h1, h2, h3, h4, h5 {
   border-left: 1px solid var(--ifm-color-primary);
   color: var(--ifm-color-primary);
 }
+
+@media (max-width: 600px) {
+  .theme-doc-sidebar-menu .menu__list-item-collapsible .menu__link,
+  .theme-doc-sidebar-menu .menu__list-item > a.menu__link {
+    font-size: 14px; 
+    line-height: 14px; 
+  }
+}
 /* Sidebar: end */
 
 
