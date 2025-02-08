@@ -1,17 +1,18 @@
-endi:
-  name: Endilie Yacop Sucipto
-  title: Maintainer of Docusaurus
-  url: https://github.com/endiliey
-  image_url: https://github.com/endiliey.png
+mmouser:
+  name: Michael Mouser
+  title: Maintainer of The House of Mouse
+  url: https://github.com/joseeden
+  # image_url: https://github.com/endiliey.png
+  image_url: /img/about/mmouser.jpg
 
-yangshun:
-  name: Yangshun Tay
-  title: Front End Engineer @ Facebook
-  url: https://github.com/yangshun
-  image_url: https://github.com/yangshun.png
+winpool:
+  name: Winchester Pool
+  title: Front End Engineer @ Hundred Acre
+  url: https://github.com/joseeden
+  image_url: /img/about/winnie.jpeg
 
-slorber:
-  name: Sébastien Lorber
-  title: Docusaurus maintainer
-  url: https://sebastienlorber.com
-  image_url: https://github.com/slorber.png
+nfurs:
+  name: Nicolas Furiousa
+  title: Manager at S.W.O.R.D.
+  url: https://github.com/joseeden
+  image_url: /img/about/nfury.jpg
