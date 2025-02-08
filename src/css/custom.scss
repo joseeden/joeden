@@ -170,27 +170,56 @@ h1, h2, h3, h4, h5 {
   padding: 20px 0 8.5px 8.5px !important;
 }
 
-.theme-doc-markdown,
-.markdown {
+footer.footer {
+  text-align: center;
+  background: var(--ifm-footer-background-color);
+  padding: var(--ifm-footer-padding-vertical);
+  width: 100%;
+  margin-top: auto;
+}
+
+.img-center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+
+
+/* Documentation Specific Styles */
+.theme-doc-markdown, .markdown {
   padding-left: 20px;
   padding-right: 3px;
   padding-top: 10px;
   width: 100%;
-    ;
-
-
 }
 
 @media (min-width: 1440px) {
-  
-  .theme-doc-markdown,
-  .markdown {
-    width: 100%;
-    max-width: 1440px; 
+  .theme-doc-container { // New container for doc layout
+    display: flex;
+    max-width: 1440px;
     margin: 0 auto;
+    padding: 0 20px; // Add some padding to the container
   }
 
+  .theme-doc-sidebar-container { // Target sidebar container
+    width: 250px; // Or desired width
+    flex-shrink: 0; // Prevent sidebar from shrinking
+    margin-right: 20px; // Space between sidebar and content
+  }
+
+  .theme-doc-markdown, .markdown {
+    flex: 1; // Allow markdown content to take remaining space
+    max-width: none; // Remove max-width from markdown
+  }
+
+  .theme-doc-toc-desktop { // Target TOC on desktop
+    width: 300px; // Or desired width
+    flex-shrink: 0; // Prevent shrinking
+    margin-left: 20px; // Space between content and TOC
+  }
 }
+
 
 /* Styles for small mobile screens */
 @media (max-width: 600px) {
@@ -229,18 +258,4 @@ h1, h2, h3, h4, h5 {
     width: 16px;
     height: 16px;
   }
-}
-
-footer.footer {
-  text-align: center;
-  background: var(--ifm-footer-background-color);
-  padding: var(--ifm-footer-padding-vertical);
-  width: 100%;
-  margin-top: auto;
-}
-
-.img-center {
-  display: flex;
-  justify-content: center;
-  width: 100%;
 }
