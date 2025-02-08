@@ -54,20 +54,17 @@ h1, h2, h3, h4, h5 {
 .navbar {
   display: flex;
   align-items: center;
-  // justify-content: space-between;
-  justify-content: center;
-  margin: 0 auto;
-  max-width: 1440px;
+  justify-content: space-between;
   padding: 0 1rem;
   position: sticky;
   top: 0;
-  transition: top 0.3s;
   z-index: 1000;
-  
+  transition: top 0.3s;
+
   .navbar__inner {
     display: flex;
     align-items: center;
-    // justify-content: space-between;
+    justify-content: space-between;
     width: 100%;
   }
 
@@ -81,8 +78,8 @@ h1, h2, h3, h4, h5 {
   .navbar__title {
     font-size: 1.25rem;
     font-weight: bold;
-    margin-left: 0;
-    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-right: auto;
   }
 
   .navbar__toggle {
@@ -93,9 +90,8 @@ h1, h2, h3, h4, h5 {
     font-weight: bold;
     display: flex;
     align-items: center;
-    // justify-content: center;
-    justify-content: flex-start;
-    // margin-left: auto;
+    justify-content: center;
+    margin-left: auto;
   }
 
   .navbar__item {
@@ -163,7 +159,6 @@ h1, h2, h3, h4, h5 {
     }
   }
 }
-
 
 /* Optional: Add scroll-up animation */
 .navbar--hide {
