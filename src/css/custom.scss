@@ -57,7 +57,7 @@ h1, h2, h3, h4, h5 {
   // justify-content: space-between;
   justify-content: center;
   margin: 0 auto;
-  max-width: 1440px;
+  width: 1440px;
   padding: 0 1rem;
   position: sticky;
   top: 0;
@@ -67,7 +67,7 @@ h1, h2, h3, h4, h5 {
   .navbar__inner {
     display: flex;
     align-items: center;
-    // justify-content: space-between;
+    justify-content: center;
     width: 100%;
   }
 
