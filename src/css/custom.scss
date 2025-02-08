@@ -274,7 +274,8 @@ footer.footer {
 
   .navbar__toggle {
     order: -1; // Moves the toggle button to the left
-    margin-right: auto; // Pushes it to the left
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
   }
 
   .navbar__brand {
