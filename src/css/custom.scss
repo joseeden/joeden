@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5 {
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between;
   padding: 0 1rem;
   position: sticky;
   top: 0;
@@ -64,7 +64,7 @@ h1, h2, h3, h4, h5 {
   .navbar__inner {
     display: flex;
     align-items: center;
-    justify-content: space-between;  
+    justify-content: space-between;
     width: 100%;
   }
 
@@ -90,7 +90,7 @@ h1, h2, h3, h4, h5 {
     font-weight: bold;
     display: flex;
     align-items: center;
-    justify-content: center;  
+    justify-content: center;
     margin-left: auto;
   }
 
@@ -170,7 +170,6 @@ h1, h2, h3, h4, h5 {
   padding: 20px 0 8.5px 8.5px !important;
 }
 
-
 .theme-doc-markdown,
 .markdown {
   padding-left: 20px;
@@ -178,40 +177,56 @@ h1, h2, h3, h4, h5 {
   padding-top: 10px;
   width: 100%;
   box-sizing: border-box;
+
+
 }
 
+@media (min-width: 1440px) {
+  
+  .theme-doc-markdown,
+  .markdown {
+    display: flex;
+    width: 100%; /* Changed from 1440px to 100% */
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto;
+    max-width: 1440px; /* Added max-width */
+  }
+
+}
 
 /* Styles for small mobile screens */
 @media (max-width: 600px) {
   .navbar {
-    flex-direction: column; 
-    align-items: flex-start; 
+    flex-direction: column;
+    align-items: flex-start;
     padding: 0.5rem;
   }
 
   .navbar__title {
-    font-size: 1.1rem; 
+    font-size: 1.1rem;
     margin-left: 0;
   }
 
   .navbar-sidebar__close {
-    width: 20px; 
+    width: 20px;
   }
 
   footer.footer {
-    padding: 1rem; 
+    padding: 1rem;
   }
 
   .theme-doc-markdown {
-    width: 100%; 
-    padding-left: 10px; 
-    padding-right: 10px; 
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   /* Adjust button sizes */
   .button--primary {
-    padding: 0.5rem 1rem; 
-    font-size: 0.875rem; 
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
   }
 
   .button__icon {
@@ -219,7 +234,6 @@ h1, h2, h3, h4, h5 {
     height: 16px;
   }
 }
-
 
 footer.footer {
   text-align: center;
