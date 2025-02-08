@@ -227,8 +227,6 @@ footer.footer {
 
 
 
-
-/* Documentation Specific Styles */
 .theme-doc-markdown, .markdown {
   padding-left: 20px;
   padding-right: 3px;
@@ -236,37 +234,18 @@ footer.footer {
   width: 100%;
 }
 
-/* src/css/custom.scss */
-// ... (Your existing imports and base styles)
 
 @media (min-width: 1440px) {
   .theme-doc-container {
     display: flex;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 20px;
-
-    .theme-doc-sidebar-container {
-      width: 250px;
-      flex-shrink: 0;
-      margin-right: 20px;
-      overflow-y: auto; // Add vertical scroll if content overflows
-      max-height: 90vh; // Prevent sidebar from becoming too tall
-    }
-
-    .theme-doc-content {
-      flex: 1;
-      overflow-x: auto; // Add horizontal scroll if content overflows
-      overflow-y: auto; // Add vertical scroll if content overflows
-      max-height: 90vh; // Prevent content from becoming too tall
-    }
-
-    .theme-doc-toc-desktop {
-      width: 300px;
-      flex-shrink: 0;
-      margin-left: 20px;
-      overflow-y: auto; // Add vertical scroll if content overflows
-      max-height: 90vh; // Prevent TOC from becoming too tall
-    }
+    padding: 0 20px; 
   }
+
+  .theme-doc-markdown, .markdown {
+    flex: 1; 
+    max-width: none; 
+  }
+
 }
