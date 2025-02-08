@@ -7,7 +7,8 @@ import styles from "./Hero.module.scss";
 export const Hero: FunctionComponent = () => {
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
-      <div className={clsx("container", "homepage")}>
+      {/* <div className={clsx("container", "homepage")}> */}
+      <div className={clsx("container", "homepage-container")}>
         <h1 className={clsx("hero__title", styles.title)}>
           Hi. I'm <span className={styles.highlighted}>Eden</span>.
         </h1>

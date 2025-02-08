@@ -62,6 +62,9 @@ h1, h2, h3, h4, h5 {
   top: 0;
   z-index: 1000;
   transition: top 0.3s;
+  width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
 
   .navbar__inner {
     display: flex;
@@ -292,12 +295,12 @@ footer.footer {
 // Styles for bigger screen sizes
 @media (min-width: 1440px) {
 
-  .main-wrapper {
-    display: flex;
-    width: 1440px;
-    margin-left: auto;
-    margin-right: auto;
-  }  
+  // .main-wrapper {
+  //   display: flex;
+  //   width: 1440px;
+  //   margin-left: auto;
+  //   margin-right: auto;
+  // }  
 
   .theme-doc-container {
     display: flex;
@@ -310,7 +313,6 @@ footer.footer {
   .theme-doc-sidebar { 
     flex: 0 0 auto; 
     margin-right: 20px; 
-    margin-right: 20px; 
   }
 
   .theme-doc-markdown, .markdown {
@@ -320,4 +322,9 @@ footer.footer {
     margin-right: auto;
     
   }
+}
+
+.homepage-container {
+  width: 100%;
+  max-width: none;
 }
