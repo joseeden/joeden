@@ -9,11 +9,11 @@ const config: Config = {
   favicon: 'img/logo/fourth/favicon.ico',
   url: 'https://github.com',
   baseUrl: "/joeden/",
-  organizationName: 'joseeden',     
-  projectName: 'joeden',            
+  organizationName: 'joseeden',
+  projectName: 'joeden',
   deploymentBranch: "master",
-  onBrokenLinks: "throw",             /* throw | warn | ignore */
-  onBrokenMarkdownLinks: "throw",     /* throw | warn | ignore */
+  onBrokenLinks: "throw", /* throw | warn | ignore */
+  onBrokenMarkdownLinks: "throw", /* throw | warn | ignore */
 
   i18n: {
     defaultLocale: "en",
@@ -21,9 +21,7 @@ const config: Config = {
   },
 
   plugins: [
-
     "docusaurus-plugin-sass",
-
     [
       "@docusaurus/plugin-ideal-image",
       {
@@ -34,20 +32,19 @@ const config: Config = {
         disableInDev: false,
       },
     ],
-
-    "@datalayer/jupyter-docusaurus-plugin", 
-    
+    "@datalayer/jupyter-docusaurus-plugin",
   ],
 
   presets: [
     [
       "@docusaurus/preset-classic",
       {
+        debug: true,
         // docs: false,
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          showLastUpdateTime: true,          
-        },        
+          showLastUpdateTime: true,
+        },
         blog: {
           showReadingTime: true,
           onUntruncatedBlogPosts: "ignore",    /* 'ignore' | 'log' | 'warn' | 'throw' */
@@ -55,17 +52,16 @@ const config: Config = {
         theme: {
           customCss: [require.resolve("./src/css/custom.scss")],
         },
-        
       } satisfies Preset.Options,
     ],
   ],
 
   themeConfig: {
     image: "img/logo/fourth/favicon.ico",
-      metadata: [
-        {
-          name: "description",
-          content: "I am an engineer who loves to learn things and solve technical challenges.",
+    metadata: [
+      {
+        name: "description",
+        content: "I am an engineer who loves to learn things and solve technical challenges.",
       },
       {
         name: "keywords",
@@ -94,7 +90,7 @@ const config: Config = {
           sidebarId: 'tutorialSidebar',
           position: 'left',
           label: 'Documentation',
-        },        
+        },
         // { to: "/blog", label: "Blog", position: "left" },
         { to: "/projects", label: "Projects", position: "left" },
         // { to: "/RUNNING", label: "Running", position: "left" },
@@ -129,7 +125,7 @@ const config: Config = {
       //     ],
       //   },
       // ],
-      copyright: `Copyright © ${new Date().getFullYear()} Eden Jose`
+      copyright: `Copyright © ${new Date().getFullYear()} Eden Jose`,
     },
     prism: {
       theme: themes.github,
@@ -139,10 +135,18 @@ const config: Config = {
 
   customFields: {
     webpackConfig: (config, isServer) => {
+      // Add process/browser polyfill for webpack
+      config.resolve = {
+        ...config.resolve,
+        fallback: {
+          process: require.resolve("process/browser"),
+        },
+      };
+
       config.devtool = "source-map"; // Enable source maps for easier debugging
       return config;
     },
-  },  
+  },
 };
 
 module.exports = config;
