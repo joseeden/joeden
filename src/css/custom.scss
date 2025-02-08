@@ -295,7 +295,7 @@ footer.footer {
 @media (min-width: 1440px) {
   .theme-doc-container {
     display: flex;
-    max-width: 1440px;
+    width: 1440px;
     margin: 0 auto;
     padding: 0 20px; 
   }
@@ -307,7 +307,7 @@ footer.footer {
 
   .theme-doc-markdown, .markdown {
     flex: 1; 
-    max-width: 1440px; 
+    width: 1440px; 
     margin-left: auto;
     margin-right: auto;
     
