@@ -69,6 +69,10 @@ const config: Config = {
     // image: "img/logo/fourth/favicon.ico",
     image: "img/about/winnie.jpeg",
     metadata: [
+      { name: "og:title", content: "Home | Eden Jose" },
+      { name: "og:description", content: "Engineer by day, runner by night." },
+      { name: "og:image", content: "https://joseeden.github.io/joeden/img/about/winnie.jpeg" },      
+      { name: "og:url", content: "https://joseeden.github.io/joeden/" },
       {
         name: "description",
         content: "I am an engineer who loves to learn things and solve technical challenges.",
