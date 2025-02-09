@@ -375,6 +375,12 @@ footer.footer {
 
 /* Styles for small mobile screens */
 @media (max-width: 600px) {
+
+  .homepage-wrapper,
+  .homepage, {
+    margin: auto auto 350px auto;
+  }
+
   .navbar {
     // flex-direction: column;
     flex-direction: row;
