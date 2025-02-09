@@ -9,10 +9,6 @@
   flex-direction: column;
   background: #000;
   height: calc(100vh - 64px);
-
-  @include small-size {
-    padding-bottom: 200px;
-  } 
 }
 
 .heroBanner {
@@ -88,6 +84,14 @@
 //   }
 
 // }
+
+@media (max-width: 600px) {
+  .homepage-wrapper,
+  .homepage,
+  .container {
+    margin: auto auto 400px auto;
+  }
+}
 
 /* Dark Mode */
 [data-theme="dark"] {
