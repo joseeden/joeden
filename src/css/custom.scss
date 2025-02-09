@@ -376,10 +376,11 @@ footer.footer {
 /* Styles for small mobile screens */
 @media (max-width: 600px) {
 
-  // .homepage-wrapper,
-  // .homepage, {
-  //   padding-bottom: auto auto 350px auto;
-  // }
+  .homepage-wrapper,
+  .homepage,
+  .container {
+    padding-bottom: 250px;
+  }
 
   .navbar {
     // flex-direction: column;
