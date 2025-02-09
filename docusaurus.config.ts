@@ -36,8 +36,8 @@ const config: Config = {
     [
       'docusaurus-pushfeedback',{
           project: 'u6oa4o2opy',
-          buttonPosition: 'center-right',
-          modalPosition: 'sidebar-right',
+          buttonPosition: 'bottom-right',
+          // modalPosition: 'sidebar-right',
           buttonStyle: 'dark',
           modalTitle: 'Share your thoughts'
       }
