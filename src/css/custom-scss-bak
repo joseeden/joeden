@@ -32,8 +32,7 @@ h1, h2, h3, h4, h5 {
 
 /* Dark mode */
 [data-theme="dark"] {
-  // --ifm-color-primary: #25c1af;
-  --ifm-color-primary: #81e6d9;
+  --ifm-color-primary: #25c1af;
   --ifm-color-primary-dark: #21ae9e;
   --ifm-color-primary-darker: #1fa495;
   --ifm-color-primary-darkest: #1a877b;
