@@ -22,6 +22,7 @@ const config: Config = {
 
   plugins: [
     "docusaurus-plugin-sass",
+    "@datalayer/jupyter-docusaurus-plugin",
     [
       "@docusaurus/plugin-ideal-image",
       {
@@ -32,7 +33,15 @@ const config: Config = {
         disableInDev: false,
       },
     ],
-    "@datalayer/jupyter-docusaurus-plugin",
+    [
+      'docusaurus-pushfeedback',{
+          project: 'u6oa4o2opy',
+          buttonPosition: 'center-right',
+          modalPosition: 'sidebar-right',
+          buttonStyle: 'dark',
+          modalTitle: 'Share your thoughts'
+      }
+    ],
   ],
 
   presets: [
