@@ -87,13 +87,17 @@
 
 /* Dark Mode */
 [data-theme="dark"] {
-  // .homepage-wrapper {
-  //   background: #1a202c;
-  // }
+  .homepage-wrapper {
+    background: #1a202c;
+  }
 
   .heroBanner {
     background: #1a202c;
-    color: #1a202c;
+    color: #f7fafc; 
   }
 
+  .title, 
+  .subtitle {
+    color: #f7fafc; 
+  }
 }
