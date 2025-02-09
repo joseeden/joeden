@@ -66,7 +66,8 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: "img/logo/fourth/favicon.ico",
+    // image: "img/logo/fourth/favicon.ico",
+    image: "img/about/winnie.jpeg",
     metadata: [
       {
         name: "description",
