@@ -161,6 +161,13 @@ h1, h2, h3, h4, h5 {
     background: #05192d;
   }
   
+  .theme-code-block {
+    background-color: #193549;
+  }
+
+  .theme-doc-sidebar {
+    background-color: #05192d;
+  }
 }
 
 /* Navbar styling */
@@ -375,11 +382,6 @@ footer.footer {
 
 /* Styles for small mobile screens */
 @media (max-width: 600px) {
-
-  .theme-doc-sidebar {
-    background-color: var(--ifm-background-surface-color);
-    background: var(--ifm-background-surface-color);
-  }
 
   .theme-doc-toc-mobile {
     background-color: #193549;
