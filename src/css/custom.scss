@@ -447,8 +447,8 @@ footer.footer {
     padding: 1rem;
   }  
 
-  /* Styles for the dark/light toggle button */
-  .colorModeToggle_DEke {
+  /* Make dark/light toggle button always visible */
+  .colorModeToggle {
     display: block; 
     position: relative; 
     margin-left: auto; 
