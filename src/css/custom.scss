@@ -376,6 +376,10 @@ footer.footer {
 /* Styles for small mobile screens */
 @media (max-width: 600px) {
 
+  .theme-doc-sidebar {
+    background-color: var(--ifm-background-surface-color);
+  }
+
   .theme-doc-toc-mobile {
     background-color: #193549;
   }
