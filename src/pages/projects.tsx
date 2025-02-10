@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "@theme/Layout";
-import styles from "../components/projects/Project";
-// import styles from "../components/projects/Project.module.scss";
+// import styles from "../components/projects/Project";
+import styles from "../components/projects/Project.module.scss";
 
 import { Project, ProjectData } from "../components/projects/Project";
 
