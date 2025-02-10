@@ -385,10 +385,6 @@ footer.footer {
 
 /* Styles for small mobile screens */
 @media (max-width: 600px) {
-  
-  .navbar__items > div {
-    margin-right: 0px;
-  }
 
   .theme-doc-sidebar-menu .menu__list-item-collapsible .menu__link,
   .theme-doc-sidebar-menu .menu__list-item > a.menu__link {
@@ -411,10 +407,38 @@ footer.footer {
   }
 
   .navbar__toggle {
-    order: -1; // Moves the toggle button to the left
+    order: -1; 
     margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    // margin-right: 0.5rem;
+    margin-right: auto;
   }
+
+
+
+
+  
+
+  .navbar__items--right {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .navbar__items {
+    flex: none;
+  }
+  .theme-toggle {
+    display: block !important;
+    margin-left: 1rem;
+  }
+
+
+
+
+
+
 
   .navbar__brand {
     flex-grow: 1;
