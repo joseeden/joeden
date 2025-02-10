@@ -18,12 +18,12 @@ This is the final challenge in the **Joining Data in SQL** course in Datacamp.
 
 Below are the tables used for this challenge. 
 
-- [populations.csv](@site/docs/021-Software-Engineering/025-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/populations.csv)
-- [currencies.csv](@site/docs/021-Software-Engineering/025-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/currencies.csv)
-- [cities.csv](@site/docs/021-Software-Engineering/025-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/cities.csv)
-- [countries.csv](@site/docs/021-Software-Engineering/025-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/countries.csv)
-- [languages.csv](@site/docs/021-Software-Engineering/025-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/languages.csv)
-- [economies.csv](@site/docs/021-Software-Engineering/025-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/economies.csv)
+- [populations.csv](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/populations.csv)
+- [currencies.csv](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/currencies.csv)
+- [cities.csv](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/cities.csv)
+- [countries.csv](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/countries.csv)
+- [languages.csv](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/languages.csv)
+- [economies.csv](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/economies.csv)
 
 ## Instructions 
 

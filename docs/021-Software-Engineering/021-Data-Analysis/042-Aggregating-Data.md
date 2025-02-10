@@ -18,7 +18,7 @@ last_update:
 ## Explore the Jupyter Notebooks
 
 This page includes my notes on this topic.  
-To see these functions in action, check out the Jupyter notebook here: [Sample Notebooks](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/025-Jupyter-Notebooks/001-Using-Pandas).  
+To see these functions in action, check out the Jupyter notebook here: [Sample Notebooks](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/021-Jupyter-Notebooks/001-Using-Pandas).  
 
 ## Summarizing Numerical Data  
 

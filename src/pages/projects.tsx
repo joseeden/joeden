@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "@theme/Layout";
-import styles from ".../components/projects/Project.module.scss";
+import styles from "../components/projects/Project";
+// import styles from "../components/projects/Project.module.scss";
 
 import { Project, ProjectData } from "../components/projects/Project";
 
@@ -9,7 +10,7 @@ const projects: ProjectData[] = [
   {
     title: "A Network Analysis of Game of Thrones",
     description: "Using Jupyter Notebooks, analyze the co-occurrence network of the characters in the Game of Thrones books",
-    url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/021-Software-Engineering/025-Jupyter-Notebooks/020-A-Network-Analysis-of-Game-of-Thrones/network-analysis-on-game-of-thrones.ipynb",
+    url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/021-Software-Engineering/021-Jupyter-Notebooks/020-A-Network-Analysis-of-Game-of-Thrones/network-analysis-on-game-of-thrones.ipynb",
     image: require(`${assetsDir}/got_network.jpeg`),
     // role: "Organizer",
   },
@@ -52,7 +53,7 @@ const projects: ProjectData[] = [
   {
     title: "Investigating Netflix Movies",
     description: "Using Jupyter Notebooks, perform an exploratory data analysis on movies released in the 1990s",
-    url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/021-Software-Engineering/025-Jupyter-Notebooks/010-Investigating-Netflix-Movies/netflix-movies.ipynb",
+    url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/021-Software-Engineering/021-Jupyter-Notebooks/010-Investigating-Netflix-Movies/netflix-movies.ipynb",
     image: require(`${assetsDir}/redpopcorn.jpg`),
     // role: "Organizer",
   },
