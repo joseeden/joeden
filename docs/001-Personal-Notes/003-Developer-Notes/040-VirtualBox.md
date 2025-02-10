@@ -84,3 +84,38 @@ Steps:
     ```bash
     sudo chown $(whoami):$(whoami) /add/your/fileshare/here
     ```
+
+## VirtualBox conflicts with WSL 
+
+Reference: [How to get VirtualBox 6.0 and WSL working at the same time [closed]](https://stackoverflow.com/questions/58031941/how-to-get-virtualbox-6-0-and-wsl-working-at-the-same-time)
+
+To run off hypervisor:
+
+1. Go to Control Panel > Programs and Features
+2. Click Turn Windows features on or off
+3. Uncheck the following features:
+    - Containers  
+    - Hyper-V     
+
+4. Check the following features: 
+    - Virtual Machine Platform
+    - Windows Hypervisor Platform
+    - Windows Sandbox
+
+5. Open Powershell with elevated privileges (Run as Administrator) then run:
+
+    ```bash
+    bcdedit /set hypervisorlaunchtype off
+    ```
+
+6. Restart the Computer.
+
+To enable WSL again and disable virtualbox:
+
+1. Run in Powershell:
+
+    ```bash
+    bcdedit /set hypervisorlaunchtype auto 
+    ```
+
+2. Restart the Computer.
