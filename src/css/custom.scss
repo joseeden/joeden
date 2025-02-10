@@ -1,4 +1,5 @@
 // src/css/custom.scss
+
 // @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 // @use "https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" as *; 
 // @import './mixins.scss';
@@ -150,8 +151,7 @@ h1, h2, h3, h4, h5 {
 
   .navbar,
   .navbar-sidebar, 
-  .navbar-sidebar__items,
-  .navbar-sidebar--show {
+  .navbar-sidebar__items {
     // border-bottom: 1px solid var(--ifm-color-emphasis-200);
     background-color: #05192d;
   }
@@ -239,6 +239,11 @@ h1, h2, h3, h4, h5 {
   }
 }
 
+/* Dark theme toggles */
+.navbar-sidebar__brand div button {
+  margin-left: auto;
+}
+
 /* Sidebar close button on small screens */
 .navbar-sidebar__close {
   align-items: end;
@@ -246,10 +251,10 @@ h1, h2, h3, h4, h5 {
   margin: 0;
 }
 
-/* Dark theme toggles */
-.navbar-sidebar__brand div button {
-  margin-left: auto;
-}
+// /* Dark theme toggles */
+// .navbar-sidebar__brand div button {
+//   margin-left: auto;
+// }
 
 .navbar-sidebar__brand .navbar-sidebar__close {
   margin-left: auto;
