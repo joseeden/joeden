@@ -39,7 +39,6 @@ h1, h2, h3, h4, h5 {
   --feedback-text-color: #5f6368;
   --feedback-white-color: #fff;
   --feedback-highlight-color: #ffb422;
-      
   /* Fonts */
   --feedback-font-family: "Inter", "Tahoma", "sans-serif";
   --feedback-heading-font-size: 16px;
@@ -150,7 +149,7 @@ h1, h2, h3, h4, h5 {
   }
 
   .navbar,
-  .navbar-sidebar, 
+  .navbar-sidebar,
   .navbar-sidebar__items {
     // border-bottom: 1px solid var(--ifm-color-emphasis-200);
     background-color: #05192d;
@@ -250,11 +249,6 @@ h1, h2, h3, h4, h5 {
   width: 25px;
   margin: 0;
 }
-
-// /* Dark theme toggles */
-// .navbar-sidebar__brand div button {
-//   margin-left: auto;
-// }
 
 .navbar-sidebar__brand .navbar-sidebar__close {
   margin-left: auto;
@@ -391,6 +385,10 @@ footer.footer {
 
 /* Styles for small mobile screens */
 @media (max-width: 600px) {
+  
+  .navbar__items > div {
+    margin-right: 0px;
+  }
 
   .theme-doc-sidebar-menu .menu__list-item-collapsible .menu__link,
   .theme-doc-sidebar-menu .menu__list-item > a.menu__link {
