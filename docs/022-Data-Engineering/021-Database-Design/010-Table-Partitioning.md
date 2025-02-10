@@ -123,7 +123,7 @@ We'll be using the **film** dataset.
 
 To download the actual file, you can get it from my [Github repository](https://github.com/joseeden/joeden/tree/master/assets/datasets).
 
-- [film.csv](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/states.csv)
+- [film.csv](@site/docs/021-Software-Engineering/025-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/states.csv)
 
 ### Creating Vertical Partitions 
 

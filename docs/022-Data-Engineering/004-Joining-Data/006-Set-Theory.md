@@ -23,11 +23,11 @@ Here is the schema for the sample **World** table:
 
 To download the actual files, you can get them from my [Github repository](https://github.com/joseeden/joeden/tree/master/assets/datasets).
 
-- [states.csv](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/states.csv)
-- [presidents.csv](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/presidents.csv)
-- [prime_ministers.csv](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/prime_ministers.csv)
-- [prime_minister_terms.csv](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/prime_minister_terms.csv)
-- [monarchs.csv](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/monarchs.csv)
+- [states.csv](@site/docs/021-Software-Engineering/025-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/states.csv)
+- [presidents.csv](@site/docs/021-Software-Engineering/025-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/presidents.csv)
+- [prime_ministers.csv](@site/docs/021-Software-Engineering/025-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/prime_ministers.csv)
+- [prime_minister_terms.csv](@site/docs/021-Software-Engineering/025-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/prime_minister_terms.csv)
+- [monarchs.csv](@site/docs/021-Software-Engineering/025-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/monarchs.csv)
 
 
 
