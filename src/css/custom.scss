@@ -121,8 +121,8 @@ h1, h2, h3, h4, h5 {
   --ifm-color-primary-lighter: #31d8c4;
   --ifm-color-primary-lightest: #4eddcd;
   --docusaurus-highlighted-code-line-bg: #4eddcd;
-  --ifm-background-surface-color: #1a202c;
-  --ifm-footer-background-color: #1a202c;
+  --ifm-background-surface-color: #193549;
+  --ifm-footer-background-color: #193549;
 
   /* Feedback dark mode */
   --feedback-text-color: #81e6d9;
@@ -144,21 +144,21 @@ h1, h2, h3, h4, h5 {
   --feedback-modal-screenshot-header-text-color: var(--feedback-white-color);
 
   html {
-    --ifm-background-color: #1a202c;
-    --ifm-background-surface-color: #1a202c;
+    --ifm-background-color: #193549;
+    --ifm-background-surface-color: #193549;
   }
 
   .navbar {
     // border-bottom: 1px solid var(--ifm-color-emphasis-200);
-    background-color: #1a202c;
+    background-color: #193549;
   }
 
   .main-wrapper {
-    background: #1a202c;
+    background: #193549;
   }
   
   .container {
-    background: #1a202c;
+    background: #193549;
   }
   
 }
