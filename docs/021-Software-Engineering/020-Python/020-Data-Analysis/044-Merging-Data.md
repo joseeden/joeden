@@ -125,8 +125,13 @@ To see more examples, please see [Merging Data with Pandas Notebook.](https://gi
 
 ## Left Join  
 
-A left join keeps all rows from the left table and only matching rows from the right table. 
+A **left join** keeps all rows from the left table and only matching rows from the right table. 
 
+<div class="img-center"> 
+
+![](/img/docs/joins-left-join.png)
+
+</div>
 
 
 **Example**: Two tables, "left" and "right," merged on column C 
@@ -213,3 +218,70 @@ print(missing)
 ```
 
 This will return the number of rows, which is only two rows.
+
+
+## Right Join
+
+## Right Join  
+
+A **right join** returns all rows from the right table and only matching rows from the left table. If no match is found, columns from the left table will be null.  
+
+<div class="img-center"> 
+
+![](/img/docs/joins-right-join.png)
+
+</div>
+
+
+Example tables:  
+
+- `movies`
+
+    | id | title              | popularity |  
+    |----|--------------------|------------|  
+    | 1  | Inception         | 90.5       |  
+    | 2  | Interstellar      | 87.3       |  
+    | 3  | The Dark Knight   | 95.0       |  
+    | 4  | Tenet             | 75.2       |  
+    | 5  | Dunkirk           | 80.4       |  
+    | 6  | Memento           | 70.1       |  
+
+- `tv_genre`
+
+    | movie_id | genre    |  
+    |----------|---------|  
+    | 3        | Action  |  
+    | 5        | War     |  
+    | 7        | TV Movie |  
+    | 8        | TV Movie |  
+
+We use **pandas** to perform a right join. Note that the `movies` table uses `id`, while the `tv_genre` table uses `movie_id`.  
+
+```python
+import pandas as pd
+
+movies = pd.DataFrame({
+    'id': [1, 2, 3, 4, 5, 6],
+    'title': ["Inception", "Interstellar", "The Dark Knight", "Tenet", "Dunkirk", "Memento"],
+    'popularity': [90.5, 87.3, 95.0, 75.2, 80.4, 70.1]
+})
+
+tv_genre = pd.DataFrame({
+    'movie_id': [3, 5, 7, 8],
+    'genre': ["Action", "War", "TV Movie", "TV Movie"]
+})
+
+
+# Performing the Right Join
+merged_table = movies.merge(tv_genre, left_on="id", right_on="movie_id", how="right")
+print(merged_table)
+```
+
+Expected output:
+
+| id        | title             | popularity | movie_id | genre    |  
+|-----------|-------------------|------------|----------|----------|  
+| 3         | The Dark Knight   | 95.0       | 3        | Action   |  
+| 5         | Dunkirk           | 80.4       | 5        | War      |  
+| **NaN**   | **NaN**           | **NaN**    | 7        | TV Movie |  
+| **NaN**   | **NaN**           | **NaN**    | 8        | TV Movie |  
