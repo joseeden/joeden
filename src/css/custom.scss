@@ -161,9 +161,6 @@ h1, h2, h3, h4, h5 {
     background: #05192d;
   }
   
-  .theme-code-block {
-    background-color: #193549;
-  }
 
   .theme-doc-sidebar,
   .theme-doc-sidebar-menu {
@@ -171,6 +168,11 @@ h1, h2, h3, h4, h5 {
   }
 
   .theme-doc-toc-mobile {
+    background-color: #193549;
+  }
+
+  .theme-code-block,
+  .docusaurus-highlighted-code-line {
     background-color: #193549;
   }
 }
