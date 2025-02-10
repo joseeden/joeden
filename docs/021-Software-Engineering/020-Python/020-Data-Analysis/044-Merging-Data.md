@@ -127,6 +127,8 @@ To see more examples, please see [Merging Data with Pandas Notebook.](https://gi
 
 A left join keeps all rows from the left table and only matching rows from the right table. 
 
+
+
 **Example**: Two tables, "left" and "right," merged on column C 
 
   - All rows from "left" are included  
