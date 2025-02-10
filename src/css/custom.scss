@@ -376,6 +376,10 @@ footer.footer {
 /* Styles for small mobile screens */
 @media (max-width: 600px) {
 
+  .theme-doc-toc-mobile {
+    background-color: #193549;
+  }
+
   .homepage-wrapper,
   .homepage {
     padding-bottom: 250px;
