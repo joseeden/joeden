@@ -122,3 +122,92 @@ merged_df = df1.merge(df2, on='id') \
 To see more examples, please see [Merging Data with Pandas Notebook.](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/021-Jupyter-Notebooks/001-Using-Pandas)
 
 :::
+
+## Left Join  
+
+A left join keeps all rows from the left table and only matching rows from the right table. 
+
+**Example**: Two tables, "left" and "right," merged on column C 
+
+  - All rows from "left" are included  
+  - Only matching rows from "right" are included  
+  - If no match, right-side values are null  
+
+As an example, we'll use the following tables:
+
+- `movies`
+
+    - Contains movie details
+    - Title, popularity, and unique ID  
+
+        | movie_id | title              | popularity |  
+        |----------|--------------------|------------|  
+        | 1        | Inception          | 90.5       |  
+        | 2        | Interstellar       | 87.3       |  
+        | 3        | The Dark Knight    | 95.0       |  
+        | 4        | Tenet              | 75.2       |  
+        | 5        | Dunkirk            | 80.4       |  
+        | 6        | Memento            | 70.1       |  
+
+- `taglines`
+
+    - Contains movie taglines:  
+    - Movie ID and tagline text  
+
+        | movie_id | tagline                         |  
+        |----------|---------------------------------|  
+        | 1        | "Your mind is the scene of the crime." |  
+        | 2        | "Mankind was born on Earth. It was never meant to die here." |  
+        | 3        | "Welcome to a world without rules." |  
+        | 5        | "When 400,000 men couldn’t get home, home came for them." |  
+
+To combine the tables using a left join:  
+
+- Merge on the `movie_id` column  
+- Use `how='left'` to specify a left join  
+- Movies without a matching tagline get a null value (NaN in pandas)  
+
+The code:
+
+```python
+import pandas as pd
+
+movies = pd.DataFrame({
+    'movie_id': [1, 2, 3, 4, 5, 6],
+    'title': ["Inception", "Interstellar", "The Dark Knight", "Tenet", "Dunkirk", "Memento"],
+    'popularity': [90.5, 87.3, 95.0, 75.2, 80.4, 70.1]
+})
+
+taglines = pd.DataFrame({
+    'movie_id': [1, 2, 3, 5],
+    'tagline': [
+        "Your mind is the scene of the crime.",
+        "Mankind was born on Earth. It was never meant to die here.",
+        "Welcome to a world without rules.",
+        "When 400,000 men couldn’t get home, home came for them."
+    ]
+})
+
+merged_table = movies.merge(taglines, on="movie_id", how="left")
+print(merged_table)
+```
+
+Expected output:
+
+| movie_id | title            | popularity | tagline                                         |  
+|----------|----------------|------------|-------------------------------------------------|  
+| 1        | Inception       | 90.5       | "Your mind is the scene of the crime."         |  
+| 2        | Interstellar    | 87.3       | "Mankind was born on Earth. It was never meant to die here." |  
+| 3        | The Dark Knight | 95.0       | "Welcome to a world without rules."            |  
+| 4        | Tenet           | 75.2       | **NaN** (no match found)                       |  
+| 5        | Dunkirk         | 80.4       | "When 400,000 men couldn’t get home, home came for them." |  
+| 6        | Memento         | 70.1       | **NaN** (no match found)                       |  
+
+To count the number of rows with missing taglines, we can use `isnull()` function to find the rows then count them using `sum()`.
+
+```python
+missing = merged_table['tagline'].isnull().sum()
+print(missing)
+```
+
+This will return the number of rows, which is only two rows.
