@@ -47,6 +47,10 @@
     }
   }
 
+  html[data-theme='dark'] .card {
+    background-color: #193549;
+  }
+
   .image {
     background: #f7f7f7;
     position: relative;
