@@ -420,7 +420,6 @@ footer.footer {
 
   .navbar__title {
     font-size: 1.1rem;
-    // margin-left: 0;
   }
 
   .navbar-sidebar__close {
@@ -448,10 +447,13 @@ footer.footer {
     padding: 1rem;
   }  
 
+  /* Styles for the dark/light toggle button */
+  .colorModeToggle_DEke {
+    display: block; 
+    position: relative; 
+    margin-left: auto; 
+  }
 }
-
-
-
 
 
 // Styles for bigger screen sizes
