@@ -1,6 +1,6 @@
 ---
 title: "Merging Data"
-description: "rging Data using Pandas"
+description: "Merging Data using Pandas"
 tags:
 - Computer Science
 - Application Development
