@@ -42,13 +42,16 @@ top_tracks = pd.DataFrame({
 })
 ```
 
-Use inner join to find matching `gids`, then use semi join to filter specific genres.
+Use inner join to find matching `gids`, then use the `isin()` method to compare every `gid` in the `genres` table to the `gid` in the `top_tracks` table.
 
 ```python
 genres_tracks = genres.merge(top_tracks, on='gid', how='inner')
 
-# Semi join: Keep only genres found in top_tracks
-top_genres = genres[genres['gid'].isin(genres_tracks['gid'])]
+# Below line returns a table of boolean values
+matchinggids = genres['gid'].isin(genres_tracks['gid'])
+
+# Instead of boolean values, we can get the actual values by subsetting the genres table.
+top_genres = genres[genres['gid'].isin(genres_tracks['gid'])    ]
 print(top_genres)
 ```
 
@@ -70,15 +73,20 @@ Output:
 
 An anti join keeps only the rows from the left table that do *not* have a match in the right table.  
 
+Using the previous example, we can use anti join to find which genres are not in the table of top tracks. Setting `indicator` to `True`, a `_merge` column will be added which will show the source of each row, which means some rows might be a match from both tables, while some rows may only be found in the left table.
+
 ```python
-# Left join with indicator
 genres_tracks = genres.merge(top_tracks, on='gid', how='left', indicator=True)
 
-# Anti join: Keep only genres *not* in top_tracks
-not_top_genres = genres_tracks.loc[
-     genres_tracks['_merge'] == 'left_only', 
-     ['gid', 'genre']]
+gid_list = genres_tracks.loc[
+                    genres_tracks['_merge'] == 'left_only',
+                   'gid']
+```
 
+Finally, use the `isin()` method to filter only for the rows with `gid` in the `gid_list`.
+
+```python
+non_top_genres = genres[genres['gid'].isin(gid_list)]
 print(not_top_genres)
 ```
 
