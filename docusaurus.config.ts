@@ -51,7 +51,7 @@ const config: Config = {
         // docs: false,
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          showLastUpdateTime: false,
+          showLastUpdateTime: true,
         },
         blog: {
           showReadingTime: true,
