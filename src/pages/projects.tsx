@@ -15,6 +15,13 @@ const projects: ProjectData[] = [
     // role: "Organizer",
   },
   {
+    title: "A New Era of Data Analysis in Baseball",
+    description: "Use MLB's Statcast data to compare the home runs of two of baseball's brightest stars.",
+    url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/021-Software-Engineering/021-Jupyter-Notebooks/021-A-New-Era-of-Data-Analysis-in-Baseball/A-New-Era-of-Data-Analysis-in-Baseball.ipynb",
+    image: require(`${assetsDir}/stanton_wide.jpg`),
+    // role: "Organizer",
+  },
+  {
     title: "Centralized Logging with Graylog SIEM",
     description:
       "Implement Graylog as an SIEM solution to collect logs from AWS resources.",
