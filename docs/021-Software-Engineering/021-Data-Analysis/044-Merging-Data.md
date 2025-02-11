@@ -222,8 +222,6 @@ This will return the number of rows, which is only two rows.
 
 ## Right Join
 
-## Right Join  
-
 A **right join** returns all rows from the right table and only matching rows from the left table. If no match is found, columns from the left table will be null.  
 
 <div class="img-center"> 
@@ -285,3 +283,59 @@ Expected output:
 | 5         | Dunkirk           | 80.4       | 5        | War      |  
 | **NaN**   | **NaN**           | **NaN**    | 7        | TV Movie |  
 | **NaN**   | **NaN**           | **NaN**    | 8        | TV Movie |  
+
+
+
+## Self Join 
+
+Merging a table to itself, also called a **self join**, helps link related data within the same table. Self joins are useful for:  
+
+- **Hierarchical data** (e.g., employees and managers)  
+- **Sequential relationships** (e.g., logistics tracking)  
+- **Graph data** (e.g., social networks)    
+
+As an example, let's use the 'sequels` table which contains:
+
+- `movie_id`: Unique ID for each movie  
+- `title`: Movie name  
+- `sequel`: ID of its sequel (if any)  
+
+
+| movie_id | title      | sequel |
+|----------|-----------|--------|
+| 862      | Toy Story | 863    |
+| 863      | Toy Story 2 | 10193  |
+| 10193    | Toy Story 3 | NULL   |
+  
+To display movies with their sequels in one row, we merge the table to itself.  
+
+```python
+import pandas as pd  
+
+sequels = pd.DataFrame({  
+    "movie_id": [862, 863, 10193],  
+    "title": ["Toy Story", "Toy Story 2", "Toy Story 3"],  
+    "sequel": [863, 10193, None]  
+})  
+
+# Self merge  
+merged = sequels.merge(sequels,
+                       left_on="sequel",
+                       right_on="movie_id",  
+                       suffixes=("_org", "_seq"))  
+
+# Print only these 2 columns
+result = merged[["title_org", "title_seq"]]  
+print(result)
+```
+
+Output:
+
+```
+     title_org     title_seq
+0   Toy Story  Toy Story 2
+1  Toy Story 2  Toy Story 3
+```
+
+
+
