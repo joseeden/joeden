@@ -298,3 +298,122 @@ Now, the `billing_country` column is gone, and only the common columns remain.
 2  106    6   2019-02-18    300
 3  107    7   2019-02-25    190
 ```
+
+
+
+
+## Verifying integrity
+
+When merging or concatenating tables, we need to ensure that data relationships are correct. Python provides ways to check for duplicates and unexpected structures. 
+
+**Why Verify Data?**  
+
+- Prevents errors due to unexpected duplicates.  
+- Ensures calculations (like averages) are accurate.  
+- Helps maintain data consistency.  
+
+If an error occurs, clean the data or remove duplicates before merging or concatenating.
+
+### Checking Merges  
+
+We use `merge()` to combine tables based on a common column. However, unexpected duplicates can turn a one-to-one merge into a one-to-many. The `validate` argument helps detect such issues.  
+
+- **one_to_one**: Ensures each value appears only once in both tables.  
+- **one_to_many**: Allows duplicates in the right table but not in the left.  
+
+Consider the two tables below: 
+
+```python
+import pandas as pd
+
+tracks = pd.DataFrame([
+    [1, 'Song A'], 
+    [2, 'Song B'], 
+    [3, 'Song C']
+], columns=['tid', 'track'])
+
+specs = pd.DataFrame([
+    [1, 'MP3'], 
+    [2, 'FLAC'], 
+    [2, 'WAV'], 
+    [3, 'AAC']
+], columns=['tid', 'format'])
+```
+
+When we attempt to do a one-to-one merge, this will return an error.
+
+```python 
+merged = pd.merge(tracks, specs, on='tid', validate='one_to_one')
+```
+
+Output:
+
+```
+MergeError: Merge keys are not unique in right dataset; not a one-to-one merge
+```
+
+**Solution**: Use one-to-many merging.
+
+```python
+merged = pd.merge(tracks, specs, on='tid', validate='one_to_many')
+print(merged)
+```
+
+Output:
+
+```python
+   tid   track format
+0    1  Song A    MP3
+1    2  Song B   FLAC
+2    2  Song B    WAV
+3    3  Song C    AAC 
+```
+
+### Checking Concatenations  
+
+The `concat()` method stacks tables vertically. The `verify_integrity` argument checks for duplicate index values and raises an error if found.  
+
+Conside the two invoice tables below. 
+
+```python
+inv_feb = pd.DataFrame([
+    [8, 1, '2019-02-10', 100], 
+    [9, 2, '2019-02-15', 200]
+], columns=['iid', 'cid', 'invoice_date', 'total']).set_index('iid')
+
+inv_mar = pd.DataFrame([
+    [9, 3, '2019-03-05', 250],  # Duplicate iid=9
+    [10, 4, '2019-03-10', 300]
+], columns=['iid', 'cid', 'invoice_date', 'total']).set_index('iid')
+```
+
+When we set the `verify_integrity` to True, it will check if there are duplicate records between the two tables. 
+
+```python 
+combined = pd.concat([inv_feb, inv_mar], verify_integrity=True)
+```
+
+Expected error:
+
+```
+ValueError: Indexes have overlapping values
+```
+
+**Solution**: Ignore Integrity Check  
+
+```python
+combined = pd.concat([inv_feb, inv_mar], verify_integrity=False)
+print(combined)
+```
+
+Output:
+
+```python
+     cid invoice_date  total
+iid                         
+8      1   2019-02-10    100
+9      2   2019-02-15    200
+9      3   2019-03-05    250
+10     4   2019-03-10    300
+```
+
