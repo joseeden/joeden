@@ -158,7 +158,7 @@ Outputs
 -------------------------------------------------------------------------------------------------------------   
 Key                 HelloWorldFunctionIamRole                                                                   
 Description         Implicit IAM Role created for Hello World function                                          
-Value               arn:aws:iam::848587260896:role/sam-app-HelloWorldFunctionRole-ojmSC0FUjVZg                  
+Value               arn:aws:iam::841234567890:role/sam-app-HelloWorldFunctionRole-ojmSC0FUjVZg                  
 
 Key                 HelloWorldApi                                                                               
 Description         API Gateway endpoint URL for Prod stage for Hello World function                            
@@ -166,7 +166,7 @@ Value               https://6doirma1pc.execute-api.ap-southeast-1.amazonaws.com/
 
 Key                 HelloWorldFunction                                                                          
 Description         Hello World Lambda Function ARN                                                             
-Value               arn:aws:lambda:ap-southeast-1:848587260896:function:sam-app-HelloWorldFunction-             
+Value               arn:aws:lambda:ap-southeast-1:841234567890:function:sam-app-HelloWorldFunction-             
 Nob9YL9Sg1YW                                                                                                    
 -------------------------------------------------------------------------------------------------------------
 ```

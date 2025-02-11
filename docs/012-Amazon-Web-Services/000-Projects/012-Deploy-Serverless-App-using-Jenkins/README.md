@@ -232,7 +232,7 @@ Outputs
 -------------------------------------------------------------------------------------------------
 Key                 HelloWorldFunctionIamRole                                                   
 Description         Implicit IAM Role created for Hello World function                          
-Value               arn:aws:iam::848587260896:role/lambda-app-                                  
+Value               arn:aws:iam::841234567890:role/lambda-app-                                  
 HelloWorldFunctionRole-t5rDcBkC9uNs                                                             
 
 Key                 HelloWorldApi                                                               
@@ -241,7 +241,7 @@ Value               https://m9q48nk801.execute-api.us-east-1.amazonaws.com/Prod/
 
 Key                 HelloWorldFunction                                                          
 Description         Hello World Lambda Function ARN                                             
-Value               arn:aws:lambda:us-east-1:848587260896:function:lambda-app-                  
+Value               arn:aws:lambda:us-east-1:841234567890:function:lambda-app-                  
 HelloWorldFunction-S19DzuZbdDov                                                                 
 -------------------------------------------------------------------------------------------------
 
