@@ -59,7 +59,7 @@ const projects: ProjectData[] = [
   },
   {
     title: "Investigating Netflix Movies",
-    description: "Perform an exploratory data analysis on movies released in the 1990s using Netflix movie data.",
+    description: "Perform an exploratory data analysis on 90s movies using Netflix data.",
     url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/021-Software-Engineering/021-Jupyter-Notebooks/010-Investigating-Netflix-Movies/netflix-movies.ipynb",
     image: require(`${assetsDir}/redpopcorn.jpg`),
     // role: "Organizer",
