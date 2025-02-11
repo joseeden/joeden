@@ -391,8 +391,6 @@ Output in wide form:
 1   Twitter   3.5   5.0   7.2   8.5
 ```
 
-### Tranforming the Data
-
 Now, we use `.melt()` to transform this data.  
 
 ```python
