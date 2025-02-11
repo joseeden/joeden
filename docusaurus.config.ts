@@ -37,7 +37,6 @@ const config: Config = {
       'docusaurus-pushfeedback',{
           project: 'u6oa4o2opy',
           buttonPosition: 'bottom-right',
-          // modalPosition: 'sidebar-right',
           buttonStyle: 'dark',
           modalTitle: 'Share your thoughts'
       }
@@ -48,11 +47,11 @@ const config: Config = {
     [
       "@docusaurus/preset-classic",
       {
-        debug: true,
+        // debug: true,
         // docs: false,
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          showLastUpdateTime: true,
+          showLastUpdateTime: false,
         },
         blog: {
           showReadingTime: true,

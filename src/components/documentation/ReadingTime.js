@@ -18,9 +18,9 @@ function ReadingTime({ lastUpdated }) {
     <div style={{ marginBottom: '0.5rem' }}>
       <span 
         className="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-small" 
-        style={{ color: '#757575', fontSize: '0.90rem', backgroundColor: 'transparent' }}
+        style={{ color: '#757575', fontSize: '0.80rem', backgroundColor: 'transparent' }}
       >
-        {formattedDate && `Updated ${formattedDate} - `}{readingTimeInWords}
+        {formattedDate && `Updated ${formattedDate} · `}{readingTimeInWords}
       </span>
     </div>
   );
