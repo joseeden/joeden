@@ -1,5 +1,5 @@
 ---
-title: "Merging Time-Series Data"
+title: "Merging Ordered and Time-Series Data"
 description: "Merging Ordered and Time-Series Data"
 tags:
 - Computer Science
