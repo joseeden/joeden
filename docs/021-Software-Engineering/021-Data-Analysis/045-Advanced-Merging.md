@@ -21,7 +21,11 @@ Filtering joins help select rows from one table based on matches (or lack of mat
 
 ### Semi Join  
 
-A semi join keeps only the rows from the left table that have a match in the right table.  
+A semi join keeps only the rows from the left table that have a match in the right table. To perform a semi-join:
+
+- Merge the left and right tables on key column using an inner join.
+- Check if key column in left table is in the merged table using `isin()`.
+- Subset the rows of the left table.
 
 Consider the  two tables below:  
 - `genres` (genre ID, name)  
@@ -98,4 +102,199 @@ Output:
 4    5 Classical
 8    9    Metal
 10  11     Folk
+```
+
+
+## Concatenating Tables Vertically  
+
+Sometimes, data for different periods is stored in separate tables. To analyze them together, we need to combine them into one.  
+
+- The tables have the same column names.  
+- We use `pandas.concat()` to stack them vertically.  '
+
+Note that the Pandas `concat()` method can concatenate both vertical and horizontal.
+
+### Basic Concatenation 
+
+Consider the three sample invoice data from January to March.
+
+```python
+import pandas as pd 
+
+# Invoice data for three months
+inv_jan = pd.DataFrame([
+    [101, 1, '2019-01-10', 100], 
+    [102, 2, '2019-01-15', 200], 
+    [103, 3, '2019-01-20', 150]
+], columns=['iid', 'cid', 'invoice_date', 'total'])
+
+inv_feb = pd.DataFrame([
+    [104, 4, '2019-02-05', 170], 
+    [105, 5, '2019-02-12', 250], 
+    [106, 6, '2019-02-18', 300], 
+    [107, 7, '2019-02-25', 190]
+], columns=['iid', 'cid', 'invoice_date', 'total'])
+
+inv_mar = pd.DataFrame([
+    [108, 8, '2019-03-03', 210], 
+    [109, 9, '2019-03-10', 280], 
+    [110, 10, '2019-03-17', 190], 
+    [111, 11, '2019-03-24', 240], 
+    [112, 12, '2019-03-30', 270]
+], columns=['iid', 'cid', 'invoice_date', 'total'])
+```
+
+To concatenate these tables: 
+
+```python 
+combined = pd.concat([inv_jan, inv_feb, inv_mar])
+print(combined)
+```
+
+Output:
+
+```
+   iid  cid invoice_date  total
+0  101    1   2019-01-10    100
+1  102    2   2019-01-15    200
+2  103    3   2019-01-20    150
+0  104    4   2019-02-05    170
+1  105    5   2019-02-12    250
+2  106    6   2019-02-18    300
+3  107    7   2019-02-25    190
+0  108    8   2019-03-03    210
+1  109    9   2019-03-10    280
+2  110   10   2019-03-17    190
+3  111   11   2019-03-24    240
+4  112   12   2019-03-30    270
+```
+
+### Ignoring Index  
+
+By default, the index values from the original tables are kept. If the index contains no valuable information, we can ignore it using the `ignore_index`.
+
+```python
+combined_reset = pd.concat([inv_jan, inv_feb, inv_mar], ignore_index=True)
+print(combined_reset)
+```
+
+The result will be that the index will go from zero to `N-1`.
+
+```
+    iid  cid invoice_date  total
+0   101    1   2019-01-10    100
+1   102    2   2019-01-15    200
+2   103    3   2019-01-20    150
+3   104    4   2019-02-05    170
+4   105    5   2019-02-12    250
+5   106    6   2019-02-18    300
+6   107    7   2019-02-25    190
+7   108    8   2019-03-03    210
+8   109    9   2019-03-10    280
+9   110   10   2019-03-17    190
+10  111   11   2019-03-24    240
+11  112   12   2019-03-30    270
+```
+
+### Add Labels to Original Tables  
+
+We can add labels to track which table each row came from using the `keys` argument.  
+
+```python
+combined_keys = pd.concat(
+              [inv_jan, inv_feb, inv_mar], 
+              ignore_index=False,
+              keys=['Jan', 'Feb', 'Mar'])
+print(combined_keys)
+```
+
+The result is a multi-index table, with label as the first level.
+
+```
+       iid  cid invoice_date  total
+Jan 0  101    1   2019-01-10    100
+    1  102    2   2019-01-15    200
+    2  103    3   2019-01-20    150
+Feb 0  104    4   2019-02-05    170
+    1  105    5   2019-02-12    250
+    2  106    6   2019-02-18    300
+    3  107    7   2019-02-25    190
+Mar 0  108    8   2019-03-03    210
+    1  109    9   2019-03-10    280
+    2  110   10   2019-03-17    190
+    3  111   11   2019-03-24    240
+    4  112   12   2019-03-30    270
+```
+
+### Tables with Different Columns  
+
+If tables have different columns, `concat()` includes all columns by default. Missing values appear as `NaN`.  
+
+Let's say the February invoice table has an additional column called 'billing_country`.
+
+```python
+inv_feb = pd.DataFrame([
+    [104, 4, '2019-02-05', 170, 'US'], 
+    [105, 5, '2019-02-12', 250, 'CA'], 
+    [106, 6, '2019-02-18', 300, 'UK'], 
+    [107, 7, '2019-02-25', 190, 'FR']
+], columns=['iid', 'cid', 'invoice_date', 'total', 'billing_country'])
+
+combined_diff = pd.concat([inv_jan, inv_feb])
+print(combined_diff)
+```
+
+Output:
+
+```
+   iid  cid invoice_date  total billing_country
+0  101    1   2019-01-10    100             NaN
+1  102    2   2019-01-15    200             NaN
+2  103    3   2019-01-20    150             NaN
+0  104    4   2019-02-05    170              US
+1  105    5   2019-02-12    250              CA
+2  106    6   2019-02-18    300              UK
+3  107    7   2019-02-25    190              FR
+```
+
+You can also sort the different column names alphabetically using the `sort` argument.
+
+```bash
+sort_diff = pd.concat([inv_jan, inv_feb], sort=True)
+print(sort_diff)
+```
+
+Output:
+
+```python
+  billing_country  cid  iid invoice_date  total
+0             NaN    1  101   2019-01-10    100
+1             NaN    2  102   2019-01-15    200
+2             NaN    3  103   2019-01-20    150
+0              US    4  104   2019-02-05    170
+1              CA    5  105   2019-02-12    250
+2              UK    6  106   2019-02-18    300
+3              FR    7  107   2019-02-25    190
+```
+
+### Keep Only Matching Columns  
+
+To keep only the columns that all tables have in common, set `join="inner"`. The default value is `outer`, which is why the `concat` method will always return columns including the non-matching ones. 
+
+```python
+combined_inner = pd.concat([inv_jan, inv_feb], join="inner")
+print(combined_inner)
+```
+
+Now, the `billing_country` column is gone, and only the common columns remain.
+
+```
+   iid  cid invoice_date  total
+0  101    1   2019-01-10    100
+1  102    2   2019-01-15    200
+2  103    3   2019-01-20    150
+0  104    4   2019-02-05    170
+1  105    5   2019-02-12    250
+2  106    6   2019-02-18    300
+3  107    7   2019-02-25    190
 ```
