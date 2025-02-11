@@ -60,7 +60,7 @@ const projects: ProjectData[] = [
   {
     title: "Hacker Statistics with Python",
     description: "Using hacker statistics to calculate your chances of winning a bet.",
-    url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/021-Software-Engineering/021-Jupyter-Notebooks/009-Case-Studies/Hacker_Statistics.ipynb",
+    url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/021-Software-Engineering/021-Jupyter-Notebooks/009-Hacker-Statistics/Hacker_Statistics.ipynb",
     image: require(`${assetsDir}/hacker-statistics.png`),
     // role: "Organizer",
   },
