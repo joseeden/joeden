@@ -4,7 +4,7 @@ import { useDoc } from '@docusaurus/plugin-content-docs/client';
 
 function DocItemInfo() {
   const { metadata } = useDoc();
-  const lastUpdated = metadata.lastUpdatedAt ? new Date(metadata.lastUpdatedAt) : null;null;
+  const lastUpdated = metadata.lastUpdatedAt ? new Date(metadata.lastUpdatedAt) : null;
 
   return (
     <div className="flex justify-between">
