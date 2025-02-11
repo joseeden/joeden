@@ -212,3 +212,254 @@ Here, the **forward direction** picks the **next available IBM price** that’s 
 ```
 
 
+## Selecting wth `.query()`
+
+The `.query()` method in pandas is a simple way to filter rows in a DataFrame using string-based conditions. It's similar to SQL's `WHERE` clause but does not require SQL knowledge.
+
+- Takes a string condition to filter rows  
+- Works similarly to SQL but is simpler  
+- Supports numerical and text-based conditions  
+
+Example: Selecting rows where Nike's stock price is **90 or higher**.
+
+| Date       | Disney | Nike  |
+|------------|--------|-------|
+| 2023-01-01 | 135    | 88    |
+| 2023-01-02 | 138    | 92    |
+| 2023-01-03 | 140    | 97    |
+| 2023-01-04 | 142    | 89    |
+| 2023-01-05 | 137    | 91    |
+
+Importing the data:
+
+```python
+import pandas as pd 
+
+stocks = pd.DataFrame({
+    "Date": ["2023-01-01", "2023-01-02", "2023-01-03", "2023-01-04", "2023-01-05"],
+    "Disney": [135, 138, 140, 142, 137],
+    "Nike": [88, 92, 97, 89, 91]
+})
+```
+
+Running the queries:
+
+- **Query 1**: Select rows where Nike is 90 or higher
+
+    ```python
+    result1 = stocks.query("Nike >= 90")
+    print("Query 1 Output:\n", result1, "\n")
+    ```
+
+    Output:
+
+    ```python
+
+            Date  Disney  Nike
+    1  2023-01-02     138    92
+    2  2023-01-03     140    97
+    4  2023-01-05     137    91 
+    ```
+
+- **Query 2**: Select rows where Nike is over 90 AND Disney is below 140
+
+    ```python
+    result2 = stocks.query("Nike > 90 and Disney < 140")
+    print(result2)
+    ```
+
+    Output:
+
+    ```python
+            Date  Disney  Nike
+    1  2023-01-02     138    92
+    4  2023-01-05     137    91      
+    ```
+
+- **Query 3**: Select rows where Nike is over 96 OR Disney is below 98
+
+    ```python
+    result3 = stocks.query("Nike > 96 or Disney < 98")
+    print(result3)
+    ```
+
+    Output:
+
+    ```python
+            Date  Disney  Nike
+    2  2023-01-03     140    97  
+    ```
+
+Updating the sample data with `stocks_updated`, adding text values:
+
+```python
+stocks_updated = pd.DataFrame({
+    "Date": ["2023-01-01", "2023-01-02", "2023-01-03", "2023-01-04", "2023-01-05"],
+    "Stock": ["Disney", "Nike", "Nike", "Disney", "Nike"],
+    "Close": [135, 92, 89, 142, 87]
+})
+
+print(stocks_updated)
+```
+
+Output:
+
+```python
+         Date   Stock  Close
+0  2023-01-01  Disney    135
+1  2023-01-02    Nike     92
+2  2023-01-03    Nike     89
+3  2023-01-04  Disney    142
+4  2023-01-05    Nike     87 
+```
+
+To select rows where Stock is "Disney" OR Stock is "Nike" AND Close is below 90
+
+```python
+result4 = stocks_updated.query('Stock == "Disney" or (Stock == "Nike" and Close < 90)')
+print(result4)
+```    
+
+Output:
+
+```python
+         Date   Stock  Close
+0  2023-01-01  Disney    135
+2  2023-01-03    Nike     89
+3  2023-01-04  Disney    142
+4  2023-01-05    Nike     87  
+```
+
+
+
+
+## Wide vs. Long Data
+
+Data can be stored in two formats:  
+
+- **Wide format** – One row per subject, with multiple columns for attributes  
+- **Long format** – One subject appears in multiple rows, each row represents an attribute  
+
+Wide format is easier to read, while long format is better for analysis.  
+
+<div class="img-center"> 
+
+![](/img/docs/02112025-mergin-1.png)
+
+</div>
+
+
+We can use the `melt()` method to transform a wide format data to a long format.
+
+<div class="img-center"> 
+
+![](/img/docs/02112025-mergin-2.png)
+
+</div>
+
+
+### Using `.melt()`
+
+The `.melt()` method converts wide-format data into a long-format, making it more useful for analysis.  
+
+- Converts wide data to long format  
+- Moves selected columns into rows  
+- Keeps identifier columns unchanged  
+
+Consider a dataset containing financial metrics for two companies:  
+
+```python
+import pandas as pd
+
+social_fin = pd.DataFrame({
+    "Company": ["Facebook", "Twitter"],
+    "2016": [27, 3.5],
+    "2017": [40, 5.0],
+    "2018": [56, 7.2],
+    "2019": [70, 8.5]
+})
+
+print(social_fin)
+```
+
+
+Output in wide form:
+
+```
+    Company  2016  2017  2018  2019
+0  Facebook  27.0  40.0  56.0  70.0
+1   Twitter   3.5   5.0   7.2   8.5
+```
+
+### Tranforming the Data
+
+Now, we use `.melt()` to transform this data.  
+
+```python
+social_long = social_fin.melt(id_vars=["Company"])
+print(social_long)
+```
+
+Output in Long Form:
+
+```
+    Company variable  value
+0  Facebook     2016   27.0
+1   Twitter     2016    3.5
+2  Facebook     2017   40.0
+3   Twitter     2017    5.0
+4  Facebook     2018   56.0
+5   Twitter     2018    7.2
+6  Facebook     2019   70.0
+7   Twitter     2019    8.5
+```
+
+
+### Controlling Columns
+
+We can choose which columns to unpivot using `value_vars`. In the example below, we'll onlu unpivot the 2017 and 2018 columns.
+
+```python
+social_long = social_fin.melt(id_vars=["Company"], value_vars=["2017", "2018"])
+
+print(social_long)
+```
+
+Output:
+
+```
+    Company variable  value
+0  Facebook     2017   40.0
+1   Twitter     2017    5.0
+2  Facebook     2018   56.0
+3   Twitter     2018    7.2
+```
+
+
+### Renaming Columns 
+
+We can also rename the columns for better readability.  
+
+```python
+social_long = social_fin.melt(id_vars=["Company"], 
+                              var_name="Year", 
+                              value_name="Revenue")
+
+print(social_long)
+```
+
+Output:
+
+```
+    Company  Year  Revenue
+0  Facebook  2016     27.0
+1   Twitter  2016      3.5
+2  Facebook  2017     40.0
+3   Twitter  2017      5.0
+4  Facebook  2018     56.0
+5   Twitter  2018      7.2
+6  Facebook  2019     70.0
+7   Twitter  2019      8.5
+```
+
+
