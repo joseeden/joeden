@@ -22,6 +22,27 @@ const projects: ProjectData[] = [
     // role: "Organizer",
   },
   {
+    title: "Investigating Netflix Movies",
+    description: "Perform an exploratory data analysis on 90s movies using Netflix data.",
+    url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/021-Software-Engineering/021-Jupyter-Notebooks/010-Investigating-Netflix-Movies/netflix-movies.ipynb",
+    image: require(`${assetsDir}/redpopcorn.jpg`),
+    // role: "Organizer",
+  },
+  {
+    title: "Hacker Statistics with Python",
+    description: "Using hacker statistics to calculate your chances of winning a bet.",
+    url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/021-Software-Engineering/021-Jupyter-Notebooks/009-Hacker-Statistics/Hacker_Statistics.ipynb",
+    image: require(`${assetsDir}/hacker-statistics.png`),
+    // role: "Organizer",
+  },  
+  {
+    title: "AWS Serverless Deployment using Jenkins",
+    description: "Using Jenkins to deploy a serverless application",
+    url: "/docs/012-Amazon-Web-Services/000-Projects/012-Deploy-Serverless-App-using-Jenkins/README.md",
+    image: require(`/img/docs/AWS-SAM.PNG`),
+    // role: "Organizer",
+  },  
+  {
     title: "Centralized Logging with Graylog SIEM",
     description:
       "Implement Graylog as an SIEM solution to collect logs from AWS resources.",
@@ -55,20 +76,6 @@ const projects: ProjectData[] = [
     description: "Develop an ETL pipeline to extract, transform, and load large datasets.",
     url: "",
     image: require(`${assetsDir}/etl-pipeline.png`),
-    // role: "Organizer",
-  },
-  {
-    title: "Investigating Netflix Movies",
-    description: "Perform an exploratory data analysis on 90s movies using Netflix data.",
-    url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/021-Software-Engineering/021-Jupyter-Notebooks/010-Investigating-Netflix-Movies/netflix-movies.ipynb",
-    image: require(`${assetsDir}/redpopcorn.jpg`),
-    // role: "Organizer",
-  },
-  {
-    title: "Hacker Statistics with Python",
-    description: "Using hacker statistics to calculate your chances of winning a bet.",
-    url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/021-Software-Engineering/021-Jupyter-Notebooks/009-Hacker-Statistics/Hacker_Statistics.ipynb",
-    image: require(`${assetsDir}/hacker-statistics.png`),
     // role: "Organizer",
   },
 ];

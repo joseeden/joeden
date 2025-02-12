@@ -2,8 +2,8 @@
 title: Deploy Serverless Application using Jenkins
 tags: [Linux, AWS, Jenkins, Labs]
 sidebar_position: 12
-# last_update:
-#   date: 11/2/2024
+last_update:
+  date: 11/2/2024
 ---
 
 
@@ -334,4 +334,8 @@ We need to delete both resources after testing. Select the Lambda resource first
 
 For the AWS SAM resource, you may need to select the force delete option.
 
+<div class='img-center'>
+
 ![](/img/docs/1103-aws-jenkins-aws-sam-force-delete.png)
+
+</div>

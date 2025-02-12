@@ -125,7 +125,7 @@ Scanning devices and digitizers:
 
 Expertise Please application is a classic three tier model. Originally custom developed by an external third party, but now maintained in house. It consist of:
 
-- static web content
+- Static web content
 - JAVA modules
 - data access service to communicate to the database and underlying final storage. 
 
