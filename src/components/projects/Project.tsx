@@ -31,7 +31,8 @@ export const Project: FunctionComponent<ProjectData> = ({
             </span>
           )} */}
         </div>
-        <div className="card__body">
+        <div className={clsx("card__body", styles.card__body)}></div>
+        {/* <div className="card__body"> */}
           <h2>{title}</h2>
           <p>{description}</p>
         </div>
