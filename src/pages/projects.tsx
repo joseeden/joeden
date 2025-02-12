@@ -13,7 +13,7 @@ const projects: ProjectData[] = [
     description: "Analyze co-occurrence network of the characters in the Game of Thrones books",
     url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/021-Software-Engineering/021-Jupyter-Notebooks/020-A-Network-Analysis-of-Game-of-Thrones/network-analysis-on-game-of-thrones.ipynb",
     // image: `${assetsDir}/got_network.jpeg`,
-    image: require(`/img/docs/got_network.png`),
+    image: require(`/img/docs/got_network.jpeg`),
     // role: "Organizer",
   },
   {
