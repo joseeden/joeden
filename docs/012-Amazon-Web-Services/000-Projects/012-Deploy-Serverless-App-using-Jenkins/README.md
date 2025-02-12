@@ -3,13 +3,13 @@ title: Deploy Serverless Application using Jenkins
 tags: [Linux, AWS, Jenkins, Labs]
 sidebar_position: 12
 last_update:
-  date: 11/2/2024
+  date: 2/11/2024
 ---
 
 
 ## Overview
 
-Using Jenkins to deploy a serverless application streamlines automation and enables continuous integration and delivery (CI/CD) for efficient and consistent deployment.
+Using Jenkins to deploy a serverless application simplifies automation and enables continuous integration and delivery (CI/CD) for efficient deployment.
 
 - Trigger deployments on code changes
 - Use AWS SAM CLI or AWS CLI for build and deploy steps
