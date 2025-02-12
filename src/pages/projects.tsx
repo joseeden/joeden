@@ -5,7 +5,8 @@ import styles from "../components/projects/Project.module.scss";
 
 import { Project, ProjectData } from "../components/projects/Project";
 
-const assetsDir = "./assets/projects";
+// const assetsDir = "./assets/projects";
+const assetsDir = "/img/docs";
 const projects: ProjectData[] = [
   {
     title: "A Network Analysis of Game of Thrones",
@@ -39,7 +40,7 @@ const projects: ProjectData[] = [
     title: "AWS Serverless Deployment using Jenkins",
     description: "Using Jenkins to deploy a serverless application",
     url: "/docs/012-Amazon-Web-Services/000-Projects/012-Deploy-Serverless-App-using-Jenkins/README.md",
-    image: require(`/img/docs/AWS-SAM.png`),
+    image: require(`${assetsDir}/AWS-SAM.png`),
     // role: "Organizer",
   },  
   {
