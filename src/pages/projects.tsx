@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "@theme/Layout";
-// import styles from "../components/projects/Project";
 import styles from "../components/projects/Project.module.scss";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 import { Project, ProjectData } from "../components/projects/Project";
 
@@ -12,7 +12,8 @@ const projects: ProjectData[] = [
     title: "A Network Analysis of Game of Thrones",
     description: "Analyze co-occurrence network of the characters in the Game of Thrones books",
     url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/021-Software-Engineering/021-Jupyter-Notebooks/020-A-Network-Analysis-of-Game-of-Thrones/network-analysis-on-game-of-thrones.ipynb",
-    image: `${assetsDir}/got_network.jpeg`,
+    // image: `${assetsDir}/got_network.jpeg`,
+    image: useBaseUrl(`${assetsDir}/got_network.jpeg`),
     // role: "Organizer",
   },
   {
