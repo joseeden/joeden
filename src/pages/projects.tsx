@@ -40,7 +40,7 @@ const projects: ProjectData[] = [
   {
     title: "AWS Serverless Deployment using Jenkins",
     description: "Using Jenkins to deploy a serverless application",
-    url: "/docs/Amazon-Web-Services/Projects/Deploy-Serverless-App-using-Jenkins/README",
+    url: useBaseUrl("/docs/Amazon-Web-Services/Projects/Deploy-Serverless-App-using-Jenkins/"), 
     image: `${assetsDir}/AWS-SAM.png`,
     // role: "Organizer",
   },  
