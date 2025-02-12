@@ -45,7 +45,7 @@ const projects: ProjectData[] = [
   {
     title: "Centralized Logging with Graylog SIEM",
     description:
-      "Implement Graylog as an SIEM solution to collect logs from AWS resources.",
+      "Deploy Graylog as an SIEM solution to collect logs from AWS resources.",
     url: "",
     image: require(`/img/docs/graylog.png`),
     // role: "Maintainer",
@@ -59,7 +59,7 @@ const projects: ProjectData[] = [
   },
   {
     title: "End-to-End DevSecOps Pipeline",
-    description: "CI/CD pipeline integrated with security scanning, automated testing, and compliance checks.",
+    description: "CI/CD pipeline with security scanning, automated testing, and compliance checks.",
     url: "",
     image: require(`/img/docs/devsecops.png`),
     // role: "Author",
@@ -72,8 +72,8 @@ const projects: ProjectData[] = [
     // role: "Author",
   },
   {
-    title: "ETL Pipeline Deployment for Data Processing",
-    description: "Develop an ETL pipeline to extract, transform, and load large datasets.",
+    title: "ETL Pipeline Deployment",
+    description: "Develop an ETL pipeline for processing large datasets.",
     url: "",
     image: require(`/img/docs/etl-pipeline.png`),
     // role: "Organizer",
