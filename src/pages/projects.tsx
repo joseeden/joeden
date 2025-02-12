@@ -57,6 +57,13 @@ const projects: ProjectData[] = [
     // role: "Organizer",
   },  
   {
+    title: "Kong Gateway Setup with Docker Compose",
+    description: "Setup Kong API Gateway along with ELK, Prometheus, Grafana, and other tools.",
+    url: `${baseUrl}/docs/Software-Engineering/Kong-API-Gateway/Containerized-Kong-and-Other-Apps`, 
+    image: require(`/img/docs/kong-elk-prom-graf.png`),
+    // role: "Organizer",
+  },  
+  {
     title: "Centralized Logging with Graylog SIEM",
     description:
       "Deploy Graylog as an SIEM solution to collect logs from AWS resources.",
