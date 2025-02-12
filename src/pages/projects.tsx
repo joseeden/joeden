@@ -39,7 +39,7 @@ const projects: ProjectData[] = [
     title: "AWS Serverless Deployment using Jenkins",
     description: "Using Jenkins to deploy a serverless application",
     url: "/docs/012-Amazon-Web-Services/000-Projects/012-Deploy-Serverless-App-using-Jenkins/README.md",
-    image: require(`/img/docs/AWS-SAM.PNG`),
+    image: require(`/img/docs/AWS-SAM.png`),
     // role: "Organizer",
   },  
   {
