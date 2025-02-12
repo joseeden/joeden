@@ -36,6 +36,7 @@
 
   .card {
     border: 1px solid var(--ifm-color-emphasis-300);
+    border-radius: 8px;
     background: #edf2f7;
     box-shadow: none;
     // height: 100%;
@@ -60,7 +61,7 @@
     align-items: center;
     overflow: hidden;
     object-fit: cover;
-    border-radius: 8px;
+    
   }
 
   .card__body {
