@@ -43,6 +43,20 @@ const projects: ProjectData[] = [
     // role: "Organizer",
   },  
   {
+    title: "Setting Up Jenkins with Ansible",
+    description: "Automated Jenkins installation and setup using Ansible.",
+    url: `${baseUrl}/docs/Version-Control-and-CICD/Jenkins-Labs/Setup-Ansible-and-Jenkins/`, 
+    image: require(`/img/docs/ansible-jenkins.png`),
+    // role: "Organizer",
+  },  
+  {
+    title: "CI/CD Pipeline for Flask Application",
+    description: "Automate code deployment with testing, packaging, and server deployment.",
+    url: `${baseUrl}/docs/Version-Control-and-CICD/Jenkins-Labs/Single-Server-Deployment`, 
+    image: require(`/img/docs/jenkins-flask.png`),
+    // role: "Organizer",
+  },  
+  {
     title: "Centralized Logging with Graylog SIEM",
     description:
       "Deploy Graylog as an SIEM solution to collect logs from AWS resources.",
@@ -73,7 +87,7 @@ const projects: ProjectData[] = [
   },
   {
     title: "ETL Pipeline Deployment",
-    description: "Develop an ETL pipeline for processing large datasets.",
+    description: "Develop an ETL pipeline for extracting, transforming, and loading large datasets.",
     url: "",
     image: require(`/img/docs/etl-pipeline.png`),
     // role: "Organizer",
