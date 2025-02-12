@@ -36,7 +36,8 @@ export const Project: FunctionComponent<ProjectData> = ({
           <h2>{title}</h2>
           <p>{description}</p>
         </div>
-        <div className="card__footer" style={{ textAlign: "center" }}>
+        <div className={clsx("card__footer", styles.card__footer)}>
+        {/* <div className="card__footer" style={{ textAlign: "center" }}> */}
           <a
             href={url}
             target="_blank"
