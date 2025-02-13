@@ -383,3 +383,34 @@
 
 
 //--------------------------------------------------------------
+
+
+const user1 = {
+  firstname: "John",
+  lastname: "Smith",
+  birthYear: 1990,
+  job: "Architect",
+  permission: ['Administrator', 'Cloud', 'Devops']
+};
+
+// console.log(user1.lastname);  // Output: Smith
+// console.log(user1["job"]);    // Output: Architect
+
+// const nameKey = "name";
+// console.log(user1["first" + nameKey]); // John
+// console.log(user1["last" + nameKey]);  // Smith
+
+
+// const getInput = prompt("Choose property: firstName, lastName, job")
+// console.log(user1[getInput]);
+
+// if (user1[getInput]) {
+//   console.log(user1[getInput]);
+// } else {
+//   console.log("Invalid property");
+// }
+
+user1.location = "Sweden";
+user1["twitter"] = "@JohnSmith";
+
+console.log(user1);
