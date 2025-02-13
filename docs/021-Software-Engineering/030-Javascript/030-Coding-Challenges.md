@@ -179,9 +179,9 @@ Two athletic teams, **Lions** and **Tigers**, compete in three rounds. The team 
 **Tasks:**  
 
 1. Calculate each team's average score using the test data.  
-2. **Round 1** Compare the scores and determine the winner. If both teams have the same average, it's a draw.  
-3. **Round 2:** A team only wins if its average score is **higher than the other team** and **at least 100 points**.  
-4. **Round 3:** A draw only happens if both teams have the **same average** and **at least 100 points**. Otherwise, no team wins.  
+2. Compare the scores and determine the winner. If both teams have the same average, it's a draw.  
+3. A team only wins if its average score is **higher than the other team** and **at least 100 points**.  
+4. **Bonus Round:** A draw only happens if both teams have the **same average** and **at least 100 points**. Otherwise, no team wins.  
 
 
 **Data:**
@@ -190,85 +190,178 @@ Two athletic teams, **Lions** and **Tigers**, compete in three rounds. The team 
 |--------------|------------------|-----------------|
 | **Round 1**  | 96, 108, 89      | 88, 91, 110     |
 | **Round 2**  | 97, 112, 101     | 109, 95, 123    |
-| **Round 3**  | 97, 112, 101     | 109, 95, 106    |
-
+| **Bonus Round**  | 97, 112, 101     | 109, 95, 106    |
+x
 
 <details>
   <summary> **Solution** </summary>
 
-Round 1:
+To start with, create the function the first set of scores from round 1.
 
 ```js
-const scoreLions= [96, 108, 89], scoreTigers = [88, 91, 110];
-
-const getScore = (sum, score) => sum + score;
-const getAverage = scores => scores.reduce(getScore, 0) / scores.length;
-
-function getWinner(lions, tigers) {
-  const avgLions = getAverage(scoreLions).toFixed(2);
-  const avgTigers = getAverage(scoreTigers).toFixed(2);
-  console.log(`Lions average score: ${avgLions},\nTigers average score: ${avgTigers}`);
-
-  if (avgLions > avgTigers) {
-    console.log("Lions win the trophy! 🏆");
-  } else if (avgLions < avgTigers) {
-    console.log("Tigers win the trophy! 🏆");
-  } else if (avgLions === avgTigers) {
-    console.log("It's a draw! 🏆");
-  } else {
-    console.log("No team wins the trophy! 😢");
-  }
-}
-
-getWinner(scoreLions, scoreTigers);
+const getAve = (a, b, c) => (a + b + c)/3;
+console.log(getAge(86, 108, 90))
 ```
 
-Output:
+Now compute for both teams:
 
 ```js
-Lions average score: 97.67,
-Tigers average score: 96.33
-  
-Lions win the trophy! 🏆  
+const scoreLions = getAve(96, 108, 89);
+const scoreTigers = getAve(88, 91, 110);
+console.log(scoreLions);                  // Output: 97.66666666666667   
+console.log(scoreTigers);                 // Output: 96.33333333333333
 ```
 
-Round 2:
+To round off to two decimal points,
 
 ```js
-const scoreLions= [97, 112, 101], scoreTigers = [109, 95, 123];
-
-const getScore = (sum, score) => sum + score;
-const getAverage = scores => scores.reduce(getScore, 0) / scores.length;
-
-function getWinner(lions, tigers) {
-  const avgLions = getAverage(scoreLions).toFixed(2);
-  const avgTigers = getAverage(scoreTigers).toFixed(2);
-  console.log(`Lions average score: ${avgLions},\nTigers average score: ${avgTigers}`);
-
-  if (avgLions > avgTigers && avgLions >= 100) {
-    console.log("Lions win the trophy! 🏆");
-  } else if (avgLions < avgTigers && avgTigers >= 100) {
-    console.log("Tigers win the trophy! 🏆");
-  } else if (avgLions === avgTigers && avgLions >= 100 && avgTigers >= 100) {
-    console.log("It's a draw! 🏆");
-  } else {
-    console.log("No team wins the trophy! 😢");
-  }
-}
-
-getWinner(scoreLions, scoreTigers);
+console.log(scoreLions.toFixed(2));       // Output: 97.67  
+console.log(scoreTigers.toFixed(2));      // Output: 96.33
 ```
 
-Output:
+
+**The ES6 way of computing average**
+
+As of ES6, the shorter way of computing average:
 
 ```js
-Lions average score: 103.33,
-Tigers average score: 109.00
-  
-Tigers win the trophy! 🏆 
+const average = array => array.reduce((a, b) => a + b) / array.length;
+console.log(average([1,2,3,4,5])) 
 ```
 
-For round 3, simply substitute the values to the second solution above.
+Explanation:
+
+In `reduce((a, b) => a + b)`, the function takes two parameters:  
+
+- `a`: The accumulated sum (starts with the first element by default).  
+- `b`: The current element being processed.  
+
+Let's say we have an array:
+
+```js
+const mynumbers = [1, 3, 4, 8, 2];
+```
+
+If we want to get the average of the list:
+
+```js
+const getAverage => getAverage.reduce((a, b) => a + b) / mynumbers.length;
+console.log(getAverage(mynumbers));
+```
+
+1. **First iteration** → `a = 1`, `b = 3` → `1 + 3 = 4`  
+2. **Second iteration** → `a = 4`, `b = 4` → `4 + 4 = 8`  
+3. **Third iteration** → `a = 8`, `b = 8` → `8 + 8 = 16`  
+4. **Fourth iteration** → `a = 16`, `b = 2` → `16 + 2 = 18`  
+
+Final sum = `18`.  
+
+When divided by the array length (`5`), the average is:  
+
+```js
+18 / 5 = 3.6
+```
+
+
+**Going back to the challenge:**
+
+- **Round 1:**
+
+    ```js
+    // average is (a + b + c)/number of itema
+    // Below is the ES6 way
+    const getAve = array => array.reduce((a, b) => a + b) / array.length;
+
+    function checkWinner(scores1, scores2) {
+      const aveLions = getAve(scores1).toFixed(2);
+      const aveTigers = getAve(scores2).toFixed(2);
+      console.log(`Average scores per team:`)
+      console.log(`Lions: ${aveLions}\nTigers: ${aveTigers}\n`)
+
+      if (aveLions > aveTigers && aveLions >= 100) {
+        console.log(`Lions wins the trophy! 🏆`)
+      } else if (aveLions < aveTigers && aveTigers >= 100) {
+        console.log(`Tigers wins the trophy! 🏆`)
+      } else {
+        console.log(`It's a draw!`)
+      }
+    };
+
+    console.log(`Round 1:`)
+    checkWinner(round1Lions, round1Tigers);
+    ```
+
+    Output:
+
+    ```js
+    Average scores per team:
+    Lions: 97.67
+    Tigers: 96.33
+
+    Lions wins the trophy! 🏆  
+    ```
+
+- **Round 2:**
+
+    ```js
+    console.log(`Round 2:`)
+    checkWinner(round2Lions, round2Tigers);
+    ```
+
+    Output:
+
+    ```js
+    Lions average score: 103.33,
+    Tigers average score: 109.00
+      
+    Tigers win the trophy! 🏆 
+    ```
+
+- **Bonus Round:**
+
+    ```js
+    const round1Lions = [96, 108, 89], 
+          round2Lions = [97, 112, 101],
+          round3Lions = [97, 112, 101],
+          round1Tigers = [88, 91, 110],
+          round2Tigers = [109, 95, 123],
+          round3Tigers = [109, 95, 106];
+
+    // average is (a + b + c)/number of itema
+    // Below is the ES6 way
+    const getAve = array => array.reduce((a, b) => a + b) / array.length;
+
+    function checkWinner(scores1, scores2) {
+      const aveLions = getAve(scores1).toFixed(2);
+      const aveTigers = getAve(scores2).toFixed(2);
+      console.log(`Average scores per team:`)
+      console.log(`Lions: ${aveLions}\nTigers: ${aveTigers}\n`)
+
+      if (aveLions > aveTigers && aveLions >= 100) {
+        console.log(`Lions wins the trophy! 🏆`)
+      } else if (aveLions < aveTigers && aveTigers >= 100) {
+        console.log(`Tigers wins the trophy! 🏆`)
+      } else if (aveLions === aveTigers && aveLions >= 100 && aveTigers >= 100) {
+        console.log(`It's a draw! 🏆`)
+      }else {
+        console.log(`No winner!`)
+      }
+    };
+
+    console.log(`Bonus Round:`)
+    checkWinner(round3Lions, round3Tigers); 
+    ```
+
+    Output:
+
+    ```js
+    Bonus Round:
+    Average scores per team:
+    Lions: 103.33
+    Tigers: 103.33
+
+    It's a draw! 🏆 
+    ```
 
 </details>
 
@@ -296,25 +389,26 @@ Robin wants a simple tip calculator for dining out. In his country:
 <details>
   <summary> **Solution** </summary>
 
-Using the third data:
+Uncomment the lines for the `const bill` to use each test data:
 
 ```js
-const bill = 430
+const bill = 275;       // Uncomment to use 1st data
+// const bill = 40;     // Uncomment to use 2nd data
+// const bill = 430;    // Uncomment to use 3rd data
 
-const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.20; 
-const total = bill + tip;
-
-console.log(`Bill: ${bill}\nTip: ${tip}\nTotal: ${total}`)
+const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.20;
+const total =  bill + tip;
+console.log(`Tip: ${tip}`);
+console.log(`Total: ${total}`);
 ```
 
-Output:
+Output for test data 1:
 
 ```js
 Bill: 430
 Tip: 86
 Total: 516 
 ```
-
 
 </details>
 

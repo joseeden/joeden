@@ -16,14 +16,40 @@ last_update:
 
 Functions in JavaScript are blocks of reusable code that perform a specific task. You can define a function and then call it when needed. 
 
-Functions in JavaScript **can be called before or after they are defined**, due to hoisting.
-
 ```js
 logger();             // Output: "My name is John"
 
 function logger() {
   console.log("My name is John");
 }
+```
+
+Functions in JavaScript **can be called before or after they are defined**, due to hoisting.
+
+```js
+
+function logger() {
+  console.log("My name is John");
+}
+
+logger();             // Output: "My name is John"
+```
+
+We can also create a function that accepts an input. The `calcAge` function below accepts the `birthYear` parameter, performs the operation, and returns the result.
+
+```js
+function calcAge(birthYear)  {
+  const age = 2040 - birthYear 
+  return age;
+}
+```
+
+The function can be further simplified:
+
+```js
+function calcAge(birthYear) {
+   return 2040 - birthYear
+} 
 ```
 
 
@@ -91,17 +117,25 @@ function logger() {
 Anonymous functions are functions that are not given a name. They are typically used as function expressions, which means they must be defined before they are called.
 
 ```js
-const getAge = function (birthYear) {
-  return 2025 - birthYear;
+const variable_name = function(parameter)  {
+  // add operation here...
+}
+```
+
+As an example, the function below doesn't have a function name but is assigned to the variable `getAge`. This variable will then hold the result, which is the age.
+
+```js
+const getAge = function(birthYear) {
+  return 2040 - birthYear;
 }
 
 const actualAge = getAge(1990);
 console.log(actualAge); 
 ```
 
-Unlike function declarations, anonymous functions are function expressions and need to be defined first before you can call them.
+Unlike function declarations, anonymous functions are **function expressions** and need to be defined first before you can call them. If you call the function before initiailize it, you will get an 'Uncaught ReferenceError`.
 
-![](/img/docs/02032025-js-anonoymous-functions.png)
+![](/img/docs/02032040-js-anonoymous-functions.png)
 
 
 ## Arrow Functions 
@@ -112,17 +146,30 @@ Using the previous example:
 
 ```js
 const getAge = function (birthYear) {
-  return 2025 - birthYear;
+  return 2040 - birthYear;
 }
 
 const actualAge = getAge(1990);
 console.log(actualAge);         // Output: 35
 ```
 
-This can be rewritten using an arrow function:
+This can be rewritten using an arrow function, where we specify first the parameter that it will accept (`birthYear`) and then use the "arrow" to specify the operation.
 
 ```js
-const getAge = birthYear => 2025 - birthYear;
+birthYear => 2040 - birthYear;
+```
+
+To store the result, we can assign the function to a variable and then printed out. 
+
+```bash
+const getAge = birthYear => 2040 - birthYear ;
+console.log(getAge(1990));      
+```
+
+For better readability, we can assigne the `getAge` variable to the variable `actualAge` which will then be printed out.
+
+```JS 
+const getAge = birthYear => 2040 - birthYear;
 const actualAge = getAge(1990) ;
 console.log(actualAge);         // Output: 35
 ```
@@ -131,7 +178,7 @@ If we expand the function to compute how many years are left before retirement (
 
 ```js
 const yearsBeforeRetirement = birthYear => {
-  const getAge = 2025 - birthYear;
+  const getAge = 2040 - birthYear;
   const retirement = 65 - getAge;
   return retirement;
 }
@@ -146,7 +193,7 @@ You can pass multiple parameters to a function.
 
 ```js
 const yearsBeforeRetirement = (birthYear, firstName) => {
-  const getAge = 2025 - birthYear;
+  const getAge = 2040 - birthYear;
   const retirement = 65 - getAge;
   return `${firstName} will retire in ${retirement} years`;
 }
@@ -185,7 +232,7 @@ Robin will retire in 19 years
 A function can call another function to reuse code and keep the logic organized.  
 
 ```js
-const getAge = birthYear => 2025 - birthYear;
+const getAge = birthYear => 2040 - birthYear;
 
 const yearsBeforeRetirement = (birthYear, firstName) => {
   const age = getAge(birthYear);
