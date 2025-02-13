@@ -330,3 +330,19 @@
 // console.log(`Bill: ${bill}`)
 // console.log(`Tip: ${tip}`);
 // console.log(`Total: ${total}`);
+
+// const friends = ["Michael", "Steven", "Peter"];
+// console.log(friends);
+
+// const years = new Array(1991, 1984, 2008, 2020);
+// console.log(years);
+
+// console.log(friends[friends.length - 1]); 
+
+//--------------------------------------------------------------
+
+
+const person = ["James", "Smith", 25, "Architect"];     // first Array
+const organization = 'ABC Holdings';                    // variable
+const platform = ["Singapore", organization, person]
+console.log(platform);

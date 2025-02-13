@@ -116,19 +116,39 @@ console.log(x <= y); // Less than or equal to: false
 
 ## Equality Operators 
 
-JavaScript provides two main equality operators to compare values:
+In JavaScript, `==` and `===` are comparison operators, but they behave differently:
 
-| Operator | Description                                                 |
-|----------|-------------------------------------------------------------|
-| `==`     | Loose equality; compares values after type coercion.        |
-| `===`    | Strict equality; compares values without type coercion.     |
+- **`==` (Loose Equality)**
+  - Compares two values **after** performing type conversion if necessary.
+  - Converts the operands to a common type before making the comparison.
+  - Can lead to unexpected results due to implicit coercion.
 
-Example:
+  Example:
 
-```js
-console.log(5 == "5");  // true (because of type coercion)
-console.log(5 === "5"); // false (no type coercion, different types)
-```
+  ```javascript
+  console.log(5 == "5");  // true (string "5" is converted to a number)
+  console.log(null == undefined);  // true (both are treated as "empty" values)
+  console.log(true == 1);  // true (true is converted to 1)
+  ```
+     
+- **`===` (Strict Equality)**
+  - Compares two values **without** type conversion.
+  - Returns `true` only if both values **and** their types are identical.
+  - Recommended for more predictable and bug-free comparisons.
+
+  Example:
+
+  ```javascript
+  console.log(5 === "5");  // false (different types: number vs. string)
+  console.log(null === undefined);  // false (different types)
+  console.log(true === 1);  // false (boolean vs. number)
+  ```
+
+**When to Use Each?**
+
+- **Use `===`** whenever possible to avoid unintended type coercion and ensure accurate comparisons.
+- **Use `==`** only when you specifically want type conversion (e.g., checking for `null` or `undefined` together).
+
 
 ## Boolean Operators  
 
