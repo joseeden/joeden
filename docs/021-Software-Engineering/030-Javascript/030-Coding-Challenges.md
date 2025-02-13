@@ -11,7 +11,7 @@ last_update:
   date: 12/21/2020
 ---
 
-## Practice 1 
+## Practice 01 
 
 Alex and Jake want to compare their BMI (Body Mass Index), calculated as:  
 
@@ -89,7 +89,7 @@ Does Alex have a higher BMI than Jake? true
 </details>
 
 
-## Practice 2
+## Practice 02
 
 Improve on practice 1, and modify the code to print either of the two:
 
@@ -172,7 +172,7 @@ Alex has a higher BMI than Jake.
 </details>
 
 
-## Practice 3 
+## Practice 03 
 
 Two athletic teams, **Lions** and **Tigers**, compete in three rounds. The team with the highest average score wins the trophy!  
 
@@ -365,7 +365,7 @@ When divided by the array length (`5`), the average is:
 
 </details>
 
-## Practice 4 
+## Practice 04 
 
 Robin wants a simple tip calculator for dining out. In his country:  
 
@@ -413,7 +413,7 @@ Total: 516
 </details>
 
 
-## Practice 5
+## Practice 05
 
 Alex is working on a tip calculator with these rules:  
 - If the bill is between 50 and 300, the tip is 15%.  
@@ -468,3 +468,33 @@ console.log(total);       // Output: [138, 600, 48]
 
 </details>
 
+
+## Practice 06 
+
+Let's compare two individuals' BMIs using objects and methods. The Body Mass Index (BMI) is calculated using the formula:  
+
+\[
+BMI = \frac{\text{mass}}{\text{height}^2}
+\]
+
+where mass is in kg and height is in meters.  
+
+**Tasks:**
+
+1. Create an object for each person with properties for their full name, mass, and height.  
+2. Add a `calcBMI` method to each object that calculates and stores the BMI, returning it as well.  
+3. Compare their BMIs and log the person with the higher BMI.  
+
+**Test Data:**
+
+| Name         | Mass (kg) | Height (m) |
+|-------------|----------|-----------|
+| Alex Brown  | 85       | 1.75      |
+| Jake Wilson | 95       | 1.88      |
+
+<details>
+  <summary> **Solution** </summary>
+
+
+
+</details>
