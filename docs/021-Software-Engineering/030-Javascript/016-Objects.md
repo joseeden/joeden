@@ -25,9 +25,9 @@ Objects solve the naming problem by using **key-value pairs** instead of relying
 Example:
 
 ```js
-const jonas = {
-  firstName: 'Jonas',
-  lastName: 'Schmedtmann',
+const Lily = {
+  firstName: 'Lily',
+  lastName: 'Page',
   age: 2037 - 1991,
   job: 'teacher',
   friends: ['Michael', 'Peter', 'Steven']
@@ -128,4 +128,43 @@ user1.location = "Sweden";
 user1["twitter"] = "@JohnSmith";
 
 console.log(user1);
+```
+
+
+## Adding a Method 
+
+We can add a function as a property inside an object. A function that is attached to an object is called a **method**.
+
+```javascript
+const user2 = {
+  birthYear: 1991,
+  hasDriversLicense: true,
+
+  age: function () {
+    return 2037 - this.birthYear;   // use 'this' to refer to another property.
+  } 
+};
+
+console.log(user2.age());         // Using dot notation, output: 46
+console.log(user2["age"]());      // Using bracket notation, output: 46
+```
+
+We can also rewrite the function so that the calculation will only need to be done once, and the output can then be reused or printed out multiple times.
+
+```js
+const user2 = {
+  birthYear: 1991,
+  hasDriversLicense: true,
+
+  age: function () {
+    this.age = 2037 - this.birthYear; 
+    return this.age;
+  } 
+};
+
+console.log(user2.age());    // 46, compute once
+console.log(user2.age);      // 46
+console.log(user2.age);      // 46
+console.log(user2["age"]);   // 46
+console.log(user2["age"]);   // 46
 ```

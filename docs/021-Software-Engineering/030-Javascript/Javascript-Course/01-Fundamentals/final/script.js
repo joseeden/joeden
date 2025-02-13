@@ -385,13 +385,13 @@
 //--------------------------------------------------------------
 
 
-const user1 = {
-  firstname: "John",
-  lastname: "Smith",
-  birthYear: 1990,
-  job: "Architect",
-  permission: ['Administrator', 'Cloud', 'Devops']
-};
+// const user1 = {
+//   firstname: "John",
+//   lastname: "Smith",
+//   birthYear: 1990,
+//   job: "Architect",
+//   permission: ['Administrator', 'Cloud', 'Devops']
+// };
 
 // console.log(user1.lastname);  // Output: Smith
 // console.log(user1["job"]);    // Output: Architect
@@ -410,7 +410,34 @@ const user1 = {
 //   console.log("Invalid property");
 // }
 
-user1.location = "Sweden";
-user1["twitter"] = "@JohnSmith";
+// user1.location = "Sweden";
+// user1["twitter"] = "@JohnSmith";
 
-console.log(user1);
+// console.log(user1);
+
+
+// const user2 = {
+//   firstName: "Jane Doe",
+//   hasDriverLicense: true,
+//   birthYear: 1991,
+
+//   age: function () {
+//     return 2037 - this.birthYear;
+//   } 
+// };
+
+// console.log(user2.age());         // Using dot notation, output: 46
+// console.log(user2["age"]());      // Using bracket notation, output: 46
+
+const user2 = {
+  birthYear: 1991,
+  hasDriversLicense: true,
+
+  age: function () {
+    this.age = 2037 - this.birthYear; 
+    return this.age;
+  } 
+};
+
+console.log(user2.age());    // 46
+console.log(user2.age);      // 46

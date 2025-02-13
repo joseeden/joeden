@@ -150,7 +150,7 @@ Any other value is **truthy** and converts to `true`.
 ```js
 console.log(Boolean(0));       // false
 console.log(Boolean(``));      // false
-console.log(Boolean(`Jonas`)); // true
+console.log(Boolean(`James`)); // true
 console.log(Boolean({}));      // true
 ```
 
