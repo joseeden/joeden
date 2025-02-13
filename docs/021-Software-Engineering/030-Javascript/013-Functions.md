@@ -16,7 +16,7 @@ last_update:
 
 Functions in JavaScript are blocks of reusable code that perform a specific task. You can define a function and then call it when needed. 
 
-Functions in JavaScript can be called before or after they are defined, due to hoisting.
+Functions in JavaScript **can be called before or after they are defined**, due to hoisting.
 
 ```js
 logger();             // Output: "My name is John"

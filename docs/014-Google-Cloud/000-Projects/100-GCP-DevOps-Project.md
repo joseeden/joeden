@@ -13,15 +13,10 @@ last_update:
 ## Pre-requisites 
 
 - [Setup Github account](https://docs.github.com/en/get-started/onboarding/getting-started-with-your-github-account)
-
 - [Add an SSH key to your Github account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
-
 - [Add the SSH key to your ssh-agent (Optional)](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
-
 - [Install Docker Desktop](https://docs.docker.com/desktop/install/windows-install/) 
-
 - [Create a GCP account](https://console.cloud.google.com/freetrial/signup) 
-
 - [Understanding of Kubernetes Basics](https://github.com/joseeden/All-Things-Docker-and-Kubernetes?tab=readme-ov-file#kubernetes) 
 
 
@@ -33,12 +28,15 @@ last_update:
 
 This project will be broken down into seven sprints. 
 
+- [Pre-requisites](#pre-requisites)
+- [Sprints](#sprints)
 - [Sprint 01](#sprint-01)
 - [Sprint 02](#sprint-02)
 - [Sprint 03](#sprint-03)
 - [Sprint 04](#sprint-04)
 - [Sprint 05](#sprint-05)
 - [Sprint 06](#sprint-06)
+- [Reference](#reference)
 
 <!-- 
 ## NOTES 
@@ -50,18 +48,13 @@ This project will be broken down into seven sprints.
 
 ## Sprint 01
 
-:::tip[TODOs]
-
+Todo:
 
 ✔️ Create a Github Repo and clone it locally.
-
 ✔️ Setup Github repo according to best practices.
-
 ✔️ Code the application locally.
-
 ✔️ Test the application locally.
 
-:::
 
 <details>
     <summary> See sprint details </summary>
@@ -322,14 +315,11 @@ This project will be broken down into seven sprints.
 
 ## Sprint 02
 
-:::tip[TODOs]
-
+Todo:
 
 ✔️ Setting up a GKE cluster.
-
 ✔️ Verify connection to the GKE cluster.
 
-:::
 
 <details>
     <summary> See sprint details </summary>
@@ -380,14 +370,11 @@ This project will be broken down into seven sprints.
 
 ## Sprint 03
 
-:::tip[TODOs]
-
+Todo:
 
 ✔️ Design Discussions
-
 ✔️ Explore CICD options
 
-:::
 
 <details>
     <summary> See sprint details </summary>
@@ -421,21 +408,14 @@ Architecture:
 
 ![](/img/docs/gcp-devops-project-architecture-flow-how-app-will-be-deployed.png)
 
-</details>
-
-
-
 
 ## Sprint 04
 
-:::tip[TODOs]
-
+Todo:
 
 ✔️ Connect Cloud Build to Github repository 
-
 ✔️ Automate Docker image build process 
 
-:::
 
 <details>
     <summary> See sprint details </summary>
@@ -536,20 +516,14 @@ Once triggered, Cloud Build will check the Cloudbuild.yaml which will contain th
 
 ## Sprint 05
 
-:::tip[TODOs]
-
+Todo:
 
 ✔️ Create the namespace in the GKE cluster
-
 ✔️ Create the deployment manifest 
-
 ✔️ Expose the application via endpoint
-
 ✔️ Update the Cloud Build code for deployment
-
 ✔️ Validate the deployment
 
-:::
 
 <details>
     <summary> See sprint details </summary>
@@ -633,20 +607,14 @@ Once triggered, Cloud Build will check the Cloudbuild.yaml which will contain th
 
 ## Sprint 06
 
-:::tip[TODOs]
-
+Todo:
 
 ✔️ Create the development branch
-
 ✔️ Create the development Cloud Build YAML file
-
 ✔️ Create the Cloud Build trigger for the development branch
-
 ✔️ Create the development namespace 
-
 ✔️ Push changes to development 
 
-:::
 
 <details>
     <summary> See sprint details </summary>
