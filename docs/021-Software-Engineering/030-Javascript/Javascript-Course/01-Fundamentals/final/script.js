@@ -348,9 +348,38 @@
 // console.log(platform);
 
 
-const friends = ["Michael", "Steven", "Peter", "Jay"] 
-friends.pop();  
-console.log(friends); // ["John", "Michael", "Steven", "Peter"]
+// const friends = ["Michael", "Steven", "Peter", "Jay"] 
+// friends.pop();  
+// console.log(friends); // ["John", "Michael", "Steven", "Peter"]
 
-friends.push(23);
-console.log(friends);
+// friends.push(23);
+// console.log(friends);
+
+
+//--------------------------------------------------------------
+
+
+// const bill = 100;                 // initial test data for the calculateTip
+
+// function calculateTip(bill) {
+//   return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.20;
+// };
+
+// console.log(calculateTip(bill));  // Output: 100
+
+
+// const bills = [120, 500, 40];
+// const tips = [];
+// const total = [];
+
+// for (const x of bills){
+//   const tip = calculateTip(x);
+//   tips.push(tip);
+//   total.push(x + tip);
+// };
+
+// console.log(tips);        // Output: [18, 100, 8]
+// console.log(total);       // Output: [138, 600, 48]
+
+
+//--------------------------------------------------------------

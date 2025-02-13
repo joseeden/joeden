@@ -135,7 +135,7 @@ console.log(actualAge);
 
 Unlike function declarations, anonymous functions are **function expressions** and need to be defined first before you can call them. If you call the function before initiailize it, you will get an 'Uncaught ReferenceError`.
 
-![](/img/docs/02032040-js-anonoymous-functions.png)
+![](/img/docs/02032025-js-anonoymous-functions.png)
 
 
 ## Arrow Functions 

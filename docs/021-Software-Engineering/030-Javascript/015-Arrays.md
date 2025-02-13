@@ -1,6 +1,6 @@
 ---
-title: "Data Structures"
-description: "Data Structures in Javascript"
+title: "Arrays"
+description: "Arrays in Javascript"
 tags: 
 - Computer Science
 - Application Development

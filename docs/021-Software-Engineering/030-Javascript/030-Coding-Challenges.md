@@ -414,3 +414,57 @@ Total: 516
 
 
 ## Practice 5
+
+Alex is working on a tip calculator with these rules:  
+- If the bill is between 50 and 300, the tip is 15%.  
+- Otherwise, the tip is 20%.  
+
+**Tasks:**  
+
+1. Write a function `calculateTip` that takes a bill amount and returns the tip based on the rules above. Test it with a bill of 100. Tip should be 15.
+2. Create an array `bills` with the test values: **120, 500, and 40**.  
+3. Create an array `tips` that stores the calculated tips using `calculateTip`.  
+4. **Bonus:** Create an array `total` that holds the final amounts (bill + tip).  
+
+💡 **Hint:** You can call the function directly inside the array instead of storing tip values separately.
+
+**Test Data:**  
+
+| Bills ($)  | Expected Tip ($) | Total Amount ($) |  
+|------------|----------------|----------------|  
+| 120        | 18             | 138            |  
+| 500        | 100            | 600            |  
+| 40         | 8              | 48             |  
+
+
+
+<details>
+  <summary> **Solution** </summary>
+
+```js
+const bill = 100;                 // initial test data for the calculateTip
+
+function calculateTip(bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.20;
+};
+
+console.log(calculateTip(bill));  // Output: 100
+
+
+const bills = [120, 500, 40];
+const tips = [];
+const total = [];
+
+for (const x of bills){
+  const tip = calculateTip(x);
+  tips.push(tip);
+  total.push(x + tip);
+};
+
+console.log(tips);        // Output: [18, 100, 8]
+console.log(total);       // Output: [138, 600, 48] 
+```
+
+
+</details>
+
