@@ -342,7 +342,15 @@
 //--------------------------------------------------------------
 
 
-const person = ["James", "Smith", 25, "Architect"];     // first Array
-const organization = 'ABC Holdings';                    // variable
-const platform = ["Singapore", organization, person]
-console.log(platform);
+// const person = ["James", "Smith", 25, "Architect"];     // first Array
+// const organization = 'ABC Holdings';                    // variable
+// const platform = ["Singapore", organization, person]
+// console.log(platform);
+
+
+const friends = ["Michael", "Steven", "Peter", "Jay"] 
+friends.pop();  
+console.log(friends); // ["John", "Michael", "Steven", "Peter"]
+
+friends.push(23);
+console.log(friends);

@@ -112,3 +112,96 @@ console.log(platform);
 Output:
 
 ![](/gif/docs/02142025-array-nested-variables.gif)
+
+
+
+## Adding Elements  
+
+Methods for adding elements to an array.
+
+- `push()` – Adds an element to the **end** of the array.
+- `unshift()` – Adds an element to the **beginning** of the array.  
+
+Example:
+
+Add "Jay" to the end of the list:
+
+```javascript
+const friends = ["Michael", "Steven", "Peter"];
+friends.push("Jay");  
+console.log(friends); // ["Michael", "Steven", "Peter", "Jay"]
+```
+
+Add "John" to the end of the list:
+
+```js 
+friends.unshift("John");  
+console.log(friends); // ["John", "Michael", "Steven", "Peter", "Jay"]
+```
+
+
+
+## Removing Elements  
+
+Methods for removing elements from an array.
+
+- `pop()` – Removes the **last** element.
+- `shift()` – Removes the **first** element.
+
+Example:
+
+```javascript
+const friends = ["Michael", "Steven", "Peter", "Jay"] 
+
+friends.pop();  
+console.log(friends); // ["John", "Michael", "Steven", "Peter"]
+
+friends.shift();  
+console.log(friends); // ["Michael", "Steven", "Peter"]
+```
+
+
+
+## Finding Elements  
+
+Methods to check for elements in an array.
+
+- `indexOf()` 
+
+  – Returns the position of an element.
+  - Returns `-1` if the element is not found.
+
+- `includes()` 
+  – Returns `true` if the element exists, `false` otherwise.
+  - Checks for **strict equality** (no type coercion).
+
+Example:
+
+```javascript
+console.log(friends.indexOf("Steven"));   // 1
+console.log(friends.indexOf("Bob"));      // -1
+
+console.log(friends.includes("Steven"));  // true
+console.log(friends.includes("Bob"));     // false
+```
+
+Checking for string versus number:
+
+```javascript
+friends.push(23);                         
+console.log(friends);                     // ['Michael', 'Steven', 'Peter', 23]
+console.log(friends.includes("23"));      // false (string vs number)
+console.log(friends.includes(23));        // true
+```
+
+## Using `includes()` in Conditionals  
+
+The `includes()` method is useful for writing conditions.
+
+```javascript
+const friends = ["Michael", "Steven", "Peter", "Jay"] 
+
+if (friends.includes("Peter")) {
+  console.log("You have a friend called Peter.");
+}
+```
