@@ -1,6 +1,6 @@
 ---
-title: "Loops"
-description: "Loops in Javascript"
+title: "For Loops"
+description: "For Loops in Javascript"
 tags: 
 - Computer Science
 - Application Development
@@ -200,18 +200,6 @@ salary: 50000
 ```
 
 
-## Combining `Object.keys()` and `forEach`  
-
-Another way to loop through an object is by using `Object.keys()` and `forEach()`.  
-
-```javascript
-Object.keys(person).forEach(key => {
-  console.log(`${key}: ${person[key]}`);
-});
-```
-
-This achieves the same result but with a more modern approach.
-
 ## Modern Looping (ES6)
 
 ### Loop through an Array 
@@ -262,6 +250,8 @@ Index 5: true
 
 ### `for...of` vs. `forEach()`
 
+Another way to loop through an object is by `forEach()`.  
+
 - `for...of`:  
 
   - Works well with `break` and `continue`
@@ -286,3 +276,4 @@ const dataArray = [
 dataArray.forEach((item, index) => {
   console.log(`Index: ${index}: ${item}`)
 });
+```
