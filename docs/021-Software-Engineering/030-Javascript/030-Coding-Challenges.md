@@ -532,3 +532,178 @@ if (userAlex.calcBMI().toFixed(2)) {
 ```
 
 </details>
+
+
+## Practice 07 
+
+Alex is working on a tip calculator with these rules:  
+
+- If the bill is between 50 and 300, the tip is 15%.  
+- Otherwise, the tip is 20%.  
+
+**Steps:**  
+
+1. Create an array `bills` containing 10 test values.  
+2. Create empty arrays `tips` and `total` for tips and total values.  
+3. Calculate the tip and total (bill + tip) for each value in `bills`. Use a loop to do this for all 10 values.  
+
+**Bonus:**  
+
+1. Create a `computeAverage` function that takes an array `arr` and returns the average of its values.  
+   - Start with a `sum` variable at 0.  
+   - Use a loop to add up all values in the array.  
+   - Divide `sum` by the number of elements to get the average.  
+2. Call `computeAverage` with the `finalAmounts` array.  
+
+
+**Test Data:**  
+
+| Bill Amount | Expected Tip | Expected Total |  
+|-------------|-------------|---------------|  
+| 18         | 3.60        | 21.60         |  
+| 320        | 64.00       | 384.00        |  
+| 150        | 22.50       | 172.50        |  
+| 500        | 100.00      | 600.00        |  
+| 45         | 9.00        | 54.00         |  
+| 98         | 14.70       | 112.70        |  
+| 12         | 2.40        | 14.40         |  
+| 900        | 180.00      | 1,080.00      |  
+| 75         | 11.25       | 86.25         |  
+| 60         | 9.00        | 69.00         |  
+
+Average:
+
+| Category   | Average    |
+|------------|------------|
+| Bill       | 217.80     |
+| Tip        | 41.64      |
+| Total      | 259.44     |
+
+<details>
+  <summary> **Solution** </summary>
+
+Computing the tips and total:
+
+```js
+const bills = [18, 320, 150, 500, 45, 98, 12, 900, 75, 60];
+
+function calculateTip(bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.20;
+};
+  
+for (const x of bills){
+  const tip = calculateTip(x);
+  const totalBill = x + tip;
+  console.log(`Tip: ${tip.toFixed(2)}, Total: ${totalBill.toFixed(2)}`)
+};
+```
+
+Output:
+
+```js
+Tip: 3.60, Total: 21.60
+Tip: 64.00, Total: 384.00
+Tip: 22.50, Total: 172.50
+Tip: 100.00, Total: 600.00
+Tip: 9.00, Total: 54.00
+Tip: 14.70, Total: 112.70
+Tip: 2.40, Total: 14.40
+Tip: 180.00, Total: 1080.00 
+Tip: 11.25, Total: 86.25
+Tip: 9.00, Total: 69.00 
+```
+
+We can also forward the tips and total to their own arrays.
+
+```js
+const bills = [18, 320, 150, 500, 45, 98, 12, 900, 75, 60];
+const tips = [], total = [];
+
+function calculateTip(bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.20;
+};
+  
+
+for (const x of bills){
+  const tip = calculateTip(x);
+  const totalBill = x + tip;
+  tips.push(tip.toFixed(2))
+  total.push(totalBill.toFixed(2))
+};
+
+console.log(tips);
+console.log(total);  
+```
+
+Output:
+
+```js
+Tips: 3.60,64.00,22.50,100.00,9.00,14.70,2.40,180.00,11.25,9.00
+
+Total: 21.60,384.00,172.50,600.00,54.00,112.70,14.40,1080.00,86.25,69.00
+```
+
+**Bonus:**
+
+Create the `computeAverage` function which will compute the average of the array provided. In this case, the `bills` array.
+
+```js
+
+const bills = [18, 320, 150, 500, 45, 98, 12, 900, 75, 60];
+const tips = [], total = [];
+
+function calculateTip(bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.20;
+};
+  
+for (const x of bills){
+  const tip = calculateTip(x);
+  const totalBill = x + tip;
+  tips.push(tip.toFixed(2))
+  total.push(totalBill.toFixed(2))
+};
+
+function computeAverage(arr) {
+  let sum = 0;
+  
+  for (const i of arr) {
+    sum = sum + i;
+  }
+
+  return sum / arr.length
+}
+
+console.log(`Average of Bills: ${computeAverage(bills)}`);
+console.log(`Average of Tips: ${computeAverage(tips)}`);
+console.log(`Average of Total Bills: ${computeAverage(total)}`); 
+```
+
+Note that if you try to use the `computeAverage` function to get the average of the `tips` and `total` arrays, you will get an `NaN` response.
+
+**Reason:** The `tips` and `total` contain **string values** due to `.toFixed(2)`, which returns a string. Since `computeAverage(arr)` performs arithmetic operations, JavaScript treats them as **NaN** when trying to add strings as numbers.  
+
+To fix this, conver the value to number format before they are "pushed" to the array:
+
+```js
+for (const x of bills) {
+  const tip = calculateTip(x);
+  const totalBill = x + tip;
+  tips.push(Number(tip.toFixed(2)));        // Convert to number
+  total.push(Number(totalBill.toFixed(2))); // Convert to number
+}
+
+console.log(`Average of Bills: ${computeAverage(bills)}`);
+console.log(`Average of Tips: ${computeAverage(tips).toFixed(2)}`);
+console.log(`Average of Total Bills: ${computeAverage(total).toFixed(2)}`);
+```
+
+This should now return the correct values:
+
+```bash
+Average of Bills: 217.8
+Average of Tips: 41.64
+Average of Total Bills: 259.44 
+```
+
+</details>
+

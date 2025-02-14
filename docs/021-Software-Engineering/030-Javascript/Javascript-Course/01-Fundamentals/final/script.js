@@ -562,10 +562,44 @@
 //   dice = Match
 // }
 
+// --------------------------------------------------
 
-let dice;
+// let dice;
 
-while (dice !== 6) {
-  dice = Math.trunc(Math.random() * 6) + 1;
-  console.log(`You rolled a ${dice}`)
+// while (dice !== 6) {
+//   dice = Math.trunc(Math.random() * 6) + 1;
+//   console.log(`You rolled a ${dice}`)
+// }
+
+// --------------------------------------------------
+
+const bills = [18, 320, 150, 500, 45, 98, 12, 900, 75, 60];
+const tips = [], total = [];
+
+function calculateTip(bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.20;
+};
+  
+for (const x of bills){
+  const tip = calculateTip(x);
+  const totalBill = x + tip;
+  tips.push(Number(tip.toFixed(2)));
+  total.push(Number(totalBill.toFixed(2)));
+};
+
+function computeAverage(arr) {
+  let sum = 0;
+  
+  for (const i of arr) {
+    sum = sum + i;
+  }
+
+  return sum / arr.length
 }
+
+console.log(`Average of Bills: ${computeAverage(bills)}`);
+console.log(`Average of Tips: ${computeAverage(tips).toFixed(2)}`);
+console.log(`Average of Total Bills: ${computeAverage(total).toFixed(2)}`);
+
+
+
