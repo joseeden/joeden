@@ -528,4 +528,19 @@
 //   console.log(x);
 // };
 
+// const names = ["Alice", "Bob", "Charlie", "David", "Eve"];
 
+// for (let x = names.length - 1; x >= 0; x--) {
+//   console.log(names[x]);
+// };
+
+//---------------------------------------------------
+
+
+for (let exercise = 1; exercise <= 3; exercise++) {
+  console.log(`-------Starting Exercise: ${exercise}-------`);
+
+  for (let rep = 1; rep <= 5; rep++) {
+    console.log(`  Repetition: ${rep}`);
+  }
+};

@@ -200,6 +200,76 @@ salary: 50000
 ```
 
 
+
+## Looping Backwards
+
+To loop through an array in reverse, start from the last index and decrement in each iteration.
+
+- Initialize the counter at the last index.
+- Loop while the counter is ≥ 0.
+- Decrement the counter each iteration.
+
+Example:
+
+```javascript
+const names = ["Alice", "Bob", "Charlie", "David", "Eve"];
+
+for (let x = names.length - 1; x >= 0; x--) {
+  console.log(names[x]);
+};
+```
+
+Output:
+
+```
+Eve
+David
+Charlie
+Bob
+Alice
+```
+
+
+## Nested Loops (Loop Inside a Loop)
+
+A nested loop is useful when handling repeated tasks within a set of repeated tasks. Nested loops are useful for working with grids, tables, and multi-dimensional data.
+
+Example: Simulating three sets of exercises, each repeated five times.
+
+```javascript
+for (let exercise = 1; exercise <= 3; exercise++) {
+  console.log(`-------Starting Exercise: ${exercise}-------`);
+
+  for (let rep = 1; rep <= 5; rep++) {
+    console.log(`  Repetition: ${rep}`);
+  }
+};
+```
+
+Output:
+
+```
+-------Starting Exercise 1-------
+  Repetition 1
+  Repetition 2
+  Repetition 3
+  Repetition 4
+  Repetition 5
+-------Starting Exercise 2-------
+  Repetition 1
+  Repetition 2
+  Repetition 3
+  Repetition 4
+  Repetition 5
+-------Starting Exercise 3-------
+  Repetition 1
+  Repetition 2
+  Repetition 3
+  Repetition 4
+  Repetition 5
+```
+
+
 ## Modern Looping (ES6)
 
 ### Loop through an Array 
