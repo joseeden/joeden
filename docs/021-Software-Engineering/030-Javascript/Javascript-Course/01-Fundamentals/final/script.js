@@ -537,10 +537,35 @@
 //---------------------------------------------------
 
 
-for (let exercise = 1; exercise <= 3; exercise++) {
-  console.log(`-------Starting Exercise: ${exercise}-------`);
+// for (let exercise = 1; exercise <= 3; exercise++) {
+//   console.log(`-------Starting Exercise: ${exercise}-------`);
 
-  for (let rep = 1; rep <= 5; rep++) {
-    console.log(`  Repetition: ${rep}`);
-  }
-};
+//   for (let rep = 1; rep <= 5; rep++) {
+//     console.log(`  Repetition: ${rep}`);
+//   }
+// };
+
+// --------------------------------------------------
+
+// let i = 1;
+// while (i <= 10) {
+//   console.log(`Round: ${i}`);
+//   i++;
+// };
+
+// --------------------------------------------------
+
+// let dice = Math.random();
+// console.log(dice);
+
+// while (dice !== 6) {
+//   dice = Match
+// }
+
+
+let dice;
+
+while (dice !== 6) {
+  dice = Math.trunc(Math.random() * 6) + 1;
+  console.log(`You rolled a ${dice}`)
+}

@@ -1,6 +1,6 @@
 ---
-title: "For Loops"
-description: "For Loops in Javascript"
+title: "For Loop"
+description: "For Loop in Javascript"
 tags: 
 - Computer Science
 - Application Development
