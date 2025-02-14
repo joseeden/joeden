@@ -9,7 +9,19 @@ Application Development:
 Software Development:
   label: 'Software Development'
   permalink: '/Software Development'
-  description: 'Docs related to Software Development'      
+  description: 'Docs related to Software Development'    
+Web Development:
+  label: 'Web Development'
+  permalink: '/Web Development'
+  description: 'Docs related to Web Development'   
+HTML:
+  label: 'HTML'
+  permalink: '/HTML'
+  description: 'Docs related to HTML'       
+CSS:
+  label: 'CSS'
+  permalink: '/CSS'
+  description: 'Docs related to CSS'    
 Python:
   label: 'Python'
   permalink: '/Python'
@@ -30,6 +42,10 @@ Javascript:
   label: 'Javascript'
   permalink: '/Javascript'
   description: 'Docs related to Javascript'      
+Typescript:
+  label: 'Typescript'
+  permalink: '/Typescript'
+  description: 'Docs related to Typescript'    
 REST APIs:
   label: 'REST APIs'
   permalink: '/REST APIs'

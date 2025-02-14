@@ -1,0 +1,18 @@
+body {
+  background-color: #62bbd9;
+  font-family: Arial;
+  font-size: 20px;
+}
+
+h1 {
+  font-size: 50px ;
+}
+
+.first {
+  color: #661e46;
+}
+
+#user-information {
+  background-color: #f7dee2;
+  border: 5px solid #588ca4;
+}
