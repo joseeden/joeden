@@ -495,6 +495,40 @@ where mass is in kg and height is in meters.
 <details>
   <summary> **Solution** </summary>
 
+```js
+const userAlex = {
+  name: "Alex Brown",
+  mass: 85,
+  height: 1.75,
 
+  calcBMI: function () {
+    this.bmi = this.mass / (this.height ** 2)
+    return this.bmi
+  }
+}
+
+const userJake = {
+  name: "Jake Wilson",
+  mass: 95,
+  height: 1.88,
+
+  calcBMI: function() {
+    this.bmi = this.mass / (this.height ** 2)
+    return this.bmi 
+  }
+}
+
+const bmiAlex = userAlex.calcBMI().toFixed(2);
+const bmiJake = userJake.calcBMI().toFixed(2);
+
+console.log(`${userAlex.name}: ${bmiAlex}`);
+console.log(`${userJake.name}: ${bmiJake}`);
+
+if (userAlex.calcBMI().toFixed(2)) {
+  console.log(`${userAlex.name} has a higher BMI than ${userJake.name}`);
+} else {
+  console.log(`${userJake.name} has a higher BMI than ${userAlex.name}`);
+} 
+```
 
 </details>

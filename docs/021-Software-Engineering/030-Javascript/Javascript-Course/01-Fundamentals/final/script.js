@@ -240,14 +240,14 @@
 //   return (weight / (height * height)).toFixed(2);
 // }
 
-// const bmiAlex = getBMI(dataAlex.weight, dataAlex.height)
-// const bmiJake = getBMI(dataJake.weight, dataJake.height)
+// const userAlex = getBMI(dataAlex.weight, dataAlex.height)
+// const userJake = getBMI(dataJake.weight, dataJake.height)
 
-// console.log(`Alex has BMI of ${bmiAlex}`);
-// console.log(`Jake has BMI of ${bmiJake}`);
+// console.log(`Alex has BMI of ${userAlex}`);
+// console.log(`Jake has BMI of ${userJake}`);
 
 // function finalBMI() {
-//   if ( bmiAlex > bmiJake) {
+//   if ( userAlex > userJake) {
 //     console.log(`Alex has a higher BMI than Jake.`);
 //   } else {
 //     console.log(`Jake has a higher BMI than Alex.`);
@@ -262,20 +262,20 @@
 // const massAlex = 78, massJake = 92;
 // const heightAlex = 1.69, heightJake = 1.95;
 
-// const BMIAlex = (massAlex / (heightAlex ** 2)).toFixed(2);
-// const BMIJake = (massJake / (heightJake ** 2)).toFixed(2);
-// const higherBMI = BMIAlex > BMIJake;
+// const userAlex = (massAlex / (heightAlex ** 2)).toFixed(2);
+// const userJake = (massJake / (heightJake ** 2)).toFixed(2);
+// const higherBMI = userAlex > userJake;
 
 // function finalBMI() {
-//   if  (BMIAlex > BMIJake) {
+//   if  (userAlex > userJake) {
 //     console.log(`Alex has a higher BMI than Jake.`);
 //   } else {
 //     console.log(`Jake has a higher BMI than Alex.`);
 //   }
 // }
 
-// console.log(`Alex has a BMI of ${BMIAlex}`);
-// console.log(`Jake has a BMI of ${BMIJake}`);
+// console.log(`Alex has a BMI of ${userAlex}`);
+// console.log(`Jake has a BMI of ${userJake}`);
 // // console.log(`Does Alex have a higher BMI than Jake? ${higherBMI}`);
 // finalBMI();
 
@@ -416,6 +416,9 @@
 // console.log(user1);
 
 
+//--------------------------------------------------------------
+
+
 // const user2 = {
 //   firstName: "Jane Doe",
 //   hasDriverLicense: true,
@@ -429,15 +432,100 @@
 // console.log(user2.age());         // Using dot notation, output: 46
 // console.log(user2["age"]());      // Using bracket notation, output: 46
 
-const user2 = {
-  birthYear: 1991,
-  hasDriversLicense: true,
+// const user2 = {
+//   birthYear: 1991,
+//   hasDriversLicense: true,
 
-  age: function () {
-    this.age = 2037 - this.birthYear; 
-    return this.age;
-  } 
-};
+//   age: function () {
+//     this.age = 2037 - this.birthYear; 
+//     return this.age;
+//   } 
+// };
 
-console.log(user2.age());    // 46
-console.log(user2.age);      // 46
+// console.log(user2.age());    // 46
+// console.log(user2.age);      // 46
+
+
+// const userAlex = {
+//   name: "Alex Brown",
+//   mass: 85,
+//   height: 1.75,
+
+//   calcBMI: function () {
+//     this.bmi = this.mass / (this.height ** 2)
+//     return this.bmi
+//   }
+// }
+
+// const userJake = {
+//   name: "Jake Wilson",
+//   mass: 95,
+//   height: 1.88,
+
+//   calcBMI: function() {
+//     this.bmi = this.mass / (this.height ** 2)
+//     return this.bmi 
+//   }
+// }
+
+// const bmiAlex = userAlex.calcBMI().toFixed(2);
+// const bmiJake = userJake.calcBMI().toFixed(2);
+
+// console.log(`${userAlex.name}: ${bmiAlex}`);
+// console.log(`${userJake.name}: ${bmiJake}`);
+
+// if (userAlex.calcBMI().toFixed(2)) {
+//   console.log(`${userAlex.name} has a higher BMI than ${userJake.name}`);
+// } else {
+//   console.log(`${userJake.name} has a higher BMI than ${userAlex.name}`);
+// }
+
+//--------------------------------------------------------------
+
+// for (let apple =1; apple <= 10; apple++) {
+//   console.log(`Picked apple ${apple}`);
+// };
+
+// const participants = ["Alice", "Bob", "Charlie", "David", "Eve"];
+
+// for (let i = 0; i < participants.length; i++) {
+//   console.log(participants[i]);
+// };
+
+// participants.push("Frank");
+// console.log(participants);
+
+
+// const nameLengths = [];
+
+// for (let i = 0; i < participants.length; i++) {
+//   nameLengths.push(participants[i].length);
+// }
+
+// console.log(nameLengths);
+
+// const data = [
+//   "Alice",
+//   "Smith",
+//   "Manager",
+//   1993,
+//   { age: 30},
+//   true
+// ];
+
+// const types = [];
+
+// for (let i = 0; i < data.length; i++) {
+//   console.log(data[i]);
+//   types.push(typeof data[i])
+// };
+
+// console.log(types);
+
+// const participants = ["Alice", "Bob", "Charlie", "David", "Eve"];
+
+// for (const x of participants) {
+//   console.log(x);
+// };
+
+
