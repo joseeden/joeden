@@ -707,3 +707,82 @@ Average of Total Bills: 259.44
 
 </details>
 
+
+
+## Practice 08
+
+We have a set of temperature measurements from a sensor. We need to get the amplitude of the temperature records. Any invalid temperatures should be ignored.
+
+💡 **Hint:** Amplitude means the difference between the highest and lowest temperature recorded.
+
+**Test Data:**
+
+| Temperatures            | Expected Min | Expected Max | Expected Amplitude |
+|-------------------------|--------------|--------------|--------------------|
+| [3, 2, 5, 1, 14]        | 1            | 14           | 13                 |
+| [10, 20, 30, 40]        | 10           | 40           | 30                 |
+| [5, 'a', 7, 2, 9]       | 2            | 9            | 7                  |
+| [5, 3, 7, 2, 9]         | 2            | 9            | 7                  |
+| [-5, -10, -3, -8]       | -10          | -3           | 7                  |
+| [11, -8, undefined, 20] | -8           | 20           | 28                 |
+
+
+<details>
+  <summary> **Solution** </summary>
+
+Understanding the problem:
+
+- Get the highest temperature (max) in the list
+- Get the lowest temperature (min) in the list
+- Subtract max from min, and return 
+
+Attacking the problem:
+
+- Assume the first item in the list is the `max`
+- Compare all other items to the `max` 
+- If type of next item is not "number", skip and proceed to next item
+- If next item is higher than `max`, set this item as new `max`
+- Repeat process until you reach the last item of the list 
+- To get the lowest temp, do the same step, but save value to `min`
+
+Solution:
+
+```js
+const arr = [11, -8, undefined, 20]     // Replace with other test data
+
+function getAmplitude(temps) {
+  let max = temps[0];
+  let min = temps[0];
+
+  for (const x of temps) {
+
+    if (typeof x !== 'number') {
+      continue;
+    }
+
+    if (x >= max) {
+      max = x;
+    }
+
+    if (x <= min) {
+      min = x;
+    }
+  };
+
+  const amplitude = max - min;
+  return { max, min, amplitude };
+
+};
+
+const amp = getAmplitude(arr);
+
+console.log(`Min temp: ${amp.min}`);
+console.log(`Max temp: ${amp.max}`);
+console.log(`Amplitude: ${amp.amplitude}`);
+```
+
+
+</details>
+
+
+## Practice 09
