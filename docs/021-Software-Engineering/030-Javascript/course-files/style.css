@@ -1,3 +1,9 @@
+* {
+  margin: 5px;
+  padding: 10px;  /* Add more attributes as you need */
+  box-sizing: border-box;
+}
+
 body {
   background-color: #62bbd9;
   font-family: Arial;
@@ -6,13 +12,37 @@ body {
 
 h1 {
   font-size: 50px ;
+  padding-bottom: 25px
+}
+
+h2 {
+  font-size: 40px;
+  padding-top: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 30px;
 }
 
 .first {
   color: #661e46;
 }
 
+p {
+  margin: 20px;
+}
+
 #user-information {
   background-color: #f7dee2;
   border: 5px solid #588ca4;
+  width: 600px;
+  padding: 30px;
+  margin-top: 20px;
+}
+
+input, button {
+  padding: 10px;
+  font-size: 20px
 }

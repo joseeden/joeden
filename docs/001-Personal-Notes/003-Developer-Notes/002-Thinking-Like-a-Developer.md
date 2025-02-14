@@ -2,7 +2,7 @@
 title: "Thinking like a Developer"
 description: "Thinking like a Developer"
 tags: 
--DevOps
+- DevOps
 - Personal Notes
 - Development
 sidebar_position: 2
