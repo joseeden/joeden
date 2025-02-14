@@ -473,9 +473,9 @@ console.log(total);       // Output: [138, 600, 48]
 
 Let's compare two individuals' BMIs using objects and methods. The Body Mass Index (BMI) is calculated using the formula:  
 
-\[
-BMI = \frac{\text{mass}}{\text{height}^2}
-\]
+```bash
+BMI = mass / height² (mass in kg, height in meters)  
+```
 
 where mass is in kg and height is in meters.  
 
