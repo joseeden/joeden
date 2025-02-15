@@ -166,7 +166,7 @@ The following is an example of an HTML registration form.
 - `required` attribute prevents users from leaving the field blank.  
 - `name` attribute for gender buttons ensures only one option can be selected at a time. 
 - `reset` button clears all inputs, and the checkboxes allow multiple selections.
-- `select` with <option> allows users to choose from predefined choices in a dropdown.
+- `select` with `option` allows users to choose from predefined choices in a dropdown.
 
 ```html
 <!DOCTYPE html>
