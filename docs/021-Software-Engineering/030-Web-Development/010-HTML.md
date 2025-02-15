@@ -138,3 +138,32 @@ In practice, styles are placed in a separate CSS file and linked in the HTML.
 </head>
 ```
 
+## Custom Attributes (`data-*`) 
+
+You can create your own custom attributes using the `data-` prefix; this allows you to store extra information on an element without affecting its functionality. These are called **data attributes** and are commonly used to embed custom data in HTML elements.
+
+For example:
+
+```html
+<button class="show-modal" data-modal-target="modal-1">Choose your Pokemon!</button>
+```
+
+The `data-` prefix allows you to define your custom attribute, like `data-modal-target`, which doesn't interfere with the element’s normal behavior. 
+
+**Why use `data-*` attributes?**
+
+- Use them to store additional data on HTML element that can be accessed by JavaScript.
+- Simple, flexible in associating metadata with elements (like linking a button to a modal).
+- They don't interfere with the layout or styling of the page.
+
+**Accessing the `data-*` attributes in JavaScript**
+
+You can  access them using JavaScript by using the `getAttribute()` method or directly through the `dataset` property:
+
+```javascript
+const button = document.querySelector('.show-modal');
+console.log(button.getAttribute('data-modal-target')); // "modal-1"
+
+// Or using dataset
+console.log(button.dataset.modalTarget); // "modal-1"
+```

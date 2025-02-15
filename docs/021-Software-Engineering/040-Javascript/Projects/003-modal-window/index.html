@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>Modal Window</title>
+</head>
+<body>
+  <button class="show-modal" data-modal-target="modal-1">Choose your Pokemon!</button>
+  <button class="show-modal" data-modal-target="modal-2">Choose your Pokemon!</button>
+  <button class="show-modal" data-modal-target="modal-3">Choose your Pokemon!</button>
+  
+  <div class="modal modal-1 hidden">
+    <button class="close-modal">&times;</button>
+    <h1>You chose Charizard! 🔥</h1>
+    <p>
+      You are bold, passionate, and full of determination. When faced with challenges, you rise to the occasion with confidence and strength. Your fiery spirit inspires those around you, and you never back down from a fight!  
+    </p>
+  </div>
+  
+  <div class="modal modal-2 hidden">
+    <button class="close-modal">&times;</button>
+    <h1>You chose Pikachu! ⚡</h1>
+    <p>
+      You are energetic, friendly, and full of charm. People are drawn to your warm personality and infectious enthusiasm. You value loyalty and friendships, always standing by those you care about!
+    </p>
+  </div>
+  
+  <div class="modal modal-3 hidden">
+    <button class="close-modal">&times;</button>
+    <h1>You chose Squirtle 🌊 !</h1>
+    <p>
+      You are calm, adaptable, and always go with the flow. Your easygoing nature makes you a great friend, and you know how to keep your cool in tough situations. Beneath your chill exterior, you have a playful side that keeps life fun and exciting!
+    </p>
+  </div>
+
+  <div class="overlay hidden"></div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
