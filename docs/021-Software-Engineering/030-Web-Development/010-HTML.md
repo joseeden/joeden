@@ -69,6 +69,51 @@ Example:
 <p>This is a paragraph of text.</p>
 ```
 
+💡 If you want to autopopulate a paragraph with random texts, you can type 'lorem' and press tab. It will generate a paragraph containing the *lorem ipsum* texts.
+
+
+## Ordered Lists and Unordered Lists
+
+Ordered lists (`<ol>`) display items in a numbered sequence, while unordered lists (`<ul>`) use bullet points.  
+
+```html
+<ul>
+  <li>Apple</li>
+  <li>Banana</li>
+</ul>
+
+<ol>
+  <li>Step 1</li>
+  <li>Step 2</li>
+</ol>
+```
+
+Subfields:
+
+- **Ordered List (`<ol>`)** – Uses numbers or letters to order items.  
+- **Unordered List (`<ul>`)** – Uses bullets to list items.  
+- **List Item (`<li>`)** – Represents each item inside a list.  
+
+## Self-Closing Tags  
+
+Self-closing tags do not require a closing tag because they don’t wrap content. They are commonly used for elements that insert media, line breaks, or metadata.  
+
+Example Tags: `<br>`, `<img>`, `<hr>`, `<meta>`, `<input>`  
+
+```html
+<img src="image.jpg" alt="Sample Image">
+<br>
+<input type="text" placeholder="Enter name">
+```
+
+## Anchor Tag  
+
+The `<a>` tag is used to create hyperlinks in HTML, allowing navigation between web pages.  
+
+```html
+<a href="https://www.example.com">Visit Example</a>
+```
+
 ## `class` and `id`
 
 Classes and IDs help style and identify elements uniquely.
