@@ -34,7 +34,7 @@ if (js === 'amazing') alert('Javascript is FUN!')
 ![](/img/docs/12072024-js-IF-EXAMPLE.png)
 
 
-## Javascript in a Nutshell
+## In a Nutshell
  
 JavaScript is a high-level, object-oriented, and multi-paradigm programming language that powers the dynamic and interactive aspects of web development. Here's a summary of its role:
 
@@ -52,6 +52,35 @@ In web development, JavaScript complements HTML (content) and CSS (style) by:
 - Creating full web applications. 
 
 For instance, it enables dynamic effects like loading and displaying content, toggling visibility (e.g., tweet boxes), and showing data on hover, as seen on platforms like Twitter.
+
+
+## Garbage-Collected
+
+JavaScript automatically manages memory allocation and deallocation through a garbage collector. The garbage collector identifies unused memory and frees it up without the need for explicit memory management. This helps avoid memory leaks and ensures efficient resource usage.
+
+## First-class Functions  
+
+In JavaScript, functions are treated as first-class citizens, meaning they can be assigned to variables, passed as arguments, and returned from other functions. This allows for high flexibility in programming.  
+
+```javascript
+function greet(name) {
+  return `Hello, ${name}!`;
+}
+
+function callFunction(fn, name) {
+  console.log(fn(name));
+}
+
+callFunction(greet, 'Alice'); // Output: Hello, Alice!
+```
+
+## Non-Blocking Event Loop  
+
+JavaScript operates on a non-blocking event loop; this allows it to perform multiple tasks concurrently without waiting for one task to finish before starting another. This makes JavaScript highly efficient for handling asynchronous operations like I/O or network requests.
+
+- Javascript runs in **single-thread** - it can only do one thing at a time.
+- Long running tasks are placed and ran at the "background".
+- Once finished, they are placed back at the main thread.
 
 ## Frameworks  
 
