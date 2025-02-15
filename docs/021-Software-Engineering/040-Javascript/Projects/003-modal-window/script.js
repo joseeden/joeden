@@ -38,16 +38,12 @@ closeModalButtons.forEach(button => {
 
 // Close modal if overlay is clicked
 overlay.addEventListener('click', function () {
-  allModals.forEach(modal => {
-    closeModal(modal);
-  });
+  allModals.forEach(modal => closeModal(modal));
 });
 
 // Close modal on 'Escape' key press
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape') {
-    allModals.forEach(modal => {
-      closeModal(modal);
-    });
+    allModals.forEach(modal => closeModal(modal));
   }
 });
