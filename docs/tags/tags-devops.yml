@@ -98,10 +98,14 @@ Helm:
   label: 'Helm'
   permalink: '/Helm'
   description: 'Docs related to Helm'
+GitOps:
+  label: 'GitOps'
+  permalink: '/GitOps'
+  description: 'Docs related to GitOps'  
 ArgoCD:
   label: 'ArgoCD'
   permalink: '/ArgoCD'
-  description: 'Docs related to ArgoCD'
+  description: 'Docs related to ArgoCD'  
 Istio:
   label: 'Istio'
   permalink: '/Istio'
