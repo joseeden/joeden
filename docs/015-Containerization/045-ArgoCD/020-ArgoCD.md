@@ -118,3 +118,85 @@ ArgoCD helps manage and deploy applications in Kubernetes environments. It uses 
 ![](/img/docs/2023-argocd-architecture.png)
 
 </div>
+
+
+
+## Installation 
+
+Install Argo CD:
+
+- Create the `argocd` namespace.  
+- Apply the Argo CD manifest.  
+
+```sh
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+```
+
+Install Argo CD CLI:
+
+- Download the CLI from GitHub releases.  
+- Make it executable and move it to `/usr/local/bin/`.  
+
+```sh
+wget https://github.com/argoproj/argo-cd/releases/download/v2.4.11/argocd-linux-amd64
+mv argocd-linux-amd64 argocd
+chmod +x argocd
+sudo mv argocd /usr/local/bin/
+```
+
+Verify installation:
+
+- Check Argo CD services.  
+- Change `argocd-server` service type to `NodePort`.  
+
+```sh
+kubectl get pods -n argocd
+kubectl edit svc argocd-server -n argocd  # Change type to NodePort
+```
+
+## Access the UI 
+
+Access Argo CD UI:
+
+- Get the external IP and NodePort.  
+- Open `<EXTERNAL_IP>:<NODE_PORT>` in a browser.  
+- Accept the self-signed certificate.  
+
+```sh
+kubectl get svc argocd-server -n argocd
+```
+
+Login to Argo CD:
+
+- Retrieve the default admin password.  
+- Decode the password and log in.  
+
+```sh
+kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.password}" | base64 -d
+```
+
+Use the username `admin` and the decoded password to log in.  
+
+
+## Access the CLI 
+
+Log in via CLI:
+
+- Use `argocd login` with the server IP.  
+- Accept the self-signed certificate.  
+
+```sh
+argocd login <ARGOCD_SERVER_IP> --username admin --password <DECODED_PASSWORD> --insecure
+```
+
+Check Argo CD Setup:
+
+- List clusters and applications.  
+
+```sh
+argocd cluster list
+argocd app list
+```
+
+No applications exist yet, but Argo CD is ready to deploy them.
