@@ -16,7 +16,7 @@ last_update:
 Shows a history of commits, including author, date, and commit message.  
 
 ```bash
-add sample command  
+git log --oneline
 ```
 
 Sample output:
@@ -33,6 +33,46 @@ To find which commit caused an issue, note the first 6-8 characters of the commi
 ```bash
 git show 36b761e4  
 ```
+
+To look at the git history of a particular file:
+
+```bash
+git log sample-report.md 
+```
+
+## Customize log output 
+
+To look at the git history of a particular file:
+
+```bash
+git log sample-report.md 
+```
+
+To limit the number of commits displayed:
+
+```bash
+git log -3    # limit to 3 commits  
+```
+
+Restrict log by date:
+
+```bash
+git log --since='Month Day Year'
+```
+
+As an example:
+
+- Commits since 27 May 2019:
+
+    ```bash
+    git log --since='May 27 2019'
+    ```
+
+- Commits between April 19 to June 30 2019:
+
+    ```bash
+    git log --since='April 19  2019' --until='June 30 2019
+    ```
 
 
 ## View changes
@@ -151,7 +191,7 @@ git reset HEAD
 
 ## Undo changes to unstaged file 
 
-Discard changes made to a file before staging.  
+Discard changes made to a file before staging. This is also the same command used to revert the file to an old version. 
 
 ```bash
 git checkout -- sample-report.csv  
@@ -166,3 +206,31 @@ To undo changes in all unstaged files:
 ```bash
 git checkout .  
 ```  
+
+To revert to a version from a specific commit:
+
+```bash
+git checkout asdety890 sample-report.csv  ## asdety890 is the hash
+```  
+
+To restore the entire repo to a previous state, specify the commit without specifying any file.
+
+```bash
+git checkout 123hjklsd                    ## 123hjklsd is the hash
+```
+
+## Cleaning the repository 
+
+To see which files are not being tracked:
+
+```bash
+git clean -n  
+```
+
+Next, proceed to deleting those files:
+
+```bash
+git clean -f 
+```
+
+⚠️ This action is irreversible - files will be removed for good.
