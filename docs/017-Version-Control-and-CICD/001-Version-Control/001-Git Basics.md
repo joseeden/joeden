@@ -1,10 +1,13 @@
 ---
 title: "Git Basics"
 description: "Fundamentals of Git"
-tags: [Version Control, Git, Development]
+tags: 
+- Version Control
+- Git
+- Software Development
 sidebar_position: 1
 last_update:
-  date: 2/5/2023
+  date: 2/5/2020
 ---
 
 ## Git
@@ -204,7 +207,5 @@ To https://github.com/username/repo.git
 ```
 
 This command pushes any commits that the remote `master` branch does not yet have, making it match your local `master` branch.
-
-
 
 

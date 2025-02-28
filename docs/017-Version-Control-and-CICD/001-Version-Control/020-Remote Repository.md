@@ -1,10 +1,13 @@
 ---
 title: "Remote Repositories"
 description: "Using remote repositories"
-tags: [Version Control, Git, Development]
-sidebar_position: 4
+tags: 
+- Version Control
+- Git
+- Software Development
+sidebar_position: 20
 last_update:
-  date: 2/5/2023
+  date: 2/5/2020
 ---
 
 

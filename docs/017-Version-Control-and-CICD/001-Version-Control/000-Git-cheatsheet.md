@@ -1,10 +1,13 @@
 ---
 title: "Git Cheatsheet"
 description: "Git Cheatsheet"
-tags: [Version Control, Git, Development]
+tags: 
+- Version Control
+- Git
+- Software Development
 sidebar_position: 0
 last_update:
-  date: 2/5/2023
+  date: 2/5/2020
 ---
 
 

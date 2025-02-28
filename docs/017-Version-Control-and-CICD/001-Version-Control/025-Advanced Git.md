@@ -1,10 +1,13 @@
 ---
 title: "Advanced Git"
 description: "More advance Git commands"
-tags: [Version Control, Git, Development]
-sidebar_position: 5
+tags: 
+- Version Control
+- Git
+- Software Development
+sidebar_position: 25
 last_update:
-  date: 2/5/2023
+  date: 2/5/2020
 ---
 
 

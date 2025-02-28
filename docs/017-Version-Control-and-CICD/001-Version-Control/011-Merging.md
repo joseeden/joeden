@@ -1,10 +1,13 @@
 ---
 title: "Merging"
 description: "Combining branches into a single timeline"
-tags: [Version Control, Git, Development]
-sidebar_position: 3
+tags: 
+- Version Control
+- Git
+- Software Development
+sidebar_position: 11
 last_update:
-  date: 2/5/2023
+  date: 2/5/2020
 ---
 
 

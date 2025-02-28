@@ -1,10 +1,13 @@
 ---
 title: "Branching"
 description: "Creating different branches in Git"
-tags: [Version Control, Git, Development]
-sidebar_position: 2
+tags: 
+- Version Control
+- Git
+- Software Development
+sidebar_position: 10
 last_update:
-  date: 2/5/2023
+  date: 2/5/2020
 ---
 
 

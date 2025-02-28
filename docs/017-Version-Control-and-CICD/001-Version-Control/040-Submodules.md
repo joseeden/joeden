@@ -1,10 +1,13 @@
 ---
 title: "Submodules"
 description: "Submodules"
-tags: [Version Control, Git, Development]
-sidebar_position: 0
+tags: 
+- Version Control
+- Git
+- Software Development
+sidebar_position: 40
 last_update:
-  date: 2/5/2023
+  date: 7/19/2023
 ---
 
 
