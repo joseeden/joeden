@@ -10,7 +10,19 @@ last_update:
   date: 2/5/2020
 ---
 
+## Remote vs. Local  
 
+Local and remote repositories can have different files. We can compare them to see what's missing or new.  
+
+- Local repo: Where we work on changes  
+- Remote repo: Where others collaborate and updates are stored  
+- Differences: Remote may have extra files or changes  
+
+When working with a team, the remote repo is the main source of truth.  
+
+- Team members fetch updates from the remote  
+- They edit files locally and commit changes  
+- Changes are pushed back to keep the remote up to date  
 
 ## Github
 
@@ -25,6 +37,7 @@ To search for beginner-friendly issues in Github, we can go to the search bar at
 ```bash
 label:"beginner-friendly" is:issue is:open
 ``` 
+
 ![](/img/docs/github1.png)
 
 
@@ -78,7 +91,7 @@ The `git remote` command lists all your remotes, which are other repositories th
 To add another remote, use the following commands:
 
 ```bash
-additional_remote_url=git://ec2-35-34-68-144.us-west-2.compute.amazonaws.com/lab.git
+additional_remote_url=git://10.1.2.3.eu-west-3.compute.amazonaws.com/lab.git   ## set this to your remote Git repository
 git remote add second_remote $additional_remote_url
 git remote
 ```
@@ -115,27 +128,111 @@ git remote add origin ssh://git@github.com/[username]/[repository-name].git
 git remote set-url origin ssh://git@github.com/[username]/[repository-name].git	
 ```
 
+## Fetching from a Remote  
 
-### Git Push and Git Pull
+To check for remote updates, we fetch the latest changes without merging them.  
 
+```sh
+git fetch origin main
+```
 
-Git Push and Pull allows commits from one repo to be synchronized to another repo.
+Where: 
 
-- You can push your commits to Github.
+- `origin`: The remote repository  
+- `main`: The branch to fetch  
+- Output: Shows the URL, branch, and last commit  
+
+To fetch all the commits:
+
+```bash
+git fetch -all
+```
+
+It's best practice to regularly fetch repo from remote to your local repo so that you always have an updated repo. This is useful if you're working with other developers who are touching and intorducing changes to the same local repo.
+
+## Fetching a Specific Branch  
+
+We can fetch updates from a different branch if needed.  
+
+```sh
+git fetch origin report
+```
+
+- `report`: The branch being fetched  
+- Fetching doesn’t change local files, only updates the remote info  
+
+## Synchronizing Content  
+
+After fetching, we need to merge remote changes into our local branch.  
+
+```sh
+git merge origin/main
+```
+
+- If the local branch is behind, Git performs a fast-forward merge  
+- Example output:  
+  - `2 files changed`  
+  - `3 lines added to data.csv`  
+  - `1 line added to report.md`  
+
+## Pulling from a Remote 
+
+Instead of fetching and merging separately, we can pull in one step.  
+
 - Your teammates can pull changes on the central repo.
-- You can also and pull between your repo and your teammates.
+- You can also push your commits to the remote repository.
 
-Here is an informative diagram that shows the difference between the commands:
+To pull from the remote repo:
+
+```sh
+git pull origin main
+```
+
+- Combines `git fetch` and `git merge`  
+- Ensures the local branch is up to date  
+
+This will return:
 
 
-<div style={{textAlign: 'center'}}>
+1. Fetch details (remote URL, branch)  
+2. Merge details (files updated, lines changed)  
 
-![](/img/docs/git-push--and-pulll.png)
+Example output:  
 
-</div>
+```sh
+Fetching origin  
+Updating 123abc..456def  
+Fast-forward  
+ report.md | 1 line added  
+```
+
+## Pulling with Unsaved Local Changes  
+
+Git prevents pulling if there are uncommitted changes to avoid data loss.  
+
+Example:  
+
+```sh
+git pull origin main
+```
+
+Output:  
+
+```sh
+error: Your local changes would be overwritten by merge.  
+Please commit or stash your changes before you pull.
+```
+
+Solution:  
+
+```sh
+git commit -am "Save changes"
+git pull origin main
+```
 
 
-### Pushing Changes from Local to Remote
+
+## Pushing Changes from Local to Remote
 
 As best practice, we only push to a secondary branch ("feature branch") and not the master branch. This ensures that these only affect "our branch" in the remote repo.
 
@@ -169,38 +266,15 @@ Some common commands:
     git push origin --delete [branch name]	
     ```
 
+## Push vs. Pull 
 
-### Fetching and Pulling
+Here is an informative diagram that shows the difference between the commands:
 
-It's best practice to regularly fetch repo from remote to your local repo so that you always have an updated repo. This is useful if you're working with other developers who are touching and intorducing changes to the same local repo.
+<div style={{textAlign: 'center'}}>
 
-Some common commands:
+![](/img/docs/git-push--and-pulll.png)
 
-- Fetch all the commits.
-
-    ```bash
-    git fetch -all
-    ```
-
-- Pull all commits done in the origin remote and master branch. 
-  Note this pulls all commits done in YOUR LOCAL REPO and master branch.
-    
-    ```bash
-    git pull origin master
-    ```
-
-- Pull all commits done in the UPSTREAM repo.
-
-    ```bash
-    git pull upstream master
-    ```
-
-- Pull from a different branch.
-
-    ```bash
-    git pull upstream <branch_2>
-    ```
-
+</div>
 
 
 ## Pull Request

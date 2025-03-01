@@ -20,8 +20,6 @@ If you can't undo changes in your file editor, Git offers an option to do so. In
 git restore -- index.html
 ```
 
-
-
 ## `git reset`
 
 The `git reset` command is used to undo commits and move your current branch pointer to a different commit. It can change the commit history while preserving or discarding changes in your working directory.

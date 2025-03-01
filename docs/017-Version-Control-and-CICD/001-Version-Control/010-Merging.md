@@ -5,7 +5,7 @@ tags:
 - Version Control
 - Git
 - Software Development
-sidebar_position: 11
+sidebar_position: 10
 last_update:
   date: 2/5/2020
 ---
@@ -77,7 +77,22 @@ If you did some changes on both the feature branch and the master branch, youcan
 
 ## Conflicts
 
-Sometimes, when merging changes, Git may encounter conflicts that it can't resolve automatically. These conflicts must be fixed manually. If you run into errors during a merge, you can cancel the merge process and revert to the previous state of your branch with the following command:
+Sometimes, when merging changes, Git may encounter conflicts that it can't resolve automatically. These conflicts must be fixed manually. 
+
+```bash
+## Different changes are done on branch-a and main branch, causing the merge to fail
+git merge branch-a main   
+```
+
+This will return which file has the conflicting changes.
+
+```bash
+Auto-merging report.md
+CONFLICT (content): Merge conflict in report.md
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+<!-- If you run into errors during a merge, you can cancel the merge process and revert to the previous state of your branch with the following command:
 
 ```bash
 git merge --abort
@@ -90,7 +105,58 @@ Merge failed. Please resolve conflicts and try again.
 Aborting merge.
 ```
 
-This command stops the merge before any changes are made, ensuring your current working branch remains intact.
+This command stops the merge before any changes are made, ensuring your current working branch remains intact. -->
+
+
+## Fixing the conflict 
+
+When Git detects a merge conflict, it marks the conflicting sections in the affected file. In this example, `report.md` has conflicting changes between `branch-a` and `main`. Opening the file shows:  
+
+```bash
+# Mental Health in Tech Survey
+TODO: write executive summary.
+TODO: include link to raw data.
+TODO: remember to cite funding sources!
+<<<<<<< HEAD
+TODO: Add graphs.
+=======
+TODO: Add data visualizations.
+>>>>>>> main 
+```
+
+The conflict markers:  
+
+- `<<<<<<< HEAD` shows the version from the current branch (`branch-a`).  
+- `=======` separates the two conflicting versions.  
+- `>>>>>>> main` shows the version from the `main` branch.  
+
+
+**Resolving the conflict:**  
+
+1. Open the file in an editor:  
+
+   ```bash
+   vi report.md  
+   ```  
+
+2. Modify the file to keep the correct version or merge both changes. For example:  
+
+   ```bash
+   # Mental Health in Tech Survey
+   TODO: write executive summary.
+   TODO: include link to raw data.
+   TODO: remember to cite funding sources!
+   TODO: Add graphs and data visualizations.
+   ```  
+
+3. Save the file and mark the conflict as resolved:  
+
+   ```bash
+   git add report.md  
+   git commit -m "Resolve merge conflict in report.md"  
+   ```  
+
+4. After this, the merge conflict is resolved. 
 
 
 ## `git diff`
