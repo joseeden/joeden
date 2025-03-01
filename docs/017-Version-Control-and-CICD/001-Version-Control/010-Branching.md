@@ -29,6 +29,15 @@ Sample output:
 * master
 ```
 
+If you have multiple branches, the output will look like this:
+
+```bash
+* master
+  development-abc 
+  reporting
+  feature-main  
+```
+
 The * next to "master" shows which branch you're currently on. Checking out a branch means choosing where your changes will apply. Since you’re on "master," any changes will affect that branch until you switch to another.
 
 <div style={{textAlign: 'center'}}>
@@ -37,16 +46,14 @@ The * next to "master" shows which branch you're currently on. Checking out a br
 
 </div>
 
-
 You can have multiple branches stemming from the master which will have the similar code in it. From there you can work on your own feature branch while others can work on other feature branches. 
 
 
-
-## HEAD
+## `HEAD`
 
 In Git, **HEAD** points to your current branch or commit.
 
-When you create a repository, HEAD usually points to the main branch, like `master` or `main`. If you create and switch to a new branch, HEAD will point to that branch, so new commits go there.
+When you create a repository, `HEAD` usually points to the main branch, like `master` or `main`. If you create and switch to a new branch, `HEAD` will point to that branch, so new commits go there.
 
 To create and switch to a new branch, use:
 
@@ -54,8 +61,8 @@ To create and switch to a new branch, use:
 git checkout -b new-branch
 ```
 
-Sample output:
-
+Output:
+ 
 ```bash
 Switched to a new branch 'new-branch'
 ```
@@ -118,6 +125,12 @@ Switched to a new branch 'new-branch'
     git checkout -b [branch name] origin/[branch name]	
     ```
 
+- Compare two branches:
+
+    ```bash
+    git diff branch-a branch-b 
+    ```
+    
 - Delete a remote branch.
 
     ```bash
