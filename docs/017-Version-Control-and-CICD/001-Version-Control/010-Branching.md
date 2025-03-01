@@ -15,6 +15,12 @@ last_update:
 
 Branches in Git are essential because they allow you to make changes without impacting the main codebase until you choose to merge them.
 
+<div class="img-center"> 
+
+![](/img/docs/03012025-git-branching.png)
+
+</div>
+
 ## `git branch`
 
 The `git branch` command will output a list of branches. If you haven't created any other branches, there is only one branch in the output of your command. The default branch for any Git repository is usually master, though you can change which branch is the default if needed.
@@ -130,7 +136,7 @@ Switched to a new branch 'new-branch'
     ```bash
     git diff branch-a branch-b 
     ```
-    
+
 - Delete a remote branch.
 
     ```bash
