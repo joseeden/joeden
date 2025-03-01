@@ -128,3 +128,9 @@ An example flow:
 - The workflow runs jobs in parallel  
 - Jobs contain steps like scripts or actions  
 - Outputs (artifacts) can be generated if needed
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2020-03-02-011820.png)
+
+</div>
