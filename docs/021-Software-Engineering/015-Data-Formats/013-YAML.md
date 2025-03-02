@@ -395,3 +395,53 @@ Example:
 ```yaml
 mynumericstring: !!str 0.1415  # Forces interpretation as a string
 ```
+
+## Example: Continuous Integration Workflow
+
+This YAML file defines a **CI workflow** with **Slack notifications**.  
+
+- **Config Section**  
+  - Specifies Slack notification channels.  
+
+- **Workflow Section**  
+  - Runs a script (`script.py`).  
+  - Sends a Slack message if the script fails.  
+
+YAML Example:
+
+```yaml
+config:
+  slack:
+    channels:
+      - workflow-orchestration
+      - builds-911
+
+workflow:
+  # Run a script with proper block style
+  run: |
+    echo "Running script.py"
+    python3 script.py
+  
+  # Send Slack notification on failure
+  notify:
+    - slack:
+        channels: ${{ config.slack.channels }}
+        message: >-
+          It appears that your run has failed.
+          Check the CI logs for details.
+          Contact the Engineer on call if needed.
+      if: run.state == "failed"
+```
+
+This structure ensures **clear execution steps** and **automatic failure alerts** in CI workflows.
+
+- **Block Styles**  
+  - `|` (Literal) → Preserves command formatting.  
+  - `>-` (Folded) → Converts newlines into spaces for a cleaner message.  
+
+- **Dynamic Values**  
+  - Uses `${{ config.slack.channels }}` to reference predefined Slack channels.  
+
+- **Failure Notification**  
+  - Sends a message only if `run.state == "failed"`.  
+
