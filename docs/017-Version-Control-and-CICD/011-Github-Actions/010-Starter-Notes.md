@@ -134,3 +134,12 @@ An example flow:
 ![](/img/docs/Screenshot-2020-03-02-011820.png)
 
 </div>
+
+## Multiline Strings in YAML
+
+YAML supports multiline strings using **block scalar formats**. These formats help keep line breaks and indentation intact, making them useful for configurations, logs, and CI/CD scripts.
+
+- Two styles: **Literal (|) and Folded (>)**
+- Three chomping indicators: **Clip (default), Strip (-), Keep (+)**
+
+For more information, please see [YAML data format.](/docs/021-Software-Engineering/015-Data-Formats/013-YAML.md#multiline-strings-in-yaml)

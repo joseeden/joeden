@@ -247,33 +247,123 @@ mymap: { myfirstkey: 5, mysecondkey: The quick brown fox}
 mylist: [1, 2, 3]
 ```
 
-## Long Strings
+## Multiline Strings in YAML
 
-YAML provides two ways to represent long strings: **folding** and **non-folding** syntax. 
+YAML supports multiline strings using **block scalar formats**. These formats help keep line breaks and indentation intact, which makes them useful for configurations, logs, and CI/CD scripts.
 
-- **Folding syntax (`>`):**  
+- Two styles: **Literal (|) and Folded (>)**
+- Three chomping indicators: **Clip (default), Strip (-), Keep (+)**
+
+### Literal Style (`|`)
+
+Also called **Non-folding syntax**, the **literal style** keeps all line breaks and indentation exactly as written. This is useful for commands, formatted text, or logs.
+
+Example:
+
+```yaml
+log_message: |
+  Line 1
+  Line 2
   
-  - Line breaks in the string are replaced by spaces when parsed.  
-  - Example:
+  Indented line
+```
 
-    ```yaml
-    mylongstring: >
-      This is my long string
-      which will end up with no linebreaks in it
-    ```
+Output:
 
-- **Non-folding syntax (`|`):**  
-  
-  - Preserves line breaks in the original string.  
-  - Example:
+```
+Line 1
+Line 2
 
-    ```yaml
-    myotherlongstring: |
-      This is my other long string
-      which will end up with linebreaks as in the original
-    ```
+  Indented line
+```
 
-The key difference between both syntaxes is that the `>` symbol allows folding, while the `|` symbol maintains the original line breaks.
+### Folded Style (`>`)
+
+The **folded style** or **folding syntax** replaces line breaks with spaces, making text more compact while keeping readability.
+
+Example:
+
+```yaml
+description: >
+  This is a long message
+  split into multiple lines
+  for better readability.
+```
+
+Output:
+
+```
+This is a long message split into multiple lines for better readability.
+```
+
+### Chomping Indicators
+
+Chomping indicators **control extra blank lines** at the end of multiline strings. They are placed **after** the style indicator.
+
+- **Clip (default):** Keeps a single newline at the end.
+- **Strip (`-|` or `->`)**: Removes all newlines at the end.
+- **Keep (`|+` or `>+`)**: Retains all newlines at the end.
+
+Strip Example:
+
+```yaml
+message: |-
+  This is a message
+  with no extra newlines.
+```
+
+Output:
+
+```
+This is a message
+with no extra newlines.
+```
+
+Keep Example:
+
+```yaml
+message: |+
+  This is a message
+  with preserved newlines.
+
+```
+
+Output:
+
+```
+This is a message
+with preserved newlines.
+
+```
+
+## Dynamic Value Injection
+
+Some YAML implementations support **expressions** to dynamically insert values from environment variables or other YAML fields.
+
+Example:
+
+```yaml
+database:
+  host: ${DB_HOST}
+  port: ${DB_PORT}
+```
+> **Note:** Not all YAML parsers support this feature.
+
+## Multi-Document YAML
+
+YAML allows storing multiple independent documents in **one file**, separated by `---`.
+
+Example:
+
+```yaml
+---
+name: Alice
+age: 30
+---
+name: Bob
+age: 25
+occupation: Engineer
+```
 
 
 ## Comments
