@@ -4,7 +4,7 @@ description: "Domain Name System (DNS)"
 tags: [Networking,Cybersecurity]
 sidebar_position: 3
 last_update:
-  date: 1/30/2024
+  date: 1/16/2019
 ---
 
 

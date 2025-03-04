@@ -4,7 +4,7 @@ description: A deeper dive to binary system
 sidebar_position: 6
 tags: [IT Fundamentals, Computers, Operating Systems]
 last_update:
-  date: 3/28/2023
+  date: 2/8/2019
 ---
 
 

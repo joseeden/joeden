@@ -4,7 +4,7 @@ description: "Taking the first step"
 sidebar_position: 1
 tags: [IT Fundamentals, Computers, Operating Systems]
 last_update:
-  date: 3/28/2023
+  date: 2/8/2019
 ---
 
 

@@ -4,7 +4,7 @@ description: "wireless Networking"
 tags: [Security, Cybersecurity, Security Architecture, Security Engineering, Wireless]
 sidebar_position: 60
 last_update:
-  date: 1/30/2024
+  date: 1/16/2019
 ---
 
 
