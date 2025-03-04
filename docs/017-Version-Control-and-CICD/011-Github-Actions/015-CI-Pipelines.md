@@ -106,7 +106,7 @@ jobs:
     - Click **Actions** to view the latest runs.  
     - Open the **build** job to see the output logs.
 
-## Example: Continuous Integration Workflow
+## Example: CI Workflow with Slack Notifications
 
 This YAML file defines a **CI workflow** with **Slack notifications**.  
 
@@ -154,3 +154,117 @@ This structure ensures **clear execution steps** and **automatic failure alerts*
 
 - **Failure Notification**  
   - Sends a message only if `run.state == "failed"`.  
+
+
+## Example: CI Workflow for Pull Requests  
+
+This workflow runs tests and checks when a pull request is created.  
+
+- Ensures code quality before merging  
+- Automates testing and setup  
+- Helps catch issues early  
+
+**Steps:**
+
+1. **Create a Feature Branch**  
+    A feature branch isolates changes before merging.  
+
+    - Click **Branches** in the repository  
+    - Click **New branch**, name it, and create it  
+    - Verify that the branch appears in the repository  
+
+2. **Add the Code to the Branch**  
+    A simple script helps test the workflow.  
+
+    - Add a Python script (`hello_world.py`)  
+    - The script prints "Hello, World!" with the current time  
+
+        ```python
+        import datetime
+        print("Hello, World!", datetime.datetime.now())
+        ```
+
+    - Commit the file to the feature branch  
+
+3. **Configure the Workflow for Pull Requests**  
+    The workflow needs key steps before running code.  
+
+    - **Checkout**: Fetch repository code  
+    - **Setup Python**: Install the required version  
+    - **Run script**: Execute the Python file  
+
+    Modify the workflow to trigger on pull requests.  
+
+    - Open `.github/workflows/main.yml`  
+    - Use `on: pull_request`  
+
+
+      ```yaml
+      on: 
+        pull_request:
+          branches:
+            - main
+      ```
+    
+    Next, define the actions:
+
+    - Each step uses the `uses` key  
+    - Format: `org/repo@version`  
+    - Arguments are passed with `with`  
+
+      ```yaml
+      steps: 
+      - name: Checkout 
+        uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.6'
+      ```
+
+    The complete YAML file should now look like this:
+
+      ```yaml
+      name: CI Workflow for PR 
+
+      on: 
+        pull_request:
+          branches:
+            - main      
+
+      jobs:
+        build:
+          runs-on: ubuntu-latest
+          steps: 
+          - name: Checkout 
+            uses: actions/checkout@v3
+          - name: Setup Python
+            uses: actions/setup-python@v4
+            with:
+              python-version: '3.6'
+          - name: Run Python script
+            run: |
+              echo hello_world.py
+              python hello_world.py
+      ```
+
+4. **Create a Pull Request**  
+    A pull request triggers the workflow.  
+
+    - Commit changes in the feature branch  
+    - Open a pull request to merge into `main`  
+    - The workflow runs automatically  
+
+5. **Checking Workflow Execution**  
+    GitHub displays workflow status.  
+
+    - 🟠 Amber → Running  
+    - ✅ Green → Success  
+    - ❌ Red → Failed  
+
+6. **Inspecting Logs**  
+    Logs help debug workflow runs.  
+
+    - Click **Actions**  
+    - Open the latest run  
+    - View logs for each step
