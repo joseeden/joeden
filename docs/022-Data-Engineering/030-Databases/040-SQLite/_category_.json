@@ -1,6 +1,6 @@
 {
-  "label": "PostgreSQL",
-  "position": 32,
+  "label": "SQLite",
+  "position": 40,
   "link": {
     "type": "generated-index"
   }

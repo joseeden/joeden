@@ -55,7 +55,7 @@ Setup details:
 
 ## Install MySQL on Node 4 
 
-For the entire installation steps, please see [Offlne Install - MySQL](/docs/022-Data-Engineering/035-MySQL/001-Offline-Install.md).
+For the entire installation steps, please see [Offlne Install - MySQL](/docs/022-Data-Engineering/030-Databases/050-MySQL/001-Offline-Install.md).
 
 ## Download the Dataset 
 

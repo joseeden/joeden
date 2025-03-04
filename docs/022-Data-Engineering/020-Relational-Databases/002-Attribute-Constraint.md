@@ -92,7 +92,7 @@ PostgreSQL offers several common data types, many of which align with SQL standa
 - `Integer`: handles whole numbers within a specified range.
 - `Bigint`: accommodates larger numbers beyond the integer range.
 
-For more information, please see [Data Types in PostgreSQL.](/docs/022-Data-Engineering/032-PostgreSQL/008-Data-Types.md)
+For more information, please see [Data Types in PostgreSQL.](/docs/022-Data-Engineering/030-Databases/020-PostgreSQL/008-Data-Types.md)
 
 ## Specifying Types
 

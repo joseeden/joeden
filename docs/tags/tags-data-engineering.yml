@@ -50,3 +50,7 @@ Data Visualization:
   label: 'Data Visualization'
   permalink: '/Data Visualization'
   description: 'Docs related to Data Visualization'     
+Data Warehouse:
+  label: 'Data Warehouse'
+  permalink: '/Data Warehouse'
+  description: 'Docs related to Data Warehouse'    
