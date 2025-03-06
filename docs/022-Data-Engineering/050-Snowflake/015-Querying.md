@@ -37,16 +37,18 @@ Snowsight has a "Code Versions" feature to track the queries you’ve run over t
 Steps:
 
 1. Click Create > SQL Worksheet
-2. Choose the `STUDENT_DB` database.
-3. Expand the `PUBLIC` schema to see tables.
-4. Query the `sales_transactions` table to fetch data.
-      
+2. Choose the database.
+3. Expand the schema to see tables.
+4. Query the  table to fetch data.
+
+    Example: 
+
     ```sql
-    SELECT * FROM sales_transactions 
-    LIMIT 3;
+    SELECT SUM(amount)
+    FROM "Sales_transactions";
     ```
 
-5. Click the Run button > Run all.
+5. Click the Run button.
 6. After running the query, the results show below the query editor.
 7. You can also download the results as a CSV or TSV file using the download icon.
 8. Click **Chart** to see the visualized data. 
@@ -54,3 +56,9 @@ Steps:
 10. To view the queries ran, click **Code Versions**. 
 
 See below:
+
+<div class="img-center"> 
+
+![](/gif/docs/snowflake-create-query-sampleee.gif)
+
+</div>
