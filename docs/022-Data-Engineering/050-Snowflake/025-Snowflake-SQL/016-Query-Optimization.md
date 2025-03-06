@@ -21,6 +21,15 @@ Longer queries use more resources, increasing costs. Optimizing queries helps ru
 - Faster queries save time.  
 - Optimized queries reduce costs.  
 
+Schema diagram for the Pizza dataset:
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-07-011118.png)
+
+</div>
+
+
 ## Common Query Problems
 
 - **Exploding joins:** Missing join conditions lead to large results. 

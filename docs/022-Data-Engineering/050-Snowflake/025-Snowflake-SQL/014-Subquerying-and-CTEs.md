@@ -19,6 +19,15 @@ last_update:
 
 Subqueries and CTEs help refine and simplify complex queries. A **subquery** is a query inside another query, while **Common Table Expressions (CTE)** provide a cleaner way to structure complex subqueries.  
 
+Schema diagram for the Pizza dataset:
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-07-011118.png)
+
+</div>
+
+
 ## Uncorrelated Subquery  
 
 An uncorrelated subquery runs independently from the main query.  
