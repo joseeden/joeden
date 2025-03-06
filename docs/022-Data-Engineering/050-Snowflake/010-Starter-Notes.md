@@ -33,32 +33,6 @@ Snowflake has several features to streamline data storage, transformation, and a
 - **Data pipelines**: Organize, clean, and apply rules to data.
 - **Data privacy**: Ensures "least-privilege access" to sensitive data.
 
-
-## Snowsight UI
-
-Snowsight is a UI tool for interacting with Snowflake, primarily used for data analysis.
-
-<div class="img-center"> 
-
-![](/img/docs/Screenshot-2025-03-06-204630.png)
-
-</div>
-
-
-## Data Marketplace in Snowsight
-
-Snowsight includes a marketplace for datasets that can be used for analysis.
-
-- Free and paid datasets from Snowflake providers.
-- Helps bring in external data to enhance insights.
-
-<div class="img-center"> 
-
-![](/img/docs/Screenshot-2025-03-06-204712.png)
-
-</div>
-
-
 ## Snowflake's Data Architecture
 
 Snowflake's architecture has three main layers for processing and storing large datasets.
@@ -72,4 +46,39 @@ Snowflake's architecture has three main layers for processing and storing large 
 ![](/img/docs/snowflake-architecture-overview.png)
 
 </div>
+
+## Connecting to Snowflake  
+
+There are different ways to connect:  
+
+- **Web Interface (Snowsight)** – A user-friendly UI for running queries  
+- **Worksheets** – Interface for executing and managing SQL queries  
+- **Notebooks** – Supports both SQL and Python, useful for data pipelines  
+- **Drivers** – ODBC and JDBC allow external applications to connect  
+- **SnowSQL** – Command-line tool for direct database access  
+
+## Snowsight UI
+
+Snowsight is a UI tool for interacting with Snowflake, primarily used for data analysis.
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-06-204630.png)
+
+</div>
+
+
+## Marketplace 
+
+Snowsight includes a marketplace for datasets that can be used for analysis.
+
+- Free and paid datasets from Snowflake providers.
+- Helps bring in external data to enhance insights.
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-06-204712.png)
+
+</div>
+
 
