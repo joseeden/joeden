@@ -7,6 +7,7 @@ tags:
 - Data Warehouse
 - Data Analysis
 - Data Modelling
+- Snowflake
 sidebar_position: 10
 last_update:
   date: 1/14/2022

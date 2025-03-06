@@ -1,7 +1,10 @@
 ---
 title: "Flink Deployments"
 description: "Three Types of Flink Deployments"
-tags: [Data Engineering, Big Data, Apache Flink]
+tags: 
+- Data Engineering
+- Big Data
+- Apache Flink
 sidebar_position: 15
 last_update:
   date: 2/27/2022

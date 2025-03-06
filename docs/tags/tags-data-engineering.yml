@@ -58,3 +58,11 @@ Data Modelling:
   label: 'Data Modelling'
   permalink: '/Data Modelling'
   description: 'Docs related to Data Modelling'  
+Snowflake:
+  label: 'Snowflake'
+  permalink: '/Snowflake'
+  description: 'Docs related to Snowflake'      
+Tableau:
+  label: 'Tableau'
+  permalink: '/Tableau'
+  description: 'Docs related to Tableau'      

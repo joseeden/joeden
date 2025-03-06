@@ -1,7 +1,10 @@
 ---
 title: "Setting up a Standalone Cluster"
 description: "Setting up a Standalone Cluster"
-tags: [Data Engineering, Big Data, Apache Flink]
+tags: 
+- Data Engineering
+- Big Data
+- Apache Flink
 sidebar_position: 16
 last_update:
   date: 2/27/2022

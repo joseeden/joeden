@@ -10,3 +10,15 @@ Apache Flink:
   label: 'Apache Flink'
   permalink: '/Apache Flink'
   description: 'Docs related to Apache Flink'    
+Apache Hadoop:
+  label: 'Apache Hadoop'
+  permalink: '/Apache Hadoop'
+  description: 'Docs related to Apache Hadoop'  
+Apache Kafka:
+  label: 'Apache Kafka'
+  permalink: '/Apache Kafka'
+  description: 'Docs related to Apache Kafka'  
+Apache Spark:
+  label: 'Apache Spark'
+  permalink: '/Apache Spark'
+  description: 'Docs related to Apache Spark'    

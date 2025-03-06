@@ -5,6 +5,7 @@ tags:
 - Data Engineering
 - Data Science
 - Data Visualization
+- Tableau
 sidebar_position: 10
 last_update:
   date: 3/4/2022
