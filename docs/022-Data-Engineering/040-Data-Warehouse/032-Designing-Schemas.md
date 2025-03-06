@@ -66,7 +66,7 @@ Example:
 - A car’s classification changes from "electric vehicle" to "electric crossover" over time.  
 - Fact tables (like sales) remain unchanged, while dimension tables track these changes.  
 
-### Type I: Overwrite the Old Value
+### Type I - Overwrite the Old Value
 
 The current value is updated in the dimension table.  
 
@@ -95,7 +95,7 @@ New table:
 |------------|-------------|-----------------|
 | 12345      | Tesla Model Y | electric-crossover |
 
-### Type II: Add a New Row for Changes
+### Type II - Add a New Row for Changes
 
 A new row is added with a new ID for the updated value.  
 
@@ -125,7 +125,7 @@ New table:
 | 12345      | Tesla Model Y  | electric vehicle| NULL       | 2022-12-31 |
 | 20053      | Tesla Model Y  | electric-crossover | 2023-01-01 | 9999-12-31 |
 
-### Type III: Track Previous and Current Values
+### Type III - Track Previous and Current Values
 
 A new column is added to store the previous value.  
 
@@ -160,7 +160,7 @@ New table:
 | 12345      | Tesla Model Y  | electric-crossover | electric vehicle  |
 
 
-### Modern Approach: Store Snapshots
+### Modern Approach - Store Snapshots
 
 Instead of overwriting or adding rows, **store snapshots of the dimension table** at different points in time.  
 
