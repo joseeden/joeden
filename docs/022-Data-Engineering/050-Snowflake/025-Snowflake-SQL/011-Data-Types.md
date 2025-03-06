@@ -87,7 +87,7 @@ Expected result:
 '12345'
 ```
 
-## Data Types  
+## Check Data Types  
 
 To see column data types in a table:  
 
