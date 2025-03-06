@@ -1,10 +1,13 @@
 ---
 title: "AI and ML"
 description: "Notes from DataCamp's Understanding Machine Learning Course"
-tags: [Data Science, Machine Learning, Artificial Intelligence]
+tags: 
+- Data Science
+- Machine Learning
+- Artificial Intelligence
 sidebar_position: 1
 last_update:
-  date: 2/27/2022
+  date: 5/4/2023
 ---
 
 ## Overview 

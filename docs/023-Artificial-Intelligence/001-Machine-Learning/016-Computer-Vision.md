@@ -4,7 +4,7 @@ description: "Notes from DataCamp's Understanding Machine Learning Course"
 tags: [Data Engineering, Data Science, Machine Learning, Deep Learning]
 sidebar_position: 16
 last_update:
-  date: 2/27/2022
+  date: 5/4/2023
 ---
 
 
