@@ -34,6 +34,10 @@ Big Data:
   label: 'Big Data'
   permalink: '/Big Data'
   description: 'Docs related to Big Data'  
+Data Warehouse:
+  label: 'Data Warehouse'
+  permalink: '/Data Warehouse'
+  description: 'Docs related to Data Warehouse'      
 Data Engineering:
   label: 'Data Engineering'
   permalink: '/Data Engineering'
@@ -50,7 +54,7 @@ Data Visualization:
   label: 'Data Visualization'
   permalink: '/Data Visualization'
   description: 'Docs related to Data Visualization'     
-Data Warehouse:
-  label: 'Data Warehouse'
-  permalink: '/Data Warehouse'
-  description: 'Docs related to Data Warehouse'    
+Data Modelling:
+  label: 'Data Modelling'
+  permalink: '/Data Modelling'
+  description: 'Docs related to Data Modelling'  
