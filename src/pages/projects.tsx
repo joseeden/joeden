@@ -36,6 +36,13 @@ const projects: ProjectData[] = [
     // role: "Organizer",
   },  
   {
+    title: "Exploring NYC Public School Test Result Scores",
+    description: "Analyze NYC school SAT and math scores using data manipulation and summary statistics",
+    url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/021-Software-Engineering/021-Jupyter-Notebooks/022-Exploring-NYC-Public-School-Test-Result-Scores/Exploring-NYC-Public-School-Test-Result-Scores.ipynb",
+    image: require(`/img/docs/schoolbus.jpg`),
+    // role: "Organizer",
+  },  
+  {
     title: "AWS Serverless Deployment using Jenkins",
     description: "Using Jenkins to deploy a serverless application",
     url: `${baseUrl}/docs/Amazon-Web-Services/Projects/Deploy-Serverless-App-using-Jenkins/`, 
