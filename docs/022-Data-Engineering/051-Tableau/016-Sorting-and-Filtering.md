@@ -81,3 +81,33 @@ To filter just the top or bottom values, select the specific filter > Edit filte
 ![](/gif/docs/snowflake-create-query-sampleee-10.gif)
 
 </div>
+
+
+## Aggregation 
+
+Aggregation summarizes data for analysis, such as summing sales or averaging age.  
+
+- **Aggregating Measures** 
+  
+  - Tableau automatically aggregates measures using sum
+  - Other options include average, count, and variance.  
+
+
+      ![](/img/docs/Screenshot-2025-03-09-031702.png)
+
+
+- **Aggregating Dimensions** 
+
+  - Less common, but possible 
+  - Options like minimum, maximum, count, and distinct count.  
+
+      ![](/img/docs/Screenshot-2025-03-09-031754.png)
+
+
+
+## Standard Deviation 
+
+Standard deviation measures how spread out data is from the average. It helps identify variability in datasets.  
+
+- **Low standard deviation** – Data points are close to the average.  
+- **High standard deviation** – Data points are more spread out.  
