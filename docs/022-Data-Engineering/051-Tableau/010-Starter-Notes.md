@@ -62,6 +62,20 @@ Tableau comes in different versions:
 :::
 
 
+## Tableau Interface  
+
+- **Canvas** – Where visualizations appear  
+- **Columns & Rows** – Represent x-axis and y-axis  
+- **Pages** – Split data into multiple views (e.g., one per neighborhood)  
+- **Filters** – Exclude or focus on specific data  
+- **Marks** – Customize appearance (color, size, shape)  
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-09-010312.png)
+
+</div>
+
 ## Tableau File Formats  
 
 Tableau saves workbooks in different formats depending on the version and data storage needs.  
