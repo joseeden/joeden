@@ -37,7 +37,7 @@ const projects: ProjectData[] = [
   },  
   {
     title: "Exploring NYC Public School Test Result Scores",
-    description: "Analyze scores using data manipulation and summary statistics",
+    description: "Analyze scores using summary statistics and data manipulation.",
     url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/021-Software-Engineering/021-Jupyter-Notebooks/022-Exploring-NYC-Public-School-Test-Result-Scores/Exploring-NYC-Public-School-Test-Result-Scores.ipynb",
     image: require(`/img/docs/schoolbus.jpg`),
     // role: "Organizer",
