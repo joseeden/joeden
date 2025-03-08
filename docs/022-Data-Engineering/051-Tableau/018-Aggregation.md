@@ -37,3 +37,12 @@ Aggregation summarizes data for analysis, such as summing sales or averaging age
     ![](/img/docs/Screenshot-2025-03-09-031754.png)
 
     </div>
+
+
+## Standard Deviation 
+
+Standard deviation measures how spread out data is from the average. It helps identify variability in datasets.  
+
+- **Low standard deviation** – Data points are close to the average.  
+- **High standard deviation** – Data points are more spread out.  
+
