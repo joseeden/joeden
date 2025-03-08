@@ -1,6 +1,6 @@
 ---
-title: "Connecting to Data"
-description: "Connecting to Data"
+title: "Using Tableau"
+description: "Using Tableau"
 tags: 
 - Data Engineering
 - Data Science
