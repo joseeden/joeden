@@ -57,3 +57,27 @@ Sorting organizes data for better analysis.
 - **Metric Sorting** – Sort by numbers, like sorting products by profit  
 - **Ascending/Descending** – Arrange values from highest to lowest or vice versa  
 
+## Filter Null Values  
+
+Null values can affect analysis, so filtering them out is useful.  
+
+- **Exclude Nulls** – Remove missing data from the view  
+- **Show Only Nulls** – Focus on incomplete data  
+- **Replace Nulls** – Fill missing values with a default value
+
+<div class="img-center"> 
+
+![](/gif/docs/snowflake-create-query-sampleee-9.gif)
+
+</div>
+
+
+## Filter Top and Bottom Values 
+
+To filter just the top or bottom values, select the specific filter > Edit filter > Top > by field. Then specify the number and the dimension you want to filter. 
+
+<div class="img-center"> 
+
+![](/gif/docs/snowflake-create-query-sampleee-10.gif)
+
+</div>
