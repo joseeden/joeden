@@ -134,10 +134,15 @@ Using the previous dataset, we'll filter by genre to find the "Puzzle" video gam
 
 The graph shows a major spike in **1989** due to **Tetris**, which made up almost **90%** of puzzle game sales that year.
 
-## Example: Bar Charts and colors
+## Example: Bar Charts and Colors
 
 In this example, we'll create a bar chart and apply three different **Dimensions** to color.
 
+<div class="img-center"> 
+
+![](/gif/docs/snowflake-create-query-sampleee-28.gif)
+
+</div>
 
 
 **Steps:**  
