@@ -102,3 +102,52 @@ In this example, we have a dataset that tracks video game sales from 1980 to 201
 **Insights:**  
 
 The graph shows Atari’s peak sales in the early 2000s, followed by a sharp decline, leading to bankruptcy in 2013.
+
+
+## Example: Filter by Genre  
+
+Using the previous dataset, we'll filter by genre to find the "Puzzle" video game sales in North America.
+
+<div class="img-center"> 
+
+![](/gif/docs/snowflake-create-query-sampleee-27.gif)
+
+</div>
+
+**Steps:**  
+
+1. Drag `Measure Values` onto `EU Sales` in the rows.  
+2. This replaces `EU Sales` with `Measure Values`.  
+3. Remove unnecessary measures from the **Marks** shelf:  
+   - `Video Games (Count)` (row count)  
+   - `Global Sales` (already in the bar chart)  
+4. Currently, you need to hover each bar in the stacked bar to see the sales for each region.
+5. To change this, update the tooltip to show all sales data:  
+   - Select `SUM(EU Sales)`, hold **Shift**, and click the last `SUM` on **Marks**.  
+   - Drag them to the **Tooltip** card.  
+6. Hover over the graph. Sales for all regions should now appear in the tooltip.
+7. In the **Filters** shelf:  
+   - Filter `Publisher` to **Nintendo**.  
+   - Filter `Genre` to **Puzzle**.  
+
+**Insights:**  
+
+The graph shows a major spike in **1989** due to **Tetris**, which made up almost **90%** of puzzle game sales that year.
+
+## Example: Bar Charts and colors
+
+In this example, we'll create a bar chart and apply three different **Dimensions** to color.
+
+
+
+**Steps:**  
+
+1. Drag `Global Sales` to **Rows**, while `Release Year` to **Columns.**
+2. Center the graph title and change font size to 16.
+3. Drag `Name` to the Color card in the **Marks** shelf.
+4. Ignore the warning and press "Add all members".
+5. Drag `Genre` to the Color card to replace `Name`.
+
+**Insights:**  
+
+Based on the Color card, we can see the that the `Genre` is the only dimension that adds extra information to the graph.
