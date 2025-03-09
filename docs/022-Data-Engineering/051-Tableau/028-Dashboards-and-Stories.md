@@ -116,5 +116,40 @@ See below:
 
 ## Example: Adding Filters
 
-Continuing on the previous dashboard, we'll add filters to filter only specific games and specific genre.
+Continuing on the previous example, we'll add filters to the dashboard to focus on specific games and genres. Our goal is to find how many copies (in millions) **Sony Computer Entertainment** sold for the **PS2** in the **Racing** genre.  
 
+<div class="img-center"> 
+
+![](/gif/docs/snowflake-create-query-sampleee-30.gif)
+
+</div>
+
+**Steps:**  
+
+1. Toggle **Show dashboard title** (lower left).  
+2. Center the title and set font size to **20**.  
+
+Filtering by Publisher:
+
+3. Click the **Sales by Genre** graph, then the small arrow.  
+4. Select **Filters** > **Publisher**.  
+5. Click the dropdown arrow on the filter > **Single Value (dropdown)**.  
+6. Drag the filter below the title.  
+
+Filtering by Genre:
+
+7. Click the **Treemap** on **Sales by Genre**, then select **Use as Filter**.  
+8. Click any genre in the treemap to filter data.  
+9. Click the same genre again to remove the filter.  
+10. The other graphs will update based on the filter selection.  
+
+Finding the Sales for PS2 Racing Games:
+
+11. Scroll up and filter **Publisher** to **Sony Computer Entertainment**.  
+12. In **Sales by Genre**, click the **Racing** section.  
+13. Hover over **PS2** in **Sales by Platform**.  
+
+
+**Insights:**  
+
+Sony Computer Entertainment sold **35.41 million** copies for the **PS2** in the **Racing** genre.
