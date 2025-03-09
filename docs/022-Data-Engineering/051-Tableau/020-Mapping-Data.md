@@ -18,25 +18,25 @@ Maps help visualize location-based data, which makes it easier to spot patterns 
 
 ## Types of Maps  
 
-- **Filled Maps**  
+### Filled Maps
   
-    Colors entire geographic regions based on data. For example, different states in a country can be shaded according to population density.  
+Colors entire geographic regions based on data. For example, different states in a country can be shaded according to population density.  
 
-      <div class="img-center"> 
+<div class="img-center"> 
 
-      ![](/img/docs/Screenshot-2025-03-09-175441.png)
+![](/img/docs/Screenshot-2025-03-09-175441.png)
 
-      </div>
+</div>
 
-- **Symbol Maps**  
+### Symbol Maps
  
-    Uses symbols placed at the center of regions to represent data points. For instance, a circle in each state can indicate the number of hospitals.  
+Uses symbols placed at the center of regions to represent data points. For instance, a circle in each state can indicate the number of hospitals.  
 
-      <div class="img-center"> 
+<div class="img-center"> 
 
-      ![](/img/docs/Screenshot-2025-03-09-175519.png)
+![](/img/docs/Screenshot-2025-03-09-175519.png)
 
-      </div>
+</div>
 
 ## Recognized Geographic Types  
 
