@@ -37,11 +37,11 @@ Using a dataset with birth statistics, we can create a line chart to see trends.
 4. Tableau automatically groups data by **Year**.  
 
 
-<div class="img-center"> 
+    <div class="img-center"> 
 
-![](/gif/docs/snowflake-create-query-sampleee-21.gif)
+    ![](/gif/docs/snowflake-create-query-sampleee-21.gif)
 
-</div>
+    </div>
 
 
 ## Adjust the Granularity 
@@ -61,8 +61,8 @@ Using the previous dataset, we can modify it to adjust the granularity:
 4. To show a timeline, select **Month** from the second section in the dropdown.  
 5. This makes it a **continuous measure** (green), displaying each month in each year.  
 
-<div class="img-center"> 
+    <div class="img-center"> 
 
-![](/gif/docs/snowflake-create-query-sampleee-22.gif)
+    ![](/gif/docs/snowflake-create-query-sampleee-22.gif)
 
-</div>
+    </div>
