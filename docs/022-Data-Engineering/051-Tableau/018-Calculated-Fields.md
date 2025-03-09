@@ -25,6 +25,27 @@ Examples:
 
 ## Creating a Calculated Field  
 
+To create a new calculated fiel:
+
+1. Go to Analysis > Create Calculated Field
+2. Enter field name and the formula in the space below.
+3. Move the new field name to the **Measure Values**
+
+By default, Tableau will use `SUM` on the new calculated field. Change it to use `AVERAGE`.
+
+<div class="img-center"> 
+
+![](/gif/docs/snowflake-create-query-sampleee-11.gif)
+
+</div>
+
+To edit a calculated field, click the dropdown > Edit. To see other functions, click the arrow.
+
+<div class="img-center"> 
+
+![](/gif/docs/snowflake-create-query-sampleee-12.gif)
+
+</div>
 
 ## Functions in Calculated Fields  
 
