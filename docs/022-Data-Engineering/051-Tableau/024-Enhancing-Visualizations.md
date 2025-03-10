@@ -48,11 +48,26 @@ Forecasting predicts future values based on past trends. It uses mathematical mo
 
 ## Example: Birth Trends 
 
-In this example, we'll use UN Health Data to analyze birth trends in portugal over five years using a line chart and enhance it with reference lines, trend lines, and forecasting. 
+In this example, we'll use UN Health Data to analyze birth trends in Portugal over five years with a line chart, adding reference lines, trend lines, and forecasts for deeper insights.
+
+**Download the workbook here:** [3_4_your_data_by_year.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample%20Datasets/001-Introduction-to-Tableau/Workbooks)
+
 
 ### Adding a Reference Line
 
-The line chart below shows Years on the x-axis and Birthrate on the y-axis.
+Let's start with creating the line chart to see the trends.  
+
+1. Drag `Date` to **Columns**.  
+2. Drag `Births` to **Rows**.  
+3. Click the `YEAR(Date)` and select the second "Month" on the list. 
+4. Make sure the `MONTH(Date)` shows green, and not blue.
+
+Add the filters:
+
+5. Drag `Country` to **Filters** and select a country (e.g., Portugal).  
+6. Drag `Date` to **Filters** > **Years** > Select 2014 to 2018.
+
+Add the reference line to the line chart:
 
 1. Open the **Analytics** pane and drag **Reference Line** into the chart.  
 2. Set it to show the **average number of births** across all months.  
@@ -66,7 +81,11 @@ The reference line helps visualize how Portuguese births compare to the overall 
 
 </div>
 
+:::info 
+
 To remove the reference line, click the line and select Remove.
+
+:::
 
 ### Adding a Trend Line  
 
@@ -75,13 +94,19 @@ To determine if there is an upward or downward trend in the number of births ove
 2. In the **Analytics** pane, drag **Trend Line** into the chart.  
 3. Choose **Linear** to see if births are increasing or decreasing.  
 
-Based on this, we can see that there is a slight upwards trend on the number of births. To remove the trend line, click the line and deselect **Show Trend Lines.**
+Based on this, we can see that there is a slight upwards trend on the number of births. 
 
 <div class="img-center"> 
 
 ![](/gif/docs/snowflake-create-query-sampleee-24.gif)
 
 </div>
+
+:::info 
+
+To remove the trend line, click the line and deselect **Show Trend Lines.**
+
+:::
 
 ### Forecasting Future Births  
 

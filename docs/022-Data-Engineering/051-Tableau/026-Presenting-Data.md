@@ -77,15 +77,17 @@ You can format both at the workbook and sheet level.
     - Dashboards
     - Stories
 
+
+## Workbook Used
+
+In the following examples, we'll use a dataset that tracks video game sales from 1980 to 2010.
+
+**Download the workbook here:** [4_1_dual_axis.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample%20Datasets/001-Introduction-to-Tableau/Workbooks)
+
+
 ## Example: Dual-Axis Graph 
 
-In this example, we have a dataset that tracks video game sales from 1980 to 2010. We'll use it to compare global and European sales of Atari over time.  
-
-<div class="img-center"> 
-
-![](/gif/docs/snowflake-create-query-sampleee-26.gif)
-
-</div>
+In this example, we'll use the video game sales dataset to compare global and European sales of Atari over time.  
 
 **Steps:**  
 
@@ -99,6 +101,15 @@ In this example, we have a dataset that tracks video game sales from 1980 to 201
 8. Rename the Y-axis to **"Video Game Sales (in millions)"**.  
 9. Drag `Publisher` to **Filters** and select **Atari** only.  
 
+
+**Solution:**
+
+<div class="img-center"> 
+
+![](/gif/docs/snowflake-create-query-sampleee-26.gif)
+
+</div>
+
 **Insights:**  
 
 The graph shows Atari’s peak sales in the early 2000s, followed by a sharp decline, leading to bankruptcy in 2013.
@@ -107,12 +118,6 @@ The graph shows Atari’s peak sales in the early 2000s, followed by a sharp dec
 ## Example: Filter by Genre  
 
 Using the previous dataset, we'll filter by genre to find the "Puzzle" video game sales in North America.
-
-<div class="img-center"> 
-
-![](/gif/docs/snowflake-create-query-sampleee-27.gif)
-
-</div>
 
 **Steps:**  
 
@@ -130,28 +135,37 @@ Using the previous dataset, we'll filter by genre to find the "Puzzle" video gam
    - Filter `Publisher` to **Nintendo**.  
    - Filter `Genre` to **Puzzle**.  
 
+**Solution:**
+
+<div class="img-center"> 
+
+![](/gif/docs/snowflake-create-query-sampleee-27.gif)
+
+</div>
+
 **Insights:**  
 
 The graph shows a major spike in **1989** due to **Tetris**, which made up almost **90%** of puzzle game sales that year.
 
 ## Example: Bar Charts and Colors
 
-In this example, we'll create a bar chart and apply three different **Dimensions** to color.
+This example uses a different workbook: [4_3_global_sales_breakdown.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample%20Datasets/001-Introduction-to-Tableau/Workbooks)
 
-<div class="img-center"> 
-
-![](/gif/docs/snowflake-create-query-sampleee-28.gif)
-
-</div>
-
-
-**Steps:**  
+Create a bar chart and apply three different **Dimensions** to color.
 
 1. Drag `Global Sales` to **Rows**, while `Release Year` to **Columns.**
 2. Center the graph title and change font size to 16.
 3. Drag `Name` to the Color card in the **Marks** shelf.
 4. Ignore the warning and press "Add all members".
 5. Drag `Genre` to the Color card to replace `Name`.
+
+**Solution:**
+
+<div class="img-center"> 
+
+![](/gif/docs/snowflake-create-query-sampleee-28.gif)
+
+</div>
 
 **Insights:**  
 

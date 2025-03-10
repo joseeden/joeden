@@ -62,6 +62,33 @@ Tableau comes in different versions:
 :::
 
 
+## Install Tableau Public 
+
+Create a Tableau account:
+
+1. Go to the [Tableau Public website.](https://public.tableau.com/app/discover)
+2. Click **Sign Up for Tableau Public**.
+3. Provide a name, email and password, then click Create Account
+4. You'll receive an email containing a link to activate your account.
+5. Click the link to activate.
+6. Once activated, login using your Tableau account.
+
+Download the app:
+
+8. On your dashboard, go to **Create** > **Download Tableau Desktop Public Edition.**
+9. On the next page, click **Download the app.**
+
+Install the app:
+
+10. Once the download is complete, open the downloaded file 
+11. The installer will guide you through the installation process.
+12. **For Windows:** Run the installer and follow the prompts.
+13. **For Mac:** Open the Disk image file (.DMG), and then double-click the installer package (.PKG) to start the installation. 
+14. Agree to the Tableau Public terms of service.
+15. Follow the on-screen instructions to complete the installation
+16. Once installed, Tableau Desktop Public Edition will be ready to use. 
+
+
 ## Tableau Interface  
 
 - **Canvas** – Where visualizations appear  

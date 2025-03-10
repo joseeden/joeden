@@ -32,7 +32,7 @@ Useful for quickly previewing and testing web pages during development.
 - Auto reloads the browser whenever you make changes.
 - Working in teams where multiple developers need to view changes instantly.
 
-Install it in thee VSCode Extensions menu. Once installed, you should see a `Go Live` button at the bottom of VSCode. Click to activate and check the file inyour browser.
+Install it in the VSCode Extensions menu. Once installed, you should see a `Go Live` button at the bottom of VSCode. Click to activate and check the file inyour browser.
 
 <div class="img-center"> 
 

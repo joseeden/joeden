@@ -12,34 +12,30 @@ last_update:
 ---
 
 
-## Dataset 
+## Workbook 
 
-xxxxxxxxxxx
+In this example, we'll use a dataset on video game sales to determine:  
+
+- The most popular gaming platform  
+- The best-selling game  
+
+The workbook includes four worksheets:  
+
+- Platform Analysis Over Time
+- Sales by Platform
+- Sales by Genre
+- Top Video Games
+
+**Download the workbook:** [4_4_first_dashboard.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample%20Datasets/001-Introduction-to-Tableau/Workbooks)  
+
+:::info  
+The steps below have already been completed in the workbook. To try them yourself, reset the worksheet by clicking **Clear Sheet** in the toolbar.  
+:::
+
 
 ## Most Popular Game and Platform
 
-In this example, we'll use the a dataset containing video games sales to determine:
-
-- Which platform was the most popular?
-- Which game was the most popular?
-
-To do this, we'll create a dashboard called **Playstation Overview 1994** using four worksheets.  
-
-**Worksheets:**  
-
-- **Platform Analysis Over Time**  
-- **Sales by Platform**  
-- **Sales by Genre**  
-- **Top Video Games**  
-
-See below:
-
-<div class="img-center"> 
-
-![](/gif/docs/snowflake-create-query-sampleee-29.gif)
-
-</div>
-
+Create a dashboard called **Playstation Overview 1994**. 
 
 **Steps:**  
 
@@ -52,6 +48,15 @@ See below:
    ![](/img/docs/Screenshot-2025-03-10-005001.png)  
 
 6. Make the **Genre** legend floating and place it next to **Top Video Games**.  
+
+
+**Solution:**
+
+<div class="img-center"> 
+
+![](/gif/docs/snowflake-create-query-sampleee-29.gif)
+
+</div>
 
 
 **Insights:**  

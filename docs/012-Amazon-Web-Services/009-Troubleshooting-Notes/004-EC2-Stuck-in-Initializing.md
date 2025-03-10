@@ -215,7 +215,7 @@ $ mount | grep diskfs
 $ reboot
 ```
 
-While rebooting, I monitored the instance screenshot through thee EC2 console. The **dependency errors** didn't appeared anymore.
+While rebooting, I monitored the instance screenshot through the EC2 console. The **dependency errors** didn't appeared anymore.
 
 ![](/img/docs/sv-ec2-ss-success.png)
 

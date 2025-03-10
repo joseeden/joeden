@@ -12,9 +12,16 @@ last_update:
 ---
 
 
-## Dataset 
 
-xxxxxxxxxxx
+## Workbook 
+
+In this example, we'll use a dataset on video game sales from the following game publishers:  
+
+- Playstation
+- Nintendo 
+- XBox
+
+**Download the workbook here:** [4_6_first_story.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample%20Datasets/001-Introduction-to-Tableau/Workbooks)  
 
 
 ## Creating a Story 
@@ -24,18 +31,9 @@ We'll build a story to answer two questions:
 - On which platform did **Call of Duty: Black Ops** sell more—PlayStation or Xbox?  
 - What was the **best-selling PS2 simulation game** published by **Electronic Arts**?  
 
-See below:
-
-<div class="img-center"> 
-
-![](/gif/docs/snowflake-create-query-sampleee-31.gif)
-
-</div>
-
-
 **Steps:**  
 
-1. Click **New Story** at the bottom.  
+1. Open the workbook and click **New Story** at the bottom.  
 2. Rename it to **Competitor Analysis 1994 - 2010**.  
 3. Drag **PlayStation, Nintendo, and Xbox** to the **Story** board.  
 4. Rename each story point accordingly.  
@@ -52,6 +50,16 @@ Finding the Best-Selling PS2 Simulation Game by EA:
 9. Filter **Publisher** to show only **Electronic Arts**.  
 10. In **Sales by Genre**, click **Simulation** to filter data.  
 11. In **Top Video Games**, check the highest-selling game.  
+
+
+**Solution:**
+
+<div class="img-center"> 
+
+![](/gif/docs/snowflake-create-query-sampleee-31.gif)
+
+</div>
+
 
 **Insights:**  
 

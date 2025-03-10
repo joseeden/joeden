@@ -29,7 +29,11 @@ Dates help analyze when events happened and identify trends over time. Tableau m
 
 ## Setting Up the Visualization  
 
-Using a dataset with birth statistics, we can create a line chart to see trends.  
+In this example, we’ll use a dataset from the United Nations Statistics Division to visualize the trend of births in a country over the years.
+
+**Download the workbook here:** [3_4_your_data_by_year.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample%20Datasets/001-Introduction-to-Tableau/Workbooks)
+
+Let's start with creating the line chart to see the trends.  
 
 1. Drag **Date** to **Columns**.  
 2. Drag **Births** to **Rows**.  

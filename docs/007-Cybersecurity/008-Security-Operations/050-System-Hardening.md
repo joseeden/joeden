@@ -1,6 +1,6 @@
 ---
 title: "System Hardening"
-description: "Hardening and Securing thee Infrastructure"
+description: "Hardening and Securing the Infrastructure"
 tags: [Security, Cybersecurity, Security Operations, Networking, System Hardening, Vulnerability Management]
 sidebar_position: 50
 last_update:
