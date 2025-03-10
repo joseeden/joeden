@@ -21,7 +21,7 @@ In this example, we'll use a dataset on video game sales from the following game
 - Nintendo 
 - XBox
 
-**Download the workbook here:** [4_6_first_story.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample%20Datasets/001-Introduction-to-Tableau/Workbooks)  
+**Download the workbook here:** [4_6_first_story.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/001-Introduction-to-Tableau/Workbooks)  
 
 
 ## Creating a Story 

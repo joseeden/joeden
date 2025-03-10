@@ -82,7 +82,7 @@ You can format both at the workbook and sheet level.
 
 In the following examples, we'll use a dataset that tracks video game sales from 1980 to 2010.
 
-**Download the workbook here:** [4_1_dual_axis.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample%20Datasets/001-Introduction-to-Tableau/Workbooks)
+**Download the workbook here:** [4_1_dual_axis.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/001-Introduction-to-Tableau/Workbooks)
 
 
 ## Example: Dual-Axis Graph 
@@ -149,7 +149,7 @@ The graph shows a major spike in **1989** due to **Tetris**, which made up almos
 
 ## Example: Bar Charts and Colors
 
-This example uses a different workbook: [4_3_global_sales_breakdown.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample%20Datasets/001-Introduction-to-Tableau/Workbooks)
+This example uses a different workbook: [4_3_global_sales_breakdown.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/001-Introduction-to-Tableau/Workbooks)
 
 Create a bar chart and apply three different **Dimensions** to color.
 

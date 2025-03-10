@@ -50,7 +50,7 @@ Forecasting predicts future values based on past trends. It uses mathematical mo
 
 In this example, we'll use UN Health Data to analyze birth trends in Portugal over five years with a line chart, adding reference lines, trend lines, and forecasts for deeper insights.
 
-**Download the workbook here:** [3_4_your_data_by_year.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample%20Datasets/001-Introduction-to-Tableau/Workbooks)
+**Download the workbook here:** [3_4_your_data_by_year.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/001-Introduction-to-Tableau/Workbooks)
 
 
 ### Adding a Reference Line
