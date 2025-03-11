@@ -14,7 +14,7 @@ last_update:
 
 ## Workbook  
 
-In this lab, we'll improve the dashboard for [Divvy's Top Stations](/docs/022-Data-Engineering/051-Tableau/030-Sample-Dashboards/003-Divvys-Top-Stations.md) by using containers to arrange elements, clean up legends, and improve filters. 
+In this lab, we'll improve the dashboard for [Divvy's Top Stations](/docs/022-Data-Engineering/051-Tableau/050-Sample-Dashboards/003-Divvys-Top-Stations.md) by using containers to arrange elements, clean up legends, and improve filters. 
 
 **Download the workbook here:**  
 
