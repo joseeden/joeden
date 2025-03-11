@@ -16,10 +16,10 @@ last_update:
 
 In this lab, we'll create a dashboard to optimize bike resource allocation across Divvy stations. By analyzing ride data, we can determine where more bikes and docks are needed. Annotations will also be added to provide context and guidance for users.  
 
-**Download the workbook:**  
+**Download the workbook here:**  
 
 - [1_4_annotations.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/002-Creating-Dashboards/Workbooks)  
-- [1_3_simple_dashboard-complete.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/002-Creating-Dashboards/Workbooks)  
+- [1_4_annotations_complete.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/002-Creating-Dashboards/Workbooks)  
 
 
 
