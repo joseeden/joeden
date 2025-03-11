@@ -18,8 +18,8 @@ In this lab, we'll create a dashboard to optimize bike resource allocation acros
 
 **Download the workbook here:**  
 
-- [1_4_annotations.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/002-Creating-Dashboards/Workbooks)  
-- [1_4_annotations_complete.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/002-Creating-Dashboards/Workbooks)  
+- [2_1_divvy_bikes_annotation.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/002-Creating-Dashboards/Workbooks)  
+- [2_2_divvy_bikes_annotation_complete.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/002-Creating-Dashboards/Workbooks)  
 
 
 

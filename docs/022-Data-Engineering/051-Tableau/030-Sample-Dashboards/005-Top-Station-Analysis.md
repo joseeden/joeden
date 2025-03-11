@@ -18,8 +18,8 @@ In this lab, we'll improve the dashboard for [Divvy's Top Stations](/docs/022-Da
 
 **Download the workbook here:**  
 
-- [1_6_containers.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/002-Creating-Dashboards/Workbooks)  
-- [1_6_containers_complete.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/002-Creating-Dashboards/Workbooks)  
+- [3_1_divvy_top_stations.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/002-Creating-Dashboards/Workbooks)  
+- [3_2_divvy_top_stations_complete.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/002-Creating-Dashboards/Workbooks)  
 
 
 ## Problem 

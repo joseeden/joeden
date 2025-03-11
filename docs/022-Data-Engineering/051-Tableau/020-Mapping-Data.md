@@ -51,7 +51,7 @@ Tableau automatically assigns coordinates (geocoding) to various geographic data
 
 In this example, we’ll use a dataset from the World Health Organization (WHO) to analyze past global health statistics.  
 
-**Download the workbook here:** [0_0_creating_a_symbol_map.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/001-Introduction-to-Tableau/Workbooks)
+**Download the workbook here:** [2_1_WHO_health_stats_symbol_map.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/001-Introduction-to-Tableau/Workbooks)
 
 We'll start with mapping the lung cancer cases by country.
 

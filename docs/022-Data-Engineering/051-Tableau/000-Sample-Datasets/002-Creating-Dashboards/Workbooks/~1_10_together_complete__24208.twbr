@@ -1027,7 +1027,7 @@
         <column-instance column='[Calculation_1406249006683643909]' derivation='None' name='[none:Calculation_1406249006683643909:nk]' pivot='key' type='nominal' />
       </datasource-dependencies>
       <filter class='categorical' column='[federated.06rd1g00u52qj61e3alwf14cqgil].[none:Calculation_1332784029654597633:nk]'>
-        <groupfilter function='level-members' level='[none:Calculation_1332784029654597633:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+        <groupfilter function='member' level='[none:Calculation_1332784029654597633:nk]' member='&quot;Weekend&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
       </filter>
       <filter class='categorical' column='[federated.06rd1g00u52qj61e3alwf14cqgil].[none:Calculation_1406249006683643909:nk]'>
         <groupfilter function='member' level='[none:Calculation_1406249006683643909:nk]' member='&quot;Summer&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
@@ -1520,7 +1520,7 @@
           <zoom type='fit-width' />
         </viewpoint>
       </viewpoints>
-      <active id='9' />
+      <active id='8' />
       <simple-id uuid='{D154F08F-A66E-45E4-9FFB-906CCB33ED91}' />
     </window>
   </windows>
