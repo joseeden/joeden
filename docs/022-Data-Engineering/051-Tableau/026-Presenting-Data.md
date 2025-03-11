@@ -78,6 +78,10 @@ You can format both at the workbook and sheet level.
     - Stories
 
 
+## Normalizing Graphs 
+
+
+
 ## Workbook Used
 
 In the following examples, we'll use a dataset that tracks video game sales from 1980 to 2010.
