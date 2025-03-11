@@ -26,7 +26,7 @@ The workbook includes four worksheets:
 - Sales by Genre
 - Top Video Games
 
-**Download the workbook:** [4_4_first_dashboard.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/001-Introduction-to-Tableau/Workbooks)  
+**Download the workbook here:** [4_4_first_dashboard.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/001-Introduction-to-Tableau/Workbooks)  
 
 :::info  
 The steps below have already been completed in the workbook. To try them yourself, reset the worksheet by clicking **Clear Sheet** in the toolbar.  

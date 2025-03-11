@@ -16,7 +16,10 @@ last_update:
 
 In this lab, we'll use a workbook to create a dashboard analyzing the popularity of Divvy's top stations.  
 
-**Download the workbook:** [1_1_simple_dashboard.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/001-Introduction-to-Tableau/Workbooks) 
+**Download the workbook here:** 
+
+- [1_1_simple_dashboard.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/002-Creating-Dashboards/Workbooks) 
+- [1_3_simple_dashboard-complete.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/002-Creating-Dashboards/Workbooks) 
 
 ## Problem
 
