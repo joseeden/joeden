@@ -1,6 +1,6 @@
 ---
-title: "Divvy's Top Station"
-description: "Divvy's Top Station"
+title: "Divvy's Top Stations"
+description: "Divvy's Top Stations"
 tags: 
 - Data Engineering
 - Data Science
