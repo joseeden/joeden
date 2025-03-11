@@ -12,9 +12,29 @@ last_update:
 ---
 
 
-## Workbook 
+## Workbook  
 
-In this lab, we'll use the worksheets in the workbook to create a dashboard to analyze the popularity of Divvy's top stations.
+In this lab, we'll use a workbook to create a dashboard analyzing the popularity of Divvy's top stations.  
 
-**Download the workbook here:** [1_1_simple_dashboard.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/001-Introduction-to-Tableau/Workbooks)  
+**Download the workbook:** [1_1_simple_dashboard.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/001-Introduction-to-Tableau/Workbooks)  
 
+## Steps  
+
+1. Open the workbook and click **New dashboard**.  
+2. Name the dashboard **Top Stations Activity Dashboard**.  
+3. Add `Stations Map` and `Station Ranking` to the dashboard.  
+4. Set the dashboard size to **Automatic** for better resizing.  
+5. Click `Station Ranking`, then select the down arrow > **Fit** > **Entire View**.  
+
+## Solution
+
+<div class="img-center"> 
+
+![](/gif/docs/snowflake-create-query-sampleee-32.gif)
+
+</div>
+
+
+## Findings  
+
+The `Station Ranking` graph shows that **"Streeter Dr and Grand Ave"** is the most popular station, with **21,468 trips recorded**.
