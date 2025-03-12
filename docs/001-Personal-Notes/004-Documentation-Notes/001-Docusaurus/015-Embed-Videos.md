@@ -69,20 +69,22 @@ import ReactPlayer from 'react-player'
     - Youtube video:
 
         ```bash
-        <ReactPlayer url='https://www.youtube.com/watch?v=XGxIE1hr0w4' />
+        <ReactPlayer width='100%' height='100%' url='https://www.youtube.com/watch?v=XGxIE1hr0w4' />
         ```
 
         Output:
 
-        <ReactPlayer url='https://www.youtube.com/watch?v=XGxIE1hr0w4' />
+        <ReactPlayer width='100%' height='100%' url='https://www.youtube.com/watch?v=XGxIE1hr0w4' />
 
 4. Optional.
 
-    - For better readability:
+    - For better readability of code, format it this way:
 
         ```bash
         <ReactPlayer 
             url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
+            width='100%' 
+            height='100%' 
         />
         ```
 
@@ -92,6 +94,8 @@ import ReactPlayer from 'react-player'
         <ReactPlayer 
             controls
             url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
+            width='100%' 
+            height='100%'             
         />
         ```
 
@@ -100,27 +104,10 @@ import ReactPlayer from 'react-player'
         <ReactPlayer 
             controls
             url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
+            width='100%' 
+            height='100%'             
         />
 
-    - Adjust width and height:
-
-        ```bash
-        <ReactPlayer 
-            controls
-            url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
-            width='100%'
-            height='100%'
-        />
-        ```
-
-        Output:
-
-        <ReactPlayer 
-            controls
-            url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
-            width='100%'
-            height='100%'
-        />
 
 
 ## Auto-Play 
