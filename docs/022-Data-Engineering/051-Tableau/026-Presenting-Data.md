@@ -82,7 +82,7 @@ You can format both at the workbook and sheet level.
 
 When comparing multiple graphs, it's important to use the same scale to prevent misleading differences.
 
-In the example below, the chart on the left seems similar in peak to the one on the right, but it's actually twice as high. This happens because they have different scales.  
+In the example below, the chart on the left appears similar in peak to the one on the right, but it's actually much higher. This happens because they have different scales—the left graph peaks at around 34,000, while the right one peaks at about 8,000 (see their y-axis).
 
 <div class="img-center"> 
 
