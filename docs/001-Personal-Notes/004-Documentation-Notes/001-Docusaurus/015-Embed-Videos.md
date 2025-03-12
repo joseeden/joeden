@@ -75,3 +75,28 @@ import ReactPlayer from 'react-player'
         Output:
 
         <ReactPlayer url='https://www.youtube.com/watch?v=LXb3EKWsInQ' />
+
+4. Optional.
+
+    - Add play controls:
+
+        ```bash
+        <ReactPlayer playing controls url='https://www.youtube.com/watch?v=LXb3EKWsInQ' />
+        ```
+
+        Output:
+
+        <ReactPlayer playing controls url='https://www.youtube.com/watch?v=LXb3EKWsInQ' />
+
+
+    - Adjust width and height:
+
+        ```bash
+        <ReactPlayer playing controls url='https://www.youtube.com/watch?v=LXb3EKWsInQ' width='100%' height='100%'/>
+        ```
+
+        Output:
+
+        <ReactPlayer playing controls url='https://www.youtube.com/watch?v=LXb3EKWsInQ' width='100%' height='100%'/>
+
+

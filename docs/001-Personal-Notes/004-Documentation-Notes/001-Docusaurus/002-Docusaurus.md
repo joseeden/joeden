@@ -12,7 +12,7 @@ tags:
 
 ## Prerequisites 
 
-- [Install NodeJS and NPX](../003-Developer-Notes/011-Tools-Specifications.md#nodejs)
+- [Install NodeJS and NPX](/docs/001-Personal-Notes/003-Developer-Notes/011-Tools-Specifications.md#nodejs)
 
 
 ## Docusaurus
