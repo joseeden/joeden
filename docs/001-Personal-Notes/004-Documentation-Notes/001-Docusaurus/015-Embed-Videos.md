@@ -74,7 +74,7 @@ import ReactPlayer from 'react-player'
 
         Output:
 
-<ReactPlayer url='https://www.youtube.com/watch?v=XGxIE1hr0w4' />
+        <ReactPlayer url='https://www.youtube.com/watch?v=XGxIE1hr0w4' />
 
 4. Optional.
 
@@ -97,10 +97,10 @@ import ReactPlayer from 'react-player'
 
         Output:
 
-<ReactPlayer 
-    controls
-    url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
-/>
+        <ReactPlayer 
+            controls
+            url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
+        />
 
     - Adjust width and height:
 
@@ -115,12 +115,12 @@ import ReactPlayer from 'react-player'
 
         Output:
 
-<ReactPlayer 
-    controls
-    url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
-    width='100%'
-    height='100%'
-/>
+        <ReactPlayer 
+            controls
+            url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
+            width='100%'
+            height='100%'
+        />
 
 
 ## Auto-Play 
@@ -153,6 +153,8 @@ An alternative way which does not require any additional package is through the 
   allowfullscreen
 ></iframe>
 ```
+
+Note that "full screen mode" is not allowed when using this.
 
 Output:
 
