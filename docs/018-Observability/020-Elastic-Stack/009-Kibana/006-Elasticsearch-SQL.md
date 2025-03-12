@@ -520,4 +520,4 @@ sql>
 
 Running some sample queries:
 
-![](/gif/docs/01312025-elastic-cloud-sql-cli.gif)
+![](/gif/docs/video/01312025-elastic-cloud-sql-cli.mp4)

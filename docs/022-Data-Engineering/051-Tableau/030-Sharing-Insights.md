@@ -1,6 +1,6 @@
 ---
-title: "Sharing the Insights"
-description: "Sharing the Insights"
+title: "Sharing Insights"
+description: "Sharing Insights"
 tags: 
 - Data Engineering
 - Data Science
