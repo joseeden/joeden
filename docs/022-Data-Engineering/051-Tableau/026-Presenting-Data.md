@@ -106,7 +106,33 @@ See below:
 </div>
 
 
-## Workbook Used
+## Highlighter Filter Pen 
+
+The highlighter pen helps focus on specific data without removing the rest—it dims everything else instead. In the example below, multiple lines overlap.
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-12-183634.png)
+
+</div>
+
+To highlight only the weekend data:  
+
+1. Hover over the legend.  
+2. Click the pencil icon in the top right.  
+3. A horizontal pen icon will appear below it.  
+4. Click and hold **Saturday** and **Sunday** to highlight them.  
+
+If no line appears under the pencil icon, the highlighter isn't active, and you won’t be able to highlight the data.
+
+<div class="img-center"> 
+
+![](/gif/docs/snowflake-create-query-sampleee-39.gif)
+
+</div>
+
+
+## Lab: Workbook
 
 In the following examples, we'll use a dataset that tracks video game sales from 1980 to 2010.
 
