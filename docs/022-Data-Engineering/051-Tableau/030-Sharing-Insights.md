@@ -88,6 +88,36 @@ To hide a part of the visualization in mobile view, right-click the item and sel
 
 </div>
 
+## Adding Navigation
+
+Navigation buttons make it easy to switch between dashboards, especially on mobile devices.  
+
+**Example: Adding Navigation to the **Incident** Dashboard**  
+
+To add a navigation button in the **Incident** dashboard that links to the **Requests** and **Problems** dashboards, follow these steps:  
+
+<div class="img-center"> 
+
+![](/gif/docs/snowflake-create-query-sampleee-43.gif)
+
+</div>
+
+Steps:
+
+1. Drag the **Navigation** object from the **Objects** panel.  
+2. Set the following for the **Requests** button:  
+   - **Navigate to**: Requests  
+   - **Title**: Go to Requests  
+   - **Background**: Light Blue  
+   - **Tooltip**: Tap to go to Requests  
+3. Add another navigation button for **Problems**:  
+   - **Navigate to**: Problems  
+   - **Title**: Go to Problems  
+   - **Background**: Light Green  
+   - **Tooltip**: Tap to go to Problems  
+4. Click **Presentation Mode** in the toolbar.  
+5. Preview and test the navigation.
+6. 
 
 ## Exporting Visualizations  
 
