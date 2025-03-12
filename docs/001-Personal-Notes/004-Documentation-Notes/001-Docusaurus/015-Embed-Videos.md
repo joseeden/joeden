@@ -90,7 +90,6 @@ import ReactPlayer from 'react-player'
 
         ```bash
         <ReactPlayer 
-            playing
             controls
             url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
         />
@@ -99,7 +98,6 @@ import ReactPlayer from 'react-player'
         Output:
 
 <ReactPlayer 
-    playing
     controls
     url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
 />
@@ -108,7 +106,6 @@ import ReactPlayer from 'react-player'
 
         ```bash
         <ReactPlayer 
-            playing
             controls
             url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
             width='100%'
@@ -119,17 +116,23 @@ import ReactPlayer from 'react-player'
         Output:
 
 <ReactPlayer 
-    playing
     controls
     url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
     width='100%'
     height='100%'
 />
 
-5. Adding sample where video is not indented:
 
+## Auto-Play 
+
+To make videos auto-play, add `playing`:
+
+```bash
 <ReactPlayer 
     playing
     controls
     url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
+    width='100%'
+    height='100%'
 />
+```
