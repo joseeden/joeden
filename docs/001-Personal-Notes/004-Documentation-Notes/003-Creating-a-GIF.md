@@ -2,7 +2,8 @@
 title: "Creating a GIF"
 sidebar_position: 3
 description: "Resources, bookmarks"
-tags: [Docusaurus]
+tags: 
+- Docusaurus
 # last_update:
 #   date: 7/14/2024
 ---

@@ -92,7 +92,7 @@ To hide a part of the visualization in mobile view, right-click the item and sel
 
 Navigation buttons make it easy to switch between dashboards, especially on mobile devices.  
 
-**Example: Adding Navigation to the **Incident** Dashboard**  
+**Example: Adding Navigation to the `Incident` Dashboard**  
 
 To add a navigation button in the **Incident** dashboard that links to the **Requests** and **Problems** dashboards, follow these steps:  
 
