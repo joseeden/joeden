@@ -444,6 +444,19 @@ footer.footer {
     width: 100%;
     padding-left: 2px;
     padding-right: 2px;
+    max-width: 100%
+  }
+
+  .theme-doc-markdown iframe,
+  .theme-doc-markdown video,
+  .theme-doc-markdown .react-player {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .react-player {
+    overflow-x: hidden;
   }
 
   footer.footer {
