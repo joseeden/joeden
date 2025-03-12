@@ -136,3 +136,33 @@ To make videos auto-play, add `playing`:
     height='100%'
 />
 ```
+
+## Using `iframe`
+
+An alternative way which does not require any additional package is through the use of `ifram`:
+
+```bash
+<iframe 
+    width="100%" 
+    height="315" 
+    src="https://www.youtube.com/watch?v=XGxIE1hr0w4" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen
+>
+</iframe>
+```
+
+Output:
+
+<iframe 
+    width="100%" 
+    height="315" 
+    src="https://www.youtube.com/watch?v=XGxIE1hr0w4" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen
+>
+</iframe>
