@@ -125,3 +125,11 @@ import ReactPlayer from 'react-player'
             width='100%'
             height='100%'
         />
+
+5. Adding sample where video is not indented:
+
+<ReactPlayer 
+    playing
+    controls
+    url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
+/>
