@@ -80,6 +80,30 @@ You can format both at the workbook and sheet level.
 
 ## Normalizing Graphs 
 
+When comparing multiple graphs, it's important to use the same scale to prevent misleading differences.
+
+In the example below, the chart on the left seems similar in peak to the one on the right, but it's actually twice as high. This happens because they have different scales.  
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-12-140223.png)
+
+</div>
+
+To fix this, manually set both axes to the same range:
+
+1. Right-click the axis on the first line chart.  
+2. Select **Edit Axis**.  
+3. Set **Range** to **Custom** and set the fixed end to **35,000**.  
+4. Repeat the same steps for the second chart.
+
+See below:
+
+<div class="img-center"> 
+
+![](/gif/docs/snowflake-create-query-sampleee-38.gif)
+
+</div>
 
 
 ## Workbook Used
