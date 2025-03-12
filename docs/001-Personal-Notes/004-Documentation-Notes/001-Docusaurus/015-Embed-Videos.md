@@ -8,6 +8,7 @@ tags:
 #   date: 7/14/2024
 ---
 
+import ReactPlayer from 'react-player'
 
 ## Using `react-player`
 
@@ -46,4 +47,31 @@ tags:
 
 2. Import it at the top of your markdown file (`.md` or `.mdx`).
 
-    - Add the line below the [Front Matter](/docs/001-Personal-Notes/004-Documentation-Notes) section: 
+    - Add the line below the [Front Matter](/docs/001-Personal-Notes/004-Documentation-Notes/001-Docusaurus/004-Front-Matter.md) section, like this:
+
+
+        ```bash
+        ---
+        title: "Embed videos"
+        sidebar_position: 15
+        description: "Resources, bookmarks"
+        tags: 
+        - Docusaurus
+        # last_update:
+        #   date: 7/14/2024
+        ---
+
+        import ReactPlayer from 'react-player'
+        ```
+
+3. Add the URL to the page.
+
+    - Youtube video:
+
+        ```bash
+        <ReactPlayer url='https://www.youtube.com/watch?v=LXb3EKWsInQ' />
+        ```
+
+        Output:
+
+        <ReactPlayer url='https://www.youtube.com/watch?v=LXb3EKWsInQ' />
