@@ -1,6 +1,6 @@
 ---
-title: "Sharing Insights"
-description: "Sharing Insights"
+title: "Sharing the Insights"
+description: "Sharing the Insights"
 tags: 
 - Data Engineering
 - Data Science
@@ -45,6 +45,50 @@ Story Points provide a **flexible way to present data** while staying connected 
   - Use interactive elements like **tooltips** to provide extra details.  
   - Example: *Hover over a bar chart to see exact sales numbers.*  
 
+## Sharing on Mobile
+
+Dashboards can be shared via the Tableau mobile app or exported in different formats.  If users view reports on mobile devices, the layout should be adjusted for small screens to ensure readability and clarity.  
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-12-184530.png)
+
+</div>
+
+The app makes it easy to access data with sections like:  
+
+- **Favorites & Recents** – Quick access to frequently used dashboards.  
+- **Explore & Projects** – Browse available reports.  
+- **Workbook & Sheet Selector** – Navigate reports efficiently.  
+
+To optimize visualizations for mobile, you can preview and adjust layouts accordingly.
+
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-12-184635.png)
+
+</div>
+
+## Customize for Mobile Devices  
+
+Tableau allows you to adjust visualizations for specific devices like phones and tablets. By default, Tableau generates a **Phone** layout automatically.  
+
+<div class="img-center"> 
+
+![](/gif/docs/snowflake-create-query-sampleee-40.gif)
+
+</div>
+
+To hide a part of the visualization in mobile view, right-click the item and select **Remove Zone from Phone**.
+
+<div class="img-center"> 
+
+![](/gif/docs/snowflake-create-query-sampleee-41.gif)
+
+</div>
+
+
 ## Exporting Visualizations  
 
 You can export your Tableau visualizations in different formats:  
@@ -53,4 +97,19 @@ You can export your Tableau visualizations in different formats:
 - **Documents** – PowerPoint or PDF  
 - **Sharing** – Publish to a private or public server  
 
-The available options depend on your Tableau version. 
+Note that exporting image is only available from **Tableau Desktop**, not Tableau Public.
+
+1. Go to **Dashboard**.
+2. Click **Export Image**
+
+You can still export images from **Tableau Public**, but it requires a slightly different process than with Tableau Desktop. 
+
+1. On Tableau Public, go to **File** > **Save to Tableau Public.**
+2. YOu'll be prompted to sign-in with an account.
+3. After publishing, you can access the "Download" button at the bottom.
+
+    <div class="img-center"> 
+
+    ![](/gif/docs/snowflake-create-query-sampleee-42.gif)
+
+    </div>
