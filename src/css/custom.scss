@@ -470,14 +470,13 @@ footer.footer {
 
 @media (min-width: 1024px) {
 
-.react-player {
-  overflow-x: hidden;
-  max-width: 100% !important;
-  width: "640px";
-  height: "360px";    
-  // height: auto !important;    
-  // height: 100% !important;    
-}
+  .react-player {
+    overflow-x: hidden;
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;    
+    // height: 100% !important;    
+  }
 
 }
 
