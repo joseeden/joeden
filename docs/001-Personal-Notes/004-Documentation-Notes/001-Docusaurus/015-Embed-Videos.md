@@ -9,7 +9,6 @@ tags:
 ---
 
 import ReactPlayer from 'react-player'
-import ReactPlayerWrapper from '@site/src/components/documentation/ReactPlayerWrapper';
 
 
 ## Using `react-player`
@@ -49,72 +48,72 @@ import ReactPlayerWrapper from '@site/src/components/documentation/ReactPlayerWr
 
 2. Import it at the top of your markdown file (`.md` or `.mdx`).
 
-    - Add the line below the [Front Matter](/docs/001-Personal-Notes/004-Documentation-Notes/001-Docusaurus/004-Front-Matter.md) section, like this:
+    Add the line below the [Front Matter](/docs/001-Personal-Notes/004-Documentation-Notes/001-Docusaurus/004-Front-Matter.md) section, like this:
 
 
-        ```bash
-        ---
-        title: "Embed videos"
-        sidebar_position: 15
-        description: "Resources, bookmarks"
-        tags: 
-        - Docusaurus
-        # last_update:
-        #   date: 7/14/2024
-        ---
+    ```bash
+    ---
+    title: "Embed videos"
+    sidebar_position: 15
+    description: "Resources, bookmarks"
+    tags: 
+    - Docusaurus
+    # last_update:
+    #   date: 7/14/2024
+    ---
 
-        import ReactPlayer from 'react-player'
-        ```
+    import ReactPlayer from 'react-player'
+    ```
 
 3. Add the URL to the page.
 
-    - Youtube video:
-
-        ```bash
-        <ReactPlayer width='100%' height='100%' url='https://www.youtube.com/watch?v=XGxIE1hr0w4' />
-        ```
+    ```bash
+    <ReactPlayer 
+        controls
+        url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
+        width='100%'
+        height='100%'              
+    />
+    ```
   
-        Output:
+4. Add play controls:
 
-        <ReactPlayer width='100%' height='100%' url='https://www.youtube.com/watch?v=XGxIE1hr0w4' />
+    ```bash
+    <ReactPlayer 
+        controls
+        url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
+        width='100%'
+        height='100%'              
+    />
+    ```
 
-4. Optional.
+    Output:
 
-    - For better readability of code, format it this way:
 
-        ```bash
-        <ReactPlayer 
-            url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
-            width='100%'
-            height='100%' 
-        />
-        ```
+    <ReactPlayer 
+        controls
+        url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
+    />
 
-    - Add play controls:
+    <ReactPlayer 
+        controls
+        url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
+        width="560" 
+        height="315"             
+    />
 
-        ```bash
-        <ReactPlayer 
-            controls
-            url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
-            width='100%'
-            height='100%'              
-        />
-        ```
-
-        Output:
-
-        <ReactPlayer 
-            controls
-            url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
-            width='100%'
-            height='100%'             
-        />
-
-5. Adding sample un-indented video:
+5. Sample:
 
 <ReactPlayer 
     controls
     url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
+/>
+
+<ReactPlayer 
+    controls
+    url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
+    width="560" 
+    height="315"             
 />
 
 <!-- <ReactPlayerWrapper 

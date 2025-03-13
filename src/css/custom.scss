@@ -389,85 +389,85 @@ footer.footer {
 /* Styles for small mobile screens */
 @media (max-width: 600px) {
 
-  .theme-doc-sidebar-menu .menu__list-item-collapsible .menu__link,
-  .theme-doc-sidebar-menu .menu__list-item > a.menu__link {
-    font-size: 14px;
-    line-height: 14px;
-  }
+    .theme-doc-sidebar-menu .menu__list-item-collapsible .menu__link,
+    .theme-doc-sidebar-menu .menu__list-item > a.menu__link {
+      font-size: 14px;
+      line-height: 14px;
+    }
 
-  .homepage-wrapper,
-  .homepage {
-    padding-bottom: 250px;
-  }
+    .homepage-wrapper,
+    .homepage {
+      padding-bottom: 250px;
+    }
 
-  .navbar {
-    // flex-direction: column;
-    flex-direction: row;
-    align-items: center;
-    padding: 0.5rem;
-    justify-content: center;
-  }
+    .navbar {
+      // flex-direction: column;
+      flex-direction: row;
+      align-items: center;
+      padding: 0.5rem;
+      justify-content: center;
+    }
 
-  .navbar__toggle {
-    order: -1; 
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-  }
+    .navbar__toggle {
+      order: -1; 
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+    }
 
 
-  .navbar__brand {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center; 
-  }
+    .navbar__brand {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center; 
+    }
 
-  .navbar__title {
-    font-size: 1.1rem;
-  }
+    .navbar__title {
+      font-size: 1.1rem;
+    }
 
-  .navbar-sidebar__close {
-    width: 20px;
-  }
+    .navbar-sidebar__close {
+      width: 20px;
+    }
 
-  /* Adjust button sizes */
-  .button--primary {
-    padding: 0.5rem 1rem;
-    font-size: 0.875rem;
-  }
+    /* Adjust button sizes */
+    .button--primary {
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+    }
 
-  .button__icon {
-    width: 16px;
-    height: 16px;
-  }
+    .button__icon {
+      width: 16px;
+      height: 16px;
+    }
 
-  .theme-doc-markdown {
-    width: 100%;
-    padding-left: 2px;
-    padding-right: 2px;
-    height: auto !important;
-    max-width: 100% !important;
-  }
+    .theme-doc-markdown {
+      width: 100%;
+      padding-left: 2px;
+      padding-right: 2px;
+      height: auto !important;
+      max-width: 100% !important;
+    }
 
-  .theme-doc-markdown iframe,
-  .theme-doc-markdown video,
-  .react-player {
-    overflow-x: hidden;
-    max-width: 100% !important;
-    width: 100% !important;
-    // height: auto !important;    
-    height: 100% !important;    
-  }
+    .theme-doc-markdown iframe,
+    .theme-doc-markdown video,
+    .react-player {
+      overflow-x: hidden;
+      // max-width: 100% !important;
+      // width: 100% !important;
+      height: auto !important;    
+      // height: 100% !important;    
+    }
 
-  footer.footer {
-    padding: 1rem;
-  }  
+    footer.footer {
+      padding: 1rem;
+    }  
 
-  /* Make dark/light toggle button always visible */
-  .colorModeToggle_DEke {
-    display: block; 
-    position: relative; 
-    margin-left: auto; 
-  }
+    /* Make dark/light toggle button always visible */
+    .colorModeToggle_DEke {
+      display: block; 
+      position: relative; 
+      margin-left: auto; 
+    }
 }
 
 
