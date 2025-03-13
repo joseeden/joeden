@@ -83,8 +83,8 @@ import ReactPlayerWrapper from '@site/src/components/documentation/ReactPlayerWr
 <ReactPlayerWrapper 
     controls
     url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
-    width='100%'
-    height='100%'       
+    width='560'
+    height='315'       
 />
 
     - Indented:
@@ -92,8 +92,8 @@ import ReactPlayerWrapper from '@site/src/components/documentation/ReactPlayerWr
         <ReactPlayerWrapper 
             controls
             url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
-            width='100%'
-            height='100%'       
+            width='560'
+            height='315'       
         />
 
 
