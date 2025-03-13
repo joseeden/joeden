@@ -525,7 +525,7 @@ footer.footer {
 }
 
 // Medium to large screens (601px - 1400px) 
-@media (min-width: 601px) and (max-width: 1400px) {
+@media (min-width: 601px) {
   .video-container {
     max-width: 100%;
     height: auto;
@@ -543,22 +543,3 @@ footer.footer {
   }
 }
 
-// Extra large screens (≥1401px) 
-@media (min-width: 1401px) {
-  .video-container {
-    // max-width: 640px;
-    // height: 350px;
-    max-width: 100%;
-    height: auto;
-  }
-
-  .video-container > div {
-    width: 100%;
-    height: 100%;
-  }
-
-  .video-container iframe {
-    width: 100%;
-    height: 100%;
-  }
-}
