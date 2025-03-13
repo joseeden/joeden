@@ -452,9 +452,9 @@ footer.footer {
     .theme-doc-markdown video,
     .react-player {
       overflow-x: hidden;
-      max-width: 100% !important;
-      width: "560";
-      height: "315";    
+      // max-width: 100% !important;
+      // width: 100% !important;
+      // height: auto !important;    
       // height: 100% !important;    
     }
 
@@ -470,24 +470,22 @@ footer.footer {
     }
 }
 
+@media (min-width: 1024px) {
+
 .react-player {
   overflow-x: hidden;
   max-width: 100% !important;
-  width: 100% !important;
-  height: auto !important;    
+  width: "640px";
+  height: "360px";    
+  // height: auto !important;    
   // height: 100% !important;    
 }
 
+}
+
+
 // Styles for bigger screen sizes
 @media (min-width: 1440px) {
-
-  .react-player {
-    overflow-x: hidden;
-    max-width: 100% !important;
-    width: 100% !important;
-    height: auto !important;    
-    // height: 100% !important;    
-  }
 
   .theme-doc-container {
     display: flex;
