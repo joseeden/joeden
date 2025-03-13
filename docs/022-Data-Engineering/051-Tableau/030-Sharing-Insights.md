@@ -98,15 +98,15 @@ Navigation buttons make it easy to switch between dashboards, especially on mobi
 
 **Example: Adding Navigation to the `Incident` Dashboard**  
 
-To add a navigation button in the **Incident** dashboard that links to the **Requests** and **Problems** dashboards, follow these steps:  
+In this example, we have an workbook that has an **Incident**, **Requests**, and **Problems** dashboard. The incident dashboard needs to have a button that will allow the user to navigate to the other dashboards.
 
-<ReactPlayerWrapper 
-    controls
-    url='https://youtu.be/RduZe6t0cvo?si=178OSR9ZQHSMT56_' 
-/>  
+**Download the workbook here:** 
+
+- [5_1_basics_navigation.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/002-Creating-Dashboards/Workbooks)
+- [5_1_basics_navigation_complete.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/002-Creating-Dashboards/Workbooks)
 
 
-Steps:
+**Steps:**
 
 1. Drag the **Navigation** object from the **Objects** panel.  
 2. Set the following for the **Requests** button:  
@@ -121,7 +121,15 @@ Steps:
    - **Tooltip**: Tap to go to Problems  
 4. Click **Presentation Mode** in the toolbar.  
 5. Preview and test the navigation.
-6. 
+
+
+**Solution:**
+
+<ReactPlayerWrapper 
+    controls
+    url='https://youtu.be/sf517MMPVW0' 
+/>  
+
 
 ## Exporting Visualizations  
 

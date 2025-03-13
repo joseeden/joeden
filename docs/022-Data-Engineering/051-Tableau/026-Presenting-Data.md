@@ -11,6 +11,7 @@ last_update:
   date: 5/20/2024
 ---
 
+import ReactPlayerWrapper from '@site/src/components/documentation/ReactPlayerWrapper';
 
 ## Overview
 
@@ -158,11 +159,16 @@ In this example, we'll use the video game sales dataset to compare global and Eu
 
 **Solution:**
 
-<div class="img-center"> 
+<!-- <div class="img-center"> 
 
 ![](/gif/docs/snowflake-create-query-sampleee-26.gif)
 
-</div>
+</div> -->
+
+<ReactPlayerWrapper 
+    controls
+    url='https://youtu.be/5lQYGs49MCs' 
+/>
 
 **Insights:**  
 
@@ -191,11 +197,17 @@ Using the previous dataset, we'll filter by genre to find the "Puzzle" video gam
 
 **Solution:**
 
-<div class="img-center"> 
+<!-- <div class="img-center"> 
 
 ![](/gif/docs/snowflake-create-query-sampleee-27.gif)
 
-</div>
+</div> -->
+
+<ReactPlayerWrapper 
+    controls
+    url='https://www.youtube.com/watch?v=CWAedyS4qkc' 
+/>
+
 
 **Insights:**  
 

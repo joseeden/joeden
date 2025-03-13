@@ -11,6 +11,9 @@ last_update:
   date: 5/21/2024
 ---
 
+import ReactPlayerWrapper from '@site/src/components/documentation/ReactPlayerWrapper';
+
+
 
 ## Workbook  
 
@@ -47,11 +50,17 @@ Find:
 
 **Solution:**
 
-<div class="img-center"> 
+<!-- <div class="img-center"> 
 
 ![](/gif/docs/snowflake-create-query-sampleee-33.gif)
 
-</div>
+</div> -->
+
+<ReactPlayerWrapper 
+    controls
+    url='https://youtu.be/vBzl5NM2mQo' 
+/>
+
 
 
 **Findings:** 
@@ -78,11 +87,16 @@ Find:
 
 **Solution:**
 
-<div class="img-center"> 
+<!-- <div class="img-center"> 
 
 ![](/gif/docs/snowflake-create-query-sampleee-34.gif)
 
-</div>
+</div> -->
+
+<ReactPlayerWrapper 
+    controls
+    url='https://youtu.be/Pq18J6QbZr8' 
+/>
 
 
 **Findings:** 

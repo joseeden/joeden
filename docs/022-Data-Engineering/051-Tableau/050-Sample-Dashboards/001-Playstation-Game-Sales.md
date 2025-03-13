@@ -12,6 +12,9 @@ last_update:
 ---
 
 
+import ReactPlayerWrapper from '@site/src/components/documentation/ReactPlayerWrapper';
+
+
 ## Workbook 
 
 In this example, we'll use a dataset on video game sales to determine:  
@@ -68,11 +71,6 @@ Create a dashboard called **Playstation Overview 1994**.
 
 Continuing on the previous example, we'll add filters to the dashboard to focus on specific games and genres. Our goal is to find how many copies (in millions) **Sony Computer Entertainment** sold for the **PS2** in the **Racing** genre.  
 
-<div class="img-center"> 
-
-![](/gif/docs/snowflake-create-query-sampleee-30.gif)
-
-</div>
 
 **Steps:**  
 
@@ -99,6 +97,13 @@ Finding the Sales for PS2 Racing Games:
 12. In **Sales by Genre**, click the **Racing** section.  
 13. Hover over **PS2** in **Sales by Platform**.  
 
+**Solution:**
+
+<div class="img-center"> 
+
+![](/gif/docs/snowflake-create-query-sampleee-30.gif)
+
+</div>
 
 **Insights:**  
 

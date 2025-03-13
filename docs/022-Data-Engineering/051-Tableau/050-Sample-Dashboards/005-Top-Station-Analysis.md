@@ -11,6 +11,7 @@ last_update:
   date: 5/21/2024
 ---
 
+import ReactPlayerWrapper from '@site/src/components/documentation/ReactPlayerWrapper';
 
 ## Workbook  
 
@@ -76,11 +77,17 @@ Find the following:
 
 ## Solution 
 
-<div class="img-center"> 
+<!-- <div class="img-center"> 
 
 ![](/gif/docs/snowflake-create-query-sampleee-37.gif)
 
-</div>
+</div> -->
+
+
+<ReactPlayerWrapper 
+    controls
+    url='https://youtu.be/NhtvlPzae38' 
+/>
 
 
 ## Findings  

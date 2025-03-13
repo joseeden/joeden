@@ -12,6 +12,8 @@ last_update:
 ---
 
 
+import ReactPlayerWrapper from '@site/src/components/documentation/ReactPlayerWrapper';
+
 
 ## Workbook 
 
@@ -53,13 +55,17 @@ Finding the Best-Selling PS2 Simulation Game by EA:
 
 
 **Solution:**
-
+<!-- 
 <div class="img-center"> 
 
 ![](/gif/docs/snowflake-create-query-sampleee-31.gif)
 
-</div>
+</div> -->
 
+<ReactPlayerWrapper 
+    controls
+    url='https://youtu.be/XnkHNV0yuaE' 
+/>
 
 **Insights:**  
 

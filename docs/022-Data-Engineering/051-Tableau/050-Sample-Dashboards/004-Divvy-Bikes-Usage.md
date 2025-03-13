@@ -12,6 +12,8 @@ last_update:
 ---
 
 
+import ReactPlayerWrapper from '@site/src/components/documentation/ReactPlayerWrapper';
+
 ## Workbook  
 
 In this lab, we'll create a dashboard to optimize bike resource allocation across Divvy stations. By analyzing ride data, we can determine where more bikes and docks are needed. Annotations will also be added to provide context and guidance for users.  
@@ -63,11 +65,18 @@ In this lab, we'll create a dashboard to optimize bike resource allocation acros
 
 **Solution:**
 
-<div class="img-center"> 
+<!-- <div class="img-center"> 
 
 ![](/gif/docs/snowflake-create-query-sampleee-35.gif)
 
-</div>
+</div> -->
+
+
+<ReactPlayerWrapper 
+    controls
+    url='https://youtu.be/ILHFIFpE4TY' 
+/>
+
 
 
 **Findings:**  
@@ -102,12 +111,18 @@ Find the total number of trips taken on **June 16** during the weekend.
 
 
 **Solution:**
-
+<!-- 
 <div class="img-center"> 
 
 ![](/gif/docs/snowflake-create-query-sampleee-36.gif)
 
-</div>
+</div> -->
+
+<ReactPlayerWrapper 
+    controls
+    url='https://youtu.be/i_qTHD-yMEc' 
+/>
+
 
 **Findings:**
 
