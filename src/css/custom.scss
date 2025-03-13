@@ -456,6 +456,13 @@ footer.footer {
       // height: 100% !important;    
     // }
 
+    .react-player {
+      width: 100% !important;
+      height: auto !important;
+      aspect-ratio: 16 / 9;
+    }
+    
+
     footer.footer {
       padding: 1rem;
     }  
