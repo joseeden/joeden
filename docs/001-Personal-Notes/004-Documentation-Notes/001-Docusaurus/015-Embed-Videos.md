@@ -69,12 +69,12 @@ import ReactPlayer from 'react-player'
     - Youtube video:
 
         ```bash
-        <ReactPlayer width='560' height='315' url='https://www.youtube.com/watch?v=XGxIE1hr0w4' />
+        <ReactPlayer width='100%' height='100%' url='https://www.youtube.com/watch?v=XGxIE1hr0w4' />
         ```
   
         Output:
 
-        <ReactPlayer width='560' height='315' url='https://www.youtube.com/watch?v=XGxIE1hr0w4' />
+        <ReactPlayer width='100%' height='100%' url='https://www.youtube.com/watch?v=XGxIE1hr0w4' />
 
 4. Optional.
 
@@ -83,8 +83,8 @@ import ReactPlayer from 'react-player'
         ```bash
         <ReactPlayer 
             url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
-            width='560'
-            height='315' 
+            width='100%'
+            height='100%' 
         />
         ```
 
@@ -94,8 +94,8 @@ import ReactPlayer from 'react-player'
         <ReactPlayer 
             controls
             url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
-            width='560'
-            height='315'              
+            width='100%'
+            height='100%'              
         />
         ```
 
@@ -104,8 +104,8 @@ import ReactPlayer from 'react-player'
         <ReactPlayer 
             controls
             url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
-            width='560'
-            height='315'             
+            width='100%'
+            height='100%'             
         />
 
 5. Adding sample un-indented video:
@@ -113,8 +113,8 @@ import ReactPlayer from 'react-player'
 <ReactPlayer 
     controls
     url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
-    width='560'
-    height='315'       
+    width='100%'
+    height='100%'       
 />
 
 ## Auto-Play 
@@ -137,8 +137,8 @@ An alternative way which does not require any additional package is through the 
 
 ```bash
 <iframe 
-  width="560" 
-  height="315" 
+  width="100%" 
+  height="100%" 
   src="https://www.youtube.com/embed/XGxIE1hr0w4?si=acocw4T3zdTqd3V-" 
   title="YouTube video player" 
   frameborder="0" 
@@ -153,8 +153,8 @@ Note that "full screen mode" is not allowed when using this.
 Output:
 
 <iframe 
-  width="560" 
-  height="315" 
+  width="100%" 
+  height="100%" 
   src="https://www.youtube.com/embed/XGxIE1hr0w4?si=acocw4T3zdTqd3V-" 
   title="YouTube video player" 
   frameborder="0" 
@@ -168,6 +168,6 @@ Output:
 
 - [react-player](https://github.com/cookpete/react-player)
 - [Example of video embedded in Docusaurus: Podman](https://podman-desktop.io/blog/podman-desktop-release-1.1)
-- [Example of video embedded in Docusaurus: Podman (Github)](https://github.com/podman-desktop/podman-desktop/blob/62d5f07f6b7ac3c271cc315b61e5da1d5b260b84/website/blog/2023-06-08-release-1.1.md?plain=1#L11)
+- [Example of video embedded in Docusaurus: Podman (Github)](https://github.com/podman-desktop/podman-desktop/blob/62d5f07f6b7ac3c271cc100%b61e5da1d5b260b84/website/blog/2023-06-08-release-1.1.md?plain=1#L11)
 - [Example of video embedded in Docusaurus: LTC](https://learntocloud.guide/phase4/)
 - [Example of video embedded in Docusaurus: LTC (Github)](https://github.com/learntocloud/learn-to-cloud/blob/main/docs/phase4/README.md)
