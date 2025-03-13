@@ -8,7 +8,7 @@ tags:
 #   date: 7/14/2024
 ---
 
-<!-- import ReactPlayer from 'react-player' -->
+import ReactPlayer from 'react-player'
 import ReactPlayerWrapper from '@site/src/components/documentation/ReactPlayerWrapper';
 
 
