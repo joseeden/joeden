@@ -1,4 +1,4 @@
-// src/components/ReactPlayerWrapper.js
+// src/components/documentation/ReactPlayerWrapper.js
 import React from 'react';
 import ReactPlayer from 'react-player';
 
