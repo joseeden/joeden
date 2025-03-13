@@ -501,6 +501,11 @@ footer.footer {
   height: 100%;    
 }
 
+.video-wrapper > div {
+  width: 100% !important;
+  height: 100% !important;
+}
+
 @media (max-width: 600px) {
   .video-wrapper {
     width: 100%;
