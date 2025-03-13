@@ -9,7 +9,32 @@ tags:
 ---
 
 import ReactPlayer from 'react-player'
-import ReactPlayerWrapper from '@site/src/components/documentation/ReactPlayerWrapper';
+/* Default styling for video wrapper */
+.video-wrapper {
+    position: relative;
+    width: 100%;  // Makes the wrapper responsive
+    height: auto; // Allows the height to adjust
+    margin: 0 auto; // Centers the video container
+    overflow: hidden;
+}
+
+/* Regular and big screens (width 560px and height 315px) */
+@media (min-width: 601px) {
+    .video-wrapper {
+        width: 560px;  // Set the specific width for larger screens
+        height: 315px; // Set the specific height for larger screens
+    }
+}
+
+/* Small screens (600px and below) */
+@media (max-width: 600px) {
+    .video-wrapper {
+        width: 100%;        // Takes full width for small screens
+        height: auto;       // Automatically adjusts height based on width
+        aspect-ratio: 16 / 9; // Maintains 16:9 ratio
+    }
+}
+
 
 ## Using `react-player`
 
