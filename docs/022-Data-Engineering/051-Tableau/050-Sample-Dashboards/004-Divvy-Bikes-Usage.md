@@ -27,12 +27,12 @@ In this lab, we'll create a dashboard to optimize bike resource allocation acros
 
 ## Adding Annotations  
 
-**Problem:**  
+#### Problem
 
 1. The day with the highest traffic in downtown Chicago.  
 
 
-**Steps:**  
+#### Steps
 
 1. Open the workbook.  
 2. Right-click on the visualization > **Annotate** > **Area** > **OK**.  
@@ -63,7 +63,7 @@ In this lab, we'll create a dashboard to optimize bike resource allocation acros
 17. Hover over the largest circle to view traffic details.  
 
 
-**Solution:**
+#### Solution
 
 <!-- <div class="img-center"> 
 
@@ -79,7 +79,7 @@ In this lab, we'll create a dashboard to optimize bike resource allocation acros
 
 
 
-**Findings:**  
+#### Findings
 
 Traffic peaked on **June 30, 2019**, in downtown Chicago. Divvy may need to add more docks at the busiest stations during June.
 
@@ -88,11 +88,11 @@ Traffic peaked on **June 30, 2019**, in downtown Chicago. Divvy may need to add 
 
 Dynamic titles update based on filter selections.
 
-**Problem:**  
+#### Problem
 
 Find the total number of trips taken on **June 16** during the weekend.  
 
-**Steps:**  
+#### Steps
 
 1. Create a worksheet named **Date Time Titles**.  
 2. Set **Fit** to **Fit Width**.  
@@ -110,7 +110,7 @@ Find the total number of trips taken on **June 16** during the weekend.
 14. Under **Click to Animate Dates**, set the date to 16 June 2019. 
 
 
-**Solution:**
+#### Solution
 <!-- 
 <div class="img-center"> 
 
@@ -124,6 +124,6 @@ Find the total number of trips taken on **June 16** during the weekend.
 />
 
 
-**Findings:**
+#### Findings
 
 There are 9,478 trips taken on June 16 during the weekend.

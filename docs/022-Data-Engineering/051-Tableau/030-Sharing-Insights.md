@@ -96,7 +96,7 @@ To hide a part of the visualization in mobile view, right-click the item and sel
 
 Navigation buttons make it easy to switch between dashboards, especially on mobile devices.  
 
-**Example: Adding Navigation to the `Incident` Dashboard**  
+#### Example: Adding Navigation to the `Incident` Dashboard
 
 In this example, we have an workbook that has an **Incident**, **Requests**, and **Problems** dashboard. The incident dashboard needs to have a button that will allow the user to navigate to the other dashboards.
 
@@ -106,7 +106,7 @@ In this example, we have an workbook that has an **Incident**, **Requests**, and
 - [5_1_basics_navigation_complete.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/002-Creating-Dashboards/Workbooks)
 
 
-**Steps:**
+#### Steps
 
 1. Drag the **Navigation** object from the **Objects** panel.  
 2. Set the following for the **Requests** button:  
@@ -123,7 +123,7 @@ In this example, we have an workbook that has an **Incident**, **Requests**, and
 5. Preview and test the navigation.
 
 
-**Solution:**
+#### Solution
 
 <ReactPlayerWrapper 
     controls

@@ -12,6 +12,10 @@ last_update:
 ---
 
 
+import ReactPlayerWrapper from '@site/src/components/documentation/ReactPlayerWrapper';
+
+
+
 ## Overview
 
 Calculated fields let you create new data using existing fields. This helps in transforming, categorizing, or performing calculations without altering the original dataset.  
@@ -60,7 +64,7 @@ ROUND([Gas Price], 2)
 
 There's no need to memorize all of the functions because Tableau has a built-in documentations.
 
-## Workbook
+## Lab: Workbook
 
 In the following examples, we'll use a **Gapminder** dataset on **Mean Years of Schooling**.
 
@@ -77,11 +81,11 @@ This dataset is based on information from the [Gapminder](https://www.gapminder.
 
 In this example, we need to create a calculated field to round data of the `Women 25-34` measures. 
 
-**Problem:**
+#### Problem
 
 Find the number of countries in 1976 that has women in the 25-34 age bracket that are spending, on average, 10 years or more in school.
 
-**Steps:**
+#### Steps
 
 1. Go to the **Rounding** worksheet. 
 2. Create the `Rounded Women 25-34` calculated field.
@@ -98,16 +102,23 @@ Find the number of countries in 1976 that has women in the 25-34 age bracket tha
 8. Add the `Years` field to the **Filters** shelf and filter for 1976.
 9. Add `Rounded Women 25-34` to the **Filters** shelf and filter for "at least 10".
 
-**Solution:**
 
-<div class="img-center"> 
+#### Solution
+
+<!-- <div class="img-center"> 
 
 ![](/gif/docs/snowflake-create-query-sampleee-13.gif)
 
 </div>
+ -->
+
+<ReactPlayerWrapper 
+    controls
+    url='https://youtu.be/j_4hjUpk0Tg' 
+/>
 
 
-**Findings:**
+#### Findings
 
 Based on the filtered results, we can see that there are 4 countries in 1976 that has women in the 25-34 age bracket that are spending, on average, 10 years or more in school.
 
@@ -115,12 +126,12 @@ Based on the filtered results, we can see that there are 4 countries in 1976 tha
 
 Ratios help compare two values. In this example, we compare the average years of education between men and women. A ratio close to 1 means their education levels are nearly equal.
 
-**Problem:**
+#### Problem
 
 Find the ratio of men's and women's average years of education.
 
 
-**Steps:**
+#### Steps
 
 1. Go to the **Ratio** worksheet. 
 2. Create a calculated field called `Men:Women[25-34]`.
@@ -132,15 +143,23 @@ Find the ratio of men's and women's average years of education.
 4. Drag the new field to the text card in the **Marks** shelf.
 5. Change the aggregation from `SUM` to `AVG`.
 
-**Solution:**
 
-<div class="img-center"> 
+#### Solution
+
+<!-- <div class="img-center"> 
 
 ![](/gif/docs/snowflake-create-query-sampleee-14.gif)
 
-</div>
+</div> -->
 
-**Findings:**  
+<ReactPlayerWrapper 
+    controls
+    url='https://youtu.be/lrq4mzzWxKU' 
+/>
+
+
+
+#### Findings
 
 In Russia, the ratio is 0.9821, which means men have an average of 0.98 years of education for every year a woman is educated.
 
@@ -149,11 +168,11 @@ In Russia, the ratio is 0.9821, which means men have an average of 0.98 years of
 
 In this example, we'll create a calculated field for the average across women and men in the age group 25-34.
 
-**Problem:**
+#### Problem
 
 Find the country with the highest average in the 25-34 age group.
 
-**Steps:**
+#### Steps
 
 1. Go to the **Average** worksheet. 
 2. Create a calculated field called `25-34`.
@@ -166,14 +185,23 @@ Find the country with the highest average in the 25-34 age group.
 5. Change the aggregation from `SUM` to `AVG`.
 6. Sort the data in descending order to get the highest average at the top.
 
-**Solution:**
 
+#### Solution
+<!-- 
 <div class="img-center"> 
 
 ![](/gif/docs/snowflake-create-query-sampleee-15.gif)
 
-</div>
+</div> -->
 
-**Findings:**  
+
+<ReactPlayerWrapper 
+    controls
+    url='https://youtu.be/2ZX1zoUDvt8' 
+/>
+
+
+
+#### Findings
 
 The country with the highest average (13.397) is the United States.

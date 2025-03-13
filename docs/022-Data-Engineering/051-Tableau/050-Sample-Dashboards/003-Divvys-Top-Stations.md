@@ -34,7 +34,7 @@ Find:
 
 ## Building the dashboard
 
-**Steps:** 
+#### Steps
 
 1. Open the workbook and click **New dashboard**.  
 2. Name it **Top Stations Activity Dashboard**.  
@@ -48,7 +48,7 @@ Find:
 10. Hide worksheet titles in the dashboard.  
 11. Click each graph, then click **Use as Filter** (funnel icon) to make them interactive.  
 
-**Solution:**
+#### Solution
 
 <!-- <div class="img-center"> 
 
@@ -63,14 +63,14 @@ Find:
 
 
 
-**Findings:** 
+#### Findings
 
 - **Streeter Dr and Grand Ave** is the most popular station with **21,468 trips**. 
 - **Daley Center Plaza** has the most trips starting at **5 PM**.
 
 ## Including User KPIs
 
-**Steps:** 
+#### Steps
 
 1. Add `User Type Counts` above the station map and hide the title.  
 2. Ensure the table fits the available space.  
@@ -85,7 +85,7 @@ Find:
 11. Click **OK**.
 12. Go back to the dashboard and hover to the time chart for `Starts by Hour`. The tooltip should now display trip counts details.
 
-**Solution:**
+#### Solution
 
 <!-- <div class="img-center"> 
 
@@ -99,6 +99,6 @@ Find:
 />
 
 
-**Findings:** 
+#### Findings
 
 Based on the trip count details in the tooltip when hovering over **11 AM** in the `Starts by Hour` graph, there are **47,917 subscribers** who took a trip at that time. 

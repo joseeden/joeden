@@ -144,7 +144,7 @@ In the following examples, we'll use a dataset that tracks video game sales from
 
 In this example, we'll use the video game sales dataset to compare global and European sales of Atari over time.  
 
-**Steps:**  
+### Steps
 
 1. Set `Release Year` as the column and `Global Sales` as the row.  
 2. Drag `EU Sales` to the right until a dotted line appears.  
@@ -157,7 +157,7 @@ In this example, we'll use the video game sales dataset to compare global and Eu
 9. Drag `Publisher` to **Filters** and select **Atari** only.  
 
 
-**Solution:**
+#### Solution
 
 <!-- <div class="img-center"> 
 
@@ -170,7 +170,7 @@ In this example, we'll use the video game sales dataset to compare global and Eu
     url='https://youtu.be/5lQYGs49MCs' 
 />
 
-**Insights:**  
+#### Insights
 
 The graph shows Atari’s peak sales in the early 2000s, followed by a sharp decline, leading to bankruptcy in 2013.
 
@@ -179,7 +179,7 @@ The graph shows Atari’s peak sales in the early 2000s, followed by a sharp dec
 
 Using the previous dataset, we'll filter by genre to find the "Puzzle" video game sales in North America.
 
-**Steps:**  
+### Steps
 
 1. Drag `Measure Values` onto `EU Sales` in the rows.  
 2. This replaces `EU Sales` with `Measure Values`.  
@@ -195,7 +195,7 @@ Using the previous dataset, we'll filter by genre to find the "Puzzle" video gam
    - Filter `Publisher` to **Nintendo**.  
    - Filter `Genre` to **Puzzle**.  
 
-**Solution:**
+#### Solution
 
 <!-- <div class="img-center"> 
 
@@ -209,7 +209,7 @@ Using the previous dataset, we'll filter by genre to find the "Puzzle" video gam
 />
 
 
-**Insights:**  
+#### Insights
 
 The graph shows a major spike in **1989** due to **Tetris**, which made up almost **90%** of puzzle game sales that year.
 
@@ -219,20 +219,27 @@ This example uses a different workbook: [4_2_video_games_sales_global.twbx](http
 
 Create a bar chart and apply three different **Dimensions** to color.
 
+#### Steps
+
 1. Drag `Global Sales` to **Rows**, while `Release Year` to **Columns.**
 2. Center the graph title and change font size to 16.
 3. Drag `Name` to the Color card in the **Marks** shelf.
 4. Ignore the warning and press "Add all members".
 5. Drag `Genre` to the Color card to replace `Name`.
 
-**Solution:**
-
+#### Solution
+<!-- 
 <div class="img-center"> 
 
 ![](/gif/docs/snowflake-create-query-sampleee-28.gif)
 
-</div>
+</div> -->
 
-**Insights:**  
+<ReactPlayerWrapper 
+    controls
+    url='https://youtu.be/aXCKKLsVD2k' 
+/>
+
+#### Insights
 
 Based on the Color card, we can see the that the `Genre` is the only dimension that adds extra information to the graph.

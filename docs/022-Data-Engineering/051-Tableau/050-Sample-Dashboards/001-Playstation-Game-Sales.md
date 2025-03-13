@@ -40,7 +40,7 @@ The steps below have already been completed in the workbook. To try them yoursel
 
 Create a dashboard called **Playstation Overview 1994**. 
 
-**Steps:**  
+#### Steps
 
 1. Drag **Platform Analysis Over Time** to the empty dashboard.  
 2. Click the **Legend** box, then the small arrow.  
@@ -53,7 +53,15 @@ Create a dashboard called **Playstation Overview 1994**.
 6. Make the **Genre** legend floating and place it next to **Top Video Games**.  
 
 
-**Solution:**
+#### Solution
+<!-- 
+<div class="img-center"> 
+
+![](/gif/docs/snowflake-create-query-sampleee-29.gif)
+
+</div>
+ -->
+
 
 <div class="img-center"> 
 
@@ -62,7 +70,8 @@ Create a dashboard called **Playstation Overview 1994**.
 </div>
 
 
-**Insights:**  
+
+#### Insights
 
 - **PS2** was the most popular platform.  
 - **Grand Theft Auto** was the top-selling action game.
@@ -72,7 +81,7 @@ Create a dashboard called **Playstation Overview 1994**.
 Continuing on the previous example, we'll add filters to the dashboard to focus on specific games and genres. Our goal is to find how many copies (in millions) **Sony Computer Entertainment** sold for the **PS2** in the **Racing** genre.  
 
 
-**Steps:**  
+#### Steps
 
 1. Toggle **Show dashboard title** (lower left).  
 2. Center the title and set font size to **20**.  
@@ -97,14 +106,20 @@ Finding the Sales for PS2 Racing Games:
 12. In **Sales by Genre**, click the **Racing** section.  
 13. Hover over **PS2** in **Sales by Platform**.  
 
-**Solution:**
+#### Solution
 
-<div class="img-center"> 
+<!-- <div class="img-center"> 
 
 ![](/gif/docs/snowflake-create-query-sampleee-30.gif)
 
-</div>
+</div> -->
 
-**Insights:**  
+<ReactPlayerWrapper 
+    controls
+    url='https://youtu.be/lD_8Jkr4x48' 
+/>
+
+
+#### Insights
 
 Sony Computer Entertainment sold **35.41 million** copies for the **PS2** in the **Racing** genre.
