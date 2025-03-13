@@ -501,11 +501,14 @@ footer.footer {
   height: 100%;    
 }
 
-.video-wrapper > div {
-  // width: 100% !important;
-  // height: 100% !important;
-  width: 640px;
-  height: 360px;
+.video-container > div {
+  width: 640px !important;
+  height: 360px !important;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
 }
 
 @media (max-width: 600px) {
