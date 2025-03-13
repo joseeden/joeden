@@ -33,7 +33,7 @@ We'll build a story to answer two questions:
 - On which platform did **Call of Duty: Black Ops** sell more—PlayStation or Xbox?  
 - What was the **best-selling PS2 simulation game** published by **Electronic Arts**?  
 
-**Steps:**  
+#### Steps
 
 1. Open the workbook and click **New Story** at the bottom.  
 2. Rename it to **Competitor Analysis 1994 - 2010**.  
@@ -54,7 +54,7 @@ Finding the Best-Selling PS2 Simulation Game by EA:
 11. In **Top Video Games**, check the highest-selling game.  
 
 
-**Solution:**
+#### Solution
 <!-- 
 <div class="img-center"> 
 
@@ -67,9 +67,9 @@ Finding the Best-Selling PS2 Simulation Game by EA:
     url='https://youtu.be/XnkHNV0yuaE' 
 />
 
-<br></br>
 
-**Insights:**  
+
+#### Insights
 
 - **Call of Duty: Black Ops** sales:  
   - **Xbox:** 14.64 million  
