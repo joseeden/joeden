@@ -119,8 +119,52 @@ To make videos auto-play, add `playing`:
 
 ### Modify Style (Customize) 
 
+ReactPlayer is a component, it does not expose a `.react-player` class by default. It is not a raw `div`, so it cannot be styled directly. The correct way would be to wrap it in a container (or inside a `div`) and then control the styles there.
 
+1. Create a `src/components/ReactPlayerWrapper.js`
 
+    ```js
+    import React from 'react';
+    import ReactPlayer from 'react-player';
+
+    const ReactPlayerWrapper = (props) => {
+        return (
+            <div className="video-container">
+                <ReactPlayer {...props} />
+            </div>
+        );
+    };
+
+    export default ReactPlayerWrapper;
+    ```
+
+2. In your markdown, import the wrapper and reference it.
+
+    ```bash
+    import ReactPlayerWrapper from '@site/src/components/documentation/ReactPlayerWrapper';
+
+    <ReactPlayerWrapper 
+        controls
+        url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
+    />
+    ```
+
+3. You can now style the component in a separate CSS or SCSS file, like this:
+
+    ```scss
+    // Video player section
+    .video-container {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    }
+
+    .video-container > div {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    }
+    ```
 
 ## Using `iframe`
 

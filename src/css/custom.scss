@@ -500,7 +500,7 @@ footer.footer {
   aspect-ratio: 16 / 9;
 }
 
-/* Small screens (≤600px) */
+// Small screens (≤600px) 
 @media (max-width: 600px) {
   .video-container {
     max-width: 100%;
@@ -524,7 +524,7 @@ footer.footer {
   }
 }
 
-/* Medium to large screens (601px - 1400px) */
+// Medium to large screens (601px - 1400px) 
 @media (min-width: 601px) and (max-width: 1400px) {
   .video-container {
     max-width: 100%;
@@ -543,7 +543,7 @@ footer.footer {
   }
 }
 
-/* Extra large screens (≥1401px) */
+// Extra large screens (≥1401px) 
 @media (min-width: 1401px) {
   .video-container {
     max-width: 640px;
