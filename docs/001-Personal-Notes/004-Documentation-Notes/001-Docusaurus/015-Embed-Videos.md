@@ -12,6 +12,8 @@ import ReactPlayerWrapper from '@site/src/components/documentation/ReactPlayerWr
 
 ## Using `react-player`
 
+### Install 
+
 1. Install `react-player`.
 
     - Use NPM to install:
@@ -92,7 +94,7 @@ import ReactPlayerWrapper from '@site/src/components/documentation/ReactPlayerWr
         />
 
 
-## Play controls
+### Play controls
 
 To add play/pause button, plus other video settings, include `controls`:
 
@@ -103,7 +105,7 @@ To add play/pause button, plus other video settings, include `controls`:
 />
 ```
 
-## Auto-Play 
+### Auto-Play 
 
 To make videos auto-play, add `playing`:
 
@@ -114,6 +116,10 @@ To make videos auto-play, add `playing`:
     url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
 />
 ```
+
+### Modify Style (Customize) 
+
+
 
 ## Using `iframe`
 
