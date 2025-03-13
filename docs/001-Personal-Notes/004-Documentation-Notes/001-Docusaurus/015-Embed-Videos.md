@@ -69,12 +69,12 @@ import ReactPlayer from 'react-player'
     - Youtube video:
 
         ```bash
-        <ReactPlayer width='100%' height='100%' url='https://www.youtube.com/watch?v=XGxIE1hr0w4' />
+        <ReactPlayer width='560' height='315' url='https://www.youtube.com/watch?v=XGxIE1hr0w4' />
         ```
-
+  
         Output:
 
-        <ReactPlayer width='100%' height='100%' url='https://www.youtube.com/watch?v=XGxIE1hr0w4' />
+        <ReactPlayer width='560' height='315' url='https://www.youtube.com/watch?v=XGxIE1hr0w4' />
 
 4. Optional.
 
@@ -83,8 +83,8 @@ import ReactPlayer from 'react-player'
         ```bash
         <ReactPlayer 
             url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
-            width='100%' 
-            height='100%' 
+            width='560'
+            height='315' 
         />
         ```
 
@@ -94,8 +94,8 @@ import ReactPlayer from 'react-player'
         <ReactPlayer 
             controls
             url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
-            width='100%' 
-            height='100%'             
+            width='560'
+            height='315'              
         />
         ```
 
@@ -104,8 +104,8 @@ import ReactPlayer from 'react-player'
         <ReactPlayer 
             controls
             url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
-            width='100%' 
-            height='100%'             
+            width='560'
+            height='315'             
         />
 
 5. Adding sample un-indented video:
@@ -113,8 +113,8 @@ import ReactPlayer from 'react-player'
 <ReactPlayer 
     controls
     url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
-    width='100%' 
-    height='100%'             
+    width='560'
+    height='315'       
 />
 
 ## Auto-Play 
