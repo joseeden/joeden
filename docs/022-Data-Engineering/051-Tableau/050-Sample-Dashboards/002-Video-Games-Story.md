@@ -7,8 +7,8 @@ tags:
 - Data Visualization
 - Tableau
 sidebar_position: 2
-last_update:
-  date: 5/21/2024
+# last_update:
+#   date: 5/21/2024
 ---
 
 
@@ -66,6 +66,8 @@ Finding the Best-Selling PS2 Simulation Game by EA:
     controls
     url='https://youtu.be/XnkHNV0yuaE' 
 />
+
+<br></br>
 
 **Insights:**  
 
