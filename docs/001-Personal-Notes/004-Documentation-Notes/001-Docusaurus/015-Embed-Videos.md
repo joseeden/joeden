@@ -108,7 +108,14 @@ import ReactPlayer from 'react-player'
             height='100%'             
         />
 
+5. Adding sample un-indented video:
 
+<ReactPlayer 
+    controls
+    url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
+    width='100%' 
+    height='100%'             
+/>
 
 ## Auto-Play 
 

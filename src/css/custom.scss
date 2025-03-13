@@ -444,19 +444,18 @@ footer.footer {
     width: 100%;
     padding-left: 2px;
     padding-right: 2px;
-    max-width: 100%
+    height: auto !important;
+    max-width: 100% !important;
   }
 
   .theme-doc-markdown iframe,
   .theme-doc-markdown video,
-  .theme-doc-markdown .react-player {
-    max-width: 100% !important;
-    width: 100% !important;
-    height: auto !important;
-  }
-
   .react-player {
     overflow-x: hidden;
+    max-width: 100% !important;
+    width: 100% !important;
+    // height: auto !important;    
+    height: 100% !important;    
   }
 
   footer.footer {
