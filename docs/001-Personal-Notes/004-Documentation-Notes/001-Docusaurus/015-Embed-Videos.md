@@ -87,39 +87,23 @@ import ReactPlayer from 'react-player'
     />
     ```
 
-    Output:
-
-
-    <ReactPlayer 
-        controls
-        url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
-    />
-
-    <ReactPlayer 
-        controls
-        url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
-        width="560" 
-        height="315"             
-    />
-
 5. Sample:
 
+    Unindented: 
+    
 <ReactPlayer 
     controls
     url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
 />
 
-<ReactPlayer 
-    controls
-    url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
-    width="560" 
-    height="315"             
-/>
 
-<!-- <ReactPlayerWrapper 
-    controls
-    url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
-/> -->
+    Indented:
+
+    <ReactPlayer 
+        controls
+        url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
+    />
+
 
 ## Auto-Play 
 
