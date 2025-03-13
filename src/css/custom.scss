@@ -500,6 +500,11 @@ footer.footer {
     max-width: 100%;
     height: auto;
   }
+
+  .video-container > div {
+    width: 100%;
+    height: 100%;
+  }  
 }
 
 @media (min-width: 1024px) {
@@ -509,8 +514,8 @@ footer.footer {
   }
 
   .video-container > div {
-    width: 640px !important;
-    height: 360px !important;
+    width: 640px;
+    height: 360px;
   }
   
   .video-container iframe {
