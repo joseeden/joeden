@@ -162,3 +162,12 @@ Output:
   referrerpolicy="strict-origin-when-cross-origin" 
   allowfullscreen
 ></iframe>
+
+
+## Reference
+
+- [react-player](https://github.com/cookpete/react-player)
+- [Example of video embedded in Docusaurus: Podman](https://podman-desktop.io/blog/podman-desktop-release-1.1)
+- [Example of video embedded in Docusaurus: Podman (Github)](https://github.com/podman-desktop/podman-desktop/blob/62d5f07f6b7ac3c271cc315b61e5da1d5b260b84/website/blog/2023-06-08-release-1.1.md?plain=1#L11)
+- [Example of video embedded in Docusaurus: LTC](https://learntocloud.guide/phase4/)
+- [Example of video embedded in Docusaurus: LTC (Github)](https://github.com/learntocloud/learn-to-cloud/blob/main/docs/phase4/README.md)

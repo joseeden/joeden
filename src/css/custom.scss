@@ -386,6 +386,16 @@ footer.footer {
   display: none !important;
 }
 
+.theme-doc-markdown iframe,
+.theme-doc-markdown video,
+.react-player {
+  overflow-x: hidden;
+  max-width: 100% !important;
+  width: 100% !important;
+  height: auto !important;    
+  // height: 100% !important;    
+}
+
 /* Styles for small mobile screens */
 @media (max-width: 600px) {
 
