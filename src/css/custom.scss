@@ -492,12 +492,14 @@ footer.footer {
   max-width: 100%;
   width: 100%;
   height: auto;
+  overflow: hidden;
 }
 
 .video-container > div {
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
+  transform-origin: center;
 }
 
 // Small screens (≤600px) 
@@ -505,6 +507,7 @@ footer.footer {
   .video-container {
     max-width: 100%;
     height: auto !important;
+    overflow: hidden; 
   }
 
   .video-container > div {
@@ -529,6 +532,7 @@ footer.footer {
   .video-container {
     max-width: 100%;
     height: auto;
+    overflow: hidden; 
   }
 
   .video-container > div {
@@ -550,6 +554,7 @@ footer.footer {
     // height: 350px;
     max-width: 100%;
     height: auto;
+    overflow: hidden;
   }
 
   .video-container > div {
