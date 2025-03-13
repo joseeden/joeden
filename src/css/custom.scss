@@ -488,7 +488,6 @@ footer.footer {
 
 
 // Video player section
-
 .video-wrapper {
   position: relative;
   width: 100%;  
@@ -497,24 +496,24 @@ footer.footer {
   overflow: hidden;
 }
 
-// .video-wrapper .react-player {
-//   width: 100%;     
-//   height: 100%;    
-// }
+.video-wrapper .react-player {
+  width: 100%;     
+  height: 100%;    
+}
 
-// For smaller screens: Use a responsive aspect ratio for fluid resizing
 @media (max-width: 600px) {
   .video-wrapper {
-      max-width: 100%;
-      height: auto;
-      aspect-ratio: 16 / 9;  
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    aspect-ratio: unset;
   }
 }
 
-// Regular and big screens (width 560px and height 315px)
 @media (min-width: 601px) {
   .video-wrapper {
-      max-width: 640px;   
-      height: 360px;      
+    max-width: 640px;   
+    height: 360px;      
+    padding-bottom: 0;
   }
 }
