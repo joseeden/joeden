@@ -96,11 +96,10 @@ Navigation buttons make it easy to switch between dashboards, especially on mobi
 
 To add a navigation button in the **Incident** dashboard that links to the **Requests** and **Problems** dashboards, follow these steps:  
 
-<div class="img-center"> 
-
-![](/gif/docs/snowflake-create-query-sampleee-43.gif)
-
-</div>
+<ReactPlayerWrapper 
+    controls
+    url='https://youtu.be/RduZe6t0cvo?si=178OSR9ZQHSMT56_' 
+/>
 
 Steps:
 
