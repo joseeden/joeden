@@ -146,8 +146,8 @@ An alternative way which does not require any additional package is through the 
 
 ```bash
 <iframe 
-  width="100%" 
-  height="100%" 
+  width="560" 
+  height="315"
   src="https://www.youtube.com/embed/XGxIE1hr0w4?si=acocw4T3zdTqd3V-" 
   title="YouTube video player" 
   frameborder="0" 
@@ -162,8 +162,8 @@ Note that "full screen mode" is not allowed when using this.
 Output:
 
 <iframe 
-  width="100%" 
-  height="100%" 
+  width="560" 
+  height="315"
   src="https://www.youtube.com/embed/XGxIE1hr0w4?si=acocw4T3zdTqd3V-" 
   title="YouTube video player" 
   frameborder="0" 
