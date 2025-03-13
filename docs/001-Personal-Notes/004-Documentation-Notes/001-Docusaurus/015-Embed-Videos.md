@@ -76,18 +76,7 @@ import ReactPlayer from 'react-player'
     />
     ```
   
-4. Add play controls:
-
-    ```bash
-    <ReactPlayer 
-        controls
-        url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
-        width='100%'
-        height='100%'              
-    />
-    ```
-
-5. Sample:
+4. Sample:
 
     Unindented: 
     
@@ -96,7 +85,6 @@ import ReactPlayer from 'react-player'
     url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
 />
 
-
     Indented:
 
     <ReactPlayer 
@@ -104,6 +92,17 @@ import ReactPlayer from 'react-player'
         url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
     />
 
+
+## Play controls
+
+To add play/pause button, plus other video settings, include `controls`:
+
+```bash
+<ReactPlayer 
+    controls
+    url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
+/>
+```
 
 ## Auto-Play 
 
@@ -114,8 +113,6 @@ To make videos auto-play, add `playing`:
     playing
     controls
     url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
-    width='100%'
-    height='100%'
 />
 ```
 

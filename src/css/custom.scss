@@ -453,8 +453,8 @@ footer.footer {
     .react-player {
       overflow-x: hidden;
       max-width: 100% !important;
-      width="560" 
-      height="315"    
+      width: "560";
+      height: "315";    
       // height: 100% !important;    
     }
 
@@ -468,6 +468,14 @@ footer.footer {
       position: relative; 
       margin-left: auto; 
     }
+}
+
+.react-player {
+  overflow-x: hidden;
+  max-width: 100% !important;
+  width: 100% !important;
+  height: auto !important;    
+  // height: 100% !important;    
 }
 
 // Styles for bigger screen sizes
