@@ -9,7 +9,7 @@ tags:
 ---
 
 import ReactPlayer from 'react-player'
-
+import ReactPlayerWrapper from '@site/src/components/documentation/ReactPlayerWrapper';
 
 ## Using `react-player`
 
@@ -80,16 +80,20 @@ import ReactPlayer from 'react-player'
 
     Unindented: 
     
-<ReactPlayer 
+<ReactPlayerWrapper 
     controls
     url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
+    width='100%'
+    height='100%'       
 />
 
     - Indented:
 
-        <ReactPlayer 
+        <ReactPlayerWrapper 
             controls
             url='https://www.youtube.com/watch?v=XGxIE1hr0w4' 
+            width='100%'
+            height='100%'       
         />
 
 
@@ -135,18 +139,6 @@ An alternative way which does not require any additional package is through the 
 
 Note that "full screen mode" is not allowed when using this.
 
-Output:
-
-<iframe 
-  width="560" 
-  height="315"
-  src="https://www.youtube.com/embed/XGxIE1hr0w4?si=acocw4T3zdTqd3V-" 
-  title="YouTube video player" 
-  frameborder="0" 
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-  referrerpolicy="strict-origin-when-cross-origin" 
-  allowfullscreen
-></iframe>
 
 
 ## Reference

@@ -4,7 +4,7 @@ import ReactPlayer from 'react-player';
 
 const ReactPlayerWrapper = (props) => {
     return (
-        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+        <div className="video-container">
             <ReactPlayer {...props} />
         </div>
     );
