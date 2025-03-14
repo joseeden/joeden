@@ -166,7 +166,7 @@ Join the `Returns` table:
 
 - Open **Orders 2016-2020**.  
 - Drag `Returns` to the right and drop it.  
-- A join icon will appear—click it and select "Left Join".  
+- A join icon will appear — click it and select "Left Join".  
 - Go to Sheet 1 to ensure the row count remains unchanged.  
 
 Create a chart for returned orders:
@@ -190,3 +190,43 @@ Create a chart for returned orders:
 #### Findings 
 
 1. The **West** region has the highest number of orders but also the most returns each year.
+
+
+## Adding a Join 
+
+We'll enhance our analysis by adding a dataset with regional sales representatives.
+
+#### Problem 
+
+1. Determine the sales representative who has the least amount of return orders.
+
+#### Steps
+
+Go back to the Datasource tab to do the second join:
+
+- Double-click **Orders 2016-2020**.  
+- Drag `Sales Reps` to the right and drop it.  
+- Click the join icon, select "Left Join," and join on "Region." 
+
+Create the chart for the returned orders per sales representative:
+
+- Create a new worksheet and rename it **"Returned Orders by Sales Rep"**.  
+- Drag `Orders 2016-2020` to Columns and `Order Date` to Rows.  
+- Set Marks type to "Bar".  
+- Drag `Person` to Color in the Marks card.  
+- Drag `Returned` to Filters → Select "Yes" → Click OK.  
+- Click **Label** in the Marks card → Enable **Show Marks Label**.  
+- Change the view from **"Standard"** to **"Entire View"**.  
+
+
+#### Solution 
+
+<ReactPlayerWrapper 
+    controls
+    url='https://youtu.be/UpS2lG29wUw' 
+/>
+
+
+#### Findings 
+
+1. **Cassandra Brandow** has the lowest number of return orders
