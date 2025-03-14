@@ -85,3 +85,52 @@ You can set default properties to maintain consistency across your workbooks.
 
 - Adjust aggregation, formatting, colors, and more.  
 - For example, set sales and profit values to always display as currency without decimals.
+
+## Change Data Properties
+
+### Dimension to Measures 
+
+To change a field from a dimension to a measure, simply drag it from the Measures section to the Dimensions section. The icon will switch from green to blue.
+
+<div class="img-center"> 
+
+![](/gif/docs/tableau-change-data-type.gif)
+
+</div>
+
+Remember:
+
+- Measures: Green
+- Dimensions: Blue
+
+### Changing Data Types 
+
+To modify the data type, right-click the field, select **Change Data Type**, and then choose the desired type.
+
+<div class="img-center"> 
+
+![](/gif/docs/tableau-change-data-type.gif)
+
+</div>
+
+
+### Setting Aliases
+
+To set an alias, right-click on the field, choose **Aliases...**, and double-click the value you want to change.
+
+
+<div class="img-center"> 
+
+![](/gif/docs/tableau-set-alias.gif)
+
+</div>
+
+### Set Default Properties
+
+To set default properties, right-click on the field, select **Default Properties**, and choose the property you want to modify.
+
+<div class="img-center"> 
+
+![](/gif/docs/tableau-set-default.gif)
+
+</div>
