@@ -4,6 +4,7 @@
 <workbook original-version='18.1' source-build='2024.3.3 (20243.25.0114.1153)' source-platform='win' version='18.1' xml:base='https://localhost' xmlns:user='http://www.tableausoftware.com/xml/user'>
   <document-format-change-manifest>
     <AnimationOnByDefault />
+    <MapboxVectorStylesAndLayers />
     <MarkAnimation />
     <ObjectModelEncapsulateLegacy />
     <ObjectModelExtractV2 />
@@ -13,7 +14,7 @@
     <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
     <WindowsPersistSimpleIdentifiers />
   </document-format-change-manifest>
-  <repository-location derived-from='https://public.tableau.com/workbooks/2_1_aliases_16136399120680?rev=1.0' id='2_1_aliases_16136399120680' path='/workbooks' revision='1.0' />
+  <repository-location derived-from='https://public.tableau.com/workbooks/2_3_geo_16136400238890?rev=1.0' id='2_3_geo_16136400238890' path='/workbooks' revision='1.0' />
   <preferences>
     <preference name='ui.encoding.shelf.height' value='24' />
     <preference name='ui.shelf.height' value='26' />
@@ -486,6 +487,7 @@
         </metadata-records>
       </connection>
       <aliases enabled='yes' />
+      <column aggregation='Sum' caption='Zipcode' datatype='integer' default-format='*00000' name='[Code]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
       <column caption='Country' datatype='string' name='[Country/Region]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
       <column caption='Customer ID - Prefix' datatype='string' hidden='true' name='[Customer ID - Split 1]' role='dimension' type='nominal' user:SplitFieldIndex='1' user:SplitFieldOrigin='[federated.0cq0ktk1qx6po4103qa3f0jtjpyq].[Customer ID]'>
         <calculation class='tableau' formula='TRIM( SPLIT( [Customer ID], &quot;-&quot;, 1 ) )' />
@@ -493,11 +495,13 @@
       <column caption='Customer ID' datatype='string' datatype-customized='true' name='[Customer ID - Split 2]' role='dimension' type='nominal' user:SplitFieldIndex='2' user:SplitFieldOrigin='[federated.0cq0ktk1qx6po4103qa3f0jtjpyq].[Customer ID]'>
         <calculation class='tableau' formula='SPLIT( [Customer ID], &quot;-&quot;, 2 )' />
       </column>
-      <column aggregation='CountD' caption='Customer ID (full)' datatype='string' default-role='measure' default-type='quantitative' hidden='true' name='[Customer ID]' role='dimension' type='nominal' />
+      <column aggregation='CountD' caption='Customer ID (full)' datatype='string' hidden='true' name='[Customer ID]' role='dimension' type='nominal' />
       <column caption='City' datatype='string' name='[Local]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
       <column caption='Product Name (Manufacturing)' datatype='string' name='[Product Name (Mfg)]' role='dimension' type='nominal' />
-      <column datatype='real' default-format='c&quot;S$&quot;#,##0;-&quot;S$&quot;#,##0' name='[Profit]' role='measure' type='quantitative' />
+      <column datatype='real' default-format='c&quot;$&quot;#,##0;-&quot;$&quot;#,##0' name='[Profit]' role='measure' type='quantitative' />
       <column datatype='integer' name='[Row ID]' role='dimension' type='ordinal' />
+      <column caption='State' datatype='string' name='[ST]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column datatype='real' default-format='c&quot;$&quot;#,##0;-&quot;$&quot;#,##0' name='[Sales]' role='measure' type='quantitative' />
       <column datatype='string' name='[Segment]' role='dimension' type='nominal'>
         <aliases>
           <alias key='&quot;Consumer&quot;' value='People' />
@@ -509,13 +513,22 @@
       <column caption='Orders 2018' datatype='table' name='[__tableau_internal_object_id__].[Orders!2018_2573932C0EA248E89B6912F3D6264368]' role='measure' type='quantitative' />
       <column-instance column='[Segment]' derivation='None' name='[none:Segment:nk]' pivot='key' type='nominal' />
       <drill-paths>
-        <drill-path name='Country, City'>
+        <drill-path name='Location'>
           <field>[Country/Region]</field>
+          <field>[ST]</field>
           <field>[Local]</field>
+          <field>[Code]</field>
+        </drill-path>
+        <drill-path name='Productline'>
+          <field>[Category]</field>
+          <field>[Sub-Category]</field>
+          <field>[Manufacturer]</field>
+          <field>[Product Name]</field>
+          <field>[Product ID]</field>
         </drill-path>
       </drill-paths>
       <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
-        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp/#TableauTemp_0qool6l0kevutt15ecmcv0xjhc6s.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='12/14/2020 03:30:31 PM' username=''>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='Data/TableauTemp/#TableauTemp_0owb688147wmy81b8fars179486u.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='12/14/2020 03:32:25 PM' username=''>
           <relation type='collection'>
             <relation name='Orders!2018_2573932C0EA248E89B6912F3D6264368' table='[Extract].[Orders!2018_2573932C0EA248E89B6912F3D6264368]' type='table' />
             <relation name='Mfg_A3097662EA954B02BBB9BBCB5A9792F3' table='[Extract].[Mfg_A3097662EA954B02BBB9BBCB5A9792F3]' type='table' />
@@ -892,13 +905,13 @@
       <style>
         <style-rule element='mark'>
           <encoding attr='color' field='[none:Segment:nk]' type='palette'>
-            <map to='#baffc9'>
-              <bucket>&quot;Home Office&quot;</bucket>
-            </map>
-            <map to='#ffb3ba'>
+            <map to='#4e79a7'>
               <bucket>&quot;Corporate&quot;</bucket>
             </map>
-            <map to='#ffdfba'>
+            <map to='#59a14f'>
+              <bucket>&quot;Home Office&quot;</bucket>
+            </map>
+            <map to='#edc948'>
               <bucket>&quot;Consumer&quot;</bucket>
             </map>
           </encoding>
@@ -968,16 +981,19 @@
       </object-graph>
     </datasource>
   </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
   <worksheets>
     <worksheet name='Customer Segmentation'>
-      <repository-location derived-from='https://public.tableau.com/workbooks/2_1_aliases_16136399120680/CustomerSegmentation?rev=' id='41711983' path='/workbooks/2_1_aliases_16136399120680' revision='' />
+      <repository-location derived-from='https://public.tableau.com/workbooks/2_3_geo_16136400238890/CustomerSegmentation?rev=' id='41712030' path='/workbooks/2_3_geo_16136400238890' revision='' />
       <table>
         <view>
           <datasources>
             <datasource caption='Superstore' name='federated.0cq0ktk1qx6po4103qa3f0jtjpyq' />
           </datasources>
           <datasource-dependencies datasource='federated.0cq0ktk1qx6po4103qa3f0jtjpyq'>
-            <column datatype='real' name='[Sales]' role='measure' type='quantitative' />
+            <column datatype='real' default-format='c&quot;$&quot;#,##0;-&quot;$&quot;#,##0' name='[Sales]' role='measure' type='quantitative' />
             <column datatype='string' name='[Segment]' role='dimension' type='nominal'>
               <aliases>
                 <alias key='&quot;Consumer&quot;' value='People' />
@@ -1007,42 +1023,8 @@
       </table>
       <simple-id uuid='{951C9873-7CDA-4F83-AF1B-250BA43A5F4D}' />
     </worksheet>
-    <worksheet name='Number of Rows'>
-      <repository-location derived-from='https://public.tableau.com/workbooks/2_1_aliases_16136399120680/NumberofRows?rev=' id='41711984' path='/workbooks/2_1_aliases_16136399120680' revision='' />
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='Superstore' name='federated.0cq0ktk1qx6po4103qa3f0jtjpyq' />
-          </datasources>
-          <datasource-dependencies datasource='federated.0cq0ktk1qx6po4103qa3f0jtjpyq'>
-            <column caption='Orders 2018' datatype='table' name='[__tableau_internal_object_id__].[Orders!2018_2573932C0EA248E89B6912F3D6264368]' role='measure' type='quantitative' />
-            <column-instance column='[__tableau_internal_object_id__].[Orders!2018_2573932C0EA248E89B6912F3D6264368]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:Orders!2018_2573932C0EA248E89B6912F3D6264368:qk]' pivot='key' type='quantitative' />
-          </datasource-dependencies>
-          <aggregation value='true' />
-        </view>
-        <style />
-        <panes>
-          <pane selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Automatic' />
-            <encodings>
-              <text column='[federated.0cq0ktk1qx6po4103qa3f0jtjpyq].[__tableau_internal_object_id__].[cnt:Orders!2018_2573932C0EA248E89B6912F3D6264368:qk]' />
-            </encodings>
-            <style>
-              <style-rule element='mark'>
-                <format attr='mark-labels-show' value='true' />
-              </style-rule>
-            </style>
-          </pane>
-        </panes>
-        <rows />
-        <cols />
-      </table>
-      <simple-id uuid='{6539DD82-AC65-4DD4-93B4-88AD07E01685}' />
-    </worksheet>
-    <worksheet name='Sheet 3'>
+    <worksheet name='Profit/Sales'>
+      <repository-location derived-from='https://public.tableau.com/workbooks/2_3_geo_16136400238890/ProfitSales?rev=' id='41712031' path='/workbooks/2_3_geo_16136400238890' revision='' />
       <table>
         <view>
           <datasources>
@@ -1052,9 +1034,9 @@
             <column caption='Customer ID' datatype='string' datatype-customized='true' name='[Customer ID - Split 2]' role='dimension' type='nominal' user:SplitFieldIndex='2' user:SplitFieldOrigin='[federated.0cq0ktk1qx6po4103qa3f0jtjpyq].[Customer ID]'>
               <calculation class='tableau' formula='SPLIT( [Customer ID], &quot;-&quot;, 2 )' />
             </column>
-            <column aggregation='CountD' caption='Customer ID (full)' datatype='string' default-role='measure' default-type='quantitative' hidden='true' name='[Customer ID]' role='dimension' type='nominal' />
-            <column datatype='real' default-format='c&quot;S$&quot;#,##0;-&quot;S$&quot;#,##0' name='[Profit]' role='measure' type='quantitative' />
-            <column datatype='real' name='[Sales]' role='measure' type='quantitative' />
+            <column aggregation='CountD' caption='Customer ID (full)' datatype='string' hidden='true' name='[Customer ID]' role='dimension' type='nominal' />
+            <column datatype='real' default-format='c&quot;$&quot;#,##0;-&quot;$&quot;#,##0' name='[Profit]' role='measure' type='quantitative' />
+            <column datatype='real' default-format='c&quot;$&quot;#,##0;-&quot;$&quot;#,##0' name='[Sales]' role='measure' type='quantitative' />
             <column-instance column='[Customer ID - Split 2]' derivation='None' name='[none:Customer ID - Split 2:nk]' pivot='key' type='nominal' />
             <column-instance column='[Profit]' derivation='Sum' name='[sum:Profit:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Sales]' derivation='Sum' name='[sum:Sales:qk]' pivot='key' type='quantitative' />
@@ -1076,7 +1058,120 @@
         <rows>[federated.0cq0ktk1qx6po4103qa3f0jtjpyq].[sum:Profit:qk]</rows>
         <cols>[federated.0cq0ktk1qx6po4103qa3f0jtjpyq].[sum:Sales:qk]</cols>
       </table>
-      <simple-id uuid='{8A6FF914-36FC-4E27-88CD-9319A82CA719}' />
+      <simple-id uuid='{E16A79FA-C544-42FC-9DDA-AD28EF6FA4E0}' />
+    </worksheet>
+    <worksheet name='Sales Map'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Superstore' name='federated.0cq0ktk1qx6po4103qa3f0jtjpyq' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0cq0ktk1qx6po4103qa3f0jtjpyq'>
+            <column aggregation='Sum' caption='Zipcode' datatype='integer' default-format='*00000' name='[Code]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+            <column caption='Country' datatype='string' name='[Country/Region]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column datatype='real' default-format='c&quot;$&quot;#,##0;-&quot;$&quot;#,##0' name='[Sales]' role='measure' type='quantitative' />
+            <column-instance column='[Code]' derivation='None' name='[none:Code:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Country/Region]' derivation='None' name='[none:Country/Region:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Sales]' derivation='Sum' name='[sum:Sales:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0cq0ktk1qx6po4103qa3f0jtjpyq].[Longitude (generated)]' field-type='quantitative' max='-10132686.510349162' min='-11124215.14854539' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0cq0ktk1qx6po4103qa3f0jtjpyq].[Latitude (generated)]' field-type='quantitative' max='4222407.1130233267' min='3299866.1599503541' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <size column='[federated.0cq0ktk1qx6po4103qa3f0jtjpyq].[sum:Sales:qk]' />
+              <lod column='[federated.0cq0ktk1qx6po4103qa3f0jtjpyq].[none:Country/Region:nk]' />
+              <lod column='[federated.0cq0ktk1qx6po4103qa3f0jtjpyq].[none:Code:ok]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.2193922996520996' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0cq0ktk1qx6po4103qa3f0jtjpyq].[Latitude (generated)]</rows>
+        <cols>[federated.0cq0ktk1qx6po4103qa3f0jtjpyq].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{9A4BE79E-AD07-4832-BB87-4FEC78A5A95B}' />
+    </worksheet>
+    <worksheet name='Sheet 4'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Superstore' name='federated.0cq0ktk1qx6po4103qa3f0jtjpyq' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0cq0ktk1qx6po4103qa3f0jtjpyq'>
+            <column datatype='string' name='[Category]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Manufacturer]' role='dimension' type='nominal' />
+            <column datatype='real' default-format='c&quot;$&quot;#,##0;-&quot;$&quot;#,##0' name='[Sales]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Sub-Category]' role='dimension' type='nominal' />
+            <column-instance column='[Category]' derivation='None' name='[none:Category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Manufacturer]' derivation='None' name='[none:Manufacturer:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Sub-Category]' derivation='None' name='[none:Sub-Category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Sales]' derivation='Sum' name='[sum:Sales:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0cq0ktk1qx6po4103qa3f0jtjpyq].[sum:Sales:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0cq0ktk1qx6po4103qa3f0jtjpyq].[none:Category:nk] / ([federated.0cq0ktk1qx6po4103qa3f0jtjpyq].[none:Sub-Category:nk] / [federated.0cq0ktk1qx6po4103qa3f0jtjpyq].[none:Manufacturer:nk]))</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{6FC7D3AC-56CA-4FF0-8D46-1B0EF2BEF89F}' />
+    </worksheet>
+    <worksheet name='Sheet 5'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{BAA84695-D291-4802-92E2-7C7F637BA901}' />
     </worksheet>
   </worksheets>
   <windows source-height='30'>
@@ -1106,9 +1201,12 @@
           </strip>
         </edge>
       </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
       <simple-id uuid='{2A083962-D62A-4D30-8319-CF2F628CBD79}' />
     </window>
-    <window class='worksheet' name='Number of Rows'>
+    <window class='worksheet' name='Profit/Sales'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1129,9 +1227,37 @@
           </strip>
         </edge>
       </cards>
-      <simple-id uuid='{32A98941-53C3-4F34-A240-E63F52833691}' />
+      <simple-id uuid='{39F181DC-9A2A-41FA-9EAA-ED3623951128}' />
     </window>
-    <window class='worksheet' maximized='true' name='Sheet 3'>
+    <window class='worksheet' name='Sales Map'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0cq0ktk1qx6po4103qa3f0jtjpyq].[sum:Sales:qk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{FC9D975A-45D6-43FB-802D-270C9CE26062}' />
+    </window>
+    <window class='worksheet' name='Sheet 4'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1152,7 +1278,30 @@
           </strip>
         </edge>
       </cards>
-      <simple-id uuid='{FE224A85-9B2A-43C8-B580-2C8513B27C1B}' />
+      <simple-id uuid='{43375143-CF6D-42C3-8299-90868DCE392B}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 5'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='31'>
+            <card type='columns' />
+          </strip>
+          <strip size='31'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{797F84BB-4630-4DCC-9B65-AE4E0A7B1417}' />
     </window>
   </windows>
 </workbook>
