@@ -6,7 +6,7 @@ tags:
 - Data Science
 - Data Visualization
 - Tableau
-sidebar_position: 14
+sidebar_position: 29
 last_update:
   date: 5/17/2024
 ---

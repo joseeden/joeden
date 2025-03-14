@@ -1,12 +1,12 @@
 ---
-title: "Extract"
-description: "Extract"
+title: "Extracts"
+description: "Extracts"
 tags: 
 - Data Engineering
 - Data Science
 - Data Visualization
 - Tableau
-sidebar_position: 36
+sidebar_position: 53
 last_update:
   date: 5/25/2024
 ---
