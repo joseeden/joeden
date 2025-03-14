@@ -35,7 +35,7 @@ To change a field from a dimension to a measure, simply drag it from the Measure
 
 <div class="img-center"> 
 
-![](/gif/docs/tableau-change-dimension-to-measure.giff)
+![](/gif/docs/tableau-change-dimension-to-measure.gif)
 
 </div>
 
