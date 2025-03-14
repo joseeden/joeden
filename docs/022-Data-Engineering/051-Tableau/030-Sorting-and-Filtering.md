@@ -23,17 +23,47 @@ Filtering helps focus on relevant data by removing unnecessary information.
 
 ## Types of Filters 
 
-There is an order of operations when filter are executed:
+### Order of Operations 
 
-1. Extract filters
-2. Data source filters 
-3. Context filters
-4. Dimension filters
-5. Measure filters
+Tableau processes filters in a specific order, which affects how data will be displayed:
+
+| **Filter Type**            | **Description** |
+|----------------------------|----------------|
+| **Extract Filters**        | Filters data before extracting it from the source. |
+| **Data Source Filters**    | Filters data at the source level, applied to both live and extract connections. |
+| **Context Filters**        | Creates a temporary subset of data that other filters use. |
+| **Dimension Filters**      | Filters based on categorical fields like product type or region. |
+| **Measure Filters**        | Filters based on numerical values, such as sales or profit. |
+| **Table Calculation Filters** | Applied last, after all other filters. |
+
+:::info 
 
 Extract and data source filters occur when you are connecting and loading data sources, which usually happens when you're opening a worksheet.
 
-## Dimension Filters (Blue)  
+:::
+
+### Extract Filters  
+
+Extract filters are used to limit the data when using an extract connection.
+
+- Available only when using an **extract** instead of a **live connection**.  
+- Limits which rows get extracted from the data source.  
+
+### Data Source Filters  
+
+Data source filters restrict data at the source level for both live and extract connections.
+
+- Applied at the source level to restrict data in both live and extract connections.  
+- Useful for limiting what users can see when sharing workbooks.  
+
+### Context Filters  
+
+Context filters set the stage for other filters by narrowing the data scope.
+
+- Acts as a primary filter before other filters.  
+- Improves performance by reducing the data scope.  
+
+### Dimension Filters (Blue)  
 
 Used for filtering categories.  
 
@@ -42,7 +72,7 @@ Used for filtering categories.
 - **Conditional filters** – Filter based on other fields  
 - **Top/Bottom filters** – Show highest or lowest records  
 
-## Measure Filters (Green)  
+### Measure Filters (Green)  
 
 Used for filtering numbers.  
 

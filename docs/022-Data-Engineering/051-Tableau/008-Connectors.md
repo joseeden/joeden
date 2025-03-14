@@ -27,7 +27,7 @@ Tableau provides multiple ways to connect to data:
 
 <div class="img-center"> 
 
-![](/img/docs/Screenshot-2025-03-14-232738.png)
+![](/img/docs/Screenshot-2025-03-14-234154.png)
 
 </div>
 
