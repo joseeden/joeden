@@ -1,12 +1,12 @@
 ---
-title: "Combining Data Tables"
-description: "Combining Data Tables"
+title: "Combining Tables"
+description: "Combining Tables"
 tags: 
 - Data Engineering
 - Data Science
 - Data Visualization
 - Tableau
-sidebar_position: 30
+sidebar_position: 32
 last_update:
   date: 5/25/2024
 ---
@@ -72,20 +72,6 @@ Different join types return different results:
 - **Right Join** – All right table rows + matched left table rows  
 - **Full Outer Join** – All rows from both tables  
 
-**Example:** A left join on Employees and Offices keeps all employees, even those without a matching office.  
-
-```sql
-SELECT e.name, e.department, o.address  
-FROM Employees e  
-LEFT JOIN Offices o ON e.location_id = o.location_id;
-```
-
-**Result:**  
-| Name  | Department | Address       |  
-|-------|-----------|--------------|  
-| Alice | Sales     | New York      |  
-| Bob   | IT        | NULL (Remote) |  
-
 ## Lab: Superstore Dataset  
 
 We'll use a fictional **Superstore** dataset with 7 tables:  
@@ -96,10 +82,10 @@ We'll use a fictional **Superstore** dataset with 7 tables:
 
 ## Using Union 
 
-Download the excel sheets here:
+Download the files here:
 
 - [Superstore (2016-2020).xlsx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/003-Connecting-Data/Datasources)
-- [1_1_superstore_using_union_and_joins_complete.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/003-Connecting-Data/Workbooks)
+- [1_1_superstore_using_union_complete.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/003-Connecting-Data/Workbooks)
 
 #### Problem 
 
@@ -156,15 +142,24 @@ Next, create a new worksheet that displays the order date and region.
 
 We'll now use joins to add a dataset containing return orders to our worksheet to better analyze customer satisfaction.
 
+Download the files here:
+
+- [Superstore (2016-2020).xlsx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/003-Connecting-Data/Datasources)
+
+- [1_1_superstore_using_union.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/003-Connecting-Data/Workbooks)
+
+- [1_1_superstore_using_union_complete.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/003-Connecting-Data/Workbooks)
+
+
 #### Problem 
 
 1. Find the region with the most returns from 2016 to 2020.
 
 #### Steps
 
-Join the `Returns` table:
+Go to the Datasource:
 
-- Open **Orders 2016-2020**.  
+- Double-click **Orders 2016-2020**.  
 - Drag `Returns` to the right and drop it.  
 - A join icon will appear — click it and select "Left Join".  
 - Go to Sheet 1 to ensure the row count remains unchanged.  
@@ -177,7 +172,6 @@ Create a chart for returned orders:
 - Drag `Returned` to Color in the Marks card.  
 - Right-click the "Null" legend → Edit Alias → Rename to "No".  
 - Hover over the graph to find the region with the most returns.  
-- Save as **"1_1_superstore_using_union_and_joins_complete.twbx"**.  
 
 #### Solution 
 
@@ -196,6 +190,13 @@ Create a chart for returned orders:
 
 We'll enhance our analysis by adding a dataset with regional sales representatives.
 
+Download the files here:
+
+- [1_3_superstore_adding_joins.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/003-Connecting-Data/Workbooks)
+
+- [1_3_superstore_adding_joins_complete.twbx](https://github.com/joseeden/joeden/tree/master/docs/022-Data-Engineering/051-Tableau/000-Sample-Datasets/003-Connecting-Data/Workbooks)
+
+
 #### Problem 
 
 1. Determine the sales representative who has the least amount of return orders.
@@ -210,7 +211,7 @@ Go back to the Datasource tab to do the second join:
 
 Create the chart for the returned orders per sales representative:
 
-- Create a new worksheet and rename it **"Returned Orders by Sales Rep"**.  
+- Create a new worksheet and rename it **Returned Orders by Sales Rep**.  
 - Drag `Orders 2016-2020` to Columns and `Order Date` to Rows.  
 - Set Marks type to "Bar".  
 - Drag `Person` to Color in the Marks card.  
