@@ -70,7 +70,7 @@ When you connect a data source, Tableau automatically separates fields into data
 
 Tableau assigns data roles to fields automatically, but it's good practice to review and adjust them as needed. 
 
-For more information about dimension and measures, please see [Data Properties.](/docs/022-Data-Engineering/051-Tableau/040-Managing-Data/010-Data-Properties.md)
+For more information about dimension and measures, please see [Data Properties.](/docs/022-Data-Engineering/051-Tableau/007-Data-Properties.md)
 
 ## Converting Data Types  
 
