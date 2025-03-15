@@ -15,31 +15,45 @@ last_update:
 
 ## Overview  
 
-**Packages** are directories of scripts (modules) with functions and methods to solve specific problems.  
+A package is a collection of modules. These are sometimes called **libraries**. Many packages are publicly available and free to use. To use a package, we first need to download it from the Python Package Index (PyPI).  
 
-**Popular packages**:  
+Some popular packages:  
 
 - **NumPy**: For arrays.
 - **Matplotlib**: For visualization.
 - **Scikit-learn**: For machine learning.
 
-## Install Package  
+## Installing Pip  
 
 Install packages using pip, Python's package management tool.
 
-- **Steps**:  
-  1. Download `get-pip.py` from link below:
+1. Download `get-pip.py` from link below:
 
-        ```bash
-        https://pip.pypa.io/en/stable/installation
-        ```
+      ```bash
+      https://pip.pypa.io/en/stable/installation
+      ```
 
-  2. Run `python3 get-pip.py` from the terminal.
-  3. Install packages with `pip3 install <package_name>` (e.g., `pip3 install numpy`).
+2. Run `python3 get-pip.py` from the terminal.
+3. Install packages with `pip3 install <package_name>` (e.g., `pip3 install numpy`).
 
-## Import Package  
+## Installing a Package 
 
-To use a package, import it.
+To install a package, run:  
+
+```sh
+python3 -m pip install package_name
+```
+
+For example, to install `pandas`:  
+
+```sh
+python3 -m pip install pandas
+```
+
+
+## Import a Package  
+
+When using a package, we import it just like a module. Some packages, like `numpy`, are commonly given an alias to shorten the code.  
 
 - Import entire package: 
 
@@ -113,4 +127,46 @@ Area: 0.5808804816487527
 ```
 
 
-## Sample Package: Requests 
+## Sample Package: Pandas 
+
+To import Pandas:
+
+```python
+import pandas as pd  # 'pd' is a common alias for pandas
+```
+
+#### Creating a DataFrame  
+
+We can use pandas to create a table-like structure called a DataFrame.  
+```python
+import pandas as pd
+
+data = {"user_id": [1, 2, 3], "order_value": [100, 200, 150]}
+sales_df = pd.DataFrame(data)
+
+print(sales_df)
+```
+**Output:**  
+```
+   user_id  order_value
+0        1         100
+1        2         200
+2        3         150
+```
+
+#### Reading a CSV File  
+
+To read data from a CSV file into a DataFrame:  
+
+```python
+sales_df = pd.read_csv("sales_data.csv")
+print(type(sales_df))  # <class 'pandas.core.frame.DataFrame'>
+```
+
+#### Previewing Data  
+
+If a dataset has many rows, we can preview the first five:  
+
+```python
+print(sales_df.head())  # Shows the first 5 rows
+```

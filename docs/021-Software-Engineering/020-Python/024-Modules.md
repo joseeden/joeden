@@ -115,6 +115,8 @@ print(getcwd())  # Output: "/home/user/documents"
 
 ## Example: Creating a Module
 
+A module is just a single Python file. Python has built-in modules, but you can also create your own by writing a `.py` file.  
+
 :::info 
 
 Get the script here: [Sample python scripts.](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/020-Python/001-Basic-Projects)
