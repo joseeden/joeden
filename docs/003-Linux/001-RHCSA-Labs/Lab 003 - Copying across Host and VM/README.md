@@ -3,7 +3,7 @@ title: Copying across Host and Guest Machine
 tags: [Linux, Red Hat, Certifications, Labs]
 sidebar_position: 3
 last_update:
-  date:  6/1/2023
+  date: 3/27/2021
 ---
 
 

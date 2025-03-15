@@ -3,7 +3,7 @@ title: "Persistent Mounts"
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 27
 last_update:
-  date: 11/29/2021
+  date: 3/21/2021
 ---
 
 Before we go to mounting the disks persistently, we need to know about these two things:

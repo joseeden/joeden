@@ -3,7 +3,7 @@ title: Exam Objectives
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 1
 last_update:
-  date: 1/6/2023
+  date: 3/27/2021
 ---
 
 import Tabs from '@theme/Tabs';

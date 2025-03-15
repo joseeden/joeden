@@ -3,7 +3,7 @@ title: Logical Volumes
 tags: [Linux, Red Hat, Certifications, Labs]
 sidebar_position: 30
 last_update:
-  date: 2/27/2022
+  date: 3/27/2021
 ---
 
 ## Tasks

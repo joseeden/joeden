@@ -3,7 +3,7 @@ title: Using Essential Tools
 tags: [Linux, Beginner]
 sidebar_position: 4
 last_update: 
-  date:  6/1/2023
+  date: 3/27/2021
 ---
 
 > For the this lab and the succeeding labs, we'll be using our RHEL 8 launched on Amazon EC2 instances. Feel free to do this lab in VirtualBox as well.

@@ -4,7 +4,7 @@ description: "Parallel builds using Jenkins agents"
 tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins]
 sidebar_position: 30
 last_update:
-  date: 7/7/2022
+  date: 5/13/2020
 ---
 
 

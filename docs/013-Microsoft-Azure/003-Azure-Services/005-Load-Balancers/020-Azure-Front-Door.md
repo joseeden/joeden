@@ -4,7 +4,7 @@ description: "Azure's Content Delivery Network (CDN)"
 tags: [Cloud, Microsoft Azure, DevOps, Certifications]
 sidebar_position: 20
 last_update:
-  date: 7/18/2020
+  date: 11/16/2020
 ---
 
 

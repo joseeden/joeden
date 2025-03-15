@@ -4,7 +4,7 @@ description: "A 10,000 ft view of Microsoft Azure"
 tags: [Cloud, Microsoft Azure, DevOps, Certifications]
 sidebar_position: 1
 last_update:
-  date: 7/18/2020
+  date: 11/16/2020
 ---
 
 :::info[NOTES]

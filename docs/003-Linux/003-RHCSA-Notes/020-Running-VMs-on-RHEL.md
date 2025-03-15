@@ -3,7 +3,7 @@ title: "Running VMs on RHEL"
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 20
 last_update:
-  date: 11/29/2021
+  date: 3/21/2021
 ---
 
 ## Running Virtual Machines on RHEL

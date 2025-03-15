@@ -3,7 +3,7 @@ title: "Cloud Service Models"
 tags: [Cloud, DevOps, Certifications]
 sidebar_position: 4
 last_update:
-  date: 3/28/2023
+  date: 2/28/2020
 ---
 
 

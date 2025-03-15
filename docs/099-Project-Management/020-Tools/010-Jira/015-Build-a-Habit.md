@@ -4,7 +4,7 @@ description: "Build a Habit"
 tags: [Scrum, Agile, Project Management, Jira]
 sidebar_position: 15
 last_update:
-  date: 6/13/2020
+  date: 1/27/2020
 ---
 
 > *This notes is based on Atlassian's course on [Jira Fundamentals](https://community.atlassian.com/t5/Training-Certification-articles/Atlassian-University-Series-Jira-Fundamentals/ba-p/2204206)*

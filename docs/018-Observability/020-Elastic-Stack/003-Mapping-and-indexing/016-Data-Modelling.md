@@ -12,7 +12,7 @@ tags:
 - ELK Stack
 sidebar_position: 16
 last_update:
-  date: 3/28/2023
+  date: 12/30/2022
 ---
 
 ## Overview

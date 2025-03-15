@@ -4,7 +4,7 @@ description: "Triggers when Jenkins should run a Job"
 tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins]
 sidebar_position: 15
 last_update:
-  date: 7/7/2022
+  date: 5/13/2020
 ---
 
 

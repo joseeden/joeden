@@ -4,7 +4,7 @@ description: "Relational Database"
 tags: [Data Engineering, Databases, SQL]
 sidebar_position: 5
 last_update:
-  date: 2/27/2022
+  date: 10/5/2019
 ---
 
 ## Primary Keys

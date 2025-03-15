@@ -4,7 +4,7 @@ description: "Database normalization maintains data integrity and reduces data d
 tags: [Data Engineering, Databases, SQL, PostgreSQL]
 sidebar_position: 15
 last_update:
-  date: 2/27/2022
+  date: 10/11/2019
 ---
 
 

@@ -4,7 +4,7 @@ description: "A guide to successful cloud adoption"
 tags: [AWS, Cloud, DevOps, Certifications]
 sidebar_position: 11
 last_update:
-  date: 4/30/2023
+  date: 4/30/2020
 ---
 
 :::info[NOTES]

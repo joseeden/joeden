@@ -3,7 +3,7 @@ title: Security Updates
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 40
 last_update:
-  date: 11/29/2021
+  date: 5/29/2021
 ---
 
 To check for high-priority, security updates, run the command below.

@@ -3,7 +3,7 @@ title: Practice Test 04
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 1
 last_update:
-  date: 7/8/2022
+  date: 4/22/2021
 ---
 
 <!-- ***************************************************************************************************************************** -->

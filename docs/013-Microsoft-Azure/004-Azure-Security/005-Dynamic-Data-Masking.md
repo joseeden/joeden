@@ -4,7 +4,7 @@ description: "Dynamic Data Masking in Azure SQL"
 tags: [Cloud, Microsoft Azure, DevOps, Security, Certifications]
 sidebar_position: 5
 last_update:
-  date: 7/18/2020
+  date: 11/22/2020
 ---
 
 

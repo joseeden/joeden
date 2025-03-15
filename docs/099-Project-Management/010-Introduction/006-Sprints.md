@@ -4,7 +4,7 @@ description: "Where the magic happens"
 tags: [Scrum, Agile, Project Management]
 sidebar_position: 6
 last_update:
-  date: 2/5/2023
+  date: 6/7/2020
 ---
 
 ## The Goal

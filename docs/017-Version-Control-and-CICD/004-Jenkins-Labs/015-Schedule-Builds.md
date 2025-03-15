@@ -4,7 +4,7 @@ description: "Setting a schedule for build runs."
 tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins, Git, Github]
 sidebar_position: 15
 last_update:
-  date: 7/7/2022
+  date: 5/15/2020
 ---
 
 

@@ -4,7 +4,7 @@ description: "First things you need to know"
 tags: [AWS, Cloud, DevOps, Certifications]
 sidebar_position: 1
 last_update:
-  date: 4/30/2023
+  date: 4/30/2020
 ---
 
 :::info[NOTES]

@@ -4,7 +4,7 @@ description: "Easy to follow checklists for helpful automations"
 tags: [Linux, DevOps, Cloud, SRE]
 sidebar_position: 3
 last_update:
-  date: 2/5/2023
+  date: 8/11/2022
 ---
 
 

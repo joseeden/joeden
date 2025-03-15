@@ -3,7 +3,7 @@ title: Custom Partitioning
 tags: [Linux, Red Hat, Certifications, Labs]
 sidebar_position: 2
 last_update:
-  date:  6/1/2023
+  date: 3/27/2021
 ---
 
 

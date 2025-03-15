@@ -4,7 +4,7 @@ description: "Use cloud storage with on-prem applications"
 tags: [Cloud, AWS, DevOps, Certifications]
 sidebar_position: 20
 last_update:
-  date: 8/30/2020
+  date: 7/26/2020
 ---
 
 

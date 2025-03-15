@@ -3,7 +3,7 @@ title: "Bash Scripts"
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 47
 last_update:
-  date: 7/8/2022
+  date: 3/21/2021
 ---
 
 Bash scripts automate tasks by executing commands in a specific order, making them powerful tools for automating repetitive tasks, managing system configurations, and performing complex operations efficiently in Unix-like operating systems.

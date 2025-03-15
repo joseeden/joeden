@@ -3,7 +3,7 @@ title: "Storage and Filesystems"
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 24
 last_update:
-  date: 11/29/2021
+  date: 3/21/2021
 ---
 
 

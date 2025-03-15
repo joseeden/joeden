@@ -4,7 +4,7 @@ description: "Making sure everyone is in the same page"
 tags: [Scrum, Agile, Project Management]
 sidebar_position: 9
 last_update:
-  date: 2/5/2023
+  date: 6/7/2020
 ---
 
 

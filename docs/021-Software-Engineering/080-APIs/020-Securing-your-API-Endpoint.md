@@ -4,7 +4,7 @@ description: "Securing your API Endpoint"
 tags: [Computer Science, Application Development, Software Development, APIs]
 sidebar_position: 20
 last_update:
-  date: 12/8/2021
+  date: 8/2/2021
 ---
 
 ## Identity, Authentication, and Authorization

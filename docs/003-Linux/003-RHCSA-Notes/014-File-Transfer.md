@@ -3,7 +3,7 @@ title: "File Transfer"
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 14
 last_update:
-  date: 11/29/2021
+  date: 3/21/2021
 ---
 
 

@@ -7,7 +7,7 @@ tags:
 - Software Development
 sidebar_position: 20
 last_update:
-  date: 2/5/2020
+  date: 8/11/2019
 ---
 
 ## Remote vs. Local  

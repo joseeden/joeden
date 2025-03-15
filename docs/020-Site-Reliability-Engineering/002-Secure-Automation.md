@@ -4,7 +4,7 @@ description: "Securing each step of the automation"
 tags: [Linux, DevOps, Cloud, SRE]
 sidebar_position: 2
 last_update:
-  date: 2/5/2023
+  date: 8/11/2022
 ---
 
 

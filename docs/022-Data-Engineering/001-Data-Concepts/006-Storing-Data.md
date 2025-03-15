@@ -4,7 +4,7 @@ description: "Notes from DataCamp's Understanding Engineering Course"
 tags: [Data Engineering]
 sidebar_position: 6
 last_update:
-  date: 2/27/2022
+  date: 9/26/2019
 ---
 
 ## Types of Data

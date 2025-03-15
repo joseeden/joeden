@@ -4,7 +4,7 @@ description: "Serverless workflow integration platform"
 tags: [Cloud, Microsoft Azure, DevOps, Certifications]
 sidebar_position: 30
 last_update:
-  date: 7/18/2020
+  date: 11/16/2020
 ---
 
 :::info[NOTES]

@@ -3,7 +3,7 @@ title: "IPTables"
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 1
 last_update:
-  date: 11/29/2021
+  date: 5/29/2021
 ---
 
 

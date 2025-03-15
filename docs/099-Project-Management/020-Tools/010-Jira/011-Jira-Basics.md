@@ -4,7 +4,7 @@ description: "Atlassian Jira"
 tags: [Scrum, Agile, Project Management, Jira]
 sidebar_position: 1
 last_update:
-  date: 6/13/2020
+  date: 1/27/2020
 ---
 
 

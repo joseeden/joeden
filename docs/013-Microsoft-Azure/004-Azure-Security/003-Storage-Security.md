@@ -4,7 +4,7 @@ description: "Storage Security"
 tags: [Cloud, Microsoft Azure, DevOps, Security, Certifications]
 sidebar_position: 3
 last_update:
-  date: 7/18/2020
+  date: 11/22/2020
 ---
 
 

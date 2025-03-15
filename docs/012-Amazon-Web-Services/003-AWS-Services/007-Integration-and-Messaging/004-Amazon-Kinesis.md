@@ -4,7 +4,7 @@ description: "Real-time streaming data at a large scale"
 tags: [Cloud, AWS, DevOps, Integration, Messaging, Certifications]
 sidebar_position: 4
 last_update:
-  date: 8/30/2020
+  date: 7/26/2020
 ---
 
 

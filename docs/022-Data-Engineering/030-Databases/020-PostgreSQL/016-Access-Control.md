@@ -4,7 +4,7 @@ description: "Granting and revoking user and group privileges on database object
 tags: [Data Engineering, Databases, SQL, PostgreSQL]
 sidebar_position: 16
 last_update:
-  date: 2/27/2022
+  date: 10/11/2019
 ---
 
 

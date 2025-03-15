@@ -4,7 +4,7 @@ description: "Running containers in AWS"
 tags: [Cloud, AWS, DevOps, Automation, Containers, Certifications]
 sidebar_position: 1
 last_update:
-  date: 8/30/2020
+  date: 7/26/2020
 ---
 
 

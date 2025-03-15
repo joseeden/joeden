@@ -4,7 +4,7 @@ description: "Running your first Jenkins Job"
 tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins]
 sidebar_position: 11
 last_update:
-  date: 7/7/2022
+  date: 5/15/2020
 ---
 
 

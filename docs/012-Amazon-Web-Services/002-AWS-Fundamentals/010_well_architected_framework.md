@@ -4,7 +4,7 @@ description: "A guide in designing and running workloads in the cloud"
 tags: [AWS, Cloud, DevOps, Certifications]
 sidebar_position: 10
 last_update:
-  date: 4/30/2023
+  date: 4/30/2020
 ---
 
 :::info[NOTES]

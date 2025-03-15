@@ -4,7 +4,7 @@ description: "Lean Software Development"
 tags: [Computer Science, Application Development, Software Development, Lean]
 sidebar_position: 3
 last_update:
-  date: 3/14/2022
+  date: 6/12/2020
 ---
 
 

@@ -3,7 +3,7 @@ title: "Case Study: expertiseplease.com"
 tags: [Cloud, Cloud Migration, Certifications]
 sidebar_position: 10
 last_update:
-  date: 3/28/2023
+  date: 10/3/2022
 ---
 
 

@@ -3,7 +3,7 @@ title: "The Basics"
 tags: [Cloud, DevOps, Certifications]
 sidebar_position: 1
 last_update:
-  date: 3/28/2023
+  date: 2/28/2020
 ---
 
 

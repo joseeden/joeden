@@ -4,7 +4,7 @@ description: "Set up CI/CD pipelines in AWS"
 tags: [Cloud, AWS, DevOps, Automation, CICD, Certifications]
 sidebar_position: 4
 last_update:
-  date: 8/30/2020
+  date: 7/26/2020
 ---
 
 

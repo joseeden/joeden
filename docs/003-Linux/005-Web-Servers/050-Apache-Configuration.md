@@ -3,7 +3,7 @@ title: "Apache Configuration"
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 50
 last_update:
-  date: 7/8/2022
+  date: 5/18/2021
 ---
 
 

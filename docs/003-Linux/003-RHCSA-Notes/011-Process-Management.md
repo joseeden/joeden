@@ -3,7 +3,7 @@ title: "Process Management"
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 11
 last_update:
-  date: 7/8/2022
+  date: 3/21/2021
 ---
 
 ## ps command

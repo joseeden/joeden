@@ -4,7 +4,7 @@ description: "What good automation looks like"
 tags: [Linux, DevOps, Cloud, SRE]
 sidebar_position: 1
 last_update:
-  date: 2/5/2023
+  date: 8/11/2022
 ---
 
 

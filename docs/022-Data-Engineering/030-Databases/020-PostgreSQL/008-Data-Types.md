@@ -4,7 +4,7 @@ description: "Text, numeric, temporal, and boolean data types in PostgreSQL"
 tags: [Data Engineering, Databases, SQL, PostgreSQL]
 sidebar_position: 8
 last_update:
-  date: 2/27/2022
+  date: 10/11/2019
 ---
 
 

@@ -4,7 +4,7 @@ description: "Notes on Python"
 tags: [Computer Science, Application Development, Software Development, Python]
 sidebar_position: 10
 last_update:
-  date: 6/13/2020
+  date: 10/28/2019
 ---
 
 ## Install Python 

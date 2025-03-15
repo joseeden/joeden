@@ -4,7 +4,7 @@ description: "EBS and EFS"
 tags: [Cloud, AWS, DevOps, Certifications]
 sidebar_position: 4
 last_update:
-  date: 8/30/2020
+  date: 7/26/2020
 ---
 
 

@@ -4,7 +4,7 @@ description: "Using hooks to trigger Jenkins for new commits"
 tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins, Maven, Git, Github]
 sidebar_position: 14
 last_update:
-  date: 7/7/2022
+  date: 5/15/2020
 ---
 
 

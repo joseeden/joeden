@@ -4,7 +4,7 @@ description: "PostgreSQL"
 tags: [Data Engineering, Databases, SQL, PostgreSQL]
 sidebar_position: 6
 last_update:
-  date: 2/27/2022
+  date: 10/11/2019
 ---
 
 ## Introduction to PostgreSQL

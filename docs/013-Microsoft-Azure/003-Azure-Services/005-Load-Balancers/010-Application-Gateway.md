@@ -4,7 +4,7 @@ description: "Layer 7 LoadBalancer for your applications"
 tags: [Cloud, Microsoft Azure, DevOps, Certifications]
 sidebar_position: 10
 last_update:
-  date: 7/18/2020
+  date: 11/16/2020
 ---
 
 

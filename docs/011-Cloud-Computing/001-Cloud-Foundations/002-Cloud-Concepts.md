@@ -3,7 +3,7 @@ title: "Cloud Concepts"
 tags: [Cloud, DevOps, Certifications]
 sidebar_position: 2
 last_update:
-  date: 3/28/2023
+  date: 2/28/2020
 ---
 
 

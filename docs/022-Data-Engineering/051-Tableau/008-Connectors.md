@@ -32,7 +32,6 @@ Tableau provides multiple ways to connect to data:
 </div>
 
 
-
 ## More Data Connectors  
 
 Tableau supports over 80 data environments, including:  

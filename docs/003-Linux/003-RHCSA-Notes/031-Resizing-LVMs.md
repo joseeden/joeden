@@ -3,7 +3,7 @@ title: "Resizing LVMs"
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 31
 last_update:
-  date: 11/31/2021
+  date: 3/21/2021
 ---
 
 Resizing Logical Volume Management (LVM) allows you to increase the storage capacity of your logical volumes as needed. This is particularly useful when you start running out of space on your disks. 

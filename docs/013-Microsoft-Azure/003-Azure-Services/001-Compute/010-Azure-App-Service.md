@@ -4,7 +4,7 @@ description: "Fully managed platform as a service (PaaS)"
 tags: [Cloud, Microsoft Azure, DevOps, Certifications]
 sidebar_position: 10
 last_update:
-  date: 7/18/2020
+  date: 11/16/2020
 ---
 
 :::info[NOTES]

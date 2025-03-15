@@ -3,7 +3,7 @@ title: Automount
 tags: [Linux, Red Hat, Certifications, Labs]
 sidebar_position: 27
 last_update:
-  date: 2/27/2022
+  date: 3/27/2021
 ---
 
 

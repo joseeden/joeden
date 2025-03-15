@@ -4,7 +4,7 @@ description: "SQL Joins Cheatsheet"
 tags: [Data Engineering, Databases, SQL]
 sidebar_position: 0
 last_update:
-  date: 2/27/2022
+  date: 8/28/2019
 ---
 
 ## Joins 

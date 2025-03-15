@@ -4,7 +4,7 @@ description: "Computers of the first kind"
 sidebar_position: 4
 tags: [IT Fundamentals, Computers, Operating Systems]
 last_update:
-  date: 2/8/2019
+  date: 2/26/2019
 ---
 
 

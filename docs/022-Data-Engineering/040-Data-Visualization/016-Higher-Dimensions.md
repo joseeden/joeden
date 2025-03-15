@@ -4,7 +4,7 @@ description: "Notes from DataCamp's Understanding Data Visualization Course"
 tags: [Data Engineering,  Data Science, Data Visualization]
 sidebar_position: 16
 last_update:
-  date: 12/5/2021
+  date: 9/22/2021
 ---
 
 ## Case Study: UN Life Expectancy

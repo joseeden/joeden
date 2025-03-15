@@ -3,7 +3,7 @@ title: "Backup and Recovery Strategies"
 tags: [Linux, Red Hat, Certifications]
 sidebar_position: 40
 last_update:
-  date: 11/29/2021
+  date: 3/21/2021
 ---
 
 ## Backup using `dd`
