@@ -4,7 +4,7 @@ description: "Relevant Statistics"
 tags: 
 - Data Engineering
 - Data Science
-- Data Visualization
+- Data Storytelling
 sidebar_position: 14
 last_update:
   date: 3/3/2023

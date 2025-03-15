@@ -4,7 +4,7 @@ description: "Translating Technical Results to Stories"
 tags: 
 - Data Engineering
 - Data Science
-- Data Visualization
+- Data Storytelling
 sidebar_position: 11
 last_update:
   date: 3/2/2023

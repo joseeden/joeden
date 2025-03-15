@@ -58,6 +58,10 @@ Data Modelling:
   label: 'Data Modelling'
   permalink: '/Data Modelling'
   description: 'Docs related to Data Modelling'  
+Data Storytelling:
+  label: 'Data Storytelling'
+  permalink: '/Data Storytelling'
+  description: 'Docs related to Data Storytelling'    
 Snowflake:
   label: 'Snowflake'
   permalink: '/Snowflake'

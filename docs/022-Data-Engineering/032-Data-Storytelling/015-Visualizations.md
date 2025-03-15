@@ -4,7 +4,7 @@ description: "Different audiences, different visualizations."
 tags: 
 - Data Engineering
 - Data Science
-- Data Visualization
+- Data Storytelling
 sidebar_position: 15
 last_update:
   date: 3/3/2023
