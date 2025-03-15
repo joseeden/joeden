@@ -44,24 +44,33 @@ import os
 help(os)  # Displays a long list of functions and attributes
 ```
 
-## Getting the Current Directory  
+## Using `os`
+
+### Get Current Directory  
 
 Use `os.getcwd()` to find the current working directory.  
 
 ```python
 import os
 work_dir = os.getcwd()
-print(work_dir)  # Output: "/home/user/projects"
+print(work_dir)  
 ```
 
-## Changing Directory  
+The output is in quotes, which means the output is a string.
+
+```plaintext
+'/home/user/projects'
+```
+
+
+### Changing Directory  
 
 Use `os.chdir()` to move to a different directory.  
 
 ```python
 import os
 os.chdir("/home/user/documents")
-print(os.getcwd())  # Output: "/home/user/documents"
+print(os.getcwd())  # Output: '/home/user/documents'
 ```
 
 ## Module Attributes  
@@ -73,9 +82,21 @@ import os
 print(os.environ)  # Outputs environment variables as a dictionary
 ```
 
+With attributes, we don't need to use "()" as they are not functions. The output is a dictionary:
+
+```js
+environ({
+  'SHELL': '/bin/bash', 
+  'WSL2_GUI_APPS_ENABLED': '1', 
+  'WSL_DISTRO_NAME': 'Ubuntu-16.04', 
+  'HISTSIZE': '1000000', 
+  'PWD': '/mnt/c/project' 
+  .....})
+```
+
 ## Importing a Single Function  
 
-Instead of importing the whole module, we can import only what we need.  
+Instead of importing the whole module, we can import only what we need. For example, instead of importing the entire `os` module, we can only import the specific `chdir` function.
 
 ```python
 from os import chdir
