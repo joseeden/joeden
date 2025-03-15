@@ -112,3 +112,33 @@ Different stakeholders will be interested in different parts of the report:
 - **Technical Stakeholders** 
   - Focus on the body to review the methods
   - Validates the analysis.
+
+## Writing the Report
+
+Clear and precise writing helps avoid confusion and ensures stakeholders understand the message. 
+
+- **Avoid Empty Phrases**  
+  - Remove phrases like "It is interesting to note that."  
+  - Stick to straightforward statements.  
+  - Be direct and to the point.  
+
+- **Use Concrete Nouns**  
+  - Avoid vague pronouns like "this" or "that."  
+  - Be specific about what you're referring to.  
+  - Example: 
+    - Incorrect: "This model shows an accuracy of 80% in predicting customer churn" - Correct: "The model shows an accuracy of 80% in predicting customer churn."
+
+- **Prefer Active Voice**  
+  - Active voice is clearer and easier to read. 
+  - Example: 
+    - Active: "The data shows trends" 
+    - Passive: "Trends are shown by the data"
+
+- **Eliminate Redundant Words**  
+  - Avoid unnecessary adjectives or adverbs
+  - Not useful: "introducing the new" or "done previously."  
+  - Keep your writing concise.  
+
+- **Fix Run-On Sentences**  
+  - Break long sentences into smaller ones.  
+  -Use conjunctions like "because" or "so" to connect ideas.  
