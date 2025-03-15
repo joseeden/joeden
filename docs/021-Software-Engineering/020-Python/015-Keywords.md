@@ -12,7 +12,7 @@ last_update:
 ---
 
 
-## Check Membership with "in"
+## `in`
 
 Use the `in` keyword to check if a value is present in a variable or data structure. For example, checking if a product ID exists in a dictionary.
 
@@ -30,7 +30,7 @@ True
 This prints `True` because `OS31` is a key in the dictionary.
 
 
-## Confirm "not" in Membership
+## `not`
 
 The `not` keyword helps confirm that a value is **not** in a data structure.
 
@@ -47,7 +47,7 @@ False
 It prints `False` because `OS31` **is** a key in the dictionary.
 
 
-## Combine Conditions with "and"
+## `and`
 
 The `and` keyword allows us to check if multiple conditions are met at once.
 
@@ -64,7 +64,7 @@ True
 It checks if both conditions are true: "HT91" is a key, and the minimum price is more than 5.
 
 
-## Combine Conditions with "or"
+## `or`
 
 The `or` keyword checks if at least one of several conditions is true.
 
@@ -81,7 +81,7 @@ True
 It prints `True` because "HT91" is a key in the dictionary, even though the minimum price is above 5.
 
 
-## Update Variables with Looping
+## Update Variables
 
 We can modify variables within loops using operators like `+=` or `-=`.
 

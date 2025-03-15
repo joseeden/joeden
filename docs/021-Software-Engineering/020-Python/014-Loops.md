@@ -145,6 +145,12 @@ While loops are useful for repeating actions while a condition remains true.
 - **If statement** runs code once if a condition is true.
 - **While loop** repeats the code as long as the condition is true.
 
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-16-010006.png)
+
+</div>
+
 Example: While Loop
 
 ```python
