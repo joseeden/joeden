@@ -1,8 +1,12 @@
 ---
 title: "Functions"
 description: "Python Functions"
-tags: [Computer Science, Application Development, Software Development, Python]
-sidebar_position: 14
+tags: 
+- Computer Science
+- Application Development
+- Software Development
+- Python
+sidebar_position: 20
 last_update:
   date: 10/28/2019
 ---

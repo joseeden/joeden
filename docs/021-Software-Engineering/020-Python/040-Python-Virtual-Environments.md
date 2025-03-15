@@ -1,8 +1,12 @@
 ---
 title: "Python Virtual Environments"
 description: "Python Virtual Environments"
-tags: [Computer Science, Application Development, Software Development, Python]
-sidebar_position: 19
+tags: 
+- Computer Science
+- Application Development
+- Software Development
+- Python
+sidebar_position: 40
 last_update:
   date: 10/28/2019
 ---

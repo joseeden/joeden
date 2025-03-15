@@ -1,8 +1,12 @@
 ---
 title: "Modules"
 description: "Python Modules"
-tags: [Computer Science, Application Development, Software Development, Python]
-sidebar_position: 16
+tags: 
+- Computer Science
+- Application Development
+- Software Development
+- Python
+sidebar_position: 32
 last_update:
   date: 10/28/2019
 ---

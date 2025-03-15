@@ -1,8 +1,12 @@
 ---
 title: "List and Tuples"
 description: "List and Tuples"
-tags: [Computer Science, Application Development, Software Development, Python]
-sidebar_position: 13
+tags: 
+- Computer Science
+- Application Development
+- Software Development
+- Python
+sidebar_position: 11
 last_update:
   date: 10/28/2019
 ---
