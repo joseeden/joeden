@@ -54,21 +54,101 @@ Lists are mutable sequences in Python, which allows you to change their contents
   ```
 
 
-## Tuples
+## Sets
 
-Tuples are like lists but immutable and defined with parentheses `( )`.
+A set stores **unique** elements (no duplicates).
 
-- Useful when element positions must remain fixed, like function return values
-- Unpacking stores tuple elements into separate variables
+- Sets are **unordered**, so elements don't have a specific index.
+- We can **add** or **remove** values, but cannot change them once added.
 
-Example:
+Sets don’t have an index, so we can't access elements like a list using square brackets.
+
+### Creating a Set
+
+Run command below:
 
 ```python
-my_tuple = (10, 20, 30)
-a, b, c = my_tuple  # Unpacking
-print(a, b, c)  # Output: 10 20 30
+attendees = {"Alice", "Bob", "Alice"}
+print(attendees)
 ```
 
+Output:
+
+```
+{'Bob', 'Alice'}
+```
+
+Even though "Alice" was added twice, the set only keeps one instance.
+
+### Convert List to Set
+
+When you convert the list to a set, the duplicates will be removed
+
+```python
+my_list = [1, 2, 2, 3, 3, 4]
+my_set = set(my_list)
+print(my_set)
+```
+
+Output:
+
+```
+{1, 2, 3, 4}
+```
+
+### Sorting a Set
+
+Although sets are unordered, we can sort them:
+
+```python
+attendees = {"Alice", "Bob", "Charlie"}
+sorted_attendees = sorted(attendees)
+print(sorted_attendees)
+```
+
+Output:
+
+```
+['Alice', 'Bob', 'Charlie']
+```
+
+
+
+
+## Tuples
+
+Tuples are like lists but are **immutable** and defined with parentheses `( )`.
+
+- Useful when element positions must remain fixed/
+- Unpacking stores tuple elements into separate variables
+- Tuples are **ordered**, so we can access elements by their index.
+
+### Creating a Tuple
+
+```python
+locations = ("New York", "Los Angeles", "Chicago")
+print(locations)
+```
+
+Output:
+
+```
+('New York', 'Los Angeles', 'Chicago')
+```
+
+### Accessing a Tuple
+
+Just like lists, we can access elements in a tuple using an index.
+
+```python
+print(locations[1])
+```
+
+Output:
+
+```
+Los Angeles
+```
 
 
 ## Dictionaries
