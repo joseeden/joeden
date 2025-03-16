@@ -1,5 +1,5 @@
 ---
-title: "Module: Testing Network Connection
+title: "Module: Testing Network Connection"
 description: "Python Modules"
 tags: 
 - Computer Science

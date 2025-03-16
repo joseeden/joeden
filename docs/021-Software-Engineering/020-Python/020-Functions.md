@@ -183,7 +183,7 @@ Output:
 
 ## Example: Data Structure Converter
 
-This functin converts a collection into a list, set, or tuple based on the specified type.
+This function converts a collection into a **list, set, or tuple** based on the specified `data_type`. If no `data_type` is provided, it defaults to `"list"`. 
 
 ```python
 def convert_data_structure(data, data_type="list"):
@@ -194,23 +194,37 @@ def convert_data_structure(data, data_type="list"):
   else:
     data = list(data)
   return data
-
-convert_data_structure({"a", 1, "b", 2, "c", 3}, data_type="set")
 ```
 
-To call the function:
+To call the function and store in a variable:
 
 ```bash
-convert_data_structure({"a", 1, "b", 2, "c", 3}, data_type="set")
+texts = convert_data_structure({"a", 1, "b", 2, "c", 3})
+print(texts)
+print(type(texts))
 ```
 
-Even though "set" is specified as the `data_type`, the function defaults to a list when an invalid type is provided:
+Since no `data_type` is provided, the function defaults to a **list**.  
 
 ```plaintext
-[1, 2, 3, 'a', 'c', 'b']
+[1, 'a', 3, 2, 'b', 'c']
+<class 'list'>
 ```
 
+If `data_type="set"`, the function returns a **set**:  
 
+```bash
+texts = convert_data_structure({"a", 1, "b", 2, "c", 3}, "set")
+print(texts)
+print(type(texts))
+```
+
+Output:
+
+```plaintext
+{1, 'a', 3, 2, 'b', 'c'}
+<class 'set'>  
+```
 
 
 ## Example: Check Disk and CPU Usage 
