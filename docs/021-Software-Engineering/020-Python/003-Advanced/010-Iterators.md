@@ -152,7 +152,7 @@ for i in range(5):
     print(i)
 ```
 
-However, `range()` doesn't create an actual list. Instead, it generates values on demand using an iterator. If it created a full list, using a very large number (like \(10^{100}\)) would likely exceed memory limits.  
+However, `range()` doesn't create an actual list. Instead, it generates values on demand using an iterator. If it created a full list, using a very large number (like `10¹⁰⁰`) would likely exceed memory limits.  
 
 In the example below, we'll see how `range()` works with iterators:  
 
