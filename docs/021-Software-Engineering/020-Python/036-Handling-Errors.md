@@ -35,7 +35,7 @@ Output:
 `KeyError: 'age'`
 ```
 
-## Handling Incorrect Input
+## Incorrect Input
 
 When writing functions, it’s important to consider how users might incorrectly call them.
 
