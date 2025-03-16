@@ -1,6 +1,6 @@
 ---
-title: "Handling Errors"
-description: "Handling Errors"
+title: "Errors"
+description: "Errors"
 tags: 
 - Computer Science
 - Application Development
