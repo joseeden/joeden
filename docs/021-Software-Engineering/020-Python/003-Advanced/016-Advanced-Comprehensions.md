@@ -150,3 +150,73 @@ Output:
 ```python
 {'frodo': 5, 'samwise': 7, 'merry': 5, 'aragorn': 7, 'legolas': 7, 'boromir': 7, 'gimli': 5}
 ```
+
+
+## Example: Time-stamped Data 
+
+In this example, we'll use a list comprehension to extract the time from Twitter data with timestamps.
+
+- Extract 'created_at' column and assign it to `tweet_time`.
+- Extract characters 12 to 19 from each timestamp in `tweet_time`.
+- Assign the result to `tweet_clock_time`.
+
+Download the Twitter dataset here: [tweets.csv](@site/assets/datasets/tweets.csv)
+
+Solution:
+
+```bash
+import pandas as pd 
+df = pd.read_csv("tweets.csv")
+
+tweet_time = df['created_at']
+tweet_clock_time = [entry[11:19] for entry in tweet_time]
+
+print(tweet_clock_time)
+```
+
+Output:
+
+
+```bash
+['23:40:17', '23:40:17', '23:40:17', '23:40:17', '23:40:17', '23:40:17', 
+'23:40:18', '23:40:17', '23:40:18', '23:40:18', '23:40:18', '23:40:17', 
+'23:40:18', '23:40:18', '23:40:17', '23:40:18', '23:40:18', '23:40:17', 
+'23:40:18', '23:40:17', '23:40:18', '23:40:18', '23:40:18', '23:40:18', 
+'23:40:17', '23:40:18', '23:40:18', '23:40:17', '23:40:18', '23:40:18', 
+............]
+```
+
+This code extracts only the time part of each timestamp from the 'created_at' column.
+
+
+## Example: Time-stamped Data with Conditions
+
+In this example, we'll extract the time from time-stamped Twitter data, but only for timestamps where the seconds (`entry[17:19]`) are '19'.
+
+- Extract the `created_at` column from `df` and assign it to `tweet_time`.
+- Extract the time from each timestamp in `tweet_time` (characters 12 to 19).
+- Add a condition to select only the timestamps where `entry[17:19] == '19'`.
+
+Download the Twitter dataset here: [tweets.csv](@site/assets/datasets/tweets.csv)
+
+Solution:
+
+```bash
+import pandas as pd 
+df = pd.read_csv("tweets.csv")
+
+tweet_time = df['created_at']
+tweet_clock_time = [entry[11:19] for entry in tweet_time if entry[17:19] == '19']
+
+print(tweet_clock_time)
+```
+
+Output;
+
+```bash
+['23:40:19', '23:40:19', '23:40:19', '23:40:19', '23:40:19', '23:40:19', '23:40:19', '23:40:19', 
+'23:40:19', '23:40:19', '23:40:19', '23:40:19', '23:40:19', '23:40:19', '23:40:19', '23:40:19', 
+'23:40:19', '23:40:19', '23:40:19', '23:40:19', '23:40:19', '23:40:19', '23:40:19', '23:40:19', '
+23:40:19', '23:40:19', '23:40:19', '23:40:19', '23:40:19', '23:40:19', '23:40:19', '23:40:19', 
+......................] 
+```
