@@ -239,14 +239,20 @@ Output:
 Example:  
 
 ```python
-avengers = ["Iron Man", "Thor", "Hulk"]
-print(list(enumerate(avengers)))
+mutants = ['charles xavier', 
+            'bobby drake', 
+            'kurt wagner', 
+            'max eisenhardt', 
+            'kitty pryde']
+
+mutant_list = list(enumerate(mutants))
+print(mutant_list)
 ```
 
 Output:
 
 ```
-[(0, 'Iron Man'), (1, 'Thor'), (2, 'Hulk')]
+[(0, 'charles xavier'), (1, 'bobby drake'), (2, 'kurt wagner'), (3, 'max eisenhardt'), (4, 'kitty pryde')]
 ```
 
 
@@ -260,42 +266,97 @@ You can loop through an `enumerate` object and unpack values.
 Example:  
 
 ```python
-avengers = ["Iron Man", "Thor", "Hulk"]
+mutants = ['charles xavier', 
+            'bobby drake', 
+            'kurt wagner', 
+            'max eisenhardt', 
+            'kitty pryde']
 
-for i, hero in enumerate(avengers, start=1):
-    print(i, hero)
+for index1, value1 in enumerate(mutants):
+    print(index1, value1)
 ```
 
 Output:
 
-```
-1 Iron Man
-2 Thor
-3 Hulk
+```python
+0 charles xavier
+1 bobby drake
+2 kurt wagner
+3 max eisenhardt
+4 kitty pryde
 ```
 
+Defining the start value of the index:
+
+```python
+for index2, value2 in enumerate(mutants, start=1):
+    print(index2, value2)
+```
+
+Output:
+
+```python
+1 charles xavier
+2 bobby drake
+3 kurt wagner
+4 max eisenhardt
+5 kitty pryde 
+```
 
 ## Using `zip()`  
 
-`zip()` combines multiple iterables into pairs or groups.  
+`zip()` takes any number of iterables and returns a zip object that is an iterator of tuples.
 
-- Returns an iterator of tuples  
+- Combines multiple iterables into pairs or groups.  
 - Each tuple contains elements from corresponding positions in iterables  
+
+If you wanted to print the values of a `zip` object, you can convert it into a list and then print it. Printing just a `zip` object will not return the values unless you unpack it first. 
 
 Example:  
 
 ```python
-avengers = ["Iron Man", "Thor", "Hulk"]
-real_names = ["Tony", "Thor", "Bruce"]
-print(list(zip(avengers, real_names)))
+mutants = ['charles xavier', 
+            'bobby drake', 
+            'kurt wagner', 
+            'max eisenhardt', 
+            'kitty pryde']
+
+aliases = ['prof x',
+            'iceman',
+            'nightcrawler',
+            'magneto',
+            'shadowcat']
+
+powers = [
+          'telepathy',
+          'thermokinesis',
+          'teleportation',
+          'magnetokinesis',
+          'intangibility']
+
+# Create a list of tuples: mutant_data
+mutant_data = list(zip(mutants, aliases, powers))
+print(mutant_data)
 ```
 
 Output:
 
 ```
-[('Iron Man', 'Tony'), ('Thor', 'Thor'), ('Hulk', 'Bruce')]
+[('charles xavier', 'prof x', 'telepathy'), ('bobby drake', 'iceman', 'thermokinesis'), ('kurt wagner', 'nightcrawler', 'teleportation'), ('max eisenhardt', 'magneto', 'magnetokinesis'), ('kitty pryde', 'shadowcat', 'intangibility')]
 ```
 
+To create a zip object:
+
+```bash
+mutant_zip = zip(mutants, aliases, powers)
+print(mutant_zip)
+```
+
+Output:
+
+```bash
+<zip object at 0x7f21f603ff40>
+```
 
 #### Looping with `zip()`  
 
@@ -304,16 +365,18 @@ You can iterate over a `zip` object directly.
 Example:  
 
 ```python
-for hero, name in zip(avengers, real_names):
-    print(f"{hero} is {name}")
+for value1, value2, value3 in mutant_zip:
+    print(value1, value2, value3)
 ```
 
 Output:
 
 ```
-Iron Man is Tony
-Thor is Thor
-Hulk is Bruce
+charles xavier prof x telepathy
+bobby drake iceman thermokinesis
+kurt wagner nightcrawler teleportation
+max eisenhardt magneto magnetokinesis
+kitty pryde shadowcat intangibility
 ```
 
 
@@ -324,6 +387,9 @@ Use `*` (splat operator) to unpack `zip` results.
 Example:  
 
 ```python
+avengers = ["Iron Man", "Thor", "Hulk"]
+real_names = ["Tony", "Thor", "Bruce"]
+
 print(*zip(avengers, real_names))
 ```
 
