@@ -1,9 +1,7 @@
 {
-  "label": "MLOps",
-  "position": 10,
+  "label": "Importing Data",
+  "position": 4,
   "link": {
     "type": "generated-index"
   }
 }
-
-
