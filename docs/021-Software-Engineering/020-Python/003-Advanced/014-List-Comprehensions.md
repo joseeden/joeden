@@ -84,7 +84,7 @@ Nested comprehensions can save space but may reduce readability. Use them when t
 
 ## Example: Matrices 
 
-One of the ways in which lists can be used are in representing multi-dimension objects such as matrices. Matrices can be represented as a list of lists in Python. For example a 5 x 5 matrix with values 0 to 4 in each row can be written as:
+Lists can store multi-dimensional data, like matrices. In Python, a matrix is just a list of lists. For example a 5 x 5 matrix with values 0 to 4 in each row can be written as:
 
 ```python
 matrix = [[0, 1, 2, 3, 4],
@@ -94,9 +94,7 @@ matrix = [[0, 1, 2, 3, 4],
           [0, 1, 2, 3, 4]]
 ```
 
-Your task is to recreate this matrix by using nested listed comprehensions. Recall that you can create one of the rows of the matrix with a single list comprehension. Note that here, the output expression is itself a list comprehension.
-
-Solution:
+You can use a nested list comprehension to generate this matrix dynamically.  
 
 ```python
 # 5 x 5 matrix using a list of lists
@@ -106,7 +104,7 @@ for row in matrix:
     print(row)
 ```
 
-Output:
+Note that the output itself a list comprehension.
 
 ```bash
   [0, 1, 2, 3, 4]
