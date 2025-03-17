@@ -91,58 +91,6 @@ b
 c  
 ```
 
-## Unpack Iterators with `*`
-
-The `*` operator prints all values at once.  
-
-- Works on iterators and iterables  
-- After use, the iterator is empty  
-
-Example:
-
-```python
-nums = iter([1, 2, 3])  
-print(*nums)  
-```
-
-Output:
-
-```
-1 2 3  
-```
-
-## Iterate Over Dictionaries  
-
-Dictionaries are also iterables, and you can loop through key-value pairs.  
-
-Use `.items()` to access both keys and values  
-
-```python
-info = {"name": "Alex", "age": 30}  
-for key, value in info.items():  
-    print(key, value)  
-```
-
-Output:
-
-```
-name Alex  
-age 30  
-```
-
-## Iterate Over Files  
-
-Files can be iterated line by line using `iter()` and `next()`.  
-
-Each `next()` call reads the next line  
-
-```python
-with open("file.txt") as file:  
-    lines = iter(file)  
-    print(next(lines))  
-    print(next(lines))  
-```
-
 ## Example: `range()`  
 
 The `range()` function can be used in a `for` loop as if it's a list:  
@@ -197,3 +145,190 @@ The output shows how iterators fetch values dynamically rather than storing them
 3
 4
 ```  
+
+
+## Unpack Iterators with `*`
+
+The `*` operator prints all values at once.  
+
+- Works on iterators and iterables  
+- After use, the iterator is empty  
+
+Example:
+
+```python
+nums = iter([1, 2, 3])  
+print(*nums)  
+```
+
+Output:
+
+```
+1 2 3  
+```
+
+## Iterate Over Dictionaries  
+
+Dictionaries are also iterables, and you can loop through key-value pairs.  
+
+Use `.items()` to access both keys and values  
+
+```python
+info = {"name": "Alex", "age": 30}  
+for key, value in info.items():  
+    print(key, value)  
+```
+
+Output:
+
+```
+name Alex  
+age 30  
+```
+
+## Iterate Over Files  
+
+Files can be iterated line by line using `iter()` and `next()`.  
+
+Each `next()` call reads the next line  
+
+```python
+with open("file.txt") as file:  
+    lines = iter(file)  
+    print(next(lines))  
+    print(next(lines))  
+```
+
+## Iterators as Function Arguments
+
+Some functions work with iterators and iterables.  
+
+- `range()` creates a sequence of numbers  
+- `list()` converts it into a list  
+- `sum()` adds up the numbers  
+
+Example:
+
+```python
+values = range(10, 21)      # Create a range from 10 to 20  
+print(list(values))  
+
+values_list = list(values)  # Convert range to a list  
+print(values_list)  
+
+values_sum = sum(values)    # Sum the numbers  
+print(values_sum)  
+```  
+
+Output:
+
+```bash
+[10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]  
+[10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]  
+165  
+```  
+
+## Using `enumerate()`  
+
+`enumerate()` adds an index to items in an iterable, creating pairs of index and value.  
+
+- Converts an iterable into an enumerate object  
+- Returns index-value pairs as tuples  
+- Default index starts at 0 but can be changed  
+
+Example:  
+
+```python
+avengers = ["Iron Man", "Thor", "Hulk"]
+print(list(enumerate(avengers)))
+```
+
+Output:
+
+```
+[(0, 'Iron Man'), (1, 'Thor'), (2, 'Hulk')]
+```
+
+
+#### Looping with `enumerate()`  
+
+You can loop through an `enumerate` object and unpack values.  
+
+- `for index, value in enumerate(iterable)` unpacks pairs  
+- Default index is 0, but can be changed with `start`  
+
+Example:  
+
+```python
+avengers = ["Iron Man", "Thor", "Hulk"]
+
+for i, hero in enumerate(avengers, start=1):
+    print(i, hero)
+```
+
+Output:
+
+```
+1 Iron Man
+2 Thor
+3 Hulk
+```
+
+
+## Using `zip()`  
+
+`zip()` combines multiple iterables into pairs or groups.  
+
+- Returns an iterator of tuples  
+- Each tuple contains elements from corresponding positions in iterables  
+
+Example:  
+
+```python
+avengers = ["Iron Man", "Thor", "Hulk"]
+real_names = ["Tony", "Thor", "Bruce"]
+print(list(zip(avengers, real_names)))
+```
+
+Output:
+
+```
+[('Iron Man', 'Tony'), ('Thor', 'Thor'), ('Hulk', 'Bruce')]
+```
+
+
+#### Looping with `zip()`  
+
+You can iterate over a `zip` object directly.  
+
+Example:  
+
+```python
+for hero, name in zip(avengers, real_names):
+    print(f"{hero} is {name}")
+```
+
+Output:
+
+```
+Iron Man is Tony
+Thor is Thor
+Hulk is Bruce
+```
+
+
+#### Printing with `*`  
+
+Use `*` (splat operator) to unpack `zip` results.  
+
+Example:  
+
+```python
+print(*zip(avengers, real_names))
+```
+
+Output:
+
+```
+('Iron Man', 'Tony') ('Thor', 'Thor') ('Hulk', 'Bruce')
+```
