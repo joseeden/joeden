@@ -3,7 +3,6 @@ title: "Introduction"
 description: "Introduction"
 tags: 
 - Machine Learning
-- Artificial Intelligence
 - MLOps
 sidebar_position: 1
 # last_update:

@@ -12,19 +12,26 @@ last_update:
 
 ## Overview 
 
-In machine learning, having a clear workflow is key to getting good results. The order in which steps are done plays a big role. Rearranging these steps will help you better understand their importance and how they fit into a typical machine learning project.
-
+In machine learning, having a clear workflow is key to getting good results. The order in which steps are done plays a big role. R
 <div class='img-center'>
 
 ![](/img/docs/ml-worklow-diagram-detailed.png)
 
 </div>
 
-In the sample diagram above, the workflow begins with raw data, which is transformed into features and labels. 
+The workflow starts with raw data, which is processed into features and labels.  
 
-- These are split into training, validation, and testing datasets. 
-- Training and validation datasets are used for model training and hyperparameter tuning.
-- The testing dataset evaluates the final model. 
+- **Dataset preparation**  
+  - Data is split into training, validation, and testing sets.  
+  - Each set serves a specific role in model development.  
+
+- **Model training & tuning**  
+  - Training and validation sets refine the model.  
+  - Hyperparameters are adjusted for better accuracy.  
+
+- **Final evaluation**  
+  - The testing dataset checks model performance.  
+  - The trained model predicts labels based on new data.  
 
 The process results in a trained model capable of generating predicted labels.
 
@@ -37,33 +44,29 @@ The process results in a trained model capable of generating predicted labels.
 
 </div>
 
-New York City releases monthly records of apartment sales, including details like square footage, neighborhood, year built, and sale price. We aim to predict future sale prices, making this a supervised learning problem.
+New York City provides monthly apartment sales data, including square footage, neighborhood, year built, and sale price. The goal is to predict future sale prices, which makes this a supervised learning problem. 
 
-- **Step 1: Extract Features**
+**Step 1: Extract Features**
 
-    - Datasets often need reformatting to extract clear features.
-    - Decide on relevant features like square feet, neighborhood, and proximity to subway stations.
+  - Reformat data to highlight useful details.  
+  - Select key features like square footage and neighborhood.  
 
-- **Step 2: Split Dataset**
+**Step 2: Split Dataset**
 
-    - Split the dataset into training and testing sets.
-    - Two datasets are essential for effective model evaluation.
+  - Divide data into training and testing sets.  
+  - Use separate datasets for training and evaluation.  
 
-- **Step 3: Train Model**
+**Step 3: Train Model**
 
-    - Input the training dataset into a selected machine learning model.
-    - Choose from various models like neural networks or logistic regression based on use-cases and complexity.
+  - Feed training data into a machine learning model.  
+  - Choose a model like neural networks or regression.  
 
-- **Step 4: Evaluate**
+**Step 4: Evaluate**
 
-    - Evaluate the model using the test dataset (unseen data).
-    - Various metrics can assess performance, such as:
-        - Average error or percentage accuracy within a margin.
-        - Percentage of apartments did the model predict correctly within the margin
-    - Decide on a performance threshold to determine model readiness.
-    - Is performance good enough?
-        - Yes, then our model is ready to use.
-        - No, tune the model by tweaking options or features and repeat the training.
+  - Test the model on unseen data.  
+  - Assess performance using metrics like accuracy or error rate.  
+  - If results are good, deploy the model. 
+  - Otherwise, adjust features or settings and retrain.
 
 
 ## The Complete ML Workflow
