@@ -87,15 +87,14 @@ MLOps follows a structured process to turn machine learning ideas into real-worl
 - Development: Train, test, and refine models.  
 - Deployment: Integrate models, monitor performance, and update as needed.  
 
-A structured lifecycle ensures efficient machine learning projects.  
+A structured lifecycle presents a clear roadmap which helps plan each stage of execution and ensures the right people and tools are involved at the right time. 
 
-- **Clear Roadmap**  
-  - Helps plan each stage for smooth execution.  
-  - Ensures the right people and tools are involved at the right time.  
+<div class="img-center"> 
 
-- **Optimization & Monitoring**  
-  - Uses best practices to improve model performance.  
-  - Tracks accuracy and detects performance issues early.  
+![](/img/docs/Screenshot-2025-03-18-230536.png)
+
+</div>
+
 
 ### Design Phase  
 

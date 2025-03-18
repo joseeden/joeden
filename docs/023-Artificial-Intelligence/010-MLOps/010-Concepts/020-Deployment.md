@@ -47,3 +47,54 @@ A container packages a program with all its dependencies to ensure consistent pe
 - Starts quickly with only necessary components.  
 
 For more information, please see [Containerization.](/docs/015-Containerization/015-Docker/001-From-VMs-to-Containers.md)
+
+## Microservices Architecture  
+
+Before deploying a machine learning model, we need to decide how to structure the system. This involves choosing between a monolithic or microservices architecture.  
+
+- **Monolith**: All services run as a single application.  
+- **Microservices**: Services are independent and deployed separately.  
+
+A monolithic system can become complex and difficult to scale because all parts are tightly connected. If one part fails, the whole system may go down. On the other hand, microservices allow individual services to fail without affecting the entire system, making them more flexible. However, they require more resources and maintenance.  
+
+<div class='img-center'>
+
+![](/img/docs/udacity-suse-2-monoliths-micro.png)
+
+</div>
+
+
+## Inferencing  
+
+Machine learning models are often deployed as microservices, allowing them to process new data and make predictions independently. This process, called **inferencing**, involves sending input, like customer data, to the model and receiving an output, such as the likelihood of a customer churning.
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-18-231406.png)
+
+</div>
+
+
+## APIs for Communication  
+
+Microservices rely on APIs to communicate and define how they interact with each other.  
+
+- **With API**: Think of an API like a bridge between two islands, allowing information to travel back and forth.  
+- **Without an API**: Without this bridge, services can't exchange information properly, leading to confusion and errors.  
+
+Using APIs ensures that services can communicate clearly and work together efficiently.
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-18-231737.png)
+
+</div>
+
+Here’s an example of how an API request works with a machine learning model:
+
+1. New input data is received.  
+2. The data is sent to the API.  
+3. The API forwards the data to the machine learning model.  
+4. The model generates a prediction based on the data.  
+5. The prediction is sent back to the API.  
+6. The API sends the prediction to the application.  
