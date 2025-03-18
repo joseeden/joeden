@@ -80,3 +80,4 @@ A **model store** is like a feature store but for models. It ensures models can 
 
 - Enable version control and rollback
 - Works well in tandem with feature stores 
+
