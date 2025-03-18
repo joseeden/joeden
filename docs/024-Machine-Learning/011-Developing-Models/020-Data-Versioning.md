@@ -57,7 +57,7 @@ Model versioning allows tracking of model changes over time. For example:
 - **Model version 1.1**: Fine-tuned model with data version 1.1.
 - **Model version 2.0**: New model (e.g., XGBoost) trained with data version 1.2.
 
-## Using MLflow for Model Versioning
+## MLflow for Model Versioning
 
 Here’s how you can log a model version with MLflow:
 
