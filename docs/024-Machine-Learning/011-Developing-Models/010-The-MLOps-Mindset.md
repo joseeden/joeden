@@ -19,7 +19,7 @@ MLOps (Machine Learning Operations) helps teams manage ML models in production. 
 
 By following MLOps practices, models stay reliable and efficient.  
 
-## ML Experiments  
+## Running ML Experiments  
 
 ML experiments test different models to find the best one.  
 
@@ -47,7 +47,7 @@ Once validated, it should be deployed in a secure, scalable environment.
 
 
 
-## Why Most ML Experiments Fail  
+## Why ML Experiments Fail 
 
 Many ML experiments don’t reach production due to common issues.  
 
@@ -67,32 +67,3 @@ Technical debt happens when rushed code causes future issues.
 - **Quick fixes** cause long-term problems  
 
 Prioritizing quality and proper testing prevents technical debt.  
-
-### Example of Poor vs. Good Code  
-
-**Poor Code (No Validation, Hard to Maintain)**  
-
-```python
-import pandas as pd
-data = pd.read_csv("dataset.csv")
-data["label"] = data["label"].map(lambda x: 1 if x == "spam" else 0)
-```
-
-**Good Code (Handles Errors, Clear Logic)**  
-
-```python
-import pandas as pd
-
-def load_data(filepath):
-    try:
-        data = pd.read_csv(filepath)
-        data["label"] = data["label"].apply(lambda x: 1 if x == "spam" else 0)
-        return data
-    except Exception as e:
-        print(f"Error loading data: {e}")
-        return None
-
-df = load_data("dataset.csv")
-```
-
-Taking time to write clean, well-tested code prevents future issues.
