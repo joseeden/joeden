@@ -4,7 +4,7 @@ description: "Data Quality and Ingestion"
 tags: 
 - Machine Learning
 - MLOps
-sidebar_position: 5
+sidebar_position: 7
 # last_update:
 #   date: 7/7/2022
 ---
