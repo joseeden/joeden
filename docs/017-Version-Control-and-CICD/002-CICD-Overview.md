@@ -11,6 +11,17 @@ last_update:
 ---
 
 
+## CICD 
+
+CI/CD (Continuous Integration and Continuous Deployment) is a key part of the deployment phase. The CI/CD pipeline automates checks and processes to ensure that code is ready for production.
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-18-233118.png)
+
+</div>
+
+
 ## Continuous Integration
 
 Continuous Integration (CI) is the practice of frequently merging developers’ code into a shared repository to catch issues early and improve build quality.
