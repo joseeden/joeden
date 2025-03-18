@@ -28,6 +28,21 @@ MLOps, or Machine Learning Operations, is a framework for deploying and maintain
 
 </div>
 
+## Benefits of MLOps  
+
+MLOps makes ML faster and more reliable.  
+
+- **Improves teamwork**  
+  - Bridges the gap between ML and operations teams.  
+  - Enhances communication and collaboration.  
+
+- **Automates deployment**  
+  - Reduces manual work and errors.  
+  - Speeds up model releases.  
+
+- **Tracks performance**  
+  - Detects performance drift and issues.  
+  - Ensures models stay accurate in production.  
 
 ## Origin of MLOps  
 
@@ -41,7 +56,7 @@ MLOps comes from DevOps, which improves software development.
   - Data scientists and ML engineers collaborate.  
   - Streamlines model deployment and monitoring.  
 
-## Why MLOps Matters  
+## More Than Just Models 
 
 Building a machine learning model is just one part of the process.
 
@@ -64,19 +79,115 @@ Building a machine learning model is just one part of the process.
 </div>
 
 
-## Benefits of MLOps  
+## MLOps Lifecycle  
 
-MLOps makes ML faster and more reliable.  
+MLOps follows a structured process to turn machine learning ideas into real-world solutions.  
 
-- **Improves teamwork**  
-  - Bridges the gap between ML and operations teams.  
-  - Enhances communication and collaboration.  
+- Design: Define goals, assess data, and set success metrics.  
+- Development: Train, test, and refine models.  
+- Deployment: Integrate models, monitor performance, and update as needed.  
 
-- **Automates deployment**  
-  - Reduces manual work and errors.  
-  - Speeds up model releases.  
+A structured lifecycle ensures efficient machine learning projects.  
 
-- **Tracks performance**  
-  - Detects performance drift and issues.  
-  - Ensures models stay accurate in production.  
+- **Clear Roadmap**  
+  - Helps plan each stage for smooth execution.  
+  - Ensures the right people and tools are involved at the right time.  
 
+- **Optimization & Monitoring**  
+  - Uses best practices to improve model performance.  
+  - Tracks accuracy and detects performance issues early.  
+
+### Design Phase  
+
+This phase sets the foundation by defining goals and assessing feasibility.  
+
+- **Define the Problem**  
+  - Identify business needs and success criteria.  
+  - Engage stakeholders to ensure project alignment.  
+
+- **Prepare Data**  
+  - Collect and clean high-quality data.  
+  - Establish key metrics for evaluation.  
+
+### Development Phase  
+
+The model is built, tested, and improved.  
+
+- **Experiment & Train**  
+  - Test different algorithms and parameters.  
+  - Train multiple models to compare performance.  
+
+- **Refine & Optimize**  
+  - Evaluate results and fine-tune the model.  
+  - Ensure the model meets defined success criteria.  
+
+### Deployment Phase  
+
+The model is integrated into a live system and monitored.  
+
+- **Deploy & Scale**  
+  - Package the model as a microservice or API.  
+  - Ensure smooth integration with existing systems.  
+
+- **Monitor & Maintain**  
+  - Track performance and detect issues like data drift.  
+  - Update the model as needed to maintain accuracy.  
+
+## Continuous Improvement  
+
+MLOps is an ongoing process, not a one-time task.  
+
+- **Evaluate Regularly**  
+  - Assess if the model is still delivering value.  
+  - Make adjustments based on real-world feedback.  
+
+- **Iterate & Improve**  
+  - Refine models using new data and better techniques.  
+  - Adapt strategies to meet evolving business needs.  
+
+## Roles in MLOps
+
+The ML lifecycle follows a structured process with different tasks handled by various roles. These roles fall into two categories: business and technical.  
+
+### Business Roles  
+
+Business roles focus on project goals, budget, and domain knowledge.  
+
+- **Business Stakeholder**  
+  - Oversees budget and project alignment with company goals.  
+  - Defines business requirements and evaluates project success.  
+
+- **Subject Matter Expert**  
+  - Provides industry-specific knowledge.  
+  - Helps interpret data and model results.  
+
+### Technical Roles  
+
+Technical roles handle data, model development, and deployment.  
+
+- **Data Scientist**  
+  - Analyzes data, trains models, and evaluates performance.  
+  - Monitors deployed models to ensure accuracy.  
+
+- **Data Engineer**  
+  - Collects, stores, and processes data.  
+  - Ensures data quality through validation and testing.  
+
+- **ML Engineer**  
+  - Works across all ML lifecycle stages.  
+  - Manages data extraction, model training, and deployment.  
+
+### Other Roles  
+
+Additional contributors vary based on the project and company structure.  
+
+- **Software Engineers & Backend Engineers**  
+  - Assist with integrating models into applications.  
+
+- **Data Analysts**  
+  - Provide insights from data for better decision-making.  
+
+- **Developers**  
+  - Help with coding, automation, and infrastructure setup.  
+
+Roles in startups may be more flexible, while enterprises typically have specialized teams.
