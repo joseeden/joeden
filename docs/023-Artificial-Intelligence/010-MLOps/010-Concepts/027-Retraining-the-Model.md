@@ -27,7 +27,6 @@ Retraining is essential to keep the model updated and accurate as data changes o
 </div>
 
 
-
 ## Types of Drift  
 
 There are two main types of drifts:

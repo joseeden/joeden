@@ -54,3 +54,37 @@ Effective monitoring helps detect and resolve issues quickly.
 
 - Monitor both statistical and computational metrics  
 - Spot issues early and fix them quickly
+
+## MLOps Tools  
+
+MLOps tools improve machine learning workflows and makes them more efficient and reliable.
+
+- **Feature store**  
+  - Tools: Feast, Hopsworks  
+  - Feast is open-source and self-managed, offering flexibility.  
+  - Hopsworks is best with the full Hopsworks platform.
+
+- **Experiment tracking**  
+  - Tools: MLFlow, ClearML, Weights and Biases  
+  - MLFlow tracks experiments and development.  
+  - ClearML tracks experiments and handles deployment.  
+  - Weights and Biases visualizes experiment results.
+
+- **Containerization**  
+  - Tools: Docker, Kubernetes, cloud services  
+  - Docker containers apps; Kubernetes handles deployment and scaling.  
+  - Cloud services like AWS, Azure, and Google Cloud manage containers.
+
+- **CI/CD pipeline**  
+  - Tools: Jenkins, GitLab  
+  - Jenkins automates the CI/CD process.  
+  - GitLab offers CI/CD tools and project management.
+
+- **Monitoring**  
+  - Tools: Fiddler, Great Expectations  
+  - Fiddler tracks model performance.  
+  - Great Expectations monitors data quality.
+
+- **MLOps platforms**  
+  - Tools: AWS Sagemaker, Azure ML, Google Cloud AI  
+  - These platforms cover the entire machine learning lifecycle, from data exploration to model deployment.
