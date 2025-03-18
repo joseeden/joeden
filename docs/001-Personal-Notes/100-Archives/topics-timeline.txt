@@ -70,8 +70,9 @@
 
 1/17/2023   - Gitlab
 2/26/2023   - Kong
-5/4/2023    - ML
 3/2/2023    - Data Storytelling
+5/4/2023    - ML
+5/12/2023   - MLOps
 
 1/30/2024 - Cybersecurity
 1/30/2024 - Software Sec
