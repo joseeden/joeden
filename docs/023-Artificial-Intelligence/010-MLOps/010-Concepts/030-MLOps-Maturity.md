@@ -1,6 +1,6 @@
 ---
-title: "MLOps Maturity
-description: "MLOps Maturity
+title: "Monitoring Models"
+description: "MLOps Maturity"
 tags: 
 - Machine Learning
 - MLOps
