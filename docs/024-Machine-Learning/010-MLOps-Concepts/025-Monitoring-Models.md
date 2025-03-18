@@ -1,6 +1,6 @@
 ---
-title: "ML in Production"
-description: "ML in Production"
+title: "Monitoring Models"
+description: "Monitoring Models"
 tags: 
 - Machine Learning
 - MLOps

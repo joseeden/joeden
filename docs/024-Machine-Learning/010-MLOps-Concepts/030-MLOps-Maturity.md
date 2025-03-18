@@ -1,5 +1,5 @@
 ---
-title: "Monitoring Models"
+title: "MLOps Maturity"
 description: "MLOps Maturity"
 tags: 
 - Machine Learning
