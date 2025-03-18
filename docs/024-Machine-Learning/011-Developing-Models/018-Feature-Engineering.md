@@ -18,6 +18,12 @@ Feature engineering helps improve machine learning model performance by transfor
 - Transforming features  
 - Selecting important features  
 
+:::info 
+
+A **Feature** is a measurable property, like a column in a table. 
+
+:::
+
 <div class="img-center"> 
 
 ![](/img/docs/Screenshot-2025-03-19-070728.png)

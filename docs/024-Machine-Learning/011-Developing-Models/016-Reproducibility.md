@@ -35,7 +35,7 @@ MLflow is an open-source tool for tracking and managing ML experiments. It helps
 
 ## Example: MLflow with Scikit-Learn  
 
-MLflow makes tracking model training simple. Below is an example of using MLflow to log a RandomForest model.  
+MLflow makes tracking model training simple. Below is an example of using MLflow to log a `RandomForest` model.  
 
 ```python
 import mlflow
