@@ -47,7 +47,22 @@ Let's recall the [Support Vector Machine from Supervised Learning](./004-Supervi
 
 `kernel` = linear to polynomial. 
 
-![](/img/docs/ml-hyperparameter-tuning-linear-to-polynomial.png)
+<!-- ![](/img/docs/ml-hyperparameter-tuning-linear-to-polynomial.png) -->
+
+
+<div class='img-center'>
+
+![](/img/docs/ml-college-admissions-linear-classifier.png)
+
+</div>
+
+
+<div class='img-center'>
+
+![](/img/docs/ml-college-admissions-polynomial-classifier.png)
+
+</div>
+
 
 Tuning various hyperparameters impacts model performance. 
 
