@@ -36,35 +36,56 @@ For more information, please see [CICD Overview.](/docs/017-Version-Control-and-
 
 ## Deployment Strategies
 
-Once a machine learning model is ready for deployment, we have several strategies for releasing it into production. Here are three common strategies:
+Once a machine learning model is ready for deployment, we have several strategies for releasing it into production. 
 
-- **Basic Deployment**: The old model is replaced entirely with the new model.  
-- **Shadow Deployment**: The new model is tested alongside the old model using the same input data.  
-- **Canary Deployment**: The new model is used for a small portion of the incoming data, allowing for safe testing.
+<div class="img-center"> 
 
-## Basic Deployment
+![](/img/docs/Screenshot-2025-03-19-000707.png)
+
+</div>
+
+
+### Basic Deployment
 
 In basic deployment, the new model fully replaces the old one in production.
 
-- **Simple and Fast**: The old model is replaced with the new one for all incoming data.  
-- **Risky**: If the new model fails, all users are affected.
+- Old model is replaced with the new one for all incoming data.  
+- If the new model fails, all users are affected.
 
-## Shadow Deployment
+### Shadow Deployment
 
 Shadow deployment runs the new model alongside the old one, testing both on new data.
 
-- **Dual Models**: Both the old and new models process the same data.  
-- **Low Risk**: Even if the new model fails, the old model is still active.
+- Both the old and new models process the same data.  
+- Even if the new model fails, the old model is still active.
 
-## Canary Deployment
+### Canary Deployment
 
 Canary deployment uses the new model for only a small portion of incoming data.
 
-- **Gradual Rollout**: The new model is tested on a small number of users.  
-- **Risk Control**: If the new model fails, only a small number of users are affected.
+- New model is tested gradually on a small number of users.  
+- If new model fails, only a small number of users are affected.
 
-## Comparison of Strategies
+## Automation and Scaling
 
-- **Basic Deployment**: Simple, but high risk if the model fails.  
-- **Shadow Deployment**: Safer but requires more resources since both models run simultaneously.  
-- **Canary Deployment**: More efficient than shadow deployment but slightly riskier.
+Automation and scaling are crucial in machine learning. Both help speed up processes and handle large datasets more efficiently. Here's how automation and scaling fit into different stages of the machine learning lifecycle:
+
+- **Design Phase**  
+  - Sets the foundation for machine learning
+  - Align business needs with technical goals  
+  - Templatize designs for more structured processes in MLOps
+
+- **Data Acquisition and Quality Checks**  
+  - Automated data collection improves the model's success rate
+  - Automate data checks for quality  
+  - Ensures better machine learning model performance  
+
+- **Development Phase**  
+  - Focused on building features and experiments
+  - Use feature stores to save time  
+  - Automate experiment tracking for progress and reproducibility.
+
+- **Deployment Phase**  
+  - Use containerization for flexible scaling  
+  - Set up CI/CD pipelines for faster, automated updates  
+  - Microservices architecture helps scale individual parts independently
