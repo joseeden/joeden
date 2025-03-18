@@ -88,3 +88,7 @@ Just like Git tracks code changes, **data version control** tracks dataset chang
 
 - **Keeps history**: Allows rolling back to previous versions.  
 - **Ensures consistency**: Prevents unexpected changes in model inputs.  
+
+## More Information
+
+For more information, please see Feature Engineering.
