@@ -1,7 +1,9 @@
 {
-  "label": "Machine Learning",
-  "position": 1,
+  "label": "MLOps Concepts",
+  "position": 10,
   "link": {
     "type": "generated-index"
   }
 }
+
+
