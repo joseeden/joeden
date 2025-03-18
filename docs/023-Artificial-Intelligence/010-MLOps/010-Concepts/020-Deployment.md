@@ -25,9 +25,16 @@ Before full deployment, models may also run in a **testing environment** to iden
 
 <div class="img-center"> 
 
-![](/img/docs/testing-environment.png)
+![](/img/docs/all-things-data-Page-21.png)
 
 </div>
+
+
+<!-- <div class="img-center"> 
+
+![](/img/docs/testing-environment.png)
+
+</div> -->
 
 ## Runtime Environments  
 
