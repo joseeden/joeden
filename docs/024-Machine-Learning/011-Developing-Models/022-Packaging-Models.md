@@ -1,6 +1,6 @@
 ---
-title: "Packaging Models"
-description: "Packaging Models"
+title: "Packaging ML Models"
+description: "Packaging Machine Learning Models"
 tags: 
 - Machine Learning
 - MLOps
