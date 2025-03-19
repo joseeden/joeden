@@ -37,17 +37,13 @@ The ML Project Life Cycle covers the entire process of solving a problem with ML
 
 An ML application includes more than just the model.
 
-- **Business Rules**
-  - Example: "If fewer than 10 ratings, recommend popular movies."
+- **Business Rules** - Example: "If fewer than 10 ratings, recommend popular movies."
 
-- **Database**
-  - Stores features and logs model outputs.
+- **Database** - Stores features and logs model outputs.
 
-- **GUI**
-  - Allows admin users to configure and troubleshoot.
+- **GUI** - Allows admin users to configure and troubleshoot.
 
-- **API**
-  - Enables external communication securely and consistently.
+- **API** - Enables external communication securely and consistently.
 
 ## Monolithic vs. Decoupled
 
