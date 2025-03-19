@@ -58,7 +58,6 @@ class DataAggregator:
     return pd.concat([data1, data2, data3], axis=0)
 ```
 
-### Expected Result  
 
 ## Feature Construction  
 
@@ -162,14 +161,12 @@ class FeatureEngineeringPipeline:
         self.selector = SelectKBest(chi2, k=10)
     
     def fit(self, X, y):
-        # Apply aggregation, feature construction, scaling, and feature selection
         X = self.aggregator.transform(X)
         X = self.constructor.transform(X)
         X = self.scaler.fit_transform(X)
         self.selector.fit(X, y)
     
     def transform(self, X):
-        # Apply transformations to new data
         X = self.aggregator.transform(X)
         X = self.constructor.transform(X)
         X = self.scaler.transform(X)

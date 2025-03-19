@@ -55,7 +55,7 @@ Continuous Monitoring is the practice of continuously monitoring performance, id
 - Access to consistent and reliable ML metrics
 
 
-## Example of ML Automation at Scale
+## Example: ML Automation at Scale
 
 Here’s how automation works in a typical ML pipeline:
 
