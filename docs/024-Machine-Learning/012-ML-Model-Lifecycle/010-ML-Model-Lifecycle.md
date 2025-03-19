@@ -6,9 +6,8 @@ tags:
 - MLOps
 sidebar_position: 10
 last_update:
-  date: 5/13/2023
+  date: 5/14/2023
 ---
-
 
 
 ## ML Project Flow
