@@ -92,5 +92,5 @@ Automation and scaling helps speed up processes and handle large datasets more e
 
 For more information, please see:
 
-- [Scalability](/docs/024-Machine-Learning/011-Developing-Models/024-Scalability.md)
-- [Automation](/docs/024-Machine-Learning/011-Developing-Models/026-Automation.md)
+- [Scalability](/docs/024-Machine-Learning/012-Developing-Models/024-Scalability.md)
+- [Automation](/docs/024-Machine-Learning/012-Developing-Models/026-Automation.md)
