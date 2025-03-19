@@ -68,7 +68,7 @@ Canary deployment uses the new model for only a small portion of incoming data.
 
 ## Automation and Scaling
 
-Automation and scaling are crucial in machine learning. Both help speed up processes and handle large datasets more efficiently. Here's how automation and scaling fit into different stages of the machine learning lifecycle:
+Automation and scaling helps speed up processes and handle large datasets more efficiently. Here's how automation and scaling fit into different stages of the machine learning lifecycle:
 
 - **Design Phase**  
   - Sets the foundation for machine learning
@@ -89,3 +89,8 @@ Automation and scaling are crucial in machine learning. Both help speed up proce
   - Use containerization for flexible scaling  
   - Set up CI/CD pipelines for faster, automated updates  
   - Microservices architecture helps scale individual parts independently
+
+For more information, please see:
+
+- [Scalability](/docs/024-Machine-Learning/011-Developing-Models/024-Scalability.md)
+- [Automation](/docs/024-Machine-Learning/011-Developing-Models/026-Automation.md)
