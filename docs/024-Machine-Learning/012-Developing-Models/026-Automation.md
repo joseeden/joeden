@@ -33,7 +33,7 @@ On the other hand, **Continuous Deployment (CD)** automates the release of valid
 
 For more information, please see [CICD Overview.](/docs/017-Version-Control-and-CICD/002-CICD-Overview.md)
 
-::info 
+:::info 
 
 Tools like **Git**, **AWS CodePipeline**, **Jenkins**, and **Travis CI** are commonly used to implement CI/CD.
 
