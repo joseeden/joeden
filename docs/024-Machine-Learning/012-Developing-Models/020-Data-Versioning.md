@@ -43,11 +43,14 @@ We can version data by labeling it with unique identifiers. For example:
 
 A **feature store** manages the versions of features across experiments, ensures consistent data usage in future tests, and avoids duplication.
 
+For more information, please see [Feature Store.](/docs/024-Machine-Learning/011-MLOps-Deployment/017-Feature-Stores.md)
+
 <div class="img-center"> 
 
 ![](/img/docs/Screenshot-2025-03-18-202541.png)
 
 </div>
+
 
 ## Versioning ML Models
 

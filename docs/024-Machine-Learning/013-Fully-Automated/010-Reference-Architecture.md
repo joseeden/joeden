@@ -81,7 +81,7 @@ A metadata store keeps track of all the data and logs generated throughout the M
 - Stores model training data.
 - Logs pipeline execution details.
 
-The metadata store helps with tracking, auditing, and improving models over time.
+For more information, please see [Metadata Store.](/docs/024-Machine-Learning/013-Fully-Automated/018-Metadata-Store.md)
 
 ## Model Registry
 
@@ -132,7 +132,4 @@ This keeps the model relevant and accurate over time, minimizing errors in produ
 
 The feature store ensures that the features used in the ML system are consistent, reusable, and reproducible across different stages of the pipeline.
 
-- Central repository for features.
-- Reusable across experiments and deployment.
-
-The feature store ensures data consistency across all stages, from development to production.
+For more information, please see [Feature Store.](/docs/024-Machine-Learning/011-MLOps-Deployment/017-Feature-Stores.md)
