@@ -31,7 +31,12 @@ A **Feature** is a measurable property, like a column in a table.
 </div>
 
 
+## More Information 
 
+Other topics:
 
+- Feature Construction
+- Feature Transformation
+- Feature Selection
 
-## Feature Selection  
+For more information, please see [Feature Engineering.](/docs/024-Machine-Learning/005-ML-Lifecycle/014-Feature-Engineering.md)
