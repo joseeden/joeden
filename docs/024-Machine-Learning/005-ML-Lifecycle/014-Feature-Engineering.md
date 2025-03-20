@@ -145,7 +145,7 @@ print(f"Accuracy with scaling: {acc_with_scaling}")   # Example output: 0.982
 
 Feature transformation is a broad concept that includes various techniques that modify data into a different form to improve model performance. This includes techniques like:
 
-- **Normalization** - Scales numeric values to a range between 0 and 
+- **Normalization** - Normalize numeric data to a range of 0 to 1.
 - **Standardization** - Rescales data to have a mean of 0 and a standard deviation of 1.
 - **Log Transformation** - Converts skewed data into a more normal distribution.
 - **Encoding**: Converts categorical variables into numerical form.
@@ -153,45 +153,49 @@ Feature transformation is a broad concept that includes various techniques that 
 
 ### Normalization
 
-Normalization scales numeric features to a range between 0 and 1, ensuring no feature dominates due to its scale. This is important when working with models sensitive to input scale.
+Normalization scales numeric features to a range between 0 and 1, ensuring no feature dominates due to its scale. This is useful when working with models sensitive to input scale.
 
 - Normalize numeric data to a range of 0 to 1.  
+- helpful when features have different scales/ranges. 
 - Useful for models like K-Nearest Neighbors (KNN) and Neural Networks.  
 
-Example:
+We can apply normalization using `sklearn.preprocessing.Normalizer`. First, we create a normalizer object, then pass the DataFrame to transform the data and return the normalized version.
 
 ```python
 from sklearn.preprocessing import Normalizer
 
+# Create normalizer object
 normalizer = Normalizer()
 normalized_data = normalizer.fit_transform(data)
 ```
 
 ### Standardization
 
-Standardization transforms features so they have a mean of 0 and a standard deviation of 1. This is especially useful for models that assume data is normally distributed.
+Standardization transforms features so they have a **mean of 0** and a **standard deviation of 1**. This is especially useful for models that assume data is normally distributed.
 
 - Standardize data to have mean = 0, std = 1.  
 - Essential for models like Support Vector Machines (SVM) and Linear Regression.  
 
-Example:
+We can apply standardization using `sklearn.preprocessing.StandardScaler`. Similar to normalization, we first create a scaler object, then pass the DataFrame to transform the data and return the standardized version.
 
 ```python
 from sklearn.preprocessing import StandardScaler
 
+# Create scaler object
 scaler = StandardScaler()
 standardized_data = scaler.fit_transform(data)
 ```
 
 ## Good Features
 
-For improved prediction accuracy, it's crucial to select relevant and non-redundant features. Avoid using features that are too similar or irrelevant.
+To improve prediction accuracy, it's crucial to select relevant and non-redundant features. Avoid using features that are too similar or irrelevant.
 
 - Choose features that contribute meaningfully to the model.  
 - Eliminate redundant or irrelevant features.  
 
 Example: 
-- Age in years is enough; avoid adding age in months as it provides the same information.
+- Age in years is enough
+- Avoid adding age in months as it provides the same information.
 
 
 ## Feature Selection  
@@ -201,7 +205,6 @@ Note that adding more features doesn’t always help. The goal is to find the mo
 - **Feature Selection**: Identifying the most important variables.  
 - **Correlation Check**: Removing redundant features.  
 - **Dimensionality Reduction**: Methods like PCA (Principal Component Analysis) simplify data.  
-
 
 Feature selection helps by identifying the most relevant features and removing redundant ones, which improves model interpretability and performance.  
 
@@ -255,21 +258,35 @@ Make sure that `DataAggregator` and `FeatureConstructor` are defined and their `
 
 
 
-### Feature Selection with sklearn
+### Feature Selection with `sklearn`
 
-`sklearn.feature_selection` helps in selecting the most important features while removing redundant ones, ensuring the model only uses the most valuable data.
+`sklearn.feature_selection` helps in selecting the most important features while removing redundant ones. This ensures that the model only uses the most valuable data.
 
 - Use feature selection to identify key predictors.  
 - Split data to prevent data leakage during feature selection.  
 
-### Feature Selection with Random Forest
+In the example below, we first split the data into training and testing sets to prevent data leakage before applying feature selection.
 
-`SelectFromModel` uses models like Random Forest to identify important features by evaluating their impact on prediction accuracy.
+```python
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.feature_selection import SelectFromModel
+from sklearn.model_selection import train_test_split
 
-- Random Forest evaluates feature importance.  
-- Use `SelectFromModel` to select critical features based on their impact.  
+# Split data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(
+    df_X, df_y, test_size=0.2, random_state=42
+)
+```
 
-Example:
+### Feature Selection with RandomForest
+
+`SelectFromModel` helps identify important features using a model like `RandomForestClassifier`. It removes less relevant features to improve efficiency.  
+
+- Random Forest ranks feature importance.  
+- `SelectFromModel` keeps only the most valuable features.  
+- Reduces model complexity by eliminating irrelevant data.  
+
+The parameters optimize performance: `n_jobs=-1` uses all CPU cores, while `class_weight="balanced"` adjusts for imbalanced data, and `max_depth=5` limits tree depth.  
 
 ```python
 from sklearn.ensemble import RandomForestClassifier
@@ -281,7 +298,7 @@ model.fit(X_train, y_train)
 
 # Select important features
 selector = SelectFromModel(model, prefit=True)
-X_important = selector.transform(X_train)
+X_selected = selector.transform(X_train)
 ```
 
 ### Choosing Best Approach  
