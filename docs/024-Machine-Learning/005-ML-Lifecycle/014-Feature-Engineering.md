@@ -214,7 +214,7 @@ Feature selection helps by identifying the most relevant features and removing r
 
 </div>
 
-#### Example: Feature Engineering Pipeline
+### Example: Feature Engineering Pipeline
 
 This pipeline performs a sequence of operations: data aggregation, feature construction, scaling, and feature selection. It uses the Chi-squared test to pick the top 10 features. After fitting, the pipeline can transform new data in the same way.
 
