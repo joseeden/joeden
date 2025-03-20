@@ -51,7 +51,7 @@ Monitoring these shifts helps us identify when the model may need adjustments, t
 
 </div>
 
-## Monitoring Outputs
+## Outputs
 
 When ground truth is unavailable, monitoring output changes becomes vital. If the model’s predictions begin to differ from expected patterns, it may indicate the model needs updating.
 
@@ -60,3 +60,36 @@ When ground truth is unavailable, monitoring output changes becomes vital. If th
 ![](/img/docs/63e4d430549d4a26879bdad9_Frame_2-p-800.jpg)
 
 </div>
+
+## Monitoring and Alerting
+
+To ensure service quality, we need a monitoring and alerting system to quickly detect and fix issues like bugs, data errors, and failures in our ML service.
+
+Key components of a good monitoring system:
+
+- **Detailed logging** 
+  - Capture detailed logs throughout the code.
+  - Log latency sources and user data.
+  - Identify the root cause of issues.
+
+- **Data validation** 
+  - Validate incoming and outgoing data early.
+  - Check individual input tables.
+  - Monitor data quality against predefined rules.
+
+- **Data profiles** 
+  - Define acceptable input values and relationships.
+  - Set ranges and missing data limits.
+  - Track feature consistency.
+
+- **Statistical validation** 
+  - Validate data with clear thresholds.
+  - Set limits for acceptable variations.
+  - Avoid excessive alerts for minor changes.
+
+- **Alerting** 
+  - Ensure timely and actionable alerts.
+  - Send alerts to the right team.
+  - Make alerts clear and easy to act on.
+
+For better efficiency, the monitoring system should be centralized and independent, ensuring high-quality service across all ML services.
