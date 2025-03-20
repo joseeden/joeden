@@ -32,7 +32,8 @@ Workflows are sequences of tasks that process inputs into outputs, which can be 
 - **Automated workflows** – Fully scripted for efficiency.  
 - **Pipelines** – Automate workflows through structured scripts.  
 
-After a pipeline runs, it returns an output known as an artifact.
+For more information, please see [Automation Workflows.](/docs/024-Machine-Learning/013-Fully-Automated/019-Automation-Workflows.md)
+
 
 ## Artifacts   
 
