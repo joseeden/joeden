@@ -47,12 +47,12 @@ Sometimes we could use a third hold-out dataset, often called a **validation set
 
 ## Training a Model  
 
-We train our model using `sklearn`. First, we split the dataset into training and testing sets with `train_test_split`.  
+We train our model using `sklearn`. First, we split the dataset into training and testing sets with `train_test_split`. Logistic regression is a simple and effective choice. 
 
 - **Set max iterations** – Limits training steps.  
-- **Fit the model** – Learns patterns from training data.  
+- **Fit the model** – Train the model using `fit`
 
-Logistic regression is a simple and effective choice. We define the model, set the maximum training iterations, and train it using `fit`. The model minimizes prediction errors using log loss, ensuring outputs stay between 0 and 1.  
+The model minimizes prediction errors using log loss, and ensures outputs stay between 0 and 1.  
 
 ```python
 from sklearn.model_selection import train_test_split
