@@ -44,7 +44,7 @@ Once a machine learning model is ready for deployment, we have several strategie
 
 </div>
 
-For more information, please see [Deployment Strategies.](/docs/024-Machine-Learning/011-MLOps-Deployment/026-Deployment-Strategies.md)
+For more information, please see [Deployment Strategies.](/docs/024-Machine-Learning/011-MLOps-Deployment/020-Deployment-Strategies.md)
 
 ## Automation and Scaling
 
