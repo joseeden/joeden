@@ -44,27 +44,7 @@ Once a machine learning model is ready for deployment, we have several strategie
 
 </div>
 
-
-### Basic Deployment
-
-In basic deployment, the new model fully replaces the old one in production.
-
-- Old model is replaced with the new one for all incoming data.  
-- If the new model fails, all users are affected.
-
-### Shadow Deployment
-
-Shadow deployment runs the new model alongside the old one, testing both on new data.
-
-- Both the old and new models process the same data.  
-- Even if the new model fails, the old model is still active.
-
-### Canary Deployment
-
-Canary deployment uses the new model for only a small portion of incoming data.
-
-- New model is tested gradually on a small number of users.  
-- If new model fails, only a small number of users are affected.
+For more information, please see [Deployment Strategies.](/docs/024-Machine-Learning/011-MLOps-Deployment/026-Deployment-Strategies.md)
 
 ## Automation and Scaling
 
