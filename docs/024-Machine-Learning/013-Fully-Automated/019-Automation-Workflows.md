@@ -112,19 +112,3 @@ Automated retraining ensures models stay accurate as data changes.
 3. If accuracy declines, retraining is triggered  
 4. A new model is trained and deployed  
 
-**Sample Code**  
-
-```python
-import mlflow
-
-# Log model accuracy
-mlflow.log_metric("accuracy", 0.85)
-
-# Trigger retraining if accuracy drops
-if mlflow.get_metric("accuracy") < 0.80:
-    print("Retraining model...")
-```
-
-**Expected Result**  
-- Logs model accuracy  
-- If accuracy drops below 80%, retraining starts automatically
