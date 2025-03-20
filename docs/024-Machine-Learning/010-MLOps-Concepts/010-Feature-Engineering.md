@@ -76,6 +76,8 @@ Using expert knowledge and selection techniques leads to better results than bli
 
 A **feature store** is a central location to save and reuse features across projects. It helps large teams maintain consistency, but smaller projects may not need it.  
 
+For more information, please see [Feature Stores.](/docs/024-Machine-Learning/011-MLOps-Deployment/017-Feature-Stores.md)
+
 <div class="img-center"> 
 
 ![](/img/docs/Screenshot-2025-03-18-202541.png)
