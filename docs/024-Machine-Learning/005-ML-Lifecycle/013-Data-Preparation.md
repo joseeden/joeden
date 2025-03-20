@@ -59,7 +59,7 @@ Example:
 ```python
 from sklearn.impute import KNNImputer
 
-imputer = KNNImputer(n_neighbors=5)
+imputer = KNNImputer(n_neighbors=2, weights="uniform")
 df_imputed = imputer.fit_transform(df)  # Impute missing values using KNN
 ```
 
