@@ -42,12 +42,15 @@ In many cases, enhancing the training data can have a greater impact than changi
 
 Improving data quality can lead to better model performance, as the model learns from better examples. This approach has been shown to outperform model-centric changes in many real-world use cases.
 
+## Human-in-the-Loop 
+
+This is a new ML design where a human expert steps in when the model is unsure, making more accurate decisions. This allows for continuous labeling of new data, supporting ongoing model improvement.
+
 <div class="img-center"> 
 
 ![](/img/docs/Screenshot-2025-03-20-105155.png)
 
 </div>
-
 
 ## Tracking and Experimentation
 
