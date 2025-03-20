@@ -10,9 +10,11 @@ last_update:
   date: 5/4/2023
 ---
 
+
 ## Overview 
 
-In machine learning, having a clear workflow is key to getting good results. The order in which steps are done plays a big role. R
+In machine learning, having a clear workflow is key to getting good results. The order in which steps are done plays a big role. 
+
 <div class='img-center'>
 
 ![](/img/docs/ml-worklow-diagram-detailed.png)

@@ -1,6 +1,6 @@
 ---
-title: "ML Lifecycle"
-description: "ML Lifecycle"
+title: "ML Model Lifecycle"
+description: "ML Model Lifecycle"
 tags: 
 - Machine Learning
 - MLOps
