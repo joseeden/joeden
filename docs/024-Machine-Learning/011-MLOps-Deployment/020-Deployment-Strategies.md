@@ -4,7 +4,7 @@ description: "Deployment Strategies"
 tags: 
 - Machine Learning
 - MLOps
-sidebar_position: 26
+sidebar_position: 20
 last_update:
   date: 5/14/2023
 ---

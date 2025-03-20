@@ -4,7 +4,7 @@ description: "Serving Modes"
 tags: 
 - Machine Learning
 - MLOps
-sidebar_position: 20
+sidebar_position: 21
 last_update:
   date: 5/14/2023
 ---
