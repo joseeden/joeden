@@ -70,11 +70,11 @@ Handle missing data by automatically imputing values to maintain model accuracy.
 - **Data quality check**  
    - Monitor feature data for missing values.  
    - Trigger alarms when missing data exceeds a set threshold.  
-   
+
 - **Impute missing data**  
-   - Use mean/median for numerical features.  
-   - Use frequent category or "missing" category for categorical features.  
-   
+   - Use mean/median for *numerical features*.  
+   - Use frequent category or "missing" category for *categorical features*.  
+
 - **Fix defective features**  
    - Automatically replace missing data with statistical estimates.  
    - Ensure the data is complete for model training.
