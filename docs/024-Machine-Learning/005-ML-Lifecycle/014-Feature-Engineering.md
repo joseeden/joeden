@@ -148,8 +148,8 @@ Feature transformation is a broad concept that includes various techniques that 
 - **Normalization** - Normalize numeric data to a range of 0 to 1.
 - **Standardization** - Rescales data to have a mean of 0 and a standard deviation of 1.
 - **Log Transformation** - Converts skewed data into a more normal distribution.
-- **Encoding**: Converts categorical variables into numerical form.
-- **Binning**: Groups continuous values into discrete bins.
+- **Encoding** - Converts categorical variables into numerical form.
+- **Binning** - Groups continuous values into discrete bins.
 
 ### Normalization
 
