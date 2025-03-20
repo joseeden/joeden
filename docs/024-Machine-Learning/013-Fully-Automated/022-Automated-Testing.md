@@ -57,16 +57,39 @@ Testing ML systems is more complex than traditional systems, as shown in the fig
 
 ## Types of Tests for ML Systems  
 
-In addition to traditional softwarer tests, ML systems also require unique types of tests to ensure quality:
+In addition to traditional softwarer tests, ML systems also require unique types of tests to ensure quality.
 
-- **Data Tests**  
-  - Verify feature values and distributions  
-  - Check for compliance with privacy standards  
+### Data Tests
 
-- **Model Tests**  
-  - Monitor performance metrics  
-  - Ensure accuracy and avoid overfitting  
+Data Tests are deterministic tests which checks if features meet certain expectations.
 
-- **Pipeline Tests**  
-  - Ensure reproducibility of training results  
-  - Verify end-to-end pipeline functionality  
+- Verify if feature follows known distributions  
+- Check for compliance with privacy standards  
+- Features should provide enough value to justify costs
+
+For instance, if a feature is based on temperature measurements, we should verify that the values fall within the expected range.
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-20-193404.png)
+
+</div>
+
+
+### Model Tests
+
+ML models enhance user experience by optimizing model performance using metrics like log-loss, ultimately improving user satisfaction.
+
+- Ensure all hyperparameters are tuned 
+- Monitor metrics to avoid overfitting
+- Maintain accuracy with validation and monitoring
+
+To assess prediction impact, we must evaluate **model staleness** and decide when to update it. Regular testing against a **baseline model** helps measure the value of advanced techniques.
+
+### Pipeline Tests
+
+Testing ML pipelines involves complex workflows. To ensure smooth operations, we should:
+
+- Ensure reproducibility of training results  
+- Verify end-to-end functionality of the pipeline
+- Conduct integrations tests that include data and model tests
