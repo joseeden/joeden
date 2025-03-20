@@ -54,7 +54,7 @@ In the next phase, source code is pushed to a repository where it’s stored and
 - Source code management.
 - Automated testing and building.
 
-CI ensures that every change is tested, ensuring stability and quality throughout development.
+CI ensures that every change is tested, and ensures stability and quality throughout development. This stage produces artifacts such as packages and executables.
 
 ## Artifacts & Continuous Delivery (CD)
 
