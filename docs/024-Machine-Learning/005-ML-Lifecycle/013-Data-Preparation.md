@@ -17,51 +17,84 @@ Data preparation involves applying EDA insights to identify and perform data-cle
 
 Missing values can affect model performance and need to be addressed. There are two main ways to handle missing values: 
 
-- **Dropping Missing Data**  
-  - Remove rows or columns with too many missing values.  
-  - Use `dropna()` to remove sparse entries.  
-  - Apply `drop()` to eliminate unnecessary columns.  
+### Dropping Missing Data
 
-      ```python
-      df = df.dropna(axis=0)                      # Drop rows with missing values
-      df = df.dropna(how='all')                   # Drop all empty or sparse rows
-      df = df.drop(columns=["unneeded_column"])   # Drop specific columns
-      ```
+If some rows or columns have too many missing values, they should be removed to avoid negatively impacting the model's performance.  
 
-- **Imputing Missing Values**  
-  - Can be used if columns cannot be dropped entirely.
-  - Fill missing values using the mean, median, or mode.  
-  - Use forward-fill for time series data (using previous value).
-  - Apply ML-based imputation for complex cases.  
+- Use `dropna()` to remove rows with missing data.  
+- Use `drop()` to remove specific columns.  
 
-      ```python
-      df["age"].fillna(df["age"].median(), inplace=True)  # Fill with median
-      df["cholesterol"].fillna(method="ffill", inplace=True)  # Forward fill
-      ```
+Example:
+
+```python
+df = df.dropna(axis=0)                      # Drop rows with missing values
+df = df.dropna(how='all')                   # Drop all empty or sparse rows
+df = df.drop(columns=["unneeded_column"])   # Drop specific columns
+```
+
+### Imputing Missing Values
+
+When columns cannot be dropped entirely, imputing missing values ensures that no crucial data is lost.  
+
+- Fill missing values with the mean, median, or mode.  
+- For time series, use forward-fill (previous value).  
+- For complex cases, apply ML-based imputation techniques.
+
+Example:
+
+```python
+df["age"].fillna(df["age"].median(), inplace=True)      # Fill with median
+df["cholesterol"].fillna(method="ffill", inplace=True)  # Forward fill
+```
+
+### Advanced Imputation
+
+In cases where basic imputation doesn't work, advanced techniques like K-nearest neighbors or SMOTE can be used to predict missing values based on other features in the dataset.  
+
+- Use KNN imputer for more accurate imputation.  
+- Apply `fit_transform()` to impute missing values.  
+
+Example:
+
+```python
+from sklearn.impute import KNNImputer
+
+imputer = KNNImputer(n_neighbors=5)
+df_imputed = imputer.fit_transform(df)  # Impute missing values using KNN
+```
 
 ## Removing Duplicates  
 
-Duplicates can distort model accuracy and should be removed.  
+Duplicates can distort model accuracy and should be removed to ensure the data is clean and reliable.  .
 
-- **Identifying Duplicates**  
-  - Check for duplicate rows in the dataset.  
-  - Compare across all columns or a subset.  
-  - Consider time-based uniqueness in time series data.  
+### Identifying Duplicates
 
-      ```python
-      duplicates = df.duplicated()
-      df[duplicates]  # View duplicate rows
-      ```
+Check for duplicate rows in the dataset to identify any redundancy.  
 
-- **Dropping Duplicates**  
-  - Use `drop_duplicates()` to remove identical rows.  
-  - Specify columns to check for duplicates.  
-  - Keep the first or last occurrence as needed.  
+- Compare across all columns or a subset.  
+- For time series data, check for uniqueness based on time.  
 
-      ```python
-      df = df.drop_duplicates()  # Remove duplicate rows
-      df = df.drop_duplicates(subset=["id"], keep="first")  # Drop by ID
-      ```
+Example:
+
+```python
+duplicates = df.duplicated()
+df[duplicates]    # View duplicate rows
+```
+
+### Dropping Duplicates
+
+Removing duplicates ensures that each row in the dataset is unique and doesn't introduce bias.  
+
+- Use `drop_duplicates()` to remove identical rows.  
+- Specify columns to check for duplicates.  
+- Keep the first or last occurrence as needed.  
+
+Example:
+
+```python
+df = df.drop_duplicates()  # Remove duplicate rows
+df = df.drop_duplicates(subset=["id"], keep="first")  # Drop by ID
+```
 
 ## Iterative Data Cleaning  
 
