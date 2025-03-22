@@ -1,1 +1,1 @@
-docs/021-Software-Engineering/021-Jupyter-Notebooks/002-Data-Engineering-with-Python/*.csv filter=lfs diff=lfs merge=lfs -text
+assets/datasets/* filter=lfs diff=lfs merge=lfs -text
