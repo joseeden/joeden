@@ -59,7 +59,75 @@ body{background-color:white;font-size:16px;color:black;}
 
 Minification reduces file size, which makes pages load faster. 
 
+## Responsive Design  
+
+Websites need to look good on all devices, from desktops to phones. Responsive design helps adjust layouts based on screen size.  
+
+- **Fluid Layouts**  
+
+  Use percentages instead of fixed widths to make elements adjust to different screen sizes.  
+  ```css
+  .container {
+    width: 80%;
+  }
+  ```
+
+- **Media Queries**  
+
+  Apply styles based on screen width.  
+
+  ```css
+  @media (max-width: 600px) {
+    body {
+      background-color: lightgray;
+    }
+  }
+  ```
+
+- **Flexible Images**  
+
+  Ensure images resize with the screen.  
+
+  ```css
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  ```
+
+- **Viewport Meta Tag**  
+
+  Helps the browser scale content properly.  
+
+  ```html
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  ```
+
+**Example**
+
+A responsive card layout using CSS Grid and media queries.  
+
+```css
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  padding: 20px;
+  background: #f4f4f4;
+}
+```
+
+
 ## Resources 
 
-- [https://css-tricks.com/](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [Minify-CSS](https://www.cleancss.com/css-minify/)
+- [CSS-Flexbox-Resource](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 - [Flexbox Froggy](https://flexboxfroggy.com/)
+- [CSS Browser Support Reference](https://www.w3schools.com/cssref/css3_browsersupport.php)
+- [CSS transitions and transforms for beginners](https://thoughtbot.com/blog/transitions-and-transforms)
+- [Can I use](https://caniuse.com/)
+- [Should-I-Prefix](http://shouldiprefix.com/)
+- [Autoprefixer-Tool](https://autoprefixer.github.io/)
