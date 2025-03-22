@@ -1,1 +1,1 @@
-docs/021-Software-Engineering/021-Jupyter-Notebooks/*.csv filter=lfs diff=lfs merge=lfs -text
+docs/021-Software-Engineering/021-Jupyter-Notebooks/**/*/*.csv filter=lfs diff=lfs merge=lfs -text
