@@ -59,6 +59,8 @@ body{background-color:white;font-size:16px;color:black;}
 
 Minification reduces file size, which makes pages load faster. 
 
+See: [Minify-CSS](https://www.cleancss.com/css-minify/)
+
 ## Responsive Design  
 
 Websites need to look good on all devices, from desktops to phones. Responsive design helps adjust layouts based on screen size.  
@@ -121,13 +123,3 @@ A responsive card layout using CSS Grid and media queries.
 ```
 
 
-## Resources 
-
-- [Minify-CSS](https://www.cleancss.com/css-minify/)
-- [CSS-Flexbox-Resource](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-- [Flexbox Froggy](https://flexboxfroggy.com/)
-- [CSS Browser Support Reference](https://www.w3schools.com/cssref/css3_browsersupport.php)
-- [CSS transitions and transforms for beginners](https://thoughtbot.com/blog/transitions-and-transforms)
-- [Can I use](https://caniuse.com/)
-- [Should-I-Prefix](http://shouldiprefix.com/)
-- [Autoprefixer-Tool](https://autoprefixer.github.io/)

@@ -8,6 +8,33 @@ last_update:
 ---
 
 
+
+## CSS 
+
+- [Minify-CSS](https://www.cleancss.com/css-minify/)
+- [CSS-Flexbox-Resource](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [Flexbox Froggy](https://flexboxfroggy.com/)
+- [CSS Browser Support Reference](https://www.w3schools.com/cssref/css3_browsersupport.php)
+- [CSS transitions and transforms for beginners](https://thoughtbot.com/blog/transitions-and-transforms)
+- [Can I use](https://caniuse.com/)
+- [Should-I-Prefix](http://shouldiprefix.com/)
+- [Autoprefixer-Tool](https://autoprefixer.github.io/)
+
+## Bootstrap 
+
+
+- [Mailchimp-Add an Embedded Signup Form to Your Website](https://mailchimp.com/en/help/add-a-signup-form-to-your-website/)
+- [Free Bootstrap starter templates](https://mdbootstrap.com/freebies/)
+- [Creative Time - Bootstrap UI Kits](https://www.creative-tim.com/bootstrap-themes/ui-kit?direction=asc&sort=price)
+- [Perfect Full Page Background Image](https://css-tricks.com/perfect-full-page-background-image/)
+- [Start Bootstrap](https://startbootstrap.com/templates)
+- [Animate.css](https://animate.style/)
+- [Bootstrap Expo](https://expo.getbootstrap.com/)
+- [Viewport meta tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag)
+- [What is meta tag](https://www.w3schools.com/tags/tag_meta.asp)
+- [What is UTF-8](https://www.quora.com/What-is-UTF8)
+- [Bootstrap Flex](https://getbootstrap.com/docs/4.3/utilities/flex/)
+
 ## Linux 
 
 - [Serious Shell Programming](https://freebsdfrau.gitbook.io/serious-shell-programming/)
@@ -17,11 +44,6 @@ last_update:
 - [Filenames and Pathnames in Shell: How to do it Correctly](https://dwheeler.com/essays/filenames-in-shell.html)
 
 - [ShellCheck - A shell script static analysis tool](https://github.com/koalaman/shellcheck)
-
-## Project Management 
-
-- [Free Project Management Courses](https://www.pmi.org/learning/training-development/free-elearning-courses)
-
 
 ## Cloud Computing
 
@@ -248,3 +270,7 @@ Free DNS Service using [Namecheap](https://www.namecheap.com/)
 - [Important Instructions: CKA and CKAD](https://docs.linuxfoundation.org/tc-docs/certification/tips-cka-and-ckad)
 
 - [Linux Foundation Certification Exam: Candidate Handbook](https://docs.linuxfoundation.org/tc-docs/certification/lf-handbook2)
+
+## Project Management 
+
+- [Free Project Management Courses](https://www.pmi.org/learning/training-development/free-elearning-courses)
