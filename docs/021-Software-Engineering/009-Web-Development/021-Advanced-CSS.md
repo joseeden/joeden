@@ -58,3 +58,8 @@ body{background-color:white;font-size:16px;color:black;}
 ```
 
 Minification reduces file size, which makes pages load faster. 
+
+## Resources 
+
+- [https://css-tricks.com/](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [Flexbox Froggy](https://flexboxfroggy.com/)
