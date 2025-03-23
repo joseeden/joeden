@@ -13,6 +13,9 @@ last_update:
   date: 8/27/2021
 ---
 
+import React from "react";
+
+
 ## Overview  
 
 Bootstrap is a toolkit for quickly building responsive websites. It provides ready-made CSS and JavaScript components, so you don’t have to build everything from scratch.  
@@ -36,7 +39,18 @@ For more information, please see [Get Bootstrap.](https://getbootstrap.com/)
 
 See: [Sample HTML File](https://github.com/joseeden/joeden/blob/master/docs/021-Software-Engineering/009-Web-Development/Projects/010-Bootstrap/index.html)
 
-## Example: Jumbotron 
+## Sample Website 
+
+Below is a sample HTML page. You can hover to the functionalities like the navbar and dropdown menu. You can also click the modal button.
+
+<iframe
+  src="https://melodic-pika-35d471.netlify.app//"
+  width="100%"
+  height="600px"
+  style={{ border: "1px solid #ccc" }}
+></iframe>
+
+## Jumbotron 
 
 :::info 
 
@@ -60,7 +74,7 @@ See: [Sample HTML File](https://github.com/joseeden/joeden/blob/master/docs/021-
   </div>
 ```
 
-## Example: Navigation Bar
+## Navigation Bar
 
 This will generate a responsive navigation bar with a dropdown menu on smaller screens. 
 
@@ -107,7 +121,7 @@ See: [Sample HTML File](https://github.com/joseeden/joeden/blob/master/docs/021-
 ```
 
 
-## Example: Buttons  
+## Buttons  
 
 Bootstrap provides different button styles with easy-to-use classes.  
 

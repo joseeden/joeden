@@ -95,7 +95,7 @@ The website is now embedded in your markdown page, as seen below. You can hover 
 
 
 <iframe
-  src="https://https://melodic-pika-35d471.netlify.app//"
+  src="https://melodic-pika-35d471.netlify.app//"
   width="100%"
   height="600px"
   style={{ border: "1px solid #ccc" }}
