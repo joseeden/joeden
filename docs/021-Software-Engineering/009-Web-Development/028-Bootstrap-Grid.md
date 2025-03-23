@@ -106,14 +106,3 @@ For more information, please see [Grid options](https://getbootstrap.com/docs/5.
 </div>
 
 
-## Customizing the Layout
-
-You can change the grid's behavior at different screen widths. For example, on large screens, you can make all columns take up 12 spaces (full-width).
-
-```html
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12"">Full width on large screens</div>
-  </div>
-</div>
-```
