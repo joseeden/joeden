@@ -8,7 +8,7 @@ tags:
 - Web Development
 - HTML
 - CSS
-sidebar_position: 21
+sidebar_position: 22
 last_update:
   date: 03/20/2019
 ---
@@ -125,28 +125,7 @@ A responsive card layout using CSS Grid and media queries.
 }
 ```
 
-## Styling Text 
 
-Text should be readable against a background.  
-
-- Use `font-size` to adjust text size  
-- Set `color` for contrast  
-- Use `strong` tags to highlight important text  
-
-These changes make the text stand out and improve readability.
-
-```css
-h1 {
-    font-size: 3rem;
-    color: #ffffff;
-}
-```
-
-Output: 
-
-```html
-<h1><strong>Welcome to Our Site</strong></h1>
-```
 
 ## Button Hover Effect
 

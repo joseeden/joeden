@@ -4,26 +4,34 @@ html {
   height: 100%;
   font-family: 'Montserrat', sans-serif;
 
-  background: url(Images/67a4bc30834cdd20b2064bbe.jpg) no-repeat center center fixed; 
+  background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url(Images/67a4bc30834cdd20b2064bbe.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 
-
 h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
+  /* color: #d8f420; */
   color: azure;
 }
 
 hr {
   margin: 20px auto;
-  border: 3px solid azure;
+  border: 2px solid azure;
   max-width: 65px;
   opacity: 1;  
 }
 
+.buffer {
+  height: 10rem;
+}
 
 .btn {
   font-weight: 700;
@@ -41,7 +49,6 @@ hr {
   border-color: #0031e7;
   border-width: 3px;
 }
-
 
 .btn-find-out-more {
   padding: 1rem 2rem;
