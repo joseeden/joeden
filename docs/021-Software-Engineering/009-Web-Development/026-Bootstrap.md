@@ -57,10 +57,19 @@ Below is a sample HTML page. You can try the functionalities like the navbar and
 Jumbotron has been phased out in Bootstrap 5. This section has been updated to use a workaround.
 :::
 
+The Jumbotron is a large, attention-grabbing banner often used to highlight important content on a webpage.
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-23-230639.png)
+
+</div>
+
 You can emulate Jumbotron (with the exception of the specific background color) by adding this to your HTML file.
 
 See: [Sample HTML File](https://github.com/joseeden/joeden/blob/master/docs/021-Software-Engineering/009-Web-Development/Projects/010-Bootstrap/index.html)
 
+See: [Sample Website](#sample-website)
 
 ```html 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -76,10 +85,17 @@ See: [Sample HTML File](https://github.com/joseeden/joeden/blob/master/docs/021-
 
 ## Navigation Bar
 
-This will generate a responsive navigation bar with a dropdown menu on smaller screens. 
+The code below will generate a responsive navigation bar with a dropdown menu on smaller screens. 
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-23-230734.png)
+
+</div>
 
 See: [Sample HTML File](https://github.com/joseeden/joeden/blob/master/docs/021-Software-Engineering/009-Web-Development/Projects/010-Bootstrap/index.html)
 
+See: [Sample Website](#sample-website)
 
 ```html
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -126,6 +142,8 @@ See: [Sample HTML File](https://github.com/joseeden/joeden/blob/master/docs/021-
 Bootstrap provides different button styles with easy-to-use classes.  
 
 See: [Sample HTML File](https://github.com/joseeden/joeden/blob/master/docs/021-Software-Engineering/009-Web-Development/Projects/010-Bootstrap/index.html)
+
+See: [Sample Website](#sample-website)
 
 ```html
   <!-- Button trigger modal -->
