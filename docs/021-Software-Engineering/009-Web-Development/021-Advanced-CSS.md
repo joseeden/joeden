@@ -125,6 +125,65 @@ A responsive card layout using CSS Grid and media queries.
 }
 ```
 
+## Styling Text 
+
+Text should be readable against a background.  
+
+- Use `font-size` to adjust text size  
+- Set `color` for contrast  
+- Use `strong` tags to highlight important text  
+
+These changes make the text stand out and improve readability.
+
+```css
+h1 {
+    font-size: 3rem;
+    color: #ffffff;
+}
+```
+
+Output: 
+
+```html
+<h1><strong>Welcome to Our Site</strong></h1>
+```
+
+## Change Button Hover Effect
+
+Modifying the button’s hover state improves user interaction.
+
+- Change background color when hovered
+- Adjust border color for consistency
+- Increase border width for better emphasis
+
+Apply a hover effect in CSS:
+
+```css
+.btn-primary:hover {
+    background-color: #ee4b08;
+    border-color: #ee4b08;
+    border-width: 4px;
+}
+```
+
+## Add a Styled Horizontal Line
+
+A horizontal line (`hr`) adds visual separation in a webpage.
+
+- Use the `<hr>` tag to insert a line
+- Style it with color and width
+- Limit its width to avoid full-page lines
+
+Customize the line using CSS:
+
+```css
+hr {
+    border-color: #ee4b08;
+    border-width: 3px;
+    max-width: 65px;
+}
+```
+
 ## Sample Website
 
 Below is a sample HTML page. Try to hover on each photos. You may also adjust the size of your browser to see if the embedded website also changes.

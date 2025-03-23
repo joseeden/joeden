@@ -3,4 +3,43 @@ html {
   width: 100%;
   height: 100%;
   font-family: 'Montserrat', sans-serif;
+
+  background: url(Images/67a4bc30834cdd20b2064bbe.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+h1 {
+  font-size: 3rem;
+  color: azure;
+}
+
+hr {
+  border-color: #0d6efd;
+  border-width: 13px;
+}
+
+.btn {
+  font-weight: 700;
+  border-radius: 300px;
+  text-transform: uppercase;
+}
+
+/* .btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}  */
+
+.btn-primary:hover {
+  background-color: #0031e7;
+  border-color: #0031e7;
+  border-width: 3px;
+}
+
+
+.btn-find-out-more {
+  padding: 1rem 2rem;
 }

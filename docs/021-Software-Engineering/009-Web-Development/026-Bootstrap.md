@@ -10,7 +10,7 @@ tags:
 - CSS
 sidebar_position: 26
 last_update:
-  date: 8/27/2021
+  date: 4/11/2023
 ---
 
 import React from "react";
@@ -216,95 +216,122 @@ Next, include your custom CSS after the Bootstrap link to override the default b
 
 
 
-## Bootstrap Grid
-
-Bootstrap's grid system makes it easy to create responsive layouts for your website. It helps you organize content into columns and adjust the layout depending on the screen size.
-
-- Bootstrap uses a 12-column grid.
-- Columns adjust automatically based on screen size (small, medium, large, extra-large).
-- You can combine columns to create custom layouts.
-
-## Example: Simple Grid Layout  
-
-Create a responsive layout:
-
-```html
-  <div class="container text-center">
-    <div class="row">
-      <div class="col col-sm-6"> 1 of 3 /div>
-      <div class="col col-sm-3"> 2 of 3 </div>
-      <div class="col col-sm-3"> 3 of 3 </div>
-    </div>
-  </div>
-```  
-
-How it works:  
-
-- Bootstrap’s grid system has 12 columns in total.  
-- Column 1 takes up **6 spaces**, while Columns 2 and 3 take **3 spaces each**.  
-- The total adds up to **12 columns**
 
 
-<div class="img-center"> 
+## Adding Meta Tags
 
-![](/img/docs/Screenshot-2025-03-23-080551.png)
+Meta tags provide extra information about a webpage. They help with mobile responsiveness and text encoding.  
 
-</div>
+- The `viewport` meta tag ensures the page works well on mobile devices  
+- The `charset` meta tag defines the text encoding format  
 
-If the total column spaces exceed 12, the extra columns move to the next row.
+Adding these tags improves compatibility and readability on different devices.  
 
 ```html
-  <div class="container text-center">
-    <div class="row">
-      <div class="col col-sm-6"> 1 of 3 </div>
-      <div class="col col-sm-3"> 2 of 3 </div>
-      <div class="col col-sm-5"> 3 of 3 </div>
-    </div>
-  </div>
-```  
-
-<div class="img-center"> 
-
-![](/img/docs/Screenshot-2025-03-23-080748.png)
-
-</div>
-
-
-See: 
- - [Sample HTML File](https://github.com/joseeden/joeden/blob/master/docs/021-Software-Engineering/009-Web-Development/Projects/011-Bootstrap-Grid/index.html)
- - [Sample CSS File](https://github.com/joseeden/joeden/blob/master/docs/021-Software-Engineering/009-Web-Development/Projects/011-Bootstrap-Grid/style.css)
-
-## Responsive Grid
-
-Bootstrap adjusts columns based on screen size. You can specify how columns behave on different devices.
-
-Example with different grid sizes:
-
-```html
-
-  <div class="container text-center">
-    <div class="row">
-      <div class="col col-12 col-sm-6 col-md-12 col-lg-4"> 1 of 3 </div>
-      <div class="col col-12 col-sm-3 col-md-6 col-lg-4"> 2 of 3 </div>
-      <div class="col col-12 col-sm-5 col-md-6 col-lg-4"> 3 of 3 </div>
-    </div>
-  </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
 ```
 
-**How the layout works:**
-
-- **Extra small screens (`col-12`)** – Each column takes up the full width, stacking in separate rows.  
-- **Small screens (`col-sm-`)** – First two columns share a row, while the third moves to the next row.  
-- **Medium screens (`col-md-`)** – The first column takes a full row, while the second and third share the next row.  
-- **Large screens (`col-lg-`)** – Columns are evenly divided into three equal parts.  
+This setup makes the page mobile-friendly and ensures proper text display.  
 
 
-For more information, please see [Grid options](https://getbootstrap.com/docs/5.3/layout/grid/#grid-options)
+## Full-Page Background Image  
 
-<div class="img-center"> 
+A full-page background image adjusts to different screen sizes.  
 
-![](/gif/docs/bootstrap-grid-responsive.gif)
+- The important line here is `no-repeat center center fixed`
+- `no-repeat` - prevents repeating of the image
+- `center` - keep the image centered
+- `fixed` - keep the image fixed
 
+This keeps the image flexible, filling the entire screen while staying centered.  
+
+```css
+html { 
+  background: url(images/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+```
+
+For more information, please see [Perfect Full Page Background Image.](https://css-tricks.com/perfect-full-page-background-image/)
+
+
+## Make Text Uppercase
+
+You can easily convert text to uppercase using Bootstrap or CSS.
+
+- Using Bootstrap, add the `text-uppercase` class to any text element:
+
+    ```html
+    <p class="text-uppercase">This text will be uppercase.</p>
+    ```
+
+- Using CSS, apply `text-transform: uppercase;` to any element:
+
+    ```css
+    .uppercase {
+        text-transform: uppercase;
+    }
+    ```
+
+- Using regular HTML:
+
+    ```html
+    <p class="uppercase">This text will also be uppercase.</p>
+    ```
+
+
+## Style Bootstrap Buttons
+
+Bootstrap provides ready-to-use button styles that can be customized.
+
+- Use predefined Bootstrap button classes
+- Modify colors and sizes with custom CSS
+- Add hover effects for better interaction
+
+To create a primary button using Bootstrap:
+
+```html
+<button class="btn btn-primary">Click Me</button>
+```
+
+To customize it further, add your own CSS:
+
+```css
+.btn-xl {
+    padding: 1rem 2rem;
+    font-weight: 700;
+    border-radius: 10px;
+}
+```
+
+```html
+<button class="btn btn-primary btn-xl">Click Me</button>
+```
+
+This creates a larger, custom-styled button while keeping Bootstrap functionality.
+
+
+## Center Page Content
+
+Using Bootstrap, you can easily center content.
+
+- Bootstrap’s grid system helps with alignment
+- Utility classes simplify centering
+- Works for text, images, and containers
+
+Example using Bootstrap’s flex utilities:
+
+```html
+<div class="d-flex justify-content-center align-items-center">
+    <p>Centered content</p>
 </div>
+```
 
+This ensures the content stays centered and makes the layout cleaner and more organized.
 
