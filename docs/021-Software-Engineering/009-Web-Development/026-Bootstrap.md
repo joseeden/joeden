@@ -20,8 +20,6 @@ import React from "react";
 
 Bootstrap is a toolkit for quickly building responsive websites. It provides ready-made CSS and JavaScript components, so you don’t have to build everything from scratch.  
 
-## Key Features  
-
 - **Pre-built Components** – Includes navigation bars, buttons, modals, and more.  
 - **Responsive Grid System** – Helps create layouts that adapt to different screen sizes.  
 - **Customizable** – You can override Bootstrap styles with your own CSS.  
@@ -171,6 +169,37 @@ See: [Sample Website](#sample-website)
   </div>
 ```
 
+
+## Style Bootstrap Buttons
+
+Bootstrap provides ready-to-use button styles that can be customized.
+
+- Use predefined Bootstrap button classes
+- Modify colors and sizes with custom CSS
+- Add hover effects for better interaction
+
+To create a primary button using Bootstrap:
+
+```html
+<button class="btn btn-primary">Click Me</button>
+```
+
+To customize it further, add your own CSS:
+
+```css
+.btn-xl {
+    padding: 1rem 2rem;
+    font-weight: 700;
+    border-radius: 10px;
+}
+```
+
+```html
+<button class="btn btn-primary btn-xl">Click Me</button>
+```
+
+This creates a larger, custom-styled button while keeping Bootstrap functionality.
+
 ## Customizing Bootstrap  
 
 Even though Bootstrap provides default styles, you can override them with your own CSS.  
@@ -218,23 +247,6 @@ Next, include your custom CSS after the Bootstrap link to override the default b
 
 
 
-## Adding Meta Tags
-
-Meta tags provide extra information about a webpage. They help with mobile responsiveness and text encoding.  
-
-- The `viewport` meta tag ensures the page works well on mobile devices  
-- The `charset` meta tag defines the text encoding format  
-
-Adding these tags improves compatibility and readability on different devices.  
-
-```html
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-</head>
-```
-
-This setup makes the page mobile-friendly and ensures proper text display.  
 
 
 ## Full-Page Background Image  
@@ -286,37 +298,6 @@ You can easily convert text to uppercase using Bootstrap or CSS.
     ```
 
 
-## Style Bootstrap Buttons
-
-Bootstrap provides ready-to-use button styles that can be customized.
-
-- Use predefined Bootstrap button classes
-- Modify colors and sizes with custom CSS
-- Add hover effects for better interaction
-
-To create a primary button using Bootstrap:
-
-```html
-<button class="btn btn-primary">Click Me</button>
-```
-
-To customize it further, add your own CSS:
-
-```css
-.btn-xl {
-    padding: 1rem 2rem;
-    font-weight: 700;
-    border-radius: 10px;
-}
-```
-
-```html
-<button class="btn btn-primary btn-xl">Click Me</button>
-```
-
-This creates a larger, custom-styled button while keeping Bootstrap functionality.
-
-
 ## Center Page Content
 
 Using Bootstrap, you can easily center content.
@@ -328,10 +309,101 @@ Using Bootstrap, you can easily center content.
 Example using Bootstrap’s flex utilities:
 
 ```html
-<div class="d-flex justify-content-center align-items-center">
+<div class="d-flex justify-content-center align-items-center h-100">
     <p>Centered content</p>
 </div>
 ```
 
-This ensures the content stays centered and makes the layout cleaner and more organized.
+Note: 
 
+- `d-flex` enables flexbox
+- `justify-content-center` centers horizontally
+- `align-items-center` centers vertically
+- `h-100` makes container full height
+
+## Using Full-Height Containers
+
+Ensure content fills the full page height.
+
+```html
+<div class="container h-100 d-flex align-items-center">
+    <h1>Full-Height Example</h1>
+</div>
+```
+
+- `h-100` makes container full height
+- `d-flex` enables flexible alignment
+
+This ensures elements stay vertically centered.
+
+## Using `container` Class
+
+Start with a container to hold all content.
+
+```html
+<div class="container">
+    <!-- Content goes here -->
+</div>
+```
+
+- The `container` class centers content
+- Provides padding on small screens
+
+This helps keep content aligned and responsive.
+
+## Using `container` even without Bootstrap
+
+You can use `<div class="container">` even without Bootstrap. However, this class will just be a regular class with no special meaning. If you're not using Bootstrap, the `.container` class won't have any predefined styles. You would need to define your own CSS for it.
+
+For example, this:
+
+```html
+<div class="random-class">
+    <!-- Content -->
+</div>
+```
+
+is no different from:
+
+```html
+<div class="container">
+    <!-- Content -->
+</div>
+```
+
+unless you define styles for `.container` in your CSS.
+
+If you want your `.container` to behave like Bootstrap’s, you need to manually add styles in your CSS file:
+
+```css
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+```
+
+Without this, `<div class="container">` will just be a plain `<div>` with no extra effects.
+
+
+## Adding Rows and Columns
+
+Rows hold columns, defining the layout structure.
+
+```html
+<div class="container">
+    <div class="row">
+        <div class="col-12">Header</div>
+    </div>
+    <div class="row">
+        <div class="col-6">Left</div>
+        <div class="col-6">Right</div>
+    </div>
+</div>
+```
+
+Note: 
+
+- Rows group columns together
+- Columns adjust based on screen size

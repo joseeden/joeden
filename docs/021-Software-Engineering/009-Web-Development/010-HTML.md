@@ -94,6 +94,25 @@ Subfields:
 - **Unordered List (`<ul>`)** – Uses bullets to list items.  
 - **List Item (`<li>`)** – Represents each item inside a list.  
 
+## Meta Tags
+
+Meta tags provide extra information about a webpage. They help with mobile responsiveness and text encoding.  
+
+- The `viewport` meta tag ensures the page works well on mobile devices  
+- The `charset` meta tag defines the text encoding format  
+
+Adding these tags improves compatibility and readability on different devices.  
+
+```html
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+```
+
+This setup makes the page mobile-friendly and ensures proper text display.  
+
+
 ## Self-Closing Tags  
 
 Self-closing tags do not require a closing tag because they don’t wrap content. They are commonly used for elements that insert media, line breaks, or metadata.  
