@@ -13,6 +13,9 @@ last_update:
   date: 03/20/2019
 ---
 
+import React from "react";
+
+
 ## Overview
 
 The critical render path is how a website loads and displays content in a browser. 
@@ -39,7 +42,7 @@ The critical render path is how a website loads and displays content in a browse
 - **Minify CSS**  
   Remove unnecessary spaces and line breaks to reduce file size and speed up loading.  
 
-## Example: Minified CSS  
+## Minified CSS  
 
 Original CSS:  
 
@@ -122,4 +125,13 @@ A responsive card layout using CSS Grid and media queries.
 }
 ```
 
+## Sample Website
 
+Below is a sample HTML page. Try to hover on each photos. You may also adjust the size of your browser to see if the embedded website also changes.
+
+<iframe
+  src="https://fanciful-souffle-51bd70.netlify.app/"
+  width="100%"
+  height="600px"
+  style={{ border: "1px solid #ccc" }}
+></iframe>

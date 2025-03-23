@@ -91,8 +91,7 @@ import React from "react";
 ></iframe>
 ```
 
-The website is now embedded in your markdown page, as seen below. You can hover and test the site functionalities.
-
+The website is now embedded in the markdown page, as seen in the example below. You can hover and test the site functionalities.
 
 <iframe
   src="https://melodic-pika-35d471.netlify.app//"

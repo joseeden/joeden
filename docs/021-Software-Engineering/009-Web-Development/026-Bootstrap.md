@@ -41,7 +41,7 @@ See: [Sample HTML File](https://github.com/joseeden/joeden/blob/master/docs/021-
 
 ## Sample Website 
 
-Below is a sample HTML page. You can hover to the functionalities like the navbar and dropdown menu. You can also click the modal button.
+Below is a sample HTML page. You can try the functionalities like the navbar and dropdown menu. You can also click the modal button.
 
 <iframe
   src="https://melodic-pika-35d471.netlify.app//"
