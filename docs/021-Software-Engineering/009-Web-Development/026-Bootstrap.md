@@ -36,8 +36,6 @@ For more information, please see [Get Bootstrap.](https://getbootstrap.com/)
 
 See: [Sample HTML File](https://github.com/joseeden/joeden/blob/master/docs/021-Software-Engineering/009-Web-Development/Projects/010-Bootstrap/index.html)
 
-View: [Sample HTML Page](/docs/021-Software-Engineering/009-Web-Development/Projects/010-Bootstrap/index.html)
-
 ## Example: Jumbotron 
 
 :::info 
