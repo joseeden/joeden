@@ -7,20 +7,16 @@ Note that Google Drive does not allow embedding files in an <iframe>, even if th
 ```html
 import React from "react";
 
-<iframe
+<iframe>
   src="https://drive.google.com/file/d/194ILry_ILrOUqMjDxNGE-uqaeA1IBCAA/view"
-  width="100%"
-  height="600px"
-  style={{ border: "1px solid #ccc" }}
-></iframe>
+  width="100%" height="600px" style={{ border: "1px solid #ccc" }}
+</iframe>
 ```
 
-<iframe
+<iframe>
   src="https://drive.google.com/file/d/194ILry_ILrOUqMjDxNGE-uqaeA1IBCAA/view"
-  width="100%"
-  height="600px"
-  style={{ border: "1px solid #ccc" }}
-></iframe>
+  width="100%" height="600px" style={{ border: "1px solid #ccc" }}
+</iframe>
 
 Instead of the **viewer link**, you need to use the **direct download** link format:
 
@@ -33,10 +29,13 @@ Example:
 ```html
 import React from "react";
 
-<iframe
+<iframe>
   src="https://drive.google.com/uc?export=download&id=194ILry_ILrOUqMjDxNGE-uqaeA1IBCAA"
-  width="100%"
-  height="600px"
-  style={{ border: "1px solid #ccc" }}
-></iframe>
+  width="100%" height="600px" style={{ border: "1px solid #ccc" }}
+</iframe>
 ```
+
+<iframe>
+  src="https://drive.google.com/uc?export=download&id=194ILry_ILrOUqMjDxNGE-uqaeA1IBCAA"
+  width="100%" height="600px" style={{ border: "1px solid #ccc" }}
+</iframe>
