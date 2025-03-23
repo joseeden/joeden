@@ -1,5 +1,5 @@
 ---
-title: "Admonitions"
+title: "Rendering HTML"
 sidebar_position: 6
 description: "Resources, bookmarks"
 tags: 
