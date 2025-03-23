@@ -1,6 +1,9 @@
 ---
 title: "Setting up New Development Laptop"
-tags: [DevOps, Personal Notes, Development]
+tags: 
+- DevOps
+- Personal Notes
+- Development
 description: "Steps to setup development laptop for new work projects."
 sidebar_position: 10
 last_update:

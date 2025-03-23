@@ -76,35 +76,15 @@ Since Google Drive doesn’t allow embedding HTML files, you can use a service t
 - Drag and drop your HTML files
 - Get a public URL to use in your iframe
 
-Steps:
+To host a static site in Netlify, please see [Hosting Static Sites.](/docs/001-Personal-Notes/003-Developer-Notes/050-Hosting-Static-Sites.md)
 
-1. Sign up for a [free Netlify account.](https://app.netlify.com/signup)
-2. After verifying your account, sign-in to Netlify.
-3. Go to [Netlify Drop.](https://app.netlify.com/drop)
-4. Upload your static files.
-5. Once its live, you should see the new site under **Sites.**
-
-    <div class="img-center"> 
-
-    ![](/img/docs/Screenshot-2025-03-23-174204.png)
-
-    </div>
-
-6. Click the site, then click the link on the next page. This is the public link of your site.
-
-    <div class="img-center"> 
-
-    ![](/img/docs/Screenshot-2025-03-23-174317.png)
-
-    </div>
-
-Once you have the URL for the site, you can now add it to your markdown (`.mdx`) page:
+Once you have the URL for the site, you can now add it to `src` in your markdown (`.mdx`) page:
 
 ```html
 import React from "react";
 
 <iframe
-  src="https://steady-cocada-c4bfd7.netlify.app/"
+  src="https://https://melodic-pika-35d471.netlify.app//"
   width="100%"
   height="600px"
   style={{ border: "1px solid #ccc" }}
@@ -115,24 +95,9 @@ The website is now embedded in your markdown page, as seen below. You can hover 
 
 
 <iframe
-  src="https://steady-cocada-c4bfd7.netlify.app/"
+  src="https://https://melodic-pika-35d471.netlify.app//"
   width="100%"
   height="600px"
   style={{ border: "1px solid #ccc" }}
 ></iframe>
 
-
-## Delete a Site in Netlify 
-
-Steps:
-
-1. Sign-in to your Netlify account.
-2. Go to **Site Configuration.**
-3. Scroll down to the bottom and click **Delete this site.**
-
-
-<div class="img-center"> 
-
-![](/img/docs/Screenshot-2025-03-23-173855.png)
-
-</div>

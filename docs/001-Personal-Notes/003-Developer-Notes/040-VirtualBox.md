@@ -1,6 +1,9 @@
 ---
 title: "VirtualBox"
-tags: [DevOps, Personal Notes, Development]
+tags: 
+- DevOps
+- Personal Notes
+- Development
 description: "VirtualBox NOtes"
 sidebar_position: 22
 last_update:

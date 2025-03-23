@@ -1,6 +1,9 @@
 ---
 title: "Tools Specifications"
-tags: [DevOps, Personal Notes, Development]
+tags: 
+- DevOps
+- Personal Notes
+- Development
 description: "Record of my current setup"
 sidebar_position: 11
 last_update:
