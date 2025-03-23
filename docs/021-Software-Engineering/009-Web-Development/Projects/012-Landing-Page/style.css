@@ -18,9 +18,12 @@ h1 {
 }
 
 hr {
-  border-color: #0d6efd;
-  border-width: 13px;
+  margin: 20px auto;
+  border: 3px solid azure;
+  max-width: 65px;
+  opacity: 1;  
 }
+
 
 .btn {
   font-weight: 700;

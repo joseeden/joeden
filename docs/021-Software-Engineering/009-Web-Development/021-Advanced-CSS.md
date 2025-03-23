@@ -148,7 +148,7 @@ Output:
 <h1><strong>Welcome to Our Site</strong></h1>
 ```
 
-## Change Button Hover Effect
+## Button Hover Effect
 
 Modifying the button’s hover state improves user interaction.
 
@@ -166,23 +166,25 @@ Apply a hover effect in CSS:
 }
 ```
 
-## Add a Styled Horizontal Line
+## Styled Horizontal Line
 
 A horizontal line (`hr`) adds visual separation in a webpage.
 
-- Use the `<hr>` tag to insert a line
-- Style it with color and width
-- Limit its width to avoid full-page lines
+- Add the `hr` tag to your HTML file first:
 
-Customize the line using CSS:
+    ```bash
+    <hr>
+    ```
 
-```css
-hr {
-    border-color: #ee4b08;
-    border-width: 3px;
-    max-width: 65px;
-}
-```
+- Then customize it in your CSS file:
+
+    ```css
+    hr {
+        border-color: #ee4b08;
+        border-width: 3px;
+        max-width: 65px;
+    }
+    ```
 
 ## Sample Website
 
