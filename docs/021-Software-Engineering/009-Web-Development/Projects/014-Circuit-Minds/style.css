@@ -30,6 +30,15 @@ body {
   margin: 0;
 }
 
+/* Use for screen sizes smaller than 600px */
+@media only screen and (max-width: 600px) {
+  .main-nav {
+    padding: 0;
+    font-size: 0.5em;
+  }
+  
+}
+
 .push {
   margin-left: auto;
 }
@@ -42,6 +51,17 @@ a {
   color: azure;
   text-decoration: none;    /* remove underline */ 
 }
+
+
+/* Banner */
+.container {
+  display: flex;
+  justify-content: center;  /* align horizontally */
+  align-items: center;      /* align vertically */
+  height: 100vh;
+  background: #f9f9f9;
+}
+
 
 
 /*https://paulund.co.uk/how-to-create-shiny-css-buttons*/

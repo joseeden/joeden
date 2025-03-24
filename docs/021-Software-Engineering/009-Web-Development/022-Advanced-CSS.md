@@ -145,25 +145,63 @@ Apply a hover effect in CSS:
 }
 ```
 
-## Styled Horizontal Line
+## Media Queries  
 
-A horizontal line (`hr`) adds visual separation in a webpage.
+Media queries help adjust the design of a website based on the screen size. 
 
-- Add the `hr` tag to your HTML file first:
+- Media queries change styles based on screen width  
+- They improve the design for different devices 
+- Ensures the website looks good on phones, tablets, etc
 
-    ```bash
-    <hr>
-    ```
+To use a media query, write the `@media` rule with conditions for the screen size. 
 
-- Then customize it in your CSS file:
+Example: Change the navigation menu's font size on smaller screens:  
 
-    ```css
-    hr {
-        border-color: #ee4b08;
-        border-width: 3px;
-        max-width: 65px;
-    }
-    ```
+```css
+@media only screen and (max-width: 600px) {
+  .main-nav {
+    font-size: 14px;
+    padding: 0;
+  }
+}
+```
+
+This rule makes the font size smaller and removes padding when the screen is 600px or smaller. When the screen size increases, the default styles are used again.
+
+
+## Viewport Height (`vh`)
+
+Viewport height (vh) helps elements adjust based on the height of the browser window.  
+
+- `vh` makes elements responsive to window size changes  
+- `100vh` makes an element fill the entire screen height  
+- Use `50vh` for an element to take up half the screen height  
+
+Example:
+
+```css
+.container {
+  height: 50vh;
+}
+```
+
+The element's height will adjust as the window size changes. With `50vh`, the container will always take up 50% of the page height.
+
+<div class="img-center"> 
+
+![](/gif/docs/css-vh-1.gif)
+
+</div>
+
+
+If set to `100vh`, the container will always fill the entire page, regardless of the screen size.
+
+<div class="img-center"> 
+
+![](/gif/docs/css-vh-2.gif)
+
+</div>
+
 
 ## Sample Website
 
