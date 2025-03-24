@@ -33,6 +33,12 @@ hr {
   height: 10rem;
 }
 
+@media (max-width: 600px) {
+  .buffer {
+    height: 5rem;
+  }
+}
+
 .btn {
   font-weight: 700;
   border-radius: 300px;

@@ -18,6 +18,19 @@ import React from "react";
 
 This is a landing page for a fictional running event.
 
+**Links:**
+
+- [Website](https://stirring-bunny-99fc4f.netlify.app/) 
+- [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/Projects/012-Landing-Page) 
+
+**Tools:**
+
+- HTML
+- CSS 
+- Bootstrap
+
+**View:** 
+
 <iframe
   src="https://melodic-pika-35d471.netlify.app/"
   width="100%"
@@ -25,13 +38,3 @@ This is a landing page for a fictional running event.
   style={{ border: "1px solid #ccc" }}
 ></iframe>
 
-Links:
-
-- [Website](https://stirring-bunny-99fc4f.netlify.app/) 
-- [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/Projects/012-Landing-Page) 
-
-Tools:
-
-- HTML
-- CSS 
-- Bootstrap
