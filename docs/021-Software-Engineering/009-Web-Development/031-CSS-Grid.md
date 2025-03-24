@@ -312,7 +312,7 @@ On the other hand, using `end` pushes the items to bottom of their grid cells.
 To make grids adapt to different screen sizes, use `auto-fill` with `minmax()`.  
 
 - `auto-fill`: Fills available space with as many columns as possible  
-- `minmax(200px, 1fr)`: Ensures columns are at least 200px but expand when possible  
+- `minmax(200px, 1fr)`: Columns are set to 200px but expand when possible  
 
 Example:  
 
@@ -323,8 +323,13 @@ Example:
 }
 ```
 
-This keeps columns responsive, ensuring they adjust dynamically.  
+This keeps columns responsive and ensures they adjust dynamically.  
 
+<div class="img-center"> 
+
+![](/gif/docs/css-grid-8.gif)
+
+</div>
 
 
 ## Customize Individual Items
@@ -337,7 +342,7 @@ Instead of applying styles to the entire grid, we can adjust the size and positi
 We can specify where a grid item starts and ends using `grid-column-start` and `grid-column-end`.
 
 ```css
-.green {
+.blue {
   grid-column-start: 1;
   grid-column-end: 3;
 }
