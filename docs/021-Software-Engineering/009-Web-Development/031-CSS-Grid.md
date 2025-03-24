@@ -100,16 +100,11 @@ Different column sizes can be set using fractional units.
 ```css
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr 2fr 1fr;
 }
 ```
 
-Note:  
-
-- `1fr 2fr` means the second column is twice as wide as the first  
-- The grid maintains this ratio even when resized  
-
-In the example below, using `1fr 1fr 2fr 1fr` creates four columns. The third column takes **2 fraction units**, which makes it twice as wide as the others. The grid adjusts automatically when the screen size changes.
+In this example, using `1fr 1fr 2fr 1fr` creates four columns. The third column takes **2 fraction units**, which makes it twice as wide as the others. The grid adjusts automatically when the screen size changes.
 
 <div class="img-center"> 
 
@@ -228,7 +223,8 @@ CSS Grid provides powerful alignment and layout options for web design.
 
 ### `justify-items` 
 
-Setting `justify-items` to `center` will center all items within their respective grid cells.  
+The `justify-items` property controls horizontal alignment within grid cells. Setting it to `center` aligns all items in the middle of their respective cells.  
+
 
 ```css
 .grid-container {
@@ -246,7 +242,7 @@ Setting `justify-items` to `center` will center all items within their respectiv
 </div>
 
 
-Setting it to `start` will push items to the "start" or the left of their grid cells.
+Setting `justify-items: start` aligns items to the left of their grid cells.  
 
 ```css
   justify-items: start;
@@ -259,7 +255,7 @@ Setting it to `start` will push items to the "start" or the left of their grid c
 </div>
 
 
-On the other, `end` will push the items to the right of their grid cells.
+Using `justify-items: end` moves items to the right of their grid cells.  
 
 ```css
   justify-items: end;
@@ -275,7 +271,7 @@ On the other, `end` will push the items to the right of their grid cells.
 
 ### `align-items`
 
-Unlike `justify-items`, `align-items` adjust based on the column axes. For example, using `align-items: start` positions the items on the upper part of the grid.
+Unlike `justify-items`, which aligns content horizontally, `align-items` controls vertical positioning within grid cells. For example, using `align-items: start` places items at the top of their grid cells.  
 
 
 ```css
@@ -294,7 +290,7 @@ Unlike `justify-items`, `align-items` adjust based on the column axes. For examp
 </div>
 
 
-On the other hand, using `end` pushes the items to bottom of their grid cells.
+Setting `align-items: end` moves items to the bottom of their grid cells.  
 
 ```css
   align-items: end 
