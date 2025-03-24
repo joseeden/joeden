@@ -1,0 +1,358 @@
+---
+title: "CSS Grid"
+description: "CSS Grid"
+tags: 
+- Computer Science
+- Application Development
+- Software Development
+- Web Development
+- HTML
+- CSS
+sidebar_position: 31
+last_update:
+  date: 03/21/2019
+---
+
+
+## Overview 
+
+CSS Grid allows arranging elements in rows and columns with precise control over spacing and alignment.  
+
+- Uses `display: grid` to define a grid container  
+- Defines columns with `grid-template-columns`  
+- Adds spacing with `grid-gap`  
+
+## Setting Up a Grid  
+
+To use CSS Grid, wrap elements inside a container and set its `display` to `grid`.  
+
+```html
+<div class="grid-container">
+  <div class="grid-item">Item 1</div>
+  <div class="grid-item">Item 2</div>
+  <div class="grid-item">Item 3</div>
+</div>
+```
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: 300px 300px;
+  grid-gap: 20px;
+}
+
+.grid-item {
+  background: lightgray;
+  padding: 20px;
+  text-align: center;
+}
+```
+
+Notes:
+
+- `display: grid` enables the grid system  
+- `grid-template-columns: 300px 300px` creates two fixed-width columns  
+- `grid-gap: 20px` adds spacing between columns  
+
+This setup ensures structured layouts with defined columns and spacing.  
+
+## Making It Responsive  
+
+Fixed widths can cause layout issues on different screen sizes. To make the grid flexible, use fractions (`fr`).
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+```
+
+Note: 
+
+- `1fr 1fr` creates two equal columns that adjust with the screen size  
+- More columns can be added using additional `fr` values  
+- The layout remains balanced and adapts dynamically  
+
+In the example below, we use `1fr 1fr` which displays the images in two columns.
+
+<div class="img-center"> 
+
+![](/gif/docs/css-grid.gif)
+
+</div>
+
+
+If we use `1fr 1fr 1fr`, the images are arranged in 3 columns.
+
+<div class="img-center"> 
+
+![](/gif/docs/css-grid-2.gif)
+
+</div>
+
+
+
+## Control Column Sizes  
+
+Different column sizes can be set using fractional units.  
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+```
+
+Note:  
+
+- `1fr 2fr` means the second column is twice as wide as the first  
+- The grid maintains this ratio even when resized  
+
+In the example below, using `1fr 1fr 2fr 1fr` creates four columns. The third column takes **2 fraction units**, which makes it twice as wide as the others. The grid adjusts automatically when the screen size changes.
+
+<div class="img-center"> 
+
+![](/gif/docs/css-grid-3.gif)
+
+</div>
+
+
+
+## Control Row Sizes 
+
+Similar with columnns, CSS Grid also allows you to control rows.
+
+- Use `grid-template-rows` to define row sizes  
+- The grid automatically adjusts when items overflow  
+
+You can set row heights using fractional units (`fr`).  
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 2fr 3fr;
+}
+```
+
+Note
+- The second row is twice as tall as the first  
+- The third row is three times taller  
+
+If you don’t specify enough rows, the grid repeats the pattern for extra content.  
+
+<div class="img-center"> 
+
+![](/gif/docs/css-grid-4.gif)
+
+</div>
+
+
+## Using `repeat()` for Columns  
+
+Instead of writing the same values multiple times, use `repeat()`.  
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+```
+
+Note: 
+
+- Creates three equal columns of `1fr` 
+- Equivalent to writing `1fr 1fr 1fr`  
+- Easily adjustable by changing the number  
+
+This keeps your code cleaner and makes it easier to modify layouts.  
+
+<div class="img-center"> 
+
+![](/gif/docs/css-grid-5.gif)
+
+</div>
+
+Setting `repeat(3, 1fr)` creates four equal columns:
+
+<div class="img-center"> 
+
+![](/gif/docs/css-grid-6.gif)
+
+</div>
+
+
+## Using `auto` for Dynamic Columns  
+
+The `auto` property sizes a column based on its content.  
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: auto 1fr 2fr;
+}
+```
+
+Note: 
+
+- The first column expands based on content  
+- The second and third columns use fraction-based sizing  
+- The grid ensures consistent alignment  
+
+This allows elements with different content sizes to fit naturally without breaking the layout.
+
+<div class="img-center"> 
+
+![](/gif/docs/css-grid-7.gif)
+
+</div>
+
+
+## Alignment 
+
+CSS Grid provides powerful alignment and layout options for web design.  
+
+- `justify-items` 
+  - Aligns content along the row axis 
+  - Options: `start | center | end | stretch`
+  - Default is `start`
+
+- `align-items` 
+  - Aligns content along the column axis  
+  - Options: `start | center | end | stretch`
+
+- `repeat()` and `minmax()` 
+  - Helps create responsive grids  
+
+Example:  
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+```
+
+This centers all items within their respective grid cells.  
+
+## Using `repeat()` for Consistency  
+
+The `repeat()` function simplifies defining multiple rows or columns.  
+
+- `repeat(3, 1fr)`: Creates three equal columns  
+- `repeat(4, 2fr)`: Creates four columns with twice the size of `1fr`  
+
+This ensures a uniform column structure without manually defining each one.  
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+```
+
+
+## Responsive Layouts
+
+To make grids adapt to different screen sizes, use `auto-fill` with `minmax()`.  
+
+- `auto-fill`: Fills available space with as many columns as possible  
+- `minmax(200px, 1fr)`: Ensures columns are at least 200px but expand when possible  
+
+Example:  
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+```
+
+This keeps columns responsive, ensuring they adjust dynamically.  
+
+
+
+## Customize Individual Items
+
+Instead of applying styles to the entire grid, we can adjust the size and position of specific elements.
+
+- Each grid item can span multiple columns or rows  
+- Make items larger or smaller while keeping them within grid structure
+
+We can specify where a grid item starts and ends using `grid-column-start` and `grid-column-end`.
+
+```css
+.green {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+```
+
+Note: 
+
+- `grid-column-start: 1` → Starts at the first column  
+- `grid-column-end: 3` → Extends up to the third column  
+
+This makes the item span two columns. A shorthand version simplifies this:
+
+```css
+.green {
+  grid-column: 1 / 3;
+}
+```
+
+Instead of separate start and end properties, we use `grid-column: start / end` for clarity.
+
+## Expand Grid Items Dynamically
+
+Sometimes, we want an item to stretch to the end of the grid without counting columns manually. We can use `-1`:
+
+```css
+.green {
+  grid-column: 1 / -1;
+}
+```
+
+Note: 
+
+- `-1` represents the last column  
+- The item stretches across the entire width  
+
+This makes the grid item flexible, adapting to different screen sizes.
+
+## Using `span` for Dynamic Spans
+
+Instead of specifying exact start and end points, we can use `span`:
+
+```css
+.green {
+  grid-column: span 2;
+}
+```
+
+Note:
+
+- The item spans across 2 columns  
+- Adjusts dynamically as grid layout changes  
+
+If the grid has more columns, the item still covers two, maintaining layout consistency.
+
+## Adjust Grid Rows
+
+Similar to columns, we can control row positioning using `grid-row`:
+
+```css
+.green {
+  grid-row: 1 / 3;
+}
+```
+
+Note: 
+
+- The item starts at row 1 and ends at row 3  
+- Items below it shift accordingly  
+
+Using rows and columns together allows us to position grid elements precisely.
