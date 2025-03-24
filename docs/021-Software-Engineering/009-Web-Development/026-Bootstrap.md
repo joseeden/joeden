@@ -407,3 +407,31 @@ Note:
 
 - Rows group columns together
 - Columns adjust based on screen size
+
+## Connecting a Signup Form 
+
+Setting up an email marketing service allows the users of our website to sign up for updates. 
+
+- We need to host our website online  
+- Users should be able to sign up for updates  
+- We'll use an email marketing service like MailChimp  
+
+For more information on how to use MailChimp, please see [MailChimp.](/docs/021-Software-Engineering/009-Web-Development/040-Mailchimp.md)
+
+Example signup form: 
+
+<iframe
+  src="https://mailchi.mp/2ce980b93259/justkeeprunning"
+  width="100%"
+  height="600px"
+  style={{ border: "1px solid #ccc" }}
+></iframe>
+
+
+After creating the signup form, we need to add the signup form link to our website.
+
+```html
+  <a href="https://mailchi.mp/2ce980b93259/justkeeprunning">
+    <button class="btn btn-primary btn-find-out-more">Find out more</button>  
+  </a> 
+```
