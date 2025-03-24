@@ -363,6 +363,12 @@ This makes the item span two columns. A shorthand version simplifies this:
 
 Instead of separate start and end properties, we use `grid-column: start / end` for clarity.
 
+<div class="img-center"> 
+
+![](/gif/docs/css-grid-9.gif)
+
+</div>
+
 ## Expand Grid Items Dynamically
 
 Sometimes, we want an item to stretch to the end of the grid without counting columns manually. We can use `-1`:
@@ -378,7 +384,14 @@ Note:
 - `-1` represents the last column  
 - The item stretches across the entire width  
 
-This makes the grid item flexible, adapting to different screen sizes.
+This makes the grid item flexible, occupying entire the stretch even with different screen sizes.
+
+<div class="img-center"> 
+
+![](/gif/docs/css-grid-10.gif)
+
+</div>
+
 
 ## Using `span` for Dynamic Spans
 
@@ -395,7 +408,13 @@ Note:
 - The item spans across 2 columns  
 - Adjusts dynamically as grid layout changes  
 
-If the grid has more columns, the item still covers two, maintaining layout consistency.
+If the grid has more columns, the item still covers two, and it still maintains layout consistency.
+
+<div class="img-center"> 
+
+![](/gif/docs/css-grid-12.gif)
+
+</div>
 
 ## Adjust Grid Rows
 
@@ -412,4 +431,8 @@ Note:
 - The item starts at row 1 and ends at row 3  
 - Items below it shift accordingly  
 
-Using rows and columns together allows us to position grid elements precisely.
+<div class="img-center"> 
+
+![](/gif/docs/css-grid-11.gif)
+
+</div>
