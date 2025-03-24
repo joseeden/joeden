@@ -68,6 +68,13 @@ img {
 
 
 
+/* .blue {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  justify-items: center;    
+  align-items: center;      
+} */
+
 .blue img {
   width: auto;              /* Ensure the width of the image doesn't stretch */
   height: auto; 

@@ -225,19 +225,86 @@ CSS Grid provides powerful alignment and layout options for web design.
 - `repeat()` and `minmax()` 
   - Helps create responsive grids  
 
-Example:  
+
+### `justify-items` 
+
+Setting `justify-items` to `center` will center all items within their respective grid cells.  
 
 ```css
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: auto 1fr 2fr;
+  grid-template-rows: 300px;
   justify-items: center;
-  align-items: center;
 }
 ```
 
-This centers all items within their respective grid cells.  
+<div class="img-center"> 
 
+![](/img/docs/Screenshot-2025-03-25-020611.png)
+
+</div>
+
+
+Setting it to `start` will push items to the "start" or the left of their grid cells.
+
+```css
+  justify-items: start;
+```
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-25-020820.png)
+
+</div>
+
+
+On the other, `end` will push the items to the right of their grid cells.
+
+```css
+  justify-items: end;
+```
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-25-021010.png)
+
+</div>
+
+
+
+### `align-items`
+
+Unlike `justify-items`, `align-items` adjust based on the column axes. For example, using `align-items: start` positions the items on the upper part of the grid.
+
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: auto 1fr 2fr;
+  grid-template-rows: 300px;
+  align-items: start 
+}
+```
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-25-021541.png)
+
+</div>
+
+
+On the other hand, using `end` pushes the items to bottom of their grid cells.
+
+```css
+  align-items: end 
+```
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-25-021756.png)
+
+</div>
 
 
 ## Responsive Layouts
