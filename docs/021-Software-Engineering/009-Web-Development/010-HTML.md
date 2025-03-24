@@ -308,3 +308,36 @@ console.log(button.getAttribute('data-modal-target')); // "modal-1"
 // Or using dataset
 console.log(button.dataset.modalTarget); // "modal-1"
 ```
+
+## Remove Default Browser Styles  
+
+Browsers apply default CSS styles to elements, which can affect layout and spacing. 
+
+- Some browsers add predefined margins and paddings  
+- This can cause unexpected spacing in layouts  
+
+To ensure consistent styling, you can reset these defaults.  
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-25-045823.png)
+
+</div>
+
+A common way is to remove default margins and paddings by setting them to `0`. 
+
+```css
+body {
+  margin: auto 0;
+  /* padding: 0;     ----> Optional */
+}
+```
+
+Now, the body element will have no extra space.
+
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-25-050034.png)
+
+</div>
