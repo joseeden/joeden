@@ -166,7 +166,7 @@ Note:
 - Equivalent to writing `1fr 1fr 1fr`  
 - Easily adjustable by changing the number  
 
-This keeps your code cleaner and makes it easier to modify layouts.  
+Using `repeat(3, 1fr)` creates three equal columns:
 
 <div class="img-center"> 
 
@@ -174,7 +174,7 @@ This keeps your code cleaner and makes it easier to modify layouts.
 
 </div>
 
-Setting `repeat(3, 1fr)` creates four equal columns:
+Using `repeat(4, 1fr)` creates four equal columns:
 
 <div class="img-center"> 
 
@@ -216,7 +216,7 @@ CSS Grid provides powerful alignment and layout options for web design.
 - `justify-items` 
   - Aligns content along the row axis 
   - Options: `start | center | end | stretch`
-  - Default is `start`
+  - Default is `stretch`
 
 - `align-items` 
   - Aligns content along the column axis  
@@ -238,21 +238,6 @@ Example:
 
 This centers all items within their respective grid cells.  
 
-## Using `repeat()` for Consistency  
-
-The `repeat()` function simplifies defining multiple rows or columns.  
-
-- `repeat(3, 1fr)`: Creates three equal columns  
-- `repeat(4, 2fr)`: Creates four columns with twice the size of `1fr`  
-
-This ensures a uniform column structure without manually defining each one.  
-
-```css
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-```
 
 
 ## Responsive Layouts
