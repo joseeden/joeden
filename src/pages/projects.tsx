@@ -43,6 +43,13 @@ const projects: ProjectData[] = [
     // role: "Organizer",
   },  
   {
+    title: "Just Keep Running",
+    description: "A simple landing page for a fictional running event",
+    url: `${baseUrl}/docs/Software-Engineering/Projects/Landing-Page/`, 
+    image: require(`/img/docs/Screenshot-2025-03-24-075843.png`),
+    // role: "Organizer",
+  },  
+  {
     title: "AWS Serverless Deployment using Jenkins",
     description: "Using Jenkins to deploy a serverless application",
     url: `${baseUrl}/docs/Amazon-Web-Services/Projects/Deploy-Serverless-App-using-Jenkins/`, 
