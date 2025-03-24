@@ -23,14 +23,14 @@ This page was created to experiment with CSS Grid and responsive layouts. It's a
 
 You can also explore:
 
-- [Live Demo](https://stirring-bunny-99fc4f.netlify.app/) 
+- [Live Demo](https://superlative-sorbet-87fc0e.netlify.app/) 
 - [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/Projects/013-The-Zodiacs) 
 
 
 **View:** 
 
 <iframe
-  src="https://reliable-medovik-2bc1cf.netlify.app/"
+  src="https://superlative-sorbet-87fc0e.netlify.app/"
   width="100%"
   height="600px"
   style={{ border: "1px solid #ccc" }}
