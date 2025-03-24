@@ -25,7 +25,7 @@ Choose a button to know which Pokemon are you!
 - [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/010-Javascript/Projects/002-guess-my-number-game) 
 
 
-**View:** 
+Test it directly here:
 
 <iframe
   src="https://resplendent-paletas-098c18.netlify.app/"

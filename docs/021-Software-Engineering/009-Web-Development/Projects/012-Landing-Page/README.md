@@ -28,7 +28,7 @@ This is a simple landing page designed for a fictional running event. It include
 - CSS 
 - Bootstrap -->
 
-**View:** 
+Test it directly here:
 
 <iframe
   src="https://polite-cactus-2250ac.netlify.app/"

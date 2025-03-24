@@ -27,7 +27,7 @@ You can also explore:
 - [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/Projects/013-The-Zodiacs) 
 
 
-**View:** 
+Test it directly here:
 
 <iframe
   src="https://superlative-sorbet-87fc0e.netlify.app/"

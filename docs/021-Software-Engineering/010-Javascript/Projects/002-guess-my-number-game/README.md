@@ -36,7 +36,7 @@ You can also explore:
 - CSS 
 - Bootstrap -->
 
-**View:** 
+Test it directly here:
 
 <iframe
   src="https://profound-pothos-2eb284.netlify.app/"
