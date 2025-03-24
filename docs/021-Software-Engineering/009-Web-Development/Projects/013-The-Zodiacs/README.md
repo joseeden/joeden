@@ -17,15 +17,20 @@ import React from "react";
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) 	![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7)
 
-This is a simple page that I used for testing CSS Grid and responsive layouts. There is nothing special here, but it does make a good practice for... You can view the site or you can also proceed to the next project! ☺
+This page was created to experiment with CSS Grid and responsive layouts. It's a simple project, but useful for practice. Try hovering over the Zodiac animals to see the effects. If you're interested in the tests, check out the documentation.
 
-- [Website](https://stirring-bunny-99fc4f.netlify.app/) 
+- [Using CSS Grid](/docs/021-Software-Engineering/009-Web-Development/031-CSS-Grid.md#making-it-responsive)
+
+You can also explore:
+
+- [Live Demo](https://stirring-bunny-99fc4f.netlify.app/) 
 - [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/Projects/013-The-Zodiacs) 
+
 
 **View:** 
 
 <iframe
-  src="https://polite-cactus-2250ac.netlify.app/"
+  src="https://reliable-medovik-2bc1cf.netlify.app/"
   width="100%"
   height="600px"
   style={{ border: "1px solid #ccc" }}
