@@ -12,13 +12,19 @@ last_update:
 ## CSS 
 
 - [Minify-CSS](https://www.cleancss.com/css-minify/)
-- [CSS-Flexbox-Resource](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 - [Flexbox Froggy](https://flexboxfroggy.com/)
 - [CSS Browser Support Reference](https://www.w3schools.com/cssref/css3_browsersupport.php)
 - [CSS transitions and transforms for beginners](https://thoughtbot.com/blog/transitions-and-transforms)
 - [Can I use](https://caniuse.com/)
 - [Should-I-Prefix](http://shouldiprefix.com/)
 - [Autoprefixer-Tool](https://autoprefixer.github.io/)
+- [CSS Grid Cheat Sheet](https://grid.malven.co/)
+
+## CSS Tricks
+
+- [CSS-Flexbox-Resource](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [`auto-fill` vs `auto-fit`](https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/)
+- [Media Queries for Standard Devices](https://css-tricks.com/snippets/css/media-queries-for-standard-devices/)
 
 ## Bootstrap 
 

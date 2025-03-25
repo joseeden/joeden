@@ -1,56 +1,211 @@
+.navbar-toggler {
+  display: inline-block;
+}
+
+@font-face { 
+  font-family: NeueHaasDisplayBlack; 
+  src: url('Fonts/neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayBlack.ttf') format('truetype');
+
+} 
+
+@font-face { 
+  font-family: NeueHaasDisplayRoman; 
+  src: url('Fonts/neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayRoman.ttf') format('truetype');
+
+} 
+
+@font-face { 
+  font-family: NeueHaasDisplayMedium; 
+  src: url('Fonts/neue-haas-grotesk-display-pro-cufonfonts/NeueHaasDisplayMedium.ttf') format('truetype');
+
+} 
+
 body {
+  background: #f5f9ff;
   margin: auto 0;
 }
 
-.zone {
-    /* padding:30px 50px; */
-    /* margin:40px 60px; */
-    /* display:inline-block; */
-    cursor:pointer;
-    color:#FFF;
-    font-size:2em;
-    border-radius:4px;
-    border:1px solid #bbb;
-    transition: all 0.3s linear;
+/* Banner */
+.banner-container {
+  display: flex;
+  padding-top: 5.556vw;
+  height: 100vh;
+  max-height: 100vh;
+  align-items: center; 
+  justify-content: center;  
+  box-sizing: border-box;
 }
 
-.zone:hover {
-    -webkit-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-    -moz-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-    -o-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+.banner-grid {
+  display: grid;
+  gap: 2.78vw;
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
+  height: 100%; 
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 5.56vw 0;
+  align-items: center;
+  box-sizing: border-box;
 }
 
-.box:hover {
-  -webkit-transform: rotate(-7deg);
-  -moz-transform: rotate(-7deg);
-  -o-transform: rotate(-7deg);
-  transform: rotate(-7deg);
+@media (max-width: 1024px) {
+  .banner-container {
+    height: 60%;
+  }
+
+  .banner-grid {
+    grid-template-columns: repeat(2, 1fr); 
+    padding: 5.56vw;
+    margin: 0;
+  }
+
+  .about {
+    height: 30%;
+  }
+
+  .banner-text h1 {
+    font-size: 45px;
+  }
+
+  .banner-text p {
+    font-size: 16px;
+  }
+
+}
+
+@media (max-width: 860px) {
+
+  .banner-text h1 {
+    font-size: 40px;
+  }
+
+  .banner-text p {
+    font-size: 13px;
+  }
+
+  .banner-grid {
+
+    gap: 3.5vw;     
+  }  
+}
+
+
+@media (max-width: 760px) {
+  .banner-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;   
+    grid-gap: 10px;     
+    height: 100vh;
+  }
+
+  .banner-container {
+    display: block;
+  }  
+
+  .banner-text h1 {
+    font-size: 30px;
+  }
+
+  .banner-text p {
+    font-size: 18px;
+  }
+
+  #collapsibleNavbar {
+    display: none;
+    flex-direction: column;
+  }
+
+  .navbar-collapse.show {
+    display: flex;
+  }  
+
+}
+
+
+.banner-text {
+  align-items: center;      
+  justify-content: center; 
+}
+
+h1 {
+  font-family: NeueHaasDisplayMedium;
+  color: rgba(36, 63, 50, .9);
+  font-size: 64px;
+  padding-bottom: 3.5vh;
+  margin: 0;
+}
+
+p {
+  font-size: 20px;
+  margin: 0;
+  font-family: NeueHaasDisplayRoman;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  align-items: center;
+}
+
+.navbar {
+  width: 100%;
+}
+
+.navbar-container {
+  background: #f5f9ff;
+  height: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;   
+  align-items: center;    
 }
 
 /* Navigation */
 .main-nav {
   display: flex;
-  list-style: none ;
-  font-size: 0.7em;
-  margin: 0;
+  list-style: none;
+  font-size: 1em;
+  font-family: sans-serif;
+  cursor: pointer;
+  max-width: 960px;
+  padding: 10px 40px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
 }
 
 .sticky {
   position: fixed;
   top: 0;
-  width: 100%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   z-index: 1000;
 }
 
-/* Use for screen sizes smaller than 600px */
-@media only screen and (max-width: 600px) {
-  .main-nav {
-    padding: 0;
-    font-size: 0.5em;
-  }
-  
+.zone {
+  cursor: pointer;
+  color: #FFF;
+  font-size: 1.5em;
+  border-radius: 4px;
+  transition: all 0.3s linear;
 }
+
+.zone:hover {
+  box-shadow: rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+}
+
+.box:hover {
+  transform: rotate(-7deg);
+}
+
+/* Use for screen sizes smaller than 600px */
+/* @media only screen and (max-width: 600px) {
+  .main-nav {
+    font-size: 1em;
+  }
+} */
 
 .push {
   margin-left: auto;
@@ -61,23 +216,19 @@ li {
 }
 
 a {
-  color: azure;
-  text-decoration: none;    /* remove underline */ 
+  color: rgba(36, 63, 50, .9);
+  font-weight: 700;
+  text-decoration: none;  
 }
 
-
-/* Banner */
-.container {
+.about {
   display: flex;
-  justify-content: center;  /* align horizontally */
-  align-items: center;      /* align vertically */
-  height: 50vh;
-  background: #f9f9f9;
-}
-
-/* Cover */
-.cover {
-  width: 30rem;
+  background: rgba(36, 63, 50, .9);
+  height: 500px;
+  align-items: center;      
+  justify-content: center; 
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Grid */
@@ -87,7 +238,7 @@ a {
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 }
 
-.box > img {      /* all images inside a box */
+.box > img {  
   width: 100%;
 }
 
@@ -99,12 +250,27 @@ a {
 
 footer {
   background-color: #333;
+  font-size: 1em;
+  font-family: sans-serif;
   color: #fff;
   text-align: center;
   padding: 10px;
 }
 
+
 /*https://paulund.co.uk/how-to-create-shiny-css-buttons*/
+/***********************************************************************
+ *  Green Gradient Background
+ **********************************************************************/
+.green-grad{
+   --tw-gradient-from-position: ;
+   --tw-gradient-to-position: ;
+   --tw-gradient-from: rgba(36, 63, 50, .9) var(--tw-gradient-from-position);
+   --tw-gradient-to: #1a1a1a var(--tw-gradient-to-position);
+   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+   background: linear-gradient(to bottom, var(--tw-gradient-stops)); 
+}
+
 /***********************************************************************
  *  Green Background
  **********************************************************************/
