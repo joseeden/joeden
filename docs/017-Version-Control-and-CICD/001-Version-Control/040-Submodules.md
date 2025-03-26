@@ -11,7 +11,17 @@ last_update:
 ---
 
 
-## Cloning a Subrepo Inside a Parent Repo
+## Subrepo Inside a Parent Repo
+
+:::info 
+
+This is not the step to clone a repo inside another repo. This is just how I initially tried to do it but went with using subrepos instead. 
+
+To see a detailed explanation, scroll down to [Submodules are pointers.](#submodules-are-pointers)
+
+To use a subrepo (cloning a repo inside another repo), scroll down to 
+:::
+
 
 The goal was to consolidate all repositories into a single central monorepo. Inside the parent repo, I tried to clone a remote repository:
 
