@@ -15,11 +15,12 @@ last_update:
 
 :::info 
 
-This is not the step to clone a repo inside another repo. This is just how I initially tried to do it but went with using subrepos instead. 
+This is not the step to clone a repo inside another repo. This is just how I initially tried to do it but went with using submodules instead. 
 
 To see a detailed explanation, scroll down to [Submodules are pointers.](#submodules-are-pointers)
 
-To use a subrepo (cloning a repo inside another repo), scroll down to 
+To use a submodule (cloning a repo inside another repo), scroll down to [Creating Submodules.](#creating-submodules)
+
 :::
 
 
@@ -109,7 +110,11 @@ For submodules, the remote repository doesn’t display the subrepo inside it bu
 
 </div>
 
-To set the subrepo as a submodule, run the command below. The name of the folder in my case is **submodule-name**, but you can set it to any name you want.
+## Creating Submodules
+
+> You don't need to clone the remote repo. Running the `submodule` command will also clone the remote repo. 
+
+To create a submodule, run the command below. The name of the folder in my case is **submodule-name**, but you can set it to any name you want.
 
 ```bash
 git submodule add <http-url-of-the-remote-repo> submodule-name  
@@ -458,7 +463,7 @@ There are three steps to delete a submodule inside a parent repo:
     rm -rf submodule-name
     ```
 
-3. If you want to keep the directory, move it to a different directoy outside of the parent repo and delete .git folder inside the submodule directory.
+3. If you want to keep the directory, move it to a different directoy outside of the parent repo and delete `.git` folder inside the submodule directory.
 
     ```bash
     cd submodule-name 
@@ -467,27 +472,61 @@ There are three steps to delete a submodule inside a parent repo:
     mv submodule-name /another-directory/outside/repo 
     ```
 
-4. There may still be remnants of the submodule so go back to the parent repo and find any .gitmodule file. 
+4. There may still be remnants of the submodule so go back to the parent repo and find any `.gitmodule` file. 
 
     ```bash
     cd parent-repo
-    ls -la .gitmodules 
     ls -la .git/modules
+    ls -la .gitmodules 
+    ```
 
+    If there's **only one submodule**, you can delete the entire `modules` directory. 
+
+    ```bash 
     rm -rf .git/modules/
     ```
 
-5. If you have a .gitmodules file  at the root of the parent directory, you can simply **delete its contents.**
+    If you have **other submodules** inside the `modules` directory, only delete the specific submodule.
+ 
+    ```bash 
+    rm -rf .git/modules/specific-submodule
+    ```   
+
+5. If you have a `.gitmodules` file at the root of the parent directory, check first if you have other submodules inside it.
+
+    If there are other submodules inside the `.gitmodules` file, edit the file using `vi` or `nano` and delete the specific submodule/s.
 
     ```bash
     $ cat .gitmodules
 
-    [submodule "path/to/submodule-name"]
-            path = path/to/submodule-name
-            url = git@github.com:username/remote-repository
+    [submodule "path/to/submodule-name-a"]
+            path = path/to/submodule-name-a
+            url = git@github.com:username/remote-repository-submodule-name-a
+    [submodule "path/to/submodule-name-b"]
+            path = path/to/submodule-name-b
+            url = git@github.com:username/remote-repository-submodule-name-b
+    [submodule "path/to/specific-submodule"]
+            path = path/to/specific-submodule
+            url = git@github.com:username/remote-repository-specific-submodule
+    ```
+    ```bash
+    vi .gitmodules 
     ```
 
-6. To verify, run the command below:
+    If it only contains the specific submodule that you want to delete, you can **delete the `.gitmodules` file**
+
+    ```bash
+    $ cat .gitmodules
+
+    [submodule "path/to/specific-submodule"]
+            path = path/to/specific-submodule
+            url = git@github.com:username/remote-repository-specific-submodule
+    ```
+    ```bash
+    rm -rf .gitmodule 
+    ```
+    
+8. To verify, run the command below:
 
     ```bash
     git submodule

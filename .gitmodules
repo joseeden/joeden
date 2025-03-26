@@ -22,3 +22,6 @@
 [submodule "submodules/joseeden"]
 	path = submodules/joseeden
 	url = git@github.com:joseeden/joseeden.git
+[submodule "submodules/site-just-keep-running"]
+	path = submodules/site-just-keep-running
+	url = git@github.com:joseeden/Just-Keep-Running.git
