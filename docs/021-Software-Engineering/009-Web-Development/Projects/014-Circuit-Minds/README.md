@@ -25,12 +25,18 @@ You can also explore:
 - [Live Demo](https://circuitminds.netlify.app/) 
 - [Github](https://github.com/joseeden/Circuit-Minds) 
 
+Screenshot:
 
-Test it directly here:
+<div class="img-center"> 
 
-<iframe
+![](/img/docs/Screenshot-2025-03-27-231651.png)
+
+</div>
+
+
+<!-- <iframe
   src="https://circuitminds.netlify.app/"
   width="100%"
   height="600px"
   style={{ border: "1px solid #ccc" }}
-></iframe>
+></iframe> -->
