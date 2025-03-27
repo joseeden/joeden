@@ -28,3 +28,6 @@
 [submodule "submodules/site-the-zodiacs"]
 	path = submodules/site-the-zodiacs
 	url = git@github.com:joseeden/The-Zodiacs.git
+[submodule "submodules/site-circuit-minds"]
+	path = submodules/site-circuit-minds
+	url = git@github.com:joseeden/Circuit-Minds.git
