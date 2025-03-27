@@ -8,6 +8,9 @@
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
+  <!-- Contact box via Mailchimp -->
+  <link rel="stylesheet" href="https://cdn-images.mailchimp.com/embedcode/classic-061523.css">
+
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
@@ -18,10 +21,10 @@
       <img class="logo" src="Images/cmind-logo.png">
       <ul class="main-nav">
         <li><a href="#about-container">About</a></li>
-        <li><a href="#grid-wrapper">Services</a></li>
+        <li><a href="#services">Services</a></li>
         <!-- <li><a href="">Our Team</a></li> -->
         <!-- <li class="push"><a href="">Contact Us</a></li> -->
-        <li><a href="">Contact Us</a></li>
+        <li><a href="#contacts-box">Contact Us</a></li>
       </ul>
     </div>
   </nav>
@@ -30,9 +33,13 @@
     <div class="banner-grid">
       <div class="banner-text">
         <h1>Welcome to Circuit Minds</h1>
-        <p>With advanced algorithms searching through trillions of possibilities, we help engineers build smarter, faster, and more efficient electronics for a sustainable future.
+        <p class="p-banner">With advanced algorithms searching through trillions of possibilities, we help engineers build smarter, faster, and more efficient electronics for a sustainable future.
         </p>
-        <button class="btn btn-primary green-grad-less">Get Started</button>
+
+        <button class="btn btn-primary green-grad-less" onclick="scrollToSection(event, 'contacts-box')">
+          Get Started
+        </button>
+
       </div>
       <div class="banner-image">
         <img src="Images/circuit-board.png">
@@ -43,37 +50,94 @@
   <div id="about-container" class="about-container green-grad">
     <div class="about-grid">
       <div class="about-image">
-        <img src="Images/site-stock-photo-6.jpg">
+        <img src="Images/site-stock-photo-about.jpg">
       </div>
       <div class="about-text">
         <h2 class="h2-about-1 about-header">About Us</h2>
-        <p class="p2-about">Founded in 2009, Circuit Minds is a forward-thinking electronics engineering company specializing in design automation and cutting-edge technology solutions. Our team of expert engineers leverages the latest advancements in automation to streamline complex electronic design processes. We are committed to innovation, ensuring that our clients receive high-quality, efficient, and future-ready engineering solutions.</p>
+        <p class="p2-about p2-about-special">Founded in 2009, Circuit Minds is a forward-thinking electronics engineering company specializing in design automation and cutting-edge technology solutions. Our team of expert engineers leverages the latest advancements in automation to streamline complex electronic design processes. We are committed to innovation, ensuring that our clients receive high-quality, efficient, and future-ready engineering solutions.</p>
       </div>
     </div>
   </div>
   
-  <div class="about-2-container">
+  <div class="about-2-container about-sides">
     <h2 class="h2-about-1 about-header">Our Mission</h2>
-    <p class="p2-about">At Circuit Minds, we are a team of engineers and developers who are passionate about electronics and technology. We believe that the future of electronics lies in the hands of those who can harness the power of advanced algorithms to build smarter, faster, and more efficient electronics. Our mission is to help engineers around the world build the next generation of electronics that will power a sustainable future for all.</p>
+    <p class="p2-about p2-about-2 p2-about-3 black">At Circuit Minds, we are a team of engineers and developers who are passionate about electronics and technology. We believe that the future of electronics lies in the hands of those who can harness the power of advanced algorithms to build smarter, faster, and more efficient electronics. Our mission is to help engineers around the world build the next generation of electronics that will power a sustainable future for all.</p>
   </div>
 
-  <!-- <section id="about" tabindex="-1">
-    <h2>About Us</h2>
-    <p>This is the about section. It should only scroll here when "About" is clicked.</p>
-  </section> -->
+  <div id="services" class="about-3-box">
+    
+    <div class="about-3-container about-header about-sides">
+      <h2  class="h2-about-1 about-header about-3">Services</h2>
+    </div>
 
-  <div class="grid-wrapper">
-    <div class="box zone"><img src="Images/files_2.png"></div>
-    <div class="box zone"><img src="Images/server_2_2.png"></div>
-    <div class="box zone"><img src="Images/monitor_settings_2.png"></div>
-    <div class="box zone"><img src="Images/server_3.png"></div>
-    <div class="box zone"><img src="Images/data_storage_2_2.png"></div>
-    <div class="box zone"><img src="Images/monitor_coding_2.png"></div>
-    <div class="box zone"><img src="Images/desktop_analytics_2.png"></div>
-    <div class="box zone"><img src="Images/server_safe_2.png"></div>    
+    <div class="grid-wrapper">
+    <!-- <div class="about-grid"> -->
+      <div class="box zone"><img src="Images/site-stock-photo-11.png"></div>
+      <p class="services-text p2-about p2-about-2  p2-about-3">Harnessing the latest advancements in machining, we offer a wide range of in-house processes and work with high-performance materials, from steels and carbides to aerospace-grade alloys.</p>
+      <div class="box zone"><img src="Images/site-stock-photo-12.jpeg"></div>
+      <p class="services-text p2-about p2-about-2  p2-about-3">From AI-powered thermostats to autonomous vacuum robots, our smart home solutions enhance convenience, security, and energy efficiency with intelligent automation.</p>
+      <div class="box zone"><img src="Images/site-stock-photo-13.png"></div>
+      <p class="services-text p2-about p2-about-2  p2-about-3">We provide industrial controllers, power supplies, logic boards, and displays that power critical operations across manufacturing and automation industries.</p>
+      <div class="box zone"><img src="Images/site-stock-photo-14.jpg"></div>
+      <p class="services-text p2-about p2-about-2  p2-about-3">Our avionics systems include precision sensors, high-resolution displays, and advanced flight control systems, ensuring safety and reliability in aerospace applications.</p>
+      <div class="box zone"><img src="Images/site-stock-photo-15.jpeg"></div>
+      <p class="services-text p2-about p2-about-2  p2-about-3">We develop power generation and distribution systems, automation controls, and digital solutions for industries such as healthcare, transportation, and smart cities.</p>
+      <div class="box zone"><img src="Images/site-stock-photo-16.png"></div>
+      <p class="services-text p2-about p2-about-2  p2-about-3">Our product range includes PLCs, servomotors, CNC machines, HMIs, inverters, industrial robots, transformers, and software solutions to optimize modern industrial operations.</p>
+    </div>
+
   </div>
+
+  <div id="contacts-box" class="contacts-box">
+    <div class="contacts-container">
+      <h2 class="h2-about-1 about-3 contacts-header about-header">Contact Us</h2>
+      <p class="p2-about-2 p2-about-3">Subscribe now and be the first to receive updates on our latest innovations in electronics engineering. Stay informed about cutting-edge design automation tools, industry advancements, and upcoming events like trade shows and conferences. Gain expert insights, explore new product launches, and stay ahead of the latest trends shaping the future of electronics.</p>
+
+      <!-- Mailchimp -->
+      <div id="mc_embed_shell">
+        <div id="mc_embed_signup">
+            <form action="https://gmail.us19.list-manage.com/subscribe/post?u=5545a82b0b0f32ce0f7e7fcd2&amp;id=8aa8a82c9e&amp;f_id=00c0c2e1f0" 
+                  method="post" id="mc-embedded-subscribe-form" 
+                  name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                <div id="mc_embed_signup_scroll">
+                    <!-- <h2>Subscribe</h2> -->
+                    <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+                    <div class="mc-field-group">
+                        <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+                        <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="">
+                    </div>
+                    <div id="mce-responses" class="clear foot">
+                        <div class="response" id="mce-error-response" style="display: none;"></div>
+                        <div class="response" id="mce-success-response" style="display: none;"></div>
+                    </div>
+                    <div aria-hidden="true" class="hidden-field">
+                        <input type="text" name="b_5545a82b0b0f32ce0f7e7fcd2_8aa8a82c9e" tabindex="-1" value="">
+                    </div>
+                    <div class="optionalParent">
+                        <div class="clear foot">
+                            <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+                            <p class="mailchimp-link">
+                                <a href="http://eepurl.com/ja8x7-" title="Mailchimp - email marketing made easy and fun">
+                                    <span class="badge-container">
+                                        <img class="refferal_badge" 
+                                            src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" 
+                                            alt="Intuit Mailchimp">
+                                    </span>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    </div>
+  </div>
+
   <footer class="green-grad">Copyright @ 2019 Circuit Minds </footer>
 
+  <script src="https://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

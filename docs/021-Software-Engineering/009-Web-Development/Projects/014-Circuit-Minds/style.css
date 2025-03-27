@@ -16,6 +16,7 @@
 
 } 
 
+
 body {
   background: #f5f9ff;
   margin: auto 0;
@@ -59,24 +60,60 @@ body {
 }
 
 
+.about-image img {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
 .about-image {
   display: flex;
   align-items: center;
-  /* height: 800px; */
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
+
 @media (min-width: 2000px) {
+
+  .p-banner {
+    font-size: 28px;
+  }
+
+  p.p2-about {
+    font-size: 24px;
+  }
 
   .about-text > .about-header {
     font-size: 62px;
   }
 
-  p.p2-about {
-    font-size: 30px;
+  .about-2-container > .about-header {
+    font-size: 62px;
+  }      
+
+  .about-3-container > .about-header {
+    font-size: 62px;
+  }
+
+  .contacts-container > .about-header {
+    font-size: 62px;
   }
 }
 
-@media (min-width: 1830px) and (max-width: 1899px) {
+@media (min-width: 1830px) and (max-width: 1999px) {
+
+  .banner-text > .btn-primary {
+    font-weight: 300;
+    font-size: 20px;
+    padding: 1rem 2rem;
+  }
+
+  .p-banner {
+    font-size: 24px;
+  }
 
   .about-text > .about-header {
     font-size: 60px;
@@ -85,6 +122,19 @@ body {
   p.p2-about {
     font-size: 24px;
   }
+
+  .about-2-container > .about-header {
+    font-size: 60px;
+  }
+
+  .about-3-container > .about-header {
+    font-size: 60px;
+  }    
+
+  .contacts-container > .about-header {
+    font-size: 60px;
+  }    
+  
 }
 
 @media (min-width: 1620px) and (max-width: 1829px) {
@@ -96,24 +146,60 @@ body {
   p.p2-about {
     font-size: 20px;
   }
+
+  .about-2-container > .about-header {
+    font-size: 56px;
+  }
+
+  .about-3-container > .about-header {
+    font-size: 56px;
+  }
+
+  .contacts-container > .about-header {
+    font-size: 56px;
+  }
 }
 
 @media (min-width: 1025px) and (max-width: 1619px) {
+
+  .banner-text > .btn-primary {
+    font-weight: 500;
+    font-size: 18px;
+    padding: 1.2rem 2.3rem !important;
+  }
+
+  .about-text > .about-header {
+    font-size: 36px;
+    padding-top: 2vh !important;
+  }
+
+  p.p2-about {
+    font-size: 20px;
+  }
+
+  p.p2-about-special {
+    font-size: 15px;
+  }
 
   .about-2-container > .about-header {
     font-size: 40px;
   }
 
-  .about-text > .about-header {
+  .about-3-container > .about-header {
     font-size: 40px;
   }
 
-  p.p2-about {
-    font-size: 15px;
+  .contacts-container > .about-header {
+    font-size: 40px;
   }
 }
 
 @media (max-width: 1024px) {
+  
+  .grid-wrapper {
+    padding-left: 5.56vw;
+    padding-right: 5.56vw;
+  }
 
   .banner-container {
     height: 60%;
@@ -156,11 +242,38 @@ body {
 
   .about-text > .about-header {
     font-size: 35px;
+    padding-top: 2vh !important;
   }
 
   p.p2-about {
-    font-size: 12px;
+    font-size: 14px;
+    padding-right: 5vw !important;
   }
+
+  p.p2-about-2 {
+    font-size: 16px;
+  }
+
+  .about-sides {
+    padding-left: 5.56vw;
+    padding-right: 5.56vw;
+  }
+
+  .about-2-container > .about-header {
+    font-size: 35px;
+  }
+
+  .about-3-container > .about-header {
+    font-size: 35px;
+  }
+
+  .contacts-container {
+    padding: 0 5vw 5vw 5vw;
+  }
+
+  /* .contacts-header {
+    font-size: 35px !important;
+  } */
 }
 
 @media (max-width: 860px) {
@@ -190,7 +303,6 @@ body {
     font-size: 13px;
     padding: 0.8rem 1.5rem;
     border: none;
-
     margin-top: 6px;
   }
 
@@ -201,12 +313,34 @@ body {
 
   .about-text > .about-header {
     font-size: 30px;
+    padding-top: 2vh !important;
   }
 
   p.p2-about {
-    font-size: 10px;
+    font-size: 12px;
+  }
+
+  p.p2-about-3 {
+    font-size: 14px;
+  }
+
+  .about-2-container > .about-header {
+    font-size: 30px;
+  }
+
+  .about-3-container > .about-header {
+    font-size: 30px;
+  }
+
+  .contacts-container > .about-header {
+    font-size: 30px;
+  }
+
+  .grid-wrapper {
+    grid-template-columns: 1fr 1fr !important;
   }
 }
+
 
 
 @media (max-width: 760px) {
@@ -224,11 +358,15 @@ body {
     margin-top: 2vh;
   }
 
-  .banner-image {
+  .banner-image > img {
     display: flex;
     align-items: start;
     /* height: 100%; */
     height: 500px !important;
+  }
+
+  .banner-text {
+    padding-top: 2vh;
   }
 
   .banner-text h1 {
@@ -264,7 +402,15 @@ body {
   }
 
   .h2-about-1 {
-    padding: 2vh 6vw 0 6vw !important;
+    padding: 0 6vw 0 6vw !important;
+  }
+
+  .about-2-container > .h2-about-1 {
+    padding: 0 !important;
+  }
+
+  .about-2-container > .p2-about-2 {
+    padding: 3vh 0 3vh 0 !important;
   }
 
   /* .about-text {
@@ -280,10 +426,65 @@ body {
     padding: 3vh 6vw 5vh 6vw;
   }
 
-  .about-2 > .h2-about-1 {
+  p.services-text {
+    font-size: 14px;
+    padding: 1vh 2vw 1.8vh 2vw !important;
+  }
+
+  .about-2-container > .about-header {
     font-size: 30px;
   }
 
+  .about-3-container > .about-header {
+    font-size: 30px;
+    padding-left: 0 !important; 
+    padding-right: 0 !important; 
+  }
+
+  .contacts-container > .about-header {
+    font-size: 30px;
+    padding-left: 0 !important; 
+    padding-right: 0 !important; 
+  }
+
+  .about-3 {
+    padding-bottom: 3vh !important;
+  }
+
+  .grid-wrapper {
+    grid-template-columns: 1fr !important;
+  }
+
+  .grid-wrapper > :nth-child(2n) {
+    padding-left: 0 !important;
+  }
+
+  p > .services-text {
+    padding: 0 1vw 2vh 1vw !important;
+  }
+
+  #mc_embed_signup_scroll {
+    padding-left: 10px !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .banner-text {
+    padding-top: 4vh;
+  }
+}
+
+
+#about-container {
+  scroll-margin-top: 70px;
+}
+
+#services {
+  scroll-margin-top: 70px;
+}
+
+#contacts-box {
+  scroll-margin-top: 70px;
 }
 
 .about-2-container {
@@ -315,6 +516,7 @@ p {
   font-family: NeueHaasDisplayMedium;
   color: #9dbaac;
   font-size: 55px;
+  padding-top: 1.5vh;
   padding-bottom: 3.5vh;
   margin: 0;
 }
@@ -323,9 +525,14 @@ p {
   font-size: 18px;
   margin: 0;
   font-family: NeueHaasDisplayRoman;
+  font-weight: 100;
   padding-bottom: 3.5vh;
   padding-right: 10vw;
   color: white;
+}
+
+.p2-about-2 {
+  padding-right: 0 !important;
 }
 
 img {
@@ -408,9 +615,9 @@ img {
   box-shadow: rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
 }
 
-.box:hover {
+/* .box:hover {
   transform: rotate(-7deg);
-}
+} */
 
 /* Use for screen sizes smaller than 600px */
 /* @media only screen and (max-width: 600px) {
@@ -465,11 +672,39 @@ a {
   margin-right: auto;
 }
 
+.about-3-box {
+  background-color: #9dbaac;
+  padding-bottom: 5vh;
+}
+
+.about-3-container {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-3 {
+  color: white;
+  padding-top: 4vh !important;
+  padding-bottom: 3vh !important;
+}
+
 /* Grid */
 .grid-wrapper {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  /* max-width: 960px; */
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid-wrapper > :nth-child(2n) {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-left: 20px;
 }
 
 .box > img {  
@@ -478,8 +713,31 @@ a {
 
 .box {
   background-color: azure;
-  padding: 130px;
-  margin: 20px;
+  /* padding: 10px; */
+  /* margin: 20px; */
+}
+
+.services-text {
+  padding-right: 0 !important;
+}
+
+.contacts-box {
+  background-color: #eeeeee;
+}
+
+.contacts-container {
+  height: auto;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  padding: 5vh 5vw 5vh 5vw
+}
+
+.contacts-header {
+  /* color: rgba(36, 63, 50, .9); */
+  color: #9dbaac;
+  display: flex;
 }
 
 footer {
@@ -488,9 +746,48 @@ footer {
   font-family: sans-serif;
   color: #fff;
   text-align: center;
-  padding: 10px;
+  padding: 20px;
 }
 
+
+/* Contact box via Maichimp */
+#mc_embed_signup {
+  background: #fff;
+  clear: left;
+  font: 14px Helvetica, Arial, sans-serif;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-bottom: 4vh;
+  /* border-radius: 10px; */
+}
+
+.hidden-field {
+  position: absolute;
+  left: -5000px;
+}
+
+.mailchimp-link {
+  margin: 0px auto;
+}
+
+.badge-container {
+  display: inline-block;
+  background-color: transparent;
+  border-radius: 4px;
+}
+
+.refferal_badge {
+  width: 220px;
+  height: 40px;
+  display: flex;
+  padding: 2px 0px;
+  justify-content: center;
+  align-items: center;
+}
+
+#mc_embed_signup_scroll {
+  padding-left:  15px;
+}
 
 /*https://paulund.co.uk/how-to-create-shiny-css-buttons*/
 /***********************************************************************
@@ -514,3 +811,12 @@ footer {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   background: linear-gradient(to bottom, var(--tw-gradient-stops)); 
 }
+
+/***********************************************************************
+ *  Colors
+ **********************************************************************/
+
+.black {
+  color: #000;
+}
+
