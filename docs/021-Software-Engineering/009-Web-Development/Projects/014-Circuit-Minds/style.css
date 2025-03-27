@@ -646,6 +646,7 @@ footer {
       display: flex;
       align-items: start;
       height: 500px !important;
+      padding-bottom: 150px;
   }
 
   .banner-text {
@@ -670,6 +671,10 @@ footer {
       padding: 0.5rem 1.3rem;
       border: none;
       margin-top: 5px;
+  }
+
+  .banner-image {
+    align-self: start !important;
   }
 
   .about-grid {
