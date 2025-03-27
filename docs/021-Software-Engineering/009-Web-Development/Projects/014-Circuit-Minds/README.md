@@ -29,7 +29,7 @@ Screenshot:
 
 <div class="img-center"> 
 
-![](/img/docs/Screenshot-2025-03-27-231651.png)
+![alt text](cminds-landing-page.png)
 
 </div>
 
