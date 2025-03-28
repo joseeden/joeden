@@ -18,6 +18,14 @@ import React from "react";
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
 
+:::info 
+
+This project is not optimized for small mobile screens. 
+
+For the best experience, please open it on a desktop or laptop.  
+
+:::
+
 This is a simple page that I used for practicing Modal Buttons/Windows, Events Listeners, and DOM Manipulation.
 Choose a button to know which Pokemon are you!
 

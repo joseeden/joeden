@@ -18,6 +18,14 @@ import React from "react";
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
 
+:::info 
+
+This project is not optimized for small mobile screens. 
+
+For the best experience, please open it on a desktop or laptop.  
+
+:::
+
 This is a simple number guessing game where you try to guess a number between 1 and 20. Input a number, press enter, and get feedback until you find the correct number.  
 
 - If your guess is too low, you'll see "👇 Too low!"  
@@ -30,11 +38,6 @@ You can also explore:
 - [Live Demo](https://profound-pothos-2eb284.netlify.app/) 
 - [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/010-Javascript/Projects/002-guess-my-number-game) 
 
-<!-- **Tools:**
-
-- HTML
-- CSS 
-- Bootstrap -->
 
 Test it directly here:
 
