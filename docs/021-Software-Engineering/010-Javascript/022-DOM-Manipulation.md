@@ -33,7 +33,7 @@ These selectors are useful, but they return collections instead of single elemen
 
 :::info 
 
-We'll be using this [sample HTML](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/010-Javascript/Projects/001-hello-world/003-DOM) for the examples
+This [sample HTML](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/010-Javascript/Projects/001-hello-world/003-DOM) will be used for the succeeding examples.
 
 :::
 
@@ -60,6 +60,14 @@ let heading = document.querySelector("h1");
 let items = document.querySelectorAll("li");
 ```
 
+In this example, we have a list defined in the HTML. When we use `querySelector` on lists, it only retrieves the first item it sees. On the other hand, `querySelectorAll` will retrieve all the items.
+
+<div class="img-center"> 
+
+![](/gif/docs/js-dom-3.gif)
+
+</div>
+
 ## Check Browser Compatibility
 
 Before using features, it's good practice to check browser support.
@@ -67,20 +75,15 @@ Before using features, it's good practice to check browser support.
 - `querySelector` and `querySelectorAll` are widely supported
 - Use [Can I Use](https://caniuse.com/) to check compatibility
 
-## Setting Attributes
+## Getting Attributes
 
 We can get and modify attributes of elements.
 
 - `getAttribute` retrieves an attribute value
 - `setAttribute` updates an attribute
 
-These methods allow interaction with custom and built-in attributes.
+In this example, the object is first obtained using `querySelector`, then its attribute is accessed.
 
-```js
-let firstItem = document.querySelector("li");
-console.log(firstItem.getAttribute("random")); // Gets the value
-firstItem.setAttribute("random", "1000"); // Sets a new value
-```
 
 
 ## Modifying the DOM  
