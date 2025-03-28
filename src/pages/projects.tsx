@@ -8,6 +8,20 @@ const baseUrl = "/joeden";
 
 const projects: ProjectData[] = [
   {
+    title: "Just Keep Running",
+    description: "A simple landing page for a fictional running event",
+    url: `${baseUrl}/docs/Software-Engineering/Projects/Landing-Page/`, 
+    image: require(`/img/docs/Screenshot-2025-03-24-075843.png`),
+    // role: "Organizer",
+  },  
+  {
+    title: "Circuit Minds",
+    description: "Landing page for a fictional engineering company",
+    url: `${baseUrl}/docs/Software-Engineering/Projects/Landing-Page/`, 
+    image: require(`/img/docs/Screenshot-2025-03-24-075843.png`),
+    // role: "Organizer",
+  },  
+  {
     title: "A Network Analysis of Game of Thrones",
     description: "Analyze co-occurrence network of the characters in the Game of Thrones books",
     url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/021-Software-Engineering/021-Jupyter-Notebooks/020-A-Network-Analysis-of-Game-of-Thrones/network-analysis-on-game-of-thrones.ipynb",
@@ -40,13 +54,6 @@ const projects: ProjectData[] = [
     description: "Analyze scores using summary statistics and data manipulation.",
     url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/021-Software-Engineering/021-Jupyter-Notebooks/022-Exploring-NYC-Public-School-Test-Result-Scores/Exploring-NYC-Public-School-Test-Result-Scores.ipynb",
     image: require(`/img/docs/schoolbus.jpg`),
-    // role: "Organizer",
-  },  
-  {
-    title: "Just Keep Running",
-    description: "A simple landing page for a fictional running event",
-    url: `${baseUrl}/docs/Software-Engineering/Projects/Landing-Page/`, 
-    image: require(`/img/docs/Screenshot-2025-03-24-075843.png`),
     // role: "Organizer",
   },  
   {

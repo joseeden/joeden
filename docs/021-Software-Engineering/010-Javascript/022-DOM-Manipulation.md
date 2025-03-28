@@ -24,12 +24,20 @@ For more information, please see [Document Object Model (DOM).](/docs/021-Softwa
 ## Select Elements in the DOM
 
 We can use selectors to choose elements of the DOM and manipulate them.
-
+ 
 - `getElementsByTagName` selects elements by tag name
 - `getElementsByClassName` selects elements by class name
 - `getElementById` selects an element by ID
 
 These selectors are useful, but they return collections instead of single elements (except for `getElementById`).
+
+:::info 
+
+We'll be using this [sample HTML](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/010-Javascript/Projects/001-hello-world/003-DOM) for the examples
+
+:::
+
+
 
 ## Check Browser Compatibility
 
