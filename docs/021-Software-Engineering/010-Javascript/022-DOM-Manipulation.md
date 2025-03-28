@@ -21,6 +21,52 @@ When a web page loads, the browser creates the Document Object Model (DOM).
 
 For more information, please see [Document Object Model (DOM).](/docs/021-Software-Engineering/010-Javascript/021-DOM.md)
 
+## Select Elements in the DOM
+
+We can use selectors to choose elements of the DOM and manipulate them.
+
+- `getElementsByTagName` selects elements by tag name
+- `getElementsByClassName` selects elements by class name
+- `getElementById` selects an element by ID
+
+These selectors are useful, but they return collections instead of single elements (except for `getElementById`).
+
+## Check Browser Compatibility
+
+Before using features, it's good practice to check browser support.
+
+- `querySelector` and `querySelectorAll` are widely supported
+- Use [Can I Use](https://caniuse.com/) to check compatibility
+
+## Setting Attributes
+
+We can get and modify attributes of elements.
+
+- `getAttribute` retrieves an attribute value
+- `setAttribute` updates an attribute
+
+These methods allow interaction with custom and built-in attributes.
+
+```js
+let firstItem = document.querySelector("li");
+console.log(firstItem.getAttribute("random")); // Gets the value
+firstItem.setAttribute("random", "1000"); // Sets a new value
+```
+
+## Query Selectors
+
+Query selectors are more flexible and work like CSS selectors.
+
+- `querySelector` selects the first matching element
+- `querySelectorAll` selects all matching elements
+
+Example: 
+
+```js
+let heading = document.querySelector("h1");
+let items = document.querySelectorAll("li");
+```
+
 ## Modifying the DOM  
 
 Given the sample HTML below:  
@@ -53,6 +99,25 @@ To set the value of an `input`, use `value`:
 document.querySelector('.guess').value = 15;
 ```  
 
+## Changing Styles
+
+We can modify styles directly or use classes.
+
+- `element.style.property` updates styles inline
+- `className` changes the entire class
+- `classList.add/remove/toggle` manages multiple classes
+
+Using `classList` is better than modifying inline styles since it keeps structure separate from design.
+
+```js
+let title = document.querySelector("h1");
+title.style.background = "yellow"; // Inline style
+
+title.className = "cool-title"; // Replaces all classes
+title.classList.add("highlight"); // Adds a class
+title.classList.remove("cool-title"); // Removes a class
+title.classList.toggle("dark-mode"); // Toggles a class
+```
 
 ## Handling Events 
 
