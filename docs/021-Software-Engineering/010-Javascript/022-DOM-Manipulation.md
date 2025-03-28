@@ -225,13 +225,19 @@ This ensures the input is treated as plain text, preventing execution of harmful
 
 ## Parent and Child Elements  
 
+:::info 
+
+Sample Files: [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/010-Javascript/Projects/001-hello-world/003-DOM) 
+
+:::
+
 You can find an element's parent and children using `parentElement` and `children`.  
 
 ```javascript
-let item = document.querySelectorAll("li")[1]; // Selects the second <li>
-console.log(item.parentElement); // Gets the parent <ul>
-console.log(item.parentElement.parentElement); // Gets the <body>
-console.log(document.body.children); // Lists all body children
+let item = document.querySelectorAll("li")[1];    // Selects the second <li>
+console.log(item.parentElement);                  // Gets the parent <ul>
+console.log(item.parentElement.parentElement);    // Gets the <body>
+console.log(document.body.children);              // Lists all body children
 ```
 
 This helps in dynamically modifying specific parts of the page.  
@@ -239,18 +245,27 @@ This helps in dynamically modifying specific parts of the page.
 - `parentElement` moves up one level in the hierarchy  
 - `children` retrieves all child elements  
 
+<div class="img-center"> 
 
-## Caching Selectors for Performance  
+![](/gif/docs/js-dom-8.gif)
+
+</div>
+
+
+## Caching Selectors
 
 Re-selecting elements repeatedly slows down performance. Instead, store them in variables.
 
 ```javascript
-let header = document.querySelector("h1"); 
+var header = document.querySelector("h1"); 
 header.innerHTML = "Cached H1";
 ```
 
 Caching selectors reduces unnecessary lookups and improves efficiency.  
 
 - The browser looks up `<h1>` once and stores it  
+- Anytime the `h1` is needed, the browser doesn't have to check the DOM
+- Instead it'll just check the variables
 - Any future changes use the stored reference  
+
 
