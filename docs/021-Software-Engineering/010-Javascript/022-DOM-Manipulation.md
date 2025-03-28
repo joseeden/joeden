@@ -82,37 +82,39 @@ We can get and modify attributes of elements.
 - `getAttribute` retrieves an attribute value
 - `setAttribute` updates an attribute
 
-In this example, the object is first obtained using `querySelector`, then its attribute is accessed.
+In this example, the object is retrieved using `querySelector`, and its attribute is then accessed. The attribute can also be modified using `setAttribute`, but this only updates the element in the DOM, not the original HTML file.
+
+<div class="img-center"> 
+
+![](/gif/docs/js-dom-4.gif)
+
+</div>
 
 
+## Updating a Class 
 
-## Modifying the DOM  
+:::info 
 
-Given the sample HTML below:  
+This [sample HTML](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/010-Javascript/Projects/001-hello-world/003-DOM) will be used for the succeeding examples.
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM Example</title>
-</head>
-<body>
-    <p class="number">10</p>
-    <input type="text" class="guess" />
-    <button class="check">Check</button>
-</body>
-</html>
-```  
+:::
 
-To set the value of a `class` in the DOM, use `querySelector` with `textContent`. In the example below, we change the text inside the `.number` element to `"20"`:  
+To set the value of a `class` in the DOM, use `querySelector` with `textContent`. In the example below, we change the text inside the `.description` class:  
 
 ```js
-document.querySelector('.number').textContent = 20;
+document.querySelector(".description").textContent = "These are the course list for the 2020 curriculum";
 ```  
 
-To set the value of an `input`, use `value`:  
+Note that this will change the value of the class in the DOM but it will not modify the original HTML file.
+
+<div class="img-center"> 
+
+![](/gif/docs/js-dom-5.gif)
+
+</div>
+
+
+We could also set the value of an `input`, using`value`:  
 
 ```js
 document.querySelector('.guess').value = 15;
@@ -129,14 +131,25 @@ We can modify styles directly or use classes.
 Using `classList` is better than modifying inline styles since it keeps structure separate from design.
 
 ```js
-let title = document.querySelector("h1");
-title.style.background = "yellow"; // Inline style
+document.querySelector("h1");
+document.querySelector("h1").style.background = "yellow";    // Inline style
 
-title.className = "cool-title"; // Replaces all classes
-title.classList.add("highlight"); // Adds a class
-title.classList.remove("cool-title"); // Removes a class
-title.classList.toggle("dark-mode"); // Toggles a class
+document.querySelector("h1").className = "large";       // Replaces all classes
+document.querySelector("h1").classList.add("arial");     // Adds a class
+document.querySelector("h1").classList.remove("red"); // Removes a class
+document.querySelector("h1").classList.toggle("red");  // Toggles a class
 ```
+
+Note that the changes made in the console only update the DOM and do not modify the original HTML. As a result, refreshing the page will revert all changes to the original settings defined in the HTML file.
+
+<div class="img-center"> 
+
+![](/gif/docs/js-dom-6.gif)
+
+</div>
+
+## `innerHTML` 
+
 
 ## Handling Events 
 
