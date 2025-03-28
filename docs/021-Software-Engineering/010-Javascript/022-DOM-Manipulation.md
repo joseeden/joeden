@@ -21,7 +21,7 @@ When a web page loads, the browser creates the Document Object Model (DOM).
 
 For more information, please see [Document Object Model (DOM).](/docs/021-Software-Engineering/010-Javascript/021-DOM.md)
 
-## Select Elements in the DOM
+## Selecting Elements 
 
 We can use selectors to choose elements of the DOM and manipulate them.
  
@@ -37,7 +37,28 @@ We'll be using this [sample HTML](https://github.com/joseeden/joeden/tree/master
 
 :::
 
+In the example below, we can use selectors to access headers and classes.
 
+<div class="img-center"> 
+
+![](/gif/docs/js-dom-2.gif)
+
+</div>
+
+
+## Query Selectors
+
+Query selectors are more flexible and work like CSS selectors.
+
+- `querySelector` selects the first matching element
+- `querySelectorAll` selects all matching elements
+
+Example: 
+
+```js
+let heading = document.querySelector("h1");
+let items = document.querySelectorAll("li");
+```
 
 ## Check Browser Compatibility
 
@@ -61,19 +82,6 @@ console.log(firstItem.getAttribute("random")); // Gets the value
 firstItem.setAttribute("random", "1000"); // Sets a new value
 ```
 
-## Query Selectors
-
-Query selectors are more flexible and work like CSS selectors.
-
-- `querySelector` selects the first matching element
-- `querySelectorAll` selects all matching elements
-
-Example: 
-
-```js
-let heading = document.querySelector("h1");
-let items = document.querySelectorAll("li");
-```
 
 ## Modifying the DOM  
 
