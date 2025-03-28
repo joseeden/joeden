@@ -16,6 +16,11 @@ last_update:
 
 Functions in JavaScript are blocks of reusable code that perform a specific task. You can define a function and then call it when needed. 
 
+- Some functions are built-in, like `alert()` and `prompt()`
+- You can create your own functions
+
+Example: 
+
 ```js
 logger();             // Output: "My name is John"
 
@@ -24,7 +29,15 @@ function logger() {
 }
 ```
 
-Functions in JavaScript **can be called before or after they are defined**, due to hoisting.
+
+## Calling Functions
+
+To run a function, use parentheses `()`. 
+
+- Adding `logger()` runs the function
+- Functions can take arguments inside `()`
+
+Functions **can be called before or after they are defined**, due to **hoisting**.
 
 ```js
 
@@ -35,7 +48,46 @@ function logger() {
 logger();             // Output: "My name is John"
 ```
 
-We can also create a function that accepts an input. The `calcAge` function below accepts the `birthYear` parameter, performs the operation, and returns the result.
+This can also be written as:
+
+```js
+logger();             // Output: "My name is John"
+
+function logger() {
+  console.log("My name is John");
+}
+```
+
+## Creating Functions
+
+You can create functions in two ways:
+
+- **Function Declaration**
+
+    ```javascript
+    function sayHello() {
+      console.log("Hello");
+    }
+
+    sayHello(); // Calls the function
+    ```
+
+- **Function Expression**
+
+    ```javascript
+    var sayBye = function() {
+      console.log("Bye");
+    };
+
+    sayBye(); // Calls the function
+    ```
+
+
+## Using Arguments
+
+We can also create a function that accepts an input. 
+
+Example: The `calcAge` function accepts `birthYear` parameter, performs the operation, and returns the result.
 
 ```js
 function calcAge(birthYear)  {
@@ -51,6 +103,12 @@ function calcAge(birthYear) {
    return 2040 - birthYear
 } 
 ```
+
+:::info 
+
+Without `return`, the function does not give back a result.
+
+:::
 
 
 ## Function Samples
