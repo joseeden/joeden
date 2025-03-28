@@ -108,3 +108,30 @@ You rolled a 6
 | Counter Required? | Yes                     | No (optional)         |
 | Use Case        | Known iterations      | Unknown iterations  |
 | Condition Placement | In loop definition  | Only condition needed |
+
+## `do while` Loop
+
+Each loop is useful in different situations
+
+- `while` loop checks the condition first before running the code
+- `do while` loop runs the code first, then checks the condition
+
+The `do while` runs the code at least once, even if the condition is false.
+
+```javascript
+let counter = 10;
+do {
+    console.log(counter);
+    counter--;
+} while (counter > 0);
+```
+
+Note: 
+
+- Starts with `do`, executes the block
+- Checks the condition after running the block
+- Runs at least once even if `counter` is 0 initially
+
+This is useful when you need to execute something before validation.
+
+

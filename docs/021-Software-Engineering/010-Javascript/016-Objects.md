@@ -162,9 +162,9 @@ const user2 = {
   } 
 };
 
-console.log(user2.age());    // 46, compute once
-console.log(user2.age);      // 46
-console.log(user2.age);      // 46
-console.log(user2["age"]);   // 46
-console.log(user2["age"]);   // 46
+console.log(user2.age());    // Output: 46, compute once
+console.log(user2.age);      // Output: 46
+console.log(user2.age);      // Output: 46
+console.log(user2["age"]);   // Output: 46
+console.log(user2["age"]);   // Output: 46
 ```
