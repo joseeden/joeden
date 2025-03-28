@@ -22,18 +22,19 @@ This is a simple landing page designed for a fictional running event. It include
 - [Live Demo](https://polite-cactus-2250ac.netlify.app/) 
 - [Github](https://github.com/joseeden/Just-Keep-Running) 
 
-<!-- **Tools:**
-
-- HTML
-- CSS 
-- Bootstrap -->
-
-Test it directly here:
+<!-- Test it directly here:
 
 <iframe
   src="https://polite-cactus-2250ac.netlify.app/"
   width="100%"
   height="600px"
   style={{ border: "1px solid #ccc" }}
-></iframe>
+></iframe> -->
 
+Screenshot:
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-29-020443.png)
+
+</div>
