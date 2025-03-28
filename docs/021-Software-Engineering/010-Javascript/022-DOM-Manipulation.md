@@ -6,44 +6,20 @@ tags:
 - Application Development
 - Software Development
 - Javascript
-sidebar_position: 21
+sidebar_position: 22
 last_update:
-  date: 12/24/2020
+  date: 12/26/2020
 ---
-
 
 ## Overview 
 
-The DOM allows JavaScript to access and manipulate HTML elements and styles.  
+When a web page loads, the browser creates the Document Object Model (DOM).  
 
-- The browser automatically creates the DOM as soon as the HTML loads.  
-- It represents the page as objects that JavaScript can interact with.  
+- DOM represents the page as a structured tree  
+- It lets JavaScript access and modify HTML elements  
+- The `document` object is how JavaScript interacts with the DOM  
 
-The DOM is stored in a tree structure, where each element is an object. The document at the top serves as the entry point, and you can use `document.querySelector` to select elements.  
-
-
-## DOM Tree Structure  
-
-The DOM is structured like a tree.  
-
-- The first child element is usually the `HTML` element because it is the root of all HTML documents.  
-- `HTML` typically has two child elements: `Head` and `Body`.  
-- As you go deeper, more child elements are added, forming the complete DOM tree.  
-
-<div class="img-center">  
-
-![](/img/docs/12232020-dom-manipulation.png)  
-
-</div>  
-
-
-## DOM is not JavaScript  
-
-The DOM is part of the Web APIs, which are libraries browsers provide to interact with web pages.  
-
-- JavaScript uses the DOM API to manipulate web pages
-- However the DOM itself is **not part of JavaScript**.  
-- Other Web APIs include timers, Fetch API, and many more.  
+For more information, please see [Document Object Model (DOM).](/docs/021-Software-Engineering/010-Javascript/021-DOM.md)
 
 ## Modifying the DOM  
 
