@@ -10,15 +10,15 @@ const projects: ProjectData[] = [
   {
     title: "Just Keep Running",
     description: "A simple landing page for a fictional running event",
-    url: `${baseUrl}/docs/Software-Engineering/Projects/Landing-Page/`, 
+    url: `${baseUrl}/docs/Software-Engineering/Web-Development/Projects/Landing-Page/`, 
     image: require(`/img/docs/Screenshot-2025-03-24-075843.png`),
     // role: "Organizer",
   },  
   {
     title: "Circuit Minds",
-    description: "Landing page for a fictional engineering company",
-    url: `${baseUrl}/docs/Software-Engineering/Projects/Landing-Page/`, 
-    image: require(`/img/docs/Screenshot-2025-03-24-075843.png`),
+    description: "Landing page for a fictional electronics engineering company",
+    url: `${baseUrl}/docs/Software-Engineering/Web-Development/Projects/Circuit-Minds/`, 
+    image: require(`/img/docs/Screenshot-2025-03-28-195824.png`),
     // role: "Organizer",
   },  
   {
