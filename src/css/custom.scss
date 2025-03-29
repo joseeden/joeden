@@ -386,6 +386,11 @@ footer.footer {
   display: none !important;
 }
 
+// all headers should have a scroll margin equal to navbar height
+h1, h2, h3, h4, h5, h6 {
+  scroll-margin-top: 150px;
+}
+
 /* Styles for small mobile screens */
 @media (max-width: 600px) {
 
