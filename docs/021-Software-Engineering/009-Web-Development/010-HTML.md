@@ -94,6 +94,164 @@ Subfields:
 - **Unordered List (`<ul>`)** – Uses bullets to list items.  
 - **List Item (`<li>`)** – Represents each item inside a list.  
 
+Lists can also be nested:
+
+```html 
+<ol>
+  <li>Introduction to Computer Science
+    <ul>
+      <li>Monday - 10:00 AM to 12:00 PM</li>
+      <li>Wednesday - 2:00 PM to 4:00 PM</li>
+    </ul>
+  </li>
+  <li>Data Structures and Algorithms
+    <ul>
+      <li>Tuesday - 1:00 PM to 3:00 PM</li>
+      <li>Thursday - 9:00 AM to 11:00 AM</li>
+    </ul>
+  </li>
+  <li>Operating Systems
+    <ul>
+      <li>Monday - 3:00 PM to 5:00 PM
+        <ul>
+          <li>Room 101</li>
+          <li>Room 102</li>
+        </ul>
+      </li>
+      <li>Friday - 10:00 AM to 12:00 PM
+        <ul>
+          <li>Room 201</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+```
+
+Here's how it would look like:
+
+1. Introduction to Computer Science
+   - Monday - 10:00 AM to 12:00 PM  
+   - Wednesday - 2:00 PM to 4:00 PM  
+2. Data Structures and Algorithms
+   - Tuesday - 1:00 PM to 3:00 PM  
+   - Thursday - 9:00 AM to 11:00 AM  
+3. Operating Systems
+   - Monday - 3:00 PM to 5:00 PM  
+     - Room 101  
+     - Room 102  
+   - Friday - 10:00 AM to 12:00 PM  
+     - Room 201  
+
+
+## HTML Tables  
+
+HTML tables help organize data in a structured way using rows and columns.  
+
+- Tables contain rows (`<tr>`) and cells (`<td>`)  
+- Headers use `<th>` for column titles  
+- Can be styled using CSS for better appearance  
+
+#### Structure
+
+A simple table consists of table rows (`<tr>`) and table data (`<td>`). 
+
+The example below creates a two-row table where each row has two columns.  
+
+```html
+<table>
+  <tr>
+    <td>2010-2018</td>
+    <td>Lead Engineer at Stratencore</td>
+  </tr>
+  <tr>
+    <td>2019</td>
+    <td>Platform Specialis at Circuit Minds</td>
+  </tr>
+</table>
+```
+
+#### Headers
+
+You can include headers to label columns, making data easier to read.  
+
+:::info 
+
+Headers (`<th>`) are bold by default, which makes them stand out from the data.  
+
+:::
+
+```html
+<table>
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Position</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2010-2013</td>
+      <td>Lead Developer at Tempo</td>
+    </tr>
+    <tr>
+      <td>2014</td>
+      <td>Researcher at Cognitive Institute</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+#### Table Sections  
+
+HTML tables can have sections for better organization.  
+
+- `<thead>` for headers  
+- `<tbody>` for main content  
+- `<tfoot>` for summary or footer data  
+
+Separating sections allows for better styling and scrolling behavior.  
+
+#### Styling Tables  
+
+Instead of using deprecated HTML attributes, CSS is recommended for styling.  
+
+```css
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+```
+
+#### Nested Tables
+
+Tables can also be placed or nested inside another table cell to organize data more effectively.  
+
+```html
+<table border="1">
+  <tr>
+    <td>Main Table - Row 1, Col 1</td>
+    <td>
+      <table border="1">
+        <tr>
+          <td>Nested Table - Row 1</td>
+        </tr>
+        <tr>
+          <td>Nested Table - Row 2</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+```
+
 ## Meta Tags
 
 Meta tags provide extra information about a webpage. They help with mobile responsiveness and text encoding.  
