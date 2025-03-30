@@ -92,7 +92,6 @@ The `id` selector applies styles to a single unique element.
 </html>
 ```
 
-
 ```css title="id.css"
 #unique { color: red; font-size: 20px; }
 ```
