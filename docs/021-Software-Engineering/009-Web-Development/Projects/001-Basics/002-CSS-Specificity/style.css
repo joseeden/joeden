@@ -1,0 +1,11 @@
+p {                               /* Least specific */
+  color: blue; 
+}      
+
+.highlight {                        
+  color: green; 
+}      
+
+#important {                       /* Most specific */       
+  color: red; 
+}  

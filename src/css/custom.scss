@@ -386,10 +386,11 @@ footer.footer {
   display: none !important;
 }
 
-// all headers should have a scroll margin equal to navbar height
-h1, h2, h3, h4, h5, h6 {
-  scroll-margin-top: 150px;
+/* Fix header overlap issue caused by sticky navbar */
+article h1, article h2, article h3, article h4, article h5, article h6 {
+  scroll-margin-top: 110px;
 }
+
 
 /* Styles for small mobile screens */
 @media (max-width: 600px) {

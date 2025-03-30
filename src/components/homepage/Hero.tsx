@@ -4,17 +4,6 @@ import clsx from "clsx";
 import React, { FunctionComponent } from "react";
 import styles from "./Hero.module.scss";
 
-// Handle scrolling to an element
-const handleScrollTo = (id: string) => {
-  const element = document.getElementById(id);
-  if (element) {
-    window.scrollTo({
-      top: element.offsetTop - 102,   // Adjust by the navbar height (102px)
-      behavior: "smooth",             // Smooth scrolling
-    });
-  }
-};
-
 export const Hero: FunctionComponent = () => {
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
