@@ -47,7 +47,6 @@ Class selectors target specific elements by assigning them a class.
 
 It can also be applied to multiple elements to style them consistently. 
 
-
 ```html title="index.html"
 <!DOCTYPE html>
 <html lang="en">
@@ -74,11 +73,21 @@ It can also be applied to multiple elements to style them consistently.
 
 In this example, the first paragraph gets both a yellow background and bold text, while the other paragraphs get only one style each.
 
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-30-232604.png)
+
+</div>
+
 
 ## ID Selectors  
 
 The `id` selector applies styles to a single unique element.
 
+- Use the `id` attribute in HTML.
+- Prefix the ID name with `#` in CSS.
+
+IDs are unique per page and should not be repeated.
 
 ```html title="index.html"
 <!DOCTYPE html>
@@ -93,7 +102,27 @@ The `id` selector applies styles to a single unique element.
 ```
 
 ```css title="id.css"
-#unique { color: red; font-size: 20px; }
+#unique { 
+  color: red; 
+  font-size: 20px; 
+}
+```
+
+
+## Pseudo-classes
+
+Pseudo-classes apply styles based on an element's state.
+
+- `:hover` changes style when an element is hovered over.
+- `:focus` changes style when an element is focused.
+
+```css
+a:hover {
+  color: orange;
+}
+input:focus {
+  border: 2px solid blue;
+}
 ```
 
 
