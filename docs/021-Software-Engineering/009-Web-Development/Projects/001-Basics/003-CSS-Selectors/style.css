@@ -1,0 +1,35 @@
+button, p {
+  color: blue;
+}
+
+div p {
+  color: red;
+}
+
+
+div > h2 {
+  color: green;
+}
+
+/* Only applies to direct <p> inside <div>, not nested ones */
+div > p {
+  font-style: italic;
+}
+
+
+button + input {
+  border: 2px solid red;
+}
+
+
+button:hover {
+  background-color: lightgray;
+}
+
+li:last-child {
+  font-weight: bold;
+}
+
+input {
+  background-color: yellow !important;
+}

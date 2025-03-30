@@ -14,41 +14,39 @@ last_update:
 ---
 
 
-## Dot or No Dot 
+## Overview
 
-In CSS, whether a selector has a `.` (dot) or not depends on what type of element it is targeting:
+CSS selectors control how elements look on a webpage. Instead of applying the same style everywhere, selectors help target specific elements.  
 
-1. **No dot (`.`) → Targets an HTML element (Tag Selector)**
+- Tag selectors style all elements of a specific type  
+- Class selectors style only elements with a specific class  
+- Comments help organize and disable styles in CSS  
 
-    - This applies styles to **all** `<h1>` elements in the document.
-    - Similarly, `hr {}` applies styles to **all** `<hr>` elements.
-    - Example:  
-      ```css
-      h1 {
-        font-size: 3.5rem;
-        color: azure;
-      }
-      ```
+## Tag Selectors  
 
+Tag selectors apply styles to all elements of the same type.  
 
-2. **With a dot (`.`) → Targets a CSS class (Class Selector)**
+- Targets all instances of an element (e.g., all `<p>` tags)  
+- Useful for general styles but lacks flexibility  
 
-    - This applies styles to **any** element with `class="buffer"`, like:
-      ```html
-      <button class="btn">Click Me</button>
-      ```
-    - Example:
-      ```css
-      .btn {
-        font-weight: 700;
-        border-radius: 300px;
-        text-transform: uppercase;
-      }
-      ```
+Example: This makes every paragraph text blue, which might not always be wanted.  
 
-## Using the `class` Selector  
+```css
+p {
+  color: blue;
+}
+```
 
-A `class` can be applied to multiple elements to style them consistently. Classes allow you to apply styles to **specific** elements without affecting all elements of the same type.
+## Class Selectors  
+
+Class selectors target specific elements by assigning them a class.  
+
+- Add `class="name"` to an element in HTML  
+- Use `.` before the class name in CSS  
+- Allows different styles for different elements  
+
+It can also be applied to multiple elements to style them consistently. 
+
 
 ```html title="index.html"
 <!DOCTYPE html>
@@ -57,19 +55,27 @@ A `class` can be applied to multiple elements to style them consistently. Classe
   <link rel="stylesheet" href="class.css">
 </head>
 <body>
-  <p class="highlight">This text is green and bold.</p>
+  <p class="highlight bold-text">This text is both highlighted and bold.</p>
+  <p class="highlight">This text is only highlighted.</p>
+  <p class="bold-text">This text is only bold.</p>
 </body>
 </html>
 ```
 
 ```css title="class.css"
-.highlight { 
-  color: green; font-weight: bold; 
+.highlight {
+  background-color: yellow;
+}
+
+.bold-text {
+  font-weight: bold;
 }
 ```
 
+In this example, the first paragraph gets both a yellow background and bold text, while the other paragraphs get only one style each.
 
-## Using the `id` Selector  
+
+## ID Selectors  
 
 The `id` selector applies styles to a single unique element.
 
@@ -92,81 +98,121 @@ The `id` selector applies styles to a single unique element.
 ```
 
 
-## Header and Paragraph Selectors
+## Styling Elements with Selectors
 
-Different selectors apply styles to headers and paragraphs in various ways.
+Different CSS selectors apply styles to various elements based on their type, position, or interaction.
 
 ```html title="index.html"
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="headers.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Header 1</h1>
-  <p>This paragraph is blue.</p>
+  <button>Click Me</button>
+  <input type="text" placeholder="Type here">
+  
+  <p>Paragraph with default color.</p>
 
-  <h2>Header 2</h2>
-  <p>This paragraph is green.</p>
+  <div>
+    <p>Direct paragraph inside div</p>
+    <section>
+      <p>Nested paragraph inside section</p>
+    </section>
+  </div>
 
-  <h3>Header 3</h3>
-  <p>Last paragraph.</p>
+  <div>
+    <h2>This is an H2 header</h2>
+    <ul>
+      <li>First item</li>
+      <li>Second item</li>
+      <li>Third item</li>
+    </ul>
+    <h2>This is another H2 header</h2>
+    <ul>
+      <li>First item</li>
+      <li>Second item</li>
+      <li>Third item</li>
+      <li>Fourth item</li>
+    </ul>
+  </div>
 </body>
 </html>
 ```
 
-In the example below, the same rule applies to both `<h1>` and `<p>` elements.
+
+The same rule can apply to multiple elements using a comma.  
 
 ```css
-h1, p {
+button, p {
   color: blue;
 }
 ```
 
-On the other hand, this rule only applies to paragraphs inside an `<h1>`.
+This rule applies only to `<p>` elements inside a `<div>`.  
 
 ```css
-h1 p {
-  font-size: 18px;
+div p {
+  color: red;
 }
 ```
 
-The code below applies styles only to `<p>` elements that are direct children of an `<h2>`.
+The `>` selector targets only direct children, ignoring nested ones.  
 
 ```css
-h2 > p {
+div > h2 {
   color: green;
 }
+
+/* Only applies to direct <p> inside <div>, not nested ones */
+div > p {
+  font-style: italic;
+} 
 ```
 
-Another selector targets a `<p>` that immediately follows an `<h2>`.
+Note: 
+
+- In the `<ul>`, only top-level `<li>` elements are green  
+  - Sub-items remain unaffected  
+- In the `<div>`, only the direct `<p>` is italic  
+  - Nested `<p>` inside `<section>` is unaffected  
+
+The `+` selector applies styles to an `<input>` that comes immediately after a `<button>`.  
 
 ```css
-h2 + p {
-  color: orange;
+button + input {
+  border: 2px solid red;
 }
 ```
 
-The `:hover` selector applies styles when a user hovers over an `<h3>`.
+The `:hover` selector changes styles when the user hovers over a `<button>`.  
 
 ```css
-h3:hover {
-  text-decoration: underline;
+button:hover {
+  background-color: lightgray;
 }
 ```
 
-The `:last-child` selector applies styles to the last `<h3>` in a parent element.
+The `:last-child` selector applies styles to the last `<li>` inside its parent.  
 
 ```css
-h3:last-child {
+li:last-child {
   font-weight: bold;
 }
 ```
 
-Lastly, you can use `!important` to force a style, overriding all other rules. However, it is not recommended as it makes debugging difficult.
+Using `!important` forces a style, overriding all other rules. However, it should be used cautiously as it makes debugging harder.  
 
 ```css
-p {
-  color: blue !important;
+input {
+  background-color: yellow !important;
 }
-```
+```  
+
+How it looks like:
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-30-225703.png)
+
+</div>
