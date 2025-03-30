@@ -1,11 +1,9 @@
-p {                               /* Least specific */
-  color: blue; 
+body {
+  background-color: lightblue;
+}
+
+p {         
+  font-size: 100px;      
+  color: black; 
 }      
 
-.highlight {                        
-  color: green; 
-}      
-
-#important {                       /* Most specific */       
-  color: red; 
-}  
