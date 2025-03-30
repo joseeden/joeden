@@ -108,6 +108,45 @@ IDs are unique per page and should not be repeated.
 }
 ```
 
+## Attribute Selectors
+
+Attribute selectors allow you to target elements based on the presence or value of attributes. You can apply styles to elements that have specific attributes or attribute values.
+
+```html
+<p class="intro">This is a paragraph.</p>
+<a href="https://example.com">Visit Example</a>
+<button disabled>Disabled Button</button>
+```
+
+```css
+/* Select all links with a href attribute */
+a[href] {
+  color: blue;
+}
+
+/* Select all elements with a 'disabled' attribute */
+button[disabled] {
+  background-color: gray;
+}
+```
+
+## Universal Selectors
+
+The universal selector targets all elements on a page, allowing you to apply a rule to every element. It's useful when you want a general style to apply universally.
+
+```html
+<div>Content 1</div>
+<span>Content 2</span>
+<p>Content 3</p>
+```
+
+```css
+/* Select all elements */
+* {
+  font-family: Arial, sans-serif;
+  color: black;
+}
+```
 
 ## Pseudo-classes
 
