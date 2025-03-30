@@ -1,0 +1,8 @@
+/* visibility.css */
+.hidden {
+  display: none;
+}
+
+.invisible {
+  visibility: hidden;
+}

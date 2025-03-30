@@ -8,7 +8,7 @@ tags:
 - Web Development
 - HTML
 - CSS
-sidebar_position: 20
+sidebar_position: 17
 last_update:
   date: 03/20/2019
 ---
@@ -57,5 +57,4 @@ To display the favicon, place the `.ico` file in your website folder and update 
 
 3. Save the file and refresh your website  
 
-Now, your site should display the favicon in the browser tab.  
 
