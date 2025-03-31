@@ -6,6 +6,7 @@ body {
   display: flex;
   gap: 10px;
 }
+
 .box {
   background: #66D2CE;
   padding: 20px;

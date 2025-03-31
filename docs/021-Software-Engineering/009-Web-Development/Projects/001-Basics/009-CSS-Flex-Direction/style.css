@@ -1,0 +1,29 @@
+body {
+ background-color: azure;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.container > * {
+  flex-basis: 100px;
+}
+
+.box {
+  padding: 20px;
+}
+
+.red {
+  background: #D76C82;
+}
+
+.green {
+  background: #66D2CE;
+}
+
+.blue {
+  background: #578FCA;
+}

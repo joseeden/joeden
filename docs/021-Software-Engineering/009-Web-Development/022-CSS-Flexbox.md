@@ -85,6 +85,26 @@ Each `.box` will be evenly spaced inside `.container`, adjusting dynamically bas
 
 </div>
 
+## Main and Cross Axis
+
+Flexbox layouts are structured around two axes:
+
+- **Main axis**
+  - Defined by `flex-direction`
+  - `row`: main axis is horizontal
+  - `column`: main axis is vertical
+
+- **Cross axis**
+  - Perpendicular to the main axis
+  - Helps control item alignment in the perpendicular direction
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-31-231851.png)
+
+</div>
+
+
 ## Flex Direction
 
 The `flex-direction` property determines how flex items are arranged inside a container.
@@ -94,18 +114,66 @@ The `flex-direction` property determines how flex items are arranged inside a co
 - `row-reverse`: items align from right to left
 - `column-reverse`: items align from bottom to top
 
-## Main and Cross Axis
+Example: Modify the default layout using `flex-direction`:
 
-Flexbox layouts are structured around two axes:
+```css
+.container {
+  display: flex;
+  flex-direction: column;
+}
+```
 
-- **Main axis**: Defined by `flex-direction`
-  - `row`: main axis is horizontal
-  - `column`: main axis is vertical
-- **Cross axis**: Perpendicular to the main axis
-  - Helps control item alignment in the perpendicular direction
+- Items now align top to bottom
+- The main axis becomes vertical
+- The cross axis moves left to right
+
+Sample file can be found here: [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/Projects/001-Basics/009-CSS-Flex-Direction)
 
 <div class="img-center"> 
 
-![](/img/docs/Screenshot-2025-03-31-231851.png)
+![](/img/docs/Screenshot-2025-03-31-233549.png)
+
+</div>
+
+
+## Flex Basis
+
+The `flex-basis` property controls the initial size of flex items along the main axis.
+
+- In `row` direction: `flex-basis` sets width
+- In `column` direction: `flex-basis` sets height
+- Applies to child elements, not the container
+
+Example:
+
+```css
+.container > * {
+  flex-basis: 100px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+} 
+```
+
+- When `row`, items have a width of `100px`
+- When `column`, items have a height of `100px`
+- Helps control item sizes within a flex container
+
+Using the previous example, we've set the `flex-direction` to column so each of the boxes will have a height of `100px`.
+
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-31-233836.png)
+
+</div>
+
+If it was set to `flex-direction: row`, the `flex-basis` sets the width to `100px` and the arrangement would look like this:
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-31-234052.png)
 
 </div>
