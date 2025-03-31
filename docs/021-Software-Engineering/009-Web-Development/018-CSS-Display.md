@@ -140,6 +140,14 @@ img {
 
 In this example, an image floats to the left, and text wraps around it.  
 
+Sample Files: Github 
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-31-171315.png)
+
+</div>
+
 
 ## Clear
 
