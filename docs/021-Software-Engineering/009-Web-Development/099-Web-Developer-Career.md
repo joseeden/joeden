@@ -37,8 +37,6 @@ There are different types of developers, each with its own focus.
 - **Backend Developer** – Manages server-side logic and databases  
 - **Full-Stack Developer** – Handles both frontend and backend  
 
-Each role offers exciting opportunities, and learning full-stack development opens more doors.  
-
 ## Getting Started  
 
 To start, focus on learning JavaScript, React, and Git.  
@@ -46,5 +44,3 @@ To start, focus on learning JavaScript, React, and Git.
 - Practice building simple projects  
 - Use online resources like GitHub and Stack Overflow  
 - Apply for jobs or freelance work to gain experience  
-
-With consistent learning and practice, you can become a skilled web developer.
