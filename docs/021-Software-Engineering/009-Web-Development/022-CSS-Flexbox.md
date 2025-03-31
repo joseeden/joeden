@@ -84,3 +84,28 @@ Each `.box` will be evenly spaced inside `.container`, adjusting dynamically bas
 ![](/img/docs/Screenshot-2025-03-31-230452.png)
 
 </div>
+
+## Flex Direction
+
+The `flex-direction` property determines how flex items are arranged inside a container.
+
+- Default value: `row` (items align from left to right)
+- `column`: items align from top to bottom
+- `row-reverse`: items align from right to left
+- `column-reverse`: items align from bottom to top
+
+## Main and Cross Axis
+
+Flexbox layouts are structured around two axes:
+
+- **Main axis**: Defined by `flex-direction`
+  - `row`: main axis is horizontal
+  - `column`: main axis is vertical
+- **Cross axis**: Perpendicular to the main axis
+  - Helps control item alignment in the perpendicular direction
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-31-231851.png)
+
+</div>
