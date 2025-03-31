@@ -79,7 +79,7 @@ The element moves 10px down and 20px to the right from its original spot.
 
 Positions an element relative to the nearest positioned ancestor.
 
-- If no positioned ancestor, defaults to page
+- If there's no positioned ancestor, defaults to page
 - Removed from normal document flow
 - Uses `top`, `left`, `right`, `bottom`
 
@@ -104,6 +104,27 @@ In this example, the box with the class `.absolute` is positioned 50px from the 
 
 ![](/img/docs/Screenshot-2025-03-31-133942.png)
 
+
+## Z-Index
+
+Another aspect of the absolute positioning is the `z-index`, which controls the stacking order of elements.
+
+- Determines which element goes on top of which
+- Higher values appear above lower values
+- Works with `relative`, `absolute`, `fixed`
+
+Every element has a default `z-index` of `0`. If you want to put element A behind element B, you need to set the `z-index` of element A to `-1`. To put it in front, set the `z-index` to a number higher than `0`.
+
+Example:
+
+```css
+.box {
+  position: absolute;
+  z-index: 10;
+}
+```
+
+A higher `z-index` makes an element appear on top of others.
 
 ## Fixed Positioning
 
@@ -149,23 +170,6 @@ In this example, the .sticky element will stay at the top of the viewport as you
 
 
 
-## Z-Index
 
-Controls stacking order of elements.
-
-- Higher values appear above lower values
-- Works with `relative`, `absolute`, `fixed`
-- Default is `0`
-
-Example:
-
-```css
-.box {
-  position: absolute;
-  z-index: 10;
-}
-```
-
-A higher `z-index` makes an element appear on top of others.
 
 
