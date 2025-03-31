@@ -1,0 +1,46 @@
+body {
+ background-color: azure;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+}
+
+
+.container > * {
+  flex-basis: 100px;
+}
+
+.box {
+  padding: 20px;
+}
+
+.red {
+  background: #D76C82;
+}
+
+.orange {
+  background: #FFAB5B;
+}
+
+.yellow {
+  background: #F8ED8C;
+}
+
+.green {
+  background: #66D2CE;
+}
+
+.blue {
+  background: #578FCA;
+}
+
+.indigo {
+  background: #c8a7df;
+}
+
+.violet {
+  background: #a183d4;
+}

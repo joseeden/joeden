@@ -187,8 +187,68 @@ The `order` property changes the arrangement of child items inside a flex contai
 - Higher values move items further right
 - Lower values move items further left
 
+Example: Without ordering, the box items are arranged the same way they are defined in the
+
+> Sample files found in [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/Projects/001-Basics/010-CSS-Order)
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-31-233836.png)
+
+</div>
+
+If we set the order of the box 1 (red) to `1`, we're moving it further down below the other elements which have a default order of `0`.
+
 ```css
-.item {
-  order: 1; /* Moves the item to the end */
+.red {
+  background: #D76C82;
+  order: 1
+}
+
+.green {
+  background: #66D2CE;
+}
+
+.blue {
+  background: #578FCA;
 }
 ```
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-31-235440.png)
+
+</div>
+
+## Wrapping Items with `flex-wrap`
+
+By default, items stay in a single row and do not wrap.
+
+- `nowrap` (default) keeps items in one row
+- `wrap` moves items to the next line when space runs out
+- `wrap-reverse` wraps items from bottom to top
+
+```css
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+```
+
+Sample files: [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/Projects/001-Basics/011-CSS-Flex-Wrap)
+
+Using `flex-wrap` ensures items don’t overflow and stay visible within the container.
+
+<div class="img-center"> 
+
+![](/gif/docs/css-flex-wrap.gif)
+
+</div>
+
+Setting it to `wrap-reverse`:
+
+<div class="img-center"> 
+
+![](/gif/docs/css-flex-wrap-2.gif)
+
+</div>
