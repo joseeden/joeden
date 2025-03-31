@@ -86,6 +86,66 @@ Min and max width provide control over flexibility.
 - `max-width`: Prevents growing beyond a limit.
 - Flexbox respects these limits when resizing.
 
+## `flex-grow` and `flex-shrink` 
+
+### `flex-grow`  
+
+Allows an item to expand up to its defined `max-width` when space is available. 
+
+```css
+.container {
+  display: flex;
+}
+.item {
+  flex-grow: 1;       /* Grows to fill available space */
+  max-width: 300px;   /* Won't grow beyond this */
+}
+```
+
+### `flex-shrink`  
+
+Allows an item to shrink but not smaller than its `min-width`.  
+
+```css
+.container {
+  display: flex;
+}
+.item {
+  flex-shrink: 1;     /* Shrinks if needed */
+  min-width: 100px;   /* Won't shrink below this */
+}
+```
+
+### Using `flex` Shorthand  
+
+Instead of writing `flex-grow` and `flex-shrink` separately, we can use:  
+
+```css
+/* flex-grow: 1, flex-shrink: 1, flex-basis: auto */
+.item {
+  flex: 1 1 auto;   
+}
+```  
+
+This means the item can grow (`1`), shrink (`1`), and use its default size (`auto`).  
+
+This can also be rewritten as:  
+
+```css
+/* flex-basis set to 0, so size is fully determined by grow/shrink */
+.item {
+  flex: 1 1 0; 
+}
+```  
+
+A much shorter way to write it is:  
+
+```css
+/* Same as flex: 1 1 0, allows growing and shrinking equally */
+.item {
+  flex: 1; 
+}
+```
 
 ## Order of Priority
 
