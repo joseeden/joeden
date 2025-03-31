@@ -157,6 +157,7 @@ Example:
 } 
 ```
 
+
 - When `row`, items have a width of `100px`
 - When `column`, items have a height of `100px`
 - Helps control item sizes within a flex container
@@ -177,3 +178,17 @@ If it was set to `flex-direction: row`, the `flex-basis` sets the width to `100p
 ![](/img/docs/Screenshot-2025-03-31-234052.png)
 
 </div>
+
+## Controlling Order with `order`
+
+The `order` property changes the arrangement of child items inside a flex container.
+
+- Default order is `0`, following HTML structure
+- Higher values move items further right
+- Lower values move items further left
+
+```css
+.item {
+  order: 1; /* Moves the item to the end */
+}
+```
