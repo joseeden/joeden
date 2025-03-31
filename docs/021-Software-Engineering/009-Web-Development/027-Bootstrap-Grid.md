@@ -21,9 +21,9 @@ Bootstrap's grid system makes it easy to create responsive layouts for your webs
 - Columns adjust automatically based on screen size (small, medium, large, extra-large).
 - You can combine columns to create custom layouts.
 
-## Example: Simple Grid Layout  
+##  Grid Layout  
 
-Create a responsive layout:
+Below is a basic Bootstrap grid layout:
 
 ```html
   <div class="container text-center">
