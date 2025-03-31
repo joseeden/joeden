@@ -165,9 +165,11 @@ input:focus {
 ```
 
 
-## Styling Elements with Selectors
+## Combining CSS Selectors
 
 Different CSS selectors apply styles to various elements based on their type, position, or interaction.
+
+The examples below use the following HTML file:
 
 ```html title="index.html"
 <!DOCTYPE html>
@@ -207,6 +209,7 @@ Different CSS selectors apply styles to various elements based on their type, po
 </html>
 ```
 
+### Grouping Selectors
 
 The same rule can apply to multiple elements using a comma.  
 
@@ -216,13 +219,27 @@ button, p {
 }
 ```
 
-This rule applies only to `<p>` elements inside a `<div>`.  
+- Selects both h1 and h2
+- Applies the same style to both
+
+This is useful for reducing repetitive code.
+
+### Descendant Selector (Space)
+
+This rule targets elements nested within a specific ancestor. 
 
 ```css
 div p {
   color: red;
 }
 ```
+
+- Selects all `<p>` elements inside `<div>`.  
+- Works regardless of nesting depth
+
+Use this when styling all occurrences of an element within a parent.
+
+### Child Selector (`>`)
 
 The `>` selector targets only direct children, ignoring nested ones.  
 
@@ -244,7 +261,12 @@ Note:
 - In the `<div>`, only the direct `<p>` is italic  
   - Nested `<p>` inside `<section>` is unaffected  
 
-The `+` selector applies styles to an `<input>` that comes immediately after a `<button>`.  
+Use this to style only immediate child elements.
+
+
+### Adjacent Sibling Selector (`+`)
+
+The `+` selector targets an element immediately following a specified element. 
 
 ```css
 button + input {
@@ -252,21 +274,37 @@ button + input {
 }
 ```
 
-The `:hover` selector changes styles when the user hovers over a `<button>`.  
+- Selects an input that comes directly after a button
+- Does not apply if another element is in between
 
+Useful for styling elements based on their direct relation to others.
+
+### Hover Selector (`:hover`)
+
+The `:hover` selector applies styles when the user hovers over an element. 
 ```css
 button:hover {
   background-color: lightgray;
 }
 ```
 
-The `:last-child` selector applies styles to the last `<li>` inside its parent.  
+-Changes the button's background when hovered
+-Enhances interactivity for users
+
+### Last Child Selector (`:last-child`)
+
+The `:last-child` selector targets the last child of a parent. 
 
 ```css
 li:last-child {
   font-weight: bold;
 }
 ```
+
+- Selects only the last li in each list
+- Useful for styling the final item in a group
+
+### Using Important 
 
 Using `!important` forces a style, overriding all other rules. However, it should be used cautiously as it makes debugging harder.  
 
@@ -276,7 +314,9 @@ input {
 }
 ```  
 
-How it looks like:
+### Combining Together 
+
+How it all looks like:
 
 <div class="img-center"> 
 
