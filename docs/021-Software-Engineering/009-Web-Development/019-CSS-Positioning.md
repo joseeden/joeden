@@ -23,6 +23,11 @@ CSS positioning controls how elements appear on a webpage. There are four types:
 - Absolute
 - Fixed
 
+The following sample files will be used for the examples:
+
+- [index.html]()
+- [styles.css]()
+
 ## Static Positioning
 
 This is the default positioning of HTML elements.

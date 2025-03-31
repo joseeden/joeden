@@ -186,7 +186,7 @@ input {
 }
 ```  
 
-!-- ### Combining Together 
+<!-- ### Combining Together 
 
 How it all looks like:
 
@@ -194,7 +194,7 @@ How it all looks like:
 
 ![](/img/docs/Screenshot-2025-03-30-225703.png)
 
-</div> -->
+</div>  -->
 
 ## Combining Combiners 
 

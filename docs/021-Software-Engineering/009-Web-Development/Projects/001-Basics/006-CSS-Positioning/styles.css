@@ -1,0 +1,52 @@
+body { 
+  font-family: Arial, sans-serif; 
+  margin: 20px; 
+}
+
+.container { 
+  max-width: 800px; 
+  margin: auto; 
+}
+
+h1, h2, h3 { 
+  color: #333; 
+}
+
+.box { 
+  width: 100px; 
+  height: 100px; 
+  background-color: lightblue; 
+  margin: 10px; 
+}
+
+.relative { 
+  position: relative; 
+  left: 20px; 
+  top: 10px; 
+}
+
+.absolute-container { 
+  position: relative; 
+  width: 300px; 
+  height: 200px; 
+  border: 1px solid #000; 
+}
+
+.absolute { 
+  position: absolute; 
+  top: 50px; 
+  left: 50px; 
+}
+
+.fixed { 
+  position: fixed; 
+  top: 10px; 
+  right: 10px; 
+}
+
+.sticky { 
+  position: sticky; 
+  top: 0; 
+  background-color: yellow; 
+  padding: 10px; 
+}
