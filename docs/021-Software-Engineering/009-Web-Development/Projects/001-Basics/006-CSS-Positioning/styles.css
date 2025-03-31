@@ -21,8 +21,8 @@ h1, h2, h3 {
 
 .relative { 
   position: relative; 
-  left: 20px; 
   top: 10px; 
+  left: 20px; 
 }
 
 .absolute-container { 
@@ -40,8 +40,8 @@ h1, h2, h3 {
 
 .fixed { 
   position: fixed; 
-  top: 10px; 
-  right: 10px; 
+  bottom: 10px; 
+  left: 10px; 
 }
 
 .sticky { 
