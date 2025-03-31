@@ -140,7 +140,7 @@ img {
 
 In this example, an image floats to the left, and text wraps around it.  
 
-Sample Files: Github 
+Sample Files: [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/Projects/001-Basics/007-CSS-Float) 
 
 <div class="img-center"> 
 
@@ -148,18 +148,20 @@ Sample Files: Github
 
 </div>
 
-
 ## Clear
 
-Clears floated elements so they don’t affect the layout of other elements.  
+This ensures elements below a float stay in their expected position.  
 
 - `clear: left;` stops wrapping around left-floated elements  
 - `clear: right;` stops wrapping around right-floated elements  
 - `clear: both;` stops wrapping around both sides  
 
-This ensures elements below a float stay in their expected position.  
+In the example below, the following are set:
 
-Example:
+- Sidebar is set to `float: left`
+- Main content is set to `float: right`
+
+Be setting the footer to clear both the sidebar and main content, the footer stays below floated elements instead of wrapping around them.  
 
 ```css
 footer { 
@@ -167,7 +169,10 @@ footer {
 }
 ```
 
-This makes sure the footer stays below floated elements instead of wrapping around them.  
+
+![](/img/docs/all-things-webdev-clear-botth.png)
+
+
 
 ## Float-Based Layout  
 
