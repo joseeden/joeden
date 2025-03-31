@@ -110,3 +110,82 @@ For example:
 <p style="display: none;">This is hidden.</p>
 <p style="visibility: hidden;">This is invisible but still takes up space.</p>
 ```
+
+## Float
+
+Float allows elements to be positioned next to each other by taking them out of the normal document flow.  
+
+- Moves elements left or right  
+- Used mainly for text wrapping around images  
+- Can affect layout, requiring a clear fix  
+
+For layout positioning, Flexbox and Grid provide better control. Float remains useful for specific cases, such as text wrapping.
+
+- Modern layouts use Flexbox or Grid instead  
+- Float can cause unexpected issues in complex designs  
+- Use it only when necessary  
+
+## Using Float 
+
+When an element is floated, content flows around it. Changing `float: left;` or `float: right;` moves the element to that side, letting other content wrap around it.  
+
+Example:
+
+```css
+img { 
+  float: left; 
+  margin-right: 10px; 
+}
+```
+
+In this example, an image floats to the left, and text wraps around it.  
+
+
+## Clear
+
+Clears floated elements so they don’t affect the layout of other elements.  
+
+- `clear: left;` stops wrapping around left-floated elements  
+- `clear: right;` stops wrapping around right-floated elements  
+- `clear: both;` stops wrapping around both sides  
+
+This ensures elements below a float stay in their expected position.  
+
+Example:
+
+```css
+footer { 
+  clear: both; 
+}
+```
+
+This makes sure the footer stays below floated elements instead of wrapping around them.  
+
+## Float-Based Layout  
+
+Float can be used to position elements side by side.  
+
+- `float: left;` moves an element to the left  
+- `float: right;` moves an element to the right  
+- Clearing helps maintain proper layout  
+
+Example:
+
+```css
+.cat { 
+  float: left; 
+  width: 50%; 
+}
+
+.dog { 
+  float: right; 
+  width: 50%; 
+}
+
+footer { 
+  clear: both; 
+}
+```
+
+In this example, the `.cat` section is on the left, the `.dog` section is on the right, and the footer stays below both.  
+
