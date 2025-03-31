@@ -340,3 +340,58 @@ To view the sample files, check out [Github.](https://github.com/joseeden/joeden
 ![](/img/docs/Screenshot-2025-04-01-004704.png)
 
 </div>
+
+
+## Align Content in Flexbox
+
+Align-content controls how wrapped flex items are aligned along the cross axis. 
+
+- Works only with `flex-wrap: wrap`
+- Affects how rows of flex items are spaced
+- Different from `align-items`
+
+When items wrap into multiple rows, `align-content` decides how those rows are spaced. Without wrapping, this property has no effect.
+
+#### Align-Items and Align-Content
+
+`align-items` and `align-content` seem similar but behave differently.
+
+- `align-items`: Aligns individual items in a single row
+- `align-content`: Aligns multiple rows of items
+- `align-content` does nothing if all items fit in one row
+
+When there is only one row, `align-items` is enough. But if flex items wrap, `align-content` helps control row spacing.
+
+#### Common Values 
+
+Different values change how wrapped rows are positioned.
+
+- `flex-start` – Rows packed at the start
+- `flex-end` – Rows packed at the end
+- `center` – Rows centered
+- `space-between` – Evenly distributed with no space at edges
+- `space-around` – Evenly distributed with space around them
+- `stretch` – Rows stretch to fill container height
+
+Example:
+
+```css
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  height: 300px;
+  border: 1px solid black;
+}
+
+.item {
+  width: 100px;
+  height: 100px;
+  background: lightblue;
+  margin: 5px;
+}
+```
+
+Expected Result:
+- If flex items wrap, they will be centered vertically inside `.container`.
+- Without `flex-wrap: wrap`, `align-content` does nothing.

@@ -1,0 +1,93 @@
+body {
+ background-color: azure;
+ font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  display: flex;
+  margin: 20px;
+}
+
+.container > * {
+  flex-basis:200px;
+}
+
+.box {
+  padding: 20px;
+}
+
+
+/* Aligning items with align-items */
+
+.flexstart {
+  height: 30vh;
+  border: solid;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.flexend {
+  height: 30vh;
+  border: solid;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.flexcenter {
+  height: 30vh;
+  border: solid;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.space-between {
+  height: 30vh;
+  border: solid;
+  align-items: space-between;
+  flex-wrap: wrap;
+}
+
+.space-around {
+  height: 30vh;
+  border: solid;
+  align-items: space-around;
+  flex-wrap: wrap;
+}
+
+.stretch {
+  height: 30vh;
+  border: solid;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+
+/* Colors */
+
+.red {
+  background: #D76C82;
+}
+
+.orange {
+  background: #FFAB5B;
+}
+
+.yellow {
+  background: #F8ED8C;
+}
+
+.green {
+  background: #66D2CE;
+}
+
+.blue {
+  background: #578FCA;
+}
+
+.indigo {
+  background: #c8a7df;
+}
+
+.violet {
+  background: #a183d4;
+}
