@@ -19,7 +19,7 @@ import React from "react";
 
 This page was created to experiment with CSS Grid and responsive layouts. It's a simple project, but useful for practice. Try hovering over the Zodiac animals to see the effects. If you're interested in the tests, check out the documentation.
 
-- [Using CSS Grid](/docs/021-Software-Engineering/009-Web-Development/031-CSS-Grid.md#making-it-responsive)
+- [Using CSS Grid](/docs/021-Software-Engineering/009-Web-Development/021-CSS-Grid.md#making-it-responsive)
 
 You can also explore:
 
