@@ -49,7 +49,7 @@ In the example below, a box is defined. No special keywords is used and iit will
 } 
 ```
 
-![](/img/docs/Screenshot-2025-03-31-133524.png)
+![](/img/docs/all-things-webdev-static.png)
 
 
 ## Relative Positioning
@@ -72,7 +72,7 @@ Example:
 
 The element moves 10px down and 20px to the right from its original spot.
 
-![](/img/docs/Screenshot-2025-03-31-133740.png)
+![](/img/docs/all-things-webdev-Relative.png)
 
 
 ## Absolute Positioning
@@ -125,7 +125,11 @@ Example:
 
 The element remains at the bottom-left corner of the browser, even when scrolling.
 
-![](/img/docs/Screenshot-2025-03-31-134147.png)
+<div class="img-center"> 
+
+![](/gif/docs/css-fix-position.gif)
+
+</div>
 
 
 ## Sticky Positioning 
