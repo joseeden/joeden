@@ -181,3 +181,15 @@ Float can be used to position elements side by side.
 - `float: left;` moves an element to the left  
 - `float: right;` moves an element to the right  
 - Clearing helps maintain proper layout  
+
+## Problems with Floats
+
+Floats were widely used but had drawbacks.
+
+- Difficult to align elements properly
+- Required clearfix hacks for layout stability
+- Not designed for complex grid structures
+
+Floats work well for wrapping text around images but are not ideal for building full-page layouts. As a solution, developers started using **Flexbox** to dynamically adjust items based on available space.
+
+For more information, please see [CSS Flexbox](/docs/021-Software-Engineering/009-Web-Development/022-CSS-Flexbox.md)
