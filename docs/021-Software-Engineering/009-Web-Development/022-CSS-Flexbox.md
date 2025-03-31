@@ -179,7 +179,7 @@ If it was set to `flex-direction: row`, the `flex-basis` sets the width to `100p
 
 </div>
 
-## Controlling Order with `order`
+## Control Order with `order`
 
 The `order` property changes the arrangement of child items inside a flex container.
 
@@ -220,7 +220,7 @@ If we set the order of the box 1 (red) to `1`, we're moving it further down belo
 
 </div>
 
-## Wrapping Items with `flex-wrap`
+## Wrap Items with `flex-wrap`
 
 By default, items stay in a single row and do not wrap.
 
@@ -250,5 +250,93 @@ Setting it to `wrap-reverse`:
 <div class="img-center"> 
 
 ![](/gif/docs/css-flex-wrap-2.gif)
+
+</div>
+
+
+## Align Items with `justify-content`
+
+This property controls spacing along the main axis (horizontal by default).
+
+- `flex-start` (default) aligns items to the left
+- `flex-end` moves items to the right
+- `center` centers items
+- `space-between` distributes items with space in between
+- `space-around` adds equal space on both sides of each item
+- `space-evenly` ensures equal spacing everywhere
+
+```css
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+```
+
+To view the sample files, check out [Github.](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/Projects/001-Basics/012-CSS-Justify-Content)
+
+You may also view the live demo here: [CSS Justify Content](https://aquamarine-mousse-d41f71.netlify.app/)
+
+<div class="img-center"> 
+
+![](/gif/docs/css-flex-3.gif)
+
+</div>
+
+
+
+
+## Align Items with `align-items`
+
+This property aligns items along the cross-axis (vertical by default).
+
+- `flex-start` aligns items at the top
+- `flex-end` moves items to the bottom
+- `center` aligns items in the middle
+- `stretch` makes items expand to fill the container height
+- `baseline` aligns items by their text baselines
+
+```css
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+```
+
+Using `align-items` helps in vertically positioning elements inside the container.
+
+To view the sample files, check out [Github.](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/Projects/001-Basics/013-CSS-Align-Items)
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-04-01-004021.png)
+
+</div>
+
+
+
+## Adjust Individual Items with `align-self`
+
+This property overrides `align-items` for a specific child.
+
+- Works like `align-items` but for a single item
+- Lets specific items behave differently from others
+
+```css
+.item {
+  align-self: flex-end;
+}
+```
+
+For our example, we want to set all boxes to be aligned to the top, except for:
+
+- orange - position at the center 
+- green - position at the bottom
+
+To view the sample files, check out [Github.](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/Projects/001-Basics/014-CSS-Align-Self)
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-04-01-004704.png)
 
 </div>
