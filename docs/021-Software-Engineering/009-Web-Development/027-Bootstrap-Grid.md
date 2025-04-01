@@ -21,7 +21,7 @@ Bootstrap's grid system makes it easy to create responsive layouts for your webs
 - Columns adjust automatically based on screen size (small, medium, large, extra-large).
 - You can combine columns to create custom layouts.
 
-##  Grid Layout  
+## Grid Layout  
 
 Below is a basic Bootstrap grid layout:
 
@@ -41,12 +41,15 @@ How it works:
 - Column 1 takes up **6 spaces**, while Columns 2 and 3 take **3 spaces each**.  
 - The total adds up to **12 columns**
 
+Here's how it looks like:
 
 <div class="img-center"> 
 
-![](/img/docs/Screenshot-2025-03-23-080551.png)
+![](/gif/docs/bootstrap-grid.gif)
 
 </div>
+
+See sample file shere: [Github](https://github.com/joseeden/joeden/blob/master/docs/021-Software-Engineering/009-Web-Development/Projects/011-Bootstrap-Grid/001-Simple-Grid)
 
 If the total column spaces exceed 12, the extra columns move to the next row.
 
@@ -60,16 +63,14 @@ If the total column spaces exceed 12, the extra columns move to the next row.
   </div>
 ```  
 
+Here's how it looks like:
+
 <div class="img-center"> 
 
-![](/img/docs/Screenshot-2025-03-23-080748.png)
+![](/gif/docs/bootstrap-grid-2.gif)
 
 </div>
 
-
-See: 
- - [Sample HTML File](https://github.com/joseeden/joeden/blob/master/docs/021-Software-Engineering/009-Web-Development/Projects/011-Bootstrap-Grid/index.html)
- - [Sample CSS File](https://github.com/joseeden/joeden/blob/master/docs/021-Software-Engineering/009-Web-Development/Projects/011-Bootstrap-Grid/style.css)
 
 ## Responsive Grid
 
@@ -96,10 +97,14 @@ Example with different grid sizes:
 - **Large screens (`col-lg-`)** – Columns are evenly divided into three equal parts.  
 
 
-For more information, please see [Grid options](https://getbootstrap.com/docs/5.3/layout/grid/#grid-options)
+Here's how it looks like: 
 
 <div class="img-center"> 
 
-![](/gif/docs/bootstrap-grid-responsive.gif)
+![](/gif/docs/bootstrap-grid-3.gif)
 
 </div>
+
+See sample file shere: [Github](https://github.com/joseeden/joeden/blob/master/docs/021-Software-Engineering/009-Web-Development/Projects/011-Bootstrap-Grid/001-Simple-Grid)
+
+For more information, please see [Grid options](https://getbootstrap.com/docs/5.3/layout/grid/#grid-options)
