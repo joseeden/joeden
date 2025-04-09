@@ -105,3 +105,85 @@ Now you can target dropdown items like:
   color: red;
 }
 ```
+
+
+## `menu` class
+
+The `menu` class is commonly used in HTML or CSS to style navigation elements like menus or dropdowns. The `<menu>` tag itself is a semantic container, similar to `<ul>` or `<div>`, and is typically used to group commands, buttons, or interactive elements.
+
+The sample code below defines a **toolbar menu** (`<menu>`) containing a single list item (`<li>`) with a **button** used to **close a modal dialog** (a pop-up window).
+
+```html
+<menu class="search-modal-toolbar" role="menu" >
+  <li>
+    <button type="button" 
+            class="search-modal-close-button" 
+            title="Close dialog" 
+            aria-controls="dialog-id-search-in-header" 
+            data-bs-dismiss="modal" 
+            aria-label="Close">
+      <svg class="search-modal-close-icon" 
+          xmlns="http://www.w3.org/2000/svg" 
+          viewBox="0 0 18 18">
+        <polyline fill="none" 
+                  stroke="currentColor" 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  stroke-width="2" 
+                  points="1 1, 9 9, 1 17, 9 9, 17 1, 9 9, 17 17">
+        </polyline>
+      </svg>
+    </button>
+  </li>
+</menu> 
+```
+
+
+The example demonstrates the layout for a close button typically placed in the corner of a search modal. The button includes an SVG icon to represent the close action.  
+
+**Note:** This code only creates the close button — not the full search modal interface.
+
+The [Pesticide Chrome extension](https://chromewebstore.google.com/detail/jeebpgmphhagpecfiophljpkhncoajcg?utm_source=item-share-cb) is used here to help visualize the CSS box model and layout, as seen below:
+
+<div class="img-center"> 
+
+![](/gif/docs/css-search-modal-as-example.gif)
+
+</div>
+
+**A more detailed breakdown:**
+
+
+
+The `<menu>` element:
+
+- `class="search-modal-toolbar"` – Applies custom styles via CSS  
+- `role="menu"` – Helps screen readers recognize it as a menu  
+- `<li>` – A list item that holds the close button  
+
+Button attributes:
+
+- `type="button"` – Specifies it’s a clickable button (not a form submit)  
+- `class="search-modal-close-button"` – Used for styling  
+- `title="Close dialog"` – Shows tooltip on hover  
+- `aria-controls="dialog-id-search-in-header"` – Connects button to the modal for accessibility  
+- `data-bs-dismiss="modal"` – A Bootstrap attribute that closes the modal  
+- `aria-label="Close"` – Describes the button for screen readers  
+
+SVG icon (the “X”):
+
+- `<svg>` – Container for the close icon  
+- `class="search-modal-close-icon"` – Style hook for the icon  
+- `viewBox="0 0 18 18"` – Defines the coordinate space  
+
+Drawing the "X":
+
+- `fill="none"` – No fill inside the shape  
+- `stroke="currentColor"` – Uses the current text color  
+- `stroke-linecap="round"` – Rounds the ends of lines  
+- `stroke-linejoin="round"` – Smooth joins at corners  
+- `stroke-width="2"` – Line thickness  
+- `points="..."` – Coordinates to draw the "X"
+
+
+
