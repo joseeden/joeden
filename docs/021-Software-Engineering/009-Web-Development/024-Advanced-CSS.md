@@ -202,6 +202,19 @@ If set to `100vh`, the container will always fill the entire page, regardless of
 
 </div>
 
+
+## Setting Dark Mode
+
+To enable Bootstrap's dark mode, just add the `data-bs-theme="dark"` attribute to your `<html>` tag like this:
+
+```html
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+```
+
+This will apply Bootstrap's dark styling throughout your page.
+
+
 ## Pesticide Extension in Chrome 
 
 Pesticide is a browser extension that helps visualize CSS layout by outlining elements with colored borders.  

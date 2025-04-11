@@ -1,6 +1,6 @@
 ---
-title: "Changing Color of Icons"
-description: "Changing Color of Icons"
+title: "Change Icon Color"
+description: "Change Icon Color"
 tags: 
 - Computer Science
 - Application Development
@@ -8,7 +8,7 @@ tags:
 - Web Development
 - HTML
 - CSS
-sidebar_position: 50
+sidebar_position: 26
 last_update:
   date: 07/5/2021
 ---
