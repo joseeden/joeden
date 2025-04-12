@@ -126,7 +126,7 @@ To dynamically populate the country dropdown, I used a country-fetching Javscrip
 
 - Fetch the list of countries using the Intl.DisplayNames API.
 - Sort them alphabetically.
-- Inject them into the <select id="country"> dropdown.
+- Inject them into the `<select id="country">` dropdown.
 
 Initial script:
 
