@@ -200,6 +200,90 @@ To customize it further, add your own CSS:
 
 This creates a larger, custom-styled button while keeping Bootstrap functionality.
 
+## Links in Buttons 
+
+### Use `a href` element 
+
+To make a **Bootstrap 5 button** behave like a link (example: go to another page using `href`), you should use an `<a>` tag instead of a `<button>` tag, but style it like a button using Bootstrap classes.
+
+- `<button>`doesn't support `href`; 
+- It's meant for form actions or JavaScript.
+
+As an example, we write Bootstrap buttons like this:
+
+```html
+<button type="button" class="btn btn-primary btn-lg supp-sec-8-btn rounded-pill">
+  Send us a question
+</button> 
+```
+
+To add a link, rewrite it with an `<a>` tag:
+
+```html
+<a href="your-target-link.html" class="btn btn-primary btn-lg supp-sec-8-btn rounded-pill">
+  Send us a question
+</a>
+```
+
+You can also point it to a specific part of the same page:
+
+```html
+<a href="#section-abc" class="btn btn-primary btn-lg supp-sec-8-btn rounded-pill">
+  Send us a question
+</a>
+```
+
+Then somewhere else on your page, add `id="section-abc"` to the element:
+
+```html
+<section id="section-abc">
+  
+  <!-- Content here -->
+
+</section>
+```
+
+### Retain `button` and use `onclick`
+
+Using the previous example:
+
+```html
+<button type="button" class="btn btn-primary btn-lg supp-sec-8-btn rounded-pill">
+  Send us a question
+</button> 
+```
+
+To keep the `button` element (instead of changing it to `<a>`), and still make it navigate to a link, you can use a bit of JavaScript.
+
+```html
+<button type="button" 
+        class="btn btn-primary btn-lg supp-sec-8-btn rounded-pill"
+        onclick="window.location.href='#contact-us'">
+  Send us a question
+</button>
+```
+
+This works exactly like a link would, but keeps the Bootstrap `button` structure intact.
+
+### Retain `button` and use `data-href`
+
+Another way to keep the `button` element is by adding a `data-href` and attach JavaScript for a cleaner HTML.
+
+```html
+<button type="button"
+  class="btn btn-primary btn-lg supp-sec-8-btn rounded-pill"
+  data-href="#section">
+  Send us a question
+</button>
+
+<!-- Add script before closing the body of the HTML -->
+<script>
+  document.querySelector('.supp-sec-8-btn').addEventListener('click', function () {
+    window.location.href = this.getAttribute('data-href');
+  });
+</script>
+```
+
 ## Customizing Bootstrap  
 
 Even though Bootstrap provides default styles, you can override them with your own CSS.  
