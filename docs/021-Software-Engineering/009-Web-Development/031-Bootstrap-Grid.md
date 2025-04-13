@@ -8,6 +8,7 @@ tags:
 - Web Development
 - HTML
 - CSS
+- Bootstrap
 sidebar_position: 31
 last_update:
   date: 03/20/2019

@@ -22,6 +22,10 @@ CSS:
   label: 'CSS'
   permalink: '/CSS'
   description: 'Docs related to CSS'    
+Bootstrap:
+  label: 'Bootstrap'
+  permalink: '/Bootstrap'
+  description: 'Docs related to Bootstrap'    
 Python:
   label: 'Python'
   permalink: '/Python'
