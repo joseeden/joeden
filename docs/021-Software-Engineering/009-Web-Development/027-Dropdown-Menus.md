@@ -153,8 +153,6 @@ The [Pesticide Chrome extension](https://chromewebstore.google.com/detail/jeebpg
 
 **A more detailed breakdown:**
 
-
-
 The `<menu>` element:
 
 - `class="search-modal-toolbar"` – Applies custom styles via CSS  
@@ -185,5 +183,43 @@ Drawing the "X":
 - `stroke-width="2"` – Line thickness  
 - `points="..."` – Coordinates to draw the "X"
 
+## Change How Dropdowns Open 
 
+The default behavior of dropdown when expanded is to open downwards:
 
+<div class="img-center"> 
+
+![](/gif/docs/css-dropdowns-open-1.gif)
+
+</div>
+
+As a reference, the CSS is...
+
+```css
+.select-items {
+  top: 100%;
+  left: 0;
+  right: 0;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+```
+
+To have it open upward instead of downward, you can change its positioning from using `top: 100%` to `bottom: 100%`.
+
+```css
+.select-items {
+  top: auto;                     /* Disable top positioning */
+  bottom: 100%;                  /* Position the dropdown above the element */
+  border-top: 1px solid #ccc;    /* Optional: Adjust border if needed */
+  border-bottom: none;
+}
+```
+
+The `bottom: 100% `positions the dropdown so that its bottom edge aligns with the top of the parent container (opening the dropdown upward).
+
+<div class="img-center"> 
+
+![](/gif/docs/css-dropdowns-open-2.gif)
+
+</div>
