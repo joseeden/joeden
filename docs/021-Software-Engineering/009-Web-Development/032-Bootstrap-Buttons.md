@@ -113,6 +113,14 @@ To keep the `button` element (instead of changing it to `<a>`), and still make i
 
 This works exactly like a link would, but keeps the Bootstrap `button` structure intact.
 
+:::info 
+
+Using `onclick="window.location.href='#support-sec-3'"` completely bypasses JavaScript logic, which can disrupt any custom behavior you've implemented.
+
+For instance, if you have a script that handles smooth scrolling or adjusts scroll positions for fixed headers, using `onclick` may prevent THE script from working as intended.
+
+:::
+
 ### Retain `button` and use `data-href`
 
 Another way to keep the `button` element is by adding a `data-href` and attach JavaScript for a cleaner HTML.

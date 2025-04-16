@@ -214,7 +214,6 @@ To enable Bootstrap's dark mode, just add the `data-bs-theme="dark"` attribute t
 
 This will apply Bootstrap's dark styling throughout your page.
 
-
 ## Pesticide Extension in Chrome 
 
 Pesticide is a browser extension that helps visualize CSS layout by outlining elements with colored borders.  
