@@ -14,7 +14,7 @@ last_update:
 ---
 
 
-# Swiftlink International
+## Swiftlink International
 
 import React from "react";
 
@@ -52,7 +52,16 @@ Screenshot:
 - Contact form for customer inquiries  
 
 
-## Modals - Submit Button 
+## Modals - Search
+
+close modal when:
+
+- user click close button 
+- user click outside of modal 
+- user click Search button 
+- user types into the Search field and press Enter 
+
+Modal will not close if user press enter but left Search field empty
 
 
 ## Responsive Web Design 
@@ -119,6 +128,53 @@ This setup will help you emulate the display characteristics of the Samsung Gala
 ## Contact Form 
 
 ## Bootstrap Grid 
+
+## Navbar and OffCanvas 
+
+### Visible Items 
+
+On Navbar, at 1321px and above, all the items in the Navbar ar evisible 
+
+- Logo/Brand 
+- Navbar items (left-aligned) 
+- Navbar items with labels and icons (right-aligned)
+
+At 1320px to 1130px, the labels of right-aligned items are hidden to ensure navbar doesnt become crowded. Only visible:
+
+- Logo/Brand 
+- Navbar items (left-aligned) 
+- Navbar items with icons only (right-aligned)
+
+At 1129px to 401px, left-aligned navbar items are hidden, showing only:
+
+- Logo/Brand 
+- Navbar items with icons only (right-aligned)
+- Toggler icon for the collapsible menu
+
+At 400px and below, only two items are shown:
+
+- Logo/Brand 
+- Toggler icon for the collapsible menu
+
+### Using OffCanvas 
+
+offCanvas is used in this project to style the collapsible navbar. At screen sizes 1129px and below,When toggler icon is clicked, a sidebar slides in from the right which contains the previously left-aligned navbar items. These items are stacked vertically in a column and are listed in this order:
+
+- About 
+- Shipping Services (dropdown)
+- Logistics Solutions (dropdown)
+- Business Solutions (dropdown) 
+- Support (dropdown) 
+
+### Offcanvas Widths 
+
+At screen sizes 768px to 1129px, the OffCanvas sidebar slides in and takes up 50% of the screen or viewport width. 
+
+At screen sizes 767px to 400px, the OffCanvas sidebar slides in and takes up 70% of the screen or viewport width. 
+
+
+
+
 
 ## Dynamically Populate Countries
 
@@ -331,3 +387,41 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 ```
+
+## Navbar 
+
+The script should **only attaches the dropdown-handling logic inside the `.offcanvas`** **when** screen width is `≤1129px`. That way:
+
+- Offcanvas dropdowns behave correctly on small screens.
+- Regular Bootstrap dropdowns work normally on large screens.
+
+
+
+| Screen Width      | Behavior                      |
+|-------------------|-------------------------------|
+| ≤1129px (Mobile)  | Use your custom offcanvas script |
+| >1129px (Desktop) | Let Bootstrap handle dropdowns |
+
+No interference with regular dropdowns on large screens, and offcanvas dropdowns now behave as intended on mobile.
+
+## Offcanvas Sidebar Behavior (Responsive Navigation)
+
+This section describes the interactive behavior of the Bootstrap 5.3 offcanvas sidebar when used on screens 1129px wide and below.
+
+- Toggler icon opens the sidebar and dims the background  
+- Close button hides the sidebar and removes the dim  
+- Clicking outside the sidebar closes it and removes the dim  
+- Clicking non-dropdown links inside the sidebar:
+  - Closes the sidebar  
+  - Navigates to the section  
+  - Removes the dim  
+- Clicking a dropdown link inside the sidebar:
+  - Expands the dropdown  
+  - Shows the child items  
+  - Keeps the sidebar open  
+- Clicking a dropdown child item:
+  - Closes the sidebar  
+  - Navigates to the section  
+  - Removes the dim  
+
+

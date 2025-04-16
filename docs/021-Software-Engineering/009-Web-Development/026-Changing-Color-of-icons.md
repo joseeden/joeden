@@ -45,12 +45,20 @@ footer.footer img {
 To change the color, adjust `invert()`, `sepia()`, and `hue-rotate()`, like this:  
 
 ```css
+/* Turns image color to teal-green or hex code #0a7c7c */
 footer.footer img {
-  filter: invert(32%) sepia(78%) saturate(897%) hue-rotate(200deg);
+  filter: invert(31%)           
+          sepia(87%) 
+          saturate(1318%) 
+          hue-rotate(152deg) 
+          brightness(84%) 
+          contrast(92%); 
 }
 ```
 
-::info 
+If you the hex code of your desired color, you can convert it to CSS filter by going to this site: [Hex Color To CSS Filter Converter](https://isotropic.co/tool/hex-color-to-css-filter/)
+
+:::info 
 
 This method works best for **monochrome icons**.
 
