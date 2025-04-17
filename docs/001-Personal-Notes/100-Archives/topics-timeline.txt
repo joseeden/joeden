@@ -35,7 +35,7 @@
 11/22/2020  - Azure Security
 12/21/2020  - Javascript   ---- 12/2020 to 2/2021
 
-
+2/11/2022   - NodeJS
 3/17/2021   - Devsecops  
 3/21/2021   - RHCSA Notes
 3/27/2021   - RHCSA Labs

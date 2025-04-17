@@ -32,7 +32,7 @@ A responsive landing page for a fictional transportation and logistics company, 
 </div>
 
 
-### Technologies Used
+## Technologies Used
 
 - HTML, CSS, JavaScript  
 - Bootstrap Modals, Grid, OffCanvas  
