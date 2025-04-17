@@ -1,6 +1,6 @@
 ---
-title: "Embedding Media"
-description: "Embedding Media"
+title: "Embedding Videos"
+description: "Embedding Videos"
 tags: 
 - Computer Science
 - Application Development
@@ -8,60 +8,64 @@ tags:
 - Web Development
 - HTML
 - CSS
-sidebar_position: 28
+sidebar_position: 29
 last_update:
   date: 03/30/2019
 ---
 
+## Overview
 
-## Images
-
-
-### `loading="lazy"`
-
-This is **not a CSS class**, but an **HTML attribute**:
+You can embed videos in an HTML page using the `<video>` tag. This allows you to play video files directly on the webpage without needing external players.
 
 ```html
-<img src="example.jpg" loading="lazy" />
+<video width="640" height="360" controls>
+  <source src="video.mp4" type="video/mp4">
+</video>
 ```
 
-It delays loading the image until it’s about to enter the viewport.
-
-- Improves performance
-- Speeds up page load
-- Reduces initial network requests
-
-**Use case:** Good for long pages with many images or images lower down the page.
+- `src` points to the video file  
+- `controls` adds playback controls like play, pause, and volume  
+- `width` and `height` set the display size of the video
 
 
-### `img-fluid`
+## `<video>` vs. `<iframe>`
 
-This **is a CSS class** (specifically from **Bootstrap**):
+### Using `<video>`
+
+Using a `<video>`:
 
 ```html
-<img src="example.jpg" class="img-fluid" />
+<video class="video-background" 
+              autoplay 
+              loop 
+              muted 
+              playsinline 
+              poster="https://abc.xyz/~/media/store/banner/banner.jpg?rev=12345678">
+  <source src="https://player.vimeo.com/progressive_redirect/file.mp4?loc=external&amp;signature=876945321" 
+          type="video/mp4">
+</video>
 ```
 
-It makes the image **responsive** by scaling it to the parent container’s width.
+### Using `<iframe>`
 
-- Applies `max-width: 100%; height: auto;`
-- Prevents images from overflowing containers
-- Automatically resizes on different screen sizes
+You can also use `<iframe>` if you want adaptive streaming or less hassle:
 
-**Use case:** Essential in responsive layouts using Bootstrap.
+```html
+<iframe 
+  src="https://player.vimeo.com/video/VIDEO_ID?autoplay=1&loop=1&background=1&muted=1"
+  frameborder="0"
+  allow="autoplay; fullscreen"
+  allowfullscreen>
+</iframe>
+```
 
+What `autoplay=1&loop=1&background=1&muted=1` does:
 
-### `loading="lazy"` vs. `img-fluid`
+- Removes title, controls, logo, everything
+- Enables looping and autoplay
+- Makes the video behave like a **background video**
 
-| Term        | Type       | What it does                          |
-|-------------|------------|---------------------------------------|
-| `loading="lazy"` | HTML attribute | Loads image only when needed           |
-| `img-fluid` | CSS class (Bootstrap) | Makes image responsive to screen size |
-
-
-## Video 
-
-### `<video>` vs. `<iframe>`
+### Comparison 
 
 | Feature              | `<video>` Tag                   | `<iframe>` Embed                |
 |----------------------|----------------------------------|----------------------------------|
@@ -72,20 +76,20 @@ It makes the image **responsive** by scaling it to the parent container’s widt
 
 [For Youtube, you need to use `<iframe>`](#youtube).
 
+### When to Use 
+
 **When to Use `<video>`**
 
-Use the `<video>` tag if:
 - You have a **.mp4**, **.webm**, or **.ogg** file
 - You're hosting it yourself or using a direct media file URL (like from Azure Blob, S3, or Vimeo direct stream)
 
 **When to Use `<iframe>`**
 
-Use the `<iframe>` tag if:
 - You're embedding a video from **YouTube**, **Vimeo**, or **another streaming service**
 - You don’t have access to a raw media file
 
 
-### Canva 
+## Canva 
 
 Using a Canva video:
 
@@ -113,13 +117,13 @@ Notes:
 - The `padding-top: 56.25%` preserves the responsive layout for a 16:9 aspect ratio 
 - Since Canva doesn't use native video tags, `poster` and `source` doesn't work here
 
-#### `autoplay` and `loop` not supported on Canva
+### `autoplay` and `loop` not supported on Canva
 
 Canva doesn’t officially support `autoplay` or `loop` via URL parameters due to browser security policies. This means that when the video is embedded, it will show the "play" button, which would not be ideal if you plan to use the video as a background for your web page.
 
 If you want those features, you should consider **downloading the video from Canva** and self-hosting it using a native `<video>` tag instead — which gives you full control (autoplay, loop, mute, etc.).
 
-### Youtube 
+## Youtube 
 
 Using a Youtube video:
 
@@ -148,7 +152,7 @@ For smoother experience:
 - Add `modestbranding=1&rel=0` to avoid related video ads or logos.
 
 
-#### Removing the YouTube Logo
+### Removing the YouTube Logo
 
 Unfortunately, **YouTube does not allow** complete removal of their logo from embedded players. There are **workarounds to reduce branding**:
 
@@ -167,19 +171,9 @@ Unfortunately, **YouTube does not allow** complete removal of their logo from em
 - Full control, no logos, and easier to style
 
 
-### Vimeo
+## Vimeo
 
-Advantages of Vimeo for Embeds:
-
-| Feature              | Vimeo                                      | YouTube                             |
-|----------------------|---------------------------------------------|-------------------------------------|
-| No logo or branding  | ✅ Can be hidden (with correct settings)     | ❌ Always shows YouTube logo         |
-| No black bars        | ✅ Easier to control aspect ratio            | ❌ Often shows black bars (letterbox) |
-| Loop support         | ✅ Easy with `loop=1`                        | ⚠️ Needs `playlist=videoID` trick    |
-| Autoplay + mute      | ✅ Fully supported                          | ✅ Supported                         |
-| Clean, minimal UI    | ✅ Professional look                         | ❌ Always has some clutter           |
-
-#### `video` 
+### Embedding 
 
 Using `<video>` tag:
 
@@ -190,11 +184,10 @@ Using `<video>` tag:
               muted 
               playsinline 
               poster="https://abc.xyz/~/media/store/banner/banner.jpg?rev=12345678">
-  <source src="https://player.vimeo.com/progressive_redirect/playback/12345/rendition/540p/file.mp4?loc=external&amp;signature=876945321" type="video/mp4">
+  <source src="https://player.vimeo.com/progressive_redirect/file.mp4?loc=external&amp;signature=876945321" 
+          type="video/mp4">
 </video>
 ```
-
-#### `iframe` 
 
 Using `<iframe>` tag:
 
@@ -209,14 +202,27 @@ Using `<iframe>` tag:
 
 Replace `VIDEO_ID` with your actual Vimeo video ID (e.g. 76979871).
 
-#### Notes
+### Advantages
 
-Watch out for:
+Advantages of Vimeo for Embeds:
+
+| Feature              | Vimeo                                      | YouTube                             |
+|----------------------|---------------------------------------------|-------------------------------------|
+| No logo or branding  | ✅ Can be hidden (with correct settings)     | ❌ Always shows YouTube logo         |
+| No black bars        | ✅ Easier to control aspect ratio            | ❌ Often shows black bars (letterbox) |
+| Loop support         | ✅ Easy with `loop=1`                        | ⚠️ Needs `playlist=videoID` trick    |
+| Autoplay + mute      | ✅ Fully supported                          | ✅ Supported                         |
+| Clean, minimal UI    | ✅ Professional look                         | ❌ Always has some clutter           |
+
+
+### Notes
+
+Watch for:
 
 1. **Hotlinking Issues**: Some direct video URLs from Vimeo are **tokenized or expire** after some time unless you’re on Vimeo Pro or above and have enabled file access.
 2. **Performance**: Vimeo's player (with iframe) does adaptive streaming and buffering better than raw MP4s.
 
-#### Troubleshooting 
+### Troubleshooting 
 
 When you encounter the "Sorry, we're having a little trouble" message from embedded video while testing your webpage locally, it could be due to several factors. 
 
@@ -283,7 +289,7 @@ When you encounter the "Sorry, we're having a little trouble" message from embed
 
    **Fix**: Look for any failed network requests or blocked resources, as this may provide clues on what might be wrong.
 
-### Storing the Video Locally
+## Storing the Video Locally
 
 You can download and host the video file locally on your server, and then reference it using the `<video>` element. This will allow the video to load directly from your server rather than relying on other providers.
 
@@ -296,7 +302,7 @@ You can download and host the video file locally on your server, and then refere
 - Larger initial page load time if the video is large.
 - Higher server and bandwidth usage if video is viewed frequently.
 
-#### Steps 
+### Steps 
 
 1. **Download the Video**: 
    - Download the video  or request a version from the content owner.
@@ -323,7 +329,7 @@ You can download and host the video file locally on your server, and then refere
       </div>
       ```
 
-#### Points to Consider 
+### Points to Consider 
 
 - **Server Load**  
   - Self-hosting uses your server’s bandwidth and processing power  
@@ -346,49 +352,12 @@ You can download and host the video file locally on your server, and then refere
   - Use CDN for better performance with high traffic
 
 
-#### Alternative: Using a Hybrid Approach
+### Alternative: Using a Hybrid Approach
 
 You can also use a **hybrid approach**, where the video is stored locally but falls back to a Vimeo embed if it's not available locally. This can be done by checking if the local video exists before trying to load it.
 
 
-
-## Video Tricks 
-
-#### Using `<video>`
-
-Using a `<video>`:
-
-```html
-<video class="video-background" 
-              autoplay 
-              loop 
-              muted 
-              playsinline 
-              poster="https://abc.xyz/~/media/store/banner/banner.jpg?rev=12345678">
-  <source src="https://player.vimeo.com/progressive_redirect/playback/12345/rendition/540p/file.mp4?loc=external&amp;signature=876945321" type="video/mp4">
-</video>
-```
-
-#### Using `<iframe>`
-
-You can also use `<iframe>` if you want adaptive streaming or less hassle:
-
-```html
-<iframe 
-  src="https://player.vimeo.com/video/VIDEO_ID?autoplay=1&loop=1&background=1&muted=1"
-  frameborder="0"
-  allow="autoplay; fullscreen"
-  allowfullscreen>
-</iframe>
-```
-
-What `autoplay=1&loop=1&background=1&muted=1` does:
-
-- Removes title, controls, logo, everything
-- Enables looping and autoplay
-- Makes the video behave like a **background video**
-
-### For Smooth Looping
+## Smooth Looping
 
 You can add this to your CSS if the looping causes a flicker:
 
@@ -402,52 +371,14 @@ You can add this to your CSS if the looping causes a flicker:
 You can also trim your video slightly to make it loop cleanly without a jump.
 
 
-### `poster` 
+## Fallback Image
 
-The `poster` attribute in the `<video>` tag is basically a fallback image. It's what shows up **before** the video starts playing — especially on slower connections or in browsers that delay autoplay, like on some mobile devices. It acts like a thumbnail or preview image.
+The `poster` attribute in a `<video>` tag is basically a fallback image. It's what shows up **before** the video starts playing — especially on slower connections or in browsers that delay autoplay, like on some mobile devices. It acts like a thumbnail or preview image.
 
-Sample code:
-
-```css
-<video class="video-background" 
-              autoplay 
-              loop 
-              muted 
-              playsinline 
-              poster="https://abc.xyz/~/media/store/banner/banner.jpg?rev=12345678">
-  <source src="https://player.vimeo.com/progressive_redirect/playback/12345/rendition/540p/file.mp4?loc=external&amp;signature=876945321" type="video/mp4">
-</video>
-```
-
-#### How it works 
-
-What it does:
-
-- It's shown **while the video is loading**
-- It stays visible if autoplay fails or is disabled (like on some mobile or low-power scenarios)
-- If autoplay works fine and loads fast, it may flash briefly or not appear at all
-
-#### Do You Need It?
-
-You *don’t* technically need it, especially if:
-
-- Your video **autoplays smoothly** every time
-- You're **okay with a blank space or first frame** being visible before the video loads
-- Your design doesn't depend on having a preview image for aesthetics or structure
-
-But you **might want to keep it** if:
-
-- You want a seamless visual experience while the video loads
-- You're designing for varied connection speeds or device types
-- Your site might be used in places where autoplay is blocked (e.g. data-saving mode on mobile)
-
-#### Optimizing
-
-You can optimize the poster by using a compressed image or a first frame extracted from the video itself.
+For more information, please see [Using a Fallback Image for Videos](/docs/021-Software-Engineering/009-Web-Development/030-Fallback-Image.md)
 
 
-
-### Overlay
+## Overlay
 
 An overlay allows you to use a video as the background while placing text or an image on top — like this:
 
@@ -457,51 +388,35 @@ An overlay allows you to use a video as the background while placing text or an 
 
 </div>
 
-The sample code for the video above:
+Sample code:
 
 <details>
   <summary> `video.html` </summary>
 
 ```html
-<section class="banner">
-  <div class="video-header-container">
-    
-    <!-- Background video -->
-    <div class="video-iframe-wrapper">
-      <div class="video-inside">
-        <iframe
-          src="https://player.vimeo.com/video/1073237590?autoplay=1&loop=1&muted=1&background=1&title=0&byline=0&portrait=0"
-          frameborder="0"
-          allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
-          title="Site-Swiftlink-banner-vid">
-        </iframe>
-      </div>
+<div class="video-header-container">
+  
+  <!-- Background video -->
+  <div class="video-iframe-wrapper">
+    <div class="video-inside">
+      <iframe
+        src="https://player.vimeo.com/video/12345678?autoplay=1&loop=1&muted=1&background=1&title=0&byline=0&portrait=0"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+        title="banner-vid">
+      </iframe>
     </div>
-
-    <!-- Text on top -->
-    <div class="video-overlay-content text-white">
-      <h1 class="display-4 fw-bold orange-header">We like to move it</h1>
-      <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4 sec-banner-desc">
-          Moving should be effortless and stress-free. With Swiftlink, you get a smooth, hassle-free experience designed to make your transition easy and exciting. Whether it's across town or across the sea, we'll handle the heavy lifting — so you can focus on what matters most.
-        </p>
-        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-          <a href="#logistics-container">
-            <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">
-              See solutions
-            </button>
-          </a>
-          <a href="#">
-            <button type="button" class="btn btn-outline-secondary btn-lg px-4">
-              Talk to us
-            </button>
-          </a>
-        </div>
-      </div>
-    </div>
-
   </div>
-</section>
+
+  <!-- Text on top -->
+  <div class="video-overlay-content">
+    <h1 class="display-4">Lorem Ipsum</h1>
+    <div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis iusto dolore expedita facilis dolorem. Optio laboriosam, illo, explicabo officia excepturi expedita laborum id blanditiis quas dignissimos illum, aliquid omnis? DeserunLorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    </div>
+  </div>
+
+</div>
 ```
 
 </details>
