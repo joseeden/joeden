@@ -295,8 +295,7 @@ You can use the class name (`.classname-of-dropdown`) or an ID (`#id-dropdown`).
 
 <div class="img-center"> 
 
-![](/gif/docs/toggle-dropdowns-2.gif)
+![](/gif/docs/toggle-dropdowns-3.gif)
 
 </div>
-
 
