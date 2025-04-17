@@ -261,49 +261,6 @@ The carousel section features an auto-sliding image gallery with manual navigati
   - Images scale accordingly for different screen sizes
 
 
-## Responsive Web Design 
-
-### Common Screen Widths
-
-| Device Type           | Screen Width (CSS px) | Example Devices                          |
-|-----------------------|------------------------|-------------------------------------------|
-| Small phones          | 320px                  | iPhone SE (1st gen), older Androids       |
-| Compact phones        | 360px – 375px          | iPhone SE (2022), Pixel 4a, Galaxy A series |
-| Average smartphones   | 390px – 414px          | iPhone 13/14, Galaxy S23, Pixel 7         |
-| Phablets / Large phones | 428px – 480px        | iPhone 15 Pro Max, Galaxy Note series     |
-
-Recommendations:
-
-- Use 320px as a baseline  
-- 360px is the modern safe minimum  
-- Test with breakpoints like `max-width: 575.98px`, `480px`, and `360px`  
-
-### DevTools Emulation
-
-Used these values to add custom devices in Chrome DevTools:
-
-Device: Z Flip 2020 & Z Flip 5G  
-
-- Viewport: `412 × 1004`  
-- Device Pixel Ratio: `2.625`  
-- Resolution: `1080 × 2636`  
-
-Device: Z Flip 3, 4, 5  
-
-- Viewport: `412 × 915`  
-- Device Pixel Ratio: `3.0`  
-- Resolution: `1080 × 2640`  
-
-
-### Adding a Custom Device in Chrome DevTools
-
-To simulate:
-
-1. Open DevTools → Toggle device toolbar  
-2. Click device dropdown → Edit → "Add custom device"  
-3. Fill in name, width, height, and DPR as above  
-
-
 ## Country Dropdown 
 
 ### Dynamically Populate Countries
@@ -499,5 +456,47 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 ```
 
+
+## Responsive Web Design 
+
+### Common Screen Widths
+
+| Device Type           | Screen Width (CSS px) | Example Devices                          |
+|-----------------------|------------------------|-------------------------------------------|
+| Small phones          | 320px                  | iPhone SE (1st gen), older Androids       |
+| Compact phones        | 360px – 375px          | iPhone SE (2022), Pixel 4a, Galaxy A series |
+| Average smartphones   | 390px – 414px          | iPhone 13/14, Galaxy S23, Pixel 7         |
+| Phablets / Large phones | 428px – 480px        | iPhone 15 Pro Max, Galaxy Note series     |
+
+Recommendations:
+
+- Use 320px as a baseline  
+- 360px is the modern safe minimum  
+- Test with breakpoints like `max-width: 575.98px`, `480px`, and `360px`  
+
+### DevTools Emulation
+
+Used these values to add custom devices in Chrome DevTools:
+
+Device: Z Flip 2020 & Z Flip 5G  
+
+- Viewport: `412 × 1004`  
+- Device Pixel Ratio: `2.625`  
+- Resolution: `1080 × 2636`  
+
+Device: Z Flip 3, 4, 5  
+
+- Viewport: `412 × 915`  
+- Device Pixel Ratio: `3.0`  
+- Resolution: `1080 × 2640`  
+
+
+### Adding a Custom Device in Chrome DevTools
+
+To simulate:
+
+1. Open DevTools → Toggle device toolbar  
+2. Click device dropdown → Edit → "Add custom device"  
+3. Fill in name, width, height, and DPR as above  
 
 
