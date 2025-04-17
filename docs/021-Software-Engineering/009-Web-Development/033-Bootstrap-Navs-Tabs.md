@@ -323,6 +323,13 @@ Using `data-bs-target` is **100% supported by Bootstrap 5** and does **exactly t
 
 :::
 
+<div class="img-center"> 
+
+![](/gif/docs/bootstrap-navs-and-tabs.gif)
+
+</div>
+
+
 ### Optional: Prevent scroll restoration via hash
 
 If users are landing on your page via `example.com/about#services`, the browser will scroll to `#services`. If you want to disable even that:

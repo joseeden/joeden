@@ -207,3 +207,68 @@ This creates a larger button while keeping Bootstrap functionality.
 
 ## Link to Play Store and App Store 
 
+You can redirect the user to App Store or Play Store using JavaScript to detect the user’s device and redirect accordingly.
+
+Sample button code:
+
+```html
+<button class="btn btn-warning dload-btn" type="button">
+  Download the App
+</button>
+```
+
+### Go to App URL  
+
+Target the any of the button classes, in this case, we can use `dload-btn`.
+
+```js
+document.querySelector('.dload-btn').addEventListener('click', function () {
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+  // Replace with your actual app URL
+  const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.yourapp.package'; 
+  const appStoreUrl = 'https://apps.apple.com/app/id1234567890'; 
+
+  if (/android/i.test(userAgent)) {
+    window.location.href = playStoreUrl;
+  } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+    window.location.href = appStoreUrl;
+  } else {
+    // Optional fallback for desktop or unknown devices
+    // Or show a modal instead
+    window.location.href = 'https://yourwebsite.com/download'; 
+  }
+}); 
+```
+
+### Open Store Homepages 
+
+If you just want the button to open the general Play Store or App Store homepage, not a specific app, just use the Store homepages:
+
+```js
+document.querySelector('.dload-btn').addEventListener('click', function () {
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+  // Store homepages
+  const playStoreUrl = 'https://play.google.com/store';
+  const appStoreUrl = 'https://www.apple.com/app-store/';
+
+  if (/android/i.test(userAgent)) {
+    window.location.href = playStoreUrl;
+  } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+    window.location.href = appStoreUrl;
+  } else {
+    // Optional fallback for desktop or unknown devices
+    // Or show a modal instead
+    window.location.href = 'https://yourwebsite.com/download'; 
+  }
+}); 
+```
+
+### Open a New Tab 
+
+If you want the link to open in a new tab, change the line inside the event listener to:
+
+```js
+window.open(playStoreUrl, '_blank');
+```
