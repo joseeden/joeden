@@ -169,4 +169,4 @@ input:focus {
 
 Different CSS selectors apply styles to various elements based on their type, position, or interaction.
 
-For more information, please see [Combining Selectors.](/docs/021-Software-Engineering/009-Web-Development/017-Combining-Selectors.md)
+For more information, please see [Combining Selectors.](/docs/021-Software-Engineering/009-Web-Development/002-HTML-CSS/017-Combining-Selectors.md)

@@ -192,4 +192,4 @@ Floats were widely used but had drawbacks.
 
 Floats work well for wrapping text around images but are not ideal for building full-page layouts. As a solution, developers started using **Flexbox** to dynamically adjust items based on available space.
 
-For more information, please see [CSS Flexbox](/docs/021-Software-Engineering/009-Web-Development/021-CSS-Flexbox.md)
+For more information, please see [CSS Flexbox](/docs/021-Software-Engineering/009-Web-Development/002-HTML-CSS/021-CSS-Flexbox.md)

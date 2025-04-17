@@ -62,7 +62,7 @@ In this example, we're creating three equal columns.
 }
 ```
 
-For more information, please see [CSS Grid.](/docs/021-Software-Engineering/009-Web-Development/023-CSS-Grid.md)
+For more information, please see [CSS Grid.](/docs/021-Software-Engineering/009-Web-Development/002-HTML-CSS/023-CSS-Grid.md)
 
 ## Bootstrap  
 

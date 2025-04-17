@@ -24,7 +24,7 @@ Flexbox helps control how items grow, shrink, and fit within a container.
 
 Flexbox automatically adjusts sizes, but manual settings allow more control.
 
-For more information, please see [CSS Flexbox.](/docs/021-Software-Engineering/009-Web-Development/021-CSS-Flexbox.md)
+For more information, please see [CSS Flexbox.](/docs/021-Software-Engineering/009-Web-Development/002-HTML-CSS/021-CSS-Flexbox.md)
 
 ## Default Sizing Behavior
 

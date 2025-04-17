@@ -376,7 +376,7 @@ You can also trim your video slightly to make it loop cleanly without a jump.
 
 The `poster` attribute in a `<video>` tag is basically a fallback image. It's what shows up **before** the video starts playing — especially on slower connections or in browsers that delay autoplay, like on some mobile devices. It acts like a thumbnail or preview image.
 
-For more information, please see [Using a Fallback Image for Videos](/docs/021-Software-Engineering/009-Web-Development/030-Fallback-Image.md)
+For more information, please see [Using a Fallback Image for Videos](/docs/021-Software-Engineering/009-Web-Development/002-HTML-CSS/030-Fallback-Image.md)
 
 
 ## Overlay

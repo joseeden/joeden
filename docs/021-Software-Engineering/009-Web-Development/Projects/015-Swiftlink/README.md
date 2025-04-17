@@ -203,22 +203,22 @@ The first empty required field triggers the browser's built-in validation messag
 
 The banner is a full-width hero section that creates an engaging first impression using a background video and a prominent message overlay. It provides key calls-to-action to guide user interaction.
 
-- Background video  
+- **Background video**  
   - Plays automatically, loops continuously, and remains muted  
   - Provides a modern, dynamic visual to capture attention
 
-- Fallback image  
+- **Fallback image**  
   - Displays when video is unsupported or loading  
   - Ensures consistent visual presentation across all devices
 
-- Overlay content  
+- **Overlay content**  
   - Bold headline to introduce the brand message  
   - Descriptive paragraph explaining the service value  
   - Two prominent buttons:  
     - “See solutions” directs users to the shipping services section  
     - “Talk to us” connects users to the support section
 
-- Responsive layout  
+- **Responsive layout**  
   - Content and visuals adjust gracefully across screen sizes  
   - Ensures readability and interaction on both desktop and mobile devices
 
@@ -478,22 +478,18 @@ Recommendations:
 
 Used these values to add custom devices in Chrome DevTools:
 
-Device: Z Flip 2020 & Z Flip 5G  
+| Device                  | Viewport (px) | Device Pixel Ratio | Resolution (px)     |
+|-------------------------|----------------|----------------------|----------------------|
+| Z Flip (2020 & 5G)      | 412 × 1004     | 2.625                | 1080 × 2636          |
+| Z Flip 3 / 4 / 5        | 412 × 915      | 3.0                  | 1080 × 2640          |
+| Samsung Galaxy S23+     | 412 × 915      | 3.0                  | 1080 × 2340          |
+| Samsung Galaxy S24      | 412 × 915      | 3.0                  | 1080 × 2340          |
+| iPhone 16 Pro Max       | 430 × 932      | 3.0                  | 1290 × 2796 *(est.)* |
+| iPhone 14               | 390 × 844      | 3.0                  | 1170 × 2532          |
 
-- Viewport: `412 × 1004`  
-- Device Pixel Ratio: `2.625`  
-- Resolution: `1080 × 2636`  
+### Adding a Custom Device
 
-Device: Z Flip 3, 4, 5  
-
-- Viewport: `412 × 915`  
-- Device Pixel Ratio: `3.0`  
-- Resolution: `1080 × 2640`  
-
-
-### Adding a Custom Device in Chrome DevTools
-
-To simulate:
+To simulate the device in Chrom DevTools: 
 
 1. Open DevTools → Toggle device toolbar  
 2. Click device dropdown → Edit → "Add custom device"  
