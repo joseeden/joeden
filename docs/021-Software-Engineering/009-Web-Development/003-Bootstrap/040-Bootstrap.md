@@ -310,7 +310,7 @@ Setting up an email marketing service allows the users of our website to sign up
 - Users should be able to sign up for updates  
 - We'll use an email marketing service like MailChimp  
 
-For more information on how to use MailChimp, please see [MailChimp.](/docs/021-Software-Engineering/009-Web-Development/050-Mailchimp.md)
+For more information on how to use MailChimp, please see [MailChimp.](/docs/021-Software-Engineering/009-Web-Development/099-Others/050-Mailchimp.md)
 
 Example signup form: 
 
