@@ -140,7 +140,7 @@ img {
 
 In this example, an image floats to the left, and text wraps around it.  
 
-Sample Files: [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/Projects/001-Basics/007-CSS-Float) 
+Sample Files: [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/000-Projects/001-Basics/007-CSS-Float) 
 
 <div class="img-center"> 
 

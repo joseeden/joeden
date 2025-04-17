@@ -25,8 +25,8 @@ CSS positioning controls how elements appear on a webpage. There are four types:
 
 The following sample files will be used for the examples:
 
-- [index.html](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/Projects/001-Basics/006-CSS-Positioning)
-- [styles.css](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/Projects/001-Basics/006-CSS-Positioning)
+- [index.html](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/000-Projects/001-Basics/006-CSS-Positioning)
+- [styles.css](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/000-Projects/001-Basics/006-CSS-Positioning)
 
 ## Static Positioning
 

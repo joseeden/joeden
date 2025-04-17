@@ -55,7 +55,7 @@ Flexbox simplifies layout creation with a flexible approach.
 
 Example: Creating a Flexbox Layout
 
-Sample files: [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/Projects/001-Basics/008-CSS-Flexbox)
+Sample files: [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/000-Projects/001-Basics/008-CSS-Flexbox)
 
 ```html
 <div class="container">
@@ -127,7 +127,7 @@ Example: Modify the default layout using `flex-direction`:
 - The main axis becomes vertical
 - The cross axis moves left to right
 
-Sample file can be found here: [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/Projects/001-Basics/009-CSS-Flex-Direction)
+Sample file can be found here: [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/000-Projects/001-Basics/009-CSS-Flex-Direction)
 
 <div class="img-center"> 
 
@@ -189,7 +189,7 @@ The `order` property changes the arrangement of child items inside a flex contai
 
 Example: Without ordering, the box items are arranged the same way they are defined in the
 
-> Sample files found in [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/Projects/001-Basics/010-CSS-Order)
+> Sample files found in [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/000-Projects/001-Basics/010-CSS-Order)
 
 <div class="img-center"> 
 
@@ -235,7 +235,7 @@ By default, items stay in a single row and do not wrap.
 }
 ```
 
-Sample files: [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/Projects/001-Basics/011-CSS-Flex-Wrap)
+Sample files: [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/000-Projects/001-Basics/011-CSS-Flex-Wrap)
 
 Using `flex-wrap` ensures items don’t overflow and stay visible within the container.
 
@@ -272,7 +272,7 @@ This property controls spacing along the main axis (horizontal by default).
 }
 ```
 
-To view the sample files, check out [Github.](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/Projects/001-Basics/012-CSS-Justify-Content)
+To view the sample files, check out [Github.](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/000-Projects/001-Basics/012-CSS-Justify-Content)
 
 You may also view the live demo here: [CSS Justify Content](https://aquamarine-mousse-d41f71.netlify.app/)
 
@@ -305,7 +305,7 @@ This property aligns items along the cross-axis (vertical by default).
 
 Using `align-items` helps in vertically positioning elements inside the container.
 
-To view the sample files, check out [Github.](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/Projects/001-Basics/013-CSS-Align-Items)
+To view the sample files, check out [Github.](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/000-Projects/001-Basics/013-CSS-Align-Items)
 
 <div class="img-center"> 
 
@@ -333,7 +333,7 @@ For our example, we want to set all boxes to be aligned to the top, except for:
 - orange - position at the center 
 - green - position at the bottom
 
-To view the sample files, check out [Github.](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/Projects/001-Basics/014-CSS-Align-Self)
+To view the sample files, check out [Github.](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/009-Web-Development/000-Projects/001-Basics/014-CSS-Align-Self)
 
 <div class="img-center"> 
 

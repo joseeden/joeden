@@ -50,7 +50,7 @@ Here's how it looks like:
 
 </div>
 
-See sample file shere: [Github](https://github.com/joseeden/joeden/blob/master/docs/021-Software-Engineering/009-Web-Development/Projects/011-Bootstrap-Grid/001-Simple-Grid)
+See sample file shere: [Github](https://github.com/joseeden/joeden/blob/master/docs/021-Software-Engineering/009-Web-Development/000-Projects/011-Bootstrap-Grid/001-Simple-Grid)
 
 If the total column spaces exceed 12, the extra columns move to the next row.
 
@@ -106,6 +106,6 @@ Here's how it looks like:
 
 </div>
 
-See sample file shere: [Github](https://github.com/joseeden/joeden/blob/master/docs/021-Software-Engineering/009-Web-Development/Projects/011-Bootstrap-Grid/001-Simple-Grid)
+See sample file shere: [Github](https://github.com/joseeden/joeden/blob/master/docs/021-Software-Engineering/009-Web-Development/000-Projects/011-Bootstrap-Grid/001-Simple-Grid)
 
 For more information, please see [Grid options](https://getbootstrap.com/docs/5.3/layout/grid/#grid-options)

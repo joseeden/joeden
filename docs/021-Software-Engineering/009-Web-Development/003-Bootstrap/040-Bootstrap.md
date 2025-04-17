@@ -36,7 +36,7 @@ To get started, you can include Bootstrap via a CDN to your HTML file:
 
 For more information, please see [Get Bootstrap.](https://getbootstrap.com/)
 
-See: [Sample HTML File](https://github.com/joseeden/joeden/blob/master/docs/021-Software-Engineering/009-Web-Development/Projects/010-Bootstrap/index.html)
+See: [Sample HTML File](https://github.com/joseeden/joeden/blob/master/docs/021-Software-Engineering/009-Web-Development/000-Projects/010-Bootstrap/index.html)
 
 ## Sample Website 
 
@@ -66,7 +66,7 @@ The Jumbotron is a large, attention-grabbing banner often used to highlight impo
 
 You can emulate Jumbotron (with the exception of the specific background color) by adding this to your HTML file.
 
-See: [Sample HTML File](https://github.com/joseeden/joeden/blob/master/docs/021-Software-Engineering/009-Web-Development/Projects/010-Bootstrap/index.html)
+See: [Sample HTML File](https://github.com/joseeden/joeden/blob/master/docs/021-Software-Engineering/009-Web-Development/000-Projects/010-Bootstrap/index.html)
 
 See: [Sample Website](#sample-website)
 
@@ -92,7 +92,7 @@ The code below will generate a responsive navigation bar with a dropdown menu on
 
 </div>
 
-See: [Sample HTML File](https://github.com/joseeden/joeden/blob/master/docs/021-Software-Engineering/009-Web-Development/Projects/010-Bootstrap/index.html)
+See: [Sample HTML File](https://github.com/joseeden/joeden/blob/master/docs/021-Software-Engineering/009-Web-Development/000-Projects/010-Bootstrap/index.html)
 
 See: [Sample Website](#sample-website)
 
