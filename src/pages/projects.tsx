@@ -8,6 +8,13 @@ const baseUrl = "/joeden";
 
 const projects: ProjectData[] = [
   {
+    title: "Swiftlink",
+    description: "A responsive landing page for a fictional logistics company",
+    url: `${baseUrl}/docs/Software-Engineering/Web-Development/Projects/Just-Keep-Running/`, 
+    image: require(`/img/docs/Screenshot-2025-03-24-075843.png`),
+    // role: "Organizer",
+  },  
+  {
     title: "Just Keep Running",
     description: "A simple landing page for a fictional running event",
     url: `${baseUrl}/docs/Software-Engineering/Web-Development/Projects/Just-Keep-Running/`, 

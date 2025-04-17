@@ -43,13 +43,13 @@ A responsive landing page for a fictional transportation and logistics company, 
 
 A brief overview of the design elements and user-facing features.
 
-- Modern, responsive layout  
+- **Modern, responsive layout**  
   - Adjusts cleanly from 320px up to large desktops  
   - Uses media queries and Bootstrap breakpoints  
-- Smooth scrolling and interactive UI  
+- **Smooth scrolling and interactive UI**  
   - CTA sections to guide users  
   - Service highlights and animations  
-- Contact form  
+- **Contact form**  
   - Collects basic customer inquiries  
   - Integrated with Mailchimp  
 
@@ -57,23 +57,23 @@ A brief overview of the design elements and user-facing features.
 
 The navigation bar provides quick access to all major sections of the website. It adapts to different screen sizes and includes both desktop and mobile-friendly elements.
 
-- Sticky top navigation  
+- **Sticky top navigation**  
   - Remains fixed at the top of the screen during scroll  
   - Improves accessibility to key sections at all times
 
-- Logo on the left  
-  - Displays company branding  
+- **Logo on the left**  
+  - Displays company branding
   - Clickable to redirect users to the homepage
 
-- Main menu (center for desktop, offcanvas for mobile)  
+- **Main menu (center for desktop, offcanvas for mobile)**  
   - About, Shipping Services, Logistics Solutions, Business Solutions, Support  
   - Dropdowns used for multi-option categories
 
-- Right section links  
+- **Right section links**  
   - Search, Global settings, and Login  
   - Icons accompanied by text labels for clarity
 
-- Responsive design with toggler  
+- **Responsive design with toggler**  
   - Offcanvas menu triggered for smaller screens  
   - Same links and dropdowns are adapted for mobile view
 
@@ -134,13 +134,15 @@ This section describes the interactive behavior of the Bootstrap 5.3 offcanvas s
 
 Details on how the Search modal behaves in various user actions.
 
-- Modal closes when:
+- **Modal closes when:**
+
   - User clicks the close button
   - User clicks outside modal
   - User presses "Search"  
   - User types a query and presses Enter  
 
-- Modal stays open if:
+- **Modal stays open if:**
+
   - User presses Enter with an empty Search field  
 
 ## Login/Signup Modals
@@ -193,7 +195,7 @@ This is still a work in progress.
   - Email Address
   - Username
   - Password
-  - 
+
 The first empty required field triggers the browser's built-in validation message.
 
 - Uses `checkValidity()` on the form 
@@ -466,7 +468,7 @@ document.addEventListener("DOMContentLoaded", function () {
 | Small phones          | 320px                  | iPhone SE (1st gen), older Androids       |
 | Compact phones        | 360px – 375px          | iPhone SE (2022), Pixel 4a, Galaxy A series |
 | Average smartphones   | 390px – 414px          | iPhone 13/14, Galaxy S23, Pixel 7         |
-| Phablets / Large phones | 428px – 480px        | iPhone 15 Pro Max, Galaxy Note series     |
+| Tablets / Large phones | 428px – 480px         | iPhone 15 Pro Max, Galaxy Note series     |
 
 Recommendations:
 
