@@ -61,5 +61,56 @@ You can optimize the poster by using a compressed image or a first frame extract
 
 ## Fallback Image for `<iframe>`
 
-The `poster` attribute is only valid for `<video>` elements, not `<iframe>` work on `<iframe>`, so browsers will might simply ignore this. 
+The `poster` attribute is only valid for `<video>` elements, not `<iframe>`, so browsers will might simply ignore this attribute.
+
+### Using Overlay
+
+You’ll need to overlay a fallback image behind the iframe using CSS, then optionally hide it once the video loads
+
+HTML: 
+
+```html
+<div class="video-iframe-wrapper">
+  <img src="./images/site-poster.png" alt="Video Fallback" class="video-fallback" />
+  <div class="video-inside">
+    <iframe
+      src="https://player.vimeo.com/video/12345678?autoplay=1&loop=1&muted=1&background=1&title=0&byline=0&portrait=0"
+      allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+      title="banner-vid"
+      frameborder="0">
+    </iframe>
+  </div>
+</div>
+```
+
+CSS:
+
+```css
+.video-iframe-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.video-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* iframe layered above the fallback image */
+.video-inside iframe {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+```
+
+
 
