@@ -1,11 +1,12 @@
 ---
 title: "Combining Selectors"
 description: "Combining Selectors"
-tags: 
+tags:
 - Computer Science
 - Application Development
 - Software Development
 - Web Development
+- Frontend Development
 - HTML
 - CSS
 sidebar_position: 17

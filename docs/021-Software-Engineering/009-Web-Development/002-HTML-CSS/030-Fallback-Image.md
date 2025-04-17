@@ -1,11 +1,12 @@
 ---
 title: "Fallback Image"
 description: "Using a Fallback Image for Videos"
-tags: 
+tags:
 - Computer Science
 - Application Development
 - Software Development
 - Web Development
+- Frontend Development
 - HTML
 - CSS
 sidebar_position: 30

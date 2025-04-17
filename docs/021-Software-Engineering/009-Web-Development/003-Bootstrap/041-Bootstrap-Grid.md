@@ -6,6 +6,7 @@ tags:
 - Application Development
 - Software Development
 - Web Development
+- Frontend Development
 - HTML
 - CSS
 - Bootstrap

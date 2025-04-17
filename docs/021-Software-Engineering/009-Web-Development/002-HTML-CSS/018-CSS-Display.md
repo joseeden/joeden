@@ -1,11 +1,12 @@
 ---
 title: "CSS Display"
 description: "CSS Display"
-tags: 
+tags:
 - Computer Science
 - Application Development
 - Software Development
 - Web Development
+- Frontend Development
 - HTML
 - CSS
 sidebar_position: 18

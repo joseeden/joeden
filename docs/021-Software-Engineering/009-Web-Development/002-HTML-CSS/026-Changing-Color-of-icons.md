@@ -1,11 +1,12 @@
 ---
 title: "Change Icon Color"
 description: "Change Icon Color"
-tags: 
+tags:
 - Computer Science
 - Application Development
 - Software Development
 - Web Development
+- Frontend Development
 - HTML
 - CSS
 sidebar_position: 26

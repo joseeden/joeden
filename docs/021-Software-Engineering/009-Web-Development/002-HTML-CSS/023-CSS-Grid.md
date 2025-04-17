@@ -1,11 +1,12 @@
 ---
 title: "CSS Grid"
 description: "CSS Grid"
-tags: 
+tags:
 - Computer Science
 - Application Development
 - Software Development
 - Web Development
+- Frontend Development
 - HTML
 - CSS
 sidebar_position: 23

@@ -6,8 +6,10 @@ tags:
 - Application Development
 - Software Development
 - Web Development
+- Frontend Development
 - HTML
 - CSS
+- Bootstrap
 sidebar_position: 42
 last_update:
   date: 03/29/2019

@@ -5,6 +5,7 @@ tags:
 - Computer Science
 - Application Development
 - Software Development
+- Frontend Development
 - Javascript
 sidebar_position: 15
 last_update:

@@ -13,7 +13,15 @@ Software Development:
 Web Development:
   label: 'Web Development'
   permalink: '/Web Development'
-  description: 'Docs related to Web Development'   
+  description: 'Docs related to Web Development' 
+Frontend Development:
+  label: 'Frontend Development'
+  permalink: '/Frontend Development'
+  description: 'Docs related to Frontend Development'       
+Backend Development:
+  label: 'Backend Development'
+  permalink: '/Backend Development'
+  description: 'Docs related to Backend Development'     
 HTML:
   label: 'HTML'
   permalink: '/HTML'

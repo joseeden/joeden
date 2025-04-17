@@ -1,11 +1,12 @@
 ---
 title: "Embedding Images"
 description: "Embedding Images"
-tags: 
+tags:
 - Computer Science
 - Application Development
 - Software Development
 - Web Development
+- Frontend Development
 - HTML
 - CSS
 sidebar_position: 28
