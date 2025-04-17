@@ -56,7 +56,7 @@ A brief overview of the design elements and user-facing features.
   - Collects basic customer inquiries  
   - Integrated with Mailchimp  
 
-## Modals - Search
+## Search Modal 
 
 Details on how the Search modal behaves in various user actions.
 
@@ -69,6 +69,76 @@ Details on how the Search modal behaves in various user actions.
 - Modal stays open if:
   - User presses Enter with an empty Search field  
 
+## Login/Signup Modals
+
+This script handles the opening, closing, panel-switching, and form validation behavior for the Login and Signup modal.
+
+### Components Involved
+
+- **Modal container**: `#modal-navbar-login`
+- **Open button**: `#open-login-modal`
+- **Close button**: `#close-login-modal`
+- **Login panel**: `#login-panel`
+- **Signup panel**: `#signup-panel`
+- **Panel switch links**:
+  - Login → Signup: `#login-modal-signup-link`
+  - Signup → Login: `#signup-modal-login-link`
+- **Submit buttons**:
+  - Login: `.login-modal-button` inside `#login-panel`
+  - Signup: `.signup-modal-button` inside `#signup-panel`
+
+
+### Opening Modals
+
+- **Open and Close Modal**
+
+  - Clicking the **login icon** opens the modal and defaults to the **Login panel**.
+  - Clicking the **close button** or clicking outside the modal closes it.
+  - When the modal closes, all input fields in both panels are cleared.
+
+- **Switch Between Panels**
+
+  - Users can toggle between **Login** and **Signup** without restriction.
+  - Switching panels also resets validation states and form fields.
+
+### Form Reset on Close
+
+Closing the modal:
+
+- Clears all input values.
+- Resets validation state and `active` panel to Login.
+
+### Login Validation
+
+Pressing **Enter** or clicking **Continue** checks that the **Username** field is not empty.
+
+- If empty:
+  - Native browser validation is triggered.
+  - Default form submission is blocked.
+
+Validation uses HTML5 form validation (`required` attribute) to show browser-native warning like:  
+
+  - `"Please fill out this field"`
+
+### Signup Validation
+
+:::info 
+
+This is still a work in progress. 
+
+:::
+
+**Sequential field validation**: Prevents submitting the form (via Enter or "Sign Up" button) unless the following fields are all filled:
+
+  - Full Name
+  - Email Address
+  - Username
+  - Password
+  - 
+The first empty required field triggers the browser's built-in validation message.
+
+- Uses `checkValidity()` on the form 
+- Ensure native handling of "Please fill out this field".
 
 
 ## Responsive Web Design 
