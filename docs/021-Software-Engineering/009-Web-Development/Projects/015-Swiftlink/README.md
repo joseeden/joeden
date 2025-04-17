@@ -13,9 +13,6 @@ last_update:
   date: 03/22/2019
 ---
 
-
-## Swiftlink International
-
 import React from "react";
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) 	![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white) ![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7) ![Mailchimp](https://img.shields.io/badge/mailchimp--%23FFE01B?style=for-the-badge&logo=mailchimp) 
@@ -56,6 +53,83 @@ A brief overview of the design elements and user-facing features.
   - Collects basic customer inquiries  
   - Integrated with Mailchimp  
 
+## Navbar
+
+The navigation bar provides quick access to all major sections of the website. It adapts to different screen sizes and includes both desktop and mobile-friendly elements.
+
+- Sticky top navigation  
+  - Remains fixed at the top of the screen during scroll  
+  - Improves accessibility to key sections at all times
+
+- Logo on the left  
+  - Displays company branding  
+  - Clickable to redirect users to the homepage
+
+- Main menu (center for desktop, offcanvas for mobile)  
+  - About, Shipping Services, Logistics Solutions, Business Solutions, Support  
+  - Dropdowns used for multi-option categories
+
+- Right section links  
+  - Search, Global settings, and Login  
+  - Icons accompanied by text labels for clarity
+
+- Responsive design with toggler  
+  - Offcanvas menu triggered for smaller screens  
+  - Same links and dropdowns are adapted for mobile view
+
+### Navbar Breakpoint Behavior
+
+| Screen Width         | Navbar Behavior                                 |
+|----------------------|--------------------------------------------------|
+| ≥1321px              | All navbar items visible                         |
+| 1130px – 1320px      | Right-aligned labels hidden; icons only          |
+| 401px – 1129px       | Left-aligned items hidden; toggler shown         |
+| ≤400px               | Only logo and toggler are shown                  |
+
+### Additional Notes
+
+The Navbar is built with Bootstrap's responsive utilities. It uses classes like `navbar-expand-lg` for expanding on larger screens and `offcanvas` for mobile. Dropdowns are used for menu items with multiple sub-options. Each link includes descriptive text and supporting icons to enhance usability.
+
+## OffCanvas Menu 
+
+### OffCanvas Sidebar
+
+offCanvas is used in this project to style the collapsible navbar. At 1129px and below, toggler opens a sidebar with vertically stacked nav items:
+
+- About  
+- Shipping Services (dropdown)  
+- Logistics Solutions (dropdown)  
+- Business Solutions (dropdown)  
+- Support (dropdown)  
+
+### OffCanvas Width by Screen Size
+
+| Screen Width      | OffCanvas Width       |
+|-------------------|------------------------|
+| 768px – 1129px    | 50% of screen          |
+| 400px – 767px     | 70% of screen          |
+
+### Offcanvas Sidebar Behavior 
+
+This section describes the interactive behavior of the Bootstrap 5.3 offcanvas sidebar when used on screens 1129px wide and below.
+
+- Toggler icon opens the sidebar and dims the background  
+- Close button hides the sidebar and removes the dim  
+- Clicking outside the sidebar closes it and removes the dim  
+- Clicking non-dropdown links inside the sidebar:
+  - Closes the sidebar  
+  - Navigates to the section  
+  - Removes the dim  
+- Clicking a dropdown link inside the sidebar:
+  - Expands the dropdown  
+  - Shows the child items  
+  - Keeps the sidebar open  
+- Clicking a dropdown child item:
+  - Closes the sidebar  
+  - Navigates to the section  
+  - Removes the dim  
+
+
 ## Search Modal 
 
 Details on how the Search modal behaves in various user actions.
@@ -72,21 +146,6 @@ Details on how the Search modal behaves in various user actions.
 ## Login/Signup Modals
 
 This script handles the opening, closing, panel-switching, and form validation behavior for the Login and Signup modal.
-
-### Components Involved
-
-- **Modal container**: `#modal-navbar-login`
-- **Open button**: `#open-login-modal`
-- **Close button**: `#close-login-modal`
-- **Login panel**: `#login-panel`
-- **Signup panel**: `#signup-panel`
-- **Panel switch links**:
-  - Login → Signup: `#login-modal-signup-link`
-  - Signup → Login: `#signup-modal-login-link`
-- **Submit buttons**:
-  - Login: `.login-modal-button` inside `#login-panel`
-  - Signup: `.signup-modal-button` inside `#signup-panel`
-
 
 ### Opening Modals
 
@@ -140,10 +199,69 @@ The first empty required field triggers the browser's built-in validation messag
 - Uses `checkValidity()` on the form 
 - Ensure native handling of "Please fill out this field".
 
+## Banner (Video Hero Section)
+
+The banner is a full-width hero section that creates an engaging first impression using a background video and a prominent message overlay. It provides key calls-to-action to guide user interaction.
+
+- Background video  
+  - Plays automatically, loops continuously, and remains muted  
+  - Provides a modern, dynamic visual to capture attention
+
+- Fallback image  
+  - Displays when video is unsupported or loading  
+  - Ensures consistent visual presentation across all devices
+
+- Overlay content  
+  - Bold headline to introduce the brand message  
+  - Descriptive paragraph explaining the service value  
+  - Two prominent buttons:  
+    - “See solutions” directs users to the shipping services section  
+    - “Talk to us” connects users to the support section
+
+- Responsive layout  
+  - Content and visuals adjust gracefully across screen sizes  
+  - Ensures readability and interaction on both desktop and mobile devices
+
+
+### Responsiveness
+
+The layout uses Bootstrap grid and utility classes to ensure mobile-friendliness:
+
+- Text and buttons are center-aligned 
+- Video and image scale responsively to fit different screen sizes  
+- Overlay adapts its size and alignment on smaller viewports
+
+### Additional Notes
+
+The banner section is optimized for performance and accessibility. 
+
+- Autoplay settings comply with modern browser policies.
+- Fallback visuals ensure compatibility. 
+- The calls-to-action are placed to drive engagement and support navigation flow.
+
+
+## Carousel
+
+The carousel section features an auto-sliding image gallery with manual navigation controls for a dynamic user experience.
+
+- **Automatic slide transition**  
+  - Slides change every 3 seconds  
+  - Pauses on hover is disabled for continuous motion
+
+- **Navigation buttons**  
+  - Previous and Next buttons allow manual navigation  
+  - Icons for intuitive control
+
+- **Indicators**  
+  - Shows clickable buttons to jump to specific slides  
+  - Active slide is clearly highlighted
+
+- **Responsive design**  
+  - Ensures smooth experience across all devices  
+  - Images scale accordingly for different screen sizes
+
 
 ## Responsive Web Design 
-
-Designed with a mobile-first approach. Reference screen sizes used in development:
 
 ### Common Screen Widths
 
@@ -184,58 +302,6 @@ To simulate:
 1. Open DevTools → Toggle device toolbar  
 2. Click device dropdown → Edit → "Add custom device"  
 3. Fill in name, width, height, and DPR as above  
-
-
-## Navbar and OffCanvas Menu
-
-### Navbar Breakpoint Behavior
-
-| Screen Width         | Navbar Behavior                                 |
-|----------------------|--------------------------------------------------|
-| ≥1321px              | All navbar items visible                         |
-| 1130px – 1320px      | Right-aligned labels hidden; icons only          |
-| 401px – 1129px       | Left-aligned items hidden; toggler shown         |
-| ≤400px               | Only logo and toggler are shown                  |
-
-
-### OffCanvas Sidebar
-
-offCanvas is used in this project to style the collapsible navbar. At 1129px and below, toggler opens a sidebar with vertically stacked nav items:
-
-- About  
-- Shipping Services (dropdown)  
-- Logistics Solutions (dropdown)  
-- Business Solutions (dropdown)  
-- Support (dropdown)  
-
-### OffCanvas Width by Screen Size
-
-| Screen Width      | OffCanvas Width       |
-|-------------------|------------------------|
-| 768px – 1129px    | 50% of screen          |
-| 400px – 767px     | 70% of screen          |
-
-### Offcanvas Sidebar Behavior 
-
-This section describes the interactive behavior of the Bootstrap 5.3 offcanvas sidebar when used on screens 1129px wide and below.
-
-- Toggler icon opens the sidebar and dims the background  
-- Close button hides the sidebar and removes the dim  
-- Clicking outside the sidebar closes it and removes the dim  
-- Clicking non-dropdown links inside the sidebar:
-  - Closes the sidebar  
-  - Navigates to the section  
-  - Removes the dim  
-- Clicking a dropdown link inside the sidebar:
-  - Expands the dropdown  
-  - Shows the child items  
-  - Keeps the sidebar open  
-- Clicking a dropdown child item:
-  - Closes the sidebar  
-  - Navigates to the section  
-  - Removes the dim  
-
-
 
 
 ## Country Dropdown 
