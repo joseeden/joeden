@@ -74,10 +74,6 @@ What `autoplay=1&loop=1&background=1&muted=1` does:
 | Full control with HTML5    | ✅ Total control                 | ⚠️ Limited (YouTube API needed for more control) |
 | Autoplay & Loop (YouTube)  | ❌ Not possible via `<video>`   | ✅ Works via `iframe` + URL params |
 
-[For Youtube, you need to use `<iframe>`](#youtube).
-
-### When to Use 
-
 **When to Use `<video>`**
 
 - You have a **.mp4**, **.webm**, or **.ogg** file
@@ -87,6 +83,12 @@ What `autoplay=1&loop=1&background=1&muted=1` does:
 
 - You're embedding a video from **YouTube**, **Vimeo**, or **another streaming service**
 - You don’t have access to a raw media file
+
+:::info 
+
+[For Youtube, you need to use `<iframe>`](#youtube).
+
+:::
 
 
 ## Canva 
@@ -173,8 +175,6 @@ Unfortunately, **YouTube does not allow** complete removal of their logo from em
 
 ## Vimeo
 
-### Embedding 
-
 Using `<video>` tag:
 
 ```html
@@ -202,6 +202,13 @@ Using `<iframe>` tag:
 
 Replace `VIDEO_ID` with your actual Vimeo video ID (e.g. 76979871).
 
+
+#### Notes
+
+1. **Hotlinking Issues**: Some direct video URLs from Vimeo are **tokenized or expire** after some time unless you’re on Vimeo Pro or above and have enabled file access.
+2. **Performance**: Vimeo's player (with iframe) does adaptive streaming and buffering better than raw MP4s.
+
+
 ### Advantages
 
 Advantages of Vimeo for Embeds:
@@ -215,12 +222,6 @@ Advantages of Vimeo for Embeds:
 | Clean, minimal UI    | ✅ Professional look                         | ❌ Always has some clutter           |
 
 
-### Notes
-
-Watch for:
-
-1. **Hotlinking Issues**: Some direct video URLs from Vimeo are **tokenized or expire** after some time unless you’re on Vimeo Pro or above and have enabled file access.
-2. **Performance**: Vimeo's player (with iframe) does adaptive streaming and buffering better than raw MP4s.
 
 ### Troubleshooting 
 
@@ -352,7 +353,7 @@ You can download and host the video file locally on your server, and then refere
   - Use CDN for better performance with high traffic
 
 
-### Alternative: Using a Hybrid Approach
+### Using a Hybrid Approach
 
 You can also use a **hybrid approach**, where the video is stored locally but falls back to a Vimeo embed if it's not available locally. This can be done by checking if the local video exists before trying to load it.
 

@@ -112,5 +112,96 @@ CSS:
 }
 ```
 
+## Fallback Image Not Showing
+
+**Issue:** The poster image doesn't appear when the video hosting service is offline, even though it’s properly set.
+
+I have a website that uses a video as the background for the landing page banner. To simulate a disconnection from the video hosting service, I turned off my internet connection and refreshed the site a few times. As expected, the video failed to load, but instead of showing the fallback poster image, the browser displayed the default **broken embed** icon.
+
+<div class="img-center">  
+![](/img/docs/Screenshot-2025-04-17-172129.png)  
+</div>
+
+This happens because of a limitation with iframes — when the iframe source becomes unreachable, the browser shows a broken frame (often with a sad face icon) and doesn’t let any JavaScript inside the iframe handle the error or provide a graceful fallback.
+
+### Possible Fixes
+
+| Checkpoint | Solution |
+|-----------|----------|
+| Local file exists? | Ensure `images/site-poster.png` is correct |
+| Browser blocking file:// access? | Use **Live Server** (localhost) |
+| Styling hides image? | Add border/debug styling |
+| Want true iframe fallback? | Use `background-image` on the container instead |
+
+### Root Cause Checklist
+
+1. **Image path**
+
+    Make sure the path is correct and the image is actually available locally.
+
+      ```html
+      <img src="./images/site-poster.png" alt="Video Fallback" class="video-fallback" />
+      ```
+
+      - Does the file exist at the path specified ?
+      - Is the file name spelled **exactly** the same?
+
+    Quick test: Open that image directly in the browser: `file:///path-to-your-folder/images/site-poster.png`
 
 
+2. **Your browser is blocking local loading for security**
+
+    When opening with `file://`, some browsers (especially Chrome) **block loading local resources** (like `iframe` and sometimes `img`) due to CORS and file URI policies.
+
+    Solution: Use **Live Server** instead of `file://` view.
+
+      - Reconnect to the Live Server (even without internet)
+      - Then disconnect Wi-Fi again
+      - Refresh the browser
+
+    Live Server uses `http://localhost:PORT`, which avoids most browser restrictions.
+
+
+3. **Image fails due to incorrect styling or `z-index` stacking**
+
+    If the image is **rendering but invisible**, it's possibly covered or collapsed. Add this debug style temporarily:
+
+      ```css
+      .video-fallback {
+        z-index: 1;
+        display: block;
+        border: 2px solid red; /* DEBUG: to see if it shows up */
+      }
+      ```
+
+### Add a real `<picture>` fallback if iframe fails
+
+The current fallback might be working **only if Vimeo is slow to load**, not if it's offline.
+
+For a more reliable approach: 
+
+HTML (fallback background directly on `.video-container`)
+
+```html
+<div class="video-container" 
+      style="background-image: url('./images/site-poster.png');       
+              background-size: cover; 
+              background-position: center;">
+
+  <div class="video-inside">
+    <iframe ...></iframe>
+  </div>
+
+</div>
+```
+
+CSS (ensure fallback image always displays when iframe fails):
+
+```css
+.video-container {
+  background-image: url('./images/site-poster.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+```
