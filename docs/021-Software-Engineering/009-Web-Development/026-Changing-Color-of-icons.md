@@ -75,7 +75,7 @@ footer.footer img {
 }
 ```
 
-::info 
+:::info 
 
 This works if the icons have a transparent background.
 

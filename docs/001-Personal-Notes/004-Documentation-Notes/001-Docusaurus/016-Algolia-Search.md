@@ -37,7 +37,9 @@ Start by [applying to the DocSearch program](https://docsearch.algolia.com/apply
 After submitting, you’ll see a confirmation message and receive an auto-reply email with a ticket number.
 
 <div class="img-center">  
-<img src="/img/docs/Screenshot-2025-04-17-031725.png" alt="DocSearch confirmation screenshot">  
+
+<img src="/img/docs/Screenshot-2025-04-17-031725.png" alt="DocSearch confirmation screenshot">
+
 </div>
 
 <!-- <div class="img-center"> 
