@@ -223,3 +223,80 @@ The `bottom: 100% `positions the dropdown so that its bottom edge aligns with th
 ![](/gif/docs/css-dropdowns-open-2.gif)
 
 </div>
+
+
+## Test Dropdown Programmatically
+
+You can programmatically toggle dropdowns through the DevTools console using:
+
+```js
+bootstrap.Dropdown.getOrCreateInstance(
+  document.querySelector('.nav-item.dropdown .dropdown-toggle')
+).show();
+```
+
+### Toggle the First Dropdown
+
+To show the first dropdown:
+
+```js
+bootstrap.Dropdown.getOrCreateInstance(
+  document.querySelector('.nav-item.dropdown .dropdown-toggle')
+).show();
+```
+
+To hide the first dropdown:
+
+```js
+bootstrap.Dropdown.getOrCreateInstance(
+  document.querySelector('.nav-item.dropdown .dropdown-toggle')
+).hide();
+```
+
+
+<div class="img-center"> 
+
+![](/gif/docs/toggle-dropdowns-1.gif)
+
+</div>
+
+
+### Toggle All Dropdowns
+
+To toggle all dropdowns on the page:
+
+```js
+document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+  const dropdown = bootstrap.Dropdown.getOrCreateInstance(toggle);
+  dropdown._element.classList.contains('show') ? dropdown.hide() : dropdown.show();
+});
+```
+
+To hide:
+
+```js
+document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+  const dropdown = bootstrap.Dropdown.getOrCreateInstance(toggle);
+  dropdown._element.classList.contains('show') ? dropdown.hide() : dropdown.show();
+});
+```
+
+### Toggle a Specific Dropdown
+
+To toggle a specific dropdown (e.g., using an ID or class):
+
+```js
+const toggle = document.querySelector('.classname-of-dropdown > .dropdown-toggle');
+const dropdown = bootstrap.Dropdown.getOrCreateInstance(toggle);
+dropdown.toggle();
+```
+
+You can use the class name (`.classname-of-dropdown`) or an ID (`#id-dropdown`).
+
+<div class="img-center"> 
+
+![](/gif/docs/toggle-dropdowns-2.gif)
+
+</div>
+
+
