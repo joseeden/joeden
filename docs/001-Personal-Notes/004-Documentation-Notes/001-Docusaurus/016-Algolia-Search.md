@@ -38,14 +38,15 @@ After submitting, you’ll see a confirmation message and receive an auto-reply 
 
 <div class="img-center">  
 
-<img src="/img/docs/Screenshot-2025-04-17-031725.png" alt="DocSearch confirmation screenshot" />
+<img src="/img/docs/Screenshot-2025-04-17-100913.png" />
 
 </div>
 
-<!-- <div class="img-center"> 
 
-![](/img/docs/Screenshot-2025-04-17-031725.png)
+<div class="img-center"> 
 
-</div> -->
+![](/img/docs/Screenshot-2025-04-17-100913.png)
+
+</div>
 
 
