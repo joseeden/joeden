@@ -11,7 +11,7 @@ const projects: ProjectData[] = [
     title: "Swiftlink",
     description: "A responsive landing page for a fictional logistics company",
     url: `${baseUrl}/docs/Software-Engineering/Web-Development/Projects/Swiftlink/`, 
-    image: require(`/img/docs/Screenshot-2025-03-24-075843.png`),
+    image: require(`/img/docs/Screenshot-2025-04-18-144904.png`),
     // role: "Organizer",
   },  
   {

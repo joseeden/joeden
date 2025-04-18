@@ -62,6 +62,10 @@ Typescript:
   label: 'Typescript'
   permalink: '/Typescript'
   description: 'Docs related to Typescript'    
+Golang:
+  label: 'Golang'
+  permalink: '/Golang'
+  description: 'Docs related to Golang'    
 REST APIs:
   label: 'REST APIs'
   permalink: '/REST APIs'
