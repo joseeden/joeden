@@ -70,3 +70,7 @@ Tableau:
   label: 'Tableau'
   permalink: '/Tableau'
   description: 'Docs related to Tableau'      
+Azure Data Factory:
+  label: 'Azure Data Factory'
+  permalink: '/Azure Data Factory'
+  description: 'Docs related to Azure Data Factory'      

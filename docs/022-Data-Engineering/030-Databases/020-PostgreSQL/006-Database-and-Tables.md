@@ -1,7 +1,11 @@
 ---
 title: "Databases and Tables"
 description: "PostgreSQL"
-tags: [Data Engineering, Databases, SQL, PostgreSQL]
+tags: 
+- Data Engineering
+- Databases
+- SQL
+- PostgreSQL
 sidebar_position: 6
 last_update:
   date: 10/11/2019

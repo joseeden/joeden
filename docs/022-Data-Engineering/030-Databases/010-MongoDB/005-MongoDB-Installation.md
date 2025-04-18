@@ -1,7 +1,11 @@
 ---
 title: "MongoDB Installation"
 description: "MongoDB Installation"
-tags: [Data Engineering, Databases, MongoDB, NoSQL]
+tags: 
+- Data Engineering
+- Databases
+- MongoDB
+- NoSQL
 sidebar_position: 5
 last_update:
   date: 9/28/2019

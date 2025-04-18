@@ -1,7 +1,10 @@
 ---
 title: "Using SQLite"
 description: "SQLite"
-tags: [Data Engineering, Databases, SQLite]
+tags: 
+- Data Engineering
+- Databases
+- SQLite
 sidebar_position: 2
 last_update:
   date: 10/21/2019

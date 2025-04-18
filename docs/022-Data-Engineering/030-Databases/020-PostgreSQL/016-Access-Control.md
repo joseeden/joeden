@@ -1,7 +1,11 @@
 ---
 title: "Access Control"
 description: "Granting and revoking user and group privileges on database objects"
-tags: [Data Engineering, Databases, SQL, PostgreSQL]
+tags: tags: 
+- Data Engineering
+- Databases
+- SQL
+- PostgreSQL
 sidebar_position: 16
 last_update:
   date: 10/11/2019

@@ -1,7 +1,11 @@
 ---
 title: "Installation"
 description: "PostgreSQL"
-tags: [Data Engineering, Databases, SQL, PostgreSQL]
+tags: tags: 
+- Data Engineering
+- Databases
+- SQL
+- PostgreSQL
 sidebar_position: 5
 last_update:
   date: 10/11/2019

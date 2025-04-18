@@ -1,7 +1,11 @@
 ---
 title: "MongoDB Cloud"
 description: "MongoDB in the Cloud"
-tags: [Data Engineering, Databases, MongoDB, NoSQL]
+tags: 
+- Data Engineering
+- Databases
+- MongoDB
+- NoSQL
 sidebar_position: 30
 last_update:
   date: 12/8/2021
