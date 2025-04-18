@@ -270,14 +270,14 @@ h1, h2, h3, h4, h5 {
 
 .main-wrapper {
   height: 80vh !important;
-  flex: 1;
+  flex: 1 !important;
   flex-direction: column;
 }
 
 #__docusaurus {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100vh !important;
 }
 
 .button__icon {
