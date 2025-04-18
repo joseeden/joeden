@@ -22,7 +22,7 @@ Bootstrap provides different button styles with easy-to-use classes.
 
 See: [Sample HTML File](https://github.com/joseeden/joeden/blob/master/docs/021-Software-Engineering/009-Web-Development/000-Projects/010-Bootstrap/index.html)
 
-See: [Sample Website](#sample-website)
+See: [Sample Website](https://melodic-pika-35d471.netlify.app/)
 
 ```html
   <!-- Button trigger modal -->

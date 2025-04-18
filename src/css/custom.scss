@@ -268,6 +268,10 @@ h1, h2, h3, h4, h5 {
   }
 }
 
+.main-wrapper {
+  height: 80vh !important;
+}
+
 .button__icon {
   width: 18px;
   height: 18px;
@@ -374,6 +378,8 @@ footer.footer {
   padding: var(--ifm-footer-padding-vertical);
   width: 100%;
   margin-top: auto;
+  position: absolute;
+  bottom: 0;
 }
 
 .img-center {
@@ -401,10 +407,10 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
       line-height: 14px;
     }
 
-    .homepage-wrapper,
-    .homepage {
-      padding-bottom: 250px;
-    }
+    // .homepage-wrapper,
+    // .homepage {
+    //   padding-bottom: 250px;
+    // }
 
     .navbar {
       // flex-direction: column;
