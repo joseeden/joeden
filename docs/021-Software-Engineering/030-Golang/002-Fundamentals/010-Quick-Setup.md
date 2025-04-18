@@ -8,7 +8,7 @@ tags:
 - DevOps
 - Cloud
 - Golang
-sidebar_position: 1
+sidebar_position: 10
 last_update:
   date: 7/19/2023
 ---
@@ -210,15 +210,6 @@ func main() {
 
 Save the file. The Go extension may suggest installing `goimports` to fix imports—install it too.
 
-## Initialize Go Module
-
-Open the terminal in VS Code and run:
-
-```bash
-go mod init hello-world
-```
-
-This sets up your Go module and removes error red lines in VS Code.
 
 ## Run Your Go Program
 
@@ -244,5 +235,57 @@ You can run the program in two ways:
 
 
 
+## Build The Go Program
+
+Compile your Go code into an executable.
+
+```go
+go build main.go
+```
+
+This creates a binary named `main` (or `main.exe` on Windows).
+
+You can confirm the output file is created:
+
+```bash
+$ ls -l
+
+-rwxrwxrwx 1 user user 30 Jul 18 15:06 go.mod
+-rwxrwxrwx 1 user user 73 Jul 18 14:45 main.go  
+-rwxrwxrwx 1 user user 87 Jul 18 15:10 main
+```
+
+Run the compiled program like this:
+
+```bash
+./main
+```
+
+This will execute the binary file generated from your Go code.
 
 
+## Run The Go Program Directly
+
+This compiles the code and runs it right away without creating a binary file. It's useful for testing small programs during development.
+
+```go
+go run main.go
+```
+
+## Initialize Go Module
+
+To set up your Go module to manage dependencies:
+
+```bash
+go mod init hello-world
+```
+
+This creates a `go.mod` file, which will contain:
+
+```go
+module hello-world
+
+go 1.22.0 
+```
+
+This file tells Go the module name and version, and it helps track packages your app uses.
