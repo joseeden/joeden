@@ -270,6 +270,14 @@ h1, h2, h3, h4, h5 {
 
 .main-wrapper {
   height: 80vh !important;
+  flex: 1;
+  flex-direction: column;
+}
+
+#__docusaurus {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .button__icon {
@@ -378,7 +386,6 @@ footer.footer {
   padding: var(--ifm-footer-padding-vertical);
   width: 100%;
   margin-top: auto;
-  position: absolute;
   bottom: 0;
 }
 
