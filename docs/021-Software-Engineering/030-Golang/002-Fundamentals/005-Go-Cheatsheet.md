@@ -70,16 +70,16 @@ a := map[string]string{"k": "v"}
 
 ## Arrays
 
-Declare an array.
-
+Declare an array. 
 ```go
 var d [2]int = [2]int{1, 2}
 ```
 
+Note that an array is static, which is why we need to define the size. 
 
 ## Slices
 
-Declare a slice.
+Declare a slice. A slice is dynamic, so no need to add a size.
 
 ```go
 var a []string
