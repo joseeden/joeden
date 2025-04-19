@@ -1,7 +1,7 @@
 ---
 title: "Schemas"
 description: "PostgreSQL"
-tags: tags: 
+tags: 
 - Data Engineering
 - Databases
 - SQL

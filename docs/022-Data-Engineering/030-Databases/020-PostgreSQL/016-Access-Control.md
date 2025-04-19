@@ -1,7 +1,7 @@
 ---
 title: "Access Control"
 description: "Granting and revoking user and group privileges on database objects"
-tags: tags: 
+tags: 
 - Data Engineering
 - Databases
 - SQL

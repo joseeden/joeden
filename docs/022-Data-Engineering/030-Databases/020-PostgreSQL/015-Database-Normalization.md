@@ -1,7 +1,7 @@
 ---
 title: "Database Normalization"
 description: "Database normalization maintains data integrity and reduces data duplication."
-tags: tags: 
+tags: 
 - Data Engineering
 - Databases
 - SQL

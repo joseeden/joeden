@@ -98,7 +98,7 @@ There are different types of activities in ADF, depending on what you want to do
 
 
 
-## Data movement (Copy activity)
+## Data movement 
 
 This is the most common task. It moves data between different sources.
 

@@ -1,7 +1,7 @@
 ---
 title: "Installation"
 description: "PostgreSQL"
-tags: tags: 
+tags: 
 - Data Engineering
 - Databases
 - SQL
