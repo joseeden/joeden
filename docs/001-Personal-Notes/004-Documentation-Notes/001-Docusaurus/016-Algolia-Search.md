@@ -36,11 +36,18 @@ Start by [applying to the DocSearch program](https://docsearch.algolia.com/apply
 
 After submitting, you’ll see a confirmation message and receive an auto-reply email with a ticket number.
 
-
 <div class="img-center"> 
 
 ![](/img/docs/Screenshot-2025-04-17-100913.png)
 
 </div>
 
+## Accept Invitation 
 
+Once your application is approved, you’ll receive a follow-up email with detailed instructions. If you don’t already have an Algolia account, sign up for one. After logging in, you’ll see an invitation. Simply click **Accept** to proceed.
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-04-19-200520.png)
+
+</div>
