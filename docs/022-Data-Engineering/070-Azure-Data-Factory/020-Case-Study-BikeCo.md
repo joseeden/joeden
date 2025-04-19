@@ -6,7 +6,7 @@ tags:
 - Databases
 - Microsoft Azure
 - Azure Data Factory
-sidebar_position: 12
+sidebar_position: 20
 last_update:
   date: 10/14/2021
 ---
