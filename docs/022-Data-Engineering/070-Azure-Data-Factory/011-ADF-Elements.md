@@ -59,3 +59,121 @@ All these pieces work together. Pipelines organize everything, activities do the
 
 </div>
 
+## Pipelines vs SSIS
+
+If you're used to SQL Server Integration Services (SSIS), here’s how they match:
+
+| ADF                         | SSIS                         |
+|----------------------------|------------------------------|
+| Pipeline                   | Package                      |
+| Activity                   | Task                         |
+| Linked Service             | Connection Manager           |
+| Dataset                    | Source/Destination           |
+| JSON format                | XML (.dtsx)                  |
+
+If you're already familiar with SSIS, the concepts in ADF will feel very similar, but ADF is cloud-first and more scalable.
+
+
+## Types of Activities 
+
+There are different types of activities in ADF, depending on what you want to do with the data.
+
+- **Movement (copy activity)**
+  - Copy activity moves data from one place to another 
+  - There's no `move` activity in ADF
+  - Combined `copy` and `delete` activities does the move
+
+- **Transformation (modify the data)**
+  - Transformations change or clean up data.
+
+- **Control (manage flow and logic)**
+  - Control activities like “If”, “ForEach”, or “Wait” 
+  - Helps manage pipeline logic.
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-04-19-100815.png)
+
+</div>
+
+
+
+## Data movement (Copy activity)
+
+This is the most common task. It moves data between different sources.
+
+- Supports over 80 data stores
+- Can use common file formats like CSV or JSON
+
+If your system doesn’t have a direct connector, you can still use basic protocols (like ODBC or HTTP) or export data to CSV or JSON before using ADF.
+
+```json
+{
+  "name": "CopyFromBlobToSQL",
+  "type": "Copy",
+  "inputs": [ { "referenceName": "InputDataset", "type": "DatasetReference" } ],
+  "outputs": [ { "referenceName": "OutputDataset", "type": "DatasetReference" } ]
+}
+```
+
+This JSON sample shows a simple copy task from one dataset to another.
+
+
+## Data transformation
+
+You can change or clean data using ADF itself or by using other services.
+
+- ADF Data Flow for basic transformation
+- Use built-in or advanced options depending on needs
+
+You can also use external services like:
+
+- Spark
+- Azure Functions
+- Databricks
+- SQL procedures
+
+## Data Control
+
+These activities let your pipeline make decisions or wait for something to happen.
+
+- `ForEach`, `If`, `Wait`, `SetVariable`, `ExecutePipeline`
+- Helps manage the order and logic of activities
+
+These actions are useful when building more complex pipelines where things depend on each other.
+
+## Dataset and Linked Service
+
+These two help ADF understand what and where the data is.
+
+- Dataset points to the data (e.g., a file or table)
+- Linked service provides the connection info
+
+A dataset without a linked service won’t work. They always go together.
+
+## Integration runtime
+
+This is what runs your tasks. You choose which runtime to use depending on where your data lives or how secure it needs to be.
+
+- Can be hosted by Microsoft, on-prem, or self-hosted
+- Required for every activity in ADF
+
+
+## Case Study: BikeCo
+
+**BikeCo** is a company that designs, builds, and sells bikes, parts, accessories, and custom gear for riders. They want to perform ML experiments find their most profitable product absed on cahracteristics like:
+
+- Cost 
+- Retail price
+- Items sold
+
+For this we can use ADF pipeline to:
+
+- Copy sales data from a cloud SQL database to blob storage  
+- Use a simple transformation to clean the data  
+- Call an external machine learning service for analysis  
+
+This pipeline can run on a schedule and help the analytics team find insights from sales data. 
+
+- Each part of ADF will have clear job
+- They will help move and process data in the cloud
