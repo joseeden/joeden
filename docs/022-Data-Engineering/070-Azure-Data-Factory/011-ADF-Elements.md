@@ -11,9 +11,10 @@ last_update:
   date: 10/14/2021
 ---
 
+
 ## Overview
 
-Azure Data Factory (ADF) is made up of small pieces that work together to move and process data. Each element has a clear role and helps define how your data flows.
+Azure Data Factory (ADF) is made up of small pieces that work together to move and process data. 
 
 - **Pipeline**
   - A group of steps or actions
@@ -49,3 +50,12 @@ Each of these elements works with the others to create a full pipeline. ADF uses
 1. Copying data from one place to another is an activity.
 2. The trigger can run that task every morning at 8 AM. 
 3. The integration runtime handles the actual work behind the scenes.
+
+All these pieces work together. Pipelines organize everything, activities do the actual work, and the rest help define how, when, and where things happen.
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-04-19-095543.png)
+
+</div>
+
