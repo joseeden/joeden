@@ -152,8 +152,10 @@ https://adf.azure.com/
 Inside ADF Studio, click **Pipeline templates** to view the built-in templates provided by Azure.  
 You can also create and save your own custom templates.
 
-<div class="img-center">  
+<div class="img-center"> 
 
-<img src="/img/docs/Screenshot-2025-04-20-050718.png" alt="ADF Pipeline Templates">  
+![](/img/docs/Screenshot-2025-04-20-050718.png)
 
 </div>
+
+
