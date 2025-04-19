@@ -1,7 +1,12 @@
 ---
 title: "Database Security"
 description: "Database Security"
-tags: [Cloud, Microsoft Azure, DevOps, Security, Certifications]
+tags: 
+- Cloud
+- Microsoft Azure
+- DevOps
+- Security
+- Certifications
 sidebar_position: 4
 last_update:
   date: 11/22/2020

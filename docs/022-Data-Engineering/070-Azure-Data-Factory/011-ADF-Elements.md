@@ -92,13 +92,13 @@ There are different types of activities in ADF, depending on what you want to do
 
 <div class="img-center"> 
 
-![](/img/docs/Screenshot-2025-04-19-100815.png)
+![](/img/docs/Screenshot-2025-04-19-175302.png)
 
 </div>
 
 
 
-## Data movement 
+## Data Movement 
 
 This is the most common task. It moves data between different sources.
 
@@ -119,7 +119,7 @@ If your system doesn’t have a direct connector, you can still use basic protoc
 This JSON sample shows a simple copy task from one dataset to another.
 
 
-## Data transformation
+## Data Transformation
 
 You can change or clean data using ADF itself or by using other services.
 
@@ -158,22 +158,3 @@ This is what runs your tasks. You choose which runtime to use depending on where
 - Can be hosted by Microsoft, on-prem, or self-hosted
 - Required for every activity in ADF
 
-
-## Case Study: BikeCo
-
-**BikeCo** is a company that designs, builds, and sells bikes, parts, accessories, and custom gear for riders. They want to perform ML experiments find their most profitable product absed on cahracteristics like:
-
-- Cost 
-- Retail price
-- Items sold
-
-For this we can use ADF pipeline to:
-
-- Copy sales data from a cloud SQL database to blob storage  
-- Use a simple transformation to clean the data  
-- Call an external machine learning service for analysis  
-
-This pipeline can run on a schedule and help the analytics team find insights from sales data. 
-
-- Each part of ADF will have clear job
-- They will help move and process data in the cloud
