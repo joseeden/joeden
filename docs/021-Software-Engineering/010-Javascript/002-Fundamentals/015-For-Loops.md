@@ -7,7 +7,7 @@ tags:
 - Software Development
 - Frontend Development
 - Javascript
-sidebar_position: 17
+sidebar_position: 15
 last_update:
   date: 12/21/2020
 ---
@@ -25,7 +25,7 @@ Instead of writing the same code multiple times, we can use loops to repeat acti
 Imagine you are picking apples from a tree. You want to count each apple as you pick it, up to 10 apples. Instead of writing `console.log("Picked apple 1")` ten times, we use a loop:  
 
 ```javascript
-for (let apple =1; apple <= 10; apple++) {
+for (var apple =1; apple <= 10; apple++) {
   console.log(`Picked apple ${apple});
 };
 ```  
@@ -53,7 +53,7 @@ Instead of repeating `console.log` multiple times, the loop automates counting a
 To start at 5 and pick 15 apples, just change the values:  
 
 ```javascript
-for (let apple = 5; apple <= 15; apple++) {
+for (var apple = 5; apple <= 15; apple++) {
   console.log(`Picked apple ${apple}`);
 }
 ```
@@ -76,7 +76,7 @@ Consider the array of participant names. We'll use a `for` loop to print each na
 ```javascript
 const participants = ["Alice", "Bob", "Charlie", "David", "Eve"];
 
-for (let i = 0; i < participant.length; i++) {
+for (var i = 0; i < participant.length; i++) {
   console.log(participant[i]);
 };
 ```
@@ -118,7 +118,7 @@ We can use a loop to generate an array based on another array.
 ```javascript
 const nameLengths = [];
 
-for (let i = 0; i < participants.length; i++) {
+for (var i = 0; i < participants.length; i++) {
   nameLengths.push(participants[i].length);
 }
 
@@ -151,7 +151,7 @@ const data = [
 
 const types = [];
 
-for (let i = 0; i < data.length; i++) {
+for (var i = 0; i < data.length; i++) {
   console.log(data[i]);
   types.push(typeof data[i])
 };
@@ -186,7 +186,7 @@ const person = {
   salary: 50000
 };
 
-for (let key in person) {
+for (var key in person) {
   console.log(`${key}: ${person[key]}`);
 }
 ```
@@ -215,7 +215,7 @@ Example:
 ```javascript
 const names = ["Alice", "Bob", "Charlie", "David", "Eve"];
 
-for (let x = names.length - 1; x >= 0; x--) {
+for (var x = names.length - 1; x >= 0; x--) {
   console.log(names[x]);
 };
 ```
@@ -238,10 +238,10 @@ A nested loop is useful when handling repeated tasks within a set of repeated ta
 Example: Simulating three sets of exercises, each repeated five times.
 
 ```javascript
-for (let exercise = 1; exercise <= 3; exercise++) {
+for (var exercise = 1; exercise <= 3; exercise++) {
   console.log(`-------Starting Exercise: ${exercise}-------`);
 
-  for (let rep = 1; rep <= 5; rep++) {
+  for (var rep = 1; rep <= 5; rep++) {
     console.log(`  Repetition: ${rep}`);
   }
 };

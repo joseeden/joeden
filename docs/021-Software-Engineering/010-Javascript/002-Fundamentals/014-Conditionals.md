@@ -7,7 +7,7 @@ tags:
 - Software Development
 - Frontend Development
 - Javascript
-sidebar_position: 13
+sidebar_position: 14
 last_update:
   date: 12/21/2020
 ---
@@ -17,7 +17,7 @@ last_update:
 The `if-else` statement in JavaScript allows you to execute different blocks of code based on a condition.  
 
 ```js
-let age = 18;
+var age = 18;
 
 if (age >= 18) {
   console.log("You are an adult.");
@@ -33,7 +33,7 @@ In JavaScript, [type coercion](/docs/021-Software-Engineering/010-Javascript/002
 It happens automatically, such as in `if` statements:
 
 ```js
-let money = 0;
+var money = 0;
 if (money) {
   console.log(`Don't spend it all!`);
 } else {
@@ -44,7 +44,7 @@ if (money) {
 Be cautious when checking if something is "defined" because falsy values like `0` might cause issues. Here, `height` is `undefined`, a falsy value, so the else block runs.
 
 ```js
-let height;
+var height;
 if (height) {
   console.log(`Yay! Height is defined.`);
 } else {
@@ -55,7 +55,7 @@ if (height) {
 However, this can lead to issues. For instance, if height is set to `0`, it’s a valid number but still falsy:
 
 ```js
-let height = 0;
+var height = 0;
 if (height) {
   console.log(`Height is defined.`);
 } else {

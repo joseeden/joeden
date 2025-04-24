@@ -7,7 +7,7 @@ tags:
 - Software Development
 - Frontend Development
 - Javascript
-sidebar_position: 18
+sidebar_position: 16
 last_update:
   date: 12/23/2020
 ---
