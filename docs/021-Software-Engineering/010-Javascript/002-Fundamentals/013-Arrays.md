@@ -177,7 +177,7 @@ Methods to check for elements in an array.
 Example:
 
 ```javascript
-const friends = ["Michael", "Steven", "Peter", "Jay", "Bob"]
+const friends = ["Michael", "Steven", "Peter", "Jay", "Bob"];
 
 console.log(friends.indexOf("Steven"));   // 1
 console.log(friends.indexOf("Bob"));      // -1
@@ -206,6 +206,34 @@ if (friends.includes("Peter")) {
   console.log("You have a friend called Peter.");
 }
 ```
+
+## Access Parts with `splice`
+
+`splice` is used to change an array by removing or adding items. It updates the original array.
+
+**Example 1: Remove from a position**
+
+```js
+var colors = ["red", "blue", "green", "yellow", "pink", "black"];
+var removed = colors.splice(3);
+
+console.log(colors);      // ["red", "blue", "green"]
+console.log(removed);     // ["yellow", "pink", "black"]
+```
+
+This removes everything starting from index 3. The original array is shortened, and the removed items are returned.
+
+**Example 2: Remove a few items from a position**
+
+```js
+var colors = ["red", "blue", "green", "yellow", "pink", "black"];
+var removed = colors.splice(2, 3);
+
+console.log(colors);      // ["red", "blue", "black"]
+console.log(removed);     // ["green", "yellow", "pink"]
+```
+
+This removes 3 items starting from index 2. The rest stay in the original array.
 
 ## Looping with `forEach`  
 
