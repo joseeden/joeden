@@ -176,59 +176,6 @@ This is also useful if you want to link multiple Javscript code which does diffe
 ```
 
 
-## Data Types 
-
-In JavaScript, values are either objects or primitive data types. These are the primitive data types:
-
-- **Number**: All numbers are floating-point, even integers like `23` (i.e., `23.0`).
-
-  ```javascript
-  let num = 23; // Can be an integer or a floating-point number
-  console.log(num); // Output: 23
-  ```
-
-- **String**: A sequence of characters, enclosed in quotes (single or double).
-
-  ```javascript
-  let str = "Hello, world!";
-  console.log(str); // Output: Hello, world!
-  ```
-
-- **Boolean**: Logical values, either `true` or `false`.
-
-  ```javascript
-  let isActive = true;
-  console.log(isActive); // Output: true
-  ```
-
-- **Undefined**: A variable declared but not assigned a value.
-
-  ```javascript
-  let x;
-  console.log(x); // Output: undefined
-  ```
-
-- **Null**: Represents an empty value, used in different contexts than `undefined`.
-
-  ```javascript
-  let y = null;
-  console.log(y); // Output: null
-  ```
-
-- **Symbol**: A unique, immutable value used in specific scenarios (introduced in ES2015).
-
-  ```javascript
-  let sym = Symbol('unique');
-  console.log(sym); // Output: Symbol(unique)
-  ```
-
-- **BigInt**: For very large integers (introduced in ES2020).
-
-  ```javascript
-  let bigIntVal = 9007199254740991n; // 'n' denotes a BigInt
-  console.log(bigIntVal); // Output: 9007199254740991n
-  ```
-
 
 
 ## Code Commenting
