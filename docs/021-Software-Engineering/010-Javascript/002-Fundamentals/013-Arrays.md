@@ -207,33 +207,7 @@ if (friends.includes("Peter")) {
 }
 ```
 
-## Access Parts with `splice`
 
-`splice` is used to change an array by removing or adding items. It updates the original array.
-
-**Example 1: Remove from a position**
-
-```js
-var colors = ["red", "blue", "green", "yellow", "pink", "black"];
-var removed = colors.splice(3);
-
-console.log(colors);      // ["red", "blue", "green"]
-console.log(removed);     // ["yellow", "pink", "black"]
-```
-
-This removes everything starting from index 3. The original array is shortened, and the removed items are returned.
-
-**Example 2: Remove a few items from a position**
-
-```js
-var colors = ["red", "blue", "green", "yellow", "pink", "black"];
-var removed = colors.splice(2, 3);
-
-console.log(colors);      // ["red", "blue", "black"]
-console.log(removed);     // ["green", "yellow", "pink"]
-```
-
-This removes 3 items starting from index 2. The rest stay in the original array.
 
 ## Looping with `forEach`  
 
@@ -262,3 +236,152 @@ Output:
 ```
 
 In the example above, `forEach` runs the function once for each fruit. Each time, `fruit` holds the current item in the array, and `console.log` prints it. This is useful when you want to do something for every item in an array without changing the array itself.
+
+
+## `splice`
+
+`splice` is used to change an array by removing or adding items. It updates the original array.
+
+**Example 1: Remove from a position**
+
+```js
+var colors = ["red", "blue", "green", "yellow", "pink", "black"];
+var removed = colors.splice(3);
+
+console.log(colors);      // ["red", "blue", "green"]
+console.log(removed);     // ["yellow", "pink", "black"]
+```
+
+This removes everything starting from index 3. The original array is shortened, and the removed items are returned.
+
+**Example 2: Remove a few items from a position**
+
+```js
+var colors = ["red", "blue", "green", "yellow", "pink", "black"];
+var removed = colors.splice(2, 3);
+
+console.log(colors);      // ["red", "blue", "black"]
+console.log(removed);     // ["green", "yellow", "pink"]
+```
+
+This removes 3 items starting from index 2. The rest stay in the original array.
+
+## `slice`
+
+`slice` lets you copy part of an array without changing the original. It creates a new array.
+
+**Example: Copy part of an array**
+
+```js
+var fruits = ["apple", "banana", "cherry", "date", "fig"];
+var someFruits = fruits.slice(1, 4);
+
+console.log(fruits);      // ["apple", "banana", "cherry", "date", "fig"]
+console.log(someFruits);  // ["banana", "cherry", "date"]
+```
+
+This copies items from index 1 up to, but not including, index 4.
+
+:::info 
+
+The main difference between `splice` and `slice` is that `splice` changes the original array, but `slice` does not. Use `slice` when you want to keep the original unchanged.
+
+:::
+
+
+## `filter`
+
+`filter` lets you pick items from an array that meet a condition. It returns a new array.
+
+```js
+var array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+console.log(array.filter(
+  function (value) {
+    return value > 4;     // [5, 6, 7, 8, 9]
+  }
+))
+
+console.log(array);       // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+This keeps the original array the same and gives a filtered one with values greater than 4.
+
+
+## `map`
+
+`map` lets you change each item in an array and gives you a new array with the results.
+
+```js
+var array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+console.log(array.map(
+  function (value) {
+    return value * 2;     // [2, 4, 6, 8, 10, 12, 14, 16, 18]
+  }
+))
+
+console.log(array);       // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+In the example above, it multiplies each value by 2 and keeps the original array unchanged.
+
+
+## `reverse`
+
+`reverse` flips the order of items in an array and changes the original array.
+
+```js
+var array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+console.log(array.reverse())    // [9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+console.log(array);             // [9, 8, 7, 6, 5, 4, 3, 2, 1]
+```
+
+This is useful when you want to work with the same array in the opposite order.
+
+
+## `concat`
+
+`concat` joins two or more arrays into a new one without changing the originals.
+
+```js
+var array = [1, 2, 3, 4, 5];
+var array2 = ['cherry', 'apple', 'orange'];
+
+console.log(array.concat(array2))   // [1, 2, 3, 4, 5, "cherry", "apple", "orange"]
+```
+
+The original arrays stay the same, and the combined version comes back as a new array.
+
+
+## `join`
+
+`join` combines all items in an array into a string. You can choose what to put between items.
+
+```js
+var array = [1, 2, 3];
+var array2 = ['cherry', 'apple', 'orange'];
+
+console.log(array.join(array2))    // "1cherry,apple,orange2cherry,apple,orange3"
+```
+
+In the example above, it turns each number into a string and puts the full `array2` string between them.
+
+
+## `reduce`
+
+`reduce` goes through an array and combines items into a single value.
+
+```js
+var array = [1, 2, 3, 4, 5];
+
+console.log(array.reduce(
+  function(total, value) {
+    return total + value;     // 15
+  }
+))
+```
+
+
