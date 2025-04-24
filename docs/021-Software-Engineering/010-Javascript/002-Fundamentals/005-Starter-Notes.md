@@ -106,13 +106,75 @@ JavaScript has evolved from ES5 to modern versions, starting with ES6 in 2015. F
 ![](/img/docs/12072024-js-releases.png)
 
 
+## Transpiling to ES5 
+
+During development, you can use the latest features in JavaScript, such as ES6+, by testing in modern browsers like Google Chrome. However, in production, you need to transpile your code to ES5 using tools like **Babel** to ensure compatibility with older browsers.
+
+- **ES5** is supported in all browsers, for broad compatibility.
+- **ES6+** is supported in **most modern browsers** but may not work in older versions.
+
+**Babel** is a tool that converts ES6+ code into ES5, which ensures your code runs across a wide range of browsers.
+
+## Javascript Playground 
+
+Below are some online tools where you can play around Javascript without the need to install any software:
+
+- [JS Bin](https://jsbin.com/)
+- [Plunker](https://plnkr.co/)
+
 ## Inline and External scripts
 
-An inline script is the Javascript code that is embedded another HTML file. To separate the website conten from the JavaScript logic, we can use external Javascript files and link them to the HTML file like this:
+An inline script is the Javascript code that is embedded another HTML file. 
 
-```bash
-<script src="/path/to/name-of-script.js"></script>
+```html
+<!doctype html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="lib/style.css">
+  </head>
+
+  <body>
+    <h1>Hello Plunker!</h1>
+    <script>
+      console.log("Hello from the other side")
+    </script>
+  </body>
+</html>
+ 
 ```
+To separate the JavaScript logic from the website content, we can use external Javascript files and link them to the HTML file like this:
+
+```html
+<!doctype html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="lib/style.css">
+  </head>
+
+  <body>
+    <h1>Hello Plunker!</h1>
+    <script src="/path/to/name-of-script.js"></script>
+  </body>
+</html>
+```
+
+The Javascript code is separated from the HTML code:
+
+```js title="name-of-script.js"
+console.log("Hello from the other side")
+```
+
+This is also useful if you want to link multiple Javscript code which does different things:
+
+```html
+<script src="/path/to/name-of-script.js"></script> 
+<script src="/path/to/some-other-script.js"></script> 
+<script src="/path/to/another-script.js"></script> 
+<script src="/path/to/could-be-useful-script.js"></script> 
+```
+
 
 ## Data Types 
 
@@ -177,7 +239,7 @@ Javscript will completely ignore the comments during execution.
   - **Multi-line comments**: Use `/* */` to comment multiple lines of code.
 
 
-## Activating Strict Mode
+## Strict Mode
 
 Strict mode in JavaScript helps catch common coding mistakes and improves performance by enforcing stricter parsing and error handling. 
 
@@ -201,19 +263,3 @@ myFunction();
 
 Strict mode helps avoid issues like using undeclared variables or assigning values to read-only properties.
 
-
-## Transpiling to ES5 
-
-During development, you can use the latest features in JavaScript, such as ES6+, by testing in modern browsers like Google Chrome. However, in production, you need to transpile your code to ES5 using tools like **Babel** to ensure compatibility with older browsers.
-
-- **ES5** is supported in all browsers, for broad compatibility.
-- **ES6+** is supported in **most modern browsers** but may not work in older versions.
-
-**Babel** is a tool that converts ES6+ code into ES5, which ensures your code runs across a wide range of browsers.
-
-## Javascript Playground 
-
-Below are some online tools where you can play around Javascript without the need to install any software:
-
-- [JS Bin](https://jsbin.com/)
-- [Plunker](https://plnkr.co/)
