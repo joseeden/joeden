@@ -1,5 +1,5 @@
 ---
-title: "Coding Challenges"
+title: "Challenge Set 1"
 description: "Coding Challenges in Javascript"
 tags: 
 - Computer Science
@@ -786,3 +786,10 @@ console.log(`Amplitude: ${amp.amplitude}`);
 
 
 ## Practice 09
+
+
+
+
+
+
+

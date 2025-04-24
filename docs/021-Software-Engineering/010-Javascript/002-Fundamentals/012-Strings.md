@@ -1,6 +1,6 @@
 ---
-title: "Strings and Conditionals"
-description: "Strings and Conditionals"
+title: "Strings"
+description: "Strings"
 tags: 
 - Computer Science
 - Application Development
@@ -13,7 +13,7 @@ last_update:
 ---
 
 
-## Strings in JavaScript  
+## Overview
 
 Strings are used to store text in JavaScript and are enclosed in single (`'`), double (`"`), or backticks (`` ` ``).  
 
@@ -51,19 +51,130 @@ How are you doing?`;
 console.log(text2);
 ```
 
-## If-Else  
+## `length` 
 
-The `if-else` statement in JavaScript allows you to execute different blocks of code based on a condition.  
+To get how many characters a string has, you can use `.length`.
+
+- Every string in JavaScript has a `.length`  
+- It gives the total number of characters  
+
+This makes it easy to count what you typed.
+
+```javascript
+var name = "Sam";
+console.log(name.length);  // Output: 3
+```
+
+##  `slice`
+
+The `slice` function helps you get parts of a string, like grabbing just the first few letters from a name.
+
+- You choose where to start
+- You choose where to stop (but not including that position)
+- Counting starts from 0
+
+Always follow this pattern:
 
 ```js
-let age = 18;
-
-if (age >= 18) {
-  console.log("You are an adult.");
-} else {
-  console.log("You are a minor.");
-}
+variable.slice(start, end)
 ```
+
+
+### Getting the First Character 
+
+To get the first character: 
+
+```js
+var name = "Archimedes";
+var firstLetter = name.slice(0, 1);
+console.log(firstLetter);
+```
+
+We count from position 0 and stop before position 1, so "A" is at index 0. 
+
+### Getting the Last Character 
+
+To get the last letter, count the positions properly.
+
+```js
+var name = "Archimedes";
+var lastLetter = name.slice(9, 10);
+console.log(lastLetter);
+```
+
+- Output: `s`
+- The sixth letter is at index 5
+
+Another way to write this:
+
+```js
+var name = "Archimedes";
+var lastLetter = name.slice(-1);
+console.log(lastLetter);
+```
+
+`-1` is always the last index, regardless of the length of the string.
+
+
+### Getting a Range of Characters
+
+You can also grab more than one character at a time.
+
+```js
+var name = "Archimedes";
+var part = name.slice(0, 3);
+console.log(part);
+```
+
+- Output: `Arc`
+- Goes from 0 to 3 (but not including 3)
+
+Quick trick: subtract the two numbers. 3 - 0 = 3 characters.
+
+
+
+## Changing Cases 
+
+### Uppercase and Lowercase 
+
+You can turn a string into all uppercase or all lowercase letters using built-in methods.
+
+- `.toUpperCase()` - Change all letters to uppercase  
+- `.toLowerCase()` - Change all letters to lowercase  
+
+```javascript
+var name = "harry";
+console.log(name.toUpperCase()); // Output: "HARRY"
+```
+
+If you want to update the variable:
+
+```javascript
+name = name.toUpperCase();
+console.log(name);              // Output: "HARRY"
+```
+
+And to go back to lowercase:
+
+```javascript
+name = name.toLowerCase();
+console.log(name);              // Output: "harry"
+```
+
+Changing the case like this is useful when you're handling input, especially if users type in names or emails in different styles.
+
+### Capitalize Only the First Letter
+
+Sometimes, you want only the first letter to be uppercase, like for names. 
+
+```javascript
+var userInput = prompt("What is your name?");
+var cleanName = userInput.slice(0).toUpperCase() + userInput.slice(1).toLowerCase();
+alert("Hello, " + cleanName);
+```
+
+If a user types "joHn", this will fix it to say “Hello, John”. This makes your output look better and more consistent, no matter what the user types.
+
 
 ## Type Conversion  
 
@@ -137,8 +248,7 @@ It is a bad practice to rely on type coercion in JavaScript because it can lead 
 
 ## Truthy and Falsy Values 
 
-In JavaScript, **truthy** and **falsy** values are important for type coercion.
-**Falsy values** convert to `false` when coerced to a boolean. These include:
+In JavaScript, **truthy** and **falsy** values are important for type coercion. **Falsy values** convert to `false` when coerced to a boolean. These include:
 
   1. `0`
   2. `""` (empty string)
@@ -155,73 +265,3 @@ console.log(Boolean(`James`)); // true
 console.log(Boolean({}));      // true
 ```
 
-## Implicit Coercion in Conditions
-
-In JavaScript, type coercion happens automatically, such as in `if` statements:
-
-```js
-let money = 0;
-if (money) {
-  console.log(`Don't spend it all!`);
-} else {
-  console.log(`You should get a job.`); // This runs because 0 is falsy
-}
-```
-
-Be cautious when checking if something is "defined" because falsy values like `0` might cause issues. Here, `height` is `undefined`, a falsy value, so the else block runs.
-
-```js
-let height;
-if (height) {
-  console.log(`Yay! Height is defined.`);
-} else {
-  console.log(`Height is undefined.`);
-}
-```
-
-However, this can lead to issues. For instance, if height is set to `0`, it’s a valid number but still falsy:
-
-```js
-let height = 0;
-if (height) {
-  console.log(`Height is defined.`);
-} else {
-  console.log(`Height is undefined.`); // This also runs because 0 is falsy
-} 
-```
-
-## The `switch` statement
-
-The `switch` statement evaluates an expression and compares it with multiple cases. It executes the code block corresponding to the first matching case and skips the rest.
-
-```js
-const day = prompt("What day is it today?");
-
-switch (day) {
-  case 'Monday':
-    console.log(`Attend the sprint retroactive today.`);
-    break;
-  case 'Tuesday':
-    console.log(`Work on the feature requests today.`);
-    break;
-  case 'Wednesday':
-    console.log(`Meeting with the Vendor in the afternoon.`);
-    break;
-  case 'Thursday':
-    console.log(`Test the changes in Dev environment`);
-    break;
-  case 'Friday':
-    console.log(`Update the team`);
-    break;
-  default:
-    console.log("Invalid day");
-}
-```
-
-The `prompt` function asks the user to input the day, and depending on the value, the code will log the related task for that day. If the user inputs a day that's not listed, it will output "Invalid day".
-
-:::info 
-
-The `switch` statement is case-sensitive, if the user enters "monday" (lowercase) instead of "Monday" (capitalized), the code will default to the `default` case and log "Invalid day".
-
-:::
