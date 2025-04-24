@@ -141,7 +141,6 @@ console.log(friends); // ["John", "Michael", "Steven", "Peter", "Jay"]
 ```
 
 
-
 ## Removing Elements  
 
 Methods for removing elements from an array.
@@ -168,7 +167,6 @@ console.log(friends); // ["Michael", "Steven", "Peter"]
 Methods to check for elements in an array.
 
 - `indexOf()` 
-
   – Returns the position of an element.
   - Returns `-1` if the element is not found.
 
@@ -179,6 +177,8 @@ Methods to check for elements in an array.
 Example:
 
 ```javascript
+const friends = ["Michael", "Steven", "Peter", "Jay", "Bob"]
+
 console.log(friends.indexOf("Steven"));   // 1
 console.log(friends.indexOf("Bob"));      // -1
 
@@ -206,3 +206,31 @@ if (friends.includes("Peter")) {
   console.log("You have a friend called Peter.");
 }
 ```
+
+## Looping with `forEach`  
+
+`forEach` is a simple way to loop through each item in an array and do something with it.
+
+- Runs a function once for each item  
+- Does not return a new array  
+- Works only on arrays  
+
+Example:
+
+```javascript
+var fruits = ["apple", "banana", "cherry"];
+
+fruits.forEach(function(fruit) {
+  console.log(fruit);
+});
+```
+
+Output:
+
+```bash
+"apple"
+"banana"
+"cherry" 
+```
+
+In the example above, `forEach` runs the function once for each fruit. Each time, `fruit` holds the current item in the array, and `console.log` prints it. This is useful when you want to do something for every item in an array without changing the array itself.
