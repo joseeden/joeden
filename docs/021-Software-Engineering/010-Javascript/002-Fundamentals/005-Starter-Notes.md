@@ -61,7 +61,7 @@ JavaScript automatically manages memory allocation and deallocation through a ga
 
 ## First-class Functions  
 
-In JavaScript, functions are treated as first-class citizens, meaning they can be assigned to variables, passed as arguments, and returned from other functions. This allows for high flexibility in programming.  
+In JavaScript, functions are treated as *first-class citizens*, meaning they can be assigned to variables, passed as arguments, and returned from other functions. This allows for high flexibility in programming.  
 
 ```javascript
 function greet(name) {
@@ -74,6 +74,9 @@ function callFunction(fn, name) {
 
 callFunction(greet, 'Alice'); // Output: Hello, Alice!
 ```
+
+For more information, please see [Functions.](/docs/021-Software-Engineering/010-Javascript/002-Fundamentals/014-Functions.md)
+
 
 ## Non-Blocking Event Loop  
 
@@ -207,3 +210,10 @@ During development, you can use the latest features in JavaScript, such as ES6+,
 - **ES6+** is supported in **most modern browsers** but may not work in older versions.
 
 **Babel** is a tool that converts ES6+ code into ES5, which ensures your code runs across a wide range of browsers.
+
+## Javascript Playground 
+
+Below are some online tools where you can play around Javascript without the need to install any software:
+
+- [JS Bin](https://jsbin.com/)
+- [Plunker](https://plnkr.co/)
