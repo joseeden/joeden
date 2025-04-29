@@ -7,7 +7,7 @@ tags:
 - Software Development
 - Frontend Development
 - Javascript
-sidebar_position: 22
+sidebar_position: 32
 last_update:
   date: 12/26/2020
 ---
@@ -20,7 +20,7 @@ When a web page loads, the browser creates the Document Object Model (DOM).
 - It lets JavaScript access and modify HTML elements  
 - The `document` object is how JavaScript interacts with the DOM  
 
-For more information, please see [Document Object Model (DOM).](/docs/021-Software-Engineering/010-Javascript/002-Fundamentals/021-DOM.md)
+For more information, please see [Document Object Model (DOM).](/docs/021-Software-Engineering/010-Javascript/002-Fundamentals/031-DOM.md)
 
 ## Selecting Elements 
 

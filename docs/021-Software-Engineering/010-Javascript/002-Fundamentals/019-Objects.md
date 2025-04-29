@@ -7,7 +7,7 @@ tags:
 - Software Development
 - Frontend Development
 - Javascript
-sidebar_position: 18
+sidebar_position: 19
 last_update:
   date: 12/21/2020
 ---
@@ -15,25 +15,90 @@ last_update:
 
 ## Overview
 
-As a recall, arrays are **ordered** collections, meaning elements are accessed by their position (index). We cannot assign names to individual values—only reference them by their index.  
+As a recap, arrays are **ordered** collections, meaning elements are accessed by their position (index). We cannot assign names to individual values—only reference them by their index.  
 
 Objects solve the naming problem by using **key-value pairs** instead of relying on order.  
 
 - Instead of square brackets (`[]`), objects use **curly braces `{}`**.  
-- Each property (key) is followed by a colon (`:`) and corresponding value.  
+- Each property is followed by a colon (`:`) and corresponding value.  
 - Properties are separated by commas (`,`).  
 
-Example:
+## Creating an Object
+
+### Curly Braces 
+
+To create an object, use curly braces and add the key-value pairs inside.
 
 ```js
 const Lily = {
   firstName: 'Lily',
   lastName: 'Page',
-  age: 2037 - 1991,
   job: 'teacher',
-  friends: ['Michael', 'Peter', 'Steven']
 };
+
+console.log(Lily);
 ```
+
+Output:
+
+```js
+[object Object] {
+  firstName: "Lily",
+  job: "teacher",
+  lastName: "Page"
+} 
+```
+
+
+### Object Constructor 
+
+You can also create an object using the `new Object()` syntax. This is another valid method aside from using `{}`.
+
+
+```js
+var Lily = new Object();
+
+Lily.firstName = 'Lily';
+Lily.lastName = 'Page';
+Lily.job = 'teacher';
+
+console.log(Lily);
+```
+
+This builds the object step by step by adding each property after creating the object. 
+
+:::info 
+
+Even though both methods work, using curly braces (`{}`) is shorter and easier to read in most cases. 
+
+:::
+
+
+### `Object.create`
+
+We can make a new object based on an existing one. This lets us reuse properties and keep things clean.
+
+- `Object.create()` makes a new object
+- The new object inherits from the one we pass in
+
+Here’s an example:
+
+```js
+const person = {
+  greet: function () {
+    console.log('Hello!'); 
+  }
+};
+
+const Lily = Object.create(person);
+Lily.firstName = 'Lily';
+Lily.lastName = 'Page';
+
+Lily.greet();                 // Hello!
+console.log(Lily.firstName);  // Lily
+```
+
+This creates a new object `Lily` that has access to `person`’s `greet` method. It's a simple way to share behavior between objects.
 
 ## Objects vs. Arrays  
 
