@@ -24,9 +24,9 @@ When I clicked **Analyze your costs in Cost Explorer**, I don't see any data.
 
 ![](/img/docs/1030-aws-bill-cost-and-usage-report-no-data.png)
 
-Cause: I had credits applied for my previous months and the credits is being added to the graph, which then cancels out the charges.
+**Cause:** I had credits applied for my previous months and the credits is being added to the graph, which then cancels out the charges.
 
-Solution: Filter our the credits to display only the raw costs. 
+**Solution:** Filter our the credits to display only the raw costs. 
 
 ![](/img/docs/1030-aws-bill-cost-and-usage-report-filter-exclude-credits.png)
 
