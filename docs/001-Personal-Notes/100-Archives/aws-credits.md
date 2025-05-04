@@ -8,4 +8,4 @@ last_update:
   date: 2/27/2022
 ---
 
-Your AWS Credits are stored in Hard Drive > Personals > Notepads.
+The AWS Credits are stored in Hard Drive > Personals > Notepads.

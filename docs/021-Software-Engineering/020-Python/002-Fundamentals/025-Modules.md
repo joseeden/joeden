@@ -119,7 +119,7 @@ A module is just a single Python file. Python has built-in modules, but you can 
 
 :::info 
 
-Get the script here: [Sample python scripts.](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/020-Python/001-Basic-Projects)
+Get the script here: [Sample python scripts.](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/020-Python/000-Projects/001-Basic-Scripts)
 
 :::
 
@@ -135,7 +135,7 @@ This section guides you through creating a Python module for testing network con
 
 2. **Create the `custom_network_module.py` Module**
 
-    - Code can be found here: [Sample python scripts.](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/020-Python/001-Basic-Projects)
+    - Code can be found here: [Sample python scripts.](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/020-Python/000-Projects/001-Basic-Scripts)
 
     - **`check_localhost`**: Verifies if localhost is correctly configured by checking if the IP is `127.0.0.1`.
 
@@ -146,7 +146,7 @@ This section guides you through creating a Python module for testing network con
 3. **This module can not be used by another script.**
 
     - Create `check-disk-cpu-usage.py` and use the `custom_network_module` module.
-    - Code can be found here: [Sample python scripts.](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/020-Python/001-Basic-Projects)
+    - Code can be found here: [Sample python scripts.](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/020-Python/000-Projects/001-Basic-Scripts)
     - Run code:
 
         ```python
