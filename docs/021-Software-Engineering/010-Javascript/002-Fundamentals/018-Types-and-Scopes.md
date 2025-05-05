@@ -125,6 +125,7 @@ Global scope means a variable can be accessed anywhere in your code.
 
 - Declared outside all functions  
 - Can be used in any part of the script  
+- Also called **window** or **root scope**
 
 Global variables are useful but should be used carefully to avoid unexpected changes from different parts of the code.
 
@@ -145,6 +146,7 @@ Local scope means a variable is only accessible inside the function or block whe
 
 - Declared inside a function or block  
 - Cannot be used outside that function or block  
+- Also called a **child scope**
 
 Local variables help keep things clean and safe by hiding them from the rest of the code. Use them when the variable is only needed in one place.
 
