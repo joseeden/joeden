@@ -80,3 +80,12 @@ There are websites that offer auto-captioning:
 
 These often require a free account or have limits unless you subscribe.
 
+## (Optional) Transcribe All MP4s in a Folder 
+
+If you have multiple videos that you want to transcribe, you can use a script:
+
+```bash
+for f in *.mp4; do
+  whisper "$f" --language English --task transcribe --output_format srt
+done
+```
