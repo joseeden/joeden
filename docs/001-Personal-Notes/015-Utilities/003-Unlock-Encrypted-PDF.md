@@ -29,7 +29,7 @@ However, you can determine some details from the `cat` output:
 
 ## Cracking the Password 
 
-:::warn
+:::warning
 
 **Legal note**: Only do this if you own the document or have rights to access it.
 
@@ -65,7 +65,7 @@ There are ways to unlock or remove a password from an encrypted PDF, bbut it dep
     Websites like `smallpdf.com/unlock-pdf` or `ilovepdf.com/unlock_pdf` allow you to upload and unlock simple password-protected PDFs.
 
 
-    :::warn 
+    :::warning 
 
     Do not upload confidential or sensitive files to random online services — you lose control of your data.
 

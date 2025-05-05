@@ -1,7 +1,7 @@
 ---
 title: "Visual Studio Code Extensions"
-sidebar_position: 21
 description: "Visual Studio Code Extensions"
+sidebar_position: 21
 tags: 
 - Development
 - Terminal

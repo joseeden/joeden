@@ -1,8 +1,13 @@
 ---
 title: "IDE: Visual Studio Code"
-sidebar_position: 20
 description: "Setting up VS Code for Development"
-tags: [Development, Terminal, IDE, Visual Studio Code, DevOps]
+sidebar_position: 20
+tags: 
+- Development
+- Terminal
+- IDE
+- Visual Studio Code
+- DevOps
 last_update:
   date: 11/22/2023
 ---

@@ -1,8 +1,13 @@
 ---
 title: "Terminal"
-sidebar_position: 5
 description: "Notes on Terminal and CLI Tools"
-tags: [Development, Terminal, IDE, Visual Studio Code, DevOps]
+sidebar_position: 5
+tags: 
+- Development
+- Terminal
+- IDE
+- Visual Studio Code
+- DevOps
 last_update:
   date: 11/22/2023
 ---

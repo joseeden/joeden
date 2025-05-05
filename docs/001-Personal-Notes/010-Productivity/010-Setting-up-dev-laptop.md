@@ -1,11 +1,11 @@
 ---
 title: "Setting up New Development Laptop"
+description: "Steps to setup development laptop for new work projects."
+sidebar_position: 10
 tags: 
 - DevOps
 - Personal Notes
 - Development
-description: "Steps to setup development laptop for new work projects."
-sidebar_position: 10
 last_update:
   date: 11/22/2023
 ---
