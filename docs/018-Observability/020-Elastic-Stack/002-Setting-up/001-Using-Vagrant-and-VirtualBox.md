@@ -22,8 +22,8 @@ This lab demonstrates how to set up the Elastic Stack using Vagrant and VirtualB
 
 ## Pre-requisites 
 
-- [Install VirtualBox](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-VirtualBox.md#install-virtualbox)
-- [Install Vagrant on Windows](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-VirtualBox.md#install-vagrant-on-windows)
+- [Install VirtualBox](/docs/001-Personal-Notes/050-Project-Pre-requisites/011-VirtualBox.md#install-virtualbox)
+- [Install Vagrant on Windows](/docs/001-Personal-Notes/050-Project-Pre-requisites/011-VirtualBox.md#install-vagrant-on-windows)
 - [Install jq on Elasticsearch node](https://www.scaler.com/topics/linux-jq/)
 
 ## Setup the Virtual Machines 

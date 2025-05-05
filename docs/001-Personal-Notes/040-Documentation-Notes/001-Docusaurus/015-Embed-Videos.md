@@ -49,7 +49,7 @@ import ReactPlayerWrapper from '@site/src/components/documentation/ReactPlayerWr
 
 2. Import it at the top of your markdown file (`.md` or `.mdx`).
 
-    Add the line below the [Front Matter](/docs/001-Personal-Notes/004-Documentation-Notes/001-Docusaurus/004-Front-Matter.md) section, like this:
+    Add the line below the [Front Matter](/docs/001-Personal-Notes/040-Documentation-Notes/001-Docusaurus/004-Front-Matter.md) section, like this:
 
 
     ```bash

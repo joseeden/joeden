@@ -480,4 +480,4 @@ Sample code:
 
 You can embed videos in Docusaurus pages using standard HTML tags or third-party tools like `react-player`.
 
-For more information, please see [Embed Videos.](/docs/001-Personal-Notes/004-Documentation-Notes/001-Docusaurus/015-Embed-Videos.md)
+For more information, please see [Embed Videos.](/docs/001-Personal-Notes/040-Documentation-Notes/001-Docusaurus/015-Embed-Videos.md)

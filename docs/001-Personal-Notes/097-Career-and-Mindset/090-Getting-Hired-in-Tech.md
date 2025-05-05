@@ -4,7 +4,7 @@ description: "Getting Hired in Big Tech"
 tags: 
 - Personal Notes
 - Development
-sidebar_position: 60
+sidebar_position: 90
 last_update:
   date: 7/26/2019
 ---

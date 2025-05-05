@@ -21,9 +21,9 @@ This lab covers the offline installation of Elasticsearch. This is suited for pr
 
 ## Pre-requisites 
 
-- [Install VirtualBox](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-VirtualBox.md#install-virtualbox)
-- [Install Vagrant on Windows](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-VirtualBox.md#install-vagrant-on-windows)
-- [Setup fileshare on the Virtual Machine](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-VirtualBox.md#setup-fileshare)
+- [Install VirtualBox](/docs/001-Personal-Notes/050-Project-Pre-requisites/011-VirtualBox.md#install-virtualbox)
+- [Install Vagrant on Windows](/docs/001-Personal-Notes/050-Project-Pre-requisites/011-VirtualBox.md#install-vagrant-on-windows)
+- [Setup fileshare on the Virtual Machine](/docs/001-Personal-Notes/050-Project-Pre-requisites/011-VirtualBox.md#setup-fileshare)
 - [Install jq on Elasticsearch node](https://www.scaler.com/topics/linux-jq/)
 
 
@@ -83,7 +83,7 @@ If you are using cloud compute instances, you can skip this section.
     sudo dpkg -i elasticsearch-8.17.0-amd64.deb 
     ```
 
-2. Copy the files to the virtual machine. [You can map local folder to a fileshare in you VM](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-VirtualBox.md#setup-fileshare).
+2. Copy the files to the virtual machine. [You can map local folder to a fileshare in you VM](/docs/001-Personal-Notes/050-Project-Pre-requisites/011-VirtualBox.md#setup-fileshare).
 
 ## Install Elasticsearch 8.17 
 

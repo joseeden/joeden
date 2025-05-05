@@ -46,7 +46,7 @@ Setup details:
 ## Pre-requisites 
 
 - [Create the nodes in VirtualBox](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/001-Using-Vagrant-and-VirtualBox.md#setup-the-virtual-machines)
-- [Setup fileshare on the Virtual Machines](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-VirtualBox.md#setup-fileshare)
+- [Setup fileshare on the Virtual Machines](/docs/001-Personal-Notes/050-Project-Pre-requisites/011-VirtualBox.md#setup-fileshare)
 - [Install Elasticsearch on node 1](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/001-Using-Vagrant-and-VirtualBox.md#install-elasticsearch-817)
 - [Install Logstash on node 2](/docs/018-Observability/020-Elastic-Stack/006-Logstash/001-Installing-Logstash.md)
 - [Configure SSL on Elasticsearch](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/003-SSL-Configuration.md)
@@ -370,7 +370,7 @@ On a computer with internet access:
 
 4. When prompted to sign up, click **No thanks, just start my download.**
 
-5. Copy the files to a [local folder mapped to a fileshare in you VM](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-VirtualBox.md#setup-fileshare).
+5. Copy the files to a [local folder mapped to a fileshare in you VM](/docs/001-Personal-Notes/050-Project-Pre-requisites/011-VirtualBox.md#setup-fileshare).
 
     :::info 
 

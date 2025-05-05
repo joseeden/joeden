@@ -100,7 +100,7 @@ In a production enterprise setup, Hadoop nodes are typically placed in a private
 
     For more information, please see [Hadoop downloads.](https://www.apache.org/dyn/closer.cgi/hadoop/common/)
 
-2. Copy the files to the virtual machine. [If you are using VirtualBox in your computer, you can map local folder to a fileshare in you VM](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-VirtualBox.md#setup-fileshare).
+2. Copy the files to the virtual machine. [If you are using VirtualBox in your computer, you can map local folder to a fileshare in you VM](/docs/001-Personal-Notes/050-Project-Pre-requisites/011-VirtualBox.md#setup-fileshare).
 
 3. Login to your VM and create the `hadoop` user and add it to the sudoers group.
 
@@ -265,7 +265,7 @@ A sample log file will be used to simulate big data for this project. This file 
 
 Download the file here: [hadoop-apache-access.log](@site/assets/elastic-stack/sample-logs/hadoop-apache-access.log)
 
-After you download the log file, you can transfer the file to your node. [If you are using VirtualBox in your computer, you can map local folder to a fileshare in you VM](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-VirtualBox.md#setup-fileshare).
+After you download the log file, you can transfer the file to your node. [If you are using VirtualBox in your computer, you can map local folder to a fileshare in you VM](/docs/001-Personal-Notes/050-Project-Pre-requisites/011-VirtualBox.md#setup-fileshare).
 
 
 ## MapReduce Project 
@@ -377,7 +377,7 @@ Github repository: [test-maven-project](https://github.com/joseeden/test-maven-p
     [INFO] ------------------------------------------------------------------------
     ```
 
-5. Copy the JAR file onto the Hadoop node. [If you are using VirtualBox in your computer, you can map local folder to a fileshare in you VM](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-VirtualBox.md#setup-fileshare).
+5. Copy the JAR file onto the Hadoop node. [If you are using VirtualBox in your computer, you can map local folder to a fileshare in you VM](/docs/001-Personal-Notes/050-Project-Pre-requisites/011-VirtualBox.md#setup-fileshare).
 
 
 ## Create the Elasticsearch Index 

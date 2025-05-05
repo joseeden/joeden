@@ -93,7 +93,7 @@ Offline installation is useful in pproduction environments with restricted inter
 1. Get the Kibana package (e.g., `.tar.gz` or `.deb`) from the [official Elasticsearch downloads page](https://www.elastic.co/downloads/kibana) on a system with internet access.  
 
 2. Copy the downloaded package to the offline system using a USB drive or other file transfer methods. 
-    [If you are using a VirtualBox, you can map local folder to a fileshare in you VM](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-VirtualBox.md#setup-fileshare).
+    [If you are using a VirtualBox, you can map local folder to a fileshare in you VM](/docs/001-Personal-Notes/050-Project-Pre-requisites/011-VirtualBox.md#setup-fileshare).
  
 
 3. Install Kibana.

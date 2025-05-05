@@ -179,7 +179,7 @@ On a computer with internet access:
     postgresql-client-common=267.pgdg22.04+1
     ```
 
-7. Copy the files to the virtual machine. [You can map local folder to a fileshare in you VM](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-VirtualBox.md#setup-fileshare).
+7. Copy the files to the virtual machine. [You can map local folder to a fileshare in you VM](/docs/001-Personal-Notes/050-Project-Pre-requisites/011-VirtualBox.md#setup-fileshare).
 
 
 
@@ -438,7 +438,7 @@ If you used the default values during the installation steps, you can simply hit
 
 :::info 
 
-If you're running PostgreSQL on a virtual machine in VirtualBox, you will need to [enable port forwarding](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-VirtualBox.md#enable-port-forwarding) to access PostgreSQL from your local computer.
+If you're running PostgreSQL on a virtual machine in VirtualBox, you will need to [enable port forwarding](/docs/001-Personal-Notes/050-Project-Pre-requisites/011-VirtualBox.md#enable-port-forwarding) to access PostgreSQL from your local computer.
 
 :::
 

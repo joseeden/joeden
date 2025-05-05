@@ -54,7 +54,7 @@ On a computer with internet access:
     libcrypt1 libgcc-s1 libmecab2 libstdc++6 gcc-12-base
     ```
 
-5. Copy the files to the [local folder mapped to a fileshare in you VM](/docs/001-Personal-Notes/005-Project-Pre-requisites/011-VirtualBox.md#setup-fileshare).
+5. Copy the files to the [local folder mapped to a fileshare in you VM](/docs/001-Personal-Notes/050-Project-Pre-requisites/011-VirtualBox.md#setup-fileshare).
 
 
 ## Install on Air-gapped Server

@@ -76,7 +76,7 @@ Since Google Drive doesn’t allow embedding HTML files, you can use a service t
 - Drag and drop your HTML files
 - Get a public URL to use in your iframe
 
-To host a static site in Netlify, please see [Hosting Static Sites.](/docs/001-Personal-Notes/003-Developer-Notes/050-Hosting-Static-Sites.md)
+To host a static site in Netlify, please see [Hosting Static Sites.](/docs/001-Personal-Notes/010-Productivity/050-Hosting-Static-Sites.md)
 
 Once you have the URL for the site, you can now add it to `src` in your markdown (`.mdx`) page:
 
