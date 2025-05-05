@@ -40,9 +40,102 @@ Managing software differs based on its end users.
     - Requires structured support for bug fixes, requests, and updates.
 
 
+## Change Management Plan 
+
+A Change Management Plan ensures that all project changes are reviewed, approved, and tracked in a structured way. Without it, changes can cause delays, confusion, and quality issues.
+
+* All changes must be proposed, reviewed, tested, and approved formally
+* A lack of process often leads to project delays and team frustration
+* Change requests must be formally submitted (e.g., via a ticket system)
+* Every request is evaluated for business need, feasibility, and effort
+* Cost estimates (time and money) must be approved
+* Justifying a change is separate from getting it approved
+
+**Change Control Board (CCB)**
+
+* Reviews all viable changes in scheduled meetings
+* Decides whether changes should be tested, documented, and implemented
+* Reestablishes baselines and metrics after approval
+
+**If approved:**
+
+* The security architect updates the project plan
+* Applications must be stored and managed centrally
+* Security controls must remain enforced
+* Developers must use controlled code libraries
+* All updates must be made to source code—not live production code
+
+**Plan Components:**
+
+* Track and log every change request
+* Analyze and document the impact of each change
+* Approve or reject changes formally
+* Update project documents and plans for all approved changes
+* Inform all stakeholders about any changes
+
+## Sample Change Control Procedure 
+
+Below is a sample procedure that outlines how changes should be handled in a controlled and organized way:
+
+1. **Submit Change Request**
+
+   - Submit a formal ticket in the Change Management System
+
+2. **Analyze the Request**
+
+   - Evaluate need, feasibility, and potential impact
+   - Develop a rough implementation plan
+   - Estimate cost (time and resources)
+   - Review potential risks, including security impacts
+
+3. **Document Analysis**
+
+   - Create a detailed report
+   - Report should contain findings and recommendations
+
+4. **Submit to Change Control Board (CCB)**
+
+   - Present request and findings for review and approval
+
+5. **Plan Implementation** *(if approved)*
+
+   - Finalize the change strategy based on feedback
+   - Consider the approach and resource allocation
+
+6. **Make the Change**
+
+   - Modify code or adjust product functionality as needed
+
+7. **Link Code Changes to Request**
+
+   - Associate code commits with the original change ticket 
+   - This ensures traceability
+
+8. **Test the Change**
+
+   - Submit for quality assurance and begin testing
+
+9. **Repeat Testing as Needed**
+
+   - Continue unit and integration tests until standards are met
+   - Ensure *Separation of Duties* (developers should not test their own changes)
+
+10. **Update Version Number**
+
+    - Assign and record a new version to reflect the change
+
+11. **Report to Management**
+
+    - Summarize outcomes and confirm successful implementation
+
+12. **Establish New Baseline**
+
+    - Set this version as the new reference for future changes
+
+
 ## Change Management Process
 
-Change management ensures controlled and orderly software updates. It consists of three key elements:
+Change management consists of three key elements:
 
 1. Request Control
 2. Change Control

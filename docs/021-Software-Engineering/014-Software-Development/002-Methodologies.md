@@ -93,3 +93,68 @@ Lean software development is based on Lean Manufacturing principles, which are f
 * Optimize the whole
 
 For more information, please see [Lean Principles.](/docs/021-Software-Engineering/014-Software-Development/003-Lean-Principles.md)
+
+
+
+## Documentation 
+
+Documentation helps developers, users, and stakeholders understand, use, and maintain the software effectively.
+
+- **Source Code Library**
+
+  - Stores source code in a secure, centralized repository
+  - Helps with version control, collaboration, and rollback when needed
+
+- **Source Code Documentation**
+
+  - Makes the code easier to read, understand, and maintain
+  - Includes design documents and code comments that explain logic and structure
+
+- **Software Documentation**
+
+  - Explains how the software works and how to use it
+  - Useful for end users, support staff, and new team members
+
+## Constraints
+
+Every software project has limits — commonly in cost, time, usability, and security. These constraints must be balanced carefully.
+
+> *We can make it cheap, quick, usable, or secure—but not all four.*
+
+Given a fixed budget, management usually selects only two priorities to focus on.
+
+- **Technical Debt**
+
+    When speed is prioritized, quality often takes a back seat. This leads to technical debt:
+
+    - "I'll fix it later; I just need to meet this deadline"
+    - Poor or temporary solutions are left in place to save time
+
+- **Management Pressure**
+
+    Often, management pushes for fast delivery:
+
+    - Assumes fixes can be made later after release
+    - May overlook long-term costs of rushed or incomplete features
+    - Can result in unstable or hard-to-maintain systems
+
+## Integrated Product Team
+
+An Integrated Product Team (IPT) brings together people from different disciplines to work toward a shared goal — delivering a complete product efficiently and effectively.
+
+- **IPPD (Integrated Product and Process Development)**
+
+  - Integrates all acquisition and development activities
+  - Collaboratnig to align design, process, and outcomes
+
+- **IPT (Integrated Product Team)**
+
+  - A cross-functional team responsible for specific project deliverables
+  - Encourages shared ownership and accountability
+
+- **DevOps**
+
+  - Collaborative relationship between development and IT operations
+  - Based on Agile principles: integration, communication, and continuous delivery
+  - Involves skilled QA teams and support experts to ensure reliability and speed
+

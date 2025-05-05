@@ -39,7 +39,7 @@ Historically, teams followed these phases in a strict order using the waterfall 
 While the waterfall method is still used, it is being gradually replaced by more adaptive Agile development methods that allow for faster and more efficient software production.
 
 
-## Flexibility of the SDLC
+## Flexibility of SDLC
 
 The software development life cycle (SDLC) offers adaptability to enhance project efficiency.
 
@@ -48,7 +48,7 @@ The software development life cycle (SDLC) offers adaptability to enhance projec
 - Requirements can be gathered for specific aspects
 
 
-## Requirements and Analysis Phase
+## Phase 1: Requirements and Analysis
 
 The requirements and analysis phase focuses on understanding stakeholder needs and defining the software's problems to solve.
 
@@ -67,10 +67,7 @@ After gathering the requirements, the team analyzes the results to determine the
 
 At the end of this phase, the traditional waterfall method recommends producing a **Software Requirement Specification (SRS) document** that outlines the software requirements and scope, ensuring thorough confirmation with stakeholders.
 
-
-## Design and Implementation Phases
-
-### Design
+## Phase 2: Design
 
 The design phase utilizes the SRS document to create the software's architecture.
 
@@ -78,7 +75,7 @@ The design phase utilizes the SRS document to create the software's architecture
 - Produce High-Level Design (HLD) for architecture
 - Create Low-Level Design (LLD) for component details
 
-### Implementation
+## Phase 3: Implementation
 
 The implementation phase involves coding based on HLD and LLD.
 
@@ -88,9 +85,8 @@ The implementation phase involves coding based on HLD and LLD.
 
 At the end of the implementation phase, functional code that implements all of the customer's requirements is ready to be tested.
 
-## Testing, Deployment, and Maintenance Phases
 
-### Testing
+## Phase 4: Testing
 
 The testing phase validates the code from the implementation phase.
 
@@ -105,7 +101,7 @@ The **test plan** is a document that includes a list of every single test to be 
 
 At the end of testing, software is theoretically ready for production, but this rarely happens. Developers have enhanced testing efficiency and workflows, recognizing that software is never completely bug-free. It must be observable, tested in production, and resilient to maintain availability and performance.
 
-### Deployment
+## Phase 5: Deployment
 
 The deployment phase involves installing the software into production.
 
@@ -114,7 +110,7 @@ The deployment phase involves installing the software into production.
 
 At the end of the deployment phase, the final piece of software is released to customers and other end users.
 
-### Maintenance
+## Phase 6: Maintenance
 
 During the maintenance phase, the team:
 
@@ -124,3 +120,5 @@ During the maintenance phase, the team:
 - Gathers new requests from the customer
 
 At the end of the maintenance phase, the team prepares for the next software iteration, restarting the SDLC process with the requirements and analysis phase.
+
+For more information, please see [Operations and Maintenance.](/docs/021-Software-Engineering/014-Software-Development/007-Operations-and-Maintenance.md)
