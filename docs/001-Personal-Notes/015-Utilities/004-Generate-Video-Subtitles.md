@@ -29,7 +29,7 @@ Whisper is an open-source ASR model by OpenAI, known for its accuracy and suppor
 
    ```bash
    sudo apt update
-   sudo apt install python3 python3-pip
+   sudo apt install -y python3 python3-pip
    ```
 
 
@@ -40,16 +40,56 @@ Whisper is an open-source ASR model by OpenAI, known for its accuracy and suppor
    sudo apt install ffmpeg
    ```
 
-3. Generate subtitles:
+3. Verify:
+
+   ```bash
+   pip show openai-whisper
+   ```
+
+   Sample output:
+
+   ```bash
+   Name: openai-whisper
+   Version: 20240930
+   Summary: Robust Speech Recognition via Large-Scale Weak Supervision
+   Home-page: https://github.com/openai/whisper
+   Author: OpenAI
+   Author-email:
+   License: MIT
+   Location: /home/username/.local/lib/python3.10/site-packages
+   Requires: more-itertools, numba, numpy, tiktoken, torch, tqdm, triton
+   ```
+
+
+4. Generate subtitles:
 
    ```bash
    whisper your_video.mp4 --language English --task transcribe --output_format srt
    ```
 
-4. It will create `your_video.srt` in the same folder.
+5. It will create `your_video.srt` in the same folder.
 
 *Note:* It uses your CPU or GPU. Can be slow on large files without a GPU.
 
+
+
+## (Optional) Transcribe All MP4s in a Folder 
+
+If you have multiple videos that you want to transcribe, you can use a script:
+
+```bash
+for f in *.mp4; do
+  whisper "$f" --language English --task transcribe --output_format srt
+done
+```
+
+To process MP4 files in the current directory and all nested directories (recursively):
+
+```bash
+find . -type f -name "*.mp4" | while read -r f; do
+  whisper "$f" --language English --task transcribe --output_format srt
+done
+```
 
 ## SubtitleEdit (GUI, Windows)
 
@@ -79,13 +119,3 @@ There are websites that offer auto-captioning:
 * [https://happy-scribe.com](https://www.happyscribe.com)
 
 These often require a free account or have limits unless you subscribe.
-
-## (Optional) Transcribe All MP4s in a Folder 
-
-If you have multiple videos that you want to transcribe, you can use a script:
-
-```bash
-for f in *.mp4; do
-  whisper "$f" --language English --task transcribe --output_format srt
-done
-```
