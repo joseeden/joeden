@@ -14,7 +14,7 @@ last_update:
   date: 8/19/2022
 ---
 
-
+<!-- 
 ## Scenario: Massive Dynamic’s DevOps Journey  
 
 Massive Dynamic, a software vendor, wants to move its services to the cloud using container technologies. Their **Platform Team** sets up the project from scratch, following best practices.  
@@ -23,9 +23,9 @@ Massive Dynamic, a software vendor, wants to move its services to the cloud usin
   - Uses Docker for containerization and Kubernetes for orchestration.  
 - **Infrastructure as Code (IaC)**  
   - Manages infrastructure using code instead of manual setups.  
-  - Uses Terraform or Ansible with YAML configuration files.  
+  - Uses Terraform or Ansible with YAML configuration files.   -->
 
-## Problems in Their DevOps Workflow  
+## Problems in DevOps Workflow  
 
 1. **Manual Configuration & Execution**  
    - Team members manually executed scripts on their machines.  
@@ -66,7 +66,7 @@ spec:
 
 If this deployment is modified directly in Kubernetes (`kubectl apply`), Git won’t reflect the actual state. Over time, this leads to **configuration drift** and **uncertain rollback procedures**.  
 
-## The Need for GitOps  
+## Enter GitOps  
 
 GitOps solves these problems by:  
 
