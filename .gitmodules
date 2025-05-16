@@ -34,3 +34,6 @@
 [submodule "submodules/site-swiftlink"]
 	path = submodules/site-swiftlink
 	url = git@github.com:joseeden/Swiftlink.git
+[submodule "submodules/flux-lab"]
+	path = submodules/flux-lab
+	url = git@gitlab.com:homelabs9424449/flux-lab.git

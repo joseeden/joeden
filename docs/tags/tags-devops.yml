@@ -110,6 +110,10 @@ ArgoCD:
   label: 'ArgoCD'
   permalink: '/ArgoCD'
   description: 'Docs related to ArgoCD'  
+Flux:
+  label: 'Flux'
+  permalink: '/Flux'
+  description: 'Docs related to Flux'  
 Istio:
   label: 'Istio'
   permalink: '/Istio'
