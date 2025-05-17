@@ -1,6 +1,6 @@
 ---
-title: "Lab: Deploy Nginx with Helm"
-description: "Lab: Deploy Nginx with Helm"
+title: "Deploy Nginx with Helm"
+description: "Deploy Nginx with Helm"
 tags:
   - Cloud
   - DevOps
@@ -414,7 +414,7 @@ Finally, define the actual HTML content in the Flux `HelmRelease` file.
 This HTML will be loaded into the configmap and shown by Nginx.
 
 ```yaml
-## clusters/dev/flux-system
+## clusters/dev/flux-system/nginx-helm-release.yaml
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -422,10 +422,10 @@ metadata:
   namespace: default
 spec:
   interval: 1m
-  ....
+  ....  ## Some of the contents truncated/omitted
   values:
     indexHtml: |-
-        <!doctype html>
+      <!doctype html>
         <html>
         <head>
           <title>My Custom Page</title>
@@ -463,7 +463,29 @@ flux reconcile kustomization flux-system --with-source
 flux reconcile helmrelease nginx -n default
 ```
 
-
 ### Verify the Change
 
 Once everything is applied, go back to the webpage where the Nginx welcome page was displayed and refresh the page.
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-05-17-232644.png)
+
+</div>
+
+**If you're using port forwarding**
+
+If the page did not displayed the updated Nginx welcome page, you can kill the process and run port forwarding again.
+
+```bash
+ps -ef | grep 8080 
+sudo kill -9 <enter-pid> 
+```
+
+## Troubleshooting 
+
+If the `flux reconcile` command get stuck, or if the page did not load, you can try checking the logs of the controller.
+
+```bash
+kubectl logs -n flux-system deployment/kustomize-controller
+```
