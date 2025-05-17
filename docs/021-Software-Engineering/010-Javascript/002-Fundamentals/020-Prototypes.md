@@ -79,7 +79,7 @@ person.shakehands();
 
 This lets all objects use `shakehands()` because it’s added to the shared prototype. 
 
-:::warn
+:::warning
 
 Modifying built-in prototypes can cause problems in big projects!
 
