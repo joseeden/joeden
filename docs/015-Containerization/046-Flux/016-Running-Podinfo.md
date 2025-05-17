@@ -26,12 +26,12 @@ Podinfo is a small web application used to test, demo, and learn Kubernetes and 
 
 ## Pre-requisites 
 
-- [Setting Up Flux](/docs/015-Containerization/046-Flux/011-Setting-Up-Flux.md)
+- [Setting Up Flux](/docs/015-Containerization/046-Flux/015-Setting-Up-Flux.md)
 
 
 ## Project Structure 
 
-If you followed the steps in [setting up Flux](/docs/015-Containerization/046-Flux/011-Setting-Up-Flux.md, your project directory should have the following files:
+If you followed the steps in [setting up Flux](/docs/015-Containerization/046-Flux/015-Setting-Up-Flux.md), your project directory should have the following files:
 
 ```bash
 $ tree
@@ -47,7 +47,7 @@ $ tree
 3 directories, 4 files 
 ```
 
-This repository contains the Flux CD configuration files, but it doesn't necessaruly need to contain the application files as well. 
+This repository contains the Flux CD configuration files, but it doesn't necessarily need to contain the application files as well. 
 
 ## `podinfo-repo.yaml`
 

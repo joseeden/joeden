@@ -78,6 +78,33 @@ Confirm the installation:
 kubectl version --client
 ```
 
+## Install Helm
+
+You will need Helm to deploy Helm charts automatically to a Kubernetes cluster.
+
+You can install Helm using the official installation script:
+
+```bash
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+```
+
+After installation, confirm Helm is available:
+
+```bash
+helm version
+```
+
+**Optional: Install via Package Manager (Alternative)**
+
+If you prefer installing via `apt`, you can use this method:
+
+```bash
+curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
+sudo apt-get install apt-transport-https --yes
+echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+sudo apt-get update
+sudo apt-get install helm
+```
 
 ## Install Kind
 
