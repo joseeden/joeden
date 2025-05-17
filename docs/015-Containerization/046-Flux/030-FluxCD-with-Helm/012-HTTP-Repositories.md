@@ -163,6 +163,11 @@ resources:
 After writing the YAML, commit and push it to your Git repository.
 
 ```bash
+## Make sure main branch is updated 
+git checkout main 
+git pull
+
+## Create the new branck then push
 git checkout -b local-http-helm-repo
 git add .
 git commit -m "Add Helm repo and busybox release"

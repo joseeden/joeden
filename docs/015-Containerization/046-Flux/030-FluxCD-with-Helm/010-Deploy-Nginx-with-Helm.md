@@ -131,6 +131,10 @@ resources:
 To follow GitOps, commit the changes and create a merge request.
 
 ```bash
+## Make sure main branch is updated 
+git checkout main 
+git pull
+
 ## Create a new branch for the change
 git checkout -b nginx-helm  
 
