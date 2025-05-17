@@ -25,6 +25,11 @@ This guide shows how to install Flux CD and link it to a Git repository. This he
 
 Flux CD is installed as a command-line tool. It works by pulling setup files from a Git repository.
 
+## Pre-requisites 
+
+- [Setting Up Git](/docs/015-Containerization/044-GitOps/016-Setting-Up-Git.md)
+- [Setting Up Kubernetes](/docs/015-Containerization/044-GitOps/017-Setting-Up-Kubernetes.md)
+
 ## Download Flux CLI Tool
 
 Install the Flux command-line tool:
@@ -170,4 +175,62 @@ Unlike some tools like Argo CD, Flux doesn’t run as a single named pod. It use
 
 
 :::
+
+
+## How Flux Connects to the Repository
+
+FluxCD works by watching a Git repository for changes and syncing them to your Kubernetes cluster.
+
+- It uses a custom resource called `gitrepo`
+- It watches a specific branch (like `main` or `dev`)
+- It checks for changes regularly and applies them
+
+So when you install FluxCD, it knows where to look based on your setup. The Git repo CRD tells FluxCD what to watch and where. You can see this by running:
+
+```bash
+$  kubectl get gitrepo -n flux-system
+NAME          URL                                               AGE   READY   STATUS
+flux-system   https://gitlab.com/user/flux-lab.git   15m   True    stored artifact for revision 'main@sha1:123456789123456789123456789' 
+```
+
+## Secrets Used by FluxCD
+
+To connect to a private Git repo, FluxCD uses a [secret token that was created in the Git service](#create-git-access-token).
+
+- The token is stored in a Kubernetes secret
+- The token gives FluxCD access to the Git repo
+
+You can see the secret by running:
+
+```bash
+$ kubectl get secret -n flux-system
+NAME          TYPE     DATA   AGE
+flux-system   Opaque   2      20m 
+```
+
+You can also decode the secret using:
+
+```bash
+kubectl get secret flux-system -n flux-system -o jsonpath="{.data.password}" | base64 -d
+```
+
+This is the same token you used when bootstrapping FluxCD. Only admins should have access to this secret.
+
+
+## Cluster Roles
+
+FluxCD applies files from Git to your cluster using permissions.
+
+- It uses a cluster role binding called `cluster-reconciler`
+- This role lets it apply resources using cluster-admin access
+
+You can view these permissions with:
+
+```bash
+$ kubectl get clusterrolebindings | grep flux
+cluster-reconciler-flux-system         ClusterRole/cluster-admin                 22m
+crd-controller-flux-system             ClusterRole/crd-controller-flux-system    22m
+```
+
+FluxCD checks and syncs resources regularly to keep them aligned with your Git state.
 
