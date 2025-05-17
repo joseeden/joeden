@@ -81,18 +81,18 @@ In the cluster folder, create a new YAML file for the `HelmRepository`
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
-  name: my-helm-repo
+  name: local-http-repo
   namespace: default
 spec:
   interval: 5m0s
-  url: http://127.0.0.1:8080  ## this is the ChartMuseum address
+  url: http://host.docker.internal:8080  ## this is the ChartMuseum address
   secretRef:
-    name: my-helm-repo-secret
+    name: local-http-repo-secret
 ---
 apiVersion: v1
 kind: Secret
 metadata:
-  name: my-helm-repo-secret
+  name: local-http-repo-secret
   namespace: default
 stringData:
   username: chartuser
@@ -111,7 +111,7 @@ Now define the `HelmRelease` that will use the repository.
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: busybox
+  name: helmrelease-busybox
   namespace: default
 spec:
   interval: 1m
@@ -122,7 +122,7 @@ spec:
       interval: 1m
       sourceRef:
         kind: HelmRepository    
-        name: my-helm-repo        ## Created in the previous step
+        name: local-http-repo        ## Created in the previous step
         namespace: default
 ```
 
@@ -183,9 +183,17 @@ flux reconcile kustomization flux-system --with-source
 Verify deployment:
 
 ```bash
-$ kubectl get helmrelease                                    
-NAME      AGE    READY   STATUS
-busybox   12s    False   HelmChart 'default/default-busybox' is not ready: latest generation of object has not been reconciled
+$ kubectl get helmrelease  
+NAME                  AGE   READY   STATUS
+helmrelease-busybox   8m    True    Helm install succeeded for release default/helmrelease-busybox.v1 with chart busybox@0.1.0
+
+$ kubectl get helmrepo
+NAME              URL                                AGE    READY   STATUS
+local-http-repo   http://host.docker.internal:8080   8m5s   True    stored artifact: revision 'sha256:be893c02c34a98008a65f26812c0492525896cc686e3946e58637cc026451211'
+
+$ kubectl get po
+NAME                                   READY   STATUS             RESTARTS        AGE
+helmrelease-busybox-64cbf9fb98-xhh7g   1/1     Running            0               87s  
 ```
 
 
@@ -197,7 +205,7 @@ To check if the Helm repository is created:
 $ flux get sources helm -A
 
 NAMESPACE       NAME            REVISION        SUSPENDED  READY   MESSAGE
-default         my-helm-repo    sha256:a1af7d4c False      True    stored artifact: revision 'sha256:a1af7d4c'
+default         local-http-repo    sha256:a1af7d4c False      True    stored artifact: revision 'sha256:a1af7d4c'
 ```
 
 If you're running the test locally inside a Windows machine, you may need to se the `url` for the ChartMuseum address to:
@@ -206,11 +214,11 @@ If you're running the test locally inside a Windows machine, you may need to se 
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
-  name: my-helm-repo
+  name: local-http-repo
   namespace: default
 spec:
   interval: 5m0s
   url: http://host.docker.internal:8080  ## this is the ChartMuseum address
   secretRef:
-    name: my-helm-repo-secret
+    name: local-http-repo-secret
 ```
