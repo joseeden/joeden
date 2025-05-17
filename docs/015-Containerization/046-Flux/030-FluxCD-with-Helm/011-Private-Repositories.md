@@ -1,6 +1,6 @@
 ---
-title: "Private Helm Repositories"
-description: "Private Helm Repositories"
+title: "Private Repositories"
+description: "Private Repositories"
 tags:
   - Cloud
   - DevOps
@@ -12,7 +12,7 @@ tags:
   - Git
   - Flux
   - Helm
-sidebar_position: 21
+sidebar_position: 11
 last_update:
   date: 8/19/2022
 ---

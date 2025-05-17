@@ -12,7 +12,7 @@ tags:
   - Git
   - Flux
   - Helm
-sidebar_position: 20
+sidebar_position: 10
 last_update:
   date: 8/19/2022
 ---
