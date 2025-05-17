@@ -69,13 +69,17 @@ $ tree
             ├── gotk-components.yaml
             ├── gotk-sync.yaml
             ├── kustomization.yaml
-            ├── podinfo-customization.yaml
-            └── podinfo-repo.yaml
 
 3 directories, 6 files
 ```
 
-We also 
+To organize the manifests, we will create folders for each lab, along with their respective `kustomization.yaml` file.
+
+For this lab, create the `helm-repos-http` directory:
+
+```bash
+mkdir clusters/dev/helm-repos-http  
+```
 
 ## Create the Helm Repository
 
@@ -89,7 +93,7 @@ Start by defining the Helm repository resource in your cluster directory.
 In the cluster folder, create a new YAML file for the `HelmRepository`
 
 ```yaml
-# clusters/dev/flux-system/localhttprepo.yaml
+# clusters/dev/helm-repos-http/localhttprepo.yaml
 ---
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
@@ -120,7 +124,7 @@ This tells FluxCD to pull charts from the HTTP Helm repo every 5 minutes.
 Now define the `HelmRelease` that will use the repository.
 
 ```yaml
-# clusters/dev/flux-system/busybox-helm-release.yaml
+# clusters/dev/helm-repos-http/busybox-helm-release.yaml
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -135,7 +139,7 @@ spec:
       interval: 1m
       sourceRef:
         kind: HelmRepository    
-        name: local-http-repo        ## Created in the previous step
+        name: local-http-repo   ## Created in the previous step
         namespace: default
 ```
 

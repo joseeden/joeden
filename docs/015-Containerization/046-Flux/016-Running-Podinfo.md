@@ -47,14 +47,20 @@ $ tree
 3 directories, 4 files 
 ```
 
-This repository contains the Flux CD configuration files, but it doesn't necessarily need to contain the application files as well. 
+This repository contains the Flux CD configuration files, but it doesn't necessarily need to contain the application files as well. _To organize the manifests, we will create folders for each lab, along with their respective `kustomization.yaml` file.
+
+For this lab, create the `podinfo` directory:
+
+```bash
+mkdir clusters/dev/podinfo  
+```_
 
 ## `podinfo-repo.yaml`
 
 To use a different repository which contain the application files, create a new config file which tells Flux to monitor a new Git repository:
 
 ```yaml 
-# clusters/dev/flux-system/podinfo-repo.yaml 
+# clusters/dev/podinfo/podinfo-repo.yaml 
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
@@ -79,7 +85,7 @@ This only tells FluxCD to watch the repo, not what to do with it.
 This tells FluxCD how to apply the files in the repo. You can use any filename, just make sure that it's descriptive.
 
 ```yaml
-# clusters/dev/flux-system/podinfo-customization.yaml
+# clusters/dev/podinfo/podinfo-customization.yaml
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
@@ -102,6 +108,7 @@ This file links to the repo and tells FluxCD where and how to apply the resource
 This ensures that Flux also watches for the `podinfo` manifests.
 
 ```bash
+# clusters/dev/podinfo/kustomization.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:

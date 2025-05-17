@@ -40,8 +40,6 @@ A few notes:
 
 ## Open Container Initiative (OCI)
 
-
-
 **Open Container Initiative (OCI)** defines a standard way to share software like container images and Helm charts.
 
 - Uses digests for better security
@@ -65,10 +63,13 @@ git pull
 git checkout -b public-oci
 ```
 
+
+### Prepare the Manifests 
+
 Add a new `HelmRepository` file and set the type to `oci` and provide the OCI URL. This lets Flux CD know that the chart source is an OCI registry, not a regular HTTP one.
 
 ```yaml
-## clusters/dev/flux-system/bitnami-oci.yaml
+## clusters/dev/helm-repos-oci-mysql/bitnami-oci.yaml
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
@@ -83,7 +84,7 @@ spec:
 Now we install the MySQL chart from the public OCI repo. Create a HelmRelease file for MySQL
 
 ```yaml
-## clusters/dev/flux-system/mysql-release.yaml
+## clusters/dev/helm-repos-oci-mysql/mysql-release.yaml
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -107,6 +108,17 @@ spec:
       database: "testdb"
 ```
 
+Add the files to `kustomization.yaml`:
+
+```bash
+## clusters/dev/helm-repos-oci-mysql/kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- mysql-release.yaml
+- bitnami-oci.yaml
+```
+
 Commit and push:
 
 ```bash
@@ -127,7 +139,7 @@ After pushing, merge the changes to the main branch. Since we are using Gitlab i
 In a typical team setting, developers create merge requests which are then reviewed and approved by other team members. For this lab, you can go ahead and click **Approve** and **Merge** directly.
 
 
-## Trigger Reconciliation
+### Trigger Reconciliation
 
 Once changes are merged, tell FluxCD to sync the state.
 
@@ -140,13 +152,53 @@ Verify deployment:
 ```bash
 $ kubectl get helmrelease  
 NAME                  AGE   READY   STATUS
-helmrelease-busybox   8m    True    Helm install succeeded for release default/helmrelease-busybox.v1 with chart busybox@0.1.0
+mysql                 16m   True    Helm install succeeded for release default/mysql.v1 with chart mysql@9.10.9
 
 $ kubectl get helmrepo
-NAME              URL                                AGE    READY   STATUS
-local-http-repo   http://host.docker.internal:8080   8m5s   True    stored artifact: revision 'sha256:be893c02c34a98008a65f26812c0492525896cc686e3946e58637cc026451211'
+NAME              URL                                        AGE    READY   STATUS
+mysql             oci://registry-1.docker.io/bitnamicharts   7m9s
 
 $ kubectl get po
-NAME                                   READY   STATUS             RESTARTS        AGE
-helmrelease-busybox-64cbf9fb98-xhh7g   1/1     Running            0               87s  
+NAME                                   READY   STATUS    RESTARTS         AGE
+mysql-0                                1/1     Running   0                3m57s
+```
+
+### Access the MySQL Pod 
+
+You can check the pod and access the database like this:
+
+```bash
+kubectl get pods
+kubectl exec -it mysql-0 -- mysql -u johnsmith -p testdb
+```
+
+This shows the MySQL chart from the public OCI repo is working correctly with Flux CD.
+
+```bash
+mysql> status
+--------------
+mysql  Ver 8.0.34 for Linux on x86_64 (Source distribution) 
+```
+
+
+## Troubleshooting 
+
+If you're stuck at reconciliation: 
+
+```bash
+$ flux reconcile kustomization flux-system --with-source
+
+► annotating GitRepository flux-system in flux-system namespace
+✔ GitRepository annotated
+◎ waiting for GitRepository reconciliation
+✔ fetched revision main@sha1:0719c1a070824be83fce24f70fcc3e5b91389c8f
+► annotating Kustomization flux-system in flux-system namespace
+✔ Kustomization annotated
+◎ waiting for Kustomization reconciliation
+```
+
+You can try checking the logs for any error:
+
+```bash
+kubectl logs -n flux-system deployment/kustomize-controller 
 ```

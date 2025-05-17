@@ -49,10 +49,16 @@ $ tree
             ├── gotk-components.yaml
             ├── gotk-sync.yaml
             ├── kustomization.yaml
-            ├── podinfo-customization.yaml
-            └── podinfo-repo.yaml
 
 3 directories, 6 files
+```
+
+To organize the manifests, we will create folders for each lab, along with their respective `kustomization.yaml` file.
+
+For this lab, create the `helm-nginx` directory:
+
+```bash
+mkdir clusters/dev/helm-nginx 
 ```
 
 ## Depoying Nginx 
@@ -89,7 +95,7 @@ ingress:
 Create a `HelmRelease` YAML file in directory containing the Kubernetes manifests:
 
 ```yaml
-## clusters/dev/flux-system/nginx-helm-release.yaml
+## clusters/dev/helm-nginx/nginx-helm-release.yaml
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -116,13 +122,10 @@ Note:
 This ensures that Flux also watches for the `podinfo` manifests.
 
 ```bash
+## clusters/dev/helm-nginx/kustomization.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- gotk-components.yaml
-- gotk-sync.yaml
-- podinfo-repo.yaml
-- podinfo-customization.yaml
 - nginx-helm-release.yaml
 ```
 
@@ -418,7 +421,7 @@ Finally, define the actual HTML content in the Flux `HelmRelease` file.
 This HTML will be loaded into the configmap and shown by Nginx.
 
 ```yaml
-## clusters/dev/flux-system/nginx-helm-release.yaml
+## clusters/dev/helm-nginx/nginx-helm-release.yaml
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
