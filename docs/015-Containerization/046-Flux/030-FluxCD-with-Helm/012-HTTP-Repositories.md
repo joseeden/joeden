@@ -1,6 +1,6 @@
 ---
-title: "HTTP Helm Repositories"
-description: "HTTP Helm Repositories"
+title: "HTTP Repositories"
+description: "HTTP Repositories"
 tags:
   - Cloud
   - DevOps

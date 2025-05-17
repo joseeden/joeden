@@ -1,6 +1,6 @@
 ---
-title: "OCI Helm Repositories"
-description: "OCI Helm Repositories"
+title: "OCI Repositories"
+description: "OCI Repositories"
 tags:
   - Cloud
   - DevOps
