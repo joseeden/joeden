@@ -11,7 +11,7 @@ tags:
   - ArgoCD
   - Git
   - Flux
-sidebar_position: 18
+sidebar_position: 11
 last_update:
   date: 8/19/2022
 ---

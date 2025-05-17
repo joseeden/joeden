@@ -1,6 +1,6 @@
 ---
-title: "Flux"
-description: "Flux"
+title: "Starter Notes"
+description: "Starter Notes"
 tags:
   - Cloud
   - DevOps
