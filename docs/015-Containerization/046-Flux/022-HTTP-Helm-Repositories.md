@@ -17,14 +17,27 @@ last_update:
   date: 8/19/2022
 ---
 
+
 ## Overview
 
-This guide shows how to connect FluxCD to a Helm chart repository hosted over HTTP.
+This guide shows how to connect FluxCD to a Helm chart repository hosted over HTTP. 
 
-- Create a Helm Repository resource
-- Add authentication details if required
-- Create a Helm Release using the repo
-- Push changes and trigger FluxCD sync
+For simplicity, we'll be using the private repository ChartMuseum (from previous lab) as the HTTP Helm repository.
+
+A few notes:
+
+- I'm running the lab in a Windows 10 machine
+- Tools used: Docker Desktop, WSL2
+- A Kubernetes cluster is using `kind`
+- Flux is running inside the Kubernetes cluster 
+- Gitlab is used for the Git repositories
+
+Flux connecting to the HTTP repository:
+
+- The private repository is deployed as a container in the same Windows machine 
+- For user to connect to the private repository via HTTP, use the `127.0.0.1:8080`
+- For Flux to connect to the private repository via HTTP, use the `host.docker.internal:8080`
+
 
 ## Pre-requisites 
 
