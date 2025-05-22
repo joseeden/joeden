@@ -8,7 +8,6 @@ tags:
 - Automation
 - CICD
 - Certifications
-tags: [Cloud, AWS, DevOps, Automation, CICD, Certifications]
 sidebar_position: 4
 last_update:
   date: 7/26/2020
