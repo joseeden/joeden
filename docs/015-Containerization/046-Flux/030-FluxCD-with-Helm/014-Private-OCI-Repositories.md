@@ -139,7 +139,7 @@ $ cat ~/.config/helm/registry/config.json
 {
   "auths": {
           "registry.gitlab.com": {
-                  "auth": "************************************=="
+                  "auth": "***************************************"
            }
 }
 ```
