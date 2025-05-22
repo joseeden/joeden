@@ -1,6 +1,9 @@
 ---
 title: Billing and Cost Management
-tags: [Linux, AWS, Labs]
+tags: 
+- Linux
+- AWS
+- Labs
 sidebar_position: 5
 last_update:
   date: 2/27/2022

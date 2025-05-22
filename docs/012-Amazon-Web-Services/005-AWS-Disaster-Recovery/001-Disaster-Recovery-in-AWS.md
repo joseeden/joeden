@@ -1,7 +1,12 @@
 ---
 title: "AWS Disaster Recovery"
 description: "Disaster Recovery Methods"
-tags: [Cloud, AWS, Cloud, DevOps, Disaster Recovery, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Disaster Recovery
+- Certifications
 sidebar_position: 1
 last_update:
   date: 8/30/2020
