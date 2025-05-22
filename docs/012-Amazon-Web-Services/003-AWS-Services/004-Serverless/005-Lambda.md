@@ -1,7 +1,12 @@
 ---
 title: "Lambda"
 description: "Run code without provisioning servers"
-tags: [Cloud, AWS, DevOps, Serverless, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Serverless
+- Certifications
 sidebar_position: 5
 last_update:
   date: 7/26/2020

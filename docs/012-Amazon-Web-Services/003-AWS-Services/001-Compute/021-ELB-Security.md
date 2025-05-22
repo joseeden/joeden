@@ -1,7 +1,12 @@
 ---
 title: "ELB Security"
 description: "Securing your Loadbalacers"
-tags: [Cloud, AWS, DevOps, Security, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Security
+- Certifications
 sidebar_position: 21
 last_update:
   date: 7/26/2020

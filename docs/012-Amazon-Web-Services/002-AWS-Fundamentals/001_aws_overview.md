@@ -1,7 +1,11 @@
 ---
 title: "Amazon Web Services"
 description: "First things you need to know"
-tags: [AWS, Cloud, DevOps, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Certifications
 sidebar_position: 1
 last_update:
   date: 4/30/2020

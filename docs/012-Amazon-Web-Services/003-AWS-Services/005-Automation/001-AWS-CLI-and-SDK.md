@@ -1,7 +1,12 @@
 ---
 title: "AWS CLI and SDK"
 description: "Using CLI and SDK"
-tags: [Cloud, AWS, DevOps, Automation, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Automation
+- Certifications
 sidebar_position: 1
 last_update:
   date: 7/26/2020

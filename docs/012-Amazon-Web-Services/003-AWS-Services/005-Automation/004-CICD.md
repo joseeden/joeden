@@ -1,6 +1,13 @@
 ---
 title: "CICD in AWS"
 description: "Set up CI/CD pipelines in AWS"
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Automation
+- CICD
+- Certifications
 tags: [Cloud, AWS, DevOps, Automation, CICD, Certifications]
 sidebar_position: 4
 last_update:

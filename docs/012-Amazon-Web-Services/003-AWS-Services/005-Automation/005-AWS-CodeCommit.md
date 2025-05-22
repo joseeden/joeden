@@ -1,7 +1,14 @@
 ---
 title: "AWS CodeCommit"
 description: "Private Git repositories in AWS"
-tags: [Cloud, AWS, DevOps, Automation, Git, CICD, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Automation
+- Git
+- CICD
+- Certifications
 sidebar_position: 1
 last_update:
   date: 7/26/2020

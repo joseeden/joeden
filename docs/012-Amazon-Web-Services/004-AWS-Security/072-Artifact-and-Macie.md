@@ -1,7 +1,12 @@
 ---
 title: "AWS Artifact and Macie"
 description: "Compliance Management with Artifact and Macie"
-tags: [Cloud, AWS, Cloud, DevOps, Security, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Security
+- Certifications
 sidebar_position: 72
 last_update:
   date: 8/30/2020

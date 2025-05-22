@@ -1,7 +1,11 @@
 ---
 title: "Amazon RDS"
 description: "Relational database service"
-tags: [Cloud, AWS, DevOps, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Certifications
 sidebar_position: 2
 last_update:
   date: 7/26/2020

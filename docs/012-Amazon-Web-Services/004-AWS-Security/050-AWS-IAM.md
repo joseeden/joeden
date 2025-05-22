@@ -1,7 +1,12 @@
 ---
 title: "IAM in AWS"
 description: "Identity and Access Management"
-tags: [Cloud, AWS, Cloud, DevOps, Security, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Security
+- Certifications
 sidebar_position: 50
 last_update:
   date: 8/30/2020

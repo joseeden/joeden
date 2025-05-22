@@ -1,7 +1,12 @@
 ---
 title: "AWS KMS"
 description: "Create and control your cryptographic keys"
-tags: [Cloud, AWS, Cloud, DevOps, Security, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Security
+- Certifications
 sidebar_position: 61
 last_update:
   date: 8/30/2020

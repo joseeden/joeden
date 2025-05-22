@@ -1,7 +1,12 @@
 ---
 title: "AWS Config"
 description: "Assess, audit, and evaluate configurations"
-tags: [Cloud, AWS, Cloud, DevOps, Security, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Security
+- Certifications
 sidebar_position: 46
 last_update:
   date: 8/30/2020

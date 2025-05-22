@@ -18,6 +18,10 @@ AWS:
   label: 'AWS'
   permalink: '/AWS'
   description: 'Docs related to AWS'
+Amazon Web Services:
+  label: 'Amazon Web Services'
+  permalink: '/Amazon Web Services'
+  description: 'Docs related to Amazon Web Services'
 Microsoft Azure:
   label: 'Microsoft Azure'
   permalink: '/Microsoft Azure'

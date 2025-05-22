@@ -1,7 +1,11 @@
 ---
 title: "Storage Comparison"
 description: "Comparing AWS Storage Options"
-tags: [Cloud, AWS, DevOps, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Certifications
 sidebar_position: 1
 last_update:
   date: 7/26/2020

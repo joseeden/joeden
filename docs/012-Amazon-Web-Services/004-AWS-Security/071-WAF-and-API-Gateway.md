@@ -1,7 +1,12 @@
 ---
 title: "WAF and API Gateway"
 description: "Security through Managed Firewall and API Gateway features"
-tags: [Cloud, AWS, Cloud, DevOps, Security, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Security
+- Certifications
 sidebar_position: 71
 last_update:
   date: 8/30/2020

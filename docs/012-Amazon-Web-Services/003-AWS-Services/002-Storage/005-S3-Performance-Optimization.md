@@ -1,7 +1,11 @@
 ---
 title: "S3 Performance Optimization"
 description: "Optimize your S3 Buckets"
-tags: [Cloud, AWS, DevOps, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Certifications
 sidebar_position: 5
 last_update:
   date: 7/26/2020

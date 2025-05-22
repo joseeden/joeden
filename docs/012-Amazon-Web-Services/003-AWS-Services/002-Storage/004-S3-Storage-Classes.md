@@ -1,7 +1,11 @@
 ---
 title: "S3 Storage Classes"
 description: "S3 Storage Classes"
-tags: [Cloud, AWS, DevOps, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Certifications
 sidebar_position: 4
 last_update:
   date: 7/26/2020

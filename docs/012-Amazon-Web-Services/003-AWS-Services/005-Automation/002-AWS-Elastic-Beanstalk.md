@@ -1,7 +1,12 @@
 ---
 title: "AWS Elastic Beanstalk"
 description: " Managed application deployment"
-tags: [Cloud, AWS, DevOps, Automation, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Automation
+- Certifications
 sidebar_position: 2
 last_update:
   date: 7/26/2020

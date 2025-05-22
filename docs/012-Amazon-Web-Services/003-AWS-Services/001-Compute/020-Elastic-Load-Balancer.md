@@ -1,7 +1,11 @@
 ---
 title: "Elastic Load Balancer"
 description: "How ELB Works"
-tags: [Cloud, AWS, DevOps, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Certifications
 sidebar_position: 20
 last_update:
   date: 7/26/2020

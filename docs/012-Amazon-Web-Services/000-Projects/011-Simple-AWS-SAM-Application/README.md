@@ -1,6 +1,9 @@
 ---
 title: Simple AWS SAM Application
-tags: [Linux, AWS, Labs]
+tags: 
+- Linux
+- Amazon Web Services
+- Labs
 sidebar_position: 2
 # last_update:
 #   date: 11/2/2024

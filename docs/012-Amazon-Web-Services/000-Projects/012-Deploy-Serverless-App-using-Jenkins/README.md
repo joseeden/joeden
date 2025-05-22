@@ -1,6 +1,10 @@
 ---
 title: Deploy Serverless Application using Jenkins
-tags: [Linux, AWS, Jenkins, Labs]
+tags: 
+- Linux
+- Amazon Web Services
+- Jenkins
+- Labs
 sidebar_position: 12
 last_update:
   date: 2/11/2024

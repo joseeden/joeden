@@ -1,7 +1,11 @@
 ---
 title: "EC2 Storage"
 description: "EBS and EFS"
-tags: [Cloud, AWS, DevOps, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Certifications
 sidebar_position: 4
 last_update:
   date: 7/26/2020

@@ -1,7 +1,12 @@
 ---
 title: "Logs and Insights"
 description: "CloudWatch Logs and Insights"
-tags: [Cloud, AWS, Cloud, DevOps, Security, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Security
+- Certifications
 sidebar_position: 43
 last_update:
   date: 8/30/2020

@@ -1,7 +1,12 @@
 ---
 title: "Alarms and EventBridge"
 description: "CloudWatch Alarms and EventBridge"
-tags: [Cloud, AWS, Cloud, DevOps, Security, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Security
+- Certifications
 sidebar_position: 42
 last_update:
   date: 8/30/2020

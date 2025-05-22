@@ -1,7 +1,12 @@
 ---
 title: "AWS Certificate Manager"
 description: "Provision and manage SSL/TLS certificates"
-tags: [Cloud, AWS, Cloud, DevOps, Security, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Security
+- Certifications
 sidebar_position: 64
 last_update:
   date: 8/30/2020

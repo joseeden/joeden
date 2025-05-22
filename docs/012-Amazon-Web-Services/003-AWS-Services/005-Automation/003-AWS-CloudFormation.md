@@ -1,7 +1,13 @@
 ---
 title: "AWS CloudFormation"
 description: "Infrastructure As Code by AWS"
-tags: [Cloud, AWS, DevOps, Automation, Infrastructure as Code, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Automation
+- Infrastructure as Code
+- Certifications
 sidebar_position: 3
 last_update:
   date: 7/26/2020

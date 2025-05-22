@@ -1,7 +1,11 @@
 ---
 title: "Auto Scaling Groups"
 description: "Basics of AWS Compute"
-tags: [Cloud, AWS, DevOps, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Certifications
 sidebar_position: 10
 last_update:
   date: 7/26/2020

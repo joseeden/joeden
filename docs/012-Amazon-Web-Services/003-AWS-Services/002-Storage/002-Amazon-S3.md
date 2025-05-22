@@ -1,7 +1,11 @@
 ---
 title: "Amazon S3"
 description: "Amazon Simple Storage Service (Amazon S3)"
-tags: [Cloud, AWS, DevOps, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Certifications
 sidebar_position: 2
 last_update:
   date: 7/26/2020

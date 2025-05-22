@@ -1,7 +1,12 @@
 ---
 title: "AWS Security Specialty Exam"
 description: "Resources for the exam"
-tags: [Cloud, AWS, Cloud, DevOps, Security, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Security
+- Certifications
 sidebar_position: 99
 last_update:
   date: 8/30/2020

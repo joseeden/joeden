@@ -1,7 +1,12 @@
 ---
 title: "CloudTrail"
 description: "Amazon CloudTrail"
-tags: [Cloud, AWS, Cloud, DevOps, Security, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Security
+- Certifications
 sidebar_position: 45
 last_update:
   date: 8/30/2020

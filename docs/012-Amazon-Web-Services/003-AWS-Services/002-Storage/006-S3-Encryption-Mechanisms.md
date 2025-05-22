@@ -1,7 +1,12 @@
 ---
 title: "S3 Encryption Mechanisms"
 description: "Methods to encrypt S3"
-tags: [Cloud, AWS, DevOps, Security, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Security
+- Certifications
 sidebar_position: 6
 last_update:
   date: 7/26/2020

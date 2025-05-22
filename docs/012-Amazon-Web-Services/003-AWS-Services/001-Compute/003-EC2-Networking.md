@@ -1,7 +1,11 @@
 ---
 title: "EC2 Networking"
 description: "ENIs, ENAs, and the sorts"
-tags: [Cloud, AWS, DevOps, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Certifications
 sidebar_position: 3
 last_update:
   date: 7/26/2020

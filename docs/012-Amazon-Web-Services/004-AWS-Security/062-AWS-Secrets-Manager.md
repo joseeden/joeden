@@ -1,7 +1,12 @@
 ---
 title: "AWS Secrets Manager"
 description: "Centrally manage your secrets"
-tags: [Cloud, AWS, Cloud, DevOps, Security, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Security
+- Certifications
 sidebar_position: 62
 last_update:
   date: 8/30/2020

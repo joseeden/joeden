@@ -1,7 +1,12 @@
 ---
 title: "Restrict S3 Buckets Access"
 description: "Limiting the access on your S3 Buckets"
-tags: [Cloud, AWS, Cloud, DevOps, Security, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Security
+- Certifications
 sidebar_position: 65
 last_update:
   date: 8/30/2020

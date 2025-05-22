@@ -1,7 +1,12 @@
 ---
 title: "Amazon Cognito"
 description: "Fully managed and scalable IAM"
-tags: [Cloud, AWS, DevOps, Serverless, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Serverless
+- Certifications
 sidebar_position: 20
 last_update:
   date: 7/26/2020

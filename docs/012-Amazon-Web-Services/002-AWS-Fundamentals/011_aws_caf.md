@@ -1,7 +1,11 @@
 ---
 title: "The AWS Cloud Adoption Framework (AWS CAF)"
 description: "A guide to successful cloud adoption"
-tags: [AWS, Cloud, DevOps, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Certifications
 sidebar_position: 11
 last_update:
   date: 4/30/2020

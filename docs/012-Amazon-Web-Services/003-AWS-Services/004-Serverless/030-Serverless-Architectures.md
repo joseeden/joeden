@@ -1,7 +1,12 @@
 ---
 title: "Serverless Architectures"
 description: "Server management done by the Cloud"
-tags: [Cloud, AWS, DevOps, Serverless, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Serverless
+- Certifications
 sidebar_position: 30
 
 last_update:

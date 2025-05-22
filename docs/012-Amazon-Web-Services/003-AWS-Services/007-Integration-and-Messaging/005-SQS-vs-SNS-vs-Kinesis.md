@@ -1,7 +1,13 @@
 ---
 title: "SQS vs. SNS vs. Kinesis"
 description: "Difference between the three services"
-tags: [Cloud, AWS, DevOps, Integration, Messaging, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Integration
+- Messaging
+- Certifications
 sidebar_position: 5
 last_update:
   date: 7/26/2020

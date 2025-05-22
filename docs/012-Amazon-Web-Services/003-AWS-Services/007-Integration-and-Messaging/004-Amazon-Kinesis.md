@@ -1,7 +1,13 @@
 ---
 title: "Amazon Kinesis"
 description: "Real-time streaming data at a large scale"
-tags: [Cloud, AWS, DevOps, Integration, Messaging, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Integration
+- Messaging
+- Certifications
 sidebar_position: 4
 last_update:
   date: 7/26/2020

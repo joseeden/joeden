@@ -1,7 +1,11 @@
 ---
 title: "Amazon RDS Security"
 description: "Securing your Amazon RDS Databases"
-tags: [Cloud, AWS, DevOps, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Certifications
 sidebar_position: 3
 last_update:
   date: 7/26/2020

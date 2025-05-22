@@ -1,7 +1,11 @@
 ---
 title: "EC2 Instance Types"
 description: "Based on naming convention, pricing, and purpose."
-tags: [Cloud, AWS, DevOps, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Certifications
 sidebar_position: 2
 last_update:
   date: 7/26/2020

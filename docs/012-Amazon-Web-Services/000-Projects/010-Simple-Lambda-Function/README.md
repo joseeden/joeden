@@ -1,6 +1,9 @@
 ---
 title: Simple Lambda Function
-tags: [Linux, AWS, Labs]
+tags: 
+- Linux
+- Amazon Web Services
+- Labs
 sidebar_position: 1
 # last_update:
 #   date: 11/2/2024

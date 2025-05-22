@@ -1,7 +1,13 @@
 ---
 title: "AWS CodePipeline"
 description: "Fully managed continuous delivery"
-tags: [Cloud, AWS, DevOps, Automation, CICD, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Automation
+- CICD
+- Certifications
 sidebar_position: 8
 last_update:
   date: 7/26/2020

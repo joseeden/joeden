@@ -1,7 +1,11 @@
 ---
 title: "FSx and DataSync"
 description: "Amazon FSx and AWS DataSync"
-tags: [Cloud, AWS, DevOps, Certifications]
+tags: 
+- Cloud
+- Amazon Web Services
+- DevOps
+- Certifications
 sidebar_position: 25
 last_update:
   date: 7/26/2020
