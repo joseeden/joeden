@@ -22,7 +22,7 @@ last_update:
 
 This guide shows how to use public and private OCI Helm repositories with Flux CD to install applications like MySQL and Apache on Kubernetes clusters.
 
-A few notes:
+**A few notes:**
 
 - I'm running the lab in a Windows 10 machine
 - Tools used: Docker Desktop, WSL2
