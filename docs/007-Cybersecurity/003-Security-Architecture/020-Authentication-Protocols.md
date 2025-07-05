@@ -163,9 +163,9 @@ While SESAME is designed as an improvement to Kerberos, it is still vulnerable t
 EAP (Extensible Authentication Protocol) is a flexible authentication framework used in network access protocols. It supports multiple authentication methods and is commonly used in wireless networks and point-to-point connections.
 
 - Not a specific authentication mechanism but a framework supporting various methods.
-- Authentication: Simple passwords, Digital Certificates, and PKI
-- Operates at the data link layer, allowing for secure exchanges before IP assignment.
+- Operates at the data link layer, allows for secure exchanges before IP assignment.
 - Ensures compatibility between different authentication methods and devices.
+- **Authentication**: Simple passwords, Digital Certificates, and PKI
 - Commonly used in 802.1X networks for secure authentication.
 
 Examples:

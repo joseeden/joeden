@@ -70,7 +70,7 @@ Key stretching enhances password or key security by making brute-force attacks m
 
 ### Salting 
 
-Salting improves password security by adding random data, called a "salt," to the input before hashing. This makes the hashed result more resistant to brute-force and dictionary attacks.
+Salting improves password security by adding random data, called a "salt", to the input before hashing. This makes the hashed result more resistant to brute-force and dictionary attacks.
 
 - Salt prevents the use of precomputed tables to crack passwords.
 - Each salt creates a unique hash, even for identical passwords.

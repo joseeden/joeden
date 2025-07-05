@@ -34,7 +34,7 @@ This type of attack analyzes the statistical patterns in cipher text to detect v
 - If letter X appears frequently, it may represent E in a simple substitution cipher
 - Digraphs (letter pairs) like T-H, H-E, I-N, or E-R can provide additional clues
 
-### Chosen Plain-text 
+### Chosen Plaintext Attack
 
 In this scenario, the attacker encrypts a selected message using the algorithm and key.
 
@@ -42,7 +42,7 @@ In this scenario, the attacker encrypts a selected message using the algorithm a
 - Allows the attacker to study the encryption process
 - Aims to learn the encryption key for further exploitation
 
-### Chosen Cipher-text Attack
+### Chosen Ciphertext Attack
 
 A chosen cipher-text attack occurs when an attacker can access both encrypted and decrypted versions of some text, using this information to decrypt other encrypted data.
 
@@ -50,7 +50,7 @@ A chosen cipher-text attack occurs when an attacker can access both encrypted an
 - Exploits decryption process vulnerabilities to reveal encrypted information.
 - Commonly used against encryption schemes like RSA.
 
-### Cipher-text Only Attack
+### Ciphertext Only Attack
 
 In a cipher-text only attack, the attacker only has access to the encrypted message and attempts to break the encryption algorithm without knowing the plain text.
 
@@ -58,7 +58,7 @@ In a cipher-text only attack, the attacker only has access to the encrypted mess
 - Uses statistical analysis within the encryption to break the cipher.
 - Effective mainly against weak or improperly implemented encryption algorithms.
 
-### Known Plain-text 
+### Known Plaintext 
 
 If an attacker has both encrypted and unencrypted versions of a message, they can use that information to crack the encryption key.
 

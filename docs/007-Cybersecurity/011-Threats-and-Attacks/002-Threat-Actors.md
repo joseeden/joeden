@@ -186,14 +186,18 @@ Attackers who are driven by a cause like social change, political agendas, or te
 
 Attackers who are part of a crime group that is well-funded and highly sophisticated.
 
-- Leverage resources and technical skills for illicit gain.
-- Syndicates that banded together to conduct criminal activities in the digital world.
-- Members could be across countries and borders.
 - Well-plan operations and coordinated based on the approach.
-- Employs sophisticated techniques:
+- Members could be across countries and borders.
+- Have resources, expertise, and networks to carry out sophisticated attacks: 
   - custom malware 
   - ransomware
   - phishing campaigns
+
+:::info 
+
+Organized crime groups are most likely to be hired by a foreign government to attack critical systems located in other countries
+
+:::
 
 ### Advanced Persistent Threats
 

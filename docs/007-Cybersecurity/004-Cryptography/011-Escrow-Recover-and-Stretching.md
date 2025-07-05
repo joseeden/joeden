@@ -49,7 +49,9 @@ Key stretching improves the strength of encryption keys derived from passwords, 
   1. **Salting**: Adds a unique value (salt) to the password before hashing.
   2. **Hashing**: Repeatedly hashes the salted password, increasing the time required to verify the key.
 
-Key stretching repeats these two processes hundreds or thousands of times to consume longer amounts of time. The idea is that a user knows the password, verifying the password should not be a big deal. Verifying one key is fast, but guessing millions of keys is slow. 
+Key stretching repeats these two processes hundreds or thousands of times to consume longer amounts of time. The idea is that if a user knows the password, verifying the password should not be a big deal. 
+
+**Verifying one key is fast, but guessing millions of keys is slow.**
 
 ## Key Stretching Algorithms
 
