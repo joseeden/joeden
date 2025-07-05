@@ -74,7 +74,6 @@ Create a Git repository to store Flux CD settings.
 
   ```sh
   mkdir -p clusters/dev/flux-system
-  cd clusters/dev/flux-system
   ```
 
 Here, "dev" is a name for the config, not the cluster itself. Same config can be reused across clusters.
@@ -83,27 +82,28 @@ Here, "dev" is a name for the config, not the cluster itself. Same config can be
 
 Create the required empty files - Flux will fill them later.
 
-  ```sh
-  touch gotk-components.yaml gotk-sync.yaml kustomization.yaml
-  ```
+```sh
+cd clusters/dev/flux-system
+touch gotk-components.yaml gotk-sync.yaml kustomization.yaml
+```
 
 Edit the `kustomization.yaml`. This tells Flux where to find the config files.
 
-  ```yaml
-  apiVersion: kustomize.config.k8s.io/v1beta1
-  kind: Kustomization
-  resources:
-  - gotk-components.yaml
-  - gotk-sync.yaml
-  ```
+```yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- gotk-components.yaml
+- gotk-sync.yaml
+```
 
-- Save the files to Git.
+Save the files to Git.
 
-  ```sh
-  git add .
-  git commit -m "initial commit"
-  git push
-  ```
+```sh
+git add .
+git commit -m "initial commit"
+git push
+```
 
 Only the customization file has content. Flux will update the rest.
 
@@ -172,7 +172,6 @@ These controllers handle syncing and updates from Git.
 **Difference with ArgoCD**
 
 Unlike some tools like Argo CD, Flux doesn’t run as a single named pod. It uses multiple lightweight controllers. You don’t need a parent cluster. Just run the same bootstrap command to set up another cluster.
-
 
 :::
 

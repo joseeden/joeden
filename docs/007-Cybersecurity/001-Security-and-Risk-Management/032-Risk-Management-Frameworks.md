@@ -33,21 +33,44 @@ ISO/IEC refers to standards developed by the International Organization for Stan
 
 ## SSAE 18 SOC 2 and 3
 
-SSAE 18 SOC 2 (Statement on Standards for Attestation Engagements) is an auditing standard designed for service organizations to assess their data security practices.
+SSAE 18 (Statement on Standards for Attestation Engagements) is an auditing standard designed for service organizations to assess their data security practices.
 
 - "Trust Services Criteria" - availability, integrity, confidentiality, and privacy.
-- Audit evaluates controls and processes to meet these criteria
+- Audit evaluates internal controls and processes to meet these criteria
+- SOC (System and Organization Controls) reports are the result of these audits.
+
+System and Organization Control (SOC) reports provide the results of an independent audit of a service provider. SOC 1, SOC 2, and SOC 3 reports are created based on SSAE 18 guidelines.
+
+SSAE 18 is the **framework**, and SOC reports are the **outcomes** of audits performed under that framework.
+
+### SOC 1
+
+SOC 1 focuses on **controls that affect financial reporting**. It's mainly used by organizations whose services impact their clients' financial statements.
+
+### SOC 2
+
+SOC 2 reports assess **how a company protects customer data.**
+
 - SOC 2 report is required for industries handling sensitive data
 - Financial statement integrity ensures accurate, reliable data
-- Internal controls; Type I and Type II
 
 SOC 2 has two types of reports that assess internal controls.
 
-- **Type I** evaluates controls at a specific point in time
-- **Type II** evaluates controls over a period (6 to 12 months)
+- **Type 1**
+   
+   - Evaluates controls at a specific point in time
+   - Simply verify controls are in place 
 
-SOC 3 is a public report summarizing SOC 2 findings without disclosing sensitive details. It's used to demonstrate security compliance to a general audience.
+- **Type 2** 
 
+   - Evaluates controls over a period (6 to 12 months)
+   - Verify that the controls are operating efficiently and effectively.
+
+### SOC 3 
+
+SOC 3 is a **public summary of a SOC 2 report**, without disclosing sensitive details. 
+
+- Used to demonstrate security compliance to a general audience.
 - Assures compliance for marketing and client trust  
 - Ideal for clients needing basic security confirmation
 

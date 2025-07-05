@@ -65,25 +65,22 @@ $ tree
             ├── gotk-components.yaml
             ├── gotk-sync.yaml
             ├── kustomization.yaml
-
-3 directories, 6 files
 ```
 
 To organize the manifests, we will create folders for each lab, along with their respective `kustomization.yaml` file.
 
-For this lab, create the `helm-repos-ecr` directory:
+For this lab, create the following directories:
 
 ```bash
+mkdir -p clusters/eks/flux-system
 mkdir -p clusters/eks/helm-repos-ecr
 ```
 
-Also create the `charts` directory.
+Also create the `charts` directory in the same level as the `clusters` directory:
 
 ```bash
 mkdir -p charts
 ```
-
-
 
 ## Install AWS CLI and eksctl
 
@@ -219,6 +216,37 @@ Login to AWS --> **IAM** --> **Roles** --> Find  `FluxCDECR` and copy the **ARN*
 arn:aws:iam::123456789000:role/FluxCDECR 
 ```
 
+## Create Flux Config Files
+
+Back on your terminal, create the required empty files - Flux will fill them later.
+
+```sh
+cd clusters/eks/flux-system
+touch gotk-components.yaml gotk-sync.yaml kustomization.yaml
+```
+
+Edit the `kustomization.yaml`. This tells Flux where to find the config files.
+
+```yaml
+## clusters/eks/flux-system/kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- gotk-components.yaml
+- gotk-sync.yaml
+```
+
+Save the files to Git.
+
+```sh
+git add .
+git commit -m "Created kustomization files"
+git push
+```
+
+Only the customization file has content. Flux will update the rest.
+
+
 ## Install FluxCD on EKS
 
 :::info 
@@ -237,20 +265,44 @@ git pull
 To install FluxCD on your EKS cluster, export your Git token and run the `flux bootstrap` command. You don’t need to manually access the cluster, Flux will handle the setup remotely.
 
 ```bash
-export GIT_TOKEN=<your-token>
+export GITLAB_TOKEN=<your-token>
 
 ## Replace owner ID
-flux bootstrap gitlab  \
-  --owner=josemanuelitoeden  \     
-  --repository=flux-lab  \
-  --branch=main  \
-  --path=clusters/eks  \
-  --token-auth --personal 
+flux bootstrap gitlab \
+--owner=josemanuelitoeden \
+--repository=flux-lab \
+--branch=main \
+--path=clusters/eks \
+--token-auth \
+--personal
 ```
 
-Flux will deploy the necessary controllers and CRDs to your EKS cluster and push configuration files to the `flux-system` directory. Do another pull to update your local repository with the changes.
+Flux installs the required controllers and CRDs into your EKS cluster and stores configuration files in the `flux-system` directory. To confirm that everything is set up correctly, you can check the running pods. But before doing that, ensure you're connected to the correct Kubernetes cluster (if you have multiple clusters) by running the command below. The cluster with an asterisk (*) under the `CURRENT` column is the one you're connected to.
 
 ```bash
+$ kubectl config get-contexts
+CURRENT   NAME                                           CLUSTER                             AUTHINFO                                       NAMESPACE
+*         user@dev-flux.ap-southeast-1.eksctl.io   dev-flux.ap-southeast-1.eksctl.io   user@dev-flux.ap-southeast-1.eksctl.io
+```
+
+Check if the Flux pods are created.
+
+```bash
+$ kubectl get pods -n flux-system
+NAME                                       READY   STATUS    RESTARTS   AGE
+helm-controller-5fc6f89467-krklj           1/1     Running   0          3h55m
+kustomize-controller-785d866cb7-lsj78      1/1     Running   0          3h55m
+notification-controller-56776fcb98-vw6cc   1/1     Running   0          3h55m
+source-controller-6cd558bc58-pv6h6         1/1     Running   0          3h55m
+```
+
+Now do another pull to update your local repository with the changes.
+
+```bash
+## Ensure you're on main branch 
+git branch 
+
+## Pull
 git pull 
 ```
 
@@ -259,6 +311,7 @@ git pull
 To allow Flux to access your ECR repository, add a patch in your `kustomization.yaml` that attaches the IAM role to the `source-controller` service account:
 
 ```yaml
+## clusters/eks/flux-system/kustomization.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
@@ -321,8 +374,6 @@ The Helm chart is now stored in private ECR repo, ready to be pulled by FluxCD.
 
 
 
-
-
 ## Create `HelmRepository` and `HelmRelease` 
 
 As good practice, create a new branch in your repository:
@@ -338,13 +389,13 @@ To tell FluxCD where to find your chart and how to deploy it, create two YAML fi
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
-  name: ecr-apache
+  name: apache-repo
   namespace: default
 spec:
   type: oci
   provider: aws
-  url: oci://<ACCOUNT_ID>.dkr.ecr.ap-southeast-1.amazonaws.com
   interval: 5m0s
+  url: oci://<ACCOUNT_ID>.dkr.ecr.ap-southeast-1.amazonaws.com
 ```
  
 ```yaml
@@ -352,18 +403,19 @@ spec:
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: apache
+  name: apache-release
   namespace: default
 spec:
+  interval: 5m
   chart:
     spec:
+      interval: 1m
       chart: apache
       version: "0.1.0"
       sourceRef:
         kind: HelmRepository
-        name: apache
-        namespace: flux-system
-  interval: 5m
+        name: apache-repo
+        namespace: default
 ```
 
 Commit and push these files.
@@ -392,6 +444,8 @@ Apply changes and confirm everything is running.
 flux reconcile kustomization flux-system --with-source
 
 # Verify setup
+
+
 kubectl get helmrepository -n flux-system
 # NAME    URL                                                    READY  STATUS
 # apache  oci://<ACCOUNT_ID>.dkr.ecr.ap-southeast-1.amazonaws.com  True
@@ -409,9 +463,111 @@ This confirms FluxCD has deployed your chart from ECR to EKS.
 
 ## Cleanup 
 
+#### Delete the EKS Cluster 
+
 Once we're done with the lab, we need to delete the EKS cluster:
 
 ```bash
 eksctl delete cluster --name <cluster-name> --region <region>
 ```
 
+#### Delete the IAM Role 
+
+To delete the IAM role, list all managed policies attached to the role:
+
+```bash
+aws iam list-attached-role-policies --role-name FluxCDECR
+```
+
+Then detach the policy:
+
+```bash
+aws iam detach-role-policy --role-name FluxCDECR --policy-arn <policy-arn> 
+```
+
+Verify that the policy has been detached:s
+
+```bash
+$ aws iam list-attached-role-policies --role-name FluxCDECR     
+{
+    "AttachedPolicies": []
+} 
+```
+
+Finally, delete the role.
+
+```bash
+aws iam delete-role --role-name FluxCDECR
+```
+
+
+## Troubleshooting
+
+#### Uninstall Flux 
+
+To uninstall Flux from your EKS cluster and remove the GitOps setup created via `flux bootstrap`, follow these steps:
+
+1. **Suspend Reconciliation**
+
+    This stops Flux from making further changes to your cluster from the Git repo:
+
+    ```bash
+    flux suspend kustomization flux-system
+    ```
+
+2. **Delete Flux Resources**
+
+    Remove all Flux-related Kubernetes resources from your cluster:
+
+    ```bash
+    kubectl delete -k ./clusters/eks
+    ```
+
+    If you get the `unable to find` error, you need to target the actual directories that have a `kustomization.yaml`:
+
+    ```bash
+    kubectl delete -k ./clusters/eks/flux-system
+    kubectl delete -k ./clusters/eks/helm-repos-ecr
+    ```
+
+3. **Delete the `flux-system` Namespace**
+
+    After resources are removed, delete the namespace:
+
+    ```bash
+    kubectl delete namespace flux-system
+    ```
+
+4. **(Optional) Clean Up Git Repository**
+
+    Delete the `clusters/eks` directory and the `flux-system` folder from your GitLab repo if you don’t need them anymore.
+
+Note: There's another way to remove `flux-system` from the cluster:
+
+1. **Uninstall Flux from the cluster**
+
+    This removes the Flux components from Kubernetes:
+
+    ```bash
+    flux uninstall --namespace=flux-system --silent
+    kubectl delete namespace flux-system
+    ```
+
+    > ⚠️ If the uninstall hangs or the namespace lingers, use:
+    >
+    > ```bash
+    > kubectl delete ns flux-system --grace-period=0 --force
+    > ```
+
+2. **Delete the `flux-system` folder in Git**
+
+    If you're using `clusters/eks/flux-system`, remove it:
+
+    ```bash
+    rm -rf clusters/eks/flux-system
+    git add .
+    git commit -m "Remove old flux-system to prepare for fresh bootstrap"
+    git push
+    ```
+
+    This ensures that your next `flux bootstrap` doesn’t reuse broken or empty files.
