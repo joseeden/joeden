@@ -68,7 +68,7 @@ Defines who get access to what.
 **Geolocation:**
 
 - Allowing access based on user's location 
-- **Geofencing** - user geolocation determines resource access 
+- **Geofencing** - restricts device functionality based on geographic location
 - **Geotagging** - adding location metadata to files 
 - **Impossible travel time** - if user is in one location, he can't be signed in on another location, but can be bypassed by VPN or Tor.
 

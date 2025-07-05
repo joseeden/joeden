@@ -81,6 +81,8 @@ Exploitation can also be done by moving laterally within the network to expand a
 
 - Using compromised credentials to pivot from one system to another within the network
 - Exploiting trust relationships between systems to gain access to sensitive data.
+- For more information, please see [Pivoting](/docs/007-Cybersecurity/007-Assessment-and-Testing/067-Penetration-Testing.md#privilege-escalation-backdoors-and-pivoting)
+
 
 ### Obfuscation/Anti-forensics
 

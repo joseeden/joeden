@@ -76,7 +76,7 @@ Sideloading is the process of installing applications on a mobile device from so
 
 ## Jailbreaking and Rooting
 
-Jailbreaking (iOS) and rooting (Android) refer to the process of removing manufacturer-imposed restrictions on a mobile device. This allows greater customization and access to system files but significantly compromises security.
+Jailbreaking (iOS) and rooting (Android) refer to the process of removing manufacturer-imposed restrictions on a mobile device. This enables users to install unauthorized apps and modify the operating system. This allows greater customization and access to system files but significantly compromises security.
 
 - **Risks**:
   - Disabling built-in security features and protections.

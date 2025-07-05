@@ -105,7 +105,7 @@ Mobile device tethering, also known as mobile hotspot or internet sharing, allow
 - Limited device access 
 
     - **Rooting** - Breaking into android devices, to have full access or root access 
-    - **Jailbreaking** - Similar with rooting, but for Apple devices
+    - **Jailbreaking** - Similar with rooting, but for Apple devices. See [Mobile Vulnerabilities.](/docs/007-Cybersecurity/011-Threats-and-Attacks/012-Mobile-Vulnerabilities.md#jailbreaking-and-rooting)
 
 ## SIM Cards 
 
@@ -115,10 +115,12 @@ Subscribe Identity Modules (SIM) cards authenticates device to carrier network. 
 - SIM Card serial number
 - Phone contacts (if not in the cloud)
 
-**Carrier Unlock**
+## Carrier Unlocking
 
-- Reuse device on a different carrier network
+Carrier unlocking involves removing restrictions set by a carrier to allow the phone to be used on different networks.
+
 - Switching between mobile providers
+- Does not affect app installation or security controls
 
 ## Mobile Security 
 

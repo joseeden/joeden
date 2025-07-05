@@ -69,6 +69,8 @@ Domain Hijacking involves the unauthorized acquisition of a domain name. Attacke
 - Loss of domain control, website defacement, phishing, etc.
 - Configure alerts for unauthorized changes to domain registration, WHOIS records.
 
+The most effective way to carry out a domain hijacking attack is through social engineering, which often involves tricking individuals into providing access credentials or other sensitive information that can then be used to change domain registration details, thus redirecting web traffic to a third-party site.
+
 **Mitigations:**
 
 - Enable two-factor authentication (2FA) for domain registrar accounts.
