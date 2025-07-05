@@ -1,7 +1,9 @@
 ---
 title: "Networking Models"
 description: "The different networking models"
-tags: [Networking,Cybersecurity]
+tags: 
+- Networking
+- Cybersecurity
 sidebar_position: 2
 last_update:
   date: 1/16/2019

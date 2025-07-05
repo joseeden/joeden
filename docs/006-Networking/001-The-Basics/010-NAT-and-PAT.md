@@ -1,7 +1,9 @@
 ---
 title: "NAT and PAT"
 description: "NAT and PAT"
-tags: [Networking,Cybersecurity]
+tags: 
+- Networking
+- Cybersecurity
 sidebar_position: 10
 last_update:
   date: 1/16/2019

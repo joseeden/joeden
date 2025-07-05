@@ -1,7 +1,9 @@
 ---
 title: "Network Appliances"
 description: "Network Appliances"
-tags: [Networking,Cybersecurity]
+tags: 
+- Networking
+- Cybersecurity
 sidebar_position: 50
 last_update:
   date: 1/16/2019

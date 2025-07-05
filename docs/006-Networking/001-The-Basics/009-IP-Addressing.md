@@ -1,7 +1,9 @@
 ---
 title: "IP Addressing"
 description: "Learn the basics of Networking"
-tags: [Networking,Cybersecurity]
+tags: 
+- Networking
+- Cybersecurity
 sidebar_position: 9
 last_update:
   date: 1/16/2019

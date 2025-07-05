@@ -1,7 +1,9 @@
 ---
 title: "Domain Name System (DNS)"
 description: "Domain Name System (DNS)"
-tags: [Networking,Cybersecurity]
+tags: 
+- Networking
+- Cybersecurity
 sidebar_position: 3
 last_update:
   date: 1/16/2019

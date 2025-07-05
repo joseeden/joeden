@@ -1,7 +1,9 @@
 ---
 title: "Proxy Servers"
 description: "Learn what proxy is"
-tags: [Networking,Cybersecurity]
+tags: 
+- Networking
+- Cybersecurity
 sidebar_position: 6
 last_update:
   date: 1/16/2019
