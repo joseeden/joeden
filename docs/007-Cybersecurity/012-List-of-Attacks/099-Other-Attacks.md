@@ -55,11 +55,11 @@ Cross-Site Scripting (XSS) is a web security vulnerability that involves injecti
   - Difficult to detect and mitigate compared to server-side XSS vulnerabilities.
   - Examples of code snippets that can be used to affect the DOM:
 
-    ```JavaScript
-    document.cookie 
-    document.write 
-    document.location 
-    ```
+      ```JavaScript
+      document.cookie 
+      document.write 
+      document.location 
+      ```
 
 ### Mitigations
 
