@@ -31,7 +31,7 @@ ISO/IEC refers to standards developed by the International Organization for Stan
 - Establish best practices and frameworks for technology, information security, and related fields.
 - **ISO/IEC 27001** - Information Security Management Systems (ISMS), providing a framework to protect sensitive information.
 
-## SSAE 18 SOC 2 and 3
+## SSAE 18 
 
 SSAE 18 (Statement on Standards for Attestation Engagements) is an auditing standard designed for service organizations to assess their data security practices.
 
