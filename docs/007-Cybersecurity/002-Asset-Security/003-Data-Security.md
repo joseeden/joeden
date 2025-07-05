@@ -100,7 +100,7 @@ Retaining unnecessary data has considerable costs in terms of storage and manage
 2. **Purging**
    - Eliminates residual effects from original data.
    - Some technologies may retain recoverable data "ghosts."
-   - Degaussing may be needed for certain media.
+   - [Degaussing](/docs/007-Cybersecurity/002-Asset-Security/004-Destroying-Data.md#degaussing) may be needed for certain media.
 
 3. **Destruction**
    - Ultimate remedy for data remanence.

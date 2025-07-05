@@ -167,7 +167,7 @@ Transactions on a blockchain are secured using cryptographic techniques.
 
 - Blockchain can enhance supply chain security.
 - It can provide an immutable record of product provenance and traceability.
-
+- For more information, please see [Supply Chain Analysis.](/docs/007-Cybersecurity/001-Security-and-Risk-Management/062-Third-Party-Vendor-Risks.md#supply-chain-attacks)
 
 
 

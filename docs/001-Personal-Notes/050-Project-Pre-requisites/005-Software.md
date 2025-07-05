@@ -203,7 +203,7 @@ go version go1.18.3 linux/amd64
 
 ### Method 3: Using a Script 
 
-Here is a script for installing Go in your Linux instance. You can also use this scrpit if you're running WSL on your Windows machine.
+This script can be used for installing Go in your Linux instance. You can also use this script if you're running WSL on your Windows machine.
 
 ```bash
 #!/bin/bash

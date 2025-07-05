@@ -43,7 +43,7 @@ Service providers offer essential services such as maintenance, support, and con
 
 Supply chain attacks involve exploiting vulnerabilities in the supply chain to gain unauthorized access to systems, often targeting weaker links such as suppliers or managed service providers (MSPs) rather than the primary targets directly.
 
-- Instead of targeting a well-fortified entity, attackers can target suppliers and MSPs.
+- Instead of well-fortified entities, attackers can target suppliers and MSPs.
 - Cisco routers and switches are often the source of supply chain attacks.
 
 ### Hardware-based Attacks
@@ -78,6 +78,15 @@ The CHIPS Act, officially known as the CHIPS and Science Act of 2022, is designe
 - Efforts to reduce dependence on foreign semiconductor manufacturing.
 - Creation of jobs and support for industries reliant on advanced semiconductor technologies.
 
+### Supply Chain Analysis 
+
+Used to dive deep into a vendor's entire supply chain and assess the security and reliability of each link.
+
+- Vendor' security is not just about their practices 
+- Includes vendor's entire supply chain's integrity
+- Scrutinize the locations where hardware vendors source their parts
+
+
 ### Preventing Supply Chain Attacks 
 
 Mitigating supply chain attacks requires a multi-faceted approach to secure all links in the supply chain. 
@@ -97,4 +106,4 @@ Mitigating supply chain attacks requires a multi-faceted approach to secure all 
   - Include specific security requirements and responsibilities in contracts with suppliers.
   - Establish clear terms for security breaches, corresponding penalties, or remediation processes.
 
-
+For more information, please see [Supply Chain Analysis.](/docs/007-Cybersecurity/001-Security-and-Risk-Management/060-Vendor-Assessment.md#supply-chain-analysis)

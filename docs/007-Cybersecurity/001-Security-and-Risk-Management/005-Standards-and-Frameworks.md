@@ -88,3 +88,12 @@ The General Data Protection Regulation (GDPR) is a strict EU law governing the c
 - Gives EU residents rights over their data, like access, correction, deletion, and data use restrictions.
 - Organizations must implement strong data protection and report data breaches within 72 hours.
 - Violating GDPR can result in heavy fines, up to 4% of global revenue or €20 million.
+
+
+:::info
+
+Under GDPR, the **data protection officer (DPO)** ensures that the company understands its privacy responsibilities and serving as the primary liaison to the supervising authority. 
+
+The **chief information security officer (CISO)** focuses on information security and risk management within the company but does not primarily serve as the liaison for GDPR compliance.
+
+:::

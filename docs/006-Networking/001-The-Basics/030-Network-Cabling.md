@@ -1,7 +1,13 @@
 ---
 title: "Network Cabling"
 description: "Physical, logical, and secure ports"
-tags: [Networking, Security, Cybersecurity, Security Architecture, Security Engineering]
+tags: 
+- Networking
+- Security
+- Cybersecurity
+- Security 
+- Architecture
+- Security Engineering
 sidebar_position: 20
 last_update:
   date: 1/16/2019
