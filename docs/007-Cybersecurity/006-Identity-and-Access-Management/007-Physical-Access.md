@@ -58,6 +58,17 @@ Physical access controls are tangible security measures designed to prevent, mon
     - **Behavioral** 
       - Voiceprints, signature dynamics, keystroke dynamics.
 
+### Biometric Iris Scans 
+
+A few notes on **iris scans (eye scans)**:
+
+- Iris patterns remain stable throughout a person's life
+- This makes it a reliable biometric authentication method
+- Has a very low false acceptance rate, making it a highly accurate
+- Iris patterns can be recognized from a distance, allowing nonintrusive scanning
+
+One disadvantage of iris recognition technology is that scanners can be fooled by high-quality images of a person's face.
+
 ### Securing Facilities
 
 - **Fences**
