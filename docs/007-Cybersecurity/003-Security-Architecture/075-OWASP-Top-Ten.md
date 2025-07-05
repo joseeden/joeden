@@ -49,9 +49,10 @@ Reference: https://owasp.org/www-project-top-ten/
    - Developers fail to verify back-end access control for certain application functions  
    - Attackers can exploit this by directly sending unauthorized requests
 
-8. **Cross-Site Request Forgery (CSRF)**
+8. **Cross-Site Request Forgery (CSRF/XSRF)**
    - Attackers exploit the fact that users often have multiple websites open  
    - Detailed coverage in upcoming sections
+   - For more information, please see [CSRF/XSRF](/docs/007-Cybersecurity/012-List-of-Attacks/099-Other-Attacks.md)
 
 9. **Using Components with Known Vulnerabilities**
    - Web applications using insecure components may be compromised by attackers  

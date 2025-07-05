@@ -33,7 +33,7 @@ Developers should be aware of various security vulnerabilities to avoid them eff
 
 - [SQL injection](/docs/007-Cybersecurity/012-List-of-Attacks/006-Injection-Attacks.md)
 - [Cross-site scripting (XSS)](/docs/007-Cybersecurity/012-List-of-Attacks/099-Other-Attacks.md)
-- [Cross-site request forgery (CSRF)](/docs/007-Cybersecurity/012-List-of-Attacks/099-Other-Attacks.md)
+- [Cross-site request forgery (CSRF/XSRF)](/docs/007-Cybersecurity/012-List-of-Attacks/099-Other-Attacks.md)
 - [Buffer overflows](/docs/007-Cybersecurity/012-List-of-Attacks/015-Overflow-Attacks.md)
 
 ## Risk Mitigation Strategies  
