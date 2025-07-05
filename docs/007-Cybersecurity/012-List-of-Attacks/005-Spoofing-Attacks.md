@@ -121,3 +121,37 @@ Attacker intercepts and retransmits a valid data transmission to trick the recei
 
 - Replay Attacks - attacker intercepts data, decides whether to retransmit it later.
 - Session Hijacking - attacker alters data transmission in real-time.
+
+
+## Disassociation Attack 
+
+A disassociation attack forces a device to disconnect from a Wi-Fi network by sending fake disassociation frames.
+
+- Interrupts an active session without fully logging the user out
+- Often used to disrupt or weaken wireless connections
+- Can cause annoyance or service disruption, especially in public Wi-Fi
+
+## Deauthentication Attack 
+
+A deauthentication attack tricks a device into logging out of the network, forcing it to reconnect.
+
+- Helps capture authentication handshakes for password cracking
+- Useful in penetration testing when traffic is low
+- Performed using tools like aircrack-ng or Bettercap
+
+## Disassociation vs. Deauthentication 
+
+**Deauthentication** and **disassociation** are **different**, though they are related and often confused. Both are **Wi-Fi management frame types** used to disconnect devices, but they occur at different stages of the connection process.
+
+| Feature             | **Deauthentication**                             | **Disassociation**                                      |
+| ------------------- | ------------------------------------------------ | ------------------------------------------------------- |
+| **Purpose**         | Ends **authentication**                          | Ends **association** (but keeps authentication)         |
+| **Stage in Wi-Fi**  | Happens **before or during** login               | Happens **after authentication**, during session        |
+| **Effect**          | Fully disconnects a client (must reauthenticate) | Disconnects client but keeps session keys (temporarily) |
+| **Attack Use Case** | Used to capture handshake (force re-login)       | Used to disrupt sessions                                |
+| **Frame Type**      | Management frame                                 | Management frame                                        |
+
+In simple terms:
+
+- **Deauthentication** = “Log out now. You need to reauthenticate to come back.”
+- **Disassociation** = “We're ending this session, but we still know who you are.”
