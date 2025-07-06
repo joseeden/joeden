@@ -191,10 +191,12 @@ How it looks like:
 
 ### OAuth
 
-OAuth (Open Authorization) is a standard for token-based authorization, enabling secure interactions between services without exposing user credentials. It's not performing authentication, only authorization.
+OAuth (Open Authorization) is a standard for token-based authorization, which enables secure interactions between services without exposing user credentials. 
 
 - Allows third-party applications to access user data securely without exposing user credentials
 - Allows secure information exchange between different sites via JWT (JSON Web Tokens)
+
+**It's not performing authentication, only authorization.**
 
 How it works: 
 
@@ -202,7 +204,6 @@ How it works:
 - Authorization server provides a redirect URL +  ID + Secret
 - Token is received by the user 
 - User can use the token to access the requested resource
-
 
 
 ### OIDC
