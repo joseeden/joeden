@@ -65,13 +65,14 @@ The cables run through conduits, connecting to Ethernet jacks (wall jacks) throu
 
 Some devices connect to the network wirelessly via Wireless Access Points (WAPs). These WAPs are connected to switches and create Wi-Fi networks, sending and receiving signals to and from mobile devices.
 
+For more information, please see [WAPs.](/docs/006-Networking/001-The-Basics/060-Wireless-Networking.md)
+
 <div class='img-center'>
 
 ![](/img/docs/networking-basics-devices-wapssss.png)
 
 </div>
 
-For more information, please see [WAPs.](/docs/006-Networking/001-The-Basics/060-Wireless-Networking.md)
 
 ## Routers
 
@@ -114,7 +115,7 @@ Endpoints are the devices that act as the source or destination of network commu
 
 <div class='img-center'>
 
-![](/img/docs/06072025-endpoint-devices.png)
+![](/img/docs/06072025-endpoint-devices.PNG)
 
 </div>
 
