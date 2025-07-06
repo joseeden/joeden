@@ -18,7 +18,6 @@ A "pass the hash" attack involves using a hashed password to gain unauthorized a
 - Common in Windows environments with NTLM authentication.
 
 For more information, please see [Pass the Hash Attack](/docs/007-Cybersecurity/012-List-of-Attacks/002-Cryptographic-Attacks.md#pass-the-hash-attack).
-- Common in Windows environments with NTLM authentication.
 
 ### Birthday Attack
 

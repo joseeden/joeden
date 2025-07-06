@@ -21,7 +21,7 @@ With a network hub, all network traffic is always flooded to all hub ports; it i
 
 <div class='img-center'>
 
-![](/img/docs/06072025-networking-hubs_mobile.jpg)
+![](/img/docs/06072025-network-hubs-2.jpeg)
 
 </div>
 

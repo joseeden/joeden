@@ -152,6 +152,11 @@ A "pass the hash" attack involves using a hashed password to gain unauthorized a
 - They use these hashes to authenticate, avoiding password-based checks.
 - Common in Windows environments with NTLM authentication.
 
+:::info 
+
+Hashes are sent over the network instead of usernames and passwords. If a malicious user can retrieve the hash, such as from server memory, she could access other network resources as the authenticated user.
+
+:::
 
 ### Mimikatz
 
