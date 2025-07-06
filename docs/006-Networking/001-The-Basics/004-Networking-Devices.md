@@ -144,7 +144,7 @@ Types of Network Sensors:
 
 <div class='img-center'>
 
-![](/img/docs/06072025-network-sensors.png)
+![](/img/docs/06072025-network-sensors.PNG)
 
 </div>
 
@@ -160,7 +160,7 @@ Jump servers, also known as "jump boxes," provide a secure and controlled enviro
 
 <div class='img-center'>
 
-![](/img/docs/06072025-jump-servers.png)
+![](/img/docs/06072025-jump-servers.PNG)
 
 </div>
 
@@ -175,6 +175,6 @@ For more information, please see [Firewalls.](/docs/007-Cybersecurity/003-Securi
 
 <div class='img-center'>
 
-![](/img/docs/06072025-hw-fw.png)
+![](/img/docs/06072025-hw-fw.PNG)
 
 </div>
