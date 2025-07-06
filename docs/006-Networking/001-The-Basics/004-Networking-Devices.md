@@ -10,12 +10,38 @@ last_update:
 ---
 
 
-## Hubs
+## Network Hubs
 
 Hubs are basic networking devices that broadcast data to all connected devices without distinguishing between them.
 
 - Connect multiple devices in a network, commonly found in home networks
 - Less intelligent compared to switches or routers
+
+With a network hub, all network traffic is always flooded to all hub ports; it is a **single broadcast domain** and cannot be configured otherwise
+
+<div class='img-center'>
+
+![](/img/docs/06072025-networking-hubs_mobile.jpg)
+
+</div>
+
+
+## Network Bridges
+
+A **network bridge** is a device that connects two or more network segments, allowing them to function as a single network.
+
+- Each segment becomes its own collision domain
+- Filters and forwards traffic based on MAC addresses.
+- Does not route packets between different networks or broadcast domains
+
+A bridge can be used to create network segments, or collision domains, but **it cannot create multiple broadcast domains**.
+
+<div class='img-center'>
+
+![](/img/docs/06072025-network_bridge.jpg)
+
+</div>
+
 
 ## Switches
 
@@ -32,6 +58,7 @@ The cables run through conduits, connecting to Ethernet jacks (wall jacks) throu
 ![](/img/docs/networking-basics-devices-switchesss.png)
 
 </div>
+
 
 
 ## WAPs
@@ -70,6 +97,13 @@ Servers are powerful computers that manage and deliver resources or services to 
 - Common types include web servers, email servers, print servers, database servers, and file servers
 - Secured differently than workstations
 
+<div class='img-center'>
+
+![](/img/docs/06072025-servers.jpg)
+
+</div>
+
+
 ## Endpoints
 
 Endpoints are the devices that act as the source or destination of network communication.
@@ -78,13 +112,41 @@ Endpoints are the devices that act as the source or destination of network commu
 - One end often at a server with a resource, the other end a client making a request
 - Can be servers, desktops, laptops, tablets, mobile phones, or other end-user devices
 
+<div class='img-center'>
+
+![](/img/docs/06072025-endpoint-devices.png)
+
+</div>
+
+
 ## Network Sensors
 
 Network sensors are devices that continuously monitor network traffic to identify and report on anomalies and potential security threats.
 
-- Monitor network traffic and detect anomalies and potential threats in real-time
+- Devices or software agents deployed within a network 
 - Collect data for analysis and reporting
 - Integrate with other security systems to automate alerts and responses
+
+Types of Network Sensors:
+
+- **Intrusion Detection Systems (IDS)**
+   Passive sensors that alert when threats are detected.
+
+- **Intrusion Prevention Systems (IPS)**
+   Active sensors that can also block traffic.
+
+- **Flow Sensors**
+   Monitor metadata (e.g., NetFlow, sFlow) instead of full packet contents.
+
+- **Packet Capture (PCAP) Sensors**
+   Collect full packet data for in-depth analysis.
+
+<div class='img-center'>
+
+![](/img/docs/06072025-network-sensors.png)
+
+</div>
+
 
 ## Jump Servers
 
@@ -95,6 +157,12 @@ Jump servers, also known as "jump boxes," provide a secure and controlled enviro
 - Log and monitor all administrative actions for auditing purposes
 - Usually host a range of tools and scripts for system administrators
 
+<div class='img-center'>
+
+![](/img/docs/06072025-jump-servers.png)
+
+</div>
+
 ## Firewalls
 
 Firewalls are security devices that monitor and control network traffic based on predefined rules.
@@ -103,3 +171,9 @@ Firewalls are security devices that monitor and control network traffic based on
 - Firewalls can filter both inbound and outbound traffic
 
 For more information, please see [Firewalls.](/docs/007-Cybersecurity/003-Security-Architecture/055-Firewalls.md)
+
+<div class='img-center'>
+
+![](/img/docs/06072025-hw-fw.png)
+
+</div>
