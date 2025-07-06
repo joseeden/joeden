@@ -133,6 +133,22 @@ Packet size:
 - **Max Transmission Size (MTU)** - set at only 1500 bytes
 - Anything beyond MTU, packet gets fragmented and causes VPN problems.
 
+
+## IPSec Ports 
+
+IPSec VPNs **do not use TCP ports** like typical applications. Instead, they use specific **protocols and port numbers** at the IP layer.
+
+**Note:** These protocols might be **blocked by firewalls** if they're not explicitly allowed, which is why IPSec VPNs may fail if the firewall only allows TCP ports.
+
+
+| **Protocol/Service**                           | **Protocol Type**         | **Port/Protocol Number** |
+| ---------------------------------------------- | ------------------------- | ------------------------ |
+| **ISAKMP (IKE Phase 1)**                       | UDP                       | Port **500**             |
+| **IPSec ESP (Encapsulating Security Payload)** | IP Protocol (not TCP/UDP) | Protocol **50**          |
+| **IPSec AH (Authentication Header)**           | IP Protocol (not TCP/UDP) | Protocol **51**          |
+| **NAT-T (NAT Traversal)**                      | UDP                       | Port **4500**            |
+
+
 ## IPSec Protocols
 
 ### Authentication Header (AH)

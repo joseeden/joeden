@@ -109,7 +109,7 @@ Design systems with duplicate components for backup in case of failure.
 Failover involves establishing an alternate location, such as a secondary data center or cloud infrastructure, where critical business functions can continue in case the primary site becomes unavailable due to a disaster or incident.
 
 
-### DR Sites 
+### Disaster Recovery Sites 
 
 - **Hot Site**
 
@@ -146,7 +146,7 @@ Failover involves establishing an alternate location, such as a secondary data c
     - Virtual Warm Site - Partially replicated and scalable
     - Virtual Cold Site - Minimal activation to minimize costs
 
-### DR Tests 
+### Disaster Recovery Tests 
 
 - **Read-through Exercises**
 
@@ -189,21 +189,27 @@ Failover involves establishing an alternate location, such as a secondary data c
   - More disruptive and costly compared to a parallel test.
 
 
-### DR Plan
+### Disaster Recovery Plan (DRP)
 
-Organizations often maintain diverse documents for different audiences in their Disaster Recovery Planning (DRP) efforts. These include:
+Organizations typically prepare a variety of documents as part of their **Disaster Recovery Planning (DRP)** to meet the needs of different audiences. These include:
 
 - **Executive summary**: High-level plan overview.
 - **Department-specific plans**: Tailored for various organizational units.
 - **Technical guides**: For IT personnel handling critical backup systems.
 - **Full plan copies**: For critical disaster recovery team members.
-- **Checklists**: Tailored for specific roles, including:
-  - Critical disaster recovery team members
+
+Roles involved: 
+
+  - Disaster recovery team members
   - IT personnel
   - Managers and public relations personnel
 
 
+:::info 
 
+When developing your DRP, consider including steps for recovering PKI-encrypted files tied to damaged user accounts. In a PKI system, each user has a related pair of cryptographic keys. The public key encrypts data, while the private key—stored in secure locations like certificates, directories, or smart cards—is required to decrypt it.
+
+:::
 
 
 ## BC vs DR

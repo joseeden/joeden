@@ -180,3 +180,13 @@ For MacOS, we can use the **FileVault** utility. Go to System Preferences > Secu
 
 ![](/img/docs/cissp-filevault.png)
 
+
+## Encrypting USB Flash drives 
+
+Encrypting USB flash drives helps protect sensitive data if the drive is lost or stolen. 
+
+- Users may be asked for a passphrase when the drive is connected
+- A smart card might be required to unlock the drive
+
+**The drive can still be formatted without the passphrase**, but the data remains protected
+Encryption prevents access to the contents, not the ability to erase the drive.
