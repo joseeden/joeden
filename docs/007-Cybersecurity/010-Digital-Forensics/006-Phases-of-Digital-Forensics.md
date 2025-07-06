@@ -20,11 +20,10 @@ Recognizing and determining relevant data or digital evidence.
 
 Gathering and acquiring digital evidence while preserving its integrity.
 
-- Proper handling and documentation to maintain a chain of custody.
 - Use forensically sound methods to collect data.
-- Maintain a clear **chain of custody**.
 - Document each step in the collection process.
 - Follow proper acquisition procedure.
+- Maintain a clear [chain of custody.](/docs/007-Cybersecurity/010-Digital-Forensics/010-Chain-of-Custody.md)
 
 ## Analysis 
 

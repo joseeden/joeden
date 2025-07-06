@@ -93,18 +93,21 @@ Every organization requires a comprehensive password policy for secure data acce
 
 Password Security:
 
-- **Length** 
-    - Recommended 12-16 characters 
-- **Complexity** 
-    - Alphanumeric + symbols
-- **Reuse** 
-    - If one account is compromised, another account is also compromised
-- **Expiration** 
-    - Change password every 90 days
-- **Password age** 
-    - Minimum number of days before user needs to change password again
-- **Risky logins**
-    - Locking accounts after a number of incorrect attempts 
+| **Criteria**     | **Details**                                                |
+| ---------------- | ---------------------------------------------------------- |
+| **Length**       | Recommended 12–16 characters                               |
+| **Complexity**   | Alphanumeric + symbols                                     |
+| **Reuse**        | If one account is compromised, another is also at risk     |
+| **Expiration**   | Change password every 90 days                              |
+| **Password Age** | Minimum number of days before the user can change it again |
+| **Risky Logins** | Lock accounts after a number of incorrect attempts         |
+
+
+:::info 
+
+Setting a minimum password age to three days, for example, will prevent users from, upon password change, immediately cycling through the number of passwords remembered to reuse a familiar password they have already used.
+
+:::
 
 ## Bring Your Own Device
 

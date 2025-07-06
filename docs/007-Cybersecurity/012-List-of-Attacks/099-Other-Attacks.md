@@ -101,8 +101,9 @@ Cross-Site Request Forgery (XSRF) is a malicious script host on the attacker's s
 - Manipulation of session cookies, user impersonation.
 - Users are tricked into executing malicious actions without their consent.
 - Form submissions, image requests, API calls.
-- Exploits the trust relationship between the user and the web application.
 - Impact include account takeover, unauthorized transactions.
+
+Cross-site request forgery attacks work by submitting data to a web site (for example, by manipulating a URL) from an **authenticated trusted user without that user’s knowledge**. The malicious code that performs this attack could be executed by tricking the user to click a link in an e-mail message or on a web site.
 
 **Mitigations:**
 
