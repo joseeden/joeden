@@ -190,14 +190,35 @@ Centralized table containing all the risk details.
 
 ## Prioritizing Risks 
 
-The highest priority should be given to risks estimated to high impact and low probability over high probability and low impact value (ISC2 Study Guide, Chapter 1, Module 2). 
-
-In qualitative risk analysis, the 'expected probability of occurrence' and the 'frequency of occurrence' refer to the same thing. 
-
-**Prioritize:**
+The highest priority should be given to risks estimated to high impact and low probability over high probability and low impact value. 
 
 - Low frequency of occurrence 
 - High expected impact
+
+
+### Risk Analysis
+
+**Risk analysis** is the process of identifying and evaluating potential threats to assets. There are two main types:
+
+- **Qualitative Risk Analysis**
+
+  - Based on expert judgment, experience, or scoring systems
+  - Uses categories like **high**, **medium**, or **low** risk
+  - Helps prioritize risks quickly without needing numerical data
+
+- **Quantitative Risk Analysis**
+
+  - Based on measurable data and statistical methods
+  - Calculates risk using numbers like **cost**, **frequency**, and **impact**
+  - Helps determine the financial effect of risks more precisely
+
+
+:::info 
+
+In qualitative risk analysis, the 'expected probability of occurrence' and the 'frequency of occurrence' refer to the same thing.
+
+:::
+
 
 ### Risk Tolerance 
 
