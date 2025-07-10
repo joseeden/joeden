@@ -85,6 +85,13 @@ How it looks like:
 
 Each algorithm supports a range of key sizes that directly influence the security and efficiency of encryption and key exchange. Generally, **larger key sizes offer more security but require more computational resources.**
 
+| Algorithm                         | Key Structure           | Supported Key Sizes | Use Cases                                     | Strengths                                          | Weaknesses                                                                      |
+| --------------------------------- | ----------------------- | ------------------- | --------------------------------------------- | -------------------------------------------------- | ------------------------------------------------------------------------------- |
+| RSA                               | Public-private key pair | 1024-4096 bits      | Secure communication, digital signatures      | Established, widely used; supports large key sizes | Slower than symmetric methods; susceptible to certain attacks with smaller keys |
+| ECC (Elliptic Curve Cryptography) | Public-private key pair | 160-521 bits        | Secure communication, digital signatures      | Smaller key sizes; heavily used in mobile devices  | More complex mathematical basis; not as widely adopted as RSA                   |
+| DSA (Digital Signature Algorithm) | Public-private key pair | 1024-3072 bits      | Digital signatures, authentication            | Fast for signature generation; widely accepted     | Slower for verification; requires secure parameter selection                    |
+| Diffie-Hellman                    | Key exchange            | 1024-8192 bits      | Secure key exchange, establishing shared keys | Enables secure key exchange over insecure channels | Does not provide encryption or authentication by itself                         |
+
 
 ### RSA
 
@@ -93,8 +100,17 @@ RSA is a widely-used public key encryption algorithm that provides secure data t
 - Utilizes a pair of keys: a public key for encryption and a private key for decryption
 - Commonly used for securing sensitive data and establishing secure connections
 - Supports digital signatures, ensuring data authenticity and integrity
-- RSA is the **most widely used**, offering compatibility with a range of systems.
+
+RSA versus DSA: 
+
+- RSA is the **most widely used**, compatible with a range of systems.
 - DSA is optimized for **digital signatures**.
+
+:::info
+
+The RSA algorithm uses a **trapdoor function**, where encryption is easy to perform using the public key, but reversing the process (decryption) without the private key is challenging. RSA's principle is that certain mathematical operations are easy to perform, but their inverse operations are difficult without specific knowledge. 
+
+:::
 
 ### DSA 
 
@@ -122,21 +138,13 @@ PGP (Pretty Good Privacy) and GnuPG (GNU Privacy Guard) are encryption programs 
 
 ### ECC
 
-### ECC
-
 Elliptic Curve Cryptography (ECC) is an efficient, high-security encryption method used widely in modern, low-power devices.
 
 - Primarily used in **mobile and low-power computing devices**
 - Similar security with **smaller key sizes**, making it more efficient
 - A 256-bit ECC key offers the same security level as a 2048-bit RSA key
-Summarized table:
 
-| Algorithm                             | Key Structure             | Supported Key Sizes   | Use Cases                                         | Strengths                                                     | Weaknesses                                                                        |
-|---------------------------------------|---------------------------|-----------------------|---------------------------------------------------|---------------------------------------------------------------|-----------------------------------------------------------------------------------|
-| RSA                                   | Public-private key pair   | 1024-4096 bits        | Secure communication, digital signatures          | Established, widely used; supports large key sizes            | Slower than symmetric methods; susceptible to certain attacks with smaller keys   |
-| ECC (Elliptic Curve Cryptography)     | Public-private key pair   | 160-521 bits          | Secure communication, digital signatures          | Smaller key sizes; heavily used in mobile devices             | More complex mathematical basis; not as widely adopted as RSA                     |
-| DSA (Digital Signature Algorithm)     | Public-private key pair   | 1024-3072 bits        | Digital signatures, authentication                | Fast for signature generation; widely accepted                | Slower for verification; requires secure parameter selection                      |
-| Diffie-Hellman                        | Key exchange              | 1024-8192 bits        | Secure key exchange, establishing shared keys     | Enables secure key exchange over insecure channels            | Does not provide encryption or authentication by itself                           |
+
 
 
 ## ECC Variations

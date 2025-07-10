@@ -38,11 +38,18 @@ Types:
 - Voce over IP (VoIP)
 - Mobile systems (laptops, handheld devices)
 
-### Real Time Operating Systems 
+### Real Time Operating Systems (RTOS)
 
-An RTOS is an operating system designed to manage real-time tasks with strict timing requirements. It provides services such as task scheduling, memory management, and inter-task communication, optimized for deterministic and predictable behavior. RTOSes are commonly used in embedded systems and applications where timing and responsiveness are critical. 
+An RTOS is an operating system designed to manage real-time tasks with strict timing requirements. RTOSes are commonly used in embedded systems and applications where timing and responsiveness are critical. 
 
-Key characteristics:
+:::info 
+
+RTOSs prioritize performance, sometimes at the expense of security features like buffer overflow protections, potentially leaving the system susceptible to certain attacks. 
+
+:::
+
+
+Key Characteristics: 
 
 - **Task Scheduling**
 
@@ -67,6 +74,7 @@ Key characteristics:
   - Facilitates communication between tasks in real-time.
   - Uses message queues for asynchronous communication.
   - Employs semaphores and event flags for synchronization and mutual exclusion.
+
 
 ### Risks of Embedded Systems
 
