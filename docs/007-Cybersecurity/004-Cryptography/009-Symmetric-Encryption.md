@@ -39,6 +39,8 @@ Disadvantages:
 
 ## Key Exchanges
 
+Key exchange is a process in which two communicating parties establish a shared secret key, typically used for symmetric encryption.This key is established in a manner so that eavesdroppers, even if they intercept the key exchange messages, cannot determine the shared key.
+
 Sending the key:
 
 - **In-band** 
@@ -48,8 +50,7 @@ Sending the key:
 - **Out-of-band** 
     - Providing the key separately from the encrypted data
     - Can be provided beforehand or via phone/SMS
-    - 
-    - 
+
 ### Out-of-Band Key Exchange
 
 Out-of-Band (OOB) key exchange is a method for securely sharing cryptographic keys outside the regular communication channel used for encrypted data transfer. This approach enhances security by reducing the risk of key interception through the primary channel.

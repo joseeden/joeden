@@ -11,7 +11,7 @@ last_update:
 
 ## Overview
 
-Process that involves the formal validation or confirmation provided by an entity that is used to assert the accuracy and authenticity of a specific information.
+This is a process that involves the formal validation or confirmation provided by an entity that is used to assert the accuracy and authenticity of a specific information.
 
 - Signifies that the findings of the penetration testing is valid based on the evidence.
 - Organizations may require a letter of attestation from the pentesting firm to show as an official record.

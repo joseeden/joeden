@@ -50,7 +50,18 @@ When reviewing the contracts, you should verify that you have the **right to aud
 Vendor's self-assessment where they evaluate their own practices againsts industry standards or organizational requirements.
 
 - Vendors can present evidence of consistent and comprehensive internal audits.
-- These can serve as a testament to their commitment to security and quality.
+- Reflect proactive efforts to identify and fix security gaps
+- Provide insight into internal processes, controls, and vulnerabilities
+
+**Evidence of internal audits** are self-assessments vendors perform to check and improve their security practices. They show how seriously a vendor takes its internal controls and risk management.
+
+:::info 
+
+**Regulatory compliance certificates** indicate compliance with specific regulations but don't provide detailed insights into internal evaluations. 
+
+While **customer testimonials** may provide feedback on the vendor's performance, they don't offer insights into the vendor's internal evaluations of their security measures.
+
+:::
 
 ## Independent Assessment 
 

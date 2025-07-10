@@ -211,6 +211,11 @@ SCADA (Supervisory Control and Data Acquisition) is a system used to remotely mo
 - Remotely control equipment, adjust setpoints, and respond to alarms or abnormal conditions.
 - Typically used in industries such as manufacturing, utilities, transportation, and oil and gas.
 
+:::info 
+
+SCADA systems are often engineered for specific tasks and might not receive regular security updates, which makes them **susceptible to vulnerabilities over time**. 
+
+:::
 
 ### Risks 
 

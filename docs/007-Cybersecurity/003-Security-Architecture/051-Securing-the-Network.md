@@ -67,15 +67,15 @@ Microsegmentation addresses modern cyber threats exploiting traditional security
   - Enhances detection and prevention of advanced persistent threats.
 
 
-## Network Access Control 
+## Network Access Control (NAC)
 
-Network Access Control (NAC) scans devices for their security status before granting network access.
+Network Access Control scans devices for their security status before granting network access.
 
   - Identifies connections, isolates noncompliant devices, and supports incident response.
   - Limits endpoint access to the network and provides network visibility.
   - Ensures compliance with policies before allowing devices to join the network.
 
-NAC uses 802.x authentication to perform access control tasks and it uses different components.
+NAC uses **802.x authentication** to perform access control tasks and it uses different components.
 
 ![](/img/docs/networking-basics-network-access-control-nacccc.png)
 
@@ -92,21 +92,25 @@ Use Cases for NAC Deployment:
 
 ### NAC Deployments
 
-- **Persistent Agents**
+NAC solutions can be deployed using agent-based or agentless methods, depending on the level of control and visibility required.
 
-  - Software installed on a device requesting network access.
-  - Continuously monitor the security state of devices.
-  - Works well in a corporate environment, where the organization owns all devices.
+- **Agent-Based NACs**
+
+  - Also called **Persistent Agents**
+  - Software is permanently installed on endpoint devices
+  - Continuously monitors the device's compliance and security status
+  - Used for enforcing strict policies on managed or corporate devices
   - Doesn't work well in BYOD environments.
 
-- **Non-Persistent Agents**
+- **Agentless NACs**
 
-  - Popular in BYOD environments, such as college campuses.
-  - Users connect to WiFi, access a web portal, and click login link.
-  - Once link is clicked, a temporary agent is installed on the device.
-  - Agents scans device for compliance and delete itself after inspection.
+  - Also called **Non-Persistent Agents**
+  - Temporary agent installed during login or network access
+  - Performs a one-time scan and removes itself afterward
   - Provide a quick evaluation without ongoing monitoring.
-  - Typically used for initial security checks at connection time.
+  - Rely on network-level data, directory services, or remote scans
+  - Common in BYOD settings like universities or public WiFi networks
+
 
 ### NAC Policy 
 
