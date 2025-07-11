@@ -30,7 +30,7 @@ Example:
 ## Password Security  
 
 Measures the password's ability to resist guessing and brute-force attacks.
-For more information, please see [Common Security Policies.](/docs/007-Cybersecurity/001-Security-and-Risk-Management/070-Security-Policies.md#password-policy) 
+For more information, please see [Common Security Policies.](/docs/007-Cybersecurity/000-Security-Foundations/012-Security-Policies.md#password-policy) 
 
 ## Sensitivity 
 

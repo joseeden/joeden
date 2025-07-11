@@ -48,7 +48,7 @@ A Demilitarized Zone (DMZ) is an isolated network area for outside visitors.
 - Hosts public servers like web, email, and file servers
 - Provides a buffer zone between the internal network and the internet
 
-For more information, please see [Firewalls.](/docs/007-Cybersecurity/003-Security-Architecture/055-Firewalls.md#demilitarized-zone)
+For more information, please see [Firewalls.](/docs/007-Cybersecurity/004-Infrastructure-and-Network/055-Firewalls.md#demilitarized-zone)
 
 
 ## Virtual Local Network

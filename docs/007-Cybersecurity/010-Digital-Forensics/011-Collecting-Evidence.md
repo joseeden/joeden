@@ -46,7 +46,7 @@ A **hash** is produced using a mathematical algorithm to create a unique represe
 
 Hash values computed at the time of evidence collection can be recomputed during analysis to confirm consistency. This allows analysts to verify the integrity of evidence. 
 
-For more information, please see [Hashing](/docs/007-Cybersecurity/004-Cryptography/012-Hashing.md#)
+For more information, please see [Hashing](/docs/007-Cybersecurity/005-Cryptography/012-Hashing.md#)
 
 
 ## Order of Volatility

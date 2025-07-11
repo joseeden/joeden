@@ -57,13 +57,13 @@ Secures data while it's being transmitted over networks (or between two systems)
   - Encrypted tunnel between a user's device and a remote server or network.
   - Encrypts all traffic going through the tunnel, prevents interception or monitoring.
   - Remote access to corporate networks or for securing public Wi-Fi environments.
-  - For more information, please see [VPNs.](/docs/007-Cybersecurity/003-Security-Architecture/053-VPN.md)
+  - For more information, please see [VPNs.](/docs/007-Cybersecurity/004-Infrastructure-and-Network/053-VPN.md)
 
 - **IPSec (Internet Protocol Security)**
   - Suite of protocols; secure IP communications by encrypting and authenticating data packets.
   - End-to-end security for IP traffic, ensuring confidentiality, integrity, and authenticity.
   - Often used with VPNs to encrypt traffic between network segments.
-  - For more information, please see [IPSec](/docs/007-Cybersecurity/003-Security-Architecture/054-TLS-and-IPSec.md#ipsec)
+  - For more information, please see [IPSec](/docs/007-Cybersecurity/004-Infrastructure-and-Network/054-TLS-and-IPSec.md#ipsec)
 
 ## Data-in-Use Encryption
 

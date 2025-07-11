@@ -1,0 +1,203 @@
+---
+title: "Cryptography Basics"
+description: "Securing information through encoding"
+tags: [Security, Cybersecurity, Cryptography]
+sidebar_position: 1
+last_update:
+  date: 1/30/2024
+---
+
+## Cryptography
+
+The science and practice of securing communication and information through encoding, ensuring only authorized parties can access it. Its purpose is to protect data integrity, confidentiality, and authenticity.
+
+- **Encryption**
+    - Transforming plaintext into ciphertext using an algorithm and a key.
+
+- **Decryption**
+    - Converting ciphertext back to plaintext with the appropriate key.
+
+## Obfuscation 
+
+### Data Masking or Obfuscation 
+
+Obfuscation is a technique to make code, data, or communications harder to understand or analyze. 
+
+- Protect intellectual property, sensitive information.
+- Protect sensitive data from being easily understood or extracted.
+- Prevent unauthorized reverse engineering or tampering with software.
+
+**How It Works**
+  - Code or data is transformed into a form that is functionally equivalent but difficult for humans to read or interpret.
+  - Common methods include:
+    - renaming variables and functions with meaningless names
+    - removing comments
+    - reordering code structures.
+    
+**Considerations**
+  - Obfuscation is not foolproof.
+  - Skilled attackers can often reverse-engineer obfuscated code.
+  - Over-obfuscation can complicate legitimate debugging and maintenance.
+  - Not a replacement for proper encryption and other security practices.
+
+### Steganography
+
+Steganography and obfuscation are techniques used to conceal information, but they differ in their methods and objectives.
+
+- **Steganography** hides a message within another medium to keep its existence secret.
+- **Obfuscation** makes code or information difficult to understand
+
+Derived from Greek word, meaning "covered writing", Steganography hides secret data within ordinary, non-secret files or messages. Its purpose is not to prevent unauthorized access, but to avoid suspicions.
+
+We can try this at [Steganography Online.](https://stylesuxx.github.io/steganography/). We'll use the sample photo below:
+
+
+<div class="img-center">
+
+![](/img/docs/penguins.png)
+
+
+</div>
+
+
+The message that we want to hide in the image:
+
+```bash
+All right men, commence Operation: Special Delivery! 
+```
+
+Upload the photo and enter the message in the field. Click Encode.
+
+
+<div class="img-center">
+
+![](/img/docs/sec+-steganography-penguins.png)
+
+
+</div>
+
+
+It will generate the encoded image. 
+
+
+<div class="img-center">
+
+![](/img/docs/sec+-steganography-encoded-imagess.png)
+
+
+</div>
+
+
+
+Right-click on the third image > Save as.
+Then check the properties of the original photo and the encoded photo. We can see that the size changed.
+
+
+<div class="img-center">
+
+![](/img/docs/sec+-encoded-image-changed-size.png)
+
+
+</div>
+
+
+
+### Tokenization
+
+Tokenization replaces sensitive information with non-sensitive tokens, enhancing data security by removing direct exposure to confidential data.
+
+**How It Works**
+
+- Sensitive data is swapped for unique tokens stored in a secure token vault.
+- The original data is stored somewehere.
+- The original data can only be retrieved through secure processes with proper access.
+- If data breach occurs, attackers will only find the useless tokens.
+
+**Applications**
+
+  - Used in payment systems for credit card security.
+  - Applied in healthcare to protect patient information.
+  - Employed in databases to secure sensitive data.
+  - Supports compliance with data protection regulations.
+  
+**Considerations**
+  - The token vault must be securely protected.
+  - Tokenization should be part of a comprehensive security strategy.
+
+
+### Diffusion
+
+Diffusion spreads the effect of a single input across many output elements, thus obscuring patterns.
+
+- Makes the information less visible, less obvious.
+- In block ciphers, diffusion is achieved through operations like permutations and mixing.
+- Example is blurring an image.
+
+### Confusion
+
+Confusion creates complex relationships between the key and ciphertext, making it difficult to infer the key.
+
+- Changing a property of the data and make it more difficult to interpret, more unintelligible.
+- Confusion works alongside diffusion to create robust encryption schemes.
+- Example is scrambling or changing the pixels of an image.
+
+
+
+## Types of Encryption 
+
+These types of encryption play critical roles in modern cybersecurity, often used together to achieve a balance of speed and security.
+
+### Symmetric Encryption 
+
+Symmetric cryptography uses the same key for both encryption and decryption. The sender and receiver must share this key, keeping it secret from others.
+
+- **Session key** - single key is used to encrypt and decrypt data. 
+- Both parties must have this key.
+
+Symmetric encryption is generally faster and less computationally intensive compared to asymmetric cryptography. It is also effective for encrypting large volumes of data.
+
+<div class="img-center">
+
+![](/img/docs/sec+-symmetric-encryption-example-photo.png)
+
+</div>
+
+For more information, please see [Symmetric Encryption.](/docs/007-Cybersecurity/005-Cryptography/009-Symmetric-Encryption.md)
+
+
+### Asymmetric Encryption
+
+Asymmetric cryptography uses a pair of keys: 
+
+- a public key for encryption 
+- a private key for decryption. 
+
+The public key can be shared openly, but the private key must remain confidential.
+
+<div class="img-center">
+
+![](/img/docs/sec+-asymmetric-encryption-example-diagran.png)
+
+</div>
+
+For more information, please see [Asymmetric Encryption.](/docs/007-Cybersecurity/005-Cryptography/010-Asymmetric-Encryption.md)
+
+
+### Hybrid Implementation 
+
+Utilizes asymmetric encryption to securely transfer a private key, which can then be used with symmetric encryption.
+
+## Storing Keys 
+
+Best practices:
+
+- Store keys in secure hardwared modules 
+- Encrypt keys when at rest 
+- Transmit keys securely when used
+- Limit key access to regular audits and monitoring
+
+
+
+
+
+

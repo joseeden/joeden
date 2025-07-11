@@ -93,7 +93,7 @@ Cryptography is a versatile tool, providing crucial services like confidentialit
 
 A hash function is a mathematical function that takes an input or 'message' and generates an output or 'hash value', usually much smaller than the original message, typically of a fixed-size. Hash functions are used to generate unique representations of data or verify data integrity and are a crucial element of cryptographic systems.
 
-For more information, please see [Hashing](/docs/007-Cybersecurity/004-Cryptography/012-Hashing.md#hash-functions)
+For more information, please see [Hashing](/docs/007-Cybersecurity/005-Cryptography/012-Hashing.md#hash-functions)
 
 ### Message Digests 
 
@@ -122,7 +122,7 @@ A digital signature uses assymetric cryptography to transform data to achieve:
 
 However, digital signatures **cannot guarantee confidentiality** (i.e. the property of data or information not being made available or disclosed).
 
-For more information, please see [Digital Signatures in Asymmetric Encryption.](../004-Cryptography/010-Asymmetric-Encryption.md#digital-signature)
+For more information, please see [Digital Signatures in Asymmetric Encryption.](../005-Cryptography/010-Asymmetric-Encryption.md#digital-signature)
 
 
 

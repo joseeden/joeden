@@ -36,4 +36,4 @@ Compensating controls are alternative security measures that mitigate risks when
 - Ensure compensating controls meet the intent of the original control.
 - The compensating control must provide a similar level of protection.
 
-For more information, please see [Security Controls](/docs/007-Cybersecurity/001-Security-and-Risk-Management/040-Security-Controls.md)
+For more information, please see [Security Controls](/docs/007-Cybersecurity/001-Risk-and-Governance/040-Security-Controls.md)

@@ -162,7 +162,7 @@ Hashes are sent over the network instead of usernames and passwords. If a malici
 
 Mimikatz is an open-source tool for security testing and [penetration testing](/docs/007-Cybersecurity/007-Assessment-and-Testing/067-Penetration-Testing.md).
 
-  - Extracts plaintext passwords, hashes, and [Kerberos](/docs/007-Cybersecurity/003-Security-Architecture/020-Authentication-Protocols.md#kerberos) tickets from memory.
+  - Extracts plaintext passwords, hashes, and [Kerberos](/docs/007-Cybersecurity/004-Infrastructure-and-Network/020-Authentication-Protocols.md#kerberos) tickets from memory.
   - Enables "pass the hash" and "pass the ticket" attacks.
   - Manipulates Windows authentication tokens.
 

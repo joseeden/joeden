@@ -32,7 +32,7 @@ Compliance ensures that information systems and security practices meet establis
 - Involves implementing specific security controls and maintaining policies and procedures.
 - Regularly auditing and assessing the organization's security posture.
 
-For more information, please see [Compliance as a Governance Element.](../001-Security-and-Risk-Management/050-Compliance.md)
+For more information, please see [Compliance as a Governance Element.](../001-Risk-and-Governance/050-Compliance.md)
 
 ### Audit Committee
 
