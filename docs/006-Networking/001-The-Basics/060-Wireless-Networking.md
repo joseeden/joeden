@@ -190,4 +190,6 @@ A site survey assesses the environment to optimize wireless signal placement and
 - Identifies obstacles and areas with weak signals to adjust equipment placement
 - Helps ensure reliable coverage and minimize interference in complex environments
 
-For more information, please see [Site Surveys](/docs/007-Cybersecurity/003-Security-Architecture/060-Wireless-Security.md#site-survey)
+For more information, please see [Site Surveys](/docs/007-Cybersecurity/003-Security-Architecture/060-Wireless-Infrastructure-Security.md#site-survey)
+
+
