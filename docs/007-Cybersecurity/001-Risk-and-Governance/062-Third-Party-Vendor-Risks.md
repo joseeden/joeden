@@ -58,7 +58,8 @@ Supply chain attacks involve exploiting vulnerabilities in the supply chain to g
 
   - May be embedded within devices acquired from overseas suppliers.
   - Pre-installed malware tools can provide backdoor access once the devices are active.
-  - It's important to conduct thorough vendor assessments to mitigate these vulnerabilities.
+  - Conduct thorough vendor assessments to mitigate these vulnerabilities.
+  - For more information, please see [Rootkits.](/docs/007-Cybersecurity/012-List-of-Attacks/014-Execution-and-Escalation.md#rootkits)
 
 ### Software-based Attacks
 

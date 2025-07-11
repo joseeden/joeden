@@ -158,14 +158,11 @@ Mitigation:
 
 A rootkit tries to maintain root-level access while concealing malicious activity. 
 
-- Typically creates a backdoor and attempts to remain undetected by anti-malware software. 
-- A rootkit remains active while the system is running.
+- Creates a backdoor and attempts to remain active and undetected
 - Digs into the OS deeply, making it difficult for AV systems to detect it.
 
-**Mitigation:**
+For more information, please see [Rootkits.](/docs/007-Cybersecurity/012-List-of-Attacks/014-Execution-and-Escalation.md#rootkits)
 
-- Conduct an external system scan.
-- Continuous vigilance and security measures.
 
 ## DLL Injection
 

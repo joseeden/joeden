@@ -73,7 +73,7 @@ Privilege Escalation is an attack where an attacker gains elevated access to res
 
 ## Rootkits
 
-Rootkits are malicious software designed to hide the existence of certain processes or programs from normal methods of detection and enable continued privileged access to a computer.
+Rootkits are malicious software (malware) designed to hide the existence of certain processes or programs from normal methods of detection and enable continued privileged access to a computer.
 
 - Modifies system files, often at the kernel level, to conceal its presence.
 - Installing malicious software, often via compromised system components.
@@ -92,7 +92,7 @@ Rootkits are malicious software designed to hide the existence of certain proces
 
   - Rootkits that operate at the user level of the operating system.
   - Manipulate system processes and user-level functions.
-  - Easier to detect compared to kernel mode rootkits but still pose a significant threat to system security.
+  - Easier to detect compared to kernel mode rootkits 
 
 **Mitigations:**
 
