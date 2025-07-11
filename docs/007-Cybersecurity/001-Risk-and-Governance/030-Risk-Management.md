@@ -289,7 +289,7 @@ Outsourced hardware and software from vendors:
 
 By thoroughly analyzing and vetting suppliers, an organization can ensure that they are sourcing genuine and certified equipment from reputable vendors, thus reducing the risk of introducing counterfeit hardware into their network. 
 
-For more information, please see [Supply Chain Analysis.](/docs/007-Cybersecurity/001-Security-and-Risk-Management/062-Third-Party-Vendor-Risks.md#supply-chain-attacks)
+For more information, please see [Supply Chain Analysis.](/docs/007-Cybersecurity/001-Risk-and-Governance/062-Third-Party-Vendor-Risks.md#supply-chain-attacks)
 
 
 ## Risk Monitoring and Reporting 

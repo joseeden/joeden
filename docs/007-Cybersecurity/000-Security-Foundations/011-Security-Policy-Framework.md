@@ -74,9 +74,10 @@ These four types of documents work together to create a comprehensive security p
 :::info[note]
 
 These four documents are also considered Governance Elements.
-To learn more, please see [Governance Elements.](046-Governance-Elements.md)
+To learn more, please see [Governance Elements.](/docs/007-Cybersecurity/001-Risk-and-Governance/046-Governance-Elements.md)
 
 :::
+
 
 ## Factors Affecting Security Policy
 

@@ -106,4 +106,4 @@ Mitigating supply chain attacks requires a multi-faceted approach to secure all 
   - Include specific security requirements and responsibilities in contracts with suppliers.
   - Establish clear terms for security breaches, corresponding penalties, or remediation processes.
 
-For more information, please see [Supply Chain Analysis.](/docs/007-Cybersecurity/001-Security-and-Risk-Management/060-Vendor-Assessment.md#supply-chain-analysis)
+For more information, please see [Supply Chain Analysis.](/docs/007-Cybersecurity/001-Risk-and-Governance/060-Vendor-Assessment.md#supply-chain-analysis)

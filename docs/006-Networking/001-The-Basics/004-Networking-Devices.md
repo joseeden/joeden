@@ -171,7 +171,7 @@ Firewalls are security devices that monitor and control network traffic based on
 - They block or allow traffic to protect networks from unauthorized access
 - Firewalls can filter both inbound and outbound traffic
 
-For more information, please see [Firewalls.](/docs/007-Cybersecurity/003-Security-Architecture/055-Firewalls.md)
+For more information, please see [Firewalls.](/docs/007-Cybersecurity/004-Infrastructure-and-Network/055-Firewalls.md)
 
 <div class='img-center'>
 

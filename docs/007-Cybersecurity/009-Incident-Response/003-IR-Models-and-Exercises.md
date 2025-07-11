@@ -137,4 +137,4 @@ This is the practical exercise of incident response procedures.
 - Training teaches what to do, testing make sure you know how to do it.
 - Simulating an incident, can cost time and money
 
-For more information, please see [Security Awareness.](../001-Risk-and-Governance/071-Security-Awareness.md#incident-response-exercises)
+For more information, please see [Security Awareness.](/docs/007-Cybersecurity/000-Security-Foundations/013-Security-Awareness.md#incident-response-exercises)

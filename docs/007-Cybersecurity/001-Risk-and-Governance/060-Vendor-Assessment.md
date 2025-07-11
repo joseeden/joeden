@@ -74,4 +74,4 @@ Independent Assessments are evaluations conducted by third-party entities that h
 
 Used to dive deep into a vendor's entire supply chain and assess the security and reliability of each link.
 
-For more information, please see [Supply Chain Attacks.](/docs/007-Cybersecurity/001-Security-and-Risk-Management/062-Third-Party-Vendor-Risks.md#supply-chain-attacks)
+For more information, please see [Supply Chain Attacks.](/docs/007-Cybersecurity/001-Risk-and-Governance/062-Third-Party-Vendor-Risks.md#supply-chain-attacks)
