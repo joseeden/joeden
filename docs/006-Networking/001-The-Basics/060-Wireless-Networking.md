@@ -114,6 +114,7 @@ Wireless encryption and cryptographic protocols protect wireless networks and sa
 For more information, please see [Wireless Encryption.](/docs/007-Cybersecurity/003-Security-Architecture/061-Wireless-Security-Settings.md)
 
 
+
 ## Wireless Authentication 
 
 Wireless authentication verifies the identity of users before allowing them to connect to a network.
