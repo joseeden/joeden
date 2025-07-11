@@ -101,16 +101,19 @@ RSA is a widely-used public key encryption algorithm that provides secure data t
 - Commonly used for securing sensitive data and establishing secure connections
 - Supports digital signatures, ensuring data authenticity and integrity
 
-RSA versus DSA: 
-
-- RSA is the **most widely used**, compatible with a range of systems.
-- DSA is optimized for **digital signatures**.
+RSA's versatility allows it to establish secure keys for **encryption** (confidentiality) and create **digital signatures**, ensuring message integrity and authenticity.
 
 :::info
 
 The RSA algorithm uses a **trapdoor function**, where encryption is easy to perform using the public key, but reversing the process (decryption) without the private key is challenging. RSA's principle is that certain mathematical operations are easy to perform, but their inverse operations are difficult without specific knowledge. 
 
 :::
+
+RSA versus DSA: 
+
+- RSA is the **most widely used**, compatible with a range of systems.
+- DSA is optimized for **digital signatures**.
+
 
 ### DSA 
 

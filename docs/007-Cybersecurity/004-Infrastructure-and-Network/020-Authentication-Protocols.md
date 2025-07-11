@@ -339,3 +339,7 @@ TACACS+ is an alternative to RADIUS, since it performas similar functions but wi
 - Uses a reliable TCP connection instead of a less-reliable UDP
 - Allows for more detailed control over AAA functions
 - Fully encrypts the entire authentication session 
+
+Unlike RADIUS, TACACS+ separates authentication, authorization, and accounting processes which allows for more detailed control. This makes TACACS+ preferred in scenarios that require granular command authorization, especially in network device management. 
+
+However, **RADIUS is more commonly chosen for wireless networks** and remote server access due to its broader application scope

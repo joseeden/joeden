@@ -14,6 +14,18 @@ last_update:
 
 
 
+## Wi-Fi Security Standards Comparison
+
+| Feature              | **WEP**              | **WPA**        | **WPA2**                      | **WPA-PSK (Personal)**      | **WPA2-Enterprise**        |
+| -------------------- | -------------------- | -------------- | ----------------------------- | --------------------------- | -------------------------- |
+| **Encryption**       | RC4                  | TKIP           | AES (CCMP)                    | TKIP or AES                 | AES (CCMP)                 |
+| **Authentication**   | Shared key           | PSK            | PSK                           | Pre-Shared Key (passphrase) | 802.1X + RADIUS server     |
+| **Security Level**   | Very weak (obsolete) | Weak to medium | Strong                        | Medium to high              | Strong                     |
+| **Key Management**   | Static key           | Static key     | Static key                    | Shared key                  | Dynamic per user/session   |
+| **Setup Complexity** | Simple               | Simple         | Simple                        | Easy (home use)             | Complex (enterprise-grade) |
+| **Recommended?**     | ❌ Not recommended    | ❌ Outdated     | ✅ Yes (if WPA3 not available) | ✅ Yes (for home)            | ✅ Best for organizations   |
+
+
 ## WEP (Wired Equivalent Privacy)
 
 WEP was the first Wi-Fi encryption standard but is now considered insecure and outdated.
@@ -56,7 +68,19 @@ This method is simple to set up, but in this setup, all users share the same key
 - Easier to manage but less secure in environments with many users
 - Still widely used despite some risks
 
+## WPA2-Enterprise
 
+WPA2-Enterprise is a secure Wi-Fi setup designed for businesses and organizations. It focuses on strong user authentication and network access control.
+
+- Uses 802.1X with a RADIUS server to verify each user
+- Assigns a unique encryption key to each session
+- More secure than WPA2-PSK, especially for large networks
+
+:::info 
+
+WPA2-Enterprise doesn't directly manage transport-layer security, which is where PEAP and its TLS tunneling come into play.
+
+:::
 
 ## WPA3
 
@@ -132,6 +156,28 @@ This WPA3 feature secures network management traffic from key recovery attackS.
 - Prevents attackers from disrupting or impersonating devices
 
 
+## WPS
+
+Wi-Fi Protected Setup (WPS) is a network security standard that aims to simplify the process of connecting devices to a wireless network, but it has known vulnerabilities.
+
+- Must have a WPS-capable WAPs and devices.
+- Press button on both the WAP and device, to create a WPA2-encrypted connection.
+- Easy to crack, more and more devices will drop support for it.
+- Advisable to disable WPS in favor of stronger security measures like WPA3.
+
+Methods: 
+
+- **Push Button Method** - Users press a physical button on the router to connect devices.
+- **PIN Method** - Involves entering an 8-digit PIN, which is susceptible to brute-force attacks.
+- **NFC Method** - Connects devices via Near Field Communication; easier access but limited security.
+
+
+:::info 
+
+WPS (Wi-Fi Protected Setup) is **not a wireless security standard** like WEP, WPA, or WPA2. Instead, it’s a **connection method** designed to simplify the process of connecting devices securely to a Wi-Fi network.
+
+:::
+
 ## AAA 
 
 AAA (Authentication, Authorization, and Accounting) is a framework used in network management to control access and usage, ensuring secure network operations.
@@ -171,19 +217,4 @@ EAP (Extensible Authentication Protocol) is a flexible authentication framework 
 - Commonly used in wireless networks for enhanced security.
 
 For more information, please see [EAP Variants](/docs/007-Cybersecurity/004-Infrastructure-and-Network/020-Authentication-Protocols.md#eap)
-
-## WPS
-
-Wi-Fi Protected Setup (WPS) is a network security standard that aims to simplify the process of connecting devices to a wireless network, but it has known vulnerabilities.
-
-- Must have a WPS-capable WAPs and devices.
-- Press button on both the WAP and device, to create a WPA2-encrypted connection.
-- Easy to crack, more and more devices will drop support for it.
-- Advisable to disable WPS in favor of stronger security measures like WPA3.
-
-Methods: 
-
-- **Push Button Method** - Users press a physical button on the router to connect devices.
-- **PIN Method** - Involves entering an 8-digit PIN, which is susceptible to brute-force attacks.
-- **NFC Method** - Connects devices via Near Field Communication; easier access but limited security.
 

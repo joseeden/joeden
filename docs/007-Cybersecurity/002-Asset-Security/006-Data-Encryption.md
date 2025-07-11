@@ -85,6 +85,25 @@ Protects data while it's being accessed or used by applications or users.
   - Protect data from unauthorized access or modification.
 
 
+## Encrypting USB Flash drives 
+
+Encrypting USB flash drives helps protect sensitive data if the drive is lost or stolen. 
+
+- Users may be asked for a passphrase when the drive is connected
+- A smart card might be required to unlock the drive
+
+**The drive can still be formatted without the passphrase**, but the data remains protected
+Encryption prevents access to the contents, not the ability to erase the drive.
+
+
+## Securing Data on Field Devices
+
+When computers are used in the field or away from secure environments, the risk of loss or theft increases. To keep sensitive data safe, it's important to use a solution that protects the data even if the device is physically compromised.
+
+**Full Disk Encryption (FDE)** is the most effective option. It encrypts all data stored on the device, making it unreadable without the decryption key. Even if someone removes the hard drive, they cannot access the data directly.
+
+While **two-factor authentication** is helpful for login security, it only protects against unauthorized access during normal use, but it does not secure the data if the drive is accessed separately.
+
 ## Demo: AESCrypt 
 
 As an example, we can try to use AESCrypt to encrypt a file.
@@ -180,13 +199,3 @@ For MacOS, we can use the **FileVault** utility. Go to System Preferences > Secu
 
 ![](/img/docs/cissp-filevault.png)
 
-
-## Encrypting USB Flash drives 
-
-Encrypting USB flash drives helps protect sensitive data if the drive is lost or stolen. 
-
-- Users may be asked for a passphrase when the drive is connected
-- A smart card might be required to unlock the drive
-
-**The drive can still be formatted without the passphrase**, but the data remains protected
-Encryption prevents access to the contents, not the ability to erase the drive.

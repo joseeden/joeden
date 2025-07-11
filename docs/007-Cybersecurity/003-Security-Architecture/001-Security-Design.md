@@ -50,6 +50,11 @@ Failure modes define how systems behave during failures. Understanding these mod
   - Maintains network security
   - May disrupt connectivity
 
+- **Fail Reset**
+
+  - Automatically restarts when a failure is detected
+  - Restore normal operations without ensuring secure authentication or access control
+
 Example: Firewall
 
 - Fail-open can allow unfiltered traffic to reach the network
