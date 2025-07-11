@@ -13,7 +13,7 @@ Password attacks attempts to gain unauthorized access by cracking or stealing pa
 
 ## Brute Force Attack 
 
-A brute force attack, also called as a known ciphertext attack, uses every possible combination of letters, numbers, and symbols to guess a user's password.
+A brute force attack, also called as a **known ciphertext attack**, uses every possible combination of letters, numbers, and symbols to guess a user's password.
 
 **Mitigations:**
 
@@ -21,6 +21,37 @@ A brute force attack, also called as a known ciphertext attack, uses every possi
 - Temporarily lock accounts after a certain number of unsuccessful login attempts.
 - Restrict the number of login attempts within a specific time frame.
 - Keep systems and software up-to-date to address vulnerabilities.
+
+
+## Dictionary Attack 
+
+A dictionary attack is a type of attack that uses a list of common words to guess a user's password. 
+
+**Mitigations:**
+
+- Enforce strong and complex password creation policies.
+- Temporarily lock accounts after a certain number of unsuccessful login attempts.
+- Use a secure hashing algorithm with a unique salt for each password.
+- Keep systems and software up-to-date to address vulnerabilities.
+- Add an additional authentication layer - MFA
+
+**Using "sequential passwords" is not a Dictionary Attack**
+
+Although a dictionary attack also involves password guessing, it specifically uses a list of common passwords or phrases rather than the exhaustive, sequential approach as shown in the example below:
+
+```bash
+URL: http://businessportal.com/auth?user=manager&pass=try01
+
+URL: http://businessportal.com/auth?user=manager&pass=try02
+
+URL: http://businessportal.com/auth?user=manager&pass=try03
+
+URL: http://businessportal.com/auth?user=manager&pass=try04
+
+URL: http://businessportal.com/auth?user=manager&pass=try05
+
+URL: http://businessportal.com/auth?user=manager&pass=try06 
+```
 
 ## Knowledge-Based Attacks 
 
@@ -66,17 +97,6 @@ If an attacker has both encrypted and unencrypted versions of a message, they ca
 - The attacker exploits patterns between plaintext and ciphertext
 
 
-## Dictionary Attack 
-
-A dictionary attack is a type of attack that uses a list of common words to guess a user's password. 
-
-**Mitigations:**
-
-- Enforce strong and complex password creation policies.
-- Temporarily lock accounts after a certain number of unsuccessful login attempts.
-- Use a secure hashing algorithm with a unique salt for each password.
-- Keep systems and software up-to-date to address vulnerabilities.
-- Add an additional authentication layer - MFA
 
 ## Password Spraying 
 
