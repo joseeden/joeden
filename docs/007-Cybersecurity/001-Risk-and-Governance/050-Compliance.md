@@ -56,6 +56,7 @@ Key components:
 - **Due Care**
   - Steps taken to mitigate the risks idnetified through due diligence. 
   - Implementing controls and measures to ensure ongoing compliance.
+  - For more information, please see [Due Care](/docs/007-Cybersecurity/006-Identity-and-Access-Management/005-IAM-Concepts.md#due-care)
 
 - **Attestation**
   - Formal declarations confirming compliance with regulations or standards.

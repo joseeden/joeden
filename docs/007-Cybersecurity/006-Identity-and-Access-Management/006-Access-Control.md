@@ -68,7 +68,7 @@ There are many ways organizations can evaluate their control's effectiveness:
 
 To ensure confidentiality, integrity, and availability of information, the Principle of Least Privilege is employed through **Privileged Acces ,Management**. Users receive access only to essential items, limiting exposure.
 
-For more information, please see [PAM.](./011-Privilege-Access-Management.md) 
+For more information, please see [PAM.](/docs/007-Cybersecurity/006-Identity-and-Access-Management/011-Privilege-Access-Management.md) 
 
 
 

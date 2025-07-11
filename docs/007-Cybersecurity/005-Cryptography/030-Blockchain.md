@@ -8,7 +8,7 @@ last_update:
 ---
 
 
-## Blockchain 
+## Overview 
 
 Blockchain is a distributed ledger technology that creates a secure and tamper-resistant way to record and verify transactions. 
 
@@ -19,137 +19,6 @@ Blockchain is a distributed ledger technology that creates a secure and tamper-r
 
 
 </div>
-
-
-## Key Concepts
-
-### Decentralization 
-
-Blockchain operates without a central authority, distributing control across a network of nodes
-
-- Reduces single points of failure and improves resilience against attacks.
-- Each node or participant can operate independently.
-- Involves redundancy, which increases resilience against attacks and system failures. 
-
-### Public Ledger 
-
-Public Ledgers is a record-keeping system that maintains participants' identities in a secure and anonymous format.
-
-- Track and verify transactions without relying on a central authority.
-- Transaction records are accessible to anyone. 
-- Decentralized, transparent, and immutable.
-
-### Smart Contracts 
-
-Smart contracts are self-executing agreements coded in software, usually on blockchain platforms like Ethereum. They automatically enforce or carry out contract terms when specific conditions are met, reducing the need for intermediaries.
-
-- Smart contracts execute actions automatically when certain triggers are activated.
-- Being on a blockchain, smart contracts are transparent, and their outcomes cannot be tampered with.
-- The contract behaves consistently, ensuring predictable results.
-
-**Common Use Cases**
-
-- **Financial Transactions**: Automate payments, loans, or insurance claims.
-- **Supply Chain Management**: Track goods and automate logistics.
-- **Decentralized Finance (DeFi)**: Enable financial services without traditional intermediaries.
-
-**Challenges**
-
-- Errors in code can be exploited.
-- Once deployed, smart contracts are hard to change.
-- Smart contracts might not be legally recognized in all jurisdictions.
-
-### Permission Blockchain
-
-A **permissioned blockchain** is a type of blockchain where access to the network and participation in the consensus process are restricted to approved entities. 
-
-Unlike public blockchains, where anyone can join, permissioned blockchains require users to be granted specific roles or permissions.
-
-- Only authorized participants can join and interact with the network.
-
-- A central group of approved stakeholders typically manage the network's rules and permissions.
-
-- Consensus processes are limited to a predefined group of participants, improving speed and scalability.
-
-**Applications**
-
-- **Enterprise Use Cases**: 
-
-    - Common in business environments where sensitive information requires controlled access.
-
-- **Consortia**: 
-
-    - Groups of businesses or organizations collaborate on a shared blockchain with defined governance.
-
-- **Private Transactions**: 
-
-    - Used for internal or confidential operations that need secure but private blockchain records.
-
-
-**Challenges**
-
-- **Centralized Control**: 
-
-    - Although still decentralized, permissioned blockchains have more centralized governance.
-    - This reduces trust and increase dependency on a central authority.
-
-- **Reduced Transparency**: 
-
-    - Restricted nature means they are less open and transparent compared to public blockchains.
-
-- **Limited Decentralization**: 
-
-    - The controlled nature of permissioned blockchains may lead to less resilience against certain attacks compared to fully decentralized public blockchains.
-
-
-## Features
-
-### Immutability 
-
-Once a transaction is recorded on a blockchain, it cannot be altered without consensus from the network. 
-
-- This makes data tamper-resistant and provides a reliable audit trail.
-
-
-### Consensus Mechanisms
-
-Blockchain relies on consensus algorithms to agree on the validity of transactions. 
-
-- Consensus mechanisms ensure trustworthiness in a decentralized environment.
-- Common consensus mechanisms include:
-
-    - Proof of Work (PoW)
-    - Proof of Stake (PoS), which help 
-
-
-### Cryptographic Security
-
-Transactions on a blockchain are secured using cryptographic techniques. 
-
-- Digital signatures and public-key cryptography are used to verify and authenticate participants.
-
-
-## Cybersecurity Considerations
-
-### Fifty-one Percent Attack
-
-- An attacker gains control of more than 50% of the network's mining power.
-- This allows them to manipulate the blockchain.
-
-### Smart Contract Vulnerabilities
-
-- **Smart contracts**, which are self-executing code on a blockchain, can contain security flaws that attackers can exploit.
-
-### Privacy Risks
-
-- Although transactions on a blockchain are secure, they are often public.
-- More than 50%, and blockchain becomes compromised.
-- This raises concerns about data privacy and confidentiality.
-
-### Key Management
-
-- Securing private keys is crucial for blockchain users.
-- If a key is lost or stolen, the associated assets may be irrecoverable.
 
 ## Applications in Cybersecurity
 
@@ -169,7 +38,139 @@ Transactions on a blockchain are secured using cryptographic techniques.
 - It can provide an immutable record of product provenance and traceability.
 - For more information, please see [Supply Chain Analysis.](/docs/007-Cybersecurity/001-Risk-and-Governance/062-Third-Party-Vendor-Risks.md#supply-chain-attacks)
 
+## Features
+
+### Immutability 
+
+Once data is added to a blockchain, it cannot be changed without agreement from the network.
+
+- Makes records tamper-resistant and ensures a reliable audit trail
+- Increases trust in data integrity and historical accuracy
+- Helps detect unauthorized changes or fraud attempts
+
+
+### Consensus Mechanisms
+
+Blockchain relies on consensus algorithms to agree on the validity of transactions, ensuring trustworthiness in a decentralized environment.
+
+Common consensus mechanisms include:
+
+- Proof of Work (PoW)
+- Proof of Stake (PoS), which help 
+
+
+### Cryptographic Security
+
+Blockchain relies on cryptography to ensure secure and trustworthy transactions.
+
+- Uses digital signatures and public-key cryptography for identity verification
+- Each block links to the previous one using a cryptographic hash
+- Creates a tamper-evident and traceable chain of records
 
 
 
+## Decentralization
+
+Blockchain runs without a central authority by distributing control across many nodes.
+
+- Reduces single points of failure
+- Each node operates independently
+- Redundant design improves resilience against failures and attacks
+
+
+## Public Ledger
+
+A public ledger records all blockchain transactions in a way that’s secure, anonymous, and transparent.
+
+- Allows anyone to track and verify transactions
+- Does not rely on a central authority
+- Immutable and accessible by all participants
+
+
+
+## Smart Contracts
+
+Smart contracts are self-executing programs on a blockchain that run automatically when conditions are met.
+
+- Enforce contract terms without intermediaries
+- Transparent and tamper-proof once deployed
+- Ensure predictable outcomes based on code logic
+
+### Common Use Cases
+
+Smart contracts automate processes across many industries.
+
+- **Financial Transactions** – Automated payments, insurance claims, or loans
+- **Supply Chain Management** – Tracking goods and automating logistics
+- **DeFi (Decentralized Finance)** – Run financial services without banks
+
+### Challenges of Smart Contracts
+
+Smart contracts offer benefits but also pose certain risks.
+
+- Bugs or logic errors can be exploited
+- Difficult to update once deployed
+- Legal recognition varies by jurisdiction
+
+
+## Permissioned Blockchain
+
+A permissioned blockchain restricts access to the network and its operations to approved participants.
+
+- Only trusted users can access or validate data
+- Rules and roles are managed by designated entities
+- Faster and more scalable due to controlled participation
+
+Unlike public blockchains, where anyone can join, permissioned blockchains require users to be granted specific roles or permissions.
+
+### Applications of Permissioned Blockchain
+
+Often used in business settings for privacy and control.
+
+- **Enterprise Use** – Handles sensitive data securely within organizations
+- **Consortia** – Collaboration between trusted groups with shared governance
+- **Private Transactions** – Supports confidential business operations
+
+### Challenges of Permissioned Blockchain
+
+While secure, permissioned blockchains have trade-offs.
+
+- **More Centralized Control** – Reduces decentralization, increasing reliance on few parties
+- **Lower Transparency** – Not open to public auditing or participation
+- **Limited Resilience** – Less robust against tampering compared to public networks
+
+## Security Considerations
+
+### Fifty-one Percent Attack
+
+Occurs when an attacker controls the majority of a blockchain network’s power.
+
+- Gains over 50% of mining or validation power
+- Can alter transactions, double-spend, or block new ones
+
+
+### Smart Contract Vulnerabilities
+
+Smart contracts are automated code on blockchains, but flaws in their design can be exploited.
+
+- Bugs in code may lead to loss of funds
+- Poor input validation can trigger unintended actions
+- Exploits can’t be reversed once executed on-chain
+
+
+### Privacy Risks
+
+Blockchain data is often public, which can expose user activity.
+
+- Transactions are traceable even without names
+- Patterns can reveal identities or sensitive behavior
+- Raises concerns in financial and healthcare use cases
+
+### Key Management
+
+Users must protect private keys to keep blockchain assets secure.
+
+- Losing a private key means losing access to assets
+- Stolen keys allow full control of the associated funds
+- Secure storage and backups are critical
 

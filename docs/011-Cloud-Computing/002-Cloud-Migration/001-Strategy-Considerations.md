@@ -170,9 +170,9 @@ When it comes to selecting a public cloud vendor, there are a wide array to choo
   - Understand support availability and resolution times for potential issues.
   - Assess how vendors handle mistakes, implement changes, and mitigate recurring issues.
 
-## Selecting a Cloud Deployment Model
+## Cloud Deployment Models
 
-Understand the available cloud deployment models and asses which one fits your requirement.
+Available cloud deployment models:
 
 - **Public Cloud**
 
@@ -185,13 +185,14 @@ Understand the available cloud deployment models and asses which one fits your r
   - Onsite infrastructure, managed and owned by the organization.
   - Direct control over data, tighter security controls.
   - Utilizes virtualization, shared resources, scalability, and on-demand provisioning.
-  Requires capital expenditure for hardware, data center, and additional operational costs.
+  - Requires capital expenditure for hardware, data center, and additional operational costs.
 
 - **Hybrid Cloud**
 
   - Combines both public and private clouds.
   - Network link configures a logical internal network extension.
-  - Benefits from both models, often used for testing, development, or transitional purposes.
+  - Benefits from both models
+  - Often used for testing, development, or transitional purposes.
 
 - **Community Cloud**
 
@@ -199,7 +200,14 @@ Understand the available cloud deployment models and asses which one fits your r
   - Shared tendencies of public clouds with added security and compliance.
   - Hosted onsite by a community member or managed by a third-party service provider.
 
-- **Choosing Deployment Models**
+- **Distributed Cloud**
+
+  - Spreads cloud services across different geographical locations
+  - Focuses on localization rather than shared community use
+
+## Selecting a Cloud Deployment Model
+
+- **Choosing Deployment Models:**
 
   - Evaluate specific needs for each service.
   - Ask key questions for decision-making.

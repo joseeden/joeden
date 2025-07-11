@@ -22,9 +22,12 @@ Static code analysis, also known as **Static Application Security Testing (SAST)
 
 Dynamic code analysis, also known as **Dynamic Application Security Testing (DAST)**, tests the running application to identify vulnerabilities that may not be apparent in static analysis.
 
-- Analyzes an application during execution to find runtime vulnerabilities.
-- Identifies issues such as memory leaks, improper error handling, and authentication flaws.
-- Provides insights into the application’s behavior under different conditions.
+- Detects vulnerabilities during program execution
+- Catches issues like memory leaks, authentication flaws, and error handling problems
+- Observes application behavior under various inputs and conditions
+
+This approach helps evaluate software by running it and monitoring how it reacts to different situations, making it useful for uncovering issues that static analysis may miss.
+
 
 ### Synthetic Transactions
 

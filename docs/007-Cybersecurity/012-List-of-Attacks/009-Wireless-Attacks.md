@@ -20,6 +20,17 @@ Jamming and interference occur when a strong or disruptive signal overwhelms a w
 - The radio spectrum is open but limited, making it vulnerable to interference
 - The loudest signal dominates, overpowering legitimate transmissions
 
+
+:::info 
+
+**Wireless Jamming** involves transmitting signals on the same frequency to disrupt wireless communication, degrading the effectiveness of a wireless network. 
+
+To defend against this, **frequency hopping** spreads the signal across many frequencies, making it harder for jammers to block the entire connection.
+
+:::
+
+
+
 ## War Driving
 
 War driving involves searching for Wi-Fi networks by driving around with software that detects and collects data on nearby networks.

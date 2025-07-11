@@ -11,36 +11,36 @@ last_update:
 
 Bluejacking involves sending unsolicited messages to Bluetooth-enabled devices. These messages usually appear as notifications or contact information and are typically harmless.
 
-- An attacker uses a Bluetooth device to scan for nearby devices.
-- Messages are sent via the Bluetooth "contact" feature.
-- Recipients receive unexpected notifications.
-- Typically harmless but can be used for spam or pranks.
+- An attacker uses a Bluetooth device to scan for nearby devices
+- Messages are sent via the Bluetooth "contact" feature
+- Recipients receive unexpected notifications
+- Typically harmless but can be used for spam or pranks
 
 ## Bluesnarfing
 
 Bluesnarfing is the unauthorized access to information on a Bluetooth-enabled device through a Bluetooth connection. Attackers can retrieve sensitive data such as contacts, messages, and emails.
 
-- Attackers scan for discoverable Bluetooth devices.
-- Exploits vulnerabilities in the Bluetooth connection process.
-- Specialized software exploits Bluetooth protocol vulnerabilities.
-- Can lead to stolen contact lists, messages, and other sensitive information.
+- Attackers scan for discoverable Bluetooth devices
+- Exploits vulnerabilities in the Bluetooth connection process
+- Specialized software exploits Bluetooth protocol vulnerabilities
+- Can lead to stolen contact lists, messages, and other sensitive information
 
 ## Bluebugging
 
-Bluebugging allows attackers to gain control over a Bluetooth-enabled device. They can perform actions like making calls, sending messages, or accessing data remotely.
+Bluebugging allows attackers to **gain complete control over a Bluetooth-enabled device**. They can perform actions like making calls, sending messages, or accessing data remotely.
 
-- Advanced bluesnarfing.
-- Exploits vulnerabilities in the Bluetooth protocol.
-- Allows remote control of a Bluetooth-enabled device without the owner's consent.
-- Attackers can make calls, send messages, and access other device functions.
+- **Advanced bluesnarfing**
+- Exploits vulnerabilities in the Bluetooth protocol
+- Allows remote control of a Bluetooth-enabled device without the owner's consent
+- Attackers can make calls, send messages, and access other device functions
 
 ## Bluesmack
 
 Bluesmack is a denial-of-service (DoS) attack that overwhelms Bluetooth-enabled devices, causing them to become unresponsive.
 
-- Attackers send a large number of malicious packets to the target device.
-- The device's resources get overwhelmed and become slow or crash.
-- Results in temporary or permanent denial of service.
+- Attackers send a large number of malicious packets to the target device
+- The device's resources get overwhelmed and become slow or crash
+- Results in temporary or permanent denial of service
 
 ## Blueborne
 

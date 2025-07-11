@@ -9,9 +9,7 @@ last_update:
 
 ## Overview
 
-The Principle of Least Privilege dictates that users or programs should be granted the minimum access essential to fulfill their functions. Access is restricted to the specific systems and programs required for their designated job or tasks.
-
-To ensure confidentiality, integrity, and availability of information, the Principle of Least Privilege is employed through **Privileged Acces Management**. Users receive access only to essential items, limiting exposure.
+The **Principle of Least Privilege** dictates that users and programs should only have the minimum access needed to do their jobs. Access is limited to specific systems and functions required for their role. To protect confidentiality, integrity, and availability, this principle is applied through **Privileged Access Management (PAM)**, which restricts access to only what’s necessary.
 
 - **Access Control Examples**
   - Billing personnel access consumer financial data.
@@ -65,6 +63,18 @@ Credential management within PAM focuses on securely storing and controlling acc
 - Centralized storage reduces the risk of credential theft.
 - Role-based access limits visibility to necessary credentials.
 - Regular audits help maintain security by removing outdated credentials.
+
+
+### Account Audits
+
+Account audits in Privileged Access Management (PAM) help prevent users from having more access than they need.
+
+- Reviews user permissions to match job roles
+- Ensures access stays aligned with the principle of least privilege
+- Helps reduce the risk of unauthorized access or misuse
+- Identifies and removes excessive or outdated privileges
+
+
 
 ## Use Case 
 

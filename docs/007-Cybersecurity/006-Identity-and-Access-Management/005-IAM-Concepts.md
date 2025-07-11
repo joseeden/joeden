@@ -117,14 +117,14 @@ Example:
 
 ## Due Care 
 
-In cybersecurity, 'due care' means taking reasonable steps to secure and protect the organization's assets, reputation and finances. 
+Due care refers to the ongoing actions an organization takes to protect its assets, reputation, and operations.
 
-- Also known as '**the prudent person rule**.'
-- Refers to what a prudent person would do in a given situation.
-- Encompasses implementing security standards, policies, and continuous improvement.
-- Includes cybersecurity awareness training.
-- Specific tasks like patching and security practices are part of due care.
-- *Reference:* ISC2 Study Guide, Chapter 1, Module 5.
+- Also known as **the prudent person rule*
+- Refers to what a prudent person would do in a given situation
+- Involves applying security policies, standards, and best practices
+- Tasks like patching and security practices are part of due care
+
+It emphasizes not only the development but also the continuous application of security policies, procedures, and controls to maintain a secure environment over time.
 
 ## Collusion 
 
