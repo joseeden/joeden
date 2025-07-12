@@ -142,6 +142,49 @@ Business classification levels are used to categorize information within an orga
    - Ensure data privacy regulation compliance such as GDPR.
 
 
+::info 
+
+While the terms **Data Protection Officer (DPO)** and **Data Privacy Officer (DPO)** are often used interchangeably, they can refer to distinct roles with some overlap. The key difference lies in the formal, legal requirements often associated with the DPO role, particularly under regulations like the GDPR. 
+
+:::
+
+
+## DPO vs. DPO 
+
+The **Data Protection Officer (DPO)** is a *legal/compliance-focused* role, often required by regulation.
+
+The **Data Privacy Officer (DPO)/Privacy Officer** is a *broader operational or strategic* function that may include the DPO or support their work.
+
+### Data Protection Officer 
+
+The **Data Protection Officer (DPO)** is a mandatory role under privacy laws like the **GDPR**, focused on ensuring proper handling of personal data.
+
+- Makes sure the organization follows data protection laws
+- Serves as the main contact for regulators and data subjects
+- Focuses on **legal compliance and oversight**
+- Operates **independently**, reporting directly to top management
+
+**Key Points:**
+
+- DPOs must be chosen based on their experience and knowledge of data protection
+- Regulatory authorities must be informed of the DPO’s name and contact details
+- Under GDPR Article 39, organizations **cannot instruct the DPO** on how to perform their duties
+
+:::info 
+
+An organization may choose to appoint an **external DPO**, such as a contractor or third-party provider, to fulfill this role.
+
+:::
+
+### Data Privacy Officer
+
+The Data Privacy Officer (or Privacy Officer) is a **broader role or team* focused on privacy matters. They're not always required by law and their responsibilities may vary:
+
+- Writing privacy policies
+- Responding to data requests
+- Working with legal and IT on privacy risks
+- Can support or include the DPO in large organizations
+
 
 ## Data Lifecycle
 

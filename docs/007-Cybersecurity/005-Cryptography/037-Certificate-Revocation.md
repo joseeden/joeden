@@ -39,16 +39,22 @@ OCSP is a protocol used to obtain the revocation status of a digital certificate
 
 As mentioned, OCSP doesn't use encryption which makes it less secure than OCSP Stapling. 
 
-## OCSP Stapling 
+## OCSP Stapling (Certificate Stapling)
 
-OCSP Stapling, also known as **TLS Certificate Status Request extension**, is a method for improving the performance and privacy of OCSP.
+OCSP Stapling, also known as **TLS Certificate Status Request Extension**, checks whether a certificate is still valid without having the client contact the certificate authority (CA) directly.
 
 - The web server sends TLS certificate + signed OCSP response during SSL/TLS handshake.
 - OCSP record is sent at regular intervals by the server.
 - Eliminates extra connection required for the initial request by the user.
 - Speeds up tunnel creation, ensuring the data can be sent back quickly.
 
-OCSP Stapling  allows clients to verify the certificate's revocation status without needing to query an external OCSP responder, enhancing privacy and reducing latency.
+OCSP stapling  improves the performance and privacy of OCSP by attaching an OCSP validation to the digital certificate, saving the client and server the time of repeatedly querying the OCSP server for certificate validity. 
+
+:::info 
+
+OCSP Stapling  also allows clients to verify the certificate's revocation status without needing to query an external OCSP responder.
+
+:::
 
 ## Public Key Pinning
 

@@ -226,7 +226,6 @@ Risk treatment involves deciding on the most appropriate actions based on manage
       <div class="img-center">
 
           ![](/img/docs/risk-matrix-for-prioritization.png)
-          
 
       </div>
 

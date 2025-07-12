@@ -178,43 +178,50 @@ WPS (Wi-Fi Protected Setup) is **not a wireless security standard** like WEP, WP
 
 :::
 
-## AAA 
 
-AAA (Authentication, Authorization, and Accounting) is a framework used in network management to control access and usage, ensuring secure network operations.
+## Captive Portal 
 
-- Authentication: Verifies the identity of users or devices.
-- Authorization: Grants access based on permissions.
-- Accounting: Monitors and logs user activities for security auditing.
+A **captive portal** is a web page that appears when a user first connects to a Wi-Fi network. It **blocks access** to the internet until the user **logs in, registers, or accepts the terms of use**.
 
-For more information, please see [AAA of Security](/docs/007-Cybersecurity/000-Security-Foundations/003-AAA-of-Security.md)
+<div class="img-center">
 
-## RADIUS
+  ![](/img/docs/07132025-captive-portal.PNG)
 
-RADIUS (Remote Authentication Dial-In User Service) is a protocol used for network access authentication, authorization, and accounting, commonly employed in enterprise networks.
+</div>
 
-- Widely used to manage network access for employees, contractors, and guests.
-- Enhances security by providing a secure method for authentication.
+## Wireless Authentication Protocols
+
+These protocols are commonly used to **secure access to wireless networks**, particularly in enterprise environments where user identity and access control are critical.
+
+### RADIUS
+
+RADIUS (Remote Authentication Dial-In User Service) is often used in **enterprise Wi-Fi networks*- to manage user authentication and access control.
+
+- Provides centralized authentication for wireless users.
+- Commonly used with WPA2/WPA3-Enterprise for secure wireless access.
+- Supports features like accounting and role-based access.
 
 For more information, please see [RADIUS](/docs/007-Cybersecurity/004-Infrastructure-and-Network/020-Authentication-Protocols.md#radius)
 
-## TACACS+
 
-TACACS+ (Terminal Access Controller Access-Control System Plus) separates the functions of AAA to allow for a more granular control over processes.
+### TACACS+
 
-- Similar to RADIUS, but allows for more detailed control over AAA functions.
-- This level of separation permits the distinct handling of each component across different services.
-- Uses TCP and encrypts authentication for improved security over older AAA protocols.
+TACACS+ (Terminal Access Controller Access-Control System Plus) is less commonly used for wireless, but can support **backend authentication for access to network infrastructure*- including wireless controllers.
+
+- Offers granular control over authentication, authorization, and accounting.
+- Encrypts all traffic for improved security (compared to legacy TACACS).
+- Typically used in environments with complex access control needs.
 
 For more information, please see [TACACS+](/docs/007-Cybersecurity/004-Infrastructure-and-Network/020-Authentication-Protocols.md#tacacs)
 
 
-## EAP 
+### EAP
 
-EAP (Extensible Authentication Protocol) is a flexible authentication framework frequently used in network access control, providing various methods for secure authentication.
+EAP (Extensible Authentication Protocol) is a **core part of securing enterprise wireless networks**, especially with WPA2-Enterprise and WPA3-Enterprise.
 
-- Supports multiple authentication methods, including passwords and certificates.
-- Facilitates secure access in enterprise networks.
-- Commonly used in wireless networks for enhanced security.
+- Used within 802.1X frameworks to authenticate users and devices.
+- Supports methods like EAP-TLS (certificate-based) and EAP-PEAP (password-based).
+- Enables strong encryption and user identity verification.
 
 For more information, please see [EAP Variants](/docs/007-Cybersecurity/004-Infrastructure-and-Network/020-Authentication-Protocols.md#eap)
 
