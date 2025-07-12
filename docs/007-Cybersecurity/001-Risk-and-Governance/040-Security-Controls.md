@@ -144,6 +144,13 @@ Compensating controls offer alternative methods to meet security requirements wh
 - Time-based OTP (One-time password)
 - Network isolation for IoT devices
 
+:::info 
+
+Organization can use compensating controls to protect legacy systems from potential attacks by disabling unneeded services and placing a firewall in front of it. This reduces the attack surface and the likelihood of exploitation.
+
+:::
+
+
 ### Corrective Security Controls 
 
 Corrective security controls are measures used to address security vulnerabilities or weaknesses already identified. Backups, patches, and Disaster Recovery Plans are all corrective security controls (see ISC2 Study Guide, chapter 3, module 2). 
