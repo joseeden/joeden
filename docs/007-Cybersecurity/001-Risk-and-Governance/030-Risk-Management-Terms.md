@@ -118,20 +118,24 @@ Impact is the potential damage or consequences resulting from a successful explo
 - May vary depending on the type of system affected and the sensitivity of the data
 - Assessment INCLUDES **direct consequences* (e.g., system outage) and **indirect effects* (e.g., customer trust loss)
 
+
+
 ## Shadow IT
 
-Shadow IT is the use of unapproved technology, software, or hardware by employees without authorization from IT or security teams. 
+Shadow IT refers to the use of software, hardware, or services by employees without approval from the IT or security teams.
 
-- It poses risks like data breaches, compliance issues, and other security vulnerabilities. 
-- Identify, manage, and mitigate through effective policies, detection methods, and user education.
+- Can lead to security risks, data leaks, and compliance violations
+- Should be managed through clear policies, monitoring tools, and staff awareness
 
-## State Actor
 
-State actors work for or represent a government or nation-state, often with cyber-focused goals.
+# State Actor
 
-- They have extensive resources and technical skills for complex cyber operations.
-- Common targets include government, military, critical infrastructure, and major corporations.
-- Effective responses require strong cybersecurity, intelligence sharing, and international cooperation.
+A state actor is an individual or group working on behalf of a government to carry out cyber operations.
+
+- Backed by strong resources and expertise to launch advanced attacks
+- Often target sensitive sectors like government, defense, and critical services
+
+To counter state actors, ...requires strong defense strategies, threat intelligence, and global cooperation#
 
 ## Advanced Persistent Threat
 
