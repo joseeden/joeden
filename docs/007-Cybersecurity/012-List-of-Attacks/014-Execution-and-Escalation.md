@@ -9,11 +9,18 @@ last_update:
 
 ## Overview
 
+
+These techniques allow attackers to run malicious code and gain more control over a system.
+
 - **Execution**
-  - Running arbitrary or remote code on a target system by exploiting vulnerabilities.
+
+  - Running code locally or remotely by exploiting vulnerabilities.
+  - Used to initiate attacks or deliver malware.
 
 - **Escalation**
-  - Increasing privileges to gain unauthorized access to higher-level resources.
+
+  - Gaining higher privileges to access restricted data or systems.
+  - Often follows successful code execution.
 
 ## Arbitrary Code Execution
 
@@ -54,22 +61,27 @@ Privilege Escalation is an attack where an attacker gains elevated access to res
 - Unauthorized access to privileged information or functionality.
 - Monitoring for changes in user permissions and role assignments.
 
-**Types:**
-
-- **Vertical Privilege Escalation**:
-  - Attacker gains higher-level privileges than those initially granted.
-  - Example: A normal user account exploiting a vulnerability to gain administrative or root access.
-
-- **Horizontal Privilege Escalation**:
-  - Attacker accesses resources at same privilege level, but as another user.
-  - Example: A user accessing another user’s account details without proper authorization.
-
 **Mitigations:**
 
 - Apply the [principle of least privilege (PoLP)](/docs/007-Cybersecurity/006-Identity-and-Access-Management/005-IAM-Concepts.md#principle-of-least-privilege).
 - Regularly update and patch systems.
 - Monitor and log access to critical systems and data.
 - Use security tools to detect and prevent privilege escalation attempts.
+
+
+### Types of Privilege Escalation
+
+Attackers may increase access by escalating their rights vertically or moving laterally between accounts.
+
+- **Vertical Privilege Escalation**
+
+  - Gains higher-level access than originally granted.
+  - Example: User becomes admin/root.
+
+- **Horizontal Privilege Escalation**
+
+  - Accesses data or functions of another user at the same level.
+  - Example: User accesses another user's files.
 
 ## Rootkits
 
@@ -80,20 +92,6 @@ Rootkits are malicious software (malware) designed to hide the existence of cert
 - Stealthy control over the infected system, difficult detection and removal.
 - Anomalous system behavior, discrepancies in system and kernel data.
 
-**Types:**
-
-- **Kernel Mode**
-
-  - Rootkits that operate at the kernel level of the operating system.
-  - Gain deep access to system functions and resources.
-  - Difficult to detect and remove due to their low-level nature.
-
-- **User Mode**
-
-  - Rootkits that operate at the user level of the operating system.
-  - Manipulate system processes and user-level functions.
-  - Easier to detect compared to kernel mode rootkits 
-
 **Mitigations:**
 
 - Use rootkit detection tools.
@@ -102,3 +100,25 @@ Rootkits are malicious software (malware) designed to hide the existence of cert
 - Conduct regular system integrity checks and audits.
 
 
+:::info 
+
+A rootkit can change the hash of the cmd.exe file, which is a command-line interpreter for Windows systems, to avoid detection by antivirus or file integrity monitoring tools.
+
+A rootkit is one of the most difficult types of malware to remove, as **it can persist even after rebooting or reinstalling the OS.**
+
+:::
+
+
+### Types of Rootkits
+
+Rootkits help attackers hide their presence by modifying system functions.
+
+- **Kernel Mode**
+
+  - Operates at the core of the OS.
+  - Hard to detect and remove.
+
+- **User Mode**
+
+  - Runs with user-level access.
+  - Easier to find, but still dangerous.
