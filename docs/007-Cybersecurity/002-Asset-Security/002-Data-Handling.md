@@ -10,7 +10,7 @@ last_update:
 
 ## Data Classification 
 
-In general, data can be classified as:
+Data classification helps organizations manage and protect information based on its sensitivity and potential impact if exposed.
 
 - **Public Data** 
 
