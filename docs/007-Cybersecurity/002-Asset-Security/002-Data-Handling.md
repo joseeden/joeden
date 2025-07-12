@@ -151,7 +151,7 @@ Business classification levels are used to categorize information within an orga
    - Ensure data privacy regulation compliance such as GDPR.
 
 
-::info 
+:::info 
 
 While the terms **Data Protection Officer (DPO)** and **Data Privacy Officer (DPO)** are often used interchangeably, they can refer to distinct roles with some overlap. The key difference lies in the formal, legal requirements often associated with the DPO role, particularly under regulations like the GDPR. 
 
