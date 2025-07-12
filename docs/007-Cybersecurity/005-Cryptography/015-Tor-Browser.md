@@ -25,6 +25,8 @@ Perfect Forward Secrecy (PFS) ensures that encryption keys are not compromised, 
 - Different session keys prevents decryption of past or future sessions
 - Common in secure communication protocols like TLS
 
+Perfect forward secrecy is the idea that if one session or small subset of the data is compromised, the rest of the data (or sessions) cannot also be compromised because a different encryption key was used to encrypt the data.
+
 ## Tor in Action
 
 How it works:
