@@ -22,16 +22,7 @@ In general, data can be classified as:
    - Data that has minimal impact if released.
    - Organization's financial data
    - Data that can be leveraged or taken advantaged of by competitors
-   - PII and PHI:
-
-      - **PII (Personally Identifiable Information)**
-         - Identifying details like name, address, social security number, or biometric data.
-         - Unauthorized access can lead to identity theft or financial fraud.
-
-      - **PHI (Protected Health Information)**
-         - Health-related data such as medical records or insurance information.
-         - Subject to strict regulations like HIPAA.
-         - Unauthorized disclosure can have legal consequences.
+   - **PII (Personally Identifiable Information)** and **PHI (Protected Health Information)**
 
 - **Private Data** 
 
@@ -48,6 +39,24 @@ In general, data can be classified as:
 
    - Contains valuable information; Viewing is extremely restricted.
    - Examples: Credit card numbers
+
+
+## PII and PHI
+
+**PII** and **PHI** are two types of sensitive data that must be protected to maintain privacy and comply with laws.
+
+- **PII (Personally Identifiable Information)**
+
+  - Includes details like name, address, social security number, or biometric data
+  - Can be used to identify an individual
+  - Exposure may lead to identity theft or fraud
+
+- **PHI (Protected Health Information)**
+
+  - Includes medical records, diagnoses, treatment history, or insurance data
+  - Tied to a person’s health and care services
+  - Protected under laws like HIPAA, with strict rules for handling and sharing
+
 
 ## Government Classifications 
 
