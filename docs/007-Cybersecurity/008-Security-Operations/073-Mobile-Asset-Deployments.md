@@ -24,6 +24,14 @@ Bring Your Own Device (BYOD) policies allow employees to use their personal devi
   - Employees own and control the security of their devices.
   - Requires robust security policies and [mobile device management (MDM)](../004-Infrastructure-and-Network/059-Mobile-Systems.md#mobile-device-management) solutions.
 
+:::info 
+
+**Jailbreaking and BYOD Security**
+
+Jailbreaking removes built-in restrictions on devices like smartphones or tablets, allowing users to gain root access and install unauthorized apps. This weakens device security and exposes company data to risk. For a secure BYOD (Bring Your Own Device) program, companies should prohibit jailbroken devices, enforce compliance policies, and require encryption to protect sensitive information.
+
+:::
+
 
 ## COPE
 

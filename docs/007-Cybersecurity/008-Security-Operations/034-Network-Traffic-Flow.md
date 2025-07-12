@@ -15,12 +15,6 @@ last_update:
 - Enables deep inspection of HTTP/SQL requests, headers, and payloads.
 - Effective when SSL decryption is in place, so payloads can be read in plaintext.
 
-:::info 
-
-Full Packet Capture (FPC) can consume significant storage space and system resources. As a more efficient alternative, **flow analysis** can be used to gather essential network activity details without storing entire packet contents.
-
-:::
-
 In the example below, we can see the source and destination IP, as well as the sequence of packets targeting different ports over time which suggests a port scanning activity.
 
 ```bash
@@ -61,6 +55,13 @@ DDoS would look similar but the difference is that the attack will be coming fro
 10:00:07.000000 IP 192.0.2.16 > 198.51.100.20: TCP [SYN] Seq=78901, Win=1024, Length=0
 10:00:08.000000 IP 192.0.2.17 > 198.51.100.20: TCP [SYN] Seq=89012, Win=1024, Length=0
 ```
+
+
+:::info 
+
+Full Packet Capture (FPC) can consume significant storage space and system resources. As a more efficient alternative, **flow analysis** can be used to gather essential network activity details without storing entire packet contents.
+
+:::
 
 
 ## Flow Analysis

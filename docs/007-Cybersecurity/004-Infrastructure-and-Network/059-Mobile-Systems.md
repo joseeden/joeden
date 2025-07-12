@@ -163,7 +163,7 @@ Implementing strong security measures on mobile devices is important to protect 
 
 ### Mobile Asset Deployments
 
-For more information, please see [Mobile Asset Deployments.](../008-Security-Operations/073-Mobile-Asset-Deployments.md)
+For more information, please see [Mobile Asset Deployments.](/docs/007-Cybersecurity/008-Security-Operations/073-Mobile-Asset-Deployments.md)
 
 - **Bring your own device (BYOD)**
     - Employee uses personal device for work

@@ -41,7 +41,7 @@ Every policy should align with the organization's regulatory and contractual obl
 - Shredding of sensitive documents
 - Secure personally-owned devices 
 - [MDM (Mobile Device Management)](/docs/007-Cybersecurity/004-Infrastructure-and-Network/059-Mobile-Systems.md#mobile-device-management)
-- BYOD (Bring your own device)
+- [BYOD (Bring your own device)](/docs/007-Cybersecurity/008-Security-Operations/073-Mobile-Asset-Deployments.md#byod)
 
 **User Training:**
 
