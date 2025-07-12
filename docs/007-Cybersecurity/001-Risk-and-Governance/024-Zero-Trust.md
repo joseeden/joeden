@@ -17,6 +17,7 @@ last_update:
 Zero Trust is a security model that operates on the principle that no one, whether inside or outside the organization, should be trusted by default and verification is required for everybody.
 
 ## Control Plane
+
 Define, manage, and enforce the policies related to user and system access 
 
 - **Adaptive identity** - rely on real-time validation.

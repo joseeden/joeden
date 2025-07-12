@@ -30,6 +30,11 @@ The **Payment Card Industry Data Security Standard (PCI DSS)** is a set of stand
 - Requires strong security measures like encryption and access control
 - Non-compliance can result in fines or losing the ability to process payments
 
+:::info 
+
+Failing an internal PCI DSS compliance assessment typically results in **audit findings**, which are documented issues that need to be addressed to achieve compliance. These findings highlight areas where the bank's security practices do not meet the required standards and must be remediated.
+
+:::
 
 ## FERPA
 

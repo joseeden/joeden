@@ -37,6 +37,7 @@ The Zero Trust Model, also known as **Perimeterless security**, focuses on "**Ne
   - Validates user identity at various checkpoints within the network.
 
 **Analogy: Concert Access**
+
   - Traditional controls: showing a ticket at the gate for free venue access.
   - Zero trust: Multiple checkpoints at different levels, e.g. accessing backstage areas
 

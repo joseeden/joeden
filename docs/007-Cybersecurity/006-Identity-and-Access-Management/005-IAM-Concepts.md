@@ -99,7 +99,7 @@ For more information, please see [Privilege Access Management.](/docs/007-Cybers
 The "Trust but verify" model is a method of threat protection that involves granting privileged accounts access to the network and other resources, while at the same time verifying their actions and activities. 
 
 - Limitations in this model expose organizations to security threats.
-- Increasingly abandoned in favor of the Zero Trust model.
+- Increasingly abandoned in favor of the [Zero Trust model.](/docs/007-Cybersecurity/004-Infrastructure-and-Network/052-Infrastructure-Controls.md#zero-trust-model)
 - Other options are considered best practices in access management.
 
 
