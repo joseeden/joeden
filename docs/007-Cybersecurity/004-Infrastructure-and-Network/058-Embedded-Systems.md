@@ -12,35 +12,63 @@ last_update:
 
 Embedded systems are **specialized** computing systems designed to perform specific functions within larger systems or devices. They are typically built with microcontrollers or microprocessors and are embedded into products to control and monitor various operations. 
 
-Examples:
-
-- Consumer electronics (smartphones, smart TVs)
-- Automotive systems (engine control units, infotainment systems)
-- Industrial machinery (robotics, factory automation)
-- Medical devices (pacemakers, infusion pumps)
-- Home appliances (washing machines, thermostats)
-
 Embedded systems often operate in **real-time** and have resource constraints such as limited memory, processing power, and energy. 
 
 ## Embedded Systems
 
 ### Types of Embedded Systems 
 
-Types: 
+Embedded systems are specialized devices designed to perform dedicated functions within larger systems.
 
-- IoT 
-- ICS and SCADA systems
-- Medical systems 
-- In-vehicle computing systems 
-- Unmanned Aerial Vehicles (UAV) - "drones"
-- Smart Meter 
-- Surveillance systems 
-- Voce over IP (VoIP)
-- Mobile systems (laptops, handheld devices)
+- **Internet of Things (IoT)**
+
+  - Found in smart homes, wearables, and sensors
+  - Often resource-limited and connected via wireless networks
+
+- **ICS and SCADA Systems**
+
+  - Control industrial processes and critical infrastructure
+  - Require high availability and precise timing
+
+- **Medical Systems**
+
+  - Used in diagnostic tools and life-support equipment
+  - Must comply with strict safety and reliability standards
+
+- **In-Vehicle Computing Systems**
+
+  - Manage engine, braking, and infotainment functions
+  - Operate in real time with high reliability
+
+- **Unmanned Aerial Vehicles (UAVs)**
+
+  - Commonly used for surveillance, mapping, and delivery
+  - Depend on embedded flight control and GPS systems
+
+- **Smart Meters**
+
+  - Measure and report electricity, water, or gas usage
+  - Support remote updates and energy efficiency
+
+- **Surveillance Systems**
+
+  - Include CCTV, motion detectors, and recorders
+  - Often connected to cloud storage or central monitoring
+
+- **Voice over IP (VoIP)**
+
+  - Enable digital voice communication over networks
+  - Built into phones, routers, and conferencing devices
+
+- **Mobile Systems**
+
+  - Found in smartphones, tablets, and handheld tools
+  - Support mobility, connectivity, and user interaction
+
 
 ### Real Time Operating Systems (RTOS)
 
-An RTOS is an operating system designed to manage real-time tasks with strict timing requirements. RTOSes are commonly used in embedded systems and applications where timing and responsiveness are critical. 
+RTOS is a specialized operating system designed to run tasks with strict timing and reliability requirements. It's commonly used in embedded systems where timely and predictable responses are critical.
 
 :::info 
 
@@ -53,36 +81,35 @@ Key Characteristics:
 
 - **Task Scheduling**
 
-  - Prioritizes tasks based on urgency and deadlines.
-  - Utilizes scheduling algorithms such as preemptive or cooperative scheduling.
-  - Supports task preemption to ensure critical tasks are executed on time.
-  
+  - Runs tasks based on urgency and deadlines
+  - Uses preemptive or cooperative scheduling for timing control
+  - Supports task preemption to execute critical tasks on time
+
 - **Interrupt Handling**
 
-  - Efficiently manages hardware interrupts.
-  - Provides fast and deterministic response to external events.
-  - Utilizes interrupt service routines (ISRs) to handle interrupts with minimal latency.
-  
+  - Quickly responds to hardware events
+  - Uses fast, low-latency interrupt service routines (ISRs)
+
 - **Resource Management**
 
-  - Allocates system resources such as CPU time, memory, and peripherals.
-  - Ensures fair and efficient utilization of available resources.
-  - Implements mechanisms for resource protection and access control.
-  
+  - Manages CPU, memory, and devices efficiently
+  - Protects access to shared resources
+
 - **Inter-Task Communication**
 
-  - Facilitates communication between tasks in real-time.
-  - Uses message queues for asynchronous communication.
-  - Employs semaphores and event flags for synchronization and mutual exclusion.
+  - Enables tasks to communicate and sync with each other
+  - Uses queues, semaphores, and event flags for coordination
 
 
 ### Risks of Embedded Systems
 
+Embedded systems, while efficient and widely used, face several operational and security risks that must be addressed:
+
 - **Hardware Failure**
 
-  - Component failure leading to system malfunction or downtime.
+  - Malfunctions from aging components or physical damage
   - Degradation over time due to wear and tear.
-  - Environmental factors such as temperature fluctuations or electrical disturbances.
+  - Environmental stress (e.g., heat, power fluctuations)
 
 - **Software Bugs**
 
@@ -92,43 +119,43 @@ Key Characteristics:
 
 - **Security Vulnerabilities**
 
-  - Weak authentication mechanisms allowing unauthorized access.
-  - Exploitable software vulnerabilities like buffer overflows or injection attacks.
+  - Weak access controls or outdated protocols
+  - Unpatched flaws like buffer overflows or injection attacks.
   - Insufficient encryption or data protection measures.
 
 - **Outdated Systems**
 
-  - Unsupported hardware or software lacking vendor support.
-  - Inability to receive security patches or updates.
-  - Increased exposure to known vulnerabilities and exploits.
+  - Legacy hardware/software no longer supported
+  - Can't receive updates, increasing attack surface
 
+### Securing Embedded Systems
 
-### Securing Embedded Systems 
-
+Embedded systems often have limited resources and run in specialized environments, making them harder to patch and secure. These measures help reduce risk:
 
 - **Network Segmentation**
 
-  - Isolating embedded systems within segmented networks.
-  - Limit exposure to external threats.
-  - For more information, please see [Isolation and Segmentation.](../003-Security-Architecture/001-Security-Design.md#isolation-and-segmentation)
+  - Keep embedded systems in isolated network zones
+  - Limits access and reduces exposure to threats
+  - See [Isolation and Segmentation](../003-Security-Architecture/001-Security-Design.md#isolation-and-segmentation)
 
 - **Security Wrappers**
 
-  - Using protective wrappers or sandboxes to encapsulate embedded systems.
-  - This shields the systems from potential security threats.
-  - Detect and mitigate attacks in real-time using runtime protection mechanisms.
+  - Add protective layers or sandboxes around systems
+  - Helps block or contain malicious actions
+  - Can detect and respond to threats during runtime
 
 - **Firmware Version Control**
 
-  - Strict control over firmware code development, deployment, and updates
-  - Prevent unauthorized modifications.
-  - Code signing and integrity verification - ensure authenticity and integrity of updates.
-  - For more information, please see [Code Signing.](/docs/021-Software-Engineering/100-Software-Security/010-Application-Security.md#code-signing)
+  - Manage firmware development and updates strictly
+  - Use code signing to verify authenticity
+  - Prevents tampering and unauthorized changes
+  - See [Code Signing](/docs/021-Software-Engineering/100-Software-Security/010-Application-Security.md#code-signing)
 
 - **Inability to Patch**
 
-  - Challenges such as limited resources, compatibility issues, and potential disruptions.
-  - **Over-the Air (OTA) Updates** - patches are delivered and installed remotely.
+  - Many embedded systems are hard to update
+  - Reasons include limited memory, hardware constraints, or risk of disruption
+  - **OTA (Over-the-Air) Updates** allow secure remote patching where supported
 
 
 

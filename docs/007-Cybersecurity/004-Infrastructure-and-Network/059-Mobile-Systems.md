@@ -39,25 +39,32 @@ Security Implications:
 
 ### Cellular 4G
 
-4G, or fourth-generation, cellular technology is a wireless communication standard that offers faster data speeds, improved reliability, and enhanced capabilities compared to previous generations. 
+4G is a wireless communication standard that provides faster internet, better coverage, and lower delays than older generations.
 
-- Wide range of mobile applications on smartphones, tablets, and other connected devices. 
+- Supports mobile apps on phones, tablets, and other devices
+- Uses LTE for high-speed data transfer
+- Enables smooth VoIP, video calls, and online streaming
 
-- Uses advanced technologies such as LTE (Long-Term Evolution) to deliver data rates.
+4G uses radio frequencies for data transmission:
 
-- Increased bandwidth, lower latency, and support for VoIP and video conferencing. 
-- Uses radio frequencies:
+- **Narrowband**
 
-    - **Narrow-band**   
-        - short-range
-    
-    - **Broadband** 
-        - Wide-range 
-        - Multiple transmissions at the same time
+  - Short range
+  - Suitable for low data and simple communication
 
-Security Implications:
+- **Broadband**
 
-- Firmware Over-the-air (OTA) updates
+  - Longer range
+  - Handles multiple high-speed data streams at once
+
+While 4G improves performance, it also introduces new risks that must be managed:
+
+- **Firmware Over-the-Air (OTA) Updates**
+
+  - Devices receive updates remotely without user action
+  - If not properly secured, attackers could spoof or tamper with updates
+  - Requires secure channels and digital signatures to verify update authenticity
+
 
 
 ### Cellular 5G

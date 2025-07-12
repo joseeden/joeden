@@ -37,7 +37,7 @@ Specialized software programmed into read-only memory of hardware devices, provi
 - Essential for the basic functioning and stability of hardware systems.
 - BIOS in computers, embedded software in routers, and firmware in IoT devices.
 
-Mitigating firmware vulnerabilities 
+Mitigating firmware vulnerabilities:
 
 - Regular updates 
 - Security auditing
