@@ -82,11 +82,11 @@ Deauthentication and deassociation attacks force devices to disconnect from a wi
 
 ## Evil Twin
 
-Evil Twin attacks involve setting up a rogue access point that mimics a legitimate one to intercept data.
+An evil twin is a **type of a rogue access point**, but goes a step further in that it is a malicious device that attempts to get users to join it instead of the real WAPs that are used by an organization. 
 
-- Attackers create a fake Wi-Fi network with the same SSID as a trusted network.
+- Fake Wi-Fi network with the same SSID as a trusted network.
 - Users unknowingly connect to the rogue access point.
-- Allows attackers to capture sensitive information like passwords and emails.
+- Attackers then capture sensitive information like passwords and emails.
 - Often used in phishing attacks to steal login credentials.
 
 Karma toolkit: 
