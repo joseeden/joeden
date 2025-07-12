@@ -12,11 +12,23 @@ last_update:
 
 Each type of data encryption serves a specific purpose and can be used individually or in combination to protect sensitive information from unauthorized access or disclosure.
 
-- **FDE (Full Disk Encryption):**
+- **Full Disk Encryption (FDE):**
   - Encrypts entire hard drive, including OS and user data.
   - Data is encrypted when off, decrypted when turned on and used by user.
   - Guards against unauthorized access if device is lost.
   - Examples: BitLocker (Windows), FileVault (macOS).
+
+
+    :::info 
+
+    Full Disk Encryption (FDE) protects data by encrypting the entire drive, but two key components help ensure its effectiveness and reliability.
+
+    **Key escrow** lets authorized users recover encrypted data if passwords are lost, the device is stolen, or hardware fails. It also allows access for legal or forensic reasons.
+
+    **TPM (Trusted Platform Module)** is a chip found in some computers that securely stores encryption keys inside the hardware, making encryption more secure and efficient than using software alone.
+
+    :::
+
 
 - **Partition Encryption**
   - Encrypts specific drive partitions.
@@ -43,6 +55,8 @@ Each type of data encryption serves a specific purpose and can be used individua
   - Useful: multiple users with unequal permissions are accessing the same database.
   - Offers precise data protection.
   - Often used for compliance requirements.
+
+
 
 ## Data-in-Transit Encryption
 

@@ -10,10 +10,16 @@ last_update:
 
 ## Packet Captures
 
-**Full Packet Captures**, captures the entire packet, including the header and the payload for all traffic entering and leaving a network.
+**Full Packet Captures** captures the entire packet, including the header and the payload for all traffic entering and leaving a network.
 
-- Takes up too much storage space, wasting a lot of resources.
-- Instead, we can use flow analysis to collect important details. 
+- Enables deep inspection of HTTP/SQL requests, headers, and payloads.
+- Effective when SSL decryption is in place, so payloads can be read in plaintext.
+
+:::info 
+
+Full Packet Capture (FPC) can consume significant storage space and system resources. As a more efficient alternative, **flow analysis** can be used to gather essential network activity details without storing entire packet contents.
+
+:::
 
 In the example below, we can see the source and destination IP, as well as the sequence of packets targeting different ports over time which suggests a port scanning activity.
 
