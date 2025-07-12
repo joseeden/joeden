@@ -122,7 +122,7 @@ A digital signature uses assymetric cryptography to transform data to achieve:
 
 However, digital signatures **cannot guarantee confidentiality** (i.e. the property of data or information not being made available or disclosed).
 
-For more information, please see [Digital Signatures in Asymmetric Encryption.](/docs/005-Cryptography/010-Asymmetric-Encryption.md#digital-signature)
+For more information, please see [Digital Signatures in Asymmetric Encryption.](/docs/007-Cybersecurity/005-Cryptography/010-Asymmetric-Encryption.md#digital-signature)
 
 
 

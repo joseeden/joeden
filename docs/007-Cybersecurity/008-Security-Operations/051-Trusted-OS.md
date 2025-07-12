@@ -74,7 +74,7 @@ This operating system is used in numerous aircrafts like the B2-Bimber, F-16, an
 
 The Common Criteria (CC) standards evaluate the security controls in an operating system to assess their effectiveness. The evaluation is categorized into seven Evaluation Assurance Levels (EALs), each with increasing rigor and assurance.
 
-For more information, please see [Security Requirements.](/docs/003-Security-Architecture/003-Security-Requirements.md#common-criteria)
+For more information, please see [Security Requirements.](/docs/007-Cybersecurity/003-Security-Architecture/003-Security-Requirements.md#common-criteria)
 
 ## SELinux 
 

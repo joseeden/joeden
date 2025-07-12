@@ -136,7 +136,7 @@ Embedded systems often have limited resources and run in specialized environment
 
   - Keep embedded systems in isolated network zones
   - Limits access and reduces exposure to threats
-  - See [Isolation and Segmentation](/docs/003-Security-Architecture/001-Security-Design.md#isolation-and-segmentation)
+  - See [Isolation and Segmentation](/docs/007-Cybersecurity/003-Security-Architecture/001-Security-Design.md#isolation-and-segmentation)
 
 - **Security Wrappers**
 
@@ -263,7 +263,7 @@ SCADA systems are often engineered for specific tasks and might not receive regu
 
   - Vulnerability to malware infections targeting industrial control systems.
   - Risks of data theft, operational disruption, or physical damage.
-  - For more information, please see [Malware](/docs/011-Threats-and-Attacks/020-Malware.md)
+  - For more information, please see [Malware](/docs/007-Cybersecurity/011-Threats-and-Attacks/020-Malware.md)
 
 - **Lack of updates**
 

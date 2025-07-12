@@ -34,7 +34,7 @@ These are just some of the common bluetooth attacks:
 - **Bluesmack** - A denial-of-service (DoS) attack targeting Bluetooth devices.
 - **Blueborne** - Allows malware to spread via Bluetooth without user interaction.
 
-For more information, please see [Bluetooth Attacks.](/docs/012-List-of-Attacks/010-Bluetooth-Attacks.md)
+For more information, please see [Bluetooth Attacks.](/docs/007-Cybersecurity/012-List-of-Attacks/010-Bluetooth-Attacks.md)
 
 ## Best Practices for Bluetooth Devices
 

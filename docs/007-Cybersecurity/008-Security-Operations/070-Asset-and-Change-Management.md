@@ -61,7 +61,7 @@ Creating an asset inventory involves identifying and documenting all physical an
 
 Mobile Device Management (MDM) enables organizations to manage and secure mobile devices across various platforms (smartphones, tablets).
 
-For more information, please see [Mobile Device Management.](/docs/004-Infrastructure-and-Network/059-Mobile-Systems.md#mobile-device-management)
+For more information, please see [Mobile Device Management.](/docs/007-Cybersecurity/004-Infrastructure-and-Network/059-Mobile-Systems.md#mobile-device-management)
 
 ### Asset Disposal and Decommissioning 
 
@@ -77,7 +77,7 @@ Special Publication 800-88, commonly referred to as "**Guidelines for Media Sani
     - Degaussing
     - Secure Erase
     - Cryptographic Erase 
-- For more information, please see [Data Media Sanitization.](/docs/002-Asset-Security/004-Destroying-Data.md)
+- For more information, please see [Data Media Sanitization.](/docs/007-Cybersecurity/002-Asset-Security/004-Destroying-Data.md)
 
 **Destruction**
 

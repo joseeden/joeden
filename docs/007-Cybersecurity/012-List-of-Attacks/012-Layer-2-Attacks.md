@@ -33,7 +33,7 @@ MAC address flooding overwhelms a network switch with fake MAC addresses.
 
 - When MAC flooding occurs, the network switch will simply fail open.
 - When it fail-open, the switch begins to rebroadcast all traffic out to every port.
-- For more information, please see [Failure Modes.](/docs/003-Security-Architecture/001-Security-Design.md#failure-modes)
+- For more information, please see [Failure Modes.](/docs/007-Cybersecurity/003-Security-Architecture/001-Security-Design.md#failure-modes)
 
 ## Broadcast Storm
 
