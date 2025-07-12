@@ -125,8 +125,7 @@ Impact is the potential damage or consequences resulting from a successful explo
 Shadow IT refers to the use of software, hardware, or services by employees without approval from the IT or security teams.
 
 - Can lead to security risks, data leaks, and compliance violations
-- Should be managed through clear policies, monitoring tools, and staff awareness
-
+- Managed through clear policies, monitoring tools, and staff awareness
 
 # State Actor
 
@@ -135,7 +134,8 @@ A state actor is an individual or group working on behalf of a government to car
 - Backed by strong resources and expertise to launch advanced attacks
 - Often target sensitive sectors like government, defense, and critical services
 
-To counter state actors, ...requires strong defense strategies, threat intelligence, and global cooperation#
+To defend against state actors, organizations need strong cybersecurity measures, real-time threat intelligence, and international cooperation.
+
 
 ## Advanced Persistent Threat
 
