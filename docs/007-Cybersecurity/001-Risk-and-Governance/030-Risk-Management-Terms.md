@@ -1,6 +1,6 @@
 ---
-title: "Risk Management"
-description: "Managing and Prioritizing Risks"
+title: "Risk Management Terms"
+description: "Risk Management Terminologies"
 tags: 
 - Security
 - Cybersecurity
