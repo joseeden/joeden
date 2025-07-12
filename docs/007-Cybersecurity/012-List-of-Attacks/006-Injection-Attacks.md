@@ -23,6 +23,14 @@ Targets applications which construct LDAP statements based on user input. By inj
 - Regularly audit and review LDAP queries and access controls.
 - Employ security tools to monitor and detect unusual LDAP activity.
 
+:::info 
+
+**Input validation should always be performed on the web server**. If it is placed on the endpoint or within JavaScript code, the attacker may modify or remove the input validation code. 
+
+Input validation cannot be performed on the database server because the database server will not be able to tell the difference between SQL code provided by the web server and code provided by the user as part of the attack.
+
+:::
+
 ## Command Injections
 
 Attacker inserts arbitrary commands into a program that are then executed by the host operating system. This can lead to unauthorized actions and compromise system integrity.
@@ -116,6 +124,7 @@ Sample XML data:
 - XML schema validation to enforce data integrity and prevent injection attacks.
 - Limit XML processing capabilities to reduce the attack surface.
 - Regularly update XML parsers and libraries to patch known vulnerabilities.
+
 
 ## XML Bomb
 

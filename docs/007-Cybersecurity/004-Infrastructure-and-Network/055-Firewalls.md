@@ -196,7 +196,7 @@ Packet filtering firewalls offer a basic level of security by inspecting only th
   - Operates at Layer 4 (Network Layer) of the OSI model
   - Simple and fast but lacks deep packet inspection
 
-### Stateful
+### Stateful Firewall
 
 Stateful firewalls enhance security by tracking active connections and the state of network traffic.
 

@@ -37,6 +37,15 @@ Arbitrary Code Execution is an attack where an attacker exploits vulnerabilities
 - Use security-focused coding practices.
 - Implement runtime protections like DEP and ASLR.
 
+:::info 
+
+**Input validation should always be performed on the web server**. If it is placed on the endpoint or within JavaScript code, the attacker may modify or remove the input validation code. 
+
+Input validation cannot be performed on the database server because the database server will not be able to tell the difference between SQL code provided by the web server and code provided by the user as part of the attack.
+
+:::
+
+
 ## Remote Code Execution
 
 Remote Code Execution (RCE) is an attack where an attacker exploits vulnerabilities to run arbitrary code on a remote system (e.g. over the internet), often leading to complete system compromise.

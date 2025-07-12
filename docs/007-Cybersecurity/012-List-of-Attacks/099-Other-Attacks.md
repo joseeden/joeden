@@ -78,6 +78,14 @@ These are some mitigation steps that you can follow to prevent XSS attacks:
 - Raise awareness onsafe coding practices, input validation, and output encoding techniques.
 
 
+:::info 
+
+**Input validation should always be performed on the web server**. If it is placed on the endpoint or within JavaScript code, the attacker may modify or remove the input validation code. 
+
+Input validation cannot be performed on the database server because the database server will not be able to tell the difference between SQL code provided by the web server and code provided by the user as part of the attack.
+
+:::
+
 In addition to the mitigation strategies mentioned above, you can implement the following:
 
   - **Content Security Policy (CSP)**

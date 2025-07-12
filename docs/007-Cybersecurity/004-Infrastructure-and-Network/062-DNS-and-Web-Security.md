@@ -19,15 +19,13 @@ For more information, please see [Domain Name System (DNS).](/docs/006-Networkin
 
 ### DNSSEC
 
-DNS Security Extensions (DNSSEC) enhance the security of the Domain Name System (DNS) by ensuring the authenticity and integrity of DNS data. It helps protect against attacks like cache poisoning.
+DNS Security Extensions (DNSSEC) enhance the security of the Domain Name System (DNS) by ensuring the authenticity and integrity of DNS data. It helps protect against attacks like cache/DNS poisoning.
 
 - All DNS zones have certificates.
 - DNSSEC uses digital signatures to authenticate DNS data.
 - It ensures that DNS responses are unaltered and legitimate.
-- Helps prevent cache poisoning by validating DNS responses.
-- Introduces new DNS record types like RRSIG, DNSKEY, and DS.
+- Introduces new DNS record types like **RRSIG**, **DNSKEY**, and **DS**.
 - Establishes a chain of trust from the DNS root zone to individual domains.
-- Increases the overall security and trustworthiness of the internet's DNS infrastructure.
 
 ### DNS Filtering
 
