@@ -9,7 +9,7 @@ last_update:
 
 ## Attacks 
 
-An attempt to compromise the security, availability, or integrity of an IP (Internet Protocol) network. The types and variations of attacks grow everyday, but as a reference for the CISSP and CompTIA Security+ exams, a curation of known attacks can be found here: [List of Attacks](../012-List-of-Attacks/000-Start-Here.md)
+An attempt to compromise the security, availability, or integrity of an IP (Internet Protocol) network. The types and variations of attacks grow everyday, but as a reference for the CISSP and CompTIA Security+ exams, a curation of known attacks can be found here: [List of Attacks](/docs/012-List-of-Attacks/000-Start-Here.md)
 
 
 ## Tools 

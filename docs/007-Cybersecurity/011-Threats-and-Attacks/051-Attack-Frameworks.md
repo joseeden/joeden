@@ -89,7 +89,7 @@ Exploitation can also be done by moving laterally within the network to expand a
 Obfuscation refers to concealment of malicious activities and evasion of detection through the use of security tools and forensic analysis.
 
 - Encrypting malware payloads to evade antivirus detection 
-- Using [steganography](../005-Cryptography/001-Cryptography-Basics.md#steganography) to hide malicious code within image files
+- Using [steganography](/docs/005-Cryptography/001-Cryptography-Basics.md#steganography) to hide malicious code within image files
 
 ### Denial of Service
 

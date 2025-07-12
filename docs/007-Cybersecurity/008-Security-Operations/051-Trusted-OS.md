@@ -74,13 +74,13 @@ This operating system is used in numerous aircrafts like the B2-Bimber, F-16, an
 
 The Common Criteria (CC) standards evaluate the security controls in an operating system to assess their effectiveness. The evaluation is categorized into seven Evaluation Assurance Levels (EALs), each with increasing rigor and assurance.
 
-For more information, please see [Security Requirements.](../003-Security-Architecture/003-Security-Requirements.md#common-criteria)
+For more information, please see [Security Requirements.](/docs/003-Security-Architecture/003-Security-Requirements.md#common-criteria)
 
 ## SELinux 
 
 Security-Enhanced Linux (SELinux) is a set of controls that are installed on top of another Linux distribution like CentOS or Red Hat Linux. 
 
-For more information, please see [Security-Enhanced Linux.](../../003-Linux/004-Linux-Security/030-SELinux.md)
+For more information, please see [Security-Enhanced Linux.](/docs/003-Linux/004-Linux-Security/030-SELinux.md)
 
 ## Trusted Solaris
 

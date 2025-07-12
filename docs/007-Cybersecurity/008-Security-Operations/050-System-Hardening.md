@@ -7,7 +7,7 @@ last_update:
   date: 1/30/2024
 ---
 
-## Hardening 
+## Overview 
 
 Hardening is the process of applying secure configurations (to reduce the attack surface) and locking down various hardware, communications systems and software, including the operating system, web server, application server and applications, etc.
 
@@ -22,14 +22,13 @@ Hardening is the process of applying secure configurations (to reduce the attack
 
 ### Changing Default Configurations 
 
-When setting up new systems or devices, default configurations are often used to simplify the initial setup process. However, these default settings can pose significant security risks if not properly managed. Below are some common default configurations that should be addressed to enhance security.
+New systems and devices often come with default settings that make setup easy but can introduce security risks. To improve security, it’s important to review and change these settings.
 
 - **Default Passwords**
 
-  - Devices and software often come with preset passwords.
-  - Default credentials are widely known and can be easily exploited by attackers.
-  - Examples include "admin/admin" or "root/root".
-  - Always change default passwords to strong, unique ones upon installation.
+  - Many devices use preset passwords like `admin/admin` or `root/root`.
+  - These are publicly known and easily guessed by attackers.
+  - Replace default passwords with strong, unique ones during setup.
 
     <!-- 
     <div class="img-center">
@@ -41,50 +40,53 @@ When setting up new systems or devices, default configurations are often used to
 
 - **Unneeded Ports and Protocols**
 
-  - Default configurations may enable more services than necessary.
-  - Open ports and running protocols can provide additional attack surfaces.
-  - Common unnecessary services include Telnet and FTP.
-  - Disable or close any ports and protocols that are not required for operation.
-  - If you're using SMTP, use the secure versions, SMTPS and HTTPS.
-
+  - Some systems enable extra services by default (e.g., Telnet, FTP).
+  - These increase the attack surface if not used.
+  - Disable unused protocols and replace insecure ones (e.g., use SMTPS instead of SMTP).
 
 - **Extra Open Ports**
 
-  - Systems may have several ports open by default for various services.
-  - Ports 22, 23, 80, and 443 are open by default on some devices.
-  - Often done by manufacturers to provide maximum compatibility.
-  - Extra open ports can be entry points for unauthorized access.
-  - Regularly review and close any ports that are not in use.
-  - Use firewall rules to restrict access to essential ports only.
+  - Devices may open common ports like 22, 23, 80, or 443 by default.
+  - Unused open ports can be exploited by attackers.
+  - Regularly review open ports and close any that aren’t needed.
+  - Use firewalls to control access to only required services.
 
 
 ### Configuration Management 
 
-Configuration management ensures that authorized and validated changes are the only ones made to a system. It involves decision-making and control procedures, focusing on aspects like identification, establishing baselines, and applying updates and patches.
+
+Configuration management ensures that only approved and tracked changes are made to systems. It helps maintain consistency, security, and stability by managing system settings, versions, and updates.
 
 - **Identification**
 
-    - Baseline identification of a system and all its components, interfaces and documentation.
+  - Lists all system components, interfaces, and documentation.
+  - Helps track what is being managed and protected.
 
 - **Baseline**
 
-    - A security baseline is a reference point that sets the minimum accepted level of security requirements. 
-    - It ensures updates adhere to essential security standards.
-    - For more information, please [Security Baselines](/docs/007-Cybersecurity/008-Security-Operations/049-Security-Baseline.md)
+  - A baseline sets the minimum required security settings.
+  - Used as a reference to ensure future updates meet security standards.  
+  - See: [Security Baselines](/docs/007-Cybersecurity/008-Security-Operations/049-Security-Baseline.md)
 
-- **Change Control**   
+- **Change Control**
 
-    - Process for requesting changes to a baseline, with a review and approval process for updates and patches.
+  - Formal process to propose, review, approve, and apply system changes.
+  - Prevents unauthorized updates and reduces risk of disruption.
+  - Includes documentation, testing, and rollback plans.
 
-- **Verification and Audit**    
+- **Verification and Audit**
 
-    - Ensure system integrity after changes and an audit to validate the current baseline against its initial baseline plus approved changes.
+  - Confirms that changes were properly applied and did not cause issues.
+  - Audits compare the current state with the approved baseline
+  - Performed to detect unauthorized or untracked changes.
+  - Ensures compliance and system integrity over time.
+
 
 ## Restricting Applications
 
 ### Least Functionality
 
-Ensuring systems and devices operate with the least functionality necessary reduces the attack surface and minimizes security risks. This principle involves disabling or removing all non-essential features, services, and applications.
+This principle ensures systems run only what’s needed. By turning off or removing unused features, services, or apps, you reduce the attack surface and lower the chances of a security breach.
 
 - **Minimize Installed Applications**
 
@@ -103,7 +105,7 @@ Ensuring systems and devices operate with the least functionality necessary redu
 
 - **Use Minimal Software Versions**
 
-  - Opt for software versions with the least number of features that meet requirements.
+  - Use software versions with the least number of features that meet requirements.
   - Avoid using versions with unnecessary add-ons or plugins.
 
 - **Regularly Update and Patch**
@@ -157,24 +159,34 @@ Whitelisting is a security technique that only allows approved applications or p
   - Does not block execution but provides visibility into activities
   - Useful for testing and refining the whitelist
 
+### Baselining 
 
-## Group Policies 
+The process of measuring changes in the network, hardware, or software environment.
+
+- Establish normal configurations for the organization.
+- By knowing what's normal, we can also identify what's considered a deviation.
+- Any deviations are compared to the known baseline to determine if it is expected.
+
+## Windows Environments 
+
+### Group Policies 
 
 A group policy is a set of rules or policies that can be applied to a set of users or computer accounts within an operating system. 
 
 - In Windows environment, open Run > gpedit
-- Each policy acts as a security template containing a set of rules:
-  - Password requirements 
-  - Account lockout policies 
-  - Software restrictions 
-  - Application restrictions
 - Used to create a secure baseline as part of configuration management
 - Active Directory Domain Controllers hava advanced Group Policy Editor.
+
+Each policy acts as a security template containing a set of rules:
+
+- Password requirements 
+- Account lockout policies 
+- Software restrictions 
+- Application restrictions
 
 ### AppLocker 
 
 AppLocker is a security feature in Active Directory that allows administrators to control which applications can run within a network. It is used to create rules that specify allowed or blocked applications, helping to prevent unauthorized software from being executed.
-
 
 Steps to Configure AppLocker: 
 
@@ -270,13 +282,6 @@ Steps to Configure AppLocker:
     </div>
 
 
-### Baselining 
-
-The process of measuring changes in the network, hardware, or software environment.
-
-- Establish normal configurations for the organization.
-- By knowing what's normal, we can also identify what's considered a deviation.
-- Any deviations are compared to the known baseline to determine if it is expected.
 
 ## SELinux 
 
@@ -289,4 +294,4 @@ SELinux (Security-Enhanced Linux) is a security module that provides mechanisms 
 
 Due to the strict implementation of SELinux, "unknown" services will always require additional configuration to enable them in an environment where SELinux is enabled.
 
-For more information, please see [SELinux.](../../003-Linux/004-Linux-Security/030-SELinux.md)
+For more information, please see [SELinux.](/docs/003-Linux/004-Linux-Security/030-SELinux.md)

@@ -64,7 +64,7 @@ Determines access uniformly based on policies, often associated with government 
 
 The Bell and LaPadula access control model arranges subjects and objects into security levels and defines access specifications, whereby subjects can only access objects at certain levels based on their security level.
 
-For more information, please see [Bell-LaPadula Model.](../003-Security-Architecture/002-Security-Models.md#bell-lapadula-model)
+For more information, please see [Bell-LaPadula Model.](/docs/003-Security-Architecture/002-Security-Models.md#bell-lapadula-model)
 
 
 ## Attribute-Based Access Control (ABAC)

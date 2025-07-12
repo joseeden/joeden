@@ -40,7 +40,7 @@ last_update:
 
 - **Steganography** 
     - Hiding malicious code or data within images.
-    - For more information, please see [Cryptography Basics.](../005-Cryptography/001-Cryptography-Basics.md#steganography)
+    - For more information, please see [Cryptography Basics.](/docs/005-Cryptography/001-Cryptography-Basics.md#steganography)
 
 - **Malware Injection** 
     - Images containing embedded malware that activates upon opening.

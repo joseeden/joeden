@@ -220,7 +220,7 @@ Also known as **Path Traversal**, it exploits insufficient security validation/s
 
 - Manipulation of file paths to traverse directories.
 - Unauthorized access to files and directories, data leakage, system compromise.
-- Unusual file access patterns, log entries showing traversal sequences like `../`.
+- Unusual file access patterns, log entries showing traversal sequences like `/docs/`.
 
 How it looks like:
 
@@ -234,7 +234,7 @@ How it looks like:
 
 ### Hiding the traversal
 
-Attackers can still hide traversal attempts by masking "../" with:
+Attackers can still hide traversal attempts by masking "/docs/" with:
 
 ```bash
 %2e%2e%2f

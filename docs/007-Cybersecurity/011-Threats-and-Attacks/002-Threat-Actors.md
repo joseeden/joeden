@@ -20,7 +20,7 @@ An Attacker is always an individual, but a Threat Actor can be either a group or
 - Alteration
 - Denial
 
-For more information, please see [Threats and Attacks](../011-Threats-and-Attacks/050-Attacks.md). 
+For more information, please see [Threats and Attacks](/docs/011-Threats-and-Attacks/050-Attacks.md). 
 
 ### Hackers
 
