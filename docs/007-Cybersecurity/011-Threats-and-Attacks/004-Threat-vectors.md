@@ -98,6 +98,7 @@ last_update:
 
 - **Session Hijacking** 
     - Taking over user sessions in insecure networks.
+    - See [Session hijacking](/docs/007-Cybersecurity/012-List-of-Attacks/005-Spoofing-Attacks.md#session-hijacking)
 
 - **Rogue Access Points** 
     - Fake network access points designed to steal information.

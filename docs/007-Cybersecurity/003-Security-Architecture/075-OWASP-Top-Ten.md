@@ -27,7 +27,7 @@ Reference: https://owasp.org/www-project-top-ten/
 
 2. **Broken Authentication and Session Management**
    - Flaws in authentication mechanisms lead to unauthorized access  
-   - Example: Session hijacking
+   - Example: [Session hijacking](/docs/007-Cybersecurity/012-List-of-Attacks/005-Spoofing-Attacks.md#session-hijacking)
 
 3. **Cross-Site Scripting (XSS)**
    - Attackers embed scripts in third-party websites that execute in victims’ browsers  

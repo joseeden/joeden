@@ -30,14 +30,21 @@ Redirecting users from legitimate websites to malicious ones without their knowl
   - Often achieved through compromised websites, phishing emails, or malicious scripts injected into web pages.
   - Can lead to phishing attacks, malware installation, or theft of sensitive information.
   - Targets users' trust in familiar websites to deceive them into visiting malicious domains.
-  - **DNS Poisoning** - compromising a DNS server and create fake domains
-  - **URL Hijacking** - Redirects traffic from legitimate URLs to malicious or fraudulent websites.
+
+**Common redirection techniques:** 
+
+- **DNS Poisoning** - compromising a DNS server and create fake domains
+- **URL Hijacking** - Redirects traffic from legitimate URLs to malicious or fraudulent websites.
+
+For more information, please see [Session hijacking](/docs/007-Cybersecurity/012-List-of-Attacks/005-Spoofing-Attacks.md#session-hijacking)
 
 **Mitigations:**
 
 - Implementing secure coding practices
 - Regular website security audits
 - User education about potential risks
+
+
 
 ## Watering Hole Attack
 

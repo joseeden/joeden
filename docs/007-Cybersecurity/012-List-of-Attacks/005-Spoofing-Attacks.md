@@ -47,7 +47,7 @@ Impersonating a trusted IP address to gain unauthorized access.
 - **IDS/IPS**: Monitor for spoofing patterns.
 
 
-## Session Hijacking 
+## Hijacking Attacks
 
 ### Session Management
 
@@ -83,23 +83,56 @@ Cookies are important for managing state in web applications, as HTTP is a state
 
 ### Session Hijacking
 
-Session hijacking is a spoofing attack where the host is disconnected and replaced by the attacker.
+Session hijacking is a spoofing attack where an attacker takes over an active web session.
 
-- Occurs through theft or modification of cookies.
+- Often done by stealing or altering session cookies.
+- Allows attacker to impersonate a logged-in user.
 - Can be performed when user is currently logged in to a web session.
 
 ### Session Prediction
 
 In session prediction, an attacker attempts to predict session token to hijack the session.
 
-- If token is predictable, they can be guessed.
-- Attackers can take over the session.
+- Works if session tokens follow a pattern or are weakly generated.
+- Leads to unauthorized access, similar to session hijacking.
+
+
+### URL Hijacking 
+
+URL hijacking, also known as **typosquatting**, tricks users into visiting fake websites.
+
+- Attackers register domain names similar to legitimate ones 
+- Example: "goggle.com" instead of "google.com"
+- Users are tricked into entering sensitive information or downloading malware.
+
+**Difference from session hijacking**:
+Session hijacking targets an existing user session, while URL hijacking tricks the user into connecting to a fake site before a session begins.
+
+### Clickjacking 
+
+Clickjacking tricks users into clicking hidden or misleading elements on a web page.
+
+- The user thinks they are clicking something harmless
+- But they’re actually clicking a hidden element
+- Often uses transparent layers or invisible frames
+- Force unwanted actions like submitting forms or changing settings
+
+**Difference from URL/session hijacking**:
+Clickjacking relies on visual deception, not taking over a session or redirecting to fake URLs.
+
+:::info 
+
+CSS being injected into a website or page is one method of performing this particular type of attack.
+
+:::
+
 
 ### Cookie Poisoning
 
 Cookie poisoning involves modifying the contents of the cookies to be sent to a client's browser.
 
 - Modified cookie can be used to exploit vulnerabilities.
+- add info
 
 ## Replay Attack
 
