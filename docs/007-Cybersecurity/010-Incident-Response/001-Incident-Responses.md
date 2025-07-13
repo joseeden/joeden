@@ -89,11 +89,11 @@ The incident response plan should include several key elements.
 
 ### Incident Response Policy
 
-The policy is the cornerstone of an effective incident response plan.
+An incident response policy would define how a variety of different types of incidents can be handled and dealt with when they occur and is a good idea to have in place within organizations that have an IT department.
 
-- It defines the authority and scope of the incident response team.
-- Provides the basis for quick decision-making during incidents.
-- Includes a system for prioritizing incidents based on severity.
+- Defines the authority and scope of the incident response tea
+- Provides the basis for quick decision-making during incident
+- Includes a system for prioritizing incidents based on severit
 
 ### Incident Response Procedures
 

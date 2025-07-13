@@ -181,8 +181,7 @@ A plan for handling security incidents.
 - Involves steps on detecting, assessing, and responding to incidents.
 - Can include person to contact in case of data breach. 
 
-
-For more information, please see [Incident Response.](/docs/007-Cybersecurity/010-Incident-Response/001-Incident-Responses.md)
+For more information, please see [Incident Response Policy.](/docs/007-Cybersecurity/010-Incident-Response/001-Incident-Responses.md)
 
 
 ## SDLC Policy 

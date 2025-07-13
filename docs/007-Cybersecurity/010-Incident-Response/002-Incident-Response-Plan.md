@@ -11,9 +11,9 @@ last_update:
 
 ## Overview
 
-The incident response policy aligns with the plan, outlining procedures and standards. Shaped by the organization's vision, the process defines technical processes and tools used in incident response. 
+An incident response plan is a structured approach for detecting, managing, and recovering from security incidents. It helps reduce damage, minimize recovery time, and improve overall security posture.
 
-The phases of incident response:
+The phases of an incident response includes:
 
 - [Overview](#overview)
 - [Preparation](#preparation)
