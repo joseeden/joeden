@@ -11,64 +11,76 @@ last_update:
 
 Identity Federation is a system where multiple organizations share authentication data, allowing users to access resources across organizational boundaries without re-authenticating.
 
-### Key Concepts
+- One login grants access to multiple services
+- Authentication handled by the user's home organization (IdP)
+- Cross-domain collaboration across different organizations
 
-- **Single Sign-On (SSO)**
-  - Authenticate once, access multiple applications.
-  
-- **Trust Relationships**
-  - Organizations agree to trust each other's authentication assertions.
-  
-- **Identity Provider (IdP)**
-  - Authenticates users and issues security tokens.
-  
-- **Service Provider (SP)**
-  - Provides resources, relying on IdP for user authentication.
-  
-- **Federation Standards**
-  - Examples include SAML, OAuth, OpenID Connect, and WS-Federation.
-
-### Benefits of Identity Federation
-
-- **User Convenience**
-  - One login grants access to multiple services.
-  
-- **Centralized Authentication**
-  - Authentication managed at the IdP, enhancing security.
-  
-- **Cross-Domain Collaboration**
-  - Enables seamless collaboration across different organizations.
-
-### How it works 
-
-1. Login initiation - User logs in
-2. User is redirected to an identity provider 
-3. IdP will authenticate the user
-4. IdP generated an assertions (like a token)
-5. User is returned to a service provider with the assertion
-6. Verification and access
-
-
-### Use Cases
+## Use Cases 
 
 - **Enterprise Collaboration**
-  - Allows employees to work across different business units or partners.
-  
+
+  - Employees access partner or subsidiary systems easily
+  - Reduces need for duplicate user accounts
+
 - **Cloud Services**
-  - Enables seamless access to cloud-based applications.
-  
+
+  - Users log in once to use apps like Salesforce or Office 365
+  - Simplifies access control for IT teams
+
 - **Education**
-  - Connects students and faculty across affiliated institutions.
-  
+
+  - Students access shared libraries, research tools, and portals
+  - Supports cross-university research and learning
+
 - **Public Services**
-  - Provides secure, unified authentication for government services.
+
+  - Citizens use one login for multiple government platforms
+  - Enhances security and user convenience
+
+## Key Concepts
+
+- **Single Sign-On (SSO)**
+
+  - Authenticate once, access many apps without re-logging in
+  - Improves user experience and reduces password fatigue
+  - Centralizes login control and auditing
+
+- **Trust Relationships**
+
+  - Organizations trust each other's login systems
+  - Based on shared protocols and certificates
+
+- **Identity Provider (IdP)**
+
+  - Handles user login and identity verification
+  - Issues secure tokens to confirm user identity
+  - Can be integrated with existing directory services like LDAP
+
+- **Service Provider (SP)**
+
+  - Hosts the application or service being accessed
+  - Accepts user identity from trusted IdPs
+
+- **Federation Standards**
+
+  - Define how identity info is securely shared
+  - Common protocols include SAML, OAuth, and OpenID Connect
+  - Ensure compatibility between different systems
 
 
+## How It Works
+
+Federated login lets users access services using their home organization’s credentials. Here’s a simple flow of what happens:
+
+1. **Login initiation** – User tries to access a protected service
+2. **Redirect to IdP** – User is sent to their identity provider
+3. **User authentication** – IdP verifies the user’s credentials
+4. **Assertion issued** – IdP creates a secure login token (assertion)
+5. **Return to service** – User is redirected back with the token
+6. **Access granted** – Service provider verifies the token and allows access
 
 
-## Identity Federation Methods
-
-### SSO
+## SSO
 
 SSO (Single Sign-On) allows users to authenticate once and gain access to multiple applications without needing to re-enter credentials, streamlining the user experience.
 
@@ -77,83 +89,111 @@ SSO (Single Sign-On) allows users to authenticate once and gain access to multip
 - Session period expiry is set by the identity provider.
 - Once session is expired, user needs to re-authenticate.
 
-#### SSO Protocols 
+### SSO Protocols
 
-Protocols used: 
+These protocols enable Single Sign-On by securely handling user authentication and identity sharing between systems.
 
-- LDAP
-- SAML (Security Assertion Markup Language)
-- OpenID Connect
+- **LDAP**
 
-#### Trust Characteristics 
+  - For accessing and maintaining directory information
+  - Often used for authentication within internal networks
 
-- **Direction**
+- **SAML (Security Assertion Markup Language)**
 
-  - **One-way Trust**: Domain 1 trusts Domain 2, but Domain 2 doesn't trust Domain 1.
+  - XML-based standard for exchanging authentication data
+  - Common in enterprise and education federations
 
+- **OpenID Connect**
 
-      <div class='img-center'>
-
-      ![](/img/docs/sso-trust-one-way.png)
-
-      </div>
-
-  - **Two-way Trust**: Domain 1 and Domain 2 mutually trust each other. 
-
-      <div class='img-center'>
-
-      ![](/img/docs/sso-trust-two-way.png)
-
-      </div>
-
-- **Transitive** 
-
-  - **Transitive Trust**
-    
-    - Trust relationships transfer across domains.  
-    - If Domain 1 trusts Domain 2, and Domain 2 trusts Domain 3, then Domain 1 and Domain 3 has a trust relationship as well without the administrator explicity creating the trust.
-
-  - **Non-transitive Trust**
-    
-    - Trust relationships does not automatically transfer across domains.
-    - If Domain 1 trusts Domain 2, and Domain 2 trusts Domain 3, then Domain 1 and Domain 3 doesn't trust each other unless the administrator explicity creates the trust.
+  - Built on OAuth 2.0, using JSON and REST
+  - Popular for modern web and mobile apps
 
 
-### SAML 
+### Trust Relationships
 
-SAML (Security Assertion Markup Language) is an open standard used for exchanging authentication and authorization information between Identity Providers (IdPs) and Service Providers (SPs). It allows a browser-based single-sign-on across a variety of web systems.
+Trust between domains defines how authentication is shared and accepted across different networks.
 
-- Supports Single Sign-On (SSO), enabling users to access multiple services with a single login.
-- Service providers receive confirmation from IdPs to authenticate users.
-- Provides a secure mechanism for transmitting authentication data between entities.
+- **One-way Trust** - Domain 1 trusts Domain 2, but Domain 2 doesn't trust Domain 1.
 
-#### Benefits of SAML 
+    <div class='img-center'>
+
+    ![](/img/docs/sso-trust-one-way.png)
+
+    </div>
+
+- **Two-way Trust** - Domain 1 and Domain 2 mutually trust each other.
+
+    <div class='img-center'>
+
+    ![](/img/docs/sso-trust-two-way.png)
+
+    </div>
+
+
+### Trust Scope
+
+- **Transitive Trust**
+
+    Trust passes along between domains automatically.
+    If Domain 1 trusts Domain 2, and Domain 2 trusts Domain 3, then Domain 1 also trusts Domain 3 without extra setup.
+
+- **Non-transitive Trust**
+
+    Trust only applies between directly connected domains.
+    If Domain 1 trusts Domain 2, and Domain 2 trusts Domain 3, Domain 1 does not trust Domain 3 unless set up separately.
+
+### Shibboleth
+
+**Shibboleth** is a single sign-on (SSO) and federated identity solution that lets organizations securely share online resources while keeping their own login systems.
+
+- Used mainly by universities and research groups  
+- Users log in once to access partner services  
+- Uses SAML for secure identity exchange  
+- Organizations keep control of user accounts  
+
+**Use Case: University Resource Access**
+
+A student from University A wants to access University B’s online library:
+
+- Student visits University B’s library (Service Provider)  
+- University B redirects student to University A to log in (Identity Provider)  
+- University A authenticates and sends a SAML assertion to University B  
+- University B grants access to the library resource
+
+
+## SAML 
+
+SAML (Security Assertion Markup Language) is a standard for sharing authentication and authorization data between **Identity Providers (IdPs)** and **Service Providers (SPs)**. It enables single sign-on (SSO) across different web applications using a browser.
+
+- Supports single sign-on so users log in once
+- Lets users access many services with one login
+- Service providers trust IdPs to confirm user identity
+- Securely passes authentication information between parties
+
+### Benefits of SAML 
 
 Here are just some of the benefits of using SAML: 
 
-- True SSO experience for user  
+- **True SSO experience for user**  
 
   - After user authenticates once, the session can last for a period of time specified by the service provider (SP).
   - During that time period, the user doesn't need to re-authenticate.
 
-- No credential access for the service provider 
+- **No credential access for the service provider **
 
   - The SP uses the identity provider's (idP) authentication without needing the user's credentials
   - The user's password remains secret between the user and idP.
 
 
-
-#### SAML Actors
-
-There are three actors in a SAML request:
+### SAML Actors
 
 - **Principal** 
   
-  - This is the end user who wants to use the web-based services.
+  - The end user who wants to use the web-based services.
     
 - **Identity** 
 
-  - This is the organization provider providing the proof of identity.
+  - The organization provider providing the proof of identity.
   - Usually the employer, school, or account provider. 
 
 - **Provider**
@@ -163,20 +203,20 @@ There are three actors in a SAML request:
 
 
 
-#### How SAML works
+### How SAML works
 
 How SAML works:  
 
 1. The end user requests access to a service provider.
-2. The service provider (SP) checks if user already has a logged in session
-3. If user is logged in, SP just skips and grant access to the user.
-4. If user is not logged in, SP redirects user to a single sign-on (SSO) service (SSO)
+2. Service provider (SP) checks if user is already logged in
+3. If yes, SP just skips and grant access to the user.
+4. If no, SP redirects user to a single sign-on service (SSO)
 5. The SSO is from the user's identity provider (idP).
-6. The user tries to authenticate to the idP using username and password or other mechanisms.
+6. User logins at idP using username and password or other mechanisms.
 7. The idP creates an xHTML form customized for the SP and sends to user. 
-8. The user forwards the xHTML form to requests a security assertion  from the SP.
-9. This security assertion contains proof of identity from the identity provider
-10. SP validates the request and creates a security context with the desired service.
+8. An xHTML form is sent to SP to request for a security assertion.
+9. Security assertion contains proof of identity from the identity provider
+10. SP validates request and creates a security context with desired service.
 11. SP then redirects user to the service.
 12. User requests for the service, and SP grants access to the service. 
 
@@ -189,16 +229,20 @@ How it looks like:
 </div>
 
 
-### OAuth
+## OAuth
 
-OAuth (Open Authorization) is a standard for token-based authorization, which enables secure interactions between services without exposing user credentials. 
+OAuth (Open Authorization) is a standard for authorization that lets apps access user data securely without sharing passwords.
 
-- Allows third-party applications to access user data securely without exposing user credentials
-- Allows secure information exchange between different sites via JWT (JSON Web Tokens)
+- Allows third-party apps to access user info safely
+- Uses tokens like JWT (JSON Web Tokens) for secure data exchange
 
-**It's not performing authentication, only authorization.**
+:::info 
 
-How it works: 
+OAuth does not perform authentication, only authorization.
+
+:::
+
+**How it works:** 
 
 - Client app or server needs to register with authorization server
 - Authorization server provides a redirect URL +  ID + Secret
@@ -206,40 +250,39 @@ How it works:
 - User can use the token to access the requested resource
 
 
-### OIDC
+## OIDC
 
 OpenID Connect (OIDC) is an identification and authentication protocol that helps users prove their identity to other services.
 
 - An authentication layer built on top of OAuth 2.0.
 - Provides additional user identity information along with authorization.
 
-:::info[NOTE]
+:::info
 
 OAuth and OIDC work together. 
-OIDC is for authentication.
-OAuth if for authorization.
 
+OIDC is for **authentication**.
+OAuth if for **authorization**.
 
 :::
 
 
 ## IDaaS  
 
-Identity as a Service (IDaas) providers allow organizations to move some or all their IAM to the cloud, eliminating the need for employing costly and hard-to-find IAM specialists. DaaS started by offering SSO for web-based services. These services integrate with two different types of platforms to help organizations improve their IAM infrastructure:
+Identity as a Service (IDaaS) lets organizations move identity and access management (IAM) to the cloud, reducing the need for specialized staff.
 
 - **Directory Integration**
 
-  - Synchronize with an organization's existing directory to obtain user information.
-  - Existing directory service could be on-premise Active Directory or LDAP, or Cloud-based directory service.
-  - Information is synced in real time, allowing organizations to quickly provision/deprovision users.
+  - Syncs with existing user directories (like Active Directory or LDAP)
+  - Real-time updates for user provisioning and deprovisioning
 
-- **Application Integration** 
+- **Application Integration**
 
-  - Replace authentication for many SaaS products, simplifies user and administration experience.
-  - Users don't need to manage different accounts for each of the services.
-  - The organization won't need to invest in building and maintaining authentication integration. 
+  - Simplifies login for many cloud apps
+  - Users manage fewer accounts
+  - Reduces the need for custom authentication setups
 
-Before proceeding with an IDaaS approach, organization must consider the following:
+Before proceeding with an IDaaS approach, organization must consider:
 
 - Does product satisfy business requirements for IAM?
 - Has a thorough security review been done on the product under consideration?
