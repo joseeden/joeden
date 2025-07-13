@@ -24,6 +24,12 @@ DLP is a technology used to identify, monitor, and protect sensitive data to pre
 - Protects against data leakage across channels like email, web, and endpoints.
 - Involves content discovery, classification, encryption, and policy enforcement.
 
+:::info 
+
+A data loss prevention system can scan outgoing messages to determine whether they potentially contain personally identifiable information or other sensitive information.
+
+:::
+
 ### DLP Mechanisms 
 
 DLP solutions use the following mechanisms in action:
