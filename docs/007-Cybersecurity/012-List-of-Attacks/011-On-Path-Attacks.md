@@ -42,7 +42,7 @@ Ways to conduct on-path or interception attacks:
 
 - **Introducing a Rogue WAP**
 
-  - Sets up a fake [Wireless Access Points](/docs/006-Networking/001-The-Basics/060-Wireless-Networking.md)
+  - Sets up a [fake access point](/docs/007-Cybersecurity/012-List-of-Attacks/009-Wireless-Attacks.md#rogue-access-points-rogue-waps)
   - Entices users to connect to it instead of a legitimate WAP.
   - Intercepts and monitors all traffic between the user and the internet.
   - Can capture sensitive information like passwords and personal data.

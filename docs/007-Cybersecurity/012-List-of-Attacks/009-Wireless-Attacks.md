@@ -80,6 +80,17 @@ Deauthentication and deassociation attacks force devices to disconnect from a wi
   - The goal is to determine the pre-shared key (PSK).
   - A text file containing a long list of common passphrases can be used.
 
+
+## Rogue Access Points (Rogue WAPs)
+
+Rogue Access Points are unauthorized wireless devices connected to a secure network without approval. These devices pose a serious security threat because they can be used to intercept, monitor, or bypass security controls.
+
+- Often set up by attackers to bypass controls or create backdoors.
+- Sensitive data may be captured or redirected through the rogue device.
+- Can be used to launch man-in-the-middle attacks or steal credentials
+
+To help prevent rogue WAPs, organizations should regularly conduct audits and use **wireless intrusion detection systems (WIDS)** to identify and remove unauthorized access points.
+
 ## Evil Twin
 
 An evil twin is a **type of a rogue access point**, but goes a step further in that it is a malicious device that attempts to get users to join it instead of the real WAPs that are used by an organization. 
