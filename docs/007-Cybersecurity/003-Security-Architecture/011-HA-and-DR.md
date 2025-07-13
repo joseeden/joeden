@@ -37,6 +37,14 @@ Main aspects of an organization's capacity:
 
 The ability of a service to be continuously available by minimizing downtime to the lowest amount possible. 
 
+:::info
+
+**Fault tolerance** describes the ability of a system to continue operation even when one of the components fails so that there is **no downtime**. 
+
+**High availability** is similar, but simply describes that a system should be available as much as possible, though there may be some **minimal downtime**.
+
+:::
+
 ### Uptime 
 
 The number of minutes or hours that a system remains online over a given period.
