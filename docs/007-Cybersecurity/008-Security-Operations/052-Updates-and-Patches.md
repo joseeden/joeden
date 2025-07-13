@@ -17,6 +17,15 @@ Patch Management involves updating software to address vulnerabilities and impro
 - Ensures systems are protected against known threats.
 - Key for maintaining a secure and resilient IT infrastructure.
 
+:::info 
+
+**Update New Device Firmware First**
+
+New network devices may sit in storage for months before being used. During that time, several firmware updates might be released. To fix any known security issues, the first thing an IT admin should do is update the device's firmware.
+
+:::
+
+
 ## Terms 
 
 - **Software Patch**
@@ -109,11 +118,13 @@ sudo pacman -Syu
 
 ## Challenges and Best Practices
 
-- Patches may disrupt system stability.
-- Balancing rapid deployment with stability is crucial.
-- Test patches in a qualification environment before production.
-- Relying solely on vendor reputation for patch qualification is insufficient.
-- Applying patches on fixed days doesn't ensure post-patch stability.
+Applying patches improves security, but it also comes with challenges. Careful planning and testing are needed to avoid disruptions.
+
+- Patches can sometimes affect system stability.
+- It's important to balance quick patching with reliability.
+- Always test patches in a staging or test environment first.
+- Don't rely only on vendor trust—verify patches yourself.
+- Applying patches on a fixed schedule doesn't guarantee system stability afterward.
 
 
 ## Recommendations

@@ -159,11 +159,15 @@ Attacker intercepts and retransmits a valid data transmission to trick the recei
 
 ## Disassociation Attack 
 
-A disassociation attack forces a device to disconnect from a Wi-Fi network by sending fake disassociation frames.
+A disassociation attack tricks a device into disconnecting from a Wi-Fi network by sending fake disassociation frames.
 
-- Interrupts an active session without fully logging the user out
-- Often used to disrupt or weaken wireless connections
-- Can cause annoyance or service disruption, especially in public Wi-Fi
+- Breaks the connection without a full logout
+- Commonly used to disrupt service or force reauthentication
+- Often targets public or unsecured Wi-Fi networks
+
+When the user reconnects, the attacker can capture the 4-way handshake and attempt to brute-force the Wi-Fi password.
+
+
 
 ## Deauthentication Attack 
 

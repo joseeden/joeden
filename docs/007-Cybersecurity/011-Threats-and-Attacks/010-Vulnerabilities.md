@@ -29,7 +29,7 @@ All the issues mentioned above are present in all sorts of hardware appliances.
 - Mobile Devices
 - IoT Devices
 
-### Device Firmware
+## Device Firmware
 
 Specialized software programmed into read-only memory of hardware devices, providing low-level control for the device's specific hardware. It serves as the intermediary between the hardware and higher-level software, enabling the hardware to perform its functions.
 
@@ -43,7 +43,7 @@ Mitigating firmware vulnerabilities:
 - Security auditing
 - Device hardening
 
-### End-of-life Systems
+## End-of-life Systems
 
 Refer to hardware or software products that have reached the end of their life cycle.
 
@@ -51,7 +51,7 @@ Refer to hardware or software products that have reached the end of their life c
 - Increasingly susceptible to known vulnerabilities.
 - Can be a weak link in an otherwise secure environment.
 
-### Legacy Systems
+## Legacy Systems
 
 Outdated computing hardware, software, or technologies that have been largely superseded by newer or more efficient alternatives.
 
@@ -59,14 +59,14 @@ Outdated computing hardware, software, or technologies that have been largely su
 - May not support modern security protocols.
 - Often lacks compatibility with current software and security updates.
 
-### Unsupported Systems
+## Unsupported Systems
 
 Hardware or software products that no longer receive official technical support, updates, or patches from their developers. 
 
 - High risk of exploitation due to unpatched vulnerabilities.
 - Can be difficult to replace due to compatibility issues.
 
-### Unpatched Systems 
+## Unpatched Systems 
 
 Device, application, or piece of software that has not been updated with the latest security patches so that it remains vulnerable to known explout and attacks. 
 
@@ -77,7 +77,7 @@ Device, application, or piece of software that has not been updated with the lat
     - Assessing the relevance and impact of patches.
     - Deploying patches in a timely manner.
 
-### Hardware Misconfigurations
+## Hardware Misconfigurations
 
 Occurs when device's settings, parameters, or options are not optimally set up.
 

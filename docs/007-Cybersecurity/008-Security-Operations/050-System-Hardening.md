@@ -30,14 +30,6 @@ New systems and devices often come with default settings that make setup easy bu
   - These are publicly known and easily guessed by attackers.
   - Replace default passwords with strong, unique ones during setup.
 
-    <!-- 
-    <div class="img-center">
-
-    ![](/img/docs/sec+-default-passwords.png)
-    
-    </div>
-    -->
-
 - **Unneeded Ports and Protocols**
 
   - Some systems enable extra services by default (e.g., Telnet, FTP).
@@ -51,6 +43,13 @@ New systems and devices often come with default settings that make setup easy bu
   - Regularly review open ports and close any that aren’t needed.
   - Use firewalls to control access to only required services.
 
+:::info 
+
+**Update New Device Firmware First**
+
+New network devices may sit in storage for months before being used. During that time, several firmware updates might be released. To fix any known security issues, the first thing an IT admin should do is update the device's firmware.
+
+:::
 
 ### Configuration Management 
 

@@ -133,7 +133,7 @@ Quantum computing poses a threat to traditional cryptography by potentially brea
 
 ## Rainbow Table Attack 
 
-A rainbow table attack uses precomputed hashes to find a matching hash value for a user's password (see ISC2 Study Guide, Module 2, under Types of Threats). 
+A rainbow table attack uses precomputed hashes to find a matching hash value for a user's password.
 
 **Mitigations:**
 
@@ -143,6 +143,11 @@ A rainbow table attack uses precomputed hashes to find a matching hash value for
   - Stay current with advancements, adopting newer, more secure hash functions.
   - Implement Two-Factor Authentication (2FA)
 
+:::info 
+
+If a user gets a copy of the /etc/shadow file containing hashed versions of the users' passwords, they can look up the hash in the rainbow table to see if there is a match. If so, the plain text equivalent in the other column might be a valid password to log into the system for that user.
+
+:::
 
 ## Pass the Hash Attack
 

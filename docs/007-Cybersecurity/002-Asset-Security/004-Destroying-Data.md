@@ -51,9 +51,10 @@ Limitations:
 
 Secure erase is a command and process designed to completely erase all data from a storage device, typically used with solid-state drives (SSDs) and other modern storage technologies. It ensures that the data is permanently removed, providing a high level of security for sensitive information.
 
-  - Utilizes built-in commands to purge the data blocks, making data irretrievable from the device.
-  - Can complete the erasure process quickly compared to other methods.
-  - Typically implemented at the firmware level of the storage device.
+- Use built-in commands to purge the data blocks
+- This makes data irretrievable from the device
+- Completes the erasure process quickly compared to other methods.
+- Typically implemented at the firmware level of the storage device.
 
 Some flaws were found overtime on secure erase overtime, and this prompted the use of a newer and more secure technique called cryptographic erase.
 

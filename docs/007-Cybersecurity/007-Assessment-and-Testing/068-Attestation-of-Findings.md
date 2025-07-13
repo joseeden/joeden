@@ -52,6 +52,7 @@ System attestation involves validating the overall security posture of an entire
 - Assesses the combined integrity of hardware, firmware, and software.
 - Ensures that all system components work together securely.
 - Provides a comprehensive security overview of the entire device or network.
-- Often used in critical infrastructure and high-assurance systems to maintain robust security standards.
+
+System Attestation is offten used in critical infrastructure and high-assurance systems to maintain robust security standards.
 
 
