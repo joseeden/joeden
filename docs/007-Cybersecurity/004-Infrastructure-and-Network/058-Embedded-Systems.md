@@ -149,7 +149,7 @@ Embedded systems often have limited resources and run in specialized environment
   - Manage firmware development and updates strictly
   - Use code signing to verify authenticity
   - Prevents tampering and unauthorized changes
-  - See [Code Signing](/docs/021-Software-Engineering/007-Software-Security/010-Application-Security.md#code-signing)
+  - See [Code Signing](/docs/007-Cybersecurity/007-Software-Security/010-Application-Security.md#code-signing)
 
 - **Inability to Patch**
 
