@@ -27,11 +27,11 @@ Reference: https://owasp.org/www-project-top-ten/
 
 2. **Broken Authentication and Session Management**
    - Flaws in authentication mechanisms lead to unauthorized access  
-   - Example: [Session hijacking](/docs/007-Cybersecurity/012-List-of-Attacks/005-Spoofing-Attacks.md#session-hijacking)
+   - Example: [Session hijacking](/docs/007-Cybersecurity/013-List-of-Attacks/005-Spoofing-Attacks.md#session-hijacking)
 
 3. **Cross-Site Scripting (XSS)**
    - Attackers embed scripts in third-party websites that execute in victims’ browsers  
-   - For more information, please see [Cross-Site Scripting (XSS)](/docs/007-Cybersecurity/012-List-of-Attacks/099-Other-Attacks.md)
+   - For more information, please see [Cross-Site Scripting (XSS)](/docs/007-Cybersecurity/013-List-of-Attacks/099-Other-Attacks.md)
 
 4. **Insecure Direct Object References**
    - Developers expose internal functions without proper security checks  
@@ -52,7 +52,7 @@ Reference: https://owasp.org/www-project-top-ten/
 8. **Cross-Site Request Forgery (CSRF/XSRF)**
    - Attackers exploit the fact that users often have multiple websites open  
    - Detailed coverage in upcoming sections
-   - For more information, please see [CSRF/XSRF](/docs/007-Cybersecurity/012-List-of-Attacks/099-Other-Attacks.md)
+   - For more information, please see [CSRF/XSRF](/docs/007-Cybersecurity/013-List-of-Attacks/099-Other-Attacks.md)
 
 9. **Using Components with Known Vulnerabilities**
    - Web applications using insecure components may be compromised by attackers  

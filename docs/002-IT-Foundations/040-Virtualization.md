@@ -56,7 +56,7 @@ Privilege escalation occurs when users gain elevated privileges within a virtual
 
 - Exploits weaknesses in operating system or application configurations.
 - Can lead to unauthorized actions that compromise system security.
-- For more information, please see [Privilege Escalation.](/docs/007-Cybersecurity/012-List-of-Attacks/014-Execution-and-Escalation.md#privilege-escalation)
+- For more information, please see [Privilege Escalation.](/docs/007-Cybersecurity/013-List-of-Attacks/014-Execution-and-Escalation.md#privilege-escalation)
 
 **Example:**
 

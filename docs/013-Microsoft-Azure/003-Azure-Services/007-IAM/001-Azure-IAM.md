@@ -87,7 +87,7 @@ This feature automatically detects and assesses risks associated with user login
 - **Integration with SIEM**
 
     - Export risk detection data to Security Information and Event Management (SIEM) systems for additional analysis.
-    - For more information, please see [SIEM](/docs/007-Cybersecurity/008-Security-Operations/032-SIEM.md)
+    - For more information, please see [SIEM](/docs/007-Cybersecurity/009-Security-Operations/032-SIEM.md)
 
 
 

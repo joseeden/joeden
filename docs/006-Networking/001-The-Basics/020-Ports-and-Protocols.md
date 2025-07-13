@@ -97,7 +97,7 @@ Concepts:
   - Randomized MAC addresses are sent to the network switch.
   - When this happens, the network switch will simply fail open.
   - When it fail-open, the switch begins to rebroadcast all traffic out to every port.
-  - For more information, please see [MAC Address Flooding](/docs/007-Cybersecurity/012-List-of-Attacks/012-Layer-2-Attacks.md#mac-address-flooding)
+  - For more information, please see [MAC Address Flooding](/docs/007-Cybersecurity/013-List-of-Attacks/012-Layer-2-Attacks.md#mac-address-flooding)
 
 
 

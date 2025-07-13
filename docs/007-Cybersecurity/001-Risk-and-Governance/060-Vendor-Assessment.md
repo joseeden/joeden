@@ -36,7 +36,7 @@ Penetration Testings are simulated cyberattacks against the supplier's system to
 - If a vulnerability is found, this could indicate that the supplier's software could be a risk to your systems.
 - The goal is to validate the service provider, since their risks could become the company's risks.
 
-For more information, please see [Penetration Testing.](/docs/007-Cybersecurity/007-Assessment-and-Testing/067-Penetration-Testing.md)
+For more information, please see [Penetration Testing.](/docs/007-Cybersecurity/008-Assessment-and-Testing/067-Penetration-Testing.md)
 
 ## Review the Contracts 
 

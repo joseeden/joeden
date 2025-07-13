@@ -25,7 +25,7 @@ Azure Web Application Firewall (WAF) is a a powerful solution in the Azure secur
 |![](/img/docs/azure-web-app-fw-cdn-app-gw-frontdoor.png)|
 |-|
 
-Designed to safeguard web applications from threats like SQL injection and [cross-site scripting attacks](/docs/007-Cybersecurity/012-List-of-Attacks/099-Other-Attacks.md), WAF simplifies protection efforts and enables rapid response to known vulnerabilities.
+Designed to safeguard web applications from threats like SQL injection and [cross-site scripting attacks](/docs/007-Cybersecurity/013-List-of-Attacks/099-Other-Attacks.md), WAF simplifies protection efforts and enables rapid response to known vulnerabilities.
 
 Azure Front Door seamlessly integrate with:
 

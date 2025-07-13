@@ -112,7 +112,7 @@ Mobile device tethering, also known as mobile hotspot or internet sharing, allow
 - Limited device access 
 
     - **Rooting** - Breaking into android devices, to have full access or root access 
-    - **Jailbreaking** - Similar with rooting, but for Apple devices. See [Mobile Vulnerabilities.](/docs/007-Cybersecurity/011-Threats-and-Attacks/012-Mobile-Vulnerabilities.md#jailbreaking-and-rooting)
+    - **Jailbreaking** - Similar with rooting, but for Apple devices. See [Mobile Vulnerabilities.](/docs/007-Cybersecurity/012-Threats-and-Attacks/012-Mobile-Vulnerabilities.md#jailbreaking-and-rooting)
 
 ## SIM Cards 
 
@@ -162,7 +162,7 @@ Implementing strong security measures on mobile devices is important to protect 
 
 ### Mobile Asset Deployments
 
-For more information, please see [Mobile Asset Deployments.](/docs/007-Cybersecurity/008-Security-Operations/073-Mobile-Asset-Deployments.md)
+For more information, please see [Mobile Asset Deployments.](/docs/007-Cybersecurity/009-Security-Operations/073-Mobile-Asset-Deployments.md)
 
 - **Bring your own device (BYOD)**
     - Employee uses personal device for work

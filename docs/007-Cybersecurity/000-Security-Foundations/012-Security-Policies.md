@@ -41,7 +41,7 @@ Every policy should align with the organization's regulatory and contractual obl
 - Shredding of sensitive documents
 - Secure personally-owned devices 
 - [MDM (Mobile Device Management)](/docs/007-Cybersecurity/004-Infrastructure-and-Network/059-Mobile-Systems.md#mobile-device-management)
-- [BYOD (Bring your own device)](/docs/007-Cybersecurity/008-Security-Operations/073-Mobile-Asset-Deployments.md#byod)
+- [BYOD (Bring your own device)](/docs/007-Cybersecurity/009-Security-Operations/073-Mobile-Asset-Deployments.md#byod)
 
 **User Training:**
 
@@ -69,12 +69,13 @@ Defines who get access to what.
 - Administrators/Root accounts
 - PAM
 
-**Geolocation:**
+## Privileged User Agreement 
 
-- Allowing access based on user's location 
-- **Geofencing** - restricts device functionality based on geographic location
-- **Geotagging** - adding location metadata to files 
-- **Impossible travel time** - if user is in one location, he can't be signed in on another location, but can be bypassed by VPN or Tor.
+A privileged user agreement is a policy that users must accept before being granted higher-level access, such as admin or root privileges. It ensures users understand their responsibilities and agree not to misuse their access.
+
+- Users must not share privileged accounts or passwords
+- Access is granted only for approved job-related tasks
+- All activity may be monitored and audited for security compliance
 
 ## Data Handling Policy
 
@@ -113,7 +114,7 @@ Setting a minimum password age to three days, for example, will prevent users fr
 
 :::
 
-## Bring Your Own Device
+## Bring Your Own Device (BYOD)
 
 BYOD allows employee use of personally owned devices for business, requiring:
 
@@ -161,9 +162,9 @@ Focuses on how an organization will continue its critical operations during and 
 - Focuses on recovering as quickly as possible.
 - Dealing with strategies like hardware failure and natural disasters. 
 
-For more information, please see [Business Continuity.](/docs/007-Cybersecurity/009-Incident-Response/010-Business-Continuity.md)
+For more information, please see [Business Continuity.](/docs/007-Cybersecurity/010-Incident-Response/010-Business-Continuity.md)
 
-## Disaster Recovery
+## Disaster Recovery Policy
 
 Closely related to business continuity, disaster recovery focuses on how an organization will recover its IT systems and data after disaster. 
 
@@ -173,7 +174,7 @@ Closely related to business continuity, disaster recovery focuses on how an orga
 For more information, please see [Disaster Recovery.](/docs/007-Cybersecurity/003-Security-Architecture/011-HA-and-DR.md)
 
 
-## Incident Response  
+## Incident Response Policy
 
 A plan for handling security incidents. 
 
@@ -181,7 +182,7 @@ A plan for handling security incidents.
 - Can include person to contact in case of data breach. 
 
 
-For more information, please see [Incident Response.](/docs/007-Cybersecurity/009-Incident-Response/001-Incident-Responses.md)
+For more information, please see [Incident Response.](/docs/007-Cybersecurity/010-Incident-Response/001-Incident-Responses.md)
 
 
 ## SDLC Policy 
@@ -209,7 +210,7 @@ Essential for transitioning from current to future states, covering:
 - Confirmation of correct implementation
 - Mitigating vulnerabilities introduced by changes
 
-For more information, please see [Asset and Change Management](/docs/007-Cybersecurity/008-Security-Operations/070-Asset-and-Change-Management.md#change-management). 
+For more information, please see [Asset and Change Management](/docs/007-Cybersecurity/009-Security-Operations/070-Asset-and-Change-Management.md#change-management). 
 
 
 

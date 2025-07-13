@@ -73,7 +73,7 @@ Risk assessments scheduled at regular intervals, such as annually or semi-annual
 
 - Normally part of an organization's standard operating procedures.
 - Ensures risks are continually identified and managed effectively
-- An example is a recurring [penetration testing](/docs/007-Cybersecurity/007-Assessment-and-Testing/067-Penetration-Testing.md).
+- An example is a recurring [penetration testing](/docs/007-Cybersecurity/008-Assessment-and-Testing/067-Penetration-Testing.md).
 
 ### One-Time 
 
@@ -241,5 +241,5 @@ A Business Impact Analysis (BIA) is a process used to identify and evaluate the 
 
 The goal of a BIA is to understand which functions and processes are critical to an organization's success and how they would be impacted by disruptions, such as natural disasters, cyberattacks, or equipment failures.
 
-For more information, please see [Business Continuity](/docs/007-Cybersecurity/009-Incident-Response/010-Business-Continuity.md).
+For more information, please see [Business Continuity](/docs/007-Cybersecurity/010-Incident-Response/010-Business-Continuity.md).
 

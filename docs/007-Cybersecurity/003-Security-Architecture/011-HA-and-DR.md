@@ -226,7 +226,7 @@ When developing your DRP, consider including steps for recovering PKI-encrypted 
 
 - Focuses on proactive measures to prevent incidents.
 - Ensures the continuous operation of critical business functions. 
-- For more information, please see [Business Continuity.](/docs/007-Cybersecurity/009-Incident-Response/010-Business-Continuity.md)
+- For more information, please see [Business Continuity.](/docs/007-Cybersecurity/010-Incident-Response/010-Business-Continuity.md)
 
 **Disaster Recovery (DR) plans**
 

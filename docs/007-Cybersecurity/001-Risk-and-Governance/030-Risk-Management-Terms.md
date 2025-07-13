@@ -54,7 +54,7 @@ An individual or a group posing a threat (according to NIST SP 800-150 under Thr
 
 - Can include hackers, insiders, criminal groups, or nation-state actors
 - Motivations vary: financial gain, espionage, disruption, or activism
-- For more information, please see [Cyber Threat and Attacks.](/docs/007-Cybersecurity/011-Threats-and-Attacks/002-Threat-Actors.md)
+- For more information, please see [Cyber Threat and Attacks.](/docs/007-Cybersecurity/012-Threats-and-Attacks/002-Threat-Actors.md)
 
 
 ## Threat Vector
@@ -143,7 +143,7 @@ An Advanced Persistent Threat (APT) is a sophisticated and stealthy cyber attack
 
 - They focus on maintaining long-term access to a target's network.
 - APTs often aim to gather intelligence, steal data, or disrupt operations.
-- For more information, please see [APTs.](/docs/007-Cybersecurity/011-Threats-and-Attacks/002-Threat-Actors.md#advanced-persistent-threats)
+- For more information, please see [APTs.](/docs/007-Cybersecurity/012-Threats-and-Attacks/002-Threat-Actors.md#advanced-persistent-threats)
 
 ## Advanced Tactics, Techniques, and Procedures
 

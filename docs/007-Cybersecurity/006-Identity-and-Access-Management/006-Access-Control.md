@@ -48,6 +48,28 @@ Access rules guide whether a subject can access an object based on their validat
 - When a user accesses a file, a rule validates and defines their access.
 - Rules may compare attributes, define access levels, deny access, or apply time-based restrictions.
 
+## Location-Based Access Control 
+
+**Geolocation** is the process of determining where a user or device is located using IP address, GPS, or network data. It's commonly used in cybersecurity to help control access and detect suspicious activity.
+
+Geolocation can be applied in several ways:
+
+- **Geofencing** 
+
+  - Restricts access or device use based on physical location
+  - Often used to block access outside office zones or specific countries
+
+- **Geotagging** 
+
+  - Adds location metadata to files, photos, or logs
+  - Useful for tracking data movement or detecting unusual file activity
+
+- **Impossible Travel** 
+
+  - Flags suspicious logins from distant locations within a short time 
+  - Note that this can be bypassed using VPN or Tor
+
+
 ## Controls Assessment 
 
 Risk reduction relies on the control's efficacy, adapting to changing situations. As an example, in securing a repurposed office space for confidential file storage, consider the following:

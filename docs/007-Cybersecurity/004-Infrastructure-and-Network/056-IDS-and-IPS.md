@@ -38,7 +38,7 @@ In security, understanding the different outcomes of detection systems is import
 - **True Positive** - A real attack is correctly identified and flagged by the IDS.
 - **True Negative** - Normal, non-malicious activity is correctly identified as safe, with no alerts triggered.
 
-For more information, please see [Analyzing Vulnerabilities](/docs/007-Cybersecurity/008-Security-Operations/020-Vulnerability-Management.md#analyzing-vulnerabilities)
+For more information, please see [Analyzing Vulnerabilities](/docs/007-Cybersecurity/009-Security-Operations/020-Vulnerability-Management.md#analyzing-vulnerabilities)
 
 ## Types of IDS/IPS
 

@@ -60,7 +60,7 @@ Key components:
 
 - **Attestation**
   - Formal declarations confirming compliance with regulations or standards.
-  - For more information, please see [Attestations of Findings](/docs/007-Cybersecurity/007-Assessment-and-Testing/068-Attestation-of-Findings.md)
+  - For more information, please see [Attestations of Findings](/docs/007-Cybersecurity/008-Assessment-and-Testing/068-Attestation-of-Findings.md)
 
 - **Acknowledgement**
   - Recognition and acceptance of compliance requirements by all relevant parties.

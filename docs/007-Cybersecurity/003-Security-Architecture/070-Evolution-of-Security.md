@@ -24,7 +24,7 @@ A SIEM typically provides the following features:
 
 - **Log analysis**, which involves identifying patterns, trends and anomalies related to security events, in or close to real time.
 
-For more information, please see [SIEM](/docs/007-Cybersecurity/008-Security-Operations/032-SIEM.md)
+For more information, please see [SIEM](/docs/007-Cybersecurity/009-Security-Operations/032-SIEM.md)
 
 
 ## Endpoint Detection and Response 

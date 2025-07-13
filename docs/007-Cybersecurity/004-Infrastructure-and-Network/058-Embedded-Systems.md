@@ -149,7 +149,7 @@ Embedded systems often have limited resources and run in specialized environment
   - Manage firmware development and updates strictly
   - Use code signing to verify authenticity
   - Prevents tampering and unauthorized changes
-  - See [Code Signing](/docs/021-Software-Engineering/100-Software-Security/010-Application-Security.md#code-signing)
+  - See [Code Signing](/docs/021-Software-Engineering/007-Software-Security/010-Application-Security.md#code-signing)
 
 - **Inability to Patch**
 
@@ -263,7 +263,7 @@ SCADA systems are often engineered for specific tasks and might not receive regu
 
   - Vulnerability to malware infections targeting industrial control systems.
   - Risks of data theft, operational disruption, or physical damage.
-  - For more information, please see [Malware](/docs/007-Cybersecurity/011-Threats-and-Attacks/020-Malware.md)
+  - For more information, please see [Malware](/docs/007-Cybersecurity/012-Threats-and-Attacks/020-Malware.md)
 
 - **Lack of updates**
 
@@ -286,7 +286,7 @@ SCADA systems are often engineered for specific tasks and might not receive regu
 
   - Keep software and firmware up-to-date.
   - Maintain a robust patch management process.
-  - For more information, please [Patch Management.](/docs/007-Cybersecurity/008-Security-Operations/052-Updates-and-Patches.md)
+  - For more information, please [Patch Management.](/docs/007-Cybersecurity/009-Security-Operations/052-Updates-and-Patches.md)
 
 - **Firewall and IDS**
 

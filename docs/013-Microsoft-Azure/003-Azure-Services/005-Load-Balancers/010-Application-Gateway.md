@@ -40,7 +40,7 @@ Azure Application Gateway offers several powerful features designed to enhance a
 
 3. **Web Application Firewall (WAF)**
    - Provides centralized protection against common vulnerabilities and attacks.
-   - Defends against SQL injection, [cross-site scripting](/docs/007-Cybersecurity/012-List-of-Attacks/099-Other-Attacks.md), and other exploits.
+   - Defends against SQL injection, [cross-site scripting](/docs/007-Cybersecurity/013-List-of-Attacks/099-Other-Attacks.md), and other exploits.
 
 4. **Zone Redundancy**
    - Standard V2 Application Gateway spans multiple availability zones.
@@ -143,7 +143,7 @@ Rulesets protect web applications against common vulnerabilities and attacks.
 
 ![](/img/docs/azure-app-gw-enable-waf-rulesets.png)
 
-The OWASP core 3.2 ruleset provides updated protection against Java infections and reduces [false positives](/docs/007-Cybersecurity/008-Security-Operations/020-Vulnerability-Management.md#analyzing-vulnerabilities).
+The OWASP core 3.2 ruleset provides updated protection against Java infections and reduces [false positives](/docs/007-Cybersecurity/009-Security-Operations/020-Vulnerability-Management.md#analyzing-vulnerabilities).
 
 ### Log Destination
 
