@@ -131,8 +131,9 @@ CSS being injected into a website or page is one method of performing this parti
 
 Cookie poisoning involves modifying the contents of the cookies to be sent to a client's browser.
 
-- Modified cookie can be used to exploit vulnerabilities.
-- add info
+- Modified cookies can contain fake session info or user privileges.
+- Used to bypass authentication or gain unauthorized access.
+
 
 ## Replay Attack
 
