@@ -56,7 +56,7 @@ WPA2 improved security significantly and became the long-term Wi-Fi standard.
 
 WPA2 uses **CCMP (Counter Cipher Mode with Block Chaining Message Authentication Code Protocol)** for data integrity and confidentiality.
 
-## WPA2-PSK
+## WPA2-PSK (Pre-shared key) 
 
 WPA2-PSK is the personal-use version of WPA2, commonly used in homes and small businesses.
 
@@ -67,6 +67,12 @@ This method is simple to set up, but in this setup, all users share the same key
 
 - Easier to manage but less secure in environments with many users
 - Still widely used despite some risks
+
+:::info 
+
+If the Wi-Fi password is shared by everyone and posted publicly (like in coffee shops), the network is using a pre-shared key (PSK) for its wireless configuration.
+
+::
 
 ## WPA2-Enterprise
 

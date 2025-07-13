@@ -74,8 +74,8 @@ To secure the communication between two endpoints, we can utilized the following
 
 - [Kerberos](/docs/007-Cybersecurity/004-Infrastructure-and-Network/020-Authentication-Protocols.md#kerberos)
 - [NTLMv2](/docs/007-Cybersecurity/004-Infrastructure-and-Network/020-Authentication-Protocols.md#ntlm)
-- PKI Certificates 
-- Pre-Shared Key (PSK)
+- [PKI Certificates](/docs/007-Cybersecurity/005-Cryptography/035-PKI.md)
+- [Pre-Shared Key (PSK)](/docs/007-Cybersecurity/004-Infrastructure-and-Network/061-Wireless-Security-Settings.md#wpa2-psk-pre-shared-key)
 
 
 ## Establishing an IPSec Tunnel
