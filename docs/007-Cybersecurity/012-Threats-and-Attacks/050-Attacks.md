@@ -1,6 +1,8 @@
 ---
 title: "Attacks"
-tags: [Cybersecurity]
+tags: 
+- Security
+- Cybersecurity
 sidebar_position: 50
 last_update:
   date: 1/30/2024

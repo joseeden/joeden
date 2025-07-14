@@ -1,6 +1,8 @@
 ---
 title: "Social Engineering"
-tags: [Cybersecurity]
+tags: 
+- Security
+- Cybersecurity
 sidebar_position: 49
 last_update:
   date: 1/30/2024

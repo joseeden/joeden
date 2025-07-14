@@ -1,6 +1,8 @@
 ---
 title: "Threat Modelling"
-tags: [Cybersecurity]
+tags: 
+- Security
+- Cybersecurity
 sidebar_position: 7
 last_update:
   date: 1/30/2024

@@ -1,6 +1,8 @@
 ---
 title: "Vulnerabilities"
-tags: [Cybersecurity]
+tags: 
+- Security
+- Cybersecurity
 sidebar_position: 10
 last_update:
   date: 1/30/2024

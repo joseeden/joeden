@@ -1,6 +1,8 @@
 ---
 title: "Mobile Vulnerabilities"
-tags: [Cybersecurity]
+tags: 
+- Security
+- Cybersecurity
 sidebar_position: 12
 last_update:
   date: 1/30/2024
@@ -27,6 +29,7 @@ Mobile vulnerabilities refer to security weaknesses in mobile devices, operating
 - **Malware and Spyware**
   - Malicious software designed to damage or disrupt to mobile devices.
   - Steal sensitive information, track user activities, or send unauthorized messages.
+  - For more information, please see [Malware](/docs/007-Cybersecurity/012-Threats-and-Attacks/020-Malware.md)
 
 - **App Permissions Abuse**
   - Applications requesting excessive or unnecessary permissions.

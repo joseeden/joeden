@@ -1,6 +1,8 @@
 ---
 title: "Threat Hunting"
-tags: [Cybersecurity]
+tags: 
+- Security
+- Cybersecurity
 sidebar_position: 6
 last_update:
   date: 1/30/2024

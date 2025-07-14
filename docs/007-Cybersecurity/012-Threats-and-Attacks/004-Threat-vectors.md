@@ -1,6 +1,8 @@
 ---
 title: "Threat Vectors"
-tags: [Cybersecurity]
+tags: 
+- Security
+- Cybersecurity
 sidebar_position: 4
 last_update:
   date: 1/30/2024

@@ -1,6 +1,8 @@
 ---
 title: "Race Conditions"
-tags: [Cybersecurity]
+tags: 
+- Security
+- Cybersecurity
 sidebar_position: 15
 last_update:
   date: 1/30/2024

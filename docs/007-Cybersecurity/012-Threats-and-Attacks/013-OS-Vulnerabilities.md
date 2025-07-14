@@ -1,6 +1,8 @@
 ---
 title: "OS Vulnerabilities"
-tags: [Cybersecurity]
+tags: 
+- Security
+- Cybersecurity
 sidebar_position: 13
 last_update:
   date: 1/30/2024

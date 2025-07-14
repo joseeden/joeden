@@ -1,6 +1,8 @@
 ---
 title: "Outsmarting Threat Actors"
-tags: [Cybersecurity]
+tags: 
+- Security
+- Cybersecurity
 sidebar_position: 3
 last_update:
   date: 1/30/2024

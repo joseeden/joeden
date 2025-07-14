@@ -1,6 +1,8 @@
 ---
 title: "Threats"
-tags: [Cybersecurity]
+tags: 
+- Security
+- Cybersecurity
 sidebar_position: 1
 last_update:
   date: 1/30/2024
@@ -110,27 +112,30 @@ Known examples:
 Trojan Horses is a computer program that appears to have a useful function, but also has a hidden and potentially malicious function. It can also create backdoors but are only active while a specific application is running.
 
 - Malware disguised as a piece of harmless or desirable software. 
-- Not as effective as a rootkit, which maintain root-level access while concealing malicious activity.
+- Not as effective as a rootkit (has root-level access while concealing activity)
 - Examples: fake antivirus, games, and utilities/productivity tools.
-
-A **RAT (Remote Access Trojan)** is a widely used threat because it provides the attacker with remote control of the machine.
-
-- Earliest version is a testris game which infected with the trojan.
-- The game is installed into floppy disks and share between friends.
 
 **Mitigation:**
 
 - Use an AV or Anti-malware prior to opening or installing any program.
 - Ensure your system is patched against any vulnerabilities.
 
+:::info 
+
+A **RAT (Remote Access Trojan)** is a widely used threat because it provides the attacker with remote control of the machine.
+
+For more information, please see [Remote Access Trojan](/docs/007-Cybersecurity/012-Threats-and-Attacks/020-Malware.md#remote-access-trojan-rat)
+
+:::
+
 ## Ransomware
 
 Malware that encrypts files, demanding payment for their release.                               
 
 - Blocks access to computer or its data until the ransom is paid.
-- Example: WannaCry, CryptoLocker 
+- For more information, please see [Ransomware](/docs/007-Cybersecurity/012-Threats-and-Attacks/020-Malware.md#ransomware)
 
-Mitigation:
+**Mitigation:**
 
 - Conduct regular backups.
 - Install regular software updates. 
@@ -201,13 +206,14 @@ A shim is a small piece of software that sits between two components to alter th
     - Typically inserted by insiders with malicious intent, such as disgruntled employees.
     - Not installed directly by malware but hidden within existing code.
 
-## Key Logger 
+## Keylogger
 
 A piece of a software or hardware that records every single keystroke made on the device. 
 
 - Originally created by system administrators to help in troubleshooting.
 - Recorded key strokes are sent back to the threat actor without the user's consent.
-- Can lead to identity theft, financial fraud, and corporate espionage
+- For more information, please see [Keylogger](/docs/007-Cybersecurity/012-Threats-and-Attacks/020-Malware.md#keylogger)
+
 
 **Mitigation:**
 
@@ -220,14 +226,16 @@ A piece of a software or hardware that records every single keystroke made on th
 
 ## Spyware and Bloatware
 
-- **Spyware**
+**Spyware** and **bloatware** are both unwanted software which serve different purposes.
 
-    - Collects and sends data, often without the user’s knowledge.
-    - Can be bundled with legitimate software or downloaded from malicious websites.
-    - Invades privacy and can slow down system performance.
+- **Spyware** – Software that secretly collects user data such as browsing habits.
+- **Bloatware** – Pre-installed or unnecessary software that slows down the system.
 
-- **Bloatware**
+For more information, please see [Malware](/docs/007-Cybersecurity/012-Threats-and-Attacks/020-Malware.md#spyware).
 
-    - Comes pre-installed on new computers or smartphones.
-    - Bundled with other software, often unwanted or unneeded by the user.
-    - Not harmful, but consumes resources like RAM and storage.
+
+**Mitigation:**
+
+- Use reputable antivirus or anti-malware tools
+- Uninstall unused or unnecessary programs
+- AApply system updates and security patches
