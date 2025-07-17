@@ -29,6 +29,17 @@ Intrusion Detection Systems (IDS) and Intrusion Prevention Systems (IPS) are bot
   - Can block the traffic or prevent the application from running.
   - Should be placed at the border of the network, behind the firewall.
 
+
+:::info 
+
+To detect and prevent specific network attacks, the first setting that should be configured on an Intrusion Prevention System (IPS) is **packet inspection**.
+
+Packet inspection enables the IPS to analyze traffic in real time, examining packet headers and payloads for known signatures, anomalies, or behavior patterns. Without properly configured packet inspection, the IPS would not be able to analyze traffic to detect or prevent attacks.
+
+::: 
+
+
+
 ## Positives and Negatives
 
 In security, understanding the different outcomes of detection systems is important to ensure accurate threat identification and response.

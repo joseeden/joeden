@@ -63,6 +63,7 @@ Set up systems to detect and prevent future attacks.
 
 - Deploy intrusion prevention software.
 - Regularly monitor network traffic for anomalies.
+- For more information, please see [IPS.](/docs/007-Cybersecurity/004-Infrastructure-and-Network/056-IDS-and-IPS.md)
 
 ## Phased Approach
 
