@@ -187,6 +187,20 @@ For more information, please see [Asymmetric Encryption.](/docs/007-Cybersecurit
 
 Utilizes asymmetric encryption to securely transfer a private key, which can then be used with symmetric encryption.
 
+
+### Homomorphic Encryption
+
+**Homomorphic encryption** is a cryptographic technique that allows **computation on encrypted data without decrypting it**. The result of the computation, once decrypted, is the same as if it had been performed on the plaintext.
+
+This makes it ideal for:
+
+- Cloud environments, where sensitive data must remain encrypted
+- Financial institutions or any organization that needs to preserve data confidentiality
+- When data privacy is critical and trust in the cloud provider is limited
+
+While homomorphic encryption is **computationally intensive and slower**, this is acceptable for organizations prioritizing security over speed, such as banks, government agencies, and healthcare providers.
+
+
 ## Storing Keys 
 
 Best practices:
@@ -197,7 +211,16 @@ Best practices:
 - Limit key access to regular audits and monitoring
 
 
+## Insecure key storage
 
+**Insecure key storage** refers to improper handling of cryptographic keys and certificates, which can expose sensitive data to attackers. This includes:
+
+- Storing private keys in plaintext
+- Leaving certificates in publicly accessible locations
+- Failing to protect certificates with strong permissions
+- Not using hardware security modules (HSMs) or secure key vaults
+
+Such practices compromise the confidentiality and integrity of encrypted communications or data, and are a common vulnerability in systems that rely on cryptographic certificates.
 
 
 
