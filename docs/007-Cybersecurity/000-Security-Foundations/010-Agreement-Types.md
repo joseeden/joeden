@@ -79,6 +79,11 @@ Additionally:
   - SLA delves into granular details, specifying service intricacies.
   - Caution required in cloud-based outsourcing, thorough legal review recommended.
 
+:::info 
+
+If intellectual property is shared with unauthorized companies, it typically means the terms of the MOA have been breached.
+
+:::
 
 ## Master Services Agreement 
 

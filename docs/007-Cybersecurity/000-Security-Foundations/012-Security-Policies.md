@@ -114,6 +114,16 @@ Setting a minimum password age to three days, for example, will prevent users fr
 
 :::
 
+
+## Standard Operating Procedure (SOP)
+
+A **Standard Operating Procedure (SOP)** provides detailed, step-by-step instructions to perform a task consistently and securely — such as applying patch updates according to a **secure baseline**.
+
+- SOPs ensure **compliance** with security standards and policies.
+- They reduce errors by **standardizing processes**.
+- Help auditors and admins verify that patching is done correctly and securely.
+
+
 ## Bring Your Own Device (BYOD)
 
 BYOD allows employee use of personally owned devices for business, requiring:
