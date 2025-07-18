@@ -52,6 +52,9 @@ Access rules guide whether a subject can access an object based on their validat
 
 **Geolocation** is the process of determining where a user or device is located using IP address, GPS, or network data. It's commonly used in cybersecurity to help control access and detect suspicious activity.
 
+- Enables tracking the physical location of devices
+- Useful for finding lost or stolen devices wipe them remotely.
+
 Geolocation can be applied in several ways:
 
 - **Geofencing** 
