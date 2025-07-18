@@ -17,26 +17,35 @@ last_update:
 
 Wireless access points (WAPs) extend a wireless network's coverage by broadcasting a signal from a wired connection. For more information, please see [WAPs.](/docs/006-Networking/001-The-Basics/060-Wireless-Networking.md)
 
-To secure WAPs:
+To keep WAPs secure:
 
-- Implement strong encryption protocols (WPA3) to secure wireless communications.
-- Regularly update firmware to protect against vulnerabilities.
-- Configure strong, unique passwords and disable default settings.
-- Use MAC address filtering to control device access.
-- Monitor wireless network traffic for suspicious activities.
-- Position access points strategically to minimize unauthorized physical access.
+- Use strong encryption like WPA3.
+- Keep firmware updated to fix known issues.
+- Set unique, strong passwords and disable default settings.
+- Enable MAC filtering to control which devices can connect.
+- Watch network traffic for anything unusual.
+- Place WAPs where they’re harder to access physically.
 
-## Placements of WAPs
 
-Strategic placement of wireless access points (WAPs) is vital for optimizing network performance and ensuring security. The positioning of the WAPs will significantly impact the range, coverage, and signal strength of your organization's wireless network.
+## WAP Placement
 
-- Position WAPs centrally to provide even coverage and minimize dead zones.
-- Avoid placing WAPs near external walls to reduce signal leakage outside the building.
-- External wall-mounted uninidirectional antenna only broadcasts signal inwards the facility.
-- Install WAPs at a height to prevent physical tampering.
-- Use signal strength mapping tools to identify optimal placement locations.
-- Ensure adequate coverage in high-traffic areas to maintain performance.
-- Consider potential sources of interference, such as microwaves and other electronic devices
+The positioning of the WAPs will significantly impact the range, coverage, and signal strength of your organization's wireless network.
+
+- Put WAPs in central locations for better coverage and fewer dead spots.
+- Avoid placing them near outside walls to limit signal leaking outside.
+- Use wall-mounted directional antennas to broadcast signal inward only.
+- Mount WAPs high up to reduce the risk of tampering.
+- Use tools to measure signal strength and find the best spots.
+- Make sure high-use areas have enough coverage.
+- Stay clear of interference from things like microwaves or other electronics.
+
+WAP placement requires coordination with:
+
+- **Technology team** for optimal coverage and performance.
+- **Cybersecurity team** to reduce risks like signal leakage outside the building that could be - exploited.
+- **Physical security** team to prevent unauthorized physical access or tampering with access points.
+
+
 
 ## ESS Configuration
 
