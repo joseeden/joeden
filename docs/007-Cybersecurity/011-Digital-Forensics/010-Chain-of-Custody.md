@@ -18,6 +18,17 @@ Also known as the **Chain of Evidence**, the Chain of Custody is the documented 
 - Securely store evidence to prevent unauthorized access or loss.
 - Evidence should be labeled and stored in a sealed container.
 
+## Provenance of Artifacts 
+
+Provenance of artifacts refers specifically to the detailed history or origin of the digital evidence (artifacts). 
+
+- Where the evidence came from 
+- How it was collected
+- Who handled it throughout the process. 
+- About the "story" and traceability of the evidence
+
+The provenance of artifacts is a specific section within the chain of custody forms/documents and maintained through the **evidence logs**, ensuring the chain of custody is intact and evidence integrity is preserved.
+
 ## Evidence Logs 
 
 A clear chain of custody helps ensure evidence is admissible in court by demonstrating its integrity. Evidence logs should accompany each piece of evidence and should contain the following events:

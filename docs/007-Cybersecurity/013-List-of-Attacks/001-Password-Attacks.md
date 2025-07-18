@@ -125,6 +125,15 @@ Blends brute force and dictionary techniques by using common passwords with vari
 - Implement rate limiting to slow down hybrid attacks.
 - Educate users about secure password practices.
 
+## Credential Stuffing
+
+Credential stuffing is an attack where hackers use stolen usernames and passwords from one breach to try logging into other sites automatically. It takes advantage of people reusing passwords across different accounts.
+
+- Uses leaked login details from other breaches
+- Automates login attempts on many websites
+- Exploits password reuse to gain unauthorized access
+
+
 ## Birthday Attack 
 
 Cybercriminals use birthday attacks to trick systems by cracking digital authentication methods.

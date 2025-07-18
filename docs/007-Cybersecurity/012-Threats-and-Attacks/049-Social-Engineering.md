@@ -26,7 +26,7 @@ Social Engineering refers to tenetshe manipulation of individuals or groups to g
   - Fabricating a scenario or pretext to trick individuals into revealing sensitive information.
   - Often involves creating a sense of urgency or importance to increase compliance.
 
-- **Hoaxes**    
+- **Hoaxes/Hoaxing**    
   - Typically intended as a prank, joke, or to cause panic or confusion.
   - Can lead to misinformation, wasted resources in debunking, or emotional distress for those affected.
 
