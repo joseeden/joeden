@@ -151,3 +151,13 @@ Examples: Timing attacks, power analysis attacks, and electromagnetic analysis a
 - Constant-time algorithms, noise injection, and secure hardware design.
 - This countermeasures reduce the risk of information leakage from side channels. 
 - Regularly update and patch systems to address potential vulnerabilities.
+
+
+## Double Login Prompt (Suspicious Behavior)
+
+Repeated or unexpected login prompts may signal a hidden attack.
+
+- Often caused by reverse proxy tools harvesting credentials
+- Tricking users into entering credentials multiple times
+- Reverse proxy backdoors can intercept and relay authentication requests
+- Used in phishing campaigns or proxy-based man-in-the-middle attacks
