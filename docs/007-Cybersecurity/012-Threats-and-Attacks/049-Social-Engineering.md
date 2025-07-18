@@ -39,6 +39,13 @@ Social Engineering refers to tenetshe manipulation of individuals or groups to g
   - Searching through trash to find discarded documents containing valuable information.
   - Can yield sensitive data such as financial records, passwords, or corporate documents.
 
+      :::info 
+
+      **Crosscut shredders** are used to destroy paper documents and reduce the risk of data leakage through dumpster diving
+
+      :::
+
+
 - **Shoulder Surfing**
   - Covertly observing or eavesdropping on individuals as they enter sensitive information.
   - Perpetrators may use hidden cameras or binoculars to capture information from a distance.
