@@ -301,3 +301,15 @@ Web Application Firewalls (WAF) are specialized firewalls designed to protect we
   - Device receives a mirrored copy of the web server traffic.
   - Non-intrusive way of conducting web application filtering.
   - Cannot block live web traffic, works more of an IDS and then alert on it.
+
+
+### Reverse Proxy for WAF with SSL
+
+When a WAF protects a website over SSL (HTTPS), it needs to decrypt the traffic to inspect it. This means the WAF has to terminate the SSL connection between the client and itself.
+
+- The WAF then acts as a **reverse proxy**
+- It accepts incoming HTTPS requests and decrypts them
+- To decrypt SSL traffic, it requires the **decryption certificate**
+- WAF inspects for/blocks malicious content, and then re-encrypts traffic 
+
+Without the reverse proxy setup, the WAF wouldn’t see decrypted traffic and couldn’t inspect it properly.
