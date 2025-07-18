@@ -141,32 +141,47 @@ Carrier unlocking involves removing restrictions set by a carrier to allow the p
 
 ### Mobile Security Controls
 
-Implementing strong security measures on mobile devices is important to protect personal and sensitive information. Here are the key controls you should enable: 
+Setting up solid security on mobile devices helps keep personal and sensitive data safe. Here are the key controls you should enable: 
 
 - **Access Control Mechanisms**  
-  - Every mobile device should have access controls like passcodes or biometrics.
+
+  - Every mobile device should have passcodes or biometrics.
   - Passcodes: Default is often a 4-digit pin, but it's weak.
   - Strong Passwords: Use complex passwords like on computers.
 
 - **Biometric Authentication**  
+
   - Some devices offer fingerprint or facial recognition to ease access.
   - Apple’s Touch ID: Common for iOS devices.
   - Android: Fingerprint options available but less common.
 
 - **Encryption**  
+
   - Encrypt data on your device to protect it if lost or stolen.
   - iOS and Android: Enable encryption by setting a password.
   - Default since: Android Gingerbread and iOS 8.
 
 - **Remote Wipe**  
+
   - Enable remote wiping to erase data if your device is lost.
   - Works if the device is connected to a network.
   - Available on both Android and iOS.
 
 - **Screen Lock and Inactivity Timeout**  
+
   - Set your device to lock automatically after inactivity.
   - Limits access if the device is idle.
   - Locks out users after multiple incorrect passcode attempts.
+
+- **Posture Checks**
+
+  - Checks device security before granting access.
+  - Ensures devices meet compliance antivirus and patches.
+  - Enforce patching and screen lock policies.
+  - Confirms signatures and firewall settings.
+  - If device fails checks, device is placed on a quarantine VLAN.
+  - Quarantined device will be patched and then rechecked
+
 
 ### Mobile Asset Deployments
 
@@ -211,8 +226,14 @@ MDM solutions like Google Mobile Management provide tools to configure network a
 - Push updates without user intervention
 - Control synchronization, passwords, and encryption settings
 
+### Content Management
 
-### Mobile Device Tracking 
+Content management is a security control that restricts access to inappropriate websites and can block certain content types, such as images in emails.
+
+- Enforces corporate content policies on mobile devices  
+- Helps prevent data leaks and policy violations off-campus
+
+### Device Tracking 
 
 - **Impact of Lost or Stolen Devices**
    - When devices are lost or stolen, organizations face two types of losses:

@@ -140,9 +140,15 @@ Network Access Control (NAC) manages network security by enforcing policies on u
   - Assesses the security state of devices before granting access.
   - Ensures devices meet compliance standards like antivirus updates or security patches.
   - Validating current signatures and proper firewall configuration.
-  - If device fails posture checks, device is placed on a quarantine VLAN.
-  - Quarantined device will be patched and then ran through posture checks again.
+  - If device fails checks, device is placed on a quarantine VLAN.
+  - Quarantined device will be patched and then ran through checks again.
 
+- **Posture checking**
+
+  - Checks device security before granting access.
+  - If device fails checks, device is placed on a quarantine VLAN.
+  - Quarantined device will be patched and then rechecked
+  - For more information, please see [Posture Checks](/docs/007-Cybersecurity/004-Infrastructure-and-Network/059-Mobile-Systems.md#mobile-security-controls)
 
 
 ## DHCP Snooping 
