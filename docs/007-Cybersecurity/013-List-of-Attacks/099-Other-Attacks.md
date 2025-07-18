@@ -161,3 +161,19 @@ Repeated or unexpected login prompts may signal a hidden attack.
 - Tricking users into entering credentials multiple times
 - Reverse proxy backdoors can intercept and relay authentication requests
 - Used in phishing campaigns or proxy-based man-in-the-middle attacks
+
+## Referrer Manipulation
+
+Referrer manipulation tricks a website into thinking a request came from a trusted source.
+
+- Modifies the HTTP `Referer` header to fake the request origin
+- Used to bypass weak access rules or CSRF protections
+
+
+## WAF Bypass
+
+WAF bypass involves avoiding detection by a Web Application Firewall using various tricks.
+
+- Uses encoding, uncommon HTTP methods, or input splitting
+- Often paired with injection or spoofing attacks
+

@@ -46,6 +46,24 @@ Impersonating a trusted IP address to gain unauthorized access.
 - **Network Access Control (NAC)**: Restrict unauthorized devices from network access.
 - **IDS/IPS**: Monitor for spoofing patterns.
 
+## User-Agent Spoofing
+
+**User-agent spoofing** is an attack where the HTTP `User-Agent` header is altered to impersonate a trusted client, such as a web browser or mobile application.
+
+- Attackers modify the `User-Agent` string to mimic legitimate traffic.
+- Used to bypass API access controls or to evade user-agent-based restrictions.
+- For example, spoofing a mobile app’s user-agent to access an internal API directly.
+
+**Impacts:**
+
+- Can lead to unauthorized access to APIs or web resources.
+- May be used in combination with other attacks like session hijacking or scraping.
+
+**Mitigation:**
+
+- Do not rely solely on user-agent headers for access control.
+- Use proper authentication (e.g., tokens, certificates).
+- Implement device fingerprinting or behavior-based detection.
 
 ## Hijacking Attacks
 
@@ -193,3 +211,4 @@ In simple terms:
 
 - **Deauthentication** = “Log out now. You need to reauthenticate to come back.”
 - **Disassociation** = “We're ending this session, but we still know who you are.”
+
