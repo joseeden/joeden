@@ -28,8 +28,9 @@ Checks boot integrity of the host:
 - Boot attestation
 
 Applications:
-  - Commonly used in laptops and desktops to secure boot processes and protect encryption keys.
-  - Utilized in enterprise environments for secure device authentication and attestation.
+
+- Laptops and desktops, secure boot processes and protect encryption keys.
+- Utilized in enterprise environments for secure device authentication and attestation.
   
 
 <div class="img-center">
@@ -39,6 +40,29 @@ Applications:
 
 </div>
 
+### Secure Boot
+
+Secure Boot, also called **UEFI Secure Boot**, is a security feature that helps ensure a device only boots using trusted software signed by authorized keys.
+
+- Prevents unauthorized or malicious code from running during startup.
+- Uses cryptographic signatures to verify bootloader and OS integrity.
+- Helps protect against rootkits and boot-level malware.
+
+
+### Measured Boot
+
+Measured Boot records cryptographic hashes of boot components as the system starts, creating a log of what was loaded.
+
+- Hashes each component during boot to track system state.
+- Stores measurements in a Trusted Platform Module (TPM) for verification.
+
+
+### Boot Attestation
+
+Boot Attestation verifies the integrity of the measured boot logs, often remotely, to confirm the system started securely.
+
+- Compares boot measurements against known good values.
+- Can halt or alert if unauthorized changes are detected during startup.
 
 
 ## Hardware Security Module (HSM)
