@@ -223,6 +223,18 @@ Malicious code is injected into a legitimate process to evade detection and exec
 - Data execution prevention (DEP) and address space layout randomization (ASLR).
 - Regularly update and patch applications and operating systems.
 
+
+## Memory Injection 
+
+Memory injection is a type of vulnerability where malicious code is injected directly into the memory space of a legitimate process, causing it to behave in unexpected ways, such as initiating outbound connections it normally wouldn't.
+
+- Code runs without touching files on disk.
+- Harder for antivirus to detect.
+- Helps attackers stay hidden and persistent.
+
+Memory injection poses a significant risk because it leverages legitimate processes, making malicious activity more difficult to detect and prevent.
+
+
 ## Directory Traversal
 
 Also known as **Path Traversal**, it exploits insufficient security validation/sanitization of user-supplied file names to access directories and files outside the web root folder. 
