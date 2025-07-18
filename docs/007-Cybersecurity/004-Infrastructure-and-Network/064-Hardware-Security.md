@@ -24,6 +24,15 @@ Encrypting the device ensures that even if a device is lost or stolen, the data 
 - [Encryption Tools](/docs/007-Cybersecurity/005-Cryptography/014-Encryption-Tools.md)
 
 
+## Self-Encrypting Drives (SEDs)
+
+Self-Encrypting Drives (SEDs) automatically encrypt all data on the drive using built-in hardware.  
+They protect against data theft if a device is lost or stolen, with minimal user impact.
+
+- Encryption and decryption are handled transparently by the drive
+- No need for separate software or user action
+- Ideal for organizations with low user inconvenience tolerance
+
 
 ## Portable Devices
 
