@@ -26,9 +26,14 @@ Anonymization of data is the process of removing or altering personally identifi
 
 ### Pseudo-Anonymization 
 
-Replacing unique identifiers (such as PII) with fake identifiers.
+Replacing unique identifiers (such as PII) with artificial identifiers.
 
+- Keeps data useful for analysis (like pay scales) while protecting identities.
+- Useful for collaboration without exposing sensitive personal data.
 - Information can also be selectively removed. 
+
+Unlike full anonymization, pseudo-nonymization can be reversed if needed under controlled conditions.
+
 
 ### Data Minimization 
 
