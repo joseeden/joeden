@@ -122,6 +122,13 @@ Likened to the entity's risk acceptance, risk tolerance varies across organizati
   - Low tolerance leads to generator investment.
   - Higher tolerance involves multiple generators for increased assurance.
 
+:::info
+
+**Geographic Dispersion** refers to spreading important systems and data across different locations to prevent a single event, like a natural disaster, from causing a total loss. This helps keep the business running smoothly.
+
+:::
+
+
 ### Risk Appetite 
 
 Signifies an organization's willingness to embrace  or retain specific types and levels of risks to fulfill its strategic  goals.

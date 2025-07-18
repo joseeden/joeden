@@ -114,9 +114,13 @@ Security professionals can use isolated virtual machines that has no access to t
 Package Monitoring involves keeping track of security of third-party packages and dependencies used.
 
 - Ensures that packages are up-to-date with the latest security patches.
-- Verifies the integrity and authenticity of packages to prevent supply chain attacks.
+- Verifies integrity and authenticity of packages to prevent supply chain attacks.
 - Alerts developers to known vulnerabilities in dependencies.
 - Example tools are Snyk and Dependabot.
+
+Package monitoring tracks the software versions and components installed across systems. 
+
+Since legacy systems often run outdated or unsupported software packages, monitoring these packages helps to identify which systems are legacy by revealing those with old or unpatched software versions. 
 
 ## Web Server Security 
 

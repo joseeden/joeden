@@ -185,6 +185,8 @@ For more information, please see [Mobile Asset Deployments.](/docs/007-Cybersecu
     - Can be used for work purposes, and for personal use
     - Device can be partitioned (containers) for personal and corporate apps 
 
+For more information, please see [Mobile Assets Deployments.](/docs/007-Cybersecurity/009-Security-Operations/073-Mobile-Asset-Deployments.md)
+
 
 ### Mobile Device Management 
 

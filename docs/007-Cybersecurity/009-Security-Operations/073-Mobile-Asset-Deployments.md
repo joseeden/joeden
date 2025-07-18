@@ -38,15 +38,16 @@ Jailbreaking removes built-in restrictions on devices like smartphones or tablet
 Corporate-Owned, Personally Enabled (COPE) policies provide employees with company-owned devices that they can also use for personal purposes, balancing control and flexibility.
 
 - **IT Control**
-  - Ensures devices are pre-configured with necessary security measures.
-  - Facilitates easier enforcement of security policies and updates.
-  - Organization has better control over device configuration and data access.
-  - Simplifies compliance with regulatory requirements and internal policies.
+  - Devices come with built-in security.
+  - Easier to enforce rules and updates.
+  - Company controls device settings and data.
+  - Helps meet compliance rules.
 
 - **Drawbacks**
-  - Requires higher initial investment in devices and maintenance.
-  - Potentially reduces costs associated with security breaches and data loss.
-  - Concerns on the employee's privacy, since the organization has full access to corporate-owned device.
+  - Costs more upfront for devices and upkeep.
+  - Can lower costs from security issues.
+  - Employee privacy concerns since company can access device.
+
 
 
 ## CYOD
