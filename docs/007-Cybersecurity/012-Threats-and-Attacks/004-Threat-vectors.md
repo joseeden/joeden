@@ -27,16 +27,23 @@ last_update:
 
 - **Phishing** 
     - Deceptive messages tricking users into revealing sensitive information.
-
-- **Social Engineering** 
-    - Manipulative messages to gain unauthorized access or information.
-
-- **Malware Links** 
-    - Links in messages that lead to malicious software.
+    - Often conducted via email, SMS, or malicious websites.
+    - For more information, please see [Phishing](/docs/007-Cybersecurity/013-List-of-Attacks/003-Social-Engineering-Attacks.md#phishing)
 
 - **Smishing** 
     - Phishing attacks via SMS or text messaging.
-    
+    - Often impersonates trusted sources like banks or service providers.
+    - For more information, please see [Smishing](/docs/007-Cybersecurity/013-List-of-Attacks/003-Social-Engineering-Attacks.md#phishing)
+
+- **Social Engineering** 
+    - Tricks users into revealing info or giving access 
+    - Performed using manipulation and impersonation
+    - Exploits human trust, like phishing or pretexting.
+
+- **Malware Links** 
+    - Links that install malicious software when clicked.
+    - Can lead to data theft, ransomware, or system compromise.
+
 
 ## Images 
 

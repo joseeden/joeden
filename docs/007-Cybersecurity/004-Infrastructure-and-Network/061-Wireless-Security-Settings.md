@@ -201,7 +201,7 @@ These protocols are commonly used to **secure access to wireless networks**, par
 
 ### RADIUS
 
-RADIUS (Remote Authentication Dial-In User Service) is often used in **enterprise Wi-Fi networks*- to manage user authentication and access control.
+RADIUS (Remote Authentication Dial-In User Service) is often used in **enterprise Wi-Fi networks** to manage user authentication and access control.
 
 - Provides centralized authentication for wireless users.
 - Commonly used with WPA2/WPA3-Enterprise for secure wireless access.
@@ -212,7 +212,7 @@ For more information, please see [RADIUS](/docs/007-Cybersecurity/004-Infrastruc
 
 ### TACACS+
 
-TACACS+ (Terminal Access Controller Access-Control System Plus) is less commonly used for wireless, but can support **backend authentication for access to network infrastructure*- including wireless controllers.
+TACACS+ (Terminal Access Controller Access-Control System Plus) is less commonly used for wireless, but can support **backend authentication for access to network infrastructure** including wireless controllers.
 
 - Offers granular control over authentication, authorization, and accounting.
 - Encrypts all traffic for improved security (compared to legacy TACACS).

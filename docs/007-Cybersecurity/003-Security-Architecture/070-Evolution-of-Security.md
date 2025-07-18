@@ -27,6 +27,15 @@ A SIEM typically provides the following features:
 For more information, please see [SIEM](/docs/007-Cybersecurity/009-Security-Operations/032-SIEM.md)
 
 
+:::info 
+
+**Log correlation** involves analyzing and linking related events from multiple sources to detect patterns or incidents.
+
+It’s more than just collecting logs; it’s about finding connections that indicate security issues.
+
+
+:::
+
 ## Endpoint Detection and Response 
 
 ### EDR 
@@ -37,6 +46,8 @@ Endpoint Detection and Response (EDR) refers to security technologies that conti
 - Responding to incidents, including isolation of affected endpoints and automated response actions.
 - Enables detailed investigation, including timeline reconstruction and root cause analysis.
 - Gathers detailed data from endpoints to support security analysis and compliance requirements.
+
+While SIEM centralizes log collection and analysis, it still epends on tools like EDR for endpoint data collection. EDR forwards relevant data for further review and helps incident responders quickly understand and contain threats.
 
 **EDR Process**
 

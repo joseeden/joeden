@@ -95,7 +95,7 @@ The Bell-LaPadula Model is focused on maintaining data **confidentiality**. It e
   - Ensures that users cannot access information at a higher security level
   - Widely used in environments where confidentiality is critical
 
-- ***-Property**
+- ****Property**
 
   - "No Write Down"
   - A subject on one security level shouldn't be able to write to objects with lower security levels
@@ -121,7 +121,7 @@ The Biba Integrity Model focuses on maintaining data **integrity** by preventing
   - A subject should not be able to read an object at security level lower than the subject's security clearance.
   - Prevents the corruption of integrity of information accessed.
 
-- ***-Integrity Property**
+- ****Integrity Property**
 
   - "No Write Up"
   - A subject should not be able to write an information to an object at security level lower than the subject's security clearance.

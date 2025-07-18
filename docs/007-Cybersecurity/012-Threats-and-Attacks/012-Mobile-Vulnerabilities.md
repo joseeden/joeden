@@ -46,6 +46,8 @@ Mobile vulnerabilities refer to security weaknesses in mobile devices, operating
 - **Phishing Attacks**
   - Obtaining sensitive information by masquerading as trustworthy entities.
   - Often conducted via email, SMS, or malicious websites.
+  - For more information, please see [Phishing](/docs/007-Cybersecurity/013-List-of-Attacks/003-Social-Engineering-Attacks.md#phishing)
+
 
 - **Insecure Data Storage**
   - Storing sensitive information in unencrypted or poorly protected formats.

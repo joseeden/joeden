@@ -23,6 +23,10 @@ Social engineering and impersonation attacks share similarities, as both exploit
 
 Both techniques rely on convincing the victim that the attacker is a legitimate authority or trusted individual,  and it is often done through phone calls, emails, or face-to-face interactions.
 
+## Business Email Compromise (BEC)
+
+**Business Email Compromise (BEC)** typically involves attackers impersonating a trusted executive or employee via email to trick recipients into performing unauthorized actions—often financial, like sending money or gift cards.
+
 ## Website Redirection
 
 Redirecting users from legitimate websites to malicious ones without their knowledge or consent.

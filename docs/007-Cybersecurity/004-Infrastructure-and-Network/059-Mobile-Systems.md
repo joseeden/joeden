@@ -89,6 +89,14 @@ WiFi Direct is a peer-to-peer wireless technology that allows devices to connect
 - Useful for sharing files, streaming media, or playing multiplayer games
 - Does not use a wireless router, no internet connectivity.
 
+## VDI (Virtual Desktop Infrastructure)
+
+**VDI (Virtual Desktop Infrastructure)** allows users to access a **virtual desktop** that is hosted on company-owned infrastructure. This setup ensures:
+
+- Data stays within the company environment (not on the offshore user's device)
+- No need to issue physical hardware to offshore teams
+- Secure access to resources via controlled, isolated sessions
+
 ## Mobile Device Tethering 
 
 Mobile device tethering, also known as mobile hotspot or internet sharing, allows a smartphone or tablet to share its cellular data connection with other devices such as laptops, tablets, or gaming consoles.

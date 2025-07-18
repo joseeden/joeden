@@ -10,9 +10,7 @@ last_update:
 
 ## Capacity Planning 
 
-Critical strategic planning effort that ensures an organization is adequately equipped to meet any future demands at the right time and in the most cost-effective manner. 
-
-Main aspects of an organization's capacity:
+Capacity planning involves determining the resources (such as staff, equipment, and systems) needed to maintain essential business operations during a disruption or disaster.
 
 - **People**
   - Analyze current skills of the members.

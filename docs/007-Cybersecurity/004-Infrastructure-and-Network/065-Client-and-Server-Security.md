@@ -8,12 +8,14 @@ last_update:
 ---
 
 ## Client Security Issues
+
 Client security issues arise from vulnerabilities on the user's end, such as malware infections, outdated software, or weak authentication practices.
 
 - Exposed to phishing, malware, and unauthorized access
 - Compromised clients can leak sensitive data or become entry points for attacks
 
 ### Applet
+
 An applet is a small Java program that runs inside a web browser to provide interactive content.
 
 - Applets were widely used but are now outdated
@@ -22,6 +24,7 @@ An applet is a small Java program that runs inside a web browser to provide inte
 - Security experts recommend avoiding applets due to vulnerabilities
 
 ### Local Cache
+
 A cache is temporary storage for frequently accessed data, reducing lookup times and server load.
 
 - Browsers use cache to store web pages and DNS information
@@ -29,6 +32,7 @@ A cache is temporary storage for frequently accessed data, reducing lookup times
 #- Chrome’s DNS cache can be viewed and cleared at `chrome://net-internals/#dns`
 
 ### Cache Poisoning Attacks
+
 Cache poisoning involves attackers inserting malicious data into a cache.
 
 - DNS and web caches are common targets
@@ -36,12 +40,14 @@ Cache poisoning involves attackers inserting malicious data into a cache.
 - Mitigate by using DNSSEC, encrypted protocols, and clearing cache regularly
 
 ## Server Security Issues
+
 Server security issues occur when vulnerabilities on the server side are exploited, such as unpatched software, weak access controls, or improper configurations.
 
 - Exposed to data breaches, denial of service (DoS), and unauthorized access
 - Compromised servers can lead to loss of sensitive information or full system control by attackers
 
 ### Data Flow Control
+
 
 Data flow control manages the transfer of data to prevent overwhelming the network or server, ensuring stability and efficiency.
 
@@ -63,6 +69,7 @@ Two approaches to manage data flow:
 
 
 ### Database Servers
+
 Database servers store information for retrieval, often supporting large datasets used for analytics. Data warehouses, in particular, handle massive amounts of data, making them prime targets for attackers due to the valuable information they hold.
 
 - **Aggregation Attack**

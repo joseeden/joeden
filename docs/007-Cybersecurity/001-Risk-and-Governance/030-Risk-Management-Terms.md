@@ -107,7 +107,7 @@ As owners of the contractual agreement, we have the **right to audit** the third
 This refers to how likely it is that a threat will successfully exploit a vulnerability.
 
 - It is usually estimated based on past incidents, known threats, and system weaknesses
-- Often categorized as **Low**, **Medium**, or **High*- probability
+- Often categorized as **Low**, **Medium**, or **High** probability
 - Helps prioritize risks by weighing the chances of a real event occurring
 
 ### Impact Assessment
