@@ -99,10 +99,21 @@ Techniques used:
   - Analyzes the frequency of words in emails to predict spam probability.
   - Continuously updates as new spam emails are processed.
 
-- **DNS-based sinkhole list**
+- **DNS-based sinkhole list (DNS Sinkhole)**
   - Maintains a list of IP addresses known to send spam.
   - Redirects traffic from these IPs to a controlled environment for further analysis.
 
 - **General email filtering rules**
   - Applies rules based on sender reputation, message format, and known spam signatures.
   - Regularly updates rules to adapt to evolving spam strategies.
+
+
+## DNS Sinkhole
+
+A **DNS sinkhole** (or DNS blackhole) is a **highly effective method** to **contain** malware or botnet attacks by **redirecting malicious domain requests** to a non-routable or controlled IP address. This stops infected systems from:
+
+- Communicating with their **command and control (C2)** servers
+- Spreading malware further
+- Exfiltrating data
+
+It works **at the DNS level**, so it can **quickly contain widespread threats** across an organization or even multiple organizations.

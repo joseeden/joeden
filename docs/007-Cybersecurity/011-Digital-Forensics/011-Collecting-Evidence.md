@@ -53,43 +53,64 @@ For more information, please see [Hashing](/docs/007-Cybersecurity/005-Cryptogra
 
 The order of volatility indicates the priority for collecting digital evidence, focusing on **preserving the most transient data first**.
 
-1. **CPU Registers and Cache**
+### CPU Registers and Cache
 
-    - The most volatile, quickly lost upon system shutdown.
+These are the most volatile, fastest-changing parts of a system’s memory.
 
-2. **RAM (Memory)**
+- Data disappears almost instantly when the system powers off.
+- It holds immediate instructions and critical processing data.
+- This is the most volatile type of data.
 
-    - Contains active programs and system state, disappears when the system is turned off.
-    - This may include network-related information and system processes:
-        - Routing Tables
-        - ARP Cache
-        - Process Tables   
 
-3. **Swap Space/Temporary File Systems**
+### RAM (Memory)
 
-    - Includes operating system swap files, temporary directories, and other virtual memory spaces. 
-    - Data in these areas is less volatile than RAM but still susceptible to being overwritten.
+The RAM contains active programs and system state, disappears when the system is turned off. It contains important information like:
+
+- Routing Tables
+- ARP Cache
+- Process Tables   
+
+**Imaging volatile memory** captures everything running in RAM, including malware that exists only in memory and never gets saved to disk. This memory dump allows the team to analyze and investigate the malware.
+
+
+### Swap Space/Temporary File Systems
+
+These include virtual memory areas like swap files and temporary folders.
+
+- Less volatile than RAM.
+- Still vulnerable to being overwritten.
+- Holds data moved from RAM to free space.
     
-4. **Persistent Mass Storage**
+### Persistent Mass Storage
 
-    - Hard drives and SSDs.
-    - More stable but can be altered or deleted.
-    - Information is retained even after shutting down the device.
+This refers to physical storage like hard drives and SSDs.
 
-5. **Remote Logging and Monitoring Data**
+- More stable and retains data even after shutdown.
+- Data can still be altered or deleted.
+- Stores files, logs, and system data permanently or semi-permanently.
 
-    - Not on the system being analyzed, stored on SIEM and monitoring data.
-    - Important, because the data is still being continuously read and being written to.
+### Remote Logging and Monitoring Data
 
-6. **Physical Configuration and network topology**
+This refers to physical storage like hard drives and SSDs.
 
-    - Useful for mapping out and collecting the information.
+- More stable and retains data even after shutdown.
+- Data can still be altered or deleted.
+- Stores files, logs, and system data permanently or semi-permanently.
 
-7. **Archival Media**
+### Physical Configuration and network topology
+
+Information about the system’s hardware setup and how devices are connected.
+
+- Helps in understanding system layout.
+- Useful for mapping out and collecting the information.
+
+### Archival Media
     
-    - External drives, cloud storage; less volatile, more durable.
-    - Backup Media, could be stored onsite or remotely.
-    - Typically the least volatile but may require additional access.
+Long-term storage like external drives or cloud backups.
+
+- External drives, cloud storage; less volatile, more durable.
+- Backup Media, could be stored onsite or remotely.
+- Typically the least volatile but may require additional access.
 
 
 ## Data Collection Procedures 
