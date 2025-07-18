@@ -31,8 +31,12 @@ Design, structure and behavior of an organization's information security environ
 
 ## On-Premises Data Centers
 
-When it comes to data centers, there are two primary options: organizations can outsource the data center or own the data center. If the data center is owned, it will likely be built on premises. A place, like a building for the data center is needed, along with power, HVAC, fire suppression and redundancy.
+When it comes to data centers, there are two primary options: 
 
+- Organizations can outsource the data center
+- They can own the data center. 
+
+If the data center is owned, it will likely be built on premises. A place, like a building for the data center is needed, along with power, HVAC, fire suppression and redundancy.
 
 
 <div class="img-center">
@@ -144,37 +148,44 @@ Ensure constant and consistent power delivery to data centers.
 ### Key terms
 
 - **Surges**
-    - Small and unexpected increase in the amount of voltage being provided.
-    - Utilize a surge protector or line conditioner.
+
+  - Small and unexpected increase in the amount of voltage being provided.
+  - Utilize a surge protector or line conditioner.
 
 - **Spikes**
-    - Short transient voltage that is usually caused  by a short circuit, a power outage, or a lightning strike.
-    - Utilize a surge protector or line conditioner.
+
+  - Short transient voltage that is usually caused  by a short circuit, a power outage, or a lightning strike.
+  - Utilize a surge protector or line conditioner.
 
 - **Sags**
-    - Small and unexpected decrease in the amount of voltage being provided.
-    - Usually occurs for short period of time.
-    - During a sag, computer can still remain operational but hardware components may be damaged over time. 
-    - Utilize a surge protector or line conditioner.
+
+  - Small and unexpected decrease in the amount of voltage being provided.
+  - Usually occurs for short period of time.
+  - During a sag, computer can still remain operational but hardware components may be damaged over time. 
+  - Utilize a surge protector or line conditioner.
 
 - **Undervoltage events**
-    - Usually referred to as "brownouts".
-    - Voltage is reduced to lower levels; occurs for longer period of time.
+
+  - Usually referred to as "brownouts".
+  - Voltage is reduced to lower levels; occurs for longer period of time.
 
 - **Full power loss events**
-    - Usually referred to as "blackouts".
-    - Total loss of power for a given period of time.
-    - When power is restored, it can cause a power spike.
 
-### Reliable Electrical Source
+  - Usually referred to as "blackouts".
+  - Total loss of power for a given period of time.
+  - When power is restored, it can cause a power spike.
+
+### Power Sources
 
 A dependable electrical source is essential in datacenters to prevent disruptions and ensure continuous operation of critical systems.
 
 - **Primary power source**
+
   - Supplies regular, uninterrupted power for daily operations
   - Separate, dedicated feeders from two utility substations for redundancy
 
 - **Alternate power source**
+
   - Activates when the primary source fails
   - Power lines should handle inrush as recharge begins
   - Includes a properly sized generator with adequate fuel supply
@@ -182,15 +193,64 @@ A dependable electrical source is essential in datacenters to prevent disruption
 
 ### UPS Systems
 
-Uninterruptible Power Supplies (UPS) provide immediate backup power during outages to protect equipment from power disruptions.
+Uninterruptible Power Supply (UPS) Systems provide immediate backup power during outages to protect equipment from power disruptions.
+
+- Allow safe shutdown to avoid data loss.
+- Typically last 15–60 minutes; not for long outages.
+
+Types:
 
 - **Inline UPS**
+
   - Continuously supplies conditioned power to devices
   - Provides instant power transfer during an outage
 
 - **Standby UPS**
+
   - Remains idle until a power failure occurs
   - Switches on during power loss, with a slight delay
+
+
+### Line Conditioners
+
+Devices that improve the quality of incoming power.
+
+- Fix small power fluctuations.
+- Keep voltage steady and reduce electrical noise.
+- Protect against power surges but not full outages.
+
+
+### Generators
+
+Machines that produce electricity during long power failures.
+
+- Turn mechanical energy into electrical power.
+- Run automatically when main power stops.
+- Support important equipment for extended periods.
+
+Common types:
+
+- Portable gas-powered
+- Permanently installed
+- Battery-inverter
+
+
+### Power Distribution Centers (PDC)
+
+Central units that manage electrical power for a facility.
+
+- Distribute power efficiently to various systems.
+- Include circuit protection, monitoring, and load balancing.
+
+
+### Power Distribution Units (PDU)
+
+Devices that distribute and manage power at the rack or equipment level.
+
+- Managed PDUs let you control and monitor power remotely.
+- Disable unused outlets to stop unauthorized devices from plugging in.
+- Help manage power without reducing outlet availability.
+
 
 
 ### Electrical Interference
@@ -210,6 +270,15 @@ Uninterruptible Power Supplies (UPS) provide immediate backup power during outag
 
     - Disturbance imposed on a power line by something starting.
     - Could be cause by a large motor or a piece of a heavy equipment.
+
+
+
+
+
+
+
+
+
 
 ## Fire Protection
 
@@ -273,30 +342,4 @@ Water-based fire suppression systems are effective for controlling fires in vari
   - Pipes contain pressurized air; water is released when a fire triggers the system.
   - Suitable for areas where freezing might occur, as water enters the pipes only when needed.
 
-
-## Using Robust Systems
-
-- **Line Conditioners**
-  - Overcome minor fluctuations in the power being received.
-  - Stabilize voltage levels; filter out electrical noise.
-  - Protect against power surges, but not from a complete failure event.
-
-- **Uninterruptible Power Supply (UPS) Systems**
-  - Provide backup power during outages and protect against power fluctuations.
-  - Prevent data loss by allowing safe shutdown.
-  - Most UPS only provides 15-60 minutes of power; not for long-term outage.
-
-- **Generators**
-  - Convert mechanical energy into electrical energy for use.
-  - Supply power during extended outages.
-  - Automatically start when primary power fails.
-  - Support critical systems for prolonged periods.
-  - Usual types:
-    - Portable gas-engine 
-    - Permanently installed 
-    - Battery-inverter
-
-- **Power Distribution Centers**
-  - Central hub that distribute electrical power efficiently.
-  - Integrated circuit protection, monitoring, and loadbalancing.
 
