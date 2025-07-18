@@ -12,7 +12,7 @@ last_update:
 
 Encryption tools are technologies used to secure data through various methods, ensuring confidentiality, integrity, and protection against unauthorized access. 
 
-## Trusted Platform Module
+## Trusted Platform Module (TPM)
 
 A Trusted Platform Module (TPM) is a **hardware-based microcontroller** designed to securely generate, store, and manage cryptographic keys and other sensitive information.
 
@@ -41,7 +41,7 @@ Applications:
 
 
 
-## Hardware Security Module
+## Hardware Security Module (HSM)
 
 A Hardware Security Module (HSM) is a dedicated hardware device that safeguards cryptographic keys and perform cryptographic operations in a tamper-proof environment.
 
@@ -63,9 +63,18 @@ A Hardware Security Module (HSM) is a dedicated hardware device that safeguards 
 </div>
 
 
+## Hardware Security Module as a Service (HSMaas)
+
+HSMaaS is a cloud-based solution that provides secure, scalable, and centralized encryption key management using hardware security modules.
+
+- Centralized key control across clouds
+- Secure key storage, reduces risk and complexity
+- Supports importing existing org-owned keys
+- Low latency for fast cryptographic operations
+- Works across clouds (e.g., AWS CloudHSM, Azure HSM)
 
 
-## Key Management Service
+## Key Management Service (KMS)
 
 A Key Management Service (KMS) is a cloud-based or on-premises service designed to manage cryptographic keys, providing **centralized control** and **automated key lifecycle management**.
 
