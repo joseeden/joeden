@@ -1,7 +1,13 @@
 ---
 title: "Helm Package Manager"
 description: "Helm Package Manager"
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes, Helm]
+tags: 
+- Cloud
+- DevOps
+- Containers
+- Containerization
+- Kubernetes
+- Helm
 sidebar_position: 10
 last_update:
   date: 5/21/2022 

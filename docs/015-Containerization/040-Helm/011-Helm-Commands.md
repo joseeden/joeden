@@ -1,7 +1,13 @@
 ---
 title: "Helm Cheat Sheet"
 description: "Helm Cheat Sheet"
-tags: [Cloud, DevOps, Containers, Containerization, Kubernetes, Helm]
+tags: 
+- Cloud
+- DevOps
+- Containers
+- Containerization
+- Kubernetes
+- Helm
 sidebar_position: 11
 last_update:
   date: 5/21/2022 
