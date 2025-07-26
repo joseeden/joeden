@@ -37,3 +37,6 @@
 [submodule "submodules/flux-lab"]
 	path = submodules/flux-lab
 	url = git@gitlab.com:homelabs9424449/flux-lab.git
+[submodule "submodules/test-kustomize-labs"]
+	path = submodules/test-kustomize-labs
+	url = git@github.com:joseeden/test-kustomize-labs.git
