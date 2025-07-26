@@ -1,5 +1,5 @@
 ---
-title: "Flux CD Workflows"
+title: "Workflows"
 description: "Flux CD Workflows"
 tags:
   - Cloud

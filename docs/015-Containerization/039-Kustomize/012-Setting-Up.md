@@ -1,6 +1,6 @@
 ---
-title: "Using Kustomize"
-description: "Using Kustomize"
+title: "Setting Up"
+description: "Setting Up"
 tags: 
 - Cloud
 - DevOps
