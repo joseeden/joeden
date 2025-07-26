@@ -1,6 +1,6 @@
 ---
-title: "Setting Up Kubernetes"
-description: "Setting Up Kubernetes"
+title: "Cluster Setup using Kind"
+description: "Cluster Setup using Kind"
 tags:
   - Cloud
   - DevOps
@@ -10,7 +10,7 @@ tags:
   - GitOps
   - ArgoCD
   - Git
-sidebar_position: 17
+sidebar_position: 1
 last_update:
   date: 8/19/2022
 ---

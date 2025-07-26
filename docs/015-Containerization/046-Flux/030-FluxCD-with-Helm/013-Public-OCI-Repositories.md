@@ -34,7 +34,7 @@ This guide shows how to use public and private OCI Helm repositories with Flux C
 ## Pre-requisites 
 
 - [Setting Up Git](/docs/015-Containerization/044-GitOps/016-Setting-Up-Git.md)
-- [Setting Up Kubernetes](/docs/015-Containerization/044-GitOps/017-Setting-Up-Kubernetes.md)
+- [Setting Up Kubernetes](/docs/015-Containerization/020-Kubernetes/001-Cluster-Setup-using-Kind.md)
 - [Setting Up Flux](/docs/015-Containerization/046-Flux/015-Setting-Up-Flux.md)
 
 
