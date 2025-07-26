@@ -16,7 +16,7 @@ Example: To get EC2s from Aug 2021 to Jan 2025:
 
 ## Configure Access Keys 
 
-You will AWS Access keys to interact with the AWS CLI.
+You will need [AWS Access keys to interact with the AWS CLI.](/docs/001-Personal-Notes/050-Project-Pre-requisites/001-AWS.md#access-keys)
 Once you have the access keys, configure your terminal:
 
 ```bash
