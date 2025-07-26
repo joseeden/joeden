@@ -1,6 +1,6 @@
 ---
-title: "Cluster Setup using Kind"
-description: "Cluster Setup using Kind"
+title: "Setting Up Kubernetes using Kind"
+description: "Setting Up Kubernetes using Kind"
 tags:
   - Cloud
   - DevOps
@@ -20,9 +20,9 @@ last_update:
 
 This is a simple guide to set up a local Kubernetes cluster using Kind. This setup is useful for development and testing, especially before deploying to cloud environments.
 
-* Use Docker to run containers
-* Use `kubectl` to manage the cluster
-* Use Kind to create a lightweight local cluster
+- Use Docker to run containers
+- Use `kubectl` to manage the cluster
+- Use Kind to create a lightweight local cluster
 
 ## Install Docker
 
@@ -110,9 +110,9 @@ sudo apt-get install helm
 
 Kind creates a local Kubernetes cluster using Docker containers.
 
-* Download Kind binary from GitHub
-* Move it to a path directory
-* Make it executable
+- Download Kind binary from GitHub
+- Move it to a path directory
+- Make it executable
 
 Example:
 
@@ -165,7 +165,7 @@ kind create cluster --config cluster.yaml
 
 The cluster runs in a Docker container, so it's lightweight and fast to reset or recreate.
 
-**Optional:** You might need to verify if `~/.kube/config` is created:
+**Optional:*- You might need to verify if `~/.kube/config` is created:
 
 ```bash
 ls -la ~/.kube/config 

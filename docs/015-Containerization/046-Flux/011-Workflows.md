@@ -57,9 +57,9 @@ spec:
 
 ### Stage 2: Synchronization
 
-Once changes are fetched from Git, they are stored as Kubernetes objects inside the cluster.
+Once changes are fetched from Git, they are stored as Kubernetes objects inside the cluster. This avoids frequent Git calls and keeps the desired state easily accessible.
 
-This avoids frequent Git calls and keeps the desired state easily accessible.
+The Kustomization file below tells Flux where in the Git repo the config lives and how often to sync.
 
 ```yaml
 apiVersion: kustomize.toolkit.fluxcd.io/v1
@@ -75,7 +75,6 @@ spec:
     name: my-git-repo
 ```
 
-This tells Flux where in the Git repo the config lives and how often to sync.
 
 ### Stage 3: Reconciliation
 
@@ -84,7 +83,8 @@ Flux CD then makes the actual changes to the cluster to match what’s in Git.
 - Compares current cluster state with desired Git state
 - Updates, deletes, or creates resources to match Git
 
-Controllers like Kustomize or Helm apply these changes.
+Controllers like Kustomize or Helm apply these changes. If the chart or values change in Git, Flux updates your app accordingly.
+
 
 ```yaml
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
@@ -101,7 +101,6 @@ spec:
     replicaCount: 2
 ```
 
-If the chart or values change in Git, Flux updates your app accordingly.
 
 
 ## Use Helm with Flux CD
@@ -151,8 +150,9 @@ Flux CD can also update workloads automatically when a new Docker image is avail
 - Checks image tags in your container registry
 - Updates Git with the new tag
 - Applies the updated manifest automatically
+- Removes the need to manually edit image tags.
 
-This removes the need to manually edit image tags.
+In the example below, Flux updates Git and your app whenever a new image tag is pushed.
 
 ```yaml
 apiVersion: image.toolkit.fluxcd.io/v1beta1
@@ -177,5 +177,5 @@ spec:
     strategy: Setters
 ```
 
-Whenever a new image tag is pushed, Flux updates Git and your app.
+
 
