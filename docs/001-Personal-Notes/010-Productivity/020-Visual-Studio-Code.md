@@ -131,6 +131,40 @@ To add nested folder, type the subsequent folders after "/".
 
 ![](/img/docs/ide-terminal-collapse-all-folders-2.png)
 
+
+## Turn off single-line nested folders display
+
+VS Code displays single nested folders in single-line format by default:
+
+<div class="img-center"> 
+
+![](/img/docs/02282025-ide-scode-compact-nested-folder.png)
+
+</div>
+
+To disable this, go to Settings > File > Preferences > Settings (or use the keyboard shortcut Ctrl + , on Windows/Linux or Cmd + , on macOS).
+
+Search for "compact folders" and uncheck the box next to it.
+
+<div class="img-center"> 
+
+![](/img/docs/07282025-ide-vscode-disable-nested.png)
+
+</div>
+
+Alternatively, you can directly modify your `settings.json` file:
+
+- Press Ctrl + Shift + P (or Cmd + Shift + P on macOS)
+- Type "Open User Settings (JSON)" and select the option.
+- Inside the settings.json file, add or modify the following line:
+
+		```bash
+		"explorer.compactFolders": false
+		```
+				
+- Save the settings.json file to apply the changes.
+
+
 ## Hidden Files 
 
 Some hidden files normally start with "." and are excluded from view. You can add more excluded files by:
