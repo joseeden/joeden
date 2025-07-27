@@ -121,7 +121,7 @@ Ctrl + Shift + z
 
 Click the folder icon to add a folder.
 
-![](/img/docs/ide-terminal-add-folder.png)
+![](/img/docs/ide-terminal-add-folder-2.png)
 
 To add nested folder, type the subsequent folders after "/".
 
@@ -129,7 +129,7 @@ To add nested folder, type the subsequent folders after "/".
 
 ## Collapse all folders 
 
-![](/img/docs/ide-terminal-collapse-all-folders.png)
+![](/img/docs/ide-terminal-collapse-all-folders-2.png)
 
 ## Hidden Files 
 

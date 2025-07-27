@@ -66,7 +66,7 @@ resources:
 ```
 
      
-## Lab: NGINX Sample
+## Lab: NGINX
 
 To set things up quickly, we’ll use **Killercoda**, a free online Kubernetes playground. It includes a working cluster, so there's nothing to install.
 
@@ -77,7 +77,7 @@ To set things up quickly, we’ll use **Killercoda**, a free online Kubernetes p
 
     You can also [setup a local cluster using Kind.](/docs/015-Containerization/020-Kubernetes/001-Setting-Up-Kubernetes-using-Kind.md) 
 
-    Note that you will need to add `--context kind-kind` on any `kubectl` command.
+    Note that you will need to add `--context kind-kind` when running a `kubectl` command.
 
     :::
 
@@ -193,6 +193,11 @@ metadata:
     company: marine-parade 
 ```
 
+You will also get the same output when you run the `kubectl` command:
+
+```bash
+kubectl kustomize .   # directory containing the kustomization 
+```
 
 ### Creating the Resources 
 
@@ -211,7 +216,7 @@ service/nginx-service created
 deployment.apps/nginx-deployment created
 ```
 
-To verify:
+Check if the resources are created:
 
 ```bash
 $ kubectl get pods -A  | grep nginx
@@ -224,6 +229,22 @@ $ kubectl get svc -A   | grep nginx
 
 default       nginx-service             ClusterIP   10.96.158.6     <none>        80/TCP                   6m30s 
 ```
+
+To access the NGINX service, you can use port-forwarding to map your local port 8080 to the service's port 80:
+
+```bash
+kubectl  port-forward svc/nginx --address 0.0.0.0 8080:80 
+```
+
+Once the port-forwarding is active, open your web browser and navigate to http://localhost:8080:
+
+<div class="img-center"> 
+
+![](/img/docs/07282025-sample-nginx-page.PNG)
+
+</div>
+
+
 
 ### Deleting the Resources 
 
