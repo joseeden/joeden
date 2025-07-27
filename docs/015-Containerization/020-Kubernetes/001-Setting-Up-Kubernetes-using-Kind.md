@@ -194,14 +194,19 @@ export KUBECONFIG=~/.kube/config
 To get information about the cluster:
 
 ```bash
-kubectl cluster-info --context kind-kind 
-```
+$ kubectl cluster-info --context kind-kind 
 
-Sample output:
-
-```bash
 Kubernetes control plane is running at https://127.0.0.1:33783
 CoreDNS is running at https://127.0.0.1:33783/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+```
+
+To check the nodes:
+
+```bash
+$ kubectl get nodes --context kind-kind
+
+NAME                 STATUS   ROLES           AGE   VERSION
+kind-control-plane   Ready    control-plane   72d   v1.29.2
 ```
 
 ## Deleting the Cluster 

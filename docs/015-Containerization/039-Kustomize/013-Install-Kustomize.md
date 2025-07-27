@@ -30,6 +30,39 @@ brew install kustomize
 sudo port install kustomize
 ```
 
+## Using a Script 
+
+This script automatically detects your operating system and downloads the appropriate binary. 
+
+```bash
+curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" | bash 
+```
+
+By default, it will place the kustomize binary in your current working directory. To make it globally accessible, you should move it to a directory included in your system's `PATH`, such as `/usr/local/bin/`:
+
+```bash
+mv kustomize /usr/local/bin/
+chmod +x /usr/local/bin/kustomize 
+```
+
+For Windows (using PowerShell):
+
+```bash
+iwr -useb "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.ps1" | iex 
+```
+
+After running the appropriate installation script and moving the binary (if necessary), you can verify the installation by running:
+
+```bash
+kustomize version 
+```
+
+Sample output:
+
+```bash
+v5.7.1 
+```
+
 ## Other Options
 
 - Download binaries from the [GitHub releases](https://github.com/kubernetes-sigs/kustomize/releases) page
