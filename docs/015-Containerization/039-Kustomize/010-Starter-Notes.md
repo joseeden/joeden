@@ -175,7 +175,7 @@ This generates the final manifest with the correct number of replicas, without m
 
 <div class="img-center"> 
 
-![](/img/docs/07262025-kustomize-how-it-works.PNG)
+![](/img/docs/07272025-kustomize-diag.png)
 
 </div>
 

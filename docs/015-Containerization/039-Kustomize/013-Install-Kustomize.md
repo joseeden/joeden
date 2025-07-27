@@ -1,6 +1,6 @@
 ---
-title: Installing Kustomize"
-description: Installing Kustomize"
+title: Installing Kustomize
+description: Installing Kustomize
 tags: 
 - Cloud
 - DevOps
