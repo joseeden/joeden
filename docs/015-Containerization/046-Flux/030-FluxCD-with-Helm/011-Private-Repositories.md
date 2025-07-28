@@ -30,7 +30,7 @@ FluxCD supports private chart repositories by using basic authentication. This c
 ## Pre-requisites 
 
 - [Setting Up Git](/docs/015-Containerization/044-GitOps/016-Setting-Up-Git.md)
-- [Setting Up Kubernetes](/docs/015-Containerization/020-Kubernetes/001-Setting-Up-Kubernetes-using-Kind.md)
+- [Setting Up Kubernetes](/docs/015-Containerization/020-Kubernetes/010-Setting-Up-Kubernetes-using-Kind.md)
 - [Setting Up Flux](/docs/015-Containerization/046-Flux/015-Setting-Up-Flux.md)
 
 

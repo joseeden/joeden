@@ -121,7 +121,7 @@ To set things up quickly, we’ll use **Killercoda**, a free online Kubernetes p
 
     :::info
 
-    You can also [setup a local cluster using Kind.](/docs/015-Containerization/020-Kubernetes/001-Setting-Up-Kubernetes-using-Kind.md) 
+    You can also [setup a local cluster using Kind.](/docs/015-Containerization/020-Kubernetes/010-Setting-Up-Kubernetes-using-Kind.md) 
 
     Note that you will need to add `--context kind-kind` when running a `kubectl` command.
 
@@ -253,7 +253,7 @@ Note that the build command combines all the manifests and applies the defined t
 kustomize build . | kubectl apply -f 
 ```
 
-If you [setup a local cluster using Kind.](/docs/015-Containerization/020-Kubernetes/001-Setting-Up-Kubernetes-using-Kind.md), you will need to pass the `context` argument.
+If you [setup a local cluster using Kind.](/docs/015-Containerization/020-Kubernetes/010-Setting-Up-Kubernetes-using-Kind.md), you will need to pass the `context` argument.
 
 ```bash
 $ kustomize build . | kubectl --context kind-kind apply -f -
@@ -474,7 +474,7 @@ As mentioned in the [NGINX lab](#lab-nginx), we can use `kubectl` or the `kustom
 kustomize build ./v2 | kubectl apply -n version-2 -f -
 ```
 
-If you [setup a local cluster using Kind.](/docs/015-Containerization/020-Kubernetes/001-Setting-Up-Kubernetes-using-Kind.md), you will need to always pass the `context` argument.
+If you [setup a local cluster using Kind.](/docs/015-Containerization/020-Kubernetes/010-Setting-Up-Kubernetes-using-Kind.md), you will need to always pass the `context` argument.
 
 ```bash
 kustomize build ./v2 | kubectl --context kind-kind apply -n version-2 -f -
