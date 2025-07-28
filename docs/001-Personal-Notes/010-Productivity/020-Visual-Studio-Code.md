@@ -136,7 +136,7 @@ To add nested folder, type the subsequent folders after "/".
 
 VS Code displays single nested folders in single-line format by default:
 
-<div class="img-center"> 
+<div> 
 
 ![](/img/docs/02282025-ide-scode-compact-nested-folder.png)
 
@@ -146,7 +146,7 @@ To disable this, go to Settings > File > Preferences > Settings (or use the keyb
 
 Search for "compact folders" and uncheck the box next to it.
 
-<div class="img-center"> 
+<div> 
 
 ![](/img/docs/07282025-ide-vscode-disable-nested.png)
 
