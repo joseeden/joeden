@@ -241,3 +241,187 @@ kubectl apply -k project-abc
 ```
 
 This keeps your setup clean and scalable, no matter how many subdirectories you add later.
+
+
+## Lab: Deploying a Multi-Tier App 
+
+add simple short intro...each service uses a basic image to simulate behavior. You can replace them later with real microservices.
+
+```bash
+project-abc-configs/
+├── kustomization.yaml
+├── api/
+│   ├── deployment.yaml
+│   ├── kustomization.yaml
+│   └── service.yaml
+├── db/
+│   ├── deployment.yaml
+│   ├── kustomization.yaml
+│   └── service.yaml
+├── kafka/
+│   ├── deployment.yaml
+│   ├── kustomization.yaml
+├── cache/
+│   ├── deployment.yaml
+│   ├── kustomization.yaml
+├── ingress/
+│   ├── ingress.yaml
+│   ├── kustomization.yaml
+└── config/
+    ├── configmap.yaml
+    └── kustomization.yaml
+```
+
+### Clone the Repository 
+
+All the files can be found in this Github repo: [joseeden/test-kustomize-labs](https://github.com/joseeden/test-kustomize-labs/tree/master/code-samples/03-multi-tier-app)
+
+```bash
+git clone https://github.com/joseeden/test-kustomize-labs.git 
+```
+Go to the project directory:
+
+```bash
+cd 03-multi-tier-app
+```
+
+### Install NGINX Ingress Controller
+
+To handle the ingress resources, we must first install the **NGINX Ingress Controller**:
+
+```bash
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.10.0/deploy/static/provider/cloud/deploy.yaml
+```
+
+Wait for the ingress controller to be ready:
+
+```bash
+kubectl get pods -n ingress-nginx
+```
+
+
+### Deploy the Project
+
+Create the namespace first:
+
+```bash
+kubectl create ns multitier  
+```
+
+From the `03-multi-tier-app` folder:
+
+```bash
+kubectl apply -k . -n multitier
+```
+
+Verify by checking the resources: 
+
+```bash
+kubectl get all -n multitier 
+```
+
+### Testing 
+
+Below are the checklists:
+
+- API reachable through ingress and port-forward
+- Working PostgreSQL DB
+- Kafka UI via browser
+- Redis with ping test
+- ConfigMap applied
+
+#### API
+
+Test the API:
+
+```bash
+kubectl port-forward svc/api 8080:80
+curl http://localhost:8080
+```
+
+Expected:
+
+```text
+Hello from API
+```
+
+If using ingress and NGINX is ready:
+
+```bash
+kubectl get svc -n ingress-nginx
+# Get the external IP and test:
+curl http://<nginx-external-ip>/api
+```
+
+
+#### DB
+
+Check pod logs:
+
+```bash
+kubectl logs deployment/db
+```
+
+Optional psql check (install `psql` if needed):
+
+```bash
+kubectl port-forward svc/db 5432:5432
+psql -h localhost -U postgres -d postgres
+# Password is "example"
+```
+
+
+#### Kafka
+
+Port-forward to UI:
+
+```bash
+kubectl port-forward deployment/kafka 3030:3030
+```
+
+Open browser:
+[http://localhost:3030](http://localhost:3030)
+
+
+#### Redis (Cache)
+
+```bash
+kubectl exec -it deployment/cache -- redis-cli ping
+```
+
+Expected:
+
+```text
+PONG
+```
+
+
+#### ConfigMap
+
+Check the resource: 
+
+```bash
+kubectl get configmap app-config -o yaml
+```
+
+
+
+### Cleaning Up
+
+To remove the resources:
+
+```bash
+kubectl delete -n multitier -k .
+```
+
+If you used port-forwarding, find and stop the process:
+
+```bash
+ps -ef  | grep port-forward
+```
+
+Then kill it:
+
+```bash
+sudo kill -9 <PID>
+```
