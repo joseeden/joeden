@@ -123,7 +123,7 @@ To set things up quickly, we’ll use **Killercoda**, a free online Kubernetes p
 
     You can also [setup a local cluster using Kind.](/docs/015-Containerization/020-Kubernetes/010-Setting-Up-Kubernetes-using-Kind.md) 
 
-    Note that you will need to add `--context kind-kind` when running a `kubectl` command.
+    Make sure to set the context using `current-context` command. Please see this [page.](/docs/015-Containerization/020-Kubernetes/010-Setting-Up-Kubernetes-using-Kind.md) 
 
     :::
 
@@ -256,7 +256,7 @@ kustomize build . | kubectl apply -f
 If you [setup a local cluster using Kind.](/docs/015-Containerization/020-Kubernetes/010-Setting-Up-Kubernetes-using-Kind.md), you will need to pass the `context` argument.
 
 ```bash
-$ kustomize build . | kubectl --context kind-kind apply -f -
+$ kustomize build . | kubectl apply -f -
 
 service/nginx-service created
 deployment.apps/nginx-deployment created
@@ -472,12 +472,6 @@ As mentioned in the [NGINX lab](#lab-nginx), we can use `kubectl` or the `kustom
 
 ```bash
 kustomize build ./v2 | kubectl apply -n version-2 -f -
-```
-
-If you [setup a local cluster using Kind.](/docs/015-Containerization/020-Kubernetes/010-Setting-Up-Kubernetes-using-Kind.md), you will need to always pass the `context` argument.
-
-```bash
-kustomize build ./v2 | kubectl --context kind-kind apply -n version-2 -f -
 ```
 
 Now you have both versions deployed independently. Verify the pods and services for version 1:

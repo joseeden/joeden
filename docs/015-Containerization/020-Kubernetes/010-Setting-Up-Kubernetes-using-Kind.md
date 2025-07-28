@@ -209,6 +209,62 @@ NAME                 STATUS   ROLES           AGE   VERSION
 kind-control-plane   Ready    control-plane   72d   v1.29.2
 ```
 
+## Setting the Context
+
+Before running any commands, ensure you're targeting the correct Kubernetes cluster by verifying your current context.
+
+```bash
+kubectl config get-contexts
+```
+
+Sample output:
+
+```bash
+CURRENT   NAME        CLUSTER     AUTHINFO    NAMESPACE
+*         kind-kind   kind-kind   kind-kind
+```
+
+:::info
+
+The asterisk (*) indicates the active context that kubectl is using.
+
+:::
+
+To check the current context:
+
+```bash
+kubectl config current-context
+```
+
+If no context is set, you'll see:
+
+```bash
+error: current-context is not set
+```
+
+To set the desired context (e.g., `kind-kind`):
+
+```bash
+kubectl config use-context kind-kind
+```
+
+Once set, you can use `kubectl` commands without specifying a context:
+
+```bash
+$ kubectl cluster-info
+
+Kubernetes control plane is running at https://127.0.0.1:33783
+CoreDNS is running at https://127.0.0.1:33783/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'. 
+```
+```bash
+$ kubectl get nodes
+
+NAME                 STATUS   ROLES           AGE   VERSION
+kind-control-plane   Ready    control-plane   73d   v1.29.2 
+```
+
 ## Deleting the Cluster 
 
 Once you're done with the labs, delete the cluster:
