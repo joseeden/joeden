@@ -17,32 +17,37 @@ last_update:
 
 ## Overview
 
-A **Kustomization file** is a YAML file that defines how to customize your Kubernetes resources. It lets you apply changes like adding labels, setting a namespace, or generating new resources without modifying the original YAML files.
+A **Kustomization file** is a YAML file that defines how to customize your Kubernetes resources. 
 
-Example:
+- Declares how to build and modify resources
+- Allows adding labels, annotations, or overrides
+- Uses a simple YAML structure with clear sections
+
+A basic `kustomization.yaml` usually includes:
 
 ```yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - deployment.yaml
-  - service.yaml
-
-namespace: my-namespace
+- deployment.yaml
+- service.yaml
 
 commonLabels:
-  app: my-app
-  environment: staging
+  app: myapp
+
+namePrefix: dev-
 ```
 
-In this example:
+Where: 
 
-- `deployment.yaml` and `service.yaml` are the base resources.
-- All resources are set to use the `my-namespace` namespace.
-- Common labels (`app` and `environment`) are added to all resources.
+- `apiVersion` and `kind` define the type of Kubernetes object. 
+- `resources` lists the base YAML files to customize.
+- `commonLabels` adds a label to all resources.
+- `namePrefix` adds a prefix to all resource names.
 
-You can also use Kustomize to generate things like Secrets or ConfigMaps from files or data—more on that in later videos.
+Each section tells `kustomize` what to do with your base resources during the build process.
+
 
 ## `apiVersion` and `kind` 
 
@@ -55,16 +60,57 @@ In a simple `kustomization.yaml` file, you can set values like `apiVersion` and 
 
 Hardcoding these values helps avoid future issues if the tool updates or changes default behavior.
 
-Example: 
+
+## Order Matters
+
+A `kustomization.yaml` processes sections in this order:
+
+- Resources
+- Generators
+- Transformers
+- Validators
+
+This matters because changes are applied step-by-step. For example, resources are loaded first, then transformed.
 
 ```yaml
-apiVersion: kustomize.config.k8s.io/v1
-kind: Kustomization
 resources:
-  - deployment.yaml
-  - service.yaml
+- base-app.yaml
+
+configMapGenerator:
+- name: my-config
+  literals:
+  - DEBUG=true
+
+transformers:
+- label-transformer.yaml
 ```
 
+In this example:
+
+- A **generator** creates new resources (like config maps or secrets).
+- A **transformer** modifies existing resources (like adding labels).
+
+Each list helps you define how your app should behave in different environments.
+
+
+## Convenience Fields
+
+Most of the time, you won’t have to create custom transformers or generators. `kustomize` includes simpler shortcuts, like:
+
+- `commonLabels` (adds labels to all resources)
+- `configMapGenerator` (generates a config map)
+- `patches` or `patchesStrategicMerge` (modifies resources)
+
+These are easier to understand and use daily. Under the hood, these fields still behave like transformers or generators.
+
+```yaml
+configMapGenerator:
+- name: site-config
+  literals:
+  - SITE_NAME=Example
+```
+
+You get the power of customization, with simpler syntax.
      
 ## Lab: NGINX
 
@@ -625,12 +671,12 @@ This way, version 3 adds the MySQL database alongside WordPress, reusing the bas
 Verify the pods and services are running:
 
 ```bash
-$ kubectl get pods -n version-3 --context kind-kind
+$ kubectl get pods -n version-3 
 NAME                         READY   STATUS    RESTARTS   AGE
 mysql-6fd4469997-pcn9g       1/1     Running   0          103s
 wordpress-68466676bd-wscsj   1/1     Running   0          103s 
 
-$ kubectl get svc -n version-3 --context kind-kind
+$ kubectl get svc -n version-3 
 NAME        TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
 mysql       ClusterIP      10.96.54.189   <none>        3306/TCP       2m15s
 wordpress   LoadBalancer   10.96.199.47   <pending>     80:31773/TCP   2m15s
