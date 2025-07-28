@@ -243,9 +243,9 @@ kubectl apply -k project-abc
 This keeps your setup clean and scalable, no matter how many subdirectories you add later.
 
 
-## Lab: Deploying a Multi-Tier App 
+## Lab: Deploy a Multi-Tier App 
 
-add simple short intro...each service uses a basic image to simulate behavior. You can replace them later with real microservices.
+This lab shows how to deploy a basic multi-tier application using Kustomize. Each service uses a lightweight container to simulate real functionality. You can replace them later with real microservices.
 
 ```bash
 project-abc-configs/
@@ -272,13 +272,14 @@ project-abc-configs/
     └── kustomization.yaml
 ```
 
-### Clone the Repository 
+### Clone the Repository  
 
-All the files can be found in this Github repo: [joseeden/test-kustomize-labs](https://github.com/joseeden/test-kustomize-labs/tree/master/code-samples/03-multi-tier-app)
+All the files are in this Github repo: [joseeden/test-kustomize-labs](https://github.com/joseeden/test-kustomize-labs/tree/master/code-samples/03-multi-tier-app)
 
 ```bash
 git clone https://github.com/joseeden/test-kustomize-labs.git 
 ```
+
 Go to the project directory:
 
 ```bash
@@ -322,83 +323,88 @@ kubectl get all -n multitier
 
 ### Testing 
 
-Below are the checklists:
+Once the application is deployed, use the following steps to verify that each component is working as expected.
 
-- API reachable through ingress and port-forward
-- Working PostgreSQL DB
-- Kafka UI via browser
-- Redis with ping test
-- ConfigMap applied
+- API reachable through Ingress and port-forward
+- PostgreSQL DB is up and accessible
+- Kafka UI loads successfully in browser
+- Redis responds to `PING` command
+- ConfigMap is applied and available
+
 
 #### API
 
-Test the API:
+Verify the API is running and reachable. Test it using port-forward:
 
 ```bash
 kubectl port-forward svc/api 8080:80
 curl http://localhost:8080
 ```
 
-Expected:
+Expected output:
 
 ```text
 Hello from API
 ```
 
-If using ingress and NGINX is ready:
+Alternatively, if NGINX Ingress Controller is ready:
 
 ```bash
 kubectl get svc -n ingress-nginx
-# Get the external IP and test:
+# Then use external IP to test
 curl http://<nginx-external-ip>/api
 ```
 
-
 #### DB
 
-Check pod logs:
+Check if the PostgreSQL database is running correctly. View logs:
 
 ```bash
 kubectl logs deployment/db
 ```
 
-Optional psql check (install `psql` if needed):
+Optional: Connect using `psql` (if installed):
 
 ```bash
 kubectl port-forward svc/db 5432:5432
 psql -h localhost -U postgres -d postgres
-# Password is "example"
+# Password: example
 ```
 
 
 #### Kafka
 
-Port-forward to UI:
+Access the Kafka UI to verify it’s running. 
 
 ```bash
 kubectl port-forward deployment/kafka 3030:3030
 ```
 
-Open browser:
+Open in browser:
+
 [http://localhost:3030](http://localhost:3030)
 
 
+
 #### Redis (Cache)
+
+Check that Redis is accepting connections.
 
 ```bash
 kubectl exec -it deployment/cache -- redis-cli ping
 ```
 
-Expected:
+Expected output:
 
 ```text
 PONG
 ```
 
 
+
 #### ConfigMap
 
-Check the resource: 
+Ensure that the ConfigMap is created and contains the expected configuration.
 
 ```bash
 kubectl get configmap app-config -o yaml
@@ -408,20 +414,15 @@ kubectl get configmap app-config -o yaml
 
 ### Cleaning Up
 
-To remove the resources:
+To delete all resources in the `multitier` namespace:
 
 ```bash
 kubectl delete -n multitier -k .
 ```
 
-If you used port-forwarding, find and stop the process:
+If you used port-forwarding, stop any remaining processes:
 
 ```bash
 ps -ef  | grep port-forward
-```
-
-Then kill it:
-
-```bash
 sudo kill -9 <PID>
 ```
