@@ -16,21 +16,18 @@ last_update:
 
 ## Overview
 
-Transformers allow you to modify Kubernetes resources declaratively and consistently without altering your original YAML files.
+Transformers let you apply changes across Kubernetes YAML files without editing each one manually.
 
-- Kustomize provides several built-in transformers
-- Useful for applying consistent changes to resources 
+- Built into Kustomize
+- Help apply consistent changes to all resources
+- Avoid repetitive edits in multiple YAML files
 
-You can define transformers in three main ways:
-
-- Use a **separate configuration file**
-- Use **inline configuration** inside the `kustomization.yaml`
-- Use **convenience fields** like `namePrefix`, `commonLabels`, etc.
+Instead of modifying every file, you define transformations once, and Kustomize applies them automatically.
 
 
 ## Clone the Repository  
 
-To try out the examples, clone the project repository from GitHub. It contains a structured set of Kustomize samples demonstrating transformers in action.
+To try out the examples in the succeeding sections, clone the project repository from GitHub. 
 
 - Github repo: [joseeden/test-kustomize-labs](https://github.com/joseeden/test-kustomize-labs/tree/master/code-samples/03-multi-tier-app)
 
@@ -38,19 +35,18 @@ Clone and move into the project directory:
 
 ```bash
 git clone https://github.com/joseeden/test-kustomize-labs.git 
-cd code-samples/04-transformers/wordpress
+cd code-samples/04-transformers/sample-wordpress
 ```
 
 Project directory structure:
 
 ```bash
-wordpress
+sample-wordpress
 ├── base
 │   ├── deployment.yaml
 │   ├── kustomization.yaml
 │   └── service.yaml
 ├── v1
-│   ├── cleanup.sh
 │   ├── kustomization.yaml
 │   └── transformers
 │       ├── label.yaml
@@ -66,16 +62,24 @@ wordpress
         └── service.yaml
 ```
 
+
+
 ## Ways to Define Transformers
 
-### Using a Configuration File
+You can define transformers in three main ways:
+
+- Use a **separate configuration file**
+- Use **inline configuration** inside the `kustomization.yaml`
+- Use **convenience fields** like `namePrefix`, `commonLabels`, etc.
+
+## Using a Configuration File
 
 Instead of adding everything to one file, you can separate your transformer settings into their own YAML files. This makes your configuration cleaner and easier to manage.
 
-In this example, we have a `base` folder with the core Kubernetes resources. Then, we create a versioned overlay in a folder called `v1`, which applies custom transformations like adding prefixes and labels.
+In this example, we have a `base` folder with the core Kubernetes resources. Then, we create a versioned overlay in a folder called `v1`, which applies custom transformations.
 
 ```
-wordpress
+sample-wordpress
 ├── base
 │   ├── deployment.yaml
 │   ├── kustomization.yaml
@@ -242,7 +246,7 @@ NAME                                      DESIRED   CURRENT   READY   AGE    LAB
 replicaset.apps/v1-wordpress-789ffff48b   1         1         1       100s   app=wordpress,environment=dev,pod-template-hash=789ffff48b,version=v1 
 ```
 
-### Using an Inline Configuration
+## Using an Inline Configuration
 
 Instead of a separate file, you can also declare the transformer inline.
 
@@ -278,7 +282,7 @@ metadata:
 
 Inline config is flexible for quick edits, but requires careful indentation.
 
-### Using Convenience Fields
+## Using Convenience Fields
 
 You can skip custom transformer files by using built-in fields like `namePrefix`.
 
@@ -327,3 +331,6 @@ kubectl get services
 ```
 
 This approach helps you manage different versions or environments using consistent naming and overlays.
+
+
+
