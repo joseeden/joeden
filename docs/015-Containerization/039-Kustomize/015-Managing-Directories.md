@@ -245,7 +245,7 @@ This keeps your setup clean and scalable, no matter how many subdirectories you 
 
 ## Lab: Deploy a Multi-Tier App 
 
-This lab shows how to deploy a basic multi-tier application using Kustomize. Each service uses a lightweight container to simulate real functionality. You can replace them later with real microservices.
+This lab shows how to deploy a basic multi-tier application using Kustomize. Each service uses a lightweight container to simulate real functionality.
 
 ```bash
 project-abc-configs/
@@ -271,6 +271,16 @@ project-abc-configs/
     ├── configmap.yaml
     └── kustomization.yaml
 ```
+
+
+### Setup the Kubernetes Cluster 
+
+Before getting started, make sure you have a running Kubernetes cluster. You can set up a local cluster using tools like:
+
+- [`kind`](/docs/015-Containerization/020-Kubernetes/010-Setting-Up-Kubernetes-using-Kind.md)
+- [`k3d`](/docs/015-Containerization/020-Kubernetes/011-Setting-Up-Kubernetes-using-k3d.md)
+- [`kubeadm`](/docs/015-Containerization/020-Kubernetes/017-Setting-up-Kubernetes-the-Hard-Way.md)
+
 
 ### Clone the Repository  
 

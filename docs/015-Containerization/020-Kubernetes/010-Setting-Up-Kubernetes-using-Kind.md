@@ -7,9 +7,6 @@ tags:
   - Containers
   - Containerization
   - Kubernetes
-  - GitOps
-  - ArgoCD
-  - Git
 sidebar_position: 10
 last_update:
   date: 8/19/2022
