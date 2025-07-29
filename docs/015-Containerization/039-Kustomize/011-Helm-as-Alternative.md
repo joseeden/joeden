@@ -118,7 +118,7 @@ A typical Helm project looks like this:
 This keeps your templates clean and reusable, while your values are kept separate and easy to update.
 
 ```bash
-project-marina/
+sample-wordpress/
 ├── environments/
 │   └── values.dev.yaml
 │   └── values.staging.yaml
@@ -133,19 +133,19 @@ project-marina/
 To deploy in dev:
 
 ```bash
-helm install marina-dev ./project-marina -f environments/values.dev.yaml
+helm install marina-dev ./sample-wordpress -f environments/values.dev.yaml
 ```
 
 To deploy in staging:
 
 ```bash
-helm install marina-staging ./project-marina -f environments/values.staging.yaml
+helm install marina-staging ./sample-wordpress -f environments/values.staging.yaml
 ```
 
 To deploy in prod:
 
 ```bash
-helm install marina-prod ./project-marina -f environments/values.prod.yaml
+helm install marina-prod ./sample-wordpress -f environments/values.prod.yaml
 ```
 
 

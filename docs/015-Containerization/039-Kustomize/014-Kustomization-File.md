@@ -414,7 +414,7 @@ labels:
 Before applying the manifests, make sure you are in the correct directory:
 
 ```bash
-cd code-samples/02-sample-wordpress/project-marina/
+cd code-samples/02-sample-wordpress/
 ```
 
 Create a namespace:

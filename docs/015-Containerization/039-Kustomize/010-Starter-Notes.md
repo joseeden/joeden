@@ -148,7 +148,7 @@ You can organize your files in a way that supports reuse and overrides.
 Each overlay folder can override specific values. This keeps things clean and easy to follow.
 
 ```bash
-project-marina/
+sample-wordpress/
 ├── base/
 │   ├── deployment.yaml
 │   └── kustomization.yaml
