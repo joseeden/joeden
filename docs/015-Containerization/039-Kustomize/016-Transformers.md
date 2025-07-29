@@ -66,8 +66,9 @@ wordpress
         └── service.yaml
 ```
 
+## Ways to Define Transformers
 
-## Using a Configuration File
+### Using a Configuration File
 
 Instead of adding everything to one file, you can separate your transformer settings into their own YAML files. This makes your configuration cleaner and easier to manage.
 
@@ -241,7 +242,7 @@ NAME                                      DESIRED   CURRENT   READY   AGE    LAB
 replicaset.apps/v1-wordpress-789ffff48b   1         1         1       100s   app=wordpress,environment=dev,pod-template-hash=789ffff48b,version=v1 
 ```
 
-## Using an Inline Configuration
+### Using an Inline Configuration
 
 Instead of a separate file, you can also declare the transformer inline.
 
@@ -277,7 +278,7 @@ metadata:
 
 Inline config is flexible for quick edits, but requires careful indentation.
 
-## Using Convenience Fields
+### Using Convenience Fields
 
 You can skip custom transformer files by using built-in fields like `namePrefix`.
 
@@ -304,8 +305,6 @@ metadata:
 ```
 
 This is the simplest way to apply a prefix or suffix to resource names.
-
-## Apply to Cluster
 
 Once your transformer is set up and tested, apply it to your cluster:
 
