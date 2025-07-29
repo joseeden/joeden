@@ -1,6 +1,6 @@
 {
-  "label": "ArgoCD",
-  "position": 45,
+  "label": "Flux",
+  "position": 49,
   "link": {
     "type": "generated-index"
   }

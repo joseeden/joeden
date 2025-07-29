@@ -41,10 +41,10 @@ Flux connecting to the HTTP repository:
 
 ## Pre-requisites 
 
-- [Setting Up Git](/docs/015-Containerization/044-GitOps/016-Setting-Up-Git.md)
+- [Setting Up Git](/docs/015-Containerization/047-GitOps/016-Setting-Up-Git.md)
 - [Setting Up Kubernetes](/docs/015-Containerization/020-Kubernetes/010-Setting-Up-Kubernetes-using-Kind.md)
-- [Setting Up Flux](/docs/015-Containerization/046-Flux/015-Setting-Up-Flux.md)
-- [Deploy ChartMuseum](/docs/015-Containerization/046-Flux/030-FluxCD-with-Helm/011-Private-Repositories.md)
+- [Setting Up Flux](/docs/015-Containerization/049-Flux/015-Setting-Up-Flux.md)
+- [Deploy ChartMuseum](/docs/015-Containerization/049-Flux/030-FluxCD-with-Helm/011-Private-Repositories.md)
 
 
 ## Project Directory 
@@ -56,7 +56,7 @@ Make sure to go through the [pre-requisites](#pre-requisites) before proceeding 
 :::
 
 
-If you followed the steps in [setting up Flux](/docs/015-Containerization/046-Flux/015-Setting-Up-Flux.md), your project directory should have the following files:
+If you followed the steps in [setting up Flux](/docs/015-Containerization/049-Flux/015-Setting-Up-Flux.md), your project directory should have the following files:
 
 ```bash
 $ tree
@@ -246,4 +246,4 @@ spec:
 ```
 
 
-For other errors, please see [General Troubleshooting.](/docs/015-Containerization/046-Flux/099-Troubleshooting.md)
+For other errors, please see [General Troubleshooting.](/docs/015-Containerization/049-Flux/099-Troubleshooting.md)
