@@ -239,7 +239,7 @@ NAME                                      DESIRED   CURRENT   READY   AGE    LAB
 replicaset.apps/v1-wordpress-789ffff48b   1         1         1       100s   app=wordpress,environment=dev,pod-template-hash=789ffff48b,version=v1 
 ```
 
-## Using Inline Configuration
+## Using an Inline Configuration
 
 Instead of a separate file, you can also declare the transformer inline.
 
@@ -275,7 +275,7 @@ metadata:
 
 Inline config is flexible for quick edits, but requires careful indentation.
 
-## 3. Use Convenience Fields
+## Using Convenience Fields
 
 You can skip custom transformer files by using built-in fields like `namePrefix`.
 
