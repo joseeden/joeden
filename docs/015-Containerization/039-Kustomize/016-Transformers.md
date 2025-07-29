@@ -16,10 +16,10 @@ last_update:
 
 ## Overview
 
-Transformers help modify Kubernetes resources easily using Kustomize.
+Transformers allow you to modify Kubernetes resources declaratively and consistently without altering your original YAML files.
 
-- Kustomize has built-in transformers
-- Apply consistent changes to resources without rewriting YAML files
+- Kustomize provides several built-in transformers
+- Useful for applying consistent changes to resources 
 
 You can define transformers in three main ways:
 
@@ -30,7 +30,9 @@ You can define transformers in three main ways:
 
 ## Clone the Repository  
 
-All the sample coode files are in this Github repo: [joseeden/test-kustomize-labs](https://github.com/joseeden/test-kustomize-labs/tree/master/code-samples/03-multi-tier-app)
+To try out the examples, clone the project repository from GitHub. It contains a structured set of Kustomize samples demonstrating transformers in action.
+
+- Github repo: [joseeden/test-kustomize-labs](https://github.com/joseeden/test-kustomize-labs/tree/master/code-samples/03-multi-tier-app)
 
 Clone and move into the project directory:
 
@@ -39,7 +41,7 @@ git clone https://github.com/joseeden/test-kustomize-labs.git
 cd code-samples/04-transformers/wordpress
 ```
 
-The project structure:
+Project directory structure:
 
 ```bash
 wordpress
@@ -138,7 +140,7 @@ The two transformers:
 Before applying the overlay in `v1`, create the namespace first:
 
 ```bash
-kubectl create ns test-lab 
+kubectl create ns test-lab-v1 
 ```
 
 To preview the rendered resources without applying them, run a dry-run build using the command below. This generates the final YAML and saves it to `v1-results.yaml`.
@@ -150,7 +152,7 @@ kustomize build ./v1 > ./v1/v1-results.yaml
 To deploy the resources using Kustomize:
 
 ```bash
-kubectl apply -n test-lab  -k ./v1 
+kubectl apply -n test-lab-v1  -k ./v1 
 ```
 
 Output:
@@ -163,7 +165,7 @@ deployment.apps/v1-wordpress created
 You can verify the prefix was applied by checking the created resources:
 
 ```yaml
-$ kubectl get all -n test-lab
+$ kubectl get all -n test-lab-v1
 NAME                                READY   STATUS    RESTARTS   AGE
 pod/v1-wordpress-787fb8d554-2d25z   1/1     Running   0          23m
 
@@ -180,7 +182,7 @@ replicaset.apps/v1-wordpress-787fb8d554   1         1         1       23m
 To check if the labels are applied:
 
 ```bash
-$ kubectl get all -n test-lab --show-labels
+$ kubectl get all -n test-lab-v1 --show-labels
 NAME                                READY   STATUS    RESTARTS   AGE   LABELS
 pod/v1-wordpress-787fb8d554-2d25z   1/1     Running   0          24m   app=wordpress,pod-template-hash=787fb8d554,version=v1
 
@@ -225,7 +227,7 @@ kubectl apply -f ./v1/v1-results.yaml
 You should now see `environment=dev` and `version=v1` on all resources, including the Pods and ReplicaSets.
 
 ```bash
-$ kubectl get all -n test-lab --show-labels
+$ kubectl get all -n test-lab-v1 --show-labels
 NAME                                READY   STATUS    RESTARTS   AGE    LABELS
 pod/v1-wordpress-789ffff48b-smpcd   1/1     Running   0          100s   app=wordpress,environment=dev,pod-template-hash=789ffff48b,version=v1
 
