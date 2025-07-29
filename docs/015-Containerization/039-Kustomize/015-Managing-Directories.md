@@ -293,7 +293,7 @@ git clone https://github.com/joseeden/test-kustomize-labs.git
 Go to the project directory:
 
 ```bash
-cd 03-multi-tier-app
+cd code-samples/03-multi-tier-app
 ```
 
 ### Install NGINX Ingress Controller

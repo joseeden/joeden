@@ -166,3 +166,12 @@ k3d-test-k8s-agent-1    Ready    <none>                      66s   v1.31.5+k3s1
 k3d-test-k8s-server-0   Ready    control-plane,etcd,master   87s   v1.31.5+k3s1
 k3d-test-k8s-server-1   Ready    control-plane,etcd,master   70s   v1.31.5+k3s1 
 ```
+
+
+## Deleting the Cluster
+
+To remove the cluster, simply run:
+
+```bash
+k3d cluster delete test-k8s 
+```
