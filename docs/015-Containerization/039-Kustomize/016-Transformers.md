@@ -76,7 +76,7 @@ You can define transformers in three main ways:
 
 Instead of adding everything to one file, you can separate your transformer settings into their own YAML files. This makes your configuration cleaner and easier to manage.
 
-In this example, we have a `base` folder with the core Kubernetes resources. Then, we create a versioned overlay in a folder called `v1`, which applies custom transformations.
+In this example, the `base` folder holds the main Kubernetes resources. The `v1` folder is a versioned overlay that adds custom transformations.
 
 ```
 sample-wordpress
