@@ -18,7 +18,7 @@ last_update:
 
 We won’t set up a Kubernetes cluster from scratch. Instead, we’ll use **Killercoda**, a free online playground. Visit [Killercoda](https://killercoda.com/playgrounds/scenario/kubernetes) and sign in with your GitHub or Gmail account.
 
-If you prefer to setup a cluster and install Kustomize, please see [Installing Kustomize.](/docs/015-Containerization/039-Kustomize/013-Install-Kustomize.md)
+If you prefer to setup a cluster and install Kustomize, please see [Installing Kustomize.](/docs/015-Kubernetes-Tools/039-Kustomize/013-Install-Kustomize.md)
 
 ## Pre-installed Tools
 

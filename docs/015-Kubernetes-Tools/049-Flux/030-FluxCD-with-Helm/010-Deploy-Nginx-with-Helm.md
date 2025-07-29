@@ -23,9 +23,9 @@ This lab shows how to deploy the Nginx web server on a Kubernetes cluster using 
 
 ## Pre-requisites 
 
-- [Setting Up Git](/docs/015-Containerization/047-GitOps/016-Setting-Up-Git.md)
+- [Setting Up Git](/docs/015-Kubernetes-Tools/047-GitOps/016-Setting-Up-Git.md)
 - [Setting Up Kubernetes](/docs/015-Containerization/020-Kubernetes/010-Setting-Up-Kubernetes-using-Kind.md)
-- [Setting Up Flux](/docs/015-Containerization/049-Flux/015-Setting-Up-Flux.md)
+- [Setting Up Flux](/docs/015-Kubernetes-Tools/049-Flux/015-Setting-Up-Flux.md)
 
 
 ## Project Directory 
@@ -37,7 +37,7 @@ Make sure to go through the [pre-requisites](#pre-requisites) before proceeding 
 :::
 
 
-If you followed the steps in [setting up Flux](/docs/015-Containerization/049-Flux/015-Setting-Up-Flux.md), your project directory should have the following files:
+If you followed the steps in [setting up Flux](/docs/015-Kubernetes-Tools/049-Flux/015-Setting-Up-Flux.md), your project directory should have the following files:
 
 ```bash
 $ tree
@@ -497,4 +497,4 @@ If the `flux reconcile` command get stuck, or if the page did not load, you can 
 kubectl logs -n flux-system deployment/kustomize-controller
 ```
 
-For other errors, please see [General Troubleshooting.](/docs/015-Containerization/049-Flux/099-Troubleshooting.md)
+For other errors, please see [General Troubleshooting.](/docs/015-Kubernetes-Tools/049-Flux/099-Troubleshooting.md)
