@@ -185,7 +185,6 @@ All resources should be created inside the `test-lab-dev` namespace.
 
 ## CommonAnnotations Transformer 
 
-
 Add common annotations to all resources for metadata tagging.
 
 - **transformers/annotations.yaml**
