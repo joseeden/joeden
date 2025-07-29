@@ -4,7 +4,7 @@ description: "From computers to laptops, to palm devices"
 sidebar_position: 21
 tags: [IT Fundamentals, Computers, Operating Systems]
 last_update:
-  date: 2/26/2019
+  date: 2/26/2017
 ---
 
 

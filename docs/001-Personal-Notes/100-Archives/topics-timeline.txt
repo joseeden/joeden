@@ -1,7 +1,8 @@
+2/26/2017   - IT Foundations
 
-1/2019      - Networking - Basics
-1/2019      - Networking - Technologies
-2/26/2019   - IT Foundations
+1/2018      - Networking - Basics
+1/2018      - Networking - Technologies
+
 2/27/2019   - Data formats
 3/20/2019   - Web dev
 8/11/2019   - Version Control

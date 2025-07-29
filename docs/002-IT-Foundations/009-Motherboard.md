@@ -4,7 +4,7 @@ description: "The circuit board that connects them all"
 sidebar_position: 9
 tags: [IT Fundamentals, Computers, Operating Systems]
 last_update:
-  date: 2/26/2019
+  date: 2/26/2017
 ---
 
 ## Overview

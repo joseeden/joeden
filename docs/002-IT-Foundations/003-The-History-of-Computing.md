@@ -4,7 +4,7 @@ description: "B.C. - Before Computers"
 sidebar_position: 3
 tags: [IT Fundamentals, Computers, Operating Systems]
 last_update:
-  date: 2/26/2019
+  date: 2/26/2017
 ---
 
 ## Computers

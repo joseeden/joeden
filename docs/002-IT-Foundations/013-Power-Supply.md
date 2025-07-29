@@ -4,7 +4,7 @@ description: "A reliable power supply is essential for a stable computer."
 sidebar_position: 13
 tags: [IT Fundamentals, Computers, Operating Systems]
 last_update:
-  date: 2/26/2019
+  date: 2/26/2017
 ---
 
 ## Overview 
