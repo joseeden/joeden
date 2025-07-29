@@ -45,29 +45,29 @@ Project directory structure:
 common-transformers/
 ├── base/
 │   ├── deployment.yaml
-│ `├── kustomization.ya`
+│   ├── kustomization.yaml
 │   └── service.yaml
 ├── v1/
-│ `├── kustomization.ya`
+│   ├── kustomization.yaml
 │   └── transformers/
 │       └── label.yaml
 ├── v2/
-│ `├── kustomization.ya`
+│   ├── kustomization.yaml
 │   └── transformers/
 │       └── name-prefix.yaml
 ├── v3/
-│ `├── kustomization.ya`
+│   ├── kustomization.yaml
 │   └── transformers/
 │       └── namespace.yaml
 ├── v4/
-│ `├── kustomization.ya`
+│   ├── kustomization.yaml
 │   └── transformers/
 │       └── annotations.yaml
 ```
 
 The base configs:
 
-- `base/deployment.yaml`
+- **base/deployment.yaml**
 
     ```yaml
     apiVersion: apps/v1
@@ -92,7 +92,7 @@ The base configs:
 
     ```
 
-- `base/service.yaml`
+- **base/service.yaml**
 
     ```yaml
     apiVersion: v1
@@ -108,7 +108,7 @@ The base configs:
           targetPort: 80
     ```
 
-- `base/kustomization.yaml`
+- **base/kustomization.yaml**
 
     ```yaml
     resources:
@@ -120,7 +120,7 @@ The base configs:
 
 Use this when you want to add detailed labels with control over where they are applied.
 
-- `transformers/label.yaml`
+- **transformers/label.yaml**
 
     ```yaml
     apiVersion: builtin
@@ -135,7 +135,7 @@ Use this when you want to add detailed labels with control over where they are a
         create: true
     ```
 
-- `v1/kustomization.yaml`
+- **v1/kustomization.yaml**
 
     ```yaml
     resources:
@@ -160,7 +160,7 @@ Check that both Deployment and Service have labels: `environment=dev` and `versi
 
 Add a prefix to resource names to easily group or version them.
 
-- `transformers/name-prefix.yaml`
+- **transformers/name-prefix.yaml**
 
     ```yaml
     apiVersion: builtin
@@ -172,7 +172,7 @@ Add a prefix to resource names to easily group or version them.
       - path: metadata/name
     ```
 
-- `v2/kustomization.yaml`
+- **v2/kustomization.yaml**
 
     ```yaml
     resources:
@@ -198,7 +198,7 @@ You should see resources named `v2-myapp` and `v2-myapp-service`.
 
 Assign all resources to a specific namespace.
 
-- `transformers/namespace.yaml`
+- **transformers/namespace.yaml**
 
     ```yaml
     apiVersion: builtin
@@ -211,7 +211,7 @@ Assign all resources to a specific namespace.
         create: true
     ```
 
-- `v3/kustomization.yaml`
+- **v3/kustomization.yaml**
 
     ```yaml
     resources:
@@ -236,7 +236,7 @@ All resources should be created inside the `test-lab-dev` namespace.
 
 Add common annotations to all resources for metadata tagging.
 
-- `transformers/annotations.yaml`
+- **transformers/annotations.yaml**
 
     ```yaml
     apiVersion: builtin
@@ -251,7 +251,7 @@ Add common annotations to all resources for metadata tagging.
         create: true
     ```
 
-- `v4/kustomization.yaml`
+- **v4/kustomization.yaml**
 
     ```yaml
     resources:
