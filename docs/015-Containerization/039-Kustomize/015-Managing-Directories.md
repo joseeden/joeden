@@ -420,11 +420,11 @@ Verify the API is running and reachable. Open two terminals to run port-forwardi
     curl http://localhost:8080
     ```
 
-Expected output:
+    Expected output:
 
-```text
-Hello from API
-```
+    ```text
+    Hello from API
+    ```
 
 #### DB
 
