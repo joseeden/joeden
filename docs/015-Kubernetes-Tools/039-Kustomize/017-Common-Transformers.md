@@ -25,6 +25,12 @@ Kustomize includes several common transformers out of the box.
 
 These `e simple fields you can set in your `kustomization.yaml`. They appl`to every resource listed under `resources`.
 
+:::info 
+
+You will need a Kubernetes cluster to try out the examples.
+To setup a basic cluster, you can use [k3d](/docs/015-Containerization/020-Kubernetes/011-Setting-Up-Kubernetes-using-k3d.md).
+
+:::
 
 ## Clone the Repository  
 
@@ -145,15 +151,28 @@ Use this when you want to add detailed labels with control over where they are a
       - transformers/label.yaml
     ```
 
-Deploy and verify:
+Create the namespace and deploy the resources.
 
 ```bash
-kubectl apply -k ./v1
-kubectl get deployment myapp --show-labels
-kubectl get service myapp-service --show-labels
+kubectl create ns test-lab-v1 
+kubectl -n test-lab-v1 apply  -k ./v1
 ```
 
+
 Check that both Deployment and Service have labels: `environment=dev` and `version=v1`.
+
+```bash
+$ kubectl -n test-lab-v1 get deployment myapp --show-labels
+
+NAME    READY   UP-TO-DATE   AVAILABLE   AGE   LABELS
+myapp   1/1     1            1           45s   environment=dev,version=v1
+```
+```bash
+$ kubectl -n test-lab-v1 get service myapp-service --show-labels
+
+NAME            TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)   AGE   LABELS
+myapp-service   ClusterIP   10.43.174.62   <none>        80/TCP    91s   environment=dev,version=v1
+```
 
 
 ## Name Prefix/Suffix Transformer
@@ -182,54 +201,96 @@ Add a prefix to resource names to easily group or version them.
       - transformers/name-prefix.yaml
     ```
 
-Deploy and verify:
+Create the namespace and deploy the resources.
+
 
 ```bash
-kubectl apply -k ./v2
-kubectl get all
+kubectl create ns test-lab-v2 
+kubectl -n test-lab-v2 apply  -k ./v2
 ```
 
 You should see resources named `v2-myapp` and `v2-myapp-service`.
 
+```bash
+$ kubectl -n test-lab-v2 get all
 
+NAME                           READY   STATUS    RESTARTS   AGE
+pod/v2-myapp-86bcdfd4f-x5k77   1/1     Running   0          2m10s
+
+NAME                       TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)   AGE
+service/v2-myapp-service   ClusterIP   10.43.72.62   <none>        80/TCP    2m10s
+
+NAME                       READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/v2-myapp   1/1     1            1           2m10s
+
+NAME                                 DESIRED   CURRENT   READY   AGE
+replicaset.apps/v2-myapp-86bcdfd4f   1         1         1       2m10s
+```
 
 
 ## Namespace Transformer 
 
-Assign all resources to a specific namespace.
+Namespace Transformers are used to set all resources under a specific namespace.
 
-- **transformers/namespace.yaml**
+In this example, we’ll use the configs from `base-v3` instead of `base`, since `base` was already deployed earlier using the overlays in `v1` and `v2`.
 
-    ```yaml
-    apiVersion: builtin
-    kind: NamespaceTransformer
-    metadata:
-      name: namespace-transformer
-    namespace: test-lab-dev
-    fieldSpecs:
-      - path: metadata/namespace
-        create: true
-    ```
+:::info 
 
-- **v3/kustomization.yaml**
+**Keep in mind:** If a Deployment or Service already exists in the default namespace, applying it in another namespace (e.g. test-lab-dev) won't remove the original.
 
-    ```yaml
-    resources:
-      - ../base
-
-    transformers:
-      - transformers/namespace.yaml
-    ```
-
-Deploy and verify:
+:::
 
 ```bash
-kubectl apply -k ./v3
-kubectl get all -n test-lab-dev
+base-v3/
+├── deployment.yaml
+├── kustomization.yaml
+└── service.yaml
+```
+
+Also, in this example, we are not using a separate configuration file to define the namespace transformer (or the new namespace). Instead, it is defined in-line in the `kustomization.yaml` file.
+
+**v3/kustomization.yaml**
+
+```yaml
+resources:
+  - ../base-v3
+
+namespace: test-lab-dev
+```
+
+A few notes about the namespace: 
+
+- The namespace field in `kustomization.yaml` does not create the namespace.
+- The `NamespaceTransformer` also does not create the namespace.
+
+Having said, you must manually create the namespace before applying the overlay
+
+```bash
+kubectl create ns test-lab-dev 
+```
+
+Then deploy the changes:
+
+```bash
+kubectl apply  -k ./v3
 ```
 
 All resources should be created inside the `test-lab-dev` namespace.
 
+```bash
+$ kubectl get all -n test-lab-dev
+NAME                            READY   STATUS    RESTARTS   AGE
+pod/v3-myapp-677c5b7585-8jp6c   1/1     Running   0          17s
+
+NAME                       TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)   AGE
+service/v3-myapp-service   ClusterIP   10.43.29.72   <none>        80/TCP    17s
+
+NAME                       READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/v3-myapp   1/1     1            1           17s
+
+NAME                                  DESIRED   CURRENT   READY   AGE
+replicaset.apps/v3-myapp-677c5b7585   1         1         1       17s
+```
 
 
 ## CommonAnnotations Transformer 
@@ -277,3 +338,38 @@ annotations:
   team: devops
 ```
 
+## Cleanup 
+
+To remove the resources across all the created namespaces:
+
+```bash
+kubectl delete all --all -n test-lab-dev
+kubectl delete all --all -n test-lab-v1
+kubectl delete all --all -n test-lab-v2
+```
+
+Then delete the namespaces:
+
+```bash
+kubectl delete ns test-lab-{dev,v1,v2}
+```
+
+Output:
+
+```bash
+namespace "test-lab-dev" deleted
+namespace "test-lab-v1" deleted
+namespace "test-lab-v2" deleted
+```
+
+Confirm that all the custom namespaces are deleted:
+
+```bash
+$ kubectl get ns
+
+NAME              STATUS   AGE
+default           Active   19h
+kube-node-lease   Active   19h
+kube-public       Active   19h
+kube-system       Active   19h
+```

@@ -24,6 +24,13 @@ Transformers let you apply changes across Kubernetes YAML files without editing 
 
 Instead of modifying every file, you define transformations once, and Kustomize applies them automatically.
 
+:::info 
+
+You will need a Kubernetes cluster to try out the examples.
+To setup a basic cluster, you can use [k3d](/docs/015-Containerization/020-Kubernetes/011-Setting-Up-Kubernetes-using-k3d.md).
+
+:::
+
 
 ## Clone the Repository  
 
@@ -35,13 +42,13 @@ Clone and move into the project directory:
 
 ```bash
 git clone https://github.com/joseeden/test-kustomize-labs.git 
-cd code-samples/04-transformers/sample-wordpress
+cd code-samples/04-transformers/basic-sample
 ```
 
 Project directory structure:
 
 ```bash
-sample-wordpress
+basic-sample
 ├── base
 │   ├── deployment.yaml
 │   ├── kustomization.yaml
@@ -79,7 +86,7 @@ Instead of adding everything to one file, you can separate your transformer sett
 In this example, the `base` folder holds the main Kubernetes resources. The `v1` folder is a versioned overlay that adds custom transformations.
 
 ```
-sample-wordpress
+basic-sample
 ├── base
 │   ├── deployment.yaml
 │   ├── kustomization.yaml
@@ -171,6 +178,7 @@ You can verify the prefix was applied by checking the created resources:
 
 ```yaml
 $ kubectl get all -n test-lab-v1
+
 NAME                                READY   STATUS    RESTARTS   AGE
 pod/v1-wordpress-787fb8d554-2d25z   1/1     Running   0          23m
 
@@ -188,6 +196,7 @@ To check if the labels are applied:
 
 ```bash
 $ kubectl get all -n test-lab-v1 --show-labels
+
 NAME                                READY   STATUS    RESTARTS   AGE   LABELS
 pod/v1-wordpress-787fb8d554-2d25z   1/1     Running   0          24m   app=wordpress,pod-template-hash=787fb8d554,version=v1
 
@@ -233,6 +242,7 @@ You should now see `environment=dev` and `version=v1` on all resources, includin
 
 ```bash
 $ kubectl get all -n test-lab-v1 --show-labels
+
 NAME                                READY   STATUS    RESTARTS   AGE    LABELS
 pod/v1-wordpress-789ffff48b-smpcd   1/1     Running   0          100s   app=wordpress,environment=dev,pod-template-hash=789ffff48b,version=v1
 
@@ -250,11 +260,24 @@ replicaset.apps/v1-wordpress-789ffff48b   1         1         1       100s   app
 
 Instead of a separate file, you can also declare the transformer inline.
 
-Example:
+In this example, we are still using the same base configs in the `base` folder.  The `v2` folder is a versioned overlay that adds custom transformations.
+
+```
+basic-sample
+├── base
+│   ├── deployment.yaml
+│   ├── kustomization.yaml
+│   └── service.yaml
+├── v1
+├── v2
+│   ├── kustomization.yaml
+```
+
+The entire transformer configuration can simply added in the Kustomization files. This way, you only manage a single file.
 
 ```yaml
 resources:
-  - ../../base
+  - ../base
 
 transformers:
   - |
@@ -262,75 +285,170 @@ transformers:
     kind: PrefixTransformer
     metadata:
       name: inline-prefix
-    prefix: v1-inline-
+    prefix: v2-inline-
     fieldSpecs:
       - path: metadata/name
 ```
 
-Run:
-
-```bash
-kustomize build . > result.yaml
-```
-
-Expected output:
-
-```yaml
-metadata:
-  name: v1-inline-wordpress
-```
+:::info 
 
 Inline config is flexible for quick edits, but requires careful indentation.
 
-## Using Convenience Fields
+:::
 
-You can skip custom transformer files by using built-in fields like `namePrefix`.
-
-Example:
-
-```yaml
-namePrefix: v1-convenience-
-
-resources:
-  - ../../base
-```
-
-Run:
+Run the `build` command to see the expected YAML files:
 
 ```bash
-kustomize build . > result.yaml
+kustomize build ./v2 > ./v2/v2-result.yaml
 ```
 
-Output:
+Open the `v2-result.yaml` and check the `metadata.name` fields. It should now have the prefix `v1-` added.
+
+```yaml
+metadata:
+  name: v2-inline-wordpress
+```
+
+To apply the actual changes, create the namespace first:
+
+```bash
+kubectl create ns test-lab-v2 
+```
+
+Then apply the changes:
+
+```bash
+kubectl apply -k ./v2 -n test-lab-v2
+```
+
+The resources should have the prefix `v2-inline-` prefix.
+
+```bash
+$ kubectl get all -n test-lab-v2
+
+NAME                                      READY   STATUS    RESTARTS   AGE
+pod/v2-inline-wordpress-c456476df-r4sjx   1/1     Running   0          5s
+
+NAME                          TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+service/v2-inline-wordpress   NodePort   10.43.155.219   <none>        80:30001/TCP   5s
+
+NAME                                  READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/v2-inline-wordpress   1/1     1            1           5s
+
+NAME                                            DESIRED   CURRENT   READY   AGE
+replicaset.apps/v2-inline-wordpress-c456476df   1         1         1       5s
+```
+
+## Using Convenience Fields
+
+Finally, you can skip custom transformer files or defining the inline transformer in the Kustomization file by using built-in fields like `namePrefix`.
+
+In this example, we'll use the `v3` files:
+
+```
+basic-sample
+├── base
+│   ├── deployment.yaml
+│   ├── kustomization.yaml
+│   └── service.yaml
+├── v1
+├── v2
+├── v3
+│   ├── kustomization.yaml
+```
+
+Unlike inline-configurations....
+
+```yaml
+namePrefix: v3-convenience-
+
+resources:
+  - ../base
+```
+
+
+Run the `build` command to see the expected YAML files:
+
+```bash
+kustomize build ./v3 > ./v3/v3-result.yaml
+```
+
+In the `v3-result.yaml`, you should see this in the `metadata` sections.
 
 ```yaml
 metadata:
   name: v1-convenience-wordpress
 ```
 
-This is the simplest way to apply a prefix or suffix to resource names.
-
-Once your transformer is set up and tested, apply it to your cluster:
+To apply the actual changes, create the namespace first:
 
 ```bash
-kubectl apply -k .
+kubectl create ns test-lab-v3 
+```
+
+Then apply the changes:
+
+```bash
+kubectl apply -k ./v3 -n test-lab-v3
 ```
 
 You’ll see:
 
-```
-service/v1-convenience-wordpress created
-deployment.apps/v1-convenience-wordpress created
+```bash
+service/v3-convenience-wordpress created
+deployment.apps/v3-convenience-wordpress created
 ```
 
 Verify:
 
 ```bash
-kubectl get pods
-kubectl get services
+$ kubectl get pods -n test-lab-v3
+
+NAME                                       READY   STATUS              RESTARTS   AGE
+v3-convenience-wordpress-c456476df-w9fk5   1/1     Running             0          76s
 ```
 
-This approach helps you manage different versions or environments using consistent naming and overlays.
+```bash
+$ kubectl get services -n test-lab-v3
+
+NAME                       TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+v3-convenience-wordpress   NodePort   10.43.209.123   <none>        80:30001/TCP   81s
+```
 
 
 
+## Cleanup 
+
+To remove the resources across all the created namespaces:
+
+```bash
+kubectl delete all --all -n test-lab-v1
+kubectl delete all --all -n test-lab-v2
+kubectl delete all --all -n test-lab-v3
+```
+
+Then delete the namespaces:
+
+```bash
+kubectl delete ns test-lab-{v1,v2,v3}
+```
+
+Output:
+
+```bash
+namespace "test-lab-v1" deleted
+namespace "test-lab-v2" deleted
+namespace "test-lab-v3" deleted
+```
+
+Confirm that all the custom namespaces are deleted:
+
+```bash
+$ kubectl get ns
+
+NAME              STATUS   AGE
+default           Active   19h
+kube-node-lease   Active   19h
+kube-public       Active   19h
+kube-system       Active   19h
+```
