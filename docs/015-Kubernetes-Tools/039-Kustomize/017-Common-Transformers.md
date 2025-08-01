@@ -28,6 +28,7 @@ These `e simple fields you can set in your `kustomization.yaml`. They appl`to ev
 :::info 
 
 You will need a Kubernetes cluster to try out the examples.
+
 To setup a basic cluster, you can use [k3d](/docs/015-Containerization/020-Kubernetes/011-Setting-Up-Kubernetes-using-k3d.md).
 
 :::
@@ -36,7 +37,7 @@ To setup a basic cluster, you can use [k3d](/docs/015-Containerization/020-Kuber
 
 To try out the examples in the sections below, clone the project repository from GitHub. 
 
-- Github repo: [joseeden/test-kustomize-labs](https://github.com/joseeden/test-kustomize-labs/tree/master/code-samples/03-multi-tier-app)
+- Github repo: [joseeden/test-kustomize-labs](https://github.com/joseeden/test-kustomize-labs/tree/master)
 
 Clone and move into the project directory:
 
@@ -48,85 +49,45 @@ cd code-samples/04-transformers/common-transformers
 Project directory structure:
 
 ```bash
-common-transformers/
-├── base/
+├── base
 │   ├── deployment.yaml
 │   ├── kustomization.yaml
 │   └── service.yaml
-├── v1/
+├── base-img
+│   ├── deployment.yaml
+│   └── kustomization.yaml
+├── base-v3
+│   ├── deployment.yaml
 │   ├── kustomization.yaml
-│   └── transformers/
+│   └── service.yaml
+├── v1
+│   ├── kustomization.yaml
+│   └── transformers
 │       └── label.yaml
-├── v2/
+├── v2
 │   ├── kustomization.yaml
-│   └── transformers/
+│   └── transformers
 │       └── name-prefix.yaml
-├── v3/
+├── v3
+│   └── kustomization.yaml
+├── v4
 │   ├── kustomization.yaml
-│   └── transformers/
-│       └── namespace.yaml
-├── v4/
-│   ├── kustomization.yaml
-│   └── transformers/
+│   └── transformers
 │       └── annotations.yaml
+├── v5
+│   └── kustomization.yaml
+├── v5-b
+│   └── kustomization.yaml
+└── v5-c
+    └── kustomization.yaml
 ```
 
-The base configs:
-
-- **base/deployment.yaml**
-
-    ```yaml
-    apiVersion: apps/v1
-    kind: Deployment
-    metadata:
-      name: myapp
-    spec:
-      replicas: 1
-      selector:
-        matchLabels:
-          app: myapp
-      template:
-        metadata:
-          labels:
-            app: myapp
-        spec:
-          containers:
-          - name: myapp
-            image: nginx:stable
-            ports:
-            - containerPort: 80
-
-    ```
-
-- **base/service.yaml**
-
-    ```yaml
-    apiVersion: v1
-    kind: Service
-    metadata:
-      name: myapp-service
-    spec:
-      selector:
-        app: myapp
-      ports:
-        - protocol: TCP
-          port: 80
-          targetPort: 80
-    ```
-
-- **base/kustomization.yaml**
-
-    ```yaml
-    resources:
-      - deployment.yaml
-      - service.yaml
-    ```
 
 ## Label Transformer
 
 Use this when you want to add detailed labels with control over where they are applied.
 
-- **transformers/label.yaml**
+- **v1/transformers/label.yaml**
 
     ```yaml
     apiVersion: builtin
@@ -179,7 +140,7 @@ myapp-service   ClusterIP   10.43.174.62   <none>        80/TCP    91s   environ
 
 Add a prefix to resource names to easily group or version them.
 
-- **transformers/name-prefix.yaml**
+- **v2/transformers/name-prefix.yaml**
 
     ```yaml
     apiVersion: builtin
@@ -258,6 +219,14 @@ resources:
 namespace: test-lab-dev
 ```
 
+:::info 
+
+You can define the transformer either as in-line configuration, through a separate config file, or through using convenience fields.
+
+For more information, please see [Ways to Define Transformers](/docs/015-Kubernetes-Tools/039-Kustomize/016-Transformers.md#ways-to-define-transformers)
+
+:::
+
 A few notes about the namespace: 
 
 - The namespace field in `kustomization.yaml` does not create the namespace.
@@ -297,7 +266,9 @@ replicaset.apps/v3-myapp-677c5b7585   1         1         1       17s
 
 Add common annotations to all resources for metadata tagging.
 
-- **transformers/annotations.yaml**
+In this example, we'll use the config files in the `v4` folder:
+
+- **v4/transformers/annotations.yaml**
 
     ```yaml
     apiVersion: builtin
@@ -322,12 +293,23 @@ Add common annotations to all resources for metadata tagging.
       - transformers/annotations.yaml
     ```
 
-Deploy and verify:
+Create the namespace for the resources:
 
 ```bash
-kubectl apply -k ./v4
-kubectl get deployment myapp -o yaml | grep -A 5 annotations
-kubectl get service myapp-service -o yaml | grep -A 5 annotations
+kubectl create ns test-lab-v4 
+```
+
+Deploy the resources:
+
+```bash
+kubectl apply -k ./v4 -n test-lab-v4 
+```
+
+Then verify:
+
+```bash
+kubectl get deployment myapp -n test-lab-v4  -o yaml | grep -A 5 annotations
+kubectl get service myapp-service -n test-lab-v4  -o yaml | grep -A 5 annotations
 ```
 
 You should see annotations:
@@ -338,6 +320,266 @@ annotations:
   team: devops
 ```
 
+## Image Transformer 
+
+We can use an image transformer to change container images or just their tags in Kubernetes manifests.
+
+- Can update image name or tag
+- Helps manage different environments
+
+This lets you avoid editing YAML files directly and keeps things cleaner.
+
+### Replace Image Name
+
+We can change the container image from one to another, like from NGINX to HAProxy.
+
+- Use `name` to match the original image
+- Use `newName` to set the new image
+
+In this example, we'll use the base configs in the `base-img` folder:
+
+```bash
+base-img
+├── deployment.yaml
+├── kustomization.yaml
+```
+
+The base configs:
+
+- **base-img/deployment.yaml**
+
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: web
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: web
+      template:
+        metadata:
+          labels:
+            app: web
+        spec:
+          containers:
+            - name: web
+              image: nginx
+    ```
+
+- **base-img/kustomization.yaml**
+
+    ```yaml
+    resources:
+      - deployment.yaml
+    ```
+
+The transformers are defined in the `v5` folder:
+
+- **v5/kustomization.yaml**
+
+    ```yaml
+    resources:
+    - ../base-img
+
+    images:
+      - name: nginx
+        newName: haproxy
+    ```
+
+Create the namespace first:
+
+```bash
+kubectl create ns test-lab-v5
+```
+
+Next, apply the overlay config in `v5`:
+
+```bash
+kubectl apply -k ./v5 -n test-lab-v5
+```
+
+After applying the changes, the image in your deployment becomes `haproxy`.
+
+```bash
+$ kubectl describe deployment web -n test-lab-v5 | grep "Pod Template" -A 5
+
+Pod Template:
+  Labels:  app=web
+  Containers:
+   web:
+    Image:         haproxy
+    Port:          <none>
+```
+
+As an additional test, you can update the `v5/kustomization.yaml` to use `nginx` again:
+
+```yaml
+resources:
+- ../base-img
+
+images:
+  - name: haproxy
+    newName: nginx
+```
+
+And then apply the changes:
+
+```bash
+kubectl apply -k ./v5 -n test-lab-v5
+```
+
+The image should now switch back to `nginx`:
+
+```bash
+```bash
+$ kubectl describe deployment web -n test-lab-v5 | grep "Pod Template" -A 5
+
+Pod Template:
+  Labels:  app=web
+  Containers:
+   web:
+    Image:         nginx
+    Port:          <none>
+``` 
+
+### Replace Image Tag Only
+
+If you want to keep the image but change the tag, you can just use `newTag`.
+
+- Use `name` to match the image
+- Use `newTag` to change the version
+
+This is useful when promoting a new version without changing the image base.
+
+In this example, we'll still use the base config in `base-img`, but we'll use the transformer defined in `v5-b/kustomization.yaml':
+
+```yaml
+resources:
+- ../base-img
+
+images:
+  - name: nginx
+    newTag: "2.4"
+```
+
+Apply the changes:
+
+```bash
+kubectl apply -n test-lab-v5 -k ./v5-b
+```
+
+Now your image becomes `nginx:2.4`.
+
+```bash
+$ kubectl describe deployment web -n test-lab-v5 | grep "Pod Template" -A 5 
+
+Pod Template:
+  Labels:  app=web
+  Containers:
+   web:
+    Image:         nginx:2.4
+    Port:          <none>
+```
+
+If you'd like to play around, you can update the `v5-b/kustomization.yaml' and use a different tag:
+
+```yaml
+images:
+  - name: nginx
+    newTag: "2.4.10-staging"
+```
+
+Apply the changes once again:
+
+```bash
+kubectl apply -n test-lab-v5 -k ./v5-b
+```
+
+The image tag will now be set to `nginx:2.4.10-staging`.
+
+```bash
+Pod Template:
+  Labels:  app=web
+  Containers:
+   web:
+    Image:         nginx:2.4.10-staging
+    Port:          <none>
+```
+
+
+### Replace Both Image and Tag
+
+Finally, you can change both image name and tag in one go.
+
+- Use both `newName` and `newTag` together
+- Applies changes across all matching containers
+
+The `v5-c/kustomization.yaml`:
+
+```yaml
+resources:
+- ../base-img
+
+images:
+  - name: nginx
+    newName: haproxy
+    newTag: "3.0-most-latest"
+```
+
+Apply the changes:
+
+```bash
+kubectl apply -n test-lab-v5 -k ./v5-c
+```
+
+The final result will be `haproxy:3.0-most-latest`.
+
+```bash
+$ kubectl describe deployment web -n test-lab-v5 | grep "Pod Template" -A 5 
+
+Pod Template:
+  Labels:  app=web
+  Containers:
+   web:
+    Image:         haproxy:3.0-most-latest
+    Port:          <none>
+```
+
+This makes it simple to manage deployments across multiple environments by keeping all image changes in one place.
+
+
+### Image Name vs Container Name
+
+Be careful not to confuse `image` names with `container` names.
+
+- `name` in `kustomization.yaml` refers to the image name
+- `name` in the pod spec is the container name
+
+Even if the container name is `web`, Kustomize looks only at the image (`nginx` in this case).
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: web
+          image: nginx 
+```
+
+
 ## Cleanup 
 
 To remove the resources across all the created namespaces:
@@ -346,20 +588,25 @@ To remove the resources across all the created namespaces:
 kubectl delete all --all -n test-lab-dev
 kubectl delete all --all -n test-lab-v1
 kubectl delete all --all -n test-lab-v2
+kubectl delete all --all -n test-lab-v3
+kubectl delete all --all -n test-lab-v4
+kubectl delete all --all -n test-lab-v5
 ```
 
-Then delete the namespaces:
+You can then delete the namespaces by repeating the `delete all` command multiple times, or you can also define the namespaces in this way:
 
 ```bash
-kubectl delete ns test-lab-{dev,v1,v2}
+kubectl delete ns test-lab-{dev,v1,v2,v3,v4,v5}
 ```
 
 Output:
 
 ```bash
-namespace "test-lab-dev" deleted
 namespace "test-lab-v1" deleted
 namespace "test-lab-v2" deleted
+namespace "test-lab-v3" deleted
+namespace "test-lab-v4" deleted
+namespace "test-lab-v5" deleted
 ```
 
 Confirm that all the custom namespaces are deleted:

@@ -27,6 +27,7 @@ Instead of modifying every file, you define transformations once, and Kustomize 
 :::info 
 
 You will need a Kubernetes cluster to try out the examples.
+
 To setup a basic cluster, you can use [k3d](/docs/015-Containerization/020-Kubernetes/011-Setting-Up-Kubernetes-using-k3d.md).
 
 :::
@@ -36,7 +37,7 @@ To setup a basic cluster, you can use [k3d](/docs/015-Containerization/020-Kuber
 
 To try out the examples in the succeeding sections, clone the project repository from GitHub. 
 
-- Github repo: [joseeden/test-kustomize-labs](https://github.com/joseeden/test-kustomize-labs/tree/master/code-samples/03-multi-tier-app)
+- Github repo: [joseeden/test-kustomize-labs](https://github.com/joseeden/test-kustomize-labs/tree/master)
 
 Clone and move into the project directory:
 
@@ -55,29 +56,33 @@ basic-sample
 │   └── service.yaml
 ├── v1
 │   ├── kustomization.yaml
-│   └── transformers
-│       ├── label.yaml
-│       └── name-prefix.yaml
+│   ├── transformers
+│   │   ├── label.yaml
+│   │   └── name-prefix.yaml
+│   └── v1-results.yaml
 ├── v2
-│   └── kustomization.yaml
+│   ├── kustomization.yaml
+│   └── v2-result.yaml
 └── v3
-    ├── kustomization.yaml
-    └── mysql
-        ├── deployment.yaml
-        ├── kustomization.yaml
-        ├── secret.yaml
-        └── service.yaml
+    └── kustomization.yaml
 ```
 
 
 
-## Ways to Define Transformers
+## Defining Transformers/Generators
 
 You can define transformers in three main ways:
 
 - Use a **separate configuration file**
 - Use **inline configuration** inside the `kustomization.yaml`
 - Use **convenience fields** like `namePrefix`, `commonLabels`, etc.
+
+:::info 
+
+You can use all three of these methods when setting up generators too.
+
+::: 
+
 
 ## Using a Configuration File
 
@@ -341,7 +346,10 @@ replicaset.apps/v2-inline-wordpress-c456476df   1         1         1       5s
 
 ## Using Convenience Fields
 
-Finally, you can skip custom transformer files or defining the inline transformer in the Kustomization file by using built-in fields like `namePrefix`.
+Instead of writing a custom transformer or inline config, you can use simple built-in fields like namePrefix.
+
+- namePrefix adds a prefix to all resource names
+- No need for extra files or complex setup
 
 In this example, we'll use the `v3` files:
 
@@ -357,7 +365,7 @@ basic-sample
 │   ├── kustomization.yaml
 ```
 
-Unlike inline-configurations....
+Unlike inline configurations that define custom transformers manually, you can just use simple fields like `namePrefix`.
 
 ```yaml
 namePrefix: v3-convenience-
@@ -365,6 +373,12 @@ namePrefix: v3-convenience-
 resources:
   - ../base
 ```
+
+:::info 
+
+To update suffixes, use `nameSuffix` instead.
+
+:::
 
 
 Run the `build` command to see the expected YAML files:

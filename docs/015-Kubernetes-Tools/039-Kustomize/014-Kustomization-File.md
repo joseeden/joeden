@@ -136,10 +136,10 @@ To set things up quickly, we’ll use **Killercoda**, a free online Kubernetes p
 4. Navigate to the NGINX sample project folder where the NGINX manifests are:
 
     ```bash
-    cd test-kustomize-labs/code-samples/01-sample-nginx-project/
+    cd test-kustomize-labs/code-samples/01-sample-nginx/
     ```
     ```bash
-    01-sample-nginx-project/
+    01-sample-nginx/
     ├── nginx-deployment.yaml
     └── nginx-service.yaml
     ```
