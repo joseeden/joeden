@@ -1,6 +1,6 @@
 ---
-title: "Quickstart with Killercoda"
-description: "Quickstart with Killercoda"
+title: "Killercoda"
+description: "Killercoda"
 tags: 
 - Cloud
 - DevOps
@@ -16,9 +16,13 @@ last_update:
 
 ## Overview
 
-We won’t set up a Kubernetes cluster from scratch. Instead, we’ll use **Killercoda**, a free online playground. Visit [Killercoda](https://killercoda.com/playgrounds/scenario/kubernetes) and sign in with your GitHub or Gmail account.
+The labs in this documentation require a running Kubernetes cluster.
 
-If you prefer to setup a cluster and install Kustomize, please see [Installing Kustomize.](/docs/015-Kubernetes-Tools/039-Kustomize/013-Install-Kustomize.md)
+If you don’t want to set up a Kubernetes cluster, you can use a free online playground called **Killercoda**. Go to [Killercoda](https://killercoda.com/playgrounds/scenario/kubernetes) and sign in with your GitHub or Gmail account.
+
+If you prefer to set up your own cluster and install Kustomize, please see [Installing Kustomize](/docs/015-Kubernetes-Tools/039-Kustomize/013-Install-Kustomize.md).
+
+
 
 ## Pre-installed Tools
 
