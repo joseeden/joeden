@@ -8,8 +8,9 @@ last_update:
 ---
 
 
+## Web Development
 
-## CSS 
+### CSS 
 
 - [Minify-CSS](https://www.cleancss.com/css-minify/)
 - [Flexbox Froggy](https://flexboxfroggy.com/)
@@ -20,14 +21,13 @@ last_update:
 - [Autoprefixer-Tool](https://autoprefixer.github.io/)
 - [CSS Grid Cheat Sheet](https://grid.malven.co/)
 
-## CSS Tricks
+### CSS Tricks
 
 - [CSS-Flexbox-Resource](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 - [`auto-fill` vs `auto-fit`](https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/)
 - [Media Queries for Standard Devices](https://css-tricks.com/snippets/css/media-queries-for-standard-devices/)
 
-## Bootstrap 
-
+### Bootstrap 
 
 - [Mailchimp-Add an Embedded Signup Form to Your Website](https://mailchimp.com/en/help/add-a-signup-form-to-your-website/)
 - [Free Bootstrap starter templates](https://mdbootstrap.com/freebies/)
@@ -41,24 +41,46 @@ last_update:
 - [What is UTF-8](https://www.quora.com/What-is-UTF8)
 - [Bootstrap Flex](https://getbootstrap.com/docs/4.3/utilities/flex/)
 
-## Linux 
+
+## Basics
+
+### Linux 
 
 - [Serious Shell Programming](https://freebsdfrau.gitbook.io/serious-shell-programming/)
 - [Unofficial Bash Strict Mode](http://redsymbol.net/articles/unofficial-bash-strict-mode/)
 - [Filenames and Pathnames in Shell: How to do it Correctly](https://dwheeler.com/essays/filenames-in-shell.html)
 - [ShellCheck - A shell script static analysis tool](https://github.com/koalaman/shellcheck)
 
-## Cloud Computing
+### DNS 
+
+Free DNS Service using [freedns](https://freedns.afraid.org/)
+
+- Sign up at http://freedns.afraid.org/
+- Choose for subdomain hosting
+- Enter the AWS nameservers given to you in route53 as nameservers for the subdomain
+
+Free DNS Service using [dot.tk](http://www.dot.tk)
+
+- provides a free .tk domain name you can use
+- you can point it to the amazon AWS nameservers
+
+Free DNS Service using [Namecheap](https://www.namecheap.com/)
+- often has promotions for tld’s like .co for just a couple of bucks
+
+
+## Cloud 
+
+### Cloud Computing
 
 - [Becoming a Cloud Architect — Learn the Fundamentals](https://cloudacademy.com/learning-paths/becoming-a-cloud-architect-lets-learn-the-fundamentals-2284/)
 
-## Amazon Web Services
+### Amazon Web Services
 
 - [AWS Certified Security - Specialty](https://www.packtpub.com/product/aws-certified-security-specialty-video/9781838550103)
 - [Security - Specialty Certification Preparation for AWS](https://cloudacademy.com/learning-paths/security-specialty-certification-preparation-for-aws-201/)
 
 
-## Microsoft Azure 
+### Microsoft Azure 
 
 - [Learning About Azure](https://cloudacademy.com/learning-paths/learning-about-azure-5663/)
 - [AZ-900 Exam Preparation: Microsoft Azure Fundamentals](https://cloudacademy.com/learning-paths/az-900-exam-preparation-microsoft-azure-fundamentals-524/)
@@ -70,42 +92,13 @@ last_update:
 - [Getting Hands-On with Azure CLI](https://cloudacademy.com/learning-paths/azure-cli-3377/)
 
 
-## Infrastructure as Code 
+## DevOps 
+
+### Infrastructure as Code 
 
 - [Terraformer](https://github.com/GoogleCloudPlatform/terraformer)
 
-## Data Engineering
-
-Databases:
-
-- [Fundamentals of Database Engineering](https://www.udemy.com/course/database-engines-crash-course/)
-- [Getting Started with MongoDB and NoSQL LiveLessons](https://www.oreilly.com/library/view/getting-started-with/9780136535959/)
-- [MongoDB - The Complete Developer's Guide 2022](https://www.udemy.com/course/mongodb-the-complete-developers-guide/)
-
-Courses on Databases:
-
-- [Fundamentals of Database Engineering](https://www.udemy.com/course/database-engines-crash-course/)
-- [Getting Started with MongoDB and NoSQL LiveLessons](https://www.oreilly.com/library/view/getting-started-with/9780136535959/)
-- [MongoDB - The Complete Developer's Guide 2022](https://www.udemy.com/course/mongodb-the-complete-developers-guide/)
-
-Apache Flink:
-
-- [Understanding Apache Flink](https://www.pluralsight.com/courses/understanding-apache-flink)
-- [Conceptualizing the Processing Model for Apache Flink](https://www.pluralsight.com/courses/conceptualizing-processing-model-apache-flink)
-- [Exploring the Apache Flink API for Processing Streaming Data](https://www.pluralsight.com/courses/exploring-apache-flink-api-processing-streaming-data)
-- [Processing Streaming Data Using Apache Flink](https://www.pluralsight.com/courses/processing-streaming-data-apache-flink)
-
-MongoDB:
-
-- [REST API Design, Development & Management](https://www.udemy.com/course/rest-api/)
-- [What is an API? In English, please.](https://www.freecodecamp.org/news/what-is-an-api-in-english-please-b880a3214a82/)
-- [REST (REpresentational State Transfer)](https://searchapparchitecture.techtarget.com/definition/REST-REpresentational-State-Transfer)
-- [What is "representation", "state" and "transfer" in Representational State Transfer (REST)?](https://stackoverflow.com/questions/48116321/what-is-representation-state-and-transfer-in-representational-state-trans)
-- [Roy Fielding's Thesis on Architectural Styles and the Design of Network-based Software Architectures](https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)
-- [Types of APIs & Popular REST API Protocol](https://stoplight.io/api-types/)
-
-
-## Jenkins
+### Jenkins
 
 - [Jenkins 2 Bootcamp: Fully Automate Builds to Deployment 2020](https://www.udemy.com/course/jenkins-continuous-integration-bootcamp/)
 - [Jenkins, From Zero To Hero: Become a DevOps Jenkins Master](https://www.udemy.com/course/jenkins-from-zero-to-hero/)
@@ -115,7 +108,7 @@ MongoDB:
 
 
 
-## Containers and Kubernetes
+### Containers and Kubernetes
 
 **Docker Courses**:
 
@@ -165,6 +158,7 @@ MongoDB:
 
 **Github repositories**:
 
+- [Awesome-docker - A curated list of Docker resources and projects](https://awesome-docker.netlify.app/)
 - [Kubernetes Autoscaler](https://github.com/kubernetes/autoscaler)
 - [kubernetes/kops](https://github.com/kubernetes/kops)
 - [wardviaene/kubernetes-course](https://github.com/wardviaene/kubernetes-course)
@@ -176,8 +170,7 @@ MongoDB:
 - [phcollignon/helm3](https://github.com/phcollignon/helm3)
 
 
-
-Metrics, Logging, Health Checks, and Tracing:
+**Metrics, Logging, Health Checks, and Tracing:**
 
 - [Pattern: Health Check API](https://microservices.io/patterns/observability/health-check-api.html)
 - [Best Practice on Metric Naming](https://prometheus.io/docs/instrumenting/writing_exporters/#metrics)
@@ -186,23 +179,49 @@ Metrics, Logging, Health Checks, and Tracing:
 - [Enabling Distributed Tracing for Microservices With Jaeger in Kubernetes](https://containerjournal.com/topics/container-ecosystems/enabling-distributed-tracing-for-microservices-with-jaeger-in-kubernetes/)
 
 
-## DNS 
+### Traefik 
 
-Free DNS Service using [freedns](https://freedns.afraid.org/)
+- [Traefik Labs](https://community.traefik.io/)
+- [Traefik Github](https://github.com/traefik/traefik)
+- [Traefik Monitoring](https://github.com/vegasbrianc/docker-traefik-prometheus)
 
-- Sign up at http://freedns.afraid.org/
-- Choose for subdomain hosting
-- Enter the AWS nameservers given to you in route53 as nameservers for the subdomain
 
-Free DNS Service using [dot.tk](http://www.dot.tk)
+## Data Engineering
 
-- provides a free .tk domain name you can use
-- you can point it to the amazon AWS nameservers
+**Databases:**
 
-Free DNS Service using [Namecheap](https://www.namecheap.com/)
-- often has promotions for tld’s like .co for just a couple of bucks
+- [Fundamentals of Database Engineering](https://www.udemy.com/course/database-engines-crash-course/)
+- [Getting Started with MongoDB and NoSQL LiveLessons](https://www.oreilly.com/library/view/getting-started-with/9780136535959/)
+- [MongoDB - The Complete Developer's Guide 2022](https://www.udemy.com/course/mongodb-the-complete-developers-guide/)
 
-**Certification Exams**:
+**Courses on Databases:**
+
+- [Fundamentals of Database Engineering](https://www.udemy.com/course/database-engines-crash-course/)
+- [Getting Started with MongoDB and NoSQL LiveLessons](https://www.oreilly.com/library/view/getting-started-with/9780136535959/)
+- [MongoDB - The Complete Developer's Guide 2022](https://www.udemy.com/course/mongodb-the-complete-developers-guide/)
+
+**Apache Flink:**
+
+- [Understanding Apache Flink](https://www.pluralsight.com/courses/understanding-apache-flink)
+- [Conceptualizing the Processing Model for Apache Flink](https://www.pluralsight.com/courses/conceptualizing-processing-model-apache-flink)
+- [Exploring the Apache Flink API for Processing Streaming Data](https://www.pluralsight.com/courses/exploring-apache-flink-api-processing-streaming-data)
+- [Processing Streaming Data Using Apache Flink](https://www.pluralsight.com/courses/processing-streaming-data-apache-flink)
+
+**MongoDB:**
+
+- [REST API Design, Development & Management](https://www.udemy.com/course/rest-api/)
+- [What is an API? In English, please.](https://www.freecodecamp.org/news/what-is-an-api-in-english-please-b880a3214a82/)
+- [REST (REpresentational State Transfer)](https://searchapparchitecture.techtarget.com/definition/REST-REpresentational-State-Transfer)
+- [What is "representation", "state" and "transfer" in Representational State Transfer (REST)?](https://stackoverflow.com/questions/48116321/what-is-representation-state-and-transfer-in-representational-state-trans)
+- [Roy Fielding's Thesis on Architectural Styles and the Design of Network-based Software Architectures](https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm)
+- [Types of APIs & Popular REST API Protocol](https://stoplight.io/api-types/)
+
+## Project Management 
+
+- [Free Project Management Courses](https://www.pmi.org/learning/training-development/free-elearning-courses)
+
+
+## Certification Exams
 
 - [Open Source Curriculum for CNCF Certification Courses](https://github.com/cncf/curriculum)
 - [Certified Kubernetes Administrator (CKA)](https://www.cncf.io/certification/cka/)
@@ -211,7 +230,3 @@ Free DNS Service using [Namecheap](https://www.namecheap.com/)
 - [Important Instructions: CKA and CKAD](https://docs.linuxfoundation.org/tc-docs/certification/tips-cka-and-ckad)
 - [Linux Foundation Certification Exam: Candidate Handbook](https://docs.linuxfoundation.org/tc-docs/certification/lf-handbook2)
 
-
-## Project Management 
-
-- [Free Project Management Courses](https://www.pmi.org/learning/training-development/free-elearning-courses)
