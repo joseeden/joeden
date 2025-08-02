@@ -183,7 +183,7 @@ Free DNS Service using [Namecheap](https://www.namecheap.com/)
 
 - [Traefik Labs](https://community.traefik.io/)
 - [Traefik Github](https://github.com/traefik/traefik)
-- [Traefik Monitoring](https://github.com/vegasbrianc/docker-traefik-prometheus)
+- [Monitor Traefik with Prometheus](https://github.com/vegasbrianc/docker-traefik-prometheus)
 
 
 ## Data Engineering
