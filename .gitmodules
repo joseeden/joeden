@@ -31,9 +31,6 @@
 [submodule "submodules/site-swiftlink"]
 	path = submodules/site-swiftlink
 	url = git@github.com:joseeden/Swiftlink.git
-[submodule "submodules/labs-flux"]
-	path = submodules/labs-flux
-	url = git@gitlab.com:homelabs9424449/labs-flux.git
 [submodule "submodules/labs-traefik"]
 	path = submodules/labs-traefik
 	url = git@github.com:joseeden/labs-traefik.git
@@ -43,3 +40,6 @@
 [submodule "submodules/labs-kong-gateway"]
 	path = submodules/labs-kong-gateway
 	url = git@github.com:joseeden/labs-kong-gateway.git
+[submodule "submodules/labs-flux"]
+	path = submodules/labs-flux
+	url = git@gitlab.com:homelabs9424449/flux-lab.git
