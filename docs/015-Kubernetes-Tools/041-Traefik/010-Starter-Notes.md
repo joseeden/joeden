@@ -14,8 +14,6 @@ last_update:
 ---
 
 
-
-
 ## Overview
 
 Traefik is a tool used for managing and routing web traffic. It’s popular because it’s simple to use and works well with modern tools like Docker and Kubernetes.
