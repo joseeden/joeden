@@ -22,13 +22,13 @@ Traefik is a tool used for managing and routing web traffic. It’s popular beca
 - Easy to find on Docker Hub and GitHub
 - Active community behind it
 
-Traefik is designed to run efficiently and handle changes quickly.
+Traefik is designed to run efficiently and handle changes quickly. It is a perfect fit for dynamic environments like containers, where things start and stop often.
 
 - Written in Go (just like Docker and Kubernetes)
 - Lightweight and fast
 - No downtime when updating routes
 
-This makes it a perfect fit for dynamic environments like containers, where things start and stop often.
+
 
 ## Why Traefik Was Created
 
