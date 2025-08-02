@@ -40,7 +40,6 @@ Traefik was built to make handling traffic for microservices easier. Older proxi
 
 The goal was to remove the need to manually adjust settings every time something in your app changes. Traefik listens to your system and adjusts routing for you.
 
-
 ## How Traefik Works 
 
 Traefik works by watching for changes in your system (like a new container starting) and then updating itself without needing a restart.
@@ -103,6 +102,13 @@ The main benefit of Traefik is its ability to keep up with your apps automatical
 - Pulls config from running containers
 - No need to restart or reload
 - Updates routing instantly
+
+:::info
+
+Traefik attaches the service information to any incoming request to route it to the correct service.
+
+:::
+
 
 You can set rules like:
 
