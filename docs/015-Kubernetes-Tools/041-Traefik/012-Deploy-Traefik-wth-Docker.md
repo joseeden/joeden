@@ -259,7 +259,7 @@ X-Forwarded-Server: 42efc1a512b3
 
 This shows the same response you’d get in a browser, proving that routing works with host-based rules.
 
-**NOTE:** If you are using WSL, you may get a `404 page not found` error when you try to curl the host. This is because in WSL, the `localhost` refers to **WSL itself**, not thr **Windows host** where Traefik is listening.
+**NOTE:** If you are using WSL, you may get a `404 page not found` error when you try to curl the host. This is because in WSL, the `localhost` refers to **WSL itself**, not the **Windows host** where Traefik is listening.
 
 Test it in Powershell using the same command:
 
