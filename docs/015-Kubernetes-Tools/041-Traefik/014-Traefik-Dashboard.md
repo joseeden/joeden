@@ -1,6 +1,6 @@
 ---
-title: "Starter Notes"
-description: "Starter Notes on Traefik"
+title: "Traefik Dashboard"
+description: "Traefik Dashboard"
 tags: 
 - Cloud
 - DevOps
@@ -8,7 +8,7 @@ tags:
 - Containerization
 - Kubernetes
 - Traefik
-sidebar_position: 10
+sidebar_position: 14
 last_update:
   date: 2/5/2023
 ---
