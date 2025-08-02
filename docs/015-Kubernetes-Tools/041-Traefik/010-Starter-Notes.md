@@ -29,7 +29,6 @@ Traefik is designed to run efficiently and handle changes quickly. It is a perfe
 - No downtime when updating routes
 
 
-
 ## Why Traefik Was Created
 
 Traefik was built to make handling traffic for microservices easier. Older proxies didn’t work well with fast-changing apps, so something more dynamic was needed.

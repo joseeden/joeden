@@ -15,13 +15,13 @@ last_update:
 
 ## Overview
 
-Providers help Traefik connect to other tools like Docker or Kubernetes. This is how Traefik knows where your apps are and how to route traffic to them.
+Providers help Traefik connect to your system and finds your apps. This is how Traefik knows where your apps are and how to route traffic to them.
 
-- Providers connect Traefik to systems like Docker or Kubernetes  
+- They connect Traefik to systems like Docker or Kubernetes  
 - They detect changes like new containers or services  
 - Traefik updates routes automatically through the provider  
 
-Traefik watches your system and adjusts routes without needing manual changes, making your setup easier.
+By using providers, Traefik removes the need for static configs. It keeps routing up to date by watching your infrastructure, which saves time and avoids downtime.
 
 
 ## How Traefik Uses a Provider
@@ -35,23 +35,35 @@ Once Traefik is linked to a provider, it listens for events and updates itself.
 For example, when you start a new Docker container, Traefik gets notified and instantly knows how to route traffic to it.
 
 
-## Supported Providers in Traefik 2.x
+## Supported Providers 
 
 Traefik 2.x supports many types of providers, grouped into categories.
 
-- **Orchestrators**
-  - Docker
-  - Kubernetes
-  - Rancher  
-
-- **Key-value stores**
-  - Consul
-  - Etcd  
-
-- **Manual config**
-  - File  
-
 Each provider type has its own setup method. You can find full documentation on [docs.traefik.io](https://doc.traefik.io).
+
+
+| **Provider**     | **Type**        | **Configuration Type**         |
+|------------------|------------------|---------------------------------|
+| Docker           | Orchestrator     | Label                           |
+| Kubernetes       | Orchestrator     | Custom Resource or Ingress      |
+| ConsulCatalog    | Orchestrator     | Label                           |
+| Marathon         | Orchestrator     | Label                           |
+| Rancher          | Orchestrator     | Label                           |
+| File             | Manual           | TOML/YAML format                |
+| Consul           | KV               | KV                              |
+| etcd             | KV               | KV                              |
+| Redis            | KV               | KV                              |
+| Zookeeper        | KV               | KV                              |
+
+Below are some providers that are only available in Traefik 1.7:
+
+| **Provider**         | **Type**     | **Configuration Type** |
+| -------------------- | ------------ | ---------------------- |
+| Azure Service Fabric | Orchestrator | Label                  |
+| Eureka               | API          | TOML                   |
+| Amazon ECS           | Orchestrator | Label                  |
+| Amazon DynamoDB      | Orchestrator | Label                  |
+| REST                 | API          | TOML                   |
 
 
 ## Example: Docker Provider Setup
@@ -90,23 +102,4 @@ services:
 When the stack runs, Traefik automatically detects the `web` container and routes traffic from `http://localhost` to it.
 
 
-## Differences Between Traefik 1.x and 2.x
 
-Some older providers from version 1.7 are still missing in 2.x.
-
-- Not all 1.7 providers are in 2.x yet  
-- Community is still working on porting them  
-- 2.x focuses on the most used and stable providers  
-
-If you’re looking for a provider that’s missing, check if it’s still only in 1.7. Updates are ongoing, and more providers are added over time.
-
-
-## Final Thoughts on Providers
-
-Providers are the way Traefik talks to your system and finds your apps.
-
-- They help Traefik detect services in real time  
-- Setup is different per provider but usually simple  
-- Docker is a good example with label-based configuration  
-
-By using providers, Traefik removes the need for static configs. It keeps routing up to date by watching your infrastructure, which saves time and avoids downtime.
