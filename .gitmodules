@@ -10,9 +10,6 @@
 [submodule "submodules/test-jenkins-project"]
 	path = submodules/test-jenkins-project
 	url = git@github.com:joseeden/test-jenkins-project.git
-[submodule "submodules/test-kong-gateway"]
-	path = submodules/test-kong-gateway
-	url = git@github.com:joseeden/test-kong-gateway.git
 [submodule "submodules/test-static-site"]
 	path = submodules/test-static-site
 	url = git@github.com:joseeden/test-static-site.git
@@ -37,6 +34,12 @@
 [submodule "submodules/flux-lab"]
 	path = submodules/flux-lab
 	url = git@gitlab.com:homelabs9424449/flux-lab.git
-[submodule "submodules/test-kustomize-labs"]
-	path = submodules/test-kustomize-labs
-	url = git@github.com:joseeden/test-kustomize-labs.git
+[submodule "submodules/labs-traefik"]
+	path = submodules/labs-traefik
+	url = git@github.com:joseeden/labs-traefik.git
+[submodule "submodules/labs-kustomize"]
+	path = submodules/labs-kustomize
+	url = git@github.com:joseeden/labs-kustomize.git
+[submodule "submodules/labs-kong-gateway"]
+	path = submodules/labs-kong-gateway
+	url = git@github.com:joseeden/labs-kong-gateway.git
