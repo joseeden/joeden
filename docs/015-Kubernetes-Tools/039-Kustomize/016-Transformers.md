@@ -37,12 +37,12 @@ To setup a basic cluster, you can use [k3d](/docs/015-Containerization/020-Kuber
 
 To try out the examples in the succeeding sections, clone the project repository from GitHub. 
 
-- Github repo: [joseeden/test-kustomize-labs](https://github.com/joseeden/test-kustomize-labs/tree/master)
+- Github repo: [joseeden/labs-kustomize](https://github.com/joseeden/labs-kustomize/tree/master)
 
 Clone and move into the project directory:
 
 ```bash
-git clone https://github.com/joseeden/test-kustomize-labs.git 
+git clone https://github.com/joseeden/labs-kustomize.git 
 cd code-samples/04-transformers/basic-sample
 ```
 

@@ -172,7 +172,7 @@ Take note of the Base64-encoded JSON output. This will be used when creating the
 Next step is to push the package to the GitLab container registry: 
 
 ```bash  
-helm push apache-0.1.0.tgz oci://registry.gitlab.com/josemanuelitoeden/flux-lab
+helm push apache-0.1.0.tgz oci://registry.gitlab.com/josemanuelitoeden/labs-flux
 ```
 
 If you get an error on the OCI URL, you can check for the projects and their URL first:
@@ -309,7 +309,7 @@ helmrelease-apache    20m   True    Helm install succeeded for release default/h
 
 $ kubectl get helmrepo
 NAME              URL                                                  AGE    READY   STATUS
-gitlab-oci-repo   oci://registry.gitlab.com/homelabs9424449/flux-lab   5m16s  True
+gitlab-oci-repo   oci://registry.gitlab.com/homelabs9424449/labs-flux   5m16s  True
 
 $ kubectl get po
 NAME                                   READY   STATUS             RESTARTS        AGE

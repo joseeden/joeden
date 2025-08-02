@@ -130,13 +130,13 @@ To set things up quickly, we’ll use **Killercoda**, a free online Kubernetes p
 3. Once the terminal loads, run the following command to clone the lab files:
 
     ```bash
-    git clone https://github.com/joseeden/test-kustomize-labs.git
+    git clone https://github.com/joseeden/labs-kustomize.git
     ```
 
 4. Navigate to the NGINX sample project folder where the NGINX manifests are:
 
     ```bash
-    cd test-kustomize-labs/code-samples/01-sample-nginx/
+    cd labs-kustomize/code-samples/01-sample-nginx/
     ```
     ```bash
     01-sample-nginx/

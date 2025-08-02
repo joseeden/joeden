@@ -45,8 +45,8 @@ If your `kubectl` version is v1.14 or higher, Kustomize is included and you're g
 
 ## Clone the Repository
 
-The sample codes can be found at joseeden/test-kustomize-labs. In your Killercoda terminal, clone the repository: 
+The sample codes can be found at joseeden/labs-kustomize. In your Killercoda terminal, clone the repository: 
 
 ```bash
-git clone https://github.com/joseeden/test-kustomize-labs.git 
+git clone https://github.com/joseeden/labs-kustomize.git 
 ```

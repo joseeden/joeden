@@ -63,13 +63,13 @@ Optional ports:
 
 ## Using `docker-compose`
 
-<small> Reference: [joseeden/test-kong-gateway](https://github.com/joseeden/test-kong-gateway/tree/master) </small>
+<small> Reference: [joseeden/labs-kong-gateway](https://github.com/joseeden/labs-kong-gateway/tree/master) </small>
 
 Clone the repository and go inside the folder. Run `docker-compose`.
 
 ```bash
-git clone https://github.com/joseeden/test-kong-gateway.git
-cd test-kong-gateway
+git clone https://github.com/joseeden/labs-kong-gateway.git
+cd labs-kong-gateway
 
 ## Build
 docker-compose up -d --build 

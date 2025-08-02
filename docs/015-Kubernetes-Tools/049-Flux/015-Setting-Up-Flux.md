@@ -63,12 +63,12 @@ Make sure you have a [Github or Gilab account](/docs/015-Kubernetes-Tools/047-Gi
 
 Create a Git repository to store Flux CD settings.
 
-- Make a new Git repository (e.g. `flux-lab`)
+- Make a new Git repository (e.g. `labs-flux`)
 - Clone it to your computer:
 
   ```sh
-  git clone https://git.example.com/yourname/flux-lab.git
-  cd flux-lab
+  git clone https://git.example.com/yourname/labs-flux.git
+  cd labs-flux
   ```
 - Create folder structure:
 
@@ -131,7 +131,7 @@ We now install Flux to the Kubernetes cluster using the Git repo.
 ```sh
 flux bootstrap gitlab \
   --owner=yourname \
-  --repository=flux-lab \
+  --repository=labs-flux \
   --branch=main \
   --path=clusters/dev \
   --token-auth \
@@ -189,7 +189,7 @@ So when you install FluxCD, it knows where to look based on your setup. The Git 
 ```bash
 $  kubectl get gitrepo -n flux-system
 NAME          URL                                               AGE   READY   STATUS
-flux-system   https://gitlab.com/user/flux-lab.git   15m   True    stored artifact for revision 'main@sha1:123456789123456789123456789' 
+flux-system   https://gitlab.com/user/labs-flux.git   15m   True    stored artifact for revision 'main@sha1:123456789123456789123456789' 
 ```
 
 ## Secrets Used by FluxCD

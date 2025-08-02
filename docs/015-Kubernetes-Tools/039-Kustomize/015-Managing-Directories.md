@@ -284,10 +284,10 @@ Before getting started, make sure you have a running Kubernetes cluster. You can
 
 ### Clone the Repository  
 
-All the files are in this Github repo: [joseeden/test-kustomize-labs](https://github.com/joseeden/test-kustomize-labs/tree/master/code-samples/03-multi-tier-app)
+All the files are in this Github repo: [joseeden/labs-kustomize](https://github.com/joseeden/labs-kustomize/tree/master/code-samples/03-multi-tier-app)
 
 ```bash
-git clone https://github.com/joseeden/test-kustomize-labs.git 
+git clone https://github.com/joseeden/labs-kustomize.git 
 ```
 
 Go to the project directory:

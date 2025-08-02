@@ -270,7 +270,7 @@ export GITLAB_TOKEN=<your-token>
 ## Replace owner ID
 flux bootstrap gitlab \
 --owner=josemanuelitoeden \
---repository=flux-lab \
+--repository=labs-flux \
 --branch=main \
 --path=clusters/eks \
 --token-auth \
