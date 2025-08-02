@@ -51,7 +51,6 @@ Traefik works by watching for changes in your system (like a new container start
 
 This means you no longer need to manually edit proxy settings every time your app changes. Traefik takes care of it instantly.
 
-
 ## Key Features
 
 Traefik connects easily to many systems and adjusts its behavior on its own.
