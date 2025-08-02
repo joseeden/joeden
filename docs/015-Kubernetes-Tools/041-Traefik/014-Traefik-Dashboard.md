@@ -17,6 +17,10 @@ last_update:
 
 The dashboard gives a clear view of your traffic system and running services.
 
+- Quick health check of traffic and services
+- Helps with troubleshooting and monitoring
+- Shows warnings and errors
+
 To setup the dashboard and a simple test service, please see [Deploy Traefik with Docker.](/docs/015-Kubernetes-Tools/041-Traefik/012-Deploy-Traefik-wth-Docker.md)
 
 
