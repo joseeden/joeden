@@ -72,10 +72,12 @@
 
 1/17/2023   - Gitlab
 2/26/2023   - Kong
+2/5/2023   - Traefik
 3/2/2023    - Data Storytelling
 5/4/2023    - ML
 5/12/2023   - MLOps Concept
 5/13/2023   - ML - Developing Models
+7/19/2023   - Golang
 7/19/2023   - Golang
 9/26/2023   - Java
 

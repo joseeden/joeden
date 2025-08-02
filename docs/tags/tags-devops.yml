@@ -102,6 +102,10 @@ Helm:
   label: 'Helm'
   permalink: '/Helm'
   description: 'Docs related to Helm'
+Traefik:
+  label: 'Traefik'
+  permalink: '/Traefik'
+  description: 'Docs related to Traefik'
 GitOps:
   label: 'GitOps'
   permalink: '/GitOps'
