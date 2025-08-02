@@ -188,26 +188,29 @@ Here’s a really simple example of a Traefik Docker Compose setup:
 version: '3'
 
 services:
-  reverse-proxy:
-    image: traefik:v2.11
+  traefik:
+    image: traefik:v2.3
     command:
-      - "--api.insecure=true"
-      - "--providers.docker=true"
+      - --api.insecure=true       # Enables the Traefik Dashboard
+      - --providers.docker=true
+      - --log.level=INFO
       - "--entrypoints.web.address=:80"
     ports:
-      - "80:80"
-      - "8080:8080"
+      - "80:80"                   # Exposes port 80 for incoming web requests
+      - "8080:8080"               # The Web UI port http://0.0.0.0:8080
     volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
+      - /var/run/docker.sock:/var/run/docker.sock
 
   whoami:
-    image: containous/whoami
-    labels:
-      - "traefik.http.routers.whoami.rule=Host(`localhost`)"
+     image: containous/whoami
+     labels:                      # Set hostname to the new service
+       - "traefik.http.routers.whoami.rule=Host(`whoami.docker.localhost`)"
 ```
 
 **Expected result:**
 
 When you open your browser to `http://localhost`, it should route you to the `whoami` service, and you’ll see some basic request info.
 
+
+To see this in action, please see [Deploy Traefik with Docker.](/docs/015-Kubernetes-Tools/041-Traefik/012-Deploy-Traefik-wth-Docker.md)
 
