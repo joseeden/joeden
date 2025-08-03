@@ -57,7 +57,7 @@ For example, the dashboard itself runs under the `dashboard@internal` service:
 ![](/img/docs/08032025-traefik-dashboard-3.PNG)
 
 
-If you click the **HTTP Services** tab, you will all the active services. In this example, one of them is `whoami-01-overview@docker`:
+If you click the **HTTP Services** tab, you will see all the active services. In this example, one of them is `whoami-01-overview@docker`:
 
 ![](/img/docs/08032025-traefik-dashboard-4.PNG)
 
@@ -81,7 +81,7 @@ Please see [Deploy Traefik with Docker.](/docs/015-Kubernetes-Tools/041-Traefik/
 :::
 
 
-Going back toin your browser, you should now see three servers listed for the `whoami` service.
+Going back to your browser, you should now see three servers listed for the `whoami` service.
 
 
 ![](/img/docs/08032025-traefik-dashboard-6.PNG)

@@ -39,11 +39,10 @@ To try out the examples in the succeeding sections, clone the project repository
 
 - Github repo: [joseeden/labs-kustomize](https://github.com/joseeden/labs-kustomize/tree/master)
 
-Clone and move into the project directory:
+Clone the repository:
 
 ```bash
 git clone https://github.com/joseeden/labs-kustomize.git 
-cd code-samples/04-transformers/05-configmaps
 ```
 
 <!-- Project directory structure:
@@ -51,6 +50,9 @@ cd code-samples/04-transformers/05-configmaps
 ```bash
 
 ``` -->
+
+## Before Generators 
+
 
 
 ## Common Generators
