@@ -13,7 +13,181 @@ last_update:
   date: 4/19/2022
 ---
 
-## Overview 
+
+## Before Generators 
+
+Sometimes in Kubernetes, even if you update a ConfigMap or Secret, your app won't see the change unless you manually restart it. This sections shows a simple example of that issue.
+
+- Set up a ConfigMap with a password
+- Reference the password in a deployment as an environment variable
+- Update the password later and notice the deployment does not restart
+
+### Sample Setup Using ConfigMap
+
+Go to the section directory inside the repo:
+
+```bash
+cd labs-kustomize/code-samples/05-before-generators 
+```
+
+You will see manifests for a deployment and ConfigMap:
+
+- **configmap.yaml**
+
+    ```yaml
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: db-credentials
+    data:
+      password: password1
+    ```
+
+- **deployment.yaml**
+
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: nginx-deployment
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: nginx
+      template:
+        metadata:
+          labels:
+            app: nginx
+        spec:
+          containers:
+          - name: nginx
+            image: nginx
+            env:
+            - name: DB_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: db-credentials
+                  key: password
+    ```
+
+
+:::info 
+
+We use `DB_PASSWORD` to read the `password` key from the `db-credentials` ConfigMap.
+
+:::
+
+<!-- The app gets the value as an environment variable, but it won't get updated if the ConfigMap value changes later. -->
+
+Create a namespace:
+
+```bash
+kubectl create ns test-labs-1 
+```
+
+Apply the changes:
+
+```bash
+kubectl apply -f . -n test-labs-1 
+```
+
+Confirm the resources are created:
+
+```bash
+$ kubectl get all -n test-labs-1 
+
+NAME                                    READY   STATUS    RESTARTS   AGE
+pod/nginx-deployment-6cc58477b8-blz8d   1/1     Running   0          101s     
+
+NAME                               READY   UP-TO-DATE   AVAILABLE   AGE       
+deployment.apps/nginx-deployment   1/1     1            1           101s      
+
+NAME                                          DESIRED   CURRENT   READY   AGE 
+replicaset.apps/nginx-deployment-6cc58477b8   1         1         1       101s
+```
+
+### Verify the Environment Variable
+
+You can check if the environment variable is correctly set:
+
+```bash
+kubectl exec nginx-deployment-6cc58477b8-blz8d -n test-labs-1  -- printenv | grep DB
+```
+
+Expected output:
+
+```
+DB_PASSWORD=password1
+```
+
+This shows the app is reading from the ConfigMap correctly the first time.
+
+### What Happens When You Update the ConfigMap
+
+In the `configmap.yaml`, change the password from `password1` to `password2`.
+
+```yaml
+data:
+  password: password2
+```
+
+Then apply the change:
+
+```bash
+kubectl apply -f configmap.yaml
+```
+
+Expected output:
+
+```
+configmap/db-credentials configured
+```
+
+Now check the deployment again:
+
+```bash
+kubectl get pods
+kubectl exec <pod-name> -n test-labs-1 -- printenv | grep DB
+```
+
+You still get:
+
+```
+DB_PASSWORD=password1
+```
+
+Even though the ConfigMap has `password2`, the pod still shows `password1`. This is because the pod wasn't restarted.
+
+This shows the problem: ConfigMap changes don’t trigger a pod restart automatically.
+
+### Manually Restarting the Deployment
+
+You can manually restart the deployment like this:
+
+```bash
+kubectl rollout restart deployment nginx-deployment
+```
+
+Then check the new pod:
+
+```bash
+kubectl get pods
+kubectl exec <new-pod-name> -- printenv | grep DB
+```
+
+Expected output:
+
+```
+DB_PASSWORD=password2
+```
+
+After the restart, the new pod picks up the updated password. This confirms that pod restarts are required to reflect ConfigMap or Secret updates.
+
+This issue is why tools like **config generators** exist - to help automate restarts when configuration changes.
+
+
+## Enter Generators 
 
 Generators are used to create new Kubernetes resources automatically.
 
@@ -50,9 +224,6 @@ git clone https://github.com/joseeden/labs-kustomize.git
 ```bash
 
 ``` -->
-
-## Before Generators 
-
 
 
 ## Common Generators
