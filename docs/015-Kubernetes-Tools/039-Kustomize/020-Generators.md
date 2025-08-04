@@ -457,7 +457,7 @@ kube-root-ca.crt     1      6m24s
 ```
 
 
-### Lab 2: Generate ConfigMap from a File
+### Lab 2: ConfigMap from a File
 
 This lab shows how to generate a ConfigMap from a file using Kustomize.
 
