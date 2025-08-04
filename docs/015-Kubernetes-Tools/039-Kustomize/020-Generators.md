@@ -14,6 +14,25 @@ last_update:
 ---
 
 
+## Clone the Repository  
+
+To try out the examples in the succeeding sections, clone the project repository from GitHub. 
+
+- Github repo: [joseeden/labs-kustomize](https://github.com/joseeden/labs-kustomize/tree/master)
+
+Clone the repository:
+
+```bash
+git clone https://github.com/joseeden/labs-kustomize.git 
+```
+
+<!-- Project directory structure:
+
+```bash
+
+``` -->
+
+
 ## Before Generators 
 
 Sometimes in Kubernetes, even if you update a ConfigMap or Secret, your app won't see the change unless you manually restart it. This sections shows a simple example of that issue.
@@ -207,23 +226,6 @@ To setup a basic cluster, you can use [k3d](/docs/015-Containerization/020-Kuber
 :::
 
 
-## Clone the Repository  
-
-To try out the examples in the succeeding sections, clone the project repository from GitHub. 
-
-- Github repo: [joseeden/labs-kustomize](https://github.com/joseeden/labs-kustomize/tree/master)
-
-Clone the repository:
-
-```bash
-git clone https://github.com/joseeden/labs-kustomize.git 
-```
-
-<!-- Project directory structure:
-
-```bash
-
-``` -->
 
 
 ## Common Generators
