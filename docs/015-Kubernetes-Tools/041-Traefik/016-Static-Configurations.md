@@ -96,6 +96,9 @@ Static config can also be set through environment variables.
 Environment variables are helpful when you want to change settings depending on where you deploy.
 
 ```yaml
+## Docker compose file
+version: "3.3"
+
 services:
   traefik:
     image: traefik:v2.9
