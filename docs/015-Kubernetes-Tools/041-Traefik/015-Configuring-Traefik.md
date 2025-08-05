@@ -25,7 +25,7 @@ Static configuration sets up the base of Traefik. Dynamic configuration handles 
 
 ## Static Configurations
 
-Static config sets up how Traefik should start and behave initially.
+Static configuration sets up how Traefik should start and behave initially.
 
 - Needed to enable features like dashboard and logs
 - Used to define entry points (e.g. HTTP, HTTPS)
@@ -44,7 +44,7 @@ For more information, please see [Static Configurations](/docs/015-Kubernetes-To
 
 ## Dynamic Configurations
 
-Dynamic config is used to define services, routers, middlewares, and other runtime behaviors.
+Dynamic configuration is used to define services, routers, middlewares, and other runtime behaviors.
 
 - Applied while Traefik is running
 - Changes are picked up automatically
