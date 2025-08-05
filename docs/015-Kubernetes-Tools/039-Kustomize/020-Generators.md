@@ -1216,14 +1216,13 @@ To remove the resources across all the created namespaces:
 kubectl delete all --all -n test-lab-1
 kubectl delete all --all -n test-lab-2
 kubectl delete all --all -n test-lab-4
-kubectl delete all --all -n test-lab-5
 kubectl delete all --all -n test-lab-6
 ```
 
 You can then delete the namespaces by repeating the `delete all` command multiple times, or you can also define the namespaces in this way:
 
 ```bash
-kubectl delete ns test-lab-{1,2,3,4,5,6}
+kubectl delete ns test-lab-{1,2,3,4,6}
 ```
 
 Output:
@@ -1233,7 +1232,6 @@ namespace "test-lab-1" deleted
 namespace "test-lab-2" deleted
 namespace "test-lab-3" deleted
 namespace "test-lab-4" deleted
-namespace "test-lab-5" deleted
 namespace "test-lab-6" deleted
 ```
 
