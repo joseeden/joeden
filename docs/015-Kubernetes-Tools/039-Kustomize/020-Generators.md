@@ -469,26 +469,107 @@ cd labs-kustomize/code-sample/06-generators-configmaps/lab_02_configmap_from_fil
 
 Inside this directory, we have the following files:
 
-- **kustomization.yaml**
+<details>
+  <summary> ***kustomization.yaml** </summary>
 
-    ```yaml
-    namespace: test-labs-2
+```yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
 
-    configMapGenerator:
-      - name: nginx-config
-        files:
-          - nginx.conf
-    ```
+namespace: test-labs-2
 
-- **nginx.conf**
+commonLabels:
+  version: lec-12
+  
+namePrefix: lec-12-
 
-    ```bash
-    data:
-      nginx.conf: |
-        server {
-          listen 80;
+configMapGenerator:
+  - name: nginx-config
+    files:
+      - nginx.conf
+
+resources:
+- nginx-deployment.yml
+```
+
+</details>
+
+<details>
+  <summary> **nginx.conf** </summary>
+ 
+```bash
+events {
+  worker_connections  1024;
+}
+
+http {
+    server {
+        listen 80;
+        listen [::]:80;
+        
+        server_name localhost;
+
+        root /usr/share/nginx/html;
+
+        location ~ \.(gif|jpg|png)$ {
+            root /data/images;
         }
-    ```
+
+        location /google {
+            proxy_pass http://www.google.com/search;
+        }
+
+        location / {
+          try_files $uri $uri/ =404;
+        }
+    }
+}
+```
+
+</details>
+
+<details>
+  <summary> **nginx-deployment.yml** </summary>
+ 
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: test-labs-2
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.23.3-alpine-slim
+        ports:
+        - containerPort: 80
+        
+        volumeMounts:
+        - mountPath: /etc/nginx/nginx.conf
+          name: nginx-config
+          subPath: nginx.conf
+
+      volumes:
+      - name: nginx-config
+        configMap:
+          name: nginx-config
+          items:
+          - key: nginx.conf
+            path: nginx.conf 
+```
+
+</details>
+
+
 
 The generator creates a ConfigMap where the filename is the key, and the content is the value.
 
@@ -504,57 +585,60 @@ Apply the changes:
 kubectl apply -k . 
 ```
 
+Verify the deployment:
+
+```bash
+$ kubectl get all -n test-labs-2
+
+NAME                                    READY   STATUS    RESTARTS   AGE
+pod/nginx-deployment-8667b86845-2dq2z   1/1     Running   0          59s
+
+NAME                               READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/nginx-deployment   1/1     1            1           59s
+
+NAME                                          DESIRED   CURRENT   READY   AGE
+replicaset.apps/nginx-deployment-8667b86845   1         1         1       59s
+```
+
 Check that the ConfigMap was created:
 
 ```bash
-kubectl get cm -n test-labs-2 
-```
+$ kubectl get cm -n test-labs-2 
 
-Example output:
-
-```bash
 NAME                      DATA   AGE
 kube-root-ca.crt          1      20m
-nginx-config-g49hb84cbf   1      5s
+nginx-config-48gchkg456   1      5s
 ```
 
 You can also verify the contents of the ConfigMap by running the `describe` command:
 
 ```bash
-kubectl describe cm nginx-config-g49hb84cbf -n test-labs-2
+kubectl describe cm nginx-config-48gchkg456 -n test-labs-2
 ```
-
-Output:
-
-```bash
-Name:         nginx-config-g49hb84cbf
-Namespace:    test-labs-2
-Labels:       <none>
-Annotations:  <none>
-
-Data
-====
-nginx.conf:
-----
-data:
-  nginx.conf: |
-    server {
-      listen 80;
-    }
-
-
-BinaryData
-====
-
-Events:  <none>
-```
-
 
 :::info
 
 Just like with ConfigMaps, you can generate Secrets using `secretGenerator`. It works the same way, but values are base64-encoded and a random suffix is also added.
 
 :::
+
+
+To verify that the configuration actually work, we can do port-fowarding:
+
+```bash
+kubectl port-forward -n test-labs-2 deploy/nginx-deployment 31000:80
+```
+
+It should return:
+
+```bash
+Forwarding from 127.0.0.1:31000 -> 80
+Forwarding from [::1]:31000 -> 80
+```
+
+Open a browser and navigate to `http://localhost:31000/`:
+
+![](/img/docs/08042025-sample-nginx.PNG)
 
 
 ### Lab 3: ConfigMap with File and Literal
@@ -884,12 +968,243 @@ app.port=8081
 ```
 
 
-### Lab 6: WIP
+### Lab 6: Using `disableNameSuffixHash`
 
-Get the postgres database ip address:
+There is an option to disable the automatic name hash suffix that Kustomize appends to configMap and secret resource names. This is useful in scenarios where you want predictable, fixed names for referencing these resources, such as when they are mounted into Pods or referenced by third-party tools.
+
+Navigate to the lab directory inside the repo:
 
 ```bash
-kubectl get svc/lec-12-mysql --output="jsonpath={.spec.clusterIP}"
+cd labs-kustomize/code-sample/06-generators-configmaps/lab_06_using_disablenamesuffixhash
+```
+
+Inside this directory:
+
+```bash
+├── base
+│   ├── deployment.yml
+│   ├── kustomization.yml
+│   └── service.yml
+├── kustomization.yml
+└── mysql
+    ├── deployment.yml
+    ├── kustomization.yml
+    ├── mysql-config.properties
+    └── service.yml
+```
+
+The root `kustomization.yaml` file:
+
+```yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+commonLabels:
+  version: test-labs-6
+
+namePrefix: test-labs-6-
+
+resources:
+- mysql
+- base
+```
+
+This references two subdirectories, `mysql` and `base`, which define the deployment and service configurations for MySQL and WordPress.
+
+The ConfigMap generator is defined in the `mysql/kustomization.yaml` file:
+
+```yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: test-labs-6
+
+configMapGenerator:
+  - name: mysql-config
+    envs:
+      - mysql-config.properties
+
+generatorOptions:
+  disableNameSuffixHash: true
+  labels:
+    generated: "true"
+
+resources:
+- deployment.yml
+- service.yml
+```
+
+The `configMapGenerator` then references the file `mysql-config.properties`:
+
+```bash
+MYSQL_ROOT_PASSWORD=admin
+MYSQL_DATABASE=wordpress
+```
+
+Before applying the files, create the namespace:
+
+```bash
+kubectl create ns test-labs-6 
+```
+
+Then apply the full Kustomize config:
+
+```bash
+kubectl apply -k .
+```
+
+Output:
+
+```bash
+configmap/test-labs-6-mysql-config created
+service/test-labs-6-mysql created
+service/test-labs-6-wordpress created
+deployment.apps/test-labs-6-mysql created
+deployment.apps/test-labs-6-wordpress created
+```
+
+Verify the resources are created:
+
+```bash
+kubectl get all -n test-labs-6 
+```
+
+We should see the pods and services for both MySQL and WordPress:
+
+```bash
+NAME                                         READY   STATUS    RESTARTS   AGE
+pod/test-labs-6-mysql-bbdfc966f-qzwsj        1/1     Running   0          87s
+pod/test-labs-6-wordpress-7cc596ddd8-66cfn   1/1     Running   0          87s
+
+NAME                            TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+service/test-labs-6-mysql       ClusterIP   10.43.101.67   <none>        3306/TCP       87s
+service/test-labs-6-wordpress   NodePort    10.43.50.233   <none>        80:30001/TCP   87s
+
+NAME                                    READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/test-labs-6-mysql       1/1     1            1           87s
+deployment.apps/test-labs-6-wordpress   1/1     1            1           87s
+
+NAME                                               DESIRED   CURRENT   READY   AGE        
+replicaset.apps/test-labs-6-mysql-bbdfc966f        1         1         1       87s        
+replicaset.apps/test-labs-6-wordpress-7cc596ddd8   1         1         1       87s  
+```
+
+Check the ConfigMap:
+
+```bash
+kubectl get cm -n test-labs-6
+```
+
+Output:
+
+```bash
+NAME                       DATA   AGE
+kube-root-ca.crt           1      29m
+test-labs-6-mysql-config   2      2m34s
+```
+
+Verify the contents of the ConfigMap:
+
+```bash
+kubectl describe cm  test-labs-6-mysql-config -n test-labs-6
+```
+
+We can see both the database name and the root password:
+
+```bash
+Name:         test-labs-6-mysql-config
+Namespace:    test-labs-6
+Labels:       generated=true
+              version=test-labs-6
+Annotations:  <none>
+
+Data
+====
+MYSQL_DATABASE:
+----
+wordpress
+
+MYSQL_ROOT_PASSWORD:
+----
+admin 
+```
+
+We can also verify that the environment variables exist in the MySQL pod:
+
+```bash
+kubectl exec -n test-labs-6 <mysql-pod-name>  -- printenv | grep ^MYSQL
+```
+
+Output:
+
+```bash
+MYSQL_MAJOR=8.4
+MYSQL_VERSION=8.4.6-1.el9
+MYSQL_SHELL_VERSION=8.4.6-1.el9
+MYSQL_DATABASE=wordpress
+MYSQL_ROOT_PASSWORD=admin
+```
+
+#### Updating the ConfigMap 
+
+Let's say we want to to add a MySQL credentials in the `mysql/mysql-config.properties`:
+
+```bash
+MYSQL_ROOT_PASSWORD=admin
+MYSQL_DATABASE=wordpress
+MYSQL_USER=wordpress
+MYSQL_PASSWORD=wordpress 
+```
+
+Re-apply the changes:
+
+```bash
+kubectl apply -k . 
+```
+
+If you check the ConfigMaps again, you will see that it will not create another ConfigMap with a new hash. Instead, it will overwrite the existing one:
+
+```bash
+$ kubectl get cm -n test-labs-6
+
+NAME                       DATA   AGE
+kube-root-ca.crt           1      88m
+test-labs-6-mysql-config   4      14s
+```
+
+Now, here's the **downside of using `disableNameSuffixHash`:**
+
+> If you set `disableNameSuffixHash: true` in your `configMapGenerator`, Kustomize generates the ConfigMap with a fixed name that never changes, even if the content updates.
+>
+> Because the ConfigMap name stays the same, your Deployment’s pod spec does not change, so Kubernetes sees no change and won’t restart or recreate pods automatically.
+
+You will need to manually trigger a rollout restart:
+
+```bash
+kubectl rollout restart deployment test-labs-6-mysql -n test-labs-6
+```
+
+Get the new MySQL pod:
+
+```bash
+kubectl get pods -n test-labs-6 
+```
+
+Then check the environment variables set in the pod:
+
+```bash
+kubectl exec -n test-labs-6 <mysql-pod-name> -- printenv | grep ^MYSQL
+kubectl exec -n test-labs-6 test-labs-6-mysql-7d8c44cdf8-jkmjp  -- printenv | grep ^MYSQL
+```
+
+Output:
+
+```bash
+MYSQL_MAJOR=5.6
+MYSQL_VERSION=5.6.51-1debian9
+MYSQL_ROOT_PASSWORD=admin
+MYSQL_USER=wordpress
+MYSQL_DATABASE=wordpress
+MYSQL_PASSWORD=wordpress
 ```
 
 
