@@ -305,8 +305,11 @@ Once set, Traefik’s dashboard will show all configured EntryPoints.
 - `websecure` for HTTPS (port 443)
 - Internal EntryPoints like the dashboard itself may also be listed
 
-If a test app like `cat-app` is connected, you’ll see how EntryPoints link routers to services in the dashboard.
+<div class="img-center"> 
 
+![](/img/docs/08062025-traefik-dashboard-config-svc.PNG)
+
+</div>
 
 
 ## Labs 
@@ -407,11 +410,6 @@ services:
       - "8080:8080"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-
-  whoami:
-    image: containous/whoami
-    labels:
-      - "traefik.http.routers.whoami.rule=Host(`whoami.docker.localhost`)"
 ```
 
 Run it:
@@ -460,11 +458,6 @@ services:
       - "8080:8080"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-
-  whoami:
-    image: containous/whoami
-    labels:
-      - "traefik.http.routers.whoami.rule=Host(`whoami.docker.localhost`)"
 ```
 
 Run it:
@@ -487,11 +480,182 @@ docker-compose -f docker-compose.cli.yml stop
 ```
 
 
+### Lab 4: Providers and Entrypoints 
+
+:::info 
+
+**Pre-requisites:** 
+
+You need to setup a Docker Swarm to test this lab. A simple one-node setup is enough.
+For more information, please see [Using Docker Swarm.](/docs/001-Personal-Notes/050-Project-Pre-requisites/010-Containers/012-Using-Docker-Swarm.md)
+
+:::
+
+This lab shows how to set up Traefik using Docker Swarm with custom entry points and services like a simple cat GIF generator.
+
+- Uses Docker Swarm as the orchestrator
+- Sets up custom entry points (`web` and `websecure`)
+- Deploys a test app (cat GIF generator) behind Traefik
+
+We have the following files:
+
+- `docker-compose.configuration.yml`
+
+    ```yaml
+    version: '3'
+
+    services:
+      traefik:
+        image: traefik:v2.3
+        ports:
+          - "80:80"
+          - "443:443"
+          - "8080:8080"
+        volumes:
+          - /var/run/docker.sock:/var/run/docker.sock
+          - ./traefik-entrypoints.yml:/etc/traefik/traefik.yml
+
+      catapp:
+        image: mikesir87/cats:1.0
+        labels:
+          - "traefik.enable=true"
+          - "traefik.http.routers.catapp.rule=Host(`catapp.localhost`)"
+          - "traefik.http.routers.catapp.entrypoints=web"
+          - "traefik.http.services.catapp.loadbalancer.server.port=5000"
+    ```
+
+- `traefik-entrypoints.yml`
+
+    ```yaml
+    api:
+      dashboard: true
+      insecure: true
+
+    providers:
+      docker:
+        exposedByDefault: false
+
+    log:
+      level: DEBUG
+
+    entryPoints:
+      web:
+        address: ":80"
+      websecure:
+        address: ":443"
+    ```
+
+These configurations define Traefik’s behavior and how it connects to the app using HTTP on port 80. Use Docker Swarm to deploy the stack.
+
+```bash
+docker stack deploy -c docker-compose.configuration.yml traefik
+```
+
+Expected output:
+
+```bash
+Creating network traefik_default
+Creating service traefik_traefik
+Creating service traefik_catapp
+```
+
+Check the status of the services:
+
+```bash
+docker stack ps traefik
+```
+
+If everything works, both Traefik and the `catapp` service will be running.
+
+```bash
+ID             NAME                IMAGE                NODE             DESIRED STATE   CURRENT STATE            ERROR     PORTS
+2wysrf2dlxxy   traefik_catapp.1    mikesir87/cats:1.0   docker-desktop   Running         Running 22 minutes ago
+wbnfo6n1kmmi   traefik_traefik.1   traefik:v2.3         docker-desktop   Running         Running 23 minutes ago 
+```
+
+Open your browser and go to:
+
+```
+http://localhost:8080
+```
+
+You should see the Traefik dashboard.
+
+<div class="img-center"> 
+
+![](/img/docs/08062025-traefik-catapp-1.PNG)
+
+</div>
+
+
+Go to **Routers** and click **Explore**. You should see the `Host(catapp.localhost)` rule.
+
+This new route is using the `web` entry point (port 80) and routes traffic to the `catapp` service.
+
+<div class="img-center"> 
+
+![](/img/docs/08062025-traefik-routers-explore.PNG)
+
+</div>
+
+
+Click the router for more details:
+
+<div class="img-center"> 
+
+![](/img/docs/08062025-traefik-routers-click-see-more-details.PNG)
+
+</div>
+
+
+Go to **HTTP Services**, select `catapp@docker`, and confirm it’s using:
+
+- Load balancer
+- Port 5000 inside the container
+
+<div class="img-center"> 
+
+![](/img/docs/08062025-traefik-svc-catapp.PNG)
+
+</div>
+
+
+Finally, to verify that everything correctly, open a web browser and navigate to:
+
+```
+http://catapp.localhost/
+```
+
+You’ll see the random cat GIF generator:
+
+![](/gif/docs/08062025-catapp-svc.gif)
+
+This confirms the router, entry point, and service are working together correctly through Traefik.
+
+<div class="img-center"> 
+
+![](/gif/docs/08062025-catapp-svc.gif)
+
+</div>
+
+
+To stop and delete the stack:
+
+```bash
+docker stack rm traefik
+```
+
 
 ## Cleanup
 
 To remove the resources:
 
 ```bash
-docker compose down
+docker compose -f <CONFIG_FILE_PATH> down
+```
+
+To remove all stacks currently deployed in your Swarm:
+
+```bash
+docker stack ls --format '{{.Name}}' | xargs -r docker stack rm
 ```

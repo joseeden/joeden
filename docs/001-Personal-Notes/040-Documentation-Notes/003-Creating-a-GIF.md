@@ -15,7 +15,7 @@ Download the portable from here: [ScreenToGif](https://www.screentogif.com/)
 Take note of the location where you put the exe file. IN my case, I put it in my Downloads folder.
 
 ```bash
-C:\Users\Eden.Jose\Downloads\Installers\ScreenToGif.2.41.Portable.x64 
+C:\Users\joseeden\Downloads\Programs
 ```
 
 Double-click the exe file to start using it. You should see this:
