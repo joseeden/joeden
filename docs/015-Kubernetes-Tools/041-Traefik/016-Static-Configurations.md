@@ -33,11 +33,10 @@ Before running Traefik, you need to set up its **static configuration**. This te
 - Using Command Line Arguments
 - Using Environment Variables
 
+**Traefik only accepts one static config source at a time.** This means you can only pick one method; mixing methods can sometimes cause issues.
 
-Traefik only accepts one static config source at a time. This means you can only pick **one** method; mixing methods can sometimes cause issues.
 
-
-## Using a Configuration File
+### Using a Configuration File
 
 You can define static settings in a YAML or TOML file.
 
@@ -60,7 +59,7 @@ entryPoints:
 Traefik will look for this file when it starts. If found, it loads the settings from there.
 
 
-## Using Command Line Arguments
+### Using Command Line Arguments
 
 You can also set static config directly in the command line or in a Docker Compose file.
 
@@ -85,7 +84,7 @@ services:
 ```
 
 
-## Using Environment Variables
+### Using Environment Variables
 
 Static config can also be set through environment variables.
 

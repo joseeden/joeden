@@ -1,6 +1,6 @@
 ---
-title: "Dynammic Configurations"
-description: "Dynammic Configurations"
+title: "Dynamic Configurations"
+description: "Dynamic Configurations"
 tags: 
 - Cloud
 - DevOps
