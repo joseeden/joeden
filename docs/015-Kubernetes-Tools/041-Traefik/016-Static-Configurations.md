@@ -199,7 +199,7 @@ EntryPoints define which ports Traefik listens on for incoming requests.
 
 EntryPoints control what traffic is allowed into Traefik, and how it should be handled from the start.
 
-![](/imdg/docs/all-things-devops-traefik-entrypoint.png)
+![](/img/docs/all-things-devops-traefik-entrypoint.png)
 
 ### Defining EntryPoints
 
