@@ -25,15 +25,48 @@ Static configuration sets up how Traefik should start and behave initially.
 Static config is essential for starting Traefik and enabling core features. Once Traefik is running, changing static config needs a restart.
 
 
+## Clone the Repository 
+
+To try out the examples in the succeeding sections, clone the project repository from GitHub. 
+
+- Github repo: [joseeden/labs-traefik](https://github.com/joseeden/labs-traefik/tree/master)
+
+Clone and move into the project directory:
+
+```bash
+git clone https://github.com/joseeden/labs-traefik.git 
+cd labs-traefik/02-configuration
+```
+
+Project structure:
+
+```bash
+02-configuration
+.
+├── docker-compose.cli.yml
+├── docker-compose.configuration.yml
+├── docker-compose.env.yml
+├── docker-compose.file.yml
+├── traefik-entrypoints.yml
+└── traefik.yml 
+```
+
+
 ## Setting Static Configuration 
 
 Before running Traefik, you need to set up its **static configuration**. This tells Traefik how to start and what core features to enable. There are three methods:
 
-- Using a configuration file
-- Using Command Line Arguments
-- Using Environment Variables
+* Use **file-based config** for easier manual editing
+* Use **command-line flags** for direct, quick control
+* Use **environment variables** for automation and CI/CD
 
 **Traefik only accepts one static config source at a time.** This means you can only pick one method; mixing methods can sometimes cause issues.
+
+:::info 
+
+For modern workflows, environment variables are often the most flexible and easy to maintain.
+
+:::
 
 
 ### Using a Configuration File
@@ -274,3 +307,191 @@ Once set, Traefik’s dashboard will show all configured EntryPoints.
 
 If a test app like `cat-app` is connected, you’ll see how EntryPoints link routers to services in the dashboard.
 
+
+
+## Labs 
+
+### Lab 1: Using a Configuration File
+
+This method reads settings from a file inside the Traefik container.
+
+Here’s a sample setup using `docker-compose.file.yml`:
+
+```yaml
+version: '3'
+
+services:
+  traefik:
+    image: traefik:v2.3
+    ports:
+      - "80:80"         # web requests
+      - "8080:8080"     # dashboard
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./traefik.yml:/etc/traefik/traefik.yml
+```
+
+The `traefik.yml` is the static configuration file for Traefik.
+
+```yaml
+# API and dashboard configuration
+api:
+  # Dashboard
+  #
+  #
+  dashboard: true
+  insecure: true
+# Docker configuration backend
+providers:
+  docker: 
+    watch: true
+    exposedByDefault: false
+    swarmMode: true
+# Traefik Logging
+log:
+  level: INFO
+```
+
+This sample configuration enables the dashboard (insecure mode), configures Docker as a provider in Swarm mode, and sets the log level to INFO.
+
+Run it:
+
+```bash
+docker-compose -f docker-compose.file.yml up -d
+```
+
+Output:
+
+```bash
+✔ Network 02-configuration_default      Created                                                                                                                                                 0.1s 
+✔ Container 02-configuration-traefik-1  Started 
+```
+
+Check logs:
+
+```bash
+docker-compose -f docker-compose.file.yml logs
+```
+
+The logs confirms that Traefik successfully read the static configuration from the traefik.yml file.
+
+```bash
+traefik-1  | Configuration loaded from file: /etc/traefik/traefik.yml
+```
+
+Stop the service:
+
+```bash
+docker-compose -f docker-compose.file.yml stop
+```
+
+
+### Lab 2: Using Command-Line Arguments
+
+This method defines settings directly in the Docker Compose `command` section.
+
+Consider `docker-compose.cli.yml`:
+
+```yaml
+version: '3'
+
+services:
+  traefik:
+    image: traefik:v2.3
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker"
+      - "--log.level=INFO"
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  whoami:
+    image: containous/whoami
+    labels:
+      - "traefik.http.routers.whoami.rule=Host(`whoami.docker.localhost`)"
+```
+
+Run it:
+
+```bash
+docker-compose -f docker-compose.cli.yml up -d
+```
+
+Now check the logs:
+
+```bash
+docker-compose -f docker-compose.cli.yml logs
+```
+
+The logs show Traefik was configured successfully using CLI flags instead of a config file.
+
+```bash
+traefik-1  | Configuration loaded from flags.
+```
+
+Stop the service:
+
+```bash
+docker-compose -f docker-compose.cli.yml stop
+```
+
+
+### Lab 3: Using Environment Variables
+
+This method sets Traefik settings using environment variables.
+
+The `docker-compose.env.yml`:
+
+```yaml
+version: '3'
+
+services:
+  traefik:
+    image: traefik:v2.3
+    environment:
+      - TRAEFIK_API_INSECURE=true
+      - TRAEFIK_PROVIDERS_DOCKER=true
+      - TRAEFIK_LOG_LEVEL=INFO
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  whoami:
+    image: containous/whoami
+    labels:
+      - "traefik.http.routers.whoami.rule=Host(`whoami.docker.localhost`)"
+```
+
+Run it:
+
+```bash
+docker-compose -f docker-compose.env.yml up -d
+docker-compose -f docker-compose.env.yml logs
+```
+
+The output confirms that the configuration is using the environment variables.
+
+```
+traefik-1  | Configuration loaded from environment variables.
+```
+
+Stop the service:
+
+```bash
+docker-compose -f docker-compose.cli.yml stop
+```
+
+
+
+## Cleanup
+
+To remove the resources:
+
+```bash
+docker compose down
+```

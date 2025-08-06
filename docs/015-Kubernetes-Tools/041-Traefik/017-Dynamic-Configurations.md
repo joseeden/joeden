@@ -31,6 +31,35 @@ With dynamic config, you control routing rules and service behavior without edit
 </div>
 
 
+
+## Clone the Repository 
+
+To try out the examples in the succeeding sections, clone the project repository from GitHub. 
+
+- Github repo: [joseeden/labs-traefik](https://github.com/joseeden/labs-traefik/tree/master)
+
+Clone and move into the project directory:
+
+```bash
+git clone https://github.com/joseeden/labs-traefik.git 
+cd labs-traefik/01-overview
+```
+
+Project structure:
+
+```bash
+02-configuration
+.
+├── docker-compose.cli.yml
+├── docker-compose.configuration.yml
+├── docker-compose.env.yml
+├── docker-compose.file.yml
+├── traefik-entrypoints.yml
+└── traefik.yml 
+```
+
+
+
 ## How Dynamic Config Works
 
 Dynamic config is loaded from the provider (like Docker) at runtime.

@@ -365,3 +365,12 @@ Traefik automatically detects when the other two whoami instances are no longer 
 ```bash
 curl -H "Host: whoami.docker.localhost" http://127.0.0.1
 ```
+
+
+## Cleanup
+
+To remove the resources:
+
+```bash
+docker compose down
+```
