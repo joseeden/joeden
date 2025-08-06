@@ -42,9 +42,11 @@ Traefik manages incoming traffic by organizing it into key parts you can configu
 
 Traefik listens on entry points (ports) for incoming requests. Routers check these requests against rules like host names or paths. If a request matches, the router sends it to the right service. Services then balance the load across containers and handle ports.
 
+<div class="img-center"> 
 
+![](/img/docs/all-things-devops-traefik-architecture.png)
 
-
+</div>
 
 All these parts can be customized using **labels** on your containers. Labels let you define routing rules, load balancing options, and other settings without restarting Traefik. This makes Traefik flexible and easy to update dynamically.
 
