@@ -48,5 +48,6 @@ Traefik listens on entry points (ports) for incoming requests. Routers check the
 
 </div>
 
+
 All these parts can be customized using **labels** on your containers. Labels let you define routing rules, load balancing options, and other settings without restarting Traefik. This makes Traefik flexible and easy to update dynamically.
 
