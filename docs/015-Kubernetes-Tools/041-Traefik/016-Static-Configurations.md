@@ -389,7 +389,7 @@ docker-compose -f docker-compose.file.yml stop
 ```
 
 
-### Lab 2: Using Command-Line Arguments
+### Lab 2: Using CLI Arguments
 
 This method defines settings directly in the Docker Compose `command` section.
 
@@ -628,15 +628,14 @@ http://catapp.localhost/
 
 You’ll see the random cat GIF generator:
 
-![](/gif/docs/08062025-catapp-svc.gif)
-
-This confirms the router, entry point, and service are working together correctly through Traefik.
-
 <div class="img-center"> 
 
 ![](/gif/docs/08062025-catapp-svc.gif)
 
 </div>
+
+
+This confirms the router, entry point, and service are working together correctly through Traefik.
 
 
 To stop and delete the stack:

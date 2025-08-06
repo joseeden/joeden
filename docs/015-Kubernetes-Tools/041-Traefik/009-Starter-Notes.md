@@ -8,7 +8,7 @@ tags:
 - Containerization
 - Kubernetes
 - Traefik
-sidebar_position: 10
+sidebar_position: 9
 last_update:
   date: 2/5/2023
 ---
@@ -48,6 +48,8 @@ Traefik works by watching for changes in your system (like a new container start
 - Updates routing automatically in real time
 
 This means you no longer need to manually edit proxy settings every time your app changes. Traefik takes care of it instantly.
+
+For more information, please see [Traefik Architecture.](/docs/015-Kubernetes-Tools/041-Traefik/010-Traefik-Architecture.md)
 
 ## Key Features
 
@@ -180,37 +182,4 @@ Traefik comes in several versions and tools, depending on your needs.
 </div>
 
 
-## Lab: Basic Traefik Setup in Docker
-
-Here’s a really simple example of a Traefik Docker Compose setup:
-
-```yaml
-version: '3'
-
-services:
-  traefik:
-    image: traefik:v2.3
-    command:
-      - --api.insecure=true       # Enables the Traefik Dashboard
-      - --providers.docker=true
-      - --log.level=INFO
-      - "--entrypoints.web.address=:80"
-    ports:
-      - "80:80"                   # Exposes port 80 for incoming web requests
-      - "8080:8080"               # The Web UI port http://0.0.0.0:8080
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-
-  whoami:
-     image: containous/whoami
-     labels:                      # Set hostname to the new service
-       - "traefik.http.routers.whoami.rule=Host(`whoami.docker.localhost`)"
-```
-
-**Expected result:**
-
-When you open your browser to `http://localhost`, it should route you to the `whoami` service, and you’ll see some basic request info.
-
-
-To see this in action, please see [Deploy Traefik with Docker.](/docs/015-Kubernetes-Tools/041-Traefik/012-Deploy-Traefik-wth-Docker.md)
-
+      
