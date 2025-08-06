@@ -653,7 +653,19 @@ To remove the resources:
 docker compose -f <CONFIG_FILE_PATH> down
 ```
 
-To remove all stacks currently deployed in your Swarm:
+To check all stacks in your Swarm:
+
+```bash
+docker stack ls
+```
+
+To **remove the specific stack**:
+
+```bash
+docker stack rm <STACK_NAME>
+```
+
+To **remove all stacks** currently deployed in your Swarm:
 
 ```bash
 docker stack ls --format '{{.Name}}' | xargs -r docker stack rm

@@ -206,12 +206,26 @@ Apply the files:
 ```bash
 docker stack deploy -c docker-compose.yml traefik  
 ```
+
+Output:
+
+```bash
+Creating network traefik_default
+Creating service traefik_traefik
+Creating service traefik_catapp
+```
+
 After deploying, you can access the app at:
 
 ```bash
 http://catapp.localhost
 ```
 
+<div class="img-center"> 
+
+![](/gif/docs/08072025-catapp-svc.gif)
+
+</div>
 
 
 You can also check your setup in the Traefik dashboard. 
@@ -227,6 +241,42 @@ It will show:
 - The assigned service and entry point
 
 This helps confirm everything is working as expected.
+
+<div class="img-center"> 
+
+![](/img/docs/080372025-traefik-dashboard-2.PNG)
+
+</div>
+
+
+
+## Cleanup
+
+To remove the resources:
+
+```bash
+docker compose -f <CONFIG_FILE_PATH> down
+```
+
+To check all stacks in your Swarm:
+
+```bash
+docker stack ls
+```
+
+To **remove the specific stack**:
+
+```bash
+docker stack rm <STACK_NAME>
+```
+
+
+To **remove all stacks** currently deployed in your Swarm:
+
+```bash
+docker stack ls --format '{{.Name}}' | xargs -r docker stack rm
+```
+
 
 ## Resources
 
