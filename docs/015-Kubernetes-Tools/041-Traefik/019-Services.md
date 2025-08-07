@@ -48,6 +48,11 @@ Here’s how a request moves through the system.
 
 This whole flow lets your service handle many requests at once smoothly.
 
+<div class="img-center"> 
+
+![](/img/docs/all-things-devops-traefik-svc-flow.png)
+
+</div>
 
 
 ## Common Service Configurations
