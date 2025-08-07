@@ -270,7 +270,6 @@ To **remove the specific stack**:
 docker stack rm <STACK_NAME>
 ```
 
-
 To **remove all stacks** currently deployed in your Swarm:
 
 ```bash
