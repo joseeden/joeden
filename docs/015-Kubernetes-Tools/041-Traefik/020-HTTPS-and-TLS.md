@@ -42,12 +42,13 @@ If you don’t provide any certificate, Traefik will create a self-signed one.
 
 This is useful for testing, but not recommended for production.
 
-## Using Your Own Certificates
+## User-Defined Certificates
 
 You can provide your own certificates if needed.
 
 - Upload your cert and key files to Traefik
 - Define their path in the configuration
+- You can set more fine-grained configurations
 - Traefik matches them to the correct entry points
 
 You’re responsible for renewing these certificates before they expire.
@@ -57,8 +58,10 @@ You’re responsible for renewing these certificates before they expire.
 ```yaml
 tls:
   certificates:
-    - certFile: "/certs/example.crt"
-      keyFile: "/certs/example.key"
+    - certFile: "/certs/domain.crt"
+      keyFile: "/certs/domain.key"
+    - certFile: "/certs/another-domain.crt"
+      keyFile: "/certs/another-domain.key"
 ```
 
 Once mounted, Traefik will handle the rest automatically.
