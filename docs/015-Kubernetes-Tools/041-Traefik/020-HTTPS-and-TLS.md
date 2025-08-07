@@ -81,12 +81,26 @@ This is the easiest option when you don’t have strict company requirements.
 
 Traefik supports different methods to prove domain ownership.
 
-- **HTTP Challenge**
-  A temporary URL is created for verification
-- **DNS Challenge**
-  A DNS TXT record is created using your DNS provider
-- **TLS Challenge**
-  Uses port 443 and handles everything at the TLS level
+- **HTTP Challenge** 
+
+  - A temporary URL is created for verification
+  - Let’s Encrypt gives a token to Traefik
+  - Token is then served back to Let’s Encrypt for verification
+
+    ```bash
+    http://<YOUR_DOMAIN>/.well-known/acme-challenge/<TOKEN>
+    ```
+
+- **DNS Challenge** 
+  
+  - A DNS TXT record is created using your DNS provider
+  - Let’s Encrypt looks at the record to verify ownership
+  - Works with wildcard certificates
+
+- **TLS Challenge** 
+
+  - Performs a handshake between Traefik and Let’s Encrypt
+  - Uses port 443 and handles everything at the TLS level
 
 Here’s how the HTTP Challenge works:
 
@@ -108,6 +122,14 @@ Traefik automatically links the certificate to the right port and domain.
 - Traefik uses the domain to choose the correct certificate
 
 Once matched, your website will show the secure lock icon in the browser.
+
+<div class="img-center"> 
+
+![](/img/docs/all-things-devops-traefik-lets-encrypt-flow.png)
+
+</div>
+
+
 
 ## Configuring TLS in Routers
 
