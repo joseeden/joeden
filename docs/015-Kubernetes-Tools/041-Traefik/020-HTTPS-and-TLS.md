@@ -152,3 +152,52 @@ You can add your TLS settings to either config type.
 - Dynamic config lets you reload without restarting
 
 If you change certs often, use dynamic config for easier updates.
+
+## Clone the Repository 
+
+To try out the examples, clone the project repository from GitHub. 
+
+- Github repo: [joseeden/labs-traefik](https://github.com/joseeden/labs-traefik/tree/master)
+
+Clone and move into the project directory:
+
+```bash
+git clone https://github.com/joseeden/labs-traefik.git 
+cd labs-traefik/04-https-tls
+```
+
+Project structure:
+
+```bash
+
+```
+
+
+## Lab: Enabling Encryption (HTTPS)
+
+
+## Cleanup
+
+To remove the resources:
+
+```bash
+docker compose -f <CONFIG_FILE_PATH> down
+```
+
+To check all stacks in your Swarm:
+
+```bash
+docker stack ls
+```
+
+To **remove the specific stack**:
+
+```bash
+docker stack rm <STACK_NAME>
+```
+
+To **remove all stacks** currently deployed in your Swarm:
+
+```bash
+docker stack ls --format '{{.Name}}' | xargs -r docker stack rm
+```
