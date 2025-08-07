@@ -35,15 +35,6 @@ Load balancers can check if your service is still healthy.
 
 If the service is unhealthy, it’s removed from traffic routing until it's healthy again.
 
-## Services and Routers
-
-Services can connect to one or more routers.
-
-- Routers use rules to decide which service to send traffic to
-- One service can be connected to different routers with different rules
-
-This gives flexibility to control how traffic is sent to your services.
-
 
 
 ## How Requests Travel
