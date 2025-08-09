@@ -137,7 +137,7 @@ After verification, you can enable **Multi-Factor Authentication (MFA)** for add
 2. Scroll down to **2FA - App Based** > Enable app based two factor authentication.
 3. Scan the code with your authenticator app
 4. Enter the code from the authenticator app 
-5. You can also copy the backup codes and save it in a file(recommended)...
+5. You can also copy the backup codes and save it in a file(recommended).
 
 ## Name.com 
 
@@ -154,7 +154,6 @@ After creating your account, you’ll need to verify your contact information.
 
 
 ## Vercel
-
 
 If you buy a domain from **Vercel**, you can use it for Vercel projects, but you can also use it for projects hosted elsewhere.
 
