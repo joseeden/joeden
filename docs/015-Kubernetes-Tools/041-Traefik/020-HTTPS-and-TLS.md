@@ -153,7 +153,21 @@ You can add your TLS settings to either config type.
 
 If you change certs often, use dynamic config for easier updates.
 
-## Clone the Repository 
+
+## Lab: Pre-requisites 
+
+### Prepare your Domain 
+
+Before using HTTPS with Traefik, there are a few things to prepare.
+
+- You’ll need a test domain name
+- Your domain’s DNS should point to your server
+- Your DNS provider must be supported by Traefik
+
+Additionally, ensure your DNS provider is listed in the available DNS Provider integrations section [https://docs.traefik.io/v2.3/https/acme/#providers](https://docs.traefik.io/v2.3/https/acme/#providers)**
+
+
+### Clone the Repository 
 
 To try out the examples, clone the project repository from GitHub. 
 
@@ -169,35 +183,520 @@ cd labs-traefik/04-https-tls
 Project structure:
 
 ```bash
-
+04-https-tls
+├── docker-compose.dns.yml
+├── docker-compose.http.yml
+├── docker-compose.tls.yml
+├── letsencrypt
+│   └── test
+├── traefik.dns.yml
+├── traefik.http.yml
+└── traefik.tls.yml
 ```
 
 
-## Lab: Enabling Encryption (HTTPS)
+## Lab: Enable HTTPS Using Let's Encrypt (HTTP Challenge)
+
+In this lab, we’ll use **Let’s Encrypt with the HTTP challenge** to automatically get TLS certificates for your app.
+
+- Let’s Encrypt will verify your domain using an HTTP request
+- Traefik will handle all the communication and certificate setup
+- You just need to update a few values in the config files
+
+Inside the lab directory, we'll use' `traefik.http.yaml` to enable Let's Encrypt with HTTP challenge. This config tells Traefik to request and manage certificates using HTTP.
+
+```yaml
+api:
+  dashboard: true
+  insecure: true
+
+providers:
+  docker:
+    exposedByDefault: false
+log:
+  level: INFO
+
+entryPoints:
+  web:
+    address: ":80"
+  websecure:
+    address: ":443"
+
+# Challenge HTTP
+certificatesResolvers:
+  myresolver:             ## Will be used for label
+    acme:
+      email: josemanuelitoeden@gmail.com
+      storage: acme.json
+      httpChallenge:
+        entryPoint: web
+```
+
+:::info 
+
+Make sure to replace the email address with your real email
+ 
+:::
 
 
-## Cleanup
+In the `docker-compose.http.yaml`, we'll set up our app with HTTPS using Traefik labels.
 
-To remove the resources:
+```yaml
+version: "3"
+
+services:
+  traefik:
+    image: traefik:v2.3
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./letsencrypt:/letsencrypt
+      - ./traefik.http.yml:/etc/traefik/traefik.yml
+
+  catapp:
+    image: mikesir87/cats:1.0
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.catapp.rule=Host(`yourdomain.com`)"
+      - "traefik.http.routers.catapp.service=catapp"
+      - "traefik.http.services.catapp.loadbalancer.server.port=5000"
+      - "traefik.http.routers.catapp.entrypoints=websecure"
+      - "traefik.http.routers.catapp.tls.certresolver=myresolver"
+```
+
+:::info 
+
+Change `yourdomain.com` to your actual domain
+
+::::
+
+With these labels, Traefik will route HTTPS traffic and get certificates automatically.
+
+
+#### Deploy and Test
+
+To deploy the stack:
 
 ```bash
-docker compose -f <CONFIG_FILE_PATH> down
+docker stack deploy -c docker-compose.http.yaml traefik
 ```
 
-To check all stacks in your Swarm:
+Output:
 
 ```bash
-docker stack ls
+Creating network traefik_default 
+Creating service traefik_traefik
+Creating service traefik_catapp
 ```
 
-To **remove the specific stack**:
+Then check the logs to verify the certificate process:
 
 ```bash
-docker stack rm <STACK_NAME>
+docker service logs traefik_traefik
 ```
 
-To **remove all stacks** currently deployed in your Swarm:
+Look for lines like:
+
+```
+Testing certificate renew...
+Starting provider *traefik.Provider {}...
+Certificate obtained successfully...
+```
+
+If successful, visit your domain using HTTPS. You should see the secure padlock icon in the browser. 
+
+<!-- insert-photo -->
+
+Click the lock icon to see more details about the certificate. It will show **Let’s Encrypt** as the issuer.
+
+<!-- insert-photo -->
+
+
+#### Confirm in Traefik Dashboard
+
+Open the dashboard (usually at port 8080), go to **Routers**, and click the `catapp@docker` application.
+
+- TLS is marked as **enabled**
+- The router uses `websecure` as the entry point
+- The certificate resolver is set to `myresolver`
+
+Go to **Services** and click `catapp@docker`. In the **Used by Routers** section, it will also show TLS is enabled for the application.
+
+<!-- insert-photo -->
+
+
+#### Cleanup
+
+Before proceeding to the next lab, make sure to delete the deployed stack first:
 
 ```bash
-docker stack ls --format '{{.Name}}' | xargs -r docker stack rm
+docker stack rm traefik 
 ```
+
+
+## Lab: Enable HTTPS Using Let's Encrypt (TLS Challenge)
+
+This time, we'll use **Let's Encrypt with the TLS challenge**, which happens during the TLS handshake, not over HTTP.
+
+- No need to expose port 80 (only 443 is used)
+- Everything works over secure HTTPS
+- Traefik handles all the challenge logic behind the scenes
+
+The setup is nearly the same as the HTTP challenge, but simpler in some ways since it uses only one port.
+
+
+#### Update Traefik Static Config (TLS Challenge)
+
+Just like before, we configure a certificate resolver. The only real change is switching from `httpChallenge` to `tlsChallenge`. 
+
+```yaml
+# traefik.tls.yaml
+api:
+  dashboard: true
+  insecure: true
+
+providers:
+  docker:
+    exposedByDefault: false
+
+log:
+  level: INFO
+
+entryPoints:
+  web:
+    address: ":80"
+  websecure:
+    address: ":443"
+
+# Challenge TLS
+certificatesResolvers:
+  myresolver:
+    acme:
+      email: josemanuelitoeden@gmail.com  
+      storage: acme.json
+      tlsChallenge: true        # Use TLS-ALPN challenge over port 443
+        # # used during the challenge
+        # entryPoint: web
+```
+
+:::info 
+
+Replace with your own email for `email:` so Let’s Encrypt can contact you
+
+:::
+
+
+With this config, Traefik will request certificates without needing to serve any HTTP content.
+
+
+#### Add TLS Labels in Compose
+
+Now apply the right labels to your app in the `docker-compose.tls.yml`
+
+```yaml
+version: "3"
+
+services:
+  traefik:
+    image: traefik:v2.3
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./letsencrypt:/letsencrypt # Copy Let's Encrypt certificate locally for backing up
+      - ./traefik.tls.yml:/etc/traefik/traefik.yml
+
+  catapp:
+    image: mikesir87/cats:1.0
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.catapp.rule=Host(`your_domain_here`)"
+      - "traefik.http.routers.catapp.service=catapp"
+      - "traefik.http.services.catapp.loadbalancer.server.port=5000"
+      - "traefik.http.routers.catapp.entrypoints=websecure"
+      - "traefik.http.routers.catapp.tls.certresolver=myresolver"
+```
+
+:::info 
+
+Replace `yourdomain.com` with your real domain
+
+:::
+
+These labels tell Traefik how to route HTTPS requests and which resolver to use for TLS.
+
+
+#### Deploy the Stack
+
+Now deploy the new setup with TLS challenge:
+
+```bash
+docker stack deploy -c docker-compose.tls.yaml traefik
+```
+
+Check the logs to watch the challenge in action:
+
+```bash
+docker service logs traefik_traefik
+```
+
+You should see lines like:
+
+```
+Testing certificate renew...
+Using TLS-ALPN challenge
+Certificate obtained successfully
+```
+
+That means Let’s Encrypt verified your domain using TLS and issued the certificate.
+
+
+#### Test in Browser and Dashboard
+
+Visit your domain using the correct HTTPS URL:
+
+```bash 
+https://yourdomain.com
+```
+
+<!-- insert-photo-here -->
+
+Check the Traefik dashboard at:
+
+```bash
+https://yourdomain.com:8080
+```
+
+Then go to **HTTP Services**, select the `catapp` service, and confirm that TLS is marked as **enabled**.
+
+
+<!-- insert-photo-here -->
+
+
+
+#### Cleanup
+
+Before proceeding to the next lab, make sure to delete the deployed stack first:
+
+```bash
+docker stack rm traefik 
+```
+
+
+## Lab: Enable HTTPS Using Let's Encrypt (DNS Challenge)
+
+In this lab, we’ll set up **Traefik with Let’s Encrypt DNS challenge**, which allows automatic creation of wildcard certificates, meaning you can secure all subdomains (like `app.yourdomain.com`, `api.yourdomain.com`) with a single certificate.
+
+- Wildcard certs cover many subdomains
+- DNS challenge updates DNS records automatically
+- Works without exposing HTTP port (uses DNS + HTTPS only)
+
+This method is fully automated and gives you more flexibility with subdomains.
+
+
+#### Prepare Your DNS Provider
+
+Before starting, you need a wildcard DNS record pointing to your server.
+
+1. Add a `*.yourdomain.com` record pointing to your server’s IP
+2. Add an `@` (root) record pointing to the same IP
+
+This allows Traefik to request certificates for any subdomain you choose later; no need to manually add DNS entries every time.
+
+|Type | Hostname | Value | TTL(seconds) | 
+|-----|--------|--------|--------------|
+| A   | *.your-domain.com | directs to  (add ip) | 30 |
+| A   | www.your-domain.com | directs to  (add ip) | 30 |
+| A   | your-domain.com | directs to  (add ip) | 30 |
+
+#### Create an API Token (DigitalOcean)
+
+To allow Traefik to update DNS records automatically, you’ll need a token from your DNS provider.
+
+1. Go to your DNS provider’s dashboard (e.g., DigitalOcean)
+2. Generate a new API token with DNS access
+3. Copy the token. This will be added to the Docker compose
+
+This token is used by Traefik to prove domain ownership via the DNS challenge.
+
+
+#### Add API Token in Docker Compose
+
+Now configure the Docker Compose file with the DNS token and labels.
+
+Inside the repo, we have the `docker-compose.dns.yml`
+
+```yaml
+# docker-compose.dns.yaml
+version: "3"
+
+services:
+  traefik:
+    image: traefik:v2.3
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./letsencrypt:/letsencrypt                  
+      - ./traefik.dns.yml:/etc/traefik/traefik.yml  
+    environment:
+      - "DO_AUTH_TOKEN=<your_api_token_here>"
+
+  catapp:
+    image: mikesir87/cats:1.0
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.catapp.rule=Host(`anything.your_domain_here.com`)"
+      - "traefik.http.routers.catapp.service=catapp"
+      - "traefik.http.services.catapp.loadbalancer.server.port=5000"
+      - "traefik.http.routers.catapp.entrypoints=websecure"
+      - "traefik.http.routers.catapp.tls.certresolver=myresolver"
+```
+
+Note: 
+
+- Replace `your_api_token_here` with the token you generated
+- Change the domain in `Host(...)` to match your wildcard domain
+- Make sure to mount a local volume for `/letsencrypt` to store certs
+
+As a recap, the DNS records that we have are:
+
+| Type | Hostname            | Value                | TTL(seconds) |
+| ---- | ------------------- | -------------------- | ------------ |
+| A    | *.your-domain.com   | directs to  (add ip) | 30           |
+| A    | www.your-domain.com | directs to  (add ip) | 30           |
+| A    | your-domain.com     | directs to  (add ip) | 30           |
+
+In the Docker compose file, we have set the rule to match for `anything.your_domain_here.com`, which technically matches `*.your-domain.com `. What this means is that Traefik will automatically request a wildcard certificate for `*.your-domain.com` using the DNS challenge, which...
+
+By setting these labels and environment variables, Traefik will be able to generate certificates automatically.
+
+
+
+#### Set Up Static Traefik Config (DNS Challenge)
+
+The `traefik.dns.yml` sets the static config for the DNS challenge and the right provider.
+
+
+```yaml
+# traefik.dns.yaml
+api:
+  dashboard: true
+  insecure: true
+
+providers:
+  docker:
+    exposedByDefault: false
+
+log:
+  level: INFO
+
+entryPoints:
+  web:
+    address: ":80"
+  websecure:
+    address: ":443"
+
+# Challenge DNS
+certificatesResolvers:
+  myresolver:
+    acme:
+      email: your_email@example.com 
+      storage: /letsencrypt/acme.json
+      dnsChallenge:
+        provider: digitalocean
+        delayBeforeCheck: 0
+```
+
+**Note:** 
+
+- Replace `email:` with your real address
+- Set `provider:` to match your DNS provider name (e.g., `digitalocean`)
+- The `myresolver` name must match the Docker Compose labels later
+
+This config tells Traefik to request certificates using DNS, with your provider’s API.
+
+
+
+#### Deploy the Stack
+
+Make sure no other stack is running before deployment:
+
+```bash
+docker stack rm traefik
+```
+
+Now deploy your updated setup:
+
+```bash
+docker stack deploy -c docker-compose.dns.yaml traefik
+```
+
+Check the logs to verify that the certificate was issued:
+
+```bash
+docker service logs traefik_traefik
+```
+
+You should see messages about the DNS challenge and a successful certificate request.
+
+
+#### Test in Browser
+
+Open your browser and visit:
+
+```
+https://training.yourdomain.com
+```
+
+You should see the app running with a valid HTTPS certificate — no DNS config was needed manually.
+
+To test further, update the Compose file to use a new subdomain:
+
+```yaml
+- "traefik.http.routers.catapp.rule=Host(`dnslab.yourdomain.com`)"
+```
+
+Re-deploy the stack and Traefik will request a new certificate using the same wildcard.
+
+Now visit:
+
+```
+https://dnslab.yourdomain.com
+```
+
+It should load securely, using the wildcard certificate.
+
+
+#### Store Certificates Safely
+
+To avoid rate limits and protect your certs:
+
+- Always mount the `/letsencrypt` directory outside the container
+- Backup your `acme.json` file which stores certs
+- Avoid deleting containers without saving this file
+
+```bash
+# Store and check certificate file
+ls ./letsencrypt/acme.json
+```
+
+If the cert file is lost and you request too many new ones, Let’s Encrypt may block further requests temporarily.
+
+
+#### Use Secrets for Tokens (Best Practice)
+
+Instead of writing your DNS API token directly in the file:
+
+- Use Docker secrets to keep it hidden
+- Avoid exposing sensitive tokens in version control
+
+This helps keep your system secure while still allowing full automation.
+
