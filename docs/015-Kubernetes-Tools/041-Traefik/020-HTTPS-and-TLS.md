@@ -158,13 +158,20 @@ If you change certs often, use dynamic config for easier updates.
 
 ### Prepare your Domain 
 
-Before using HTTPS with Traefik, there are a few things to prepare.
+Before using HTTPS with Traefik, make sure you have:
 
-- You’ll need a test domain name
-- Your domain’s DNS should point to your server
-- Your DNS provider must be supported by Traefik
+- A domain name for testing
+- DNS records pointing to your DNS provider
+- A DNS provider supported by TraefikA DNS provider supported by Traefik
 
-Additionally, ensure your DNS provider is listed in the available DNS Provider integrations section [https://docs.traefik.io/v2.3/https/acme/#providers](https://docs.traefik.io/v2.3/https/acme/#providers)**
+heck the supported providers list here: [Traefik DNS Provider Integrations](https://docs.traefik.io/v2.3/https/acme/#providers)**
+
+For example, my setup uses:
+
+- Domain from Namecheap
+- DNS hosted on DigitalOcean
+
+After getting a domain, update its registrar settings so it points to your chosen DNS provider. If you're also using DigitalOcean, you can follow the steps here: [Adding a Domain in DigitalOcean](/docs/001-Personal-Notes/055-Homelab/040-DigitalOcean.md#adding-a-domain)
 
 
 ### Clone the Repository 
