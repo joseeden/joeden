@@ -170,7 +170,7 @@ This `usersfile` will be used in the Docker compose setup next.
 
 ### Configure the Docker Compose File 
 
-In the cloned repository, the docker-compose.error.yml file sets up error handling. It redirects all error responses to the error-service, which shows custom error pages.
+In the cloned repository, the `docker-compose.error.yml` file sets up error handling. It redirects all error responses to the error-service, which shows custom error pages.
 
 ```yaml
 version: "3"
