@@ -740,6 +740,14 @@ To do this securely, create a `.env` file not tracked by Git (make sure to add `
 DO_AUTH_TOKEN=your_real_token_here
 ```
 
+**Optional:** You can keep your .env but manually load it before running the deploy:
+
+```bash
+set -a
+source ./challenge-dns/.env
+set +a
+```
+
 Then update the `docker-compose.dns.yml`:
 
 ```yaml
