@@ -101,7 +101,7 @@ services:
 **Expected result:**  
 When the stack runs, Traefik automatically detects the `web` container and routes traffic from `http://localhost` to it.
 
-To see this in action, please see [Deploy Traefik with Docker.](/docs/015-Kubernetes-Tools/041-Traefik/012-Deploy-Traefik-wth-Docker.md)
+To see this in action, please see [Deploy Traefik with Docker.](/docs/015-Kubernetes-Tools/041-Traefik/020-Configuration/012-Deploy-Traefik-wth-Docker.md)
 
 
 

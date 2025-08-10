@@ -21,7 +21,7 @@ The dashboard gives a clear view of your traffic system and running services.
 - Helps with troubleshooting and monitoring
 - Shows warnings and errors
 
-To setup the dashboard and a simple test service, please see [Deploy Traefik with Docker.](/docs/015-Kubernetes-Tools/041-Traefik/012-Deploy-Traefik-wth-Docker.md)
+To setup the dashboard and a simple test service, please see [Deploy Traefik with Docker.](/docs/015-Kubernetes-Tools/041-Traefik/020-Configuration/012-Deploy-Traefik-wth-Docker.md)
 
 
 ## Access the Dashboard 
@@ -76,7 +76,7 @@ docker compose scale whoami=3
 :::info 
 
 The `whoami` service is deployed with Docker. 
-Please see [Deploy Traefik with Docker.](/docs/015-Kubernetes-Tools/041-Traefik/012-Deploy-Traefik-wth-Docker.md)
+Please see [Deploy Traefik with Docker.](/docs/015-Kubernetes-Tools/041-Traefik/020-Configuration/012-Deploy-Traefik-wth-Docker.md)
 
 :::
 

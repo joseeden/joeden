@@ -39,7 +39,7 @@ This setup is done before Traefik starts and cannot be changed without restartin
 
 Static config is essential for starting Traefik and enabling core features. Once Traefik is running, changing static config needs a restart.
 
-For more information, please see [Static Configurations](/docs/015-Kubernetes-Tools/041-Traefik/016-Static-Configurations.md)
+For more information, please see [Static Configurations](/docs/015-Kubernetes-Tools/041-Traefik/020-Configuration/016-Static-Configurations.md)
 
 
 ## Dynamic Configurations
@@ -54,7 +54,7 @@ You can update dynamic config by modifying the file, labels, or any connected pr
 
 Dynamic config lets you change routing behavior or service details on the fly, without restarting or losing traffic.
 
-For more information, please see [Dynamic Configurations](/docs/015-Kubernetes-Tools/041-Traefik/017-Dynamic-Configurations.md)
+For more information, please see [Dynamic Configurations](/docs/015-Kubernetes-Tools/041-Traefik/020-Configuration/017-Dynamic-Configurations.md)
 
 
 :::info 
