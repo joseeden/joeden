@@ -862,6 +862,9 @@ rm -f .env
 
 Go to your DNS provider and delete the API token.
 
+
+
+
 <!-- <div class="img-center"> 
 
 ![](/img/docs/delete-api-token.PNG)
