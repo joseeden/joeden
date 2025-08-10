@@ -85,10 +85,10 @@ To use DigitalOcean’s API, you need to create an API token with the right perm
 5. Choose the scopes (permissions)
 6. Click **Generate Token**
 
-For labs, you can set the scope to Full Access. After doing the lab, make sure to delete t he token.
+For labs, you can set the scope to Full Access. After doing the lab, make sure to delete the token.
 
 <div class="img-center"> 
 
-![](/img/docs/08102025-do-api-token.PNG)
+![](/img/docs/create-api-token-dgtaocean.PNG)
 
 </div>

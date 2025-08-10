@@ -333,7 +333,7 @@ Project structure:
 **Note:** Make sure the `letsencrypt` folder is next to the `challenge` folders, not inside any of them. The Docker compose files expect it there. If you move the `letsencrypt` folder, remember to update the Docker compose files accordingly.
 
 
-## Lab: Enable HTTPS Using Let's Encrypt (HTTP Challenge)
+## Lab: Using Let's Encrypt (HTTP Challenge)
 
 In this lab, we’ll use **Let’s Encrypt with the HTTP challenge** to automatically get TLS certificates for your app.
 
@@ -535,7 +535,7 @@ docker stack rm traefik
 ```
 
 
-## Lab: Enable HTTPS Using Let's Encrypt (TLS Challenge)
+## Lab: Using Let's Encrypt (TLS Challenge)
 
 This time, we'll use **Let's Encrypt with the TLS challenge**, which happens during the TLS handshake, not over HTTP.
 
@@ -694,7 +694,7 @@ docker stack rm traefik
 ```
 
 
-## Lab: Enable HTTPS Using Let's Encrypt (DNS Challenge)
+## Lab: Using Let's Encrypt (DNS Challenge)
 
 In this lab, we’ll set up **Traefik with Let’s Encrypt DNS challenge**, which allows automatic creation of wildcard certificates, meaning you can secure all subdomains (like `app.yourdomain.com`, `api.yourdomain.com`) with a single certificate.
 
@@ -1003,6 +1003,6 @@ Go to your DNS provider and delete the API token.
 
 <div class="img-center"> 
 
-![](/img/docs/08102025-do-api-token-delete.PNG)
+![](/img/docs/delete-api-token.PNG)
 
 </div>
