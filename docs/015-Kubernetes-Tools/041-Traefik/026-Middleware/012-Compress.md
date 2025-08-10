@@ -161,3 +161,17 @@ To test, access the `catapp` application on your browser and referesh it a coupl
 
 </div>
 
+### Cleanup
+
+Delete the deployed stack:
+
+```bash
+docker stack rm traefik 
+```
+
+You can also delete the `usersfile`:
+
+```bash
+rm -f usersfile
+```
+
