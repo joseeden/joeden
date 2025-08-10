@@ -67,6 +67,97 @@ This lab shows how to turn on gzip compression to make your app’s content smal
 - Use a special compression config file
 - Add compression middleware with one simple label
 
+### Clone the Repository 
+
+To try out the lab, clone the project repository from GitHub. 
+
+- Github repo: [joseeden/labs-traefik](https://github.com/joseeden/labs-traefik/tree/master)
+
+Clone and move into the project directory:
+
+```bash
+git clone https://github.com/joseeden/labs-traefik.git 
+cd labs-traefik/05-middleware
+```
+
+Project structure:
+
+```bash
+05-middleware
+├── 01-basic-auth
+│   ├── basicauth_users
+│   ├── docker-compose.auth.yml
+│   ├── docker-compose.secrets.yml
+│   ├── docker-compose.usersfile.yml
+│   ├── traefik.yml
+│   └── usersfile
+├── 02-compress
+│   ├── docker-compose.compress.yml
+│   ├── traefik.yml
+│   └── usersfile
+├── 03-error-pages
+│   ├── docker-compose.error.yml
+│   ├── traefik.yml
+│   └── usersfile
+├── 04-rate-limiting
+│   ├── docker-compose.ratelimit.yml
+│   ├── traefik.yml
+│   └── usersfile
+└── 05-redirects
+    ├── docker-compose.redirect.yml
+    ├── traefik.dns.yml
+    └── usersfile
+```
+
+
+### Creating Passwords
+
+For this lab, we'll use basic authentication, so we need a safe way to store user passwords. Passwords must be hashed before adding them to the users file.
+
+To create hashed passwords, install the tool `htpasswd`:
+
+```bash
+sudo apt install -y apache2-utils
+```
+
+Here are example user credentials. You can change them if you want:
+
+| Username  | Password              |
+| --------- | --------------------- |
+| johnsmith | `Thr3@tl3u3lw!dN!QHt` |
+| janedoe   | `@Ll!$szM3lLiND@h0oD` |
+
+Generate a hash with this command:
+
+```bash
+htpasswd -nb johnsmith 'Thr3@tl3u3lw!dN!QHt' | sed 's/\$/\$\$/g'
+```
+
+You should see output like:
+
+```
+johnsmith:$$apr1$$cipim6NJ$$LK11Xtf0t92UvxjKCV8ii0
+```
+
+Do the same for each user.
+
+Next, create a file named `usersfile` in the same folder as your Docker compose file. Put all hashed credentials here, one user per line:
+
+```bash
+johnsmith:$apr1$cipim6NJ$LK11Xtf0t92UvxjKCV8ii0
+janedoe:$apr1$t65c7tuF$Qscp40RYl.Tq02pUnSv5r1
+```
+
+Add `usersfile` to your `.gitignore` file to keep it out of version control:
+
+```bash title=".gitignore"
+usersfile
+```
+
+This `usersfile` will be used in the Docker compose setup next.
+
+
+
 ### Prepare the Files 
 
 The compression setup is straightforward in the `docker-compose.compress.yml` file.
@@ -111,12 +202,6 @@ This lab uses the same `usersfile` and `traefik.yml` as the ones in the [Basic A
 
 :::
 
-This lab also uses the following credentials for login:
-
-| Username  | Password              |
-| --------- | --------------------- |
-| johnsmith | `Thr3@tl3u3lw!dN!QHt` |
-| janedoe   | `@Ll!$szM3lLiND@h0oD` |
 
 
 ### Deploying the Compression

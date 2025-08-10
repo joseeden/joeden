@@ -106,20 +106,28 @@ Project structure:
 ```bash
 05-middleware
 ├── 01-basic-auth
+│   ├── basicauth_users
 │   ├── docker-compose.auth.yml
-│   └── traefik.yml
+│   ├── docker-compose.secrets.yml
+│   ├── docker-compose.usersfile.yml
+│   ├── traefik.yml
+│   └── usersfile
 ├── 02-compress
 │   ├── docker-compose.compress.yml
-│   └── traefik.yml
+│   ├── traefik.yml
+│   └── usersfile
 ├── 03-error-pages
 │   ├── docker-compose.error.yml
-│   └── traefik.yml
+│   ├── traefik.yml
+│   └── usersfile
 ├── 04-rate-limiting
 │   ├── docker-compose.ratelimit.yml
-│   └── traefik.yml
-├── 05-redirects
-│   ├── docker-compose.redirect.yml
-│   └── traefik.dns.yml
+│   ├── traefik.yml
+│   └── usersfile
+└── 05-redirects
+    ├── docker-compose.redirect.yml
+    ├── traefik.dns.yml
+    └── usersfile
 ```
 
 
