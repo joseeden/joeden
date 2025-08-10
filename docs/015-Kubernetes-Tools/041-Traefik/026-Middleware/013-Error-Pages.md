@@ -272,3 +272,18 @@ If you enter a wrong URL, you will see a professional-looking 404 error page fro
 ![](/gif/docs/08102025-catapp-mw-5.gif)
 
 </div>
+
+### Cleanup
+
+Delete the deployed stack:
+
+```bash
+docker stack rm traefik 
+```
+
+You can also delete the `usersfile`:
+
+```bash
+rm -f usersfile
+```
+
