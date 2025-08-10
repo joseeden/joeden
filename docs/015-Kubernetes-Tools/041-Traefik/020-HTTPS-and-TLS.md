@@ -156,6 +156,57 @@ If you change certs often, use dynamic config for easier updates.
 
 ## Lab: Pre-requisites 
 
+
+#### Setup a Public Cloud VM 
+
+It is recommended to perform this lab on a a VM with a public IP because you need to open port 80 to the internet.
+
+- Your DNS records must point to the VM’s public IP.
+- Let’s Encrypt can verify your site via HTTP without problems.
+
+If you do this lab in your local Windows machine, it is likely that your machine has a private LAN IP like `192.168.x.x` behind NAT. 
+
+You can definitely tweak your Windows machine’s firewall to allow inbound connections on port 80 (and 443), but this alone won’t fix the main problem if your router or network blocks/doesn’t forward that traffic.
+
+To create a public cloud VM, you can use:
+
+- [Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html)
+- [Azure virtual machine](https://learn.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal) 
+- [GCP Compute Engine](https://cloud.google.com/products/compute)
+- [DigitalOcean droplet](https://docs.digitalocean.com/products/droplets/how-to/create/) 
+- [Linode instance](https://www.linode.com/docs/guides/create-a-linode/)
+
+Make sure your EC2 security group allows inbound TCP traffic on:
+
+- Port 80 (HTTP)
+- Port 443 (HTTPS)
+- Port 8080 (Traefik dashboard)
+
+After launching your VM, install the necessary tools. For example, on my EC2 instance, I run:
+
+```bash
+# Install Git 
+sudo yum update -y && sudo yum install -y git
+
+# Install Docker 
+sudo amazon-linux-extras enable docker
+sudo yum install -y docker
+sudo systemctl enable docker
+sudo systemctl start docker
+sudo systemctl status docker
+
+# Configure DOcker
+sudo usermod -aG docker ec2-user && newgrp docker
+
+# Install Docker compsoe
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.20.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
+
+# Initialize Docker Swarm (needed for docker stack deploy):
+docker swarm init
+```
+
 ### Prepare your Domain 
 
 Before using HTTPS with Traefik, make sure you have:
@@ -200,34 +251,37 @@ Once you've changed your domain’s nameservers to your DNS provider, the next s
 
 Here are the DNS records I used. You can copy them but make sure to replace with your own domain details.
 
-| Type | Hostname            | Value                   | TTL (seconds) |
-| ---- | ------------------- | ----------------------- | ------------- |
-| A    | `*.johnsmith.app`   | points to 34.201.50.100 | 30            |
-| A    | `www.johnsmith.app` | points to 34.201.50.100 | 30            |
-| A    | `johnsmith.app`     | points to 34.201.50.100 | 30            |
+| Type | Hostname                     | Value                   | TTL (seconds) |
+| ---- | ---------------------------- | ----------------------- | ------------- |
+| A    | `*.joeden.site`              | points to 34.201.50.100 | 30            |
+| A    | `www.joeden.site`            | points to 34.201.50.100 | 30            |
+| A    | `dashboard.joeden.site`      | points to 34.201.50.100 | 30            |
+| A    | `joeden.site`                | points to 34.201.50.100 | 30            |
 
 The IP `34.201.50.100` is my test machine's public IP. Point the DNS records to your machine's public IP.
+
+The `dashboard.joeden.site` is used to access the Traefik dashboard.
 
 You can also use shorthand names since they mean the same:
 
 | Type | Hostname          | Value                   | TTL (seconds) |
 | ---- | ----------------- | ----------------------- | ------------- |
-| A    | `*.johnsmith.app` | points to 34.201.50.100 | 30            |
+| A    | `*.joeden.site`   | points to 34.201.50.100 | 30            |
 | A    | `www`             | points to 34.201.50.100 | 30            |
+| A    | `dashboard`       | points to 34.201.50.100 | 30            |
 | A    | `@`               | points to 34.201.50.100 | 30            |
 
 If you set this up in DigitalOcean, your DNS records should look like this:
 
 | Type | Hostname            | Value                          | TTL (seconds) |
 | ---- | ------------------- | ------------------------------ | ------------- |
-| NS   | `johnsmith.app`     | points to ns1.digitalocean.com | 30            |
-| NS   | `johnsmith.app`     | points to ns2.digitalocean.com | 30            |
-| NS   | `johnsmith.app`     | points to ns3.digitalocean.com | 30            |
-| A    | `*.johnsmith.app`   | points to 34.201.50.100        | 30            |
-| A    | `www.johnsmith.app` | points to 34.201.50.100        | 30            |
-| A    | `johnsmith.app`     | points to 34.201.50.100        | 30            |
-
-
+| NS   | `joeden.site`     | points to ns1.digitalocean.com | 30            |
+| NS   | `joeden.site`     | points to ns2.digitalocean.com | 30            |
+| NS   | `joeden.site`     | points to ns3.digitalocean.com | 30            |
+| A    | `*.joeden.site`   | points to 34.201.50.100        | 30            |
+| A    | `www.joeden.site` | points to 34.201.50.100        | 30            |
+| A    | `dashboard.joeden.site`      | points to 34.201.50.100 | 30            |
+| A    | `joeden.site`     | points to 34.201.50.100        | 30            |
 
 
 <!-- ### If you're testing on your Windows Machine 
@@ -289,30 +343,12 @@ In this lab, we’ll use **Let’s Encrypt with the HTTP challenge** to automati
 - You just need to update a few values in the config files
 
 
-#### Setup a Public Cloud VM 
-
-It is recommended to perform this lab on a a VM with a public IP because you need to open port 80 to the internet.
-
-- Your DNS records must point to the VM’s public IP.
-- Let’s Encrypt can verify your site via HTTP without problems.
-
-If you do this lab in your local Windows machine, it is likely that your machine has a private LAN IP like `192.168.x.x` behind NAT. 
-
-You can definitely tweak your Windows machine’s firewall to allow inbound connections on port 80 (and 443), but this alone won’t fix the main problem if your router or network blocks/doesn’t forward that traffic.
-
-To create a public cloud VM, you can use:
-
-- [Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html)
-- [Azure virtual machine](https://learn.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal) 
-- [GCP Compute Engine](https://cloud.google.com/products/compute)
-- [DigitalOcean droplet](https://docs.digitalocean.com/products/droplets/how-to/create/) 
-- [Linode instance](https://www.linode.com/docs/guides/create-a-linode/)
-
 #### Prepare the Files 
 
 Inside the lab directory, we'll use' `traefik.http.yaml` to enable Let's Encrypt with HTTP challenge. This config tells Traefik to request and manage certificates using HTTP.
 
 ```yaml
+# traefik.http.yml 
 api:
   dashboard: true
   insecure: true
@@ -328,20 +364,33 @@ entryPoints:
     address: ":80"
   websecure:
     address: ":443"
+  traefik:
+    address: ":8080"   
 
 # Challenge HTTP
 certificatesResolvers:
-  myresolver:             ## Will be used for label
+  myresolver:
     acme:
       email: your_email@example.com 
       storage: acme.json
       httpChallenge:
         entryPoint: web
+
+# Dashboard router
+http:
+  routers:
+    traefik:
+      rule: Host(`dashboard.yourdomain.com`) 
+      entryPoints:
+        - traefik
+      service: api@internal
+      # middlewares:                       # DO NOT DO IN PRODUCTION
+      #   - auth                           # Disables the authentication        
 ```
 
 :::info 
 
-Make sure to replace the email address with your real email
+Make sure to replace the email address with your real email and the domain with your domain.
  
 :::
 
@@ -416,24 +465,68 @@ level=info msg="Testing certificate renew..." providerName=myresolver.acme
 
 If successful, visit your domain using HTTPS. You should see the secure padlock icon in the browser. 
 
-<!-- insert-photo -->
+```bash
+https://joeden.site/ 
+```
 
-Click the lock icon to see more details about the certificate. It will show **Let’s Encrypt** as the issuer.
+<div class="img-center"> 
 
-<!-- insert-photo -->
+![](/gif/docs/08102025-catapp-http.gif)
+
+</div>
+
+Click the lock icon (in some browsers, its a different icon) to see more details about the certificate. It will show **Let’s Encrypt** as the issuer.
+
+<div class="img-center"> 
+
+![](/gif/docs/08102025-catapp-http-2.gif)
+
+</div>
 
 
 #### Confirm in Traefik Dashboard
 
-Open the dashboard (usually at port 8080), go to **Routers**, and click the `catapp@docker` application.
+Open the dashboard:
+
+```bash
+http://dashboard.yourdomain.com:8080
+```
+
+**NOTE:** By default, in your Traefik config, the dashboard is exposed on a separate entry point that listens on port 8080 using plain HTTP. It doesn’t have TLS (HTTPS) enabled on that port. If you want to use HTTPs, you need to update your Traefik YAML to use the secure `websecure` (443) entry point.
+
+
+Go to **Routers**, and locate the `catapp@docker` application.
 
 - TLS is marked as **enabled**
 - The router uses `websecure` as the entry point
 - The certificate resolver is set to `myresolver`
 
-Go to **Services** and click `catapp@docker`. In the **Used by Routers** section, it will also show TLS is enabled for the application.
+<div class="img-center"> 
 
-<!-- insert-photo -->
+![](/img/docs/08102025-traefik-catapp-http.PNG)
+
+</div>
+
+Click the `catapp@docker` to see the router's details:
+
+- TLS is marked as **enabled**
+- The router uses `websecure` as the entry point
+- The certificate resolver is set to `myresolver`
+
+<div class="img-center"> 
+
+![](/img/docs/08102025-traefik-catapp-http-2.PNG)
+
+</div>
+
+
+Go to **HTTP Services** and click `catapp@docker`. In the **Used by Routers** section, it will show TLS is enabled for the application.
+
+<div class="img-center"> 
+
+![](/img/docs/08102025-traefik-catapp-http-3.PNG)
+
+</div>
 
 
 #### Cleanup
