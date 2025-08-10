@@ -492,8 +492,7 @@ Open the dashboard:
 http://dashboard.yourdomain.com:8080
 ```
 
-**NOTE:** By default, in your Traefik config, the dashboard is exposed on a separate entry point that listens on port 8080 using plain HTTP. It doesn’t have TLS (HTTPS) enabled on that port. If you want to use HTTPs, you need to update your Traefik YAML to use the secure `websecure` (443) entry point.
-
+**NOTE:** The Traefik config exposes the dashboard on a separate entry point that listens on port 8080 using plain HTTP without TLS (no HTTPS). If you want to use HTTPS, you need to update your Traefik YAML to use the secure `websecure` (port 443) entry point.
 
 Go to **Routers**, and locate the `catapp@docker` application.
 
