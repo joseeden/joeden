@@ -173,6 +173,80 @@ For example, my setup uses:
 
 After getting a domain, update its registrar settings so it points to your chosen DNS provider. If you're also using DigitalOcean, you can follow the steps here: [Adding a Domain in DigitalOcean](/docs/001-Personal-Notes/055-Homelab/040-DigitalOcean.md#adding-a-domain)
 
+**NOTE:** Make sure your domain is fully set up and pointing to your server before proceeding with the labs. Propagation can take up to 24–48 hours, sometimes longer depending on the registrar and TLD.
+
+To verify, you can run:
+
+```bash
+dig NS yourdomain.com
+dig A yourdomain.com
+```
+
+If you are using DigitalOcean name servers, you should see:
+
+```bash
+;; ANSWER SECTION:
+yourdomain.com.     1800    IN      NS      ns1.digitalocean.com.
+yourdomain.com.     1800    IN      NS      ns2.digitalocean.com.
+yourdomain.com.     1800    IN      NS      ns3.digitalocean.com.
+
+;; ANSWER SECTION:
+yourdomain.com.     300     IN      A       192.0.2.123
+```
+
+### Set Up DNS Records
+
+Once you've changed your domain’s nameservers to your DNS provider, the next step is to add your DNS records there. 
+
+Here are the DNS records I used. You can copy them but make sure to replace with your own domain details.
+
+| Type | Hostname            | Value                   | TTL (seconds) |
+| ---- | ------------------- | ----------------------- | ------------- |
+| A    | `*.johnsmith.app`   | points to 34.201.50.100 | 30            |
+| A    | `www.johnsmith.app` | points to 34.201.50.100 | 30            |
+| A    | `johnsmith.app`     | points to 34.201.50.100 | 30            |
+
+The IP `34.201.50.100` is my test machine's public IP. Point the DNS records to your machine's public IP.
+
+You can also use shorthand names since they mean the same:
+
+| Type | Hostname          | Value                   | TTL (seconds) |
+| ---- | ----------------- | ----------------------- | ------------- |
+| A    | `*.johnsmith.app` | points to 34.201.50.100 | 30            |
+| A    | `www`             | points to 34.201.50.100 | 30            |
+| A    | `@`               | points to 34.201.50.100 | 30            |
+
+If you set this up in DigitalOcean, your DNS records should look like this:
+
+| Type | Hostname            | Value                          | TTL (seconds) |
+| ---- | ------------------- | ------------------------------ | ------------- |
+| NS   | `johnsmith.app`     | points to ns1.digitalocean.com | 30            |
+| NS   | `johnsmith.app`     | points to ns2.digitalocean.com | 30            |
+| NS   | `johnsmith.app`     | points to ns3.digitalocean.com | 30            |
+| A    | `*.johnsmith.app`   | points to 34.201.50.100        | 30            |
+| A    | `www.johnsmith.app` | points to 34.201.50.100        | 30            |
+| A    | `johnsmith.app`     | points to 34.201.50.100        | 30            |
+
+
+
+
+<!-- ### If you're testing on your Windows Machine 
+
+You might get a timeout error when deploying the stack in a later step. To fix this, temporarily allow incoming traffic on ports 80 and 443:
+
+1. Open **Windows Defender Firewall with Advanced Security**:
+   * Press `Win + R`, type `wf.msc`, press Enter.
+
+2. In the left pane, click **Inbound Rules**.
+3. In the right pane, click **New Rule...**.
+4. Choose **Port**, click **Next**.
+5. Select **TCP**, specify ports: `80,443`, click **Next**.
+6. Choose **Allow the connection**, click **Next**.
+7. Choose where to apply the rule (Domain, Private, Public). 
+8. For testing, select all three, then click Next.
+9. Name the rule `000-DELETE-LATER-Allow HTTP and HTTPS inbound`.
+10. Click **Finish**. -->
+
 
 ### Clone the Repository 
 
@@ -191,15 +265,19 @@ Project structure:
 
 ```bash
 04-https-tls
-├── docker-compose.dns.yml
-├── docker-compose.http.yml
-├── docker-compose.tls.yml
+├── challenge-dns
+│   ├── docker-compose.dns.yml
+│   └── traefik.dns.yml
+├── challenge-http
+│   ├── docker-compose.http.yml
+│   └── traefik.http.yml
+├── challenge-tls
+│   ├── docker-compose.tls.yml
+│   └── traefik.tls.yml
 ├── letsencrypt
-│   └── test
-├── traefik.dns.yml
-├── traefik.http.yml
-└── traefik.tls.yml
 ```
+
+**Note:** Make sure the `letsencrypt` folder is next to the `challenge` folders, not inside any of them. The Docker compose files expect it there. If you move the `letsencrypt` folder, remember to update the Docker compose files accordingly.
 
 
 ## Lab: Enable HTTPS Using Let's Encrypt (HTTP Challenge)
@@ -209,6 +287,28 @@ In this lab, we’ll use **Let’s Encrypt with the HTTP challenge** to automati
 - Let’s Encrypt will verify your domain using an HTTP request
 - Traefik will handle all the communication and certificate setup
 - You just need to update a few values in the config files
+
+
+#### Setup a Public Cloud VM 
+
+It is recommended to perform this lab on a a VM with a public IP because you need to open port 80 to the internet.
+
+- Your DNS records must point to the VM’s public IP.
+- Let’s Encrypt can verify your site via HTTP without problems.
+
+If you do this lab in your local Windows machine, it is likely that your machine has a private LAN IP like `192.168.x.x` behind NAT. 
+
+You can definitely tweak your Windows machine’s firewall to allow inbound connections on port 80 (and 443), but this alone won’t fix the main problem if your router or network blocks/doesn’t forward that traffic.
+
+To create a public cloud VM, you can use:
+
+- [Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html)
+- [Azure virtual machine](https://learn.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal) 
+- [GCP Compute Engine](https://cloud.google.com/products/compute)
+- [DigitalOcean droplet](https://docs.digitalocean.com/products/droplets/how-to/create/) 
+- [Linode instance](https://www.linode.com/docs/guides/create-a-linode/)
+
+#### Prepare the Files 
 
 Inside the lab directory, we'll use' `traefik.http.yaml` to enable Let's Encrypt with HTTP challenge. This config tells Traefik to request and manage certificates using HTTP.
 
@@ -233,7 +333,7 @@ entryPoints:
 certificatesResolvers:
   myresolver:             ## Will be used for label
     acme:
-      email: josemanuelitoeden@gmail.com
+      email: your_email@example.com 
       storage: acme.json
       httpChallenge:
         entryPoint: web
@@ -260,7 +360,7 @@ services:
       - "8080:8080"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./letsencrypt:/letsencrypt
+      - ../letsencrypt:/letsencrypt
       - ./traefik.http.yml:/etc/traefik/traefik.yml
 
   catapp:
@@ -288,7 +388,7 @@ With these labels, Traefik will route HTTPS traffic and get certificates automat
 To deploy the stack:
 
 ```bash
-docker stack deploy -c docker-compose.http.yaml traefik
+docker stack deploy -c ./challenge-http/docker-compose.http.yml traefik
 ```
 
 Output:
@@ -308,9 +408,10 @@ docker service logs traefik_traefik
 Look for lines like:
 
 ```
-Testing certificate renew...
-Starting provider *traefik.Provider {}...
-Certificate obtained successfully...
+level=info msg="Configuration loaded from file: /etc/traefik/traefik.yml"
+level=info msg="Traefik version 2.3.7 built on 2021-01-11T18:03:02Z"
+.....
+level=info msg="Testing certificate renew..." providerName=myresolver.acme
 ```
 
 If successful, visit your domain using HTTPS. You should see the secure padlock icon in the browser. 
@@ -382,7 +483,7 @@ entryPoints:
 certificatesResolvers:
   myresolver:
     acme:
-      email: josemanuelitoeden@gmail.com  
+      email: your_email@example.com 
       storage: acme.json
       tlsChallenge: true        # Use TLS-ALPN challenge over port 443
         # # used during the challenge
@@ -415,7 +516,7 @@ services:
       - "8080:8080"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./letsencrypt:/letsencrypt # Copy Let's Encrypt certificate locally for backing up
+      - ../letsencrypt:/letsencrypt # Copy Let's Encrypt certificate locally for backing up
       - ./traefik.tls.yml:/etc/traefik/traefik.yml
 
   catapp:
@@ -551,7 +652,7 @@ services:
       - "8080:8080"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./letsencrypt:/letsencrypt                  
+      - ../letsencrypt:/letsencrypt                  
       - ./traefik.dns.yml:/etc/traefik/traefik.yml  
     environment:
       - "DO_AUTH_TOKEN=<your_api_token_here>"
