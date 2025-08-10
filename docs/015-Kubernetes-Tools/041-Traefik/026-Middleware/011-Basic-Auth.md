@@ -419,5 +419,18 @@ Note that in step 1, a third user was added. Use this user to test access and ve
 </div>
 
 
+### Cleanup
 
+Delete the deployed stack:
+
+```bash
+docker stack rm traefik 
+```
+
+You can also delete the `usersfile` and `basicauth_users` :
+
+```bash
+rm -f usersfile
+rm -f basicauth_users 
+```
 
