@@ -65,9 +65,30 @@ ns3.digitalocean.com
 
 This process is often called “using custom name servers”. For step-by-step instructions, see [Update Your Domain’s Delegation](https://docs.digitalocean.com/products/networking/dns/getting-started/dns-registrars/#update-your-domains-delegation) 
 
+After setting up the nameservers, the next step is setup yoru DNS records in DigitalOcean.
 
 :::info 
 
 You can change your domain’s custom nameservers at the registrar as many times as you want. There’s no hard limit from registrars like Namecheap, GoDaddy, etc.
 
 :::
+
+
+## Generate Personal Access Token 
+
+To use DigitalOcean’s API, you need to create an API token with the right permissions. Follow these steps:
+
+1. Go to your DigitalOcean dashboard > **API**
+2. Click **Generate New Token**
+3. Enter a name for the token
+4. Set an expiration date
+5. Choose the scopes (permissions)
+6. Click **Generate Token**
+
+For labs, you can set the scope to Full Access. After doing the lab, make sure to delete t he token.
+
+<div class="img-center"> 
+
+![](/img/docs/08102025-do-api-token.PNG)
+
+</div>
