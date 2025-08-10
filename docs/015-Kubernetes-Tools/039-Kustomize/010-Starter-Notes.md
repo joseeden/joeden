@@ -68,7 +68,7 @@ Kustomize makes it easy to reuse Kubernetes configs by letting you update only t
 - Add overlays for each environment
 - Everything stays in plain YAML, no templates needed
 
-This means you don’t copy full files for every environment—you only change what’s different.
+This means you don’t copy full files for every environment, you only change what’s different.
 
 ## Base and Overlays 
 

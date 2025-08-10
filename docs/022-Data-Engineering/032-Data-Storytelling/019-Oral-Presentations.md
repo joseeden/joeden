@@ -139,10 +139,10 @@ When it's time to present, the way you deliver your message is just as important
 
 - **Guide your audience**  
   - Present information in a logical order.  
-  - Don’t save key points for the end — spread them throughout.
+  - Don’t save key points for the end, spread them throughout.
 
 - **Engage your audience**  
-  - Avoid talking at the audience — talk to them.  
+  - Avoid talking at the audience. Talk to them.  
   - Ask questions and include them in the discussion.
 
 - **Introduce yourself confidently**  

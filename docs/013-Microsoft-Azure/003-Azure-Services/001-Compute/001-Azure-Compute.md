@@ -78,23 +78,30 @@ To deploy an Azure virtual machine, certain prerequisite resources are essential
 
 There are multiple purchasing options for Azure virtual machines:
 
+## Pricing
+
+Azure virtual machines offer several purchasing options:
+
 - **Pay-as-You-Go**
-   - Pay for compute capacity by the second.
-   - No long-term commitments or upfront payments.
-   - Flexible scalability—increase or decrease capacity as needed.
-   - Recommended for customers seeking cost-effectiveness and flexibility.
+
+  - Pay by the second for compute capacity
+  - No upfront costs or long-term commitments
+  - Easily scale capacity up or down
+  - Good for cost-effective, flexible needs
 
 - **Reserved VM Instances**
-   - Involves an upfront commitment to purchase a virtual machine for one or three years.
-   - Offers cost savings of up to 72% compared to pay-as-you-go pricing.
-   - Suitable for applications with steady-state usage or for those seeking budget predictability.
-   - Requires a commitment to using the VM for at least a year.
+
+  - Commit upfront for one or three years
+  - Save up to 72% compared to pay-as-you-go
+  - Best for steady workloads and predictable budgets
+  - Requires using the VM for at least a year
 
 - **Spot Pricing**
-   - Allows purchase of unused Azure compute at a discount, up to 90%.
-   - Workloads must tolerate interruptions, ideal for interruptible applications.
-   - Not suitable for workloads that must adhere to strict SLAs.
- 
+
+  - Buy unused Azure compute at discounts up to 90%
+  - Suitable for workloads that can handle interruptions
+  - Not for workloads with strict service requirements
+
 
 ## VM Options
 

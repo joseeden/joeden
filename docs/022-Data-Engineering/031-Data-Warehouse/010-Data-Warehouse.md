@@ -19,7 +19,7 @@ A data warehouse is a system that stores and analyzes large amounts of data for 
 - Organizes and stores the data for future use  
 - Helps analysts find patterns and insights  
 
-Think of it like a physical warehouse storing goods—only here, it stores valuable business data.  
+Think of it like a physical warehouse storing goods-only here, it stores valuable business data.  
 
 ## Why is a Data Warehouse Valuable?  
 
@@ -55,7 +55,7 @@ A data warehouse pulls in data from everywhere to make sense of it.
 
 - Combines data from multiple departments (Sales, HR, Finance)  
 - Uses **ETL (Extract, Transform, Load)** to clean and organize info  
-- Huge—usually **100 GB+**  
+- Huge, usually **100 GB+**  
 - Changing it is like **rearranging a skyscraper**  
 
 **Why Not Just Use Databases?**  
@@ -74,15 +74,14 @@ Example: Finance tracks revenue without digging through HR data.
 
 ### Data Lake: The Junk Drawer (But Smart)  
 
-A data lake holds everything—structured or not.  
+A data lake stores all types of data, whether structured or not.
 
 - Stores text, images, videos, and logs  
 - Works for multiple departments  
 - Perfect for **"we don’t know yet, but it might be useful"** data  
+- Example: AI scans factory footage to spot production issues.  
 
-Example: AI scans factory footage to spot production issues.  
-
-**Warehouse vs. Lake: What’s the Deal?**  
+**Warehouse vs. Lake: What’s the Difference?**  
 
 - **Warehouse** = Neatly labeled storage, perfect for reports.  
 - **Lake** = A giant pile of raw data waiting for a purpose.

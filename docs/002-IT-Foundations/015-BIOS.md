@@ -42,7 +42,14 @@ Adjusting these settings can influence how the computer boots and which devices 
 
 ## Reimaging Computers
 
-In IT environments, a common task involves **reimaging** computers. This process refers to wiping and reinstalling an operating system using a disk image—a snapshot of a fully configured system. Reimaging is often necessary to restore a computer to a known, stable state or to deploy a standardized software configuration across multiple machines. 
+In IT, reimaging means wiping and reinstalling an operating system from a disk image, which is a snapshot of a fully configured system. 
+
+- Wipes the existing system
+- Installs OS from a pre-made image
+- Restores to a known stable state
+- Ensures consistent software setup across devices
+
+The snapshot is used to return a computer to a stable state or deploy a standard setup to many machines.
 
 <div class="img-center"> 
 

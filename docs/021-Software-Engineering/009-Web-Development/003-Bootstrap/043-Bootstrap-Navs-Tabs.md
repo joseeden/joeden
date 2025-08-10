@@ -45,7 +45,7 @@ This guide focuses on how to style them.
 
 ## Sticky Tab Bar 
 
-Sometimes, when you click a tab in the tab bar, it switches to the correct tab content but also scrolls the screen down — causing the tab bar to be partially or completely hidden.
+Sometimes when you click a tab, the content changes correctly but the page also scrolls down. This can hide part or all of the tab bar.
 
 <details>
   <summary> **See sample code here** </summary>
@@ -321,7 +321,7 @@ This **completely disables Bootstrap's scroll-jump behavior**, because you're no
 
 :::info 
 
-Using `data-bs-target` is **100% supported by Bootstrap 5** and does **exactly the same thing** as `href="#..."` — it just avoids the side effect of scrolling.
+Using `data-bs-target` is fully supported by Bootstrap 5 and works the same way as `href="#..."`. The difference is it prevents the page from scrolling when switching tabs.
 
 :::
 

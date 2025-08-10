@@ -14,7 +14,7 @@ Imagine a simple light bulb connected to a switch. When the switch is flipped on
 
 ![](/img/docs/binary8bulbs.png)
 
-Now, expand this concept to eight light bulbs and switches, collectively representing eight bits with each bulb capable of being on (1) or off (0). This binary system traces its origins back to Jacquard's loom, which used punch cards with holes to control the weaving of intricate patterns: a hole signified on, and no hole signified off — a foundational binary concept.
+Now imagine eight light bulbs and switches, each representing a bit that can be on (1) or off (0). This binary idea goes back to Jacquard's loom, which used punch cards with holes to control weaving patterns. A hole meant on, and no hole meant off, forming a basic binary principle.
 
 ![](/img/docs/binaryjacquardpunchcards.png)
 

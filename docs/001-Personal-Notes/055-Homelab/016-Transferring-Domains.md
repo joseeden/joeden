@@ -9,7 +9,7 @@ last_update:
 
 ## Overview
 
-You can’t instantly “move” a domain between registrars or DNS providers — it depends on what you’re changing.
+You can’t instantly “move” a domain between registrars or DNS providers. It depends on what you’re changing.
 
 #### Registrar transfer
 

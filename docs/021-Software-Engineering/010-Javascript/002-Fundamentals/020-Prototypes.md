@@ -91,7 +91,7 @@ Modifying built-in prototypes can cause problems in big projects!
 Every object in JavaScript is part of a chain called the **prototype chain**.
 
 - Objects can inherit from other objects
-- Methods are looked up through the chain
+- When looking for methods or properties, JavaScript checks up the chain
 - The chain ends at `Object.prototype`
 
-This system helps JavaScript reuse methods and properties efficiently by checking one object at a time until it finds what it needs—or not at all.
+This lets JavaScript efficiently reuse methods and properties by searching one object at a time until it finds what it needs or reaches the end.

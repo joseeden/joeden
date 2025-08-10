@@ -25,7 +25,7 @@ Knowing how to write code in one language doesn’t automatically make someone a
 - It includes understanding systems, design, and teamwork  
 - You need both practice and deeper computer science knowledge  
 
-Just learning syntax is not enough—you need to understand how and why software works the way it does.
+Just learning syntax is not enough; you need to understand how and why software works the way it does.
 
 ## Real Engineers Know More Than Just Code
 

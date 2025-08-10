@@ -26,12 +26,12 @@ import Admonition from '@theme/Admonition';
 
 <Admonition type="info" title={null} icon={null}>
   <p> **Why Data Science is the Hottest Career Choice You’ve Never Considered!** </p>
-  <p> Ever wonder why data science is being hailed as the career of the future? Prepare to be amazed! From jaw-dropping salaries to cutting-edge innovations, this field is exploding with potential. You won't believe the impact you can make with just a laptop and some data. Don't miss out—your dream job might be just a click away! </p>
+  <p> Ever wonder why data science is being hailed as the career of the future? Prepare to be amazed! From jaw-dropping salaries to cutting-edge innovations, this field is exploding with potential. You won't believe the impact you can make with just a laptop and some data. Don't miss out - your dream job might be just a click away! </p>
 </Admonition>
 
 <Admonition type="tip" title={null} icon={null}>
   <p> **The Secret to Massive Success: How Data Science Can Change Your Life!** </p>
-  <p> Ready for a game-changer? Discover how data science can catapult your career to new heights and transform your life. This field is not just about numbers—it's about unlocking hidden patterns, making groundbreaking discoveries, and creating solutions that can change the world. Click now to find out how you can be part of this thrilling revolution! </p>
+  <p> Ready for a game-changer? Discover how data science can catapult your career to new heights and transform your life. This field is not just about numbers, it's about unlocking hidden patterns, making groundbreaking discoveries, and creating solutions that can change the world. Click now to find out how you can be part of this thrilling revolution! </p>
 </Admonition>
 
 To test this, you randomly split your audience so each group sees a different title.

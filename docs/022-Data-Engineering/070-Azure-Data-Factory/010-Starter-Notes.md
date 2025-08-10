@@ -41,7 +41,7 @@ Think of it as a smart assistant that automates how your data flows.
 
 ## Connecting to Data
 
-ADF supports many data sources — both cloud and on-premises.
+ADF supports many data sources, both cloud-based and on-premises.
 
 - Over 80 built-in connectors  
 - Works with SQL, Blob Storage, Salesforce, and more  
@@ -61,7 +61,7 @@ Once set up, your data flows can run automatically without manual work.
 
 ## Data Transformations
 
-ADF can also transform data — change, clean, or join data in the pipeline.
+ADF can transform data by changing, cleaning, or combining it during the pipeline.
 
 - Use **data flows** to transform data without code  
 - Use **external services** like Databricks or Azure Functions for more complex work  
@@ -151,4 +151,4 @@ ADF is secure but it doesn't store data itself.
 - Data moves through ADF but is stored in your selected destination  
 - Supports encrypted traffic using HTTPS and TLS  
 
-ADF helps move and process data — but the actual storage is handled by other systems like Azure SQL, Blob Storage, or Data Lake.
+ADF handles moving and processing data, while storage is managed by systems like Azure SQL, Blob Storage, or Data Lake.

@@ -129,7 +129,7 @@ Then `os.Args` will look like:
 [./myapp first]
 ```
 
-Same behavior—just a different binary path.
+Same behavior, just a different binary path.
 
 
 ## Accessing Specific Arguments

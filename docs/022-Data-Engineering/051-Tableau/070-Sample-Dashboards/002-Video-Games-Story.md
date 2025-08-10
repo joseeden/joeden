@@ -30,7 +30,7 @@ In this example, we'll use a dataset on video game sales from the following game
 
 We'll build a story to answer two questions:  
 
-- On which platform did **Call of Duty: Black Ops** sell more—PlayStation or Xbox?  
+- On which platform did **Call of Duty: Black Ops** sell more: PlayStation or Xbox?  
 - What was the **best-selling PS2 simulation game** published by **Electronic Arts**?  
 
 #### Steps

@@ -117,7 +117,7 @@ When registering, you can choose how many years to buy upfront. Common options:
 
 - **Security & stability**
 
-  - Important domains (brands, businesses) are often registered for 5–10 years to avoid accidental expiration.
+  - Important domains (brands, businesses) → register for 5–10 years to avoid accidental expiration.
 
 
 #### Recommendation
@@ -205,7 +205,7 @@ Yes, definitely. Domains on the HSTS preload list ensure your site always uses s
 
 ### Can You Bypass HTTPS Enforcement?
 
-Only in very specific test setups—and it’s not safe or reliable for real use. Here are some options and their limits:
+Only in very specific test setups, and it’s not safe or reliable for real use. Here are some options and their limits:
 
 1. **Build a custom browser**
 

@@ -20,7 +20,7 @@ I encountered this when I was trying to modify the text color and background col
 
 ![](/gif/docs/css-notes-dropdown-menu.gif)
 
-I learned that there are some browser limitations when it comes to using dropdown menus — most browsers do not allow styling `<option>` hover states due to native rendering of dropdowns. 
+I learned that there are some browser limitations when it comes to using dropdown menus. Most browsers do not allow styling `<option>` hover states due to native rendering of dropdowns. 
 
 ```css
 /* This tries to change background color, but this will fgil. */
@@ -41,7 +41,7 @@ Browsers like Chrome and Firefox **don't expose hover or active states of `<opti
 }
 ```
 
-This is the reason why I still see blue background with white text when hovering over dropdown options — it's the default browser behavior and cannot be overridden with plain CSS.
+This is the reason why I still see blue background with white text when hovering over dropdown options. It's the default browser behavior and cannot be overridden with plain CSS.
 
 ### Workaround: Change Overall Styling 
 
@@ -142,7 +142,7 @@ The sample code below defines a **toolbar menu** (`<menu>`) containing a single 
 
 The example demonstrates the layout for a close button typically placed in the corner of a search modal. The button includes an SVG icon to represent the close action.  
 
-**Note:** This code only creates the close button — not the full search modal interface.
+**Note:** This code only creates the close button, not the full search modal interface.
 
 The [Pesticide Chrome extension](https://chromewebstore.google.com/detail/jeebpgmphhagpecfiophljpkhncoajcg?utm_source=item-share-cb) is used here to help visualize the CSS box model and layout, as seen below:
 

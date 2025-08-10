@@ -663,7 +663,7 @@ Open your browser and visit:
 https://training.yourdomain.com
 ```
 
-You should see the app running with a valid HTTPS certificate — no DNS config was needed manually.
+You should see the app running with a valid HTTPS certificate. No DNS config was needed manually.
 
 To test further, update the Compose file to use a new subdomain:
 

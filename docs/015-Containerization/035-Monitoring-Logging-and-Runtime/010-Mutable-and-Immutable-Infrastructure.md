@@ -32,7 +32,8 @@ In mutable infrastructure, servers are updated directly in place. The underlying
 
 </div>
 
-A drawback of this setup is **configuration drift**—where system settings deviate over time. For instance, if three servers are updated simultaneously, network issues or missing dependencies might cause the update to fail on one server, creating inconsistency.
+A drawback of this setup is **configuration drift**, where system settings change over time and no longer match. For example, if three servers are updated at the same time, network problems or missing files might cause one server to fail, leading to differences between them.
+
 
 ## Immutable Infrastructure
 

@@ -76,9 +76,8 @@ Aggregates summarize data into a single representative value.
 
 ## P-Value  
 
-In statistical analysis, we often use p-values to determine the significance of our results.  
+In statistics, p-values help show how significant a result is.
 
-- A p-value below 0.05 suggests the result is statistically significant.  
-- Lower p-value indicates stronger evidence, but it doesn’t prove the truth — just that the result is unlikely due to randomness.  
-
-To avoid confusion, consider providing additional metrics or alternative tests.  
+- A p-value less than 0.05 usually means the result is significant
+- Lower p-values mean stronger evidence against randomness
+- P-values do not prove the result is true, only that it is unlikely due to chance

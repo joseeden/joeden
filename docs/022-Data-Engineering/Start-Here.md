@@ -91,8 +91,8 @@ Common non-relatonal databases(NoSQL):
 
 - **Relational Database**
 
-    - A relational database is a type of database that stores and provides access to data points that are related to one another. 
-    - It organizes data into tables which can be linked—or related—based on data common to each.
+    - Sstores and provides access to data points that are related to one another. 
+    - Organizes data into tables which can be linked or related, based on data common to each.
 
 
 ## Where does the database fit in an application?
@@ -239,34 +239,36 @@ SQL (Structured Query Language) plays a vital role in both Data Analysis and Dat
 
 ## SQL Implementations
 
-Various SQL implementations exist, with minor differences. Switching between them is like switching keyboard layouts or dialects of English; mostly similar with a few changes.
+There are several SQL versions with small differences. Switching between them is like switching keyboard layouts or English dialects. They are mostly similar with some changes.
 
 - **MS SQL Server (Microsoft SQL Server)**
 
-    - MS SQL Server is a relational database management system developed by Microsoft. 
-    - It's designed to handle a wide range of data requirements and is commonly used in enterprise environments. 
-    - It supports various data types, including primitive, structured, and user-defined, and is known for its performance, scalability, and security features. 
-    - MS SQL Server also offers extensive integration with other Microsoft tools.
+  - Developed by Microsoft for enterprise use
+  - Handles many data types and offers strong performance and security
+  - Integrates well with other Microsoft tools
 
 - **MySQL**
 
-    - MySQL is an open-source relational database management system owned by Oracle Corporation. 
-    - It's widely used in web applications and is a component of the popular LAMP web application software stack (Linux, Apache, MySQL, Perl/PHP/Python). 
-    - MySQL is known for its speed, reliability, and ease of use. 
-    - It supports a wide range of platforms including Linux, Windows, and MacOS.
+  - Open-source and owned by Oracle Corporation
+  - Common in web apps and part of the LAMP stack
+  - Known for speed, reliability, and ease of use
+  - Runs on Linux, Windows, and MacOS
 
 - **PostgreSQL**
 
-    - PostgreSQL is a powerful, open-source object-relational database system. 
-    - It extends the SQL language combined with many features that safely store and scale the most complicated data workloads. 
-    - PostgreSQL offers advanced features such as Multi-Version Concurrency Control (MVCC), point in time recovery, tablespaces, and more. 
-    - It's also highly customizable with a variety of extensions and libraries.
+  - Powerful, open-source object-relational database
+  - Supports complex data and advanced features
+  - Features like MVCC and point-in-time recovery
+  - Highly customizable with extensions and libraries
 
 - **Oracle SQL (Oracle Database)**
 
-    - Oracle Database is a multi-model database management system produced by Oracle Corporation. 
-    - It's known for supporting large-scale databases—some of which can contain billions of records—and for its ability to handle high transaction loads. Oracle Database offers features for Resource Costing, Data Warehousing, 
-    - High Availability, Scalability and Performance, and Security, among others.
+  - Multi-model system from Oracle Corporation
+  - Supports huge databases with billions of records
+  - Handles high transaction loads 
+  - Feauters resource costing, data warehousing
+  - Also supports availability, scalability, and security
+
 
 ## Terminologies 
 

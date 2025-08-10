@@ -117,30 +117,30 @@ Documentation helps developers, users, and stakeholders understand, use, and mai
 
 ## Constraints
 
-Every software project has limits — commonly in cost, time, usability, and security. These constraints must be balanced carefully.
+Every software project has limits, commonly in cost, time, usability, and security. These constraints must be balanced carefully.
 
-> *We can make it cheap, quick, usable, or secure—but not all four.*
+> *You can make it cheap, fast, usable, or secure - but not all at once.*
 
-Given a fixed budget, management usually selects only two priorities to focus on.
+With a fixed budget, management usually chooses two priorities to focus on.
 
 - **Technical Debt**
 
-    When speed is prioritized, quality often takes a back seat. This leads to technical debt:
+  Choosing speed often lowers quality, causing technical debt:
 
-    - "I'll fix it later; I just need to meet this deadline"
-    - Poor or temporary solutions are left in place to save time
+  - “I’ll fix it later; just need to meet the deadline”
+  - Quick fixes or temporary solutions are used to save time
 
 - **Management Pressure**
 
-    Often, management pushes for fast delivery:
+  Management often demands fast delivery:
 
-    - Assumes fixes can be made later after release
-    - May overlook long-term costs of rushed or incomplete features
-    - Can result in unstable or hard-to-maintain systems
+  - Assumes problems can be fixed after release
+  - May ignore long-term costs of rushed work
+  - Can lead to unstable or hard-to-maintain systems
 
 ## Integrated Product Team
 
-An Integrated Product Team (IPT) brings together people from different disciplines to work toward a shared goal — delivering a complete product efficiently and effectively.
+An Integrated Product Team (IPT) is a group of people from different areas working together to achieve a common goal: delivering a complete product efficiently and effectively.
 
 - **IPPD (Integrated Product and Process Development)**
 

@@ -18,11 +18,11 @@ last_update:
 
 ## Overview
 
-Elasticsearch is not just a search engine—it can analyze and structure numerical data, providing quick and efficient metrics analysis.  
+Elasticsearch is more than a search engine. It can analyze and organize numerical data, offering fast and efficient metrics analysis.
 
 ![](/img/docs/01232025-elasticsearch-beyond-searching.png)  
 
-Elasticsearch aggregations can sometimes replace tools like Hadoop and Spark. While Hadoop or Spark might take minutes or hours to process queries, Elasticsearch often delivers results in seconds.  
+Elasticsearch aggregations can sometimes replace tools like Hadoop and Spark. While Hadoop or Spark may take minutes or hours to run queries, Elasticsearch often provides results in seconds.
 
 
 ## Aggregation Types 

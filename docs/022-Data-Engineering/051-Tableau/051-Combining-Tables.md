@@ -161,7 +161,7 @@ Go to the Datasource:
 
 - Double-click **Orders 2016-2020**.  
 - Drag `Returns` to the right and drop it.  
-- A join icon will appear — click it and select "Left Join".  
+- A join icon will appear. click it and select "Left Join".  
 - Go to Sheet 1 to ensure the row count remains unchanged.  
 
 Create a chart for returned orders:

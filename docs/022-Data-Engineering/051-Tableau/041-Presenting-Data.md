@@ -83,7 +83,7 @@ You can format both at the workbook and sheet level.
 
 When comparing multiple graphs, it's important to use the same scale to prevent misleading differences.
 
-In the example below, the chart on the left appears similar in peak to the one on the right, but it's actually much higher. This happens because they have different scales—the left graph peaks at around 34,000, while the right one peaks at about 8,000 (see their y-axis).
+In the example below, the left chart looks similar in peak to the right one, but it actually reaches much higher. This is because the left graph’s y-axis goes up to about 34,000, while the right graph’s y-axis only goes to about 8,000.
 
 <div class="img-center"> 
 
@@ -109,7 +109,8 @@ See below:
 
 ## Highlighter Filter Pen 
 
-The highlighter pen helps focus on specific data without removing the rest—it dims everything else instead. In the example below, multiple lines overlap.
+The highlighter pen lets you focus on specific data by dimming everything else instead of hiding it. In the example below, multiple lines overlap.
+
 
 <div class="img-center"> 
 

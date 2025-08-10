@@ -18,9 +18,9 @@ The steps are similar across most registrars. DigitalOcean provides [detailed gu
 
 You can technically change your nameservers as often as you like, but there are practical limits:
 
-- **Propagation time** — Changes can take minutes to up to 48 hours to be seen everywhere
-- **Possible downtime** — Some users may reach the old provider, others the new one, during propagation
-- **Registrar delays** — Some registrars take a few minutes before pushing changes to the root DNS
+- **Propagation time** - Changes can take minutes to up to 48 hours to be seen everywhere
+- **Possible downtime** - Some users may reach the old provider, others the new one, during propagation
+- **Registrar delays** - Some registrars take a few minutes before pushing changes to the root DNS
 
 For lab work, it’s best to:
 
@@ -125,7 +125,7 @@ This forces your computer to resolve the domain immediately to your lab server.
     On your **local machine** (not the server), open `/etc/hosts` as root:
 
     ```bash
-    sudo nano /etc/hosts
+    sudo vi /etc/hosts
     ```
 
     Add a line mapping your domain to the server’s public IP:
@@ -137,14 +137,16 @@ This forces your computer to resolve the domain immediately to your lab server.
     Example:
 
     ```
-    192.0.2.55  catapp.example.com
+    192.0.2.55  example.com
     ```
 
-    If your Traefik lab uses multiple domains/subdomains, add them too:
+    <!-- If your Traefik lab uses multiple domains/subdomains, add them too: -->
 
+    If you need multiple subdomains:
+    
     ```
     192.0.2.55  yourdomain.com
-    192.0.2.55  catapp.yourdomain.com
+    192.0.2.55  test.yourdomain.com
     ```
 
 
@@ -173,5 +175,5 @@ This forces your computer to resolve the domain immediately to your lab server.
 
 **Important Notes**
 
-- `/etc/hosts` only affects **your machine** — other devices won’t see this mapping.
+- `/etc/hosts` only affects **your machine**, other devices won’t see this mapping.
 - Remove or update these entries later to avoid confusion when switching DNS providers.

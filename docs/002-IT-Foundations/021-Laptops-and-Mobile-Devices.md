@@ -11,9 +11,13 @@ last_update:
 
 ## Laptops
 
-All the components discussed in the previous topics—such as CPUs, RAM, storage, power systems, and peripherals—are fundamental parts of computers, including mobile phones. Despite their different physical forms and sizes, a mobile phone essentially incorporates a condensed version of the hardware that powers desktops and laptops today.
+Components like CPUs, RAM, storage, power systems, and peripherals, are essential in all computers, including mobile phones. While smaller in size, mobile phones contain a compact version of the same hardware found in desktops and laptops.
 
-Desktop and laptop computers are typically designed with expandability and flexibility in mind. They feature modular components that can be upgraded or replaced as needed, allowing users to customize their machines for specific tasks or performance requirements. 
+- Mobile phones have miniaturized computer hardware
+- Desktops and laptops offer more flexibility and expandability
+- Modular parts can be upgraded or replaced
+- Users can customize systems for specific needs or performance
+
 
 ## Mobile Devices
 

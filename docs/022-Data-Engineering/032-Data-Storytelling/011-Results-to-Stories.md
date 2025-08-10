@@ -75,7 +75,7 @@ Analogies simplify complex topics.
 **Example:** Explaining neural networks  
 
   - **Technical:** "Neural networks use forward and backward propagation for learning."  
-  - **Simple:** "A neural network learns like a child—getting feedback on what’s right and wrong."  
+  - **Simple:** "A neural network learns like a child getting feedback on what’s right and wrong."  
 
 ## Avoid Technical Jargon  
 

@@ -20,8 +20,8 @@ Data integration combines information from different databases, formats, and tec
 There are several common scenarios where data integration is utilized:
 
 - 360-degree customer view to unify customer information stored in different databases
-- Companies combining disparate databases to streamline operations during mergers.
-- Legacy systems, which may use both old and new systems, require integration for querying across all data sources simultaneously.
+- Merging different company databases to simplify operations after a merger
+- Connecting legacy and modern systems to allow querying across all data sources at once
 
 ## Designing the Unified Data Model
 
@@ -29,8 +29,9 @@ A unified data model is necessary to achieve effective integration. This model s
 
 When designing the model:
 
-- Define the purpose—whether it's for visual dashboards like daily sales charts or creating products like recommendation engines
-- Ensure the final data model is fast and scalable enough to meet the specific use case requirements
+- Define the purpose, such as creating visual dashboards
+- Examples: Daily sales charts or products like recommendation engines
+- Final data model is fast and scalable enough to meet the use case requirements
 
 ## Data Sources and Formats
 
@@ -107,7 +108,7 @@ An example of this is anonymizing credit card information during the ETL process
 
 ## Data Governance and Lineage
 
-Effective data governance involves tracking data lineage—knowing where the data originated and how it is being used throughout the integration process. This is important for audit purposes and ensuring compliance with data management policies.
+Effective data governance means keeping track of data origins and how data is used during integration. This is important for audits and following data management rules.
 
 <div class='img-center'>
 

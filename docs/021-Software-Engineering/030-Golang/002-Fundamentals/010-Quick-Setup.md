@@ -104,7 +104,7 @@ After installing Go on Windows using the `.msi` installer, you can verify that i
 
 ### Go Not Detected in WSL
 
-If you're using WSL and Go isn't detected, it means Go is only installed on Windows—not inside WSL.
+If Go isn’t detected in WSL, it means Go is installed on Windows but not inside the WSL environment.
 
 - `go version` returns "command not found"
 - WSL doesn’t use the Windows Go installation
@@ -182,8 +182,7 @@ Then test it:
 go version
 ```
 
-If that works, Go will run from WSL — but again, this is not the cleanest setup.
-
+If that works, Go will run from WSL, but this setup is not the cleanest.
 
 ## Create a Go Project Folder
 
@@ -208,7 +207,7 @@ func main() {
 }
 ```
 
-Save the file. The Go extension may suggest installing `goimports` to fix imports—install it too.
+Save the file. The Go extension might prompt you to install `goimports` to manage imports. Install it as well.
 
 
 ## Run Your Go Program

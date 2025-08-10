@@ -159,7 +159,7 @@ Helm also includes extra features beyond templates:
 - Built-in functions
 - Lifecycle hooks
 
-This gives you more power—but also more complexity.
+This gives you more power, but also more complexity.
 
 - Templates are harder to read
 - Not valid YAML until rendered
@@ -186,4 +186,4 @@ If you want clean YAML and just need basic environment overrides, Kustomize work
 
 If your app needs dynamic configs, conditionals, or packaging, Helm might be a better fit.
 
-**So the idea is:** use Helm when you need more features—just be ready for extra complexity.
+**So the idea is:** use Helm when you need more features, just be ready for extra complexity.

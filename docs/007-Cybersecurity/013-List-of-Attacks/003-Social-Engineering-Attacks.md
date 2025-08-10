@@ -25,7 +25,8 @@ Both techniques rely on convincing the victim that the attacker is a legitimate 
 
 ## Business Email Compromise (BEC)
 
-**Business Email Compromise (BEC)** typically involves attackers impersonating a trusted executive or employee via email to trick recipients into performing unauthorized actions—often financial, like sending money or gift cards.
+**Business Email Compromise (BEC)** happens when attackers pretend to be a trusted executive or employee by email. They trick people into doing unauthorized actions, usually involving money transfers or buying gift cards.
+
 
 ## Website Redirection
 

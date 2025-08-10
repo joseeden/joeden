@@ -69,9 +69,10 @@ TLS certificates prevent attacks like MITM (Man-in-the-Middle). The certificate'
 
 ### Verifying CA Signatures
 
-Public CAs use a pair of keys—private to sign certificates and public to validate them, which are built into browsers.
+Public CAs use two keys: a private key to sign certificates and a public key to verify them. These public keys are included in browsers.
 
-For internal applications, private CAs like Symantec or open-source solutions like EJBCA can be used.
+For internal use, private CAs like Symantec or open-source tools like EJBCA are available.
+
 
 ## Client Certificates
 

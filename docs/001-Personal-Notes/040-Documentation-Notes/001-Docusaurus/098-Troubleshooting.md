@@ -148,7 +148,7 @@ The error is caused by using raw HTML (`<div>`, `<img>`) in an MDX file, and MDX
 <img ... />      (must be self-closed)
 ```
 
-Note that even though your file ends in `.md`, **Docusaurus treats all Markdown files as MDX under the hood**, which means it **parses JSX/HTML inside them as JSX** — **not raw HTML**.
+Note that even though your file ends in `.md`, **Docusaurus treats all Markdown files as MDX under the hood**, which means it **parses JSX/HTML inside them as JSX**, **not raw HTML**.
 
 So even in `.md` files, **you still need to follow JSX rules** for tags like `<img>` and `<br>`, which includes:
 

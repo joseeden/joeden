@@ -17,7 +17,8 @@ last_update:
 
 ## Using `poster` 
 
-The `poster` attribute in a `<video>` tag is basically a fallback image. It's what shows up **before** the video starts playing — especially on slower connections or in browsers that delay autoplay, like on some mobile devices. It acts like a thumbnail or preview image.
+The `poster` attribute in a `<video>` tag is a fallback image that appears before the video plays. It’s especially useful on slow connections or in browsers that delay autoplay, like some mobile devices. It works like a thumbnail or preview.
+
 
 ```html
 <video class="video-background" 
@@ -123,7 +124,7 @@ I have a website that uses a video as the background for the landing page banner
 ![](/img/docs/Screenshot-2025-04-17-172129.png)  
 </div>
 
-This happens because of a limitation with iframes — when the iframe source becomes unreachable, the browser shows a broken frame (often with a sad face icon) and doesn’t let any JavaScript inside the iframe handle the error or provide a graceful fallback.
+This happens because iframes have a limitation. When the iframe’s source can’t be reached, the browser shows a broken frame (often with a sad face) and doesn’t allow any JavaScript inside the iframe to handle the error or offer a fallback.
 
 ### Possible Fixes
 

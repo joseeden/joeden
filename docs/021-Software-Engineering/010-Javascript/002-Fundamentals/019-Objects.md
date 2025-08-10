@@ -15,13 +15,13 @@ last_update:
 
 ## Overview
 
-As a recap, arrays are **ordered** collections, meaning elements are accessed by their position (index). We cannot assign names to individual values—only reference them by their index.  
+To recap, arrays are **ordered** lists where you access items by their position (index). You can’t name individual items, only refer to them by their number.
 
-Objects solve the naming problem by using **key-value pairs** instead of relying on order.  
+Objects fix this by using **key-value pairs**, so you can name each value.
 
-- Instead of square brackets (`[]`), objects use **curly braces `{}`**.  
-- Each property is followed by a colon (`:`) and corresponding value.  
-- Properties are separated by commas (`,`).  
+- Objects use **curly braces `{}`** instead of square brackets
+- Each key is followed by a colon (`:`) and its value
+- Items are separated by commas (`,`)
 
 ## Creating an Object
 

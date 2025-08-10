@@ -213,7 +213,7 @@ Roles involved:
 
 :::info 
 
-When developing your DRP, consider including steps for recovering PKI-encrypted files tied to damaged user accounts. In a PKI system, each user has a related pair of cryptographic keys. The public key encrypts data, while the private key—stored in secure locations like certificates, directories, or smart cards—is required to decrypt it.
+When creating your Disaster Recovery Plan (DRP), include steps to recover PKI-encrypted files linked to damaged user accounts. In a PKI system, each user has two keys: a public key to encrypt data and a private key to decrypt it. The private key is kept safe in places like certificates, directories, or smart cards.
 
 :::
 

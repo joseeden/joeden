@@ -7,7 +7,7 @@ sidebar_position: 3
 
 ## Using `cat` to read Encrypted PDF
 
-`cat` just shows raw file contents — but **PDF files are binary and structured**, not plain text.
+`cat` just shows raw file contents - but **PDF files are binary and structured**, not plain text.
 Even without password protection, PDFs look like that when you `cat` them.
 
 **Can you extract useful data directly?**
@@ -46,12 +46,12 @@ There are ways to unlock or remove a password from an encrypted PDF, bbut it dep
 
 2. **If you don't know the password** (recovery attempts)
 
-    If you **don't know the password**, it's much harder — unless the encryption is weak.
+    If you **don't know the password**, it's much harder - unless the encryption is weak.
     Some tools can *attempt* to crack it:
 
-    - **PDFCrack** (free, open source) — brute-force or dictionary attacks.
+    - **PDFCrack** (free, open source) - brute-force or dictionary attacks.
     - **Elcomsoft PDF Password Recovery** (paid, very powerful).
-    - **John the Ripper** with PDF plugin — advanced, for Linux users.
+    - **John the Ripper** with PDF plugin - advanced, for Linux users.
 
     :::info 
 
@@ -67,7 +67,7 @@ There are ways to unlock or remove a password from an encrypted PDF, bbut it dep
 
     :::warning 
 
-    Do not upload confidential or sensitive files to random online services — you lose control of your data.
+    Do not upload confidential or sensitive files to random online services - you lose control of your data.
 
     :::
 
@@ -162,7 +162,7 @@ john hash.txt
 
 **2. Extract the Hash from the PDF**
 
-  Hashcat **doesn’t crack the PDF directly** — it cracks the **hash** of the password.
+  Hashcat **doesn’t crack the PDF directly** - it cracks the **hash** of the password.
 
   You need a **hash extractor** first.
 
@@ -333,7 +333,7 @@ pdf2john yourfile.pdf > hash.txt
 Possible cause: You installed `john` **version 1.8.0** but **your version is too old** to include `pdf2john.pl`(That script was included in later versions, like `john 1.9+`.)
 
 
-#### Option 1 — Quickest
+#### Option 1 - Quickest
 
 `pdf2john.pl` is just a simple Perl script. You can **download it manually**.
 
@@ -384,7 +384,7 @@ hashcat -m 10500 hash.txt /path/to/your/wordlist.txt
 
 
 
-#### Option 3 — Upgrade John the Ripper (harder)
+#### Option 3 - Upgrade John the Ripper (harder)
 
 If you really want a full modern `john`, you would need to:
 

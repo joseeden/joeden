@@ -44,34 +44,34 @@ Managing software differs based on its end users.
 
 A Change Management Plan ensures that all project changes are reviewed, approved, and tracked in a structured way. Without it, changes can cause delays, confusion, and quality issues.
 
-* All changes must be proposed, reviewed, tested, and approved formally
-* A lack of process often leads to project delays and team frustration
-* Change requests must be formally submitted (e.g., via a ticket system)
-* Every request is evaluated for business need, feasibility, and effort
-* Cost estimates (time and money) must be approved
-* Justifying a change is separate from getting it approved
+- All changes must be proposed, reviewed, tested, and approved formally
+- A lack of process often leads to project delays and team frustration
+- Change requests must be formally submitted (e.g., via a ticket system)
+- Every request is evaluated for business need, feasibility, and effort
+- Cost estimates (time and money) must be approved
+- Justifying a change is separate from getting it approved
 
 **Change Control Board (CCB)**
 
-* Reviews all viable changes in scheduled meetings
-* Decides whether changes should be tested, documented, and implemented
-* Reestablishes baselines and metrics after approval
+- Reviews all viable changes in scheduled meetings
+- Decides whether changes should be tested, documented, and implemented
+- Reestablishes baselines and metrics after approval
 
 **If approved:**
 
-* The security architect updates the project plan
-* Applications must be stored and managed centrally
-* Security controls must remain enforced
-* Developers must use controlled code libraries
-* All updates must be made to source code—not live production code
+- The security architect updates the project plan
+- Applications must be stored and managed centrally
+- Security controls must remain enforced
+- Developers must use controlled code libraries
+- Updates should be made to source code, not on live production code.
 
 **Plan Components:**
 
-* Track and log every change request
-* Analyze and document the impact of each change
-* Approve or reject changes formally
-* Update project documents and plans for all approved changes
-* Inform all stakeholders about any changes
+- Track and log every change request
+- Analyze and document the impact of each change
+- Approve or reject changes formally
+- Update project documents and plans for all approved changes
+- Inform all stakeholders about any changes
 
 ## Sample Change Control Procedure 
 

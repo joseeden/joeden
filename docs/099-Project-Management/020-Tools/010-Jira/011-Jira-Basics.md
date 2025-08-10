@@ -115,7 +115,7 @@ Your main responsibility is to update work items (called "issues") daily. Issues
 - Use issues to ask questions or add notes.
 - Regularly update issues to reflect progress.
 
-Issues may vary in size—some may take hours, others months. Each issue has an assigned person responsible for updating it.
+Issues may vary in size; some may take hours, others months. Each issue has an assigned person responsible for updating it.
 
 
 ## Working in Jira

@@ -23,7 +23,7 @@ Node.js lets you JavaScript run outside of the browser.
 - Adds new features like file system access  
 - Provide features that aren’t available in browsers  
 
-This means you can build full programs with JavaScript — not just browser stuff.
+This means you can build full programs with JavaScript, not just browser stuff.
 
 
 ## Purpose 

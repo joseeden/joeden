@@ -15,7 +15,7 @@ You can use the same domain for your real website and for labs, as long as you k
 
 ## Using subdomains for labs
 
-You don’t need to use the root domain for everything — subdomains are safer and easier to manage.
+You don’t need to use the root domain for everything. Subdomains are safer and easier to manage.
 
 Examples:
 
@@ -40,7 +40,7 @@ Each subdomain has its own DNS records, so changes won’t affect your main site
 
 ## Reusing Root Domains
 
-If a lab requires the root domain, changes will affect where your main site points — so be careful.
+If a lab requires the root domain, changes will affect where your main site points, so be careful.
 
 **If the root domain is not hosting a site**
 

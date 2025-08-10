@@ -199,7 +199,11 @@ git checkout -- sample-report.csv
 
 `git checkout` reverts a file to its last committed version.  
 
-⚠️ This action is irreversible—changes will be lost permanently.  
+:::warning 
+
+This action is irreversible. Changes will be lost permanently.
+
+:::
 
 To undo changes in all unstaged files:  
 

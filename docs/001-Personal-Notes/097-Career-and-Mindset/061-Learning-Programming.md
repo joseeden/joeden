@@ -65,4 +65,4 @@ You’ll grow more when you invest time in learning and building real things.
 - Try internships or personal projects  
 - Stay curious and keep learning even after school  
 
-If you aim to solve real problems with your code—not just copy popular ideas—you’ll stand out. This takes dedication, not shortcuts.
+If you aim to solve real problems with your code (not just copy popular ideas) you’ll stand out. This takes dedication, not shortcuts.

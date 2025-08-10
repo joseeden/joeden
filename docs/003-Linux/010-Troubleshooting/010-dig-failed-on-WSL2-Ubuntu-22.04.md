@@ -61,7 +61,7 @@ Distributor ID: Ubuntu
 Description:    Ubuntu 22.04 LTS
 Release:        22.04
 Codename:       jammy
-Linux TOWER-1 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+Linux TOWER-1 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
 Checked installed ISC packages:
@@ -190,7 +190,7 @@ joeden.com.     0       IN      NS      ns2hkt.name.com.
 
 ;; Query time: 1 msec
 ;; SERVER: 172.25.144.1
-;; WHEN: Sun Aug 10 00:29:58 2025
+;; WHEN: Sun Aug 10 00:29:58 2024
 ;; MSG SIZE  rcvd: 154
 ```
 

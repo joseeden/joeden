@@ -26,13 +26,13 @@ I used this approach for the login and signup modals in one of my personal proje
 
 </div>
 
+The **Login modal** is the main box. When the user clicks **Sign up**, we want to switch the view inside that box, like swapping panels, without changing anything outside the modal.
 
-The **Login modal** is the "main box", and when the user clicks **Sign up**, we want to **transition within that box** — almost like a panel swap — without touching anything "outside" that modal’s visual bounds.
+* The Signup form is inside the Login modal
+* It slides over the login form within the same `.modal-content` area
+* It should stay inside the modal and not cause scrolling outside
+* It should feel like one smooth, single component
 
-- The **Signup modal is inside the Login modal box**
-- It **slides in over** the login form **within the same `.modal-content` box**
-- It should **never cause overflow**, **never go outside**, and **not touch the body scroll**
-- The whole thing should feel like a single component
 
 ## Panel Swapping
 

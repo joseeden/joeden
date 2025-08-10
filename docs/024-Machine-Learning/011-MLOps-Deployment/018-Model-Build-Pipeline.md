@@ -32,7 +32,7 @@ The model build pipeline focuses on creating and saving the model, while the mod
 
 ## Key Components
 
-A good model build pipeline does more than just train the model — it ensures the model can be deployed, monitored, and reproduced. 
+A good model build pipeline does more than just train the model. It makes sure the model can be deployed, monitored, and reproduced.
 
 - **Complete model package** - Includes the model and necessary artifacts for deployment
 - **Deployment artifacts** - Includes specifications for software dependencies

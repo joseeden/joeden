@@ -122,9 +122,9 @@ Notes:
 
 ### `autoplay` and `loop` not supported on Canva
 
-Canva doesn’t officially support `autoplay` or `loop` via URL parameters due to browser security policies. This means that when the video is embedded, it will show the "play" button, which would not be ideal if you plan to use the video as a background for your web page.
+Canva doesn’t officially support `autoplay` or `loop` through URL parameters because of browser security rules. This means embedded videos will show a "play" button, which is not ideal for using videos as a webpage background.
 
-If you want those features, you should consider **downloading the video from Canva** and self-hosting it using a native `<video>` tag instead — which gives you full control (autoplay, loop, mute, etc.).
+If you need autoplay or loop, download the video from Canva and host it yourself using a native `<video>` tag. This way, you can control autoplay, loop, mute, and more.
 
 ## Youtube 
 
@@ -164,7 +164,7 @@ Unfortunately, **YouTube does not allow** complete removal of their logo from em
 | `modestbranding=1`  | Minimizes YouTube logo (still appears on hover or pause) |
 | `controls=0`        | Hides controls (but logo may show on loop or pause) |
 | `rel=0`             | Prevents showing related videos at the end |
-| `showinfo=0`        | (Deprecated) Used to hide title — now ignored |
+| `showinfo=0`        | (Deprecated) Used to hide title, now ignored |
 | `playlist=VIDEO_ID` | Required for `loop=1` to work |
 
 **There’s no official way to fully remove the logo**. YouTube enforces branding. Only way to 100% eliminate it is **hosting your own video** and using the `<video>` tag.
@@ -375,14 +375,14 @@ You can also trim your video slightly to make it loop cleanly without a jump.
 
 ## Fallback Image
 
-The `poster` attribute in a `<video>` tag is basically a fallback image. It's what shows up **before** the video starts playing — especially on slower connections or in browsers that delay autoplay, like on some mobile devices. It acts like a thumbnail or preview image.
+The `poster` attribute in a `<video>` tag is a fallback image. It appears before the video starts playing, especially on slow connections or browsers that delay autoplay, like on some mobile devices. It works like a thumbnail or preview image.
 
 For more information, please see [Using a Fallback Image for Videos](/docs/021-Software-Engineering/009-Web-Development/002-HTML-CSS/030-Fallback-Image.md)
 
 
 ## Overlay
 
-An overlay allows you to use a video as the background while placing text or an image on top — like this:
+An overlay allows you to use a video as the background while placing text or an image on top, like this:
 
 <div class="img-center"> 
 

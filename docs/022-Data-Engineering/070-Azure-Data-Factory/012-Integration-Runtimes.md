@@ -73,4 +73,4 @@ Choosing the right IR depends on your needs.
 - Use **Self-hosted IR** if your data is on-premises or inside a private network
 - Use **Azure SSIS IR** only if you need to run SSIS packages in Azure
 
-Start with Azure IR when possible—it’s easier, cheaper, and fully managed.
+Whenever possible, start with Azure IR because it is easier, cheaper, and fully managed.

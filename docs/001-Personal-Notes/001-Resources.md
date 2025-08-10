@@ -72,7 +72,7 @@ Free DNS Service using [Namecheap](https://www.namecheap.com/)
 
 ### Cloud Computing
 
-- [Becoming a Cloud Architect — Learn the Fundamentals](https://cloudacademy.com/learning-paths/becoming-a-cloud-architect-lets-learn-the-fundamentals-2284/)
+- [Becoming a Cloud Architect - Learn the Fundamentals](https://cloudacademy.com/learning-paths/becoming-a-cloud-architect-lets-learn-the-fundamentals-2284/)
 
 ### Amazon Web Services
 

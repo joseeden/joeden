@@ -84,7 +84,7 @@ Upon receiving this request, the MCC locates the corresponding data within the R
 
 ## Address Bus 
 
-In addition to the External Data Bus (EDB), another important component in our computer architecture is the **Address Bus**. While the EDB transfers actual data between components, the Address Bus serves a different yet equally vital function—it transmits addresses.
+In addition to the External Data Bus (EDB), another key part of computer architecture is the Address Bus. The EDB moves actual data between components, while the Address Bus sends addresses.
 
 ![](/img/docs/compprogramaddressbus.png)
 
@@ -99,7 +99,7 @@ While RAM serves as the main memory for our computer, it's not the quickest way 
 ![](/img/docs/compprogramaddrbus.png)
 
 
-**Cache** acts like a high-speed storage area for frequently accessed data and instructions. Imagine RAM as a refrigerator full of food—it's spacious but takes time to retrieve items. In contrast, Cache is more like the essentials we keep in our pockets, readily accessible for quick use. Modern CPUs feature multiple levels of cache (L1, L2, and L3), with L1 being the fastest and smallest.
+Cache is a high-speed storage area for frequently used data and instructions. RAM is like a large refrigerator with more space but slower access, while cache is like keeping essentials in your pocket for quick use. Modern CPUs have multiple cache levels (L1, L2, L3), with L1 being the fastest and smallest.
 
 
 ## Clock Wires
@@ -112,9 +112,17 @@ The CPU operates on a synchronized internal clock that governs its activities. T
 
 Imagine the Clock wire as the ticking of a clock in your CPU. Each tick represents a **clock cycle**, which is the basic unit of operation for the CPU.
 
-For every clock cycle, the CPU performs a specific operation—fetching, decoding, executing, and storing data. The speed at which these cycles occur is crucial for computing performance, especially when handling large amounts of data or complex tasks.
+For every clock cycle, the CPU goes through four main steps: 
 
-  [](/img/docs/rsflipflopholdone.png)
+- Fetching
+- Decoding
+- Executing
+- Storing data. 
+
+The faster these cycles run, the better the performance, especially for large data processing or complex tasks.
+
+
+[](/img/docs/rsflipflopholdone.png)
 
 
 ## Clock Speed 

@@ -320,4 +320,4 @@ You can also format it like this for better visual clarity:
 </ul>
 ```
 
-However, searching for the entire line (including all attributes) in your local IDE can become difficult when formatted this way — especially if you're trying to locate or replace specific elements during development. 
+But searching for the whole line with all its attributes in your local IDE can be hard when it's formatted like this, especially if you want to find or change specific parts during development.

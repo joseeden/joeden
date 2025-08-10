@@ -79,7 +79,7 @@ In your Namecheap dashboard, you can view all your domain details.
 
 ![Namecheap Dashboard](/img/docs/08092025-namecheap-6.PNG)
 
-Click **Verify Contacts** — a banner will say "Email sent successfully."
+Click **Verify Contacts**. A banner will say "Email sent successfully."
 
 Check your email for a message titled "IMMEDIATE VERIFICATION required for your domain(s)."
 
@@ -178,7 +178,7 @@ Vercel acts as your **registrar** (usually via Tucows/OpenSRS).
 
 ### Things to note
 
-- Renewal prices depend on what Vercel charges — sometimes higher than other registrars.
+- Renewal prices depend on what Vercel charges, sometimes higher than other registrars.
 - You can transfer your domain to another registrar after the 60-day ICANN lock.
 - For complex DNS setups, services like Cloudflare or Route 53 might offer more features than Vercel’s DNS.
 

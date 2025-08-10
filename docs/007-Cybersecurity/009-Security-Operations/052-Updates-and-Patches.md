@@ -123,7 +123,7 @@ Applying patches improves security, but it also comes with challenges. Careful p
 - Patches can sometimes affect system stability.
 - It's important to balance quick patching with reliability.
 - Always test patches in a staging or test environment first.
-- Don't rely only on vendor trust—verify patches yourself.
+- Don't rely only on vendor trust, verify patches yourself.
 - Applying patches on a fixed schedule doesn't guarantee system stability afterward.
 
 

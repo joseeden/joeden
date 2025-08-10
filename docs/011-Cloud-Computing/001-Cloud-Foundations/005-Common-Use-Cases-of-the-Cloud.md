@@ -20,7 +20,8 @@ During peak seasons, like holidays, businesses often experience increased infras
 - Database
 - Network capacity
 
-In a data center, this adds ongoing costs for space, power, and cooling, even though you only need the resources temporarily. Cloud computing offers a more efficient solution by allowing you to scale resources up during high-traffic periods and scale them down afterward—paying only for what you use.
+In a data center, you pay ongoing costs for space, power, and cooling, even if you only need resources for a short time. Cloud computing is more efficient because it lets you increase resources during busy times and reduce them afterward, so you only pay for what you use.
+
 
 ## Backup and Disaster Recovery
 
