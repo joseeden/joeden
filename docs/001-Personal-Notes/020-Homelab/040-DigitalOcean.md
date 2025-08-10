@@ -1,6 +1,6 @@
 ---
-title: "DigitalOcean for Labs"
-description: "Using DigitalOcean for Labs"
+title: "DigitalOcean"
+description: "Using DigitalOcean"
 tags: 
 - Cloud
 - DevOps

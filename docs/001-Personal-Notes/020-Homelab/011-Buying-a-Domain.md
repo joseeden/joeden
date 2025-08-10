@@ -187,4 +187,4 @@ Vercel acts as your **registrar** (usually via Tucows/OpenSRS).
 
 Cloudflare can handle your domain’s DNS, security, and performance features even if your domain is registered elsewhere.
 
-For more inforrmation, please see [Cloudflare.](/docs/001-Personal-Notes/055-Homelab/020-Cloudflare.md)
+For more inforrmation, please see [Cloudflare.](/docs/001-Personal-Notes/020-Homelab/020-Cloudflare.md)

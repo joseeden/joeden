@@ -82,7 +82,7 @@ For example, my setup uses:
 - Domain from Namecheap
 - DNS hosted on DigitalOcean
 
-After getting a domain, update its registrar settings so it points to your chosen DNS provider. If you're also using DigitalOcean, you can follow the steps here: [Adding a Domain in DigitalOcean](/docs/001-Personal-Notes/055-Homelab/040-DigitalOcean.md#adding-a-domain)
+After getting a domain, update its registrar settings so it points to your chosen DNS provider. If you're also using DigitalOcean, you can follow the steps here: [Adding a Domain in DigitalOcean](/docs/001-Personal-Notes/020-Homelab/040-DigitalOcean.md#adding-a-domain)
 
 **NOTE:** Make sure your domain is fully set up and pointing to your server before proceeding with the labs. Propagation can take up to 24–48 hours, sometimes longer depending on the registrar and TLD.
 
@@ -588,7 +588,7 @@ To allow Traefik to update DNS records automatically, you’ll need a token from
 
 This token is used by Traefik to prove domain ownership via the DNS challenge.
 
-To generate the token in DigitalOcean please see [Generate an API Token.](/docs/001-Personal-Notes/055-Homelab/040-DigitalOcean.md#generate-api-token)
+To generate the token in DigitalOcean please see [Generate an API Token.](/docs/001-Personal-Notes/020-Homelab/040-DigitalOcean.md#generate-api-token)
 
 
 ### Add API Token in Docker Compose
@@ -861,6 +861,12 @@ rm -f .env
 ```
 
 Go to your DNS provider and delete the API token.
+
+<div class="img-center"> 
+
+![](/img/docs/2025-08-10.png)
+
+</div>
 
 
 
