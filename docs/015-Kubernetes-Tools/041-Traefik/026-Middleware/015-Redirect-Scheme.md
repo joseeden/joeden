@@ -14,7 +14,7 @@ last_update:
 ---
 
 
-## From Http to Https
+## Overview
 
 When users visit your site with Http, the **redirect scheme** middleware sends them to the secure Https version. 
 
@@ -38,3 +38,6 @@ Example:
 This means all Http requests get redirected to Https with a permanent redirect status.
 
 
+## Lab: From Http to Https
+
+In this lab, we will enable this redirect to make sure users always use the secure Https entry point on our app.
