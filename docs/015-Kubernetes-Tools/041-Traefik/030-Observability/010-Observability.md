@@ -16,20 +16,20 @@ last_update:
 
 ## Overview
 
-Observability helps us understand what is happening with our traffic and services using logs, metrics, monitoring, and tracing.
+Observability helps us understand what is happening with our Traefik and services using logs, metrics, monitoring, and tracing.
 
-- Logs show detailed information about traffic events.
+- Logs show detailed information about Traefik events.
 - Access logs record who accessed the services and when.
 - Metrics collect data on performance and system health.
 - Tracing follows the path of requests through the system to help troubleshoot.
 
 These tools give us insight into how our systems work and help us find and fix problems.
 
-## Logging Traffic
+## Logging Traefik
 
 Logging helps us track events and diagnose issues clearly.
 
-- Enable traffic logs to see what is happening in detail.
+- Enable Traefik logs to see what is happening in detail.
 - Adjust log levels to control how much information is stored.
 - Store logs in specific paths for easy access.
 
@@ -46,7 +46,7 @@ Access logs give a clear picture of user activity on services.
 
 Metrics help us keep the system running smoothly by spotting issues early.
 
-- Collect data about system health and traffic performance.
+- Collect data about system health and Traefik performance.
 - Use tools like Prometheus to monitor metrics.
 - Watch for problems like slow responses or service failures.
 
@@ -55,7 +55,7 @@ Metrics help us keep the system running smoothly by spotting issues early.
 
 Tracing reveals how requests move through the system.
 
-- Follow the flow of requests from traffic to services.
+- Follow the flow of requests from Traefik to services.
 - Understand where delays or errors occur.
 - Make troubleshooting faster and more effective.
 

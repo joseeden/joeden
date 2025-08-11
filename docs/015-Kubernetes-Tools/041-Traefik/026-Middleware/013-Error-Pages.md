@@ -123,14 +123,15 @@ Here are example user credentials. You can change them if you want:
 Generate a hash with this command:
 
 ```bash
-htpasswd -nb johnsmith 'Thr3@tl3u3lw!dN!QHt' | sed 's/\$/\$\$/g'
+htpasswd -nb johnsmith 'Thr3@tl3u3lw!dN!QHt'
 ```
 
 You should see output like:
 
 ```
-johnsmith:$$apr1$$cipim6NJ$$LK11Xtf0t92UvxjKCV8ii0
+johnsmith:$apr1$cipim6NJ$LK11Xtf0t92UvxjKCV8ii0
 ```
+
 
 Do the same for each user.
 

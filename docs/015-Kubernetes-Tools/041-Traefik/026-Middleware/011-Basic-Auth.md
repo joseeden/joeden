@@ -52,14 +52,14 @@ Example:
 
 ```yaml
 labels:
-  - "traefik.http.middlewares.test-auth.basicauth.users=traffic:$$apr1$$xyz123$$abc456, user2:$$apr1$$def789$$ghi012"
+  - "traefik.http.middlewares.test-auth.basicauth.users=traefik:$$apr1$$xyz123$$abc456, user2:$$apr1$$def789$$ghi012"
   - "traefik.http.routers.cat-app.middlewares=test-auth"
 ```
 
 Here:
 
 - `test-auth` is the middleware name
-- `traffic` and `user2` are usernames
+- `traefik` and `user2` are usernames
 - Passwords are stored as hashes
 
 ## Creating Password Hashes
@@ -72,13 +72,13 @@ Passwords must be hashed before adding them to the middleware.
 Example:
 
 ```bash
-htpasswd -nb traffic mypassword | sed 's/\$/\$\$/g'
+htpasswd -nb traefik mypassword | sed 's/\$/\$\$/g'
 ```
 
 Expected output:
 
 ```
-traffic:$$apr1$$xyz123$$abc456
+traefik:$$apr1$$xyz123$$abc456
 ```
 
 This output can be placed directly into the middleware label.
@@ -267,10 +267,23 @@ This method uses a separate file to store credentials, keeping them out of the m
 
 1. Create a `usersfile` file in the same directory as your Docker compose file. This file will contain the hashed credentials, one per line.
 
+    Run the command once again, but without `sed`:
+
+    ```bash
+    htpasswd -nb johnsmith 'Thr3@tl3u3lw!dN!QHt'
+    htpasswd -nb janedoe '@Ll!$szM3lLiND@h0oD'
+    ```
+
+    Then create the `.env` file and add the credentials:
+
     ```env
     johnsmith:$apr1$cipim6NJ$LK11Xtf0t92UvxjKCV8ii0
     janedoe:$apr1$t65c7tuF$Qscp40RYl.Tq02pUnSv5r1
     ```
+
+    :::info 
+
+    **NOTE:**
 
 2. Add `usersfile` to `.gitignore`:
 

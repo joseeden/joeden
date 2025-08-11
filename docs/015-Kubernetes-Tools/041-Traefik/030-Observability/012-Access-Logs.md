@@ -31,7 +31,7 @@ They capture informatioon such as:
 
 ## Configuring Access Logs
 
-You can set access logs similarly to traffic logs by adjusting:
+You can set access logs similarly to Traefik logs by adjusting:
 
 - File path and log format.
 - Buffer size to control performance.
@@ -72,7 +72,70 @@ Project structure:
     ├── traefik.access-log.yml
 ```
 
+
+### Create the Usersfile 
+
+:::info 
+
+The `usersfile` will be used for testing access logs when basic authentication is active.
+
+:::
+
+To create hashed passwords, install the tool `htpasswd`:
+
+```bash
+sudo apt install -y apache2-utils
+```
+
+
+Generate a hash with this command:
+
+```bash
+htpasswd -nb your-username 'add-password-here'
+```
+
+For example:
+
+```bash
+htpasswd -nb michaelscarn 'thatswhatshesaid'
+```
+
+Expected output:
+
+```
+michaelscarn:$$apr1$$FAa3Qsw4$$uQ8qtFNTfLLmG6ohrK.qS.
+```
+
+Next, create the `users_file` in the same folder as the Docker compose file. Put all hashed credentials here, one user per line:
+
+```bash
+echo "michaelscarn:$$apr1$$FAa3Qsw4$$uQ8qtFNTfLLmG6ohrK.qS." >> users_file
+```
+
+Add `users_file` to your `.gitignore` file to keep it out of Git:
+
+```bash 
+echo "users_file" >> .gitignore
+```
+
+Your directory should now contain all these files:
+
+```bash
+06-observability
+└── 01-traefik-logs
+    ├── .gitignore
+    ├── docker-compose.log.yml
+    ├── traefik.yml
+    └── users_file
+```
+
 ### Review the Files 
+
+:::info 
+
+We'll start with testing access logs without authentication first.
+
+:::
 
 The `traefik.yml` file sets up Traefik with access logging enabled. 
 
@@ -87,13 +150,6 @@ providers:
 
 # enable Access logs
 accessLog: {}
-#Configuring Multiple Filters
-# accessLog:
-#   filters:    
-#     statusCodes:
-#       - "404"
-#     retryAttempts: true
-#     minDuration: "10ms"
 
 log:                  # DEBUG, PANIC, FATAL, ERROR, WARN, and INFO
   level: INFO     
@@ -121,7 +177,6 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./traefik.access-log.yml:/etc/traefik/traefik.yml
-      # - ./users_file:/users_file:ro # <-- mount your users file here
 
   catapp:
     image: mikesir87/cats:1.0
@@ -134,8 +189,6 @@ services:
       - "traefik.http.routers.catapp.middlewares=test-compress,test-errorpages"
       # Services
       - "traefik.http.services.catapp.loadbalancer.server.port=5000"
-      # Middleware BasicAuth using users_file
-      # - "traefik.http.middlewares.test-auth.basicauth.usersfile=/users_file"
       # Compress Middleware
       - "traefik.http.middlewares.test-compress.compress=true"
       # Error Pages Middleware
@@ -172,7 +225,7 @@ Creating service traefik_catapp
 Creating service traefik_error
 ```
 
-## Testing the App 
+### Testing the App 
 
 Access the `catapp` application on your browser and refresh a few times.
 
@@ -182,7 +235,7 @@ http://catapp.localhost/
 
 <div class="img-center"> 
 
-![](/gif/docs/08102022-catapp-mw-4.gif)
+![](/gif/docs/08102025-logs-access-1.gif)
 
 </div>
 
@@ -203,7 +256,7 @@ The logs will show request details including IP, HTTP method, response code, des
 | 10.0.0.2 - - [11/Aug/2022:02:06:47 +0000] "GET / HTTP/1.1" 200 664 "-" "-" 5 "catapp@docker" "http://10.0.1.6:5000" 2ms
 ```
 
-## Testing Invalid URLs
+### Testing Invalid URLs
 
 Try causing a 404 error by requesting a missing page.
 
@@ -238,7 +291,90 @@ Output:
 | 10.0.0.2 - - [11/Aug/2022:02:10:56 +0000] "GET / HTTP/1.1" 200 659 "-" "-" 16 "catapp@docker" "http://10.0.1.6:5000" 3ms 
 ```
 
-## Filtering Access Logs
+### Testing Logs with authentication Enabled
+
+We'll now see how...access logs..if authentication is enabled...
+
+```yaml title="docker-compose.auth-log.yml"
+version: "3"
+
+services:
+  traefik:
+    image: traefik:v2.3
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./traefik.access-log.yml:/etc/traefik/traefik.yml
+      - ./users_file:/users_file:ro # <-- mount your users file here
+
+  catapp:
+    image: mikesir87/cats:1.0
+    labels:
+      - "traefik.enable=true"
+      # Routers
+      - "traefik.http.routers.catapp.rule=Host(`catapp.localhost`)"
+      - "traefik.http.routers.catapp.service=catapp"
+      - "traefik.http.routers.catapp.entrypoints=web"
+      # - "traefik.http.routers.catapp.middlewares=test-compress,test-errorpages"
+      - "traefik.http.routers.catapp.middlewares=test-auth,test-compress,test-errorpages"
+      # Services
+      - "traefik.http.services.catapp.loadbalancer.server.port=5000"
+      # Middleware BasicAuth using users_file
+      - "traefik.http.middlewares.test-auth.basicauth.usersfile=/users_file"
+      # Compress Middleware
+      - "traefik.http.middlewares.test-compress.compress=true"
+      # Error Pages Middleware
+      - "traefik.http.middlewares.test-errorpages.errors.status=400-599"
+      - "traefik.http.middlewares.test-errorpages.errors.service=error"
+      - "traefik.http.middlewares.test-errorpages.errors.query=/{status}.html"
+
+  # Error Page service
+  error:
+    image: guillaumebriday/traefik-custom-error-pages
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.error.rule=Host(`error.localhost`)"
+      - "traefik.http.routers.error.service=error"
+      - "traefik.http.services.error.loadbalancer.server.port=80"
+      - "traefik.http.routers.error.entrypoints=web"
+```
+
+Before applying the new file, make sure you have all of these files in place:
+
+```bash
+├── docker-compose.access-log.yml     # not needed for this step
+├── docker-compose.auth-log.yml
+├── traefik.access-log.yml
+└── users_file
+```
+
+Stop the previous stack:
+
+```bash
+docker stack rm traefik
+```
+
+Make sure the `rm` command returns the output below. 
+You might need to wait a few minutes or try running it a few times.
+
+```bash
+Nothing found in stack: traefik 
+```
+
+Then re-deploy:
+
+```bash
+docker stack deploy -c  docker stack deploy -c docker-compose.auth-log.yml traefik
+```
+
+Open the browser once again. Enter the credentials when prompted. You can also try entering an invalid user.
+
+
+
+### Filtering Access Logs
 
 You can filter logs to only show certain status codes, like 404 errors.
 

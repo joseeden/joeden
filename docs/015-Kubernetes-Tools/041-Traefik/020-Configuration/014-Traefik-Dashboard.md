@@ -15,9 +15,9 @@ last_update:
 
 ## Overview
 
-The dashboard gives a clear view of your traffic system and running services.
+The dashboard gives a clear view of your Traefik system and running services.
 
-- Quick health check of traffic and services
+- Quick health check of Traefik and services
 - Helps with troubleshooting and monitoring
 - Shows warnings and errors
 

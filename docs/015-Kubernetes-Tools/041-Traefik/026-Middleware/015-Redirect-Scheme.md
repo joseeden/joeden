@@ -46,7 +46,7 @@ In this lab, we will set up a redirect so users always connect to our app throug
 - Use separate routers for Http and Https
 - Apply middlewares like auth and rate limit only on the Https router
 
-This redirect applies only to one service, keeping other services on Http. It gives more control and keeps traffic changes safe and focused.
+This redirect applies only to one service, keeping other services on Http. It gives more control and keeps Traefik changes safe and focused.
 
 ## Pre-requisites 
 
@@ -250,13 +250,13 @@ Here are example user credentials. You can change them if you want:
 Generate a hash with this command:
 
 ```bash
-htpasswd -nb johnsmith 'Thr3@tl3u3lw!dN!QHt' | sed 's/\$/\$\$/g'
+htpasswd -nb johnsmith 'Thr3@tl3u3lw!dN!QHt' 
 ```
 
 You should see output like:
 
 ```
-johnsmith:$$apr1$$cipim6NJ$$LK11Xtf0t92UvxjKCV8ii0
+johnsmith:$apr1$cipim6NJ$LK11Xtf0t92UvxjKCV8ii0
 ```
 
 Do the same for each user.

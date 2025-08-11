@@ -88,13 +88,14 @@ Here are example user credentials. You can change them if you want:
 Generate a hash with this command:
 
 ```bash
-htpasswd -nb johnsmith 'Thr3@tl3u3lw!dN!QHt' | sed 's/\$/\$\$/g'
+htpasswd -nb johnsmith 'Thr3@tl3u3lw!dN!QHt' 
 ```
+
 
 You should see output like:
 
 ```
-johnsmith:$$apr1$$cipim6NJ$$LK11Xtf0t92UvxjKCV8ii0
+johnsmith:$apr1$cipim6NJ$LK11Xtf0t92UvxjKCV8ii0
 ```
 
 Do the same for each user.
@@ -105,6 +106,7 @@ Next, create a file named `usersfile` in the same folder as your Docker compose 
 johnsmith:$apr1$cipim6NJ$LK11Xtf0t92UvxjKCV8ii0
 janedoe:$apr1$t65c7tuF$Qscp40RYl.Tq02pUnSv5r1
 ```
+
 
 Add `usersfile` to your `.gitignore` file to keep it out of version control:
 

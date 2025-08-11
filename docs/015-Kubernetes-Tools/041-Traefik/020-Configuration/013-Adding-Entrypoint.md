@@ -87,7 +87,7 @@ This means **Docker** maps:
 - Host port `80` → Container port `80`
 - Host port `8080` → Container port `8080`
 
-It lets **traffic reach the container**, but it **doesn’t tell Traefik what to do with those ports**.
+It lets **Traefik reach the container**, but it **doesn’t tell Traefik what to do with those ports**.
 
 
 #### `entrypoints`

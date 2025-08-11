@@ -33,7 +33,7 @@ Load balancers can check if your service is still healthy.
 - You can define custom health check paths like `/health` or `/ping`
 - You can also check health by port like `8080`
 
-If the service is unhealthy, it’s removed from traffic routing until it's healthy again.
+If the service is unhealthy, it’s removed from Traefik routing until it's healthy again.
 
 
 

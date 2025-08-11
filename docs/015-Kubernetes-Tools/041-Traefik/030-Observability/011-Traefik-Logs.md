@@ -16,9 +16,9 @@ last_update:
 
 ## Overview
 
-Traffic logging tracks network traffic, not the services themselves. Logs can show the following:
+Traefik logging tracks network traffic, not the services themselves. Logs can show the following:
 
-- Traffic info
+- Traefik info
 - Startup
 - Events
 - Certificates
@@ -55,7 +55,7 @@ Use debug level only for troubleshooting because it creates large logs. Remember
 
 ## Lab: Configure Logging
 
-This lab shows how to enable traffic logs and change log levels.
+This lab shows how to enable Traefik logs and change log levels.
 
 ### Clone the Repository 
 
@@ -98,13 +98,13 @@ sudo apt install -y apache2-utils
 Generate a hash with this command:
 
 ```bash
-htpasswd -nb your-username 'add-password-here' | sed 's/\$/\$\$/g'
+htpasswd -nb your-username 'add-password-here'
 ```
 
 For example:
 
 ```bash
-htpasswd -nb michaelscarn 'thatswhatshesaid' | sed 's/\$/\$\$/g'
+htpasswd -nb michaelscarn 'thatswhatshesaid'
 ```
 
 Expected output:
@@ -213,7 +213,7 @@ services:
 Deploy with this command:
 
 ```bash
-docker stack deploy -c docker-compose.log.yml traffic
+docker stack deploy -c docker-compose.log.yml traefik
 ```
 
 Expected output:
@@ -247,7 +247,7 @@ docker service logs traefik_traefik
 ```
 
 
-Debug logs give a lot of detail about traffic setup, connections, and middlewares. This helps with troubleshooting but can quickly use up disk space if left on too long.
+Debug logs give a lot of detail about Traefik setup, connections, and middlewares. This helps with troubleshooting but can quickly use up disk space if left on too long.
 
 ```bash
 level=debug msg="Creating middleware" middlewareName=traefik-internal-recovery entryPointName=traefik middlewareType=Recovery
@@ -284,7 +284,7 @@ log:
 Stop the stack:
 
 ```bash
-docker stack rm traffic
+docker stack rm traefik
 ```
 
 Make sure the `rm` command returns the output below. 
@@ -297,7 +297,7 @@ Nothing found in stack: traefik
 Then re-deploy:
 
 ```bash
-docker stack deploy -c docker-compose-log.yaml traffic
+docker stack deploy -c docker-compose-log.yaml traefik
 ```
 
 :::info 

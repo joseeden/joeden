@@ -18,7 +18,7 @@ last_update:
 
 Routers in Traefik connect incoming requests to backend services. To do that, we define rules using **labels** on containers or services.
 
-- Labels are key-value pairs that guide how traffic is handled.
+- Labels are key-value pairs that guide how Traefik is handled.
 - Routers use these labels to match requests to services.
 - Includes details like protocol, router type, name, and options.
 
