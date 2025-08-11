@@ -235,7 +235,7 @@ http://catapp.localhost/
 
 <div class="img-center"> 
 
-![](/gif/docs/08102025-logs-access-1.gif)
+![](/gif/docs/08102022-logs-access-1.gif)
 
 </div>
 
@@ -256,7 +256,7 @@ The logs will show request details including IP, HTTP method, response code, des
 | 10.0.0.2 - - [11/Aug/2022:02:06:47 +0000] "GET / HTTP/1.1" 200 664 "-" "-" 5 "catapp@docker" "http://10.0.1.6:5000" 2ms
 ```
 
-### Testing Invalid URLs
+### Invalid URLs
 
 Try causing a 404 error by requesting a missing page.
 
@@ -267,7 +267,7 @@ http://catapp.localhost/nowhere
 
 <div class="img-center"> 
 
-![](/gif/docs/08102025-logs-access.gif)
+![](/gif/docs/08102022-logs-access.gif)
 
 </div>
 
@@ -291,9 +291,15 @@ Output:
 | 10.0.0.2 - - [11/Aug/2022:02:10:56 +0000] "GET / HTTP/1.1" 200 659 "-" "-" 16 "catapp@docker" "http://10.0.1.6:5000" 3ms 
 ```
 
-### Testing Logs with authentication Enabled
+### Authentication Enabled
 
-We'll now see how...access logs..if authentication is enabled...
+Now we’ll test how access logs work when authentication is turned on.
+
+- Uses the users_file for credentials
+- Requires entering valid username and password
+- Logs also capture failed authentication attempts
+
+Here’s the configuration file:
 
 ```yaml title="docker-compose.auth-log.yml"
 version: "3"
@@ -342,7 +348,7 @@ services:
       - "traefik.http.routers.error.entrypoints=web"
 ```
 
-Before applying the new file, make sure you have all of these files in place:
+Before starting, ensure the following files are present:
 
 ```bash
 ├── docker-compose.access-log.yml     # not needed for this step
@@ -351,7 +357,7 @@ Before applying the new file, make sure you have all of these files in place:
 └── users_file
 ```
 
-Stop the previous stack:
+Stop any previous stack:
 
 ```bash
 docker stack rm traefik
@@ -364,7 +370,7 @@ You might need to wait a few minutes or try running it a few times.
 Nothing found in stack: traefik 
 ```
 
-Then re-deploy:
+Then deploy the new stack:
 
 ```bash
 docker stack deploy -c  docker stack deploy -c docker-compose.auth-log.yml traefik
@@ -372,14 +378,133 @@ docker stack deploy -c  docker stack deploy -c docker-compose.auth-log.yml traef
 
 Open the browser once again. Enter the credentials when prompted. You can also try entering an invalid user.
 
+<div class="img-center"> 
 
+![](/gif/docs/08102022-logs-access-2.gif)
+
+</div>
+
+
+In your terminal, check the logs:
+
+```bash
+docker service logs traefik_traefik
+```
+
+You should see output showing both failed and successful login attempts:
+
+```bash
+| 10.0.0.2 - - [11/Aug/2022:03:17:29 +0000] "GET / HTTP/1.1" 401 17 "-" "-" 1 "catapp@docker" "-" 0ms
+| 10.0.0.2 - - [11/Aug/2022:03:17:29 +0000] "GET / HTTP/1.1" 401 17 "-" "-" 2 "catapp@docker" "-" 0ms
+| 10.0.0.2 - hackerman [11/Aug/2022:03:17:37 +0000] "GET / HTTP/1.1" 401 17 "-" "-" 3 "catapp@docker" "-" 0ms
+| 10.0.0.2 - toby [11/Aug/2022:03:17:42 +0000] "GET / HTTP/1.1" 401 17 "-" "-" 4 "catapp@docker" "-" 0ms
+| 10.0.0.2 - micahelscarn [11/Aug/2022:03:18:06 +0000] "GET / HTTP/1.1" 401 17 "-" "-" 5 "catapp@docker" "-" 0ms
+| 10.0.0.2 - michaelscarn [11/Aug/2022:03:18:12 +0000] "GET / HTTP/1.1" 200 659 "-" "-" 6 "catapp@docker" "http://10.0.1.3:5000" 10ms
+| 10.0.0.2 - michaelscarn [11/Aug/2022:03:18:12 +0000] "GET /favicon.ico HTTP/1.1" 404 5093 "-" "-" 7 "catapp@docker" "http://10.0.1.6:80" 7ms       
+| 10.0.0.2 - michaelscarn [11/Aug/2022:03:18:17 +0000] "GET / HTTP/1.1" 200 659 "-" "-" 8 "catapp@docker" "http://10.0.1.3:5000" 2ms
+| 10.0.0.2 - michaelscarn [11/Aug/2022:03:18:18 +0000] "GET / HTTP/1.1" 200 659 "-" "-" 9 "catapp@docker" "http://10.0.1.3:5000" 2ms
+| 10.0.0.2 - michaelscarn [11/Aug/2022:03:18:18 +0000] "GET / HTTP/1.1" 200 659 "-" "-" 10 "catapp@docker" "http://10.0.1.3:5000" 2ms 
+```
 
 ### Filtering Access Logs
 
-You can filter logs to only show certain status codes, like 404 errors.
+You can also filter logs to only show certain status codes, like 404 errors.
 
-* Edit the config to enable filtering and specify codes to show.
-* Example filters include retry attempts and minimum response time.
-* Restart the stack after changing the config.
+In the `traefik.filter-log.yml` below, we are filtering...
 
-Filtered logs help focus on errors instead of normal successful requests.
+```yaml title="traefik.filter-log.yml"
+api:
+  dashboard: true
+  insecure: true
+
+providers:
+  docker:
+    exposedByDefault: false
+
+
+# Configuring Multiple Filters
+accessLog:
+  filters:    
+    statusCodes:
+      - "404"
+    retryAttempts: true
+    minDuration: "10ms"
+
+log:                 
+  level: INFO     
+
+entryPoints:
+  web:
+    address: ":80"
+  websecure:
+    address: ":443"
+```
+
+
+Delete the previous stack:
+
+```bash
+docker stack rm traefik
+```
+
+Re-run the `rm` command until it returns;
+
+```bash
+Nothing found in stack: traefik
+```
+
+Then deploy the stack using `docker-compose.filter-log.yml`:
+
+```bash
+docker stack deploy -c docker-compose.filter-log.yml traefik
+```
+
+:::info 
+
+The `docker-compose.filter-log.yml` is similar with the previous DOcker compose file but it is configured to use the `traefik.filter-log.yml`
+
+:::
+
+Open the browser again and try these steps:
+
+- Enter an invalid credentials
+- Enter a valid credentials
+- Refresh the page a few times
+- Add `/photos` to the URL to trigger a 404
+
+These steps create a mix of failed logins, successful logins, and missing page errors:
+
+<div class="img-center"> 
+
+![](/gif/docs/08102022-logs-access-3.gif)
+
+</div>
+
+Checking the logs:
+
+```bash
+docker service logs traefik_traefik
+```
+
+Now the output only shows entries that match the configured filters (`404` status, retry attempts, and requests taking at least `10ms`):
+
+```bash
+| 10.0.0.2 - michaelscarn [11/Aug/2022:03:34:58 +0000] "GET / HTTP/1.1" 200 659 "-" "-" 3 "catapp@docker" "http://10.0.1.6:5000" 10ms   
+| 10.0.0.2 - michaelscarn [11/Aug/2022:03:34:58 +0000] "GET /favicon.ico HTTP/1.1" 404 5093 "-" "-" 4 "catapp@docker" "http://10.0.1.8:80" 4ms
+| 10.0.0.2 - michaelscarn [11/Aug/2022:03:35:14 +0000] "GET /photos HTTP/1.1" 404 5093 "-" "-" 9 "catapp@docker" "http://10.0.1.8:80" 5ms 
+```
+
+
+### Cleanup
+
+Delete the deployed stack:
+
+```bash
+docker stack rm traefik 
+```
+
+You can also delete the `users_file`:
+
+```bash
+rm -f users_file
+```
