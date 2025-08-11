@@ -333,7 +333,7 @@ http://catapp.localhost/
 
 <div class="img-center"> 
 
-![](/gif/docs/08102022-catapp-mw-4.gif)
+![](/gif/docs/08102025-logs-access-1.gif)
 
 </div>
 
