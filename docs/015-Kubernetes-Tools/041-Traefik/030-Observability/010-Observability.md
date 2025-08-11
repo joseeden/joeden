@@ -80,29 +80,27 @@ This system helps teams react properly and manage issues efficiently.
 
 ## Operational Models 
 
-add simple short intro...we want to be somewhere between reactive and proactive...
+We want to find a balance between reacting to issues and preventing them before they happen.
 
-- Have metrics collected
-- Observability installed between Traefik and applciatiosn
-- Be able to have a granular view
+- Collect useful metrics regularly
+- Set up observability between Traefik and applications
+- Get detailed, clear insights into system behavior
+
+This approach helps us respond quickly while also improving overall system health.
+
+<div class="img-center"> 
+
+![](/img/docs/all-things-devops-traefik-observability.png)
+
+</div>
 
 
 ## User Perspective
 
-Focusing on availability, latency, and reliability helps create a better user experience.
+Users mainly want the system to work well and be dependable for them.
 
-- Users care if the system is available to them.
-- Monitor availability and health of services.
-- Measure latency to see if services respond quickly.
-- Protect reliability to keep user trust.
-
-
-## Goal for Observability
-
-With strong observability, we understand and control our infrastructure better.
-
-- Aim for a balance between reacting to problems and preventing them.
-- Collect good metrics and tracing data.
-- Use labs and demos to learn how to set this up effectively.
-
+- Users care **if the system is available** to them
+- **Monitor the availability** and health of services
+- **Measure latency** to check how fast services respond
+- **Keep reliability high** to maintain user trust
 

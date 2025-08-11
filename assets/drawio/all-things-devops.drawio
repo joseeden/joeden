@@ -1,4 +1,4 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.6 Chrome/138.0.7204.100 Electron/37.2.3 Safari/537.36" version="28.0.6" pages="34">
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.6 Chrome/138.0.7204.100 Electron/37.2.3 Safari/537.36" version="28.0.6" pages="35">
   <diagram id="gNt-pvFV45iQkXaQ2umQ" name="Page-1">
     <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -3665,6 +3665,23 @@
         </mxCell>
         <mxCell id="YCfYy1GHDv61XAfmcU7q-35" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;Compressed&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;Response&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;align=left;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="1112" y="660" width="80" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="cxZ-DjDPZpFnRPBbUiyW" name="traefik-observability">
+    <mxGraphModel dx="1426" dy="849" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="5AEsic183OiZINg8VLoT-1" value="&lt;font style=&quot;color: rgb(255, 255, 255);&quot;&gt;Manual&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4EBCBC;strokeColor=none;fontSize=30;" vertex="1" parent="1">
+          <mxGeometry x="70" y="190" width="330" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="5AEsic183OiZINg8VLoT-2" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;Reactive&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ECBD37;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="70" y="300" width="330" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="5AEsic183OiZINg8VLoT-3" value="&lt;span&gt;Proactive&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0066CC;strokeColor=none;fontColor=#FFFFFF;fontSize=30;" vertex="1" parent="1">
+          <mxGeometry x="70" y="410" width="330" height="100" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

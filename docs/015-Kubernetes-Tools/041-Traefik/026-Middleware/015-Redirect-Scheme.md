@@ -474,7 +474,7 @@ Open the dashboard in your browser:
 http://dashboard.yourdomain.com:8080
 ```
 
-Go to **Services** and make sure you see the catapp-secure service listed.
+Go to **Services** and make sure you see the `catapp-secure` service listed.
 
 <div class="img-center"> 
 
