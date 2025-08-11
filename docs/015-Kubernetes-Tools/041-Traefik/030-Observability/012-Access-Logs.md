@@ -235,7 +235,7 @@ http://catapp.localhost/
 
 <div class="img-center"> 
 
-![](/gif/docs/08102022-logs-access-1.gif)
+![](/gif/docs/08102025-logs-access-1.gif)
 
 </div>
 
@@ -267,7 +267,7 @@ http://catapp.localhost/nowhere
 
 <div class="img-center"> 
 
-![](/gif/docs/08102022-logs-access.gif)
+![](/gif/docs/08102025-logs-access.gif)
 
 </div>
 
@@ -380,7 +380,7 @@ Open the browser once again. Enter the credentials when prompted. You can also t
 
 <div class="img-center"> 
 
-![](/gif/docs/08102022-logs-access-2.gif)
+![](/gif/docs/08102025-logs-access-2.gif)
 
 </div>
 
@@ -476,7 +476,7 @@ These steps create a mix of failed logins, successful logins, and missing page e
 
 <div class="img-center"> 
 
-![](/gif/docs/08102022-logs-access-3.gif)
+![](/gif/docs/08102025-logs-access-3.gif)
 
 </div>
 
