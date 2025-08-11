@@ -98,7 +98,7 @@ Clone and move into the project directory:
 
 ```bash
 git clone https://github.com/joseeden/labs-traefik.git 
-cd labs-traefik/05-middleware
+cd labs-traefik/05-middleware/01-basic-auth
 ```
 
 Project structure:
@@ -106,30 +106,14 @@ Project structure:
 ```bash
 05-middleware
 ├── 01-basic-auth
+│   ├── .gitignore
 │   ├── basicauth_users
 │   ├── docker-compose.auth.yml
 │   ├── docker-compose.secrets.yml
 │   ├── docker-compose.usersfile.yml
 │   ├── traefik.yml
 │   └── usersfile
-├── 02-compress
-│   ├── docker-compose.compress.yml
-│   ├── traefik.yml
-│   └── usersfile
-├── 03-error-pages
-│   ├── docker-compose.error.yml
-│   ├── traefik.yml
-│   └── usersfile
-├── 04-rate-limiting
-│   ├── docker-compose.ratelimit.yml
-│   ├── traefik.yml
-│   └── usersfile
-└── 05-redirects
-    ├── docker-compose.redirect.yml
-    ├── traefik.dns.yml
-    └── usersfile
 ```
-
 
 
 ### Creating the Passwords
@@ -222,7 +206,7 @@ Where:
 Once configured, deploy and test the authentication.
 
 ```bash
-docker stack deploy -c ./01-basic-auth/docker-compose.auth.yml traefik
+docker stack deploy -c docker-compose.auth.yml traefik
 ```
 
 Output:
@@ -335,7 +319,7 @@ This method uses a separate file to store credentials, keeping them out of the m
 5. Deploy the stack:
 
     ```bash
-    docker stack deploy -c ./01-basic-auth/docker-compose.usersfile.yml traefik
+    docker stack deploy -c docker-compose.usersfile.yml traefik
     ```
 
 The credentials will be pulled from `usersfile` at runtime, never stored in Git. To verify if it works, access the `catapp.localhost` in your browser, and try the other credential.

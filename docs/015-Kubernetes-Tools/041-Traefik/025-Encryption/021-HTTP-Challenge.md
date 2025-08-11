@@ -14,6 +14,14 @@ last_update:
 ---
 
 
+## Using Let's Encrypt - HTTP Challenge
+
+In this lab, we’ll use **Let’s Encrypt with the HTTP challenge** to automatically get TLS certificates for your app.
+
+- Let’s Encrypt will verify your domain using an HTTP request
+- Traefik will handle all the communication and certificate setup
+- You just need to update a few values in the config files
+
 
 ## Pre-requisites 
 
@@ -180,6 +188,8 @@ Project structure:
 ```bash
 04-https-tls
 ├── challenge-dns
+│   ├── .env
+│   ├── .gitignore
 │   ├── docker-compose.dns.yml
 │   └── traefik.dns.yml
 ├── challenge-http
@@ -188,21 +198,14 @@ Project structure:
 ├── challenge-tls
 │   ├── docker-compose.tls.yml
 │   └── traefik.tls.yml
-├── letsencrypt
+└── letsencrypt
 ```
 
 **Note:** Make sure the `letsencrypt` folder is next to the `challenge` folders, not inside any of them. The Docker compose files expect it there. If you move the `letsencrypt` folder, remember to update the Docker compose files accordingly.
 
 
-## Using Let's Encrypt - HTTP Challenge
 
-In this lab, we’ll use **Let’s Encrypt with the HTTP challenge** to automatically get TLS certificates for your app.
-
-- Let’s Encrypt will verify your domain using an HTTP request
-- Traefik will handle all the communication and certificate setup
-- You just need to update a few values in the config files
-
-### Prepare the Files 
+## Prepare the Files 
 
 Inside the lab directory, we'll use' `traefik.http.yml` to enable Let's Encrypt with HTTP challenge. This config tells Traefik to request and manage certificates using HTTP.
 
@@ -291,7 +294,7 @@ Change `yourdomain.com` to your actual domain
 With these labels, Traefik will route HTTPS traffic and get certificates automatically.
 
 
-### Deploy and Test
+## Deploy and Test
 
 To deploy the stack:
 
@@ -343,7 +346,7 @@ Click the lock icon (in some browsers, its a different icon) to see more details
 </div>
 
 
-### Confirm in Traefik Dashboard
+## Confirm in Traefik Dashboard
 
 Open the dashboard:
 
@@ -387,7 +390,7 @@ Go to **HTTP Services** and click `catapp@docker`. In the **Used by Routers** se
 </div>
 
 
-### Cleanup
+## Cleanup
 
 Before proceeding to the next lab, make sure to delete the deployed stack first:
 

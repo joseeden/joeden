@@ -13,6 +13,17 @@ last_update:
   date: 2/5/2023
 ---
 
+
+## Using Let's Encrypt - TLS Challenge
+
+This time, we'll use **Let's Encrypt with the TLS challenge**, which happens during the TLS handshake, not over HTTP.
+
+- No need to expose port 80 (only 443 is used)
+- Everything works over secure HTTPS
+- Traefik handles all the challenge logic behind the scenes
+
+The setup is nearly the same as the HTTP challenge, but simpler in some ways since it uses only one port.
+
 ## Pre-requisites 
 
 ### Setup a Public Cloud VM 
@@ -178,6 +189,8 @@ Project structure:
 ```bash
 04-https-tls
 ├── challenge-dns
+│   ├── .env
+│   ├── .gitignore
 │   ├── docker-compose.dns.yml
 │   └── traefik.dns.yml
 ├── challenge-http
@@ -186,22 +199,14 @@ Project structure:
 ├── challenge-tls
 │   ├── docker-compose.tls.yml
 │   └── traefik.tls.yml
-├── letsencrypt
+└── letsencrypt
 ```
 
 **Note:** Make sure the `letsencrypt` folder is next to the `challenge` folders, not inside any of them. The Docker compose files expect it there. If you move the `letsencrypt` folder, remember to update the Docker compose files accordingly.
 
-## Using Let's Encrypt - TLS Challenge
 
-This time, we'll use **Let's Encrypt with the TLS challenge**, which happens during the TLS handshake, not over HTTP.
 
-- No need to expose port 80 (only 443 is used)
-- Everything works over secure HTTPS
-- Traefik handles all the challenge logic behind the scenes
-
-The setup is nearly the same as the HTTP challenge, but simpler in some ways since it uses only one port.
-
-### Update Traefik Static Config
+## Update Traefik Static Config
 
 Just like before, we configure a certificate resolver. The only real change is switching from `httpChallenge` to `tlsChallenge`. 
 
@@ -259,7 +264,7 @@ You also need to update the domain with your domain.
 With this config, Traefik will request certificates without needing to serve any HTTP content.
 
 
-### Add TLS Labels in Compose
+## Add TLS Labels in Compose
 
 Now apply the right labels to your app in the `docker-compose.tls.yml`
 
@@ -298,7 +303,7 @@ Replace `yourdomain.com` with your real domain
 These labels tell Traefik how to route HTTPS requests and which resolver to use for TLS.
 
 
-### Deploy the Stack
+## Deploy the Stack
 
 Now deploy the new setup with TLS challenge:
 
@@ -341,7 +346,7 @@ Then go to **HTTP Services** and select the `catapp` service. In the **Used by R
 </div>
 
 
-### Cleanup
+## Cleanup
 
 Before proceeding to the next lab, make sure to delete the deployed stack first:
 

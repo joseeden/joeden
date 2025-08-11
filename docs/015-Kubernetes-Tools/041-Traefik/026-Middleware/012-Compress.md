@@ -77,36 +77,18 @@ Clone and move into the project directory:
 
 ```bash
 git clone https://github.com/joseeden/labs-traefik.git 
-cd labs-traefik/05-middleware
+cd labs-traefik/05-middleware/02-compress
 ```
 
 Project structure:
 
 ```bash
 05-middleware
-├── 01-basic-auth
-│   ├── basicauth_users
-│   ├── docker-compose.auth.yml
-│   ├── docker-compose.secrets.yml
-│   ├── docker-compose.usersfile.yml
-│   ├── traefik.yml
-│   └── usersfile
 ├── 02-compress
+│   ├── .gitignore
 │   ├── docker-compose.compress.yml
 │   ├── traefik.yml
 │   └── usersfile
-├── 03-error-pages
-│   ├── docker-compose.error.yml
-│   ├── traefik.yml
-│   └── usersfile
-├── 04-rate-limiting
-│   ├── docker-compose.ratelimit.yml
-│   ├── traefik.yml
-│   └── usersfile
-└── 05-redirects
-    ├── docker-compose.redirect.yml
-    ├── traefik.dns.yml
-    └── usersfile
 ```
 
 

@@ -14,6 +14,17 @@ last_update:
 ---
 
 
+## Using Let's Encrypt - DNS Challenge
+
+In this lab, we’ll set up **Traefik with Let’s Encrypt DNS challenge**, which allows automatic creation of wildcard certificates, meaning you can secure all subdomains (like `app.yourdomain.com`, `api.yourdomain.com`) with a single certificate.
+
+- Wildcard certs cover many subdomains
+- DNS challenge updates DNS records automatically
+- Works without exposing HTTP port (uses DNS + HTTPS only)
+
+This method is fully automated and gives you more flexibility with subdomains.
+
+
 ## Pre-requisites 
 
 ### Setup a Public Cloud VM 
@@ -50,8 +61,9 @@ sudo yum update -y && sudo yum install -y git
 # Install Docker 
 sudo amazon-linux-extras enable docker
 sudo yum install -y docker
-sudo systemctl enable docker
-sudo systemctl start docker
+
+# Start Docker service
+sudo systemctl enable --now docker
 sudo systemctl status docker
 
 # Configure DOcker
@@ -59,6 +71,8 @@ sudo usermod -aG docker ec2-user && newgrp docker
 
 # Install Docker compsoe
 sudo curl -L "https://github.com/docker/compose/releases/download/v2.20.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+# Configure permission
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 
@@ -143,31 +157,11 @@ If you set this up in DigitalOcean, your DNS records should look like this:
 | A    | `joeden.site`           | points to 34.201.50.100        | 30            |
 
 
-<!-- ### If you're testing on your Windows Machine 
-
-You might get a timeout error when deploying the stack in a later step. To fix this, temporarily allow incoming traffic on ports 80 and 443:
-
-1. Open **Windows Defender Firewall with Advanced Security**:
-   * Press `Win + R`, type `wf.msc`, press Enter.
-
-2. In the left pane, click **Inbound Rules**.
-3. In the right pane, click **New Rule...**.
-4. Choose **Port**, click **Next**.
-5. Select **TCP**, specify ports: `80,443`, click **Next**.
-6. Choose **Allow the connection**, click **Next**.
-7. Choose where to apply the rule (Domain, Private, Public). 
-8. For testing, select all three, then click Next.
-9. Name the rule `000-DELETE-LATER-Allow HTTP and HTTPS inbound`.
-10. Click **Finish**. -->
-
-
 ### Clone the Repository 
 
-To try out the examples, clone the project repository from GitHub. 
+> Github repo: [joseeden/labs-traefik](https://github.com/joseeden/labs-traefik/tree/master)
 
-- Github repo: [joseeden/labs-traefik](https://github.com/joseeden/labs-traefik/tree/master)
-
-Clone and move into the project directory:
+Login to the public cloud VM and clone the project repository from GitHub. 
 
 ```bash
 git clone https://github.com/joseeden/labs-traefik.git 
@@ -179,6 +173,8 @@ Project structure:
 ```bash
 04-https-tls
 ├── challenge-dns
+│   ├── .env
+│   ├── .gitignore
 │   ├── docker-compose.dns.yml
 │   └── traefik.dns.yml
 ├── challenge-http
@@ -187,23 +183,14 @@ Project structure:
 ├── challenge-tls
 │   ├── docker-compose.tls.yml
 │   └── traefik.tls.yml
-├── letsencrypt
+└── letsencrypt
 ```
 
 **Note:** Make sure the `letsencrypt` folder is next to the `challenge` folders, not inside any of them. The Docker compose files expect it there. If you move the `letsencrypt` folder, remember to update the Docker compose files accordingly.
 
-## Using Let's Encrypt - DNS Challenge
-
-In this lab, we’ll set up **Traefik with Let’s Encrypt DNS challenge**, which allows automatic creation of wildcard certificates, meaning you can secure all subdomains (like `app.yourdomain.com`, `api.yourdomain.com`) with a single certificate.
-
-- Wildcard certs cover many subdomains
-- DNS challenge updates DNS records automatically
-- Works without exposing HTTP port (uses DNS + HTTPS only)
-
-This method is fully automated and gives you more flexibility with subdomains.
 
 
-### Prepare Your DNS Provider
+## Prepare Your DNS Provider
 
 If you followed the Lab pre-requisites section, you should already have wildcard DNS records added which are pointing to your server.
 
@@ -215,7 +202,7 @@ This allows Traefik to request certificates for any subdomain you choose later; 
 For more information, please see [Setup your DNS Records.](#set-up-dns-records)
 
 
-### Create an API Token (DigitalOcean)
+## Create an API Token (DigitalOcean)
 
 To allow Traefik to update DNS records automatically, you’ll need a token from your DNS provider.
 
@@ -228,7 +215,7 @@ This token is used by Traefik to prove domain ownership via the DNS challenge.
 To generate the token in DigitalOcean please see [Generate an API Token.](/docs/001-Personal-Notes/020-Homelab/040-DigitalOcean.md#generate-api-token)
 
 
-### Add API Token in Docker Compose
+## Add API Token in Docker Compose
 
 Now configure the Docker Compose file with the token and labels.
 
@@ -236,14 +223,6 @@ To do this securely, create a `.env` file not tracked by Git (make sure to add `
 
 ```bash
 DO_AUTH_TOKEN=your_real_token_here
-```
-
-**Optional:** You can keep your `.env` but manually load it before running the deploy:
-
-```bash
-set -a
-source ./challenge-dns/.env
-set +a
 ```
 
 Then update the `docker-compose.dns.yml`:
@@ -291,7 +270,7 @@ As a recap, the DNS records that we have are:
 
 In the Docker Compose file, the rule `*.yourdomain.com` matches `anything.yourdomain.com`. So, Traefik will get a wildcard certificate for `*.yourdomain.com` using the DNS challenge. This lets Traefik secure all subdomains automatically with one certificate.
 
-### Set Up Static Traefik Config (DNS Challenge)
+## Set Up Static Traefik Config (DNS Challenge)
 
 The `traefik.dns.yml` sets the static config for the DNS challenge and the right provider.
 
@@ -331,7 +310,7 @@ certificatesResolvers:
 http:
   routers:
     traefik:
-      rule: Host(`dashboard.joeden.site`)  # or use your domain + a subdomain
+      rule: Host(`dashboard.yourdomain.com`)  # or use your domain + a subdomain
       entryPoints:
         - traefik
       service: api@internal
@@ -347,14 +326,24 @@ http:
 
 This config tells Traefik to request certificates using DNS, with your provider’s API.
 
+```bash
+Testing certificate renew..." providerName=myresolver.acme 
+```
 
-
-### Deploy the New Stack
+## Deploy the New Stack
 
 Make sure no other stack is running before deployment:
 
 ```bash
 docker stack rm traefik
+```
+
+Manually load the `.env` first:
+
+```bash
+set -a
+source ./challenge-dns/.env
+set +a
 ```
 
 Now deploy your updated setup:
@@ -372,7 +361,7 @@ docker service logs traefik_traefik
 You should see messages about the DNS challenge and a successful certificate request.
 
 
-### Test in Browser
+## Test in Browser
 
 Open your browser and visit:
 
@@ -417,7 +406,7 @@ It should load securely, using the wildcard certificate.
 
 
 
-### Store Certificates Safely
+## Store Certificates Safely
 
 To avoid rate limits and protect your certs:
 
@@ -433,7 +422,7 @@ ls ./letsencrypt/acme.json
 If the cert file is lost and you request too many new ones, Let’s Encrypt may block further requests temporarily.
 
 
-### Use Secrets for Tokens (Best Practice)
+## Use Secrets for Tokens (Best Practice)
 
 Instead of writing your DNS API token directly in the file:
 
@@ -483,7 +472,7 @@ This helps keep your system secure while still allowing full automation.
     Traefik will then read the token from `/run/secrets/do_auth_token`.
 
 
-### Cleanup
+## Cleanup
 
 Delete the deployed stack:
 
