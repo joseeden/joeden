@@ -494,4 +494,5 @@ Go to your DNS provider and delete the API token.
 
 </div>
 
+Finally, make sure to delete your public cloud VM.
 

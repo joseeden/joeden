@@ -43,7 +43,6 @@ This lab shows how to use rate limiting to protect your web app or API.
 
 Rate limiting helps keep your platform running smoothly by blocking users who send too many requests too fast.
 
-
 ### Clone the Repository 
 
 To try out the lab, clone the project repository from GitHub. 
@@ -174,7 +173,7 @@ services:
 ```
 
 
-## Deploy and Test
+### Deploy and Test
 
 Deploy the stack with the rate limit config:
 

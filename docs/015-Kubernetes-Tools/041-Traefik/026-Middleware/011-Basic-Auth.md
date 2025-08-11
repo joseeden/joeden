@@ -162,7 +162,7 @@ janedoe:$$apr1$$t65c7tuF$$Qscp40RYl.Tq02pUnSv5r1
 ```
 
 
-### Updating Middleware Configuration
+### Updating Configuration
 
 The hashed passwords are added to the middleware definition.
 

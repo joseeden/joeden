@@ -53,7 +53,7 @@ http:
 This tells Traefik to use the `error-service` to serve pages for 404 and 500 errors.
 
 
-## Lab: Using Error Pages in Middleware
+## Lab: Using Error Pages 
 
 This lab shows how to use middleware to handle error pages.
 

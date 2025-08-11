@@ -61,7 +61,7 @@ This lab shows how to enable Traefik logs and change log levels.
 
 > Github repo: [joseeden/labs-traefik](https://github.com/joseeden/labs-traefik/tree/master)
 
-Login to the public cloud VM and clone the project repository from GitHub. 
+Clone the project repository from GitHub. 
 
 ```bash
 git clone https://github.com/joseeden/labs-traefik.git

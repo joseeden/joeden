@@ -56,7 +56,7 @@ This lab shows how to enable access logs in Traefik.
 
 > Github repo: [joseeden/labs-traefik](https://github.com/joseeden/labs-traefik/tree/master)
 
-Login to the public cloud VM and clone the project repository from GitHub. 
+Clone the project repository from GitHub. 
 
 ```bash
 git clone https://github.com/joseeden/labs-traefik.git

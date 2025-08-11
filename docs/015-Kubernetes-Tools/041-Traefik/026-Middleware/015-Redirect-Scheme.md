@@ -48,8 +48,6 @@ In this lab, we will set up a redirect so users always connect to our app throug
 
 This redirect applies only to one service, keeping other services on Http. It gives more control and keeps Traefik changes safe and focused.
 
-## Pre-requisites 
-
 ### Setup a Public Cloud VM 
 
 It is recommended to perform this lab on a a VM with a public IP because you need to open port 80 to the internet.
@@ -111,7 +109,7 @@ Before using HTTPS with Traefik, make sure you have:
 - DNS records pointing to your DNS provider
 - A DNS provider supported by TraefikA DNS provider supported by Traefik
 
-heck the supported providers list here: [Traefik DNS Provider Integrations](https://docs.traefik.io/v2.3/https/acme/#providers)**
+Check the supported providers list here: [Traefik DNS Provider Integrations](https://docs.traefik.io/v2.3/https/acme/#providers)**
 
 For example, my setup uses:
 
@@ -206,7 +204,7 @@ Project structure:
 <!-- **Note:** Make sure the `letsencrypt` folder is next to the `challenge` folders, not inside any of them. The Docker compose files expect it there. If you move the `letsencrypt` folder, remember to update the Docker compose files accordingly -->
 
 
-## Create an API Token 
+### Create an API Token 
 
 To allow Traefik to update DNS records automatically, you’ll need a token from your DNS provider. In my setup, I'm using DigitalOcean as my DNS provider.
 
@@ -222,7 +220,7 @@ To generate the token in DigitalOcean please see [Generate an API Token.](/docs/
 
 :::
 
-## Create the `.env` file
+### Create the `.env` file
 
 Once you have the API token, create a `.env`:
 
@@ -230,7 +228,7 @@ Once you have the API token, create a `.env`:
 DO_AUTH_TOKEN=your_real_token_here
 ```
 
-## Create the Passwords
+### Create the Passwords
 
 For this lab, we'll use basic authentication, so we need a safe way to store user passwords. Passwords must be hashed before adding them to the users file.
 
@@ -277,7 +275,7 @@ usersfile
 This `usersfile` will be used in the Docker compose setup next.
 
 
-## Configure the Docker Compose File
+### Configure the Docker Compose File
 
 In the Docker compose file:
 
@@ -401,7 +399,7 @@ http:
 ```
 
 
-## Deploy the Config
+### Deploy the Config
 
 Before applying changes, make sure these files are in place:
 
@@ -466,7 +464,7 @@ Look for DNS challenge messages and a successful certificate request:
 Testing certificate renew..." providerName=myresolver.acme 
 ```
 
-## Testing 
+### Testing 
 
 Open the dashboard in your browser:
 
@@ -560,7 +558,7 @@ Finally, enter an invalid URL to see a professional 404 error page.
 
 
 
-## Cleanup
+### Cleanup
 
 Delete the deployed stack:
 
