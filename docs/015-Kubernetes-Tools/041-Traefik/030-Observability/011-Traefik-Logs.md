@@ -269,7 +269,7 @@ level=debug msg="Creating middleware" routerName=catapp@docker middlewareName=te
 level=debug msg="Adding tracing to middleware" entryPointName=web routerName=catapp@docker middlewareName=test-compress@docker
 level=debug msg="Creating middleware" entryPointName=web routerName=catapp@docker middlewareName=test-auth@docker 
 middlewareType=BasicAuth
-traefik_traefik.1.2qo77nb9y4mr@docker-desktop    | time="2025-08-11T01:22:26Z" level=error msg="read /users_file: is a directory" entryPointName=web routerName=catapp@docker
+traefik_traefik.1.2qo77nb9y4mr@docker-desktop    | time="2022-08-11T01:22:26Z" level=error msg="read /users_file: is a directory" entryPointName=web routerName=catapp@docker
 level=debug msg="Creating middleware" entryPointName=web middlewareName=traefik-internal-recovery middlewareType=Recovery
 level=debug msg="No default certificate, generating one"
 ```
@@ -333,7 +333,7 @@ http://catapp.localhost/
 
 <div class="img-center"> 
 
-![](/gif/docs/08102025-catapp-mw-4.gif)
+![](/gif/docs/08102022-catapp-mw-4.gif)
 
 </div>
 
