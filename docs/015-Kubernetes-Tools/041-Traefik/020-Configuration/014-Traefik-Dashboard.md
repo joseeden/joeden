@@ -87,4 +87,13 @@ Going back to your browser, you should now see three servers listed for the `who
 ![](/img/docs/08032025-traefik-dashboard-6.PNG)
 
 
+## Using Secure Mode 
+
+Secure mode controls how users access the dashboard.
+
+- By default, secure mode is off (`secure: false`)
+- When secure mode is off, access by IP address is blocked
+- Users must use the configured domain or hostname to reach the dashboard
+
+Enabling secure mode helps prevent unauthorized access and encourages safer connections through proper hostnames.
 
