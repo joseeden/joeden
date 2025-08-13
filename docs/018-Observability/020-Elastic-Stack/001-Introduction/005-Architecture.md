@@ -10,7 +10,7 @@ tags:
 - Elasticsearch
 - Elastic Stack
 - ELK Stack
-sidebar_position: 3
+sidebar_position: 5
 last_update:
   date: 12/30/2022
 ---
@@ -24,7 +24,7 @@ A single-node Elasticsearch setup runs all processes on one machine. It is suita
 - Handles data storage, indexing, and search queries in one place.  
 - limited scalability, not highly available.
 
-Recommended Node Configuration:
+Recommended node configuration:
 
 | Resource   | Recommended Value                                |  
 |------------|--------------------------------------------------|  
@@ -58,24 +58,30 @@ In an Elasticsearch cluster, each node can have a specific role to handle differ
 
 The node roles are:  
 
-- **Master Node**  
+- **Master Node (Master-eligible)**  
   - Manages cluster state and metadata.  
   - Coordinates changes like adding/removing nodes.  
   - Responsible for maintaining cluster health.  
 
+    :::info 
+
+    A cluster can only have one master at a time, but it can have multiple master-eligible nodes.
+
+    :::
+
 - **Data Node**  
-  - Stores data and handles search and indexing operations.  
+  - Index, store, and analuyze data.
   - Responsible for query execution and storage management.  
   - Stores data in shards and replicas.  
+
+- **Data Ingest**  
+  - Prepares and formats data before storing in data nodes.  
+  - Transforms data as it enters the system.  
 
 - **Data Content**  
   - Handles the storage and search of content-related data.  
   - Can be used for managing high-volume data.  
   - Typically stores unprocessed data for fast search operations.  
-
-- **Data Ingest**  
-  - Prepares and formats data before storing in data nodes.  
-  - Transforms data as it enters the system.  
 
 - **ML Node**  
   - Runs machine learning tasks like anomaly detection.  
@@ -112,3 +118,52 @@ In addition to these roles, Elasticsearch provides specialized data storage node
   - Stores data that is rarely accessed, with extremely low cost.  
   - Long-term retention with minimal query requirements.  
   - Data retrieval is slower compared to cold nodes.  
+
+## Index States
+
+Index states show if the data and its copies are available.
+
+- Green means all primary and replica shards are in place
+- Yellow means all primary shards are in place but some replicas are missing
+- Red means some primary shards are missing, causing data loss
+
+Example: 
+
+- When an index is green, all data is stored and fully replicated. 
+- Yellow means data is still accessible but not fully copied.
+- Red means some data is missing and cannot be recovered from this index alone.
+
+
+
+## Cluster States
+
+Cluster states show the overall health of an Elasticsearch cluster. They depend on shard allocation for each index, and the cluster state always reflects the worst index state.
+
+- Green
+
+  - All indexes are green
+  - All primary and replica shards are allocated
+  - All data is fully available and replicated
+
+- Yellow
+
+  - At least one index is yellow and none are red
+  - All primary shards are allocated
+  - Some replica shards are missing
+  - Data is accessible but not fully replicated, which can be risky
+
+- Red
+
+  - At least one index is red
+  - Not all primary shards are allocated
+  - Some data is missing, possible data loss
+  - The cluster turns red because the worst index state defines the cluster state
+
+Example: 
+
+- If all indexes are green, the cluster is green. 
+- If one index is yellow, the cluster is yellow. 
+- If any index turns red, the whole cluster is red.
+
+
+
