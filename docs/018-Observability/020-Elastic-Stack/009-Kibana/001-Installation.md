@@ -17,7 +17,7 @@ last_update:
 ---
 
 
-### Overview  
+## Overview  
 
 Kibana is a visualization tool for Elasticsearch, offering an easy way to explore, analyze, and visualize data. It's a key part of the ELK stack, used to create dashboards and monitor log data.  
 
