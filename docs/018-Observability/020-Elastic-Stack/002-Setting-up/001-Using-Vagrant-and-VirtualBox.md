@@ -20,6 +20,15 @@ last_update:
 
 This lab demonstrates how to set up the Elastic Stack using Vagrant and VirtualBox.  
 
+:::info 
+
+You can also setup the Elastic Stack as containers.
+
+Please see Using [Docker Compose.](/docs/018-Observability/020-Elastic-Stack/002-Setting-up/015-Using-Docker-Compose.md)
+
+:::
+
+
 ## Pre-requisites 
 
 - [Install VirtualBox](/docs/001-Personal-Notes/050-Project-Pre-requisites/011-VirtualBox.md#install-virtualbox)
