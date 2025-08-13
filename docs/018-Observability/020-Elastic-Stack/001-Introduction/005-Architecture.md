@@ -119,21 +119,6 @@ In addition to these roles, Elasticsearch provides specialized data storage node
   - Long-term retention with minimal query requirements.  
   - Data retrieval is slower compared to cold nodes.  
 
-## Index States
-
-Index states show if the data and its copies are available.
-
-- Green means all primary and replica shards are in place
-- Yellow means all primary shards are in place but some replicas are missing
-- Red means some primary shards are missing, causing data loss
-
-Example: 
-
-- When an index is green, all data is stored and fully replicated. 
-- Yellow means data is still accessible but not fully copied.
-- Red means some data is missing and cannot be recovered from this index alone.
-
-
 
 ## Cluster States
 
