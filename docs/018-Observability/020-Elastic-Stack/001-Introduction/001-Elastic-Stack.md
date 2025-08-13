@@ -90,4 +90,4 @@ Kibana serves as the Elastic Stack's front end and enables interaction with data
   - Supports ad hoc searches, visualizations, and dashboards.  
   - Includes features for observability and security (some require paid versions).  
 
-In recent updates, Kibana has evolved into a central UI for managing and configuring the Elastic Stack, streamlining operations.  
+In recent updates, Kibana has evolved into a central UI for managing and configuring the Elastic Stack, streamlining operations.   
