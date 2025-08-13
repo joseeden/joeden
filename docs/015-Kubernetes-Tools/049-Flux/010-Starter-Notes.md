@@ -21,36 +21,70 @@ last_update:
 
 GitOps uses Git to manage and automate everything about your infrastructure and app deployments.
 
-* Git holds all the configuration
-* Everything is written in files
-* It keeps the real system in sync with the files
+- Git holds all the configuration
+- Everything is written in files
+- It keeps the real system in sync with the files
 
 This means Git becomes the only place where you make changes, and your systems follow automatically.
 
-* Every change is tracked
-* Teams work better together
-* Deployments happen automatically
+- Every change is tracked
+- Teams work better together
+- Deployments happen automatically
 
 ## How Flux CD Helps
 
 Flux CD is a tool that keeps your Kubernetes apps in sync with your Git repository.
 
-* Uses Git to define how apps should run
-* Automatically updates your cluster
-* Works well with Kubernetes
-* Syncs your cluster to match your Git files
-* Supports multiple teams and clusters
+- Uses Git to define how apps should run
+- Automatically updates your cluster
+- Works well with Kubernetes
+- Syncs your cluster to match your Git files
+- Supports multiple teams and clusters
 
 Flux CD connects your Git repository to your Kubernetes cluster and keeps everything in sync.
+
+## Concepts 
+
+- **Bootstrapping**
+    - Installs Flux components in the cluster  
+    - Follows GitOps practices for deployment  
+
+- **Agent**
+    - Process inside the cluster that performs tasks for the user  
+    - Supports automation through Flux controllers  
+
+- **Flux Controllers**
+    - Specialized agents following the Kubernetes controller pattern  
+    - Use control loops with custom resources to manage cluster state  
+
+- **Sources**
+    - Git, Helm, or OCI repositories containing the desired state  
+    - Define where Flux retrieves configuration from  
+
+- **Kustomization**
+    - Applies customized Kubernetes resources  
+    - Works with overlays or plain manifests  
+
+- **Reconciliation**
+    - Keeps cluster state in sync with Git automatically  
+    - Can be paused or resumed manually  
+
+- **Pruning**
+    - Removes outdated resources no longer in the source  
+    - Enabled when `prune` is set to `true`  
+
+- **Flux Image Automation**
+    - Uses controllers to detect new container images  
+    - Updates Git with the latest image versions  
 
 ## Good Practices with Flux CD
 
 To make GitOps work well, use these tips with Flux CD.
 
-* Keep files simple and clean
-* Always check Git pull requests before merging
-* Watch the sync status
-* Protect your Git repo with SSH or tokens
+- Keep files simple and clean
+- Always check Git pull requests before merging
+- Watch the sync status
+- Protect your Git repo with SSH or tokens
 
 These habits help you stay secure, make fewer mistakes, and catch problems early.
 
@@ -92,15 +126,16 @@ This tells Flux to pull the config from Git and apply it every few minutes.
 
 Flux CD supports extra tools for more complex deployments.
 
-* **Helm controller** for using Helm charts
-* **Kustomize controller** for plain YAML configs
+- **Helm controller** for using Helm charts
+- **Kustomize controller** for plain YAML configs
 
 ## Managing Deployments
 
 Flux gives you tools to check what’s happening in your cluster.
 
-* Use CLI or dashboard to see status
-* Check for errors or issues
-* Track changes using Git history
+- Use CLI or dashboard to see status
+- Check for errors or issues
+- Track changes using Git history
 
 This visibility helps you understand what changed, when, and why.
+
