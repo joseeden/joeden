@@ -10,6 +10,25 @@ last_update:
 ---
 
 
+## DNS Name Resolution Process
+
+DNS name resolution is the process of finding the IP address for a given domain name.
+
+1. User enters a domain name in a browser.
+2. The system checks the operating system's local DNS cache and host table
+3. If no record is found, browser sends the request to a DNS resolver.
+4. The DNS resolver first checks its DNS cache
+5. The DNS resolver also checks its root hints file
+6. If no record is found, resolver contacts a root DNS server.
+7. DNS resolver selects the name servers and sends an iterative query.
+8. TLD server returns the authoritative server for the domain.
+9. DNS resolvers sends an iterative query to the authoritative server
+10. Authoritative server returns the IP address of the domain
+11. Resolver caches the answer, then sends the IP to the client.
+12. Client caches the data and passes data to the browser.
+13. The browser may put the result name in its own cache too.
+
+
 ## Local Name Resolution
 
 Local name resolution allows a computer to resolve hostnames to IP addresses without using external DNS servers. It relies on a simple file called the hosts file.
@@ -147,44 +166,42 @@ In this method, the client only sends one request. The server then takes over, f
 
 The key idea is that in recursive resolution, **the server is responsible for finding** and delivering the requested DNS information.
 
-## DNS Caching
-
-DNS caching is the process of temporarily storing DNS query results so future lookups for the same domain are faster.
-
-- Stores previously resolved DNS data
-- Reduces repeated network lookups
-- Uses a time limit called TTL to keep data fresh
-
-When a domain is resolved, the answer is saved in a cache on the client, server, or both. If the same domain is requested again before the cache expires, the stored data is used instead of performing the full DNS resolution process. This speeds up responses, reduces bandwidth use, and lowers server load.
 
 
-<div class="img-center"> 
+## Reverse Name Resolution (rDNS)
 
-![](/img/docs/all-things-network-basics-dns-caching.png)
+Reverse name resolution is the process of finding the domain name that belongs to a given IP address.
 
-</div>
+- Used to find a domain name from an IP address
+- Works with a special `in-addr.arpa` domain for IPv4
+- Often used in troubleshooting, spam filtering, and logging
 
+Reverse resolution uses a parallel hierarchy to the normal DNS name system, but arranged for IP addresses.
 
-Example on Windows:
+The IP octets are reversed in the lookup because DNS works from the least specific part to the most specific part, while IP addresses are structured in the opposite way.
 
-```powershell
-ipconfig /displaydns   # View DNS cache  
-ipconfig /flushdns     # Clear DNS cache
-```
-
-After flushing, the cache will only contain static entries like those from the host file.
-
-Example on Linux with `nscd`:
+Example on Linux using `dig`:
 
 ```bash
-sudo nscd -g   # Show cache stats
-sudo nscd -i hosts   # Clear DNS host cache
+dig -x 69.171.250.35 +noall +answer
 ```
 
-By clearing the cache, the cache count resets, and the next domain lookup will trigger a fresh DNS query.
+Expected result:
 
-## Negative Caching
+```
+35.250.171.69.in-addr.arpa.  3600  IN  PTR  example-domain.com.
+```
 
-Caching can also store failed lookups to prevent repeated failed requests, also called as **Negative caching**. Since DNS records change, cached entries expire after their TTL to avoid outdated or incorrect results.
+Example on Windows using `ping`:
 
-The main point is that DNS caching improves speed and efficiency by reusing recent results, but it must expire to keep data accurate.
+```bash
+ping -a 69.171.250.35
+```
+
+Expected result:
+
+```
+Pinging example-domain.com [69.171.250.35] with 32 bytes of data:
+```
+
+Reverse lookups are not guaranteed to work because they are not required for the internet to function. Some IP addresses may not have reverse DNS entries. However, when they do exist, they can be very helpful for identifying hosts, improving email security, and making logs more readable.
