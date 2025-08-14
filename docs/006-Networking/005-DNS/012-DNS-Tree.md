@@ -112,3 +112,20 @@ There are several types of top-level domains that indicate the type or location 
 ![](/img/docs/all-things-network-basics-dns-tlds.png)
 
 </div>
+
+
+## Authoritative Name Servers
+
+Authoritative name servers provide the final answer in the DNS process. They hold the IP addresses for specific domains and complete the query.
+
+- Hold the DNS records for a domain
+- Provide the IP address for requested sites
+- Complete the resolution without further referrals
+
+After referrals from root and TLD servers, the authoritative server gives the final response, allowing users to reach the website.
+
+:::info 
+
+Authority in DNS means control over a domain and responsibility to answer queries about it. 
+
+:::
