@@ -1,6 +1,6 @@
 ---
-title: "Namespace"
-description: "Namespace"
+title: "Domain Name Format"
+description: "Domain Name Format"
 tags: 
 - Networking
 - Cybersecurity
