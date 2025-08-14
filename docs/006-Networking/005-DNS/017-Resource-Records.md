@@ -63,24 +63,49 @@ These fields define key information for managing a DNS zone, handling updates, a
 
 You can check the SOA record using common tools:
 
-On Windows with `nslookup`:
+- On Windows with `nslookup`:
 
-```bash
-nslookup -type=soa example.com
-```
+    ```bash
+    nslookup -type=soa example.com
+    ```
 
-Expected output includes primary server, admin email, serial number, and TTL values.
+    Expected output includes primary server, admin email, serial number, and TTL values.
 
-On Linux with `dig`:
+    ```bash
+    Server:  dlinkrouter.local
+    Address:  192.168.0.1
 
-```bash
-dig -t soa example.com +short
-```
+    Non-authoritative answer:
+    example.com
+            primary name server = ns.icann.org       
+            responsible mail addr = noc.dns.icann.org
+            serial  = 2017011748
+            refresh = 7200 (2 hours)
+            retry   = 3600 (1 hour)
+            expire  = 1209600 (14 days)
+            default TTL = 3600 (1 hour) 
+    ```
 
-Or for cleaner output:
+- On Linux with `dig`:
 
-```bash
-dig -t soa example.com +short | tr -d '\n'
-```
+    ```bash
+    dig -t soa example.com +short
+    ```
 
-Querying the SOA record helps verify zone configuration and ensures that the primary server and administrative info are correct.
+    Or for cleaner output:
+
+    ```bash
+    dig -t soa example.com +short | tr " " '\n'
+    ```
+
+    Sample output:
+
+    ```bash
+    ns.icann.org.
+    noc.dns.icann.org.
+    2017011748
+    7200
+    3600
+    1209600
+    3600
+    ```
