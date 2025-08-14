@@ -170,38 +170,97 @@ The key idea is that in recursive resolution, **the server is responsible for fi
 
 ## Reverse Name Resolution (rDNS)
 
-Reverse name resolution is the process of finding the domain name that belongs to a given IP address.
+Reverse DNS is a system for finding the domain name that belongs to a given IP address. It uses a special domain called `in-addr.arpa` for IPv4, arranged in a numerical hierarchy.
 
-- Used to find a domain name from an IP address
-- Works with a special `in-addr.arpa` domain for IPv4
-- Often used in troubleshooting, spam filtering, and logging
+- Uses a four-level subdomain structure for IPv4 addresses
+- Stores each IP address as a reversed set of octets
+- Helps in troubleshooting, spam filtering, and logging
 
-Reverse resolution uses a parallel hierarchy to the normal DNS name system, but arranged for IP addresses.
+The `in-addr.arpa` hierarchy contains 256 subdomains at each of its four levels, numbered from 0 to 255. Each level corresponds to a section of the IP address, starting from the leftmost octet. 
+
+<div class="img-center"> 
+
+![](/img/docs/all-things-network-basics-dns-rdns.png)
+
+</div>
+
+
+For example:
+
+```bash 
+191.28.210.11
+```
+
+The above IP address is stored as:
+
+```bash 
+11.210.28.191.in-addr.arpa
+```
 
 The IP octets are reversed in the lookup because DNS works from the least specific part to the most specific part, while IP addresses are structured in the opposite way.
 
-Example on Linux using `dig`:
+- Example on Linux using `dig`:
+
+    ```bash
+    dig -x 191.28.210.11 +noall +answer
+    ```
+
+    Expected result:
+
+    ```
+    11.210.28.191.in-addr.arpa.  3600  IN  PTR  catphotos.com.
+    ```
+
+- Example on Windows using `ping`:
+
+    ```bash
+    ping -a 191.28.210.11
+    ```
+
+    Expected result:
+
+    ```
+    Pinging catphotos.com [191.28.210.11] with 32 bytes of data:
+    ```
+
+
+- Example on either Windows or Linux using `nslookup`:
+
+    ```bash
+    nslookup 69.171.250.35
+    ```
+
+    Expected result:
+
+    ```
+    Name:    sample-domain.com
+    Address: 69.171.250.35
+    ```
+
+Online tools can also perform reverse lookups, such as:
+
+- https://mxtoolbox.com/reverse-lookup.aspx  
+- https://www.whatismyip.com/reverse-dns-lookup/  
+- https://www.dnsstuff.com/tools
+
+Reverse lookups are not guaranteed to succeed because they are optional for internet operation. If an organization does not set a reverse DNS record for an IP, the query may return an error.
+
+Example of a missing reverse entry:
 
 ```bash
-dig -x 69.171.250.35 +noall +answer
+nslookup 93.184.216.34
 ```
 
-Expected result:
-
-```
-35.250.171.69.in-addr.arpa.  3600  IN  PTR  example-domain.com.
-```
-
-Example on Windows using `ping`:
+Possible result:
 
 ```bash
-ping -a 69.171.250.35
+** server can't find 34.216.184.93.in-addr.arpa: NXDOMAIN
 ```
 
-Expected result:
+Even though reverse DNS is optional, it is valuable for:
 
-```
-Pinging example-domain.com [69.171.250.35] with 32 bytes of data:
-```
+- Troubleshooting network issues when only an IP is known
+- Filtering spam by verifying sending mail server domains
+- Makes logs more readable by replacing IP addresses with domain names
 
-Reverse lookups are not guaranteed to work because they are not required for the internet to function. Some IP addresses may not have reverse DNS entries. However, when they do exist, they can be very helpful for identifying hosts, improving email security, and making logs more readable.
+Reverse DNS may not be mandatory, but when in place, it provides useful and human-readable information that makes IP-based work much easier.
