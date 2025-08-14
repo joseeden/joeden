@@ -372,11 +372,14 @@ $ getent hosts example.com
 2600:1408:ec00:36::1736:7f24 example.com
 ```
 
-**Key points when modifying `nsswitch.conf`:**
 
--  Always back up the file before making changes
--  Keep `files` as the first source unless there's a strong reason not to
--  Avoid overly complex rules; `files dns` is enough for most setups
--  Use optional actions like `[NOTFOUND=return]` with care, as they can stop lookups early
+## Best Practices 
+
+Key points when modifying `nsswitch.conf`:
+
+- Always back up the file before making changes
+- Keep `files` as the first source unless there's a strong reason not to
+- Avoid overly complex rules; `files dns` is enough for most setups
+- Use optional actions like `[NOTFOUND=return]` with care, as they can stop lookups early
 
 By adjusting `nsswitch.conf` and understanding the precedence of `/etc/hosts`, you can control exactly how and where your system resolves hostnames.
