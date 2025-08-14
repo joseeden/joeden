@@ -30,11 +30,11 @@ DNS uses different types of resource records (RRs) to store information about do
 | TXT         | Stores arbitrary text data                           | SPF record for email verification                       |
 
 
-## Start of Authority (SOA) Record
+## SOA Record (Start of Authority)
 
 The SOA record marks the start of a DNS zone and defines the primary information about that zone.
 
-- Each zone can have only one SOA record
+- Only one SOA record per zone
 - It must be the first record in the zone file
 - It defines the primary server and administrative contact
 
