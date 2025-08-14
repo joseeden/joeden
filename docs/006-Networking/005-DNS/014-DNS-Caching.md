@@ -27,6 +27,7 @@ When a domain is resolved, the answer is saved in a cache on the client, server,
 </div>
 
 
+
 Example on Windows:
 
 ```powershell
