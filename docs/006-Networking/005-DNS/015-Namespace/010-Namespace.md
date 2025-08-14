@@ -36,7 +36,7 @@ DNS is organized in a hierarchical structure:
 
 <div class="img-center"> 
 
-![](/img/docs/dns-hierarchy.png)
+![](/img/docs/all-things-network-basics-dns-hierarchy-1.png)
 
 </div>
 
