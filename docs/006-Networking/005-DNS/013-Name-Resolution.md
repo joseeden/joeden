@@ -257,10 +257,126 @@ Possible result:
 ** server can't find 34.216.184.93.in-addr.arpa: NXDOMAIN
 ```
 
-Even though reverse DNS is optional, it is valuable for:
+Even though reverse DNS is optional, it is useful for for:
 
 - Troubleshooting network issues when only an IP is known
 - Filtering spam by verifying sending mail server domains
 - Makes logs more readable by replacing IP addresses with domain names
 
+:::info 
+
 Reverse DNS may not be mandatory, but when in place, it provides useful and human-readable information that makes IP-based work much easier.
+
+:::
+
+
+## Changing Name Resolution Order (Linux)
+
+We can change the order in which a Linux system resolves hostnames by editing the `nsswitch.conf` file. This file tells the system which sources to check and in what order.
+
+- Controlled by `nsswitch.conf` in `/etc`
+- Affects how hostnames are resolved to IPs
+- Sources can include local files, multicast DNS, and regular DNS
+
+The `hosts` database inside `nsswitch.conf` determines where the system looks for hostname information. Common sources are:
+
+| Method         | Description                                                 |
+| -------------- | ----------------------------------------------------------- |
+| `files`        | Refers to `/etc/hosts` for local mappings                   |
+| `mdns_minimal` | Lightweight multicast DNS for local network name resolution |
+| `dns`          | Traditional DNS lookups using `/etc/resolv.conf`            |
+
+Checkign the `nsswitch.conf` file, we can see something like this:
+
+```bash 
+passwd:         files
+group:          files
+shadow:         files
+gshadow:        files
+
+hosts:          files mdns4_minimal [NOTFOUND=return] dns
+networks:       files
+
+protocols:      db files
+services:       db files
+ethers:         db files
+rpc:            db files
+
+netgroup:       nis
+```
+
+The `hosts` database controls how a Linux system resolved hostnames to IP address and tells the system where to look and in what order.s
+
+```bash 
+hosts:          files mdns4_minimal [NOTFOUND=return] dns
+```
+
+This configuration means:
+
+1. Check the source `file` first.
+2. In this case, the source file is the `/etc/hosts`
+3. If not found, try multicast DNS (`mdns4_minimal`)
+4. If multicast DNS fails with "NOTFOUND," stop the process
+5. Otherwise, try traditional DNS (`dns`)
+
+Example test with `/etc/hosts`:
+
+```bash
+# Add this line to /etc/hosts
+1.1.1.1 example.com
+```
+
+Test the entry by running `ping`:
+
+```bash
+ping example.com
+```
+
+Expected result:
+
+```
+PING example.com (1.1.1.1) 56(84) bytes of data.
+```
+
+**Local entries override DNS results** even if DNS is listed first in `nsswitch.conf`. To force DNS to be used, remove or comment out the relevant `/etc/hosts` entry.
+
+You can query the resolution source using `getent`:
+
+```bash
+
+$ getent hosts example.com
+
+# output below 
+1.1.1.1     example.com
+```
+
+
+If the `/etc/hosts` entry is removed, the system falls back to DNS resolution and the `getent` will resolve to the public IP address once more:
+
+```bash
+$ sudo vi /etc/hosts 
+
+# Add this line to /etc/hosts
+# 1.1.1.1 example.com
+```
+
+```bash
+$ getent hosts example.com
+
+# output below 
+2600:1408:ec00:36::1736:7f31 example.com
+2600:1406:3a00:21::173e:2e65 example.com
+2600:1406:3a00:21::173e:2e66 example.com
+2600:1406:bc00:53::b81e:94c8 example.com
+2600:1406:bc00:53::b81e:94ce example.com
+2600:1408:ec00:36::1736:7f24 example.com
+```
+
+**Key points when modifying `nsswitch.conf`:**
+
+-  Always back up the file before making changes
+-  Keep `files` as the first source unless there's a strong reason not to
+-  Avoid overly complex rules; `files dns` is enough for most setups
+-  Use optional actions like `[NOTFOUND=return]` with care, as they can stop lookups early
+
+By adjusting `nsswitch.conf` and understanding the precedence of `/etc/hosts`, you can control exactly how and where your system resolves hostnames.
