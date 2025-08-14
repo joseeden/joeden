@@ -86,7 +86,6 @@ TLD name servers get referrals from root servers and help move DNS queries close
 
 - Provide the next level of authority
 - Forward referrals to the authoritative server
-- Indicate the server responsible for the requested domain
 - Only know what is needed to guide the query
 - Keep each query moving toward resolution
 
@@ -108,3 +107,8 @@ There are several types of top-level domains that indicate the type or location 
   - Examples: `co.uk` for UK companies, `com.au` for Australian companies
 
 
+<div class="img-center"> 
+
+![](/img/docs/all-things-network-basics-dns-tlds.png)
+
+</div>
