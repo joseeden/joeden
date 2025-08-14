@@ -63,3 +63,66 @@ This resolves to `192.168.1.1` and works immediately without restarting the syst
 - Organize mappings with comments by purpose
 - Keep a backup of the hosts file before editing
 - Restrict write access to prevent unauthorized changes
+
+
+## DNS Resolvers
+
+DNS resolvers act as the middle layer between a client and the DNS system, helping translate domain names into IP addresses.
+
+- Receive queries from clients for domain resolution
+- Check their cache to answer directly if possible
+- Contact root servers and follow the resolution path if needed
+- Return the final IP address to the client
+
+Resolvers know about root servers through a **root hints file**, which contains the IP addresses of all root servers. This allows them to start the resolution process for any domain.
+
+<div class="img-center"> 
+
+![](/img/docs/dns_record_request_sequence_recursive_resolver.png)
+
+</div>
+
+
+**Example:**
+
+On Windows, you can see your DNS resolver with:
+
+```bash
+ipconfig /all
+```
+
+On Linux, check the resolver with:
+
+```bash
+cat /etc/resolv.conf
+```
+
+This shows the IP addresses of resolvers like your router or public DNS services such as Google (8.8.8.8, 8.8.4.4) or Cloudflare (1.1.1.1).
+
+
+**Notes**
+
+- Resolvers can be local (like a router) or public (like Google DNS)
+- Google DNS resolver is `8.8.8.8` and `8.8.4.4`
+- Some support features like **EDNS0** or **negative caching**
+- Resolver selection methods may vary: lowest latency or random choice
+
+
+## Iterative Resolution
+
+Iterative resolution is a DNS process where the client does most of the work to find an answer.
+
+- Server checks its own data for the answer
+- If not found, server sends a referral with other name server addresses
+- Client chooses the next server to query
+- Process repeats until the authoritative server responds
+
+In this method, each server either gives the answer or points the client to another server. The client keeps sending new queries until it reaches the server that holds the correct information.
+
+<div class="img-center"> 
+
+![](/img/docs/all-things-network-basics-dns-iterative.png)
+
+</div>
+
+This approach works because the client takes responsibility for contacting each server in turn, following the chain until the final answer is found.
