@@ -47,3 +47,19 @@ ping home-router
 ```
 
 This resolves to `192.168.1.1` and works immediately without restarting the system.
+
+**Common Use Cases**
+
+- Small local networks without internet
+- Speed up access to frequently used sites by overriding DNS
+- Test websites or redirect domains for development
+- Basic URL filtering, e.g., mapping a site to `127.0.0.1`
+- Ensure critical hosts are accessible when DNS is unavailable
+
+**Best Practices**
+
+- Avoid unnecessary entries to keep lookups fast
+- Multiple aliases can share a single IP
+- Organize mappings with comments by purpose
+- Keep a backup of the hosts file before editing
+- Restrict write access to prevent unauthorized changes
