@@ -126,3 +126,23 @@ In this method, each server either gives the answer or points the client to anot
 </div>
 
 This approach works because the client takes responsibility for contacting each server in turn, following the chain until the final answer is found.
+
+
+## Recursive Resolution
+
+Recursive resolution is a DNS process where the server does all the work to get the answer for the client.
+
+- Client sends a single query to the server
+- Server checks its own data first
+- If not found, server queries other DNS servers on behalf of the client
+- Process continues until the final answer is found and returned
+
+In this method, the client only sends one request. The server then takes over, following the DNS chain from the root down to the authoritative server. The client simply waits for the complete answer without handling referrals.
+
+<div class="img-center"> 
+
+![](/img/docs/all-things-network-basics-dns-recursive.png)
+
+</div>
+
+The key idea is that in recursive resolution, **the server is responsible for finding** and delivering the requested DNS information.
