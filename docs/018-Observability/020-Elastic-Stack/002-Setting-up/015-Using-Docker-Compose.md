@@ -52,26 +52,24 @@ The files can be found here: [GitHub repo](#)
 
 Follow these steps to launch the stack:
 
-1. Clone the repository containing the `docker-compose.yml`.
+1. Clone the repository.
 2. Ensure Docker Desktop is running.
-3. From the project directory, run:
+3. From the project directory, crun:
 
     ```bash
-    docker-compose up -d
+    docker compose -p dev-elastic-stack -f docker-compose-elk.yaml up -d
     ```
 
 4. Wait a few minutes for the Elasticsearch cluster to form.
 
 
-To verify:
-
-- Check cluster health:
+5. Check cluster health:
 
     ```bash
     curl -u elastic:changeme http://localhost:9200/_cluster/health?pretty
     ```
 
-- Verify Kibana is accessible at:
+6. Verify Kibana is accessible at:
 
     ```bash
     http://localhost:5601
@@ -94,4 +92,30 @@ This stack can be expanded for more advanced use cases:
 - Add a **Fleet Server** container for Elastic Agent experiments.
 - Mount custom pipelines, dashboards, or config files to simulate real workloads.
 - Can be easily scaled like a Kubernetes pod, just increase replicas in Docker Compose.
+
+
+## Cleanup
+
+
+1. Clean up stopped containers, volumes, and dangling mounts
+
+    ```bash
+    docker compose -p dev-elastic-stack -f docker-compose-elk.yaml down
+    docker volume prune -f
+    docker system prune -f
+    ```
+
+    - This removes stopped containers, unused volumes, and any leftover mount metadata.
+    - Be careful: `system prune` will remove all unused data on Docker.
+
+
+
+2. Restart WSL2 Docker Desktop integration
+
+    ```bash
+    wsl --shutdown
+    ```
+
+    - Then reopen Docker Desktop.
+    - This clears lingering mount points in `/run/desktop/mnt/host/wsl/`.
 

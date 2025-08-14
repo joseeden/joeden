@@ -1,10 +1,10 @@
 ---
-title: "Domain Name System (DNS)"
-description: "Domain Name System (DNS)"
+title: "Starter Notes"
+description: "Starter Notes"
 tags: 
 - Networking
 - Cybersecurity
-sidebar_position: 3
+sidebar_position: 10
 last_update:
   date: 1/16/2018
 ---
@@ -33,17 +33,17 @@ Example: Typing `www.wikipedia.org` in a browser triggers DNS to find the IP add
 
 DNS servers store records and answer queries.
 
-- Root servers
+- **Root servers**
 
   - Top of the DNS hierarchy
   - Point to TLD servers
 
-- TLD servers
+- **TLD servers**
 
   - Manage top-level domains (e.g., `.com`, `.org`)
   - Point to authoritative servers
 
-- Authoritative servers
+- **Authoritative servers**
 
   - Store DNS records for domains
   - Provide IP addresses when asked
@@ -53,7 +53,7 @@ DNS servers store records and answer queries.
 
 The `dig` (Domain Information Groper) is used to query DNS servers and troubleshoot DNS issues. It provides detailed information about DNS queries and responses.
 
-**Example:** Running `dig wikipedia.org` will query the DNS for the domain `wikipedia.org` and return detailed information.
+**Example: Runn**ing `dig wikipedia.org` will query the DNS for the domain `wikipedia.org` and return detailed information.
 
 ```shell
 $ dig wikipedia.org
@@ -81,9 +81,26 @@ wikipedia.org.        3600    IN      A       208.80.154.224
 - **Header**: Displays general information like query type and status
 - **Question Section**: Shows the query made (e.g., `wikipedia.org` for an A record)
 - **Answer Section**: Provides the IP address associated with the domain
-- **Query** Time: The time it took to receive a response
+- **Query Time**: The time it took to receive a response
 - **Server**: The DNS server that responded to the query
 
-## Learn More 
 
-For more details on DNS, please see the [DNS section.](/docs/006-Networking/005-DNS/010-Starter-Notes.md)
+## Three Main Functions of DNS
+
+- **Name resolution**
+
+  - Translates domain names into IP addresses
+  - Enables devices to locate each other
+  - Most common use of DNS
+
+- **Namespace**
+
+  - Organizes how domain names are structured
+  - Defines valid formats and characters
+  - Guides how names are interpreted
+
+- **Name registration**
+
+  - Assigns unique domain names
+  - Prevents duplication of names
+  - Managed by registration authorities

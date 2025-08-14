@@ -1,0 +1,33 @@
+#============================== Metricbeat modules ==============================
+
+metricbeat.config.modules:
+  path: ${path.config}/modules.d/*.yml
+  reload.enabled: false
+
+#========================== Elasticsearch output ==============================
+
+output.elasticsearch:
+  # Array of hosts to connect to.
+  hosts: ["http://es01:9200", "http://es02:9200", "http://es03:9200"]
+  username: "elastic"
+  password: "admin123"
+  # Disable SSL verification for local/dev testing
+  ssl.verification_mode: "none"
+
+#============================== Kibana ========================================
+
+setup.kibana:
+  host: "http://kibana:5601"
+  username: "elastic"
+  password: "admin123"
+  ssl.verification_mode: "none"
+
+#================================ Logging =====================================
+
+logging.level: info
+logging.to_files: true
+logging.files:
+  path: /var/log/metricbeat
+  name: metricbeat
+  keepfiles: 7
+  permissions: 0644
