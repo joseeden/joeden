@@ -146,3 +146,45 @@ In this method, the client only sends one request. The server then takes over, f
 </div>
 
 The key idea is that in recursive resolution, **the server is responsible for finding** and delivering the requested DNS information.
+
+## DNS Caching
+
+DNS caching is the process of temporarily storing DNS query results so future lookups for the same domain are faster.
+
+- Stores previously resolved DNS data
+- Reduces repeated network lookups
+- Uses a time limit called TTL to keep data fresh
+
+When a domain is resolved, the answer is saved in a cache on the client, server, or both. If the same domain is requested again before the cache expires, the stored data is used instead of performing the full DNS resolution process. This speeds up responses, reduces bandwidth use, and lowers server load.
+
+
+<div class="img-center"> 
+
+![](/img/docs/all-things-network-basics-dns-caching.png)
+
+</div>
+
+
+Example on Windows:
+
+```powershell
+ipconfig /displaydns   # View DNS cache  
+ipconfig /flushdns     # Clear DNS cache
+```
+
+After flushing, the cache will only contain static entries like those from the host file.
+
+Example on Linux with `nscd`:
+
+```bash
+sudo nscd -g   # Show cache stats
+sudo nscd -i hosts   # Clear DNS host cache
+```
+
+By clearing the cache, the cache count resets, and the next domain lookup will trigger a fresh DNS query.
+
+## Negative Caching
+
+Caching can also store failed lookups to prevent repeated failed requests, also called as **Negative caching**. Since DNS records change, cached entries expire after their TTL to avoid outdated or incorrect results.
+
+The main point is that DNS caching improves speed and efficiency by reusing recent results, but it must expire to keep data accurate.
