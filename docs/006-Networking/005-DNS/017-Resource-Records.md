@@ -401,3 +401,53 @@ CNAME records make domain management flexible, but they work best when kept simp
 
 Chaining CNAMEs (one CNAME pointing to another) is possible but discouraged due to slower lookups.
 
+## TXT Records
+
+TXT records store text information associated with a domain. They are flexible and can hold both human-readable notes and machine-readable data.
+
+- Can store any text related to the domain
+- Multiple TXT records can exist for the same domain
+- Used for verification, notes, or email security
+
+A TXT record includes:
+
+- Domain name
+- Record class (usually `IN`)
+- Record type (`TXT`)
+- TTL value
+- Rext content. 
+
+### Querying TXT Records
+
+- On Windows:
+
+    ```bash
+    nslookup -type=TXT example.net
+    ```
+
+    Expected output:
+
+    ```text
+    example.net text = "v=spf1 include:_spf.example.net ~all"
+    ```
+
+- On Linux:
+
+    ```bash
+    dig -t TXT example.net +short
+    ```
+
+    Expected output:
+
+    ```text
+    "v=spf1 include:_spf.example.net ~all"
+    ```
+
+### Common Uses
+
+TXT records are easy to set up and provide a flexible way to attach important text or security data to a domain.
+
+- Store human-readable notes about a domain
+- Verify domain ownership for services
+- Improve email security with SPF, DKIM, or DMARC records
+
