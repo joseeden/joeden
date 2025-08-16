@@ -74,3 +74,30 @@ DNS uses standard ports and has additional message types for specific operations
 - **Notify messages** tell slave servers about zone changes
 - **Update messages** add or remove records 
 - Can use UDP or TCP depending on size
+
+
+## Response Codes
+
+When something fails, DNS uses response codes (RCODES) to explain what happened.
+
+- R codes show if a query was successful or failed
+- Each R code is a number linked to a condition
+- A value of zero means no error and success
+
+If the query works, the status shows **no error** and records are returned. Any other value means there was a problem that needs troubleshooting.
+
+| Code | Name            | Meaning                                          |
+| ---- | --------------- | ------------------------------------------------ |
+| 0    | No error        | Query successful, records returned               |
+| 1    | Format error    | Server could not understand the query            |
+| 2    | Server failure  | Server had a problem processing the query        |
+| 3    | NXDOMAIN        | The domain name does not exist                   |
+| 4    | Not implemented | Server does not support the requested query type |
+| 5    | Refused         | Server rejected the query for policy reasons     |
+
+:::info
+
+Every DNS response includes an R code. Success is only shown with zero, while all other codes point to different types of failure. 
+
+::: 
+
