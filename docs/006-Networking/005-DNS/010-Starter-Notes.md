@@ -18,7 +18,8 @@ The Domain Name System (DNS) converts easy-to-remember domain names (like `examp
 - Uses a distributed database to map names to addresses
 - Works mainly over UDP port 53 for fast lookups
 
-Example: Typing `www.wikipedia.org` in a browser triggers DNS to find the IP address for Wikipedia’s servers.
+Example: 
+Typing `www.wikipedia.org` in a browser triggers DNS to find the IP address for Wikipedia’s servers.
 
 ## How DNS Works
 
