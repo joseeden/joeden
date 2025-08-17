@@ -32,9 +32,11 @@ This setup mirrors real DNS infrastructures for practicing both private and publ
 
 Lab details:
 
-- Each node is assigned a fixed IPv4 address for network communication
-- The lab network uses 192.168.1.0/24 to match the existing DNS resolver
+- Each node is assigned a fixed IPv4 address 
 - Ubuntu 18.04 is used as the client operating system
+
+**NOTE:** The network `192.168.1.0/24` is used because `192.168.1.1` is the private IP of my actual home router, which also functions as the DNS resolver. If your setup is different, adjust the IP address plan to match your own DNS resolver.
+
 
 ## Recommended Hardware
 
@@ -58,7 +60,7 @@ VirtualBox is a free hypervisor used to run virtual machines for the lab.
 
 We will start with setting up a DNS client using Ubuntu Linux. The client will be used to test DNS queries within the lab.
 
-### Download and Install Ubuntu
+### Install and Configure the VM
 
 We need to install Ubuntu on a virtual machine to act as the DNS client.
 
@@ -67,23 +69,82 @@ We need to install Ubuntu on a virtual machine to act as the DNS client.
 3. Assign 4GB memory and 40GB disk space
 4. For disk space, use dynamically allocated storage
 
-### Configure the VM
-
 Once installed, adjust the settings to allow the VM to boot correctly and communicate with other lab nodes.
 
 - **Boot order**: Set optical disk first and disable floppy
+
+    <div class="img-center"> 
+
+    ![](/img/docs/Screenshot-2025-08-17-223001.png)
+
+    </div>
+
+
 - **Storage**: Attach the downloaded Ubuntu ISO
+
+    <div class="img-center"> 
+
+    ![](/img/docs/Screenshot-2025-08-17-232822.png)
+
+    </div>
+
+    When prompted, click **Keep changes.**
+
+    <div class="img-center"> 
+
+    ![](/img/docs/Screenshot-2025-08-17-232822.png)
+
+    </div>
+
+
 - **Network**: Use a bridged adapter to match lab network
+
+    <div class="img-center"> 
+
+    ![](/img/docs/Screenshot-2025-08-17-233149.png)
+
+    </div>
+
+- **General**: Choose Birectional for both Shard Clipboard and Drag'n'Drop 
+
+    <div class="img-center"> 
+
+    ![](/img/docs/Screenshot-2025-08-18-000351.png)
+
+    </div>
+
+After configuring the VM, start the VM (Normal start).
+
 
 ### Install Guest Additions
 
 Enhance the VM performance and enable extra features.
 
 - Insert Guest Additions CD from VirtualBox menu
+
+    **NOTE:** If you're using a new ISO file, the guest additions may be mounted already. To verify, open a terminal and run:
+
+    ```bash
+    lsblk 
+    ```
+
+    Look for something like sr0 with the label VBox_GAs_7.x.x.
+    That means the Guest Additions ISO is mounted.
+
+    ```bash
+
+    ```
+
 - Install required packages using the terminal:
 
     ```bash
-    sudo apt-get update -y && sudo apt-get install -y virtualbox-guest-utils virtualbox-guest-dkms
+    sudo apt-get update -y 
+    sudo apt-get install -y virtualbox-guest-utils \
+        virtualbox-guest-dkms \
+        build-essential \
+        dkms \
+        linux-headers-$(uname -r)
+    sudo /mnt/VBoxLinuxAdditions.run
     sudo reboot
     ```
 

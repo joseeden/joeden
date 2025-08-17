@@ -29,6 +29,7 @@ This process ensures accurate tracking of requests and is useful for troubleshoo
 
 
 
+
 ## Transport Protocols
 
 DNS relies on transport protocols to move messages between client and server. It uses both UDP and TCP depending on the situation.
@@ -141,3 +142,121 @@ Each field plays a role in making sure the client and server understand each oth
 | Additional Count         | Number of additional records in the response             |
 
 
+## Lab: Capturing Network Traffic
+
+There are two main ways to capture network traffic. Both depend on where and how you want to observe the data.
+
+- **Passive capture** uses tools like tcpdump directly on the client or server
+- **Active capture** places a proxy or a tap in the path if direct access is not possible
+
+For this example, we'll use the lab environment that was setup for the DNS Lab.
+
+
+<!-- insert photo -->
+
+### Setting Up Capture Point
+
+Once the method is chosen, the next step is deciding where to capture the traffic.
+
+- The capture point is the exact location where traffic is recorded
+- A client interface is a simple place to start for DNS queries
+
+For our example, we'll setup our capture point at the client device which will contact the DNS resolver directly for its recursive queries.
+
+<!-- insert photo -->
+
+### Configuring DNS Resolver
+
+To capture DNS traffic, the client must use a known resolver.
+
+- Edit `/etc/resolv.conf` to set the DNS resolver
+- Example: use `192.168.1.1` as the resolver
+
+```bash
+sudo vi /etc/resolv.conf
+# Add this line at the bottom
+nameserver 192.168.1.1
+```
+
+This ensures all DNS lookups go through the resolver we want to monitor.
+
+### Installing Tcpdump
+
+Check if tcpdump is installed with
+
+```bash
+dpkg -s tcpdump
+```
+
+If missing, install it with
+
+```bash
+sudo apt-get install tcpdump -y
+```
+
+
+### Building a Capture Filter
+
+Filters help capture only useful traffic.
+
+- Capture on specific interface (e.g. `enp0s3`)
+- Specify port 53 for DNS
+- Save output to a file for later analysis
+
+In the example below, it captures only DNS packets and stores them in a file for review.
+
+```bash
+sudo tcpdump -i ens3 port 53 -s0 -w /var/log/dns_traffic.pcap
+```
+
+
+### Generating DNS Traffic
+
+To create DNS packets for capture, simply browse a website.
+
+- Open a browser and visit a domain
+- Stop tcpdump with `Ctrl+C`
+
+The capture file now contains DNS traffic for the visited domain.
+
+### Analyzing With Wireshark
+
+Wireshark is used to analyze captured traffic.
+
+- Install Wireshark if needed
+
+    ```bash
+    sudo apt install wireshark -y
+    ```
+
+- Allow non-root users to run it
+
+    ```bash
+    sudo usermod -aG wireshark $(whoami)
+    ```
+
+- Reboot and open Wireshark
+
+    ```bash
+    sudo reboot
+    ```
+
+Captured files can now be inspected in detail with display filters.
+
+### Filtering DNS Queries in Wireshark
+
+Filters make it easier to focus on specific DNS lookups.
+
+- To filter by domain:
+
+    ```bash
+    dns.qry.name == "example.com"
+    ```
+
+- To filter by transaction ID:
+
+    ```bash
+    dns.id == 0xD1C3
+    ```
+
+These filters isolate exact queries and responses for review.
