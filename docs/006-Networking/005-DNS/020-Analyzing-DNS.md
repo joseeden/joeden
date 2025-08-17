@@ -54,6 +54,8 @@ By using both, DNS stays fast for everyday lookups while still handling large or
 </div>
 
 
+
+
 ## Message Size and Handling
 
 DNS messages have size limits that affect how they are sent and retried.
@@ -80,8 +82,8 @@ DNS uses standard ports and has additional message types for specific operations
 
 When something fails, DNS uses response codes (RCODES) to explain what happened.
 
-- R codes show if a query was successful or failed
-- Each R code is a number linked to a condition
+- RCODEs show if a query was successful or failed
+- Each RCODE is a number linked to a condition
 - A value of zero means no error and success
 
 If the query works, the status shows **no error** and records are returned. Any other value means there was a problem that needs troubleshooting.
@@ -97,7 +99,45 @@ If the query works, the status shows **no error** and records are returned. Any 
 
 :::info
 
-Every DNS response includes an R code. Success is only shown with zero, while all other codes point to different types of failure. 
+Every DNS response includes an RCODE. Success is only shown with zero, while all other codes point to different types of failure. 
 
 ::: 
+
+
+
+
+## DNS Header 
+
+The DNS header contains several fields that control how queries and responses are handled.
+
+- **Transaction ID** links queries to their responses
+- **Flags** show details about query type and behavior
+- **Count** fields show how many records are included
+
+<div class="img-center"> 
+
+![](/img/docs/08172025_DNS-Header.png)
+
+</div>
+
+Each field plays a role in making sure the client and server understand each other during a DNS transaction.
+
+| Field                    | Description                                              |
+| ------------------------ | -------------------------------------------------------- |
+| Transaction ID           | Unique number to match query with response               |
+| QR bit                   | 0 for query, 1 for response                              |
+| Opcode                   | Type of DNS query being made                             |
+| AA (Authoritative)       | Indicates the server is authoritative for the domain     |
+| TC (Truncated)           | Set when the message is too long (over 512 bytes in UDP) |
+| RD (Recursion Desired)   | Client requests the server to resolve recursively        |
+| RA (Recursion Available) | Server confirms it supports recursion                    |
+| Z                        | Reserved for future use, always set to zero              |
+| AD (Authentic Data)      | Marks data as authentic (DNSSEC related)                 |
+| CD (Checking Disabled)   | Skips DNSSEC validation checks                           |
+| RCODE                   | Response code indicating success or type of error        |
+| Query Count              | Number of questions in the query                         |
+| Answer Count             | Number of answers in the response                        |
+| NS Count                 | Number of authority records in the response              |
+| Additional Count         | Number of additional records in the response             |
+
 
