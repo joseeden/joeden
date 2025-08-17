@@ -33,7 +33,8 @@ This setup mirrors real DNS infrastructures for practicing both private and publ
 Lab details:
 
 - Each node is assigned a fixed IPv4 address 
-- Ubuntu 18.04 is used as the client operating system
+- Ubuntu 18.04 Desktop is used as the client OS
+- Ubuntu 18.04 Server is used the DNS Server OS
 
 **NOTE:** The network `192.168.1.0/24` is used because `192.168.1.1` is the private IP of my actual home router, which also functions as the DNS resolver. If your setup is different, adjust the IP address plan to match your own DNS resolver.
 
@@ -64,7 +65,7 @@ We will start with setting up a DNS client using Ubuntu Linux. The client will b
 
 We need to install Ubuntu on a virtual machine to act as the DNS client.
 
-1. Download Ubuntu 18.04 LTS desktop ISO from the [official website](https://ubuntu.com/download/desktop)
+1. Download Ubuntu 18.04 LTS Desktop ISO from the [official website](https://ubuntu.com/download/desktop)
 2. In VirtualBox, create a new VirtualBox VM named `dns-client`
 
     <div class="img-center"> 
@@ -142,9 +143,13 @@ Once Ubuntu is installed, adjust the settings to allow the VM to boot correctly 
     </div>
 
 
+After configuring the VM, start the VM (Normal start). Go through the setup process:
 
-After configuring the VM, start the VM (Normal start).
-
+- Choose your language
+- Select your keyboard layout
+- Create your account
+- Select your timezone
+- Other steps 
 
 ### Install Guest Additions
 
@@ -172,6 +177,12 @@ After configuring the VM, start the VM (Normal start).
 
 4. Install required packages using the terminal:
 
+    :::info 
+
+    Copy-paste doesn't work (yet) so you'll have to type the commands on the terminal inside the VM.
+
+    :::
+    
     ```bash
     sudo apt update -y 
     sudo apt install -y virtualbox-guest-utils \
@@ -208,7 +219,7 @@ After configuring the VM, start the VM (Normal start).
 
 6. After reboot, enable full-screen mode from the View menu
 
-### Enable Shared Clipboard and Drag-Drop
+### Shared Clipboard and Drag-Drop
 
 These settings should already be enabled if you folow the steps in the [Install Guest Additions](#install-guest-additions) step. To verify:
 
