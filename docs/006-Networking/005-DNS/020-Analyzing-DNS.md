@@ -30,6 +30,9 @@ This process ensures accurate tracking of requests and is useful for troubleshoo
 
 
 
+
+
+
 ## Transport Protocols
 
 DNS relies on transport protocols to move messages between client and server. It uses both UDP and TCP depending on the situation.
