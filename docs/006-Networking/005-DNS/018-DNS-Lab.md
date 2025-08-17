@@ -48,7 +48,9 @@ Recommended:
 
 VirtualBox is used to create virtual machines for this lab
 
-## Install VirtualBox
+## Pre-requisites 
+
+### Install VirtualBox
 
 VirtualBox is a free hypervisor used to run virtual machines for the lab.
 
@@ -57,23 +59,33 @@ VirtualBox is a free hypervisor used to run virtual machines for the lab.
 3. Follow the installation wizard and accept default settings
 4. Reboot the system after installation
 
-## Setting Up the DNS Client
-
-We will start with setting up a DNS client using Ubuntu Linux. The client will be used to test DNS queries within the lab.
 
 ### Install Ubuntu
 
-We need to install Ubuntu on a virtual machine to act as the DNS client.
+We need to create the VM machines and install the correct Ubuntu on them.
 
-1. Download Ubuntu 18.04 LTS Desktop ISO from the [official website](https://ubuntu.com/download/desktop)
+
+1. Download the following ISO file from the [official website](https://ubuntu.com/download/desktop)
+
+    | VM         | Operating System         |
+    | ---------- | ------------------------ |
+    | DNS Client | Ubuntu 18.04 LTS Desktop |
+    | DNS Server | Ubuntu 18.04 LTS Server  |
+
+
 2. In VirtualBox, create a new VirtualBox VM named `dns-client`
+
+    :::info 
+
+    Perform the steps 2 to 5 for all the VMs.
+
+    :::
 
     <div class="img-center"> 
 
     ![](/img/docs/Screenshot-2025-08-18-020906.png)
 
     </div>
-
 
 3. Set the username and password:
 
@@ -103,6 +115,15 @@ We need to install Ubuntu on a virtual machine to act as the DNS client.
 
 5. The VM will try to power on. Right-click on the VM and click **Stop.**
 
+
+### Configure the VM Settings 
+
+:::info 
+
+Perform the steps below for all the VMs.
+
+:::
+
 Once Ubuntu is installed, adjust the settings to allow the VM to boot correctly and communicate with other lab nodes. Right-click on the VM and click **Settings**
 
 1. **General**: Choose Birectional for both Shard Clipboard and Drag'n'Drop 
@@ -124,6 +145,12 @@ Once Ubuntu is installed, adjust the settings to allow the VM to boot correctly 
 
 2. **Storage**: Attach the downloaded Ubuntu ISO
 
+    :::info 
+
+    The DNS Client and DNS Server uses different ISO files
+
+    :::
+
     <div class="img-center"> 
 
     ![](/img/docs/Screenshot-2025-08-17-232822.png)
@@ -134,7 +161,7 @@ Once Ubuntu is installed, adjust the settings to allow the VM to boot correctly 
 
 
 
-- **Network**: Use a bridged adapter to match lab network
+4. **Network**: Use a bridged adapter to match lab network
 
     <div class="img-center"> 
 
@@ -150,6 +177,13 @@ After configuring the VM, start the VM (Normal start). Go through the setup proc
 - Create your account
 - Select your timezone
 - Other steps 
+
+
+## Setting Up the DNS Client
+
+We will start with setting up a DNS client using Ubuntu Linux. The client will be used to test DNS queries within the lab.
+
+
 
 ### Install Guest Additions
 
@@ -175,6 +209,13 @@ After configuring the VM, start the VM (Normal start). Go through the setup proc
     ...
     ```
 
+
+    **NOTE:** The Guest Additions ISO is a read-only CD image, so Linux mounts it as read-only. The output below just tells you that you cannot write to the ISO, which is fine; you only need to read and execute the installer from it.
+
+    ```bash
+    WARNING: source write-protected, mounted read-only
+    ```
+
 4. Install required packages using the terminal:
 
     :::info 
@@ -182,7 +223,7 @@ After configuring the VM, start the VM (Normal start). Go through the setup proc
     Copy-paste doesn't work (yet) so you'll have to type the commands on the terminal inside the VM.
 
     :::
-    
+
     ```bash
     sudo apt update -y 
     sudo apt install -y virtualbox-guest-utils \
