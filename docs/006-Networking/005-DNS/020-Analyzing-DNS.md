@@ -152,10 +152,15 @@ There are two main ways to capture network traffic. Both depend on where and how
 - **Passive capture** uses tools like tcpdump directly on the client or server
 - **Active capture** places a proxy or a tap in the path if direct access is not possible
 
-For this example, we'll use the lab environment that was setup for the DNS Lab.
+For this example, we'll use the lab environment that was setup for the [DNS Lab.](/docs/006-Networking/005-DNS/018-DNS-Lab.md)
+
+<div class="img-center"> 
+
+![](/img/docs/all-things-network-basics-dns-lab-config.png)
+
+</div>
 
 
-<!-- insert photo -->
 
 ### Setting Up Capture Point
 
