@@ -60,18 +60,59 @@ VirtualBox is a free hypervisor used to run virtual machines for the lab.
 
 We will start with setting up a DNS client using Ubuntu Linux. The client will be used to test DNS queries within the lab.
 
-### Install and Configure the VM
+### Install Ubuntu
 
 We need to install Ubuntu on a virtual machine to act as the DNS client.
 
-1. Download Ubuntu 18.04 LTS desktop ISO from the official website
-2. Create a new VirtualBox VM named `dns-client`
-3. Assign 4GB memory and 40GB disk space
-4. For disk space, use dynamically allocated storage
+1. Download Ubuntu 18.04 LTS desktop ISO from the [official website](https://ubuntu.com/download/desktop)
+2. In VirtualBox, create a new VirtualBox VM named `dns-client`
 
-Once installed, adjust the settings to allow the VM to boot correctly and communicate with other lab nodes.
+    <div class="img-center"> 
 
-- **Boot order**: Set optical disk first and disable floppy
+    ![](/img/docs/Screenshot-2025-08-18-020906.png)
+
+    </div>
+
+
+3. Set the username and password:
+
+    <div class="img-center"> 
+
+    ![](/img/docs/Screenshot-2025-08-18-021006.png)
+
+    </div>
+
+    Also check the box for **Guest Additions** and choose the downloaded ISO file.
+
+4. Assign 4GB memory (4096 MB) and 40 GB hard disk space. 
+
+    Click **Finish** afterwards.
+
+    <div class="img-center"> 
+
+    ![](/img/docs/Screenshot-2025-08-18-021218.png)
+
+    </div>
+
+    <div class="img-center"> 
+
+    ![](/img/docs/Screenshot-2025-08-18021325.png)
+
+    </div>
+
+5. The VM will try to power on. Right-click on the VM and click **Stop.**
+
+Once Ubuntu is installed, adjust the settings to allow the VM to boot correctly and communicate with other lab nodes. Right-click on the VM and click **Settings**
+
+1. **General**: Choose Birectional for both Shard Clipboard and Drag'n'Drop 
+
+    <div class="img-center"> 
+
+    ![](/img/docs/Screenshot-2025-08-18-000351.png)
+
+    </div>
+
+2. **Boot order**: Set optical disk first and disable floppy
 
     <div class="img-center"> 
 
@@ -80,7 +121,7 @@ Once installed, adjust the settings to allow the VM to boot correctly and commun
     </div>
 
 
-- **Storage**: Attach the downloaded Ubuntu ISO
+2. **Storage**: Attach the downloaded Ubuntu ISO
 
     <div class="img-center"> 
 
@@ -90,11 +131,6 @@ Once installed, adjust the settings to allow the VM to boot correctly and commun
 
     When prompted, click **Keep changes.**
 
-    <div class="img-center"> 
-
-    ![](/img/docs/Screenshot-2025-08-17-232822.png)
-
-    </div>
 
 
 - **Network**: Use a bridged adapter to match lab network
@@ -105,13 +141,7 @@ Once installed, adjust the settings to allow the VM to boot correctly and commun
 
     </div>
 
-- **General**: Choose Birectional for both Shard Clipboard and Drag'n'Drop 
 
-    <div class="img-center"> 
-
-    ![](/img/docs/Screenshot-2025-08-18-000351.png)
-
-    </div>
 
 After configuring the VM, start the VM (Normal start).
 
@@ -147,12 +177,36 @@ After configuring the VM, start the VM (Normal start).
     sudo apt install -y virtualbox-guest-utils \
         build-essential \
         linux-headers-$(uname -r) \
-        dkms 
+        dkms gcc make perl
     sudo /mnt/VBoxLinuxAdditions.run
-    sudo reboot
     ```
 
-5. After reboot, enable full-screen mode from the View menu
+    If you get a message like:
+
+    ```bash
+    Look at /var/log/vboxadd-setup.log to find out what went wrong 
+    ```
+
+    Then its possible you encountered a Kernel issue, which could be any of these:
+
+    - Missing kernel headers or `build-essential` tools
+    - Mismatch between VirtualBox version and Guest Additions
+    - Old or conflicting Guest Additions already installed
+
+    You can check the logs for more details:
+
+    ```bash
+    cat  /var/log/vboxadd-setup.log
+    ```
+
+
+5. If there are no issues, reboot the machine:
+
+    ```bash
+    sudo reboot 
+    ```
+
+6. After reboot, enable full-screen mode from the View menu
 
 ### Enable Shared Clipboard and Drag-Drop
 
@@ -210,34 +264,23 @@ These settings should already be enabled if you folow the steps in the [Install 
     ```
 
 
-### Set Hostname
+### Configure the VM
 
-Give the VM a meaningful hostname for identification.
+1. In the terminal, run `hostnamectl` to give the VM a name:
 
-```bash
-sudo hostnamectl set-hostname dns-client
-hostname
-```
+    ```bash
+    sudo hostnamectl set-hostname dns-client
+    hostname
+    ```
 
-The hostname `dns-client` will be displayed in the terminal, which will make it easy to identify.
 
-### Configure Client IP Address
-
-Assign the client a static IP as per the lab plan.
-
-1. Check current interfaces first:
+2. Next, check current interfaces:
 
     ```bash
     ifconfig
     ```
 
-    If its not yet installed, run:
-
-    ```bash
-    sudo apt install net-tools 
-    ```
-
-    Check the interfaces. For example:
+    Sample output:
 
     ```bash
     enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
@@ -246,27 +289,28 @@ Assign the client a static IP as per the lab plan.
     lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
             inet 127.0.0.1  netmask 255.0.0.0
     ```
-2. Assign static IP `192.168.1.10`:
+
+    If `ifconfig` is not yet installed, run:
+
+    ```bash
+    sudo apt install net-tools 
+    ```
+
+
+3. Assign static IP `192.168.1.10`:
 
    ```bash
     sudo ifconfig enp0s3 192.168.1.10 netmask 255.255.255.0
     ifconfig enp0s3
     ```
 
-The client now has a fixed IP for predictable network communication in the lab.
-
-
-### Configure DNS Server
-
-Set the client to query the lab's cache-only DNS server.
-
-- Edit `/etc/resolv.conf`:
+4. Set the client to query the lab's cache-only DNS server. To do this, edit `/etc/resolv.conf`:
 
     ```bash
     sudo vi /etc/resolv.conf
     ```
 
-- Add the following line:
+2. Add the following line:
 
     ```
     nameserver 192.168.1.254
