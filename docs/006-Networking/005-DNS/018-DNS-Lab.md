@@ -59,11 +59,9 @@ VirtualBox is a free hypervisor used to run virtual machines for the lab.
 3. Follow the installation wizard and accept default settings
 4. Reboot the system after installation
 
-
-### Install Ubuntu
+### Creating the VM
 
 We need to create the VM machines and install the correct Ubuntu on them.
-
 
 1. Download the following ISO file from the [official website](https://ubuntu.com/download/desktop)
 
@@ -79,6 +77,8 @@ We need to create the VM machines and install the correct Ubuntu on them.
 
     Perform the steps 2 to 5 for all the VMs.
 
+    Make sure to choose the correct ISO file for each VM.
+
     :::
 
     <div class="img-center"> 
@@ -87,7 +87,16 @@ We need to create the VM machines and install the correct Ubuntu on them.
 
     </div>
 
-3. Set the username and password:
+3. Set the username and password.
+
+    Then check the box for **Guest Additions** and choose the downloaded ISO file.
+
+    :::info
+    
+    Make sure to choose the correct ISO image.
+
+    :::
+
 
     <div class="img-center"> 
 
@@ -95,11 +104,9 @@ We need to create the VM machines and install the correct Ubuntu on them.
 
     </div>
 
-    Also check the box for **Guest Additions** and choose the downloaded ISO file.
-
 4. Assign 4GB memory (4096 MB) and 40 GB hard disk space. 
 
-    Click **Finish** afterwards.
+    
 
     <div class="img-center"> 
 
@@ -113,8 +120,18 @@ We need to create the VM machines and install the correct Ubuntu on them.
 
     </div>
 
-5. The VM will try to power on. Right-click on the VM and click **Stop.**
+5. Click **Finish**. The VM will now try to power on.
 
+
+### Install Ubuntu 
+
+Go through the setup process:
+
+1. Choose your language
+2. Select your keyboard layout
+3. Create your account
+4. Select your timezone
+- Other steps 
 
 ### Configure the VM Settings 
 
@@ -134,7 +151,7 @@ Once Ubuntu is installed, adjust the settings to allow the VM to boot correctly 
 
     </div>
 
-2. **Boot order**: Set optical disk first and disable floppy
+2. **System**: Set optical disk first and disable floppy
 
     <div class="img-center"> 
 
@@ -157,9 +174,7 @@ Once Ubuntu is installed, adjust the settings to allow the VM to boot correctly 
 
     </div>
 
-    When prompted, click **Keep changes.**
-
-
+   
 
 4. **Network**: Use a bridged adapter to match lab network
 
@@ -169,20 +184,14 @@ Once Ubuntu is installed, adjust the settings to allow the VM to boot correctly 
 
     </div>
 
+5.  Finally, click **Ok**. When prompted, click **Keep changes.**
 
-After configuring the VM, start the VM (Normal start). Go through the setup process:
 
-- Choose your language
-- Select your keyboard layout
-- Create your account
-- Select your timezone
-- Other steps 
 
 
 ## Setting Up the DNS Client
 
 We will start with setting up a DNS client using Ubuntu Linux. The client will be used to test DNS queries within the lab.
-
 
 
 ### Install Guest Additions
@@ -371,3 +380,133 @@ These settings should already be enabled if you folow the steps in the [Install 
 - Remove any `search` entries and save the file
 
 This setup ensures the client is fully ready to test DNS resolution within the simulated lab environment.
+
+
+
+## Setting Up a DNS Cache Server
+
+The DNS cache server helps the client resolve domain names faster by storing previous queries and forwarding requests as needed.
+
+- Forwards public queries to the DNS resolver
+- Forwards internal queries to authoritative servers
+- Caches responses to reduce repeated queries
+
+The cache server improves network efficiency by answering repeated requests locally while still forwarding new queries.
+
+### Installing the Server
+
+Steps:
+
+1. Download the Ubuntu 18.04 LTS Server ISO from the [official website](https://ubuntu.com/download/desktop)
+2. Create a VirtualBox VM with Linux, 64-bit, 4GB RAM, 50GB disk
+3. Disable unnecessary devices like floppy and audio
+4. Assign a bridged network adapter
+
+After installation:
+
+```bash
+sudo apt update -y
+sudo apt install bind9 bind9utils -y
+dpkg -s bind9 | more
+```
+
+This confirms BIND9 is installed and ready.
+
+### Configure Network Interface
+
+Check interfaces: 
+
+```bash 
+ifconfig
+```
+
+Assign the IP address:
+
+```bash
+sudo ifconfig ens0 192.168.1.254 netmask 255.255.255.0
+```
+
+Verify assignment: 
+
+```bash 
+ifconfig ens0
+```
+
+This ensures the server can communicate with clients and forwarders.
+
+### Configuring BIND
+
+BIND is the software that runs a DNS server. It handles queries from clients, forwards requests, and stores DNS records. Basically, it makes your server act as a DNS cache or authoritative server.
+
+BIND uses configuration files to control its behavior and zones:
+
+- `/etc/bindnamed.conf`
+- `/etc/bindnamed.conf.options`
+- `/etc/bindnamed.conf.local`
+
+Start with editing the options file:
+
+```bash
+sudo vi /etc/bind/named.conf.options
+```
+
+Define ACL for trusted clients:
+
+```bash
+acl "trusted" { 192.168.1.0/24; };
+recursion yes;
+allow-query { localhost; trusted; };
+allow-query-cache { localhost; trusted; };
+allow-recursion { localhost; trusted; };
+forwarders { 192.168.1.1; };
+forward only;
+```
+
+Configure internal zone:
+
+```bash
+sudo vi /etc/bind/named.conf.local
+```
+```bash
+zone "intranet.local" {
+  type forward;
+  forwarders { 192.168.1.100; 192.168.1.101; };
+  forward only;
+};
+```
+
+Verify configuration:
+
+```bash
+sudo named-checkconf /etc/bind/named.conf
+sudo systemctl restart bind9
+sudo systemctl status bind9
+```
+
+### Testing the Cache Server
+
+Check server is listening on port 53:
+
+```bash
+sudo netstat -tulnp | grep 53
+```
+
+Capture traffic while querying from client:
+
+```bash
+sudo tcpdump -i any port 53
+dig example.com
+```
+
+Notes: 
+
+- First query forwards to resolver, second query uses cached response
+- Clear cache: `sudo rndc flush` to test fresh forwarding again
+
+### Best Practices
+
+- Use ACLs to restrict access to trusted clients
+- Comment configuration options for clarity
+- Avoid chaining forwarders to prevent delays and failures
+
+A properly configured DNS cache server reduces repeated queries, forwards new requests efficiently, and ensures faster, reliable name resolution.

@@ -161,7 +161,6 @@ For this example, we'll use the lab environment that was setup for the [DNS Lab.
 </div>
 
 
-
 ### Setting Up Capture Point
 
 Once the method is chosen, the next step is deciding where to capture the traffic.
