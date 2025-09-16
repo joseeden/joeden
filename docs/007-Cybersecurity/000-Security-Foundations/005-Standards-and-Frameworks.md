@@ -12,16 +12,6 @@ last_update:
 
 
 
-## HIPAA 
-
-HIPAA (Health Insurance Portability and Accountability Act) is a U.S. law that protects patient health information.
-
-- Applies to healthcare providers, insurers, and related entities
-- Violations can lead to fines or criminal charges
-
-HIPAA includes the **Privacy Rule for patient rights** and **Security Rule for data protection safeguards**.
-
-
 ## PCI DSS 
 
 The **Payment Card Industry Data Security Standard (PCI DSS)** is a set of standards to protect credit card data during processing, storage, or transmission.
@@ -35,46 +25,6 @@ The **Payment Card Industry Data Security Standard (PCI DSS)** is a set of stand
 Failing an internal PCI DSS compliance assessment typically results in **audit findings**, which are documented issues that need to be addressed to achieve compliance. These findings highlight areas where the bank's security practices do not meet the required standards and must be remediated.
 
 :::
-
-## FERPA
-
-The **Family Educational Rights and Privacy Act (FERPA)**, enacted in 1974, is a federal law designed to protect the privacy of student education records in U.S. schools that receive federal funds.
-
-- Gives parents and eligible students rights to access and correct records
-- Limits who can see or share student information without consent
-- Regulated and enforced by the U.S. Department of Education
-
-
-
-## GLBA 
-
-The **Gramm-Leach-Bliley Act (GLBA)** enacted in 1999, protects personal financial information held by financial institutions, including banks, securities firms, insurance companies, and other financial service providers in the US.
-
-- Requires transparency on how customer data is shared
-- A designated person must oversee information security
-- Defines and protects nonpublic personal information of consumers
-- Regulated by Federal Trade Commission (FTC) to enforce adherence
-
-## COPPA
-
-The Children's Online Privacy Protection Act (COPPA), enacted in 1998 and revised in 2013, protects the online privacy of children under 13 in the U.S.
-
-- Requires parental consent before collecting a child’s personal data
-- Gives parents control over what’s collected and shared
-- Enforced by the Federal Trade Commission (FTC)
-
-
-## Privacy Act of 1974
-
-The Privacy Act of 1974 governs how U.S. federal agencies handle personal data.
-
-- Individuals can access and request corrections to their records
-- Limits sharing of personal data without consent
-- Aims to protect against government misuse of information
-- Regulated by the U.S. Department of Justice and other federal agencies
-
-This law aims to balance the government's need to maintain information about individuals with the rights of individuals to be protected against unwarranted invasions of their privacy. 
-
 
 ## EU Data Protection Provisions 
 

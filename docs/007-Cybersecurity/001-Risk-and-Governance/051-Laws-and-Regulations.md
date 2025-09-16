@@ -70,32 +70,8 @@ Private regulations refer to rules and standards established by non-governmental
 - Provides frameworks for self-regulation and certification programs
 - An example is the PCI-DSS credit card processing compliance.
 
-## Fourth Amendment
 
-The Fourth Amendment to the United States Constitution protects the right of people to be secure in their persons, houses, papers, and effects against unreasonable searches and seizures. Key aspects include:
-
-- **Protection Against Unlawful Searches** 
-   
-   It establishes the principle that individuals have a right to be secure against unreasonable searches and seizures of their electronic data by government entities.
-  
-- **Requirement for Warrants** 
-  
-  Law enforcement must obtain warrants based on probable cause before conducting searches of electronic devices, accessing private communications, or seizing digital information.
-  
-- **Impact on Digital Privacy** 
-  
-  Shapes legal interpretations and discussions regarding the privacy rights of individuals concerning their electronic communications, data stored in the cloud, and digital devices.
-
-
-## The Federal Privacy Act of 1974
-
-A U.S. federal law designed to protect personal information held by government agencies.
-
-- Regulates the collection, maintenance, and use of personal data
-- Ensures transparency and privacy protections for U.S. citizens
-
-
-## Computer Fraud and Abuse Act (CFAA)
+## CFAA
 
 Originally introduced in 1984 as the **Counterfeit Access Device and Computer Fraud and Abuse Act**, it was amended in 1986 and became the **Computer Fraud and Abuse Act (CFAA)**. This U.S. federal law protects computer systems and data from unauthorized access and cyber threats.
 
@@ -113,9 +89,9 @@ The CFAA applies to:
 - Computers involved in crimes spanning multiple states
 
 
-## Electronic Communications Privacy Act of 1986
+## ECPA of 1986
 
-A U.S. federal law that strengthens privacy protections for electronic communications and complements other information security laws.
+A **Electronic Communications Privacy Act of 1986** strengthens privacy protections for electronic communications and complements other information security laws.
 
 While both address computers and electronic data, **CFAA** and **ECPA** serve different purposes:
 
@@ -138,7 +114,7 @@ While both address computers and electronic data, **CFAA** and **ECPA** serve di
 - **ECPA = privacy protection**
 
 
-## Computer Security Act of 1987
+## CSA of 1987
 
 The **Computer Security Act of 1987** is a US federal law aimed at improving the security of federal computer systems and protecting sensitive information.
 
@@ -178,9 +154,9 @@ Exceptions to DHS oversight:
 2. Intelligence-related cybersecurity remains under the Director of National Intelligence
 
 
-## Cybersecurity Enhancement Act of 2014
+## CEA of 2014
 
-A U.S. federal law focused on improving cybersecurity research, standards, and education. Amended in 2022, it strengthens federal cybersecurity efforts and promotes development of best practices.
+The **Cybersecurity Enhancement Act** focused on improving cybersecurity research, standards, and education. Amended in 2022, it strengthens federal cybersecurity efforts and promotes development of best practices.
 
 NIST produces the 800 series of Special Publications for guidance on information security and privacy.
 
@@ -196,14 +172,14 @@ NIST produces the 800 series of Special Publications for guidance on information
   - Specifies security requirements for contractors handling federal data
   - Helps ensure consistent safeguarding of sensitive information
 
-## National Cybersecurity Protection Act of 2014 
+## NCPA of 2014 
 
 The **National Cybersecurity Protection Act of 2014** established the **National Cybersecurity and Communications Integration Center (NCCIC)** within the Department of Homeland Security (DHS). The NCCIC serves as a central hub for sharing cybersecurity information and coordinating responses to cyber threats.
 
 
 ## Federal Information and Resources Management Regulation
 
-A U.S. regulation that sets rules for the use and management of federal information resources.
+tHE **Federal Information and Resources Management Regulation** is a U.S. regulation that sets rules for the use and management of federal information resources.
 
 - Governs how federal agencies manage information resources
 - Ensures security and efficiency in resource use
@@ -233,22 +209,3 @@ Establishes penalties for corporate crimes, including cybersecurity violations.
 These guidelines aim to reduce corporate misconduct and promote strong internal controls.
 
 
-## Economic Espionage Act of 1996
-
-A federal law that protects businesses from theft of trade secrets and intellectual property.
-
-- Criminalizes theft or misappropriation of trade secrets
-- Protects against economic espionage and IP theft
-- Covers both domestic and foreign trade secret violations
-
-This act strengthens legal protections for businesses and intellectual property in the U.S.
-
-## Defend Trade Secrets Act of 2016
-
-An extension of the Economic Espionage Act, it strengthens federal protections for trade secrets.
-
-- Allows civil lawsuits for trade secret theft
-- Provides stronger remedies for misappropriation
-- Establishes uniform federal standards for trade secret protection
-
-This act gives companies clearer legal tools to defend and enforce their trade secrets across the U.S.
