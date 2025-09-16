@@ -233,7 +233,7 @@ Establishes penalties for corporate crimes, including cybersecurity violations.
 These guidelines aim to reduce corporate misconduct and promote strong internal controls.
 
 
-## The Economic Espionage Act of 1996
+## Economic Espionage Act of 1996
 
 A federal law that protects businesses from theft of trade secrets and intellectual property.
 
@@ -243,3 +243,12 @@ A federal law that protects businesses from theft of trade secrets and intellect
 
 This act strengthens legal protections for businesses and intellectual property in the U.S.
 
+## Defend Trade Secrets Act of 2016
+
+An extension of the Economic Espionage Act, it strengthens federal protections for trade secrets.
+
+- Allows civil lawsuits for trade secret theft
+- Provides stronger remedies for misappropriation
+- Establishes uniform federal standards for trade secret protection
+
+This act gives companies clearer legal tools to defend and enforce their trade secrets across the U.S.
