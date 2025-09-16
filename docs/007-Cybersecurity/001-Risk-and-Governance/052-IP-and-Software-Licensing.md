@@ -1,6 +1,6 @@
 ---
-title: "Privacy Laws"
-description: "Privacy Laws"
+title: "I.P. and Software Licensing"
+description: "Intellectual Property and Software Licensing"
 tags: 
 - Security
 - Cybersecurity
