@@ -5,7 +5,7 @@ tags:
 - Security
 - Cybersecurity
 - Risk Management
-sidebar_position: 46
+sidebar_position: 50
 last_update:
   date: 1/30/2024
 ---
@@ -16,11 +16,6 @@ last_update:
 
 **Compliance** refers to adherence to laws, regulations, standards, and policies that apply to the operations of the organizations.
 
-- Legal Obligations 
-- Trust and Reputation
-- Data Protection 
-- Business Continuity
-
 ## Compliance Reporting
 
 Systematic process of collecting and presenting data to demonstrate adherence to compliance requirements. 
@@ -28,12 +23,12 @@ Systematic process of collecting and presenting data to demonstrate adherence to
 - Regular submission of compliance status to regulatory bodies.
 - Internal reports to management and the board on compliance matters.
 - Documentation of compliance activities and findings.
-- Ensuring transparency and accountability through detailed reports.
+- Ensures transparency and accountability through detailed reports.
 
-Types:
+## Types of Compliance Reporting
 
 - **Internal compliance reporting**
-  - Ensures organization is following its internal policies. 
+  - Ensures organization follows its internal policies. 
   - Conducted by internal audit team or compliance team.
 
 - **External compliance reporting**
@@ -48,7 +43,7 @@ The process of regularly reviewing and assessing organizational practices to ens
 - Regular audits and inspections to identify non-compliance issues
 - Implementation of corrective actions to address compliance gaps
 
-Key components:
+## Components of Compliance Monitoring
 
 - **Due Diligence**
   - Thorough assessments of regulatory requirements and organizational risks.
@@ -65,9 +60,13 @@ Key components:
 - **Acknowledgement**
   - Recognition and acceptance of compliance requirements by all relevant parties.
 
-- **Internal and External Monitoring**
-  - Internally monitoring adherence to policies, procedures, and regulations through audits, reviews, and assessments.
-  - Externally monitoring compliance through third-party audits, regulatory inspections, and industry certifications.
+- **Internal Monitoring**
+  - Internally monitoring adherence to policies, procedures, and regulations 
+  - Achieved through audits, reviews, and assessments.
+
+- **External Monitoring**
+  - Monitoring compliance through third-party audits
+  - Includes regulatory inspections and industry certifications.
 
 ## Automation in Compliance 
 
@@ -99,46 +98,6 @@ Automated compliance systems can streamline data collection, improve accuracy, a
   - Potential termination of business agreements and partnerships.
 
 
-## Compliance Obligations
-
-### Criminal Law
-
-Criminal law encompasses statutes and regulations that define offenses against the state or society, punishable by fines, imprisonment, or other penalties. 
-
-- Establishes criminal offenses for unauthorized access to computer systems.
-- Defines penalties for hacking, data breaches, and cybercrimes.
-- Has one characteristic that is not found in any other type of law - its punishment.
-- Violations may be punishable by deprivation of liberty, such as jail sentence or probation.
-- Must be created by a legislative body at the national state, or local level.
-
-### Civil Law
-
-Also known as **Tort Law**, Civil law deals with disputes between individuals or organizations, where plaintiffs seek compensation or specific performance rather than criminal penalties. 
-
-- Covers almost any matter that is not addressed by criminal law.
-- This includes liability claims, estate probate, contractual disputes, etc.
-- Must be passed by a legislative body, but does not provide the possibility of jail time.
-- Most outcomes of are monetary damages or orders by the court that someone perform or refrain from action.
-
-
-### Administrative Law
-
-Administrative law governs the activities of administrative agencies of government. 
-
-- Often provide details missing from the law.
-- Defines regulatory requirements imposed by government agencies.
-- Specifies standards and procedures for compliance audits and assessments.
-- Enforces penalties or fines for non-compliance with regulatory standards.
-- At the federal level, administrative law is found in the **Code of Federal Regulations (CFR)**
-
-### Private Regulations
-
-Private regulations refer to rules and standards established by non-governmental entities, such as industry associations or professional bodies. In information security:
-
-- Sets forth industry-specific standards for data protection and cybersecurity.
-- Requires adherence to codes of conduct and ethical guidelines.
-- Provides frameworks for self-regulation and certification programs to demonstrate compliance.
-- An example is the PCI-DSS credit card processing compliance.
 
 ## Reporting of Breaches 
 
@@ -150,34 +109,12 @@ Organizations are often legally required to report data breaches to authorities,
 
 - **Data Disclosure**
   - Data was exposed and actively disclosed to unauthorized parties
-  - Obligates organizations to inform impacted individuals and authorities promptly
+  - Organizations must inform impacted individuals and authorities promptly
 
-## Fourth Amendment
 
-The Fourth Amendment to the United States Constitution protects the right of people to be secure in their persons, houses, papers, and effects against unreasonable searches and seizures. Key aspects include:
+## US Legal and Regulatory Compliance
 
-- **Protection Against Unlawful Searches** 
-   - It establishes the principle that individuals have a right to be secure against unreasonable searches and seizures of their electronic data by government entities.
-  
-- **Requirement for Warrants** 
-  - Law enforcement must obtain warrants based on probable cause before conducting searches of electronic devices, accessing private communications, or seizing digital information.
-  
-- **Impact on Digital Privacy** 
-  - Shapes legal interpretations and discussions regarding the privacy rights of individuals concerning their electronic communications, data stored in the cloud, and digital devices.
-
-## FISMA
-
-FISMA stands for the Federal Information Security Management Act. It is a United States federal law passed in 2002 as part of the Electronic Government Act. FISMA outlines comprehensive requirements for securing information and information systems within federal agencies and provides a framework for managing information security risks.
-
-- Established to improve federal agency cybersecurity.
-- Requires implementation of a Risk Management Framework (RMF).
-- Mandates NIST-defined security controls.
-- Requires annual information security program reporting.
-- Monitored by DHS and OMB for compliance and improvement.
-
-## U.S. Legal and Regulatory Compliance
-
-Compliance with legal and regulatory standards ensures organizations operate within U.S. laws while protecting sensitive information.
+Compliance with legal and regulatory standards ensures organizations operate within US laws while protecting sensitive information.
 
 - **Sarbanes-Oxley (SOX)**
   - Mandates accurate financial reporting for public companies
@@ -195,42 +132,3 @@ Compliance with legal and regulatory standards ensures organizations operate wit
   - Ensures capital adequacy and effective risk controls
 
 
-## Laws, Directives, Regulations 
-
-A variety of U.S. laws govern privacy, data protection, and computer security, ensuring compliance and safeguarding sensitive information.
-
-- **The Federal Privacy Act of 1974**
-  - Regulates the collection, maintenance, and use of personal information by federal agencies
-  - Ensures transparency and privacy protections for U.S. citizens
-
-- **The Computer Security Act of 1987**
-  - Established requirements for securing federal computer systems
-  - Mandates the protection of sensitive but unclassified information
-
-- **Electronic Communications Privacy Act of 1986**
-  - Protects electronic communications from unauthorized access and interception
-  - Extends privacy protections to emails, phone calls, and electronic data
-
-- **HIPAA**
-  - Sets standards for protecting health information
-  - Ensures confidentiality, integrity, and availability of healthcare data
-
-- **The Computer Fraud and Abuse Act**
-  - Criminalizes unauthorized access to federal or protected computers
-  - Addresses cybercrimes including hacking and fraud
-
-- **Federal Information and Resources Management Regulation**
-  - Governs the use and management of federal information resources
-  - Ensures federal agencies maintain security and efficiency in resource use
-
-- **Office of Management and Budget Circular A-130**
-  - Provides guidance on managing federal information resources
-  - Focuses on the need for securing federal information systems
-
-- **1991 US Federal Sentencing Guidelines**
-  - Introduces penalties for corporate crimes, including cybersecurity violations
-  - Encourages companies to adopt effective compliance programs
-
-- **The Economic Espionage Act of 1996**
-  - Criminalizes the theft or misappropriation of trade secrets
-  - Protects businesses from economic espionage and intellectual property theft
