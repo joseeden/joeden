@@ -47,6 +47,13 @@ Protected works include:
 
 In computer software, copyright law only protects the **expression of the code**, such as the source code, object code, and structure, not the underlying ideas, algorithms, or functionality.
 
+:::info 
+
+For works with multiple authors, copyright protection typically lasts **70 years after the death of the last surviving author**.
+
+:::
+
+
 ## Digital Millenium Copyright Act  
 
 The Digital Millennium Copyright Act (DMCA) of 1998 addresses copyright issues in the digital age, particularly online. 

@@ -32,39 +32,39 @@ The **chief information security officer (CISO)** focuses on information securit
 
 1. **Lawfulness, Fairness, and Transparency**
 
-  - Personal data must be processed legally and fairly
-  - Organizations must clearly inform individuals about how their data is used
+    - Personal data must be processed legally and fairly
+    - Organizations must clearly inform individuals about how their data is used
 
 
 2. **Purpose Limitation**
 
-  - Data must be collected for specific, legitimate purposes
-  - Cannot be used for unrelated or incompatible purposes
+    - Data must be collected for specific, legitimate purposes
+    - Cannot be used for unrelated or incompatible purposes
 
 3. **Data Minimization**
 
-  - Only collect data necessary for the intended purpose
-  - Avoid excessive or irrelevant data collection
+    - Only collect data necessary for the intended purpose
+    - Avoid excessive or irrelevant data collection
 
 4. **Accuracy**
 
-  - Keep personal data accurate and up to date
-  - Correct or delete inaccurate data without delay
+    - Keep personal data accurate and up to date
+    - Correct or delete inaccurate data without delay
 
 5. **Storage Limitation**
 
-  - Retain data only as long as necessary for its purpose
-  - Safely delete or anonymize data when no longer needed
+    - Retain data only as long as necessary for its purpose
+    - Safely delete or anonymize data when no longer needed
 
 6. **Integrity and Confidentiality**
 
-  - Protect data against unauthorized access, loss, or damage
-  - Implement appropriate technical and organizational safeguards
+    - Protect data against unauthorized access, loss, or damage
+    - Implement appropriate technical and organizational safeguards
 
 7. **Accountability**
 
-  - Organizations must comply with GDPR requirements
-  - Implement policies to show responsibility for data protection
+    - Organizations must comply with GDPR requirements
+    - Implement policies to show responsibility for data protection
 
 ### Cross-Border Information Sharing 
 
