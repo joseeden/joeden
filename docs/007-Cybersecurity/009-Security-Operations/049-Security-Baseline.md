@@ -9,58 +9,92 @@ last_update:
 
 ## Overview 
 
-A security baseline is a set of basic security controls and practices that ensures a minimum level of security in an organization. 
+A **security baseline** is a set of minimum security controls and practices to maintain a consistent level of protection across an organization.
 
 - Platform-specific, based on industry or government standards.
-- Establish basic security settings and configurations.
-- Used to measure compliance and identify risks.
-- Updated regularly to address new threats.
+- Establishes basic security settings and configurations.
+- Helps measure compliance and identify risks.
+- Regularly updated to address new threats.
 
-An example of this are rules that outline the responsibilities and safeguards that are required for securing organizational devices.
+Example: Rules for securing organizational devices
 
-- A named individual or officer is responsible for the security of devices.
-- The devices should be protected against unauthorized access attempt.
-- The devices does not jeopardize other systems or data.
-- The devices should remain under the positive control of trained system administrators.
-- All activities on the devices should comply with the organization's data security requirements.
+- Assign responsibility to a specific individual or officer.
+- Protect devices against unauthorized access.
+- Ensure devices do not compromise other systems or data.
+- Keep devices under control of trained administrators.
+- All device activities comply with organizational data security policies.
+
 
 ## Baseline Components
 
-Here are the key components of a security baseline:
+Key elements of a security baseline:
 
 - **Establish Minimum Security Requirements**
-  - Define the essential security controls that must be implemented.
-  - Ensure these controls address common threats and vulnerabilities.
+
+  - Define essential security controls.
+  - Address common threats and vulnerabilities.
 
 - **Standardize Security Practices**
-  - Develop standardized procedures for common security tasks.
-  - Ensure consistency across all systems and departments.
+
+  - Create consistent procedures for security tasks.
+  - Ensure uniformity across systems and departments.
 
 - **Regularly Update Baselines**
-  - Review and update the security baseline to address new threats.
-  - Incorporate lessons learned from security incidents and audits.
+
+  - Review and update controls to address new threats.
+  - Include lessons learned from incidents and audits.
 
 - **Implement Access Controls**
-  - Define and enforce access control policies.
-  - Ensure that only authorized individuals have access to sensitive information.
+
+  - Enforce access policies for sensitive information.
+  - Restrict access to authorized personnel only.
 
 - **Monitor Compliance**
-  - Regularly assess systems and processes to ensure compliance with the baseline.
-  - Use audits and continuous monitoring to identify and address deviations.
+
+  - Regularly check systems for adherence to baseline.
+  - Use audits and monitoring to detect deviations.
 
 - **Provide Training and Awareness**
-  - Educate employees about the security baseline and their roles in maintaining it.
-  - Promote a culture of security awareness within the organization.
+
+  - Educate staff on baseline policies and responsibilities.
+  - Foster a culture of security awareness.
 
 - **Document and Communicate**
-  - Clearly document the security baseline and make it accessible.
-  - Communicate baseline requirements and updates to all relevant stakeholders.
 
+  - Clearly document the baseline for reference.
+  - Share updates and requirements with all stakeholders.
+
+
+## Security Control Baseline
+
+Security control baselines define minimum security controls for information systems.
+
+**NIST SP 800-53B** defines baselines based on system impact levels:
+
+1. **Low-Impact System**
+
+    - Basic controls for systems with minimal risk.
+    - Protects confidentiality, integrity, and availability.
+
+2. **Moderate-Impact System**
+
+    - Stronger controls for systems with moderate risk.
+    - Addresses a wider range of threats.
+
+3. **High-Impact System**
+
+    - Maximum controls for critical systems.
+    - Includes extensive monitoring and safeguards.
+
+4. **Privacy Control Baseline**
+
+    - Focuses on protecting personal and sensitive data.
+    - Aligns with privacy regulations and standards.
 
 
 ## System Configuration Managers
 
-System configuration managers play an important role in automating the deployment of configuration templates across end-user devices. By utilizing these tools, organizations can ensure consistent application of security controls and reduce the risk of human error in manual configurations.
+Configuration managers automate the deployment of secure configurations across devices, reducing errors and ensuring compliance.
 
 - **Microsoft System Center Configuration Manager (SCCM)**
   - Centralized management of Windows devices.
@@ -91,22 +125,22 @@ System configuration managers play an important role in automating the deploymen
 
 Once the baseline requirements are set and deployed across the enterprise, administrators should continue to monitor systems for compliance with the baseline.
 
-- Users might accidentally adjsut settings.
-- Administrators might make errors in Group policies.
-- Attackers might undermine security or any number of other activities that may cause deviation from the baseline.
+- Users may change settings accidentally.
+- Administrators may misconfigure policies.
+- Attackers may attempt to bypass controls.
 
-As a solution, administrators can leverage automated monitoring solutions to rapidly check thousands of systems against the baseline and quickly identify any deviations that require further investigations.
+**Solution:** automated monitoring checks thousands of systems against the baseline, quickly identifying deviations for investigation.
+
 
 ## Industry Standards on Security
 
-Industry standards on security provide a set of guidelines and best practices that organizations can follow to protect their information systems. These standards help ensure a consistent and effective approach to security across different industries and sectors. They are often developed by 
+Security standards provide guidelines for consistent protection across industries. They are created by:
 
-- Vendors 
+- Vendors
 - Government agencies
 - Independent organizations
 
-Organizations can also customize industry standards according to their specific requirements by creating their own security standards that reference and modify existing standards. This allows for flexibility while still adhering to recognized best practices. For example:
-
+Organizations can customize standards to meet specific needs while maintaining best practices.
 
 :::info[company standard]
 
