@@ -10,11 +10,17 @@ last_update:
 
 ## Overview
 
-There are many encryption algorithms, each with its own strengths and weaknesses. Choosing the right one requires understanding how it aligns with the four primary goals of cryptography (Confidentiality, Integrity, Authentication, and Non-repudiation) and the potential flaws that could affect security.
+Encryption algorithms vary in strength and purpose. Choosing the right one depends on how well it supports the four goals of cryptography: 
 
-Encryption uses complex mathematical techniques, and even minor flaws can create vulnerabilities. It is generally unwise to create your own encryption unless you have deep expertise. Be wary of vendors claiming proprietary algorithms without sharing details, as this can be a security risk.
+- Confidentiality
+- Integrity
+- Authentication
+- Non-repudiation
 
-For robust security, select algorithms that have been thoroughly tested and vetted by the security community. This scrutiny ensures they are well-designed and free of vulnerabilities or hidden backdoors.
+Even small flaws can weaken encryption, so avoid creating your own or trusting vendors that use secret, proprietary methods.
+
+For strong protection, rely on algorithms tested and reviewed by the security community to ensure they are safe, reliable, and free of backdoors.
+
 
 
 ## Key Considerations
@@ -37,53 +43,57 @@ For robust security, select algorithms that have been thoroughly tested and vett
 
 ## Key Length 
 
-Consider if the algorithm allows for adjustable key lengths. While longer keys are more secure, they can affect performance, requiring a trade-off between security and speed. A 40-bit key might seem complex with over a trillion combinations, but modern computers can break it. A 128-bit key offers more security, and a 1024-bit key provides even stronger protection.
+Key length is a major factor in encryption strength. Longer keys are harder to break but can slow performance, so there is always a trade-off.
 
-<div class='img-center'>
-
-![](/img/docs/choose-encryption-algorithms-key-length.png)
-
-</div>
-
+- 40-bit keys once seemed strong but are easily broken today
+- 128-bit keys provide solid security for most uses
+- 1024-bit (and beyond) offers stronger protection but with more processing cost
 
 Ultimately, selecting an encryption method involves balancing security needs with performance requirements through careful analysis of key length and algorithm choice.
 
+<div class='img-center'>  
+
+![](/img/docs/choose-encryption-algorithms-key-length.png)
+
+</div>  
 
 
 
-## A Perfect Cipher
+## One-Time Pad: A Perfect Cipher
 
-Imagine having an encryption method that no one could ever break. Over a century ago, a telegraph expert developed such a method: the **one-time pad**. This cipher is truly unbreakable and has stood the test of time.
+The **one-time pad** is the only cipher proven to be unbreakable. It is invented over a century ago, and it relies on true randomness and identical pads shared between sender and receiver.  
+
 
 ### Encrypting the Message
 
-The one-time pad relies on simplicity and randomness. Both the sender and the receiver use pads filled with random letters that are identical.
+Both the sender and the receiver use pads filled with random letters that are identical.
 
 - The pad must be as long as all the messages exchanged.
 - A page from the one-time pad might look like a series of random letters.
 
-To encrypt a message, you write it in plaintext on the pad. For example, the word "secret" would be written across the top of the pad. The process involves combining the letters of the message with the key, treating them as numbers: A is 1, B is 2, etc.
+To encrypt a message, you write the plaintext on the pad. For example, take the word "secret." Each letter of the message is combined with a key letter from the pad, treating letters as numbers (A = 1, B = 2, etc.).  
 
-- Encrypt the first letter, S, by adding A (1) to get T.
-- Next, add E and C (3), moving E to F, G, H.
-- Combine C and G to get J.
+- Encrypt S by adding A (1) to get T  
+- Encrypt E by adding C (3) to get H  
+- Encrypt C by adding G (7) to get J  
 
-Sometimes, you need to wrap around the alphabet. For example, adding L (12) to R involves looping around to get D.
+If the total goes past Z, wrap around the alphabet. For example, adding L (12) to R loops around to become D.  
 
 ![](/img/docs/choose-encryp-lengths-the-perfect-cipher-one-time-pad.png)
 
 
 ### Decrypting the Message
 
-To decrypt, the receiver subtracts the key from the message:
+To decrypt, the receiver subtracts the key letters from the encrypted message:
 
-- Begin by writing the encrypted message: T, H, J, D, P, V.
-- Subtract the key to reveal the original message:
-  - T minus A becomes S.
-  - H minus C becomes E.
-  - J minus G becomes C.
+- Start with the encrypted text: T, H, J, D, P, V
+- Subtract the matching key letters to recover the original message:
 
-For tricky cases like D minus L, wrap backward around the alphabet to get R. Continue until you uncover the full message: "Secret."
+  - T minus A = S
+  - H minus C = E
+  - J minus G = C
+
+If the result goes before A, wrap backward through the alphabet. For example, D minus L loops back to R. Continue until you reveal the full message: **"Secret."**
 
 <div class='img-center'>
 
@@ -97,14 +107,14 @@ For tricky cases like D minus L, wrap backward around the alphabet to get R. Con
 Despite its perfect security, the one-time pad isn't commonly used due to practical issues:
 
 - Both parties need to exchange pads in person to maintain security.
-- They must meet again when the pad pages are used up, making it inconvenient for frequent exchanges.
+- They must meet again when the pad pages are used up.
+- This makes it inconvenient for frequent exchanges.
 
 While the one-time pad offers perfect encryption, these challenges make it less practical for widespread use today.
 
 ## Cryptographic Lifecycles
 
-Cryptographic algorithms and keys are essential for securing information. Understanding how to manage these systems throughout their lifecycle is key for adapting to changing security 
-needs and threats.
+Cryptographic algorithms and keys protect information, but they must be managed throughout their lifecycle to keep up with evolving threats.
 
 <div class='img-center'>
 
@@ -112,40 +122,39 @@ needs and threats.
 
 </div>
 
-Over time, algorithms can become less secure due to flaws or vulnerable key lengths. Managing them through a lifecycle approach helps phase out outdated systems and maintain security.
+Over time, some algorithms weaken due to flaws or short key lengths. A lifecycle approach ensures outdated methods are replaced, keeping systems secure.
 
-### NIST’s Five-Stage Lifecycle
+
+## NIST’s Five-Stage Lifecycle
 
 1. **Initiation**
-   - Recognize the need for a new cryptographic system and gather requirements.
-   - Focus on confidentiality, integrity, and availability based on information sensitivity.
 
-2. **Development/Acquisition**
-   - Acquire or develop a system with suitable software, hardware, algorithms, and keys.
+   - Identify the need for a cryptographic system
+   - Define requirements based on data sensitivity
+   - Consider goals of confidentiality, integrity, and availability
+
+2. **Development / Acquisition**
+
+   - Build or obtain the system
+   - Select proper software, hardware, and algorithms
+   - Generate and manage cryptographic keys
 
 3. **Implementation and Assessment**
-   - Configure the system and assess if it meets security objectives.
+
+   - Configure the system for use
+   - Test and evaluate against security requirements
+   - Fix issues before deployment
 
 4. **Operations and Maintenance**
-   - Ensure the system operates securely throughout its use.
+
+   - Use the system in daily operations
+   - Monitor for vulnerabilities and threats
+   - Update or patch when needed to stay secure
 
 5. **Sunset**
-   - Decommission the system and handle sensitive materials, such as keys, appropriately.
 
+   - Retire the system when it is no longer secure or needed
+   - Properly dispose of sensitive data and keys
+   - Transition to newer, stronger solutions
 
-
-## Digital Rights Management (DRM)
-
-DRM technologies are designed to prevent unauthorized use of digital content, protecting intellectual property from theft and piracy.
-
-- **Purpose**
-   - Protect content through encryption to prevent unauthorized access.
-   - Used in music, movies, books, video games, and other digital media.
-
-- **Example**
-   - Apple initially used FairPlay DRM for music on iTunes but later switched to DRM-free music. Now, DRM is used to control access in subscription-based services, allowing revocation if the subscription is canceled.
-
-- **Application**
-   - DRM technologies are also applied to other media like e-books and video games.
-   - Businesses use DRM to safeguard trade secrets, control access, and limit redistribution of sensitive information.
 
