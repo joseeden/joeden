@@ -121,7 +121,7 @@ Compliance with legal and regulatory standards ensures organizations operate wit
   - Requires internal controls for financial data integrity
   - Holds executives personally accountable for fraud
 
-- **Gramm-Leach-Bliley (GLB)**
+- **Gramm-Leach-Bliley Act(GLBA)**
   - Protects personal financial information
   - Requires financial institutions to implement safeguards
   - Involves consumer privacy notices and data protection measures
@@ -130,5 +130,18 @@ Compliance with legal and regulatory standards ensures organizations operate wit
   - Regulates international banking standards
   - Focuses on risk management for financial institutions
   - Ensures capital adequacy and effective risk controls
+
+- **Payment Card Industry Data Security Standard (PCI DSS)** 
+
+  - Applies to all businesses that handle credit card transactions
+  - Requires strong security measures like encryption and access control
+  - Non-compliance can result in fines or losing the ability to process payments
+
+    :::info 
+
+    Failing an internal PCI DSS compliance assessment typically results in **audit findings**, which are documented issues that need to be addressed to achieve compliance. These findings highlight areas where the bank's security practices do not meet the required standards and must be remediated.
+
+    :::
+
 
 

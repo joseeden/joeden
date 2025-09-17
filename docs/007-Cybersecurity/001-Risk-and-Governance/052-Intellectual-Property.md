@@ -128,9 +128,9 @@ By nature, **trade secrets are not registered**. They are kept confidential, wit
 
 :::info 
 
-The [Economic Espionage Act of 1996](/docs/007-Cybersecurity/001-Risk-and-Governance/055-Privacy-Laws.md#economic-espionage-act-of-1996) was created to criminalize the theft or misappropriation of trade secrets.
+The [Economic Espionage Act of 1996](/docs/007-Cybersecurity/001-Risk-and-Governance/055-US-Privacy-Laws.md#economic-espionage-act-of-1996) was created to criminalize the theft or misappropriation of trade secrets.
 
-It was later extended by the [Defend Trade Secrets Act of 2016](/docs/007-Cybersecurity/001-Risk-and-Governance/055-Privacy-Laws.md#defend-trade-secrets-act-of-2016), which strengthened federal protections and provided a civil cause of action for trade secret theft.
+It was later extended by the [Defend Trade Secrets Act of 2016](/docs/007-Cybersecurity/001-Risk-and-Governance/055-US-Privacy-Laws.md#defend-trade-secrets-act-of-2016), which strengthened federal protections and provided a civil cause of action for trade secret theft.
 
 :::
 

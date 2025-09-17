@@ -1,6 +1,6 @@
 ---
-title: "Privacy Laws"
-description: "Privacy Laws"
+title: "U.S. Privacy Laws"
+description: "U.S. Privacy Laws"
 tags: 
 - Security
 - Cybersecurity
