@@ -121,28 +121,28 @@ Data actively moving between locations or systems, such as over networks, betwee
 
         - **Regulated data**
 
-        - Covered by legal regulations
-        - Subject to privacy rules
+            - Covered by legal regulations
+            - Subject to privacy rules
 
         - **Trade secrets**
 
-        - Confidential information
-        - Critical to business competitiveness
+            - Confidential information
+            - Critical to business competitiveness
 
         - **Intellectual property**
 
-        - Valuable creations
-        - Requires protection from theft or misuse
+            - Valuable creations
+            - Requires protection from theft or misuse
 
         - **Legal information**
 
-        - Confidential matters
-        - Includes attorney-client communications
+            - Confidential matters
+            - Includes attorney-client communications
 
         - **Financial information**
 
-        - Sensitive financial details
-        - Protects against fraud and identity theft
+            - Sensitive financial details
+            - Protects against fraud and identity theft
 
 
 

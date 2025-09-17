@@ -18,11 +18,11 @@ Organizations handle sensitive information like trade secrets, business plans, h
 
 DLP is a technology used to identify, monitor, and protect sensitive data to prevent unauthorized access, use, or transmission.
 
-- Prevents unauthorized access, use, or transmission of sensitive data.
-- Safeguards against accidental or malicious data sharing.
-- Uses policies, monitoring, and enforcement to mitigate potential breaches.
-- Protects against data leakage across channels like email, web, and endpoints.
-- Involves content discovery, classification, encryption, and policy enforcement.
+- Blocks unauthorized access, use, or sharing of sensitive data
+- Guards against accidental or intentional data breaches
+- Uses policies, monitoring, and enforcement to reduce risks
+- Protects data across email, web, and endpoints
+- Involves discovery, classification, encryption, and policy controls
 
 :::info 
 
@@ -57,11 +57,11 @@ Identity Finder is a host-based tool that scans systems for sensitive informatio
 
 Also known as **Host-based DLP**, the Endpoint DLP system is a security solution designed to monitor and control data transfers on endpoint devices such as laptops, desktops, smartphones, and tablets.
 
-  - Detects sensitive data based on predefined rules.
-  - Prevents unauthorized data transfers.
-  - Enforces data security policies consistently.
-  - Works like an IDS/IPS but for data 
-  - Can be set to **detection mode** or **prevention mode**
+- Detects sensitive data based on predefined rules.
+- Prevents unauthorized data transfers.
+- Enforces data security policies consistently.
+- Works like an IDS/IPS but for data 
+- Can be set to **detection mode** or **prevention mode**
 
 ## Network DLP  
 

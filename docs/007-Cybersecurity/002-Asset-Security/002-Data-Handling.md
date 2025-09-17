@@ -60,7 +60,7 @@ Data classification helps organizations manage and protect information based on 
 
 ## Government Classifications 
 
-Government classifications are used to categorize information based on its sensitivity and the potential impact of its unauthorized disclosure. These classifications help ensure that information is appropriately protected and only accessible to individuals with the necessary clearance.
+Government classifications are used to categorize information based on its sensitivity and the potential impact of its unauthorized disclosure. 
 
 - **Unclassified**
   - Publicly available information.
@@ -70,19 +70,19 @@ Government classifications are used to categorize information based on its sensi
   
 - **Sensitive but Unclassified**
   - Critical infrastructure vulnerabilities.
-  - Data shared with relevant agencies for protection without formal classification.
+  - Data shared with relevant agencies without formal classification.
   - Law enforcement records related to ongoing investigations
-  - Personally identifiable information (PII) collected by government agencies for specific purposes.
+  - Personally identifiable information (PII) collected for specific purposes.
 
 - **Confidential**
   - Diplomatic cables detailing sensitive negotiations.
   - Plans for the security of a high-level government event.
-  - Non-public financial information related to government budgets or expenditures.
+  - Non-public financial information related to government budgets.
 
 - **Secret**
   - Intelligence reports on enemy troop movements.
   - Details of advanced military technologies under development.
-  - Sensitive information related to ongoing covert operations or espionage activities.
+  - Information related to ongoing covert operations or espionage activities.
 
 - **Top Secret**
   - Nuclear launch codes.
@@ -92,22 +92,23 @@ Government classifications are used to categorize information based on its sensi
 
 ## Business Classification
 
-Business classification levels are used to categorize information within an organization based on its sensitivity and the need for protection. These classifications help ensure that data is appropriately secured and accessed only by authorized individuals.
+Business classification levels are used to categorize information within an organization based on its sensitivity and the need for protection.
 
-- **Highly Sensitive**
-  - Information that, if disclosed, could cause significant harm to the organization.
+- **Confidential/Proprietary**
+  - Highest level of classified data
+  - If data is disclosed, could cause significant harm to the organization.
   - Examples: trade secrets, strategic plans, and personal data of executives.
 
-- **Sensitive**
-  - Information that requires protection due to its potential impact on the organization.
-  - Examples: customer data, financial records, and intellectual property.
-
-- **Internal**
+- **Internal/Private**
   - Information meant for internal use within the organization.
   - Examples: internal memos, employee handbooks, and internal project plans.
 
+- **Sensitive**
+  - Requires protection due to its potential impact on the organization.
+  - Examples: customer data, financial records, and intellectual property.
+
 - **Public**
-  - Information that can be freely shared without causing harm to the organization.
+  - Can be freely shared without causing harm to the organization.
   - Examples: marketing materials, press releases, and publicly available reports.
 
 
