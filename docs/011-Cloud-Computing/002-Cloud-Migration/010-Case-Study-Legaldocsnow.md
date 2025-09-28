@@ -27,17 +27,16 @@ This case study focuses on how cloud adoption can solve these business and techn
 
 Digital legal documents are collected in two main ways. Both sources produce sensitive documents, so strict security controls are required.
 
-A. Customers allow LegalDocsNow to scan and digitize their paper documents
+A. **Customers allow LegalDocsNow to scan and digitize their paper documents**
 
-  - Automated scanning process with little manual work
-  - Digitized files are stored in the service
-  - The original documents are archived with a legal agency
+    - Automated scanning process with little manual work
+    - Digitized files are stored in the service
+    - The original documents are archived with a legal agency
 
-B. Third-party companies send contracts as PDF files
+B. **Third-party companies send contracts as PDF files**
 
-  - Uploaded via sFTP in batches during off-peak hours
-  - Companies log in to check upload status or view contracts
-
+    - Uploaded via sFTP in batches during off-peak hours
+    - Companies log in to check upload status or view contracts
      
 ## Requirements
 
@@ -334,58 +333,6 @@ This is where optimization and innovation take place.
 **Assessment**: Ongoing optimizations and operational efficiencies from cloud environment usage.
 
 
-## Strategies and Techniques for Moving an Organization Forward in Cloud Maturity
-
-Successful cloud adoption involves a balance of technology, business, and strategic planning.
-
-### Identifying Current Stage
-
-- **Assessment**
-    - Evaluate current stage in the cloud maturity adoption cycle.
-    - Use a brief and informal interview process to gauge experimentation levels.
-    - Consolidate results into a one-pager for further discussions and experimentation.
-
-### Transition from Project to Foundation
-
-- **Challenges**
-    - Overcoming lack of executive support, budget, or planning.
-
-- **Strategies**
-    - Develop a clear transformation roadmap.
-    - Petition for stakeholder buy-in by focusing on individual benefits.
-    - Be provider-agnostic and prioritize business and project requirements over technology.
-
-- **Outputs**
-    - Transformation roadmap, best practices for security, and a strong value management plan.
-
-### Foundation Stage - Building Core Competencies
-
-- **Initiatives for Cloud Center of Excellence**
- 
-  - Cloud training and knowledge sharing.
-    - Support and guidance for business units.
-    - Creation and maintenance of security standards.
-    - Development of common architecture blueprints.
-    - Consolidated cloud services account management.
-
-- **Outputs**
-    - Transformation roadmap, security and compliance architecture, and a strong value management plan.
-
-### Transition from Migration to Reinvention
-
-- **Challenges**
-    - Risk, confidence drop, and potential project delays in the migration stage.
-
-- **Strategies**
-    - Prioritize small steps done often to minimize scope and risk.
-    - Implement an agile working approach with managed sprints.
-    - Establish view checkpoints to prevent program delays.
-
-- **Outputs**
-    - Effective and efficient migration strategy.
-    - Agreed and robust migration process.
-    - Proper cloud environment setup.
-    - Balanced enthusiasm with structured processes.
 
 ## Strategies to Move Forward
 
