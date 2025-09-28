@@ -1,5 +1,5 @@
 ---
-title: "Amazon Web Services"
+title: "AWS Overview"
 description: "First things you need to know"
 tags: 
 - Cloud
@@ -82,54 +82,6 @@ AWS offers a broad set of global cloud-based products, including compute, storag
 
 Details can be found at: https://aws.amazon.com/products/.
 
-## Pricing 
-
-### Paying for AWS
-
-- Pay for what you use
-- Reserve and save up to 75% versus On-Demand
-  - All Upfront Reserved Instance (AURI) -> Large Discount
-  - Partial Upfront Reserved Instance (PURI) -> Lower Discount
-  - No Upfront Payments Reserved Instance (NURI) -> Smallest Discount
-- Scale and save as usage increases
-  - Tiered pricing for services like S3, EBS, EFS
-- Save as AWS grows
-- Custom Pricing
-  - Meet varying needs through custom pricing.
-  - Available for high-volume projects with unique requirements.
-
-The services below are free but there might be charges associated with other AWS services that are used alongside these services.
-
-- Amazon VPC
-- Elastic Beanstalk
-- Auto Scaling
-- AWS CloudFormation
-- AWS Identity and Access Management
-
-### Total Cost of Ownership
-
-**Total Cost of Ownership (TCO):** The financial estimate to help identify direct and indirect costs of a system
-
-- Compare the costs of running an entire infrastructure environment or specific workload on-premises versus on AWS
-- Budget and build the business case for moving to the cloud
-
-**TCO Considerations**
-
-1. Server Costs
-   - Hardware: Server, rack chassis power distribution units (PDUs), top-of-rack (TOR) switches, and maintenance
-   - Software: Operating system (OS), virtualization licenses, and maintenance
-   - Facilities: Space, power, and cooling
-2. Storage Costs
-   - Hardware: Storage disks, storage area network (SAN) or Fibre Channel (FC) switches
-   - Storage administration costs
-   - Facilities: Space, power, and cooling
-3. Network Costs
-   - Network Hardware: Local area network (LAN) switches, load balancer bandwidth costs
-   - Network administration costs
-   - Facilities: Space, power, and cooling
-4. IT Labor Costs
-   - Server administration costs
-
 
 ## AWS Support
 
@@ -148,6 +100,13 @@ AWS Support offers a range of plans that provide access to tools and expertise t
 
 Support response times vary based on plan and case severity. Basic offers no case support, all other support ranges from 24 hours to 15 minutes or less.
 
+<div class='img-center'>
+
+![](/img/docs/09282025-aws-support-tiers.png)
+
+</div>
+
+
 ## AWS Partner Network (APN)
 
 APN Partners are focused on your success, and they help customers take full advantage of all the business benefits that AWS has to offer.
@@ -155,6 +114,7 @@ APN Partners are focused on your success, and they help customers take full adva
 More details about accessing the AWS Partner Network--or becoming an AWS Partner--can be found at: https://aws.amazon.com/partners/.
 
 ## AWS Marketplace
+
 The AWS Marketplace is a digital catalog with thousands of software listings from independent software vendors, where you can find, test, buy, and deploy software to run on AWS.
 
 These offerings can range from simple web server applications to security, networking business intelligence, databases, DevOps, and media. Many of these applications offer pay-as-you-go or Bring Your Own License (BYOL) models.
