@@ -9,36 +9,80 @@ last_update:
 
 ## Overview 
 
-Modeling is at the heart of machine learning. It's about teaching machines to make decisions or predictions based on data. There are different types of machine learning models, but this page will focus on supervised learning and its two main types: classification and regression.
+Supervised learning teaches a model to make predictions using labeled data. It is useful for problems where past data can guide future decisions.
+
+- Models learn patterns from historical data
+- Can predict categories or numeric values
+- Relies on known outcomes to make accurate predictions.
 
 ## Classification
 
-Classification involves assigning categories to observations. This is useful for predicting discrete outcomes such as customer churn, cancer diagnosis, or wine type.
+Classification assigns a category to new data based on past examples. This is useful for predicting discrete outcomes such as customer churn, cancer diagnosis, or wine type.
+
+- Helps predict categories accurately by learning from known data.
+- Requires pre-labeled data to train models
+
+
+### Types of Classification
+
+Classification problems vary in complexity depending on how many categories the data can belong to. They can be grouped based on whether there are two options or multiple options.
+
+- **Binary classification**
+
+  - Two possible classes per observation
+  - Example: Predict if a penguin is Gentoo or not
+
+- **Multi-class classification**
+
+  - Choose from several classes
+  - Example: Classify penguins into three species
+
+### Key Concepts in Classification
 
 - **Observations**
-   - Data points fed into the model. Example: predicting college admissions.
+
+  - Individual data points used for prediction
+  - Example: College applications
 
 - **Features**
-   - Variables used for prediction, such as GPA and test scores.
+
+  - Variables used to predict outcomes, like GPA or test scores
+  - Help the model distinguish between categories
 
 - **Target**
-   - The outcome to predict, like acceptance or rejection.
+
+  - The outcome to predict
+  - Example: Accepted or rejected
 
 - **Graphing Data**
-   - Visual representation of data points (e.g., GPA vs. test results).
+
+  - Visualize data points to see patterns
+  - Example: GPA vs test scores
 
 - **Splitting Data**
-   - Use 80% of data for training and 20% for testing.
+
+  - Use part of data for training and part for testing
+  - Common split: 80% training, 20% testing
 
 - **Manual Classifier**
-   - Simple method to classify data, visualized with a support vector machine (SVM).
+
+  - Simple way to classify points based on observation
+  - Visual example: draw a threshold line on a graph
 
 - **Support Vector Machine (SVM)**
-   - Linear classifier uses a straight line, while a polynomial classifier uses a curved line for better accuracy.
+
+  - Linear: straight line separates classes
+  - Polynomial: curved line for better separation
+
 
 ### Case Study: College Admissions
 
-As an example, we'll try to predict acceptance in college admissions. We have two features here, GPA and admission test results, but we can have more if we like. The "Accepted" column is the target that we want to predict. It can have two labels: True or False.
+As an example, we'll try to predict acceptance in college admissions. We have two features here, but we can have more if we like. 
+
+- GPA 
+- Admission test results
+
+The "Accepted" column is the target that we want to predict. It can have two labels: `True` or `False`.
 
 <div class='img-center'>
 
@@ -46,20 +90,27 @@ As an example, we'll try to predict acceptance in college admissions. We have tw
 
 </div>
 
-### Manual Classifier 
+### Using Manual Classifier
 
-We graph our observations, with GPA on the x-axis and test results on the y-axis. We'll then keep only 80% of the data to train our models (recall that the other 20% will be used as testing data set). From here we can see that if you score 4 and above on the GPA and test result, you're accepted.
+A manual classifier is a simple way to separate data using basic rules and visual observation.
 
-<div class='img-center'>
+- Plot GPA on the x-axis and test results on the y-axis
+- Use 80% of the data for training, 20% for testing
+- Simple rule: students with GPA ≥4 and high test scores are accepted
+
+<div class='img-center'>  
 
 ![](/img/docs/ml-college-admissions-80-percent-only.png)
 
-</div>
+</div>  
 
+### Using Linear Classifier 
 
-### Linear Classifier 
+Linear classifiers separate data using a straight line. They are suitable when the classes can be divided linearly.
 
-We can use the **Support Vector Machine (SVM)** which will be the line that separates the points. Two points are on the line, which means two applicants are wrongly predicted as rejected. The problem with this approach is that the line only tries to separate the graph with a straight line, so it's unlikely to do better than that.
+- SVM draws a straight line to separate classes
+- Some points may be misclassified
+- Works best when classes are linearly separable
 
 <div class='img-center'>
 
@@ -67,9 +118,13 @@ We can use the **Support Vector Machine (SVM)** which will be the line that sepa
 
 </div>
 
-### Polynomial Classifier
+### Using Polynomial Classifier
 
-Instead of a straight line, we can also use a curve line. This approach can better classify the separation of points correctly.
+Polynomial classifiers use curved lines to handle more complex data distributions.
+
+- Uses a curved line to better separate points
+- Improves accuracy when data is not linearly separable
+- Captures patterns that a straight line cannot
 
 <div class='img-center'>
 
@@ -78,22 +133,44 @@ Instead of a straight line, we can also use a curve line. This approach can bett
 </div>
 
 
-## Regression
+## Regression and Forecasting
 
-Regression predicts continuous variables, useful for forecasting values like stock prices, planetary masses, or future heights.
+Regression predicts numeric outcomes, while forecasting estimates future values based on past trends. These techniques are useful for planning, analysis, and decision-making.
+
+- **Regression**
+
+  - Predicts a continuous numeric variable
+  - Example: Estimate house prices using size, location, and number of rooms
+
+- **Time Series Forecasting**
+
+  - Uses historical data to predict future values
+  - Example: Forecast daily bus passengers for the next month
+
+
+### Key Concepts in Regression and Forecasting
+
+Regression and forecasting provide insights for planning and understanding numeric trends and make predictions for planning and analysis.
 
 - **Predicting Temperature**
-   - Example of using weather data to predict temperature based on humidity.
+
+  - Helps anticipate environmental conditions
+  - Example: Weather data to predict temperature based on humidity.
 
 - **Training Data**
-   - 80% of data used for training the regression model.
+
+  - Use 80% of available data to train the model
+  - Ensures the model learns patterns effectively
 
 - **Linear Regression**
-   - Model that identifies trends, such as the inverse relationship between humidity and temperature.
+
+  - Fits a line to identify trends in data
+  - Example: Inverse relationship between humidity and temperature
 
 - **Model Evaluation**
-   - Test the model with real data to assess accuracy. Adding more features can improve predictions.
 
+  - Test the model with the remaining data to check accuracy
+  - Adding relevant features improves prediction quality
 
 ### Case Study: Weather Readings
 
@@ -113,8 +190,3 @@ We use 80% of the data to train the model and then graph the points. Using the l
 
 </div>
 
-## Which one to use
-
-Choosing between classification and regression depends on the problem. For example, predicting an exact temperature is regression, while predicting a temperature range like "Cold," "Mild," or "Hot" is classification.
-
-By understanding the differences and applications   of these models, you can better decide how to approach your machine learning problems.

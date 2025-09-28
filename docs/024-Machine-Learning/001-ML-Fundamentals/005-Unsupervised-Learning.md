@@ -10,48 +10,63 @@ last_update:
 
 ## Overview
 
-Unsupervised learning is similar to supervised learning but without a target column. It learns from the dataset to find patterns, providing insights without needing to know much about the data beforehand.
+Unsupervised learning finds patterns in data without needing a target column. It helps uncover structure, relationships, or anomalies in datasets.
 
-  - Learns from the datasets, trying to detect patterns.
-  - Clustering, anomaly detection, and association.
+- Learns patterns from data automatically
+- Clustering, anomaly detection, and association.
 
 ## Clustering
 
-Clustering identifies groups in your dataset where observations in the same group share more similarities with each other than with those in other groups.
+Clustering groups similar observations together, making it easier to understand patterns or segments in the data.
 
-- Clustering of animals by breed
-- Clustering of animals by color
+- Animals grouped by breed or color
+- Customer segments based on behavior
 
 Below are some examples of clustering models: 
 
 - **K-Means**
-    
-    - Requires specifying the number of clusters.
-    
+
+  - Number of clusters must be defined in advance
+  - Groups points based on similarity or distance
+  - Useful for organizing or segmenting data
+
 - **DBSCAN**
-    
-    - Density-based spatial clustering of applications with noise.
-    - Defines clusters based on density
-    - Doesn't need the number of clusters defined in advance.
-    - Instead, it requires you to define what constitutes a cluster.
+
+  - Density-based clustering that can handle noise
+  - Defines clusters based on point density
+  - No need to specify number of clusters
+  - Requires setting criteria for what counts as a cluster
 
 ## Anomaly Detection
 
 Anomaly detection focuses on identifying outliers, which are observations that significantly differ from others.
 
 - **Detecting Outliers**
-  - Example: A point that stands out from a cluster of points, such as a sum total that wasn't removed.
+
+  - Highlights unusual patterns or errors that may need attention
+  - Example: A data point far from a cluster of normal values
 
 - **Removing Outliers**
-  - Easier to identify with fewer dimensions, but challenging with many dimensions, requiring algorithms.
 
-- **Anomaly Detection Use Cases**
-  - Finding errors, identifying faulty devices, detecting fraud, or recognizing patients with unexpected disease resistance.
+  - Easier in low-dimensional data, harder in high-dimensional data
+  - Algorithms help identify complex anomalies
+
+- **Use Cases**
+
+  - Fraud detection
+  - Faulty device identification
+  - Error spotting
+  - Unusual medical cases
 
 ## Association
 
 Association involves finding relationships between observations, often used in market basket analysis to determine which items are bought together.
 
 - Finding events that happen together.
-- Often used in **market basket analysis** - "which object are bought together?"
-- People who buy jam often buy bread, beer with peanuts, and wine with cheese.
+- Helps discover hidden relationships in data
+
+It is commonly used in **market basket analysis** to find patterns in what items are purchased together.
+
+- Jam is often bought with bread, beer with peanuts, wine with cheese
+- Helps retailers plan product placement
+- Reveals hidden product patterns
