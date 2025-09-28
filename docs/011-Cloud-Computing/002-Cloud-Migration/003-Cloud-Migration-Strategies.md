@@ -50,6 +50,43 @@ Cloud migration can follow different strategies depending on business goals, tec
   - Reduces costs and operational complexity.
   - Focuses resources on key business areas.
 
+## Strangler Fig Pattern
+
+The Strangler Fig pattern helps migrate large legacy applications incrementally to the cloud. Instead of rewriting everything at once, you modernize one function at a time.
+
+- Modernize one feature as a microservice
+- Host the new microservice in the cloud
+- Remove the same feature from the legacy app
+- Repeat until the entire application is re-architected
+
+#### Example: Banking Application Modernization
+
+A bank can apply the Strangler Fig pattern to move its online banking app to the cloud without disrupting operations.
+
+1. **Start with the digital wallet**
+
+    - Develop it as a containerized microservice
+    - Deploy it on Google Kubernetes Engine (GKE)
+    - Replace the legacy wallet once functional
+
+2. **Capture wallet transactions with Google Cloud Spanner**
+
+    - Gain scalability and concurrent transaction handling
+    - Replace the old legacy functionality
+
+3. **Add a financial dashboard**
+
+    - Build using Google BigQuery and Looker
+    - Replace the legacy dashboard gradually
+
+4. **Repeat for other core functions**
+
+    - Incrementally modernizes the entire banking app
+    - Minimal disruption to ongoing operations
+
+This pattern ensures that large applications can be modernized step by step, improving scalability and performance while keeping operations stable throughout the migration.
+
+
 ## Resources 
 
 - [Getting Started with Migrating to AWS](https://cloudacademy.com/learning-paths/cloud-academy-getting-started-with-migrating-to-aws-125/)
