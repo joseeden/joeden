@@ -21,7 +21,7 @@ Managing cloud costs requires planning and monitoring. There are a few simple st
 - Set budget goals with alerts
 - Take action if budgets are exceeded
 
-## Cost explorer
+## Cost Explorer
 
 The Cost Explorer helps you see and track costs over time.
 
@@ -31,7 +31,7 @@ The Cost Explorer helps you see and track costs over time.
 
 It gives a clear picture of spending trends but does not provide detailed item-level charges or budgeting features.
 
-## Budgets in action
+## Budgets in Action
 
 Budgets help monitor and manage expenses.
 
@@ -41,7 +41,7 @@ Budgets help monitor and manage expenses.
 
 With budgets in place, you can take quick action to avoid overspending.
 
-## Respond with actions
+## Respond with Actions
 
 Budgets can trigger automatic responses when limits are exceeded.
 
@@ -51,7 +51,7 @@ Budgets can trigger automatic responses when limits are exceeded.
 
 This helps prevent costs from going out of control by automating responses to budget breaches.
 
-## Guidelines for budgets
+## Guidelines for Budgets
 
 Budgets only work well if they are planned carefully.
 
@@ -71,7 +71,7 @@ Billing Conductor organizes and splits costs by groups.
 
 This is useful when multiple teams share resources but need individual cost tracking.
 
-## Reserved instance flexibility
+## Reserved Instance Flexibility
 
 Reserved Instances give savings with long-term commitments.
 
