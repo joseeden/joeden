@@ -7,220 +7,214 @@ last_update:
 ---
 
 
-## The Change of Business Dynamics and Procedure
 
-When migrating services to the cloud which is fundamentally a change of business strategy affecting the range of internal departments. The affects this can have on the business can be huge. 
 
+## The Change of Business Dynamics
+
+Migrating services to the cloud changes business strategy and affects many departments. The impact can be significant.
 
 - **New Sales Approach**
 
-  - Cloud migration enables organizations to adapt to market changes more easily.
-  - Sales teams gain a broader range of offerings due to increased scalability and flexibility.
-  - Cloud allows a focus on innovation and development, freeing resources from service management.
-  - Sales teams can approach new customers, previously out of reach, diversifying the customer portfolio.
+  - Adapt quickly to market changes.
+  - Expand offerings with scalable and flexible cloud resources.
+  - Free up time from managing services to focus on innovation.
+  - Reach new customers and diversify the client base.
 
-- **Advanced Business Analytics**
+- **Advanced Analytics**
 
-  - Cloud offers specific services for business analytics at a large scale and low cost.
-  - Enables agile and dynamic decision-making based on extensive data analysis.
-  - Explores large-scale data sets for insights into sales patterns, product feedback, and infrastructure performance.
+  - Analyze large datasets at low cost.
+  - Make agile decisions from insights on sales, products, and operations.
+  - Understand patterns for better strategic planning.
 
 - **Shift in Responsibility**
 
-  - Cloud services transfer infrastructure management responsibility to third-party providers.
-  - Reduces the need for on-premise tasks such as sourcing, installing, and maintaining services.
-  - Establishes a new relationship with cloud vendors, potentially requiring a dedicated account manager.
-  - Internal data center teams may experience reduced visibility, necessitating increased collaboration.
+  - Transfer infrastructure management to cloud providers.
+  - Reduce on-premise tasks like installing or maintaining servers.
+  - Build new vendor relationships, sometimes with dedicated account managers.
 
-- **Process and Procedures Overhaul**
+- **Process Overhaul**
 
-  - Cloud migration initiates administrative changes across various departments.
-  - Identifies affected areas, requiring changes in processes for service delivery, finance, - support, development, etc.
-  - Documentation of new processes crucial for avoiding retroactive efforts in updating business systems.
-  - Ensures a clear understanding of workload changes post-migration.
+  - Update procedures for finance, support, development, and operations.
+  - Document new processes to avoid confusion later.
+  - Ensure workloads and responsibilities are clear post-migration.
 
 - **Deployment and Operations Transformation**
 
-  - Cloud deployment tools offer on-demand resources, reducing wait times for new environments.
-  - Utilizes automation, serverless computing, and self-healing architecture for a refined - software-defined data center.
-  - Testing environments in the cloud replicate production, reducing bugs and enhancing customer experience.
-  - Cloud-specific architecture requires a deep-coupled approach, impacting how applications are compiled.
+  - Use on-demand resources to reduce wait times.
+  - Implement automation, serverless computing, and self-healing systems.
+  - Test cloud environments that mimic production for fewer errors.
 
 - **Access to Latest Software**
 
-  - Cloud providers offer the latest operating systems and software, requiring adjustments for - compatibility.
-  - Enables selection of software versions during deployment, ensuring access to the latest technology.
-  - Supports innovation by allowing development teams to leverage new features and functions.
+  - Get the newest operating systems and tools.
+  - Choose software versions during deployment for up-to-date features.
+  - Allow development teams to innovate with new capabilities.
 
-- **Business Awareness and Employee Engagement**
+- **Employee Engagement**
 
-  - Introducing cloud technology may face resistance due to a lack of understanding and fear - about job retention.
-  - Requires a mindset shift and effective communication to address concerns and maintain morale.
-  - Employee engagement crucial for success, involving education, reassurance, and transparent communication.
-  - Employees need avenues to ask questions, provide feedback, and contribute ideas to feel part of the change.
+  - Communicate changes to reduce fear or resistance.
+  - Offer training and feedback opportunities.
+  - Keep staff involved to maintain morale and understanding.
 
-- **Resource Recycling and Allocation**
+- **Resource Recycling**
 
-  - Cloud migration results in redundant on-premise hardware, creating an opportunity for - infrastructure refresh.
-  - Collaboration with asset and life cycle teams to upgrade on-premise hardware alongside new infrastructure.
-  - Additional resiliency for on-premise services through duplication and load balancing.
-  - A strategic one-time trade-off to enhance existing infrastructure and avoid future hardware investments.
+  - Repurpose redundant hardware for upgrades.
+  - Add resiliency via duplication or load balancing.
+  - Optimize existing infrastructure for better efficiency.
 
-## Effects on Your Employees
 
-Following a strategy whereby a new technology will be implemented whereby it may create new roles, make existing roles redundant and open up opportunities for employees to follow a new career direction, then you can expect that there will be a number of effects on your employees when it comes to adopting the cloud. 
+
+## Effects on Employees
+
+Cloud adoption changes roles, creates opportunities, and may make some roles redundant. Understanding these effects helps manage transitions.
 
 - **Roles and Opportunities**
 
-  - New Roles: Cloud adoption creates opportunities for new roles in architecture, implementation, and support.
-  - Resistance: Some existing employees may resist cloud computing as a part of their career.
-  - Team Division: Operational support teams might be split between on-premise and cloud operations.
-  - Redundancy: Cloud replication of on-premise services can lead to existing roles becoming redundant.
+  - Create new positions in cloud architecture, implementation, and support.
+  - Some employees may resist or feel threatened.
+  - Operational teams may split between on-premise and cloud support.
+  - Some roles may become redundant as automation increases.
 
 - **Retraining and Skill Transition**
 
-  - Training Trade-off: Cloud services can make existing roles redundant due to increased automation.
-  - Data Center Team Impact: Reduced personnel required as hosts move to the cloud, impacting data center teams.
-  - Change in Job Roles: Existing skill sets might not directly translate; retraining is essential.
-  - Certification Encouragement: Encourage certifications, such as AWS or Azure, to validate team knowledge.
+  - Existing skills may not directly transfer; retraining is essential.
+  - Encourage certifications like AWS or Azure.
+  - Provide guidance for evolving job roles.
 
 - **Reassurance and Communication**
 
-  - Safety of Roles: Reassure technical teams about the safety of their roles and offer clear communication.
-  - Development Path: Provide a development path for additional training to retain key personnel.
-
-- **Resource Recycling and Allocation**
-
-  - Infrastructure Refresh: Redundant on-premise hardware provides an opportunity for infrastructure refresh.
-  - Enhanced Resiliency: Consider duplicating on-premise services for additional resiliency.
+  - Explain safety of roles and offer clear development paths.
+  - Maintain open channels for questions and feedback.
 
 - **Training for All Levels**
 
-  - Basic Cloud Principles: Offer basic cloud principles training to non-technical staff to foster understanding.
-  - Technical Training: Technical teams need vendor-agnostic and vendor-specific training for effective migration.
-  - Online vs. Classroom Training: Consider the benefits of online training for flexibility and self-paced learning.
+  - Non-technical staff get basic cloud principles.
+  - Technical staff receive vendor-specific and vendor-agnostic training.
+  - Offer flexible online or in-person learning.
 
 - **Mobility**
 
-  - Remote Access: Cloud adoption allows remote access, facilitating home working and talent sourcing globally.
-  - Flexibility: Employees and customers can access data globally with an internet connection.
+  - Enable remote access for staff and customers.
+  - Allow global flexibility with internet connectivity.
 
-- **IT Team Contribution**
+- **IT Contribution**
 
-  - Focus on Business Goals: Cloud services enable IT departments to focus more on business-oriented goals.
-  - Time Reinvestment: Management, automation, and monitoring features in the cloud free up time for innovation.
-  - Enhanced Services: Engineers and developers can invest time in enhancing existing and developing new services
+  - Free IT teams to focus on business goals.
+  - Use cloud automation to save time for innovation.
+  - Improve services and develop new offerings.
+
 
 ## Financial Impact
 
-It's no secret as to how the costings against on-premise and the outer resources within the cloud compare, with cloud resources being significantly cheaper. This is largely due the large economy of scale that the public cloud providers can implement. However, there are still some less-obvious financial impacts of migrating services to the cloud.
+Cloud migration affects cost models, budgeting, and speed to market, making financial planning a key part of strategy.
 
 - **Capex to Opex**
 
-  - Capex in On-Premise: In on-premise solutions, additional resources involve capital expenditures (Capex) for hardware, upgrades, software, licenses, maintenance, racking, and cabling.
-  - Cloud as Opex: Cloud computing shifts these expenses to operational expenditures (Opex), where costs are incurred as short-term resources are used, providing flexibility in resource management.
+  - On-premise requires capital expenditure for hardware and maintenance.
+  - Cloud shifts costs to operational spending as resources are used.
 
 - **Cloud Billing**
 
-  - Cost Allocation: Cloud environments allow billing to be split and shared among divisions, departments, and customers, improving cost tracking.
-  - Consumption-Based Charges: Charges are based on consumption, preventing overpayment for unused resources.
-  Internal Reporting: Internal reports aid departmental budgeting, and finance teams can directly manage cloud finance accounts.
+  - Track costs by department or division.
+  - Pay based on actual usage to avoid wasted resources.
+  - Internal reporting aids budgeting and financial management.
 
 - **IT Budget Changes**
 
-  - Hardware Budget Reduction: Cloud adoption reduces spending on hardware and associated Capex costs.
-  - Increased Software Budget: Software costs rise with the need for cloud services.
-  - Shift in Staffing Costs: Staffing costs for managing on-premise infrastructure decrease, while costs for specialized cloud talent may increase.
+  - Reduce hardware spending and related Capex.
+  - Increase software and cloud service budgets.
+  - Staffing costs shift from general IT to specialized cloud roles.
 
 - **HR Costs**
 
-  - Personnel Changes: Changes in roles and responsibilities may lead to severance, redundancy pay, and recruitment costs.
-  - Transition to Cloud Talent: Recruitment of specialized cloud talent may be necessary until in-house expertise is developed.
+  - Adjust for role changes, severance, or recruitment.
+  - Recruit cloud specialists until in-house skills develop.
 
-- **Improved Efficiencies**
+- **Improved Efficiency**
 
-  - Enhanced Processes: New processes must be more efficient, fostering improved communication and collaboration between departments.
-  - Increased Productivity: Efficiency improvements lead to increased employee productivity and morale.
+  - Streamline processes for better collaboration.
+  - Increase productivity and morale through optimized workflows.
 
 - **Rapid Go-to-Market**
 
-  - Advantage in Product Development: Cloud resources enable faster product, application, or service launches compared to on-premise solutions.
-  - Revenue Growth: Rapid deployment allows quicker releases, contributing to revenue growth.
-  - The transition to cloud computing influences financial models, budgeting strategies, and operational efficiency, offering benefits in flexibility, cost management, and speed to market.
+  - Launch products and services faster than on-premise.
+  - Increase revenue opportunities with quicker deployments.
+
+Cloud migration affects cost models, budgeting, and speed to market, making financial planning a key part of strategy.
+
 
 ## Contractual Business Obligations
 
-Moving your services out of your own data center environment and into a third-party vendor's data center can cause issues and concerns when it comes to contractual obligations.
+Using third-party cloud providers impacts contracts, SLAs, and compliance. Being aware of obligations helps maintain service quality.
 
-- **Impact on Service Level Agreements (SLAs)**
+- **Service Level Agreements (SLAs)**
 
-  - Concerns and Unknowns: Moving to a public cloud may raise concerns about meeting SLAs with customers due to less visibility and potential lack of control over issue resolution.
-  - Resiliency of Vendor Services: Evaluate the resiliency of specific services offered by the chosen vendor across their environment.
-  - Service-Specific SLAs: Analyze SLAs for each service intended to be used. Different services have different criteria, e.g., Monthly Uptime Percentage, Region Unavailability, Unavailability of EC2 and EBS, or Error Rate for AWS services.
+  - Evaluate vendor reliability and service resilience.
+  - Check specific SLAs per service, like uptime and error rates.
 
-- **Negotiation and Changes in SLAs**
+- **Negotiation and SLA Changes**
 
-  - Potential Negotiation: Depending on the service plan, negotiate specific terms related to SLAs that impact customer agreements.
-  - Dynamic SLA Changes: Cloud providers have the right to change SLA terms to adapt to evolving services. Regularly review SLAs for compliance with contractual agreements.
+  - Negotiate terms if possible to align with customer commitments.
+  - Monitor SLA updates as providers may change terms.
 
-- **Architectural Considerations for Higher Availability**
+- **High Availability Architecture**
 
-  - Fault Tolerance: Architect systems to be fault-tolerant across different geographic regions to handle major incidents and maintain service reliability.
-  - Cost Consideration: Building higher availability may incur additional costs. Evaluate if the workload requires such continuity.
+  - Design systems to be fault-tolerant across regions.
+  - Balance costs against required continuity.
 
 - **Compliance Controls**
 
-  - Auditing in On-Premise Environment: In on-premise environments, external auditors likely audited IT infrastructure for compliance against standards like PCI DSS, ISO, SOC, HIPAA, etc.
-  - Responsibility Shift to Cloud Provider: Some compliance controls related to physical security of the host can be delegated to the cloud provider.
-  - Worldwide Compliance Programs: Large cloud providers operate globally and must comply with regulations from various countries, offering a higher level of compliance compared to individual infrastructures.
-  - Remaining Responsibility: While the cloud provider covers certain compliance controls, specific responsibilities still lie with the user.
-  - Services for Compliance: Cloud services like AWS Config can aid in maintaining compliance by monitoring configuration, checking audit compliance controls (e.g., PCI DSS, HIPAA), and generating reports for auditors.
+  - Cloud providers handle physical security and global regulations.
+  - Users remain responsible for application-level compliance.
+  - Use tools like AWS Config to monitor and report compliance.
 
 
 ## Business Risks
 
-Understanding and mitigating business risks is essential for successful cloud adoption and management.
+Cloud adoption carries risks that must be understood and mitigated for a successful migration.
 
 - **Legislation and Regulation**
 
-  - Data Protection Laws: Adhere to specific regulations like EU data protection laws, ensuring compliance with security controls, retention requirements, and regional data transfer restrictions.
-  - Architectural Considerations: Architect the environment to meet security requirements and mitigate risks related to data storage locations.
+  - Follow data protection and regional laws.
+  - Design systems to meet compliance and security requirements.
 
-- **Technical Ability**
+- **Technical Skills**
 
-  - Skill Set Transition: Employees managing current infrastructure may resist learning new technology specializations required for cloud migration.
-  - Risk to Business: Inadequate workforce skills pose risks to productivity, security, and achieving migration objectives.
+  - Reskill staff to handle new cloud technologies.
+  - Lack of skills may affect productivity and security.
 
-- **Reliance on a Third Party**
+- **Third-Party Reliance**
 
-  - Loss of Control: Cloud services shift control to vendors, making businesses dependent on vendor performance.
-  - High Availability Solutions: Architecting high availability solutions across different regions mitigates risks associated with cloud vendor failures.
-  - Multi-Cloud Adoption: Some enterprises adopt services from multi-cloud vendors to reduce dependency on a single cloud provider.
+  - Dependence on vendors can limit control.
+  - Use high availability and multi-cloud strategies to reduce risk.
 
-- **Inflexibility of Contracts**
+- **Contract Limitations**
 
-  - Customer Agreements: When using public cloud services, adhere to customer agreements and terms of use, including SLAs.
-  - Negotiation Challenges: Negotiating specific terms, especially affecting SLAs, may be challenging, depending on support levels and resource usage.
+  - Cloud terms may restrict customization of SLAs.
+  - Negotiating specific terms can be challenging.
 
-- **Wrong Strategy Choice**
+- **Strategy Misalignment**
 
-  - Reassessing Strategy: Businesses may realize, post-migration, that the cloud strategy isn't yielding expected benefits or cost savings.
-  - Adaptation Options: Consider options like reverting to on-premise solutions, changing cloud deployment models, or adopting a hybrid cloud approach.
+  - Post-migration, original cloud strategy may need adjustment.
+  - Consider hybrid or alternative deployment options if results differ from expectations.
 
 - **Technology Advances**
 
-  - Continuous Technological Changes: Cloud providers continually advance technologies, requiring adjustments to applications and services to align with new features.
+  - Cloud providers frequently update services.
+  - Adapt applications to leverage new features.
 
 - **Shared Infrastructure**
 
-  - Security Concerns: Shared infrastructure, while cost-effective, poses potential security risks for high-sensitivity workloads.
-  - Dedicated Tenancy: High-sensitivity workloads may require dedicated hosts and tenancy to prevent data sharing on the same physical host.
-  - Security Measures: Shared host security operates at multiple layers, but breaches, though rare, could theoretically allow access to other customers' data.
+  - Multi-tenant environments carry potential security risks.
+  - Dedicated instances may be required for sensitive workloads.
 
-- **General Business Risks**
+- **General Risks**
 
-  - Risk Identification: Numerous business risks may exist; identifying and mitigating these risks is crucial.
-  - Learning Period: Anticipate a learning period for deploying cloud services and be prepared to adapt and make changes based on experience.
+  - Identify and mitigate risks continuously.
+  - Expect a learning period to adjust systems and processes.
+
+
+
 
 ## Resources 
 
