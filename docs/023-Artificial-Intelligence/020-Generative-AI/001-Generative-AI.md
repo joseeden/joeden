@@ -65,7 +65,7 @@ Some real-world applications of generative AI:
 
 While there are concerns about AI taking over jobs, there are still limitations and risks associated with this technology. Understanding these technologies can open new ways to utilize them in our daily and professional lives. 
 
-## Generative AI in the Machine Learning Landscape
+## Generative AI in the ML Landscape
 
 ### Models that Analyze
 

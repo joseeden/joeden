@@ -12,19 +12,25 @@ last_update:
 
 ## Overview 
 
-Machine learning can be divided into three main types: reinforcement learning, supervised learning, and unsupervised learning. Reinforcement learning involves making sequential decisions and won't be covered further. Both supervised and unsupervised learning are common types and they differ mainly in their training data.
+Machine learning (ML) has three main types: reinforcement learning, supervised learning, and unsupervised learning. Each type differs in how it uses data to learn patterns.
 
-- **Reinforcement Learning**: Uses sequential actions, not covered further.
-- **Supervised Learning**: Uses labeled training data.
-- **Unsupervised Learning**: Uses unlabeled training data.
+- **Reinforcement Learning**: Learns by taking sequential actions; not covered here
+- **Supervised Learning**: Uses labeled data to make predictions
+- **Unsupervised Learning**: Uses unlabeled data to find patterns
+
+These types allow computers to learn and make decisions in different ways, depending on the problem and data available.
 
 ## Training Data
 
-Machine learning learns patterns from existing data, called "training data," and applies them to new data. Training a model involves this process, which can take from nanoseconds to weeks, depending on the data size.
+Training data is the foundation of machine learning. Models learn patterns from existing data and apply them to new inputs.
+
+- Can be small or large; training time varies
+- Includes features (input variables) and sometimes labels (output)
+- Enables models to generalize to unseen dat
 
 ## Supervised Learning  
 
-To train a supervised learning model, we need labeled training data. For instance, to predict if a patient has heart disease, we use existing patient records with chest pain and heart disease test results.
+Supervised learning uses labeled data, where the correct outcome is known. It’s ideal for prediction problems like diagnosing diseases or predicting customer behavior.
 
 <div class='img-center'>
 
@@ -34,10 +40,10 @@ To train a supervised learning model, we need labeled training data. For instanc
 
 Where: 
 
-- **Target Variable**: What we want to predict (e.g., heart disease).
-- **Labels**: True/False values indicating if a patient has heart disease.
-- **Observations**: Rows of data the model learns from. Also called or *Examples*
-- **Features**: Columns of data that help predict the target (e.g., age, cholesterol).
+- **Target Variable**: The outcome to predict (e.g., heart disease)
+- **Labels**: True/False or class values for the target
+- **Observations**: Rows of data, also called examples
+- **Features**: Columns of data that help predict the target (e.g., age, cholesterol)
 
 With machine learning, we can analyze many features at once, even the ones we're unsure about, and find relationships between different features. Once the model is trained, new input data (like a new patient) is provided, and the model predicts the outcome.
 
@@ -49,7 +55,15 @@ With machine learning, we can analyze many features at once, even the ones we're
 
 ## Unsupervised Learning
 
-In unsupervised learning, training data only has features, not labels. It’s useful for tasks like anomaly detection and clustering, which groups data based on similarity. For example, to find different types of heart disease patients, we can cluster patients with heart disease based on features like age, cholesterol, and blood sugar levels.
+Unsupervised learning uses data without labels. It finds patterns or groups within the data. This is useful for clustering, anomaly detection, or discovering hidden relationships.
+
+- **Clustering**: Groups similar observations together
+- **Anomaly Detection**: Identifies unusual data points
+- **Feature-based Analysis**: Discovers patterns without predefined labels
+
+Example: Grouping heart disease patients by age, cholesterol, and blood sugar to identify patient types.
+
+When a new patient’s data is provided, the model assigns them to the most similar group. This helps with research, treatment planning, and understanding data patterns.
 
 <div class='img-center'>
 
@@ -57,7 +71,5 @@ In unsupervised learning, training data only has features, not labels. It’s us
 
 </div>
 
-Now, with a new patient, we can input the features into the model and get which patient type they best fit into. Categorizing the input data based on these groups helps in research and treatment planning.
 
-In reality, data often lacks labels. It might be too labor-intensive to label, or we might not even know what the labels should be. Imagine trying to label millions of road images for self-driving cars. This is where unsupervised learning excels. The model, operating without supervision, discovers its own patterns.
-
+Often, data doesn’t have labels because labeling is too time-consuming or unclear, like labeling millions of road images for self-driving cars. Unsupervised learning excels in these situations, discovering patterns automatically without supervision.
