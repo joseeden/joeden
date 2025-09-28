@@ -77,6 +77,29 @@ AWS CAF is organized into six perspectives and perspectives consist of sets of c
     - Business Continuity / Disaster Recovery
     - IT Service Catalog
 
+
+## Common migration strategies
+
+There are a few simple ways to move data into the cloud.
+
+- **Database replication**
+
+  - Copies existing databases into the cloud
+  - Keeps systems running during migration
+
+- **AWS Database Migration Service**
+
+  - Moves live databases with little downtime
+  - Works with many database engines
+
+- **AWS Snowball**
+
+  - Physical device for moving large data
+  - Faster and safer than slow internet transfers
+
+Each option provides a way to shift data smoothly, helping businesses move to the cloud with less risk and disruption.
+
+
 ## Resources 
 
 - [AWS_Cloud_Foundations_Study_Materials](https://github.com/bundickm/AWS_Cloud_Foundations_Study_Materials/blob/master/Module%202%20Notes.md)
