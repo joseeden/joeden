@@ -129,7 +129,7 @@ Once the baseline requirements are set and deployed across the enterprise, admin
 - Administrators may misconfigure policies.
 - Attackers may attempt to bypass controls.
 
-**Solution:** automated monitoring checks thousands of systems against the baseline, quickly identifying deviations for investigation.
+Automated monitoring checks thousands of systems against the baseline, quickly identifying deviations for investigation.
 
 
 ## Industry Standards on Security
@@ -142,7 +142,7 @@ Security standards provide guidelines for consistent protection across industrie
 
 Organizations can customize standards to meet specific needs while maintaining best practices.
 
-:::info[company standard]
+:::info[Sample Scenario]
 
 Company XYZ will adopt the Center for Intenet Security Benchmark Standard for Windows Server 2012 R2 systems, dated April 28, 2016, with the following modifications:
 
