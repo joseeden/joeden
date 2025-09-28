@@ -125,7 +125,7 @@ Message digests help verify data integrity and ensure that the information remai
 - Users can compute the hash of the file to compare with the provided value
 - Matching digests confirm the file was not altered during transfer
 
-::: info[note]
+:::info[note]
 
 In some resources, message digests are interchangeable with hashes or hash value.
 

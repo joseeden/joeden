@@ -22,7 +22,17 @@ To see the complete documentation, please go to: [AWS documentation](https://doc
 
 ## Overview 
 
-AWS CAF provides guidance and best practices to help organizations build a comprehensive approach to cloud computing across the organization and throughout the IT lifecycle to accelerate successful cloud adoption. AWS CAF is organized into six perspectives and perspectives consist of sets of capabilities.
+AWS CAF provides guidance and best practices to help organizations build a comprehensive approach to cloud computing across the organization and throughout the IT lifecycle to accelerate successful cloud adoption. 
+
+
+<div class='img-center'>
+
+![](/img/docs/09282025-aws-caf.png)
+
+</div>
+
+
+AWS CAF is organized into six perspectives and perspectives consist of sets of capabilities.
   
 **Focused on Business Capabilities**
 
