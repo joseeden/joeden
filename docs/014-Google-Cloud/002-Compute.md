@@ -99,6 +99,8 @@ Anthos helps manage applications across clouds and on-premises in a consistent w
 
 Anthos ensures consistent operations, simplifies management, and reduces risks when running applications across multiple environments.
 
+<div class='img-center'>
 
+![](/img/docs/09282025-3_anthos_azure.max-1500x1500.jpg)
 
-
+</div>
