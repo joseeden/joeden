@@ -78,7 +78,7 @@ AWS CAF is organized into six perspectives and perspectives consist of sets of c
     - IT Service Catalog
 
 
-## Common migration strategies
+## Common Migration Strategies
 
 There are a few simple ways to move data into the cloud.
 
