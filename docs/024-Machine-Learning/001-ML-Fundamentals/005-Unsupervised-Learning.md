@@ -37,6 +37,14 @@ Below are some examples of clustering models:
   - No need to specify number of clusters
   - Requires setting criteria for what counts as a cluster
 
+<div class='img-center'>
+
+![](/img/docs/09292025-clustering_example.png)
+
+</div>
+
+
+
 ## Anomaly Detection
 
 Anomaly detection focuses on identifying outliers, which are observations that significantly differ from others.
@@ -58,6 +66,13 @@ Anomaly detection focuses on identifying outliers, which are observations that s
   - Error spotting
   - Unusual medical cases
 
+<div class='img-center'>
+
+![](/img/docs/09292025-ml-anomaly-detection.jpg)
+
+</div>
+
+
 ## Association
 
 Association involves finding relationships between observations, often used in market basket analysis to determine which items are bought together.
@@ -70,3 +85,9 @@ It is commonly used in **market basket analysis** to find patterns in what items
 - Jam is often bought with bread, beer with peanuts, wine with cheese
 - Helps retailers plan product placement
 - Reveals hidden product patterns
+
+<div class='img-center'>
+
+![](/img/docs/09292025-ml-association.jpg)
+
+</div>
