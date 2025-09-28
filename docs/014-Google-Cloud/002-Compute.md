@@ -75,6 +75,29 @@ A common use of Cloud Functions is to react when something is added to Cloud Sto
 - Using ML APIs to analyze data from a database or storage bucket
 
 
+## GCP Kubernetes Engine (GKE)
+
+**GCP Kubernetes Engine (GKE)** provides a fully-managed service for deploying and scaling containers. GKE can automatically adjust resources based on demand. 
+
+- Increases container instances during high demand
+- Reduces containers when demand drops
+- Enables container-to-container communication for workflow updates
+
+<div class='img-center'>
+
+![](/img/docs/09282025-8e065fcd-bfd0-470a-977a-e95550c10a39.jpg)
+
+</div>
+
+## Anthos
+
+Anthos helps manage applications across clouds and on-premises in a consistent way. It also aids in modernizing legacy apps by moving them to containers.
+
+- Provides unified deployment and management
+- Works across GCP, other clouds, and on-premises
+- Supports container-based modernization of older applications
+
+Anthos ensures consistent operations, simplifies management, and reduces risks when running applications across multiple environments.
 
 
 
