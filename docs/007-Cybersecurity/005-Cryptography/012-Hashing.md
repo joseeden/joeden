@@ -44,9 +44,9 @@ For more information, please see [Digital Signatures in Asymmetric Encryptions.]
 
 The Digital Signature Standard (DSS) is a U.S. standard for creating and verifying digital signatures.
 
-- Developed by the **National Institute of Standards and Technology (NIST)**
-- Provides authenticity, integrity, and non-repudiation for digital information
-- Uses a 160-bit message digest produced by the Digital Signature Algorithm (DSA)
+- Developed by **National Institute of Standards and Technology (NIST)**
+- Provides authenticity, integrity, and non-repudiation
+- Uses a 160-bit message digest produced by Digital Signature Algorithm (DSA)
 
 How it works:
 
