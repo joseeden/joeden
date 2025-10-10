@@ -93,21 +93,30 @@ Salting improves password security by adding random data, called a "salt", to th
 
 A **nonce** or  "**number used once**" is a unique or random value used in cryptography to ensure security and prevent attacks. 
 
-  - Serves as a one-time-use number to ensure randomness and uniqueness.
-  - This number is added to the authentication sequence.
-  - Prevents replay attacks by ensuring data or requests are unique.
-  - Increases security by preventing unauthorized reuse or duplication.
-  
+- One-time-use number to ensure randomness and uniqueness.
+- Number is added to the authentication sequence.
+- Prevents replay attacks by ensuring requests are unique.
+- Increases security by preventing unauthorized reus.
+
 **Common Uses**
 
-  - In authentication to ensure a one-time operation.
-  - In cryptographic protocols like TLS/SSL for secure communications.
-  - In blockchain, where it helps validate blocks in Proof of Work systems.
+- In authentication to ensure a one-time operation.
+- In cryptographic protocols like TLS/SSL for secure communications.
+- In blockchain, where it helps validate blocks in Proof of Work systems.
   
-- **Key Considerations**
-  - Nonces must be unique and unpredictable;.
-  - Reusing them can create vulnerabilities.
-  - Proper management is crucial for maintaining security.
+**Key Considerations**
+
+- Nonces must be unique and unpredictable;.
+- Reusing them can create vulnerabilities.
+- Proper management is crucial for maintaining security.
+
+:::info
+
+One of the most recognizable examples of a nonce is an **Initialization Vector (IV)**.
+
+An IV is a random bit string thatb is used to create unique ciphertexts every time the same message is encrypted using the same key.
+
+:::
 
 ### Limiting Failed Login Attempts 
 

@@ -11,22 +11,33 @@ last_update:
 
 ## Overview
 
-Hashing is a process of converting data (like a file or a message) into a fixed-size value or string, typically using a hash function.
+Hashing converts data (like a file or message) into a fixed-size string using a hash function.
 
-- Used for data integrity checks, digital signatures, password storage, and more.
-- The same input always produces the same hash output.
-- **Fixed Size**: Hash outputs are of fixed length, regardless of input size.
-- **Fast Computation**: Hash functions are designed to be quick to compute.
-- **Irreversible**: One-way hashing, cannot   reverse-engineer the original input from the hash.
-- **Collision Resistance**: Unlikely for two different inputs to produce the same hash (a "collision").
-  
-Common Uses:     
+- Used for data integrity, digital signatures, and password storage
+- The same input always produces the same hash output
 
-- Verify data hasn't been altered (e.g., checksums).
-- Securely store passwords, often with added salt.
-- Create digital signatures by compressing data before signing.
-- Used in various cryptographic operations, including blockchains.
+Key properties:
 
+- **Fixed Size**: Output length stays the same no matter how large the input is
+- **Fast**: Hash functions are designed for quick computation
+- **One-Way**: You can’t recover the original data from the hash
+- **Collision-Resistant**: Rare for two different inputs to have the same hash
+
+Common uses:
+
+- Check if data has been changed (e.g., file verification)
+- Securely store passwords with added salt
+- Create digital signatures from hashed data
+- Support cryptographic systems like blockchainsv
+
+:::info
+
+One-way functions are mathematical foundations of hashing.
+Easy to compute but infeasible to reverse.
+
+Public key cryptosystems are all bases on some sort of one-way function.
+
+:::
 
 ## Digital Signature
 

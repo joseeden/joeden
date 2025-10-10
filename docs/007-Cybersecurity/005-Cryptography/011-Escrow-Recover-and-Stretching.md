@@ -15,6 +15,13 @@ Strong encryption is designed to protect data, but it can be a challenge for law
 - Key escrow involves storing encryption keys with a trusted party.
 - Access to these keys requires specific conditions, such as obtaining a court order.
 
+:::info 
+
+**Split knowledge** means dividing sensitive information, like a cryptographic key, into parts so no single person has the complete key. 
+
+It ensures security by requiring multiple parties to combine their portions to access the full secret.
+
+:::
 
 ### Examples 
 
@@ -63,11 +70,12 @@ These methods ensure that while legitimate users can access their data with acce
 PBKDF2 (Password-Based Key Derivation Function 2) enhances password security by performing multiple cryptographic operations. This makes it significantly more difficult for attackers to use brute-force attacks or precomputed hash tables.
 
 - Uses a unique salt combined with the password.
-- Applies hashing repeatedly to slow down password verification and thwart attackers.
+- Applies hashing repeatedly 
+- Slows down password verification and thwart attackers.
 
 ### Bcrypt
 
 Bcrypt is a password hashing function based on the Blowfish cipher. It incorporates both salting and hashing to provide robust key strengthening.
 
 - Integrates salting with the Blowfish cipher's hashing.
-- Provides effective key protection by making hash calculations time-consuming.
+- Provides key protection by making hash calculations time-consuming.

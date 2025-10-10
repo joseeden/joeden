@@ -2,7 +2,6 @@
 title: "Starter Notes"
 description: "Starter Notes on AI"
 tags: 
-tags: 
 - Data Science
 - Machine Learning
 - Artificial Intelligence

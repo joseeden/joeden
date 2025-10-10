@@ -20,6 +20,12 @@ Blockchain is a distributed ledger technology that creates a secure and tamper-r
 
 </div>
 
+:::info 
+
+**Zero-knowledge proofs** are heavily used in blockchain technologies (e.g., zk-SNARKs, zk-STARKs). It lets one party prove they know certain information without revealing it. 
+
+:::
+
 ## Applications in Cybersecurity
 
 **Secure Data Storage**: 

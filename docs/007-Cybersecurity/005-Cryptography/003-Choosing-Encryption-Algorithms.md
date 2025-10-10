@@ -17,10 +17,16 @@ Encryption algorithms vary in strength and purpose. Choosing the right one depen
 - Authentication
 - Non-repudiation
 
-Even small flaws can weaken encryption, so avoid creating your own or trusting vendors that use secret, proprietary methods.
-
 For strong protection, rely on algorithms tested and reviewed by the security community to ensure they are safe, reliable, and free of backdoors.
 
+:::info 
+
+**Work function** is the amount of time and computing power needed to break a cryptographic system. It measures how resistant an algorithm is to attacks based on current technology.
+
+
+The size of the work function should be matched against the relative value of the protected asset.
+
+:::
 
 
 ## Key Considerations
