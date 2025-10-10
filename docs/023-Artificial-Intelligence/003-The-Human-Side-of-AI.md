@@ -2,7 +2,6 @@
 title: "The Human Side of AI"
 description: "The Human Side of AI"
 tags: 
-tags: 
 - Data Science
 - Machine Learning
 - Artificial Intelligence

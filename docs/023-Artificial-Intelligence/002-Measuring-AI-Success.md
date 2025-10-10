@@ -2,7 +2,6 @@
 title: "Measuring AI Success"
 description: "Measuring AI Success"
 tags: 
-tags: 
 - Data Science
 - Machine Learning
 - Artificial Intelligence

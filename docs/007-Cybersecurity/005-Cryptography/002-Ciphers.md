@@ -83,7 +83,7 @@ Block Ciphers break the input into fixed-size blocks (e.g., 64-bit or 128-bit) a
 - 3DES
 
 
-## Building Blocks of Modern Cryptography
+## Building Blocks
 
 Cryptography protects information by transforming readable data into a secret form and back again. These transformations keep data private and secure during transmission and storage.
 
