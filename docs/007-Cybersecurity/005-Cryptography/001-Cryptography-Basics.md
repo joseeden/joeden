@@ -11,11 +11,9 @@ last_update:
 
 The science and practice of securing communication and information through encoding, ensuring only authorized parties can access it. Its purpose is to protect data integrity, confidentiality, and authenticity.
 
-- **Encryption**
-    - Transforming plaintext into ciphertext using an algorithm and a key.
+- **Encryption**: Transforming plaintext into ciphertext using an algorithm and a key.
 
-- **Decryption**
-    - Converting ciphertext back to plaintext with the appropriate key.
+- **Decryption**: Converting ciphertext back to plaintext with the appropriate key.
 
 ## Obfuscation 
 
@@ -27,18 +25,18 @@ Obfuscation is a technique to make code, data, or communications harder to under
 - Protect sensitive data from being easily understood or extracted.
 - Prevent unauthorized reverse engineering or tampering with software.
 
-**How It Works**
-  - Code or data is transformed into a form that is functionally equivalent but difficult for humans to read or interpret.
-  - Common methods include:
-    - renaming variables and functions with meaningless names
-    - removing comments
-    - reordering code structures.
+In obfuscated, the code or data is transformed into a form that is functionally equivalent but difficult for humans to read or interpret. Common methods include:
+
+- Renaming variables and functions with meaningless names
+- Removing comments
+- Reordering code structures.
     
-**Considerations**
-  - Obfuscation is not foolproof.
-  - Skilled attackers can often reverse-engineer obfuscated code.
-  - Over-obfuscation can complicate legitimate debugging and maintenance.
-  - Not a replacement for proper encryption and other security practices.
+There are a few considerations:
+
+- Obfuscation is not foolproof.
+- Skilled attackers can often reverse-engineer obfuscated code.
+- Over-obfuscation can complicate legitimate debugging and maintenance.
+- Not a replacement for proper encryption and other security practices.
 
 ### Steganography
 
@@ -108,21 +106,22 @@ Tokenization replaces sensitive information with non-sensitive tokens, enhancing
 
 **How It Works**
 
-- Sensitive data is swapped for unique tokens stored in a secure token vault.
+- Sensitive data is swapped for unique tokens stored in a secure vault.
 - The original data is stored somewehere.
-- The original data can only be retrieved through secure processes with proper access.
+- Original data can only be retrieved through secure processes.
 - If data breach occurs, attackers will only find the useless tokens.
 
 **Applications**
 
-  - Used in payment systems for credit card security.
-  - Applied in healthcare to protect patient information.
-  - Employed in databases to secure sensitive data.
-  - Supports compliance with data protection regulations.
+- Used in payment systems for credit card security.
+- Applied in healthcare to protect patient information.
+- Employed in databases to secure sensitive data.
+- Supports compliance with data protection regulations.
   
 **Considerations**
-  - The token vault must be securely protected.
-  - Tokenization should be part of a comprehensive security strategy.
+
+- The token vault must be securely protected.
+- Tokenization should be part of a comprehensive security strategy.
 
 
 ### Diffusion

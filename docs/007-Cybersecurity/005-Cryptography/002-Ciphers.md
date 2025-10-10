@@ -12,7 +12,7 @@ last_update:
 
 A system that substitutes one word or phrase for another. Codes are intended to provide secrecy and/or efficiency. An example of a code is the "Ten" code which is used by the police and other organizations who communicate by radio
 
-The **Ten-Code**, also known as** ten signals**, is a set of code words used to represent common phrases in voice communication, particularly in law enforcement and emergency services. 
+The **Ten-Code**, also known as **ten signals**, is a set of code words used to represent common phrases in voice communication, particularly in law enforcement and emergency services. 
 
 Here are some examples:
 
