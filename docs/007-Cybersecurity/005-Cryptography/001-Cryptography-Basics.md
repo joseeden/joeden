@@ -127,20 +127,24 @@ Tokenization replaces sensitive information with non-sensitive tokens, enhancing
 
 ### Diffusion
 
-Diffusion spreads the effect of a single input across many output elements, thus obscuring patterns.
+Diffusion spreads the influence of one part of the input across many parts of the output, making hidden patterns harder to detect.
 
-- Makes the information less visible, less obvious.
-- In block ciphers, diffusion is achieved through operations like permutations and mixing.
-- Example is blurring an image.
+- Makes data appear more random and less predictable
+- Commonly used in block ciphers through mixing or permutation steps
+- A small change in input causes large changes in output
+
+Example: Changing one letter in the plaintext completely alters the ciphertext.
+
 
 ### Confusion
 
-Confusion creates complex relationships between the key and ciphertext, making it difficult to infer the key.
+Confusion makes the link between the key and ciphertext complex, hiding how the key affects the output.
 
-- Changing a property of the data and make it more difficult to interpret, more unintelligible.
-- Confusion works alongside diffusion to create robust encryption schemes.
-- Example is scrambling or changing the pixels of an image.
+- Alters data to make the relationship between input and key unclear
+- Commonly achieved through substitution tables or nonlinear functions
+- Works with diffusion to build stronger encryption
 
+Example: Substituting letters or bits so the original data looks entirely different.
 
 
 ## Types of Encryption 

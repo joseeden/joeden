@@ -43,18 +43,18 @@ Types of Ciphers:
 
 ### Stream Ciphers
 
-Stream Ciphers encrypt data bit by bit or byte by byte in a continuous stream.
+Stream ciphers encrypt data one bit or byte at a time, making them fast and suitable for continuous data flow.
 
-- Performs encryption on **single byte at a time.**
-- Uses a key stream generator to create a pseudo-random sequence of bits (the key stream).
-- The key stream is then XORed with the plaintext to produce ciphertext.
+- Encrypts data in a **continuous stream*- instead of fixed blocks
+- Uses a key stream generator to create random-looking bits
+- The key stream is XORed with the plaintext to get the ciphertext
 
-Common Features:
+Common features:
 
-- Uses same key for encryption and decryption.
-- Implemented mostly on hardware-based solutions.
-- Often used in real-time applications where data is continuously transmitted (e.g., streaming services).
-- Vulnerable to certain types of attacks if key stream is reused or not sufficiently random.
+- Same key is used for both encryption and decryption
+- Often implemented in hardware for faster performance
+- Works well for real-time data like voice or video streams
+- Becomes weak if the same key stream is reused or not random enough
 
 Examples:
 
@@ -62,28 +62,32 @@ Examples:
 - Salsa20
 - ChaCha20
 
+Stream ciphers are useful for real-time communication, where speed and efficiency are key, but they must use unique and random key streams to stay secure.
+
 ### Block Ciphers
 
-Block Ciphers break the input into fixed-size blocks (e.g., 64-bit or 128-bit) and performs the encryption on each block.
+Block ciphers divide data into fixed-size blocks and encrypt each block separately using the same key.
 
-- Performs encryption on per block basis.
-- A block of plaintext is processed with a key to produce a block of ciphertext.
-- Multiple rounds of transformation can also be used (e.g., substitution and permutation).
+- Encrypts data in blocks, such as 64 or 128 bits
+- Each block of plaintext becomes one block of ciphertext
+- Can perform multiple rounds of transformations like substitution and permutation
 
-**Common Features**:
-- Easier to implement, less susceptible to security problems.
-- Implemented mostly on software solutions.
-- Often used in protocols and file encryption, where data is processed in chunks.
-- Require padding when the plaintext doesn't evenly divide into block sizes.
-- Can be operated in various modes to enhance security or support specific applications.
+Common features:
 
-**Examples**: 
+- Easier to implement and generally more secure than stream ciphers
+- Often used in software-based encryption systems
+- Common in protocols and file encryption where data comes in chunks
+- Requires padding if data doesn't perfectly fit into blocks
+- Can run in different modes to provide flexibility and added protection
+
+Examples:
+
 - AES
 - DES
 - 3DES
 
 
-## Building Blocks
+## Cryptography Techniques
 
 Cryptography protects information by transforming readable data into a secret form and back again. These transformations keep data private and secure during transmission and storage.
 
@@ -160,6 +164,28 @@ The Vigenère Cipher shows how layering keys adds strength to encryption.
 
 
 </div>
+
+### Book Cipher (Running Key Cipher)
+
+The Book Cipher, also called the **Running Key Cipher**, is a type of polyalphabetic substitution cipher that uses text from a book or document as the key. In this cipher, each letter of the plaintext is shifted based on the corresponding letter in the key text 
+
+- The book or text is known to both sender and receiver   
+- The longer the key text, the harder it is to break  
+- The same book and edition must be used for encryption and decryption  
+
+Example:  
+
+If the message is "HELLO" and the book text starts with "WORL...", each plaintext letter is shifted by the alphabet position of the corresponding book letter.
+
+**Strengths**
+- Offers stronger security than short-key ciphers like Vigenère  
+- Key is hard to guess if the book is unknown  
+
+**Weaknesses**
+- Vulnerable if the book is identified or reused  
+- Requires both parties to have identical copies of the text  
+
+This cipher shows how using long, natural-language keys can strengthen substitution methods while keeping encryption manual and simple.
 
 
 ### Exlusive OR (XOR) 
