@@ -162,6 +162,15 @@ A few notes:
 
 Symmetric block ciphers can operate in various modes that define how blocks of plaintext are transformed into ciphertext. Different modes address specific requirements and security concerns. 
 
+- Electronic Codebook Mode (ECB)
+- Cipher Block Chaining (CBC)
+- Cipher Feedback (CFB)
+- Counter (CTR)
+- Galois/Counter Mode (GCM)
+
+GCM and CCM modes both include data authenticity in addition to confidentiality, which is why they are also known as **Authenticated modes of encryption.**. On the other hand, ECB, CBC, CFB, and CTR only provide confidentiality, and are knows as **Unauthenticated modes.**
+
+
 ### Electronic Codebook Mode (ECB)
 
 Electronic Codebook mode can show identical blocks for identical plaintext inputs, compromising security.
