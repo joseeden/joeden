@@ -63,7 +63,8 @@ Collision attacks find two different inputs that produce the same hash, potentia
 **How It Works:**
 
 - The attacker tries to find two different inputs that yield the same hash.
-- This can be used to forge digital signatures, tamper with data, or bypass security checks.
+- Can be used to forge digital signatures or tamper with data
+- It can also bypass security checks.
 
 **Examples:**
 
@@ -78,13 +79,16 @@ Collision attacks find two different inputs that produce the same hash, potentia
   - Avoid MD5 and SHA-1; opt for SHA-256 or stronger.
 
 - **Implement Collision-Resistant Algorithms** 
-  - Employ algorithms designed to resist collisions, especially in digital signatures and certificate generation.
+  - Employ algorithms designed to resist collisions
+  - Used in digital signatures and certificate generation.
 
 - **Detect Anomalies** 
-  - Implement mechanisms to detect unusual patterns that might indicate a collision attack.
+  - Implement mechanisms to detect unusual patterns
+  - The patterns might indicate a collision attack.
 
 - **Regularly Update Security Practices** 
-  - Stay updated with the latest cryptographic standards and replace vulnerable hash functions as necessary.
+  - Stay updated with the latest cryptographic standards
+  - Replace vulnerable hash functions as necessary.
 
 
 
@@ -97,15 +101,16 @@ Quantum computing poses a threat to traditional cryptography by potentially brea
 
 - Quantum computers use qubits, which can represent multiple states simultaneously.
 - This enables parallel processing at a massive scale.
-- This allows quantum computers to run algorithms that can break traditional cryptographic methods.
+- Run algorithms that can break traditional cryptographic methods.
 - Example: Shor's algorithm for integer factorization.
   
 **Implications for Cryptography:**
 
 - Quantum computing threatens public-key encryption algorithms like RSA and ECC.
 - RSA and ECC rely on computational hardness (e.g., factoring large numbers).
-- Symmetric key algorithms are more resistant but require longer key lengths to remain secure.
-- **Post-quantum cryptography**, which aims to create algorithms resistant to quantum attacks.
+- Symmetric key algorithms are more resistant but require longer key lengths.
+
+**Post-quantum cryptography** aims to create algorithms resistant to quantum attacks.
   
   - CRYSTALS-Dilithium 
   - FALCON 
@@ -145,7 +150,7 @@ A rainbow table attack uses precomputed hashes to find a matching hash value for
 
 :::info 
 
-If a user gets a copy of the /etc/shadow file containing hashed versions of the users' passwords, they can look up the hash in the rainbow table to see if there is a match. If so, the plain text equivalent in the other column might be a valid password to log into the system for that user.
+If a user gets a copy of the `/etc/shadow` file containing hashed versions of the users' passwords, they can look up the hash in the rainbow table to see if there is a match. If so, the plain text equivalent in the other column might be a valid password to log into the system for that user.
 
 :::
 

@@ -82,14 +82,14 @@ Block ciphers encrypt data in fixed-size chunks instead of one bit at a time. Th
 - More rounds of encryption means stronger protection
 - Blowfish and twofish were both released as open source products.
 
-Block ciphers typically have 64-bit block size, but in reality its 56-bits because 8-bits is for overhead/parity.
+Block ciphers typically have 64-bit block size, but **in reality its only 56 bits** because **8 bits is reserved for overhead/parity** to ensure that the other 56 bits are accurate.
 
 | Algorithm                                      | Block Size | Number of Rounds | Key Size              | Description                                       |
 | ---------------------------------------------- | ---------- | ---------------- | --------------------- | ------------------------------------------------- |
 | DES (Data Encryption Standard)                 | 64-bit     | 16 rounds        | 56-bit                | Older method, no longer secure for modern use.    |
 | 3DES (Triple DES)                              | 64-bit     | 48 rounds (3×16) | 168-bit               | Repeats DES three times to strengthen encryption. |
 | IDEA (International Data Encryption Algorithm) | 64-bit     | 8 rounds         | 128-bit               | More secure than DES but less commonly used.      |
-| AES (Advanced Encryption Standard)             | 128-bit    | 10/12/14 rounds  | 128/192/256-bit       | Current global encryption standard.               |
+| AES (Advanced Encryption Standard)             | 128-bit    | 10/12/14 rounds  | 128/192/256-bit       | Current global encrypti on standard.               |
 | Blowfish                                       | 64-bit     | 16 rounds        | 32–448-bit (variable) | Open-source replacement for DES.                  |
 | Twofish                                        | 128-bit    | 16 rounds        | 128/192/256-bit       | AES finalist, still secure and efficient.         |
 
@@ -135,13 +135,13 @@ A few notes about each algorithm:
 
 
 ## Streaming Ciphers
-Also known as **RC Cipher Suites**, the streaming ciphers comprises a range of ciphers, from block to stream, with varying levels of flexibility and security. 
 
-- Rivest Cipher, created by Ron Rivest.
+Also known as **Rivest Cipher (RC) Suites**, the streaming ciphers comprises a range of ciphers, from block to stream, with varying levels of flexibility and security. 
+
 - Some are now considered insecure (like RC4)
-- Others have had broader applications in encryption history (like RC5 and RC6).
+- Had broader applications in history (like RC5 and RC6).
 
-Unlike block ciphers, streaming ciphers encrypt one bit a time. It is wideless in encrypting wireless networks.
+Unlike block ciphers, streaming ciphers encrypt one bit a time. It is wideless used in encrypting wireless networks.
 
 | Algorithm  | Cipher Type   | Block Size        | Number of Rounds      | Key Size                  | Description                                                                                |                                                                
 |------------|---------------|-------------------|-----------------------|---------------------------|--------------------------------------------------------------------------------------------|
@@ -157,6 +157,22 @@ A few notes:
 - RC3 was cracked before it was even released to the public.
 - RC4, RC5, and RC6 are commonly used in networks today.
 
+## CAST Algorithms 
+
+CAST algorithms are symmetric key block ciphers designed by Carlisle Adams and Stafford Tavares. They use a Feistel network structure, similar to DES, to provide strong encryption and flexibility. There are two main versions of CAST: CAST-128 and CAST-256.
+
+- Built using Feistel network design
+- Supports variable key sizes for different security levels
+- Designed for speed and resistance to known attacks
+- Commonly used in encryption applications and security protocols
+
+In simple terms, CAST algorithms balance speed and strength, making them useful for both software and hardware encryption.
+
+| Algorithm        | Block Size | Number of Rounds | Key Size                | Description                                                                            |
+| ---------------- | ---------- | ---------------- | ----------------------- | -------------------------------------------------------------------------------------- |
+| CAST-128 (CAST5) | 64-bit     | 12 or 16 rounds  | 40–128-bit              | Used in tools like PGP; efficient and secure for smaller data blocks.                  |
+| CAST-256         | 128-bit    | 48 rounds        | 128/160/192/224/256-bit | Improved version with larger blocks and higher security; designed for AES competition. |
+                                    |
 
 ## Symmetric Block Modes 
 
@@ -222,6 +238,14 @@ Each block of plaintext is XORed with the previous ciphertext block before encry
 - Requires sequential processing
 - Small changes in plaintext can affect the whole chain
 - Complicates decryption if data is corrupted
+
+:::info 
+
+One important consideration when using the CBC mode algorithm is that error propagate.
+
+If one block corrupted during transmission, it becomes impossible to decrypt the block and the next block as well.
+
+:::
 
 ### Cipher Feedback (CFB)
 
