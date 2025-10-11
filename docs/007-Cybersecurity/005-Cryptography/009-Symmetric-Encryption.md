@@ -16,6 +16,13 @@ Symmetric cryptography uses the same key for both encryption and decryption. The
 
 Symmetric encryption is generally faster and less computationally intensive compared to asymmetric cryptography. It is also effective for encrypting large volumes of data.
 
+:::info
+
+Symmetric key cryptography can also be called **secret key cryptography** and **private key cryptography.**
+
+In some cases, symmetric cryptography may be used with temporary keys that exist only for a single session. In those case, the secret key is called an **ephemeral key.**
+
+:::
 
 <div class="img-center">
 
@@ -65,67 +72,69 @@ Out-of-Band methods can be time-consuming. For instance, if Alice and Bob are fa
 
 As a solution, we can use **In-Band Key Exchange** for key exchange over the same network used for communication, even if secure methods of communication are unavailable. This method simplifies the process but requires careful implementation to maintain security.
 
-## Symmetric Cryptosystems 
 
-Symmetric cryptography uses the same key for both encryption and decryption. The sender and receiver must share this key, keeping it secret from others.
+## Block Ciphers
 
-- **Session key** - single key is used to encrypt and decrypt data. 
-- Both parties must have this key.
+Block ciphers encrypt data in fixed-size chunks instead of one bit at a time. They apply mathematical transformations repeatedly to hide the original data.
 
-Symmetric encryption is generally faster and less computationally intensive compared to asymmetric cryptography. It is also effective for encrypting large volumes of data.
-
-<div class="img-center">
-
-![](/img/docs/sec+-symmetric-encryption-example-photo.png)
-
-</div>
-
-
-### Block Ciphers
-
-| Algorithm                                             | Cipher Type   | Block Size        | Number of Rounds      | Key Size                  | Description                                                                               |
-|-------------------------------------------------------|---------------|-------------------|-----------------------|---------------------------|-------------------------------------------------------------------------------------------|
-| DES (Data Encryption Standard)                        | Block Cipher  | 64-bit            | 16 rounds             | 56-bit                    | Legacy block cipher; once widely used but now considered insecure.                        |
-| 3DES (Triple DES)                                     | Block Cipher  | 64-bit            | 48 rounds (3x16)      | 168-bit                   | 3DES repeats DES process 3 times, hence 56*3 = 168-bit key size.                          |
-| IDEA (International Data Encryption Algorithm)        | Block Cipher  | 64-bit            | 8 rounds              | 128-bit                   | 128-bit key size makes it harder to break, but is not widely utilized.                    |
-| AES (Advanced Encryption Standard)                    | Block Cipher  | 128-bit           | 10/12/14 rounds       | 128/192/256-bit           | Current encryption standard; highly secure and widely used.                               |
-| Blowfish                                              | Block Cipher  | 64-bit            | 16 rounds             | 32-448 bit (variable)     | Developed as DES replacement; fast and flexible block cipher with variable key length.    |
-| Twofish                                               | Block Cipher  | 128-bit           | 16 rounds             | 128/192/256-bit           | A finalist in the AES competition, released as open source along with Blowfish.           |
-
-A few notes:
-
-- 64-bit block size, but in reality its 56-bits because 8-bits is for overhead/parity.
+- Operates on fixed-size data blocks
 - The larger the block size, the faster the encryption.
-- Number of rounds refers to how many rounds the data went through encryption. 
-- Number of rounds is a pretty good clue as to how robust encryption is.
+- More rounds of encryption means stronger protection
 - Blowfish and twofish were both released as open source products.
 
-Individual notes:
+Block ciphers typically have 64-bit block size, but in reality its 56-bits because 8-bits is for overhead/parity.
+
+| Algorithm                                      | Block Size | Number of Rounds | Key Size              | Description                                       |
+| ---------------------------------------------- | ---------- | ---------------- | --------------------- | ------------------------------------------------- |
+| DES (Data Encryption Standard)                 | 64-bit     | 16 rounds        | 56-bit                | Older method, no longer secure for modern use.    |
+| 3DES (Triple DES)                              | 64-bit     | 48 rounds (3×16) | 168-bit               | Repeats DES three times to strengthen encryption. |
+| IDEA (International Data Encryption Algorithm) | 64-bit     | 8 rounds         | 128-bit               | More secure than DES but less commonly used.      |
+| AES (Advanced Encryption Standard)             | 128-bit    | 10/12/14 rounds  | 128/192/256-bit       | Current global encryption standard.               |
+| Blowfish                                       | 64-bit     | 16 rounds        | 32–448-bit (variable) | Open-source replacement for DES.                  |
+| Twofish                                        | 128-bit    | 16 rounds        | 128/192/256-bit       | AES finalist, still secure and efficient.         |
+
+A few notes about each algorithm:
 
 - **3DES**
 
-  - Running an algorithm like DES twice or thrice is subject to a man-in-the-middle attack. 
-  - Secure method used in keying mode one, up to 2030.
-  - When used with 3 different keys, it has effective length of 112 bits.
+  - Encrypts data three times for better protection
+  - Can use one, two, or three keys for flexibility
+  - Secure for limited use but slow for large data
+  - Harder to crack but also increases processing time.
 
 - **AES**
 
-  - Like DES, AES uses combination of substitution and transpositions.
-  - Same key is used to encrypt and decrypt a file.
- 
+  - Uses substitution and transposition to mix data thoroughly
+  - Same key is used to encrypt and decrypt data
+  - Widely supported across devices and systems
+
+    :::info 
+
+    AES remains the strongest and most trusted standard for encryption today.
+
+    :::
+
 - **Blowfish**
 
-  - Public domain algorithm, can be used freely.
-  - Not considered secure anymore, its own creator recommends the use of Twofish instead.
+  - Free to use without any license restrictions
+  - Once popular but no longer recommended for new systems
+  - Creator suggests using Twofish instead
+
+    :::info   
+
+    Although fast, Blowfish’s small block size makes it outdated for modern security needs.
+    
+    :::
 
 - **Twofish**
 
-  - Public domain algorithm, can be used freely.
-  - Still considered secure for use today.
+  - Publicly available and still considered secure
+  - Supports 128-bit, 192-bit, and 256-bit key sizes
+  - Performs efficiently on both hardware and software
+  - Reliable encryption choice, especially for open systems.
 
 
-### Streaming Ciphers
-
+## Streaming Ciphers
 Also known as **RC Cipher Suites**, the streaming ciphers comprises a range of ciphers, from block to stream, with varying levels of flexibility and security. 
 
 - Rivest Cipher, created by Ron Rivest.
@@ -153,10 +162,9 @@ A few notes:
 
 Symmetric block ciphers can operate in various modes that define how blocks of plaintext are transformed into ciphertext. Different modes address specific requirements and security concerns. 
 
-### Electronic Codebook 
+### Electronic Codebook Mode (ECB)
 
-ECB (Electronic Codebook) mode can show identical blocks for identical plaintext inputs, compromising security.
-
+Electronic Codebook mode can show identical blocks for identical plaintext inputs, compromising security.
 
 <div class="img-center">
 
@@ -169,7 +177,8 @@ ECB (Electronic Codebook) mode can show identical blocks for identical plaintext
 As an example, if we encrypt the image above, we'll get a scrambled image that still shows some patterns. Although it is encrypted, the image is still recognizable.
 
 **Advantages**: 
-- Simple and fast; allows random access to blocks.
+- Simple and fast
+- Allows random access to blocks.
 
 **Disadvantages**: 
 
@@ -181,7 +190,6 @@ As an example, if we encrypt the image above, we'll get a scrambled image that s
 ### Cipher Block Chaining (CBC)
 
 Each block of plaintext is XORed with the previous ciphertext block before encryption. The first block uses an initialization vector (IV).
-
 
 <div class="img-center">
 
@@ -208,8 +216,8 @@ Each block of plaintext is XORed with the previous ciphertext block before encry
 
 ### Cipher Feedback (CFB)
 
-Turns block ciphers into self-synchronizing stream ciphers. The previous ciphertext block (or IV) is encrypted and then XORed with the plaintext to produce ciphertext.
-
+CFB is the streaming version of CBC. It turns block ciphers into self-synchronizing stream ciphers. The previous ciphertext block (or IV) is encrypted and then XORed with the plaintext to produce ciphertext.
+                             
 
 <div class="img-center">
 
@@ -218,6 +226,7 @@ Turns block ciphers into self-synchronizing stream ciphers. The previous ciphert
 
 </div>
 
+Instead of breaking messages into blocks, CFB uses memory buffers of the same block size. As the buffer becomes full, it is encrypted and then sent to the recipients, The system then waits for the next buffer to be filled as new data is generated before it is in turn encrypted and then transmitted.
 
 **Advantages**: 
 - Provides flexibility in block size
@@ -236,14 +245,12 @@ Similar to CFB, but the encrypted output (keystream) is generated independently 
 - IV is encrypted, then output is XORed to first block 
 - Same IV is used throughout the process.
 
-
 <div class="img-center">
 
 ![](/img/docs/sec+-blockmode-ofb.png)
 
 
 </div>
-
 
 
 **Advantages**: 
@@ -290,7 +297,6 @@ Converts block ciphers into stream ciphers by using a counter that is encrypted 
 
 Combines CTR mode with a message authentication code (MAC) to ensure data integrity and confidentiality.
 
-
 <div class="img-center">
 
 ![](/img/docs/sec+-blockmode-gcmmmm.png)
@@ -310,5 +316,11 @@ Combines CTR mode with a message authentication code (MAC) to ensure data integr
 - Requires careful management of IVs and counters
 
 
+### Counter with CBC-MAC (CCM)
 
+Counter with CBC-MAC (CCM) combines CTR mode for encryption with CBC-MAC for authentication, providing both confidentiality and integrity.  
+
+- CTR for confidentiality, CBC-MAC for data authenticity
+- Currenly used with 128-bit block ciphers (like AES)
+- Requires a "nonce" that must be changed for each transmission
 
