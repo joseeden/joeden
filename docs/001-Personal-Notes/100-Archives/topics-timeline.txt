@@ -28,6 +28,7 @@
 6/7/2020    - PM
 6/12/2020   - Software dev
 7/26/2020   - AWS Services
+7/29/2020   - Boto3
 8/30/2020   - AWS Security
 8/30/2020   - AWS DR
 9/21/2020   - Google Cloud
