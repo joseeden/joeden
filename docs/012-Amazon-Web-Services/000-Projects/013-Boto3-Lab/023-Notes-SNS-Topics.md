@@ -17,6 +17,12 @@ Amazon Simple Notification Service (SNS) helps send alerts like emails, text mes
 
 In SNS, a topic acts as the central channel that connects the publisher and subscribers.
 
+<div class='img-center'>
+
+![](/img/docs/datacamp-sns-primer.png)
+
+</div>
+
 ## Accessing SNS on AWS
 
 You can use the AWS console to work with SNS.
