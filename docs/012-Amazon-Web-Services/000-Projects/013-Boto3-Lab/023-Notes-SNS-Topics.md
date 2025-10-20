@@ -1,5 +1,5 @@
 ---
-title: "Notes: SNS Topics"
+title: "Notes: SNS"
 tags: 
 - Amazon Web Services
 - Labs
@@ -38,6 +38,12 @@ Once opened, you’ll be able to view and manage all topics and subscriptions.
 - Each topic has a unique ARN (Amazon Resource Name)
 
 This ARN is important as it uniquely identifies your topic when using SNS in code.
+
+<div class='img-center'>
+
+![](/img/docs/datacamp-sns-sample-sns-topic.png)
+
+</div>
 
 ## Topic Behavior and Permissions
 
