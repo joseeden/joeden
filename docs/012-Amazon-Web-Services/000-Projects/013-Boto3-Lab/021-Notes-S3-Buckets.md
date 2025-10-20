@@ -3,7 +3,7 @@ title: "Notes: S3 Buckets"
 tags: 
 - Amazon Web Services
 - Labs
-sidebar_position: 15
+sidebar_position: 21
 last_update:
   date: 7/29/2020
 ---
