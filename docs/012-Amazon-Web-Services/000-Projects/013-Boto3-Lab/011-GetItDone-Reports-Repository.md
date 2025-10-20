@@ -41,6 +41,9 @@ The raw data comes from the `gid-requests` bucket. Each file represents daily Ge
 To start with, upload new reports for February and update the file listing.
 
 ```python
+import boto3
+s3 = boto3.client('s3')
+
 df_list = []
 
 for file in response['Contents']:

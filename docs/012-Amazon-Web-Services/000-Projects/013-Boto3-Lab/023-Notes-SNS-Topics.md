@@ -41,6 +41,29 @@ SNS topics behave predictably when recreated.
 - It doesn’t create duplicates
 - IAM permissions must allow SNS access
 
+
+## Creating an SNS Topic
+
+To create a topic:
+
+```python
+## create client
+import boto3
+sns = boto3.client('sns')
+
+response = sns.create_topic(Name='MyAlerts')
+topic_arn = response['TopicArn']
+print(topic_arn)
+```
+
+Output example:
+
+```
+arn:aws:sns:us-east-1:123456789012:MyAlerts
+```
+
+You can now see your topic in the AWS SNS dashboard.
+
 ## Listing Existing Topics
 
 You can see all existing SNS topics your user has access to. The response will include all Topic ARNs
