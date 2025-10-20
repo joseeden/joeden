@@ -105,17 +105,10 @@ Subscriptions are how users receive updates from a topic in Amazon SNS.
 - It also includes a protocol such as email or SMS
 - The endpoint is the phone number or email where messages are delivered
 
-Every subscription also has a status showing whether it’s confirmed or still waiting for confirmation.
-
-
-### Supported Protocols
-
-Amazon SNS supports many types of message delivery, including
+SNS supports many types of message delivery, including
 
 - Email, for sending notifications to email addresses
 - SMS, for sending text messages to mobile numbers
-
-These are the most common and easiest ways to send alerts to clients or users.
 
 ### Subscription Details
 
