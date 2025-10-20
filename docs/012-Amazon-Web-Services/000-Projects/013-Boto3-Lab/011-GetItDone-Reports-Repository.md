@@ -9,7 +9,7 @@ last_update:
   date: 7/29/2020
 ---
 
-## Requirement
+## Overview
 
 Each month, you are required to generate a report showing the number of requests made through the GetItDone app, categorized by case type.
 
@@ -18,6 +18,23 @@ Each month, you are required to generate a report showing the number of requests
 - Council members should view and access charts on a web page
 
 This setup helps automate report delivery and allows the council to easily visualize the data.
+
+## Pre-requisites
+
+Required: 
+
+- [Create an AWS Account](/docs/001-Personal-Notes/050-Project-Pre-requisites/001-AWS.md) 
+- [Create the IAM Policy](/docs/001-Personal-Notes/050-Project-Pre-requisites/001-AWS.md#create-the-iam-policy) 
+- [Create the IAM User](/docs/001-Personal-Notes/050-Project-Pre-requisites/001-AWS.md#iam-users)
+- [Create the IAM Access Keys](/docs/001-Personal-Notes/050-Project-Pre-requisites/001-AWS.md#access-keys)
+
+**Note on the IAM Policy**: The IAM policy attached to your IAM must have the following permissions:
+
+- `AmazonS3FullAccess`
+- `AmazonSNSFullAccess`
+- `AmazonRekognitionFullAccess`
+- `TranslateFullAccess`
+- `ComprehendFullAccess`
 
 ## Steps: Building the Report
 
