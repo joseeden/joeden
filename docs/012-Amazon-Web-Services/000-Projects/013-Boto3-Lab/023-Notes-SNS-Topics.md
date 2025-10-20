@@ -159,13 +159,13 @@ To create a text message (SMS) subscription using boto3:
 import boto3
 sns = boto3.client('sns')
 
-response = sns.subscribe(
+response_sms = sns.subscribe(
     TopicArn='arn:aws:sns:us-east-1:123456789012:city_alerts',
     Protocol='sms',
     Endpoint='+15551234567'
 )
 
-print(response['SubscriptionArn'])
+print(response_sms['SubscriptionArn'])
 ```
 
 This returns a `SubscriptionArn`, which uniquely identifies your subscription.
@@ -184,17 +184,46 @@ We can also subscribe using an email address instead of a phone number.
 - Provide the recipient’s email address as the endpoint
 
 ```python
-response = sns.subscribe(
+response_email = sns.subscribe(
     TopicArn='arn:aws:sns:us-east-1:123456789012:city_alerts',
     Protocol='email',
     Endpoint='user@example.com'
 )
-print(response)
+
+print(response_email['SubscriptionArn'])
 ```
 
 At first, the status shows **pending confirmation**. The recipient must click the link in their email to activate it. Once confirmed, it changes to **confirmed** and can receive notifications.
 
+### Create Multiple Subscriptions
 
+You can add multiple subscribers to a topic at once, which is useful for sending notifications to a group.
+
+```python
+# For each email in contacts, create subscription to street_critical
+for email in contacts['Email']:
+  sns.subscribe(TopicArn = str_critical_arn,
+                Protocol = 'email',
+                Endpoint = email)
+
+response = sns.list_subscriptions_by_topic(
+  TopicArn = str_critical_arn)
+subs = pd.DataFrame(response['Subscriptions'])
+
+subs.head() 
+```
+
+Output:
+
+```bash
+
+                                     SubscriptionArn Owner Protocol               Endpoint                                           TopicArn
+0  arn:aws:sns:us-east-1:123456789012:streets_cri...          email            js@fake.com  arn:aws:sns:us-east-1:123456789012:streets_cri...
+1  arn:aws:sns:us-east-1:123456789012:streets_cri...          email        whoami@fake.com  arn:aws:sns:us-east-1:123456789012:streets_cri...
+2  arn:aws:sns:us-east-1:123456789012:streets_cri...          email         tom@fake.com  arn:aws:sns:us-east-1:123456789012:streets_cri...
+3  arn:aws:sns:us-east-1:123456789012:streets_cri...          email  bob@abc.com  arn:aws:sns:us-east-1:123456789012:streets_cri...
+4  arn:aws:sns:us-east-1:123456789012:streets_cri...          email     alex@fake.com  arn:aws:sns:us-east-1:123456789012:streets_cri... 
+```
 
 ### List Subscriptions for a Topic
 
@@ -245,6 +274,21 @@ sns.unsubscribe(SubscriptionArn='arn:aws:sns:us-east-1:123456789012:abc123')
 print("Subscription removed.")
 ```
 
+To delete multiple subscriptions, you can loop through all subscriptions to remove users with a specific protocol.
+
+```bash
+# List subscriptions for streets_critical topic.
+response = sns.list_subscriptions_by_topic(
+  TopicArn = str_critical_arn)
+
+# For each subscription, if protocol is SMS, unsubscribe
+for sub in response['Subscriptions']:
+  if sub['Protocol'] == 'sms':
+	  sns.unsubscribe(SubscriptionArn=sub['SubscriptionArn'])
+
+subs = sns.list_subscriptions_by_topic(
+  TopicArn=str_critical_arn)['Subscriptions']
+```
 
 ### Remove Multiple Subscriptions
 
