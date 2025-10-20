@@ -1,5 +1,5 @@
 ---
-title: "Notes: Controlling Access"
+title: "Notes: Permissions"
 description: "Controlling access to S3 resources"
 tags: 
 - Linux
