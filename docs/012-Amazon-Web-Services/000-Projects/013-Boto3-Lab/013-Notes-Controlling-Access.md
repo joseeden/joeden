@@ -164,7 +164,7 @@ print(url)
 **Expected result:** A temporary URL that anyone can use for 1 hour to access `private.csv`.
 
 
-### Loading Multiple Files into One DataFrame
+### Multiple Files in One DataFrame
 
 We can combine multiple CSVs from S3 into a single DataFrame.
 

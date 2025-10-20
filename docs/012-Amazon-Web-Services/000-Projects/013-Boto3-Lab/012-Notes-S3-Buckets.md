@@ -195,3 +195,157 @@ s3.delete_object(Bucket='city-data', Key='reports/report.csv')
 ```
 
 **Expected result:** `report.csv` is removed from the `city-data` bucket.
+
+## Serving HTML Pages from S3
+
+S3 can host simple HTML pages. This helps when sharing analysis results or visual reports directly through a browser.
+
+- S3 can store and serve HTML pages
+- Useful for sharing analysis results with non-technical teams
+- HTML output can be updated automatically through data pipelines
+
+### Pandas and HTML Tables
+
+Pandas can easily generate HTML tables from your DataFrame.
+
+- Use `to_html()` to export DataFrame content
+- Works just like `to_csv()`
+- Produces an HTML file that browsers can render
+
+This creates a simple table you can upload or view in a browser.
+
+```python
+df.to_html('report.html')
+```
+
+### Adding Clickable Links 
+
+You can make URLs clickable inside HTML tables.
+
+- Use `render_links=True` to convert text URLs into hyperlinks
+- Helps make data tables more interactive
+
+Clickable links make HTML tables more user-friendly and informative.
+
+```python
+df.to_html('report.html', render_links=True)
+```
+
+### Showing Specific Columns
+
+You can choose which columns to include in your HTML file.
+
+- Use `columns` parameter to list columns you want to show
+- Keeps the output clean and focused
+
+```python
+df.to_html('report.html', columns=['service_name', 'info_link'])
+```
+
+### Adding Borders 
+
+You can control borders in your HTML table easily.
+
+- Use the `border` argument in `to_html()`
+- `border=0` removes the borders
+- `border=1` shows simple table borders
+
+```python
+df.to_html('report.html', border=1)
+```
+
+### Upload HTML Files to S3
+
+You can upload HTML files just like any other file.
+
+- Use `upload_file()` from boto3
+- Set `ContentType` to `'text/html'`
+- Set `ACL` to `'public-read'` for public access
+
+This lets browsers recognize the file as an HTML page when accessed through its public URL.
+
+```python
+s3.upload_file(
+    'report.html',
+    'data-bucket',
+    'table.html',
+    ExtraArgs={'ContentType': 'text/html', 'ACL': 'public-read'}
+)
+```
+
+
+### Access HTML Files from S3
+
+Once uploaded, access the HTML page via its S3 public URL.
+
+- The browser automatically displays it as a webpage
+- You can also create a pre-signed URL for temporary access
+
+```python
+url = "https://data-bucket.s3.amazonaws.com/table.html"
+print(url)
+```
+
+### Upload Images and Other Content
+
+You can upload more than just HTML pages to S3.
+
+- Use the correct `ContentType` for files like PNGs or PDFs
+- Example: `image/png` for PNG images
+- Upload using `upload_file()` with `ExtraArgs`
+
+```python
+s3.upload_file(
+    'chart.png',
+    'data-bucket',
+    'chart.png',
+    ExtraArgs={'ContentType': 'image/png', 'ACL': 'public-read'}
+)
+```
+
+### IANA Media Types
+
+IANA maintains a list of standard content types for files.
+
+- Common types include JSON, PNG, PDF, and CSV
+- Useful for setting `ContentType` correctly
+- Reference: [IANA Media Types](http://www.iana.org/assignments/media-types/media-types.xhtml)
+
+### Generate an Index Page
+
+You can automatically create an index page listing all your S3 files.
+
+- List objects in a bucket with `list_objects()`
+- Convert the list to a DataFrame
+- Add a new column with file links
+- Export the DataFrame as HTML
+
+This creates an easy-to-browse index page of your S3 content.
+
+```python
+response = s3.list_objects(Bucket='data-bucket')
+items = response['Contents']
+df = pd.DataFrame(items)
+df['Link'] = df['Key'].apply(lambda x: f"https://data-bucket.s3.amazonaws.com/{x}")
+df.to_html('index.html', render_links=True)
+```
+
+
+### Upload the Index Page
+
+You can upload the generated index page just like before.
+
+- Use `upload_file()`
+- Set `ContentType` to `'text/html'`
+- The file becomes accessible at its S3 public URL
+
+The index page helps others explore your S3 files easily.
+
+```python
+s3.upload_file(
+    'index.html',
+    'data-bucket',
+    'index.html',
+    ExtraArgs={'ContentType': 'text/html', 'ACL': 'public-read'}
+)
+```
