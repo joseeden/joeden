@@ -1,6 +1,6 @@
 ---
-title: "Project: GetItDone"
-description: "Project: GetItDone"
+title: "GetItDone: Testing
+description: "GetItDone: Testing"
 tags: 
 - Amazon Web Services
 - Labs
