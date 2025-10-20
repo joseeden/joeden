@@ -227,3 +227,96 @@ for sub in response['Subscriptions']:
 ```
 
 
+## Sending Messages
+
+Sending messages with Amazon SNS is simple and flexible. You can broadcast to many people or send a single text message to one recipient.
+
+- You can publish to a topic
+- You can send a single SMS message
+- You can also customize each message
+
+### Publishing To A Topic
+
+When you publish to a topic, every subscriber connected to that topic receives the message. This method helps distribute one message to many recipients at once.
+
+```python
+import boto3
+sns = boto3.client('sns')
+
+sns.publish(
+    TopicArn='arn:aws:sns:us-east-1:123456789012:weather_alerts',
+    Message='Heavy rain expected tomorrow. Stay safe!',
+    Subject='Weather Update'
+)
+```
+
+Expected result:
+
+```bash
+{
+  'MessageId': 'abcd1234-5678-efgh-ijkl-1234567890ab'
+}
+```
+
+
+### Message And Subject
+
+The message body and subject determine what the subscribers receive.
+
+- `Message` is the main text
+- `Subject` appears only in email messages
+- SMS messages ignore the subject line
+
+This keeps email messages clear and detailed, while SMS messages stay short and direct.
+
+
+### Sending Custom Messages
+
+You can create messages dynamically using variables.
+
+```python
+city = "Springfield"
+temp = 35
+
+sns.publish(
+    TopicArn='arn:aws:sns:us-east-1:123456789012:weather_alerts',
+    Message=f"Alert for {city}: Temperature reaching {temp}°C today!"
+)
+```
+
+
+### Sending A Single SMS
+
+You can also send one SMS directly to a phone number.
+
+```python
+sns.publish(
+    PhoneNumber='+15551234567',
+    Message='System maintenance scheduled for 10 PM tonight.'
+)
+```
+
+
+Sending direct SMS messages works well for quick, one-time alerts.
+
+- Good for temporary notifications
+- Not ideal for repeated or automated use
+- Harder to maintain in larger systems
+
+For growing systems, topics make it easier to manage subscribers and updates.
+
+
+### Topic vs Single SMS
+
+There are two main ways to send messages.
+
+- **Publish to a topic**
+
+  - Reaches multiple subscribers
+  - Easier to maintain
+
+- **Send a single SMS**
+
+  - Simple for one recipient
+  - Great for quick, direct messages
+
