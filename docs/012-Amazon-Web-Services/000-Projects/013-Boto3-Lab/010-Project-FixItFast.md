@@ -1,10 +1,10 @@
 ---
-title: FixItFast
-description: "Notes on Boto3"
+title: "Project: FixItFast"
+description: "Project: FixItFast"
 tags: 
 - Amazon Web Services
 - Labs
-sidebar_position: 13
+sidebar_position: 10
 last_update:
   date: 7/29/2020
 ---

@@ -1,5 +1,5 @@
 ---
-title: S3 Buckets
+title: "Notes: S3 Buckets"
 tags: 
 - Amazon Web Services
 - Labs
