@@ -63,7 +63,10 @@ To create a topic:
 ```python
 ## create client
 import boto3
-sns = boto3.client('sns')
+sns = boto3.client('sns', 
+                   region_name='us-east-1', 
+                   aws_access_key_id=AWS_KEY_ID, 
+                   aws_secret_access_key=AWS_SECRET)
 
 response = sns.create_topic(Name='MyAlerts')
 topic_arn = response['TopicArn']
@@ -76,7 +79,23 @@ Output example:
 arn:aws:sns:us-east-1:123456789012:MyAlerts
 ```
 
-You can now see your topic in the AWS SNS dashboard.
+**NOTE:** You can also create the topic using a oneliner:
+
+```python
+topic_arn_1 = sns.create_topic(Name='MyAlerts')['TopicArn']
+```
+
+### Create Multiple Topics 
+
+You can create several topics quickly using a simple loop.
+
+```python
+departments = ['trash', 'streets', 'water']
+
+for dept in departments:
+    sns.create_topic(Name="{}_general".format(dept))
+    sns.create_topic(Name="{}_critical".format(dept))
+```
 
 ### Listing Existing Topics
 
@@ -96,6 +115,18 @@ When a topic is no longer needed, it’s best to remove it.
 sns.delete_topic(TopicArn=topic_arn)
 print("Topic deleted.")
 ```
+
+To delete multiple topics, you can loop through a filtered list and delete each topic.
+
+```python
+topics = sns.list_topics()['Topics']
+
+for topic in topics:
+  # If not marked critical, delete it
+  if "critical" not in topic['TopicArn']:
+    sns.delete_topic(TopicArn=topic['TopicArn'])
+```
+
 
 ## SNS Subscriptions
 
