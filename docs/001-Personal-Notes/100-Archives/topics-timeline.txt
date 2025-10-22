@@ -80,9 +80,12 @@
 5/13/2023   - ML - Developing Models
 7/19/2023   - Golang
 7/19/2023   - Golang
-9/26/2023   - Java
+
 
 1/30/2024 - Cybersecurity
 1/30/2024 - Software Sec
 5/17/2024 - Tableau
 9/21/2024 - LLM
+
+
+1/6/2025 - Java
