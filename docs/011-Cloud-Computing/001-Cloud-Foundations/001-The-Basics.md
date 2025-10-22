@@ -204,7 +204,7 @@ It is an agreement between a cloud service provider and customer that defines th
     - Strong encryption protocols for data transmission and storage.
     - Secure key management practices to protect encryption keys.
     - Regular password policy enforcement and password rotation.
-    - For more information, please see [Data Encryption.](/docs/007-Cybersecurity/002-Asset-Security/006-Data-Encryption.md)
+    - For more information, please see [Data Encryption.](/docs/007-Cybersecurity/022-Asset-Security/006-Data-Encryption.md)
 
 - **Unclear Policies and Data Remnants**
     - Clear data retention policies outlining data lifecycle management.

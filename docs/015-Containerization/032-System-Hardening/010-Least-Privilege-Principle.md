@@ -30,7 +30,7 @@ The "Least Privilege" principle in Kubernetes, like in other security contexts, 
 
 Following the least privilege principle helps reduce unauthorized access, privilege escalation, and security risks in Kubernetes environments.
 
-For more information, please see [Principle of Least Privilege](/docs/007-Cybersecurity/006-Identity-and-Access-Management/005-IAM-Concepts.md#principle-of-least-privilege)
+For more information, please see [Principle of Least Privilege](/docs/007-Cybersecurity/026-Identity-and-Access-Management/005-IAM-Concepts.md#principle-of-least-privilege)
 
 
  

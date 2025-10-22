@@ -122,7 +122,7 @@ Best practices around using secrets
 - Secrets are **not encrypted**, only base64 encoded.
 - Avoid checking Secrets into source code.
 - Use **Encryption at Rest** for better security.
-- Restrict access to Secrets using [least privilege principles.](/docs/007-Cybersecurity/006-Identity-and-Access-Management/005-IAM-Concepts.md#principle-of-least-privilege)
+- Restrict access to Secrets using [least privilege principles.](/docs/007-Cybersecurity/026-Identity-and-Access-Management/005-IAM-Concepts.md#principle-of-least-privilege)
 - Consider third-party secret management solutions: AWS, Azure, Vault.
 
 Also, consider the way kubernetes handles secrets:

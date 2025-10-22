@@ -208,7 +208,7 @@ Amazon Macie has some impressive integrations with AWS organizations that make s
 
 - Can have up to 5,000 members, when they use AWS organizations.
 
-To start using Macie's new organization, you'll need to designate an account to be the Macie administrator. However, it is not recommended to not set this account to be the same as the organizational root account to keep power separated and follow the [principles of least privilege](/docs/007-Cybersecurity/006-Identity-and-Access-Management/005-IAM-Concepts.md#principle-of-least-privilege) whenever possible. 
+To start using Macie's new organization, you'll need to designate an account to be the Macie administrator. However, it is not recommended to not set this account to be the same as the organizational root account to keep power separated and follow the [principles of least privilege](/docs/007-Cybersecurity/026-Identity-and-Access-Management/005-IAM-Concepts.md#principle-of-least-privilege) whenever possible. 
 
 It is important to note that an organization can only have a single administrator account at one time. And an account cannot be both a Macie admin and a member account.
 

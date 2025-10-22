@@ -36,7 +36,7 @@ Key benefits of cloud-based backup and disaster recovery include:
 - High durability and availability due to replicated storage
 - Vendor-managed replication for enhanced data protection without manual effort
 
-For more information, please see [Disaster Recovery.](/docs/007-Cybersecurity/003-Security-Architecture/011-HA-and-DR.md)
+For more information, please see [Disaster Recovery.](/docs/007-Cybersecurity/023-Security-Architecture/011-HA-and-DR.md)
 
 
 ## Web Hosting

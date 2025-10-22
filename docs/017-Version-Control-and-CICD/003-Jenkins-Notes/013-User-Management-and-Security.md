@@ -109,7 +109,7 @@ Inheritance is selectable from the dropdown bar in the **Project**:
 
 Auditing is the process of verifying that the access permissions are working as intended.
 
-- Ensures that [least privilege](/docs/007-Cybersecurity/006-Identity-and-Access-Management/005-IAM-Concepts.md#principle-of-least-privilege) is maintained
+- Ensures that [least privilege](/docs/007-Cybersecurity/026-Identity-and-Access-Management/005-IAM-Concepts.md#principle-of-least-privilege) is maintained
 - Jenkins is an explicit allow-model, which means ther is no deny
 - If something is not explicitly allowed, then it is denied
 

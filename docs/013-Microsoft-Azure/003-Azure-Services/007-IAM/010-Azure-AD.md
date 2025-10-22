@@ -90,7 +90,7 @@ It integrates well with various applications and commercial software and support
 
 ### Microsoft Entra Domain Services 
 
-When migrating on-premises applications to Azure, a potential challenge arises when these applications use legacy authentication protocols such as [NTLM](/docs/007-Cybersecurity/004-Infrastructure-and-Network/020-Authentication-Protocols.md#ntlm) or [Kerberos](/docs/007-Cybersecurity/004-Infrastructure-and-Network/020-Authentication-Protocols.md#kerberos).
+When migrating on-premises applications to Azure, a potential challenge arises when these applications use legacy authentication protocols such as [NTLM](/docs/007-Cybersecurity/024-Infrastructure-and-Network/020-Authentication-Protocols.md#ntlm) or [Kerberos](/docs/007-Cybersecurity/024-Infrastructure-and-Network/020-Authentication-Protocols.md#kerberos).
 
 ![](/img/docs/all-things-devops-Page-6.png)
 

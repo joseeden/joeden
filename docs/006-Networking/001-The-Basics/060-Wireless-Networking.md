@@ -111,7 +111,7 @@ Wireless encryption and cryptographic protocols protect wireless networks and sa
   - Latest standard with AES GCMP encryption.
   - Introduces SAE and enhanced cryptographic protocols.
 
-For more information, please see [Wireless Encryption.](/docs/007-Cybersecurity/004-Infrastructure-and-Network/061-Wireless-Security-Settings.md)
+For more information, please see [Wireless Encryption.](/docs/007-Cybersecurity/024-Infrastructure-and-Network/061-Wireless-Security-Settings.md)
 
 
 
@@ -151,7 +151,7 @@ Enterprise Authentication uses unique credentials for each user, verified throug
 - Ideal for organizations needing role-based access and individual accountability.
 - Supports advanced features like encryption and multifactor authentication.
 
-For more information, please see [EAP.](/docs/007-Cybersecurity/004-Infrastructure-and-Network/020-Authentication-Protocols.md#eap)
+For more information, please see [EAP.](/docs/007-Cybersecurity/024-Infrastructure-and-Network/020-Authentication-Protocols.md#eap)
 
 ### Captive Portals
 
@@ -190,6 +190,6 @@ A site survey assesses the environment to optimize wireless signal placement and
 - Identifies obstacles and areas with weak signals to adjust equipment placement
 - Helps ensure reliable coverage and minimize interference in complex environments
 
-For more information, please see [Site Surveys](/docs/007-Cybersecurity/004-Infrastructure-and-Network/060-Wireless-Infrastructure-Security.md#site-survey)
+For more information, please see [Site Surveys](/docs/007-Cybersecurity/024-Infrastructure-and-Network/060-Wireless-Infrastructure-Security.md#site-survey)
 
 

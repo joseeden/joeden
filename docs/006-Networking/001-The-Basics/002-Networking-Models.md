@@ -198,7 +198,7 @@ User Datagram Protocol (UDP) is a connectionless protocol that enables fast data
 
 DNP3 is a communication protocol primarily used in utility and industrial automation systems to enable reliable and efficient data exchange between control equipment.
 
-- Widely used in [SCADA systems](/docs/007-Cybersecurity/004-Infrastructure-and-Network/058-Embedded-Systems.md) for monitoring and controlling remote equipment in real-time
+- Widely used in [SCADA systems](/docs/007-Cybersecurity/024-Infrastructure-and-Network/058-Embedded-Systems.md) for monitoring and controlling remote equipment in real-time
 - Supports robust communication and offers features like time-stamped data and event logging
 - Ensure interoperability between different vendors' equipment in complex networks
 

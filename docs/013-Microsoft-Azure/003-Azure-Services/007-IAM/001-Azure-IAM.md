@@ -23,7 +23,7 @@ RBAC is an authorization system built on Azure Resource Manager, providing fine-
 - Manages user access to specific Azure resources, 
 - Define their permissions and scope.
 - Enables segregation of duties
-- Grant users the [least privilege](/docs/007-Cybersecurity/006-Identity-and-Access-Management/005-IAM-Concepts.md#principle-of-least-privilege) needed for their tasks.
+- Grant users the [least privilege](/docs/007-Cybersecurity/026-Identity-and-Access-Management/005-IAM-Concepts.md#principle-of-least-privilege) needed for their tasks.
 - Effective in organizations with diverse resource needs.
 
 Example Scenario:

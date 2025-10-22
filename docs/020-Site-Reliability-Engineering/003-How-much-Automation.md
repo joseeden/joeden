@@ -81,7 +81,7 @@ last_update:
 
     - The ability to perform peer code-reviews to check quality can be enforced through tools.
     - Sample tools: Gerrit, Team Foundation Service, Crucible, Gitlab
-    - For more information, please see [Code Reviews](/docs/007-Cybersecurity/007-Software-Security/012-Code-Reviews.md)
+    - For more information, please see [Code Reviews](/docs/007-Cybersecurity/027-Software-Security/012-Code-Reviews.md)
 
 - **Wiki**
 
@@ -205,7 +205,7 @@ last_update:
 
     - Fuzzing or fuzz testing is an automated software testing technique.
     - Involves providing invalid, unexpected, or random data as inputs to a service and then watching the results.
-    - For more information, please see [Fuzz Testing](/docs/007-Cybersecurity/007-Software-Security/011-Code-Analysis.md#fuzzing)
+    - For more information, please see [Fuzz Testing](/docs/007-Cybersecurity/027-Software-Security/011-Code-Analysis.md#fuzzing)
 
 ## Release
 

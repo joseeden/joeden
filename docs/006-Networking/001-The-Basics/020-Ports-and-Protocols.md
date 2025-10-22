@@ -97,7 +97,7 @@ Concepts:
   - Randomized MAC addresses are sent to the network switch.
   - When this happens, the network switch will simply fail open.
   - When it fail-open, the switch begins to rebroadcast all traffic out to every port.
-  - For more information, please see [MAC Address Flooding](/docs/007-Cybersecurity/013-List-of-Attacks/012-Layer-2-Attacks.md#mac-address-flooding)
+  - For more information, please see [MAC Address Flooding](/docs/007-Cybersecurity/051-List-of-Attacks/012-Layer-2-Attacks.md#mac-address-flooding)
 
 
 
@@ -147,13 +147,13 @@ Port security works in two modes:
   - Cross-platform
   - Does NOT support remote access protocol, NetBIOS, or X.25 PAD connections
   - Ideal for mixed network infrastructure.
-  - For more information, please see [RADIUS](/docs/007-Cybersecurity/004-Infrastructure-and-Network/020-Authentication-Protocols.md#radius)
+  - For more information, please see [RADIUS](/docs/007-Cybersecurity/024-Infrastructure-and-Network/020-Authentication-Protocols.md#radius)
 
 - **TACACS+**
   - Cisco-proprietary protocol
   - Slower, relies on TCP, but adds security
   - Supports all networking protocols
-  - For more information, please see [TACACS+](/docs/007-Cybersecurity/004-Infrastructure-and-Network/020-Authentication-Protocols.md#tacacs)
+  - For more information, please see [TACACS+](/docs/007-Cybersecurity/024-Infrastructure-and-Network/020-Authentication-Protocols.md#tacacs)
 
 ### EAP
 
@@ -163,7 +163,7 @@ EAP (Extensible Authentication Protocol) is a versatile authentication framework
 - Commonly used in wireless networks (e.g., Wi-Fi) and secure network access setups.
 - Provides strong security through certificate-based authentication.
 
-For more information, please see [EAP](/docs/007-Cybersecurity/004-Infrastructure-and-Network/020-Authentication-Protocols.md#eap)
+For more information, please see [EAP](/docs/007-Cybersecurity/024-Infrastructure-and-Network/020-Authentication-Protocols.md#eap)
 
 
 ## Transport Method

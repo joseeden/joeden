@@ -25,7 +25,7 @@ A vulnerability is a weakness in software, hardware, or network systems that att
 - Unpatched software  
 - Zero-day vulnerabilities
 
-For more information, please see [Vulnerabilities.](/docs/007-Cybersecurity/012-Threats-and-Attacks/010-Vulnerabilities.md)
+For more information, please see [Vulnerabilities.](/docs/007-Cybersecurity/050-Threats-and-Attacks/010-Vulnerabilities.md)
 
 
 ## CVE

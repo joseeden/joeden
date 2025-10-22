@@ -157,7 +157,7 @@ Types:
 
 - **AWS-Managed Policies**
     - Standalone policy created and managed by AWS.
-    - Hard to follow the [least privilege principle](/docs/007-Cybersecurity/006-Identity-and-Access-Management/005-IAM-Concepts.md#principle-of-least-privilege).
+    - Hard to follow the [least privilege principle](/docs/007-Cybersecurity/026-Identity-and-Access-Management/005-IAM-Concepts.md#principle-of-least-privilege).
     - Cannot be modified by customer.
     
 - **Customer Managed Policies**
@@ -274,7 +274,7 @@ Active Directory Federation Service or ADFS provides the SSO and identity broker
 
 ### SAML 2.0
 
-Open standard that enables the exchange of identity information between providers and applications. This also enables the SSO in AWS accounts. For more information, please see [SAML.](/docs/007-Cybersecurity/004-Infrastructure-and-Network/021-Identity-Federation.md#saml)
+Open standard that enables the exchange of identity information between providers and applications. This also enables the SSO in AWS accounts. For more information, please see [SAML.](/docs/007-Cybersecurity/024-Infrastructure-and-Network/021-Identity-Federation.md#saml)
 
 ### Two-way trust
 
