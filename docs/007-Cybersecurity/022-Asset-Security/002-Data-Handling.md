@@ -312,7 +312,7 @@ According to the ISC2 Study Guide (chapter 5, module 1, under Data Handling Prac
 - **SIEM Solutions**
    - Security Information and Event Management.
    - Centralized platform for comprehensive security monitoring and logging.
-   - For more information, please see [SIEM](/docs/007-Cybersecurity/009-Security-Operations/032-SIEM.md)
+   - For more information, please see [SIEM](/docs/007-Cybersecurity/029-Security-Operations/032-SIEM.md)
    
 - **Anti-Malware Solutions**
    - Monitor and block malicious activities from inbound traffic.

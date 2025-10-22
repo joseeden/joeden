@@ -133,7 +133,7 @@ These are rules that define a minimum level of security that is required through
 - Used to measure compliance and identify risks.
 - Updated regularly to address new threats.
 
-For more information, please see [Security Baselines.](/docs/007-Cybersecurity/009-Security-Operations/049-Security-Baseline.md)
+For more information, please see [Security Baselines.](/docs/007-Cybersecurity/029-Security-Operations/049-Security-Baseline.md)
 
 
 ## Guidelines 

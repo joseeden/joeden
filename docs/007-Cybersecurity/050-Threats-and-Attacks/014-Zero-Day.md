@@ -38,7 +38,7 @@ Zero day can refer to vulnerabilities, exploit, and both. In the old days, it ju
   - Allow only approved applications to run on systems
   - Reduces the attack surface for zero-day exploits.
   - Prevents the execution of unauthorized or unknown applications.
-  - For more information, please see [Filtering Applications](/docs/007-Cybersecurity/009-Security-Operations/050-System-Hardening.md#filtering-applications)
+  - For more information, please see [Filtering Applications](/docs/007-Cybersecurity/029-Security-Operations/050-System-Hardening.md#filtering-applications)
 
 - **Endpoint Protection**
   - Deploy endpoint security solutions with advanced threat detection capabilities.
@@ -47,7 +47,7 @@ Zero day can refer to vulnerabilities, exploit, and both. In the old days, it ju
 - **Patch Management**
   - Robust patch management process to rapidly deploy patches once available.
   - Regular system update, reduces window of exposure to zero-day vulnerabilities.
-  - For more information, please [Patch Management.](/docs/007-Cybersecurity/009-Security-Operations/052-Updates-and-Patches.md)
+  - For more information, please [Patch Management.](/docs/007-Cybersecurity/029-Security-Operations/052-Updates-and-Patches.md)
 
 - **User Training and Awareness**
   - Educate users how to recognize suspicious activity.

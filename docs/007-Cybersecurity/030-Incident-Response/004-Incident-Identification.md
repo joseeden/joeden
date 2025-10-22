@@ -43,7 +43,7 @@ Security Incident and Event Management (SIEM) aids in handling the large amount 
 - They assist in **correlating and analyzing** massive logs.
 - **Detection** is enhanced by SIEM’s rule-based and algorithmic approaches.
 
-For more information, please see [SIEM.](/docs/007-Cybersecurity/009-Security-Operations/032-SIEM.md)
+For more information, please see [SIEM.](/docs/007-Cybersecurity/029-Security-Operations/032-SIEM.md)
 
 ## External Sources
 

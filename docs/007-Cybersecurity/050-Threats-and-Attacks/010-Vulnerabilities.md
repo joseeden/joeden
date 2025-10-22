@@ -104,7 +104,7 @@ Occurs when device's settings, parameters, or options are not optimally set up.
   - Regularly apply security patches and updates.
   - Automate the patch management process.
   - Monitor for newly released patches and vulnerabilities.
-  - For more information, please [Patch Management.](/docs/007-Cybersecurity/009-Security-Operations/052-Updates-and-Patches.md)
+  - For more information, please [Patch Management.](/docs/007-Cybersecurity/029-Security-Operations/052-Updates-and-Patches.md)
 
 - **Configuration Enforcement**
   - Implement secure configuration standards.

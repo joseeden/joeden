@@ -48,5 +48,3 @@ Available GCP Tools:
 Architecture:
 
 ![](/img/docs/gcp-devops-project-architecture-flow-how-app-will-be-deployed.png)
-
-</details>

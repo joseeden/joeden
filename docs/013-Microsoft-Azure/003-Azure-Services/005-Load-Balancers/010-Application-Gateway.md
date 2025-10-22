@@ -143,7 +143,7 @@ Rulesets protect web applications against common vulnerabilities and attacks.
 
 ![](/img/docs/azure-app-gw-enable-waf-rulesets.png)
 
-The OWASP core 3.2 ruleset provides updated protection against Java infections and reduces [false positives](/docs/007-Cybersecurity/009-Security-Operations/020-Vulnerability-Management.md#analyzing-vulnerabilities).
+The OWASP core 3.2 ruleset provides updated protection against Java infections and reduces [false positives](/docs/007-Cybersecurity/029-Security-Operations/020-Vulnerability-Management.md#analyzing-vulnerabilities).
 
 ### Log Destination
 

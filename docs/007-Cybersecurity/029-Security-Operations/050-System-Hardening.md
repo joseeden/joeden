@@ -65,7 +65,7 @@ Configuration management ensures that only approved and tracked changes are made
 
   - A baseline sets the minimum required security settings.
   - Used as a reference to ensure future updates meet security standards.  
-  - See: [Security Baselines](/docs/007-Cybersecurity/009-Security-Operations/049-Security-Baseline.md)
+  - See: [Security Baselines](/docs/007-Cybersecurity/029-Security-Operations/049-Security-Baseline.md)
 
 - **Change Control**
 

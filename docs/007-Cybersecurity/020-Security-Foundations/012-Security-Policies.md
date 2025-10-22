@@ -41,7 +41,7 @@ Every policy should align with the organization's regulatory and contractual obl
 - Shredding of sensitive documents
 - Secure personally-owned devices 
 - [MDM (Mobile Device Management)](/docs/007-Cybersecurity/024-Infrastructure-and-Network/059-Mobile-Systems.md#mobile-device-management)
-- [BYOD (Bring your own device)](/docs/007-Cybersecurity/009-Security-Operations/073-Mobile-Asset-Deployments.md#byod)
+- [BYOD (Bring your own device)](/docs/007-Cybersecurity/029-Security-Operations/073-Mobile-Asset-Deployments.md#byod)
 
 **User Training:**
 
@@ -219,7 +219,7 @@ Essential for transitioning from current to future states, covering:
 - Confirmation of correct implementation
 - Mitigating vulnerabilities introduced by changes
 
-For more information, please see [Asset and Change Management](/docs/007-Cybersecurity/009-Security-Operations/070-Asset-and-Change-Management.md#change-management). 
+For more information, please see [Asset and Change Management](/docs/007-Cybersecurity/029-Security-Operations/070-Asset-and-Change-Management.md#change-management). 
 
 
 

@@ -54,7 +54,7 @@ Baseline reporting involves establishing a standard for system performance and s
 - Helps in tracking changes and detecting anomalies.
 - Used to ensure compliance with security policies and standards.
 
-For more information, please [Security Baselines](/docs/007-Cybersecurity/009-Security-Operations/049-Security-Baseline.md)
+For more information, please [Security Baselines](/docs/007-Cybersecurity/029-Security-Operations/049-Security-Baseline.md)
 
 
 

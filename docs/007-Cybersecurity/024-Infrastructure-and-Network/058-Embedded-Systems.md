@@ -286,7 +286,7 @@ SCADA systems are often engineered for specific tasks and might not receive regu
 
   - Keep software and firmware up-to-date.
   - Maintain a robust patch management process.
-  - For more information, please [Patch Management.](/docs/007-Cybersecurity/009-Security-Operations/052-Updates-and-Patches.md)
+  - For more information, please [Patch Management.](/docs/007-Cybersecurity/029-Security-Operations/052-Updates-and-Patches.md)
 
 - **Firewall and IDS**
 

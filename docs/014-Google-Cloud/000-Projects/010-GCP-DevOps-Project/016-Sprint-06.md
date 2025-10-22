@@ -88,7 +88,6 @@ Todo:
 
     Click the endpoint and verify that you can access the application.
 
-</details>
 
 
 
