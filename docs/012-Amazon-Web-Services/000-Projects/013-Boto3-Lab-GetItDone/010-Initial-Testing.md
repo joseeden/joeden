@@ -1,6 +1,6 @@
 ---
-title: "GetItDone: Testing
-description: "GetItDone: Testing"
+title: "Initial Testing"
+description: "Initial Testing"
 tags: 
 - Amazon Web Services
 - Labs

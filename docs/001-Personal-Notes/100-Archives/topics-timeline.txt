@@ -85,3 +85,4 @@
 1/30/2024 - Cybersecurity
 1/30/2024 - Software Sec
 5/17/2024 - Tableau
+9/21/2024 - LLM

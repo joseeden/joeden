@@ -1,6 +1,6 @@
 ---
-title: "GetItDone: Monthly Reports"
-description: "GetItDone: Monthly Reports"
+title: "Monthly Reports"
+description: "Monthly Reports"
 tags: 
 - Amazon Web Services
 - Labs

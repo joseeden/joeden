@@ -1,5 +1,5 @@
 ---
-title: "Starter Notes"
+title: "Notes: Starter"
 tags: 
 - Amazon Web Services
 - Labs
