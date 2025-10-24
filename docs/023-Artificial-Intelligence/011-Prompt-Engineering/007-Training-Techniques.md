@@ -9,12 +9,7 @@ sidebar_position: 7
 
 
 
-## Overview
-
-Training techniques shape how ChatGPT generates answers. Understanding zero-shot, one-shot, and few-shot learning helps you guide the model effectively. These methods vary in the amount of context or examples provided before the main query.
-
 ## Techniques 
-
 
 These are different ways to guide a model in understanding and answering tasks.
 

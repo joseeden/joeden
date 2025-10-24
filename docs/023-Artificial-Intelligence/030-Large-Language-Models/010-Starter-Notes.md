@@ -5,7 +5,7 @@ tags:
 - Machine Learning
 - Artificial Intelligence
 - Large Language Models
-sidebar_position: 1
+sidebar_position: 10
 last_update:
   date: 9/21/2024
 ---
