@@ -15,23 +15,27 @@ Training techniques shape how ChatGPT generates answers. Understanding zero-shot
 
 ## Techniques 
 
-### Zero-shot Learning
 
-- Asking a question or task without prior examples.
-- Relies on pre-training, showing the model's ability to handle novel situations without examples.
-- "Write a poem about the tranquility of mountains."
+These are different ways to guide a model in understanding and answering tasks.
 
-### One-shot Learning
+- **Zero-shot Learning**
 
-- Providing one example before asking the main question.
-- Mirrors human learning, using one example as a template.
-- "Mexico City is the capital of the Mexico City. What is the capital of Vatican City?"
+  - No examples are given before the task
+  - The model relies on prior training to answer new questions
+  - Example: “Write a poem about the tranquility of mountains.”
 
-### Few-shot Learning
+- **One-shot Learning**
 
-- Giving multiple examples before the main query.
-- Builds a nuanced understanding by using examples as building blocks.
-- Asking for the capital of Malaysia, formatting with the country’s flag.
+  - One example is given before the question
+  - Helps the model learn from a single pattern
+  - Example: “Mexico City is the capital of Mexico. What is the capital of Vatican City?”
+
+- **Few-shot Learning**
+
+  - Several examples are shown before the task
+  - Helps the model understand context through multiple samples
+  - Example: Asking for the capital of Malaysia while formatting with the country’s flag
+
 
 ## Pattern Matching and Recognition
 
