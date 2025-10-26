@@ -97,6 +97,12 @@ Free DNS Service using [Namecheap](https://www.namecheap.com/)
 ### Infrastructure as Code 
 
 - [Terraformer](https://github.com/GoogleCloudPlatform/terraformer)
+- [Terraform 1.0 - Provisioning AWS Infrastructure](https://cloudacademy.com/course/terraform-provisioning-aws-infrastructure/course-introduction/?context_resource=lp&context_id=2377)
+- [Hands-On Infrastructure Automation with Terraform on AWS](https://github.com/PacktPublishing/Hands-on-Infrastructure-Automation-with-Terraform-on-AWS)
+- [Implementing Terraform with AWS](https://www.pluralsight.com/courses/implementing-terraform-aws)
+- [Applying Graph Theory to Infrastructure as Code](https://www.youtube.com/watch?v=Ce3RNfRbdZ0)
+- [AWS DynamoDB resource not found exception](https://stackoverflow.com/questions/40192304/aws-dynamodb-resource-not-found-exception)
+- [Installing or updating the latest version of the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 
 ### Jenkins
 
