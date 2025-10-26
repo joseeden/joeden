@@ -1,6 +1,6 @@
 ---
-title: "Streaming"
-description: "Streaming"
+title: "Queues and Streams"
+description: "Queues and Streams"
 tags: 
 - Data Engineering
 - Data Integration
@@ -104,19 +104,19 @@ Although queues are useful, they can face a few challenges.
 
 For example, if one item in a queue fails to process, it can delay the rest, like when someone at the counter has payment issues, slowing down everyone else.
 
-## Streaming
+## Queues and Streams
 
-Streaming is about processing data as it flows, without waiting for everything to arrive first.
+Queues and Streams is about processing data as it flows, without waiting for everything to arrive first.
 
 - Data is processed continuously
 - No fixed end point for the stream
 - Can feed into other pipelines like batch or queue
 - Application decides what to do with incoming data
 
-Streaming lets systems handle information in real time. It focuses on the flow of data rather than a fixed set of tasks.
+Queues and Streams lets systems handle information in real time. It focuses on the flow of data rather than a fixed set of tasks.
 
 
-## Streaming examples
+## Queues and Streams examples
 
 ### Logs
 
@@ -137,18 +137,36 @@ Logs show how data can be streamed continuously and processed in real time. Thei
 
 ### System Event Logs
 
-System event logs are examples of streaming inside a single computer.
+System event logs are examples of Queues and Streams inside a single computer.
 
-- **Capture system events**
+- Login attempts, USB insertions, and other actions
+- Available on Windows, Mac, and Linux
 
-  - Login attempts, USB insertions, and other actions
-  - Available on Windows, Mac, and Linux
+Components of event logging:
 
-- **Components of event logging**
+- **Listener** receives messages from processes
+- **Parser** interprets the messages
+- **Logic** decides what to do, like adding timestamps
+- **Writer** stores the information for later review
 
-  - Listener receives messages from processes
-  - Parser interprets the messages
-  - Logic decides what to do, like adding timestamps
-  - Writer stores the information for later review
+System event logs continuously capture, process, and store events as they happen, showing the core idea of Queues and Streams data.
 
-System event logs continuously capture, process, and store events as they happen, showing the core idea of streaming data.
+
+## Choosing the Right Approach
+
+- **Use batch processing**
+
+  - Best when data can be handled in groups
+  - Simple and easy to scale for scheduled tasks
+
+- **Use queues**
+
+  - Works well if task order matters
+  - Can pause and resume without losing data
+  - Good for connecting multiple workers to a pipeline
+
+- **Use streaming**
+
+  - Ideal for continuous or unpredictable data
+  - Cannot stop until data is fully processed
+  - Handles real-time events and flows
