@@ -66,6 +66,38 @@ Infrastructure as Code:
   label: 'Infrastructure as Code'
   permalink: '/Infrastructure as Code'
   description: 'Docs related to Infrastructure as Code'
+Terraform:
+  label: 'Terraform'
+  permalink: '/Terraform'
+  description: 'Docs related to Terraform'
+Pulumi:
+  label: 'Pulumi'
+  permalink: '/Pulumi'
+  description: 'Docs related to Pulumi'
+CloudFormation:
+  label: 'CloudFormation'
+  permalink: '/CloudFormation'
+  description: 'Docs related to CloudFormation'
+Azure Bicep:
+  label: 'Azure Bicep'
+  permalink: '/Azure Bicep'
+  description: 'Docs related to Azure Bicep'
+SDK and CDK:
+  label: 'SDK and CDK'
+  permalink: '/SDK and CDK'
+  description: 'Docs related to SDK and CDK'
+Ansible:
+  label: 'Ansible'
+  permalink: '/Ansible'
+  description: 'Docs related to Ansible'
+Chef:
+  label: 'Chef'
+  permalink: '/Chef'
+  description: 'Docs related to Chef'
+Puppet:
+  label: 'Puppet'
+  permalink: '/Puppet'
+  description: 'Docs related to Puppet'
 Containers:
   label: 'Containers'
   permalink: '/Containers'
