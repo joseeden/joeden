@@ -5,7 +5,7 @@ tags:
 - DevOps
 - Infrastructure as Code
 - Terraform
-sidebar_position: 0
+sidebar_position: 10
 last_update:
   date: 6/11/2022
 ---
@@ -67,6 +67,7 @@ This is a directory on the local filesystem containing all the configuration fil
 - `main.tf`
 - `variables.tf`
 - `outputs.tf`
+- `provider.tf`
 
 This root directory may also contain:
 
@@ -82,139 +83,40 @@ Terraform uses **providers** to interact with various cloud platforms and servic
 - Google Cloud Platform (GCP)
 - Kubernetes
 
-You can access the list of providers from the [Terraform registry](https://registry.terraform.io/). Once you've selected the provider, you can start creating your `provider.tf` in your project directory:
+For more information, please see [Providers](/docs/017-Infrastructure-as-Code/010-Terraform/011-Providers.md)
 
-```json
-terraform {
-  required_version = ">= 0.12"
 
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = ">= 4.16.0"
-    }
-  }
+## `terraform init` 
 
-}
-provider "aws" {
-  # Configuration options
-  region     = "ap-southeast-1"
-  access_key = "my-access-key"
-  secret_key = "my-secret-key"
-}
+Terraform needs to prepare your environment before it can create resources. This is done with `terraform init`.
+
+- Reads all `.tf` files in your working directory
+- Downloads required providers automatically
+- Detects all modules and writes a list to `.terraform/modules/modules.json`
+- Looks for `terraform` blocks with `required_providers` for third-party providers
+- Does not verify that your configuration will successfully create resources
+
+To initialize:
+
+```bash
+terraform init
 ```
 
-:::warning 
+Expected output:
 
-Hard-coded credentials are not recommended in any Terraform configuration and risks secret leakage should this file ever be committed to a public version control system.
+```
+Initializing the backend...
+Initializing provider plugins...
+- Finding latest version of hashicorp/aws...
+- Installing hashicorp/aws v4.30.0...
+Terraform has been successfully initialized!
+```
+
+:::info 
+
+`terraform init` happens **after*- you write your configuration but **before*- running `terraform plan` or `terraform apply`. 
 
 :::
-
-
-## Core Files 
-
-### Main file (`main.tf`)
-
-This file contains the core configurations:
-
-- Resources
-- Provider 
-- Data Sources 
-
-This file can be modularized by splitting the sections into their own separate `.tf` files.
-
-```bash
-provider "aws" {
-  region = "ap-southeast-1"
-}
-
-resource "aws_instance" "example" {
-  ami           = "ami-0c55b159cbfafe1f0"
-  instance_type = var.instance_type
-}
-```
-
-### Variables file (`variables.tf`)
-
-This file contains all possible variables referenced in the `main.tf` file.
-
-```bash
-variable "region" {
-  description = "AWS region to deploy resources"
-  type        = string
-  default     = "ap-southeast-1"
-}
-
-variable "instance_type" {
-  description = "Type of EC2 instance"
-  type        = string
-  default     = "t2.micro"
-}
-```
-
-### Outputs file (`outputs.tf `)
-
-This is used to explicitly export values after you ran `terraform apply`.
-
-- Outputs can be references within any parent templates
-- Often used to create modules
-
-Example: 
-
-```bash
-output "instance_public_ip" {
-  description = "The public IP of the EC2 instance"
-  value       = aws_instance.example.public_ip
-}
-
-output "instance_id" {
-  description = "The ID of the EC2 instance"
-  value       = aws_instance.example.id
-}
-```
-
-### `terraform.tfvars` vs `variables.tf`
-
-Based on a [Stack Overflow discussion](https://stackoverflow.com/questions/56086286/terraform-tfvars-vs-variables-tf-difference):
-
-The difference between these files is **declaration vs. assignment**.
-
-- `variables.tf` is where variables are **declared**.
-- `terraform.tfvars` is where variable **values are assigned**.
-
-Example declaration:
-
-```hcl
-variable "example" {}
-```
-
-This tells Terraform that the module accepts an input variable called `example`. You can then reference it anywhere using `var.example`.
-
-There are several ways to assign values to variables:
-
-- Use `-var` on the `terraform plan` or `terraform apply` command
-- Use `-var-file` to load a `.tfvars` file with multiple variable values
-- Create a `terraform.tfvars` or `.auto.tfvars` file, which Terraform loads automatically
-- Assign values directly when calling a child module
-
-You can also set default values in the variable declaration to make them optional:
-
-```hcl
-variable "example" {
-  default = "default_value"
-}
-```
-
-Note that new variables **cannot** be created in `terraform.tfvars`.
-All variables must first be **declared** in `variables.tf`.
-
-In smaller setups, you can declare and assign values in the same file for simplicity.
-
-**References**
-
-- [terraform.tfvars vs variables.tf difference](https://stackoverflow.com/questions/56086286/terraform-tfvars-vs-variables-tf-difference)
-- [What is the difference between variables.tf and terraform.tfvars?](https://stackoverflow.com/questions/55959202/what-is-the-difference-between-variables-tf-and-terraform-tfvars)
-
 
 ## Terraform State
 
@@ -261,6 +163,7 @@ Here is a summarized cheatsheet.
 
 The typical workflow when using Terraform involves the following commands:
 
+- `terraform init`
 - `terraform validate`
 - `terraform plan `
 - `terraform apply`
