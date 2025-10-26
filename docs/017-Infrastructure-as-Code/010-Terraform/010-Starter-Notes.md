@@ -31,7 +31,7 @@ Terraform can be used to:
 
 To use Terraform, it needs to be installed on your machine.
 
-See: [Install Terraform.]()
+See: [Install Terraform.](/docs/001-Personal-Notes/050-Project-Pre-requisites/015-Terraform.md)
 
 ## Workspaces
 
