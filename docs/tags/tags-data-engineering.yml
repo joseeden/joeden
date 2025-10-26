@@ -62,6 +62,10 @@ Data Storytelling:
   label: 'Data Storytelling'
   permalink: '/Data Storytelling'
   description: 'Docs related to Data Storytelling'    
+Data Integration:
+  label: 'Data Integration'
+  permalink: '/Data Integration'
+  description: 'Docs related to Data Integration' 
 Snowflake:
   label: 'Snowflake'
   permalink: '/Snowflake'
@@ -74,3 +78,8 @@ Azure Data Factory:
   label: 'Azure Data Factory'
   permalink: '/Azure Data Factory'
   description: 'Docs related to Azure Data Factory'      
+ETL:
+  label: 'ETL'
+  permalink: '/ETL'
+  description: 'Docs related to ETL' 
+
