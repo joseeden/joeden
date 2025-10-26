@@ -35,4 +35,28 @@ Real-time concepts are closely linked to streaming data.
   - Streaming handles data as it arrives
   - Processing speed determines how “real-time” the system feels
 
+## Why Scale
+
+Scaling is about improving system performance to meet different needs.
+
+- Process the same data faster
+- Handle more data in the same time
+- Deliver data with lower latency
+- Meet guaranteed timeframes (SLAs)
+
+## Vertical Scaling
+
+Vertical scaling improves the performance of a single system by upgrading its components.
+
+- Faster CPUs or GPUs
+- More or faster RAM
+- Improved networking or storage
+
+Vertical scaling also affects how fast streaming pipelines can process data.
+
+- Streaming processes continue until data is fully handled
+- SLAs or guarantees require fast processing to meet timeframes
+- Total capacity is limited by system performance
+
+Faster hardware helps pipelines process data quicker, but component choices should be guided by benchmarking and workload analysis.
 
