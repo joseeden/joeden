@@ -104,19 +104,19 @@ Although queues are useful, they can face a few challenges.
 
 For example, if one item in a queue fails to process, it can delay the rest, like when someone at the counter has payment issues, slowing down everyone else.
 
-## Queues and Streams
+## Streaming
 
-Queues and Streams is about processing data as it flows, without waiting for everything to arrive first.
+Streaming is about processing data as it flows, without waiting for everything to arrive first.
 
 - Data is processed continuously
 - No fixed end point for the stream
 - Can feed into other pipelines like batch or queue
 - Application decides what to do with incoming data
 
-Queues and Streams lets systems handle information in real time. It focuses on the flow of data rather than a fixed set of tasks.
+Streams let systems handle information in real time. It focuses on the flow of data rather than a fixed set of tasks.
 
 
-## Queues and Streams examples
+## Streaming examples
 
 ### Logs
 
@@ -137,7 +137,7 @@ Logs show how data can be streamed continuously and processed in real time. Thei
 
 ### System Event Logs
 
-System event logs are examples of Queues and Streams inside a single computer.
+System event logs continuously capture, process, and store events as they happen
 
 - Login attempts, USB insertions, and other actions
 - Available on Windows, Mac, and Linux
@@ -149,7 +149,6 @@ Components of event logging:
 - **Logic** decides what to do, like adding timestamps
 - **Writer** stores the information for later review
 
-System event logs continuously capture, process, and store events as they happen, showing the core idea of Queues and Streams data.
 
 
 ## Choosing the Right Approach
