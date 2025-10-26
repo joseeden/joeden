@@ -148,3 +148,43 @@ The same message may appear multiple times due to system issues.
 - Example: repeated sensor readings are often fine
 
 Repeat messages are manageable and sometimes harmless depending on the data type.
+
+## Streaming Tools
+
+### Celery
+
+Celery is a distributed task queue designed to handle jobs in order. It works on single or multiple systems.
+
+- Handles asynchronous tasks
+- Scales vertically and horizontally
+
+It is useful for real-time task processing and flexible queue management. Sample uses-cases include:
+
+- Sending emails 
+- Resizing images 
+- Order processing
+
+
+### Apache Kafka
+
+Kafka is a distributed event streaming system for sending events between producers and consumers.
+
+- Producers create events, grouped by topic
+- Consumers handle events differently (logging, transforming, relaying)
+- Stores events based on retention and storage limits
+
+Kafka works well for scalable event transport but requires careful setup. It also supports advanced scenarios in complex systems.
+
+- Single source of truth for multiple systems
+- Change Data Capture (CDC) for databases
+- Data backups and migrations
+
+### Spark Streaming
+
+Spark Streaming processes data as it arrives, building on Apache Spark.
+
+- Supports Python, Scala, SQL, and others
+- Handles large-scale data and machine learning tasks
+- Transitions batch processing to stream processing
+
+Spark Streaming focuses on processing and transforming streaming data rather than storing it.
