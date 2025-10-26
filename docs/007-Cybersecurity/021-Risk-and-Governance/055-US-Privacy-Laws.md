@@ -59,7 +59,7 @@ A **Electronic Communications Privacy Act of 1986** strengthens privacy protecti
 - Expanded **Federal Wiretap Act**, which covered communications via physical wire 
 - Makes it illegal to monitor mobile phone conversations
 
-For more information, please see [ECPA of 1986.](/docs/007-Cybersecurity/021-Risk-and-Governance/051-Laws-and-Regulations.md#electronic-communications-privacy-act-of-1986)
+For more information, please see [ECPA of 1986.](/docs/007-Cybersecurity/021-Risk-and-Governance/051-Laws-and-Regulations.md#ecpa-of-1986)
 
 
 ## CALEA of 1994

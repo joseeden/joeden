@@ -223,7 +223,7 @@ namespace: test-lab-dev
 
 You can define the transformer either as in-line configuration, through a separate config file, or through using convenience fields.
 
-For more information, please see [Ways to Define Transformers](/docs/015-Kubernetes-Tools/039-Kustomize/016-Transformers.md#ways-to-define-transformers)
+For more information, please see [Ways to Define Transformers](/docs/015-Kubernetes-Tools/039-Kustomize/016-Transformers.md#defining-transformersgenerators)
 
 :::
 

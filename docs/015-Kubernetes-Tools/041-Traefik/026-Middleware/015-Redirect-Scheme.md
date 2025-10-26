@@ -216,7 +216,7 @@ This token is used by Traefik to prove domain ownership via the DNS challenge.
 
 :::info 
 
-To generate the token in DigitalOcean please see [Generate an API Token.](/docs/001-Personal-Notes/020-Homelab/040-DigitalOcean.md#generate-api-token)
+To generate the token in DigitalOcean please see [Generate an API Token.](/docs/001-Personal-Notes/020-Homelab/040-DigitalOcean.md#generate-personal-access-token)
 
 :::
 
