@@ -1,31 +1,6 @@
 
 # Lab 001: Dev Environment with Terraform and AWS
 
-- [Lab 001: Dev Environment with Terraform and AWS](#lab-001-dev-environment-with-terraform-and-aws)
-  - [Introduction](#introduction)
-  - [Pre-requisites](#pre-requisites)
-  - [Configure AWS Provider](#configure-aws-provider)
-  - [Provision a VPC](#provision-a-vpc)
-  - [Terraform State](#terraform-state)
-  - [Terraform Destroy](#terraform-destroy)
-  - [Deploy a Public Subnet](#deploy-a-public-subnet)
-  - [Deploy an Internet Gateway](#deploy-an-internet-gateway)
-  - [Terraform Format](#terraform-format)
-  - [Create the Route table](#create-the-route-table)
-  - [Create the Route Table Association](#create-the-route-table-association)
-  - [Create the Security Group](#create-the-security-group)
-  - [Get the AMI Datasource](#get-the-ami-datasource)
-  - [Create a Keypair](#create-a-keypair)
-  - [Deploy the EC2 Instance](#deploy-the-ec2-instance)
-  - [Bootstrap EC2 with Userdata](#bootstrap-ec2-with-userdata)
-  - [Create SSH Config Scripts - Templatefile](#create-ssh-config-scripts---templatefile)
-  - [Configure VSCode with Provisioner](#configure-vscode-with-provisioner)
-  - [Variables and their precedence](#variables-and-their-precedence)
-  - [Outputs](#outputs)
-  - [Cleanup](#cleanup)
-  - [Resources](#resources)
-
-----------------------------------------------
 
 ## Introduction 
 
@@ -85,8 +60,9 @@ provider "aws" {
 ```
 
 Initialize.
+
 ```bash
-$ terraform  init
+terraform  init
 ```
 
 ## Provision a VPC
@@ -113,15 +89,14 @@ resource "aws_vpc" "tf-vpc" {
 
 To get a "preview" without actually provisioning the resources,
 ```bash
-$ terraform plan
+terraform plan
 ```
 
 This should return a list of resources that would be created if the template is ran. Below is an example output.
 
-<details><summary> output for terraform plan</summary>
 
 ```bash
-$ terraform plan
+terraform plan
 
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the
 following symbols:
@@ -159,19 +134,17 @@ Terraform will perform the following actions:
 Plan: 1 to add, 0 to change, 0 to destroy.
 ```
 
-</details>
-</br>
 
 To actually provision the resources,
 ```bash
-$ terraform apply 
+terraform apply 
 ```
 
 Notice that this will do another **terraform plan**, after which you'll be asked if you want to perform the actions. 
 
 To run the command above without the interactive prompt,
 ```bash
-$ terraform apply -auto-approve
+terraform apply -auto-approve
 ```
 
 When the command is finished running, it should return the following message:
@@ -229,7 +202,7 @@ From the Hashicorp documentation page on [terraform state](https://www.terraform
 To access the state through the CLI,
 
 ```bash
-$ terraform state list 
+terraform state list 
 
 aws_vpc.tf-vpc
 ```
@@ -237,13 +210,13 @@ aws_vpc.tf-vpc
 To see details of the VPC through the CLI, run the command below. This will return the same information that you see on the state file.
 
 ```bash
-$ terraform state show aws_vpc.tf-vpc
+terraform state show aws_vpc.tf-vpc
 ```
 
 To see the entire state,
 
 ```bash
-$ terraform show  
+terraform show  
 ```
 
 ----------------------------------------------
@@ -258,12 +231,12 @@ From Hashicorp documentation page on [terraform destroy](https://www.terraform.i
 
 To see a "preview" of the resources that will be destroyed before actually deleting them,
 ```bash
-$ terraform plan -destroy 
+terraform plan -destroy 
 ```
 
 To actually delete the resource without being prompted to confirm,
 ```bash
-$ terraform destroy -auto-approve
+terraform destroy -auto-approve
 ```
 
 ----------------------------------------------
@@ -278,7 +251,6 @@ The documentation page is straightforward and we could simply the basic usage ex
 
 Back on the main file, we'll add the resource **aws_subnet** and name it **tf-public-subnet-1**
 
-<details><summary> main.tf</summary>
 
 ```bash
 resource "aws_vpc" "tf-vpc" {
@@ -302,25 +274,23 @@ resource "aws_subnet" "tf-public-subnet-1" {
   }
 }
 ```
-</details>
-</br>
 
 Review.
 
 ```bash
-$ terraform plan 
+terraform plan 
 ```
 
 Once you've reviewed, apply.
 
 ```bash
-$ terraform apply -auto-approve 
+terraform apply -auto-approve 
 ```
 
 Note that you cannot view the newly created subnet in the VSCode Explorer tab but you can verify them through the CLI.
 
 ```bash
-$ terraform state list
+terraform state list
 
 aws_subnet.tf-public-subnet-1
 aws_vpc.tf-vpc
@@ -339,7 +309,6 @@ To allow internet access to our VPC, we would need to provision an internet gate
 
 Back in our main file, we'll add another resource **aws_internet_gateway** and name it **tf-igw-1**.
 
-<details><summary> main.tf </summary>
 
 ```bash
 
@@ -373,19 +342,17 @@ resource "aws_internet_gateway" "tf-igw-1" {
 } 
 ```
 
-</details>
-</br>
 
 Review.
 
 ```bash
-$ terraform plan 
+terraform plan 
 ```
 
 Once you've reviewed, apply.
 
 ```bash
-$ terraform apply -auto-approve 
+terraform apply -auto-approve 
 ```
 
 Verify through the VSCode Explorer tab on the left panel.
@@ -399,7 +366,7 @@ Resources --> Show Resources --> AWS::EC2::InternetGateway --> OK
 Verify through the CLI.
 
 ```bash
-$ terraform state list
+terraform state list
 
 aws_internet_gateway.tf-igw-1
 aws_subnet.tf-public-subnet-1
@@ -413,7 +380,7 @@ aws_vpc.tf-vpc
 This is a neat feature which will correct any formatting errors that you may have on your template files.
 
 ```bash
-$ terraform fmt 
+terraform fmt 
 ```
 
 ----------------------------------------------
@@ -440,7 +407,6 @@ On both page, you'll see the following,
 Back in our main file, we'll be using both resources. To allow our public subnet to access internet, we should specify the destination as **0.0.0.0/0**
 
 
-<details><summary> main.tf</summary>
 
 ```bash
 resource "aws_vpc" "tf-vpc" {
@@ -487,19 +453,17 @@ resource "aws_route" "tf-rt-route" {
   gateway_id             = aws_internet_gateway.tf-igw-1.id
 }
 ```
-</details>
-</br>
 
 Review.
 
 ```bash
-$ terraform plan 
+terraform plan 
 ```
 
 Once you've reviewed, apply.
 
 ```bash
-$ terraform apply -auto-approve 
+terraform apply -auto-approve 
 ```
 
 Verify through the VSCode Explorer tab on the left panel.
@@ -513,7 +477,7 @@ Resources --> Show Resources --> AWS::EC2::Route --> OK
 Verify through the CLI.
 
 ```bash
-$ terraform state list
+terraform state list
 ```
 
 ----------------------------------------------
@@ -526,7 +490,6 @@ From the Hashicorp documentation on [route table association](https://registry.t
 
 Back in our main file, add another resource called **aws_route_table_association** and name it **tf-rt-assoc-1**
 
-<details><summary> main.tf </summary>
  
 ```bash
  
@@ -580,19 +543,17 @@ resource "aws_route_table_association" "tf-rt-assoc-1" {
 }
 ```
  
-</details>
-</br>
 
 Review.
 
 ```bash
-$ terraform plan 
+terraform plan 
 ```
 
 Once you've reviewed, apply.
 
 ```bash
-$ terraform apply -auto-approve 
+terraform apply -auto-approve 
 ```
 
 Similar with subnet, we also can't view the newly created resource through the VSCode Explorer tab on the left panel.
@@ -600,7 +561,7 @@ Similar with subnet, we also can't view the newly created resource through the V
 Instead, we could verify through the CLI.
 
 ```bash
-$ terraform state list
+terraform state list
 
 aws_internet_gateway.tf-igw-1
 aws_route.tf-rt-route
@@ -629,7 +590,6 @@ From the Hashicorp documentation on [aws_security_group_rule](https://registry.t
 
 For our setup, we can simple use aws_security_group. Make sure to get your IP through [whatsmyip](https://whatismyipaddress.com/) and set it fro **cidr_blocks** under **ingress**.
 
-<details><summary> main.tf </summary>
  
 ```bash
 
@@ -706,26 +666,24 @@ resource "aws_security_group" "tf-sg-1" {
 }
 ```
  
-</details>
-</br>
 
 
 Review.
 
 ```bash
-$ terraform plan 
+terraform plan 
 ```
 
 Once you've reviewed, apply.
 
 ```bash
-$ terraform apply -auto-approve 
+terraform apply -auto-approve 
 ```
 
 Verify through the CLI.
 
 ```bash
-$ terraform state list
+terraform state list
 
 aws_internet_gateway.tf-igw-1
 aws_route.tf-rt-route
@@ -766,7 +724,7 @@ Paste the AMI ID on the search bar and from the result, copy the owner ID and AM
 Back on our lab directory, create another file called **datasource.tf**. On the values field under filter, put in the AMI name. To ensure that it will pull the most recent one, replace the 8-digits at the end of the AMI name with '*'
 
 ```bash
-$ vim datasources.tf
+vim datasources.tf
 
 data "aws_ami" "tf-ami" {
   most_recent = true
@@ -782,13 +740,13 @@ data "aws_ami" "tf-ami" {
 Review.
 
 ```bash
-$ terraform plan 
+terraform plan 
 ```
 
 Once you've reviewed, apply.
 
 ```bash
-$ terraform apply -auto-approve 
+terraform apply -auto-approve 
 ```
 
 ----------------------------------------------
@@ -806,7 +764,7 @@ From the Hashicorp documentation on [aws_keypair](https://registry.terraform.io/
 To start with, we'll need a keypair locally.
 
 ```bash
-$ ssh-keygen -t ed25519
+ssh-keygen -t ed25519
 
 Generating public/private ed25519 key pair.
 Enter file in which to save the key (/home/joseeden/.ssh/id_ed25519): /home/joseeden/.ssh/tf-keypair  
@@ -815,7 +773,6 @@ Enter file in which to save the key (/home/joseeden/.ssh/id_ed25519): /home/jose
 Back in our main.tf file, we'll add the resource **aws_keypair** and name it **tf-keypair** at the bottom. 
 
 
-<details><summary> main.tf </summary>
  
 ```bash
 
@@ -897,28 +854,26 @@ resource "aws_key_pair" "tf-keypair" {
 }
 ```
  
-</details>
-</br>
 
 Notice that instead of specifying the entire key in the **public_key** field as shown in the documentation, we use the [file](https://www.terraform.io/language/functions/file) function to pass the path of the key instead.
 
 Review.
 
 ```bash
-$ terraform plan 
+terraform plan 
 ```
 
 Once you've reviewed, apply.
 
 ```bash
-$ terraform apply -auto-approve
+terraform apply -auto-approve
 ```
 
 Keypairs aren't a visible resource in the VSCode AWS extension so we'll just verify through CLI and the AWS Console.
 
 
 ```bash
-$ terraform state list
+terraform state list
 
 data.aws_ami.tf-ami
 aws_internet_gateway.tf-igw-1
@@ -943,7 +898,6 @@ From the Hashicorp documentation on [aws_instance](https://registry.terraform.io
 
 Back in our main.tf file, we'll add a resource called **aws_instance** and name it **tf-node-1**
 
-<details><summary> main.tf </summary>
  
 ```bash
 resource "aws_vpc" "tf-vpc" {
@@ -1040,14 +994,12 @@ resource "aws_instance" "tf-node-1" {
 }
 ```
  
-</details>
-</br>
 
 
 Review.
 
 ```bash
-$ terraform plan 
+terraform plan 
 ```
 
 For this step, we'll just review. We'll pass the userdata next and then we apply.
@@ -1059,7 +1011,7 @@ For this step, we'll just review. We'll pass the userdata next and then we apply
 We'll install the Docker engine on the EC2 instance using the userdata. To start with, let's first create the userdata script.
 
 ```bash
-$ cat > userdata.tpl
+cat > userdata.tpl
 
 #!/bin/bash
 sudo apt-get update -y &&
@@ -1078,7 +1030,6 @@ sudo usermod -aG docker ubuntu
 
 Back on our main.tf, add the **user_data** under the **aws_instance** resource.
 
-<details><summary> main.tf </summary>
  
 ```bash
 resource "aws_vpc" "tf-vpc" {
@@ -1176,20 +1127,18 @@ resource "aws_instance" "tf-node-1" {
 }
 ```
  
-</details>
-</br>
 
 
 Review.
 
 ```bash
-$ terraform plan 
+terraform plan 
 ```
 
 Once you've reviewed, apply.
 
 ```bash
-$ terraform apply -auto-approve 
+terraform apply -auto-approve 
 ```
 
 Provisioning the EC2 instance and running the userdata script will take a few minutes. Go to the AWS Console and verify that the EC2 instance is in "running" status.
@@ -1199,7 +1148,7 @@ Provisioning the EC2 instance and running the userdata script will take a few mi
 Verify through the CLI.
 
 ```bash
-$ terraform state list
+terraform state list
 
 data.aws_ami.tf-ami
 aws_instance.tf-node-1
@@ -1216,7 +1165,7 @@ aws_vpc.tf-vpc
 Next step is to SSH to the newly created instance. You can get the IP from the AWS Console or you can also get it from the CLI.
 
 ```bash
-$ terraform state list
+terraform state list
 
 data.aws_ami.tf-ami
 aws_instance.tf-node-1
@@ -1229,7 +1178,7 @@ aws_security_group.tf-sg-1
 aws_subnet.tf-public-subnet-1
 aws_vpc.tf-vpc
 
-$ terraform state aws_instance.tf-node-1
+terraform state aws_instance.tf-node-1
 
 public_ip                            = "18.141.234.50"
 ```
@@ -1237,9 +1186,9 @@ public_ip                            = "18.141.234.50"
 Connect to the instance.
 
 ```bash
-$ ssh -i ~/.ssh/tf-keypair ubuntu@18.141.234.50
+ssh -i ~/.ssh/tf-keypair ubuntu@18.141.234.50
 
-ubuntu@ip-10-123-1-62:~$ docker -v
+ubuntu@ip-10-123-1-62:~docker -v
 Docker version 20.10.16, build aa7e414
 ```
 
@@ -1297,7 +1246,6 @@ For this part of lab, it's okay to use provisioner since we're only modifying ou
 Back in our main.tf file, we'll add a **provisioner** under the **aws_instance** resource.
 
 
-<details><summary> main.tf </summary>
  
 ```bash
 
@@ -1406,8 +1354,6 @@ resource "aws_instance" "tf-node-1" {
 }
 ```
  
-</details>
-</br>
 
 Notice that we used a [templatefile](https://www.terraform.io/language/functions/templatefile) function to read the file from a given path. After the provisioner reads the config file, it passes the values onto the file. These values are the:
 - IP of the instance
@@ -1417,7 +1363,7 @@ Notice that we used a [templatefile](https://www.terraform.io/language/functions
 Review.
 
 ```bash
-$ terraform plan 
+terraform plan 
 ```
 
 We can see from the output of the **plan** command that it didn't introduce any change to the state. This is because Terraform didn't detect anything different.
@@ -1429,7 +1375,7 @@ No changes. Your infrastructure matches the configuration.
 To update the EC2 instance, we'll use **-replace**.
 
 ```bash
-$ terraform state list
+terraform state list
 
 data.aws_ami.tf-ami
 aws_instance.tf-node-1
@@ -1443,13 +1389,13 @@ aws_subnet.tf-public-subnet-1
 aws_vpc.tf-vpc
 ```
 ```bash
-$ terraform apply -replace aws_instance.tf-node-1 -auto-approve
+terraform apply -replace aws_instance.tf-node-1 -auto-approve
 ```
 
 Once it's finish running, check if the **config** file is created in your directory.
 
 ```bash
-$ cat /mnt/c/Users/Eden.Jose/.ssh/config
+cat /mnt/c/Users/Eden.Jose/.ssh/config
 
 Host 13.229.78.225
   HostName 13.229.78.225
@@ -1503,7 +1449,7 @@ From the Hashicorp documentation on [Variable Definition Precedence:](https://ww
 To check the value of a variable that we currently have, we can use **console** and then type the variable name. As an example, let's create a **variables.tf** file.
 
 ```bash
-$ cat > variables.tf
+cat > variables.tf
 
 variables "host_os" {
     type = string
@@ -1513,7 +1459,7 @@ variables "host_os" {
 Let's now try to check the value of the variable through the CLI by using **console**. Notice that it will return nothing because we haven't specified a value to the variable yet.
 
 ```bash
-$ terraform console
+terraform console
 
 > var.host_os
 (known after apply)
@@ -1522,7 +1468,7 @@ $ terraform console
 Let's specify a value to the variable in **variables.tf**
 
 ```bash
-$ cat > variables.tf
+cat > variables.tf
 
 variable "host_os" {
   type = string
@@ -1532,7 +1478,7 @@ variable "host_os" {
 Using **console** again to check the value for the variable,
 
 ```bash
-$ terraform console
+terraform console
 
 > var.host_os
 "linux" 
@@ -1541,7 +1487,7 @@ $ terraform console
 Let's create a new file called **terraform.tfvars**.
 
 ```bash
-$ cat > terraform.tfvars
+cat > terraform.tfvars
 
 host_os = "windows"
 ```
@@ -1549,7 +1495,7 @@ host_os = "windows"
 Using **console** again to check the value for the same variable,
 
 ```bash
-$ terraform console
+terraform console
 
 > var.host_os
 "windows" 
@@ -1562,7 +1508,7 @@ Here we can see that terraform gets the value from the **terraform.tfvars** inst
 Let's create **another.tfvars**
 
 ```bash
-$ cat > another.tfvars
+cat > another.tfvars
 
 host_os = "debian"
 ```
@@ -1570,7 +1516,7 @@ host_os = "debian"
 To use this second tfvars file, we have to specify it as a parameter.
 
 ```bash
-$ terraform console -var-file="another.tfvars"
+terraform console -var-file="another.tfvars"
 
 > var.host_os
 "debian"
@@ -1579,7 +1525,7 @@ $ terraform console -var-file="another.tfvars"
 Finally, we could override these files by specifying the variable through the commandline.
 
 ```bash
-$ terraform console -var="host_os=unix"
+terraform console -var="host_os=unix"
 
 > var.host_os
 "unix"
@@ -1596,7 +1542,7 @@ From the Hashicorp documentation on [outputs](https://www.terraform.io/language/
 Let's create **outputs.tf** and put the value for the instance IP.
 
 ```bash
-$ cat > outputs.tf
+cat > outputs.tf
 
 output "tf-node-1-ip" {
   value = aws_instance.tf-node-1.public_ip
@@ -1606,13 +1552,13 @@ output "tf-node-1-ip" {
 To apply the change without destroying and recreating the instance,
 
 ```bash
-$ terraform apply -refresh-only
+terraform apply -refresh-only
 ```
 
 We can now see the output values "collected".
 
 ```bash
-$ terraform output
+terraform output
 
 tf-node-1-ip = "13.229.78.225"
 ```
@@ -1623,7 +1569,7 @@ tf-node-1-ip = "13.229.78.225"
 To delete all the resources, just run the **destroy** command.
 
 ```bash
-$ terraform destroy -auto-approve 
+terraform destroy -auto-approve 
 ```
 ----------------------------------------------
 

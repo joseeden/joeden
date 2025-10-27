@@ -27,7 +27,7 @@ This root directory may also contain:
 
 ## Core Files 
 
-### Main file (`main.tf`)
+### `main.tf`
 
 This file contains the core configurations:
 
@@ -48,7 +48,7 @@ resource "aws_instance" "example" {
 }
 ```
 
-### Variables file (`variables.tf`)
+### `variables.tf`
 
 This file contains all possible variables referenced in the `main.tf` file.
 
@@ -66,7 +66,7 @@ variable "instance_type" {
 }
 ```
 
-### Outputs file (`outputs.tf `)
+### `outputs.tf `
 
 This is used to explicitly export values after you ran `terraform apply`.
 
