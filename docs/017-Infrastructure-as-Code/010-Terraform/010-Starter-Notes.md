@@ -118,33 +118,6 @@ Terraform has been successfully initialized!
 
 :::
 
-## Terraform State
-
-Terraform is a **stateful** tool that tracks all infrastructure created beyond Day 0.
-
-- Manages the lifecycle of infrastructure
-- Detects and corrects configuration drift
-- Keeps an updated record of current resource states
-- Can be refreshed anytime using `terraform refresh`
-
-This state tracking ensures your deployed infrastructure always matches your configuration files.
-
-### Remote State
-
-By default, Terraform stores state files locally, but they can also be stored remotely for better collaboration and security.
-
-- Can be stored in an S3 bucket or similar backend
-- Enables safe team collaboration
-- Provides stronger security controls
-- Encrypts data at rest and in transit with TLS
-
-Using remote state makes your Terraform setup more reliable and easier to manage in shared environments.
-
-### Locking
-
-Terraform locks the state file during write operations to prevent conflicts or corruption when multiple users or systems run Terraform at the same time.
-
-This locking mechanism ensures state integrity and avoids accidental overwrites during concurrent updates.
 
 ## Terraform CLI
 
