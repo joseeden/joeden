@@ -101,6 +101,13 @@ linux_386
 linux_amd64
 ```
 
+## Authentication
+
+Before writing Terraform code, you need to make sure authentication with API keys is set up. Terraform reads credentials in the order specified below:
+
+1. API keys can be hardcoded in `main.tf` (not recommended)
+2. Environment variables to store keys securely
+3. `shared_credentials_file` for local credentials
 
 ## Terraform CLI
 
