@@ -76,7 +76,7 @@ This root directory may also contain:
 
 ## Providers 
 
-Terraform uses **providers** to interact with various cloud platforms and services. Each provider is responsible for understanding API interactions and exposing resources. Some popular providers include:
+Terraform uses **providers** to interact with various cloud platforms and services. Some popular providers include:
 
 - AWS
 - Azure
@@ -85,38 +85,21 @@ Terraform uses **providers** to interact with various cloud platforms and servic
 
 For more information, please see [Providers](/docs/017-Infrastructure-as-Code/010-Terraform/011-Providers.md)
 
+## Using Terraform with Git
 
-## `terraform init` 
+Terraform configurations are often stored in Git for version control. Some files should **never** be committed because they contain local state or downloaded dependencies.
 
-Terraform needs to prepare your environment before it can create resources. This is done with `terraform init`.
+These files can be added to your `.gitignore` to prevent accidental commits. Sample `.gitignore`:
 
-- Reads all `.tf` files in your working directory
-- Downloads required providers automatically
-- Detects all modules and writes a list to `.terraform/modules/modules.json`
-- Looks for `terraform` blocks with `required_providers` for third-party providers
-- Does not verify that your configuration will successfully create resources
-
-To initialize:
-
-```bash
-terraform init
+```bash title="gitignore"
+.terraform*
+.terraform.tfstate*
+*.tfstate.*
+*.tfstate
+.terraform.lock.hcl
+linux_386
+linux_amd64
 ```
-
-Expected output:
-
-```
-Initializing the backend...
-Initializing provider plugins...
-- Finding latest version of hashicorp/aws...
-- Installing hashicorp/aws v4.30.0...
-Terraform has been successfully initialized!
-```
-
-:::info 
-
-`terraform init` happens **after*- you write your configuration but **before*- running `terraform plan` or `terraform apply`. 
-
-:::
 
 
 ## Terraform CLI

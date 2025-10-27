@@ -14,6 +14,40 @@ last_update:
 
 Terraform provides commands to check, apply, and remove infrastructure safely.
 
+## Initialize
+
+Terraform needs to prepare your environment before it can create resources. This is done with `terraform init`.
+
+- Reads all `.tf` files in your working directory
+- Downloads required providers automatically
+- Detects all modules and writes a list to `.terraform/modules/modules.json`
+- Looks for `terraform` blocks with `required_providers` for third-party providers
+- Does not verify that your configuration will successfully create resources
+
+To initialize:
+
+```bash
+terraform init
+```
+
+Expected output:
+
+```
+Initializing the backend...
+Initializing provider plugins...
+- Finding latest version of hashicorp/aws...
+- Installing hashicorp/aws v4.30.0...
+Terraform has been successfully initialized!
+```
+
+:::info 
+
+`terraform init` happens **after*- you write your configuration but **before*- running `terraform plan` or `terraform apply`. 
+
+:::
+
+
+
 ## Validate 
 
 Checks the configuration files for syntax errors and internal consistency.
