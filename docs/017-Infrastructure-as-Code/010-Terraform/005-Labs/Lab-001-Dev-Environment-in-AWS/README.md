@@ -27,11 +27,11 @@ Local environment used for this lab.
 
 ## Pre-requisites 
 
-- [Setup Keys and Permissions](../README.md#pre-requisites)
-- [Setup your Local Environment and Install Extensions](../README.md#pre-requisites) 
-- [Configure the Credentials File](../README.md#pre-requisites) 
-- [Install Terraform](../README.md#pre-requisites) 
-              
+- Setup Keys and Permissions
+- Setup your Local Environment and Install Extensions
+- Configure the Credentials File
+- Install Terraform
+               
 
 ## Configure AWS Provider
 
