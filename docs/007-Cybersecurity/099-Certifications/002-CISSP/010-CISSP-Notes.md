@@ -7,31 +7,112 @@ sidebar_position: 2
 #   date: 1/30/2024
 ---
 
-## Study Resources 
 
-Books: 
+## Practice Tests
 
-- CISSP Official Study Guide by Mike Chapple et al- 9th edition or 7th edition
-- CISSP All-in-One Exam Guide by Shon Harris et al
-- 11th hour - Read when nearest to exam day
-- How to think like a manager by Luke Ahmed - 60 pages, sign up for Kindle Unlimited trial to read this book for free
+Recommended:
 
-Cram/Refresher: 
+- **Official Practice Tests (David Seidl & Mike Chapple)**
 
-- [Memory Palace CISSP Notes - Fifth Edition!](https://www.studynotesandtheory.com/single-post/memory-palace-cissp-notes)
+  - Most accurate reflection of the real exam
+  - Use to measure readiness (target 90%+ consistently)
 
-Practice tests:
+- **Official Sybex Online Tests (2024 edition)**
 
-- Pocketprep - might be too easy
-- Sybex Official Practice Questions, 3rd edition - closest format, try up to 2000 questions
-- ThorTeaches 
+  - Knowledge-based format matching the study guide
+  - Good for reinforcing theory and basic recall
 
-    | Practice Test                                                                                 | Description                                   | Price         |
-    |-----------------------------------------------------------------------------------------------|-----------------------------------------------|---------------|
-    | [ALL HARD CISSP Practice questions](https://cart.thorteaches.com/cissp-questions-hard/)       | 12months access  + Boson Hard CISSP question  | 144.95 USD    |
-    | [ALL CISSP Practice questions (EASY/MID/HARD)](https://cart.thorteaches.com/cissp-questions/) | 12months access  + Boson CISSP questions      | 249.95 USD    |
+- **LearnZapp App**
 
-## Practice Questions 
+  - Contains same first four tests as official book
+  - Later tests differ slightly and help reveal weak areas
+
+- **Quantum Exams (QE)**
+
+  - Realistic and closest to actual exam feel
+  - Practice with 10-question sets daily
+  - Review every correct and incorrect answer for reasoning
+
+Optional: 
+
+- **Boson / ThorTeaches / PocketPrep**
+
+  - Optional but helpful alternatives
+  - ThorTeaches offers tiered difficulty (easy, medium, hard)
+  - PocketPrep is good for on-the-go review
+
+
+## Study Books and Guides
+
+Recommended:
+
+- **Destination Certification Book**
+
+  - Straightforward and concise primary reference
+  - Excellent coverage of essential domains
+
+- **Destination CISSP: A Concise Guide (Kindle)**
+
+  - Ideal for gap-filling and quick topic lookups
+  - Lightweight and easy to digest
+
+- **Official Study Guide (OSG)**
+
+  - Comprehensive but very detailed
+  - Avoid as first read to prevent information overload
+
+- **11th Hour CISSP (Joshua Feldman)**
+
+  - Perfect for last-week review and recap
+  - Summarizes key concepts without extra fluff
+
+Optional:
+
+- **Think Like a Manager (Luke Ahmed)**
+
+  - Builds the mindset CISSP expects in scenario questions
+  - Short, easy to read, and highly practical
+
+- **Memory Palace Notes**
+
+  - Compact, visual summary of critical concepts
+  - Great for fast final revision
+
+- **All-in-One (Shon Harris)**
+
+  - Optional unless you want detailed technical explanations
+  - Deep reference material
+
+
+## Video and Cram Resources
+
+- **Pete Zerger**
+
+  - “CISSP Last Mile” and “Exam Cram” are highly praised
+  - Strong conceptual explanations and exam strategies
+
+- **Prabh Nair**
+
+  - Good for difficult topics and advanced concepts
+  - Helpful supplement to Zerger’s material
+
+- **Kelly Handerhan**
+
+  - “It’s All About Risk” video is a must-watch
+  - Focuses on how CISSP expects you to think, not just memorize
+
+- **Andrew Ramdayal – 50 Hard CISSP Questions**
+
+  - Great for practicing managerial decision-making logic
+  - Sharpens exam interpretation skills
+
+- **Tech Institute of America – 50 Hard Questions**
+
+  - Best used after scoring 85%+ on practice tests
+  - Tests depth of reasoning and knowledge application
+
+
+## Exam Questions 
 
 Notes:
 
