@@ -39,6 +39,11 @@ By definition, anything that a subject attempts to access is referred to as an o
 - Access is often recorded in rule bases or access control lists.
 - May be classified based on access rules.
 
+An object can have the following parts:
+
+- **Private portion** - How it actually works and performs requested operations
+- **Shared portion** - The API that enables an object to interact with other components
+
 ### Rules 
 
 Access rules guide whether a subject can access an object based on their validated identity. For instance:

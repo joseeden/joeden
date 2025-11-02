@@ -111,54 +111,6 @@ One disadvantage of iris recognition technology is that scanners can be fooled b
 
 
 
-### Perimeter Intrusion Detection System
-
-**Perimeter Intrusion Detection and Assessment System (PIDAS)** detects anyone trying to cut, climb, or tamper with a fence.
-
-- Sensors are installed on the fence and at the base
-- Detects vibration or movement on the fence.
-- Passive cable sensors trigger alarms
-- Sends alerts to security or monitoring system
-
-
-### Electromechanical Detection System
-
-Electromechanical systems reliably detect physical tampering using simple electrical and mechanical components.
-
-- Contact switches detect forced openings on doors and gates
-- Strain gauges sense pulling or impact on panels
-- Control units map events to alarms
-- Can route alerts to monitoring systems
-
-
-### Passive Infrared (PIR) System
-
-PIR sensors detects human presence by sensing body heat and movement.
-
-- Monitors infrared energy in a defined area
-- Detects warm bodies moving through
-- Can be used indoors or outdoors
-- Integrates with alarms or lighting
-
-
-### Acoustical Detection System
-
-Acoustical systems detects sounds of tampering like cutting, climbing, or breaking.
-
-- Uses microphones or acoustic sensors near perimeters
-- Filters background noise to identify suspicious sounds
-- Can trigger cameras or alarms
-
-
-### Photometric System
-
-Photometric detection uses light or image analysis to detect changes.
-
-- Cameras or light sensors monitor for unusual activity
-- Detect shadows, openings, or motion
-- Supports image analysis for alerts
-- Can verify alerts from other sensors
-
 ### Access Control Vestibules
 
 Small controlled spaces to prevent unauthorized entry.
@@ -293,6 +245,56 @@ A visitor management policy helps organizations track and manage visitor access.
 - Visits should be logged, e.g. signing on record book or electroniccally
 - Define who may escort visitors and who gets unescorted access  
 - Issue visible visitor badges and require them to be worn
+
+## Detectiom Systems 
+
+### Perimeter Intrusion Detection System
+
+**Perimeter Intrusion Detection and Assessment System (PIDAS)** detects anyone trying to cut, climb, or tamper with a fence.
+
+- Sensors are installed on the fence and at the base
+- Detects vibration or movement on the fence.
+- Passive cable sensors trigger alarms
+- Sends alerts to security or monitoring system
+
+
+### Electromechanical Detection System
+
+Electromechanical systems reliably detect physical tampering using simple electrical and mechanical components.
+
+- Contact switches detect forced openings on doors and gates
+- Strain gauges sense pulling or impact on panels
+- Control units map events to alarms
+- Can route alerts to monitoring systems
+
+
+### Passive Infrared (PIR) System
+
+PIR sensors detects human presence by sensing body heat and movement.
+
+- Monitors infrared energy in a defined area
+- Detects warm bodies moving through
+- Can be used indoors or outdoors
+- Integrates with alarms or lighting
+
+
+### Acoustical Detection System
+
+Acoustical systems detects sounds of tampering like cutting, climbing, or breaking.
+
+- Uses microphones or acoustic sensors near perimeters
+- Filters background noise to identify suspicious sounds
+- Can trigger cameras or alarms
+
+
+### Photometric System
+
+Photometric detection uses light or image analysis to detect changes.
+
+- Cameras or light sensors monitor for unusual activity
+- Detect shadows, openings, or motion
+- Supports image analysis for alerts
+- Can verify alerts from other sensors
 
 
 ## Choosing an Access Control System
