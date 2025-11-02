@@ -97,6 +97,8 @@ Cryptography protects information and ensures secure communication by providing 
   - Uses hash functions and digital signatures
   - Detects changes and verifies that data remains unaltered
 
+For more information, please see [Cryptography Basics.](/docs/007-Cybersecurity/025-Cryptography/001-Cryptography-Basics.md)
+
 <div class="img-center">  
 
 ![](/img/docs/security-encryption-cryptograpghy.png)

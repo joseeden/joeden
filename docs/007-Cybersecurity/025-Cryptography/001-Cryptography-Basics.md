@@ -9,11 +9,16 @@ last_update:
 
 ## Cryptography
 
-The science and practice of securing communication and information through encoding, ensuring only authorized parties can access it. Its purpose is to protect data integrity, confidentiality, and authenticity.
+**Cryptography** is the practice of securing information and communication by converting it into a protected form, so only authorized users can access it. Its main goals are to keep data private, accurate, and trustworthy.
 
-- **Encryption**: Transforming plaintext into ciphertext using an algorithm and a key.
+- **Encryption** - Transforming plaintext into ciphertext using an algorithm and a key.
+- **Decryption** - Converting ciphertext back to plaintext with the appropriate key.
 
-- **Decryption**: Converting ciphertext back to plaintext with the appropriate key.
+Other important terms:
+
+- **Cryptanalysis** - Techniques used to break or weaken cryptographic protections.  
+- **Cryptosystem** - A system or tool that enables encryption and decryption processes.  
+- **Cryptology** - The broader field that encompasses both cryptography and cryptanalysis. 
 
 ## Obfuscation 
 
@@ -154,7 +159,7 @@ These types of encryption play critical roles in modern cybersecurity, often use
 
 Symmetric cryptography uses the same key for both encryption and decryption. The sender and receiver must share this key, keeping it secret from others.
 
-- **Session key** - single key is used to encrypt and decrypt data. 
+- **Session key** - single key is used for data encryption only one time
 - Both parties must have this key.
 
 Symmetric encryption is generally faster and less computationally intensive compared to asymmetric cryptography. It is also effective for encrypting large volumes of data.

@@ -46,6 +46,20 @@ Having too many classifications can confuse and frustrate users. Classifications
 
 :::
 
+## Key Considerations for Data Classification
+
+The following issues should be considered when assigning value to information and assets:
+
+- Cost to acquire or develop the asset 
+- Cost to maintain and protect the asset 
+- Value of the asset to owners and users 
+- Value of the asset to adversaries 
+- Value of intellectual property 
+- Price others are willing to pay for the asset 
+- Cost to replace the asset if lost 
+- Operational and productivity that is affected if the asset is unavailable 
+- Liability issues if the asset is compromised 
+- Usefulness and role of the asset in the organization 
 
 ## PII and PHI
 
@@ -120,14 +134,15 @@ Business classification levels are used to categorize information within an orga
 
 ## Data Ownership 
 
-- **Data Owner**  
+- **Data Owner/Information Owner**  
 
-   - Legal data owner.
    - **Not the creator of the file, but a senior executive**.
    - Sets policies on how data will be managed.
-   - Business leaders with overall responsibility for data.
-   - Nitty-gritty decisions are delegated to a data steward. 
-   - Ensures that the data comply with the privacy requirements.
+   - Business leaders with overall legal responsibility for data.
+   - Delegate daily maintaining and protection to a data steward. 
+   - Ensures that the data comply with the privacy requirements. 
+   - Use preset criteria to determine the classification of specific data types
+   - Periodically review classification levels, modifying them accordingly.
 
       :::info 
 
@@ -136,8 +151,6 @@ Business classification levels are used to categorize information within an orga
       On the other hand, the data owner is responsible for outlining the security level required for the data and the appropriate use of the data. 
 
       :::
-
-
 
 - **Data Controller**
 
@@ -166,7 +179,10 @@ Business classification levels are used to categorize information within an orga
    - Oversight of any privacy-related data, such as PII, SPI, or PHI.
    - Ensure data privacy regulation compliance such as GDPR.
 
+- **End Users**
 
+   - Use resources and company information to carry out their tasks.
+   - End users may or may not be the owners of their data
 
 ## DPO vs. DPO 
 

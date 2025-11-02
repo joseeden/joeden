@@ -33,7 +33,7 @@ Common uses:
 
 :::info
 
-One-way functions are mathematical foundations of hashing.
+One-way hash functions are mathematical foundations of hashing.
 Easy to compute but infeasible to reverse.
 
 Public key cryptosystems are all bases on some sort of one-way function.
