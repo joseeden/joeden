@@ -189,14 +189,48 @@ Like a mantrap, a security vestibule consists of a small space between two sets 
 
 ### Door Locks
 
-Common lock types used in facilities.
+Common lock types used in facilities:
 
-- Padlocks 
-- Simple pin and tumbler locks
-- Numeric locks 
-- Wireless locks 
-- Biometric locks
-- Cipher locks
+- **Padlocks** 
+
+  - Portable locks for doors, gates, lockers, or storage.
+  - Can be key-operated or combination-based
+  - Made of brass, steel, or laminated metal.
+
+- **Pin tumbler locks**
+
+  - Most commonly used tumbler lock.
+  - Require the key to have just the right grooves.
+  - The key align spring-loaded pins to lock or unlock.
+
+- **Wafer tumbler locks**
+
+  - Also called *disc tumbler locks*.
+  - Small, round locks usually seen on file cabinets.
+  - Uses flat discs (wafers) instead of pins inside the locks.
+  - Easy to bypass because it can be easily circumvented. 
+
+- **Cipher locks**
+
+  - Also known as *programmable locks*
+  - keyless and use keypads to control access into an area.
+  - Requires a specific combination and possibly a swipe card.
+  - Cost more, but their combinations can be changed.
+  - Specific combination sequence values can be locked out
+  - Supports duress code which opens the door and initiate a remote alarm.
+
+- **Combination locks**
+
+  - Unlocks with a number sequence, not a key.
+  - User spins the lock interface left and right by so many clicks
+  - When the internal wheels must aligned, the door is opened.
+
+- **Biometric locks**
+
+  - Use fingerprints, iris, face, or hand geometry.
+  - Harder to duplicate; can log entries.
+  - Some combine biometrics with keypads or cards for extra security.
+
 
 ### Surveillance System 
 
