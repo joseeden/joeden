@@ -84,3 +84,25 @@ CISOs lead teams to manage risks while supporting business objectives. Key activ
 - Continuously improving security posture.
 
 The CSO role usually has a further-reaching list of responsibilities compared to the CISO role and is required to understand a wider range of business risks, including physical security, not just technological risks. The CISO is usually focused more on technology and has an IT background.
+
+## Security Management Plans 
+
+A security management planning team should develop three types of plans:
+
+- **Strategic Plan**
+
+  - **Long-term** security goals aligned with business objectives.
+  - High-level strategies for risk management and compliance.
+  - Resource allocation and investment priorities.
+
+- **Tactical Plan**
+
+  - **Mid-term** initiatives to implement strategic goals.
+  - Specific projects, timelines, and responsibilities.
+  - Coordination between departments and teams.
+
+- **Operational Plan**
+ 
+  - **Day-to-day** security activities and procedures.
+  - Incident response, monitoring, and maintenance tasks.
+  - Training and awareness programs for employees.

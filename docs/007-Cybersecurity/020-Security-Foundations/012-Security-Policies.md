@@ -17,46 +17,53 @@ Every policy should align with the organization's regulatory and contractual obl
 
 ## Employee/Contractor Hiring 
 
-**Hiring phase:**
+- **Hiring phase:**
 
-- Social media analysis
-- Web search 
-- Background check 
-    - Criminal record
-    - Unpaid fines
-    - Credit check
-    - Interview with references 
-    - Employment and education verification
+  - Social media analysis
+  - Web search 
+  - Background check 
+      - Criminal record
+      - Unpaid fines
+      - Credit check
+      - Interview with references 
+      - Employment and education verification
 
-**User Onboarding:**
 
-- Signing NDAs 
-- Security POlicy Awareness 
-- User account and resource access 
-- Issuance of security badge and smart cards
+      :::info 
 
-**User Habits:**
+      Normal hiring processes typically do not include extensive psychological and emotional evaluations, which may be a violation of a person’s rights. 
 
-- Clean desk policies 
-- Shredding of sensitive documents
-- Secure personally-owned devices 
-- [MDM (Mobile Device Management)](/docs/007-Cybersecurity/024-Infrastructure-and-Network/059-Mobile-Systems.md#mobile-device-management)
-- [BYOD (Bring your own device)](/docs/007-Cybersecurity/029-Security-Operations/073-Mobile-Asset-Deployments.md#byod)
+      :::
 
-**User Training:**
+- **User Onboarding:**
 
-- Ongoing, role-based
-- Computer-based training 
-- Gamification like CTF contests 
-- Phishing campaigns/simulations
+  - Signing NDAs 
+  - Security POlicy Awareness 
+  - User account and resource access 
+  - Issuance of security badge and smart cards
 
-**User Offboarding:**
+- **User Habits:**
 
-- Termination Letter 
-- Exit Interview 
-- Return of equipment
-- Knowledge Transfer
-- Disable and delete accounts
+  - Clean desk policies 
+  - Shredding of sensitive documents
+  - Secure personally-owned devices 
+  - [MDM (Mobile Device Management)](/docs/007-Cybersecurity/024-Infrastructure-and-Network/059-Mobile-Systems.md#mobile-device-management)
+  - [BYOD (Bring your own device)](/docs/007-Cybersecurity/029-Security-Operations/073-Mobile-Asset-Deployments.md#byod)
+
+- **User Training:**
+
+  - Ongoing, role-based
+  - Computer-based training 
+  - Gamification like CTF contests 
+  - Phishing campaigns/simulations
+
+- **User Offboarding:**
+
+  - Termination Letter 
+  - Exit Interview 
+  - Return of equipment
+  - Knowledge Transfer
+  - Disable and delete accounts
 
 ## Accounts/Credential Policy 
 

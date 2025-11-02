@@ -64,16 +64,27 @@ Integrity is about safeguarding the accuracy and reliability of data. It is all 
 
 - **Data Integrity**
   - Ensures data remains unaltered in an unauthorized manner.
-  - Protection during storage, processing, and transit to prevent modification, errors, or loss.
+  - Protection during storage, processing, and transit .
+  - Ppreventing modification, errors, or loss.
   - Information must be accurate, internally consistent, and useful.
-  - Consistency ensures data is uniform across systems, maintaining the same form, content, and meaning.
+
+    :::INFO 
+    
+    *Consistency* ensures data is uniform across systems, maintaining the same form, content, and meaning.
+
+    *Data integrity* means that data has not been modified in an unauthorized manner. Note that even if it is shown to be unmodified, it can still be factually inaccurate.
+    
+    *Data accuracy* means that data is factually or contextually correct. It is a function of people rather than systems. 
+
+    ::: 
 
 - **System Integrity**
   - Maintaining a known good configuration and expected operational function.
-  - Begins with awareness of the system's current state, establishing a baseline for future comparisons.
+  - Begins with awareness of the system's current state
+  - Establishing a baseline for future comparisons.
 
 - **Baseline for Integrity**
-  - Establishing a baseline to document and understand the state of data or a system.
+  - Establishing a baseline to document the state of data or a system.
   - Ongoing protection to preserve the baseline state through transactions.
 
 - **Comparing Baseline for Integrity**
@@ -82,7 +93,7 @@ Integrity is about safeguarding the accuracy and reliability of data. It is all 
 
 - **Regulatory and Organizational Needs**
   - Safeguarding integrity may be dictated by laws or organizational requirements.
-  - Crucial for accessing reliable, accurate information and maintaining system reliability.
+  - Accessing reliable, accurate information and maintaining system reliability.
   
 ### Availability
 
