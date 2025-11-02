@@ -8,6 +8,28 @@ last_update:
 ---
 
 
+## Type of Changes
+
+ITIL 4 defines three main types of changes
+
+- **Standard Changes**
+
+  - Preapproved, low-risk, and follow a well-known procedure
+  - Do not require additional approvals for each instance
+  - Examples: Patching a server, adding memory or storage
+
+- **Normal Changes**
+
+  - All changes that are neither standard nor emergency
+  - Require evaluation and approval through normal change process
+  - Examples: Deploying a new software feature or infrastructure upgrade
+
+- **Emergency Changes**
+
+  - Must be implemented immediately due to critical issues
+  - Can skip some approval but must be documented after the fact
+  - Examples: Security patch for a zero-day exploit
+
 ## Change Management Participants
 
 ### Change Advisory Board (CAB) 

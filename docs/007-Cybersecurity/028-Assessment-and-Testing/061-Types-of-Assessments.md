@@ -47,6 +47,12 @@ External audits are evaluations done by outside parties to check security contro
 - Identify gaps in policies and controls for regulatory compliance
 - Example: Compliance with GDPR, HIPAA, or PCI DSS
 
+:::info 
+
+A **second-party audit** is conducted as part of contractual obligations between two entities, such as business partners. 
+
+:::
+
 
 ### External Assessments
 

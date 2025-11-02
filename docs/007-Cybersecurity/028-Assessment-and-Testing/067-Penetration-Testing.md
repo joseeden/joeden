@@ -10,56 +10,80 @@ last_update:
 
 ## Overview
 
-Penetration Testing is a simulated cyber attack that helps in the assessment of computer systems for exploitable vulnerabilities.
+Penetration testing simulates cyber attacks to find vulnerabilities in systems.
 
-- Agree on methodology and rules of engagement before performing pentests.
-- Simulate network intrusion based on threat scenarios.
-- Normally triggers IDS/IPS alerts. If it doesn't, then this should also be reported.
-- There's a **specific goal in mind.**
+- Agree on methodology and rules before testing.
+- Simulate network attacks based on threat scenarios.
+- Normally triggers IDS/IPS alerts; if not, report it.
+- Each test has a clear goal.
+
+**Penetration tests usually start with basic user-level access to simulate real attacks.** Testers use tools and techniques to find weaknesses, especially privilege escalation paths, since attackers only need one vulnerability to succeed.
 
 ## Types of Pentesting
 
 ### Physical Pentesting
 
-Physical pentesting involves evaluating the physical security measures of a facility to identify vulnerabilities that could be exploited to gain unauthorized access to sensitive areas or information.
+Physical pentesting involves evaluating the physical security of facilities and personnel.
 
-- Assesses physical barriers such as locks, doors, and gates.
-- Tests the effectiveness of security personnel and protocols.
-- Evaluates the security of entry points, such as windows and ventilation systems.
-- Identifies potential social engineering vulnerabilities, like tailgating.
-- Raises awareness about the importance of physical security among employees.
+- Checks locks, doors, gates, and access points.
+- Tests security staff and procedures.
+- Looks for social engineering risks like tailgating.
 
 ### Offensive Pentesting
 
-Offensive pentesting, also known as **red teaming**, is a **proactive** approach that focuses on simulating real-world attacks to identify weaknesses in an organization's security infrastructure from an attacker's perspective.
+Offensive pentesting, also known as **red teaming**, is a **proactive** approach that focuses on simulating real-world attacks to find weaknesses in systems, networks, and applications.
 
-- Identifies vulnerabilities in networks, systems, and applications.
-- Evaluates response capabilities of security teams.
-- Provides actionable insights for improving security posture.
-- Results can also used to garner more funding and support for cybersecurity investments.
+- Identifies vulnerabilities and tests responses.
+- Provides actionable insights for security improvements.
+- Helps secure funding for cybersecurity initiatives.
+
+:::info 
+
+The term red team exercise is often used synonymously with penetration test. 
+
+In reality, a red team exercise can apply to any aspect of an organization (people, processes, facilities, products, ideas, information systems)
+
+A penetration test, on the other hand, is focused on testing the effectiveness of security controls in facilities and/or information systems. 
+
+:::
 
 ### Defensive Pentesting
 
-Defensive pentesting, also known as **blue teaming**, is a **reactive** approach that emphasizes identifying and fortifying weaknesses within an organization's defenses by simulating potential attack scenarios.
+Defensive pentesting, also known as **blue teaming**, is a **reactive** approach that focuses on strengthening defenses by simulating attack scenarios.
 
-- Focuses on strengthening existing security measures.
-- Enhances incident detection and response capabilities.
-- Conducts regular security assessments to identify new vulnerabilities.
-- Collaborates with offensive teams to improve overall security.
+- Improves detection and response.
+- Conducts regular security assessments.
+- Collaborates with offensive teams for better protection.
 
 ### Integrated Pentesting
 
-Integrated pentesting, also known as **purple teaming**, combines both offensive and defensive strategies to create a comprehensive security evaluation, ensuring that both attack simulations and defensive measures are optimized.
+Integrated pentesting, also known as **purple teaming**, combines both offensive and defensive approaches for a comprehensive evaluation.
 
-- Merges red and blue team methodologies for holistic security testing.
-- Identifies and addresses both internal and external threats.
-- Enhances coordination between offensive and defensive security teams.
-- Provides a thorough analysis of an organization's security posture.
+- Merges red and blue team methods.
+- Identifies internal and external threats.
+- Improves coordination between teams.
+
+
+### Breach and Attack Simulation (BAS)
+
+Breach and Attack Simulation (BAS) automates the testing of security defenses using continuous and repeatable attack scenarios.
+
+- Runs simulations based on frameworks like MITRE ATT&CK
+- Continuously checks firewalls, IDS/IPS, and EDR systems
+- Finds misconfigurations and gaps in threat detection and response
+- Provides measurable results to improve overall security readiness
+
+Comparison with traditional pentesting:
+
+- **Pentesting** is manual, in-depth, and performed periodically.
+- **BAS** is automated, consistent, and can run continuously to monitor resilience.
+
+**They are meant to be realistic but should not cause any adverse effect to the target systems**. For example, a ransomware simulation may use “defanged” malware that behaves like the real thing but only encrypts a single sample file as proof.
 
 
 ## Pentesting Environments 
 
-There are different types of pentesting environments. The classifications for these environments define the level of information available to the tester about the target system.
+The classifications for the environments define the level of information available to the tester about the target system.
 
 - **White-box Testing**: Attackers have full knowledge of the environment
 - **Black-box Testing**: Attackers have no knowledge of the environment 
@@ -70,17 +94,15 @@ For more information, please see [Environment Classifications.](/docs/007-Cybers
 
 ## Penetration Testing Process 
 
-Penetration testing is a structured approach to identifying and exploiting vulnerabilities in a system to assess its security.
+### 1. Rules of Engagement
 
-### Rules of Engagement
-
-Setting the rules of engagement is crucial for defining the boundaries and expectations of the penetration test. This ensures both the testing team and the organization are clear on what will be tested, how the test will be conducted, and what legal implications are considered.
+Setting the rules of engagement is defines the boundaries and expectations of the penetration test. This ensures both the testing team and the organization are clear on what will be tested, how the test will be conducted, and what legal implications are considered.
 
 - Define the scope and objectives of the test.
 - Establish clear communication channels and protocols.
 - Ensure legal and ethical boundaries are respected.
 
-### Discovery/Enumeration
+### 2. Discovery/Enumeration
 
 This phase involves testers extensively collecting data that will inform their subsequent actions and strategies for exploiting the system.
 
@@ -88,9 +110,9 @@ This phase involves testers extensively collecting data that will inform their s
 - Identify open ports, services, and potential entry points.
 - Map the network and identify connected devices.
 
-### Vulnerability Identification and Exploitation
+### 3. Vulnerability Identification and Exploitation
 
-During this phase, testers identify weaknesses in the system's defenses. This step is essential to find entry points and test if these vulnerabilities can be used to gain unauthorized access or extract sensitive data.
+During this phase, testers finds entry points and test if the vulnerabilities can be used to gain unauthorized access or extract sensitive data.
 
 - Scan for known vulnerabilities and weaknesses.
 - Attempt to exploit identified vulnerabilities.
@@ -108,7 +130,7 @@ For more information, please see [Privilege Escalation.](/docs/007-Cybersecurity
 
 ### Cleanup
 
-After completing the testing, it is essential to ensure that no trace of the penetration test remains on the target system. This prevents any disruption to normal operations and maintains the integrity of the system.
+After completing the testing, it is important to ensure that no trace of the penetration test remains on the target system. This prevents any disruption to normal operations and maintains the integrity of the system.
 
 - Remove any tools or scripts used during the test.
 - Restore the system to its original state.

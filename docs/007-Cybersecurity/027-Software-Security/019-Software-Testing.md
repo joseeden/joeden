@@ -29,6 +29,22 @@ These two important testing activities answer different questions during develop
 - **Validation**: Are we building the right software? (Meets business requirements)
 - **Verification**: Are we building the software right? (Proper functioning)
 
+## Test Coverage
+
+Test coverage shows how much of a system is tested, usually expressed as a percentage.
+
+- Measures which parts of code or functionality are exercised by tests
+- Helps identify untested or weak areas in the system
+- Guides improvements in testing to reduce potential bugs
+
+Example: If your system has 1,000 lines of code and tests run 800 lines, coverage is 80%
+
+:::info 
+
+A system for a medical device would be an example of a system that may require 100 percent test coverage since it is considered a safety-critical device and must be tested for all possible cases. 
+
+:::
+
 ## Stress and Load Testing  
 
 Before release, code must be tested under real-world conditions to ensure it can handle expected loads.
@@ -53,52 +69,85 @@ After launch, modifications to the software must be tested to ensure they don’
 - Compares system behavior before and after updates
 - Focuses on maintaining functionality while adding new features
 
+## Use Case Testing 
+
+Use case testing checks that software features work as intended in real-world situations.
+
+- Describes how users interact with the system
+- Tests all possible paths and decisions
+
+Use cases can also be related to each other through associations. These associations define how one use case connects or depends on another.
+
+Common types of associations:
+
+- **Include**
+
+  - The included use case is always executed when the main one runs
+  - Example: When processing a payment, the "verify account" is always included
+
+- **Extend**
+
+  - Runs only under certain conditions or decision points
+  - Example: "Show welcome offer" runs only after a successful login
 
 ## Misuse Case Testing
 
-Misuse case testing focuses on identifying and addressing potential security vulnerabilities by simulating how a system might be misused. It helps in detecting weaknesses that attackers could exploit.
+Misuse case testing looks for vulnerabilities by simulating how attackers might misuse the system.
 
-- Simulates malicious or unintended uses to find vulnerabilities.
-- Complements traditional testing by focusing on misuse scenarios.
-- Helps improve system resilience against abuse.
+- Tests malicious or unintended actions
+- Complements use case testing by focusing on misuse
+- Strengthens system resilience against attacks
 
-The most critical step in misuse case testing is defining the test cases. Testers need to think like attackers and figure out all the ways that someone might try to undermine the security of a system. 
+The most critical step in misuse case testing is **defining the test cases**. Testers must think like attackers to uncover weaknesses.
 
-- Ask developers: How could someone break into the system?
-- Developers who worked on the sofwtare bring an in-depth understanding.
-- Others who are not involved in the project brings fresh eyes and perspectives.
+- Ask developers how the system could be broken
+- Involve developers for deep insights
+- Include outsiders for fresh perspectives
 
-Misuse case examples: 
+Common misuse cases include:
 
-- Unexpected input (in size or format)
-- Missing input
+- Invalid or oversized input
+- Missing input values
 - Injection attacks
-- Unavailable funds
+- Insufficient funds or blocked transactions
+
+
+:::info 
+
+Use cases and misuse cases are textual but are often summarized and graphically depicted using a **Unified Modeling Language (UML) use case diagram**.
+
+:::
 
 ## Interface Testing
 
-Interface Testing ensures that different software components or systems interact correctly and reliably. This type of testing focuses on validating the data exchanges, communication protocols, and integration points between systems.
+Interface testing ensures that separate systems or components communicate properly.
 
 - Ensure that data sent between systems is accurate and complete.
 - Test the adherence to defined protocols and formats for communication.
 - Confirm that error messages are properly handled and communicated.
 
-### Types of Interfaces
+:::info 
+
+**Boundary conditions** are test cases that occur between data communication points during interface tests. 
+
+:::
+
+**Types of Interfaces**:
 
 - **Application Programming Interface (API)**
 
-  - Allows different software systems to communicate programmatically
-  - Defines methods and data formats for interactions
-  - Enables integration and functionality across various applications
+  - Enables systems to communicate through defined methods
+  - Specifies data formats for interaction
+  - Supports integration between multiple applications
 
 - **User Interface (UI)**
 
-  - Involves interactions between users and software through visual elements
-  - Includes components like buttons, menus, and forms
-  - Focuses on usability, accessibility, and user experience
+  - Also called **Graphical User Interface (GUI)**
+  - Involves user interaction with visual elements
+  - Uses menus, buttons, and forms
 
 - **Physical Interfaces**
 
   - Connects hardware devices or hardware to software
-  - Examples include ports, connectors, and cables
-  - Facilitates data transfer and device interaction
+  - Manages data transfer and device interaction
+  - Examples: NIC (network interface cards), ports, connectors, and cables
