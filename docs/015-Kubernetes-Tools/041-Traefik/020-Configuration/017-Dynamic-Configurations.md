@@ -16,7 +16,7 @@ last_update:
 
 ## Overview
 
-Dynamic configuration lets you define how Traefik connects to and manages your services. You do this by adding **labels*- to containers or services.
+Dynamic configuration lets you define how Traefik connects to and manages your services. You do this by adding **labels** to containers or services.
 
 - Labels are added directly to containers
 - Labels define routers, services, and middlewares

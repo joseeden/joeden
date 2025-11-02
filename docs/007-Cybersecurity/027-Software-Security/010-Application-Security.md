@@ -104,7 +104,7 @@ Sandboxing is a security mechanism used to isolate running applications to preve
 
 - Limits the access of an application to the system resources.
 - Provides a controlled environment for executing untrusted code.
-- Helps protect the system from potential malicious activity initiated by the application.
+- Protects the system from potential malicious activity initiated by the application.
 - Testing security controls before replicating them to the production environment.
 
 Security professionals can use isolated virtual machines that has no access to the network or other resources and use them as sandbox environments to perform any testing and evaluations. When they're finish, they can simply destroy the virtual machine without any impact to the rest of the network.
@@ -117,8 +117,6 @@ Package Monitoring involves keeping track of security of third-party packages an
 - Verifies integrity and authenticity of packages to prevent supply chain attacks.
 - Alerts developers to known vulnerabilities in dependencies.
 - Example tools are Snyk and Dependabot.
-
-Package monitoring tracks the software versions and components installed across systems. 
 
 Since legacy systems often run outdated or unsupported software packages, monitoring these packages helps to identify which systems are legacy by revealing those with old or unpatched software versions. 
 

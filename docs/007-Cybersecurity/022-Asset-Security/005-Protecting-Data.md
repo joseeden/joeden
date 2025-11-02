@@ -211,4 +211,4 @@ Cybersquatting is the practice of registering domain names to profit from someon
 - Can confuse customers and harm the brand.
 - Considered unethical and deceptive.
 
-Cybersquatting is illegal under the U.S. **Anticybersquatting Consumer Protection Act (ACPA)*- and similar laws worldwide.
+Cybersquatting is illegal under the U.S. **Anticybersquatting Consumer Protection Act (ACPA)** and similar laws worldwide.

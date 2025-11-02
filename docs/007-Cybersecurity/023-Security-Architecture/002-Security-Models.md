@@ -66,13 +66,16 @@ This model uses a two dimensional matrix that defines which subjectsare permitte
 
 ## Non-Interference Model
 
-The Non-Interference Model focuses on preventing actions at one security level from affecting actions at another. This model ensures that high-security operations do not interfere with lower-security operations, maintaining operational integrity.
+The Non-Interference/Noninterference Model focuses on preventing actions at one security level from affecting actions at another. This model ensures that high-security operations do not interfere with lower-security operations, maintaining operational integrity.
 
 - Enforces strict separation between different security levels.
 - Ensures that lower-level users cannot observe higher-level actions.
 - Protects sensitive operations from potential interference or influence.
 
-The theory here is that users are restricted to working in different areas called **domains**, which is a set of object  that a user is allowed to access. The user at one level cannot determine what's happening at a higher security level and users at the higher security level cannot affect or interfere with individuals at levels below them.
+The theory here is that users are restricted to working in different areas called **domains**, which is a set of object  that a user is allowed to access. 
+
+- Users at one level cannot know what's happening at a higher security level.
+- Users at higher security level cannot interfere with individuals at levels below them.
 
 ## Information Flow Model
 

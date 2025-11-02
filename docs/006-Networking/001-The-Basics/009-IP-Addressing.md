@@ -36,10 +36,11 @@ Source and destination IP addresses indicate where a packet is coming from and w
 
 ### IPv6
 
-IPv6 is the most recent version of the Internet Protocol, designed to replace IPv4. It provides a vastly larger address space to accommodate the growing number of internet-connected devices.
+Also called **IP next generation (IPng)**, IPv6 is the most recent version of the Internet Protocol, designed to replace IPv4. It provides a vastly larger address space to accommodate the growing number of internet-connected devices.
 
 - IPv6 addresses are 128-bit, represented as eight groups of four hexadecimal digits
-- No need for Network Address Translation (NAT), IPv6 provides unique address for each device
+- No need for Network Address Translation (NAT)
+- IPv6 provides unique address for each device
 - It includes built-in security features and improved routing efficiency
 
 An example of an IPv6 address is:

@@ -30,8 +30,10 @@ Discretionary Access Control (DAC) is an access control policy that allows users
 
 ### DAC in the Workplace
 
-- In a DAC system, users can share or pass files at their discretion. 
-- Asset owners decide access permissions, from digital file-sharing to low-tech measures like visitor's badges issued at the security desk.
+In a DAC system, users can share or pass files at their discretion. 
+
+- Asset owners decide access permissions
+- Includes  digital file-sharing, low-tech measures like visitor's badges
 
 ## Mandatory Access Control (MAC)
 
@@ -70,6 +72,7 @@ For more information, please see [Bell-LaPadula Model.](/docs/007-Cybersecurity/
 ## Attribute-Based Access Control (ABAC)
 
 Attribute-Based Access Control (ABAC) manages access based on user, resource, and environmental attributes.
+
 - Supports flexible and dynamic access policies.
 - Ideal for complex access control needs where role-based models are insufficient.
 - Examples: roles, departments, security clearances, and factors like time and location.

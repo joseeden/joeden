@@ -42,7 +42,7 @@ Terraform has been successfully initialized!
 
 :::info 
 
-`terraform init` happens **after*- you write your configuration but **before*- running `terraform plan` or `terraform apply`. 
+`terraform init` happens **after** you write your configuration but **before** running `terraform plan` or `terraform apply`. 
 
 :::
 

@@ -40,6 +40,12 @@ Data classification helps organizations manage and protect information based on 
    - Contains valuable information; Viewing is extremely restricted.
    - Examples: Credit card numbers
 
+:::info 
+
+Having too many classifications can confuse and frustrate users. Classifications should be clear but not overly detailed, since data types can vary. Each classification should be distinct, with no overlap or ambiguity.
+
+:::
+
 
 ## PII and PHI
 
@@ -121,8 +127,17 @@ Business classification levels are used to categorize information within an orga
    - Sets policies on how data will be managed.
    - Business leaders with overall responsibility for data.
    - Nitty-gritty decisions are delegated to a data steward. 
-   - In most cases, there is a reporting relationship between the data owner and data steward.
    - Ensures that the data comply with the privacy requirements.
+
+      :::info 
+
+      A system can hold different types of data that may have different owners. The system owner is responsible for implementing and configuring the security controls. 
+
+      On the other hand, the data owner is responsible for outlining the security level required for the data and the appropriate use of the data. 
+
+      :::
+
+
 
 - **Data Controller**
 
@@ -152,18 +167,16 @@ Business classification levels are used to categorize information within an orga
    - Ensure data privacy regulation compliance such as GDPR.
 
 
-:::info 
-
-While the terms **Data Protection Officer (DPO)** and **Data Privacy Officer (DPO)** are often used interchangeably, they can refer to distinct roles with some overlap. The key difference lies in the formal, legal requirements often associated with the DPO role, particularly under regulations like the GDPR. 
-
-:::
-
 
 ## DPO vs. DPO 
 
-The **Data Protection Officer (DPO)** is a *legal/compliance-focused* role, often required by regulation.
 
-The **Data Privacy Officer (DPO)/Privacy Officer** is a *broader operational or strategic* function that may include the DPO or support their work.
+While the terms **Data Protection Officer (DPO)** and **Data Privacy Officer (DPO)** are often used interchangeably, they can refer to distinct roles with some overlap. The key difference lies in the formal, legal requirements often associated with the DPO role, particularly under regulations like the GDPR. 
+
+
+- The **Data Protection Officer (DPO)** is a *legal/compliance-focused* role, often required by regulation.
+
+- The **Data Privacy Officer (DPO)/Privacy Officer** is a *broader operational or strategic* function that may include the DPO or support their work.
 
 ### Data Protection Officer 
 

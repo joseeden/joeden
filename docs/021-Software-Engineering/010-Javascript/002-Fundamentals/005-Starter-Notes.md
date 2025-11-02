@@ -39,11 +39,11 @@ if (js === 'amazing') alert('Javascript is FUN!')
  
 JavaScript is a high-level, object-oriented, and multi-paradigm programming language that powers the dynamic and interactive aspects of web development. Here's a summary of its role:
 
-- **High-Level Language**- Simplify complex processes like memory management using abstractions.
+- **High-Level Language*** Simplify complex processes like memory management using abstractions.
 
-- **Object-Oriented**- Uses objects to organize and store data; foundation for programming techniques.
+- **Object-Oriented*** Uses objects to organize and store data; foundation for programming techniques.
 
-- **Multi-Paradigm**- Supports coding styles, including imperative and declarative programming.
+- **Multi-Paradigm*** Supports coding styles, including imperative and declarative programming.
 
 In web development, JavaScript complements HTML (content) and CSS (style) by:
 

@@ -108,12 +108,17 @@ Password Security:
 | **Risky Logins** | Lock accounts after a number of incorrect attempts         |
 
 
-:::info 
+Example:
 
 Setting a minimum password age to three days, for example, will prevent users from, upon password change, immediately cycling through the number of passwords remembered to reuse a familiar password they have already used.
 
-:::
 
+:::info 
+
+When an attacker attempts to guess a user’s password, they are allowed only a limited number of tries before the account is “locked out.” This helps prevent brute-force attacks. The security professional sets the threshold, known as the **clipping level**, which also determines when the account can be unlocked. The term “clipping level” refers to a general limit and isn’t only used for passwords or login attempts.
+
+
+:::
 
 ## Standard Operating Procedure (SOP)
 

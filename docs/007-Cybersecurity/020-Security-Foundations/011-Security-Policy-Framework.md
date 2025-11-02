@@ -49,34 +49,42 @@ A Security Policy Framework provides a structured approach for organizations to 
 
 ## Types of Documents 
 
-These four types of documents work together to create a comprehensive security policy framework, providing clear direction, consistency, and flexibility in managing information security.
-
 - **Policies**
-  - High-level documents that define the organization's security posture and objectives.
-  - Provide overarching principles and direction for managing information security.
-  - Establish the foundation for developing standards, guidelines, and procedures.
+
+  - High-level statements defining the organization's security goals.
+  - Provide overall direction for managing information security.
+  - Serve as the foundation for standards, guidelines, and procedures.
+  - Types of policies:
+
+      - System-specific
+      - Organizational
+      - Issue-specific
 
 - **Standards**
   - Specific, mandatory rules that support policies.
-  - Define the minimum requirements for security controls and practices.
+  - Specify minimum requirements for security controls.
   - Ensure consistency and compliance across the organization.
 
+      :::info 
+
+      Standards usually supplement procedures by providing more detail, setting performance expectations, or specifying the technologies and processes to use.
+
+      :::
+
 - **Guidelines**
-  - Recommended practices that provide flexibility in achieving policy and standard objectives.
-  - Offer advice on best practices and preferred methods for implementing security controls.
-  - Allow for discretion and adaptability based on specific circumstances and needs.
+
+  - Recommended practices for achieving policy and standard objectives.
+  - Suggest best methods for implementing security measures.
+  - Allow flexibility based on context and needs.
 
 - **Procedures**
   - Detailed, step-by-step instructions for performing specific tasks.
-  - Ensure consistency and accuracy in the execution of security-related activities.
-  - Provide clear directions for employees to follow, reducing the risk of errors and omissions.
+  - Ensure consistency and accuracy in security activities.
+  - Provide clear directions to minimize errors and omissions.
 
-:::info[note]
 
-These four documents are also considered Governance Elements.
-To learn more, please see [Governance Elements.](/docs/007-Cybersecurity/021-Risk-and-Governance/046-Governance-Elements.md)
+These four documents are also considered Governance Elements. To learn more, please see [Governance Elements.](/docs/007-Cybersecurity/021-Risk-and-Governance/046-Governance-Elements.md)
 
-:::
 
 
 ## Factors Affecting Security Policy

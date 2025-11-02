@@ -9,7 +9,7 @@ last_update:
 
 ## ARP Cache Poisoning
 
-ARP cache poisoning involves sending falsified ARP (Address Resolution Protocol) messages to a local network.
+ARP cache/Table cache poisoning involves sending falsified ARP (Address Resolution Protocol) messages to a local network.
 
 - Redirects traffic intended for one host to another host.
 - Often used for man-in-the-middle attacks.

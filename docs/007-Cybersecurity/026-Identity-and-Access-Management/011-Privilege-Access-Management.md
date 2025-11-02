@@ -202,7 +202,8 @@ Provisioning new user accounts or altering privileges is essential in various sc
 Note: 
 
 - Avoid copying user profiles for new users to prevent "permission or privilege creep." 
-- Standard roles are recommended for creating new users based on established standards rather than duplicating an existing user's profile.
+- Standard roles are recommended for creating new users established standards 
+- Roles should not be duplicated from an existing user's profile.
 
 
 

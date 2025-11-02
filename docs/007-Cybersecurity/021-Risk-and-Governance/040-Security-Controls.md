@@ -53,7 +53,7 @@ For more information, please see [Physical Security.](/docs/007-Cybersecurity/02
 
 ### Technical Controls
 
-Also termed "logical controls", Technical controls are implemented directly by computer systems and networks.
+Also termed "logical controls", technical controls are implemented directly by computer systems and networks.
 
 - **Functions**
   - Automated protection against unauthorized access.
@@ -63,13 +63,18 @@ Also termed "logical controls", Technical controls are implemented directly by c
 - **Implementation**
   - Configuration settings, parameters, or hardware settings.
   - Managed through software GUI or hardware.
+  - Example: Access Control List
 
 - **Considerations**
   - Requires significant operational considerations.
   - Must align with organizational security management.
 
-- **Examples**
-  - Access Control List
+:::info 
+
+Paper records can’t be easily protected with technical controls, such as encryption and authentication measures. They are better controlled using physical security measures and operational procedures. 
+
+::: 
+
 
 ### Administrative Controls
 

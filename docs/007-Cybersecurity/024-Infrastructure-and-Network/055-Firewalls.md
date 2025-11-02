@@ -245,7 +245,7 @@ Layer 7 firewalls provide deeper inspection by analyzing the content of the traf
 
 ### Next Generation Firewall (NGFW)
 
-Next Generation Firewalls combine traditional firewall functions with advanced security features.
+Next Generation Firewalls combine traditional firewall functions from older types of firewalls with advanced security features.
 
   - Integrates deep packet inspection (DPI) and intrusion prevention systems (IPS)
   - Provides application awareness and traffic control

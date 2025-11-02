@@ -48,8 +48,36 @@ New network devices may sit in storage for months before being used. During that
 
 - **Service Pack**
     
-  - Collection of updates, fixes, or enhancements bundled into a single installable package.
+  - Updates, fixes, or enhancements bundled into a single installable package.
   - Provides comprehensive improvements to a software program.
+
+
+## Centralized Patching
+
+Centralized patching uses a single management system to deploy updates across all devices, ensuring consistency and control.
+
+- Simplifies tracking and reporting of patch status.  
+- Ensures timely and uniform deployment of updates.  
+- Reduces security risks from unpatched systems.  
+
+## Decentralized Patching
+
+Decentralized patching distributes the responsibility of applying updates across multiple devices or teams rather than relying on a central system.
+
+- Allows teams to apply patches independently.
+- Helps maintain security when devices are offline or not centrally managed.
+
+Issues with decentralized patching:
+
+- Inconsistent patching, creating security gaps
+- Risk of missed or delayed updates
+- Hard to track patch status across devices
+- Admin credentials are often needed to install patches 
+- Apps downloading patches independently can cause network congestion
+
+Patching unmanaged devices may be the only advantage to using decentralized patching, as these devices might not always be on the network or cannot be patched using centralized methods (e.g., personal devices).
+
+
 
 ## Applying Patches 
 
@@ -118,7 +146,7 @@ sudo pacman -Syu
 
 ## Challenges and Best Practices
 
-Applying patches improves security, but it also comes with challenges. Careful planning and testing are needed to avoid disruptions.
+Applying patches improves security, but it also comes with challenges. 
 
 - Patches can sometimes affect system stability.
 - It's important to balance quick patching with reliability.

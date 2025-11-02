@@ -8,7 +8,7 @@ last_update:
 ---
 
 
-## Physical access controls
+## Physical Access Controls
 
 Physical access controls are tangible security measures designed to prevent, monitor, or detect direct contact with systems or specific areas within a facility.
 

@@ -29,7 +29,7 @@ A cache is temporary storage for frequently accessed data, reducing lookup times
 
 - Browsers use cache to store web pages and DNS information
 - Cached data can be targeted or accessed by attackers
-#- Chrome’s DNS cache can be viewed and cleared at `chrome://net-internals/#dns`
+- Chrome’s DNS cache can be viewed and cleared at `chrome://net-internals/#dns`
 
 ### Cache Poisoning Attacks
 
@@ -44,7 +44,8 @@ Cache poisoning involves attackers inserting malicious data into a cache.
 Server security issues occur when vulnerabilities on the server side are exploited, such as unpatched software, weak access controls, or improper configurations.
 
 - Exposed to data breaches, denial of service (DoS), and unauthorized access
-- Compromised servers can lead to loss of sensitive information or full system control by attackers
+- Compromised servers can lead to loss of sensitive information
+- It can also allow full system control by attackers
 
 ### Data Flow Control
 
@@ -56,39 +57,40 @@ Data flow control manages the transfer of data to prevent overwhelming the netwo
 
 Two approaches to manage data flow:
 
-- **Controlling Bandwidth Consumption**
-    - Data flow should be limited to prevent overwhelming the server or network bandwidth
-    - Operating systems have built-in controls for managing bandwidth usage
-    - Limits on inbound and outbound data ensure they stay within network capacity
-    - Without proper controls, this can lead to DoS attacks, where servers are overloaded by excessive traffic
+- **Control Bandwidth**
 
-- **Understanding Sensitive Data Flow**
-    - Data flows within systems should be mapped for proper monitoring
-    - Strong security controls are essential when handling sensitive information to prevent leakage
+  - Limit data flow to avoid DoS attacks
+  - OS controls regulate inbound/outbound traffic
+  - Prevent overloads that can disrupt services
 
+- **Monitor Sensitive Data Flow**
 
+  - Map data movement for proper monitoring
+  - Apply strong security to protect sensitive info
 
 ### Database Servers
 
-Database servers store information for retrieval, often supporting large datasets used for analytics. Data warehouses, in particular, handle massive amounts of data, making them prime targets for attackers due to the valuable information they hold.
+**Database servers** store information for retrieval, often supporting large datasets used for analytics. **Data warehouses** handle massive amounts of data, which makes them prime targets for attackers due to the valuable information they hold.
 
 - **Aggregation Attack**
 
-  - An attacker with low-level clearance can combine seemingly harmless pieces of information to reveal sensitive data.
-  - Example: An outsider can access a public report, staff directory, and a maintenance schedule
-  - Individually, these are harmless, but combined, they reveal information about company security protocols
-  - This piecing together of random data forms a larger sensitive picture
+  - Combine harmless pieces of data to reveal sensitive info
+  - Piecing together of random data forms a larger sensitive picture
+  - Example: Public report + staff directory + schedule → security exposure
 
 - **Inference Attack**
   
-  - In inference attacks, attackers deduce sensitive information from the facts they have.
-  - Example scenario: A hospital report indicates a high number of patients with a rare illness in one department.
-  = Another source shows that a specific VIP recently visited the same hospital.
-  - By correlating these facts, an attacker can infer that the VIP might have that rare illness.
-  - Attackers deduce private information by correlating seemingly unrelated facts
+  - Deduce sensitive info from seemingly unrelated facts
+  - Example: Correlating hospital data to identify a VIP’s health
 
 To protect against aggregation and inference attacks:
 
-- Implement need-to-know access policies, limiting data exposure
-- Encrypt sensitive data, even when stored in smaller, less obvious forms
-- Apply traffic analysis tools to detect unusual patterns that might indicate these attacks
+- Implement need-to-know access policies
+- Encrypt sensitive data, even in smaller datasets
+- Use traffic analysis to detect suspicious activity
+
+:::info 
+
+**Atomicity** means that either the entire transaction succeeds or the DBMS rolls it back to its previous state (in other words, clicks the “undo” button). 
+
+:::

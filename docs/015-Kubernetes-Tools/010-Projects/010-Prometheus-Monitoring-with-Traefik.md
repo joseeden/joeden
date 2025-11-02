@@ -42,7 +42,7 @@ metrics:
   prometheus: {}
 ```
 
-Prometheus uses **time series*- data. It groups results into buckets based on response times, such as `0.1s`, `0.3s`, or `1.25s`. Shorter requests go into smaller buckets, and longer requests go into larger ones.
+Prometheus uses **time series** data. It groups results into buckets based on response times, such as `0.1s`, `0.3s`, or `1.25s`. Shorter requests go into smaller buckets, and longer requests go into larger ones.
 
 ## Deployment Plan
 

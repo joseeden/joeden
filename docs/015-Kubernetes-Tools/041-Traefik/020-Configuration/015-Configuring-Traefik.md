@@ -15,7 +15,7 @@ last_update:
 
 ## Overview
 
-Traefik uses two main types of configurations: **static*- and **dynamic**. Each type plays a specific role and behaves differently when changes are made.
+Traefik uses two main types of configurations: **static** and **dynamic**. Each type plays a specific role and behaves differently when changes are made.
 
 - Static configuration is used when Traefik starts
 - Dynamic configuration is used for live service changes

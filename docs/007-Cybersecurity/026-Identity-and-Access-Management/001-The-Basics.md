@@ -235,7 +235,7 @@ The middle point where both thresholds meet is called the **Crossover Error Rate
 Session Management ensures integrity of user connections by using timeouts and screensavers to disconnect user sessions that have gone idle. 
 
 - This prevents unauthorized individuals from taking control of an abandoned session.
-- Ensures accountability, preventing unintended users from using authenticated sessions
+- Prevents unintended users from using authenticated sessions
 
 
 ### Timeouts 
@@ -258,6 +258,11 @@ Timeouts are simple but effective security controls. They come in three differen
     - System prevents users from performing sensitive actions instead of diconnecting session
     - Friendly approach to timeouts that is less disruptive.
 
+:::info 
+
+If a session key is successfully established, then secure communications can occur. This is not a reason to terminate a communications session. 
+
+:::
 
 ### Screensavers 
 

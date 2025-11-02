@@ -23,7 +23,8 @@ Decentralized access control means that access permissions and management are sc
 
 Example:
 
-- Department A may enforce strict access controls, while Department B adopts lax controls, posing security risks.
+- Department A may enforce strict access controls
+- Department B adopts lax controls, posing security risks.
 - Varying access controls between departments pose security risks.
 - Inconsistencies may lead to unauthorized access, breaches, and challenges in auditing.
 
@@ -31,6 +32,15 @@ Example:
 
 Measures the password's ability to resist guessing and brute-force attacks.
 For more information, please see [Common Security Policies.](/docs/007-Cybersecurity/020-Security-Foundations/012-Security-Policies.md#password-policy) 
+
+
+## `Verification 1:1` 
+
+Verification 1:1 is the process of confirming an individual's identity by comparing the provided credentials against a single, specific record in a database.
+
+- Commonly used in login systems, ID checks, and secure access points.
+- Helps prevent impersonation and unauthorized access.
+- Paired with multi-factor authentication for stronger security.
 
 ## Sensitivity 
 
@@ -42,7 +52,8 @@ Non-repudiation is a legal term that refers to protecting against false denial o
 
 - **Relevance in E-commerce**
   - Crucial in the context of e-commerce and electronic transactions.
-  - Prevents impersonation or denial of actions, such as making a purchase online and later denying it.
+  - Prevents impersonation or denial of actions
+  - Example: Making a purchase online and later denying it.
 
 - **Trust in Online Transactions**
   - Ensures trust in online transactions.
@@ -52,16 +63,23 @@ Non-repudiation is a legal term that refers to protecting against false denial o
   - Non-repudiation methodologies are employed to establish accountability.
   - Helps in verifying and confirming actions performed by individuals.
 
+:::info 
+
+**Accountability** is assured by the uniqueness of an identity and its binding to a single individual. 
+
+:::
+
 ## Privacy 
 
 Privacy is the right of an individual to control the distribution of information about themselves.
 
 - **Security and Privacy**
-  - While both focus on protecting personal data, security and privacy differ.
-  - Privacy is crucial in information assurance because it ensures that personal information and sensitive data are protected from misuse, unauthorized access, and disclosure.
+  - Privacy ensures personal data are protected from misuse, unauthorized access, and disclosure.
+  - Security refers to mechanisms that can be put into place to provide this level of control.
 
 - **Confidentiality and Privacy**
-  - Confidentiality focuses on data protection, whille privacy focuses on appropriate handling of personal information.
+  - Confidentiality focuses on data protection
+  - Privacy focuses on appropriate handling of personal information.
 
 - **Privacy Legislation Importance**
   - Increasing data collection emphasizes the need for privacy legislation and compliance.
@@ -77,12 +95,12 @@ Privacy is the right of an individual to control the distribution of information
 
 - **GDPR in the EU**
   - General Data Protection Regulation (GDPR).
-  - Provides individuals in the EU control over personal information compilation and retention by companies.
+  - Provides individuals in the EU control over personal information retention by companies.
 
 
 - **Data Protection Responsibilities**
-  - Security measures alone are insufficient; understanding and compliance with privacy laws are crucial.
-  - Organizations must abide by privacy requirements to avoid penalties for mishandling personal information.
+  - Security measures alone are insufficient
+  - Organizations must abide by privacy requirements to avoid penalties 
 
 ## Principle of Least Privilege
 
@@ -119,7 +137,7 @@ Example:
 
 Due care refers to the ongoing actions an organization takes to protect its assets, reputation, and operations.
 
-- Also known as **the prudent person rule*
+- Also known as **the prudent person rule**
 - Refers to what a prudent person would do in a given situation
 - Involves applying security policies, standards, and best practices
 - Tasks like patching and security practices are part of due care

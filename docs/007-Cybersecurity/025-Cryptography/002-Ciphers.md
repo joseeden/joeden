@@ -45,8 +45,8 @@ Types of Ciphers:
 
 Stream ciphers encrypt data one bit or byte at a time, making them fast and suitable for continuous data flow.
 
-- Encrypts data in a **continuous stream*- instead of fixed blocks
-- Uses a key stream generator to create random-looking bits
+- Encrypts data in a **continuous stream** instead of fixed blocks
+- Uses a **key stream generator** to create random-looking bits
 - The key stream is XORed with the plaintext to get the ciphertext
 
 Common features:

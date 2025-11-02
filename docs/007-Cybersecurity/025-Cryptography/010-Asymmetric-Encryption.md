@@ -119,7 +119,7 @@ The Merkle-Hellman Knapsack was one of the first public-key cryptosystems, inspi
 
 - Uses a sequence of numbers to encrypt data
 - Decryption involves solving a mathematical subset-sum problem
-- Relies on a *super-increasing sequence*- rather than large prime numbers
+- Relies on a *super-increasing sequence** rather than large prime numbers
 
 Although innovative at the time, it was proven ineffective after being broken in 1984, leading to its discontinuation in real-world use.
 

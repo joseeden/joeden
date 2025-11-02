@@ -162,7 +162,7 @@ kind create cluster --config cluster.yaml
 
 The cluster runs in a Docker container, so it's lightweight and fast to reset or recreate.
 
-**Optional:*- You might need to verify if `~/.kube/config` is created:
+**Optional:** You might need to verify if `~/.kube/config` is created:
 
 ```bash
 ls -la ~/.kube/config 
