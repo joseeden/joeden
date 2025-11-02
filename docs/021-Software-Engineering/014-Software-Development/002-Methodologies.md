@@ -9,14 +9,13 @@ last_update:
 
 ## Overview
 
-A software development methodology, or Software Development Life Cycle (SDLC) model, consists of a framework of rules, steps, roles, and principles for software development. While many methodologies are available, the three most common are:
+A software development methodology, or Software Development Life Cycle (SDLC) model, consists of a framework of rules, steps, roles, and principles for software development. 
+
+While many methodologies are available, the three most common are:
 
 - Waterfall
 - Agile
 - Lean
-
-Each methodology has its advantages and disadvantages. The choice of methodology depends on factors like project type, duration, and team size.
-
 
 ## Importance of Clear Requirements
 
@@ -37,7 +36,7 @@ After defining requirements, developers create a technical design that shows how
 
 ## Waterfall Model
 
-Once requirements are established, developers can begin building the software using different methodologies. One traditional method is the **Waterfall** model, which follows these steps:
+Once requirements are established, developers can begin building the software using different methodologies. One traditional method is the **Waterfall*- model, which follows these steps:
 
 1. Define system requirements
 2. Create software requirements
@@ -68,32 +67,121 @@ In the Spiral mode, developers begin in the first phase and then move through ea
 
 </div>
 
+## Incremental Model
+
+The Incremental model involves developing software in small functional increments.  
+
+- Builds software in small portions called increments.  
+- Each increment adds functionality and can be deployed early.  
+- Allows early feedback and gradual improvement.
+
+## Cleanroom Model 
+
+The Cleanroom model focuses on preventing defects through rigorous processes.  
+
+- Focuses on preventing defects rather than fixing them.  
+- Uses formal specifications, statistical quality control, and rigorous testing.  
+- Emphasizes correctness by construction.
+
+## Reuse Model
+
+The Reuse Methodology leverages existing components to speed up development.  
+
+- Builds software using existing components.  
+- Encourages modular design and component libraries.  
+- Saves time and reduces errors.
+
+## Exploratory Model
+
+The Exploratory Methodology is flexible, trial-and-error approach useful for uncertain requirements.  
+
+- Informal, trial-and-error approach.  
+- Useful when requirements are unclear or research-oriented.  
+- Emphasizes learning and adaptation.
+
+## Rapid Prototyping
+
+A development approach that builds early prototypes to explore requirements and design ideas.
+
+- Quickly develops a prototype to clarify requirements.  
+- Refined iteratively based on user feedback.  
+- Reduces risk of building the wrong system
+
+Different ways to apply prototyping for feedback and testing.  
+
+- **Evolutionary Prototyping**: Grows gradually into the final system.  
+- **Operational Prototyping**: Tested in the real environment for performance and usability.
+
+
+## Joint Application Development (JAD)
+
+A collaborative approach to gather requirements and build consensus.
+
+- Conducts workshops with developers and users.
+- Speeds up requirements gathering and consensus.  
+- Improves communication and reduces misunderstandings.
+
+
+## Rapid Application Development (RAD)
+
+Focuses on quick development with iterative prototypes.
+
+- Fast development with prototypes and iterative releases.  
+- Prioritizes speed and user feedback over detailed documentation.  
+- Best for small to medium projects with clear requirements.
+
 
 ## Agile Method
 
 The Agile method is favored for its adaptability and speed. Key Agile principles include:
 
 - Valuing people and communication over strict processes
-- Focusing on delivering functional software rather than heavy documentation
+- Delivering functional software rather than heavy documentation
 - Encouraging customer collaboration
 - Being open to changing requirements
 
-Agile promotes frequent delivery of working software, teamwork, and sustainable development. For more information, please see [What is Agile.](/docs/099-Project-Management/010-Introduction/001-Agile.md)
+Agile methodology does not use prototypes to represent the full product but breaks the product down into individual features that are continuously being delivered.
+
+For more information, please see [What is Agile.](/docs/099-Project-Management/010-Introduction/001-Agile.md)
+
+:::info
+
+A notable element of many Agile methodologies is their focus on user stories. A user story is a sentence that describes what a user wants to do and why. 
+
+:::
+
+
+
+## Kanban
+
+Kanban is a visual workflow management system to optimize tasks.  
+
+- Visual system to manage workflow.  
+- Tracks tasks on boards to optimize flow and reduce bottlenecks.  
+- Limits work in progress for better efficiency.
+
+## Extreme Programming (XP)
+
+Extreme Programming (XP) emphasizes high quality, adaptability, and close collaboration.
+
+- Agile approach focused on quality and responsiveness.
+- Uses pair programming, test-driven development, and frequent releases.
+- Encourages continuous feedback and collaboration.
+
 
 ## Lean Software Development
 
 Lean software development is based on Lean Manufacturing principles, which are focused on minimizing waste and maximizing value to the customer. There are seven principles for lean:
 
-* Eliminate waste
-* Amplify learning
-* Decide as late as possible
-* Deliver as fast as possible
-* Empower the team
-* Build integrity in
-* Optimize the whole
+- Eliminate waste
+- Amplify learning
+- Decide as late as possible
+- Deliver as fast as possible
+- Empower the team
+- Build integrity in
+- Optimize the whole
 
 For more information, please see [Lean Principles.](/docs/021-Software-Engineering/014-Software-Development/003-Lean-Principles.md)
-
 
 
 ## Documentation 

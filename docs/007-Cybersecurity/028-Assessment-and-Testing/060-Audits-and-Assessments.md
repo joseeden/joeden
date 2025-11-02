@@ -68,6 +68,11 @@ An attack surface review assesses all potential entry points that an attacker co
 
 These reviews make heavy use of port, vulnerability, and application scanners. They adopt the mindset of an attacker, seeking possible ways to exploit the system.
 
+:::info 
+
+**Attack surface analysis** identifies and minimizes the parts of a system accessible to untrusted users.It is typically performed during the design phase of the SDLC. It uses tools to examine software components and assign a numerical value representing the system’s exposure.
+
+:::
 
 ### Code Reviews
 

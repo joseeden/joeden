@@ -68,7 +68,8 @@ Additionally:
 - **Joint Operating Agreements (JOA)**
   - Competing entities collaborate for shared continuity during disruptions.
   - Focus on safety and security collaboration rather than competition.
-  - Both outline responsibilities in sharing information, resources, or collaborative efforts, including security responsibilities.
+  - Outline responsibilities in sharing information and resources.
+  - Includes collaborative efforts and security responsibilities.
 
 - **Regulatory and Industry Guidelines**
   - Agreements may be mandated by regulations or industry guidelines.
@@ -77,7 +78,8 @@ Additionally:
 - **Difference from SLA**
   - MOU/MOA focuses on system and information usage.
   - SLA delves into granular details, specifying service intricacies.
-  - Caution required in cloud-based outsourcing, thorough legal review recommended.
+  - Caution required in cloud-based outsourcing
+  - A thorough legal review is always recommended.
 
 :::info 
 
@@ -97,11 +99,25 @@ For recurring client relationships, the involved parties can use an MSA instead 
 
 ## Statement of Work 
 
-The Statement of Work (SOW) is a critical document that details the specifics of a project or service engagement, clearly defining the scope, deliverables, and timeline to ensure all parties are aligned.
+The Statement of Work (SOW) details the specifics of a project or service engagement, clearly defining the scope, deliverables, and timeline to ensure all parties are aligned.
 
-- Also known as "Scope of Work", SOW provides the in-depth details for the given project.
-- Details the project objectives, scope of work, and responsibilities.
-- Lists the expected deliverables, project milestones, and deadlines for deliverables.
+- Also known as "Scope of Work".
+- Project objectives, scope of work, and responsibilities.
+- Expected deliverables, project milestones, and deadlines for deliverables.
+
+Sticking to what is outlined in the Statement of Work (SOW) is important so that **scope creep** does not take place. If the scope of a project continually extends in an uncontrollable manner (creeps), the project:
+
+- May never end
+- Not meet its goals
+- Run out of funding
+- All of the above
+
+
+:::info 
+
+A **work breakdown structure (WBS)** is a project management tool used to define and group a project’s individual work elements in an organized manner. It is a deliberate decomposition of the project into tasks and subtasks that result in clearly defined deliverables.
+
+:::
 
 
 ## Non-Disclosure Agreement 

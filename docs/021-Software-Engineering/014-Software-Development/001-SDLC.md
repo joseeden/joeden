@@ -8,16 +8,8 @@ last_update:
 ---
 
 
-## Software Development
 
-The software development process, or software development life cycle (SDLC), goes beyond coding. It involves gathering requirements, creating a proof of concept, testing, and bug fixing.
-
-- Encompasses planning, design, and development
-- Requires collaboration among teams
-- Focuses on continuous improvement and maintenance
-
-
-## Software Development Life Cycle
+## Overview
 
 The software development life cycle (SDLC) outlines the process of developing software from an initial idea to delivery. It typically consists of six phases, where each phase builds on the previous one.
 
@@ -48,7 +40,7 @@ The software development life cycle (SDLC) offers adaptability to enhance projec
 - Requirements can be gathered for specific aspects
 
 
-## Phase 1: Requirements and Analysis
+## 1. Requirements and Analysis
 
 The requirements and analysis phase focuses on understanding stakeholder needs and defining the software's problems to solve.
 
@@ -67,15 +59,35 @@ After gathering the requirements, the team analyzes the results to determine the
 
 At the end of this phase, the traditional waterfall method recommends producing a **Software Requirement Specification (SRS) document** that outlines the software requirements and scope, ensuring thorough confirmation with stakeholders.
 
-## Phase 2: Design
+## 2. Design
 
-The design phase utilizes the SRS document to create the software's architecture.
+The design phase utilizes the Software Requirements Specification (SRS) document to create the software's architecture.
 
 - Design software based on the SRS
 - Produce High-Level Design (HLD) for architecture
 - Create Low-Level Design (LLD) for component details
 
-## Phase 3: Implementation
+During this phase, several models are developed:
+
+- **Informational Model**
+
+  - Represents the data and information flow in the system.
+  - Defines entities, attributes, and relationships.
+  - Involves how data is stored and accessed.
+
+- **Functional Model**
+
+  - Describes the system’s processes and functions.
+  - Shows how inputs are transformed into outputs.
+  - Verifies that functional requirements are met.
+
+- **Behaviorial Model**
+
+  - Shows how system behaves in response to events or inputs.
+  - Considers the states of the application during transactions
+  - Uses state diagrams, sequence diagrams, and activity diagrams.
+
+## 3. Implementation
 
 The implementation phase involves coding based on HLD and LLD.
 
@@ -86,7 +98,7 @@ The implementation phase involves coding based on HLD and LLD.
 At the end of the implementation phase, functional code that implements all of the customer's requirements is ready to be tested.
 
 
-## Phase 4: Testing
+## 4. Testing
 
 The testing phase validates the code from the implementation phase.
 
@@ -101,7 +113,7 @@ The **test plan** is a document that includes a list of every single test to be 
 
 At the end of testing, software is theoretically ready for production, but this rarely happens. Developers have enhanced testing efficiency and workflows, recognizing that software is never completely bug-free. It must be observable, tested in production, and resilient to maintain availability and performance.
 
-## Phase 5: Deployment
+## 5. Deployment
 
 The deployment phase involves installing the software into production.
 
@@ -110,7 +122,7 @@ The deployment phase involves installing the software into production.
 
 At the end of the deployment phase, the final piece of software is released to customers and other end users.
 
-## Phase 6: Maintenance
+## 6. Maintenance
 
 During the maintenance phase, the team:
 

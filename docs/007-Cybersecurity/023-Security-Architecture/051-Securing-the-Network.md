@@ -172,7 +172,7 @@ Infrastructure considerations play a pivotal role in the efficiency and security
     - Vulnerability points 
     - Areas without connectivity
     
-- **Understanding attack surface**
+- **Knowing the attack surface**
   - **Attack Surface** - all points that an unauthorized user can try to enter.
   - The more complex a network becomes, the wider the attack surface becomes.
   - Implement proper controls to mitigate the risk.
