@@ -11,23 +11,27 @@ last_update:
 
 ## Internal Assessments
 
-An in-depth analysis to identify and assess potential risks and vulnerabilities in an organization's information systems.
+Internal assessments help an organization find risks and weaknesses in its systems.
 
-- Often performed before implementing new systems or before making any changes to existing ones.
-- Identify gaps in an organization's compliance efforts and to prepare for formal audits.
-- Most are conducted as **Self-assessments** - conducted to gauge adherence to standards and regulations.
+- Help spot gaps in compliance and prepare for audits
+- Usually done before launching new systems or major changes
+- Conducted as self-assessments to check adherence to standards
+
+Internal assessments combine tools and reviews to spot vulnerabilities. This ensures potential risks are understood before changes are made.
 
 ### Assessment Process 
 
-1. Conducting threat modelling exercise to identify potential threats.
-2. Combination of automated tools and manual testing techniques are used to assess vulnerabilities.
-3. Risks assessment, for evaluating potential impact of the identified threats and the cost of implementing security measures.
-4. Mitigation strategies are recommended based on the assessment results
+This process ensures that organizations know their weak points and can plan how to reduce risks.
+
+1. Identify potential threats using threat modeling
+2. Use automated tools and manual checks to find vulnerabilities
+3. Evaluate risks to see impact and cost of fixing them
+4. Recommend mitigation strategies based on findings
+
 
 ### Example of Self Assessment Questionnaire
 
-Below is an excerpt from the Self-Assessment Questionnaire provided by Cyber Security Agency of Singapore.
-The full questionnaire can be found [here](https://www.csa.gov.sg/docs/default-source/our-programmes/support-for-enterprises/sg-cyber-safe-programme/cyber-essentials-self-assessment-v20220897321ea6-f473-4f1f-8ecb-77531ac02665.xlsx?sfvrsn=90e46f58_1).
+Below is an excerpt from the Self-Assessment Questionnaire provided by Cyber Security Agency of Singapore. The full questionnaire can be found [here](https://www.csa.gov.sg/docs/default-source/our-programmes/support-for-enterprises/sg-cyber-safe-programme/cyber-essentials-self-assessment-v20220897321ea6-f473-4f1f-8ecb-77531ac02665.xlsx?sfvrsn=90e46f58_1).
 
 ![](/img/docs/sec+-self-assessment-questionnaire.png)
 
@@ -36,35 +40,39 @@ The full questionnaire can be found [here](https://www.csa.gov.sg/docs/default-s
 
 ### External Audits 
 
-External Audits are systematic evaluations carried out by external entities to assess an organization's information systems and security controls.
+External audits are evaluations done by outside parties to check security controls and overall system safety.
 
-- Provides an objective perspective to an organization's true security posture.
-- Also covers data protection, network security, access controls, and incident response.
-- Uncover deficiencies in policies and controls to ensure alignment with diverse regulatory standards.
-- Example: Evaluating compliance with PCI DSS, HIPAA, GDPR, etc.
+- Offer an unbiased view of security posture
+- Cover data protection, network security, access, and incident response
+- Identify gaps in policies and controls for regulatory compliance
+- Example: Compliance with GDPR, HIPAA, or PCI DSS
+
 
 ### External Assessments
 
-Detailed analysis conducted by independent entities to identify vulnerabilities and risks.
+External assessments are deeper analyses to find vulnerabilities and risks.
 
-- Involves combinations of automated scanning tools and manual testing techniques.
-- Risk Assessment, Vulnerability Assessment, and Threat Assessment.
+- Combine automated scans and manual testing
+- Include risk, vulnerability, and threat assessments
+
 
 ### Regulatory Compliance    
 
-Objective that organizations aim to reach in adherence to applicable laws, policies, and regulations.
+Organizations aim to meet laws and industry rules.
 
-- Organizations are adopting the use of consolidated and harmonized set of compliance controls.
-- Adherence to industry-specific requirements like HIPAA, PCI DSS, and GDPR.
-- Controls, such as NIST Cybersecurity Framework for compliance mechanisms.
+- Use unified compliance controls across the organization
+- Follow industry standards like HIPAA, PCI DSS, GDPR
+- Apply frameworks like NIST Cybersecurity Framework for guidance
+
 
 ### Independent Third-Party Audit 
 
-Offers validation of security practices, fostering trust with customers, stakeholders, and regulatory authorities.
+Third-party audits validate security measures and build trust with clients and regulators.
 
-- Provides an unbiased perspective of the organization's security posture.
-- Identify potential weaknesses that might be overlooked in internal audits and assessments.
-- Regulations include GDPR and PCI DSS.
+- Provide an impartial view of security posture
+- Find weaknesses missed in internal checks
+- Align with regulations such as GDPR and PCI DSS
+
 
 ### Example of HIPAA Audit Checklist
 

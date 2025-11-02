@@ -66,3 +66,25 @@ ISACA recommends choosing KRIs based on these criteria:
 - **Effort**: Ease of implementation and ongoing support.
 - **Reliability**: Indicator's ability to predict risks.
 - **Sensitivity**: Captures variances in risk accurately.
+
+
+
+## Real User Monitoring (RUM)
+
+RUM is a metric-based assessment approach that collects data from actual users interacting with an application or service. It helps evaluate real-world performance and user experience.
+
+- Monitors live user sessions 
+- Measure response time, latency, and availability
+- Detects issues specific to certain browsers or devices
+- Supports continuous monitoring and performance-based security metrics
+
+Comparison:
+
+- **RUM (Real User Monitoring):** Uses real user activity; reflects actual behavior and conditions
+- **Synthetic Monitoring:** Uses simulated or scripted transactions to test performance proactively
+
+:::info 
+
+Real user monitoring (RUM) lacks the elements of predictability and regularity, which means that a problem won’t be detected during low utilization periods. 
+
+:::
