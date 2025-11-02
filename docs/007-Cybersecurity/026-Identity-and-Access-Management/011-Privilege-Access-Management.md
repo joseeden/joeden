@@ -139,9 +139,8 @@ Mitigating risks tied to privileged accounts involves strict access control and 
 
 Privileged accounts require stronger audit measures to ensure proper use.
 
-- **Monitoring and Auditing**
-  - Privileged accounts need more frequent and detailed monitoring.
-  - Audit logs should be regularly reviewed with increased scrutiny compared to standard accounts.
+- Privileged accounts need more frequent and detailed monitoring.
+- Audit logs should be regularly reviewed compared to standard accounts.
 
 ## Segregation of Duties 
 

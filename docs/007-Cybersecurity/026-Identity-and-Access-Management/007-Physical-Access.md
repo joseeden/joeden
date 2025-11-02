@@ -10,126 +10,173 @@ last_update:
 
 ## Physical Access Controls
 
-Physical access controls are tangible security measures designed to prevent, monitor, or detect direct contact with systems or specific areas within a facility.
+Physical access controls are tangible measures that prevent, detect, or monitor direct contact with systems and secure areas.
 
-**Examples of Physical Access Controls**
+- Protect people first, then assets  
+- Range from deterrents to detection and response tools  
+- Each area needs tailored controls and monitoring
 
-- Security Guards
-- Fences
-- Motion Detectors
-- Locked Doors/Gates
-- Sealed Windows
-- Lights
-- Cable Protection
-- Laptop Locks
-- Badges
-- Swipe Cards
-- Guard Dogs
-- Cameras
-- Mantraps/Turnstiles
-- Alarms
 
-**Priority in Deployment**
+### Badge Systems and Gate Entry
 
-- Biggest concern is the safety and security of personnel, followed by the protection of other physical assets belonging to the company.
-- Various physical access control mechanisms can be deployed to manage and monitor access to a facility, ranging from deterrents to detection systems. Each area requires distinct physical access controls, monitoring, and preventive measures.
+Badge systems control who can enter a space.
 
-### Physical Security
+- Use turnstiles, mantraps, or controlled doors  
+- Compare badges to a verified access database  
+- Biometrics added for high-security zones
 
-- **Badge Systems and Gate Entry**
-   - Examples are Turnstiles, mantraps, remotely/system-controlled door locks.
-   - Access control devices are assigned and activated 
-   - Include biometric characteristics in high-security environments.
-   - System compares individual's badge against a verified database.
-   - For card types: Bar code, magnetic stripe, proximity, smart, hybrid.
+For card types: 
 
-- **Environmental Design**
-   - Crime Prevention through Environmental Design (CPTED) focuses on passive design elements.
-   - Directing flow, signaling authorized spaces, providing visibility to reduce the likelihood of criminal activities.
+- Barcode
+- Magnetic stripe
+- Proximity
+- Smart
+- Hybrid  
 
-- **Biometrics**
-   - User's registered biometric code stored in the system or on a smart card.
-   - User presents biometric data for comparison with the stored code.
-   - High accuracy, potential expense, user discomfort, privacy concerns, device sanitization challenges.
-   
-- **Biometric Types**
-    - **Physiological** 
-      - Fingerprint, iris scan, retinal scan, palm scan, venous scan.
-    - **Behavioral** 
-      - Voiceprints, signature dynamics, keystroke dynamics.
 
-### Biometric Iris Scans 
+### Environmental Design
+
+Design spaces to reduce crime by shaping visibility and flow.
+
+- Apply Crime Prevention Through Environmental Design (CPTED)  
+- Direct traffic and highlight authorized areas  
+- Improve natural surveillance and reduce hiding spots
+
+### Biometrics
+
+Biometrics use physical or behavioral traits to identify people.
+
+- Store a template for comparison or on a smart card  
+- High accuracy but can be costly and raise privacy concerns  
+
+Types:
+
+- **Physiological**: fingerprint, iris, retina, palm, vein  
+- **Behavioral**: voice, signature dynamics, keystroke
 
 A few notes on **iris scans (eye scans)**:
 
 - Iris patterns remain stable throughout a person's life
 - This makes it a reliable biometric authentication method
 - Has a very low false acceptance rate, making it a highly accurate
-- Iris patterns can be recognized from a distance, allowing nonintrusive scanning
+- Iris patterns can be recognized from a distance (nonintrusive)
 
 One disadvantage of iris recognition technology is that scanners can be fooled by high-quality images of a person's face.
 
-### Securing Facilities
+### Fences, Bollards, and Mantraps
 
 - **Fences**
-  - Structure that encloses an area using interconnected panels or posts.
-  - Crafted with materials such as wood, metal, wiremesh, concrete, etc.
+
+  - Encloses an area using interconnected panels or posts.
   - Visual deterrent, shows where property starts and ends.
-  - Delays intruders, providing security personnel longer time to react.
+  - Made with materials such as wood, metal, wiremesh, concrete, etc.
+  - Delays intruders, provides security personnel longer time to react.
 
     
-<div class="img-center">
+      <div class="img-center">
 
-    ![](/img/docs/sec+-enter-facilities-fencesss.png)
-    
+          ![](/img/docs/sec+-enter-facilities-fencesss.png)
+          
 
-</div>
+      </div>
 
 
 - **Bollards**
 
-  - A bollard is a short post embedded into a street or sidewalk. 
-  - These posts are common in city and building designs
-  - Boundary markings or protective barriers, redirecting vehicular traffic
-
+  - A bollard is a short post embedded into a street or sidewalk.
+  - These posts are common in city and building designs.
+  - Boundary markings or protective barriers.
     
-<div class="img-center">
+    <div class="img-center">
 
-    ![](/img/docs/security-bollards.png)
-    
+        ![](/img/docs/security-bollards.png)
+        
 
-</div>
+    </div>
 
 
 
 - **Mantrap** 
 
-  - A Mantrap is a small room with an entry door on one wall and an exit door on the opposite wall. One door of a mantrap cannot be unlocked and opened until the opposite door has been closed and locked. Mantraps are often used in physical security to separate non-secure areas from secure areas and prevent unauthorized access.
+  - Small room with an entry door and exit door.
+  - One door stays locked until the other closes.
+  - Separates secure and non-secure areas to prevent unauthorized access.
 
     
-<div class="img-center">
+    <div class="img-center">
 
-    ![](/img/docs/security-mantrap.png)
-    
+        ![](/img/docs/security-mantrap.png)
 
-</div>
-
+    </div>
 
 
-- **Access Control Vestibules**
 
-  - Double-door system with two electroniccally-controlled doors that ensure only one door is open at any given time.
-  - Like a mantrap, a security vestibule consists of a small space between two sets of doors, but it may be larger and more open.
-  - It can serve multiple purposes, such as controlling foot traffic, reducing drafts, or creating a barrier for noise.
-  - Prevents the following:
-    - **Piggybacking** 
-      - Involves two people, with and without access, entering a secure area.
-      - Intentionally allowing the second person to enter. 
+### Perimeter Intrusion Detection System
 
-    - **Tailgating**
-      - Unauthorized person closely follows someone with access without their knowledge and consent.
-  
-    
+**Perimeter Intrusion Detection and Assessment System (PIDAS)** detects anyone trying to cut, climb, or tamper with a fence.
+
+- Sensors are installed on the fence and at the base
+- Detects vibration or movement on the fence.
+- Passive cable sensors trigger alarms
+- Sends alerts to security or monitoring system
+
+
+### Electromechanical Detection System
+
+Electromechanical systems reliably detect physical tampering using simple electrical and mechanical components.
+
+- Contact switches detect forced openings on doors and gates
+- Strain gauges sense pulling or impact on panels
+- Control units map events to alarms
+- Can route alerts to monitoring systems
+
+
+### Passive Infrared (PIR) System
+
+PIR sensors detects human presence by sensing body heat and movement.
+
+- Monitors infrared energy in a defined area
+- Detects warm bodies moving through
+- Can be used indoors or outdoors
+- Integrates with alarms or lighting
+
+
+### Acoustical Detection System
+
+Acoustical systems detects sounds of tampering like cutting, climbing, or breaking.
+
+- Uses microphones or acoustic sensors near perimeters
+- Filters background noise to identify suspicious sounds
+- Can trigger cameras or alarms
+
+
+### Photometric System
+
+Photometric detection uses light or image analysis to detect changes.
+
+- Cameras or light sensors monitor for unusual activity
+- Detect shadows, openings, or motion
+- Supports image analysis for alerts
+- Can verify alerts from other sensors
+
+### Access Control Vestibules
+
+Small controlled spaces to prevent unauthorized entry.
+
+- System with two electronically-controlled doors
+- Ensures only one door is open at any given time.
+- Can control foot traffic and reduce drafts or noise
+
+Like a mantrap, a security vestibule consists of a small space between two sets of doors but the space may be larger and more open. It can prevent the following:
+
+- **Piggybacking** 
+  - Two people, with and without access, entering a secure area.
+  - Intentionally allowing the second person to enter. 
+
+- **Tailgating**
+  - Unauthorized person closely follows someone with access without their knowledge and consent.
+
+
 <div class="img-center">
 
     ![](/img/docs/sec+-security-vestibules-photo.png)
@@ -139,71 +186,49 @@ One disadvantage of iris recognition technology is that scanners can be fooled b
 
 
 
-- **Door Locks**      
-  - Padlocks 
-  - Simple pin and tumbler locks
-  - Numeric locks 
-  - Wireless locks 
-  - Biometric locks
-  - Cipher locks
+
+### Door Locks
+
+Common lock types used in facilities.
+
+- Padlocks 
+- Simple pin and tumbler locks
+- Numeric locks 
+- Wireless locks 
+- Biometric locks
+- Cipher locks
 
 ### Surveillance System 
 
 Organized strategy or setup designed to observe and report activities in a given area.
 
-- **Security Guards**
-  - Security guards discourage individuals from attempting unauthorized access.
-  - Acts as a visible deterrent against impersonation or tailgating.
+- Security Guards act as visible deterrents  
+- Cameras deter crime and provide forensic evidence  
+- Lighting improves camera effectiveness and deters intruders  
+- Motion sensors trigger alerts and can integrate with lighting
 
-- **Video/Cameras (CCTV)**
-  - Deter criminal activity.
-  - Serve as forensic tools.
-  - Centrally monitored for swift response.
-  - Features:
-    - Motion detection 
-    - Night vision
-    - Facial recognition 
-    - Remote access
-    - Pan-tilt-zoom (PTZ)
+Categories of motion sensors:
 
-- **Lighting**
-  - Proper lighting is crucial for an effective surveillance system.
-  - Well-lit areas can also deter criminals
-  - Can be integrated with motion sensors  - lights on when motion is detected.
+- Infrared Sensors 
+- Pressure sensors
+- Microwave sensors
+- Ultrasonic sensors
 
-- **Motion Sensors**
-  - Detect and respond to external changes in the environment.
-  - Categories:
-    - Infrared Sensors 
-    - Pressure sensors
-    - Microwave sensors
-    - Ultrasonic sensors
+### Integrated Sensors
 
-- **Integrated Sensors**
-  - Deployed in doors, gates, and turnstiles.
-  - Strain-sensitive cables and vibration sensors.
-  - Detect and respond to potential breaches.
+Sensors embedded in doors, gates, and structures.
 
+- Use strain-sensitive cables, vibration, pressure, or motion sensors  
+- Detect forced entry or tampering quickly
 
 ### Logging
 
-This includes physical logs, such as sign-in sheets or electronic access system logs. It emphasizes the importance of logs in supporting business needs, compliance, and forensic investigations.
+Record keeping for access and security events.
 
-- **Log Protection**
-  - Essential for legal and business reasons.
-  - Safeguarded against manipulation and unauthorized disclosure.
-
-- **Review and Retention**
-  - Regular log review integral to the security program.
-  - Established guidelines for log retention aligned with policy.
-
-- **Log Anomalies**
-  - Identification of unusual occurrences crucial.
-  - Key step in security issue detection during audits or routine monitoring.
-
-- **Business and Legal Variances**
-  - Varying requirements for log retention.
-  - Compliance influenced by legal guidelines and industry standards.
+- Protect logs against tampering and unauthorized access  
+- Review logs regularly and keep retention policies documented  
+- Watch for log anomalies as an early warning sign
+- Includes physical logs, e.g. sign-in sheets, electronic access logs.
 
 
 ### Alarm Systems
@@ -228,23 +253,22 @@ Alarm systems aim to promptly notify relevant authorities in case of unexpected 
 
 ### Visitor Management Policy 
 
-A visitor management policy is a vital component of physical access controls, as it helps organizations track and manage visitor access.
+A visitor management policy helps organizations track and manage visitor access.
 
-  - Ensures legitimacy and monitors movements for facility and asset security.
-  - Describe purpose of visits and explain visit approval authority.
-  - Describe requirements for unescorted access and who may escort visitors.
-  - Visits should be logged, e.g. signing on record book or electroniccally
-  - Vistors must wear the visitor badge at all times while inside.
-  - *Reference:* ISC2 Study Guide, Module 2, Physical Access Controls.
-  
+- Log visitor details and purpose of visit  
+- Visits should be logged, e.g. signing on record book or electroniccally
+- Define who may escort visitors and who gets unescorted access  
+- Issue visible visitor badges and require them to be worn
+
 
 ## Choosing an Access Control System
 
-The following are some considerations:
+The following are key factors when selecting controls.
 
 - Performance is primary factor.
-- Includes control effectiveness, reliability, scalability, and compatibility.
-- Critical factor is the system's ability to perform its intended function effectively and reliably.
+- Prioritize safety and reliability next  
+- Consider scalability, compatibility
+- Balance cost and complexity with security needs
 
 Example: 
 
@@ -252,30 +276,18 @@ Example:
 - Simplicity and efficiency are secondary considerations.
 - Aesthetic appeal is irrelevant to the primary function of access control.
 
-Primary consideration when choosing physical access controls:
-
-- While building, equipment, and network security matter, **personnel security is the top priority.**
-- Examples of Controls: Locks, security cameras, and security personnel.
-- Designed to safeguard both people and assets.
-- Security cameras and personnel to deter and respond to threats like theft, violence, and unauthorized access.
-  
-**Reference:** ISC2 Study Guide, Chapter 3, Module 2.
 
 ## Site Assessment 
 
-- **Factors Considered**
-  - Sensitivity of protected information, 
-  - cost of scanners, and 
-  - impact on employees and operations.
+Decide controls based on site sensitivity and impact.
 
-- **Primary Consideration**
-  - The result of the site assessment.
-  - This is a critical factor when implementing access controls for a physical site
+- Assess sensitivity of data and critical areas  
+- Choose higher security (e.g., biometrics) for server rooms and exec offices  
+- Avoid over-securing low-risk areas like supply closets
 
-- **Example**
-  - Biometric scanners installed based on sensitivity; needed for server rooms, executive offices, but not break rooms or supply closets.
+Example: 
 
-- **Reference**: ISC2 Study Guide, Chapter 3, Module 1.
+Biometric scanners installed based on sensitivity. They are needed for server rooms, executive offices, but not break rooms or supply closets.
 
 ## Physical Attacks
 

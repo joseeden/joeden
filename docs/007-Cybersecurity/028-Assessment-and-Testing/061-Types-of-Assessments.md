@@ -17,7 +17,7 @@ Internal assessments help an organization find risks and weaknesses in its syste
 - Usually done before launching new systems or major changes
 - Conducted as self-assessments to check adherence to standards
 
-Internal assessments combine tools and reviews to spot vulnerabilities. This ensures potential risks are understood before changes are made.
+Most organizations use multiple tools to provide depth of testing and to ensure that more security issues or vulnerabilities are discovered, as well as to validate results of other tools. 
 
 ### Assessment Process 
 
@@ -34,6 +34,17 @@ This process ensures that organizations know their weak points and can plan how 
 Below is an excerpt from the Self-Assessment Questionnaire provided by Cyber Security Agency of Singapore. The full questionnaire can be found [here](https://www.csa.gov.sg/docs/default-source/our-programmes/support-for-enterprises/sg-cyber-safe-programme/cyber-essentials-self-assessment-v20220897321ea6-f473-4f1f-8ecb-77531ac02665.xlsx?sfvrsn=90e46f58_1).
 
 ![](/img/docs/sec+-self-assessment-questionnaire.png)
+
+### Information System Security Assessment
+
+To perform a security assessment on an information system, follow the steps below:
+
+1. Define the purpose or objectives.
+2. Determine the scope and boundaries of the assessment.
+3. Identify system components, data flows, and security controls in place.
+4. Determine assessment methods (e.g., scanning, testing, interviews).
+5. Collect and analyze findings to identify vulnerabilities and risks.
+6. Document results and provide actionable recommendations for improvement.
 
 
 ## External Audits and Assessments
@@ -61,6 +72,11 @@ External assessments are deeper analyses to find vulnerabilities and risks.
 - Combine automated scans and manual testing
 - Include risk, vulnerability, and threat assessments
 
+The types of tests that are performed during an assessment are: 
+
+- **Personnel testing** - People and their adherence to procedures
+- **Physical testing** - Physical security controls, such as gates and fencing
+- **System and network testing** - Includes testing technical controls
 
 ### Regulatory Compliance    
 
@@ -87,4 +103,10 @@ Below is an excerpt from the HIPAA Audit Checklist provided by [San Bernardino C
 ![](/img/docs/sec+-example-hipaa-audit-checklist.png)
 
 
+## Password Cracking
 
+Password cracking is a technique used during security assessments to test the strength and resilience of user credentials.
+
+- Used in internal or external assessments 
+- Helps identify weak, reused, or default passwords.
+- Includes brute force, dictionary, and rainbow table attacks.

@@ -19,6 +19,13 @@ Penetration testing simulates cyber attacks to find vulnerabilities in systems.
 
 **Penetration tests usually start with basic user-level access to simulate real attacks.** Testers use tools and techniques to find weaknesses, especially privilege escalation paths, since attackers only need one vulnerability to succeed.
 
+:::info 
+
+Penetration testing should be conducted **at least annually** on critical systems that must remain available and operational. 
+
+:::
+
+
 ## Types of Pentesting
 
 ### Physical Pentesting
@@ -91,6 +98,21 @@ The classifications for the environments define the level of information availab
 
 For more information, please see [Environment Classifications.](/docs/007-Cybersecurity/028-Assessment-and-Testing/066-Reconnaisance-in-Pentesting.md#environment-classifications)
 
+## Simulated Environment
+
+A simulated environment is an isolated lab used to run suspicious or malicious code safely, without affecting production systems.
+
+- Includes sandboxes, virtual machines, emulators, and isolated networks
+- Mirrors production configs so test results are realistic
+- Used for pentesting, malware analysis, and exploit validation
+
+Typically includes:
+
+- Sandboxes
+- Virtual machines 
+- Emulators/Emulation buffers 
+- Isolated networks
+
 
 ## Penetration Testing Process 
 
@@ -118,7 +140,7 @@ During this phase, testers finds entry points and test if the vulnerabilities ca
 - Attempt to exploit identified vulnerabilities.
 - Validate the exploitability and impact of each vulnerability.
 
-### Privilege Escalation, Backdoors, and Pivoting
+### 4. Privilege Escalation, Backdoors, and Pivoting
 
 In this stage, testers aim to increase their access within the system, establish persistent access for future use, and explore further into the network to identify additional vulnerabilities and critical assets.
 
@@ -128,7 +150,7 @@ In this stage, testers aim to increase their access within the system, establish
 
 For more information, please see [Privilege Escalation.](/docs/007-Cybersecurity/051-List-of-Attacks/014-Execution-and-Escalation.md#privilege-escalation)
 
-### Cleanup
+### 5. Cleanup
 
 After completing the testing, it is important to ensure that no trace of the penetration test remains on the target system. This prevents any disruption to normal operations and maintains the integrity of the system.
 
@@ -136,7 +158,7 @@ After completing the testing, it is important to ensure that no trace of the pen
 - Restore the system to its original state.
 - Ensure no traces of the test remain on the target.
 
-### Report Findings
+### 6. Report Findings
 
 The final phase involves documenting and presenting the results of the penetration test. The report provides a comprehensive overview of the vulnerabilities discovered, their potential impacts, and actionable recommendations for improving the security posture.
 

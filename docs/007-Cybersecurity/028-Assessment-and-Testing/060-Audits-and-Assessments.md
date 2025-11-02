@@ -11,7 +11,7 @@ last_update:
 
 ## Internal Audits
 
-Internal Audits are systematic evaluations of the effectiveness of internal controls, compliance, and integrity of information systems and processes.
+Internal audits are systematic evaluations of the effectiveness of internal controls, compliance, and integrity of information systems and processes.
 
 - Focuses on data protection, network security, access controls, and incident response.
 - Example: Internal review of password policies, user access controls
