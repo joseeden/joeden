@@ -1,6 +1,13 @@
 ---
 title: "Practice Test: CKA" 
-tags: [Containerization, Containers, Kubernetes, Certifications, CKA, CKAD, CKSS]
+tags: 
+- Containerization
+- Containers
+- Kubernetes
+- Certifications
+- CKA
+- CKAD
+- CKSS
 sidebar_position: 0
 last_update:
   date: 12/29/2023
@@ -22,13 +29,13 @@ last_update:
 
 - [Security](/docs/015-Containerization/090-Exams/001-CKA/008-Practice-Test-CKA-Security.md) 
 
-- [Storage](/docs/015-Containerization/090-Exams/001-CKA/009-Practice-Test-CKA-Storage.md) 
+- [Storage](/docs/015-Containerization/090-Exams/001-CKA/020-Practice-Test-CKA-Storage.md) 
 
-- [Networking](/docs/015-Containerization/090-Exams/001-CKA/010-Practice-Test-CKA-Networking.md)
+- [Networking](/docs/015-Containerization/090-Exams/001-CKA/021-Practice-Test-CKA-Networking.md)
 
-- [Kubernetes-the-hard-way](/docs/015-Containerization/090-Exams/001-CKA/011-Practice-Test-CKA-K8S-The-Hard-Way.md)
+- [Kubernetes-the-hard-way](/docs/015-Containerization/090-Exams/001-CKA/022-Practice-Test-CKA-K8S-The-Hard-Way.md)
 
-- [Mock Exams](/docs/015-Containerization/090-Exams/001-CKA/014-Practice-Test-CKA-Mock-Exam.md)
+- [Mock Exams](/docs/015-Containerization/090-Exams/001-CKA/031-Practice-Test-CKA-Mock-Exam-1.md)
 
 
 

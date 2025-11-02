@@ -1,12 +1,17 @@
 ---
 title: "Storage"
-tags: [Containerization, Containers, Kubernetes, Certifications, CKA, CKAD, CKSS]
-sidebar_position: 9
+tags: 
+- Containerization
+- Containers
+- Kubernetes
+- Certifications
+- CKA
+- CKAD
+- CKSS
+sidebar_position: 20
 last_update:
   date: 12/29/2023
 ---
-
-
 
 > *Some of the scenario questions here are based on Kodekloud's [CKA course labs](https://kodekloud.com/courses/ultimate-certified-kubernetes-administrator-cka-mock-exam/).*
 
