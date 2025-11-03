@@ -29,6 +29,18 @@ Sample diagram:
 
 </div>
 
+## Types of NAT 
+
+- **Static NAT**
+
+  - Maps a single private IP address to a single public IP address. 
+  - Used for servers that need to be accessible from the internet.
+
+- **Dynamic NAT**
+
+  - Maps a private IP address to a public IP from a pool of available IPs. 
+  - The pool of IP are available on a first-come, first-served basis
+  - Used for general internet access.
 
 
 ## Port Address Translation (PAT)

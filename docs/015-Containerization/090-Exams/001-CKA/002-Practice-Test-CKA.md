@@ -27,7 +27,15 @@ last_update:
 
 - [Cluster Maintenance](/docs/015-Containerization/090-Exams/001-CKA/007-Practice-Test-CKA-Cluster-Maintenance.md) 
 
-- [Security](/docs/015-Containerization/090-Exams/001-CKA/008-Practice-Test-CKA-Security.md) 
+- [Security 1](/docs/015-Containerization/090-Exams/001-CKA/008-Practice-Test-CKA-Security-1.md) 
+
+- [Security 2](/docs/015-Containerization/090-Exams/001-CKA/009-Practice-Test-CKA-Security-2.md) 
+
+- [Security 3](/docs/015-Containerization/090-Exams/001-CKA/010-Practice-Test-CKA-Security-3.md) 
+
+- [Security 4](/docs/015-Containerization/090-Exams/001-CKA/011-Practice-Test-CKA-Security-4.md) 
+
+- [Security 5](/docs/015-Containerization/090-Exams/001-CKA/012-Practice-Test-CKA-Security-5.md) 
 
 - [Storage](/docs/015-Containerization/090-Exams/001-CKA/020-Practice-Test-CKA-Storage.md) 
 
@@ -35,7 +43,9 @@ last_update:
 
 - [Kubernetes-the-hard-way](/docs/015-Containerization/090-Exams/001-CKA/022-Practice-Test-CKA-K8S-The-Hard-Way.md)
 
-- [Mock Exams](/docs/015-Containerization/090-Exams/001-CKA/031-Practice-Test-CKA-Mock-Exam-1.md)
+- [Mock Exam 1](/docs/015-Containerization/090-Exams/001-CKA/031-Practice-Test-CKA-Mock-Exam-1.md)
+
+- [Mock Exam 2](/docs/015-Containerization/090-Exams/001-CKA/032-Practice-Test-CKA-Mock-Exam-2.md)
 
 
 

@@ -68,15 +68,15 @@ Integrity is about safeguarding the accuracy and reliability of data. It is all 
   - Ppreventing modification, errors, or loss.
   - Information must be accurate, internally consistent, and useful.
 
-    :::INFO 
-    
-    *Consistency* ensures data is uniform across systems, maintaining the same form, content, and meaning.
+      :::info 
+      
+      *Consistency* ensures data is uniform across systems, maintaining the same form, content, and meaning.
 
-    *Data integrity* means that data has not been modified in an unauthorized manner. Note that even if it is shown to be unmodified, it can still be factually inaccurate.
-    
-    *Data accuracy* means that data is factually or contextually correct. It is a function of people rather than systems. 
+      *Data integrity* means that data has not been modified in an unauthorized manner. Note that even if it is shown to be unmodified, it can still be factually inaccurate.
+      
+      *Data accuracy* means that data is factually or contextually correct. It is a function of people rather than systems. 
 
-    ::: 
+      ::: 
 
 - **System Integrity**
   - Maintaining a known good configuration and expected operational function.
