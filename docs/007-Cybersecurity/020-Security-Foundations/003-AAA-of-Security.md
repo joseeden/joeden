@@ -151,6 +151,8 @@ It also has the following efficacy rates:
 - False rejection rate (incorrectly rejecting an authorized user).
 - Crossover error rate (the point where false acceptance and false rejection rates are equal).
 
+For more information, please see [Errors in Authentication.](/docs/007-Cybersecurity/026-Identity-and-Access-Management/001-The-Basics.md#authentication-errors)
+
 ## Multi-Factor Authentication
 
 Multifactor Authentication (MFA) is a security system that requires more than one method of a authentication from independent categories of credentials to verify the user's identity. 
@@ -164,6 +166,12 @@ Factors:
 - **Possession-based**
   - Something you have
   - Examples: Tokens, memory cards, smart cards, keyfob
+
+      :::info 
+
+      Memory cards store, but do not process information, while smart cards can process information.
+
+      :::
 
 - **Inherence-based**
   - Something you are

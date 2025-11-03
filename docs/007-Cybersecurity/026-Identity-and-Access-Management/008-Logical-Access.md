@@ -15,11 +15,9 @@ Physical access controls utilize tangible methods to limit entry to specific are
 - Biometrics (implemented on systems like smartphones or laptops)
 - Badge/token readers linked to a system
 
-These electronic tools play an important role in restricting logical access to an asset, independent of an individual's physical access.
-
 ## Discretionary Access Control (DAC)
 
-Discretionary Access Control (DAC) is an access control policy that allows users to assign access permissions to other users. The owners of files, computers, and other resources have the discretion to configure permissions as they see fit. This is the most common form of access controls because they provide the organization with needed flexibility.
+Discretionary Access Control (DAC) is the most common form of access control policy that allows users to assign access permissions to other users. The owners of files, computers, and other resources have the discretion to configure permissions as they see fit. 
 
 - Assigns permissions based on data owners' decisions
 - Share information with other subjects or objects
@@ -48,7 +46,11 @@ It ensures a uniform policy across an information system, restricting specific a
 - Governs security attributes of new objects.
 - Resources are labelled and permissions are based on the assigned labels
 
+:::info 
+
 Unlike Discretionary Access Control (DAC), MAC mandates access rights rather than relying on owner discretion.
+
+::: 
 
 ### MAC in the Workplace
 
@@ -101,13 +103,53 @@ Role-based access control tailors user privileges based on their organizational 
 - Standard roles for new user creation to avoid issues.
 - Ensures employees have necessary access for their roles.
 
-**Role-Based Access Control (RBAC)** defines user access based on roles, while **Rule-Based Access Control** defines access based on rules. Here's a distinction between the two:
+:::info
+
+**Role-Based Access Control (RBAC)** defines user access based on roles, while **Rule-Based Access Control** defines access based on rules. 
+
+:::
 
 ## Rule-Based Access Control (RBAC)
 
 Grants or restricts access based on a set of rules or conditions, rather than roles.
 
-- Rules can include attributes like time, location, IP addresses, or specific security clearances.
-- Useful for more dynamic access control scenarios, where rules can be applied to various users or roles.
+- Rules can include attributes like time, location, IP addresses, etc.
+- Useful for more dynamic access control scenarios
+- Ehere rules can be applied to various users or roles.
 - Offers greater flexibility and contextual access management.
 - Example: MFA, Device types, Location
+
+## Token-Based One-Time Passwords (OTP)
+
+Token-based OTPs are used as a form of logical access control, typically in multi-factor authentication (MFA) scenarios. They generate temporary passwords that users enter alongside their normal credentials.
+
+### Synchronous Token-Based OTP
+
+Synchronous OTPs require the token and server to maintain a form of synchronization, either through counters or time intervals, to generate and validate codes correctly.
+
+- **Counter-based (HOTP)**  
+  - OTP changes with each event or button press on the token  
+  - Server and token must be synchronized using a counter  
+
+- **Time-based (TOTP)**  
+  - OTP changes at fixed time intervals (e.g., every 30 seconds)  
+  - Server and token must have synchronized clocks  
+
+:::info 
+
+A synchronous token device does not use challenged-based authentication; instead, it relies on time as a factor to generate tokens.
+
+::: 
+
+### Asynchronous Token-Based OTP
+
+Asynchronous OTPs do not require tight synchronization between token and server, instead relying on independent generation and validation methods.
+
+- **Time-based**  
+  - Token generates OTP independently  
+  - Server validates within a defined time window  
+
+- **Nonce-based**  
+  - OTP generated using a one-time random value (nonce)  
+  - No counter or clock synchronization needed  
+

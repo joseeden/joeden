@@ -62,7 +62,9 @@ For more information, please see [Wireless Networking.](/docs/006-Networking/001
 Quality of Service (QoS) refers to the technology that allows the network to prioritize certain types of traffic over others. 
 
 - Prioritizes critical traffic like VoIP or video conferencing.
-- Uses mechanisms like classes of service (CoS), packet classification, and traffic shaping.
+- Uses classes of service (CoS), packet classification, and traffic shaping.
+
+**Traffic shaping** refers to controlling network traffic to allow for the optimization or the guarantee of certain performance levels
 
 
 ## Networking Tools 

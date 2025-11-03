@@ -169,6 +169,7 @@ Fiber optic cables are high-speed transmission media that use light to transmit 
 ### Fiber Modes
 
 - **Single Mode**
+
     - Uses a single light path for data transmission.
     - Suitable for long-distance communication, up to hundreds of kilometers.
     - Typically used in telecom networks and large-scale data centers.
@@ -180,6 +181,7 @@ Fiber optic cables are high-speed transmission media that use light to transmit 
         </div>
 
 - **Multi-Mode**
+
     - Multiple light paths transmit data simultaneously.
     - Effective for shorter distances, typically up to 2 kilometers.
     - Commonly used in local area networks (LANs) and within buildings.
@@ -214,20 +216,24 @@ Network LAN topologies define the arrangement of devices and how they connect to
 
 - **Bus Topology**
     - All devices share a single communication line or cable.
-    - Simple to set up but can lead to network failure if the main cable fails.
+    - Simple to set up but can lead to network failure if main cable fails.
 
 - **Ring Topology**
     - Each device is connected in a circular fashion.
-    - Data travels in one direction; failure in one device can disrupt the entire network.
+    - Data travels in one direction.
+    - Failure in one device can disrupt the entire network.
 
 - **Star Topology**
     - All devices connect to a central hub or switch.
-    - Offers high reliability; failure of one device doesn’t affect others.
+    - Offers high reliability.
+    - Failure of one device doesn’t affect others.
 
 - **Tree Topology**
     - Combines characteristics of star and bus topologies.
-    - Hierarchical structure allows for easy expansion but can be complex to manage.
+    - Hierarchical structure allows for easy expansion
+    - Can become complex to manage
 
 - **Mesh Topology**
     - Each device connects to multiple other devices.
-    - Provides high redundancy and reliability, but can be costly to implement due to cable requirements.
+    - Provides high redundancy and reliability
+    - Can be costly to implement due to cable requirements.

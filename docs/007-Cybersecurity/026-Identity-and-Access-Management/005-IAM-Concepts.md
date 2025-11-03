@@ -34,6 +34,19 @@ Measures the password's ability to resist guessing and brute-force attacks.
 For more information, please see [Common Security Policies.](/docs/007-Cybersecurity/020-Security-Foundations/012-Security-Policies.md#password-policy) 
 
 
+## Cognitive Passwords
+
+Cognitive passwords rely on personal knowledge or patterns that only the user would know, such as favorite phrases, personal facts, or answers to security questions.
+
+Examples of cognitive passwords:
+
+- What was the name of your first pet?
+- In which city were you born?
+- What is your mother’s maiden name?
+- What was the make/model of your first car?
+- What was the name of your elementary/primary school?
+
+
 ## `Verification 1:1` 
 
 Verification 1:1 is the process of confirming an individual's identity by comparing the provided credentials against a single, specific record in a database.
