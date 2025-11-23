@@ -155,25 +155,26 @@ Cookie poisoning involves modifying the contents of the cookies to be sent to a 
 
 ## Replay Attack
 
-Attacker intercepts and retransmits a valid data transmission to trick the receiver into unauthorized actions, often impersonating one of the legitimate parties in the communication.
+A replay attack happens when an attacker captures and re-sends valid data to trick a receiver, often impersonating a legitimate party.
 
-- Interception and retransmission of valid data packets.
-- Unauthorized access, data manipulation, session hijacking.
+- Re-sending intercepted data packets.
+- Can lead to unauthorized access, data changes, or session hijacking.
+
+Replay attacks usually target **authentication or session tokens**. The attacker **does not change TCP sequence numbers**—they resend the captured packets as-is. TCP sequence or acknowledgment issues are normal network behavior and **don’t indicate a replay attack**.
 
 **Mitigations:**
 
-- Time-stamped tokens or nonces, ensures each transaction is unique and only valid for a short period.
-- Use TLS/SSL to encrypt data and make interception more difficult.
-- Mutual authentication techniques, validate each other's identities.
-- Maintain a session or message log to track and verify unique transactions.
-- Replay detection mechanisms to identify and block replayed messages.
-- Use WPA3 to avoid replay attacks.
+- Use time-stamped tokens or nonces so each transaction is unique and short-lived.
+- Encrypt traffic with TLS/SSL to prevent interception.
+- Apply mutual authentication to verify identities.
+- Keep session or message logs to detect repeated transactions.
+- Implement replay detection mechanisms.
+- Use WPA3 for wireless security to prevent replay attacks.
 
-**Difference with Session Hijacking:**
+**Difference from Session Hijacking:**
 
-- Replay Attacks - attacker intercepts data, decides whether to retransmit it later.
-- Session Hijacking - attacker alters data transmission in real-time.
-
+- *Replay Attack* – attacker replays captured data later.
+- *Session Hijacking* – attacker interferes with data in real-time.
 
 ## Disassociation Attack 
 

@@ -38,6 +38,48 @@ Known as **CART**, effective threat intelligence has four key traits:
    - Enables rapid response to emerging threats
 
 
+
+## Threat Intelligence Lifecycle
+
+Threat intelligence follows a continuous cycle to collect, analyze, and share information about threats.
+
+1. **Requirements**
+
+   - Define goals for the intelligence operation
+   - Identify threats or adversaries to track
+   - Set measurable objectives, like reporting new attack techniques
+
+2. **Collection**
+
+   - Gather data from threat feeds, internal logs, and forums
+   - Capture indicators like IPs, domains, and file hashes
+   - Use automated tools or manual methods to collect information
+
+3. **Processing**
+
+   - Convert raw data into structured formats like spreadsheets or STIX
+   - Remove duplicates and irrelevant information
+   - Enrich data with additional context for easier analysis
+
+4. **Analysis**
+
+   - Correlate indicators with attacker behaviors
+   - Use analytics tools, sandboxing, and lookup services
+   - Identify patterns and turn raw data into actionable intelligence
+
+5. **Dissemination**
+
+   - Share intelligence with SOC and incident response teams
+   - Update security controls like IDS, IPS, and firewalls
+   - Provide actionable recommendations to prevent attacks
+
+6. **Feedback**
+
+   - Review results and effectiveness with all teams
+   - Identify gaps or improvements for future operations
+   - Adjust requirements and collection strategies based on lessons learned
+
+
 ## Types of intelligence
 
 ### Open-Source
