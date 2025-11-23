@@ -118,7 +118,6 @@ All of the threat feeds mentioned previously as intelligence sources are conside
 Uses a specialized format called **Structured Threat Information Expression (STiX)** to package threat intelligence information.
 
 - Exchange of cybersecurity intelligence between entities
-
 - Uses **Trusted Automated Exchange of Intelligence Information (TAXII)** to transmit the packaged information 
 - TAXII is like an RSS feed
 - Normally built-in on security monitoring tools
@@ -126,3 +125,47 @@ Uses a specialized format called **Structured Threat Information Expression (STi
 
 
 
+## Collection Management Framework (CMF)
+
+A Collection Management Framework (CMF) is a structured way to track and manage all potential sources of data that can help incident responders and investigators. 
+
+- Organize collection from multiple sources
+- Ensure data is accurate, complete, and ready for analysis
+- Speeds up detection and response
+- Avoids redundant efforts and wasted resources
+
+It is usually maintained as a living document or spreadsheet listing digital assets (computers, network devices, PLCs, loggers) that generate logs or other forensic information.
+
+
+### Log Sources
+
+Common sources of intelligence for investigations:
+
+- Logs
+- Network telemetry
+- Threat feeds
+- OSINT
+
+### Collection Methods
+
+Collection methods define how data is gathered from sources efficiently.
+
+- Automated agents
+- APIs
+- Manual collection
+
+### Processing
+
+Processing ensures collected data is meaningful and actionable for analysts.
+
+- **Filtering**
+   - Remove irrelevant or duplicate data
+   - Focus on actionable indicators only
+
+- **Enrichment**
+   - Add context to raw data geolocation, IOC reputation)
+   - Correlate with other sources for better insights
+
+- **Prioritization**
+   - Rank data based on risk, relevance, or threat impact
+   - Focus on the most critical information first
