@@ -89,6 +89,8 @@ SSO (Single Sign-On) allows users to authenticate once and gain access to multip
 - Session period expiry is set by the identity provider.
 - Once session is expired, user needs to re-authenticate.
 
+In a single sign-on (SSO) technology, all users are authenticating to one source, the **authentication server**. If that server goes down, authentication requests cannot be processed. 
+
 ### SSO Protocols
 
 These protocols enable Single Sign-On by securely handling user authentication and identity sharing between systems.

@@ -54,14 +54,36 @@ Types:
 - **Physiological**: fingerprint, iris, retina, palm, vein  
 - **Behavioral**: voice, signature dynamics, keystroke
 
-A few notes on **iris scans (eye scans)**:
+### Iris Scans and Retina Scans 
+
+An **iris scan** uses a camera to take a picture of the colored part of the eye from a distance, making it non-invasive and fast, and is widely used for security and identification.
 
 - Iris patterns remain stable throughout a person's life
 - This makes it a reliable biometric authentication method
 - Has a very low false acceptance rate, making it a highly accurate
 - Iris patterns can be recognized from a distance (nonintrusive)
+- Disadvantage: Scanners can be fooled by high-quality images of a person's face.
 
-One disadvantage of iris recognition technology is that scanners can be fooled by high-quality images of a person's face.
+A **retina scan** requires a close-up, invasive process that uses a beam of light to map the blood vessels on the back of the eye and is now primarily used for medical diagnostics
+
+<div class='img-center'>
+
+![](/img/docs/2025-11-24-iris-scan-vs-retina-scan.png)
+
+</div>
+
+<center>
+<small>Image taken from [How Iris and Retina Scan Enhance Facial Recognition](https://facia.ai/blog/how-iris-and-retina-scan-enhance-facial-recognition/)</small>
+</center>
+
+
+<figure class="img-center">
+  <img src="/img/docs/2025-11-24-iris-scan-vs-retina-scan.png" alt="Iris vs Retina Scan" />
+  <figcaption>
+    <small>Image taken from <a href="https://facia.ai/blog/how-iris-and-retina-scan-enhance-facial-recognition/">How Iris and Retina Scan Enhance Facial Recognition</a></small>
+  </figcaption>
+</figure>
+
 
 ### Fences, Bollards, and Mantraps
 

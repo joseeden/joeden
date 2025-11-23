@@ -177,6 +177,14 @@ The middle point where both thresholds meet is called the **Crossover Error Rate
 </div>
 
 
+## Mutual Authentication
+
+Mutual authentication ensures that both parties verify each other before communication begins.
+
+- Both sides authenticate to each other
+- Commonly used in TLS with client and server certificates
+- Reduces risk of MITM attacks during secure exchanges
+
 
 ## Session Management 
 
