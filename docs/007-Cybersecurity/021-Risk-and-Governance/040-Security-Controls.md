@@ -111,6 +111,8 @@ Types of Administrative Controls:
 
 Administrative controls are implemented through policies, procedures, and training, while technical controls use technology and hardware solutions to protect systems and data.
 
+Administrative controls are also referred to as "soft" access controls.
+
 :::
 
 ### Preventative Controls

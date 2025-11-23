@@ -12,6 +12,12 @@ last_update:
 
 Threat modelling is a structured approach for identifying, quantifying, and addressing the security risks associated with an application or system. This process helps organizations understand potential threats, vulnerabilities, and attack vectors, which enables them to implement effective security controls to mitigate risks.
 
+:::info 
+
+Threat modeling does not use a wide range of threats, since some of them are not likely to affect the specific organization; specific threats are determined for the organizational environment.
+
+:::
+
 ### Steps in Threat Modelling
 
 1. **Identify Assets**
@@ -86,7 +92,7 @@ Organizations can use a structured approach to identify threats. This process in
   - Assess the dependency of critical services on various assets.
   - Evaluate the impact of various threats on a specific service.
 
-## Understand threats using STRIDE 
+## STRIDE 
 
 The STRIDE model is a framework used to understand and categorize different types of security threats. This model helps organizations systematically identify and address potential vulnerabilities in their systems. Each letter in STRIDE represents a specific category of threat:
 
