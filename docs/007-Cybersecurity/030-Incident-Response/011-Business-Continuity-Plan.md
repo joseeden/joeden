@@ -33,11 +33,11 @@ A combination of approaches is recommended:
 - **Quantitative risk assessment**: Calculate financial losses, e.g., if a server fails.
 - **Qualitative risk assessment**: Assess non-financial impacts, like reputation damage.
 
-
+Risk assessment is typically performed separately from business continuity planning and business impact analysis, although it can certainly inform those two processes. 
 
 ## Business Impact Analysis
 
-Prioritize mission-critical processes:
+A business impact analysis (BIA) is the first critical step that should be performed as part of a business continuity planning effort in an organization. Critical business processes, as well as the assets that support them, must first be identified and prioritized for restoration in the event of a contingency. 
 
 - Determine critical business functions, processes, and their dependencies.
 - Quantify the impact of disruptions on these functions.

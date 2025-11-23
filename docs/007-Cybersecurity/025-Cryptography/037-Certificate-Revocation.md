@@ -10,13 +10,13 @@ last_update:
 
 ## Certificate Revocation Standards 
 
-These standards and protocols ensure that relying parties can efficiently and securely verify the validity of digital certificates, enhancing the overall security of PKI-enabled systems and applications.
+These standards and protocols ensure that relying parties can efficiently and securely verify the validity of digital certificates. This enhances the overall security of PKI-enabled systems and applications.
 
 ## Certificate Revocation Lists
 
 CRLs or **Certificate Revocation Lists** serves as an online list of digital certificates that the CA has already revoked.
 
-- Certificates are usually revoked because they have been compromised.
+- Certificates are usually revoked because they're compromised.
 - Full list of every certificated revoked by that CA.
 
 How it works:

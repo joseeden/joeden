@@ -74,7 +74,8 @@ The **Chief Information Security Officer (CISO)** protects the organization’s 
 - Monitoring threats and technologies.
 - Reporting security posture to management.
 
-CISOs lead teams to manage risks while supporting business objectives. Key activities include:
+CISOs lead teams to manage risks while supporting business objectives. 
+Key activities include:
 
 - Promoting a security-aware culture.
 - Implementing security controls.

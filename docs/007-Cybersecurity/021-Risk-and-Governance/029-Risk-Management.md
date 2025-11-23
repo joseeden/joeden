@@ -10,7 +10,7 @@ last_update:
   date: 1/30/2024
 ---
 
-## Importance of Risk Management 
+## Overview
 
 Information assurance and cybersecurity are key for risk management. The required cybersecurity level is determined by the entity's risk tolerance. 
 
@@ -96,6 +96,7 @@ The highest priority should be given to risks estimated to high impact and low p
   - Calculates risk using numbers like **cost**, **frequency**, and **impact**
   - Helps determine the financial effect of risks more precisely
 
+A qualitative approach is a subjective observation, while a quantitative approach is objective and uses verifiable numerical data.
 
 :::info 
 
@@ -202,4 +203,25 @@ Process of communicating information about risk management activities, including
 
 
 
+
+## Information Security Risk Management (ISRM)
+
+Information Security Risk Management (ISRM) is a subset of risk management that is specifically focused on identifying, evaluating, and treating risks that affect information systems and data. 
+
+- Identifies risks related to information systems
+- Analyzes likelihood and impact of security threats
+- Applies risk treatment strategies, e.g. mitigation or acceptance
+- Integrates risk decisions with policy requirements
+- Supports compliance, audits, and regulatory obligations
+
+It is not a technical or operational control, but an administrative/policy-level risk management document.
+
+**Where does an ISRM policy fall in standard frameworks?**
+
+| Framework        | Domain/Section ISRM Belongs To                              |
+| ---------------- | ----------------------------------------------------------- |
+| **NIST CSF**     | Identify → Risk Management                                  |
+| **NIST 800-53**  | RA (Risk Assessment) & PM (Program Management)              |
+| **ISO 27001**    | Clause 6: Planning (Risk Mgmt) + Annex A.5 Governance       |
+| **CIS Controls** | Governance & IT Risk Management at the organizational level |
 

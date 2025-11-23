@@ -33,83 +33,85 @@ Controls ensure the confidentiality, integrity, and availability of an organizat
 
 Physical controls addresses security needs with hardware like badge readers and architectural features.
 
-- **Scope**
-  - Control movement in specific locations (e.g., office, factory).
-  - Cover entry points and surrounding areas.
+- Control movement in specific locations (e.g., office, factory).
+- Cover entry points and surrounding areas.
+- Supported by technical controls for an overall security system.
 
-- **Integration with Technical Controls**
-  - Supported by technical controls for an overall security system.
+Examples:
 
-- **Examples**
-  - Visitors use designated entrance, undergo identification.
-  - Employees use badges or tokens for identity verification.
-  - Technical controls integrate hardware for a seamless security setup:
-    - readers
-    - door release mechanisms
-    - access control systems 
+- Visitors use designated entrance, undergo identification.
+- Employees use badges or tokens for identity verification.
+
+Technical controls canintegrate hardware for a seamless security setup:
+
+- Readers
+- Door release mechanisms
+- Access control systems 
 
 For more information, please see [Physical Security.](/docs/007-Cybersecurity/026-Identity-and-Access-Management/007-Physical-Access.md)
 
 
 ### Technical Controls
 
-Also termed "logical controls", technical controls are implemented directly by computer systems and networks.
+Also termed **Logical controls**, technical controls are implemented directly by computer systems and networks.
 
-- **Functions**
-  - Automated protection against unauthorized access.
-  - Facilitate detection of security violations.
-  - Support security requirements for applications and data.
+- Automated protection against unauthorized access.
+- Facilitate detection of security violations.
+- Support security requirements for applications and data.
+- Requires significant operational considerations.
 
-- **Implementation**
-  - Configuration settings, parameters, or hardware settings.
-  - Managed through software GUI or hardware.
-  - Example: Access Control List
+Common implementations:
 
-- **Considerations**
-  - Requires significant operational considerations.
-  - Must align with organizational security management.
+- Configuration settings, parameters, or hardware settings.
+- Managed through software GUI or hardware.
+- Example: Access Control List
+
+Biometrics (fingerprint, iris scan, facial recognition, etc.) are **technology-based mechanisms** used to enforce authentication.
+
+Even though they involve physical traits, the control itself is implemented through **technical systems** such as biometric scanners and software.
 
 :::info 
 
-Paper records can’t be easily protected with technical controls, such as encryption and authentication measures. They are better controlled using physical security measures and operational procedures. 
+Paper records can’t be easily protected with technical controls, such as encryption and authentication measures. 
+They are better controlled using physical security measures and operational procedures. 
 
 ::: 
 
 
 ### Administrative Controls
 
-Also known as **managerial controls**, administrative controls refers to directives, guidelines, or advisories for organization members.
+Also known as **Managerial controls**, administrative controls refers to directives, guidelines, or advisories for organization members.
 
-- **Purpose**
-  - Establish frameworks, constraints, and standards for human behavior.
-  - Encompass all organizational activities and interactions.
+- Establish frameworks, constraints, and standards for human behavior.
+- Encompass all organizational activities and interactions.
+- Even simple awareness policies can be effective controls.
 
-- **Importance**
-  - Powerful tools for achieving information security.
-  - Even simple awareness policies can be effective controls.
+Integration strategies:
 
-- **Integration Strategies**
-  - Improve overall security by integrating controls into daily task-level activities.
-  - Offer in-context references, advisory resources, or link directly into training.
+- Improve overall security by integrating controls into daily task-level activities.
+- Offer in-context references, advisory resources, or link directly into training.
 
-- **Operational Impact**
-  - Shifts from executive decision-making to daily use.
-  - Enhances immediacy, usefulness, and operational relevance.
+Operational impact:
 
-- **Examples**
-  - Acceptable Use Policy 
-  - Emergency Operations Procedures 
-  - Employee Awareness Training
+- Shifts from executive decision-making to daily use.
+- Enhances immediacy, usefulness, and operational relevance.
+
+Examples:
+
+- Acceptable Use Policy 
+- Emergency Operations Procedures 
+- Employee Awareness Training
 
 Types of Administrative Controls: 
 
-- **Procedural Controls**
+- **Procedural Controls** - Controls that are initiated by the organization.
+- **Legal or Regulatory Controls** - Controls mandated by the law.
 
-  - Controls that are initiated by the organization.
+:::info 
 
-- **Legal or Regulatory Controls**
+Administrative controls are implemented through policies, procedures, and training, while technical controls use technology and hardware solutions to protect systems and data.
 
-  - Controls mandated by the law.
+:::
 
 ### Preventative Controls
 
@@ -131,6 +133,13 @@ Detective controls use internal controls to identify errors through methods like
 - Video surveillance
 - Motion detection
 
+:::info 
+
+Rotation of duties is considered a Detective control.+
+
+When duties are rotated, irregularities, fraud, or misuse that one person could hide often become visible to the next person taking over the role.
+
+:::
 
 ### Deterrent Controls
 
@@ -156,19 +165,20 @@ Organization can use compensating controls to protect legacy systems from potent
 :::
 
 
-### Corrective Security Controls 
+### Corrective Controls 
 
-Corrective security controls are measures used to address security vulnerabilities or weaknesses already identified. Backups, patches, and Disaster Recovery Plans are all corrective security controls (see ISC2 Study Guide, chapter 3, module 2). 
+Corrective controls are measures used to address security vulnerabilities or weaknesses already identified. Backups, patches, and Disaster Recovery Plans are all corrective security controls.
 
 - Backups can help ensure that important information is not lost in the event of an incident. 
 - Patches can help fix vulnerabilities and improve security. 
 - Disaster Recovery Plans are administrative security controls that establish the corrective measures to be implemented in case of a disaster. 
 
+:::info 
+
 Bollards are not typically considered a corrective security control.
 
+:::
 
-## Administrative versus Technical 
 
-Administrative controls are implemented through policies, procedures, and training, while technical controls use technology and hardware solutions to protect systems and data.
 
 

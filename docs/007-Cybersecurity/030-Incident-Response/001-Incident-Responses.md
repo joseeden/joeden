@@ -51,7 +51,7 @@ The objectives of Incident Response:
 - Events disrupting the business mission are termed **incidents**.
 - An incident response plan ensures business viability.
 - The incident response process aims to minimize impact and resume operations swiftly.
-- It's a subset of the broader business continuity management (BCM).
+- It's a subset of the broader [business continuity management (BCM)](/docs/007-Cybersecurity/030-Incident-Response/011-Business-Continuity-Plan.md).
 
 ## Incident Response Lifecycle
 
