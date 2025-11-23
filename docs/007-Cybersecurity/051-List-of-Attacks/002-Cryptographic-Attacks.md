@@ -96,15 +96,13 @@ Collision attacks find two different inputs that produce the same hash, potentia
 ## Quantum Computing
 
 Quantum computing poses a threat to traditional cryptography by potentially breaking key cryptographic algorithms. 
-  
-**How It Works:**
 
-- Quantum computers use qubits, which can represent multiple states simultaneously.
+- Quantum computers use **qubits**, which can represent multiple states simultaneously.
 - This enables parallel processing at a massive scale.
 - Run algorithms that can break traditional cryptographic methods.
 - Example: Shor's algorithm for integer factorization.
   
-**Implications for Cryptography:**
+**Implications for Cryptography**
 
 - Quantum computing threatens public-key encryption algorithms like RSA and ECC.
 - RSA and ECC rely on computational hardness (e.g., factoring large numbers).
@@ -130,11 +128,12 @@ Quantum computing poses a threat to traditional cryptography by potentially brea
 
 - **Hybrid Cryptographic Systems** 
 
-  - Implement systems that use a mix of traditional and post-quantum cryptographic techniques.
+  - Uses a mix of traditional and post-quantum cryptographic techniques.
 
 - **Monitor Quantum Advancements** 
 
-  - Keep informed about developments in quantum computing and adapt security strategies accordingly.
+  - Keep informed about developments in quantum computing.
+  - Adapt security strategies accordingly.
 
 ## Rainbow Table Attack 
 
@@ -142,11 +141,11 @@ A rainbow table attack uses precomputed hashes to find a matching hash value for
 
 **Mitigations:**
 
-  - Add a unique random value (salt) to each password before hashing.
-  - Choose robust cryptographic hash functions resistant to rainbow tables.
-  - Enforce strong and complex password creation policies.
-  - Stay current with advancements, adopting newer, more secure hash functions.
-  - Implement Two-Factor Authentication (2FA)
+- Add a unique random value (salt) to each password before hashing.
+- Choose robust cryptographic hash functions resistant to rainbow tables.
+- Enforce strong and complex password creation policies.
+- Stay current with advancements, adopting newer, more secure hash functions.
+- Implement Two-Factor Authentication (2FA)
 
 :::info 
 

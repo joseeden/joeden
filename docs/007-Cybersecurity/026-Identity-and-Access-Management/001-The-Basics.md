@@ -84,6 +84,12 @@ These are the commonly used methods to establish a person's identity within a sy
     - Fingerprint scans, eye scans, voiceprint, facial recognition
     - Should be accurate, secure, and minimally intrusive.
 
+      :::info 
+
+      Fingerprints are made up of ridge endings and bifurcations exhibited by friction ridges and other detailed characteristics called **minutiae**. It is the distinctiveness of these minutiae that gives each individual a unique fingerprint. 
+
+      :::
+
 
 ## Registration Process 
 

@@ -30,13 +30,16 @@ Occurs when a user is given access to a certain piece of data or certain areas o
 Often called **auditing**, it involves tracking of data, computer usage, and network resources.
 
   - Non-repudiation - proof that someone has taken an action
-  - Types of auditing:
-    - Resource access 
-    - Failed login attempts 
-    - Changes to files/records
-  - In Windows, we can see audit logs in the Event viewer.
 
-    ![](/img/docs/sec+-accounting-audit-login-example.png)
+Types of auditing:
+
+- Resource access 
+- Failed login attempts 
+- Changes to files/records
+
+In Windows, we can see audit logs in the Event viewer.
+
+![](/img/docs/sec+-accounting-audit-login-example.png)
 
 ## Authentication 
 
@@ -123,6 +126,11 @@ Token-based Authentication has two types:
   - Does not generate codes at fixed intervals.
   - Requires a server challenge for each code.
 
+:::info 
+
+**Microprobing** is an intrusive smart card attack that uses needles and ultrasonic vibration to remove the outer protective material on the card’s circuits. Once this is completed, data can be accessed and manipulated by directly tapping into the card’s ROM chips. 
+
+:::
 
 ### SSH Public Keys
 

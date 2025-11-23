@@ -8,21 +8,50 @@ last_update:
 ---
 
 
-## Evaluating Security Programs
+## Overview
 
-Organizations assess their security programs through specific metrics to measure efficiency and effectiveness. These metrics provide valuable insights into both the current and long-term health of the security framework.
+Organizations use security metrics to evaluate how well their security programs are performing. These metrics help understand both the current state and long-term health of the security framework.
 
 - Metrics assess critical security controls.
-- Measurements offer a snapshot and long-term view of security.
-- Predefined metrics ensure integrity and prevent bias in reporting.
+- Provide short-term and long-term insights.
+- Use predefined standards to ensure accuracy and consistency
+
+## Key Traits of Good Metrics
+
+Six characteristics of effective security metrics are:
+
+1. **Measurable / Quantifiable**
+
+    - Can be reliably measured or expressed in numbers
+    - Ensures results are objective and trackable over time
+
+2. **Relevant**
+
+    - Focuses on aspects that truly impact security
+    - Aligns with organizational goals and priorities
+
+3. **Actionable**
+
+    - Provides insights that guide decisions or improvements
+    - Helps teams know what steps to take next
+
+4. **Robust / Consistent**
+
+    - Standardized across time and teams
+    - Reliable and resistant to errors, bias, or manipulation
+
+5. **Comparative / Timely / Aligned**
+
+    - Available when needed for decision-making
+    - Allows performance comparisons over time or against benchmarks
+
+6. **Simple / Understandable**
+
+    - Easy to interpret and communicate
+    - Ensures stakeholders can quickly grasp insights without confusion
 
 
-## KPIs and KRIs 
-
-Security programs utilize two main types of metrics:
-
-- Key Performance Indicators (KPIs)
-- Key Risk Indicators (KRIs)
+## Types of Metrics 
 
 ### Key Performance Indicators (KPIs)
 

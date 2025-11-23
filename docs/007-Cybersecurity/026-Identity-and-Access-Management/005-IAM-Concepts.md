@@ -167,3 +167,17 @@ The ability of different systems, devices, and applications to work together
 and share information.
 
 - Can involve standards such as SAML or OpenID connect
+
+## Authoritative System of Record (ASOR)
+
+An **authoritative system of record (ASOR)** is a hierarchical tree-like structure system that tracks subjects and their authorization chains. It is the official source of data that ensures consistency across systems.
+
+- Centralizes authoritative data
+- Synchronizes with dependent systems
+- Reduces conflicting information
+
+:::info
+
+In IAM, the ASOR often contains verified identity or account information that other systems reference.
+
+:::
