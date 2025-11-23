@@ -13,17 +13,30 @@ last_update:
 
 Threat Intelligence is a continual process used to understand the threats faced by an organization. It is focused on analyzing evidence-based knowledge about an existing or emerging hazard to our asset. 
 
-## Quality of Intelligence 
+## Characteristics of Good Threat Intelligence
 
-Consider and measure the quality of intelligence.
+Known as **CART**, effective threat intelligence has four key traits:
 
-- **Timeliness** - Property of an intelligence source that ensures it is up-to-date.
+1. **Confidence Levels**
 
-- **Relevancy** - Property of an intelligence source that ensures it matches the use cases intended for it.
+   - Indicates how reliable the information is
+   - Helps prioritize actions based on trustworthiness
 
-- **Accuracy** - Property of an intelligence source that ensures it produces effective results.Information needs to be valid and true.
+2. **Accuracy**
 
-- **Confidence Levels** - Property of an intelligence source that ensures it produces qualified statements about reliability.
+   - Reflects correctness and validity of the data
+   - Reduces false positives and misinformed decisions
+
+3. **Relevancy**
+
+   - Pertains to the organization’s context and threats
+   - Ensures focus on actionable and meaningful intelligence
+
+4. **Timeliness**
+
+   - Delivered when needed to make decisions
+   - Enables rapid response to emerging threats
+
 
 ## Types of intelligence
 

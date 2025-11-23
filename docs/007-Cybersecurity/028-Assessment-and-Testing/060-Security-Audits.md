@@ -112,6 +112,12 @@ An Audit Committee is a group of people responsible for supervising the organiza
   - Often used for compliance, certification, or industry standards
   - Also referred as *external audit*
 
+    :::info 
+
+    A **nondisclosure agreement (NDA)** is a key prerequisite before a third-party team is permitted to audit an organization’s systems, so that sensitive data can be protected from unauthorized entities. 
+
+    :::
+
 ## Audit Types 
 
 ### Internal Audit
