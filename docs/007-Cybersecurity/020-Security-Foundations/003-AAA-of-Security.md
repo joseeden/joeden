@@ -63,6 +63,7 @@ Knowledge-based authentication uses a passphrase or secret code. It is vulnerabl
 
   - Unique password code generated for single use 
   - Static code sent by email or SMS
+  - Also called *dynamic password*
 
 - **HMAC-based OTP**
 

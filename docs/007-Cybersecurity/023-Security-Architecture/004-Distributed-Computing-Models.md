@@ -35,6 +35,20 @@ The client/server model is a common computing architecture where a central serve
 - Clients request actions like data retrieval or calculations  
 - Example: web browsers (clients) requesting web pages from servers  
 
+## Web Portals
+
+A web portal provides a single point of access to information and services from multiple systems.
+
+- Aggregates content and apps in one interface
+- Uses portlets as modular UI components
+- Each portlet offers a small interactive service
+
+:::info 
+
+Web portals relate to distributed computing, as they integrate multiple backend systems and present them through portlets.
+
+:::
+
 ## Distributed Computing 
 
 In distributed computing, many systems share the responsibility of processing large tasks by working on smaller pieces simultaneously.

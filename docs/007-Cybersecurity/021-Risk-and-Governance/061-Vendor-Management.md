@@ -22,21 +22,18 @@ The vendor management lifecycle encompasses several stages that help organizatio
 
 Choosing the right vendor involves a thorough evaluation process to ensure the vendor can meet the organization’s needs and comply with its standards.
 
-- **Define Requirements**
-  - Clearly outline the organization's needs and expectations.
-- **Research and Shortlist Vendors**
-  - Identify potential vendors and narrow down the list based on criteria.
-- **Request for Proposal (RFP)**
-  - Solicit detailed proposals from shortlisted vendors.
-- **Evaluate Proposals**
-  - Assess proposals based on factors such as cost, experience, and compliance.
+- **Define Requirements** - Clearly outline the organization's needs and expectations.
+- **Research and Shortlist Vendors** - Identify potential vendors and narrow down the list based on criteria.
+- **Request for Proposal (RFP)** - Solicit detailed proposals from shortlisted vendors.
+- **Evaluate Proposals** - Assess proposals based on factors such as cost, experience, and compliance.
 
 ### 2. Onboarding
 
 Once a vendor is selected, the onboarding process ensures that the vendor understands and aligns with the organization's policies and procedures.
 
 - **Contract Negotiation and Signing**
-  - Formalize the agreement, defining terms, conditions, and service levels.
+  - Formalize the agreement, defining terms
+  - Includes conditions and service levels.
 
 - **Due Diligence**
   - Conduct background checks and risk assessments.
@@ -54,12 +51,12 @@ Once a vendor is selected, the onboarding process ensures that the vendor unders
 Monitoring vendors is essential to ensure that they continue to meet the organization’s standards and expectations throughout the relationship.
 
 - **Performance Reviews**
-  - Evaluate vendors regularly against established KPIs to ensure standards are met.
+  - Evaluate vendors regularly against established KPIs.
   - Provide feedback to encourage improvements.
 
 - **Compliance Audits**
   - Conduct audits to ensure adherence to policies and regulations.
-  - 
+
 - **Risk Management**
   - Identify and mitigate any risks associated with the vendor’s services.
 
@@ -71,17 +68,13 @@ Monitoring vendors is essential to ensure that they continue to meet the organiz
 
 Proper offboarding is essential to protect the organization’s interests and ensure a smooth transition.
 
-- **Termination of Contract**
-  - Formally end the contractual relationship, ensuring all obligations are met.
+- **Termination of Contract** - Formally end the contractual relationship, ensuring all obligations are met.
 
-- **Data Retrieval and Security**
-  - Ensure all data is returned or securely destroyed.
+- **Data Retrieval and Security** - Ensure all data is returned or securely destroyed.
 
-- **Knowledge Transfer**
-  - Facilitate the transfer of knowledge to internal teams or new vendors.
+- **Knowledge Transfer** - Facilitate the transfer of knowledge to internal teams or new vendors.
 
-- **Review and Lessons Learned**
-  - Assess the vendor relationship to identify improvements for future engagements.
+- **Review and Lessons Learned** - Assess the vendor relationship to identify improvements for future engagements.
 
 
 ## Vendor Selection

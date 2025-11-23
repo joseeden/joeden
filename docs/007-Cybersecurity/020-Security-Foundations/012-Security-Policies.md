@@ -65,6 +65,12 @@ Every policy should align with the organization's regulatory and contractual obl
   - Knowledge Transfer
   - Disable and delete accounts
 
+    :::info 
+
+    User accounts should be disabled first, for a specified period of time, before they are removed. This is just in case the company needs to access to any resources, log files, or encrypted data that the user may have left behind. Deleting the account outright may not allow the organization to access those things. 
+
+    :::
+
 ## Accounts/Credential Policy 
 
 Defines who get access to what. 
