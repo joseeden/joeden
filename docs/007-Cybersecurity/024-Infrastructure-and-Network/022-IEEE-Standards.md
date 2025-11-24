@@ -99,11 +99,32 @@ WPA2 was designed to improve upon security methods implemented with Wired Equiva
 - Protects against common attacks  
 - Required for enterprise Wi-Fi security  
 
+## IEEE 802.11n
+
+IEEE 802.11n is a Wi-Fi standard that improves speed and range over older Wi-Fi versions.
+
+- Increases maximum data rate up to 600 Mbps
+- Uses MIMO (Multiple Input Multiple Output) antennas for better coverage
+- Operates on 2.4 GHz and 5 GHz bands
+
+802.11n improves Wi-Fi performance and reliability by combining multiple antennas and channels, making it suitable for homes and small offices.
+
 ## IEEE 802.11ac  
 
-High-speed Wi-Fi for modern networks.
+802.11ac is a newer Wi-Fi standard focused on high-speed connections on 5 GHz.
 
-- Operates at 5 GHz, high throughput  
-- Supports MU-MIMO for multiple device access  
-- Improved range and speed compared to 802.11a/g  
-- Handles streaming, gaming, and large data transfers  
+- Supports data rates up to several Gbps
+- Uses wider channels (80/160 MHz) for more bandwidth
+- Employs MU-MIMO to serve multiple devices simultaneously
+
+This standard is ideal for streaming, gaming, and environments with many devices, providing fast and stable Wi-Fi.
+
+## IEEE 802.11ax (Wi-Fi 6)
+
+Wi-Fi 6 enhances Wi-Fi for crowded networks and higher efficiency.
+
+- Improves performance in dense areas like offices or apartments
+- Uses OFDMA to divide channels among multiple users
+- Supports Target Wake Time for better battery life on devices
+
+Wi-Fi 6 keeps devices connected efficiently even when many are active, balancing speed and network management.

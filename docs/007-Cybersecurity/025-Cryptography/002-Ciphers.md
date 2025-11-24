@@ -49,20 +49,9 @@ Stream ciphers encrypt data one bit or byte at a time, making them fast and suit
 - Uses a **key stream generator** to create random-looking bits
 - The key stream is XORed with the plaintext to get the ciphertext
 
-Common features:
-
-- Same key is used for both encryption and decryption
-- Often implemented in hardware for faster performance
-- Works well for real-time data like voice or video streams
-- Becomes weak if the same key stream is reused or not random enough
-
-Examples:
-
-- RC4
-- Salsa20
-- ChaCha20
-
 Stream ciphers are useful for real-time communication, where speed and efficiency are key, but they must use unique and random key streams to stay secure.
+
+For more information, please see [Streaming Ciphers.](/docs/007-Cybersecurity/025-Cryptography/009-Symmetric-Encryption.md#streaming-ciphers)
 
 ### Block Ciphers
 
@@ -70,21 +59,11 @@ Block ciphers divide data into fixed-size blocks and encrypt each block separate
 
 - Encrypts data in blocks, such as 64 or 128 bits
 - Each block of plaintext becomes one block of ciphertext
-- Can perform multiple rounds of transformations like substitution and permutation
+- Can perform transformations like substitution and permutation
 
-Common features:
+Block ciphers typically have 64-bit block size, but **in reality its only 56 bits** because **8 bits is reserved for overhead/parity** to ensure that the other 56 bits are accurate.
 
-- Easier to implement and generally more secure than stream ciphers
-- Often used in software-based encryption systems
-- Common in protocols and file encryption where data comes in chunks
-- Requires padding if data doesn't perfectly fit into blocks
-- Can run in different modes to provide flexibility and added protection
-
-Examples:
-
-- AES
-- DES
-- 3DES
+For more information, please see [Block Ciphers.](/docs/007-Cybersecurity/025-Cryptography/009-Symmetric-Encryption.md#block-ciphers)
 
 
 ## Cryptography Techniques

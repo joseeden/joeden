@@ -69,6 +69,11 @@ Ultimately, selecting an encryption method involves balancing security needs wit
 
 The **one-time pad** is the only cipher proven to be unbreakable. It is invented over a century ago, and it relies on true randomness and identical pads shared between sender and receiver.  
 
+:::
+
+The one-time pad was invented by Gilbert Vernam in 1917, thus sometimes referred to as the **Vernam cipher**. 
+
+:::
 
 ### Encrypting the Message
 

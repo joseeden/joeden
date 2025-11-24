@@ -199,6 +199,27 @@ A **captive portal** is a web page that appears when a user first connects to a 
 
 These protocols are commonly used to **secure access to wireless networks**, particularly in enterprise environments where user identity and access control are critical.
 
+### Open System Authentication (OSA)
+
+Open System Authentication is a basic method for connecting devices to a Wi-Fi network. It lets devices request access without using a secret key during authentication.
+
+- Allows any device to request network access
+- No encryption during authentication
+- Often paired with WPA/WPA2 for real security
+
+This method is very simple and easy to use but provides almost no protection on its own. It is mostly a starting step before applying stronger security.
+
+### Shared Key Authentication (SKA)
+
+Shared Key Authentication uses a pre-shared key for connecting devices to a Wi-Fi network. It offers some protection but is considered weak by modern standards.
+
+- Requires a pre-shared WEP key for authentication
+- Provides basic security but vulnerable to attacks
+- Mostly a legacy method, rarely used today
+
+SKA adds a layer of security compared to OSA, but it is not sufficient alone. Modern Wi-Fi networks rely on stronger methods like WPA2 or WPA3 for proper protection.
+
+
 ### RADIUS
 
 RADIUS (Remote Authentication Dial-In User Service) is often used in **enterprise Wi-Fi networks** to manage user authentication and access control.

@@ -78,9 +78,24 @@ As a solution, we can use **In-Band Key Exchange** for key exchange over the sam
 Block ciphers encrypt data in fixed-size chunks instead of one bit at a time. They apply mathematical transformations repeatedly to hide the original data.
 
 - Operates on fixed-size data blocks
+- Encrypts data in blocks, such as 64 or 128 bits
+- Each block of plaintext becomes one block of ciphertext
 - The larger the block size, the faster the encryption.
 - More rounds of encryption means stronger protection
-- Blowfish and twofish were both released as open source products.
+
+Common features:
+
+- Easier to implement and generally more secure than stream ciphers
+- Often used in software-based encryption systems
+- Common in protocols and file encryption where data comes in chunks
+- Requires padding if data doesn't perfectly fit into blocks
+- Can run in different modes to provide flexibility and added protection
+
+:::info 
+
+**Substitution boxes**, or **S-boxes**, are used within block ciphers. S-boxes contain lookup tables to determine how a block of data is encrypted or decrypted. The key is used to decide which S-box to utilize with each block. 
+
+:::
 
 Block ciphers typically have 64-bit block size, but **in reality its only 56 bits** because **8 bits is reserved for overhead/parity** to ensure that the other 56 bits are accurate.
 
@@ -92,6 +107,8 @@ Block ciphers typically have 64-bit block size, but **in reality its only 56 bit
 | AES (Advanced Encryption Standard)             | 128-bit    | 10/12/14 rounds  | 128/192/256-bit       | Current global encrypti on standard.               |
 | Blowfish                                       | 64-bit     | 16 rounds        | 32–448-bit (variable) | Open-source replacement for DES.                  |
 | Twofish                                        | 128-bit    | 16 rounds        | 128/192/256-bit       | AES finalist, still secure and efficient.         |
+
+
 
 A few notes about each algorithm:
 
@@ -119,6 +136,7 @@ A few notes about each algorithm:
   - Free to use without any license restrictions
   - Once popular but no longer recommended for new systems
   - Creator suggests using Twofish instead
+  - Blowfish and twofish were both released as open source
 
     :::info   
 
@@ -138,8 +156,16 @@ A few notes about each algorithm:
 
 Also known as **Rivest Cipher (RC) Suites**, the streaming ciphers comprises a range of ciphers, from block to stream, with varying levels of flexibility and security. 
 
-- Some are now considered insecure (like RC4)
-- Had broader applications in history (like RC5 and RC6).
+- Encrypts data in a **continuous stream** instead of fixed blocks
+- Uses a **key stream generator** to create random-looking bits
+- The key stream is XORed with the plaintext to get the ciphertext
+
+Common features:
+
+- Same key is used for both encryption and decryption
+- Often implemented in hardware for faster performance
+- Works well for real-time data like voice or video streams
+- Becomes weak if the same key stream is reused or not random enough
 
 Unlike block ciphers, streaming ciphers encrypt one bit a time. It is wideless used in encrypting wireless networks.
 
@@ -156,6 +182,14 @@ A few notes:
 - RC2 was considered weak and was skipped over.
 - RC3 was cracked before it was even released to the public.
 - RC4, RC5, and RC6 are commonly used in networks today.
+- Some are now considered insecure (like RC4)
+- Had broader applications in history (like RC5 and RC6).
+
+:::info 
+
+Stream ciphers are useful for real-time communication, where speed and efficiency are key, but they must use unique and random key streams to stay secure.
+
+:::
 
 ## CAST Algorithms 
 

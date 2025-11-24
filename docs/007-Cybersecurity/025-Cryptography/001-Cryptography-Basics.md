@@ -150,6 +150,11 @@ Confusion makes the link between the key and ciphertext complex, hiding how the 
 
 Example: Substituting letters or bits so the original data looks entirely different.
 
+:::info 
+
+Confusion is carried out through transposition and diffusion is carried out through substitution.
+
+:::
 
 ## Types of Encryption 
 
