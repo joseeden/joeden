@@ -42,7 +42,6 @@ A bridge can be used to create network segments, or collision domains, but **it 
 
 </div>
 
-
 ## Switches
 
 Switches are networking devices that connect multiple devices within a local area network (LAN).
@@ -73,6 +72,17 @@ For more information, please see [WAPs.](/docs/006-Networking/001-The-Basics/060
 
 </div>
 
+## Dual-Homed 
+
+Dual-homed devices are devices which have at least two network interfaces, each on a different network or segment....
+
+- Bridges 
+- Routers 
+- Firewalls 
+- Gateways 
+- Some proxies 
+
+(ISC)² and CompTIA often refer to **screened-host firewalls** or **bastion hosts** as the classic dual-homed devices because they intentionally sit between two networks with separate NICs for isolation.
 
 ## Routers
 

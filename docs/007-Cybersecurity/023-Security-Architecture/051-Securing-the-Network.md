@@ -75,11 +75,11 @@ Network Access Control scans devices for their security status before granting n
   - Limits endpoint access to the network and provides network visibility.
   - Ensures compliance with policies before allowing devices to join the network.
 
-NAC uses **802.x authentication** to perform access control tasks and it uses different components.
+NAC uses **802.1x authentication** to perform access control tasks and it uses different components.
 
 ![](/img/docs/networking-basics-network-access-control-nacccc.png)
 
-For more information, please see [IEEE 802.1X Protocol](/docs/006-Networking/001-The-Basics/020-Ports-and-Protocols.md#ieee-8021x-protocol)
+For more information, please see [IEEE 802.1X Protocol](/docs/007-Cybersecurity/024-Infrastructure-and-Network/022-IEEE-Standards.md#ieee-8021x)
 
 ### Use Cases
 

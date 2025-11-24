@@ -1,7 +1,11 @@
 ---
 title: "Authentication Protocols"
 description: "PAP, NTLM, Kerberos, and the sorts"
-tags: [Security, Cybersecurity, Security Architecture, Security Engineering]
+tags: 
+- Security
+- Cybersecurity
+- Security Architecture
+- Security Engineering
 sidebar_position: 20
 last_update:
   date: 1/30/2024
@@ -255,7 +259,7 @@ IEEE 802.1X is a standard for port-based network access control, ensuring that o
 - Authentication is managed through a central RADIUS server.
 - Widely used in both wired and wireless networks to enhance security.
 
-For more information, please see [IEEE 802.1X Protocol](/docs/006-Networking/001-The-Basics/020-Ports-and-Protocols.md#ieee-8021x-protocol)
+For more information, please see [IEEE 802.1X Protocol](/docs/007-Cybersecurity/024-Infrastructure-and-Network/022-IEEE-Standards.md#ieee-8021x)
 
 ## RADIUS
 

@@ -15,7 +15,7 @@ last_update:
 A proxy server acts as an intermediary between a client and the internet.
 
 - Allows clients to make requests to servers while hiding their IP addresses.
-- Receives client requests, forwards them to the server, and returns server responses.
+- Receives client requests, sends to the server, then returns server responses.
 - Cache content to improve load times and reduce bandwidth usage.
 - Filter web traffic to enforce organizational policies.
 - Implement user authentication protocols and secure tunnels
@@ -24,28 +24,32 @@ A proxy server acts as an intermediary between a client and the internet.
 
 ### Circuit Level Proxy
 
-A Circuit Level Proxy establishes and manages connections between networks, focusing on the session rather than individual packets.
+A **circuit-level proxy** establishes and manages connections between networks, focusing on the session rather than individual packets.
 
-  - Like a SOCKS firewall
-  - Operate at Layer 5 (Session layer)
+- Like a SOCKS firewall
+- Operate at Layer 5 (Session layer)
+
+Circuit-level proxies make use of the **SOCKS version 5 protocol**, which is a lightweight, general-purpose protocol that routes traffic between a client and server without inspecting the actual data.
 
 ### Application Level Proxy
 
-An Application Level Proxy filters traffic based on the specific applications being used, offering detailed control over data exchanges.
+An **application-level proxy** filters traffic based on the specific applications being used, offering detailed control over data exchanges.
 
-  - Deeper packet inspection
-  - Conducts various proxy functions for each type of application
-  - Best positioned inside the network, as closely as possible to the application server
+- Deeper packet inspection
+- Conducts various proxy functions for each type of application
+- Best positioned inside the network
+- As closely as possible to the application server
 
 ### Kernel Proxy
 
-A Kernel Proxy efficiently processes and filters traffic at a deep level, suitable for high-speed environments.
+A **kernel proxy** efficiently processes and filters traffic at a deep level, suitable for high-speed environments.
 
-  - Known as a "5th Generation Firewall"
-  - Minimal impact on network performance but thoroughly inspects packets across all layers
-  - Uses the operating system's kernel to process and filter packets
-  - Often used in high-throughput environments requiring granular control and speed
-  - Best positioned as close as possible to the application server
+- Known as a "5th Generation Firewall"
+- Minimal impact on network performance
+- Thoroughly inspects packets across all layers
+- Uses the operating system's kernel to process and filter packets
+- Often used in high-throughput environments requiring granular control and speed
+- Best positioned as close as possible to the application server
 
 
 ## Functionality

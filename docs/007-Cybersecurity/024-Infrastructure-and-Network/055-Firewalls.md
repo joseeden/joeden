@@ -1,7 +1,11 @@
 ---
 title: "Firewalls"
 description: "Firewalls - Its uses and types"
-tags: [Security, Cybersecurity, Security Architecture, Security Engineering]
+tags: 
+- Security
+- Cybersecurity
+- Security Architecture
+- Security Engineering
 sidebar_position: 55
 last_update:
   date: 1/30/2024
@@ -12,10 +16,10 @@ last_update:
 
 Firewalls safeguard networks by monitoring and controlling traffic based on predefined security rules.
 
-- Can be hardware-based or specialized software installed on the client or server
+- Hardware-based or software installed on the client or server
 - By placing in front of the network segment, it creates a **screened subnet.**
 
-It is often placed between the router and the internet, firewalls evaluate anything crossing the network perimeter.
+Often placed between the router and the internet, firewalls evaluate anything crossing the network perimeter.
 
 <div class='img-center'>
 
@@ -187,14 +191,29 @@ The firewall will analyze whether there is a proper beginning (Encapsulation) fo
 
 ## Types of Firewall 
 
+### Virtual Firewall 
+
+A virtual firewall is a security control that runs inside a virtual environment to watch and filter traffic between virtual machines. It works like a firewall inside the hypervisor so it can inspect activity that never reaches the physical network.
+
+- Filters traffic between virtual machines
+- Can run as a standalone virtual appliance
+- Can be built directly into the hypervisor
+- Protects workloads that share the same physical host
+- Helps enforce security in cloud and virtualized setups
+
+Virtual firewalls give visibility into communication that stays inside the virtual platform, making them useful for controlling traffic that physical firewalls cannot see.
+
+
 ### Packet Filtering
 
 Packet filtering firewalls offer a basic level of security by inspecting only the packet headers.
 
-  - Most efficient, mximizes throughput with minimal processing
-  - Filters based on IP addresses, ports, and protocols
-  - Operates at Layer 4 (Network Layer) of the OSI model
-  - Simple and fast but lacks deep packet inspection
+- Most efficient, maximizes throughput with minimal processing
+- Filters based on IP addresses, ports, and protocols
+- Operates at Layer 4 (Network Layer) of the OSI model
+- Simple and fast but lacks deep packet inspection
+
+Any packet arriving from outside the network that claims to have an internal source address should be blocked. Attackers often spoof packets by changing the source IP to look like it came from inside the network. Since no real external packet should ever use an internal IP, the firewall should reject it immediately.
 
 ### Stateful Firewall
 

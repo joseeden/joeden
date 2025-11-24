@@ -1,7 +1,11 @@
 ---
 title: "IDS and IPS"
 description: "Intrusion Detection and Intrusion Prevention"
-tags: [Security, Cybersecurity, Security Architecture, Security Engineering]
+tags: 
+- Security
+- Cybersecurity
+- Security Architecture
+- Security Engineering
 sidebar_position: 56
 last_update:
   date: 1/30/2024

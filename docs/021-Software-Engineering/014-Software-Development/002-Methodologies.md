@@ -77,15 +77,15 @@ The Incremental model involves developing software in small functional increment
 
 ## Cleanroom Model 
 
-The Cleanroom model focuses on preventing defects through rigorous processes.  
+The Cleanroom model focuses on preventing defects/errors or mistakes by following highly structured and formal methods of rigorous developing and testing.
 
 - Focuses on preventing defects rather than fixing them.  
-- Uses formal specifications, statistical quality control, and rigorous testing.  
+- Uses formal specifications and statistical quality control
 - Emphasizes correctness by construction.
 
 ## Reuse Model
 
-The Reuse Methodology leverages existing components to speed up development.  
+The Reuse Methodology approaches software development by using progressively developed code. It leverages existing components to speed up development.  
 
 - Builds software using existing components.  
 - Encourages modular design and component libraries.  
@@ -97,6 +97,7 @@ The Exploratory Methodology is flexible, trial-and-error approach useful for unc
 
 - Informal, trial-and-error approach.  
 - Useful when requirements are unclear or research-oriented.  
+- Used when there's no clearly defined project objectives.
 - Emphasizes learning and adaptation.
 
 ## Rapid Prototyping

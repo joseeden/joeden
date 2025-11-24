@@ -122,12 +122,15 @@ Port security works in two modes:
 
 ### IEEE 802.1X Protocol
 
-802.1x is a standardized framework that provides an authentication mechanism for devices wishing to connect to wired or wireless networks.
+802.1x is a standardized framework that controls access to networks by verifying devices before they connect.
 
-- Port-based access control, ensuring only authenticated devices can connect.
-- Supports dynamic encryption keys for secure communication.
-- Common in corporate environments to enhance security.
-- Uses authentication mechanisms such as RADIUS and TACACS+.
+- Port-based network access control  
+- Requires devices to authenticate before using the network  
+- Works with wired and wireless networks  
+- This ensures only trusted devices can connect.
+
+For more information, please see [IEEE 802.1X Protocol](/docs/007-Cybersecurity/024-Infrastructure-and-Network/022-IEEE-Standards.md#ieee-8021x)
+
 
 #### Components of 802.1X 
 

@@ -1,7 +1,11 @@
 ---
 title: "Hardware Security"
 description: "Securing hardware memory and interfaces"
-tags: [Security, Cybersecurity, Security Architecture, Security Engineering]
+tags: 
+- Security
+- Cybersecurity
+- Security Architecture
+- Security Engineering
 sidebar_position: 64
 last_update:
   date: 1/30/2024
