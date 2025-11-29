@@ -9,28 +9,46 @@ last_update:
 
 ## Overview
 
-Cybersecurity professionals are often required to participate in electronic discovery (e-discovery) efforts when legal actions involve their organizations. These efforts focus on preserving, collecting, and producing evidence relevant to disputes. 
+Cybersecurity teams often help with legal matters by preserving, collecting, and sharing information needed for disputes. These steps make sure evidence is handled correctly and can be used in court.
+
+- Focuses on preserving, collecting, and producing relevant data
+- Supports legal and investigative processes
+- Ensures evidence is trustworthy and organized
+
+
+## Evidence Admissibility
+
+Evidence must meet certain standards to be accepted in court. These rules ensure that only proper, trustworthy information is used.
+
+- **Relevance**: Must directly relate to the case.
+- **Reliability**: Must be credible and trustworthy.
+- **Legality**: Must be obtained lawfully.
+
 
 ## Legal Hold
 
-Also known as a **litigation hold**, legal hold is a formal notice requiring an organization to preserve all relevant information and data for potential or ongoing litigation, investigations, or legal proceedings. 
+A **legal hold**, or **litigation hold**, tells an organization to keep all information related to a case. It prevents data from being deleted or altered.
 
-- **Prevent evidence loss or tampering.**
-- Initiated when litigation is anticipated or pending, or when an investigation is underway.
-- Notify relevant individuals to ensure preservation compliance.
-- Document all communications and actions related to the legal hold.
-- Ensures continued preservation throughout the legal process.
+- **Prevent Evidence Loss**: Stops accidental or intentional deletion
+- **Notify People**: Ensure employees preserve relevant records
+- **Document Actions**: Track communications and steps for accountability
+- **Maintain Hold**: Continue until case or investigation ends
 
 Most litigation holds remain in the preservation and collection phases without progressing to production. A few cases reach a point where evidence must be presented in court, with many disputes being settled or not proceeding further.
 
-
 ## Lifting the Hold 
 
-**Lifting the Hold** refers to the process of removing a hold. This action typically occurs when the legal proceedings or investigation have concluded or reached a resolution. It allows previously restricted activities or information to resume normal operation or accessibility. 
+Once the legal case or investigation is complete, the legal hold can be removed. This allows normal operations to resume.
+
+- **End Restrictions**: Resume normal access to data and systems
+- **Update Records**: Note that the hold has been lifted
+- **Confirm Compliance**: Ensure everyone affected knows the hold is removed
+
+Lifting the hold marks the end of the preservation stage but does not affect any evidence already collected.
 
 ## Electronic Discovery
 
-Electronic Discovery, or eDiscovery, is the process of identifying, collecting, reviewing, and producing electronically stored information (ESI) for legal or investigative purposes.
+**Electronic Discovery**, or **eDiscovery**, is the process of identifying, collecting, reviewing, and producing electronically stored information (ESI) for legal or investigative purposes.
 
 - Involves emails, documents, databases, social media, etc.
 - Utilizes eDiscovery tools to handle large data sets
@@ -38,35 +56,45 @@ Electronic Discovery, or eDiscovery, is the process of identifying, collecting, 
 - Requires coordination between IT, legal, and compliance teams
 - Ensures proper documentation of evidence for court use
 
-The key steps in eDiscovery are preservation, collection, and production.
+The main steps in eDiscovery are:
+
+1. Preservation
+2. Collection
+3. Production
 
 ### Preservation
 
 The goal of preservation is to maintain the integrity of the electronic information, which is essential for building a strong case or responding to legal requests. During this step:
 
-- Issue a litigation hold to notify relevant parties to preserve records
-- Halt automated data deletion processes, such as log purges
-- Ensure all related information is maintained intact for legal use
+- **Issue Hold**: Notify teams to preserve data
+- **Stop Deletion**: Prevent automatic or accidental removal
+- **Maintain Integrity**: Keep all records complete and accurate
 
-Preservation could include: 
+Other actions include:
 
-- Making backup copies 
-- Isolating critical systems 
-- Implementing access controls
+- Backing up important data
+- Isolating critical systems
+- Limiting access to sensitive information
+
 
 ### Collection
 
 Collection involves gathering the preserved data for legal review.
 
-- Retrieve data from servers, personal devices, emails, and cloud systems
-- Cybersecurity teams support in retrieving and organizing data
-- Use eDiscovery tools to manage the collected information
+- **Retrieve Data**: From devices, servers, and cloud
+- **Organize Information**: Make it easy to review
+- **Use Tools**: eDiscovery software helps manage the data
 
 ### Production
 
 Production is when relevant data is shared with the opposing party in legal disputes.
 
-- Attorneys review and select relevant data not protected by legal privileges
-- Create an electronic file with selected records to share with the other side
-- Most cases do not reach this phase due to settlements or other resolutions
+- **Review Data**: Lawyers select what can be shared
+- **Create Files**: Package relevant records electronically
+- **Share**: Provide to the other side according to rules
 
+:::info 
+
+Most cases never reach production because many are settled or resolved before then.
+
+:::

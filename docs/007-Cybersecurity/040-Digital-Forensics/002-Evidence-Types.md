@@ -66,7 +66,3 @@ Testimonial Evidence may come in two forms:
 
 When giving testimonial evidence, witnesses must avoid violations of the **hearsay rule**. This means that they may not testify about what someone else told them outside of court.
 
-
-## Conclusion
-
-Understanding these evidence types and their applications is crucial for cybersecurity experts involved in investigations.

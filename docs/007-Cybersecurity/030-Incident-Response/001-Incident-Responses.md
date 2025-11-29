@@ -23,6 +23,11 @@ last_update:
 | **Zero Day**        | An unknown system vulnerability that could be exploited without typical detection or prevention.                                                                              |
 | **Impact**          | The expected harm from unauthorized data disclosure, modification, or loss.                                                                                                   |
 
+:::info 
+
+A security event is any occurrence that can be observed, verified, and documented; a security incident is one or more related events that negatively affect the company and/or impact its security posture.
+
+:::
 
 ## Indicators of Compromise 
 

@@ -141,6 +141,34 @@ Examples of Embedded Devices:
   - Example: Bentonville murder investigation.
 
 
+## ISO/IEC 27037
+
+ISO/IEC 27037 provides guidelines for handling digital evidence in a way that keeps it reliable and usable for investigations. It focuses on four main phases: 
+
+1. **Identification**
+
+    - Recognize potential sources of digital evidence
+    - Determine which devices, files, or logs may be relevant
+    - Prioritize items based on their importance to the investigation
+
+2. **Collection**
+
+    - Gather evidence in a forensically sound manner
+    - Avoid altering or damaging the original data
+    - Document the collection process for accountability
+
+3. **Acquisition**
+
+    - Create exact copies (images) of digital media for analysis
+    - Ensure integrity using checksums or hash values
+    - Record metadata, timestamps, and source details
+
+4. **Preservation**
+
+    - Store evidence securely to prevent tampering or loss
+    - Maintain **chain of custody** records for legal validity
+    - Use appropriate storage methods to ensure long-term availability
+
 
 ## Data Acquisition 
 
