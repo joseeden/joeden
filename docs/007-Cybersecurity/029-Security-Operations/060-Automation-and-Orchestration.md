@@ -26,17 +26,7 @@ last_update:
 
 **Security Orchestration, Automation, and Response (SOAR)** is a category of security solutions that combine three primary functions: orchestration, automation, and response to streamline security operations and improve incident response capabilities.
 
-- **Orchestration**
-  - Integration of various security tools and systems.
-  - Coordinating actions across different platforms to streamline workflows.
-
-- **Automation**
-  - Automating repetitive and manual security tasks.
-  - Reducing response times and freeing up human resources for more complex tasks.
-
-- **Response**
-  - Executing predefined actions in response to security incidents.
-  - Ensuring swift and effective mitigation of threats.
+For more information, please see [SOAR.](/docs/007-Cybersecurity/030-Incident-Response/009-SOAR.md)
 
 ### Playbooks and Runbooks 
 

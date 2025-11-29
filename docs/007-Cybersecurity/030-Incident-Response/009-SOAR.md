@@ -14,8 +14,8 @@ last_update:
 
 SOAR stands for Security Orchestration, Automation, and Response. It refers to a set of practices, processes, and technologies used by cybersecurity teams to streamline and enhance their incident response capabilities.
 
-- Typically integrate with a variety of security tools and technologies, such as SIEM
-- Provide centralized dashboards and workflows for managing security incidents
+- Integrate with security tools and technologies, such as SIEM
+- Provide centralized dashboards for managing security incidents
 - Built-in capabilities for automation and orchestration
 
 ## Features
