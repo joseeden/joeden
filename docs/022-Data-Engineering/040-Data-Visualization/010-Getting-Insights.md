@@ -1,7 +1,7 @@
 ---
 title: "Getting Insights"
 description: "Notes from DataCamp's Understanding Data Visualization Course"
-tags: tags: 
+tags: 
 - Data Engineering
 - Data Science
 - Data Visualization
