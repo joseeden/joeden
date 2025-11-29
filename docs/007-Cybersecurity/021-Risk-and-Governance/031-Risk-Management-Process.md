@@ -165,6 +165,7 @@ Example:
 ### Qualitative Risk Assessment
 
 Qualitative risk assessment evaluates risks using descriptive, subjective factors instead of numerical data.
+
 - Relies on expert judgment, interviews, and categorization of threats and vulnerabilities.
 - Risks are classified into categories based on probability and impact:
   
@@ -180,27 +181,53 @@ Qualitative risk assessment evaluates risks using descriptive, subjective factor
 
 Risk treatment involves deciding on the most appropriate actions based on management's risk attitude and the availability and cost of mitigation measures.
 
-- **Risk Avoidance**
-    - Decision to eliminate a risk entirely.
-    - May involve halting specific activities.
-    - Leadership decision when impact or likelihood is deemed too high.
+### Risk Avoidance
 
-- **Risk Acceptance**
-    - Decision to take no action to reduce risk likelihood.
-    - Management proceeds with associated business functions without further action.
-    - Occurs when impact or likelihood is negligible, or benefits outweigh the risk.
-    - **Exemption** - provision that grants an exception from a specific rule or requirement
+add simple short intro...
 
-- **Risk Mitigation**
-    - Most commonly used in risk management.
-    - Aims to prevent or reduce risk likelihood or impact.
-    - Involves measures like security controls and policies.
-    - While complete mitigation isn't always possible, safety measures should be implemented.
+- Decision to eliminate a risk entirely.
+- May involve halting specific activities.
+- Leadership decision when impact or likelihood is deemed too high.
 
-- **Risk Transference**
-    - Involves passing the risk to another party.
-    - The party accepts financial impact in exchange for payment.
-    - Commonly done through insurance policies.    
+### Risk Acceptance
+
+add simple short intro...
+
+- Decision to take no action to reduce risk likelihood.
+- Management proceeds with associated business functions without further action.
+- Occurs when impact or likelihood is negligible, or benefits outweigh the risk.
+- **Exemption** - provision that grants an exception from a specific rule or requirement
+
+When a company decides to accept a risk, it should be a decision based on:
+
+- Cost - Countermeasure costs more than potential loss.
+- Pain - The company can live with the vulnerability and threat.
+- Visibility - The company won’t be viewed as irresponsible in the industry or by stakeholders.
+
+### Risk Mitigation
+
+add simple short intro...
+
+- Most commonly used in risk management.
+- Aims to prevent or reduce risk likelihood or impact.
+- Involves measures like security controls and policies.
+- While complete mitigation isn't always possible, safety measures should be implemented.
+
+### Risk Transference
+
+add simple short intro...
+
+- Involves passing the risk to another party.
+- The party accepts financial impact in exchange for payment.
+- Commonly done through insurance policies.    
+
+### Risk Rejection 
+
+add simple short intro...
+
+- add info
+- add info
+- add info
 
 
 ## Risk Priorities 

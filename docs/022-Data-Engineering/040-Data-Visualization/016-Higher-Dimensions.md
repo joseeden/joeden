@@ -1,7 +1,10 @@
 ---
 title: "Higher Dimensions"
 description: "Notes from DataCamp's Understanding Data Visualization Course"
-tags: [Data Engineering,  Data Science, Data Visualization]
+tags: tags: 
+- Data Engineering
+- Data Science
+- Data Visualization
 sidebar_position: 16
 last_update:
   date: 9/22/2021
