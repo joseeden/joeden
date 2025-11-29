@@ -18,27 +18,31 @@ TCP/IP’s vulnerabilities are numerous. Improperly implemented TCP/IP stacks in
 - spoofing attacks
 - man-in-the-middle attacks
 
-TCP/IP (as well as most protocols) is also subject to passive attacks via monitoring or sniffing. Network monitoring, or sniffing, is the act of monitoring traffic patterns to obtain information about a network. 
+TCP/IP (as well as most protocols) is also subject to passive attacks via monitoring or sniffing. 
+
+Network monitoring, or sniffing, is the act of monitoring traffic patterns to obtain information about a network. 
 
 ## Physical vs Logical Separation
 
 - **Physical Separation (Air-gapping)**
 
-  - Usually called "air-gapping"
   - Physically isolates critical components.
   - Prevents unauthorized access.
   - Common in high-security environments.
 
 - **Logical Separation**
+
   - Uses virtualization or segmentation techniques.
   - Separates network traffic or user groups.
   - Implemented with VLANs, VPNs, or SDN.
 
 ## Network Segmentation
 
-Involves isolating a network from outside communications.
+Network segmentation separates a network into smaller zones to improve security and performance.
 
 - Controls traffic among networked devices.
+- Limits the spread of malware or attacks within the network.
+- Helps enforce access policies and protect sensitive resources.
 
 ## Demilitarized Zone
 
@@ -59,21 +63,23 @@ For more information, please see [VLANs](/docs/006-Networking/001-The-Basics/011
 
 ## Microsegmentation 
 
-Microsegmentation addresses modern cyber threats exploiting traditional security models by focusing on protection requirements for traffic within a data center and to/from the internet.
+Microsegmentation focuses on protecting traffic within a data center and to/from the internet.
 
-  - Adversaries use polymorphic tools to bypass static controls.
-  - Shifts away from infrastructure-centric design paradigms.
-  - Aims for increased efficiency in service delivery within the data center.
-  - Enhances detection and prevention of advanced persistent threats.
+- Protects internal traffic from advanced attacks.
+- Moves focus from just network infrastructure to individual workloads.
+- Improves efficiency and security for data center services.
+- Helps detect and block persistent threats.
+
+It is also used to isolate individual assets, such as data servers, in their own protected network environment. This ensures that even if one part of the network is compromised, isolated assets remain protected, limiting the spread of attacks.
 
 
 ## Network Access Control (NAC)
 
 Network Access Control scans devices for their security status before granting network access.
 
-  - Identifies connections, isolates noncompliant devices, and supports incident response.
-  - Limits endpoint access to the network and provides network visibility.
-  - Ensures compliance with policies before allowing devices to join the network.
+- Identifies connections, isolates noncompliant devices, and supports incident response.
+- Limits endpoint access to the network and provides network visibility.
+- Ensures compliance with policies before allowing devices to join the network.
 
 NAC uses **802.1x authentication** to perform access control tasks and it uses different components.
 
@@ -85,10 +91,10 @@ For more information, please see [IEEE 802.1X Protocol](/docs/007-Cybersecurity/
 
 Use Cases for NAC Deployment:
 
-  - Medical devices
-  - IoT devices
-  - BYOD/mobile devices (laptops, tablets, smartphones)
-  - Guest users and contractors
+- Medical devices
+- IoT devices
+- BYOD/mobile devices (laptops, tablets, smartphones)
+- Guest users and contractors
 
 ### NAC Deployments
 
@@ -153,66 +159,73 @@ Network Access Control (NAC) manages network security by enforcing policies on u
 
 ## DHCP Snooping 
 
-DHCP Snooping is a security feature that acts as a firewall between untrusted hosts and trusted DHCP servers. By monitoring and filtering DHCP traffic, it helps prevent malicious attacks such as IP address spoofing and rogue DHCP servers.
+DHCP Snooping is a network security feature that protects against fake or malicious DHCP servers.
 
-- Network switch feature, can be enabled to trust only known DHCP servers.
-- Maintains a binding table that records trusted devices and their IP addresses.
-- Drops traffic from untrusted ports and blocks unauthorized DHCP responses.
-- Prevents IP address conflicts, protecting against DHCP exhaustion attacks.
+- Filters DHCP messages from untrusted sources.
+- Records IP addresses and devices in a binding table.
+- Blocks unauthorized DHCP responses from unknown devices.
+- Prevents IP conflicts and protects against DHCP exhaustion attacks.
+
+This ensures only trusted DHCP servers assign IP addresses, keeping the network secure from spoofing and malicious activity.
 
 ## Infrastructure Considerations
 
-Infrastructure considerations play a pivotal role in the efficiency and security of a network environment.
+These considerations ensure the network is both efficient and resilient to attacks.
 
-- **Correct placement of devices**
-  - Location influences security and performance.
-  - Proper placement ensure optimal data flow and minimized latency
-  - If placed in the wrong places, it can lead to:
-    - Network bottlenecks 
-    - Vulnerability points 
-    - Areas without connectivity
-    
-- **Knowing the attack surface**
-  - **Attack Surface** - all points that an unauthorized user can try to enter.
-  - The more complex a network becomes, the wider the attack surface becomes.
-  - Implement proper controls to mitigate the risk.
+1. **Correct placement of devices**
 
-- **Determine connectivity methods**
-  - Wired networks provide stabiilty and speed, but restrictive in terms of mobility.
-  - Wireless connections offer greater levels of flexibility and scalability.
-  - Hybrid methods can be used to combine both.
-  - When deciding for connectivity methods to user, consider:
-    - scalability
-    - Speed requirements
-    - Security considerations 
-    - Budgetary constraints
+    - Proper location improves performance and security
+    - Avoids bottlenecks and dead zones
+    - Misplacement can create vulnerabilities or network gaps
 
-- **Security Zones and Screened subnets** 
-  - **Security zones** - Isolating or segmenting networks 
-  - **Screened subnet** - previously referred to as **Demilitarized Zone (DMS)**
+2. **Knowing the attack surface**
 
-## Understand Device Attributes
+    - *Attack surface* is where attackers can enter the network
+    - Complex networks means wider attack surface
+    - More devices and services increase the exposure
+    - Apply controls to mitigate the risks
 
-  - **Active**
-    - Monitor and act on suspicious network traffic by influencing data flows
-    - Makes real-time decisions based on the network's current state
-    - Example: IPS 
+3. **Choosing connectivity methods**
 
-  - **Passive**
-    - Simply observe and report on network traffic without actively intervening
-    - Example: IDS 
+    - Wired networks are fast and stable but less flexible
+    - Wireless offers mobility and easier scaling
+    - Hybrid setups balance speed, flexibility, and cost
+    - When deciding for connectivity methods, consider:
+      - Scalability
+      - Speed requirements
+      - Security considerations 
+      - Budgetary constraints
 
-  - **Inline** 
-    - Positioned directly in the path of the network traffic
-    - Can influence or block traffic as it passes through the device
-    - Filters malicious traffic and optimize data flow
-    - Example: Firewall, routers, IPS
+4. **Security zones and screened subnets**
 
-  - **Tap-based**  
-    - Discreet; placed outside of the direct network path
-    - Configured to only listen to network activity
-    - Captures data for analysis without impacting the actual traffic
+    - *Security zones* segment the network to limit access
+    - *Screened subnets (DMZs)* protect public-facing services
 
 
+## Device Attributes
 
+Network devices can act in different ways depending on their role and placement.
 
+- **Active**
+
+  - Monitors and reacts to suspicious traffic
+  - Makes real-time decisions
+  - Example: Intrusion Prevention System (IPS)
+
+- **Passive**
+
+  - Observes traffic without interfering
+  - Provides alerts and reports
+  - Example: Intrusion Detection System (IDS)
+
+- **Inline**
+
+  - Directly in the traffic path
+  - Can filter, block, or optimize traffic
+  - Example: Firewall, router, IPS
+
+- **Tap-based**
+
+  - Listens to traffic without affecting it
+  - Used for monitoring and analysis
+  - Example: Network taps or monitoring probes

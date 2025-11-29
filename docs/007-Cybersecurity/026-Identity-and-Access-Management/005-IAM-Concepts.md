@@ -163,8 +163,7 @@ Collusion occurs when two or more individuals work together to circumvent the se
 
 ## Interoperability 
 
-The ability of different systems, devices, and applications to work together 
-and share information.
+The ability of different systems, devices, and applications to work together and share information.
 
 - Can involve standards such as SAML or OpenID connect
 

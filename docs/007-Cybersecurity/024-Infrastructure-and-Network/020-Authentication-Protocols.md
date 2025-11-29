@@ -22,7 +22,7 @@ They ensure that only authorized users or devices can access a network, reducing
 
 ## PAP 
 
-PAP (Password Authentication Protocol) is a basic authentication protocol that has been largely replaced by more secure methods. Here’s an overview of its characteristics:
+**PAP (Password Authentication Protocol)** is a basic authentication protocol that has been largely replaced by more secure methods. Here’s an overview of its characteristics:
 
 - Transmits passwords in plaintext, making it vulnerable to interception.
 - Lacks encryption, thus passwords are exposed during transmission.
@@ -31,16 +31,16 @@ PAP (Password Authentication Protocol) is a basic authentication protocol that h
 
 ## CHAP
 
-CHAP (Challenge Handshake Authentication Protocol) is a more secure authentication method compared to PAP, using a challenge-response process to avoid transmitting passwords in plaintext.
+**CHAP (Challenge Handshake Authentication Protocol)** is a more secure authentication method compared to PAP, using a challenge-response process to avoid transmitting passwords in plaintext.
 
 - The server sends a random challenge to the client.
-- The client responds with a hash value created from the challenge and the user's password.
-- The server compares the received hash with its own calculated hash to authenticate the user.
+- Client responds with a hash value created from the challenge and the user's password.
+- Server compares received hash with its own calculated hash to authenticate the user.
 - Repeated challenges during a session reduce the risk of replay attacks.
 
 ## MS-CHAPv2 
 
-MS-CHAPv2 is a more secure version of the Challenge-Handshake Authentication Protocol, designed to provide enhanced security in network environments. 
+**MS-CHAPv2** is a more secure version of the Challenge-Handshake Authentication Protocol, designed to provide enhanced security in network environments. 
 
 - Utilizes a challenge-response mechanism with stronger encryption
 - Widely used in VPNs and Windows-based environments
@@ -49,7 +49,7 @@ MS-CHAPv2 is a more secure version of the Challenge-Handshake Authentication Pro
 
 ## NTLM
 
-NTLM is a Microsoft proprietary authentication protocol that has evolved over time to enhance security in network environments, though it is now largely replaced by more secure protocols like Kerberos.
+**NTLM** is a Microsoft proprietary authentication protocol that has evolved over time to enhance security in network environments, though it is now largely replaced by more secure protocols like Kerberos.
 
 - "NT" - New technology
 - Microsoft’s proprietary authentication protocol
@@ -61,7 +61,7 @@ NTLM is a Microsoft proprietary authentication protocol that has evolved over ti
 
 ## Kerberos
 
-Kerberos is a ticketbased authentication system that allows users to authenticate to a centralized service and use tickets to gain access to distributed services.
+**Kerberos** is a ticket-based authentication system that allows users to authenticate to a centralized service and use tickets to gain access to distributed services.
 
 - Primarily used for single sign-on (SSO) in enterprise environments.
 - Commonly used in Microsoft Active Directory authentication.
@@ -74,21 +74,26 @@ The following components are essential for Kerberos to function:
 - **Kerberos Key Distribution Center (KDC)**  
   
   - The central authority that issues and manages security credentials.
+  - Holds all cryptographic keys for the principals within a realm.
+  - Can also be a single point of failure unless there are redundant KDCs.
   
 - **Authentication Service (AS)**  
   
   - A part of the KDC
-  - Responsible for verifying a user's credentials and issuing a Ticket-Granting Ticket (TGT).
+  - Verifies a user's credentials
+  - Issues a *Ticket-Granting Ticket (TGT)*.
   
 - **Ticket-Granting Service (TGS)**  
   
   - Another part of the KDC that issues service-specific tickets
-  - Allows users to access different services after their identity is authenticated.
+  - Allows users to access the services after identity is authenticated.
   
 - **Ticket-Granting Ticket (TGT)**  
   
   - A token that the client receives after initial authentication
-  - Allows it to request access to various services without re-entering credentials.
+  - Allows requesting access to services without re-entering credentials.
+  - Used by subjects for trusted access to other resources
+  - Permits a principal to access another principal
 
 ### How Kerberos Works 
 
@@ -104,7 +109,6 @@ Kerberos operates through a series of steps that ensure secure communication and
     
       - Used for future communication between client and ticket-granting server
       - Encrypted with client's password  
-
     - Ticket granting ticket
 
       - Includes information of the client
@@ -117,7 +121,6 @@ Kerberos operates through a series of steps that ensure secure communication and
 5. To access a service, the client contacts the TGS and sends:
 
     - A copy of the TGT and the identity of the requested service.
-
     - An authenticator containing the client's ID and current time, encrypted with the client-TGS session key.
 
 6. The TGS decrypts the TGT to retrieve the client-TGS session key.
@@ -126,7 +129,7 @@ Kerberos operates through a series of steps that ensure secure communication and
 
 8. The TGS generates a random client-server session key for communication between the client and the service.
 
-9. The TGS sends two messages to the client:
+9.  The TGS sends two messages to the client:
  
     - A **client-server ticket**, encrypted with the service's secret key, containing the client-server session key.
   
@@ -151,6 +154,13 @@ How it looks like:
 
 </div>
 
+### Disadvantages of Kerberos 
+
+Some known weaknesses of Kerberos are:
+
+- The KDC can be a single point of failure.
+- Network traffic is not protected if encryption is not enabled.
+- Secret keys are vulnerable when they are temporarily stored on users’ workstations.
 
 ## SESAME
 
@@ -164,9 +174,9 @@ While SESAME is designed as an improvement to Kerberos, it is still vulnerable t
 
 ## EAP
 
-EAP (Extensible Authentication Protocol) is a flexible authentication framework used in network access protocols. It supports multiple authentication methods and is commonly used in wireless networks and point-to-point connections.
+**EAP (Extensible Authentication Protocol)** is a flexible authentication framework used in network access protocols. It supports multiple authentication methods and is commonly used in wireless networks and point-to-point connections.
 
-- Not a specific authentication mechanism but a framework supporting various methods.
+- Not an authentication mechanism but a framework supporting various methods.
 - Operates at the data link layer, allows for secure exchanges before IP assignment.
 - Ensures compatibility between different authentication methods and devices.
 - **Authentication**: Simple passwords, Digital Certificates, and PKI
@@ -225,7 +235,7 @@ All variants are considered cross-platform, except for LEAP.
 
 ## LDAP 
 
-LDAP (Lightweight Directory Access Protocol) is a protocol designed for accessing and managing directory information in a network.
+**LDAP (Lightweight Directory Access Protocol)** is a protocol designed for accessing and managing directory information in a network.
 
 - Facilitates sharing of information infrastructure across networks
 - Can be used to create a directory of employees and organizational units
@@ -246,6 +256,7 @@ Ports:
 :::info[NOTE]
 
 Active Directory uses Kerberos in conjunction with LDAP.
+
 Kerberos handles authentication, while LDAP provides the means to query the information stored in Active Directory.
 
 :::
@@ -253,7 +264,7 @@ Kerberos handles authentication, while LDAP provides the means to query the info
 
 ## IEEE 802.1X
 
-IEEE 802.1X is a standard for port-based network access control, ensuring that only authenticated devices can access the network.
+**IEEE 802.1X** is a standard for port-based network access control, ensuring that only authenticated devices can access the network.
 
 - Requires devices to authenticate before accessing the network.
 - Authentication is managed through a central RADIUS server.
@@ -263,7 +274,7 @@ For more information, please see [IEEE 802.1X Protocol](/docs/007-Cybersecurity/
 
 ## RADIUS
 
-RADIUS (Remote Authentication Dial-In User Service) is a networking protocol that provides centralized Authentication, Authorization, and Accounting for users who connect and use a network service.
+**RADIUS (Remote Authentication Dial-In User Service)** is a networking protocol that provides centralized Authentication, Authorization, and Accounting for users who connect and use a network service.
 
 - Centralizes authentication for easier management of user credentials.
 - Used to control access to network services in enterprise environments.
@@ -271,9 +282,9 @@ RADIUS (Remote Authentication Dial-In User Service) is a networking protocol tha
 
 Variations:
 
-  - TACACS
-  - TACACS+
-  - XTACACS
+- TACACS
+- TACACS+
+- XTACACS
 
 ### Disadvantages 
 
@@ -283,6 +294,14 @@ RADIUS has couple of downsides:
 - Provides cryptographic protection for the password, but does not encrypt the entire authentication sequence.
 
 ### Authentication 
+
+The RADIUS authentication proces:
+
+1. The user connects to an access server
+2. The access server prompts the user for their credentials
+3. The user enters their credentials
+4. The access server forwards those credentials to a RADIUS server. 
+5. The RADIUS server accepts or rejects the user connection.
 
 Successful authentication: 
 

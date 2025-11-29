@@ -33,11 +33,7 @@ Also known as **DNS spoofing**, is a type of attack where false DNS information 
 
 ## DNS Amplification Attack
 
-DNS Amplification Attack is a type of DDoS attack that uses open DNS resolvers to flood a target with amplified traffic, overwhelming the target's resources and causing service disruption.
-
-- Exploitation of DNS resolvers to amplify traffic.
-- Service outages, network congestion, degraded performance.
-- Unusually high DNS traffic, traffic originating from multiple sources.
+DNS Amplification Attack is a type of DDoS attack that uses open DNS resolvers to flood a target with amplified traffic, overwhelming the target's resources and causing service disruption. See [Amplified DDoS.](/docs/007-Cybersecurity/051-List-of-Attacks/004-Denial-of-Service.md#amplified-ddos)
 
 **Mitigations:**
 

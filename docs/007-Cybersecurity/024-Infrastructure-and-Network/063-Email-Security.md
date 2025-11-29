@@ -15,14 +15,14 @@ last_update:
 
 ## Overview
 
-Email security involves protecting email accounts and systems from unauthorized access and malicious activities. It is essential for safeguarding sensitive information and maintaining the integrity of communications.
+Email security protects accounts and systems from attacks and unauthorized access. It helps keep communications safe and private.
 
-- Protects against phishing and spoofing attacks.
-- Scans incoming and outgoing emails for malware and malicious links.
-- Implements encryption to safeguard email content during transmission.
-- Monitors and audits email traffic to detect unusual activities and potential breaches.
+- Protects against phishing, spoofing, and malware.
+- Encrypts emails to safeguard sensitive data during transmission.
+- Monitors email traffic for unusual activity and potential breaches.
+- Scans messages to block malicious links and attachments.
 
-Types:
+Email security ensures that your communications remain trustworthy and that sensitive data is protected at all times. Ways to secure email includes:
 
 - DKIM
 - SPF 
@@ -32,45 +32,78 @@ Types:
 
 ## DKIM 
 
-DKIM (DomainKeys Identified Mail) is an email authentication method designed to detect forged sender addresses in emails, a common technique used in phishing and email spoofing.
+**DKIM (DomainKeys Identified Mail)** is an email authentication method that checks that emails really come from the claimed sender and have not been altered.
 
-- Cryptographic signatures is added to the headers of the email.
-- Signature isvalidated against a public cryptographic key located on the domain's DNS record.
-- This entire process Verifies that the email comes from the claimed domain.
-- Helps ensure that the content of the email has not been altered in transit.
+- Adds cryptographic signatures to email headers.
+- Validates signatures using public keys stored in DNS records.
+- Confirms the email content is unchanged in transit.
+
+DKIM helps maintain the integrity of email communications and prevents forgery.
 
 ## SPF 
 
-SPF (Sender Policy Framework) is an email validation system designed to prevent spam by verifying the sender's IP address against the domain's authorized list.
+**SPF (Sender Policy Framework)** is an email validation system designed to prevent spam by verifying the sender's IP address against the domain's authorized list.
 
-- Allows domain owners to specify authorized mail servers to send emails on behalf of their domain.
-- Reduces the risk of unauthorized use of the domain in email communications.
+- Domain owners list authorized mail servers in DNS records.
+- Reduces risk of unauthorized use of the domain in emails.
 - Helps prevent email spoofing and phishing attacks.
 
-How it works:
+When an SPF-enabled server receives email:
 
-- When an SPF-enabled mail server receives email, it checks the sender's IP first.
-- Sender IP is verified againsts a list of authorized IPs in the sender's domain DNS records.
-- If the sender IP is not in the SPF list, the email will be marked as spam or rejected. 
+1. The receiving servers checks sender IP against the authorized list.
+2. It verifies sender's IP with the domain’s DNS records.
+3. It IP is not on the list, the email is marked as spam and rejected.
 
 ## DMARC 
 
-DMARC (Domain-based Message Authentication, Reporting, and Conformance) uses SPF and DKIM to determine the authenticity of an email message and allows domain owners to specify how to handle non-authenticated emails.
+**DMARC (Domain-based Message Authentication, Reporting, and Conformance)** uses SPF and DKIM to determine the authenticity of an email message and allows domain owners to specify how to handle non-authenticated emails.
 
-- Policy for how emails from your domain should be handled if they fail SPF or DKIM checks.
-- Offers domain owners visibility into how their domain is being used via aggregate/forensic reports.
-- Helps protect the domain from being abused in phishing and spoofing attacks.
+- Sets policies for handling emails that fail SPF or DKIM checks.
+- Sends reports to domain owners about email usage and abuse.
+- Helps prevent phishing and business email compromise attacks.
 
 Receiving mail servers can be configured with a DMARK policy that reject emails that claim to come from the legitimate domain but have already failed the DKIM and SPF checks. The primary purpose of DMARC is to protect a domain from being used in business email compromised attacks.
 
+## S/MIME 
+
+**S/MIME (Secure Multipurpose Internet Mail Extensions)** secures email messages using encryption and digital signatures.
+
+- Encrypts email content so only intended recipients can read it.
+- Digitally signs emails to verify sender identity.
+- Protects against tampering and eavesdropping.
+- Keeps emails private and ensures that recipients can trust the sender.
+
+## SASL 
+
+**Simple Authentication and Security Layer (SASL)** is a protocol-independent framework for adding authentication to email protocols like POP3 and IMAP.
+
+- Works with authentication mechanisms (username/password, tokens).
+- Ensures credentials are transmitted securely.
+- Can integrate with encryption for added security.
+- Strengthens authentication and prevent unauthorized email access.
+
+**Post Office Protocol** (POP3) is an older protocol that was originally designed to be used on only one computer. 
+
+- Downloads emails to the local device
+- Usually deletes email from the server.
+- Simple and widely supported for basic email access.
+
+**Internet Message Access Protocol (IMAP)** is an store-and-forward mail protocol that enables users to access mail on a mail server. 
+
+- Considered as an improved version of POP3
+- Same functionalities but keeps emails on the server.
+- Allows syncing across multiple devices.
+- Supports folder management and selective message downloads.
+
+
 ## Email Gateway Protocol
 
-Email gateway protocols are used to secure and manage the flow of email traffic within and between organizations.
+**Email gateway protocols** are used to secure and manage the flow of email traffic within and between organizations.
 
-- Serves as entry and exit points for emails.
-- Usually relies on SMTP protocol to send and receive emails.
-- Ensures emails are securely transferred between the internet and a local network.
-- Acts as a filter to block malicious emails before they reach the user's inbox.
+- Acts as an entry and exit point for all emails.
+- Uses SMTP to send and receive messages securely.
+- Filters malicious emails before they reach users.
+- Block malicious emails before they reach the user.
 
 Email gateways are implemented to help with:
 
@@ -89,8 +122,8 @@ Deployment Methods:
 
 Spam filtering is a technique used to identify and block unwanted or unsolicited email messages.
 
-- Uses algorithms to detect spam based on content, sender, and other characteristics.
-- Protects users from phishing attempts, scams, and potentially harmful content.
+- Detect spam based on content, sender, and other characteristics.
+- Prevents phishing attempts, scams, and potentially harmful content.
 - Helps maintain the security and productivity of email systems.
 
 Techniques used:
@@ -100,24 +133,15 @@ Techniques used:
   - Uses machine learning algorithms to adapt to new spam tactics.
 
 - **Bayesian filtering**
-  - Analyzes the frequency of words in emails to predict spam probability.
+  - Analyzes frequency of words in emails to predict spam probability.
   - Continuously updates as new spam emails are processed.
 
 - **DNS-based sinkhole list (DNS Sinkhole)**
   - Maintains a list of IP addresses known to send spam.
-  - Redirects traffic from these IPs to a controlled environment for further analysis.
+  - Redirects traffic to a controlled environment for further analysis.
+  - See [DNS Sinkhole.](/docs/007-Cybersecurity/024-Infrastructure-and-Network/062-DNS-and-Web-Security.md#dns-sinkhole)
 
 - **General email filtering rules**
-  - Applies rules based on sender reputation, message format, and known spam signatures.
+  - Bbased on sender reputation, message format, and known spam signatures.
   - Regularly updates rules to adapt to evolving spam strategies.
 
-
-## DNS Sinkhole
-
-A **DNS sinkhole** (or DNS blackhole) is a **highly effective method** to **contain** malware or botnet attacks by **redirecting malicious domain requests** to a non-routable or controlled IP address. This stops infected systems from:
-
-- Communicating with their **command and control (C2)** servers
-- Spreading malware further
-- Exfiltrating data
-
-It works **at the DNS level**, so it can **quickly contain widespread threats** across an organization or even multiple organizations.

@@ -39,11 +39,12 @@ The Zero Trust Model, also known as **Perimeterless security**, focuses on "**Ne
 - Focuses on encapsulating information assets and their security properties.
 - Microsegmented networks enforce frequent user re-authentication.
 - Validates user identity at various checkpoints within the network.
+- See [Microsegmentation.](/docs/007-Cybersecurity/023-Security-Architecture/051-Securing-the-Network.md#microsegmentation)
 
 **Analogy: Concert Access**
 
-- Traditional controls: showing a ticket at the gate for free venue access.
-- Zero trust: Multiple checkpoints at different levels, e.g. accessing backstage areas
+- *Traditional controls*: showing a ticket at the gate for free venue access.
+- *Zero trust*: Multiple checkpoints at different levels, e.g. accessing backstage areas
 
 ### Risk-Based Approach 
 

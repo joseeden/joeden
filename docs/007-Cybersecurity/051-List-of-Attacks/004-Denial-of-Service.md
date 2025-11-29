@@ -40,9 +40,9 @@ A specialized type of of DoS which attempts to send more packets to a single ser
   - Server reserves resouces to wait for these acknowledgements from these clients.
   - With enough requests, server will run out of resources.
   - Mitigations:
-    - Flood guards - detect SYN floods and block request at the network boundary.
-    - Timeouts - stop connections after a period of time, e.g. 10, 15, 30 seconds
-    - IPS - can detect and respond to SYN floods.
+    - *Flood guards* - detect SYN floods and block request at the network boundary.
+    - *Timeouts* - stop connections after a period of time, e.g. 10, 15, 30 seconds
+    - *IPS* - can detect and respond to SYN floods.
 
 ## Permanent DoS
 
@@ -97,16 +97,25 @@ As an example, a bot can send ICMP (ping) requests with the victim's IP address 
 
 Also known as **DNS Amplification**, Amplified DDoS is a specialized attack that allows an attacker to initiate DNS requests from a spoof IP address to flood a website.
 
-- High volume of packets are sent, DNS servers respond to the request.
+- Unusually high DNS traffic, traffic originating from multiple sources.
 - Response from the DNS server takes up a lot of bandwidth.
+- Leads to service outages, network congestion, degraded performance.
 
-An attacker carefully chooses reqeusts that will have very large responses. The attacker can then sends very small requests to the DNS servers using the victim's IP address as the source of the request. The DNS servers then returns the large replies to the actual victim.
+An attacker carefully chooses requests that will have very large responses. The attacker can then sends very small requests to the DNS servers using the victim's IP address as the source of the request. The DNS servers then returns the large replies to the actual victim.
 
 <div class='img-center'>
 
 ![](/img/docs/networking-basics-ddos-amplified-ddosss.png)
 
 </div>
+
+
+**Mitigations:**
+
+- Configure DNS servers to prevent recursion for unauthorized users.
+- Rate limiting on DNS requests and anomaly detection mechanisms.
+- Use Anycast networks to distribute and manage traffic load.
+
 
 ## Amplification Factor 
 

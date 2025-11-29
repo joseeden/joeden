@@ -43,6 +43,17 @@ DNS filtering blocks access to harmful or inappropriate sites at the DNS level b
 DNS filtering provides a first line of defense and keeps users safe before they even reach a site.
 
 
+### DNS Sinkhole
+
+A **DNS sinkhole** (or DNS blackhole) is a highly effective method to contain malware or botnet attacks by **redirecting malicious domain requests** to a non-routable or controlled IP address. 
+
+- Stops infected systems from reaching command-and-control (C2) servers
+- Prevents malware from spreading any further
+- Prevents the data from being exfiltrated
+
+It works **at the DNS level**, so it can **quickly contain widespread threats** across an organization or even multiple organizations.
+
+
 ## Web Filtering 
 
 Web filtering controls the internet content users can access through an organization's network. This protects users from harmful websites and maintains productivity by blocking access to non-work-related content.
