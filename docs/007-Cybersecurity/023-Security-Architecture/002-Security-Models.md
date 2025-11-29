@@ -81,7 +81,7 @@ The **Non-Interference/Noninterference** Model focuses on preventing actions at 
 - Prevents lower-level users from seeing higher-level actions
 - Protects sensitive processes from interference
 
-The theory here is that users are restricted to working in different areas called **domains**, which is a set of object  that a user is allowed to access. 
+The theory here is that users are restricted to working in different areas called **domains**, which is a set of object that a user is allowed to access. 
 
 - Users at one level cannot know what's happening at a higher security level.
 - Users at higher security level cannot interfere with individuals at levels below them.

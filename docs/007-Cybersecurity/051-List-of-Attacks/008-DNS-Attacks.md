@@ -26,7 +26,7 @@ Also known as **DNS spoofing**, is a type of attack where false DNS information 
 
 **Mitigations:**
 
-- **DNSSEC** (Domain Name System Security Extensions), verifies authenticity of DNS data.
+- [DNSSEC (Domain Name System Security Extensions)](/docs/007-Cybersecurity/024-Infrastructure-and-Network/062-DNS-and-Web-Security.md#dnssec), verifies authenticity of DNS data.
 - Use secure DNS resolvers and regularly clear and update DNS cache.
 - Protect DNS servers with secure network configurations and firewalls.
 - Employ intrusion detection systems (IDS) to monitor for unusual DNS activity.

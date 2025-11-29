@@ -12,6 +12,40 @@ last_update:
 ---
 
 
+## Encryption Methods
+
+Encryption methods protect data in different ways depending on where and how the data travels.
+
+- **End-to-end encryption**
+
+  - Encrypts data from the sender to the receiver
+  - Only the endpoints can read the data
+  - Protects the content, but metadata may be visible during transit
+
+- **Tunnel encryption**
+
+  - Encrypts traffic between a client and a VPN gateway
+  - Protects specific traffic across an untrusted network
+  - Does not secure the entire physical communications channel
+
+- **Transport encryption**
+
+  - Encrypts data between two network points (e.g., client to server)
+  - Can secure specific applications or sessions
+  - Metadata outside the session may remain exposed
+
+- **Link encryption**
+
+  - Encrypts all data along a physical link, like headers, routing info
+  - Secures the entire communications channel between two points
+  - Provides strong security for the transport layer and improves performance
+
+:::info 
+
+Link encryption ensures that **everything on the communication channel is protected**, which makes it ideal for securing data at the physical network level.
+
+:::
+
 ## TLS 
 
 TLS or Transport Layer Security is a protocol that provides cryptography security for secure data transmission between clients and servers.

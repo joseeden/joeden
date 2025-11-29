@@ -23,33 +23,35 @@ For more information, please see [Domain Name System (DNS).](/docs/006-Networkin
 
 ### DNSSEC
 
-DNS Security Extensions (DNSSEC) enhance the security of the Domain Name System (DNS) by ensuring the authenticity and integrity of DNS data. It helps protect against attacks like cache/DNS poisoning.
+DNS Security Extensions (DNSSEC) add security to DNS by verifying that the data is authentic and untampered. It helps protect against attacks like cache/DNS poisoning.
 
-- All DNS zones have certificates.
-- DNSSEC uses digital signatures to authenticate DNS data.
-- It ensures that DNS responses are unaltered and legitimate.
-- Introduces new DNS record types like **RRSIG**, **DNSKEY**, and **DS**.
-- Establishes a chain of trust from the DNS root zone to individual domains.
+- All DNS zones have digital certificates.
+- Uses digital signatures to verify DNS data.
+- Ensures DNS responses are accurate and legitimate.
+- Adds DNS record types like **RRSIG**, **DNSKEY**, and **DS**.
+- Creates a chain of trust from the root to individual domains.
 
 ### DNS Filtering
 
-DNS filtering controls internet content access by blocking domains at the DNS resolution level, preventing users from accessing harmful or inappropriate websites.
+DNS filtering blocks access to harmful or inappropriate sites at the DNS level before a connection is made.
 
-- Blocks access to known harmful websites before the connection is established.
-- Reduces the load on network resources by stopping threats early in the DNS resolution process.
-- Can be configured to block access to categories of sites, such as social media or gambling.
-- Provides a broad security layer by integrating with other security measures to protect users.
+- Stops access to known malicious websites.
+- Reduces network load by preventing threats early.
+- Can block categories like social media or gambling.
+- Works with other security systems for broader protection.
+
+DNS filtering provides a first line of defense and keeps users safe before they even reach a site.
 
 
 ## Web Filtering 
 
-Web filtering involves controlling the content that users can access on the internet through an organization's network. This process is crucial for protecting users from harmful websites and maintaining productivity by blocking access to non-work-related content.
+Web filtering controls the internet content users can access through an organization's network. This protects users from harmful websites and maintains productivity by blocking access to non-work-related content.
 
-- Blocks access to malicious and unsafe websites.
-- Prevents access to inappropriate or non-compliant content.
-- Helps enforce company policies and legal requirements.
-- Can be configured to allow or restrict access based on categories, keywords, or specific URLs.
-- Monitors user activity to provide insights and reporting on web usage.
+- Blocks malicious or unsafe websites.
+- Prevents access to inappropriate content.
+- Helps enforce policies and legal requirements.
+- Can filter by category, keyword, or URL.
+- Monitors activity for reporting and insights.
 
 Types:
 
@@ -62,52 +64,52 @@ Types:
 
 ### Agent-Based Web Filtering
 
-Agent-based web filtering uses software agents installed on client devices to enforce web content policies directly on the user's computer.
+Agent-based web filtering uses **software agents installed on client devices** to enforce web content policies directly on the user's computer.
 
-- Provides direct control over user activities on the device.
-- Particularly effective for organizations with remote or mobile workers.  
-- Allows for personalized filtering settings based on user or group profiles.
-- Can block content at the endpoint level, reducing reliance on network-level controls.
+- Controls user activities directly on their devices.
+- Works well for remote or mobile workers.
+- Allows personalized filtering for users or groups.
+- Blocks content at the endpoint, reducing network reliance.
+
 
 ### Centralized Proxies
 
 Centralized proxies route all network requests through a single proxy server, where web content is filtered and monitored.
 
-- Centralizes control of internet access and content filtering.
-- Reduces the load on client devices by offloading filtering to the proxy server.
-- Enables consistent policy enforcement across all devices in the network.
-- If request does not conform with the policies, the request is blocked or denied.
+- Offloads filtering from client devices.
+- Ensures consistent policies across all devices.
+- Blocks requests that violate rules.
 
 ### URL Scanning
 
 URL scanning involves inspecting the URLs accessed by users to determine if they are safe or harmful.
 
-- Helps detect malicious websites before they can be accessed.
-- Requested URL is checked against a database of known malicious websites.  
-- If URL is not found in the database, it is assumed safe to access.
-- Integrates with other security systems for comprehensive protection.
+- Detects harmful sites before access.
+- Checks URLs against known databases.
+- Unlisted URLs are treated as safe.
+- Integrates with other security systems.
 
 ### Content Categorization
 
 Content categorization involves classifying web content into categories to facilitate filtering based on predefined rules.
 
-- Simplifies the management of web content policies.
-- Allows for more granular control over internet usage by category.
-- Helps in compliance with industry standards and regulations.
+- Simplifies policy management.
+- Provides detailed control over internet usage.
+- Helps maintain compliance with standards.
 
 ### Block Rules
 
 Block rules define specific criteria or conditions under which web access is restricted or blocked.
 
-- Enables precise control over which websites or content types are accessible.
-- Helps enforce company policies and prevent access to harmful or non-compliant content.
-- Can be customized based on organizational needs.
+- Controls which websites or content types are accessible.
+- Enforces company policies.
+- Prevent access to harmful or non-compliant content.
+- Can be customized to organizational needs.
 
 ### Reputation-Based Filtering
 
 Reputation-based filtering assesses the trustworthiness of websites based on their history and feedback from a global network of users. It also uses **reputation score**, which is typically determined by a third-party service.
 
-- Provides dynamic protection against emerging threats.
-- Utilizes global databases of known good and bad sites to filter content.
-- Enhances security by blocking access to potentially harmful sites in real-time.
-
+- Evaluates site trustworthiness via global feedback.
+- Blocks emerging threats in real-time.
+- Protects users dynamically from risky sites.

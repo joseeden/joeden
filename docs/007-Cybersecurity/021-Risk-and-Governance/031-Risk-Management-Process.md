@@ -31,7 +31,7 @@ Risk Assessment is the process of identifying, estimating, and **prioritizing** 
 
 - **Alignment with Goals**
   - Links risks to organizational goals, objectives, assets, or processes.
-
+  
 - **Example: Fire Risk**
   - Options: Alarms, sprinklers, gas-based solutions.
   - Goal: Estimate and prioritize, considering costs and effectiveness.

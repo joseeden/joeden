@@ -41,7 +41,11 @@ Cache poisoning involves attackers inserting malicious data into a cache.
 
 - DNS and web caches are common targets
 - Can lead to malicious redirects or system compromise
-- Mitigate by using DNSSEC, encrypted protocols, and clearing cache regularly
+
+Mitigation:
+
+- Using [DNSSEC](/docs/007-Cybersecurity/024-Infrastructure-and-Network/062-DNS-and-Web-Security.md#dnssec) and encrypted protocols
+- Clear cache regularly
 
 ## Server Security Issues
 
