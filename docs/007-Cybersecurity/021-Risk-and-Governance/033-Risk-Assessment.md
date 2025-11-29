@@ -75,6 +75,15 @@ Quantitative risk assessment is a risk analysis approach that uses **numerical v
 
 
 
+:::info 
+
+A measurement is a quantitative observation of a factor at a particular point in time. In other words, this is raw data. Two examples of measurements would be:
+
+- 211 IDS alerts in the last 24 hours 
+- 42 verified events in the month of January
+
+:::
+
 ### Qualitative Risk Assessment
 
 Qualitative risk assessment evaluates risks **using descriptive and subjective factors** instead of numerical data.

@@ -12,7 +12,7 @@ last_update:
 
 ## SIEM 
 
-A SIEM (Security Information and Event Management) is a comprehensive security solution that collects, correlates, and analyzes log data from various sources across an organization's IT infrastructure.
+A **SIEM (Security Information and Event Management)** is a comprehensive security solution that collects, correlates, and analyzes log data from various sources across an organization's IT infrastructure.
 
 A SIEM typically provides the following features:
 
@@ -40,14 +40,14 @@ It’s more than just collecting logs; it’s about finding connections that ind
 
 ### EDR 
 
-Endpoint Detection and Response (EDR) refers to security technologies that continuously monitor endpoint activities to detect, analyze, and respond to potential security threats.
+**Endpoint Detection and Response (EDR)** refers to security technologies that continuously monitor endpoint activities to detect, analyze, and respond to potential security threats.
 
-- Continous real-time surveillance of endpoint activities to detect suspicious behaviors.
-- Responding to incidents, including isolation of affected endpoints and automated response actions.
-- Enables detailed investigation, including timeline reconstruction and root cause analysis.
-- Gathers detailed data from endpoints to support security analysis and compliance requirements.
+- Watches endpoint activities in real time.
+- Isolates affected endpoints, and takes automated actions.
+- Supports detailed investigations and root cause analysis.
+- Collects endpoint data for security and compliance reporting.
 
-While SIEM centralizes log collection and analysis, it still epends on tools like EDR for endpoint data collection. EDR forwards relevant data for further review and helps incident responders quickly understand and contain threats.
+While SIEM centralizes log collection and analysis, it still depends on tools like EDR for endpoint data collection. EDR forwards relevant data for further review and helps incident responders quickly understand and contain threats.
 
 **EDR Process**
 
@@ -61,8 +61,10 @@ While SIEM centralizes log collection and analysis, it still epends on tools lik
     - Other system activities
 
 2. **Data Consolidation**
-  - Aggregates data from multiple endpoints and sends to a database.
-  - Centralizes data for easier analysis, could be on-prem or in the cloud.
+  - Aggregates data from multiple endpoints
+  - Sends the data to a database.
+  - Centralizes data for easier analysis
+  - Can be on-prem or in the cloud.
 
 3. **Threat Detection**
   - Analyzes patterns and anomalies in the data. 
@@ -71,7 +73,7 @@ While SIEM centralizes log collection and analysis, it still epends on tools lik
     - Behavior-based Detection
 
 4. **Alerts and Threat Response**
-  - Generates alerts for security teams when a potential attack is detected.
+  - Generates alerts when a potential attack is detected.
   - Initiates predefined response actions to mitigate threats.
 
 5. **Threat Investigation**
@@ -103,24 +105,32 @@ Files that can be checked:
 
 ### XDR
 
-Extended Detection and Response (XDR) is a security solution that provides integrated threat detection, investigation, and response capabilities across multiple security products.
+**Extended Detection and Response (XDR)** is a security solution that provides integrated threat detection, investigation, and response capabilities across multiple security products.
 
-- Integrates data across multiple security layers, provides unified view.
-- Streamlines incident response processes and enhances threat detection with advanced analytics.
-- Improves visibility and reduces response time across the security environment.
-- No longer need separate solutions for network, email, and endpoint security.
-- **EDR focuses on endpoints, XDR monitors endpoints, network, cloud, and email.**
+- Combines endpoint, network, cloud, and email data.
+- Provides centralized alerts and investigation tools.
+- Uses analytics to detect complex threats faster.
+- Reduces need for separate security solutions.
+
+XDR goes beyond EDR (endpoint-focused) and NDR (network-focused) by collecting and correlating data from multiple sources, such asendpoints, networks, cloud workloads, and applications, to provide a unified view of threats.
+
+
+:::info 
+
+EDR focuses on endpoints, XDR monitors endpoints, network, cloud, and email.
+
+:::
 
 ## User Behavior Analytics 
 
 ### UBA 
 
-User Behavior Analytics (UBA) involves monitoring and analyzing the behavior of users within a network to identify patterns that may indicate malicious activity or security risks.
+**User Behavior Analytics (UBA)** involves monitoring and analyzing the behavior of users within a network to identify patterns that may indicate malicious activity or security risks.
 
-- Analyzes normal user activities to establish baseline behaviors.
-- Detects deviations from typical user behaviors that could signify threats.
-- Utilizes machine learning and statistical models to identify anomalies.
-- Helps in early detection of insider threats and compromised accounts.
+- Learns normal user behaviors to set a baseline.
+- Detects deviations from typical patterns.
+- Uses machine learning to spot anomalies.
+- Helps detect insider threats early.
 
 How it works:
 
@@ -131,16 +141,22 @@ How it works:
 
 ### UEBA
 
-User and Entities Behavior Analytics (UEBA) extends the principles of traditional user behavior analytics to include all entities in an organization, such as devices, applications, and network connections.
+**User and Entities Behavior Analytics (UEBA)** extends the principles of traditional user behavior analytics to include all entities in an organization, such as devices, applications, and network connections.
 
-- Monitors activities of both users and other entities within the network.
-- Identifies unusual patterns that may indicate security threats.
-- Utilizes machine learning to detect anomalies and potential security incidents.
-- Provides context to understand the relationships and interactions between users and entities.
+- Identifies unusual patterns across all entities.
+- Uses machine learning to detect potential incidents.
+- Provides context on relationships between users and devices.
+
+UEBA gives a full view of threats by looking at both users and their digital environment.
+
 
 ## Software Defined Networking
 
-Software Defined Networking (SDN) is a networking approach that centralizes network control, enabling programmability and automation for improved network management and efficiency.
+**Software Defined Networking (SDN)** centralizes network control to make networks programmable and easier to manage.
+
+- Separates control plane from data plane for flexibility.
+- Enables automated configuration and monitoring.
+- Improves network efficiency and response to changes.
 
 For more information, please see [Software Defined Networking](/docs/006-Networking/010-Technologies/050-SDN.md)
 
