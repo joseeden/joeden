@@ -166,15 +166,92 @@ Example:
 
 Qualitative risk assessment evaluates risks using descriptive, subjective factors instead of numerical data.
 
-- Relies on expert judgment, interviews, and categorization of threats and vulnerabilities.
-- Risks are classified into categories based on probability and impact:
-  
-  - High
-  - Medium
-  - Low
+- Uses expert judgment, interviews, and basic threat/vulnerability categories
+- Helps prioritize risks when quantitative data isn’t available or practical
+- Example: Assessing the impact on the organization's reputation.
 
-- Prioritize risks and determine security measures when quantitative data is unavailable or not suitable.
-- Example: Understand the impact on the organization's reputation.
+In this type of assessment, the risks are classified into categories based on probability and impact:
+
+- `High`
+- `Medium`
+- `Low`
+
+While there are established standards for conducting qualitative assessments, the method itself is not the most important part. What truly matters is ensuring that accurate, relevant information is used so the organization can make the best possible business decisions.
+
+## Risk Analysis Methods
+
+Risk analysis methods help identify, evaluate, and understand potential risks in a structured way. They are used in cybersecurity, engineering, and business to prevent or reduce negative impacts.
+
+### Fault Tree Analysis (FTA)
+
+**Fault Tree Analysis (FTA)** is a visual method that uses a diagram to find the root cause of failures in a system.
+
+- Uses a tree diagram to map failure events
+- Starts with a top-level failure and breaks it into causes
+- Helps prioritize risks based on likelihood and impact
+
+Failures are shown as a top event in a logic tree, with causes branching out below. FTA gives a clear picture of how problems spread and  helps prevent system failures.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2025-11-29-211521.png)
+
+</div>
+
+### Failure Modes and Effects Analysis (FMEA)
+
+**Failure Modes and Effects Analysis (FMEA)** identifies potential failures in a system and assesses their effects.
+
+- Lists possible failure modes for each component
+- Evaluates severity, likelihood, and detectability
+- Prioritizes risks using a risk priority number (RPN)
+- Common in product development and operational environments
+
+FMEA helps teams systematically spot weaknesses and plan corrective actions before failures occur.
+
+<div class='img-center'>
+
+![](/img/docs/GettyImages-826284808.jpg)
+
+</div>
+
+### Attack Tree Analysis
+
+**Attack Tree Analysis** maps potential attacks on a system in a hierarchical structure.
+
+- Each branch represents a way an attacker could achieve a goal
+- Assigns likelihood or difficulty to each attack path
+- Useful for designing better security controls
+
+An attack tree is a diagram that represents the attack pattern by presenting:
+
+1. Decision points 
+2. Specific conditions required for the attack
+3. Endpoints for the attack 
+
+Attack trees make complex security threats easier to understand and defend against by showing all possible attack paths.
+
+<div class='img-center'>
+
+![](/img/docs/An-example-attack-tree.png)
+
+</div>
+
+
+### Facilitated Risk Analysis Process (FRAP)
+
+**Facilitated Risk Analysis Process (FRAP)** is a qualitative risk assessment methodology used to focus only on the systems that really need assessing, to reduce costs and time obligations. 
+
+- Collaborative approach to assess risks with stakeholders
+- Conducted in workshops with team members
+- Focuses on high-impact, high-likelihood risks
+- Helps prioritize actions and assign responsibilities
+
+FRAP stresses prescreening activities so that the risk assessment steps are only carried out on the item(s) that needs it the most. FRAP is intended to be used to analyze one system, application, or business process at a time. 
+
+
+
+
 
 
 ## Risk Treatment 
@@ -261,6 +338,12 @@ add simple short intro...
   - Mitigation costs.
   - Potential losses in case of an incident.
 
+
+:::info 
+
+After a risk response has been implemented, the continuing effectiveness of controls to protect assets is carefully monitored to ensure that they maintain their protection in the face of a changing threat environment. 
+
+:::
 
 ## Business Impact Analysis 
 
