@@ -122,6 +122,14 @@ To secure the communication between two endpoints, we can utilized the following
 - [PKI Certificates](/docs/007-Cybersecurity/025-Cryptography/035-PKI.md)
 - [Pre-Shared Key (PSK)](/docs/007-Cybersecurity/024-Infrastructure-and-Network/061-Wireless-Security-Settings.md#wpa2-psk-pre-shared-key)
 
+:::info[High Assurance Internet Protocol Encryptor]
+
+The U.S. National Security Agency (NSA) uses a specialized protocol encryptor built on IPSec, called a **High Assurance Internet Protocol Encryptor (HAIPE)**.
+
+HAIPE is a Type 1 encryption system that extends IPSec with stricter controls and added security features. HAIPE devices act as secure gateways, enabling two protected network enclaves to safely communicate across untrusted or lower-classification networks.
+
+
+:::
 
 ## Establishing an IPSec Tunnel
 

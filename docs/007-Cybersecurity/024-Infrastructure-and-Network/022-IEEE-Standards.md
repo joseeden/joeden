@@ -125,6 +125,33 @@ Wi-Fi 6 enhances Wi-Fi for crowded networks and higher efficiency.
 
 - Improves performance in dense areas like offices or apartments
 - Uses OFDMA to divide channels among multiple users
-- Supports Target Wake Time for better battery life on devices
+- Supports **Target Wake Time** for better battery life on devices
 
 Wi-Fi 6 keeps devices connected efficiently even when many are active, balancing speed and network management.
+
+## IEEE 802.11w (MFP)
+
+The IEEE 802.11w standard provides **Management Frame Protection (MFP)** that prevents certain types of attacks, such as replay and denial-of-service (DoS) attacks.
+
+- Secures key management frames such as deauthentication and disassociation
+- Prevents spoofing and replay attacks that can force clients off the network
+- Stronger WLAN security, ensuring management traffic is verified and protected
+
+
+## IEEE 802.15.4 (WPAN)
+
+IEEE 802.15.4 is an IEEE standard for low-rate wireless personal area networks (LR-WPANs) that defines the physical layer (PHY) and medium access control (MAC) sublayer for low-power, low-cost, and low-data-rate wireless communication.
+
+- Used in IoT, such as sensors, smart meters, and home automation.
+- Serves as the foundation for protocols like Zigbee, Thread, and MiWi.
+- Supports short-range communication, typically around 10–20 meters.
+- Provides low data rates, commonly around 250 kbps.
+
+## IEEE 802.16 (WiMAX)
+
+IEEE standard 802.16 is a metropolitan area network (MAN) wireless standard that allows for wireless traffic to cover a much wider geographical area where stations can be as far as 70 km apart. 
+
+- Covers long distances, with ranges of up to about 70 km.
+- High data rates using OFDM and advanced modulation techniques.
+- Used for last-mile connectivity in rural or underserved locations.
+- WiMAX is based on the IEEE 802.16 standard.

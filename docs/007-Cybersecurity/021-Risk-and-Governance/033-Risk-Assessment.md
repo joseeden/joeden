@@ -204,6 +204,36 @@ Failures are shown as a top event in a logic tree, with causes branching out bel
 - Prioritizes risks using a risk priority number (RPN)
 - Common in product development and operational environments
 
+The steps include:
+
+1. **Create a block diagram of the system or process**
+
+    - Map out the major components or steps.
+    - Show how each part connects and interacts.
+
+2. **Identify possible failure modes for each block**
+
+    - Consider what could go wrong with each component.
+    - Include hardware, software, human error, or process failures.
+
+3. **List the effects of each failure in a table**
+
+    - Pair each failure mode with its potential impact.
+    - Evaluate severity, likelihood, and detectability.
+    - Assign a Risk Priority Number (RPN) to prioritize actions.
+
+4. **Identify and recommend corrective actions**
+
+    - Determine how to prevent or reduce the impact of high-risk failures.
+    - Update processes, add controls, or improve monitoring.
+
+5. **Implement actions and review results**
+
+    - Apply the recommended changes.
+    - Recalculate RPN to confirm reduced risk.
+    - Update FMEA documentation for future reviews.
+
+
 FMEA helps teams systematically spot weaknesses and plan corrective actions before failures occur.
 
 <div class='img-center'>

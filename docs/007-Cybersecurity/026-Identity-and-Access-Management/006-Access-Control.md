@@ -100,6 +100,23 @@ While threats, vulnerabilities, and impact can be reduced through different risk
 
 :::
 
+## Audit Reduction Tools
+
+Audit-reduction tools help filter and condense large audit logs by removing routine, low-value events.  
+
+- Simplify log review and highlight anomalies
+- Discards mundane task details and only records relevant logs
+- Support faster detection of suspicious access activity
+
+
+:::info 
+
+Deleting specific incriminating data within audit logs is called **scrubbing**. 
+
+Deleting this information can cause the administrator to not be alerted or aware of the security breach and can destroy valuable data. 
+
+:::
+
 ## Privileged Access Management 
 
 To ensure confidentiality, integrity, and availability of information, the Principle of Least Privilege is employed through **Privileged Acces ,Management**. Users receive access only to essential items, limiting exposure.
