@@ -27,6 +27,8 @@ Each type of data encryption serves a specific purpose and can be used individua
 
     **TPM (Trusted Platform Module)** is a chip found in some computers that securely stores encryption keys inside the hardware, making encryption more secure and efficient than using software alone.
 
+    For more information, please see [Trusted Platform Module.](/docs/007-Cybersecurity/025-Cryptography/014-Encryption-Tools.md#trusted-platform-module-tpm)
+
     :::
 
 

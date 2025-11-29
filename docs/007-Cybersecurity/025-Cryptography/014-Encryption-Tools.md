@@ -8,30 +8,30 @@ last_update:
 ---
 
 
-## Encryption Tools
-
-Encryption tools are technologies used to secure data through various methods, ensuring confidentiality, integrity, and protection against unauthorized access. 
-
 ## Trusted Platform Module (TPM)
 
 A Trusted Platform Module (TPM) is a **hardware-based microcontroller** designed to securely generate, store, and manage cryptographic keys and other sensitive information.
 
-- **TPM is likened to a personal vault, while HSM is to a high-security bank vault.**
 - Securely stores encryption keys, certificates, and passwords.
-- Enables hardware-based encryption and attestation (proving system integrity).
+- hardware-based encryption and attestation (system integrity).
 - Supports secure boot and platform integrity checks.
 
-Checks boot integrity of the host:
+Applications:
+
+- Laptops and desktops, secure boot processes and protect encryption keys.
+- Enterprise environments for secure device authentication and attestation.
+  
+Checks boot integrity of the host using:
 
 - UEFI secure boot 
 - Measured boot
 - Boot attestation
 
-Applications:
+:::info 
 
-- Laptops and desktops, secure boot processes and protect encryption keys.
-- Utilized in enterprise environments for secure device authentication and attestation.
-  
+TPM is likened to a personal vault, while HSM is to a high-security bank vault.
+
+:::
 
 <div class="img-center">
 
@@ -48,7 +48,6 @@ Secure Boot, also called **UEFI Secure Boot**, is a security feature that helps 
 - Uses cryptographic signatures to verify bootloader and OS integrity.
 - Helps protect against rootkits and boot-level malware.
 
-
 ### Measured Boot
 
 Measured Boot records cryptographic hashes of boot components as the system starts, creating a log of what was loaded.
@@ -62,21 +61,47 @@ Measured Boot records cryptographic hashes of boot components as the system star
 Boot Attestation verifies the integrity of the measured boot logs, often remotely, to confirm the system started securely.
 
 - Compares boot measurements against known good values.
-- Can halt or alert if unauthorized changes are detected during startup.
+- Halt or alert if unauthorized changes are detected during startup.
+
+### Internal Memory 
+
+A TPM has two types of internal memory used for specific purposes:
+
+- **Persistent Memory**
+
+  - Static in nature
+  - Stores certificates, and configuration permanently
+  - Retains data even when the device is powered off
+  - Used for long-term security functions like device identity
+  - Contains the following:
+    - *Endorsement key*
+    - *Storage root key*
+
+- **Volatile Memory**
+
+  - Temporary storage for session keys and runtime data
+  - Cleared when the device is powered off
+  - Supports active cryptographic operations and computations
+  - Contains the following:
+    - *Attestation identity key*
+    - *Platform configuration register hashes*
+    - *Storage key*
+
+Persistent memory ensures long-term secure storage, while volatile memory supports temporary operations and fast processing.
 
 
 ## Hardware Security Module (HSM)
 
 A Hardware Security Module (HSM) is a dedicated hardware device that safeguards cryptographic keys and perform cryptographic operations in a tamper-proof environment.
 
-  - Securely stores and manages cryptographic keys.
-  - Performs encryption, decryption, and digital signature operations.
-  - Supports high-availability configurations for mission-critical applications.
+- Securely stores and manages cryptographic keys.
+- Performs encryption, decryption, and digital signature operations.
+- Supports high-availability configurations for mission-critical apps.
 
-**Applications**
+Applications:
 
-  - Used in banking and financial institutions to secure transaction processing.
-  - Employed in data centers for key management and securing sensitive data.
+- Used in banking and financial institutions 
+- Data centers; key management and securing sensitive data.
 
 
 <div class="img-center">

@@ -9,53 +9,62 @@ last_update:
 
 ## Overview
 
-Security models provide frameworks for protecting information by defining rules and procedures for data access and manipulation. These models ensure that systems operate securely by enforcing confidentiality, integrity, and availability.
+Security models define rules and procedures to protect information. They ensure data is accessed and used securely while maintaining confidentiality, integrity, and availability.
+
+- Frameworks for securing data access
+- Define rules for manipulating and sharing data
+- Help maintain secure system operations
+
+Security models guide how information is protected in a system and set the foundation for all access controls.
 
 ## Multi-Level Security
 
-Multi-level security (MLS) enforces security policies that segregate access to data based on varying levels of sensitivity. It ensures that users can only access information appropriate to their clearance level.
+Multi-Level Security (MLS) controls access based on sensitivity levels and user clearance.
 
-- Controls access  based on user clearance and data classification
-- Commonly used in military and government settings
-- Prevents unauthorized access to sensitive data
+- Limits access according to user clearance and data classification
+- Common in government or military systems
+- Prevents unauthorized users from viewing sensitive data
+
+This ensures users only access data appropriate for their level, enforcing strict security segregation.
 
 ## State Machine Model
 
-The State Machine Model ensures that a system remains in a secure state by defining allowable states and transitions between them. This model is critical in maintaining security through structured access controls.
+The **State Machine Model** maintains system security by defining allowed states and transitions.
 
-- Defines specific states for users and data.
-- Transitions between states must follow strict security policies.
-- Helps prevent unauthorized access by maintaining valid state conditions.
+- Specifies valid states for users and data
+- Transitions follow strict security rules
+- Prevents unauthorized state changes
 
-The State Machine model works with security levels, classifications, and clearances:
+The model works with security levels and clearance, ensuring systems stay in secure states.
 
 - **Single-state Machine**
 
-  - There's a policy in place that dictates the security levels
-  - System will only process data from a single security level.
-  - No way to separate classifications, all are at the same security level.
-  - All users must have full clearance and formal access approval.
+  - Processes data from one security level
+  - All users must have full clearance
+  - Simple but rigid setup
 
 - **Multi-state Machine**
 
-  - Less secure, but are more flexible.
-  - Processing of data at two or more levels without the risk of compromising security.
-  - Data can be classified or unclassified and not all users are required full clearance.
+  - Can handle multiple levels securely
+  - Offers flexibility without compromising security
+  - Supports classified and unclassified data together
+
+This model keeps systems predictable and secure by controlling state changes carefully.
 
 ## Lattice-based Model 
 
-The Lattice-based Model provides a framework for access control based on user and data classification levels. It establishes a hierarchical structure for permissions, ensuring that access is determined by both sensitivity and user clearance.
+The **Lattice-based Model** provides a framework for access control based on user and data classification levels. It establishes a hierarchical structure for permissions, ensuring that access is determined by both sensitivity and user clearance.
 
 - Uses a lattice structure to define levels of access.
 - Employs rules to control data flow between different security levels.
-- Facilitates mandatory access control, reducing risks of data leakage.
+- Facilitates mandatory access control, reduces risks of data leakage.
 
 This model uses a two dimensional matrix that defines which subjectsare permitted to access which objects at what permission level.
 
 - This model uses pair of elements (subject and object).
-- Each pairs have a set with greatest lower bound and least upper bound of access rights.
-- Bounds can be confidentiality levels (classifications or clearance levels) or integrity levels.
-- Lattice-based access control allows security controls for complex environments.
+- Each pair has lower and upper bounds of access rights.
+- Bounds can be confidentiality or integrity levels.
+- Allows security controls for complex environments.
 
 <div class='img-center'>
 
@@ -66,11 +75,11 @@ This model uses a two dimensional matrix that defines which subjectsare permitte
 
 ## Non-Interference Model
 
-The Non-Interference/Noninterference Model focuses on preventing actions at one security level from affecting actions at another. This model ensures that high-security operations do not interfere with lower-security operations, maintaining operational integrity.
+The **Non-Interference/Noninterference** Model focuses on preventing actions at one security level from affecting actions at another. This model ensures that high-security operations do not interfere with lower-security operations.
 
-- Enforces strict separation between different security levels.
-- Ensures that lower-level users cannot observe higher-level actions.
-- Protects sensitive operations from potential interference or influence.
+- Keeps actions at different levels separate
+- Prevents lower-level users from seeing higher-level actions
+- Protects sensitive processes from interference
 
 The theory here is that users are restricted to working in different areas called **domains**, which is a set of object  that a user is allowed to access. 
 
@@ -79,34 +88,35 @@ The theory here is that users are restricted to working in different areas calle
 
 ## Information Flow Model
 
-The Information Flow Model emphasizes the secure transfer of information within a system. It analyzes how information flows between different entities to prevent unauthorized access or data leakage.
+The **Information Flow Model** emphasizes the secure transfer of information within a system. It analyzes how information flows between different entities to prevent unauthorized access or data leakage.
 
-- Monitors paths of information flow between processes and users.
-- Implements policies to ensure information is not improperly shared.
-- Helps in designing systems that maintain confidentiality and integrity during data exchanges.
+- Monitors data flow between processes and users
+- Uses policies to prevent leaks
+- Ensures secure information exchange
 
-This model is based on the Lattice model. Everytime there is na input into the system, there's a state transition, and there's a specific output. Instead of access control lists, we use flow rules to restrict the information from flowing in ways that would go against the security policy.
+This model is based on the lattice model, with each input **triggering** a state transition with controlled output. This maintains confidentiality and integrity without relying on simple access lists.
 
 
 ## Bell-LaPadula Model
 
-The Bell-LaPadula Model is focused on maintaining data **confidentiality**. It enforces rules that prevent unauthorized access and disclosure of information.
+The **Bell-LaPadula Model** is focused on maintaining data **confidentiality**. It enforces rules that prevent unauthorized access and disclosure of information.
 
-- **Simple Security Rule**  
+- **Simple Security Rule**
 
-  - "No Read Up" 
-  - Ensures that users cannot access information at a higher security level
-  - Widely used in environments where confidentiality is critical
+  - `No Read Up`: prevents accessing higher-level data
+  - Users cannot access information at a higher security level
+  - Used in environments where secrecy is critical
 
-- ****Property**
+- **`*`-Property**
 
-  - "No Write Down"
-  - A subject on one security level shouldn't be able to write to objects with lower security levels
+  - `No Write Down`: prevents writing to lower-level objects
+  - A subject cannot write to objects with lower security levels.
+  - Ensures sensitive data is not exposed
 
 This model arranges subjects and objects into security levels and defines access specifications, whereby subjects can only access objects at certain levels based on their security level.
 
-- Employs a State Machine Model with Security Levels and Access Modes.
-- Uses Access Control Lists, Labels, and Clearances.
+- Uses a **state machine model** with *security levels* and *access modes*.
+- Uses *access control lists*, *labels*, and *clearances*.
 - Commonly used in military and government contexts.
 
 Limitations: 
@@ -114,60 +124,91 @@ Limitations:
 - Primarily addresses confidentiality
 - Can be complex to implement
 
+:::info 
+
+The Bell-LaPadula model was the **first mathematical model of a multilevel security policy** used to define the concepts of a security state and rules of access. 
+
+:::
+
 ## Biba Integrity Model
 
-The Biba Integrity Model focuses on maintaining data **integrity** by preventing unauthorized data modification. It enforces rules that ensure only authorized users can alter information.
+The **Biba Integrity Model** focuses on maintaining data **integrity** by preventing unauthorized data modification. It enforces rules that ensure only authorized users can alter information.
 
 - **Simple Security Rule**  
 
-  - "No Read Down" 
-  - A subject should not be able to read an object at security level lower than the subject's security clearance.
-  - Prevents the corruption of integrity of information accessed.
+  - `No Read Down`: prevents reading lower-integrity data
+  - A subject cannot read objects below their security clearance.
+  - Avoids contamination of higher-level information
 
-- ****Integrity Property**
+- **Integrity Property**
 
-  - "No Write Up"
-  - A subject should not be able to write an information to an object at security level lower than the subject's security clearance.
-  - A user with secret clearance should not be able to write information to a top secret file.
-  - Ensures that data cannot be modified by lower integrity levels
-  - Often used in environments where data accuracy and reliability are critical
+  - `No Write Up`: prevents writing to higher-integrity objects
+  - A subject cannot write to objects below their security clearance.
+  - Ensures accurate and reliable data
 
 ## Clark-Wilson Integrity Model
 
-The Clark-Wilson model maintains data integrity through controlled access and well-formed transactions, focusing on integrity verification for constrained items.
+The **Clark-Wilson model** protects data integrity through controlled access and well-formed transactions, focusing on verifying integrity for constrained items.
 
-- Enforces proper processes for authorized users.
-- Ensures separation of duties and auditability.
-- Applications control user access to programs.
+- Enforces proper procedures for authorized users
+- Ensures separation of duties and auditability
+- Applications manage user access to operations
 
-It uses **Transformation Procedures (TPs)** and **Constrained Data Items (CDIs)** to safeguard integrity:
+The model is also known as a **Take-Grant Model**, which:
 
-- Requires "well-formed transactions."
-- Steps must be performed in the correct order.
-- Individuals executing steps must be authenticated.
+- Grants permissions using predefined rules
+- Subjects and objects can take, grant, or revoke rights
+- Adds extra security layers for controlled access
 
-The model is also considered a **Take-Grant Model**, which:
+:::info 
 
-- Grants permissions based on predefined rules.
-- It is up to the subject and object to take, grant, or revoke rights.
-- Adds more layers of security for controlled data access.
+This model is developed to provide integrity, but **not confidentiality.**
 
-The model addresses three key integrity goals:
+:::
 
-- Authentication and authorization (Access Control Lists).
-- Prevents authorized users from making immproper modifications.
-- Maintains internal and external consistency through "well-formed transactions."
+### TPs and CDIs 
+
+The model relies on two main components:
+
+- **Transformation Procedures (TPs)**
+
+  - Programs or processes that modify data safely
+  - Ensure only valid operations are performed
+  - Prevent users from bypassing rules
+
+- **Constrained Data Items (CDIs)**
+
+  - Data that must be protected for integrity
+  - Can only be accessed or modified through TPs
+  - Examples: financial records, inventory counts, or transaction logs
+
+The combination of TPs and CDIs ensures that **all changes to critical data are controlled, validated, and traceable**.
+
+
+### Maintaining Integrity 
+
+The model enforces rules for handling critical tasks:
+
+- Split critical tasks among users (separation of duties)
+- Subjects access and modify objects only through applications (access triple)
+- Ensure internal and external consistency
+
+Key integrity goals:
+
+- Authentication and authorization via access control
+- Prevent improper modifications by authorized users
+- Maintain consistency through well-formed transactions
+
 
 ## Brewer and Nash Model
 
 Also known as the **Chinese Wall**, the Brewer and Nash Model is designed to prevent conflicts of interest in environments where access to sensitive information from multiple organizations must be controlled.
 
-- Permissions are dynamically changing based on RBAC.
-- Ensures users cannot access conflicting data sets (e.g., competing companies).
-- Used primarily in financial and consulting sectors.
-- Prevents information flow between competing entities.
+- Dynamically changes permissions based on access
+- Stops users from accessing competing datasets
+- Common in finance and consulting
 
-In this model, there is a wall to segment data types and develops set of rules that ensure that no subject accesses the objects on the other side of the wall. These dynamic rules can change as the subject accesses different information.
+The model uses a wall to segment data types and applies rules to ensure users cannot access conflicting information, adapting as users interact with data.
 
 <div class='img-center'>
 

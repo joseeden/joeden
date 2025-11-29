@@ -94,6 +94,12 @@ There are many ways organizations can evaluate their control's effectiveness:
 - Monitor critical findings in initial web scans.
 - Track number of data breaches requiring notifications.
 
+:::info
+
+While threats, vulnerabilities, and impact can be reduced through different risk management strategies, threat sources are external to the organization and cannot be affected by any risk reduction methods. The only thing the organization can do is reduce the effectiveness of the threat events that a threat source can initiate against an organization. 
+
+:::
+
 ## Privileged Access Management 
 
 To ensure confidentiality, integrity, and availability of information, the Principle of Least Privilege is employed through **Privileged Acces ,Management**. Users receive access only to essential items, limiting exposure.

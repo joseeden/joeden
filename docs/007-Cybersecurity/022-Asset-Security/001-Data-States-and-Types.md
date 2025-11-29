@@ -28,7 +28,14 @@ Data currently being processed, manipulated, or accessed by an application or us
 - Includes data analyzed by software or accessed by users
 - Vulnerable to unauthorized access, memory exploits, and insider threats
 - Protected by application security, authentication, authorization
-- Other methods: data masking, and memory protection techniques (e.g., ASLR)
+
+Other methods: 
+
+- Data masking
+- Memory protection techniques (e.g., ASLR)
+
+While data at rest and data in transit are easy to encrypt, data in use is difficult to encrypt. This is because many applications don’t understand data in its encrypted form, nor do operating systems. While not impossible to encrypt data in use, it is generally difficult and not generally done. 
+
 
 ### Data in Transit
 

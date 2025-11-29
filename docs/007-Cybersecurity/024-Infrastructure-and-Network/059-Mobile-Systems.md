@@ -240,36 +240,37 @@ Content management is a security control that restricts access to inappropriate 
 ### Device Tracking 
 
 - **Impact of Lost or Stolen Devices**
-   - When devices are lost or stolen, organizations face two types of losses:
+    When devices are lost or stolen, organizations face two types of losses:
       - Loss of the physical device (financial cost).
       - Potential loss of data if encryption isn’t enabled.
 
 - **Device Costs**
-   - High-end devices can cost over $1,000, making their loss significant.
-   - Over 3.1 million mobile devices are stolen annually in the U.S.
+    High-end devices can cost over $1,000, making their loss significant.
+      - Over 3.1 million mobile devices are stolen annually in the U.S.
 
 - **Asset Tracking Software**
-   - Helps organizations manage the lifecycle of computing assets.
-   - Covers smartphones, laptops, desktops, servers, and printers.
-   - Often integrated with device management or IT service management solutions.
+    Helps organizations manage the lifecycle of computing assets.
+      - Covers smartphones, laptops, desktops, servers, and printers.
+      - Often integrated with device management or IT service management solutions.
 
 - **Lifecycle Management**
-   - Asset tracking software covers the entire lifecycle of a device:
+    Asset tracking software covers the entire lifecycle of a device:
       - Includes initial request, ordering, receiving, and configuration.
       - Applies security policies and labels devices as organizational property.
       - Assigns devices to users and reassigns as needed.
       - Ensures secure decommissioning by removing data and discarding devices.
 
 - **Real-Time Tracking for Certain Industries**
-   - Some industries, like delivery services, use GPS tracking to:
+    Some industries, like delivery services, use GPS tracking to:
       - Manage driver performance.
       - Optimize routes.
 
 - **Privacy Concerns with GPS Tracking**
-   - Organizations must disclose GPS tracking to employees.
-   - Implement access restrictions to GPS data.
-   - Provide the ability to disable tracking outside of working hours.
-   - Establish clear policies on the use of location data.
+   
+    Organizations must disclose GPS tracking to employees.
+      - Implement access restrictions to GPS data.
+      - Provide the ability to disable tracking outside of working hours.
+      - Establish clear policies on the use of location data.
 
 ### Hardening Mobile Devices
 

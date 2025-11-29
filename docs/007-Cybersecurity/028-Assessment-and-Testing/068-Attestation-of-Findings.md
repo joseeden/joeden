@@ -41,7 +41,7 @@ Software attestation verifies the integrity and authenticity of software running
 Hardware attestation ensures that the physical hardware of a device is authentic and has not been altered or replaced with malicious components.
 
 - Utilizes unique hardware identifiers and cryptographic signatures.
-- Verifies the integrity of hardware components, such as CPUs and TPMs (Trusted Platform Modules).
+- Verifies the integrity of hardware components, such as CPUs and [TPMs.](/docs/007-Cybersecurity/025-Cryptography/014-Encryption-Tools.md#trusted-platform-module-tpm)
 - Detects counterfeit or tampered hardware.
 - Essential for maintaining trust in secure environments, like financial institutions and military systems.
 

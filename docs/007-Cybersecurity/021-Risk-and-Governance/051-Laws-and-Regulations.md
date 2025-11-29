@@ -11,7 +11,16 @@ last_update:
 ---
 
 
-## Categories of Laws in the US  
+## Common Laws in the US  
+
+Common law in the US is based on judicial decisions and precedents that guide how laws are applied. It helps define legal responsibilities, protect rights, and ensure justice.
+
+Common law mainly includes:
+
+- Administrative law
+- Civil/tort law
+- Criminal law
+
 
 ### Criminal Law
 
@@ -25,7 +34,7 @@ Criminal law consists of statutes and rules that define offenses against society
 
 All federal and state laws must comply with the ultimate authority that dictates how the US system of government works - the US Constitution
 
-### Civil Law
+### Civil/Tort Law
 
 Also called **Tort Law**, civil law handles disputes between individuals or organizations where the goal is compensation or specific action, not criminal punishment.
 
@@ -50,7 +59,7 @@ In civil matters:
 - Outcomes are usually monetary damages or court orders
 
 
-### Administrative Law
+### Administrative/Regulatory Law
 
 Administrative law governs the activities of administrative agencies of government. 
 
@@ -60,6 +69,18 @@ Administrative law governs the activities of administrative agencies of governme
 - Enforces penalties or fines for non-compliance with regulatory standards.
 
 At the federal level, administrative law is found in the **Code of Federal Regulations (CFR)**
+
+### Mixed Law System 
+
+A mixed law system uses rules from more than one legal tradition to guide how laws are applied.
+
+- Combines civil law and common law
+- Sometimes includes customary or religious laws
+- Examples include South Africa, Scotland, and Louisiana
+- Systems are shaped by history and culture
+
+This approach lets countries take strengths from different legal frameworks while allowing flexibility in how laws interact. Mixed systems show that multiple legal traditions can work together in a single country.
+
 
 ## Private Regulations
 

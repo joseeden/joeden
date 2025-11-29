@@ -12,47 +12,55 @@ last_update:
 
 Cross-Site Scripting (XSS) is a web security vulnerability that involves injecting malicious scripts into web pages viewed by other users. This allows the attackers to circumvent the browser's security model or trusted zones.
 
-- Attackers inject malicious scripts into web pages.
-- Scripts execute in the context of the victim's browser (client-side)
-- Allows session hijacking, data theft, defacement.
-- Exploitations include phishing attacks, cookie theft, form manipulation.
+- Attackers place harmful scripts into trusted pages
+- Scripts run inside the victim’s browser
+- Can steal sessions or modify what the user sees
+- May be used for phishing or silent data theft
+
+This attack works because the browser trusts the site and runs the injected script.
 
 ### Steps in an XSS Attack
 
-1. Attacker identifies input validation vulnerability within a trusted website.
-2. Attacker crafts a URL to perform code injection against the trusted website.
-3. URL is posted or embedded to an email to get somebody to click it.
-4. Trusted site returns a page containing the injected malicious code.
-5. Malicious code is ran in client's browser with permission level of trusted site.
+1. Attacker finds a place where the site does not clean input
+2. Attacker builds a link or input that injects code
+3. Victim is tricked into clicking the link or loading the page
+4. The trusted site returns a page containing the attacker’s script
+5. The script runs with the same trust as the real site, affecting the victim
 
 
 ### Types
 
 - **Reflected XSS**
-  - Malicious script is part of the request sent to the server.
-  - Server includes the script in the response, reflecting it back to the user.
-  - Commonly found in search queries, error messages, or URL parameters.
+
+  - Script is part of the request sent to the server
+  - Server sends back the script immediately
+  - Seen in search pages or error messages
   
 - **Persistent XSS**
-  - Malicious script is stored in the web application's database.
-  - Executed whenever the compromised data is retrieved and displayed to users.
-  - More dangerous as it affects all users who access the compromised data.
+
+  - Script is stored in the site’s database
+  - Affects all users who access the compromised data.
+  - Executed whenever the compromised data is retrieved
+  - Common in comments or profiles
 
 - **Non-persistent XSS**
-  - Malicious script is injected into a web page, but it's only reflected back to the current user.
+
+  - Script returns only to the user who triggered it
   - Often found in input fields or URL parameters.
-  - Requires social engineering to trick users into visiting a specially crafted link.
+  - Needs social engineering to trick users into clicking
 
 - **Stored XSS**
-  - Similar to persistent XSS, but the injected script is stored permanently on the server.
-  - Can affect multiple users accessing the compromised data.
-  - Commonly found in comment sections, message boards, or user profiles.
+
+  - Same with persistent XSS, but script is permanent on the server
+  - Impacts multiple users who access the compromised data.
+  - Found in comment sections, message boards, or user profiles.
 
 - **DOM-based XSS**
-  - Document Object Model or DOM.
-  - Client-side JavaScript code manipulates DOM, leads to execution of scripts.
-  - Script execution happens within the victim's browser, without involving the server.
-  - Difficult to detect and mitigate compared to server-side XSS vulnerabilities.
+
+  - Uses the browser's DOM (Document Object Model).
+  - Script executes within the users's browser.
+  - Script executes without needing the server.
+  - Harder to detect and mitigate compared to server-side XSS.
   - Examples of code snippets that can be used to affect the DOM:
 
       ```JavaScript
@@ -65,17 +73,17 @@ Cross-Site Scripting (XSS) is a web security vulnerability that involves injecti
 
 These are some mitigation steps that you can follow to prevent XSS attacks:
 
-- Use input validation libraries or frameworks to enforce strict input requirements.
-- Encode output data before displaying in web pages, prevents execution of malicious code.
-- HTML escaping functions or libraries to encode special characters into their respective HTML entities.
+- Validate input to prevent unexpected characters
+- Encode output before sending it to the browser
+- Use escaping functions to process special characters
 
     ```bash
     <, >, &, etc. 
     ```
 
-- Regular security audits/code reviews, identify and fix XSS vulnerabilities in web apps.
-- Automated scanning tools and manual testing techniques to detect and remediate XSS issues.
-- Raise awareness onsafe coding practices, input validation, and output encoding techniques.
+- Conduct reviews and audits for unsafe code
+- Use scanning tools to find risky inputs
+- Train developers on safe validation and encoding
 
 For more information, please see [Input validation](/docs/007-Cybersecurity/027-Software-Security/010-Application-Security.md#input-validation)
 
@@ -90,90 +98,145 @@ Input validation cannot be performed on the database server because the database
 In addition to the mitigation strategies mentioned above, you can implement the following:
 
   - **Content Security Policy (CSP)**
-    - Restrict the types of content that can be loaded and executed on web pages.
-    - Specify allowed sources for scripts, stylesheets, and other resources.
+    - Restrict the types of content loaded and executed on web pages.
+    - Limit the sources for scripts, stylesheets, and other resources.
 
   - **HTTPOnly and Secure Cookies**:
-    - Prevents access from client-side scripts, reducing the risk of session hijacking.
-    - "Secure" flag ensures cookies are only transmitted over secure (HTTPS) connections.
+    - Blocks client-side scripts, reduces the risk of session hijacking.
+    - `Secure` flag ensures cookies are only transmitted over HTTPS.
 
   - **XSS Protection Headers**:
-    - Features like X-XSS-Protection to detect and mitigate XSS attacks.
+    - Features like `X-XSS-Protection` to detect and mitigate XSS attacks.
     - Block or sanitize pages when potential XSS vulnerabilities are detected.
   
 
 
 ## Cross-Site Request Forgery
 
-Cross-Site Request Forgery (XSRF) is a malicious script host on the attacker's site which is used to exploit a session started on another site within the same web browser. The attacker needs to convince the victim to start a session with the targeted website.
+Cross-Site Request Forgery (XSRF) forces a logged-in user to send unwanted requests to a site they trust. This attack exploits a session started on another site within the same web browser. 
 
-- Manipulation of session cookies, user impersonation.
-- Users are tricked into executing malicious actions without their consent.
-- Form submissions, image requests, API calls.
+- Attacker uses a session the victim already started
+- Manipulates session cookies, user impersonation.
+- Users are tricked into executing actions without knowing it.
+- Seen in form submissions, hidden requests, API calls.
 - Impact include account takeover, unauthorized transactions.
 
 Cross-site request forgery attacks work by submitting data to a web site (for example, by manipulating a URL) from an **authenticated trusted user without that user’s knowledge**. The malicious code that performs this attack could be executed by tricking the user to click a link in an e-mail message or on a web site.
 
 **Mitigations:**
 
-- Use of user-specific CSRF tokens in all form submissions.
-- Add randomness and prompt for additional information.
-- Require users to enter current password when changing their password.
-- Use Web application firewalls (WAFs).
+- Use unique CSRF tokens for forms
+- Add randomness or extra confirmations
+- Request password when changing sensitive details
+- Use a web application firewall
 
 ## Server-side Request Forgery
 
 Server-side request forgery (SSRF) allows an attacker to make unauthorized requests from a server they control or manipulate, exploiting the server's network interaction capabilities.
 
-- Typically involves manipulating the server to route requests internally.
-- Security controls are bypassed by leveraging server’s trust to make internal requests.
-- Accessing sensitive data, exploiting services, or unauthorized actions.
-- Data breaches, service disruptions, or unauthorized data manipulation.
+- Uses the server to reach internal systems
+- Bypasses filters the user cannot bypass directly
+- Can expose sensitive data or services
+- May cause data leaks or service misuse
+
+The danger comes from the server acting on behalf of the attacker, often with higher trust.
 
 **Mitigations:**
 
-- Rigorously validate input data, especially URLs and addresses.
-- Prevent user-supplied data in URLs used for server-side requests.
-- Limit access to internal services from the server.
-- Apply security policies to control server interactions.
-- Use network segmentation to isolate internal networks.
-- Implement firewalls and access control lists (ACLs).
-- Set up comprehensive logging and monitoring.
+- Validate all URLs received from users
+- Avoid processing user-controlled addresses
+- Restrict internal network access
+- Apply strong network security rules
+- Segment internal systems to reduce exposure
+- Add firewalls and allowlists
+- Log and monitor server activity
+
+These steps reduce the server’s ability to make harmful or unintended internal requests.
 
 ## Side Channel Attacks 
 
-Side channel attacks exploit unintended information leakage from a system's physical implementation, such as power consumption, electromagnetic emissions, or timing variations.
+Side channel attacks exploit unintended information leakage from a system's physical implementation.
 
-Examples: Timing attacks, power analysis attacks, and electromagnetic analysis attacks.
+- Uses timing differences
+- Measures power or signals from hardware
+- Tracks electromagnetic patterns
+
+These leaks give attackers clues about internal data, so systems must reduce what can be indirectly observed.
 
 **Mitigations:**
 
-- Constant-time algorithms, noise injection, and secure hardware design.
-- This countermeasures reduce the risk of information leakage from side channels. 
-- Regularly update and patch systems to address potential vulnerabilities.
+- Use constant-time operations
+- Add noise to reduce patterns
+- Design hardware with fewer leaks
+- Keep systems patched and updated
 
+These controls reduce the signals attackers rely on to extract hidden information.
+
+## Covert Channels
+
+These are unauthorized communication paths used to transfer information secretly.
+
+- Covert storage channel
+- Covert timing channel
+
+### Covert Storage Channels
+
+A covert storage channel is a method of secretly passing information through storage areas that were never meant for communication.
+
+- Uses metadata or unused bits inside files or storage
+- Can hide information inside file attributes or other system storage fields
+- Allows communication that bypasses normal access controls
+- Difficult to detect without strict auditing and monitoring
+
+A covert storage channel works by letting one process write data to a storage area and another process read it, even though this communication is not allowed by the system’s security policy. 
+
+This happens when a resource created for one purpose is misused for hidden communication. It often involves a higher‑level subject writing data to a storage location and a lower‑level subject reading it, creating an unauthorized flow of information.
+
+### Covert Timing Channels
+
+Covert timing channels describe hidden ways of sending information by modulating its resources (changing how fast or slow certain actions happen).
+
+- Change in response time
+- Unusual delays in processing
+- Small shifts in timing patterns
+- Hard to detect without monitoring tools
+
+These timing changes quietly pass information without using normal communication paths, which is why they pose a hidden risk and must be controlled.
+
+:::info 
+
+The main difference between covert storage and covert timing channels is that **storage channels hide data in resources, while timing channels hide data in the timing of events**.
+
+:::
 
 ## Double Login Prompt (Suspicious Behavior)
 
-Repeated or unexpected login prompts may signal a hidden attack.
+A double login prompt warns that something may be intercepting credentials.
 
-- Often caused by reverse proxy tools harvesting credentials
-- Tricking users into entering credentials multiple times
-- Reverse proxy backdoors can intercept and relay authentication requests
-- Used in phishing campaigns or proxy-based man-in-the-middle attacks
+- Often caused by tools collecting usernames and passwords
+- Users may be tricked into typing credentials again
+- Attackers relay and capture login attempts
+- Used in proxy attacks and phishing setups
+
+Multiple unexpected prompts suggest credential interception, so users should stop and verify the site.
 
 ## Referrer Manipulation
 
-Referrer manipulation tricks a website into thinking a request came from a trusted source.
+Referrer manipulation makes a website believe a request came from a trusted source.
 
-- Modifies the HTTP `Referer` header to fake the request origin
-- Used to bypass weak access rules or CSRF protections
+- Changes the HTTP `Referer` header
+- Helps attackers bypass weak trust rules
+- Can break protections tied to request origin
+
+This works because some sites trust referrer data, even though it can be easily faked.
 
 
 ## WAF Bypass
 
-WAF bypass involves avoiding detection by a Web Application Firewall using various tricks.
+WAF bypass avoids detection by security filters in front of websites.
 
-- Uses encoding, uncommon HTTP methods, or input splitting
-- Often paired with injection or spoofing attacks
+- Uses odd encodings or special characters
+- Tries rare HTTP methods or unusual input shapes
+- Works with injection or spoofing attacks
 
+The main idea is to slip past automated rules, so strict validation and monitoring are necessary.

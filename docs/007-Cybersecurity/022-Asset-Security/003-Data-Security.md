@@ -33,9 +33,18 @@ For more information, please see [Data Classification.](/docs/007-Cybersecurity/
 
 ## Labeling
 
-Label information to enforce appropriate access controls.
+As part of proper digital asset management, digital assets should contain the following:
 
-**Data Sensitivity Levels**
+- Date of creation
+- The name of the creator
+- How long it is good for (retention period)
+- Classification
+- Volume name
+- Version. 
+
+The label should contain the name of the person who backed up the data, but **not necessarily who wrote the data.**
+
+The **data sensitivity levels** include:
 
 1. **Highly Restricted**
     - Potential risk to the organization's future existence.
