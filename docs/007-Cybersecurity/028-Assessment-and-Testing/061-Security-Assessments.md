@@ -30,7 +30,7 @@ Most organizations use multiple tools to provide depth of testing and to ensure 
 
 Internal assessments are often broader and more flexible, while internal audits are structured, formal, and documented evaluations.
 
-For more information, please see [Internal Audits.](/docs/007-Cybersecurity/028-Assessment-and-Testing/060-Security-Audits.md#internal-audits)
+For more information, please see [Internal Audits.](/docs/007-Cybersecurity/028-Assessment-and-Testing/060-Security-Audits.md#internal-audit)
 
 ::: 
 
@@ -79,7 +79,7 @@ The types of tests that are performed during an assessment are:
 
 External assessments are more flexible and advisory, while external audits are formal, standardized, and reportable.
 
-For more information, please see [External Audits.](/docs/007-Cybersecurity/028-Assessment-and-Testing/060-Security-Audits.md#external-audits)
+For more information, please see [External Audits.](/docs/007-Cybersecurity/028-Assessment-and-Testing/060-Security-Audits.md#external-audit)
 
 :::
 

@@ -60,6 +60,13 @@ TLS is not a cryptographic algirithm itself; it is only a protocol that depends 
 - This means we cannot encrypt something with TLS.
 - We can use TLS to apply other encryption algorithms.
 
+:::info 
+
+**Padding Oracle on Downgraded Legacy Encryption (POODLE)** was a man-in-the-middle attack that showed TLS was superior to SSL by forcing  modern clients (browsers) and servers (websites) to downgrade the security protocol from TLSv1 to SSLv3. 
+
+:::
+
+
 ### TLS Handshake
 
 How it works:

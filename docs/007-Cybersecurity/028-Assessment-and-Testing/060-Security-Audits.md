@@ -88,8 +88,8 @@ For more information, please see [Compliance as a Governance Element.](/docs/007
 An Audit Committee is a group of people responsible for supervising the organization's audit and compliance functions.
 
 - Typically members of the company's board of directors.
-- Reviews the organization's financial reporting processes and internal controls.
-- Ensures the organization is in compliance with legal regulatory requirements.
+- Reviews the financial reporting processes and internal controls.
+- Ensures the organization is in compliance with regulations.
 - Addresses any issues raised by auditors.
 
 ## Audit Classifications

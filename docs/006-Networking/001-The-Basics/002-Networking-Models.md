@@ -180,25 +180,25 @@ User Datagram Protocol (UDP) is a connectionless protocol that enables fast data
 
 ## DNP3
 
-**Distributed Network Protocol (DNP3)** is a communication protocol primarily used in utility and industrial automation systems to enable reliable and efficient data exchange between control equipment.
+**Distributed Network Protocol (DNP3)** is a multilayer  communication protocol primarily used in utility and industrial automation systems to enable reliable and efficient data exchange between control equipment.
 
 - Widely used in [SCADA systems](/docs/007-Cybersecurity/024-Infrastructure-and-Network/058-Embedded-Systems.md) for real-0time monitoring and controll
-- Supports robust communication and time-stamped data and event logging
+- Robust communication, time-stamped data, and event logging
 - Ensure interoperability between different vendors' equipment 
 
 **How It Works:**
 
-- **Remote Terminal Unit (RTU)** 
+1. **Remote Terminal Unit (RTU)** 
 
   - The RTU gathers data from sensors or field devices 
   - Data is sent to the SCADA master station
 
-- **Communication Links** 
+2. **Communication Links** 
 
   - Channels (wired or wireless) that facilitate the exchange of data 
   - Data is exchanged between RTUs and the SCADA master station.
 
-- **SCADA Master Station** 
+3. **SCADA Master Station** 
 
   - Central system that receives data from RTUs and processes it
   - Issues control commands back to the RTUs

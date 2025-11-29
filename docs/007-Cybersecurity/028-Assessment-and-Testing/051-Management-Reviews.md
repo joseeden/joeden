@@ -36,6 +36,6 @@ Regular reviews of user accounts ensure that access permissions align with respo
 - Ensure active users have the right permissions for their roles.
 - Document and approve account changes like privilege escalations or revocations.
 
-For more information, please see [Account Management Tasks.](/docs/007-Cybersecurity/026-Identity-and-Access-Management/001-The-Basics.md#account-management-tasks)
+For more information, please see [Account Management Tasks.](/docs/007-Cybersecurity/026-Identity-and-Access-Management/001-The-Basics.md#account-management)
 
 
