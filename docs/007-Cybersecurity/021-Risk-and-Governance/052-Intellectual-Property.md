@@ -56,7 +56,7 @@ For works with multiple authors, copyright protection typically lasts **70 years
 
 ## Digital Millenium Copyright Act  
 
-The Digital Millennium Copyright Act (DMCA) of 1998 addresses copyright issues in the digital age, particularly online. 
+The **Digital Millennium Copyright Act (DMCA) of 1998** addresses copyright issues in the digital age, especially online. 
 
 - Prohibits bypassing copyright protection mechanisms
 - Allows backup copies of software if properly licensed
@@ -66,6 +66,10 @@ Additionally, it limits ISP liability for users’ copyright violations:
 
 - ISPs are treated like *common carriers*, similar to telephone companies
 - Not liable for users’ transient activities
+
+The DMCA also makes it illegal to produce or distribute technology, devices, or services that bypass access controls protecting copyrighted material. This law helps balance copyright protection with online access, while providing legal clarity for ISPs.
+
+
 
 ## Trademarks
 
@@ -198,3 +202,10 @@ Software licenses define how software can be used, modified, and distributed. Co
   - Govern access to software hosted in the cloud
   - Define subscription terms, data use, and service levels
   - Examples: Microsoft 365, Salesforce
+
+
+:::info
+
+The **Federation Against Software Theft (FAST)** and the **Business Software Alliance (BSA)** were created to protect software vendors and enforce license compliance, helping reduce software piracy.
+
+:::

@@ -16,16 +16,31 @@ last_update:
 
 **Center for Internet Security (CIS)** is known for its **CIS Controls**, a set of prioritized security practices to mitigate common cyber threats.
 
-- Benchmarks and guides for securing operating systems, applications, and networks
+- Benchmarks for securing operating systems, applications, and networks
 - Provides tools like risk assessments and training to strengthen cybersecurity
 - CIS helps organizations follow clear security practices to reduce threats.
 
+The **CIS Controls** describes three implementation groups which describe different size organizations, and allows organizations to scale the controls based upon their size and available resources. 
+
+
 ## NIST RMF/CSF
 
-The **NIST Risk Management Framework (RMF)** manages cybersecurity risks for federal systems, including categorization and security control selection.
+The NIST RMF and CSF are two frameworks that help organizations understand, manage, and reduce cybersecurity risks in a structured and repeatable way.
 
-- RMF focuses on risk assessment, control implementation, and continuous monitoring.
-- CSF provides guidelines with functions: Identify, Protect, Detect, Respond, Recover
+The **NIST Risk Management Framework** focuses on managing risks across the full system lifecycle. It has been imposed as mandatory for use on U.S. federal government systems, within all government agencies. 
+
+- Guides activities from categorization to continuous monitoring  
+- Helps in choosing and implementing security controls  
+- Ensures systems stay within acceptable risk levels
+- 
+
+The **NIST Cybersecurity Framework** is built from three main parts that guide how an organization applies cybersecurity practices.
+
+- Framework Core  
+- Implementation Tiers  
+- Framework Profiles
+
+Together, RMF and CSF provide a consistent approach for improving cybersecurity, strengthening risk decisions, and keeping risks at manageable levels across the organization.
 
 ## ISO/IEC
 

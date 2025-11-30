@@ -50,10 +50,27 @@ It requires registration with **Directorate of Defense Trade Controls (DDTC)** f
 
 The **Export Administration Regulations (EAR)** govern exports of commercial items, dual-use goods, and certain less sensitive military items.
 
-- Classifies items based on sensitivity and potential dual-use applications
+- Classify based on sensitivity and potential dual-use applications
 - Licensing required for specific countries and certain end uses
 
 Exporters must also identify the **Export Control Classification Number (ECCN)** of their products to ensure proper licensing and compliance.
+
+## Wassenaar Arrangement
+
+The **Wassenaar Arrangement** is a global agreement among numerous countries (currently 42 signatories) to control the export of certain types of sensitive items and technologies to agreed-upon “terrorist countries” (countries identified by the signatories as having connections with terrorist groups and activities)
+
+- Controls dual-use items
+- Regulates certain cybersecurity tools
+- Helps keep advanced tech away from harmful use
+- Supports consistent export rules across participating countries
+
+This arrangement guides how organizations review, classify, and export technology so they can avoid violations and keep security risks under control.
+
+- Covers tools that can be both civilian and military
+- Includes encryption items and intrusion software
+- Requires checking if a product needs an export license
+- Affects companies that sell or share security software across borders
+
 
 
 ## OFAC
