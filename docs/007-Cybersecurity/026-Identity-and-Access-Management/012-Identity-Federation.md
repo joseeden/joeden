@@ -1,19 +1,20 @@
 ---
 title: "Identity Federation"
-description: "SSO,, OAuth, SAML, and OIDC"
+description: "SSO, OAuth, SAML, and OIDC"
 tags: 
 - Security
 - Cybersecurity
-- Security Architecture
-- Security Engineering
-sidebar_position: 21
+- Access Management
+- Access Control
+- IAM
+sidebar_position: 12
 last_update:
   date: 1/30/2024
 ---
 
 ## Overview 
 
-Identity Federation is a system where multiple organizations share authentication data, allowing users to access resources across organizational boundaries without re-authenticating.
+Identity Federation is a system where multiple organizations share authentication data. This allows users to access resources across organizational boundaries without re-authenticating.
 
 - One login grants access to multiple services
 - Authentication handled by the user's home organization (IdP)
@@ -71,8 +72,68 @@ Identity Federation is a system where multiple organizations share authenticatio
   - Common protocols include SAML, OAuth, and OpenID Connect
   - Ensure compatibility between different systems
 
+## XACML
 
-## How It Works
+**Extensible Access Control Markup Language (XACML)** defines access policies and enforces authorization decisions across systems.
+
+- Standard for access control policies
+- Separates policy decision from enforcement
+- Works with SSO and federated identities
+
+Core components of XACML’s architecture:
+
+- **Policy Decision Point (PDP)**
+  - Evaluates access requests against policies
+  - Returns permit or deny
+  - Can be centralized or distributed
+
+- **Policy Enforcement Point (PEP)**
+  - Intercepts access requests
+  - Queries PDP for decision
+  - Grants or denies access
+
+
+## SGML 
+
+**Standard Generalized Markup Language (SGML)** is a way to define structured documents and data formats. It laid the foundation for many modern markup languages.
+
+- Parent standard of XML and SAML
+- Used to define structured documents and rules for data
+- Helps understand how SAML and XACML evolved
+
+SGML is important because it provides the basic concepts of structured data that later standards like SAML and XACML use to define identity, authentication, and access control rules.
+
+## SPML
+
+**Service Provisioning Markup Language (SPML)** helps organizations create, update, and remove user accounts automatically across multiple systems.
+
+- Standard for automating identity provisioning
+- Enables secure exchange of user identity data
+- Reduces manual work and errors
+
+SPML defines roles that handle identity provisioning in a structured way:
+
+- **Requestor (RA)**
+  - Requests creation, update, or deletion of a user account
+  - Can be an application, admin, or automated process
+  - Initiates provisioning workflow securely
+
+- **Provisioning Service Provider (PSP)**
+  - Executes the requested provisioning actions
+  - Validates requests before processing
+  - Communicates with target systems
+  - Logs actions for auditing
+
+- **Provisioning Service Target (PST)**
+  - System that receives the identity information
+  - Can be a database, cloud app, or directory
+  - Applies provisioning changes to user accounts
+  - Ensures user data is updated accurately
+  - Sends confirmation back to PSP
+
+These actors work together to make identity provisioning automatic, secure, and consistent across all systems.
+
+## Federated Logins
 
 Federated login lets users access services using their home organization’s credentials. Here’s a simple flow of what happens:
 
@@ -86,7 +147,7 @@ Federated login lets users access services using their home organization’s cre
 
 ## SSO
 
-SSO (Single Sign-On) allows users to authenticate once and gain access to multiple applications without needing to re-enter credentials, streamlining the user experience.
+**SSO (Single Sign-On)** allows users to authenticate once and gain access to multiple applications without needing to re-enter credentials, streamlining the user experience.
 
 - Authenticates a user once for access to multiple applications.
 - Reduces the need for multiple logins and passwords.
@@ -169,7 +230,7 @@ A student from University A wants to access University B’s online library:
 
 ## SAML 
 
-SAML (Security Assertion Markup Language) is a standard for sharing authentication and authorization data between **Identity Providers (IdPs)** and **Service Providers (SPs)**. It enables single sign-on (SSO) across different web applications using a browser.
+**SAML (Security Assertion Markup Language)** is a standard for sharing authentication and authorization data between **Identity Providers (IdPs)** and **Service Providers (SPs)**. It enables single sign-on (SSO) across different web applications using a browser.
 
 - Supports single sign-on so users log in once
 - Lets users access many services with one login
@@ -237,7 +298,7 @@ How it looks like:
 
 ## OAuth
 
-OAuth (Open Authorization) is a standard for authorization that lets apps access user data securely without sharing passwords.
+**OAuth (Open Authorization)** is a standard for authorization that lets apps access user data securely without sharing passwords.
 
 - Allows third-party apps to access user info safely
 - Uses tokens like JWT (JSON Web Tokens) for secure data exchange
@@ -258,17 +319,17 @@ OAuth does not perform authentication, only authorization.
 
 ## OIDC
 
-OpenID Connect (OIDC) is an identification and authentication protocol that helps users prove their identity to other services.
+**OpenID Connect (OIDC)** is an identification and authentication protocol that helps users prove their identity to other services.
 
 - An authentication layer built on top of OAuth 2.0.
-- Provides additional user identity information along with authorization.
+- Provides identity information along with authorization.
 
 :::info
 
 OAuth and OIDC work together. 
 
 OIDC is for **authentication**.
-OAuth if for **authorization**.
+OAuth is for **authorization**.
 
 :::
 
