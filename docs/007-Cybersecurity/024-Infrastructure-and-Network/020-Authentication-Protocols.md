@@ -353,9 +353,9 @@ RADIUS operates by delegating authentication tasks from edge devices to the RADI
 
 TACACS+ (Terminal Access Controller Access-Control System Plus) is a protocol used for centralizing authentication, authorization, and accounting management for users who access network services. 
 
-- Provides separate access control, accounting, and authentication services.
-- Typically used for managing remote access to network devices like routers and switches.
-- Enhances security by centralizing management of user credentials and access controls.
+- separate access control, accounting, and authentication services.
+- Used for managing remote access to routers and switches.
+- Centralize management of user credentials and access controls.
 
 TACACS+ is an alternative to RADIUS, since it performas similar functions but with some improvements:
 
@@ -365,4 +365,19 @@ TACACS+ is an alternative to RADIUS, since it performas similar functions but wi
 
 Unlike RADIUS, TACACS+ separates authentication, authorization, and accounting processes which allows for more detailed control. This makes TACACS+ preferred in scenarios that require granular command authorization, especially in network device management. 
 
-However, **RADIUS is more commonly chosen for wireless networks** and remote server access due to its broader application scope
+However, **RADIUS is more commonly chosen for wireless networks** and remote server access due to its broader application scope.
+
+## Diameter (RADIUS 2.0)
+
+**Diameter** is a modern, more advanced authentication, authorization, and accounting (AAA) protocol designed to replace RADIUS.
+
+- Like RADIUS, but newer, stronger, and more flexible.
+- It runs over TCP or SCTP, unlike RADIUS which uses UDP.
+- supports encryption, reliability, and better error handling.
+
+RADIUS had limitations (UDP, no built-in encryption, less scalable). Diameter was created to fix these issues and support modern networks—especially telecom and mobile systems. It's uses include:
+
+- 4G / LTE networks
+- 5G networks
+- Mobile carrier authentication
+- Large telecom environments
