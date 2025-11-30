@@ -239,7 +239,7 @@ The model defines eight specific protection rights:
 
 ## Harrison-Ruzzo-Ullman (HRU) Model
 
-Similar to the Graham-Denning Model, the HRU model defines rules for access control and managing rights within a system.
+Similar to the Graham-Denning Model, the **Harrison-Ruzzo-Ullman (HRU) Model** defines rules for access control and managing rights within a system. This newer model provides more **granularity** and direction for vendors on how to meet the goals outlined in the earlier models. 
 
 - Focuses on the creation, deletion, and modification of rights.
 - Allows for dynamic changes in permissions.

@@ -94,7 +94,9 @@ Organizations can use a structured approach to identify threats. This process in
 
 ## STRIDE 
 
-The STRIDE model is a framework used to understand and categorize different types of security threats. This model helps organizations systematically identify and address potential vulnerabilities in their systems. Each letter in STRIDE represents a specific category of threat:
+The **STRIDE model** is a threat modeling framework, developed by Microsoft in 1999, that evaluates a system’s design using flow diagrams, system entities, and events related to a system.
+
+Each letter in STRIDE represents a specific category of threat:
 
 - **Spoofing Identity**
   - Attackers pretend to be someone they are not.

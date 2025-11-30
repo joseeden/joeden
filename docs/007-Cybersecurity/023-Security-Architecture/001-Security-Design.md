@@ -38,7 +38,7 @@ It's useful to describe access requests in these terms to make the requests expl
 
 ## Failure Modes
 
-Failure modes define how systems behave during failures. Understanding these modes helps balance security and functionality when issues arise.
+Failure modes define how systems behave during failures. 
 
 - **Fail-open**
   - Allows all traffic through if a failure occurs
@@ -48,12 +48,31 @@ Failure modes define how systems behave during failures. Understanding these mod
 - **Fail-closed**
   - Blocks all traffic during a failure
   - Maintains network security
-  - May disrupt connectivity
+  - May cause temporary service disruption
 
 - **Fail Reset**
 
   - Automatically restarts when a failure is detected
-  - Restore normal operations without ensuring secure authentication or access control
+  - Restore operations without verifying secure access
+  - Helps recover quickly but may expose some risks
+
+- **Fail-secure**
+
+  - Defaults to the highest security level during faults
+  - Ensures predictable and secure system behavior
+  - Prevents unauthorized access in error conditions
+
+- **Fail safe**
+
+  - Mechanism fails to a state that ensures personnel or equipment safety
+  - Example would be a normally locked door in a data center, which would fail to an unlocked state if a fire alarm is triggered.
+
+- **Fail open**
+
+  - Mechanism would fail in the event of a fault
+  - Moves to a state that protects people or equipment
+  - Prioritizes safety over normal operation
+  - Example: A data center door unlocks during a fire alarm
 
 Example: Firewall
 
