@@ -76,15 +76,22 @@ The "expanded envelope" approach involves broadening the acceptable range of tem
 
 ### Humidity Problems
 
-Managing humidity levels in data centers is important to prevent damage to sensitive electronic equipment. Proper humidity control helps avoid problems like condensation and static electricity, which can negatively affect equipment performance and lifespan.
+Controlling humidity in data centers is important to protect equipment and maintain performance. Proper balance prevents both moisture and static-related issues.
 
 - **High Humidity**: 
-  - Can cause condensation, damaging electronic components.
+  - Can cause condensation or corrosion, damaging electronic components.
   - Increases the risk of corrosion and short circuits.
 
 - **Low Humidity**: 
-  - Raises the chance of static electricity, which can harm electronic components.
+  - Raises the static electricity, which can harm electronic components.
   - May lead to data loss and equipment failure due to static discharge.
+
+:::info 
+
+Use **hygrometers** to monitor humidity levels
+
+:::
+
 
 ### Dew Point Range
 
@@ -284,7 +291,7 @@ Devices that distribute and manage power at the rack or equipment level.
 
 ### Elements 
 
-Fire poses a significant threat to data centers, where even a small fire can cause extensive damage to sensitive equipment and lead to costly downtime. The three key ingredients that fire needs to ignite and continue burning are heat, fuel, and oxygen.
+Fire poses a significant threat to data centers, where even a small fire can cause extensive damage to sensitive equipment and lead to costly downtime. The three key ingredients that fire needs to ignite and continue burning are:
 
 - **Heat** 
   - initial energy source that raises temperature of materials to their ignition point.
@@ -298,6 +305,9 @@ Fire poses a significant threat to data centers, where even a small fire can cau
   - Supports the chemical reactions that sustain a fire.
   - Generally abundant unless actively controlled by suppression systems.
 
+**Positive air pressure** means that when someone opens a door, the air goes out, and outside air does not come in. If a facility were on fire and the doors were opened, positive pressure would cause the smoke to go out instead of being pushed back into the building. 
+
+
 ### Suppression
 
 Choose appropriate fire detection/suppression considering room size and equipment risks.
@@ -306,29 +316,60 @@ Choose appropriate fire detection/suppression considering room size and equipmen
 - Consider gas-based systems for electronics-friendly suppression.
 - Be mindful of potential human toxicity.
 
+### Detection
+
+Fire detection systems identify fires early to reduce damage and improve safety.
+
+- **Smoke-activated Fire Detectors**
+
+  - Use photoelectric sensors to detect changes in light intensity.
+  - One portion of the detector sends a beam of light to a receiver. 
+  - If the beam is blocked, detector assumes smoke and the alarm triggers
+  - Effective for slow, smoldering fires that produce a lot of smoke
+
+- **Heat-activated Fire Detectors**
+  - Use temperature sensors to detect rapid rises in heat
+  - Some trigger when a fixed temperature is reached
+  - Other detectors detect sudden temperature changes
+
 ### Fire Extinguishers 
 
-Fire extinguishers are classified based on the type of fire they are designed to extinguish. Knowing the right type of extinguisher to use for different fire classes ensures effective fire suppression and minimizes damage.
+Fire extinguishers are classified based on the type of fire they are designed to extinguish. 
 
 - **Class A**: 
-  - Designed for fires involving ordinary combustibles such as wood, paper, and textiles.
-  - Uses water or foam to cool and quench the flames.
+  - For ordinary combustibles like wood, paper, and cloth
+  - Uses water or foam to cool and stop flames
 
 - **Class B**: 
-  - Targets fires fueled by flammable liquids like gasoline, oil, and grease.
-  - Extinguishers contain foam, carbon dioxide, or dry chemical agents to smother the fire.
+
+  - For flammable liquids such as gasoline, oil, and grease
+  - Uses foam, CO2, or dry chemicals to smother the fire
 
 - **Class C**: 
-  - Used for fires involving electrical equipment, which may pose an electrocution risk.
-  - Employs non-conductive extinguishing agents like carbon dioxide or dry chemicals.
+  - For electrical fires where electrocution is a risk
+  - Uses non-conductive agents like CO2 or dry chemicals
+  - Example: Use when electrical equipment is on fire
 
 - **Class D**: 
-  - Specifically for fires involving combustible metals such as magnesium, titanium, and sodium.
-  - Utilizes specialized dry powder agents to absorb heat and prevent the fire from spreading.
+  - For combustible metals like magnesium, titanium, or sodium
+  - Uses special dry powders to absorb heat and stop spreading
 
 - **Class K**: 
-  - Designed for kitchen fires involving cooking oils and fats.
-  - Uses wet chemical extinguishers that cool and create a barrier between the fuel and oxygen.
+  - For kitchen fires involving cooking oils and fats
+  - Uses wet chemicals to cool and block oxygen from fuel
+
+Proper use of fire extinguishers:
+
+- Must be within 50 feet of electrical equipment. 
+- Must be visible to anyone who would need to use it. 
+- Must contain correct suppression agent appropriate for the type of fire.
+- Must be inspected **quarterly, not yearly.**
+
+Fire suppression agents can attack a fire in different ways:
+
+- Water reduces the temperature of a fire. 
+- Gases modify the chemical combustion elements.
+- Carbon Dioxide (CO2) can reduce the oxygen. 
 
 ### Water-Based Fire Suppression
 

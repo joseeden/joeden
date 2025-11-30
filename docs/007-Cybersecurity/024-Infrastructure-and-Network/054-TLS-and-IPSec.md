@@ -20,25 +20,27 @@ Encryption methods protect data in different ways depending on where and how the
 
   - Encrypts data from the sender to the receiver
   - Only the endpoints can read the data
-  - Protects the content, but metadata may be visible during transit
+  - Encryption protects the content
+  - Metadata may be visible during transit
 
 - **Tunnel encryption**
 
-  - Encrypts traffic between a client and a VPN gateway
-  - Protects specific traffic across an untrusted network
-  - Does not secure the entire physical communications channel
+  - Encrypts traffic between client and VPN gateway
+  - Secures specific traffic over untrusted networks
+  - Physical communication link is not fully protected
 
 - **Transport encryption**
 
-  - Encrypts data between two network points (e.g., client to server)
+  - Encrypts data between two network points (client to server)
   - Can secure specific applications or sessions
   - Metadata outside the session may remain exposed
 
 - **Link encryption**
 
-  - Encrypts all data along a physical link, like headers, routing info
-  - Secures the entire communications channel between two points
-  - Provides strong security for the transport layer and improves performance
+  - Encrypts all data on a physical link, including headers
+  - Secures entire communications channel between two points
+  - Stronger security for the transport layer 
+
 
 :::info 
 
@@ -48,17 +50,17 @@ Link encryption ensures that **everything on the communication channel is protec
 
 ## TLS 
 
-TLS or Transport Layer Security is a protocol that provides cryptography security for secure data transmission between clients and servers.
+**Transport Layer Security** is a protocol that provides cryptography security for secure data transmission between clients and servers.
 
 - Verifies the identities of communicating parties.
 - Ensures data has not been tampered with during transit.
 - Commonly used for securing web traffic (HTTPS).
 - Works with multiple protocols like HTTP, SMTP, and IMAP.
 
-TLS is not a cryptographic algirithm itself; it is only a protocol that depends on other cryptographic algorithms. TLS relies on pairings of encryption and hash functions known as **cipher suites.**
+**TLS is not a cryptographic algorithm itself**. It is only a protocol that depends on other cryptographic algorithms. TLS relies on pairings of encryption and hash functions known as **cipher suites.**
 
-- This means we cannot encrypt something with TLS.
-- We can use TLS to apply other encryption algorithms.
+- We cannot encrypt directly with TLS
+- Use TLS to apply other encryption algorithms
 
 :::info 
 
@@ -69,20 +71,15 @@ TLS is not a cryptographic algirithm itself; it is only a protocol that depends 
 
 ### TLS Handshake
 
-How it works:
+TLS handshake establishes a secure session between client and server.
 
-1. Client sends a request to the server to initiate a session. The request includes the cipher suites supported by the client.
-2. The server receives the request and compares the client's proposed cipher suites to the server's supported algorithms.
-3. Once the server finds a match, it sends a reply to the client.
-4. The respond contains two things: the **cipher suite** and the **server's digital certificate** which contains the server's public encryption key.
-5. The client receives the server's digital certificate and checks what Certificate Authority (CA) issued the certificate and uses the CA's public key to verify the digital certificate. It also checks with the CA if the cetificate is expired or revoked.
-6. If all is okay, the client knows it has the correct public key of the server.
-7. Once the client is satisifed, the clients creates a symmetric **session key** and uses the server's public key to encrypt the session key.
-8. The client then send the encrypted session key to the server.
-9. The server receives the encrypted sessions key and uses its own private key to decrypt it.
-10. The two systems can no continue the communication using the session key.
-11. Once they close the session, the session key is destroyed.
-12. The TLS handshake starts over the next time the two system wish to communicate.
+1. Client sends supported cipher suites to server
+2. Server selects a matching cipher suite and sends its digital certificate
+3. Client verifies the certificate using the Certificate Authority (CA)
+4. Client generates a symmetric **session key** and encrypts it with the server’s public key
+5. Server decrypts the session key with its private key
+6. Both client and server use the session key for secure communication
+7. Session key is destroyed when session ends
 
 :::info[NOTE]
 
@@ -93,14 +90,14 @@ Session keys are also known as **ephemeral keys.**
 
 ### TCP 
 
-TLS uses the Transmission Control Protocol (TCP) to establish secure communications between a client and a server.
+TLS uses the **Transmission Control Protocol (TCP)** to establish secure communications between a client and a server.
 
 - TCP has a lot of overhead than UDP connections.
 - This can slow down connection.
 
 ### DTLS 
 
-Datagram TLS is a UDP-version of TLS protocol that offers that same security level as TLS while maintaining faster operations.
+**Datagram TLS** is a UDP-version of TLS protocol that offers that same security level as TLS while maintaining faster operations.
 
 - Less overhead in the UDP protocol.
 - Ideal for video streaming over a secure and encrypted tunnel.
@@ -133,57 +130,65 @@ HAIPE is a Type 1 encryption system that extends IPSec with stricter controls an
 
 ## Establishing an IPSec Tunnel
 
-1. Request to start Internet Key Exchange (IKE).
-    - PC1 Initiates trafffic to PC2.
-    - This triggers IPSec tunnel creation by router 1
+1. **Initiate IKE Request**
 
-2. IKE Phase 1 
-    - Router 1 and router 2 negotiates security associations for IKE Phase 1.
-    - Also known as **ISAKMP Tunnel**
+    - PC1 starts traffic to PC2
+    - Router 1 begins IPSec tunnel creation
 
-3. IKE Phase 2 
-    - Establishes a tunnel within the tunnel.
+2. **IKE Phase 1**
 
-4. Data Transfer
-    - Data can now be securely transferred between PC1 and PC2.
+    - Routers negotiate security associations
+    - Forms a secure *ISAKMP tunnel* for further communication
 
-5. Tunnel Termination
-    - Tunnel is torn down, deleting IPSec security associations
+3. **IKE Phase 2**
+
+    - Creates an inner IPSec tunnel for actual data
+    - Defines encryption and authentication parameters
+
+4. **Data Transfer**
+
+    - Encrypted data flows securely between PC1 and PC2
+    - Maintains confidentiality and integrity during transit
+
+5. **Tunnel Termination**
+
+    - IPSec tunnel is closed
+    - Security associations are removed and resources freed
 
 ## IPSec Modes
 
-### Tunnel Mode
+### Tunnel Mode (Site to Site)
 
-**IPSec Tunnel Mode** secures data transmission between two networks over the internet by encapsulating and encrypting the entire original IP packet within a new IP packet. This ensures both the payload and the original IP header are protected, commonly used in VPNs to create secure connections between gateways.
+**IPSec Tunnel Mode** secures data transmission between two networks **over the internet** by encapsulating and encrypting the entire original IP packet within a new IP packet. This ensures both the payload and the original IP header are protected.
 
-- Packets are encapsulated within new ones, increasing the actual packet size.
-- Ideal for connecting remote networks securely; **site-to-site VPNS**.
-- Secures the entire original IP packet **using packet encapsulation.**
+- Entire IP packets are encapsulated within new ones.
+- Encapsulation increases the actual packet size.
+- Ideal for remote networks like **site-to-site VPNS**.
 
-Workaround for the packetsize:
+Workaround for the packet size:
 
 - Drop Max MTU size to 1400 bytes on inner router, then connect to VPN
-- Allow jumbo frames, bigger thatn 1500 bytes
-- Adjust MTU size to 9000 bytes, not recommended for internet use due to latency issues
+- Enable jumbo frames larger than 1500 bytes if the network allows
+- Increase MTU up to 9000 bytes, but avoid on the internet due to  latency
 
 At source and destination:
 
-  - **Source side:** Encapsulates the encrypted packet within a new IP packet.
-  - **Destination side:** VPN concentrator removes outer header, decrypts content, and routes internally.
+- **Source side:** Encapsulates the encrypted packet within a new IP packet.
+- **Destination side:** VPN concentrator removes outer header, decrypts content, and routes internally.
 
-### Transport Mode
+### Transport Mode (Host to Host)
 
-**IPSec Transport Mode** secures end-to-end communication between two devices by encrypting only the payload of the IP packet, while leaving the original IP header intact. This mode is commonly used for securing communication between two hosts or between a host and a gateway. 
+**IPSec Transport Mode** secures end-to-end communication between two devices by encrypting only the payload of the IP packet, while leaving the original IP header intact. 
 
-- Slightly less overhead than Tunnel Mode since only the payload is encrypted.
-- Commonly used within a secure network where the IP header does not need encryption.
-- Used for end-to-end communication between hosts, e.g. **client-to-site VPNs**
 - Secures the data portion of the IP packet, **no packet encapsulation.**
+- Used between two hosts or between a host and a gateway. 
+- Less overhead than Tunnel Mode since only payload is encrypted.
+- Used for end-to-end hosts communication, e.g. **client-to-site VPNs**
 
 Packet size:
 
-- Works well when you want to increase packet size, exceeding the MTU size
-- **Max Transmission Size (MTU)** - set at only 1500 bytes
+- When you want to increase packet size, exceeding the MTU size
+- **Max Transmission Size (MTU)** limited to only 1500 bytes
 - Anything beyond MTU, packet gets fragmented and causes VPN problems.
 
 
@@ -193,13 +198,12 @@ IPSec VPNs **do not use TCP ports** like typical applications. Instead, they use
 
 **Note:** These protocols might be **blocked by firewalls** if they're not explicitly allowed, which is why IPSec VPNs may fail if the firewall only allows TCP ports.
 
-
-| **Protocol/Service**                           | **Protocol Type**         | **Port/Protocol Number** |
-| ---------------------------------------------- | ------------------------- | ------------------------ |
-| **ISAKMP (IKE Phase 1)**                       | UDP                       | Port **500**             |
-| **IPSec ESP (Encapsulating Security Payload)** | IP Protocol (not TCP/UDP) | Protocol **50**          |
-| **IPSec AH (Authentication Header)**           | IP Protocol (not TCP/UDP) | Protocol **51**          |
-| **NAT-T (NAT Traversal)**                      | UDP                       | Port **4500**            |
+| **Protocol/Service**                       | **Protocol Type**         | **Port/Protocol Number** |
+| ------------------------------------------ | ------------------------- | ------------------------ |
+| ISAKMP (IKE Phase 1)                       | UDP                       | Port **500**             |
+| IPSec ESP (Encapsulating Security Payload) | IP Protocol (not TCP/UDP) | Protocol **50**          |
+| IPSec AH (Authentication Header)           | IP Protocol (not TCP/UDP) | Protocol **51**          |
+| NAT-T (NAT Traversal)                      | UDP                       | Port **4500**            |
 
 
 ## IPSec Protocols
