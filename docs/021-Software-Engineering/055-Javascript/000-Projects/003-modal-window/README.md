@@ -30,7 +30,7 @@ This is a simple page that I used for practicing Modal Buttons/Windows, Events L
 Choose a button to know which Pokemon are you!
 
 - [Live Demo](https://resplendent-paletas-098c18.netlify.app/) 
-- [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/010-Javascript/000-Projects/002-guess-my-number-game) 
+- [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/055-Javascript/000-Projects/002-guess-my-number-game) 
 
 
 Test it directly here:

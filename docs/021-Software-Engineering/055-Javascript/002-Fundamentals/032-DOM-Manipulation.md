@@ -20,7 +20,7 @@ When a web page loads, the browser creates the Document Object Model (DOM).
 - It lets JavaScript access and modify HTML elements  
 - The `document` object is how JavaScript interacts with the DOM  
 
-For more information, please see [Document Object Model (DOM).](/docs/021-Software-Engineering/010-Javascript/002-Fundamentals/031-DOM.md)
+For more information, please see [Document Object Model (DOM).](/docs/021-Software-Engineering/055-Javascript/002-Fundamentals/031-DOM.md)
 
 ## Selecting Elements 
 
@@ -34,7 +34,7 @@ These selectors are useful, but they return collections instead of single elemen
 
 :::info 
 
-This [sample HTML](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/010-Javascript/000-Projects/001-hello-world/003-DOM) will be used for the succeeding examples.
+This [sample HTML](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/055-Javascript/000-Projects/001-hello-world/003-DOM) will be used for the succeeding examples.
 
 :::
 
@@ -96,7 +96,7 @@ In this example, the object is retrieved using `querySelector`, and its attribut
 
 :::info 
 
-This [sample HTML](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/010-Javascript/000-Projects/001-hello-world/003-DOM) will be used for the succeeding examples.
+This [sample HTML](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/055-Javascript/000-Projects/001-hello-world/003-DOM) will be used for the succeeding examples.
 
 :::
 
@@ -163,8 +163,8 @@ XSS (Cross-Site Scripting) occurs when attackers inject malicious scripts into y
 
 Below are examples of vulnerable files:
 
-- [index.html](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/010-Javascript/000-Projects/001-hello-world/005-Comp-Sci-List)  
-- [script.js](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/010-Javascript/000-Projects/001-hello-world/005-Comp-Sci-List)  
+- [index.html](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/055-Javascript/000-Projects/001-hello-world/005-Comp-Sci-List)  
+- [script.js](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/055-Javascript/000-Projects/001-hello-world/005-Comp-Sci-List)  
 
 The HTML file is a basic webpage that includes an input field for searching courses and a button to trigger the search. 
 
@@ -228,7 +228,7 @@ This ensures the input is treated as plain text, preventing execution of harmful
 
 :::info 
 
-Sample Files: [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/010-Javascript/000-Projects/001-hello-world/003-DOM) 
+Sample Files: [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/055-Javascript/000-Projects/001-hello-world/003-DOM) 
 
 :::
 

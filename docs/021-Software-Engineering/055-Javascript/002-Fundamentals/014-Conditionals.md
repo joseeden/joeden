@@ -28,7 +28,7 @@ if (age >= 18) {
 
 ## Implicit Coercion
 
-In JavaScript, [type coercion](/docs/021-Software-Engineering/010-Javascript/002-Fundamentals/012-Strings.md#type-coercion) refers to the automatic or implicit conversion of values from one data type to another. JavaScript will attempt to convert one or both of the values to make the operation possible.
+In JavaScript, [type coercion](/docs/021-Software-Engineering/055-Javascript/002-Fundamentals/012-Strings.md#type-coercion) refers to the automatic or implicit conversion of values from one data type to another. JavaScript will attempt to convert one or both of the values to make the operation possible.
 
 It happens automatically, such as in `if` statements:
 

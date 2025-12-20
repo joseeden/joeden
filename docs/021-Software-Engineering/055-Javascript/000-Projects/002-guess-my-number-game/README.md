@@ -36,7 +36,7 @@ This is a simple number guessing game where you try to guess a number between 1 
 You can also explore:  
 
 - [Live Demo](https://profound-pothos-2eb284.netlify.app/) 
-- [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/010-Javascript/000-Projects/002-guess-my-number-game) 
+- [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/055-Javascript/000-Projects/002-guess-my-number-game) 
 
 
 Test it directly here:
