@@ -6,8 +6,8 @@ tags:
 - Application Development
 - Software Development
 - Web Development
-- Ruby on Rails
-sidebar_position: 16
+- Ruby
+sidebar_position: 6
 last_update:
   date: 8/24/2023
 ---
