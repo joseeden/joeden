@@ -66,6 +66,14 @@ Golang:
   label: 'Golang'
   permalink: '/Golang'
   description: 'Docs related to Golang'    
+Ruby:
+  label: 'Ruby'
+  permalink: '/Ruby'
+  description: 'Docs related to Ruby'    
+Ruby on Rails:
+  label: 'Ruby on Rails'
+  permalink: '/Ruby on Rails'
+  description: 'Docs related to Ruby on Rails'    
 REST APIs:
   label: 'REST APIs'
   permalink: '/REST APIs'
