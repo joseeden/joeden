@@ -164,7 +164,7 @@ You can create methods to handle hashing and verifying passwords for multiple us
 
 Note: If you already installed the gem using `bundler/inline` or through the `gem` utility, you don’t need to repeat it anymore.
 
-```bash
+```ruby
 require 'bundler/inline' 
 
 gemfile true do 
@@ -294,7 +294,7 @@ You can load the module in another file using:
 
 In this example, both `main.rb` and `crud.rb` are in the same directory:
 
-```bash
+```ruby
 003-Practice-03/
 ├── main.rb
 └── crud.rb 
@@ -302,7 +302,7 @@ In this example, both `main.rb` and `crud.rb` are in the same directory:
 
 The `main.rb` can use the `Crud` module to hash user passwords:
 
-```bash
+```ruby
 ## main.rb 
 
 require_relative 'crud'
@@ -339,3 +339,176 @@ Crud module used
 {username: "robin", password: "$2a$12$o5XpNQjCZy/Zy.tFkeaSseqwab9Jh8MNlqUATiH9E2qHrV9Qj0aom"}
 {username: "ted", password: "$2a$12$g7Lxzf2v2LJ5DiQwS7N31OA3cGaKAJjtWAYQMbW3sIIIzm/34EFTq"}
 ```
+
+## Class Method
+
+You can define module methods using `self.` notation. These are **class methods**, which means you can call them directly on the module without creating an object.
+
+- Prefix method names with `self.` inside the module
+- Methods can be called using `ModuleName.method_name`
+- Useful for utility methods that don’t need an object instance
+
+Example:
+
+```ruby
+## crud.rb 
+
+module Crud
+  require 'bcrypt'
+  puts "Crud module used"
+
+  def self.create_hash_digest(password)
+    BCrypt::Password.create(password)
+  end
+
+  def self.verify_hash_digest(password)
+    BCrypt::Password.new(password)
+  end
+
+  def self.create_secure_users(list_of_users)
+    list_of_users.each do |user_record|
+      user_record[:password] = create_hash_digest(user_record[:password])
+    end
+
+    list_of_users
+  end
+
+  def self.authenticate_user(username, password, list_of_users)
+    list_of_users.each do |user_record|
+      if user_record[:username] == username && verify_hash_digest(user_record[:password]) == password
+        return user_record
+      end 
+    end 
+
+    puts "Incorrect credentials."
+  end 
+end
+```
+
+You can call the methods directly from` main.rb` using the module name as a prefix. For example, to use `create_secure_users`, call it with `Crud.create_secure_users(...)`:
+
+```ruby
+## main.rb
+
+require_relative 'crud'
+
+users = [
+  { username: "adam", password: "adam123" },  
+  { username: "alex", password: "alex123" },  
+  { username: "bob", password: "bob123" },  
+  { username: "james", password: "james123" },  
+  { username: "john", password: "john123" },  
+  { username: "robin", password: "robin123" },  
+  { username: "ted", password: "ted123" }
+]
+
+hashed_users = Crud.create_secure_users(users)
+puts hashed_users
+```
+
+
+Running the script:
+
+```ruby
+ruby main.rb
+```
+
+Output:
+
+```ruby
+Crud module used
+{username: "adam", password: "$2a$12$UbQ6bVjFF5AtphY08eMKpOk2d79r6FjLxNxJfBDWy4jjN.PaQsWMK"}
+{username: "alex", password: "$2a$12$PQA5pHlI9fGH5jiwJ5XrguiN2gvJb2XGw7/kBTVNS2qXmRze3ntY."}
+{username: "bob", password: "$2a$12$.3CjelhDXP9QiGwv.0Qh.ON3cpaQR5XlvVH8cKA1/fRPr/40dSwyG"}
+{username: "james", password: "$2a$12$lvTQPD1hn7HQLfaJW4mFmO1nB4Xqgop79q7JpZK6XkRBQFDdc1pJC"}
+{username: "john", password: "$2a$12$wb0bAjc8BGhWHmMQEJEZxeFDvZ7bLLaNmyubNsD0X7qExMm7Pe6QG"}
+{username: "robin", password: "$2a$12$o5XpNQjCZy/Zy.tFkeaSseqwab9Jh8MNlqUATiH9E2qHrV9Qj0aom"}
+{username: "ted", password: "$2a$12$g7Lxzf2v2LJ5DiQwS7N31OA3cGaKAJjtWAYQMbW3sIIIzm/34EFTq"}
+```
+
+
+## Instance Method 
+
+Instance methods are defined without `self.`. To use them, you include the module in a class. This is called a **mixin**, and it allows objects of the class to access the module methods.
+
+Sample `Crud` module:
+
+```ruby
+## crud.rb 
+
+module Crud
+  require 'bcrypt'
+  puts "Crud module used"
+
+  def create_hash_digest(password)
+    BCrypt::Password.create(password)
+  end
+
+  def verify_hash_digest(password)
+    BCrypt::Password.new(password)
+  end
+
+  def create_secure_users(list_of_users)
+    list_of_users.each do |user_record|
+      user_record[:password] = create_hash_digest(user_record[:password])
+    end
+
+    list_of_users
+  end
+
+  def authenticate_user(username, password, list_of_users)
+    list_of_users.each do |user_record|
+      if user_record[:username] == username && verify_hash_digest(user_record[:password]) == password
+        return user_record
+      end 
+    end 
+
+    puts "Incorrect credentials."
+  end 
+end
+```
+
+To use the module methods as instance methods, you need to include the `Crud` module in the class and create an object of that class. In `student.rb`, the class `Student` includes Crud, so each student object can call methods like `create_hash_digest`.
+
+```ruby
+## student.rb
+
+require_relative 'crud' 
+
+class Student
+  include Crud 
+  attr_accessor :first_name, :last_name, :email, :username, :password
+
+  def initialize(first_name, last_name, email, username, password)
+    @first_name = first_name
+    @last_name = last_name
+    @email = email 
+    @username = username
+    @password = password
+  end
+
+  def to_s 
+    "Full name: #{@first_name} #{last_name}"
+  end
+end
+
+student1 = Student.new("Alex", "Smith", "alex.smith@abc.com", "alsmith", "alex123")
+
+hashed_pw_student1 = student1.create_hash_digest(student1.password)
+puts hashed_pw_student1
+```
+
+Running the script:
+
+```ruby
+ruby student.rb 
+```
+
+As expected, the script prints the banner `Crud module used` and outputs the hashed password.
+
+```ruby
+Crud module used
+$2a$12$GD/iKEv6l5aSuMpcQ3Zgvu5ORE.0DJrSvLF6mm91aCVrp40kUI032
+```
+
+This confirms that the `Student` object can access methods from the `Crud` module and shows how mixins let instance objects use reusable module methods.
