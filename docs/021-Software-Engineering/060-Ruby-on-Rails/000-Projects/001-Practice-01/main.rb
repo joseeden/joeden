@@ -116,4 +116,33 @@
 
 # 20.times { print "-" }
 # 10.times { puts "hello" }
-14.times { puts rand(10) }
+# 14.times { puts rand(10) }
+
+###-----------------------------------------
+
+## Operators
+
+# puts 10 == 10
+# puts 10 == 5
+# puts 10 != 5
+
+# puts "hello" == "hello"
+# puts "hello" == "helo"
+# puts "hello" == "bye"
+# puts "hello" != "bye"
+
+# puts 10 > 9
+
+# puts 23 < 23
+# puts 23 < 40
+
+# puts 101 >= 99
+# puts 101 >= 101
+
+# puts 98 <= 100
+# puts 98 <= 98
+
+# puts "" == " "
+
+
+puts 10.eql?(10.0)

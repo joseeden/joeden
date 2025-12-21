@@ -96,9 +96,9 @@ irb(main):003> greeting = "Hi there"
 ```
 
 
-## Running in VS Code 
+## Running the Script 
 
-VS Code can be used to run and test Ruby scripts easily.
+Any terminal can be used to run and test Ruby scripts easily. For this guide, we're using Visual Studio Code (VS Code).
 
 - Open the terminal in VS Code
 - Navigate to the folder containing your Ruby file
