@@ -8,7 +8,7 @@ tags:
 - Web Development
 - Ruby
 - Ruby on Rails
-sidebar_position: 2
+sidebar_position: 3
 last_update:
   date: 8/24/2023
 ---
