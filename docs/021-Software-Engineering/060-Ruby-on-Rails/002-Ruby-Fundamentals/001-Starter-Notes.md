@@ -415,3 +415,47 @@ Enter a radius for a circle:
 7
 The area of the circle is 153.86
 ```
+
+
+## Styling Conventions
+
+Styling in Ruby and Rails helps follow the same rules and keeps code consistent.
+
+- Use **snake_case** for method names and variables
+- Use **CamelCase** for class names
+- Indent with **two spaces**, not tabs or four spaces
+
+Snake case separates words with underscores and keeps everything lowercase. It is used for methods and variable names:
+
+```ruby
+def calculate_total
+  total_amount = 100
+  total_amount
+end
+```
+
+Camel case capitalizes the first letter of each word in class names, without underscores:
+
+```ruby
+class UserAccount
+end
+```
+
+Notes: 
+
+- Always use two spaces for indentation. 
+- Using four spaces can make the code look inconsistent.
+
+For class names, the first letter must be capitalized, while method names and variable names stay in snake case:
+
+```ruby
+class ProductItem
+  def item_price
+    50
+  end
+end
+```
+
+Ruby has its own style conventions that differ slightly from other languages like JavaScript, where method names often start lowercase in camel case. In Ruby, class names start with a capital letter, while method and variable names use snake case.
+
+Reference: [Ruby Style Guide](https://rubocop.org)
