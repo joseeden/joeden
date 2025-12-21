@@ -301,5 +301,84 @@
 # p tens.select { |item| item.even? }
 
 
-my_list = [11, 8, 5, 14, 10, 23, 28, 12]
-p my_list[3]
+# my_list = [11, 8, 5, 14, 10, 23, 28, 12]
+# p my_list[3]
+
+
+###-----------------------------------------
+
+## Hashes 
+
+# my_hash = {
+#   "name" => "James",
+#   "age" => 30,
+#   "city" => "New York"
+# }
+
+# p my_hash["name"] 
+# p my_hash.values
+
+
+# my_hash = {
+#   name: "James",
+#   age: 30,
+#   city: "New York"
+# }
+
+# # p my_hash[:name]
+# p my_hash.keys
+
+# my_hash.each do |key, value|
+#   puts "The class for the key \"#{key}\" is #{key.class}"
+# end
+
+
+# another_hash = {a: 28, b: 19, c: 23}
+# p another_hash
+
+# another_hash[:d] = 45
+# p another_hash
+
+
+# another_hash = {a: 28, b: 19, c: 23, d: 45}
+# p another_hash
+
+# ## update element with key :c
+# another_hash[:c] = 30
+# p another_hash
+
+
+# another_hash = {a: 28, b: 19, c: 23, d: 45}
+# p another_hash
+
+# ## remove element with key :b
+# another_hash.delete(:b)
+# p another_hash
+
+# another_hash = {a: 28, b: 19, c: 23, d: 45}
+# another_hash.each { |key, value| puts key }
+
+my_hash = {
+  name: "James",
+  age: 30,
+  city: "New York",
+  profession: "Developer",
+  id: 4006
+}
+
+# puts my_hash.select { |k,v| v.is_a?(String)}
+
+# puts my_hash.select do |k,v|
+#   print k,v if v.is_a?(String)
+# end
+
+# my_hash.select do |k,v|
+#   v.is_a?(String)
+# end
+
+
+# my_hash.each {
+#   |k,v| my_hash.delete(k) if v.is_a?(String)
+# }
+
+# p my_hash
