@@ -70,6 +70,17 @@
 # banner = "Welcome to Jurassic Park"
 # puts banner.sub("Jurassic Park", "Zootopia")
 
+
+# first_num = 4
+# second_num = 3
+
+# def multiply(first_num, second_num)
+#   return first_num.to_f * second_num.to_f
+# end
+
+# puts "The product of #{first_num} and #{second_num} is #{multiply(first_num, second_num)}"
+
+
 ###-----------------------------------------
 
 ## Escape 
@@ -145,4 +156,31 @@
 # puts "" == " "
 
 
-puts 10.eql?(10.0)
+# puts 10.eql?(10.0)
+
+###-----------------------------------------
+
+
+## Conditionals 
+
+# age = 18
+
+# if age >= 18
+#   puts "You are an adult."
+# else 
+#   puts "You are a minor."
+# end 
+
+# temperature = 30
+
+# if temperature > 25
+#   puts "It's a hot day!"
+# end
+
+score = 87
+
+if (score > 85 && score < 90) 
+  puts "Grade: A"
+elsif (score >= 70 && score <= 85)
+  puts "Grade: B"
+end

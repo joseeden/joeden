@@ -12,59 +12,18 @@ last_update:
   date: 8/24/2023
 ---
 
+## Running the Script
 
+All examples in this section are written in a `main.rb` file and executed from the terminal.
 
-## Methods 
-
-Methods help organize code into reusable actions.
-
-- Methods are defined using `def`
-- Methods are called by name
-- Methods can accept input values
-
-The examples will be written in a `main.rb` file. To run the file:
+To run the file:
 
 ```ruby
 ruby /path/to/your/main.rb
 ```
 
-## Parameters 
 
-Parameters allow methods to accept data and change behavior.
-
-- Without parameters:
-
-    ```ruby
-    def say_hello
-      puts "Nice to see you!"
-    end
-
-    say_hello
-    ```
-
-    Output:
-
-    ```ruby
-    Nice to see you!
-    ```
-
-- With parameters:
-
-    ```ruby
-    def say_hello(message)
-      puts message
-    end
-
-    say_hello("How is your day?")
-    ```
-
-    Output:
-
-    ```ruby
-    How is your day?
-    ```
-
-## Available Methods 
+## Check Available Methods 
 
 Ruby objects come with many built in methods.
 
@@ -289,3 +248,76 @@ This generates 10 randoms numbers in 14 times..
 3
 8
 ```
+
+## Custom Methods 
+
+Custom methods let you define your own reusable actions in Ruby.
+
+- Methods are defined using `def`
+- Methods are called by name
+- Methods can accept input values
+
+Basic method syntax:
+
+```bash
+def say_hello
+  puts "Nice to see you!"
+end
+
+say_hello
+```
+
+## Parameters 
+
+Parameters allow methods to accept data and change behavior.
+
+- Without parameters:
+
+    ```ruby
+    def say_hello
+      puts "Nice to see you!"
+    end
+
+    say_hello
+    ```
+
+    Output:
+
+    ```ruby
+    Nice to see you!
+    ```
+
+- With parameters:
+
+    ```ruby
+    def say_hello(message)
+      puts message
+    end
+
+    say_hello("How is your day?")
+    ```
+
+    Output:
+
+    ```ruby
+    How is your day?
+    ```
+
+- Multiple Parameters
+
+    ```ruby
+    first_num = 4
+    second_num = 3
+
+    def multiply(first_num, second_num)
+      return first_num.to_f * second_num.to_f
+    end
+
+    puts "The product of #{first_num} and #{second_num} is #{multiply(first_num, second_num)}"
+    ```
+
+    Output:
+
+    ```ruby
+    The product of 4 and 3 is 12.0
+    ```

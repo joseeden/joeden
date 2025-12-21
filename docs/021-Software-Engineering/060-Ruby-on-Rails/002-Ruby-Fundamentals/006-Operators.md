@@ -1,6 +1,6 @@
 ---
-title: "Methods and Operators"
-description: "Methods and Operators"
+title: "Operators"
+description: "Operators"
 tags: 
 - Computer Science
 - Application Development
@@ -11,6 +11,17 @@ sidebar_position: 6
 last_update:
   date: 8/24/2023
 ---
+
+## Running the Script
+
+All examples in this section are written in a `main.rb` file and executed from the terminal.
+
+To run the file:
+
+```ruby
+ruby /path/to/your/main.rb
+```
+
 
 ## Basic Arithmetic
 
