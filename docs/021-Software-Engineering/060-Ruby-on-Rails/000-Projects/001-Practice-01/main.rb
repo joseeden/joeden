@@ -160,7 +160,6 @@
 
 ###-----------------------------------------
 
-
 ## Conditionals 
 
 # age = 18
@@ -177,10 +176,130 @@
 #   puts "It's a hot day!"
 # end
 
-score = 87
+# score = 87
 
-if (score > 85 && score < 90) 
-  puts "Grade: A"
-elsif (score >= 70 && score <= 85)
-  puts "Grade: B"
-end
+# if (score > 85 && score < 90) 
+#   puts "Grade: A"
+# elsif (score >= 70 && score <= 85)
+#   puts "Grade: B"
+# end
+
+###-----------------------------------------
+
+## Arrays 
+
+# my_list = [11, 8, 5, 14, 10, 23, 28, 12]
+# puts my_list
+# print my_list
+# puts
+# print my_list
+# p my_list
+
+# my_list = [11, 8, 5, 14, 10, 23, 28, 12]
+# p my_list.last
+
+# my_list = [11, 8, 5, 14, 10, 23, 28, 12]
+# p my_list.first
+
+# my_list = [11, 8, 5, 14, 10, 23, 28, 12]
+# p my_list.include?(23)
+
+# my_list = ["apples", 23, 18, "oranges", "pears", 38, "kiwis"]
+# p my_list.include?("bananas")
+
+# hundred = 1..100 
+# p hundred.to_a
+
+# hundred = 1..100 
+# p hundred.to_a.shuffle
+
+# my_letters = "a".."z"
+# new_letters = my_letters.to_a
+# p new_letters.length
+
+# my_letters = "a".."z"
+# new_letters = my_letters.to_a
+# p new_letters.size
+
+# tens = (1..10).to_a 
+# p tens
+# p tens.reverse!
+# p tens
+
+# tens = (1..10).to_a 
+# p tens 
+
+# tens <<  24
+# p tens 
+
+# tens.push(16)
+# p tens 
+
+# tens.append(13)
+# p tens 
+
+# tens.unshift(34)
+# p tens
+
+# tens.unshift("Hello")
+# p tens
+
+# tens = (1..10).to_a 
+# tens.append(13)
+# tens.unshift(13)
+# p tens
+# p tens.uniq!
+# p tens
+
+
+# my_list = ["apples", 23, 18, "oranges", "pears", 38, "kiwis"]
+# p my_list
+
+# p my_list.pop
+# p my_list.pop
+# p my_list.pop
+
+# p my_list
+
+
+# my_list = ["apples", 23, 18, "oranges", "pears", 38, "kiwis"]
+# foo = my_list.join("-")
+# # p foo
+
+# bar = foo.split("-")
+# p bar
+
+# tens = 1..10
+# p tens.to_a
+
+
+# p %w(Dinosaurs eat Man. Woman inherits the earth)
+
+# my_list = ["apples", 23, 18, "oranges", "pears", 38, "kiwis"]
+
+# for items in my_list 
+#   p items 
+# end
+
+
+# my_list = ["apples", 23, 18, "oranges", "pears", 38, "kiwis"]
+
+# my_list.each do |item|
+#    p item 
+# end
+
+# my_list = ["apples", 23, 18, "oranges", "pears", 38, "kiwis"]
+
+# my_list.each { |item| p item }
+
+
+# tens = 1..10
+# tens = tens.to_a
+# p tens
+
+# ### print just the odd numbers
+# p tens.select { |item| item.even? }
+
+
+my_list = [11, 8, 5, 14, 10, 23, 28, 12]
+p my_list[3]
