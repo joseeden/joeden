@@ -13,9 +13,17 @@ last_update:
 ---
 
 
-## Install Ruby on Rails
+## Installation
 
-1. **Install Ruby:**
+1. **Install the dependencies:**
+
+    - NodeJS and NPM: [Download Node.js](https://nodejs.org/en/download)
+
+    - Yarn (JS Package manager): [Install via npm](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)
+    
+    - RVM (Ruby Version Manager): [Installing RVM](https://rvm.io/rvm/install)
+
+2. **Install Ruby:**
 
     - For Windows, see the official [Install Ruby on Rails Guide](https://guides.rubyonrails.org/install_ruby_on_rails.html#install-ruby-on-windows).
 
@@ -41,7 +49,7 @@ last_update:
       sudo apt-get install ruby-full
       ```
 
-2. **Verify Ruby install:**
+3. **Verify Ruby install:**
 
     - Verify it works by running:
 
@@ -55,15 +63,21 @@ last_update:
       ruby 2.5.0
       ```
 
-3. **Install Rails:**
+4. **Install Rails:**
 
-    - Use Ruby's gem command to install Rails and its dependencies from [RubyGems.org](https://rubygems.org/).
+    - Use Ruby's gem command to install Rails and its dependencies from [RubyGems.org](https://rubygems.org/):
 
       ```ruby
       gem install rails
       ```
 
-    - To verify that Rails is installed correctly
+      If you want to specify a version, use the `-v` flag:
+      
+      ```ruby
+      gem install rails -v <version-number>
+      ```
+
+    - To verify that Rails is installed correctly:
 
       ```ruby
       rails --version
@@ -72,7 +86,59 @@ last_update:
       Sample output:
 
       ```ruby
-      Rails 6.1.7.4
+      Rails 6.0.2.1
+      ```
+
+    - To list gems:
+
+      ```bash
+      gem list rails 
+      ```
+
+      Output:
+
+      ```bash
+      *** LOCAL GEMS ***
+
+      rails (6.0.2.1)
+      rails-dom-testing (2.3.0)
+      rails-html-sanitizer (1.3.0)
+      sprockets-rails (3.2.1)
+      ```
+
+5. **(Optional) Setting a default Ruby version:**
+
+    - Check for available rubies online:
+
+      ```ruby
+      rvm list known
+      ```
+
+    - Check for ruby installed on your machine:
+
+      ```ruby
+      rvm list rubies 
+      ```
+
+      The star (`*`) indicates the default global, while the hash rocket (`=>`) indicates current version installed:
+
+      ```bash
+          ruby-2.1.5 [ x86_64 ] 
+          ruby-2.2.0 [ x86_64 ] 
+          ruby-2.2.1 [ x86_64 ] 
+          ruby-2.3.3 [ x86_64 ] 
+      *   ruby-2.5.1 [ x86_64 ] 
+      =>  ruby-2.6.3 [ x86_64 ] 
+
+      # => - current
+      # =* - current && default 
+      #  * - default
+      ```
+
+    - To set the default Ruby version:
+
+      ```bash
+      rvm --default use <version-number> 
       ```
 
 

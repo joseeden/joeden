@@ -127,3 +127,52 @@ app/
 ```
 
 You will also see files like `application.html.erb` which look like normal HTML but include embedded Ruby code. This layout ties views into the MVC structure.
+
+## Create a Rails App 
+
+> Make sure have [installed Ruby and Rails](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/001-Starter-Notes.md#installation).
+
+To create a Rails application, run the following command in your terminal:
+
+```bash
+rails new test_rails_app 
+```
+
+If you have a specific version that you want the Rails app to use, you can do:
+
+```bash
+rails _<version-number> new test_rails_app 
+
+# Example:
+rails _5.2.1.4_ new test_rails_app
+```
+
+After your application is created, switch to its directory:
+
+```bash
+cd test_rails_app 
+```
+
+To start the server:
+
+```bash
+rails server 
+
+# Another way 
+rails s
+```
+
+Open a web browser and navigate to:
+
+```bash
+http://localhost:3000
+```
+
+The default Rails welcome page is displayed.  This confirms the application is running and the root route is active.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2025-12-22-054251.png)
+
+</div>
+
