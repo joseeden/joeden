@@ -162,431 +162,220 @@ This starts with `10`, calls `next` twice to get `12`, then `pred` to return `11
 
 Method chaining works because every returned value is an object with its own methods. 
 
-## `inspect` 
+## Predicate Methods
 
-The `inspect` method converts an object into a string representation that is useful for debugging. It shows more technical details than the regular `puts` method.
+Predicate methods, also called **Boolean methods**, are methods that return a Boolean value. They ask an object a question about itself.
 
-- Converts an object to a detailed string
-- Used internally by the `p` method
+- Predicate methods return `true` or `false`
+- Method names usually end with a question mark `?`
+- The question mark is part of the name, not a special symbol
 
-Example: 
+Some common predicate methods:
+
+- `.odd?` checks if a number is odd
+- `.even?` checks if a number is even
+- `.positive?` checks if a number is positive
+- `.negative?` checks if a number is negative
+
+Examples:
 
 ```ruby
-str = "Hello\nWorld"
+puts 10.odd?       # false
+puts 11.odd?       # true
+puts 1.even?       # false
+puts 2.even?       # true
+puts 10.positive?  # true
+puts 10.negative?  # false
+puts -8.positive?  # false
+puts -8.negative?  # true
+```
 
-puts str
-p str
+## Methods with Arguments 
+
+Some Ruby methods need input values, called **arguments**, to work. These arguments tell the method what to do.
+
+- Arguments are passed to a method for it to process
+- Methods may require one, more, or no arguments
+- Parentheses around arguments are optional but can improve clarity
+
+Example:
+
+```ruby
+food = "Big Mac"
+
+puts food.include?("B")   # true
+puts food.include?("M")   # true
+puts food.include?("z")   # false
+puts food.include?("b")   # false
+```
+
+Notes: 
+
+- `include?` checks if a string contains a given value
+- The argument is the value to search for
+- Case matters in string comparisons
+
+If you call a method with the wrong number of arguments, Ruby will raise an error:
+
+```ruby
+puts food.include?            # ArgumentError: wrong number of arguments (given 0, expected 1)
+puts food.include?("B", "M")   # ArgumentError: wrong number of arguments (given 2, expected 1)
+```
+
+You can also call methods with or without parentheses:
+
+```ruby
+puts food.include?("B")
+puts food.include?"B"
+```
+
+Both work the same way. Using parentheses is optional but recommended for methods with arguments to improve readability.
+
+
+## Methods with Multiple Arguments
+
+Some Ruby methods need more than one input to work. These inputs help the method make a clear decision.
+
+When a method takes multiple arguments, Ruby follows clear syntax rules.
+
+- Arguments are separated by commas
+- Order of arguments matters
+- Parentheses improve readability
+
+Example using `between?` :
+
+```ruby
+puts 20.between?(10, 30)
 ```
 
 Output:
 
 ```bash
-Hello
-World
-"Hello\nWorld"
+true 
 ```
 
-In this example, `p str` is equivalent to `str.inspect`. It shows escape characters and quotes, which gives a more technical view of the object. The `inspect` method works on any Ruby object, not just strings.
+Parentheses are optional, but they make the code easier to read, especially when multiple arguments are involved.
 
-:::info 
 
-Using `p` is just a shortcut for calling `inspect` and displaying the result.
+### `between?`
 
-:::
+The `between?` method checks if a number falls within a range.
 
-## `class` 
+- Works on integers and floats
+- Takes two arguments
+- Includes the start and end values
 
-Every value in Ruby has a type that describes what it is.
-
-- Types describe the kind of data
-- You can check types using `.class`
-- Different values have different types
-
-Example with a string variable:
+The first argument is the lower limit, and the second argument is the upper limit. Ruby uses both to decide if the value fits in the range.
 
 ```ruby
-first_name = "Adam"
-puts first_name.class
+puts 20.between?(10, 30)
+puts 20.between?(10, 15)
 ```
 
 Output:
 
-```ruby
-String
-```
-
-More examples:
-
-- Using a value
-
-    ```ruby
-    puts "Taylor".class
-    ```
-
-    Output:
-
-    ```ruby
-    String
-    ```
-
-- Using an integer
-
-    ```ruby
-    puts 10.class
-    ```
-
-    Output:
-
-    ```ruby
-    Integer
-    ```
-
-- Using a float 
-
-    ```ruby
-    puts 10.0.class
-    ```
-
-    Output:
-
-    ```ruby
-    Float
-    ```
-
-
-
-
-## `length` 
-
-You can measure the size of a string using `length`. This counts all the characters, including spaces.
-
-```ruby
-first_name = "Maximilian"
-last_name = "Jefferson"
-full_name = first_name + " " + last_name
-puts full_name
-puts full_name.length
-```
-
-Output:
-
-```ruby
-Maximilian Jefferson
-20
-```
-
-## `reverse` 
-
-Strings can be reversed using a built in  `reverse` method.
-
-```ruby
-first_name = "Maximilian"
-last_name = "Jefferson"
-full_name = first_name + " " + last_name
-puts full_name
-puts full_name.reverse
-```
-
-Output:
-
-```ruby
-Maximilian Jefferson
-nosreffeJ nailimixaM
-```
-
-This is useful when you need to manipulate or inspect text in different ways.
-
-## `capitalize` 
-
-The `capitalize` method formats text by adjusting letter case. It capitalizes the first letter but lowercases the rest.
-
-```ruby
-first_name = "maximilian"
-last_name = "jefferson"
-full_name = first_name + " " + last_name
-puts full_name
-puts full_name.capitalize
-```
-
-Output:
-
-```ruby
-maximilian jefferson
-Maximilian jefferson
-```
-
-
-
-## `empty?` 
-
-You can check whether a string contains any characters using `empty?`.
-
-```ruby
-first_name = "maximilian"
-last_name = "jefferson"
-full_name = first_name + " " + last_name
-puts full_name.empty?
-puts "".empty?
-```
-
-Output:
-
-```ruby
+```bash
+true
 false
+```
+
+Note that the `between?` method includes the boundaries meaning both start and end value.
+
+```ruby
+puts 20.between?(20, 30)
+puts 20.between?(10, 20)
+```
+
+Output:
+
+```bash
+true
 true
 ```
 
-An empty string is different from `nil`. You can check for `nil` like this:
+If the number matches either boundary, Ruby still returns true. This confirms that the range is inclusive.
+
+
+### Using `between?` with Floats and Negatives
+
+The same rules apply to floats and negative numbers.
 
 ```ruby
-puts "".nil?
-puts nil.nil?
+puts 1.2.between?(1.1, 1.3)
+puts (-10).between?(-13, -8)
+puts (-8.3).between?(-9.5, -7.2)
 ```
 
 Output:
 
-```ruby
-false
+```bash
+true
+true
 true
 ```
 
+No matter the numeric type, Ruby applies the same logic to determine if the value fits the range.
 
-## `sub`
 
-The `sub` method replaces the specified part of a string.
 
-```ruby
-banner = "Welcome to Jurassic Park"
-puts banner.sub("Jurassic Park", "Zootopia")
-```
+## Arguments in Other Methods
 
-Output:
+Top-level methods like `puts` also take arguments:
 
 ```ruby
-Welcome to Zootopia
-```
-
-
-
-## `times` 
-
-The `times` method is useful for repeating actions a specific number of times.
-
-```ruby
-20.times { print "-" }
-```
-
-This prints the "-" ...
-
-Output:
-
-```ruby
---------------------
-```
-
-Another exampke is..
-
-```ruby
-10.times { puts "hello" } 
-```
-
-This prints.. on separate lines..
-
-```ruby
-hello
-hello
-hello
-hello
-hello
-hello
-hello
-hello
-hello
-hello 
-```
-
-You can also print random numbers using `rand`..
-
-```bash
-14.times { puts rand(10) } 
-```
-
-This generates 10 randoms numbers in 14 times..
-
-```bash
-8
-8
-1
-7
-7
-8
-9
-2
-5
-0
-9
-6
-3
-8
-```
-
-## `gets` 
-
-The `gets` method lets you collect input from the user. You can save the input to a variable and use it in your program.
-
-Example: 
-
-```ruby
-puts "Hi, what's your name?"
-name = gets.chomp
-# User types "Alice"
-
-puts "Your name is #{name}."
+puts "Double Whopper", "Triple Whopper"
 ```
 
 Output:
 
 ```bash
-Your name is Alice.
+Double Whopper
+Triple Whopper
 ```
 
-`gets` captures what the user types, including the enter key as a newline. Using `.chomp` removes that newline so the output is clean.
+Notes: 
 
-You can also collect multiple inputs and use string interpolation to display them:
+- `"Double Whopper"` and `"Triple Whopper"` are arguments to `puts`
+- Arguments are separated by commas
+- Parentheses can be used but are often omitted 
 
-```ruby
-puts "Hi, what's your name?"
-name = gets.chomp
-# User types "Alice"
 
-puts "What's your age?"
-age = gets.chomp
-# User types "25" 
+## Commonly Used Methods 
 
-puts "Your name is #{name} and you are #{age} years old."
-```
+Here are some commonly used methods in Ruby:
 
-Output:
+- `class`
+- `length` 
+- `times`
+- `gets`
+- `sub` 
 
-```bash
-Your name is Alice and you are 25 years old.
-```
-
-The value from `gets` is always a string. This works well for display, but for calculations you need to convert it to an integer first.
-
-## Converting Objects
-
-Ruby allows you to convert objects between different types. This is useful when you want to perform operations on data that is in a different format.
-
-- `to_i` converts a string or float to an integer
-- `to_f` converts a string or integer to a float
-- `to_s` converts an integer or float to a string
-
-Example: 
-
-```ruby
-text = "5"
-puts text.class         # Output: String
-
-number = text.to_i
-puts number.class       # Output: Integer
-
-text2 = "15 apples"
-puts text2.to_i         # Output: 15
-
-number2 = 5
-puts number2.to_f       # Output: 5.0
-
-float_val = 0.9
-puts float_val.to_s     # Output: "0.9"
-```
-
-Conversions create new objects without changing the original. For example, `to_i` on a string makes a new integer, but the string stays the same.
-
-- Works if the string starts with numbers, even with extra text
-- Returns 0 for `to_i` and 0.0 for `to_f` if no numeric content is found
-- Safe to use on objects that are already that type
-
-Example: 
-
-```ruby
-puts "apples 15".to_i   # Output: 0
-puts 10.to_i            # Output: 10
-puts 3.14.to_f          # Output: 3.14
-puts "hello".to_s       # Output: "hello"
-```
-
-Ruby lets you call these conversion methods on any type safely. This is called **polymorphism**, meaning you can focus on what an object can do (its methods) rather than what class it is.
+Reference: [Common Methods.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/006-Common-Methods.md)
 
 ## Custom Methods 
 
-Custom methods let you define your own reusable actions in Ruby.
+We can define a method using the `def` and `end` keywords. Everything between `def` and `end` is the method body.
 
-- Methods are defined using `def`
-- Methods are called by name
-- Methods can accept input values
-
-Basic method syntax:
-
-```bash
-def say_hello
-  puts "Nice to see you!"
+```ruby
+def jurassic_park
+  puts "Welcome to Jurassic Park"
+  puts "Dinosaurs are alive again"
+  puts "Please stay on the tour path"
 end
-
-say_hello
 ```
 
-## Parameters 
+To call the method, write the method name:
 
-Parameters allow methods to accept data and change behavior.
+```bash
+jurassic_park
+```
 
-- Without parameters:
+Output:
 
-    ```ruby
-    def say_hello
-      puts "Nice to see you!"
-    end
+```bash
+Welcome to Jurassic Park
+Dinosaurs are alive again
+Please stay on the tour path
+```
 
-    say_hello
-    ```
-
-    Output:
-
-    ```ruby
-    Nice to see you!
-    ```
-
-- With parameters:
-
-    ```ruby
-    def say_hello(message)
-      puts message
-    end
-
-    say_hello("How is your day?")
-    ```
-
-    Output:
-
-    ```ruby
-    How is your day?
-    ```
-
-- Multiple Parameters
-
-    ```ruby
-    first_num = 4
-    second_num = 3
-
-    def multiply(first_num, second_num)
-      return first_num.to_f * second_num.to_f
-    end
-
-    puts "The product of #{first_num} and #{second_num} is #{multiply(first_num, second_num)}"
-    ```
-
-    Output:
-
-    ```ruby
-    The product of 4 and 3 is 12.0
-    ```
+For more information, please see [Custom Methods.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/007-Custom-Methods.md)

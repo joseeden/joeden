@@ -7,7 +7,7 @@ tags:
 - Software Development
 - Web Development
 - Ruby
-sidebar_position: 14
+sidebar_position: 23
 last_update:
   date: 8/24/2023
 ---
@@ -86,7 +86,7 @@ puts str.lenght
 
 Output:
 
-```bash
+```ruby
 undefined method 'lenght' for an instance of String (NoMethodError)
 Did you mean?  length
 ```
@@ -100,10 +100,49 @@ puts num.length
 
 Output:
 
-```bash
+```ruby
 undefined method 'length' for an instance of Integer (NoMethodError)
 ```
 
+
+
+## `ArgumentError`
+
+This exception occurs when... 
+
+Consider the method below: 
+
+```ruby
+def dinosaur_name(name)
+  puts "#{name} is powerful"
+  puts "#{name} is legendary"
+  puts "#{name} rules the park"
+end
+```
+
+If you call the method without passing an argument: 
+
+```ruby
+dinosaur_name
+```
+
+This returns:
+
+```
+'dinosaur_name': wrong number of arguments (given 0, expected 1) (ArgumentError)
+```
+
+Similarly, if you provide too many arguments:
+
+```ruby
+praise_dinosaur("Rex", "Blue")
+```
+
+Output:
+
+```
+'dinosaur_name': wrong number of arguments (given 2, expected 1) (ArgumentError)
+```
 
 ## Ruby’s Hint Feature
 
