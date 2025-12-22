@@ -13,7 +13,7 @@ last_update:
   date: 8/24/2023
 ---
 
-##  Overview
+## Overview
 
 > Make sure have [installed Ruby and Rails](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/001-Starter-Notes.md#installation).
 
