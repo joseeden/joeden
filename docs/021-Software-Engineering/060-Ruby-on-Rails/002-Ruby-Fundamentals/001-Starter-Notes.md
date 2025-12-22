@@ -216,6 +216,175 @@ Output will stay on the same line without adding a new line automatically. Alway
 - `print` does not
 
 
+## Comments 
+
+Comments are lines in Ruby that are ignored when the program runs. They help developers leave notes, explanations, or temporarily disable code.
+
+```ruby
+# This adds two numbers together
+puts 1 + 1
+```
+
+Output:
+
+```
+2
+```
+
+You can also comment out lines in the code to temporarily stop them from running
+
+```ruby
+# puts 1 + 1
+puts 2 + 2
+# puts 3 + 3
+```
+
+Output:
+
+```
+4
+```
+
+Comments can also come after valid code on the same line:
+
+```ruby
+puts 2 + 2 # This will still output 4
+```
+
+Output:
+
+```
+4
+```
+
+Ruby executes the code before the `#` and ignores the rest of the line.
+
+## Multi-Line Comments
+
+An alternative syntax is to use `=begin` and `=end` for mult-line comments. Everything between these markers is treated as a comment.
+
+```ruby
+=begin
+This is a multi-line comment
+You can write many lines here
+Ruby will ignore all of it
+=end
+
+puts 1 + 3
+```
+
+Output:
+
+```
+4
+```
+
+This is useful for multiple lines of text, but the Ruby community prefers using `#` for each line.
+
+## `nil` 
+
+`nil` is a special object in Ruby that represents nothing or the absence of a value. It is used to model emptiness in programs while still being a real object.
+
+- Still an object with methods and memory
+- Often returned by methods that have no meaningful result
+
+Example: 
+
+```ruby
+value = nil
+
+puts value
+p value
+```
+
+Output:
+
+```bash
+nil
+```
+
+`puts` shows nothing because `nil` has no string representation, while `p` displays `nil` for clarity.
+
+Every method in Ruby returns an object. For example:
+
+```ruby
+result = puts "Hello"
+p result
+```
+
+Output:
+
+```bash
+Hello
+nil
+```
+
+Here, `puts` prints "Hello" but returns `nil` because it has no value to give back. `nil` acts as a placeholder for nothing.
+
+
+
+## Integers
+
+Integers are whhole numbers without decimals.
+
+- Can be positive, negative, or zero
+- Can use underscores for readability
+
+Example: 
+
+```ruby
+num = 1000
+puts num
+```
+
+Output: 
+
+```
+1000
+```
+
+Underscores can be used to make large numbers easier to read but don’t affect the value:
+
+```ruby
+num = 1_000_000
+puts num
+```
+
+Output: 
+
+```
+1000000
+```
+
+## Floats
+
+Floating-Point Numbers or Floats are mumbers with a decimal point.
+
+- Can be positive or negative
+- Requires a zero before the decimal if between -1 and 1
+- Floats store fractions, useful for partial values
+
+Example: 
+
+```ruby
+pi = 3.14
+half = 0.50
+negative_fraction = -0.93
+
+puts pi
+puts half
+puts negative_fraction
+```
+
+Output: 
+
+```
+3.14
+0.5
+-0.93
+```
+
+
 ## Strings 
 
 Strings are used to store and display text in Ruby.
@@ -266,127 +435,9 @@ Output:
 My first name is #{first_name} and my last name is #{last_name}
 ```
 
-Strings let you work with text clearly, whether you are combining words or inserting values.
-
-## Type 
-
-Every value in Ruby has a type that describes what it is.
-
-- Types describe the kind of data
-- You can check types using `.class`
-- Different values have different types
-
-Example with a string variable:
-
-```ruby
-first_name = "Adam"
-puts first_name.class
-```
-
-Output:
-
-```ruby
-String
-```
-
-More examples:
-
-- Using a value
-
-    ```ruby
-    puts "Taylor".class
-    ```
-
-    Output:
-
-    ```ruby
-    String
-    ```
-
-- Using an integer
-
-    ```ruby
-    puts 10.class
-    ```
-
-    Output:
-
-    ```ruby
-    Integer
-    ```
-
-- Using a float 
-
-    ```ruby
-    puts 10.0.class
-    ```
-
-    Output:
-
-    ```ruby
-    Float
-    ```
 
 
-## Variables
 
-Variables store values that you can reuse in your program.
-
-- Assign a value using `=`
-- Use `puts` to display the variable
-
-Example:
-
-```ruby
-greeting = "Hey there!"
-puts greeting
-```
-
-Output:
-
-```ruby
-Hey there!
-```
-
-Variables can be given new values at any time.
-
-- Variables hold references to values
-- Assigning a new value does not affect other variables
-- Each variable updates independently
-
-Example:
-
-```ruby
-first_name = "Adam"
-new_first_name = "James"
-puts new_first_name
-```
-
-Output:
-
-```ruby
-James
-```
-
-Reassigning the original variable does not change the other one:
-
-```ruby
-first_name = "Adam"
-new_first_name = "James"
-puts new_first_name
-
-first_name = "Chris"
-puts new_first_name
-```
-
-Output:
-
-```ruby
-James
-James
-```
-
-This shows that variables store values, not links to other variables.
 
 ## Escape Characters
 
