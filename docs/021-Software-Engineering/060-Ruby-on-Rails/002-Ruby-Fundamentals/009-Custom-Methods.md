@@ -7,10 +7,12 @@ tags:
 - Software Development
 - Web Development
 - Ruby
-sidebar_position: 7
+sidebar_position: 9
 last_update:
   date: 8/24/2023
 ---
+
+
 
 ## Methods
 

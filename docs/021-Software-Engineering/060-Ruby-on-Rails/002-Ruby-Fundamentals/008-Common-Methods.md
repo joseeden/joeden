@@ -7,10 +7,12 @@ tags:
 - Software Development
 - Web Development
 - Ruby
-sidebar_position: 6
+sidebar_position: 8
 last_update:
   date: 8/24/2023
 ---
+
+
 
 ## Converting Objects
 

@@ -13,16 +13,6 @@ last_update:
 ---
 
 
-## Running the Script
-
-All examples in this section are written in a `main.rb` file and executed from the terminal.
-
-To run the file:
-
-```ruby
-ruby /path/to/your/main.rb
-```
-
 
 ## Creating an Array
 

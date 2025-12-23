@@ -325,7 +325,7 @@ Here, `puts` prints "Hello" but returns `nil` because it has no value to give ba
 
 ## Integers
 
-Integers are whhole numbers without decimals.
+Integers are whole numbers without decimals.
 
 - Can be positive, negative, or zero
 - Can use underscores for readability
@@ -384,56 +384,6 @@ Output:
 -0.93
 ```
 
-
-## Strings 
-
-Strings are used to store and display text in Ruby.
-
-- Strings are written inside quotes
-- Strings can be joined together
-- Strings can include variables
-
-Example using string joining:
-
-```ruby
-first_name = "Adam"
-last_name = "Taylor"
-puts first_name + " " + last_name
-```
-
-Output:
-
-```ruby
-Adam Taylor
-```
-
-You can also use string interpolation to place variables inside a string:
-
-```ruby
-first_name = "Adam"
-last_name = "Taylor"
-puts "My first name is #{first_name} and my last name is #{last_name}"
-```
-
-Output:
-
-```ruby
-My first name is Adam and my last name is Taylor
-```
-
-String interpolation only works with double quotes. Using single quotes prints the text as is:
-
-```ruby
-first_name = "Adam"
-last_name = "Taylor"
-puts 'My first name is #{first_name} and my last name is #{last_name}'
-```
-
-Output:
-
-```ruby
-My first name is #{first_name} and my last name is #{last_name}
-```
 
 
 

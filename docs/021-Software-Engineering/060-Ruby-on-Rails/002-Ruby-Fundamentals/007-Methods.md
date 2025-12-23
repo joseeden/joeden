@@ -7,20 +7,11 @@ tags:
 - Software Development
 - Web Development
 - Ruby
-sidebar_position: 5
+sidebar_position: 7
 last_update:
   date: 8/24/2023
 ---
 
-## Running the Script
-
-All examples in this page are written in a `main.rb` file and executed from the terminal.
-
-To run the file:
-
-```ruby
-ruby /path/to/your/main.rb
-```
 
 ## Objects and Methods 
 
@@ -350,7 +341,7 @@ Here are some commonly used methods in Ruby:
 - `gets`
 - `sub` 
 
-Reference: [Common Methods.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/006-Common-Methods.md)
+Reference: [Common Methods.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/008-Common-Methods.md)
 
 ## Custom Methods 
 
@@ -378,4 +369,4 @@ Dinosaurs are alive again
 Please stay on the tour path
 ```
 
-For more information, please see [Custom Methods.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/007-Custom-Methods.md)
+For more information, please see [Custom Methods.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/009-Custom-Methods.md)
