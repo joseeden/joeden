@@ -33,7 +33,7 @@ Conditionals let a program choose which code to run based on a condition.
 - The `else` keyword runs code if all previous conditions are false
 - Only one block of code runs in an `if`-`elsif`-`else` chain
 
-## `if`
+### `if`
 
 The `if` statement runs code only when a condition is true.
 
@@ -59,7 +59,7 @@ end
 
 Nothing is printed. This allows your program to take different paths depending on a condition.
 
-## `elsif`
+### `elsif`
 
 `elsif` lets you check additional conditions if the first `if` is false.
 
@@ -87,7 +87,7 @@ Notes:
 - Only the first true condition runs
 - You can have multiple `elsif` checks
 
-## `else`
+### `else`
 
 `else` runs code when all previous conditions are false. It is guaranteed to execute if nothing else matched.
 
@@ -174,16 +174,12 @@ The OR operator allows an if statement to run when at least one condition is tru
 - Used inside if statements
 - Requires only one condition to be true
 
-The main idea is that OR gives flexibility by not forcing every condition to pass.
-
 Note that OR behaves differently from AND: 
 
 - AND requires **all conditions** to be true
 - OR requires **at least one condition** to be true
 
-### Basic OR example
-
-For example, making a decision based on food type or price.
+Example: Making a decision based on food type or price.
 
 - One condition checks the food name
 - Another condition checks the price
@@ -392,3 +388,303 @@ end
 ```
 
 This approach avoids mixing operators on one line while still following the same precedence rules.
+
+## Nested `if` Statements 
+
+A nested `if` statement is an `if` statement placed inside another `if` statement, where the inner logic only runs when the outer condition is true.
+
+- One `if` is placed inside another `if`
+- Outer condition is checked first
+- Inner condition runs only `if` the outer one passes
+
+Nested `if` statements are useful when decisions depend on related conditions.
+
+- First check narrows the scenario
+- Second check refines the outcome
+- Repeated checks are avoided
+
+By grouping logic this way, the code becomes easier to follow and keeps related conditions together.
+
+Here is a simple example that recommends a meal based on the type of day and the time of day.
+
+| Day type | Time of day | Recommended meal |
+| -------- | ----------- | ---------------- |
+| Weekday  | Morning     | Cereal           |
+| Weekday  | Night       | Noodles          |
+| Weekend  | Morning     | Pancakes         |
+| Weekend  | Night       | Grill            |
+
+
+Notes: 
+
+- Day type is checked first
+- Time of day is checked second
+- Result depends on both values
+
+Code: 
+
+```ruby
+def meal_plan(day_type, time_of_day)
+  if day_type == "weekday"
+    if time_of_day == "morning"
+      "cereal"
+    elsif time_of_day == "night"
+      "noodles"
+    end
+  elsif day_type == "weekend"
+    if time_of_day == "morning"
+      "pancakes"
+    elsif time_of_day == "night"
+      "grill"
+    end
+  end
+end
+```
+
+Each inner `if` runs only after the outer condition is true, which keeps the logic clear and intentional.
+
+- Weekday morning follows the first nested path
+- Weekday night follows the second nested path
+- Weekend night follows a different branch
+
+Code: 
+
+```ruby
+puts meal_plan("weekday", "morning")
+puts meal_plan("weekday", "night")
+puts meal_plan("weekend", "night")
+```
+
+Output:
+
+```text
+cereal
+noodles
+grill
+```
+
+## Ternary Operator 
+
+The ternary operator is a shortcut for simple if else statements. It is called “ternary” because it has three parts: 
+
+- a condition
+- a value if true
+- a value if false
+
+The ternary operator follows this pattern:
+
+- Condition first
+- Question mark `?` separates the true value
+- Colon `:` separates the false value
+
+Example: 
+
+```ruby
+puts 1 < 2 ? "Yes, it is" : "No, it's not"
+```
+
+Output:
+
+```text
+Yes, it is
+```
+
+Here, Ruby checks if `1 < 2`:
+
+- If true, it returns `"Yes, it is"`. 
+- If false, it returns `"No, it's not"`.
+
+### Assigning Result to a Variable
+
+Ternary expressions can be stored in variables just like any other expression.
+
+```ruby
+value = 1 < 2 ? "Yes, it is" : "No, it's not"
+puts value
+```
+
+This works the same as an if else, but keeps the code concise and readable.
+
+Output:
+
+```text
+Yes, it is
+```
+
+### Using Ternary with Strings 
+
+Ternary operators can work with strings, numbers, or any Ruby object.
+
+```ruby
+word = "Yes".downcase
+puts word == "yes" ? "The words match" : "The words do not match"
+```
+
+Output:
+
+```text
+The words match
+```
+
+If you change `word` to `"No"`, Ruby will output `"The words do not match"`.
+
+## Calling Methods from Other Methods
+
+In Ruby, you can call one method from another. This helps break complex logic into smaller, manageable pieces and makes your code easier to read.
+
+**Example: A Simple Calculator**
+
+We can create separate methods for addition, subtraction, and multiplication, and then call them from a main `calculator` method.
+
+```ruby
+def add(a, b)
+  a + b
+end
+
+def subtract(a, b)
+  a - b
+end
+
+def multiply(a, b)
+  a * b
+end
+
+def calculator(a, b, operation)
+  if operation == "add"
+    add(a, b)
+  elsif operation == "subtract"
+    subtract(a, b)
+  elsif operation == "multiply"
+    multiply(a, b)
+  else
+    "That's not an available math operation, genius"
+  end
+end
+```
+
+Testing the calculator:
+
+```ruby
+puts calculator(3, 5, "add")        
+puts calculator(10, 20, "subtract") 
+puts calculator(8, 7, "multiply")   
+puts calculator(2, 3, "divide")     
+```
+
+Each method handles its own logic, and the `calculator` method just calls the right one. 
+
+Output:
+
+```bash
+8
+-10
+56
+That's not an available math operation, genius
+```
+
+## Using `case` 
+
+`case` statements reduce repetitive code when checking one variable against many options.
+
+Using the example below, we can use a `case` statement to rate different food items with strings like "delicious" or "disgusting".
+
+- Each food item gets its own when clause
+- Multiple items can share the same response
+- Optional else handles unmatched values
+
+Code: 
+
+```ruby
+def rate_my_food(food)
+  case food
+  when "steak"
+    "Delicious, pass the steak sauce"
+  when "sushi"
+    "Awesome, my favorite food"
+  when "tacos", "burritos", "quesadillas"
+    "Cheesy and filling, perfect combination"
+  when "tofu", "Brussels sprouts"
+    "Disgusting, yuck"
+  else
+    "I don't know about that food item"
+  end
+end
+```
+
+Testing the method: 
+
+```ruby
+puts rate_my_food("steak")        
+puts rate_my_food("sushi")        
+puts rate_my_food("burritos")     
+puts rate_my_food("yogurt")       
+```
+
+Ruby stops checking once it finds a match, which makes the code shorter and easier to read. 
+
+Output:
+
+```bash
+Delicious, pass the steak sauce
+Awesome, my favorite food
+Cheesy and filling, perfect combination
+I don't know about that food item
+```
+
+## Using `unless`
+
+The `unless` keyword is like an opposite of `if`. It runs code only when a condition is false.
+
+`unless` focuses on the false scenario, instead of flipping conditions in an `if` statement.
+
+#### Example: Password Check
+
+We can use `unless` to handle cases when a password is incorrect.
+
+- Condition is false → code runs
+- Condition is true → code is skipped
+- Optional `else` runs when the condition is true
+
+Code: 
+
+```ruby
+user_password = "StarWars"
+actual_password = "whiskers"
+
+unless user_password == actual_password
+  puts "Incorrect password"
+else
+  puts "Welcome to the system"
+end
+```
+
+`unless` executes the block only if the condition is false. In this example, because "StarWars" is not equal to "whiskers", the "Incorrect password" message is printed.
+
+Output:
+
+```
+Incorrect password
+```
+
+
+
+#### Example: Checking String Content
+
+`unless` can also check if a string does not include a certain character.
+
+```ruby
+password = "securepass"
+
+unless password.include?("A")
+  puts "Password does not include the letter A"
+end
+```
+
+This block runs only if the password does **not** contain "A", which shows the inverse logic in a simple way.
+
+Output:
+
+```
+Password does not include the letter A
+```
+

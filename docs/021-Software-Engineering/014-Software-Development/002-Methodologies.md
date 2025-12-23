@@ -36,7 +36,7 @@ After defining requirements, developers create a technical design that shows how
 
 ## Waterfall Model
 
-Once requirements are established, developers can begin building the software using different methodologies. One traditional method is the **Waterfall*- model, which follows these steps:
+Once requirements are established, developers can begin building the software using different methodologies. One traditional method is the **Waterfall** model, which follows these steps:
 
 1. Define system requirements
 2. Create software requirements
