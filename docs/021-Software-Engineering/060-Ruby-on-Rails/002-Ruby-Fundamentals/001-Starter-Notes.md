@@ -218,7 +218,7 @@ Output will stay on the same line without adding a new line automatically. Alway
 
 ## Comments 
 
-Comments are lines in Ruby that are ignored when the program runs. They help developers leave notes, explanations, or temporarily disable code.
+Comments are lines that are ignored when the program runs. They help developers leave notes, explanations, or temporarily disable code.
 
 ```ruby
 # This adds two numbers together
@@ -283,7 +283,7 @@ This is useful for multiple lines of text, but the Ruby community prefers using 
 
 ## `nil` 
 
-`nil` is a special object in Ruby that represents nothing or the absence of a value. It is used to model emptiness in programs while still being a real object.
+`nil` is a special object  that represents nothing or the absence of a value. It is used to model emptiness in programs while still being a real object.
 
 - Still an object with methods and memory
 - Often returned by methods that have no meaningful result

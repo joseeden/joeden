@@ -197,7 +197,7 @@ Output:
 
 ## Letters Range 
 
-We can also create a range of letters in Ruby:
+We can also create a range of letters:
 
 ```ruby
 my_letters = "a".."z"
@@ -552,7 +552,7 @@ output
 
 ## Convert to Array
 
-There are different ways to turn data into arrays in Ruby.
+There are different ways to turn data into array:
 
 - `to_a` works with ranges
 - Strings cannot use `to_a`

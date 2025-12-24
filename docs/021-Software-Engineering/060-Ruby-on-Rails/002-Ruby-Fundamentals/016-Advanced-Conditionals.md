@@ -80,7 +80,7 @@ If you change `word` to `"No"`, Ruby will output `"The words do not match"`.
 
 ## Calling Methods from Other Methods
 
-In Ruby, you can call one method from another. This helps break complex logic into smaller, manageable pieces and makes your code easier to read.
+You can call one method from another. This helps break complex logic into smaller, manageable pieces and makes your code easier to read.
 
 **Example: A Simple Calculator**
 

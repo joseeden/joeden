@@ -1,6 +1,6 @@
 ---
 title: "Exceptions"
-description: "Exceptions in Ruby"
+description: "Exceptions"
 tags: 
 - Computer Science
 - Application Development

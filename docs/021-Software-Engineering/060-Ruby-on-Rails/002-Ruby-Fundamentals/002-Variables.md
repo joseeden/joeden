@@ -1,6 +1,6 @@
 ---
 title: "Variables"
-description: "Variables in Ruby"
+description: "Variables"
 tags: 
 - Computer Science
 - Application Development
