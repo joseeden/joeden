@@ -188,97 +188,97 @@ true
 
 String concatenation in means joining one string with another to form a single piece of text. There are various ways to concatenate strings.
 
-1. **Using the plus operator**
+### Using the Plus Operator
 
-    The `+` operator combines strings into a new one, while keeping the original strings unchanged, which helps preserve original data.
+The `+` operator combines strings into a new one, while keeping the original strings unchanged, which helps preserve original data.
 
-    Example: 
+Example: 
 
-    ```ruby
-    first_name = "James"
-    last_name = "Smith"
+```ruby
+first_name = "James"
+last_name = "Smith"
 
-    full_name = first_name + " " + last_name
-    puts full_name
-    puts first_name
-    ```
+full_name = first_name + " " + last_name
+puts full_name
+puts first_name
+```
 
-    Output:
+Output:
 
-    ```
-    James Smith
-    James
-    ```
+```
+James Smith
+James
+```
 
-2. **Reassigning with plus equals**
+### Reassigning with Plus-Equals
 
-    The `+=` operator joins strings and updates the original variable, which is a quick way to overwrite values.
+The `+=` operator joins strings and updates the original variable, which is a quick way to overwrite values.
 
-    ```ruby
-    first_name = "James"
-    last_name = "Smith"
+```ruby
+first_name = "James"
+last_name = "Smith"
 
-    first_name += " " + last_name
-    puts first_name
-    ```
+first_name += " " + last_name
+puts first_name
+```
 
-    Output:
+Output:
 
-    ```
-    James Smith
-    ```
+```
+James Smith
+```
 
-3. **Using the concat method**
+### Using the Concat Method
 
-    The concat method changes the original string in place, so the variable now holds the new combined value.
+The concat method changes the original string in place, so the variable now holds the new combined value.
 
-    Example: 
+Example: 
 
-    ```ruby
-    first_name = "James"
-    last_name = "Smith"
+```ruby
+first_name = "James"
+last_name = "Smith"
 
-    first_name.concat(" ").concat(last_name)
-    puts first_name
-    ```
+first_name.concat(" ").concat(last_name)
+puts first_name
+```
 
-    Output:
+Output:
 
-    ```
-    James Smith
-    ```
-
-
-4. **Using the prepend method**
-
-    The prepend method modifies the original string by adding new content before it, which permanently changes its value.
-
-    ```ruby
-    name = "Smith"
-    name.prepend("James ")
-    puts name
-    ```
-
-    Output:
-
-    ```
-    James Smith
-    ```
+```
+James Smith
+```
 
 
-5. **Using the shovel operator**
+### Using the Prepend Method
 
-    The shovel operator (`<<`) is a symbolic alternative to concat. It appends text directly to the original string and is useful when building strings step by step.
+The prepend method modifies the original string by adding new content before it, which permanently changes its value.
 
-    ```ruby
-    title = "Engineer "
-    title << "Senior "
-    title << "Level"
-    puts title
-    ```
+```ruby
+name = "Smith"
+name.prepend("James ")
+puts name
+```
 
-    Output:
+Output:
 
-    ```
-    Engineer Senior Level
-    ```
+```
+James Smith
+```
+
+
+### Using the Shovel Operator
+
+The shovel operator (`<<`) is a symbolic alternative to concat. It appends text directly to the original string and is useful when building strings step by step.
+
+```ruby
+title = "Engineer "
+title << "Senior "
+title << "Level"
+puts title
+```
+
+Output:
+
+```
+Engineer Senior Level
+```
