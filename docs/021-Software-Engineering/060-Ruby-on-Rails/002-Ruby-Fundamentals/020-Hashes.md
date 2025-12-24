@@ -138,7 +138,7 @@ d
 ```
 
 
-## Add an Element 
+## Adding an Element 
 
 To add an element to a hash, simply assign a value to a new key.
 
@@ -158,7 +158,7 @@ Output:
 {a: 28, b: 19, c: 23, d: 45}
 ```
 
-## Update an Element
+## Updating an Element
 
 To update an existing element in a hash, assign a new value to the existing key.
 
@@ -179,7 +179,7 @@ Output:
 ```
 
 
-## Remove an Element
+## Removing an Element
 
 To remove an element from a hash, use the `delete` method with the key you want to remove.
 

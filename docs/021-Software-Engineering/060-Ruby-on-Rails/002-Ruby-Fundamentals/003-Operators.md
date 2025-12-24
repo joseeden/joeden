@@ -7,12 +7,10 @@ tags:
 - Software Development
 - Web Development
 - Ruby
-sidebar_position: 5
+sidebar_position: 3
 last_update:
   date: 8/24/2023
 ---
-
-
 
 ## Arithmetic
 

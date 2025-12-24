@@ -7,7 +7,7 @@ tags:
 - Software Development
 - Web Development
 - Ruby
-sidebar_position: 10
+sidebar_position: 35
 last_update:
   date: 8/24/2023
 ---
