@@ -12,15 +12,14 @@ last_update:
   date: 8/24/2023
 ---
 
-## Index Position
-
-Every string in Ruby is made of ordered characters, with each character being assigned a number based on its order, called **index position.**
 
 ## Extracting Characters
 
 ### Zero-based Indexing 
 
-Index positions in Ruby always start at zero.
+Every string in Ruby is made of ordered characters, with each character being assigned a number based on its order, called **index position.**
+
+Additionally, index positions in Ruby always start at zero.
 
 - First character is index 0
 - Second character is index 1
@@ -73,7 +72,7 @@ e
 ```
 
 
-### Accessing Characters with Square Brackets
+### Using Square Brackets
 
 Square brackets are the most common way to read a character by index.
 
@@ -188,7 +187,7 @@ once upon a time
 
 ## Extracting Multiple Characters
 
-### Using Index and Length with Square Brackets
+### Index and Length with Brackets
 
 This syntax lets you pull out a sequence of characters.
 
