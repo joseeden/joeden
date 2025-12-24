@@ -1,13 +1,13 @@
 ---
 title: "Blocks"
-# description: "Blocks"
+description: "Blocks"
 tags: 
 - Computer Science
 - Application Development
 - Software Development
 - Web Development
 - Ruby
-sidebar_position: 35
+sidebar_position: 41
 last_update:
   date: 8/24/2023
 ---

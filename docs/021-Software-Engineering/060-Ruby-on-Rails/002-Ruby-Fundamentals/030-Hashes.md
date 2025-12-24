@@ -7,7 +7,7 @@ tags:
 - Software Development
 - Web Development
 - Ruby
-sidebar_position: 20
+sidebar_position: 30
 
 last_update:
   date: 8/24/2023
@@ -15,7 +15,6 @@ last_update:
 
 
 ## Hashes 
-
 
 Hashes are like dictionaries that store data in key-value pairs.
 
@@ -57,7 +56,6 @@ Output:
 
 ## Symbols 
 
-
 Symbols are a lighter, faster alternative to strings for keys.
 
 - Defined with `:`
@@ -97,7 +95,7 @@ Output:
 
 ## Iterators 
 
-can loop through a hash to process keys and values.
+Iterators can loop through a hash to process keys and values.
 
 - `each` is the preferred method
 - Works with key and value

@@ -7,7 +7,7 @@ tags:
 - Software Development
 - Web Development
 - Ruby
-sidebar_position: 30
+sidebar_position: 45
 last_update:
   date: 8/24/2023
 ---
@@ -341,7 +341,7 @@ Here are some commonly used methods in Ruby:
 - `gets`
 - `sub` 
 
-Reference: [Common Methods.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/031-Common-Methods.md)
+Reference: [Common Methods.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/046-Common-Methods.md)
 
 ## Custom Methods 
 
@@ -369,4 +369,4 @@ Dinosaurs are alive again
 Please stay on the tour path
 ```
 
-For more information, please see [Custom Methods.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/032-Custom-Methods.md)
+For more information, please see [Custom Methods.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/047-Custom-Methods.md)
