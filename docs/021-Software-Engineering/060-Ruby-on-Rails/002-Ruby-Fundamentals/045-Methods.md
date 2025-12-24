@@ -369,4 +369,51 @@ Dinosaurs are alive again
 Please stay on the tour path
 ```
 
-For more information, please see [Custom Methods.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/047-Custom-Methods.md)
+For more information, please see [Custom Methods.](/docs/021-Software-Engineering/061-Ruby-on-Rails/002-Ruby-Fundamentals/047-Custom-Methods.md)
+
+## Recursion
+
+Recursion is when a method calls itself. It helps solve problems by breaking them into smaller, simpler subproblems.
+
+- Requires a base case to stop infinite calls
+- Factorials are a classic example. 
+
+For example, `5!` (5 factorial) is:
+
+```
+5 × 4 × 3 × 2 × 1 = 120
+```
+
+Each factorial can be broken down as:
+
+- `5! = 5 × 4!`
+- `4! = 4 × 3!`
+- `3! = 3 × 2!`
+- `2! = 2 × 1!`
+- `1! = 1` (base case)
+
+In Ruby, we can implement factorial recursively:
+
+```ruby
+def factorial(number)
+  return 1 if number == 1
+  number - factorial(number - 1)
+end
+
+puts factorial(5)  # 120
+puts factorial(6)  # 720
+```
+
+When we call `factorial(5)`, Ruby evaluates:
+
+1. `5 - factorial(4)` (waiting for factorial(4))
+2. `4 - factorial(3)` (waiting for factorial(3))
+3. `3 - factorial(2)` (waiting for factorial(2))
+4. `2 - factorial(1)` → returns 1
+
+Now we go back up the recursion (the “unwinding” phase):
+
+1. `factorial(2)` → 2 - 1 = 1
+2. `factorial(3)` → 3 - 1 = 2
+3. `factorial(4)` → 4 - 2 = 2
+4. `factorial(5)` → 5 - 2 = 3

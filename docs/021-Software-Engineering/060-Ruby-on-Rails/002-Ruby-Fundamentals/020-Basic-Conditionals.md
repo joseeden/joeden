@@ -111,9 +111,9 @@ Ruby allows you to require more than one condition to be true before code runs.
 
 - Multiple conditions can be placed in a single `if` statement
 - All conditions must evaluate to true
-- The AND operator is written as `&&`
 
-The AND operator tells Ruby to continue only when every condition passes, otherwise the logic is skipped.
+
+The AND operator (`&&`) tells Ruby to continue only when every condition passes, otherwise the logic is skipped.
 
 In the example below, a simple login check is performed using two conditions. Both the username and password must match the expected values for access to be granted.
 
