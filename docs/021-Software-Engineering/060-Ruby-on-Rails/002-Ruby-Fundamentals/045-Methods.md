@@ -369,7 +369,7 @@ Dinosaurs are alive again
 Please stay on the tour path
 ```
 
-For more information, please see [Custom Methods.](/docs/021-Software-Engineering/061-Ruby-on-Rails/002-Ruby-Fundamentals/047-Custom-Methods.md)
+For more information, please see [Custom Methods.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/047-Custom-Methods.md)
 
 ## Recursion
 
