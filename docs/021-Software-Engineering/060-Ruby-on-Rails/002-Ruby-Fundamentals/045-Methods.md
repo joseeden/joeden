@@ -417,3 +417,124 @@ Now we go back up the recursion (the “unwinding” phase):
 2. `factorial(3)` → 3 - 1 = 2
 3. `factorial(4)` → 4 - 2 = 2
 4. `factorial(5)` → 5 - 2 = 3
+
+
+## Recursive String Reversal
+
+Let's say we want to create our own method that reverses a string. There are two ways we can do this:
+
+1. Iteratively, using a loop
+2. Using recursive string reversal
+
+Starting with using a loop:
+
+- Start from the last character
+- Move backward one character at a time
+- Build a new string as you go
+
+Code:
+
+```ruby
+def reverse_text(text)
+  first_index = 0
+  last_index = text.length - 1
+  reversed_text = ""
+
+  while last_index >= first_index
+    reversed_text << text[last_index]
+    last_index -= 1
+  end
+
+  reversed_text
+end
+
+puts reverse_text("straw")
+```
+
+Output:
+
+```text
+warts
+```
+
+Now let’s solve the same problem using recursive string reversal. Instead of looping, the method calls itself with a shorter string each time until a stopping condition is met.
+
+- Take the last character
+- Reverse the remaining string
+- Combine the results
+
+Let's use the word "straw" as an example:
+
+```bash
+reverse_text("straw") 
+w + reverse_text("stra") 
+       a + reverse_text("str") 
+               r + reverse_text("st") 
+                       t + reverse_text("s") 
+```
+
+When the method reaches "s", the string length is one. A single character reversed is still the same character, so this becomes the base case.
+
+At this point, recursion stops and the return values start moving back up the call stack.
+
+The code will look like this:
+
+```ruby
+def reverse_text(text)
+  return text if text.length == 1
+
+  last_char = text[-1]
+  remainder = text[0, text.length - 1]
+
+  last_char + reverse_text(remainder)
+end
+
+puts reverse_text("straw")
+```
+
+Explanation:
+
+1. This line gets the last character of the string. For "straw", this is "w".
+
+    ```bash
+    last_char = text[-1]
+    ```
+
+2. This line gets the remaining characters before the last one. For "straw", this becomes "stra".
+
+    ```bash
+    remainder = text[0, text.length - 1]
+    ```
+
+3. This line performs the recursive step by combining the last character with the reversed remainder.
+
+    ```bash
+    last_char + reverse_text(remainder)
+    ```
+
+4. That logic matches this execution flow:
+
+    ```bash
+    w + reverse_text("stra") 
+          a + reverse_text("str") 
+                  r + reverse_text("st") 
+                          t + reverse_text("s")  
+                          t + s
+    ```
+
+5. Once "s" is reached, the base case runs and returns the character immediately.
+
+    ```bash
+    return text if text.length == 1
+    ```
+
+6. The results then combine as they return upward, producing the final reversed string.
+
+Each recursive call places one character in its final position and relies on the base case to stop cleanly and complete the reversal.
+
+Output:
+
+```text
+warts
+```
+
