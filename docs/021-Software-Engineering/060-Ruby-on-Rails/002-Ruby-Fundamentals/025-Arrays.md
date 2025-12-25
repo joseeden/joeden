@@ -13,143 +13,152 @@ last_update:
 ---
 
 
+## Overview
 
-## Creating an Array
+Arrays are useful  for storing multiple items in a specific order. You can use it to keep things organized and access them by their position.
 
-Arrays store multiple values in one variable.
+- Arrays store items in sequence
+- Arrays are objects and have methods you can use
 
-```ruby
-my_list = [11, 8, 5, 14, 10, 23, 28, 12]
-puts my_list
-```
-
-`puts` prints each element on a new line, which makes arrays easier to read.
+Arrays are mutable, so you can add, remove, or change items later. Ruby preserves the order of items, and the length shows how many items are inside.
 
 ```ruby
-11
-8
-5
-14
-10
-23
-28
-12
-```
+numbers = []       # empty array
+p numbers          
 
-
-Using `print` does not add a new line.
-
-```ruby
-print my_list
-print my_list
+numbers = [4, 8, 15, 16, 23, 42]
+p numbers          
+p numbers.length   
 ```
 
 Output:
 
-```ruby
-[11, 8, 5, 14, 10, 23, 28, 12][11, 8, 5, 14, 10, 23, 28, 12]
+```bash
+[]
+[]
+
+[4, 8, 15, 16, 23, 42]
+6
 ```
 
-We can manually add a new line with `puts`.
+You can mix types, but usually arrays hold similar items. 
+
+For example, a shopping list:
 
 ```ruby
-print my_list
-puts
-print my_list
-```
-
-Output:
-
-```ruby
-[11, 8, 5, 14, 10, 23, 28, 12]
-[11, 8, 5, 14, 10, 23, 28, 12]
-```
-
-Using `p` shows the array exactly as it is stored.
-
-```ruby
-p my_list
-p my_list
+shopping_list = ["teddy bear", "water gun", "board game"]
+p shopping_list     
 ```
 
 Output:
 
-```ruby
-[11, 8, 5, 14, 10, 23, 28, 12]
-[11, 8, 5, 14, 10, 23, 28, 12]
+```bash
+["teddy bear", "water gun", "board game"]
 ```
+
+Arrays can also hold booleans or duplicates:
+
+```ruby
+attendees = [true, true, false, true, false]
+p attendees         
+```
+
+Output:
+
+```bash
+[true, true, false, true, false]
+```
+
+## Nested Arrays 
+
+Arrays can also contain other arrays. This is useful for modeling structured data like tables.
+
+- Each inner array can represent one row
+- The outer array keeps all rows in order
+
+A common use case is representing a table, similar to a spreadsheet. Each row is an array, and all rows are stored inside one main array. 
+
+```ruby
+spreadsheet = [
+  ["student", "class", "grade"],
+  ["Alex", "computer science", 95],
+  ["Jamie", "physics", 45]
+]
+
+p spreadsheet
+```
+
+Output:
+
+```text
+[["student", "class", "grade"], ["Alex", "computer science", 95], ["Jamie", "physics", 45]]
+```
+
+You can also assign each row to its own variable using parallel assignment.
+
+```ruby
+## arrays.rb
+header_row, first_row, second_row = spreadsheet
+
+p header_row
+p first_row
+p second_row
+```
+
+Run the file:
+
+```bash
+ruby arrays.rb  
+```
+
+Ruby processes the array one element at a time. Since each element is a nested array, the first nested array is assigned to `header_row`, the second to `first_row`, and the last to `second_row`.
+
+Output:
+
+```text
+["student", "class", "grade"]
+["Alex", "computer science", 95]
+["Jamie", "physics", 45]
+```
+
+
+## Shorthand for Arrays of strings
+
+The standard way is to list each string with quotes and separate them with commas.
+
+```ruby
+names = ["Ted", "Barney", "Robin", "Marshall", "Lily"]
+p names
+```
+
+Output:
+
+```text
+["Ted", "Barney", "Robin", "Marshall", "Lily"]
+```
+
+When the array only contains strings, you can use the `%w` shorthand. This removes the need for quotes and commas.
+
+```ruby
+names = %w[Ted Barney Robin Marshall Lily]
+p names
+```
+
+Output:
+
+```text
+["Ted", "Barney", "Robin", "Marshall", "Lily"]
+```
+
+In this shorthand form, each word separated by a space becomes a string element in the array. The `%w` tells Ruby to treat everything inside the brackets as strings automatically, which keeps array declarations clean while still preserving order.
+
 
 
 ## Accessing an Element
 
-We can get specific items from an array. For example, we can get the last item in the array:
+Arrays keep items in a fixed order, just like characters in a string. Ruby tracks this order using index positions that start at zero (`0`)
 
-```ruby
-my_list = [11, 8, 5, 14, 10, 23, 28, 12]
-p my_list.last
-```
-
-Output:
-
-```ruby
-12
-```
-
-To get the first element:
-
-```ruby
-p my_list.first
-```
-
-Output:
-
-```ruby
-11
-```
-
-To get a specific item, we can use its index:
-
-```ruby
-my_list = [11, 8, 5, 14, 10, 23, 28, 12]
-p my_list[3]
-```
-
-Output:
-
-```ruby
-14
-```
-
-Index counting always begins at `0`, so index `3` refers to the fourth item in the array.
-
-
-## Check if Element exists
-
-We can check whether an array contains a value by using `include?`.
-
-```ruby
-my_list = [11, 8, 5, 14, 10, 23, 28, 12]
-p my_list.include?(23)
-```
-
-Output:
-
-```ruby
-true
-```
-
-Arrays can also contain mixed types. When searching for a string, make sure to use double quotes for the string:
-
-```ruby
-mixed = ["apples", 23, 18, "oranges"]
-p mixed.include?("bananas")
-```
-
-Output:
-
-```ruby
-false
-```
+For more information, please see [Array Indexing.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/026-Array-Indexing.md)
 
 ## Numbers Range  
 
@@ -379,11 +388,11 @@ Output:
 Prepending shifts all existing elements to the right and changes the array.
 
 
-## Pop 
+## `pop` 
 
 We can remove items from the end of an array using `pop`.
 
-**NOTE:** The array is always mutated
+**NOTE:** The array is always mutated.
 
 Example:
 
@@ -426,11 +435,11 @@ Output:
 Unlike some methods, `pop` always mutates the array without needing a bang.
 
 
-## Duplicates 
+## `uniq` 
 
-To remove duplicates from an array, use `uniq` method...
+You can remove repeated elements in an array using the `uniq` method.
 
-in example below, the number `13` exists at the start and end...
+In the example below, the number `13` is added at the start (via `append`) and at the end (via `unshift`) of the array:
 
 ```ruby
 tens = (1..10).to_a 
@@ -439,19 +448,15 @@ tens.unshift(13)
 p tens
 ```
 
-output
+Output:
 
 ```ruby
 [13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13]
 ```
 
-can use `uniq` ..
+Using the `uniq` method returns a new array with duplicates removed:
 
 ```ruby
-tens = (1..10).to_a 
-tens.append(13)
-tens.unshift(13)
-
 p tens.uniq
 ```
 
@@ -461,14 +466,9 @@ output
 [13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 
-
-note that simply adding it doesnt make changes permanent, as seen when printed again...
+Note that simply adding it doesnt make changes permanent, as seen when `tens` is printed again after running `tens.uniq`:
 
 ```ruby
-tens = (1..10).to_a 
-tens.append(13)
-tens.unshift(13)
-
 p tens
 p tens.uniq
 p tens 
@@ -482,12 +482,9 @@ output
 [13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13]
 ```
 
-to make permanent, use the bang (`!`)..
+To make the changes permanent, use the bang (`!`):
 
 ```ruby
-tens = (1..10).to_a 
-tens.append(13)
-tens.unshift(13)
 p tens
 p tens.uniq!
 p tens 
@@ -501,50 +498,51 @@ output
 [13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 
-## Join and Split
+## `join`
 
-short intro..
+We can combine array elements into a string using `join`:
 
 ```ruby
 my_list = ["apples", 23, 18, "oranges", "pears", 38, "kiwis"]
 p my_list.join
 ```
 
-outptu 
+Output:
 
 ```ruby
 "apples2318orangespears38kiwis" 
 ```
 
-We can also add a separator..
+We can also add a separator between elements when joining them into a single string:
 
 ```ruby
 my_list = ["apples", 23, 18, "oranges", "pears", 38, "kiwis"]
 p my_list.join("-")
 ```
 
-outptu 
+Output:
 
 ```ruby
 "apples-23-18-oranges-pears-38-kiwis"
 ```
 
-The other way is to split...in this example, result is stored to variable `foo`..
+
+## `split` 
+
+We can also split a joined string back into an array. Here, the variable `foo` contains the following string:
 
 ```ruby
-my_list = ["apples", 23, 18, "oranges", "pears", 38, "kiwis"]
-foo = my_list.join("-")
-p foo 
+foo = "apples-23-18-oranges-pears-38-kiwis"
 ```
 
-Lets say we want to get all items joined by "-",..we can..
+If we want to break the items to an array separated by "-", we can use `split`:
 
 ```ruby
 bar = foo.split("-")
 p bar
 ```
 
-output 
+Output:
 
 ```ruby
 ["apples", "23", "18", "oranges", "pears", "38", "kiwis"]
@@ -673,7 +671,7 @@ All methods iterate through the array, but `each` follows Ruby conventions.
     ```
 
 
-## Select Operator 
+## `select` Operator 
 
 We can filter values from an array based on a condition.
 
