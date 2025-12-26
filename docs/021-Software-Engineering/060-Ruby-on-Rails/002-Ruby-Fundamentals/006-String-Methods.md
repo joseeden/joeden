@@ -12,138 +12,131 @@ last_update:
   date: 8/24/2023
 ---
 
+## `count`
+
+The `count` method lets you find how many times a character or set of characters appears in a string.
+
+```ruby
+text = "Hello World"
+
+puts text.count("l")        # Output: 3
+puts text.count("w")        # Output: 0
+puts text.count("lo")       # Output: 5
+puts text.count("Wl")       # Output: 4
+```
+
+Notes: 
+
+- Searching for `"l"` counts only lowercase `L`
+- `"lo"` counts all lowercase `L`'s and `O`'s combined, not sequences
+- `"Wl"` counts uppercase `W` and lowercase `L` together
+
+
+## `reverse`
+
+Calling `reverse` returns a new string where all characters appear in the opposite order, while the original string remains unchanged.
+
+```ruby
+word = "Ruby"
+value = "A1#b"
+
+puts word.reverse
+puts value.reverse
+```
+
+The output shows that `reverse` simply changes character order without altering character types or casing.
+
+```
+ybuR
+b#1A
+```
+
 ## `insert`
 
-The `insert` method lets you add new characters into a string at a specific position without removing existing characters.
+The `insert` method adds characters into a string at a specific position without removing or replacing existing characters.
 
-- Targets a specific index position
-- Adds characters without overwriting existing ones
-- Mutates the original string
+- Adds characters at a chosen index
+- Works with one or multiple characters
+- Can use positive or negative indexes
 
-Unlike direct index assignment, `insert` shifts existing characters to the right instead of replacing them. This makes it useful for fixing typos or adding missing characters while keeping the original content intact.
+Examples: 
 
-### Inserting at a Specific Index
+1. Inserting at a specific index:
 
-You can insert one or more characters at a chosen index position.
+    ```ruby
+    text = "GorgeWashington"
+    text.insert(5, "e ")
+    puts text
+    ```
+
+    Output:
+
+    ```
+    George Washington
+    ```
+
+2. Inserting multiple characters: 
+
+
+    ```ruby
+    text = "RubyIsFun"
+    text.insert(4, " Really ")
+    puts text
+    ```
+
+    Output:
+
+    ```
+    Ruby Really IsFun
+    ```
+    
+3. Using negative indexes:
+
+    ```ruby
+    text = "George Washigto"
+    text.insert(-1, "n")
+    puts text
+    ```
+
+    Output:
+
+    ```
+    George Washington
+    ```
+
+
+## `delete`
+
+The `delete` method removes characters from a string. You can target one or more characters, and it will remove all occurrences.
+
+For example, if you have `"cottage cheese"` and want to remove all lowercase `"c"`:
 
 ```ruby
-text = "GorgeWashington"
-text.insert(5, "e ")
-puts text
+text = "cottage cheese"
+text.delete("c")
 ```
 
 Output:
 
+```bash
+"ottage heese"
 ```
-George Washington
-```
 
-Here, index `5` is where the capital `W` was originally located. The inserted characters are added at that position, and all existing characters are shifted to the right. This keeps the original characters while correcting the string.
-
-### Inserting Multiple Characters
-
-The `insert` method is not limited to a single character.
-
-- Multiple characters can be added at once
-- Characters are inserted exactly at the given index
-- Existing characters remain unchanged
-
-Example: 
+You can also remove multiple characters at once. For `"c"` and `"e"`:
 
 ```ruby
-text = "GorgeWashington"
-text.insert(5, "e ")
-puts text
+text = "cottage cheese"
+text.delete("ce")
+# => "ottag hs"
 ```
 
 Output:
 
-```
-George Washington
-```
-
-
-### Using Negative Indexes 
-
-Negative indexes allow insertion relative to the end of the string.
-
-- `-1` targets the last character
-- Useful for appending missing characters
-- Follows the same mutation behavior
-
-
-Example: 
-
-```ruby
-text = "George Washigto"
-text.insert(-1, "n")
-puts text
+```bash
+"ottag hs"
 ```
 
-Output:
-
-```
-George Washington
-```
-
-In this case, `-1` refers to the last character in the string, and the new character is added at that position without affecting the rest of the string.
-
-
-
-## `empty?`
-
-The `empty?` method checks whether a string has zero characters.
-
-- Returns true for strings with no characters
-- Returns false for strings with any content
-- Treats spaces as characters
-
-An empty string is still a valid string object, but it contains no characters. Any character, including spaces or symbols, means the string is not empty.
-
-```ruby
-text1 = ""
-text2 = "A"
-text3 = " "
-
-puts text1.empty?
-puts text2.empty?
-puts text3.empty?
-```
-
-Output:
-
-```
-true
-false
-false
-```
-
-This shows that only strings with no characters return true, reinforcing that `empty?` checks for content inside a string.
-
-## `nil?`
-
-The `nil?` method checks whether an object is the `nil` object.
-
-- Available on all Ruby objects
-- Returns true only for `nil`
-- Useful when object type is unknown
-
-Most objects, including strings, numbers, and arrays, will always return false. Only the `nil` object itself returns true.
-
-```ruby
-value1 = "Hello"
-value2 = nil
-
-puts value1.nil?
-puts value2.nil?
-```
-
-Output:
-
-```
-false
-true
-```
+The order of characters in the argument does not matter. `"ce"` or `"ec"` gives the same result. This is like combining multiple delete calls into one.
 
 
 ## `upcase` and `downcase`
@@ -245,24 +238,215 @@ capitalized = label.capitalize
 ```
 
 
-## `reverse`
 
-Calling `reverse` returns a new string where all characters appear in the opposite order, while the original string remains unchanged.
+## `index` and `rindex`
+
+The `index` method helps find the position of a character or substring in a string. It returns the first match as an integer or `nil` if not found.
+
+- Search is case sensitive
+- Index always counts from the start of the string
+- Multiple characters are matched in order
+
+`index` vs. `rindex`:
+
+- `index` searches left to right from the start or given position
+- `rindex` searches from the end of the string backward
+- Both return positions relative to the start of the string
+
+Examples:
+
+1. Using `index`:
+
+    ```ruby
+    fact = "I am Very Handsome"
+    puts fact.index("I")
+    puts fact.index("E")
+    puts fact.index("am")
+    puts fact.index("Z")
+    ```
+
+    Output:
+
+    ```
+    0
+    6
+    2
+    nil
+    ```
+
+
+2. Searching from a specific index:
+
+    ```ruby
+    puts fact.index("E", 3)
+    puts fact.index("e", 7)
+    ```
+
+    Output:
+
+    ```
+    6
+    17
+    ```
+
+
+3. Using `rindex` to search from the end of the string backward:
+
+    ```ruby
+    puts fact.rindex("E")     # last "E" from end
+    puts fact.rindex("e")     # last "e" from end
+    ```
+
+    Output:
+
+    ```
+    17
+    17
+
+    ```
+
+
+
+## `empty?`
+
+The `empty?` method checks whether a string has zero characters.
+
+- Returns true for strings with no characters
+- Returns false for strings with any content
+- Treats spaces as characters
+
+An empty string is still a valid string object, but it contains no characters. Any character, including spaces or symbols, means the string is not empty.
 
 ```ruby
-word = "Ruby"
-value = "A1#b"
+text1 = ""
+text2 = "A"
+text3 = " "
 
-puts word.reverse
-puts value.reverse
+puts text1.empty?
+puts text2.empty?
+puts text3.empty?
 ```
 
-The output shows that `reverse` simply changes character order without altering character types or casing.
+Output:
 
 ```
-ybuR
-b#1A
+true
+false
+false
 ```
+
+This shows that only strings with no characters return true, reinforcing that `empty?` checks for content inside a string.
+
+## `nil?`
+
+The `nil?` method checks whether an object is the `nil` object.
+
+- Available on all Ruby objects
+- Returns true only for `nil`
+- Useful when object type is unknown
+
+Most objects, including strings, numbers, and arrays, will always return false. Only the `nil` object itself returns true.
+
+```ruby
+value1 = "Hello"
+value2 = nil
+
+puts value1.nil?
+puts value2.nil?
+```
+
+Output:
+
+```
+false
+true
+```
+
+
+
+## `chars` and `each_char`
+
+There are multiple ways to loop through each character in a string.
+
+- `split('')` - Convert a string into an array of characters
+- `chars` - Get an array of characters directly
+- `each_char` - Iterate over characters without converting to an array
+
+You can either convert a string to an array first or use `each_char` to loop directly. 
+
+Examples:
+
+1. Using `split` and `each`:
+
+    ```ruby
+    vehicle = "spaceship"
+    characters = vehicle.split('')
+
+    characters.each do |char|
+      puts "#{char} is awesome"
+    end
+    ```
+
+    Output:
+
+    ```
+    s is awesome
+    p is awesome
+    a is awesome
+    c is awesome
+    e is awesome
+    s is awesome
+    h is awesome
+    i is awesome
+    p is awesome
+    ```
+
+2. Using `chars`:
+
+    ```ruby
+    vehicle = "spaceship"
+    vehicle.chars.each do |char|
+      puts "#{char} is awesome"
+    end
+    ```
+
+    Output is the same as no. 1.
+
+    ```
+    s is awesome
+    p is awesome
+    a is awesome
+    c is awesome
+    e is awesome
+    s is awesome
+    h is awesome
+    i is awesome
+    p is awesome
+    ```
+
+3. Using `each_char`:
+
+    ```ruby
+    vehicle = "spaceship"
+    vehicle.each_char do |char|
+      puts "#{char} is awesome"
+    end
+    ```
+
+
+    Output is the same as no. 1.
+
+    ```
+    s is awesome
+    p is awesome
+    a is awesome
+    c is awesome
+    e is awesome
+    s is awesome
+    h is awesome
+    i is awesome
+    p is awesome
+    ```
 
 
 ## Bang Methods 

@@ -24,7 +24,6 @@ A method is a simple way to group steps so you can reuse them easily.
 
 Just like built-in Ruby methods such as `puts` or `print`, custom methods can be called whenever we need them.
 
-
 ## Defining a Method 
 
 We can define a method using the `def` and `end` keywords.
@@ -434,3 +433,79 @@ Example:
     ```
 
     Here, the first two arguments go to `a` and `b`, the last two to `c` and `d`, and any in the middle go into `numbers`.
+
+
+## Object Mutation in Methods
+
+When you pass an object to a method, you pass the original object, not a copy. This means the method can change the object, which can create side effects if you're not careful.
+
+- Methods receive a reference to the original object
+- Modifying the object inside the method changes the original
+- Overwriting the parameter does not change the original object
+
+Examples:
+
+1. Mutating an array:
+
+    ```ruby
+    def append_five(elements)
+      elements << 5
+    end
+
+    values = [1, 2, 3, 4]
+    append_five(values)
+
+    puts values.inspect
+    ```
+
+    Output:
+
+    ```bash
+    [1, 2, 3, 4, 5]
+    ```
+
+    The `append_five` method adds 5 to the original array `values`. The method does not create a copy, so the original array is changed.
+
+
+2. Mutating a string:
+
+    ```ruby
+    def uppercase(text)
+      text.upcase!
+    end
+
+    name = "John"
+    uppercase(name)
+
+    puts name
+    ```
+
+    Output:
+
+    ```bash
+    JOHN
+    ```
+
+    The `uppercase` method changes the original string `name` because the parameter `text` refers to the same object in memory.
+
+
+3. Overwriting a parameter:
+
+    ```ruby
+    def replace_elements(elements)
+      elements = []
+    end
+
+    values = [1, 2, 3, 4]
+    replace_elements(values)
+
+    puts values.inspect
+    ```
+
+    Output:
+
+    ```bash
+    [1, 2, 3, 4]
+    ```
+
+    Assigning a new array to `elements` does not affect `values`. The parameter is just a temporary name for the object.

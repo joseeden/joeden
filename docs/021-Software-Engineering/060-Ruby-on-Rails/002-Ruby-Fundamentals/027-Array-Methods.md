@@ -171,7 +171,7 @@ Example:
     1
     ```
 
-### Order Matters 
+#### Order Matters 
 
 Note that order matters in arrays. Ruby stops comparing as soon as it finds a difference. Even though `8` is larger than `5`, Ruby compares `10` and `5` first. Since `10` is larger, the result is `1`.
 
@@ -197,7 +197,7 @@ Output:
 nil
 ```
 
-### Incomparable Values 
+#### Incomparable Values 
 
 A number and an array are different types, so they cannot be compared.
 
@@ -614,53 +614,65 @@ Output:
 [13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
 
-## `join`
+## `split` and `join`
 
-We can combine array elements into a string using `join`:
+Both `split` and `join` let you manipulate text in Ruby.
 
-```ruby
-my_list = ["apples", 23, 18, "oranges", "pears", 38, "kiwis"]
-p my_list.join
-```
+- `split` separates a string into pieces at a delimiter
+- `join` merges array elements into a string with an optional delimiter
+- Both work with single characters, multiple characters, or spaces
 
-Output:
+Examples:
 
-```ruby
-"apples2318orangespears38kiwis" 
-```
+1. Using `split` with default space delimiter:
 
-We can also add a separator between elements when joining them into a single string:
+    ```ruby
+    sentence = "Hi my name is James"
+    words = sentence.split
+    puts words.inspect
+    ```
 
-```ruby
-my_list = ["apples", 23, 18, "oranges", "pears", 38, "kiwis"]
-p my_list.join("-")
-```
+    Output:
 
-Output:
+    ```
+    ["Hi", "my", "name", "is", "James"]
+    ```
 
-```ruby
-"apples-23-18-oranges-pears-38-kiwis"
-```
+2. Using `split` with a custom delimiter:
 
+    ```ruby
+    sentence = "Hi.James.Loves.Coding"
+    words = sentence.split(".")
+    puts words.inspect
+    ```
 
-## `split` 
+    Output:
 
-We can also split a joined string back into an array. Here, the variable `foo` contains the following string:
+    ```
+    ["Hi", "James", "Loves", "Coding"]
+    ```
 
-```ruby
-foo = "apples-23-18-oranges-pears-38-kiwis"
-```
+3. Using `join` without a delimiter:
 
-If we want to break the items to an array separated by "-", we can use `split`:
+    ```ruby
+    words = ["Hi", "James", "Loves", "Coding"]
+    puts words.join
+    ```
 
-```ruby
-bar = foo.split("-")
-p bar
-```
+    Output:
 
-Output:
+    ```
+    HiJamesLovesCoding
+    ```
 
-```ruby
-["apples", "23", "18", "oranges", "pears", "38", "kiwis"]
-```
+4. Using `join` with a delimiter:
 
+    ```ruby
+    puts words.join("-")
+    ```
+
+    Output:
+
+    ```
+    Hi-James-Loves-Coding
+    ```
