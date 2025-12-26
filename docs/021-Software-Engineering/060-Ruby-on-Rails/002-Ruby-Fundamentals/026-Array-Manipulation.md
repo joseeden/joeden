@@ -53,7 +53,7 @@ p fruits[100]  # nil
 ```
 
 
-## Negative indexing
+## Negative Indexing
 
 You can also count from the end of the array using negative numbers.
 
@@ -73,6 +73,56 @@ p fruits[-10] # nil
 
 Negative indexing is useful when you want values relative to the end without knowing the array length, which again depends on the array’s ordered structure.
 
+## Using `first` and `last`
+
+Ruby provides two helper methods to quickly get elements from the start or end of an array.
+
+- `first` returns the first element or the first N elements.
+- `last` returns the last element or the last N elements.
+- Passing an argument always returns an array of elements.
+
+For example, with a sushi array:
+
+```ruby
+sushi = ["salmon", "tuna", "shrimp", "eel", "yellowtail"]
+
+p sushi.first          # Output: "salmon"
+p sushi.first(3)       # Output: ["salmon", "tuna", "shrimp"]
+p sushi.first(1)       # Output: ["salmon"]
+
+p sushi.last           # Output: "yellowtail"
+p sushi.last(3)        # Output: ["shrimp", "eel", "yellowtail"]
+p sushi.last(1)        # Output: ["yellowtail"]
+```
+
+Output:
+
+```bash
+"salmon"
+"yellowtail"
+```
+
+If called without an argument, `first` or `last` returns a single element. When called with a number, they return an array containing that many elements. This makes it easy to extract multiple items from either end of an array without manually using indexes.
+
+
+```ruby
+p sushi.first(3)       
+p sushi.first(1)       
+
+p sushi.last(3)        
+p sushi.last(1)        
+```
+
+Output:
+
+```bash
+["salmon", "tuna", "shrimp"]
+["salmon"]
+
+["shrimp", "eel", "yellowtail"]
+["yellowtail"]
+```
+
 ## Using `slice`
 
 Ruby provides a method alternative to square brackets called `slice`.
@@ -85,33 +135,7 @@ p fruits.slice(10)  # nil
 
 `slice` behaves the same way as bracket indexing and exists as another way to work with ordered elements.
 
-## Check if Element exists
 
-We can check whether an array contains a value by using `include?`.
-
-```ruby
-my_list = [11, 8, 5, 14, 10, 23, 28, 12]
-p my_list.include?(23)
-```
-
-Output:
-
-```ruby
-true
-```
-
-Arrays can also contain mixed types. When searching for a string, make sure to use double quotes for the string:
-
-```ruby
-mixed = ["apples", 23, 18, "oranges"]
-p mixed.include?("bananas")
-```
-
-Output:
-
-```ruby
-false
-```
 
 ## Using `fetch` 
 
@@ -195,6 +219,33 @@ Output:
 
 The default value is only used when the index does not exist.
 
+## Check if Element exists
+
+We can check whether an array contains a value by using `include?`.
+
+```ruby
+my_list = [11, 8, 5, 14, 10, 23, 28, 12]
+p my_list.include?(23)
+```
+
+Output:
+
+```ruby
+true
+```
+
+Arrays can also contain mixed types. When searching for a string, make sure to use double quotes for the string:
+
+```ruby
+mixed = ["apples", 23, 18, "oranges"]
+p mixed.include?("bananas")
+```
+
+Output:
+
+```ruby
+false
+```
 
 ## Overwriting Elements
 
@@ -213,7 +264,7 @@ Output:
 ["apple", "watermelon", "grape", "banana"]
 ```
 
-## Adding beyond the Current Length
+## Adding Beyond the Current Length
 
 If you assign a value just past the end of the array, Ruby appends it.
 

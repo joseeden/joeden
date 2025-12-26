@@ -121,44 +121,104 @@ Output:
 ["Jamie", "physics", 45]
 ```
 
+## Creating Arrays
 
-## Shorthand for Arrays of strings
+Arrays can be created directly, from ranges, or from words. 
 
-The standard way is to list each string with quotes and separate them with commas.
+- Use brackets for explicit values
+- Use `%w` for arrays of strings
+- Use `to_a` for ranges only
+
+There are different tools depending on where the data comes from, but the goal is always to produce an ordered list of elements.
+
+### Explicit Arrays of Strings
+
+The standard way is to list each string with quotes and commas.
 
 ```ruby
-names = ["Ted", "Barney", "Robin", "Marshall", "Lily"]
+names = ["Alex", "Jamie", "Morgan", "Taylor", "Riley"]
 p names
 ```
 
 Output:
 
 ```text
-["Ted", "Barney", "Robin", "Marshall", "Lily"]
+["Alex", "Jamie", "Morgan", "Taylor", "Riley"]
 ```
 
-When the array only contains strings, you can use the `%w` shorthand. This removes the need for quotes and commas.
+
+### `%w` Shorthand for Strings
+
+When an array contains only strings, `%w` can be used to remove quotes and commas.
 
 ```ruby
-names = %w[Ted Barney Robin Marshall Lily]
+names = %w[Alex Jamie Morgan Taylor Riley]
 p names
 ```
 
 Output:
 
 ```text
-["Ted", "Barney", "Robin", "Marshall", "Lily"]
+["Alex", "Jamie", "Morgan", "Taylor", "Riley"]
 ```
 
-In this shorthand form, each word separated by a space becomes a string element in the array. The `%w` tells Ruby to treat everything inside the brackets as strings automatically, which keeps array declarations clean while still preserving order.
+Each space-separated word becomes a string, which keeps array declarations short while preserving order.
 
+### Converting Ranges to Arrays
 
+Ranges can be converted into arrays using `to_a`.
+
+```ruby
+numbers = 1..10
+p numbers.to_a
+```
+
+Output:
+
+```ruby
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+
+This works only for ranges and is useful when you need a full list of values.
+
+### Strings cannot use `to_a`
+
+Strings do not support `to_a` and will raise an error.
+
+```ruby
+text = "Time flies fast"
+p text.to_a
+```
+
+Instead, `%w` can be used to turn words into an array.
+
+```ruby
+p %w(Time flies fast)
+```
+
+Output:
+
+```ruby
+["Time", "flies", "fast"]
+```
 
 ## Accessing an Element
 
 Arrays keep items in a fixed order, just like characters in a string. Ruby tracks this order using index positions that start at zero (`0`)
 
-For more information, please see [Array Indexing.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/026-Array-Indexing.md)
+For more information, please see [Array Indexing.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/026-Array-Manipulation.md)
+
+## Adding Elements at the End
+
+You can add new elements to the end of an array using built-in tools. 
+
+- `push` adds one or more elements
+- `append` works the same way as push
+- `<<` adds elements using operator syntax
+
+**NOTE:** All these options update the original array directly.
+
+For more information, please see [Array Methods.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/027-Array-Methods.md)
 
 ## Numbers Range  
 
@@ -236,27 +296,9 @@ Output:
 "c", "g", "k", "j", "o", "y", "b", "u"]
 ```
 
-## Length or Size 
 
-We can check how many items an array has using `length` or `size`:
-
-```ruby
-my_letters = "a".."z"
-new_letters = my_letters.to_a
-
-p new_letters.length
-p new_letters.size
-```
-
-Output:
-
-```ruby
-26 
-26 
-```
 
 ## Mutate using a Bang
-
 
 Some methods return a modified version of an array without changing the original.
 
@@ -298,68 +340,6 @@ Output:
 ```
 
 
-## Append 
-
-We can add items to the end of an array in multiple ways.
-
-- `<<` adds one item to the end
-- `push` adds one or more items
-- `append` works the same as `push`
-
-**NOTE**: All append methods permanently add items to the array.
-
-Examples:
-
-- Using `<<`:
-
-    ```ruby
-    tens = (1..10).to_a
-    p tens
-
-    tens << 24
-    p tens
-    ```
-
-    Output:
-
-    ```ruby
-    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 24]
-    ```
-
-- Using `push`:
-
-    ```ruby
-    tens = (1..10).to_a
-    p tens
-
-    tens.push(16)
-    p tens
-    ```
-
-    Output:
-
-    ```ruby
-    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 16]
-    ```
-
-- Using `append`:
-
-    ```ruby
-    tens = (1..10).to_a
-    p tens
-
-    tens.append(13)
-    p tens
-    ```
-
-    Output:
-
-    ```ruby
-    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13]
-    ```
 
 
 ## Prepend 
@@ -435,170 +415,6 @@ Output:
 Unlike some methods, `pop` always mutates the array without needing a bang.
 
 
-## `uniq` 
-
-You can remove repeated elements in an array using the `uniq` method.
-
-In the example below, the number `13` is added at the start (via `append`) and at the end (via `unshift`) of the array:
-
-```ruby
-tens = (1..10).to_a 
-tens.append(13)
-tens.unshift(13)
-p tens
-```
-
-Output:
-
-```ruby
-[13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13]
-```
-
-Using the `uniq` method returns a new array with duplicates removed:
-
-```ruby
-p tens.uniq
-```
-
-output
-
-```ruby
-[13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-```
-
-Note that simply adding it doesnt make changes permanent, as seen when `tens` is printed again after running `tens.uniq`:
-
-```ruby
-p tens
-p tens.uniq
-p tens 
-```
-
-output
-
-```ruby
-[13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13]
-[13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-[13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13]
-```
-
-To make the changes permanent, use the bang (`!`):
-
-```ruby
-p tens
-p tens.uniq!
-p tens 
-```
-
-output
-
-```ruby
-[13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13]
-[13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-[13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-```
-
-## `join`
-
-We can combine array elements into a string using `join`:
-
-```ruby
-my_list = ["apples", 23, 18, "oranges", "pears", 38, "kiwis"]
-p my_list.join
-```
-
-Output:
-
-```ruby
-"apples2318orangespears38kiwis" 
-```
-
-We can also add a separator between elements when joining them into a single string:
-
-```ruby
-my_list = ["apples", 23, 18, "oranges", "pears", 38, "kiwis"]
-p my_list.join("-")
-```
-
-Output:
-
-```ruby
-"apples-23-18-oranges-pears-38-kiwis"
-```
-
-
-## `split` 
-
-We can also split a joined string back into an array. Here, the variable `foo` contains the following string:
-
-```ruby
-foo = "apples-23-18-oranges-pears-38-kiwis"
-```
-
-If we want to break the items to an array separated by "-", we can use `split`:
-
-```ruby
-bar = foo.split("-")
-p bar
-```
-
-Output:
-
-```ruby
-["apples", "23", "18", "oranges", "pears", "38", "kiwis"]
-```
-
-## Convert to Array
-
-There are different ways to turn data into array:
-
-- `to_a` works with ranges
-- Strings cannot use `to_a`
-- `%w` creates arrays from words
-
-Converting a range into an array:
-
-```ruby
-nums = 1..10
-p nums.to_a
-```
-
-Output:
-
-```ruby
-[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-```
-
-Trying to convert a string with `to_a` does not work:
-
-```ruby
-quote = "Dinosaurs eat Man. Woman inherits the earth."
-p quote.to_a
-```
-
-This returns an error:
-
-```ruby
-p quote.to_a
-       ^^^^^
-Did you mean?  to_f
-               to_i
-               to_s
-               to_c
-               to_r 
-```
-
-Instead, use `%w` to turn words into an array:
-
-```ruby
-p %w(Dinosaurs eat Man. Woman inherits the earth)
-```
-
-Output:
-
-```ruby
-["Dinosaurs", "eat", "Man.", "Woman", "inherits", "the", "earth"]
-```
 
 ## Iterators 
 
