@@ -215,10 +215,7 @@ Output:
 John doe
 ```
 
-
-## Original String is not Modified
-
-Case methods always return a new string and leave the original unchanged.
+Note that case methods always return a new string and leave the original unchanged.
 
 - Original string stays the same
 - New string is created in memory
@@ -227,19 +224,26 @@ Case methods always return a new string and leave the original unchanged.
 Example: 
 
 ```ruby
+label = "maiN Street"
+puts label.upcase         # Output: MAIN STREET
+puts label.downcase       # Output: main street
+puts label.swapcase       # Output: MAIn sTREET
+puts label.capitalize     # Output: Main street
+
+# Variable is not changed
+puts label                # Output: maiN Street
+```
+
+To keep the result, store it in a variable:
+
+```ruby
 label = "main street"
 upper_label = label.upcase
-
-puts label
-puts upper_label
+lower_label = label.downcase
+swapped = label.swapcase
+capitalized = label.capitalize
 ```
 
-Output:
-
-```
-main street
-MAIN STREET
-```
 
 ## `reverse`
 

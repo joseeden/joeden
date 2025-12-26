@@ -379,3 +379,58 @@ Alexander The Great
 ```
 
 In this example, `name` is required, while `suffix` is optional. If we do not provide a value for `suffix`, Ruby uses the default `"The Great"`.
+
+## Splat Arguments
+
+Ruby allows methods to accept any number of arguments using a special syntax called the **splat** or **sponge operator** (`*`).
+
+- The `*` before a parameter collects all extra arguments into an array
+- You can have required parameters before or after the splat parameter
+- This lets you pass zero, one, or many arguments
+
+Example:
+
+1. Simple adder method:
+
+    ```ruby
+    def adder(*numbers)
+      sum = 0
+      numbers.each { |num| sum += num }
+      sum
+    end
+
+    puts adder(1)           # Output: 1
+    puts adder(1, 2, 3)     # Output: 6
+    puts adder()            # Output: 0
+    ```
+
+    Here, `*numbers` captures all arguments in an array. We iterate over it to calculate the sum. If no arguments are given, it’s an empty array.
+
+
+2. With required parameters before the splat:
+
+    ```ruby
+    def adder(a, b, *numbers)
+      sum = numbers.sum
+      sum
+    end
+
+    puts adder(1, 2)           # Output: 0
+    puts adder(1, 2, 3, 4, 5)  # Output: 12 (3+4+5)
+    ```
+
+    `a` and `b` are required. Any extra arguments go into `numbers`. Ruby matches arguments to parameters in order.
+
+
+3. With required parameters after the splat (less common):
+
+    ```ruby
+    def adder(a, b, *numbers, c, d)
+      sum = numbers.sum
+      sum
+    end
+
+    puts adder(1, 2, 3, 4, 5, 6)  # Output: 7 (3+4)
+    ```
+
+    Here, the first two arguments go to `a` and `b`, the last two to `c` and `d`, and any in the middle go into `numbers`.

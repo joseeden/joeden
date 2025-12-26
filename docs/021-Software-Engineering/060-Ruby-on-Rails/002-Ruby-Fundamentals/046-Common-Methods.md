@@ -60,7 +60,7 @@ Ruby lets you call these conversion methods on any type safely. This is called *
 
 ## `inspect` 
 
-The `inspect` method converts an object into a string representation that is useful for debugging. It shows more technical details than the regular `puts` method.
+The `inspect` method converts an object into a string that is useful for debugging. It shows more technical details than the regular `puts` method.
 
 - Converts an object to a detailed string
 - Used internally by the `p` method
@@ -272,21 +272,19 @@ The `times` method is useful for repeating actions a specific number of times.
 20.times { print "-" }
 ```
 
-This prints the "-" ...
-
-Output:
+This prints the `-` character twenty times:
 
 ```ruby
 --------------------
 ```
 
-Another exampke is..
+Example: Printing text on separate lines:
 
 ```ruby
 10.times { puts "hello" } 
 ```
 
-This prints.. on separate lines..
+Each iteration runs `puts`, so the output appears on a new line every time.
 
 ```ruby
 hello
@@ -301,13 +299,13 @@ hello
 hello 
 ```
 
-You can also print random numbers using `rand`..
+Example: Generating random numbers using `rand`:
 
 ```bash
 14.times { puts rand(10) } 
 ```
 
-This generates 10 randoms numbers in 14 times..
+This runs fourteen times and prints a random number between 0 and 9 each time:
 
 ```bash
 8
@@ -453,3 +451,117 @@ puts (-35).abs
 # 35
 ```
 
+## `rand`
+
+The `rand` method generates random numbers in different formats depending on how it is used.
+
+- Without arguments, it returns a decimal between 0 and 1
+- With a number, it returns a whole number starting from 0
+- With a range, it returns a value within that range
+
+### Random Floating Point Numbers
+
+Calling `rand` by itself returns a floating point number between 0 and 1.
+
+```ruby
+puts rand
+```
+
+Output:
+
+```ruby
+0.374829384
+```
+
+Each run produces a different value because the number is random.
+
+You can make the number easier to read using `round`:
+
+```ruby
+puts rand.round(2)
+puts rand.round(4)
+```
+
+Output:
+
+```ruby
+0.42
+0.8371
+```
+
+Rounding limits the number of digits after the decimal, which makes random floats more readable.
+
+You can also scale the result by multiplying it:
+
+```ruby
+puts (rand.round(2) - 30)
+```
+
+This creates a random floating point number between 0 and 30:
+
+```ruby
+18.0
+```
+
+
+### Random Integers with an Upper Limit
+
+Passing a number to `rand` returns a whole number from 0 up to, but not including, that number.
+
+```ruby
+puts rand(10)
+```
+
+Possible output:
+
+```ruby
+7
+```
+
+This returns a number between 0 and 9 because the upper bound is exclusive.
+
+Example showing exclusivity:
+
+```ruby
+puts rand(1)
+```
+
+Since 1 is excluded, 0 is the only possible result:
+
+```ruby
+0
+```
+
+
+### Random Numbers Using a Range
+
+You can pass a range to `rand` to generate numbers between two values.
+
+Examples:
+
+- An inclusive range allows both ends to appear in the result.
+
+    ```ruby
+    puts rand(50..60)
+    ```
+
+    Output:
+
+    ```ruby
+    60
+    ```
+
+
+- Using an exclusive range excludes the final value:
+
+    ```ruby
+    puts rand(50...60)
+    ```
+
+    Output:
+
+    ```ruby
+    57
+    ```
+
+    In this case, 60 will never appear.
