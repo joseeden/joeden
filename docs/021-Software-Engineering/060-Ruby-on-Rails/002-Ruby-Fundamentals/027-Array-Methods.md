@@ -407,6 +407,62 @@ Example:
     ```
 
 
+
+## `shift` and `unshift`
+
+`shift` and `unshift` methods work like the opposite of `pop` and `push`.
+
+- `shift` removes the first element and returns it
+- `shift` with a number returns that many elements as a new array
+- `unshift` adds one or more elements to the beginning, pushes existing elements forward
+
+Examples:
+
+- Using `shift` without an argument:
+
+    ```ruby
+    units = ["meter", "kilogram", "second", "amp"]
+    p units.shift
+    p units
+    ```
+
+    Output:
+
+    ```ruby
+    "meter"
+    ["kilogram", "second", "amp"]
+    ```
+
+- Using `shift` with argument:
+      
+    ```ruby
+    p units.shift(2)
+    p units
+    ```
+
+    Output:
+
+    ```ruby
+    ["kilogram", "second"]
+    ["amp"]
+    ```
+
+- Using `unshift`:
+
+    ```ruby
+    units.unshift("yard")
+    p units
+    units.unshift("inches", "miles")
+    p units
+    ```
+
+    Output:
+
+    ```ruby
+    ["yard", "amp"]
+    ["inches", "miles", "yard", "amp"]
+    ```
+
 ## `length` and `size`
 
 `length` returns how many elements exist in an array, regardless of type. `size` does the same thing.

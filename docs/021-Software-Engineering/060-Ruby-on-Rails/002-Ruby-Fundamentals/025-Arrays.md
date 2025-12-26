@@ -168,6 +168,14 @@ Each space-separated word becomes a string, which keeps array declarations short
 
 Ranges can be converted into arrays using `to_a`.
 
+:::info 
+
+For more information, please see [Ranges.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/029-Ranges.md)
+
+:::
+
+Example: 
+
 ```ruby
 numbers = 1..10
 p numbers.to_a
@@ -220,82 +228,6 @@ You can add new elements to the end of an array using built-in tools.
 
 For more information, please see [Array Methods.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/027-Array-Methods.md)
 
-## Numbers Range  
-
-If we want to create an array of numbers without typing each one, we can use a **range** and then convert it to an array with `to_a`. A range can be specified with a starting and ending number, like this:
-
-```ruby
-hundred = 1..100
-p hundred.to_a
-```
-
-Output:
-
-```ruby
-[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, ..., 100]
-```
-
-**Note:** `to_a` works to convert ranges into arrays, but it cannot be used to convert a string or sentence into an array.
-
-To shuffle the array, we can use `shuffle`:
-
-```ruby
-hundred = 1..100
-p hundred.to_a.shuffle
-```
-
-Output:
-
-```ruby
-[93, 83, 24, 40, 51, 37, 6, 39, 16, 86, 68, 45, ...]
-```
-
-We can also store the converted array in a variable:
-
-```ruby
-tens = (1..10).to_a
-p tens
-```
-
-Output:
-
-```ruby
-[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-```
-
-
-## Letters Range 
-
-We can also create a range of letters:
-
-```ruby
-my_letters = "a".."z"
-p my_letters.to_a
-```
-
-Output:
-
-```ruby
-["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", 
-"k", "l", "m", "n", "o", "p", "q", "r", "s", "t", 
-"u", "v", "w", "x", "y", "z"]
-```
-
-Just like with numbers, we can shuffle the letters using `shuffle`:
-
-```ruby
-my_letters = "a".."z"
-p my_letters.to_a.shuffle
-```
-
-Output:
-
-```ruby
-["h", "p", "m", "r", "v", "f", "s", "w", "l", 
-"d", "q", "a", "n", "x", "z", "t", "i", "e", 
-"c", "g", "k", "j", "o", "y", "b", "u"]
-```
-
 
 
 ## Mutate using a Bang
@@ -338,81 +270,6 @@ Output:
 [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 ```
-
-
-
-
-## Prepend 
-
-We can add items to the beginning of an array using `unshift`, 
-
-**NOTE:** The array is mutated immediately.
-
-Example:
-
-```ruby
-tens = (1..10).to_a
-p tens
-
-tens.unshift("Hello")
-p tens
-```
-
-Output:
-
-```ruby
-[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-["Hello", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-```
-
-Prepending shifts all existing elements to the right and changes the array.
-
-
-## `pop` 
-
-We can remove items from the end of an array using `pop`.
-
-**NOTE:** The array is always mutated.
-
-Example:
-
-```ruby
-items = ["apples", 23, 18, "oranges", "pears", 38, "kiwis"]
-p items.pop
-```
-
-Output:
-
-```ruby
-"kiwis"
-```
-
-Multiple pops show the changes are actually being saved on the variable:
-
-```ruby
-items = ["apples", 23, 18, "oranges", "pears", 38, "kiwis"]
-p items
-
-p items.pop
-p items.pop
-p items.pop
-
-p items
-```
-
-Output:
-
-```ruby
-["apples", 23, 18, "oranges", "pears", 38, "kiwis"]
-
-"kiwis"
-38
-"pears"
-
-["apples", 23, 18, "oranges"]
-```
-
-Unlike some methods, `pop` always mutates the array without needing a bang.
 
 
 
