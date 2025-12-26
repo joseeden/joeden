@@ -12,208 +12,6 @@ last_update:
   date: 8/24/2023
 ---
 
-## `length` and `size`
-
-`length` returns how many elements exist in an array, regardless of type. `size` does the same thing.
-
-```ruby
-a = ["a", "b", "c", "d"]
-b = ["x", nil, "y"]
-c = []
-
-p a.length
-p b.length
-p c.length
-
-p a.size
-p b.size
-p c.size
-```
-
-Output:
-
-```ruby
-4
-3
-0
-
-4
-3
-0
-```
-
-
-## `count`
-
-`count` can work in two ways depending on how it is used.
-
-- Without arguments, it counts all elements.
-- With an argument, it counts matching values only.
-
-Example: 
-
-```ruby
-nums = [1, 2, 3, 4, 5, 2]
-
-p nums.count
-p nums.count(5)
-p nums.count(2)
-```
-
-Output:
-
-```ruby
-6
-1
-2
-```
-
-This makes `count` useful when you need to know how often a specific value appears in an array.
-
-## `empty?`
-
-`empty?` checks whether an array has no elements.
-
-- Returns `true` if the array has no items.
-- Returns `false` if at least one element exists.
-
-Example: 
-
-```ruby
-a = ["one", "two"]
-b = []
-
-p a.empty?
-p b.empty?
-```
-
-Output:
-
-```ruby
-false
-true
-```
-
-
-## `nil?`
-
-`nil?` checks whether an object is actually `nil`.
-
-- Always `false` for arrays.
-- Only `true` when called on `nil`.
-
-Example: 
-
-```ruby
-a = []
-b = nil
-
-p a.nil?
-p b.nil?
-```
-
-Output:
-
-```ruby
-false
-true
-```
-
-## `uniq` 
-
-You can remove repeated elements in an array using the `uniq` method.
-
-- `uniq` returns a new array without duplicates.
-- `uniq!` modifies the array in place, removing duplicates permanently.
-
-Example:
-
-```ruby
-tens = [13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13]
-```
-
-Using `uniq` does not change the original array:
-
-```ruby
-p tens.uniq
-p tens 
-```
-
-Output:
-
-```ruby
-[13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13]
-[13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-[13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13]
-```
-
-To make the changes permanent, add the bang (`!`):
-
-```ruby
-p tens
-p tens.uniq!
-p tens 
-```
-
-Output:
-
-```ruby
-[13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13]
-[13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-[13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-```
-
-## `join`
-
-We can combine array elements into a string using `join`:
-
-```ruby
-my_list = ["apples", 23, 18, "oranges", "pears", 38, "kiwis"]
-p my_list.join
-```
-
-Output:
-
-```ruby
-"apples2318orangespears38kiwis" 
-```
-
-We can also add a separator between elements when joining them into a single string:
-
-```ruby
-my_list = ["apples", 23, 18, "oranges", "pears", 38, "kiwis"]
-p my_list.join("-")
-```
-
-Output:
-
-```ruby
-"apples-23-18-oranges-pears-38-kiwis"
-```
-
-
-## `split` 
-
-We can also split a joined string back into an array. Here, the variable `foo` contains the following string:
-
-```ruby
-foo = "apples-23-18-oranges-pears-38-kiwis"
-```
-
-If we want to break the items to an array separated by "-", we can use `split`:
-
-```ruby
-bar = foo.split("-")
-p bar
-```
-
-Output:
-
-```ruby
-["apples", "23", "18", "oranges", "pears", "38", "kiwis"]
-```
-
-
 
 ## Accessing Elements 
 
@@ -513,4 +311,300 @@ You can add new elements to the end of an array using built-in tools.
     ```
 
     This works the same way as `push`, just with a more compact style.
+
+
+
+## `insert`
+
+The `insert` method adds one or more elements at a specific index in an array, pushing existing elements forward.
+
+- Specify the "index" as the first argument
+- The "value(s)" to insert as the following argument(s)
+
+The `insert` method modifies the original array and can add single or multiple values at any position. It also creates `nil` gaps if needed.
+
+Example:
+
+1. Single insert: 
+
+    ```ruby
+    transactions = [19.99, 29.43, 3.87]
+    transactions.insert(1, 49.99)
+    p transactions
+    ```
+
+    Output:
+
+    ```ruby
+    [19.99, 49.99, 29.43, 3.87]
+    ```
+
+2. Multiple inserts:
+
+    ```ruby
+    transactions.insert(0, 1.2, 3, 4.5)
+    p transactions
+    ```
+
+    Output:
+
+    ```ruby
+    [1.2, 3, 4.5, 19.99, 49.99, 29.43, 3.87]
+    ```
+
+3. If index beyond array length:
+
+    ```ruby
+    numbers = [1, 2, 3]
+    numbers.insert(6, 1000)
+    p numbers
+    ```
+
+    Output:
+
+    ```ruby
+    [1, 2, 3, nil, nil, nil, 1000]
+    ```
+
+
+## `pop`
+
+The `pop` method removes elements from the end of an array and returns them.
+
+- Without an argument, it removes and returns the last element
+- With an argument, it removes the elements and returns as a new array
+- The original array is always updated
+
+Example:
+
+1. Without an argument: 
+
+    ```ruby
+    flavours = ["Chocolate", "Kiwi", "Peach", "Plum", "Strawberry", "Taro"]
+    p flavours.pop
+    p flavours
+    ```
+
+    Output:
+
+    ```ruby
+    "Taro"
+    ["Chocolate", "Kiwi", "Peach", "Plum", "Strawberry"]
+    ```
+
+2. With an argument:
+
+    ```ruby
+    p flavours.pop(2)
+    p flavours
+    ```
+
+    Output:
+
+    ```ruby
+    ["Peach", "Plum"]
+    ["Chocolate", "Kiwi"]
+    ```
+
+
+## `length` and `size`
+
+`length` returns how many elements exist in an array, regardless of type. `size` does the same thing.
+
+```ruby
+a = ["a", "b", "c", "d"]
+b = ["x", nil, "y"]
+c = []
+
+p a.length
+p b.length
+p c.length
+
+p a.size
+p b.size
+p c.size
+```
+
+Output:
+
+```ruby
+4
+3
+0
+
+4
+3
+0
+```
+
+
+## `count`
+
+`count` can work in two ways depending on how it is used.
+
+- Without arguments, it counts all elements.
+- With an argument, it counts matching values only.
+
+Example: 
+
+```ruby
+nums = [1, 2, 3, 4, 5, 2]
+
+p nums.count
+p nums.count(5)
+p nums.count(2)
+```
+
+Output:
+
+```ruby
+6
+1
+2
+```
+
+This makes `count` useful when you need to know how often a specific value appears in an array.
+
+## `empty?`
+
+`empty?` checks whether an array has no elements.
+
+- Returns `true` if the array has no items.
+- Returns `false` if at least one element exists.
+
+Example: 
+
+```ruby
+a = ["one", "two"]
+b = []
+
+p a.empty?
+p b.empty?
+```
+
+Output:
+
+```ruby
+false
+true
+```
+
+
+## `nil?`
+
+`nil?` checks whether an object is actually `nil`.
+
+- Always `false` for arrays.
+- Only `true` when called on `nil`.
+
+Example: 
+
+```ruby
+a = []
+b = nil
+
+p a.nil?
+p b.nil?
+```
+
+Output:
+
+```ruby
+false
+true
+```
+
+## `uniq` 
+
+You can remove repeated elements in an array using the `uniq` method.
+
+- `uniq` returns a new array without duplicates.
+- `uniq!` modifies the array in place, removing duplicates permanently.
+
+Example:
+
+```ruby
+tens = [13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13]
+```
+
+Using `uniq` does not change the original array:
+
+```ruby
+p tens.uniq
+p tens 
+```
+
+Output:
+
+```ruby
+[13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13]
+[13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+[13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13]
+```
+
+To make the changes permanent, add the bang (`!`):
+
+```ruby
+p tens
+p tens.uniq!
+p tens 
+```
+
+Output:
+
+```ruby
+[13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13]
+[13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+[13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+
+## `join`
+
+We can combine array elements into a string using `join`:
+
+```ruby
+my_list = ["apples", 23, 18, "oranges", "pears", 38, "kiwis"]
+p my_list.join
+```
+
+Output:
+
+```ruby
+"apples2318orangespears38kiwis" 
+```
+
+We can also add a separator between elements when joining them into a single string:
+
+```ruby
+my_list = ["apples", 23, 18, "oranges", "pears", 38, "kiwis"]
+p my_list.join("-")
+```
+
+Output:
+
+```ruby
+"apples-23-18-oranges-pears-38-kiwis"
+```
+
+
+## `split` 
+
+We can also split a joined string back into an array. Here, the variable `foo` contains the following string:
+
+```ruby
+foo = "apples-23-18-oranges-pears-38-kiwis"
+```
+
+If we want to break the items to an array separated by "-", we can use `split`:
+
+```ruby
+bar = foo.split("-")
+p bar
+```
+
+Output:
+
+```ruby
+["apples", "23", "18", "oranges", "pears", "38", "kiwis"]
+```
 
