@@ -226,7 +226,7 @@ You can add new elements to the end of an array using built-in tools.
 
 **NOTE:** All these options update the original array directly.
 
-For more information, please see [Array Methods.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/027-Array-Methods.md)
+For more information, please see [Array Methods.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/027-Array-Methods-1.md)
 
 
 
