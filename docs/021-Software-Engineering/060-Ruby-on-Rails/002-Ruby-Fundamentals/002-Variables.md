@@ -255,7 +255,9 @@ puts d.inspect  # Output: => [1, 2, 3, 5]
 ```
 
 
-## Object Copies: `dup` and `clone`
+## Object Copies
+
+### `dup` and `clone`
 
 To create an independent copy of an object, use `dup` or `clone`. These methods make a new object in memory with the same contents.
 
@@ -302,7 +304,7 @@ Examples:
 
 
 
-## Object Copies: `freeze` and Frozen Objects
+### `freeze` and Frozen Objects
 
 The `freeze` method makes objects immutable. Once frozen, objects cannot be changed, which helps prevent accidental modifications.
 

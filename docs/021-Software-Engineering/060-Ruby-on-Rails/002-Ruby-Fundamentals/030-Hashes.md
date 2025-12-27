@@ -14,32 +14,44 @@ last_update:
 ---
 
 
-## Hashes 
+## Overview 
 
-Hashes are like dictionaries that store data in key-value pairs.
+Hashes are like dictionaries that store data in key-value pairs and  connect related pieces of data.
 
-- Keys point to values
-- Values can be any type
-- Access values using their key
+- Each key points to exactly one value
+- Keys act as identifiers
+- Values store the associated data
+- Focuses on association, not order
+
+Hashes follow a few simple rules.
+
+- Keys must be unique
+- Values can be duplicated
+- Access is done by key, not order
+
+:::info 
+
+You cannot have the same key twice, but multiple keys can point to the same value. This keeps associations clear and reliable.
+
+:::
+
+When working with a hash, you look up data using the key, and the hash returns the matching value.
 
 Example:
 
 ```ruby
 person = {
-  "name" => "Alex",
+  "name" => "James",
   "age" => 30,
   "city" => "London"
 }
+
+# Get the value for "name"
 p person["name"]
 ```
 
-Output:
 
-```ruby
-"Alex"
-```
-
-You can get all keys or values:
+You can get keys or values all at once:
 
 ```ruby
 p person.keys
@@ -50,236 +62,209 @@ Output:
 
 ```ruby
 ["name", "age", "city"]
-["Alex", 30, "London"]
+["James", 30, "London"]
 ```
 
 
-## Symbols 
+## Arrays vs. Hashes
 
-Symbols are a lighter, faster alternative to strings for keys.
-
-- Defined with `:`
-- Access values with symbol keys
-- Keys remain unique
-
-Example:
+Arrays and hashes use different syntax and solve different problems.
 
 ```ruby
-person = {
-  name: "Alex",
-  age: 30,
-  city: "London"
+my_list = []
+my_list.class
+
+my_hash = {}
+my_hash.class
+```
+
+Output:
+
+```ruby
+Array
+
+Hash
+```
+
+When order matters, arrays are used. When relationships matter, hashes are used. This is why hashes focus on association rather than position.
+
+- Arrays keep items in order
+- Hashes connect related values
+- Each structure models a real need
+
+
+## Creating a Hash
+
+A hash can be created using curly braces. To assign the key-value pairs, use the **hash rocket** (`=>`)
+
+Empty hash: 
+
+```ruby
+my_person = {}
+```
+
+The hash rocket looks like `=>` and visually shows that a key points to a value. 
+
+```ruby
+my_person = {
+  "name" => "James"
 }
-
-p person[:name]
 ```
 
-Output:
+You add more pairs by separating them with commas.
 
 ```ruby
-"Alex"
-```
-
-Getting just the keys:
-
-```ruby
-p person.keys
-```
-
-Output:
-
-```ruby
-[:name, :age, :city]
-```
-
-
-## Iterators 
-
-Iterators can loop through a hash to process keys and values.
-
-- `each` is the preferred method
-- Works with key and value
-- Can be single-line or multi-line
-
-Example:
-
-```ruby
-person = { "name" => "Alex", "age" => 30, "city" => "London" }
-
-person.each do |key, value|
-  puts "Key: #{key}, Value: #{value}"
-end
-```
-
-Output:
-
-```ruby
-Key: name, Value: Alex
-Key: age, Value: 30
-Key: city, Value: London
-```
-
-Single-line iteration:
-
-```ruby
-another_hash = {a: 28, b: 19, c: 23, d: 45}
-another_hash.each { |key, value| puts key }
-```
-
-Output:
-
-```ruby
-a
-b
-c
-d
-```
-
-
-## Adding an Element 
-
-To add an element to a hash, simply assign a value to a new key.
-
-```ruby
-another_hash = {a: 28, b: 19, c: 23}
-p another_hash
-
-## add a  new element
-another_hash[:d] = 45
-p another_hash
-```
-
-Output:
-
-```ruby
-{a: 28, b: 19, c: 23}
-{a: 28, b: 19, c: 23, d: 45}
-```
-
-## Updating an Element
-
-To update an existing element in a hash, assign a new value to the existing key.
-
-```ruby
-another_hash = {a: 28, b: 19, c: 23, d: 45}
-p another_hash
-
-## update element with key :c
-another_hash[:c] = 30
-p another_hash
-```
-
-Output:
-
-```ruby
-{a: 28, b: 19, c: 23, d: 45}
-{a: 28, b: 19, c: 30, d: 45}
-```
-
-
-## Removing an Element
-
-To remove an element from a hash, use the `delete` method with the key you want to remove.
-
-```ruby
-
-another_hash = {a: 28, b: 19, c: 23, d: 45}
-p another_hash
-
-## remove element with key :b
-another_hash.delete(:b)
-p another_hash
-```
-
-Output:
-
-```ruby
-{a: 28, b: 19, c: 23, d: 45}
-{a: 28, c: 23, d: 45}
-```
-
-
-## Select Operator 
-
-Filter a hash based on a condition using `select`.
-
-- Returns a new hash with matching items
-- Original hash stays unchanged
-- Use `is_a?` to filter by type
-
-Example:
-
-```ruby
-person = {
-  name: "Alex",
-  age: 30,
-  city: "London",
-  profession: "Developer",
-  id: 4006
+my_person = {
+  "name" => "James",
+  "age" => 30,
+  "city" => "London",
+  "salary" => 50_000_000
 }
-p person.select { |k, v| v.is_a?(String) }
 ```
 
-Output:
+Notice that big numbers can be written can be written as is or with underscore. Both works the same way. 
+
+
+
+## Different Value Types
+
+Values are also not limited to just strings and numbers.
+
+- Values can be arrays
+- Values can be other hashes
+- Keys still act as identifiers
+
+Here, each team name points to a list of players. The association concept stays consistent.
 
 ```ruby
-{name: "Alex", city: "London", profession: "Developer"}
-```
-
-The block checks each key-value pair and keeps only those that match the condition.
-
-
-**Explanation:** The block takes two parameters, `k` for key and `v` for value. It returns true if the value meets the condition, and false otherwise.
-
-This is equivalent using a multi-line block:
-
-```ruby
-person.select do |k, v|
-  v.is_a?(String)
-end
-```
-
-Note that we cannot combine `puts` with a `do...end` block like this:
-
-```ruby
-puts person.select do |k,v|
-  print k,v if v.is_a?(String)
-end
-```
-
-This returns:
-
-```ruby
-#<Enumerator:0x000079016d492db0>
-```
-
-This happens because the `do...end` block has higher precedence than `puts`. Use `select` alone to return the filtered hash and print it separately.
-
-
-## Example: Delete an Element based on a Condition 
-
-We can remove items from a hash that meet a certain condition.
-
-In this example, the block checks each key-value pair and deletes the key if the value matches the condition. This keeps only the items you want in the hash.
-
-```ruby
-my_hash = {
-  name: "James",
-  age: 30,
-  city: "New York",
-  profession: "Developer",
-  id: 4006
+team_rosters = {
+  "City Hawks" => ["Alex King", "Dana Reed"],
+  "River Lions" => ["Ben Carter", "Evan Moore", "Chris Nolan"]
 }
-
-my_hash.each {
-  |k,v| my_hash.delete(k) if v.is_a?(String)
-}
-
-p my_hash
 ```
 
-Output:
+## Unique Keys and Overwriting
+
+As mentioned previously, keys in a hash should be unique.
+
+- Duplicate keys overwrite older values
+- Ruby keeps the last value
+
+If the same key appears twice, only one association can exist.
+
+```ruby
+player_salaries = {
+  "Alex King" => 50_000_000,
+  "Alex King" => 100_000_000
+}
+```
+
+You will get an error when you try to run it:
 
 ```bash
-{age: 30, id: 4006} 
+warning: key "Alex King" is duplicated and overwritten on line 3
 ```
+
+## Missing Keys and `nil`
+
+If a key does not exist, Ruby returns `nil`.
+
+- `nil` means no value found
+- Keys are case sensitive
+- Exact matches are required
+
+Try running the code below in [IRB:](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/001-Starter-Notes.md#interactive-ruby)
+
+```ruby
+player_salaries = {
+  "Alex King" => 50_000_000,
+  "James Smith" => 100_000_000
+}
+
+puts player_salaries["Unknown Player"]
+```
+
+Output:
+
+```ruby
+nil
+```
+
+
+
+## Using fetch with a Default Value
+
+The `fetch` method also retrieves values by key.
+
+- Raises an error if key is missing
+- Can accept a fallback value
+- Useful for safe lookups
+
+Example:
+
+1. `fetch` returns the value when the key exists:
+
+    ```ruby
+    player_salaries = {
+      "Alex King" => 50_000_000,
+      "Ben Carter" => 85_000_000,
+      "James Smith" => 100_000_000
+    }
+
+    player_salaries.fetch("James Smith", 0)
+    ```
+
+    Output:
+
+    ```ruby
+    25000000
+    ```
+
+2. If key does not exist and no fallback is provided:
+
+    ```ruby
+    player_salaries.fetch("Joe Penn")
+    ```
+
+    Output:
+
+    ```ruby
+    0
+    ```
+
+3. If key does not exist and a fallback is provided:
+
+    ```ruby
+    player_salaries.fetch("Joe Penn", 0)
+    ```
+
+    Output:
+
+    ```ruby
+    0
+    ```
+
+
+## Common Hash Methods
+
+Hashes come with useful built in methods.
+
+- `length` shows number of key value pairs
+- `empty?` checks if the hash has no data
+
+Example: 
+
+```ruby
+data.length
+data.empty?
+```
+
+Expected results:
+
+```ruby
+0
+true
+```
+
+
+
