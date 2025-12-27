@@ -126,7 +126,9 @@ Example:
 
 
 
-## Example: Currency Conversion
+## Procs examples
+
+### Currency Conversion
 
 Procs can be used to apply the same currency conversion logic to many different lists of values without rewriting the code. Basically, apply the conversion rule in one place and apply it everywhere.
 
@@ -154,7 +156,7 @@ Now, if the conversion rate changes, you only update the proc. Any array using i
 
 
 
-## Example: Filtering
+### Filtering
 
 Procs can also store logic for filtering, like checking if someone is a senior age. This avoids duplicating the same logic in multiple `select` or `reject` blocks.
 
@@ -218,7 +220,7 @@ Nemo explored the ocean bravely
 He captured sailors in his submarine, the Nautilus
 ```
 
-#### Blocks for one-time actions
+### Blocks for One-time Actions
 
 You can rewrite procs using blocks. You just simply pass a block directly to the method and use `yield` to execute it. Blocks are better for one-time use and good for temporary custom behavior.
 
@@ -238,7 +240,9 @@ Nemo explored the ocean bravely
 He captured sailors in his submarine, the Nautilus
 ```
 
-#### Choosing Between Procs and Blocks
+For more information, please see [Blocks.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/050-Blocks.md#yield-with-block-parameters)
+
+### Procs vs Blocks
 
 You can actually mix both approaches. A method expecting a proc can accept a block and vice versa.
 
@@ -289,7 +293,7 @@ Examples:
     ```
 
 
-#### Procs vs Lambdas 
+### Procs vs Lambdas 
 
 Although similar, procs and lambdas have two main differences:
 

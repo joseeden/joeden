@@ -402,7 +402,7 @@ Examples:
     ```
 
 
-## Custom `each` Method 
+## Example: Custom `each` Method 
 
 Using the `yield` concept, we can build own version of the `each` method.
 
@@ -451,22 +451,7 @@ The square of 30 is 900
 ```
 
 
-## `upto` and `downto`
-
-Ruby has methods that combine **arguments** and **blocks** to perform an action on a sequence of numbers.
-
-- `upto` counts from a starting number up to a target number
-- `downto` counts from a starting number down to a target number
-
-Both methods require an **argument** (the number to stop at) and a **block** (what to do at each step)
-
-- The argument is a fixed value the method uses
-- The block is a set of instructions executed on each step
-
-:::
-
-
-### Using `upto`
+## `upto`
 
 We can count from a starting number up to a target number and do something on each step:
 
@@ -502,7 +487,7 @@ end
 The block defines **what happens at each step**, while the argument controls the range of numbers.
 
 
-### Using `downto`
+## `downto`
 
 We can also count backwards from a number down to a target number:
 
@@ -521,13 +506,8 @@ Countdown: 2
 Countdown: 1
 ```
 
-Notes: 
 
-- `6` is the starting number
-- `1` is the stopping number, provided as an argument
-- The block runs on each number from 6 down to 1
-
-The same can be written in multiple lines:
+This can be written in multiple lines:
 
 ```bash
 6.downto(1) do |current|
@@ -536,7 +516,7 @@ end
 ```
 
 
-### Real-world example: "99 Bottles of Beer"
+## Example: "99 Bottles of Beer"
 
 We can use `down_to` to generate a countdown song like "99 Bottles of Beer." The block defines the steps to run on each number, and the argument sets the stopping point:
 
@@ -547,6 +527,8 @@ We can use `down_to` to generate a countdown song like "99 Bottles of Beer." The
   puts "Take one down, pass it around #{number - 1} bottles of beer on the wall"
 end
 ```
+
+Where:
 
 - `99` is the starting number
 - `1` is the stopping number, provided as an argument
