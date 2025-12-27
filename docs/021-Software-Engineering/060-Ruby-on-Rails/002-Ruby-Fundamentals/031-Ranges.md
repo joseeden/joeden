@@ -408,7 +408,7 @@ Each `when` checks if the score falls inside a specific range. Ruby evaluates th
 
 :::info 
 
-For more information, please see [Methods.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/045-Methods.md)
+For more information, please see [Methods.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/055-Methods.md)
 
 ::: 
 

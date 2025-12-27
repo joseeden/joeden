@@ -7,7 +7,7 @@ tags:
 - Software Development
 - Web Development
 - Ruby
-sidebar_position: 50
+sidebar_position: 70
 last_update:
   date: 8/24/2023
 ---
@@ -416,7 +416,7 @@ Recursion can be hard to follow because the same method runs multiple times with
 
 :::info 
 
-For more information, please see [Methods: Recursion](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/045-Methods.md)
+For more information, please see [Methods: Recursion](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/055-Methods.md)
 
 :::
 
