@@ -22,7 +22,7 @@ Array iteration means going through each element of an array one by one. In Ruby
 
 :::info
 
-For more information, please see [Blocks.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/041-Blocks.md)
+For more information, please see [Blocks.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/050-Blocks.md)
 
 :::
 
