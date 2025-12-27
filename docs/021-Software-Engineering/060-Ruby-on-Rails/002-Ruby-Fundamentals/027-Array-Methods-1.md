@@ -1,6 +1,6 @@
 ---
-title: "Array Methods"
-description: "Array Methods"
+title: "Array Methods 1"
+description: "Array Methods 1"
 tags: 
 - Computer Science
 - Application Development

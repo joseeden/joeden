@@ -170,7 +170,7 @@ Ranges can be converted into arrays using `to_a`.
 
 :::info 
 
-For more information, please see [Ranges.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/029-Ranges.md)
+For more information, please see [Ranges.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/031-Ranges.md)
 
 :::
 

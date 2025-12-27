@@ -7,7 +7,7 @@ tags:
 - Software Development
 - Web Development
 - Ruby
-sidebar_position: 28
+sidebar_position: 29
 last_update:
   date: 8/24/2023
 ---
@@ -291,7 +291,7 @@ The `for` loop works with ranges too.
 
 :::info 
 
-For more information, please see [Ranges.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/029-Ranges.md)
+For more information, please see [Ranges.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/031-Ranges.md)
 
 :::
 
