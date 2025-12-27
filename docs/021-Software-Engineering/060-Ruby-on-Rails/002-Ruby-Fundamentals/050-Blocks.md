@@ -59,8 +59,7 @@ I'm learning blocks
 
 The `do...end` block runs three times. Everything between `do` and `end` is executed each time. Blocks let you pass procedures, not just values, to a method.
 
-
-## Blocks and Return Values
+## Blocks Return Values
 
 A block tells a method what to do, but it does not change the method’s return value. Methods like `times` usually return the original object, not the block result.
 
@@ -78,18 +77,18 @@ Notes:
 2. The block inside `do...end` tells Ruby what to do each time: `puts "Hello"`.
 3. Ruby executes the block 3 times, so we see:
 
-```
-Hello
-Hello
-Hello
-```
+    ```
+    Hello
+    Hello
+    Hello
+    ```
 
 4. However, `times` always returns the number it was called on (`3`), **not the result of the block**.
 5. That’s why when we print `value`, we get:
 
-```
-3
-```
+    ```
+    3
+    ```
 
 ## Block Variables
 
@@ -123,7 +122,7 @@ The clock is ticking.
 
 Notes: 
 
-- The `count` variable is the block variable, represents current iteration
+- `count` is the block variable, represents current iteration
 - Ruby starts counting from zero, so the first iteration is `0`
 - Each iteration gets a new value for `count` while the block runs
 
@@ -143,28 +142,331 @@ Iteration 2
 
 Notes:
 
-- The block variable `i` represents the iteration number here
+- The block variable `i` represents the iteration number 
 - Curly braces are preferred for single-line blocks
 
-Block variables can have any name, but what they represent is determined by the method that yields them. They exist only while the block is running and provide a way to customize behavior dynamically for each iteration. Each iteration gets its own value, and once the block finishes, the variable disappears.
+
+## `yield` 
+
+You can use the `yield` keyword to attach a block to a method. When `yield` is called inside a method, the control is passed to the block, runs its code, then returns to the method.
+
+```ruby
+def pass_control
+  puts "Start of method"
+  yield
+  puts "Back in method"
+end
+
+pass_control { puts "Inside block" }
+```
+
+Output:
+
+```ruby
+Start of method
+Inside block
+Back in method
+```
+
+Notes: 
+
+- `yield` transfers control to the block
+- The method pauses until the block finishes
+- Multiple `yield` calls run the block multiple times
+
+If we invoke the method but doesn't pass the block:
+
+```ruby
+def pass_control
+  puts "Start of method"
+  yield
+  puts "Back in method"
+end
+
+pass_control 
+```
+
+Ruby will raise a `LocalJumpError`:
+
+```bash
+'Object#pass_control': no block given (yield) (LocalJumpError)
+```
+
+Blocks can be executed multiple times with multiple `yield` statements in a method. 
+
+```ruby
+def repeat_twice
+  puts "Before first yield"
+  yield
+  puts "Between yields"
+  yield
+  puts "After second yield"
+end
+
+repeat_twice { puts "Inside block" }
+```
+
+Output:
+
+```bash
+Before first yield
+Inside block      
+Between yields    
+Inside block
+After second yield
+```
+
+You can use either `{}` or `do...end` for block syntax. 
+
+```bash
+repeat_twice do
+  puts "Running from inside the block"
+  puts "Exiting block, bye"
+end
+```
+
+Output:
+
+```bash
+Before first yield
+Running from inside the block
+Exiting block, bye
+Between yields
+Running from inside the block
+Exiting block, bye
+After second yield
+```
+
+## `yield` with Return Values
+
+Blocks attached to a method with `yield` can return a value back to the method. You can then assign the block's return value to a variable.
+
+```ruby
+def who_am_i
+  puts "Hello there, new recruit."
+  
+  # Assign block output to variable
+  whoami_var = yield       
+  puts "I am from #{whoami_var}"
+end
+
+who_am_i { "Silo 17" }
+```
+
+Output:
+
+```ruby
+Hello there, new recruit.
+I am from Silo 17
+```
+
+Using a  `do...end` syntax:
+
+```ruby
+who_am_i do
+  "Silo 50"
+end
+```
+
+Output:
+
+```ruby
+Hello there, new recruit.
+I am from Silo 50
+```
+
+
+Do not use `return` inside the block. Using `return` exits the entire method immediately, which skips any remaining code. 
+
+```bash
+who_am_i { return "Silo 17" }
+```
+
+Output:
+
+```ruby
+Hello there, new recruit.
+```
+
+
+## `block_given?` for Optional Blocks
+
+`block_given?` lets a method check if a block was passed. This allows the method to run with or without a block, which avoids errors when no block is provided.
+
+Example:
+
+```ruby
+def pass_control_on_condition
+  puts "Inside the method"
+  yield if block_given?
+  puts "Back inside the method"
+end
+
+# With a block
+pass_control_on_condition { puts "Inside the block" }
+```
+
+Output:
+
+```ruby
+Inside the method
+Inside the block
+Back inside the method
+```
+
+If no block is provided:
+
+```ruby
+pass_control_on_condition
+```
+
+Output:
+
+```ruby
+Inside the method
+Back inside the method
+```
+
+## `yield` with Block Parameters
+
+Blocks can receive one or more values from a method using `yield`. This allows methods to send data to blocks, just like Ruby's built-in iteration methods do.
+
+- `yield` can pass values to block variables
+- Block variables receive data from the method
+- Methods can pass multiple arguments to a block
+
+:::info 
+
+**Block parameters** and **block variables** refer to the same thing. They are the placeholders you define in a block to receive the values passed by the method using `yield` or other iterator methods.
+
+:::
+
+Examples:
+
+1. Using a single argument:
+
+    ```ruby
+    def captain_nemo_says
+      yield("Nautilus")
+    end
+
+    captain_nemo_says { |ship| puts "#{ship} sails through the ocean" }
+    captain_nemo_says { |ship| puts "#{ship} explores the deep sea" }
+    ```
+
+    Output:
+
+    ```ruby
+    Nautilus sails through the ocean
+    Nautilus explores the deep sea
+    ```
+
+
+2. Using a dynamic method argument:
+
+    ```ruby
+    def captain_nemo_says(ship)
+      yield(ship)
+    end
+
+    captain_nemo_says("Nautilus") { |s| puts "#{s} is ready for adventure" }
+    captain_nemo_says("Diving Bell") { |s| puts "#{s} descends into the depths" }
+    ```
+
+    Output:
+
+    ```ruby
+    Nautilus is ready for adventure
+    Diving Bell descends into the depths
+    ```
+
+3. Using multiple arguments:
+
+    ```ruby
+    def number_evaluation(a, b, c)
+      yield(a, b, c)
+    end
+
+    result = number_evaluation(5, 10, 15) { |x, y, z| x + y + z }
+    puts result
+
+    result = number_evaluation(2, 3, 4) { |x, y, z| x * y * z }
+    puts result
+    ```
+
+    Output:
+
+    ```
+    30
+    24
+    ```
+
+
+## Custom `each` Method 
+
+Using the `yield` concept, we can build own version of the `each` method.
+
+As a recap, we can use `.each` to iterate over a list:
+
+```ruby
+my_list = [10, 20, 30]
+
+my_list.each do
+  |number| puts "The square of #{number} is #{number * number}"
+end
+```
+
+Output:
+
+```bash
+The square of 10 is 100
+The square of 20 is 400
+The square of 30 is 900
+```
+
+Now, building the `custom_each` which does the same thing as `.each`:
+
+```ruby
+my_list = [10, 20, 30]
+
+def custom_each(array)
+  i = 0
+  while i < array.length
+    yield(array[i])
+    i += 1
+  end
+end
+
+custom_each(my_list) do 
+  |number| puts "The square of #{number} is #{number * number}"
+end
+```
+
+Output:
+
+```bash
+The square of 10 is 100
+The square of 20 is 400
+The square of 30 is 900
+```
+
 
 ## `upto` and `downto`
 
-Ruby has methods called `upto` and `downto` that combine **arguments** and **blocks** to perform an action on a sequence of numbers.
+Ruby has methods that combine **arguments** and **blocks** to perform an action on a sequence of numbers.
 
 - `upto` counts from a starting number up to a target number
 - `downto` counts from a starting number down to a target number
 
 Both methods require an **argument** (the number to stop at) and a **block** (what to do at each step)
 
-:::info 
-
-The **argument** is a fixed value the method uses, while the **block** is a dynamic set of instructions executed on each number in the sequence.
+- The argument is a fixed value the method uses
+- The block is a set of instructions executed on each step
 
 :::
 
 
-### Example with `upto`
+### Using `upto`
 
 We can count from a starting number up to a target number and do something on each step:
 
@@ -200,7 +502,7 @@ end
 The block defines **what happens at each step**, while the argument controls the range of numbers.
 
 
-### Example with `downto`
+### Using `downto`
 
 We can also count backwards from a number down to a target number:
 
