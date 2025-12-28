@@ -20,7 +20,7 @@
 # puts b.inspect    # Output: => [1, 2, 3]
 # puts c.inspect    # Output: => [1, 2, 3]
 
-
+# ----------------------------------------------
 
 # a = "Kurt Vonnegut"
 # b = a.dup
@@ -39,6 +39,7 @@
 # hobbies << "winning"    
 # name.upcase! 
 
+# ----------------------------------------------
 
 # name = "James".freeze
 
@@ -47,6 +48,8 @@
 
 # puts name_dup << " the Genius"   # Works
 # puts name_clone << " the Genius" 
+
+# ----------------------------------------------
 
 hobbies = ["coding", "sushi"].freeze
 

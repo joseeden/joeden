@@ -12,16 +12,21 @@
 
 # puts "End of program"
 
+# ----------------------------------------------
 
 # debugger
 # puts "Hello".downcase
 # puts "Goodbye".upcase
+
+# ----------------------------------------------
 
 # debugger 
 
 # 3.times do |count|
 #   puts "Loop number: #{count}"
 # end 
+
+# ----------------------------------------------
 
 ## debugging.rb 
 # require "debug"
@@ -32,6 +37,7 @@
 
 # debugger
 
+# ----------------------------------------------
 
 require "debug"
 
