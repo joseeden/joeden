@@ -1,0 +1,7 @@
+source "https://rubygems.org"
+
+gem "faker", "~> 3.2.0"
+gem "rails", "~> 7.1.0"
+gem "pg", "~> 1.5"
+gem "devise", "~> 4.9"
+gem "rspec-rails", "~> 6.0.0"

@@ -14,18 +14,8 @@ last_update:
 
 ## Overview
 
-Debugging lets you pause a Ruby program and step through it to understand how it runs and where things go wrong.
+Debugging lets you pause a Ruby program and step through it to understand how it runs and where things go wrong. To use debugging, you need to use a library called `debug`.
 
-- You can inspect variables while the program is running
-- You control when the program continues
-
-To use debugging, Ruby relies on a library called `debug`.
-
-- Ruby groups features into libraries
-- Some libraries are built in
-- Others are added as Gems
-
-**NOTE:** A library is just reusable Ruby code. Debugging tools live in the `debug` library.
 
 ## Using `debugger` 
 

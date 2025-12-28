@@ -146,9 +146,6 @@ last_update:
 
 Interactive Ruby (IRB) lets you try Ruby commands directly in a live session.
 
-- Enter Ruby commands one by one
-- See results immediately after each command
-
 Example session:
 
 ```ruby
@@ -166,17 +163,14 @@ irb(main):003> greeting = "Hi there"
 
 Any terminal can be used to run and test Ruby scripts easily. For this guide, we're using Visual Studio Code (VS Code).
 
-- Open the terminal in VS Code
-- Navigate to the folder containing your Ruby file
-- Use the `ruby` command to run the script
+1. Open the terminal in VS Code.
+2. Navigate to the folder containing your Ruby file.
+3. Use the `ruby` command to run the script.
 
-To run a Ruby file:
-
-```ruby
-ruby /path/to/filename.rb
-```
-
-This will execute the script and show the output in the terminal.
+    ```ruby
+    ruby filename.rb
+    ```
+4. This will execute the script and show the output in the terminal.
 
 ## Hello World
 
@@ -198,7 +192,7 @@ Run the script:
 ruby main.rb
 ```
 
-Expected output:
+Output:
 
 ```ruby
 Hello World
@@ -210,11 +204,7 @@ Example using `print`:
 print "Hello World"
 ```
 
-Output will stay on the same line without adding a new line automatically. Always remember:
-
-- `puts` adds a line
-- `print` does not
-
+Output will stay on the same line without adding a new line automatically. 
 
 ## Comments 
 
@@ -283,10 +273,7 @@ This is useful for multiple lines of text, but the Ruby community prefers using 
 
 ## `nil` 
 
-`nil` is a special object  that represents nothing or the absence of a value. It is used to model emptiness in programs while still being a real object.
-
-- Still an object with methods and memory
-- Often returned by methods that have no meaningful result
+`nil` is a special object  that represents nothing or the absence of a value. 
 
 Example: 
 
@@ -361,7 +348,7 @@ Output:
 Floating-Point Numbers or Floats are mumbers with a decimal point.
 
 - Can be positive or negative
-- Requires a zero before the decimal if between -1 and 1
+- Requires a zero before the decimal if between `-1` and `1`
 - Floats store fractions, useful for partial values
 
 Example: 
@@ -393,11 +380,7 @@ Output:
 
 Escape characters let you include special characters inside strings.
 
-- Quotes can break strings
-- Ruby throws an error when quotes are not handled
-- Escaping fixes this issue
-
-This code causes an error because the quotes end the string early:
+For example, when you try to run the code below:
 
 ```ruby
 puts 'Adam said 'Hello James, how was your day?''
@@ -486,43 +469,112 @@ The area of the circle is 153.86
 
 ## Styling Conventions
 
-Styling in Ruby and Rails helps follow the same rules and keeps code consistent.
+In Ruby, class names are *capitalized* , while method and variable names use *snake case*.
 
-- Use **snake_case** for method names and variables
-- Use **CamelCase** for class names
-- Indent with **two spaces**, not tabs or four spaces
+1. **Two spaces for indentation.** A;ways use two spaces; using four spaces can make the code look inconsistent.
 
-Snake case separates words with underscores and keeps everything lowercase. It is used for methods and variable names:
+2. **Snake case.** Separate words with underscores and keeps everything lowercase. It is used for methods and variable names:
+
+    ```ruby
+    def calculate_total
+      total_amount = 100
+      total_amount
+    end
+    ```
+
+3. **Camel case.** Capitalize the first letter of each word in class names, without underscores:
+
+    ```ruby
+    class UserAccount
+    end
+    ```
+
+Reference: [Ruby Style Guide](https://rubocop.org)
+
+
+## The Ruby Documentation
+
+The official Ruby documentation is a useful place to understand what objects can do and how to use them. 
+
+Link: https://www.ruby-lang.org/en/documentation/
+
+## Generate Documentation with RDoc
+
+**RDoc** automatically turns the code comments into a professional-looking website.
+
+Consider the example below:
 
 ```ruby
-def calculate_total
-  total_amount = 100
-  total_amount
-end
-```
+## collection.rb
+class Collection
+  include Enumerable
 
-Camel case capitalizes the first letter of each word in class names, without underscores:
+  # An array of track names
+  attr_reader :tracks
 
-```ruby
-class UserAccount
-end
-```
+  # Creates a new collection with no tracks
+  def initialize
+    @tracks = []
+  end
 
-Notes: 
+  # Adds a track to the collection
+  def add_track(track)
+    @tracks << track
+  end
 
-- Always use two spaces for indentation. 
-- Using four spaces can make the code look inconsistent.
-
-For class names, the first letter must be capitalized, while method names and variable names stay in snake case:
-
-```ruby
-class ProductItem
-  def item_price
-    50
+  # Iterates over each track
+  def each
+    @tracks.each { |track| yield track }
   end
 end
 ```
 
-Ruby has its own style conventions that differ slightly from other languages like JavaScript, where method names often start lowercase in camel case. In Ruby, class names start with a capital letter, while method and variable names use snake case.
+To turn this into a searchable website, open your terminal and navigate to the file's directory:
 
-Reference: [Ruby Style Guide](https://rubocop.org)
+```bash
+cd /path/to/directory 
+```
+
+Then run: 
+
+```bash 
+rdoc collection.rb
+```
+
+Output:
+
+```bash
+Parsing sources...
+100% [ 1/ 1]  collection.rb
+
+Generating Aliki format into /mnt/c/user/path/to/directory/doc...
+
+You can visit the home page at: file:///mnt/c/user/path/to/directory/doc/index.html
+
+
+  Files:      1
+
+  Classes:    1 (0 undocumented)
+  Modules:    0 (0 undocumented)
+  Constants:  0 (0 undocumented)
+  Attributes: 1 (0 undocumented)
+  Methods:    3 (0 undocumented)
+
+  Total:      5 (0 undocumented)
+  100.00% documented
+
+  Elapsed: 0.2s
+```
+
+The result:
+
+1. A new folder named **doc** will appear.
+2. Inside, open `index.html` in any web browser.
+
+You will see a searchable website listing your classes, attributes, and methods, complete with the descriptions you wrote in your comments.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2025-12-28-222921.png)
+
+</div>
