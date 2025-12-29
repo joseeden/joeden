@@ -322,3 +322,120 @@ Output:
 ```
 
 By computing the value in a method, it always uses the latest state and stays correct. This avoids duplicate state and ensures that derived values belong in methods, not in stored variables.
+
+## Class Methods
+
+A class method is a method you call on the class itself, not on an object created from the class.
+
+- It runs on the class, not an instance
+- It can be used even before any object exists
+- It is useful for logic that does not belong to one specific object
+
+When you call `new`, you are actually already calling a method on the class, not on an instance. This shows that classes can have their own methods.
+
+```ruby
+class Animal
+  def initialize(species)
+    @species = species 
+  end
+
+  def speak
+    puts "Animal name: #{@species}"
+  end
+end
+
+# Create the ".new" class method
+animal1 = Animal.new("Lion")
+p animal1.speak
+```
+
+### Creating the Class Method 
+
+You can define a class method by prefixing it with the class name. For example, to create a class method `hello` inside the `Book` class, you would write it as `Book.hello`:
+
+```ruby
+class Book
+  # Class method
+  def Book.hello 
+    puts "Hello from the class"
+  end
+end
+
+Book.hello
+```
+
+Output:
+
+```bash
+hello from the class
+```
+
+Note that if you don't add this and simply use `hello` as the method name, Ruby will read this as an instance method, not a class method.
+
+This works, but if you need to change class name later, you would also need to update every class method that uses it. A better approach is to define class methods using `self`.
+
+```ruby
+class Book
+  # Class method
+  def self.hello 
+    puts "Hello from the class"
+  end
+end
+
+Book.hello
+```
+
+### Preconfigured Objects 
+
+A common use for class methods is to create objects with preset values.
+
+```ruby
+class Vehicle
+  attr_reader :wheels, :passengers
+
+  def initialize(wheels, passengers)
+    @wheels = wheels
+    @passengers = passengers
+  end
+
+  def self.car
+    new(4, 6)
+  end
+
+  def self.truck
+    new(18, 2)
+  end
+end
+
+car = Vehicle.car
+truck = Vehicle.truck
+
+puts car.wheels
+puts car.passengers
+puts truck.wheels
+puts truck.passengers
+```
+
+Output:
+
+```bash
+4
+6
+18
+2
+```
+
+These class methods hide the setup details and make object creation simpler and clearer.
+
+
+## Class Methods vs Instance Methods
+
+Quick comparison:
+
+- Instance methods belong to objects created from the class.
+- Class methods belong to the class itself.
+
+This difference matters because some behavior does not make sense to attach to a single object. Creating new objects is one of those cases, which is why `new` and similar helpers are class methods.
+
+**When to use class methods** 
+Use a class method when the behavior does not belong to a single object but is related to the class as a whole.
