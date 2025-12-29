@@ -35,7 +35,7 @@ For example, if you model animals, an `Animal` class can define shared behavior 
 
 A subclass gets all the functionality of its parent class and can also add its own unique methods.
 
-To create a subclass, write the subclass name followed by `<` and the superclass it inherits from. For example, `Dog < Animal` makes `Dog` inherit from the `Animal` class.
+To create a subclass, write the subclass name followed by `<` and the superclass it inherits from. For example, writing `Dog < Animal` makes `Dog` inherit from the `Animal` class.
 
 ```ruby
 class Animal
@@ -51,10 +51,11 @@ class Animal
   end
 end
 
-# Subclasses inheriting from Animal
+# Subclass "Dog" inheriting from "Animal"
 class Dog < Animal
 end
 
+# Subclass "Bird" inheriting from "Animal"
 class Bird < Animal
 end
 
