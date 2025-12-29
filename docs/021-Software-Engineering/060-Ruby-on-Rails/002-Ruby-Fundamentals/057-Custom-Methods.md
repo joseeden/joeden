@@ -22,13 +22,7 @@ A method is a simple way to group steps so you can reuse them easily.
 - Accepts inputs and returns a result
 - Runs only when invoked, can be reused many times
 
-Just like built-in Ruby methods such as `puts` or `print`, custom methods can be called whenever we need them.
-
-## Defining a Method 
-
-We can define a method using the `def` and `end` keywords.
-
-Everything between `def` and `end` is the method body. This body contains the steps Ruby will run each time the method is called.
+We can define a method using the `def` and `end` keywords. Everything between `def` and `end` is the method body. This body contains the steps Ruby will run each time the method is called.
 
 ```ruby
 def jurassic_park
@@ -509,3 +503,74 @@ Examples:
     ```
 
     Assigning a new array to `elements` does not affect `values`. The parameter is just a temporary name for the object.
+
+## Keyword Arguments 
+
+Keyword arguments let you explicitly assign values to specific parameters when calling a method, so the order of arguments doesn't matter.
+
+In the example below, `a:` and `b:` are keyword parameters. You must provide values for both when calling the `sum` method:
+
+```ruby
+def sum(a:, b:)
+  a + b
+end
+
+puts sum(a: 2, b: 3)   # Output: 5
+puts sum(b: 3, a: 2)   # Output: 5
+```
+
+Keyword arguments can also have default values, so you don’t need to provide every keyword when calling a method.
+
+```ruby
+def sum(a: 1, b: 2)
+  a + b
+end
+
+# Will use the defaults 
+puts sum              
+
+# "b" defaults to 2
+puts sum(a: 5)     
+
+# "a" defaults to 1
+puts sum(b: 3)  
+
+# Both values provided
+puts sum(a: 2, b: 8)  
+puts sum(b: 8, a: 2)  
+```
+
+Output:
+
+```bash
+3
+7
+4
+10
+10
+```
+
+In this case, we set `a: 1` and `b: 2` as default values, which is useful when no value or a value is missing for a keyword argument. 
+
+You can also provide a default just for only one keyword (like `a:`), but then the other keyword (`b`) must always be given when calling the method.
+
+```ruby
+def sum(a: 1, b: )
+  a + b
+end
+
+# "a" defaults to 1
+puts sum(b: 3)  
+
+# Both values provided
+puts sum(a: 2, b: 8)  
+puts sum(b: 8, a: 2)  
+```
+
+Output:
+
+```bash
+4
+10
+10
+```

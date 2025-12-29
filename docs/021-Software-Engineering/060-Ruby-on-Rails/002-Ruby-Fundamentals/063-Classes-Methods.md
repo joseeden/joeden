@@ -708,3 +708,213 @@ false
 Monkey patching is generally discouraged because you might accidentally replace core methods, which can break expectations in your program. Much safer alternatives include creating helper classes that operate on the object instead of changing the original class.
 
 The key idea is that Ruby allows it, but it should be used carefully and only when necessary.
+
+## Hash as `initialize` Arguments 
+
+You can pass a single hash to initialize to set multiple attributes at once. This avoids having to remember the order of parameters.
+
+For example, using the hash `details` in the `initialize` method:
+
+```ruby
+class Employee
+  attr_reader :name, :age, :occupation, :hobby, :birthplace
+
+  def initialize(details)
+    @name = details[:name]
+    @age = details[:age]
+    @occupation = details[:occupation]
+    @hobby = details[:hobby]
+    @birthplace = details[:birthplace]
+  end
+end
+
+new_hire_1 = Employee.new({ name: "Adam", 
+                        age: 53, 
+                        occupation: "Economist", 
+                        hobby: "Running", 
+                        birthplace: "Delaware" })
+
+p new_hire_1.name        
+p new_hire_1.age        
+p new_hire_1.occupation        
+p new_hire_1.hobby        
+p new_hire_1.birthplace           
+```
+
+Output:
+
+```bash
+"Adam"
+53
+"Economist"
+"Running"
+"Delaware"
+```
+
+Passing the hash `details` as argument avoids the need to remember the order of parameters, but it can still lead to mistakes if a key is missing or mistyped. 
+
+**Another tip:** If a hash is the last argument to a method, you can omit the curly braces:
+
+```ruby
+new_hire_1 = Employee.new(name: "Adam", 
+                        age: 53, 
+                        occupation: "Economist", 
+                        hobby: "Running", 
+                        birthplace: "Delaware")
+```
+
+Now, if you mistakenly missed a key, for example, the `age` key:
+
+```ruby
+new_hire_1 = Employee.new({ name: "Adam", 
+                        occupation: "Economist", 
+                        hobby: "Running", 
+                        birthplace: "Delaware" })
+
+p new_hire_1.name        
+p new_hire_1.age        
+p new_hire_1.occupation        
+p new_hire_1.hobby        
+p new_hire_1.birthplace       
+```
+
+The `age` will now show as `nil` because Ruby is trying to access a missing key:
+
+Output:
+
+```bash
+"Adam"
+nil
+"Economist"
+"Running"
+"Delaware"
+```
+
+
+Using a hash works, but missing or mistyped keys can cause problems. This is why **keyword arguments** are often a safer choice.
+
+## Positional and Keyword Arguments
+
+You can mix regular positional arguments with keyword arguments. Usually, positional arguments come first, followed by keyword arguments. 
+
+**Keywords arguments** are discussed in detail in the [Custom Methods](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/057-Custom-Methods.md#keyword-arguments) page, but as a quick recap, keyword arguments allow you to clearly assign values to specific parameters when calling a method, and they can also have default fallback values. 
+
+In the example below, `a:` and `b:` are keyword arguments.
+
+```ruby
+def sum(a:, b:)
+  a + b
+end
+
+puts sum(a: 2, b: 3)   # Output: 5
+puts sum(b: 3, a: 2)   # Output: 5
+```
+
+You can also give keyword arguments default values so they become optional:
+
+```ruby
+def sum(a: 1, b: 2)
+  a + b
+end
+
+puts sum(b: 3, a: 2)   # Output: 5
+puts sum               # Output: 3, uses default a and b
+puts sum(a: 5)         # Output: 7. uses default a
+```
+
+You can combine this with positional arguments. In the example below, `a` is positional and `b:` is a keyword argument with a default value:
+
+```ruby
+def sum(a, b: 1)
+  a + b
+end
+
+puts sum(3, b: 5)    # Output: 8
+puts sum(4)          # Output: 5, b defaults to 1
+```
+
+Note that if you switch the positions when calling the method, it will raise an error:
+
+```ruby
+puts sum(b: 5, 8)    
+```
+
+Output:
+
+```bash
+syntax errors found (SyntaxError)
+```
+
+This happens because Ruby expects the first value to be for the positional argument `a`. When a keyword argument like `b:` is provided first, Ruby no longer has a clear way to match the remaining value (which is `8`) to a or b, so it raises an error.
+
+To prevent these errors, make sure to specify the positional arguments first and keyword arguments after.
+
+#### Example: Refactoring the `Employee` Class 
+
+Using the `Employee` Class from the [Hash as `initialize` Arguments](#hash-as-initialize-arguments) section above, we can improve it by making some parameters required and others optional with defaults.
+
+In this version, `name` and `age` are both required keyword arguments, while `occupation`, `hobby`, and `birthplace` are optional since we have assigned default values for them.
+
+```ruby
+class Employee
+  attr_reader :name, :age, :occupation, :hobby, :birthplace
+
+  def initialize( name:,
+                  age:,
+                  occupation: "Employee",
+                  hobby: "Unknown",
+                  birthplace: "USA"
+    )
+    @name = name
+    @age = age
+    @occupation = occupation
+    @hobby = hobby
+    @birthplace = birthplace
+  end
+end
+
+new_hire_1 = Employee.new(name: "John", 
+                          age: 45, 
+                          occupation: "Banker", 
+                          hobby: "Fishing", 
+                          birthplace: "Canada")
+
+new_hire_2 = Employee.new(name: "Alex", age: 50)
+
+p new_hire_1.name        
+p new_hire_1.age        
+p new_hire_1.occupation        
+p new_hire_1.hobby        
+p new_hire_1.birthplace     
+```
+
+Output:
+
+```bash
+"John"
+45
+"Banker"
+"Fishing"
+"Canada"
+```
+
+If we look at `new_hire_2`, there are no `nil` values or errors because any missing parameters automatically use their default values.
+
+```bash
+p new_hire_2.name        
+p new_hire_2.age        
+p new_hire_2.occupation        
+p new_hire_2.hobby        
+p new_hire_2.birthplace 
+```
+
+Output:
+
+```bash
+"Alex"
+50
+"Employee"
+"Unknown"
+"USA"
+```
+
