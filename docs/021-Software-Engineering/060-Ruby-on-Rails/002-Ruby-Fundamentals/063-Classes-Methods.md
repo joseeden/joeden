@@ -389,43 +389,48 @@ Book.hello
 
 A common use for class methods is to create objects with preset values.
 
+In the example below, the class methods `Appliance.fridge` and `Appliance.washer` create appliances with preset voltage and power values. 
+
+**Note:** `Appliance.fridge` is equivalent to calling `self.fridge`, and the same applies to `Appliance.washer`.
+
+
 ```ruby
-class Vehicle
-  attr_reader :wheels, :passengers
+class Appliance
+  attr_reader :voltage, :power
 
-  def initialize(wheels, passengers)
-    @wheels = wheels
-    @passengers = passengers
+  def initialize(voltage, power)
+    @voltage = voltage
+    @power = power 
   end
 
-  def self.car
-    new(4, 6)
-  end
+  def self.fridge 
+    self.new(220, 150)
+  end 
 
-  def self.truck
-    new(18, 2)
+  def self.washer
+    self.new(220, 500)
   end
 end
 
-car = Vehicle.car
-truck = Vehicle.truck
+fridge1 = Appliance.fridge
+washer1 = Appliance.washer
 
-puts car.wheels
-puts car.passengers
-puts truck.wheels
-puts truck.passengers
+puts fridge1.voltage
+puts fridge1.power
+
+puts washer1.voltage
+puts washer1.power
 ```
 
 Output:
 
 ```bash
-4
-6
-18
-2
+220
+150
+220
+500
 ```
 
-These class methods hide the setup details and make object creation simpler and clearer.
 
 
 ## Class Methods vs Instance Methods
