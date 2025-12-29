@@ -367,7 +367,7 @@ Book.hello
 Output:
 
 ```bash
-hello from the class
+Hello from the class
 ```
 
 Note that if you don't add this and simply use `hello` as the method name, Ruby will read this as an instance method, not a class method.

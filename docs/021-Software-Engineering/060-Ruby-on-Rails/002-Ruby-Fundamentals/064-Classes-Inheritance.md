@@ -75,3 +75,102 @@ The bird can fly and sing
 ```
 
 Even though `Dog` and `Bird` have no methods defined inside them, they automatically get the initializer, readers, and instance methods from `Animal`. This avoids repeating code and allows each subclass to be extended with its own behavior later.
+
+## `superclass` and `ancestors`
+
+Every class can inherit from another class, which forms a hierarchy. The `superclass` and `ancestors` methods help you see where a class gets its methods.
+
+- `superclass` shows the immediate parent class
+- `ancestors` lists all classes and modules that provide behavior
+
+Consider the `Animal` hierarchy below. We can see that the `Dog` inherits from `Mammal`, which inherits from `Animal`, and so on. 
+
+```ruby
+class Animal
+end
+
+class Mammal < Animal
+end
+
+class Dog < Mammal
+end
+
+puts Dog.superclass      
+puts Mammal.superclass   
+puts Animal.superclass   
+puts Object.superclass   
+puts BasicObject.superclass 
+```
+
+Output:
+
+```bash
+Mammal
+Animal
+Object
+BasicObject
+
+```
+
+The `Object` class inherits from `BasicObject`, which is the **top-level class** in Ruby and does not have a superclass, so calling `BasicObject.superclass` returns `nil` or none.
+
+The `ancestors` method shows the full chain of inheritance for a class, including all the classes and modules. For example:
+
+```ruby 
+puts Dog.ancestors.inspect  
+```
+
+Output:
+
+```bash
+[Dog, Mammal, Animal, Object, Kernel, BasicObject]
+```
+
+The classes can also be written in a compact form:
+
+```ruby
+class Animal; end
+class Mammal < Animal; end
+class Dog < Mammal; end
+
+puts Dog.superclass      
+puts Mammal.superclass   
+puts Animal.superclass   
+puts Object.superclass   
+puts BasicObject.superclass 
+```
+
+## Chaining `superclass`
+
+You can trace a class's inheritance chain by chaining the `superclass` method. This shows each parent class in the hierarchy. Once you reach `BasicObject`, calling `superclass` returns `nil`, which basically means you've reached the end of the hierarchy.
+
+```ruby
+class Animal
+end
+
+class Mammal < Animal
+end
+
+class Dog < Mammal
+end
+
+puts Dog.superclass                                               # Output: Mammal
+puts Dog.superclass.superclass                                    # Output: Animal
+puts Dog.superclass.superclass.superclass                         # Output: Object
+puts Dog.superclass.superclass.superclass.superclass              # Output: BasicObject
+puts Dog.superclass.superclass.superclass.superclass.superclass   # Output: nil
+```
+
+
+Another good example is chaining `superclass` on an integer like `27`. Since `27` is an object, not a class, we first call `class` to get its class, and then chain `superclass` to see the inheritance hierarchy:
+
+```ruby
+puts 27.class                                               # Output: Integer                                            
+puts 27.class.superclass                                    # Output: Numeric                                        
+puts 27.class.superclass.superclass                         # Output: Object                            
+puts 27.class.superclass.superclass.superclass              # Output: BasicObject                     
+puts 27.class.superclass.superclass.superclass.superclass   # Output: nil      
+```
+
+
+

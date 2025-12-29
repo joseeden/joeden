@@ -372,43 +372,6 @@ Output:
 ```
 
 
-
-
-
-
-## Escape Characters
-
-Escape characters let you include special characters inside strings.
-
-For example, when you try to run the code below:
-
-```ruby
-puts 'Adam said 'Hello James, how was your day?''
-```
-
-Ruby reports an error because it cannot read the string correctly.
-
-```ruby
-unexpected constant, expecting end-of-input
-unexpected local variable or method, expecting end-of-input
-
-> 77 | puts 'John asked 'Hello Adam, how was your day?''
-     |                   ^~~~~ unexpected constant, expecting end-of-input
-     |                                   ^~~ unexpected local variable or method, expecting end-of-input
-```
-
-You can fix this by escaping the inner quotes:
-
-```ruby
-puts 'Adam said \'Hello James, how was your day?\''
-```
-
-Output:
-
-```bash
-Adam said 'Hello James, how was your day?'
-```
-
 ## Inputs 
 
 User input allows programs to interact with people.
@@ -466,6 +429,38 @@ Enter a radius for a circle:
 The area of the circle is 153.86
 ```
 
+## Escape Characters
+
+Escape characters let you include special characters inside strings.
+
+For example, when you try to run the code below:
+
+```ruby
+puts 'Adam said 'Hello James, how was your day?''
+```
+
+Ruby reports an error because it cannot read the string correctly.
+
+```ruby
+unexpected constant, expecting end-of-input
+unexpected local variable or method, expecting end-of-input
+
+> 77 | puts 'John asked 'Hello Adam, how was your day?''
+     |                   ^~~~~ unexpected constant, expecting end-of-input
+     |                                   ^~~ unexpected local variable or method, expecting end-of-input
+```
+
+You can fix this by escaping the inner quotes:
+
+```ruby
+puts 'Adam said \'Hello James, how was your day?\''
+```
+
+Output:
+
+```bash
+Adam said 'Hello James, how was your day?'
+```
 
 ## Styling Conventions
 
