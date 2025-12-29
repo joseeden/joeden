@@ -297,3 +297,104 @@ Square of 3 is 9
 Square of 4 is 16
 Square of 5 is 25
 ```
+
+## Import Ruby Files
+
+You can split code across multiple Ruby files and import one file into another using the `load` method. You can load the same file multiple times, but top-level code will run each time.
+
+Example with two files:
+
+- `file_2.rb`
+
+    ```ruby
+    puts "Hello from the other side"
+
+    def file_2_method
+      puts "I'm a method from the other side"
+    end
+
+    class Table
+    end
+    ```
+
+- `main.rb`
+
+    ```ruby
+    puts "Welcome to the Upside Down"
+
+    load "file_2.rb"
+
+    file_2_method
+    table = Table.new
+
+    puts table.class
+
+    puts "We've reached the end of our session."
+    ```
+
+Running `main.rb`:
+
+```bash
+ruby main.rb  
+```
+
+Output:
+
+```
+Welcome to the Upside Down
+Hello from the other side
+I'm a method from the other side
+Table
+We've reached the end of our session.
+```
+
+You can also use conditions or other logic when calling `load`, and you can include `./` before the filename to indicate the current directory. 
+
+## `require` and `require_relative`
+
+You can bring one Ruby file into another to reuse code without repeating it. Unlike `load`, these methods only run a file once.
+
+- `require` loads a file once and looks in Ruby’s library by default
+- `require_relative` loads a file from the current folder
+
+Using the same files from the previous section, but updated:
+
+- `main.rb`
+
+    ```ruby
+    puts "Welcome to the Upside Down"
+
+    require_relative "file_2.rb"
+
+    file_2_method
+    table = Table.new
+
+    puts table.class
+
+    puts "We've reached the end of our session."
+    ```
+
+- `file_2.rb`
+
+    ```ruby
+    puts "Hello from the other side"
+
+    def file_2_method
+      puts "I'm a method from the other side"
+    end
+
+    class Table
+    end
+    ```
+
+Output when running `main.rb`:
+
+```
+Welcome to the program
+Hello from the other side
+I'm a method from the other side
+Table
+We've reached the end of our session.
+```
+
+This shows the other file’s methods and classes are available, but its top-level code runs only once, even if required multiple times.
