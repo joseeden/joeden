@@ -432,8 +432,83 @@ Output:
 ```
 
 
+### Using `class << self`
 
-## Class Methods vs Instance Methods
+You can define several class methods together using `class << self`. Inside this block, all methods automatically become class methods, so you don’t need to add `self` before each method name.
+
+Using the previous example on the `Appliance` class:
+
+```ruby
+class Appliance 
+  attr_reader :voltage, :power 
+
+  def initialize(voltage, power)
+    @voltage = voltage
+    @power = power
+  end
+
+  class << self 
+    def fridge
+      new(220, 150)
+    end
+    def washer
+      new(220, 150)
+    end
+  end
+end
+
+fridge = Appliance.fridge
+washer = Appliance.washer
+
+puts fridge.voltage
+puts fridge.power
+puts washer.voltage
+puts washer.power
+```
+
+Output:
+
+```bash
+220
+150
+220
+500
+```
+
+Using `class << self` automatically treats all methods inside as class methods. This keeps them grouped and avoids repeating `self` before each method. 
+
+**Additional:** You would typically see the `class << self` block closer the top in most projects:
+
+```ruby
+class Appliance 
+  class << self 
+    def fridge
+      new(220, 150)
+    end
+    def washer
+      new(220, 150)
+    end
+  end
+
+  attr_reader :voltage, :power 
+
+  def initialize(voltage, power)
+    @voltage = voltage
+    @power = power
+  end
+end
+
+fridge = Appliance.fridge
+washer = Appliance.washer
+
+puts fridge.voltage
+puts fridge.power
+puts washer.voltage
+puts washer.power
+```
+
+
+### Class Methods vs Instance Methods
 
 Quick comparison:
 
@@ -442,5 +517,194 @@ Quick comparison:
 
 This difference matters because some behavior does not make sense to attach to a single object. Creating new objects is one of those cases, which is why `new` and similar helpers are class methods.
 
-**When to use class methods** 
-Use a class method when the behavior does not belong to a single object but is related to the class as a whole.
+**When to use class methods:** Use a class method when the behavior does not belong to a single object but is related to the class as a whole.
+
+## Class Variables 
+
+A class variable is data that belongs to the class, not to individual objects. It is shared across all instances and is often used with class methods to access or update values.
+
+Examples: Counting how many objects of a class have been created. 
+
+You declare a class variable using `@@` (two "at"signs) and usually define a class method to read its value.
+
+```ruby
+class Bike 
+  @@count = 0 
+
+  attr_reader :color 
+
+  def initialize(color)
+    @color = color 
+    @@count += 1
+  end
+
+  def self.count 
+    @@count 
+  end
+end
+
+bike1 = Bike.new("red")
+bike2 = Bike.new("blue")
+bike3 = Bike.new("green")
+
+puts Bike.count
+```
+
+Output:
+
+```bash
+3 
+```
+
+Here, the `@@count` is a class variable shared by all `Bike` instances. When a new `Bike` is initialized, it runs the `@@count += 1` which increases the `@@count`.
+
+## Extending a Class in Parts
+
+You can define a class in more than one place. Each definition adds to the class, and all methods and logic combine to form the final class. This is useful in large codebases where different files contribute to the same class.
+
+```ruby
+class Novel 
+  attr_reader :title, :author, :pages 
+
+  def initialize(title, author, pages)
+    @title = title
+    @author = author 
+    @pages = pages
+  end
+end
+
+lotr = Novel.new("The Lord of the Rings", "J.R.R. Tolkien", 1178)
+
+puts lotr.title
+puts lotr.author
+puts lotr.pages
+```
+
+Output:
+
+```bash
+The Lord of the Rings
+J.R.R. Tolkien
+1178
+```
+
+Later, you can add a new class definition for the same `Novel` class:
+
+```ruby
+class Novel 
+  attr_reader :title, :author, :pages 
+
+  def initialize(title, author, pages)
+    @title = title
+    @author = author 
+    @pages = pages
+  end
+end
+
+lotr = Novel.new("The Lord of the Rings", "J.R.R. Tolkien", 1178)
+
+puts lotr.title
+puts lotr.author
+puts lotr.pages
+
+# Adding a new method for the "Novel" class
+class Novel 
+  def read 
+    1.step(pages, 10) do |page|
+      puts "Reading page: #{page}"
+    end
+    puts "Done reading: #{title}"
+  end
+end
+
+puts lotr.read
+```
+
+Output:
+
+```bash
+The Lord of the Rings
+J.R.R. Tolkien
+1178
+Reading page: 1
+Reading page: 11
+....
+Reading page: 1161
+Reading page: 1171
+Done reading: The Lord of the Rings
+```
+
+Even though the `lotr` instance was already created with `lotr = Novel.new(...)`, Ruby will merge the second `class Novel` block and its new methods into the existing `Novel` class.
+
+Note that Ruby reads files top to bottom, so methods must be defined before they are called. As an example, if you call the `lotra.read` before adding the new logic:
+
+```ruby
+# Attempting to invoke read before its define
+puts lotr.read
+
+# Adding a new method for the "Novel" class
+class Novel 
+  def read 
+    1.step(pages, 10) do |page|
+      puts "Reading page: #{page}"
+    end
+    puts "Done reading: #{title}"
+  end
+end
+```
+
+This will raise a `NoMethodError` exception because the method does not exist yet:
+
+```bash
+undefined method 'read' for an instance of Novel (NoMethodError)
+```
+
+## Monkey Patching 
+
+**Monkey Patching** is the practice of adding new methods or functionality to an existing Ruby class. This works for both custom classes and Ruby’s built-in classes like `String` or `Array`.
+
+For example, we can add a `count_vowels` method to the `String` class:
+
+```ruby
+class String
+  def count_vowels
+    self.downcase.count("aeiou")
+  end
+end
+
+puts "Hello".count_vowels  
+puts "Refrigerator".count_vowels  
+```
+
+Output:
+
+```bash
+2
+5
+```
+
+We can also extend `Array` with a method to check if it is sorted:
+
+```ruby
+class Array
+  def sorted?
+    self == self.sort
+  end
+end
+
+puts [1,2,3].sorted?    # true
+puts [1,3,2].sorted?    # false
+```
+
+Output:
+
+```bash
+true
+false
+```
+
+**Note:** Any object from a patched class gains the new methods automatically.
+
+Monkey patching is generally discouraged because you might accidentally replace core methods, which can break expectations in your program. Much safer alternatives include creating helper classes that operate on the object instead of changing the original class.
+
+The key idea is that Ruby allows it, but it should be used carefully and only when necessary.
