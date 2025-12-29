@@ -227,3 +227,73 @@ File.delete("updated-shopping-list.txt") if File.exist?("updated-shopping-list.t
 ```
 
 This ensures the file is created, and then deleted without causing exceptions. 
+
+
+## Command Line Arguments 
+
+Command line arguments let you pass values into your program from the terminal. These values arrive as strings in the `ARGV` array and can be used directly to change how the program runs.
+
+Example of printing arguments:
+
+```ruby
+# cli-example-1.rb
+ARGV.each do |arg|
+  puts arg
+end
+```
+
+Run the script:
+
+```bash
+ruby cli-example-1.rb 1 2 3
+```
+
+Output:
+
+```
+1
+2
+3
+```
+
+Using the `class` method, we can confirm that all values in `ARGV` are strings:
+
+```ruby
+# cli-example-2
+ARGV.each do |arg|
+  puts "#{arg} is a #{arg.class}"
+end
+```
+
+Output:
+
+```
+1 is a String
+2 is a String
+3 is a String
+```
+
+Example of calculating squares of numbers from command line arguments:
+
+```ruby
+# cli-example-3
+ARGV.each do |arg|
+  number = arg.to_i
+  square = number ** 2
+  puts "Square of #{number} is #{square}"
+end
+```
+
+Run the script:
+
+```bash
+ruby cli-example-3.rb 3 4 5
+```
+
+Output:
+
+```
+Square of 3 is 9
+Square of 4 is 16
+Square of 5 is 25
+```
