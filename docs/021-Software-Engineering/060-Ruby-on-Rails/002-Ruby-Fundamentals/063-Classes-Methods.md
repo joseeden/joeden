@@ -242,3 +242,83 @@ puts safe.pin
 ```
 
 The behavior stays the same, but the validation logic is now hidden and easier to maintain.
+
+
+## Avoid Storing Derived State
+
+A derived value is data that is calculated from other data in the object.
+
+- It depends on other state
+- It changes when that state changes
+
+Because it is not independent, storing a derived value means you must remember to update it every time the original data changes. This often leads to bugs, which is why this approach is considered an anti-pattern.
+
+:::info 
+
+An anti-pattern is a common coding habit that looks acceptable at first but leads to bugs and extra work over time.
+
+:::
+
+
+This example shows `area` as a derived value being stored as an instance variable:
+
+```ruby
+class Box
+  attr_accessor :height, :width
+  attr_reader :area
+
+  def initialize(height, width)
+    @height = height
+    @width = width
+    @area = height * width
+  end
+end
+
+b = Box.new(3, 5)
+puts b.area
+
+b.height = 10
+puts b.area
+```
+
+Output:
+
+```bash
+15
+15
+```
+
+The area does not change because it is only calculated once during initialization.Instead of storing the derived value, calculate it when needed. To do this, move the calculation on another instance method called `area`:
+
+```ruby
+class Box
+  attr_accessor :height, :width
+
+  def initialize(height, width)
+    @height = height
+    @width = width
+  end
+
+  def area
+    height * width
+  end
+end
+
+b = Box.new(3, 5)
+puts b.area
+
+b.height = 10
+puts b.area
+
+b.width = 8
+puts b.area
+```
+
+Output:
+
+```bash
+15
+50
+```
+
+By computing the value in a method, it always uses the latest state and stays correct. This avoids duplicate state and ensures that derived values belong in methods, not in stored variables.
