@@ -30,3 +30,47 @@ For example, if you model animals, an `Animal` class can define shared behavior 
 ![](/img/docs/Screenshot-2025-12-29-165404.png)
 
 </div>
+
+## Declaring Subclasses 
+
+A subclass gets all the functionality of its parent class and can also add its own unique methods.
+
+To create a subclass, write the subclass name followed by `<` and the superclass it inherits from. For example, `Dog < Animal` makes `Dog` inherit from the `Animal` class.
+
+```ruby
+class Animal
+  attr_reader :type, :action
+
+  def initialize(type, action)
+    @type = type 
+    @action = action 
+  end
+
+  def perform
+    "The #{@type} can #{@action}"
+  end
+end
+
+# Subclasses inheriting from Animal
+class Dog < Animal
+end
+
+class Bird < Animal
+end
+
+# Creating objects
+fido = Dog.new("dog", "bark and fetch")
+tweety = Bird.new("bird", "fly and sing")
+
+puts fido.perform   
+puts tweety.perform
+```
+
+Output:
+
+```bash
+The dog can bark and fetch
+The bird can fly and sing
+```
+
+Even though `Dog` and `Bird` have no methods defined inside them, they automatically get the initializer, readers, and instance methods from `Animal`. This avoids repeating code and allows each subclass to be extended with its own behavior later.
