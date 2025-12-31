@@ -239,7 +239,9 @@ Ruby provides a built-in module called `Enumerable`. When mixed into a class, it
 - `any`
 - `sort`
 
-The `Bookshelf` class below stores books and magazines. By mixing `Enumerable` into the class, it is going to take the methods that are nested within the `Enumerable` module, and it's going to "inject" them and make them available to the class:
+The `Bookshelf` class below stores books and magazines. By mixing `Enumerable` into the class, it is going to take the methods that are nested within the `Enumerable` module, and it's going to "inject" them and make them available to the class.
+
+The next step is to define an `each` method which tells Ruby how to iterate over the specific entities within class.
 
 ```ruby
 class Bookshelf
@@ -269,8 +271,6 @@ class Bookshelf
   end
 end
 ```
-
-
 
 We can create a `shelf` instance and see all stored items:
 
