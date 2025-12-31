@@ -272,6 +272,8 @@ class Bookshelf
 end
 ```
 
+**Note:** `def each` creates the instance method while the `items.each` arecalled on a regular array that is returned by the `items` method.
+
 We can create a `shelf` instance and see all stored items:
 
 ```ruby
@@ -320,8 +322,9 @@ Now that we have defined `each`, we can use many methods that rely on iteration:
 
     ```ruby
     ["Code Weekly", "Dev Digest", "Learn Rails", "Programming Tips", "Ruby Basics", "Tech Monthly"]
-
     ```
+
+    We did not define any `sort`, but it is actually using the `sort` method from the `Enumerable` module. We can also now use the other methods like `any?` and `map`.
 
 3. Check if any item meets a condition:
 
