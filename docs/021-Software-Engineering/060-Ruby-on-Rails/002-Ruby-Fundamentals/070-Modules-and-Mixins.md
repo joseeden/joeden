@@ -228,7 +228,7 @@ Some behaviors are useful across many objects, even when those objects are not r
 - Behavior can be added without changing class relationships
 
 
-## Using the `Enumerable` module
+## Using the `Enumerable` Module
 
 Ruby provides a built-in module called `Enumerable`. When mixed into a class, it adds many iteration-related methods.
 
@@ -239,7 +239,7 @@ Ruby provides a built-in module called `Enumerable`. When mixed into a class, it
 - `any`
 - `sort`
 
-The `Bookshelf` class below stores books and magazines:
+The `Bookshelf` class below stores books and magazines. By mixing `Enumerable` into the class, it is going to take the methods that are nested within the `Enumerable` module, and it's going to "inject" them and make them available to the class:
 
 ```ruby
 class Bookshelf
@@ -270,7 +270,7 @@ class Bookshelf
 end
 ```
 
-Here, `Enumerable` is mixed into the class, and `each` defines how to iterate. This brings the idea of mixins into practice.
+
 
 We can create a `shelf` instance and see all stored items:
 
@@ -290,7 +290,6 @@ Output:
 ```
 
 Now that we have defined `each`, we can use many methods that rely on iteration:
-
 
 1. Iterate over all items in the shelf:
 
