@@ -282,7 +282,7 @@ shelf = Bookshelf.new(
   magazines: ["Tech Monthly", "Code Weekly", "Dev Digest"]
 )
 
-shelf.items
+p shelf.items
 ```
 
 Output:
@@ -315,7 +315,7 @@ Now that we have defined `each`, we can use many methods that rely on iteration:
 2. Sort all items alphabetically:
 
     ```ruby
-    shelf.sort
+    puts shelf.sort
     ```
 
     Output:
@@ -326,10 +326,10 @@ Now that we have defined `each`, we can use many methods that rely on iteration:
 
     We did not define any `sort`, but it is actually using the `sort` method from the `Enumerable` module. We can also now use the other methods like `any?` and `map`.
 
-3. Check if any item meets a condition:
+3. Check if any item matches a condition (e.g., longer than 12 characters):
 
     ```ruby
-    shelf.any? { |item| item.length > 12 }
+    p shelf.any? { |item| item.length > 12 }
     ```
 
     Output:
@@ -338,10 +338,10 @@ Now that we have defined `each`, we can use many methods that rely on iteration:
     true
     ```
 
-4. Transform items with a block:
+4. Transform items with a block (e.g., convert all text to uppercase):
 
     ```ruby
-    shelf.map { |item| item.upcase }
+    p shelf.map { |item| item.upcase }
     ```
 
     Output:
@@ -350,3 +350,34 @@ Now that we have defined `each`, we can use many methods that rely on iteration:
     ["RUBY BASICS", "LEARN RAILS", "PROGRAMMING TIPS", "TECH MONTHLY", "CODE WEEKLY", "DEV DIGEST"]
     ```
 
+5. Select items that meet a condition (e.g., contain the letter "g"):
+
+    ```ruby
+    p shelf.select { |item| item.downcase.include?("g")}
+    ```
+
+    Output:
+
+    ```ruby
+    ["Programming Tips", "Dev Digest"]
+    ```
+
+We can further modify to class, let's say to iterate over books only, by updating the `each` method:
+
+```ruby
+def each
+  books.each do |item|
+    yield item
+  end
+end 
+```
+
+To iterate over magazines only:
+
+```ruby
+def each
+  magazines.each do |item|
+    yield item
+  end
+end 
+```
