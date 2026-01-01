@@ -1032,7 +1032,143 @@ Use `extend` when you want a module’s methods to be called on the class itself
 :::
 
 
-## Multiple Mixins
+## Method conflicts when mixing modules
+
+You can mix multiple modules into the same class, but if they define methods with the same name, Ruby will use the method from the last module included. The order of `include` determines which method is called.
+
+In this example, both the `Breakfast` and `Lunch` modules define a `serve` method. When both are included in the `Cafe` class, the `Lunch` module is added last, so its method takes priority.
+
+```ruby
+module Breakfast
+  def serve(item)
+    "Serving #{item} for breakfast"
+  end
+
+  def drink
+    "Serving coffee"
+  end
+end
+
+module Lunch
+  def serve(item)
+    "Serving #{item} for lunch"
+  end
+end
+
+class Cafe
+  include Breakfast
+  include Lunch
+end
+
+cafe = Cafe.new
+puts cafe.serve("Pancakes")  
+```
+
+Output:
+
+```bash
+Serving Pancakes for lunch
+```
+
+If we reverse the inclusion order in the `Cafe` class, the `Breakfast` module is included last, so its `serve` method wins:
+
+```bash
+class Cafe
+  include Lunch
+  include Breakfast
+end
+
+cafe = Cafe.new
+puts cafe.serve("Pancakes") 
+```
+
+Output:
+
+```bash
+Serving Pancakes for breakfast
+```
+
+Methods that don’t conflict are still available, but for conflicting methods, Ruby prioritizes the last included module. 
+
+
+## Splitting a Module Across Files
+
+You can define the same module across multiple files, and Ruby will combine all the methods into a single module. Often, the module name is also used as the folder name, with each file inside adding different functionality. 
+
+For example, we can have the files for the `Streamable` module inside the `/project/streamable/` directory:
+
+```bash
+/project/
+├── main.rb
+└── streamable/
+    ├── audio.rb
+    └── video.rb
+```
+
+Each file can add its own methods to the module:
+
+- `streamable/audio.rb`
+
+    ```ruby
+    module Streamable
+      def stream_audio(title)
+        "Streaming audio: #{title}"
+      end
+    end
+    ```
+
+- `streamable/video.rb`
+
+    ```ruby
+    module Streamable
+      def stream_video(title)
+        "Streaming video: #{title}"
+      end
+    end
+    ```
+
+In the `main.rb`, requiring both files combines them into a single `Streamable` module, which can then be included in a class.
+
+```ruby
+require_relative "streamable/audio"
+require_relative "streamable/video"
+
+class MediaPlayer
+  include Streamable
+end
+
+player = MediaPlayer.new
+puts player.stream_audio("Jazz Classics")
+puts player.stream_video("Nature Documentary")
+```
+
+Before running the script, make sure you are inside the `/project/` directory:
+
+```bash
+cd /project 
+```
+
+Run the script:
+
+```bash
+ruby main.rb 
+```
+
+Output:
+
+```text
+Streaming audio: Jazz Classics
+Streaming video: Nature Documentary
+```
+
+Ruby merges the two `Streamable` module definitions into one, and makes all the methods available to the `MediaPlayer` class.
+
+
+## Modules within Modules 
+
+
+
+## Example: Multiple Mixins
 
 In this example, we have a `RestApiHandler` class for a backend server. It needs several independent features: authentication, logging, and response formatting. 
 
