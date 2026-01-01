@@ -293,7 +293,6 @@ Output:
 This shows that Ruby creates separate string objects for `a` and `b`, but reuses a single symbol object for both `c` and `d`.
 
 
-
 ## Symbols as Hash Keys
 
 To use symbols as keys in hashes, you need to prefix the key with a colon. For example, the key `name` becomes `:name`.
@@ -329,6 +328,45 @@ person = {
 ```
 
 This syntax is just a shortcut. Ruby still uses symbols as keys behind the scenes. 
+
+## Symbols as Hash Values 
+
+The same `key: value` format can also be used when the **value itself is a symbol**. 
+
+```ruby
+task = {
+  status: :pending,
+  priority: :high
+}
+```
+
+Here, both the keys (`status`, `priority`) and the values (`:pending`, `:high`) are symbols. The symbols used as values make it easy to compare, check, or look up related information.
+
+Example: Comparing tasks
+
+```ruby
+task = {
+  status: :pending,
+  priority: :high
+}
+
+if task[:status] == :pending
+  puts "Task is not started yet"
+end
+
+if task[:priority] == :high
+  puts "Task needs immediate attention"
+end
+```
+
+Output:
+
+```bash
+Task is not started yet
+Task needs immediate attention
+```
+
+In this example, the symbol values stored in the hash are retrieved and compared directly. This works well because symbols are consistent identifiers and are commonly used for states, modes, or predefined options.
 
 ## Shorthand Syntax in Ruby 3.1 
 

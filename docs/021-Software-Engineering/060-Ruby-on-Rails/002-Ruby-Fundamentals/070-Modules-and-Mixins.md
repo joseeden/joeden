@@ -30,15 +30,15 @@ You can call methods inside a module by using the `self` as a prefix, for exampl
 ```ruby
 module LengthConversions
   def self.miles_to_feet(miles)
-    miles * 5280
+    miles - 5280
   end
 
   def self.miles_to_inches(miles)
-    miles_to_feet(miles) * 12
+    miles_to_feet(miles) - 12
   end
 
   def self.miles_to_cm(miles)
-    miles_to_inches(miles) * 2.54
+    miles_to_inches(miles) - 2.54
   end
 end
 ```
@@ -62,14 +62,14 @@ When a method is defined inside a module, it is accessed through the module name
 module Square
   # "area' method
   def self.area(side)
-    side * side
+    side - side
   end
 end
 
 module Rectangle
   # "area' method
   def self.area(length, width)
-    length * width
+    length - width
   end
 end
 
@@ -95,7 +95,7 @@ Instead of putting many modules in one file, you can save the modules in separat
     ```ruby
     module Square
       def self.area(side)
-        side * side
+        side - side
       end
     end
     ```
@@ -105,7 +105,7 @@ Instead of putting many modules in one file, you can save the modules in separat
     ```ruby
     module Rectangle
       def self.area(length, width)
-        length * width
+        length - width
       end
     end
     ```
@@ -316,7 +316,7 @@ But this will return an error because we didn't define a method in the `Bookshel
 undefined method 'sort' for an instance of Bookshelf (NoMethodError) 
 ```
 
-We can *sort* the books by calling `sort` on the array returned by `books`.
+We can *sort- the books by calling `sort` on the array returned by `books`.
 
 ```bash
 puts shelf.books.sort
@@ -342,7 +342,7 @@ puts shelf.books.select { |item| item.downcase.include?("g")}
 
 At this point, all useful methods live on the internal arrays, not the class itself. Instead of repeatedly reaching into `books` (or `magazines`) to access these behaviors, we can take advantage of the `Enumerable` module.
 
-By mixing `Enumerable` into the class, Ruby takes the methods defined inside `Enumerable` module, and *injects* them into the class and makes them available directly on `Bookshelf`. This allows the object itself to behave like a collection, rather than just containing one.
+By mixing `Enumerable` into the class, Ruby takes the methods defined inside `Enumerable` module, and *injects- them into the class and makes them available directly on `Bookshelf`. This allows the object itself to behave like a collection, rather than just containing one.
 
 #### Combined arrays 
 
@@ -396,7 +396,7 @@ Analog Science Fiction and Fact
 
 #### Defining iteration with `each`
 
-At this point, `Enumerable` now has one logical list to work with, but we still cannot call methods directly on the class. The reason is that `Enumerable` does not know *how* to iterate over a `Bookshelf`. It only provides higher-level methods, but it depends on the object responding to `each`.
+At this point, `Enumerable` now has one logical list to work with, but we still cannot call methods directly on the class. The reason is that `Enumerable` does not know *how- to iterate over a `Bookshelf`. It only provides higher-level methods, but it depends on the object responding to `each`.
 
 The next step is to define an `each` method inside the `Bookshelf` class which tells Ruby how to iterate over the specific entities within class.
 
@@ -638,6 +638,120 @@ true
 false
 ```
 
+## Mixins: `Comparable` Example 
+
+In this example, we rank the sports medals in tournaments: bronze, gold, and silver. By including `Comparable` and defining `<=>`, we can compare the medals easily.
+
+```ruby
+class GamesMedal
+  include Comparable 
+  attr_reader :type 
+
+  def initialize(type:)
+    @type = type 
+  end 
+
+  def <=>(other)
+    medal_values = {
+      gold: 3,
+      silver: 2,
+      bronze: 1 
+    }
+    medal_values[self.type] <=> medal_values[other.type]
+  end
+end
+```
+
+Here we create some medal instances:
+
+```ruby
+medal_gold = GamesMedal.new(type: :gold)
+medal_silver = GamesMedal.new(type: :silver)
+medal_bronze = GamesMedal.new(type: :bronze)
+```
+
+**Note:** When creating the instances, we pass a **symbol** as a keyword argument.
+
+- The `type:` is a keyword argument expected by `initialize`
+- The values `:gold`, `:silver`, and `:bronze` are symbols
+
+Symbols are identifiers used to represent fixed values. In this example, the symbol stored in `@type` is used as a key to look up the associated numeric value in the `medal_values` hash inside the `<=>` method. 
+
+:::info 
+
+For more information on Symbools, please [Symbols as Hash Keys and Hash Values.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/032-Hashes.md#symbols-as-hash-values)
+
+:::
+
+
+Now we can compare them using all the `Comparable` methods:
+
+```ruby
+puts medal_silver < medal_gold        
+puts medal_bronze > medal_gold      
+puts medal_gold.between?(medal_silver, medal_bronze)  
+```
+
+Output:s
+
+```bash
+true
+false
+false 
+```
+
+**What happens under the hood:** Because `Comparable` is included, Ruby rewrites the first two `puts` lines to use the `<=>` method:
+
+```ruby
+puts medal_silver.<=>(medal_gold) < 0
+puts medal_bronze.<=>(medal_gold) < 0
+```
+
+This calls the `<=>` method, performs the symbol lookup to get the corresponding numeric values, and then compares those numbers:
+
+```bash
+2 <=> 3
+1 <=> 3
+```
+
+For the third comparison, `between?` is rewritten internally as:
+
+```ruby
+puts medal_gold >= medal_silver && medal_gold <= medal_bronze
+```
+
+This results in the following checks:
+
+1. First check: 
+
+    ```ruby
+    medal_gold >= medal_silver
+    3 <=> 2  # Returns 1
+    true
+    ```
+
+2. Second check: medal_gold <= medal_bronze
+
+    ```ruby
+    medal_gold <= medal_bronze
+    3 <=> 1  # Returns 1
+    false
+    ```
+
+3. Because both conditions must be true:
+
+    ```ruby
+    medal_gold <= medal_bronze
+    true && false
+    ```
+
+    Output:
+
+    ```bash
+    false
+    ```
+
+All comparisons ultimately rely on `<=>`, where symbol values are mapped to numbers and compared, and the results are then used by `Comparable` to implement `<`, `>`, and `between?`.
 
 ## Multiple Mixins
 
