@@ -88,7 +88,7 @@ Here, both methods are named `area`, but there is no conflict because each lives
 
 ## Using Modules Across Files
 
-Instead of putting many modules in one file, you can save the modules in separate files.. Using the example from previous section, the `Square` and `Rectangle` modules can be stored in their respective Ruby files:
+Instead of putting many modules in one file, you can save the modules in separate files. Using the example from previous section, the `Square` and `Rectangle` modules can be stored in their respective Ruby files:
 
 - `square.rb`
 
@@ -226,6 +226,12 @@ Some behaviors are useful across many objects, even when those objects are not r
 - Different objects can share the same behavior
 - Inheritance is not always a good fit
 - Behavior can be added without changing class relationships
+
+:::info 
+
+Mixins are ideal when different classes need the same feature but do not belong to the same hierarchy. 
+
+:::
 
 Modules used as mixins often end in `able` to indicate added behavior. For example:
 
@@ -638,7 +644,7 @@ true
 false
 ```
 
-## Mixins: `Comparable` Example 
+#### Example: Comparing Medals
 
 In this example, we rank the sports medals in tournaments: bronze, gold, and silver. By including `Comparable` and defining `<=>`, we can compare the medals easily.
 
@@ -753,6 +759,279 @@ This results in the following checks:
 
 All comparisons ultimately rely on `<=>`, where symbol values are mapped to numbers and compared, and the results are then used by `Comparable` to implement `<`, `>`, and `between?`.
 
+
+## Defining a Custom module
+
+A custom module lets you share behavior across different classes without using inheritance. It is useful when classes are different but need the same functionality.
+
+- Use inheritance for an **is a** relationship
+- Use modules for a **has a** relationship
+- Mixins allow sharing behavior across unrelated classes
+
+When a module is mixed in, its methods become instance methods of the class. Do not use `self` in these methods. To create a module, use the `module` keyword, followed by the module name:
+
+```ruby
+module Orderable
+  def order(item)
+    "You ordered #{item}"
+  end
+end
+```
+
+**Note:** This module defines behavior only. It does not represent a thing, just something an object can do.
+
+The module can be included in different classes using the `include` keyword, even if they are not related. The methods of the `Orderable` module are copied into each class.
+
+```ruby
+class Cafe
+  include Orderable
+end
+
+class FoodTruck
+  include Orderable
+end
+
+class JuiceStand < FoodTruck
+end
+```
+
+Additionally, subclasses (such as `JuiceStand`) automatically inherit them. This allows shared behavior without requiring a common superclass.
+
+Next, we create instances of these classes and use the shared methods:
+
+```ruby
+cafe = Cafe.new
+truck = FoodTruck.new
+juice = JuiceStand.new
+
+puts cafe.order("Coffee")
+puts truck.order("Tacos")
+puts juice.order("Orange Juice")
+```
+
+Output:
+
+```text
+You ordered Coffee
+You ordered Tacos
+You ordered Orange Juice
+```
+
+Each object behaves consistently because the behavior comes from the same module. 
+
+
+## Method Lookup and `ancestors`
+
+When a module is mixed into a class, Ruby searches for methods in a set order:
+
+1. First in the class itself
+2. Then in any included modules
+3. Finally up the superclass chain
+
+This determines which method will run if the same method exists in multiple places.
+
+Updating the the `Orderable` module from the previous section:
+
+1. The `Cafe` class overrides the `order` method from the module, so its own version is used. 
+2. `FoodTruck` and `JuiceStand` don’t define their own method, so they use the one from `Orderable`.
+
+```ruby
+module Orderable
+  def order(item)
+    "You ordered #{item}"
+  end
+end
+
+class Cafe
+  include Orderable
+
+  def order(item)
+    "You got a #{item} at the cafe"
+  end
+end
+
+class FoodTruck
+  include Orderable
+end
+
+class JuiceStand < FoodTruck
+end
+
+cafe_1 = Cafe.new
+food_truck_1 = FoodTruck.new
+juice_stand_1= JuiceStand.new
+
+puts cafe_1.order("Latte")
+puts food_truck_1.order("Sandwich")
+puts juice_stand_1.order("Smoothie")
+```
+
+Output:
+
+```text
+You got a Latte at the cafe
+You ordered Sandwich
+You ordered Smoothie
+```
+
+We can use the `ancestors` method to check the inheritance and mixin hierarchy:
+
+```ruby
+p Cafe.ancestors
+p FoodTruck.ancestors
+p JuiceStand.ancestors
+```
+
+Output:
+
+```text
+[Cafe, Orderable, Object, Kernel, BasicObject]
+[FoodTruck, Orderable, Object, Kernel, BasicObject]
+[JuiceStand, FoodTruck, Orderable, Object, Kernel, BasicObject]
+```
+
+The `ancestors` array shows the order Ruby searches for methods: first the class, then any modules included in the class or its superclasses, and finally the built-in superclasses. This explains why the `order` method in `Cafe` was used instead of the module’s.
+
+:::info 
+
+For more information on `ancestors`, please see [Inheritance.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/064-Classes-Inheritance.md#superclass-and-ancestors)
+
+::: 
+
+You can also check if an object includes a module or inherits from a class with `is_a?`:
+
+```ruby
+puts cafe_1.is_a?(Cafe)       # Output: true
+puts cafe_1.is_a?(Orderable)  # Output: true
+puts cafe_1.is_a?(Object)     # Output: true
+```
+
+Mixins appear in the ancestor chain and Ruby can find their methods just like it does for superclasses.
+
+
+
+## Using `prepend` and `extend`
+
+There are different ways to mix a module’s methods into a class:
+
+- `prepend` makes the module’s methods run before the class’s methods
+- `extend` adds module methods as class-level methods
+
+#### Using `prepend` 
+
+In the `Orderable` example below, we are using `prepend` to override instance methods in the `Cafe` class:
+
+```ruby
+module Orderable
+  def order(item)
+    "You ordered #{item}"
+  end
+end
+
+class Cafe
+  prepend Orderable
+
+  def order(item)
+    "You got a #{item} at the cafe"
+  end
+end
+
+cafe = Cafe.new
+puts cafe.order("Latte")
+```
+
+Output:
+
+```text
+You ordered Latte
+```
+
+Here, `Orderable` comes before `Cafe` in the method lookup chain, so its `order` method is called instead of the one defined in `Cafe`. You can check the lookup order with `ancestors`:
+
+```ruby
+p Cafe.ancestors
+```
+
+Output:
+
+```text
+[Orderable, Cafe, Object, Kernel, BasicObject]
+```
+
+If we comment out the `prepend` line:
+
+```ruby
+class Cafe
+  # prepend Orderable
+  ....
+```
+
+And check the method lookup again, Ruby now prioritizes the class’s own methods first. That’s why `Orderable` no longer appears in the ancestors array:
+
+```ruby
+p Cafe.ancestors
+```
+
+Output:
+
+```text
+[Cafe, Object, Kernel, BasicObject]
+```
+
+#### Using `extend` 
+
+With `extend`, module methods are added as class methods, not instance methods. This means you call these methods on the class, not on objects created from that class.
+
+In the example below, we are calling the `track` method on the `Cafe` and `FoodTruck` classes, not on the `cafe_1` instance.
+
+```ruby
+module Trackable
+  def track
+    "Tracking activity for #{self}"
+  end
+end
+
+class Cafe
+  extend Trackable
+end
+
+class FoodTruck
+  extend Trackable
+end
+
+cafe_1 = Cafe.new 
+
+# Calls `track` on the classes
+puts Cafe.track
+puts FoodTruck.track
+```
+
+Output:
+
+```text
+Tracking activity for Cafe
+Tracking activity for FoodTruck
+```
+
+If we try to call the `track` method on the instance, it will return an error because `track` is not an instance method. It doesn’t exist on objects (like `cafe_1`) created from `Cafe`.
+
+```ruby
+puts cafe_1.track
+```
+
+Output:
+
+```bash
+undefined local variable or method 'cafe_1' for main (NameError) 
+```
+
+:::tip[When to use `extend`]
+
+Use `extend` when you want a module’s methods to be called on the class itself. For example, to give different classes a shared way to report their configuration without creating an instance.
+
+:::
+
+
 ## Multiple Mixins
 
 In this example, we have a `RestApiHandler` class for a backend server. It needs several independent features: authentication, logging, and response formatting. 
@@ -800,7 +1079,7 @@ Each feature is implemented as a separate module in its own file and mixed into 
     end
     ```
 
-The next step is to create a class that brings together all three modules.. We first load each module using `require_relative` with the file names, and then include them inside the class with the `include` keyword:
+The next step is to create a class that brings together all three modules. We first load each module using `require_relative` with the file names, and then include them inside the class with the `include` keyword:
 
 ```ruby
 ## rest_api_handler.rb

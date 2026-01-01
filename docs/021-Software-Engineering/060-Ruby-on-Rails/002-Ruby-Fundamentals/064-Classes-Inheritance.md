@@ -126,6 +126,14 @@ Output:
 [Dog, Mammal, Animal, Object, Kernel, BasicObject]
 ```
 
+:::info 
+
+When the `ancestors` method is called, it shows the full inheritance chain of a class, including any **mixins** that have been added to the class or its superclasses.
+
+For more information, please see [Mixins.](/docs/021-Software-Engineering/060-Ruby-on-Rails/002-Ruby-Fundamentals/070-Modules-and-Mixins.md)
+
+:::
+
 The classes can also be written in a compact form:
 
 ```ruby
