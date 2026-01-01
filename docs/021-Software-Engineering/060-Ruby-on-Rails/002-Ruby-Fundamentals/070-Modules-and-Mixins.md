@@ -227,6 +227,12 @@ Some behaviors are useful across many objects, even when those objects are not r
 - Inheritance is not always a good fit
 - Behavior can be added without changing class relationships
 
+Modules used as mixins often end in `able` to indicate added behavior. For example:
+
+- `Enumerable` adds collection methods
+- `Comparable` adds comparison methods
+- `Monitorable` can add monitoring features
+- `Serializable` adds ability to convert objects to a storable format.
 
 ## Mixins: `Enumerable` Module
 
@@ -581,6 +587,58 @@ end
 
 
 
+
+## Mixins: `Comparable` Module
+
+The `Comparable` module allows objects to be compared easily. By including it in a class and defining the `<=>` (spaceship) operator, we get methods like `<`, `<=`, `>`, `>=`, `==`, and `between?`.
+
+The `<=>` method returns:
+
+- `-1` if the current object is less than the other
+- `0` if both are equal
+- `1` if the current object is greater
+
+
+Here’s an example of using `Comparable` to compare books based on their number of pages:
+
+```ruby
+class Book
+  include Comparable
+
+  attr_reader :title, :pages
+
+  def initialize(title:, pages:)
+    @title = title
+    @pages = pages
+  end
+
+  def <=>(other)
+    self.pages <=> other.pages
+  end
+end
+```
+
+We can create some book instances and compare them easily:
+
+```ruby 
+book1 = Book.new(title: "Short Story", pages: 100)
+book2 = Book.new(title: "Novel", pages: 300)
+book3 = Book.new(title: "Epic", pages: 500)
+
+puts book1 < book2       
+puts book3 > book2       
+puts book3.between?(book1, book2)  
+```
+
+Output:
+
+```bash
+true
+true
+false
+```
+
+
 ## Multiple Mixins
 
 In this example, we have a `RestApiHandler` class for a backend server. It needs several independent features: authentication, logging, and response formatting. 
@@ -688,4 +746,5 @@ Output:
 {"status":"success","data":{"name":"Alice","role":"developer"}}
 {"status":"Error","message":"Unauthorized"}
 ```
+
 
