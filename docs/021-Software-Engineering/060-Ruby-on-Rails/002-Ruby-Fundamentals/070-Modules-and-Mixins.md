@@ -52,7 +52,7 @@ puts LengthConversions.miles_to_cm(10)        # 1606944.0
 ```
 
 
-## Avoiding Name Conflicts
+#### Avoiding Name Conflicts
 
 Modules prevent method name conflicts by grouping methods and classes inside a namespace. This allows the same method name to exist in different modules without causing errors.
 
