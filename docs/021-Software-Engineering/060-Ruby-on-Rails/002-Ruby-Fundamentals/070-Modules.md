@@ -434,9 +434,11 @@ Streaming audio: The Run Experience – Marathon Training Tips
 Streaming video: Edge of Tomorrow
 ```
 
+In the code above, both `include` lines inside the class use the **scope resolution operator** (`::`) to access the nested modules `Audio` and `Video` inside the `MediaManagement` module.
+
 ## Scope Resolution Operator 
 
-We can use the  **scope resolution operator** (`::`) to access nested modules and classes directly without including them in a class. For example:
+The **scope resolution operator** (`::`) lets you access nested modules and classes by their full namespace. You can use it directly to call module methods, or with include to mix a nested module into a class.
 
 ```ruby
 audio_class = MediaManagement::Audio
