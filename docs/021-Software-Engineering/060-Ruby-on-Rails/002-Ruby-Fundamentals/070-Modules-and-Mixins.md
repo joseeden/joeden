@@ -228,7 +228,7 @@ Some behaviors are useful across many objects, even when those objects are not r
 - Behavior can be added without changing class relationships
 
 
-## Using the `Enumerable` Module
+## Mixins: `Enumerable` Module
 
 Ruby provides a built-in module called `Enumerable`. When mixed into a class, it adds many iteration-related methods.
 
@@ -239,9 +239,110 @@ Ruby provides a built-in module called `Enumerable`. When mixed into a class, it
 - `any`
 - `sort`
 
-The `Bookshelf` class below stores books and magazines. By mixing `Enumerable` into the class, it is going to take the methods that are nested within the `Enumerable` module, and it's going to "inject" them and make them available to the class.
+Example: 
 
-The next step is to define an `each` method which tells Ruby how to iterate over the specific entities within class.
+The `Bookshelf` class below stores two collections: books and magazines.
+
+```ruby
+class Bookshelf
+  def initialize(books:, magazines:)
+    @books = books 
+    @magazines = magazines
+  end
+
+  def books
+    @books
+  end
+
+  def magazines
+    @magazines
+  end
+end
+```
+
+We create an instance with some sample data.
+
+```ruby 
+shelf = Bookshelf.new(
+  books: [
+    "Slaughterhouse-Five by Kurt Vonnegut",
+    "Cat's Cradle by Kurt Vonnegut",
+    "Stranger in a Strange Land by Robert A. Heinlein",
+    "Dune by Frank Herbert",
+    "1984 by George Orwell"
+  ],
+  magazines: [
+    "Asimov's Science Fiction",
+    "The Magazine of Fantasy & Science Fiction",
+    "Clarkesworld Magazine",
+    "Weird Tales",
+    "Analog Science Fiction and Fact"
+  ]
+)
+ 
+```
+
+We can list the books by calling the `books` method, which will then return an array:
+
+```bash
+puts shelf.books 
+```
+
+Output:
+
+```bash
+Slaughterhouse-Five by Kurt Vonnegut
+Cat's Cradle by Kurt Vonnegut
+Stranger in a Strange Land by Robert A. Heinlein
+Dune by Frank Herbert
+1984 by George Orwell 
+```
+
+Now, if we want to sort them in order, we might expect to be able to do this:
+
+```bash
+puts shelf.sort 
+```
+
+But this will return an error because we didn't define a method in the `Bookshelf` class. At the moment, it's just a container that holds arrays.
+
+```bash
+undefined method 'sort' for an instance of Bookshelf (NoMethodError) 
+```
+
+We can *sort* the books by calling `sort` on the array returned by `books`.
+
+```bash
+puts shelf.books.sort
+```
+
+Output:
+
+```bash
+1984 by George Orwell
+Cat's Cradle by Kurt Vonnegut
+Dune by Frank Herbert
+Slaughterhouse-Five by Kurt Vonnegut
+Stranger in a Strange Land by Robert A. Heinlein
+```
+
+This works, but it means that if we want to perform any operation, we must always append it to the internal array. For example:
+
+```bash
+puts shelf.books.any? { |item| item.length > 12 }
+puts shelf.books.map { |item| item.upcase }
+puts shelf.books.select { |item| item.downcase.include?("g")}
+```
+
+At this point, all useful methods live on the internal arrays, not the class itself. Instead of repeatedly reaching into `books` (or `magazines`) to access these behaviors, we can take advantage of the `Enumerable` module.
+
+By mixing `Enumerable` into the class, Ruby takes the methods defined inside `Enumerable` module, and *injects* them into the class and makes them available directly on `Bookshelf`. This allows the object itself to behave like a collection, rather than just containing one.
+
+#### Combined arrays 
+
+Right now, the class has two separate arrays: `books` and `magazines`
+
+`Enumerable` does know which one to iterate over or whether to iterate over both. To fix this problem, we can combine both arrays into one array that preserves the order (books first, magazines second). We can do this by adding an `items` method insdie the `Bookshelf` class:
 
 ```ruby
 class Bookshelf
@@ -263,6 +364,74 @@ class Bookshelf
   def items
     books + magazines
   end
+end
+```
+
+When we call `items`, it now returns a single array containing all the items:
+
+```bash
+shelf.items
+```
+
+Output:
+
+```bash
+Slaughterhouse-Five by Kurt Vonnegut
+Cat's Cradle by Kurt Vonnegut
+Stranger in a Strange Land by Robert A. Heinlein
+Dune by Frank Herbert
+1984 by George Orwell
+Asimov's Science Fiction
+The Magazine of Fantasy & Science Fiction
+Clarkesworld Magazine
+Weird Tales
+Analog Science Fiction and Fact
+```
+
+#### Defining iteration with `each`
+
+At this point, `Enumerable` now has one logical list to work with, but we still cannot call methods directly on the class. The reason is that `Enumerable` does not know *how* to iterate over a `Bookshelf`. It only provides higher-level methods, but it depends on the object responding to `each`.
+
+The next step is to define an `each` method inside the `Bookshelf` class which tells Ruby how to iterate over the specific entities within class.
+
+```ruby
+def each
+  items.each do |item|
+    yield item
+  end
+end
+```
+
+This method acts as a bridge between the `Bookshelf` and `Enumerable`:
+
+- `items.each` lets the combined array handle the looping
+- `yield` sends each item to the block passed to `each`
+- Ruby now knows how to move through the object one item at a time
+
+Simply put: `Enumerable` asks what to do, but `each` explains how to move.
+
+The complete code should now look like this: 
+
+```ruby
+class Bookshelf
+  include Enumerable
+  
+  def initialize(books:, magazines:)
+    @books = books 
+    @magazines = magazines
+  end
+
+  def books
+    @books
+  end
+
+  def magazines
+    @magazines
+  end
+
+  def items
+    books + magazines
+  end
 
   def each
     items.each do |item|
@@ -270,28 +439,28 @@ class Bookshelf
     end
   end
 end
-```
 
-**Note:** `def each` creates the instance method while the `items.each` arecalled on a regular array that is returned by the `items` method.
-
-We can create a `shelf` instance and see all stored items:
-
-```ruby
 shelf = Bookshelf.new(
-  books: ["Ruby Basics", "Learn Rails", "Programming Tips"],
-  magazines: ["Tech Monthly", "Code Weekly", "Dev Digest"]
+  books: [
+    "Slaughterhouse-Five by Kurt Vonnegut",
+    "Cat's Cradle by Kurt Vonnegut",
+    "Stranger in a Strange Land by Robert A. Heinlein",
+    "Dune by Frank Herbert",
+    "1984 by George Orwell"
+  ],
+  magazines: [
+    "Asimov's Science Fiction",
+    "The Magazine of Fantasy & Science Fiction",
+    "Clarkesworld Magazine",
+    "Weird Tales",
+    "Analog Science Fiction and Fact"
+  ]
 )
-
-p shelf.items
 ```
 
-Output:
+**Note:** `def each` creates the instance method while the `items.each` are called on a regular array that is returned by the `items` method.
 
-```ruby
-["Ruby Basics", "Learn Rails", "Programming Tips", "Tech Monthly", "Code Weekly", "Dev Digest"]
-```
-
-Now that we have defined `each`, we can use many methods that rely on iteration:
+Now that we have defined `each`, we can use the methods that rely on iteration:
 
 1. Iterate over all items in the shelf:
 
@@ -304,12 +473,16 @@ Now that we have defined `each`, we can use many methods that rely on iteration:
     Output:
 
     ```
-    Ruby Basics is on the shelf
-    Learn Rails is on the shelf
-    Programming Tips is on the shelf
-    Tech Monthly is on the shelf
-    Code Weekly is on the shelf
-    Dev Digest is on the shelf
+    Slaughterhouse-Five by Kurt Vonnegut is on the shelf
+    Cat's Cradle by Kurt Vonnegut is on the shelf
+    Stranger in a Strange Land by Robert A. Heinlein is on the shelf
+    Dune by Frank Herbert is on the shelf
+    1984 by George Orwell is on the shelf
+    Asimov's Science Fiction is on the shelf
+    The Magazine of Fantasy & Science Fiction is on the shelf
+    Clarkesworld Magazine is on the shelf
+    Weird Tales is on the shelf
+    Analog Science Fiction and Fact is on the shelf
     ```
 
 2. Sort all items alphabetically:
@@ -321,7 +494,16 @@ Now that we have defined `each`, we can use many methods that rely on iteration:
     Output:
 
     ```ruby
-    ["Code Weekly", "Dev Digest", "Learn Rails", "Programming Tips", "Ruby Basics", "Tech Monthly"]
+    1984 by George Orwell
+    Analog Science Fiction and Fact
+    Asimov's Science Fiction
+    Cat's Cradle by Kurt Vonnegut
+    Clarkesworld Magazine
+    Dune by Frank Herbert
+    Slaughterhouse-Five by Kurt Vonnegut
+    Stranger in a Strange Land by Robert A. Heinlein
+    The Magazine of Fantasy & Science Fiction
+    Weird Tales
     ```
 
     We did not define any `sort`, but it is actually using the `sort` method from the `Enumerable` module. We can also now use the other methods like `any?` and `map`.
@@ -347,7 +529,16 @@ Now that we have defined `each`, we can use many methods that rely on iteration:
     Output:
 
     ```ruby
-    ["RUBY BASICS", "LEARN RAILS", "PROGRAMMING TIPS", "TECH MONTHLY", "CODE WEEKLY", "DEV DIGEST"]
+    SLAUGHTERHOUSE-FIVE BY KURT VONNEGUT
+    CAT'S CRADLE BY KURT VONNEGUT
+    STRANGER IN A STRANGE LAND BY ROBERT A. HEINLEIN
+    DUNE BY FRANK HERBERT
+    1984 BY GEORGE ORWELL
+    ASIMOV'S SCIENCE FICTION
+    THE MAGAZINE OF FANTASY & SCIENCE FICTION
+    CLARKESWORLD MAGAZINE
+    WEIRD TALES
+    ANALOG SCIENCE FICTION AND FACT
     ```
 
 5. Select items that meet a condition (e.g., contain the letter "g"):
@@ -359,7 +550,13 @@ Now that we have defined `each`, we can use many methods that rely on iteration:
     Output:
 
     ```ruby
-    ["Programming Tips", "Dev Digest"]
+    Slaughterhouse-Five by Kurt Vonnegut
+    Cat's Cradle by Kurt Vonnegut
+    Stranger in a Strange Land by Robert A. Heinlein
+    1984 by George Orwell
+    The Magazine of Fantasy & Science Fiction
+    Clarkesworld Magazine
+    Analog Science Fiction and Fact
     ```
 
 We can further modify to class, let's say to iterate over books only, by updating the `each` method:
@@ -372,7 +569,7 @@ def each
 end 
 ```
 
-To iterate over magazines only:
+Or to iterate over magazines only:
 
 ```ruby
 def each
@@ -381,3 +578,114 @@ def each
   end
 end 
 ```
+
+
+
+## Multiple Mixins
+
+In this example, we have a `RestApiHandler` class for a backend server. It needs several independent features: authentication, logging, and response formatting. 
+
+Each feature is implemented as a separate module in its own file and mixed into the class.
+
+- `auth.rb` - This module handles authentication
+
+    ```ruby
+    module Auth
+      def authenticate(user)
+        if user[:token] == "valid_token"
+          @current_user = user[:name]
+          true
+        else
+          false
+        end
+      end
+
+      def current_user
+        @current_user
+      end
+    end
+    ```
+
+- `logger.rb` - This module tracks requests
+
+    ```ruby
+    module Logger
+      def log_request(endpoint)
+        puts "[LOG] User #{@current_user || 'Guest'} accessed #{endpoint}"
+      end
+    end
+    ```
+
+- `response_formatter.rb` - This module formats API responses
+
+    ```ruby
+    require 'json'
+
+    module ResponseFormatter
+      def json_response(data)
+        { status: "success", data: data }.to_json
+      end
+    end
+    ```
+
+The next step is to create a class that brings together all three modules.. We first load each module using `require_relative` with the file names, and then include them inside the class with the `include` keyword:
+
+```ruby
+## rest_api_handler.rb
+
+require_relative 'auth.rb'
+require_relative 'logger.rb'
+require_relative 'response_formatter.rb'
+
+class RestApiHandler
+  include Auth
+  include Logger 
+  include ResponseFormatter
+
+  def get_user_profile(user)
+    if authenticate(user)       # Auth
+      log_request("/profile")   # Logger
+      json_response({           # ResponseFormatter
+        name: current_user,
+        role: "developer"
+      })
+    else 
+      {
+        status: "Error",
+        message: "Unauthorized"
+      }.to_json
+    end
+  end
+end
+```
+
+**Note:** There is no `initialize` method because the class does not need any setup when a new instance is created. Any state, like `@current_user`, is handled internally by the modules themselves.
+
+Create a new instance and call the methods:
+
+```ruby
+api_1 = RestApiHandler.new 
+
+# Valid user
+user = {
+  name: "Alice",
+  token: "valid_token"
+}
+puts api_1.get_user_profile(user)
+
+# Invalid user
+unauthorized_user = {
+  name: "Bob",
+  token: "invalid"
+}
+puts api_1.get_user_profile(unauthorized_user)
+```
+
+Output:
+
+```
+[LOG] User Alice accessed /profile
+{"status":"success","data":{"name":"Alice","role":"developer"}}
+{"status":"Error","message":"Unauthorized"}
+```
+
