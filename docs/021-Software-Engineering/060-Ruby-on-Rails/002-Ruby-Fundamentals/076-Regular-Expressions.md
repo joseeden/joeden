@@ -68,3 +68,36 @@ puts quote =~ /Be?/
 puts quote =~ /alive!/
 # Output: nil
 ```
+
+## Using `scan` 
+
+The `scan` method finds all matches of a regex pattern in a string and returns them in an array. This is useful when you want every match, not just the first one.
+
+For example, create a string representing a quote:
+
+```ruby
+quote = "Logic is the beginning of wisdom, not the end."
+```
+
+You can find all "e" letters like this:
+
+```ruby
+quote.scan(/e/)
+# Output: ["e", "e", "e", "e"]
+```
+
+You can also search for consecutive characters:
+
+```ruby
+quote.scan(/is/)
+# Output: ["is", "is"]
+```
+
+To match any character from a set, use square brackets:
+
+```ruby
+quote.scan(/[th]/)
+# Output: ["t", "h", "t", "t", "h"]
+```
+
+The method scans the string from start to end, collects matches, and returns them in order. 
