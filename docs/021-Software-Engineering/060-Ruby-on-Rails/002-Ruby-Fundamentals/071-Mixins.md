@@ -1,220 +1,19 @@
 ---
-title: "Modules and Mixins"
-description: "Modules and Mixins"
+title: "Mixins"
+description: "Mixins"
 tags: 
 - Computer Science
 - Application Development
 - Software Development
 - Web Development
 - Ruby
-sidebar_position: 70
+sidebar_position: 71
 last_update:
   date: 8/24/2023
 ---
 
-## Modules
 
-Modules in Ruby are containers that group related code together. Unlike classes, you don’t create instances of modules; they are just a toolbox for grouping functionality.
-
-To define a module, use the `module` keyword, followed by the module name. 
-
-```ruby
-module LengthConversions
-  # add logic here
-end
-
-```
-
-You can call methods inside a module by using the `self` as a prefix, for example:
-
-```ruby
-module LengthConversions
-  def self.miles_to_feet(miles)
-    miles - 5280
-  end
-
-  def self.miles_to_inches(miles)
-    miles_to_feet(miles) - 12
-  end
-
-  def self.miles_to_cm(miles)
-    miles_to_inches(miles) - 2.54
-  end
-end
-```
-
-Methods inside a module are not available at the top level. To use these method, you need to reference the module as a prefix. 
-
-```ruby
-puts LengthConversions.miles_to_feet(10)      # 52800
-puts LengthConversions.miles_to_inches(10)    # 633600
-puts LengthConversions.miles_to_cm(10)        # 1606944.0
-```
-
-
-#### Avoiding Name Conflicts
-
-Modules prevent method name conflicts by grouping methods and classes inside a namespace. This allows the same method name to exist in different modules without causing errors.
-
-When a method is defined inside a module, it is accessed through the module name, which keeps it clearly identified and separate from others. For example:
-
-```ruby
-module Square
-  # "area' method
-  def self.area(side)
-    side - side
-  end
-end
-
-module Rectangle
-  # "area' method
-  def self.area(length, width)
-    length - width
-  end
-end
-
-puts Square.area(10)
-puts Rectangle.area(10, 5)
-```
-
-Output:
-
-```text
-100
-50
-```
-
-Here, both methods are named `area`, but there is no conflict because each lives inside its own module. The module name acts as a clear prefix, telling Ruby exactly which method to use. 
-
-## Using Modules Across Files
-
-Instead of putting many modules in one file, you can save the modules in separate files. Using the example from previous section, the `Square` and `Rectangle` modules can be stored in their respective Ruby files:
-
-- `square.rb`
-
-    ```ruby
-    module Square
-      def self.area(side)
-        side - side
-      end
-    end
-    ```
-
-- `rectangle.rb`
-
-    ```ruby
-    module Rectangle
-      def self.area(length, width)
-        length - width
-      end
-    end
-    ```
-
-To use both modules, we need to import them using the `require_relative` keyword:
-
-```ruby
-## main.rb
-
-require_relative "square"
-require_relative "rectangle"
-
-puts Square.area(10)
-puts Rectangle.area(3, 5)
-```
-
-Running the script:
-
-```bash
-ruby main.rb  
-```
-
-Output:
-
-```text
-100
-15
-```
-
-Here, both modules are loaded into the file, but their `area` methods do not conflict because each one is wrapped inside its own module. 
-
-
-## Built-in Module: `Math`
-
-Ruby includes many ready-to-use modules that organize related functionality. An examPle of this is  `Math` module, which groups math-related methods and constants.
-
-:::info 
-
-Frequently used modules like `Math` are loaded automatically, while others are loaded only when you ask for them.
-
-:::
-
-Example using the `sqrt` method:
-
-```ruby
-puts Math.sqrt(4)
-puts Math.sqrt(5)
-```
-
-Output:
-
-```ruby
-2.0
-2.23606797749979
-```
-
-To see all available methods:
-
-```ruby
-puts Math.methods.sort 
-```
-
-Modules can also contain constants. A common example is `PI`, which stores the value of pi.
-
-```ruby
-puts Math::PI
-```
-
-Output:
-
-```text
-3.141592653589793
-```
-
-Constants are accessed using `::` instead of a dot. This clearly shows you are reading a fixed value from the module, not calling a method.
-
-## Importing Built-in Modules
-
-Some Ruby modules are not available by default and must be imported before you can use them. This keeps Ruby fast by loading only what your program needs.
-
-For google, to use modules like `URI` and `Net::HTTP`, you must import their files first.
-
-```ruby
-require "uri"
-require "net/http"
-```
-
-**Note:** Use `require` to load files from Ruby’s libraries or other locations, and use `require_relative` to load files that are in the same directory as the current file.
-
-Once imported, you can use methods and classes inside these modules.
-
-```ruby
-require "net/http"
-
-url = URI.parse("https://www.google.com")
-response = Net::HTTP.get(url)
-
-puts response
-```
-
-Here, `URI.parse` creates a URL object, and `Net::HTTP.get` uses it to fetch data from the web. This prints the HTML content of the webpage.
-
-:::tip[Modules Can Load Other Modules]
-
-Some modules depend on others. For google, `net/http` automatically loads `uri` internally. Ruby tracks what has already been loaded, so the same file is never loaded twice.
-
-:::
-
-## Mixins 
+## Overview 
 
 Mixins and modules work together to share behavior between classes without using inheritance. 
 
@@ -644,7 +443,7 @@ true
 false
 ```
 
-#### Example: Comparing Medals
+## Example: Comparing Medals
 
 In this example, we rank the sports medals in tournaments: bronze, gold, and silver. By including `Comparable` and defining `<=>`, we can compare the medals easily.
 
@@ -760,64 +559,6 @@ This results in the following checks:
 All comparisons ultimately rely on `<=>`, where symbol values are mapped to numbers and compared, and the results are then used by `Comparable` to implement `<`, `>`, and `between?`.
 
 
-## Defining a Custom module
-
-A custom module lets you share behavior across different classes without using inheritance. It is useful when classes are different but need the same functionality.
-
-- Use inheritance for an **is a** relationship
-- Use modules for a **has a** relationship
-- Mixins allow sharing behavior across unrelated classes
-
-When a module is mixed in, its methods become instance methods of the class. Do not use `self` in these methods. To create a module, use the `module` keyword, followed by the module name:
-
-```ruby
-module Orderable
-  def order(item)
-    "You ordered #{item}"
-  end
-end
-```
-
-**Note:** This module defines behavior only. It does not represent a thing, just something an object can do.
-
-The module can be included in different classes using the `include` keyword, even if they are not related. The methods of the `Orderable` module are copied into each class.
-
-```ruby
-class Cafe
-  include Orderable
-end
-
-class FoodTruck
-  include Orderable
-end
-
-class JuiceStand < FoodTruck
-end
-```
-
-Additionally, subclasses (such as `JuiceStand`) automatically inherit them. This allows shared behavior without requiring a common superclass.
-
-Next, we create instances of these classes and use the shared methods:
-
-```ruby
-cafe = Cafe.new
-truck = FoodTruck.new
-juice = JuiceStand.new
-
-puts cafe.order("Coffee")
-puts truck.order("Tacos")
-puts juice.order("Orange Juice")
-```
-
-Output:
-
-```text
-You ordered Coffee
-You ordered Tacos
-You ordered Orange Juice
-```
-
-Each object behaves consistently because the behavior comes from the same module. 
 
 
 ## Method Lookup and `ancestors`
@@ -917,7 +658,7 @@ There are different ways to mix a module’s methods into a class:
 - `prepend` makes the module’s methods run before the class’s methods
 - `extend` adds module methods as class-level methods
 
-#### Using `prepend` 
+### Using `prepend` 
 
 In the `Orderable` example below, we are using `prepend` to override instance methods in the `Cafe` class:
 
@@ -978,7 +719,7 @@ Output:
 [Cafe, Object, Kernel, BasicObject]
 ```
 
-#### Using `extend` 
+### Using `extend` 
 
 With `extend`, module methods are added as class methods, not instance methods. This means you call these methods on the class, not on objects created from that class.
 
@@ -1090,81 +831,6 @@ Serving Pancakes for breakfast
 
 Methods that don’t conflict are still available, but for conflicting methods, Ruby prioritizes the last included module. 
 
-
-## Splitting a Module Across Files
-
-You can define the same module across multiple files, and Ruby will combine all the methods into a single module. Often, the module name is also used as the folder name, with each file inside adding different functionality. 
-
-For example, we can have the files for the `Streamable` module inside the `/project/streamable/` directory:
-
-```bash
-/project/
-├── main.rb
-└── streamable/
-    ├── audio.rb
-    └── video.rb
-```
-
-Each file can add its own methods to the module:
-
-- `streamable/audio.rb`
-
-    ```ruby
-    module Streamable
-      def stream_audio(title)
-        "Streaming audio: #{title}"
-      end
-    end
-    ```
-
-- `streamable/video.rb`
-
-    ```ruby
-    module Streamable
-      def stream_video(title)
-        "Streaming video: #{title}"
-      end
-    end
-    ```
-
-In the `main.rb`, requiring both files combines them into a single `Streamable` module, which can then be included in a class.
-
-```ruby
-require_relative "streamable/audio"
-require_relative "streamable/video"
-
-class MediaPlayer
-  include Streamable
-end
-
-player = MediaPlayer.new
-puts player.stream_audio("Jazz Classics")
-puts player.stream_video("Nature Documentary")
-```
-
-Before running the script, make sure you are inside the `/project/` directory:
-
-```bash
-cd /project 
-```
-
-Run the script:
-
-```bash
-ruby main.rb 
-```
-
-Output:
-
-```text
-Streaming audio: Jazz Classics
-Streaming video: Nature Documentary
-```
-
-Ruby merges the two `Streamable` module definitions into one, and makes all the methods available to the `MediaPlayer` class.
-
-
-## Modules within Modules 
 
 
 
