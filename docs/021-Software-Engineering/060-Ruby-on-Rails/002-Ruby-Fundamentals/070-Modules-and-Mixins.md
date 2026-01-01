@@ -730,7 +730,7 @@ This results in the following checks:
     true
     ```
 
-2. Second check: medal_gold <= medal_bronze
+2. Second check: 
 
     ```ruby
     medal_gold <= medal_bronze
