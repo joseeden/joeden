@@ -37,7 +37,7 @@ end
 puts sum(3, "5")
 ```
 
-If we run the code below, it will return an error because Ruby cannot add an integer (`3`) and a string (`"5"`):
+If we run the code, it will return an error because Ruby cannot add an integer (`3`) and a string (`"5"`):
 
 ```bash
 ruby sum.rb 
@@ -49,7 +49,7 @@ Output:
 'Integer#+': String can't be coerced into Integer (TypeError)
 ```
 
-We can fix this by wrapping the potentially failing code in a begin block. This tells Ruby to be mindful that an error might occur. Then we add a rescue block to handle the error safely:
+We can fix this by wrapping the potentially failing code in a begin block. This tells Ruby to be mindful that an error might occur. Then we add a `rescue` block to handle the error safely:
 
 ```ruby
 def sum(a, b)
