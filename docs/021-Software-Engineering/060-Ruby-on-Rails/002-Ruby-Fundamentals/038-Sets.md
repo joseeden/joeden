@@ -199,7 +199,7 @@ Output:
 
 ## Example: Generate unique phone numbers from a file
 
-> The files can be found here: [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/060-Ruby-on-Rails/000-Projects/017-Practice-17)
+> The files can be found here: [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/060-Ruby-on-Rails/000-Projects/001-Practice-Sets/017-Practice-17)
 
 In this example, we have a text file of customers who visited a shop. Each line contains a name and a phone number. For example:
 

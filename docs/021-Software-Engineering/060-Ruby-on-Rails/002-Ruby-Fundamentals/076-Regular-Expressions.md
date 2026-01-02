@@ -159,7 +159,7 @@ text.scan(/.a./)
 
 Here, the `a` is matched with any character before and after it.
 
-#### Extracting phone numbers with changing separators
+#### 1. Extracting phone numbers with changing separators
 
 Sometimes phone numbers are written with dashes, spaces, or other symbols. We can use the dot to handle the differences:
 
@@ -190,7 +190,7 @@ text.scan(/\d{3}.+\d{3}.+\d{4}/)
 
 The `.+` means one or more of any character. Ruby keeps scanning until it finds the next digit group, which makes the pattern resilient to spacing or symbol changes.
 
-#### Matching a literal dot
+#### 2. Matching a literal dot
 
 The dot normally means “any character”, so it cannot match a real period by itself. To match an actual dot, you must escape it.
 
