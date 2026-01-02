@@ -121,7 +121,7 @@ But this will return an error because we didn't define a method in the `Bookshel
 undefined method 'sort' for an instance of Bookshelf (NoMethodError) 
 ```
 
-We can *sort- the books by calling `sort` on the array returned by `books`.
+We can *sort* the books by calling `sort` on the array returned by `books`.
 
 ```bash
 puts shelf.books.sort
@@ -147,7 +147,7 @@ puts shelf.books.select { |item| item.downcase.include?("g")}
 
 At this point, all useful methods live on the internal arrays, not the class itself. Instead of repeatedly reaching into `books` (or `magazines`) to access these behaviors, we can take advantage of the `Enumerable` module.
 
-By mixing `Enumerable` into the class, Ruby takes the methods defined inside `Enumerable` module, and *injects- them into the class and makes them available directly on `Bookshelf`. This allows the object itself to behave like a collection, rather than just containing one.
+By mixing `Enumerable` into the class, Ruby takes the methods defined inside `Enumerable` module, and *injects* them into the class and makes them available directly on `Bookshelf`. This allows the object itself to behave like a collection, rather than just containing one.
 
 #### Combined arrays 
 
@@ -201,7 +201,7 @@ Analog Science Fiction and Fact
 
 #### Defining iteration with `each`
 
-At this point, `Enumerable` now has one logical list to work with, but we still cannot call methods directly on the class. The reason is that `Enumerable` does not know *how- to iterate over a `Bookshelf`. It only provides higher-level methods, but it depends on the object responding to `each`.
+At this point, `Enumerable` now has one logical list to work with, but we still cannot call methods directly on the class. The reason is that `Enumerable` does not know *how* to iterate over a `Bookshelf`. It only provides higher-level methods, but it depends on the object responding to `each`.
 
 The next step is to define an `each` method inside the `Bookshelf` class which tells Ruby how to iterate over the specific entities within class.
 
@@ -830,8 +830,6 @@ Serving Pancakes for breakfast
 ```
 
 Methods that don’t conflict are still available, but for conflicting methods, Ruby prioritizes the last included module. 
-
-
 
 
 ## Example: Multiple Mixins
