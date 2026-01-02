@@ -441,35 +441,3 @@ end
 ```
 
 
-## Ruby’s Hint Feature
-
-Ruby sometimes suggests similar names that exist in the program to spot typos.
-
-```ruby
-fav_food = "pizza"
-puts fov_food
-```
-
-Output:
-
-```
-NameError: undefined local variable or method `fov_food'. Did you mean `fav_food`?
-```
-
-
-## Using Comments 
-
-The line of code causing the error can be commented out to handle the error temporarily. 
-
-```ruby
-# puts "4" + 3
-puts 2 + 2
-```
-
-Output:
-
-```
-4
-```
-
-This allows the rest of the code to run without stopping due to an error.
