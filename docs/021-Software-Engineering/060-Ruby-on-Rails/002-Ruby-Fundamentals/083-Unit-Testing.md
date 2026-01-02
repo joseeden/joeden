@@ -1,6 +1,6 @@
 ---
-title: "Testing with Minitest"
-description: "Testing with Minitest"
+title: "Unit Testing"
+description: "Unit Testing"
 tags: 
 - Computer Science
 - Application Development
