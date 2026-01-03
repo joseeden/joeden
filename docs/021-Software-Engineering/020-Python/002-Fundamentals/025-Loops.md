@@ -6,12 +6,12 @@ tags:
 - Application Development
 - Software Development
 - Python
-sidebar_position: 14
+sidebar_position: 25
 last_update:
   date: 10/28/2019
 ---
 
-## For Loop
+## `for` Loop
 
 A **For Loop** iterates over a sequence (like a list or a string).
 
@@ -138,7 +138,7 @@ Output:
 
 The loop counts from 1 to 10, updating the `visits` counter.
 
-## While Loop
+## `while` Loop
 
 While loops are useful for repeating actions while a condition remains true.
 

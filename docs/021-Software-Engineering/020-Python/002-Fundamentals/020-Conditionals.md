@@ -6,14 +6,14 @@ tags:
 - Application Development
 - Software Development
 - Python
-sidebar_position: 13
+sidebar_position: 20
 last_update:
   date: 10/28/2019
 ---
 
 
 
-## If and Else
+## `if` and `else`
 
 An **If Statement** begins with `if`, followed by a condition and a colon. The indented code runs if the condition is True.
 
@@ -22,7 +22,7 @@ if x > 5:
     print("x is greater than 5")
 ```
 
-## Else Statement
+## `else` Statement
 
 An **Else Statement** executes code when the preceding `if` condition evaluates to False.
 

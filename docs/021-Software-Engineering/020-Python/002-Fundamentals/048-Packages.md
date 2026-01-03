@@ -6,7 +6,7 @@ tags:
 - Application Development
 - Software Development
 - Python
-sidebar_position: 30
+sidebar_position: 48
 last_update:
   date: 10/28/2019
 ---

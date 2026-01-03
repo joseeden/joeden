@@ -6,7 +6,7 @@ tags:
 - Application Development
 - Software Development
 - Python
-sidebar_position: 21
+sidebar_position: 31
 last_update:
   date: 10/29/2019
 ---
@@ -99,6 +99,3 @@ print(total)  # Same as sum(sales)
 
 Using `sum(sales)` is shorter and cleaner.  
 
-## Summary  
-
-Python has many built-in functions to simplify tasks. You can find more in Python’s official documentation.

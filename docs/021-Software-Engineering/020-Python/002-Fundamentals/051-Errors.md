@@ -6,7 +6,7 @@ tags:
 - Application Development
 - Software Development
 - Python
-sidebar_position: 35
+sidebar_position: 51
 last_update:
   date: 10/31/2019
 ---
@@ -73,7 +73,7 @@ ValueError: could not convert string to float: 'Hello'
 
 Errors can also occur when using code from external packages like `pandas`. You won’t see the code running behind the scenes, but it still executes.
 
-#### Tracebacks from Packages
+### Tracebacks from Packages
 
 Tracebacks from packages show where the error occurred in their source code.
 
