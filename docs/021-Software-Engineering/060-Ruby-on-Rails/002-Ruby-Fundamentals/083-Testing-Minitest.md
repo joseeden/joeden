@@ -157,7 +157,7 @@ The idea of testing is to catch problems early and make sure your code keeps wor
     Finished in 0.018335s, 163.6213 runs/s, 163.6213 assertions/s.
 
       1) Failure:
-    TestMath#test_sum_3 [docs/021-Software-Engineering/060-Ruby-on-Rails/000-Projects/001-Practice-Sets/022-Practice-22/minitest.rb:17]:
+    TestMath#test_sum_3 [/project/minitest.rb:17]:
     Expected: 11
       Actual: 9
 
@@ -209,21 +209,21 @@ The idea of testing is to catch problems early and make sure your code keeps wor
     Finished in 0.016531s, 302.4680 runs/s, 241.9744 assertions/s.
 
       1) Failure:
-    TestMath#test_sum_4 [docs/021-Software-Engineering/060-Ruby-on-Rails/000-Projects/001-Practice-Sets/022-Practice-22/minitest.rb:21]:
+    TestMath#test_sum_4 [/project/minitest.rb:21]:
     Expected: 11
       Actual: 1
 
       2) Failure:
-    TestMath#test_sum_3 [docs/021-Software-Engineering/060-Ruby-on-Rails/000-Projects/001-Practice-Sets/022-Practice-22/minitest.rb:17]:
+    TestMath#test_sum_3 [/project/minitest.rb:17]:
     Expected: 11
       Actual: 9
 
       3) Error:
     TestMath#test_sum_5:
     TypeError: nil can't be coerced into Integer
-        docs/021-Software-Engineering/060-Ruby-on-Rails/000-Projects/001-Practice-Sets/022-Practice-22/minitest.rb:4:in 'Integer#+'
-        docs/021-Software-Engineering/060-Ruby-on-Rails/000-Projects/001-Practice-Sets/022-Practice-22/minitest.rb:4:in 'Object#sum'
-        docs/021-Software-Engineering/060-Ruby-on-Rails/000-Projects/001-Practice-Sets/022-Practice-22/minitest.rb:25:in 'TestMath#test_sum_5'
+        /project/minitest.rb:4:in 'Integer#+'
+        /project/minitest.rb:4:in 'Object#sum'
+        /project/minitest.rb:25:in 'TestMath#test_sum_5'
 
     5 runs, 4 assertions, 2 failures, 1 errors, 0 skips
     ```
@@ -356,7 +356,7 @@ We can also write and run tests for a Ruby class using Minitest.
     Finished in 0.018197s, 164.8635 runs/s, 164.8635 assertions/s.
 
       1) Failure:
-    TestBook#test_title_2 [docs/021-Software-Engineering/060-Ruby-on-Rails/000-Projects/001-Practice-Sets/022-Practice-22/book.rb:24]:
+    TestBook#test_title_2 [/project/book.rb:24]:
     Expected: "The War of the World"
       Actual: "The War of the Worlds"
 
@@ -452,7 +452,7 @@ If you had created files, database records, or connections during a test, `teard
 
 Full code:
 
-```bash
+```ruby
 # book.rb
 require "minitest/autorun"
 
@@ -614,7 +614,7 @@ F
 Finished in 0.020506s, 48.7665 runs/s, 97.5329 assertions/s.
 
   1) Failure:
-TestBook#test_adds_tag_to_book [docs/021-Software-Engineering/060-Ruby-on-Rails/000-Projects/001-Practice-Sets/022-Practice-22/book2.rb:26]:
+TestBook#test_adds_tag_to_book [/project/book2.rb:26]:
 Expected ["Science Fiction", "Adventure", "Classic", "Political"] to include "Historical".        
 
 1 runs, 2 assertions, 1 failures, 0 errors, 0 skips
@@ -631,6 +631,7 @@ We can use `assert_raises` to check that our code raises an error when something
 Consider the `Book` class below, where we only allow tags to be strings. If someone tries to add a non-string tag, we want to raise a custom error:
 
 ```ruby
+# book3.rb
 class InvalidTagError < StandardError; end
 
 class Book
@@ -653,6 +654,7 @@ We can test this using `assert_raises` inside `test_add_invalid_tag` to make sur
 
 
 ```ruby
+# book3.rb
 require "minitest/autorun"
 
 class InvalidTagError < StandardError
@@ -683,6 +685,12 @@ class TestBook < Minitest::Test
 end
 ```
 
+Running the script:
+
+```bash
+ruby book3.rb 
+```
+
 Output:
 
 ```bash
@@ -705,15 +713,23 @@ In this case, a test “passes” when the expected error is raised. If the erro
 
 You can provide an optional final argument to any assertion. This argument is a string that will be displayed if the assertion fails. It gives extra context about what went wrong.
 
-For example, with the `Book` class, we can check if the title is assigned correctly and provide a custom message like "The book title was not assigned correctly":
+For example, with the `Book` class, we can add the `test_book_title` method to check if the title is assigned correctly and provide a custom message like "The book title was not assigned correctly":
 
 ```ruby
+# book4.rb
 require "minitest/autorun"
 
+class InvalidTagError < StandardError
+end
+
 class Book
-  attr_reader :title
+  attr_reader :title, :tags
   def initialize(title)
     @title = title
+    @tags = []
+  end
+  def add_tag(tag)
+    @tags << tag
   end
 end
 
@@ -729,6 +745,12 @@ class TestBook < Minitest::Test
 end
 ```
 
+Running the script:
+
+```bash
+ruby book4.rb 
+```
+
 If the test fails, Minitest prints both its usual failure output and our custom message:
 
 ```bash
@@ -736,10 +758,10 @@ If the test fails, Minitest prints both its usual failure output and our custom 
 
 F
 
-Finished in 0.020873s, 47.9088 runs/s, 47.9088 assertions/s.
+Finished in 0.018319s, 54.5869 runs/s, 54.5869 assertions/s.
 
   1) Failure:
-TestBook#test_book_title [docs/021-Software-Engineering/060-Ruby-on-Rails/000-Projects/001-Practice-Sets/022-Practice-22/book4.rb:17]:
+TestBook#test_book_title [/project/book4.rb:21]:
 The book title was not assigned correctly.
 Expected: "The Mistress is a Harsh Moon"
   Actual: "The Moon is a Harsh Mistress"
@@ -747,10 +769,14 @@ Expected: "The Mistress is a Harsh Moon"
 1 runs, 1 assertions, 1 failures, 0 errors, 0 skips
 ```
 
-The same applies to other assertions like `assert_includes` or `assert_raises`. For example, in `test_add_invalid_tag`:
+The same applies to other assertions like `assert_includes` or `assert_raises`. For example, in `test_adds_tag_to_book` and `test_add_invalid_tag`:
 
 ```ruby
+# book4.rb
 require "minitest/autorun"
+
+class InvalidTagError < StandardError
+end
 
 class Book
   ....
@@ -765,15 +791,47 @@ class TestBook < Minitest::Test
     ....
   end
 
-  def test_add_invalid_tag
-    assert_raises(InvalidTagError, "Adding a non-string tag should raise an error") do
-    @book.add_tag(123)
+  def test_adds_tag_to_book
+    @book.add_tag("Science Fiction")
+    assert_includes(
+      @book.tags,
+      "Science Fiction",
+      "The tag was not added to the book"
+    )
   end
-end
+
+  def test_add_invalid_tag
+    assert_raises(
+      InvalidTagError, 
+      "Adding a non-string tag should raise an error") do
+      @book.add_tag(123)
+    end
+  end
 end
 ```
 
 Here, if no `InvalidTagError` is raised, the test fails and the message helps explain why.
+
+```bash
+# Running:
+
+FF.
+
+Finished in 0.016975s, 176.7297 runs/s, 235.6396 assertions/s.
+
+  1) Failure:
+TestBook#test_book_title [/project/book4.rb:25]:
+The book title was not assigned correctly.
+Expected: "The Mistress is a Harsh Moon"
+  Actual: "The Moon is a Harsh Mistress"
+
+  2) Failure:
+TestBook#test_add_invalid_tag [/project/book4.rb:38]:
+Adding a non-string tag should raise an error.
+InvalidTagError expected but nothing was raised.
+
+3 runs, 4 assertions, 2 failures, 0 errors, 0 skips
+```
 
 Custom messages are optional, but they make tests easier to understand, especially for someone reading failures later. Even when all tests pass, you know this feature is available for added clarity.
 
