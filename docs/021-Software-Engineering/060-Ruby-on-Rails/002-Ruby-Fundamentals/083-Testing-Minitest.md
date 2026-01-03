@@ -698,3 +698,82 @@ Here, all the tests passed. The `test_add_invalid_tag` passes because adding a n
 The `InvalidTagError` error doesn’t appear in the output because `assert_raises` catches it. If the error did not occur, the test would fail.
 
 In this case, a test “passes” when the expected error is raised. If the error occurs as expected, the test is considered successful.
+
+
+
+## Custom Messages in Assertions
+
+You can provide an optional final argument to any assertion. This argument is a string that will be displayed if the assertion fails. It gives extra context about what went wrong.
+
+For example, with the `Book` class, we can check if the title is assigned correctly and provide a custom message like "The book title was not assigned correctly":
+
+```ruby
+require "minitest/autorun"
+
+class Book
+  attr_reader :title
+  def initialize(title)
+    @title = title
+  end
+end
+
+class TestBook < Minitest::Test
+  def setup
+    @book = Book.new("The Moon is a Harsh Mistress")
+  end
+
+  def test_book_title
+    # Custom message
+    assert_equal("The Mistress is a Harsh Moon", @book.title, "The book title was not assigned correctly")
+  end
+end
+```
+
+If the test fails, Minitest prints both its usual failure output and our custom message:
+
+```bash
+# Running:
+
+F
+
+Finished in 0.020873s, 47.9088 runs/s, 47.9088 assertions/s.
+
+  1) Failure:
+TestBook#test_book_title [docs/021-Software-Engineering/060-Ruby-on-Rails/000-Projects/001-Practice-Sets/022-Practice-22/book4.rb:17]:
+The book title was not assigned correctly.
+Expected: "The Mistress is a Harsh Moon"
+  Actual: "The Moon is a Harsh Mistress"
+
+1 runs, 1 assertions, 1 failures, 0 errors, 0 skips
+```
+
+The same applies to other assertions like `assert_includes` or `assert_raises`. For example, in `test_add_invalid_tag`:
+
+```ruby
+require "minitest/autorun"
+
+class Book
+  ....
+end
+
+class TestBook < Minitest::Test
+  def setup
+    ....
+  end
+
+  def test_book_title
+    ....
+  end
+
+  def test_add_invalid_tag
+    assert_raises(InvalidTagError, "Adding a non-string tag should raise an error") do
+    @book.add_tag(123)
+  end
+end
+end
+```
+
+Here, if no `InvalidTagError` is raised, the test fails and the message helps explain why.
+
+Custom messages are optional, but they make tests easier to understand, especially for someone reading failures later. Even when all tests pass, you know this feature is available for added clarity.
+
