@@ -1,6 +1,6 @@
 ---
-title: "Numerics"
-description: "Numerics"
+title: "Numeric Types"
+description: "Numeric Types"
 tags: 
 - Computer Science
 - Application Development
@@ -22,7 +22,7 @@ Python has several built-in ways to handle numbers.
 Integers and floats are enough for most calculations, but decimals are useful when exact precision is needed.
 
 
-## Using Decimals
+## Decimals
 
 Decimals let you avoid rounding errors and keep exact values. You need to import them from the `decimal` module.
 
@@ -46,7 +46,7 @@ Output:
 Decimals help keep calculations accurate, especially for currency or precise measurements.
 
 
-## Printing Floats
+## Floats
 
 Floats can sometimes display in scientific notation. You can control how many decimal places appear using `f-strings`.
 
