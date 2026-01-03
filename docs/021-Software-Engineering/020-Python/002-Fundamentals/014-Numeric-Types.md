@@ -1,6 +1,6 @@
 ---
-title: "Numeric Types"
-description: "Numeric Types"
+title: "Numeric Data Types"
+description: "Numeric Data Types"
 tags: 
 - Computer Science
 - Application Development
