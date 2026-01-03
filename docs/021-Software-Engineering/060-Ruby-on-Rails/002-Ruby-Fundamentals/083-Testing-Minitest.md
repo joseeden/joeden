@@ -121,7 +121,7 @@ The idea of testing is to catch problems early and make sure your code keeps wor
     2 runs, 2 assertions, 0 failures, 0 errors, 0 skip
     ```
 
-    We can now see two dots in the output, representing the two tests that have passed.
+    We can now see two dots (`..`) in the output, representing the two tests that have passed.
 
 6. Add a third test called `test_sum_3`. In this test, we intentionally use incorrect expected values to force a failure.
 
@@ -362,5 +362,339 @@ We can also write and run tests for a Ruby class using Minitest.
 
     3 runs, 3 assertions, 1 failures, 0 errors, 0 skips 
     ```
-    
+
     Running the tests now shows one failure. This proves that the test suite is active and checking real behavior. 
+
+## Setup and Teardown 
+
+Sometimes tests need shared code that runs before or after each test.
+
+- `setup` runs before every test
+- `teardown` runs after every test
+- Both are optional but must use exact names
+
+These methods help reduce repeated code while keeping tests isolated.
+
+### Using `setup` 
+
+`setup` is a special method that runs before each test method. It is used to prepare common objects that tests need.
+
+Updating the example from previous section, we move the object creation into `setup` instead of repeating it in every test. `setup` runs before each test, so a new `Book` object is still created every time and the tests remain independent.
+
+```ruby
+def setup 
+  @book_1 = Book.new("The War of the Worlds", "H.G. Wells")
+end
+```
+
+**Note:** If we used a local variable like `book_1` inside `setup`, it would disappear as soon as `setup` finishes. To make the object available to the test methods, we must store it in an instance variable like `@book_1`.
+
+Full code: 
+
+```ruby
+# book.rb
+require "minitest/autorun"
+
+class Book
+  attr_reader :title, :author 
+  def initialize(title, author)
+    @title = title 
+    @author = author 
+  end
+end
+
+class TestBook < Minitest::Test 
+  def setup 
+    @book_1 = Book.new("The War of the Worlds", "H.G. Wells")
+  end
+
+  def test_title
+    assert_equal("The War of the Worlds", @book_1.title)
+  end
+
+  def test_author 
+    assert_equal("H.G. Wells", @book_1.author)
+  end
+end
+```
+
+Run the script:
+
+```bash
+ruby book.rb  
+```
+
+Output:
+
+```bash
+# Running:
+
+..
+
+Finished in 0.020205s, 98.9868 runs/s, 98.9868 assertions/s.
+
+2 runs, 2 assertions, 0 failures, 0 errors, 0 skips
+```
+
+Each test gets its own fresh `@book_1` because `setup` runs again before the next test. This keeps tests isolated while removing duplication.
+
+### Using `teardown` 
+
+`teardown` is another special method that runs after each test. It is usually used for cleanup.
+
+```ruby
+def teardown
+  puts "Cleaning up test data"
+end
+```
+
+If you had created files, database records, or connections during a test, `teardown` is where you remove them. Like `setup`, it runs once per test.
+
+Full code:
+
+```bash
+# book.rb
+require "minitest/autorun"
+
+class Book
+  attr_reader :title, :author 
+  def initialize(title, author)
+    @title = title 
+    @author = author 
+  end
+end
+
+class TestBook < Minitest::Test 
+  def setup 
+    @book_1 = Book.new("The War of the Worlds", "H.G. Wells")
+  end
+
+  def teardown
+    puts "Cleaning up test data"
+  end
+
+  def test_title
+    assert_equal("The War of the Worlds", @book_1.title)
+  end
+
+  def test_author 
+    assert_equal("H.G. Wells", @book_1.author)
+  end
+end
+```
+
+
+Output:
+
+```bash
+# Running:
+
+Cleaning up test data
+.Cleaning up test data
+.
+
+Finished in 0.020512s, 97.5047 runs/s, 97.5047 assertions/s.
+
+2 runs, 2 assertions, 0 failures, 0 errors, 0 skips
+```
+
+**Weird format:** Minitest prints dots without adding a newline, while puts does add a newline. When they mix together, the output looks odd, as seen here:
+
+```bash
+Cleaning up test data
+.Cleaning up test data
+.
+```
+
+
+### When to use setup and teardown
+
+`setup` and `teardown` are helpful when many tests share the same preparation or cleanup logic. However, too much logic in `setup` can make tests harder to read because important details are hidden away.
+
+Sometimes repeating a few lines inside each test is clearer. The goal is not just less code, but readable and reliable tests that clearly show what is being tested.
+
+## Using `assert_includes`
+
+You can verify if a value exists within another without checking the whole object. This focuses on presence rather than exact matches, which makes tests easier to read and maintain.
+
+Consider the simple `Book` class below. Each book starts with an empty list of tags, and we can add tags later.
+
+```ruby
+# book2.rb
+class Book
+  attr_reader :title, :tags
+  def initialize(title)
+    @title = title
+    @tags = []
+  end
+
+  def add_tag(tag)
+    @tags << tag
+  end
+end
+```
+
+We can write a test called `test_adds_tag_to_book` that adds multiple tags to a book and then checks if a specific tag is in the book’s tag list using `assert_includes`."
+
+```ruby
+# book2.rb
+require "minitest/autorun"
+
+class Book
+  ....
+end
+
+class TestBook < Minitest::Test
+  def setup
+    @book = Book.new("The Moon is a Harsh Mistress")
+  end
+
+  def test_adds_tag_to_book
+    @book.add_tag("Science Fiction")
+    @book.add_tag("Adventure")
+    @book.add_tag("Classic")
+    @book.add_tag("Political")
+    assert_includes(@book.tags, "Science Fiction")
+  end
+end
+```
+
+Run the script:
+
+```bash
+ruby book2.rb 
+```
+
+Output: 
+
+```
+# Running:
+
+.
+
+Finished in 0.020485s, 48.8166 runs/s, 97.6332 assertions/s.
+
+1 runs, 2 assertions, 0 failures, 0 errors, 0 skips
+```
+
+This confirms that the tag exists somewhere in the collection, which is exactly what we want to validate.
+
+If you check for a tag that wasn’t added, the test fails and Minitest shows what’s actually in the collection. For example, checking for the tag "Historical":
+
+```ruby
+# book2.rb
+require "minitest/autorun"
+
+class Book
+  ....
+end
+
+class TestBook < Minitest::Test
+  def setup
+    @book = Book.new("The Moon is a Harsh Mistress")
+  end
+
+  def test_adds_tag_to_book
+    @book.add_tag("Science Fiction")
+    @book.add_tag("Adventure")
+    @book.add_tag("Classic")
+    @book.add_tag("Political")
+    assert_includes(@book.tags, "Historical")
+  end
+end
+```
+
+Output: 
+
+```
+# Running:
+
+F
+
+Finished in 0.020506s, 48.7665 runs/s, 97.5329 assertions/s.
+
+  1) Failure:
+TestBook#test_adds_tag_to_book [docs/021-Software-Engineering/060-Ruby-on-Rails/000-Projects/001-Practice-Sets/022-Practice-22/book2.rb:26]:
+Expected ["Science Fiction", "Adventure", "Classic", "Political"] to include "Historical".        
+
+1 runs, 2 assertions, 1 failures, 0 errors, 0 skips
+```
+
+The output shows exactly what tags exist, so you can quickly tell whether the test or the code needs fixing.
+
+
+
+## Using `assert_raises` 
+
+We can use `assert_raises` to check that our code raises an error when something goes wrong. This ensures we test both normal cases and invalid cases.
+
+Consider the `Book` class below, where we only allow tags to be strings. If someone tries to add a non-string tag, we want to raise a custom error:
+
+```ruby
+class InvalidTagError < StandardError; end
+
+class Book
+  attr_reader :title, :tags
+  def initialize(title)
+    @title = title
+    @tags = []
+  end
+
+  def add_tag(tag)
+    raise InvalidTagError, "Tag must be a string" unless tag.is_a?(String)
+    @tags << tag
+  end
+end
+```
+
+We can test this using `assert_raises` inside `test_add_invalid_tag` to make sure the error happens when an invalid tag is added.
+
+**Note:** The `test_adds_tag_to_book` from the previous section is included but not used here, since it is expected to pass.
+
+
+```ruby
+require "minitest/autorun"
+
+class InvalidTagError < StandardError
+end
+
+class Book
+  ....
+end
+
+class TestBook < Minitest::Test
+  def setup
+    @book = Book.new("The Moon is a Harsh Mistress")
+  end
+
+  def test_adds_tag_to_book
+    @book.add_tag("Science Fiction")
+    @book.add_tag("Adventure")
+    @book.add_tag("Classic")
+    @book.add_tag("Political")
+    assert_includes(@book.tags, "Science Fiction")
+  end
+
+  def test_add_invalid_tag
+    assert_raises(InvalidTagError) do
+      @book.add_tag(123)
+    end
+  end
+end
+```
+
+Output:
+
+```bash
+..
+
+Finished in 0.019351s, 103.3519 runs/s, 155.0279 assertions/s.
+
+2 runs, 3 assertions, 0 failures, 0 errors, 0 skips
+```
+
+Here, all the tests passed. The `test_add_invalid_tag` passes because adding a non-string tag correctly triggers the expected `InvalidTagError` behind the scene.
+
+The `InvalidTagError` error doesn’t appear in the output because `assert_raises` catches it. If the error did not occur, the test would fail.
+
+In this case, a test “passes” when the expected error is raised. If the error occurs as expected, the test is considered successful.

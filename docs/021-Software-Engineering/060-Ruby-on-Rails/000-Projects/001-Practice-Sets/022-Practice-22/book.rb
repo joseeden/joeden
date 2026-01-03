@@ -1,3 +1,4 @@
+# book.rb
 require "minitest/autorun"
 
 class Book
@@ -9,18 +10,19 @@ class Book
 end
 
 class TestBook < Minitest::Test 
+  def setup 
+    @book_1 = Book.new("The War of the Worlds", "H.G. Wells")
+  end
+
+  def teardown
+    puts "Cleaning up test data"
+  end
+
   def test_title
-    book_1 = Book.new("The War of the Worlds", "H.G. Wells")
-    assert_equal("The War of the Worlds", book_1.title)
+    assert_equal("The War of the Worlds", @book_1.title)
   end
 
   def test_author 
-    book_1 = Book.new("The War of the Worlds", "H.G. Wells")
-    assert_equal("H.G. Wells", book_1.author)
-  end
-
-  def test_title_2
-    book = Book.new("The War of the Worlds", "H.G. Wells")
-    assert_equal "The War of the World", book.title
+    assert_equal("H.G. Wells", @book_1.author)
   end
 end
