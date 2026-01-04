@@ -196,6 +196,57 @@ num = square(6)
 print(num)  # Output: 36
 ```
 
+
+## Multiple Function Parameters
+
+You can pass more than one argument to a function by defining multiple parameters in the function header. The order of arguments matters since they match the order of parameters.
+
+For example:
+
+```python
+def raise_to_power(base, exponent):
+    """Returns the base raised to the power of exponent"""
+    return base ** exponent
+
+print(raise_to_power(2, 3))  # Output: 8
+```
+
+Here, `base` is 2 and `exponent` is 3, so the function computes 2 to the power of 3.
+
+## Multiple Return Values
+
+A function can return multiple values by creating a tuple. Tuples are immutable containers defined with parentheses.
+
+For more information, please see [Tuples.](/docs/021-Software-Engineering/020-Python/002-Fundamentals/012-Tuples.md)
+
+Example: 
+
+```python
+def powers(a, b):
+    """Returns a**b and b**a as a tuple"""
+    return (a ** b, b ** a)
+
+result = powers(2, 3)
+print(result)  # Output: (8, 9)
+```
+
+You can then "unpack" the tuple and assign each value to separate variables in one line.
+
+```python
+x, y = powers(2, 3)
+print(x)  # 8
+print(y)  # 9
+```
+
+The individual elements in a tuple can also be accessed using zero-based indexing, just like a list.
+
+```python
+result = powers(2, 3)
+print(result[1])  # 9
+```
+
+Indexing tuples is useful when you only need one specific value from a function’s multiple outputs.
+
 ## Docstrings
 
 Docstrings describe what a function does. They are written inside triple quotes (`"""`) immediately after the function header.
