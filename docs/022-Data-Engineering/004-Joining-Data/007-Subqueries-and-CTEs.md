@@ -20,7 +20,7 @@ Here is the schema for the sample **World** table:
 </div>
 
 
-To download the actual files, you can get them from my [Github repository](https://github.com/joseeden/joeden/tree/master/assets/datasets).
+To download the actual files, you can get them from my Github repository:
 
 - [states.csv](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/states.csv)
 - [presidents.csv](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/presidents.csv)

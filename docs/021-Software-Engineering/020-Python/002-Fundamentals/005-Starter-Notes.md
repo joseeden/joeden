@@ -143,57 +143,6 @@ Output:
 
 For more information, please see [Functions.](/docs/021-Software-Engineering/020-Python/002-Fundamentals/030-Functions.md)
 
-<!-- ## Defining Functions
-
-Functions let you group code to reuse it easily. You define them with a name, optional parameters, and a block of indented code.
-
-- Start with `def` followed by the function name and parentheses
-- Indent the code inside the function consistently
-- Use `return` to send values back; functions can return multiple values
-
-For example, a simple function to add two numbers:
-
-```python
-def add_numbers(a, b):
-    result = a + b
-    return result
-
-sum_value = add_numbers(3, 5)
-print(sum_value)
-```
-
-Output:
-
-```text
-8
-``` -->
-<!-- 
-
-## Recursion
-
-**Recursive functions** call themselves with modified parameters and must have a base case to stop the recursion.
-
-- The base case ends the recursion
-- The recursive case calls the function again with changed parameters
-
-For example, a function to calculate factorial using recursion:
-
-```python
-def recursive_function(n):
-    if n <= 1:  # Base case
-        return 1
-    else:
-        return n * recursive_function(n - 1)  # Recursive case
-```
-
-Output:
-
-```bash
-120
-```
-
-This shows how recursion repeats a process until the base case is reached. -->
-
 
 ## Common Pitfalls
 

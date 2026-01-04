@@ -19,7 +19,7 @@ Here is the schema for the sample **leaderships** table:
 
 </div>
 
-To download the actual files, you can get them from my [Github repository](https://github.com/joseeden/joeden/tree/master/assets/datasets).
+To download the actual files, you can get them from my Github repository
 
 - [states.csv](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/states.csv)
 - [presidents.csv](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/presidents.csv)
@@ -240,7 +240,7 @@ The **World Economies** database contain the tables below. To limit the number o
 
 
 
-To download the actual files, you can get them from my [Github repository](https://github.com/joseeden/joeden/tree/master/assets/datasets).
+To download the actual files, you can get them from my Github repository:
 
 - [countries.csv](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/countries.csv)
 - [cities.csv](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/cities.csv)

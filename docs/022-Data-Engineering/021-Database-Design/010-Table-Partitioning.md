@@ -121,7 +121,7 @@ We'll be using the **film** dataset.
 
 ![](/img/docs/sample-database-dvd-rental-filmsss.png)
 
-To download the actual file, you can get it from my [Github repository](https://github.com/joseeden/joeden/tree/master/assets/datasets).
+To download the actual file, you can get it from my Github repository:
 
 - [film.csv](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/states.csv)
 

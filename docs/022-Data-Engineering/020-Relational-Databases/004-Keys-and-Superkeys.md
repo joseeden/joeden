@@ -55,7 +55,7 @@ There's a very basic way of finding out what qualifies for a key in an existing,
 
 ## Example: Identifying Keys
 
-We'll use the **languages** table. The dataset can be downloaded from my [Github repository](https://github.com/joseeden/joeden/tree/master/assets/datasets). 
+We'll use the **languages** table. The dataset can be downloaded from my Github repository:
 
 - [languages.csv](@site/docs/021-Software-Engineering/021-Jupyter-Notebooks/000-Sample-Datasets/datacamp-world-database/languages.csv)
 
