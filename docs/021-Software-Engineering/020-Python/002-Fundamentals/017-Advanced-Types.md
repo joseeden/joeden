@@ -130,3 +130,141 @@ defaultdict(<class 'int'>, {'hardcover': 2, 'ebook': 2})
 ```
 
 The `defaultdict(int)` starts all counts at zero and updates them automatically.
+
+
+## Namedtuple
+
+Namedtuples are a simple way to store structured data with named fields. They work like tuples but let you access each item by name instead of by index.
+
+### Creating a Namedtuple
+
+To create a namedtuple, import it from `collections`, give it a type name, and list the field names.
+
+In the example below, we create a `Book` namedtuple with fields for `title`, `author`, and `year`. Then we convert a list of books into namedtuple instances:
+
+```python
+from collections import namedtuple
+
+Book = namedtuple("Book", ["title", "author", "year"])
+
+library_books = [
+    ("Dune", "Frank Herbert", 1965),
+    ("Neuromancer", "William Gibson", 1984),
+    ("Harry Potter", "J.K. Rowling", 1997)
+]
+
+books_list = [Book(*book) for book in library_books]
+
+print(books_list[0])
+```
+
+Output:
+
+```text
+Book(title='Dune', author='Frank Herbert', year=1965)
+```
+
+Each book is now stored as a namedtuple, so its values can be accessed using readable field names instead of index positions.
+
+### Accessing Attributes 
+
+Because namedtuples expose their fields as attributes, you can safely read each value without checking for missing keys. This makes working with structured data more predictable.
+
+In the example below, we use these attributes to print the title, author, and year for the first three books in the list:
+
+```python
+from collections import namedtuple
+from pprint import pprint
+
+Book = namedtuple("Book", ["title", "author", "year"])
+
+library_books = [
+    ("Dune", "Frank Herbert", 1965),
+    ("Neuromancer", "William Gibson", 1984),
+    ("Harry Potter", "J.K. Rowling", 1997)
+]
+
+books_list = [Book(*book) for book in library_books]
+
+for book in books_list[:3]:
+    pprint((book.title, book.author, book.year))
+```
+
+Output:
+
+```text
+('Dune', 'Frank Herbert', 1965)
+('Neuromancer', 'William Gibson', 1984)
+('Harry Potter', 'J.K. Rowling', 1997)
+```
+
+#### What `*book` means
+
+`*book` is argument unpacking. Each `book` in `library_books` is a tuple:
+
+```text
+("Dune", "Frank Herbert", 1965)
+```
+
+When you write:
+
+```text
+Book(*book)
+```
+
+Python expands the tuple in this way, so each element of the tuple is passed as a **separate argument** to the `Book` namedtuple.
+
+```bash
+Book("Dune", "Frank Herbert", 1965)
+```
+
+This also aligns with the namedtyple, which expects **three arguments:**
+
+```python
+Book = namedtuple("Book", ["title", "author", "year"])
+```
+
+Since `book` is already a tuple with exactly those three values, `*book` is the cleanest way to pass them in.
+
+
+### Example: Animal Data
+
+In the example below, we create a `namedtuple` called `Animal`. It represents simple animal data with a name, species, and number of legs.
+
+```python
+from collections import namedtuple
+from pprint import pprint
+
+# Empty list
+animals = []
+
+# Source data as tuples
+animal_data = [
+    ("Buddy", "Dog", 4),
+    ("Mittens", "Cat", 4),
+    ("Goldie", "Fish", 0),
+    ("Polly", "Parrot", 2),
+    ("Slither", "Snake", 0),
+    ("Speedy", "Turtle", 4),
+]
+
+# Create the namedtuple
+Animal = namedtuple("Animal", ["name", "species", "legs"])
+
+for name, species, legs in animal_data:
+    animals.append(Animal(name, species, legs))
+
+pprint(animals[:5])
+```
+
+Output:
+
+```text
+[Animal(name='Buddy', species='Dog', legs=4),
+ Animal(name='Mittens', species='Cat', legs=4),
+ Animal(name='Goldie', species='Fish', legs=0),
+ Animal(name='Polly', species='Parrot', legs=2),
+ Animal(name='Slither', species='Snake', legs=0)]
+```
+
+Here, namedtuples are used to turn raw tuple data into structured objects that are easier to read, access, and work with consistently.
