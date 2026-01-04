@@ -19,6 +19,8 @@ Functions let you group code to reuse it easily. You define them with a name, op
 
 Python has many built-in functions that perform common tasks. 
 
+For more information, please see [Built-in Functions.](/docs/021-Software-Engineering/020-Python/002-Fundamentals/031-Built-in-Functions.md)
+
 Examples: 
 
 1. `str()` converts a value to a string::
