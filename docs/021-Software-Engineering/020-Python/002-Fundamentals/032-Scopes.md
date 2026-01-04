@@ -1,6 +1,6 @@
 ---
-title: "Function Scopes"
-description: "Function Scopes"
+title: "Scopes"
+description: "Scopes"
 tags: 
 - Computer Science
 - Application Development
@@ -136,3 +136,4 @@ Output:
 Inside function: 5
 Outside function: 5
 ```
+
