@@ -11,7 +11,7 @@ last_update:
   date: 10/28/2019
 ---
 
-## Python Numeric Types
+## Overview
 
 Python has several built-in ways to handle numbers. 
 

@@ -6,7 +6,7 @@ tags:
 - Application Development
 - Software Development
 - Python
-sidebar_position: 17
+sidebar_position: 7
 last_update:
   date: 10/28/2019
 ---
@@ -268,3 +268,135 @@ Output:
 ```
 
 Here, namedtuples are used to turn raw tuple data into structured objects that are easier to read, access, and work with consistently.
+
+## Dataclasses
+
+Dataclasses are similar to namedtuples but is more flexible in storing structured data.
+
+- Default values can be defined for fields
+- Output is readable when printed or logged
+- Data can be converted to dictionaries or tuples
+
+These features reduce boilerplate code and help keeps the data handling predictable.
+
+### Creating a Dataclass
+
+In the example below, `Product` is a dataclass that stores a name and a quantity. The quantity has a default value of `0`.
+
+```python
+from dataclasses import dataclass
+
+@dataclass
+class Product:
+    name: str
+    quantity: int = 0
+```
+
+Here, the `@dataclass` decorator adds useful behavior to the class automatically, which keeps the code short and clear.
+
+We can create an instance of the `Product` dataclass and call it `item`:
+
+```python
+item = Product(name="Notebook")
+print(item)
+```
+
+Output:
+
+```text
+Product(name='Notebook', quantity=0)
+```
+
+This clean output makes dataclasses easy to inspect and debug, which is one of their main advantages.
+
+### From Dataclass to Dictionary or Tuple
+
+Dataclasses can be converted into other common data formats.
+
+In the example below, `asdict` and `astuple` are used to convert the same `Product` instance.
+
+```python
+from dataclasses import dataclass, asdict, astuple
+
+@dataclass
+class Product:
+    name: str
+    quantity: int = 0
+
+item = Product(name="Notebook", quantity=5)
+
+print(asdict(item))
+print(astuple(item))
+```
+
+Output:
+
+```text
+{'name': 'Notebook', 'quantity': 5}
+('Notebook', 5)
+```
+
+
+### Adding Custom Properties
+
+Dataclasses can include computed properties that return values based on existing fields.
+
+In the example below, `total_items` is a computed property based on quantity. To create a cusotm propery, specify `@poperty` before it.
+
+```python
+from dataclasses import dataclass
+
+@dataclass
+class Product:
+    name: str
+    quantity: int
+    unit_size: int
+
+    @property
+    def total_items(self):
+        return self.quantity * self.unit_size
+```
+
+Next, we create a `Product` instance and access `total_items` just like a normal attribute:
+
+```python
+box_1 = Product(name="Pen box", quantity=3, unit_size=10)
+print(box_1.total_items)
+```
+
+Output:
+
+```text
+30
+```
+
+This keeps calculations readable and avoids repeated logic elsewhere in the code.
+
+### Frozen Dataclass Instances
+
+A frozen dataclass prevents changes after creation. They are useful for safety and consistency.
+
+In the example below, the dataclass is marked as frozen.
+
+```python
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class Product:
+    name: str
+    quantity: int
+
+box_2 = Product("Juice", 15)
+```
+
+Once created, this object cannot be changed, which helps protect important data from accidental updates. For example, if we try to update the quantity from `15` to `23`, we will get an error:
+
+```bash
+box_2.quantity = 23
+```
+
+Output: 
+
+```bash
+dataclasses.FrozenInstanceError: cannot assign to field 'quantity'
+```
