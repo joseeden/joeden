@@ -487,7 +487,8 @@ There are three steps to delete a submodule inside a parent repo:
     If you have **other submodules** inside the `modules` directory, only delete the specific submodule.
  
     ```bash 
-    rm -rf .git/modules/specific-submodule
+    cd .git/modules/
+    rm -rf specific-submodule
     ```   
 
     If there's **only one submodule**, you can simply delete the entire `modules` directory. 
