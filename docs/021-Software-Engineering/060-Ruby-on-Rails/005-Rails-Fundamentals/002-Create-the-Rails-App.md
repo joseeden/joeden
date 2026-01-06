@@ -223,11 +223,25 @@ class ApplicationController < ActionController::Base
 end
 ```
 
+## Update Route 
+
+Following the conventional way, update the `config/routes.rb` to point the root route to a new controller called `pages`:
+
+```ruby
+Rails.application.routes.draw do
+  root "pages#home"
+  get "up" => "rails/health#show", as: :rails_health_check
+end
+```
+
+**Note**: You can use a different controller name here instead of `pages`, as long as it matches the controller created in the next step. The `home` action can also be changed, but it must match the method defined in that controller.
+
+
 ## Create a Controller
 
 Controllers handle actions that respond to routes. 
 
-To create a new controller, run:
+To create a new controller called `pages`, run:
 
 ```ruby
 rails generate controller pages
@@ -236,16 +250,8 @@ rails generate controller pages
 This will create the following:
 
 - `app/controllers/pages_controller.rb` template
+- `app/pages/pages_helper.rb` module
 - `app/views/pages` folder 
-
-Next, update `config/routes.rb` to point the root route to the new controller and action:
-
-```ruby
-Rails.application.routes.draw do
-  root "pages#home"
-  get "up" => "rails/health#show", as: :rails_health_check
-end
-```
 
 
 ## Add a Controller Action
@@ -303,3 +309,58 @@ In this case:
 This same pattern repeats throughout Rails applications and becomes the foundation for more complex features.
 
 
+## Add an About page
+
+We can add a simple **About** page to the application that can be accessed at `/about` in the browser. The About page will use a GET request and be handled by the existing `pages` controller.
+
+Update `config/routes.rb` to add a route for `/about` using `to:` to point it to the `pages` controller:
+
+```ruby
+Rails.application.routes.draw do
+  root "pages#home"
+  get "about", to: "pages#about"
+  get "up" => "rails/health#show", as: :rails_health_check
+end
+```
+
+Next, add a new `about` action in `app/controllers/pages_controller.rb`:
+
+```ruby
+class PagesController < ApplicationController
+  def home
+  end
+
+  def about
+  end
+end
+```
+
+Create the view file for the About page. Inside `app/views/pages`, create `about.html.erb` with:
+
+```erb
+<h1>This is the about page</h1>
+```
+
+You can also update `app/views/pages/home.html.erb` to add a heading for the home page:
+
+```erb
+<h1>This is the home page</h1>
+```
+
+Once the view exists, Rails can render the About page in the browser. Refresh the page and go to `/about` to see it in action.
+
+Home page: 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-01-06-224516.png)
+
+</div>
+
+About page: 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-01-06-224608.png)
+
+</div>
