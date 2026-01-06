@@ -32,6 +32,13 @@ rails _<version-number> new test_rails_app
 rails _5.2.1.4_ new test_rails_app
 ```
 
+**Additional notes:** In my setup, the Rails app directory already existed because it was a Git submodule inside a parent repository. Instead of creating a new folder or Git repo, I generated the Rails app in the current directory:
+
+```bash
+cd test-rails-app  # This is a submodule
+rails new . --force --skip-git
+```
+
 After your application is created, switch to its directory:
 
 ```ruby
