@@ -43,6 +43,3 @@
 [submodule "submodules/labs-flux"]
 	path = submodules/labs-flux
 	url = git@gitlab.com:homelabs9424449/flux-lab.git
-[submodule "submodules/test-rails-app"]
-	path = submodules/test-rails-app
-	url = git@github.com:joseeden/test-rails-app.git

@@ -43,7 +43,7 @@ test_rails_app/
 
 Most of the work will be done in the **app folder**. Other folders like `config` and `db` are essential for setup and data, while root files manage dependencies and instructions. 
 
-## App Folder
+## `app` Folder
 
 This is where most of the code lives.
 
@@ -94,14 +94,14 @@ This is where most of the code lives.
   - `layouts/application.html.erb` is the main layout file
   - All other views render inside this layout using `yield`
 
-## Bin Folder
+## `bin` Folder
 
 This folder is mostly handled by Rails and usually doesn’t require changes.
 
 - Stores executable scripts
 - Not commonly used in most app development
 
-## Config Folder
+## `config` Folder
 
 Configurations help your app behave correctly in different environments.
 
@@ -110,7 +110,7 @@ Configurations help your app behave correctly in different environments.
 - `credentials.yml.enc` holds API keys and secrets
 - `routes.rb` defines URL routes for the application
 
-## DB Folder
+## `db` Folder
 
 This folder holds development and test databases (usually SQLite by default).
 
@@ -124,22 +124,24 @@ Think of tables like Excel spreadsheets with rows and columns for storing data.
 
 These root files manage dependencies, documentation, and project settings.
 
-- **Gemfile**
+- *`Gemfile`
 
   - Lists Ruby gems your app uses
   - Update this to add or remove gems
   - `Gemfile.lock` stores locked versions, not edited directly
+  - We don't modify the lock file.
 
-- **package.json**
+- `package.json`
 
   - Lists JavaScript dependencies installed via Yarn
+  - This might not be available on early Rails version
 
-- **README.md**
+- `README.md`
 
   - Markdown file for instructions or documentation
   - Displayed on GitHub or other code repositories
 
-- **Hidden files**
+- Hidden files
 
   - Start with a dot, e.g., `.gitignore` or `.ruby-version`
   - Not shown by default in editors
