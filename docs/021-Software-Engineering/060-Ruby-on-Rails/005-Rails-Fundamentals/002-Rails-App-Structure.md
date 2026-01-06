@@ -8,7 +8,7 @@ tags:
 - Web Development
 - Ruby
 - Ruby on Rails
-sidebar_position: 3
+sidebar_position: 2
 last_update:
   date: 8/24/2023
 ---
@@ -130,6 +130,27 @@ These root files manage dependencies, documentation, and project settings.
   - Update this to add or remove gems
   - `Gemfile.lock` stores locked versions, not edited directly
   - We don't modify the lock file.
+  - All defined gems will be considered global, unless included in a `group` block.
+
+      Example:
+
+      ```bash
+      ## Global 
+      gem "importmap-rails"
+      gem "turbo-rails"
+      gem "stimulus-rails"
+      gem "jbuilder"
+
+      ## For dev and test environments only
+      group :development, :test do
+        gem "sqlite3", ">= 1.4"
+      end
+
+      ## For prod environments
+      group :production do
+        gem "pg"
+      end
+      ```
 
 - `package.json`
 

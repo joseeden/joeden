@@ -8,7 +8,7 @@ tags:
 - Web Development
 - Ruby
 - Ruby on Rails
-sidebar_position: 2
+sidebar_position: 3
 last_update:
   date: 8/24/2023
 ---
@@ -91,6 +91,12 @@ test_rails_app/app
 
 These directories separate logic, data, and presentation, which keeps the application organized as it grows.
 
+:::info 
+
+For more information, please see [Rails App Structure.](/docs/021-Software-Engineering/060-Ruby-on-Rails/005-Rails-Fundamentals/002-Rails-App-Structure.md)
+
+:::
+
 Inside the controllers directory, `application_controller.rb` serves as the base controller and will be used in the next step to control how the root route responds.
 
 ```ruby
@@ -99,6 +105,7 @@ test_rails_app/app/controllers/
 ├── application_controller.rb
 └── concerns 
 ```
+
 
 ## Root Route
 
@@ -364,3 +371,228 @@ About page:
 ![](/img/docs/Screenshot-2026-01-06-224608.png)
 
 </div>
+
+
+
+## Deploy App to Heroku
+
+We can deploy the Rails application so it is live online and accessible from any browser. 
+
+:::info 
+
+Production runs separately from local development, uses a persistent web server, and has its own database.
+
+:::
+
+Firstly, make sure to do the following first:
+
+- [Sign up for a free Heroku account ](https://signup.heroku.com/)
+- [Install the Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+
+
+#### Steps
+
+1. In your terminal, use Heroku CLI to login:
+
+    ```bash
+    heroku login
+    ```
+
+    **Note:** If you encountered an issue, please see [Heroku](/docs/001-Personal-Notes/020-Homelab/031-Heroku.md) page.
+
+    This will open a web browser. Click **Log in.**
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot-2026-01-06-235019.png)
+
+    </div>
+
+2. Create a Heroku app from your application directory:
+
+    ```bash
+    heroku create
+    ```
+
+    Sample output:
+
+    ```bash
+    Creating app... done, ⬢ warm-sierra-86094
+    https://warm-sierra-86094-3d39930d25c6.herokuapp.com/ | https://git.heroku.com/warm-sierra-86094.git 
+    ```
+
+3. Update the `Gemfile` to use PostgreSQL in production instead of SQLite.
+
+    Comment out this line:
+
+    ```ruby
+    # gem "sqlite3", ">= 1.4"
+    ```
+
+    Add the following at the end:
+
+    ```ruby
+    group :production do
+      gem "pg"
+    end
+
+    group :development, :test do
+      gem "sqlite3", ">= 1.4"
+    end
+    ```
+
+    **Update:** Heroku doesn't support SQLite, only PostgreSQL for Rails apps.
+
+<!-- 4. Since you don't have PostgreSQL installed on your local machine, you can skip the installation of `pg` gem (and other production gems) locally:
+
+    ```bash
+    bundle install --without production
+    ```
+
+    **Note:** In newer Rails version, the `--without` flag has been removed. You can use this instead:
+
+    ```bash
+    bundle config set without 'production'
+    ``` -->
+<!-- 
+5. (Optional) If you're testing and are not using a database, you can update the `config/application.rb` and comment out this line:
+
+    ```bash
+    # require "rails/all"
+    ```
+
+    This line loads all the default Rails frameworks, including the ActiveRecord. If ActiveRecord is not loaded, Rails won’t try to connect to SQLite or Postgres.
+
+    Note that `app/models/application_record.rb` does reference ActiveRecord:
+
+    ```ruby
+    class ApplicationRecord < ActiveRecord::Base
+      self.abstract_class = true
+    end
+    ```
+
+    So you will need to delete the `app/models/application_record.rb` as well.
+
+    **Note:** You can always generate this file anytime:
+
+    ```bash
+    rails generate model ApplicationRecord
+    ``` -->
+
+
+<!-- 6. (Optional) When testing locally, you might need to turn off frozen mode to let the Bundler update the `Gemfile.lock`:
+
+    ```bash
+    bundle config set frozen false
+    ```
+
+    Add `pg` to the lockfile without installing it locally:
+
+    ```bash
+    bundle lock --add-platform x86_64-linux
+    ``` -->
+
+
+4. Update your config/database.yml for production to use PostgreSQL.
+
+    You can leave development and test using SQLite.
+
+    ```yaml
+    production:
+      primary:
+        adapter: postgresql
+        url: <%= ENV['DATABASE_URL'] %>
+    ```
+
+    (Optional) You can also set the following priduction configs as well:
+
+    ```yaml
+    production:
+      cache:
+        <<: *default
+        adapter: postgresql
+        url: <%= ENV['DATABASE_URL'] %>
+        migrations_paths: db/cache_migrate
+      queue:
+        <<: *default
+        adapter: postgresql
+        url: <%= ENV['DATABASE_URL'] %>
+        migrations_paths: db/queue_migrate
+      cable:
+        <<: *default
+        adapter: postgresql
+        url: <%= ENV['DATABASE_URL'] %>
+        migrations_paths: db/cable_migrate
+    ```
+
+
+5. **Important step:** Make sure to commit the changes:
+
+    ```bash
+    git add -A
+    git commit -m "Deploy app"
+    ```
+
+6. Push the app to Heroku:
+
+    ```bash
+    git push heroku master
+    ```
+
+    Sample output:
+
+    ```bash
+    remote: -----> Compressing...
+    remote:        Done: 59.1M
+    remote: -----> Launching...
+    remote:        Released v3
+    remote:        https://warm-sierra-86094-3d39930d25c6.herokuapp.com/ deployed to Heroku
+    remote:
+    remote: Verifying deploy... done.
+    To https://git.heroku.com/warm-sierra-86094.git
+    * [new branch]      master -> master
+    ```
+
+7. Open the app. 
+
+    ```bash
+    heroku open 
+    ```
+
+    This will open the app in the browser:
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot-2026-01-06-224516.png)
+
+    </div>
+
+8. Optionally, you can rename your Heroku app:
+
+    ```bash
+    heroku rename ted-mosbius-creations
+    ```
+
+    Output:
+
+    ```bash
+    Renaming warm-sierra-86094 to ted-mosbius-creations... done  
+    https://warm-sierra-86094-3d39930d25c6.herokuapp.com/ | https://git.heroku.com/ted-mosbius-creations.git
+    Git remote heroku updated
+    Git remote heroku updated
+    ›   Warning: Don't forget to update git remotes for all 
+    ›   other local checkouts of the app.
+    ```
+
+    Now run:
+
+    ```bash
+    heroku open  
+    ```
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot-2026-01-07-014636.png)
+
+    </div>
+
