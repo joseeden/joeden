@@ -37,7 +37,7 @@ This will open a web browser. Click **Log in.**
 
 **Note:** If you're using the Heroku CLI from WSL, you may get an “IP address mismatch" because the CLI opens a browser in Windows, not inside WSL. Heroku will detect theat the browser's IP (from Windows) is different from the CLI session IP (from WSL) so it blocks the login.
 
-**If you haven't enabled MFA:** You can try interactive login, which will promp you for your email and password:
+**If you haven't enabled MFA:** You can try interactive login, which will prompt you for your email and password:
 
 ```bash
 heroku login -i

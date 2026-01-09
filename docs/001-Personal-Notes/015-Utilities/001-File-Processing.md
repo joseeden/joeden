@@ -1,6 +1,6 @@
 ---
-title: "File converters"
-description: "File converters"
+title: "File Processing"
+description: "File Processing"
 sidebar_position: 1
 ---
 
@@ -61,10 +61,48 @@ Other options:
         ./epub2pdf.sh <path-to-epub-file> 
         ```
 
-## File readers 
+## File Readers 
 
 - [Calibre](https://calibre-ebook.com/download) 
 - [Sumatra PDF](https://www.sumatrapdfreader.org/free-pdf-reader) 
 - [Okular](https://okular.kde.org/)
 - [Adobe Digital Edition](https://www.adobe.com/sg/solutions/ebook/digital-editions/download.html) (Preferred)
 - [Aquile Reader](https://www.microsoft.com/store/apps/9P08T4JLTQNK)   
+
+
+## PDF Compression (Linux/Terminal)
+
+You can reduce the size of large PDF files on Linux using **Ghostscript**. This is useful when a site has upload size limits.
+
+```bash
+sudo apt update 
+sudo apt install -y ghostscript  
+
+INPUT_PDF="input.pdf" 
+OUTPUT_PDF="output.pdf"
+
+gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 \
+   -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH \
+   -sOutputFile="$OUTPUT_PDF" "$INPUT_PDF"
+
+# Check the new file size
+ls -lh "$OUTPUT_PDF"
+
+```
+
+Where: 
+
+- `INPUT_PDF` → original file
+- `OUTPUT_PDF` → compressed file
+
+The `-dPDFSETTINGS` options:
+
+- `/screen` → lowest quality, smallest size
+- `/ebook` → medium quality, moderate size
+- `/printer` → high quality, larger size
+
+Check the new file size:
+
+```bash
+ls -lh output.pdf
+```

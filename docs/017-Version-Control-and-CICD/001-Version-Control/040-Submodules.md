@@ -10,6 +10,15 @@ last_update:
   date: 7/19/2023
 ---
 
+## Submodules are Pointers 
+
+For submodules, the remote repository doesn’t display the subrepo inside it but rather points to another remote repository. So when I click the embedded subrepo with the "arrow pointing to the right," it should redirect me to the remote repository of the submodule.
+
+<div class='img-center'>
+
+![](/img/docs/all-things-devops-sub-module.png)
+
+</div>
 
 ## Subrepo Inside a Parent Repo
 
@@ -100,15 +109,7 @@ It looks like Git is treating the `submodule-name` as a submodule and suggests t
 </div>
 
 
-## Submodules are pointers 
 
-For submodules, the remote repository doesn’t display the subrepo inside it but rather points to another remote repository. So when I click the embedded subrepo with the "arrow pointing to the right," it should redirect me to the remote repository of the submodule.
-
-<div class='img-center'>
-
-![](/img/docs/all-things-devops-sub-module.png)
-
-</div>
 
 ## Creating Submodules
 

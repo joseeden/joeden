@@ -1,0 +1,25 @@
+## Understand the database and model layer
+
+Next, we focus on the back end of the Rails application, specifically the database and model layer. This layer is responsible for storing data and allowing the application to work with it in a structured way.
+
+- The database stores all application data
+- Models act as the interface to the database
+- Controllers connect models to the rest of the application
+
+The database is the persistence layer, meaning data lives there even after the app stops running. Models are how Rails communicates with the database, while controllers later help connect this data to the front end.
+
+In a typical application, the database is made up of multiple tables. You can think of each table like a simple spreadsheet, where columns represent attributes and rows represent records. Some tables are linked to others using shared columns, which is what makes the database relational.
+
+For example, an application may have a `users` table and an `articles` table. Each article can include a `user_id` column that points to the user who created it. This creates a relationship between users and articles and allows the app to understand how data is connected.
+
+An articles table usually includes attributes such as an ID, a title, a description, and a user ID. Each row represents one article. The ID is automatically created by Rails, so it does not need to be managed manually.
+
+With a table like this, the most common operations are creating new records, reading existing records, updating them, and deleting them. These four actions are known as CRUD operations and form the foundation of working with databases.
+
+To perform these operations, applications use a query language called SQL. While different database systems have small differences, they all follow the same basic SQL structure.
+
+Rails simplifies this process by using an Object Relational Mapper called Active Record. Active Record translates Ruby code into SQL queries, so you do not need to write SQL manually. This allows you to work with the database using familiar Ruby syntax.
+
+In a Rails application, models inherit from `ApplicationRecord`, which itself inherits from Active Record. This setup allows all models to automatically gain database functionality.
+
+Overall, the database and model layer form the core of the Rails back end. They manage data storage and retrieval while allowing the application to interact with the database using clean and readable Ruby code.
