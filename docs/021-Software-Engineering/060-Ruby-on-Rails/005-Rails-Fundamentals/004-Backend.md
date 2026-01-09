@@ -33,7 +33,11 @@ The database layer is the persistence layer of the application. This is where al
 
 Think of the database and models as separate from the web interface. They can exist even without a frontend, and they focus only on storing and retrieving data.
 
+<div class='img-center'>
 
+![](/img/docs/Screenshot-2026-01-09-234717.png)
+
+</div>
 
 At the storage level, data is organized into tables that group related information.
 
@@ -53,7 +57,7 @@ Consider the sample `articles` table below:
 | 4   | Fourth post | Deeper topic overview  | 145     |
 | 5   | Fifth post  | Final example entry    | 203     |
 
-In this example, each article stores a `user_id` that points to the user who created it. This link forms a clear relationship between users and their articles, and allows the application to move between related data easily.
+In this example, each row represents an article and stores a `user_id` that points to the user who created it. This link forms a clear relationship between users and their articles, and allows the application to move between related data easily.
 
 :::info 
 
@@ -72,52 +76,24 @@ Most database-backed application follow four basic operations, known as **CRUD**
 - Update existing records
 - Delete records
 
-To perform CRUD operations on the database, applications need a way to talk to it using **Structured Query Language (SQL)**. SQL is the standard language for most databases and allows the application to create, read, update, and delete rows. Different database systems may have slight variations, but the basic SQL principles stay the same.
-
-
-For the applications to talk to the database, they need...**Strucutred Query Language** or **SQL**..
-
-- SQL is the standard query language
-- Most databases follow the same SQL principles
-- Queries perform CRUD operations
-
-SQL allows applications to insert, fetch, update, and delete rows. While different database systems have small differences, the core ideas remain the same.
-
+To perform CRUD operations on the database, applications need a way to talk to it using **Structured Query Language (SQL)**. It is the standard language for most databases and allows the application to create, read, update, and delete rows. Different database systems may have slight variations, but the basic SQL principles stay the same.
 
 ## Active Record and ORM in Rails
 
-Rails does not require you to write SQL directly.
+Raills does not require you to manually write SQL. Instead, it uses a **Object Relational Mapper (ORM)** called **Active Record** which translates Ruby code into SQL queries. 
 
-- Rails uses an ORM called Active Record
-- Ruby code is translated into SQL
-- Models handle database communication
+<div class='img-center'>
 
-Active Record acts as a middle layer. It converts Ruby methods into SQL queries, which keeps your application code clean and readable.
+![](/img/docs/belongs_to.png)
 
+</div>
 
-## Models and ApplicationRecord
+From Rails 5 onward, models inherit from `ApplicationRecord`, which itself inherits from Active Record. This setup allows all models to automatically gain database functionality.
 
-Rails models inherit database behavior through a shared base class.
-
-- Models inherit from ApplicationRecord
-- ApplicationRecord inherits from Active Record
-- This adds a clean abstraction layer
-
-From Rails 5 onward, models inherit from ApplicationRecord instead of directly from Active Record. The main idea stays the same: Ruby code is used to interact with the database through models.
-
-
-## Simple example of a model
-
-In the example below, the `Article` class represents the `articles` table and allows database operations using Ruby code.
-
-```ruby
-class Article < ApplicationRecord
+```bash
+# app/models/application_record.rb 
+class ApplicationRecord < ActiveRecord::Base
+  self.abstract_class = true
 end
 ```
 
-This model lets the application create, read, update, and delete articles without writing raw SQL, which keeps the backend logic simple and consistent.
-
-
-## Closing summary
-
-The backend of a Rails application is built around databases, models, and Active Record. Data is stored in tables, relationships link records together, and CRUD operations manage changes. Active Record connects everything, allowing Ruby code to safely and clearly control how data flows through the application.
