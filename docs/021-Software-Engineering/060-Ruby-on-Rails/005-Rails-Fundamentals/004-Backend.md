@@ -432,7 +432,7 @@ Click **Back to articles** to return to `/articles`, where the newly created art
 
 <div class='img-center'>
 
-![](/img/docs/Screenshot-2026-01-11-021233.png.png)
+![](/img/docs/Screenshot-2026-01-11-021233.png)
 
 </div>
 
