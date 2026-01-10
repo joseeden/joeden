@@ -417,27 +417,119 @@ Firstly, make sure to do the following first:
     Sample output:
 
     ```bash
-    Creating app... done, ⬢ warm-sierra-86094
-    https://warm-sierra-86094-3d39930d25c6.herokuapp.com/ | https://git.heroku.com/warm-sierra-86094.git 
+    Creating app... done, ⬢ arcane-caverns-35777
+    https://arcane-caverns-35777-419bbd25c167.herokuapp.com/ | https://git.heroku.com/arcane-caverns-35777.git
     ```
 
-3. Update the `Gemfile` to use PostgreSQL in production instead of SQLite.
+3. (Optional) You can rename your Heroku app:
 
-    Comment out this line:
+    ```bash
+    heroku rename alphard
+    ```
+
+    Output:
+
+    ```bash
+    Renaming arcane-caverns-35777 to alphard... done
+    https://arcane-caverns-35777-419bbd25c167.herokuapp.com/ | https://git.heroku.com/alphard.git
+    Git remote heroku updated
+    Git remote heroku updated
+    ›   Warning: Don't forget to update git remotes for all other local checkouts of the app.
+    ```
+
+    Now run:
+
+    ```bash
+    heroku open  
+    ```
+
+    <div class='img-center'>
+
+    <!-- ![](/img/docs/Screenshot-2026-01-07-014636.png) -->
+    ![](/img/docs/Screenshot-2026-01-10-194009.png)
+
+    </div>
+
+    At this stage, the app is still using Heroku’s default page. 
+
+    The Rails application will be deployed in the next step.
+
+4. Update the `Gemfile` to use PostgreSQL in production instead of SQLite.
+
+    <!-- Comment out this line:
 
     ```ruby
     # gem "sqlite3", ">= 1.4"
-    ```
-
-    Add the following at the end:
+    ``` -->
 
     ```ruby
-    group :production do
-      gem "pg"
-    end
+    source "https://rubygems.org"
 
+    # Rails
+    gem "rails", "~> 8.1.1"
+
+    # Web server
+    gem "puma", ">= 5.0"
+
+    # Assets & frontend
+    gem "propshaft"
+    gem "importmap-rails"
+    gem "turbo-rails"
+    gem "stimulus-rails"
+
+    # JSON APIs
+    gem "jbuilder"
+
+    # Time zones for Windows
+    gem "tzinfo-data", platforms: %i[ windows jruby ]
+
+    # Rails 8 database-backed features
+    gem "solid_cache"
+    gem "solid_queue"
+    gem "solid_cable"
+
+    # Performance & boot
+    gem "bootsnap", require: false
+
+    # Deployment
+    gem "kamal", require: false
+    gem "thruster", require: false
+
+    # Image processing
+    gem "image_processing", "~> 1.2"
+
+    # ======================
+    # Development & Test
+    # ======================
     group :development, :test do
       gem "sqlite3", ">= 1.4"
+
+      gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
+      gem "bundler-audit", require: false
+      gem "brakeman", require: false
+      gem "rubocop-rails-omakase", require: false
+    end
+
+    # ======================
+    # Development only
+    # ======================
+    group :development do
+      gem "web-console"
+    end
+
+    # ======================
+    # Test only
+    # ======================
+    group :test do
+      gem "capybara"
+      gem "selenium-webdriver"
+    end
+
+    # ======================
+    # Production (Heroku)
+    # ======================
+    group :production do
+      gem "pg"
     end
     ```
 
@@ -493,47 +585,62 @@ Firstly, make sure to do the following first:
     ``` -->
 
 
-4. Update your config/database.yml for production to use PostgreSQL.
-
-    You can leave development and test using SQLite.
+5. Update your `config/database.yml` for production to use PostgreSQL.
 
     ```yaml
+    # ===========================================================================
+    # SQLite (Local)
+    # ===========================================================================
+    sqlite: &sqlite
+      adapter: sqlite3
+      pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+      timeout: 5000
+
+    development:
+      <<: *sqlite
+      database: storage/development.sqlite3
+
+    test:
+      <<: *sqlite
+      database: storage/test.sqlite3
+
+    # ===========================================================================
+    # PostgreSQL (Heroku)
+    # ===========================================================================
+    postgres: &postgres
+      adapter: postgresql
+      pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
     production:
       primary:
-        adapter: postgresql
-        url: <%= ENV['DATABASE_URL'] %>
-    ```
+        <<: *postgres
+        url: <%= ENV["DATABASE_URL"] %>
 
-    (Optional) You can also set the following priduction configs as well:
-
-    ```yaml
-    production:
       cache:
-        <<: *default
-        adapter: postgresql
-        url: <%= ENV['DATABASE_URL'] %>
+        <<: *postgres
+        url: <%= ENV["DATABASE_URL"] %>
         migrations_paths: db/cache_migrate
+
       queue:
-        <<: *default
-        adapter: postgresql
-        url: <%= ENV['DATABASE_URL'] %>
+        <<: *postgres
+        url: <%= ENV["DATABASE_URL"] %>
         migrations_paths: db/queue_migrate
+
       cable:
-        <<: *default
-        adapter: postgresql
-        url: <%= ENV['DATABASE_URL'] %>
+        <<: *postgres
+        url: <%= ENV["DATABASE_URL"] %>
         migrations_paths: db/cable_migrate
     ```
 
 
-5. **Important step:** Make sure to commit the changes:
+6. **Important step:** Make sure to commit the changes:
 
     ```bash
     git add -A
     git commit -m "Deploy app"
     ```
 
-6. Push the app to Heroku:
+7. Push the app to Heroku:
 
     ```bash
     git push heroku master
@@ -543,17 +650,17 @@ Firstly, make sure to do the following first:
 
     ```bash
     remote: -----> Compressing...
-    remote:        Done: 59.1M
+    remote:        Done: 60.1M
     remote: -----> Launching...
     remote:        Released v3
-    remote:        https://warm-sierra-86094-3d39930d25c6.herokuapp.com/ deployed to Heroku
+    remote:        https://alphard-10f64f0a1adf.herokuapp.com/ deployed to Heroku
     remote:
     remote: Verifying deploy... done.
-    To https://git.heroku.com/warm-sierra-86094.git
+    To https://git.heroku.com/alphard.git
     * [new branch]      master -> master
     ```
 
-7. Open the app. 
+8. Open the app. 
 
     ```bash
     heroku open 
@@ -563,36 +670,9 @@ Firstly, make sure to do the following first:
 
     <div class='img-center'>
 
-    ![](/img/docs/Screenshot-2026-01-06-224516.png)
+    ![](/img/docs/Screenshot-2026-01-10-194441.png)
 
     </div>
 
-8. Optionally, you can rename your Heroku app:
 
-    ```bash
-    heroku rename ted-mosbius-creations
-    ```
-
-    Output:
-
-    ```bash
-    Renaming warm-sierra-86094 to ted-mosbius-creations... done  
-    https://warm-sierra-86094-3d39930d25c6.herokuapp.com/ | https://git.heroku.com/ted-mosbius-creations.git
-    Git remote heroku updated
-    Git remote heroku updated
-    ›   Warning: Don't forget to update git remotes for all 
-    ›   other local checkouts of the app.
-    ```
-
-    Now run:
-
-    ```bash
-    heroku open  
-    ```
-
-    <div class='img-center'>
-
-    ![](/img/docs/Screenshot-2026-01-07-014636.png)
-
-    </div>
 
