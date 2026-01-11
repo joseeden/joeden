@@ -158,15 +158,15 @@ const config: Config = {
 
   customFields: {
     webpackConfig: (config, isServer) => {
-      // Add process/browser polyfill for webpack
-      config.resolve = {
-        ...config.resolve,
-        fallback: {
-          process: require.resolve("process/browser"),
-        },
-      };
-
-      config.devtool = "source-map"; // Enable source maps for easier debugging
+      if (!isServer) {
+        config.resolve = {
+          ...config.resolve,
+          fallback: {
+            ...config.resolve?.fallback,
+            process: require.resolve("process/browser"),
+          },
+        };
+      }
       return config;
     },
   },
