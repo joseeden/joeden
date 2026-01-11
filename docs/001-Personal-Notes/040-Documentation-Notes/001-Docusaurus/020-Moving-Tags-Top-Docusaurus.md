@@ -1,7 +1,7 @@
 ---
-title: Moving Tag to Top"
+title: "Moving Tag to Top"
 description: "Moving Tags from Bottom to Top in Documentation Pages"
-sidebar_position: 17
+sidebar_position: 20
 tags: 
 - Docusaurus
 # last_update:

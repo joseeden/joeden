@@ -213,6 +213,26 @@ h1, h2, h3, h4, h5 {
     color: #05192d;
   }
 
+  .alert--success blockquote,
+  .alert--success .admonition-icon {
+    color: #05192d;
+  }
+
+  .alert--info blockquote,
+  .alert--info .admonition-icon {
+    color: #05192d;
+  }
+
+  .alert--warning blockquote,
+  .alert--warning .admonition-icon {
+    color: #05192d;
+  }
+
+  .alert--danger blockquote,
+  .alert--danger .admonition-icon {
+    color: #05192d;
+  }
+
   .alert--warning {
     background-color: #cbab4a;
     border-color: #cbab4a;
