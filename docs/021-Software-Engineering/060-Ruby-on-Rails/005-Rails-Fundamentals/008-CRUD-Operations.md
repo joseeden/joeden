@@ -37,7 +37,7 @@ Note that `article` follows a fixed structure that connects different layers of 
 
 The `article` model (singular, CamelCase) is automatically mapped to an `articles` table (plural).
 
-## (Optional) Cleanup Scaffolded Resources
+#### (Optional) Cleanup Scaffolded Resources
 
 If you generated the `articles` table, you can remove everything that scaffold created:
 
@@ -557,6 +557,201 @@ Examples:
     Article.all
     ```
 
-Currently, the `Article` model allows creating records without a title or description. To maintain data integrity, we can add validations so empty articles cannot be saved. 
 
-For more information, please see [Validations.](/docs/021-Software-Engineering/060-Ruby-on-Rails/005-Rails-Fundamentals/010-Validations.md)
+## Adding Validations
+
+Currently, the `Article` model allows creating records without a title or description. To maintain data integrity, we can add **validations** so empty articles cannot be saved. 
+
+Some common validations:
+
+- Validate presence to prevent blank fields
+- Set minimum and maximum length for better data quality
+
+#### Presence Validation 
+
+To add presence validations, update `app/models/article.rb`:
+
+```ruby
+## `app/models/article.rb
+class Article < ApplicationRecord
+  validates :title, presence: true
+  validates :description, presence: true
+end
+```
+
+Here, the validation make sures that the `title` and `description` is present in order for any article to be saved.
+
+Open the Rails console and reload so the changes take effect:
+
+```ruby
+rails console
+reload!
+```
+
+Now if we try to save a new article without a title or description, it will return `false`:
+
+```ruby
+article = Article.new
+article.save
+```
+
+Output: 
+
+```ruby
+# => false
+```
+
+If we check the errors on the article object, Rails shows clear messages explaining why the record was not saved.
+
+```ruby 
+article.errors.full_messages
+# => ["Title can't be blank", "Description can't be blank"]
+```
+
+If we try to create an article with a title but without a description, the save still fails.
+
+```bash
+article = Article.new(title: "Third post")
+article.save
+# => false
+```
+
+When we provide both a title and a description, the article saves successfully.
+
+```bash
+article = Article.new(title: "Third post", description: "This is the third post")
+article.save
+# => true
+```
+
+Checking all records:
+
+```bash
+$ Article.all 
+
+[#<Article:0x000070858909b418
+  id: 1,
+  created_at: "2026-01-11 02:17:34.505517000 +0000",
+  title: "First post",
+  updated_at: "2026-01-11 02:17:34.505517000 +0000",
+  description: "Introduction article">,
+ #<Article:0x000070858909b2d8
+  id: 2,
+  created_at: "2026-01-11 02:21:36.948319000 +0000",
+  title: "Second post",
+  updated_at: "2026-01-11 05:22:30.483007000 +0000",
+  description: "Edited description of second article">,
+ #<Article:0x000070858909b058
+  id: 5,
+  created_at: "2026-01-11 07:42:37.365641000 +0000",
+  title: "Third post",
+  updated_at: "2026-01-11 07:42:37.365641000 +0000",
+  description: "This is the third post">]
+```
+
+
+#### Length Validation
+
+Next, we can enforce minimum and maximum length constraints on the `title` and `description` so that the content is more meaningful.
+
+```ruby
+## `app/models/article.rb
+class Article < ApplicationRecord 
+  validates :title, 
+            presence: true,
+            length: {
+              minimum: 6,
+              maximum: 20
+            }
+
+  validates :description, 
+            presence: true,
+            length: {
+              minimum: 10,
+              maximum: 300
+            }
+end
+```
+
+Reload the console again:
+
+```ruby
+reload!
+```
+
+Trying to save an article with a very short title and description fails validation:
+
+```ruby
+article = Article.new(title: "4th", description: "4th")
+article.save
+# => false
+```
+
+Inspecting the errors shows why it failed:
+
+```ruby
+article.errors.full_messages
+# => 
+# ["Title is too short (minimum is 6 characters)", 
+#  "Description is too short (minimum is 10 characters)"]
+```
+
+If we provide a valid title but an overly long description, the save still fails:
+
+```ruby
+article.title = "Fourth post"
+article.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.."
+article.save
+# => false
+```
+
+The error message confirms the length issue:
+
+```bash
+article.errors.full_messages
+# => ["Description is too long (maximum is 300 characters)"]
+```
+
+Once both the title and description meet the validation rules, the article is saved successfully:
+
+```ruby
+article.title = "Fourth post"
+article.description = "This is a 4th article that has a proper length"
+article.save
+# => true
+```
+
+Listing all articles:
+
+```ruby
+$ Article.all 
+
+[#<Article:0x00007c6261f2bf58
+  id: 1,
+  created_at: "2026-01-11 02:17:34.505517000 +0000",
+  title: "First post",
+  updated_at: "2026-01-11 02:17:34.505517000 +0000",
+  description: "Introduction article">,
+ #<Article:0x00007c6261f2be18
+  id: 2,
+  created_at: "2026-01-11 02:21:36.948319000 +0000",
+  title: "Second post",
+  updated_at: "2026-01-11 05:22:30.483007000 +0000",
+  description: "Edited description of second article">,
+ #<Article:0x00007c6261f2bcd8
+  id: 8,
+  created_at: "2026-01-11 08:01:45.875675000 +0000",
+  title: "Third post",
+  updated_at: "2026-01-11 08:01:45.875675000 +0000",
+  description: "This is the third post">,
+ #<Article:0x00007c6261f2bb98
+  id: 9,
+  created_at: "2026-01-11 08:02:52.917372000 +0000",
+  title: "Fourth post",
+  updated_at: "2026-01-11 08:02:52.917372000 +0000",
+  description: "This is a 4th article that has a proper length">] 
+```
+
+Now our model ensures that only meaningful articles with proper titles and descriptions are saved.
+
+For more information, you can read about [Active Record Validations](https://guides.rubyonrails.org/active_record_validations.html).

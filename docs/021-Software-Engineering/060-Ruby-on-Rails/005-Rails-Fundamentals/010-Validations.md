@@ -1,6 +1,6 @@
 ---
-title: "Validations"
-description: "Validations"
+title: "Frontend"
+description: "Frontend"
 tags: 
 - Computer Science
 - Application Development
