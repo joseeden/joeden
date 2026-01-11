@@ -84,7 +84,7 @@ Source Location   | /test-rails-app/config/routes.rb:6
 
 Before testing in the browser, it helps to know which articles exist.
 
-For this setup, below are the articles that were added in the `articles` table.
+For this setup, below are the articles that will be used for the `articles` table.
 
 | id   | title       | description                                    |
 | ---- | ----------- | ---------------------------------------------- |
@@ -92,6 +92,8 @@ For this setup, below are the articles that were added in the `articles` table.
 | 2    | Second post | Edited description of second article           |
 | 3    | Third post  | This is the third post                         |
 | 4    | Fourth post | This is a 4th article that has a proper length |
+| 5    | Fifth post  | Testing on 5th post using "create" action      |
+| 6    | Sixth post  | Simplify redirect to new article page          |
 
 :::info 
 
@@ -356,3 +358,266 @@ In this step, we want to create a simple listing page where users can see all re
 
 
 Now the articles listing page is complete and ready for further enhancements, like adding links for editing or deleting articles.
+
+## Creating New Articles
+
+We will add a page where users can create new articles through a form. The route will be `/articles/new` and the form submits to the `create` action using a `POST` request. 
+
+- **Route**: GET `/articles/new` for the form
+- **Route**: POST `/articles` for submitting the form
+- **Controller actions**: `new` shows the form, `create` handles saving the article
+
+1. First, enable the `new` and `create` routes in `config/routes.rb`:
+
+    ```ruby
+    ## config/routes.rb
+    Rails.application.routes.draw do
+      root "pages#home"
+      get "about", to: "pages#about"
+      get "up" => "rails/health#show", as: :rails_health_check
+      resources :articles, only: [:show, :index, :new, :create]
+    end
+    ```
+
+    Verify that the routes exist:
+
+    ```ruby
+    $ rails routes --expanded 
+
+    --[ Route 5 ]----------------------------------------------------------------------------------------Prefix            |
+    Verb              | POST
+    URI               | /articles(.:format)
+    Controller#Action | articles#create
+    Source Location   | /test-rails-app/config/routes.rb:6
+    --[ Route 6 ]----------------------------------------------------------------------------------------Prefix            | new_article
+    Verb              | GET
+    URI               | /articles/new(.:format)
+    Controller#Action | articles#new
+    Source Location   | /test-rails-app/config/routes.rb:6
+    ```
+
+2. In the `ArticlesController`, add the `new` and `create` actions:
+
+    ```ruby
+    ## app/controllers/articles_controller.rb
+    class ArticlesController < ApplicationController
+      def show
+        @article = Article.find(params[:id])
+      end
+
+      def index
+        @articles = Article.all
+      end
+
+      def new
+      end
+
+      def create
+        render plain: params[:article]
+      end
+    end
+    ```
+
+    Here, `render plain:` sends a response directly to the browser without redirecting. This makes it easy to confirm that the form submission reaches the `create` action and that the parameters are received correctly, which you’ll see in step 5.
+
+3. Create a form view at `app/views/articles/new.html.erb`.
+
+    For more information, please see [Action View Form Helpers.](https://guides.rubyonrails.org/form_helpers.html)
+
+    ```erb
+    <h1>Create a New Entry</h1>
+
+    <%= form_with scope: :article, 
+                  url: articles_path, 
+                  local: true do |field| %>
+      <p>
+        <%= field.label :title %><br>
+        <%= field.text_field :title %>
+      </p>
+      <p>
+        <%= field.label :description %><br>
+        <%= field.text_area :description %>
+      </p>
+      <p>
+        <%= field.submit "Publish" %>
+      </p>
+    <% end %>
+    ```
+
+    Here, we are using the `form_with` helper which generates the form and sets it to submit via `POST` using Ajax. Instead of using AJAX, we can configure it to use normal HTTP `POST` by adding:
+
+    ```bash
+    local: true
+    ```
+
+    **Update**: In Rails 7+, **Turbo** is enabled by default. Forms created with `form_with` are submitted via Turbo unless it is explicitly disabled, so the `local` option does not force a normal HTML request.
+
+    Updated solution is to turn off Turbo:
+
+    ```erb
+    <h1>Create a New Entry</h1>
+
+    <%= form_with scope: :article, 
+                  url: articles_path, 
+                  data: { turbo: false } do |field| %>
+      <p>
+        <%= field.label :title %><br>
+        <%= field.text_field :title %>
+      </p>
+      <p>
+        <%= field.label :description %><br>
+        <%= field.text_area :description %>
+      </p>
+      <p>
+        <%= field.submit "Publish" %>
+      </p>
+    <% end %>
+    ```
+
+
+4. If it’s not already running, start the Rails server:
+
+    ```bash
+    rails server 
+    ```
+
+5. Open a web browser and navigate to:
+
+    ```bash
+    http://localhost:3000/articles/new
+    ```
+
+    Enter a title and description, then press **Publish.**
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot-2026-01-11-215100.png)
+
+    </div>
+
+    When the form is submitted, Rails sends the data in `params[:article]` to the `create` action. Since `render plain: params[:article]` is used, the browser displays the submitted value. This confirms that the request and parameters are working as expected.
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot-2026-01-11-221650.png)
+
+    </div>
+
+At this stage, the form submission only sends the data to the `create` action and displays it in the browser. The article is not yet saved in the database. To actually store it, you would need to create a new `Article` record.
+
+
+## Save a New Article
+
+Now we want to save a new article to the database. We will use **strong parameters** to safely allow title and description, create a new article object, save it, and then redirect to the article’s show page.
+
+1. In `ArticlesController`, update the `create` action to create and save a new `Article` record:
+
+    ```ruby
+    ## app/controllers/articles_controller.rb
+    class ArticlesController < ApplicationController
+      def show
+        @article = Article.find(params[:id])
+      end
+
+      def index
+        @articles = Article.all
+      end
+
+      def new
+      end
+
+      def create
+        @article = Article.new(params.require(:article).permit(:title, :description))
+        @article.save
+        redirect_to article_path(@article)
+      end
+    end
+    ```
+
+    **Explanation**:
+
+    - `Article.new` creates a new article instance
+    - `@article.save` stores it in the database if validations pass
+    - `redirect_to @article` sends the user to the article’s show page
+
+    At this stage, using strong parameters prevents `ForbiddenAttributesError` when Rails receives unpermitted fields. 
+
+    ```ruby
+    params.require(:article).permit(:title, :description
+    ```
+
+    The line above tells Rails to require a top-level key of `article` and allow only the `title` and `description` from the form to be used when creating the new article.
+
+
+2. Open the new article form:
+
+    ```
+    http://localhost:3000/articles/new
+    ```
+
+    Fill in the title and description, and click **Publish**.
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot-2026-01-11-225645.png)
+
+    </div>
+
+
+    Rails saves the article to the database and redirects to the `show` page, which shows the new article:
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot-2026-01-11-225745.png)
+
+    </div>
+
+3. You can confirm that the article was saved by visiting the listing page:
+
+    ```
+    http://localhost:3000/articles
+    ```
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot-2026-01-11-225926.png)
+
+    </div>
+
+    You can also check from the `rails console`:
+
+    ```bash
+    $ Article.all
+
+    [#<Article:0x000071c0bd6c9b08
+      id: 1,
+      created_at: "2026-01-11 02:17:34.505517000 +0000",
+      title: "First post",
+      updated_at: "2026-01-11 02:17:34.505517000 +0000",
+      description: "Introduction article">,
+    #<Article:0x000071c0bd6c99c8
+      id: 2,
+      created_at: "2026-01-11 02:21:36.948319000 +0000",
+      title: "Second post",
+      updated_at: "2026-01-11 05:22:30.483007000 +0000",
+      description: "Edited description of second article">,
+    #<Article:0x000071c0bd6c9888
+      id: 8,
+      created_at: "2026-01-11 08:01:45.875675000 +0000",
+      title: "Third post",
+      updated_at: "2026-01-11 08:01:45.875675000 +0000",
+      description: "This is the third post">,
+    #<Article:0x000071c0bd6c9748
+      id: 9,
+      created_at: "2026-01-11 08:02:52.917372000 +0000",
+      title: "Fourth post",
+      updated_at: "2026-01-11 08:02:52.917372000 +0000",
+      description: "This is a 4th article that has a proper length">,
+    #<Article:0x000071c0bd6c94c8
+      id: 10,
+      created_at: "2026-01-11 14:56:58.095096000 +0000",
+      title: "Fifth post",
+      updated_at: "2026-01-11 14:56:58.095096000 +0000",
+      description: "Adding and saving a 5th post">]     
+    ```
+
