@@ -97,7 +97,7 @@ const config: Config = {
       },
       items: [
         // { to: "/about", label: "About", position: "left" },
-        { to: "/", label: "Home", position: "left" },
+        { to: "/", label: "About", position: "left" },
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
