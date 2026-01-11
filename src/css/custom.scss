@@ -225,7 +225,7 @@ h1, h2, h3, h4, h5 {
     font-weight: bold;
     display: flex;
     align-items: center;
-    justify-content: center;
+    // justify-content: center;
     margin-left: auto;
   }
 
@@ -429,7 +429,7 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
       flex-direction: row;
       align-items: center;
       padding: 0.5rem;
-      justify-content: center;
+      // justify-content: center;
     }
 
     .navbar__toggle {
