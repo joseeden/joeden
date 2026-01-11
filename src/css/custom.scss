@@ -200,6 +200,26 @@ h1, h2, h3, h4, h5 {
   .theme-doc-markdown .flex.justify-between span.inline-flex.items-center.rounded-full.px-2\.5.py-0\.5.text-xs.font-small {
     color: #4eddcd;
   }
+
+  .alert--info {
+    background-color: #7ab6e6;
+    border-color: #7ab6e6;
+  }
+
+  .alert--success {
+    background-color: #4ade80;
+    border-color: #4ade80;
+  }
+
+  .alert--warning {
+    background-color: #fbbf24;
+    border-color: #fbbf24;
+  }
+
+  .alert--danger {
+    background-color: #f87171;
+    border-color: #f87171;
+  }
 }
 
 /* Navbar styling */
