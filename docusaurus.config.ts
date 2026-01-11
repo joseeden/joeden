@@ -109,7 +109,8 @@ const config: Config = {
         // { to: "/RUNNING", label: "Running", position: "left" },
         // { to: "/", label: "Gallery", position: "left" },
         // { to: "/", label: "Arts", position: "left" },  
-        { to: "https://merria.co", label: "Shop", position: "left" },
+        { to: "https://merria.co", label: "Merria", position: "left" },
+        { to: "https://www.velarae.co/", label: "Velarae", position: "left" },
         // {
         //   href: 'https://github.com/joseeden',
         //   label: 'GitHub',
