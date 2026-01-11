@@ -204,6 +204,8 @@ h1, h2, h3, h4, h5 {
     max-width: 1536px;
     margin-left: auto;
     margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .navbar__brand {
@@ -318,7 +320,7 @@ h1, h2, h3, h4, h5 {
 /* Custom styles for thin scrollbar */
 .menu.thin-scrollbar {
   // padding: 20px 0 8.5px 8.5px !important;
-  padding: 40px 0 8.5px 20px !important;
+  padding: 40px 0 40px 20px !important;
 }
 
 /* Sidebar */
@@ -527,15 +529,11 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
 /* Move tags to top on larger screens */
 @media (min-width: 768px) {
   .theme-doc-footer-tags-row {
-    display: none;
+    display: block;
   }
   
   .custom-tags-header {
-    display: block;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-    background: red;
-    padding: 10px;
+    display: none;
   }
 }
 
