@@ -225,12 +225,12 @@ h1, h2, h3, h4, h5 {
 
   .alert--warning blockquote,
   .alert--warning .admonition-icon {
-    color: #05192d;
+    color: #fffacd;
   }
 
   .alert--danger blockquote,
   .alert--danger .admonition-icon {
-    color: #05192d;
+    color: #f7f6f6;
   }
 
   .alert--warning {
@@ -240,8 +240,9 @@ h1, h2, h3, h4, h5 {
   }
 
   .alert--danger {
-    background-color: #f87171;
-    border-color: #f87171;
+    background-color: #f7899c;
+    border-color: #f7899c;
+    color: #f7f6f6;
   }
 }
 
