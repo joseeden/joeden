@@ -53,11 +53,12 @@ There are ways to unlock or remove a password from an encrypted PDF, bbut it dep
     - **Elcomsoft PDF Password Recovery** (paid, very powerful).
     - **John the Ripper** with PDF plugin - advanced, for Linux users.
 
-    :::info 
 
-    If the PDF is strongly encrypted (e.g., AES-256), and you don't have the password, cracking it could be **practically impossible** without a lot of time and computing power.
+      :::info 
 
-    :::
+      If the PDF is strongly encrypted (e.g., AES-256), and you don't have the password, cracking it could be **practically impossible** without a lot of time and computing power.
+
+      :::
 
 
 3. **Online unlock services**

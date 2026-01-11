@@ -204,16 +204,19 @@ h1, h2, h3, h4, h5 {
   .alert--info {
     background-color: #7ab6e6;
     border-color: #7ab6e6;
+    color: #05192d;
   }
 
   .alert--success {
-    background-color: #4ade80;
-    border-color: #4ade80;
+    background-color: #73cfc5;
+    border-color: #73cfc5;
+    color: #05192d;
   }
 
   .alert--warning {
-    background-color: #fbbf24;
-    border-color: #fbbf24;
+    background-color: #cbab4a;
+    border-color: #cbab4a;
+    color: #fffacd;
   }
 
   .alert--danger {
