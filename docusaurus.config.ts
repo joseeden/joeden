@@ -155,21 +155,6 @@ const config: Config = {
       darkTheme: themes.dracula,
     },
   } satisfies Preset.ThemeConfig,
-
-  customFields: {
-    webpackConfig: (config, isServer) => {
-      if (!isServer) {
-        config.resolve = {
-          ...config.resolve,
-          fallback: {
-            ...config.resolve?.fallback,
-            process: require.resolve("process/browser"),
-          },
-        };
-      }
-      return config;
-    },
-  },
 };
 
 module.exports = config;
