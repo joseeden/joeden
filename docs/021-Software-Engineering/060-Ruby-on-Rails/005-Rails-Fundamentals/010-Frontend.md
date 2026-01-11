@@ -54,7 +54,6 @@ In the example below, we define a route where `articles` is the resource and `sh
 ```ruby
 # config/routes.rb
 Rails.application.routes.draw do
-  # resources :articles
   root "pages#home"
   get "about", to: "pages#about"
   get "up" => "rails/health#show", as: :rails_health_check
@@ -96,7 +95,7 @@ For this setup, below are the articles that were added in the `articles` table.
 
 :::info 
 
-To learn how create the table and add articles, please see the [Backend](/docs/021-Software-Engineering/060-Ruby-on-Rails/005-Rails-Fundamentals/004-Backend.md) page.
+To learn how create the table and add articles, please see the [CRUD Operations](/docs/021-Software-Engineering/060-Ruby-on-Rails/005-Rails-Fundamentals/008-CRUD-Operations.md) page.
 
 :::
 
@@ -211,8 +210,6 @@ The `show.html.erb`:
 Here, the `@article` comes from the controller and is used to display the title and description. The `<%= %>` tags tell Rails to evaluate the Ruby code and render the result in the browser.
 
 
-
-
 ## Test in the browser
 
 With everything wired together, we can now test the feature.
@@ -245,5 +242,117 @@ Changing the ID in the URL shows a different article.
 
 </div>
 
-This confirms that the show action works and that the application can display individual articles based on their IDs.
+This confirms that the `show` action works and that the application can display individual articles based on their IDs.
 
+## Listing Page
+
+In this step, we want to create a simple listing page where users can see all records at once. It should show the title, description, and actions for each article.
+
+- **Route**: `/articles`
+- **Controller**: `index` action in `ArticlesController`
+- **View**: Loops through all articles and shows them in a table
+
+**Important**: The `index` action is not **automatically created**. You need to add it in the controller to list all articles. Rails follows **REST conventions**, and the `index` action is the standard way to display all records of a resource.
+
+1. First, modify the route to expose the `index` action along with `show`:
+
+    ```ruby
+    # config/routes.rb
+    Rails.application.routes.draw do
+      root "pages#home"
+      get "about", to: "pages#about"
+      get "up" => "rails/health#show", as: :rails_health_check
+      resources :articles, only: [:show, :index]
+    end
+    ```
+
+    Verify the route:
+
+    ```bash
+    $ rails routes --expanded
+
+    Prefix            | articles
+    Verb              | GET
+    URI               | /articles(.:format)
+    Controller#Action | articles#index
+    Source Location   | /test-rails-app/config/routes.rb:5
+    ```
+
+    This tells us that any `GET` request to `/articles` will be handled by the `index` method in `ArticlesController`. 
+
+2. Add the `index` action in the controller. The instance variable `@articles` will hold all articles from the database:
+
+    ```ruby
+    # app/controllers/articles_controller.rb
+    class ArticlesController < ApplicationController
+      def show
+        @article = Article.find(params[:id])
+      end
+
+      def index
+        @articles = Article.all
+      end
+    end
+    ```
+
+3. Create the view file `index.html.erb` under `app/views/articles`:
+
+    ```erb
+    <h1>My Blog Articles</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @articles.each do |row_article| %>
+          <tr>
+            <td><%= row_article.title %></td>
+            <td><%= row_article.description %></td>
+            <td>Placeholder</td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    ```
+
+    **Explanation:** 
+
+    - `<% @articles.each do |article| %>` → loops through all articles
+    - `<%= article.title %>` → displays the article title
+    - `<%= article.description %>` → displays the article description
+    - Placeholder is used for actions column for now
+
+    :::info 
+
+    The `<%` and `<%=` tags tell Rails that the following code on the same line is Ruby code.
+
+    The `%>` tag signals that the Ruby code ends here and Rails should switch back to HTML.
+
+    - `<% %>` → runs Ruby without output
+    - `<%= %>` → runs Ruby and inserts the result into the HTML
+
+    :::
+
+4. If you haven't done it yet, start the Rails server locally:
+
+    ```bash
+    rails server 
+    ```
+
+5. Open a web browser and visit `/articles`. 
+
+    You should see all articles listed in a table with their title, description, and a placeholder for actions.
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot-2026-01-11-194002.png)
+
+    </div>
+
+
+Now the articles listing page is complete and ready for further enhancements, like adding links for editing or deleting articles.
