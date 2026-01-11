@@ -329,17 +329,17 @@ This command displays a detailed list of routes, including the HTTP verb, URL pa
 Verb              | GET
 URI               | /articles(.:format)
 Controller#Action | articles#index
-Source Location   | /mnt/c/Git/joeden/submodules/test-rails-app/config/routes.rb:2
+Source Location   | /test-rails-app/config/routes.rb:2
 --[ Route 2 ]--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Prefix            |
 Verb              | POST
 URI               | /articles(.:format)
 Controller#Action | articles#create
-Source Location   | /mnt/c/Git/joeden/submodules/test-rails-app/config/routes.rb:2
+Source Location   | /test-rails-app/config/routes.rb:2
 --[ Route 3 ]--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Prefix            | new_article
 Verb              | GET
 URI               | /articles/new(.:format)
 Controller#Action | articles#new
-Source Location   | /mnt/c/Git/joeden/submodules/test-rails-app/config/routes.rb:2
+Source Location   | /test-rails-app/config/routes.rb:2
 
 (Output truncated)
 ```
@@ -439,11 +439,11 @@ Click **Back to articles** to return to `/articles`, where the newly created art
 
 Repeat this process to create the following sample articles:
 
-| id  | title       | description            | user_id |
-| --- | ----------- | ---------------------- | ------- |
-| 1   | First post  | Introduction article   | 101     |
-| 2   | Second post | Follow-up content      | 101     |
-| 3   | Third post  | Another sample article | 203     |
+| id  | title       | description            | 
+| --- | ----------- | ---------------------- | 
+| 1   | First post  | Introduction article   | 
+| 2   | Second post | Follow-up content      | 
+| 3   | Third post  | Another sample article | 
 <!-- | 4   | Fourth post | Deeper topic overview  | 145     | -->
 <!-- | 5   | Fifth post  | Final example entry    | 203     | -->
 
@@ -469,14 +469,14 @@ $ rails routes --expanded
 Verb              | GET
 URI               | /articles/:id/edit(.:format)
 Controller#Action | articles#edit
-Source Location   | /mnt/c/Git/joeden/submodules/test-rails-app/config/routes.rb:2
+Source Location   | /test-rails-app/config/routes.rb:2
 --[ Route 5 ]--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Prefix            | article
 
 --[ Route 6 ]--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------Prefix            |
 Verb              | PATCH
 URI               | /articles/:id(.:format)
 Controller#Action | articles#update
-Source Location   | /mnt/c/Git/joeden/submodules/test-rails-app/config/routes.rb:2
+Source Location   | /test-rails-app/config/routes.rb:2
 ```
 
 From the `/articles` page, select the third article and click **Show this article**.
@@ -533,7 +533,7 @@ $ rails routes --expanded
 Verb              | DELETE
 URI               | /articles/:id(.:format)
 Controller#Action | articles#destroy
-Source Location   | /mnt/c/Git/joeden/submodules/test-rails-app/config/routes.rb:2
+Source Location   | /test-rails-app/config/routes.rb:2
 ```
 
 From the `/articles` page, open the third article and click **Show this article**:

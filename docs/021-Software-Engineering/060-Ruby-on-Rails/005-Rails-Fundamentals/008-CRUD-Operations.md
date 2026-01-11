@@ -110,13 +110,13 @@ Before creating the table, we define what it needs to store.
 
 Here's a sample table: 
 
-| id  | title       | description            | user_id |
-| --- | ----------- | ---------------------- | ------- |
-| 1   | First post  | Introduction article   | 101     |
-| 2   | Second post | Follow-up content      | 101     |
-| 3   | Third post  | Another sample article | 203     |
-| 4   | Fourth post | Deeper topic overview  | 145     |
-| 5   | Fifth post  | Final example entry    | 203     |
+| id  | title       | description            | 
+| --- | ----------- | ---------------------- | 
+| 1   | First post  | Introduction article   | 
+| 2   | Second post | Follow-up content      | 
+| 3   | Third post  | Another sample article | 
+| 4   | Fourth post | Deeper topic overview  | 
+| 5   | Fifth post  | Final example entry    | 
 
 
 ## Creating the Table 
@@ -347,14 +347,14 @@ Output:
 
 ```bash
   TRANSACTION (1.6ms)  BEGIN immediate TRANSACTION /*application='TestRailsApp'*/
-  Article Create (4.0ms)  INSERT INTO "articles" ("created_at", "title", "updated_at", "description") VALUES ('2026-01-11 02:17:34.505517', 'First post', '2026-01-11 02:17:34.505517', 'Introduction article') RETURNING "id" /*application='TestRailsApp'*/
+  Article Create (4.0ms)  INSERT INTO "articles" ("created_at", "title", "updated_at", "description") VALUES ('2023-01-11 02:17:34.505517', 'First post', '2023-01-11 02:17:34.505517', 'Introduction article') RETURNING "id" /*application='TestRailsApp'*/
   TRANSACTION (12.8ms)  COMMIT TRANSACTION /*application='TestRailsApp'*/
 =>
 #<Article:0x000076d895952e98
  id: 1,
- created_at: "2026-01-11 02:17:34.505517000 +0000",
+ created_at: "2023-01-11 02:17:34.505517000 +0000",
  title: "First post",
- updated_at: "2026-01-11 02:17:34.505517000 +0000",
+ updated_at: "2023-01-11 02:17:34.505517000 +0000",
  description: "Introduction article">
 ```
 
@@ -369,9 +369,9 @@ $ Article.all
 => 
 [#<Article:0x000076d895addfd8
   id: 1,
-  created_at: "2026-01-11 02:17:34.505517000 +0000",
+  created_at: "2023-01-11 02:17:34.505517000 +0000",
   title: "First post",
-  updated_at: "2026-01-11 02:17:34.505517000 +0000",
+  updated_at: "2023-01-11 02:17:34.505517000 +0000",
   description: "Introduction article">]
 ```
 
@@ -402,15 +402,15 @@ $ Article.all
 =>
 [#<Article:0x000076d89703d4a0
   id: 1,
-  created_at: "2026-01-11 02:17:34.505517000 +0000",
+  created_at: "2023-01-11 02:17:34.505517000 +0000",
   title: "First post",
-  updated_at: "2026-01-11 02:17:34.505517000 +0000",
+  updated_at: "2023-01-11 02:17:34.505517000 +0000",
   description: "Introduction article">,
  #<Article:0x000076d89703d360
   id: 2,
-  created_at: "2026-01-11 02:21:36.948319000 +0000",
+  created_at: "2023-01-11 02:21:36.948319000 +0000",
   title: "Second post",
-  updated_at: "2026-01-11 02:21:36.948319000 +0000",
+  updated_at: "2023-01-11 02:21:36.948319000 +0000",
   description: "Follow-up content">]
 ```
 
@@ -437,21 +437,21 @@ $ Article.all
 => 
 [#<Article:0x000076d89703f160
   id: 1,
-  created_at: "2026-01-11 02:17:34.505517000 +0000",
+  created_at: "2023-01-11 02:17:34.505517000 +0000",
   title: "First post",
-  updated_at: "2026-01-11 02:17:34.505517000 +0000",
+  updated_at: "2023-01-11 02:17:34.505517000 +0000",
   description: "Introduction article">,
  #<Article:0x000076d89703f020
   id: 2,
-  created_at: "2026-01-11 02:21:36.948319000 +0000",
+  created_at: "2023-01-11 02:21:36.948319000 +0000",
   title: "Second post",
-  updated_at: "2026-01-11 02:21:36.948319000 +0000",
+  updated_at: "2023-01-11 02:21:36.948319000 +0000",
   description: "Follow-up content">,
  #<Article:0x000076d89703eee0
   id: 3,
-  created_at: "2026-01-11 02:26:38.002644000 +0000",
+  created_at: "2023-01-11 02:26:38.002644000 +0000",
   title: "Third post",
-  updated_at: "2026-01-11 02:26:38.002644000 +0000",
+  updated_at: "2023-01-11 02:26:38.002644000 +0000",
   description: "Another sample article">]
 ```
 
@@ -483,9 +483,9 @@ Examples:
     ```bash
     #<Article:0x00007691687993a0
     id: 2,
-    created_at: "2026-01-11 02:21:36.948319000 +0000",
+    created_at: "2023-01-11 02:21:36.948319000 +0000",
     title: "Second post",
-    updated_at: "2026-01-11 05:22:30.483007000 +0000",
+    updated_at: "2023-01-11 05:22:30.483007000 +0000",
     description: "Edited description of second article">
     ```
 
@@ -530,7 +530,7 @@ Examples:
 
     ```bash
       TRANSACTION (1.3ms)  BEGIN immediate TRANSACTION /*application='TestRailsApp'*/
-      Article Update (3.3ms)  UPDATE "articles" SET "updated_at" = '2026-01-11 05:22:30.483007', "description" = 'Edited description of second article' WHERE "articles"."id" = 2 /*application='TestRailsApp'*/
+      Article Update (3.3ms)  UPDATE "articles" SET "updated_at" = '2023-01-11 05:22:30.483007', "description" = 'Edited description of second article' WHERE "articles"."id" = 2 /*application='TestRailsApp'*/
       TRANSACTION (1.9ms)  COMMIT TRANSACTION /*application='TestRailsApp'*/
     => true 
     ```
@@ -631,21 +631,21 @@ $ Article.all
 
 [#<Article:0x000070858909b418
   id: 1,
-  created_at: "2026-01-11 02:17:34.505517000 +0000",
+  created_at: "2023-01-11 02:17:34.505517000 +0000",
   title: "First post",
-  updated_at: "2026-01-11 02:17:34.505517000 +0000",
+  updated_at: "2023-01-11 02:17:34.505517000 +0000",
   description: "Introduction article">,
  #<Article:0x000070858909b2d8
   id: 2,
-  created_at: "2026-01-11 02:21:36.948319000 +0000",
+  created_at: "2023-01-11 02:21:36.948319000 +0000",
   title: "Second post",
-  updated_at: "2026-01-11 05:22:30.483007000 +0000",
+  updated_at: "2023-01-11 05:22:30.483007000 +0000",
   description: "Edited description of second article">,
  #<Article:0x000070858909b058
   id: 5,
-  created_at: "2026-01-11 07:42:37.365641000 +0000",
+  created_at: "2023-01-11 07:42:37.365641000 +0000",
   title: "Third post",
-  updated_at: "2026-01-11 07:42:37.365641000 +0000",
+  updated_at: "2023-01-11 07:42:37.365641000 +0000",
   description: "This is the third post">]
 ```
 
@@ -728,27 +728,27 @@ $ Article.all
 
 [#<Article:0x00007c6261f2bf58
   id: 1,
-  created_at: "2026-01-11 02:17:34.505517000 +0000",
+  created_at: "2023-01-11 02:17:34.505517000 +0000",
   title: "First post",
-  updated_at: "2026-01-11 02:17:34.505517000 +0000",
+  updated_at: "2023-01-11 02:17:34.505517000 +0000",
   description: "Introduction article">,
  #<Article:0x00007c6261f2be18
   id: 2,
-  created_at: "2026-01-11 02:21:36.948319000 +0000",
+  created_at: "2023-01-11 02:21:36.948319000 +0000",
   title: "Second post",
-  updated_at: "2026-01-11 05:22:30.483007000 +0000",
+  updated_at: "2023-01-11 05:22:30.483007000 +0000",
   description: "Edited description of second article">,
  #<Article:0x00007c6261f2bcd8
   id: 8,
-  created_at: "2026-01-11 08:01:45.875675000 +0000",
+  created_at: "2023-01-11 08:01:45.875675000 +0000",
   title: "Third post",
-  updated_at: "2026-01-11 08:01:45.875675000 +0000",
+  updated_at: "2023-01-11 08:01:45.875675000 +0000",
   description: "This is the third post">,
  #<Article:0x00007c6261f2bb98
   id: 9,
-  created_at: "2026-01-11 08:02:52.917372000 +0000",
+  created_at: "2023-01-11 08:02:52.917372000 +0000",
   title: "Fourth post",
-  updated_at: "2026-01-11 08:02:52.917372000 +0000",
+  updated_at: "2023-01-11 08:02:52.917372000 +0000",
   description: "This is a 4th article that has a proper length">] 
 ```
 
