@@ -67,14 +67,14 @@ const config: Config = {
   themeConfig: {
     // image: "img/logo/fourth/favicon.ico",
     image: "img/about/winnie.jpeg",
-    // algolia: {
-    //   appId: '1ZR3DE355U',
-    //   apiKey: '4bdd1224a13d70e9e345de6c9ecbd1f3',
-    //   indexName: 'joseedenio',
-    //   contextualSearch: true,
-    //   searchParameters: {},
-    //   searchPagePath: 'search',
-    // },
+    algolia: {
+      appId: '1ZR3DE355U',
+      apiKey: '4bdd1224a13d70e9e345de6c9ecbd1f3',
+      indexName: 'joseedenio',
+      contextualSearch: true,
+      searchParameters: {},
+      searchPagePath: 'search',
+    },
     metadata: [
       { name: "og:title", content: "Home | Eden Jose" },
       { name: "og:description", content: "Engineer by day, runner by night." },
@@ -155,6 +155,28 @@ const config: Config = {
       darkTheme: themes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+
+  webpack: {
+    jsLoader: (isServer) => ({
+      loader: require.resolve('swc-loader'),
+      options: {
+        jsc: {
+          parser: {
+            syntax: 'typescript',
+            tsx: true,
+          },
+          target: 'es2017',
+        },
+        module: {
+          type: isServer ? 'commonjs' : 'es6',
+        },
+      },
+    }),
+  },
+
+  future: {
+    experimental_faster: true,
+  },
 };
 
 module.exports = config;
