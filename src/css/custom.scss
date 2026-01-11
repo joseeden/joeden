@@ -524,6 +524,23 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
   padding-right: 1.5rem;
 }
 
+/* Move tags to top on larger screens */
+@media (min-width: 768px) {
+  .theme-doc-footer-tags-row {
+    display: none;
+  }
+  
+  .custom-tags-header {
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  .custom-tags-header {
+    display: none;
+  }
+}
+
 // Styles for bigger screen sizes
 @media (min-width: 1440px) {
 
