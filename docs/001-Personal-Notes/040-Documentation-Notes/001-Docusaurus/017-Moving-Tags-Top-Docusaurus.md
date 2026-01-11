@@ -50,85 +50,32 @@ Files modified/created:
 
     Created custom theme components to override Docusaurus default behavior:
 
-    - `src/theme/DocItem/Header/index.js`
-
-        ```javascript
-        import React from 'react';
-        import Header from '@theme-original/DocItem/Header';
-        import {useDoc} from '@docusaurus/theme-common/internal';
-        import TagsListInline from '@theme/TagsListInline';
-
-        export default function HeaderWrapper(props) {
-          const {metadata} = useDoc();
-          const {tags} = metadata;
-          
-          return (
-            <>
-              <Header {...props} />
-              {tags.length > 0 && (
-                <div className="custom-tags-header" style={{
-                  marginTop: '0.5rem',
-                  marginBottom: '1rem'
-                }}>
-                  <TagsListInline tags={tags} />
-                </div>
-              )}
-            </>
-          );
-        }
-        ```
-
-    - `src/theme/DocItem/Content/index.js`
-
-        ```javascript
-        import React from 'react';
-        import Content from '@theme-original/DocItem/Content';
-        import {useDoc} from '@docusaurus/theme-common/internal';
-        import TagsListInline from '@theme/TagsListInline';
-
-        export default function ContentWrapper(props) {
-          const {metadata} = useDoc();
-          const {tags} = metadata;
-          
-          return (
-            <>
-              <Content {...props} />
-              {tags.length > 0 && (
-                <div className="custom-tags-top" style={{
-                  marginBottom: '1rem',
-                  display: window.innerWidth >= 768 ? 'block' : 'none'
-                }}>
-                  <TagsListInline tags={tags} />
-                </div>
-              )}
-            </>
-          );
-        }
-        ```
+    - [src/theme/DocItem/Header/index.js](https://github.com/joseeden/joeden/tree/master/src/theme/DocItem)
+    - [src/theme/DocItem/Content/index.js](https://github.com/joseeden/joeden/tree/master/src/theme/DocItem)
 
 2. **CSS Styling**
 
-Added responsive CSS to control tag visibility:
+    Added responsive CSS to control tag visibility:
 
-```scss
-// src/css/custom.scss
-/* Move tags to top on larger screens */
-@media (min-width: 768px) {
-  .theme-doc-footer-tags-row {
-    display: none;
-  }
-  
-  .custom-tags-header {
-    display: block;
-  }
-}
+    ```scss
+    // src/css/custom.scss
+    /* Move tags to top on larger screens */
+    @media (min-width: 768px) {
+      .theme-doc-footer-tags-row {
+        display: none;
+      }
+      
+      .custom-tags-header {
+        display: block;
+      }
+    }
 
-@media (max-width: 767px) {
-  .custom-tags-header {
-    display: none;
-  }
-}
-```
+    @media (max-width: 767px) {
+      .custom-tags-header {
+        display: none;
+      }
+    }
+    ```
 
 
 
