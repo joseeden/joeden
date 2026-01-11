@@ -159,7 +159,7 @@ After the command runs, Rails outputs a list of generated files. From this outpu
 
 ```ruby
 ## db/migrate/20230110114849_create_articles.rb
-class CreateArticles < ActiveRecord::Migration[8.1]
+class CreateArticles < ActiveRecord::Migration[6.1]
   def change
     create_table :articles do |t|
       t.string :title
@@ -185,22 +185,22 @@ rails db:migrate
 Output:
 
 ```ruby
-== 20260106171008 CreateApplicationRecords: migrating =========================
+== 20230106171008 CreateApplicationRecords: migrating =========================
 -- create_table(:application_records)
    -> 0.0077s
-== 20260106171008 CreateApplicationRecords: migrated (0.0078s) ================
+== 20230106171008 CreateApplicationRecords: migrated (0.0078s) ================
 
-== 20260110114849 CreateArticles: migrating ===================================
+== 20230110114849 CreateArticles: migrating ===================================
 -- create_table(:articles)
    -> 0.0107s
-== 20260110114849 CreateArticles: migrated (0.0108s) ==========================
+== 20230110114849 CreateArticles: migrated (0.0108s) ==========================
 ```
 
 Once the migration completes, Rails updates the schema file to reflect the current database structure. The `db/schema.rb` file acts as a snapshot of the database and keeps it in sync with the application code.
 
 ```ruby
 ## db/schema.rb 
-ActiveRecord::Schema[8.1].define(version: 2026_01_10_114849) do
+ActiveRecord::Schema[6.1].define(version: 2026_01_10_114849) do
   create_table "application_records", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
