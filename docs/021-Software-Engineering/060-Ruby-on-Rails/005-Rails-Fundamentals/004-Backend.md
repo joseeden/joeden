@@ -346,7 +346,7 @@ Source Location   | /mnt/c/Git/joeden/submodules/test-rails-app/config/routes.rb
 
 Each route connects a specific URL and HTTP method to a controller action. For example:
 
-- **Route 1**: a `GET` request to `/articles` is routed to the index action and is used to display a list of articles. 
+- **Route 1**: a `GET` request to `/articles` is routed to the `index` action and is used to display a list of articles. 
 
 - **Route 2**: A `POST` request to `/articles` is used to submit a form and create a new article. 
 
@@ -408,7 +408,8 @@ You can also get there by going back to `/articles` and hovering over the **New 
 
 <div class='img-center'>
 
-![](/img/docs/Screenshot-2026-01-11-020516.png)
+<!-- ![](/img/docs/Screenshot-2026-01-11-020516.png) -->
+![](/img/docs/Screenshot-2026-01-11-081045.png)
 
 </div>
 
