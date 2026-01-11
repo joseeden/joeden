@@ -24,4 +24,5 @@ This documentation contains the various lab files, notes, ideas, and lessons tha
 - Software Engineering
 - Data Engineering
 - Artificial Intelligence
+- Machine Learning
 - Project Management
