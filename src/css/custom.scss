@@ -485,6 +485,14 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
 }
 
 
+/* Documentation page container */
+.docRoot_UBD9 {
+  max-width: 1536px;
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+}
+
 // Styles for bigger screen sizes
 @media (min-width: 1440px) {
 
