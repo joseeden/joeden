@@ -187,7 +187,7 @@ Once a migration has been run, Rails will not run it again because Rails tracks 
 Editing a previously run migration will not update the database schema. This behavior prevents unexpected changes across environments. To update the table, you would need to do a rollback.
 
 
-### Roll Back a Migration (for Local Testing)
+### Roll Back a Migration 
 
 The most recent migration can be undone using a rollback.
 
@@ -220,7 +220,7 @@ At this stage, you can modify the migration to add the required fields and run `
 In those cases, the better approach is to create a new migration instead.
 
 
-### Add New Changes using a New Migration
+### Add Changes using a New Migration
 
 The correct way to update the database is to create a new migration.
 
@@ -294,7 +294,6 @@ end
 ```
 
 With this in place, Rails provides getters and setters for fields such as `title` and `description`, and it allows the application to communicate with the `articles` table.
-
 
 
 ## Using the Rails console
@@ -465,3 +464,99 @@ To leave the console and return to the terminal:
 ```ruby
 exit
 ```
+
+
+## Read, Update, and Delete 
+
+After creating articles, we can also read, update, and delete them from the Rails console. 
+
+Examples: 
+
+1. Fetch the second article using the `find`:
+
+    ```ruby
+    Article.find(2)
+    ```
+
+    Output:
+
+    ```bash
+    #<Article:0x00007691687993a0
+    id: 2,
+    created_at: "2026-01-11 02:21:36.948319000 +0000",
+    title: "Second post",
+    updated_at: "2026-01-11 05:22:30.483007000 +0000",
+    description: "Edited description of second article">
+    ```
+
+2. Use `first` to get the first article and `last` to get the last one, and then chain it to the getters method (like `description`):
+
+    ```ruby
+    Article.first.description
+    # => "Edited description of second article"
+
+    Article.last.description
+    # => "Another sample article"
+    ```
+
+3. We can also assign it to a variable: 
+
+    ```ruby
+    article = Article.find(2)
+    ```
+
+    Now we can access its attributes using getters:
+
+    ```ruby
+    article.title        # returns the title
+    article.description  # returns the description
+    ```
+
+    Output:
+
+    ```bash
+    => "Second post"
+    => "Follow-up content"
+    ```
+
+4. To update the description, assign a new value to the attribute, then save the record:
+
+    ```ruby
+    article.description = "Edited description of second article"
+    article.save
+    ```
+
+    Output:
+
+    ```bash
+      TRANSACTION (1.3ms)  BEGIN immediate TRANSACTION /*application='TestRailsApp'*/
+      Article Update (3.3ms)  UPDATE "articles" SET "updated_at" = '2026-01-11 05:22:30.483007', "description" = 'Edited description of second article' WHERE "articles"."id" = 2 /*application='TestRailsApp'*/
+      TRANSACTION (1.9ms)  COMMIT TRANSACTION /*application='TestRailsApp'*/
+    => true 
+    ```
+
+    Fetching the article again shows the updated value:
+
+    ```ruby
+    Article.find(2).description
+    # => "Edited description of second article"
+    ```
+
+5. To delete an article, first get the object, then call `destroy`:
+
+    ```ruby
+    article = Article.last
+    article.destroy
+    ```
+
+    This removes the article from the database immediately without calling `save`.
+
+    Checking all articles confirms it has been removed:
+
+    ```ruby
+    Article.all
+    ```
+
+Currently, the `Article` model allows creating records without a title or description. To maintain data integrity, we can add validations so empty articles cannot be saved. 
+
+For more information, please see [Validations.](/docs/021-Software-Engineering/060-Ruby-on-Rails/005-Rails-Fundamentals/010-Validations.md)
