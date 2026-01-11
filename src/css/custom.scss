@@ -123,6 +123,8 @@ h1, h2, h3, h4, h5 {
   --docusaurus-highlighted-code-line-bg: #4eddcd;
   --ifm-background-surface-color: #05192d;
   --ifm-footer-background-color: #05192d;
+  --ifm-card-background-color: #04284f;
+  --ifm-code-background: #04284f;
 
   /* Feedback dark mode */
   --feedback-text-color: #81e6d9;
@@ -170,12 +172,29 @@ h1, h2, h3, h4, h5 {
   }
 
   .theme-doc-toc-mobile {
-    background-color: #193549;
+    background-color: #04284f;
   }
 
   .theme-code-block,
   .docusaurus-highlighted-code-line {
-    background-color: #193549;
+    background-color: #04284f;
+  }
+
+  .alert,
+  .admonition {
+    background-color: #04284f;
+  }
+
+  .card {
+    background-color: #04284f;
+  }
+
+  pre {
+    background-color: #04284f;
+  }
+
+  code {
+    background-color: #04284f;
   }
 }
 
