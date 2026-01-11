@@ -187,7 +187,7 @@ Once a migration has been run, Rails will not run it again because Rails tracks 
 Editing a previously run migration will not update the database schema. This behavior prevents unexpected changes across environments. To update the table, you would need to do a rollback.
 
 
-## Rolling Back a Migration (for Local Testing)
+### Roll Back a Migration (for Local Testing)
 
 The most recent migration can be undone using a rollback.
 
@@ -220,7 +220,7 @@ At this stage, you can modify the migration to add the required fields and run `
 In those cases, the better approach is to create a new migration instead.
 
 
-## Adding New Changes using a New Migration
+### Add New Changes using a New Migration
 
 The correct way to update the database is to create a new migration.
 
@@ -279,8 +279,189 @@ ActiveRecord::Schema[6.1].define(version: 2023_01_11_014617) do
 end
 ```
 
+With the database ready, the next step is to work with the Article `model` and connect it to the rest of the application.
+
+## Create an `Article` Model
+
+To work with the `articles` table, we need a model that connects the application logic to the database and handles data access.
+
+Create the file `app/models/article.rb`. This file defines the `Article` model, and it inherits from `ApplicationRecord`, which is the base class for all models.
+
+```ruby
+## app/models/article.rb
+class Article < ApplicationRecord
+end
+```
+
+With this in place, Rails provides getters and setters for fields such as `title` and `description`, and it allows the application to communicate with the `articles` table.
 
 
-## Next step
 
-The articles table is now fully defined and follows Rails conventions. With the database ready, the next step is to work with the Article model and connect it to the rest of the application.
+## Using the Rails console
+
+We can use the Rails console to directly interact with the database through models. It runs inside the application context and is commonly used for testing and debugging
+
+From the project directory, run:
+
+```bash
+rails console
+```
+
+Once inside the console, you can test the connection to the `articles` table.
+
+Calling `.all` fetches all rows:
+
+```ruby
+Article.all
+```
+
+Output:
+
+```bash
+Article Load (52.6ms)  SELECT "articles".* FROM "articles" /* loading for pp */ LIMIT 11 /*application='TestRailsApp'*/
+=> [] 
+```
+
+Here, the `Article` class represents the `articles` table. If the result is an empty collection, it means the connection is working but there are no records yet.
+
+There are three ways to create an article from the Rails console:
+
+- Use `create`
+- Use `new` followed by `save`
+- Use `new` with attributes in one line
+
+
+### 1. Using `create`
+
+You can use the `create` method on the model class to add a record. This both builds the object and saves it to the database.
+
+In the example below, `title` and `description` are column names from the `articles` table.
+
+```ruby
+Article.create(
+  title: "First post",
+  description: "Introduction article"
+)
+```
+
+Output:
+
+```bash
+  TRANSACTION (1.6ms)  BEGIN immediate TRANSACTION /*application='TestRailsApp'*/
+  Article Create (4.0ms)  INSERT INTO "articles" ("created_at", "title", "updated_at", "description") VALUES ('2026-01-11 02:17:34.505517', 'First post', '2026-01-11 02:17:34.505517', 'Introduction article') RETURNING "id" /*application='TestRailsApp'*/
+  TRANSACTION (12.8ms)  COMMIT TRANSACTION /*application='TestRailsApp'*/
+=>
+#<Article:0x000076d895952e98
+ id: 1,
+ created_at: "2026-01-11 02:17:34.505517000 +0000",
+ title: "First post",
+ updated_at: "2026-01-11 02:17:34.505517000 +0000",
+ description: "Introduction article">
+```
+
+Rails runs SQL statements behind the scenere to insert the row into the database and automatically fills in the ID and timestamps.
+
+You can verify this by running `.all` again:
+
+```ruby
+$ Article.all
+
+ Article Load (3.6ms)  SELECT "articles".* FROM "articles" /* loading for pp */ LIMIT 11 /*application='TestRailsApp'*/
+=> 
+[#<Article:0x000076d895addfd8
+  id: 1,
+  created_at: "2026-01-11 02:17:34.505517000 +0000",
+  title: "First post",
+  updated_at: "2026-01-11 02:17:34.505517000 +0000",
+  description: "Introduction article">]
+```
+
+### 2. Using `new` and `save`
+
+Another common approach is to create an object first and save it later.
+
+- `new` creates an in-memory object
+- `save` writes it to the database
+
+Run the commands below: 
+
+```ruby
+article = Article.new
+article.title = "Second post"
+article.description = "Follow-up content"
+article.save
+```
+
+Before calling `save`, the object exists only in memory. After saving, the ID and timestamps are filled in because the record now exists in the database.Che
+
+Checking the rows again:
+
+```ruby
+$ Article.all
+
+  Article Load (2.7ms)  SELECT "articles".* FROM "articles" /* loading for pp */ LIMIT 11 /*application='TestRailsApp'*/
+=>
+[#<Article:0x000076d89703d4a0
+  id: 1,
+  created_at: "2026-01-11 02:17:34.505517000 +0000",
+  title: "First post",
+  updated_at: "2026-01-11 02:17:34.505517000 +0000",
+  description: "Introduction article">,
+ #<Article:0x000076d89703d360
+  id: 2,
+  created_at: "2026-01-11 02:21:36.948319000 +0000",
+  title: "Second post",
+  updated_at: "2026-01-11 02:21:36.948319000 +0000",
+  description: "Follow-up content">]
+```
+
+### 3. Use `new` with attributes in one line
+
+You can also pass attributes directly when creating the object, then save it afterward.
+
+```ruby
+article = Article.new(
+  title: "Third post",
+  description: "Another sample article"
+)
+article.save
+```
+
+This produces the same result, but uses fewer steps.
+
+To confirm the records were created:
+
+```ruby
+$ Article.all
+
+  Article Load (2.5ms)  SELECT "articles".* FROM "articles" /* loading for pp */ LIMIT 11 /*application='TestRailsApp'*/
+=> 
+[#<Article:0x000076d89703f160
+  id: 1,
+  created_at: "2026-01-11 02:17:34.505517000 +0000",
+  title: "First post",
+  updated_at: "2026-01-11 02:17:34.505517000 +0000",
+  description: "Introduction article">,
+ #<Article:0x000076d89703f020
+  id: 2,
+  created_at: "2026-01-11 02:21:36.948319000 +0000",
+  title: "Second post",
+  updated_at: "2026-01-11 02:21:36.948319000 +0000",
+  description: "Follow-up content">,
+ #<Article:0x000076d89703eee0
+  id: 3,
+  created_at: "2026-01-11 02:26:38.002644000 +0000",
+  title: "Third post",
+  updated_at: "2026-01-11 02:26:38.002644000 +0000",
+  description: "Another sample article">]
+```
+
+You should now see all articles that were saved. This confirms the model, database, and console are working together as expected.
+
+### Exit the Rails console
+
+To leave the console and return to the terminal:
+
+```ruby
+exit
+```
