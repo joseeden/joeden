@@ -591,33 +591,33 @@ Now we want to save a new article to the database. We will use **strong paramete
 
     [#<Article:0x000071c0bd6c9b08
       id: 1,
-      created_at: "2026-01-11 02:17:34.505517000 +0000",
+      created_at: "2023-01-11 02:17:34.505517000 +0000",
       title: "First post",
-      updated_at: "2026-01-11 02:17:34.505517000 +0000",
+      updated_at: "2023-01-11 02:17:34.505517000 +0000",
       description: "Introduction article">,
     #<Article:0x000071c0bd6c99c8
       id: 2,
-      created_at: "2026-01-11 02:21:36.948319000 +0000",
+      created_at: "2023-01-11 02:21:36.948319000 +0000",
       title: "Second post",
-      updated_at: "2026-01-11 05:22:30.483007000 +0000",
+      updated_at: "2023-01-11 05:22:30.483007000 +0000",
       description: "Edited description of second article">,
     #<Article:0x000071c0bd6c9888
       id: 8,
-      created_at: "2026-01-11 08:01:45.875675000 +0000",
+      created_at: "2023-01-11 08:01:45.875675000 +0000",
       title: "Third post",
-      updated_at: "2026-01-11 08:01:45.875675000 +0000",
+      updated_at: "2023-01-11 08:01:45.875675000 +0000",
       description: "This is the third post">,
     #<Article:0x000071c0bd6c9748
       id: 9,
-      created_at: "2026-01-11 08:02:52.917372000 +0000",
+      created_at: "2023-01-11 08:02:52.917372000 +0000",
       title: "Fourth post",
-      updated_at: "2026-01-11 08:02:52.917372000 +0000",
+      updated_at: "2023-01-11 08:02:52.917372000 +0000",
       description: "This is a 4th article that has a proper length">,
     #<Article:0x000071c0bd6c94c8
       id: 10,
-      created_at: "2026-01-11 14:56:58.095096000 +0000",
+      created_at: "2023-01-11 14:56:58.095096000 +0000",
       title: "Fifth post",
-      updated_at: "2026-01-11 14:56:58.095096000 +0000",
+      updated_at: "2023-01-11 14:56:58.095096000 +0000",
       description: "Adding and saving a 5th post">]     
     ```
 

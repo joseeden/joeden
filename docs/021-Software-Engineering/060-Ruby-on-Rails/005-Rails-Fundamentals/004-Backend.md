@@ -200,7 +200,7 @@ Once the migration completes, Rails updates the schema file to reflect the curre
 
 ```ruby
 ## db/schema.rb 
-ActiveRecord::Schema[6.1].define(version: 2026_01_10_114849) do
+ActiveRecord::Schema[6.1].define(version: 2023_01_10_114849) do
   create_table "application_records", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
