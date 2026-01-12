@@ -562,6 +562,10 @@ h1, h2, h3, h4, h5 {
   margin-right: auto;
 }
 
+.footer-top {
+  display: contents;
+}
+
 .footer-left {
   display: flex;
   gap: 35px;
@@ -734,6 +738,44 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
       position: relative; 
       margin-left: auto; 
     }
+}
+
+/* Extra small mobile screens */
+@media (max-width: 500px) {
+  .pagination-nav__sublabel {
+    font-size: 12px;
+  }
+  
+  .pagination-nav__label {
+    font-size: 14px;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .footer-center {
+    order: 1;
+  }
+  
+  .footer-left {
+    order: 2;
+  }
+  
+  .footer-right {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 
