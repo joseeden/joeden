@@ -323,12 +323,18 @@ h1, h2, h3, h4, h5 {
 /* Ensure search button is properly positioned */
 .navbar__search {
   order: 1;
+  margin-right: 1rem;
 }
 
 /* Ensure theme toggle is after search */
 [data-theme-toggle] {
   order: 2;
-  margin-left: 0.5rem;
+  margin-left: 0;
+}
+
+/* Remove extra spacing from navbar items */
+.navbar__items--right .navbar__item:last-child {
+  margin-right: 0;
 }
 
 /* Dark theme toggles */

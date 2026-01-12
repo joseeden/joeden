@@ -137,7 +137,7 @@ const config: Config = {
         {
           type: 'html',
           position: 'right',
-          value: '<button class="clean-btn navbar__item navbar__link" type="button" aria-label="Toggle between light and dark mode" data-theme-toggle></button>',
+          value: '<div class="navbar__item"><button class="clean-btn navbar__link" type="button" aria-label="Toggle between light and dark mode" data-theme-toggle></button></div>',
         },
         // {
         //   href: 'https://github.com/joseeden',
