@@ -36,22 +36,10 @@ h1, h2, h3, h4, h5 {
   --ifm-h5-font-size: 1rem;
   --ifm-h6-font-size: 0.9rem;
 
-  /* Mobile font sizes */
-  @media (max-width: 600px) {
-    --ifm-font-size-base: 17px;
-    --ifm-h1-font-size: 2rem;
-    --ifm-h2-font-size: 1.75rem;
-    --ifm-h3-font-size: 1.5rem;
-    --ifm-h4-font-size: 1.25rem;
-    --ifm-h5-font-size: 1.1rem;
-    --ifm-h6-font-size: 1rem;
-  }
-
   /* feedback, like or dislike */
   --feedback-primary-color: #2e8555;
   --feedback-secondary-color: #f1f3f4;
   --feedback-light-color: #ccc;
-  // --feedback-dark-color: #191919;
   --feedback-dark-color: #121212;
   --feedback-text-color: #5f6368;
   --feedback-white-color: #fff;
@@ -125,6 +113,19 @@ h1, h2, h3, h4, h5 {
   --feedback-modal-screenshot-header-text-color: var(--feedback-dark-color);
   --feedback-modal-screenshot-header-z-index: 250;
   --feedback-modal-screnshot-z-index: 100;
+}
+
+/* Mobile font sizes */
+@media (max-width: 600px) {
+  :root {
+    --ifm-font-size-base: 17px;
+    --ifm-h1-font-size: 2rem;
+    --ifm-h2-font-size: 1.75rem;
+    --ifm-h3-font-size: 1.5rem;
+    --ifm-h4-font-size: 1.25rem;
+    --ifm-h5-font-size: 1.1rem;
+    --ifm-h6-font-size: 1rem;
+  }
 }
 
 /* Dark mode */
@@ -744,20 +745,9 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
   width: 100%;
 }
 
-[class*="docMainContainer_"] .container {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
 
-[class*="generatedIndexPage_"] {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
 
-[class*="docItemCol_"] {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
+
 
 .navbar.navbar--fixed-top {
   border-bottom: 0.5px solid #dadde1;
@@ -770,6 +760,23 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
 .col.col--3 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  [class*="docItemCol_"] {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+  [class*="docMainContainer_"] .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  [class*="generatedIndexPage_"] {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 }
 
 /* Move tags to top on larger screens */
