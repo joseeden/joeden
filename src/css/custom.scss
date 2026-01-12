@@ -289,8 +289,8 @@ h1, h2, h3, h4, h5 {
     max-width: 1536px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
+    // padding-left: 20px;
+    // padding-right: 20px;
   }
 
   .navbar__brand {
@@ -819,6 +819,14 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
     padding-right: 1.5rem;
   }
 }
+
+@media (min-width: 599px) {
+  .navbar__inner {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+}
+
 
 /* Move tags to top on larger screens */
 @media (min-width: 768px) {
