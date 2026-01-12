@@ -134,11 +134,6 @@ const config: Config = {
           type: 'search',
           position: 'right',
         },
-        {
-          type: 'html',
-          position: 'right',
-          value: '<div class="navbar__item"><button class="clean-btn navbar__link" type="button" aria-label="Toggle between light and dark mode" data-theme-toggle></button></div>',
-        },
         // {
         //   href: 'https://github.com/joseeden',
         //   label: 'GitHub',

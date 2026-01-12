@@ -359,6 +359,11 @@ h1, h2, h3, h4, h5 {
   margin-right: 0;
 }
 
+/* Hide the extra navbar__item div that wraps theme toggle */
+.navbar__items--right .navbar__item:empty {
+  display: none;
+}
+
 /* Dark theme toggles */
 .navbar-sidebar__brand div button {
   margin-left: auto;
