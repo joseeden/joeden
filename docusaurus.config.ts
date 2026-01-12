@@ -155,28 +155,6 @@ const config: Config = {
       darkTheme: themes.dracula,
     },
   } satisfies Preset.ThemeConfig,
-
-  webpack: {
-    jsLoader: (isServer) => ({
-      loader: require.resolve('swc-loader'),
-      options: {
-        jsc: {
-          parser: {
-            syntax: 'typescript',
-            tsx: true,
-          },
-          target: 'es2017',
-        },
-        module: {
-          type: isServer ? 'commonjs' : 'es6',
-        },
-      },
-    }),
-  },
-
-  future: {
-    experimental_faster: true,
-  },
 };
 
 module.exports = config;
