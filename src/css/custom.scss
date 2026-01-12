@@ -649,20 +649,20 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
 }
 
 /* Dark mode admonition icon colors */
-[data-theme="dark"] .alert--info [class*="admonitionIcon_"] svg {
-  color: #05192d !important;
+[data-theme="dark"] .alert--info [class*="admonitionIcon_"] svg[viewBox] {
+  fill: #05192d !important;
 }
 
-[data-theme="dark"] .alert--success [class*="admonitionIcon_"] svg {
-  color: #05192d !important;
+[data-theme="dark"] .alert--success [class*="admonitionIcon_"] svg[viewBox] {
+  fill: #05192d !important;
 }
 
-[data-theme="dark"] .alert--warning [class*="admonitionIcon_"] svg {
-  color: #fffacd !important;
+[data-theme="dark"] .alert--warning [class*="admonitionIcon_"] svg[viewBox] {
+  fill: #fffacd !important;
 }
 
-[data-theme="dark"] .alert--danger [class*="admonitionIcon_"] svg {
-  color: #f7f6f6 !important;
+[data-theme="dark"] .alert--danger [class*="admonitionIcon_"] svg[viewBox] {
+  fill: #f7f6f6 !important;
 }
 
 
