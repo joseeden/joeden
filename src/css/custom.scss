@@ -665,6 +665,12 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
   fill: #f7f6f6 !important;
 }
 
+/* Dark mode admonition link colors */
+[data-theme="dark"] .alert--info a,
+[data-theme="dark"] .alert--success a {
+  color: #05192d !important;
+}
+
 
 /* Styles for small mobile screens */
 @media (max-width: 600px) {
