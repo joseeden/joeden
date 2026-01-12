@@ -342,6 +342,19 @@ h1, h2, h3, h4, h5 {
   z-index: 9999 !important;
 }
 
+/* DocSearch styling */
+.DocSearch-SearchBar {
+  border: 2px solid #04284f !important;
+}
+
+.DocSearch-MagnifierLabel {
+  color: #04284f !important;
+}
+
+.DocSearch-Hit[aria-selected="true"] a {
+  background-color: #04284f !important;
+}
+
 /* Ensure search button is properly positioned */
 .navbar__search {
   order: 1;
