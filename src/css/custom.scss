@@ -616,6 +616,11 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
   scroll-margin-top: 110px;
 }
 
+/* Admonition icon colors */
+[class*="admonitionIcon_"] {
+  color: inherit !important;
+}
+
 
 /* Styles for small mobile screens */
 @media (max-width: 600px) {
