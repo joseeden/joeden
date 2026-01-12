@@ -36,6 +36,17 @@ h1, h2, h3, h4, h5 {
   --ifm-h5-font-size: 1rem;
   --ifm-h6-font-size: 0.9rem;
 
+  /* Mobile font sizes */
+  @media (max-width: 600px) {
+    --ifm-font-size-base: 17px;
+    --ifm-h1-font-size: 2rem;
+    --ifm-h2-font-size: 1.75rem;
+    --ifm-h3-font-size: 1.5rem;
+    --ifm-h4-font-size: 1.25rem;
+    --ifm-h5-font-size: 1.1rem;
+    --ifm-h6-font-size: 1rem;
+  }
+
   /* feedback, like or dislike */
   --feedback-primary-color: #2e8555;
   --feedback-secondary-color: #f1f3f4;
@@ -306,6 +317,10 @@ h1, h2, h3, h4, h5 {
     // justify-content: center;
     margin-left: auto;
     font-size: 14px;
+    
+    @media (max-width: 600px) {
+      font-size: 16px;
+    }
   }
 
   .navbar__item {
@@ -430,10 +445,18 @@ h1, h2, h3, h4, h5 {
   color: var(--ifm-heading-color);
   font-size: 14px;
   padding-left: 12px;
+  
+  @media (max-width: 600px) {
+    font-size: 16px;
+  }
 }
 
 .theme-doc-sidebar-menu .menu__list-item > a.menu__link {
   line-height: 18px !important;
+  
+  @media (max-width: 600px) {
+    line-height: 20px !important;
+  }
 }
 
 /* Section content */
@@ -458,6 +481,11 @@ h1, h2, h3, h4, h5 {
   padding: 5px 16px;
   font-size: 14px;
   line-height: 14px;
+  
+  @media (max-width: 600px) {
+    font-size: 16px;
+    line-height: 16px;
+  }
 }
 .theme-doc-sidebar-menu .menu__list-item > a.menu__link:hover {
   border-left: 1px solid var(--ifm-font-color-base);
