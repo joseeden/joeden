@@ -563,11 +563,11 @@ h1, h2, h3, h4, h5 {
 }
 
 .social-icon {
-  color: #666;
+  color: #000;
   transition: color 0.2s;
   
   &:hover {
-    color: var(--ifm-color-primary);
+    color: #23a3b1;
   }
 }
 
