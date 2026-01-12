@@ -310,6 +310,27 @@ h1, h2, h3, h4, h5 {
   }
 }
 
+/* Fix Algolia search modal positioning */
+.DocSearch-Modal {
+  margin-top: 60px !important;
+  z-index: 9999 !important;
+}
+
+.DocSearch-Container {
+  z-index: 9999 !important;
+}
+
+/* Ensure search button is properly positioned */
+.navbar__search {
+  order: 1;
+}
+
+/* Ensure theme toggle is after search */
+[data-theme-toggle] {
+  order: 2;
+  margin-left: 0.5rem;
+}
+
 /* Dark theme toggles */
 .navbar-sidebar__brand div button {
   margin-left: auto;

@@ -43,6 +43,16 @@ const config: Config = {
     ],
   ],
 
+  customFields: {
+    webpack: {
+      resolve: {
+        fallback: {
+          "process": require.resolve("process/browser")
+        }
+      }
+    }
+  },
+
   presets: [
     [
       "@docusaurus/preset-classic",
@@ -120,6 +130,15 @@ const config: Config = {
         { to: "https://merria.co", label: "Merria", position: "left" },
         { to: "https://www.merriadigital.com", label: "Merria Digital", position: "left" },
         { to: "https://www.velarae.co/", label: "Velarae", position: "left" },
+        {
+          type: 'search',
+          position: 'right',
+        },
+        {
+          type: 'html',
+          position: 'right',
+          value: '<button class="clean-btn navbar__item navbar__link" type="button" aria-label="Toggle between light and dark mode" data-theme-toggle></button>',
+        },
         // {
         //   href: 'https://github.com/joseeden',
         //   label: 'GitHub',
