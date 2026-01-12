@@ -671,6 +671,12 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
   color: #05192d !important;
 }
 
+/* Dark mode admonition code colors */
+[data-theme="dark"] .alert code,
+[data-theme="dark"] .admonition code {
+  color: #efefef !important;
+}
+
 
 /* Styles for small mobile screens */
 @media (max-width: 600px) {
