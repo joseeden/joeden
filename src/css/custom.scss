@@ -668,7 +668,7 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
 /* Dark mode admonition link colors */
 [data-theme="dark"] .alert--info a,
 [data-theme="dark"] .alert--success a {
-  color: #05192d !important;
+  color: #FFDB58 !important;
 }
 
 /* Dark mode admonition code colors */
@@ -756,20 +756,31 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
 
 /* Ensure theme toggle is visible on medium screens */
 @media (max-width: 996px) {
-  [class*="colorModeToggle_"] {
+  /* Force dark mode toggle to stay in main navbar */
+  .navbar__items--right [class*="colorModeToggle_"] {
     display: block !important;
     z-index: 1001;
     order: 2;
+    position: relative;
   }
   
   .navbar__items--right {
     display: flex !important;
     align-items: center;
+    min-width: auto;
+    flex-shrink: 0;
   }
   
   .navbar__search {
     order: 1;
     margin-right: 0.5rem;
+    flex-shrink: 1;
+    max-width: calc(100% - 50px);
+  }
+  
+  /* Ensure navbar sidebar doesn't show theme toggle */
+  .navbar-sidebar [class*="colorModeToggle_"] {
+    display: none !important;
   }
 }
 }
