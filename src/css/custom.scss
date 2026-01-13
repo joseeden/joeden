@@ -756,30 +756,27 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
 
 /* Ensure theme toggle is visible on medium screens */
 @media (max-width: 996px) {
-  /* Force dark mode toggle to stay in main navbar */
-  .navbar__items--right [class*="colorModeToggle_"] {
+  /* Force dark mode toggle to stay visible in main navbar */
+  [class*="toggle_"][class*="colorModeToggle_"] {
     display: block !important;
-    z-index: 1001;
-    order: 2;
     position: relative;
+    z-index: 1001;
   }
   
   .navbar__items--right {
     display: flex !important;
     align-items: center;
-    min-width: auto;
-    flex-shrink: 0;
+    gap: 0.5rem;
   }
   
-  .navbar__search {
-    order: 1;
-    margin-right: 0.5rem;
+  /* Prevent search from overlapping toggle */
+  [class*="navbarSearchContainer_"] {
     flex-shrink: 1;
-    max-width: calc(100% - 50px);
+    max-width: calc(100vw - 200px);
   }
   
   /* Ensure navbar sidebar doesn't show theme toggle */
-  .navbar-sidebar [class*="colorModeToggle_"] {
+  .navbar-sidebar [class*="toggle_"][class*="colorModeToggle_"] {
     display: none !important;
   }
 }
