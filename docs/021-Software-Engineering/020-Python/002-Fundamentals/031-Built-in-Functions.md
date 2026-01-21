@@ -46,15 +46,22 @@ rounded_sales = round(total_sales, 2)
 print(rounded_sales)  
 ```
 
-## Nested Functions  
+## Chained Function Calls
 
-Functions can be used inside other functions.  
+Functions can be **called inside other function calls** to process data step by step in a single line.
+
+- Inner functions run first
+- Each result is passed to the next function
+- The final result is used by the outer function
+
+In the example below, the variable `sales` is a list of numbers. The function `sum` runs first, its result is passed to `round`, and the final value is printed.
 
 ```python
-print(round(sum(sales), 2))  
+sales = [200, 150, 300, 100]
+
+print(round(sum(sales), 2))   # Output: 750
 ```
 
-This directly sums and rounds in one step.  
 
 ## Counting Items  
 

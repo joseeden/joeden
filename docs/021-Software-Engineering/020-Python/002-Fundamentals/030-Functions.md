@@ -15,7 +15,7 @@ last_update:
 
 Functions let you group code to reuse it easily. You define them with a name, optional parameters, and a block of indented code.
 
-## Built-in functions
+## Built-in Functions
 
 Python has many built-in functions that perform common tasks. 
 
@@ -82,7 +82,7 @@ To call the function:
 
 ```bash
 my_function()
-calculate_total(2, 3)   # Requires two argumenst
+calculate_total(2, 3)   # Requires two arguments
 ```
 
 Output:
@@ -147,18 +147,39 @@ There are two main types:
 
 Some functions have **default arguments**, which are used if no value is provided when calling the function.
 
-Example with `round()`:
+A built-in example is `round()`. It accepts a decimal number and the second parameter that is optional. If the second parameter is not provided, it defaults to 0 decimal places.
 
 ```python
 num = 3.14159
 
-print(round(num))       # Output: 3, default rounds to 0 decimals
-print(round(num, 2))    # Output: 3.14, rounds to 2 decimals
+print(round(num))       # Output: 3
+print(round(num, 2))    # Output: 3.14
 ```  
 
-### Modifying the `average()` Function  
+You can also define default arguments in custom functions.
 
-We update the function to include a **keyword argument** with a default value.  
+In the example below, the function `power_value` uses the variable `base` and an optional variable `exponent`, which defaults to `1` if it is not provided.
+
+```python
+def power_value(base, exponent=1):
+    return base ** exponent
+```
+
+Calling the function with two arguments overrides the default.
+
+```python
+power_value(3, 2)   # Output: 9 
+```
+
+Calling it with one argument uses the default value.
+
+```python
+power_value(3)   # Output: 3
+```
+
+### Modifying the `average` Function  
+
+Using the `average` function from the [Defining a Function](#defining-a-function) section, we'll update it to include a **keyword argument** with a default value.  
 
 ```python
 def average(values, rounded=False):  
