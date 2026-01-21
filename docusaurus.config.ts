@@ -102,6 +102,12 @@ const config: Config = {
     stylesheets: [
       "https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
     ],
+    scripts: [
+      {
+        src: '/src/components/documentation/sidebar-accordion.js',
+        async: true,
+      },
+    ],
     colorMode: {
       respectPrefersColorScheme: true,
     },

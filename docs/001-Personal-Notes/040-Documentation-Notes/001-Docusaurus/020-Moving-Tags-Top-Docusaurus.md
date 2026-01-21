@@ -12,6 +12,12 @@ tags:
 
 ## Overview
 
+:::info 
+
+This is still not implemented correctly. Still a working progress.
+
+:::
+
 This guide explains how to move tags from the bottom of documentation pages to just below the title and metadata (Updated/Reading time) for tablet, desktop, laptop, and larger screen sizes.
 
 Features:
