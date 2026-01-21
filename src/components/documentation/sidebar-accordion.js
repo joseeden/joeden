@@ -19,15 +19,13 @@ function initSidebarAccordion() {
     
     if (!isTopLevel) return;
 
-    setTimeout(() => {
-      const topLevelItems = sidebar.querySelectorAll('.menu__list > .menu__list-item-collapsible');
-      
-      topLevelItems.forEach(item => {
-        if (item !== clickedItem && item.classList.contains('menu__list-item-collapsible--active')) {
-          item.classList.remove('menu__list-item-collapsible--active');
-        }
-      });
-    }, 10);
+    // Close all other top-level sections immediately
+    const topLevelItems = sidebar.querySelectorAll('.menu__list > .menu__list-item-collapsible');
+    topLevelItems.forEach(item => {
+      if (item !== clickedItem) {
+        item.classList.remove('menu__list-item-collapsible--active');
+      }
+    });
   });
 }
 
