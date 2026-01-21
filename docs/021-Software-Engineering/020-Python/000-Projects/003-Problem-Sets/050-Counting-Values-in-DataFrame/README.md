@@ -19,7 +19,7 @@ You are given a CSV file named `tweets.csv` that contains Twitter data. One of t
 :::warning[Real Twitter data]
 
 The dataset contains real Twitter data and may include offensive content.
-Get the dataset here: [tweets.csv](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/020-Python/003-Problem-Sets/050-Counting-Values-in-DataFrame) 
+Get the dataset here: [tweets.csv](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/020-Python/000-Projects/003-Problem-Sets/050-Counting-Values-in-DataFrame) 
 
 :::
 
@@ -65,7 +65,7 @@ Get the dataset here: [tweets.csv](https://github.com/joseeden/joeden/tree/maste
 
 ## Solution – Part 1
 
-> See project files here: [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/020-Python/003-Problem-Sets/050-Counting-Values-in-DataFrame).
+> See project files here: [Github](https://github.com/joseeden/joeden/tree/master/docs/021-Software-Engineering/020-Python/000-Projects/003-Problem-Sets/050-Counting-Values-in-DataFrame).
 
 Install the packages using a `requirements.txt`:
 
