@@ -104,8 +104,8 @@ const config: Config = {
     ],
     scripts: [
       {
-        src: '/src/components/documentation/sidebar-accordion.js',
-        async: true,
+        src: '/js/sidebar-accordion.js',
+        defer: true,
       },
     ],
     colorMode: {
