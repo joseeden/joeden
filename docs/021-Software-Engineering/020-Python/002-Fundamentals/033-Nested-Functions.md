@@ -172,7 +172,7 @@ x = 10
 def outer_fn():
     x = 5
     def inner_fn():
-        print(x)  # looks in enclosing scope
+        print(x)  
     inner_fn()
 
 outer_fn()  # Output: 5
