@@ -14,12 +14,17 @@ last_update:
 
 ## Overview
 
-A docstring is a text description inside a function that explains what it does.  
+A docstring is a text description inside a function that explains what it does. A typical docstring may include:
 
-- Shown when using the `help()` function  
-- Helps document how to use the function  
+- What the function does
+- The arguments it takes and their types
+- The return value(s)
+- Errors it may raise
+- Additional notes or examples
 
-Example:  
+You can view a function’s docstring by using the `help` function.
+
+For example, calling `help` on Python’s built-in `round` function:
 
 ```python
 help(round)
@@ -33,14 +38,86 @@ round(...)
     Round a number to a given precision.
 ```
 
-## Getting a Docstring  
+
+
+## Docstring Formats
+
+The two most common formats are:
+
+1. **Google Style**
+
+    - Starts with a short, imperative description of the function
+    - Uses an `Args` section for each argument with type and description
+    - Marks optional arguments clearly
+    - Has a `Returns` section describing the return type and value
+    - Optionally includes `Raises` for errors and extra notes at the end
+
+    Example:
+
+    ```python
+    def split_and_stack(df, columns):
+        """
+        Split the data frame and stack the columns.
+
+        Args:
+            df (DataFrame): The input data frame
+            columns (list): List of columns to stack
+
+        Returns:
+            DataFrame: A new data frame with stacked columns
+
+        Raises:
+            ValueError: If any column in columns does not exist in df
+        """
+        # function code here
+    ```
+
+2. **Numpydoc Style**
+
+    - Similar to Google style but more common in scientific Python
+    - Takes more vertical space
+    - Separates sections for description, parameters, returns, and notes
+
+    Example:
+
+    ```python
+    def split_and_stack(df, columns):
+        """
+        Split the data frame and stack the columns.
+
+        Parameters
+        ----------
+        df : DataFrame
+            The input data frame
+        columns : list
+            List of columns to stack
+
+        Returns
+        -------
+        DataFrame
+            A new data frame with stacked columns
+
+        Raises
+        ------
+        ValueError
+            If any column in columns does not exist in df
+
+        Notes
+        -----
+        This function assumes that the input data frame is well-formed.
+        """
+        # function code here
+    ```
+
+
+## Accessing a Docstring  
 
 We can access a function’s docstring using `help()` or a special attribute.  
 
 - `help(function_name)` shows full details  
 - `function_name.__doc__` returns only the docstring  
 
-To print just the docstring, use the `__doc__`.
+Every Python function has a `__doc__` attribute containing its docstring.
 
 ```python
 round.__doc__
