@@ -238,3 +238,75 @@ Output:
 2017-03-12T01:59:59-05:00
 2017-03-12T03:00:00-04:00
 ```
+
+
+## Ending Daylight Saving Time
+
+In the fall, clocks are set back one hour to return to standard time. This can create ambiguity because the same local time occurs twice. Using UTC ensures accurate calculations and avoids confusion. In Python, you can handle this with `dateutil`. 
+
+In the example below, we create a datetime for 1 AM in the Eastern time zone on the day daylight saving ends. This time is ambiguous because it happens twice. 
+
+- The first 1 AM maps to the earlier UTC offset
+- The second 1 AM maps to the later UTC offset. 
+
+The `datetime_ambiguous()` function confirms this, and `enfold()` marks the second occurrence.
+
+```python
+from datetime import datetime
+from dateutil import tz
+from dateutil.tz import datetime_ambiguous
+from dateutil.tz import enfold
+
+# Get Eastern Time zone
+ET = tz.gettz('US/Eastern')
+
+# First occurrence of 1 AM (before clocks fall back)
+first_1am = datetime(2017, 11, 5, 1, 0, 0, tzinfo=ET)
+print(datetime_ambiguous(first_1am))  
+print(enfold(first_1am))  
+
+# Mark second occurrence of 1 AM using fold:
+second_1am = datetime(2017, 11, 5, 1, 0, 0, tzinfo=ET)
+print(enfold(second_1am))  
+```
+
+Output:
+
+```bash
+True                        # First occurence, "True" because 1 AM occurs twice
+2017-11-05 01:00:00-05:00   # First occurence
+2017-11-05 01:00:00-05:00   # Second occurence
+```
+
+If you subtract these two local datetimes directly, Python returns zero because the wall-clock time is the same.
+
+```bash
+elapsed = (first_1am - second_1am).total_seconds()
+print(elapsed)            
+```
+
+Output:
+
+```bash
+0.0
+```
+
+This happens because the ambiguity has not been resolved yet.
+
+To calculate the real elapsed time, convert both datetimes to UTC before subtracting them. UTC does not repeat, so the difference is clear.
+
+```python
+first_utc = first_1am.astimezone(tz.UTC)
+second_utc = second_1am.astimezone(tz.UTC)
+
+elapsed = (second_utc - first_utc).total_seconds()
+print(elapsed)  
+```
+
+Output:
+
+```bash
+3600.0
+```
+
+Even though the clock shows 1 AM twice, one full hour actually passes. Converting to UTC is the reliable way to handle time calculations that cross daylight saving boundaries.
