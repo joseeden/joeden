@@ -193,3 +193,177 @@ print(d.strftime("%d/%m/%Y"))     # Output: 05/01/2017
 print(d.strftime("%B (%Y)"))      # Output: January (2017)
 print(d.strftime("%Y-%j"))        # Output: 2017-005
 ```
+
+## Working with Dates and Times
+
+Python can track both the **date** and **time** together. This allows you to record exact moments, not just days.
+
+- Python uses 24-hour time, e.g. 3 PM is `15`
+- You can change parts of an existing datetime
+
+The `datetime` class from the `datetime` module lets you represent a specific date and time. Arguments are passed as numbers: 
+
+```
+year, month, day, hour, minute, second, and optional microseconds.
+```
+
+Consider the example below:
+
+```python
+from datetime import datetime
+
+dt = datetime(2017, 10, 1, 15, 23, 25)                # October 1, 2017 at 3:23:25 PM
+dt_micro = datetime(2017, 10, 1, 15, 23, 25, 500000)  # adds 0.5 seconds
+```
+
+Notes: 
+
+- `dt` represents a full datetime
+- `dt_micro` adds microsecond precision
+- All values must be integers
+
+Using microseconds allows for precise timing, which is useful in science, finance, or event tracking.
+
+
+## Replacing Parts of a Datetime
+
+You can create a new datetime from an existing one using the `replace()` method. This is helpful for rounding or adjusting parts of a datetime without changing the others.
+
+```python
+dt = datetime(2017, 10, 1, 15, 23, 25)   
+
+dt_start_hour = dt.replace(minute=0, second=0, microsecond=0)
+print(dt_start_hour)  
+```
+
+Output:
+
+```bash
+Output: 2017-10-01 15:00:00
+```
+
+## Parsing Datetimes
+
+Python can convert datetimes to strings for display or storage, and it can also turn strings back into datetimes. This is useful when working with files, APIs, or datasets.
+
+- `strftime()` formats a datetime as a string
+- `isoformat()` gives a standard ISO 8601 string
+- `strptime()` parses a string into a datetime
+- `fromtimestamp()` converts a Unix timestamp into a datetime
+
+Consider the example below: 
+
+1. Formatting a datetime as a string: 
+
+    ```python
+    from datetime import datetime
+
+    dt = datetime(2017, 12, 30, 15, 19, 13)
+
+    print(dt.strftime("%Y-%m-%d"))              # Output: 2017-12-30
+    print(dt.strftime("%Y-%m-%d %H:%M:%S"))     # Output: 2017-12-30 15:19:13
+    print(dt.strftime("%Y-%m-%d %I:%M:%S %p"))  # Output: 2017-12-30 03:19:13 PM
+    ```
+
+    Notes: 
+
+    - `%Y` is year, `%m` is month, `%d` is day
+    - `%H` is hour (24-hour), `%M` is minute, `%S` is second
+    - `%I` is hour (12-hour), `%p` prints AM or PM
+
+2. For a standard format, use `isoformat()`.
+
+    ```python
+    print(dt.isoformat())  # Output: 2017-12-30T15:19:13
+    ```
+
+3. To turn a string into a datetime using `strptime()`, you must provide the exact format the string uses.
+
+    ```python
+    dt_str = "12/30/2017 15:19:13"
+    dt_parsed = datetime.strptime(dt_str, "%m/%d/%Y %H:%M:%S")
+
+    print(type(dt_parsed))  # Output: <class 'datetime.datetime'>
+    print(dt_parsed)        # Output: 2017-12-30 15:19:13
+    ```
+
+    Notes:
+
+    - First argument is the string to parse
+    - Second argument is the format string using the same codes as `strftime()`
+    - The string must exactly match the format
+
+4. Convert Unix timestamps to datetimes using  `fromtimestamp()`:
+
+
+    ```python
+    timestamp = 1514631553  # corresponds to 2017-12-30 15:19:13
+    dt_from_ts = datetime.fromtimestamp(timestamp)
+
+    print(dt_from_ts)  # Output: 2017-12-30 15:19:13
+    ```
+
+    This timestamp is useful for timestamps from servers or logs. Python interprets the number and returns a full datetime
+
+    :::info 
+
+    Unix timestamps count seconds since January 1, 1970.
+
+    :::
+
+
+
+
+## Working with Durations
+
+Python can calculate the time between datetimes and adjust them by adding or subtracting intervals. This is useful for measuring how long events last or shifting times.
+
+When you subtract two datetimes, Python returns a `timedelta` object showing the duration between them.
+
+```python
+from datetime import datetime
+
+start = datetime(2017, 12, 30, 15, 19, 13)
+end = datetime(2017, 12, 30, 15, 43, 23)
+
+duration = end - start
+print(duration)                   # Output: 0:24:10
+print(duration.total_seconds())   # Output: 1450.0
+```
+
+Notes: 
+
+- `duration` is a timedelta representing 24 minutes and 10 seconds
+- `total_seconds()` converts it to 1450 seconds
+
+You can create a `timedelta` manually to represent a specific duration. Inside the `timedelta` function, you need to specify weeks, days, hours, minutes, seconds, or microseconds:
+
+In this example, we added a timedelta to shift the datetime forward by that duration:
+
+```python
+from datetime import timedelta
+
+delta1 = timedelta(seconds=1)
+new_time = start + delta1
+print(new_time)               # Output: 2017-12-30 15:19:14
+```
+
+## Longer and Negative Timedeltas
+
+Timedeltas can also represent multiple days, weeks, or even negative durations.
+
+```python
+delta2 = timedelta(days=1, seconds=1)
+print(start + delta2)  # Output: 2017-12-31 15:19:14
+
+delta3 = timedelta(weeks=-1)
+print(start + delta3)  # Output: 2017-12-23 15:19:13
+
+delta4 = timedelta(weeks=1)
+print(start - delta4)  # Output: 2017-12-23 15:19:13
+```
+
+Notes: 
+
+- Positive timedeltas move time forward
+- Negative timedeltas or subtracting a positive timedelta moves time backward
