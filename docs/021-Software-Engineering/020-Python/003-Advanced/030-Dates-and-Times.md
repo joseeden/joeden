@@ -6,7 +6,7 @@ tags:
 - Application Development
 - Software Development
 - Python
-sidebar_position: 25
+sidebar_position: 30
 last_update:
   date: 11/7/2019
 ---
@@ -372,7 +372,7 @@ Notes:
 
 Timezones represent regions with the same local time. They are defined by their offset from Coordinated Universal Time (UTC). 
 
-For more information on timezones and UTC offsets, please see [Timezones.](/docs/021-Software-Engineering/020-Python/003-Advanced/026-Timezones.md)
+For more information on timezones and UTC offsets, please see [Timezones.](/docs/021-Software-Engineering/020-Python/003-Advanced/031-Timezones.md)
 
 ## Date and Times with Pandas
 

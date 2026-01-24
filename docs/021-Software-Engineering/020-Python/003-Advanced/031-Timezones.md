@@ -6,14 +6,14 @@ tags:
 - Application Development
 - Software Development
 - Python
-sidebar_position: 26
+sidebar_position: 31
 last_update:
   date: 11/7/2019
 ---
 
 ## Overview
 
-> To learn more about datetime objects, please see [Dates and Times in Python.](/docs/021-Software-Engineering/020-Python/003-Advanced/025-Dates-and-Times.md)
+> To learn more about datetime objects, please see [Dates and Times in Python.](/docs/021-Software-Engineering/020-Python/003-Advanced/030-Dates-and-Times.md)
 
 Python datetime objects can track exact moments when you include a time zone. Without it, datetimes are "naive" and cannot be compared across different locations. 
 

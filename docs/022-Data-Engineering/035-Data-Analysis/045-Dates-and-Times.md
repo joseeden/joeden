@@ -23,7 +23,7 @@ To run the code samples in this guide, check out the Jupyter notebook here: [Usi
 
 ## Loading Data
 
-> To learn more about datetime objects, please see [Dates and Times in Python.](/docs/021-Software-Engineering/020-Python/003-Advanced/025-Dates-and-Times.md)
+> To learn more about datetime objects, please see [Dates and Times in Python.](/docs/021-Software-Engineering/020-Python/003-Advanced/030-Dates-and-Times.md)
 
 Pandas makes it easy to load and explore data from CSV files. We usually import it as `pd` and use `read_csv()` to load our data.
 
