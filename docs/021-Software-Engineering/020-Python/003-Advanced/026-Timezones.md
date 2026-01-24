@@ -106,9 +106,9 @@ Working with time zones can be tricky because they vary across countries and eve
 
 </div>
 
-Computers handle this using a time zone database called tz, which is updated several times a year. Python can use the dateutil package to access this database and apply the correct UTC offsets, including adjustments for daylight savings.
+Computers handle this using a time zone database called **tz**, which is updated several times a year. Python can use the dateutil package to access this database and apply the correct UTC offsets, including adjustments for daylight savings.
 
-Instead of manually calculating offsets, you can create a timezone object using **tz.gettz()** and pass the zone string like `'America/New_York'`. This object automatically knows the correct UTC offset and adjusts for changes like daylight savings.
+Instead of manually calculating offsets, you can create a timezone object using `tz.gettz()` and pass the zone string like `'America/New_York'`. This object automatically knows the correct UTC offset and adjusts for changes like daylight savings.
 
 In the example below, we assign the Eastern US time zone to a datetime:
 
@@ -133,7 +133,7 @@ The same timezone object adjusts automatically for other dates. UTC offsets may 
 
 
 
-## Daylight Saving Time
+## Starting Daylight Saving Time
 
 Some places shift their clocks twice a year to create longer summer evenings. This is called daylight saving time. Handling it can be tricky because the UTC offset changes when the clocks move forward or back.
 
@@ -164,7 +164,6 @@ Output:
 
 Calculating the elapsed time between these two timestamps gives:
 
-
 ```python 
 elapsed = (spring_ahead_3am - spring_ahead_159am).total_seconds()
 print(elapsed)  
@@ -172,7 +171,7 @@ print(elapsed)
 
 Output:
 
-```bash
+```python
 3601.0    # 1 hour and 1 second
 ```
 
@@ -215,7 +214,7 @@ Output:
 1.0
 ```
 
-## Automatic Daylight Saving with dateutil
+## Automatic Daylight Saving with `dateutil`
 
 You can also let `dateutil` manage daylight saving automatically by using `tz.gettz()`:
 
