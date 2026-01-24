@@ -368,3 +368,14 @@ Notes:
 - Positive timedeltas move time forward
 - Negative timedeltas or subtracting a positive timedelta moves time backward
 
+## Timezones 
+
+Timezones represent regions with the same local time. They are defined by their offset from Coordinated Universal Time (UTC). 
+
+For more information on timezones and UTC offsets, please see [Timezones.](/docs/021-Software-Engineering/020-Python/003-Advanced/026-Timezones.md)
+
+## Date and Times with Pandas
+
+Pandas has built-in support for date and time data. It provides powerful tools to work with time series data, including date ranges, frequency conversion, and time zone handling.
+
+For more information, please see [Pandas.]()
