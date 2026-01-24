@@ -77,9 +77,29 @@ print(power(2, 3))  # Output: 8
 
 ## Using Lambda with Iterables  
 
-Lambda functions work well with iterables, like lists. You can use them inside functions like `map` to modify every element and then convert to a data structure using the `list` function.
+Lambda functions work well with iterables such as lists. They are commonly used with functions like `map()` to apply an operation to every element, then converted to a list using `list()`.
 
-Example:
+### Example 1: Adding text to each item
+
+Adds "!!!" to every string in the list using a lambda function with `map()`.
+
+```python
+spells = ["protego", "accio", "expecto patronum", "legilimens"]
+
+shout_spells = map(lambda x: x + "!!!", spells)
+shout_spells_list = list(shout_spells)
+print(shout_spells_list) 
+```
+
+Output:
+
+```bash
+['protego!!!', 'accio!!!', 'expecto patronum!!!', 'legilimens!!!'] 
+```
+
+### Example 2: Capitalizing each name
+
+Capitalizes the first letter of each name in the list using a lambda function with `map()`.
 
 ```python
 names = ['alice', 'bob', 'charlie']
@@ -91,6 +111,44 @@ Output:
 
 ```python
 ['Alice', 'Bob', 'Charlie']
+```
+
+### Example 3: Filtering long names
+
+Keeps only the names longer than 6 letters from the list using `filter()` and a lambda function.
+
+```python
+fellowship = ['frodo', 'samwise', 'merry', 'pippin', 'aragorn', 'boromir', 'legolas', 'gimli', 'gandalf']
+
+result = filter(lambda name: len(name) > 6, fellowship)
+result_list = list(result)
+
+print(result_list) 
+```
+
+Output:
+
+```bash
+['samwise', 'aragorn', 'boromir', 'legolas', 'gandalf']
+```
+
+### Example 4: Concatenating all names
+
+Combines all names in the list into a single string using `reduce()` and a lambda function.
+
+```python
+from functools import reduce
+
+stark = ['robb', 'sansa', 'arya', 'brandon', 'rickon']
+result = reduce(lambda a, b: a + b, stark)
+
+print(result)
+```
+
+Output:
+
+```bash
+robbsansaaryabrandonrickon
 ```
 
 
