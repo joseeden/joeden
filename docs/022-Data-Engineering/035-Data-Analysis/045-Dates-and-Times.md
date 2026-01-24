@@ -329,98 +329,6 @@ Plotting makes it easier to spot outliers, like a ride that lasted 25,000 second
 
 </div>
 
-## Examples: Summarizing Data
-
-#### How many Joyrides?
-
-“Joyrides” are rides that start and end at the same dock. We only have data for one bike, but it’s interesting to see how many there are and how long they last.
-
-Use the median duration instead of the mean, since a few very long trips could skew the average.
-
-```python
-rides['Duration'] = (rides['End date'] - rides['Start date']).dt.total_seconds()
-
-# Create joyrides 
-joyrides = (rides['Start station'] == rides['End station'])
-print("{} rides were joyrides".format(joyrides.sum()))
-
-# Median of all rides
-print("The median duration overall was {:.2f} seconds"\
-      .format(rides['Duration'].median()))
-
-# Median of joyrides
-print("The median duration for joyrides was {:.2f} seconds"\
-      .format(rides[joyrides]['Duration'].median()))
-```
-
-Output:
-
-```bash
-6 rides were joyrides
-The median duration overall was 660.00 seconds
-The median duration for joyrides was 2642.50 seconds 
-```
-
-This shows that there were 6 joyrides, with a median duration of about 44 minutes, which is much longer than the overall median of 11 minutes. This suggests that joyrides tend to last longer than regular rides.
-
-#### Members vs casual riders over time
-
-Riders are either "Members," who pay yearly for unlimited bike access, or "Casual," who pay at the kiosk for single rides.
-
-We want to see if members and casual riders decrease at the same rate from October to December, or if one group drops off faster.
-
-We can use the Pandas method `value_counts()` to count how many rides come from members versus casual riders.
-
-```python
-monthly_rides = rides.resample('ME', on='Start date')['Member type']
-
-# Ratio of the .value_counts() over the total number of rides
-print(monthly_rides.value_counts() / monthly_rides.size())
-```
-
-Output:
-
-```bash
-Start date  Member type
-2017-10-31  Member         0.768519
-            Casual         0.231481
-2017-11-30  Member         0.825243
-            Casual         0.174757
-2017-12-31  Member         0.860759
-            Casual         0.139241
-dtype: float64
-```
-
-This shows that in October, about 77% of rides were from members and 23% from casual riders. By December, the percentage of member rides increased to about 86%, while casual rides dropped to about 14%. This indicates that casual riders decreased faster than members over the months.
-
-#### Median Ride Duration by Member Type
-
-We can see how ride lengths differ between members and casual riders over time. Using groupby('Member type').resample() lets us calculate statistics like the median ride duration for each month and membership type.
-
-```python
-grouped = rides.groupby('Member type')\
-               .resample('ME', on='Start date')
-
-print(grouped['Duration'].median())
-```
-
-Output:
-
-```bash
-Member type  Start date
-Casual       2017-10-31    1636.0
-             2017-11-30    1159.5
-             2017-12-31     850.0
-Member       2017-10-31     671.0
-             2017-11-30     655.0
-             2017-12-31     387.5
-Name: Duration, dtype: float64 
-```
-
-This shows that casual riders had longer median rides than members in each month. 
-
-For example, in October, the median ride for casual riders was 1636 seconds (about 27 minutes), while for members it was 671 seconds (about 11 minutes). This pattern continues in November and December, with casual rides consistently being longer than member rides.
-
 
 ## Working with Timezones 
 
@@ -560,3 +468,149 @@ Name: Start date, dtype: datetime64[ns, America/New_York]
 ```
 
 Now you can compare each ride’s start time with the previous ride’s start or end time.
+
+
+## Examples
+
+#### How Many Joyrides?
+
+“Joyrides” are rides that start and end at the same dock. We only have data for one bike, but it’s interesting to see how many there are and how long they last.
+
+Use the median duration instead of the mean, since a few very long trips could skew the average.
+
+```python
+rides['Duration'] = (rides['End date'] - rides['Start date']).dt.total_seconds()
+
+# Create joyrides 
+joyrides = (rides['Start station'] == rides['End station'])
+print("{} rides were joyrides".format(joyrides.sum()))
+
+# Median of all rides
+print("The median duration overall was {:.2f} seconds"\
+      .format(rides['Duration'].median()))
+
+# Median of joyrides
+print("The median duration for joyrides was {:.2f} seconds"\
+      .format(rides[joyrides]['Duration'].median()))
+```
+
+Output:
+
+```bash
+6 rides were joyrides
+The median duration overall was 660.00 seconds
+The median duration for joyrides was 2642.50 seconds 
+```
+
+This shows that there were 6 joyrides, with a median duration of about 44 minutes, which is much longer than the overall median of 11 minutes. This suggests that joyrides tend to last longer than regular rides.
+
+#### Members vs Casual Riders Over Time
+
+Riders are either "Members," who pay yearly for unlimited bike access, or "Casual," who pay at the kiosk for single rides.
+
+We want to see if members and casual riders decrease at the same rate from October to December, or if one group drops off faster.
+
+We can use the Pandas method `value_counts()` to count how many rides come from members versus casual riders.
+
+```python
+monthly_rides = rides.resample('ME', on='Start date')['Member type']
+
+# Ratio of the .value_counts() over the total number of rides
+print(monthly_rides.value_counts() / monthly_rides.size())
+```
+
+Output:
+
+```bash
+Start date  Member type
+2017-10-31  Member         0.768519
+            Casual         0.231481
+2017-11-30  Member         0.825243
+            Casual         0.174757
+2017-12-31  Member         0.860759
+            Casual         0.139241
+dtype: float64
+```
+
+This shows that in October, about 77% of rides were from members and 23% from casual riders. By December, the percentage of member rides increased to about 86%, while casual rides dropped to about 14%. This indicates that casual riders decreased faster than members over the months.
+
+#### Median Ride Duration by Member Type
+
+We can see how ride lengths differ between members and casual riders over time. Using groupby('Member type').resample() lets us calculate statistics like the median ride duration for each month and membership type.
+
+```python
+grouped = rides.groupby('Member type')\
+               .resample('ME', on='Start date')
+
+print(grouped['Duration'].median())
+```
+
+Output:
+
+```bash
+Member type  Start date
+Casual       2017-10-31    1636.0
+             2017-11-30    1159.5
+             2017-12-31     850.0
+Member       2017-10-31     671.0
+             2017-11-30     655.0
+             2017-12-31     387.5
+Name: Duration, dtype: float64 
+```
+
+This shows that casual riders had longer median rides than members in each month. 
+
+For example, in October, the median ride for casual riders was 1636 seconds (about 27 minutes), while for members it was 671 seconds (about 11 minutes). This pattern continues in November and December, with casual rides consistently being longer than member rides.
+
+#### How Long Per Weekday?
+
+We can find the median ride duration for each day of the week. The code adds a new column for the weekday of each ride, then groups rides by that weekday to calculate the median duration.
+
+```python
+rides['Ride start weekday'] = rides['Start date'].dt.day_name()
+print(rides.groupby('Ride start weekday')['Duration'].median()) 
+```
+
+Output:
+
+```bash
+Ride start weekday
+Friday       724.5
+Monday       810.5
+Saturday     462.0
+Sunday       917.0
+Thursday     652.0
+Tuesday      641.5
+Wednesday    585.0
+Name: Duration, dtype: float64 
+```
+
+This shows the median ride duration for each day of the week. For example, Sunday rides last about 917 seconds (15 minutes) while Saturday rides last 462 seconds (8 minutes). This helps understand how ride patterns change by weekday.
+
+#### Time Between Rides
+
+We can also see how much time passes between rides by shifting the previous ride’s end date and subtracting it from the current ride’s start date.
+
+```python
+# Shift index of end date up one, then subtract it from  start date
+rides['Time since'] = rides['End date'].shift(1)
+rides['Time since'] = rides['Start date'] - rides['Time since']
+
+# Move from a timedelta to a number of seconds
+rides['Time since'] = rides['Time since'].dt.total_seconds()
+
+monthly = rides.resample('ME', on='Start date')
+print(monthly['Time since'].mean() / (60*60))
+```
+
+Output:
+
+```bash
+Start date
+2017-10-31 00:00:00-04:00    5.519242
+2017-11-30 00:00:00-05:00    7.256474
+2017-12-31 00:00:00-05:00    9.202380
+Name: Time since, dtype: float64
+```
+
+This shows the average number of hours between rides each month. This gives insight into ride frequency and how busy the system is over time.
