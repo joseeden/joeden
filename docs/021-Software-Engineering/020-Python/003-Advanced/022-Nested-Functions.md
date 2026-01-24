@@ -61,9 +61,43 @@ Output:
 This shows that `add_num` is a function, `x` is captured in the closure, and `y` is provided when the returned function is called.
 
 
-## Returning Functions
+## Closures
 
-Outer functions can return inner functions to create customized behavior, and the inner function remembers variables from the outer function. This is called a **closure** because the inner function retains access to the outer function’s variables even after the outer function has finished executing.
+Outer functions can return inner functions to create customized behavior, and the inner function remembers variables from the outer function. 
+
+This is called a **closure** because the inner function retains access to the outer function’s variables even after the outer function has finished executing.
+
+- Values passed to a nested function are stored in the closure
+- Deleting or overwriting the original variable does not affect the closure
+
+This allows functions to maintain state independently of the global or parent scope
+
+#### Example: Simple `foo` 
+
+In the example below, `foo()` defines a nested function `bar()` that prints `a`. When we return `bar()` and assign it to `func`, calling `func()` still knows the value of `a` because of the closure.
+
+```python
+def foo():
+    a = 5
+    def bar():
+        print(a)
+    return bar
+
+func = foo()
+func()
+print(func.__closure__[0].cell_contents)  # Access the closed-over value
+```
+
+Output:
+
+```
+5
+5
+```
+
+Even if the original variable goes out of scope, the value is preserved in the function’s closure.
+
+#### Example: `raise_val` 
 
 In this example, `raise_val` returns the inner function `inner_fn` that raises a number to the power `n`. `square` and `cube` are functions created by `raise_val`.
 
@@ -108,9 +142,9 @@ print(cube(2))    # Output: Output:  8
 This shows that `square` and `cube` are functions, `n` is captured by the closure, and `x` is provided when the returned function is called.
 
 
-## Using Nonlocal
+## Using `nonlocal`
 
-`Nonlocal` lets inner functions modify variables in outer functions. It works like `global` but only for enclosing function variables.
+`nonlocal` lets inner functions modify variables in outer functions. It works like `global` but only for enclosing function variables.
 
 In this example, `counter` defines `inc` that increases `n` from `counter` each time it is called.
 
@@ -156,13 +190,27 @@ print(c())  # 2
 
 ## Scopes (LEGB Rule)
 
-Python looks for variables in this order: 
+Scope determines which variables Python can access at different points in your code.
+
+Python uses a set of rules called **LEGB** to figure out which variable you mean.
 
 ```
 Local → Enclosing → Global → Built-in.
 ```
 
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-01-25-065132.png)
+
+</div>
+
+
+:::info 
+
 Assigning without global or nonlocal affects only local scope.
+
+:::
+
 
 In this example, `outer_fn` defines `x` and `inner_fn` prints it. Python finds `x` in the enclosing scope (the outer function `outer_fn`).
 
@@ -177,3 +225,7 @@ def outer_fn():
 
 outer_fn()  # Output: 5
 ```
+
+For more information, please see [Scopes.](/docs/021-Software-Engineering/020-Python/002-Fundamentals/032-Scopes.md)
+
+

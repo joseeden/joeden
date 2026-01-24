@@ -32,6 +32,47 @@ Scope determines where a variable or object can be accessed in a program. Python
   - Always available unless overridden by local or global names
 
 
+## LEGB Rule
+
+Python uses a set of rules called **LEGB** to figure out which variable you mean.
+
+```
+Local → Enclosing → Global → Built-in.
+```
+
+How it works:
+
+1. Python looks for variables first in the local scope
+2. Then it checks the enclosing or nonlocal scope for nested functions
+3. Next it searches the global scope
+4. Finally it looks in the built-in scope
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-01-25-065132.png)
+
+</div>
+
+In the example below, the interpreter finds the `x` in the local scope first:
+
+```python
+x = 7
+
+def foo():
+    x = 42
+    print(x)
+
+foo()
+print(x)
+```
+
+Output:
+
+```
+42
+7
+```
+
 
 ## Local Variables
 
@@ -68,7 +109,6 @@ print(multiplier)   # Output: 5
 In this second example, the local `multiplier` inside the function takes precedence. The global `multiplier` is unchanged.
 
 ```python
-
 multiplier = 5          # Global
 
 def multiply_local(x):
@@ -96,7 +136,6 @@ print(square(3))  # Output: 14
 new_val = 10
 print(square(3))  # Output: 19
 ```
-
 
 
 ## Modifying Global Variables
@@ -137,3 +176,26 @@ Inside function: 5
 Outside function: 5
 ```
 
+## Using `nonlocal` in Nested Functions
+
+Nested functions can modify variables in their parent function using the `nonlocal` keyword:
+
+```python
+def outer():
+    y = 10
+    def inner():
+        nonlocal y
+        y = 20
+    inner()
+    print(y)
+
+outer()
+```
+
+Output:
+
+```
+20
+```
+
+For more information, please see [Using `nonlocal`.](/docs/021-Software-Engineering/020-Python/003-Advanced/022-Nested-Functions.md#using-nonlocal)
