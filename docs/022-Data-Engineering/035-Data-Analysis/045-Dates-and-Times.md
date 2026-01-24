@@ -428,7 +428,7 @@ Pandas has many convenient datetime attributes and methods beyond basic Python:
 - `dt.day_name()` returns the day of the week
 - You can group and aggregate data by year, month, or day name
 
-Example: 
+In this example, we use the `.dt` accessor to get parts of the datetime. The first line gets the year of each ride, and the second line gets the name of the weekday.
 
 ```python
 rides['Start date'].dt.year.head(3)
@@ -444,6 +444,8 @@ Output:
 Name: Start date, dtype: object 
 ```
 
+Here, we can see that the first two rides started on a Sunday and the third ride started on a Monday.
+
 ## Shifting Rows
 
 Pandas allows shifting rows up or down with `shift()`. This is useful for comparing consecutive rides.
@@ -452,7 +454,9 @@ Pandas allows shifting rows up or down with `shift()`. This is useful for compar
 - Useful to align previous row data with current row
 - `NaT` fills the empty positions created by the shift
 
-Example: Shift rides one row forward
+**Example: Shifting rides one row forward**
+
+We can use shift(1) to move the Start date values down by one row. This is useful for comparing each ride to the previous ride.
 
 ```python
 rides['Start date'].shift(1).head(3)
@@ -467,8 +471,7 @@ Output:
 Name: Start date, dtype: datetime64[ns, America/New_York] 
 ```
 
-Now you can compare each ride’s start time with the previous ride’s start or end time.
-
+Here, we can see that the first row has no previous ride (`NaT`), the second row shows the first ride’s start time, and the third row shows the second ride’s start time. This helps calculate the time between rides.
 
 ## Examples
 
