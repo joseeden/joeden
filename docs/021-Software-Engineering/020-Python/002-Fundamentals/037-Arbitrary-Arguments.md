@@ -17,10 +17,10 @@ Functions in Python need specific arguments, but we can make them more flexible.
 
 ## Fixed Arguments  
 
-A function expects a set number of arguments. If we pass the wrong type or too many, it will cause an error.  
+A function expects a specific number and type of arguments. Passing the wrong type or extra arguments will cause an error.
 
-- A function designed for a list or set won't work with a dictionary.  
-- Passing multiple separate values instead of a single list causes an error.  
+- A function that expects a list or set will not work with a dictionary.
+- Passing multiple values instead of a single list will result in an error.
 
 Example:  
 
@@ -31,21 +31,42 @@ def average(values):
 print(average(10, 20, 30))  # Error: Too many arguments
 ```
 
+Here, the function expects one argument (a list of numbers), but multiple arguments are provided instead.
+
+The correct way is to pass the values as a single list:
+
+
+```python
+print(average([10, 20, 30]))
+```
+
+
 ## Arbitrary Positional Arguments (`*args`)  
+
+Sometimes you do not know how many values a user will pass to a function. Flexible/arbitrary positional arguments solve this by accepting any number of positional values and grouping them into a tuple inside the function.
 
 We can allow any number of arguments by using an asterisk (`*`).  
 
-- The function collects all arguments into a tuple.  
-- We can pass one, five, or even a thousand values.  
-- The standard name is `*args`, but any name works.  
-
-Example:  
+In the example below, the function `add_values` uses the variable `values`, which is created from `*args` and stored as a tuple.
 
 ```python
-def average(*args):
-    return sum(args) / len(args)
+def add_values(*values):
+    total = 0
+    for value in values:
+        total += value
+    return total
+```
 
-print(average(10, 20, 30))  # Output: 20.0
+You can now call the function with any number of numeric arguments.
+
+```python
+add_values(1, 2, 3, 4)
+```
+
+Output:
+
+```text
+10
 ```
 
 ## Passing Multiple Lists
@@ -63,13 +84,42 @@ print(combine([1, 2], [3, 4]))  # Output: ([1, 2], [3, 4])
 
 ## Arbitrary Keyword Arguments (`**kwargs`)  
 
-If we want to pass named arguments, we use `**`.  
 
-- The function collects arguments into a dictionary.  
-- The standard name is `**kwargs`, but any name works.  
-- We can access values using `.values()`.  
+When we want to pass named arguments without defining them in advance, we use `**kwargs`.
 
-Example:  
+- Accepts any number of named (keyword) arguments
+- Stores them as a dictionary
+- `kwargs` is the common name, but any name can be used
+
+This is useful for optional settings or labeled data.
+
+#### Example 1: Printing key–value pairs
+
+In this example, `details` comes from `**kwargs` and behaves like a dictionary.
+
+```python
+def show_details(**details):
+    for key, value in details.items():
+        print(f"{key}: {value}")
+```
+
+Calling the function with named arguments:
+
+```python
+show_details(user="Alex", role="Admin", active=True)
+```
+
+Output:
+
+```text
+user: Alex
+role: Admin
+active: True
+```
+
+#### Example 2: Using keyword argument values
+
+Here, all keyword argument values are used to calculate an average.
 
 ```python
 def average(**kwargs):
@@ -77,6 +127,13 @@ def average(**kwargs):
 
 print(average(a=10, b=20, c=30))  # Output: 20.0
 ```
+
+
+:::info 
+
+The names `args` and `kwargs` are not special by themselves. What matters is using `*` for tuples and `**` for dictionaries, which brings flexibility back into function design.
+
+:::
 
 ## Passing a Dictionary   
 
