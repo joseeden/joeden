@@ -21,6 +21,12 @@ OpenStack follows a layered service architecture where each service has a specif
 
 This design allows each service to evolve independently while still working as part of a larger system.
 
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-01-25-101642.png)
+
+</div>
+
 ## Control and Data Planes 
 
 OpenStack separates control and data planes to manage resources efficiently. 

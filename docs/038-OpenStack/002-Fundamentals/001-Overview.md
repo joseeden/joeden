@@ -159,7 +159,7 @@ OpenStack separates control and data planes to manage resources efficiently.
 
 Separating these planes ensures workloads keep running even when controllers are restarted. It also allows network traffic to be segmented for security and performance.
 
-For more information, please see OpenStack Architecture.
+For more information, please see [OpenStack Architecture.](/docs/038-OpenStack/002-Fundamentals/002-Architecture.md)
 
 <div class='img-center'>
 
