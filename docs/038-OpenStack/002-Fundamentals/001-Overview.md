@@ -286,16 +286,7 @@ Small labs may combine roles on a single host, while production clouds scale eac
 
 :::
 
-## Community vs Vendor Distributions
-
-OpenStack is available in two main forms: community releases and vendor-supported releases.
-
-- Community releases are available immediately
-- Vendor releases focus on stability and support
-- Each option targets different operational needs
-
-The choice depends on how much control, support, and cost flexibility is required.
-
+## OpenStack Distributions
 
 ### Community releases
 
