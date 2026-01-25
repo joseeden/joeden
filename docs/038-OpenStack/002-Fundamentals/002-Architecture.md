@@ -23,7 +23,9 @@ This design allows each service to evolve independently while still working as p
 
 <div class='img-center'>
 
-![](/img/docs/Screenshot-2026-01-25-101642.png)
+<!-- ![](/img/docs/Screenshot-2026-01-25-101642.png) -->
+
+![](/img/docs/all-things-openstack-hl-overview-diag.png)
 
 </div>
 
