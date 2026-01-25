@@ -111,23 +111,35 @@ High network performance is essential for demanding workloads such as telecom or
 
 ## Software-Defined Networking
 
-Most OpenStack networking is implemented in software.
+OpenStack networking is mostly implemented in software, which allows flexible and scalable network management.
 
-- Virtual networks and subnets
-- VXLAN tunneling between hosts
-- Multiple SDN options
+| Factor                   | Details                                                                                                   |
+| ------------------------ | --------------------------------------------------------------------------------------------------------- |
+| Virtual networks         | OpenStack creates virtual networks and subnets for tenant isolation and traffic control                   |
+| VXLAN tunneling          | Hosts communicate over VXLAN tunnels to enable overlay networks across physical nodes                     |
+| SDN options              | Multiple software-defined networking solutions are available                                              |
 
-Common solutions include Linux Bridge for small setups and Open vSwitch for larger environments. More complex deployments may integrate with external SDN platforms like NSX or ACI. This software-defined approach provides flexibility while still using standard network hardware.
+For small deployments, Linux Bridge is commonly used, while Open vSwitch is preferred for larger environments. More complex networks can integrate with external SDN platforms to provide advanced features and improved scalability.
+
+OpenStack supports both open-source and commercial SDN controllers. Examples include:
+
+- OpenContrail
+- OpenDaylight
+- VMware NSX
+- Cisco ACI
+
 
 ## Storage Backend Planning
 
-Storage design depends heavily on what already exists in the data center.
+Storage design should match existing infrastructure and workload needs. A well-planned storage backend provides compute nodes with fast and reliable access to data.
 
-- Hardware or software-defined storage
-- Performance and reliability requirements
-- Data path design
+| Type                      | Considerations                                                                                                                                                       |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Hardware storage backends | <ul><li>Disk arrays for capacity and performance</li><li>Redundancy and availability</li><li>Common vendors: Dell EMC, NetApp, HPE</li></ul>                         |
+| Software-defined storage  | <ul><li>Scalable and flexible</li><li>Reliable and highly available</li><li>Examples: LVM, Ceph, GlusterFS</li></ul>                                                 |
+| Data path design          | <ul><li>Connections between compute and storage nodes</li><li>Local storage on compute nodes</li><li>Network options: Fibre Channel, Ethernet, iSCSI, FCoE</li></ul> |
 
-Backends like LVM and Ceph are common choices. The key concern is how data moves between compute nodes and storage devices. Good storage planning ensures acceptable performance and scalability for workloads.
+
 
 ## Planning for Additional Services
 
