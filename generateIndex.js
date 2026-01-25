@@ -40,7 +40,7 @@ function createIndexMd(directoryPath, outputPath) {
   fs.writeFileSync(outputPath, content, 'utf-8');
 }
 
-const categoryFolderPath = path.join(__dirname, 'docs', '003-Linux');
+const categoryFolderPath = path.join(__dirname, 'docs', '005-Linux');
 const outputPath = path.join(categoryFolderPath, 'index.md');
 
 createIndexMd(categoryFolderPath, outputPath);

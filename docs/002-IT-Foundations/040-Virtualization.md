@@ -56,7 +56,7 @@ Privilege escalation occurs when users gain elevated privileges within a virtual
 
 - Exploits weaknesses in operating system or application configurations.
 - Can lead to unauthorized actions that compromise system security.
-- For more information, please see [Privilege Escalation.](/docs/007-Cybersecurity/051-List-of-Attacks/014-Execution-and-Escalation.md#privilege-escalation)
+- For more information, please see [Privilege Escalation.](/docs/025-Cybersecurity/051-List-of-Attacks/014-Execution-and-Escalation.md#privilege-escalation)
 
 **Example:**
 
@@ -65,7 +65,7 @@ Privilege escalation occurs when users gain elevated privileges within a virtual
 **Mitigation:**
 
 - Apply operating system patches and security updates promptly.
-- Implement [least privilege principles](/docs/007-Cybersecurity/026-Identity-and-Access-Management/005-IAM-Concepts.md#principle-of-least-privilege).
+- Implement [least privilege principles](/docs/025-Cybersecurity/026-Identity-and-Access-Management/005-IAM-Concepts.md#principle-of-least-privilege).
 - Regularly audit user permissions to prevent unauthorized privilege escalation.
 
 ### Live VM Migration

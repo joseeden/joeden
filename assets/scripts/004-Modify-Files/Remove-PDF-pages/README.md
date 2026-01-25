@@ -10,7 +10,7 @@ There are two ways to do this:
 ## Requirements
 
 Enable a Python virtual environment first using `virtualenvwrapper`. 
-See [Python Virtual Environments](/docs/021-Software-Engineering/020-Python/002-Fundamentals/060-Python-Virtual-Environments.md#using-virtualenvwrapper)
+See [Python Virtual Environments](/docs/065-Software-Engineering/020-Python/002-Fundamentals/060-Python-Virtual-Environments.md#using-virtualenvwrapper)
 
 Then install the required packages using pip:
 
