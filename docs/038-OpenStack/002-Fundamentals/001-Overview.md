@@ -94,12 +94,7 @@ Separating these planes ensures workloads keep running even when controllers are
 
 ## OpenStack Services
 
-OpenStack uses multiple services to automatically deliver resources when a user requests a VM. 
-
-- Control plane services handle requests and make decisions
-- Data plane agents execute actions on the hosts. 
-
-OpenStack orchestrates all these services so administrators set policies once and the platform enforces them automatically. This automation ensures reliable, fast, and error-free VM provisioning.
+OpenStack coordinates many services to deliver resources automatically. Administrators define policies once, and the platform enforces them consistently. This automation makes VM provisioning fast, reliable, and free from manual errors.
 
 <div class='img-center'>  
 ![](/img/docs/openstack-marketecture-diagram.png)  
@@ -135,28 +130,6 @@ Data plane agents run on hosts.
 
 OpenStack runs on Linux servers that assume one or more roles depending on the deployment size.
 
-<!-- - **Controller nodes**
-
-  - Host APIs, schedulers, databases, and message queues
-  - Issue work orders for the cloud operations
-  - Keystone and placement live exclusively on controllers
-  - Nova API and Nov Scheduler also stays here
-
-- **Compute nodes**
-
-  - Run nova-compute and KVM to create and manage VMs
-  - Execute heavy workloads on the factory floor
-
-- **Storage nodes**
-
-  - Run cinder-volume or object storage daemons
-  - Manage persistent storage for VMs
-
-- **Network nodes**
-
-  - Host Neutron L3 routers, DHCP, and load balancer agents
-  - Move tenant traffic efficiently across the network -->
-
 | Node Type  | Purpose                                                                                                                                                                 | Typical Services                                                                                                                                                                           |
 | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Controller | <ul><li>Host APIs, schedulers, databases, and message queues</li><li>Manage orchestration and user authentication</li><li>Coordinate control plane operations</li></ul> | <ul><li>Keystone</li><li>Placement</li><li>Nova API</li><li>Nova Scheduler</li><li>Glance API</li><li>Cinder API</li><li>Cinder Scheduler</li><li>Heat</li><li>Horizon / Skyline</li></ul> |
@@ -169,3 +142,107 @@ OpenStack runs on Linux servers that assume one or more roles depending on the d
 Small labs may combine roles on a single host, while production clouds scale each role horizontally for performance and compliance.
 
 :::
+
+## Regions and Availability Zones
+
+OpenStack supports multiple Regions and Availability Zones for scale, isolation, and resilience.
+
+- **Regions**
+
+  - Independent OpenStack deployments sharing a Keystone catalog
+  - Users choose regions for latency or disaster recovery
+
+- **Availability Zones (AZs)**
+
+  - User-visible fault domains within a region
+  - Spread redundant instances across AZs to survive hardware failures
+
+Regions and AZs allow admins to upgrade independently, meet data laws, and provide high SLAs without complex clustering.
+
+<div class='img-center'>
+
+![](/img/docs/image_08_004.jpg)
+
+</div>
+
+
+## Host Aggregates and Cells
+
+OpenStack uses **host aggregates** and **cells** to organize resources, scale efficiently, and enforce policies automatically.
+
+### Host Aggregates
+
+Host aggregates group hosts by metadata such as GPU, SSD, or maintenance windows. The scheduler uses these tags to place VMs on hosts that match requested traits.
+
+Example metadata:
+
+```bash
+gpu=true
+ssd=true
+maintenance=windows-approved
+```
+
+Host aggregates make it easy to manage special hardware, such as GPUs or SSDs, while keeping VM placement automatic and consistent.
+
+<div class='img-center'>
+
+![](/img/docs/all-things-openstack-host-agg.png)
+
+</div>
+
+
+### Cells v2
+
+Cells partition OpenStack deployments into smaller, manageable units to improve scalability and avoid database bottlenecks.
+
+- Each cell has its own database and message queue
+- The top-level **API cell** manages global requests and authentication
+- **Child cells** manage local resources and compute nodes
+
+The API cell and child cells work together to make this structure effective: 
+
+- **API Cell**
+
+  - Authenticates incoming requests via Keystone
+  - Routes requests to the correct child cell
+  - Keeps tenants unaware of internal cell structure
+
+- **Child Cells**
+
+  - Manage a subset of compute nodes, databases, and message queues
+  - Handle local scheduling, networking, and storage operations
+  - Failures in one child cell do not affect others
+  - Operate independently but follow global policies from the API cell
+
+
+<div class='img-center'>
+
+![](/img/docs/all-things-openstack-cell-v2.png)
+
+</div>
+
+
+## Example Workflow
+
+A user in Region West deploys a three-tier app with Heat:
+
+1. Nova API authenticates through Keystone and forwards requests to the right cell
+2. Scheduler picks hosts in the chosen AZs and combines resources
+3. Neutron and Cinder agents manage networking and storage within each cell
+
+Typical flow:
+
+```bash
+Region -> AZ -> Cell -> Host
+```
+
+Outcome: The app runs resiliently and efficiently, following placement policies automatically.
+
+<div class='img-center'>
+
+![](/img/docs/all-things-openstack-sample-workflow.png)
+
+</div>
+
+
+
