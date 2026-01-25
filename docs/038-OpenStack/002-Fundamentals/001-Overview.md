@@ -110,7 +110,7 @@ Users manage their cloud resources through self-service tools provided by OpenSt
 
 All of these tools talk to OpenStack services using the same APIs, which keeps behavior consistent and predictable.
 
-## Modular Architecture 
+## Modular Design 
 
 OpenStack is not a single application. It is a collection of many independent projects. It is modular, with core and optional projects. Core projects are commonly deployed, while optional projects depend on the use case.
 
@@ -156,9 +156,10 @@ OpenStack separates control and data planes to manage resources efficiently.
 
 - Control plane handles requests and scheduling
 - Data plane executes tasks on compute and storage hosts
-- Policies are enforced automatically to reduce errors
 
 Separating these planes ensures workloads keep running even when controllers are restarted. It also allows network traffic to be segmented for security and performance.
+
+For more information, please see OpenStack Architecture.
 
 <div class='img-center'>
 
@@ -166,48 +167,6 @@ Separating these planes ensures workloads keep running even when controllers are
 
 </div>
 
-
-### Control Plane Services
-
-Control plane handles requests and scheduling. 
-
-| Service           | Role          | Description                                        |
-| ----------------- | ------------- | -------------------------------------------------- |
-| Keystone          | Identity      | Authenticates users and manages credentials        |
-| Glance            | Images        | Streams VM images to compute nodes                 |
-| Nova API          | Compute       | Schedules VM on a hypervisor using Placement       |
-| Neutron API       | Networking    | Creates network ports and sets up overlay tunnels  |
-| Cinder API        | Block Storage | Attaches storage volumes to instances              |
-| Heat              | Orchestration | Automates deployment of multi-service applications |
-| Horizon / Skyline | Dashboard     | Web interface for managing OpenStack resources     |
-
-### Data Plane Agents
-
-Data plane agents run on hosts. 
-
-| Agent             | Role       | Description                                    |
-| ----------------- | ---------- | ---------------------------------------------- |
-| nova-compute      | Compute    | Runs on each hypervisor to manage VM lifecycle |
-| neutron-OVS-agent | Networking | Configures Open vSwitch on compute hosts       |
-| cinder-volume     | Storage    | Manages backend storage volumes                |
-
-
-## Node Roles
-
-OpenStack runs on Linux servers that assume one or more roles depending on the deployment size.
-
-| Node Type  | Purpose                                                                                                                                                                 | Typical Services                                                                                                                                                                           |
-| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Controller | <ul><li>Host APIs, schedulers, databases, and message queues</li><li>Manage orchestration and user authentication</li><li>Coordinate control plane operations</li></ul> | <ul><li>Keystone</li><li>Placement</li><li>Nova API</li><li>Nova Scheduler</li><li>Glance API</li><li>Cinder API</li><li>Cinder Scheduler</li><li>Heat</li><li>Horizon / Skyline</li></ul> |
-| Compute    | <ul><li>Run nova-compute and hypervisors like KVM</li><li>Execute VM operations and tenant workloads</li></ul>                                                          | <ul><li>nova-compute</li><li>Neutron OVS agent</li><li>Optional Glance image cache</li></ul>                                                                                               |
-| Storage    | <ul><li>Manage block and object storage</li><li>Provide persistent storage for VMs and images</li></ul>                                                                 | <ul><li>cinder-volume</li><li>Object storage daemons</li><li>Optional Glance image cache</li></ul>                                                                                         |
-| Network    | <ul><li>Handle routing, DHCP, and load balancing</li><li>Move tenant traffic efficiently</li></ul>                                                                      | <ul><li>Neutron L3 agent</li><li>DHCP agent</li><li>Load balancer agent</li></ul>                                                                                                          |
-
-:::info 
-
-Small labs may combine roles on a single host, while production clouds scale each role horizontally for performance and compliance.
-
-:::
 
 ## Regions and Availability Zones
 
@@ -309,6 +268,23 @@ Outcome: The app runs resiliently and efficiently, following placement policies 
 ![](/img/docs/all-things-openstack-sample-workflow.png)
 
 </div>
+
+## Node Roles
+
+OpenStack runs on Linux servers that assume one or more roles depending on the deployment size.
+
+| Node Type  | Purpose                                                                                                                                                                 | Typical Services                                                                                                                                                                           |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Controller | <ul><li>Host APIs, schedulers, databases, and message queues</li><li>Manage orchestration and user authentication</li><li>Coordinate control plane operations</li></ul> | <ul><li>Keystone</li><li>Placement</li><li>Nova API</li><li>Nova Scheduler</li><li>Glance API</li><li>Cinder API</li><li>Cinder Scheduler</li><li>Heat</li><li>Horizon / Skyline</li></ul> |
+| Compute    | <ul><li>Run nova-compute and hypervisors like KVM</li><li>Execute VM operations and tenant workloads</li></ul>                                                          | <ul><li>nova-compute</li><li>Neutron OVS agent</li><li>Optional Glance image cache</li></ul>                                                                                               |
+| Storage    | <ul><li>Manage block and object storage</li><li>Provide persistent storage for VMs and images</li></ul>                                                                 | <ul><li>cinder-volume</li><li>Object storage daemons</li><li>Optional Glance image cache</li></ul>                                                                                         |
+| Network    | <ul><li>Handle routing, DHCP, and load balancing</li><li>Move tenant traffic efficiently</li></ul>                                                                      | <ul><li>Neutron L3 agent</li><li>DHCP agent</li><li>Load balancer agent</li></ul>                                                                                                          |
+
+:::info 
+
+Small labs may combine roles on a single host, while production clouds scale each role horizontally for performance and compliance.
+
+:::
 
 ## Community vs Vendor Distributions
 
