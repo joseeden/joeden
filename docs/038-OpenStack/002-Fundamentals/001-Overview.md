@@ -1,5 +1,5 @@
 ---
-title: "OpenStack Overview"
+title: "Overview"
 description: "First things you need to know"
 tags: 
 - Cloud
