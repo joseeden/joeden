@@ -19,7 +19,7 @@ last_update:
 
 Static pods are pods that are managed directly by the nodes kubelet and not through the Kubernetes' API server. Unlike regular pods, they are not scheduled by the Kubernetes scheduler but are always placed on the node by the kubelet.
 
-To learn more, check out [Static Pods.](/docs/015-Containerization/020-Kubernetes/029-Static-Pods.md)
+To learn more, check out [Static Pods.](/docs/041-Containerization/020-Kubernetes/029-Static-Pods.md)
 
 ## Resource Requirements
 

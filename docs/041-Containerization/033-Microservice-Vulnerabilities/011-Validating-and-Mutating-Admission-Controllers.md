@@ -22,7 +22,7 @@ These are two types of Kubernetes admission controllers, each with distinct role
 - Mutating controllers modify requests before saving.  
 - Both enforce rules in the request process.  
 
-For more information, please see [Admission Controllers.](/docs/015-Containerization/033-Microservice-Vulnerabilities/010-Admission-Controllers.md)
+For more information, please see [Admission Controllers.](/docs/041-Containerization/033-Microservice-Vulnerabilities/010-Admission-Controllers.md)
 
 ## Validating Admission Controllers  
 

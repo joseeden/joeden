@@ -70,7 +70,7 @@ allow {
 }
 ```
 
-For more information, please see [OPA.](/docs/015-Containerization/033-Microservice-Vulnerabilities/040-Open-Policy-Agent.md)
+For more information, please see [OPA.](/docs/041-Containerization/033-Microservice-Vulnerabilities/040-Open-Policy-Agent.md)
 
 ## Built-In Image Policy Webhook
 

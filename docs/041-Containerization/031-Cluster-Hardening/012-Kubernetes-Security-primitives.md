@@ -57,7 +57,7 @@ Authorization mechanisms define what actions users can take, such as:
 - Node Authorization
 - Webhook Mode
 
-For more information, please see [Authentication and Authorization](/docs/015-Containerization/031-Cluster-Hardening/013-Kubernetes-Security-authentication-authorization.md)
+For more information, please see [Authentication and Authorization](/docs/041-Containerization/031-Cluster-Hardening/013-Kubernetes-Security-authentication-authorization.md)
 
 
 ## TLS Certificates
@@ -69,7 +69,7 @@ Cluster communication is secured with TLS encryption, protecting:
 - Scheduler
 - API Server
 
-For more information, please see [TLS Certificates.](/docs/015-Containerization/031-Cluster-Hardening/018-Kubernetes-Security-tls-certificates.md)
+For more information, please see [TLS Certificates.](/docs/041-Containerization/031-Cluster-Hardening/018-Kubernetes-Security-tls-certificates.md)
 
 
 <div class='img-center'>

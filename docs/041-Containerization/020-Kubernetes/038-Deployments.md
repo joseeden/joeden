@@ -123,7 +123,7 @@ Key highlights from the output:
   - **max unavailable**: Limits unavailable Pods during updates
   - **max surge**: Limits Pods exceeding the desired count during updates
 
-For more information, please see [Rollouts and Rollbacks.](/docs/015-Containerization/020-Kubernetes/039-Rollouts-and-Rollbacks.md)
+For more information, please see [Rollouts and Rollbacks.](/docs/041-Containerization/020-Kubernetes/039-Rollouts-and-Rollbacks.md)
 
 
 

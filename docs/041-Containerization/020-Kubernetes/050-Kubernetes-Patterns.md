@@ -133,7 +133,7 @@ There are several types of Services:
 - **LoadBalancer**: Exposes the service externally.
 - **External Name**: Uses DNS CNAME to access external services.
 
-For more information, please see [Kubernetes Services.](/docs/015-Containerization/020-Kubernetes/041-Kubernetes-Services.md)
+For more information, please see [Kubernetes Services.](/docs/041-Containerization/020-Kubernetes/041-Kubernetes-Services.md)
 
 ### Network Policies 
 

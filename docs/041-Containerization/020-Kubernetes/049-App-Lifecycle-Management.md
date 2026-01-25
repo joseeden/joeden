@@ -17,7 +17,7 @@ last_update:
 
 Kubernetes performs rollouts to update deployments by replacing replicas to match the new deployment specifications. Updates may include changes to environment variables, labels, or code.
 
-For more information, please see [Rollouts and Rollbacks](/docs/015-Containerization/020-Kubernetes/039-Rollouts-and-Rollbacks.md)
+For more information, please see [Rollouts and Rollbacks](/docs/041-Containerization/020-Kubernetes/039-Rollouts-and-Rollbacks.md)
 
 
 ## Environment Variables 
@@ -81,7 +81,7 @@ envFrom:
 
 **Secrets** are used to store sensitive information, helping to reduce the risk of accidental exposure compared to storing it in an image or Pod specification.
 
-For more information, please see [ConfigMaps and Secrets](/docs/015-Containerization/020-Kubernetes/044-Configmaps.md) 
+For more information, please see [ConfigMaps and Secrets](/docs/041-Containerization/020-Kubernetes/044-Configmaps.md) 
 
 ## Multi-Container Pods 
 
