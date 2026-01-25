@@ -78,27 +78,44 @@ OpenStack focuses on IaaS, presenting compute, storage, and networking as self-s
 
 ## OpenStack 
 
-OpenStack is an open-source cloud platform that delivers IaaS capabilities. It orchestrates pools of compute, storage, and networking resources through APIs and a web dashboard.
+OpenStack is an open-source cloud platform that lets you build and manage your own cloud using standard building blocks. It orchestrates pools of compute, storage, and networking resources through APIs and a web dashboard.
 
 <div class='img-center'>  
 ![](/img/docs/openstack-marketecture-diagram.png)  
 </div>  
 
-OpenStack turns all the hypervisors, storage, and network devices into pools of resources. Users can consume these resources without worrying about the underlying technology.
 
-- Compute (Nova) abstracts and orchestrates all hypervisors
-- Block storage (Cinder) provides persistent storage
-- Object storage (Swift) handles scalable data storage
-- Networking (Neutron) manages networks consistently
+OpenStack exposes infrastructure through simple, consistent abstractions so users do not need to care about the underlying technology.
 
+- Compute resources such as virtual machines and bare metal servers
+- Storage resources such as block storage, object storage, and file shares
+- Network resources such as networks, subnets, routers, and load balancers
 
-## OpenStack Architecture 
+These abstractions keep the user experience the same while allowing the backend to change freely. OpenStack turns different hypervisors, storage systems, and network devices into shared resource pools.
 
-OpenStack is modular, with core and optional projects. Core projects are commonly deployed, while optional projects depend on the use case.
+- Compute (Nova) orchestrates hypervisors
+- Block storage (Cinder) provides persistent disks
+- Object storage (Swift) provides scalable object storage
+- Networking (Neutron) manages virtual networks
 
-- Core projects handle essential cloud services
-- Optional projects provide additional features if needed
-- Horizon provides a dashboard and self-service capabilities
+This approach reduces complexity while keeping infrastructure flexible and consistent.
+
+## How Users Interact with OpenStack
+
+Users manage their cloud resources through self-service tools provided by OpenStack.
+
+- Web dashboard for graphical access
+- Command line tools for scripting and automation
+- APIs for integration with other platforms
+
+All of these tools talk to OpenStack services using the same APIs, which keeps behavior consistent and predictable.
+
+## Modular Architecture 
+
+OpenStack is not a single application. It is a collection of many independent projects. It is modular, with core and optional projects. Core projects are commonly deployed, while optional projects depend on the use case.
+
+- **Core projects** handle essential cloud services
+- **Optional projects** provide additional features if needed
 
 Using the [Project Navigator website](https://www.openstack.org/software/project-navigator/openstack-components#openstack-services), you can see all OpenStack projects, their status, maturity, and sample configurations for real-world scenarios like web hosting, e-commerce, or big data.
 
@@ -107,6 +124,30 @@ Using the [Project Navigator website](https://www.openstack.org/software/project
 ![](/img/docs/Screenshot-2026-01-25-100628.png)
 
 </div>
+
+### Core OpenStack Services
+
+There are several core services that most deployments include.
+
+- Identity service for authentication and authorization
+- Compute service for virtual machines
+- Networking service for virtual networks
+- Block storage service for persistent disks
+- Image service for VM images
+- Object storage service for scalable storage
+
+These services provide the basic functionality needed to run a cloud.
+
+
+### Optional OpenStack Services
+
+Many deployments also use optional services to extend functionality.
+
+- Data processing services
+- Workflow and automation services
+- Container and application platforms
+
+These services are added only when needed, which keeps the cloud flexible and customizable.
 
 
 ## Control and Data Planes 
@@ -247,7 +288,7 @@ The API cell and child cells work together to make this structure effective:
 </div>
 
 
-## Example Workflow
+### Example Workflow
 
 A user in Region West deploys a three-tier app with Heat:
 
@@ -268,6 +309,38 @@ Outcome: The app runs resiliently and efficiently, following placement policies 
 ![](/img/docs/all-things-openstack-sample-workflow.png)
 
 </div>
+
+## Community vs Vendor Distributions
+
+OpenStack is available in two main forms: community releases and vendor-supported releases.
+
+- Community releases are available immediately
+- Vendor releases focus on stability and support
+- Each option targets different operational needs
+
+The choice depends on how much control, support, and cost flexibility is required.
+
+
+### Community releases
+
+Community OpenStack is developed and released openly.
+
+- New versions are available as soon as they are released
+- Documentation includes installation guides
+- Some features may be marked as not production-ready
+
+This option is ideal for learning, testing, and environments that need the latest features.
+
+
+### Vendor-supported releases
+
+Vendor distributions package OpenStack with additional tooling and support.
+
+- Tested and supported configurations
+- Deployment and architecture assistance
+- Easier path to production environments
+
+The trade-off is higher cost and sometimes fewer available services.
 
 
 
