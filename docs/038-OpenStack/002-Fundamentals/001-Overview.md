@@ -12,76 +12,17 @@ last_update:
 
 
 
-## Cloud Computing Basics
-
-Cloud is defined by NIST as a model for on-demand access to configurable resources. A virtualized data center becomes a cloud when it meets five key traits:
-
-- **On-demand self-service**
-
-  - Provision resources automatically without human intervention
-  - In OpenStack, Horizon or CLI acts as the self-service interface
-
-- **Broad network access**
-
-  - Resources are reachable from laptops, phones, or CI pipelines
-  - APIs behave the same whether accessed remotely or inside the data center
-
-- **Resource pooling**
-
-  - Multiple users share physical servers, storage, and network
-  - Users get virtual resources without knowing the underlying hardware
-
-- **Rapid elasticity**
-
-  - Resources can scale up or down instantly based on demand
-  - Supports auto-scaling of workloads during peak usage
-
-- **Measured service**
-
-  - Resource consumption is tracked for billing and capacity planning
-  - Helps finance cross-charge departments accurately and admins plan growth
-
-Cloud traits reduce lead time, enable pay-as-you-grow economics, and make experimentation friction-free. 
-
-For more information, please see [Cloud Foundations.](/docs/033-Cloud-Computing/001-Cloud-Foundations/001-The-Basics.md)
-
-
-## Cloud Service Models
-
-Service models define what the provider manages and what the customer manages:
-
-- **Infrastructure-as-a-Service (IaaS)**
-
-  - Provider handles hardware, hypervisors, and APIs
-  - Customer manages OS and applications
-  - OpenStack, AWS EC2, Google Compute Engine
-
-- **Platform-as-a-Service (PaaS)**
-
-  - Provider also manages the runtime environment
-  - Customer only deploys code
-  - Examples: Heroku, Google App Engine
-
-- **Software-as-a-Service (SaaS)**
-
-  - Provider runs the full application
-  - Customer only uses the software
-  - Examples: Salesforce, Office 365
-
-
-For more information, please see [Cloud Service Models.](/docs/033-Cloud-Computing/001-Cloud-Foundations/004-Cloud-Service-models.md)
-
-OpenStack focuses on IaaS, presenting compute, storage, and networking as self-service blocks. This sets clear boundaries: 
-
-- Admins manage hypervisors and networks
-- Users manage OS and apps.
-
 ## OpenStack 
 
 OpenStack is an open-source cloud platform that lets you build and manage your own cloud using standard building blocks. It orchestrates pools of compute, storage, and networking resources through APIs and a web dashboard.
 
 <div class='img-center'>  
-![](/img/docs/openstack-marketecture-diagram.png)  
+
+<!-- ![](/img/docs/openstack-marketecture-diagram.png)   -->
+
+![](/img/docs/Screenshot-2026-01-25-223845.png)  
+
+
 </div>  
 
 
@@ -104,11 +45,11 @@ This approach reduces complexity while keeping infrastructure flexible and consi
 
 Users manage their cloud resources through self-service tools provided by OpenStack.
 
-- Web dashboard for graphical access
+- Web dashboard (Horizon) for graphical access
 - Command line tools for scripting and automation
 - APIs for integration with other platforms
 
-All of these tools talk to OpenStack services using the same APIs, which keeps behavior consistent and predictable.
+All of these tools talk to OpenStack services using the same APIs, which keeps behavior consistent and predictable. Additionally, all three access methods rely on Keystone for authentication.
 
 ## Modular Design 
 

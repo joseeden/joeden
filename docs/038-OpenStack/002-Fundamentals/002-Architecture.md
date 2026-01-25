@@ -123,5 +123,23 @@ Content-Type: application/json
 
 The service responds with a JSON object containing identifiers and metadata, confirming the resource was created.
 
+## OpenStack Logical Architecture
+
+OpenStack consists of multiple independent services that works together to provide infrastructure as a service, and all communication happens through APIs. The services can be swapped or updated as long as APIs stay consistent.
+
+<div class='img-center'>
+
+![](/img/docs/openstack-arch-kilo-logical-v1.png)
+
+</div>
+
+
+Each service has internal components that interact through processes and message queues. For example:
+
+- Nova API receives requests and forwards them to other Nova components.
+- Requests are sent through message brokers like RabbitMQ.
+- Databases store service state, runtime data, and configuration. 
+- You can choose solutions like RabbitMQ, MySQL, MariaDB, or SQLite for deployment.
+
 
 
