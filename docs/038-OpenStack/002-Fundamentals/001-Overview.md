@@ -76,7 +76,40 @@ OpenStack focuses on IaaS, presenting compute, storage, and networking as self-s
 - Admins manage hypervisors and networks
 - Users manage OS and apps.
 
+## OpenStack 
+
+OpenStack is an open-source cloud platform that delivers IaaS capabilities. It orchestrates pools of compute, storage, and networking resources through APIs and a web dashboard.
+
+<div class='img-center'>  
+![](/img/docs/openstack-marketecture-diagram.png)  
+</div>  
+
+OpenStack turns all the hypervisors, storage, and network devices into pools of resources. Users can consume these resources without worrying about the underlying technology.
+
+- Compute (Nova) abstracts and orchestrates all hypervisors
+- Block storage (Cinder) provides persistent storage
+- Object storage (Swift) handles scalable data storage
+- Networking (Neutron) manages networks consistently
+
+
 ## OpenStack Architecture 
+
+OpenStack is modular, with core and optional projects. Core projects are commonly deployed, while optional projects depend on the use case.
+
+- Core projects handle essential cloud services
+- Optional projects provide additional features if needed
+- Horizon provides a dashboard and self-service capabilities
+
+Using the [Project Navigator website](https://www.openstack.org/software/project-navigator/openstack-components#openstack-services), you can see all OpenStack projects, their status, maturity, and sample configurations for real-world scenarios like web hosting, e-commerce, or big data.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-01-25-100628.png)
+
+</div>
+
+
+## Control and Data Planes 
 
 OpenStack separates control and data planes to manage resources efficiently. 
 
@@ -91,14 +124,6 @@ Separating these planes ensures workloads keep running even when controllers are
 ![](/img/docs/all-things-openstack.png)
 
 </div>
-
-## OpenStack Services
-
-OpenStack coordinates many services to deliver resources automatically. Administrators define policies once, and the platform enforces them consistently. This automation makes VM provisioning fast, reliable, and free from manual errors.
-
-<div class='img-center'>  
-![](/img/docs/openstack-marketecture-diagram.png)  
-</div>  
 
 
 ### Control Plane Services
