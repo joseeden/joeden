@@ -143,14 +143,22 @@ Storage design should match existing infrastructure and workload needs. A well-p
 
 ## Planning for Additional Services
 
-Core services are only part of a full OpenStack deployment.
+Core services are only part of a full OpenStack deployment. Additional services need careful planning to ensure scalability and reliability.
 
-- Monitoring and telemetry
-- Database and container services
-- Future expansion needs
+- **Monitoring and telemetry**
 
-Telemetry services generate extra network traffic and storage usage. Database and container services may require large instances and replication. Planning ahead prevents resource shortages later. OpenStack architecture becomes manageable when each service and its impact are clearly understood.
+  - Tracks system performance
+  - Supports proactive issue detection
+  - Adds extra network and storage load
 
-OpenStack architecture planning requires understanding control plane design, infrastructure dependencies, and workload needs. Careful design ensures the cloud is scalable, resilient, and ready for future growth.
+- **Database and container services**
 
+  - May require large instances
+  - Needs replication for high availability
+
+- **Future expansion needs**
+
+  - Planning ahead prevents resource shortages
+  - Supports smooth scaling of workloads
+  - Prepares for new services and users
 
