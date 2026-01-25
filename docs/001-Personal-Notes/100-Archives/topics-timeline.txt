@@ -86,6 +86,7 @@
 7/19/2023   - Golang
 8/24/2023   - Ruby
 8/24/2023   - Ruby on Rails
+9/15/2023   - OpenStack
 
 
 1/30/2024 - Cybersecurity

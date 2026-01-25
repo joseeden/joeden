@@ -277,9 +277,9 @@ project-abc-configs/
 
 Before getting started, make sure you have a running Kubernetes cluster. You can set up a local cluster using tools like:
 
-- [`kind`](/docs/040-Containerization/020-Kubernetes/010-Setting-Up-Kubernetes-using-Kind.md)
-- [`k3d`](/docs/040-Containerization/020-Kubernetes/011-Setting-Up-Kubernetes-using-k3d.md)
-- [`kubeadm`](/docs/040-Containerization/020-Kubernetes/017-Setting-up-Kubernetes-the-Hard-Way.md)
+- [`kind`](/docs/041-Containerization/020-Kubernetes/010-Setting-Up-Kubernetes-using-Kind.md)
+- [`k3d`](/docs/041-Containerization/020-Kubernetes/011-Setting-Up-Kubernetes-using-k3d.md)
+- [`kubeadm`](/docs/041-Containerization/020-Kubernetes/017-Setting-up-Kubernetes-the-Hard-Way.md)
 
 
 ### Clone the Repository  

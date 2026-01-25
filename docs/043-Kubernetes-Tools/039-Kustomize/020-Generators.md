@@ -36,7 +36,7 @@ git clone https://github.com/joseeden/labs-kustomize.git
 
 You will need a Kubernetes cluster to try out the examples.
 
-To setup a basic cluster, you can use [k3d](/docs/040-Containerization/020-Kubernetes/011-Setting-Up-Kubernetes-using-k3d.md).
+To setup a basic cluster, you can use [k3d](/docs/041-Containerization/020-Kubernetes/011-Setting-Up-Kubernetes-using-k3d.md).
 
 :::
 

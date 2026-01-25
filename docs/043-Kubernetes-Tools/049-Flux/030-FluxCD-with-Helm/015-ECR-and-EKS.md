@@ -41,7 +41,7 @@ This setup uses IAM roles instead of plain secrets for a more secure connection 
 ## Pre-requisites 
 
 - [Setting Up Git](/docs/043-Kubernetes-Tools/047-GitOps/016-Setting-Up-Git.md)
-- [Setting Up Kubernetes](/docs/040-Containerization/020-Kubernetes/010-Setting-Up-Kubernetes-using-Kind.md)
+- [Setting Up Kubernetes](/docs/041-Containerization/020-Kubernetes/010-Setting-Up-Kubernetes-using-Kind.md)
 - [Setting Up Flux](/docs/043-Kubernetes-Tools/049-Flux/015-Setting-Up-Flux.md)
 
 ## Project Directory 

@@ -21,10 +21,6 @@ Cloud computing involves accessing and utilizing computing resources and service
 
 ## Cloud Concepts 
 
-
-TO learn more, check out **Cloud Foundations** section.
-
-
 - **Utility Model**
 
     - Similar to utilities like electricity.

@@ -28,7 +28,7 @@ Flux CD is installed as a command-line tool. It works by pulling setup files fro
 ## Pre-requisites 
 
 - [Setting Up Git](/docs/043-Kubernetes-Tools/047-GitOps/016-Setting-Up-Git.md)
-- [Setting Up Kubernetes](/docs/040-Containerization/020-Kubernetes/010-Setting-Up-Kubernetes-using-Kind.md)
+- [Setting Up Kubernetes](/docs/041-Containerization/020-Kubernetes/010-Setting-Up-Kubernetes-using-Kind.md)
 
 ## Download Flux CLI Tool
 

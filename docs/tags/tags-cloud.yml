@@ -38,3 +38,7 @@ Google Cloud:
   label: 'Google Cloud'
   permalink: '/Google Cloud'
   description: 'Docs related to Google Cloud'
+OpenStack:
+  label: 'OpenStack'
+  permalink: '/OpenStack'
+  description: 'Docs related to OpenStack'  
