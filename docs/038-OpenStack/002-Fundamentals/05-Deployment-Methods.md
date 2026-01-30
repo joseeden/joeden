@@ -31,33 +31,34 @@ Vendor tools provide graphical interfaces, professional support, and advanced au
 
 ## Manual Installation
 
-Manual installation requires careful planning and multiple steps across nodes. You need to decide:
+Manual installation requires careful planning and multiple steps across nodes. 
 
-- Number of control, compute, and storage nodes
-- High availability setup
-- Network and storage configuration
+1. You need to plan for the following:
 
-After planning, the next steps are:
+    - Number of control, compute, and storage nodes
+    - High availability setup
+    - Network and storage configuration
 
-- Configure physical networking
-- Install the OS on each node
+2. After planning, the next steps are:
 
-The OpenStack infrastructure components are then deployed:
+    - Configure physical networking
+    - Install the OS on each node
 
-- Network and protocol software, web servers
-- SQL database with clustering if needed
-- Message queues and caching services
-- Additional components like Etcd for newer releases
+3. The OpenStack infrastructure components are then deployed:
 
-Once the infrastructure is ready, OpenStack services are installed:
+    - Network and protocol software, web servers
+    - SQL database with clustering if needed
+    - Message queues and caching services
+    - Additional components like Etcd for newer releases
 
-- Keystone (identity service) first
-- Then image, compute, network, and block storage services
-- Horizon dashboard for easier management
+4. Once the infrastructure is ready, OpenStack services are installed:
+
+    - Keystone (identity service) first
+    - Then image, compute, network, and block storage services
+    - Horizon dashboard for easier management
 
 Each service requires configuration files, usually with `.conf` or `.ini` extensions. You set database credentials, message queue info, authentication details, and service parameters. After configuring, you populate databases and start services.
 
-Manual installation is manageable if guides are followed carefully. It provides a solid understanding of OpenStack components and setup.
 
 
 ## Automated Deployment Tools
