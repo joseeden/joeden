@@ -105,14 +105,37 @@ OpenStack Ansible installs many services in Linux containers (LXC) or systemd un
 
 Workflow:
 
-1. Prepare deployment host with Ansible
-2. Configure target nodes, network, storage, and SSH
-3. Edit OpenStack Ansible configuration files
-4. Run scripts to deploy services
+1. Prepare deployment host with Ansible:
 
-### OpenStack on OpenStack (TripleO)
+    - Install software 
+    - Clone the OSA repo
 
-TripleO uses a small “undercloud” OpenStack to provision the main OpenStack (“overcloud”) nodes:
+2. Configure target nodes, network, storage, and SSH:
+
+    - Install software 
+    - Configure SSH 
+    - Configure network and storage settings
+
+3. Edit OpenStack Ansible configuration files:
+
+    - Add or remove OpenStack services 
+    - Configure credentials 
+
+4. Run scripts to deploy services:
+
+    - `setup_hosts.yml`
+    - `setup_infrastructure.yml`
+    - `setup_openstack.yml`
+
+5. Verify the OpenStack deployment:
+
+    - List LXC containers 
+    - Run CLI commands inside the utility containers 
+    - Login to Horizon
+
+### OpenStack-on-OpenStack (OOO)
+
+OpenStack-on-OpenStack uses a small “undercloud” OpenStack to provision the main OpenStack (“overcloud”) nodes:
 
 - Undercloud runs bare metal service (Ironic)
 - Overcloud nodes are deployed via orchestration templates
@@ -120,9 +143,16 @@ TripleO uses a small “undercloud” OpenStack to provision the main OpenStack 
 
 This approach is production-ready and simplifies scaling and upgrades.
 
+<div class='img-center'>
+
+![](/img/docs/opesntack-on-openstack-logical_view.png)
+
+</div>
+
+
 ## Development and POC Deployments
 
-For learning or proof-of-voncept deployments, the following lightweight tools are available:
+For learning or proof-of-concept deployments, the following lightweight tools are available:
 
 - **DevStack**
 
