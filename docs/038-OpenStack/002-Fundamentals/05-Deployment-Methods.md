@@ -44,7 +44,7 @@ Manual installation requires careful planning and multiple steps across nodes.
     - Configure physical networking
     - Install the OS on each node
 
-3. The OpenStack infrastructure components are then deployed:
+3. Deploy the infrastructure components:
 
     - Network and protocol software, web servers
     - SQL database with clustering if needed
@@ -57,7 +57,13 @@ Manual installation requires careful planning and multiple steps across nodes.
     - Then image, compute, network, and block storage services
     - Horizon dashboard for easier management
 
-Each service requires configuration files, usually with `.conf` or `.ini` extensions. You set database credentials, message queue info, authentication details, and service parameters. After configuring, you populate databases and start services.
+5. Final configuration and validation is performed:
+
+    - Configure service `.conf` / `.ini` files
+    - Set database, message queue, and authentication details
+    - Populate service databases and start services
+    - Verify services and basic functionality
+
 
 
 
@@ -65,15 +71,29 @@ Each service requires configuration files, usually with `.conf` or `.ini` extens
 
 Automated tools use scripts, containers, or orchestration to simplify OpenStack installation.
 
-### Cola
+### Kolla
 
-Cola packages OpenStack services in Docker containers and provides scripts for deployment:
+Kolla packages OpenStack services in Docker containers and provides scripts for deployment:
 
-- Cola Ansible uses Docker and Ansible for service provisioning
-- Includes HA features like HAProxy and Galera
-- Cola Kubernetes runs containers in Kubernetes using Helm for orchestration
+- **Kolla-Ansible** 
+  - Services runs on Docker runtime, installed on Linux
+  - Uses Ansible playbooks for service provisioning
+  - Includes features like HAProxy to loadbalance API traffic 
+  - Uses Galera for SQL database high availability
+
+- **Kolla Kubernetes**
+  - Services runs containers in Kubernetes 
+  - Uses Ansible to configure services
+  - Uses Helm for orchestration
 
 You need basic knowledge of Docker and Ansible for operations, but initial deployment is straightforward.
+
+<div class='img-center'>
+
+![](/img/docs/all-things-openstack-kolla-ansible.png)
+
+</div>
+
 
 ### OpenStack Ansible
 
