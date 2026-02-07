@@ -1,7 +1,12 @@
 ---
 title: "Jenkins REST API"
 description: "Using REST API methods to interact with Jenkins"
-tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins]
+tags:
+- CICD
+- Continuous Integration
+- Continuous Delivery
+- Continuous Deployment
+- Jenkins
 sidebar_position: 27
 last_update:
   date: 5/13/2020

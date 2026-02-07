@@ -1,7 +1,13 @@
 ---
 title: "Setup Tomcat as Staging Environment"
 description: "Using Tomcat as a Staging Environment"
-tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins, Tomcat]
+tags:
+- CICD
+- Continuous Integration
+- Continuous Delivery
+- Continuous Deployment
+- Jenkins
+- Tomcat
 sidebar_position: 6
 last_update:
   date: 5/15/2020

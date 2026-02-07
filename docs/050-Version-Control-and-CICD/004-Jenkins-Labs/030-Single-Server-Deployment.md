@@ -1,7 +1,12 @@
 ---
 title: "Single Server Deployment"
 description: "Deploying an App on a Single Server"
-tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins]
+tags:
+- CICD
+- Continuous Integration
+- Continuous Delivery
+- Continuous Deployment
+- Jenkins
 sidebar_position: 30
 last_update:
   date: 5/15/2020

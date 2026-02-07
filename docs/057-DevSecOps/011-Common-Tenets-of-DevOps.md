@@ -1,6 +1,10 @@
 ---
 title: "Common Tenets of DevOps"
-tags: [DevOps, Cloud, Automation, DevSecOps]
+tags:
+- DevOps
+- Cloud
+- Automation
+- DevSecOps
 sidebar_position: 11
 last_update:
   date: 3/17/2021

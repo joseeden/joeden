@@ -1,7 +1,12 @@
 ---
 title: "Jenkins Parameters"
 description: "Customize the Pipeline using Parameters"
-tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins]
+tags:
+- CICD
+- Continuous Integration
+- Continuous Delivery
+- Continuous Deployment
+- Jenkins
 sidebar_position: 21
 last_update:
   date: 5/13/2020

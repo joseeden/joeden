@@ -1,7 +1,12 @@
 ---
 title: "Change Timezone"
 description: "Set the timezone of the Jenkins server"
-tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins]
+tags:
+- CICD
+- Continuous Integration
+- Continuous Delivery
+- Continuous Deployment
+- Jenkins
 sidebar_position: 51
 last_update:
   date: 5/13/2020

@@ -1,7 +1,13 @@
 ---
 title: "Installing Jenkins"
 description: "The Manual Way"
-tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins, Ansible]
+tags:
+- CICD
+- Continuous Integration
+- Continuous Delivery
+- Continuous Deployment
+- Jenkins
+- Ansible
 sidebar_position: 4
 last_update:
   date: 5/15/2020

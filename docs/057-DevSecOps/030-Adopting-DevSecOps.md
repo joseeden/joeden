@@ -1,6 +1,10 @@
 ---
 title: "Adopting DevSecOps"
-tags: [DevOps, Cloud, Automation, DevSecOps]
+tags:
+- DevOps
+- Cloud
+- Automation
+- DevSecOps
 sidebar_position: 30
 last_update:
   date: 3/17/2021

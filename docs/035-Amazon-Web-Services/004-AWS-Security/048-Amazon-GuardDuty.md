@@ -1,8 +1,9 @@
 ---
 title: "Amazon GuardDuty"
 description: "Intelligent threat detection"
+tags: 
 - Cloud
-- AWS
+- Amazon Web Services
 - DevOps
 - Security
 - Certifications

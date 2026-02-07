@@ -1,7 +1,12 @@
 ---
 title: "Distributed Builds"
 description: "Using Jenkins agents to run parallel builds"
-tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins]
+tags:
+- CICD
+- Continuous Integration
+- Continuous Delivery
+- Continuous Deployment
+- Jenkins
 sidebar_position: 22
 last_update:
   date: 5/15/2020

@@ -1,6 +1,9 @@
 ---
 title: "GCP DevOps Project"
-tags: [Google Cloud, DevOps, Cloud]
+tags: 
+- Google Cloud
+- DevOps
+- Cloud
 sidebar_position: 1
 last_update:
   date: 9/21/2020

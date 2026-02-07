@@ -1,7 +1,12 @@
 ---
 title: "Nested and Parallel Stages"
 description: "Using sensitive information in Jenkins"
-tags: [CICD, Continuous Integration, Continuous Delivery, Continuous Deployment, Jenkins]
+tags:
+- CICD
+- Continuous Integration
+- Continuous Delivery
+- Continuous Deployment
+- Jenkins
 sidebar_position: 19
 last_update:
   date: 5/13/2020
