@@ -121,27 +121,32 @@ System Hardening:
   label: 'System Hardening'
   permalink: '/system-hardening'
 
-
+# --------------- Security Layers ---------------
 Asset Security:
   label: 'Asset Security'
   permalink: '/Asset Security'
   description: 'Docs related to Asset Security'
+  
 Network Security:
   label: 'Network Security'
   permalink: '/Network Security'
   description: 'Docs related to Network Security'   
+  
 Data Security:
   label: 'Data Security'
   permalink: '/Data Security'
-  description: 'Docs related to Data Security'   
+  description: 'Docs related to Data Security' 
+    
 Application Security:
   label: 'Application Security'
   permalink: '/Application Security'
-  description: 'Docs related to Application Security'     
+  description: 'Docs related to Application Security' 
+      
 Software Development Security:
   label: 'Software Development Security'
   permalink: '/Software Development Security'
-  description: 'Docs related to Software Development Security'       
+  description: 'Docs related to Software Development Security' 
+        
 Cryptography:
   label: 'Cryptography'
   permalink: '/Cryptography'

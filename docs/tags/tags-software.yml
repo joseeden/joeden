@@ -1,84 +1,128 @@
+# --------------- Foundations & Concepts ---------------
 Computer Science:
   label: 'Computer Science'
-  permalink: '/Computer Science'
-  description: 'Docs related to Computer Science'  
-Application Development:
-  label: 'Application Development'
-  permalink: '/Application Development'
-  description: 'Docs related to Application Development'  
+  permalink: '/computer-science'
+  description: 'Docs related to computer science fundamentals'
+
 Software Development:
   label: 'Software Development'
-  permalink: '/Software Development'
-  description: 'Docs related to Software Development'    
+  permalink: '/software-development'
+  description: 'Docs related to software development practices'
+
+Application Development:
+  label: 'Application Development'
+  permalink: '/application-development'
+  description: 'Docs related to building applications'
+
+# --------------- Web & Application Development ---------------
 Web Development:
   label: 'Web Development'
-  permalink: '/Web Development'
-  description: 'Docs related to Web Development' 
+  permalink: '/web-development'
+  description: 'Docs related to web applications'
+
 Frontend Development:
   label: 'Frontend Development'
-  permalink: '/Frontend Development'
-  description: 'Docs related to Frontend Development'       
+  permalink: '/frontend-development'
+  description: 'Docs related to frontend UI development'
+
 Backend Development:
   label: 'Backend Development'
-  permalink: '/Backend Development'
-  description: 'Docs related to Backend Development'     
+  permalink: '/backend-development'
+  description: 'Docs related to backend services'
+
+REST APIs:
+  label: 'REST APIs'
+  permalink: '/rest-apis'
+  description: 'Docs related to RESTful API development'
+
+API Design:
+  label: 'API Design'
+  permalink: '/api-design'
+  description: 'Docs on API structure and standards'
+
+# --------------- Frontend ---------------
 HTML:
   label: 'HTML'
-  permalink: '/HTML'
-  description: 'Docs related to HTML'       
+  permalink: '/html'
+
 CSS:
   label: 'CSS'
-  permalink: '/CSS'
-  description: 'Docs related to CSS'    
+  permalink: '/css'
+
 Bootstrap:
   label: 'Bootstrap'
   permalink: '/Bootstrap'
   description: 'Docs related to Bootstrap'    
+
+React:
+  label: 'React'
+  permalink: '/react'
+
+Vue:
+  label: 'Vue'
+  permalink: '/vue'
+
+# --------------- Programming Languages ---------------
 Python:
   label: 'Python'
-  permalink: '/Python'
-  description: 'Docs related to Python'  
-NumPy:
-  label: 'NumPy'
-  permalink: '/NumPy'
-  description: 'Docs related to NumPy'    
-Matplotlib:
-  label: 'Matplotlib'
-  permalink: '/Matplotlib'
-  description: 'Docs related to Matplotlib'    
+  permalink: '/python'
+
 Java:
   label: 'Java'
-  permalink: '/Java'
-  description: 'Docs related to Java'  
+  permalink: '/java'
+
 Javascript:
-  label: 'Javascript'
-  permalink: '/Javascript'
-  description: 'Docs related to Javascript'      
-NodeJS:
-  label: 'NodeJS'
-  permalink: '/NodeJS'
-  description: 'Docs related to NodeJS'  
+  label: 'JavaScript'
+  permalink: '/javascript'
+
 Typescript:
-  label: 'Typescript'
-  permalink: '/Typescript'
-  description: 'Docs related to Typescript'    
+  label: 'TypeScript'
+  permalink: '/typescript'
+
 Golang:
   label: 'Golang'
-  permalink: '/Golang'
-  description: 'Docs related to Golang'    
+  permalink: '/golang'
+
 Ruby:
   label: 'Ruby'
-  permalink: '/Ruby'
-  description: 'Docs related to Ruby'    
+  permalink: '/ruby'
+
+# --------------- Frameworks & Runtimes ---------------
+NodeJS:
+  label: 'NodeJS'
+  permalink: '/nodejs'
+
 Ruby on Rails:
   label: 'Ruby on Rails'
-  permalink: '/Ruby on Rails'
-  description: 'Docs related to Ruby on Rails'    
-REST APIs:
-  label: 'REST APIs'
-  permalink: '/REST APIs'
-  description: 'Docs related to REST APIs'  
+  permalink: '/ruby-on-rails'
+
+Flask:
+  label: 'Flask'
+  permalink: '/flask'
+
+Spring Boot:
+  label: 'Spring Boot'
+  permalink: '/spring-boot'
+
+# --------------- Libraries & Data Tools ---------------
+NumPy:
+  label: 'NumPy'
+  permalink: '/numpy'
+
+Matplotlib:
+  label: 'Matplotlib'
+  permalink: '/matplotlib'
+
+Pandas:
+  label: 'Pandas'
+  permalink: '/pandas'
+
+# --------------- Development Methodologies ---------------
 Lean Management:
   label: 'Lean Management'
   permalink: '/Lean Management'
   description: 'Docs related to Lean Management'   
+
+Clean Code:
+  label: 'Clean Code'
+  permalink: '/clean-code'

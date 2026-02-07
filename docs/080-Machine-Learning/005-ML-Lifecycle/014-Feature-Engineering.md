@@ -4,6 +4,7 @@ description: "Feature Engineering"
 tags: 
 - Machine Learning
 - MLOps
+- Pandas
 sidebar_position: 13
 last_update:
   date: 5/17/2023

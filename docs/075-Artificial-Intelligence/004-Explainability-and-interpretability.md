@@ -5,6 +5,7 @@ tags:
 - Data Science
 - Machine Learning
 - Artificial Intelligence
+- Pandas
 sidebar_position: 4
 last_update:
   date: 5/26/2023

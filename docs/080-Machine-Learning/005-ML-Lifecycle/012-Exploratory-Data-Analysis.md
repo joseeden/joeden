@@ -4,6 +4,7 @@ description: "Exploratory Data Analysis"
 tags: 
 - Machine Learning
 - MLOps
+- Pandas
 sidebar_position: 12
 last_update:
   date: 5/12/2023

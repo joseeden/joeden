@@ -5,6 +5,7 @@ tags:
 - Linux
 - Amazon Web Services
 - Labs
+- Pandas
 sidebar_position: 22
 last_update:
   date: 7/29/2020

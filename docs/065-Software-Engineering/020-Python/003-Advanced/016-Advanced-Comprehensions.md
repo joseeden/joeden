@@ -6,6 +6,7 @@ tags:
 - Application Development
 - Software Development
 - Python
+- Pandas
 sidebar_position: 16
 last_update:
   date: 11/10/2019

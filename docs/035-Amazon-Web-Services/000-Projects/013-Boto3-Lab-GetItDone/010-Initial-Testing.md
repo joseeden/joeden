@@ -4,6 +4,7 @@ description: "Initial Testing"
 tags: 
 - Amazon Web Services
 - Labs
+- Pandas
 sidebar_position: 10
 last_update:
   date: 7/29/2020

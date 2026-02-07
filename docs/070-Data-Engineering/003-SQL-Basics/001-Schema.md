@@ -1,7 +1,11 @@
 ---
 title: "Schemas"
 description: "SQL Fundamentals"
-tags: [Data Engineering, Databases, SQL]
+tags: 
+- Data Engineering
+- Databases
+- SQL
+- Pandas
 sidebar_position: 1
 last_update:
   date: 8/23/2019

@@ -1,7 +1,10 @@
 ---
 title: "SQL Operators"
 description: "SQL Fundamentals"
-tags: [Data Engineering, Databases, SQL]
+tags: 
+- Data Engineering
+- Databases
+- SQL
 sidebar_position: 4
 last_update:
   date: 8/23/2019
