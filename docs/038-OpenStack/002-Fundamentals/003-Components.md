@@ -102,11 +102,24 @@ Cinder provides block storage for instances that need to keep data after termina
 - Keeps data after VM termination
 
 
+<div class='img-center'>
+
+![](/img/docs/OpenStack_BlockStorage_backup.png)
+
+</div>
+
+
 ## Swift – Object Storage
 
 Swift offers simple object storage for files like videos or backups. It uses HTTP-based APIs with GET and PUT commands and scales easily for large datasets.
 
 Swift is highly scalable and flexible, and it is ideal for storing unstructured data and powering large-scale applications like websites or media storage.
+
+<div class='img-center'>
+
+![](/img/docs/all-things-openstack-swift.png)
+
+</div>
 
 
 ## Horizon – Web Dashboard
@@ -114,4 +127,11 @@ Swift is highly scalable and flexible, and it is ideal for storing unstructured 
 Horizon provides a web interface for managing OpenStack services. Users can launch instances, assign IPs, configure access, and more, all through a browser.
 
 Horizon makes it easy for users to control cloud resources without needing command-line access.
+
+<div class='img-center'>
+
+![](/img/docs/dashboard_project_tab.png)
+
+</div>
+
 
