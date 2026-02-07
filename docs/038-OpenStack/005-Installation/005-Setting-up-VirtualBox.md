@@ -24,14 +24,17 @@ The goal is to set up a minimal system that uses a simple CentOS virtual machine
 
 Get the minimal CentOS ISO before starting the VM setup.
 
-1. Download ISO image for CentOS Stream 10.
+1. Download ISO image.
 2. Save file locally
 
 Using the minimal ISO keeps installation fast and simple. Having the file ready locally avoids delays during VM creation and keeps the process smooth.
 
-Reference: [CentOS website.](https://www.centos.org/download/)
+Reference: 
 
-**UPDATE**: Due to compatibility issues with CentOS Stream 10 and the many problems encountered during installation, I have switched to using CentOS Stream 9.
+- [CentOS Stream 9 DVD ISO](https://www.centos.org/download/)
+- [AlmaLinux 8.10 Minimal ISO](https://almalinux.org/get-almalinux/)
+
+**UPDATE**: Due to compatibility issues with CentOS Stream 9 and 10 and the many problems encountered during installation, I have switched to using AlmaLinux 8.10.
 
 ## 2. Create Virtual Machine
 
@@ -42,7 +45,7 @@ Create a VM with enough resources so CentOS runs properly.
 1. Open VirtualBox and click **New** 
 2. Set the VM name, the VM folder, and the ISO image
 
-**UPDATE**: Due to compatibility issues with CentOS Stream 10 and the many problems encountered during installation, I have switched to using CentOS Stream 9.
+**UPDATE**: Due to compatibility issues with CentOS Stream 9 and 10 and the many problems encountered during installation, I have switched to using AlmaLinux 8.10.
 
 <div class='img-center'>
 
@@ -150,7 +153,7 @@ Bridged mode allows the VM to behave like a normal device on the network. Promis
 
 </div>
 
-Additionalyly, go to **Storage** click the plus button, and choose **Optical Drive**:
+Additionally, go to **Storage** click the plus button, and choose **Optical Drive**:
 
 <div class='img-center'>
 
@@ -167,16 +170,31 @@ Select VBoxGuestAdditions.iso and click **Choose.**
 </div>
 
 Make sure there are two devices under **Controller: SATA.** 
-Click **OK.**
+
+Enable both options below:
+
+✅ Hot-pluggable
+✅ Live CD/DVD
+
+Then click **OK.**
 
 <div class='img-center'>
 
-![](/img/docs/Screenshot-2026-02-08-042025.png)
+<!-- ![](/img/docs/Screenshot-2026-02-08-042025.png) -->
+![](/img/docs/Screenshot-2026-02-08-043223.png)
+
+</div>
+
+**UPDATE:** Go to **System** and ensure that Optical is set as the first boot device. You can click the arrow keys beside it to move the device.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-08-051455.png)
 
 </div>
 
 
-## 4. Install CentOS System
+## 4. Start the VM
 
 Start the machine and complete the installation using the GUI installer.
 
