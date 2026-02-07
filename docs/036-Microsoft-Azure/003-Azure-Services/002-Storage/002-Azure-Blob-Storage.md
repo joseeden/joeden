@@ -1,7 +1,11 @@
 ---
 title: "Azure Blob Storage"
 description: "Scalable and secure object storage in the cloud"
-tags: [Cloud, Microsoft Azure, DevOps, Certifications]
+tags:
+- Cloud
+- Microsoft Azure
+- DevOps
+- Certifications
 sidebar_position: 2
 last_update:
   date: 11/16/2020

@@ -1,7 +1,11 @@
 ---
 title: "Private Endpoints"
 description: "Connecting privately through a network interface"
-tags: [Cloud, Microsoft Azure, DevOps, Certifications]
+tags:
+- Cloud
+- Microsoft Azure
+- DevOps
+- Certifications
 sidebar_position: 7
 last_update:
   date: 11/16/2020

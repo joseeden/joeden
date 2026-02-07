@@ -1,7 +1,11 @@
 ---
 title: "Azure Queues"
 description: "Durable queues for large-volume cloud services."
-tags: [Cloud, Microsoft Azure, DevOps, Certifications]
+tags:
+- Cloud
+- Microsoft Azure
+- DevOps
+- Certifications
 sidebar_position: 4
 last_update:
   date: 11/16/2020

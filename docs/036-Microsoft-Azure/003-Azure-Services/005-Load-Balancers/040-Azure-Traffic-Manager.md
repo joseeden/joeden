@@ -1,7 +1,11 @@
 ---
 title: "Azure Traffic Manager"
 description: ""
-tags: [Cloud, Microsoft Azure, DevOps, Certifications]
+tags:
+- Cloud
+- Microsoft Azure
+- DevOps
+- Certifications
 sidebar_position: 40
 last_update:
   date: 11/16/2020

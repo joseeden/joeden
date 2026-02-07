@@ -1,7 +1,11 @@
 ---
 title: "Microsoft Azure Overview"
 description: "A 10,000 ft view of Microsoft Azure"
-tags: [Cloud, Microsoft Azure, DevOps, Certifications]
+tags:
+- Cloud
+- Microsoft Azure
+- DevOps
+- Certifications
 sidebar_position: 1
 last_update:
   date: 11/16/2020

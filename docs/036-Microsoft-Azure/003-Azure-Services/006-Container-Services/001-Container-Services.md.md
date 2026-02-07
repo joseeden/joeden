@@ -1,7 +1,11 @@
 ---
 title: "Containers in Azure"
 description: "Containers in Azure"
-tags: [Cloud, Microsoft Azure, DevOps, Certifications]
+tags:
+- Cloud
+- Microsoft Azure
+- DevOps
+- Certifications
 sidebar_position: 1
 last_update:
   date: 11/16/2020

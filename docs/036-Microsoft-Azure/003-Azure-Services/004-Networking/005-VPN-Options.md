@@ -1,7 +1,11 @@
 ---
 title: "VPN"
 description: "Seamless integration between on-premise and the cloud"
-tags: [Cloud, Microsoft Azure, DevOps, Certifications]
+tags:
+- Cloud
+- Microsoft Azure
+- DevOps
+- Certifications
 sidebar_position: 5
 last_update:
   date: 11/16/2020

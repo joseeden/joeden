@@ -1,7 +1,12 @@
 ---
 title: "AWS Trusted Advisor"
 description: "Optimize costs, performance, etc."
-tags: [Cloud, AWS, DevOps, Security, Certifications]
+tags:
+- Cloud
+- AWS
+- DevOps
+- Security
+- Certifications
 sidebar_position: 49
 last_update:
   date: 8/30/2020

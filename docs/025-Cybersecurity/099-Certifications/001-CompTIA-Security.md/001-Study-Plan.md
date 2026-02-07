@@ -1,7 +1,11 @@
 ---
 title: "Study Plan"
 description: "Study Plan for CompTIA Security+"
-tags: [Security, Cybersecurity, Certifications, Comptia Security]
+tags:
+- Security
+- Cybersecurity
+- Certifications
+- Comptia Security
 sidebar_position: 1
 # last_update:
 #   date: 1/30/2024

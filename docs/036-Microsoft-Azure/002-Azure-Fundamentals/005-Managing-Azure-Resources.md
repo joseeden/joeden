@@ -1,7 +1,11 @@
 ---
 title: "Managing Azure Resources"
 description: "Tools for managing Azure resources"
-tags: [Cloud, Microsoft Azure, DevOps, Certifications]
+tags:
+- Cloud
+- Microsoft Azure
+- DevOps
+- Certifications
 sidebar_position: 5
 last_update:
   date: 11/16/2020

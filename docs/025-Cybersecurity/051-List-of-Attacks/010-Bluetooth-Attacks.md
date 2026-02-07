@@ -1,6 +1,7 @@
 ---
 title: "Bluetooth Attacks"
-tags: [Cybersecurity]
+tags: 
+- Cybersecurity
 sidebar_position: 10
 last_update:
   date: 1/30/2024

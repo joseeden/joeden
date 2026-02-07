@@ -1,6 +1,9 @@
 ---
 title: "Cloud Deployment Models"
-tags: [Cloud, DevOps, Certifications]
+tags:
+- Cloud
+- DevOps
+- Certifications
 sidebar_position: 3
 last_update:
   date: 2/28/2020

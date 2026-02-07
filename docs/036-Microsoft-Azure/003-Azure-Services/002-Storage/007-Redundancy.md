@@ -1,7 +1,11 @@
 ---
 title: "Redundancy Options"
 description: "From locally-redundant to geo-zone-redundant storage"
-tags: [Cloud, Microsoft Azure, DevOps, Certifications]
+tags:
+- Cloud
+- Microsoft Azure
+- DevOps
+- Certifications
 sidebar_position: 7
 last_update:
    date: 11/16/2020

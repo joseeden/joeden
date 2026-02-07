@@ -1,7 +1,11 @@
 ---
 title: "Azure Data Lake Storage"
 description: "Analyze all your data in a single place"
-tags: [Cloud, Microsoft Azure, DevOps, Certifications]
+tags:
+- Cloud
+- Microsoft Azure
+- DevOps
+- Certifications
 sidebar_position: 10
 last_update:
    date: 11/16/2020

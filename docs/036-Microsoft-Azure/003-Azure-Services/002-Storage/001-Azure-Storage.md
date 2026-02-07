@@ -1,7 +1,11 @@
 ---
 title: "Azure Storage"
 description: "Highly available storage in the cloud"
-tags: [Cloud, Microsoft Azure, DevOps, Certifications]
+tags:
+- Cloud
+- Microsoft Azure
+- DevOps
+- Certifications
 sidebar_position: 1
 last_update:
   date: 11/16/2020

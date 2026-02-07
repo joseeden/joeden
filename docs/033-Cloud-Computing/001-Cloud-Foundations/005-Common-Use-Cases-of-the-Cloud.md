@@ -1,6 +1,9 @@
 ---
 title: "Use Cases of the Cloud"
-tags: [Cloud, DevOps, Certifications]
+tags:
+- Cloud
+- DevOps
+- Certifications
 sidebar_position: 5
 last_update:
   date: 2/28/2020

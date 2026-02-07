@@ -1,6 +1,7 @@
 ---
 title: "Execution and Escalation"
-tags: [Cybersecurity]
+tags: 
+- Cybersecurity
 sidebar_position: 14
 last_update:
   date: 1/30/2024

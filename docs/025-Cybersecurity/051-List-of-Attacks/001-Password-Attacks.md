@@ -1,6 +1,7 @@
 ---
 title: "Password Attacks"
-tags: [Cybersecurity]
+tags: 
+- Cybersecurity
 sidebar_position: 1
 last_update:
   date: 1/30/2024

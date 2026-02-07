@@ -1,6 +1,9 @@
 ---
 title: "Data Center Architecture in the Cloud"
-tags: [Cloud, DevOps, Certifications]
+tags:
+- Cloud
+- DevOps
+- Certifications
 sidebar_position: 6
 last_update:
   date: 2/28/2020

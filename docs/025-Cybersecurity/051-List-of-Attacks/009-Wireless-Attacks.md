@@ -1,6 +1,7 @@
 ---
 title: "Wireless Attacks"
-tags: [Cybersecurity]
+tags: 
+- Cybersecurity
 sidebar_position: 9
 last_update:
   date: 1/30/2024

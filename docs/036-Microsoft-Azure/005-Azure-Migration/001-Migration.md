@@ -1,7 +1,11 @@
 ---
 title: "Azure Migration"
 description: "Migrating applications to Azure"
-tags: [Cloud, Microsoft Azure, DevOps, Certifications]
+tags:
+- Cloud
+- Microsoft Azure
+- DevOps
+- Certifications
 sidebar_position: 1
 last_update:
   date: 11/22/2020

@@ -1,6 +1,10 @@
 ---
 title: "Cloud Native"
-tags: [Cloud, Cloud Architecture, Cloud Native, Certifications]
+tags:
+- Cloud
+- Cloud Architecture
+- Cloud Native
+- Certifications
 sidebar_position: 1
 last_update:
   date: 3/19/2020

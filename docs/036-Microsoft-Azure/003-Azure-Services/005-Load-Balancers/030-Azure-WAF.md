@@ -1,7 +1,11 @@
 ---
 title: "Azure Web Application Firewall"
 description: "Centralized protection of your web applications"
-tags: [Cloud, Microsoft Azure, DevOps, Certifications]
+tags:
+- Cloud
+- Microsoft Azure
+- DevOps
+- Certifications
 sidebar_position: 30
 last_update:
   date: 11/16/2020

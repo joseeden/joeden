@@ -1,6 +1,7 @@
 ---
 title: "DNS Attacks"
-tags: [Cybersecurity]
+tags: 
+- Cybersecurity
 sidebar_position: 8
 last_update:
   date: 1/30/2024

@@ -1,7 +1,11 @@
 ---
 title: "Filtering and Routing"
 description: "Using security groups in Azure"
-tags: [Cloud, Microsoft Azure, DevOps, Certifications]
+tags:
+- Cloud
+- Microsoft Azure
+- DevOps
+- Certifications
 sidebar_position: 3
 last_update:
   date: 11/16/2020

@@ -1,7 +1,11 @@
 ---
 title: "Troubleshooting, Governance, and Compliance"
 description: "Tools for troubleshooting, governance, and ensuring compliance"
-tags: [Cloud, Microsoft Azure, DevOps, Certifications]
+tags:
+- Cloud
+- Microsoft Azure
+- DevOps
+- Certifications
 sidebar_position: 15
 last_update:
   date: 11/16/2020

@@ -1,6 +1,9 @@
 ---
 title: "Being a Cloud Architect"
-tags: [Cloud, Cloud Architecture, Certifications]
+tags:
+- Cloud
+- Cloud Architecture
+- Certifications
 sidebar_position: 2
 last_update:
   date: 3/19/2020

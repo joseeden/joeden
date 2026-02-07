@@ -1,7 +1,11 @@
 ---
 title: "Reducing Costs"
 description: "Reducing costs in your Azure solutions"
-tags: [Cloud, Microsoft Azure, DevOps, Certifications]
+tags:
+- Cloud
+- Microsoft Azure
+- DevOps
+- Certifications
 sidebar_position: 4
 last_update:
   date: 11/16/2020
