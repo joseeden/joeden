@@ -1,7 +1,10 @@
 ---
 title: "Asset and Change Management"
 description: "Enhancing resource utilization"
-tags: [Security, Cybersecurity, Security Operations]
+tags: 
+- Security
+- Cybersecurity
+- Security Operations
 sidebar_position: 70
 last_update:
   date: 1/30/2024

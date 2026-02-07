@@ -1,6 +1,9 @@
 ---
 title: "Formatting and Mounting Disks"
-tags: [Linux, Red Hat, Certifications]
+tags: 
+- Linux
+- Red Hat
+- Certifications
 sidebar_position: 26
 last_update:
   date: 11/6/2021

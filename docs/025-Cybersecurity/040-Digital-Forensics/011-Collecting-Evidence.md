@@ -1,7 +1,10 @@
 ---
 title: "Collecting Evidence"
 description: "Order of Volatility and Data Collection Procedures"
-tags: [Security, Cybersecurity, Incident Response]
+tags:
+- Security
+- Cybersecurity
+- Incident Response
 sidebar_position: 11
 last_update:
   date: 1/30/2024

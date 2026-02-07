@@ -1,7 +1,11 @@
 ---
 title: "Data Security"
 description: "Securing data"
-tags: [Security, Cybersecurity, Security Operations, Data Security]
+tags: 
+- Security
+- Cybersecurity
+- Security Operations
+- Data Security
 sidebar_position: 3
 last_update:
   date: 1/30/2024

@@ -1,7 +1,11 @@
 ---
 title: "Securing the Network"
 description: "Securing the network infrastructure"
-tags: [Security, Cybersecurity, Security Architecture, Security Engineering]
+tags: 
+- Security
+- Cybersecurity
+- Security Architecture
+- Security Engineering
 sidebar_position: 51
 last_update:
   date: 1/30/2024

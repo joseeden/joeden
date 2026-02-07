@@ -1,7 +1,10 @@
 ---
 title: "Baselines and Standards"
 description: "Security Baselines and Security Standards"
-tags: [Security, Cybersecurity, Data Security]
+tags: 
+- Security
+- Cybersecurity
+- Data Security
 sidebar_position: 49
 last_update:
   date: 1/30/2024

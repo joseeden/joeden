@@ -1,7 +1,11 @@
 ---
 title: "Data Handling"
 description: "Classifications, Ownership, and Lifecycle"
-tags: [Security, Cybersecurity, Security Operations, Data Security]
+tags: 
+- Security
+- Cybersecurity
+- Security Operations
+- Data Security
 sidebar_position: 2
 last_update:
   date: 1/30/2024

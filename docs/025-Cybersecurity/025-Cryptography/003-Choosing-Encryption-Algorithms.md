@@ -1,7 +1,10 @@
 ---
 title: "Choosing Encryption Algorithms"
 description: "The perfect encryption algorithm"
-tags: [Security, Cybersecurity, Cryptography]
+tags: 
+- Security
+- Cybersecurity
+- Cryptography
 sidebar_position: 3
 last_update:
   date: 1/30/2024

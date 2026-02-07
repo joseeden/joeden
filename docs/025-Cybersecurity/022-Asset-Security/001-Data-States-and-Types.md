@@ -1,7 +1,11 @@
 ---
 title: "Data States and Types"
 description: "States, Types, and Classifications of Data"
-tags: [Security, Cybersecurity, Security Operations, Data Security]
+tags: 
+- Security
+- Cybersecurity
+- Security Operations
+- Data Security
 sidebar_position: 1
 last_update:
   date: 1/30/2024

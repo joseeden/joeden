@@ -1,6 +1,9 @@
 ---
 title: Format of `/etc/passwd`
-tags: [Linux, Red Hat, Certifications]
+tags: 
+- Linux
+- Red Hat
+- Certifications
 sidebar_position: 6
 last_update:
   date: 3/21/2021

@@ -1,7 +1,10 @@
 ---
 title: "Tor Browser"
 description: "The Onion Router"
-tags: [Security, Cybersecurity, Cryptography]
+tags: 
+- Security
+- Cybersecurity
+- Cryptography
 sidebar_position: 15
 last_update:
   date: 1/30/2024

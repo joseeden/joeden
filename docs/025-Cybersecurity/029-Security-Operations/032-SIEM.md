@@ -1,7 +1,11 @@
 ---
 title: "SIEM"
 description: "Security Information and Event Management"
-tags: [Security, Cybersecurity, Security Operations, Vulnerability Management]
+tags: 
+- Security
+- Cybersecurity
+- Security Operations
+- Vulnerability Management
 sidebar_position: 32
 last_update:
   date: 1/30/2024

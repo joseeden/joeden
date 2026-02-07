@@ -2,7 +2,10 @@
 title: "A Day in the Life of an IT Support"
 description: "What's in a day like"
 sidebar_position: 2
-tags: [IT Fundamentals, Computers, Operating Systems]
+tags: 
+- IT Fundamentals
+- Computers
+- Operating Systems
 last_update:
   date: 5/19/2017
 ---

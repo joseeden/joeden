@@ -1,6 +1,9 @@
 ---
 title: "ABRT and SOS Reports"
-tags: [Linux, Red Hat, Certifications]
+tags: 
+- Linux
+- Red Hat
+- Certifications
 sidebar_position: 46
 last_update:
   date: 3/21/2021

@@ -1,6 +1,9 @@
 ---
 title: "Archive and Backup"
-tags: [Linux, Red Hat, Certifications]
+tags: 
+- Linux
+- Red Hat
+- Certifications
 sidebar_position: 12
 last_update:
   date: 3/21/2021

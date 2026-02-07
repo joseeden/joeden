@@ -1,7 +1,10 @@
 ---
 title: "Code versus Ciphers"
 description: "Algorithm for encrypting and decrypting information"
-tags: [Security, Cybersecurity, Cryptography]
+tags: 
+- Security
+- Cybersecurity
+- Cryptography
 sidebar_position: 2
 last_update:
   date: 1/30/2024

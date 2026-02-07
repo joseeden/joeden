@@ -1,7 +1,11 @@
 ---
 title: "Conducting Investigations"
 description: "Types of Investigations in Cybersecurity"
-tags: [Security, Cybersecurity, Incident Response, Digital Forensics]
+tags:
+- Security
+- Cybersecurity
+- Incident Response
+- Digital Forensics
 sidebar_position: 1
 last_update:
   date: 1/30/2024

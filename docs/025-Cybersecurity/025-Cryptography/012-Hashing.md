@@ -1,7 +1,10 @@
 ---
 title: "Hashing"
 description: "Converting data into fixed-size value using a function"
-tags: [Security, Cybersecurity, Cryptography]
+tags: 
+- Security
+- Cybersecurity
+- Cryptography
 sidebar_position: 12
 last_update:
   date: 1/30/2024

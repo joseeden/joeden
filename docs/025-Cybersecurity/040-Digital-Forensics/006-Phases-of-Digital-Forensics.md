@@ -1,7 +1,11 @@
 ---
 title: "Phases of Digital Forensics"
 description: "Identification, Collection, Analysis, and Reporting"
-tags: [Security, Cybersecurity, Incident Response, Digital Forensics]
+tags:
+- Security
+- Cybersecurity
+- Incident Response
+- Digital Forensics
 sidebar_position: 6
 last_update:
   date: 1/30/2024

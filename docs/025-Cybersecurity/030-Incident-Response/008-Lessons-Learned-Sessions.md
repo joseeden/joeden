@@ -1,7 +1,10 @@
 ---
 title: "Lessons Learned Sessions"
 description: "Reflect and Improve"
-tags: [Security, Cybersecurity, Incident Response]
+tags:
+- Security
+- Cybersecurity
+- Incident Response
 sidebar_position: 8
 last_update:
   date: 1/30/2024

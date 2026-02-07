@@ -1,7 +1,10 @@
 ---
 title: "Recovery and Reconstitution"
 description: "Restoring to normal operations"
-tags: [Security, Cybersecurity, Incident Response]
+tags:
+- Security
+- Cybersecurity
+- Incident Response
 sidebar_position: 7
 last_update:
   date: 1/30/2024

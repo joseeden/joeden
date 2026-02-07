@@ -1,7 +1,10 @@
 ---
 title: "Acquisition and Procurement"
 description: "Managing goods and services"
-tags: [Security, Cybersecurity, Security Operations]
+tags: 
+- Security
+- Cybersecurity
+- Security Operations
 sidebar_position: 72
 last_update:
   date: 1/30/2024

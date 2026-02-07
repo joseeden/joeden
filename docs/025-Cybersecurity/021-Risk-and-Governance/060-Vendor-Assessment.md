@@ -1,7 +1,10 @@
 ---
 title: "Vendor Assessment"
 description: "Assessing vendors"
-tags: [Security, Cybersecurity, Security Operations]
+tags: 
+- Security
+- Cybersecurity
+- Security Operations
 sidebar_position: 60
 last_update:
   date: 1/30/2024

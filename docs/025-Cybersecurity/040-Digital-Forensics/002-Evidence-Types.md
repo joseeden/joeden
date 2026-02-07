@@ -1,7 +1,11 @@
 ---
 title: "Evidence Types"
 description: "Types of Evidence in Cybersecurity"
-tags: [Security, Cybersecurity, Incident Response, Digital Forensics]
+tags:
+- Security
+- Cybersecurity
+- Incident Response
+- Digital Forensics
 sidebar_position: 2
 last_update:
   date: 1/30/2024

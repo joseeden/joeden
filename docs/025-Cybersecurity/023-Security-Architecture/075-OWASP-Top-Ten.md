@@ -1,7 +1,11 @@
 ---
 title: "OWASP Top Ten"
 description: "The OWASP Top 10 is a standard awareness document for developers and web application security."
-tags: [Security, Cybersecurity, Security Architecture, Security Engineering]
+tags: 
+- Security
+- Cybersecurity
+- Security Architecture
+- Security Engineering
 sidebar_position: 75
 last_update:
   date: 1/30/2024

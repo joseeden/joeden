@@ -1,6 +1,9 @@
 ---
 title: Practice Test 06
-tags: [Linux, Red Hat, Certifications]
+tags: 
+- Linux
+- Red Hat
+- Certifications
 sidebar_position: 1
 last_update:
   date: 4/22/2021

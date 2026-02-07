@@ -1,7 +1,10 @@
 ---
 title: "Incident Mitigation"
 description: "Full mitigation mode to control damage and loss"
-tags: [Security, Cybersecurity, Incident Response]
+tags:
+- Security
+- Cybersecurity
+- Incident Response
 sidebar_position: 6
 last_update:
   date: 1/30/2024

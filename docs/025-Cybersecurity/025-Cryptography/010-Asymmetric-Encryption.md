@@ -1,7 +1,10 @@
 ---
 title: "Asymmetric Encryption"
 description: "Using a pair of keys"
-tags: [Security, Cybersecurity, Cryptography]
+tags: 
+- Security
+- Cybersecurity
+- Cryptography
 sidebar_position: 10
 last_update:
   date: 1/30/2024

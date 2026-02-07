@@ -1,7 +1,11 @@
 ---
 title: "Distributed Computing Models"
 description: "Large-scale parallel and distributed systems"
-tags: [Security, Cybersecurity, Security Architecture, Security Engineering]
+tags: 
+- Security
+- Cybersecurity
+- Security Architecture
+- Security Engineering
 sidebar_position: 4
 last_update:
   date: 1/30/2024

@@ -1,6 +1,9 @@
 ---
 title: Security Updates
-tags: [Linux, Red Hat, Certifications]
+tags: 
+- Linux
+- Red Hat
+- Certifications
 sidebar_position: 40
 last_update:
   date: 5/29/2021

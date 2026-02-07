@@ -1,7 +1,13 @@
 ---
 title: "Attestation of Findings"
 description: "Verifying software integrity and authenticity"
-tags: [Security, Cybersecurity, Security Operations, Vulnerability Management, Security Assessment, Security Testing]
+tags: 
+- Security
+- Cybersecurity
+- Security Operations
+- Vulnerability Management
+- Security Assessment
+- Security Testing
 sidebar_position: 68
 last_update:
   date: 1/30/2024

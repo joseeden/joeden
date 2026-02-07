@@ -1,7 +1,11 @@
 ---
 title: "Integrations and APIs"
 description: "Combining into one comprehensive system"
-tags: [Security, Cybersecurity, Security Operations, Automation]
+tags: 
+- Security
+- Cybersecurity
+- Security Operations
+- Automation
 sidebar_position: 62
 last_update:
   date: 1/30/2024

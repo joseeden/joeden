@@ -1,6 +1,9 @@
 ---
 title: "Apache Configuration"
-tags: [Linux, Red Hat, Certifications]
+tags: 
+- Linux
+- Red Hat
+- Certifications
 sidebar_position: 50
 last_update:
   date: 5/18/2021

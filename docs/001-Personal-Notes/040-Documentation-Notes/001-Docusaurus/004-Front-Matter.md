@@ -31,7 +31,9 @@ The description will appear as the brief description or a preview of the doc. As
 ---
 title: "Networking Basics"
 description: "Learn the basics of Networking"
-tags: [Networking,Cybersecurity]
+tags: 
+- Networking
+- Cybersecurity
 sidebar_position: 1
 last_update:
   date: 1/30/2024

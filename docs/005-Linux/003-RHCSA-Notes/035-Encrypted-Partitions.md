@@ -1,6 +1,9 @@
 ---
 title: "Encrypted Partitions"
-tags: [Linux, Red Hat, Certifications]
+tags: 
+- Linux
+- Red Hat
+- Certifications
 sidebar_position: 35
 last_update:
   date: 12/31/2021

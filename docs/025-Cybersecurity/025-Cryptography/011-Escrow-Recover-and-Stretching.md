@@ -1,7 +1,10 @@
 ---
 title: "Escrow, Recovery, and Stretching"
 description: "Ways to store, recover, and secure keys"
-tags: [Security, Cybersecurity, Cryptography]
+tags: 
+- Security
+- Cybersecurity
+- Cryptography
 sidebar_position: 11
 last_update:
   date: 1/30/2024

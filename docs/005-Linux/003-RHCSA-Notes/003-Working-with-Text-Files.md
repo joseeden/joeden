@@ -1,6 +1,9 @@
 ---
 title: Working with Text Files
-tags: [Linux, Red Hat, Certifications]
+tags: 
+- Linux
+- Red Hat
+- Certifications
 sidebar_position: 3
 last_update:
   date: 12/23/2021

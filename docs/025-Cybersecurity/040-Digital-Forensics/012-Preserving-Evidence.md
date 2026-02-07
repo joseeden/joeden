@@ -1,7 +1,10 @@
 ---
 title: "Preserving Evidence"
 description: "Preservation of Evidence"
-tags: [Security, Cybersecurity, Incident Response]
+tags:
+- Security
+- Cybersecurity
+- Incident Response
 sidebar_position: 12
 last_update:
   date: 1/30/2024

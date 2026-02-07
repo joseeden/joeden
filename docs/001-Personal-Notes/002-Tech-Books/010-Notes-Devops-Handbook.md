@@ -1,6 +1,8 @@
 ---
 title: "Notes: DevOps Handbook"
-tags: [DevOps, Personal Notes]
+tags: 
+- DevOps
+- Personal Notes
 description: "Lessons learned from 'The DevOps Handbook'"
 sidebar_position: 10
 last_update:

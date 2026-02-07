@@ -1,6 +1,10 @@
 ---
 title: "Setting up GitHub Profile README"
-tags: [DevOps, Personal Notes, Development, Github]
+tags: 
+- DevOps
+- Personal Notes
+- Development
+- Github
 description: "Use Github Profile README to showcase your portfolio"
 sidebar_position: 15
 last_update:

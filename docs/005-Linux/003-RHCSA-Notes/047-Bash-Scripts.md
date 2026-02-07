@@ -1,6 +1,9 @@
 ---
 title: "Bash Scripts"
-tags: [Linux, Red Hat, Certifications]
+tags: 
+- Linux
+- Red Hat
+- Certifications
 sidebar_position: 47
 last_update:
   date: 3/21/2021
@@ -493,7 +496,8 @@ I wanted to replace the title heading  with a front matter:
 ```bash
 ---
 title: "This is the title heading"
-tags: [Cybersecurity]
+tags: 
+- Cybersecurity
 sidebar_position: 1
 last_update:
   date: 1/30/2024
@@ -593,7 +597,8 @@ I used this when I was migrating all my docs to Docusaurus. All docs starts with
 ```bash
 ---
 title: "Indicators of Compromise"
-tags: [Cybersecurity]
+tags: 
+- Cybersecurity
 sidebar_position: 1
 last_update:
   date: 1/30/2024

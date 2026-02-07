@@ -1,6 +1,9 @@
 ---
 title: "Logging Options"
-tags: [Linux, Red Hat, Certifications]
+tags: 
+- Linux
+- Red Hat
+- Certifications
 sidebar_position: 45
 last_update:
   date: 12/10/2021

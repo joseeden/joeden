@@ -1,7 +1,10 @@
 ---
 title: "Incident Response Plan"
 description: "Processes and tools used in incident response"
-tags: [Security, Cybersecurity, Incident Response]
+tags:
+- Security
+- Cybersecurity
+- Incident Response
 sidebar_position: 2
 last_update:
   date: 1/30/2024

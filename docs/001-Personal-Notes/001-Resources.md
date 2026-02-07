@@ -2,7 +2,12 @@
 title: "Resources"
 sidebar_position: 1
 description: "Resources, bookmarks"
-tags: [Development, Terminal, DevOps, Linux, Cloud]
+tags: 
+- Development
+- Terminal
+- DevOps
+- Linux
+- Cloud
 last_update:
   date: 11/22/2023
 ---

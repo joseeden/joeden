@@ -1,7 +1,11 @@
 ---
 title: "Automating Tasks"
 description: "Sample tasks to automate"
-tags: [Security, Cybersecurity, Security Operations, Automation]
+tags: 
+- Security
+- Cybersecurity
+- Security Operations
+- Automation
 sidebar_position: 61
 last_update:
   date: 1/30/2024

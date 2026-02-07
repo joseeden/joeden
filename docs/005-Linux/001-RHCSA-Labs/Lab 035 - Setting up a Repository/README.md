@@ -1,6 +1,9 @@
 ---
 title: Setting up a Repository
-tags: [Linux, Red Hat, Certifications]
+tags: 
+- Linux
+- Red Hat
+- Certifications
 sidebar_position: 28
 last_update:
   date: 12/30/2021

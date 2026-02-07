@@ -1,7 +1,11 @@
 ---
 title: "SPOF and IT Contingency"
 description: "SPOF Analysis and IT Contingency Plans"
-tags: [Security, Cybersecurity, Incident Response, Business Continuity]
+tags:
+- Security
+- Cybersecurity
+- Incident Response
+- Business Continuity
 sidebar_position: 12
 last_update:
   date: 1/30/2024

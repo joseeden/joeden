@@ -1,7 +1,10 @@
 ---
 title: "Escalation and Notification"
 description: "Act immediately, contain the situation"
-tags: [Security, Cybersecurity, Incident Response]
+tags:
+- Security
+- Cybersecurity
+- Incident Response
 sidebar_position: 5
 last_update:
   date: 1/30/2024

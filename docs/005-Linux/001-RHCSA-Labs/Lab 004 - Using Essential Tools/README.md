@@ -1,6 +1,10 @@
 ---
 title: Using Essential Tools
-tags: [Linux, Beginner]
+tags: 
+- Linux
+- Red Hat
+- Certifications
+- Labs
 sidebar_position: 4
 last_update: 
   date: 3/27/2021

@@ -1,6 +1,10 @@
 ---
 title: Linux Kernel
-tags: [Linux, Red Hat, Certifications, Labs]
+tags: 
+- Linux
+- Red Hat
+- Certifications
+- Labs
 sidebar_position: 17 
 last_update:
   date: 3/27/2021

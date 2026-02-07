@@ -1,7 +1,12 @@
 ---
 title: "Single Pane of Glass"
 description: "A central point of access"
-tags: [Security, Cybersecurity, Security Operations, Networking, Vulnerability Management]
+tags: 
+- Security
+- Cybersecurity
+- Security Operations
+- Networking
+- Vulnerability Management
 sidebar_position: 35
 last_update:
   date: 1/30/2024

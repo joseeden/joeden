@@ -1,6 +1,9 @@
 ---
 title: Tomcat Servers 
-tags: [Linux, Web Servers, Tomcat]
+tags: 
+- Linux
+- Web Servers
+- Tomcat
 last_update:
   date: 5/18/2021
 --- 
@@ -9,10 +12,14 @@ last_update:
 
 Tomcat is a pure Java HTTPS web server environment in which Java code can run. It is an implementation of different technologies;
 
+- [Introduction](#introduction)
 - [Java Servlet](#java-servlet)
-- [JavaServer pages JSP](#javaserver-pages-jsp)
+- [JavaServer pages (JSP)](#javaserver-pages-jsp)
 - [Java Expression Language](#java-expression-language)
 - [Websocket](#websocket)
+- [How Tomcat Works](#how-tomcat-works)
+- [Tomcat and its Uses](#tomcat-and-its-uses)
+- [Tomcat Up and Running](#tomcat-up-and-running)
 
 In addition to this, Tomcat is an Open Source software that is licensed under the Apache license. This means that users can distribute it, modify it, and distribute modified versions of the software under the terms of the [Apache Software Foundations license.](https://www.apache.org/licenses/)
 

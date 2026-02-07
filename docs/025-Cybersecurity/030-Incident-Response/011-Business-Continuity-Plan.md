@@ -1,7 +1,11 @@
 ---
 title: "Business Continuity Plan"
 description: "Sustaining operations during disruption"
-tags: [Security, Cybersecurity, Incident Response, Business Continuity]
+tags:
+- Security
+- Cybersecurity
+- Incident Response
+- Business Continuity
 sidebar_position: 10
 last_update:
   date: 1/30/2024

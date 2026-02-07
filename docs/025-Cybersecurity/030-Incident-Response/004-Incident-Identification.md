@@ -1,7 +1,10 @@
 ---
 title: "Incident Identification"
 description: "Monitoring is key to detecting signs of incidents"
-tags: [Security, Cybersecurity, Incident Response]
+tags:
+- Security
+- Cybersecurity
+- Incident Response
 sidebar_position: 4
 last_update:
   date: 1/30/2024

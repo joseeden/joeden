@@ -2,7 +2,10 @@
 title: "Binary"
 description: A deeper dive to binary system
 sidebar_position: 6
-tags: [IT Fundamentals, Computers, Operating Systems]
+tags: 
+- IT Fundamentals
+- Computers
+- Operating Systems
 last_update:
   date: 2/26/2017
 ---

@@ -1,7 +1,10 @@
 ---
 title: "IR Models and Exercises"
 description: "Incident Response Models and Exercises"
-tags: [Security, Cybersecurity, Incident Response]
+tags:
+- Security
+- Cybersecurity
+- Incident Response
 sidebar_position: 3
 last_update:
   date: 1/30/2024

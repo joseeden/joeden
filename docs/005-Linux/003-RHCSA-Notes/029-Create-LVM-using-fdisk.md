@@ -1,6 +1,9 @@
 ---
 title: "Create LVMs using fdisk"
-tags: [Linux, Red Hat, Certifications]
+tags: 
+- Linux
+- Red Hat
+- Certifications
 sidebar_position: 29
 last_update:
   date: 3/21/2021

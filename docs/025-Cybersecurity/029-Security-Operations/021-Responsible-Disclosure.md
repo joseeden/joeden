@@ -1,7 +1,11 @@
 ---
 title: "Responsible Disclosure"
 description: "Disclosing information in confidence"
-tags: [Security, Cybersecurity, Security Operations, Vulnerability Management]
+tags: 
+- Security
+- Cybersecurity
+- Security Operations
+- Vulnerability Management
 sidebar_position: 21
 last_update:
   date: 1/30/2024

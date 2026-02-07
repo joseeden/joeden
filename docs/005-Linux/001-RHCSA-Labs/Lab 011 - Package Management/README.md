@@ -1,6 +1,10 @@
 ---
 title: Package Management
-tags: [Linux, Red Hat, Certifications, Labs]
+tags: 
+- Linux
+- Red Hat
+- Certifications
+- Labs
 sidebar_position: 11
 last_update:
   date: 3/27/2021

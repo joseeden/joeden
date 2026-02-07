@@ -1,7 +1,11 @@
 ---
 title: "Other Technologies"
 description: "Different types of secure architectures"
-tags: [Security, Cybersecurity, Security Architecture, Security Engineering]
+tags: 
+- Security
+- Cybersecurity
+- Security Architecture
+- Security Engineering
 sidebar_position: 10
 last_update:
   date: 1/30/2024

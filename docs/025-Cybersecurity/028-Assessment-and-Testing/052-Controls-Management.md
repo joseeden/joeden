@@ -1,7 +1,13 @@
 ---
 title: "Controls Management"
 description: "Consistently managing security controls"
-tags: [Security, Cybersecurity, Security Operations, Vulnerability Management, Security Assessment, Security Testing]
+tags: 
+- Security
+- Cybersecurity
+- Security Operations
+- Vulnerability Management
+- Security Assessment
+- Security Testing
 sidebar_position: 52
 last_update:
   date: 1/30/2024

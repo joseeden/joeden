@@ -1,7 +1,12 @@
 ---
 title: "Updates and Patches"
 description: "Managing patches"
-tags: [Security, Cybersecurity, Security Operations, Networking, System Hardening]
+tags:
+- Security
+- Cybersecurity
+- Security Operations
+- Networking
+- System Hardening
 sidebar_position: 52
 last_update:
   date: 1/30/2024

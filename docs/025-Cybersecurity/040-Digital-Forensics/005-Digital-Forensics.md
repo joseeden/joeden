@@ -1,7 +1,11 @@
 ---
 title: "Digital Forensics"
 description: "Investigating devices to uncover evidence"
-tags: [Security, Cybersecurity, Incident Response, Digital Forensics]
+tags:
+- Security
+- Cybersecurity
+- Incident Response
+- Digital Forensics
 sidebar_position: 5
 last_update:
   date: 1/30/2024

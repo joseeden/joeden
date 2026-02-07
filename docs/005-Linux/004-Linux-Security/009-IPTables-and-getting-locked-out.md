@@ -1,6 +1,9 @@
 ---
 title: IPtables and getting locked out
-tags: [Linux, Red Hat, Labs]
+tags: 
+- Linux
+- Red Hat
+- Labs
 sidebar_position: 9
 last_update:
   date: 2/27/2020

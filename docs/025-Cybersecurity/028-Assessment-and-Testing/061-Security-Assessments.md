@@ -1,7 +1,13 @@
 ---
 title: "Security Assessments"
 description: "Internal and external assessments"
-tags: [Security, Cybersecurity, Security Operations, Vulnerability Management, Security Assessment, Security Testing]
+tags: 
+- Security
+- Cybersecurity
+- Security Operations
+- Vulnerability Management
+- Security Assessment
+- Security Testing
 sidebar_position: 61
 last_update:
   date: 1/30/2024

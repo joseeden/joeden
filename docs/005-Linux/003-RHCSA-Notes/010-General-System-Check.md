@@ -1,6 +1,9 @@
 ---
 title: General System Check
-tags: [Linux, Red Hat, Certifications]
+tags: 
+- Linux
+- Red Hat
+- Certifications
 sidebar_position: 10
 last_update:
   date: 12/27/2021

@@ -1,7 +1,11 @@
 ---
 title: "Data Security Policies"
 description: "Framework for ensuring C-I-A"
-tags: [Security, Cybersecurity, Security Operations, Data Security]
+tags: 
+- Security
+- Cybersecurity
+- Security Operations
+- Data Security
 sidebar_position: 8
 last_update:
   date: 1/30/2024

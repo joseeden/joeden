@@ -2,7 +2,9 @@
 title: "Web Fundamentals"
 description: "Clients, servers, and HTTPs"
 sidebar_position: 50
-tags: [IT Fundamentals, Web]
+tags: 
+- IT Fundamentals
+- Web
 last_update:
   date: 2/26/2017
 ---

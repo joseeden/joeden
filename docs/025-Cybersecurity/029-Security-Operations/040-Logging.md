@@ -1,7 +1,12 @@
 ---
 title: "Logging"
 description: "Centralizing and Investigating Logs"
-tags: [Security, Cybersecurity, Security Operations, Networking, Vulnerability Management]
+tags: 
+- Security
+- Cybersecurity
+- Security Operations
+- Networking
+- Vulnerability Management
 sidebar_position: 40
 last_update:
   date: 1/30/2024
