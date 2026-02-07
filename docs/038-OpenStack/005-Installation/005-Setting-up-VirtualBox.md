@@ -217,3 +217,25 @@ You can try to select the ISO file from the dropdown meny and click **Mount and 
 ![](/img/docs/Screenshot-2026-02-08-031546.png)
 
 </div>
+
+Choose **Install CentOS Stream 10** and click Enter.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-08-031714.png)
+
+</div>
+
+It should go through the bootup process now.
+
+If it shows:
+
+```bash
+[ end Kernel panic - not syncing: Attempted to kill init! exit code=0x00007f00 ] -- 
+```
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-08-033540.png)
+
+</div>
