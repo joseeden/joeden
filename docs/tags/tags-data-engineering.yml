@@ -2,84 +2,110 @@ SQL:
   label: 'SQL'
   permalink: '/SQL'
   description: 'Docs related to SQL'    
+  
 SQLite:
   label: 'SQLite'
   permalink: '/SQLite'
   description: 'Docs related to SQLite' 
+  
 MySQL:
   label: 'MySQL'
   permalink: '/MySQL'
   description: 'Docs related to MySQL' 
+  
 PostgreSQL:
   label: 'PostgreSQL'
   permalink: '/PostgreSQL'
   description: 'Docs related to PostgreSQL'      
+  
 NoSQL:
   label: 'NoSQL'
   permalink: '/NoSQL'
   description: 'Docs related to NoSQL'     
+  
 MongoDB:
   label: 'MongoDB'
   permalink: '/MongoDB'
   description: 'Docs related to MongoDB'  
+  
 Databases:
   label: 'Databases'
   permalink: '/Databases'
   description: 'Docs related to Databases'    
+  
 Database Design:
   label: 'Database Design'
   permalink: '/Database Design'
   description: 'Docs related to Database Design'      
+  
 Big Data:
   label: 'Big Data'
   permalink: '/Big Data'
   description: 'Docs related to Big Data'  
+  
 Data Warehouse:
   label: 'Data Warehouse'
   permalink: '/Data Warehouse'
   description: 'Docs related to Data Warehouse'      
+  
 Data Engineering:
   label: 'Data Engineering'
   permalink: '/Data Engineering'
   description: 'Docs related to Data Engineering'  
+  
 Data Science:
   label: 'Data Science'
   permalink: '/Data Science'
   description: 'Docs related to Data Science'       
+  
 Data Analysis:
   label: 'Data Analysis'
   permalink: '/Data Analysis'
   description: 'Docs related to Data Analysis' 
+  
 Data Visualization:
   label: 'Data Visualization'
   permalink: '/Data Visualization'
   description: 'Docs related to Data Visualization'     
+  
 Data Modelling:
   label: 'Data Modelling'
   permalink: '/Data Modelling'
   description: 'Docs related to Data Modelling'  
+  
 Data Storytelling:
   label: 'Data Storytelling'
   permalink: '/Data Storytelling'
   description: 'Docs related to Data Storytelling'    
+  
 Data Integration:
   label: 'Data Integration'
   permalink: '/Data Integration'
   description: 'Docs related to Data Integration' 
+  
 Snowflake:
   label: 'Snowflake'
   permalink: '/Snowflake'
   description: 'Docs related to Snowflake'      
+  
 Tableau:
   label: 'Tableau'
   permalink: '/Tableau'
   description: 'Docs related to Tableau'      
+  
 Azure Data Factory:
   label: 'Azure Data Factory'
   permalink: '/Azure Data Factory'
   description: 'Docs related to Azure Data Factory'      
+
+Airflow:
+  label: 'Airflow'
+  permalink: '/Airflow'
+  description: 'Docs related to Airflow'   
+
 ETL:
   label: 'ETL'
   permalink: '/ETL'
   description: 'Docs related to ETL' 
+  
 

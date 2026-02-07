@@ -1,0 +1,24 @@
+Windows:
+  label: 'Windows'
+  permalink: '/windows'
+  description: 'Docs related to Windows operating systems'
+
+Windows Server:
+  label: 'Windows Server'
+  permalink: '/windows-server'
+  description: 'Docs related to Windows Server editions and administration'
+
+Active Directory:
+  label: 'Active Directory'
+  permalink: '/active-directory'
+  description: 'Docs on AD domains, users, groups, and policies'
+
+Hyper-V:
+  label: 'Hyper-V'
+  permalink: '/hyper-v'
+  description: 'Docs on virtualization using Hyper-V'
+
+WSUS:
+  label: 'WSUS'
+  permalink: '/wsus'
+  description: 'Docs on Windows Server Update Services'  

@@ -1,19 +1,127 @@
-Comptia Security:
-  label: 'Comptia Security'
-  permalink: '/Comptia Security'
-  description: 'Docs related to Comptia Security'   
-CISSP:
-  label: 'CISSP'
-  permalink: '/CISSP'
-  description: 'Docs related to CISSP'    
+# --------------- Foundations & Certifications ---------------
 Security:
   label: 'Security'
-  permalink: '/Security'
-  description: 'Docs related to Security' 
+  permalink: '/security'
+  description: 'General security concepts and practices'
+
 Cybersecurity:
   label: 'Cybersecurity'
-  permalink: '/Cybersecurity'
-  description: 'Docs related to Cybersecurity'   
+  permalink: '/cybersecurity'
+  description: 'Docs related to cybersecurity domains'
+
+Comptia Security:
+  label: 'CompTIA Security+'
+  permalink: '/comptia-security'
+  description: 'Docs related to CompTIA Security+'
+
+CISSP:
+  label: 'CISSP'
+  permalink: '/cissp'
+  description: 'Docs related to CISSP certification'
+
+# --------------- Governance, Risk & Compliance ---------------
+Risk Management:
+  label: 'Risk Management'
+  permalink: '/risk-management'
+  description: 'Docs on risk identification and mitigation'
+
+Business Continuity:
+  label: 'Business Continuity'
+  permalink: '/business-continuity'
+  description: 'Docs on maintaining business operations'
+
+Disaster Recovery:
+  label: 'Disaster Recovery'
+  permalink: '/disaster-recovery'
+  description: 'Docs on system recovery and failover'
+
+Governance:
+  label: 'Security Governance'
+  permalink: '/security-governance'
+  description: 'Docs on policies, frameworks, and compliance'
+
+Compliance:
+  label: 'Compliance'
+  permalink: '/compliance'
+  description: 'Docs on regulatory requirements and standards'
+
+
+# --------------- Identity & Access Security ---------------
+IAM:
+  label: 'IAM'
+  permalink: '/iam'
+  description: 'Docs on identity and access management'
+
+PAM:
+  label: 'PAM'
+  permalink: '/pam'
+  description: 'Docs on privileged access management'
+
+Access Control:
+  label: 'Access Control'
+  permalink: '/access-control'
+  description: 'Docs on authorization models'
+
+Access Management:
+  label: 'Access Management'
+  permalink: '/access-management'
+  description: 'Docs on managing user access'
+
+# --------------- Security Operations & Defense ---------------
+Security Operations:
+  label: 'Security Operations'
+  permalink: '/security-operations'
+  description: 'Docs on SOC processes'
+
+Incident Response:
+  label: 'Incident Response'
+  permalink: '/incident-response'
+  description: 'Docs on responding to security incidents'
+
+Digital Forensics:
+  label: 'Digital Forensics'
+  permalink: '/digital-forensics'
+  description: 'Docs on forensic investigation'
+
+# --------------- Offensive & Testing ---------------
+Penetration Testing:
+  label: 'Penetration Testing'
+  permalink: '/penetration-testing'
+
+Security Testing:
+  label: 'Security Testing'
+  permalink: '/security-testing'
+
+Security Assessment:
+  label: 'Security Assessment'
+  permalink: '/security-assessment'
+
+Vulnerability Management:
+  label: 'Vulnerability Management'
+  permalink: '/vulnerability-management'
+
+Red Team:
+  label: 'Red Team'
+  permalink: '/red-team'
+
+Blue Team:
+  label: 'Blue Team'
+  permalink: '/blue-team'
+
+# --------------- Engineering & Architecture ---------------
+Security Engineering:
+  label: 'Security Engineering'
+  permalink: '/security-engineering'
+
+Security Architecture:
+  label: 'Security Architecture'
+  permalink: '/security-architecture'
+
+System Hardening:
+  label: 'System Hardening'
+  permalink: '/system-hardening'
+
+
 Asset Security:
   label: 'Asset Security'
   permalink: '/Asset Security'
@@ -34,75 +142,7 @@ Software Development Security:
   label: 'Software Development Security'
   permalink: '/Software Development Security'
   description: 'Docs related to Software Development Security'       
-Security Assessment:
-  label: 'Security Assessment'
-  permalink: '/Security Assessment'
-  description: 'Docs related to Security Assessment'   
-Vulnerability Management:
-  label: 'Vulnerability Management'
-  permalink: '/Vulnerability Management'
-  description: 'Docs related to Vulnerability Management'    
-Penetration Testing:
-  label: 'Penetration Testing'
-  permalink: '/Penetration Testing'
-  description: 'Docs related to Penetration Testing'   
-Digital Forensics:
-  label: 'Digital Forensics'
-  permalink: '/Digital Forensics'
-  description: 'Docs related to Digital Forensics'  
-Incident Response:
-  label: 'Incident Response'
-  permalink: '/Incident Response'
-  description: 'Docs related to Incident Response'   
-Security Operations:
-  label: 'Security Operations'
-  permalink: '/Security Operations'
-  description: 'Docs related to Security Operations'    
-Security Architecture:
-  label: 'Security Architecture'
-  permalink: '/Security Architecture'
-  description: 'Docs related to Security Architecture'  
-Security Engineering:
-  label: 'Security Engineering'
-  permalink: '/Security Engineering'
-  description: 'Docs related to Security Engineering'    
-Security Testing:
-  label: 'Security Testing'
-  permalink: '/Security Testing'
-  description: 'Docs related to Security Testing'  
-PAM:
-  label: 'PAM'
-  permalink: '/PAM'
-  description: 'Docs related to PAM'    
-IAM:
-  label: 'IAM'
-  permalink: '/IAM'
-  description: 'Docs related to IAM'  
-System Hardening:
-  label: 'System Hardening'
-  permalink: '/System Hardening'
-  description: 'Docs related to System Hardening'  
-Access Management:
-  label: 'Access Management'
-  permalink: '/Access Management'
-  description: 'Docs related to Access Management'    
-Access Control:
-  label: 'Access Control'
-  permalink: '/Access Control'
-  description: 'Docs related to Access Control' 
 Cryptography:
   label: 'Cryptography'
   permalink: '/Cryptography'
   description: 'Docs related to Cryptography'     
-Disaster Recovery:
-  label: 'Disaster Recovery'
-  permalink: '/Disaster Recovery'
-  description: 'Docs related to Disaster Recovery'
-Business Continuity:
-  label: 'Business Continuity'
-  permalink: '/Business Continuity'
-  description: 'Docs related to Business Continuity'    
-Risk Management:
-  label: 'Risk Management'
-  permalink: '/Risk Management'
-  description: 'Docs related to Risk Management'  

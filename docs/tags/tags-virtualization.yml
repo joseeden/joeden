@@ -1,0 +1,34 @@
+Virtualization:
+  label: 'Virtualization'
+  permalink: '/Virtualization'
+  description: 'Docs related to Virtualization'  
+  
+VirtualBox:
+  label: 'VirtualBox'
+  permalink: '/VirtualBox'
+  description: 'Docs related to VirtualBox'  
+
+VMware:
+  label: 'VMware'
+  permalink: '/VMware'
+  description: 'Docs related to VMware ESXi and vSphere'
+
+Proxmox:
+  label: 'Proxmox'
+  permalink: '/Proxmox'
+  description: 'Docs related to Proxmox VE'
+
+KVM:
+  label: 'KVM'
+  permalink: '/KVM'
+  description: 'Docs related to Kernel-based Virtual Machine'
+
+Hyper-V:
+  label: 'Hyper-V'
+  permalink: '/Hyper-V'
+  description: 'Docs related to Microsoft Hyper-V'
+
+Xen:
+  label: 'Xen'
+  permalink: '/Xen'
+  description: 'Docs related to Xen Hypervisor'

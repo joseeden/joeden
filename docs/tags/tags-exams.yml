@@ -1,15 +1,18 @@
 Certifications:
   label: 'Certifications'
   permalink: '/Certifications'
-  description: 'Docs related to Certifications'  
+  description: 'Docs related to Certifications'   
+
 CKA:
   label: 'CKA'
   permalink: '/CKA'
   description: 'Docs related to CKA'    
+
 CKAD:
   label: 'CKAD'
   permalink: '/CKAD'
-  description: 'Docs related to CKAD'   
+  description: 'Docs related to CKAD'  
+   
 CKSS:
   label: 'CKSS'
   permalink: '/CKSS'

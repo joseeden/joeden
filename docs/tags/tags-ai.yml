@@ -1,24 +1,49 @@
 Artificial Intelligence:
   label: 'Artificial Intelligence'
   permalink: '/Artificial Intelligence'
-  description: 'Docs related to Artificial Intelligence'     
+  description: 'Docs related to Artificial Intelligence'    
+
 Machine Learning:
   label: 'Machine Learning'
   permalink: '/Machine Learning'
-  description: 'Docs related to Machine Learning'     
+  description: 'Docs related to Machine Learning'    
+
 Deep Learning:
   label: 'Deep Learning'
   permalink: '/Deep Learning'
-  description: 'Docs related to Deep Learning'       
+  description: 'Docs related to Deep Learning'      
+
 Prompt Engineering:
   label: 'Prompt Engineering'
   permalink: '/Prompt Engineering'
-  description: 'Docs related to Prompt Engineering'   
+  description: 'Docs related to Prompt Engineering'  
+
 Generative AI:
   label: 'Generative AI'
   permalink: '/Generative AI'
   description: 'Docs related to Generative AI'  
+  
 MLOps:
   label: 'MLOps'
   permalink: '/MLOps'
   description: 'Docs related to MLOps'    
+
+LLMs:
+  label: 'Large Language Models'
+  permalink: '/LLMs'
+  description: 'Docs related to Large Language Models'
+
+AI Agents:
+  label: 'AI Agents'
+  permalink: '/AI-Agents'
+  description: 'Docs related to autonomous AI agents and workflows'
+
+RAG:
+  label: 'Retrieval Augmented Generation'
+  permalink: '/RAG'
+  description: 'Docs related to retrieval augmented generation systems'
+
+Vector Databases:
+  label: 'Vector Databases'
+  permalink: '/Vector-Databases'
+  description: 'Docs related to embeddings and vector search'

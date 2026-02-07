@@ -2,235 +2,313 @@ DevOps:
   label: 'DevOps'
   permalink: '/DevOps'
   description: 'Docs related to the DevOps'
+
 DevSecOps:
   label: 'DevSecOps'
   permalink: '/DevSecOps'
   description: 'Docs related to the DevSecOps'  
+
 Version Control:
   label: 'Version Control'
   permalink: '/Version Control'
   description: 'Docs related to Version Control'  
+
 Git:
   label: 'Git'
   permalink: '/Git'
   description: 'Docs related to Git'
+
 GitLab:
   label: 'GitLab'
   permalink: '/GitLab'
   description: 'Docs related to GitLab'
+
 Github:
   label: 'Github'
   permalink: '/Github'
   description: 'Docs related to Github'
+
 Github Actions:
   label: 'Github Actions'
   permalink: '/Github Actions'
   description: 'Docs related to Github Actions'  
+
 Azure DevOps:
   label: 'Azure DevOps'
   permalink: '/Azure DevOps'
   description: 'Docs related to Azure DevOps'  
+
 CICD:
   label: 'CICD'
   permalink: '/CICD'
   description: 'Docs related to CICD'
+
 Continuous Integration:
   label: 'Continuous Integration'
   permalink: '/Continuous Integration'
   description: 'Docs related to Continuous Integration'  
+
 Continuous Delivery:
   label: 'Continuous Delivery'
   permalink: '/Continuous Delivery'
   description: 'Docs related to Continuous Delivery'  
+
 Continuous Deployment:
   label: 'Continuous Deployment'
   permalink: '/Continuous Deployment'
   description: 'Docs related to Continuous Deployment'
+
 Jenkins:
   label: 'Jenkins'
   permalink: '/Jenkins'
   description: 'Docs related to Jenkins'  
+
 Maven:
   label: 'Maven'
   permalink: '/Maven'
   description: 'Docs related to Maven'  
+
 Gradle:
   label: 'Gradle'
   permalink: '/Gradle'
   description: 'Docs related to Gradle'  
+
 Apache Ant:
   label: 'Apache Ant'
   permalink: '/Apache Ant'
   description: 'Docs related to Apache Ant'  
+
 Infrastructure as Code:
   label: 'Infrastructure as Code'
   permalink: '/Infrastructure as Code'
   description: 'Docs related to Infrastructure as Code'
+
 Terraform:
   label: 'Terraform'
   permalink: '/Terraform'
   description: 'Docs related to Terraform'
+
 Pulumi:
   label: 'Pulumi'
   permalink: '/Pulumi'
   description: 'Docs related to Pulumi'
+
 CloudFormation:
   label: 'CloudFormation'
   permalink: '/CloudFormation'
   description: 'Docs related to CloudFormation'
+
 Azure Bicep:
   label: 'Azure Bicep'
   permalink: '/Azure Bicep'
   description: 'Docs related to Azure Bicep'
+
 SDK and CDK:
   label: 'SDK and CDK'
   permalink: '/SDK and CDK'
   description: 'Docs related to SDK and CDK'
+
 Ansible:
   label: 'Ansible'
   permalink: '/Ansible'
   description: 'Docs related to Ansible'
+
 Chef:
   label: 'Chef'
   permalink: '/Chef'
   description: 'Docs related to Chef'
+
 Puppet:
   label: 'Puppet'
   permalink: '/Puppet'
   description: 'Docs related to Puppet'
+
 Containers:
   label: 'Containers'
   permalink: '/Containers'
   description: 'Docs related to Containers'    
+
 Containerization:
   label: 'Containerization'
   permalink: '/Containerization'
   description: 'Docs related to Containerization'
+
+LXC:
+  label: 'LXC'
+  permalink: '/LXC'
+  description: 'Docs related to Linux Containers'
+
 Kubernetes:
   label: 'Kubernetes'
   permalink: '/Kubernetes'
   description: 'Docs related to Kubernetes'
+
 Amazon EKS:
   label: 'Amazon EKS'
   permalink: '/Amazon EKS'
   description: 'Docs related to Amazon EKS'
+
 Azure Kubernetes Service:
   label: 'Azure Kubernetes Service'
   permalink: '/Azure Kubernetes Service'
   description: 'Docs related to Azure Kubernetes Service'
+
 Google Kubernetes Engine:
   label: 'Google Kubernetes Engine'
   permalink: '/Google Kubernetes Engine'
   description: 'Docs related to Google Kubernetes Engine'
+
 Rancher:
   label: 'Rancher'
   permalink: '/Rancher'
   description: 'Docs related to Rancher'
+
 Openshift:
   label: 'Openshift'
   permalink: '/Openshift'
   description: 'Docs related to Openshift'
+
 Helm:
   label: 'Helm'
   permalink: '/Helm'
   description: 'Docs related to Helm'
+
 Traefik:
   label: 'Traefik'
   permalink: '/Traefik'
   description: 'Docs related to Traefik'
+
 GitOps:
   label: 'GitOps'
   permalink: '/GitOps'
   description: 'Docs related to GitOps'  
+
 ArgoCD:
   label: 'ArgoCD'
   permalink: '/ArgoCD'
   description: 'Docs related to ArgoCD'  
+
 Flux:
   label: 'Flux'
   permalink: '/Flux'
   description: 'Docs related to Flux'  
+
 Istio:
   label: 'Istio'
   permalink: '/Istio'
   description: 'Docs related to Istio'
+
 Observability:
   label: 'Observability'
   permalink: '/Observability'
   description: 'Docs related to Observability'
+
 Monitoring:
   label: 'Monitoring'
   permalink: '/Monitoring'
   description: 'Docs related to Monitoring'
+
 APM:
   label: 'APM'
   permalink: '/APM'
   description: 'Docs related to APM'
+
 Prometheus:
   label: 'Prometheus'
   permalink: '/Prometheus'
   description: 'Docs related to Prometheus'  
+
 Grafana:
   label: 'Grafana'
   permalink: '/Grafana'
   description: 'Docs related to Grafana'  
+
 Elasticsearch:
   label: 'Elasticsearch'
   permalink: '/Elasticsearch'
   description: 'Docs related to Elasticsearch'   
+
 Opensearch:
   label: 'Opensearch'
   permalink: '/Opensearch'
   description: 'Docs related to Opensearch'     
+
 Elastic Cloud:
   label: 'Elastic Cloud'
   permalink: '/Elastic Cloud'
   description: 'Docs related to Elastic Cloud'    
+
 Logstash:
   label: 'Logstash'
   permalink: '/Logstash'
   description: 'Docs related to Logstash'  
+
 Kibana:
   label: 'Kibana'
   permalink: '/Kibana'
   description: 'Docs related to Kibana'    
+
 ELK Stack:
   label: 'ELK Stack'
   permalink: '/ELK Stack'
   description: 'Docs related to ELK Stack'  
+
 Elastic Stack:
   label: 'Elastic Stack'
   permalink: '/Elastic Stack'
   description: 'Docs related to Elastic Stack'  
+
 Zipkin:
   label: 'Zipkin'
   permalink: '/Zipkin'
   description: 'Docs related to Zipkin'
+
 Distributed Tracing:
   label: 'Distributed Tracing'
   permalink: '/Distributed Tracing'
   description: 'Docs related to Distributed Tracing'  
+
 SRE:
   label: 'SRE'
   permalink: '/SRE'
   description: 'Docs related to SRE'
+
 Serverless:
   label: 'Serverless'
   permalink: '/Serverless'
   description: 'Docs related to Serverless'
+
 Automation:
   label: 'Automation'
   permalink: '/Automation'
   description: 'Docs related to Automation'  
+
 API Gateway:
   label: 'API Gateway'
   permalink: '/API Gateway'
   description: 'Docs related to API Gateway'
+
 Kong API Gateway:
   label: 'Kong API Gateway'
   permalink: '/Kong API Gateway'
   description: 'Docs related to Kong API Gateway'
+
 FastAPI:
   label: 'FastAPI'
   permalink: '/FastAPI'
   description: 'Docs related to FastAPI'
+
+Vagrant:
+  label: 'Vagrant'
+  permalink: '/Vagrant'
+  description: 'Docs related to Vagrant VM automation'
+
+Packer:
+  label: 'Packer'
+  permalink: '/Packer'
+  description: 'Docs related to VM image creation'
+
+Cloud-Init:
+  label: 'Cloud-Init'
+  permalink: '/Cloud-Init'
+  description: 'Docs related to VM provisioning and initialization'

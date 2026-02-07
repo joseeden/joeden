@@ -1,0 +1,24 @@
+Linux:
+  label: 'Linux'
+  permalink: '/Linux'
+  description: 'Docs related to the Linux'  
+
+Red Hat:
+  label: 'Red Hat'
+  permalink: '/Red Hat'
+  description: 'Docs related to the Red Hat'
+
+Kali:
+  label: 'Kali'
+  permalink: '/Kali'
+  description: 'Docs related to the Kali'  
+  
+SELinux:
+  label: 'SELinux'
+  permalink: '/selinux'
+  description: 'Docs on security policies and access control'
+
+Kernel:
+  label: 'Kernel'
+  permalink: '/kernel'
+  description: 'Docs on Linux kernel configuration, modules, and tuning'

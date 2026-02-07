@@ -1,16 +1,34 @@
-Scrum:
-  label: 'Scrum'
-  permalink: '/Scrum'
-  description: 'Docs related to Scrum'
-Agile:
-  label: 'Agile'
-  permalink: '/Agile'
-  description: 'Docs related to Agile'
 Project Management:
   label: 'Project Management'
-  permalink: '/Project Management'
-  description: 'Docs related to Project Management'
+  permalink: '/project-management'
+  description: 'Docs on overall project management concepts and practices'
+
+Agile:
+  label: 'Agile'
+  permalink: '/agile'
+  description: 'Docs on Agile principles, frameworks, and practices'
+
+Scrum:
+  label: 'Scrum'
+  permalink: '/scrum'
+  description: 'Docs on Scrum framework, roles, ceremonies, and sprints'
+  
 Jira:
   label: 'Jira'
-  permalink: '/Jira'
-  description: 'Docs related to Jira'
+  permalink: '/jira'
+  description: 'Docs on Jira for project tracking and Agile boards'
+
+Trello:
+  label: 'Trello'
+  permalink: '/trello'
+  description: 'Docs on Trello boards and task management'
+
+Confluence:
+  label: 'Confluence'
+  permalink: '/confluence'
+  description: 'Docs on Confluence for project documentation and collaboration'
+
+Asana:
+  label: 'Asana'
+  permalink: '/asana'
+  description: 'Docs on Asana project and task management'
