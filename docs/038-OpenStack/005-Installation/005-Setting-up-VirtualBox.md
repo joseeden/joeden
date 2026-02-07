@@ -121,7 +121,6 @@ You should now see the new VM created.
 
 :::info["Cant run guest install"]
 
-
 It means that CentOS Stream 10 (or CentOS 10) is too new for VirtualBox to recognize for unattended installation. The unattended install feature only supports certain Windows versions and a limited set of Linux distributions.
 
 This does **not** affect the normal operation of the VM, it only impacts automatic Guest Additions installation.
@@ -151,7 +150,9 @@ Bridged mode allows the VM to behave like a normal device on the network. Promis
 
 ## 4. Install CentOS System
 
-Boot from the ISO and complete the installation using the GUI installer.
+Start the machine and complete the installation using the GUI installer.
+
+**Note:** If you get 
 
 1. Select language and timezone
 2. Configure disk partitioning
