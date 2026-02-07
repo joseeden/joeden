@@ -38,6 +38,13 @@ Keystone is where users and services are authenticated and authorized. It acts a
 - Registers all OpenStack services
 - Provides a service catalog
 
+
+<div class='img-center'>
+
+![](/img/docs/ostack5-keystone.png)
+
+</div>
+
 ## Glance – Image Management
 
 Glance stores and retrieves virtual machine disk images. Pre-built images are loaded into Glance so VMs can boot without installing the OS each time.
@@ -46,6 +53,12 @@ Glance stores and retrieves virtual machine disk images. Pre-built images are lo
 - Retrieves images during VM provisioning
 - Pre-built images save setup time
 
+
+<div class='img-center'>
+
+![](/img/docs/all-things-openstack-glance.png)
+
+</div>
 
 ## Neutron – Networking
 
@@ -57,6 +70,12 @@ Neutron handles virtual networking for OpenStack. It connects VMs to networks an
 
 Neutron's pluggable architecture supports many vendors and technologies.
 
+<div class='img-center'>
+
+![](/img/docs/all-things-openstack-neutron.png)
+
+</div>
+
 
 ## Nova – Compute Management
 
@@ -67,6 +86,12 @@ Nova manages the life cycle of virtual machines. It coordinates compute, storage
 - Coordinates compute, storage, and networking
 
 Nova acts as the main controller for virtual machines, and ensures resources are properly allocated and VMs run smoothly.
+
+<div class='img-center'>
+
+![](/img/docs/all-things-openstack-compute.png)
+
+</div>
 
 
 ## Cinder – Persistent Block Storage
