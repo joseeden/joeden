@@ -133,7 +133,7 @@ You can safely ignore this for now and install Guest Additions manually later.
 :::
 
 
-## 3. Configure VirtualBox Network
+## 3. Configure the VM 
 
 Select the VM and click  **Settings** to adjust the VM network before installation.
 
@@ -147,6 +147,31 @@ Bridged mode allows the VM to behave like a normal device on the network. Promis
 <div class='img-center'>
 
 ![](/img/docs/Screenshot-2026-02-08-030003.png)
+
+</div>
+
+Additionalyly, go to **Storage** click the plus button, and choose **Optical Drive**:
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-08-041828.png)
+
+</div>
+
+Select VBoxGuestAdditions.iso and click **Choose.**
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-08-041921.png)
+
+</div>
+
+Make sure there are two devices under **Controller: SATA.** 
+Click **OK.**
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-08-042025.png)
 
 </div>
 
@@ -246,14 +271,11 @@ If you get this error when booting up the VM for the first time,  you are hittin
 
 This usually means the VM tried to boot the kernel from the ISO but something went wrong at the very early stage of the OS startup
 
-<div class='img-center'>
-
-
 ```bash
 [ end Kernel panic - not syncing: Attempted to kill init! exit code=0x00007f00 ] -- 
 ```
 
-<div>
+<div class='img-center'>
 
 ![](/img/docs/Screenshot-2026-02-08-033540.png)
 
