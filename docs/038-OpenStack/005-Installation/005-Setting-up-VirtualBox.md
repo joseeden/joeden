@@ -24,12 +24,14 @@ The goal is to set up a minimal system that uses a simple CentOS virtual machine
 
 Get the minimal CentOS ISO before starting the VM setup.
 
-1. Download minimal iso image  
+1. Download ISO image for CentOS Stream 10.
 2. Save file locally
 
 Using the minimal ISO keeps installation fast and simple. Having the file ready locally avoids delays during VM creation and keeps the process smooth.
 
 Reference: [CentOS website.](https://www.centos.org/download/)
+
+**UPDATE**: Due to compatibility issues with CentOS Stream 10 and the many problems encountered during installation, I have switched to using CentOS Stream 9.
 
 ## 2. Create Virtual Machine
 
@@ -39,7 +41,8 @@ Create a VM with enough resources so CentOS runs properly.
 
 1. Open VirtualBox and click **New** 
 2. Set the VM name, the VM folder, and the ISO image
-3. Set the type to **Linux**
+
+**UPDATE**: Due to compatibility issues with CentOS Stream 10 and the many problems encountered during installation, I have switched to using CentOS Stream 9.
 
 <div class='img-center'>
 
