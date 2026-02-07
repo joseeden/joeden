@@ -1,7 +1,9 @@
 ---
 title: "Agile"
 description: "Creating value fast"
-tags: [Scrum, Agile, Project Management]
+tags:
+- Scrum, Agile
+- Project Management
 sidebar_position: 1
 last_update:
   date: 3/14/2022

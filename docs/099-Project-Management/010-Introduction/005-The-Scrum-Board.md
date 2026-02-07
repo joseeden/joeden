@@ -1,7 +1,9 @@
 ---
 title: "The Scrum Board"
 description: "First you need the right spot"
-tags: [Scrum, Agile, Project Management]
+tags:
+- Scrum, Agile
+- Project Management
 sidebar_position: 5
 last_update:
   date: 6/7/2020

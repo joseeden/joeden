@@ -1,7 +1,10 @@
 ---
 title: "Roles and Access Control"
 description: "Database Design"
-tags: [Data Engineering, Databases, Database Design]
+tags:
+- Data Engineering
+- Databases
+- Database Design
 sidebar_position: 9
 last_update:
   date: 10/15/2019

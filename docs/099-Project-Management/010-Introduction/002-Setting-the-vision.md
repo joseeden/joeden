@@ -1,7 +1,9 @@
 ---
 title: "Setting the Vision"
 description: "Have a vision, have a goal"
-tags: [Scrum, Agile, Project Management]
+tags:
+- Scrum, Agile
+- Project Management
 sidebar_position: 2
 last_update:
   date: 6/7/2020

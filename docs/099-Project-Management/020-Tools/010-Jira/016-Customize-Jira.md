@@ -1,7 +1,11 @@
 ---
 title: "Customize Jira"
 description: "Customize Jira"
-tags: [Scrum, Agile, Project Management, Jira]
+tags:
+- Scrum
+- Agile
+- Project Management
+- Jira
 sidebar_position: 16
 last_update:
   date: 1/27/2020

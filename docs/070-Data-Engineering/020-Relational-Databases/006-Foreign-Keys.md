@@ -1,7 +1,10 @@
 ---
 title: "Foreign Keys"
 description: "Relational Database"
-tags: [Data Engineering, Databases, SQL]
+tags:
+- Data Engineering
+- Databases
+- SQL
 sidebar_position: 6
 last_update:
   date: 10/5/2019

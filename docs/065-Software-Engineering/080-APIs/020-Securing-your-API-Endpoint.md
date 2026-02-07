@@ -1,7 +1,11 @@
 ---
 title: "Securing your API Endpoint"
 description: "Securing your API Endpoint"
-tags: [Computer Science, Application Development, Software Development, APIs]
+tags:
+- Computer Science
+- Application Development
+- Software Development
+- APIs
 sidebar_position: 20
 last_update:
   date: 8/2/2021

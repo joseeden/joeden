@@ -1,7 +1,9 @@
 ---
 title: "Roles and their Tools"
 description: "Notes from DataCamp's Understanding Engineering Course"
-tags: [Data Engineering, Data Science]
+tags:
+- Data Engineering
+- Data Science
 sidebar_position: 2
 last_update:
   date: 9/26/2019

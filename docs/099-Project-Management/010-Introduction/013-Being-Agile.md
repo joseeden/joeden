@@ -1,7 +1,9 @@
 ---
 title: "Being Agile"
 description: "Fail fast, fail often. But communicate"
-tags: [Scrum, Agile, Project Management]
+tags:
+- Scrum, Agile
+- Project Management
 sidebar_position: 13
 last_update:
   date: 6/7/2020

@@ -1,7 +1,11 @@
 ---
 title: "Boards"
 description: "Jira Boards"
-tags: [Scrum, Agile, Project Management, Jira]
+tags:
+- Scrum
+- Agile
+- Project Management
+- Jira
 sidebar_position: 12
 last_update:
   date: 1/27/2020

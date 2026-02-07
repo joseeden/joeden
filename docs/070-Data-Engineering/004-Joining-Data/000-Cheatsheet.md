@@ -1,7 +1,10 @@
 ---
 title: "SQL Joins Cheatsheet"
 description: "SQL Joins Cheatsheet"
-tags: [Data Engineering, Databases, SQL]
+tags:
+- Data Engineering
+- Databases
+- SQL
 sidebar_position: 0
 last_update:
   date: 8/28/2019

@@ -1,7 +1,11 @@
 ---
 title: "Lean Principles"
 description: "Lean Software Development"
-tags: [Computer Science, Application Development, Software Development, Lean]
+tags:
+- Computer Science
+- Application Development
+- Software Development
+- Lean
 sidebar_position: 3
 last_update:
   date: 6/12/2020

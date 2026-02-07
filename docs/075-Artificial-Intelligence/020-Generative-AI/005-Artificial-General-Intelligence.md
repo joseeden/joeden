@@ -1,7 +1,8 @@
 ---
 title: "Artificial General Intelligence (AGI)"
 description: "Notes from the Gen AI Introductory course from DataCamp"
-tags: [Generative AI]
+tags: 
+- Generative AI
 sidebar_position: 5
 # last_update:
 #   date: 1/30/2024

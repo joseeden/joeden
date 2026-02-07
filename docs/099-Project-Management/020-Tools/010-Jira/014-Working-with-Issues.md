@@ -1,7 +1,11 @@
 ---
 title: "Working with Issues"
 description: "Jira Issues"
-tags: [Scrum, Agile, Project Management, Jira]
+tags:
+- Scrum
+- Agile
+- Project Management
+- Jira
 sidebar_position: 14
 last_update:
   date: 1/27/2020

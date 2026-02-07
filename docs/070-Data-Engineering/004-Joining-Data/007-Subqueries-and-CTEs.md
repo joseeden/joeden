@@ -1,7 +1,10 @@
 ---
 title: "Subqueries and CTEs"
 description: "Advanced SQL"
-tags: [Data Engineering, Databases, SQL]
+tags:
+- Data Engineering
+- Databases
+- SQL
 sidebar_position: 7
 last_update:
   date: 8/28/2019

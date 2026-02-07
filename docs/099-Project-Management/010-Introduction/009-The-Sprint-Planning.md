@@ -1,7 +1,9 @@
 ---
 title: "The Sprint Planning"
 description: "Making sure everyone is in the same page"
-tags: [Scrum, Agile, Project Management]
+tags:
+- Scrum, Agile
+- Project Management
 sidebar_position: 9
 last_update:
   date: 6/7/2020

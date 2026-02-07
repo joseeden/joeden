@@ -1,7 +1,11 @@
 ---
 title: "REST APIs"
 description: "REST APIs"
-tags: [Computer Science, Application Development, Software Development, APIs]
+tags:
+- Computer Science
+- Application Development
+- Software Development
+- APIs
 sidebar_position: 10
 last_update:
   date: 8/2/2021

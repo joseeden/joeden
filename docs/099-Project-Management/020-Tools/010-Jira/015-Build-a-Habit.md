@@ -1,7 +1,11 @@
 ---
 title: "Build a Habit"
 description: "Build a Habit"
-tags: [Scrum, Agile, Project Management, Jira]
+tags:
+- Scrum
+- Agile
+- Project Management
+- Jira
 sidebar_position: 15
 last_update:
   date: 1/27/2020

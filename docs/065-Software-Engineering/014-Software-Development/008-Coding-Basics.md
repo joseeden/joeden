@@ -1,7 +1,10 @@
 ---
 title: "Coding Basics"
 description: "Software Development Maturity Models"
-tags: [Computer Science, Application Development, Software Development]
+tags:
+- Computer Science
+- Application Development
+- Software Development
 sidebar_position: 8
 last_update:
   date: 6/12/2020

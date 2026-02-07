@@ -1,7 +1,8 @@
 ---
 title: "Generative AI"
 description: "Notes from the Gen AI Introductory course from DataCamp"
-tags: [Generative AI]
+tags: 
+- Generative AI
 sidebar_position: 1
 # last_update:
 #   date: 1/30/2024

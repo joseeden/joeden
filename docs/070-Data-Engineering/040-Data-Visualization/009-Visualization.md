@@ -1,7 +1,9 @@
 ---
 title: "Visualization"
 description: "Notes from DataCamp's Understanding Data Science Course"
-tags: [Data Engineering,  Data Science]
+tags:
+- Data Engineering
+- Data Science
 sidebar_position: 9
 last_update:
   date: 9/22/2021

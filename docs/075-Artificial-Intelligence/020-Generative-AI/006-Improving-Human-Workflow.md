@@ -1,7 +1,8 @@
 ---
 title: "Improving Human Workflow"
 description: "Notes from the Gen AI Introductory course from DataCamp"
-tags: [Generative AI]
+tags: 
+- Generative AI
 sidebar_position: 6
 # last_update:
 #   date: 1/30/2024

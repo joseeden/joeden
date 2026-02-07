@@ -1,7 +1,9 @@
 ---
 title: "A/B Testing"
 description: "Notes from DataCamp's Understanding Data Science Course"
-tags: [Data Engineering,  Data Science]
+tags:
+- Data Engineering
+- Data Science
 sidebar_position: 20
 last_update:
   date: 9/26/2019

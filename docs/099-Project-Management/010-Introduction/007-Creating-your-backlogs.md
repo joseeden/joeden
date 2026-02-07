@@ -1,7 +1,9 @@
 ---
 title: "Creating your Backlogs"
 description: "Features, Epics, User Stories, and Tasks"
-tags: [Scrum, Agile, Project Management]
+tags:
+- Scrum, Agile
+- Project Management
 sidebar_position: 7
 last_update:
   date: 6/7/2020

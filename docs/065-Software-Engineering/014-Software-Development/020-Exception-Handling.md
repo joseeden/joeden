@@ -1,7 +1,11 @@
 ---
 title: "Exception Handling"
 description: "Importance of Error Handling"
-tags: [Computer Science, Application Development, Software Development, Application Security]
+tags:
+- Computer Science
+- Application Development
+- Software Development
+- Application Security
 sidebar_position: 20
 last_update:
   date: 6/12/2020

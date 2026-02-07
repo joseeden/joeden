@@ -1,7 +1,8 @@
 ---
 title: "Growth in 2023"
 description: "Notes from the Gen AI Introductory course from DataCamp"
-tags: [Generative AI]
+tags: 
+- Generative AI
 sidebar_position: 2
 # last_update:
 #   date: 1/30/2024

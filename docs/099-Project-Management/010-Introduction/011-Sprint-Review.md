@@ -1,7 +1,9 @@
 ---
 title: "Sprint Review"
 description: "Address any challenges or constraints"
-tags: [Scrum, Agile, Project Management]
+tags:
+- Scrum, Agile
+- Project Management
 sidebar_position: 11
 last_update:
   date: 6/7/2020

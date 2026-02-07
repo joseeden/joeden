@@ -1,7 +1,10 @@
 ---
 title: "Normal Forms"
 description: "Database Design"
-tags: [Data Engineering, Databases, Database Design]
+tags:
+- Data Engineering
+- Databases
+- Database Design
 sidebar_position: 4
 last_update:
   date: 10/15/2019

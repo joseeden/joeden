@@ -1,7 +1,10 @@
 ---
 title: "Code Review and Testing"
 description: "Software Development Maturity Models"
-tags: [Computer Science, Application Development, Software Development]
+tags:
+- Computer Science
+- Application Development
+- Software Development
 sidebar_position: 6
 last_update:
   date: 6/12/2020

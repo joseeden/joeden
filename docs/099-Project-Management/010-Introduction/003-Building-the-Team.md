@@ -1,7 +1,9 @@
 ---
 title: "Building the Team"
 description: "The Right People For Your Team"
-tags: [Scrum, Agile, Project Management]
+tags:
+- Scrum, Agile
+- Project Management
 sidebar_position: 3
 last_update:
   date: 6/7/2020

@@ -1,7 +1,10 @@
 ---
 title: "Start here"
 description: "SQL Fundamentals"
-tags: [Data Engineering, Databases, SQL]
+tags:
+- Data Engineering
+- Databases
+- SQL
 sidebar_position: 0
 last_update:
   date: 2/27/2022

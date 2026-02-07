@@ -1,7 +1,10 @@
 ---
 title: "Not-Null Constraint"
 description: "Relational Database"
-tags: [Data Engineering, Databases, SQL]
+tags:
+- Data Engineering
+- Databases
+- SQL
 sidebar_position: 3
 last_update:
   date: 10/5/2019

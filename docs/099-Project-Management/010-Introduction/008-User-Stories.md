@@ -1,7 +1,9 @@
 ---
 title: "User Stories"
 description: "Requirements from user's perspectives"
-tags: [Scrum, Agile, Project Management]
+tags:
+- Scrum, Agile
+- Project Management
 sidebar_position: 8
 last_update:
   date: 6/7/2020

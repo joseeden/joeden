@@ -1,7 +1,9 @@
 ---
 title: "Setting up the Environment"
 description: "Priming the environment"
-tags: [Scrum, Agile, Project Management]
+tags:
+- Scrum, Agile
+- Project Management
 sidebar_position: 4
 last_update:
   date: 6/7/2020
