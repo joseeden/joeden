@@ -152,7 +152,7 @@ Bridged mode allows the VM to behave like a normal device on the network. Promis
 
 Start the machine and complete the installation using the GUI installer.
 
-**Note:** If you get 
+**Note:** If you get a `No bootable medium found` error, please see [Manually Load ISO.](#manually-load-iso)
 
 1. Select language and timezone
 2. Configure disk partitioning
@@ -192,3 +192,28 @@ ping -c 3 google.com
 Expected result shows successful replies which confirms DNS and internet connectivity.
 
 Successful checks confirm the CentOS VM is running with network access and the base setup is complete for lab use.
+
+
+## Troubleshooting
+
+### Manually Load ISO
+
+If you get this error when you start the VM for the first time:
+
+```bash
+The virtual machine failed to boot. That might be caused by a missing operating system or misconfigured boot order. Mounting an operating system install DVD might solve this problem. Selecting an ISO file will attempt to mount it after the dialog is closed. 
+```
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-08-031425.png)
+
+</div>
+
+You can try to select the ISO file from the dropdown meny and click **Mount and Retry Boot**
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-08-031546.png)
+
+</div>
