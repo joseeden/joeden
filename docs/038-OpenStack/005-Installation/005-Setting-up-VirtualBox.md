@@ -318,7 +318,7 @@ Start the machine and complete the installation using the GUI installer.
 
 7. Before proceeding to the next step, you need to get the IP of your host machine (not the VM).
 
-    Open command prompt and run the following:
+    Open command prompt and run:
 
     ```bash
     ipconfig 
@@ -327,13 +327,19 @@ Start the machine and complete the installation using the GUI installer.
     This returns you host network info. For example:
 
     ```bash
+    Ethernet adapter Ethernet:
+
+      Connection-specific DNS Suffix  . :
+      IPv4 Address. . . . . . . . . . . : 192.168.1.9
+      Subnet Mask . . . . . . . . . . . : 255.255.255.0
+      Default Gateway . . . . . . . . . : 192.168.1.1
+
     Wireless LAN adapter Wi-Fi:
 
       Connection-specific DNS Suffix  . :
-      Link-local IPv6 Address . . . . . : fe80::1995:67ee:8433:7919%13
-      IPv4 Address. . . . . . . . . . . : 192.168.1.24
+      IPv4 Address. . . . . . . . . . . : 192.168.1.8
       Subnet Mask . . . . . . . . . . . : 255.255.255.0
-      Default Gateway . . . . . . . . . : 192.168.1.254
+      Default Gateway . . . . . . . . . : 192.168.1.1
     ```
 
     Since we are using a host-only adapter mode, the VM will need to be assigned a static IP that is in the same range as your host machine.  
@@ -343,7 +349,7 @@ Start the machine and complete the installation using the GUI installer.
     ```bash
     IP Address: 192.168.1.130   (must be unused)
     Subnet:     255.255.255.0
-    Gateway:    192.168.1.254
+    Gateway:    192.168.1.1
     DNS:         8.8.8.8
     ```
 
@@ -385,7 +391,7 @@ Start the machine and complete the installation using the GUI installer.
     ```bash
     IP Address: 192.168.1.130   (must be unused)
     Subnet:     255.255.255.0
-    Gateway:    192.168.1.254
+    Gateway:    192.168.1.1
     DNS:         8.8.8.8
     ```
 
@@ -463,8 +469,6 @@ Check interface status using the interface name `enp0s3`.
 ip a show enp0s3
 ```
 
-Output:
-
 <div class='img-center'>
 
 ![](/img/docs/Screenshot-2026-02-08-202636.png)
@@ -475,14 +479,14 @@ Output:
 Test connectivity to the configured gateway: 
 
 ```bash
-ping -c 3 192.168.1.254
+ping -c 3 192.168.1.1
 ```
 
-Output:
+<div class='img-center'>
 
-```bash
-  
-```
+![](/img/docs/Screenshot-2026-02-09-002443.png)
+
+</div>
 
 
 Test DNS and internet access using `google.com`.
@@ -491,11 +495,12 @@ Test DNS and internet access using `google.com`.
 ping -c 3 google.com
 ```
 
-Output:
+<div class='img-center'>
 
-```bash
-  
-```
+![](/img/docs/Screenshot-2026-02-09-002536.png)
+
+</div>
+
 
 
 ## Troubleshooting
