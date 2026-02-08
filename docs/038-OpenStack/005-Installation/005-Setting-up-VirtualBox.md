@@ -138,8 +138,8 @@ You can safely ignore this for now and install Guest Additions manually later.
 
 ## 3. Configure the VM 
 
-Select the VM and click  **Settings** to adjust the VM network before installation.
-
+<!-- Select the VM and click **Settings** to configure networking before installation. -->
+<!-- 
 1. In **Adapter 1**, **Enable Network Adapter**.
 2. Use **NAT** mode
 
@@ -150,55 +150,114 @@ Select the VM and click  **Settings** to adjust the VM network before installati
 3. Enable promiscuous mode: **Allow All**.
 4. Click **OK**
 
-
-
 Promiscuous mode helps with traffic visibility when needed in lab environments.
 
 <div class='img-center'>
 
 ![](/img/docs/Screenshot-2026-02-08-030003.png)
 
-</div>
+</div> -->
 
-Additionally, go to **Storage** click the plus button, and choose **Optical Drive**:
+## 3. Configure the VM
 
-<div class='img-center'>
+Select the VM and click **Settings** to configure networking before installation. We need to use two adapters to separate internet access from internal OpenStack lab traffic.
 
-![](/img/docs/Screenshot-2026-02-08-041828.png)
 
-</div>
+#### Adapter 1 — NAT (Internet Access)
 
-Select VBoxGuestAdditions.iso and click **Choose.**
+This adapter is used for internet access.
 
-<div class='img-center'>
+| Setting          | Value               |
+| ---------------- | ------------------- |
+| Network Adapter  | Enabled             |
+| Attached To      | NAT                 |
+| Promiscuous Mode | Allow All (default) |
 
-![](/img/docs/Screenshot-2026-02-08-041921.png)
+This provides external connectivity for package installation and updates.
 
-</div>
-
-Make sure there are two devices under **Controller: SATA.** 
-
-Enable both options below:
-
-✅ Hot-pluggable
-✅ Live CD/DVD
-
-Then click **OK.**
+- Used for `yum/dnf` installs and general internet access
+- Keep default NAT settings
+- DHCP enabled by default
 
 <div class='img-center'>
 
-<!-- ![](/img/docs/Screenshot-2026-02-08-042025.png) -->
-![](/img/docs/Screenshot-2026-02-08-043223.png)
+![](/img/docs/Screenshot-2026-02-08-191048.png)
 
 </div>
 
-**UPDATE:** Go to **System** and ensure that Optical is set as the first boot device. You can click the arrow keys beside it to move the device.
+
+#### Adapter 2 — Host-Only 
+
+This adapter is dedicated to internal OpenStack networking and lab communication.
+
+| Setting          | Value             |
+| ---------------- | ----------------- |
+| Network Adapter  | Enabled           |
+| Attached To      | Host-Only Adapter |
+| Promiscuous Mode | Deny              |
+
+This setup allows the VM and host to communicate internally.
+
+- Used for host ↔ VM communication
+- Used for Packstack internal networking and testing
+- No internet access required
+
+**Notes**
+
+- Promiscuous mode not needed for single-node Packstack labs
+- NAT + Host-Only keeps internet separate from OpenStack traffic
+- Avoid Bridged mode unless external network testing is required
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-08-191113.png)
+
+</div>
+
+#### System 
+
+Go to **System** and ensure that Optical is set as the first boot device. You can click the arrow keys beside it to move the device.
 
 <div class='img-center'>
 
 ![](/img/docs/Screenshot-2026-02-08-051455.png)
 
 </div>
+
+#### Storage 
+
+1. In **Storage**, click the plus button, and choose **Optical Drive**:
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot-2026-02-08-041828.png)
+
+    </div>
+
+2. Select VBoxGuestAdditions.iso and click **Choose.**
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot-2026-02-08-041921.png)
+
+    </div>
+
+3. Make sure there are two devices under **Controller: SATA.** 
+
+    Enable both options below:
+
+    ✅ Hot-pluggable
+    ✅ Live CD/DVD
+
+    Then click **OK.**
+
+    <div class='img-center'>
+
+    <!-- ![](/img/docs/Screenshot-2026-02-08-042025.png) -->
+    ![](/img/docs/Screenshot-2026-02-08-043223.png)
+
+    </div>
+
 
 
 ## 4. Start the VM
