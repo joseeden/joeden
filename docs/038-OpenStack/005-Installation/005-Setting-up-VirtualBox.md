@@ -460,7 +460,14 @@ Start the machine and complete the installation using the GUI installer.
 
 ## 5. Verify Network Connectivity
 
-Log in as root and confirm the interface `enp0s3` is working correctly.
+Log in to the VM as root using the password you set during installation.
+
+<!-- <div class='img-center'>
+
+![](/img/docs/ .png)
+
+</div> -->
+
 
 Check interface status using the interface name `enp0s3`.
 
@@ -468,15 +475,25 @@ Check interface status using the interface name `enp0s3`.
 ip a show enp0s3
 ```
 
-Expected result shows the interface is UP and has the configured IP address.
-
-Test connectivity to the gateway `192.168.0.1`.
+Output:
 
 ```bash
-ping -c 3 192.168.0.1
+  
 ```
 
-Expected result shows successful replies from the gateway.
+
+Test connectivity to the configured gateway: .
+
+```bash
+ping -c 3 192.168.1.254
+```
+
+Output:
+
+```bash
+  
+```
+
 
 Test DNS and internet access using `google.com`.
 
@@ -484,9 +501,11 @@ Test DNS and internet access using `google.com`.
 ping -c 3 google.com
 ```
 
-Expected result shows successful replies which confirms DNS and internet connectivity.
+Output:
 
-Successful checks confirm the CentOS VM is running with network access and the base setup is complete for lab use.
+```bash
+  
+```
 
 
 ## Troubleshooting
