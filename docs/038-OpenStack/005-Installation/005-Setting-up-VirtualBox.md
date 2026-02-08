@@ -138,49 +138,30 @@ You can safely ignore this for now and install Guest Additions manually later.
 
 ## Configure the VM 
 
-<!-- Select the VM and click **Settings** to configure networking before installation. -->
-<!-- 
-1. In **Adapter 1**, **Enable Network Adapter**.
-2. Use **NAT** mode
-
-    - Purpose → `yum/dnf` install packages
-    - Leave everything default
-    - DHCP enabled
-
-3. Enable promiscuous mode: **Allow All**.
-4. Click **OK**
-
-Promiscuous mode helps with traffic visibility when needed in lab environments.
-
-<div class='img-center'>
-
-![](/img/docs/Screenshot-2026-02-08-030003.png)
-
-</div> -->
-
-
 Select the VM and click **Settings** to configure networking before installation. We need to use two adapters to separate internet access from internal OpenStack lab traffic.
 
 
-#### Adapter 1 — NAT (Internet Access)
+#### Adapter 1 — Bridged Adapter (Internet Access)
 
-This adapter is used for internet access.
+This adapter provides internet access and connects your VM directly to your host machine’s network.
 
-| Setting          | Value               |
-| ---------------- | ------------------- |
-| Network Adapter  | Enabled             |
-| Attached To      | NAT                 |
-| Promiscuous Mode | Allow All (default) |
+| Setting          | Value                       |
+| ---------------- | --------------------------- |
+| Network Adapter  | Enabled                     |
+| Attached To      | Bridged Adapter             |
+| Promiscuous Mode | Deny (default)              |
 
 This provides external connectivity for package installation and updates.
 
-- Used for `yum/dnf` installs and general internet access
+- Used for `yum/dnf` installs 
 - Keep default NAT settings
 - DHCP enabled by default
 
 <div class='img-center'>
 
-![](/img/docs/Screenshot-2026-02-08-191048.png)
+<!-- ![](/img/docs/Screenshot-2026-02-08-191048.png) -->
+
+![](/img/docs/Screenshot-2026-02-08-222452.png)
 
 </div>
 
