@@ -489,10 +489,11 @@ ping -c 3 192.168.1.1
 </div>
 
 
-Test DNS and internet access using `google.com`.
+Test DNS and internet access:
 
 ```bash
-ping -c 3 google.com
+ping -c 3 8.8.8.8
+ping -c 3 www.google.com
 ```
 
 <div class='img-center'>
