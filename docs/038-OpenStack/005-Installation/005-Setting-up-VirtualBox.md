@@ -391,7 +391,7 @@ Start the machine and complete the installation using the GUI installer.
 
     <div class='img-center'>
     
-    ![](/img/docs/Screenshot-2026-02-08-195637.png)
+    ![](/img/docs/Screenshot-2026-02-08-225018.png)
     
     </div>
 
