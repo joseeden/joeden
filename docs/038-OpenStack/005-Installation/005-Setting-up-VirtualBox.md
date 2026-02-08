@@ -20,7 +20,7 @@ The goal is to set up a minimal system that uses a simple CentOS virtual machine
 3. Configure network settings
 4. Install and verify system
 
-## 1. Download And Prepare Files
+## Download And Prepare Files
 
 Get the minimal CentOS ISO before starting the VM setup.
 
@@ -36,7 +36,7 @@ Reference:
 
 **UPDATE**: Due to compatibility issues with CentOS Stream 9 and 10 and the many problems encountered during installation, I have switched to using AlmaLinux 8.10.
 
-## 2. Create Virtual Machine
+## Create Virtual Machine
 
 Create a VM with enough resources so CentOS runs properly.
 
@@ -136,7 +136,7 @@ You can safely ignore this for now and install Guest Additions manually later.
 :::
 
 
-## 3. Configure the VM 
+## Configure the VM 
 
 <!-- Select the VM and click **Settings** to configure networking before installation. -->
 <!-- 
@@ -259,7 +259,7 @@ Go to **System** and ensure that Optical is set as the first boot device. You ca
 
 
 
-## 4. Start the VM
+## Start the VM
 
 Start the machine and complete the installation using the GUI installer.
 
@@ -380,7 +380,7 @@ Start the machine and complete the installation using the GUI installer.
     - `enp0s3` is the first adapter, usually NAT or bridged, used for the main network.
     - `enp0s8` is the second adapter and can be ignored if not needed.
 
-    For a simple lab setup, you only need one active interface to connect the VM to your network. Typically, you use enp0s3.
+    For a simple lab setup, you only need one active interface to connect the VM to your network. Typically, you use `enp0s3`.
 
     - Set the host name > **Apply**
     - Enable the Ethernet interface (enp0s3)
@@ -456,17 +456,24 @@ Start the machine and complete the installation using the GUI installer.
 
     </div>
 
-12. The installation will proceed and may take a few minutes. Once it’s complete, click **Reboot System**
+12. The installation will proceed and may take a few minutes. Once it’s complete, click **Reboot System**.
 
-## 5. Verify Network Connectivity
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot-2026-02-08-201744.png)
+
+    </div>
+
+
+## Verify Network Connectivity
 
 Log in to the VM as root using the password you set during installation.
 
-<!-- <div class='img-center'>
+<div class='img-center'>
 
-![](/img/docs/ .png)
+![](/img/docs/Screenshot-2026-02-08-202302.png)
 
-</div> -->
+</div>
 
 
 Check interface status using the interface name `enp0s3`.
@@ -477,12 +484,14 @@ ip a show enp0s3
 
 Output:
 
-```bash
-  
-```
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-08-202636.png)
+
+</div>
 
 
-Test connectivity to the configured gateway: .
+Test connectivity to the configured gateway: 
 
 ```bash
 ping -c 3 192.168.1.254
