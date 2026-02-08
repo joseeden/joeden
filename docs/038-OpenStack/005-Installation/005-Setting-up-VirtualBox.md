@@ -370,70 +370,62 @@ Start the machine and complete the installation using the GUI installer.
     For a simple lab setup, you only need one active interface to connect the VM to your network. Typically, you use `enp0s3`.
 
     - Set the host name > **Apply**
-    - Enable the Ethernet interface (enp0s3)
+    - Enable the Ethernet interface (enp0s3) and click **Configure**
 
         <div class='img-center'>
         
         ![](/img/docs/Screenshot2026-02-08194748.png)
         
         </div>
-        
-    - Click **Configure**
-
-      <div class='img-center'>
-      
-      ![](/img/docs/Screenshot2026-02-08054752.png)
-      
-      </div>
     
 9. For the configuration, we'll use this:
 
-    ```bash
-    IP Address: 192.168.1.130   (must be unused)
-    Subnet:     255.255.255.0
-    Gateway:    192.168.1.1
-    DNS:         8.8.8.8
-    ```
+      ```bash
+      IP Address: 192.168.1.130   (must be unused)
+      Subnet:     255.255.255.0
+      Gateway:    192.168.1.1
+      DNS:         8.8.8.8
+      ```
 
-    <div class='img-center'>
-    
-    ![](/img/docs/Screenshot-2026-02-08-225018.png)
-    
-    </div>
+      <div class='img-center'>
+      
+      ![](/img/docs/Screenshot-2026-02-08-225018.png)
+      
+      </div>
 
-    Click **Save**. The interface should show as **Connected** with its details displayed.
+      Click **Save**. The interface should show as **Connected** with its details displayed.
 
-    <div class='img-center'>
-    
-    ![](/img/docs/Screenshot-2026-02-08-195936.png)
-    
-    </div>
-    
+      <div class='img-center'>
+      
+      ![](/img/docs/Screenshot-2026-02-08-195936.png)
+      
+      </div>
+      
 
 
 10. Finally, set the root password and create another user.
 
-    <div class='img-center'>
+      <div class='img-center'>
 
-    ![](/img/docs/Screenshot2026-02-08054025.png)
+      ![](/img/docs/Screenshot2026-02-08054025.png)
 
-    </div>
-    
-    Provide a root password and click **Done.**
+      </div>
+      
+      Provide a root password and click **Done.**
 
-    <div class='img-center'>
-    
-    ![](/img/docs/Screenshot2026-02-08054125.png)
-    
-    </div>
+      <div class='img-center'>
+      
+      ![](/img/docs/Screenshot2026-02-08054125.png)
+      
+      </div>
 
-    As best practice, create another admin user:
+      As best practice, create another admin user:
 
-    <div class='img-center'>
-    
-    ![](/img/docs/Screenshot2026-02-08054329.png)
-    
-    </div>
+      <div class='img-center'>
+      
+      ![](/img/docs/Screenshot2026-02-08054329.png)
+      
+      </div>
     
 11. Back in the main menu, click **Begin Installation**
 
@@ -456,17 +448,18 @@ Start the machine and complete the installation using the GUI installer.
 
 Log in to the VM as root using the password you set during installation.
 
-<div class='img-center'>
+<div>
 
 ![](/img/docs/Screenshot-2026-02-08-202302.png)
 
 </div>
 
 
-Check interface status using the interface name `enp0s3`.
+Check the status for the interface `enp0s3` and confirm there's a route to the gateway:
 
 ```bash
-ip a show enp0s3
+ip a show
+ip route
 ```
 
 <div class='img-center'>
@@ -476,13 +469,13 @@ ip a show enp0s3
 </div>
 
 
-Test connectivity to the configured gateway: 
+Test connectivity to the gateway: 
 
 ```bash
 ping -c 3 192.168.1.1
 ```
 
-<div class='img-center'>
+<div>
 
 ![](/img/docs/Screenshot-2026-02-09-002443.png)
 
@@ -496,7 +489,7 @@ ping -c 3 8.8.8.8
 ping -c 3 www.google.com
 ```
 
-<div class='img-center'>
+<div>
 
 ![](/img/docs/Screenshot-2026-02-09-002536.png)
 
