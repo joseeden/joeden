@@ -140,12 +140,19 @@ You can safely ignore this for now and install Guest Additions manually later.
 
 Select the VM and click  **Settings** to adjust the VM network before installation.
 
-1. Click **Adapter 1** and toggle **Enable Network Adapter**.
-2. Use **Bridged Adapter** mode
-3. Enable promiscuous mode: **Allow All**
+1. In **Adapter 1**, **Enable Network Adapter**.
+2. Use **NAT** mode
+
+    - Purpose → `yum/dnf` install packages
+    - Leave everything default
+    - DHCP enabled
+
+3. Enable promiscuous mode: **Allow All**.
 4. Click **OK**
 
-Bridged mode allows the VM to behave like a normal device on the network. Promiscuous mode helps with traffic visibility when needed in lab environments.
+
+
+Promiscuous mode helps with traffic visibility when needed in lab environments.
 
 <div class='img-center'>
 
@@ -201,11 +208,140 @@ Start the machine and complete the installation using the GUI installer.
 **Note:** If you get a `No bootable medium found` error, please see [Manually Load ISO.](#manually-load-iso)
 
 1. Select language and timezone
-2. Configure disk partitioning
-3. Disable kdump
-4. Disable security policy
-5. Set root password
-6. Configure static ip address
+2. Click **Installation Destionation**
+3. Select the **ATA VBOX Disk** and click **Custom**, then **Done.**
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot-2026-02-08-052619.png)
+
+    </div>
+
+4. In **Manual Partitioning** -> *Click here to create them automatically*.   
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot-2026-02-08-052850.png)
+
+    </div>
+
+    This will show the three partitions that will be created. Click **Done.**
+
+    <div class='img-center'>
+    
+    ![](/img/docs/Screenshot-2026-02-08-053042.png)
+    
+    </div>
+
+    Click **Accept changes.**
+
+    <div class='img-center'>
+    
+    ![](/img/docs/Screenshot2026-02-08-053231.png)
+    
+    </div>
+    
+    
+
+5. Back in the main menu, click **KDUMP.** 
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot-2026-02-08-053413.png)
+
+    </div>
+
+    kdump is a kernel mechanism which consume some system memory, which we don't want.
+
+    Disable the kdump feature and click **Done.**
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot-2026-02-08-053618.png)
+
+    </div>
+
+9. In the main menu, click **Security Policy** and then disable it for now.
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-02-08-053802.png)
+
+    </div>
+
+10. Before proceeding to the next step, you need to get the IP of your host machine (not the VM).
+
+    Open command prompt and run the following:
+
+    ```bash
+    ipconfig 
+    ```
+
+    This returns you host network info. For example:
+
+    ```bash
+    Wireless LAN adapter Wi-Fi:
+
+      Connection-specific DNS Suffix  . :
+      Link-local IPv6 Address . . . . . : fe80::1995:67ee:8433:7919%13
+      IPv4 Address. . . . . . . . . . . : 192.168.1.24
+      Subnet Mask . . . . . . . . . . . : 255.255.255.0
+      Default Gateway . . . . . . . . . : 192.168.1.254
+    ```
+
+    Since we are using a bridged adapter mode, the VM will need to be assigned a static IP that is in the same range as your host machine.  We'll use this configuration for the VM:
+
+    ```bash
+    IP Address: 192.168.1.200   (must be unused)
+    Subnet:     255.255.255.0
+    Gateway:    192.168.1.254
+    DNS:        192.168.1.254 or 8.8.8.8
+    ```
+
+
+11. In the main menu, click **Network and Hostname**
+
+    - Set the host name > **Apply**
+    - Enable the Ethernet interface (enp0s3)
+    - Click **Configure**
+
+      <div class='img-center'>
+      
+      ![](/img/docs/Screenshot2026-02-08054752.png)
+      
+      </div>
+      
+
+
+12. Finally, set the root password and create another user.
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-02-08054025.png)
+
+    </div>
+    
+    Provide a root password and click **Done.**
+
+    <div class='img-center'>
+    
+    ![](/img/docs/Screenshot2026-02-08054125.png)
+    
+    </div>
+
+    As best practice, create another admin user:
+
+    <div class='img-center'>
+    
+    ![](/img/docs/Screenshot2026-02-08054329.png)
+    
+    </div>
+    
+    
+    
+
+
+11. Configure static ip address
 
 Automatic partitioning is fine for most labs. A static IP keeps the system reachable and predictable. Disabling unused features helps keep the setup simple and lightweight.
 
@@ -340,6 +476,10 @@ To fix this:
 
 3. Boot the VM again from your ISO.
 
-Note that if disbale EFI, you may hit the [kernel panic](#kernet-panic) issue (again). At this point, the better option would be to use a lwoer version (like CentOS Stream 9).
+Note that if disbale EFI, you may hit the [kernel panic](#kernet-panic) issue (again). At this point, the better option would be to use a different ISO: Here are some alternatives:
+
+- CentOS Stream 9
+- AlmaLinux 10
+- AlmaLinux 8
 
 
