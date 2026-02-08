@@ -158,7 +158,6 @@ Promiscuous mode helps with traffic visibility when needed in lab environments.
 
 </div> -->
 
-## 3. Configure the VM
 
 Select the VM and click **Settings** to configure networking before installation. We need to use two adapters to separate internet access from internal OpenStack lab traffic.
 
@@ -266,8 +265,16 @@ Start the machine and complete the installation using the GUI installer.
 
 **Note:** If you get a `No bootable medium found` error, please see [Manually Load ISO.](#manually-load-iso)
 
-1. Select language and timezone
-2. Click **Installation Destionation**
+1. Select a language and click **Done.** 
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot-2026-02-08-192103.png)
+
+    </div>
+
+2. Click **Installation Destination**
+
 3. Select the **ATA VBOX Disk** and click **Custom**, then **Done.**
 
     <div class='img-center'>
@@ -320,7 +327,7 @@ Start the machine and complete the installation using the GUI installer.
 
     </div>
 
-9. In the main menu, click **Security Policy** and then disable it for now.
+6. In the main menu, click **Security Policy** and then disable it for now.
 
     <div class='img-center'>
 
@@ -328,7 +335,7 @@ Start the machine and complete the installation using the GUI installer.
 
     </div>
 
-10. Before proceeding to the next step, you need to get the IP of your host machine (not the VM).
+7. Before proceeding to the next step, you need to get the IP of your host machine (not the VM).
 
     Open command prompt and run the following:
 
@@ -348,20 +355,42 @@ Start the machine and complete the installation using the GUI installer.
       Default Gateway . . . . . . . . . : 192.168.1.254
     ```
 
-    Since we are using a bridged adapter mode, the VM will need to be assigned a static IP that is in the same range as your host machine.  We'll use this configuration for the VM:
+    Since we are using a host-only adapter mode, the VM will need to be assigned a static IP that is in the same range as your host machine.  
+    
+    We'll use this configuration for the VM in the next step:
 
     ```bash
-    IP Address: 192.168.1.200   (must be unused)
+    IP Address: 192.168.1.130   (must be unused)
     Subnet:     255.255.255.0
     Gateway:    192.168.1.254
-    DNS:        192.168.1.254 or 8.8.8.8
+    DNS:         8.8.8.8
     ```
 
 
-11. In the main menu, click **Network and Hostname**
+8. In the main menu, click **Network and Hostname**. There should be two interface here.
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot-2026-02-08-192519.png)
+
+    </div>
+
+    The interfaces:
+
+    - `enp0s3` is the first adapter, usually NAT or bridged, used for the main network.
+    - `enp0s8` is the second adapter and can be ignored if not needed.
+
+    For a simple lab setup, you only need one active interface to connect the VM to your network. Typically, you use enp0s3.
 
     - Set the host name > **Apply**
     - Enable the Ethernet interface (enp0s3)
+
+        <div class='img-center'>
+        
+        ![](/img/docs/Screenshot2026-02-08194748.png)
+        
+        </div>
+        
     - Click **Configure**
 
       <div class='img-center'>
@@ -369,10 +398,33 @@ Start the machine and complete the installation using the GUI installer.
       ![](/img/docs/Screenshot2026-02-08054752.png)
       
       </div>
-      
+    
+9. For the configuration, we'll use this:
+
+    ```bash
+    IP Address: 192.168.1.130   (must be unused)
+    Subnet:     255.255.255.0
+    Gateway:    192.168.1.254
+    DNS:         8.8.8.8
+    ```
+
+    <div class='img-center'>
+    
+    ![](/img/docs/Screenshot-2026-02-08-195637.png)
+    
+    </div>
+
+    Click **Save**. The interface should show as **Connected** with its details displayed.
+
+    <div class='img-center'>
+    
+    ![](/img/docs/Screenshot-2026-02-08-195936.png)
+    
+    </div>
+    
 
 
-12. Finally, set the root password and create another user.
+10. Finally, set the root password and create another user.
 
     <div class='img-center'>
 
@@ -396,13 +448,15 @@ Start the machine and complete the installation using the GUI installer.
     
     </div>
     
-    
-    
+11. Back in the main menu, click **Begin Installation**
 
+    <div class='img-center'>
 
-11. Configure static ip address
+    ![](/img/docs/Screenshot-2026-02-08-200109.png)
 
-Automatic partitioning is fine for most labs. A static IP keeps the system reachable and predictable. Disabling unused features helps keep the setup simple and lightweight.
+    </div>
+
+12. The installation will proceed and may take a few minutes. Once it’s complete, click **Reboot System**
 
 ## 5. Verify Network Connectivity
 
@@ -478,7 +532,7 @@ See next section.
 ```
 
 
-### Kernet Panic 
+### Kernel Panic 
 
 If you get this error when booting up the VM for the first time,  you are hitting a kernel panic.
 
@@ -535,7 +589,7 @@ To fix this:
 
 3. Boot the VM again from your ISO.
 
-Note that if disbale EFI, you may hit the [kernel panic](#kernet-panic) issue (again). At this point, the better option would be to use a different ISO: Here are some alternatives:
+Note that if disable EFI, you may hit the [kernel panic](#kernel-panic) issue (again). At this point, the better option would be to use a different ISO. Here are some alternatives:
 
 - CentOS Stream 9
 - AlmaLinux 10
