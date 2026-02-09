@@ -13,3 +13,67 @@ Wireless:
   permalink: '/Wireless'
   description: 'Docs related to Wireless'
   
+Cisco:
+  label: 'Cisco'
+  permalink: '/Cisco'
+  description: 'Docs related to Cisco'
+
+DevNet:
+  label: 'DevNet'
+  permalink: '/DevNet'
+  description: 'Docs related to DevNet'
+
+SDN:
+  label: 'SDN'
+  permalink: '/SDN'
+  description: 'Docs related to SDN'
+
+Routing:
+  label: 'Routing'
+  permalink: '/Routing'
+  description: 'Docs related to routing protocols and configuration'
+
+Switching:
+  label: 'Switching'
+  permalink: '/Switching'
+  description: 'Docs related to switching technologies and VLANs'
+
+OSPF:
+  label: 'OSPF'
+  permalink: '/OSPF'
+  description: 'Docs related to OSPF routing protocol'
+
+EIGRP:
+  label: 'EIGRP'
+  permalink: '/EIGRP'
+  description: 'Docs related to EIGRP routing protocol'
+
+BGP:
+  label: 'BGP'
+  permalink: '/BGP'
+  description: 'Docs related to Border Gateway Protocol'
+
+IPv6:
+  label: 'IPv6'
+  permalink: '/IPv6'
+  description: 'Docs related to IPv6 addressing and configuration'
+
+QoS:
+  label: 'QoS'
+  permalink: '/QoS'
+  description: 'Docs related to Quality of Service'
+
+CCNA:
+  label: 'CCNA'
+  permalink: '/CCNA'
+  description: 'Docs relevant to CCNA certification topics'
+
+CCNP:
+  label: 'CCNP'
+  permalink: '/CCNP'
+  description: 'Docs relevant to CCNP certification topics'
+
+CCIE:
+  label: 'CCIE'
+  permalink: '/CCIE'
+  description: 'Docs relevant to CCIE certification topics'

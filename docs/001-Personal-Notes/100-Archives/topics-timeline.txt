@@ -26,6 +26,7 @@
 4/30/2020   - AWS Fundamentals
 5/13/2020   - Jenkins Notes 
 5/15/2020   - Jenkins Labs
+5/25/2020   - Cisco Devnet
 6/7/2020    - PM
 6/12/2020   - Software dev
 7/26/2020   - AWS Services
