@@ -80,7 +80,27 @@ Next, import the DEVASC VM into VirtualBox.
     </div>
 
 
+7. Continue starting the virtual machine and accept the Cisco Packet Tracer license to proceed.
 
+    - Use arrow keys to scroll the license text
+    - Press Right Arrow to select `<OK>` after reading
+    - Press Space Bar to move to the Agreement screen
+    - Press Left Arrow to select `<I Agree>`
 
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot-2026-02-10-122749.png)
+
+    </div>
+
+8. The Ubuntu image will continue to load. Close any popup messages. 
+
+    After the desktop loads, the VM is ready is to use for the labs.
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot-2026-02-10-122824.png)
+
+    </div>
 
 
