@@ -17,6 +17,16 @@ This page covers common features you can enable or configure after the VM is cre
 
 ## Allow Shared Clipboard 
 
+:::info 
+
+You can only enable **Shared Clipboard** and **Drag & Drop** if your VM has a GUI.
+
+For most minimal ISO setup, they only install a terminal-based system which doesn't have a desktop environment. 
+
+As a workaround, you can connect to the VM via SSH from your host machine.
+
+:::
+
 You can enable the shared clipboard in VirtualBox to copy text between your host machine and your VM.
 
 1. Go to **Devices** → **Shared Clipboard** → **Bidirectional**
@@ -27,7 +37,9 @@ You can enable the shared clipboard in VirtualBox to copy text between your host
 
     </div>
 
-2. Inside the VM:
+2. Check the VBox Service. 
+
+    Inside the VM:
 
     ```bash
     lsmod | grep vboxguest
@@ -43,7 +55,7 @@ You can enable the shared clipboard in VirtualBox to copy text between your host
 
     Should be **active (running)**.
 
-3. If NOT installed, install Guest Additions properly
+3. If NOT installed, install Guest Additions properly.
 
     ```bash
     sudo dnf install -y gcc make perl kernel-devel kernel-headers elfutils-libelf-devel
@@ -77,6 +89,71 @@ You can enable the shared clipboard in VirtualBox to copy text between your host
     sudo dnf update -y
     reboot
     ```
+
+
+4. Mount Guest Additions ISO.
+
+    From VirtualBox menu:
+
+    ```
+    Devices > Insert Guest Additions CD Image
+    ```
+
+    Then inside VM:
+
+    ```bash
+    sudo mkdir /mnt/cdrom
+    sudo mount /dev/cdrom /mnt/cdrom
+    cd /mnt/cdrom
+    sudo ./VBoxLinuxAdditions.run
+    ```
+
+    Reboot after.
+
+
+5. Restart clipboard services.
+
+    After reboot try:
+
+    ```bash
+    VBoxClient --clipboard
+    ```
+
+    Also verify:
+
+    ```bash
+    ps aux | grep VBoxClient
+    ```
+
+    You should see clipboard process running.
+
+
+6. If you are using AlmaLinux, there are some very common gotchas.
+
+    - VirtualBox clipboard is flaky with Wayland.
+
+        Check:
+
+        ```bash
+        echo $XDG_SESSION_TYPE
+        ```
+
+        If `wayland` → switch to **Xorg** at login screen.
+
+
+    - Minimal install / no GUI session - Clipboard only works with GUI sessions.
+
+
+
+7. Quick sanity test.
+
+    Inside VM:
+
+    ```bash
+    VBoxClient-all
+    ```
+
+    Then try copy again.
 
 
 ## Mounting a Fileshare to VMs 

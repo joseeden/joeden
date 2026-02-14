@@ -495,70 +495,26 @@ ping -c 3 www.google.com
 
 ## Allow Shared Clipboard 
 
-You can enable the shared clipboard in VirtualBox to copy text between your host machine and your VM.
+**UPDATE:** You can only enabled **Shared Clipboard** and **Drag & Drop** if your VM has a GUI.
 
-1. Go to **Devices** → **Shared Clipboard** → **Bidirectional**
+For some minimal ISO installation, it only allows a terminal-based system which doesn't have a desktop environment. 
 
-    <div class='img-center'>
+As a workaround, you can connect to the VM via SSH from your host machine.
 
-    ![](/img/docs/Screenshot-2026-02-14-152629.png)
-
-    </div>
-
-2. Inside the VM:
-
-    ```bash
-    lsmod | grep vboxguest
-    ```
-
-    If you see nothing, clipboard won’t work.
-
-    Also check:
-
-    ```bash
-    systemctl status vboxservice
-    ```
-
-    Should be **active (running)**.
-
-3. If NOT installed, install Guest Additions properly
-
-    ```bash
-    sudo dnf install -y gcc make perl kernel-devel kernel-headers elfutils-libelf-devel
-    ```
-
-    When you install VirtualBox Guest Additions on Linux, it often needs to compile kernel modules (like `vboxguest`) for your currently running kernel.
-
-    Check the running kernel version: 
-
-    ```bash
-    uname -r
-    ```
-
-    Check the installed headers: 
-
-    ```bash
-    rpm -q kernel-devel kernel-headers  
-    ```
-
-    You want something like:
-
-    ```bash
-    uname -r: 5.15.0-1127.el8.x86_64
-    kernel-devel-5.15.0-1127.el8.x86_64
-    kernel-headers-5.15.0-1127.el8.x86_64
-    ```
-
-    If the numbers don’t match, you need to update your kernel and headers:
-
-    ```bash
-    sudo dnf update -y
-    reboot
-    ```
-
-
+```bash
+ssh user@<vm-ip>
+```
 
 ## Troubleshooting
+
+### Reconfigure Interface 
+
+If your host machine suddenly changes internet connections, the gateway may change. This can affect the VM if it was previously configured with static network settings or tied to the old adapter.
+
+To fix this, you will need to update the gateway and network configuration.
+
+See [Reconfigure Interface.](/docs/001-Personal-Notes/020-Homelab/003-VirtualBox/099-Troubleshooting.md)
+
 
 ### Manually Load ISO
 
@@ -663,14 +619,5 @@ Note that if disable EFI, you may hit the [kernel panic](#kernel-panic) issue (a
 - CentOS Stream 9
 - AlmaLinux 10
 - AlmaLinux 8
-
-
-### Reconfigure Interface 
-
-If your host machine suddenly changes internet connections, the gateway may change. This can affect the VM if it was previously configured with static network settings or tied to the old adapter.
-
-To fix this, you will need to update the gateway and network configuration.
-
-See [Reconfigure Interface.](/docs/001-Personal-Notes/020-Homelab/003-VirtualBox/099-Troubleshooting.md)
 
 
