@@ -34,7 +34,7 @@ Running the lab on 8 GB RAM is possible but performance will be constrained, esp
  
 ## Tools Used
 
-### VirtualBox
+#### VirtualBox
 
 VirtualBox is a free hypervisor used to create and manage virtual machines for lab and testing environments.
 
@@ -51,9 +51,9 @@ A few notes:
 
 QEMU is fine for learning and testing. It is not intended for production workloads. In real environments, compute nodes use KVM on physical servers.
 
-### Operating System
+#### Operating System
 
-This lab uses **Ubuntu Server**, but other Linux distributions can also be used, including:
+This lab uses **Ubuntu Server 22.04.5 LTS**, but other Linux distributions can also be used, including:
 
 - AlmaLinux
 - Rocky Linux
@@ -77,8 +77,8 @@ The lab uses three VMs to represent a small OpenStack environment.
 | Node       | Role                                                                        | vCPUs | RAM   | Disk  |
 | ---------- | --------------------------------------------------------------------------- | ----- | ----- | ----- |
 | Controller | Runs core OpenStack services (Identity, Image, Networking, Dashboard, etc.) | 2     | 6 GB  | 20 GB |
-| Compute    | Runs virtual machine instances (Nova compute service)                       | 1     | 4 GB- | 10 GB |
-| Storage    | Provides block storage (Cinder with LVM backend)                            | 1     | 4 GB- | 20 GB |
+| Compute    | Runs virtual machine instances (Nova compute service)                       | 1     | 4 GB | 10 GB |
+| Storage    | Provides block storage (Cinder with LVM backend)                            | 1     | 4 GB | 20 GB |
 
 Diagram: 
 
@@ -88,7 +88,7 @@ Diagram:
 
 </div>
 
-### Resource Considerations 
+#### Resource Considerations 
 
 The values below are recommended for stable operation, but adjustments can be made depending on available hardware.
 
@@ -106,7 +106,7 @@ On the Storage node:
 
 - Reducing RAM is possible but may impact storage performance.
 
-### Virtual Networks
+#### Virtual Networks
 
 Three virtual networks are used to separate traffic.
 
@@ -133,7 +133,7 @@ Three virtual networks are used to separate traffic.
 
       :::
 
-### Storage Backend
+#### Storage Backend
 
 The storage node uses LVM as the backend.
 
@@ -143,13 +143,137 @@ The storage node uses LVM as the backend.
 Production environments often use more advanced backends such as Ceph. For learning purposes, LVM keeps the setup simple and focused on OpenStack itself.
 
 
-### Neutron Networking Backend
+#### Neutron Networking Backend
 
 Linux Bridge is easier to configure and suitable for a basic learning environment.
 
 - Linux Bridge agent is used
 - Open vSwitch can also be used in other setups
 
+## Installation Checklist
+
+This guide provides a simplified checklist for installing OpenStack in virtual or bare metal environments. 
+
+#### Passwords
+
+| Description                  | Parameter       | Value     |
+| ---------------------------- | --------------- | --------- |
+| SQL Database 'root' password | MYSQL_ROOT      | openstack |
+| 'admin' user password        | ADMIN_PASS      | openstack |
+| Cinder database password     | CINDER_DBPASS   | openstack |
+| 'cinder' user password       | CINDER_PASS     | openstack |
+| Horizon database password    | DASH_DBPASS     | openstack |
+| 'demo' user password         | DEMO_PASS       | openstack |
+| Glance database password     | GLANCE_DBPASS   | openstack |
+| 'glance' user password       | GLANCE_PASS     | openstack |
+| Keystone database password   | KEYSTONE_DBPASS | openstack |
+| Metadata secret              | METADATA_SECRET | openstack |
+| Neutron database password    | NEUTRON_DBPASS  | openstack |
+| 'neutron' user password      | NEUTRON_PASS    | openstack |
+| Nova database password       | NOVA_DBPASS     | openstack |
+| 'nova' user password         | NOVA_PASS       | openstack |
+| 'placement' user password    | PLACEMENT_PASS  | openstack |
+| RabbitMQ password            | RABBIT_PASS     | openstack |
+
+#### Firewall and Common Ports
+
+| Service                      | Port            |
+| ---------------------------- | --------------- |
+| Horizon Dashboard (HTTP)     | 80              |
+| SSL Enabled Services (HTTPS) | 443             |
+| Block Storage iSCSI Target   | 3260            |
+| MariaDB                      | 3306            |
+| RabbitMQ                     | 5672            |
+| Cinder Endpoints             | 8776            |
+| Nova Endpoints               | 8774-8775, 8773 |
+| Nova VM Consoles             | 5900-5999       |
+| Nova VNC Proxy (browsers)    | 6080            |
+| Nova VNC Proxy (clients)     | 6081            |
+| Nova HTML5 Console           | 6082            |
+| Keystone Admin Endpoint      | 35357           |
+| Keystone Public Endpoint     | 5000            |
+| Glance API                   | 9292            |
+| Glance Registry              | 9191            |
+| Neutron API                  | 9696            |
+
+#### Host Addresses
+
+| Name       | IPv4 Address | Netmask       | DNS     |
+| ---------- | ------------ | ------------- | ------- |
+| controller | 10.0.0.11    | 255.255.255.0 | 8.8.8.8 |
+| compute1   | 10.0.0.31    | 255.255.255.0 | 8.8.8.8 |
+| compute2   | 10.0.0.32    | 255.255.255.0 | 8.8.8.8 |
+| block1     | 10.0.0.41    | 255.255.255.0 | 8.8.8.8 |
+
+#### Host SSH Users
+
+| Host       | Username | Password  |
+| ---------- | -------- | --------- |
+| controller | max      | openstack |
+| compute1   | max      | openstack |
+| compute2   | max      | openstack |
+| block1     | max      | openstack |
+
+Commands to check or disable firewall:
+
+```bash
+sudo ufw status verbose
+sudo ufw disable
+```
+
+## Installation Checklist: Controller Node 
+
+This section covers VM and bare metal setup for the controller node, including hardware, networking, and OS installation.
+
+#### Hardware Configuration (VM)
+
+| Virtual      | Recommended | Actual |
+| ------------ | ----------- | ------ |
+| VCPU         | 1-2+        | 2      |
+| RAM          | 4+ GB       | 6 GB   |
+| Primary Disk | 10+ GB      | 20 GB  |
+
+#### Hardware Configuration (Bare Metal)
+
+| Bare Metal   | Recommended | Actual |
+| ------------ | ----------- | ------ |
+| CPU          | 1+          | 4      |
+| RAM          | 16+ GB      | 32 GB  |
+| Primary Disk | 128+ GB SSD | 512 GB |
+
+#### Network Interfaces
+
+| Interface | Network    | Config Type | IP Addr   | Netmask       | Gateway  | DNS     | VirtualBox Name              |
+| --------- | ---------- | ----------- | --------- | ------------- | -------- | ------- | ---------------------------- |
+| Adapter 1 | Management | static      | 10.0.0.11 | 255.255.255.0 | 10.0.0.1 | 8.8.8.8 | Host Only Adapter #2         |
+| Adapter 2 | Provider   | manual      | ---       | ---           | ---      | ---     | NAT Network ProviderNetwork1 |
+| Adapter 3 | Internet   | DHCP        | DHCP      | DHCP          | DHCP     | DHCP    | NAT Network NatNetwork1      |
+
+#### VirtualBox Networks
+
+| Network              | CIDR                     | DHCP     |
+| -------------------- | ------------------------ | -------- |
+| Host-Only Adapter #2 | 10.0.0.1 / 255.255.255.0 | Disabled |
+| NAT Provider Network | 203.0.113.0/24           | Disabled |
+| NAT Internet Network | 10.10.10.0/24            | Enabled  |
+
+#### OS Installation Options
+
+Operating system: [Ubuntu Server 22.04 LTS](https://www.ubuntu.com/download/server)
+
+| Option            | Recommended       | Actual            |
+| ----------------- | ----------------- | ----------------- |
+| Language          | English           | English           |
+| Installation mode | Minimal VM        | Minimal VM        |
+| Hostname          | controller        | controller        |
+| User              | max               | max               |
+| Password          | openstack         | openstack         |
+| Partitioning      | Entire disk + LVM | Entire disk + LVM |
+| SSH               | OpenSSH Server    | OpenSSH Server    |
+| GRUB              | Yes               | Yes               |
+| Timezone          | Eastern           | Eastern           |
+
+Ubuntu 22.04 uses netplan for networking instead of the older `/etc/network/interfaces`. Make sure to set static IPs in netplan YAML files if using static management addresses.
 
 
 ## Installation Workflow
