@@ -1,24 +1,28 @@
 ---
-title: "Setting up VirtualBox"
-description: "Setting up VirtualBox"
+title: "Setting up"
 tags: 
-- Cloud
 - DevOps
-- OpenStack
-- VirtualBox
-sidebar_position: 5
+- Virtualization
+- Personal Notes
+- Development
+sidebar_position: 10
 last_update:
-  date: 9/15/2023
+  date: 11/22/2023
 ---
 
-## Overview
 
-The goal is to set up a minimal system that uses a simple virtual machine with working network access.
+## Overview 
+
+This page outlines the steps to setup a minimal system using a simple virtual machine working network access.
 
 1. Download minimal iso 
 2. Create virtual machine
 3. Configure network settings
 4. Install and verify system
+
+VirtualBox releases updates every couple of years so it's best  to rely on the official documentation on how to install VirtualBox.
+
+For more information, please see [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
 ## Download And Prepare Files
 
@@ -38,7 +42,7 @@ Reference:
 
 ## Create the Virtual Machine
 
-#### Name and Operating System
+### Name and Operating System
 
 1. Open VirtualBox and click **New** 
 2. Set the VM name, the VM folder, and the ISO image
@@ -51,7 +55,7 @@ Reference:
 
 </div>
 
-#### Unattended Install
+### Unattended Install
 
 1. Set the username and password
 2. Enable the **Guest Additions**
@@ -63,35 +67,39 @@ Reference:
 
 </div>
 
-#### Hardware and Hard Disk
+### Hardware 
 
-The amount of memory you can allocate to your VM depends on how much RAM your host machine has.
-If your system has limited RAM, you can assign less memory to the VM, but overall performance may be affected.
+When creating a VM, the amount of memory and CPU you assign depends on your **host machine’s resources** and the expected workload inside the VM.
 
-Below are the recommended VM specifications for single-node OpenStack labs (Packstack) based on different host RAM sizes:
+- If your host has limited RAM, assign less memory to the VM
+- Note that lesser memory may affect performance.
+- Adjust CPU, memory, and disk size based on the type of lab
+
+Recommended VM specifications (general guidance):
 
 | Host RAM | Recommended VM RAM | vCPU | Disk     | Swap   |
 | -------- | ------------------ | ---- | -------- | ------ |
-| 8 GB     | 4–6 GB             | 2    | 20–30 GB | 2–4 GB |
-| 16 GB    | 6–8 GB             | 2–4  | 30–40 GB | 2–4 GB |
+| 8 GB     | 2–4 GB             | 1–2  | 20 GB    | 2 GB   |
+| 16 GB    | 4–8 GB             | 2–4  | 30–40 GB | 2–4 GB |
 | 32 GB    | 8–12 GB            | 4–6  | 40–60 GB | 4–6 GB |
 | 64 GB    | 12–16 GB           | 6–8  | 60–80 GB | 4–8 GB |
 
+Notes:
 
-**Notes:**
+- VirtualBox memory is entered in MB (e.g., 12 GB = 12288 MB).
+- More RAM → smoother performance and faster response inside the VM.
+- Adjust disk size based on the number of images, software, or lab instances
+- Swap is optional but recommended for Linux VMs with smaller RAM allocations.
 
-- Base memory in VirtualBox is in MB, e.g. 12 GB = 12288 MB.
-- These are for **single-node OpenStack labs (Packstack)**.
-- More RAM → smoother install and better performance when running test instances.
-- Disk sizes can be adjusted depending on how many OpenStack images/instances you plan to create.
-
-In my case, I allocated 12 GB RAM and 6 vCPU:
+For a general lab, you might allocate **12 GB RAM and 6 vCPU** for a single VM:
 
 <div class='img-center'>
 
 ![](/img/docs/Screenshot-2026-02-08-021603.png)
 
 </div>
+
+### Hard Disk
 
 For the **Hard Disk**, select **Create a Virtual Hard Disk Now.**
 
@@ -136,62 +144,18 @@ You can safely ignore this for now and install Guest Additions manually later.
 
 ## Configure the VM Hardware
 
-Select the VM and click **Settings** to configure networking before installation. We need to use two adapters to separate internet access from internal OpenStack lab traffic.
+Select the VM and click **Settings** to configure networking before installation. 
 
-#### Adapter 1 — Bridged Adapter (Internet Access)
+### Network 
 
-This adapter provides internet access and connects your VM directly to your host machine’s network.
+You can assign a single network adapter or multiple adapters to your VM, depending on your lab requirements.
 
-| Setting          | Value                       |
-| ---------------- | --------------------------- |
-| Network Adapter  | Enabled                     |
-| Attached To      | Bridged Adapter             |
-| Promiscuous Mode | Deny (default)              |
+- For general VM setup, a single adapter (NAT) is often sufficient.
+- For advanced labs or multi-VM setups, multiple adapters can be used (e.g., NAT + Host-Only, Bridged + Host-Only).
 
-This provides external connectivity for package installation and updates.
+For detailed guidance on network configurations and all common adapter combinations, see the [VirtualBox Networking.](/docs/001-Personal-Notes/020-Homelab/003-VirtualBox/013-Networking.md)
 
-- Used for `yum/dnf` installs 
-- Keep default NAT settings
-- DHCP enabled by default
-
-<div class='img-center'>
-
-<!-- ![](/img/docs/Screenshot-2026-02-08-191048.png) -->
-
-![](/img/docs/Screenshot-2026-02-08-222452.png)
-
-</div>
-
-
-#### Adapter 2 — Host-Only 
-
-This adapter is dedicated to internal OpenStack networking and lab communication.
-
-| Setting          | Value             |
-| ---------------- | ----------------- |
-| Network Adapter  | Enabled           |
-| Attached To      | Host-Only Adapter |
-| Promiscuous Mode | Deny              |
-
-This setup allows the VM and host to communicate internally.
-
-- Used for host ↔ VM communication
-- Used for Packstack internal networking and testing
-- No internet access required
-
-**Notes**
-
-- Promiscuous mode not needed for single-node Packstack labs
-- NAT + Host-Only keeps internet separate from OpenStack traffic
-- Avoid Bridged mode unless external network testing is required
-
-<div class='img-center'>
-
-![](/img/docs/Screenshot-2026-02-08-191113.png)
-
-</div>
-
-#### System 
+### System 
 
 Go to **System** and ensure that Optical is set as the first boot device. You can click the arrow keys beside it to move the device.
 
@@ -201,7 +165,7 @@ Go to **System** and ensure that Optical is set as the first boot device. You ca
 
 </div>
 
-#### Storage 
+### Storage 
 
 1. In **Storage**, click the plus button, and choose **Optical Drive**:
 
@@ -491,186 +455,4 @@ ping -c 3 www.google.com
 ![](/img/docs/Screenshot-2026-02-09-002536.png)
 
 </div>
-
-
-## Allow Shared Clipboard 
-
-You can enable the shared clipboard in VirtualBox to copy text between your host machine and your VM.
-
-1. Go to **Devices** → **Shared Clipboard** → **Bidirectional**
-
-    <div class='img-center'>
-
-    ![](/img/docs/Screenshot-2026-02-14-152629.png)
-
-    </div>
-
-2. Inside the VM:
-
-    ```bash
-    lsmod | grep vboxguest
-    ```
-
-    If you see nothing, clipboard won’t work.
-
-    Also check:
-
-    ```bash
-    systemctl status vboxservice
-    ```
-
-    Should be **active (running)**.
-
-3. If NOT installed, install Guest Additions properly
-
-    ```bash
-    sudo dnf install -y gcc make perl kernel-devel kernel-headers elfutils-libelf-devel
-    ```
-
-    When you install VirtualBox Guest Additions on Linux, it often needs to compile kernel modules (like `vboxguest`) for your currently running kernel.
-
-    Check the running kernel version: 
-
-    ```bash
-    uname -r
-    ```
-
-    Check the installed headers: 
-
-    ```bash
-    rpm -q kernel-devel kernel-headers  
-    ```
-
-    You want something like:
-
-    ```bash
-    uname -r: 5.15.0-1127.el8.x86_64
-    kernel-devel-5.15.0-1127.el8.x86_64
-    kernel-headers-5.15.0-1127.el8.x86_64
-    ```
-
-    If the numbers don’t match, you need to update your kernel and headers:
-
-    ```bash
-    sudo dnf update -y
-    reboot
-    ```
-
-
-
-## Troubleshooting
-
-### Manually Load ISO
-
-If you get this error when you start the VM for the first time:
-
-```bash
-The virtual machine failed to boot. That might be caused by a missing operating system or misconfigured boot order. Mounting an operating system install DVD might solve this problem. Selecting an ISO file will attempt to mount it after the dialog is closed. 
-```
-
-<div class='img-center'>
-
-![](/img/docs/Screenshot-2026-02-08-031425.png)
-
-</div>
-
-You can try to select the ISO file from the dropdown meny and click **Mount and Retry Boot**
-
-<div class='img-center'>
-
-![](/img/docs/Screenshot-2026-02-08-031546.png)
-
-</div>
-
-Choose **Install CentOS Stream 10** and click Enter.
-
-<div class='img-center'>
-
-![](/img/docs/Screenshot-2026-02-08-031714.png)
-
-</div>
-
-It should go through the bootup process now.
-
-If it shows this error, it means its hitting a **kernel panic.** 
-
-See next section.
-
-```bash
-[ end Kernel panic - not syncing: Attempted to kill init! exit code=0x00007f00 ] -- 
-```
-
-
-### Kernel Panic 
-
-If you get this error when booting up the VM for the first time,  you are hitting a kernel panic.
-
-This usually means the VM tried to boot the kernel from the ISO but something went wrong at the very early stage of the OS startup
-
-```bash
-[ end Kernel panic - not syncing: Attempted to kill init! exit code=0x00007f00 ] -- 
-```
-
-<div class='img-center'>
-
-![](/img/docs/Screenshot-2026-02-08-033540.png)
-
-</div>
-
-Troubleshooting:
-
-1. Make sure the ISO matches the VM architecture: x86_64 (64-bit).
-2. Go to Settings → System → Motherboard → Enable EFI (special OSes only).
-    
-    - This is usually off for CentOS Stream 10.
-
-3. Go to Settings → System → Processor → Enable PAE/NX → enable it.
-4. Go to Settings → System → Acceleration → Enable the following:
-
-    - VT-x/AMD-V (if its an option)
-    - Nested Paging
-
-It should boot successfully now. 
-
-### Warning: deprecated hardware is detected: `x86_64-v2`
-
-Enabling EFI may change how the CPU is exposed to the guest. The VM is reporting a CPU level (x86-64-v3) that the guest `glibc` library doesn’t understand, which causes the fatal error.
-
-This is a common issue with Linux kernels on VirtualBox when EFI is enabled unnecessarily.
-
-1. EFI is not required for CentOS Stream 10 on VirtualBox.
-2. When EFI is enabled, VirtualBox exposes advanced CPU features to the guest (x86-64-v2, v3, etc.).
-3. Some older Linux userspace libraries (`glibc`) don’t support these features 
-
-To fix this:
-
-1. Disable EFI in VM settings:
-
-    ```bash
-    Settings → System → Motherboard → Uncheck “Enable EFI (special OSes only)”
-    ```
-
-2. Ensure PAE/NX is enabled:
-
-    ```bash
-    Settings → System → Processor → Enable PAE/NX
-    ```
-
-3. Boot the VM again from your ISO.
-
-Note that if disable EFI, you may hit the [kernel panic](#kernel-panic) issue (again). At this point, the better option would be to use a different ISO. Here are some alternatives:
-
-- CentOS Stream 9
-- AlmaLinux 10
-- AlmaLinux 8
-
-
-### Reconfigure Interface 
-
-If your host machine suddenly changes internet connections, the gateway may change. This can affect the VM if it was previously configured with static network settings or tied to the old adapter.
-
-To fix this, you will need to update the gateway and network configuration.
-
-See [Reconfigure Interface.](/docs/001-Personal-Notes/020-Homelab/003-Virtualization/010-VirtualBox.md#reconfigure-interface)
-
 

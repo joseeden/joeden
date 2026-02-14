@@ -188,7 +188,7 @@ Usage: find [-H] [-L] [-P] [-Olevel] [-D help|tree|search|stat|rates|opt|exec] [
 ~ $ find /etc -size -1000c
 ```
 
-Then append **-exec** followed by the action that we want to do to these files.
+Then append `-exec` followed by the action that we want to do to these files.
 
 ```
 ~ # find /etc/ -size -1000c -exec cp {} /tmp/files/pics \;

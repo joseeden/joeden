@@ -144,7 +144,7 @@ Because the sidebar accordion is loaded via a `<script src="...">`, it must live
 
 2. **Multiple sections still expand**
 
-    - Confirm there is only **one accordion script*- loaded
+    - Confirm there is only **one accordion Script** loaded
     - Check that the sidebar uses the default Docusaurus classes:
 
       - `theme-doc-sidebar-menu`

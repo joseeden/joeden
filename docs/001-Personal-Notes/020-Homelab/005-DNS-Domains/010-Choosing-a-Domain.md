@@ -293,11 +293,11 @@ These let you freely use and test plain HTTP without browser blocks.
 5. Complete the payment process.
 6. Get the confirmation email with the details of your purchase.
 
-For more information, please see [Buying a Domain.](/docs/001-Personal-Notes/020-Homelab/011-Buying-a-Domain.md)
+For more information, please see [Buying a Domain.](/docs/001-Personal-Notes/020-Homelab/005-DNS-Domains/011-Buying-a-Domain.md)
 
 
 ## Manage DNS in Cloudflare  
 
 Cloudflare can manage your DNS, security, and performance features even if your domain is registered somewhere else.
 
-For more inforrmation, please see [Cloudflare.](/docs/001-Personal-Notes/020-Homelab/020-Cloudflare.md)
+For more inforrmation, please see [Cloudflare.](/docs/001-Personal-Notes/020-Homelab/005-DNS-Domains/020-Cloudflare.md)

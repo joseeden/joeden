@@ -13,16 +13,7 @@ last_update:
 
 ## Overview
 
-OpenStack is an open source cloud platform for running virtual machines, storage, and networking in one environment.
-
-- Provides cloud infrastructure services
-- Packaged By RPM Based Linux distributions
-
-OpenStack delivers the core cloud features, and RPM based Linux systems provide ready to use packaged services. 
-
-## Lab Environment 
-
-The lab focuses on deploying OpenStack on a single machine to simplify networking and hardware needs. We'll install several core OpenStack services needed for a basic cloud platform.
+Packstack is an automated installer that uses Puppet scripts to deploy OpenStack quickly on a single machine or small lab environment. The core OpenStack services are: 
 
 - Compute Service
 - Block Storage Service
@@ -32,19 +23,35 @@ The lab focuses on deploying OpenStack on a single machine to simplify networkin
 - Object Storage Service
 - Web Dashboard
 
-These services provide virtual machines, networking, authentication, storage, and a web interface for management.
+Summary of steps:
+
+1. Prepare the system
+2. Install required packages
+3. Run Packstack installer
+4. Configure networking and external access
 
 ## System Requirements
 
-Start simple and expand resources if you want to run more virtual machines.
+Basic requirements: 
 
-- Clean Linux OS installation
 - Minimum 16GB RAM recommended
 - Minimum 20GB disk space
 - 64 Bit CPU with virtualization support
 
-While 16GB RAM is recommended, a small lab can run with about 4GB to 6GB RAM but with limited performance. A few notes:
+:::info 
+
+While 16GB RAM is recommended, a small lab can run with about 4GB to 6GB RAM but with limited performance. 
+
+::: 
+
+A few notes:
 
 - Increase disk space if you plan to run multiple virtual machines
 - The CPU must support hardware virtualization
 - Enable virtualization in BIOS before installation
+
+## Install VirtualBox 
+
+The lab deploys OpenStack inside a virtual machine on VirtualBox. The VM uses CentOS 8 or AlmaLinux 8 as the operating system, which provides a stable base for the OpenStack installation.
+
+For more information, please see [Setting up VirtualBox.](/docs/038-OpenStack/005-Installation/005-Setting-up-VirtualBox.md)

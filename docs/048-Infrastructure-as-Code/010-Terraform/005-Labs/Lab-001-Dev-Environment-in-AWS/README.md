@@ -1372,7 +1372,7 @@ We can see from the output of the **plan** command that it didn't introduce any 
 No changes. Your infrastructure matches the configuration. 
 ```
 
-To update the EC2 instance, we'll use **-replace**.
+To update the EC2 instance, we'll use `-replace`.
 
 ```bash
 terraform state list

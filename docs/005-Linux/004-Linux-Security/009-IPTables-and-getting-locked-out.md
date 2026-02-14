@@ -24,7 +24,7 @@ My current setup:
 - I didn't modify the default parameters set in the **iptables-config** file
 
 
-I was playing around with DROP and REJECT on iptables and I'm using the "**--protocol**" as criteria to apply policy on. Since I've used udp and icmp already, I tried to drop tcp connections - **bad idea**.
+I was playing around with DROP and REJECT on iptables and I'm using the `--protocol` as criteria to apply policy on. Since I've used udp and icmp already, I tried to drop tcp connections - **bad idea**.
 
 ```bash
 $ sudo iptables -A INPUT --protocol tcp --in-intersection

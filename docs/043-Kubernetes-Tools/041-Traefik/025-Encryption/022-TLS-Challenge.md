@@ -91,7 +91,7 @@ For example, my setup uses:
 - Domain from Namecheap
 - DNS hosted on DigitalOcean
 
-After getting a domain, update its registrar settings so it points to your chosen DNS provider. If you're also using DigitalOcean, you can follow the steps here: [Adding a Domain in DigitalOcean](/docs/001-Personal-Notes/020-Homelab/040-DigitalOcean.md#adding-a-domain)
+After getting a domain, update its registrar settings so it points to your chosen DNS provider. If you're also using DigitalOcean, you can follow the steps here: [Adding a Domain in DigitalOcean](/docs/001-Personal-Notes/020-Homelab/010-Hosting/040-DigitalOcean.md#adding-a-domain)
 
 **NOTE:** Make sure your domain is fully set up and pointing to your server before proceeding with the labs. Propagation can take up to 24–48 hours, sometimes longer depending on the registrar and TLD.
 

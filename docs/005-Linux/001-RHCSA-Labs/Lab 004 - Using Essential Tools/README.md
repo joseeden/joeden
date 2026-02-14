@@ -136,7 +136,7 @@ $ man user
 useradd        user_caps      user.conf.d    user_contexts  userdel        userhelper     usermod        users
 ```
 
-We could then use *--help* to see a shorter version for man page of useradd.
+We could then use `--help` to see a shorter version for man page of useradd.
 
 
 ```bash

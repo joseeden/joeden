@@ -398,7 +398,7 @@ Firstly, make sure to do the following first:
     heroku login
     ```
 
-    **Note:** If you encountered an issue, please see [Heroku](/docs/001-Personal-Notes/020-Homelab/031-Heroku.md) page.
+    **Note:** If you encountered an issue, please see [Heroku](/docs/001-Personal-Notes/020-Homelab/010-Hosting/031-Heroku.md) page.
 
     This will open a web browser. Click **Log in.**
 
