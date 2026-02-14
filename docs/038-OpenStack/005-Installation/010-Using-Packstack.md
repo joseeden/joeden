@@ -23,13 +23,6 @@ Packstack is an automated installer that uses Puppet scripts to deploy OpenStack
 - Object Storage Service
 - Web Dashboard
 
-Summary of steps:
-
-1. Prepare the system
-2. Install required packages
-3. Run Packstack installer
-4. Configure networking and external access
-
 ## System Requirements
 
 Basic requirements: 
@@ -71,20 +64,64 @@ For more information, please see [Setting up VirtualBox.](/docs/038-OpenStack/00
     ssh -i ~/.ssh/<name-of-your-key> <user>@<vm-ip>
     ```
 
-2. Set locale values in `/etc/environment` to avoid language related issues:
+2. Before setting the locale, install the `glibc` language packs.
+
+    Minimal images usually don’t include them.
 
     ```bash
-    sudo vi /etc/environment
+    sudo dnf install -y glibc-langpack-en
     ```
 
-    Add variables:
+    If you want full locale support:
 
     ```bash
-    LANG=en_US.utf-8 
-    LC_ALL=en_US.utf-8 
+    sudo dnf install -y glibc-all-langpacks
     ```
 
-3. Services like `firewalld` and `NetworkManager` can interfere with networking.
+    Verify locale exists:
+
+    ```bash
+    localectl list-locales | grep en_US
+    ```
+
+    Output:
+
+    ```bash
+    en_US.utf8
+    ```
+
+3. Set locale values in `/etc/environment` to avoid language related issues.
+
+    ```bash
+    sudo localectl set-locale LANG=en_US.UTF-8
+    ```
+
+    Check current settings
+
+    ```bash
+    locale
+    ```
+
+    Output:
+
+    ```bash
+    LANG=C.UTF-8
+    LC_CTYPE="C.UTF-8"
+    LC_NUMERIC="C.UTF-8"
+    LC_TIME="C.UTF-8"
+    LC_COLLATE="C.UTF-8"
+    LC_MONETARY="C.UTF-8"
+    LC_MESSAGES="C.UTF-8"
+    LC_PAPER="C.UTF-8"
+    LC_NAME="C.UTF-8"
+    LC_ADDRESS="C.UTF-8"
+    LC_TELEPHONE="C.UTF-8"
+    LC_MEASUREMENT="C.UTF-8"
+    LC_IDENTIFICATION="C.UTF-8"
+    LC_ALL=
+    ```
+
+4. Services like `firewalld` and `NetworkManager` can interfere with networking.
 
     Check the status first:
 
@@ -100,11 +137,12 @@ For more information, please see [Setting up VirtualBox.](/docs/038-OpenStack/00
     sudo systemctl status firewalld
     ```
 
-4. Next, disable `NetworkManager` and enable the traditional network service.
+5. Next, disable `NetworkManager` and enable the traditional network service.
 
     :::info 
 
     If you are using AlmaLinux 9, don't disable `NetworkManager`
+    Skip this step and proceed to step 6.
     
     :::
 
@@ -135,7 +173,7 @@ For more information, please see [Setting up VirtualBox.](/docs/038-OpenStack/00
     It means that the OS doesnt not include `network.service` and you will need to install the legacy scripts. See [Install `network-scripts`.](/docs/038-OpenStack/005-Installation/005-Setting-up-VirtualBox.md#install-network-scripts)
 
 
-4. Verify the network settings. 
+6. Verify the network settings. 
 
     **For AlmaLinux 8:** 
 
@@ -174,6 +212,12 @@ For more information, please see [Setting up VirtualBox.](/docs/038-OpenStack/00
     Checking the network configuration for `enp0s3`:
 
     ```bash
+    sudo cat /etc/NetworkManager/system-connections/enp0s3.nmconnection 
+    ```
+
+    Output:
+
+    ```bash
     [ipv4]
     address1=192.168.1.130/24
     dns=8.8.8.8;
@@ -187,7 +231,7 @@ For more information, please see [Setting up VirtualBox.](/docs/038-OpenStack/00
 
     :::
 
-5. Disable SELinux permanently by editing the configuration file. 
+7. Disable SELinux permanently by editing the configuration file. 
 
     The variable `SELINUX` must be set to `disabled`.
 
@@ -214,78 +258,115 @@ For more information, please see [Setting up VirtualBox.](/docs/038-OpenStack/00
     Disabled
     ```
 
-
-
 ## Install Packages and Repositories
 
 With prerequisites done, install repositories and required tools before running Packstack. 
 
-- Install OpenStack repository RPM
-- Install yum utilities
-- Enable repositories
-- Update system packages
+1. Enable the CRB Repo.
 
-1. Install the OpenStack repository RPM so the system knows where to fetch OpenStack packages.
+    EL9 uses the **CRB** (CodeReady Builder) repository for additional packages.
 
     ```bash
-    sudo yum install -y centos-release-openstack
+    sudo dnf config-manager --set-enabled crb
     ```
 
-    If you are using AlmaLinux 9, install the RDO repository RPM:
+    Note: **EL9** (“Enterprise Linux 9”) is shorthand for the RHEL-based ecosystem built on Red Hat Enterprise Linux 9. This includes:
 
-    ```bash
-    sudo dnf install -y centos-release-openstack-antelope
-    sudo dnf update -y
-    ```
+    - RHEL 9 (Red Hat Enterprise Linux)
+    - AlmaLinux 9
+    - Rocky Linux 9
+    - Oracle Linux 9
+    - CentOS Stream 9
 
-2. Install utility tools required for repository management. 
+    All EL9 systems share the same package base, kernel family, and compatible repositories.
 
-    The variable `dnf-util` provides repository configuration commands.
+
+2. Install `dnf-utils` and 'epel-release`
+
+    The variable `dnf-utils` provides repository configuration commands.
 
     ```bash
     sudo dnf install -y dnf-utils
     ```
 
-    Enable repositories and update packages.
+    `epel-release` enables Extra Packages for Enterprise Linux (EPEL), which provides additional packages not included in the base repos.
 
     ```bash
-    sudo dnf config-manager --set-enabled openstack
-    sudo dnf update -y
+    sudo dnf install -y epel-release
     ```
 
+3. Install the RDO release (for OpenStack): 
+
+    For AlmaLinux 9, install the OpenStack repository:
+
+    ```bash
+    sudo dnf install -y centos-release-openstack-antelope
+    ```
+
+    Verify the repository installation:
+
+    ```bash
+    dnf repolist all | grep -i openstack
+    ```
+
+    Output:
+
+    ```bash
+    centos-openstack-antelope                     CentOS-9 - OpenStack ante enabled
+    centos-openstack-antelope-source              CentOS-9 - OpenStack ante disabled
+    centos-openstack-antelope-test                CentOS-9 - OpenStack ante disabled
+    ```
+
+4. Enable repositories and update packages.
+
+    ```bash
+    sudo dnf config-manager --set-enabled centos-openstack-antelope
+    sudo dnf update -y
+    sudo reboot
+    ```
 
 ## Install and Run Packstack
 
 After updating packages, install Packstack and run an all in one OpenStack deployment. Packstack uses Puppet scripts to automate setup and reduce manual configuration.
 
-- Install Packstack
-- Verify network interface
-- Run all in one installation
+1. Install Packstack.
 
-Install Packstack using yum.
+    ```bash
+    sudo dnf install -y openstack-packstack
+    ```
 
-```bash
-sudo yum install -y openstack-packstack
-```
+2. Check the network interfaces.
 
-Check the network interface before installation. The variable `enp0s3` represents the main physical interface.
+    Before running Packstack, confirm your network interface and IP address. Packstack will configure networking for OpenStack, so it’s important that the correct interface is used.
 
-```bash
-ip addr show
-```
+    ```bash
+    ip addr show
+    ```
 
-Confirm the interface and IP address are correct because Packstack will modify network settings.
+    Here, `enp0s3` represents the main physical interface. This interface will be mapped to external connectivity (ext-net) in OpenStack.
 
-Run Packstack with required parameters. Variables like `ext-net` represent the external layer two segment used for external connectivity.
+    <div class='img-center'>
+    
+    ![](/img/docs/Screenshot-2026-02-15-013330.png)
+    
+    </div>
+    
 
-```bash
-sudo packstack --allinone \
---os-neutron-ml2-type-drivers=flat,vlan \
---os-neutron-ml2-mechanism-drivers=openvswitch \
---os-neutron-bridge-mappings=ext-net:br-ex
-```
+3. Run Packstack interactively.
 
-Installation may take 30 to 60 minutes depending on system resources. Completing this step installs OpenStack services automatically and prepares networking components.
+    ```bash
+    sudo packstack --allinone
+    ```
+
+    The installer will ask:
+
+    - Which interface is the external network (enp0s3)
+    - Admin passwords
+    - Which services to install
+
+    For a lab deployment, you can simply accepts the default settings. 
+    
+Installation may take 30 to 60 minutes depending on system resources. After completion, OpenStack services will be installed, configured, and started automatically.
 
 
 ## Verify Network Changes 
