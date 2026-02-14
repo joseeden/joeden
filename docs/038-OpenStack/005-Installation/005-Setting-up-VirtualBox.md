@@ -671,6 +671,6 @@ If your host machine suddenly changes internet connections, the gateway may chan
 
 To fix this, you will need to update the gateway and network configuration.
 
-See [Reconfigure Interface.](/docs/001-Personal-Notes/020-Homelab/003-Virtualization/010-VirtualBox.md#reconfigure-interface)
+See [Reconfigure Interface.](/docs/001-Personal-Notes/020-Homelab/003-VirtualBox/099-Troubleshooting.md)
 
 
