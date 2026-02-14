@@ -127,7 +127,7 @@ You should now see the new VM created.
 
 <div class='img-center'>
 
-![](/img/docs/Screenshot-2026-02-08-025115.png)
+![](/img/docs/Screenshot-2026-02-08-025130.png)
 
 </div>
 
@@ -456,3 +456,173 @@ ping -c 3 www.google.com
 
 </div>
 
+
+## Using SSH Key and Disabling Root
+
+For minimal ISO setups (no GUI), you can typically access the VM using SSH from your host machine.
+
+```bash
+ssh <user>@<vm-ip>
+```
+
+Example:
+
+```bash
+ssh root@192.168.1.130 
+```
+
+Note that password-based root login is not secure. To make it secure, switch to SSH keys and disable root login.
+
+1. Generate an SSH key on your host machine
+
+    ```bash
+    ssh-keygen -t ecdsa
+    ```
+
+    When prompted, provide a custom key name:
+
+    ```bash
+    Enter file in which to save the key (/home/johnsmith/.ssh/id_ecdsa): /home/johnsmith/.ssh/vbox
+    ```
+
+    This creates:
+
+    ```bash
+    ~/.ssh/vbox
+    ~/.ssh/vbox.pub
+    ```
+
+2. Copy the public key to the VM (root account first)
+
+    ```bash
+    ssh-copy-id -i ~/.ssh/vbox.pub root@192.168.1.130
+    ```
+
+   Enter the root password when prompted.
+
+    ```bash
+    root@192.168.1.130's password: 
+
+    Number of key(s) added: 1
+
+    Now try logging into the machine, with:   "ssh 'root@192.168.1.130'"
+    and check to make sure that only the key(s) you wanted were added.
+    ```
+
+3. Verify passwordless SSH works.
+
+    ```bash
+    ssh root@168.1.130 
+    ```
+
+    You should no longer be prompted for a password.
+
+4. Create a non-root user with sudo privileges (inside the VM)
+
+    ```bash
+    adduser joeden
+    passwd joeden
+    usermod -aG wheel joeden
+    ```
+
+    Verify sudo access:
+
+    ```bash
+    su - joeden
+    sudo whoami
+    ```
+
+    Output:
+
+    ```bash
+    root
+    ```
+
+5. Back in your host machine's terminal, copy your SSH key to the new user.
+
+    ```bash
+    ssh-copy-id -i ~/.ssh/vbox.pub joeden@192.168.1.130
+    ```
+
+6. Verify SSH login using the new user.
+
+    ```bash
+    ssh joeden@192.168.1.130
+    ```
+
+    Optional `sudo` test:
+
+    ```bash
+    sudo su -
+    ```
+
+    Make sure this works **before disabling root login**.
+
+
+7. Disable the root login via SSH (inside the VM).
+
+    Check current setting:
+
+    ```bash
+    sudo grep PermitRootLogin /etc/ssh/sshd_config
+    ```
+
+    If it shows:
+
+    ```bash
+    PermitRootLogin yes
+    ```
+
+    Disable it:
+
+    ```bash
+    sudo sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config
+    ```
+
+    Restart SSH:
+
+    ```bash
+    sudo systemctl restart sshd
+    ```
+
+
+8. (Optional but recommended) Disable password authentication.
+
+    Only perform this step **after confirming SSH key login works**, otherwise you may lock yourself out.
+
+    Check current settings:
+
+    ```bash
+    sudo grep PasswordAuthentication /etc/ssh/sshd_config
+    ```
+
+    Output:
+
+    ```bash
+    #PasswordAuthentication yes
+    PasswordAuthentication yes
+    ```
+
+    Disable password authentication:
+
+    ```bash
+    sudo sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/sshd_config
+    ```
+
+    Restart the SSH service:
+
+    ```bash 
+    sudo systemctl restart sshd
+    ```
+
+    From your host machine, attempt to SSH into the VM:
+
+    ```bash
+    ssh jmeden@192.168.1.130
+    ```
+
+    If password authentication has been successfully disabled and no valid key is present, you should see an error:
+
+    ```bash
+    jmeden@192.168.1.130: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
+    ```
