@@ -1,5 +1,5 @@
 ---
-title: "Using Packstack"
+title: "Using Packstack [OUTDATED]"
 description: "Using Packstack to Setup OpenStack"
 tags: 
 - Cloud
@@ -22,6 +22,8 @@ Packstack was designed and maintained for older OpenStack releases (up through U
 - The Packstack CLI has lost many features (like answer file generation).
 - Upstream support has dropped in newer OpenStack versions.
 - It’s not actively supported on modern EL9/EL10 stacks.
+
+See [ABANDONING THIS GUIDE.](#abandoning-this-guide)
 
 The modern recommended approaches to deploy OpenStack are: 
 
@@ -376,8 +378,78 @@ After updating packages, install Packstack and run an all in one OpenStack deplo
     
 Installation may take 30 to 60 minutes depending on system resources. After completion, OpenStack services will be installed, configured, and started automatically.
 
+## ABANDONING THIS GUIDE 
 
-## Verify Network Changes 
+During the deployment of OpenStack, I switched across three different operating systems due to compatibility and support limitations. Below summarises the findings and reasons for discontinuing the Packstack-based approach.
+
+#### 1. CentOS Stream 8
+
+I initially started with CentOS Stream 8 because it was historically aligned with RDO-based OpenStack deployments and commonly referenced in older Packstack documentation.
+
+- Began deployment using RDO repositories
+- Encountered repository and release compatibility issues
+- No actively maintained/forward-looking OpenStack releases for EL8
+
+Due to lifecycle limitations and shrinking support coverage, CentOS Stream 8 was not suitable for a sustainable OpenStack lab environment.
+
+#### 2. AlmaLinux 8.10
+
+I then switched to AlmaLinux 8.10 as a drop-in EL8 replacement with extended support and better stability compared to CentOS Stream 8.
+
+- Supported legacy `network-scripts` configuration
+- Some OpenStack RDO builds technically usable
+- Allowed partial compatibility with certain RDO builds
+
+However:
+
+- RDO packages are officially maintained for CentOS Stream and RHEL
+- AlmaLinux EL8 is **not** the primary target for RDO validation
+- Increasing dependency and repository inconsistencies
+
+Although more stable than CentOS Stream 8, AlmaLinux 8.10 still inherits EL8’s declining OpenStack support landscape, which also makes it unsuitable for long-term deployment goals.
+
+
+#### 3. AlmaLinux 9.7
+
+After encountering lifecycle and repository limitations on EL8 distributions, I switched to AlmaLinux 9.7 to align with a newer, long-term supported Enterprise Linux platform. The goal was to verify whether Packstack could still function reliably on EL9.
+
+- Attempted deployment using `packstack --allinone`:
+- Deployment failed during Puppet execution
+
+Error encountered:
+
+```bash
+Error: (pymysql.err.OperationalError) (1045, 
+"Access denied for user 'nova'@'dev-packstack' (using password: YES)")
+```
+
+Root cause analysis:
+
+- Packstack was designed primarily for CentOS 7 and CentOS 8
+- It is not fully supported on EL9 distributions
+
+AlmaLinux 9 introduces:
+
+- Newer MariaDB versions
+- Updated Python stack
+- Different system defaults
+- Stricter SELinux policies
+
+As a result, Packstack on EL9 environments is unreliable and not recommended.
+
+
+#### Final Decision 
+
+Given the compatibility limitations and lifecycle concerns:
+
+- EL8 is effectively sunset for modern OpenStack releases
+- Packstack is legacy-oriented and not aligned with EL9
+- EL9 is the current long-term supported platform
+
+Having said, I decided to stop using Packstack and move to **Kolla-Ansible on AlmaLinux 9**, which better supports modern OpenStack deployments and long-term maintenance.
+
+
+## [ABANDONED] Verify Network Changes 
 
 Packstack modifies network interfaces and creates Open vSwitch bridges. Understanding these changes ensures external connectivity works correctly.
 
@@ -422,7 +494,7 @@ IPADDR=192.168.0.11
 The bridge now holds the IP address instead of the physical interface, which allows OpenStack networking to function correctly.
 
 
-## Create External Network and Subnet 
+## [ABANDONED] Create External Network and Subnet 
 
 After installation, create external networking so instances can reach the outside world. The goal is to allow floating IP assignment and external connectivity.
 
