@@ -38,17 +38,17 @@ Basic requirements:
 - Minimum 20GB disk space
 - 64 Bit CPU with virtualization support
 
-:::info 
-
-While 16GB RAM is recommended, a small lab can run with about 4GB to 6GB RAM but with limited performance. 
-
-::: 
-
 A few notes:
 
 - Increase disk space if you plan to run multiple virtual machines
 - The CPU must support hardware virtualization
 - Enable virtualization in BIOS before installation
+
+:::info 
+
+While 16GB RAM is recommended, a small lab can run with about 4GB to 6GB RAM but with limited performance. 
+
+::: 
 
 ## Install VirtualBox 
 

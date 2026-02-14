@@ -441,56 +441,94 @@ Start the machine and complete the installation using the GUI installer.
     </div>
 
 
+## Install `network-scripts` 
+
+If you are using AlmaLinux, you may need to install the traditional **network-scripts** package for this lab. Newer versions typically uses `NetworkManager` and doesn't include the old `network.service`.
+
+1. Check your AlmaLinux version:
+
+    ```bash
+    cat /etc/almalinux-release
+    ```
+
+    Output:
+
+    ```bash
+    AlmaLinux release 8.10 (Cerulean Leopard)
+    ```
+
+    The fix depends on the version.
+
+2. If you are using **AlmaLinux 8**, you can still install the legacy scripts:
+
+    ```bash
+    sudo dnf install network-scripts -y
+    ```
+
+    Then enable:
+
+    ```bash
+    sudo systemctl enable network
+    sudo systemctl start network
+    ```
+
+3. If you are using **AlmaLinux 9**, `network.service` is already deprecated. 
+
+    - Red Hat killed legacy network-scripts
+    - You are expected to use NetworkManager
+    - Even if you install packages, the traditional service usually won’t exist.
+
+
 ## Verify Network Connectivity
 
-Log in to the VM as root using the password you set during installation.
+1. Log in to the VM as root using the password you set during installation.
 
-<div>
+    <div>
 
-![](/img/docs/Screenshot-2026-02-08-202302.png)
+    ![](/img/docs/Screenshot-2026-02-08-202302.png)
 
-</div>
-
-
-Check the status for the interface `enp0s3` and confirm there's a route to the gateway:
-
-```bash
-ip a show
-ip route
-```
-
-<div class='img-center'>
-
-![](/img/docs/Screenshot-2026-02-08-202636.png)
-
-</div>
+    </div>
 
 
-Test connectivity to the gateway: 
+2. Check the status for the interface `enp0s3` and confirm there's a route to the gateway:
 
-```bash
-ping -c 3 192.168.1.1
-```
+    ```bash
+    ip a show
+    ip route
+    ```
 
-<div>
+    <div class='img-center'>
 
-![](/img/docs/Screenshot-2026-02-09-002443.png)
+    ![](/img/docs/Screenshot-2026-02-08-202636.png)
 
-</div>
+    </div>
 
 
-Test DNS and internet access:
+3. Test connectivity to the gateway: 
 
-```bash
-ping -c 3 8.8.8.8
-ping -c 3 www.google.com
-```
+    ```bash
+    ping -c 3 192.168.1.1
+    ```
 
-<div>
+    <div>
 
-![](/img/docs/Screenshot-2026-02-09-002536.png)
+    ![](/img/docs/Screenshot-2026-02-09-002443.png)
 
-</div>
+    </div>
+
+
+4. Test DNS and internet access:
+
+    ```bash
+    ping -c 3 8.8.8.8
+    ping -c 3 www.google.com
+    ```
+
+    <div>
+
+    ![](/img/docs/Screenshot-2026-02-09-002536.png)
+
+    </div>
 
 
 ## Allow Shared Clipboard 
