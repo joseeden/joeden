@@ -32,9 +32,9 @@ Using the minimal ISO keeps installation fast and simple. Having the file ready 
 Reference: 
 
 - [CentOS Stream 9 DVD ISO](https://www.centos.org/download/)
-- [AlmaLinux 8.10 Minimal ISO](https://almalinux.org/get-almalinux/)
+- [AlmaLinux 9.7 Minimal ISO](https://almalinux.org/get-almalinux/)
 
-**UPDATE**: Due to compatibility issues with CentOS Stream 9 and 10 and the many problems encountered during installation, I have switched to using AlmaLinux 8.10.
+**UPDATE**: Due to compatibility issues with CentOS Stream 9 and 10 and the many problems encountered during installation, I have switched to using AlmaLinux.
 
 ## Create the Virtual Machine
 
@@ -43,7 +43,7 @@ Reference:
 1. Open VirtualBox and click **New** 
 2. Set the VM name, the VM folder, and the ISO image
 
-**UPDATE**: Due to compatibility issues with CentOS Stream 9 and 10 and the many problems encountered during installation, I have switched to using AlmaLinux 8.10.
+**UPDATE**: Due to compatibility issues with CentOS Stream 9 and 10 and the many problems encountered during installation, I have switched to using AlmaLinux.
 
 <div class='img-center'>
 
@@ -63,7 +63,7 @@ Reference:
 
 </div>
 
-#### Hardware and Hard Disk
+#### Hardware 
 
 The amount of memory you can allocate to your VM depends on how much RAM your host machine has.
 If your system has limited RAM, you can assign less memory to the VM, but overall performance may be affected.
@@ -92,6 +92,9 @@ In my case, I allocated 12 GB RAM and 6 vCPU:
 ![](/img/docs/Screenshot-2026-02-08-021603.png)
 
 </div>
+
+
+#### Hard Disk
 
 For the **Hard Disk**, select **Create a Virtual Hard Disk Now.**
 
@@ -390,7 +393,9 @@ Start the machine and complete the installation using the GUI installer.
       
       </div>
 
-      Click **Save**. The interface should show as **Connected** with its details displayed.
+      Click **Save**. The interface should show as **Connected** with its details displayed. 
+      
+      Click **Done.**
 
       <div class='img-center'>
       
@@ -470,6 +475,7 @@ If you are using AlmaLinux, you may need to install the traditional **network-sc
     ```bash
     sudo systemctl enable network
     sudo systemctl start network
+    sudo systemctl status network
     ```
 
 3. If you are using **AlmaLinux 9**, `network.service` is already deprecated. 

@@ -127,7 +127,7 @@ You should now see the new VM created.
 
 <div class='img-center'>
 
-![](/img/docs/Screenshot-2026-02-08-025130.png)
+![](/img/docs/Screenshot-2026-02-08-025115.png)
 
 </div>
 
