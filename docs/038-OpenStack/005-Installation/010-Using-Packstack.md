@@ -13,15 +13,23 @@ last_update:
 
 ## Overview
 
-Packstack is an automated installer that uses Puppet scripts to deploy OpenStack quickly on a single machine or small lab environment. The core OpenStack services are: 
+Packstack is an automated installer that uses Puppet scripts to deploy OpenStack quickly on a single machine or small lab environment. 
 
-- Compute Service
-- Block Storage Service
-- Image Service
-- Identity Service
-- Networking Service
-- Object Storage Service
-- Web Dashboard
+:::warning[Deprecated]
+
+Packstack was designed and maintained for older OpenStack releases (up through Ussuri/Train/Wallaby era). In recent years:
+
+- The Packstack CLI has lost many features (like answer file generation).
+- Upstream support has dropped in newer OpenStack versions.
+- It’s not actively supported on modern EL9/EL10 stacks.
+
+The modern recommended approaches to deploy OpenStack are: 
+
+- OpenStack Ansible 
+- Kolla-Ansible/Kolla-Operator 
+- TripleO/RDO Director 
+
+:::
 
 ## System Requirements
 
