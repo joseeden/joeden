@@ -82,6 +82,11 @@ The lab uses three VMs to represent a small OpenStack environment.
 
 Diagram: 
 
+<div class='img-center'>
+
+![](/img/docs/all-things-openstack-manual-install.png)
+
+</div>
 
 ### Resource Considerations 
 
