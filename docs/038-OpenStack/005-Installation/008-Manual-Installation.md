@@ -297,20 +297,23 @@ We'll use VirtualBox to create three VMs with the specifications outlined in the
 
 - Ubuntu Server 22.04 LTS
 - Headless (no GUI)
-- Network settings for management, provider, and internet
 
-During the VM creation, you can allow "Unattended Install" to allow the OS to be automatically installed in the background without showing the user setup screens.
-
-- It creates a user account
-- Sets the Hostname  
-- Configures the basic settings 
-- Reboots into the installed system 
+You can allow "Unattended Install" to allow the OS to be automatically installed in the background without showing the user setup screens. 
 
 <div class='img-center'>
 
 ![](/img/docs/Screenshot-2026-02-17-170456.png)
 
 </div>
+
+During unattended install, VirtualBox already:
+
+- Creates partitions (usually with LVM)
+- Creates a user
+- Installs GRUB
+- Sets the timezone
+- Installs OpenSSH (if selected)
+- Auto-configures networking with DHCP (temporarily)
 
 
 #### Controller VM
@@ -376,7 +379,16 @@ Make sure to select the **Host-Only Adapter (Management Network)** created from 
 - Adapter 1 (Host-Only) allows communication with controller for service API.
 
 
-### 3. Create the Virtual Machines 
+### 3. Configure Networking 
+
+The next step is to configure the controller, compute, and storage nodes to use fixed IP.
+
+First, check interface name:
+
+```bash
+ip a
+```
+
 
 ### 1. Prepare Infrastructure Services
 
