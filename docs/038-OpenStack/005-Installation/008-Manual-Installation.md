@@ -40,6 +40,7 @@ VirtualBox is a free hypervisor used to create and manage virtual machines for l
 
 - Used to create and run the virtual machines
 - Available on Windows, macOS, and Linux
+- See: [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
 Other hypervisors such as Hyper-V, VMware, or KVM can also be used with minor configuration adjustments.
 
@@ -53,11 +54,11 @@ QEMU is fine for learning and testing. It is not intended for production workloa
 
 #### Operating System
 
-This lab uses **Ubuntu Server 22.04.5 LTS**, but other Linux distributions can also be used, including:
+This lab uses [Ubuntu Server 22.04.5 LTS](https://ubuntu.com/download/server), but other Linux distributions can also be used, including:
 
 - AlmaLinux
 - Rocky Linux
-- openSUSE
+- OpenSUSE
 
 The primary difference between distributions is the **package manager**:
 
@@ -77,8 +78,8 @@ The lab uses three VMs to represent a small OpenStack environment.
 | Node       | Role                                                                        | vCPUs | RAM   | Disk  |
 | ---------- | --------------------------------------------------------------------------- | ----- | ----- | ----- |
 | Controller | Runs core OpenStack services (Identity, Image, Networking, Dashboard, etc.) | 2     | 6 GB  | 20 GB |
-| Compute    | Runs virtual machine instances (Nova compute service)                       | 1     | 4 GB | 10 GB |
-| Storage    | Provides block storage (Cinder with LVM backend)                            | 1     | 4 GB | 20 GB |
+| Compute    | Runs virtual machine instances (Nova compute service)                       | 2     | 4 GB | 10 GB |
+| Storage    | Provides block storage (Cinder with LVM backend)                            | 2     | 4 GB | 20 GB |
 
 Diagram: 
 
@@ -158,22 +159,22 @@ This guide provides a simplified checklist for installing OpenStack in virtual o
 
 | Description                  | Parameter       | Value     |
 | ---------------------------- | --------------- | --------- |
-| SQL Database 'root' password | MYSQL_ROOT      | openstack |
-| 'admin' user password        | ADMIN_PASS      | openstack |
-| Cinder database password     | CINDER_DBPASS   | openstack |
-| 'cinder' user password       | CINDER_PASS     | openstack |
-| Horizon database password    | DASH_DBPASS     | openstack |
-| 'demo' user password         | DEMO_PASS       | openstack |
-| Glance database password     | GLANCE_DBPASS   | openstack |
-| 'glance' user password       | GLANCE_PASS     | openstack |
-| Keystone database password   | KEYSTONE_DBPASS | openstack |
-| Metadata secret              | METADATA_SECRET | openstack |
-| Neutron database password    | NEUTRON_DBPASS  | openstack |
-| 'neutron' user password      | NEUTRON_PASS    | openstack |
-| Nova database password       | NOVA_DBPASS     | openstack |
-| 'nova' user password         | NOVA_PASS       | openstack |
-| 'placement' user password    | PLACEMENT_PASS  | openstack |
-| RabbitMQ password            | RABBIT_PASS     | openstack |
+| SQL Database `root` password | `MYSQL_ROOT`      | openstack |
+| `admin` user password        | `ADMIN_PASS`      | openstack |
+| Cinder database password     | `CINDER_DBPASS`   | openstack |
+| `cinder` user password       | `CINDER_PASS`     | openstack |
+| Horizon database password    | `DASH_DBPASS`     | openstack |
+| `demo` user password         | `DEMO_PASS`       | openstack |
+| Glance database password     | `GLANCE_DBPASS`   | openstack |
+| `glance` user password       | `GLANCE_PASS`     | openstack |
+| Keystone database password   | `KEYSTONE_DBPASS` | openstack |
+| Metadata secret              | `METADATA_SECRET` | openstack |
+| Neutron database password    | `NEUTRON_DBPASS`  | openstack |
+| `neutron` user password      | `NEUTRON_PASS`    | openstack |
+| Nova database password       | `NOVA_DBPASS`     | openstack |
+| `nova` user password         | `NOVA_PASS`       | openstack |
+| `placement` user password    | `PLACEMENT_PASS`  | openstack |
+| RabbitMQ password            | `RABBIT_PASS`     | openstack |
 
 #### Firewall and Common Ports
 
@@ -221,61 +222,6 @@ sudo ufw status verbose
 sudo ufw disable
 ```
 
-## Installation Checklist: Controller Node 
-
-This section covers VM and bare metal setup for the controller node, including hardware, networking, and OS installation.
-
-#### Hardware Configuration (VM)
-
-| Virtual      | Recommended | Actual |
-| ------------ | ----------- | ------ |
-| VCPU         | 1-2+        | 2      |
-| RAM          | 4+ GB       | 6 GB   |
-| Primary Disk | 10+ GB      | 20 GB  |
-
-#### Hardware Configuration (Bare Metal)
-
-| Bare Metal   | Recommended | Actual |
-| ------------ | ----------- | ------ |
-| CPU          | 1+          | 4      |
-| RAM          | 16+ GB      | 32 GB  |
-| Primary Disk | 128+ GB SSD | 512 GB |
-
-#### Network Interfaces
-
-| Interface | Network    | Config Type | IP Addr   | Netmask       | Gateway  | DNS     | VirtualBox Name              |
-| --------- | ---------- | ----------- | --------- | ------------- | -------- | ------- | ---------------------------- |
-| Adapter 1 | Management | static      | 10.0.0.11 | 255.255.255.0 | 10.0.0.1 | 8.8.8.8 | Host Only Adapter #2         |
-| Adapter 2 | Provider   | manual      | ---       | ---           | ---      | ---     | NAT Network ProviderNetwork1 |
-| Adapter 3 | Internet   | DHCP        | DHCP      | DHCP          | DHCP     | DHCP    | NAT Network NatNetwork1      |
-
-#### VirtualBox Networks
-
-| Network              | CIDR                     | DHCP     |
-| -------------------- | ------------------------ | -------- |
-| Host-Only Adapter #2 | 10.0.0.1 / 255.255.255.0 | Disabled |
-| NAT Provider Network | 203.0.113.0/24           | Disabled |
-| NAT Internet Network | 10.10.10.0/24            | Enabled  |
-
-#### OS Installation Options
-
-Operating system: [Ubuntu Server 22.04 LTS](https://www.ubuntu.com/download/server)
-
-| Option            | Recommended       | Actual            |
-| ----------------- | ----------------- | ----------------- |
-| Language          | English           | English           |
-| Installation mode | Minimal VM        | Minimal VM        |
-| Hostname          | controller        | controller        |
-| User              | max               | max               |
-| Password          | openstack         | openstack         |
-| Partitioning      | Entire disk + LVM | Entire disk + LVM |
-| SSH               | OpenSSH Server    | OpenSSH Server    |
-| GRUB              | Yes               | Yes               |
-| Timezone          | Eastern           | Eastern           |
-
-Ubuntu 22.04 uses netplan for networking instead of the older `/etc/network/interfaces`. Make sure to set static IPs in netplan YAML files if using static management addresses.
-
-
 ## Installation Workflow
 
 The manual installation follows a structured sequence.
@@ -285,6 +231,133 @@ The manual installation follows a structured sequence.
 3. Configure networking on all nodes
 4. Install infrastructure services
 5. Install OpenStack services
+
+
+### 1. Create the Virtual Networks 
+
+In VirtualBox, you will need to create the two networks from the VirtualBox Manager.
+
+| VirtualBox Network Type | Network Name         | Purpose / Network Type          | CIDR / Address                               | DHCP                           |
+| ----------------------- | -------------------- | ------------------------------- | -------------------------------------------- | ------------------------------ |
+| Host-Only Adapter       | ManagementNetwork    | Management (Controller ↔ Nodes) | 10.0.0.0/24                                | Disabled                       |
+| NAT Network             | ProviderNetwork      | Provider / VM traffic           | 10.10.10.0/24                              | Disabled (manual IPs optional) |
+| NAT                     | Internet             | Internet access / Updates       | VirtualBox default NAT (e.g., 10.0.2.0 / 24) | Enabled                        |
+
+:::info 
+
+The NAT (Internet) doesn’t need to be created beforehand. You can simply select **NAT** when creating the VM.
+
+:::
+
+#### Host-Only Adapter (Management Network)
+
+**Note:** You cannot rename Host-Only adapters in VirtualBox on Windows. VirtualBox does not allow renaming in the GUI, because it links directly to a network interface in Windows.
+
+1. Click `+` to create a new host-only adapter.
+2. Select the adapter → click Edit:
+
+   - IPv4 Address: `10.0.0.1`
+   - IPv4 Network Mask: `255.255.255.0`
+   - DHCP: Disabled (we’ll assign static IPs for the VMs)
+
+3. Click Apply to save.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-16-181024.png)
+
+</div>
+
+
+#### NAT Network (Provider Network)
+
+1. Go to Tools → Network → NAT Network.
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot-2026-02-16-175206.png)
+
+    </div>
+
+2. Click `+` to create a new NAT network.
+3. Click the Edit (gear icon) and update based on the table above.
+4. Click Apply to save.
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot-2026-02-16-175736.png)
+
+    </div>
+
+
+
+### 2. Create the Virtual Machines 
+
+We'll use VirtualBox to create three VMs with the specifications outlined in the lab architecture. Each VM will have:
+
+- Ubuntu Server 22.04 LTS
+- headless (no GUI)
+- Network settings for management, provider, and internet
+
+
+#### Controller VM
+
+| Setting           | Configuration          | Notes                                          |
+| ----------------- | ---------------------- | ---------------------------------------------- |
+| RAM (Base Memory) | 6 GB (6144 MB)         | Enough for Keystone, Glance, Nova API, Neutron | 
+| CPU (Processors)  | 2 cores                | Minimum 2                                      | 
+| Storage           | 20 GB                  | System disk only                               | 
+| Display           | 16 MB                  | Only needed for console access, no GUI         | 
+| Network Adapters  | 3                      | Each adapter has a purpose                     | 
+| Adapter 1         | Host-Only              | Static IP: 10.0.0.11/24, Gateway: 10.0.0.1     | 
+| Adapter 2         | `ProviderNetwork`      | Manual IP or DHCP off                          |
+| Adapter 3         | NAT                    | DHCP                                           | 
+
+Make sure to select the **Host-Only Adapter (Management Network)** created from previous step
+
+- Adapter 1 (Host-Only) is mandatory; all OpenStack nodes communicate here.
+- Adapter 3 (NAT) allows the VM to reach Ubuntu repositories.
+- The IP address will be set in the next step (step 3).
+- Display memory is minimal; no GUI needed.
+
+
+#### Compute VM
+
+| Setting          | Configuration          | Notes                                                    |                                                          |
+| ---------------- | ---------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| RAM (Base Memory)| 4 GB                   | Enough for running VMs via Nova                          |                                                          |
+| CPU (Processors) | 2 cores                | At least 2                                               |                                                          |
+| Storage          | 20 GB                  | System only; ephemeral VM disks handled by Cinder/Glance |                                                          |
+| Display          | 16 MB                  | Console only                                             |                                                          |
+| Network Adapters | 2                      | Each adapter has a purpose                               |                                                          |
+| Adapter 1        | Host-Only              | Static IP: 10.0.0.31/24                                  | Management network                                       |
+| Adapter 2        | NAT Network (Provider) | Manual or DHCP                                           | To connect VMs launched by OpenStack to provider network |
+
+**Notes:**
+
+- Only 2 adapters are needed because compute doesn’t need direct internet unless for updates.
+- Host-Only ensures communication with controller and other nodes.
+
+
+#### Storage (Block Storage) VM
+
+| Setting          | Configuration | Notes                            |                             |
+| ---------------- | ------------- | -------------------------------- | --------------------------- |
+| RAM              | 4 GB          | Minimum for Cinder services      |                             |
+| CPU              | 1-2 cores     | Minimum 1, more if heavy testing |                             |
+| Storage          | 40-50 GB      | Storage space for volumes        |                             |
+| Display          | 16 MB         | Console only                     |                             |
+| Network Adapters | 2             | Each adapter has a purpose       |                             |
+| Adapter 1        | Host-Only     | Static IP: 10.0.0.41/24          | Management network          |
+| Adapter 2        | NAT           | DHCP                             | Internet access for updates |
+
+**Notes:**
+
+- Primary disk larger because it hosts Cinder volumes for testing.
+- Host-Only allows communication with controller for service API.
+
+
+
 
 ### 1. Prepare Infrastructure Services
 

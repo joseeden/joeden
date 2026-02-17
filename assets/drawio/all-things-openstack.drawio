@@ -1,4 +1,4 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.0 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.3.0" pages="11">
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.6 Chrome/140.0.7339.249 Electron/38.8.0 Safari/537.36" version="29.3.6" pages="11">
   <diagram name="diagram-overview" id="5Hgo3jPsNS89yBwttE-I">
     <mxGraphModel dx="1410" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -1318,7 +1318,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="977rmmmAxCWQ7TEGCva5" name="manual-install">
-    <mxGraphModel dx="2334" dy="761" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2260" dy="723" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1396,13 +1396,13 @@
         <mxCell id="hlW93xZH1AAxjJeeAve4-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=none;fontSize=19;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;eth2&lt;/font&gt;" vertex="1">
           <mxGeometry height="30" width="50" x="506" y="360" as="geometry" />
         </mxCell>
-        <mxCell id="hlW93xZH1AAxjJeeAve4-16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontSize=19;align=left;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;2 vcpu&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;6 GB RAM&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;20 GB Disk&lt;/font&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="hlW93xZH1AAxjJeeAve4-16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontSize=19;align=left;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;div style=&quot;font-size: 19px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;6 GB RAM&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;2 vcpu&lt;/span&gt;&lt;/div&gt;&lt;/font&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;20 GB Disk&lt;/span&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="100" width="90" x="171" y="130" as="geometry" />
         </mxCell>
-        <mxCell id="hlW93xZH1AAxjJeeAve4-17" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontSize=19;align=left;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;1 vcpu&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;4 GB RAM&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;10 GB Disk&lt;/font&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="hlW93xZH1AAxjJeeAve4-17" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontSize=19;align=left;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;4 GB RAM&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;2 vcpu&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;10 GB Disk&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="100" width="90" x="431" y="130" as="geometry" />
         </mxCell>
-        <mxCell id="hlW93xZH1AAxjJeeAve4-18" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontSize=19;align=left;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;1 vcpu&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;4 GB RAM&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;20 GB Disk&lt;/font&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="hlW93xZH1AAxjJeeAve4-18" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontSize=19;align=left;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;div style=&quot;font-size: 19px;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;4 GB RAM&lt;/font&gt;&lt;/div&gt;2 vcpu&lt;/font&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;20 GB Disk&lt;/span&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="100" width="90" x="681" y="130" as="geometry" />
         </mxCell>
         <mxCell id="hlW93xZH1AAxjJeeAve4-21" edge="1" parent="1" source="hlW93xZH1AAxjJeeAve4-13" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;strokeWidth=2;strokeColor=#004C99;curved=0;">
