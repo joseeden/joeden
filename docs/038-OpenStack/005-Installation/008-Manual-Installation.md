@@ -214,10 +214,10 @@ This guide provides a simplified checklist for installing OpenStack in virtual o
 
 | Host       | Username | Password  |
 | ---------- | -------- | --------- |
-| controller | max      | openstack |
-| compute1   | max      | openstack |
-| compute2   | max      | openstack |
-| block1     | max      | openstack |
+| controller | `jmeden` | openstack |
+| compute1   | `jmeden` | openstack |
+| compute2   | `jmeden` | openstack |
+| block1     | `jmeden` | openstack |
 
 Commands to check or disable firewall:
 
@@ -308,22 +308,25 @@ We'll use VirtualBox to create three VMs with the specifications outlined in the
 - Ubuntu Server 22.04 LTS
 - Headless (no GUI)
 
-You can allow "Unattended Install" to allow the OS to be automatically installed in the background without showing the user setup screens. 
+<!-- You can allow "Unattended Install" to allow the OS to be automatically installed in the background without showing the user setup screens.  -->
+
+**NOTE:** It is recommended to select "Skip unattended install" during VM creation because there is a chance the OS installation will fail.
 
 <div class='img-center'>
 
-![](/img/docs/Screenshot-2026-02-17-170456.png)
+<!-- ![](/img/docs/Screenshot-2026-02-17-170456.png) -->
+![](/img/docs/Screenshot-2026-02-17-213937.png)
 
 </div>
 
-During unattended install, VirtualBox already:
+<!-- During unattended install, VirtualBox already:
 
 - Creates partitions (usually with LVM)
 - Creates a user
 - Installs GRUB
 - Sets the timezone
 - Installs OpenSSH (if selected)
-- Auto-configures networking with DHCP (temporarily)
+- Auto-configures networking with DHCP (temporarily) -->
 
 
 #### Controller VM
@@ -391,24 +394,157 @@ Make sure to select the **Host-Only Adapter (Management Network)** created from 
 
 ### 3. Configure the VM Settings 
 
-Configure the settings for all three nodes. 
+Once you launch the VMs, it will go through the installation wizard. Use the arrow keys to select the option and press Enter.
 
-#### Create a User Account 
+#### OS Installation Options
 
-1. Create the user `max` and give sudo privileges:
+| Option            | Recommended       | Actual            |
+| ----------------- | ----------------- | ----------------- |
+| Language          | English           | English           |
+| Installation mode | Minimal VM        | Minimal VM        |
+| Hostname          | controller        | controller        |
+| User              | `jmeden`            | `jmeden`            |
+| Password          | openstack         | openstack         |
+| Partitioning      | Entire disk + LVM | Entire disk + LVM |
+| SSH               | OpenSSH Server    | OpenSSH Server    |
+| GRUB              | Yes               | Yes               |
+| Timezone          | Eastern           | Eastern           |
 
-```bash
-sudo adduser max
-sudo usermod -aG sudo max
-```
+#### Language
 
-2. Verify the user:
+<div class='img-center'>
 
-```bash
-whoami
-```
+![](/img/docs/Screenshot-2026-02-17-213809.png)
 
-> All commands later can be run as `max`.
+</div>
+
+#### Keyboard
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-17-214039.png)
+
+</div>
+
+#### Installation Type 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-17-214200.png)
+
+</div>
+
+#### Network Configurations 
+
+The network configurations will be different for each node. There will be three interface for each node:
+
+- `enp0s3` → Host-Only (Management)
+- `enp0s8` → NAT Network “Provider” (10.10.10.0/24, DHCP OFF)
+- `enp0s9` → NAT Network “Internet” (DHCP ON)
+
+Use the configurations below:
+
+| Node       | Interface             | Subnet        | Address     | Gateway     | Name Servers |
+| ---------- | --------------------- | ------------- | ----------- | ----------- | ------------ |
+| Controller | enp0s3 (Host-Only)    | 10.0.0.0/24   | 10.0.0.11   | —           | —            |
+| Controller | enp0s8 (Provider NAT) | 10.10.10.0/24 | 10.10.10.11 | —           | —            |
+| Controller | enp0s9 (Internet NAT) | 10.0.2.0/24   | DHCP        | Auto (DHCP) | Auto (DHCP)  |
+| Compute    | enp0s3 (Host-Only)    | 10.0.0.0/24   | 10.0.0.21   | —           | —            |
+| Compute    | enp0s8 (Provider NAT) | 10.10.10.0/24 | 10.10.10.21 | —           | —            |
+| Compute    | enp0s9 (Internet NAT) | 10.0.2.0/24   | DHCP        | Auto (DHCP) | Auto (DHCP)  |
+| Storage    | enp0s3 (Host-Only)    | 10.0.0.0/24   | 10.0.0.31   | —           | —            |
+| Storage    | enp0s8 (Provider NAT) | 10.10.10.0/24 | 10.10.10.31 | —           | —            |
+| Storage    | enp0s9 (Internet NAT) | 10.0.2.0/24   | DHCP        | Auto (DHCP) | Auto (DHCP)  |
+
+Use the arror keys to select and press Enter to edit the field. 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-17-214921.png)
+
+</div>
+
+To set a static IP, select IPV4 Method -> Manual:
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-17-215001.png)
+
+</div>E
+
+Enter the required fields, navigate to **Save**, and press Enter.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-17-215109.png)
+
+</div>
+
+#### Proxy and Mirror Configurations 
+
+You can leave the proxy configuration blank. 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-17-224938.png)
+
+</div>
+
+For the mirror, you can wait for the mirror location test passes then press Enter on **Done**
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-17-225143.png)
+
+</div>
+
+#### Storage Configuration
+
+Select **Use an entire disk -> Set up this disk as an LVM group** and press Enter on **Done.**
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-17-225500.png)
+
+</div>
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-17-225616.png)
+
+</div>
+
+When prompted to confirm destructive action, select **Continue.**
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-17-225717.png)
+
+</div>
+
+#### Username 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-17-230046.png)
+
+</div>
+
+#### SSH Configuration
+
+Make sure to install OpenSSH so you can SSH to the VM from your host machine.
+
+You can import the SSH key later.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-17-230236.png)
+
+</div>
+
+
+
+
 
 
 ### 1. Prepare Infrastructure Services
