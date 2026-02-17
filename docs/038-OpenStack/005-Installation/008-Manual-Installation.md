@@ -567,7 +567,7 @@ Choose **Reboot Now.**
 
 After rebooting, login with the user you created.
 
-<div class='img-center'>
+<div>
 
 ![](/img/docs/Screenshot-2026-02-17-233255.png)
 
@@ -576,7 +576,7 @@ After rebooting, login with the user you created.
 From a terminal in your host machine, try to SSH to the virtual machine.
 Enter password when prompted.
 
-<div class='img-center'>
+<div>
 
 ![](/img/docs/Screenshot-2026-02-17-233624.png)
 
@@ -584,7 +584,7 @@ Enter password when prompted.
 
 Exit back to your host machine and proceed to create the SSH key.
 
-<div class='img-center'>
+<div>
 
 ![](/img/docs/Screenshot-2026-02-17-233744.png)
 
@@ -624,7 +624,7 @@ ssh-copy-id -i ~/.ssh/vbox.pub jmeden@10.0.0.11
 
 This installs your public key into `~/.ssh/authorized_keys` on the VM.
 
-<div class='img-center'>
+<div>
 
 ![](/img/docs/Screenshot-2026-02-17-235045.png)
 
@@ -636,7 +636,7 @@ Test the connection:
 ssh -i ~/.ssh/vbox jmeden@10.0.0.11 
 ```
 
-<div class='img-center'>
+<div>
 
 ![](/img/docs/Screenshot-2026-02-17-235207.png)
 
