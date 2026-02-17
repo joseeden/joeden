@@ -230,9 +230,9 @@ sudo ufw disable
 
 Steps:
 
-1. Create virtual networks
-2. Create and install Linux on three VMs
-3. Configure networking on all nodes
+1. Create the Virtual Networks
+2. Create the Virtual Machines and install Linux
+3. Configure the VM Settings
 4. Install infrastructure services
 5. Install OpenStack services
 
@@ -413,7 +413,7 @@ Once you launch the VMs, it will go through the installation wizard. Use the arr
 
 #### Language
 
-<div class='img-center'>
+<div>
 
 ![](/img/docs/Screenshot-2026-02-17-213809.png)
 
@@ -421,7 +421,7 @@ Once you launch the VMs, it will go through the installation wizard. Use the arr
 
 #### Keyboard
 
-<div class='img-center'>
+<div>
 
 ![](/img/docs/Screenshot-2026-02-17-214039.png)
 
@@ -429,7 +429,7 @@ Once you launch the VMs, it will go through the installation wizard. Use the arr
 
 #### Installation Type 
 
-<div class='img-center'>
+<div>
 
 ![](/img/docs/Screenshot-2026-02-17-214200.png)
 
@@ -458,7 +458,7 @@ Use the configurations below:
 
 Use the arror keys to select and press Enter to edit the field. 
 
-<div class='img-center'>
+<div>
 
 ![](/img/docs/Screenshot-2026-02-17-214921.png)
 
@@ -466,7 +466,7 @@ Use the arror keys to select and press Enter to edit the field.
 
 To set a static IP, select IPV4 Method -> Manual:
 
-<div class='img-center'>
+<div>
 
 ![](/img/docs/Screenshot-2026-02-17-215001.png)
 
@@ -474,7 +474,7 @@ To set a static IP, select IPV4 Method -> Manual:
 
 Enter the required fields, navigate to **Save**, and press Enter.
 
-<div class='img-center'>
+<div>
 
 ![](/img/docs/Screenshot-2026-02-17-215109.png)
 
@@ -484,7 +484,7 @@ Enter the required fields, navigate to **Save**, and press Enter.
 
 You can leave the proxy configuration blank. 
 
-<div class='img-center'>
+<div>
 
 ![](/img/docs/Screenshot-2026-02-17-224938.png)
 
@@ -492,7 +492,7 @@ You can leave the proxy configuration blank.
 
 For the mirror, you can wait for the mirror location test passes then press Enter on **Done**
 
-<div class='img-center'>
+<div>
 
 ![](/img/docs/Screenshot-2026-02-17-225143.png)
 
@@ -502,13 +502,13 @@ For the mirror, you can wait for the mirror location test passes then press Ente
 
 Select **Use an entire disk -> Set up this disk as an LVM group** and press Enter on **Done.**
 
-<div class='img-center'>
+<div>
 
 ![](/img/docs/Screenshot-2026-02-17-225500.png)
 
 </div>
 
-<div class='img-center'>
+<div>
 
 ![](/img/docs/Screenshot-2026-02-17-225616.png)
 
@@ -516,7 +516,7 @@ Select **Use an entire disk -> Set up this disk as an LVM group** and press Ente
 
 When prompted to confirm destructive action, select **Continue.**
 
-<div class='img-center'>
+<div>
 
 ![](/img/docs/Screenshot-2026-02-17-225717.png)
 
@@ -524,7 +524,7 @@ When prompted to confirm destructive action, select **Continue.**
 
 #### Username 
 
-<div class='img-center'>
+<div>
 
 ![](/img/docs/Screenshot-2026-02-17-230046.png)
 
@@ -536,7 +536,7 @@ Make sure to install OpenSSH so you can SSH to the VM from your host machine.
 
 You can import the SSH key later.
 
-<div class='img-center'>
+<div>
 
 ![](/img/docs/Screenshot-2026-02-17-230236.png)
 
@@ -546,7 +546,7 @@ You can import the SSH key later.
 
 You can skip the snaps for now. Choose **Done.**
 
-<div class='img-center'>
+<div>
 
 ![](/img/docs/Screenshot-2026-02-17-230436.png)
 
@@ -554,15 +554,94 @@ You can skip the snaps for now. Choose **Done.**
 
 #### Installation Complete 
 
-Once the installation ia finished, you should see the final output.
+Once the installation is finished, you should see the **Installation Complete** message.
 
 Choose **Reboot Now.**
 
-<div class='img-center'>
+<div>
 
-![](/img/docs/Screenshot-2026-02-17-232413.png)
+<!-- ![](/img/docs/Screenshot-2026-02-17-232413.png) -->
+![](/img/docs/Screenshot-2026-02-17-234335.png)
 
 </div>
+
+After rebooting, login with the user you created.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-17-233255.png)
+
+</div>
+
+From a terminal in your host machine, try to SSH to the virtual machine.
+Enter password when prompted.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-17-233624.png)
+
+</div>
+
+Exit back to your host machine and proceed to create the SSH key.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-17-233744.png)
+
+</div>
+
+
+#### Add an SSH Key 
+
+From your host machine, generate SSH Key:
+
+```bash
+ssh-keygen -t ed25519 -C "jmeden@host"
+```
+
+You can change the key name, or press **Enter** to accept default file location (`~/.ssh/id_ed25519`)
+
+Verify key was created:
+
+```bash
+$ ls -l ~/.ssh/vbox* 
+
+-rw------- 1 user user 505 Feb 14 17:40 /home/user/.ssh/vbox
+-rw-r--r-- 1 user user 178 Feb 14 17:40 /home/user/.ssh/vbox.pub
+```
+
+Copy public key to each node.
+
+```bash
+ssh-copy-id jmeden@<VM-IP>
+```
+
+Example for controller node:
+
+```bash
+ssh-copy-id -i ~/.ssh/vbox.pub jmeden@10.0.0.11
+```
+
+This installs your public key into `~/.ssh/authorized_keys` on the VM.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-17-235045.png)
+
+</div>
+
+Test the connection:
+
+```bash
+ssh -i ~/.ssh/vbox jmeden@10.0.0.11 
+```
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-17-235207.png)
+
+</div>
+
 
 
 ### 1. Prepare Infrastructure Services
