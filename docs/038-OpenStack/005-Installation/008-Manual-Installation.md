@@ -77,9 +77,9 @@ The lab uses three VMs to represent a small OpenStack environment.
 
 | Node       | Role                                                                        | vCPUs | RAM   | Disk  |
 | ---------- | --------------------------------------------------------------------------- | ----- | ----- | ----- |
-| Controller | Runs core OpenStack services (Identity, Image, Networking, Dashboard, etc.) | 2     | 6 GB  | 40 GB |
-| Compute    | Runs virtual machine instances (Nova compute service)                       | 2     | 4 GB  | 25 GB |
-| Storage    | Provides block storage (Cinder with LVM backend)                            | 2     | 4 GB  | 30 GB |
+| Controller | Runs core OpenStack services (Identity, Image, Networking, Dashboard, etc.) | 2     | 6 GB  | 20 GB |
+| Compute    | Runs virtual machine instances (Nova compute service)                       | 2     | 4 GB  | 10 GB |
+| Storage    | Provides block storage (Cinder with LVM backend)                            | 2     | 4 GB  | 20 GB |
 
 Diagram: 
 
@@ -336,7 +336,7 @@ We'll use VirtualBox to create three VMs with the specifications outlined in the
 | Name              | `controller`                      |                                                |
 | RAM (Base Memory) | 6 GB (6144 MB)                    | Enough for Keystone, Glance, Nova API, Neutron | 
 | CPU (Processors)  | 2 cores                           | Minimum 2                                      | 
-| Storage           | 40 GB                             | System disk only                               | 
+| Storage           | 20 GB                             | System disk only                               | 
 | Display           | 16 MB                             | Only needed for console access, no GUI         | 
 | Network Adapters  | 3                                 |                                                | 
 | Adapter 1         | Host-Only                         | Select the created Host-Only Adapter network   | 
@@ -358,7 +358,7 @@ Make sure to select the **Host-Only Adapter (Management Network)** created from 
 | Name             | `compute1`                         |                                                          | 
 | RAM (Base Memory)| 4 GB (4096 MB)                     | Enough for running VMs via Nova                          | 
 | CPU (Processors) | 2 cores                            | At least 2                                               | 
-| Storage          | 25 GB                              | System only; ephemeral VM disks handled by Cinder/Glance | 
+| Storage          | 10 GB                              | System only; ephemeral VM disks handled by Cinder/Glance | 
 | Display          | 16 MB                              | Console only                                             | 
 | Network Adapters | 3                                  |                                                          | 
 | Adapter 1        | Host-Only                          | Select the created Host-Only Adapter network             | 
@@ -379,7 +379,7 @@ Make sure to select the **Host-Only Adapter (Management Network)** created from 
 | Name             | `block1`                          |                                                       |
 | RAM              | 4 GB (4096 MB)                    | Minimum for Cinder services                           | 
 | CPU              | 2 cores                           | Minimum 1, more if heavy testing                      | 
-| Storage          | 30 GB                             | Storage space for volumes                             | 
+| Storage          | 20 GB                             | Storage space for volumes                             | 
 | Display          | 16 MB                             | Console only                                          | 
 | Network Adapters | 2                                 | Each adapter has a purpose                            | 
 | Adapter 1        | Host-Only                         | Select the created Host-Only Adapter network          | 
