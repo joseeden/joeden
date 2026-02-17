@@ -338,7 +338,7 @@ During unattended install, VirtualBox already:
 | Network Adapters  | 3                                 |                                                | 
 | Adapter 1         | Host-Only                         | Select the created Host-Only Adapter network   | 
 | Adapter 2         | NAT Network (`ProviderNetwork`)   | Set **Promiscuous Mode: Allow All**            |
-| Adapter 3         | NAT                               | DHCP                                           | 
+| Adapter 3         | NAT Network (`Internet`)          | Enable DHCP                                    | 
 
 Make sure to select the **Host-Only Adapter (Management Network)** created from previous step
 
@@ -360,7 +360,7 @@ Make sure to select the **Host-Only Adapter (Management Network)** created from 
 | Network Adapters | 3                                  |                                                          | 
 | Adapter 1        | Host-Only                          | Select the created Host-Only Adapter network             | 
 | Adapter 2        | NAT Network (`ProviderNetwork`)    | Set **Promiscuous Mode: Allow All**                      | 
-| Adapter 3        | NAT                                | DHCP                                                     | 
+| Adapter 3        | NAT Network (`Internet`)           | Enable DHCP                                              |
 
 **Notes:**
 
@@ -371,17 +371,17 @@ Make sure to select the **Host-Only Adapter (Management Network)** created from 
 
 #### Storage (Block Storage) VM
 
-| Setting          | Configuration | Notes                                                 | 
-| ---------------- | ------------- | ----------------------------------------------------- | 
-| Name             | `block1`      |                                                       |
-| RAM              | 4 GB (4096 MB)| Minimum for Cinder services                           | 
-| CPU              | 2 cores       | Minimum 1, more if heavy testing                      | 
-| Storage          | 20 GB         | Storage space for volumes                             | 
-| Display          | 16 MB         | Console only                                          | 
-| Network Adapters | 2             | Each adapter has a purpose                            | 
-| Adapter 1        | Host-Only     | Select the created Host-Only Adapter network          | 
-| Adapter 2        |               | Disabled                                              | 
-| Adapter 3        | NAT           | DHCP                                                  | 
+| Setting          | Configuration                     | Notes                                                 | 
+| ---------------- | --------------------------------- | ----------------------------------------------------- | 
+| Name             | `block1`                          |                                                       |
+| RAM              | 4 GB (4096 MB)                    | Minimum for Cinder services                           | 
+| CPU              | 2 cores                           | Minimum 1, more if heavy testing                      | 
+| Storage          | 20 GB                             | Storage space for volumes                             | 
+| Display          | 16 MB                             | Console only                                          | 
+| Network Adapters | 2                                 | Each adapter has a purpose                            | 
+| Adapter 1        | Host-Only                         | Select the created Host-Only Adapter network          | 
+| Adapter 2        |                                   | Disabled                                              | 
+| Adapter 3        | NAT Network (`Internet`)          | Enable DHCP                                           |
 
 **Notes:**
 
@@ -389,15 +389,26 @@ Make sure to select the **Host-Only Adapter (Management Network)** created from 
 - Adapter 1 (Host-Only) allows communication with controller for service API.
 
 
-### 3. Configure Networking 
+### 3. Configure the VM Settings 
 
-The next step is to configure the controller, compute, and storage nodes to use fixed IP.
+Configure the settings for all three nodes. 
 
-First, check interface name:
+#### Create a User Account 
+
+1. Create the user `max` and give sudo privileges:
 
 ```bash
-ip a
+sudo adduser max
+sudo usermod -aG sudo max
 ```
+
+2. Verify the user:
+
+```bash
+whoami
+```
+
+> All commands later can be run as `max`.
 
 
 ### 1. Prepare Infrastructure Services
