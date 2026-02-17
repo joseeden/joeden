@@ -396,6 +396,8 @@ Make sure to select the **Host-Only Adapter (Management Network)** created from 
 
 Once you launch the VMs, it will go through the installation wizard. Use the arrow keys to select the option and press Enter.
 
+**NOTE:** The configurations are the same for all three nodes except for the network and hostname configurations.
+
 #### OS Installation Options
 
 | Option            | Recommended       | Actual            |
@@ -403,12 +405,11 @@ Once you launch the VMs, it will go through the installation wizard. Use the arr
 | Language          | English           | English           |
 | Installation mode | Minimal VM        | Minimal VM        |
 | Hostname          | controller        | controller        |
-| User              | `jmeden`            | `jmeden`            |
-| Password          | openstack         | openstack         |
+| User              | `jmeden`          | `jmeden`          |
+| Password          | `openstack`       | `openstack`       |
 | Partitioning      | Entire disk + LVM | Entire disk + LVM |
 | SSH               | OpenSSH Server    | OpenSSH Server    |
 | GRUB              | Yes               | Yes               |
-| Timezone          | Eastern           | Eastern           |
 
 #### Language
 
@@ -453,7 +454,6 @@ Use the configurations below:
 | Compute    | enp0s8 (Provider NAT) | 10.10.10.0/24 | 10.10.10.21 | —           | —            |
 | Compute    | enp0s9 (Internet NAT) | 10.0.2.0/24   | DHCP        | Auto (DHCP) | Auto (DHCP)  |
 | Storage    | enp0s3 (Host-Only)    | 10.0.0.0/24   | 10.0.0.31   | —           | —            |
-| Storage    | enp0s8 (Provider NAT) | 10.10.10.0/24 | 10.10.10.31 | —           | —            |
 | Storage    | enp0s9 (Internet NAT) | 10.0.2.0/24   | DHCP        | Auto (DHCP) | Auto (DHCP)  |
 
 Use the arror keys to select and press Enter to edit the field. 
@@ -470,7 +470,7 @@ To set a static IP, select IPV4 Method -> Manual:
 
 ![](/img/docs/Screenshot-2026-02-17-215001.png)
 
-</div>E
+</div>
 
 Enter the required fields, navigate to **Save**, and press Enter.
 
@@ -552,7 +552,17 @@ You can skip the snaps for now. Choose **Done.**
 
 </div>
 
+#### Installation Complete 
 
+Once the installation ia finished, you should see the final output.
+
+Choose **Reboot Now.**
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-17-232413.png)
+
+</div>
 
 
 ### 1. Prepare Infrastructure Services
