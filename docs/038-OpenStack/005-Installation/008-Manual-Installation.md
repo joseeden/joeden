@@ -542,7 +542,15 @@ You can import the SSH key later.
 
 </div>
 
+#### Featured Snaps 
 
+You can skip the snaps for now. Choose **Done.**
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-17-230436.png)
+
+</div>
 
 
 
