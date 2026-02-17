@@ -111,6 +111,8 @@ On the Storage node:
 
 Three virtual networks are used to separate traffic.
 
+The network configurations can be found here: [Create the Virtual Networks.](#1-create-the-virtual-networks)
+
 1. **Management Network**
 
     - Used for management, tunnel, and storage traffic
@@ -141,7 +143,9 @@ The storage node uses LVM as the backend.
 - Simple to configure
 - Suitable for labs and testing
 
-Production environments often use more advanced backends such as Ceph. For learning purposes, LVM keeps the setup simple and focused on OpenStack itself.
+Production environments often use more advanced backends such as Ceph. 
+
+For learning purposes, LVM keeps the setup simple and focused on OpenStack itself.
 
 
 #### Neutron Networking Backend
@@ -224,7 +228,7 @@ sudo ufw disable
 
 ## Installation Workflow
 
-The manual installation follows a structured sequence.
+Steps:
 
 1. Create virtual networks
 2. Create and install Linux on three VMs
@@ -235,7 +239,7 @@ The manual installation follows a structured sequence.
 
 ### 1. Create the Virtual Networks 
 
-In VirtualBox, you will need to create the two networks from the VirtualBox Manager.
+In VirtualBox, you will need to create the networks that will be used by the nodes.
 
 | VirtualBox Network Type | Network Name         | Purpose / Network Type          | CIDR / Address                               | DHCP                           |
 | ----------------------- | -------------------- | ------------------------------- | -------------------------------------------- | ------------------------------ |
@@ -243,11 +247,15 @@ In VirtualBox, you will need to create the two networks from the VirtualBox Mana
 | NAT Network             | ProviderNetwork      | Provider / VM traffic           | 10.10.10.0/24                              | Disabled (manual IPs optional) |
 | NAT                     | Internet             | Internet access / Updates       | VirtualBox default NAT (e.g., 10.0.2.0 / 24) | Enabled                        |
 
-:::info 
+**NOTE:** The NAT (Internet) doesn’t need to be created beforehand. You can simply select **NAT** when creating the VM.
 
-The NAT (Internet) doesn’t need to be created beforehand. You can simply select **NAT** when creating the VM.
+To create the networks, go to Tools → Network → NAT Network.
 
-:::
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-16-175206.png)
+
+</div>
 
 #### Host-Only Adapter (Management Network)
 
@@ -271,17 +279,9 @@ The NAT (Internet) doesn’t need to be created beforehand. You can simply selec
 
 #### NAT Network (Provider Network)
 
-1. Go to Tools → Network → NAT Network.
-
-    <div class='img-center'>
-
-    ![](/img/docs/Screenshot-2026-02-16-175206.png)
-
-    </div>
-
-2. Click `+` to create a new NAT network.
-3. Click the Edit (gear icon) and update based on the table above.
-4. Click Apply to save.
+1. Click `+` to create a new NAT network.
+2. Click the Edit (gear icon) and update based on the table above.
+3. Click Apply to save.
 
     <div class='img-center'>
 
@@ -296,68 +296,87 @@ The NAT (Internet) doesn’t need to be created beforehand. You can simply selec
 We'll use VirtualBox to create three VMs with the specifications outlined in the lab architecture. Each VM will have:
 
 - Ubuntu Server 22.04 LTS
-- headless (no GUI)
+- Headless (no GUI)
 - Network settings for management, provider, and internet
+
+During the VM creation, you can allow "Unattended Install" to allow the OS to be automatically installed in the background without showing the user setup screens.
+
+- It creates a user account
+- Sets the Hostname  
+- Configures the basic settings 
+- Reboots into the installed system 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-17-170456.png)
+
+</div>
 
 
 #### Controller VM
 
-| Setting           | Configuration          | Notes                                          |
-| ----------------- | ---------------------- | ---------------------------------------------- |
-| RAM (Base Memory) | 6 GB (6144 MB)         | Enough for Keystone, Glance, Nova API, Neutron | 
-| CPU (Processors)  | 2 cores                | Minimum 2                                      | 
-| Storage           | 20 GB                  | System disk only                               | 
-| Display           | 16 MB                  | Only needed for console access, no GUI         | 
-| Network Adapters  | 3                      | Each adapter has a purpose                     | 
-| Adapter 1         | Host-Only              | Static IP: 10.0.0.11/24, Gateway: 10.0.0.1     | 
-| Adapter 2         | `ProviderNetwork`      | Manual IP or DHCP off                          |
-| Adapter 3         | NAT                    | DHCP                                           | 
+| Setting           | Configuration                     | Notes                                          |
+| ----------------- | --------------------------------- | ---------------------------------------------- |
+| Name              | `controller`                      |                                                |
+| RAM (Base Memory) | 6 GB (6144 MB)                    | Enough for Keystone, Glance, Nova API, Neutron | 
+| CPU (Processors)  | 2 cores                           | Minimum 2                                      | 
+| Storage           | 20 GB                             | System disk only                               | 
+| Display           | 16 MB                             | Only needed for console access, no GUI         | 
+| Network Adapters  | 3                                 |                                                | 
+| Adapter 1         | Host-Only                         | Select the created Host-Only Adapter network   | 
+| Adapter 2         | NAT Network (`ProviderNetwork`)   | Set **Promiscuous Mode: Allow All**            |
+| Adapter 3         | NAT                               | DHCP                                           | 
 
 Make sure to select the **Host-Only Adapter (Management Network)** created from previous step
 
 - Adapter 1 (Host-Only) is mandatory; all OpenStack nodes communicate here.
 - Adapter 3 (NAT) allows the VM to reach Ubuntu repositories.
-- The IP address will be set in the next step (step 3).
+- The IP address and Gateway will be set in the next step (step 3).
 - Display memory is minimal; no GUI needed.
 
 
 #### Compute VM
 
-| Setting          | Configuration          | Notes                                                    |                                                          |
-| ---------------- | ---------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| RAM (Base Memory)| 4 GB                   | Enough for running VMs via Nova                          |                                                          |
-| CPU (Processors) | 2 cores                | At least 2                                               |                                                          |
-| Storage          | 20 GB                  | System only; ephemeral VM disks handled by Cinder/Glance |                                                          |
-| Display          | 16 MB                  | Console only                                             |                                                          |
-| Network Adapters | 2                      | Each adapter has a purpose                               |                                                          |
-| Adapter 1        | Host-Only              | Static IP: 10.0.0.31/24                                  | Management network                                       |
-| Adapter 2        | NAT Network (Provider) | Manual or DHCP                                           | To connect VMs launched by OpenStack to provider network |
+| Setting          | Configuration                      | Notes                                                    | 
+| ---------------- | ---------------------------------- | -------------------------------------------------------- |
+| Name             | `compute1`                         |                                                          | 
+| RAM (Base Memory)| 4 GB (4096 MB)                     | Enough for running VMs via Nova                          | 
+| CPU (Processors) | 2 cores                            | At least 2                                               | 
+| Storage          | 10 GB                              | System only; ephemeral VM disks handled by Cinder/Glance | 
+| Display          | 16 MB                              | Console only                                             | 
+| Network Adapters | 3                                  |                                                          | 
+| Adapter 1        | Host-Only                          | Select the created Host-Only Adapter network             | 
+| Adapter 2        | NAT Network (`ProviderNetwork`)    | Set **Promiscuous Mode: Allow All**                      | 
+| Adapter 3        | NAT                                | DHCP                                                     | 
 
 **Notes:**
 
-- Only 2 adapters are needed because compute doesn’t need direct internet unless for updates.
-- Host-Only ensures communication with controller and other nodes.
+- Only 2 adapters needed, compute doesn’t need internet unless for updates.
+- Adapter 1 (Host-Only) ensures communication with controller and other nodes.
+- Adapter 2 (NAT Network) connect VMs launched by OpenStack to provider network
 
 
 #### Storage (Block Storage) VM
 
-| Setting          | Configuration | Notes                            |                             |
-| ---------------- | ------------- | -------------------------------- | --------------------------- |
-| RAM              | 4 GB          | Minimum for Cinder services      |                             |
-| CPU              | 1-2 cores     | Minimum 1, more if heavy testing |                             |
-| Storage          | 40-50 GB      | Storage space for volumes        |                             |
-| Display          | 16 MB         | Console only                     |                             |
-| Network Adapters | 2             | Each adapter has a purpose       |                             |
-| Adapter 1        | Host-Only     | Static IP: 10.0.0.41/24          | Management network          |
-| Adapter 2        | NAT           | DHCP                             | Internet access for updates |
+| Setting          | Configuration | Notes                                                 | 
+| ---------------- | ------------- | ----------------------------------------------------- | 
+| Name             | `block1`      |                                                       |
+| RAM              | 4 GB (4096 MB)| Minimum for Cinder services                           | 
+| CPU              | 2 cores       | Minimum 1, more if heavy testing                      | 
+| Storage          | 20 GB         | Storage space for volumes                             | 
+| Display          | 16 MB         | Console only                                          | 
+| Network Adapters | 2             | Each adapter has a purpose                            | 
+| Adapter 1        | Host-Only     | Select the created Host-Only Adapter network          | 
+| Adapter 2        |               | Disabled                                              | 
+| Adapter 3        | NAT           | DHCP                                                  | 
 
 **Notes:**
 
 - Primary disk larger because it hosts Cinder volumes for testing.
-- Host-Only allows communication with controller for service API.
+- Adapter 1 (Host-Only) allows communication with controller for service API.
 
 
-
+### 3. Create the Virtual Machines 
 
 ### 1. Prepare Infrastructure Services
 
