@@ -243,11 +243,9 @@ In VirtualBox, you will need to create the networks that will be used by the nod
 
 | VirtualBox Network Type | Network Name         | Purpose / Network Type          | CIDR / Address                               | DHCP                           |
 | ----------------------- | -------------------- | ------------------------------- | -------------------------------------------- | ------------------------------ |
-| Host-Only Adapter       | ManagementNetwork    | Management (Controller ↔ Nodes) | 10.0.0.0/24                                | Disabled                       |
-| NAT Network             | ProviderNetwork      | Provider / VM traffic           | 10.10.10.0/24                              | Disabled (manual IPs optional) |
-| NAT                     | Internet             | Internet access / Updates       | VirtualBox default NAT (e.g., 10.0.2.0 / 24) | Enabled                        |
-
-**NOTE:** The NAT (Internet) doesn’t need to be created beforehand. You can simply select **NAT** when creating the VM.
+| Host-Only Adapter       | ManagementNetwork    | Management (Controller ↔ Nodes) | 10.0.0.0/24                                  | Disabled                       |
+| NAT Network             | ProviderNetwork      | Provider / VM traffic           | 10.10.10.0/24                                | Disabled (manual IPs optional) |
+| NAT Network             | Internet             | Internet access / Updates       | 10.0.2.0/24                                  | Enabled                        |
 
 To create the networks, go to Tools → Network → NAT Network.
 
@@ -286,6 +284,18 @@ To create the networks, go to Tools → Network → NAT Network.
     <div class='img-center'>
 
     ![](/img/docs/Screenshot-2026-02-16-175736.png)
+
+    </div>
+
+#### NAT Network (Internet)
+
+1. Click `+` to create a new NAT network.
+2. Click the Edit (gear icon) and update based on the table above.
+3. Click Apply to save.
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot-2026-02-17-180706.png)
 
     </div>
 
