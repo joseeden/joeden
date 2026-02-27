@@ -75,7 +75,7 @@ When you ask an AI travel assistant to plan a trip, three core components work t
 
 <div class='img-center'>
 
-![](/img/docs/agentic-trinity)
+![](/img/docs/agentic-trinity.png)
 
 </div>
 
