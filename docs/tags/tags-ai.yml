@@ -28,15 +28,20 @@ MLOps:
   permalink: '/MLOps'
   description: 'Docs related to MLOps'    
 
-LLMs:
-  label: 'Large Language Models'
-  permalink: '/LLMs'
+Large Language Models:
+  label: 'Large Language Models (LLMs)'
+  permalink: '/Large Language Models'
   description: 'Docs related to Large Language Models'
 
 AI Agents:
   label: 'AI Agents'
   permalink: '/AI-Agents'
   description: 'Docs related to autonomous AI agents and workflows'
+
+Agentic Systems:
+  label: 'Agentic Systems'
+  permalink: '/Agentic Systems'
+  description: 'Docs related to Agentic Systems'
 
 RAG:
   label: 'Retrieval Augmented Generation'

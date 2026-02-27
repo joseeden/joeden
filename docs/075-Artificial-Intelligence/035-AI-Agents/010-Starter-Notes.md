@@ -3,6 +3,9 @@ title: "Starter Notes"
 description: "Starter Notes on AI Agents"
 tags: 
 - Artificial Intelligence
+- AI Agents
+- Agentic Systems
+- Large Language Models
 sidebar_position: 10
 --- 
 
@@ -115,8 +118,6 @@ In a travel example, tools might include a calendar API, a company policy docume
 
 Tools extend the agent’s capabilities beyond text generation. They allow it to interact with real systems.
 
-
-
 ### Orchestration Controls The Loop
 
 The orchestration layer manages how the agent thinks and acts over time. It keeps the process running until the goal is achieved or a stopping condition is met.
@@ -140,3 +141,73 @@ Orchestration can be simple with basic rules, or advanced with complex reasoning
 ![](/img/docs/Screenshot-2026-02-27-181054.png)
 
 </div>
+
+## When To Use AI Agents
+
+AI agents are powerful, but they are not always necessary. The right solution depends on the type of problem you are solving.
+
+Imagine two customer support teams at an online store.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-27-184614.png)
+
+</div>
+
+Team A mostly receives tickets like tracking an order, returning an item, or changing a shipping address. 
+
+- The questions are predictable and have clear answers. 
+- They do not require accessing customer history or making complex decisions.
+
+Team B mostly receives tickets like double charges, canceled orders with partial refunds, or incorrect store credit. 
+
+- These problems require checking customer records
+- Requires understanding past actions, and deciding on corrective steps.
+
+Because of this difference:
+
+1. Simple and predictable problems need a chatbot
+
+    A chatbot that answers from trained knowledge is enough for Team A. An AI agent is better for Team B because it can access data, reason through edge cases, take actions, and update systems.
+
+2. Complex and adaptive problems need an AI agent
+
+    Use AI agents when the problem requires reasoning, tool usage, and adaptive decision making. Avoid them when simple automation is enough.
+
+
+## The AI Agent Tooling Ecosystem
+
+After deciding to use an agent, the next step is choosing the right tooling. The ecosystem ranges from ready-made tools to fully custom frameworks.
+
+| Tool Type           | Description                                                                       | When To Use                                                        | Trade-Off                                         |
+| ------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------- |
+| Off-the-shelf tools | Ready-made solutions that solve specific problems                                 | Focused use cases like AI coding assistance or research automation | Quick to adopt but limited customization          |
+| Low-code platforms  | Platforms that allow limited customization through visual or guided configuration | Moderately complex workflows that follow common patterns           | Easier for business users but not fully flexible  |
+| Agent frameworks    | Development frameworks for building agents from scratch                           | Highly specialized systems, sensitive data, or core business logic | Full control but requires more engineering effort |
+
+**Note:** The more control you need, the more engineering effort is required. 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot-2026-02-27-185501.png)
+
+</div>
+
+## Build Versus Buy Decision
+
+- **Buy when a mature solution already exists**
+
+  - Ideal if you want fast deployment and low maintenance
+  - Best when the problem is common and already well solved in the market
+
+- **Use low-code when partial customization is enough**
+
+  - Use this when you need some flexibility but not full ownership
+  - Suitable when business users need to modify workflows without heavy engineering
+
+- **Build when full control is required**
+
+  - When your system must integrate deeply with proprietary systems
+  - When the agent itself is central to your product
+
+Not every problem requires a fully custom agent. Match the level of investment and control to the complexity and importance of the problem.
