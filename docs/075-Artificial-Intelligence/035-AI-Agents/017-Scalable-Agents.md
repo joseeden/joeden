@@ -31,7 +31,9 @@ Keeping all parts connected ensures the agent works effectively and minimizes fa
 Agents are ideal for problems that are complex, multi-step, or open-ended. They shine when tasks require planning, tool use, and adaptability to changing conditions.
 
 ✅ Complex problems require multiple steps and tool calls
+
 ✅ Open-ended problems benefit from flexible workflows
+
 ✅ Agents adapt to evolving data and user preferences
 
 For simple, static tasks, traditional IT solutions may be more efficient. Agents are best where adaptability and multi-step reasoning are needed.
