@@ -52,3 +52,8 @@ Vector Databases:
   label: 'Vector Databases'
   permalink: '/Vector-Databases'
   description: 'Docs related to embeddings and vector search'
+
+Model Context Protocol:
+  label: 'Model Context Protocol'
+  permalink: '/Model Context Protocol'
+  description: 'Docs related to Model Context Protocol'

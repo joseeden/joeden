@@ -1,5 +1,5 @@
 ---
-title: "Design Patternss"
+title: "Design Patterns"
 description: "How AI agents think and act through frameworks"
 tags: 
 - Artificial Intelligence
@@ -202,6 +202,9 @@ Extensions use APIs to get real-time data. For example, a financial agent can qu
 
 </div>
 
+**Model Context Protocol (MCP)** is an example of an extension tool protocol that standardizes how models connect to external tools and data sources. It defines a consistent interface for exposing capabilities such as APIs, databases, or file systems to an AI model.
+
+For more information, please see [Model Context Protocol](/docs/075-Artificial-Intelligence/035-AI-Agents/030-MCP-and-A2A.md)
 
 ### Functions 
 
@@ -260,7 +263,14 @@ This approach ensures complex problems are managed effectively without overloadi
 
 ### Manager Pattern
 
-In this pattern, a central agent orchestrates other agents. This is ideal when one agent controls workflow and communicates with the user
+In this pattern, a central agent orchestrates other agents. This is ideal when one agent controls workflow and communicates with the user.
+
+1. Input is sent to a supervisor agent
+2. Supervisor hands task off to worker agents
+3. Workers execute their tools and report back to supervisor 
+4. Supervisor responds to the user.
+
+In most AI agent discussions, this pattern may also be referred to as **Supervisor pattern**. Here, only the supervisor has the ability to talk to the user and end the workflow.
 
 <div class='img-center'>
 
@@ -277,9 +287,11 @@ Example: A head of customer support delegates tasks to billing or legal agents w
 </div>
 
 
-### Decentralized Pattern
+### Decentralized Pattern 
 
-The decentralized patterns involves handing off tasks between specialized agents. Each agent can handle requests end-to-end, including user communication
+Also called **Swarm** or **Network multi-agents**, the decentralized pattern involves handing off tasks between specialized agents. Each agent can handle requests end-to-end, including user communication
+
+With this pattern, a default starting agent must be chosen first. 
 
 <div class='img-center'>
 
