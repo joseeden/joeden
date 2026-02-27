@@ -85,6 +85,11 @@ Modular design separates components so they can be developed, updated, and maint
 
 Agents themselves can be modular, with each handling specific tasks, which allows complex systems to evolve without breaking other parts.
 
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-02-27222745.png)
+
+</div>
 
 #### Example: Customer Support Multi-Agent
 
@@ -94,13 +99,25 @@ In a support system, one agent retrieves information while another responds in a
 - Response agent communicates with users
 - Agents operate in defined domains
 
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-02-27223316.png)
+
+</div>
+
 
 ### Continuous Evaluation and Feedback Loops
 
-Monitoring and feedback help catch issues early and guide improvements. Track metrics like success rates, errors, and latencies, and collect user feedback to refine agent behavior.
+Continuous monitoring helps detect issues early and improve performance over time. Track key metrics such as:
 
-- Observe all major components for performance
-- Track success, error rates, and latency
-- Gather user feedback to improve prompts, tools, or data
+- Success rates
+- Error rates
+- Latency
 
-Continuous feedback ensures agents learn, improve, and scale reliably over time.
+In addition, collecting user feedback helps refine prompts, improve tool selection, and enhance data quality. Together, monitoring and feedback ensure the agent becomes more reliable and effective as it scales.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-02-27223831.png)
+
+</div>
