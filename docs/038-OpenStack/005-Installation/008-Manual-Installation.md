@@ -34,7 +34,7 @@ Running the lab on 8 GB RAM is possible but performance will be constrained, esp
  
 ## Tools Used
 
-#### VirtualBox
+#### 1. VirtualBox
 
 VirtualBox is a free hypervisor used to create and manage virtual machines for lab and testing environments.
 
@@ -52,7 +52,7 @@ A few notes:
 
 QEMU is fine for learning and testing. It is not intended for production workloads. In real environments, compute nodes use KVM on physical servers.
 
-#### Operating System
+#### 2. Operating System
 
 This lab uses [Ubuntu Server 22.04.5 LTS](https://ubuntu.com/download/server), but other Linux distributions can also be used, including:
 
@@ -89,7 +89,7 @@ Diagram:
 
 </div>
 
-#### Resource Considerations 
+#### 1. Resource Considerations 
 
 The values below are recommended for stable operation, but adjustments can be made depending on available hardware.
 
@@ -107,7 +107,7 @@ On the Storage node:
 
 - Reducing RAM is possible but may impact storage performance.
 
-#### Virtual Networks
+#### 2. Virtual Networks
 
 Three virtual networks are used to separate traffic.
 
@@ -136,7 +136,7 @@ The network configurations can be found here: [Create the Virtual Networks.](#1-
 
       :::
 
-#### Storage Backend
+#### 3. Storage Backend
 
 The storage node uses LVM as the backend.
 
@@ -148,7 +148,7 @@ Production environments often use more advanced backends such as Ceph.
 For learning purposes, LVM keeps the setup simple and focused on OpenStack itself.
 
 
-#### Neutron Networking Backend
+#### 4. Neutron Networking Backend
 
 Linux Bridge is easier to configure and suitable for a basic learning environment.
 
@@ -255,7 +255,7 @@ To create the networks, go to Tools → Network → NAT Network.
 
 </div>
 
-#### Host-Only Adapter (Management Network)
+#### 1.1 Host-Only Adapter (Management Network)
 
 **Note:** You cannot rename Host-Only adapters in VirtualBox on Windows. VirtualBox does not allow renaming in the GUI, because it links directly to a network interface in Windows.
 
@@ -275,7 +275,7 @@ To create the networks, go to Tools → Network → NAT Network.
 </div>
 
 
-#### NAT Network (Provider Network)
+#### 1.2 NAT Network (Provider Network)
 
 1. Click `+` to create a new NAT network.
 2. Click the Edit (gear icon) and update based on the table above.
@@ -287,7 +287,7 @@ To create the networks, go to Tools → Network → NAT Network.
 
     </div>
 
-#### NAT Network (Internet)
+#### 1.3 NAT Network (Internet)
 
 1. Click `+` to create a new NAT network.
 2. Click the Edit (gear icon) and update based on the table above.
@@ -329,7 +329,7 @@ We'll use VirtualBox to create three VMs with the specifications outlined in the
 - Auto-configures networking with DHCP (temporarily) -->
 
 
-#### Controller VM
+#### 2.1 Controller VM
 
 | Setting           | Configuration                     | Notes                                          |
 | ----------------- | --------------------------------- | ---------------------------------------------- |
@@ -351,7 +351,7 @@ Make sure to select the **Host-Only Adapter (Management Network)** created from 
 - Display memory is minimal; no GUI needed.
 
 
-#### Compute VM
+#### 2.2 Compute VM
 
 | Setting          | Configuration                      | Notes                                                    | 
 | ---------------- | ---------------------------------- | -------------------------------------------------------- |
@@ -372,7 +372,7 @@ Make sure to select the **Host-Only Adapter (Management Network)** created from 
 - Adapter 2 (NAT Network) connect VMs launched by OpenStack to provider network
 
 
-#### Storage (Block Storage) VM
+#### 2.3 Storage (Block Storage) VM
 
 | Setting          | Configuration                     | Notes                                                 | 
 | ---------------- | --------------------------------- | ----------------------------------------------------- | 
@@ -398,7 +398,7 @@ Once you launch the VMs, it will go through the installation wizard. Use the arr
 
 **NOTE:** The configurations are the same for all three nodes except for the network and hostname configurations.
 
-#### OS Installation Options
+#### 3.1 OS Installation Options
 
 | Option            | Recommended       | Actual            |
 | ----------------- | ----------------- | ----------------- |
@@ -411,7 +411,7 @@ Once you launch the VMs, it will go through the installation wizard. Use the arr
 | SSH               | OpenSSH Server    | OpenSSH Server    |
 | GRUB              | Yes               | Yes               |
 
-#### Language
+#### 3.2 Language
 
 <div>
 
@@ -419,7 +419,7 @@ Once you launch the VMs, it will go through the installation wizard. Use the arr
 
 </div>
 
-#### Keyboard
+#### 3.3 Keyboard
 
 <div>
 
@@ -427,7 +427,7 @@ Once you launch the VMs, it will go through the installation wizard. Use the arr
 
 </div>
 
-#### Installation Type 
+#### 3.4 Installation Type 
 
 <div>
 
@@ -435,7 +435,7 @@ Once you launch the VMs, it will go through the installation wizard. Use the arr
 
 </div>
 
-#### Network Configurations 
+#### 3.5 Network Configurations 
 
 The network configurations will be different for each node. There will be three interface for each node:
 
@@ -480,7 +480,7 @@ Enter the required fields, navigate to **Save**, and press Enter.
 
 </div>
 
-#### Proxy and Mirror Configurations 
+#### 3.6 Proxy and Mirror Configurations 
 
 You can leave the proxy configuration blank. 
 
@@ -498,7 +498,7 @@ For the mirror, you can wait for the mirror location test passes then press Ente
 
 </div>
 
-#### Storage Configuration
+#### 3.7 Storage Configuration
 
 Select **Use an entire disk -> Set up this disk as an LVM group** and press Enter on **Done.**
 
@@ -522,7 +522,7 @@ When prompted to confirm destructive action, select **Continue.**
 
 </div>
 
-#### Username 
+#### 3.8 Username 
 
 <div>
 
@@ -530,7 +530,7 @@ When prompted to confirm destructive action, select **Continue.**
 
 </div>
 
-#### SSH Configuration
+#### 3.9 SSH Configuration
 
 Make sure to install OpenSSH so you can SSH to the VM from your host machine.
 
@@ -542,7 +542,7 @@ You can import the SSH key later.
 
 </div>
 
-#### Featured Snaps 
+#### 3.10 Featured Snaps 
 
 You can skip the snaps for now. Choose **Done.**
 
@@ -552,7 +552,7 @@ You can skip the snaps for now. Choose **Done.**
 
 </div>
 
-#### Installation Complete 
+#### 3.11 Installation Complete 
 
 Once the installation is finished, you should see the **Installation Complete** message.
 
@@ -591,7 +591,7 @@ Exit back to your host machine and proceed to create the SSH key.
 </div>
 
 
-#### Add an SSH Key 
+#### 3.12 Add an SSH Key 
 
 From your host machine, generate SSH Key:
 

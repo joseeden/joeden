@@ -1,12 +1,12 @@
 ---
 title: "Guardrails"
-description: "How AI agents think and act through frameworks"
+description: "Guardrails help agents stay on task and prevent misuse or errors."
 tags: 
 - Artificial Intelligence
 - AI Agents
 - Agentic Systems
 - Large Language Models
-sidebar_position: 10
+sidebar_position: 20
 --- 
 
 ## Overview

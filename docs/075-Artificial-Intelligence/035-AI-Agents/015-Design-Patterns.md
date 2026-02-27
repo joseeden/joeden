@@ -6,7 +6,7 @@ tags:
 - AI Agents
 - Agentic Systems
 - Large Language Models
-sidebar_position: 10
+sidebar_position: 15
 --- 
 
 ## Components and Operation
