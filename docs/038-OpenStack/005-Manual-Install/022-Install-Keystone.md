@@ -1,6 +1,6 @@
 ---
-title: "OpenStack Services"
-description: "Install the OpenStack Services"
+title: "Install Keystone"
+description: "Install Keystone"
 tags: 
 - Cloud
 - DevOps
@@ -13,19 +13,6 @@ last_update:
 
 ## Overview
 
-Each service requires configuration updates in its configuration files. These files are edited manually using a text editor.
-
-| Node(s)                | OpenStack Service            |
-| ---------------------- | ---------------------------- |
-| Controller             | Keystone identity service    |
-| Controller             | Glance image service         |
-| Controller             | Horizon dashboard            |
-| Controller and Compute | Nova compute service         |
-| Controller and Compute | Neutron networking service   |
-| Controller and Storage | Cinder block storage service |
-
-## Install Keystone 
-
 Keystone is the identity service of OpenStack. It handles authentication and authorization for all other services. The steps include:
 
 1. Configure SQL database
@@ -36,7 +23,7 @@ Keystone is the identity service of OpenStack. It handles authentication and aut
 
 Each step builds the identity service, which is the core access control of OpenStack.
 
-### Configure MySQL Database
+## Configure MySQL Database
 
 Start by preparing the database for Keystone. Log in as root on the controller node.
 
@@ -96,7 +83,7 @@ Start by preparing the database for Keystone. Log in as root on the controller n
 
 The database is now ready for Keystone, which completes the backend setup for identity management.
 
-### Install Required Packages
+## Install Required Packages
 
 Install Keystone and its dependencies. Keystone runs as a WSGI module under Apache.
 
@@ -113,7 +100,7 @@ Packages installed:
 
 After installation, the system is ready for configuration.
 
-### Configure Keystone Database Access
+## Configure Keystone Database Access
 
 The main configuration file is:
 
@@ -140,7 +127,7 @@ Output: No visible output if successful.
 
 This connects Keystone to the MySQL database created earlier.
 
-### Configure Token Provider
+## Configure Token Provider
 
 Set the token provider to `fernet` in the `[token]` section:
 
@@ -152,7 +139,7 @@ Output: No visible output if successful.
 
 Fernet is the recommended token provider for secure identity tokens. This completes the main Keystone configuration.
 
-### Initialize Keystone
+## Initialize Keystone
 
 Populate the database using the `keystone-manage` tool.
 
@@ -199,7 +186,7 @@ Populate the database using the `keystone-manage` tool.
 
 Keystone is now initialized and ready to serve identity requests.
 
-### Configure Apache Server
+## Configure Apache Server
 
 Keystone runs through Apache. Set the `ServerName` in the Apache configuration file.
 
@@ -223,3 +210,124 @@ sudo systemctl status apache2
 
 
 Keystone is now active and accessible via Apache. The identity service is fully installed and ready to authenticate OpenStack services.
+
+
+## Configure Client Environment Scripts
+
+Keystone is installed and the admin user exists. Now we prepare environment scripts so the OpenStack CLI can authenticate properly.
+
+- Create one script per user
+- Set required OS environment variables
+- Secure the file because it contains passwords
+
+Make sure to load the correct variables so the CLI can talk to Keystone correctly.
+
+### Create Admin Environment Script
+
+First, create a script named `admin-openrc` in the home directory. This file is used for management tasks and will export the following variables:
+
+```bash
+cat > admin-openrc.sh <<EOF
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USER_DOMAIN_NAME=Default
+export OS_PROJECT_NAME=admin
+export OS_USERNAME=admin
+export OS_PASSWORD=AdminPass123
+export OS_AUTH_URL=http://controller:5000/v3
+export OS_IDENTITY_API_VERSION=3
+export OS_IMAGE_API_VERSION=2
+EOF
+```
+
+In the example above:
+
+- `OS_PASSWORD` is the admin password set during bootstrap
+- `OS_AUTH_URL` uses the admin endpoint on port `5000`.
+
+Restrict access because the password is stored in plain text.
+
+```bash
+chmod 600 admin-openrc.sh
+```
+
+This protects your credentials and completes the admin environment setup.
+
+### Test Admin Script
+
+Load the variables using `source`. This executes all `export` statements in the file.
+
+```bash
+source admin-openrc.sh
+```
+
+Verify that the variable `OS_USERNAME` is set:
+
+```bash
+echo $OS_USERNAME
+```
+
+Output:
+
+```bash
+admin
+```
+
+Now test authentication by requesting a token from Keystone using the OpenStack CLI.
+
+```bash
+openstack token issue
+```
+
+Sample output:
+
+```bash
++------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Field      | Value
+
+   |
++------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| expires    | 2024-02-28T18:04:43+0000
+
+   |
+| id         | ************-******************** |
+| project_id | ********************
+
+   |
+| user_id    | ******************************
+
+   |
++------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+```
+
+You should see a token table with an ID, expiration time, project name, and user name.
+
+If this works, Keystone and the admin environment are correctly configured.
+
+### Create Demo Environment Script
+
+We'll also prepare a script for a regular user named `demo`. This script is used for regular user access. It will also use the public endpoint on port `5000`. 
+
+**Note:** The distinction between admin and demo users is not the port, but rather the project, username, and password.
+
+Example: 
+
+```bash
+cat > demo-openrc.sh <<EOF
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_USER_DOMAIN_NAME=Default
+export OS_PROJECT_NAME=demo
+export OS_USERNAME=demo
+export OS_PASSWORD=openstack
+export OS_AUTH_URL=http://controller:5000/v3
+export OS_IDENTITY_API_VERSION=3
+export OS_IMAGE_API_VERSION=2
+EOF
+```
+
+Set proper permissions again:
+
+```bash
+chmod 600 demo-openrc.sh
+```
+
+The demo script is now ready. It will be fully usable after the demo project and user are created.

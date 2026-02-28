@@ -477,7 +477,16 @@ The controller now runs:
 
 With these services installed and running, the infrastructure layer is ready for OpenStack service installation.
 
-Next, install the core Openstack Services.
+Next, install the core Openstack Services:
 
-See [Infrastructure Services.](/docs/038-OpenStack/005-Manual-Install/020-Infrastructure-Services.md)
+| Node(s)                | OpenStack Service            |
+| ---------------------- | ---------------------------- |
+| Controller             | Keystone identity service    |
+| Controller             | Glance image service         |
+| Controller             | Horizon dashboard            |
+| Controller and Compute | Nova compute service         |
+| Controller and Compute | Neutron networking service   |
+| Controller and Storage | Cinder block storage service |
+
+See page for [Keystone](/docs/038-OpenStack/005-Manual-Install/022-Install-Keystone.md)
 
