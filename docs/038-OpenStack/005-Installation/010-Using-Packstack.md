@@ -1,5 +1,5 @@
 ---
-title: "Using Packstack [OUTDATED]"
+title: "Using Packstack"
 description: "Using Packstack to Setup OpenStack"
 tags: 
 - Cloud
