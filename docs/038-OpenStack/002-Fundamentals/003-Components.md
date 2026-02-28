@@ -39,6 +39,8 @@ Keystone is where users and services are authenticated and authorized. It acts a
 - Provides a service catalog
 
 
+For more information, please see [Keystone.](/docs/038-OpenStack/002-Fundamentals/015-Keystone.md)
+
 <div class='img-center'>
 
 ![](/img/docs/ostack5-keystone.png)

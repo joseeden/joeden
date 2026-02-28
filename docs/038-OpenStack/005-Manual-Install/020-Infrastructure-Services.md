@@ -88,7 +88,7 @@ All nodes must have the same time. This prevents errors during OpenStack install
     ```
 
 
-#### On the compute and block nodes:
+#### On the compute and block nodes
 
 1. Install the chrony package:
 
@@ -387,7 +387,7 @@ etcd stores distributed configuration data.
 
     total 56236
     drwxr-xr-x  2 root   root       4096 Feb 28 11:54 .
-    drwxr-xr-x 10 root   root       4096 Sep 11  2024 ..
+    drwxr-xr-x 10 root   root       4096 Sep 11  2023 ..
     -rwxr-xr-x  1 jmeden jmeden 23560192 Jun 15  2021 etcd
     -rwxr-xr-x  1 jmeden jmeden 17969152 Jun 15  2021 etcdctl
     -rwxr-xr-x  1 jmeden jmeden 16048128 Jun 15  2021 etcdutl
