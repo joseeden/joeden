@@ -181,8 +181,10 @@ A2A standardizes how agents send tasks and receive results using the following:
 
 - **Agent executor** 
 
-  - Sends the user context and task details to the remote agent.
-  - add info 
+  - Responsible for initiating the task
+  - Sends user context and task details to the remote agent.
+  - Formats the request in a structured, standardized way
+  - Handles authentication and communication setup
 
 - **Event queue**
 
