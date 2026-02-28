@@ -175,3 +175,5 @@ After configuration, Keystone must be initialized.
 4. After bootstrap, change the admin password if needed.
 
 Keystone is now ready to authenticate users and manage access in OpenStack.
+
+For more information, please see [Installing Keystone.](/docs/038-OpenStack/005-Manual-Install/022-Install-Keystone.md)

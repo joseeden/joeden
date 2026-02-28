@@ -1,11 +1,10 @@
 ---
 title: "Install Keystone"
-description: "Install Keystone"
 tags: 
 - Cloud
 - DevOps
 - OpenStack
-sidebar_position: 20
+sidebar_position: 22
 last_update:
   date: 9/15/2023
 ---
@@ -212,7 +211,7 @@ sudo systemctl status apache2
 Keystone is now active and accessible via Apache. The identity service is fully installed and ready to authenticate OpenStack services.
 
 
-## Configure Client Environment Scripts
+## Client Environment Scripts
 
 Keystone is installed and the admin user exists. Now we prepare environment scripts so the OpenStack CLI can authenticate properly.
 

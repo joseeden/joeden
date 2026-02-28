@@ -55,6 +55,7 @@ Glance stores and retrieves virtual machine disk images. Pre-built images are lo
 - Retrieves images during VM provisioning
 - Pre-built images save setup time
 
+For more information, please see [Glance.](/docs/038-OpenStack/002-Fundamentals/017-Glance.md)
 
 <div class='img-center'>
 
