@@ -918,7 +918,7 @@ sudo apt upgrade -y
 
 If prompted to load the new kernel, press **Ok.**
 
-<div class='img-center'>
+<div>
 
 ![](/img/docs/Screenshot2026-02-28184453.png)
 
@@ -926,7 +926,7 @@ If prompted to load the new kernel, press **Ok.**
 
 Leave the default. Press tab to select **Ok** and press Enter.
 
-<div class='img-center'>
+<div>
 
 ![](/img/docs/Screenshot2026-02-28184737.png)
 
@@ -1041,6 +1041,7 @@ On the controller node:
     ^- bkk-sin.clearnet.pw           2   6   377     4  -9092us[-9092us] +/-   75ms 
     ```
 
+<br>
 On the compute and block nodes:
 
 1. Install the chrony package:
