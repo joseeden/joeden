@@ -57,7 +57,7 @@ While 16GB RAM is recommended, a small lab can run with about 4GB to 6GB RAM but
 
 The lab deploys OpenStack inside a virtual machine on VirtualBox. The VM uses CentOS 8 or AlmaLinux 8 as the operating system, which provides a stable base for the OpenStack installation.
 
-For more information, please see [Setting up VirtualBox.](/docs/038-OpenStack/005-Installation/005-Setting-up-VirtualBox.md)
+For more information, please see [Setting up VirtualBox.](/docs/038-OpenStack/010-Automated-Install/005-Setting-up-VirtualBox.md)
 
 
 ## Prepare the system 
@@ -180,7 +180,7 @@ For more information, please see [Setting up VirtualBox.](/docs/038-OpenStack/00
     Failed to enable unit: Unit file network.service does not exist. 
     ```
 
-    It means that the OS doesnt not include `network.service` and you will need to install the legacy scripts. See [Install `network-scripts`.](/docs/038-OpenStack/005-Installation/005-Setting-up-VirtualBox.md#install-network-scripts)
+    It means that the OS doesnt not include `network.service` and you will need to install the legacy scripts. See [Install `network-scripts`.](/docs/038-OpenStack/010-Automated-Install/005-Setting-up-VirtualBox.md#install-network-scripts)
 
 
 6. Verify the network settings. 
