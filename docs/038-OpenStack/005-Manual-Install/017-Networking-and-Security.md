@@ -36,7 +36,7 @@ To login to each node:
 
 ## Grant Passwordless Sudo to User
 
-Edit sudoers file:
+Edit the sudoers file:
 
 ```bash
 sudo visudo
@@ -167,7 +167,7 @@ ping -c3 8.8.8.8
 
 Perform the following on each node:
 
-1. Check interface addresses:
+1. Check the interface addresses:
 
     ```bash
     ip a
@@ -175,13 +175,13 @@ Perform the following on each node:
 
     You should see:
 
-    | Interface | Purpose        | IP               | Status |
-    | --------- | -------------- | ---------------- | ------ |
-    | enp0s3    | Management     | 10.0.0.11        | ✅ UP   |
-    | enp0s8    | Provider       | 10.10.10.11      | ✅ UP   |
-    | enp0s9    | Internet (NAT) | 10.0.2.17 (DHCP) | ✅ UP   |
+    | Interface | IP               | Status   |
+    | --------- | ---------------- | -------- |
+    | enp0s3    | 10.0.0.11        | ✅ UP   |
+    | enp0s8    | 10.10.10.11      | ✅ UP   |
+    | enp0s9    | 10.0.2.17 (DHCP) | ✅ UP   |
 
-2. Check default route:
+2. Check the default route:
 
     ```bash
     ip route
@@ -206,9 +206,9 @@ Perform the following on each node:
 
     This means:
 
-    ✔ Internet traffic goes out NAT (correct)
-    ✔ Management network has NO gateway (correct)
-    ✔ Provider network isolated (correct)
+    - ✔ Internet traffic goes out NAT (correct)
+    - ✔ Management network has NO gateway (correct)
+    - ✔ Provider network isolated (correct)
 
     The extra line is just VirtualBox NAT internal routing. Ignore it.
 
@@ -249,12 +249,12 @@ Perform the following on each node:
 
 If you got the same configurations, then that means:
 
-✔ Correct 3-NIC separation
-✔ Correct routing
-✔ Correct DNS
-✔ Static management & provider
-✔ DHCP internet
-✔ No conflicting gateways
+- ✔ Correct 3-NIC separation
+- ✔ Correct routing
+- ✔ Correct DNS
+- ✔ Static management & provider
+- ✔ DHCP internet
+- ✔ No conflicting gateways
 
 
 ## Verify Connectivity

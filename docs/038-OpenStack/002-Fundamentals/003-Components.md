@@ -11,7 +11,7 @@ last_update:
 ---
 
 
-## Overview
+## Overview  
 
 OpenStack has several key components that work together to manage cloud resources. Each component has a specific role, and together they handle authentication, networking, storage, and compute for virtual machines. 
 
