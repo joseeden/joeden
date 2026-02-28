@@ -91,7 +91,6 @@ In shadow mode, users do not see the AI outputs. Instead, the outputs are logged
 
 </div>
 
-### Step 5: Deploy Gradually
 
 ### Step 5: Deploy Gradually
 
