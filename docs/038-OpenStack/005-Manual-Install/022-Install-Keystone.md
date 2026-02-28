@@ -183,6 +183,16 @@ Populate the database using the `keystone-manage` tool.
     - Public URL (port 5000)
     - Region name
 
+    **UPDATE:** In modern deployments, port 35357 is not actually used anymore. Port 5000 is used for everything (public, internal, admin). If you use port 35357 for the admin URL, it will only create the endpoint records in the Keystone database but it will **NOT** configure Apache or bind Keystone to port 35357.
+
+    You can verify this by running in the controller node:
+
+    ```bash
+    ss -ltnp | grep 35357
+    ```
+
+    If this shows nothing, then Keystone is NOT listening there.
+
 Keystone is now initialized and ready to serve identity requests.
 
 ## Configure Apache Server
