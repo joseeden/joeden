@@ -1,6 +1,6 @@
 ---
 title: "Keystone"
-description: "Keystone"
+description: "Keystone – Identity Service"
 tags: 
 - Cloud
 - DevOps
