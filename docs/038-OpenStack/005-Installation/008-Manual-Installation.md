@@ -1306,6 +1306,110 @@ Memcached stores authentication tokens for faster access.
 
 Memcached is now configured for token caching on the controller.
 
+#### 5.6 Install and Configure etcd
+
+> All steps below are performed **only on the controller node** because it hosts the infrastructure layer.
+
+etcd stores distributed configuration data.
+
+1. Create group and user:
+
+    ```bash
+    sudo groupadd --system etcd
+    sudo useradd -s /sbin/nologin --system -g etcd etcd
+    ```
+
+2. Create required directories:
+
+    ```bash
+    sudo mkdir -p /etc/etcd /var/lib/etcd
+    sudo chown -R etcd:etcd /var/lib/etcd
+    ```
+
+3. Download and extract etcd:
+
+    ```bash
+    wget https://github.com/etcd-io/etcd/releases/download/v3.5.0/etcd-v3.5.0-linux-amd64.tar.gz
+    tar xvf etcd-v3.5.0-linux-amd64.tar.gz
+    sudo mv etcd-v3.5.0-linux-amd64/etcd* /usr/local/bin/
+    ```
+
+    Verify:
+
+    ```bash
+    jmeden@controller:~$ ls -la /usr/local/bin/
+
+    total 56236
+    drwxr-xr-x  2 root   root       4096 Feb 28 11:54 .
+    drwxr-xr-x 10 root   root       4096 Sep 11  2024 ..
+    -rwxr-xr-x  1 jmeden jmeden 23560192 Jun 15  2021 etcd
+    -rwxr-xr-x  1 jmeden jmeden 17969152 Jun 15  2021 etcdctl
+    -rwxr-xr-x  1 jmeden jmeden 16048128 Jun 15  2021 etcdutl
+    ```
+
+4. Create configuration file:
+
+    ```
+    sudo vi /etc/etcd/etcd.conf.yml
+    ```
+
+    Example content:
+
+    ```yaml
+    name: controller
+    data-dir: /var/lib/etcd
+    listen-peer-urls: http://10.0.0.11:2380
+    listen-client-urls: http://10.0.0.11:2379
+    advertise-client-urls: http://10.0.0.11:2379
+    initial-cluster: controller=http://10.0.0.11:2380
+    initial-cluster-state: new
+    initial-cluster-token: etcd-cluster-01
+    ```
+
+    Here, `10.0.0.11` is the controller management IP.
+
+5. Create systemd service file:
+
+    ```
+    sudo vi /etc/systemd/system/etcd.service
+    ```
+
+    Example content:
+
+    ```ini
+    [Unit]
+    Description=etcd key-value store
+    Documentation=https://etcd.io/docs/
+    After=network.target
+
+    [Service]
+    Type=notify
+    User=etcd
+    Group=etcd
+    ExecStart=/usr/local/bin/etcd \
+      --name controller \
+      --data-dir=/var/lib/etcd \
+      --listen-client-urls=http://0.0.0.0:2379 \
+      --advertise-client-urls=http://127.0.0.1:2379
+    Restart=always
+    RestartSec=5s
+    LimitNOFILE=65536
+
+    [Install]
+    WantedBy=multi-user.target
+    ```
+
+6. Enable and start etcd:
+
+    ```bash
+    sudo systemctl daemon-reload
+    sudo systemctl enable etcd
+    sudo systemctl start etcd
+    sudo systemctl status etcd
+    ```
+
+etcd is now running as a system service.
+
 
 ### 6. Install Core OpenStack Services
 

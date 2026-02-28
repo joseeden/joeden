@@ -10,6 +10,10 @@ h1, h2, h3, h4, h5 {
   font-weight: 700;
 }
 
+h2, h3, h4 {
+  padding-top: 20px;
+}
+
 /* Override Infima variables here */
 :root {
   --pk-blue: #0054ad;
