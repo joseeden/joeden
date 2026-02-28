@@ -232,7 +232,7 @@ Update the `/etc/glance/glance-api.conf` and setup database connection, Keystone
 
 ### Glance Registry
 
-> `glance-registry` has been removed in newer releases (Queens and later). 
+> `glance-registry` has been removed in newer releases (OpenStack Queens and later). 
 > Glance now runs API-only mode. You can skip this step.
 
 The steps for configuring database and Keystone authentication for Glance registry is similar with the Glance API.
@@ -417,7 +417,7 @@ Output:
 | Field            | Value
 +------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 | container_format | bare
-| created_at       | 2026-02-28T21:16:11Z
+| created_at       | 2023-08-03T21:16:11Z
 | disk_format      | qcow2
 | file             | /v2/images/a3900299-cd8e-4d78-887a-dfb047fa4d12/file
 | id               | a3900299-cd8e-4d78-887a-dfb047fa4d12
@@ -430,7 +430,7 @@ Output:
 | schema           | /v2/schemas/image
 | status           | queued
 | tags             |
-| updated_at       | 2026-02-28T21:16:11Z
+| updated_at       | 2023-02-28T21:16:11Z
 | visibility       | public
 +------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 ```

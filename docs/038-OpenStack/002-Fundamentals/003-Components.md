@@ -90,6 +90,8 @@ Nova manages the life cycle of virtual machines. It coordinates compute, storage
 
 Nova acts as the main controller for virtual machines, and ensures resources are properly allocated and VMs run smoothly.
 
+For more information, please see [Nova Compute.](/docs/038-OpenStack/002-Fundamentals/019-Nova-Compute.md)
+
 <div class='img-center'>
 
 ![](/img/docs/all-things-openstack-compute.png)
