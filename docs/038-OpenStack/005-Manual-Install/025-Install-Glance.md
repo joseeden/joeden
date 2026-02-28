@@ -352,3 +352,149 @@ sudo systemctl status glance-registry
 ```
 
 Glance is now fully installed and ready to manage images in OpenStack.
+
+## Verify Glance: Upload a Test Image
+
+After installing Glance, test it by uploading a small image. This will confirm that the image service works correctly.
+
+1. Download a small test image
+2. Upload the image to OpenStack
+3. Verify the image appears in the list
+4. Optionally upload another version
+
+### Download a Test Image
+
+Use a small Linux test image like Cirros. It is lightweight and made for OpenStack testing. Download the `cirros-0.3.5-x86_64-disk.img` file using `wget`.
+
+```bash
+wget http://download.cirros-cloud.net/0.3.5/cirros-0.3.5-x86_64-disk.img
+```
+
+Result:
+
+- The file downloads successfully
+- The file appears in your current directory
+
+You can confirm:
+
+```bash
+root@controller:/home/jmeden# ls -lh
+
+total 32M
+-rw-r--r-- 1 root   root    264 Feb 28 17:26 admin-openrc.sh
+-rw-r--r-- 1 root   root    13M Dec  7  2021 cirros-0.3.5-x86_64-disk.img
+-rw------- 1 root   root    262 Feb 28 17:09 demo-openrc.sh
+drwxr-xr-x 3 jmeden jmeden 4.0K Feb 28 11:54 etcd-v3.5.0-linux-amd64
+-rw-rw-r-- 1 jmeden jmeden  19M Dec  6  2021 etcd-v3.5.0-linux-amd64.tar.gz
+```
+
+If the file exists, the download worked and you are ready to upload it.
+
+### Upload the Image to Glance
+
+Now create an image in OpenStack using the downloaded file.
+
+In the example below:
+
+- The image name is `cirros-0.3.5`
+- The file is `cirros-0.3.5-x86_64-disk.img`
+- The disk format is `qcow2`
+- The container format is `bare`
+- The image is public
+
+```bash
+openstack image create "cirros-0.3.5" \
+  --file cirros-0.3.5-x86_64-disk.img \
+  --disk-format qcow2 \
+  --container-format bare \
+  --public
+```
+
+Output:
+
+```bash
++------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| Field            | Value
++------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| container_format | bare
+| created_at       | 2026-02-28T21:16:11Z
+| disk_format      | qcow2
+| file             | /v2/images/a3900299-cd8e-4d78-887a-dfb047fa4d12/file
+| id               | a3900299-cd8e-4d78-887a-dfb047fa4d12
+| min_disk         | 0
+| min_ram          | 0
+| name             | cirros-0.3.5
+| owner            | 2448a3bc5e264464a3d20ed6012206bf
+| properties       | os_hidden='False', owner_specified.openstack.md5='', owner_specified.openstack.object='images/cirros-0.3.5', owner_specified.openstack.sha256='' |
+| protected        | False
+| schema           | /v2/schemas/image
+| status           | queued
+| tags             |
+| updated_at       | 2026-02-28T21:16:11Z
+| visibility       | public
++------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+```
+
+This confirms that Glance successfully stored the image.
+
+
+### Verify the Image List
+
+List all images currently stored in Glance.
+
+```bash
+openstack image list
+```
+
+Output:
+
+```bash
++--------------------------------------+--------------+--------+
+| ID                                   | Name         | Status |
++--------------------------------------+--------------+--------+
+| a3900299-cd8e-4d78-887a-dfb047fa4d12 | cirros-0.3.5 | active |
++--------------------------------------+--------------+--------+
+```
+
+This confirms that the image service can list stored images correctly.
+
+
+### Upload Another Version
+
+You can upload another version to confirm multiple images work properly.
+
+In the example below, we download `cirros-0.4.0-x86_64-disk.img`.
+
+```bash
+wget http://download.cirros-cloud.net/0.4.0/cirros-0.4.0-x86_64-disk.img
+```
+
+Now create the second image named `cirros-0.4.0`.
+
+```bash
+openstack image create "cirros-0.4.0" \
+  --file cirros-0.4.0-x86_64-disk.img \
+  --disk-format qcow2 \
+  --container-format bare \
+  --public
+```
+
+List images again:
+
+```bash
+openstack image list
+```
+
+Output:
+
+```bash
++--------------------------------------+--------------+--------+
+| ID                                   | Name         | Status |
++--------------------------------------+--------------+--------+
+| a3900299-cd8e-4d78-887a-dfb047fa4d12 | cirros-0.3.5 | active |
+| b76c870f-944a-47af-acf1-7996f92b18e8 | cirros-0.4.0 | active |
++--------------------------------------+--------------+--------+
+```
+
+This confirms that Glance handles multiple images correctly.
+
