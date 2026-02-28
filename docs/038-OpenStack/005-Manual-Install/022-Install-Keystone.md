@@ -232,7 +232,7 @@ export OS_PROJECT_DOMAIN_NAME=Default
 export OS_USER_DOMAIN_NAME=Default
 export OS_PROJECT_NAME=admin
 export OS_USERNAME=admin
-export OS_PASSWORD=AdminPass123
+export OS_PASSWORD=openstack
 export OS_AUTH_URL=http://controller:5000/v3
 export OS_IDENTITY_API_VERSION=3
 export OS_IMAGE_API_VERSION=2
@@ -330,4 +330,180 @@ Set proper permissions again:
 chmod 600 demo-openrc.sh
 ```
 
-The demo script is now ready. It will be fully usable after the demo project and user are created.
+Before you can use the script, you will need to create the project, user, and role for demo. See next section.
+
+
+## Project, User, and Role
+
+Now that Keystone is installed, we will create essential projects, users, and roles to use OpenStack. These are needed for both service operations and for testing OpenStack features.
+
+Before anything else, make sure you source the admin script form the previous step:
+
+```bash
+source admin-openrc.sh
+```
+
+### Create Service Project
+
+Service users are created for nearly every OpenStack service, and they use this project as their primary project. The command below creates a project named `service` in domain `default`:
+
+```bash
+openstack project create \
+--domain default \
+--description "Service Project" service
+```
+
+Output:
+
+```bash
++-------------+----------------------------------+
+| Field       | Value                            |
++-------------+----------------------------------+
+| description | Service Project                  |
+| domain_id   | default                          |
+| enabled     | True                             |
+| id          | 297c43239a924e3b831dbd2cedb8f6d7 |
+| is_domain   | False                            |
+| name        | service                          |
+| options     | {}                               |
+| parent_id   | default                          |
+| tags        | []                               |
++-------------+----------------------------------+
+```
+
+This ensures all service users have a dedicated project to operate in.
+
+
+### Create Demo Project
+
+The demo project is used for testing and experimenting with OpenStack.
+
+```bash
+openstack project create \
+--domain default \
+--description "Demo Project" demo
+```
+
+Output:
+
+```bash
++-------------+----------------------------------+
+| Field       | Value                            |
++-------------+----------------------------------+
+| description | Demo Project                     |
+| domain_id   | default                          |
+| enabled     | True                             |
+| id          | 635187ee20ca40228ddef1bd4fb85600 |
+| is_domain   | False                            |
+| name        | demo                             |
+| options     | {}                               |
+| parent_id   | default                          |
+| tags        | []                               |
++-------------+----------------------------------+
+```
+
+This project lets you safely explore OpenStack without affecting services.
+
+### Create Demo User
+
+Now we create a demo user who will work within the demo project.
+
+```bash
+openstack user create \
+--domain default \
+--password-prompt demo
+```
+
+Note: 
+
+- Username is `demo`
+- User belongs to domain `default`
+- User is enabled and password does not expire
+
+Provide a password when prompted:
+
+```bash
+User Password:
+Repeat User Password:
+```
+
+Output:
+
+```bash
++---------------------+----------------------------------+
+| Field               | Value                            |
++---------------------+----------------------------------+
+| domain_id           | default                          |
+| enabled             | True                             |
+| id                  | cb17f17c923e471f8eb380fd9a570921 |
+| name                | demo                             |
+| options             | {}                               |
+| password_expires_at | None                             |
++---------------------+----------------------------------+
+```
+
+
+### Create User Role
+
+OpenStack uses role-based access control. Assigning a role defines what a user can do in a project.
+
+```bash
+openstack role create user 
+
+openstack role add \
+--project demo \
+--user demo user
+```
+
+Note: 
+
+- Assigns the `user` role to the demo user in the demo project
+- No output is returned, but the role is active
+
+Roles ensure users only have permissions suitable for their tasks.
+
+### Verify Setup
+
+You can check the demo environment by sourcing the credentials and issuing a token.
+
+```bash
+source demo-openrc.sh
+openstack token issue
+```
+
+Note: 
+
+- Demo user gets a token to interact with OpenStack
+- Admin user has broader permissions compared to demo user
+
+Listing users as demo:
+
+```bash
+openstack user list
+```
+
+As expected, this will return an error because the demo user is not authorized to see other users.
+
+```bash
+You are not authorized to perform the requested action: identity:list_users. (HTTP 403) (Request-ID: req-20f90292-4c0d-4ece-9223-191caa17e111)
+```
+
+Try with the admin user:
+
+```bash
+source admin-openrc.sh 
+openstack user list
+```
+
+Output:
+
+```bash
++----------------------------------+-------+
+| ID                               | Name  |
++----------------------------------+-------+
+| 9deb02e4c0df40349976aaccd6a2683c | admin |
+| cb17f17c923e471f8eb380fd9a570921 | demo  |
++----------------------------------+-------+ 
+```
+
+This demonstrates role-based access how different users have different permissions depending on their role.
