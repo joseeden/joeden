@@ -1155,7 +1155,6 @@ On all three nodes:
 
 RabbitMQ handles messaging between OpenStack services.
 
-
 1. Install MariaDB and the Python connector package.
 
     ```bash
@@ -1293,7 +1292,7 @@ Memcached stores authentication tokens for faster access.
 
     Find the `-l` option and set it to the controller management IP:
 
-    ```
+    ```bash
     -l 10.0.0.11
     ```
 
@@ -1316,7 +1315,7 @@ etcd stores distributed configuration data.
 
     ```bash
     sudo groupadd --system etcd
-    sudo useradd -s /sbin/nologin --system -g etcd etcd
+    sudo useradd --system  --home-dir "/var/lib/etcd" --shell /bin/false -g etcd etcd
     ```
 
 2. Create required directories:
@@ -1358,15 +1357,22 @@ etcd stores distributed configuration data.
     ```yaml
     name: controller
     data-dir: /var/lib/etcd
-    listen-peer-urls: http://10.0.0.11:2380
-    listen-client-urls: http://10.0.0.11:2379
-    advertise-client-urls: http://10.0.0.11:2379
     initial-cluster: controller=http://10.0.0.11:2380
     initial-cluster-state: new
     initial-cluster-token: etcd-cluster-01
+    initial-advertise-peer-urls: http://10.0.0.11:2380
+    listen-peer-urls: http://10.0.0.11:2380
+    listen-client-urls: http://10.0.0.11:2379
+    advertise-client-urls: http://10.0.0.11:2379
     ```
 
-    Here, `10.0.0.11` is the controller management IP.
+    Notes:
+
+    - The `10.0.0.11` is the controller management IP.
+    - The `listen-peer-urls` is used by etcd to communicate with other etcd nodes in the cluster.
+    - On a single-node cluster, you only have one node, so `10.0.0.11:2380` is correct.
+
+    When you later add more nodes to the etcd cluster, each node will use its own IP in listen-peer-urls and initial-cluster.
 
 5. Create systemd service file:
 
@@ -1378,7 +1384,7 @@ etcd stores distributed configuration data.
 
     ```ini
     [Unit]
-    Description=etcd key-value store
+    Description=etcd - highly-available key-value store
     Documentation=https://etcd.io/docs/
     After=network.target
 
@@ -1389,6 +1395,7 @@ etcd stores distributed configuration data.
     ExecStart=/usr/local/bin/etcd \
       --name controller \
       --data-dir=/var/lib/etcd \
+      --config-file /etc/etcd/etcd.conf.yml \
       --listen-client-urls=http://0.0.0.0:2379 \
       --advertise-client-urls=http://127.0.0.1:2379
     Restart=always

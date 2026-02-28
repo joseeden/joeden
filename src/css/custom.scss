@@ -10,8 +10,12 @@ h1, h2, h3, h4, h5 {
   font-weight: 700;
 }
 
-h2, h3, h4 {
-  padding-top: 20px;
+h2 {
+  padding-top: 15px;
+}
+
+h3, h4 {
+  padding-top: 10px;
 }
 
 /* Override Infima variables here */
