@@ -67,9 +67,9 @@ Nova supports multiple hypervisors.
 - VMware
 - Xen and others
 
-Not all features are supported on every hypervisor. For example, some hypervisors support snapshots while others do not. Always check the feature support matrix before choosing one.
+Not all features are available on every hypervisor. For example, some hypervisors support instance snapshots, while others do not. Because of these differences, you should always review the hypervisor feature support matrix before selecting one.
 
-This flexibility allows different environments to use different virtualization platforms.
+This flexibility allows OpenStack environments to use different virtualization platforms, but feature availability must be verified in advance.
 
 ## KVM Configuration Example
 
