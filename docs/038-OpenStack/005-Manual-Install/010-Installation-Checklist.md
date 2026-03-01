@@ -61,9 +61,9 @@ This guide provides a simplified checklist for installing OpenStack in virtual o
 | Name       | IPv4 Address | Netmask       | DNS     |
 | ---------- | ------------ | ------------- | ------- |
 | controller | 10.0.0.11    | 255.255.255.0 | 8.8.8.8 |
-| compute1   | 10.0.0.31    | 255.255.255.0 | 8.8.8.8 |
-| compute2   | 10.0.0.32    | 255.255.255.0 | 8.8.8.8 |
-| block1     | 10.0.0.41    | 255.255.255.0 | 8.8.8.8 |
+| compute1   | 10.0.0.21    | 255.255.255.0 | 8.8.8.8 |
+| compute2   | 10.0.0.22    | 255.255.255.0 | 8.8.8.8 |
+| block1     | 10.0.0.31    | 255.255.255.0 | 8.8.8.8 |
 
 ## Host SSH Users
 

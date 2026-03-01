@@ -14,7 +14,7 @@ last_update:
 
 OpenStack can be installed manually in a virtual lab. This setup is simple to prepare and lets you experiment with VM sizing and networking before moving to physical servers.
 
-- Use three virtual machines
+- Use three virtual machines (will be increased to 4 VMs later)
 - Separate traffic using three virtual networks
 - Install Linux manually on each node
 - Install OpenStack services step by step
@@ -83,7 +83,9 @@ The lab uses three VMs to represent a small OpenStack environment.
 | Compute    | Runs virtual machine instances (Nova compute service)                       | 2     | 4 GB  | 10 GB |
 | Storage    | Provides block storage (Cinder with LVM backend)                            | 2     | 4 GB  | 20 GB |
 
-Diagram: 
+**NOTE:** The number of compute nodes will be increased to two during the Nova Compute installation step. We will use VirtualBox snapshots to clone the compute node.
+
+To keep things simple, we will begin with only three virtual machines.
 
 <div class='img-center'>
 

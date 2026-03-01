@@ -25,6 +25,14 @@ These steps ensure Glance is ready to manage and serve images in your OpenStack 
 
 **NOTE:** The succeeding steps are performed **on the controller node only.**
 
+Lab diagram:
+
+<div class='img-center'>
+
+![](/img/docs/all-things-openstack-manual-install.png)
+
+</div>
+
 ## Configure SQL Database
 
 Start on the controller node as a superuser. 

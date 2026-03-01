@@ -22,6 +22,14 @@ Keystone is the identity service of OpenStack. It handles authentication and aut
 
 Each step builds the identity service, which is the core access control of OpenStack.
 
+Lab diagram:
+
+<div class='img-center'>
+
+![](/img/docs/all-things-openstack-manual-install.png)
+
+</div>
+
 ## Configure MySQL Database
 
 Start by preparing the database for Keystone. Log in as root on the controller node.
