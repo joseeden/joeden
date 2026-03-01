@@ -50,7 +50,7 @@ This guide provides a simplified checklist for installing OpenStack in virtual o
 | Nova VNC Proxy (browsers)    | 6080            |
 | Nova VNC Proxy (clients)     | 6081            |
 | Nova HTML5 Console           | 6082            |
-| Keystone Admin Endpoint      | 35357           |
+| Keystone Admin Endpoint      | 5000           |
 | Keystone Public Endpoint     | 5000            |
 | Glance API                   | 9292            |
 | Glance Registry              | 9191            |

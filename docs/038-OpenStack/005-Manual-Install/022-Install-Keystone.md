@@ -177,7 +177,7 @@ Populate the database using the `keystone-manage` tool.
     ```bash
     keystone-manage bootstrap \
       --bootstrap-password openstack \
-      --bootstrap-admin-url http://controller:35357/v3/ \
+      --bootstrap-admin-url http://controller:5000/v3/ \
       --bootstrap-internal-url http://controller:5000/v3/ \
       --bootstrap-public-url http://controller:5000/v3/ \
       --bootstrap-region-id RegionOne
@@ -186,7 +186,7 @@ Populate the database using the `keystone-manage` tool.
     This command sets:
 
     - Admin password (`openstack`)
-    - Admin URL (port 35357)
+    - Admin URL (port 35357) --> Use 5000
     - Internal URL (port 5000)
     - Public URL (port 5000)
     - Region name
