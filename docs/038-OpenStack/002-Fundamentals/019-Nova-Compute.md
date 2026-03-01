@@ -74,15 +74,96 @@ Nova supports multiple hypervisors.
 
 Not all features are available on every hypervisor. For example, some hypervisors support instance snapshots, while others do not. Because of these differences, you should always review the hypervisor feature support matrix before selecting one.
 
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-01183311.png)
+
+</div>
+
 This flexibility allows OpenStack environments to use different virtualization platforms, but feature availability must be verified in advance.
 
-## KVM Configuration Example
+## Nova Configurations 
 
-If your compute node supports virtualization and KVM is enabled in BIOS, Nova usually detects it automatically.
+### Control Plane Configuration 
+
+Nova control plane services are mainly configured in the following file:
+
+```bash
+/etc/nova/nova.conf
+```
+
+This file contains the core settings required for Nova to run properly.
+
+1. **Configure database connections**
+
+   - Nova uses two databases: Nova and Nova API
+   - Both database connection strings must be defined
+   - Instance and service data are stored in the databases
+
+2. **Configure message queue connection**
+
+   - The message queue is usually RabbitMQ
+   - Uses RPC for internal communication between Nova services
+   - All control plane components depend on this messaging layer
+
+3. **Configure Keystone authentication**
+
+   - Define identity credentials for the Nova service user
+   - Configure authentication URL and memcached settings
+   - Ensure Nova can validate tokens and talk with Keystone
+
+4. **Configure service integrations**
+
+   - Define API endpoints for the networking  and image service
+   - They allow Nova to create ports and retrieve images
+
+5. **Configure console and Placement**
+
+   - Enable console access for instances through the dashboard
+   - Configure Placement service endpoint and credentials
+   - Placement tracks resource usage and scheduling decisions
+
+6. **Configure cells**
+
+   - Cells organize compute nodes into logical groups
+   - Each cell has its own message queue and database
+
+After completing these steps, the Nova control plane is properly configured and ready to manage compute resources.
+
+
+### Compute Node Configuration 
+
+Compute node setup is simpler than control plane configuration. The compute node is responsible for running virtual machines and communicating with the control plane services.
+
+1. **Install nova-compute service**
+
+   - Install the `nova-compute` package on the compute host
+   - The service runs as a systemd unit
+   - It does not connect directly to the database
+   - Database access is handled through Nova Conductor
+
+2. **Configure basic service parameters**
+
+   - Configure RabbitMQ connection for RPC communication
+   - Configure Keystone authentication credentials
+   - Set the management or local IP address if required
+
+3. **Configure hypervisor driver**
+
+   - Select appropriate driver (e.g. KVM, QEMU, or VMware)
+   - Define the driver settings in `/etc/nova/nova.conf`
+   - Driver determines how instances are created and managed 
+   - Some hypervisors may require additional system packages
+
+After configuration, restart the `nova-compute` service. Once it registers successfully, the compute node becomes available for instance scheduling.
+
+## Sample Configurations 
+
+### KVM Configuration
+
+If your compute node supports virtualization and KVM is enabled in BIOS, Nova usually detects it automatically and loads the KVM driver by default. 
 
 If you want to explicitly configure it, edit `/etc/nova/nova.conf`.
-
-In the example below, we configure `compute_driver` and set `virt_type` to `kvm`.
 
 ```ini
 [DEFAULT]
@@ -90,6 +171,7 @@ compute_driver = libvirt.LibvirtDriver
 
 [libvirt]
 virt_type = kvm
+cpu_mode = host-model
 ```
 
 After editing the file, restart the compute service:
@@ -98,18 +180,16 @@ After editing the file, restart the compute service:
 systemctl restart nova-compute
 ```
 
-Expected result:
+Result:
 
 - The service restarts successfully
 - The compute node registers in Nova
 
 This confirms that the KVM driver is active and working.
 
-## QEMU Configuration Example
+### QEMU Configuration
 
-QEMU is often used in lab environments where nested virtualization is not available.
-
-In the example below, we use the same libvirt driver but set `virt_type` to `qemu`.
+QEMU is commonly used in lab environments where nested virtualization is not supported. For example, if you are running OpenStack inside VirtualBox, nested virtualization is not available, so QEMU is used instead of KVM.
 
 ```ini
 [DEFAULT]
@@ -119,15 +199,26 @@ compute_driver = libvirt.LibvirtDriver
 virt_type = qemu
 ```
 
-After restarting the service, the compute node runs instances using QEMU instead of KVM.
+After updating `/etc/nova/nova.conf`, restart the `nova-compute` service.
 
-This allows OpenStack to run even in limited environments.
+```bash
+systemctl restart nova-compute
+```
 
-## VMware Configuration Example
+Once restarted, the compute node launches instances using QEMU instead of KVM. This setup allows OpenStack to operate in environments where hardware virtualization is not available.
 
-VMware works differently. Nova does not run directly on ESXi hosts. Instead, it connects to vCenter.
+### VMware Configuration
 
-In the example below, we configure the `compute_driver` and provide vCenter details.
+VMware integration is different from KVM or QEMU. Nova does not control host-level placement, which means it does not run directly on individual ESXi hosts. Instead, `nova-compute` connects to vCenter, and vCenter manages the ESXi hosts.
+
+Because of this design, the ESXi cluster is treated differently during scheduling.
+
+- The ESXi cluster must have DRS enabled
+- Cluster is treated as a single hypervisor resource
+- Nova Scheduler places instances at the cluster level
+- vCenter decides which ESXi host runs the instance
+
+Below is a sample configuration:
 
 ```ini
 [DEFAULT]
@@ -141,23 +232,42 @@ cluster_name = ProductionCluster
 datastore_regex = .*
 ```
 
-After restarting `nova-compute`, Nova connects to vCenter and treats the ESXi cluster as a single compute resource.
+:::info 
 
-This integration allows OpenStack to manage VMware clusters through Nova.
+Note that you must also configure the Glance image service to properly integrate with VMware. Without proper image configuration, instance deployment on ESXi hosts may fail.
 
-## Nova Cells Concept
+:::
 
-Nova uses cells to scale large deployments.
+After updating `/etc/nova/nova.conf`, restart the `nova-compute` service so the configuration is applied.
 
-- Each Cell has its own database
+```bash
+systemctl restart nova-compute
+```
+
+Once restarted, Nova connects to vCenter and treats the entire ESXi cluster as a single compute resource. OpenStack schedules instances at the cluster level, while vCenter manages the actual host placement inside that cluster.
+
+
+## Nova Cells 
+
+Nova Cells was introduced by the OpenStack community to solve database and message queue performance issues in large compute deployments. It splits compute nodes into multiple “cells” to improve scalability.
+
+- Each Cell has its own SQL database
 - Each Cell has its own message queue
 - Cells improve performance at scale
 
-In small deployments, there is usually one cell. As the cloud grows, additional cells can be added. This prevents database and messaging bottlenecks.
+In small deployments, there is usually one cell. As the cloud grows, additional cells can be added to prevent database and messaging overload.
 
-Cells allow Nova to scale without redesigning the architecture.
+In the sample deployment below, compute nodes are divided into multiple units, each with its own conductor, database, and message queue. The global service communicates with each unit using a super conductor, and the global database contains only the information needed for the entire overcloud.
 
-## Installation Overview
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-01192544.png)
+
+</div>
+
+
+
+## Installation
 
 Installing Nova requires steps on both controller and compute nodes.
 
@@ -179,3 +289,5 @@ On compute nodes:
 5. Map compute node to cell
 
 After these steps, the compute node becomes available for scheduling instances.
+
+For more information, please see [Install Nove Compute.](/docs/038-OpenStack/005-Manual-Install/027-Install-Nova-Compute.md)
