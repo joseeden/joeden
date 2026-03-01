@@ -37,19 +37,26 @@ Nova is split into two main parts.
 
 In most deployments, there are only a few controller nodes but many compute nodes. Because of this, compute nodes must be deployed in a standard and repeatable way. This keeps the environment consistent and easier to scale.
 
-## Main Nova Components
+## Nova Core Components
 
-Several services work together inside Nova.
+These components work together to run the compute service.
 
-- Nova API handles requests
-- Nova Scheduler selects compute nodes
-- Nova Conductor talks to databases
-- Placement tracks resource usage
-- RabbitMQ handles messaging
+| Component      | Role                                                                                                                                   |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| Nova API       | <ul><li>Receives requests such as creating a virtual machine</li><li>Forwards requests to other Nova services for processing</li></ul> |
+| Nova Scheduler | <ul><li>Decides where an instance should run</li><li>Uses available information to select a compute node</li></ul>       |
+| Nova Conductor | <ul><li>Protects direct database access</li><li>Performs database operations on behalf of other services</li></ul>                     |
+| Placement      | <ul><li>Tracks resource usage like CPU and memory</li><li>Provides resource data to help scheduling decisions</li></ul>             |
+| RabbitMQ       | <ul><li>Enables communication between Nova components</li><li>Uses remote procedure calls for internal messaging</li></ul>             |
 
-Nova API receives requests such as creating a virtual machine. Nova Scheduler decides where the instance should run. Placement tracks available CPU and memory. Nova Conductor protects the database and handles database access. All components communicate through a message queue like RabbitMQ.
+Together, these components allow Nova to receive requests, select compute nodes, manage resources, and communicate securely across the system.
 
-These components together allow Nova to safely schedule and manage instances.
+<div class='img-center'>
+
+![](/img/docs/all-things-openstack-compute-v2.png)
+
+</div>
+
 
 ## Hypervisor Support
 
