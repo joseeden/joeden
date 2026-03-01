@@ -104,11 +104,11 @@ const config: Config = {
     ],
     scripts: [
       {
-        src: '/src/components/documentation/sidebar-accordion.js',
+        src: './js/sidebar-accordion.js',
         defer: true,
       },
       {
-        src: '/src/components/documentation/image-zoom.js',
+        src: './js/image-zoom.js',
         defer: true,
       },
     ],

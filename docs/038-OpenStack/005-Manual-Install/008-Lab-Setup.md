@@ -113,7 +113,7 @@ On the Storage node:
 
 Three virtual networks are used to separate traffic.
 
-The network configurations can be found here: [Create the Virtual Networks.](#1-create-the-virtual-networks)
+The network configurations can be found here: [Create the Virtual Networks.](/docs/038-OpenStack/005-Manual-Install/012-Create-the-Virtual-Networks.md)
 
 1. **Management Network**
 

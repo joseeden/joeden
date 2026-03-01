@@ -62,10 +62,15 @@ Together, these components allow Nova to receive requests, select compute nodes,
 
 Nova supports multiple hypervisors.
 
-- KVM
-- QEMU
-- VMware
-- Xen and others
+- KVM on Linux (via libvirt)
+- LXC Linux Containers (via libvirt)
+- Xen on Linux (via libvirt)
+- XenServer on Linux (with XAPI)
+- Hyper-V on Windows
+- PowerVM on IBM Power Platform
+- QEMU (Quick Emulator on Linux)
+- VMware vSphere 5.1+ vCenter
+- Virtuozzo 7.0+ on Linux 
 
 Not all features are available on every hypervisor. For example, some hypervisors support instance snapshots, while others do not. Because of these differences, you should always review the hypervisor feature support matrix before selecting one.
 

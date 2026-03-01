@@ -85,7 +85,7 @@ In this example:
 - `controller` is the database host
 - `keystone` is the database name
 
-:::warn 
+:::warning
 
 Note that sensitive information like the password is available in clear text in the Keystone configuration file, which is stored at each controller nodes.
 

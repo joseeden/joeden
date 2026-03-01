@@ -205,7 +205,7 @@ Go to **System** and ensure that Optical is set as the first boot device. You ca
 
 Start the machine and complete the installation using the GUI installer.
 
-**Note:** If you get a `No bootable medium found` error, please see [Manually Load ISO.](#manually-load-iso)
+**Note:** If you get a `No bootable medium found` error, please see [Manually Load ISO.](/docs/001-Personal-Notes/020-Homelab/003-VirtualBox/099-Troubleshooting.md#manually-load-iso)
 
 1. Select a language and click **Done.** 
 
