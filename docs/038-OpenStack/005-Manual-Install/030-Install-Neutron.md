@@ -397,5 +397,40 @@ To simplify configuration, the commands below use [Crudini](/docs/038-OpenStack/
     Output:
 
     ```bash
-      
+    [DEFAULT]
+    core_plugin = ml2
+    transport_url = rabbit://openstack:openstack@controller
+    service_plugins = router
+    allow_overlapping_ips = true
+    auth_strategy = keystone
+    notify_nova_on_port_status_changes = true
+    notify_nova_on_port_data_changes = true
+
+    [agent]
+    root_helper = "sudo /usr/bin/neutron-rootwrap /etc/neutron/rootwrap.conf"
+
+    [database]
+    connection = mysql+pymysql://neutron:openstack@controller/neutron
+
+    [keystone_authtoken]
+    auth_uri = http://controller:5000
+    auth_url = http://controller:5000
+    memcached_servers = controller:11211
+    auth_type = password
+    project_domain_name = Default
+    user_domain_name = Default
+    project_name = service
+    username = neutron
+    password = openstack
+    www_authenticate_uri = http://controller:5000
+
+    [nova]
+    auth_url = http://controller:5000
+    auth_type = password
+    project_domain_name = Default
+    user_domain_name = Default
+    region_name = RegionOne
+    project_name = service
+    username = nova
+    password = openstack
     ```
