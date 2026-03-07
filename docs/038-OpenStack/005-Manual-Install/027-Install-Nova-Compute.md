@@ -89,7 +89,7 @@ Start by preparing the controller node:
     sudo su  
     ```
 
-2. Start MySQL and create three databases: nova API, nova main, and placement
+2. Start MySQL and create the databases: nova API, nova main, and placement
 
     ```bash
     sudo mysql 
@@ -97,6 +97,7 @@ Start by preparing the controller node:
     CREATE DATABASE nova_api;
     CREATE DATABASE nova;
     CREATE DATABASE nova_cell0;
+    CREATE DATABASE placement;
     ```
 
 3. Grant appropriate privileges to Nova and placement users:
@@ -108,6 +109,13 @@ Start by preparing the controller node:
     GRANT ALL PRIVILEGES ON nova.* TO 'nova'@'%' IDENTIFIED BY 'openstack';
     GRANT ALL PRIVILEGES ON nova_cell0.* TO 'nova'@'localhost' IDENTIFIED BY 'openstack';
     GRANT ALL PRIVILEGES ON nova_cell0.* TO 'nova'@'%' IDENTIFIED BY 'openstack';
+
+    ## Placement
+    GRANT ALL PRIVILEGES ON placement.* TO 'placement'@'localhost' IDENTIFIED BY 'openstack';
+    GRANT ALL PRIVILEGES ON placement.* TO 'placement'@'%' IDENTIFIED BY 'openstack';
+
+    FLUSH PRIVILEGES;
+    EXIT;
     ```
 
     Exit the database:
@@ -116,13 +124,114 @@ Start by preparing the controller node:
     EXIT 
     ```
 
-4. Before running the OpenStack commands, make sure to [source the client environment script.](/docs/038-OpenStack/005-Manual-Install/022-Install-Keystone.md#create-admin-environment-script)
+4. Verify that the databases and user privileges are correctly set.
+
+    Login to the database:
+
+    ```bash
+    ## Enter password
+    sudo mysql -uroot -p 
+    ```
+
+    Inside MySQL:
+
+    ```bash
+    -- List databases
+    SHOW DATABASES;
+
+    -- Check privileges for Nova
+    SHOW GRANTS FOR 'nova'@'localhost';
+    SHOW GRANTS FOR 'nova'@'%';
+
+    -- Check privileges for Placement
+    SHOW GRANTS FOR 'placement'@'localhost';
+    SHOW GRANTS FOR 'placement'@'%';
+    ```
+
+    Example:
+
+    ```bash
+    MariaDB [(none)]> SHOW DATABASES;
+    +--------------------+
+    | Database           |
+    +--------------------+
+    | glance             |
+    | information_schema |
+    | keystone           |
+    | mysql              |
+    | nova               |
+    | nova_api           |
+    | nova_cell0         |
+    | performance_schema |
+    | placement          |
+    | sys                |
+    +--------------------+
+    10 rows in set (0.006 sec)
+    ```
+
+    ```bash
+    MariaDB [(none)]> SHOW GRANTS FOR 'nova'@'localhost';
+    +-------------------------------------------------------------------------------------------------------------+
+    | Grants for nova@localhost
+        |
+    +-------------------------------------------------------------------------------------------------------------+
+    | GRANT USAGE ON *.* TO `nova`@`localhost` IDENTIFIED BY PASSWORD '*3A4A03AC22526F6B591010973A741D59A71D728E' |
+    | GRANT ALL PRIVILEGES ON `nova`.* TO `nova`@`localhost`
+        |
+    | GRANT ALL PRIVILEGES ON `nova_api`.* TO `nova`@`localhost`
+        |
+    | GRANT ALL PRIVILEGES ON `nova_cell0`.* TO `nova`@`localhost`
+        |
+    +-------------------------------------------------------------------------------------------------------------+
+    4 rows in set (0.001 sec)
+    ```
+
+    ```bash
+    MariaDB [(none)]> SHOW GRANTS FOR 'nova'@'%';
+    +-----------------------------------------------------------------------------------------------------+ 
+    | Grants for nova@%                                                                                   | 
+    +-----------------------------------------------------------------------------------------------------+ 
+    | GRANT USAGE ON *.* TO `nova`@`%` IDENTIFIED BY PASSWORD '*3A4A03AC22526F6B591010973A741D59A71D728E' | 
+    | GRANT ALL PRIVILEGES ON `nova`.* TO `nova`@`%`                                                      | 
+    | GRANT ALL PRIVILEGES ON `nova_api`.* TO `nova`@`%`                                                  | 
+    | GRANT ALL PRIVILEGES ON `nova_cell0`.* TO `nova`@`%`                                                | 
+    +-----------------------------------------------------------------------------------------------------+ 
+    4 rows in set (0.000 sec)
+    ```
+
+    ```bash
+    MariaDB [(none)]> SHOW GRANTS FOR 'placement'@'localhost';
+    +------------------------------------------------------------------------------------------------------------------+
+    | Grants for placement@localhost
+            |
+    +------------------------------------------------------------------------------------------------------------------+
+    | GRANT USAGE ON *.* TO `placement`@`localhost` IDENTIFIED BY PASSWORD '*3A4A03AC22526F6B591010973A741D59A71D728E' |
+    | GRANT ALL PRIVILEGES ON `placement`.* TO `placement`@`localhost`
+            |
+    +------------------------------------------------------------------------------------------------------------------+
+    2 rows in set (0.001 sec)
+    ```
+
+    ```bash
+    MariaDB [(none)]> SHOW GRANTS FOR 'placement'@'%';
+    +----------------------------------------------------------------------------------------------------------+
+    | Grants for placement@%
+    |
+    +----------------------------------------------------------------------------------------------------------+
+    | GRANT USAGE ON *.* TO `placement`@`%` IDENTIFIED BY PASSWORD '*3A4A03AC22526F6B591010973A741D59A71D728E' |
+    | GRANT ALL PRIVILEGES ON `placement`.* TO `placement`@`%`
+    |
+    +----------------------------------------------------------------------------------------------------------+
+    2 rows in set (0.000 sec)
+    ```
+
+5. Before running the OpenStack commands, make sure to [source the client environment script.](/docs/038-OpenStack/005-Manual-Install/022-Install-Keystone.md#create-admin-environment-script)
 
     ```bash
     source admin-openrc.sh
     ```
 
-5. Create OpenStack service users for Nova.
+6. Create OpenStack service users for Nova.
 
     ```bash
     openstack user create \
@@ -143,7 +252,23 @@ Start by preparing the controller node:
     openstack role add --project service --user nova admin
     ```
 
-6. Create another service user for the Placement service.
+    Verify:
+
+    ```bash
+    openstack role assignment list --user nova --project service
+    ```
+
+    Output:
+
+    ```bash
+    +----------------------------------+----------------------------------+-------+----------------------------------+--------+--------+-----------+
+    | Role                             | User                             | Group | Project                          | Domain | System | Inherited | 
+    +----------------------------------+----------------------------------+-------+----------------------------------+--------+--------+-----------+ 
+    | 39fc9013a56b409f8cb15cfeae1e1a6a | ddbb9586104e45949a4166b53fea1d94 |       | 297c43239a924e3b831dbd2cedb8f6d7 |        |        | False     | 
+    +----------------------------------+----------------------------------+-------+----------------------------------+--------+--------+-----------+ 
+    ```
+
+7. Create another service user for the Placement service.
 
     ```bash
     openstack user create \
@@ -157,7 +282,22 @@ Start by preparing the controller node:
     openstack role add --project service --user placement admin
     ```
 
-7. Create services and API endpoints for Nova.
+    Verify that the users:
+
+    ```bash
+    root@controller:/home/jmeden# openstack user list
+    +----------------------------------+-----------+
+    | ID                               | Name      |
+    +----------------------------------+-----------+
+    | 9deb02e4c0df40349976aaccd6a2683c | admin     |
+    | cb17f17c923e471f8eb380fd9a570921 | demo      |
+    | c3e98b280b254a679616e3115bbcaae7 | glance    |
+    | ddbb9586104e45949a4166b53fea1d94 | nova      |
+    | ce32f7827d714a43a05a1eb76ef2b8b3 | placement |
+    +----------------------------------+-----------+
+    ```
+
+8. Create services and API endpoints for Nova.
 
     **Note:** For OpenStack Zed, the endpoints and ports have mostly stayed the same as in previous releases for Nova and Placement services.
 
@@ -172,7 +312,7 @@ Start by preparing the controller node:
     openstack endpoint create --region RegionOne compute admin http://controller:8774/v2.1
     ```
 
-8. Create services and API endpoints for the Placement service.
+9.  Create services and API endpoints for the Placement service.
 
     Placement API default port is 8778, which is unchanged in OpenStack Zed and in other newer releases.
 
@@ -183,7 +323,170 @@ Start by preparing the controller node:
     openstack endpoint create --region RegionOne placement admin http://controller:8778
     ```
 
-9. Install Nova controller packages.
+
+10. Install the Placement API
+
+    Although Nova uses Placement, the Placement API runs as a **separate service** under Apache WSGI.
+    You need to install and configure it before starting Nova services.
+
+    Install the Placement API package.
+
+    ```bash
+    sudo apt install -y placement-api
+    ```
+
+    This installs:
+
+    - Placement API service
+    - Apache WSGI configuration
+    - Placement management utilities
+
+    Verify the Apache site configuration exists.
+
+    ```bash
+    ls -la /etc/apache2/sites-enabled/
+    ```
+
+    Output:
+
+    ```bash
+    lrwxrwxrwx 1 root root   35 Feb 28 16:36 000-default.conf -> ../sites-available/000-default.conf
+    lrwxrwxrwx 1 root root   32 Feb 28 16:36 keystone.conf -> ../sites-available/keystone.conf
+    lrwxrwxrwx 1 root root   37 Mar  7 08:43 placement-api.conf -> ../sites-available/placement-api.conf
+    ```
+
+    If the file is not enabled (doesn't exist yet), enable it manually:
+
+    ```bash
+    a2ensite placement-api
+    systemctl restart apache2
+    ```
+
+
+11. Configure the Placement service.
+
+    Edit the configuration file:
+
+    ```bash
+    sudo vi /etc/placement/placement.conf
+    ```
+
+    Add the following configuration.
+
+    ```ini
+    #Placement database connection
+    [placement_database]
+    connection = mysql+pymysql://placement:openstack@controller/placement
+    #connection = sqlite:////var/lib/placement/placement.sqlite
+
+    #Keystone authentication
+    [api]
+    auth_strategy = keystone
+
+    [keystone_authtoken]
+    auth_url = http://controller:5000/v3
+    memcached_servers = controller:11211
+    auth_type = password
+    project_domain_name = Default
+    user_domain_name = Default
+    project_name = service
+    username = placement
+    password = openstack
+    ```
+
+
+12. Initialize the Placement database schema.
+
+    ```bash
+    su -s /bin/sh -c "placement-manage db sync" placement
+    ```
+
+    Restart Apache to load the Placement API.
+
+    ```bash
+    systemctl restart apache2
+    ```
+
+    Confirm the Placement API is listening.
+
+    ```bash
+    ss -lntp | grep 8778
+    ```
+
+    Output:
+
+    ```bash
+    LISTEN 0      511                *:8778             *:*    users:(("apache2",pid=10903,fd=8),("apache2",pid=10902,fd=8),("apache2",pid=10891,fd=8))
+    ```
+
+    Test the Placement API endpoint.
+
+    ```bash
+    curl -s http://controller:8778 | jq
+    ```
+
+    Expected response:
+
+    ```json
+    {
+      "versions": [
+        {
+          "id": "v1.0",
+          "max_version": "1.39",
+          "min_version": "1.0",
+          "status": "CURRENT",
+          "links": [
+            {
+              "rel": "self",
+              "href": ""
+            }
+          ]
+        }
+      ]
+    }
+    ```
+
+    If you receive this output, the Placement API is functioning correctly.
+
+
+
+13. Verify Placement Setup and Sync Aggregates.
+
+    Once the Placement service is installed and configured, we need to verify that it can be used by Nova.
+
+    First, make sure to [source the client environment script.](/docs/038-OpenStack/005-Manual-Install/022-Install-Keystone.md#create-admin-environment-script)
+
+    ```bash
+    source admin-openrc.sh
+    ```
+
+    Verify that the `service` project exists:
+
+    ```bash
+    root@controller:/home/jmeden# openstack project list
+
+    +----------------------------------+---------+
+    | ID                               | Name    |
+    +----------------------------------+---------+
+    | 2448a3bc5e264464a3d20ed6012206bf | admin   |
+    | 297c43239a924e3b831dbd2cedb8f6d7 | service |
+    | 635187ee20ca40228ddef1bd4fb85600 | demo    |
+    +----------------------------------+---------+
+    ```
+
+    Now, sync the placement aggregates:
+
+    ```bash
+    su -s /bin/sh -c "nova-manage placement sync_aggregates" nova 
+    ```
+
+    If successful, this command will not return any errors.
+
+    If it returns `HTTP 401 Unauthorized`, the `placement` user missing the admin role. See step 7.
+
+
+
+14. Install Nova controller packages.
 
     **Note:** The setup I'm using for this lab is OpenStack Zed. On modern Ubuntu (22.04/24.04) for OpenStack Zed, the `nova-*` packages are not in the default Ubuntu repositories. They are only available if you add the OpenStack Zed repository (Ubuntu Cloud Archive). 
 
@@ -203,6 +506,7 @@ Start by preparing the controller node:
       nova-novncproxy \
       python3-novaclient
 
+    ## SKIP THIS PART
     sudo apt install -y \
       nova-consoleauth \
       nova-placement-api 
@@ -211,9 +515,12 @@ Start by preparing the controller node:
     **UPDATE:**
 
     - `nova-consoleauth` is no longer separate. It is included in `nova-api` and `nova-novncproxy`.
-    - If `nova-placement-api` is missing, just install `nova-api` and the service should appear.
+    - Placement API is packaged separately as `placement-api` for Ubuntu Zed packages.
 
-10. Check installed services.
+
+
+
+15. Check installed services.
 
     ```bash
     systemctl list-units | grep nova 
@@ -228,7 +535,7 @@ Start by preparing the controller node:
     nova-scheduler.service                                                                    loaded active running   OpenStack Compute Scheduler
     ```
 
-11. Configure `/etc/nova/nova.conf` on the controller.
+16. Configure `/etc/nova/nova.conf` on the controller.
 
     - Set MySQL connection parameters for API and main database
     - Configure RabbitMQ access
@@ -240,7 +547,7 @@ Start by preparing the controller node:
 
     To simplify the steps, we will use [Crudini](/docs/038-OpenStack/005-Manual-Install/022-Install-Keystone.md#install-required-packages). Proceed with the next steps.
 
-12. Configure MySQL & RabbitMQ parameters.
+17. Configure MySQL & RabbitMQ parameters.
 
     ```bash
     crudini --set /etc/nova/nova.conf api_database connection mysql+pymysql://nova:openstack@controller/nova_api
@@ -248,7 +555,7 @@ Start by preparing the controller node:
     crudini --set /etc/nova/nova.conf DEFAULT transport_url rabbit://openstack:openstack@controller
     ```
 
-13. Configure the identity service access.
+18. Configure the identity service access.
 
     If you are using modern OpenStack, Keystone should use port 5000 only. Port 35357 is no longer required.
 
@@ -258,18 +565,19 @@ Start by preparing the controller node:
     crudini --set /etc/nova/nova.conf keystone_authtoken auth_url http://controller:5000
     crudini --set /etc/nova/nova.conf keystone_authtoken memcached_servers controller:11211
     crudini --set /etc/nova/nova.conf keystone_authtoken auth_type password
-    crudini --set /etc/nova/nova.conf keystone_authtoken project_domain_name default
-    crudini --set /etc/nova/nova.conf keystone_authtoken user_domain_name default
+    crudini --set /etc/nova/nova.conf keystone_authtoken project_domain_name Default
+    crudini --set /etc/nova/nova.conf keystone_authtoken user_domain_name Default
     crudini --set /etc/nova/nova.conf keystone_authtoken project_name service
     crudini --set /etc/nova/nova.conf keystone_authtoken username nova
     crudini --set /etc/nova/nova.conf keystone_authtoken password openstack
     ```
 
-14. Configure support for Networking Service (Neutron).
+19. Configure support for Networking Service (Neutron).
 
     This will allow Nova to delegate networking tasks to Neutron and the instances will get proper network connectivity.
 
     ```bash
+    crudini --set /etc/nova/nova.conf DEFAULT service_user_token_roles_required True
     crudini --set /etc/nova/nova.conf DEFAULT my_ip 10.0.0.11
     crudini --set /etc/nova/nova.conf DEFAULT use_neutron True
     crudini --set /etc/nova/nova.conf DEFAULT firewall_driver nova.virt.firewall.NoopFirewallDriver
@@ -277,7 +585,30 @@ Start by preparing the controller node:
 
     **Note**: `my_ip` → IP of your controller node’s management interface
 
-15. Configure VNC proxy on Controller Node.
+20. Enable service user token roles required.
+
+    The `service_user` in Nova is used for internal API calls that Nova services make to Keystone.
+
+    By setting `service_user_token_roles_required` to `True`, you ensure that when Nova uses the `service_user` token to authenticate with Keystone, it must have the appropriate roles assigned. This is a security best practice that prevents unauthorized access to Keystone when Nova services communicate with it.
+
+    ```bash
+    # Ensure [DEFAULT] has only the service_user reference:
+    crudini --set /etc/nova/nova.conf DEFAULT service_user nova
+    crudini --set /etc/nova/nova.conf DEFAULT service_user_token_roles_required True
+
+    # Ensure [service_user] is correct:
+    crudini --set /etc/nova/nova.conf service_user username nova
+    crudini --set /etc/nova/nova.conf service_user password openstack
+    crudini --set /etc/nova/nova.conf service_user project_name service
+    crudini --set /etc/nova/nova.conf service_user user_domain_name Default
+    crudini --set /etc/nova/nova.conf service_user project_domain_name Default
+    crudini --set /etc/nova/nova.conf service_user auth_type password
+    crudini --set /etc/nova/nova.conf service_user auth_url http://controller:5000/v3
+    crudini --set /etc/nova/nova.conf service_user service_user_token_roles_required True
+    ```
+
+
+21. Configure VNC proxy on Controller Node.
 
     You need to configure VNC console proxy to access VM consoles via Horizon or CLI.
 
@@ -292,8 +623,8 @@ Start by preparing the controller node:
     - `vncserver_listen` → the IP the VNC server listens on (usually the controller).
     - `vncserver_proxyclient_address` → IP used by clients connecting through the proxy.
 
-
-16. Configure the Glance location.
+ 
+22. Configure the Glance location.
 
     This allows Nova to download images for new instances. Make sure the URL matches the [Glance endpoint](/docs/038-OpenStack/005-Manual-Install/025-Install-Glance.md#create-glance-service-and-endpoints) created when setting up Glance. 
 
@@ -301,7 +632,7 @@ Start by preparing the controller node:
     crudini --set /etc/nova/nova.conf glance api_servers http://controller:9292
     ```
 
-17. Configure Lock Path for Oslo Concurrency.
+23. Configure Lock Path for Oslo Concurrency.
 
     Nova uses Oslo concurrency for database and resource locks. You must set a valid path for temporary lock files.
 
@@ -309,7 +640,7 @@ Start by preparing the controller node:
     crudini --set /etc/nova/nova.conf oslo_concurrency lock_path /var/lib/nova/tmp
     ```
 
-18. Configure Placement API.
+24. Configure Placement API.
 
     Placement service tracks compute resources. Nova needs credentials and endpoint information to communicate with it.
 
@@ -324,7 +655,7 @@ Start by preparing the controller node:
     crudini --set /etc/nova/nova.conf placement password openstack
     ```
 
-19. Remove `log_dir` parameter from `DEFAULT` section.
+25. Remove `log_dir` parameter from `DEFAULT` section.
 
     In modern Ubuntu packages for Zed, the `log_dir` parameter can conflict with systemd logging. 
 
@@ -335,7 +666,7 @@ Start by preparing the controller node:
     ```
 
 
-20. Populate the `nova_api` Database.
+26. Populate the `nova_api` Database.
 
     Nova’s API database needs to be initialized so the API service can store requests, service data, and track instance operations.
 
@@ -353,7 +684,7 @@ Start by preparing the controller node:
     This is not an error. `nova-manage` uses eventlet for concurrency, but some Python modules (like urllib3) were loaded before eventlet patched the standard library. This is safe to ignore.
 
 
-21. Register the `cell0` Database and create the `cell1` Cell.
+27. Register the `cell0` Database and create the `cell1` Cell.
 
     Nova uses cells to scale across multiple compute nodes. You must register `cell0` (default cell for unmapped instances).  
 
@@ -376,7 +707,7 @@ Start by preparing the controller node:
 
     This is not an error. It just means that `nova-manage` is using the configuration file values for transport URL and database connection, which is expected. The commands will still use the correct RabbitMQ (transport) and MySQL (database) settings from your configuration.
 
-22. Populate the Nova database with initial schema and API data.
+28. Populate the Nova database with initial schema and API data.
 
     This ensures the database is ready for Nova to track instances, networks, and compute nodes
 
@@ -384,7 +715,7 @@ Start by preparing the controller node:
     su -s /bin/sh -c "nova-manage db sync" nova
     ```
 
-23. Verify the configuration of Cells.
+29. Verify the configuration of Cells.
 
     ```bash
     nova-manage cell_v2 list_cells
@@ -398,7 +729,7 @@ Start by preparing the controller node:
     | cell1 | d181ba72-3ed3-42d4-8d3a-082db4037430 | rabbit://openstack:****@controller | mysql+pymysql://nova:****@controller/nova       | False    |
 
 
-24. Restart Nova services so the change takes effect.
+30. Restart Nova services so the change takes effect.
 
     ```bash
     sudo systemctl restart nova-api nova-scheduler nova-conductor nova-novncproxy
@@ -560,26 +891,210 @@ On the compute node:
     sudo systemctl status nova-compute
     ```
 
+    Confirm all Nova services are running:
+    
+    ```bash
+    systemctl status nova-api 
+    systemctl status nova-scheduler
+    systemctl status nova-conductor
+    systemctl status nova-novncproxy
+    ```
+
 
 ## Register the Compute Node
 
 Once we have installed Nova on compute node, we need to discover compute nodes.
 
-Login to the controller node again and run:
+1. Login to the controller node again and run:
 
-```bash
-su -s /bin/sh -c "nova-manage cell_v2 discover_hosts --verbose" nova
-```
+    ```bash
+    sudo su
+    su -s /bin/sh -c "nova-manage cell_v2 discover_hosts --verbose" nova
+    ```
 
-Verify compute services:
+    Output:
 
-```bash
-openstack compute service list
-```
+    ```bash
+    Found 2 cell mappings.
+    Skipping cell0 since it does not contain hosts.
+    Getting computes from cell 'cell1': d181ba72-3ed3-42d4-8d3a-082db4037430
+    Checking host mapping for compute host 'compute1': 44c813e6-c2d1-48df-8d13-0e3eb4e4775b
+    Creating host mapping for compute host 'compute1': 44c813e6-c2d1-48df-8d13-0e3eb4e4775b
+    Found 1 unmapped computes in cell: d181ba72-3ed3-42d4-8d3a-082db4037430
+    ```
 
-This will show Nova scheduler, conductor, console, and compute services with their status.
+2. Before proceeding, do some quick checks:
 
-## Adding Additional Compute Nodes
+    - List the mapped cells:
+
+        ```bash
+        root@controller:/home/jmeden# su -s /bin/sh -c "nova-manage cell_v2 list_cells" nova
+
+        +-------+--------------------------------------+------------------------------------+-------------------------------------------------+----------+
+        |  Name |                 UUID                 |           Transport URL            |               Database Connection               | Disabled 
+        |
+        +-------+--------------------------------------+------------------------------------+-------------------------------------------------+----------+
+        | cell0 | 00000000-0000-0000-0000-000000000000 |               none:/               | mysql+pymysql://nova:****@controller/nova_cell0 |  False   
+        |
+        | cell1 | d181ba72-3ed3-42d4-8d3a-082db4037430 | rabbit://openstack:****@controller |    mysql+pymysql://nova:****@controller/nova    |  False   
+        |
+        +-------+--------------------------------------+------------------------------------+-------------------------------------------------+----------+ 
+        ```
+
+    - List the host in the cells:
+
+        ```bash
+        root@controller:/home/jmeden# su -s /bin/sh -c "nova-manage cell_v2 list_hosts" nova
+
+        +-----------+--------------------------------------+----------+
+        | Cell Name |              Cell UUID               | Hostname |
+        +-----------+--------------------------------------+----------+
+        |   cell1   | d181ba72-3ed3-42d4-8d3a-082db4037430 | compute1 |
+        +-----------+--------------------------------------+----------+
+        ```
+
+3. Make sure to [source the client environment script.](/docs/038-OpenStack/005-Manual-Install/022-Install-Keystone.md#create-admin-environment-script)
+
+    ```bash
+    source admin-openrc.sh
+    ```
+
+4. Verify compute services:
+
+    ```bash
+    openstack compute service list
+    ```
+
+    Output:
+
+    ```bash
+    +--------------------------------------+----------------+------------+----------+---------+-------+----------------------------+
+    | ID                                   | Binary         | Host       | Zone     | Status  | State | Updated At                 |
+    +--------------------------------------+----------------+------------+----------+---------+-------+----------------------------+
+    | 581b85d1-692d-424a-9243-f0643b476a12 | nova-conductor | controller | internal | enabled | up    | 2023-03-07T09:42:58.000000 |
+    | 63f0da09-4fa5-4915-af27-b7cbf66937e9 | nova-scheduler | controller | internal | enabled | up    | 2023-03-07T09:42:58.000000 |
+    | 1cf5dcc4-f3cd-434e-9622-55e8fd24cce5 | nova-compute   | compute1   | nova     | enabled | up    | 2023-03-07T09:42:58.000000 |
+    +--------------------------------------+----------------+------------+----------+---------+-------+----------------------------+
+    ```
+
+5. Perform some additional verifications:
+
+    - Check the service catalog:
+
+        ```bash
+        openstack catalog list
+        ```
+
+        Output:
+
+        ```bash
+        +-----------+-----------+-----------------------------------------+
+        | Name      | Type      | Endpoints                               |
+        +-----------+-----------+-----------------------------------------+
+        | placement | placement | RegionOne                               |
+        |           |           |   public: http://controller:8778        |
+        |           |           | RegionOne                               |
+        |           |           |   internal: http://controller:8778      |
+        |           |           | RegionOne                               |
+        |           |           |   admin: http://controller:8778         |
+        |           |           |                                         |
+        | keystone  | identity  | RegionOne                               |
+        |           |           |   public: http://controller:5000/v3/    |
+        |           |           | RegionOne                               |
+        |           |           |   internal: http://controller:5000/v3/  |
+        |           |           | RegionOne                               |
+        |           |           |   admin: http://controller:5000/v3/     |
+        |           |           |                                         |
+        | glance    | image     | RegionOne                               |
+        |           |           |   public: http://controller:9292        |
+        |           |           | RegionOne                               |
+        |           |           |   admin: http://controller:9292         |
+        |           |           | RegionOne                               |
+        |           |           |   internal: http://controller:9292      |
+        |           |           |                                         |
+        | nova      | compute   | RegionOne                               |
+        |           |           |   internal: http://controller:8774/v2.1 |
+        |           |           | RegionOne                               |
+        |           |           |   public: http://controller:8774/v2.1   |
+        |           |           | RegionOne                               |
+        |           |           |   admin: http://controller:8774/v2.1    |
+        |           |           |                                         |
+        +-----------+-----------+-----------------------------------------+
+        ```
+
+    - Check available images:
+
+        ```bash
+        openstack image list
+        ```
+
+        Output:
+
+        ```bash
+        +--------------------------------------+--------------+--------+
+        | ID                                   | Name         | Status |
+        +--------------------------------------+--------------+--------+
+        | a3900299-cd8e-4d78-887a-dfb047fa4d12 | cirros-0.3.5 | active |
+        | b76c870f-944a-47af-acf1-7996f92b18e8 | cirros-0.4.0 | active |
+        +--------------------------------------+--------------+--------+
+        ```
+
+6. Verify databases and overall Nova health:
+
+    ```bash
+    nova-status upgrade check
+    ```
+
+    Output: 
+
+    ```bash
+    +---------------------------------------------------------------------+
+    | Upgrade Check Results                                               |
+    +---------------------------------------------------------------------+
+    | Check: Cells v2                                                     |
+    | Result: Success                                                     |
+    | Details: None                                                       |
+    +---------------------------------------------------------------------+
+    | Check: Placement API                                                |
+    | Result: Success                                                     |
+    | Details: None                                                       |
+    +---------------------------------------------------------------------+
+    | Check: Cinder API                                                   |
+    | Result: Success                                                     |
+    | Details: None                                                       |
+    +---------------------------------------------------------------------+
+    | Check: Policy File JSON to YAML Migration                           |
+    | Result: Success                                                     |
+    | Details: None                                                       |
+    +---------------------------------------------------------------------+
+    | Check: Older than N-1 computes                                      |
+    | Result: Success                                                     |
+    | Details: None                                                       |
+    +---------------------------------------------------------------------+
+    | Check: hw_machine_type unset                                        |
+    | Result: Success                                                     |
+    | Details: None                                                       |
+    +---------------------------------------------------------------------+
+    ```
+
+    **Note:** You may see a failure for Service User Token Configuration:
+
+    ```bash
+    +---------------------------------------------------------------------+
+    | Check: Service User Token Configuration                             |
+    | Result: Failure                                                     |
+    | Details:  Service user token configuration is required for all Nova |
+    |   services. For more details see the following: https://docs        |
+    |   .openstack.org/latest/nova/admin/configuration/service-           |
+    |   user-token.html                                                   |
+    +---------------------------------------------------------------------+
+    ```
+
+    **This can be safely skipped for now.** Nova services (API, scheduler, compute, etc.) will continue to work.
+    However, you should revisit this configuration before upgrading Nova or enabling features that require service tokens. It’s not a blocker for initial deployment or testing.
+
+
+## Adding a Second Compute Node
 
 To add more nodes:
 
