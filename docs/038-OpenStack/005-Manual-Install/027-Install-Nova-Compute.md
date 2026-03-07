@@ -735,6 +735,15 @@ Start by preparing the controller node:
     sudo systemctl restart nova-api nova-scheduler nova-conductor nova-novncproxy
     ```
 
+    Confirm all Nova services are running:
+    
+    ```bash
+    systemctl status nova-api 
+    systemctl status nova-scheduler
+    systemctl status nova-conductor
+    systemctl status nova-novncproxy
+    ```
+
 After this, Nova is fully ready on the controller and can manage compute nodes.
 
 ## Compute Node Setup
@@ -788,6 +797,12 @@ On the compute node:
 
 5. Enable support for networking service and set management IP.
 
+    :::info 
+
+    **For later setup**: Make sure to use `10.0.0.22` as `my_ip` for `compute2`
+
+    :::
+
     ```bash
     crudini --set /etc/nova/nova.conf DEFAULT my_ip 10.0.0.21
     crudini --set /etc/nova/nova.conf DEFAULT use_neutron True
@@ -798,6 +813,12 @@ On the compute node:
     This ensures Nova on the compute node advertises its own IP to the controller and integrates with Neutron.
 
 6. Configure VNC console access on the compute node.
+
+    :::info 
+
+    **For later setup**: Make sure to use `10.0.0.22` as `vncserver_proxyclient_address` for `compute2`
+
+    :::
 
     ```bash
     crudini --set /etc/nova/nova.conf vnc enabled True
@@ -848,13 +869,13 @@ On the compute node:
     crudini --del /etc/nova/nova.conf DEFAULT log_dir  
     ```
 
-11. Since we're using VMs in VirtualBox, we need to set the virtualization type to QEMU.
+11. **If you are using VirtualBox**, you need to set the virtualization type to `QEMU`.
 
     ```bash
     crudini --set /etc/nova/nova-compute.conf libvirt virt_type qemu
     ```
 
-12. (Optional) If you are using bare metal hosts, set the virtualization type to KVM.
+12. **If you are using bare metal hosts**, set the virtualization type to `KVM`.
 
     If you did step 11, you can skip this step and proceed to step 13.
 
@@ -891,16 +912,6 @@ On the compute node:
     sudo systemctl status nova-compute
     ```
 
-    Confirm all Nova services are running:
-    
-    ```bash
-    systemctl status nova-api 
-    systemctl status nova-scheduler
-    systemctl status nova-conductor
-    systemctl status nova-novncproxy
-    ```
-
-
 ## Register the Compute Node
 
 Once we have installed Nova on compute node, we need to discover compute nodes.
@@ -928,8 +939,12 @@ Once we have installed Nova on compute node, we need to discover compute nodes.
     - List the mapped cells:
 
         ```bash
-        root@controller:/home/jmeden# su -s /bin/sh -c "nova-manage cell_v2 list_cells" nova
+        su -s /bin/sh -c "nova-manage cell_v2 list_cells" nova
+        ```
 
+        Output: 
+
+        ```bash 
         +-------+--------------------------------------+------------------------------------+-------------------------------------------------+----------+
         |  Name |                 UUID                 |           Transport URL            |               Database Connection               | Disabled 
         |
@@ -944,8 +959,12 @@ Once we have installed Nova on compute node, we need to discover compute nodes.
     - List the host in the cells:
 
         ```bash
-        root@controller:/home/jmeden# su -s /bin/sh -c "nova-manage cell_v2 list_hosts" nova
+        su -s /bin/sh -c "nova-manage cell_v2 list_hosts" nova
+        ```
 
+        Output: 
+
+        ```bash 
         +-----------+--------------------------------------+----------+
         | Cell Name |              Cell UUID               | Hostname |
         +-----------+--------------------------------------+----------+
@@ -1077,7 +1096,7 @@ Once we have installed Nova on compute node, we need to discover compute nodes.
     +---------------------------------------------------------------------+
     ```
 
-    **Note:** You may see a failure for Service User Token Configuration:
+    **Note:** You may see a failure for **Service User Token Configuration**:
 
     ```bash
     +---------------------------------------------------------------------+
@@ -1090,23 +1109,280 @@ Once we have installed Nova on compute node, we need to discover compute nodes.
     +---------------------------------------------------------------------+
     ```
 
-    **This can be safely skipped for now.** Nova services (API, scheduler, compute, etc.) will continue to work.
+    **This can be safely skipped for now.** 
+    Nova services (API, scheduler, compute, etc.) will continue to work.
     However, you should revisit this configuration before upgrading Nova or enabling features that require service tokens. It’s not a blocker for initial deployment or testing.
 
 
 ## Adding a Second Compute Node
 
-To add more nodes:
+You can expand your OpenStack setup by adding more compute nodes. This improves resource management and lets you schedule or migrate virtual machines across hosts.
 
-- Clone an existing compute VM and change hostname, IP addresses, and MAC addresses
-- Update `/etc/hosts` on controller and all compute nodes
-- Repeat Nova installation steps on the new compute node
-- Discover new nodes from the controller
+Updated diagram:
 
-After registration, all compute nodes appear in the service list and are ready for scheduling instances.
+<div class='img-center'>
 
-- Nova now manages multiple compute nodes
+![](/img/docs/all-things-openstack-manual-install-V2.png)
+
+</div>
+
+
+Steps: 
+
+1. Start by cloning the first compute VM. 
+
+    In VirtualBox, select the `compute1` → `Snapshot 1` → **Clone**
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-03-07191225.png)
+
+    </div>
+
+    Rename it to `compute2` and make sure all network cards get new MAC addresses to avoid conflicts. 
+
+    <div>
+
+    ![](/img/docs/Screenshot2026-03-07191724.png)
+
+    </div>
+
+    **UPDATE:** In newer VirtualBox versions, you will need to set the following:
+
+    | Setting                          | Recommended Option                                    | Notes                                                 |
+    | -------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+    | MAC Address Policy               | Generate new MAC addresses for all network interfaces | Ensures unique network addresses and avoids conflicts |
+    | Keep disk names / hardware UUIDs | Optional                                              | Preserve VM identity for snapshots if needed          |
+
+    Click **Finish.**
+
+    <div>
+
+    ![](/img/docs/Screenshot2026-03-07191955.png)
+
+    </div>
+
+    Once done, you should now see the second compute node. 
+
+    Start the node.
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-03-07192208.png)
+
+    </div>
+
+2. Login to `compute2` and change hostname and management IP.
+
+    Switch to root. 
+
+    ```bash
+    sudo su
+    ```
+
+    Since this is a clone of `compute`, it should also have the [public key that was previously copied to `compute1`](/docs/038-OpenStack/005-Manual-Install/015-Create-the-VMs.md#add-an-ssh-key). To verify, check the `~/.ssh`:
+
+    ```bash
+    ls -al ~/.ssh/
+
+    total 12
+    drwx------ 2 jmeden jmeden 4096 Feb 17 16:00 .
+    drwxr-x--- 4 jmeden jmeden 4096 Feb 28 10:53 ..
+    -rw------- 1 jmeden jmeden  178 Feb 17 16:01 authorized_keys 
+    ```
+
+    Check the `authorized_keys`:
+
+    ```bash
+    cat ~/.ssh/authorized_keys   
+    ```
+
+    If the public key exists, then you can SSH to `compute2` from your local terminal.
+
+    ```bash
+    ssh -i ~/.ssh/vbox jmeden@10.0.0.22  
+    ```
+
+3. Change hostname and management IP inside the VM.
+
+    Set the hostname first: 
+
+    ```bash
+    sudo su
+    hostnamectl set-hostname compute2
+    ```
+
+    (OUTDATED STEP) Next, update the network configuration: 
+    
+    ```bash 
+    vi /etc/network/interfaces   
+    
+    ## Update IP
+    auto eth0
+    iface eth0 inet static
+            address 10.0.0.21
+            netmask 255.255.255.0
+    ```
+
+    **UPDATE:** For newer Ubuntu (22.04+) versions, the network configuration no longer uses `/etc/network/interfaces` by default. Ubuntu now uses Netplan for network management. 
+
+    Check the `/etc/netplan/` directory:
+
+    ```bash
+    root@compute2:/home/jmeden# ls -la /etc/netplan
+    total 20
+    drwxr-xr-x   2 root root  4096 Feb 17 15:59 .
+    drwxr-xr-x 122 root root 12288 Mar  3 06:01 ..
+    -rw-------   1 root root   689 Mar  7 08:08 50-cloud-init.yaml
+    root@compute1:/home/jmeden#
+    ```
+
+    You may see `50-cloud-init.yaml`, which is **auto-generated by `cloud-init`**. Editing it directly will not survive reboot unless `cloud-init`’s network management is disabled.
+
+    To disable, create the file: 
+
+    ```bash 
+    sudo vi /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg
+    ```
+
+    Add this line:
+
+    ```bash
+    network: {config: disabled} 
+    ```
+
+    :::info 
+
+    This tells `cloud-init` to stop overwriting your Netplan config on reboot.
+
+    ::: 
+
+    Now you can safely edit `/etc/netplan/50-cloud-init.yaml`:
+
+    ```bash
+    sudo vi /etc/netplan/50-cloud-init.yaml 
+    ```
+
+    Update the IP address for the management interface:
+
+    ```yaml
+    network:
+        ethernets:
+            enp0s3:
+                addresses:
+                - 10.0.0.22/24
+                nameservers:
+                    addresses: [8.8.8.8,8.8.8.4]
+                    search: []
+            enp0s8:
+                dhcp4: no
+                addresses:
+                - 10.10.10.22/24
+                nameservers:
+                    addresses: []
+                    search: []
+            enp0s9:
+                dhcp4: true
+        version: 2
+    ```
+
+
+
+4. Update `/etc/hosts` on all nodes, then reboot the new node.
+
+    On all nodes:
+
+    ```bash
+    sudo vi /etc/hosts 
+
+    127.0.0.1 localhost
+    10.0.0.11 controller
+    10.0.0.21 compute1
+    10.0.0.22 compute2
+    10.0.0.31 block1
+    ```
+
+    On the new node:
+
+    ```bash
+    sudo reboot  
+    ```
+
+    After the reboot, make sure the `controller`, `compute1`, and `block1` can ping `compute2`:
+
+    ```bash
+    ping compute2 
+    ```
+
+5. Next, install Nova compute on the new node. 
+
+    You will need to update packages, install Nova, and configure services.
+
+    Perform all the steps in the [Compute Node Setup](#compute-node-setup) section.
+
+
+6. Finally, go to the controller node to discover the new compute node:
+
+    ```bash
+    sudo su
+    su -s /bin/sh -c "nova-manage cell_v2 discover_hosts --verbose" nova
+    ```
+
+    Output:
+
+    ```bash
+    Found 2 cell mappings.
+    Skipping cell0 since it does not contain hosts.
+    Getting computes from cell 'cell1': d181ba72-3ed3-42d4-8d3a-082db4037430      
+    Checking host mapping for compute host 'compute2': 94e4a182-47fa-4ca0-bd10-3acda778b10b
+    Creating host mapping for compute host 'compute2': 94e4a182-47fa-4ca0-bd10-3acda778b10b
+    Found 1 unmapped computes in cell: d181ba72-3ed3-42d4-8d3a-082db4037430 
+    ```
+
+    Check the list of services: 
+
+    ```bash
+    nova service-list               
+    openstack compute service list
+    ```
+
+    Output:
+
+    ```bash
+    +--------------------------------------+----------------+------------+----------+---------+-------+----------------------------+-----------------+-------------+
+    | Id                                   | Binary         | Host       | Zone     | Status  | State | Updated_at                 | Disabled Reason | Forced down |
+    +--------------------------------------+----------------+------------+----------+---------+-------+----------------------------+-----------------+-------------+
+    | 581b85d1-692d-424a-9243-f0643b476a12 | nova-conductor | controller | internal | enabled | up    | 2023-03-07T12:28:50.000000 | -               | False       |
+    | 63f0da09-4fa5-4915-af27-b7cbf66937e9 | nova-scheduler | controller | internal | enabled | up    | 2023-03-07T12:28:50.000000 | -               | False       |
+    | 1cf5dcc4-f3cd-434e-9622-55e8fd24cce5 | nova-compute   | compute1   | nova     | enabled | up    | 2023-03-07T12:28:52.000000 | -               | False       |
+    | 4c360d20-6029-489b-8ab6-b59e1dffe162 | nova-compute   | compute2   | nova     | enabled | up    | 2023-03-07T12:28:50.000000 | -               | False       |
+    +--------------------------------------+----------------+------------+----------+---------+-------+----------------------------+-----------------+-------------+
+    ```
+
+    Checking the service list using OpenStack CLI:
+
+    ```bash
+    openstack compute service list  
+    ```
+
+    Output:
+
+    ```bash
+    +--------------------------------------+----------------+------------+----------+---------+-------+----------------------------+
+    | ID                                   | Binary         | Host       | Zone     | Status  | State | Updated At  
+                |
+    +--------------------------------------+----------------+------------+----------+---------+-------+----------------------------+
+    | 581b85d1-692d-424a-9243-f0643b476a12 | nova-conductor | controller | internal | enabled | up    | 2026-03-07T12:31:40.000000 |
+    | 63f0da09-4fa5-4915-af27-b7cbf66937e9 | nova-scheduler | controller | internal | enabled | up    | 2026-03-07T12:31:40.000000 |
+    | 1cf5dcc4-f3cd-434e-9622-55e8fd24cce5 | nova-compute   | compute1   | nova     | enabled | up    | 2026-03-07T12:31:42.000000 |
+    | 4c360d20-6029-489b-8ab6-b59e1dffe162 | nova-compute   | compute2   | nova     | enabled | up    | 2026-03-07T12:31:41.000000 |
+    +--------------------------------------+----------------+------------+----------+---------+-------+----------------------------+
+    ```  
+
+After registration, both compute nodes appear in the service list and are ready to run instances.
+
+- Nova manages multiple compute nodes automatically
 - Placement service schedules instances efficiently
-- Additional nodes can be added anytime following the same steps
+- You can add more nodes in the future by repeating the same process
 
-This setup ensures Nova is fully operational on the controller and multiple compute nodes. You can now launch, migrate, and manage virtual machines across all compute hosts.
+This ensures Nova is fully operational across all compute nodes, allowing you to launch, migrate, and manage virtual machines.
