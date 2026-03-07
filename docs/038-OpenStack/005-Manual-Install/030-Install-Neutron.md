@@ -386,3 +386,16 @@ To simplify configuration, the commands below use [Crudini](/docs/038-OpenStack/
     crudini --set /etc/neutron/neutron.conf nova password openstack
     ```
 
+6. Verify the Configuration.
+
+    After running the configuration commands, verify that the settings were written correctly.
+
+    ```bash
+    grep -vE '^\s*#|^\s*$' /etc/neutron/neutron.conf 
+    ```
+
+    Output:
+
+    ```bash
+      
+    ```
