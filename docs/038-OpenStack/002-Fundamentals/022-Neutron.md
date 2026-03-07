@@ -130,6 +130,8 @@ In larger deployments, Neutron services are distributed across multiple nodes.
 - Network nodes run L3, DHCP, and metadata agents
 - Compute nodes run the mechanism driver agent
 
+For more information, please see [Installing Neutron.](/docs/038-OpenStack/005-Manual-Install/030-Install-Neutron.md)
+
 ### Control Plane 
 
 On the controller:
@@ -149,9 +151,6 @@ On compute nodes:
 2. Install ML2 plugin agent
 3. Configure `neutron.conf` with authentication and control plane settings
 4. Configure mechanism driver agent (Linux Bridge or OVS)
-
-Neutron can be deployed using automated tools like Ansible or OpenStack Ansible. 
-These tools ensures the configurations are consistent between controller and compute nodes, only changing mechanism driver details.
 
 
 ## Key Neutron Parameters
