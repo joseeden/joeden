@@ -45,14 +45,18 @@ OpenStack networking involves two layers:
 ### Infrastructure Networks
 
 These networks connect the physical nodes in your OpenStack deployment. These networks are configured on the servers and are not created by Neutron.
-
+<!-- 
 - Management network 
 - API network 
 - Data network 
-- External/Provider network
+- External/Provider network -->
 
+<div class='img-center'>
 
----> add minimalist diagram showing the networks, and the controller node, compute node, network node, and block storage Node
+![](/img/docs/all-things-openstack-neutron-networks-infra.png)
+
+</div>
+
 
 #### Management Network 
 
@@ -127,10 +131,15 @@ This network is often called:
 
 Neutron virtual networks are **logical** constructs created by NNeutron to connect the tenants to their VMs. They exist on **top of the infrastructure networks.**
 
-- Tenant/Internal networks  
-- External network (Neutron object)  
+<!-- - Tenant/Internal networks  
+- External network (Neutron object)   -->
 
----> add minimalist diagram showing the networks, and the controller node, compute node, network node, and block storage Node
+<div class='img-center'>
+
+![](/img/docs/all-things-openstack-neutron-networks-virtual.png)
+
+</div>
+
 
 
 #### Tenant/Internal Network
