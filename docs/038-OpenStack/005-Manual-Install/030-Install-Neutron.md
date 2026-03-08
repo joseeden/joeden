@@ -545,7 +545,7 @@ Using Crudini:
 
     Starting with Zed, the Linux Bridge mechanism driver was marked as experimental and eventually deprecated in favor of OVS (Open vSwitch) or OVN. The `neutron-server` will refuse to start unless you explicitly acknowledge that you are using an experimental feature.
 
-    ```
+    :::
     
     You need to explicitly enable it in the `[experimental]` section to allow `neutron-server` to start.
 
