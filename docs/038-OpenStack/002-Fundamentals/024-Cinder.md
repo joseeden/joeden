@@ -20,19 +20,16 @@ OpenStack provides a block storage service that allows cloud users to create per
 
 </div>
 
-
 Cinder allows instances to attach, detach, and manage block storage volumes independently of the compute lifecycle. This makes it useful for databases, persistent application data, and long-term storage.
 
 ## Cinder Architecture
 
 Cinder follows a modular architecture similar to other OpenStack services. It separates control functions from the storage backend that actually holds the data.
 
-- Cinder API server handles block storage API requests
-- Cinder scheduler decides where volumes should be created
-- Cinder volume manages the storage backends
-- Cinder backup provides optional backup and restore functionality
-
-Each component works together to provide reliable persistent storage for instances.
+- **Cinder API** server handles block storage API requests
+- **Cinder scheduler** decides where volumes should be created
+- **Cinder volume** manages the storage backends
+- **Cinder backup** provides optional backup and restore functionality
 
 The architecture separates request handling, scheduling, and storage operations. This design allows the block storage system to scale while keeping storage management flexible.
 
