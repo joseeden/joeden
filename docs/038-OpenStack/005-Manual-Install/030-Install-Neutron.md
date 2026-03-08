@@ -896,6 +896,8 @@ Before moving to the Compute nodes, ensure the Neutron API is listening and resp
 
 Compute nodes require fewer components. Their main role is to connect virtual machines to the network.
 
+Make sure to perform the steps on **all compute nodes.**
+
 ### Install and Configure Neutron 
 
 1. Install the Required Packages.
