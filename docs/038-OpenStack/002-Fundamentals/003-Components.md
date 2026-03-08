@@ -109,6 +109,8 @@ Cinder provides block storage for instances that need to keep data after termina
 - Keeps data after VM termination
 
 
+For more information, please see [Cinder.](/docs/038-OpenStack/002-Fundamentals/024-Cinder.md)
+
 <div class='img-center'>
 
 ![](/img/docs/OpenStack_BlockStorage_backup.png)
