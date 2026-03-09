@@ -203,7 +203,9 @@ These parameters allow the storage node to communicate with the control plane an
 
 ### Control Node 
 
-The control node hosts the main Cinder services.
+The control node manages the Cinder block storage services and coordinates the storage operations across the cloud.
+
+Setup steps: 
 
 1. Create the Cinder database
 2. Create the Cinder service user
@@ -215,11 +217,29 @@ OpenStack Cinder provides **two API versions**, each with its own service endpoi
 - Cinder v2
 - Cinder v3
 
-After installing the packages, the control node must also configure Nova so instances can attach volumes created by Cinder.
+After installing the packages, the control node must also configure Nova so instances can attach volumes created by Cinder. The configuration can be found in `cinder.conf`:
+
+```ini
+[DEFAULT]
+transport_url = rabbit://openstack:PASSWORD-HERE@controller 
+auth_strategy = keystone 
+
+[database]
+connection = mysql+pymysql://cinder:DBPASSWD@controller/cinder 
+
+[keystone_authtoken]
+auth_uri = http://controller:5000
+auth_url = http://controller:5000
+memcached_servers = controller:11211
+auth_type = password 
+project_domain_id = Default
+user_domain_id = Default
+project_name = service 
+username = cinder 
+password = CINDER_PASSWD
+```
 
 ## Storage Backend Examples 
-
-> Multiple backends can share the same backend name. When this happens, the Cinder scheduler automatically selects which backend will host the volume based on available capacity and configuration. This applies to any Cinder backend.
 
 ### LVM Backend 
 
@@ -369,10 +389,15 @@ Cinder includes an optional backup component that allows allows administrators t
 - Backup data can be stored in object storage
 - Multiple backup drivers are supported
 
-Common backup backends include:
+Supported backup drivers:
 
-- Swift object storage
-- Ceph storage
+- Swift
+- Ceph 
+- GlusterFS 
+- NFS 
+- POSIX Filesystem 
+- Google Cloud Storage 
+- IBM Tivoli Storage Manager
 
 To enable backups, install the backup service and configure it in `cinder.conf`.
 
@@ -380,13 +405,8 @@ To enable backups, install the backup service and configure it in `cinder.conf`.
 [DEFAULT]
 backup_driver = cinder.backup.drivers.swift.SwiftBackupDriver
 backup_swift_url = http://controller:8080/v1/AUTH_
+backup_swift_auth = per_user
+backup_swift_auth_url = http://localhost:5000/v3
+backup_swift_container = volumebackups
+backup_compression_algorithm = zlib
 ```
-
-Notes:
-
-- `backup_driver` selects the backup backend
-- `backup_swift_url` defines the Swift storage endpoint
-
-
-
-
