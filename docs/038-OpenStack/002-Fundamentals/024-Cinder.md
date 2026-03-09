@@ -160,6 +160,8 @@ Protocols used for storage transport:
 
 ## Cinder Configurations 
 
+> **UPDATE**: Modern OpenStack releases (including newer versions after Queens) still support Cinder architecture, but some configuration methods and drivers may have changed. Make sure to  check the official OpenStack documentation for the release you are using before applying configuration steps.
+
 ### Storage Node Configuration
 
 The first step in configuring storage nodes is installing the Cinder volume service.
@@ -324,8 +326,5 @@ Notes:
 - `backup_swift_url` defines the Swift storage endpoint
 
 
-## Version Notes
 
-UPDATE: Modern OpenStack releases (including newer versions after Queens) still support Cinder architecture, but some configuration methods and drivers may have changed. Always check the official OpenStack documentation for the release you are using before applying configuration steps.
 
-Persistent block storage is an important part of cloud infrastructure. Cinder provides flexible storage backends and scalable architecture so instances can use reliable long-term storage across different OpenStack deployments.
