@@ -138,24 +138,29 @@ Each backend has different hardware requirements, configuration complexity, and 
 
 ## Storage Network Connectivity
 
-Storage traffic may use a dedicated network.
+The storage traffic can be isolated on a dedicated network to improve performance and reliability.
 
-- Management network handles control communication
 - Storage network carries volume data traffic
+- Management network handles control communication
 - High traffic environments benefit from separate networks
 
-Storage nodes must always connect to the management network because the Cinder service communicates with the control plane.
+Storage nodes must always connect to the management network because the Cinder service communicates with the control plane. If storage data traffic is large, it is recommended to use a **separate storage network**. This prevents storage traffic from affecting normal cloud operations.
 
-If storage data traffic is large, it is recommended to use a **separate storage network**. This prevents storage traffic from affecting normal cloud operations.
+Protocols used for storage transport:
 
-Protocols used for storage transport include:
+- Fibre Channel - High performance, but requires specialized hardware 
+- iSCSI - Uses standard Ethernet, and is more widely used
 
-- Fibre Channel
-- iSCSI
+<div class='img-center'>
 
-Fibre Channel provides excellent performance but requires specialized hardware. iSCSI uses standard Ethernet networking and is more common in many OpenStack deployments.
+![](/img/docs/all-things-openstack-cinder-storage-networks.png)
 
-## Cinder Storage Node Configuration
+</div>
+
+
+## Cinder Configurations 
+
+### Storage Node Configuration
 
 The first step in configuring storage nodes is installing the Cinder volume service.
 
@@ -195,7 +200,25 @@ connection = mysql+pymysql://cinder:password@controller/cinder
 
 These parameters allow the storage node to communicate with the control plane and manage storage operations correctly.
 
-## LVM Backend Example
+### Control Node Configuration
+
+The control node hosts the main Cinder services.
+
+1. Create the Cinder database
+2. Create the Cinder service user
+3. Register Cinder services in the service catalog
+4. Install Cinder API and scheduler
+
+OpenStack Cinder provides **two API versions**, each with its own service endpoint that is typically registered: 
+
+- Cinder v2
+- Cinder v3
+
+After installing the packages, the control node must also configure Nova so instances can attach volumes created by Cinder.
+
+## Storage Backend Examples 
+
+### LVM Backend 
 
 LVM is commonly used in small or test deployments because it is easy to configure.
 
@@ -247,7 +270,7 @@ Important variables in this configuration:
 
 This configuration allows OpenStack to create volumes using the LVM backend.
 
-## External Storage Backend Example
+### External Storage Backend 
 
 Enterprise storage systems often provide dedicated Cinder drivers.
 
@@ -272,29 +295,11 @@ Important variables:
 
 Multiple backends can share the same backend name. When this happens, the **Cinder scheduler decides which backend stores the volume**.
 
-## Control Node Configuration
 
-The control node hosts the main Cinder services.
-
-- Create the Cinder database
-- Create the Cinder service user
-- Register Cinder services in the service catalog
-- Install Cinder API and scheduler
-
-Two versions of the Cinder API are usually registered:
-
-- Cinder v2
-- Cinder v3
-
-Each version has its own service endpoint.
-
-After installing the packages, the control node must also configure Nova so instances can attach volumes created by Cinder.
-
-These steps allow compute nodes and users to access the block storage service.
 
 ## Cinder Backup Service
 
-Cinder includes an optional backup component that allows volumes to be backed up.
+Cinder includes an optional backup component that allows allows administrators to protect persistent storage volumes and restore them when necessary.
 
 - Cinder backup performs volume backups
 - Backup data can be stored in object storage
@@ -307,20 +312,17 @@ Common backup backends include:
 
 To enable backups, install the backup service and configure it in `cinder.conf`.
 
-Example configuration:
-
 ```ini
 [DEFAULT]
 backup_driver = cinder.backup.drivers.swift.SwiftBackupDriver
 backup_swift_url = http://controller:8080/v1/AUTH_
 ```
 
-Important variables:
+Notes:
 
 - `backup_driver` selects the backup backend
 - `backup_swift_url` defines the Swift storage endpoint
 
-The backup service allows administrators to protect persistent storage volumes and restore them when necessary.
 
 ## Version Notes
 
