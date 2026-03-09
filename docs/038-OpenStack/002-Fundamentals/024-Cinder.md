@@ -131,7 +131,7 @@ Each backend has different hardware requirements, configuration complexity, and 
 
 <div class='img-center'>
 
-![](/img/docs/all-things-openstack-inder-software-storage.pngMigra)
+![](/img/docs/all-things-openstack-cinder-software-storage.png)
 
 </div>
 
