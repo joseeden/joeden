@@ -158,13 +158,13 @@ Protocols used for storage transport:
 </div>
 
 
-## Cinder Configurations 
+## Cinder Deployment 
 
 > **UPDATE**: Modern OpenStack releases (including newer versions after Queens) still support Cinder architecture, but some configuration methods and drivers may have changed. Make sure to  check the official OpenStack documentation for the release you are using before applying configuration steps.
 
-### Storage Node Configuration
+### Storage Node 
 
-The first step in configuring storage nodes is installing the Cinder volume service.
+The first step in setting up the storage nodes is installing the Cinder volume service.
 
 The configuration file used by Cinder is:
 
@@ -172,9 +172,7 @@ The configuration file used by Cinder is:
 /etc/cinder/cinder.conf
 ```
 
-Several parameters must be defined so the service can communicate with other OpenStack components.
-
-Example configuration parameters:
+Several parameters must be defined so the service can communicate with other OpenStack components, including the database and authentication settings.
 
 ```ini
 [DEFAULT]
@@ -182,6 +180,16 @@ transport_url = rabbit://openstack:password@controller
 auth_strategy = keystone
 my_ip = STORAGE_NODE_IP
 glance_api_servers = http://controller:9292
+
+[database]
+connection = mysql+pymysql://cinder:password@controller/cinder
+
+[keystone_authtoken]
+auth_uri = http://controller:5000 
+memcached_servers = controller:11211
+
+[oslo_concurrency]
+lock_path = /var/lib/cinder/tmp
 ```
 
 Key variables used in this configuration:
@@ -191,18 +199,9 @@ Key variables used in this configuration:
 - `my_ip` specifies the management IP of the storage node
 - `glance_api_servers` allows access to image services
 
-The configuration also includes database and authentication settings.
-
-Example database configuration:
-
-```ini
-[database]
-connection = mysql+pymysql://cinder:password@controller/cinder
-```
-
 These parameters allow the storage node to communicate with the control plane and manage storage operations correctly.
 
-### Control Node Configuration
+### Control Node 
 
 The control node hosts the main Cinder services.
 
@@ -220,84 +219,147 @@ After installing the packages, the control node must also configure Nova so inst
 
 ## Storage Backend Examples 
 
+> Multiple backends can share the same backend name. When this happens, the Cinder scheduler automatically selects which backend will host the volume based on available capacity and configuration. This applies to any Cinder backend.
+
 ### LVM Backend 
 
-LVM is commonly used in small or test deployments because it is easy to configure.
+LVM is commonly used in small environments, labs, or test deployments because it is simple to configure and requires only local disks.
 
-- Install LVM and thin provisioning tools
-- Prepare a disk for volume storage
-- Create a volume group
-- Configure the backend in Cinder
+1. Install LVM and thin provisioning tools.
 
-First, prepare a disk and create a volume group.
+    A disk must be available exclusively for the LVM + iSCSI storage service.
 
-Example commands:
+    Possible setups include:
 
-```bash
-sudo pvcreate /dev/sdb
-sudo vgcreate cinder-volumes /dev/sdb
-```
+    | Deployment Environment                   | Storage Preparation                                                       |
+    | ---------------------------------------- | ------------------------------------------------------------------------- |
+    | **Bare metal server**                    | Use a dedicated physical disk or partition.                               |
+    | **Linux storage node with existing LVM** | Create an empty logical volume to simulate a disk device.                 |
+    | **Virtual machine deployment**           | Create a sparse file and attach it using a loop device to emulate a disk. |
 
-Expected result:
 
-```
-Physical volume "/dev/sdb" successfully created
-Volume group "cinder-volumes" successfully created
-```
+2. Prepare a disk and create a volume group.
 
-The `pvcreate` command initializes the disk for LVM. The `vgcreate` command creates the volume group named **cinder-volumes**, which will store Cinder volumes.
+    Example commands:
 
-Next, configure the backend in `cinder.conf`.
+    ```bash
+    sudo pvcreate /dev/sdb
+    sudo vgcreate cinder-volumes /dev/sdb
+    ```
 
-Example configuration:
+    Expected result:
 
-```ini
-[DEFAULT]
-enabled_backends = lvm
+    ```
+    Physical volume "/dev/sdb" successfully created
+    Volume group "cinder-volumes" successfully created
+    ```
 
-[lvm]
-volume_driver = cinder.volume.drivers.lvm.LVMVolumeDriver
-volume_group = cinder-volumes
-volume_backend_name = LVM_BACKEND
-target_protocol = iscsi
-target_helper = tgtadm
-```
+    Notes:
 
-Important variables in this configuration:
+    - `pvcreate` initializes the disk as an LVM physical volume.
+    - `vgcreate` creates the volume group `cinder-volumes`.
+    - This volume group will store Cinder volumes.
 
-- `enabled_backends` defines which storage backends are active
-- `volume_driver` specifies the driver used by Cinder
-- `volume_group` identifies the LVM storage group
-- `volume_backend_name` labels the backend for volume types
 
-This configuration allows OpenStack to create volumes using the LVM backend.
+3. Configure the backend in `cinder.conf`.
+
+    Example configuration:
+
+    ```ini
+    [DEFAULT]
+    enabled_backends = lvm1            
+    ## enabled_backends = lvm1, lvm2    # multiple backends can be enabled
+
+    [lvm1]
+    volume_driver = cinder.volume.drivers.lvm.LVMVolumeDriver
+    volume_group = cinder-volumes
+    volume_backend_name = LVM_BACKEND_A
+    target_protocol = iscsi
+    target_helper = tgtadm
+    iscsi_protocol = iscsi 
+    iscsi_helper = tgtadm
+
+    [lvm2] 
+    volume_group = cinder-volumes-b
+    volume_backend_name = LVM_BACKEND_B
+    ## additional configuration as needed
+    ```
+
+    Each backend definition specifies the driver, volume group, and transport protocol used by Cinder. 
 
 ### External Storage Backend 
 
-Enterprise storage systems often provide dedicated Cinder drivers.
+Enterprise storage systems often provide dedicated Cinder drivers that allow OpenStack to communicate directly with the storage array.
 
 For example, a NetApp storage backend may use the following configuration:
 
 ```ini
-[netapp_backend]
+[DEFAULT]
+enabled_backends = netapp_backend_a
+
+[netapp_backend_a]
 volume_driver = cinder.volume.drivers.netapp.common.NetAppDriver
-netapp_server_hostname = 192.168.10.50
-netapp_login = admin
-netapp_password = password
+netapp_storage_family = eseries
 netapp_storage_protocol = iscsi
+netapp_storage_pols = pool1,pool2
+netapp_server_hostname = my_storage_device
+netapp_server_port = 80
+netapp_login = netapp_user
+netapp_password = password
+netapp_controller_ips = 10.0.2.21. 10.0.2.22
+netapp_sa_password = mypassword
+use_multipath_for_image_xfer = True
 volume_backend_name = NETAPP_BACKEND
 ```
 
-Important variables:
+Important variables include:
 
-- `netapp_server_hostname` identifies the storage array
-- `netapp_login` and `netapp_password` provide authentication
-- `netapp_storage_protocol` selects the storage transport
-- `volume_backend_name` exposes the backend to OpenStack
-
-Multiple backends can share the same backend name. When this happens, the **Cinder scheduler decides which backend stores the volume**.
+- `netapp_server_hostname` – identifies the storage array
+- `netapp_login` and `netapp_password` – authentication credentials
+- `netapp_storage_protocol` – defines the storage transport (e.g., iSCSI)
+- `volume_backend_name` – exposes the backend to OpenStack
 
 
+### Using Multiple Backends 
+
+In Cinder, each backend configuration defines a `volume_backend_name`. Multiple backend sections can use the same backend name.
+
+When this happens:
+
+- The Cinder scheduler groups those backends together
+- They behave like a single storage pool
+
+The scheduler then chooses which backend actually stores the volume based on filters such as:
+
+- available capacity
+- capabilities
+- scheduler weights
+
+Example:
+
+```ini
+[DEFAULT]
+enabled_backends = lvm1,lvm2
+
+[lvm1]
+volume_driver = cinder.volume.drivers.lvm.LVMVolumeDriver
+volume_backend_name = LVM_BACKEND
+
+[lvm2]
+volume_driver = cinder.volume.drivers.lvm.LVMVolumeDriver
+volume_backend_name = LVM_BACKEND
+```
+
+Both backends share `LVM_BACKEND`, so the scheduler will select either `lvm1` or `lvm2` when a volume is created.
+
+This mechanism works for all backend types, including:
+
+- LVM
+- Ceph
+- NetApp
+- Dell EMC
+- Pure Storage
+- NFS
 
 ## Cinder Backup Service
 
