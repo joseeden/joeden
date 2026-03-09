@@ -25,6 +25,12 @@ On the controller node, install:
 - Memcached
 - etcd
 
+:::info 
+
+**NOTES:** The hostnames of all the nodes in this lab are configured in the `/etc/hosts` file in each node (See [Networking and Security](/docs/038-OpenStack/005-Manual-Install/017-Networking-and-Security.md#hosts-file-configuration-basic-name-resolution)).
+
+:::
+
 ## Configure Time Sync Between Nodes
 
 All nodes must have the same time. This prevents errors during OpenStack installation and keeps services stable.

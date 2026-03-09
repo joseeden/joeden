@@ -28,9 +28,13 @@ As a recap, below is the lab diagram.
 
 :::info 
 
-**NOTE:** The number of compute nodes will be increased to two in a later step.
+**NOTE:** 
 
-::: 
+The hostnames of all the nodes in this lab are configured in the `/etc/hosts` file in each node (See [Networking and Security](/docs/038-OpenStack/005-Manual-Install/017-Networking-and-Security.md#hosts-file-configuration-basic-name-resolution)).
+
+The number of compute nodes will be increased to two in a later step.
+
+:::
 
 <div class='img-center'>
 

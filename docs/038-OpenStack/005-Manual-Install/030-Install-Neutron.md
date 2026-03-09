@@ -23,6 +23,12 @@ Steps:
 
 After these steps, the controller will manage networking services for the OpenStack environment.
 
+:::info 
+
+**NOTES:** The hostnames of all the nodes in this lab are configured in the `/etc/hosts` file in each node (See [Networking and Security](/docs/038-OpenStack/005-Manual-Install/017-Networking-and-Security.md#hosts-file-configuration-basic-name-resolution)).
+
+:::
+
 As a recap, below is the lab diagram.
 
 <div class='img-center'>

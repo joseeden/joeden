@@ -22,6 +22,12 @@ Keystone is the identity service of OpenStack. It handles authentication and aut
 
 Each step builds the identity service, which is the core access control of OpenStack.
 
+:::info 
+
+**NOTES:** The hostnames of all the nodes in this lab are configured in the `/etc/hosts` file in each node (See [Networking and Security](/docs/038-OpenStack/005-Manual-Install/017-Networking-and-Security.md#hosts-file-configuration-basic-name-resolution)).
+
+:::
+
 Lab diagram:
 
 <div class='img-center'>
