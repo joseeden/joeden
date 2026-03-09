@@ -33,6 +33,12 @@ Cinder follows a modular architecture similar to other OpenStack services. It se
 
 The architecture separates request handling, scheduling, and storage operations. This design allows the block storage system to scale while keeping storage management flexible.
 
+<div class='img-center'>
+
+![](/img/docs/all-things-openstack-cinder-architecture.png)
+
+</div>
+
 ## Control Plane Components
 
 Control plane services handle API requests, scheduling, and communication between services.
