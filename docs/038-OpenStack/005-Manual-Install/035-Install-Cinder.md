@@ -53,14 +53,73 @@ For example:
 
 A 30GB disk is enough for a small lab because the minimum OpenStack volume size is usually **1GB**.
 
-1. Log in to block storage node and switch to root.
+1. In the `block` VM, we currently don't have a secpnd disk as seen in the VM settings:
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-03-09231611.png)
+
+    </div>
+
+    To add a second disk, turn off the VM first.
+
+2. Once the VM is off, go back to the **Settings** → **Storage**.
+
+    Click the **Add attachment** button → **Add Hard Disk**
+
+    <div class='img-center'>
+    
+    ![](/img/docs/Screenshot2026-03-09232007.png)
+    
+    </div>
+
+    In the old VirtualBox, you need to select the following:
+
+    ```bash
+    ➔ Create new disk 
+    ➔ Hard disk file type: VDI 
+    ➔ Storage on physical hard disk: Dynamically allocated 
+    ➔ File location and size: 30 GB
+    ➔ Then click Create
+    ```
+
+    In the new VirtualBox, select the following:
+
+    ```bash
+    ➔ Create
+    ➔ Hard Disk Location and Size: 30 GB
+    ➔ Hard Disk File Type and Variant: VDI 
+    ➔ Then click Finish
+    ➔ Then click Choose
+    ```
+
+    <div class='img-center'>
+    
+    ![](/img/docs/Screenshot2026-03-09233727.png)
+    
+    </div>
+
+    You should now have two disk attached to the VM.
+
+    Click **OK** and start the VM again.
+
+    <div class='img-center'>
+    
+    ![](/img/docs/Screenshot2026-03-09233916.png)
+    
+    </div>
+    
+    
+
+
+3. Log in to block storage node and switch to root.
 
     ```bash
     ssh -i ~/.ssh/vbox jmeden@10.0.0.31
     sudo su  
     ```
     
-2. Add a second disk to the block node.
+4. Add a second disk to the block node.
 
     If the block node VM only has one disk, power off the VM and attach a second disk.
 
