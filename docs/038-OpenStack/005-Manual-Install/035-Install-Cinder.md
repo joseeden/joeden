@@ -22,6 +22,21 @@ On the storage node:
 3. Install the Cinder services
 4. Enable the storage backend
 
+On the controller node:
+
+1. Create the Cinder database
+2. Create the Cinder service user
+3. Register Cinder services and endpoints
+4. Install and configure Cinder components
+
+As a recap, below is the lab diagram.
+
+<div class='img-center'>
+
+![](/img/docs/all-things-openstack-manual-install-V2.png)
+
+</div>
+
 ## Cinder Storage Node 
 
 ### Prepare Storage for Cinder
