@@ -700,7 +700,7 @@ Output:
 If the status shows **available**, the volume was successfully created.
 
 
-## Verify Volume Creation on the Block Node
+## Verify Volume Creation 
 
 Cinder volumes are stored as **LVM logical volumes** on the block storage node. 
 
