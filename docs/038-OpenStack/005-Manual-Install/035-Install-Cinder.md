@@ -479,7 +479,7 @@ Notes:
 
 This confirms that the controller and block node are communicating correctly.
 
-### Test Volume Creation
+## Test Volume Creation
 
 Create a test volume to confirm that Cinder can allocate storage.
 
@@ -507,7 +507,7 @@ Example output:
 
 If the status shows **available**, the volume was successfully created.
 
-### Verify Volume Creation on the Block Node
+## Verify Volume Creation on the Block Node
 
 Cinder volumes are stored as **LVM logical volumes** on the block storage node. Run the command below on the block node to display logical volumes.
 
