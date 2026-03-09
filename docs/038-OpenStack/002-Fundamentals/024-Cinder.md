@@ -52,6 +52,13 @@ The **Cinder API** exposes REST endpoints that users or services call to create 
 
 The **Cinder scheduler** decides which backend should host a new volume. This decision depends on backend capacity and configuration. These control components coordinate storage operations while keeping the architecture scalable.
 
+<div class='img-center'>
+
+![](/img/docs/all-things-openstack-cinder-control-plane.png)
+
+</div>
+
+
 ## Storage Nodes and Backends
 
 Storage nodes provide the actual storage where volumes are created.
@@ -60,9 +67,23 @@ Storage nodes provide the actual storage where volumes are created.
 - Multiple backends can exist in one deployment
 - Cinder volume service manages the backend pools
 
-A single **cinder-volume** service can manage multiple storage backends. In small deployments, this service may run on the control node. In larger environments, storage nodes usually run dedicated instances of the service.
+A single **cinder-volume** service can manage multiple storage backends. In small deployments, this service may run on the control node. 
 
-The deployment design depends on storage performance requirements and the number of storage operations such as volume creation, deletion, and snapshots. The backend choice strongly affects how storage nodes are designed.
+<div class='img-center'>
+
+![](/img/docs/all-things-openstack-cinder-storage-node-lab.png)
+
+</div>
+
+
+In larger environments, storage nodes usually run on dedicated storage nodes. The deployment design depends on storage performance requirements and the number of storage operations such as volume creation, deletion, and snapshots. 
+
+<div class='img-center'>
+
+![](/img/docs/all-things-openstack-cinder-storage-node-prod.png)
+
+</div>
+
 
 ## External Storage Backends
 
@@ -72,25 +93,48 @@ External disk arrays can act as block storage backends.
 - Cinder volume acts as a control interface
 - Hypervisors connect directly to storage devices
 
+In this setup, **Cinder does not transfer the actual volume data**. Instead, it sends commands to the storage array to create or delete volumes. The compute node hypervisor then connects directly to the storage device using protocols such as **iSCSI** or **Fibre Channel**. This design reduces load on the control plane and allows high-performance storage access.
+
 Examples of external storage systems include arrays from vendors such as Dell, NetApp, and others that support iSCSI or Fibre Channel.
 
-In this setup, **Cinder does not transfer the actual volume data**. Instead, it sends commands to the storage array to create or delete volumes. The compute node hypervisor then connects directly to the storage device using protocols such as **iSCSI** or **Fibre Channel**.
+<div class='img-center'>
 
-This design reduces load on the control plane and allows high-performance storage access.
+![](/img/docs/all-things-openstack-cinder-external-storage.png)
+
+</div>
+
+
 
 ## Software Storage Backends
 
-Software-defined storage can also act as a backend.
+Some storage backends are **software-defined,** meaning the storage is managed by software running on the storage nodes.
 
-- LVM can create logical volumes
-- Ceph provides distributed storage
-- Storage nodes handle data processing
+- **LVM**
 
-One common backend is **LVM**, which uses local disks to create logical volumes. These volumes are then exported to compute nodes using iSCSI.
+  - A common backend for labs and small deployments.
+  - Uses local disks to create logical volumes. 
+  - Volumes are exported to compute nodes, via iSCSI.
 
-Another common backend is **Ceph**, which provides distributed storage across many servers. From the perspective of Cinder, Ceph behaves like an external storage system even though it runs across multiple storage nodes.
+- **Ceph**
 
-Each backend requires different hardware resources and configuration. The choice of backend determines how storage nodes are deployed.
+  - Provides distributed storage across many servers. 
+  - Runs across multiple storage nodes.
+  - Supports replication, scalable storage pools, etc
+
+      :::info 
+
+      From Cinder’s perspective, Ceph behaves like an external storage system, even though its software runs on the storage nodes.
+
+      :::
+
+Each backend has different hardware requirements, configuration complexity, and scalability characteristics, so the choice of backend determines how storage nodes are deployed, managed, and integrated into OpenStack.
+
+<div class='img-center'>
+
+![](/img/docs/all-things-openstack-inder-software-storage.pngMigra)
+
+</div>
+
 
 ## Storage Network Connectivity
 
