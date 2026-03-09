@@ -292,7 +292,7 @@ After preparing the block storage node, the controller node must be configured t
 
 These steps allow the controller node to manage block storage operations while the block node provides the actual storage.
 
-### Create the Cinder Database and Service User
+### Create the Cinder DB and Service User
 
 Cinder requires a database and a service account so it can interact with other OpenStack components.
 
