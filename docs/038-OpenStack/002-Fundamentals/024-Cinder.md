@@ -76,7 +76,7 @@ A single **cinder-volume** service can manage multiple storage backends. In smal
 </div>
 
 
-In larger environments, storage nodes usually run on dedicated storage nodes. The deployment design depends on storage performance requirements and the number of storage operations such as volume creation, deletion, and snapshots. 
+In larger environments, the `cinder-volume` usually run on dedicated storage nodes. The deployment design depends on storage performance requirements and the number of storage operations such as volume creation, deletion, and snapshots. 
 
 <div class='img-center'>
 
@@ -111,14 +111,14 @@ Some storage backends are **software-defined,** meaning the storage is managed b
 
 - **LVM**
 
-  - A common backend for labs and small deployments.
-  - Uses local disks to create logical volumes. 
-  - Volumes are exported to compute nodes, via iSCSI.
+  - A common backend for labs and small deployments
+  - Uses local disks to create logical volumes
+  - Volumes are exported to compute nodes, via iSCSI
 
 - **Ceph**
 
-  - Provides distributed storage across many servers. 
-  - Runs across multiple storage nodes.
+  - Provides distributed storage across many servers
+  - Runs across multiple storage nodes
   - Supports replication, scalable storage pools, etc
 
       :::info 
