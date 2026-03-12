@@ -68,7 +68,7 @@ Start by installing the Horizon package on the controller node.
 
 ## Configure the Horizon Settings 
 
-Horizon does not use the standard `.conf` format used by other OpenStack services. Instead, it uses a Python configuration file, so tools like `crudini` are usually not used.
+Horizon uses a Python configuration file instead of the usual standard `.conf` format used by most OpenStack services. Because of this, tools like `crudini` are usually not used.
 
 Edit the configuration file using an editor.
 
@@ -159,7 +159,7 @@ sudo systemctl status apache2
 
 Reloading Apache applies the Horizon configuration changes.
 
-## Verify the Horizon dashboard
+## Verify the Horizon Dashboard
 
 Once installation and configuration are complete, open a web browser and access the dashboard.
 
