@@ -78,14 +78,18 @@ In the example below, `foo()` defines a nested function `bar()` that prints `a`.
 
 ```python
 def foo():
-    a = 5
+    a = 5 
     def bar():
         print(a)
     return bar
 
 func = foo()
-func()
-print(func.__closure__[0].cell_contents)  # Access the closed-over value
+
+# Calls bar() and prints value of "a"
+func()              
+
+# Access the closure value
+print(func.__closure__[0].cell_contents)  
 ```
 
 Output:
@@ -93,6 +97,12 @@ Output:
 ```
 5
 5
+```
+
+The closure for `func` has one variable, which you can view by running:
+
+```python
+len(func.__closure__)    ## Output: 1
 ```
 
 Even if the original variable goes out of scope, the value is preserved in the function’s closure.
@@ -140,6 +150,98 @@ print(cube(2))    # Output: Output:  8
    It calculates `x ** n` → `4 ** 2 = 16`.
 
 This shows that `square` and `cube` are functions, `n` is captured by the closure, and `x` is provided when the returned function is called.
+
+#### Example: Keeping the values safe
+
+In this example, the function `retrieve_new_func` accepts another function as an argument. Inside it, a nested function called `in_func` is defined. This nested function calls the function (`func_x') that was originally passed into `retrieve_new_func`.
+
+When `retrieve_new_func` is executed, it returns the nested function `in_func`. However, `in_func` still remembers the original function (`func_x`) that was passed in. 
+
+That remembered variable (`func_x`) becomes part of the closure.
+
+```python
+def retrieve_new_func(func_x):
+  def in_func():
+    func_x()
+  return in_func
+
+def special_func():
+  print('You are running special_func()')
+  
+new_func = retrieve_new_func(special_func)
+
+# Update special_func() to print "hello"
+def special_func():
+  print("hello")
+
+new_func() 
+```
+
+Output:
+
+```bash
+You are running special_func()
+```
+
+Even if we later change`special_func`, the returned function (`new_func`) will still behave the same way because `new_func` already captured the original `special_func` object when it was created.
+
+For example, if we delete `special_func`, the global name disappear but the closure still has the reference, we we can still call `new_func` without any issues.
+
+```python
+def retrieve_new_func(func):
+  def in_func():
+    func()
+  return in_func
+
+def special_func():
+  print('You are running special_func()')
+  
+new_func = retrieve_new_func(special_func)
+
+# Delete special_func
+del(special_func)
+
+new_func() 
+```
+
+Output:
+
+```bash
+You are running special_func()
+```
+
+:::info 
+
+The closure stores the function object that was passed in, not the variable name `special_func`.
+
+:::
+
+Finally, even if `special_func` is overwritten with the new function, calling `new_func` still produces the original message.
+
+```python
+def retrieve_new_func(func):
+  def in_func():
+    func()
+  return in_func
+
+def special_func():
+  print('You are running special_func()')
+  
+new_func = retrieve_new_func(special_func)
+
+# Overwrite `special_func` with the new function
+special_func = retrieve_new_func(special_func)
+
+new_func() 
+```
+
+Output:
+
+```bash
+You are running special_func()
+```
+
+**Important**: Overwriting `special_func` does not create a loop, because the `in_func` returned by `retrieve_new_func` remembers the **function that existed at the time it was created.** It stores a reference to that original function in its closure, not the new `in_func` that the name `special_func` points to.
 
 
 ## Using `nonlocal`
