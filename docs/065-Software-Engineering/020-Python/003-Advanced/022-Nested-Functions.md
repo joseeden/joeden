@@ -72,7 +72,9 @@ This is called a **closure** because the inner function retains access to the ou
 
 This allows functions to maintain state independently of the global or parent scope
 
-### Example: Simple `foo` 
+## Examples 
+
+### Simple `foo` 
 
 In the example below, `foo()` defines a nested function `bar()` that prints `a`. When we return `bar()` and assign it to `func`, calling `func()` still knows the value of `a` because of the closure.
 
@@ -107,7 +109,7 @@ len(func.__closure__)    ## Output: 1
 
 Even if the original variable goes out of scope, the value is preserved in the function’s closure.
 
-### Example: `raise_val` 
+### `raise_val` 
 
 In this example, `raise_val` returns the inner function `inner_fn` that raises a number to the power `n`. `square` and `cube` are functions created by `raise_val`.
 
@@ -151,7 +153,7 @@ print(cube(2))    # Output: Output:  8
 
 This shows that `square` and `cube` are functions, `n` is captured by the closure, and `x` is provided when the returned function is called.
 
-### Example: Keeping the values safe
+### Keeping the values safe
 
 In this example, the function `retrieve_new_func` accepts another function as an argument. Inside it, a nested function called `in_func` is defined. This nested function calls the function (`func_x') that was originally passed into `retrieve_new_func`.
 
