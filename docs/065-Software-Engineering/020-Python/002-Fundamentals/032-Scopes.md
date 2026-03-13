@@ -198,4 +198,4 @@ Output:
 20
 ```
 
-For more information, please see [Using `nonlocal`.](/docs/065-Software-Engineering/020-Python/003-Advanced/022-Nested-Functions.md#using-nonlocal)
+**Note:** For advanced usage in nested functions and closures, see [Nested Functions](/docs/065-Software-Engineering/020-Python/003-Advanced/022-Nested-Functions.md)

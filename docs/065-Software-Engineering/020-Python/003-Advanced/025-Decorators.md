@@ -208,7 +208,9 @@ multiply = double_args(multiply)
 
 The `@double_args` line just automatically applies the decorator and assigns the result back to the function name.
 
-## Example: Before and After a Function
+## Examples
+
+### Before and After a Function
 
 The example below shows a decorator that runs code **before and after** another function. The decorator `print_before_and_after` wraps the `multiply` function and prints a message before and after it runs.
 
@@ -240,3 +242,96 @@ Here, `print_before_and_after` receives the `multiply` function as the argument 
 
 The `@print_before_and_after` syntax automatically applies the decorator and replaces `multiply` with the wrapped version.
 
+
+### Timing a Function
+
+You can measure how long a function takes using a timer decorator. This helps find slow parts of your code.
+
+- Records start time before the function runs
+- Runs the function and stores the result
+- Prints how long the function took to run
+- Returns the original function’s result
+
+Example:
+
+```python
+import time
+
+def timer(func):
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print(f"{func.__name__} took {end - start:.2f} seconds")
+        return result
+    return wrapper
+
+@timer
+def sleep_n_seconds(n):
+    time.sleep(n)
+
+sleep_n_seconds(5)
+```
+
+Output:
+
+```bash
+sleep_n_seconds took 5.00 seconds
+```
+
+You can use this for any function to quickly check performance.
+
+### Memoizing a Function
+
+Memoization stores the results of expensive function calls. When the function is called again with the same arguments, it returns the cached result instead of recalculating.
+
+- Uses a dictionary to map arguments to results
+- Checks cache before running the function
+- Stores new results in the cache
+
+Example:
+
+```python
+import time
+
+def memoize(func):
+    cache = {}
+    def wrapper(*args):
+        if args in cache:
+            return cache[args]
+        result = func(*args)
+        cache[args] = result
+        return result
+    return wrapper
+
+@memoize
+def slow_sum(a, b):
+    time.sleep(5)
+    return a + b
+
+print(slow_sum(3, 4))  # Takes 5 seconds
+print(slow_sum(3, 4))  # Returns immediately
+```
+
+Memoization is helpful for functions that are called often with the same inputs, saving time and resources.
+
+:::info[Memorization vs Memoization]
+
+They sound similar, but in programming **memoizing** and the everyday word **memorizing** are different.
+
+- Memorizing is about remembering information in your brain.
+- Memoizing is about storing function results in memory so a computer can reuse them without recalculating.
+
+Think of memoizing like keeping a **mini cheat sheet for a function.** You “remember” results, but it’s the computer’s memory, not yours.
+
+::: 
+
+## When to Use Decorators
+
+Decorators are ideal when you want to add the same behavior to multiple functions. Instead of repeating code, you wrap functions with a decorator.
+
+- Adds shared behavior without repeating code
+- Keeps functions clean and readable
+- Follows the “DRY (Don't Repeat Yourself)” principle
+
+Using decorators lets you maintain code consistency and simplifies updates. You can add features like timing, logging, or caching easily.
