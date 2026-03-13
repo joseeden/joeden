@@ -154,7 +154,7 @@ def multiply_if_in_range(x, y):
 
 Nested functions help break complex logic into smaller pieces without exposing helpers globally.
 
-For more information, please see [Nested Functions.](/docs/065-Software-Engineering/020-Python/003-Advanced/022-Advanced-Functions.md)
+For more information, please see [Nested Functions.](/docs/065-Software-Engineering/020-Python/003-Advanced/022-Nested-Functions.md)
 
 ## Functions as Return Values
 

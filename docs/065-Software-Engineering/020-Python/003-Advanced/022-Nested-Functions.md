@@ -1,6 +1,6 @@
 ---
-title: "Advanced Functions"
-description: "Advanced Functions"
+title: "Nested Functions"
+description: "Nested Functions"
 tags: 
 - Computer Science
 - Application Development
@@ -11,7 +11,7 @@ last_update:
   date: 10/28/2019
 ---
 
-## Nested Functions
+## Overview
 
 Functions can be defined inside other functions to avoid repeating code. With nested functions, the inner function can use variables from the outer function.
 
@@ -61,7 +61,7 @@ Output:
 This shows that `add_num` is a function, `x` is captured in the closure, and `y` is provided when the returned function is called.
 
 
-### Closures
+## Closures
 
 Outer functions can return inner functions to create customized behavior, and the inner function remembers variables from the outer function. 
 
@@ -72,7 +72,7 @@ This is called a **closure** because the inner function retains access to the ou
 
 This allows functions to maintain state independently of the global or parent scope
 
-#### Example: Simple `foo` 
+### Example: Simple `foo` 
 
 In the example below, `foo()` defines a nested function `bar()` that prints `a`. When we return `bar()` and assign it to `func`, calling `func()` still knows the value of `a` because of the closure.
 
@@ -107,7 +107,7 @@ len(func.__closure__)    ## Output: 1
 
 Even if the original variable goes out of scope, the value is preserved in the function’s closure.
 
-#### Example: `raise_val` 
+### Example: `raise_val` 
 
 In this example, `raise_val` returns the inner function `inner_fn` that raises a number to the power `n`. `square` and `cube` are functions created by `raise_val`.
 
@@ -151,7 +151,7 @@ print(cube(2))    # Output: Output:  8
 
 This shows that `square` and `cube` are functions, `n` is captured by the closure, and `x` is provided when the returned function is called.
 
-#### Example: Keeping the values safe
+### Example: Keeping the values safe
 
 In this example, the function `retrieve_new_func` accepts another function as an argument. Inside it, a nested function called `in_func` is defined. This nested function calls the function (`func_x') that was originally passed into `retrieve_new_func`.
 
@@ -244,7 +244,7 @@ You are running special_func()
 **Important**: Overwriting `special_func` does not create a loop, because the `in_func` returned by `retrieve_new_func` remembers the **function that existed at the time it was created.** It stores a reference to that original function in its closure, not the new `in_func` that the name `special_func` points to.
 
 
-### Using `nonlocal`
+## Using `nonlocal`
 
 `nonlocal` lets inner functions modify variables in outer functions. It works like `global` but only for enclosing function variables.
 
@@ -290,7 +290,7 @@ print(c())  # 2
 
 
 
-### Scopes (LEGB Rule)
+## Scopes (LEGB Rule)
 
 Scope determines which variables Python can access at different points in your code.
 
@@ -331,158 +331,3 @@ outer_fn()  # Output: 5
 For more information, please see [Scopes.](/docs/065-Software-Engineering/020-Python/002-Fundamentals/032-Scopes.md)
 
 
-## Decorators
-
-Decorators are functions that **wrap other functions** to modify their behavior. They can change inputs, outputs, or even the way the function works internally.
-
-- Decorators take a function as an argument and return a new function
-- They can modify inputs before passing them to the original function
-- They can modify outputs after the original function runs
-- They can completely change the behavior of the original function
-
-A decorator in Python is usually applied with the `@` symbol above a function definition. This is a shortcut for assigning the decorated function to the original function name.
-
-
-### Creating a Simple decorator
-
-Lets consider a simple `multiply` function:
-
-```python
-def multiply(a, b):
-    return a * b
-```
-
-Calling it normally:
-
-```python
-result = multiply(1, 5)
-print(result)
-```
-
-Output:
-
-```bash
-5
-```
-
-We can use a decorator to wrap a function and return a new version of it. For example, we can create `new_multiply` using a simple decorator `double_args` (it doesn’t modify the original function yet):
-
-```python
-def multiply(a, b):
-    return a * b
-
-# decorator
-def double_args(func):
-    return func 
-
-new_multiply = double_args(multiply)
-print(new_multiply(1, 5))
-```
-
-Output:
-
-```bash
-5
-```
-
-### Adding a Wrapper Function
-
-To modify behavior, decorators usually define a **nested function** inside them. We'll call it `wrapper`. The wrapper can manipulate arguments or results:
-
-```python
-def multiply(a, b):
-    return a * b
-
-def double_args(func):
-    def wrapper(a, b):
-        return func(a, b)  # still just calls original function
-    return wrapper
-
-new_multiply = double_args(multiply)
-print(new_multiply(1, 5))
-```
-
-Output:
-
-```bash
-5
-```
-
-The wrapper is still just passing arguments through.
-
-
-### Modifying Arguments
-
-Now the decorator will modify each argument before calling the original function. 
-
-Here, `wrapper` multiplies `a` and `b` by 2 before calling `multiply`.
-
-```python
-def multiply(a, b):
-    return a * b
-
-def double_args(func):
-    def wrapper(a, b):
-        return func(a * 2, b * 2)
-    return wrapper
-
-new_multiply = double_args(multiply)
-print(new_multiply(1, 5))
-```
-
-Output:
-
-```bash
-20
-```
-
-
-### Overwriting the Original Function
-
-We can also overwrite the original function with its decorated version:
-
-```python
-def multiply(a, b):
-    return a * b
-
-def double_args(func):
-    def wrapper(a, b):
-        return func(a * 2, b * 2)
-    return wrapper
-    
-multiply = double_args(multiply)
-print(multiply(1, 5))
-```
-
-Output:
-
-```bash
-20
-```
-
-Python still stores the **original multiply function** inside the closure of `wrapper`, which allows the decorator to call it.
-
-
-### Decorator syntax with `@`
-
-Python allows a **shortcut** for applying decorators using `@`:
-
-```python
-@double_args
-def multiply(a, b):
-    return a * b
-
-print(multiply(1, 5))
-```
-
-This is equivalent to:
-
-```python
-def multiply(a, b):
-    return a * b
-
-multiply = double_args(multiply)
-print(multiply(1, 5))
-```
-
-The `@double_args` line just automatically applies the decorator and assigns the result back to the function name.
