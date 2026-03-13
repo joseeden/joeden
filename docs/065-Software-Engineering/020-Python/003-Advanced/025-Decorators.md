@@ -23,7 +23,7 @@ Decorators are functions that **wrap other functions** to modify their behavior.
 A decorator in Python is usually applied with the `@` symbol above a function definition. This is a shortcut for assigning the decorated function to the original function name.
 
 
-## Creating a Simple decorator
+## Creating a Simple Decorator
 
 Lets consider a simple `multiply` function:
 
@@ -45,7 +45,9 @@ Output:
 5
 ```
 
-We can use a decorator to wrap a function and return a new version of it. For example, we can create `new_multiply` using a simple decorator `double_args` (it doesn’t modify the original function yet):
+We can use a decorator to wrap the function and return a new version of it. 
+
+For example, we can create `new_multiply` using a simple decorator `double_args` (it doesn’t modify the original function yet):
 
 ```python
 def multiply(a, b):
@@ -93,14 +95,15 @@ The wrapper is still just passing arguments through.
 
 ## Modifying Arguments
 
-Now the decorator will modify each argument before calling the original function. 
+We can update the decorator so that it transforms the arguments before calling the original function.
 
-Here, `wrapper` multiplies `a` and `b` by 2 before calling `multiply`.
+In the example below, the `wrapper` function multiplies `a` and `b` by 2 before passing them to the original `multiply` function.
 
 ```python
 def multiply(a, b):
     return a * b
 
+# decorator
 def double_args(func):
     def wrapper(a, b):
         return func(a * 2, b * 2)
@@ -116,10 +119,39 @@ Output:
 20
 ```
 
+Here, the decorator creates a new function called `new_multiply`, while the original `multiply` function remains unchanged.
+
+```bash
+multiply      → original function
+new_multiply  → decorated version
+```
+
+Both functions can still be used:
+
+```bash
+print(multiply(1, 5))      # 5
+print(new_multiply(1, 5))  # 20
+```
+
+The decorator creates a modified version of the function without replacing the original function.
 
 ## Overwriting the Original Function
 
-We can also overwrite the original function with its decorated version:
+Instead of creating a new function, we can also replace the original function with its decorated version.
+
+This is done by assigning the result of the decorator back to the same function name:
+
+```bash
+multiply = double_args(multiply)
+```
+
+Now the name `multiply` points to the wrapper function instead of the original function.
+
+```bash
+multiply → wrapper
+```
+
+The complete code now looks like this:
 
 ```python
 def multiply(a, b):
@@ -129,7 +161,7 @@ def double_args(func):
     def wrapper(a, b):
         return func(a * 2, b * 2)
     return wrapper
-    
+
 multiply = double_args(multiply)
 print(multiply(1, 5))
 ```
@@ -140,8 +172,20 @@ Output:
 20
 ```
 
-Python still stores the **original multiply function** inside the closure of `wrapper`, which allows the decorator to call it.
+Even though `multiply` now refers to `wrapper`, the wrapper can still call the original `multiply` function because it is stored in the wrapper's closure.
 
+## Modifying vs Overwriting 
+
+There are two ways to use a decorator.
+
+- Creating a new function keeps the original function unchanged
+- Overwriting replaces the original function with decorated version
+
+When a new function is created, both versions are available. 
+
+When the function is overwritten, only the decorated version is used.
+
+Overwriting is commonly used when the decorated behavior should fully replace the original function. This is also how Python’s `@decorator` syntax works, where the decorated function automatically replaces the original function name.
 
 ## Decorator syntax with `@`
 
@@ -151,8 +195,6 @@ Python allows a **shortcut** for applying decorators using `@`:
 @double_args
 def multiply(a, b):
     return a * b
-
-print(multiply(1, 5))
 ```
 
 This is equivalent to:
@@ -162,7 +204,39 @@ def multiply(a, b):
     return a * b
 
 multiply = double_args(multiply)
-print(multiply(1, 5))
 ```
 
 The `@double_args` line just automatically applies the decorator and assigns the result back to the function name.
+
+## Example: Before and After a Function
+
+The example below shows a decorator that runs code **before and after** another function. The decorator `print_before_and_after` wraps the `multiply` function and prints a message before and after it runs.
+
+```python
+def print_before_and_after(func):
+  def wrapper(*args):
+    print('Before {}'.format(func.__name__))
+    func(*args)
+    print('After {}'.format(func.__name__))
+
+  return wrapper
+
+@print_before_and_after
+def multiply(a, b):
+  print(a * b)
+
+multiply(7, 24)
+```
+
+Output:
+
+```bash
+Before multiply
+168
+After multiply
+```
+
+Here, `print_before_and_after` receives the `multiply` function as the argument `func`. The decorator returns the `wrapper` function, which prints a message before calling `multiply`, and another message after it finishes. 
+
+The `@print_before_and_after` syntax automatically applies the decorator and replaces `multiply` with the wrapped version.
+
