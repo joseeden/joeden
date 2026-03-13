@@ -190,3 +190,9 @@ If the login page loads successfully, the Horizon dashboard is installed correct
 </div>
 
 The dashboard now provides a graphical interface to manage the OpenStack environment, which confirms that Horizon is properly integrated with the controller node.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-13164910.png)
+
+</div>
