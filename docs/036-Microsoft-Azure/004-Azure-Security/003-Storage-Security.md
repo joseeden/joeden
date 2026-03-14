@@ -73,7 +73,7 @@ After its created, open the new container. You can upload file heres by clicking
 
 <div class='img-center'>
 
-![](/img/docs/all-things-azure-sas-token-2.png)
+![](/img/docs/Screenshot2026-03-14215741.png)
 
 </div>
 
