@@ -1,6 +1,14 @@
-
-# Lab 001: Dev Environment with Terraform and AWS
-
+---
+title: "Lab 001: Dev Environment in AWSs"
+description: "Dev Environment in AWS"
+tags: 
+- DevOps
+- Infrastructure as Code
+- Terraform
+sidebar_position: 10
+last_update:
+  date: 6/11/2022
+---
 
 ## Introduction 
 
