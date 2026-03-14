@@ -85,6 +85,27 @@ For **Managed identities**, there are two types:
 | System-assigned       | <ul><li>Created automatically for the app</li></ul><ul><li>Removed when app is deleted</li></ul>|
 | User-assigned         | <ul><li>You need to manually create it</li></ul><ul><li>Reusable across multiple apps or services</li></ul>
 
+### Deploy App Configuration 
+
+To deploy an App Configuration instance, log in to the Azure portal and navigate to **App Configuration**.
+
+Click **Create** and provide the details. To start the validation, click **Review + create.**
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-14231558.png)
+
+</div>
+
+Once the validation passed, click **Create.**
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-14231652.png)
+
+</div>
+
+
 ## Azure Key Vault
 
 Azure Key Vault is a secure place to store secrets, keys, and certificates away from your code. 
@@ -107,6 +128,12 @@ Key Vault solves this by centralizing sensitive data securely.
 
 Key Vault manages three main components: Secrets, Certificates, and Keys. Each has a specific role in keeping your app secure.
 
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-14231834.png)
+
+</div>
+
 ### Secrets
 
 Secrets are credentials or API keys your app needs to connect to services. Key Vault stores them encrypted, versioned, and accessible only to authorized applications.
@@ -125,7 +152,7 @@ Certificates prove your app’s identity and enable secure HTTPS connections. Ke
 - Enable secure HTTPS connections
 - Can auto-renew with trusted CAs
 
-The company app "MyWebApp" can use Key Vault to store certificates for secure connections between its HR portal and third-party payroll processors.
+Example: "MyWebApp" can use Key Vault to store certificates for secure connections between its HR portal and third-party payroll processors.
 
 ### Keys
 
@@ -135,7 +162,7 @@ Keys are cryptographic tools used to encrypt, decrypt, sign, and verify data. Ke
 - Never exposed in code
 - Automatic rotation possible
 
-The company app "MyWebApp" can store keys in Key Vault to protect employee records.
+Example: "MyWebApp" can store keys in Key Vault to protect employee records.
 
 ## Key Vault Tiers
 
