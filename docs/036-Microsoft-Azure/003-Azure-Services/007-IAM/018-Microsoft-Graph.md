@@ -21,6 +21,12 @@ Microsoft Graph provides a single API endpoint to access Microsoft 365 data, inc
 - Works with Outlook, Teams, OneDrive, and Entra ID
 - Integrate multiple services without managing separate connections
 
+<div class='img-center'>
+
+![](/img/docs/all-things-azure-ms-graph.png)
+
+</div>
+
 :::info 
 
 Microsoft Graph is related to IAM, but it is not an IAM service by itself. It acts as an API layer that provides access to identity and access management data and operations.
@@ -31,11 +37,6 @@ Because of this integration, Microsoft Graph is commonly used to automate IAM ta
 
 :::
 
-<div class='img-center'>
-
-![](/img/docs/all-things-azure-ms-graph.png)
-
-</div>
 
 ## Accessing Microsoft Graph
 
