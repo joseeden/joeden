@@ -53,21 +53,30 @@ All values are encrypted at rest and in transit. Metadata is descriptive only an
 
 Feature management controls parts of your application like dark mode, beta features, or banners without changing code.
 
-- Feature flags act as switches to turn features on or off
-- Feature manager reads flags and determines app behavior
-- Filters define when features are active based on user group, region, or time
+- **Feature flags** 
+  - Act as switches to turn features on or off
+  - Enable gradual rollout or testing of new features
 
-Features are cached for performance and refreshed automatically, so your app always uses up-to-date settings.
+- **Feature manager** 
+  - A library or SDK integrated into your app
+  - Reads feature flags and applies the correct behavior
+  - Caches values for performance and refreshes automatically
+
+- **Filters** 
+  - Define when features are active 
+  - Conditions can be based onuser group, region, or time
+
+Caching ensures your app always uses the latest settings while minimizing service calls. Feature management keeps your app flexible and responsive to changes without touching the code.
 
 ### Securing App Configuration
 
 Azure App Configuration supports multiple security layers to protect your data.
 
-| Security Option       | Description                                                                                                                                        |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Customer managed keys | Bring your own encryption keys from Key Vault. The wrapped key is stored securely, and the unwrapped key is cached in memory and refreshed hourly. |
-| Private endpoints     | Assign private IPs to keep traffic inside your network. Traffic stays off the public internet and supports VPN or ExpressRoute connections.        |
-| Managed identities    | Apps can access services securely without storing credentials in code.                                                                             |
+| Security Option       | Description                                                                                                                                                                   |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Customer managed keys | <ul><li>Bring your own encryption keys from Key Vault</li><li>The wrapped key is stored securely</li><li>The unwrapped key is cached in memory and refreshed hourly</li></ul> |
+| Private endpoints     | <ul><li>Assign private IPs to keep traffic inside your network</li><li>Traffic stays off the public internet</li><li>Supports VPN or ExpressRoute connections</li></ul>       |
+| Managed identities    | <ul><li>Apps can access services securely without storing credentials in code</li></ul>                                                                                       |
 
 For **Managed identities**, there are two types:
 
@@ -131,12 +140,6 @@ The company app "MyWebApp" can store keys in Key Vault to protect employee recor
 ## Key Vault Tiers
 
 Azure Key Vault offers two tiers for different security needs.
-
-| Tier               | Description                                                                                                        |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| Standard Key Vault | Multi-tenant, supports secrets, software-protected and HSM-backed keys, FIPS 140-2 Level 2                         |
-| Managed HSM Pools  | Single-tenant hardware, supports only HSM-protected keys, FIPS 140-2 Level 3, ideal for compliance-heavy workloads |
-
 
 | Tier               | Description                                                                                                                                               |
 | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
