@@ -455,3 +455,77 @@ Think of memoizing like keeping a **mini cheat sheet for a function.** You “re
 
 ::: 
 
+### Printing the Return Type 
+
+You can use a decorator to automatically print the type of a function’s return value. This works for any combination of positional and keyword arguments.
+
+```python
+def print_return_type(func):
+    def wrapper(*args, **kwargs):
+        result = func(*args, **kwargs)
+
+        # Convert args, kwargs to strings
+        args_str = ",".join([str(a) for a in args])
+        kwargs_str = ",".join([f"{k}={v}" for k, v in kwargs.items()])
+        all_args = ",".join(filter(None, [args_str, kwargs_str]))
+
+        print("{}({}) returned type: {}".format(
+          func.__name__,
+          all_args,
+          type(result)
+        ))
+        return result
+    return wrapper
+
+
+@print_return_type
+def my_func(value):
+    return value
+
+
+my_func(24)
+my_func([16, 18, 31])
+my_func({'Tom': 36})
+```
+
+Output:
+
+```bash
+my_func(24) returned type: <class 'int'>
+my_func([16, 18, 31]) returned type: <class 'list'>
+my_func({'Tom': 36}) returned type: <class 'dict'>
+```
+
+This decorator captures the function’s arguments and return value, then prints the return type while keeping the original function behavior intact.
+
+### Counter 
+
+Decorators can be used to track how many times a function is called, which is useful in web applications or any situation where you want to monitor usage.
+
+```python
+def counter(func):
+  def wrapper(*args, **kwargs):
+    wrapper.count += 1
+    return func(*args, **kwargs)
+  wrapper.count = 0
+  return wrapper
+
+@counter 
+def my_webapp_func_a():
+  print('calling my_webapp_func_a()')
+  
+my_webapp_func_a()
+my_webapp_func_a()
+
+print('my_webapp_func_a() was called {} times.'.format(my_webapp_func_a.count))
+```
+
+Output:
+
+```bash
+calling my_webapp_func_a()
+calling my_webapp_func_a()
+my_webapp_func_a() was called 2 times.
+```
+
+The decorator adds a `count` attribute to the wrapper function and increments it each time the function is called, which lets you keep track of usage without changing the original function code.
