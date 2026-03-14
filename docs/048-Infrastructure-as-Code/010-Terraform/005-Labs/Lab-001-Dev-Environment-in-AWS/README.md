@@ -1,5 +1,5 @@
 ---
-title: "Lab 001: Dev Environment in AWSs"
+title: "Dev Environment in AWS"
 description: "Dev Environment in AWS"
 tags: 
 - DevOps
