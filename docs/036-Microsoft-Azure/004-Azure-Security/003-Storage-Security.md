@@ -51,6 +51,59 @@ A **Shared Access Signatures (SAS)** is a URL token that gives temporary, contro
 
 </div>
 
+### Creating a SAS Token 
+
+To create a SAS token, navigate to **Storage accounts** and select the desired storage account. Under **Properties**, click **Blob service**.
+
+<div class='img-center'>
+
+![](/img/docs/all-things-azure-create-sas-token.png)
+
+</div>
+
+Click **Add container** and provide a name. Click **Create.**
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-14201136.png)
+
+</div>
+
+After its created, open the new container. You can upload file heres by clicking **Upload.**
+
+<div class='img-center'>
+
+![](/img/docs/all-things-azure-sas-token-2.png)
+
+</div>
+
+To share this file securely, you can use SAS tokens. Click the three dots on the right hand side and select **Generate SAS.**
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-14201838.png)
+
+</div>
+
+You can modify settings such as the signing method, stored access policy, and expiration time. Once configured, click **Generate SAS token and URL**.
+
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-14a202213.png)
+
+</div>
+
+It will return the SAS token and URL below the **Generate SAS token and URL** button.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-14202419.png)
+
+</div>
+
+You can now use this URL to view or download the resource without signing in, while keeping your main account keys secure.
+
 ### Types of SAS
 
 There are three SAS types with different scopes and security levels:
