@@ -82,8 +82,8 @@ For **Managed identities**, there are two types:
 
 | Managed Identity Type | Description                                              |
 | --------------------- | -------------------------------------------------------- |
-| System-assigned       | Azure creates and deletes it automatically with your app |
-| User-assigned         | You create it once and assign it to multiple services    |
+| System-assigned       | <ul><li>Created automatically for the app</li></ul><ul><li>Removed when app is deleted</li></ul>|
+| User-assigned         | <ul><li>You need to manually create it</li></ul><ul><li>Reusable across multiple apps or services</li></ul>
 
 ## Azure Key Vault
 
