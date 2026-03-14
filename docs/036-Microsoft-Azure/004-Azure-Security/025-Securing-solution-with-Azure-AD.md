@@ -7,7 +7,7 @@ tags:
 - DevOps
 - Security
 - Certifications
-sidebar_position: 10
+sidebar_position: 25
 last_update:
   date: 11/22/2020
 ---
