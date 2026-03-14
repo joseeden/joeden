@@ -529,3 +529,224 @@ my_webapp_func_a() was called 2 times.
 ```
 
 The decorator adds a `count` attribute to the wrapper function and increments it each time the function is called, which lets you keep track of usage without changing the original function code.
+
+
+## Decorators and Metadata
+
+Decorators can change a function, but they also hide some of the function's information.  For example:
+
+- Functions have a docstring that explains what they do
+- Functions store metadata like name and default arguments
+
+When a function is decorated, its docstring and name may point to the wrapper instead of the original function. This can make it hard to understand what the function does.
+
+### With vs Without Decorators 
+
+#### Without Decorators 
+
+Consider the simple function without a decorator:
+
+```python
+def sleep_in_seconds(n):
+    """
+    Pause execution for n seconds
+    """
+    import time
+    time.sleep(n)
+```
+
+You can access the docstring and the function's name via:
+
+```bash
+print(sleep_in_seconds.__doc__)
+print(sleep_in_seconds.__name__)
+```
+
+Output:
+
+```bash
+Pause execution for n seconds
+sleep_in_seconds
+```
+
+Functions also store other information, like default arguments:
+
+```python
+def greet(name="World"):
+    print(f"Hello, {name}!")
+```
+
+Here, the default argument is "World" if no argument is passed to the function. You can access the default argument via:
+
+```bash
+print(greet.__defaults__)
+```
+
+Output:
+
+```bash
+('World',)
+```
+
+:::info 
+
+Metadata gives insight into the function before decoration.
+
+::: 
+
+
+#### With Decorators 
+
+If we decorate `sleep_in_seconds` with a `timer` decorator, the metadata is lost:
+
+```python
+def timer(func):
+    def wrapper(*args, **kwargs):
+        import time
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print("Elapsed: ", (end - start))
+        return result
+    return wrapper
+
+@timer
+def sleep_in_seconds(n):
+    """
+    Pause execution for n seconds
+    """
+    import time
+    time.sleep(n)
+
+print(sleep_in_seconds.__doc__)
+print(sleep_in_seconds.__name__)
+```
+
+This returns:
+
+```bash
+None        # docstring 
+wrapper     # function name
+```
+
+
+### Preserving Function Metadata
+
+As seen in the previous exmaple, decorators overwrite the original function, so metadata appears from the wrapper. Python’s `functools.wraps` fixes this problem. 
+
+The `wraps` keeps the metadata of original function even after decoration:
+
+```python
+from functools import wraps
+
+def timer(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        import time
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print("Elapsed: ", (end - start))
+        return result
+    return wrapper
+
+@timer
+def sleep_in_seconds(n):
+    """Pause execution for n seconds"""
+    import time
+    time.sleep(n)
+
+print(sleep_in_seconds.__doc__)
+print(sleep_in_seconds.__name__)
+```
+
+
+Output:
+    
+```bash
+Pause execution for n seconds
+sleep_in_seconds
+```
+
+### Access to the Original Function
+
+`wraps` also allows easy access to the original function via the `__wrapped__` attribute:
+
+```python
+original_func = sleep_in_seconds.__wrapped__
+print(original_func.__name__)  
+```
+
+Output:
+
+```bash
+sleep_in_seconds
+```
+
+You can call or inspect the original function directly. This is simpler than digging through closures.
+
+For example, you can run the original function without the decorator effects:
+
+```bash
+import time
+
+# Call the original function directly
+original_func(2)  # pause execution for 2 seconds
+print("Original function executed without timer")
+```
+
+Output (after 2 seconds pause):
+
+```bash
+Original function executed without timer
+```
+
+This shows that `__wrapped__` lets you bypass the decorator. You can test, debug, or reuse the original function easily
+
+### Example: Measuring Decorator Overhead
+
+You can use a decorator to wrap a function and see how much extra time it adds. Here, the main function is `duplicate`, which repeats a list twice. 
+
+We then test it both with the decorator `check_everything` and without it to compare execution time.
+
+```python
+from functools import wraps
+import time
+
+def check_everything(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        result = func(*args, **kwargs)
+        return result
+    return wrapper
+
+@check_everything
+def duplicate(my_list):
+    """Return a new list that repeats the input twice"""
+    return my_list + my_list
+
+#################### TEST CASES #################### 
+
+# Measure decorated function
+start = time.time()
+duplicated_list = duplicate(list(range(50_000_000)))  # make it slow enough to see time
+end = time.time()
+decorated_time = end - start
+
+# Measure undecorated function 
+start = time.time()
+duplicated_list = duplicate.__wrapped__(list(range(50_000_000))) # make it slow enough to see time
+end = time.time()
+undecorated_time = end - start
+
+print('Decorated time: {:.5f}s'.format(decorated_time))
+print('Undecorated time: {:.5f}s'.format(undecorated_time))
+```
+Output:
+
+```bash
+Decorated time: 5.58940s
+Undecorated time: 5.78278s 
+```
+
+As seen here, the `decorated_time` will be slightly larger than `undecorated_time` due to the tiny overhead of the wrapper function.
