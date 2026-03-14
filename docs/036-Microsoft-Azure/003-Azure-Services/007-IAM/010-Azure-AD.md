@@ -11,6 +11,18 @@ last_update:
   date: 11/16/2020
 ---
 
+## Microsoft Entra ID 
+
+Microsoft Entra ID (previously known as Azure AD) is Microsoft's cloud-based identity and access management service. It lets organizations manage users, groups, and access to applications securely. 
+
+To access it, go to the Microsoft Azure portal and search for **Microsoft Entra ID**.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-14155052.png)
+
+</div>
+
 
 ## External Identities
 
@@ -39,8 +51,8 @@ If you already have an on-premises Active Directory implementation, you don’t 
 
 - Automatically creates accounts on Azure for you
 - Keeps the accounts synced when changes are made to the accounts in Active Directory
-- Allows you to use single sign-on (SSO), meaning users only need to log in once to access both their on-premises environment and their Azure environment
-- You can also use SSO to access Microsoft 365
+
+Azure AD Connect also allows single sign-on (SSO), which means users only need to log in once to access both their on-premises environment and their Azure environment. You can also use SSO to access Microsoft 365.
 
 ## Azure AD Tenant
 
@@ -109,16 +121,16 @@ Dealing with this issue requires careful consideration. Possible solutions can i
   - Requires regular maintenance tasks (e.g., patching, backups).
 
 - **Azure AD Domain Services (Azure AD DS):**
-  - Azure AD DS is a managed service that handles domain controller operations.
+  - Managed service that handles domain controller operations.
   - Supports legacy authentication protocols (e.g., NTLM, Kerberos).
 
 **Microsoft Entra Domain Services**, previously known as Azure AD Domain Services or Azure AD DS, is a cloud offering providing managed domain services compatible with on-prem Active Directory.
 
 - Eliminates the need for deploying, managing, or patching domain controllers.
-- Access to resources can be controlled through existing groups and user accounts.
-- Replicates identity information from Azure AD or synchronizes from on-prem Active Directory.
+- Resource access can be controlled through existing groups and user accounts.
+- Replicates identity information from Azure AD or synchronizes from on-prem AD
 - Use **Azure AD Connect** to sync on-prem AD with your Azure AD Domain Services.
-- **LDAP Support:** Facilitates applications using Lightweight Directory Access Protocol (LDAP).
+- Supports Lightweight Directory Access Protocol (LDAP).
 - **Windows 10 Computer Integration:** Allows joining computers to domains and applying group policies.
 
 Features include:

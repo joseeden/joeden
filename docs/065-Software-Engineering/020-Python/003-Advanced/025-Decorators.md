@@ -750,3 +750,107 @@ Undecorated time: 5.78278s
 ```
 
 As seen here, the `decorated_time` will be slightly larger than `undecorated_time` due to the tiny overhead of the wrapper function.
+
+
+## Decorators with Arguments
+
+Sometimes we want a decorator to take extra arguments, like how many times a function should run. We do this by nesting functions: 
+
+- The outer function gets the argument, and
+- the inner function gets the function to decorate.
+
+Here’s a simple decorator that runs a function three times. The main function is `print_sum()`.
+
+```python
+def run_three_times(func):
+    def wrapper(*args, **kwargs):
+        for _ in range(3):
+            func(*args, **kwargs)
+    return wrapper
+
+@run_three_times
+def print_sum(a, b):
+    print(a + b)
+
+print_sum(3, 5)
+```
+
+Output:
+
+```text
+8
+8
+8
+```
+
+
+If we want to run a function **n times**, we need a **decorator factory**.
+
+```python
+def run_n_times(n):
+  def decorator(func): 
+    def wrapper(*args, **kwargs):
+      for i in range(n):
+        func(*args, **kwargs)
+    return wrapper
+  return decorator 
+```
+
+We can call `run_n_times(n)` with the number of repetitions, and it will return the a decorator function. The decorator wraps the original function and runs it `n` times
+
+```python
+@run_n_times (7)
+def print_sum(a, b):
+  print(a + b) 
+
+@run_n_times (4)
+def print_greeting(greet):
+  print(greet)
+  
+print_sum(6, 9)
+print_greeting("Hola!")
+```
+
+Output:
+
+```text
+15
+15
+15
+15
+15
+15
+15
+Hola!
+Hola!
+Hola!
+Hola!
+```
+
+You can also create new decorators from the original decorator:
+
+```bash
+run_two_times = run_n_times(2)
+run_three_times = run_n_times(3)
+
+@run_two_times 
+def print_greeting(greet):
+  print(greet)
+print_greeting("Obrigado!")
+
+@run_three_times 
+def print_greeting(greet):
+  print(greet)
+print_greeting("Salamat!")
+```
+
+Output:
+
+```text
+Obrigado!
+Obrigado!
+Salamat!
+Salamat!
+Salamat!
+```
+

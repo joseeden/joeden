@@ -37,7 +37,9 @@ with context_manager_function() as value:
     # code to run inside the context
 ```
 
-## Example: Working with a File
+## Examples
+
+### Working with a File
 
 The `open()` function is a an example of built-in context manager. It opens a file, lets you read or write, and closes it automatically when done.
 
@@ -58,7 +60,7 @@ In this example:
 
 
 
-## Example: Suppressing Exceptions
+### Suppressing Exceptions
 
 Python’s `contextlib` module has a context manager that can suppress specified exceptions.
 
@@ -138,7 +140,9 @@ goodbye
 Here, `foo` receives the value `2103` from `yield`. The function prints `hello` before the block and `goodbye` after, showing the setup and teardown behavior.
 
 
-## Example: Context Manager for Resources
+## Examples using `yield` 
+
+### Context Manager for Resources
 
 A context manager can handle setup and cleanup for resources, such as a database connection.
 
@@ -167,7 +171,7 @@ Disconnected
 Here, the context manager connects before the block and disconnects after, which lets you focus only on using the resource.
 
 
-## Example: Yielding None
+### Yielding None
 
 Some context managers don’t return a value. For example, a directory manager can temporarily change the current working directory.
 
@@ -195,7 +199,7 @@ Current directory inside block: /tmp
 Back to original directory: /mnt/c/Git/johnsmith
 ```
 
-This lets you temporarily run code in another directory without manually changing back.
+This allow you to temporarily run code in another directory without manually changing back.
 
 
 ## Nested Context Managers

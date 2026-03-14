@@ -90,7 +90,9 @@ Output:
 Total sum: 12345678
 ```
 
-## Example: Processing Twitter Data 
+## Examples
+
+### Processing Twitter Data 
 
 Large datasets can't always fit into memory, so we process them in chunks. In the example below, we analyze a CSV file of Twitter data by processing 10 entries at a time.  
 
@@ -132,7 +134,7 @@ Output:
 The output is a dictionary where the keys represent different language codes found in the dataset, and the values indicate the number of times each language appears in the tweets. For example, 'en': 15 means that 15 tweets were in English, while 'es': 8 means 8 tweets were in Spanish. This confirms that the script correctly counted the occurrences of each language while processing the data in chunks.
 
 
-## Example: Making Code Reusable 
+### Making Code Reusable 
 
 Instead of rewriting the same code for similar tasks, it's better to use functions. The example below defines a function to count occurrences of values in a specific column while processing a CSV file in chunks.  
 

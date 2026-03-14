@@ -102,7 +102,9 @@ Both will return the same output:
 {1: -1, 2: -2, 3: -3, 4: -4, 5: -5}
 ```  
 
-## Example: LoR Characters 
+## Examples
+
+### LoR Characters 
 
 In this example, we are working with a list of characters from *The Lord of the Rings (LoR)*. We'll filter and modify the list using list comprehensions.
 
@@ -153,7 +155,7 @@ Output:
 ```
 
 
-## Example: Time-stamped Data 
+### Time-stamped Data 
 
 In this example, we'll use a list comprehension to extract the time from Twitter data with timestamps.
 
@@ -190,7 +192,7 @@ Output:
 This code extracts only the time part of each timestamp from the 'created_at' column.
 
 
-## Example: Time-stamped Data with Conditions
+### Time-stamped Data with Conditions
 
 In this example, we'll extract the time from time-stamped Twitter data, but only for timestamps where the seconds (`entry[17:19]`) are '19'.
 
