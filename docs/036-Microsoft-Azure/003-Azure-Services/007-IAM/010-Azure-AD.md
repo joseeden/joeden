@@ -13,7 +13,16 @@ last_update:
 
 ## Microsoft Entra ID 
 
-Microsoft Entra ID (previously known as Azure AD) is Microsoft's cloud-based identity and access management service. It lets organizations manage users, groups, and access to applications securely. 
+Microsoft Entra ID (previously known as Azure AD) is Microsoft's cloud-based identity and access management service which allows you to control access to internal and external resources. 
+
+- It allows you to create and manage user accounts. 
+- Credentials are verified with Active Directory 
+
+When you set up an environment on Azure, instead of using Active Directory, you use Azure Active Directory. 
+
+- It’s quite similar, but it’s used for accessing cloud applications. 
+- That includes cloud applications outside of Azure, too, such as Microsoft 365. 
+- It can even be used for accessing web-based applications in your on-premises environment.
 
 To access it, go to the Microsoft Azure portal and search for **Microsoft Entra ID**.
 
@@ -22,6 +31,29 @@ To access it, go to the Microsoft Azure portal and search for **Microsoft Entra 
 ![](/img/docs/Screenshot2026-03-14155052.png)
 
 </div>
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-14182707.png)
+
+</div>
+
+To go the Entra Admin Center, scroll down and click **Go to Microsoft Entra**.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-14182857.png)
+
+</div>
+
+The Microsoft Entra admin center:
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-14183107.png)
+
+</div>
+
 
 
 ## External Identities

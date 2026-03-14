@@ -42,17 +42,7 @@ Example Scenario:
 
 ## Microsoft Entra ID 
 
-previously known as "Azure Active Directory", Microsoft Entra ID is a cloud-based identity and access management service by Microsoft which allows you to control access to internal and external resources. 
-
-- It allows you to create and manage user accounts. 
-- Then when a user logs in to one of your IT systems, the system will ask for their username and password and then verify these credentials with Active Directory before letting the user in. 
-- This process is known as **authentication.**
-
-When you set up an environment on Azure, instead of using Active Directory, you use Azure Active Directory. 
-
-- It’s quite similar, but it’s used for accessing cloud applications. 
-- That includes cloud applications outside of Azure, too, such as Microsoft 365. 
-- It can even be used for accessing web-based applications in your on-premises environment.
+Previously known as "Azure Active Directory", Microsoft Entra ID is a cloud-based identity and access management service by Microsoft which allows you to control access to internal and external resources. 
 
 Usage:
 
@@ -68,6 +58,7 @@ Usage:
    - Automatic Azure AD tenants for services like Microsoft 365, Office 365, and Azure.
 
 
+For more information, please see [Microsoft Entra ID.](/docs/036-Microsoft-Azure/003-Azure-Services/007-IAM/010-Azure-AD.md)
 
 ## Identity Protection 
 

@@ -829,7 +829,7 @@ Hola!
 
 You can also create new decorators from the original decorator:
 
-```bash
+```python
 run_two_times = run_n_times(2)
 run_three_times = run_n_times(3)
 
