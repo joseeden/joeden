@@ -102,7 +102,7 @@ There are three main types of service principals:
 | Type             | Description                                                    |
 | ---------------- | -------------------------------------------------------------- |
 | Application      | Created through app registration, uses secrets or certificates |
-| Managed Identity | Automatically managed by Azure, no secrets needed              |
+| Managed Identity | Automatically managed by Azure, no secrets needed. See [Managed Identities.](/docs/036-Microsoft-Azure/003-Azure-Services/007-IAM/017-Managed-Identities.md)              |
 | Legacy           | Used by older applications                                     |
 
 You can use the **Enterprise applications** page in the Microsoft Entra admin center to list and manage the service principals in a tenant. 

@@ -85,6 +85,9 @@ For **Managed identities**, there are two types:
 | System-assigned       | <ul><li>Created automatically for the app</li></ul><ul><li>Removed when app is deleted</li></ul>|
 | User-assigned         | <ul><li>You need to manually create it</li></ul><ul><li>Reusable across multiple apps or services</li></ul>
 
+
+For more information, please see [Managed Identities.](/docs/036-Microsoft-Azure/003-Azure-Services/007-IAM/017-Managed-Identities.md)
+
 ### Deploy App Configuration 
 
 To deploy an App Configuration instance, log in to the Azure portal and navigate to **App Configuration**.
@@ -238,6 +241,8 @@ Applications use specific authentication methods to prove their identity when co
 - **App Registration** requires developers to create and manage credentials
 
 Managed identities are usually preferred because Azure handles credential management automatically.
+
+For more information, please see [Managed Identities.](/docs/036-Microsoft-Azure/003-Azure-Services/007-IAM/017-Managed-Identities.md)
 
 ## Authorization in Key Vault
 
