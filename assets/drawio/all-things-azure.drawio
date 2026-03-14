@@ -1,4 +1,4 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2">
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2" pages="2">
   <diagram name="azure-create-sas-token" id="ixBiHCkr2cNn0BE5TtBx">
     <mxGraphModel dx="1220" dy="689" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -24,6 +24,63 @@
         </mxCell>
         <mxCell id="-ZRRLkJGDCoVWksLPBrV-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=#E6E6E6;" value="" vertex="1">
           <mxGeometry height="10" width="85" x="1235" y="610" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="JULdykHGCJHogK16R8mh" name="azure-uami-sample">
+    <mxGraphModel dx="883" dy="499" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="V-CgjIVoM3IZkBkNuyJe-14" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#E6E6E6;" value="" vertex="1">
+          <mxGeometry height="320" width="740" x="60" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="V-CgjIVoM3IZkBkNuyJe-1" parent="1" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/databases/Data_Factory.svg;" value="" vertex="1">
+          <mxGeometry height="70" width="70" x="90" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="V-CgjIVoM3IZkBkNuyJe-2" parent="1" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/integration/Logic_Apps_Custom_Connector.svg;" value="" vertex="1">
+          <mxGeometry height="70" width="70" x="90" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="V-CgjIVoM3IZkBkNuyJe-3" parent="1" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/identity/Entra_Managed_Identities.svg;" value="" vertex="1">
+          <mxGeometry height="70" width="78.76" x="490.62" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="V-CgjIVoM3IZkBkNuyJe-4" edge="1" parent="1" source="V-CgjIVoM3IZkBkNuyJe-1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.003;entryY=0.31;entryDx=0;entryDy=0;entryPerimeter=0;curved=0;endArrow=block;endFill=1;" target="V-CgjIVoM3IZkBkNuyJe-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="240" y="215" />
+              <mxPoint x="240" y="302" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V-CgjIVoM3IZkBkNuyJe-5" edge="1" parent="1" source="V-CgjIVoM3IZkBkNuyJe-2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.857;entryDx=0;entryDy=0;entryPerimeter=0;curved=0;" target="V-CgjIVoM3IZkBkNuyJe-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="240" y="405" />
+              <mxPoint x="240" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V-CgjIVoM3IZkBkNuyJe-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;" value="Data Factory" vertex="1">
+          <mxGeometry height="30" width="100" x="75" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="V-CgjIVoM3IZkBkNuyJe-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;" value="Logic Apps" vertex="1">
+          <mxGeometry height="30" width="100" x="75" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="V-CgjIVoM3IZkBkNuyJe-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;" value="User-assigned&lt;div&gt;Managed Identity&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="100" x="480" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="V-CgjIVoM3IZkBkNuyJe-9" parent="1" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/storage/Storage_Accounts_Classic.svg;" value="" vertex="1">
+          <mxGeometry height="60" width="75" x="692.5" y="284" as="geometry" />
+        </mxCell>
+        <mxCell id="V-CgjIVoM3IZkBkNuyJe-10" edge="1" parent="1" source="V-CgjIVoM3IZkBkNuyJe-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=block;endFill=1;" target="V-CgjIVoM3IZkBkNuyJe-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="V-CgjIVoM3IZkBkNuyJe-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;" value="Storage Account" vertex="1">
+          <mxGeometry height="30" width="100" x="680" y="349" as="geometry" />
+        </mxCell>
+        <mxCell id="V-CgjIVoM3IZkBkNuyJe-13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;fillColor=none;align=left;" value="Both Azure services can use the same managed identity to access the Storage Account" vertex="1">
+          <mxGeometry height="50" width="210" x="260" y="230" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
