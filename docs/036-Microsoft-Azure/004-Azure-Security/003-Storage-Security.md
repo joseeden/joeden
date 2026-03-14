@@ -57,7 +57,7 @@ To create a SAS token, navigate to **Storage accounts** and select the desired s
 
 <div class='img-center'>
 
-![](/img/docs/all-things-azure-create-sas-token.png)
+![](/img/docs/Screenshot2026-03-14205417.png)
 
 </div>
 
