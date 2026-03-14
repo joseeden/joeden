@@ -15,13 +15,15 @@ last_update:
 
 Decorators are functions that **wrap other functions** to modify their behavior. They can change inputs, outputs, or even the way the function works internally.
 
-- Decorators take a function as an argument and return a new function
-- They can modify inputs before passing them to the original function
+- They can modify inputs before passing to the original function
 - They can modify outputs after the original function runs
 - They can completely change the behavior of the original function
 
-A decorator in Python is usually applied with the `@` symbol above a function definition. This is a shortcut for assigning the decorated function to the original function name.
+Decorators are ideal when you want to add the same behavior to multiple functions. Instead of repeating code, you wrap functions with a decorator.
 
+- Adds shared behavior without repeating code
+- Keeps functions clean and readable
+- Follows the “DRY (Don't Repeat Yourself)” principle
 
 ## Creating a Simple Decorator
 
@@ -189,7 +191,13 @@ Overwriting is commonly used when the decorated behavior should fully replace th
 
 ## Decorator syntax with `@`
 
-Python allows a **shortcut** for applying decorators using `@`:
+Python allows a **shortcut** for applying decorators using `@`.
+
+- Uses `@decorator_name` above a function
+- Automatically applies the decorator to the function
+- Reassigns the decorated function to the same name
+
+Example using the decorator `double_args` with the function `multiply`:
 
 ```python
 @double_args
@@ -197,7 +205,7 @@ def multiply(a, b):
     return a * b
 ```
 
-This is equivalent to:
+This syntax is simply a shortcut. Python internally performs the same operation as the example below, where the function `multiply` is passed to `double_args` and the returned function replaces the original `multiply`.
 
 ```python
 def multiply(a, b):
@@ -206,7 +214,52 @@ def multiply(a, b):
 multiply = double_args(multiply)
 ```
 
-The `@double_args` line just automatically applies the decorator and assigns the result back to the function name.
+Additionally, decorators have very similar docstrings because they follow the same structure. 
+
+```python
+def double_args(func):
+    """
+    Decorator that doubles the arguments 
+    before calling the function.
+
+    Args:
+        func (function): The original function to be decorated.
+
+    Returns:
+        function: A new function that doubles its input arguments 
+                  before calling the original function.
+    """
+    def wrapper(a, b):
+        return func(a * 2, b * 2)
+    return wrapper
+
+@double_args
+def multiply(a, b):
+    return a * b
+
+print(multiply(3, 4))
+```
+
+You can also just include only the description in the docstrings.
+
+```python
+def double_args(func):
+    """
+    Decorator that doubles the arguments 
+    before calling the function.
+    """
+    def wrapper(a, b):
+        return func(a * 2, b * 2)
+    return wrapper
+
+@double_args
+def multiply(a, b):
+    return a * b
+
+print(multiply(3, 4))
+```
+
+
 
 ## Examples
 
@@ -258,6 +311,17 @@ Example:
 import time
 
 def timer(func):
+
+    """
+    A decorator that prints how long a function took to run.
+
+    Args:
+      func (callable): The function being decorated.add()
+
+    Returns:
+      callable: The decorated function.
+    """ 
+
     def wrapper(*args, **kwargs):
         start = time.time()
         result = func(*args, **kwargs)
@@ -267,19 +331,49 @@ def timer(func):
     return wrapper
 
 @timer
-def sleep_n_seconds(n):
+def sleep_in_seconds(n):
     time.sleep(n)
 
-sleep_n_seconds(5)
+sleep_in_seconds(5)
 ```
 
 Output:
 
 ```bash
-sleep_n_seconds took 5.00 seconds
+sleep_in_seconds took 5.00 seconds
 ```
 
-You can use this for any function to quickly check performance.
+Another way to write the code:
+
+```python
+import time
+
+def timer(func):
+
+    """
+    A decorator that prints how long a function took to run.
+
+    Args:
+      func (callable): The function being decorated.add()
+
+    Returns:
+      callable: The decorated function.
+    """ 
+
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        total = time.time() - start
+        print("{} took {} seconds".format(func.__name__, total))
+        return result
+    return wrapper
+
+@timer
+def sleep_in_seconds(n):
+    time.sleep(n)
+
+sleep_in_seconds(5)
+```
 
 ### Memoizing a Function
 
@@ -289,13 +383,18 @@ Memoization stores the results of expensive function calls. When the function is
 - Checks cache before running the function
 - Stores new results in the cache
 
-Example:
+Below is an example of a memoize function.
 
 ```python
 import time
 
 def memoize(func):
+    """
+    Store the results of the decorated function for a fast lookup
+    """
+
     cache = {}
+
     def wrapper(*args):
         if args in cache:
             return cache[args]
@@ -309,11 +408,41 @@ def slow_sum(a, b):
     time.sleep(5)
     return a + b
 
-print(slow_sum(3, 4))  # Takes 5 seconds
-print(slow_sum(3, 4))  # Returns immediately
+print(slow_sum(6, 2))  # Takes 5 seconds
+print(slow_sum(6, 2))  # Returns immediately
 ```
 
-Memoization is helpful for functions that are called often with the same inputs, saving time and resources.
+**Note:** The code above  handles only **positional arguments (`*args`)**. If you call `slow_sum(a=6, b=2)` with keyword arguments, it won’t work.
+
+If you want to handle both **positional (`*args`)** and **keyword (`**kwargs`)** arguments, you can change the code a bit and convert `kwargs` into a sorted tuple to make it hashable for the cache key. 
+
+Here, the cache key is now `(args, kwargs_key)`.
+
+```python
+import time
+
+def memoize(func):
+    """
+    Store the results of the decorated function for a fast lookup
+    """
+
+    cache = {}
+
+    def wrapper(*args, **kwargs):
+        kwargs_key = tuple(sorted(kwargs.items()))
+        if (args, kwargs_key) not in cache:
+            cache[(args, kwargs_key)] = func(*args, **kwargs)
+        return cache[(args, kwargs_key)]
+    return wrapper
+
+@memoize
+def slow_sum(a, b):
+    time.sleep(5)
+    return a + b
+
+print(slow_sum(6, 2))  # Takes 5 seconds
+print(slow_sum(a=6, b=2))  # Returns immediately
+```
 
 :::info[Memorization vs Memoization]
 
@@ -326,12 +455,3 @@ Think of memoizing like keeping a **mini cheat sheet for a function.** You “re
 
 ::: 
 
-## When to Use Decorators
-
-Decorators are ideal when you want to add the same behavior to multiple functions. Instead of repeating code, you wrap functions with a decorator.
-
-- Adds shared behavior without repeating code
-- Keeps functions clean and readable
-- Follows the “DRY (Don't Repeat Yourself)” principle
-
-Using decorators lets you maintain code consistency and simplifies updates. You can add features like timing, logging, or caching easily.
