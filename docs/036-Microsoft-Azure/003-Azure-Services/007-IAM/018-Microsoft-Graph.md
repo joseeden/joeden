@@ -168,3 +168,87 @@ There are two types: Standard headers and API-specific headers.
 | API-specific     | Location      | Tracks long-running operations           | `Location: https://graph.microsoft.com/...` |
 
 Headers ensure requests and responses are secure, formatted correctly, and provide necessary control information.
+
+
+
+
+## Advanced Microsoft Graph
+
+### Pagination
+
+Microsoft Graph can handle large datasets efficiently by splitting results into smaller pages. **Pagination** makes responses faster and prevents timeouts.
+
+| Category  | Server-side Pagination           | Client-side Pagination                     |
+| --------- | -------------------------------- | ------------------------------------------ |
+| Page size | Uses default page size           | You can specify number of items per page   |
+| Control   | Managed by Graph                 | Controlled by the client                   |
+| Use case  | Quick access without extra setup | When you need custom page sizes or offsets |
+
+**Server-side pagination** returns a default number of items per page without specifying size. 
+
+For example:
+
+```http
+GET /users
+```
+
+This returns 100 users per page. If more exist, Graph provides a continuation link called `@odata.nextLink` to fetch the next page.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-15042225.png)
+
+</div>
+
+**Client-side pagination** lets you set the number of items per page using query parameters like `$top` for page size and `$skip` to start after a certain number of items. 
+
+For example, to fetch two groups per page:
+
+```http
+GET /groups?$top=2
+```
+
+Pagination ensures large datasets can be handled efficiently while keeping processing manageable.
+
+### Batching
+
+Batching allows combining multiple API requests into a single call. This reduces network trips and improves performance.
+
+- A single batch can include up to 20 requests
+- Each request in a batch has an `id`, `method`, `url`, and optional headers/body
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-15044405.png)
+
+</div>
+
+To send a batch request:
+
+```http
+POST /$batch
+Content-Type: application/json
+
+{
+  "requests": [
+    {
+      "id": "1",
+      "method": "GET",
+      "url": "/users"
+    },
+    {
+      "id": "2",
+      "method": "GET",
+      "url": "/groups"
+    }
+  ]
+}
+```
+
+The response includes an array of responses, each with `id`, `status`, headers, and `body` containing data or errors. Batching reduces repeated requests and makes dashboards or multiple operations faster.
+
+:::info 
+
+Both pagination and batching help manage large datasets and multiple requests efficiently while keeping network traffic low and responses easy to handle.
+
+:::
