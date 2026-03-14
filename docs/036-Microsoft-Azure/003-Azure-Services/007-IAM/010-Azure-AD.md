@@ -11,18 +11,19 @@ last_update:
   date: 11/16/2020
 ---
 
-## Microsoft Entra ID 
+## Overview
 
-Microsoft Entra ID (previously known as Azure AD) is Microsoft's cloud-based identity and access management service which allows you to control access to internal and external resources. 
+Azure AD, now called **Microsoft Entra ID**, is Microsoft's cloud-based identity and access management service which allows you to control access to internal and external resources. 
 
 - It allows you to create and manage user accounts. 
-- Credentials are verified with Active Directory 
+- Supports cloud apps like Microsoft 365 and on-premises apps
+- Works with users, groups, devices, and roles
 
 When you set up an environment on Azure, instead of using Active Directory, you use Azure Active Directory. 
 
-- It’s quite similar, but it’s used for accessing cloud applications. 
-- That includes cloud applications outside of Azure, too, such as Microsoft 365. 
-- It can even be used for accessing web-based applications in your on-premises environment.
+- Similar, but it’s used for accessing cloud applications. 
+- Includes cloud applications outside of Azure, too, such as Microsoft 365. 
+- used for accessing web-based appSs in your on-premises environment.
 
 To access it, go to the Microsoft Azure portal and search for **Microsoft Entra ID**.
 
@@ -61,13 +62,7 @@ The Microsoft Entra admin center:
 
 ### Users 
 
-Microsoft Entra ID manages identities using users and groups.
-
-- Users represent individual identities
-- Users can be internal employees or external guests
-- Groups help manage permissions for multiple users
-
-There are two types of users:
+Users represent individual identities in your organization. There are two types of users:
 
 - **Internal users** are usually employees
 - **External users** can be guests, e.g vendors, partners who need temporary access. 
@@ -99,7 +94,7 @@ To add a user, click **New user.** It provides you with options: Create a new us
 
 ### Groups 
 
-**Groups** make access management easier because permissions can be assigned to many users at the same time instead of individually.
+**Groups** simplify permission management by letting you assign access to many users at once.
 
 - Security groups control access to resources
 - Microsoft 365 groups support collaboration and teamwork
@@ -144,11 +139,24 @@ Using roles keeps administrative access controlled and prevents users from havin
 
 External Identities allow organizations to give access to people outside the company, such as partners, suppliers, or customers.
 
-- B2B Collaboration
-- B2B Direct Connect
+- B2B Collaboration (part of Azure AD B2B)
+- B2B Direct Connect (part of Azure AD B2B)
 - Azure AD B2C (Business-to-Consumer)
 
 These features help organizations securely work with external users while still controlling access through Microsoft Entra ID.
+
+### Azure AD B2B (Business-to-Business)
+
+Azure AD B2B enables secure sharing of apps and services with guest users from external organizations while allowing them to retain control over their data. 
+
+![](/img/docs/azure-b2b.png)
+
+**Note**: Azure AD B2B is the main term for external collaboration in Microsoft Entra ID. It includes two approaches:
+
+| Term               | How it works                                                            | Example                                     |
+| ------------------ | ----------------------------------------------------------------------- | ------------------------------------------- |
+| B2B Collaboration  | External users are added as guest accounts in your directory            | A partner accessing a shared app as a guest |
+| B2B Direct Connect | Creates a trust relationship with another tenant without guest accounts | Teams shared channel with another company   |
 
 ### B2B Collaboration
 
@@ -171,9 +179,9 @@ Instead of creating guest accounts, the user continues to authenticate in their 
 
 This model is mainly used for **Microsoft Teams shared channels**.
 
-### Azure AD B2C (Business-to-Consumer)
+### Azure AD B2C (Business-to-Consumer
 
-Azure AD B2C is designed for applications used by customers rather than employees or partners.
+Azure AD B2C (Business-to-Consumer) is designed for applications used by customers rather than employees or partners.
 
 - Used for customer-facing applications
 - Allows customers to sign in using different identity providers
@@ -181,14 +189,23 @@ Azure AD B2C is designed for applications used by customers rather than employee
 
 It allows organizations users to authenticate using social accounts or other identity providers. It operates as a separate service but uses the same identity technology as Microsoft Entra ID.
 
+![](/img/docs/azure-b2ccc.png)
+
+It integrates well with various applications and commercial software and supports standards-based authentication protocols:
+
+- OpenID Connect
+- OAuth 2.0
+- SAML
+
+
 ## Azure AD Connect
 
 ![](/img/docs/azure-ad-connectsss.png)
 
 If you already have an on-premises Active Directory implementation, you don’t have to recreate all of your users and groups in Azure Active Directory. Instead, you can synchronize your accounts between the two systems using Azure AD Connect.
 
-- Automatically creates accounts on Azure for you
-- Keeps the accounts synced when changes are made to the accounts in Active Directory
+- Automatically creates accounts on Azure 
+- Keeps accounts synced with on-prem changes
 
 Azure AD Connect also allows single sign-on (SSO), which means users only need to log in once to access both their on-premises environment and their Azure environment. You can also use SSO to access Microsoft 365.
 
@@ -217,30 +234,9 @@ Many organizations will share the same tenant among all of their subscriptions. 
 If you want to move an existing subscription to a central tenant:
 
 - Change which tenant it is associated with
-- Note that a subscription can’t have multiple tenants associated with it
+- Subscription can’t have multiple tenants associated with it
 
 ## Azure AD Services
-
-### Azure AD B2B (Business-to-Business)
-
-Azure AD B2B enables secure sharing of apps and services with guest users from external organizations while allowing them to retain control over their data. 
-
-![](/img/docs/azure-b2b.png)
-
-It provides an easy-to-use invitation and redemption process for external users to use their own credentials to access partner resources
-
-
-### Azure AD B2C (Business-to-Customer)
-
-Azure AD B2C offers identity as a service for customer access via single sign-on. 
-
-![](/img/docs/azure-b2ccc.png)
-
-It integrates well with various applications and commercial software and supports standards-based authentication protocols:
-  - OpenID Connect
-  - OAuth 2.0
-  - SAML
-
 
 ### Microsoft Entra Domain Services 
 
@@ -251,14 +247,17 @@ When migrating on-premises applications to Azure, a potential challenge arises w
 Dealing with this issue requires careful consideration. Possible solutions can include:
 
 - **Azure Users Authenticating to On-Premises Active Directory:**
+
   - Not recommended for migration to Azure.
   - Azure users authenticate to on-premises Active Directory.
 
 - **Running Azure-Based Active Directory Domain Controllers:**
+
   - Deploy and replicate Active Directory domain controllers on Azure.
   - Requires regular maintenance tasks (e.g., patching, backups).
 
 - **Azure AD Domain Services (Azure AD DS):**
+
   - Managed service that handles domain controller operations.
   - Supports legacy authentication protocols (e.g., NTLM, Kerberos).
 
@@ -280,3 +279,13 @@ Features include:
 - Group Policy support
 
 ![](/img/docs/azure-adds-sync-onprem-to-azure-ad.png)
+
+### Microsoft Identity Platform
+
+The Microsoft Identity Platform extends Entra ID for applications.
+
+- Enables apps to sign in users and request access securely
+- Uses OAuth 2.0 for permissions and OpenID Connect for identity
+- Includes MSAL, App Registration, and Microsoft Graph API
+
+For more information, please see [Microsoft Identity Platform.](/docs/036-Microsoft-Azure/003-Azure-Services/007-IAM/015-Microsoft-Identity-Platform.md)
