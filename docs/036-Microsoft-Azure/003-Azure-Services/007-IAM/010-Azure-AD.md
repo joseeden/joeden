@@ -55,25 +55,129 @@ The Microsoft Entra admin center:
 </div>
 
 
+## Core Components 
+
+### Users 
+
+Microsoft Entra ID manages identities using users and groups.
+
+- Users represent individual identities
+- Users can be internal employees or external guests
+- Groups help manage permissions for multiple users
+
+There are two types of users:
+
+- **Internal users** are usually employees
+- **External users** can be guests, e.g vendors, partners who need temporary access. 
+
+Administrators can track user information such as sign-ins, roles, group memberships, and registered devices. This helps keep access secure and easier to manage.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-14183604.png)
+
+</div>
+
+In the Microsoft Entra Admin Center, click **Users** to view the users.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-14184518.png)
+
+</div>
+
+To add a user, click **New user.** It provides you with options: Create a new user or Invite an external user.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-14184721.png)
+
+</div>
+
+
+### Groups 
+
+**Groups** make access management easier because permissions can be assigned to many users at the same time instead of individually.
+
+- Security groups control access to resources
+- Microsoft 365 groups support collaboration and teamwork
+
+Security groups are commonly used to control access to applications, resources, or services. Microsoft 365 groups are designed for collaboration features such as shared mailboxes, calendars, and files. 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-14183659.png)
+
+</div>
+
+
+### Devices
+
+Devices represent computers or mobile devices that are connected to the organization's identity system.
+
+- Devices can be registered in Entra ID
+- Devices allow secure access to resources
+- Devices can follow compliance policies
+
+When a device is registered, Microsoft Entra ID can monitor its status and apply security policies. Administrators can check device health and enforce rules before allowing access to company resources. 
+
+Devices can also support **hybrid identity environments**, where systems work across both cloud and on-premises infrastructure.
+
+### Roles 
+
+Roles define what actions a user is allowed to perform inside Microsoft Entra ID.
+
+- Roles control permissions for administrators
+- Built-in roles provide common permissions
+- Custom roles allow specific access control
+
+Microsoft Entra ID includes built-in administrative roles such as **Global Administrator** and **User Administrator**. These roles already contain predefined permissions for managing users, applications, and services.
+
+Organizations can also create **custom roles** when they need more specific permission sets. This helps ensure users receive only the access required to perform their job.
+
+Using roles keeps administrative access controlled and prevents users from having unnecessary privileges.
+
 
 ## External Identities
 
-For scenarios where external users, such as partners, suppliers, or customers, require access, Azure AD provides the External Identities feature. It includes three components:
+External Identities allow organizations to give access to people outside the company, such as partners, suppliers, or customers.
 
-- **B2B Collaboration**
+- B2B Collaboration
+- B2B Direct Connect
+- Azure AD B2C (Business-to-Consumer)
 
-    - External users are represented in your Azure AD directory as guest users.
+These features help organizations securely work with external users while still controlling access through Microsoft Entra ID.
 
-- **B2B Direct Connect**
+### B2B Collaboration
 
-    - Establishes a mutual trust relationship with another Azure AD organization.
-    - External users aren't represented in your directory; your directory trusts identities in their directory.
-    - Primarily supports Microsoft Teams shared channels.
+With B2B Collaboration, the external users appear as **guest accounts** in the directory and can access specific applications or resources that are shared with them.
 
-- **Azure AD B2C (Business-to-Consumer)**
+- External users are added as guest users
+- Guest users exist in your directory
+- Access can be controlled with groups and roles
 
-    - Enables the publishing of consumer-facing applications for customer access.
-    - Functions as a separate service built on Azure AD technology.
+This allows organizations to collaborate with partners while still controlling permissions.
+
+### B2B Direct Connect
+
+B2B Direct Connect establishes a direct trust relationship between two organizations
+
+- External users are not stored in your directory
+- Mainly used for Microsoft Teams shared channels
+
+Instead of creating guest accounts, the user continues to authenticate in their own organization.
+
+This model is mainly used for **Microsoft Teams shared channels**.
+
+### Azure AD B2C (Business-to-Consumer)
+
+Azure AD B2C is designed for applications used by customers rather than employees or partners.
+
+- Used for customer-facing applications
+- Allows customers to sign in using different identity providers
+- Runs as a separate service built on Azure AD technology
+
+It allows organizations users to authenticate using social accounts or other identity providers. It operates as a separate service but uses the same identity technology as Microsoft Entra ID.
 
 ## Azure AD Connect
 
