@@ -15,107 +15,89 @@ last_update:
 
 ## Identity and Access Management 
 
-Azure provides a comprehensive suite of access management and identity services, allowing organizations to tailor their security measures based on specific needs. 
+Azure provides tools to manage identities and control access, and it helps organizations secure their resources effectively.
 
-- Role-Based Access Control (RBAC) ensures granular control over resource Access.
-- Azure AD facilitates secure identity and access management for users, applications, and external collaborations. 
-- Additionally, services like Azure AD DS and Azure MFA enhance security and streamline authentication processes.
+| Feature                 | Description                                                                                         |
+| ----------------------- | --------------------------------------------------------------------------------------------------- |
+| RBAC                    | <ul><li>Gives precise control over who can access Azure resources</li></ul>                         |
+| Azure AD                | <ul><li>Manages user identities and application access</li><li>Supports external partners</li></ul> |
+| Azure AD DS & Azure MFA | <ul><li>Strengthen security</li><li>Simplify authentication</li></ul>                               |
+
 
 ## Role-Based Access Control (RBAC)
 
-RBAC is an authorization system built on Azure Resource Manager, providing fine-grained access management for Azure resources.
-- Manages user access to specific Azure resources, 
-- Define their permissions and scope.
-- Enables segregation of duties
-- Grant users the [least privilege](/docs/025-Cybersecurity/026-Identity-and-Access-Management/005-IAM-Concepts.md#principle-of-least-privilege) needed for their tasks.
-- Effective in organizations with diverse resource needs.
+RBAC is built on Azure Resource Manager and provides detailed access control for Azure resources.
 
-Example Scenario:
+- Assigns users to roles with specific permissions and scope.
+- Ensures users have only the access they need ([least privilege](/docs/025-Cybersecurity/026-Identity-and-Access-Management/005-IAM-Concepts.md#principle-of-least-privilege)).
+- Helps separate duties across teams.
+- Ideal for organizations with multiple resources and teams.
 
-  - Allow different user groups to manage distinct resources (e.g., VMs, virtual networks, SQL databases) based on their roles.
-  - Enables segregation of duties within your organization by allowing only the least amount of access that is needed by users to do their jobs.
+**Example Scenario:**
 
-    ![](/img/docs/azure-rbac-recommended-by-azure.png)
+- Different teams manage specific resources (e.g., VMs, networks, databases).
+- Each user gets only the access needed for their role, reducing risk.
 
-
+![](/img/docs/azure-rbac-recommended-by-azure.png)
 
 
 ## Microsoft Entra ID 
 
 Previously known as "Azure Active Directory", Microsoft Entra ID is a cloud-based identity and access management service by Microsoft which allows you to control access to internal and external resources. 
 
-Usage:
-
-- IT Admins: 
-   - Control access to applications
-   - Enforce multi-factor authentication
-   - Automate user provisioning.
-
-- App Developers: 
-   - Add single sign-on to applications.
-
-- Subscribers: 
-   - Automatic Azure AD tenants for services like Microsoft 365, Office 365, and Azure.
-
-
 For more information, please see [Microsoft Entra ID.](/docs/036-Microsoft-Azure/003-Azure-Services/007-IAM/010-Azure-AD.md)
+
+| Role           | Description                                                                                                                     |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| IT Admins      | <ul><li>Control access to applications</li><li>Enforce multi-factor authentication</li><li>Automate user provisioning</li></ul> |
+| App Developers | <ul><li>Add single sign-on to applications</li></ul>                                                                            |
+| Subscribers    | <ul><li>Automatic Azure AD tenants for services like Microsoft 365, Office 365, and Azure</li></ul>                             |
+
 
 ## Identity Protection 
 
-This feature automatically detects and assesses risks associated with user logins, including potential intrusion attempts. Key functionalities include:
-
+This feature automatically detects and assesses risks associated with user logins. Key functionalities include:
 
 - **Automated Risk Detection**
 
-    - Identifies suspicious activities such as logins from anonymous IP addresses or unexpected locations.
-    - Detects password spray attacks where an attacker attempts the same password across multiple accounts.
+ - Detects suspicious logins (e.g., unusual locations or anonymous IPs)
+ - Identifies password spray attacks (same password across multiple accounts)
+ - Flags other risky sign-in behaviors
 
 - **Automated Remediation**
 
-    - Configurable actions triggered upon detecting risky login attempts.
-    - Options include requiring multifactor authentication or blocking the login attempt.
+ - Triggers can be configured for risky logins
+ - Can require MFA or blockng the login attempt
 
 - **Manual Investigation**
 
-    - Organizations can choose to investigate detected risks manually if they opt not to use automated remediation.
+ - Allows administrators to review risky sign-ins
+ - Can override automated actions 
+ - Supports custom investigation processes
 
 - **Integration with SIEM**
 
-    - Export risk detection data to Security Information and Event Management (SIEM) systems for additional analysis.
-    - For more information, please see [SIEM](/docs/025-Cybersecurity/029-Security-Operations/032-SIEM.md)
+ - Export risk detection data to [SIEM](/docs/025-Cybersecurity/029-Security-Operations/032-SIEM.md) systems
+ - Supports centralized monitoring and advanced analysis
 
 
 
 ## Privileged Identity Management (PIM)
 
-To safeguard administrator accounts and prevent unauthorized access, Microsoft offers the Privileged Identity Management (PIM) service. PIM focuses on:
+Microsoft’s Privileged Identity Management (PIM) protects administrator accounts and prevents unauthorized access, and it ensures that elevated privileges are granted only when needed.
 
+| Feature                 | Description                                                                                                                                                |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Access Reviews**      | PIM requires regular reviews of administrator accounts, and Access Reviews are the process to ensure only necessary privileges remain assigned.                        |
+| **Just-In-Time Access** | PIM enforces temporary elevation of privileges, and Just-In-Time Access is how eligible users request and gain those elevated roles only when needed.                  |
+| **Audit Trail**         | PIM logs all privileged activities, and the Audit Trail provides a detailed record of who activated roles, when, and what actions were taken, ensuring accountability. |
 
-### Access Reviews
+#### How "Just-In-Time Access" works 
 
-This requires the regular reviews of the list of administrators to ensure only necessary privileges are assigned.
+1. Certain users are marked as eligible for administrator tasks
+2. These certain users do not have permanent permissions.
+3. When they need elevated access, they request role activation.
+4. They may complete multifactor authentication and provide a reason.
+5. If approval is required, an approver activates the role.
+6. The activation lasts for a limited time, and users must repeat the process for future tasks.
 
-### Just-In-Time Access
-
-Eligible users request activation of elevated roles only when needed. Activation may require multifactor authentication, role activation approval, and a specified reason.
-
-**How it works**
-
-1. Certain users are designated as eligible to perform administrator tasks but don’t have those permissions all the time. 
-
-2. If an eligible user needs to perform an administrator task, then they have to request activation of an elevated role.
-
-3. The user might have to perform multifactor authentication. 
-
-4. They have to enter a reason for the activation request. 
-
-5. Finally, if the role requires activation approval, then they’ll have to wait for an approver to activate their role. 
-
-6. This activation will only last for a limited amount of time, so after the activation expires, they’ll have to go through the same process again.
-
-### Audit Trail
-
-Maintains a detailed audit trail of administrator activities for accountability and security monitoring.    
-
-
-  
