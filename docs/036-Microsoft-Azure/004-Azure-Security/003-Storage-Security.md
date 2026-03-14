@@ -43,34 +43,84 @@ For more information: [Azure Storage Service Encryption](https://docs.microsoft.
 
 ## Shared Access Signatures (SAS)
 
-Provides secure granular access to storage resources without compromising data security.
+A **Shared Access Signatures (SAS)** is a URL token that gives temporary, controlled access to Azure Storage resources. It defines who can do what, and for how long, without exposing your account key.
 
-![](/img/docs/azure-sas-tokennns.png)
+<div class='img-center'>
 
-### Types
+![](/img/docs/Screenshot2026-03-14195806.png)
 
-- **User Delegation SAS** 
-    - Applies to Blob storage
-    - Secured with Azure AD credentials
-    - Microsoft recommends to use Azure AD credentials whenever possible to enhance security
+</div>
 
-- **Service SAS** 
-    - Secured with the storage account key
-    - Used to delegate access to a specific service (Blob, Queue, Table, or Azure Files)
+### Types of SAS
 
-- **Account SAS** 
-    - Secured with the storage account key
-    - Used to delegate access to one or more storage services
+There are three SAS types with different scopes and security levels:
+
+| SAS type            | Credentials used            | How it works                                                               | Example                                                         |
+| ------------------- | --------------------------- | -------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| User Delegation SAS | Microsoft Entra credentials | Grants access to specific blobs or Data Lake Storage; tied to a user       | HR app shares payroll reports securely with an external auditor |
+| Service SAS         | Storage account key         | Grants access to a single service like blobs, queues, or files             | A ticket valid for accessing only the blob service              |
+| Account SAS         | Account key                 | Grants access across multiple services and allows service-level operations | Master pass giving access to multiple storage services at once  |
+
+:::info 
+
+User Delegation SAS is the most secure because it avoids storing keys and is tied to a specific user identity.
+
+:::
 
 ### How SAS works
 
-- SAS is a signed URI with a special token and query parameters, including a signature.
-- SAS URI is then presented to Azure Storage as part of a request
-- Azure checks SAS parameters and signature for validity; declines unauthorized requests.
+Shared Access Signatures (SAS) works by using a signed URI that tells Azure what actions are allowed and for how long.
+
+- SAS is a signed URI with a special token and query parameters, including a signature
+- SAS URI is sent to Azure Storage as part of a request
+- Azure checks the token and signature for validity
+- Unauthorized requests are declined
 
 ![](/img/docs/azure-sas-how-it-worksss.png)
 
-  
+For example, a web app needs to share payroll reports with an external auditor:
+
+1. Uses User Delegation SAS to grant temporary access
+2. Auditor can only view the specific payroll reports they need
+3. Access automatically expires after a set time
+4. SAS is authenticated with PeopleSphere’s Azure credentials
+
+This ensures sensitive account keys are never exposed while granting precise, temporary access.
+
+
+
+### SAS Structure
+
+A SAS starts with a **URI to the storage resource** and appends a SAS token. The token contains key-value pairs defining permissions, time limits, and resource type.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-14200002.png)
+
+</div>
+
+
+**Token components:**
+
+| Component   | Description                                          |
+| ----------- | ---------------------------------------------------- |
+| `sp`        | Permissions granted, such as read or write           |
+| `st` / `se` | Start time (`st`) and expiry time (`se`) for the SAS |
+| `spr`       | Allowed protocol, like HTTPS or HTTP                 |
+| `sr`        | Resource type, e.g., `"b"` for blob                  |
+| `sv`        | Storage API version used                             |
+| `sig`       | Cryptographic signature that verifies the request    |
+
+
+### Best Practices
+
+- Always use **HTTPS** to prevent token interception
+- Prefer **User Delegation SAS** for better security
+- Keep expiration times short to minimize risk if tokens are leaked
+- Only grant **necessary permissions**
+- If unsure, avoid SAS and use a secure backend service
+
+
 
 ## Storage Account Keys
 

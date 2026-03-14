@@ -15,7 +15,7 @@ last_update:
 
 The **Microsoft Identity Platform** helps applications sign in users and access resources securely. It builds on **Microsoft Entra ID**, which provides the core identity service, while the Identity Platform gives developers tools to manage authentication and authorization.
 
-<div>
+<div class='img-center'>  
 
 ![](/img/docs/Screenshot2026-03-14185721.png)
 
@@ -131,7 +131,7 @@ Both types require **consent** to ensure apps only access what they are allowed 
 
 For example, a scope like `Secrets.Read` lets the app to read secrets from a vault.
 
-<div>
+<div class='img-center'>  
 
 ![](/img/docs/Screenshot2026-03-14192041.png)
 

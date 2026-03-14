@@ -261,16 +261,16 @@ Dealing with this issue requires careful consideration. Possible solutions can i
   - Managed service that handles domain controller operations.
   - Supports legacy authentication protocols (e.g., NTLM, Kerberos).
 
-**Microsoft Entra Domain Services**, previously known as Azure AD Domain Services or Azure AD DS, is a cloud offering providing managed domain services compatible with on-prem Active Directory.
+**Microsoft Entra Domain Services**, previously known as Azure AD Domain Services or Azure AD DS, provides managed domain services compatible with on-prem Active Directory.
 
-- Eliminates the need for deploying, managing, or patching domain controllers.
-- Resource access can be controlled through existing groups and user accounts.
-- Replicates identity information from Azure AD or synchronizes from on-prem AD
-- Use **Azure AD Connect** to sync on-prem AD with your Azure AD Domain Services.
-- Supports Lightweight Directory Access Protocol (LDAP).
-- **Windows 10 Computer Integration:** Allows joining computers to domains and applying group policies.
+- No need to deploy or maintain domain controllers.
+- Control access using existing users and groups.
+- Sync identities from Azure AD or on-prem AD.
+- Use **Azure AD Connect** for on-prem AD synchronization.
+- Supports LDAP and Windows domain join.
+- Apply group policies to Windows 10 devices.
 
-Features include:
+**Key features:**
 
 - Domain Join
 - LDAP
