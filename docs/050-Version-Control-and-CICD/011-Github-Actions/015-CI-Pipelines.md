@@ -98,9 +98,9 @@ jobs:
 
 5. **Check the Workflow Execution**  
     - On the repository page, see the status icons:  
-      - 🟠 Amber circle → Running  
-      - ✅ Green check → Success  
-      - ❌ Red cross → Failed  
+      - 🟠 Amber circle ➔ Running  
+      - ✅ Green check ➔ Success  
+      - ❌ Red cross ➔ Failed  
 
 5. **Inspect the Logs**  
     - Click **Actions** to view the latest runs.  
@@ -146,8 +146,8 @@ workflow:
 This structure ensures **clear execution steps** and **automatic failure alerts** in CI workflows.
 
 - **Block Styles**  
-  - `|` (Literal) → Preserves command formatting.  
-  - `>-` (Folded) → Converts newlines into spaces for a cleaner message.  
+  - `|` (Literal) ➔ Preserves command formatting.  
+  - `>-` (Folded) ➔ Converts newlines into spaces for a cleaner message.  
 
 - **Dynamic Values**  
   - Uses `${{ config.slack.channels }}` to reference predefined Slack channels.  
@@ -258,9 +258,9 @@ This workflow runs tests and checks when a pull request is created.
 5. **Checking Workflow Execution**  
     GitHub displays workflow status.  
 
-    - 🟠 Amber → Running  
-    - ✅ Green → Success  
-    - ❌ Red → Failed  
+    - 🟠 Amber ➔ Running  
+    - ✅ Green ➔ Success  
+    - ❌ Red ➔ Failed  
 
 6. **Inspecting Logs**  
     Logs help debug workflow runs.  

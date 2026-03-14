@@ -18,11 +18,11 @@ last_update:
 
 Contexts store information about the workflow run.  
 
-- `github` → Workflow details  
-- `env` → Custom environment variables  
-- `secrets` → Encrypted secrets  
-- `job` → Current job details  
-- `runner` → Runner machine info  
+- `github` ➔ Workflow details  
+- `env` ➔ Custom environment variables  
+- `secrets` ➔ Encrypted secrets  
+- `job` ➔ Current job details  
+- `runner` ➔ Runner machine info  
 
 Use them in expressions like this:  
 
@@ -73,7 +73,7 @@ Note that Github does not print secrets in the logs as safety measure.
 Add a secret to a repository:  
 
 1. Go to **Settings** in the repository  
-2. Click **Secrets and Variables** → **Actions**  
+2. Click **Secrets and Variables** ➔ **Actions**  
 3. Click **New repository secret**  
 4. Enter a name and value, then **Add secret**  
 

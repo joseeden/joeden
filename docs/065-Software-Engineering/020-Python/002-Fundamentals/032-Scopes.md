@@ -37,7 +37,7 @@ Scope determines where a variable or object can be accessed in a program. Python
 Python uses a set of rules called **LEGB** to figure out which variable you mean.
 
 ```
-Local → Enclosing → Global → Built-in.
+Local ➔ Enclosing ➔ Global ➔ Built-in.
 ```
 
 How it works:

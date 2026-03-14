@@ -48,7 +48,7 @@ Before setting up Nova Compute, make sure to snapshot all three virtual machines
 
 In VirtualBox, make sure all the three nodes are shut down.
 
-1. Click the menu icon on the controller node → Snapshots → Take
+1. Click the menu icon on the controller node ➔ Snapshots ➔ Take
 
     <div class='img-center'>
 
@@ -64,7 +64,7 @@ In VirtualBox, make sure all the three nodes are shut down.
 
     </div>
 
-3. Click the compute node → Take → Ok
+3. Click the compute node ➔ Take ➔ Ok
 
     <div class='img-center'>
 
@@ -72,7 +72,7 @@ In VirtualBox, make sure all the three nodes are shut down.
 
     </div>
 
-4. Click the block node → Take → Ok
+4. Click the block node ➔ Take ➔ Ok
 
     <div class='img-center'>
 
@@ -587,7 +587,7 @@ Start by preparing the controller node:
     crudini --set /etc/nova/nova.conf DEFAULT firewall_driver nova.virt.firewall.NoopFirewallDriver
     ```
 
-    **Note**: `my_ip` → IP of your controller node’s management interface
+    **Note**: `my_ip` ➔ IP of your controller node’s management interface
 
 20. Enable service user token roles required.
 
@@ -624,8 +624,8 @@ Start by preparing the controller node:
 
     **Notes:**
 
-    - `vncserver_listen` → the IP the VNC server listens on (usually the controller).
-    - `vncserver_proxyclient_address` → IP used by clients connecting through the proxy.
+    - `vncserver_listen` ➔ the IP the VNC server listens on (usually the controller).
+    - `vncserver_proxyclient_address` ➔ IP used by clients connecting through the proxy.
 
  
 22. Configure the Glance location.
@@ -1135,7 +1135,7 @@ Steps:
 
 1. Start by cloning the first compute VM. 
 
-    In VirtualBox, select the `compute1` → `Snapshot 1` → **Clone**
+    In VirtualBox, select the `compute1` ➔ `Snapshot 1` ➔ **Clone**
 
     <div class='img-center'>
 

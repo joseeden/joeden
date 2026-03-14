@@ -413,7 +413,7 @@ Enable it:
 
 ```bash
 [root@tst-rhel ~]# systemctl enable --now tmp.mount
-Created symlink /etc/systemd/system/local-fs.target.wants/tmp.mount → /usr/lib/systemd/system/tmp.mount.
+Created symlink /etc/systemd/system/local-fs.target.wants/tmp.mount ➔ /usr/lib/systemd/system/tmp.mount.
 ```
 
 Checking the status again, we see that the `tmp.mount` is mounted using systemd:

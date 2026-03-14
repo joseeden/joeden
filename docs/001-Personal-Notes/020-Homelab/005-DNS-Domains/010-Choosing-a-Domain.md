@@ -117,14 +117,14 @@ When registering, you can choose how many years to buy upfront. Common options:
 
 - **Security & stability**
 
-  - Important domains (brands, businesses) → register for 5–10 years to avoid accidental expiration.
+  - Important domains (brands, businesses) ➔ register for 5–10 years to avoid accidental expiration.
 
 
 #### Recommendation
 
-- Labs/testing → 1 year for flexibility.
-- Personal projects → 2–3 years for balance.
-- Business-critical → 5–10 years with auto-renew enabled.
+- Labs/testing ➔ 1 year for flexibility.
+- Personal projects ➔ 2–3 years for balance.
+- Business-critical ➔ 5–10 years with auto-renew enabled.
 
 
 

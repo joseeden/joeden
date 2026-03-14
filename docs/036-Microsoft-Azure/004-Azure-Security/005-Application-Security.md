@@ -200,7 +200,7 @@ To use Azure Key Vault, log in to Azure portal and navigate to **Key Vault**.
 
     </div>
 
-4. Open your key vault and go to **Objects** → **Secrets**.
+4. Open your key vault and go to **Objects** ➔ **Secrets**.
 5. Click **Generate/Import** to add your secret.
 
     <div class='img-center'>

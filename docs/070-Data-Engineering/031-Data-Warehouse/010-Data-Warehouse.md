@@ -33,9 +33,9 @@ It supports business intelligence and helps with decision-making.
 
 FourTwenty Furniture Store is a company selling home office furniture. Here's how its data warehouse helps:  
 
-- **Product Forecasting** → Uses past sales data to predict future demand  
-- **Regulatory Compliance** → Stores financial data for audits and reporting  
-- **Business Growth** → Tracks sales trends to plan hiring and production  
+- **Product Forecasting** ➔ Uses past sales data to predict future demand  
+- **Regulatory Compliance** ➔ Stores financial data for audits and reporting  
+- **Business Growth** ➔ Tracks sales trends to plan hiring and production  
 
 ## Ways to Store Data 
 

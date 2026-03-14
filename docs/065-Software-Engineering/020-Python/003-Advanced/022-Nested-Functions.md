@@ -56,7 +56,7 @@ Output:
    ```
 
    Python passes `3` as `y` to the inner function stored in `add_num`. 
-   It calculates `x + y` → `5 + 3 = 8`.
+   It calculates `x + y` ➔ `5 + 3 = 8`.
 
 This shows that `add_num` is a function, `x` is captured in the closure, and `y` is provided when the returned function is called.
 
@@ -149,7 +149,7 @@ print(cube(2))    # Output: Output:  8
    ```
 
    Python passes `4` as `x` to the inner function stored in `square`. 
-   It calculates `x ** n` → `4 ** 2 = 16`.
+   It calculates `x ** n` ➔ `4 ** 2 = 16`.
 
 This shows that `square` and `cube` are functions, `n` is captured by the closure, and `x` is provided when the returned function is called.
 
@@ -299,7 +299,7 @@ Scope determines which variables Python can access at different points in your c
 Python uses a set of rules called **LEGB** to figure out which variable you mean.
 
 ```
-Local → Enclosing → Global → Built-in.
+Local ➔ Enclosing ➔ Global ➔ Built-in.
 ```
 
 <div class='img-center'>

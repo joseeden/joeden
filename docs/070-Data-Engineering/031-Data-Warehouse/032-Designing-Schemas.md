@@ -48,8 +48,8 @@ Dimensions provide context for facts.
 
 Select numerical values to measure the process:  
 
-- **Music service** → Play count, revenue per song  
-- **Ride-sharing** → Distance traveled, ride duration  
+- **Music service** ➔ Play count, revenue per song  
+- **Ride-sharing** ➔ Distance traveled, ride duration  
 
 Facts should match the grain level.  
 

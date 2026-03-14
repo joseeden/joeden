@@ -124,8 +124,8 @@ Output:
 Here, the decorator creates a new function called `new_multiply`, while the original `multiply` function remains unchanged.
 
 ```bash
-multiply      → original function
-new_multiply  → decorated version
+multiply      ➔ original function
+new_multiply  ➔ decorated version
 ```
 
 Both functions can still be used:
@@ -150,7 +150,7 @@ multiply = double_args(multiply)
 Now the name `multiply` points to the wrapper function instead of the original function.
 
 ```bash
-multiply → wrapper
+multiply ➔ wrapper
 ```
 
 The complete code now looks like this:

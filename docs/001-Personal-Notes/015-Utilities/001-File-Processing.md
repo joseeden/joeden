@@ -92,14 +92,14 @@ ls -lh "$OUTPUT_PDF"
 
 Where: 
 
-- `INPUT_PDF` → original file
-- `OUTPUT_PDF` → compressed file
+- `INPUT_PDF` ➔ original file
+- `OUTPUT_PDF` ➔ compressed file
 
 The `-dPDFSETTINGS` options:
 
-- `/screen` → lowest quality, smallest size
-- `/ebook` → medium quality, moderate size
-- `/printer` → high quality, larger size
+- `/screen` ➔ lowest quality, smallest size
+- `/ebook` ➔ medium quality, moderate size
+- `/printer` ➔ high quality, larger size
 
 Check the new file size:
 

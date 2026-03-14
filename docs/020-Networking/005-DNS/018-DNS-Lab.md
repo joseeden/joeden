@@ -196,10 +196,10 @@ We will start with setting up a DNS client using Ubuntu Linux. The client will b
 
 ### Install Guest Additions
 
-1. On the VM window, click **Devices** → **Insert Guest Additions CD image**
+1. On the VM window, click **Devices** ➔ **Insert Guest Additions CD image**
 
-    > If you get the `VERR_PDM_MEDIA_LOCKED`, click **Devices** → **Optical Drives** → **Remove Disk from Virtual Drive. **
-    > Then retry  **Devices** → **Insert Guest Additions CD image**
+    > If you get the `VERR_PDM_MEDIA_LOCKED`, click **Devices** ➔ **Optical Drives** ➔ **Remove Disk from Virtual Drive. **
+    > Then retry  **Devices** ➔ **Insert Guest Additions CD image**
 
 2. Inside the VM, click the **Open apps** icon on the bottom left and open **Terminal**
 
@@ -273,7 +273,7 @@ We will start with setting up a DNS client using Ubuntu Linux. The client will b
 
 These settings should already be enabled if you folow the steps in the [Install Guest Additions](#install-guest-additions) step. To verify:
 
-1. On the VM window, click **Devices** → **Shared clipboard** → It should show **Bidirectional**
+1. On the VM window, click **Devices** ➔ **Shared clipboard** ➔ It should show **Bidirectional**
 
     <div class="img-center"> 
 
@@ -282,7 +282,7 @@ These settings should already be enabled if you folow the steps in the [Install 
     </div>
 
 
-2. Click **Devices** → **Drag and Drop** → It should show **Bidirectional**
+2. Click **Devices** ➔ **Drag and Drop** ➔ It should show **Bidirectional**
 
     <div class="img-center"> 
 

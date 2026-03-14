@@ -55,7 +55,7 @@ This guide walks through the complete process of setting up Algolia DocSearch fo
 
 ## Add Algolia to Docusaurus
 
-1. Login to your Algolia account and Go to **Settings** → **API Keys**
+1. Login to your Algolia account and Go to **Settings** ➔ **API Keys**
 
     - **Application ID**: Copy this value for `YOUR_APP_ID`
     - **Search-Only API Key**: Copy this value for YOUR_SEARCH_API_KEY (NOT the Admin API Key)
@@ -66,7 +66,7 @@ This guide walks through the complete process of setting up Algolia DocSearch fo
 
       </div>
 
-2. Go to **Search** → **Index** in your dashboard
+2. Go to **Search** ➔ **Index** in your dashboard
 
     - Your index name will be listed there (you may need to create one if you haven't)
     - Common naming: your-site-name or joeden for your case
@@ -154,7 +154,7 @@ This guide walks through the complete process of setting up Algolia DocSearch fo
 2. **Manual Crawler Management**
 
     - Go to [dashboard.algolia.com](https://dashboard.algolia.com)
-    - Navigate to **Data Sources** → **Crawler**
+    - Navigate to **Data Sources** ➔ **Crawler**
     - Click on your crawler to view/modify settings
     - **Important**: Don't delete or recreate the crawler - it's pre-configured
 

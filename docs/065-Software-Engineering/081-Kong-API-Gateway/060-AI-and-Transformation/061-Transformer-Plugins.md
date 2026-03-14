@@ -127,7 +127,7 @@ Output:
 The  **Request Transformer Plugin** modifies incoming requests by adding, removing, or changing headers, query strings, or body content before reaching the upstream service. This plugin performs the response transformation in the following order:
 
 ```
-remove → rename → replace → add → append
+remove ➔ rename ➔ replace ➔ add ➔ append
 ```
 
 For more information, please see [Request Transformer](https://docs.konghq.com/hub/kong-inc/request-transformer/).

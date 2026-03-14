@@ -332,7 +332,7 @@ Then configured the section in HTML:
 
 To use this approach, the browser must support the `Intl.DisplayNames` and `Intl.supportedValuesOf` APIs (available in Chrome 102+, Edge 102+, Firefox 103+, Safari 15.4+). I gave it a try, but it didn’t work, so I did some troubleshooting:
 
-- Opened the browser’s DevTools → Console  
+- Opened the browser’s DevTools ➔ Console  
 - Noticed errors like `Uncaught ReferenceError` and 404s in the **Network** tab
 
 To confirm support, run this in the console:
@@ -493,8 +493,8 @@ Used these values to add custom devices in Chrome DevTools:
 
 To simulate the device in Chrom DevTools: 
 
-1. Open DevTools → Toggle device toolbar  
-2. Click device dropdown → Edit → "Add custom device"  
+1. Open DevTools ➔ Toggle device toolbar  
+2. Click device dropdown ➔ Edit ➔ "Add custom device"  
 3. Fill in name, width, height, and DPR as above  
 
 

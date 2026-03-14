@@ -21,12 +21,12 @@ DNS uses different types of resource records (RRs) to store information about do
 
 | Record Type | Purpose                                              | Example                                                 |
 | ----------- | ---------------------------------------------------- | ------------------------------------------------------- |
-| A           | Maps a domain to an IPv4 address                     | example.com → 93.184.216.34                             |
-| AAAA        | Maps a domain to an IPv6 address                     | example.com → 2606:2800:220:1:248:1893:25c8:1946        |
-| CNAME       | Aliases one domain to another                        | [www.example.com](http://www.example.com) → example.com |
-| MX          | Mail exchange server for email                       | example.com → mail.example.com                          |
-| NS          | Authoritative name server for the domain             | example.com → ns1.example.net                           |
-| PTR         | Maps an IP address back to a domain (reverse lookup) | 93.184.216.34 → example.com                             |
+| A           | Maps a domain to an IPv4 address                     | example.com ➔ 93.184.216.34                             |
+| AAAA        | Maps a domain to an IPv6 address                     | example.com ➔ 2606:2800:220:1:248:1893:25c8:1946        |
+| CNAME       | Aliases one domain to another                        | [www.example.com](http://www.example.com) ➔ example.com |
+| MX          | Mail exchange server for email                       | example.com ➔ mail.example.com                          |
+| NS          | Authoritative name server for the domain             | example.com ➔ ns1.example.net                           |
+| PTR         | Maps an IP address back to a domain (reverse lookup) | 93.184.216.34 ➔ example.com                             |
 | TXT         | Stores arbitrary text data                           | SPF record for email verification                       |
 
 
@@ -375,19 +375,19 @@ In addition to proving domain ownership during service setup, CNAMEs has other u
 - Pointing subdomains to main domains
 
   ```bash
-  `www.example.com` → `example.com`
+  `www.example.com` ➔ `example.com`
   ```
 
 - Map subdomains to their main domain
 
   ```bash
-  `blog.example.net` → `example.net`
+  `blog.example.net` ➔ `example.net`
   ```
 
 - Redirect multiple TLDs to one main domain
 
   ```bash
-  `mydomain.com` and `mydomain.co` → `mydomain.net`
+  `mydomain.com` and `mydomain.co` ➔ `mydomain.net`
   ```
   
 

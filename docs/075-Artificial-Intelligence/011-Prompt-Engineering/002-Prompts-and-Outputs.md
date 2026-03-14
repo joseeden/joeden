@@ -106,8 +106,8 @@ SALT helps ensure your interactions meet your expectations.
 
 Style shapes the response. Be specific for structured outputs:
 
-- "Describe the solar system" → paragraph
-- "List the planets in the solar system" → organized list
+- "Describe the solar system" ➔ paragraph
+- "List the planets in the solar system" ➔ organized list
 
 Example: "Provide steps to make the perfect blueberry pancake."
 

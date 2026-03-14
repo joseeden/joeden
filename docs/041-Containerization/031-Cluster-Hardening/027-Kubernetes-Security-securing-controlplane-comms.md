@@ -44,7 +44,7 @@ The Kubernetes control plane components (API server, controller manager, kubelet
   
 - `--tls-cipher-suites`: Specifies a comma-separated list of allowed cipher suites for connection negotiation. If not set, the default list from GoLang is used.
 
-`etcd` also supports a `--cipher-suites` argument to control which ciphers are allowed for API server → etcd communication. It's recommended to use the newest/strongest ciphers.
+`etcd` also supports a `--cipher-suites` argument to control which ciphers are allowed for API server ➔ etcd communication. It's recommended to use the newest/strongest ciphers.
 
 - `--cipher-suites`: Sets a list of allowed ciphers, defaulting to GoLang's list if not set.
 

@@ -47,13 +47,13 @@ Reference:
 1. Open VirtualBox and click **New** 
 2. Set the VM name, the VM folder, and the ISO image
 
-**UPDATE**: Due to compatibility issues with CentOS Stream 9 and 10 and the many problems encountered during installation, I have switched to using AlmaLinux 8.10.
+    **UPDATE**: Due to compatibility issues with CentOS Stream 9 and 10 and the many problems encountered during installation, I have switched to using AlmaLinux 8.10.
 
-<div class='img-center'>
+    <div class='img-center'>
 
-![](/img/docs/Screenshot-2026-02-08-014814.png)
+    ![](/img/docs/Screenshot-2026-02-08-014814.png)
 
-</div>
+    </div>
 
 ### Unattended Install
 
@@ -61,11 +61,11 @@ Reference:
 2. Enable the **Guest Additions**
 3. Select the **VBoxGuestAdditions.iso**
 
-<div class='img-center'>
+    <div class='img-center'>
 
-![](/img/docs/Screenshot-2026-02-08-015338.png)
+    ![](/img/docs/Screenshot-2026-02-08-015338.png)
 
-</div>
+    </div>
 
 ### Hardware 
 
@@ -87,7 +87,7 @@ Recommended VM specifications (general guidance):
 Notes:
 
 - VirtualBox memory is entered in MB (e.g., 12 GB = 12288 MB).
-- More RAM → smoother performance and faster response inside the VM.
+- More RAM ➔ smoother performance and faster response inside the VM.
 - Adjust disk size based on the number of images, software, or lab instances
 - Swap is optional but recommended for Linux VMs with smaller RAM allocations.
 
@@ -133,7 +133,7 @@ You should now see the new VM created.
 
 :::info[Can't run guest install]
 
-It means that CentOS Stream 10 (or CentOS 10) is too new for VirtualBox to recognize for unattended installation. The unattended install feature only supports certain Windows versions and a limited set of Linux distributions.
+If you get this error, it means that the OS (CentOS Stream 10 or CentOS 10) is too new for VirtualBox to recognize for unattended installation. The unattended install feature only supports certain Windows versions and a limited set of Linux distributions.
 
 This does **not** affect the normal operation of the VM, it only impacts automatic Guest Additions installation.
 
@@ -175,7 +175,7 @@ Go to **System** and ensure that Optical is set as the first boot device. You ca
 
     </div>
 
-2. Select VBoxGuestAdditions.iso and click **Choose.**
+2. Select `VBoxGuestAdditions.iso` and click **Choose.**
 
     <div class='img-center'>
 
@@ -188,6 +188,7 @@ Go to **System** and ensure that Optical is set as the first boot device. You ca
     Enable both options below:
 
     ✅ Hot-pluggable
+
     ✅ Live CD/DVD
 
     Then click **OK.**
@@ -325,12 +326,14 @@ Start the machine and complete the installation using the GUI installer.
 
     The interfaces:
 
-    - `enp0s3` is the first adapter, usually NAT or bridged, used for the main network.
-    - `enp0s8` is the second adapter and can be ignored if not needed.
+    | Adapter | Description                                         |
+    | ------- | --------------------------------------------------- |
+    | enp0s3  | First adapter, usually NAT or bridged; main network |
+    | enp0s8  | Second adapter; can be ignored if not needed        |
 
     For a simple lab setup, you only need one active interface to connect the VM to your network. Typically, you use `enp0s3`.
 
-    - Set the host name > **Apply**
+    - Set the host name ➔ **Apply**
     - Enable the Ethernet interface (enp0s3) and click **Configure**
 
         <div class='img-center'>

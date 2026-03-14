@@ -55,8 +55,8 @@ This form will capture and store email addresses from users.
 
 A landing page promotes our site and collects signups. It gives users a clear way to sign up and receive updates.  
 
-1. Go to **Campaigns** → **All campaigns** → **Create** → 
-2. Choose **Landing Page** → select an audience → **Begin**
+1. Go to **Campaigns** ➔ **All campaigns** ➔ **Create** ➔ 
+2. Choose **Landing Page** ➔ select an audience ➔ **Begin**
 3. Use a template and customize the content
 4. After customizing, click **Save and Close** twice.
 5. You can also add a page title.

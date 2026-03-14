@@ -518,8 +518,8 @@ kubectl port-forward -n version-2 svc/wordpress 8082:80
 
 Then open your browser:
 
-- [http://localhost:8081](http://localhost:8081) → Version 1
-- [http://localhost:8082](http://localhost:8082) → Version 2
+- [http://localhost:8081](http://localhost:8081) ➔ Version 1
+- [http://localhost:8082](http://localhost:8082) ➔ Version 2
 
 You now have two independent versions of the same app running, each managed with minimal duplicated config.
 

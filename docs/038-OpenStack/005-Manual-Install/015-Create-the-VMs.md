@@ -151,9 +151,9 @@ Once you launch the VMs, it will go through the installation wizard. Use the arr
 
 The network configurations will be different for each node. There will be three interface for each node:
 
-- `enp0s3` → Host-Only (Management)
-- `enp0s8` → NAT Network “Provider” (10.10.10.0/24, DHCP OFF)
-- `enp0s9` → NAT Network “Internet” (DHCP ON)
+- `enp0s3` ➔ Host-Only (Management)
+- `enp0s8` ➔ NAT Network “Provider” (10.10.10.0/24, DHCP OFF)
+- `enp0s9` ➔ NAT Network “Internet” (DHCP ON)
 
 Use the configurations below:
 

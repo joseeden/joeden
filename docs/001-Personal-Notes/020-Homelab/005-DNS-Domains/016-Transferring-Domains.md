@@ -13,7 +13,7 @@ You can’t instantly “move” a domain between registrars or DNS providers. I
 
 #### Registrar transfer
 
-Moving your domain registration from one registrar to another (e.g., Namecheap → AWS Route 53 Registrar).
+Moving your domain registration from one registrar to another (e.g., Namecheap ➔ AWS Route 53 Registrar).
 
 - Has a 60-day lock after registration or transfer (ICANN rule)
 - Rarely needed for lab work
@@ -38,7 +38,7 @@ So if you hop registrars a lot, you’re essentially **paying for an extra renew
 
 #### Nameserver change
 
-Pointing your domain to a different DNS host (e.g., Cloudflare → Route 53 Hosted Zone).
+Pointing your domain to a different DNS host (e.g., Cloudflare ➔ Route 53 Hosted Zone).
 
 - No 60-day lock
 - Can change anytime from your registrar dashboard

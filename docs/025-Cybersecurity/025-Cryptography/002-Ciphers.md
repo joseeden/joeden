@@ -88,7 +88,7 @@ A substitution cipher replaces each part of the message with another symbol or l
 - A simple example is shifting letters along the alphabet
 - Can use a single alphabet or multiple shifting patterns
 
-Example: In a basic shift of 3, **A → D**, **B → E**, **C → F**. 
+Example: In a basic shift of 3, **A ➔ D**, **B ➔ E**, **C ➔ F**. 
 
 This idea shows how substitution hides meaning by changing characters, not order.
 
@@ -110,7 +110,7 @@ The Caesar Cipher shifts letters of the alphabet by a fixed number of positions.
 
 - Each letter shifts a set number of places
 - Shifts can be from 1 to 25 positions
-- Example: With a shift of 3, **A → D**, **B → E**, **C → F**
+- Example: With a shift of 3, **A ➔ D**, **B ➔ E**, **C ➔ F**
 - **ROT2** means a shift of two positions
 - **ROT3** means a shift of three positions
 

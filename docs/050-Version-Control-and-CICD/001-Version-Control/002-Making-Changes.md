@@ -101,9 +101,9 @@ index e69de29..d95f3ad 100644
 
 In `git show HEAD~3`, the **`3`** represents how many commits to go back from `HEAD` (the latest commit).  
 
-- `HEAD~1` → One commit before the latest  
-- `HEAD~2` → Two commits before the latest  
-- `HEAD~3` → Three commits before the latest  
+- `HEAD~1` ➔ One commit before the latest  
+- `HEAD~2` ➔ Two commits before the latest  
+- `HEAD~3` ➔ Three commits before the latest  
 
 So, `git show HEAD~3` displays details of the commit that is **three commits before the current `HEAD`**.  
 

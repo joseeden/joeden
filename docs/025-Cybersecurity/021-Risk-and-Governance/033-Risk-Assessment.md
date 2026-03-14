@@ -159,8 +159,8 @@ SLE = AV - EF
 
 **Annualized Rate of Occurrence (ARO)** estimates how many times a specific risk may occur over a year. It is based on historical data, industry statistics, or expert judgment.
 
-- ARO of `1.0` → Risk happens once per year
-- ARO of `0.1` → Risk happens once every 10 years
+- ARO of `1.0` ➔ Risk happens once per year
+- ARO of `0.1` ➔ Risk happens once every 10 years
 - Higher ARO means the event is more common
 
 ARO helps estimate long-term risk by looking at how often an event is expected.

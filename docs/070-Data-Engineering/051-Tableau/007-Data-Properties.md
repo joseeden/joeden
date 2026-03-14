@@ -144,7 +144,7 @@ Right-click -> Rename
 
 If Tableau doesn't recognize location names, you can assign the correct geographic role for accurate mapping.
 
-**Right-click the field → Geographic Role → Choose the appropriate role (e.g., Country, State, City).**
+**Right-click the field ➔ Geographic Role ➔ Choose the appropriate role (e.g., Country, State, City).**
 
 <div class="img-center"> 
 
@@ -166,7 +166,7 @@ In this example, we’ll create a **Productline** hierarchy with the following f
 - Product Name  
 - Product ID  
 
-To create the hierarchy: **Right-click on `Category` → Hierarchy → Create Hierarchy.** Then, drag the remaining fields into the hierarchy.
+To create the hierarchy: **Right-click on `Category` ➔ Hierarchy ➔ Create Hierarchy.** Then, drag the remaining fields into the hierarchy.
 
 <ReactPlayerWrapper 
     controls

@@ -347,8 +347,8 @@ We can specify where a grid item starts and ends using `grid-column-start` and `
 
 Note: 
 
-- `grid-column-start: 1` → Starts at the first column  
-- `grid-column-end: 3` → Extends up to the third column  
+- `grid-column-start: 1` ➔ Starts at the first column  
+- `grid-column-end: 3` ➔ Extends up to the third column  
 
 This makes the item span two columns. A shorthand version simplifies this:
 

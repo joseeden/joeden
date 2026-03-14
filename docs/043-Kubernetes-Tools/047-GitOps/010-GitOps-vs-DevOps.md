@@ -186,8 +186,8 @@ GitOps follows four key principles to automate deployments and maintain system c
 
 GitOps and DevOps share similar goals but have key differences. DevOps works for any application, while GitOps is mainly used with Kubernetes and containerized environments.  
 
-- **DevOps** → Push changes to the cluster  
-- **GitOps** → Operator pulls changes from Git
+- **DevOps** ➔ Push changes to the cluster  
+- **GitOps** ➔ Operator pulls changes from Git
 
 
 ## DevOps and GitOps Workflows 

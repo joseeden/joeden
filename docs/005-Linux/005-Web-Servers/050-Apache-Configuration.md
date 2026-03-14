@@ -38,7 +38,7 @@ To enable Apache to start at boot and start the service immediately:
 
 ```bash
 $ systemctl enable --now httpd
-Created symlink /etc/systemd/system/multi-user.target.wants/httpd.service → /usr/lib/systemd/system/httpd.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/httpd.service ➔ /usr/lib/systemd/system/httpd.service.
 ```
 
 To start the Apache service:

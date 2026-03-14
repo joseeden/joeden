@@ -29,7 +29,7 @@ To install:
 $ sudo yum install -y cockpit cockpit-dashboard
 $ sudo systemctl enable --now cockpit.socket
 
-Created symlink /etc/systemd/system/sockets.target.wants/cockpit.socket → /usr/lib/systemd/system/cockpit.socket.
+Created symlink /etc/systemd/system/sockets.target.wants/cockpit.socket ➔ /usr/lib/systemd/system/cockpit.socket.
 ```
 
 Allow cockpit in firewall.

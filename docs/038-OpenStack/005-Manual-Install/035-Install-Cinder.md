@@ -69,9 +69,9 @@ A 30GB disk is enough for a small lab because the minimum OpenStack volume size 
 
     To add a second disk, turn off the VM first.
 
-2. Once the VM is off, go back to the **Settings** → **Storage**.
+2. Once the VM is off, go back to the **Settings** ➔ **Storage**.
 
-    Click the **Add attachment** button → **Add Hard Disk**
+    Click the **Add attachment** button ➔ **Add Hard Disk**
 
     <div class='img-center'>
     

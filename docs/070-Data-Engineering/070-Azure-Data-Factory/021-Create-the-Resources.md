@@ -23,7 +23,7 @@ This page shows how to set up your environment in Microsoft Azure for the [BikeC
 Create a resource group where all related resources will be organized.
 
 1. Sign in to Microsoft Azure  
-2. Go to **Resource Groups** → **Create**  
+2. Go to **Resource Groups** ➔ **Create**  
 3. Enter the following details:
 
     | Field            | Value                         |
@@ -39,13 +39,13 @@ Create a resource group where all related resources will be organized.
     | Project | HCP         |
     | Group   | Data Group  |
 
-5. Click **Next** → **Create**
+5. Click **Next** ➔ **Create**
 
 ## Create the Storage Account
 
 Now create a storage account where you’ll store files and data.
 
-1. Go to **Storage accounts** → **Create**  
+1. Go to **Storage accounts** ➔ **Create**  
 2. Enter the following details:
 
     | Field            | Value                         |
@@ -71,7 +71,7 @@ The storage account may take a few minutes to deploy.
 
 Next, create a SQL database where your structured data will go.
 
-1. Go to **SQL databases** → **Create SQL database**  
+1. Go to **SQL databases** ➔ **Create SQL database**  
 2. Enter the following details:
 
     | Field            | Value                         |
@@ -122,14 +122,14 @@ This installs a sample version of the Adventure Works database.
     | Project | HCP         |
     | Group   | Data Group  |
 
-8. Click **Review + Create** → **Create**.
+8. Click **Review + Create** ➔ **Create**.
 
 
 ## Create the Data Factory
 
 Finally, create the Azure Data Factory instance.
 
-1. Go to **Data Factories (V2)** → **Create**
+1. Go to **Data Factories (V2)** ➔ **Create**
 
 2. Enter the following details:
 
@@ -141,7 +141,7 @@ Finally, create the Azure Data Factory instance.
     | Region             | Southeast Asia       |
     | Version            | V2                   |
 
-3. Click **Review + Create** → **Create**.
+3. Click **Review + Create** ➔ **Create**.
 
 Once the Data Factory is ready, click **Launch Studio** to open Azure Data Factory Studio in a new tab. You can also open it directly by visiting:
 

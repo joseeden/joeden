@@ -154,9 +154,9 @@ end
 
 **Explanation:**
 
-- `@article `→ instance variable available in the **view** (`show.html.erb`)
-- `Article` → the model class (inherits from `ApplicationRecord`)
-- .`find` → Fetches a record by its **primary key**, usually `id`
+- `@article `➔ instance variable available in the **view** (`show.html.erb`)
+- `Article` ➔ the model class (inherits from `ApplicationRecord`)
+- .`find` ➔ Fetches a record by its **primary key**, usually `id`
 
 In simple terms:
 
@@ -324,9 +324,9 @@ In this step, we want to create a simple listing page where users can see all re
 
     **Explanation:** 
 
-    - `<% @articles.each do |article| %>` → loops through all articles
-    - `<%= article.title %>` → displays the article title
-    - `<%= article.description %>` → displays the article description
+    - `<% @articles.each do |article| %>` ➔ loops through all articles
+    - `<%= article.title %>` ➔ displays the article title
+    - `<%= article.description %>` ➔ displays the article description
     - Placeholder is used for actions column for now
 
     :::info 
@@ -335,8 +335,8 @@ In this step, we want to create a simple listing page where users can see all re
 
     The `%>` tag signals that the Ruby code ends here and Rails should switch back to HTML.
 
-    - `<% %>` → runs Ruby without output
-    - `<%= %>` → runs Ruby and inserts the result into the HTML
+    - `<% %>` ➔ runs Ruby without output
+    - `<%= %>` ➔ runs Ruby and inserts the result into the HTML
 
     :::
 

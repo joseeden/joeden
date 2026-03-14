@@ -24,7 +24,7 @@ In this guide, we’ll upload a CSV file from a local computer to Snowflake.
 2. Create a table in Snowflake to store the data.  
 3. Upload the file: 
 
-    - Go to **Snowsight** → **Data** → **Load Data**.  
+    - Go to **Snowsight** ➔ **Data** ➔ **Load Data**.  
     - Select the CSV file from your computer.  
     - Choose the target database, schema, and table.  
     - Follow the steps to complete the upload.  

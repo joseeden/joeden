@@ -84,7 +84,7 @@ Two approaches to manage data flow:
 
   - Combine harmless pieces of data to reveal sensitive info
   - Piecing together of random data forms a larger sensitive picture
-  - Example: Public report + staff directory + schedule → security exposure
+  - Example: Public report + staff directory + schedule ➔ security exposure
 
 - **Inference Attack**
   

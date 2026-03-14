@@ -45,7 +45,7 @@ bin  boot  data  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  s
 After enabling autofs, it will add some new directories inside. These directories are managed by automount.
 ```bash
 [root@tstclient ~]# systemctl enable --now autofs
-Created symlink /etc/systemd/system/multi-user.target.wants/autofs.service → /usr/lib/systemd/system/autofs.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/autofs.service ➔ /usr/lib/systemd/system/autofs.service.
 [root@tstclient ~]# ls /
 bin   data  etc   lib    media  mnt  newfiles  proc  run   srv  tmp  var
 boot  dev   home  lib64  misc   net  opt       root  sbin  sys  usr

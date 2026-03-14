@@ -300,7 +300,7 @@ Notice that when you enable or disable a service, the service knows where it sho
 
 ```bash
 $ systemctl enable httpd
-Created symlink /etc/systemd/system/multi-user.target.wants/httpd.service → /usr/lib/systemd/system/httpd.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/httpd.service ➔ /usr/lib/systemd/system/httpd.service.
 ```
 ```bash
 $ systemctl disable httpd
@@ -385,7 +385,7 @@ To change:
 ```bash
 $ systemctl set-default graphical.target
 Removed /etc/systemd/system/default.target.
-Created symlink /etc/systemd/system/default.target → /usr/lib/systemd/system/graphical.target.
+Created symlink /etc/systemd/system/default.target ➔ /usr/lib/systemd/system/graphical.target.
 
 $ systemctl get-default
 graphical.target

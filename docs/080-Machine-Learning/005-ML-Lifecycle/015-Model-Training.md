@@ -85,5 +85,5 @@ y_proba = model.predict_proba(X_test)
 
 Interpret prediction probabilities as confidence scores.  
 
-- **Threshold = 0.5** – Above 0.5 → positive, below 0.5 → negative.  
+- **Threshold = 0.5** – Above 0.5 ➔ positive, below 0.5 ➔ negative.  
 - **Example:** A model predicts an 80% chance of an event occurring.

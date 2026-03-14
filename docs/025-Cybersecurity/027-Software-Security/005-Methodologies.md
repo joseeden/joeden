@@ -39,7 +39,7 @@ The Waterfall model is a traditional sequential approach to software development
 
 Waterfall follows sequential phases: 
 
-> Requirements → Design → Implementation → Testing → Deployment.  
+> Requirements ➔ Design ➔ Implementation ➔ Testing ➔ Deployment.  
 
 For more information, please see [Waterfall Model](/docs/065-Software-Engineering/014-Software-Development/002-Methodologies.md#waterfall-model)
 

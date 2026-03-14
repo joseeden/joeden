@@ -21,7 +21,7 @@ In VirtualBox, you will need to create the networks that will be used by the nod
 | NAT Network             | ProviderNetwork   | Provider / VM traffic           | 10.10.10.0/24  | Disabled (manual IPs optional) |
 | NAT Network             | Internet          | Internet access / Updates       | 10.0.2.0/24    | Enabled                        |
 
-To create the networks, go to Tools → Network → NAT Network.
+To create the networks, go to Tools ➔ Network ➔ NAT Network.
 
 <div class='img-center'>
 
@@ -34,7 +34,7 @@ To create the networks, go to Tools → Network → NAT Network.
 **Note:** You cannot rename Host-Only adapters in VirtualBox on Windows. VirtualBox does not allow renaming in the GUI, because it links directly to a network interface in Windows.
 
 1. Click `+` to create a new host-only adapter.
-2. Select the adapter → click Edit:
+2. Select the adapter ➔ click Edit:
 
    - IPv4 Address: `10.0.0.1`
    - IPv4 Network Mask: `255.255.255.0`

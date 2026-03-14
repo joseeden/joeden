@@ -71,9 +71,9 @@ When to create a new warehouse:
 
 Warehouse sizes:
 
-- **X-Small** → 1 compute node  
-- **Small** → 2 compute nodes  
-- **Medium** → 4 compute nodes  
+- **X-Small** ➔ 1 compute node  
+- **Small** ➔ 2 compute nodes  
+- **Medium** ➔ 4 compute nodes  
 
 Creating a Virtual Warehouse:
 

@@ -411,14 +411,14 @@ When we call `factorial(5)`, Ruby evaluates:
 1. `5 - factorial(4)` (waiting for factorial(4))
 2. `4 - factorial(3)` (waiting for factorial(3))
 3. `3 - factorial(2)` (waiting for factorial(2))
-4. `2 - factorial(1)` → returns 1
+4. `2 - factorial(1)` ➔ returns 1
 
 Now we go back up the recursion (the “unwinding” phase):
 
-1. `factorial(2)` → 2 - 1 = 1
-2. `factorial(3)` → 3 - 1 = 2
-3. `factorial(4)` → 4 - 2 = 2
-4. `factorial(5)` → 5 - 2 = 3
+1. `factorial(2)` ➔ 2 - 1 = 1
+2. `factorial(3)` ➔ 3 - 1 = 2
+3. `factorial(4)` ➔ 4 - 2 = 2
+4. `factorial(5)` ➔ 5 - 2 = 3
 
 
 ## Recursive String Reversal

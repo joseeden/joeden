@@ -249,10 +249,10 @@ const getAverage => getAverage.reduce((a, b) => a + b) / mynumbers.length;
 console.log(getAverage(mynumbers));
 ```
 
-1. **First iteration** → `a = 1`, `b = 3` → `1 + 3 = 4`  
-2. **Second iteration** → `a = 4`, `b = 4` → `4 + 4 = 8`  
-3. **Third iteration** → `a = 8`, `b = 8` → `8 + 8 = 16`  
-4. **Fourth iteration** → `a = 16`, `b = 2` → `16 + 2 = 18`  
+1. **First iteration** ➔ `a = 1`, `b = 3` ➔ `1 + 3 = 4`  
+2. **Second iteration** ➔ `a = 4`, `b = 4` ➔ `4 + 4 = 8`  
+3. **Third iteration** ➔ `a = 8`, `b = 8` ➔ `8 + 8 = 16`  
+4. **Fourth iteration** ➔ `a = 16`, `b = 2` ➔ `16 + 2 = 18`  
 
 Final sum = `18`.  
 

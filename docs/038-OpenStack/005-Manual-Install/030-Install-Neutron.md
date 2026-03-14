@@ -614,9 +614,9 @@ Follow these steps to configure the Neutron agents on the controller node:
     Mapping the interfaces for Neutron:
 
     ```bash
-    default via 10.0.2.1 dev enp0s9   → NAT / Internet access
-    10.0.0.0/24 dev enp0s3           → Internal network (controller ↔ compute)  
-    10.10.10.0/24 dev enp0s8         → External / provider network
+    default via 10.0.2.1 dev enp0s9   ➔ NAT / Internet access
+    10.0.0.0/24 dev enp0s3           ➔ Internal network (controller ↔ compute)  
+    10.10.10.0/24 dev enp0s8         ➔ External / provider network
     ```
 
     | Interface | IP          | Role                        | Notes                                                                  |

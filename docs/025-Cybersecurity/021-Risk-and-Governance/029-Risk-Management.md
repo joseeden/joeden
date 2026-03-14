@@ -220,7 +220,7 @@ It is not a technical or operational control, but an administrative/policy-level
 
 | Framework        | Domain/Section ISRM Belongs To                              |
 | ---------------- | ----------------------------------------------------------- |
-| **NIST CSF**     | Identify → Risk Management                                  |
+| **NIST CSF**     | Identify ➔ Risk Management                                  |
 | **NIST 800-53**  | RA (Risk Assessment) & PM (Program Management)              |
 | **ISO 27001**    | Clause 6: Planning (Risk Mgmt) + Annex A.5 Governance       |
 | **CIS Controls** | Governance & IT Risk Management at the organizational level |

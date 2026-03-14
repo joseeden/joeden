@@ -131,7 +131,7 @@ Because the sidebar accordion is loaded via a `<script src="...">`, it must live
 
 1. **Script is not running**
 
-    - Open browser DevTools → Network tab
+    - Open browser DevTools ➔ Network tab
     - Reload the page
     - Confirm the script is loaded successfully:
 

@@ -82,7 +82,7 @@ Below are the recommended VM specifications for single-node OpenStack labs (Pack
 
 - Base memory in VirtualBox is in MB, e.g. 12 GB = 12288 MB.
 - These are for **single-node OpenStack labs (Packstack)**.
-- More RAM → smoother install and better performance when running test instances.
+- More RAM ➔ smoother install and better performance when running test instances.
 - Disk sizes can be adjusted depending on how many OpenStack images/instances you plan to create.
 
 In my case, I allocated 12 GB RAM and 6 vCPU:
@@ -620,12 +620,12 @@ This usually means the VM tried to boot the kernel from the ISO but something we
 Troubleshooting:
 
 1. Make sure the ISO matches the VM architecture: x86_64 (64-bit).
-2. Go to Settings → System → Motherboard → Enable EFI (special OSes only).
+2. Go to Settings ➔ System ➔ Motherboard ➔ Enable EFI (special OSes only).
     
     - This is usually off for CentOS Stream 10.
 
-3. Go to Settings → System → Processor → Enable PAE/NX → enable it.
-4. Go to Settings → System → Acceleration → Enable the following:
+3. Go to Settings ➔ System ➔ Processor ➔ Enable PAE/NX ➔ enable it.
+4. Go to Settings ➔ System ➔ Acceleration ➔ Enable the following:
 
     - VT-x/AMD-V (if its an option)
     - Nested Paging
@@ -647,13 +647,13 @@ To fix this:
 1. Disable EFI in VM settings:
 
     ```bash
-    Settings → System → Motherboard → Uncheck “Enable EFI (special OSes only)”
+    Settings ➔ System ➔ Motherboard ➔ Uncheck “Enable EFI (special OSes only)”
     ```
 
 2. Ensure PAE/NX is enabled:
 
     ```bash
-    Settings → System → Processor → Enable PAE/NX
+    Settings ➔ System ➔ Processor ➔ Enable PAE/NX
     ```
 
 3. Boot the VM again from your ISO.

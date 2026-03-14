@@ -33,12 +33,12 @@ Comparison operators return boolean results (True/False).
 
 | Operator | Description             | Example                        |
 |----------|-------------------------|--------------------------------|
-| `==`     | Equal                   | `5 == 5` → `True`              |
-| `!=`     | Not equal               | `5 != 3` → `True`              |
-| `<`      | Less than               | `3 < 5` → `True`               |
-| `<=`     | Less than or equal      | `3 <= 3` → `True`              |
-| `>`      | Greater than            | `5 > 3` → `True`               |
-| `>=`     | Greater than or equal   | `5 >= 5` → `True`              |
+| `==`     | Equal                   | `5 == 5` ➔ `True`              |
+| `!=`     | Not equal               | `5 != 3` ➔ `True`              |
+| `<`      | Less than               | `3 < 5` ➔ `True`               |
+| `<=`     | Less than or equal      | `3 <= 3` ➔ `True`              |
+| `>`      | Greater than            | `5 > 3` ➔ `True`               |
+| `>=`     | Greater than or equal   | `5 >= 5` ➔ `True`              |
 
 ## Logical Operators
 
@@ -46,9 +46,9 @@ Logical operators are used to combine conditional statements and determine the t
 
 | Operator | Description                | Example                                  |
 |----------|----------------------------|------------------------------------------|
-| `and`    | True if both sides are True | `True and False` → `False`               |
-| `or`     | True if either side is True | `True or False` → `True`                 |
-| `not`    | Inverts the boolean value   | `not True` → `False`, `not False` → `True` |
+| `and`    | True if both sides are True | `True and False` ➔ `False`               |
+| `or`     | True if either side is True | `True or False` ➔ `True`                 |
+| `not`    | Inverts the boolean value   | `not True` ➔ `False`, `not False` ➔ `True` |
 
 ## Modulo Operator
 

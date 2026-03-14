@@ -205,9 +205,9 @@ john hash.txt
 
   Note:
 
-  - `-m 10500` → mode for PDF 1.1 - 1.3 (40-bit RC4 encryption)
-  - `-a 3` → brute-force attack mode
-  - `?a?a?a?a?a?a` → trying **all characters, 6 characters long**
+  - `-m 10500` ➔ mode for PDF 1.1 - 1.3 (40-bit RC4 encryption)
+  - `-a 3` ➔ brute-force attack mode
+  - `?a?a?a?a?a?a` ➔ trying **all characters, 6 characters long**
 
   If you know the password length or pattern (e.g., numbers only?), you can adjust this.
 

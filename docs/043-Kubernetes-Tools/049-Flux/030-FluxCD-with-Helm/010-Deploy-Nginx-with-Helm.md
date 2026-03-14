@@ -222,7 +222,7 @@ You may see two different status:
 - `Release reconciliation succeeded` 
 
   - This is a higher-level Flux message.
-  - Flux reconciled the state (HelmRelease → Kubernetes resources).
+  - Flux reconciled the state (HelmRelease ➔ Kubernetes resources).
   - It verified the resources are in the desired state
   - It may appear a **few seconds after install**, once everything settles and Flux re-evaluates the state.
 

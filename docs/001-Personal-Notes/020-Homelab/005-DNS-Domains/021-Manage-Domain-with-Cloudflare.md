@@ -169,7 +169,7 @@ The registrar remains `Name.com`, you only change the domain's authoritative nam
 
 ### 5. Set SSL/TLS mode and Verify origin certificate
 
-1. Go to Cloudflare Dashboard → **SSL/TLS → Overview**.
+1. Go to Cloudflare Dashboard ➔ **SSL/TLS ➔ Overview**.
 2. Choose a mode:
 
     - **Full (recommended)** if your origin has a valid TLS certificate (self-signed is acceptable for Full but not Full (Strict))
@@ -190,12 +190,12 @@ The registrar remains `Name.com`, you only change the domain's authoritative nam
     - Minimum TLS version: 1.2 or 1.3
     - Enable HTTP Strict Transport Security (HSTS) only after testing (Hard to undo).
   
-- **Security → WAF & Firewall**:
+- **Security ➔ WAF & Firewall**:
 
     - Free plan: enable basic managed rules and block obvious malicious traffic patterns.
     - Create firewall rules for admin paths (e.g., `/wp-admin`) and restrict by IP if possible.
 
-- **Speed → Caching**:
+- **Speed ➔ Caching**:
 
     - Browser Cache TTL: choose per your application
     - Enable Brotli (Compression) and Auto Minify (JS/CSS/HTML) if desired

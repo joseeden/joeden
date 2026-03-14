@@ -29,7 +29,7 @@ As a workaround, you can connect to the VM via SSH from your host machine.
 
 You can enable the shared clipboard in VirtualBox to copy text between your host machine and your VM.
 
-1. Go to **Devices** → **Shared Clipboard** → **Bidirectional**
+1. Go to **Devices** ➔ **Shared Clipboard** ➔ **Bidirectional**
 
     <div class='img-center'>
 
@@ -138,7 +138,7 @@ You can enable the shared clipboard in VirtualBox to copy text between your host
         echo $XDG_SESSION_TYPE
         ```
 
-        If `wayland` → switch to **Xorg** at login screen.
+        If `wayland` ➔ switch to **Xorg** at login screen.
 
 
     - Minimal install / no GUI session - Clipboard only works with GUI sessions.
@@ -233,7 +233,7 @@ Allows copying files directly by dragging them between host and VM windows.
 - Enable in VirtualBox menu:
 
     ```
-    Devices → Drag and Drop → Bidirectional
+    Devices ➔ Drag and Drop ➔ Bidirectional
     ```
 
 - Requires **Guest Additions** on the VM.
@@ -247,7 +247,7 @@ Take snapshots to save the current state of a VM for quick rollback.
 - From VirtualBox menu:
 
     ```
-    Machine → Take Snapshot
+    Machine ➔ Take Snapshot
     ```
     
 - Useful before updates, configuration changes, or testing software.
@@ -261,13 +261,13 @@ Integrate the VM display with the host desktop for better workflow.
 - **Fullscreen Mode**:
 
     ```
-    View → Fullscreen Mode
+    View ➔ Fullscreen Mode
     ```
 
 - **Seamless Mode**: merges guest windows with host desktop:
 
     ```
-    View → Seamless Mode
+    View ➔ Seamless Mode
     ```
 
 Notes: Requires **Guest Additions**.
@@ -279,7 +279,7 @@ Allows the VM to directly access USB devices from the host.
 - Connect USB devices in VirtualBox menu:
 
     ```
-    Devices → USB → <Device Name>
+    Devices ➔ USB ➔ <Device Name>
     ```
 
 - May require adding your user to `vboxusers` group on Linux:

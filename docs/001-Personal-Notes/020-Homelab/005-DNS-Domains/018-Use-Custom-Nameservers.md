@@ -42,7 +42,7 @@ If you switch between providers often, set up everything ahead of time to reduce
 
 1. Log in to your registrar (e.g., Namecheap)
 
-2. Go to **Domain List → Manage → Nameservers**
+2. Go to **Domain List ➔ Manage ➔ Nameservers**
 
 3. Select **Custom DNS** and enter the target provider’s nameservers:
 

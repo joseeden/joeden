@@ -99,9 +99,9 @@ GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"
 
 This forces:
 
-- `enp0s3` → `eth0`
-- `enp0s8` → `eth1`
-- `enp0s9` → `eth2`
+- `enp0s3` ➔ `eth0`
+- `enp0s8` ➔ `eth1`
+- `enp0s9` ➔ `eth2`
 
 This was commonly done in:
 

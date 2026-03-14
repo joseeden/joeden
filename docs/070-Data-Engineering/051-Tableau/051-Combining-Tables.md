@@ -104,12 +104,12 @@ Create the union by stacking the data from multiple sheets into one table.
 
 - Drag `Orders 2018` into the workspace amd double-click it.
 - Drag `Orders 2019` and `Orders 2020` into "Drag Table to Union".
-- Right-click → Edit Union → Add `Orders 2016 and 2017` one by one.  
+- Right-click ➔ Edit Union ➔ Add `Orders 2016 and 2017` one by one.  
 
 Since our table now includes multiple years, we should rename it.  
 
 - Close **Edit Union**.
-- Right-click the table → **Rename** → Enter **Orders 2016-2020**  
+- Right-click the table ➔ **Rename** ➔ Enter **Orders 2016-2020**  
 
 Now, let’s verify the data in a worksheet.  
 
@@ -170,7 +170,7 @@ Create a chart for returned orders:
 - Drag `Orders 2016-2020` to Columns.  
 - Set Marks type to "Bar".  
 - Drag `Returned` to Color in the Marks card.  
-- Right-click the "Null" legend → Edit Alias → Rename to "No".  
+- Right-click the "Null" legend ➔ Edit Alias ➔ Rename to "No".  
 - Hover over the graph to find the region with the most returns.  
 
 #### Solution 
@@ -215,8 +215,8 @@ Create the chart for the returned orders per sales representative:
 - Drag `Orders 2016-2020` to Columns and `Order Date` to Rows.  
 - Set Marks type to "Bar".  
 - Drag `Person` to Color in the Marks card.  
-- Drag `Returned` to Filters → Select "Yes" → Click OK.  
-- Click **Label** in the Marks card → Enable **Show Marks Label**.  
+- Drag `Returned` to Filters ➔ Select "Yes" ➔ Click OK.  
+- Click **Label** in the Marks card ➔ Enable **Show Marks Label**.  
 - Change the view from **"Standard"** to **"Entire View"**.  
 
 

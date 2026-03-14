@@ -86,13 +86,13 @@ To fix this:
 2. Verify VirtualBox Network Adapter
 
     ```
-    VirtualBox Manager → VM → Settings → Network
+    VirtualBox Manager ➔ VM ➔ Settings ➔ Network
     ```
 
     Check:
 
     - Adapter type (NAT / Bridged / Host-only)
-    - If Bridged → confirm it’s mapped to the **current active host adapter**
+    - If Bridged ➔ confirm it’s mapped to the **current active host adapter**
     - Example: WiFi changed from Ethernet
 
     If unsure:
@@ -221,12 +221,12 @@ This usually means the VM tried to boot the kernel from the ISO but something we
 Troubleshooting:
 
 1. Make sure the ISO matches the VM architecture: x86_64 (64-bit).
-2. Go to Settings → System → Motherboard → Enable EFI (special OSes only).
+2. Go to Settings ➔ System ➔ Motherboard ➔ Enable EFI (special OSes only).
     
     - This is usually off for CentOS Stream 10.
 
-3. Go to Settings → System → Processor → Enable PAE/NX → enable it.
-4. Go to Settings → System → Acceleration → Enable the following:
+3. Go to Settings ➔ System ➔ Processor ➔ Enable PAE/NX ➔ enable it.
+4. Go to Settings ➔ System ➔ Acceleration ➔ Enable the following:
 
     - VT-x/AMD-V (if its an option)
     - Nested Paging
@@ -248,13 +248,13 @@ To fix this:
 1. Disable EFI in VM settings:
 
     ```bash
-    Settings → System → Motherboard → Uncheck “Enable EFI (special OSes only)”
+    Settings ➔ System ➔ Motherboard ➔ Uncheck “Enable EFI (special OSes only)”
     ```
 
 2. Ensure PAE/NX is enabled:
 
     ```bash
-    Settings → System → Processor → Enable PAE/NX
+    Settings ➔ System ➔ Processor ➔ Enable PAE/NX
     ```
 
 3. Boot the VM again from your ISO.

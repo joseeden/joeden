@@ -251,7 +251,7 @@ Removed /etc/systemd/system/multi-user.target.wants/crond.service.
 [root@server home]#
 
 [root@server home]# systemctl enable crond
-Created symlink /etc/systemd/system/multi-user.target.wants/crond.service → /usr/lib/systemd/system/crond.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/crond.service ➔ /usr/lib/systemd/system/crond.service.
 ```
 
 ## Jobs and Processes

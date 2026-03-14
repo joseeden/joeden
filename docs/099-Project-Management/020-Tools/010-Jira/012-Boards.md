@@ -21,7 +21,7 @@ last_update:
 
 Boards visually track work progress with columns for statuses like "To Do" and "Done."
 
-- **Workflow:** Issues move through stages (e.g., `To Do → Done`).
+- **Workflow:** Issues move through stages (e.g., `To Do ➔ Done`).
 - **Moving Issues:** Drag issue cards across columns to update progress.
 
 ## Moving Issue Cards

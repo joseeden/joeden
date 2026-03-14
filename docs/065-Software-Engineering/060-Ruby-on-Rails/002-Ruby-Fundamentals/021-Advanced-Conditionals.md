@@ -191,8 +191,8 @@ The `unless` keyword is like an opposite of `if`. It runs code only when a condi
 
 We can use `unless` to handle cases when a password is incorrect.
 
-- Condition is false → code runs
-- Condition is true → code is skipped
+- Condition is false ➔ code runs
+- Condition is true ➔ code is skipped
 - Optional `else` runs when the condition is true
 
 Code: 

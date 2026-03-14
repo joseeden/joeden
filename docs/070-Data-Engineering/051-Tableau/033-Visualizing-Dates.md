@@ -23,7 +23,7 @@ Dates help analyze when events happened and identify trends over time. Tableau m
       ![](/img/docs/Screenshot-2025-03-09-183902.png)
 
 - **Built-in Date Hierarchy**  
-  - Tableau allows drilling down from **Year → Quarter → Month → Day**.  
+  - Tableau allows drilling down from **Year ➔ Quarter ➔ Month ➔ Day**.  
   - Helps analyze trends at different levels.  
 
 
