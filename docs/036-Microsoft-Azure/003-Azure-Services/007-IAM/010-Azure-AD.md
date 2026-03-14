@@ -32,6 +32,8 @@ To access it, go to the Microsoft Azure portal and search for **Microsoft Entra 
 
 </div>
 
+You should see the **Overview** page:
+
 <div class='img-center'>
 
 ![](/img/docs/Screenshot2026-03-14182707.png)
