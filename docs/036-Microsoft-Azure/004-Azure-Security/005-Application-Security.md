@@ -173,5 +173,4 @@ Azure Key Vault offers two tiers for different security needs.
 | Standard Key Vault | <ul><li>Multi-tenant</li><li>Supports secrets, software-protected and HSM-backed keys</li><li>FIPS 140-2 Level 2</li></ul>                                |
 | Managed HSM Pools  | <ul><li>Single-tenant hardware</li><li>Supports only HSM-protected keys</li><li>FIPS 140-2 Level 3</li><li>Ideal for compliance-heavy workloads</li></ul> |
 
-
 Standard is ideal for general workloads, while Managed HSM is best for high-security or compliance-critical scenarios.
