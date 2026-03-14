@@ -217,3 +217,132 @@ To use Azure Key Vault, log in to Azure portal and navigate to **Key Vault**.
     </div>
     
 7. Click **Create**.
+
+## Authentication in Key Vault
+
+Azure Key Vault uses Microsoft Entra ID to verify identities before allowing access. When a user or application requests data from Key Vault, Azure first confirms who they are through authentication.
+
+### Identity Types
+
+These identities define **who** is requesting access.
+
+- **User** represents a real person
+- **Group** represents a collection of users
+- **Service principal** represents an application or service
+
+### Authentication Methods
+
+Applications use specific authentication methods to prove their identity when connecting to Azure services.
+
+- **Managed Identity** allows Azure to create and manage the identity automatically
+- **App Registration** requires developers to create and manage credentials
+
+Managed identities are usually preferred because Azure handles credential management automatically.
+
+## Authorization in Key Vault
+
+After authentication, Azure determines what actions the identity is allowed to perform. This process is called authorization.
+
+- Access policies provide the older access control method
+- Azure RBAC provides modern role-based permissions
+
+Authorization ensures identities only perform actions they are permitted to do in Key Vault.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-14235850.png)
+
+</div>
+
+### Access Policies
+
+Access Policies are the older permission model in Key Vault. They control actions related to the data stored in the vault.
+
+- Control the data plane
+- Manage actions like reading secrets or creating keys
+- Simple model suitable for smaller environments
+
+Access Policies do not manage administrative operations on the vault itself, which limits their flexibility in larger environments.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-14235935.png)
+
+</div>
+
+
+### Azure RBAC
+
+Azure Role-Based Access Control is the recommended authorization model for Key Vault. It provides centralized access management across Azure.
+
+- Controls both management plane and data plane
+- Integrates with Azure security features
+- Supports enterprise access control policies
+
+RBAC works well for large environments because it integrates with other Azure security features such as PIM (Privilege Identity Management), MFA (Multifactor Authentication), and Conditional Access.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-15000016.png)
+
+</div>
+
+## Advanced Key Vault Settings 
+
+### Soft Delete
+
+Soft Delete protects your data from accidental or malicious deletion. When an item is deleted, it moves into a recoverable state instead of being permanently removed.
+
+- Deleted items remain recoverable
+- Applies to vaults, keys, secrets, and certificates
+- Prevents accidental data loss
+
+Soft delete configuration:
+
+- Retention period ranges from 7 to 90 days
+- Enabled by default for new vaults
+- Cannot be disabled after it is configured
+
+This protection guarantees that deleted items remain recoverable during the configured retention period.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-15000434.png)
+
+</div>
+
+
+### Purge Protection
+
+Purge Protection prevents permanent deletion of Key Vault items during the retention period.
+
+- Blocks permanent deletion during retention period
+- Protects both the vault and its contents
+- Prevents attackers from removing recovery options
+
+Even users with high permissions cannot permanently delete protected items until the retention period ends.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-15000545.png)
+
+</div>
+
+Purge Protection Configuration:
+
+- Soft Delete must be enabled first
+- Recovery remains possible during the retention period
+- Cannot be disabled once enabled
+
+
+## Key Vault Security Best Practices
+
+Below are some security best practices to help protect secrets and maintain control over sensitive data.
+
+- Create separate vaults for each application or environment
+- Grant only the minimum required permissions
+- Enable Soft Delete and Purge Protection
+- Perform backups after important changes
+- Enable diagnostic logging
+
+Logs can be sent to Azure Monitor or Microsoft Sentinel to detect suspicious activity and maintain a full audit trail to ensure Key Vault remains secure and manageable.
