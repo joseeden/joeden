@@ -124,7 +124,7 @@ Hardcoding secrets in code is risky. Passwords or API keys in your app can be co
 
 Key Vault solves this by centralizing sensitive data securely.
 
-## Key Vault Components
+### Key Vault Components
 
 Key Vault manages three main components: Secrets, Certificates, and Keys. Each has a specific role in keeping your app secure.
 
@@ -134,7 +134,7 @@ Key Vault manages three main components: Secrets, Certificates, and Keys. Each h
 
 </div>
 
-### Secrets
+#### Secrets
 
 Secrets are credentials or API keys your app needs to connect to services. Key Vault stores them encrypted, versioned, and accessible only to authorized applications.
 
@@ -144,7 +144,7 @@ Secrets are credentials or API keys your app needs to connect to services. Key V
 
 For example, a company app called "MyWebApp" stores its payroll database password in Key Vault instead of hardcoding it in the app.
 
-### Certificates
+#### Certificates
 
 Certificates prove your app’s identity and enable secure HTTPS connections. Key Vault can store and automatically renew them when integrated with trusted certificate authorities like DigiCert or GlobalSign.
 
@@ -154,7 +154,7 @@ Certificates prove your app’s identity and enable secure HTTPS connections. Ke
 
 Example: "MyWebApp" can use Key Vault to store certificates for secure connections between its HR portal and third-party payroll processors.
 
-### Keys
+#### Keys
 
 Keys are cryptographic tools used to encrypt, decrypt, sign, and verify data. Key Vault ensures keys never appear in code and can rotate them automatically if a policy is set.
 
@@ -164,7 +164,7 @@ Keys are cryptographic tools used to encrypt, decrypt, sign, and verify data. Ke
 
 Example: "MyWebApp" can store keys in Key Vault to protect employee records.
 
-## Key Vault Tiers
+### Key Vault Tiers
 
 Azure Key Vault offers two tiers for different security needs.
 
@@ -174,3 +174,46 @@ Azure Key Vault offers two tiers for different security needs.
 | Managed HSM Pools  | <ul><li>Single-tenant hardware</li><li>Supports only HSM-protected keys</li><li>FIPS 140-2 Level 3</li><li>Ideal for compliance-heavy workloads</li></ul> |
 
 Standard is ideal for general workloads, while Managed HSM is best for high-security or compliance-critical scenarios.
+
+### Using Key Vault 
+
+To use Azure Key Vault, log in to Azure portal and navigate to **Key Vault**.
+
+1. Click **Create** and provide the details for the key vault.
+
+2. Go to the **Access configuration** tab and set the **Permission model: Vault access policy**
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-03-14234226.png)
+
+    </div>
+
+3. Once you're done, click **Review + create.**
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-03-14232733.png)
+
+    </div>
+
+4. Open your key vault and go to **Objects** → **Secrets**.
+5. Click **Generate/Import** to add your secret.
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-03-14233326.png)
+
+    </div>
+
+6. Provide a name for the secret and add the secret value.
+
+    Make sure the secret is enabled.
+
+    <div class='img-center'>
+    
+    ![](/img/docs/Screenshot2026-03-14233613.png)
+    
+    </div>
+    
+7. Click **Create**.
