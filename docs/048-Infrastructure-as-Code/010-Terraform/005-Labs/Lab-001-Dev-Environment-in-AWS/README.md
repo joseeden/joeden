@@ -199,7 +199,7 @@ When you click the VPC ID, it should open the configuration file.
 } 
 ```
 
-## Terraform State
+## `terraform state`
 
 From the Hashicorp documentation page on [terraform state](https://www.terraform.io/language/state) :
 
@@ -229,7 +229,7 @@ terraform show
 
 ----------------------------------------------
 
-## Terraform Destroy
+## `terraform destroy`
 
 From Hashicorp documentation page on [terraform destroy](https://www.terraform.io/cli/commands/destroy):
 

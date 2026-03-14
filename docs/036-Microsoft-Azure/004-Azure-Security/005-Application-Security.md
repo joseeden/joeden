@@ -18,16 +18,36 @@ last_update:
 Azure App Configuration lets you update app settings or toggle features without changing code or redeploying. It centralizes configuration so your apps stay manageable and secure.
 
 - Store settings and feature flags in one place
-- Update values without redeploying apps
+- Update values instantly without redeploying apps
 - Fully managed by Azure with built-in security
 
-The settings are stored as **key-value pairs**. Keys identify each setting and can be flat or hierarchical using prefixes.
+<div class='img-center'>
 
-- Keys can be simple or structured (e.g., `MyApp:HR:ThemeColor`)
-- Values store actual data and metadata
+![](/img/docs/Screenshot2026-03-14225333.png)
+
+</div>
+
+Settings are organized as **key-value pairs**. Keys identify each setting and can be simple or hierarchical using prefixes.
+
+- Keys can be flat or structured (e.g., `MyApp:HR:ThemeColor`)
+- Values store the actual data and metadata (e.g. descriptions)
 - Labels allow environment-specific values like Dev or Prod
 
-Values are encrypted at rest and in transit. Metadata is descriptive only and not encrypted like values.
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-14225904.png)
+
+</div>
+
+All values are encrypted at rest and in transit. Metadata is descriptive only and not encrypted like values, so it should not contain sensitive information. 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-14225937.png)
+
+</div>
+
+
 
 ### Feature Management
 
