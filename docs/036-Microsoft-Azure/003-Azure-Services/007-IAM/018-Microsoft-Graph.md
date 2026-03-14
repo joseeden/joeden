@@ -214,14 +214,19 @@ Pagination ensures large datasets can be handled efficiently while keeping proce
 
 Batching allows combining multiple API requests into a single call. This reduces network trips and improves performance.
 
-- A single batch can include up to 20 requests
-- Each request in a batch has an `id`, `method`, `url`, and optional headers/body
-
 <div class='img-center'>
 
 ![](/img/docs/Screenshot2026-03-15044405.png)
 
 </div>
+
+
+A single batch can include up to 20 requests. Each request in a batch has an:
+
+- `id`
+- `method`
+- `url`
+- Optional headers/body
 
 To send a batch request:
 
@@ -245,7 +250,14 @@ Content-Type: application/json
 }
 ```
 
-The response includes an array of responses, each with `id`, `status`, headers, and `body` containing data or errors. Batching reduces repeated requests and makes dashboards or multiple operations faster.
+The response includes an array of responses, each with `id`, `status`, headers, and `body` containing data or errors. 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-15044718.png)
+
+</div>
+
 
 :::info 
 
