@@ -13,23 +13,69 @@ last_update:
 
 ## Overview
 
-Azure Monitor keeps cloud apps reliable and reduces customer impact. It gathers metrics and logs, raises alerts, and lets you fix issues before users report them.
+Cloud applications can fail without anyone noticing. Monitoring helps detect problems early so they can be fixed before users are affected.
 
-- Silent failures come from missing monitoring
-- You can lose money when failures stay hidden
-- App health is part of ongoing operations
+- Applications can fail silently
+- Production environments experience traffic spikes and network issues
+- Monitoring provides visibility into system health
 
-## Capabilities
+In real environments, systems behave differently under load. Without monitoring, issues may only be discovered when users report them. This makes troubleshooting slower and can impact availability.
 
-Azure Monitor provides three key capabilities in one workflow:
+Azure Monitor acts as a safety net for your resources.
 
-- **Metrics** for real-time health.
-- **Logs** for detailed diagnostics.
-- **Alerts** for automatic response.
+- Collects telemetry from Azure resources
+- Tracks services like virtual machines, storage accounts, and web apps
+- Helps detect and respond to issues early
 
-## Examples 
+Azure Monitor continuously gathers data about how your resources behave. This visibility helps identify problems quickly and keeps applications healthy and reliable.
 
-### Metrics 
+
+## Using Azure Monitor
+
+Azure Monitor can be used to check the health of resources, like for example, checking the activity of an Azure Storage account. We can use it to monitor storage transactions to confirm that requests are being processed normally.
+
+Steps:
+
+1. Navigate to the Azure portal
+2. Open your Storage account resource
+3. Go to the Metrics section
+4. Select the `Transactions` metric
+5. Set the time range to the last 24 hours
+
+In this example, the `Transactions` metric shows how many read and write operations occur on the storage account. Viewing the last 24 hours helps you quickly see usage patterns or detect unusual spikes or drops in activity.
+
+<div class='img-center'>
+
+![](/img/docs/all-things-azure-azure-monitor-metric-example.png)
+
+</div>
+
+Monitoring metrics like transactions gives a quick view of the storage account’s health and activity, which helps detect issues early and maintain reliable services.
+
+
+
+
+
+## Core Components
+
+Azure Monitor uses several components that work together to monitor applications.
+
+| Component  | Description                                |
+| ---------- | ------------------------------------------ |
+| Metrics    | Provide real-time performance measurements |
+| Logs       | Capture detailed event information         |
+| Alerts     | Notify you when conditions are met         |
+| Dashboards | Display monitoring data in one place       |
+
+Together, these components help detect issues early, investigate problems, and maintain application performance.
+
+## Metrics
+
+Metrics provide real-time measurements of resource performance and health.
+
+- Metrics track numerical performance data
+- Examples include CPU usage, memory usage, and network activity
+- Metrics update frequently for near real-time visibility
 
 In the example below, the metric `cpuPercentage` tracks CPU load for a VM. You can use this to detect overload quickly.
 
@@ -72,9 +118,58 @@ az monitor metrics list \
 }
 ```
 
-### Logs
+### Collect and View Metrics
 
-Logs show the exact request and error details to find root cause fast.
+Metrics show how your Azure resources are performing. They give real-time numbers to track health and usage.
+
+- Metrics are like a heartbeat for your resources
+- Azure collects them automatically when you create resources
+- No installation or coding is needed
+
+Azure tracks things like transaction counts, data uploaded and downloaded, availability, and latency for services such as storage accounts, virtual machines, and databases.
+
+Here are sample metrics for a storage account managing files and documents:
+
+| Metric       | Description                              |
+| ------------ | ---------------------------------------- |
+| Transactions | Number of read and write operations      |
+| Ingress      | Amount of data uploaded                  |
+| Egress       | Amount of data downloaded                |
+| Availability | Percentage of time storage is accessible |
+
+### Customize Metrics Views
+
+You can adjust how metrics are displayed in Metrics Explorer:
+
+- Change the time range to last hour, day, week, or custom period
+- Add multiple metrics to the same chart for comparison
+- Split metrics by dimensions like API name or response type
+- Apply aggregations such as sum, average, minimum, or maximum
+
+Custom views make it easier to see trends and spot issues quickly.
+
+### Metrics vs Logs
+
+Metrics and logs serve different purposes:
+
+| Type    | Details                                                                                                              |
+| ------- | -------------------------------------------------------------------------------------------------------------------- |
+| Metrics | <ul><li>Numerical, time-series based</li><li>Show trends like transaction counts or average response times</li></ul> |
+| Logs    | <ul><li>Capture detailed events</li><li>Show exactly what happened and who triggered it</li></ul>                    |
+
+Metrics give fast insights, while logs provide detailed context for investigation.
+
+
+## Logs
+
+Logs store detailed event-level information about what happened in the system.
+
+- Logs capture specific events and operations
+- Logs include error messages and timestamps
+- Logs provide context for troubleshooting problems
+
+While metrics show trends, logs explain exactly what happened. This detailed information helps identify the root cause of issues.
+
 
 Example: The command below queries the **Log Analytics** workspace for failed requests (non-`200` status codes) and shows the top 10 by time.
 
@@ -105,9 +200,15 @@ az monitor log-analytics query \
 ]
 ```
 
-### Alerts
+## Alerts
 
-Here, we're creating an alert rule in Azure Monitor so we can be notified when the VM is under heavy load.
+Instead of constantly watching dashboards, alerts can automatically notify you when something requires attention.
+
+- Alerts trigger when thresholds are exceeded
+- Notifications can be sent automatically
+- Alerts reduce the need for constant manual monitoring
+
+In this example, we're creating an alert rule in Azure Monitor so we can be notified when the VM is under heavy load.
 
 ```bash
 az monitor metrics alert create \
@@ -154,3 +255,12 @@ az monitor metrics alert create \
 }
 ```
 
+## Dashboards
+
+Dashboards provide a single view of system health.
+
+- Dashboards combine metrics, logs, and alerts
+- Data from multiple resources can be displayed together
+- Teams can quickly understand system status
+
+A unified dashboard makes monitoring easier by showing important information in one place.
