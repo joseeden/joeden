@@ -183,6 +183,11 @@ Metrics give fast insights, while logs provide detailed context for investigatio
 </div>
 
 
+### 
+
+
+
+
 ## Logs
 
 Logs store detailed event-level information about what happened in the system.
