@@ -8,7 +8,7 @@ tags:
 - Certifications
 sidebar_position: 5
 last_update:
-  date: 3/29/2021
+  date: 6/10/2023
 ---
 
 ## Overview
@@ -430,6 +430,12 @@ Following a few simple practices helps create useful alerts.
 - Test alerts regularly
 
 For example, critical outages may require immediate notifications, while informational alerts should not trigger urgent pages.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-15233932.png)
+
+</div>
 
 Testing alerts is also important. Generate test conditions and confirm notifications are delivered correctly. This ensures alerts work when a real incident occurs.
 
