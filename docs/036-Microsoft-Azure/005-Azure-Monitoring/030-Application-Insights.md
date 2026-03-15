@@ -5,6 +5,9 @@ tags:
 - Cloud
 - Microsoft Azure
 - DevOps
+- Monitoring 
+- Observability
+- APM
 - Certifications
 sidebar_position: 30
 last_update:
