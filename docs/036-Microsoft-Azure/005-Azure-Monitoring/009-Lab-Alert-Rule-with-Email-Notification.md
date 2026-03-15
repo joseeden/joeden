@@ -180,12 +180,13 @@ Back in your storage account, go to **Alert rules** to see all alerts created.
 
 Both the **Availability** and **Transaction** alert rules should be listed here.
 
+You are now set to receive email notifications automatically for both availability and transaction issues.
+
 <div class='img-center'>
 
 ![](/img/docs/Screenshot2026-03-16003655.png)
 
 </div>
 
-You are now set to receive email notifications automatically for both availability and transaction issues.
 
 
