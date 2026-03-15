@@ -284,44 +284,6 @@ az monitor metrics alert create \
 }
 ```
 
-
-### Alert Rules
-
-Alert rules define how monitoring works.
-
-- Signal identifies what metric or log to monitor
-- Condition defines when the alert triggers
-- Evaluation frequency defines how often Azure checks the condition
-
-For example, an alert rule might monitor a storage account's availability. If the average availability drops below 99%, Azure triggers the alert.
-
-Alerts are also **stateful**.
-
-| Alert State | Meaning           |
-| ----------- | ----------------- |
-| Triggered   | Problem is active |
-| Resolved    | Problem is fixed  |
-
-When the availability drops, Azure sends a notification. When the availability recovers, Azure automatically sends a resolved notification. This helps teams know when the issue starts and when it is fixed.
-
-### Action Groups
-
-Action groups define what happens when an alert triggers.
-
-- Send notifications such as email or SMS
-- Run automation tasks
-- Create support tickets
-
-Action groups are reusable. You can create one action group called `operations_team` and attach it to multiple alert rules.
-
-For example, the same action group can respond to:
-
-- Availability alerts
-- Transaction alerts
-- Error alerts
-
-This makes alert management simpler because one response team can handle multiple types of incidents.
-
 ### Example: Monitoring a Storage Account
 
 Consider a storage account that needs to be monitored for availability and cost.
@@ -332,9 +294,89 @@ Consider a storage account that needs to be monitored for availability and cost.
 
 If availability drops during the night, the alert triggers and notifies the on-call engineer.
 
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-15233638.png)
+
+</div>
+
 Later, when the problem is fixed, Azure sends a resolved notification. If transaction activity suddenly increases, a separate alert warns the team before unexpected billing occurs.
 
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-15233719.png)
+
+</div>
+
 This setup allows one resource to be monitored for multiple risks using reusable alert responses.
+
+### Alert Rules
+
+Alert rules define how monitoring works.
+
+| Component            | Description                                  |
+| -------------------- | -------------------------------------------- |
+| Signal               | Identifies what metric or log to monitor     |
+| Condition            | Defines when the alert triggers              |
+| Evaluation frequency | Defines how often Azure checks the condition |
+
+For example, an alert rule might monitor a storage account's availability. If the average availability drops below 99%, Azure triggers the alert.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-15232716.png)
+
+</div>
+
+Alerts are also **stateful**.
+
+| Alert State | Meaning           |
+| ----------- | ----------------- |
+| Triggered   | Problem is active |
+| Resolved    | Problem is fixed  |
+
+When the availability drops, Azure sends a notification. When the availability recovers, Azure automatically sends a resolved notification. This helps teams know when the issue starts and when it is fixed.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-15232857.png)
+
+</div>
+
+
+### Action Groups
+
+Action groups are your emergency response mechanisms that define what happens when an alert triggers.
+
+- Email notifications
+- SMS and voice calls 
+- Run automation tasks
+- Azure Functions
+- Logic Apps 
+- Webhooks
+- Create support tickets
+
+Action groups are reusable. You can create one action group called `operations_team` and attach it to multiple alert rules.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-15233005.png)
+
+</div>
+
+For example, the same action group can respond to:
+
+- Availability alerts
+- Cost alerts
+- Transaction alerts
+- Error alerts, etc.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-15233302.png)
+
+</div>
+
 
 ### Lookback Period
 
@@ -345,11 +387,17 @@ The lookback period defines how far back Azure checks for activity when evaluati
 
 For example, a 15 minute lookback period means Azure checks whether the condition occurred within the last 15 minutes.
 
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-15233445.png)
+
+</div>
+
 This helps alerts evaluate recent activity rather than only the most recent metric.
 
 ### Evaluation Frequency
 
-Evaluation frequency defines how often Azure checks the alert condition.
+Evaluation frequency defines **how often** Azure checks the alert condition.
 
 - Determines how often Azure evaluates the rule
 - Works together with the lookback period
@@ -361,7 +409,15 @@ For example:
 
 Azure checks every 5 minutes while analyzing the last 15 minutes of data.
 
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-15233524.png)
+
+</div>
+
 This creates overlapping checks. If a transaction spike occurs at 2:03 PM, Azure may detect it by 2:05 PM instead of waiting until 2:15 PM. Overlapping windows allow faster detection while avoiding excessive alerts.
+
+
 
 ### Best Practices for Alerts
 
