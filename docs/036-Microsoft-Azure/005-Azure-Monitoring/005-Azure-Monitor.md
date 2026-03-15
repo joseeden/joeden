@@ -21,6 +21,12 @@ Cloud applications can fail without anyone noticing. Monitoring helps detect pro
 
 In real environments, systems behave differently under load. Without monitoring, issues may only be discovered when users report them. This makes troubleshooting slower and can impact availability.
 
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-15171006.png)
+
+</div>
+
 Azure Monitor acts as a safety net for your resources.
 
 - Collects telemetry from Azure resources
@@ -128,6 +134,12 @@ Metrics show how your Azure resources are performing. They give real-time number
 
 Azure tracks things like transaction counts, data uploaded and downloaded, availability, and latency for services such as storage accounts, virtual machines, and databases.
 
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-15171216.png)
+
+</div>
+
 Here are sample metrics for a storage account managing files and documents:
 
 | Metric       | Description                              |
@@ -146,7 +158,12 @@ You can adjust how metrics are displayed in Metrics Explorer:
 - Split metrics by dimensions like API name or response type
 - Apply aggregations such as sum, average, minimum, or maximum
 
-Custom views make it easier to see trends and spot issues quickly.
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-15171331.png)
+
+</div>
+
 
 ### Metrics vs Logs
 
@@ -158,6 +175,12 @@ Metrics and logs serve different purposes:
 | Logs    | <ul><li>Capture detailed events</li><li>Show exactly what happened and who triggered it</li></ul>                    |
 
 Metrics give fast insights, while logs provide detailed context for investigation.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-15171418.png)
+
+</div>
 
 
 ## Logs
