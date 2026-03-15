@@ -58,6 +58,10 @@ In this lab, you will create an Azure Dashboard and add metrics from a Storage a
 
     </div>
 
+    **Note:** I've already created a storage account prior to this lab. 
+    For more information, please see [Create an Azure storage account](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal)
+
+
 2. Click **Save to dashboard** ➔ **Pin to dashboard**
 
     <div class='img-center'>

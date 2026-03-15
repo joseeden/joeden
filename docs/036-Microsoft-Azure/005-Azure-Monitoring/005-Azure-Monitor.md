@@ -73,7 +73,6 @@ Azure Monitor uses several components that work together to monitor applications
 | Alerts     | Notify you when conditions are met         |
 | Dashboards | Display monitoring data in one place       |
 
-Together, these components help detect issues early, investigate problems, and maintain application performance.
 
 ## Metrics
 

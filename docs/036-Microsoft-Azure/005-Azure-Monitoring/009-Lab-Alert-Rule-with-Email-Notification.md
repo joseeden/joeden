@@ -1,0 +1,128 @@
+---
+title: "Lab: Alert Rule with Email Notification"
+description: "Lab: Alert Rule with Email Notification"
+tags:
+- Cloud
+- Microsoft Azure
+- DevOps
+- Certifications
+sidebar_position: 9
+last_update:
+  date: 3/29/2021
+---
+
+## Overview
+
+In this lab, you create an Azure Monitor alert for a storage account that sends an email when availability drops below 99%.
+
+- Use an existing storage account
+- Configure an alert rule for availability
+- Create an action group with email notification
+
+This ensures you are notified automatically if the storage account has issues.
+
+
+## Open Storage Account
+
+Go to your **Storage account** in the Azure portal.
+
+**Note:** If you don’t have one, follow [Create an Azure storage account](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal).
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-15234708.png)
+
+</div>
+
+## Create Alert Rule
+
+Navigate to **Monitoring → Alerts → Create alert rule**.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-15234857.png)
+
+</div>
+
+Configure the alert condition:
+
+- Choose **Availability** as the signal
+- Set condition to **Less than 99%**
+- Set **Evaluation frequency** to every 5 minutes
+- Set **Lookback period** to 5 minutes
+
+This configuration avoids false positives from brief fluctuations.
+
+<div class='img-center'>
+
+![](/img/docs/all-things-azure-azure-monitor-create-alert-rule.png)
+
+</div>
+
+## Create Action Group
+
+Go to the **Actions** section and click **Create action group**.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-16000127.png)
+
+</div>
+
+Fill in the required details and go to **Notifications**.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-16000317.png)
+
+</div>
+
+Add a new email notification, enter your email address, and click **OK**
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-16000639.png)
+
+</div>
+
+Provide an action group name, then click **Revew + create** and **Create**.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-16000920.png)
+
+</div>
+
+You will see the new action group in the list. 
+Go to the **Details** tab.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-16001012.png)
+
+</div>
+
+## Configure Alert Rule Details
+
+Fill in the severity, alert rule name, and description. 
+
+Then click **Revew + create** and **Create**.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-16001233.png)
+
+</div>
+
+## Verify Email Notification
+
+Check your inbox for the alert notification. 
+
+You’ve been added to the Azure Monitor action group and will receive alerts automatically.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-16001602.png)
+
+</div>
+
