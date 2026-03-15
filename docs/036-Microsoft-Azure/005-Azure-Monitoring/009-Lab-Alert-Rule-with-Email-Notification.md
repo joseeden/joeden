@@ -34,7 +34,7 @@ Go to your **Storage account** in the Azure portal.
 
 </div>
 
-## Create Alert Rule
+## Create Availability Alert Rule
 
 Navigate to **Monitoring → Alerts → Create alert rule**.
 
@@ -55,11 +55,11 @@ This configuration avoids false positives from brief fluctuations.
 
 <div class='img-center'>
 
-![](/img/docs/all-things-azure-azure-monitor-create-alert-rule.png)
+![](/img/docs/Screenshot2026-03-16004053.png)
 
 </div>
 
-## Create Action Group
+## Create Action Group for Alerts
 
 Go to the **Actions** section and click **Create action group**.
 
@@ -125,4 +125,67 @@ You’ve been added to the Azure Monitor action group and will receive alerts au
 ![](/img/docs/Screenshot2026-03-16001602.png)
 
 </div>
+
+
+## Create Transaction Alert Rule
+
+Navigate to **Storage account → Alerts → Create → Alert rule**.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-16002526.png)
+
+</div>
+
+Configure the alert rule as follows: 
+
+- Select **Transactions** as the signal
+- Set condition: **Total transactions > 1000 in 15 minutes**
+- Set **Evaluation frequency** to every 5 minutes
+- Then go to **Actions**
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-16003929.png)
+
+</div>
+
+Click **Select action groups**, choose your action group, and click **Select**
+
+Then proceed to the **Details** tab.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-16003032.png)
+
+</div>
+
+Provide A **Severity**, **Name**, and **Description**
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-16003337.png)
+
+</div>
+
+## Verify All Alert Rules
+
+Back in your storage account, go to **Alert rules** to see all alerts created.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-16003500.png)
+
+</div>
+
+Both the **Availability** and **Transaction** alert rules should be listed here.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-16003655.png)
+
+</div>
+
+You are now set to receive email notifications automatically for both availability and transaction issues.
+
 
