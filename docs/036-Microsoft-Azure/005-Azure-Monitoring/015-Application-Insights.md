@@ -99,7 +99,3 @@ It acts as a central observability tool for your architecture and combines telem
 </div>
 
 
-## Putting It Into Practice
-
-
-
