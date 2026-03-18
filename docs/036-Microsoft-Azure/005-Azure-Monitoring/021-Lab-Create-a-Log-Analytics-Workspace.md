@@ -17,7 +17,7 @@ last_update:
 
 ## Overview
 
-In this lab, we'll seet up a Log Analytics Workspace to centralize logs and improve visibility across Azure resources.
+In this lab, we'll set up a Log Analytics Workspace to centralize logs and improve visibility across Azure resources.
 
 ## Create the Log Analytics Workspace
 

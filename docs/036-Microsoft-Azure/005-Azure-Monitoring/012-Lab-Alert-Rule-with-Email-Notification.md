@@ -16,7 +16,7 @@ last_update:
 
 ## Overview
 
-In this lab, you create an Azure Monitor alert for a storage account that sends an email when availability drops below 99%.
+In this lab, we will create an Azure Monitor alert for a storage account that sends an email when availability drops below 99%.
 
 - Use an existing storage account
 - Configure an alert rule for availability

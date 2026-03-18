@@ -16,7 +16,7 @@ last_update:
 
 ## Overview 
 
-In this lab, you will generate activity on a storage account and use Azure Monitor to track how it is being used. 
+In this lab, we will generate activity on a storage account and use Azure Monitor to track how it is being used. 
 
 ## Steps 
 

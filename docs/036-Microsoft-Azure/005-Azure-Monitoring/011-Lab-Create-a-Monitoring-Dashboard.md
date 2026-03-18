@@ -16,7 +16,7 @@ last_update:
 
 ## Overview
 
-In this lab, you will create an Azure Dashboard and add metrics from a Storage account and Application Insights to monitor resource health in one place.
+In this lab, we will create an Azure Dashboard and add metrics from a Storage account and Application Insights to monitor resource health in one place.
 
 ## Creating the Dashboard 
 
