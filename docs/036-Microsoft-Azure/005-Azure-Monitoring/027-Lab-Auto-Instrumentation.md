@@ -138,6 +138,8 @@ This lab demonstrates how to monitor the performance and availability of a web a
     - Call stack or operation details
     - Timeline of events for that request
 
+    Example: 
+    
     <div class='img-center'>
 
     ![](/img/docs/Screenshot2026-03-19002626.png)
@@ -154,7 +156,7 @@ This lab demonstrates how to monitor the performance and availability of a web a
 
     </div>
 
-9. Click **View all** to see the traces and events for the operation...
+9. Click **View all** to see the traces and events for the operation.
 
     The traces, dependencies, and events captured for that operation provides you a full picture of how the request flowed through your app.
 

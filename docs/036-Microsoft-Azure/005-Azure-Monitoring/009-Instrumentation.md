@@ -86,14 +86,6 @@ Your app needs a connection string to send telemetry to Application Insights.
 - Auto-instrumentation sets the connection string automatically
 - Manual SDK instrumentation requires you to provide it
 
-Under the hood, Azure stores the connection string in environment variables, which the monitoring agent reads at runtime.
-
-<div class='img-center'>
-
-![](/img/docs/all-things-azure-Page-8.png)
-
-</div>
-
 Without a valid connection string, no telemetry will be collected.
 
 <div class='img-center'>
@@ -101,6 +93,18 @@ Without a valid connection string, no telemetry will be collected.
 ![](/img/docs/all-things-azure-Page-7.png)
 
 </div>
+
+Azure stores the connection string in environment variables, which the monitoring agent reads at runtime.
+
+<div class='img-center'>
+
+![](/img/docs/all-things-azure-Page-8.png)
+
+</div>
+
+
+
+
 
 
 ## Troubleshooting Missing Telemetry
