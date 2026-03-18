@@ -42,7 +42,7 @@ Imagine checking the weather in Paris. The app does not store all weather data l
 
 In the example below, we are fetching weather data for London and Paris and combining them into a single JSON payload. The `get_weather` function simulates retrieving data from an API.
 
-**Note**: The code below is an excerpt. To see the full, working version, please check out the [Jupyter Notebook.](/docs/065-Software-Engineering/021-Jupyter-Notebooks/030-API-Management-in-Azure/Fetch-Weather-Data-using-OpenWeatherMap.ipynb)
+**Note**: The code below is an excerpt. To see the full, working version, please check out the [Jupyter Notebook.](https://github.com/joseeden/joeden/blob/master/docs/065-Software-Engineering/021-Jupyter-Notebooks/030-API-Management-in-Azure/Fetch-Weather-Data-using-OpenWeatherMap.ipynb)
 
 ```python
 london_weather = get_weather('London')
