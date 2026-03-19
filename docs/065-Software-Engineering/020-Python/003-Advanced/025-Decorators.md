@@ -259,8 +259,6 @@ def multiply(a, b):
 print(multiply(3, 4))
 ```
 
-
-
 ## Examples
 
 ### Before and After a Function
