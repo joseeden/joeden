@@ -10,8 +10,9 @@ Usage:
     python3 timeout-decorator.py
 
 Expected output:
-Function call timed out!
-Running for 10 seconds!
+    Function call timed out!
+    Running for 10 seconds!
+    
 """
 
 def raise_timeout(signum, frame):

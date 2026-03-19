@@ -14,8 +14,8 @@ Usage:
     python3 function-tagger.py 
     
 Expected output:
-('app_update_id', 'experimental')
-('app_update_id', 'platform_team')
+  ('app_update_id', 'experimental')
+  ('app_update_id', 'platform_team')
 
 """
 

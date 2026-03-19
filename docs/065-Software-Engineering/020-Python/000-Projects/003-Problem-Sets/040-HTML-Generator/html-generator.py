@@ -10,12 +10,13 @@ Usage:
     python3 html-generator.py
 
 Expected output:
-<b>Hello Alice!</b>
-<i>Goodbye Alice.</i>
-<div>
-<b>Hello Alice!</b>
-<i>Goodbye Alice.</i>
-</div>
+    <b>Hello Alice!</b>
+    <i>Goodbye Alice.</i>
+    <div>
+    <b>Hello Alice!</b>
+    <i>Goodbye Alice.</i>
+    </div>
+    
 """
 
 def html(open_tag, close_tag):

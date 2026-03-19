@@ -42,4 +42,4 @@ Instead of repeating similar code for every HTML tag, use a single decorator tha
 
 Create a reusable decorator,` html()`, that takes HTML tags as parameters and applies them to the function output.
 
-The full code can be found here: [Github repo](https://github.com/joseeden/joeden/tree/master/docs/065-Software-Engineering/020-Python/000-Projects/003-Problem-Sets/040-HTML-Generator/html-generator.py)
+The full code can be found here: [Github repo](https://github.com/joseeden/joeden/tree/master/docs/065-Software-Engineering/020-Python/000-Projects/003-Problem-Sets/040-HTML-Generator)
