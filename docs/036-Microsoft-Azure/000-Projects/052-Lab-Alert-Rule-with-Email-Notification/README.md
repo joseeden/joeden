@@ -9,7 +9,7 @@ tags:
 - Observability
 - APM
 - Certifications
-sidebar_position: 22
+sidebar_position: 52
 last_update:
   date: 3/29/2021
 ---

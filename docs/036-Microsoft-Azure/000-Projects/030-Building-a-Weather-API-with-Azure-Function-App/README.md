@@ -7,7 +7,7 @@ tags:
 - DevOps
 - API Design
 - API Management
-sidebar_position: 50
+sidebar_position: 30
 # last_update:
 #   date: 9/11/2023
 ---

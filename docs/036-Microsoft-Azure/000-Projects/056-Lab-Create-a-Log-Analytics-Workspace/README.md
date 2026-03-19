@@ -9,7 +9,7 @@ tags:
 - Observability
 - APM
 - Certifications
-sidebar_position: 26
+sidebar_position: 56
 last_update:
   date: 9/3/2023
 ---
@@ -47,9 +47,9 @@ This creates the workspace where all logs will be stored and analyzed.
 
 Connect your Function App to the Log Analytics workspace to start collecting logs.
 
-<!-- **Note:** I've created a Function app prior to this lab. You can follow the steps in [Lab: Create Application Insights.](/docs/036-Microsoft-Azure/005-Azure-Monitoring/025-Lab-Create-Application-Insights.md#create-application-insights) -->
+<!-- **Note:** I've created a Function app prior to this lab. You can follow the steps in [Lab: Create Application Insights.](/docs/036-Microsoft-Azure/005-Azure-Monitoring/055-Lab-Create-Application-Insights.md#create-application-insights) -->
 
-**Note:** I've created a Function app prior to this lab. You can follow the steps in [Lab: Create Application Insights.](/docs/036-Microsoft-Azure/000-Projects/025-Lab-Create-Application-Insights/README.md#create-application-insights)
+**Note:** I've created a Function app prior to this lab. You can follow the steps in [Lab: Create Application Insights.](/docs/036-Microsoft-Azure/000-Projects/055-Lab-Create-Application-Insights/README.md#create-application-insights)
 
 1. Navigate to your Function App and go to **Monitoring** ➔ **Diagnostic settings**
 
