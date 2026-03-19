@@ -23,4 +23,4 @@ Create a **timeout decorator** that stops a function if it runs longer than the 
 
 The decorator can use Python's `signal` module to raise a `TimeoutError` when the function takes too long. It can also be customized to allow different timeouts for different functions. 
 
-The full code can be found here: [Github repo](https://github.com/joseeden/joeden/tree/master/docs/065-Software-Engineering/020-Python/000-Projects/003-Problem-Sets/041-Timeout-Generator)
+The full code can be found here: [Github repo](https://github.com/joseeden/joeden/tree/master/docs/065-Software-Engineering/020-Python/000-Projects/003-Problem-Sets/041-Timeout-Generator/timeout-decorator.py)
