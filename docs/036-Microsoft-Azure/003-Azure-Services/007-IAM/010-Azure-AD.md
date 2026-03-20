@@ -51,7 +51,7 @@ To go the Entra Admin Center, scroll down and click **Go to Microsoft Entra**.
 
 The Microsoft Entra admin center:
 
-<div class='img-center pix-border-color'>
+<div class='img-center img-border-color'>
 
 ![](/img/docs/Screenshot2026-03-14183107.png)
 
