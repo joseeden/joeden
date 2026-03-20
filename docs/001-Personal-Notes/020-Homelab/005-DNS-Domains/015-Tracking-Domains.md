@@ -86,7 +86,11 @@ Go through the installation wizard.
 
 In the **Software requirements** step, make sure all items show **Passed**:
 
+<div class='img-center img-border-color' size=700>
+
 ![](/img/docs/08092025-domainmod-1.PNG)
+
+</div>
 
 Next steps:
 
@@ -110,16 +114,27 @@ The default username and password are "admin", and you'll be prompted to change 
 
 After installation, log in using the default credentials:
 
+<div class='img-center img-border-color'>
+
 ![](/img/docs/08092025-domainmod-2.PNG)
+
+</div>
 
 You’ll be prompted to change your password:
 
+<div class='img-center img-border-color'>
+
 ![](/img/docs/08092025-domainmod-3.PNG)
+
+</div>
 
 Once logged in, all added domains and SSL certificates will appear in the dashboard:
 
+<div class='img-center img-border-color'>
+
 ![](/img/docs/08092025-domainmod-4.PNG)
 
+</div>
 
 
 ### Adding a Domain Registrar and Account
@@ -131,10 +146,18 @@ Before adding domains, you must add at least:
 
 Example of adding a registrar:
 
+<div class='img-center img-border-color'>
+
 ![](/img/docs/08092025-domainmod-5.PNG)
+
+</div>
 
 For example, add Namecheap if you have domains there:
 
+<div class='img-center img-border-color'>
+
 ![](/img/docs/08092025-domainmod-6.PNG)
+
+</div>
 
 

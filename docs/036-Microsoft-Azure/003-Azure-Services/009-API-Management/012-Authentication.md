@@ -135,3 +135,12 @@ Policies define who can call specific APIs and under what conditions.
 </div>
 
 For example, only admin users can access certain endpoints, while regular users have limited access. This ensures consistent and secure API behavior across the system.
+
+Below is an example of an APIM instance showing where API policies can be configured.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-20175723.png)
+
+</div>
+

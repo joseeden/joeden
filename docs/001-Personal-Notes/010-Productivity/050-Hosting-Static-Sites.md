@@ -5,7 +5,7 @@ tags:
 - Personal Notes
 - Development
 description: "VirtualBox NOtes"
-sidebar_position: 22
+sidebar_position: 50
 last_update:
   date: 11/22/2023
 ---
@@ -21,7 +21,7 @@ Steps:
 4. Upload your static files.
 5. Once its live, you should see the new site under **Sites.**
 
-    <div class="img-center"> 
+    <div class='img-center img-border-color'>
 
     ![](/img/docs/Screenshot-2025-03-23-174204.png)
 
@@ -29,7 +29,7 @@ Steps:
 
 6. Click the site, then click the link on the next page. This is the public link of your site.
 
-    <div class="img-center"> 
+    <div class='img-center img-border-color'>
 
     ![](/img/docs/Screenshot-2025-03-23-174317.png)
 
@@ -45,7 +45,7 @@ Steps:
 3. Scroll down to the bottom and click **Delete this site.**
 
 
-<div class="img-center"> 
+<div class='img-center img-border-color'>
 
 ![](/img/docs/Screenshot-2025-03-23-173855.png)
 

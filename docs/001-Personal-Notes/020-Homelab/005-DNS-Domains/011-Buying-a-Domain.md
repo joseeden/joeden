@@ -24,7 +24,7 @@ Once you've chosen a registrar and a domain, you can proceed to buy the domain. 
 
 To buy a domain on Namecheap, go to their website and enter the domain name you want. You’ll see available options and different domain endings (like `.net`, `.org`, `.cars`, `.xyz`).
 
-#### Buying a Domain
+### Buying a Domain
 
 After picking your domain, follow these steps:
 
@@ -42,79 +42,128 @@ In the **Whois Contact** section, fill in:
 
 You can also choose to enable **Domain Privacy** on the same page.
 
+<div class='img-center img-border-color'>
+
 ![Namecheap Whois Privacy Setup](/img/docs/08092025-namecheap-1.PNG)
+
+</div>
 
 On the **Billing** page, add your credit card information. At the bottom, you can opt to enable automatic renewal.
 
+<div class='img-center img-border-color'>
+
 ![Namecheap Billing Setup](/img/docs/08092025-namecheap-2.PNG)
+
+</div>
 
 After confirming, you’ll see your order number.
 
+<div class='img-center img-border-color'>
+
 ![Namecheap Order Confirmation](/img/docs/08092025-namecheap-3.PNG)
 
+</div>
 
-#### Account Requires Verification 
+
+### Account Requires Verification 
 
 After buying your domain, you need to verify your email address. Namecheap will send you a verification email. 
 
+<div class='img-center img-border-color'>
+
 ![Namecheap Order Confirmation](/img/docs/08092025-namecheap-11.PNG)
+
+</div>
 
 Check your bank notifications or your credit card statemen, the payment will appear with a descriptor like `NAME-CHEAP.COM*XXXXXX`.
 
 
-#### Enable Two-Factor Authentication (2FA)
+### Enable Two-Factor Authentication (2FA)
 
 For most users, using an **Authentication App** for 2FA is recommended.
 
+<div class='img-center img-border-color'>
+
 ![Namecheap 2FA Setup](/img/docs/08092025-namecheap-4.PNG)
+
+</div>
 
 You’ll need to enter your password first.
 
+<div class='img-center img-border-color'>
+
 ![Namecheap Password Prompt](/img/docs/08092025-namecheap-5.PNG)
 
+</div>
 
-#### Dashboard
+
+### Dashboard
 
 In your Namecheap dashboard, you can view all your domain details.
 
+<div class='img-center img-border-color'>
+
 ![Namecheap Dashboard](/img/docs/08092025-namecheap-6.PNG)
+
+</div>
 
 Click **Verify Contacts**. A banner will say "Email sent successfully."
 
 Check your email for a message titled "IMMEDIATE VERIFICATION required for your domain(s)."
 
+<div class='img-center img-border-color'>
+
 ![Verification Email](/img/docs/08092025-namecheap-7.PNG)
+
+</div>
 
 Scroll down and click the link labeled **"Click to verify your email address."**
 
+<div class='img-center img-border-color'>
+
 ![Verify Email Link](/img/docs/08092025-namecheap-8.PNG)
+
+</div>
 
 A new tab will open showing a **"successfully verified"** message.
 
+<div class='img-center img-border-color'>
+
 ![Verification Success](/img/docs/08092025-namecheap-9.PNG)
 
+</div>
 
-#### Disable Auto-renew
+### Disable Auto-renew
 
 Back in your Namecheap dashboard, click the **arrow down** icon next to your domain.
 
+<div class='img-center img-border-color'>
+
 ![Disable Auto-renew](/img/docs/08092025-namecheap-10.PNG)
 
-
+</div>
 
 ## Porkbun
 
 To buy a domain on Porkbun, go to their website, enter the domain you want, choose from the available options, and create your account.
 
-#### Verify Identification 
+### Verify Identification 
 
 **Note:** Porkbun requires ID verification. Some people may find this a bit invasive, so keep that in mind.
 
+<div class='img-center img-border-color'>
+
 ![Porkbun ID Verification](/img/docs/08092025-porkbun-1.PNG)
+
+</div>
 
 Click **Continue with ID verification**. You’ll scan a QR code and finish the process on your phone.
 
+<div class='img-center img-border-color'>
+
 ![Porkbun QR Code](/img/docs/08092025-porkbun-2.PNG)
+
+</div>
 
 You’ll need to:
 
@@ -123,13 +172,21 @@ You’ll need to:
 
 After submitting, you should see a confirmation message.
 
+<div class='img-center img-border-color'>
+
 ![Porkbun Submission Confirmation](/img/docs/08092025-porkbun-3.PNG)
+
+</div>
 
 Verification is usually fast, but if there’s a delay, it may take up to 24 hours. You can email **[support@porkbun.com](mailto:support@porkbun.com)** if needed.
 
+<div class='img-center img-border-color'>
+
 ![Porkbun Support Email](/img/docs/08092025-porkbun-4.PNG)
 
-#### Enable MFA 
+</div>
+
+### Enable MFA 
 
 After verification, you can enable **Multi-Factor Authentication (MFA)** for added security. 
 

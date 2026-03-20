@@ -55,7 +55,7 @@ The redirect URL ensures that after login, Entra ID knows where to send the auth
 
 ## Capturing Client Information
 
-After registration, capture key identifiers and secrets.
+After registration, we will need to capture key identifiers and secrets.
 
 - Application (Client) ID and Tenant ID
 - Client secret
@@ -70,14 +70,20 @@ OAuth requires specific URLs from the IdP to complete authentication.
 - Authorization endpoint for user sign-in
 - Token endpoint for exchanging codes for tokens
 
-In Entra ID, find these under the Endpoints tab of your app registration. Your application redirects users to the authorization endpoint, then uses the token endpoint to get an access token for API calls.
+In Entra ID, find these under the **Endpoints** tab of your app registration. Your application redirects users to the authorization endpoint, then uses the token endpoint to get an access token for API calls.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-20174941.png)
+
+</div>
 
 ## Connecting APIM to Entra ID
 
-Finally, configure API Management to use the IdP.
+Finally, we need to configure API Management to use the IdP.
 
 - Set APIM as a confidential client
 - Enter client ID, secret, and endpoints
 - Define the scopes your API exposes
 
-This links APIM to Entra ID, allowing OAuth authentication for your APIs. All API calls are now validated through the IdP, keeping access secure and centralized.
+This links APIM to Entra ID, which will allow OAuth authentication for your APIs. All API calls are now validated through the IdP, keeping access secure and centralized.
