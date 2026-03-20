@@ -42,7 +42,7 @@ In the **Whois Contact** section, fill in:
 
 You can also choose to enable **Domain Privacy** on the same page.
 
-<div class='img-center img-border-color'>
+<div class='img-center'>
 
 ![Namecheap Whois Privacy Setup](/img/docs/08092025-namecheap-1.PNG)
 
@@ -50,7 +50,7 @@ You can also choose to enable **Domain Privacy** on the same page.
 
 On the **Billing** page, add your credit card information. At the bottom, you can opt to enable automatic renewal.
 
-<div class='img-center img-border-color'>
+<div class='img-center'>
 
 ![Namecheap Billing Setup](/img/docs/08092025-namecheap-2.PNG)
 
@@ -58,7 +58,7 @@ On the **Billing** page, add your credit card information. At the bottom, you ca
 
 After confirming, you’ll see your order number.
 
-<div class='img-center img-border-color'>
+<div class='img-center'>
 
 ![Namecheap Order Confirmation](/img/docs/08092025-namecheap-3.PNG)
 
@@ -69,7 +69,7 @@ After confirming, you’ll see your order number.
 
 After buying your domain, you need to verify your email address. Namecheap will send you a verification email. 
 
-<div class='img-center img-border-color'>
+<div class='img-center'>
 
 ![Namecheap Order Confirmation](/img/docs/08092025-namecheap-11.PNG)
 
@@ -82,7 +82,7 @@ Check your bank notifications or your credit card statemen, the payment will app
 
 For most users, using an **Authentication App** for 2FA is recommended.
 
-<div class='img-center img-border-color'>
+<div class='img-center'>
 
 ![Namecheap 2FA Setup](/img/docs/08092025-namecheap-4.PNG)
 
@@ -90,7 +90,7 @@ For most users, using an **Authentication App** for 2FA is recommended.
 
 You’ll need to enter your password first.
 
-<div class='img-center img-border-color'>
+<div class='img-center'>
 
 ![Namecheap Password Prompt](/img/docs/08092025-namecheap-5.PNG)
 
@@ -101,7 +101,7 @@ You’ll need to enter your password first.
 
 In your Namecheap dashboard, you can view all your domain details.
 
-<div class='img-center img-border-color'>
+<div class='img-center'>
 
 ![Namecheap Dashboard](/img/docs/08092025-namecheap-6.PNG)
 
@@ -111,7 +111,7 @@ Click **Verify Contacts**. A banner will say "Email sent successfully."
 
 Check your email for a message titled "IMMEDIATE VERIFICATION required for your domain(s)."
 
-<div class='img-center img-border-color'>
+<div class='img-center'>
 
 ![Verification Email](/img/docs/08092025-namecheap-7.PNG)
 
@@ -119,7 +119,7 @@ Check your email for a message titled "IMMEDIATE VERIFICATION required for your 
 
 Scroll down and click the link labeled **"Click to verify your email address."**
 
-<div class='img-center img-border-color'>
+<div class='img-center'>
 
 ![Verify Email Link](/img/docs/08092025-namecheap-8.PNG)
 
@@ -127,7 +127,7 @@ Scroll down and click the link labeled **"Click to verify your email address."**
 
 A new tab will open showing a **"successfully verified"** message.
 
-<div class='img-center img-border-color'>
+<div class='img-center'>
 
 ![Verification Success](/img/docs/08092025-namecheap-9.PNG)
 
@@ -137,7 +137,7 @@ A new tab will open showing a **"successfully verified"** message.
 
 Back in your Namecheap dashboard, click the **arrow down** icon next to your domain.
 
-<div class='img-center img-border-color'>
+<div class='img-center'>
 
 ![Disable Auto-renew](/img/docs/08092025-namecheap-10.PNG)
 
@@ -151,7 +151,7 @@ To buy a domain on Porkbun, go to their website, enter the domain you want, choo
 
 **Note:** Porkbun requires ID verification. Some people may find this a bit invasive, so keep that in mind.
 
-<div class='img-center img-border-color'>
+<div class='img-center'>
 
 ![Porkbun ID Verification](/img/docs/08092025-porkbun-1.PNG)
 
@@ -159,7 +159,7 @@ To buy a domain on Porkbun, go to their website, enter the domain you want, choo
 
 Click **Continue with ID verification**. You’ll scan a QR code and finish the process on your phone.
 
-<div class='img-center img-border-color'>
+<div class='img-center'>
 
 ![Porkbun QR Code](/img/docs/08092025-porkbun-2.PNG)
 
@@ -172,7 +172,7 @@ You’ll need to:
 
 After submitting, you should see a confirmation message.
 
-<div class='img-center img-border-color'>
+<div class='img-center'>
 
 ![Porkbun Submission Confirmation](/img/docs/08092025-porkbun-3.PNG)
 
@@ -180,7 +180,7 @@ After submitting, you should see a confirmation message.
 
 Verification is usually fast, but if there’s a delay, it may take up to 24 hours. You can email **[support@porkbun.com](mailto:support@porkbun.com)** if needed.
 
-<div class='img-center img-border-color'>
+<div class='img-center'>
 
 ![Porkbun Support Email](/img/docs/08092025-porkbun-4.PNG)
 

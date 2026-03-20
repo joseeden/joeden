@@ -66,12 +66,12 @@ The registrar remains `Name.com`, you only change the domain's authoritative nam
 
     :::
 
-4. Decide which records should be proxied through Cloudflare:
+3. Decide which records should be proxied through Cloudflare:
 
     - Orange cloud (proxied): HTTP/HTTPS web traffic (gains CDN + security)
     - Grey cloud (DNS-only): mail (MX), subdomains required for SMTP, many non-HTTP services, and some verification endpoints
       
-5. Typical rule: leave MX, IMAP/SMTP (A records for mail servers), and other mail-related records as **grey cloud** (DNS-only).
+4. Typical rule: leave MX, IMAP/SMTP (A records for mail servers), and other mail-related records as **grey cloud** (DNS-only).
 
     <div class='img-center'>
 
@@ -79,9 +79,9 @@ The registrar remains `Name.com`, you only change the domain's authoritative nam
 
     </div>
 
-6. Click **Continue Activation.**
+5. Click **Continue Activation.**
 
-7. After confirming DNS records, Cloudflare will show the two authoritative nameservers it wants you to use.
+6. After confirming DNS records, Cloudflare will show the two authoritative nameservers it wants you to use.
 
     <div class='img-center'>
 

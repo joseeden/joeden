@@ -84,8 +84,11 @@ By default, a browser window will open at http://localhost:3000.
 
 Create the repository first:
 
+<div class='img-center'>
+
 ![](/img/docs/deploy-github-pagesss.png)
 
+</div>
 
 Going back to your local repository, initialize it as a Github repository.
 Set the remote Github repository as the upstream repository. Commit and push.
@@ -187,10 +190,11 @@ git add; git commit
 
 In Github, check the Actions tab. We should see the workflow created.
 
+<div class='img-center'>
+
 ![](/img/docs/notes-github-worklow-created-for-docu-site.png)
 
-
-
+</div>
 
 
 

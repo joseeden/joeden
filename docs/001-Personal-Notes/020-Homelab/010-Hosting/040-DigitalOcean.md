@@ -29,8 +29,11 @@ A project helps you organize related resources in DigitalOcean.
 3. Enter a name and description
 4. Click **Create Project**
 
+<div class='img-center'>
+
 ![](/img/docs/08052025-digitalocean-project.PNG)
 
+</div>
 
 ## Adding a Domain
 
@@ -42,8 +45,11 @@ Note: You need to already own a domain or purchase one first.
 2. Enter your domain name
 3. Click **Add Domain**
 
+<div class='img-center'>
+
 ![](/img/docs/08052025-digitalocean-networkign.PNG)
 
+</div>
 
 ## Use DO Name Servers
 
@@ -87,7 +93,7 @@ To use DigitalOcean’s API, you need to create an API token with the right perm
 
 For labs, you can set the scope to Full Access. After doing the lab, make sure to delete the token.
 
-<div class="img-center"> 
+<div class='img-center'>
 
 ![](/img/docs/08102025-create-pat.PNG)
 

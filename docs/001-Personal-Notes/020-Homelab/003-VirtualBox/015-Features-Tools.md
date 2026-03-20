@@ -31,7 +31,7 @@ You can enable the shared clipboard in VirtualBox to copy text between your host
 
 1. Go to **Devices** ➔ **Shared Clipboard** ➔ **Bidirectional**
 
-    <div class='img-center img-border-color'>
+    <div class='img-center'>
 
     ![](/img/docs/Screenshot-2026-02-14-152629.png)
 
