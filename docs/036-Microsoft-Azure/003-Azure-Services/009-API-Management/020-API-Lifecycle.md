@@ -47,5 +47,4 @@ A canary release tests updates with a small audience before a full rollout.
 - Use a revision-specific URL if needed
 - Roll forward when ready or roll back instantly if issues arise
 
-This ensures updates are safe, just like letting testers ride a maintenance track without affecting regular passengers.
 
