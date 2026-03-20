@@ -596,7 +596,7 @@ The goal is to apply an inbound policy that converts incoming XML requests into 
 
     </div>
 
-9. Check the **HTTP Response** to confirm the payload is wrapped in the <response> XML tag.
+9. Check the **HTTP Response** to confirm the payload is wrapped in the `<response>` XML tag.
 
     <div class='img-center'>
 

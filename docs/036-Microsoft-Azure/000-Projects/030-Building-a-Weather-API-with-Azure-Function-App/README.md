@@ -172,7 +172,7 @@ Azure Function Apps are ideal for this project because they:
 
     If the function works correctly, you should see:
 
-    ```
+    ```plaintext
     This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.
     ```
 
