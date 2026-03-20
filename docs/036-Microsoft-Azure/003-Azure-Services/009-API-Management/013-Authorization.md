@@ -105,7 +105,6 @@ Rate limiting and quotas control how often clients can call the API. This preven
 
 ### Example: Validating JWT Token
 
-
 An API in API Management can be secured by validating a JWT before the request reaches the backend.
 
 - API has GET and POST endpoints
@@ -166,6 +165,8 @@ Next, configure the policy as shown below:
 | Audiences                       | example.com                             |
 
 The `Authorization` header is used because it is the standard way to send JWT tokens in API requests. This ensures all incoming requests include a valid token.
+
+Click **Save.**
 
 <div class='img-center'>
 
