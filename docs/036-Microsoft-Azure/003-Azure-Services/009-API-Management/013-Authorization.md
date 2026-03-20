@@ -103,6 +103,107 @@ Rate limiting and quotas control how often clients can call the API. This preven
 
 </div>
 
+### Example: Validating JWT Token
+
+
+An API in API Management can be secured by validating a JWT before the request reaches the backend.
+
+- API has GET and POST endpoints
+- Policies are applied on specific endpoints
+- Inbound processing is used for validation
+
+In this example, we have two existing APIs in API Management that are mapped to an Azure Function backend. 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-20184127.png)
+
+</div>
+
+APIM acts as the gateway, and all requests to the two API endpoints below are forwarded to the Azure Function after passing through the configured policies.
+
+- `POST` HTTP Endpoint
+- `GET` HTTP Endpoint
+
+Selecting the `POST` endpoint shows different stages like:
+
+- Frontend
+- Inbound processing
+- Backend
+- Outbound processing
+
+To enforce security, a policy can be added in the inbound processing stage so requests are checked before reaching the backend.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-20184404.png)
+
+</div>
+
+To add an inbound policy, simply click **Add policy** in **Inbound processing**.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-20182821.png)
+
+</div>
+
+It will return all the available inbound policies. Scroll down to the bottom and select the **Validate JWT** option.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-20183001.png)
+
+</div>
+
+Next, configure the policy as shown below:
+
+| Setting                         | Value                                   |
+| ------------------------------- | --------------------------------------- |
+| Header name                     | Authorization                           |
+| Failed validation HTTP code     | 401 - Unauthorized                      |
+| Failed validation error message | You are not allowed to use this service |
+| Audiences                       | example.com                             |
+
+The `Authorization` header is used because it is the standard way to send JWT tokens in API requests. This ensures all incoming requests include a valid token.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-20183347.png)
+
+</div>
+
+To test the policy, go to the **Test** tab, select the endpoint, enter the request payload below, and then click **Send**.
+
+```bash
+{
+    "name": "your name"
+}
+```
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-20183602.png)
+
+</div>
+
+After sending the request, scroll down to the **HTTP response** section to see the result.
+
+```bash
+{
+    "statusCode": 401,
+    "message": "You are not allowed to use this service"
+}
+```
+
+Since no valid JWT is included, the request is rejected with a `401` response. This confirms that only requests with a valid token issued by an identity provider can access the API.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-20183747.png)
+
+</div>
+
 
 ## Outbound policies
 
