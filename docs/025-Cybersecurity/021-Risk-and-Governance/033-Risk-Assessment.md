@@ -179,9 +179,18 @@ ALE = SLE - ARO
 
 These computations help organizations make informed decisions on where to invest in security, how to prioritize risks, and how to allocate resources effectively.
 
+<div class='img-center'>
+
 ![](/img/docs/sec+-eg-computations.png)
 
+</div>
+
+<div class='img-center'>
+
 ![](/img/docs/sec+-ale-computation-example.png)
+
+</div>
+
 
 
 ## Risk Assessment Methods

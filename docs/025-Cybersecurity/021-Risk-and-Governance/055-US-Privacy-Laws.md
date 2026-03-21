@@ -44,7 +44,7 @@ A U.S. federal law designed to protect personal information held by government a
 
 Records must ultimately be destroyed when they are no longer needed for a legitimate government function.
 
-::: info 
+:::info 
 
 The Privacy Act of 1974 applies only to federal government agencies and does not cover private companies or organizations.
 

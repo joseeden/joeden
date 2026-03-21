@@ -127,7 +127,7 @@ Shadow IT refers to the use of software, hardware, or services by employees with
 - Can lead to security risks, data leaks, and compliance violations
 - Managed through clear policies, monitoring tools, and staff awareness
 
-# State Actor
+## State Actor
 
 A state actor is an individual or group working on behalf of a government to carry out cyber operations.
 
@@ -149,6 +149,8 @@ An Advanced Persistent Threat (APT) is a sophisticated and stealthy cyber attack
 
 Advanced Tactics, Techniques, and Procedures (TTP) describe the behaviors and methods used by threat actors in cyber attacks.
 
-- **Tactics** refer to the high-level goals or strategies that threat actors aim to achiev
-- **Techniques** involve the specific ways or approaches attackers use to execute tactic
-- **Procedures** describe detailed steps or sequences used to carry out techniques consistentl
+| Term           | Description                                                            |
+| -------------- | ---------------------------------------------------------------------- |
+| **Tactics**    | High-level goals or strategies that threat actors aim to achieve.      |
+| **Techniques** | Specific methods or approaches attackers use to execute a tactic.      |
+| **Procedures** | Detailed steps or sequences used to carry out techniques consistently. |

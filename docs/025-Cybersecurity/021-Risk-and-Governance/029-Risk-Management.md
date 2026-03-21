@@ -174,11 +174,12 @@ For more information, please see [Supply Chain Analysis.](/docs/025-Cybersecurit
 Continuously tracking  identified risks, assessing new risks executing response plans, and evaluating their effectiveness during a project's lifecycle.
 
 - **Residual Risk**
-  Likelihood and impact after implementing mitigation, transference, or acceptance measures on the initial risk.
 
+    Likelihood and impact after implementing mitigation, transference, or acceptance measures on the initial risk.
 
 - **Control Risk**
-  Assessment of how a security measure has lost effectiveness over time.
+
+    Assessment of how a security measure has lost effectiveness over time.
 
 ### Risk Reporting 
 
