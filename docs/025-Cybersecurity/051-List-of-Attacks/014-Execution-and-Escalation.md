@@ -13,15 +13,11 @@ last_update:
 
 These techniques allow attackers to run malicious code and gain more control over a system.
 
-- **Execution**
+| Stage          | Description                                                                                                                        |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| **Execution**  | <ul><li>Run code locally or remotely by exploiting vulnerabilities.</li><li>Used to initiate attacks or deliver malware.</li></ul> |
+| **Escalation** | <ul><li>Gain higher privileges to access restricted systems or data.</li><li>Often follows successful code execution.</li></ul>    |
 
-  - Running code locally or remotely by exploiting vulnerabilities.
-  - Used to initiate attacks or deliver malware.
-
-- **Escalation**
-
-  - Gaining higher privileges to access restricted data or systems.
-  - Often follows successful code execution.
 
 ## Arbitrary Code Execution
 
@@ -83,15 +79,10 @@ Privilege Escalation is an attack where an attacker gains elevated access to res
 
 Attackers may increase access by escalating their rights vertically or moving laterally between accounts.
 
-- **Vertical Privilege Escalation**
-
-  - Gains higher-level access than originally granted.
-  - Example: User becomes admin/root.
-
-- **Horizontal Privilege Escalation**
-
-  - Accesses data or functions of another user at the same level.
-  - Example: User accesses another user's files.
+| Type                                | Description                                                                                                                        |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| **Vertical Privilege Escalation**   | <ul><li>Gain higher-level access than originally granted.</li><li>Example: User becomes admin/root.</li></ul>                      |
+| **Horizontal Privilege Escalation** | <ul><li>Access data or functions of another user at the same level.</li><li>Example: User accesses another user's files.</li></ul> |
 
 ## Rootkits
 
@@ -123,12 +114,7 @@ A rootkit is one of the most difficult types of malware to remove, as **it can p
 
 Rootkits help attackers hide their presence by modifying system functions.
 
-- **Kernel Mode**
-
-  - Operates at the core of the OS.
-  - Hard to detect and remove.
-
-- **User Mode**
-
-  - Runs with user-level access.
-  - Easier to find, but still dangerous.
+| Mode            | Description                                                                                    |
+| --------------- | ---------------------------------------------------------------------------------------------- |
+| **Kernel Mode** | <ul><li>Runs at the core of the operating system.</li><li>Hard to detect and remove.</li></ul> |
+| **User Mode**   | <ul><li>Runs with user-level access.</li><li>Easier to detect but still dangerous.</li></ul>   |

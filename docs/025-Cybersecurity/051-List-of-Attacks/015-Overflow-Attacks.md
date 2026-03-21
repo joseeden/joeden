@@ -33,49 +33,52 @@ A **Buffer Overflow attack** occurs when an attacker sends more data than a prog
 - Sends data that exceeds the allocated buffer size
 - Can crash the system or allow execution of malicious code
 
-### Buffer
-
-A **buffer** is a temporary memory area where a program stores data while running.
+**Buffer**: Temporary memory area where a program stores data while running.
 
 - Programs reserve memory called a **stack** at startup.
 - This stores return addresses from function calls and other temporary data.
 
-### Smashing the Stack
+**Mitigations:**
 
-**Smashing the stack** happens when an attacker overwrites the stack’s return address to execute malicious code.
+- Validate inputs to ensure they do not exceed expected lengths
+- Implement bounds checking to prevent writing beyond buffer limits
+- Use safe functions that include built-in bounds checking
+- Enable DEP to block code execution in non-executable memory
+- Enable ASLR to randomize memory locations and make attacks harder
+- Regularly patch software and libraries to fix known vulnerabilities
 
-- Fills the buffer with **NOP (No-Operation) instructions**
-- This tells the CPU to do nothing and move to the next instruction
-- Creates a **NOP slide** that leads the pointer to the malicious code
+
+## Smashing the Stack
+
+**Smashing the stack** happens when an attacker overwrites the stack’s return address and fills the buffer with **NOP** instruction to execute malicious code.
+
+| Term                                | Description                                                                                   |
+| ----------------------------------- | --------------------------------------------------------------------------------------------- |
+| **NOP (No-Operation) instructions** | Tells the CPU to do nothing and proceed to the next instruction.                              |
+| **NOP slide**                       | Occurs when NOPs are executed by non-malicious programs because the buffer is already filled. |
 
 When executed, the pointer moves down the stack to reach the injected code, which then takes control of program execution.
 
-### Mitigations
+**Mitigations:**
 
-- Implement strict checks for input length.
-- Regularly audit code for vulnerabilities.
-- Replace standard functions with bounds-checking alternatives.
-- Deploy canaries for early detection of buffer overflows.
-- Restrict code execution in specific memory areas.
-- Keep software current to address vulnerabilities.
-- Apply **ASLR** to randomize memory addresses.
-  - ASLR or Address Space Layout Randomization
-  - Prevents an attacker from guessing where the return pointer is.
-  - Randomizes memory addresses, making buffer overflows attackers difficult. 
-  - Can still be bypassed using sidechannel attacks.
+- Implement strict checks for input length
+- Regularly audit code for vulnerabilities
+- Replace standard functions with bounds-checking alternatives
+- Deploy canaries for early detection of buffer overflows
+- Restrict code execution in specific memory areas
+- Apply ASLR to randomize memory addresses
+
 
 
 ## Heartbleed Bug
 
-The Heartbleed bug is a flaw in the heartbeat extension of TLS and DTLS protocols which allows one computer to send a small amount of data to another computer to keep the connection alive and verify that the other computer is still responsive.
+The Heartbleed bug is a critical flaw in the heartbeat extension of the TLS and DTLS protocols. It allows one computer to send a small amount of data to another to verify connectivity, but due to improper length checking, it can expose sensitive memory contents.
 
-- A serious vulnerability in the popular OpenSSL cryptographic software library.
-- Discovered in April 2014 and is officially designated as **CVE-2014-0160**
-- Affects the heartbeat extension implemented in OpenSSL, hence the name "Heartbleed."
+- A serious vulnerability in the OpenSSL cryptographic library.
+- Discovered in April 2014, officially **CVE-2014-0160**.
+- Exploits the heartbeat extension in OpenSSL, hence the name 
 
-### How it works
-
-#### Heartbeat Request 
+#### Heartbeat Request
 
 The client sends a heartbeat request to the server, including a small data payload and its length. This allows the server to verify that the client is still connected.
 
@@ -86,7 +89,11 @@ The client sends a heartbeat request to the server, including a small data paylo
 
 The server replies with the same payload and length, confirming it received the request. This ensures connectivity and synchronization between client and server.
 
-**Note:** The server normally only sends back the data sent by the client, without accessing other memory.
+:::info 
+
+The server normally only sends back the data sent by the client, without accessing other memory.
+
+::: 
 
 #### Exploitation
 
@@ -98,7 +105,7 @@ The vulnerability occurs because the server does not properly check the payload 
 The server then responds with the payload plus extra memory data, up to the specified length. This may expose sensitive information, including private keys, passwords, session tokens, and other confidential data.
 
 
-### Example Scenario
+#### Example Scenario
 
 Normal heartbeat request:
 
@@ -115,7 +122,7 @@ Malicious heartbeat request:
 | Server   | "A" + up to 65,534 bytes of memory data |
 
 
-### Mitigation and Response
+#### Mitigation and Response
 
 | Action                   | Details                                                                         |
 | ------------------------ | ------------------------------------------------------------------------------- |

@@ -20,6 +20,12 @@ The fake replies are called **gratuitous ARP replies** because they are sent wit
 
 Gratuitous ARP is normally used for announcements, but attackers exploit it for spoofing. 
 
+**Mitigations:**
+
+- Use static ARP cache entries. 
+- Hosts should not accept ARP cache updates.
+- Limit access to the network.
+
 :::info[Who has this IP address?]
 
 ARP, or **Address Resolution Protocol**, is a networking protocol operating at Layer 2 of the OSI model. It maps IP addresses to MAC addresses within a local network.
@@ -32,13 +38,6 @@ The device that owns that IP address replies with its MAC address. Then, the sen
 
 :::
 
-
-**Mitigations:**
-
-- Use static ARP cache entries. 
-- Hosts should not accept ARP cache updates.
-- Limit access to the network.
-
 ## MAC Address Flooding
 
 MAC address flooding overwhelms a network switch with fake MAC addresses.
@@ -47,7 +46,7 @@ MAC address flooding overwhelms a network switch with fake MAC addresses.
 - Results in potential data exposure and network congestion.
 - Used to intercept data in a switched network environment.
 
-### Fail-open
+**Fail-open**
 
 - When MAC flooding occurs, the network switch will simply fail open.
 - When it fail-open, the switch begins to rebroadcast all traffic out to every port.
@@ -67,11 +66,11 @@ Can be caused by:
 - Faulty switch, network card ("jabber")
 - Redundant links between switches
 
-Mitigations:
+**Mitigations:**
 
 - Configure STP (Spanning Tree Protocol) on the switch.
 
-## Mitigations
+## Mitigating L2 Attacks
 
 Mitigating Layer 2 attacks involves implementing various security measures.
 

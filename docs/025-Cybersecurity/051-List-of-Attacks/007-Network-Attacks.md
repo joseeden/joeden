@@ -15,11 +15,12 @@ Intercepting and possibly altering communication between two parties.
 
 **Mitigations:**
 
-- **Encryption**: Use HTTPS, SSL/TLS, and VPNs.
-- **Public Key Infrastructure (PKI)**: Verify certificate authenticity.
-- **Secure Authentication**: Implement multifactor authentication.
-- **Network Segmentation**: Limit access to sensitive systems.
-- **IDS/IPS**: Monitor for suspicious network activity.
+| Technique       | Explanation                                                                                                   |
+| --------------- | ------------------------------------------------------------------------------------------------------------- |
+| Replay Attacks  | Usually target authentication or session tokens.                                                              |
+| Attack Method   | Attacker resends captured packets without modifying TCP sequence numbers.                                     |
+| Normal Behavior | Variations in TCP sequence or acknowledgment are normal network behavior and do not indicate a replay attack. |
+
 
 ## Packet Sniffing
 
@@ -27,10 +28,12 @@ Illegally intercepting and examining unencrypted data packets.
 
 **Mitigations:**
 
-- **Encryption**: Secure data in transit with HTTPS or VPNs.
-- **Secure Wi-Fi**: Use WPA3 for wireless networks.
-- **Network Segmentation**: Restrict access to sensitive data.
-- **Network Monitoring**: Detect unauthorized packet sniffing.
+| Technique            | Description                                            |
+| -------------------- | ------------------------------------------------------ |
+| Encryption           | Protect data in transit using HTTPS or VPNs.           |
+| Secure Wi-Fi         | Use WPA3 for wireless network security.                |
+| Network Segmentation | Limit access to sensitive data by segmenting networks. |
+| Network Monitoring   | Detect unauthorized packet sniffing or traffic.        |
 
 
 ## Christmas Tree Packet Attack 
@@ -68,10 +71,13 @@ Oversized packet attacks involve sending data packets that exceed the maximum al
 
 **Mitigations:**
 
-- **Packet Size Limits**: Enforce maximum packet sizes.
-- **Network Monitoring**: Detect oversized packet patterns.
-- **Rate Limiting**: Limit large packets.
-- **Firewall Rules**: Block unusually large packets.
+| Technique          | Description                                   |
+| ------------------ | --------------------------------------------- |
+| Packet Size Limits | Enforce maximum allowed packet sizes.         |
+| Network Monitoring | Detect patterns of oversized packets.         |
+| Rate Limiting      | Restrict the flow of large packets.           |
+| Firewall Rules     | Block packets that exceed normal size limits. |
+
 
 ## Fragmented Packet Attack 
 
@@ -79,10 +85,13 @@ Fragmented packet attacks involve breaking down data into smaller fragments to b
 
 **Mitigations:**
 
-- **Reassembly Timeouts**: Set timeouts for reassembly.
-- **Fragmentation Limits**: Limit fragment size and count.
-- **IDS/IPS**: Detect unusual fragmentation.
-- **Secure Protocols**: Use protocols that handle fragmentation securely.
+| Technique            | Description                                            |
+| -------------------- | ------------------------------------------------------ |
+| Reassembly Timeouts  | Set time limits for packet reassembly.                 |
+| Fragmentation Limits | Restrict the size and number of fragments.             |
+| IDS/IPS              | Detect abnormal or suspicious fragmentation patterns.  |
+| Secure Protocols     | Use protocols designed to handle fragmentation safely. |
+
 
 ## Reverse Shell
 
@@ -98,4 +107,9 @@ A reverse shell is a malicious connection where the target machine initiates a c
 
 Sample diagram:
 
+<div class='img-center'>
+
 ![](/img/docs/sec+-reverse-shell-diagram.png)
+
+</div>
+

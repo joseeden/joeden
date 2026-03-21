@@ -55,31 +55,31 @@ Deauthentication and deassociation attacks force devices to disconnect from a wi
 
 **Summary steps:**
 
-1. Discover Access Points
+1. **Discover Access Points**
 
-  - Need to know the AP MAC address and the channel it is listening on.
-  - This can easily be found through **airodump**, which is built-in to Kali Linux.
+    - Need to know the AP MAC address and the channel it is listening on.
+    - This can easily be found through **airodump**, which is built-in to Kali Linux.
 
-2. Discover connected clients.
+2. **Discover connected clients**
 
-  - Find connected clients or clients that are in the process of connecting.
-  - The goal is to capture the wireless traffic while client is authenticating.
-  - Record the MAC address of the client that is authenticating to the wireless network.
+    - Find connected clients or clients that are in the process of connecting.
+    - The goal is to capture the wireless traffic while client is authenticating.
+    - Record the MAC address of the client that is authenticating to the wireless network.
 
-3. Disconnect active client from AP.
+3. **Disconnect active client from AP**
 
-  - Tools can be used, like **aireplay** which is built-in to Kali Linux.
-  - Need to specify the MAC address of both the client and the AP.
+    - Tools can be used, like **aireplay** which is built-in to Kali Linux.
+    - Need to specify the MAC address of both the client and the AP.
 
-4. Monitor client-AP handshake.
+4. **Monitor client-AP handshake**
 
-  - When victim client is disconnected, it will try to reconnect to the wireless network.
-  - Capture the traffic.
+    - When victim client is disconnected, it will try to reconnect to the wireless network.
+    - Capture the traffic.
 
-5. Perform online/offline dictionary or brute-force attack.
+5. **Perform online/offline dictionary or brute-force attack**
 
-  - The goal is to determine the pre-shared key (PSK).
-  - A text file containing a long list of common passphrases can be used.
+    - The goal is to determine the pre-shared key (PSK).
+    - A text file containing a long list of common passphrases can be used.
 
 
 ## Rogue Access Points (Rogue WAPs)
@@ -101,7 +101,7 @@ An evil twin is a **type of a rogue access point**, but goes a step further in t
 - Attackers then capture sensitive information like passwords and emails.
 - Often used in phishing attacks to steal login credentials.
 
-Karma toolkit: 
+**Karma toolkit:**
 
 - Automates the evil twin process
 - Searches for adjacent networks
