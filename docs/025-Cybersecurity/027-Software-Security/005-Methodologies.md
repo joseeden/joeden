@@ -76,12 +76,15 @@ Extreme Programming (XP) emphasizes high quality, adaptability, and close collab
 
 Other approaches to software development:
 
-- **Incremental Model** - Developing software in small functional increments.  
-- **Rapid Prototyping** - Quickly develop a prototype to clarify requirements.
-- **Cleanroom Model** - Preventing defects rather than fixing them.
-- **Reuse Model** - Leveraging existing components to speed up development.
-- **Exploratory Model** - Informal, trial-and-error approach
-- **Joint Application Development (JAD)** - Workshops with developers and users
-- **Rapid Application Development (RAD)** - Quick development with iterative prototypes
+| Model                                   | Description                                            |
+| --------------------------------------- | ------------------------------------------------------ |
+| **Incremental Model**                   | Develops software in small functional increments.      |
+| **Rapid Prototyping**                   | Quickly builds a prototype to clarify requirements.    |
+| **Cleanroom Model**                     | Focuses on preventing defects rather than fixing them. |
+| **Reuse Model**                         | Uses existing components to speed up development.      |
+| **Exploratory Model**                   | Uses an informal, trial-and-error approach.            |
+| **Joint Application Development (JAD)** | Uses workshops with developers and users.              |
+| **Rapid Application Development (RAD)** | Enables fast development with iterative prototypes.    |
+
 
 For more information, please see [Software Methodologies](/docs/065-Software-Engineering/014-Software-Development/002-Methodologies.md)

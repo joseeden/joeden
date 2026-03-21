@@ -79,9 +79,11 @@ A Time-of-Event (TOE) vulnerability occurs when the state of a resource or syste
 - Actions based on an event are delayed, allowing potential state changes.
 - Manipulation of data during a time window when a system is making a decision or evaluation.
 - Can lead to unauthorized access, privilege escalation, or data inconsistency.
-- Examples: 
-  - Triggering an event based on certain conditions, then changing those conditions before the event's effects are fully realized.
-  - Checking user credentials, then altering user permissions before access is granted.
+
+Examples: 
+
+- Triggering an event based on certain conditions, then changing those conditions before the event's effects are fully realized.
+- Checking user credentials, then altering user permissions before access is granted.
 
 **Mutex**
 

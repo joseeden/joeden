@@ -86,25 +86,24 @@ As an alternative, **Netflow** data can be used to capture high-level communicat
 
 Software code can serve as crucial evidence in investigations, and software forensic techniques are employed to analyze this code for expert opinions.
 
-Major uses of software forensics:
 
-- **Resolving Intellectual Property Disputes**
-  - Scenario: 
-    -  A developer moves to a competitor.
-  - Dispute: 
-    - The former employer accuses the competitor of code theft, 
-    - The competitor claims independent development
-  - Expert Role:
-    - Forensic specialists analyze code.
-    - Determine origins and similarities.
+**Resolving Intellectual Property Disputes**
 
-- **Identifying Origins of Malware**
-  - Analysis: 
-    - Experts compare malware with known threats for authorship.
-  - Case: 
-    - A 2016 report linked Russian hackers to specific code signatures.
-  - Challenge: 
-    - Public signatures can be spoofed, complicating attribution.
+| Aspect          | Details                                                                                      |
+| --------------- | -------------------------------------------------------------------------------------------- |
+| **Scenario**    | A developer moves to a competitor.                                                           |
+| **Dispute**     | Former employer accuses competitor of code theft; competitor claims independent development. |
+| **Expert Role** | Forensic specialists analyze code to determine origins and similarities.                     |
+
+
+**Identifying Origins of Malware**
+
+| Aspect        | Details                                                             |
+| ------------- | ------------------------------------------------------------------- |
+| **Analysis**  | Experts compare malware with known threats to determine authorship. |
+| **Case**      | A 2016 report linked Russian hackers to specific code signatures.   |
+| **Challenge** | Public signatures can be spoofed, making attribution difficult.     |
+
 
 ### Mobile Forensics 
 

@@ -52,15 +52,17 @@ Key considerations include:
 - Identify sensitive data 
 - Identify single points of failure
 
-Potential business impacts
+Potential business impacts:
 
 - Fines 
 - Loss of contracts
 - Reputation Loss
-- Data Loss
-    - Breach notification 
-    - Escalation requirements 
-    - Data exfiltration
+
+Data Loss:
+
+- Breach notification 
+- Escalation requirements 
+- Data exfiltration
 
 For failed components, see [Failed Component Impacts.](010-Business-Continuity.md#failed-component-impacts)
 

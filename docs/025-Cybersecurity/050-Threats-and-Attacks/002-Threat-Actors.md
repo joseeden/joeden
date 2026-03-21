@@ -124,44 +124,25 @@ Specific characteristics or properties that define and differentiate various thr
 
 - **External**
 
-  - Actors outside the organization, like hackers, criminal groups, or nation-states
-  
+  - Actors outside the organization, like hackers, criminal groups, or nation-states 
   - Target systems for various motives, such as financial gain, espionage, or ideological reasons.
 
 ### Resources and Funding
 
-- **Low Resources/Funding**
+| Resource Level  | Description                                                                                                                                            |
+| ----------------| ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Low**         | <ul><li>Minimal financial or technological backing.</li><li>Uses basic tools, scripts, or publicly available resources.</li></ul>                      |
+| **Moderate**    | <ul><li>Greater resources for advanced tools and teams.</li><li>Includes organized criminal groups or hacktivists.</li></ul>                           |
+| **Highg**       | <ul><li>Significant backing, typically from nation-states or large crime syndicates.</li><li>Uses sophisticated operations and custom tools.</li></ul> |
 
-  - Minimal financial or technological backing. 
-  - Uses basic tools, scripts, or publicly available resources.
 
-- **Moderate Resources/Funding**
+### Sophistication and Capability
 
-  - Greater resources for advanced tools and teams. 
-  - Includes organized criminal groups or hacktivists.
-
-- **High Resources/Funding**
-
-  - Significant backing, typically from nation-states or large crime syndicates, allowing for sophisticated operations and custom tools.
-
-### Levels of Sophistication and Capability
-
-- **Low Sophistication/Capability**
-
-  - Basic tools, limited technical skills.
-  - Often relying on known vulnerabilities or social engineering.
-
-- **Moderate Sophistication/Capability**
-
-  - Advanced techniques like zero-day exploitation and refined social engineering. 
-  - Capable of crafting targeted attacks.
-
-- **High Sophistication/Capability**
-
-  - Advanced technical skills with custom-built tools and multi-stage attacks. 
-  - Can maintain a presence for extended period of time without detection.
-  - Often include nation-states, APTs, or high-end criminal networks.
-
+| Capability Level     | Description                                                                                                                                                                                                                                     |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Low**              | <ul><li>Uses basic tools with limited technical skills.</li><li>Relies on known vulnerabilities or social engineering.</li></ul>                                                                                                                |
+| **Moderate**         | <ul><li>Employs advanced techniques like zero-day exploits and refined social engineering.</li><li>Capable of crafting targeted attacks.</li></ul>                                                                                              |
+| **High**             | <ul><li>Advanced technical skills with custom-built tools and multi-stage attacks.</li><li>Can maintain a presence for extended periods without detection.</li><li>Often includes nation-states, APTs, or high-end criminal networks.</li></ul> |
 
 
 ## Types of Threat Actors 
@@ -190,10 +171,12 @@ Attackers who are part of a crime group that is well-funded and highly sophistic
 
 - Well-plan operations and coordinated based on the approach.
 - Members could be across countries and borders.
-- Have resources, expertise, and networks to carry out sophisticated attacks: 
-  - custom malware 
-  - ransomware
-  - phishing campaigns
+
+Organized crime have resources, expertise, and networks to carry out sophisticated attacks: 
+
+- Custom malware 
+- Ransomware
+- Phishing campaigns
 
 :::info 
 
@@ -205,15 +188,15 @@ Organized crime groups are most likely to be hired by a foreign government to at
 
 Highly trained and funded groups of hackers (often by nation states) with covert and open-source intelligence at their disposal.
 
-  - Orchestrated by well-funded entities.
-  - Targets specific organizations.
-  - Aims to steal sensitive information or disrupt operations.
-  - Attack could span months or even years. 
-  - *Reference:* ISC2 Study Guide, Chapter 4, Module 2.
+- Orchestrated by well-funded entities.
+- Targets specific organizations.
+- Aims to steal sensitive information or disrupt operations.
+- Attack could span months or even years. 
+- *Reference:* ISC2 Study Guide, Chapter 4, Module 2.
 
 Nation-state actors sometimes conduct **False Flag Attack**, which is orchestrated to make it appear that the attack originated from a different source or group with the intent to mislead investigators.
 
-Motivations of Nation-state actors: 
+Motivations of nation-state actors: 
 
 - Gathering Intelligence 
 - Disrupting critical infrastructure 
@@ -227,11 +210,13 @@ Often overlooked, insider threats are security threats that originate from withi
 
 - Motivated by financial incentives, dissatisfaction with their employer, etc.
 - Their inside access and pre-existing knowledge makes them especially dangerous.
-- Can be in many forms:
-  - Data theft 
-  - Sabotage
-  - Misuse of access privileges 
-  - Help in facilitating external attacks 
+
+They can be in many forms:
+
+- Data theft 
+- Sabotage
+- Misuse of access privileges 
+- Help in facilitating external attacks 
 
 ## Types of Hackers 
 
@@ -266,9 +251,10 @@ the company **but are not employed by the company**.
 ### Elite
 
 Hackers who find and exploit vulnerabilities before anyone else
-does. 1 in 10,000 are elite.
+does. 
 
 - Create their own tools, which everyone ends up using.
+- 1 in 10,000 are elite.
 
 ### Script kiddies
 

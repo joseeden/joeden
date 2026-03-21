@@ -73,7 +73,11 @@ Integrity 178B is a high-assurance, POSIX-based real-time operating system (RTOS
 
 This operating system is used in numerous aircrafts like the B2-Bimber, F-16, and F-22. This specific operating system is also rated as **EAL6.**
 
+<div class='img-center'>
+
 ![](/img/docs/sec+-integrity-178b.png)
+
+</div>
 
 ## Common Criteria (CC) Standards
 

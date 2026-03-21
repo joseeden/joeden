@@ -30,11 +30,14 @@ Bluetooth is a wireless technology standard for exchanging data over short dista
 
 These are just some of the common bluetooth attacks:
 
-- **Bluejacking** - Sending unsolicited messages to nearby Bluetooth-enabled devices.
-- **Bluesnarfing** - Exploits vulnerabilities in the Bluetooth connection process.
-- **Bluebugging** - Advanced bluesnarfing.
-- **Bluesmack** - A denial-of-service (DoS) attack targeting Bluetooth devices.
-- **Blueborne** - Allows malware to spread via Bluetooth without user interaction.
+| Attack Type      | Description                                                            |
+| ---------------- | ---------------------------------------------------------------------- |
+| **Bluejacking**  | Sends unsolicited messages to nearby Bluetooth-enabled devices.        |
+| **Bluesnarfing** | Exploits vulnerabilities in the Bluetooth connection process.          |
+| **Bluebugging**  | Advanced form of bluesnarfing, giving greater control over the device. |
+| **Bluesmack**    | Denial-of-service (DoS) attack targeting Bluetooth devices.            |
+| **Blueborne**    | Allows malware to spread via Bluetooth without user interaction.       |
+
 
 For more information, please see [Bluetooth Attacks.](/docs/025-Cybersecurity/051-List-of-Attacks/010-Bluetooth-Attacks.md)
 

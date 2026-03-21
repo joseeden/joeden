@@ -94,7 +94,11 @@ In a Windows environment, the **Windows Update** is the simplest way to apply se
 Settings > Windows Update > Check for updates
 ```
 
+<div class='img-center'>
+
 ![](/img/docs/networking-basics-patch-management-windows-10.png)
+
+</div>
 
 To see all the installed updates:
 
@@ -102,11 +106,20 @@ To see all the installed updates:
 Control Panel > Programs > Programs and Features > View installed updates
 ```
 
+<div class='img-center'>
+
 ![](/img/docs/networking-basics-patch-management-view-installed-updates.png)
+
+</div>
 
 To enable automatic updates, toggle the **Get the latest updates as soon as possible**:
 
+<div class='img-center'>
+
 ![](/img/docs/networking-basics-patch-management-get-latest-updates-as-soon-as-possible.png)
+
+</div>
+
 
 
 ### Linux 

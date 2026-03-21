@@ -124,10 +124,13 @@ These collection techniques allow investigators to recover and analyze data whil
 
 Disk imaging is the process of creating an exact, sector-by-sector copy of a storage device, such as a hard drive or SSD. This copy, or "image," preserves the original data, allowing for forensic analysis without altering the original evidence.
 
-- **Forensic Integrity** - Ensures the original disk remains unaltered during analysis.
-- **Complete Copy** - Captures all data, including deleted files and system information.
-- **Forensic Tools** - Uses specialized software to create a bit-for-bit image.
-- **Chain of Custody** - Maintains documentation to ensure evidence integrity.
+| Principle              | Description                                                        |
+| ---------------------- | ------------------------------------------------------------------ |
+| **Forensic Integrity** | Ensures the original disk remains unaltered during analysis.       |
+| **Complete Copy**      | Captures all data, including deleted files and system information. |
+| **Forensic Tools**     | Uses specialized software to create a bit-for-bit image.           |
+| **Chain of Custody**   | Maintains documentation to ensure evidence integrity.              |
+
 
 Tools used:
 
@@ -139,8 +142,8 @@ Tools used:
 
 - Capture screenshots of the machine:
 
-    - network traffic logs 
-    - videos (for CCTV)
+    - Network traffic logs 
+    - Videos (for CCTV)
 
 - Analyze disk images, recover data:
     - Autopsy 
@@ -154,11 +157,14 @@ Tools used:
 
 File carving is a technique used to extract files from a disk image without relying on file system structures. It is often used to recover deleted or fragmented files.
 
-- **Data Recovery** - Recovers files that may have been deleted or corrupted.
-- **File Type Identification** - Uses known patterns or "magic numbers" to identify file types.
-- **File Fragmentation** - Can reassemble files that are broken into multiple fragments.
-- **Forensic Tools** - Requires specialized software designed for file carving.
-- **Application** - Useful when the file system is damaged or unavailable. 
+| Feature/Step                 | Description                                                    |
+| ---------------------------- | -------------------------------------------------------------- |
+| **Data Recovery**            | Recovers files that may have been deleted or corrupted.        |
+| **File Type Identification** | Uses known patterns or "magic numbers" to identify file types. |
+| **File Fragmentation**       | Can reassemble files that are broken into multiple fragments.  |
+| **Forensic Tools**           | Requires specialized software designed for file carving.       |
+| **Application**              | Useful when the file system is damaged or unavailable.         |
+
 
 ### Evidence Collection Techniques
 

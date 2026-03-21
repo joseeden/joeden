@@ -109,10 +109,13 @@ These are the commonly used methods to establish a person's identity within a sy
 
 The registration process includes gathering information about a user and creating the corresponding entity in the system. It has four steps: 
 
-1. **Request**: Submit a request to create an identity.
-2. **Approval**: Another person approves the request.
-3. **Identity Proofing**: Verify the user’s identity using trusted documents.
-4. **Issuance**: Credentials are issued, ideally by a fourth person.
+| Step                  | Description                                           |
+| --------------------- | ----------------------------------------------------- |
+| **Request**           | Submit a request to create an identity.               |
+| **Approval**          | Another person reviews and approves the request.      |
+| **Identity Proofing** | Verify the user’s identity using trusted documents.   |
+| **Issuance**          | Credentials are issued, ideally by a separate person. |
+
 
 
 ## Identity Proofing 
@@ -158,12 +161,15 @@ Information security professionals are also responsible for performing account a
 
 ## Managing Accounts
 
-- **Provisioning**: Create accounts and assign permissions.
-- **Deprovisioning**: Remove access when no longer needed.
-- **Re-provisioning**: Update privileges after role changes.
-- **Account Revocation**: Revoke access for specific users.
-- **Self-service Password Reset**: Users reset passwords without help desk.
-- **Account Review**: Check permissions regularly to prevent privilege creep.
+| Process                         | Description                                                    |
+| ------------------------------- | -------------------------------------------------------------- |
+| **Provisioning**                | Create accounts and assign permissions.                        |
+| **Deprovisioning**              | Remove access when no longer needed.                           |
+| **Re-provisioning**             | Update privileges after role changes.                          |
+| **Account Revocation**          | Revoke access for specific users.                              |
+| **Self-service Password Reset** | Allow users to reset passwords without help desk intervention. |
+| **Account Review**              | Regularly check permissions to prevent privilege creep.        |
+
 
 ## Authentication Errors
 
@@ -254,8 +260,10 @@ NTFS (New Technology File System) permissions are used to control access to file
 
 Below are the common NTFS permissions:
 
-- **Full Control**: Read, write, modify, delete, change permissions.
-- **Read**: View contents only.
-- **Read & Execute**: View and run files/scripts.
-- **Write**: Add or modify files, cannot delete.
-- **Modify**: Read, write, execute, and delete files.
+| Permission Type    | Description                                          |
+| ------------------ | ---------------------------------------------------- |
+| **Full Control**   | Read, write, modify, delete, and change permissions. |
+| **Read**           | View contents only.                                  |
+| **Read & Execute** | View and run files or scripts.                       |
+| **Write**          | Add or modify files, but cannot delete.              |
+| **Modify**         | Read, write, execute, and delete files.              |

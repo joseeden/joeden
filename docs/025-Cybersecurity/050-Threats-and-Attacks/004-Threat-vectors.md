@@ -14,13 +14,11 @@ last_update:
 - **Threat Vectors**
 
     - Means or pathway by which an attacker can gain unauthorized access to a computer or a network to deliver a malicious payload or carry out an unwanted action.
-
     - The "**How**" of the attack
 
 - **Attack Surface** 
 
     - Various points where an unauthorized user can try to enter data to or extract data from an environment.
-
     - The "**Where**" of the attack
 
 ## Messages 
@@ -47,71 +45,51 @@ last_update:
 
 ## Images 
 
-- **Steganography** 
-    - Hiding malicious code or data within images.
-    - For more information, please see [Cryptography Basics.](/docs/025-Cybersecurity/025-Cryptography/001-Cryptography-Basics.md#steganography)
-
-- **Malware Injection** 
-    - Images containing embedded malware that activates upon opening.
-
-- **Exploits** 
-    - Use of specific image file formats to exploit vulnerabilities in viewers or editors.
+| Type                  | Description                                                                                                                                                             |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Steganography**     | Hides malicious code or data within images. See [Cryptography Basics](/docs/025-Cybersecurity/025-Cryptography/001-Cryptography-Basics.md#steganography) for more info. |
+| **Malware Injection** | Images containing embedded malware that activates when opened.                                                                                                          |
+| **Exploits**          | Use specific image formats to exploit vulnerabilities in viewers or editors.                                                                                            |
 
 
 ## Files
 
-- **Malicious Attachments** 
-    - Files containing malware or harmful scripts.
-
-- **Trojan Horses** 
-    - Files that seem benign but contain malicious payloads.
-
-- **Ransomware** 
-    - Files that, when opened, encrypt user data for ransom.
-
-- **Exploitable Documents** 
-    - Files with macros or embedded code that can be exploited.
+| Type                      | Description                                               |
+| ------------------------- | --------------------------------------------------------- |
+| **Malicious Attachments** | Files containing malware or harmful scripts.              |
+| **Trojan Horses**         | Files that appear benign but contain malicious payloads.  |
+| **Ransomware**            | Files that encrypt user data for ransom when opened.      |
+| **Exploitable Documents** | Files with macros or embedded code that can be exploited. |
 
 
 ## Voice Calls
 
-- **Vishing** 
-    - Voice phishing, where callers pose as trusted entities to extract information.
+| Type                    | Description                                                                    |
+| ----------------------- | ------------------------------------------------------------------------------ |
+| **Vishing**             | Voice phishing, where callers pose as trusted entities to extract information. |
+| **Caller ID Spoofing**  | Fakes the caller identity to gain trust.                                       |
+| **Voice Phishing Bots** | Automated voice calls designed to trick or manipulate victims.                 |
 
-- **Caller ID Spoofing** 
-    - Faking caller identity to gain trust.
-
-- **Voice Phishing Bots** 
-    - Automated voice calls designed to trick or manipulate.
 
 
 ## Removable Devices
 
-- **USB-based Malware** 
-    - Infectious code stored on USB drives.
+| Type                    | Description                                                      |
+| ----------------------- | ---------------------------------------------------------------- |
+| **USB-based Malware**   | Infectious code stored on USB drives.                            |
+| **Data Theft**          | Unauthorized access to sensitive data through removable storage. |
+| **Device Manipulation** | Using removable devices to alter or manipulate system behavior.  |
 
-- **Data Theft** 
-    - Unauthorized access to sensitive data through removable storage.
-
-- **Device Manipulation** 
-    - Using removable devices to manipulate system behavior.
 
 
 ## Unsecure Networks
 
-- **Eavesdropping** 
-    - Intercepting data transmitted over unsecured networks.
-
-- **Man-in-the-Middle (MITM) Attacks** 
-    - Intercepting and altering communication between two parties.
-
-- **Session Hijacking** 
-    - Taking over user sessions in insecure networks.
-    - See [Session hijacking](/docs/025-Cybersecurity/051-List-of-Attacks/005-Spoofing-Attacks.md#session-hijacking)
-
-- **Rogue Access Points** 
-    - Fake network access points designed to steal information.
-    - See [Rogue WAPs](/docs/025-Cybersecurity/051-List-of-Attacks/009-Wireless-Attacks.md#rogue-access-points-rogue-waps)
+| Type                                 | Description                                                                                                                                                                     |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Eavesdropping**                    | Intercepting data transmitted over unsecured networks.                                                                                                                          |
+| **Man-in-the-Middle (MITM) Attacks** | Intercepting and altering communication between two parties.                                                                                                                    |
+| **Session Hijacking**                | Taking over user sessions in insecure networks. See [Session hijacking](/docs/025-Cybersecurity/051-List-of-Attacks/005-Spoofing-Attacks.md#session-hijacking).                 |
+| **Rogue Access Points**              | Fake network access points designed to steal information. See [Rogue WAPs](/docs/025-Cybersecurity/051-List-of-Attacks/009-Wireless-Attacks.md#rogue-access-points-rogue-waps). |
 
 
 ## Bluetooth Exploits 

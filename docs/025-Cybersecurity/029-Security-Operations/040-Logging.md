@@ -99,23 +99,23 @@ For more information, please see [SIEM](/docs/025-Cybersecurity/029-Security-Ope
 Below is a sample Fortigate Firewall log showing blocked connection attempts via different ports. From here we can see that an attacker might be trying to perform port scans.
 
 ```bash
-2024-05-30T10:15:23.000Z Fortigate:ID=firewall time="2024-05-30 10:15:23" action=deny src=203.0.113.10 dst=192.0.2.20 proto=tcp sport=54321 dport=22
-2024-05-30T10:15:24.000Z Fortigate:ID=firewall time="2024-05-30 10:15:24" action=deny src=203.0.113.10 dst=192.0.2.20 proto=tcp sport=54321 dport=80
-2024-05-30T10:15:25.000Z Fortigate:ID=firewall time="2024-05-30 10:15:25" action=deny src=203.0.113.10 dst=192.0.2.20 proto=tcp sport=54321 dport=443
-2024-05-30T10:15:26.000Z Fortigate:ID=firewall time="2024-05-30 10:15:26" action=deny src=203.0.113.10 dst=192.0.2.20 proto=udp sport=12345 dport=53
-2024-05-30T10:15:27.000Z Fortigate:ID=firewall time="2024-05-30 10:15:27" action=deny src=203.0.113.11 dst=192.0.2.20 proto=tcp sport=65432 dport=22
-2024-05-30T10:15:28.000Z Fortigate:ID=firewall time="2024-05-30 10:15:28" action=deny src=203.0.113.11 dst=192.0.2.20 proto=tcp sport=65432 dport=443
-2024-05-30T10:15:29.000Z Fortigate:ID=firewall time="2024-05-30 10:15:29" action=deny src=203.0.113.11 dst=192.0.2.20 proto=udp sport=23456 dport=53
+2023-05-30T10:15:23.000Z Fortigate:ID=firewall time="2023-05-30 10:15:23" action=deny src=203.0.113.10 dst=192.0.2.20 proto=tcp sport=54321 dport=22
+2023-05-30T10:15:24.000Z Fortigate:ID=firewall time="2023-05-30 10:15:24" action=deny src=203.0.113.10 dst=192.0.2.20 proto=tcp sport=54321 dport=80
+2023-05-30T10:15:25.000Z Fortigate:ID=firewall time="2023-05-30 10:15:25" action=deny src=203.0.113.10 dst=192.0.2.20 proto=tcp sport=54321 dport=443
+2023-05-30T10:15:26.000Z Fortigate:ID=firewall time="2023-05-30 10:15:26" action=deny src=203.0.113.10 dst=192.0.2.20 proto=udp sport=12345 dport=53
+2023-05-30T10:15:27.000Z Fortigate:ID=firewall time="2023-05-30 10:15:27" action=deny src=203.0.113.11 dst=192.0.2.20 proto=tcp sport=65432 dport=22
+2023-05-30T10:15:28.000Z Fortigate:ID=firewall time="2023-05-30 10:15:28" action=deny src=203.0.113.11 dst=192.0.2.20 proto=tcp sport=65432 dport=443
+2023-05-30T10:15:29.000Z Fortigate:ID=firewall time="2023-05-30 10:15:29" action=deny src=203.0.113.11 dst=192.0.2.20 proto=udp sport=23456 dport=53
 ```
 
 In this second one, we can see a web application firewall with deep inspection enabled. This can block attacks suck as time-based SQL injections. 
 
 ```bash
 Timestamp           Action Source IP      Destination IP Method Path               Attack                       Rule                      Reason
-2024-05-30T10:15:23 Block  203.0.113.10   192.0.2.50     POST   /login.php        SQL Injection                SQL Injection Prevention SQL injection attempt detected
-2024-05-30T10:15:24 Block  203.0.113.11   192.0.2.50     GET    /api/user_info.php Database Drop                Database Protection     Attempt to drop database detected
-2024-05-30T10:15:25 Block  203.0.113.12   192.0.2.50     POST   /search.php       Time-Based SQL Injection    SQL Injection Prevention Time-based SQL injection attempt detected
-2024-05-30T10:15:26 Block  203.0.113.13   192.0.2.50     POST   /admin.php        Information Gathering SQL   SQL Injection Prevention Attempt to gather information through SQL commands
+2023-05-30T10:15:23 Block  203.0.113.10   192.0.2.50     POST   /login.php        SQL Injection                SQL Injection Prevention SQL injection attempt detected
+2023-05-30T10:15:24 Block  203.0.113.11   192.0.2.50     GET    /api/user_info.php Database Drop                Database Protection     Attempt to drop database detected
+2023-05-30T10:15:25 Block  203.0.113.12   192.0.2.50     POST   /search.php       Time-Based SQL Injection    SQL Injection Prevention Time-based SQL injection attempt detected
+2023-05-30T10:15:26 Block  203.0.113.13   192.0.2.50     POST   /admin.php        Information Gathering SQL   SQL Injection Prevention Attempt to gather information through SQL commands
 ```
 
 
@@ -124,13 +124,13 @@ Timestamp           Action Source IP      Destination IP Method Path            
 Sample log from a Spring Boot application deployed via a Tomcat server, showing various types of attacks.
 
 ```bash
-2024-05-30 10:15:23.000 INFO  [http-nio-8080-exec-1] com.example.demo.security.SecurityConfig: Blocked access from IP: 203.0.113.10 - SQL Injection attempt detected in /login
-2024-05-30 10:15:24.000 INFO  [http-nio-8080-exec-2] com.example.demo.security.SecurityConfig: Blocked access from IP: 203.0.113.11 - Cross-Site Scripting (XSS) attempt detected in /search
-2024-05-30 10:15:25.000 INFO  [http-nio-8080-exec-3] com.example.demo.security.SecurityConfig: Blocked access from IP: 203.0.113.12 - Path Traversal attempt detected in /files
-2024-05-30 10:15:26.000 INFO  [http-nio-8080-exec-4] com.example.demo.security.SecurityConfig: Blocked access from IP: 203.0.113.13 - Remote Code Execution attempt detected in /execute
-2024-05-30 10:15:27.000 INFO  [http-nio-8080-exec-5] com.example.demo.security.SecurityConfig: Blocked access from IP: 203.0.113.14 - Brute Force attempt detected in /login
-2024-05-30 10:15:28.000 INFO  [http-nio-8080-exec-6] com.example.demo.security.SecurityConfig: Blocked access from IP: 203.0.113.15 - Malicious File Upload attempt detected in /upload
-2024-05-30 10:15:29.000 INFO  [http-nio-8080-exec-7] com.example.demo.security.SecurityConfig: Blocked access from IP: 203.0.113.16 - Denial of Service (DoS) attempt detected in /api/data
+2023-05-30 10:15:23.000 INFO  [http-nio-8080-exec-1] com.example.demo.security.SecurityConfig: Blocked access from IP: 203.0.113.10 - SQL Injection attempt detected in /login
+2023-05-30 10:15:24.000 INFO  [http-nio-8080-exec-2] com.example.demo.security.SecurityConfig: Blocked access from IP: 203.0.113.11 - Cross-Site Scripting (XSS) attempt detected in /search
+2023-05-30 10:15:25.000 INFO  [http-nio-8080-exec-3] com.example.demo.security.SecurityConfig: Blocked access from IP: 203.0.113.12 - Path Traversal attempt detected in /files
+2023-05-30 10:15:26.000 INFO  [http-nio-8080-exec-4] com.example.demo.security.SecurityConfig: Blocked access from IP: 203.0.113.13 - Remote Code Execution attempt detected in /execute
+2023-05-30 10:15:27.000 INFO  [http-nio-8080-exec-5] com.example.demo.security.SecurityConfig: Blocked access from IP: 203.0.113.14 - Brute Force attempt detected in /login
+2023-05-30 10:15:28.000 INFO  [http-nio-8080-exec-6] com.example.demo.security.SecurityConfig: Blocked access from IP: 203.0.113.15 - Malicious File Upload attempt detected in /upload
+2023-05-30 10:15:29.000 INFO  [http-nio-8080-exec-7] com.example.demo.security.SecurityConfig: Blocked access from IP: 203.0.113.16 - Denial of Service (DoS) attempt detected in /api/data
 ```
 
 ### Endpoint Logs
@@ -138,13 +138,13 @@ Sample log from a Spring Boot application deployed via a Tomcat server, showing 
 Sample log from an endpoint security system showing various malware attacks. 
 
 ```bash
-2024-05-30 10:15:23.000 INFO  [EndpointSecurity] Malware detected: Trojan.Win32.Generic, Action taken: Quarantined, File: C:\Users\User\Downloads\malicious.exe, Source IP: 203.0.113.10
-2024-05-30 10:15:24.000 WARN  [EndpointSecurity] Malware detected: Ransomware.WannaCry, Action taken: Blocked, File: C:\Users\User\Documents\important.doc, Source IP: 203.0.113.11
-2024-05-30 10:15:25.000 INFO  [EndpointSecurity] Malware detected: Spyware.Keylogger, Action taken: Removed, File: C:\Windows\System32\keylogger.dll, Source IP: 203.0.113.12
-2024-05-30 10:15:26.000 INFO  [EndpointSecurity] Malware detected: Adware.Win32.PopAd, Action taken: Quarantined, File: C:\Program Files\PopAd\popad.exe, Source IP: 203.0.113.13
-2024-05-30 10:15:27.000 WARN  [EndpointSecurity] Malware detected: Worm.Win32.Blaster, Action taken: Blocked, File: C:\Users\User\AppData\Local\Temp\blaster.exe, Source IP: 203.0.113.14
-2024-05-30 10:15:28.000 INFO  [EndpointSecurity] Malware detected: Virus.Win32.Sality, Action taken: Removed, File: C:\Windows\System32\infectedfile.dll, Source IP: 203.0.113.15
-2024-05-30 10:15:29.000 WARN  [EndpointSecurity] Malware detected: TrojanDownloader.Win32.Agent, Action taken: Blocked, File: C:\Users\User\Downloads\agent.exe, Source IP: 203.0.113.16
+2023-05-30 10:15:23.000 INFO  [EndpointSecurity] Malware detected: Trojan.Win32.Generic, Action taken: Quarantined, File: C:\Users\User\Downloads\malicious.exe, Source IP: 203.0.113.10
+2023-05-30 10:15:24.000 WARN  [EndpointSecurity] Malware detected: Ransomware.WannaCry, Action taken: Blocked, File: C:\Users\User\Documents\important.doc, Source IP: 203.0.113.11
+2023-05-30 10:15:25.000 INFO  [EndpointSecurity] Malware detected: Spyware.Keylogger, Action taken: Removed, File: C:\Windows\System32\keylogger.dll, Source IP: 203.0.113.12
+2023-05-30 10:15:26.000 INFO  [EndpointSecurity] Malware detected: Adware.Win32.PopAd, Action taken: Quarantined, File: C:\Program Files\PopAd\popad.exe, Source IP: 203.0.113.13
+2023-05-30 10:15:27.000 WARN  [EndpointSecurity] Malware detected: Worm.Win32.Blaster, Action taken: Blocked, File: C:\Users\User\AppData\Local\Temp\blaster.exe, Source IP: 203.0.113.14
+2023-05-30 10:15:28.000 INFO  [EndpointSecurity] Malware detected: Virus.Win32.Sality, Action taken: Removed, File: C:\Windows\System32\infectedfile.dll, Source IP: 203.0.113.15
+2023-05-30 10:15:29.000 WARN  [EndpointSecurity] Malware detected: TrojanDownloader.Win32.Agent, Action taken: Blocked, File: C:\Users\User\Downloads\agent.exe, Source IP: 203.0.113.16
 ```
 
 ### OS Logs 
@@ -169,16 +169,16 @@ May 30 10:15:32 server sshd[12354]: Failed password for invalid user test from 2
 Sample network logs from AWS CloudWatch, where we can see a possible attacker attempting to change their MAC address to evade detection.
 
 ```bash
-2024-05-30T10:15:23.000Z ALLOW SourceIP=203.0.113.10 DestinationIP=192.0.2.10 SourceMAC=00:0a:95:9d:68:16 DestinationPort=22 Protocol=TCP Action=ALLOW
-2024-05-30T10:15:24.000Z DENY SourceIP=203.0.113.11 DestinationIP=192.0.2.11 SourceMAC=00:0a:95:9d:68:17 DestinationPort=80 Protocol=TCP Action=DENY
-2024-05-30T10:15:25.000Z ALLOW SourceIP=203.0.113.12 DestinationIP=192.0.2.12 SourceMAC=00:0a:95:9d:68:18 DestinationPort=443 Protocol=TCP Action=ALLOW
-2024-05-30T10:15:26.000Z DENY SourceIP=203.0.113.13 DestinationIP=192.0.2.13 SourceMAC=00:0a:95:9d:68:19 DestinationPort=22 Protocol=TCP Action=DENY
-2024-05-30T10:15:27.000Z ALLOW SourceIP=203.0.113.14 DestinationIP=192.0.2.14 SourceMAC=00:0a:95:9d:68:16 DestinationPort=80 Protocol=TCP Action=ALLOW
-2024-05-30T10:15:28.000Z DENY SourceIP=203.0.113.15 DestinationIP=192.0.2.15 SourceMAC=00:0a:95:9d:68:20 DestinationPort=443 Protocol=TCP Action=DENY
-2024-05-30T10:15:29.000Z ALLOW SourceIP=203.0.113.16 DestinationIP=192.0.2.16 SourceMAC=00:0a:95:9d:68:21 DestinationPort=22 Protocol=TCP Action=ALLOW
-2024-05-30T10:15:30.000Z DENY SourceIP=203.0.113.17 DestinationIP=192.0.2.17 SourceMAC=00:0a:95:9d:68:22 DestinationPort=80 Protocol=TCP Action=DENY
-2024-05-30T10:15:31.000Z ALLOW SourceIP=203.0.113.18 DestinationIP=192.0.2.18 SourceMAC=00:0a:95:9d:68:16 DestinationPort=443 Protocol=TCP Action=ALLOW
-2024-05-30T10:15:32.000Z DENY SourceIP=203.0.113.19 DestinationIP=192.0.2.19 SourceMAC=00:0a:95:9d:68:23 DestinationPort=22 Protocol=TCP Action=DENY
+2023-05-30T10:15:23.000Z ALLOW SourceIP=203.0.113.10 DestinationIP=192.0.2.10 SourceMAC=00:0a:95:9d:68:16 DestinationPort=22 Protocol=TCP Action=ALLOW
+2023-05-30T10:15:24.000Z DENY SourceIP=203.0.113.11 DestinationIP=192.0.2.11 SourceMAC=00:0a:95:9d:68:17 DestinationPort=80 Protocol=TCP Action=DENY
+2023-05-30T10:15:25.000Z ALLOW SourceIP=203.0.113.12 DestinationIP=192.0.2.12 SourceMAC=00:0a:95:9d:68:18 DestinationPort=443 Protocol=TCP Action=ALLOW
+2023-05-30T10:15:26.000Z DENY SourceIP=203.0.113.13 DestinationIP=192.0.2.13 SourceMAC=00:0a:95:9d:68:19 DestinationPort=22 Protocol=TCP Action=DENY
+2023-05-30T10:15:27.000Z ALLOW SourceIP=203.0.113.14 DestinationIP=192.0.2.14 SourceMAC=00:0a:95:9d:68:16 DestinationPort=80 Protocol=TCP Action=ALLOW
+2023-05-30T10:15:28.000Z DENY SourceIP=203.0.113.15 DestinationIP=192.0.2.15 SourceMAC=00:0a:95:9d:68:20 DestinationPort=443 Protocol=TCP Action=DENY
+2023-05-30T10:15:29.000Z ALLOW SourceIP=203.0.113.16 DestinationIP=192.0.2.16 SourceMAC=00:0a:95:9d:68:21 DestinationPort=22 Protocol=TCP Action=ALLOW
+2023-05-30T10:15:30.000Z DENY SourceIP=203.0.113.17 DestinationIP=192.0.2.17 SourceMAC=00:0a:95:9d:68:22 DestinationPort=80 Protocol=TCP Action=DENY
+2023-05-30T10:15:31.000Z ALLOW SourceIP=203.0.113.18 DestinationIP=192.0.2.18 SourceMAC=00:0a:95:9d:68:16 DestinationPort=443 Protocol=TCP Action=ALLOW
+2023-05-30T10:15:32.000Z DENY SourceIP=203.0.113.19 DestinationIP=192.0.2.19 SourceMAC=00:0a:95:9d:68:23 DestinationPort=22 Protocol=TCP Action=DENY
 ```
 
 Cisco router logs showing blocked ARP spoofing attacks:

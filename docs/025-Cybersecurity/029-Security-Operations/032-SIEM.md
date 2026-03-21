@@ -64,29 +64,34 @@ A SIEM can be implemented in a couple of ways:
 
 It can also be agent-based or agent-less.
 
-- Agent - installed on each system, from which the SIEM needs to collect log data.
-- Agentless - SIEM relies on standard protocols such as SNMP or WMI.
+- **Agent** - installed on each system, from which the SIEM needs to collect log data.
+- **Agentless** - SIEM relies on standard protocols such as SNMP or WMI.
 
 ## Considerations  
 
 - **Sensor**
+
     - Actual endpoint being monitored.
     - The sensors can feed the data up into the SIEM.
 
 - **Sensitivity**
+
     - Focused on how much or how little you are logging.
     - Based on how you configure the sensor. 
     - Note that the SIIEM can also be overloaded with too much information. 
 
 - **Trends**
+
     - By configuring the SIEM, we can see trends in the traffic.
     - Increasing number of failed authentication attempts can be a sign of attack.
 
 - **Alerts**
+
     - We can set alerts based on certain parameters.
     - Example, alerts can be sent after five failed login attempts.
 
 - **Correlations**
+
     - Information needs to be correlated to build a better picture.
     - Example, ensuring that all devices are using the same timezone.
 

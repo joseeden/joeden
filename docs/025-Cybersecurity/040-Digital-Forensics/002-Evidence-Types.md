@@ -62,9 +62,12 @@ Testimonial evidence involves statements made by witnesses in court. The informa
 Testimonial Evidence may come in two forms:
 
   - **Direct Evidence** 
-    - Based on personal observations (e.g., incident investigations)
+
+    - Based on personal observations
+    - Examples: Incident investigations
     
   - **Expert Opinion** 
+
     - Professionals interpreting evidence (e.g., logs indicating intrusions)
     - Cybersecurity expert may look at logs and offer an expert opinion
 

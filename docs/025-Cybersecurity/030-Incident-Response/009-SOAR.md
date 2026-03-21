@@ -25,10 +25,12 @@ SOAR stands for Security Orchestration, Automation, and Response. It refers to a
 ## Features
 
 - **Security Orchestration**
+
   - Coordinating and managing security processes and tools.
   - Defining workflows and assigning tasks across teams.
   
 - **Automation**
+
   - Using technology to automate repetitive tasks.
   - Improving response times and reducing human error.
   - Use playbooks to automate:
@@ -37,5 +39,6 @@ SOAR stands for Security Orchestration, Automation, and Response. It refers to a
     - Revoke certificates
   
 - **Response**
+
   - Taking actions to investigate, contain, and mitigate security incidents.
   - Blocking malicious activities and implementing remediation measures.

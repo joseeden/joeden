@@ -18,7 +18,7 @@ Threat modeling does not use a wide range of threats, since some of them are not
 
 :::
 
-### Steps in Threat Modelling
+#### Steps in Threat Modelling
 
 1. **Identify Assets**
    - Determine what needs to be protected.
@@ -48,7 +48,7 @@ Threat modeling does not use a wide range of threats, since some of them are not
    - Test the effectiveness of the mitigations and continuously improve the threat model.
    - Examples: Penetration testing, security audits, code reviews.
 
-### Benefits 
+<!-- ### Benefits 
 
 - **Proactive Security**
   - Identifies potential threats early in the development lifecycle.
@@ -60,7 +60,7 @@ Threat modeling does not use a wide range of threats, since some of them are not
   - Provides a systematic approach to identify and mitigate risks.
 
 - **Improves Communication**
-  - Enhances understanding of security issues among stakeholders.
+  - Enhances understanding of security issues among stakeholders. -->
 
 
 ## Identify Threats
@@ -133,7 +133,7 @@ Each letter in STRIDE represents a specific category of threat:
 
 Reduction analysis is a security technique used to simplify the assessment of complex systems by breaking them down into more manageable components. This approach helps identify and evaluate the potential risks associated with each part of the system which then makes it easier to develop targeted security controls.
 
-Steps in Reduction Analysis:
+#### Steps in Reduction Analysis
 
 1. **Decompose the System**
    - Break down the system into smaller, understandable components.

@@ -15,13 +15,16 @@ last_update:
 
 The forensic investigation process has several key steps to follow in order: 
 
-1. **Identification**: Recognize relevant evidence
-2. **Preservation**: Keep evidence intact
-3. **Collection**: Gather the data for analysis
-4. **Examination**: Inspect the data in detail
-5. **Analysis**: Interpret the findings
-6. **Presentation**: Share results clearly
-7. **Decision**: Draw conclusions for legal or organizational use
+| Step               | Description                                       |
+| ------------------ | ------------------------------------------------- |
+| **Identification** | Recognize relevant evidence.                      |
+| **Preservation**   | Keep evidence intact.                             |
+| **Collection**     | Gather the data for analysis.                     |
+| **Examination**    | Inspect the data in detail.                       |
+| **Analysis**       | Interpret the findings.                           |
+| **Presentation**   | Share results clearly.                            |
+| **Decision**       | Draw conclusions for legal or organizational use. |
+
 
 
 ## 1. Identification 
@@ -105,32 +108,39 @@ The decision phase completes the investigation, ensuring findings lead to action
 
 ## After Action Review (AAR)
 
-An** After Action Review (AAR)** is a structured process for analyzing incidents or exercises to improve future performance. 
+An **After Action Review (AAR)** is a structured process for analyzing incidents or exercises to improve future performance. 
 
 - Evaluate response effectiveness.
 - Identify lessons learned.
 - Foster continuous improvement.
 
-### Key Components
+**Key components:**
 
-- **Participation**: Involve all relevant stakeholders for diverse insights.
-- **Documentation**: Collect data, timelines, decisions, and actions.
-- **Analysis**: Assess successes and failures in processes and outcomes.
+| Components        | Description                                              |
+| ----------------- | -------------------------------------------------------- |
+| **Inclusion**     | Involve all relevant stakeholders for diverse insights.  |
+| **Documentation** | Collect data, timelines, decisions, and actions.         |
+| **Analysis**      | Assess successes and failures in processes and outcomes. |
 
-### Steps in Conducting an AAR
+
+**Steps in conducting an AAR:**
 
 1. **Preparation**: 
+
    - Schedule shortly after the incident.
    - Gather reports, logs, and communications.
 
 2. **Conducting the Review**: 
+
    - Facilitate open discussions.
    - Use guiding questions to evaluate intentions vs. outcomes.
 
 3. **Documenting Findings**: 
+
    - Summarize key findings and recommendations.
    - Highlight successful strategies and areas needing improvement.
 
 4. **Follow-Up**: 
+
    - Share the report with stakeholders.
    - Monitor implementation of action items.

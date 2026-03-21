@@ -18,14 +18,13 @@ An incident response plan is a structured approach for detecting, managing, and 
 
 The phases of an incident response includes:
 
-- [Overview](#overview)
-- [Preparation](#preparation)
-- [Detection](#detection)
-- [Analysis](#analysis)
-- [Containment](#containment)
-- [Eradication](#eradication)
-- [Recovery](#recovery)
-- [Post-incident Activity](#post-incident-activity)
+- Preparation
+- Detection
+- Analysis
+- Containment
+- Eradication
+- Recovery
+- Post-incident Activity
 
 
 ## Preparation
@@ -97,22 +96,26 @@ Recovery is all about ensuring that any exploited vulnerabilities before the inc
 
 This is the last phase and only happens after containment, eradication, and a full system recovery.
 
-- **Root Cause Analysis (RCA)**
+**Root Cause Analysis (RCA):**
  
-  - Main purpose is not to assign blame. 
-  - Instead, figure out what caused the incident.
-  - Process:
-      a. Define/scope the incident.
-      b. Determine causal relationship that led to the incident.
-      c. Identify an effective solution.
-      d. Implement and track solutions
+- Main purpose is not to assign blame. 
+- Instead, figure out what caused the incident.
 
-- **Lessons Learned**
-  - Document experiences during the incident.
-  - Identifying areas for improvement.
-  - What went right, what went wrong, and what can we do better.
+**RCA Process:**
 
-- **After-action Report**
-  - Collect formalized information about what occured.
-  - Report contains RCA and recommendations for improvement.
+1. Define/scope the incident.
+2. Determine causal relationship that led to the incident.
+3. Identify an effective solution.
+4. Implement and track solutions
+
+**Lessons Learned:**
+
+- Document experiences during the incident.
+- Identifying areas for improvement.
+- What went right, what went wrong, and what can we do better.
+
+**After-action Report:**
+
+- Collect formalized information about what occured.
+- Report contains RCA and recommendations for improvement.
 

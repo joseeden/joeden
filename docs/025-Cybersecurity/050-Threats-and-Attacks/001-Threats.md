@@ -228,8 +228,10 @@ A piece of a software or hardware that records every single keystroke made on th
 
 **Spyware** and **bloatware** are both unwanted software which serve different purposes.
 
-- **Spyware** – Software that secretly collects user data such as browsing habits.
-- **Bloatware** – Pre-installed or unnecessary software that slows down the system.
+| Type          | Description                                                         |
+| ------------- | ------------------------------------------------------------------- |
+| **Spyware**   | Software that secretly collects user data, such as browsing habits. |
+| **Bloatware** | Pre-installed or unnecessary software that slows down the system.   |
 
 For more information, please see [Malware](/docs/025-Cybersecurity/050-Threats-and-Attacks/020-Malware.md#spyware).
 

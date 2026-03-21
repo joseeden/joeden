@@ -98,9 +98,12 @@ Comparison with traditional pentesting:
 
 The classifications for the environments define the level of information available to the tester about the target system.
 
-- **White-box Testing**: Attackers have full knowledge of the environment
-- **Black-box Testing**: Attackers have no knowledge of the environment 
-- **Gray-box Testing**: Attackers have some knowledge of the environment
+| Type                  | Description                                        |
+| --------------------- | -------------------------------------------------- |
+| **White-box Testing** | Attacker has full knowledge of the environment.    |
+| **Black-box Testing** | Attacker has no knowledge of the environment.      |
+| **Gray-box Testing**  | Attacker has partial knowledge of the environment. |
+
 
 For more information, please see [Environment Classifications.](/docs/025-Cybersecurity/028-Assessment-and-Testing/066-Reconnaisance-in-Pentesting.md#environment-classifications)
 

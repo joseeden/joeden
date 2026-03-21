@@ -33,7 +33,7 @@ Single Points of Failure (SPOF) are critical components in a system that, if the
   - Improve reliability of components through maintenance and upgrades.
   - Develop and test contingency plans for potential failures.
 
-### Benefits 
+<!-- ### Benefits 
 
 - **Increased Reliability**
   - Reduces the risk of complete system failures by addressing critical vulnerabilities.
@@ -42,7 +42,7 @@ Single Points of Failure (SPOF) are critical components in a system that, if the
   - Ensures that essential services remain operational, even if individual components fail.
   
 - **Enhanced Risk Management**
-  - Provides a structured approach to identifying and mitigating risks.
+  - Provides a structured approach to identifying and mitigating risks. -->
 
 ### Steps in Conducting SPOF Analysis
 
@@ -68,17 +68,13 @@ Single Points of Failure (SPOF) are critical components in a system that, if the
 
 ### Example Mitigation Strategies
 
-- **Hardware Redundancy**
-  - Use multiple servers, power supplies, and network connections.
+| Redundancy Type         | Description                                                                 |
+| ----------------------- | --------------------------------------------------------------------------- |
+| **Hardware Redundancy** | Use multiple servers, power supplies, and network connections.              |
+| **Software Redundancy** | Implement failover software and duplicate critical applications.            |
+| **Network Redundancy**  | Establish multiple network paths and use load balancers.                    |
+| **Human Redundancy**    | Cross-train staff and document procedures to ensure operational continuity. |
 
-- **Software Redundancy**
-  - Implement failover software and duplicate critical applications.
-
-- **Network Redundancy**
-  - Establish multiple network paths and use load balancers.
-
-- **Human Redundancy**
-  - Cross-train staff and document procedures to ensure operational continuity.
 
 
 ### Example Scenario
@@ -122,9 +118,6 @@ Example Scenarios:
   - Human error: Implement robust change management processes and provide regular training.
 
 Having comprehensive IT Contingency Plans ensures that organizations can quickly respond to disruptions, minimizing downtime and maintaining critical operations. These plans should be regularly reviewed and updated to adapt to evolving threats and business needs.
-
-
-## Personnel Succession Planning
 
 ## Personnel Succession Planning
 

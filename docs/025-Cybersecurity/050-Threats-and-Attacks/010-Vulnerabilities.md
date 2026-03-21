@@ -74,10 +74,12 @@ Device, application, or piece of software that has not been updated with the lat
 
 - Usually happens due to oversight, negligence, or deployment challenges.
 - Can be targeted for exploitation in broader network attacks.
-- Essential to establish a **patch management process.**
-    - Regular monitoring of updates.
-    - Assessing the relevance and impact of patches.
-    - Deploying patches in a timely manner.
+
+For this kind ov vulnerabilities, it is essential to establish a **patch management process.**
+
+- Regular monitoring of updates.
+- Assessing the relevance and impact of patches.
+- Deploying patches in a timely manner.
 
 ## Hardware Misconfigurations
 
@@ -86,11 +88,13 @@ Occurs when device's settings, parameters, or options are not optimally set up.
 - Can cause vulnerabilities to exist or a decrease in performance.
 - Can expose the system to unnecessary risks.
 - Often results from lack of proper configuration knowledge or oversight.
-- Mitigation:
-    - Conduct regular audits.
-    - Enforce good configuration management practices.
-    - Implement automated tools.
-    - Provide training to the personnel.
+
+**Mitigation:**
+
+- Conduct regular audits.
+- Enforce good configuration management practices.
+- Implement automated tools.
+- Provide training to the personnel.
 
 ## Preventing Vulnerabilities
 

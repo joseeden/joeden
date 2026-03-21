@@ -170,11 +170,12 @@ ITIL suggests nine KPIs that can guide security programs:
 
 ISACA recommends choosing KRIs based on these criteria:
 
-- **Impact**: Identifies risks significant to the business.
-- **Effort**: Ease of implementation and ongoing support.
-- **Reliability**: Indicator's ability to predict risks.
-- **Sensitivity**: Captures variances in risk accurately.
-
+| Criteria        | Description                                            |
+| --------------- | ------------------------------------------------------ |
+| **Impact**      | Identifies risks that are significant to the business. |
+| **Effort**      | Measures ease of implementation and ongoing support.   |
+| **Reliability** | Indicates how well the indicator predicts risks.       |
+| **Sensitivity** | Captures variations in risk accurately.                |
 
 
 ## Real User Monitoring (RUM)

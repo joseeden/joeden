@@ -69,43 +69,49 @@ Mobile vulnerabilities refer to security weaknesses in mobile devices, operating
 
 Sideloading is the process of installing applications on a mobile device from sources other than the official app store. While it can provide access to a wider range of apps, it poses significant security risks.
 
-- **Risks**:
-  - Potentially downloading malicious or unverified apps.
-  - Bypassing security checks provided by official app stores.
-  - Increased likelihood of malware infections and data breaches.
+**Risks**:
 
-- **Mitigation**:
-  - Download apps only from trusted and reputable sources.
-  - Enable security settings that prevent or warn against sideloading.
-  - Regularly scan the device for malware and suspicious activity.
+- Potentially downloading malicious or unverified apps.
+- Bypassing security checks provided by official app stores.
+- Increased likelihood of malware infections and data breaches.
+
+**Mitigation**:
+
+- Download apps only from trusted and reputable sources.
+- Enable security settings that prevent or warn against sideloading.
+- Regularly scan the device for malware and suspicious activity.
 
 ## Jailbreaking and Rooting
 
 Jailbreaking (iOS) and rooting (Android) refer to the process of removing manufacturer-imposed restrictions on a mobile device. This enables users to install unauthorized apps and modify the operating system. This allows greater customization and access to system files but significantly compromises security.
 
-- **Risks**:
-  - Disabling built-in security features and protections.
-  - Increased vulnerability to malware and malicious apps.
-  - Voiding device warranty and support from manufacturers.
+**Risks**:
 
-- **Mitigation**:
-  - Avoid jailbreaking or rooting devices.
-  - Use devices within the security framework provided by the manufacturer.
-  - Educate users about the security implications of jailbreaking and rooting.
+- Disabling built-in security features and protections.
+- Increased vulnerability to malware and malicious apps.
+- Voiding device warranty and support from manufacturers.
+
+**Mitigation**:
+
+- Avoid jailbreaking or rooting devices.
+- Use devices within the security framework provided by the manufacturer.
+- Educate users about the security implications of jailbreaking and rooting.
 
 ## Insecure Connection Methods
 
 Insecure connection methods involve using unprotected or poorly secured networks and protocols for communication. This can expose mobile devices to various attacks and unauthorized access.
 
-- **Risks**:
-  - Data interception and man-in-the-middle attacks on public or unencrypted Wi-Fi.
-  - Exposure to network-based attacks like eavesdropping and session hijacking.
-  - Increased likelihood of data theft and loss of privacy.
+**Risks**:
 
-- **Mitigation**:
-  - Use secure and encrypted connections (e.g., HTTPS, VPNs) for data transmission.
-  - Avoid connecting to unknown or public Wi-Fi networks for sensitive transactions.
-  - Enable security features like WPA3 for Wi-Fi and secure communication protocols.
+- Data interception and man-in-the-middle attacks on public or unencrypted Wi-Fi.
+- Exposure to network-based attacks like eavesdropping and session hijacking.
+- Increased likelihood of data theft and loss of privacy.
+
+**Mitigation**:
+
+- Use secure and encrypted connections (e.g., HTTPS, VPNs) for data transmission.
+- Avoid connecting to unknown or public Wi-Fi networks for sensitive transactions.
+- Enable security features like WPA3 for Wi-Fi and secure communication protocols.
 
 ## Mobile Device Management
 

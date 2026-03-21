@@ -93,7 +93,11 @@ For more information, please see [External Audits.](/docs/025-Cybersecurity/028-
 
 Below is an excerpt from the HIPAA Audit Checklist provided by [San Bernardino County.](https://wp.sbcounty.gov/dbh/wp-content/uploads/2016/07/HIPAA_Audit_Checklist.pdf)
 
+<div class='img-center'>
+
 ![](/img/docs/sec+-example-hipaa-audit-checklist.png)
+
+</div>
 
 
 ## Assessment Techniques 

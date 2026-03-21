@@ -19,16 +19,19 @@ The **Ten-Code**, also known as **ten signals**, is a set of code words used to 
 
 Here are some examples:
 
-- **10-1**: Signal Weak
-- **10-2**: Signal Good
-- **10-3**: Stop Transmitting
-- **10-4**: Acknowledgment (OK)
-- **10-5**: Relay
-- **10-6**: Busy
-- **10-7**: Out of Service
-- **10-8**: In Service
-- **10-9**: Repeat
-- **10-10**: Fight in Progress
+| Code      | Meaning             |
+| --------- | ------------------- |
+| **10-1**  | Signal Weak         |
+| **10-2**  | Signal Good         |
+| **10-3**  | Stop Transmitting   |
+| **10-4**  | Acknowledgment (OK) |
+| **10-5**  | Relay               |
+| **10-6**  | Busy                |
+| **10-7**  | Out of Service      |
+| **10-8**  | In Service          |
+| **10-9**  | Repeat              |
+| **10-10** | Fight in Progress   |
+
 
 
 ## Ciphers

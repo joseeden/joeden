@@ -17,25 +17,13 @@ Threat Intelligence is a continual process used to understand the threats faced 
 
 Known as **CART**, effective threat intelligence has four key traits:
 
-1. **Confidence Levels**
+| Factor                | Description                                                                                                                            |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| **Confidence Levels** | <ul><li>Indicates how reliable the information is.</li><li>Helps prioritize actions based on trustworthiness.</li></ul>                |
+| **Accuracy**          | <ul><li>Reflects correctness and validity of the data.</li><li>Reduces false positives and misinformed decisions.</li></ul>            |
+| **Relevancy**         | <ul><li>Pertains to the organization’s context and threats.</li><li>Ensures focus on actionable and meaningful intelligence.</li></ul> |
+| **Timeliness**        | <ul><li>Delivered when needed to make decisions.</li><li>Enables rapid response to emerging threats.</li></ul>                         |
 
-   - Indicates how reliable the information is
-   - Helps prioritize actions based on trustworthiness
-
-2. **Accuracy**
-
-   - Reflects correctness and validity of the data
-   - Reduces false positives and misinformed decisions
-
-3. **Relevancy**
-
-   - Pertains to the organization’s context and threats
-   - Ensures focus on actionable and meaningful intelligence
-
-4. **Timeliness**
-
-   - Delivered when needed to make decisions
-   - Enables rapid response to emerging threats
 
 
 

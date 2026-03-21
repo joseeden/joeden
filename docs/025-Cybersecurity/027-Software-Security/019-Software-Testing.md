@@ -132,7 +132,8 @@ Interface testing ensures that separate systems or components communicate proper
 
 :::
 
-**Types of Interfaces**:
+
+#### Types of Interfaces
 
 - **Application Programming Interface (API)**
 
