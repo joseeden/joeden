@@ -283,14 +283,6 @@ Devices that distribute and manage power at the rack or equipment level.
     - Could be cause by a large motor or a piece of a heavy equipment.
 
 
-
-
-
-
-
-
-
-
 ## Fire Protection
 
 ### Elements 
@@ -340,27 +332,14 @@ Fire detection systems identify fires early to reduce damage and improve safety.
 
 Fire extinguishers are classified based on the type of fire they are designed to extinguish. 
 
-- **Class A**: 
-  - For ordinary combustibles like wood, paper, and cloth
-  - Uses water or foam to cool and stop flames
+| Class       | Description                                                                                                                                                                                 |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Class A** | <ul><li>For ordinary combustibles like wood, paper, and cloth</li><li>Uses water or foam to cool and stop flames</li></ul>                                                                  |
+| **Class B** | <ul><li>For flammable liquids such as gasoline, oil, and grease</li><li>Uses foam, CO2, or dry chemicals to smother the fire</li></ul>                                                      |
+| **Class C** | <ul><li>For electrical fires where electrocution is a risk</li><li>Uses non-conductive agents like CO2 or dry chemicals</li><li>Example: Use when electrical equipment is on fire</li></ul> |
+| **Class D** | <ul><li>For combustible metals like magnesium, titanium, or sodium</li><li>Uses special dry powders to absorb heat and stop spreading</li></ul>                                             |
+| **Class K** | <ul><li>For kitchen fires involving cooking oils and fats</li><li>Uses wet chemicals to cool and block oxygen from fuel</li></ul>                                                           |
 
-- **Class B**: 
-
-  - For flammable liquids such as gasoline, oil, and grease
-  - Uses foam, CO2, or dry chemicals to smother the fire
-
-- **Class C**: 
-  - For electrical fires where electrocution is a risk
-  - Uses non-conductive agents like CO2 or dry chemicals
-  - Example: Use when electrical equipment is on fire
-
-- **Class D**: 
-  - For combustible metals like magnesium, titanium, or sodium
-  - Uses special dry powders to absorb heat and stop spreading
-
-- **Class K**: 
-  - For kitchen fires involving cooking oils and fats
-  - Uses wet chemicals to cool and block oxygen from fuel
 
 Proper use of fire extinguishers:
 

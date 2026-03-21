@@ -108,41 +108,14 @@ Effective data backup strategies help organizations recover from data loss incid
 
 ## Data Backup Types
 
-- **Normal/Full Backup**
-
-  - Copies all selected files and data.
-  - Provides a complete snapshot at a specific point in time.
-  - Archive bit is reset to indicate each file has been backup.
-
-- **Incremental Backup**
-
-  - Copies only the data that has changed since the last backup.
-  - All sets are used to restore the data; **fast to backup but slow to restore.**
-  - Efficient in terms of storage space but may require multiple backups for a complete restore.
-  - Archive bit is reset to indicate each file has been backup.
-
-- **Differential Backup**
-
-  - Copies all the data that has changed since the last full backup.
-  - Requires two sets to restore the data; **slow to backup but faster to restore.**
-  - Requires less time for restoration compared to incremental backups.
-  - Archive bit is NOT reset - differential don't reset bit.
-
-- **Mirror Backup**
-
-  - Creates an exact copy of the source data.
-  - Ensures a one-to-one replica of the original but may not offer versioning.
-
-- **Snapshot Backup**
-
-  - Captures the state of the system or data at a specific point in time.
-  - Provides a consistent view for backup purposes without affecting ongoing operations.
-
-- **Cloud Backup**
-
-  - Involves storing data in an offsite cloud environment.
-  - Enhances data accessibility and provides a secure offsite backup solution.
-
+| Backup Type             | Description                                                                                                                                                                                                                                                                                                |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Normal/Full Backup**  | <ul><li>Copies all selected files and data</li><li>Provides a complete snapshot at a specific point in time</li><li>Archive bit is reset to indicate each file has been backed up</li></ul>                                                                                                                |
+| **Incremental Backup**  | <ul><li>Copies only data changed since the last backup</li><li>All sets are needed to restore; fast to backup but slow to restore</li><li>Efficient in storage space but may require multiple backups for complete restore</li><li>Archive bit is reset to indicate each file has been backed up</li></ul> |
+| **Differential Backup** | <ul><li>Copies all data changed since the last full backup</li><li>Requires two sets to restore; slow to backup but faster to restore</li><li>Requires less time for restoration compared to incremental backups</li><li>Archive bit is NOT reset</li></ul>                                                |
+| **Mirror Backup**       | <ul><li>Creates an exact copy of the source data</li><li>Ensures a one-to-one replica but may not offer versioning</li></ul>                                                                                                                                                                               |
+| **Snapshot Backup**     | <ul><li>Captures the state of the system or data at a specific point in time</li><li>Provides a consistent view for backup purposes without affecting ongoing operations</li></ul>                                                                                                                         |
+| **Cloud Backup**        | <ul><li>Stores data in an offsite cloud environment</li><li>Enhances data accessibility and provides a secure offsite backup solution</li></ul>                                                                                                                                                            |
 
 ## Validating Backups
 
