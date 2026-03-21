@@ -53,7 +53,7 @@ Setup details:
 
 On a computer with internet access:
 
-1. Download the sample log file: [linux-system-log.log](@site/assets/elastic-stack/sample-logs/linux-system-log.log)
+1. Download the sample log file: [linux-system-log.log](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack/sample-logs)
 
 2. Check the sample log file:
 
@@ -236,7 +236,7 @@ Login to the Elasticsearch node and switch to **root** user:
 
 From the Logstash node: 
 
-1. Consider the [linux-system-log-2.log](@site/assets/elastic-stack/sample-logs/linux-system-log-2.log)
+1. Consider the [linux-system-log-2.log](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack/sample-logs)
 
     ```bash
     2020-10-11T09:49:35Z INFO variable server value is tomcat
@@ -376,7 +376,7 @@ We can also define multiple patterns in Logstash to parse log files with diverse
 
 From the Logstash node: 
 
-1. Use the same [linux-system-log-2.log](@site/assets/elastic-stack/sample-logs/linux-system-log-2.log)
+1. Use the same [linux-system-log-2.log](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack/sample-logs)
 
 2. Create the new Logstash pipeline file. 
 

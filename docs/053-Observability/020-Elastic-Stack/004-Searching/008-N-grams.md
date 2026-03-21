@@ -149,7 +149,7 @@ N-gram indexing is used to optimize search, allowing for efficient partial match
 
 1. Download the `movies.json` dataset.
 
-    - [movies.json](@site/assets/elastic-stack/movies.json)
+    - [movies.json](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack)
 
 2. First, store the Elasticsearch endpoint and credentials in variables:  
 

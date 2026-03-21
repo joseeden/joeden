@@ -73,7 +73,7 @@ Steps:
 
 1. Download the dataset.
 
-    - [ml-latest-small.zip](@site/assets/elastic-stack/ml-latest-small.zip)
+    - [ml-latest-small.zip](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack)
 
 2. Unzip the package.
 

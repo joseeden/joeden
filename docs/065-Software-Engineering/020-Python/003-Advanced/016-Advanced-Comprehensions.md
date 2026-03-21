@@ -163,7 +163,7 @@ In this example, we'll use a list comprehension to extract the time from Twitter
 - Extract characters 12 to 19 from each timestamp in `tweet_time`.
 - Assign the result to `tweet_clock_time`.
 
-Download the Twitter dataset here: [tweets.csv](@site/assets/datasets/tweets.csv)
+Download the Twitter dataset here: [tweets.csv](https://github.com/joseeden/joeden/tree/master/assets/datasets)
 
 Solution:
 
@@ -200,7 +200,7 @@ In this example, we'll extract the time from time-stamped Twitter data, but only
 - Extract the time from each timestamp in `tweet_time` (characters 12 to 19).
 - Add a condition to select only the timestamps where `entry[17:19] == '19'`.
 
-Download the Twitter dataset here: [tweets.csv](@site/assets/datasets/tweets.csv)
+Download the Twitter dataset here: [tweets.csv](https://github.com/joseeden/joeden/tree/master/assets/datasets)
 
 Solution:
 

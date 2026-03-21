@@ -113,7 +113,7 @@ Expected output:
 
 ## Import the Dataset  
 
-Download the dataset here: [movies.json](@site/assets/elastic-stack/movies-2.json)  
+Download the dataset here: [movies.json](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack)  
 
 Run the command below to create the `movies` index and import the dataset.
 

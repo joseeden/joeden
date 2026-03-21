@@ -61,7 +61,7 @@ For the entire installation steps, please see [Offlne Install - MySQL](/docs/070
 
 1. This guide uses a dataset of film reviews. Download the dataset from the link below:
 
-    - [ml-100k.zip](@site/assets/elastic-stack/ml-100k.zip)
+    - [ml-100k.zip](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack)
 
 2. Unzip the file and move the folder to `/tmp`
 

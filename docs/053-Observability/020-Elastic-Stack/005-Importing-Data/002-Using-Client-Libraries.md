@@ -49,7 +49,7 @@ Elasticsearch provides client libraries for most programming languages. This mak
 
 3. Download the dataset and unzip from the previous section (if you haven't done so).
 
-    - [ml-latest-small.zip](@site/assets/elastic-stack/ml-latest-small.zip)
+    - [ml-latest-small.zip](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack)
 
    Unzip the package.
 

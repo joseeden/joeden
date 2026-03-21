@@ -141,7 +141,7 @@ On the console, select the Domain endpoint link.
     }
     ```
 
-2. Import data to Opensearch. Download the movie datasets here: [movies.json](@site/assets/elastic-stack/movies.json)
+2. Import data to Opensearch. Download the movie datasets here: [movies.json](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack)
 
 
     ```bash

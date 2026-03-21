@@ -63,6 +63,16 @@ The access control process involves three key steps:
     - Based on predefined permissions or roles.
     - Ensures users can only access what they're permitted to.
 
+## Identity Assurance Levels
+
+Identity Assurance Levels (IAL) define the degree of confidence that a person's claimed identity is their real identity. They are part of NIST SP 800-63 guidelines for digital identity verification, ranging from basic self-assertion to rigorous proofing processes.
+
+| Level | Description |
+| ----- | ----------- |
+| IAL 1 | <ul><li>Some confidence in the claimed identity.</li><li>Self-asserted attributes with minimal or no proofing.</li><li>Suitable for low-risk transactions.</li></ul> |
+| IAL 2 | <ul><li>High confidence in the claimed identity.</li><li>Verified attributes (e.g., government-issued ID).</li><li>Used for moderate-risk scenarios.</li></ul> |
+| IAL 3 | <ul><li>Very high confidence in the claimed identity.</li><li>Strong, multi-factor identity proofing; possibly in-person verification.</li><li>For high-risk or sensitive applications.</li></ul> |
+
 ## Identification Mechanisms
 
 These are the commonly used methods to establish a person's identity within a system or organization.

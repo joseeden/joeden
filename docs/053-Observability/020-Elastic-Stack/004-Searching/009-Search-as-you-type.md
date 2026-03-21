@@ -71,7 +71,7 @@ In this example, we will test the autocomplete search functionality in Elasticse
 
 2. Download the `movies.json` dataset, which contains movie data that we will import into Elasticsearch.
 
-    - [movies.json](@site/assets/elastic-stack/movies.json)
+    - [movies.json](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack)
 
 3. Create a Mapping for the `movies` Index.
 

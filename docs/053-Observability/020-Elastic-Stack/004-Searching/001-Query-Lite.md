@@ -64,7 +64,7 @@ Using simple queries is convenient for experimenting, but they come with risks:
 
 1. For the following examples, download the datasets:
 
-    - [series.json](@site/assets/elastic-stack/series.json)
+    - [series.json](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack)
 
 2. First, store the Elasticsearch endpoint and credentials in variables:  
 

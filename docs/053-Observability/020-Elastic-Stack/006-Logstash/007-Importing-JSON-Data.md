@@ -74,7 +74,7 @@ Setup details:
 
 On a computer with internet access:
 
-1. Download the sample datasets: [sample-json.log](@site/assets/elastic-stack/sample-logs/sample-json.log)
+1. Download the sample datasets: [sample-json.log](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack/sample-logs)
 
 2. Transfer the files to your virtual machine. 
 

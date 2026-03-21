@@ -85,7 +85,7 @@ S3 Bucket:
 1. S3 Buckets need to have unique name. 
 2. Set S3 Bucket access to public.
 3. You may use a different S3 Bucket name.
-4. **Upload the sample log file to the S3 Bucket:** [access_log.log](@site/assets/elastic-stack/sample-logs/access_log.log)
+4. **Upload the sample log file to the S3 Bucket:** [access_log.log](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack/sample-logs)
 5. After the lab, you can delete this S3 Bucket.
 
 IAM User:

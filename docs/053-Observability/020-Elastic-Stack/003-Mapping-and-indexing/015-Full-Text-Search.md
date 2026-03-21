@@ -244,7 +244,7 @@ Output:
 {"acknowledged":true} 
 ```
 
-Now, we reindex the data using the [movies.json](@site/assets/elastic-stack/movies.json) file.
+Now, we reindex the data using the [movies.json](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack) file.
 
 ```bash
 curl -u $ELASTIC_USER:$ELASTIC_PW \

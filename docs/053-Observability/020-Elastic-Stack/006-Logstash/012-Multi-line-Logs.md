@@ -58,9 +58,9 @@ On a computer with internet access:
 
 1. Download the sample log files: 
 
-    - [elasticsearch.log](@site/assets/elastic-stack/sample-logs/elasticsearch.log)
-    - [es_slowlog.log](@site/assets/elastic-stack/sample-logs/es_slowlog.log)
-    - [mysql-slow.log](@site/assets/elastic-stack/sample-logs/mysql-slow.log)
+    - [elasticsearch.log](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack/sample-logs)
+    - [es_slowlog.log](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack/sample-logs)
+    - [mysql-slow.log](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack/sample-logs)
 
 2. Transfer the files to your virtual machine. 
 

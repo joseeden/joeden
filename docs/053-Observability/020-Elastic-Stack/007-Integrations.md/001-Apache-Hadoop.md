@@ -263,7 +263,7 @@ In a production enterprise setup, Hadoop nodes are typically placed in a private
 
 A sample log file will be used to simulate big data for this project. This file will be imported into Elasticsearch for further processing. The log file will serve as the input for the MapReduce job.
 
-Download the file here: [hadoop-apache-access.log](@site/assets/elastic-stack/sample-logs/hadoop-apache-access.log)
+Download the file here: [hadoop-apache-access.log](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack/sample-logs)
 
 After you download the log file, you can transfer the file to your node. [If you are using VirtualBox in your computer, you can map local folder to a fileshare in you VM](/docs/001-Personal-Notes/050-Project-Pre-requisites/011-VirtualBox.md#setup-fileshare).
 

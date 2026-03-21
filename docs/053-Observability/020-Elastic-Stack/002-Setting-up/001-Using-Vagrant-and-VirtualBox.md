@@ -37,7 +37,7 @@ Please see Using [Docker Compose.](/docs/053-Observability/020-Elastic-Stack/002
 
 ## Setup the Virtual Machines 
 
-1. Download the Vagrant files here: [Project Files](@site/assets/elastic-stack/elastic.zip)
+1. Download the Vagrant files here: [Project Files - elastic.zip](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack)
 2. Unzip the Files. Open Powershell and proceed to Elastic directory.
 
     ```bash
@@ -401,7 +401,7 @@ It should return:
 
 Download the file below. This bulk indexing file contains lines from Shakespeare's plays, formatted for compatibility with Elasticsearch's Bulk API.
 
-- [shakespeare_8.0.json](@site/assets/elastic-stack/shakespeare_8.0.json)
+- [shakespeare_8.0.json](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack)
 
 Run the following command to index the data into Elasticsearch:
 

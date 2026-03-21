@@ -23,7 +23,7 @@ When dealing with deeply nested or highly dynamic fields in Elasticsearch, you m
 
 Download the dataset below:
 
-- [demo-default.json](@site/assets/elastic-stack/demo-default.json)
+- [demo-default.json](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack)
 
 First, store the Elasticsearch endpoint and credentials in variables:  
 

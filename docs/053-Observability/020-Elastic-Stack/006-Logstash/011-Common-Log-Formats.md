@@ -60,10 +60,10 @@ On a computer with internet access:
 
 1. Download the sample log files: 
 
-    - [nginx-access.log](@site/assets/elastic-stack/sample-logs/nginx-access.log)
-    - [iis-server.log](@site/assets/elastic-stack/sample-logs/iis-server.log)
-    - [mongodb.log](@site/assets/elastic-stack/sample-logs/mongodb.log)
-    - [apache-access.log](@site/assets/elastic-stack/sample-logs/apache-access.log)
+    - [nginx-access.log](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack/sample-logs)
+    - [iis-server.log](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack/sample-logs)
+    - [mongodb.log](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack/sample-logs)
+    - [apache-access.log](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack/sample-logs)
 
 2. Transfer the files to your virtual machine. 
 

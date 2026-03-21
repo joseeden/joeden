@@ -102,7 +102,7 @@ Login to the Elastic page and perform the following:
 
     ![](/img/docs/01232025-elasticsearch-import-log-file.png)
 
-2. Click Select or drag and drop a file, and select the dataset. You can download the dataset here: [movies.json](@site/assets/elastic-stack/movies.json)
+2. Click Select or drag and drop a file, and select the dataset. You can download the dataset here: [movies.json](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack)
 
 3. It will display a sample from the dataset, as well as the summary. 
 

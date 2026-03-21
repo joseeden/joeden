@@ -62,9 +62,9 @@ On a computer with internet access:
 
 1. Download the sample log files: 
 
-    - [aws-elb.log](@site/assets/elastic-stack/sample-logs/aws-elb.log)
-    - [aws-alb.log](@site/assets/elastic-stack/sample-logs/aws-alb.log)
-    - [aws-cloudfront.log](@site/assets/elastic-stack/sample-logs/aws-cloudfront.log)
+    - [aws-elb.log](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack/sample-logs)
+    - [aws-alb.log](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack/sample-logs)
+    - [aws-cloudfront.log](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack/sample-logs)
 
 2. Transfer the files to your virtual machine. 
 

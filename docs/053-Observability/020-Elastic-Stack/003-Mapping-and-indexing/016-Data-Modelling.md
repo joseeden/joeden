@@ -136,7 +136,7 @@ Output:
 
 Download the dataset below:
 
-- [series.json](@site/assets/elastic-stack/series.json)
+- [series.json](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack)
 
 Populate the index with the dataset using the command below.
 

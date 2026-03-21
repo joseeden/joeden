@@ -64,8 +64,8 @@ This guide uses Elastic Cloud for the hosted Elasticsearch cluster and Kibana.
 
 We'll use an Nginx log file as our dataset. Download the files here:  
 
-- [nginx_json_logs](@site/assets/elastic-stack/kibana-canvas/nginx_json_logs)
-- [nginx_json_logs_bulk](@site/assets/elastic-stack/kibana-canvas/nginx_json_logs)
+- [nginx_json_logs](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack/kibana-canvas)
+- [nginx_json_logs_bulk](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack/kibana-canvas)
 
 First, we need to convert the log file into a format compatible with the Elasticsearch Bulk API. This can be done using `awk`:  
 
@@ -173,7 +173,7 @@ Follow these steps to build a Canvas workpad in the Elastic console.
 15. Click **Import** and select the desired icon.  
 
     :::info  
-    You can use any icon. For this example, download the [agent icon here.](@site/assets/elastic-stack/kibana-canvas/white-globe-icon-24.jpg)  
+    You can use any icon. For this example, download the [agent icon here.](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack/kibana-canvas)  
     :::  
 
 16. Update the **Data** tab with the following query:  
@@ -191,7 +191,7 @@ Follow these steps to build a Canvas workpad in the Elastic console.
     - In the **Display** tab, click **Import** and select the NGINX icon  
 
     :::info  
-    Download the [NGINX logo here.](@site/assets/elastic-stack/kibana-canvas/Nginx-Logo.wine.png)  
+    Download the [NGINX logo here.](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack/kibana-canvas)  
     :::  
 
     ![](/img/docs/01302025-elastic-cloud-canvas-6.png)  

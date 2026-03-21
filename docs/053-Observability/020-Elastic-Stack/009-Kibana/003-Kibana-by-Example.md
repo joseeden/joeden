@@ -35,7 +35,7 @@ This guide uses Elastic Cloud for the hosted Elasticsearch cluster and Kibana.
 
 Download the file below. This file contains lines from Shakespeare's plays, formatted for compatibility with Elasticsearch's Bulk API.
 
-- [shakespeare_8.0.json](@site/assets/elastic-stack/shakespeare_8.0.json)
+- [shakespeare_8.0.json](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack)
 
 Run the following command to index the data into Elasticsearch. Make sure to set the username, password, and the Elasticsearch endpoint.
 

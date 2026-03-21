@@ -67,7 +67,7 @@ Setup details:
 
 On a computer with internet access:
 
-1. Download the sample datasets: [csv-schema-short-numerical.csv](@site/assets/elastic-stack/csv-schema-short-numerical.csv)
+1. Download the sample datasets: [csv-schema-short-numerical.csv](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack)
 
 2. Transfer the files to your virtual machine. 
 

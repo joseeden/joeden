@@ -175,7 +175,7 @@ Bulk importing allows you to efficiently index multiple documents in Elasticsear
 
 For this example, download the following datasets:
 
-- [movies.json](@site/assets/elastic-stack/movies.json)
+- [movies.json](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack)
 
 To import the dataset into Elasticsearch:
 

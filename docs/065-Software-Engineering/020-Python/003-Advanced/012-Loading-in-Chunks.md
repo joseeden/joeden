@@ -100,7 +100,7 @@ Large datasets can't always fit into memory, so we process them in chunks. In th
 - Count occurrences of languages in tweets  
 - Store results in a dictionary  
 
-Download the Twitter dataset here: [tweets.csv](@site/assets/datasets/tweets.csv)
+Download the Twitter dataset here: [tweets.csv](https://github.com/joseeden/joeden/tree/master/assets/datasets)
 
 Solution:  
 
@@ -142,7 +142,7 @@ Instead of rewriting the same code for similar tasks, it's better to use functio
 - Counts occurrences of values in a given column  
 - Returns the results as a dictionary  
 
-Download the Twitter dataset here: [tweets.csv](@site/assets/datasets/tweets.csv)
+Download the Twitter dataset here: [tweets.csv](https://github.com/joseeden/joeden/tree/master/assets/datasets)
 
 Solution:
 

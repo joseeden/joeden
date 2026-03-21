@@ -35,7 +35,7 @@ If you are using cloud compute instances, you can skip this section.
 
 :::
 
-1. Download the Vagrant files here: [Project Files](@site/assets/elastic-stack/elastic.zip)
+1. Download the Vagrant files here: [Project Files](https://github.com/joseeden/joeden/tree/master/assets/elastic-stack)
 2. Unzip the Files. Open Powershell and proceed to Elastic directory.
 
     ```bash
