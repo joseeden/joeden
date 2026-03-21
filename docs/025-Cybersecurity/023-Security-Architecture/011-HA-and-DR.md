@@ -152,49 +152,53 @@ Failover involves establishing an alternate location, such as a secondary data c
   - Utilized cloud-based environments.
   - Offers highly flexible approach to redundancy.
   - Examples:
-    - Virtual Hot Site - fully replicated and instantly accesible
-    - Virtual Warm Site - Partially replicated and scalable
-    - Virtual Cold Site - Minimal activation to minimize costs
+
+    | Site Type         | Description                               |
+    | ----------------- | ----------------------------------------- |
+    | Virtual Hot Site  | Fully replicated and instantly accessible |
+    | Virtual Warm Site | Partially replicated and scalable         |
+    | Virtual Cold Site | Minimal activation to minimize costs      |
+
 
 ### Disaster Recovery Tests 
 
 - **Read-through Exercises**
 
-  - Simplest form of DR test, also known as **checklist reviews.**
-  - Each team member reviews their roles in the DR process.
-  - Personnel provides feedbacks about any updates needed.
-  - Evaluates procedures and protocols, not technical recovery aspects.
+  - Simplest form of DR test, also known as **checklist reviews**
+  - Each team member reviews their roles in the DR process
+  - Personnel provides feedbacks about any updates needed
+  - Assess procedures/protocols, not technical recovery aspects
 
 - **Tabletop Exercises**
 
-  - Also known as **walk-throughs,** tabletop involves getting everyone aroung the same table.
-  - Achieve same results as read-throughs, but are generally more effective.
-  - Focuses on assessing procedures and protocols rather than technical recovery.
-  - Presenting a scenario, prompting team members to discuss and plan their responses.
-  - **Least impact on system operations** - does not involve actual disruption or cost-effective.
+  - Also known as **walk-throughs** 
+  - Involves getting everyone aroung the same table
+  - Same results as read-throughs, but more effective
+  - Focus on procedures and protocols, not technical recovery
+  - Scenario-based discussion where team plans responses
+  - **Least impact**, does not involve actual disruption
 
 - **Simulation Exercise**
 
-  - Computer-generated representations of real-world scenarios.
-  - Provides a realistic scenario to assess practical incident handling.
-  - Still a theoretical exercise to gather all possible respond to a a specific disaster.
+  - Computer-based representations of real-world scenarios
+  - Theoretical, low impact, to gather all possible response
+  - Provides a realistic scenario to test incident handling
 
 - **Failover Test**
 
-  - Verifies seamless system transition to a backup in the event of failure.
-  - Require more resources, time, and energy but verify planned actions work.
+  - Verifies transition to a backup in the event of failure
+  - Require more resources, but verifies that the plan works
 
 - **Parallel Test**
 
-  - Activates the DR plan, bringing up a hot or warm site.
-  - Runs primary and alternate processing facilities simultaneously.
-  - Primary site continues normal operations while alternate site processes backup transactions.
-  - Evaluates compatibility and backup system support.
-  - Least disruptive and time-consuming among disaster recovery tests.
+  - Runs primary and alternate sites together.
+  - Activates the DR plan, brings up a hot or warm site.
+  - Primary continues operations, alternate processes backup transactions.
+  - Least disruptive, but time-consuming among recovery tests.
 
 - **Full Interruption Test**
 
-  - Most effective test, but its also has most impact to operations
+  - Most effective test, but also has most impact to operations
   - Shuts down primary site, relies entirely on the alternate site.
   - More disruptive and costly compared to a parallel test.
 
@@ -203,16 +207,18 @@ Failover involves establishing an alternate location, such as a secondary data c
 
 Organizations typically prepare a variety of documents as part of their **Disaster Recovery Planning (DRP)** to meet the needs of different audiences. These include:
 
-- **Executive summary**: High-level plan overview.
-- **Department-specific plans**: Tailored for various organizational units.
-- **Technical guides**: For IT personnel handling critical backup systems.
-- **Full plan copies**: For critical disaster recovery team members.
+| Document Type             | Description                                 |
+| ------------------------- | ------------------------------------------- |
+| Executive summary         | High-level plan overview                    |
+| Department-specific plans | Tailored for different organizational units |
+| Technical guides          | For IT personnel handling critical backups  |
+| Full plan copies          | For critical disaster recovery team members |
 
 Roles involved: 
 
-  - Disaster recovery team members
-  - IT personnel
-  - Managers and public relations personnel
+- Disaster recovery team members
+- IT personnel
+- Managers and public relations personnel
 
 
 :::info 
@@ -224,16 +230,15 @@ When creating your Disaster Recovery Plan (DRP), include steps to recover PKI-en
 
 ## BC vs DR
 
-**Business Continuity (BC) plans** 
+- **Business Continuity (BC) plans**
 
-- Focuses on proactive measures to prevent incidents.
-- Ensures the continuous operation of critical business functions. 
-- For more information, please see [Business Continuity.](/docs/025-Cybersecurity/030-Incident-Response/010-Business-Continuity.md)
+  - Emphasizes proactive strategies to prevent or minimize disruptions.
+  - Ensures critical business functions continue without interruption.
+  - For more details, see [Business Continuity.](/docs/025-Cybersecurity/030-Incident-Response/010-Business-Continuity.md)
 
-**Disaster Recovery (DR) plans**
+- **Disaster Recovery (DR) plans**
 
-- Focuses on reactive measures to recover IT systems, applications, and data after a disaster or major incident.
-
-
-
+  - Restores IT systems, apps, and data after a disruption.
+  - Step-by-step procedures to recover operations quickly and efficiently.
+  - Often includes backup systems, failover processes, and recovery priorities.
 

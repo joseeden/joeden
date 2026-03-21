@@ -10,11 +10,28 @@ last_update:
 
 ## ARP Cache Poisoning
 
-ARP cache/Table cache poisoning involves sending falsified ARP (Address Resolution Protocol) messages to a local network.
+ARP cache/Table cache poisoning involves sending fake ARP replies to a local network.
 
 - Redirects traffic intended for one host to another host.
 - Often used for man-in-the-middle attacks.
 - Can lead to data interception and unauthorized access.
+
+The fake replies are called **gratuitous ARP replies** because they are sent without a request. Attackers use these unsolicited replies to trick devices into updating their caches with false MAC-IP mappings, which allows the attackers to intercept the traffic. 
+
+Gratuitous ARP is normally used for announcements, but attackers exploit it for spoofing. 
+
+:::info[Who has this IP address?]
+
+ARP, or **Address Resolution Protocol**, is a networking protocol operating at Layer 2 of the OSI model. It maps IP addresses to MAC addresses within a local network.
+
+When a device wants to send data to another device on the network, it sends out an ARP request:
+
+"Who has this IP address?" 
+
+The device that owns that IP address replies with its MAC address. Then, the sender can wrap the data in an Ethernet frame and send it.
+
+:::
+
 
 **Mitigations:**
 
