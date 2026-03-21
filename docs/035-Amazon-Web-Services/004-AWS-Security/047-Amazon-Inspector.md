@@ -243,41 +243,19 @@ The rules within this rule package help to assess security for the various opera
 
 ## Security Best Practices
 
-This rules package looks for weaknesses in common security best practices. However, this only applies to Assessment Targets that are running the Linux operating system. At this stage, it's not possible to run this rules package on any target that has the marks of Windows OS. The following security checks are covered within this rules package.
+This rules package looks for weaknesses in common security best practices. However, this only applies to **Assessment Targets** that are running the Linux operating system. At this stage, it's not possible to run this rules package on any target that has the marks of Windows OS. 
 
-- **Disable root login over SSH** 
+The following security checks are covered within this rules package.
 
-    - Checks if the SSH daemon is configured to allow login into your instances root. 
-    
-- **Support SSH version two only** 
 
-    - Checks if the instance is configured to run SSH protocol version one. 
-
-- **Disable password authentication over SSH** 
-
-    - Checks if password authentication over SSH is configured.
-
-- **Configure password maximum age** 
-
-    - Checks if a maximum age for a password has been configured on the instance. 
-
-- **Configure password minimum length** 
-
-    - Checks if a minimum password length has been configured on the instance.
-
-- **Configure password complexity** 
-
-    - Checks if the instance is using a password complexity mechanism for passwords.
-
-- **Enable ASLR** 
-
-    - Checks if address space layout randomization is enabled.
-
-- **Enable DEP** 
-
-    - Checks if data execution prevention is enabled on the instance.
-
-- **Configuration permissions for systems directories**
-
-    - Ensures that only the root user has right access to system directories. 
-
+| Security Check                                       | Description                                              |
+| ---------------------------------------------------- | -------------------------------------------------------- |
+| **Disable root login over SSH**                      | Ensures root cannot log in directly via SSH.             |
+| **Support SSH version two only**                     | Ensures SSH protocol version 1 is not used.              |
+| **Disable password authentication over SSH**         | Ensures SSH password login is disabled.                  |
+| **Configure password maximum age**                   | Ensures passwords expire after a set period.             |
+| **Configure password minimum length**                | Ensures passwords meet a minimum length requirement.     |
+| **Configure password complexity**                    | Ensures passwords meet complexity rules.                 |
+| **Enable ASLR**                                      | Checks if address space layout randomization is enabled. |
+| **Enable DEP**                                       | Checks if data execution prevention is enabled.          |
+| **Configuration permissions for system directories** | Ensures only root has full access to system directo      |
