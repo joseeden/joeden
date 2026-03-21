@@ -26,13 +26,16 @@ Example of spoofing attacks:
 
 **Mitigations:**
 
-- **Email Security**: Use SPF, DKIM, and DMARC.
-- **User Training**: Educate on recognizing suspicious communications.
-- **Secure Authentication**: Use multifactor authentication.
-- **Access Controls**: Limit sensitive system access.
-- **Secure Routing**: Implement SBGP or similar protocols.
-- **Network Access Control (NAC)**: Restrict unauthorized devices.
-- **IDS/IPS**: Detect spoofing patterns.
+| Security Measure             | Description                                                  |
+| ---------------------------- | ------------------------------------------------------------ |
+| Email Security               | Implement SPF, DKIM, and DMARC to protect email integrity.   |
+| User Training                | Educate users to recognize suspicious communications.        |
+| Secure Authentication        | Use multifactor authentication for system access.            |
+| Access Controls              | Restrict access to sensitive systems.                        |
+| Secure Routing               | Use protocols like SBGP to ensure secure routing.            |
+| Network Access Control (NAC) | Prevent unauthorized devices from connecting to the network. |
+| IDS/IPS                      | Detect and block spoofing or malicious traffic patterns.     |
+
 
 <small>Reference: https://www.crowdstrike.com/cybersecurity-101/spoofing-attacks/</small>
 
@@ -42,10 +45,13 @@ Impersonating a trusted IP address to gain unauthorized access.
 
 **Mitigations:**
 
-- **Packet Filtering**: Block spoofed IP addresses.
-- **Secure Routing**: Use SBGP to validate routing.
-- **Network Access Control (NAC)**: Restrict unauthorized devices from network access.
-- **IDS/IPS**: Monitor for spoofing patterns.
+| Security Measure             | Description                                               |
+| ---------------------------- | --------------------------------------------------------- |
+| Packet Filtering             | Block traffic from spoofed IP addresses.                  |
+| Secure Routing               | Use SBGP to verify and secure routing paths.              |
+| Network Access Control (NAC) | Restrict unauthorized devices from accessing the network. |
+| IDS/IPS                      | Monitor and detect spoofing or malicious patterns.        |
+
 
 ## User-Agent Spoofing
 
@@ -125,6 +131,7 @@ URL hijacking, also known as **typosquatting**, tricks users into visiting fake 
 - Users are tricked into entering sensitive information or downloading malware.
 
 **Difference from session hijacking**:
+
 Session hijacking targets an existing user session, while URL hijacking tricks the user into connecting to a fake site before a session begins.
 
 ### Clickjacking 
@@ -137,6 +144,7 @@ Clickjacking tricks users into clicking hidden or misleading elements on a web p
 - Force unwanted actions like submitting forms or changing settings
 
 **Difference from URL/session hijacking**:
+
 Clickjacking relies on visual deception, not taking over a session or redirecting to fake URLs.
 
 :::info 
@@ -161,11 +169,11 @@ A replay attack happens when an attacker captures and re-sends valid data to tri
 - Re-sending intercepted data packets.
 - Can lead to unauthorized access, data changes, or session hijacking.
 
-Replay attacks usually target **authentication or session tokens**. The attacker **does not change TCP sequence numbers**—they resend the captured packets as-is. TCP sequence or acknowledgment issues are normal network behavior and **don’t indicate a replay attack**.
+Replay attacks usually target authentication or session tokens. The attacker resends captured packets without changing TCP sequence numbers. Normal TCP sequence or acknowledgment variations are part of regular network behavior and do not indicate a replay attack.
 
 **Mitigations:**
 
-- Use time-stamped tokens or nonces so each transaction is unique and short-lived.
+- Time-stamped tokens or nonces so each transaction is unique and short-lived.
 - Encrypt traffic with TLS/SSL to prevent interception.
 - Apply mutual authentication to verify identities.
 - Keep session or message logs to detect repeated transactions.
@@ -174,8 +182,8 @@ Replay attacks usually target **authentication or session tokens**. The attacker
 
 **Difference from Session Hijacking:**
 
-- *Replay Attack* – attacker replays captured data later.
-- *Session Hijacking* – attacker interferes with data in real-time.
+- *Replay Attack* - attacker replays captured data later.
+- *Session Hijacking* - attacker interferes with data in real-time.
 
 ## Disassociation Attack 
 
@@ -199,18 +207,18 @@ A deauthentication attack tricks a device into logging out of the network, forci
 
 ## Disassociation vs. Deauthentication 
 
-**Deauthentication** and **disassociation** are **different**, though they are related and often confused. Both are **Wi-Fi management frame types** used to disconnect devices, but they occur at different stages of the connection process.
+**Deauthentication** and **disassociation** are **different**, though they are related and often confused. Both are Wi-Fi management frame types used to disconnect devices, but they occur at different stages of the connection process.
 
-| Feature             | **Deauthentication**                             | **Disassociation**                                      |
-| ------------------- | ------------------------------------------------ | ------------------------------------------------------- |
-| **Purpose**         | Ends **authentication**                          | Ends **association** (but keeps authentication)         |
-| **Stage in Wi-Fi**  | Happens **before or during** login               | Happens **after authentication**, during session        |
-| **Effect**          | Fully disconnects a client (must reauthenticate) | Disconnects client but keeps session keys (temporarily) |
-| **Attack Use Case** | Used to capture handshake (force re-login)       | Used to disrupt sessions                                |
-| **Frame Type**      | Management frame                                 | Management frame                                        |
+| Feature         | Deauthentication                                 | Disassociation                                      |
+| --------------- | ------------------------------------------------ | ------------------------------------------------------- |
+| Purpose         | Ends **authentication**                          | Ends **association** (but keeps authentication)         |
+| Stage in Wi-Fi  | Happens **before or during** login               | Happens **after authentication**, during session        |
+| Effect          | Fully disconnects a client (must reauthenticate) | Disconnects client but keeps session keys (temporarily) |
+| Attack Use Case | Used to capture handshake (force re-login)       | Used to disrupt sessions                                |
+| Frame Type      | Management frame                                 | Management frame                                        |
 
 In simple terms:
 
-- **Deauthentication** = “Log out now. You need to reauthenticate to come back.”
-- **Disassociation** = “We're ending this session, but we still know who you are.”
+- **Deauthentication**: “Log out now. You need to reauthenticate to come back.”
+- **Disassociation**: “We're ending this session, but we still know who you are.”
 

@@ -19,8 +19,10 @@ Social Engineering refers to tenetshe manipulation of individuals or groups to g
 
 Social engineering and impersonation attacks share similarities, as both exploit trust and deception to manipulate individuals. 
 
-- **Social Engineering** often uses psychological tactics to gain trust. 
-- **Impersonation Attacks** specifically involve pretending to be someone else to deceive victims into revealing sensitive information or granting unauthorized access.
+| Attack Type           | Description                                                                                                      |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Social Engineering    | Uses psychological tactics to gain trust and manipulate victims.                                                 |
+| Impersonation Attacks | Involves pretending to be someone else to trick victims into revealing sensitive information or granting access. |
 
 Both techniques rely on convincing the victim that the attacker is a legitimate authority or trusted individual,  and it is often done through phone calls, emails, or face-to-face interactions.
 

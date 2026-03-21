@@ -15,17 +15,18 @@ Denial of Service (DoS) attacks attempts to overload a network or website with t
 
 **Mitigations:**
 
-- **Load Balancers**: Distribute traffic across multiple servers.
-- **Rate Limiting**: Limit requests per user or IP address.
-- **CDNs**: Disperse network traffic.
-- **DDoS Protection**: Use specialized services for DDoS mitigation.
-- **Firewalls and IPS**: Detect and block DoS patterns.
+| Technique            | Description                                             |
+| -------------------- | ------------------------------------------------------- |
+| Load Balancers       | Distribute traffic across multiple servers.             |
+| Rate Limiting        | Restrict the number of requests per user or IP address. |
+| CDNs                 | Distribute network traffic across multiple locations.   |
+| DDoS Protection      | Use specialized services to mitigate DDoS attacks.      |
+| Firewalls and IPS    | Detect and block denial-of-service patterns.            |
+
 
 ## Flood Attack 
 
 A specialized type of of DoS which attempts to send more packets to a single serve or host than it can handle.
-
-**Variations:**
 
 - **Ping Flood**
 
@@ -40,10 +41,15 @@ A specialized type of of DoS which attempts to send more packets to a single ser
   - Server replies to establish the 3-way handshake but no one responds.
   - Server reserves resouces to wait for these acknowledgements from these clients.
   - With enough requests, server will run out of resources.
-  - Mitigations:
-    - *Flood guards* - detect SYN floods and block request at the network boundary.
-    - *Timeouts* - stop connections after a period of time, e.g. 10, 15, 30 seconds
-    - *IPS* - can detect and respond to SYN floods.
+
+**Mitigations:**
+
+| Technique    | Description                                                          |
+| ------------ | -------------------------------------------------------------------- |
+| Flood guards | Detect SYN floods and block requests at the network boundary.        |
+| Timeouts     | Terminate connections after a set period (e.g., 10, 15, 30 seconds). |
+| IPS          | Detects and responds to SYN flood attacks.                           |
+
 
 ## Permanent DoS
 
@@ -151,7 +157,8 @@ In form:
   - Builds the infrastructure in a scalable way,
   - Cloud providers charge you based on resources used.
   - No return on investment, these traffic are wasted, they don't generate revenue.
-  - There are specialized cloud providers for DDoS protection:
- 
-  - CloudFlare 
-    - Akamai
+
+There are specialized cloud providers for DDoS protection:
+
+- CloudFlare 
+- Akamai
