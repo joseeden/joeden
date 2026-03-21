@@ -642,61 +642,37 @@ If you want to want to set `delete_on_termination` property after the instance i
 
 Depending on your OpenStack version, step 3 may not be supported via CLI. In that case, the property must be set when creating the instance with --block-device`.
 
-## Test Connectivity
 
-After the instance is running, test network connectivity.
+## Verify Instance, Compute, and Storage
 
-* Access instance console
-* Run ping test
-
-In the example below, the instance pings an external site.
+Once the instance is running, open a console to it and run a ping test:
 
 ```bash
-ping openstack.org
+ping -c 3 google.com
 ```
 
-Expected result:
+Output:
 
 ```bash
-PING openstack.org ... 
-64 bytes from ... time=...
+# (expected ping responses here)
 ```
 
-Successful ping means networking is working correctly.
+A successful ping indicates that networking is working correctly and the instance is connected to the external provider network, which allows access to the internet.
 
-
-## Verify Compute and Storage
-
-Check where instances and volumes are running.
-
-* Instances are distributed across compute nodes
-* Volumes are stored in block storage
-
-In the example below, instances are listed.
+Next, login to each compute node and check the status of deployed instances:
 
 ```bash
-openstack server list
+sudo virsh list --all
 ```
 
-Expected result:
+This lists all instances on the compute node; they should show as **running**.
+
+Finally, on the block/volume node, display all volumes:
 
 ```bash
-+------+--------+--------+
-| ID   | Name   | Status |
-+------+--------+--------+
-| ...  | vm1    | ACTIVE |
-+------+--------+--------+
+sudo lvdisplay
 ```
+
+This returns all volumes currently served from the storage node.
 
 This confirms that compute and storage services are functioning.
-
-
-## Summary
-
-You logged in, created resources, and launched instances successfully.
-
-* Configured compute, network, and storage
-* Verified connectivity using ping
-* Confirmed instances are running
-
-This proves your OpenStack setup is working end to end.
