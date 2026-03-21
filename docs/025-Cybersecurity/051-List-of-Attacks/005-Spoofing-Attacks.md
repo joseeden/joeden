@@ -209,7 +209,7 @@ A deauthentication attack tricks a device into logging out of the network, forci
 
 **Deauthentication** and **disassociation** are **different**, though they are related and often confused. Both are Wi-Fi management frame types used to disconnect devices, but they occur at different stages of the connection process.
 
-| Feature         | Deauthentication                                 | Disassociation                                      |
+| Feature         | Deauthentication                                 | Disassociation                                          |
 | --------------- | ------------------------------------------------ | ------------------------------------------------------- |
 | Purpose         | Ends **authentication**                          | Ends **association** (but keeps authentication)         |
 | Stage in Wi-Fi  | Happens **before or during** login               | Happens **after authentication**, during session        |
