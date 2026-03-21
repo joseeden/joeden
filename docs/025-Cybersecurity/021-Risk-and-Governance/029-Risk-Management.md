@@ -29,32 +29,18 @@ To manage the different types of risks, we can use a **Risk Register**
 
 Components:
 
-- **Risk Owners**
-  Individuals or teams responsible for managing specific risks, including monitoring, mitigation, and reporting on risk status.
+| Terms                   | Description                                                                                                                                              |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Risk Owners**         | Individuals or teams responsible for managing specific risks, including monitoring, mitigation, and reporting on risk status.                            |
+| **Key Risk Indicators** | Measurable metrics suggesting when a risk may be increasing or approaching a critical point.                                                             |
+| **Risk Description**    | A summary of a risk, outlining its nature, causes, and potential consequences if it occurs.                                                              |
+| **Risk Impact**         | The potential consequences if risks materialize, usually measured in number of losses.                                                                   |
+| **Risk Likelihood**     | The probability that a risk event will occur, often categorized as high, medium, or low based on historical data or expert judgment.                     |
+| **Risk Outcome**        | The result or effect after a risk event occurs, which can be positive or negative.                                                                       |
+| **Risk Thresholds**     | Predefined limits or levels at which a risk triggers specific actions or responses, indicating when a risk requires attention or mitigation.             |
+| **Risk Level**          | A combined measure of risk likelihood and impact, often used to categorize risks into priority levels for management and response.                       |
+| **Cost**                | The financial resources required to manage, mitigate, or transfer a risk, including expenses for controls, insurance, and other risk-reduction measures. |
 
-- **Key Risk Indicators**
-  Measurable metrics suggesting when a risk may be increasing or approaching a critical point.
-
-- **Risk Description**
-  A summary of a risk, outlining its nature, causes, and potential consequences if it occurs.
-
-- **Risk Impact**
-  The potential consequences if risks materialize, usually measured in number of losses.
-
-- **Risk Likelihood**
-  The probability that a risk event will occur, often categorized as high, medium, or low based on historical data or expert judgment.
-
-- **Risk Outcome**
-  The result or effect after a risk event occurs, which can be positive or negative.
-
-- **Risk Thresholds**
-  Predefined limits or levels at which a risk triggers specific actions or responses, indicating when a risk requires attention or mitigation.
-
-- **Risk Level**
-  A combined measure of risk likelihood and impact, often used to categorize risks into priority levels for management and response.
-
-- **Cost**
-  The financial resources required to manage, mitigate, or transfer a risk, including expenses for controls, insurance, and other risk-reduction measures.
 
 Example:
 

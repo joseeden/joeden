@@ -58,7 +58,7 @@ Data lifecycle policies outline the stages through which data passes from creati
 - Specify retention periods for different data types
 - Provide guidelines for secure data archiving and deletion
 
-### I. Data Retention Policies
+### 4.1 Data Retention Policies
 
 Data retention policies dictate how long different types of data should be kept. These policies help ensure compliance with legal and regulatory requirements while optimizing storage resources.
 
@@ -66,7 +66,7 @@ Data retention policies dictate how long different types of data should be kept.
 - Define retention periods based on data type and regulatory requirements
 - Provide guidelines for periodic review and disposal of outdated data
 
-### II. Data Disposal Policies
+### 4.2 Data Disposal Policies
 
 Data disposal policies detail the methods and procedures for securely disposing of data that is no longer needed. Proper disposal prevents unauthorized access to sensitive information.
 

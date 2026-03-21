@@ -90,17 +90,21 @@ Secures data while it's being transmitted over networks (or between two systems)
 Protects data while it's being accessed or used by applications or users.
 
 - **Application level**
+
   - Encryption implemented within applications.
   - Protect sensitive data during processing or manipulation.
   
 - **Access Control**
+
   - Controls access to data based on user permissions and authentication.
   
 - **Secure Enclaves**
+
   - Hardware-based secure areas for processing sensitive data.
   - Ensures isolation from other system components.
   
 - **Intel Software Guard Extensions (SGX)**
+
   - Hardware-based security technology for creating secure enclaves within the CPU.
   - Protect data from unauthorized access or modification.
 

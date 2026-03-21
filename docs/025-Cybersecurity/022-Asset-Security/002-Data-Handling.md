@@ -233,17 +233,14 @@ The Data Privacy Officer (or Privacy Officer) is a **broader role or team* focus
 
 Data undergoes a life cycle encompassing creation, usage, sharing, and modification. Various models exist, sharing common operational steps. 
 
-1. **Collect/Create** - Creating the knowledge, which is usually tacit knowledge at this point.
-
-2. **Store** - Storing or recording it in some fashion (which makes it explicit).
-
-3. **Use/Process** - Using the knowledge, which may cause the information to be modified, supplemented or partially deleted.    
-
-4. **Share** - Sharing the data with other users, whether as a copy or by moving the data from one location to another.
-
-5. **Archive** - Archiving the data when it is temporarily not needed.
-
-6. **Destroy** - Destroying the data when it is no longer needed.
+| No. | Stage              | Description                                                                                       |
+| --- | ------------------ | ------------------------------------------------------------------------------------------------- |
+| 1   | **Collect/Create** | Creating the knowledge, which is usually tacit at this point.                                     |
+| 2   | **Store**          | Storing or recording it in some fashion, making it explicit.                                      |
+| 3   | **Use/Process**    | Using the knowledge, which may modify, supplement, or partially delete the information.           |
+| 4   | **Share**          | Sharing the data with other users, either as a copy or by moving it from one location to another. |
+| 5   | **Archive**        | Archiving the data when it is temporarily not needed.                                             |
+| 6   | **Destroy**        | Destroying the data when it is no longer needed.                                                  |
 
 
 ## Identify and Assess Data
