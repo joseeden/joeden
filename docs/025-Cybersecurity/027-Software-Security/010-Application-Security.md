@@ -98,6 +98,25 @@ Challenges:
 
 
 
+## Memory Protection
+
+Memory protection mechanisms help prevent attackers from exploiting vulnerabilities in software by restricting how code and data are executed in memory.
+
+**Data Execution Prevention (DEP)** is a security feature that prevents code from running in certain memory regions that are meant for data only.
+
+- Helps stop buffer overflow attacks from executing malicious code
+- Can be enforced by hardware (CPU) or software
+- Supported on modern Windows and Linux systems
+
+**Address Space Layout Randomization (ASLR)** is a technique that randomizes the memory addresses where system and application components are loaded.
+
+- Makes it harder for attackers to predict locations of code or data in memory
+- Reduces the success rate of memory corruption attacks
+- Often used together with DEP for stronger protection
+
+Both DEP and ASLR strengthen application security by making it more difficult for attackers to exploit memory-based vulnerabilities.
+
+
 ## Sandboxing
 
 Sandboxing is a security mechanism used to isolate running applications to prevent them from affecting the operating system or other applications.
