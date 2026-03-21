@@ -360,7 +360,7 @@ Before you can use the script, you will need to create the project, user, and ro
 
 Now that Keystone is installed, we will create essential projects, users, and roles to use OpenStack. These are needed for both service operations and for testing OpenStack features.
 
-Before anything else, make sure you source the admin script form the previous step:
+Before anything else, make sure you source the admin script from the previous step:
 
 ```bash
 source admin-openrc.sh

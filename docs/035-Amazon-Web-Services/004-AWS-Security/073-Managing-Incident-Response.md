@@ -88,7 +88,7 @@ Since security groups are stateful, they keep track of certain connections to al
 
 </div>
 
-**Tracked connections** apply to any traffic that has a specific IP or CIDR rule within the security group. This would be something like allowing 203.0.113.1/32 for example. This is a specific IP address that has been allowed on the security. This type of traffic will NOT be immediately interrupted if a rule that has previously allowed its traffic to flow is removed.
+**Tracked connections** apply to any traffic that has a specific IP or CIDR rule within the security group. This would be something like allowing `203.0.113.1/32` for example. This is a specific IP address that has been allowed on the security. This type of traffic will NOT be immediately interrupted if a rule that has previously allowed its traffic to flow is removed.
 
 To removed tracked connections:
 
