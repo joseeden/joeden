@@ -72,7 +72,7 @@ This method is simple to set up, but in this setup, all users share the same key
 
 If the Wi-Fi password is shared by everyone and posted publicly (like in coffee shops), the network is using a pre-shared key (PSK) for its wireless configuration.
 
-::
+:::
 
 ## WPA2-Enterprise
 

@@ -46,41 +46,16 @@ The Common Criteria (CC) allowed for international collaboration and mutual reco
 
 The evaluation is categorized into seven Evaluation Assurance Levels (EALs), each with increasing rigor and assurance.
 
-- **EAL1: Functionally Tested**
+| Level    | Name                                        | Description                                                                                                                                                                         |
+| -------- | ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **EAL1** | Functionally Tested                         | <ul><li>Basic testing to ensure the system functions as claimed</li><li>Suitable for systems requiring minimal assurance</li></ul>                                                  |
+| **EAL2** | Structurally Tested                         | <ul><li>Analysis of design and testing of security features</li><li>Useful when developers cooperate</li></ul>                                                                      |
+| **EAL3** | Methodically Tested and Checked             | <ul><li>Focuses on testing and checking the system's security functions</li><li>Requires evidence of developer testing</li><li>Includes review of development environment</li></ul> |
+| **EAL4** | Methodically Designed, Tested, and Reviewed | <ul><li>Thorough review of the system's design and implementation</li><li>Requires rigorous testing and development practices</li></ul>                                             |
+| **EAL5** | Semiformally Designed and Tested            | <ul><li>Employs semiformally specified design and analysis methods</li><li>Suitable for high assurance applications</li><li>Rigorous validation required</li></ul>                  |
+| **EAL6** | Semiformally Verified Design and Tested     | <ul><li>Detailed and comprehensive design and testing, including formal methods</li><li>Ideal for systems requiring high trust and security</li></ul>                               |
+| **EAL7** | Formally Verified Design and Tested         | <ul><li>Highest level of assurance</li><li>Formal design verification and extensive testing</li><li>Suitable for extremely sensitive applications</li></ul>                         |
 
-  - Basic testing to ensure the system functions as claimed.
-  - Suitable for systems requiring minimal assurance.
-
-- **EAL2: Structurally Tested**
-
-  - Analysis of design and testing of security features.
-  - Useful for systems where developers' cooperation is available.
-
-- **EAL3: Methodically Tested and Checked**
-
-  - Focuses on testing and checking the system's security functions.
-  - Requires evidence of developer testing and a review of the development environment.
-
-- **EAL4: Methodically Designed, Tested, and Reviewed**
-
-  - Involves a thorough review of the system's design and implementation.
-  - Requires rigorous testing and development practices.
-
-- **EAL5: Semiformally Designed and Tested**
-
-  - Employs semiformally specified design and analysis methods.
-  - Suitable for high assurance applications requiring rigorous validation.
-
-- **EAL6: Semiformally Verified Design and Tested**
-
-  - Requires detailed and comprehensive design and testing, including formal methods.
-  - Ideal for systems requiring high levels of trust and security.
-
-- **EAL7: Formally Verified Design and Tested**
-
-  - The highest level, involving formal design verification and extensive testing.
-  - Ensures the highest degree of security assurance.
-  - Suitable for extremely sensitive applications.
 
 
 ## Certification and Accreditation 

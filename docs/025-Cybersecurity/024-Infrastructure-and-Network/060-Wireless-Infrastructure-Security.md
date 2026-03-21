@@ -52,26 +52,32 @@ WAP placement requires coordination with:
 An Extended Service Set (ESS) configuration extends wireless coverage by interconnecting multiple wireless access points (WAPs) to provide seamless connectivity across a larger area. Proper configuration ensures efficient network performance and robust security.
 
 - **SSID Management**
+
   - Use a consistent SSID for all access points to enable seamless roaming.
   - Hide SSID broadcast to enhance security.
   
 - **Channel Assignment**
+
   - Configure non-overlapping channels to minimize interference.
   - Utilize automatic channel selection features if available.
   
 - **Security Settings**
+
   - Apply strong encryption methods (WPA3) across all access points.
   - Implement consistent security policies and access controls.
   
 - **Load Balancing**
+
   - Distribute client connections evenly across access points to prevent overload.
   - Adjust power settings to manage coverage and client distribution.
   
 - **Roaming Optimization**
+
   - Enable fast roaming protocols (802.11r) to improve client handoff between access points.
   - Configure access points to support seamless transition without connection drops.
   
 - **Monitoring and Maintenance**
+
   - Regularly monitor network performance and signal strength.
   - Schedule periodic maintenance and firmware updates for all access points.
 
