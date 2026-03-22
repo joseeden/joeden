@@ -12,7 +12,7 @@ last_update:
 
 ## The Need for SELinux
 
-SELinux (Security-Enhanced Linux) is a security module that provides mechanisms for supporting access control security policies, including mandatory access controls (MAC). It is an essential component in securing Linux systems by ensuring that applications and processes have only the necessary permissions.
+SELinux (Security-Enhanced Linux) is a security module that provides mechanisms for supporting access control security policies, including [mandatory access controls (MAC)](/docs/025-Cybersecurity/026-Identity-and-Access-Management/008-Logical-Access.md#mandatory-access-control-mac). It is an essential component in securing Linux systems by ensuring that applications and processes have only the necessary permissions.
 
 - Linux security is built on UNIX security. 
 - SELinux provides a complete and mandatory security solution.
@@ -23,7 +23,7 @@ Due to the strict implementation of SELinux, "unknown" services will always requ
 
 ## Features 
 
-SELinu is a powerful security module for Linux that implements Mandatory Access Control (MAC) policies. Developed by the NSA, it enhances the security of Linux systems through the following features:
+SELinux is a powerful security module for Linux that implements Mandatory Access Control (MAC) policies. Developed by the NSA, it enhances the security of Linux systems through the following features:
 
 - **Mandatory Access Control (MAC)**
 
@@ -64,45 +64,52 @@ SELinu is a powerful security module for Linux that implements Mandatory Access 
 
 ## Context-based Permission Schemes
 
-**SELinux**
+#### SELinux
 
-- Each file, process, and system resource is labeled with a security context.
-- A security context consists of a type and a domain. 
-- Access decisions are based on these labels
-- This enforces strict policies to prevent unauthorized access and actions.
-- Sample SELinux Configuration:
+SELinux is a security system that controls access using labels and strict rules.
 
-    ```bash
-    # Example SELinux policy rule
-    allow httpd_t user_home_t:file { read getattr };
-    ```
+- Labels are assigned to files, processes, and resources  
+- Uses security contexts (type and domain)  
+- Access is based on matching labels  
+- Enforces strict policies to block unauthorized actions  
 
-**AppArmor**
+Sample SELinux Configuration:
 
-- Linux security module, offers application-level access control through the use of profiles.
-- Each profile defines a set of rules specifying the allowed resources and operations
-- This enhances security by limiting the scope of potential attacks.
-- Sample AppArmor Configuration:
+```bash
+# Example SELinux policy rule
+allow httpd_t user_home_t:file { read getattr };
+```
 
-    ```bash
-    # Example AppArmor profile for the Apache web server
-    /usr/sbin/apache2 {
-    # Allow read access to the Apache configuration files
-    /etc/apache2/apache2.conf r,
-    /etc/apache2/conf.d/ r,
-    /etc/apache2/conf.d/** r,
-    /etc/apache2/sites-available/ r,
-    /etc/apache2/sites-available/** r,
-    
-    # Allow read access to web content directories
-    /var/www/ r,
-    /var/www/** r,
-    
-    # Allow access to log files
-    /var/log/apache2/ r,
-    /var/log/apache2/** rw,
-    }
-    ```
+#### AppArmor
+
+AppArmor is a security module that restricts what applications can access using profiles.
+
+- Uses profiles to define allowed actions and resources
+- Path-based (uses file paths instead of labels)
+- Easier to configure compared to SELinux
+- For more information, please see [AppArmor](/docs/041-Containerization/032-System-Hardening/021-AppArmor.md)
+
+Sample AppArmor Configuration:
+
+```bash
+# Example AppArmor profile for the Apache web server
+/usr/sbin/apache2 {
+# Allow read access to the Apache configuration files
+/etc/apache2/apache2.conf r,
+/etc/apache2/conf.d/ r,
+/etc/apache2/conf.d/** r,
+/etc/apache2/sites-available/ r,
+/etc/apache2/sites-available/** r,
+
+# Allow read access to web content directories
+/var/www/ r,
+/var/www/** r,
+
+# Allow access to log files
+/var/log/apache2/ r,
+/var/log/apache2/** rw,
+}
+```
 
 ## SELinux States and Modes
 

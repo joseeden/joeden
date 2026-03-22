@@ -61,7 +61,7 @@ The **Lattice-based Model** provides a framework for access control based on use
 
 - Uses a lattice structure to define levels of access.
 - Employs rules to control data flow between different security levels.
-- Facilitates mandatory access control, reduces risks of data leakage.
+- Facilitates [mandatory access control](/docs/025-Cybersecurity/026-Identity-and-Access-Management/008-Logical-Access.md#mandatory-access-control-mac), reduces risks of data leakage.
 
 This model uses a two dimensional matrix that defines which subjectsare permitted to access which objects at what permission level.
 

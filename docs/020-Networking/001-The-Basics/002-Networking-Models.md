@@ -59,17 +59,17 @@ The Open Systems Interconnection (OSI) Model is a conceptual framework for descr
 | 2   | **Data Link**    | <ul><li>Manages frames and error detection/correction</li><li>Controls access to physical medium and devices like switches</li></ul>                                                                                    |
 | 1   | **Physical**     | <ul><li>Converts data into electrical, optical, or radio signals</li><li>Hardware standards like cables, connectors, and signaling</li></ul>                                                                            |
 
-### Encapsulation and De-encapsulation
-
 When data is transmitted over a network, it goes through a process of encapsulation and de-encapsulation:
 
-- **Encapsulation**  
+- **Encapsulation** 
+
     - Data is wrapped with protocol information as it moves down the layers  
     - Each layer adds its own header (and sometimes footer) 
     - Headers/footers are used for routing, error checking, and delivery  
     - Prepares the data for transmission over the physical medium  
 
 - **De-encapsulation**  
+
     - Data is unpacked as it moves up the layers  
     - Each layer removes its corresponding header/footer
     - Information is processed after header/footer removal
@@ -89,6 +89,12 @@ Transmission Control Protocol/Internet Protocol (TCP/IP) is platform-independent
 | 3   | **Transport Layer** | <ul><li>TCP: Connection-oriented, reliable, full-duplex</li><li>UDP: Connectionless, fast, supports broadcast/multicast</li></ul> |
 | 2 | **Internet Layer** | <ul><li>Handles packets and routing</li><li>Example protocol: ICMP (Ping, network health checks)</li><li><div class="img-center">![](/img/docs/security-tcp-ip-protocol.png)</div></li></ul> |
 | 1   | **Network Access Layer** | <ul><li>Manages data flow on physical networks</li><li>Handles framing and error detection for data</li><li>Controls access to physical network (e.g., Ethernet, Wi-Fi)</li></ul> | 
+
+<div class='img-center'>
+
+![](/img/docs/all-things-network-OSI-tcp-mapping.png)
+
+</div>
 
 
 ## Transmission Types

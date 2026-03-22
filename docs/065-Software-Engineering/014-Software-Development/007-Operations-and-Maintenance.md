@@ -140,34 +140,38 @@ Below is a sample procedure that outlines how changes should be handled in a con
 
 Change management consists of three key elements:
 
-1. Request Control
-2. Change Control
-3. Release Control
+| Process             | Description                     |
+| ------------------- | ------------------------------- |
+| **Request Control** | Collect and prioritize requests |
+| **Change Control**  | Review and approve changes      |
+| **Release Control** | Deploy approved changes         |
 
 ### 1. Request Control
 
-Manages how modification requests are handled and prioritized.
+Request control focuses on the **intake and prioritization** of change requests.
 
-- Users submit modification requests.
-- Managers assess and prioritize based on cost and impact.
-- Only high-priority requests move forward.
+- Users submit modification requests
+- Requests are logged, categorized, and tracked  
+- Managers assess and prioritize based on cost and impact
+- Only valid high-priority requests move forward
 
 ### 2. Change Control
 
-Ensures modifications are reviewed and approved before implementation.
+Change control focuses on the **evaluation and approval** of proposed changes before implementation
 
 - Developers create a **Request for Change (RFC)** document.
 - The **Change Advisory Board (CAB)** reviews and approves changes.
-- Approved modifications proceed to implementation.
+- Changes are approved, rejected, or sent back for revision  
+- Only approved changes proceed to implementation  
 
 ### 3. Release Control
 
-Oversees testing and deployment of approved changes.
+Release control focuses on the **controlled deployment and rollout** of approved changes.
 
-- **Quality Assurance (QA)** tests code to verify it meets requirements.
-- Once approved, the **Release Manager** deploys the code to production.
-- Developers cannot update production directly, ensuring controlled releases.
-
+- Changes are packaged, tested, and scheduled for release  
+- **Quality Assurance (QA)** tests code to verify it meets requirements
+- Once approved, the **Release Manager** deploys the code to production
+- Rollback plans are prepared in case of failure  
 
 ## Importance of Structured Processes
 

@@ -16,12 +16,34 @@ last_update:
 
 ## Overview
 
-AppArmor (Application Armor) is a Linux security module providing **Mandatory Access Control (MAC)** for applications. It enhances system security by restricting programs to predefined rules, controlling access to resources.
+AppArmor (Application Armor) is a Linux security module providing [Mandatory Access Control (MAC)](/docs/025-Cybersecurity/026-Identity-and-Access-Management/008-Logical-Access.md#mandatory-access-control-mac) for applications. It enhances system security by restricting programs to predefined rules, controlling access to resources.
 
 This is installed by default in most Linux distribution systems. To check:
 
 ```bash
 systemctl status apparmor 
+```
+
+Sample AppArmor Configuration:
+
+```bash
+# Example AppArmor profile for the Apache web server
+/usr/sbin/apache2 {
+# Allow read access to the Apache configuration files
+/etc/apache2/apache2.conf r,
+/etc/apache2/conf.d/ r,
+/etc/apache2/conf.d/** r,
+/etc/apache2/sites-available/ r,
+/etc/apache2/sites-available/** r,
+
+# Allow read access to web content directories
+/var/www/ r,
+/var/www/** r,
+
+# Allow access to log files
+/var/log/apache2/ r,
+/var/log/apache2/** rw,
+}
 ```
 
 To use AppArmor, the AppArmor kernel module must first be loaded on all the nodes where the containers will run. To check:
@@ -31,8 +53,6 @@ To use AppArmor, the AppArmor kernel module must first be loaded on all the node
 ![](/img/docs/check-if-apparmor-is-loaded-or-not.png)
 
 </div>
-
-
 
 Check the loaded profiles:
 
@@ -75,8 +95,6 @@ Install AppArmor if not already present:
    ```
 
 
-
-
 ## Examples: Restricting Write Access
 
 ### Deny Writes to Entire Filesystem  
@@ -115,10 +133,10 @@ sudo aa-status
 ```
 
 
-
 ## AppArmor Modes
 
-1. **Enforce Mode**:  
+1. **Enforce Mode**
+
    - Blocks actions violating policies.  
    - Suitable for production.  
       
@@ -126,7 +144,8 @@ sudo aa-status
       sudo aa-enforce /etc/apparmor.d/my_profile
       ```
 
-2. **Complain Mode**:  
+2. **Complain Mode**
+
    - Logs violations but allows actions.  
    - Useful for testing.  
    
@@ -134,7 +153,8 @@ sudo aa-status
       sudo aa-complain /etc/apparmor.d/my_profile
       ```
 
-3. **Unconfined Mode**:  
+3. **Unconfined Mode**
+
    - No restrictions or logging.  
 
 Switch between modes using `aa-enforce` or `aa-complain`.
@@ -151,6 +171,7 @@ Kubernetes supports AppArmor starting from version 1.4. Prerequisites:
 **Example**: Apply a profile to a container:
 
 1. Create an AppArmor profile:
+
    ```bash
    # /etc/apparmor.d/apparmor-deny-write
    profile apparmor-deny-write flags=(attach_disconnected) {
@@ -159,6 +180,7 @@ Kubernetes supports AppArmor starting from version 1.4. Prerequisites:
    ```
 
 2. Verify AppArmor on the node:
+
    ```bash
    sudo aa-status
    ```
@@ -169,10 +191,8 @@ Kubernetes supports AppArmor starting from version 1.4. Prerequisites:
 
    </div>
 
-
-
-
 3. Add an annotation in the Pod manifest:
+
    ```yaml
    apiVersion: v1
    kind: Pod
@@ -188,6 +208,7 @@ Kubernetes supports AppArmor starting from version 1.4. Prerequisites:
    ```
 
 4. Deploy and test:
+
    ```bash
    kubectl apply -f ubuntu-sleeper.yml
    kubectl exec -it ubuntu-sleeper -- touch /tmp/testing
