@@ -66,7 +66,7 @@ IPFix (IP Flow Information Export) is a standard protocol for exporting flow inf
 
 Simple Network Management Protocol (SNMP) is a widely used protocol for monitoring and managing network devices.
 
-- Operates on the Application Layer of the OSI model.
+- Operates on the **Layer 7 (Application)** of the OSI model.
 - Software agent or built into firmware; uses a manager/agent architecture.
 - SNMP traps provide real-time alerts and notify management stations.
 

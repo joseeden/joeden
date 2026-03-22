@@ -29,7 +29,18 @@ Mature organizations integrate peer-based code reviews into their software promo
 
 ## Fagan Inspections
 
-Fagan Inspections are a formal review process used to identify defects in software early in the development cycle. This process involves a structured examination of work products such as requirements, design documents, and code by a team of reviewers to ensure quality and correctness. It also ocuses on early detection of issues to reduce costs and improve final product quality.
+Fagan Inspections are a **formal code review** used to find defects early in software development. A team examines items like requirements, designs, and code to ensure they are correct and high quality. This helps catch issues early, reduce costs, and improves the final product.
+
+- Specific review technique, not a full development process
+- Focuses on formal, step-by-step code/document reviews
+- Uses defined roles (moderator, reviewer, author)
+- Happens at specific points in development
+
+:::info 
+
+While SDLC and Agile frameworks guide the overall development process, Fagan inspections are focused on code reviews to detect defects early in work products.
+
+::: 
 
 <div class='img-center'>
 

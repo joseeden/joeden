@@ -168,14 +168,26 @@ Business classification levels are used to categorize information within an orga
    - Processes data while adhering to laws and regulations.
    - Handle data according to guidelines.
 
-- **Data Custodian/Steward**
+- **Data Custodian**
 
    - Focused on **quality of data and associated metadata**
-   - Day-to-day management of data.
-   - Is aligned with policies set by data owner. 
-   - Owner sets rules, custodian enacts the rules.
-   - Data custodian could be the system administrator or IT staff.
-   - Permissions, backup, access controls, etc.
+   - Handles technical management, including security controls
+   - Permissions, backup, access controls, etc
+   - Could be the system administrator or IT staff
+   - Day-to-day management of data
+   - Owner sets rules, custodian enacts the rules
+
+- **Data Steward**
+
+   - Oversees data protection and proper classification of data
+   - Manages correct handling and usage of data across the organization
+   - Acts as a liaison between data owners, custodians, and business units
+
+      :::info
+
+      In some organizations, the data steward and data custodian roles may be combined and performed by the same person.
+
+      ::: 
 
 - **Data Privacy Officer (DPO)**
 

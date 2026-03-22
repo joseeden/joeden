@@ -210,7 +210,7 @@ Packet filtering firewalls offer a basic level of security by inspecting only th
 
 - Most efficient, maximizes throughput with minimal processing
 - Filters based on IP addresses, ports, and protocols
-- Operates at Layer 4 (Network Layer) of the OSI model
+- Operates at **Layer 3 (Network)** of the OSI model
 - Simple and fast but lacks deep packet inspection
 
 Any packet arriving from outside the network that claims to have an internal source address should be blocked. Attackers often spoof packets by changing the source IP to look like it came from inside the network. Since no real external packet should ever use an internal IP, the firewall should reject it immediately.
@@ -221,7 +221,7 @@ Stateful firewalls enhance security by tracking active connections and the state
 
   - Monitors the state of connections for more context-aware filtering
   - Inspects packets within the flow of the connection
-  - Operates at Layer 4 (Transport Layer) of the OSI model
+  - Operates at **Layer 4 (Transport)** of the OSI model
   - More secure than packet filtering, ensures packets belong to a valid session
 
 ### Dynamic Packet Filtering
@@ -249,7 +249,7 @@ Proxy firewalls act as intermediaries, inspecting and filtering traffic at a dee
 Layer 4 firewalls focus on controlling traffic based on transport-layer information like TCP/UDP ports.
 
   - Filters traffic based on IP addresses and port numbers
-  - Operates at the transport layer of the OSI model
+  - Operates at **Layer 4 (Transport)** of the OSI model
   - Simple and efficient for basic traffic filtering
   - Limited in detecting application-specific threats
 
@@ -258,7 +258,7 @@ Layer 4 firewalls focus on controlling traffic based on transport-layer informat
 Layer 7 firewalls provide deeper inspection by analyzing the content of the traffic at the application layer.
 
   - Controls traffic based on the content and context of the application
-  - Operates at the application layer of the OSI model
+  - Operates at the **Layer 7 (Application)** of the OSI model
   - Offers detailed control over web and application traffic
   - Detects and blocks application-specific threats, though resource-intensive
 
@@ -304,7 +304,7 @@ Small business features:
 Web Application Firewalls (WAF) are specialized firewalls designed to protect web applications.
 
   - Focuses on HTTP/HTTPS traffic to defend against common web threats
-  - Operates at Layer 7 (Application Layer) of the OSI model
+  - Operates at **Layer 7 (Application)** of the OSI model
   - Protects against SQL injection, XSS, CSRF, and other web vulnerabilities
 
 ### WAF Configurations

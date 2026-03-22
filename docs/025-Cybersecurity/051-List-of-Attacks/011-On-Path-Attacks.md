@@ -32,7 +32,7 @@ Ways to conduct on-path or interception attacks:
 
   - Manipulates the ARP cache on a local network.
   - Associates attacker's MAC address with the IP address of a legitimate device.
-  - For more information, please see [ARP Cache Poisoning](./012-Layer-2-Attacks.md#arp-cache-poisoning)
+  - For more information, please see [ARP Cache Poisoning](/docs/025-Cybersecurity/051-List-of-Attacks/012-Layer-2-Attacks.md#arp-cache-poisoning)
 
 - **DNS Poisoning**
 

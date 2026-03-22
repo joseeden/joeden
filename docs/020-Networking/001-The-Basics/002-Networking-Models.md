@@ -49,34 +49,15 @@ Most network models have at least two layers:
 
 The Open Systems Interconnection (OSI) Model is a conceptual framework for describing the communication structure of interconnected computer systems, comprising seven layers. 
 
-- **Application, Presentation, Session (Layers 5-7)**  
-
-  - Handle data formatting and session management  
-  - Enable applications to talk across different systems  
-  - Example: SNMP (Layer 7)  
-
-
-- **Transport Layer (4)** 
-
-  - Uses TCP/UDP protocols for reliable/connectionless delivery  
-  - Ensures data is delivered in order and without errors  
-
-- **Network Layer (3)** 
-
-  - Handles routing and packet transmission  
-  - Determines logical addressing and path selection  
-  - Example protocols: IP, ICMP, IGMP  
-
-- **Data Link Layer (2)** 
-
-  - Manages frames and error detection/correction  
-  - Controls access to physical medium and devices like switches  
-
-
-- **Physical Layer (1)** 
-
-  - Converts data into electrical, optical, or radio signals 
-  - Hardware standards like cables, connectors, and signaling 
+| No. | OSI Layer        | Description / Notes                                                                                                                                                                                                     |
+| --- | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 7   | **Application**  | <ul><li>Provides services directly to user applications</li><li>Network applications like email, file transfer, web browsing</li><li>Example protocols: HTTP, FTP, SMTP, SNMP</li></ul>                        |
+| 6   | **Presentation** | <ul><li>Translates data between application and network formats</li><li>Handles encryption, compression, and data serialization</li><li>Ensures data is in a readable format for the application layer</li></ul>        |
+| 5   | **Session**      | <ul><li>Manages sessions or connections between applications</li><li>Opening, closing, and managing data exchange</li><li>Synchronization and checkpointing for long transmissions</li></ul> |
+| 4   | **Transport**    | <ul><li>TCP/UDP protocols for reliable or connectionless delivery</li><li>Ensures data is delivered in order and without errors</li></ul>                                                                          |
+| 3   | **Network**      | <ul><li>Handles routing and packet transmission</li><li>Determines logical addressing and path selection</li><li>Example protocols: IP, ICMP, IGMP</li></ul>                                                            |
+| 2   | **Data Link**    | <ul><li>Manages frames and error detection/correction</li><li>Controls access to physical medium and devices like switches</li></ul>                                                                                    |
+| 1   | **Physical**     | <ul><li>Converts data into electrical, optical, or radio signals</li><li>Hardware standards like cables, connectors, and signaling</li></ul>                                                                            |
 
 ### Encapsulation and De-encapsulation
 
@@ -98,33 +79,16 @@ When data is transmitted over a network, it goes through a process of encapsulat
 ![](/img/docs/security-encap-deencap-diagram.png)
 
 
-## TCP/IP
+## TCP/IP Model
 
 Transmission Control Protocol/Internet Protocol (TCP/IP) is platform-independent but resource-intensive. It is designed for ease of use rather than security. It predates the OSI model.
 
-- **Application Layer**  
-    - Defines transport layer protocol
-    - Example: Telnet, FTP, SMTP, DNS  
-
-- **Transport Layer**  
-    - TCP: Connection-oriented, reliable, full-duplex.  
-    - UDP: Connectionless, fast, supports broadcast/multicast.  
-
-- **Internet Layer**  
-    - Handles packets and routing.  
-    - ICMP: Ping and network health checks.  
-            
-        <div class="img-center">
-
-          ![](/img/docs/security-tcp-ip-protocol.png)
-
-        </div>
-
-- **Network Interface Layer** 
-
-    - Manages data flow on physical networks  
-    - Handles framing and error detection for data
-    - Controls access to  physical network (e.g., Ethernet, Wi-Fi)  
+| No. | TCP/IP Layer | Description / Notes |
+|-----|-------------|-------------------|
+| 4   | **Application Layer** | <ul><li>Defines transport layer protocol</li><li>Example protocols: Telnet, FTP, SMTP, DNS</li></ul> |
+| 3   | **Transport Layer** | <ul><li>TCP: Connection-oriented, reliable, full-duplex</li><li>UDP: Connectionless, fast, supports broadcast/multicast</li></ul> |
+| 2 | **Internet Layer** | <ul><li>Handles packets and routing</li><li>Example protocol: ICMP (Ping, network health checks)</li><li><div class="img-center">![](/img/docs/security-tcp-ip-protocol.png)</div></li></ul> |
+| 1   | **Network Access Layer** | <ul><li>Manages data flow on physical networks</li><li>Handles framing and error detection for data</li><li>Controls access to physical network (e.g., Ethernet, Wi-Fi)</li></ul> | 
 
 
 ## Transmission Types

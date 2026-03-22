@@ -56,12 +56,14 @@ Port Address Translation (PAT), a subset of NAT, maps multiple private IP addres
 
 Almost similar to a forward proxy, but their differences are:
 
-- PAT is Layer 4, while Forward Proxy is Layer 7 of the OSI Model.
-- Forward proxy can cache the retrieved content from the internet, PAT doesn't.
-- Forward proxy can force users to authenticate before fetching requests.
+| Feature / Aspect    | PAT (Port Address Translation)                                   | Forward Proxy                                                |
+| ------------------- | ---------------------------------------------------------------- | ------------------------------------------------------------ |
+| OSI Layer           | Layer 4 (Transport)                                              | Layer 7 (Application)                                        |
+| Caching             | No                                                               | Yes, can cache retrieved content                             |
+| User Authentication | No                                                               | Can require users to authenticate before fetching requests   |
+| Function            | Translates multiple private IPs to a single public IP with ports | Acts on behalf of clients to fetch content from the internet |
 
 Sample diagram:
-
 
 <div class="img-center">
 

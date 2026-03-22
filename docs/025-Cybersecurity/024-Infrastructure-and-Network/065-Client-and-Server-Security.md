@@ -35,6 +35,22 @@ A cache is temporary storage for frequently accessed data, reducing lookup times
 - Cached data can be targeted or accessed by attackers
 - Chrome’s DNS cache can be viewed and cleared at `chrome://net-internals/#dns`
 
+## MAC Address and Hostname Spoofing
+
+**MadMACs** is a Windows tool that allow a user to temporarily change a network adapter’s MAC address and randomize the computer’s hostname. 
+
+- **Defensive use:** Increases local network privacy by masking a device’s real identity.  
+- **Offensive use:** It can bypass MAC-based filters, port security, or network access controls. 
+
+Network administrators should be aware of these tools, as they can impact both **privacy strategies** and **security controls** on client devices.
+
+:::info 
+
+While MAC spoofing can be used in ARP attacks, the primary use of MadMac is likely to evade specific access control mechanisms rather than ARP manipulation. 
+
+:::
+
+
 ### Cache Poisoning Attacks
 
 Cache poisoning involves attackers inserting malicious data into a cache.
@@ -46,6 +62,12 @@ Mitigation:
 
 - Using [DNSSEC](/docs/025-Cybersecurity/024-Infrastructure-and-Network/062-DNS-and-Web-Security.md#dnssec) and encrypted protocols
 - Clear cache regularly
+
+Other resources:
+
+- [ARP Cache Poisoning](/docs/025-Cybersecurity/051-List-of-Attacks/012-Layer-2-Attacks.md#arp-cache-poisoning)
+- [DNS Cache Poisoning](/docs/025-Cybersecurity/051-List-of-Attacks/008-DNS-Attacks.md#dns-cache-poisoning)
+
 
 ## Server Security Issues
 

@@ -312,6 +312,47 @@ Choose appropriate fire detection/suppression considering room size and equipmen
 - Consider gas-based systems for electronics-friendly suppression.
 - Be mindful of potential human toxicity.
 
+### Water-Based Fire Suppression
+
+Water-based fire suppression systems are effective for controlling fires in various environments, including data centers. These systems use water to cool the fire and prevent it from spreading. 
+
+- **Wet Pipe System**
+
+  - Pipes are filled with water, ready for immediate discharge when a fire is detected.
+  - Best for environments where pipes won't freeze, allowing quick response to fires.
+
+- **Dry Pipe System**
+
+  - Pipes contain pressurized air; water is released when a fire triggers the system.
+  - Suitable for areas where freezing might occur, as water enters the pipes only when needed.
+
+### Gas-Based Fire Suppression
+
+Gas-based fire suppression systems put out fires quickly without damaging electronic equipment.
+
+<div class='img-center'>
+
+![](/img/docs/Typical-Clean-Agent-System-Layout.jpg)
+
+</div>
+
+
+**FM-200 (Heptafluoropropane)** is a fast-acting, clean agent system used in critical environments. It extinguishes fires in seconds by absorbing heat and stopping combustion.
+
+- Leaves no residue and is non-conductive  
+- Safe for occupied spaces  
+- Ideal where water systems would cause damage  
+
+**Common uses:**
+
+- Data centers and server rooms  
+- Telecommunication facilities  
+- Museums and archives  
+- Medical labs  
+- Electrical control panels  
+
+FM-200 is a **total flooding system**, meaning it fills the entire room when a fire is detected. It suppresses fire by removing heat, effectively breaking the fire triangle.
+
 ### Detection
 
 Fire detection systems identify fires early to reduce damage and improve safety.
@@ -353,17 +394,4 @@ Fire suppression agents can attack a fire in different ways:
 - Water reduces the temperature of a fire. 
 - Gases modify the chemical combustion elements.
 - Carbon Dioxide (CO2) can reduce the oxygen. 
-
-### Water-Based Fire Suppression
-
-Water-based fire suppression systems are effective for controlling fires in various environments, including data centers. These systems use water to cool the fire and prevent it from spreading. 
-
-- **Wet Pipe System**
-  - Pipes are filled with water, ready for immediate discharge when a fire is detected.
-  - Best for environments where pipes won't freeze, allowing quick response to fires.
-
-- **Dry Pipe System**
-  - Pipes contain pressurized air; water is released when a fire triggers the system.
-  - Suitable for areas where freezing might occur, as water enters the pipes only when needed.
-
 
