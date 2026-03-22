@@ -51,8 +51,10 @@ Single Points of Failure (SPOF) are critical components in a system that, if the
    - Map the interdependencies and flow of operations within the system.
 
 2. **Risk Assessment**
-   - Identify potential SPOFs in the system.
-   - Analyze the risk associated with each SPOF, considering both likelihood and impact.
+   - Identify potential SPOFs in the system
+   - Analyze the risk associated with each SPOF
+   - Consider both likelihood and impact
+   - See [Risk Assessments](/docs/025-Cybersecurity/021-Risk-and-Governance/033-Risk-Assessment.md)
 
 3. **Redundancy Planning**
    - Design and implement redundancy measures for critical components.

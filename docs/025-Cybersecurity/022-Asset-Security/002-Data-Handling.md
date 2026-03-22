@@ -263,6 +263,7 @@ Data undergoes a life cycle encompassing creation, usage, sharing, and modificat
 2. **Risk Assessment**
    - Evaluate risks concerning data compromise, destruction, or alteration.
    - Identify vulnerabilities in the data life cycle.
+   - See [Risk Assessment](/docs/025-Cybersecurity/021-Risk-and-Governance/033-Risk-Assessment.md)
 
 3. **Data Life Cycle Stages**
    - Understand data handling practices from creation to destruction.

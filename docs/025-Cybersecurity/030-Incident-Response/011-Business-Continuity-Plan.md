@@ -34,10 +34,14 @@ Risk assessment is the process of identifying and evaluating potential threats a
 
 A combination of approaches is recommended:
 
-- **Quantitative risk assessment**: Calculate financial losses, e.g., if a server fails.
-- **Qualitative risk assessment**: Assess non-financial impacts, like reputation damage.
+| Type                             | Description                                                |
+| -------------------------------- | ---------------------------------------------------------- |
+| **Quantitative Risk Assessment** | Calculates financial impact (e.g., cost of server failure) |
+| **Qualitative Risk Assessment**  | Evaluates non-financial impact (e.g., reputation damage)   |
 
 Risk assessment is typically performed separately from business continuity planning and business impact analysis, although it can certainly inform those two processes. 
+
+For more information, please see [Risk Assessments](/docs/025-Cybersecurity/021-Risk-and-Governance/033-Risk-Assessment.md).
 
 ## Business Impact Analysis
 

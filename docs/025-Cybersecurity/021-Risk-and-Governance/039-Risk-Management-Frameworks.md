@@ -17,7 +17,7 @@ last_update:
 **Center for Internet Security (CIS)** is known for its **CIS Controls**, a set of prioritized security practices to mitigate common cyber threats.
 
 - Benchmarks for securing operating systems, applications, and networks
-- Provides tools like risk assessments and training to strengthen cybersecurity
+- Provides tools like [risk assessments](/docs/025-Cybersecurity/021-Risk-and-Governance/033-Risk-Assessment.md) and training to strengthen cybersecurity
 - CIS helps organizations follow clear security practices to reduce threats.
 
 The **CIS Controls** describes three implementation groups which describe different size organizations, and allows organizations to scale the controls based upon their size and available resources. 

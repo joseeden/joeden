@@ -39,7 +39,7 @@ Once a vendor is selected, the onboarding process ensures that the vendor unders
   - Includes conditions and service levels.
 
 - **Due Diligence**
-  - Conduct background checks and risk assessments.
+  - Conduct background checks and [risk assessments.](/docs/025-Cybersecurity/021-Risk-and-Governance/033-Risk-Assessment.md)
 
 - **Initial Training and Orientation**
   - Provide necessary training and resources to the vendor.

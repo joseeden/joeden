@@ -24,7 +24,7 @@ A Security Policy Framework provides a structured approach for organizations to 
 - **Risk Management**
   - Identify and assess potential risks to information assets.
   - Implement controls to mitigate identified risks.
-  - Regularly review and update risk assessments to address new threats.
+  - Regularly review and update [risk assessments](/docs/025-Cybersecurity/021-Risk-and-Governance/033-Risk-Assessment.md) to address new threats.
 
 - **Access Control**
   - Define who can access information and under what conditions.

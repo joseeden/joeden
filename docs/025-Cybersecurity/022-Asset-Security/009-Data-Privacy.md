@@ -93,7 +93,7 @@ Organizations should share personal information with third parties only as descr
 
 ### 8. Security
 
-Implementing appropriate safeguards protects personal information from unauthorized access, alteration, or destruction. Regular risk assessments and updates to security measures are essential for maintaining data security.
+Implementing appropriate safeguards protects personal information from unauthorized access, alteration, or destruction. Regular [risk assessments](/docs/025-Cybersecurity/021-Risk-and-Governance/033-Risk-Assessment.md) and updates to security measures are essential for maintaining data security.
 
 - Use encryption and other technical safeguards.
 - Conduct regular security audits and assessments.

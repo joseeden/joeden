@@ -31,7 +31,7 @@ These points work together to create a clearer picture of what could go wrong, a
 
 Security professionals help guide the risk identification process by providing technical insight and structured assessments.
 
-- Supports system-level risk assessments
+- Supports system-level [risk assessments](/docs/025-Cybersecurity/021-Risk-and-Governance/033-Risk-Assessment.md)
 - Reviews processes, controls, and response plans
 - Helps smaller teams that lack formal mitigation plans
 

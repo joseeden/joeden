@@ -96,7 +96,7 @@ A clear step-by-step method to choose and implement the right controls.
 
 Guidelines to maintain strong and adaptive security controls.
 
-- Regularly perform thorough risk assessments.
+- Regularly perform thorough [risk assessments.](/docs/025-Cybersecurity/021-Risk-and-Governance/033-Risk-Assessment.md)
 - Use established security frameworks as a baseline.
 - Customize controls to fit your organization’s unique needs.
 - Involve and train stakeholders to ensure proper use and support.

@@ -136,7 +136,7 @@ Examples:
 
 ### Key Risk Indicators (KRIs)
 
-**Key Risk Indicators (KRIs)** identify and quantify potential risks, which enables organizations to anticipate and mitigate potential threats. They provide a forward-looking view of risk factors and the focus in on risk assessment
+**Key Risk Indicators (KRIs)** identify and quantify potential risks, which enables organizations to anticipate and mitigate potential threats. They provide a forward-looking view of risk factors and the focus in on [risk assessment.](/docs/025-Cybersecurity/021-Risk-and-Governance/033-Risk-Assessment.md)
 
 Examples:  
 
