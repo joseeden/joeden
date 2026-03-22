@@ -52,10 +52,50 @@ An object can have the following parts:
 
 Access rules guide whether a subject can access an object based on their validated identity. For instance:
 
-- Firewalls use access control lists for object access.
-- Rules specify access levels, e.g., inside network to outside.
-- When a user accesses a file, a rule validates and defines their access.
-- Rules may compare attributes, define access levels, deny access, or apply time-based restrictions.
+- Firewalls use access control lists for object access
+- Rules specify access levels, e.g., inside network to outside
+
+When file is accessed, a rule validates and defines their access
+
+- Checks attributes and access levels
+- It could deny or allow access
+- It can also apply time-based restrictions
+
+## Enforcement Mechanisms
+
+### Reference Monitor
+
+A reference monitor is a core concept in access control systems that verifies and enforces every access request between subjects (users/processes) and objects (files/resources).
+
+- All accesses are checked, and is auditable
+- Cannot be bypassed or modified by unauthorized users
+
+It is the primary mechanism that enforces security policies on an information system.
+
+### Trusted Path
+
+A trusted path is a secure communication channel between a user and the reference monitor or security system.
+
+- Guarantees that user input cannot be intercepted or spoofed.
+- Ensures authentication and integrity of sensitive operations.
+- Often used for login screens or secure configuration tools.
+
+### Trusted Computing Base (TCB)
+
+The Trusted Computing Base (TCB) is the set of all hardware, software, and controls that enforce the system’s security policy.
+
+- Includes the operating system kernel, reference monitors, and security mechanisms.
+- Only code within the TCB is trusted to enforce security correctly.
+- Smaller TCBs are easier to audit and verify for correctness.
+
+### Execution Domain
+
+An execution domain defines the boundaries and privileges of a subject’s execution environment.
+
+- Determines what resources and objects a process or user can access.
+- Enforces separation between processes to prevent unauthorized access.
+- Helps implement policies like least privilege.
+
 
 ## Location-Based Access Control 
 

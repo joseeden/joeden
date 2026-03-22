@@ -311,4 +311,10 @@ Quantum cryptography uses the principles of quantum mechanics to secure data and
 - Uses *quantum particles* to transmit information securely
 - Attempt to intercept the data changes its state, alerting both parties
 
-Researchers have already developed lab implementations of **Quantum Key Distribution (QKD)**, which uses quantum properties to share encryption keys safely. Like quantum cryptography in general, QKD has not yet reached the stage of practical use.
+Researchers have already developed lab implementations of **Quantum Key Distribution (QKD)**, which uses quantum properties to share encryption keys safely. QKD can detect eavesdropping attempts, and any attempt by an eavesdropper to intercept the key will change the quantum states of the key.
+
+:::info
+
+Like quantum cryptography in general, QKD has not yet reached the stage of practical use.
+
+:::

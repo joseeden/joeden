@@ -39,16 +39,15 @@ In a DAC system, users can share or pass files at their discretion.
 
 ## Mandatory Access Control (MAC)
 
-Mandatory Access Control (MAC) is the most stringent type of access control. In MAC, the operating system itself restricts the permissions that can be granted to users and processes on system resources. Users cannot modify these permissions, which makes MAC systems less suitable for production environments outside of highly secure settings.
+Mandatory Access Control (MAC) is the **most stringent access control** where the system enforces permissions, not the users. Users cannot change access rights, which makes MAC suitable for highly secure environments.
 
-It ensures a uniform policy across an information system, restricting specific actions to trusted security administrators. 
+- Access is based on user clearance and resource labels  
+- Only trusted administrators can modify security rules  
+- Subjects have limited privileges and cannot grant permissions  
+- New objects inherit security attributes automatically  
+- Resources are labeled, and access is determined by those labels
 
-- Relies on the user's clearance and security classification or labels.
-- Only trusted admins modify security rules.
-- Subjects have restricted privileges.
-- Restricts granting of privileges.
-- Governs security attributes of new objects.
-- Resources are labelled and permissions are based on the assigned labels
+It ensures a uniform policy across an information system and restricts specific actions to trusted security administrators. 
 
 :::info 
 
@@ -85,9 +84,8 @@ Attribute-Based Access Control (ABAC) manages access based on user, resource, an
 
 ## Role-Based Access Control (RBAC) 
 
-Assigns user permissions based on predefined roles, streamlining access management.
+RBAC allows administrators to enforce **granular access control** by assigning permissions based on predefined roles within an organization.
 
-- Permissions assigned according to roles.
 - Roles group users with similar permissions.
 - Efficient management of user access.
 - Simplifies administration tasks.

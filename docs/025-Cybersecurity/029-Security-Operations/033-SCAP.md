@@ -45,51 +45,58 @@ Three main languages used inside a SCAP:
 
 There are also different methods of enumerating assets.
 
-- **Common Configuration Enumeration (CCE)**
+#### Common Configuration Enumeration (CCE)
 
-    - Security Checklists.
-    - Configuration guidelines and best practices for secure system configuration.
-    - Provides unique identifiers for different configuration system issues.
+**Common Configuration Enumeration (CCE)** is part of the SCAP ecosystem and complements CPE, CVE, and related standards. It provides a standardized identifier for system security configuration settings.
 
-- **Common Platform Enumeration (CPE)**
+- Security Checklists.
+- Guidelines and best practices for secure system configuration.
+- Unique identifiers for different configuration system issues.
 
-    - Structured naming scheme for hardware, software, and operating systems.
-    - Written in machine-readable format, with prefix:
+Example: A CCE ID like `CCE-12345-6` could represent “Ensure the Windows firewall is enabled for all profiles.”
 
-        ```bash
-        cpe:/ 
-        ```
-    - Standard format:
+#### Common Platform Enumeration (CPE)
 
-        ```bash
-        cpe:/<part>:<vendor>:<product>:<version>:<update>:<edition>:<language>
-        ```
+**Common Platform Enumeration (CPE)** is a standardized naming scheme for IT systems, software, and hardware. It uniquely identifies platforms, operating systems, and applications. It is written in machine-readable format, with prefix:
 
-    - Example:
+```bash
+cpe:/ 
+```
+Standard format:
 
-        ```bash
-        cpe:/a:microsoft:internet_explorer:11.0
-        ```
-     
+```bash
+cpe:/<part>:<vendor>:<product>:<version>:<update>:<edition>:<language>
+```
 
-- **Common Vulnerabilities and Exposures (CVE)**
+Example:
 
-    - List of records of vulnerability definitions.
-    - Provides a standardized identifier for vulnerabilities and exposures.
-    - Each CVE has the following format:
+```bash
+cpe:/a:microsoft:internet_explorer:11.0
+```
 
-        ```bash
-        CVE-YYYY-NNNN         ## YYYY is year, NNNN is unique number.
-        ```
+
+#### Common Vulnerabilities and Exposures (CVE)
+
+**Common Vulnerabilities and Exposures (CVE)** is a list of records of security flaws or vulnerability definitions. Each CVE has the following format:
+
+```bash
+CVE-YYYY-NNNN         ## YYYY is year, NNNN is unique number.
+```
 
 ## CVSS 
 
-CVSS, or Common Vulnerability Scoring System, is a framework for assessing the severity and potential impact of security vulnerabilities. It provides a standardized method for rating vulnerabilities to help organizations prioritize their responses and allocate resources effectively.
+**CVSS**, or **Common Vulnerability Scoring System**, provides a standardized method for rating vulnerabilities to help organizations prioritize their responses and allocate resources effectively.
 
 - Scores are based on metrics evaluating exploitability and impact.
 - Metrics include base, temporal, and environmental scores.
-- Scores range from 0 to 10; higher scores indicating more severe vulnerabilities.
-- Qualitative severity ratings such as Low, Medium, High, and Critical.
+- Higher scores means more severe vulnerabilities.
+
+Qualitative severity ratings:
+
+- `Low`
+- `Medium`
+- `High`
+- `Critical`
 
 CVSS Ratings:
 
