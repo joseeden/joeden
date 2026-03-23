@@ -63,7 +63,7 @@ For more information, please see [Firewalls.](/docs/025-Cybersecurity/024-Infras
 
 VLANs are created by switches to logically segments a network without altering physical topology. 
 
-For more information, please see [VLANs](/docs/020-Networking/001-The-Basics/011-VLANs.md)
+For more information, please see [VLANs](/docs/020-Networking/001-Fundamentals/011-VLANs.md)
 
 ## Microsegmentation 
 

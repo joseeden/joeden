@@ -15,7 +15,7 @@ last_update:
 
 ## Securing WAPs
 
-Wireless access points (WAPs) extend a wireless network's coverage by broadcasting a signal from a wired connection. For more information, please see [WAPs.](/docs/020-Networking/001-The-Basics/060-Wireless-Networking.md)
+Wireless access points (WAPs) extend a wireless network's coverage by broadcasting a signal from a wired connection. For more information, please see [WAPs.](/docs/020-Networking/001-Fundamentals/060-Wireless-Networking.md)
 
 To keep WAPs secure:
 

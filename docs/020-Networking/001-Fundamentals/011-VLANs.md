@@ -94,4 +94,4 @@ VLAN security protects network segments from unauthorized access and attacks.
   - Connection can be based on the network interface card's MAC address.
   - Limits the MAC address that may be used on particular switchport.
   - Trigger alerts or disable ports if unauthorized devices attempt to connect.
-  - For more information, please see [Port Security.](/docs/020-Networking/001-The-Basics/020-Ports-and-Protocols.md#port-security)
+  - For more information, please see [Port Security.](/docs/020-Networking/001-Fundamentals/020-Ports-and-Protocols.md#port-security)

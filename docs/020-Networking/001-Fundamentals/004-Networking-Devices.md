@@ -64,7 +64,7 @@ The cables run through conduits, connecting to Ethernet jacks (wall jacks) throu
 
 Some devices connect to the network wirelessly via Wireless Access Points (WAPs). These WAPs are connected to switches and create Wi-Fi networks, sending and receiving signals to and from mobile devices.
 
-For more information, please see [WAPs.](/docs/020-Networking/001-The-Basics/060-Wireless-Networking.md)
+For more information, please see [WAPs.](/docs/020-Networking/001-Fundamentals/060-Wireless-Networking.md)
 
 <div class='img-center'>
 

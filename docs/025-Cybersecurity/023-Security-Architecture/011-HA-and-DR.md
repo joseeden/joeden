@@ -63,7 +63,7 @@ The process of balancing workloads across multiple computing resources.
 - Balance loads based on various algorithms, such as round-robin or least connections.
 - Improve response times and optimize resource usage.
 
-For more information, please see [LoadBalancers.](/docs/020-Networking/001-The-Basics/005-LoadBalancers.md)
+For more information, please see [LoadBalancers.](/docs/020-Networking/001-Fundamentals/005-LoadBalancers.md)
 
 
 ### Clustering 

@@ -83,12 +83,12 @@ When data is transmitted over a network, it goes through a process of encapsulat
 
 Transmission Control Protocol/Internet Protocol (TCP/IP) is platform-independent but resource-intensive. It is designed for ease of use rather than security. It predates the OSI model.
 
-| No. | TCP/IP Layer | Description / Notes |
-|-----|-------------|-------------------|
-| 4   | **Application Layer** | <ul><li>Defines transport layer protocol</li><li>Example protocols: Telnet, FTP, SMTP, DNS</li></ul> |
-| 3   | **Transport Layer** | <ul><li>TCP: Connection-oriented, reliable, full-duplex</li><li>UDP: Connectionless, fast, supports broadcast/multicast</li></ul> |
-| 2 | **Internet Layer** | <ul><li>Handles packets and routing</li><li>Example protocol: ICMP (Ping, network health checks)</li><li><div class="img-center">![](/img/docs/security-tcp-ip-protocol.png)</div></li></ul> |
-| 1   | **Network Access Layer** | <ul><li>Manages data flow on physical networks</li><li>Handles framing and error detection for data</li><li>Controls access to physical network (e.g., Ethernet, Wi-Fi)</li></ul> | 
+| No. | TCP/IP Layer                | Description / Notes                                                                                                                   |
+|-----|-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| 4   | **Application Layer**       | <ul><li>Defines transport layer protocol</li><li>Example protocols: Telnet, FTP, SMTP, DNS</li></ul>                                  |
+| 3   | **Transport Layer**         | <ul><li>TCP: Connection-oriented, reliable, full-duplex</li><li>UDP: Connectionless, fast, supports broadcast/multicast</li></ul>     |
+| 2   | **Internet Layer**          | <ul><li>Handles packets and routing</li><li>Example protocol: ICMP (Ping, network health checks)</li></ul>                            |
+| 1   | **Network Access Layer**    | <ul><li>Manages data flow on physical networks</li><li>Handles framing and error detection for data</li><li>Controls access to physical network (e.g., Ethernet, Wi-Fi)</li></ul> | 
 
 <div class='img-center'>
 
