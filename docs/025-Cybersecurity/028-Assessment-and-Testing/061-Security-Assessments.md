@@ -83,7 +83,7 @@ The types of tests that are performed during an assessment are:
 
 :::info 
 
-External assessments are more flexible and advisory, while external audits are formal, standardized, and reportable.
+**External assessments** are more flexible and advisory, while **external audits** are formal, standardized, and reportable.
 
 For more information, please see [External Audits.](/docs/025-Cybersecurity/028-Assessment-and-Testing/060-Security-Audits.md#external-audit)
 

@@ -35,24 +35,24 @@ For more information, please see [Business Continuity Plan.](/docs/025-Cybersecu
 
 ### Mean Time To Failure (MTTF) 
 
-    - For **non-repairable components**
-    - Average time a non-repairable system or component operates before it permanently fails. 
-    - Assess the expected lifespan or reliability of products 
-    - Total operational time divided by the number of failures
+- For **non-repairable components**
+- Average time a non-repairable system operates before it permanently fails. 
+- Assess the expected lifespan or reliability of products 
+- Total operational time divided by the number of failures
 
 ### Mean Time Between Failures (MTBF)
 
-    - For **repairable components**
-    - Average time a system or component operates without failure
-    - Total operational time divided by the number of failures over a given period. 
-    - Higher MTBF values indicate greater reliability 
+- For **repairable components**
+- Average time a system or component operates without failure
+- Total operational time divided by the number of failures over a given period. 
+- Higher MTBF values indicate greater reliability 
 
 ### Mean Time To Repair (MTTR) 
 
-    - Measures the average time required to repair a failed system or component.
-    - Total repair time divided by the number of repair events within a specific period.
-    - Used to evaluate maintenance efficiency and system reliability,
-    - Lower MTTR = faster repair times.
+- Average time required to repair a failed system or component.
+- Total repair time divided by the number of repair events within a specific period.
+- Used to evaluate maintenance efficiency and system reliability,
+- Lower MTTR = faster repair times.
 
 
 ## Locating Critical Sources

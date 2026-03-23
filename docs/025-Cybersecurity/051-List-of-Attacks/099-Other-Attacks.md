@@ -241,3 +241,24 @@ WAF bypass avoids detection by security filters in front of websites.
 - Works with injection or spoofing attacks
 
 The main idea is to slip past automated rules, so strict validation and monitoring are necessary.
+
+## Screen Scraping
+
+Screen scraping is used to capture visual data directly from a user's screen, often without their knowledge. It can be performed by malware or automated tools to extract sensitive information such as credentials, financial data, or confidential documents.
+
+- Captures screenshots or screen buffers programmatically
+- May run continuously or at intervals
+- Often used by spyware or malicious insiders
+
+Use cases by attackers:
+
+- Stealing confidential presentations or internal documents
+- Capturing login credentials or session data
+- Monitoring user activity silently
+
+**Mitigations:**
+
+- Restrict screen capture permissions
+- Apply least privilege access
+- Use [Data Loss Prevention (DLP)](/docs/025-Cybersecurity/022-Asset-Security/007-Data-Loss-Prevention.md) tools
+- Deploy [endpoint detection and response (EDR)](/docs/025-Cybersecurity/023-Security-Architecture/070-Evolution-of-Security.md#endpoint-detection-and-response)
