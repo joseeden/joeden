@@ -93,7 +93,22 @@ In qualitative risk analysis, the 'expected probability of occurrence' and the '
 
 ### Risk Tolerance 
 
-Likened to the entity's risk acceptance, risk tolerance varies across organizations and departments.
+Risk tolerance refers to the level of risk (or amount of uncertaintly) an organization or individual is willing to accept in pursuit of its objectives.
+
+Determinants:
+
+- Organizational goals and objectives
+- Industry standards and regulatory requirements
+- Financial stability and resources
+- Stakeholder expectations and risk perception
+
+When you’re working with the system owner to decide **how much time, budget, and effort to spend on addressing a security risk**, you’re essentially defining the organization’s **acceptable level of risk.**
+
+Sample scenarios:
+
+- A tech startup may have a **higher risk tolerance**, accepting the possibility of frequent changes and potential failures to innovate quickly.
+- A financial institution, on the other hand, might have a **low risk tolerance**, prioritizing stability and regulatory compliance to protect client assets.
+Similar to the entity's risk acceptance, risk tolerance varies across organizations and departments.
 
 - **Management's Role**
   - Executives or the Board sets acceptable risk levels.

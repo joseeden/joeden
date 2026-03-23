@@ -76,7 +76,7 @@ Continuous security monitoring approaches provide real-time analysis of security
 NIST defines continuous monitoring as maintaining awareness of vulnerabilities and threats to inform risk management.
 
 - Adapts to changing security landscapes.
-- Aligns with organizational risk tolerance.
+- Aligns with organizational [risk tolerance.](/docs/025-Cybersecurity/021-Risk-and-Governance/029-Risk-Management.md#risk-tolerance)
 - Requires active management involvement.
 
 Information Security Continuous Monitoring (ISCM) based on NIST SP 800-137:
@@ -88,12 +88,14 @@ Information Security Continuous Monitoring (ISCM) based on NIST SP 800-137:
 
 NIST outlines six essential steps for developing continuous monitoring:
 
-1. **Define Strategy**: Tailor the strategy to risk tolerance, covering assets, vulnerabilities, and business impact.
-2. **Establish Program**: Set metrics and monitoring frequency for security assessments.
-3. **Implement Program**: Automate metrics collection, assessments, and reporting.
-4. **Analyze Data**: Review and report findings from the collected data.
-5. **Respond to Findings**: Mitigate, avoid, transfer, or accept identified risks.
-6. **Review Program**: Continuously adjust and mature the program.
+| No. | Step                | Description                                                                                   |
+| --- | ------------------- | --------------------------------------------------------------------------------------------- |
+| 1   | Define Strategy     | Tailor the strategy to risk tolerance, covering assets, vulnerabilities, and business impact. |
+| 2   | Establish Program   | Set metrics and monitoring frequency for security assessments.                                |
+| 3   | Implement Program   | Automate metrics collection, assessments, and reporting.                                      |
+| 4   | Analyze Data        | Review and report findings from the collected data.                                           |
+| 5   | Respond to Findings | Mitigate, avoid, transfer, or accept identified risks.                                        |
+| 6   | Review Program      | Continuously adjust and mature the program.                                                   |
 
 
 ### Security Data Analytics
