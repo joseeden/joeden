@@ -5,7 +5,7 @@ tags:
 - Version Control
 - Git
 - Software Development
-sidebar_position: 2
+sidebar_position: 4
 last_update:
   date: 8/11/2019
 ---
