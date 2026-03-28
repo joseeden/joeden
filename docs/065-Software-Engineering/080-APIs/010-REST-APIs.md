@@ -13,13 +13,49 @@ last_update:
 
 
 
-## How API works
+## Overview
 
-**APIs as a way to serve your customers**
+An API lets one software talk to another. It defines how a programmer can use an application’s features or build new applications.
 
-**Example scenario:** Your small business’s website has a form used to sign clients up for appointments. You want to give your clients the ability to automatically create a Google calendar event with the details for that appointment.
+- Allows software to communicate
+- Can use web protocols or proprietary methods
+- Controls what data and features are exposed securely
 
-**API use:** The idea is to have your website’s server talk directly to Google’s server with a request to create an event with the given details. Your server would then receive Google’s response, process it, and send back relevant information to the browser, such as a confirmation message to the user.
+For example, a restaurant app can use a **map API** instead of building mapping from scratch. The API defines what actions are possible and how to access them. Only the data and functions exposed by the API are available to others.
+
+<div class='img-center'>
+
+![](/img/docs/devnet-apis.png)
+
+</div>
+
+Think of it like car dashboard buttons. Press the start button and the engine runs. You don’t see the ignition or pistons; the car only exposes what it wants you to use.
+
+## Why use APIs
+
+APIs make tasks easier, allow apps to share data, and extend functionality. They are mainly for other programs, but humans can interact with them too.
+
+- **Automate tasks**
+
+    You can write a script to do repetitive work. For example, download employee timecards automatically and calculate total hours instead of doing it manually.
+
+- **Integrate data**
+
+    Apps can use data from other apps. For example, e-commerce sites use payment APIs to process transactions without handling credit card data directly.
+
+- **Extend functionality**
+
+    Apps can embed features from other apps. For example, Yelp or Uber use Google Maps API to show routes and maps within their own apps.
+
+## How APIs work
+
+APIs allow your software to interact with other services automatically.
+
+**Example**: Your website schedules client appointments. You want clients to add them to Google Calendar automatically.
+
+- Your server sends a request to Google’s API with appointment details
+- Google responds with a confirmation
+- Your website shows a confirmation message to the user
 
 <div class='img-center'>
 
@@ -27,9 +63,79 @@ last_update:
 
 </div>
 
-Alternatively, your browser can often send an API request directly to Google’s server bypassing your server.
+You can create an API that lets your website automate event creation without the user doing anything extra. Sometimes, the browser can even talk directly to the API, skipping your server.
 
-Reference: [What's an API](https://www.freecodecamp.org/news/what-is-an-api-in-english-please-b880a3214a82/)
+```python
+# Example: Python request to Google Calendar API
+import requests
+
+data = {
+    "summary": "Meeting with client",
+    "start": {"dateTime": "2021-01-30T10:00:00-07:00"},
+    "end": {"dateTime": "2021-01-30T11:00:00-07:00"}
+}
+
+response = requests.post("https://www.googleapis.com/calendar/v3/calendars/primary/events",
+                         json=data,
+                         headers={"Authorization": "Bearer ACCESS_TOKEN"})
+
+print(response.json())  # Shows confirmation of created event
+```
+
+
+## API Design Styles
+
+APIs can be synchronous or asynchronous. Each design has its purpose and trade-offs. A product may include both types, but the logic should be consistent across APIs.
+
+
+### Synchronous APIs
+
+Synchronous APIs respond to a request immediately and usually provide data or an appropriate response.
+
+- Data is returned directly and instantly
+- Best for requests where data is readily available
+- Application waits for the response before continuing
+
+Synchronous APIs are common when the data is stored in a database or in memory. If the API is designed well, the response is fast and the application performs efficiently. If the API is designed poorly, the application may be blocked while waiting, which creates a bottleneck.
+
+<center><small>Tickets are sold in a first-come, first-served order. This is a synchronous process.</small></center>
+
+<div class='img-center'>
+
+![](/img/docs/devnet-apisync.png)
+
+</div>
+
+**Client-side processing**
+
+The application making the request must wait for the response before executing further code.
+
+### Asynchronous APIs
+
+Asynchronous APIs acknowledge a request immediately but do not provide the actual data right away. The server processes the request and later sends the data using a notification or callback.
+
+- Request is accepted instantly
+- Data is returned after processing
+- Application can continue executing other tasks
+
+Asynchronous APIs are useful when the server needs more time to process the request or the data is not immediately available. For example, the server may need to fetch data from a remote service. The client can continue executing other tasks while waiting for the response.
+
+<div class='img-center'>
+
+![](/img/docs/devnet-apiasync.png)
+
+</div>
+
+
+**Client-side processing**
+
+The client may use:
+
+- A listener or callback to handle data when it arrives
+- A queue to maintain request order
+- A polling mechanism to check request status
+
+Proper use of asynchronous APIs improves performance, but overuse or poor design can reduce efficiency.
 
 
 ## SOAP vs. REST 

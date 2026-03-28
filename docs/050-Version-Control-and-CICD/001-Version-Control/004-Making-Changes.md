@@ -346,7 +346,7 @@ i9j0k1l2 (Charlie 2024-02-12 16:50:33 +0000  4) Updated API response format
 
 ## Removing Files in Git
 
-### Option 1: Using `git rm`
+### Using `git rm`
 
 The `git rm` command removes files both the working directory and staging area. It stages the change for the next commit.
 
@@ -368,7 +368,7 @@ git rm --cached <file-path-1> ... <file-path-n>
 
 </div>
 
-### Option 2: Using filesystem commands
+### Using filesystem commands
 
 You can also delete files manually and then stage the removal:
 
