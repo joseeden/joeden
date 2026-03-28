@@ -1,6 +1,6 @@
 ---
-title: "REST APIs"
-description: "REST APIs"
+title: "Notes on APIs"
+description: "Notes on APIs"
 tags:
 - Computer Science
 - Application Development
@@ -87,7 +87,6 @@ print(response.json())  # Shows confirmation of created event
 
 APIs can be synchronous or asynchronous. Each design has its purpose and trade-offs. A product may include both types, but the logic should be consistent across APIs.
 
-
 ### Synchronous APIs
 
 Synchronous APIs respond to a request immediately and usually provide data or an appropriate response.
@@ -98,6 +97,11 @@ Synchronous APIs respond to a request immediately and usually provide data or an
 
 Synchronous APIs are common when the data is stored in a database or in memory. If the API is designed well, the response is fast and the application performs efficiently. If the API is designed poorly, the application may be blocked while waiting, which creates a bottleneck.
 
+**Client-side processing**
+
+The application making the request must wait for the response before executing further code.
+
+
 <center><small>Tickets are sold in a first-come, first-served order. This is a synchronous process.</small></center>
 
 <div class='img-center'>
@@ -105,10 +109,6 @@ Synchronous APIs are common when the data is stored in a database or in memory. 
 ![](/img/docs/devnet-apisync.png)
 
 </div>
-
-**Client-side processing**
-
-The application making the request must wait for the response before executing further code.
 
 ### Asynchronous APIs
 
@@ -120,13 +120,6 @@ Asynchronous APIs acknowledge a request immediately but do not provide the actua
 
 Asynchronous APIs are useful when the server needs more time to process the request or the data is not immediately available. For example, the server may need to fetch data from a remote service. The client can continue executing other tasks while waiting for the response.
 
-<div class='img-center'>
-
-![](/img/docs/devnet-apiasync.png)
-
-</div>
-
-
 **Client-side processing**
 
 The client may use:
@@ -137,8 +130,78 @@ The client may use:
 
 Proper use of asynchronous APIs improves performance, but overuse or poor design can reduce efficiency.
 
+<div class='img-center'>
 
-## SOAP vs. REST 
+![](/img/docs/devnet-apiasync.png)
+
+</div>
+
+
+## Common API Architectural Styles
+
+The three most popular API styles are **RPC**, **SOAP**, and **REST**. Each style has its own way of structuring requests and responses, and each has different trade-offs for client and server design.
+
+### RPC 
+
+**RPC (Remote Procedure Call)** allows one application (client) to call a procedure on another application (server) as if it were local. The server application is typically located on another system within the network. The client does not need to know that the procedure runs remotely.
+
+- Request-response model, usually synchronous
+- Client sees calls as simple methods with arguments
+
+RPC can be implemented over multiple transport protocols. 
+
+- XML-RPC
+- JSON-RPC
+- NFS (Network File System)
+- Simple Object Access Protocol (SOAP)
+
+With RPC, the client makes a synchronous request to the server and is blocked while the server processes the request. When the server responds, the client is unblocked and continues the execution. RPC simplifies remote communication but can create a bottleneck if requests take too long.
+
+<div class='img-center'>
+
+![](/img/docs/devnet-apirpc.png)
+
+</div>
+
+### SOAP
+
+**SOAP (Simple Object Access Protocol)** is an XML-based messaging protocol for communicating across different platforms and programming languages. 
+
+- **Independent** - Works across platforms and languages          
+- **Extensible** - Can add features like security and reliability
+- **Neutral** - Can be used over HTTP, SMTP, TCP, UDP, or JMS 
+
+A SOAP message is an XML document containing:
+
+| Element  | Description                                           |
+| -------- | ----------------------------------------------------- |
+| Envelope | Root element indicating a SOAP message                |
+| Header   | Optional metadata such as authorization or attributes |
+| Body     | Has the main data (with own namespace) to be sent     |
+| Fault    | Optional child element for errors or status           |
+
+Sample SOAP message: 
+
+```xml
+<?xml version="1.0"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header/>
+    <soap:Body>
+        <soap:Fault>
+            <faultcode>soap:Server</faultcode>
+            <faultstring>Query request too large.</faultstring>
+        </soap:Fault>
+    </soap:Body>
+</soap:Envelope>
+```
+
+SOAP is ideal for applications that require formal contracts, strict standards, and reliable communication between heterogeneous systems.
+
+### REST 
+
+**Representational State Transfer (REST)** is an architectural style that defines constraints to make web services simple, scalable, and stateless. RESTful APIs operate over standard protocols like HTTP and focus on resources.
+
+For more information, please see [REST APIs.](/docs/065-Software-Engineering/080-APIs/020-Securing-your-API-Endpoint.md)
 
 <div class='img-center'>
 
@@ -146,72 +209,3 @@ Proper use of asynchronous APIs improves performance, but overuse or poor design
 
 </div>
 
-
-## Representational State Transfer
-
-REST (REpresentational State Transfer) is an architectural style that standardizes communication between web systems, facilitating easier interaction.
-
-- Stateless design where each request contains all necessary information
-- Separation of concerns between client and server roles
-- RESTful systems promote interoperability and scalability
-
-Reference: [Codecademy's site](https://searchapparchitecture.techtarget.com/definition/REST-REpresentational-State-Transfer)
-
-## Resources and Representation
-
-REST is about resource state manipulation through their representations on the top of stateless communication between client and server.
-
-When designing REST over HTTP, URLs are used to locate the resources, HTTP methods are used to express the operations over the resources and representations such as JSON and/or XML documents are used to represent the state of the resource.
-
-- **What is a resource?**
-    Understand resource as the concept of a user. Don't think about the table in your database, think about an abstraction of a user with their set of attributes.
-
-- **What is a representation?**
-    A JSON document can be used to represent the state of a particular resource. A resource can have many representations, such as JSON and/or XML documents, and the client can use content negotiation to request different representations of the same resource.
-
-- **What is a state transfer and when does this happens?**
-    The state of a given resource can be retrieved and manipulated using representations.
-
-A GET request, for example, allows you to retrieve a representation of the state of a resource, sent in the response payload. A PUT request, for example, allows you to replace the state of a resource with the state defined by the representation enclosed in the request payload.
-
-When the client and server exchange messages; the client server architectural style is the first of the architectural constraints in the REST architectural style.
-
-Reference: [StackOverflow discussion](https://stackoverflow.com/questions/48116321/what-is-representation-state-and-transfer-in-representational-state-trans).
-
-
-## Data Format
-
-Representational state that you may receive from a database could be in the form of a row from a database. You can then write a logic ot convert this row to another forms:
-
-- XML
-- JSON
-- HTML
-- JPEG, PDF, TXT, etc
-
-
-## When is API "RESTful"?
-
-An API is RESTful when:
-
-- It's built using the RESTful Architectural Style.
-- It follows the set of principles for RESTful APIs
-
-
-## Types of API based on Consumers
-
-Here's an excerpt from [Stoplight's article on API](https://stoplight.io/api-types/):
-
-- **Open APIs**  
-  - Publicly available with minimal restrictions.  
-  - May require registration or an API key.  
-  - Allows external developers to access data/services (e.g., UK government data).
-
-- **Internal APIs**  
-  - Designed for internal use within a company.  
-  - Shares resources between teams.  
-  - Offers security, access control, and an audit trail.
-
-- **Partner APIs**  
-  - Similar to open APIs but with restricted access.  
-  - Often controlled via a third-party API gateway.  
-  - Typically used for specific purposes, like paid services.  
