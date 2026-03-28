@@ -305,7 +305,7 @@ In repositories that are newly cloned with no changes, all files are tracked and
 
 ### `git add`
 
-The `git add` command moves a file to the staging area, preparing it for the next commit. Files in the staging area will be included in the next commit, meaning Git will start tracking changes in that file.
+The `git add` command moves a file to the staging area and prepares it for the next commit. Files in the staging area will be included in the next commit, meaning Git will start tracking changes in that file.
 
 ```bash
 git add about.html
@@ -326,6 +326,18 @@ Other common commands:
     ```bash
     git add /directory/files  
     ```
+
+- Stage changes for a multiple files or directories
+
+    ```bash
+    git add /directory/files /directory2/file2 /directory3/directoryA
+    ```
+
+<div class='img-center'>
+
+![](/img/docs/devnet-gitadd.png)
+
+</div>
 
 
 ### `git commit`
