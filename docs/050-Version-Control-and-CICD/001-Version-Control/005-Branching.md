@@ -42,12 +42,6 @@ Local branches are useful for trying out changes. If the changes work, you can k
 
 </div>
 
-Git branches are lightweight and fast to use.
-
-- Creating branches is quick
-- Switching branches is almost instant
-- Branches are just pointers to commits
-
 Although branches are often shown as separate lines, they are simply references to specific commits. This makes Git efficient and easy to manage.
 
 <div class='img-center'>
@@ -69,7 +63,7 @@ Using branches instead of working directly on the main branch helps prevent acci
 
 ## `git branch`
 
-The `git branch` command will output a list of branches. If you haven't created any other branches, there is only one branch in the output of your command. The default branch for any Git repository is usually master, though you can change which branch is the default if needed.
+The `git branch` command will output a list of branches. If you haven't created any other branches, there is only one branch in the output of your command. The default branch for any Git repository is usually **master**, though you can change which branch is the default if needed.
 
 ```bash
 git branch
@@ -90,7 +84,7 @@ If you have multiple branches, the output will look like this:
   feature-main  
 ```
 
-The * next to "master" shows which branch you're currently on. Checking out a branch means choosing where your changes will apply. Since you’re on "master," any changes will affect that branch until you switch to another.
+The `*` next to `master` shows which branch you're currently on. Checking out a branch means choosing where your changes will apply. Since you’re on `master`, any changes will affect that branch until you switch to another.
 
 <div style={{textAlign: 'center'}}>
 
@@ -98,7 +92,7 @@ The * next to "master" shows which branch you're currently on. Checking out a br
 
 </div>
 
-You can have multiple branches stemming from the master which will have the similar code in it. From there you can work on your own feature branch while others can work on other feature branches. 
+You can have multiple branches stemming from the `master` which will have the similar code in it. From there you can work on your own feature branch while others can work on other feature branches. 
 
 
 ## `HEAD`
@@ -119,20 +113,24 @@ Output:
 Switched to a new branch 'new-branch'
 ```
 
-
-
 ## Common Commands 
 
 - Create a branch:
 
     ```bash
-    git branch [branch name]
+    git branch [new-branch]
     ```
 
 - List the branches (the asterisk denotes the current branch):
 
     ```bash
     git branch
+    ```
+
+    Or
+    
+    ```bash
+    git branch --list
     ```
 
 - List the branches, including both local and remote branches.
@@ -150,7 +148,6 @@ Switched to a new branch 'new-branch'
 - Create a new branch and switch to it.
     ```bash
     git checkout -b [branch name]	
-    git branch
     ```
 
 - Switch to the branch last checked out.
@@ -165,7 +162,7 @@ Switched to a new branch 'new-branch'
     git branch -m [old branch name] [new branch name]	
     ```
 
-- Delete  branch.
+- Delete a branch.
 
     ```bash
     git branch [branch name] -d
@@ -202,3 +199,95 @@ Switched to a new branch 'new-branch'
     ```
 
 
+
+## Merging Branches
+
+When branches are created, they can diverge as changes are made independently. To combine changes from one branch (source) into another branch (target), you can perform a **merge**.
+
+During a merge:
+
+- Git applies the commits from the source branch to the target branch.
+- Only the target branch is modified; the source branch stays the same.
+
+### Sample Scenario
+
+<div class='img-center'>  
+
+![](/img/docs/devnet-gitcommitbranch.png)  
+
+</div>  
+
+1. Branch B is created from Branch A at `commit#1`.
+2. Branch A gets `commit#2`. Branch B does not receive this change.
+3. Branch B gets `commit#3` and `commit#4`. Branch A does not receive these changes.
+5. Branch A gets `commit#5`. Branch B does not receive this change.
+6. Now both branches have diverged by two commits each.
+
+To update Branch B with changes from Branch A (`commit#2` and `commit#5`):
+
+- Branch A ➔ **source branch**
+- Branch B ➔ **target branch**
+- Git applies the changes to Branch B without changing Branch A.
+
+Since the commits were on different files, Git can merge them automatically. This is called a **fast-forward merge**.
+
+### Fast-forward Merge
+
+A fast-forward merge happens when Git can automatically apply commits from the source branch to the target branch without conflicts. This usually occurs when:
+
+- Different files were changed in the branches.
+- Or the same file was edited, but on different lines.
+
+In this case, Git integrates the commits by simply moving the pointer of the target branch to the latest commit of the source branch. **No new merge commit is created.**
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-03-29012755.png)
+
+</div>
+
+
+Fast-forward merges are the easiest and cleanest type of merge, but they only work if Git can combine all commits without any conflicts.
+
+### Merge Conflicts 
+
+If the same file is modified in both branches, Git may not be able to perform a fast-forward merge. This creates a **merge conflict**, where Git cannot automatically combine changes. In this case, the user must manually resolve conflicts.
+
+<div class='img-center'>
+
+![](/img/docs/devnet-mergeconflicts.png)
+
+</div>
+
+Once fixed, a new commit is created on the target branch containing both the merged changes and the conflict resolution.
+
+### Performing a Merge
+
+Git provides the `git merge` command to combine branches:
+
+```bash
+git merge
+```
+
+To merge a branch into your current branch:
+
+```bash
+git merge <branch-name>
+```
+
+The `<'branch-name'>` is the source branch to merge into your current (target) branch.
+
+To merge a branch into a branch that is not currently checked out:
+
+```bash
+git checkout <target-branch-name>
+git merge <source-branch-name>
+```
+
+To merge multiple branches into your current branch:
+
+```bash
+git merge <branch-name-1> <branch-name-2> ... <branch-name-n>
+```
+
+This type of merge is called an **octopus merge**.
