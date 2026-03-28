@@ -201,7 +201,7 @@ SOAP is ideal for applications that require formal contracts, strict standards, 
 
 **Representational State Transfer (REST)** is an architectural style that defines constraints to make web services simple, scalable, and stateless. RESTful APIs operate over standard protocols like HTTP and focus on resources.
 
-For more information, please see [REST APIs.](/docs/065-Software-Engineering/080-APIs/020-Securing-your-API-Endpoint.md)
+For more information, please see [REST APIs.](/docs/065-Software-Engineering/080-APIs/050-Securing-your-API-Endpoint.md)
 
 <div class='img-center'>
 
