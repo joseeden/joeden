@@ -40,7 +40,7 @@ To look at the git history of a particular file:
 git log sample-report.md 
 ```
 
-## Customize log output 
+## Customize Log Output 
 
 To look at the git history of a particular file:
 
@@ -75,70 +75,239 @@ As an example:
     ```
 
 
-## View changes
+## `git diff` 
 
-Shows differences between the working directory and the latest commit.  
-
-```bash
-git diff -r HEAD 
-```
-
-Sample Output:
+This command shows changes in your files compared to previous commits or between specific commits. It works with both Git-tracked and untracked files.
 
 ```bash
-diff --git a/report.md b/report.md
-index e69de29..d95f3ad 100644
---- a/report.md
-+++ b/report.md
-@@ -1,3 +1,5 @@
-+Reminder: Cite funding sources.
- Data analysis results:
- - Survey responses processed.
+git diff
 ```
 
+Common ways to use `git diff`:
 
-## Comparing two commits 
+1. Compare working directory with the last commit:
 
-Shows differences between two commits.  
+    ```bash
+    git diff <file-path>
+    ```
+
+    Example:
+
+    ```bash
+    git diff report.md  
+    ```
+
+    Sample output:
+
+    ```bash
+    diff --git a/report.md b/report.md
+    index e69de29..d95f3ad 100644
+    --- a/report.md
+    +++ b/report.md
+    @@ -1,3 +1,5 @@
+    +Reminder: Cite funding sources.
+    Data analysis results:
+    - Survey responses processed.
+    ```
+
+2. Compare working directory with a specific commit:
+
+    ```bash
+    git diff <commit-id> <file-path>
+    ```
+
+    Example:
+
+    ```bash
+    git diff 123456 report.md  
+    ```
+
+    Sample output:
+
+    ```bash
+    diff --git a/report.md b/report.md
+    index d95f3ad..f3a1b2c 100644
+    --- a/report.md
+    +++ b/report.md
+    @@ -2,3 +2,4 @@
+    - Survey responses processed.
+    +Add final review comments.
+    ```
+
+3. Compare two commits for a specific file:
+
+    ```bash
+    git diff <commit-id-1> <commit-id-2> <file-path>
+    ```
+
+    Example:
+
+    ```bash
+    git diff 123456 abcdef report.md
+    ```
+
+    Sample output:
+
+    ```bash
+    diff --git a/report.md b/report.md
+    index e69de29..f3a1b2c 100644
+    --- a/report.md
+    +++ b/report.md
+    @@ -1,3 +1,5 @@
+    +Reminder: Cite funding sources.
+    Data analysis results:
+    - Survey responses processed.
+    +Add final review comments.
+    ```
+
+
+4. Compare two files in the working directory or on disk:
+
+    ```bash
+    git diff <file-path-1> <file-path-2>
+    ```
+
+    Example:
+
+    ```bash
+    git diff report_v1.md report_v2.md  
+    ```
+
+    Sample output:
+
+    ```bash
+    diff --git a/report_v1.md b/report_v2.md
+    index e69de29..f3a1b2c 100644
+    --- a/report_v1.md
+    +++ b/report_v2.md
+    @@ -1,2 +1,3 @@
+    -Data analysis results:
+    +Data analysis results:
+    +Add final review comments.
+    ```
+
+5. Compare the working directory with the latest commit for all files:
+
+    ```bash
+    git diff -r HEAD
+    ```
+
+    Sample output:
+
+    ```bash
+    diff --git a/report.md b/report.md
+    index e69de29..d95f3ad 100644
+    --- a/report.md
+    +++ b/report.md
+    @@ -1,3 +1,5 @@
+    +Reminder: Cite funding sources.
+    Data analysis results:
+    - Survey responses processed.
+    ```
+
+
+
+
+## `.diff` File
+
+A `.diff` file shows the differences between two versions of a file. It uses special symbols to indicate changes, which can be read by other systems to apply updates. Developers often use `.diff` files as patches to submit changes. Because all changes are in a single file, it’s called a **unified diff**.
+
+Symbols in a unified diff:
+
+| Symbol      | Meaning                                    |
+| ----------- | ------------------------------------------ |
+| `+`         | Line has been added                        |
+| `-`         | Line has been removed                      |
+| `/dev/null` | Indicates a file has been added or removed |
+| `(blank)`   | Context lines around changes               |
+| `@@`        | Marks the start of a new block of changes  |
+| `index`     | Shows the commits being compared           |
+
+Here’s a sample unified diff for a file named `check-network.yml`:
 
 ```bash
-git diff 123456 asdfg123  
+diff --git a/check-network.yml b/check-network.yml
+index 09b4f0c..b1978ca 100644
+--- a/check-network.yml
++++ b/check-network.yml
+@@ -4,7 +4,7 @@
+   roles:
+     - ansible-pyats
+   vars:
+-    snapshot_file: "{{ inventory_hostname }}_bgp.json"
++    snapshot_file: "{{ inventory_hostname }}_routes.json"
+   tasks:
+   - set_fact:
+       snapshot_data: "{{ lookup('file', snapshot_file) | from_json }}"
+@@ -13,7 +13,7 @@
+ #      var: snapshot_data
+ #
+   - pyats_parse_command:
+-      command: show ip route bgp
++      command: show ip route
+       compare: "{{ snapshot_data }}"
+     register: command_output
 ```
 
-Alternatively, compare commits using relative references:  
+In this example:
+
+- The line with `-` shows the old code
+- The line with `+` shows the new code
+- Context lines around changes indicates where the modification occurs
+
+One change in this patch is renaming the snapshot file from `..._bgp.json` to `..._routes.json`.
 
 ```bash
-git show HEAD~3 HEAD~2  
+-    snapshot_file: "{{ inventory_hostname }}_bgp.json"
++    snapshot_file: "{{ inventory_hostname }}_routes.json"
 ```
+
+You can also view unified diffs for GitHub pull requests by adding `.diff` to the URL of the pull request. This format makes it easy to see changes clearly and apply them automatically if needed.
+
 
 ## `HEAD` 
 
-In `git show HEAD~3`, the **`3`** represents how many commits to go back from `HEAD` (the latest commit).  
+In Git, `HEAD` points to the latest commit in your current branch. You can refer to previous commits relative to `HEAD` using `~n`, where **n** is the number of commits to go back.
 
-- `HEAD~1` ➔ One commit before the latest  
-- `HEAD~2` ➔ Two commits before the latest  
-- `HEAD~3` ➔ Three commits before the latest  
+- `HEAD~1` ➔ One commit before the latest
+- `HEAD~2` ➔ Two commits before the latest
+- `HEAD~3` ➔ Three commits before the latest
 
-So, `git show HEAD~3` displays details of the commit that is **three commits before the current `HEAD`**.  
+For example:
 
-If you run:  
+```bash
+git show HEAD~3
+```
+
+This shows details of the commit three steps before `HEAD`.
+
+When you run:
+
 ```bash
 git log --oneline
 ```
 
-Consider the sample commits below:
+Git displays a compact history of commits in the current branch. Each commit shows:
+
+- A short commit hash (a unique identifier for the commit)
+- The commit message
+
+Example output:
 
 ```bash
-$ git log --oneline
-
 a1b2c3d4 Add user authentication feature  
 e5f6g7h8 Fix database connection issue  
 i9j0k1l2 Update API endpoint response format  
 m3n4o5p6 Initial project setup  
 ```
 
-Here, using `HEAD~3` will refer to `m3n4o5p6`, the **fourth commit in the list**, because we count back three steps from `HEAD`.
+What happens:
 
+- The latest commit appears at the top.
+- Each line represents one commit in chronological order from newest to oldest.
+- It’s a quick way to see the project’s commit history without all the detailed metadata.
+
+You can use this output to reference commits in commands like `git show <commit>` or `git diff <commit>`.
 
 ## `git annotate`
 
@@ -174,6 +343,42 @@ a1b2c3d4 (Alice   2024-02-10 08:30:12 +0000  2) Added authentication module
 e5f6g7h8 (Bob     2024-02-11 14:15:47 +0000  3) Refactored database connection  
 i9j0k1l2 (Charlie 2024-02-12 16:50:33 +0000  4) Updated API response format  
 ```
+
+## Removing Files in Git
+
+### Option 1: Using `git rm`
+
+The `git rm` command removes files both the working directory and staging area. It stages the change for the next commit.
+
+**Note:** `<file-path>` can be an absolute or relative path
+
+```bash 
+git rm <file-path-1> ... <file-path-n>
+```
+
+To remove a file from the repository but keep it in your working directory:
+
+```bash 
+git rm --cached <file-path-1> ... <file-path-n>
+```
+
+<div class='img-center'>
+
+![](/img/docs/devnet-gitrm1.png)
+
+</div>
+
+### Option 2: Using filesystem commands
+
+You can also delete files manually and then stage the removal:
+
+```bash 
+rm <file-path-1> ... <file-path-n>
+git add <file-path-1> ... <file-path-n>
+```
+
+This achieves the same result as `git rm`, but does not allow you to keep the files in the working directory.
+
 
 ## Unstaging changes
 

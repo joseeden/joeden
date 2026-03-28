@@ -89,7 +89,7 @@ These stages map directly to three file states.
 
 This flow lets you control changes step by step, from editing files to saving them permanently in the repository.
 
-## Initializing a Git Repository
+## Initialize a Git Repository
 
 To start using Git, initialize a repository in the folder you want to track.
 
@@ -100,7 +100,7 @@ git init
 This creates a hidden `.git` directory in the project folder. 
 
 ```bash
-$ ls -la .git
+$ ls -la /your-project-directory/.git
 
 total 968
 drwxrwxrwx 1 johnsmith johnsmith    512 Mar 28 23:27 .
@@ -146,11 +146,14 @@ git init /mnt/c/Users/johnsmith/Git/project-repo
 
 Initializing a repo does **not** automatically track files. You need to add files explicitly to start tracking them.
 
-<div class='img-center'>
+<!-- <div class='img-center'>
 
 ![](/img/docs/devnet-rackingfiles.png)
 
-</div>
+</div> -->
+
+
+## Uninitialize a Git Repository
 
 To remove a local Git repository:
 
@@ -245,11 +248,6 @@ git clone https://github.com/username/example-repo.git /path/to/target-directory
 
 The target directory is optional. If its not provided, Git copies the repository to your current folder.
 
-<div class='img-center'>
-
-![](/img/docs/devnet-beforeexec.png)
-
-</div>
 
 When you run `git clone`, Git:
 
@@ -261,6 +259,12 @@ When you run `git clone`, Git:
 
 Cloning gives you a complete, independent copy of the repository to work with safely.
 
+<div class='img-center'>
+
+![](/img/docs/devnet-beforeexec.png)
+
+</div>
+
 ## Pulling from a Remote Repository
 
 Local copies of a Git repository do not update automatically when others make changes. To get the latest updates, use the command below. It fetches changes from a remote branch and merges them into your local branch.
@@ -271,12 +275,19 @@ git pull
 
 **Note:** `git pull` updates an existing local repository with changes from the remote, while `git clone` creates a new local copy of a remote repository.
 
-Here’s what happens when you run `git pull`:
+
+What happens when you run `git pull`:
 
 1. The local repository (`.git` directory) is updated with the latest commits and history from the remote (like `git fetch`).
 2. Your working directory and branch are updated with the new content (like `git merge`).
 3. A commit is created on your local branch for the merged changes. Conflicts, if any, need to be resolved.
 4. The working directory reflects the latest updates.
+
+<div class='img-center'>
+
+![](/img/docs/devnet-gitpull.png)
+
+</div>
 
 To update from the parent branch:
 
@@ -296,11 +307,6 @@ To update from a specific branch:
 git pull origin <branch>
 ```
 
-<div class='img-center'>
-
-![](/img/docs/devnet-gitpull.png)
-
-</div>
 
 This ensures your local copy stays in sync with the remote repository.
 
@@ -403,15 +409,15 @@ git commit -m "Add an about file"
 
 Once committed, your modifications are recorded in the repository's history.
 
+<div class='img-center'>
+
+![](/img/docs/devnet-commit.png)
+
+</div>
+
 Other common commands:
 
-- Commit the change and provide the commit message inline.
-
-    ```bash
-    git commit  -m "This is the commit  message."
-    ```
-
-- Change the commit messages:
+- Changing the commit messages:
 
     ```bash
     git commit --amend
@@ -423,11 +429,7 @@ Other common commands:
     git commit --amend -m "Updated commit message"
     ```    
 
-<div class='img-center'>
 
-![](/img/docs/devnet-commit.png)
-
-</div>
 
 ### `git push`
 
