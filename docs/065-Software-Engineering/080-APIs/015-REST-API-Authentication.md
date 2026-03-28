@@ -1,12 +1,12 @@
 ---
-title: "REST API Authentication"
-description: "REST API Authentication and Authorization"
+title: "Authentication and Authorization"
+description: "Authentication and Authorization"
 tags:
 - Computer Science
 - Application Development
 - Software Development
 - APIs
-sidebar_position: 13
+sidebar_position: 15
 last_update:
   date: 8/2/2021
 ---
@@ -94,11 +94,13 @@ API keys are intended to be an authentication mechanism, but are commonly misuse
 
 ## Authorization Mechanisms
 
-**OAuth (Open Authorization)** combines authentication and authorization for secure API access. It is usually the recommended form of authentication/authorization for REST APIs.
+**OAuth (Open Authorization)** combines authentication and authorization to provide secure API access. It is commonly used in modern REST APIs.
 
 - Pre-registered apps can act on a user's behalf
-- Users don't need to share credentials with the apps
-- Users get a token from an Identity Service (IdS)
+- Users do not share credentials with the app
+- Users receive a token from an Identity Service (IdS)
 - The app uses the token as Bearer Authentication
 
-This process of obtaining the token is called a **flow**. The application uses this token in the REST API as a Bearer Authentication. The web service for the REST API then checks the Authorization server to make sure that the token is valid, and that the requester is authorized to perform the request.
+The process of getting the token is called a **flow**. After the token is issued, the application includes it in API requests using Bearer Authentication. The API server then verifies the token with the authorization server and checks if the request is allowed.
+
+This approach keeps user credentials safe and ensures that only authorized actions are performed.
