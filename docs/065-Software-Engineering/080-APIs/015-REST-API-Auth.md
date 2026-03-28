@@ -1,6 +1,6 @@
 ---
-title: "Authentication and Authorization"
-description: "Authentication and Authorization"
+title: "REST API Auth"
+description: "REST API Authentication and Authorization"
 tags:
 - Computer Science
 - Application Development
