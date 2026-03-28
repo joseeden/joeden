@@ -261,6 +261,49 @@ When you run `git clone`, Git:
 
 Cloning gives you a complete, independent copy of the repository to work with safely.
 
+## Pulling from a Remote Repository
+
+Local copies of a Git repository do not update automatically when others make changes. To get the latest updates, use the command below. It fetches changes from a remote branch and merges them into your local branch.
+
+```bash
+git pull
+```
+
+**Note:** `git pull` updates an existing local repository with changes from the remote, while `git clone` creates a new local copy of a remote repository.
+
+Here’s what happens when you run `git pull`:
+
+1. The local repository (`.git` directory) is updated with the latest commits and history from the remote (like `git fetch`).
+2. Your working directory and branch are updated with the new content (like `git merge`).
+3. A commit is created on your local branch for the merged changes. Conflicts, if any, need to be resolved.
+4. The working directory reflects the latest updates.
+
+To update from the parent branch:
+
+```bash
+git pull
+```
+
+or
+
+```bash
+git pull origin
+```
+
+To update from a specific branch:
+
+```bash
+git pull origin <branch>
+```
+
+<div class='img-center'>
+
+![](/img/docs/devnet-gitpull.png)
+
+</div>
+
+This ensures your local copy stays in sync with the remote repository.
+
 
 ## Checking the Changes
 
@@ -280,9 +323,11 @@ Files in Git fall into two main types:
 
 After a file is tracked, it can be:
 
-- **Unmodified**: No edits since the last commit.
-- **Modified**: Edited since the last commit but not yet staged.
-- **Staged**: Edited and ready for the next commit.
+| State      | Description                                 |
+| ---------- | ------------------------------------------- |
+| Unmodified | No edits since the last commit              |
+| Modified   | Edited since the last commit but not staged |
+| Staged     | Edited and ready for the next commit        |
 
 Any new or ignored files in the directory that haven't been included in a previous commit are untracked and need to be added before they can be committed.
 
@@ -342,13 +387,21 @@ Other common commands:
 
 ### `git commit`
 
-The `git commit` command saves your changes to the local repository. It creates a snapshot of the current state of your files, allowing you to track changes over time.
+The `git commit` command saves your changes to the local repository. It creates a snapshot of the current state of your files, which allows you to track changes over time.
+
+When you run the command below, Git opens the vi editor so you can add a commit message. After typing the commit message, save and exit with `:wq!`:
+
+```bash
+git commit 
+```
+
+To add the commit message directly from the command line, use the `-m` option:
 
 ```bash
 git commit -m "Add an about file" 
 ```
 
-This command creates a commit with a message describing the changes. Once committed, your modifications are recorded in the repository's history.
+Once committed, your modifications are recorded in the repository's history.
 
 Other common commands:
 
@@ -370,21 +423,35 @@ Other common commands:
     git commit --amend -m "Updated commit message"
     ```    
 
+<div class='img-center'>
 
+![](/img/docs/devnet-commit.png)
+
+</div>
 
 ### `git push`
 
-The `git push` command is used to send your local changes to a remote repository. The command specifies both the remote name and the branch name, indicating where to push your changes.
+This command sends your local changes to a remote repository. You specify the remote and branch to indicate where the changes should go.
 
-For example, this command pushes commits from your local `master` branch to the `master` branch on the `origin` remote:
+```bash 
+git push
+```
 
-```bash
+To push changes to a specific branch on a remote:
+
+```bash 
+git push origin <branch-name>
+```
+
+For example, to push your local `master` branch to the remote `master` branch:
+
+```bash 
 git push origin master
 ```
 
-Sample Output:
+Sample output:
 
-```bash
+```bash 
 Counting objects: 3, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (3/3), done.
@@ -394,6 +461,10 @@ To https://github.com/username/repo.git
    1234567..89abcdef  master -> master
 ```
 
-This command pushes any commits that the remote `master` branch does not yet have, making it match your local `master` branch.
+This command updates the remote branch with any commits your local branch has that the remote does not, keeping both branches in sync.
 
+<div class='img-center'>
 
+![](/img/docs/devnet-gitpush.png)
+
+</div>

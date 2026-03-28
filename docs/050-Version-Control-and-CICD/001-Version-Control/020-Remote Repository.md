@@ -14,9 +14,13 @@ last_update:
 
 Local and remote repositories can have different files. We can compare them to see what's missing or new.  
 
-- Local repo: Where we work on changes  
-- Remote repo: Where others collaborate and updates are stored  
-- Differences: Remote may have extra files or changes  
+| Repository Type | Description                                 |
+| --------------- | ------------------------------------------- |
+| Local repo      | Where we work on changes                    |
+| Remote repo     | Where others collaborate and updates are st |
+
+
+**Differences**: Remote may have extra files or changes  
 
 When working with a team, the remote repo is the main source of truth.  
 
@@ -30,10 +34,12 @@ You can create a Github account by going to the [Github](https://github.com/) si
 
 ![](/img/docs/github.png)
 
-The Github URL is formatted as <code>github.com/username/repository</code>.
-As example, one of my repositories has a URL like this: <code>https://github.com/joseeden/Git-Commands</code>
+The Github URL is formatted as `github.com/username/repository`.
+
+As example, one of my repositories has a URL like this: `https://github.com/joseeden/Git-Commands`
 
 To search for beginner-friendly issues in Github, we can go to the search bar at upper left of github page and type in:
+
 ```bash
 label:"beginner-friendly" is:issue is:open
 ``` 
