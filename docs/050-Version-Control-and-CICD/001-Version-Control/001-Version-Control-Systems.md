@@ -7,8 +7,8 @@ tags:
 - Continuous Deployment
 sidebar_position: 1
 last_update:
-  date: 2/5/2023
----
+  date: 2/5/2019
+---                                                                                                                                                                                                                                                                             
 
 ## Overview
 
@@ -103,3 +103,24 @@ This makes Git fast and efficient while still keeping a full history of changes.
 ![](/img/docs/devnet-git.png)
 
 </div>
+
+## GitHub and Other Git Providers
+
+Git and GitHub are related but not the same. Git is a distributed version control system with a command line interface. GitHub is a service that hosts Git repositories and adds extra features.
+
+- Provides code review, documentation, and project management
+- Supports bug tracking and feature requests
+- Enables private and public repositories
+- Handles open source projects with many contributors
+
+GitHub uses **pull requests** to let contributors propose changes for review before merging into main branches. This system helps manage collaboration safely and efficiently.
+
+Other Git hosting services with similar repository and collaboration features include:
+
+- GitLab
+- Bitbucket
+- GitKraken
+- SourceForge
+- AWS CodeCommit
+- Azure DevOps
+- Gitea

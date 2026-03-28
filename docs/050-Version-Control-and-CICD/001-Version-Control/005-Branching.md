@@ -11,15 +11,61 @@ last_update:
 ---
 
 
-## Branching
+## Overview
 
-Branches in Git are essential because they allow you to make changes without impacting the main codebase until you choose to merge them.
+Branching lets you work on code independently without affecting the main code in the repository.
+
+- Work on code without breaking the main branch
+- Create multiple independent branches
+- Safely test and experiment with changes
+
+By default, a new repository starts with a branch called **master**. You can create additional branches to work on features or fixes without touching the main code. Each branch is independent, so changes in one branch do not affect others unless you choose to merge them.
 
 <div class="img-center"> 
 
 ![](/img/docs/03012025-git-branching.png)
 
 </div>
+
+
+Branches can be **local** or **remote**, and they can be deleted when no longer needed.
+
+- **Local** branches exist on your machine
+- **Remote** branches are shared with others
+- Unused branches can be removed
+
+Local branches are useful for trying out changes. If the changes work, you can keep and merge them. If not, you can delete the branch. Merging is optional, so unfinished work does not affect the main code.
+
+<div class='img-center'>
+
+![](/img/docs/devnet-branching.png)
+
+</div>
+
+Git branches are lightweight and fast to use.
+
+- Creating branches is quick
+- Switching branches is almost instant
+- Branches are just pointers to commits
+
+Although branches are often shown as separate lines, they are simply references to specific commits. This makes Git efficient and easy to manage.
+
+<div class='img-center'>
+
+![](/img/docs/devnet-branches2.png)
+
+</div>
+
+Each branch works like its own environment.
+
+- Has its own commit history
+- Has its own staging area
+- Has its own working directory
+
+When you switch between branches, your working files and staged changes update to match that branch, while the internal Git data remains unchanged.
+
+Using branches instead of working directly on the main branch helps prevent accidental changes and keeps the code stable while allowing flexible development.
+
 
 ## `git branch`
 

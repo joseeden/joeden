@@ -97,6 +97,20 @@ index e69de29..d95f3ad 100644
 ```
 
 
+## Comparing two commits 
+
+Shows differences between two commits.  
+
+```bash
+git diff 123456 asdfg123  
+```
+
+Alternatively, compare commits using relative references:  
+
+```bash
+git show HEAD~3 HEAD~2  
+```
+
 ## `HEAD` 
 
 In `git show HEAD~3`, the **`3`** represents how many commits to go back from `HEAD` (the latest commit).  
@@ -124,20 +138,6 @@ m3n4o5p6 Initial project setup
 ```
 
 Here, using `HEAD~3` will refer to `m3n4o5p6`, the **fourth commit in the list**, because we count back three steps from `HEAD`.
-
-## Comparing two commits 
-
-Shows differences between two commits.  
-
-```bash
-git diff 123456 asdfg123  
-```
-
-Alternatively, compare commits using relative references:  
-
-```bash
-git show HEAD~3 HEAD~2  
-```
 
 
 ## `git annotate`

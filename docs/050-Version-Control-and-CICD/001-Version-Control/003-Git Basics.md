@@ -23,23 +23,144 @@ Git is a widely used version control system for tracking and managing code chang
 Every repository is its own self-contained, independent store to have source-controlled versioning.
 
 - You can use public repositories such as Github, Bitbucket, etc
-- You can have your own private repositories within your local network or private repositories which you can access over a vpn
+- You can have your own private repositories within your local network or 
+- You can hav e private repositories which you can access over a vpn
 
+## Local vs Remote Repositories
 
-## Initializing
+Git uses two types of repositories to manage code:
 
-To initialize a git repository, go to the folder you want to enable git
-and initialize git there.
+- **Local repository** 
+
+  - This exists on your own system
+  - Where you run Git commands, make changes, and track history
+  - Your personal working copy of the project
+
+- **Remote repository** 
+
+  - Stored somewhere else, usually on a server
+  - Used to share code with others 
+  - Act as a common place for collaboration
+
+Even though a remote repository may feel like a central server, Git is still a distributed system.
+
+- Remote repo contains full code and history
+- Cloning downloads the entire repository
+- No file locking is required
+
+When you clone a remote repository, you get the complete project, including its full history. This means you can work independently without depending on the server.
+
+After cloning or creating a remote repository, both repositories become separate.
+
+- Changes are not automatically synced
+- You must push or pull changes manually
+
+This keeps local and remote repositories independent while still allowing controlled sharing of updates.
+
+## Stages and States of Git
+
+Git manages files through three stages that determine where your changes are at any time.
+
+<div class='img-center'>
+
+![](/img/docs/devnet-gitstages.png)
+
+</div>
+
+The **repository (`.git` directory)** is the core of Git. It is a hidden folder created when you initialize a repo. 
+
+- Stores all project data, including files, commits, and history. 
+- Since Git is distributed, every user has a full copy of this repository.
+
+The **working directory** is the visible folder on your system. This is where you open and edit files. 
+
+- Changes made here are not yet tracked by Git until you add them. 
+- Untracked changes may be lost, but the repository stays safe.
+
+The **staging area** is where you prepare changes before saving them. You can choose specific files to include instead of committing everything. It is not a separate space, but an index file inside the .git directory.
+
+These stages map directly to three file states.
+
+| State     | Description                     |
+| --------- | ------------------------------- |
+| Committed | File is saved in the repository |
+| Modified  | File has changes not yet staged |
+| Staged    | File is ready to be committed   |
+
+This flow lets you control changes step by step, from editing files to saving them permanently in the repository.
+
+## Initializing a Git Repository
+
+To start using Git, initialize a repository in the folder you want to track.
 
 ```bash
 git init
 ```
 
-To un-initialize a local git repo/folder:
+This creates a hidden `.git` directory in the project folder. 
+
+```bash
+$ ls -la .git
+
+total 968
+drwxrwxrwx 1 johnsmith johnsmith    512 Mar 28 23:27 .
+drwxrwxrwx 1 johnsmith johnsmith    512 Jan 22 00:41 ..
+-rwxrwxrwx 1 johnsmith johnsmith     88 Mar 29 00:09 FETCH_HEAD
+-rwxrwxrwx 1 johnsmith johnsmith     23 Mar 22  2019 HEAD
+-rwxrwxrwx 1 johnsmith johnsmith     41 Mar 28 23:27 ORIG_HEAD
+drwxrwxrwx 1 johnsmith johnsmith    512 Dec 13  2018 branches
+-rwxrwxrwx 1 johnsmith johnsmith   2853 Feb 14 16:42 config
+-rwxrwxrwx 1 johnsmith johnsmith     73 Jun 18  2018 description
+drwxrwxrwx 1 johnsmith johnsmith    512 Mar 22  2019 filter-repo
+drwxrwxrwx 1 johnsmith johnsmith    512 Mar 28 23:28 gk
+drwxrwxrwx 1 johnsmith johnsmith    512 Mar 22  2019 hooks
+-rwxrwxrwx 1 johnsmith johnsmith 962757 Mar 28 23:26 index
+drwxrwxrwx 1 johnsmith johnsmith    512 Oct 27 08:35 info
+drwxrwxrwx 1 johnsmith johnsmith    512 Mar 22  2019 lfs
+drwxrwxrwx 1 johnsmith johnsmith    512 Oct 27 08:34 logs
+drwxrwxrwx 1 johnsmith johnsmith    512 Jan  6 21:39 modules
+drwxrwxrwx 1 johnsmith johnsmith    512 Mar 29 00:09 objects
+-rwxrwxrwx 1 johnsmith johnsmith    105 Mar 22  2019 packed-refs
+drwxrwxrwx 1 johnsmith johnsmith    512 Dec 13  2018 refs
+```
+
+The `.git` directory stores:
+
+- Compressed files
+- Commit history
+- Staging area
+
+Git also creates the **master branch** when initializing.
+
+To initialize a repository in a specific folder:
+
+```bash
+git init <project-directory>
+```
+
+The `<project-directory>` can be a relative or absolute path, for example:
+
+```bash
+git init /mnt/c/Users/johnsmith/Git/project-repo
+```
+
+Initializing a repo does **not** automatically track files. You need to add files explicitly to start tracking them.
+
+<div class='img-center'>
+
+![](/img/docs/devnet-rackingfiles.png)
+
+</div>
+
+To remove a local Git repository:
+
 ```bash
 cd </folder/repo-name>
 rm -rf .git
 ```
+
+This deletes the repository but leaves the project files intact.
+
 
 ## User Configuration 
 
@@ -56,14 +177,15 @@ This will set the name and email fields of Git's configuration. Commits made in 
 
 Branches in Git let developers make changes safely without affecting the main codebase. Each repository has a default branch, usually "main" or "master." Changes in a branch don’t impact the main branch until merged.
 
-
 <div class='img-center'>
 
 ![](/img/docs/001-gitbranches.png)  
 
 </div>
 
-The image shows the branch "feature/update-title" marked as "Merged," meaning its updates are now part of the default branch.
+The image shows the branch `feature/update-title` marked as **Merged**, meaning its updates are now part of the default branch.
+
+For more information, pleasee see [Branching.](/docs/050-Version-Control-and-CICD/001-Version-Control/005-Branching.md)
 
 ## Commits
 
@@ -79,17 +201,68 @@ Commits are snapshots of the codebase at different points in time. They allow yo
 </div>
 
 
-## Cloning
+## Cloning a Git Repository
 
-Cloning creates a full copy of a Git repository on your local machine. This allows you to work on the codebase independently without affecting the original repository.
+Cloning makes a full copy of a Git repository on your local machine. This lets you work on the code without affecting the original repository.
 
-To clone the repository from Github, enter the following command and press Enter:
+Git supports four main ways to access repositories:
+
+- **Local** – cloning from another folder on your machine:
+
+    ```bash
+    git clone /path/to/local/repository
+    ```
+
+- **SSH (Secure Shell)** – cloning using SSH keys from a remote server:
+
+    ```bash
+    git clone git@github.com:username/example-repo.git
+    ```
+
+- **Git protocol** – cloning using the Git-only protocol:
+
+    ```bash
+    git clone git://github.com/username/example-repo.git
+    ```
+
+- **HTTP/HTTPS** – cloning over HTTPS from GitHub or other hosting service:
+
+    ```bash
+    git clone https://github.com/username/example-repo.git
+    ```
+
+You can specify a target directory for all four clone methods by adding the path at the end of the command.
 
 ```bash
-git clone https://github.com/name-of-repository/example-git-repo.git 
+git clone /path/to/local/repository /path/to/target-directory
+
+git clone git@github.com:username/example-repo.git /path/to/target-directory
+
+git clone git://github.com/username/example-repo.git /path/to/target-directory
+
+git clone https://github.com/username/example-repo.git /path/to/target-directory
 ```
 
-## `git status`
+The target directory is optional. If its not provided, Git copies the repository to your current folder.
+
+<div class='img-center'>
+
+![](/img/docs/devnet-beforeexec.png)
+
+</div>
+
+When you run `git clone`, Git:
+
+1. Creates a working directory with the repository name or the name you specify.
+2. Creates a `.git` directory inside that folder.
+3. Copies all repository metadata into `.git`.
+4. Creates a working copy of the latest project files.
+5. Duplicates the branch structure and sets up tracking for local and remote branches, including checking out the active branch.
+
+Cloning gives you a complete, independent copy of the repository to work with safely.
+
+
+## Checking the Changes
 
 The `git status` command shows changes since the last commit. If no changes have been made, Git will indicate that the working directory matches the last commit.
 
@@ -99,10 +272,13 @@ git status
 
 Files in Git fall into two main types:
 
-- **Tracked**: Files that were in the last commit and are either unmodified, modified, or staged for the next commit.
-- **Untracked**: Files that were not in the last commit and are not yet part of version tracking.
+| State     | Description                                                                           |
+| --------- | ------------------------------------------------------------------------------------- |
+| Tracked   | Files in the last commit that are unmodified, modified, or staged for the next commit |
+| Untracked | Files not in the last commit and not yet tracked by Git                               |
 
-After a file is tracked, it can be in one of three states:
+
+After a file is tracked, it can be:
 
 - **Unmodified**: No edits since the last commit.
 - **Modified**: Edited since the last commit but not yet staged.
@@ -127,7 +303,7 @@ In repositories that are newly cloned with no changes, all files are tracked and
 </div>
 
 
-## `git add`
+### `git add`
 
 The `git add` command moves a file to the staging area, preparing it for the next commit. Files in the staging area will be included in the next commit, meaning Git will start tracking changes in that file.
 
@@ -152,7 +328,7 @@ Other common commands:
     ```
 
 
-## `git commit`
+### `git commit`
 
 The `git commit` command saves your changes to the local repository. It creates a snapshot of the current state of your files, allowing you to track changes over time.
 
@@ -184,7 +360,7 @@ Other common commands:
 
 
 
-## `git push`
+### `git push`
 
 The `git push` command is used to send your local changes to a remote repository. The command specifies both the remote name and the branch name, indicating where to push your changes.
 
