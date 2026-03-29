@@ -22,11 +22,11 @@ Webhooks send real-time notifications to your application when specific events h
 
 Webhooks are sometimes called **reverse APIs** because the server calls your application instead of your application requesting data. You register a URI with the webhook provider, and when the event occurs, the provider sends an HTTP request to that URI. 
 
-<div class='img-center'>  
+<!-- <div class='img-center'>  
 
 ![](/img/docs/webhook-example.png)
 
-</div>  
+</div>   -->
 
 **Examples:**
 

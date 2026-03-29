@@ -42,19 +42,23 @@ Requests are placed into a queue and processed at a constant rate.
 
 With this algorithm, the client must be prepared for delayed responses or rejected requests.
 
+<center><small>Visual representation of the leaky bucket algorithm</small></center>
+
 <div class='img-center'>
 
 ![](/img/docs/devnet-leakybucket.png)
 
 </div>
-<small>Visual representation of the leaky bucket algorithm</small>
+
+
+<center><small>Example of the leaky bucket algorithm</small></center>
 
 <div class='img-center'>
 
 ![](/img/docs/devnet-lkalgo.png)
 
 </div>
-<small> Example of the leaky bucket algorithm</small>
+
 
 ### Token Bucket
 

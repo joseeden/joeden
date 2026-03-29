@@ -24,21 +24,8 @@ Authentication proves identity, while authorization controls access.
 - **Authorization** checks what the user can do
 - Both work together to secure API requests
 
-For example, showing an ID at the airport is authentication, while presenting a ticket at a concert is authorization. 
+For example, showing an ID at the airport is authentication, while presenting a ticket at a concert is authorization. Authentication identifies the user, and authorization gives access to resources.
 
-<div class='img-center'>
-
-![](/img/docs/devnet-apiauth.png)
-
-</div>
-
-Authentication identifies the user, and authorization gives access to resources.
-
-<div class='img-center'>
-
-![](/img/docs/devnet-autor.png)
-
-</div>
 
 ## Authentication Mechanisms
 
