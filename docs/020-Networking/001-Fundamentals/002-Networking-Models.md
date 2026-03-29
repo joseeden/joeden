@@ -59,7 +59,7 @@ The Open Systems Interconnection (OSI) Model is a conceptual framework for descr
 | 2   | **Data Link**    | <ul><li>Manages frames and error detection/correction</li><li>Controls access to physical medium and devices like switches</li></ul>                                                                                    |
 | 1   | **Physical**     | <ul><li>Converts data into electrical, optical, or radio signals</li><li>Hardware standards like cables, connectors, and signaling</li></ul>                                                                            |
 
-## Encapsulation and De-encapsulation
+### Encapsulation 
 
 When data is transmitted over a network, it goes through a process of encapsulation and de-encapsulation. 
 
@@ -71,8 +71,26 @@ With **encapsulation**, data is wrapped with protocol information at each layer 
 - Frame at data link layer
 - Bits at physical layer
 
-**De-encapsulation** occurs at the receiving end, where the data is unpacked as it moves up the layers. Each layer removes its corresponding header/footer and processes the information before passing it to the next layer.  
+The form that a piece of data takes at any layer is called a **protocol data unit (PDU)**. During encapsulation, each succeeding layer encapsulates the PDU that it receives from the layer above in accordance with the protocol being used. 
 
+<div class='img-center'>
+
+![](/img/docs/devnetosi2.png)
+
+</div> 
+
+When messages are sent on a network, the encapsulation process works from top to bottom.
+
+<div class='img-center'>
+
+![](/img/docs/devnetosi3.png)
+
+</div> 
+
+
+### De-encapsulation
+
+**De-encapsulation** occurs at the receiving end, where the data is unpacked as it moves up the layers. Each layer removes its corresponding header/footer and processes the information before passing it to the next layer.  
 
 ![](/img/docs/security-encap-deencap-diagram.png)
 
@@ -94,15 +112,40 @@ Transmission Control Protocol/Internet Protocol (TCP/IP) is platform-independent
 
 </div>
 
+## Data Flow in Layered Models
+
+Data moves through layers from the sender to the receiver, with each layer adding or removing headers. End devices follow the full stack of protocols to ensure messages are delivered correctly.
+
+<div class='img-center'>
+
+![](/img/docs/devnetdflow1.png)
+
+</div> 
+
+The **network access** layer (also known "Link"layer) operates at the local network connection to which an end-device is connected. It deals with moving frames from one NIC to another NIC on the same network. Ethernet switches operate at this layer.
+
+<div class='img-center'>
+
+![](/img/docs/devnetdflow2.png)
+
+</div> 
+
+The **internet** layer sends data across multiple networks, which connects physically separate networks in a process called **internetworking**. Routers operate at this layer and use routing protocols to forward packets from the source network to the destination network. IP handles addressing and routing in the TCP/IP model.
+
+The layered model ensures that data can travel across local and wide networks reliably, with each layer performing its role in sending, routing, and receiving information.
+
 
 ## Transmission Types
 
 Networks can send data in several ways depending on the target:
 
-- **Unicast**: One-to-one communication between a sender and a single receiver.  
-- **Broadcast**: One-to-many communication to all devices on a network segment.  
-- **Multicast**: One-to-many communication to a specific group of devices.  
-- **Anycast**: One-to-one-of-many communication, delivered to the nearest or best receiver.
+| Type      | Description                                                                 |
+| --------- | --------------------------------------------------------------------------- |
+| Unicast   | One-to-one communication between a single sender and a single receiver      |
+| Broadcast | One-to-many communication to all devices on a network segment               |
+| Multicast | One-to-many communication to a specific group of devices                    |
+| Anycast   | One-to-one-of-many communication, delivered to the nearest or best receiver |
+
 
 ## TCP Handshake
 
@@ -180,59 +223,6 @@ Diagram:
 
 </div>
 
-
-## Network Types
-
-### Local Area Network (LAN)
-
-A LAN is a network that connects devices within a small, localized area.
-
-- Covers a small area like a home, office, or campus
-- High-speed connectivity for local devices
-- uses Ethernet or Wi-Fi for fast and reliable communication
-- Typically owned and managed by a single organization
-
-
-### Metropolitan Area Network (MAN)
-
-A MAN connects multiple LANs across a city or metropolitan area.
-
-- Covers a city or metropolitan region
-- Larger than a LAN but smaller than a WAN
-- Used by service providers to connect businesses or campuses
-- Provides higher-speed connectivity than WANs for urban areas
-
-Metropolitan area network architectures are commonly built upon the following layers:
-
-- **Access**
-
-  - Connects customer devices to the provider’s network
-  - May include routers, switches, or optical interfaces
-
-- **Aggregation/Distribution**
-
-  - Collects and forwards traffic from the access layer
-  - Optimizes traffic flow and performs load balancing
-
-- **Metro**
-
-  - Intermediate layer, routes traffic across the metropolitan area
-  - Provides redundancy and high-capacity backbone connections
-
-- **Core**
-
-  - Routes traffic to destination aggregation network efficiently
-  - Connects to WAN or other MANs for long-distance communication
-
-
-### Wide Area Network (WAN)
-
-A WAN connects networks across large geographic distances.
-
-- Connects networks over cities, countries, or even continents
-- Often uses leased lines, MPLS, VPNs, or satellite links
-- Enterprise connectivity, remote office access, and internet backbones
-- Managed by service providers rather than individual organizations
 
 
 ## Circuit-Switched vs Packet-Switched

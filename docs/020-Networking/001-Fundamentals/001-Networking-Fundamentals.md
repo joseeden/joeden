@@ -20,19 +20,58 @@ A network connects devices so they can communicate and share data.
 
 Devices connect using a **network interface card (NIC)**. Wired NICs use Ethernet cables and ports. Wireless NICs use radio signals, usually on 2.4 GHz or 5 GHz.
 
-A network can be small or large, but the goal is always the same, which is to allow devices to communicate. There are two types of networks: 
+## Network Types
 
-- **Local area network (LAN)**
+### Local Area Network (LAN)
 
-  - Covers a small area like a home, office, or building
-  - High speed and low latency connection
-  - Usually owned and managed by a single organization
+A LAN is a network that connects devices within a small, localized area.
 
-- **Wide area network (WAN)**
+- Covers a small area like a home, office, or campus
+- High-speed connectivity for local devices
+- uses Ethernet or Wi-Fi for fast and reliable communication
+- Typically owned and managed by a single organization
 
-  - Connects multiple networks over large distances
-  - Uses public or private communication links
-  - Often managed by service providers
+
+### Metropolitan Area Network (MAN)
+
+A MAN connects multiple LANs across a city or metropolitan area.
+
+- Covers a city or metropolitan region
+- Larger than a LAN but smaller than a WAN
+- Used by service providers to connect businesses or campuses
+- Provides higher-speed connectivity than WANs for urban areas
+
+Metropolitan area network architectures are commonly built upon the following layers:
+
+- **Access**
+
+  - Connects customer devices to the provider’s network
+  - May include routers, switches, or optical interfaces
+
+- **Aggregation/Distribution**
+
+  - Collects and forwards traffic from the access layer
+  - Optimizes traffic flow and performs load balancing
+
+- **Metro**
+
+  - Intermediate layer, routes traffic across the metropolitan area
+  - Provides redundancy and high-capacity backbone connections
+
+- **Core**
+
+  - Routes traffic to destination aggregation network efficiently
+  - Connects to WAN or other MANs for long-distance communication
+
+
+### Wide Area Network (WAN)
+
+A WAN connects networks across large geographic distances.
+
+- Connects networks over cities, countries, or even continents
+- Often uses leased lines, MPLS, VPNs, or satellite links
+- Enterprise connectivity, remote office access, and internet backbones
+- Managed by service providers rather than individual organizations
 
 
 ## Protocol Suites
@@ -80,20 +119,44 @@ Ethernet makes sure different devices can talk to each other over the same netwo
 
 ## Device Address
 
-**Media Access Control (MAC) Address**
+Devices use two main types of addresses to identify themselves on a network:
 
-- Assigned to every network device.
-- Example: 00-13-02-1F-58-F5.
-- First 3 bytes (24 bits) denote the vendor or manufacturer of the physical network interface.
-- No two devices can have the same MAC address in the same local network.
+- **Media Access Control (MAC) Address**
 
-**Internet Protocol (IP) Address**
+  - Assigned to every network device
+  - Example: `00-13-02-1F-58-F5`
+  - First 3 bytes (24 bits) indicate the device manufacturer
+  - Must be unique within the same local network
 
-- Logical address associated with a unique network interface.
-- MAC addresses are assigned in the firmware, while IP addresses are logical.
-- Helps maintain communications when physical devices are swapped.
-- Examples: 192.168.1.1 and 2001:db8::ffff:0:1.
+- **Internet Protocol (IP) Address**
 
+  - Logical address tied to a network interface
+  - Assigned by software or network configuration, not hardware
+  - Ensures communication continues even if devices are replaced
+  - Examples: `192.168.1.1` (IPv4), `2001:db8::ffff:0:1` (IPv6)
+
+MAC addresses identify the physical device, while IP addresses help locate and communicate with devices across networks.
+
+## IP Addressing
+
+IP addresses identify devices on a network. IPv4 and IPv6 are the two main types, each with different capabilities
+
+| Feature           | IPv4                               | IPv6                                                      |
+| ----------------- | ---------------------------------- | --------------------------------------------------------- |
+| Address length    | 32 bits                            | 128 bits                                                  |
+| Address space     | ~4.3 billion addresses             | 340 undecillion addresses                                 |
+| Notation          | Dotted decimal (e.g., 192.168.1.1) | Hexadecimal (e.g., 2001:db8::1)                           |
+| Header complexity | Simple                             | More complex with additional features                     |
+| Deployment        | Widely used, older                 | Increasingly used, supports modern needs                  |
+| Features          | Basic routing and addressing       | Built-in security, auto-configuration, and better routing |
+
+IPv4 is still common but limited in address space. IPv6 solves this by providing far more addresses and additional features for modern networks.
+
+<div class='img-center'>
+
+![](/img/docs/devnetcplanesrouter.png)
+
+</div> 
 
 ## Wifi 
 
