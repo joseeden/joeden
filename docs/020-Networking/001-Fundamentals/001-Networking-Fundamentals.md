@@ -160,13 +160,7 @@ IPv4 is still common but limited in address space. IPv6 solves this by providing
 
 ## Wifi 
 
-Widely adopted for its easy deployment and cost-effectiveness, wireless networking provides versatility, enabling devices to roam freely within signal range. 
-
-- **Wi-Fi Evolution**
-    - Evolving over time with faster updated versions, Wi-Fi continues to improve its performance.
-
-- **Security Considerations**
-    - Despite its benefits, wireless networks introduce additional vulnerabilities. Unlike wired networks, intrusions can occur remotely, without physical access to the network.
+Wireless networking allows devices to connect without cables, which makes deployment and use easier. Devices can move freely within the signal range, and this adds convenience. However, wireless networks are more vulnerable than wired networks because attackers can access them remotely and without physical access.
 
 For more information, please see [Wireless Networking.](/docs/020-Networking/001-Fundamentals/060-Wireless-Networking.md)
 
@@ -181,7 +175,7 @@ For more information, please see [Wireless Networking.](/docs/020-Networking/001
 
 Quality of Service (QoS) refers to the technology that allows the network to prioritize certain types of traffic over others. 
 
-- Prioritizes critical traffic like VoIP or video conferencing.
+- Prioritize critical traffic like VoIP or video conferencing.
 - Uses classes of service (CoS), packet classification, and traffic shaping.
 
 **Traffic shaping** refers to controlling network traffic to allow for the optimization or the guarantee of certain performance levels
@@ -189,24 +183,26 @@ Quality of Service (QoS) refers to the technology that allows the network to pri
 
 ## Networking Tools 
 
-- **Ping Sweep**
+These tools make it easier to monitor networks, find problems, and understand how data moves across the network.
 
-  - Common method to map live hosts in a network.
-  - Involves sending ping messages (ICMP Echo Requests) to a range of IP addresses.
-  - Online hosts respond, allowing mapping of live hosts on the network.
-  - *Reference:* ISC2 Study Guide, Chapter 4, Module 3.
+- **Ping sweep**
+
+  - Sends ping messages (ICMP Echo Requests) to a range of IP addresses
+  - Identifies which hosts are online and reachable
+  - Useful for mapping active devices on a network
 
 - **Geolocation**
 
-  - Determines a device or user's physical location based on IP or MAC address.
+  - Finds the physical location of a device or user
+  - Uses IP addresses or MAC addresses to determine location
 
 - **Traceroute**
 
-  - Maps network topology and diagnoses connectivity/routing issues by tracing packet hops to an IP address.
+  - Tracks the path packets take from a source to a destination
+  - Helps identify routing issues and network topology
 
 - **Wireshark**
 
-  - Network protocol analyzer tool for viewing and analyzing packet contents, including IP addresses and host names.
+  - Captures and analyzes network traffic
+  - Shows packet contents, IP addresses, and host information
 
-
-**
