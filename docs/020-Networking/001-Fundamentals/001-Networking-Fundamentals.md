@@ -22,19 +22,18 @@ Devices connect using a **network interface card (NIC)**. Wired NICs use Etherne
 
 ## Network Types
 
-### Local Area Network (LAN)
+### LAN
 
-A LAN is a network that connects devices within a small, localized area.
+A **Local Area Network (LAN)** is a network that connects devices within a small, localized area.
 
 - Covers a small area like a home, office, or campus
 - High-speed connectivity for local devices
 - uses Ethernet or Wi-Fi for fast and reliable communication
 - Typically owned and managed by a single organization
 
+### MAN
 
-### Metropolitan Area Network (MAN)
-
-A MAN connects multiple LANs across a city or metropolitan area.
+A **Metropolitan Area Network (MAN)** connects multiple LANs across a city or metropolitan area.
 
 - Covers a city or metropolitan region
 - Larger than a LAN but smaller than a WAN
@@ -64,9 +63,9 @@ Metropolitan area network architectures are commonly built upon the following la
   - Connects to WAN or other MANs for long-distance communication
 
 
-### Wide Area Network (WAN)
+### WAN
 
-A WAN connects networks across large geographic distances.
+A **Wide Area Network (WAN)** connects networks across large geographic distances.
 
 - Connects networks over cities, countries, or even continents
 - Often uses leased lines, MPLS, VPNs, or satellite links
@@ -109,13 +108,12 @@ Today, the OSI model and the TCP/IP model are used to describe network operation
 
 ## Ethernet
 
-Ethernet is the standard for wired networking.
+Ethernet is the standard for wired networking that defines how devices communicate over a local area network (LAN) using cables and switches.
 
 - Defines how data is sent over cables
 - Ensures devices can communicate reliably
 - Based on IEEE 802.3
 
-Ethernet makes sure different devices can talk to each other over the same network.
 
 ## Device Address
 
@@ -139,7 +137,7 @@ MAC addresses identify the physical device, while IP addresses help locate and c
 
 ## IP Addressing
 
-IP addresses identify devices on a network. IPv4 and IPv6 are the two main types, each with different capabilities
+IP addresses is a logical address that is used identify devices on a network. There are two main types:IPv4 and IPv6.
 
 | Feature           | IPv4                               | IPv6                                                      |
 | ----------------- | ---------------------------------- | --------------------------------------------------------- |

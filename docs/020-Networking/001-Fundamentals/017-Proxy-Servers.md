@@ -4,7 +4,7 @@ description: "Learn what proxy is"
 tags: 
 - Networking
 - Cybersecurity
-sidebar_position: 6
+sidebar_position: 17
 last_update:
   date: 1/16/2018
 ---

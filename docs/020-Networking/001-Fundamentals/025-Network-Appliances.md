@@ -4,7 +4,7 @@ description: "Network Appliances"
 tags: 
 - Networking
 - Cybersecurity
-sidebar_position: 50
+sidebar_position: 25
 last_update:
   date: 1/16/2018
 ---
