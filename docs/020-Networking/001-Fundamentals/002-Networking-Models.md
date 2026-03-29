@@ -47,7 +47,7 @@ Most network models have at least two layers:
 
 ## OSI Model
 
-The Open Systems Interconnection (OSI) Model is a conceptual framework for describing the communication structure of interconnected computer systems, comprising seven layers. 
+The Open Systems Interconnection (OSI) Model is a conceptual framework for describing the communication structure of interconnected computer systems, which comprises of seven layers. 
 
 | No. | OSI Layer        | Description / Notes                                                                                                                                                                                                     |
 | --- | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -59,21 +59,19 @@ The Open Systems Interconnection (OSI) Model is a conceptual framework for descr
 | 2   | **Data Link**    | <ul><li>Manages frames and error detection/correction</li><li>Controls access to physical medium and devices like switches</li></ul>                                                                                    |
 | 1   | **Physical**     | <ul><li>Converts data into electrical, optical, or radio signals</li><li>Hardware standards like cables, connectors, and signaling</li></ul>                                                                            |
 
-When data is transmitted over a network, it goes through a process of encapsulation and de-encapsulation:
+## Encapsulation and De-encapsulation
 
-- **Encapsulation** 
+When data is transmitted over a network, it goes through a process of encapsulation and de-encapsulation. 
 
-    - Data is wrapped with protocol information as it moves down the layers  
-    - Each layer adds its own header (and sometimes footer) 
-    - Headers/footers are used for routing, error checking, and delivery  
-    - Prepares the data for transmission over the physical medium  
+With **encapsulation**, data is wrapped with protocol information at each layer as it moves down the OSI model. Each layer adds its own header (and sometimes footer) to the data, which is used for routing, error checking, and delivery. The data is prepared for transmission over the physical medium.
 
-- **De-encapsulation**  
+- Data at application layer
+- Segment at transport layer
+- Packet at network layer
+- Frame at data link layer
+- Bits at physical layer
 
-    - Data is unpacked as it moves up the layers  
-    - Each layer removes its corresponding header/footer
-    - Information is processed after header/footer removal
-    - Original data is correctly delivered to receiving application
+**De-encapsulation** occurs at the receiving end, where the data is unpacked as it moves up the layers. Each layer removes its corresponding header/footer and processes the information before passing it to the next layer.  
 
 
 ![](/img/docs/security-encap-deencap-diagram.png)
