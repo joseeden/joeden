@@ -4,7 +4,7 @@ description: "Routers, switches, WAPs, and Firewalls"
 tags: 
 - Networking
 - Cybersecurity
-sidebar_position: 4
+sidebar_position: 15
 last_update:
   date: 1/16/2018
 ---
@@ -91,6 +91,26 @@ Routers are devices that direct data between different networks, ensuring it rea
 - They connect LANs to the internet or other networks
 - They determine the best path for data to travel across networks
 - They often include firewall and network management features
+
+### Router Planes 
+
+A router operates using three main functional planes:
+
+- **Management Plane**  
+  - Handles traffic destined for the router itself  
+  - Protocols: SSH, SNMP
+
+- **Control Plane**  
+  - Manages the network infrastructure and routing decisions  
+  - Processes data in software  
+  - Protocols: OSPF, BGP, EIGRP  
+
+- **Data Plane**  
+  - Forwards packets using information from the control plane  
+  - Responsible for high-speed packet switching
+  - Processes data in hardware  
+
+### Core Routers 
 
 **Core routers** act as the core of your network communication. They handle high-volume data packets and enable forwarding between the connected networks. They do not communicate with the external world, such as the internet.
 

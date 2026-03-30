@@ -178,7 +178,7 @@ This will set the name and email fields of Git's configuration. Commits made in 
 
 ## Branches
 
-Branches in Git let developers make changes safely without affecting the main codebase. Each repository has a default branch, usually "main" or "master." Changes in a branch don’t impact the main branch until merged.
+Branches in Git let developers make changes safely without affecting the main codebase. Each repository has a default branch, usually `main` or `master`. Changes in a branch don’t impact the `main` branch until merged.
 
 <div class='img-center'>
 

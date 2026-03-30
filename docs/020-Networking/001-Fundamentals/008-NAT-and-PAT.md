@@ -4,7 +4,7 @@ description: "NAT and PAT"
 tags: 
 - Networking
 - Cybersecurity
-sidebar_position: 10
+sidebar_position: 8
 last_update:
   date: 1/16/2018
 ---

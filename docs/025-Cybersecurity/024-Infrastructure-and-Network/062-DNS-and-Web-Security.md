@@ -18,7 +18,7 @@ The Domain Name System (DNS) is a hierarchical and decentralized naming system u
 
 It functions like a phonebook for the internet, allowing users to access websites using domain names instead of memorizing numerical IP addresses. 
 
-For more information, please see [Domain Name System (DNS).](/docs/020-Networking/001-Fundamentals/003-Domain-Name-System-DNS.md)
+For more information, please see [Domain Name System (DNS).](/docs/020-Networking/001-Fundamentals/020-Domain-Name-System-DNS.md)
 
 
 ### DNSSEC
