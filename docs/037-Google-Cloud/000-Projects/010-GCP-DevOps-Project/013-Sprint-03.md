@@ -14,8 +14,8 @@ last_update:
 
 Todo:
 
-✔️ Design Discussions
-✔️ Explore CICD options
+- ✔️ Design Discussions
+- ✔️ Explore CICD options
 
 
 ## Discussions

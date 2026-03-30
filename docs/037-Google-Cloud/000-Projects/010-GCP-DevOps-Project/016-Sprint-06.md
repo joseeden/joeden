@@ -14,11 +14,11 @@ last_update:
 
 Todo:
 
-✔️ Create the development branch
-✔️ Create the development Cloud Build YAML file
-✔️ Create the Cloud Build trigger for the development branch
-✔️ Create the development namespace 
-✔️ Push changes to development 
+- ✔️ Create the development branch
+- ✔️ Create the development Cloud Build YAML file
+- ✔️ Create the Cloud Build trigger for the development branch
+- ✔️ Create the development namespace 
+- ✔️ Push changes to development 
 
 
 ## Steps 

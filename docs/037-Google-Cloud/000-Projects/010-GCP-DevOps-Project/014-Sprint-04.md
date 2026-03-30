@@ -14,8 +14,8 @@ last_update:
 
 Todo:
 
-✔️ Connect Cloud Build to Github repository 
-✔️ Automate Docker image build process 
+- ✔️ Connect Cloud Build to Github repository 
+- ✔️ Automate Docker image build process 
 
 
 ## Notes
