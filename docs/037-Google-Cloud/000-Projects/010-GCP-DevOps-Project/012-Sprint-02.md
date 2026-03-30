@@ -13,8 +13,8 @@ last_update:
 
 Todo:
 
-✔️ Setting up a GKE cluster.
-✔️ Verify connection to the GKE cluster.
+- ✔️ Setting up a GKE cluster.
+- ✔️ Verify connection to the GKE cluster.
 
 
 ## Steps 

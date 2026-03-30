@@ -13,10 +13,10 @@ last_update:
 
 Todo:
 
-✔️ Create a Github Repo and clone it locally.
-✔️ Setup Github repo according to best practices.
-✔️ Code the application locally.
-✔️ Test the application locally.
+- ✔️ Create a Github Repo and clone it locally.
+- ✔️ Setup Github repo according to best practices.
+- ✔️ Code the application locally.
+- ✔️ Test the application locally.
 
 
 ## Steps 

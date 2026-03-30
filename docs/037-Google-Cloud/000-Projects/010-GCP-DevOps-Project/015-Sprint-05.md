@@ -14,11 +14,11 @@ last_update:
 
 Todo:
 
-✔️ Create the namespace in the GKE cluster
-✔️ Create the deployment manifest 
-✔️ Expose the application via endpoint
-✔️ Update the Cloud Build code for deployment
-✔️ Validate the deployment
+- ✔️ Create the namespace in the GKE cluster
+- ✔️ Create the deployment manifest 
+- ✔️ Expose the application via endpoint
+- ✔️ Update the Cloud Build code for deployment
+- ✔️ Validate the deployment
 
 
 ## Steps 
