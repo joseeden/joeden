@@ -1,5 +1,5 @@
 ---
-title: "Setting up the Lab"
+title: "Setting up"
 description: "Setting up the Lab"
 tags: 
 - Networking
@@ -8,6 +8,7 @@ tags:
 - Cloud
 - DevOps
 sidebar_position: 5
+sidebar_custom_props: { "labs": true }
 last_update:
   date: 5/25/2020
 ---

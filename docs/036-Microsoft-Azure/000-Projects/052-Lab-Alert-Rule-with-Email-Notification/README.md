@@ -1,6 +1,6 @@
 ---
-title: "Lab: Alert Rule with Email Notification"
-description: "Lab: Alert Rule with Email Notification"
+title: "Alert Rule with Email Notification"
+description: "Alert Rule with Email Notification"
 tags:
 - Cloud
 - Microsoft Azure
@@ -10,6 +10,7 @@ tags:
 - APM
 - Certifications
 sidebar_position: 52
+sidebar_custom_props: { "labs": true }
 last_update:
   date: 3/29/2021
 ---

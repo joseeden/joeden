@@ -1,6 +1,6 @@
 ---
-title: "Lab: Auto-Instrumentation"
-description: "Lab: Auto-Instrumentation"
+title: "Auto-Instrumentation"
+description: "Auto-Instrumentation"
 tags:
 - Cloud
 - Microsoft Azure
@@ -10,6 +10,7 @@ tags:
 - APM
 - Certifications
 sidebar_position: 57
+sidebar_custom_props: { "labs": true }
 # last_update:
 #   date: 9/11/2023
 ---

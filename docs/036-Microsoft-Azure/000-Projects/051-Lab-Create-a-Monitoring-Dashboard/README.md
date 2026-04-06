@@ -1,6 +1,6 @@
 ---
-title: "Lab: Create a Monitoring Dashboard"
-description: "Lab: Create a Monitoring Dashboard"
+title: "Create a Monitoring Dashboard"
+description: "Create a Monitoring Dashboard"
 tags:
 - Cloud
 - Microsoft Azure
@@ -10,6 +10,7 @@ tags:
 - APM
 - Certifications
 sidebar_position: 51
+sidebar_custom_props: { "labs": true }
 last_update:
   date: 3/29/2021
 ---

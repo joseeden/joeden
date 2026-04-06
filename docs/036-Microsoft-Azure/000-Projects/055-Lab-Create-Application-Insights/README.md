@@ -1,6 +1,6 @@
 ---
-title: "Lab: Create Application Insights"
-description: "Lab: Create Application Insights"
+title: "Create Application Insights"
+description: "Create Application Insights"
 tags:
 - Cloud
 - Microsoft Azure
@@ -10,6 +10,7 @@ tags:
 - APM
 - Certifications
 sidebar_position: 55
+sidebar_custom_props: { "labs": true }
 last_update:
   date: 9/3/2023
 ---

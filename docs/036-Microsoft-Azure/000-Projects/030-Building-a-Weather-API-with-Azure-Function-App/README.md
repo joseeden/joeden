@@ -8,6 +8,7 @@ tags:
 - API Design
 - API Management
 sidebar_position: 30
+sidebar_custom_props: { "labs": true }
 # last_update:
 #   date: 9/11/2023
 ---

@@ -1,6 +1,6 @@
 ---
-title: "Lab: Create a Log Analytics Workspace"
-description: "Lab: Create a Log Analytics Workspace"
+title: "Create a Log Analytics Workspace"
+description: "Create a Log Analytics Workspace"
 tags:
 - Cloud
 - Microsoft Azure
@@ -10,6 +10,7 @@ tags:
 - APM
 - Certifications
 sidebar_position: 56
+sidebar_custom_props: { "labs": true }
 last_update:
   date: 9/3/2023
 ---

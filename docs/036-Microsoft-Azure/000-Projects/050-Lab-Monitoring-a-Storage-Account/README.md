@@ -1,6 +1,6 @@
 ---
-title: "Lab: Monitoring a Storage Account"
-description: "Lab: Monitoring a Storage Account"
+title: "Monitoring a Storage Account"
+description: "Monitoring a Storage Account"
 tags:
 - Cloud
 - Microsoft Azure
@@ -10,6 +10,7 @@ tags:
 - APM
 - Certifications
 sidebar_position: 50
+sidebar_custom_props: { "labs": true }
 last_update:
   date: 3/29/2021
 ---
