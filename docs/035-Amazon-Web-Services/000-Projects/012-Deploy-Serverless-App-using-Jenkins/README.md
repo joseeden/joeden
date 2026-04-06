@@ -6,6 +6,7 @@ tags:
 - Jenkins
 - Labs
 sidebar_position: 12
+sidebar_custom_props: { "labs": true }
 last_update:
   date: 2/11/2024
 ---

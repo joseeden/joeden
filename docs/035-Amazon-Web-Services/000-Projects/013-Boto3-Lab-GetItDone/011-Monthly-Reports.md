@@ -5,6 +5,7 @@ tags:
 - Amazon Web Services
 - Labs
 sidebar_position: 11
+sidebar_custom_props: { "labs": true }
 last_update:
   date: 7/29/2020
 ---
