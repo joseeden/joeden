@@ -22,7 +22,7 @@ For more information, please see [Setting Up.](/docs/001-Personal-Notes/020-Home
 
 ## Network Configuration: v8 vs v9
 
-AlmaLinux 8 uses **legacy network-scripts**, while AlmaLinux 9 uses **NetworkManager*- with `.nmconnection` files. Because of this change, some familiar settings (like `BOOTPROTO`) no longer exist in EL9 systems.
+AlmaLinux 8 uses **legacy network-scripts**, while AlmaLinux 9 uses **NetworkManager** with `.nmconnection` files. Because of this change, some familiar settings (like `BOOTPROTO`) no longer exist in EL9 systems.
 
 **Configuration File Locations:**
 

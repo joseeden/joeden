@@ -115,6 +115,39 @@ Ethernet is the standard for wired networking that defines how devices communica
 - Based on IEEE 802.3
 
 
+
+Connecting devices within a LAN requires a collection of technologies. The most common LAN technology is Ethernet. Ethernet is not just a type of cable or protocol. It is a network standard published by the IEEE. Ethernet is a set of guidelines and rules that enable various network components to work together. These guidelines specify cabling and signaling at the physical and data link layers of the OSI model. For example, Ethernet standards recommend different types of cable and specify maximum segment lengths for each type.
+
+There are several types of media that the Ethernet protocol works with: coaxial cable, twisted copper pair cable, single mode and multimode ﬁber optics.
+
+Bits that are transmitted over an Ethernet LAN are organized into frames. The Ethernet frame format is shown in the figure.
+
+The figure shows the parts of the ethernet frame: preamble, S F D, destination mac address, source mac address, EtherType, payload, and F C S.
+
+### Ethernet Frame
+
+<div class='img-center'>
+
+![](/img/docs/ddevnet-ethernetframe.png)
+
+</div> 
+
+
+In Ethernet terminology, the container into which data is placed for transmission is called a frame. The frame contains header information, trailer information, and the actual data that is being transmitted.
+
+The ﬁgure above shows the most important ﬁelds of the Ethernet frame:
+
+- **Preamble** - This field consists of seven bytes of alternating 1s and 0s that are used to synchronize the signals of the communicating computers.
+- **Start of frame delimiter (SFD)** – This is a 1-byte field that marks the end of the preamble and indicates the beginning of the Ethernet frame.
+- **Destination MAC Address** - The destination address field is six bytes (48 bits) long and contains the address of the NIC on the local network to which the encapsulated data is being sent.
+- **Source MAC Address** - The source address field is six bytes (48 bits) long and contains the address of the NIC of the sending device.
+- **Type** - This field contains a code that identifies the network layer protocol. For example, if the network layer protocol is IPv4 then this field has a value of 0x0800 and for IPv6 it has a value of 0x086DD.
+- **Data** - This field contains the data that is received from the network layer on the transmitting computer. This data is then sent to the same protocol on the destination computer. If the data is shorter than the minimum length of 46 bytes, a string of extraneous bits is used to pad the field.
+- **Frame Check Sequence (FCS)** - The FCS field includes a checking mechanism to ensure that the packet of data has been transmitted without corruption.
+
+MAC addresses are used in transporting a frame across a shared local media. These are NIC-to-NIC communications on the same network. If the data (encapsulated IP packet) is for a device on another network, the destination MAC address will be that of the local router (default gateway). The Ethernet header and trailer will be de-encapsulated by the router. The packet will be encapsulated in a new Ethernet header and trailer using the MAC address of the router's egress interface as the source MAC address. If the next hop is another router, then the destination MAC address will be that of the next hop router. If the router is on the same network as the destination of the packet, the destination MAC address will be that of the end device.
+
+
 ## Device Address
 
 Devices use two main types of addresses to identify themselves on a network:
