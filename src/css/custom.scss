@@ -272,6 +272,33 @@ h3, h4 {
   }
 }
 
+/* Badge styles for sidebar categories */
+.badge {
+  border-radius: .25rem;
+  display: inline-block;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  margin-left: 5px;
+  padding: .25em .4em;
+  text-align: center;
+  vertical-align: initial;
+  color: #fff;
+}
+
+.badge.lab {
+  background-color: #6c757d;
+}
+
+.badge.beta {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.badge.explore {
+  background-color: #17a2b8;
+}
+
 /* Navbar styling */
 .navbar {
   display: flex;

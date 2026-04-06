@@ -84,6 +84,7 @@ export default function DocSidebarItemCategory({
   ...props
 }) {
   const { items, label, collapsible, className, href } = item;
+  console.log('Category item:', label, 'customProps:', item.customProps);
   const {
     docs: {
       sidebar: { autoCollapseCategories },
