@@ -66,7 +66,7 @@ Queues help organize and manage tasks smoothly when processing data or requests.
 - They can have one or multiple “workers” processing tasks
 - They allow easy scaling up or out when more work needs to be done
 
-For example, if one worker leaves, the queue still runs—just slower. Queues make systems more flexible and easier to scale both vertically (faster machines) and horizontally (more machines).
+For example, if one worker leaves, the queue still runs, just slower. Queues make systems more flexible and easier to scale both vertically (faster machines) and horizontally (more machines).
 
 Here’s a simple Python example:
 

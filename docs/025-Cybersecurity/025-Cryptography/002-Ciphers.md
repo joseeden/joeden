@@ -179,7 +179,7 @@ XOR is a basic operation that compares bits and returns 1 if they’re different
 
 - If bits are different, the result is 1
 - If bits are the same, the result is 0
-- Reversing is easy — XOR with the same key again restores the original
+- Reversing is easy, `XOR` with the same key again restores the original
 
 Example:
 

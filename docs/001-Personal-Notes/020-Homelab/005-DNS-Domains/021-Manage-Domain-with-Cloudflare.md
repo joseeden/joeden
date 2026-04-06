@@ -174,7 +174,7 @@ The registrar remains `Name.com`, you only change the domain's authoritative nam
 
     - **Full (recommended)** if your origin has a valid TLS certificate (self-signed is acceptable for Full but not Full (Strict))
     - **Full (Strict)** if your origin has a certificate issued by a trusted CA or Cloudflare Origin CA
-    - **Flexible** if your origin does not support HTTPS (not recommended — can cause redirect loops and security gaps)
+    - **Flexible** if your origin does not support HTTPS (not recommended, can cause redirect loops and security gaps)
     - 
 3. (Optional) Generate and install a Cloudflare Origin Certificate on your origin server and select **Full (Strict)** for the best security.
 

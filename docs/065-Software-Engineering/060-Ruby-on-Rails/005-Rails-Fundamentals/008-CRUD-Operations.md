@@ -88,7 +88,7 @@ If you generated the `articles` table, you can remove everything that scaffold c
     rails db:reset
     ```
 
-    ⚠️ **Warning**: `db:reset` drops and recreates the database — only do this in dev.
+    ⚠️ **Warning**: `db:reset` drops and recreates the database ➔ only do this in dev.
 
 
 ## `articles` Table Structure

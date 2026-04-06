@@ -141,7 +141,7 @@ You can safely ignore this for now and install Guest Additions manually later.
 
 Select the VM and click **Settings** to configure networking before installation. We need to use two adapters to separate internet access from internal OpenStack lab traffic.
 
-#### Adapter 1 — Bridged Adapter (Internet Access)
+#### Adapter 1 - Bridged Adapter (Internet Access)
 
 This adapter provides internet access and connects your VM directly to your host machine’s network.
 
@@ -166,7 +166,7 @@ This provides external connectivity for package installation and updates.
 </div>
 
 
-#### Adapter 2 — Host-Only 
+#### Adapter 2 - Host-Only 
 
 This adapter is dedicated to internal OpenStack networking and lab communication.
 

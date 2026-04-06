@@ -17,7 +17,7 @@ sidebar_custom_props: { "labs": true }
 
 ## Overview 
 
-This lab demonstrates how to monitor the performance and availability of a web application. By deploying the app with Application Insights auto-instrumentation enabled, you can automatically collect telemetry data, such as response times, dependencies, and errors—without adding manual instrumentation code.
+This lab demonstrates how to monitor the performance and availability of a web application. By deploying the app with Application Insights auto-instrumentation enabled, you can automatically collect telemetry data, such as response times, dependencies, and errors, without adding manual instrumentation code.
 
 ## Deploy the Web App 
 

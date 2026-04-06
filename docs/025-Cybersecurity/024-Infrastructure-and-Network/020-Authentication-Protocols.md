@@ -375,7 +375,7 @@ However, **RADIUS is more commonly chosen for wireless networks** and remote ser
 - It runs over TCP or SCTP, unlike RADIUS which uses UDP.
 - supports encryption, reliability, and better error handling.
 
-RADIUS had limitations (UDP, no built-in encryption, less scalable). Diameter was created to fix these issues and support modern networks—especially telecom and mobile systems. It's uses include:
+RADIUS had limitations (UDP, no built-in encryption, less scalable). Diameter was created to fix these issues and support modern networks, especially telecom and mobile systems. It's uses include:
 
 - 4G / LTE networks
 - 5G networks
