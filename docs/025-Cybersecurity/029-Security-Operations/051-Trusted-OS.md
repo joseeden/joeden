@@ -39,7 +39,7 @@ Trusted Operating Systems (TOS) incorporate advanced security features to ensure
   - Tracks and records system activities and access attempts.
   - Helps in detecting and investigating security incidents.
   - Accountability by maintaining logs of user actions and system events.
-  - For more information, please see [Audits and Assessments](/docs/025-Cybersecurity/028-Assessment-and-Testing/060-Security-Audits.md)
+  - For more information, please see [Security Audits](/docs/025-Cybersecurity/028-Assessment-and-Testing/060-Security-Audits.md)
 
 - **Role-based Access Control (RBAC)**
 

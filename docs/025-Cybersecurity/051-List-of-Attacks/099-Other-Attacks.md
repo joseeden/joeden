@@ -76,15 +76,15 @@ These are some mitigation steps that you can follow to prevent XSS attacks:
 
 - Validate input to prevent unexpected characters
 - Encode output before sending it to the browser
-- Use escaping functions to process special characters
-
-    ```bash
-    <, >, &, etc. 
-    ```
-
 - Conduct reviews and audits for unsafe code
 - Use scanning tools to find risky inputs
 - Train developers on safe validation and encoding
+
+Useful mitigation: Utilize escaping functions to process special characters
+
+```bash
+<, >, &, etc. 
+```
 
 For more information, please see [Input validation](/docs/025-Cybersecurity/027-Software-Security/010-Application-Security.md#input-validation)
 

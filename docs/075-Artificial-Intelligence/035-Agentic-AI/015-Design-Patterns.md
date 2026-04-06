@@ -204,7 +204,7 @@ Extensions use APIs to get real-time data. For example, a financial agent can qu
 
 **Model Context Protocol (MCP)** is an example of an extension tool protocol that standardizes how models connect to external tools and data sources. It defines a consistent interface for exposing capabilities such as APIs, databases, or file systems to an AI model.
 
-For more information, please see [Model Context Protocol](/docs/075-Artificial-Intelligence/035-AI-Agents/030-MCP-and-A2A.md)
+For more information, please see [Model Context Protocol](/docs/075-Artificial-Intelligence/035-Agentic-AI/030-MCP-and-A2A.md)
 
 ### Functions 
 
