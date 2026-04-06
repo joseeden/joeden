@@ -10,8 +10,6 @@ tags:
 - APM
 - Certifications
 sidebar_position: 16
-# sidebar_custom_props: 
-  lab: true
 # last_update:
 #   date: 9/11/2023
 ---
