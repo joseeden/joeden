@@ -8,7 +8,7 @@ sidebar_position: 23
 
 ## Overview
 
-This page provides the details for adding custom badges (`LAB`, `BETA`, `EXPLORE`) to individual sidebar page links in Docusaurus v3. These badges help visually distinguish different types of content pages in the documentation sidebar.
+This page provides the details for adding custom badges (`LAB`, `PROJECT`, `BETA`, `EXPLORE`) to individual sidebar page links in Docusaurus v3. These badges help visually distinguish different types of content pages in the documentation sidebar.
 
 ## Background
 
@@ -19,6 +19,7 @@ Badge descriptions:
 | Badge       | Description                               |
 | ----------- | ----------------------------------------- |
 | **LAB**     | Indicates lab or tutorial content         |
+| **PROJECT** | Indicates project-based content (larger scope than labs) |
 | **BETA**    | Indicates beta or experimental features   |
 | **EXPLORE** | Indicates exploratory or advanced content |
 
@@ -56,6 +57,7 @@ You can also combine multiple badges on the same page:
 ```yaml
 sidebar_custom_props:
   labs: true
+  projects: true
   beta: true
 ```
 

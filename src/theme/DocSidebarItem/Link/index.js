@@ -49,6 +49,11 @@ export default function DocSidebarItemLink({
             ) : (
               <span />
             )}
+            {item.customProps?.projects ? (
+              <span className="badge project">PROJECT</span>
+            ) : (
+              <span />
+            )}
             {item.customProps?.beta ? (
               <span className="badge beta">BETA</span>
             ) : (
