@@ -1,10 +1,10 @@
 ---
-title: "Pattern-Recognition"
-description: "Pattern-Recognition"
+title: "Pattern Recognition"
+description: "Pattern Recognition"
 tags: 
 - Amazon Web Services
 - Labs
-sidebar_position: 13
+sidebar_position: 20
 sidebar_custom_props: { "labs": true }
 last_update:
   date: 7/29/2020

@@ -1,12 +1,12 @@
 ---
-title: "Notes: Permissions"
+title: "Permissions"
 description: "Controlling access to S3 resources"
 tags: 
 - Linux
 - Amazon Web Services
 - Labs
 - Pandas
-sidebar_position: 22
+sidebar_position: 9
 last_update:
   date: 7/29/2020
 ---

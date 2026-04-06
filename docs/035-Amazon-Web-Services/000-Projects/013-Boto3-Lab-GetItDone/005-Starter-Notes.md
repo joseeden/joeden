@@ -1,9 +1,9 @@
 ---
-title: "Notes: Starter"
+title: "Starter Notes"
 tags: 
 - Amazon Web Services
 - Labs
-sidebar_position: 20
+sidebar_position: 5
 last_update:
   date: 7/29/2020
 ---

@@ -1,10 +1,10 @@
 ---
-title: "Notes: Recognition"
-description: "Notes: Recognition"
+title: "Rekognition"
+description: "Rekognition"
 tags: 
 - Amazon Web Services
 - Labs
-sidebar_position: 24
+sidebar_position: 16
 last_update:
   date: 7/29/2020
 ---
