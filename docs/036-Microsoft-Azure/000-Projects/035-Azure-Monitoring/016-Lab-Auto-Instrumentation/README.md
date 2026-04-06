@@ -9,8 +9,8 @@ tags:
 - Observability
 - APM
 - Certifications
-sidebar_position: 57
-sidebar_custom_props: { "labs": true }
+sidebar_position: 16
+# sidebar_custom_props: { "labs": true }
 # last_update:
 #   date: 9/11/2023
 ---
