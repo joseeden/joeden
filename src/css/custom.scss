@@ -293,7 +293,7 @@ h3, h4 {
 }
 
 .badge.project {
-  background-color: #4899ce;
+  background-color: #4899ce !important; 
   color: #dfecf6;
 }
 
@@ -302,9 +302,16 @@ h3, h4 {
 }
 
 /* Dark mode badge styles */
-[data-theme="dark"] .badge.lab {
-  background-color: #72d2cb;
-  color: #05192d;
+[data-theme="dark"] .badge {
+  &.lab {
+    background-color: #72d2cb;
+    color: #05192d;
+  }
+
+  &.project {
+    background-color: #4899ce !important;
+    color: #dfecf6;
+  }
 }
 
 /* Flex wrapper for sidebar links with badges */

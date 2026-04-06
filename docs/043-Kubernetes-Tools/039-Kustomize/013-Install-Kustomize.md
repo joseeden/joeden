@@ -9,6 +9,8 @@ tags:
 - Kubernetes
 - Kustomize
 sidebar_position: 12
+sidebar_custom_props: 
+  lab: true
 last_update:
   date: 4/19/2022
 ---

@@ -9,6 +9,8 @@ tags:
 - Kubernetes
 - Kustomize
 sidebar_position: 12
+sidebar_custom_props: 
+  lab: true
 last_update:
   date: 4/19/2022
 ---
@@ -45,7 +47,9 @@ If your `kubectl` version is v1.14 or higher, Kustomize is included and you're g
 
 ## Clone the Repository
 
-The sample codes can be found at joseeden/labs-kustomize. In your Killercoda terminal, clone the repository: 
+The sample codes can be found at `joseeden/labs-kustomize`. 
+
+In your Killercoda terminal, clone the repository: 
 
 ```bash
 git clone https://github.com/joseeden/labs-kustomize.git 
