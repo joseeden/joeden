@@ -1,0 +1,10 @@
+{
+  "label": "GCP DevOps",
+  "position": 20,
+  "link": {
+    "type": "generated-index"
+  },
+  "customProps": {
+    "projects": true
+  }
+}
