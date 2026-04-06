@@ -27,9 +27,9 @@ Occurs when a user is given access to a certain piece of data or certain areas o
 
 ### Accounting
 
-Often called **auditing**, it involves tracking of data, computer usage, and network resources.
+Often called [auditing](/docs/025-Cybersecurity/028-Assessment-and-Testing/060-Security-Audits.md), it involves tracking of data, computer usage, and network resources.
 
-  - Non-repudiation - proof that someone has taken an action
+- **Non-repudiation** - proof that someone has taken an action
 
 Types of auditing:
 

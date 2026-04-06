@@ -40,43 +40,53 @@ Automating the onboarding process of new employees can help:
 - Reduce likelihood errors. 
 - Consistent structured experience for every new employee.
 
-Areas that can be automated:
-
-- **User Provisioning**
-  - Ensure new employees have necessary access to systems and applications. 
-  - Sample automation process:
-    1. Create the user's account.
-    2. Assign the account with correct roles and access.
-    3. Send out proper notifications and confirmations.
-    4. Conduct continuous synchronization and updates.
-
-- **Provisioning Equipment**
-  - Automatically generate requests for necessary equipment (e.g., laptops, phones).
-  - Track the status of equipment orders and delivery.
-  - Sample automation process:
-    1. Requirements Analysis 
-    2. Resource Allocation 
-    3. Configuration and Customization 
-    4. Verification and Auditing
-    5. Gathering Feedback
-
-Other areas which can be automated:
+### Key Areas for Automation
 
 - **Scheduling Training**
+
   - Automate the scheduling of training sessions and orientations.
   - Send automated reminders and updates to new employees and trainers.
 
 - **Managing Access Rights**
+
   - Automate the setup of user accounts and access rights.
   - Ensure new employees have the correct permissions for their role.
 
 - **Distributing Various Checklists**
+
   - Automatically send onboarding checklists to new employees.
   - Track the completion of onboarding tasks and activities.
 
 - **Collecting Feedback**
+
   - Automated surveys, to collect feedback on the onboarding process.
   - Analyze feedback to improve future onboarding experiences.
+
+
+### User Provisioning
+
+Ensure new employees have necessary access to systems and applications. 
+
+Sample automation process:
+
+1. Create the user's account.
+2. Assign the account with correct roles and access.
+3. Send out proper notifications and confirmations.
+4. Conduct continuous synchronization and updates.
+
+### Equipment Provisioning
+
+Automatically generate requests for necessary equipment (e.g., laptops, phones).
+Track the status of equipment orders and delivery.
+
+Sample automation process:
+
+1. Requirements Analysis 
+2. Resource Allocation 
+3. Configuration and Customization 
+4. Verification and Auditing
+5. Gathering Feedback
+
 
 ## Security 
 

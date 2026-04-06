@@ -14,109 +14,57 @@ last_update:
 ---
 
 
-## Best practices
+## SSH Access Control
 
-1. **Limit SSH Access**
-   - Restrict SSH access to only those who require it for administrative purposes.
+Control who can connect and how they authenticate.
 
-        ```bash
-        ## /etc/ssh/sshd_config
-        AllowUsers username1 username2 
-        ```   
-   - Avoid using a common key pair for all users; instead, use individual user accounts.
+| Practice           | Key Points                                  | Example / Config                                  |
+| ------------------ | ------------------------------------------- | ------------------------------------------------- |
+| Limit SSH Access   | Only allow users who require admin access   | `/etc/ssh/sshd_config` → `AllowUsers user1 user2` |
+| Disable root login | Use sudo with non-root accounts             | `/etc/ssh/sshd_config` → `PermitRootLogin no`     |
+| IP whitelisting    | Restrict SSH access to specific IPs         | Firewall rules or Kubernetes Network Policies     |
+| Use bastion hosts  | Route external access through a jump server | N/A                                               |
 
-2. **Use SSH Keys for Authentication**
-   - Prefer public-key authentication over password authentication for increased security.
+## Authentication and Keys
 
-        ```bash
-        ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa 
-        ```
-   - Disable password authentication if possible.
+Ensure secure login methods and key management.
 
-        ```bash
-        ## /etc/ssh/sshd_config
-        PasswordAuthentication no
-        ```   
+| Practice                  | Key Points                            | Example / Config                                     |
+| ------------------------- | ------------------------------------- | ---------------------------------------------------- |
+| Use SSH keys              | Prefer public-key auth over passwords | `ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa`         |
+| Disable password auth     | Prevent password logins               | `/etc/ssh/sshd_config` → `PasswordAuthentication no` |
+| Key management            | Secure private keys; use strong keys  | `ssh-keygen -t ed25519`                              |
+| Rotate keys regularly     | Especially for admin accounts         | N/A                                                  |
+| Two-factor authentication | Add extra verification layer          | Google Authenticator or Duo integration              |
 
-   - Regularly rotate SSH key pairs, especially for administrative accounts.
+## SSH Configuration Hardening
 
-3. **Key Management**
-   - Properly manage and secure SSH private keys.
-   - Use tools like `ssh-keygen` to generate strong key pairs.
-   - Consider the use of hardware-based security tokens for storing SSH keys.
+Improve security through SSH server settings by editing `/etc/ssh/sshd_config`.
 
-4. **Disable Root Login**
-   - Disable direct root login via SSH.
+| Practice              | Key Points                      | Example / Config                 |
+| --------------------- | ------------------------------- | -------------------------------- |
+| Change default port   | Avoid port 22 to reduce attacks | `Port 2222`                      |
+| Use strong encryption | Disable weak algorithms         | `Ciphers aes256-gcm@openssh.com` |
+| SSH banner            | Display login policy messages   | `Banner /etc/issue`              |
+| Logging and auditing  | Monitor access and review logs  | `LogLevel VERBOSE`               |
 
-        ```bash
-        ## /etc/ssh/sshd_config 
-        PermitRootLogin  no
-        ```    
-   - Use non-root user accounts and sudo for administrative tasks.
+Additional: Implementing idle timeout.
 
-5. **Change Default SSH Port**
-   - Change the default SSH port (typically 22) to a non-standard port.
+```bash
+## /etc/ssh/sshd_config 
+ClientAliveInterval 300
+ClientAliveCountMax 0
+```   
 
-        ```bash
-        ## /etc/ssh/sshd_config 
-        Port 2222  # Use a port of your choice
-        ```    
+## Container and Host Security
 
-   - This can help mitigate automated attacks targeting the default port.
+Protect underlying systems and container environments.
 
-6. **IP Whitelisting**
-   - Limit SSH access to specific IP addresses or ranges using firewall rules or Kubernetes Network Policies.
-   - Whitelist only the necessary IP addresses for administrative access.
-
-7. **SSH Banner**
-   - Display a banner or message during SSH login to notify users of the system's policies.
-   - Modify the `/etc/issue` file or use the `Banner` directive in the SSH server configuration.
-
-8. **Use Strong Encryption**
-   - Configure SSH to use strong cryptographic algorithms for key exchange, encryption, and MAC.
-   - Disable weaker algorithms and protocols in the SSH server configuration.
-
-9. **Implement Idle Timeout**
-   - Set an idle timeout to automatically disconnect idle SSH sessions.
-
-        ```bash
-        ## /etc/ssh/sshd_config 
-        ClientAliveInterval 300
-        ClientAliveCountMax 0
-        ```       
-   - Reduces the risk of unauthorized access if a user forgets to log out.
-
-10. **Logging and Auditing**
-    - Enable SSH logging to monitor and audit SSH access.
-    - Regularly review SSH logs for suspicious activities.
-    - Integrate with system logging mechanisms.
-
-        ```bash
-        ## /etc/ssh/sshd_config 
-        LogLevel VERBOSE
-        ```    
-
-11. **Two-Factor Authentication (2FA)**
-    - Consider implementing two-factor authentication for SSH access.
-    - Tools like Google Authenticator or Duo Security can be integrated for additional authentication factors.
-
-12. **Regular Security Audits**
-    - Conduct regular security audits of SSH configurations and access controls.
-    - Test the effectiveness of access controls and authentication mechanisms.
-
-13. **Containerized SSH Access**
-    - Avoid SSH access directly into containers in a production environment.
-    - Prefer using Kubernetes-native tools like `kubectl exec` for accessing containers.
-
-14. **SSH Hardening for Hosts**
-    - Apply general host hardening practices to the Kubernetes nodes to ensure the underlying operating system is secure.
-    - This includes regular software updates, using minimal installations, and disabling unnecessary services.
-
-15. **Use Bastion Hosts**
-    - Employ a bastion host or jump server for accessing Kubernetes nodes.
-    - Limit direct SSH access to nodes from external networks.
-
-
- 
+| Practice                | Key Points                                                     | Example / Config |
+| ----------------------- | -------------------------------------------------------------- | ---------------- |
+| Avoid SSH in containers | Use native tools instead                                       | `kubectl exec`   |
+| Host hardening          | Keep nodes updated, minimal installs, disable unused services  | N/A              |
+| Regular security audits | Test access controls and configs                               | N/A              |
+| Use security tools      | Implement tools like Fail2Ban or OSSEC for intrusion detection | N/A              |
 
  
