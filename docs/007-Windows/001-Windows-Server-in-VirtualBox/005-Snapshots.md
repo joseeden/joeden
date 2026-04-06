@@ -4,6 +4,7 @@ description: "Running Snapshot in VirtualBox"
 tags: 
   - Windows Server
 sidebar_position: 5
+sidebar_custom_props: { "labs": true }
 last_update:
   date: 6/19/2021
 ---
