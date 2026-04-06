@@ -12,7 +12,7 @@ const projects: ProjectData[] = [
     description: "A responsive landing page for a fictional logistics company",
     url: `${baseUrl}/docs/Software-Engineering/Web-Development/Projects/Swiftlink/`, 
     image: require(`/img/docs/Screenshot-2025-04-18-144904.png`),
-    tags: ["Web Development", "HTML", "CSS", "JavaScript"],
+    tags: ["Web Development", "JavaScript"],
     // role: "Organizer",
   },  
   {
@@ -20,7 +20,7 @@ const projects: ProjectData[] = [
     description: "Landing page for a fictional electronics engineering company",
     url: `${baseUrl}/docs/Software-Engineering/Web-Development/Projects/Circuit-Minds/`, 
     image: require(`/img/docs/Screenshot-2025-03-28-195824.png`),
-    tags: ["Web Development", "HTML", "CSS", "JavaScript"],
+    tags: ["Web Development", "JavaScript"],
     // role: "Organizer",
   },  
   {
@@ -28,7 +28,7 @@ const projects: ProjectData[] = [
     description: "A simple landing page for a fictional running event",
     url: `${baseUrl}/docs/Software-Engineering/Web-Development/Projects/Just-Keep-Running/`, 
     image: require(`/img/docs/Screenshot-2025-03-24-075843.png`),
-    tags: ["Web Development", "HTML", "CSS", "JavaScript"],
+    tags: ["Web Development", "JavaScript"],
     // role: "Organizer",
   },  
   {
@@ -36,7 +36,7 @@ const projects: ProjectData[] = [
     description: "Automate code deployment with testing, packaging, and server deployment.",
     url: `${baseUrl}/docs/Version-Control-and-CICD/Jenkins-Labs/Single-Server-Deployment`, 
     image: require(`/img/docs/jenkins-flask.png`),
-    tags: ["DevOps", "Jenkins", "Docker", "Flask", "Python"],
+    tags: ["DevOps", "Containers", "Python"],
     // role: "Organizer",
   },  
   {
@@ -44,7 +44,7 @@ const projects: ProjectData[] = [
     description: "Using Jenkins to deploy a serverless application",
     url: `${baseUrl}/docs/Amazon-Web-Services/Projects/Deploy-Serverless-App-using-Jenkins/`, 
     image: require(`/img/docs/AWS-SAM.png`),
-    tags: ["DevOps", "Jenkins", "AWS", "Serverless"],
+    tags: ["DevOps", "AWS", "Serverless"],
     // role: "Organizer",
   },  
   {
@@ -52,7 +52,7 @@ const projects: ProjectData[] = [
     description: "Automated Jenkins installation and setup using Ansible.",
     url: `${baseUrl}/docs/Version-Control-and-CICD/Jenkins-Labs/Setup-Ansible-and-Jenkins/`, 
     image: require(`/img/docs/ansible-jenkins.png`),
-    tags: ["DevOps", "Jenkins", "Ansible"],
+    tags: ["DevOps", "Ansible"],
     // role: "Organizer",
   },  
   {
@@ -60,7 +60,7 @@ const projects: ProjectData[] = [
     description: "Setup Kong API Gateway along with ELK, Prometheus, Grafana, and other tools.",
     url: `${baseUrl}/docs/Software-Engineering/Kong-API-Gateway/Containerized-Kong-and-Other-Apps`, 
     image: require(`/img/docs/kong-elk-prom-graf.png`),
-    tags: ["DevOps", "Docker", "Prometheus", "Grafana"],
+    tags: ["DevOps", "Docker", "Observability"],
     // role: "Organizer",
   },  
   {
@@ -133,7 +133,7 @@ const projects: ProjectData[] = [
     description: "Build an ML pipeline for data preprocessing and model training.",
     url: "",
     image: require(`/img/docs/mlops.png`),
-    tags: ["Machine Learning", "MLOps", "DevOps", "Python"],
+    tags: ["Machine Learning", "MLOps", "Python"],
     // role: "Author",
   },
   {
