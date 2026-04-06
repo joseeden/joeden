@@ -11,6 +11,7 @@ export interface ProjectData {
   // role?: string;
   url: string;
   image: string;
+  tags?: string[];  
 }
 
 export const Project: FunctionComponent<ProjectData> = ({
@@ -19,6 +20,7 @@ export const Project: FunctionComponent<ProjectData> = ({
   url,
   // role,
   image,
+  tags,
 }) => {
   return (
     <div className={clsx("col col--6", styles.cardContainer)}>
@@ -35,6 +37,15 @@ export const Project: FunctionComponent<ProjectData> = ({
         {/* <div className="card__body"> */}
           <h2>{title}</h2>
           <p>{description}</p>
+          {tags && tags.length > 0 && (
+            <div className={styles.tags}>
+              {tags.map((tag) => (
+                <span key={tag} className={clsx("badge", styles.tag)}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
         <div className={clsx("card__footer", styles.card__footer)}>
         {/* <div className="card__footer" style={{ textAlign: "center" }}> */}
