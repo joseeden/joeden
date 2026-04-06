@@ -79,7 +79,7 @@ export const Project: FunctionComponent<ProjectData> = ({
           {tags && tags.length > 0 && (
             <div className={styles.tags}>
               {tags.map((tag) => (
-                <span key={tag} className={clsx("badge", styles.tag)}>
+                <span key={tag} className={styles.tag}>
                   {tag}
                 </span>
               ))}

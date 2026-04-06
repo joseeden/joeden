@@ -75,6 +75,22 @@
     }
   }
 
+  .tags {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+
+  .tag {
+    display: inline-block;
+    background-color: rgb(53, 120, 229);
+    color: white;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 0.7rem;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
   .card__footer {
     display: flex;
     justify-content: center;
