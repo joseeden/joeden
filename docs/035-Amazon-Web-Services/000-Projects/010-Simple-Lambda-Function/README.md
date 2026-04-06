@@ -6,6 +6,7 @@ tags:
 - Labs
 - Pandas
 sidebar_position: 1
+sidebar_custom_props: { "module": true }
 # last_update:
 #   date: 11/2/2024
 ---
