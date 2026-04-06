@@ -123,7 +123,7 @@ You can test ReAct in ChatGPT with a GPT-4 model. Suppose you want to asK:
     $2475.85
     ```
 
-2. Using ReAct-style prompting, we can use a prompt:-+
+2. Using ReAct-style prompting, we can use a prompt:
 
     ```bash
     Calculate the total cost if I buy 3 laptops at $899 each with a 15% discount and 8% sales tax. Think step by step.
