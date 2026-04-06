@@ -5,6 +5,6 @@
     "type": "generated-index"
   },
   "customProps": {
-    "projects": true
+    "project": true
   }
 }

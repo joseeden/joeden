@@ -4,7 +4,8 @@ description: "Running Windows 10 in VirtualBox"
 tags: 
   - Windows Server
 sidebar_position: 4
-sidebar_custom_props: { "labs": true }
+sidebar_custom_props: 
+  lab: true
 last_update:
   date: 6/19/2021
 ---

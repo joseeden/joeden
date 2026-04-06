@@ -8,7 +8,8 @@ tags:
 - Cloud
 - DevOps
 sidebar_position: 5
-sidebar_custom_props: { "labs": true }
+sidebar_custom_props: 
+  lab: true
 last_update:
   date: 5/25/2020
 ---

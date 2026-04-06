@@ -171,12 +171,12 @@ export default function DocSidebarItemCategory({
           <div className="category-wrapper">
             <div style={{ flex: "1" }}>{label}</div>
             <div>
-              {item.customProps?.labs ? (
+              {item.customProps?.lab ? (
                 <span className="badge lab">LAB</span>
               ) : (
                 <span />
               )}
-              {item.customProps?.projects ? (
+              {item.customProps?.project ? (
                 <span className="badge project">PROJECT</span>
               ) : (
                 <span />
