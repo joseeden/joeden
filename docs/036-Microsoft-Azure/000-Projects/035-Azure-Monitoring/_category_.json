@@ -1,0 +1,10 @@
+{
+  "label": "Azure Monitoring",
+  "position": 35,
+  "link": {
+    "type": "generated-index"
+  },
+  "customProps": {
+    "labs": true
+  }
+}
