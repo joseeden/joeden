@@ -5,7 +5,6 @@ import {isActiveSidebarItem} from '@docusaurus/plugin-content-docs/client';
 import Link from '@docusaurus/Link';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 import IconExternalLink from '@theme/Icon/ExternalLink';
-import styles from './styles.module.css';
 
 export default function DocSidebarItemLink({
   item,
@@ -31,7 +30,6 @@ export default function DocSidebarItemLink({
       <Link
         className={clsx(
           'menu__link',
-          !isInternalLink && styles.menuExternalLink,
           {
             'menu__link--active': isActive,
           },
