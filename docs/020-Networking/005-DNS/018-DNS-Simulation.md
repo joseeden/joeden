@@ -1,6 +1,6 @@
 ---
-title: "DNS Lab"
-description: "DNS Lab"
+title: "DNS Simulation"
+description: "DNS Simulation"
 tags: 
 - Networking
 - Cybersecurity
