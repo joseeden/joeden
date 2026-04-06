@@ -272,7 +272,7 @@ h3, h4 {
   }
 }
 
-/* Badge styles for sidebar categories */
+/* Badge styles for sidebar items */
 .badge {
   border-radius: .25rem;
   display: inline-block;
@@ -297,6 +297,13 @@ h3, h4 {
 
 .badge.explore {
   background-color: #17a2b8;
+}
+
+/* Flex wrapper for sidebar links with badges */
+.link-wrapper, .category-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 /* Navbar styling */
