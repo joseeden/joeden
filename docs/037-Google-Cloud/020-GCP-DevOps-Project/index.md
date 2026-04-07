@@ -1,5 +1,6 @@
 ---
 title: "GCP DevOps Project"
+id: gcp-devops-project
 tags: 
 - Google Cloud
 - DevOps

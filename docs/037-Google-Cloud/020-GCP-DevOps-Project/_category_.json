@@ -3,7 +3,7 @@
   "position": 20,
   "link": {
     "type": "doc",
-    "id": "037-Google-Cloud/020-GCP-DevOps-Project/index"
+    "id": "gcp-devops-project"
   },
   "customProps": {
     "project": true
