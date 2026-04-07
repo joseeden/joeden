@@ -21,6 +21,22 @@ The projects page initially displayed project cards in a simple grid layout. The
 - **Layout**: Implement a 2-column responsive design
 - **Styling**: Clean, borderless design with consistent theming
 
+The category filter is intentionally available only on laptop and larger screen sizes. 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-04-07225342.png)
+
+</div>
+
+On small mobile screens, the categories are hidden from display so the project cards can use the full width and remain readable.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-04-07225643.png)
+
+</div>
+
 ## Implementation Steps
 
 ### 1. Add Tags to Project Cards
@@ -125,7 +141,7 @@ Implement toggleable category filters in left column.
 - Styled checkboxes and labels with consistent spacing
 - Added dark mode support
 
-Also Created toggleable list with checkboxes for:
+Also created toggleable list with checkboxes for:
 
 - DevOps
 - Security
@@ -133,6 +149,27 @@ Also Created toggleable list with checkboxes for:
 - Data Analysis
 - Data Engineering
 - Machine Learning
+- Others
+
+Files modified:
+
+- `src/pages/projects.tsx`
+- `src/components/projects/Project.module.scss`
+
+### 9. Hide Column 1 on Small Screens
+
+Prioritize project card readability on smaller mobile screens.
+
+- Hid column 1 entirely on small screen sizes
+- Kept the `Projects` header visible with a smaller font size
+- Allowed only column 2 to remain visible on mobile
+- Expanded project cards to use the full available width
+- Limited the category filter experience to laptop and larger screen sizes
+
+Reason:
+
+- On narrow screens, showing both the categories sidebar and the project cards reduced the usable width too much
+- Hiding the filter sidebar ensures project cards remain complete and readable
 
 Files modified:
 
@@ -148,10 +185,12 @@ projects.tsx
 ├── pageContainer (max-width: 1536px)
     ├── leftColumn
     │   ├── categoriesHeader ("CATEGORIES")
-    │   └── categoriesList (checkboxes)
+    │   └── categoriesList (checkboxes, hidden on small screens)
     └── rightColumn
-        ├── headerBox ("Projects" title)
         └── cardsList (flex-wrap grid of Project components)
+
+Above pageContainer
+└── headerBox ("Projects" title)
 
 Project.tsx
 ├── cardContainer
@@ -168,7 +207,7 @@ Project.tsx
 ### CSS Architecture
 
 - **Layout**: CSS Grid for page, Flexbox for cards and sidebar
-- **Responsive**: Mobile-first with breakpoints at 960px
+- **Responsive**: Mobile-first with breakpoints at 960px and 600px
 - **Theming**: Light/dark mode support with CSS custom properties
 - **Spacing**: Consistent margins and padding using rem units
 - **Colors**: Gray color palette for subtle, professional appearance
@@ -195,6 +234,7 @@ Project.tsx
 | Layout responsiveness   | 2-column layout needed mobile fallback          | Added media queries to collapse to a single column on small screens |
 | Tag positioning         | Tags needed proper spacing from content         | Added margins and flexbox for consistent alignment                  |
 | Dark mode consistency   | All new elements needed dark theme variants     | Extended dark mode CSS with matching color variables                |
+| Mobile card readability | Sidebar reduced card width on phones            | Hid column 1 at small widths so project cards could render fully    |
 
 ## Future Enhancements
 
@@ -202,3 +242,5 @@ Project.tsx
 - **Tag Management**: Dynamic tag generation from project data
 - **Animation**: Add smooth transitions for filter interactions
 - **Search**: Add text search alongside category filters
+
+
