@@ -187,14 +187,15 @@ export default function Projects(): JSX.Element {
                 </div>
               </div>
             </div>
-          <div className={styles.rightColumn}>
-            <div className={styles.headerBox}>
-              <h1 className={styles.projectsTitle}>{title}</h1>
-            </div>
-            <div className={styles.cardsList}>
-              {projects.map((project) => (
-                <Project key={project.title} {...project} />
-              ))}
+            <div className={styles.rightColumn}>
+              <div className={styles.headerBox}>
+                <h1 className={styles.projectsTitle}>{title}</h1>
+              </div>
+              <div className={styles.cardsList}>
+                {projects.map((project) => (
+                  <Project key={project.title} {...project} />
+                ))}
+              </div>
             </div>
           </div>
         </div>
