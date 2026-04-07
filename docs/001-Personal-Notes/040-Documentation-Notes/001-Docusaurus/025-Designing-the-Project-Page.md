@@ -1,0 +1,204 @@
+---
+title: Designing the Project Page
+description: "Designing and implementing the projects page with tags, filtering, and responsive layout"
+tags:
+- Docusaurus
+sidebar_position: 25
+---
+
+## Overview
+
+This page documents the complete design and implementation process for the Docusaurus projects page, including adding tags to project cards, implementing a 2-column layout with categories filter sidebar, and comprehensive styling for both light and dark modes. 
+
+Note: The process involved multiple iterations to achieve the functional design.
+
+## Background
+
+The projects page initially displayed project cards in a simple grid layout. The goal was to enhance it with:
+
+- **Tags**: Categorize projects by technology and type
+- **Filtering**: Add a sidebar for category-based filtering
+- **Layout**: Implement a 2-column responsive design
+- **Styling**: Clean, borderless design with consistent theming
+
+## Implementation Steps
+
+### 1. Add Tags to Project Cards
+
+Enable categorization of projects with visible tags.
+
+- Updated `ProjectData` interface to include optional `tags` array
+- Modified `Project` component to render tags below project description
+- Added initial tag data to projects in `projects.tsx`
+
+Files modified:
+
+- `src/components/projects/Project.tsx`
+- `src/pages/projects.tsx`
+
+### 2. Style Project Tags
+
+Create visually appealing tag styling.
+
+- Added `.tags` and `.tag` CSS classes
+- Set tag background to blue (`#3578e5`) with white text
+- Added margins for spacing between tags and from content
+- Implemented dark mode variants
+
+Files modified:
+
+- `src/components/projects/Project.module.scss`
+
+### 3. Adjust Page and Tag Spacing
+
+Improve visual hierarchy and spacing.
+
+- Added 5rem top margin to `.projectsPage`
+- Increased bottom margin on `.projectsTitle` to 5rem
+- Added 8px right margin to tags for horizontal spacing
+
+Files modified:
+
+- `src/components/projects/Project.module.scss`
+
+### 4. Restructure Page Layout
+
+Implement 2-column grid layout with categories sidebar.
+
+- Wrapped page content in `.pageContainer` with `max-width: 1536px`
+- Created 2-column CSS grid (1fr 3fr)
+- Moved header and cards list to right column
+- Added placeholder left column for future sidebar
+
+Files modified:
+
+- `src/pages/projects.tsx`
+- `src/components/projects/Project.module.scss`
+
+### 5. Experiment with Card Layout
+
+Test side-by-side card layout (later reverted).
+
+- Converted cards to grid layout with image and content side-by-side
+- Updated card dimensions and spacing
+- Added responsive fallback for mobile
+
+Files modified:
+
+- `src/components/projects/Project.tsx`
+- `src/components/projects/Project.module.scss`
+
+### 6. Revert to Original Card Layout
+
+Return to vertical card layout for better content flow.
+
+- Reverted cards to stacked image/body/footer layout
+- Restored flex-wrap grid for cards
+- Maintained 2-column page structure
+
+Files modified:
+
+- `src/components/projects/Project.tsx`
+- `src/components/projects/Project.module.scss`
+
+### 7. Refine Card Styling
+
+Achieve clean, borderless design.
+
+- Changed card background to white
+- Removed card borders
+- Removed button borders in footer
+- Updated tag colors to subtle gray (`#eeeef1` background, `#696f83` text)
+- Set "See Project" link color to `#696f83`
+- Added button icon back with matching color
+
+Files modified:
+
+- `src/components/projects/Project.tsx`
+- `src/components/projects/Project.module.scss`
+
+### 8. Add Categories Filter Sidebar
+
+Implement toggleable category filters in left column.
+
+- Added "CATEGORIES" header with padding/margins
+- Styled checkboxes and labels with consistent spacing
+- Added dark mode support
+
+Also Created toggleable list with checkboxes for:
+
+- DevOps
+- Security
+- Web Development
+- Data Analysis
+- Data Engineering
+- Machine Learning
+
+Files modified:
+
+- `src/pages/projects.tsx`
+- `src/components/projects/Project.module.scss`
+
+## Technical Details
+
+### Component Structure
+
+```
+projects.tsx
+├── pageContainer (max-width: 1536px)
+    ├── leftColumn
+    │   ├── categoriesHeader ("CATEGORIES")
+    │   └── categoriesList (checkboxes)
+    └── rightColumn
+        ├── headerBox ("Projects" title)
+        └── cardsList (flex-wrap grid of Project components)
+
+Project.tsx
+├── cardContainer
+    └── card
+        ├── image
+        ├── card__body
+        │   ├── title
+        │   ├── description
+        │   └── tags (optional)
+        └── card__footer
+            └── link with icon ("See Project")
+```
+
+### CSS Architecture
+
+- **Layout**: CSS Grid for page, Flexbox for cards and sidebar
+- **Responsive**: Mobile-first with breakpoints at 960px
+- **Theming**: Light/dark mode support with CSS custom properties
+- **Spacing**: Consistent margins and padding using rem units
+- **Colors**: Gray color palette for subtle, professional appearance
+
+### Key CSS Classes
+
+| Class             | Purpose                                                 |
+| ----------------- | ------------------------------------------------------- |
+| `.pageContainer`  | Main 2-column grid container                            |
+| `.leftColumn`     | Sidebar container                                       |
+| `.rightColumn`    | Content area                                            |
+| `.cardsList`      | Flex-wrap grid for project cards                        |
+| `.card`           | Individual project card (borderless, white background)  |
+| `.tags`           | Container for tag elements                              |
+| `.tag`            | Individual tag styling (gray background)                |             
+| `.categoriesList` | Sidebar filter list                                     |
+| `.categoryItem`   | Individual filter item with checkbox and label          |
+
+## Challenges and Solutions
+
+| Challenge               | Problem                                         | Solution                                                            |
+| ----------------------- | ----------------------------------------------- | ------------------------------------------------------------------- |
+| Import path issues      | Docusaurus v3 API changes caused build failures | Updated imports and component structure for compatibility           |
+| Layout responsiveness   | 2-column layout needed mobile fallback          | Added media queries to collapse to a single column on small screens |
+| Tag positioning         | Tags needed proper spacing from content         | Added margins and flexbox for consistent alignment                  |
+| Dark mode consistency   | All new elements needed dark theme variants     | Extended dark mode CSS with matching color variables                |
+
+## Future Enhancements
+
+- **Filter Functionality**: Connect checkboxes to React state for actual filtering
+- **Tag Management**: Dynamic tag generation from project data
+- **Animation**: Add smooth transitions for filter interactions
+- **Search**: Add text search alongside category filters
