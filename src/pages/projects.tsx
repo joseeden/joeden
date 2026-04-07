@@ -190,6 +190,7 @@ export default function Projects(): JSX.Element {
                 </div>
               </div>
             </div>
+            <div className={styles.rightColumn}>
               <div className={styles.cardsList}>
                 {projects.map((project) => (
                   <Project key={project.title} {...project} />
