@@ -65,7 +65,6 @@ const projects: ProjectData[] = [
   },  
   {
     title: "A Network Analysis of Game of Thrones",
-    description: "Analyze co-occurrence network of the characters in the Game of Thrones books",
     description: "Analyze co-occurrence networks of characters in Game of Thrones",
     url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/065-Software-Engineering/021-Jupyter-Notebooks/020-A-Network-Analysis-of-Game-of-Thrones/network-analysis-on-game-of-thrones.ipynb",
     image: require(`/img/docs/got_network.jpeg`),
@@ -74,7 +73,6 @@ const projects: ProjectData[] = [
   },
   {
     title: "A New Era of Data Analysis in Baseball",
-    description: "Use MLB's Statcast data to compare the home runs of two of baseball's brightest stars.",
     description: "Use Statcast data to compare home runs of two of MLB's brightest stars.",
     url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/065-Software-Engineering/021-Jupyter-Notebooks/021-A-New-Era-of-Data-Analysis-in-Baseball/A-New-Era-of-Data-Analysis-in-Baseball.ipynb",
     image: require(`/img/docs/stanton_wide.jpg`),
@@ -187,6 +185,10 @@ export default function Projects(): JSX.Element {
                   <div className={styles.categoryItem}>
                     <input type="checkbox" id="ml" className={styles.categoryToggle} />
                     <label htmlFor="ml" className={styles.categoryLabel}>Machine Learning</label>
+                  </div>
+                  <div className={styles.categoryItem}>
+                    <input type="checkbox" id="ai" className={styles.categoryToggle} />
+                    <label htmlFor="ai" className={styles.categoryLabel}>Artificial Intelligence</label>
                   </div>
                 </div>
               </div>
