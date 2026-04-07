@@ -10,7 +10,16 @@ last_update:
 ---
 
 
+## Overview 
 
+This project walks through how to build an end-to-end GCP DevOps pipeline, from application development and source control to infrastructure setup and CI/CD automation.
+
+- Manage code with GitHub
+- Build a Python Flask app
+- Provision a GKE cluster
+- Set up Cloud Build CI/CD triggers
+- Improve the path from development to production
+- Practice sprint planning and review using common industry terms
 
 
 ## Pre-requisites 
@@ -31,6 +40,7 @@ last_update:
 
 This project will be broken down into seven sprints. 
 
+- [Overview](#overview)
 - [Pre-requisites](#pre-requisites)
 - [Sprints](#sprints)
 - [Reference](#reference)
