@@ -1,5 +1,6 @@
 ---
-title: "Storage Comparison"
+title: "AWS Storage"
+id : aws-storage-overview
 description: "Comparing AWS Storage Options"
 tags: 
 - Cloud
@@ -20,7 +21,6 @@ To see the complete documentation, please go to: [AWS documentation](https://doc
 :::
 
 
-## Storage Comparison 
 
 AWS Storage | Description | 
 ---------|----------|

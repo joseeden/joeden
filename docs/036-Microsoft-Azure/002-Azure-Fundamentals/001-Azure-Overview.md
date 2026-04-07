@@ -1,5 +1,6 @@
 ---
 title: "Microsoft Azure Overview"
+id: azure-fundamentals-overview
 description: "A 10,000 ft view of Microsoft Azure"
 tags:
 - Cloud

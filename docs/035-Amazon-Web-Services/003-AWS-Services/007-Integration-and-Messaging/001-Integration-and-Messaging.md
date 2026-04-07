@@ -1,5 +1,6 @@
 ---
 title: "AWS Integration and Messaging"
+id: aws-integration-messaging-overview
 description: "Using CLI and SDK"
 tags: 
 - Cloud

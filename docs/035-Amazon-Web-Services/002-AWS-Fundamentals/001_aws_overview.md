@@ -1,5 +1,6 @@
 ---
-title: "AWS Overview"
+title: "AWS Fundamentals"
+id: aws-fundamentals-overview
 description: "First things you need to know"
 tags: 
 - Cloud

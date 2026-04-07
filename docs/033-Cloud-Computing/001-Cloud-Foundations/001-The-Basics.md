@@ -1,5 +1,6 @@
 ---
-title: "The Basics"
+title: "Cloud Foundations"
+id: cloud-foundations-overview
 tags:
 - Cloud
 - DevOps

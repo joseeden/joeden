@@ -1,5 +1,6 @@
 ---
 title: "AWS Compute"
+id: aws-compute
 description: "Basics of AWS Compute"
 tags: 
 - Cloud

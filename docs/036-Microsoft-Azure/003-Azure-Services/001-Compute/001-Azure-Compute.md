@@ -1,5 +1,6 @@
 ---
 title: "Azure Compute"
+id: azure-compute-overview
 description: "Virtual machines in Azure"
 tags:
 - Cloud

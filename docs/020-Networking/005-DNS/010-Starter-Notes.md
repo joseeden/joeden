@@ -1,5 +1,6 @@
 ---
 title: "Starter Notes"
+id: dns-starter-notes
 description: "Starter Notes"
 tags: 
 - Networking
