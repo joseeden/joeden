@@ -176,6 +176,32 @@ Files modified:
 - `src/pages/projects.tsx`
 - `src/components/projects/Project.module.scss`
 
+### 10. Add Category Filtering Logic
+
+Connect the category checkboxes to the displayed project cards.
+
+- Added a categories configuration array in `projects.tsx`
+- Added React state to track selected categories
+- Wired each checkbox to controlled state using `checked` and `onChange`
+- Implemented multi-select filtering so multiple categories can be active at the same time
+- Kept all projects visible when no category is selected
+- Filtered cards by matching selected category labels against each project's `tags`
+
+Filtering behavior:
+
+- If no category is selected, all project cards are displayed
+- If one category is selected, only cards with a matching tag are displayed
+- If multiple categories are selected, a card is displayed when it matches at least one selected category
+
+Example:
+
+- Selecting `DevOps` shows only cards tagged with `DevOps`
+- Selecting `DevOps` and `Security` shows cards tagged with either `DevOps` or `Security`
+
+Files modified:
+
+- `src/pages/projects.tsx`
+
 ## Technical Details
 
 ### Component Structure
@@ -202,6 +228,12 @@ Project.tsx
         │   └── tags (optional)
         └── card__footer
             └── link with icon ("See Project")
+
+Filtering logic in projects.tsx
+├── categories array
+├── selectedCategories state
+├── handleCategoryToggle()
+└── filteredProjects derived list
 ```
 
 ### CSS Architecture
@@ -211,6 +243,14 @@ Project.tsx
 - **Theming**: Light/dark mode support with CSS custom properties
 - **Spacing**: Consistent margins and padding using rem units
 - **Colors**: Gray color palette for subtle, professional appearance
+
+### Filtering Logic
+
+- **State Management**: `useState` stores the currently selected category labels
+- **Controlled Inputs**: Each checkbox reflects state through the `checked` prop
+- **Toggle Handling**: Selecting a category adds it to the active list; selecting it again removes it
+- **Matching Rule**: Filtering uses project tags and displays a card when any selected category matches one of its tags
+- **Fallback Rule**: When the selected category list is empty, the full project list is rendered
 
 ### Key CSS Classes
 
@@ -238,9 +278,9 @@ Project.tsx
 
 ## Future Enhancements
 
-- **Filter Functionality**: Connect checkboxes to React state for actual filtering
 - **Tag Management**: Dynamic tag generation from project data
 - **Animation**: Add smooth transitions for filter interactions
 - **Search**: Add text search alongside category filters
+- **Empty State**: Add a message for filter combinations with no matching projects
 
 
