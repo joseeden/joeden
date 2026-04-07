@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "@theme/Layout";
 import styles from "../components/projects/Project.module.scss";
 import { Project, ProjectData } from "../components/projects/Project";
@@ -147,7 +147,36 @@ const projects: ProjectData[] = [
 
 const title = "Projects";
 
+const categories = [
+  { id: "devops", label: "DevOps" },
+  { id: "security", label: "Security" },
+  { id: "webdev", label: "Web Development" },
+  { id: "dataanalysis", label: "Data Analysis" },
+  { id: "dataengineering", label: "Data Engineering" },
+  { id: "ml", label: "Machine Learning" },
+  { id: "ai", label: "Artificial Intelligence" },
+];
+
 export default function Projects(): JSX.Element {
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+
+  const handleCategoryToggle = (category: string) => {
+    setSelectedCategories((currentCategories) => {
+      if (currentCategories.includes(category)) {
+        return currentCategories.filter((item) => item !== category);
+      }
+
+      return [...currentCategories, category];
+    });
+  };
+
+  const filteredProjects =
+    selectedCategories.length === 0
+      ? projects
+      : projects.filter((project) =>
+          project.tags?.some((tag) => selectedCategories.includes(tag)),
+        );
+
   return (
     <Layout title={title}>
       <main className={`${styles.projectsPage} margin-vert--lg`}>
@@ -162,40 +191,26 @@ export default function Projects(): JSX.Element {
                   CATEGORIES
                 </div>
                 <div className={styles.categoriesList}>
-                  <div className={styles.categoryItem}>
-                    <input type="checkbox" id="devops" className={styles.categoryToggle} />
-                    <label htmlFor="devops" className={styles.categoryLabel}>DevOps</label>
-                  </div>
-                  <div className={styles.categoryItem}>
-                    <input type="checkbox" id="security" className={styles.categoryToggle} />
-                    <label htmlFor="security" className={styles.categoryLabel}>Security</label>
-                  </div>
-                  <div className={styles.categoryItem}>
-                    <input type="checkbox" id="webdev" className={styles.categoryToggle} />
-                    <label htmlFor="webdev" className={styles.categoryLabel}>Web Development</label>
-                  </div>
-                  <div className={styles.categoryItem}>
-                    <input type="checkbox" id="dataanalysis" className={styles.categoryToggle} />
-                    <label htmlFor="dataanalysis" className={styles.categoryLabel}>Data Analysis</label>
-                  </div>
-                  <div className={styles.categoryItem}>
-                    <input type="checkbox" id="dataengineering" className={styles.categoryToggle} />
-                    <label htmlFor="dataengineering" className={styles.categoryLabel}>Data Engineering</label>
-                  </div>
-                  <div className={styles.categoryItem}>
-                    <input type="checkbox" id="ml" className={styles.categoryToggle} />
-                    <label htmlFor="ml" className={styles.categoryLabel}>Machine Learning</label>
-                  </div>
-                  <div className={styles.categoryItem}>
-                    <input type="checkbox" id="ai" className={styles.categoryToggle} />
-                    <label htmlFor="ai" className={styles.categoryLabel}>Artificial Intelligence</label>
-                  </div>
+                  {categories.map((category) => (
+                    <div key={category.id} className={styles.categoryItem}>
+                      <input
+                        type="checkbox"
+                        id={category.id}
+                        className={styles.categoryToggle}
+                        checked={selectedCategories.includes(category.label)}
+                        onChange={() => handleCategoryToggle(category.label)}
+                      />
+                      <label htmlFor={category.id} className={styles.categoryLabel}>
+                        {category.label}
+                      </label>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
             <div className={styles.rightColumn}>
               <div className={styles.cardsList}>
-                {projects.map((project) => (
+                {filteredProjects.map((project) => (
                   <Project key={project.title} {...project} />
                 ))}
               </div>
