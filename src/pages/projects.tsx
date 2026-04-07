@@ -152,38 +152,41 @@ export default function Projects(): JSX.Element {
   return (
     <Layout title={title}>
       <main className={`${styles.projectsPage} margin-vert--lg`}>
-        <div className={styles.pageContainer}>
-          <div className={styles.leftColumn}>
-            <div className={styles.categoriesHeader}>
-              CATEGORIES
+        <div className={styles.pageWrapper}>
+          <div className={styles.pageContainer}>
+            <div className={styles.leftColumn}>
+              <div className={styles.sidebarContainer}>
+                <div className={styles.categoriesHeader}>
+                  CATEGORIES
+                </div>
+                <div className={styles.categoriesList}>
+                  <div className={styles.categoryItem}>
+                    <input type="checkbox" id="devops" className={styles.categoryToggle} />
+                    <label htmlFor="devops" className={styles.categoryLabel}>DevOps</label>
+                  </div>
+                  <div className={styles.categoryItem}>
+                    <input type="checkbox" id="security" className={styles.categoryToggle} />
+                    <label htmlFor="security" className={styles.categoryLabel}>Security</label>
+                  </div>
+                  <div className={styles.categoryItem}>
+                    <input type="checkbox" id="webdev" className={styles.categoryToggle} />
+                    <label htmlFor="webdev" className={styles.categoryLabel}>Web Development</label>
+                  </div>
+                  <div className={styles.categoryItem}>
+                    <input type="checkbox" id="dataanalysis" className={styles.categoryToggle} />
+                    <label htmlFor="dataanalysis" className={styles.categoryLabel}>Data Analysis</label>
+                  </div>
+                  <div className={styles.categoryItem}>
+                    <input type="checkbox" id="dataengineering" className={styles.categoryToggle} />
+                    <label htmlFor="dataengineering" className={styles.categoryLabel}>Data Engineering</label>
+                  </div>
+                  <div className={styles.categoryItem}>
+                    <input type="checkbox" id="ml" className={styles.categoryToggle} />
+                    <label htmlFor="ml" className={styles.categoryLabel}>Machine Learning</label>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className={styles.categoriesList}>
-              <div className={styles.categoryItem}>
-                <input type="checkbox" id="devops" className={styles.categoryToggle} />
-                <label htmlFor="devops" className={styles.categoryLabel}>DevOps</label>
-              </div>
-              <div className={styles.categoryItem}>
-                <input type="checkbox" id="security" className={styles.categoryToggle} />
-                <label htmlFor="security" className={styles.categoryLabel}>Security</label>
-              </div>
-              <div className={styles.categoryItem}>
-                <input type="checkbox" id="webdev" className={styles.categoryToggle} />
-                <label htmlFor="webdev" className={styles.categoryLabel}>Web Development</label>
-              </div>
-              <div className={styles.categoryItem}>
-                <input type="checkbox" id="dataanalysis" className={styles.categoryToggle} />
-                <label htmlFor="dataanalysis" className={styles.categoryLabel}>Data Analysis</label>
-              </div>
-              <div className={styles.categoryItem}>
-                <input type="checkbox" id="dataengineering" className={styles.categoryToggle} />
-                <label htmlFor="dataengineering" className={styles.categoryLabel}>Data Engineering</label>
-              </div>
-              <div className={styles.categoryItem}>
-                <input type="checkbox" id="ml" className={styles.categoryToggle} />
-                <label htmlFor="ml" className={styles.categoryLabel}>Machine Learning</label>
-              </div>
-            </div>
-          </div>
           <div className={styles.rightColumn}>
             <div className={styles.headerBox}>
               <h1 className={styles.projectsTitle}>{title}</h1>

@@ -3,6 +3,11 @@
   width: 100%;
   margin-top: 5rem;
 
+  .pageWrapper {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
   .pageContainer {
     max-width: 1536px;
     width: 100%;
@@ -16,6 +21,11 @@
   .leftColumn {
     display: flex;
     flex-direction: column;
+  }
+
+  .sidebarContainer {
+    padding-left: 5rem;
+    padding-right: 5rem;
     gap: 20px;
   }
 
@@ -36,11 +46,11 @@
   .categoryItem {
     display: flex;
     align-items: center;
-    padding: 8px 0;
+    padding: 5px 0;
   }
 
   .categoryToggle {
-    margin-right: 10px;
+    margin-right: 20px;
     accent-color: #696f83;
   }
 
@@ -66,9 +76,9 @@
     text-align: left;
     font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 0;
+    margin: 0 10px;
     width: 100%;
-    padding: 0 15px;
+    padding: 10px 15px;
   }
 
   .cardsList {
@@ -163,8 +173,18 @@
   }
 
   @media (max-width: 960px) {
+    .pageWrapper {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
     .pageContainer {
       grid-template-columns: 1fr;
+    }
+
+    .sidebarContainer {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 
