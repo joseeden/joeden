@@ -37,47 +37,42 @@
   }
 
   .cardsList {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 17px;
     width: 100%;
   }
 
   .cardContainer {
-    width: 100%;
-    margin-bottom: 0;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: calc(25% - 17px);
+    margin-bottom: 2rem;
   }
 
   .card {
     border: 1px solid var(--ifm-color-emphasis-300);
     border-radius: 8px;
-    background: #edf2f7;
+    background: white;
     box-shadow: none;
-    width: 100%;
-    min-height: 220px;
+    height: 350px;
+    width: 250px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    display: grid;
-    grid-template-rows: auto auto;
 
     &:hover {
-      transform: translateY(-6px);
+      transform: translateY(-8px) scale(1.05);
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     }
-  }
-
-  .cardRow {
-    display: grid;
-    grid-template-columns: 260px minmax(0, 1fr);
-    gap: 1rem;
-    align-items: start;
-    padding: 16px;
   }
 
   .image {
     background: #f7f7f7;
     position: relative;
+    padding: 0;
     width: 100%;
-    min-height: 200px;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,20 +81,13 @@
   }
 
   .card__body {
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
+    padding: 15px 15px 10px 15px;
     h2 {
-      font-size: 1.2rem;
-      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
     }
-
     p {
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-      line-height: 1.4;
+      font-size: 0.80rem;
     }
   }
 
@@ -110,8 +98,8 @@
 
   .tag {
     display: inline-block;
-    background-color: rgb(53, 120, 229);
-    color: white;
+    background-color: #eeeef1;
+    color: #696f83;
     border-radius: 4px;
     padding: 2px 8px;
     font-size: 0.7rem;
@@ -127,19 +115,23 @@
     padding: 10px 10px 15px 10px;
     width: 100%;
     text-align: center;
+
+    > :last-child {
+      margin-bottom: 0;
+      width: 100%;
+      padding: 0;
+      text-align: left;
+    }
+
+    a {
+      color: #696f83;
+      padding: 0;
+    }
   }
 
   @media (max-width: 960px) {
     .pageContainer {
       grid-template-columns: 1fr;
-    }
-
-    .cardRow {
-      grid-template-columns: 1fr;
-    }
-
-    .image {
-      min-height: 180px;
     }
   }
 
@@ -185,5 +177,14 @@
 
   .image {
     background: #f7f7f7;
+  }
+
+  .tag {
+    background-color: #2a2d3a;
+    color: #b0b3c1;
+  }
+
+  .card__footer a {
+    color: #b0b3c1;
   }
 }

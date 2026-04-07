@@ -25,25 +25,31 @@ export const Project: FunctionComponent<ProjectData> = ({
   return (
     <div className={clsx("col col--6", styles.cardContainer)}>
       <div className={clsx("card", styles.card)}>
-        <div className={styles.cardRow}>
-          <div className={clsx("card__image", styles.image)}>
-            <Image img={image} alt={description} title={title} />
-          </div>
-          <div className={clsx("card__body", styles.card__body)}>
-            <div>
-              <h2>{title}</h2>
-              <p>{description}</p>
+        <div className={clsx("card__image", styles.image)}>
+          <Image img={image} alt={description} title={title} />
+        </div>
+        <div className={clsx("card__body", styles.card__body)}>
+          <h2>{title}</h2>
+          <p>{description}</p>
+          {tags && tags.length > 0 && (
+            <div className={styles.tags}>
+              {tags.map((tag) => (
+                <span key={tag} className={styles.tag}>
+                  {tag}
+                </span>
+              ))}
             </div>
-            {tags && tags.length > 0 && (
-              <div className={styles.tags}>
-                {tags.map((tag) => (
-                  <span key={tag} className={styles.tag}>
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            )}
-          </div>
+          )}
+        </div>
+        <div className={clsx("card__footer", styles.card__footer)}>
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="button button--primary button--outline"
+          >
+            See Project
+          </a>
         </div>
         <div className={clsx("card__footer", styles.card__footer)}>
         {/* <div className="card__footer" style={{ textAlign: "center" }}> */}
