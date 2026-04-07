@@ -117,7 +117,7 @@
   }
 
   .image {
-    background: #f7f7f7;
+    background: #ffffff;
     position: relative;
     padding: 0;
     width: 100%;
@@ -182,7 +182,7 @@
     a:hover,
     a:focus {
       background-color: transparent !important;
-      color: #66b9b3 !important;
+      color: #569c76 !important;
     }
 
     .button__icon {
@@ -517,41 +517,44 @@
 
 [data-theme="dark"] {
 
+  .projectsPage,
+  a:hover,
+  a:focus {
+      background-color: transparent !important;
+      color: #64b5b0 !important;
+    }
+
   .main-wrapper {
     background: #05192d;
   }
 
-  .card {
+  .projectsPage .card {
     background: #193549;
     border: none;
   }
 
-  .image {
-    background: #ffffff;
-  }
-
-  .tag {
+  .projectsPage .tag {
     background-color: #40939b;
     color: #b0b3c1;
   }
 
-  .card__footer a {
+  .projectsPage .card__footer a {
     color: #b0b3c1;
   }
 
-  .card__footer .button__icon {
+  .projectsPage .card__footer .button__icon {
     color: currentColor;
   }
 
-  .categoriesHeader {
+  .projectsPage .categoriesHeader {
     color: #b0b3c1;
   }
 
-  .categoryLabel {
+  .projectsPage .categoryLabel {
     color: #b0b3c1;
   }
 
-  .categoryToggle {
+  .projectsPage .categoryToggle {
     background-color: white;
     accent-color: #40939b;
   }
