@@ -151,12 +151,19 @@ const title = "Projects";
 export default function Projects(): JSX.Element {
   return (
     <Layout title={title}>
-      <main className={`${styles.projectsPage} container container--fluid margin-vert--lg`}>
-        <h1 className={styles.projectsTitle}>{title}</h1>
-        <div className={styles.row}>
-          {projects.map((project) => (
-            <Project key={project.title} {...project} />
-          ))}
+      <main className={`${styles.projectsPage} margin-vert--lg`}>
+        <div className={styles.pageContainer}>
+          <div className={styles.leftColumn} />
+          <div className={styles.rightColumn}>
+            <div className={styles.headerBox}>
+              <h1 className={styles.projectsTitle}>{title}</h1>
+            </div>
+            <div className={styles.cardsList}>
+              {projects.map((project) => (
+                <Project key={project.title} {...project} />
+              ))}
+            </div>
+          </div>
         </div>
       </main>
     </Layout>
