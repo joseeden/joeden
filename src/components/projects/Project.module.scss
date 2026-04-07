@@ -11,7 +11,7 @@
     width: 100%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 7fr;
+    grid-template-columns: 1fr 6fr;
     gap: 32px;
     align-items: start;
   }
@@ -182,12 +182,12 @@
     a:hover,
     a:focus {
       background-color: transparent !important;
-      color: #40939b !important;
+      color: #66b9b3 !important;
     }
 
-    .button__icon {
-      color: #696f83;
-    }
+    // .button__icon {
+    //   color: #696f83;
+    // }
   }
 
   @media (max-width: 1440px) {
