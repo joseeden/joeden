@@ -187,6 +187,11 @@
 
     .button__icon {
       color: currentColor;
+
+      a:hover &,
+      a:focus & {
+        color: #569c76 !important;
+      }
     }
   }
 
@@ -517,15 +522,6 @@
 
 [data-theme="dark"] {
 
-  .projectsPage .card__footer {
-    a:hover,
-    a:focus {
-        background-color: transparent !important;
-        color: #64b5b0 !important;
-      }
-  }
-
-
   .main-wrapper {
     background: #05192d;
   }
@@ -544,14 +540,29 @@
     color: #B8C6C7;
   }
   
+
   .projectsPage .card__footer a {
     color: #B8C6C7;
   }
 
   .projectsPage .card__footer .button__icon {
     color: currentColor;
+
+    a:hover &,
+    a:focus & {
+      color: #64b5b0 !important;
+    }
   }
 
+  .projectsPage .card__footer {
+
+    a:hover,
+    a:focus {
+      background-color: transparent !important;
+      color: #64b5b0 !important;
+    }
+  }
+  
   .projectsPage .categoriesHeader {
     color: #b0b3c1;
   }
