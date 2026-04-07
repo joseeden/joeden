@@ -11,8 +11,6 @@ last_update:
 
 ## Todo
 
-Todo:
-
 - ✔️ Create a Github Repo and clone it locally.
 - ✔️ Setup Github repo according to best practices.
 - ✔️ Code the application locally.

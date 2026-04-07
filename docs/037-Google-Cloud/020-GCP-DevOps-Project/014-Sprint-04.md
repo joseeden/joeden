@@ -12,8 +12,6 @@ last_update:
 
 ## Todo
 
-Todo:
-
 - ✔️ Connect Cloud Build to Github repository 
 - ✔️ Automate Docker image build process 
 

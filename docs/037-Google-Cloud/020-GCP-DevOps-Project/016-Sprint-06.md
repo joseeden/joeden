@@ -12,8 +12,6 @@ last_update:
 
 ## Todo
 
-Todo:
-
 - ✔️ Create the development branch
 - ✔️ Create the development Cloud Build YAML file
 - ✔️ Create the Cloud Build trigger for the development branch

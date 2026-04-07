@@ -12,8 +12,6 @@ last_update:
 
 ## Todo
 
-Todo:
-
 - ✔️ Create the namespace in the GKE cluster
 - ✔️ Create the deployment manifest 
 - ✔️ Expose the application via endpoint

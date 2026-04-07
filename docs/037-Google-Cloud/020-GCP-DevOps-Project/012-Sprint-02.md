@@ -11,8 +11,6 @@ last_update:
 
 ## Todo
 
-Todo:
-
 - ✔️ Setting up a GKE cluster.
 - ✔️ Verify connection to the GKE cluster.
 
