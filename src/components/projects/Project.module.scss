@@ -174,11 +174,20 @@
 
     a {
       color: #696f83;
-      padding: 0;      border: none;
+      padding: 0;
+      border: none;
+      background-color: transparent;
+    }
+
+    a:hover,
+    a:focus {
+      background-color: transparent !important;
+      color: #40939b !important;
     }
 
     .button__icon {
-      color: #696f83;    }
+      color: #696f83;
+    }
   }
 
   @media (max-width: 1440px) {
