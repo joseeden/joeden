@@ -185,9 +185,9 @@
       color: #66b9b3 !important;
     }
 
-    // .button__icon {
-    //   color: #696f83;
-    // }
+    .button__icon {
+      color: currentColor;
+    }
   }
 
   @media (max-width: 1440px) {
@@ -448,9 +448,15 @@
       }
   }
   
+  @media (max-width: 569px) {
+  .projectsPage .cardsList {
+      gap: 0;
+    }
+  }
+  
   @media (max-width: 559px) {
     .projectsPage .cardsList {
-        gap: 20px;
+        gap: 15px;
       }
     .projectsPage .cardContainer {
       flex-basis: 100%;
@@ -467,6 +473,7 @@
     .projectsPage .projectsTitle {
       font-size: 1.2rem;
       padding-left: 0;
+      margin-bottom: 0;
     }
 
     .projectsPage .headerBox {
@@ -474,7 +481,7 @@
     }
 
     .projectsPage .cardsList {
-      gap: 20px;
+      gap: 5px;
     }
     .projectsPage .cardContainer {
       padding: 0;
@@ -533,7 +540,7 @@
   }
 
   .card__footer .button__icon {
-    color: #b0b3c1;
+    color: currentColor;
   }
 
   .categoriesHeader {
