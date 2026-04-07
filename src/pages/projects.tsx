@@ -153,6 +153,9 @@ export default function Projects(): JSX.Element {
     <Layout title={title}>
       <main className={`${styles.projectsPage} margin-vert--lg`}>
         <div className={styles.pageWrapper}>
+          <div className={styles.headerBox}>
+            <h1 className={styles.projectsTitle}>{title}</h1>
+          </div>
           <div className={styles.pageContainer}>
             <div className={styles.leftColumn}>
               <div className={styles.sidebarContainer}>
@@ -184,9 +187,6 @@ export default function Projects(): JSX.Element {
                     <input type="checkbox" id="ml" className={styles.categoryToggle} />
                     <label htmlFor="ml" className={styles.categoryLabel}>Machine Learning</label>
                   </div>
-                </div>
-                <div className={styles.headerBox}>
-                  <h1 className={styles.projectsTitle}>{title}</h1>
                 </div>
               </div>
             </div>
