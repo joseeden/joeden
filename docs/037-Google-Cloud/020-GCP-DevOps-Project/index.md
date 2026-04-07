@@ -21,6 +21,10 @@ This project walks through how to build an end-to-end GCP DevOps pipeline, from 
 - Improve the path from development to production
 - Practice sprint planning and review using common industry terms
 
+Architecture:
+
+![](/img/docs/gcp-devops-project-architecture-flow-how-app-will-be-deployed.png)
+
 
 ## Pre-requisites 
 

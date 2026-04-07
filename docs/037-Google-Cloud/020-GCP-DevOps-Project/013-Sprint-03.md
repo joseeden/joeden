@@ -18,19 +18,19 @@ last_update:
 
 ## Discussions
 
-What we have: 
+**What we have:** 
 
 - Code written in Python 
 - Code is hosted in Github 
 
-What we want to do:
+**What we want to do:**
 
 - Automate build of Docker image 
 - Store the Docker image in an artifactory 
 - Write the manifest files for Kubernetes deployment
 - Setup CD to deploy code to GKE
 
-Available GCP Tools: 
+**Available GCP Tools:** 
 
 -  Cloud Build
     - CICD Tool 
@@ -43,6 +43,6 @@ Available GCP Tools:
 - GCP Artifact Registry 
     - Store the Docker image 
 
-Architecture:
+**Architecture:**
 
 ![](/img/docs/gcp-devops-project-architecture-flow-how-app-will-be-deployed.png)
