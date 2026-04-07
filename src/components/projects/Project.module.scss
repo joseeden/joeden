@@ -11,7 +11,7 @@
     width: 100%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 6fr;
+    grid-template-columns: 1fr 7fr;
     gap: 32px;
     align-items: start;
   }
@@ -85,7 +85,7 @@
   .cardsList {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 20px;
     width: 100%;
   }
 
@@ -96,6 +96,7 @@
     align-items: center;
     flex-basis: calc(33.333% - 20px);
     margin-bottom: 2rem;
+    padding: 0 15px;
   }
 
   .card {
@@ -104,7 +105,7 @@
     background: white;
     box-shadow: none;
     height: 350px;
-    width: 280px;
+    width: 290px;
     max-width: 100%;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
