@@ -42,16 +42,6 @@ export const Project: FunctionComponent<ProjectData> = ({
           )}
         </div>
         <div className={clsx("card__footer", styles.card__footer)}>
-          <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="button button--primary button--outline"
-          >
-            See Project
-          </a>
-        </div>
-        <div className={clsx("card__footer", styles.card__footer)}>
         {/* <div className="card__footer" style={{ textAlign: "center" }}> */}
           <a
             href={url}
