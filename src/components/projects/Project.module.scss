@@ -517,12 +517,14 @@
 
 [data-theme="dark"] {
 
-  .projectsPage,
-  a:hover,
-  a:focus {
-      background-color: transparent !important;
-      color: #64b5b0 !important;
-    }
+  .projectsPage .card__footer {
+    a:hover,
+    a:focus {
+        background-color: transparent !important;
+        color: #64b5b0 !important;
+      }
+  }
+
 
   .main-wrapper {
     background: #05192d;
