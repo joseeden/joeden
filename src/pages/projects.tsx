@@ -185,12 +185,11 @@ export default function Projects(): JSX.Element {
                     <label htmlFor="ml" className={styles.categoryLabel}>Machine Learning</label>
                   </div>
                 </div>
+                <div className={styles.headerBox}>
+                  <h1 className={styles.projectsTitle}>{title}</h1>
+                </div>
               </div>
             </div>
-            <div className={styles.rightColumn}>
-              <div className={styles.headerBox}>
-                <h1 className={styles.projectsTitle}>{title}</h1>
-              </div>
               <div className={styles.cardsList}>
                 {projects.map((project) => (
                   <Project key={project.title} {...project} />
