@@ -1,6 +1,7 @@
 ---
-title: "Introduction to Kong"
-description: "Introduction to Kong"
+title: "Kong API Gateway"
+id: kong-api-gateway
+description: "Introduction to Kong API Gateway"
 tags: 
   - Cloud
   - DevOps

@@ -1,5 +1,6 @@
 ---
 title: "Starter Notes"
+id: javascript-starter-notes
 description: "Notes on Javascript"
 tags: 
 - Computer Science

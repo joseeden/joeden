@@ -1,5 +1,6 @@
 ---
 title: "Advanced Data Types"
+id: advanced-data-types
 description: "Advanced Data Types"
 tags: 
 - Computer Science

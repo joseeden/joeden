@@ -1,5 +1,6 @@
 ---
-title: "Starter Notes"
+title: "Starter Notes on AI"
+id: starter-notes-on-ai
 description: "Starter Notes on AI"
 tags: 
 - Data Science

@@ -9,6 +9,8 @@ tags:
 - HTML
 - CSS
 sidebar_position: 1
+sidebar_custom_props: 
+  lab: true
 last_update:
   date: 12/27/2020
 ---

@@ -2,6 +2,7 @@
   "label": "Rails Fundamentals",
   "position": 5,
   "link": {
-    "type": "generated-index"
+    "type": "doc",
+    "id": "ruby-on-rails-starter-notes"
   }
 }

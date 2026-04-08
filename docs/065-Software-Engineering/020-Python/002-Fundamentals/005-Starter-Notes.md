@@ -1,5 +1,6 @@
 ---
 title: "Starter Notes"
+id: python-starter-notes
 description: "Notes on Python"
 tags: 
 - Computer Science

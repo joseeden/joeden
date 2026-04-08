@@ -1,5 +1,6 @@
 ---
-title: "Starter Notes"
+title: "Ruby on Rails"
+id: ruby-on-rails-starter-notes
 description: "Starter Notes on Ruby on Rails"
 tags: 
 - Computer Science

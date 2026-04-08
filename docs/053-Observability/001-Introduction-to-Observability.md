@@ -1,5 +1,6 @@
 ---
 title: "Introduction to Observability"
+id: introduction-to-observability
 description: "Introduction to Observability"
 tags: 
 - Linux
