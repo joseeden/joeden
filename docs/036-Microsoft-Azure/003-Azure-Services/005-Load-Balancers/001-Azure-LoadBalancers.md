@@ -1,6 +1,7 @@
 ---
 title: "Azure LoadBalancers"
-description: "Distributign traffic across backend resources"
+id: azure-loadbalancers-overview
+description: "Distributing traffic across backend resources"
 tags:
 - Cloud
 - Microsoft Azure

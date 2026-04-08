@@ -1,5 +1,6 @@
 ---
 title: "Containers and Kubernetes"
+id: containers-and-kubernetes-overview
 description: "Container Management Challenges"
 tags:
   - Cloud
@@ -8,7 +9,7 @@ tags:
   - Containerization
   - Kubernetes
   - Cybersecurity
-sidebar_position: 1
+sidebar_position: 0
 last_update:
   date: 4/7/2022
 ---

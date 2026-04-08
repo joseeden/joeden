@@ -2,6 +2,7 @@
   "label": "Storage",
   "position": 2,
   "link": {
-    "type": "generated-index"
+    "type": "doc",
+    "id": "azure-storage-overview"
   }
 }

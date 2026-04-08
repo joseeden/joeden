@@ -2,13 +2,12 @@
 title: "EKS Networking"
 description: "EKS Networking"
 tags: 
- 
-  - Cloud
-    - DevOps
-    - Containers
-    - Containerization
-    - Kubernetes
-    - Amazon EKS
+- Cloud
+- DevOps
+- Containers
+- Containerization
+- Kubernetes
+- Amazon EKS
 sidebar_position: 15
 last_update:
   date: 5/26/2022

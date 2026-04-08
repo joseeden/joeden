@@ -2,13 +2,12 @@
 title: "Self-managed vs. Managed Nodegroups"
 description: "Self-managed vs. Managed Nodegroups"
 tags: 
- 
-  - Cloud
-    - DevOps
-    - Containers
-    - Containerization
-    - Kubernetes
-    - Amazon EKS
+- Cloud
+- DevOps
+- Containers
+- Containerization
+- Kubernetes
+- Amazon EKS
 sidebar_position: 17
 last_update:
   date: 5/26/2022

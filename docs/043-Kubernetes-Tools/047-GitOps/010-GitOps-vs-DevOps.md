@@ -1,5 +1,6 @@
 ---
 title: "GitOps vs. DevOps"
+id: gitops-vs-devops-overview
 description: "Introduction to GitOps"
 tags:
   - Cloud

@@ -2,13 +2,12 @@
 title: "Cluster AutoScaler"
 description: "Cluster AutoScaler in EKS"
 tags: 
- 
-  - Cloud
-    - DevOps
-    - Containers
-    - Containerization
-    - Kubernetes
-    - Amazon EKS
+- Cloud
+- DevOps
+- Containers
+- Containerization
+- Kubernetes
+- Amazon EKS
 sidebar_position: 13
 last_update:
   date: 5/26/2022

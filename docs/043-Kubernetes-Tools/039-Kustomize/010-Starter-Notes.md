@@ -1,5 +1,6 @@
 ---
-title: "Starter Notes"
+title: "Kustomize"
+id: kustomize-starter-notes
 description: "Starter Notes on Kustomize"
 tags: 
 - Cloud
@@ -12,8 +13,6 @@ sidebar_position: 10
 last_update:
   date: 4/19/2022
 ---
-
-
 
 
 ## The Problem With Duplicating YAML Files

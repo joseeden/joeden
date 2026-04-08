@@ -2,6 +2,7 @@
   "label": "Kubernetes",
   "position": 20,
   "link": {
-    "type": "generated-index"
+    "type": "doc",
+    "id": "containers-and-kubernetes-overview"
   }
 }

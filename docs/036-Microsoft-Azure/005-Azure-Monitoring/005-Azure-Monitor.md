@@ -1,5 +1,6 @@
 ---
 title: "Azure Monitor"
+id: azure-monitor-overview
 description: "Azure Monitor"
 tags:
 - Cloud

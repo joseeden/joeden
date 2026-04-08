@@ -1,5 +1,7 @@
 ---
 title: "Adopting Continuous Integration"
+id: adopting-continuous-integration-overview
+description: "Stages in Adopting Continuous Integration"
 tags:
 - CICD
 - Continuous Integration

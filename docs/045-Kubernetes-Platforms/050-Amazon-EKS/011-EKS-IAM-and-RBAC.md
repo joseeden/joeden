@@ -2,13 +2,12 @@
 title: "IAM and RBAC"
 description: "Authentication and Authorization in EKS"
 tags: 
- 
-  - Cloud
-    - DevOps
-    - Containers
-    - Containerization
-    - Kubernetes
-    - Amazon EKS
+- Cloud
+- DevOps
+- Containers
+- Containerization
+- Kubernetes
+- Amazon EKS
 sidebar_position: 11
 last_update:
   date: 5/26/2022

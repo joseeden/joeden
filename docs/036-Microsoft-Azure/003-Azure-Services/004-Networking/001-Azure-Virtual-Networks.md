@@ -1,5 +1,6 @@
 ---
 title: "Azure Virtual Networks"
+id: azure-virtual-networks-overview
 description: "Private networks in Azure"
 tags:
 - Cloud

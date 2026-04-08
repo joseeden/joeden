@@ -2,6 +2,7 @@
   "label": "Terraform",
   "position": 10,
   "link": {
-    "type": "generated-index"
+    "type": "doc",
+    "id": "terraform-starter-notes"
   }
 }

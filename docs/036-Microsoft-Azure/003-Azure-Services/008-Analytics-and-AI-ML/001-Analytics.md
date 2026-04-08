@@ -1,5 +1,6 @@
 ---
 title: "Analytics"
+id: azure-analytics-overview
 description: "Azure Analytics"
 tags:
 - Cloud

@@ -1,5 +1,6 @@
 ---
 title: "Azure Storage"
+id: azure-storage-overview
 description: "Highly available storage in the cloud"
 tags:
 - Cloud

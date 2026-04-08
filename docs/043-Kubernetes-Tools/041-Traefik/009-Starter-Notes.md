@@ -1,5 +1,6 @@
 ---
-title: "Starter Notes"
+title: "Traefik"
+id: traefik-starter-notes
 description: "Starter Notes on Traefik"
 tags: 
 - Cloud

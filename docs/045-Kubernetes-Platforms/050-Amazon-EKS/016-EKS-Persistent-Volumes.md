@@ -2,13 +2,12 @@
 title: "Persistent Volumes"
 description: "Persistent Volumes"
 tags: 
- 
-  - Cloud
-    - DevOps
-    - Containers
-    - Containerization
-    - Kubernetes
-    - Amazon EKS
+- Cloud
+- DevOps
+- Containers
+- Containerization
+- Kubernetes
+- Amazon EKS
 sidebar_position: 16
 last_update:
   date: 5/26/2022

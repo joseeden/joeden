@@ -2,13 +2,12 @@
 title: "Logging to CloudWatch"
 description: "Control Plane Logging to CloudWatch"
 tags: 
- 
-  - Cloud
-    - DevOps
-    - Containers
-    - Containerization
-    - Kubernetes
-    - Amazon EKS
+- Cloud
+- DevOps
+- Containers
+- Containerization
+- Kubernetes
+- Amazon EKS
 sidebar_position: 14
 last_update:
   date: 5/26/2022

@@ -2,6 +2,7 @@
   "label": "Jenkins Notes",
   "position": 3,
   "link": {
-    "type": "generated-index"
+    "type": "doc",
+    "id": "adopting-continuous-integration-overview"
   }
 }

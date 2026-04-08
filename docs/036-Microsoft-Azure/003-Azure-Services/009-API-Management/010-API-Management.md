@@ -1,5 +1,6 @@
 ---
 title: "API Management"
+id: azure-api-management-overview
 description: "API Management in Azure"
 tags:
 - Cloud

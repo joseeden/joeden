@@ -1,6 +1,7 @@
 ---
 title: "The 4C’s of Cloud Native security"
-description: ""
+id: cloud-native-security-4cs-overview
+description: "Cloud Native Security"
 tags: 
   - Cloud
   - DevOps

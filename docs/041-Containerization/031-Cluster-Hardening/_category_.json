@@ -2,6 +2,7 @@
   "label": "Cluster Hardening",
   "position": 31,
   "link": {
-    "type": "generated-index"
+    "type": "doc",
+    "id": "cloud-native-security-4cs-overview"
   }
 }

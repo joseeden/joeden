@@ -1,6 +1,7 @@
 ---
-title: "Starter Notes"
-description: "Starter Notes"
+title: "Flux"
+id: flux-cd-starter-notes
+description: "Starter Notes on Flux CD"
 tags:
   - Cloud
   - DevOps

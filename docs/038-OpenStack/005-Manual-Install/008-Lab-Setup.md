@@ -1,5 +1,6 @@
 ---
 title: "Lab Setup"
+id: openstack-lab-setup
 description: "Manual OpenStack Installation in Virtual Machines"
 tags: 
 - Cloud

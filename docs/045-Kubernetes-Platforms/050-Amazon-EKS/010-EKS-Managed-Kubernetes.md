@@ -1,14 +1,14 @@
 ---
 title: "Elastic Kubernetes Service (EKS)"
-description: ""
+id: eks-managed-kubernetes-overview
+description: "Overview of Amazon EKS"
 tags: 
- 
-  - Cloud
-    - DevOps
-    - Containers
-    - Containerization
-    - Kubernetes
-    - Amazon EKS
+- Cloud
+- DevOps
+- Containers
+- Containerization
+- Kubernetes
+- Amazon EKS
 sidebar_position: 10
 last_update:
   date: 5/26/2022

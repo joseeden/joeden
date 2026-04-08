@@ -1,5 +1,6 @@
 ---
 title: "Azure IAM"
+id: azure-iam-overview
 description: "Identity and Access Management"
 tags:
 - Cloud

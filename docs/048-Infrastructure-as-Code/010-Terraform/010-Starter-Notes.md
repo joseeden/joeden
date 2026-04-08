@@ -1,5 +1,6 @@
 ---
-title: "Starter Notes"
+title: "Terraform"
+id: terraform-starter-notes
 description: "Starter Notes on Terraform"
 tags: 
 - DevOps
