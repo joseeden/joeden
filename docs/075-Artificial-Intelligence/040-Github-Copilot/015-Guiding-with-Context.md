@@ -257,7 +257,7 @@ Common examples:
     @workspace how is Docusaurus configured in this project?
     ```
 
-## Chat Participants vs. Chat Variables
+## Participants vs. Variables
 
 Use chat variables when you want to guide Copilot toward specific context, such as a file, a code block, or recent changes.
 
@@ -282,3 +282,74 @@ You can also combine the terminal expert with the last command output:
 ```bash
 @terminal explain the error from the command #terminalLastCommand
 ```
+
+## Slash Commands 
+
+Slash commands are built-in shortcuts for common Copilot tasks. Use them when you already know the action you want and do not need to write a full prompt.
+
+| Slash command | Purpose                                               |
+| ------------- | ----------------------------------------------------- |
+| `/fix`        | Analyze selected code and suggest a correction        |
+| `/explain`    | Explain the selected code in plain language           |
+| `/tests`      | Generate tests for the selected code or relevant file |
+| `/new`        | Scaffold a new project or create a new app from chat  |
+| `/clear`      | Reset the current chat and start with a clean context |
+
+Type a slash (`/`) in chat to see the available commands. Copilot will then run the selected action with the context from your current file, selection, or chat session.
+
+Examples: 
+
+1. Use `/fix` when you want Copilot to analyze selected code and suggest a correction.
+
+    ```bash
+    /fix
+    ```
+
+    <div class='img-center'>
+    
+    ![](/gif/docs/09042026-gh-copilot-codebase-slash-commands.gif)
+    
+    </div>
+
+2. Use `/explain` when you want a plain-language explanation of the selected code.
+
+    ```bash
+    /explain
+    ```
+
+    <div class='img-center'>
+    
+    ![](/gif/docs/09042026-gh-copilot-codebase-slash-commands-2.gif)
+    
+    </div>
+    
+Slash commands are useful when the goal is already clear and you want Copilot to act quickly with minimal prompting.
+
+Reference: https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features#_slash-commands
+
+## Smart Actions
+
+Smart actions are context-aware suggestions that appear directly in the editor. They help you take the next likely step without writing a prompt in chat. You will usually see them as a "sparkle" icon or a "light bulb" near the relevant code. The exact suggestions depend on what you are doing and what Visual Studio Code detects in the current context.
+
+For example, if you highlight a function, you may see actions such as **Modify** or **Review**. 
+
+- **Modify** opens inline chat so you can change the code in place
+- **Review** adds review comments in the editor and in the Comments panel.
+
+If Visual Studio Code detects a warning or issue, the light bulb menu may offer actions such as **Fix** or **Explain**. These let Copilot suggest a correction or describe the problem without requiring a separate prompt.
+
+<div class='img-center'>
+
+![](/gif/docs/09042026-gh-copilot-codebase-smart-actions-1.gif)
+
+</div>
+
+Smart actions also appear in places outside the editor. For example, in Source Control, Copilot can suggest a commit message based on your staged changes.
+
+<div class='img-center'>
+
+![](/gif/docs/09042026-gh-copilot-codebase-smart-actions-2.gif)
+
+</div>
+
+Slash commands and smart actions work well together. Slash commands are best when you want to trigger a specific action yourself, while smart actions are useful when you want Visual Studio Code to surface relevant suggestions based on your current work.
