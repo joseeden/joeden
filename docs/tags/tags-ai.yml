@@ -57,3 +57,28 @@ Model Context Protocol:
   label: 'Model Context Protocol'
   permalink: '/Model Context Protocol'
   description: 'Docs related to Model Context Protocol'
+
+ChatGPT:
+  label: 'ChatGPT'
+  permalink: '/ChatGPT'
+  description: 'Docs related to ChatGPT'    
+
+Github Copilot:
+  label: 'Github Copilot'
+  permalink: '/Github Copilot'
+  description: 'Docs related to Github Copilot'    
+
+Gemini:
+  label: 'Gemini'
+  permalink: '/Gemini'
+  description: 'Docs related to Gemini'    
+
+OpenAI:
+  label: 'OpenAI'
+  permalink: '/OpenAI'
+  description: 'Docs related to OpenAI'    
+
+Claude AI:
+  label: 'Claude AI'
+  permalink: '/Claude AI'
+  description: 'Docs related to Claude AI'    

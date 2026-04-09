@@ -7,6 +7,7 @@ tags:
 - AI Agents
 - Agentic Systems
 - Large Language Models
+- Github Copilot
 sidebar_position: 10
 --- 
 
@@ -126,6 +127,7 @@ In practice, the main modes you will use most often are:
 - Inline Chat
 - Ask Mode
 - Edit Mode (Replaced by Plan Mode)
+- Agent Mode
 
 ### Autocomplete and Inline Chat
 
@@ -220,4 +222,82 @@ This mode is for making broader code changes. It is useful when you already know
 - Make larger changes with reviewable diffs
 
 **Note:** Plan mode is not really a rename of Edit. It is a separate mode focused on creating a step-by-step implementation plan.
+
+## Agent Mode 
+
+**Agent Mode** is different from the other Copilot modes because it is designed for complex, multi-step tasks. Instead of suggesting a single change, it works iteratively and more autonomously.
+
+- It can make changes across multiple files
+- It can use tools and run commands when needed
+- It can try another approach if the first one does not work
+
+For example, in a project with several scripts and many print statements, you could ask Copilot to add logging with the `logging` module and remove the print statements. 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-04-09161714.png)
+
+</div>
+
+Agent Mode would search the codebase, update the relevant files, and ask for approval if it needs to run commands such as installing a package or running tests.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-04-09161903.png)
+
+</div>
+
+You can click **Keep** at the bottom to accept all changes, or you can review each change and accept or reject them individually. 
+
+### Tools in Agent Mode 
+
+Agent Mode can use tools to perform actions that go beyond just editing code. These tools can help with tasks like running tests, installing dependencies, or even interacting with external systems.
+
+<div class='img-center'>
+
+![](/img/docs/all-things-ai-gh-copilot-agent-mode.png)
+
+</div>
+
+The tools available in Agent Mode can include:
+
+- Built-in development tools
+- MCP tools for external systems
+- Marketplace extensions that add extra capabilities
+
+The tools also depend on the context and the task at hand. For example, if you're working on a Python project and ask Copilot to set up a testing framework, it might use tools to install `pytest` and run test commands.
+
+### Approval and Control 
+
+By default, Copilot asks for approval before it uses a tool or runs a command. You can approve a tool once, approve it for the session or workspace, or allow it automatically in the future. 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-04-09162948.png)
+
+</div>
+
+You can also manage tool access from the **Tools** icon in the chat input.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-04-09163110.png)
+
+</div>
+
+In newer interfaces:
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-04-09163201.png)
+
+</div>
+
+You can then select which tools to allow and set permissions for them. This gives you control over what actions Copilot can take while still enabling it to perform complex tasks when needed.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-04-09163301.png)
+
+</div>
 
