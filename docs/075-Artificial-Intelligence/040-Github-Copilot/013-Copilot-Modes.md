@@ -55,7 +55,7 @@ This opens the chat panel where you can give instructions to modify the selected
 
 </div>
 
-Copilot will generate a response that modifies the code block according to your instructions. You can review the changes and accept or reject them as needed.
+Copilot will generate a response that modifies the code block according to your instructions. You can review the changes and accept or reject them as needed. This mode works best for small updates, missing logic, bug fixes, and local refactoring.
 
 <div class='img-center'>
 
@@ -63,7 +63,7 @@ Copilot will generate a response that modifies the code block according to your 
 
 </div>
 
-This mode works best for small updates, missing logic, bug fixes, and local refactoring.
+
 
 ## Ask Mode
 
