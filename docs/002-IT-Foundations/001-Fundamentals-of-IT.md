@@ -35,23 +35,13 @@ The digital divide is a growing skills gap that separates those with digital lit
 Time to dive into more interesting concepts in IT.
 
 - [A Day in the Life of IT Support](./002-A-Day-in-the-Life-of-IT-Support.md)
-
 - [The History of Computing](./003-The-History-of-Computing.md)
-
 - [Modern Computers](./004-The-Modern-Computers.md)
-
 - [Digital Logic](./005-The-Digital-Logic.md)
-
 - [Binary](./006-Binary.md)
-
 - [Computer Architecture](./007-Computer-Architecture.md)
-
 - [Computer Hardware](./008-Computer-Hardware.md)
-
 - [Computer Programs](./020-Computer-Programs.md)
-
 - [Laptops and Mobile Devices](./021-Laptops-and-Mobile-Devices.md)
-
 - [BIOS](./015-BIOS.md)
-
 - [Operating Systems](./030-Operating-Systems.md)

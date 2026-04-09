@@ -2,6 +2,7 @@
   "label": "Agentic AI",
   "position": 35,
   "link": {
-    "type": "generated-index"
+    "type": "doc",
+    "id": "agentic-ai-starter-notes"
   }
 }

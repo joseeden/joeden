@@ -1,5 +1,5 @@
 ---
-title: "Starter Notes on AI"
+title: "Artificial Intelligence (AI)"
 id: starter-notes-on-ai
 description: "Starter Notes on AI"
 tags: 
@@ -75,43 +75,43 @@ To successfully implement AI, organizations need key building blocks across stra
 
 1. **Roadmap and Leadership**
 
-  - Obtain leadership support
-  - Set a clear vision for AI adoption
+    - Obtain leadership support
+    - Set a clear vision for AI adoption
 
 2. **Data Strategy**
 
-  - Collect and manage relevant data
-  - Ensure governance and quality
+    - Collect and manage relevant data
+    - Ensure governance and quality
 
 3. **Infrastructure Resources**
 
-  - Invest in scalable computing resources
-  - Use AI platforms and tools, cloud or on-premise
+    - Invest in scalable computing resources
+    - Use AI platforms and tools, cloud or on-premise
 
 4. **Roles**
 
-  - Having a skilled team with the necessary skills
-  - Hire qualified AI and ML experts
+    - Having a skilled team with the necessary skills
+    - Hire qualified AI and ML experts
 
 5. **Collaboration**
 
-  - Promote cross-functional collaboration
-  - Apply AI to improve products and services
+    - Promote cross-functional collaboration
+    - Apply AI to improve products and services
 
 6. **Define and Pursue Success**
 
-  - Focus on customer-centric solutions
-  - Example: customer-centric, impact on revenue, etc.
+    - Focus on customer-centric solutions
+    - Example: customer-centric, impact on revenue, etc.
 
 7. **AI and Data Literacy**
 
-  - Promote AI literacy and ongoing training
-  - Encourage knowledge sharing across teams
+    - Promote AI literacy and ongoing training
+    - Encourage knowledge sharing across teams
 
 8. **Responsible AI**
 
-  - Implement responsible AI policies
-  - Ensure transparency and strong data security
+    - Implement responsible AI policies
+    - Ensure transparency and strong data security
 
 
 ## AI-Driven Organization Roadmap
