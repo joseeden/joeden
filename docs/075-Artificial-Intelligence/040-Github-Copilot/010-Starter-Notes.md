@@ -187,6 +187,8 @@ This will open a new chat on the right side of the editor where you can ask ques
 
 ![](/img/docs/Screenshot2026-04-09123420.png)
 
+</div>
+
 You can set the **chat mode** using buttons like **Ask**, **Plan**, and **Explain** to tailor Copilot's responses to your needs.
 
 <div class='img-center'>
@@ -194,13 +196,6 @@ You can set the **chat mode** using buttons like **Ask**, **Plan**, and **Explai
 ![](/img/docs/Screenshot2026-04-09123709.png)
 
 </div>
-
-
-| Mode              | Use Case                              | When to Use |
-|-------------------|---------------------------------------|------------|
-| **Agent Mode**    | Complex multi-step tasks              | Involved workflows and autonomous execution |
-| **Ask Mode**      | Guidance and planning without changes | Thinking through problems, exploring approaches |
-| **Plan Mode**     | Larger changes across multiple files  | Broader refactoring and feature implementation |
 
 In older versions, there was an **Edit Mode** that allowed you to make broader code changes across multiple files. This mode has been replaced by **Plan Mode**, which is better suited for execution and larger code changes.
 
@@ -210,23 +205,19 @@ In older versions, there was an **Edit Mode** that allowed you to make broader c
 
 </div>
 
+| Mode           | Use Case                              | When to Use                                     |
+| -------------- | ------------------------------------- | ----------------------------------------------- |
+| **Agent Mode** | Complex multi-step tasks              | Involved workflows and autonomous execution     |
+| **Ask Mode**   | Guidance and planning without changes | Thinking through problems, exploring approaches |
+| **Plan Mode**  | Larger changes across multiple files  | Broader refactoring and feature implementation  |
 
-### Edit Mode (Replaced by Plan Mode)
+### Plan Mode (Replaced Edit Mode)
 
 This mode is for making broader code changes. It is useful when you already know the outcome you want and want Copilot to apply the changes for you.
 
-- Refactor code across multiple files
 - Implement features across related components
 - Set up new project structure
 - Make larger changes with reviewable diffs
 
+**Note:** Plan mode is not really a rename of Edit. It is a separate mode focused on creating a step-by-step implementation plan.
 
-### Choosing the Right Mode
-
-Use the mode that matches the kind of work you are doing.
-
-- Use Autocomplete or Inline Chat when you need speed and focus
-- Use Ask Mode when you need to think, compare, or plan
-- Use Edit Mode when you need larger code changes across one or more files
-
-Agent Mode builds on these ideas and is better suited for more involved tasks, which will be covered separately.
