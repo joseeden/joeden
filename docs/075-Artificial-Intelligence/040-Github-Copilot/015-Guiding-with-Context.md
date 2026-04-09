@@ -1,11 +1,12 @@
 ---
 title: "Guiding with Context"
-description: "Starter Notes on AI Copilot"
+description: "Guide GitHub Copilot with context for better code generation results."
 tags: 
 - Artificial Intelligence
 - AI Agents
 - Agentic Systems
 - Large Language Models
+- Github Copilot
 sidebar_position: 10
 --- 
 
@@ -36,13 +37,32 @@ You can drag files into chat or use **Add Context** (`+` button) to include more
 
 Chat variables help you control exactly what Copilot looks at.
 
-| Variable     | Description                         | When to use it                            |
-| ------------ | ----------------------------------- | ----------------------------------------- |
-| `#codebase`  | Searches across the whole project   | When you need full project context        |
-| `#selection` | Uses highlighted code in the editor | When working on a specific code block     |
-| `#files`     | Includes specific files             | When analyzing or reviewing certain files |
-| `#changes`   | Looks at recent edits or commits    | When checking impact of recent changes    |
-| `#fetch`     | Pulls content from external URLs    | When using docs, APIs, or web references  |
+| Variable               | Description                           | When to use it                              |
+| ---------------------- | ------------------------------------- | ------------------------------------------- |
+| `#codebase`            | Searches across the whole project     | When you need full project context          |
+| `#selection`           | Uses highlighted code in the editor   | When working on a specific code block       |
+| `#files`               | Includes specific files               | When analyzing or reviewing certain files   |
+| `#changes`             | Looks at recent edits or commits      | When checking impact of recent changes      |
+| `#fetch`               | Pulls content from external URLs      | When using docs, APIs, or web references    |
+| `#search`              | Searches for relevant code snippets   | When looking for patterns or usage in code  |
+| `#terminalLastCommand` | Uses the last terminal command output | When working with CLI or debugging commands |
+| `#testFailure`         | Analyzes recent test failures         | When debugging failing tests                |
+
+Chat variables can be used in all three modes: **Ask**, **Agent**, and **Plan**.
+
+| Mode       | How `#` is used                                                              | Purpose                                      |
+| ---------- | ---------------------------------------------------------------------------- | -------------------------------------------- |
+| Ask mode   | `#file`, `#codebase`, `#selection`, `#changes`, `#terminalLastCommand`       | Answer questions using provided context      |
+| Agent mode | Adds context and enables tools like search, read, edit, execute, web fetch   | Perform tasks using both context and actions |
+| Plan mode  | `#file`, `#codebase`, `#changes`                                             | Plan steps and solutions, not direct actions |
+
+A few caveats matter:
+
+- Not every `#` item is available everywhere. Some depend on where you are, for example `#selection` only appears if you have an active editor selection.
+- Some `#` items depend on enabled tools or features. For example, web or browser-related items may require settings or approvals.
+- Inline Chat also supports `#` references, not just the main Chat view.
+
+### Indices/Indexes 
 
 When you use these variables in your prompts, Copilot will look at the indexes and content you specify to generate more relevant and accurate code. There are two types of indices:
 
@@ -58,6 +78,20 @@ You can check which index is active in the Copilot status dashboard in your IDE.
 ![](/img/docs/Screenshot2026-04-0974615.png)
 
 </div>
+
+If you see:
+
+- "Using local index" ➔ Copilot is using the code and files on your machine
+- "Using remote index" ➔ Copilot is using the code and files from the GitHub repository
+
+You might also see "Index not yet built for a repo in this workspace" if you haven't opened a file from the repo yet. In that case, open any file from the repo to trigger the indexing process. You can also simply click "Build index" to start it immediately.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-04-09175438.png)
+
+</div>
+
 
 ### `#codebase`
 
@@ -80,108 +114,84 @@ Behind the scenes, Copilot is searching through your local and remote indexes to
 
 ### `#selection`
 
-The `#selection` variable focuses on highlighted code in your editor. In the example below, a function is selected and passed to Copilot.
+The `#selection` variable focuses on highlighted code in your editor. 
 
-```python
-def process_data(data):
-    return data
-```
-
-Then you ask:
+In the example below, a function is selected and passed to Copilot. You can then ask Copilot to refactor the selected code, and it will only consider that specific block of code for its suggestions.
 
 ```bash
 Can you refactor this? #selection
 ```
 
-Expected result:
+<div class='img-center'>
 
-```python
-def process_data(data):
-    if data is None:
-        raise ValueError("Data cannot be None")
-    return data
-```
+![](/gif/docs/09042026-gh-copilot-codebase-chat-var-selection.gif)
 
-This is useful for quick and targeted improvements.
+</div>
 
-## Using #files
+### `#files`
 
 The `#files` variable lets you include specific files in your prompt.
 
-In the example below, the file `utils/data_loader.py` is referenced.
+In the example below, the project folder `test-fastapi-simple-app` is referenced.
 
 ```bash
-Check this file for error handling issues #files:utils/data_loader.py
+Confirm the fastapi version used #files:test-fastapi-simple-app
 ```
 
-Expected result:
+<div class='img-center'>
 
-Copilot reviews the file and suggests improvements even if it is not open.
+![](/gif/docs/09042026-gh-copilot-codebase-chat-var-files.gif)
 
-This helps when working with multiple files without switching tabs.
+</div>
 
-## Using #changes
+
+### `#changes`
 
 The `#changes` variable looks at your recent edits.
 
 In the example below, you ask Copilot to review recent modifications.
 
 ```bash
-Will any of these changes break the login flow? #changes
+Will any of these changes break the runtime flow? #changes
 ```
-
-Expected result:
 
 Copilot analyzes recent commits or edits and highlights potential issues.
 
 This is useful for quick validation after making changes.
 
-## Using #fetch
+<div class='img-center'>
+
+![](/gif/docs/09042026-gh-copilot-codebase-chat-var-changes.gif)
+
+</div>
+
+
+### `#fetch`
 
 The `#fetch` variable pulls in external content like documentation.
 
 In the example below, a URL is provided.
 
 ```bash
-Summarize this documentation #fetch https://example.com/docs
+Summarize this documentation #fetch https://docusaurus.com/docs
 ```
 
-Expected result:
-
-Copilot reads the page and summarizes key points.
+Copilot will read the page and summarizes key points.
 
 This helps when working with APIs or external references.
 
-## How Copilot understands your codebase
 
-Copilot uses indexes to understand your project.
+## Using Chat History as Context
 
-- Local index is stored on your machine
-- Remote index is used for GitHub repositories
+Copilot maintains chat history automatically, including all previous messages in the conversation. This lets you reference earlier prompts and build incrementally on prior responses without repeating yourself.
 
-You can check which one is active using the Copilot status dashboard in your IDE.
+- Ask for improvements or refinements
+- Build solutions step by step
+- Avoid repeating information
 
-Understanding this helps you know how Copilot retrieves context.
+As best practice, break complex tasks into smaller prompts. 
 
-## Using chat history as context
-
-Copilot remembers your previous messages in a chat.
-
-- Past prompts are included automatically
-- You can build step by step
-- You avoid repeating information
-
-This allows you to create better solutions over time instead of doing everything in one prompt.
-
-## Building step by step prompts
-
-Breaking tasks into smaller steps improves results.
-
-- Ask for approach first
-- Then implement step by step
-- Then refine and improve
-
-In the example below, a complex task is broken into smaller prompts.
+For example:
 
 ```bash
 What is the best approach for database persistence? #codebase
@@ -199,26 +209,76 @@ Design schema for User and Task classes
 Add session management and error handling
 ```
 
-Expected result:
-
-Each step builds on the previous one, leading to better and more controlled output.
-
-This makes complex tasks easier and more accurate.
+Each step builds on the previous one, which results in better, more controlled output.
 
 ## Resetting context
 
-Sometimes you need a clean start.
+If you want to start fresh, you can reset the context by starting a new chat. This clears the previous history and allows you to begin with a clean slate.
 
-- Start a new chat to reset context
+<div class='img-center'>
 
-This removes previous history and avoids confusion.
+![](/img/docs/Screenshot2026-04-09191434.png)
 
-## Final takeaway
+</div>
 
-Copilot becomes much more powerful when you manage context properly.
+## Chat Participants 
 
-- Give clear and relevant context
-- Use chat variables intentionally
-- Build solutions step by step
+Chat participants let you direct your prompt to a built-in Copilot expert by using `@`. You can use them when you want help from a tool-aware or domain-specific assistant.
 
-Better context leads to better results, which makes Copilot a more reliable coding assistant.
+<div class='img-center'>
+
+![](/gif/docs/09042026-gh-copilot-codebase-chat-var-chat-participants.gif)
+
+</div>
+
+Common examples:
+
+1. Use `@terminal` when you want help with shell commands, terminal output, or environment setup.
+
+    ```bash
+    @terminal how do I activate a virtual environment?
+    ```
+
+2. Use `@vscode` when you want help with editor settings, features, or workflows.
+
+    ```bash
+    @vscode how do I change my Visual Studio Code colors?
+    ```
+
+3. Use `@github` when you want information from GitHub, such as pull requests and repository activity.
+
+    ```bash
+    @github show me the Github Issues in the repo
+    ```
+
+4. Use `@workspace` when you want Copilot to inspect your project and explain how something is implemented.
+
+    ```bash
+    @workspace how is Docusaurus configured in this project?
+    ```
+
+## Chat Participants vs. Chat Variables
+
+Use chat variables when you want to guide Copilot toward specific context, such as a file, a code block, or recent changes.
+
+Use chat participants when you want Copilot to respond as a domain-aware expert, such as a terminal helper, a GitHub assistant, or a workspace guide.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-04-09192154.png)
+
+</div>
+
+You can also use chat participants and chat variables in the same prompt.
+
+For example, the prompt below asks the workspace expert to analyze recent changes:
+
+```bash
+@workspace how do these changes affect routing? #changes
+```
+
+You can also combine the terminal expert with the last command output:
+
+```bash
+@terminal explain the error from the command #terminalLastCommand
+```
