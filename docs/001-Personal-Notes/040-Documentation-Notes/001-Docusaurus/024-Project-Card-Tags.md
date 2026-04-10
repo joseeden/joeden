@@ -1,6 +1,6 @@
 ---
-title: Project Card Tags for Filtering
-description: "Add tags to project cards and implement filtering functionality"
+title: Project Card Tags
+description: "Add tags to project cards in the project page."
 tags:
 - Docusaurus
 - React
@@ -9,21 +9,41 @@ sidebar_position: 24
 
 ## Overview
 
-This page provides the details for adding tags to project cards in Docusaurus and implementing tag-based filtering to display specific projects. Tags help organize and categorize projects, which allows users to filter the projects page to show only the content they're interested in.
+This page provides the details for adding tags to project cards in my projects page. I'll be using tags to organize and categorize projects, and in future updates, this will allow users to filter the projects page to show only the content they're interested in.
+
+:::info
+
+The filtering functionality is detailed in [Designing the Project Page.](/docs/001-Personal-Notes/040-Documentation-Notes/001-Docusaurus/025-Designing-the-Project-Page.md)
+
+This page focuses on the implementation of tags on project cards.
+
+:::
+
+In the example screenshot below, you can see the tags displayed below the description of each project. Note that the tags are not clickable and only provide a visual way to identify the technologies used in each project, such as "Web Development", "JavaScript", "DevOps", etc.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-04-11022452.png)
+
+</div>
+
 
 ## Background
 
-The projects page displays project cards in a grid layout. By adding tags to each project, you can:
+The projects page displays project cards in a grid layout. By adding tags to each project, I'm able to:
 
 - Categorize projects by technology, domain, or scope
-- Implement filtering to show/hide projects based on selected tags
 - Improve user experience by allowing focused browsing
+- Implement filtering to show/hide projects (See [Designing the Project Page.](/docs/001-Personal-Notes/040-Documentation-Notes/001-Docusaurus/025-Designing-the-Project-Page.md))
 
-Example tags might include:
+Additional note: Tags are optional; projects without tags will still render without the tags section.
 
-- **Technology**: `web`, `backend`, `frontend`, `devops`, `cloud`, `data`, `ml`
-- **Category**: `lab`, `project`, `jupyter-notebook`, `demo`
-- **Platform**: `aws`, `kubernetes`, `jenkins`, `docker`
+Tag used (will be expanded in future updates):
+
+- `Web Development`
+- `JavaScript`
+- `DevOps`
+- `Data Analysis`
 
 Files to modify:
 
@@ -31,19 +51,16 @@ Files to modify:
 - `src/pages/projects.tsx` - Add tags to project objects
 - `src/components/projects/Project.module.scss` - Add tag styling (optional)
 
-Additional notes:
 
-- Tags are optional; projects without tags will still render without the tags section
-- Tag names should be lowercase and use hyphens for multi-word tags (e.g., `ci-cd`)
-- Consider creating a consistent taxonomy of tags to avoid duplication
-- Filtering can be implemented using React state management or external libraries like Zustand
 
 
 ## Implementation
 
 ### 1. Update `ProjectData` Interface
 
-Update the `ProjectData` interface in `src/components/projects/Project.tsx` to include an optional tags array:
+File modified: `src/components/projects/Project.tsx`
+
+Update the `ProjectData` interface to include an optional tags array:
 
 ```typescript
 export interface ProjectData {
@@ -56,6 +73,8 @@ export interface ProjectData {
 ```
 
 ### 2. Render Tags in Project Component
+
+File modified: `src/components/projects/Project.tsx`
 
 Update the `Project` component to accept and render tags:
 
@@ -107,7 +126,9 @@ export const Project: FunctionComponent<ProjectData> = ({
 
 ### 3. Add Tags to Projects
 
-Update your projects array in `src/pages/projects.tsx` to include tags:
+File modified: `src/pages/projects.tsx`
+
+Update the projects array to include tags:
 
 ```typescript
 const projects: ProjectData[] = [
@@ -116,14 +137,14 @@ const projects: ProjectData[] = [
     description: "A responsive landing page for a fictional logistics company",
     url: `${baseUrl}/docs/Software-Engineering/Web-Development/Projects/Swiftlink/`,
     image: require(`/img/docs/Screenshot-2025-04-18-144904.png`),
-    tags: ["web", "frontend", "responsive"],
+    tags: ["Web Development", "JavaScript"],
   },
   {
     title: "CI/CD Pipeline for Flask Application",
     description: "Automate code deployment with testing, packaging, and server deployment.",
     url: `${baseUrl}/docs/Version-Control-and-CICD/Jenkins-Labs/Single-Server-Deployment`,
     image: require(`/img/docs/jenkins-flask.png`),
-    tags: ["devops", "jenkins", "ci-cd", "flask"],
+    tags: ["DevOps", "Containers", "Python"],
   },
   // Add tags to remaining projects...
 ];
@@ -131,7 +152,9 @@ const projects: ProjectData[] = [
 
 ### 4. Add Tag Styling (Optional)
 
-Add CSS styling for project tags in `src/components/projects/Project.module.scss`:
+File modified: `src/components/projects/Project.module.scss`
+
+Add CSS styling for project tags:
 
 ```scss
 .tags {
@@ -153,23 +176,13 @@ Add CSS styling for project tags in `src/components/projects/Project.module.scss
 
 ### 5. Implement Filtering (Future Enhancement)
 
-To add filtering functionality:
+The next step will be to implement filtering functionality based on these tags. 
 
-1. Convert `projects.tsx` to use React state with `useState` hook
-2. Track selected tags in state
-3. Filter the projects array based on selected tags
-4. Render tag filter buttons/toggles
-5. Update the displayed projects based on the filter selection
+This will involve:
 
-Example structure:
+- Tracking selected tags in state
+- Filtering the projects array based on selected tags
+- Rendering tag filter buttons/toggles
+- Updating the displayed projects based on the filter selection
 
-```typescript
-const [selectedTags, setSelectedTags] = useState<string[]>([]);
-
-const filteredProjects = selectedTags.length === 0
-  ? projects
-  : projects.filter(project =>
-      project.tags?.some(tag => selectedTags.includes(tag))
-    );
-```
-
+See [Designing the Project Page.](/docs/001-Personal-Notes/040-Documentation-Notes/001-Docusaurus/025-Designing-the-Project-Page.md)

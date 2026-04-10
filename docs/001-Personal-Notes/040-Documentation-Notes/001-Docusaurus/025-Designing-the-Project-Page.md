@@ -8,13 +8,15 @@ sidebar_position: 25
 
 ## Overview
 
-This page documents the complete design and implementation process for the Docusaurus projects page, including adding tags to project cards, implementing a 2-column layout with categories filter sidebar, and comprehensive styling for both light and dark modes. 
+This page documents the complete design and implementation process for my site's projects page, including adding tags to project cards, implementing a 2-column layout with categories filter sidebar, and comprehensive styling for both light and dark modes. 
 
-Note: The process involved multiple iterations to achieve the functional design.
+**Note**: It actually took me multiple iterations to achieve the functional design.
 
 ## Background
 
-The projects page initially displayed project cards in a simple grid layout. The goal was to enhance it with:
+The projects page initially displayed project cards in a simple grid layout.
+
+The goal was to enhance it with:
 
 - **Tags**: Categorize projects by technology and type
 - **Filtering**: Add a sidebar for category-based filtering
@@ -41,59 +43,66 @@ On small mobile screens, the categories are hidden from display so the project c
 
 ### 1. Add Tags to Project Cards
 
-Enable categorization of projects with visible tags.
+This enables categorization of projects with visible tags.
 
-- Updated `ProjectData` interface to include optional `tags` array
-- Modified `Project` component to render tags below project description
-- Added initial tag data to projects in `projects.tsx`
+See [Project Card Tags.](/docs/001-Personal-Notes/040-Documentation-Notes/001-Docusaurus/024-Project-Card-Tags.md)
 
-Files modified:
+<div class='img-center'>
 
-- `src/components/projects/Project.tsx`
-- `src/pages/projects.tsx`
+![](/img/docs/Screenshot2026-04-11034443.png)
+
+</div>
 
 ### 2. Style Project Tags
 
-Create visually appealing tag styling.
+This focuses on customizing the appearance of tags.
 
 - Added `.tags` and `.tag` CSS classes
-- Set tag background to blue (`#3578e5`) with white text
-- Added margins for spacing between tags and from content
+- Set tag background and text colors
+- Added right margin for better spacing between them
+- Added top and bottom margin for better separation from other content
 - Implemented dark mode variants
 
-Files modified:
+See [Project Card Tags: Add Tag Styling](/docs/001-Personal-Notes/040-Documentation-Notes/001-Docusaurus/024-Project-Card-Tags.md#4-add-tag-styling-optional)
 
-- `src/components/projects/Project.module.scss`
+Dark mode:
 
-### 3. Adjust Page and Tag Spacing
+<div class='img-center'>
 
-Improve visual hierarchy and spacing.
+![](/img/docs/Screenshot2026-04-11034639.png)
 
-- Added 5rem top margin to `.projectsPage`
-- Increased bottom margin on `.projectsTitle` to 5rem
-- Added 8px right margin to tags for horizontal spacing
+</div>
 
-Files modified:
 
-- `src/components/projects/Project.module.scss`
+### 3. Restructure Page Layout
 
-### 4. Restructure Page Layout
+After setting how each project card will look, the next step was to design the overall page layout. 
 
-Implement 2-column grid layout with categories sidebar.
+I tried several variations, before settling on a 2-column grid with the categories sidebar on the left and the project cards on the right.
 
-- Wrapped page content in `.pageContainer` with `max-width: 1536px`
-- Created 2-column CSS grid (1fr 3fr)
-- Moved header and cards list to right column
-- Added placeholder left column for future sidebar
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-04-11034338.png)
+
+</div>
+
+Initial customizations done:
+
+- Wrapped page content so that it follows same max width as header
+- Added padding to the page container for better spacing
+- Added a header box above the page container for the "Projects" title
 
 Files modified:
 
 - `src/pages/projects.tsx`
 - `src/components/projects/Project.module.scss`
 
-### 5. Experiment with Card Layout
+**UPDATE:** The more complex stuff like the toggable categories and responsive design came in step 6 and step 9.
 
-Test side-by-side card layout (later reverted).
+
+### 4. Update the Card Layout
+
+This step focuses on testing side-by-side card layout 
 
 - Converted cards to grid layout with image and content side-by-side
 - Updated card dimensions and spacing
@@ -104,52 +113,51 @@ Files modified:
 - `src/components/projects/Project.tsx`
 - `src/components/projects/Project.module.scss`
 
-### 6. Revert to Original Card Layout
+**UPDATE:** After testing the side-by-side layout, I decided to revert back to the original vertical card layout.
 
-Return to vertical card layout for better content flow.
+In this layout, the image is stacked above the body and footer.
 
-- Reverted cards to stacked image/body/footer layout
-- Restored flex-wrap grid for cards
-- Maintained 2-column page structure
+
+### 5. Refine Card Styling
+
+This step focuses more on styling the project cards to match the overall design aesthetic of the site.
+
+Initially, I had added borders to the cards and buttons, but after testing it, I decided to remove them for a cleaner look.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-04-11041157.png)
+
+</div>
+
+No borders looks better:
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-04-11041227.png)
+
+</div>
+
+Additional styling changes:
+
+- Updated tag colors and text colors for better contrast
+- Updated "See Project" link color to match the new tag colors
 
 Files modified:
 
 - `src/components/projects/Project.tsx`
 - `src/components/projects/Project.module.scss`
 
-### 7. Refine Card Styling
+### 6. Add Categories Filter Sidebar
 
-Achieve clean, borderless design.
+This is actually the most complex step, as it involved updating the JSX structure to allow selecting categories and implementing the filtering logic to show/hide project cards based on selected categories.
 
-- Changed card background to white
-- Removed card borders
-- Removed button borders in footer
-- Updated tag colors to subtle gray (`#eeeef1` background, `#696f83` text)
-- Set "See Project" link color to `#696f83`
-- Added button icon back with matching color
-
-Files modified:
-
-- `src/components/projects/Project.tsx`
-- `src/components/projects/Project.module.scss`
-
-### 8. Add Categories Filter Sidebar
-
-Implement toggleable category filters in left column.
-
-- Added "CATEGORIES" header with padding/margins
-- Styled checkboxes and labels with consistent spacing
-- Added dark mode support
-
-Also created toggleable list with checkboxes for:
+Current categories added (will expand in the future):
 
 - DevOps
 - Security
 - Web Development
 - Data Analysis
-- Data Engineering
-- Machine Learning
-- Others
 
 Files modified:
 
@@ -158,7 +166,7 @@ Files modified:
 
 ### 9. Hide Column 1 on Small Screens
 
-Prioritize project card readability on smaller mobile screens.
+This step focuses on prioritizing project card readability on smaller mobile screens.
 
 - Hid column 1 entirely on small screen sizes
 - Kept the `Projects` header visible with a smaller font size
@@ -178,7 +186,7 @@ Files modified:
 
 ### 10. Add Category Filtering Logic
 
-Connect the category checkboxes to the displayed project cards.
+This step focuses on connecting the category checkboxes to the displayed project cards.
 
 - Added a categories configuration array in `projects.tsx`
 - Added React state to track selected categories

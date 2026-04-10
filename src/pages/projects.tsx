@@ -13,7 +13,7 @@ const projects: ProjectData[] = [
     url: `${baseUrl}/docs/Software-Engineering/Web-Development/Projects/Swiftlink/`, 
     image: require(`/img/docs/Screenshot-2025-04-18-144904.png`),
     tags: ["Web Development", "JavaScript"],
-    // role: "Organizer",
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },  
   {
     title: "Circuit Minds",
@@ -21,7 +21,7 @@ const projects: ProjectData[] = [
     url: `${baseUrl}/docs/Software-Engineering/Web-Development/Projects/Circuit-Minds/`, 
     image: require(`/img/docs/Screenshot-2025-03-28-195824.png`),
     tags: ["Web Development", "JavaScript"],
-    // role: "Organizer",
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },  
   {
     title: "Just Keep Running",
@@ -29,7 +29,7 @@ const projects: ProjectData[] = [
     url: `${baseUrl}/docs/Software-Engineering/Web-Development/Projects/Just-Keep-Running/`, 
     image: require(`/img/docs/Screenshot-2025-03-24-075843.png`),
     tags: ["Web Development", "JavaScript"],
-    // role: "Organizer",
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },  
   {
     title: "CI/CD Pipeline for Flask Application",
@@ -37,7 +37,7 @@ const projects: ProjectData[] = [
     url: `${baseUrl}/docs/Version-Control-and-CICD/Jenkins-Labs/Single-Server-Deployment`, 
     image: require(`/img/docs/jenkins-flask.png`),
     tags: ["DevOps", "Containers", "Python"],
-    // role: "Organizer",
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },  
   {
     title: "AWS Serverless Deployment using Jenkins",
@@ -45,7 +45,7 @@ const projects: ProjectData[] = [
     url: `${baseUrl}/docs/Amazon-Web-Services/Projects/Deploy-Serverless-App-using-Jenkins/`, 
     image: require(`/img/docs/AWS-SAM.png`),
     tags: ["DevOps", "AWS", "Serverless"],
-    // role: "Organizer",
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },  
   {
     title: "Setting Up Jenkins with Ansible",
@@ -53,7 +53,7 @@ const projects: ProjectData[] = [
     url: `${baseUrl}/docs/Version-Control-and-CICD/Jenkins-Labs/Setup-Ansible-and-Jenkins/`, 
     image: require(`/img/docs/ansible-jenkins.png`),
     tags: ["DevOps", "Ansible"],
-    // role: "Organizer",
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },  
   {
     title: "Kong Gateway Setup with Docker Compose",
@@ -61,7 +61,7 @@ const projects: ProjectData[] = [
     url: `${baseUrl}/docs/Software-Engineering/Kong-API-Gateway/Containerized-Kong-and-Other-Apps`, 
     image: require(`/img/docs/kong-elk-prom-graf.png`),
     tags: ["DevOps", "Docker", "Observability"],
-    // role: "Organizer",
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },  
   {
     title: "A Network Analysis of Game of Thrones",
@@ -69,7 +69,7 @@ const projects: ProjectData[] = [
     url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/065-Software-Engineering/021-Jupyter-Notebooks/020-A-Network-Analysis-of-Game-of-Thrones/network-analysis-on-game-of-thrones.ipynb",
     image: require(`/img/docs/got_network.jpeg`),
     tags: ["Data Analysis", "Python"]
-    // role: "Organizer",
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },
   {
     title: "A New Era of Data Analysis in Baseball",
@@ -77,7 +77,7 @@ const projects: ProjectData[] = [
     url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/065-Software-Engineering/021-Jupyter-Notebooks/021-A-New-Era-of-Data-Analysis-in-Baseball/A-New-Era-of-Data-Analysis-in-Baseball.ipynb",
     image: require(`/img/docs/stanton_wide.jpg`),
     tags: ["Data Analysis", "Python"]
-    // role: "Organizer",
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },
   {
     title: "Investigating Netflix Movies",
@@ -85,7 +85,7 @@ const projects: ProjectData[] = [
     url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/065-Software-Engineering/021-Jupyter-Notebooks/010-Investigating-Netflix-Movies/netflix-movies.ipynb",
     image: require(`/img/docs/redpopcorn.jpg`),
     tags: ["Data Analysis", "Python"]
-    // role: "Organizer",
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },
   {
     title: "Hacker Statistics with Python",
@@ -93,7 +93,7 @@ const projects: ProjectData[] = [
     url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/065-Software-Engineering/021-Jupyter-Notebooks/009-Hacker-Statistics/Hacker_Statistics.ipynb",
     image: require(`/img/docs/hacker-statistics.png`),
     tags: ["Data Analysis", "Python"],
-    // role: "Organizer",
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },  
   {
     title: "Exploring NYC Public School Test Result Scores",
@@ -101,7 +101,7 @@ const projects: ProjectData[] = [
     url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/065-Software-Engineering/021-Jupyter-Notebooks/022-Exploring-NYC-Public-School-Test-Result-Scores/Exploring-NYC-Public-School-Test-Result-Scores.ipynb",
     image: require(`/img/docs/schoolbus.jpg`),
     tags: ["Data Analysis", "Python"],
-    // role: "Organizer",
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },  
   {
     title: "Centralized Logging with Graylog SIEM",
@@ -109,7 +109,7 @@ const projects: ProjectData[] = [
     url: "",
     image: require(`/img/docs/graylog.png`),
     tags: ["DevOps", "Security", "AWS"],
-    // role: "Maintainer",
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },
   {
     title: "Microservices Deployment on Kubernetes",
@@ -117,7 +117,7 @@ const projects: ProjectData[] = [
     url: "",
     image: require(`/img/docs/aws-eks.png`),
     tags: ["DevOps", "Kubernetes", "Docker"],
-    // role: "Maintainer",
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },
   {
     title: "End-to-End DevSecOps Pipeline",
@@ -125,7 +125,7 @@ const projects: ProjectData[] = [
     url: "",
     image: require(`/img/docs/devsecops.png`),
     tags: ["DevOps", "Security"],
-    // role: "Author",
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },
   {
     title: "Machine Learning Pipeline Deployment",
@@ -133,7 +133,7 @@ const projects: ProjectData[] = [
     url: "",
     image: require(`/img/docs/mlops.png`),
     tags: ["Machine Learning", "MLOps", "Python"],
-    // role: "Author",
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },
   {
     title: "ETL Pipeline Deployment",
@@ -141,10 +141,16 @@ const projects: ProjectData[] = [
     url: "",
     image: require(`/img/docs/etl-pipeline.png`),
     tags: ["Data Engineering", "ETL", "Python"],
-    // role: "Organizer",
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },
 ];
 
+
+// Set the layout of the Projects page, including the title and categories for filtering projects. 
+//    Left column: Categories filter sidebar
+//    Right column: Project cards
+// The categories are defined as an array of objects, each with an `id` and a `label`. 
+// The `id` is used for internal logic, while the `label` is displayed to users.
 const title = "Projects";
 
 const categories = [
