@@ -185,40 +185,44 @@ export default function Projects(): JSX.Element {
 
   return (
     <Layout title={title}>
-      <main className={`${styles.projectsPage} margin-vert--lg`}>
-        <div className={styles.pageWrapper}>
-          <div className={styles.headerBox}>
-            <h1 className={styles.projectsTitle}>{title}</h1>
-          </div>
-          <div className={styles.pageContainer}>
-            <div className={styles.leftColumn}>
-              <div className={styles.sidebarContainer}>
-                <div className={styles.categoriesHeader}>
-                  CATEGORIES
-                </div>
-                <div className={styles.categoriesList}>
-                  {categories.map((category) => (
-                    <div key={category.id} className={styles.categoryItem}>
-                      <input
-                        type="checkbox"
-                        id={category.id}
-                        className={styles.categoryToggle}
-                        checked={selectedCategories.includes(category.label)}
-                        onChange={() => handleCategoryToggle(category.label)}
-                      />
-                      <label htmlFor={category.id} className={styles.categoryLabel}>
-                        {category.label}
-                      </label>
-                    </div>
-                  ))}
-                </div>
+      <main className="margin-vert--lg">
+        <div className="outerprojectsPage">
+          <div className={styles.projectsPage}>
+            <div className={styles.pageWrapper}>
+              <div className={styles.headerBox}>
+                <h1 className={styles.projectsTitle}>{title}</h1>
               </div>
-            </div>
-            <div className={styles.rightColumn}>
-              <div className={styles.cardsList}>
-                {filteredProjects.map((project) => (
-                  <Project key={project.title} {...project} />
-                ))}
+              <div className={styles.pageContainer}>
+                <div className={styles.leftColumn}>
+                  <div className={styles.sidebarContainer}>
+                    <div className={styles.categoriesHeader}>
+                      CATEGORIES
+                    </div>
+                    <div className={styles.categoriesList}>
+                      {categories.map((category) => (
+                        <div key={category.id} className={styles.categoryItem}>
+                          <input
+                            type="checkbox"
+                            id={category.id}
+                            className={styles.categoryToggle}
+                            checked={selectedCategories.includes(category.label)}
+                            onChange={() => handleCategoryToggle(category.label)}
+                          />
+                          <label htmlFor={category.id} className={styles.categoryLabel}>
+                            {category.label}
+                          </label>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.rightColumn}>
+                  <div className={styles.cardsList}>
+                    {filteredProjects.map((project) => (
+                      <Project key={project.title} {...project} />
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
