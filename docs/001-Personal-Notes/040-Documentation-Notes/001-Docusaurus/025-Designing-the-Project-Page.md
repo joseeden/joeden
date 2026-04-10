@@ -113,9 +113,7 @@ Files modified:
 - `src/components/projects/Project.tsx`
 - `src/components/projects/Project.module.scss`
 
-**UPDATE:** After testing the side-by-side layout, I decided to revert back to the original vertical card layout.
-
-In this layout, the image is stacked above the body and footer.
+**UPDATE:** After testing the side-by-side layout, I decided to revert back to the original vertical card layout where the image is stacked above the body and footer.
 
 
 ### 5. Refine Card Styling
@@ -130,7 +128,7 @@ Initially, I had added borders to the cards and buttons, but after testing it, I
 
 </div>
 
-No borders looks better:
+No borders looks better (only done on light mode):
 
 <div class='img-center'>
 
@@ -138,26 +136,32 @@ No borders looks better:
 
 </div>
 
-Additional styling changes:
+**UPDATE:** I've also set the project cards to have a "hover effect" and a "box-shadow effect on hover", which adds a subtle shadow to the card when hovered over. This gives it a slight "lift" and makes it more interactive.
 
-- Updated tag colors and text colors for better contrast
-- Updated "See Project" link color to match the new tag colors
+<div class='img-center'>
+
+![](/gif/docs/11042026-docusaurus-category-4.gif)
+
+</div>
+
+I experimented with adding the box-shadow effect on dark mode as well, but I don't think it adds much, plus the project cards have borders when dark mode, so I decided to keep the box-shadow effect only for light mode.
+
+
 
 Files modified:
 
 - `src/components/projects/Project.tsx`
 - `src/components/projects/Project.module.scss`
 
-### 6. Add Categories Filter Sidebar
+### 6. Add Categories Filtering
 
 This is actually the most complex step, as it involved updating the JSX structure to allow selecting categories and implementing the filtering logic to show/hide project cards based on selected categories.
 
-Current categories added (will expand in the future):
+<div class='img-center'>
 
-- DevOps
-- Security
-- Web Development
-- Data Analysis
+![](/gif/docs/11042026-docusaurus-category-3.gif)
+
+</div>
 
 Files modified:
 

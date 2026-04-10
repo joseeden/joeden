@@ -12,7 +12,7 @@ In Docusaurus, a category is a sidebar item that can contain docs or other categ
 
 <div class='img-center'>
 
-![](/gif/docs/11042026-docusaurus-category)
+![](/gif/docs/11042026-docusaurus-category.gif)
 
 </div>
 
