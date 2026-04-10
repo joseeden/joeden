@@ -544,6 +544,10 @@
   .projectsPage .card {
     background: #193549;
     border: none;
+
+    &:hover {
+      box-shadow: 0 8px 24px rgba(64, 147, 155, 0.28);
+    }
   }
 
   .projectsPage .tag {
