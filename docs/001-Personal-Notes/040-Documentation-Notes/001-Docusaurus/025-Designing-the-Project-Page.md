@@ -12,33 +12,6 @@ This page documents the complete design and implementation process for my site's
 
 **Note**: It actually took me multiple iterations to achieve the functional design.
 
-## Background
-
-The projects page initially displayed project cards in a simple grid layout.
-
-The goal was to enhance it with:
-
-- **Tags**: Categorize projects by technology and type
-- **Filtering**: Add a sidebar for category-based filtering
-- **Layout**: Implement a 2-column responsive design
-- **Styling**: Clean, borderless design with consistent theming
-
-The category filter is intentionally available only on laptop and larger screen sizes. 
-
-<div class='img-center'>
-
-![](/img/docs/Screenshot2026-04-07225342.png)
-
-</div>
-
-On small mobile screens, the categories are hidden from display so the project cards can use the full width and remain readable.
-
-<div class='img-center'>
-
-![](/img/docs/Screenshot2026-04-07225643.png)
-
-</div>
-
 ## Implementation Steps
 
 ### 1. Add Tags to Project Cards
