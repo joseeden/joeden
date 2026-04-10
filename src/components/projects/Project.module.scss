@@ -185,8 +185,23 @@
       color: #569c76 !important;
     }
 
+    &:hover a,
+    &:focus-within a {
+      color: #569c76 !important;
+    }
+
+    &:hover .button__icon,
+    &:focus-within .button__icon {
+      color: #569c76 !important;
+    }
+
     .button__icon {
       color: currentColor;
+
+      svg {
+        display: block;
+        fill: currentColor;
+      }
 
       a:hover &,
       a:focus & {
@@ -550,16 +565,23 @@
 
     a:hover &,
     a:focus & {
-      color: #64b5b0 !important;
+      color: #ffffff !important;
     }
   }
 
   .projectsPage .card__footer {
 
     a:hover,
-    a:focus {
+    a:focus,
+    &:hover a,
+    &:focus-within a {
       background-color: transparent !important;
-      color: #64b5b0 !important;
+      color: #ffffff !important;
+    }
+
+    &:hover .button__icon,
+    &:focus-within .button__icon {
+      color: #ffffff !important;
     }
   }
   
