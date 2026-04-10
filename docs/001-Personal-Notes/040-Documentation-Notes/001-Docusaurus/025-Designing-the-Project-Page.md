@@ -78,6 +78,11 @@ Dark mode:
 
 After setting how each project card will look, the next step was to design the overall page layout. 
 
+Files modified:
+
+- `src/pages/projects.tsx`
+- `src/components/projects/Project.module.scss`
+
 I tried several variations, before settling on a 2-column grid with the categories sidebar on the left and the project cards on the right.
 
 <div class='img-center'>
@@ -91,11 +96,6 @@ Initial customizations done:
 - Wrapped page content so that it follows same max width as header
 - Added padding to the page container for better spacing
 - Added a header box above the page container for the "Projects" title
-
-Files modified:
-
-- `src/pages/projects.tsx`
-- `src/components/projects/Project.module.scss`
 
 **UPDATE:** The more complex stuff like the toggable categories and responsive design came in step 6 and step 9.
 
@@ -119,6 +119,11 @@ Files modified:
 ### 5. Refine Card Styling
 
 This step focuses more on styling the project cards to match the overall design aesthetic of the site.
+
+Files modified:
+
+- `src/components/projects/Project.tsx`
+- `src/components/projects/Project.module.scss`
 
 Initially, I had added borders to the cards and buttons, but after testing it, I decided to remove them for a cleaner look.
 
@@ -144,60 +149,42 @@ No borders looks better (only done on light mode):
 
 </div>
 
-I experimented with adding the box-shadow effect on dark mode as well, but I don't think it adds much, plus the project cards have borders when dark mode, so I decided to keep the box-shadow effect only for light mode.
+I experimented with adding the box-shadow effect on dark mode but it made the cards appear a bit too blurry and less defined. As an alternative, I switched to a tighter border-like ring plus a darker depth shadow so the card edge stays sharp in dark mode. 
 
-
-
-Files modified:
-
-- `src/components/projects/Project.tsx`
-- `src/components/projects/Project.module.scss`
-
-### 6. Add Categories Filtering
-
-This is actually the most complex step, as it involved updating the JSX structure to allow selecting categories and implementing the filtering logic to show/hide project cards based on selected categories.
+**UPDATE:** I realized that the darker shadow on hover didn't do much, but the ring effect did make the card edges more defined. In the end, I just kept both effects.
 
 <div class='img-center'>
 
-![](/gif/docs/11042026-docusaurus-category-3.gif)
+![](/gif/docs/11042026-project-card-dark-mode-ring-on-hover.gif)
 
 </div>
 
-Files modified:
+### 6. Hide Category Sidebar on Small Screens
 
-- `src/pages/projects.tsx`
-- `src/components/projects/Project.module.scss`
+The idea came to me when I was testing the responsive design on mobile. I realized that showing both the categories sidebar and the project cards on small screens made the usable width too narrow, which made the project cards look cramped and unreadable. As a solution, I decided to hide the entire column 1 (the categories sidebar) on small screen sizes, which allowed the project cards to use the full available width and remain readable.
 
-### 9. Hide Column 1 on Small Screens
+**Might be useful to note**: To hide the column, set `display: none` on the left column at small screen widths using a media query. 
 
-This step focuses on prioritizing project card readability on smaller mobile screens.
+**Downside**: Category filtering is limited to laptop and larger screen sizes. However, since the cards are displayed in a single column on mobile, the layout is already simplified and the category filter would be less useful in that context. 
 
-- Hid column 1 entirely on small screen sizes
-- Kept the `Projects` header visible with a smaller font size
-- Allowed only column 2 to remain visible on mobile
-- Expanded project cards to use the full available width
-- Limited the category filter experience to laptop and larger screen sizes
-
-Reason:
-
-- On narrow screens, showing both the categories sidebar and the project cards reduced the usable width too much
-- Hiding the filter sidebar ensures project cards remain complete and readable
+**Tradeoffs:** It would display all the project cards in a single column, which meant if there are many projects, the user would have to scroll through all of them without the ability to filter. However, I think this is an acceptable compromise, as it preserves the overall design on smaller screens.
 
 Files modified:
 
 - `src/pages/projects.tsx`
 - `src/components/projects/Project.module.scss`
 
-### 10. Add Category Filtering Logic
+<div class='img-center'>
 
-This step focuses on connecting the category checkboxes to the displayed project cards.
+![](/gif/docs/11042026-project-card-hide-category-sidebar.gif)
 
-- Added a categories configuration array in `projects.tsx`
-- Added React state to track selected categories
-- Wired each checkbox to controlled state using `checked` and `onChange`
-- Implemented multi-select filtering so multiple categories can be active at the same time
-- Kept all projects visible when no category is selected
-- Filtered cards by matching selected category labels against each project's `tags`
+</div>
+
+### 7. Add Categories Filtering
+
+This is actually the most complex step, as it involved updating the JSX structure to allow selecting categories, connecting the checkboxes to the state, and then implementing the filtering logic to show/hide project cards based on selected categories.
+
+File modified: `src/pages/projects.tsx`
 
 Filtering behavior:
 
@@ -205,14 +192,20 @@ Filtering behavior:
 - If one category is selected, only cards with a matching tag are displayed
 - If multiple categories are selected, a card is displayed when it matches at least one selected category
 
-Example:
+Notes: 
 
-- Selecting `DevOps` shows only cards tagged with `DevOps`
-- Selecting `DevOps` and `Security` shows cards tagged with either `DevOps` or `Security`
+- Used React states to track selected categories
+- Wired each checkbox to controlled state using `checked` and `onChange`
+- Added multi-select filtering so multiple categories can be active at the same time
+- Kept all projects visible when no category is selected
+- Filtered cards by matching selected category labels against each project's `tags`
 
-Files modified:
+<div class='img-center'>
 
-- `src/pages/projects.tsx`
+![](/gif/docs/11042026-docusaurus-category-3.gif)
+
+</div>
+
 
 ## Technical Details
 
@@ -250,21 +243,19 @@ Filtering logic in projects.tsx
 
 ### CSS Architecture
 
-- **Layout**: CSS Grid for page, Flexbox for cards and sidebar
-- **Responsive**: Mobile-first with breakpoints at 960px and 600px
-- **Theming**: Light/dark mode support with CSS custom properties
-- **Spacing**: Consistent margins and padding using rem units
-- **Colors**: Gray color palette for subtle, professional appearance
+CSS is organized using a combination of BEM naming conventions (Block, Element, and Modifier) and modular SCSS files. 
 
-### Filtering Logic
+The main CSS file for the projects page is `Project.module.scss`, which contains styles for the overall layout, project cards, tags, and responsive design.
 
-- **State Management**: `useState` stores the currently selected category labels
-- **Controlled Inputs**: Each checkbox reflects state through the `checked` prop
-- **Toggle Handling**: Selecting a category adds it to the active list; selecting it again removes it
-- **Matching Rule**: Filtering uses project tags and displays a card when any selected category matches one of its tags
-- **Fallback Rule**: When the selected category list is empty, the full project list is rendered
+| Aspect         | Details                                                            |
+| -------------- | ------------------------------------------------------------------ |
+| **Layout**     | CSS Grid for overall page structure, Flexbox for cards and sidebar |
+| **Responsive** | Mobile-first approach with breakpoints at multiple screen sizes    |
+| **Theme**      | Light and dark mode support using CSS custom properties            |
+| **Spacing**    | Consistent margins and padding defined (used `rem` and `px` units) |
+| **Colors**     | Gray-based color palette for a subtle and professional appearance  |
 
-### Key CSS Classes
+Key CSS classes:
 
 | Class             | Purpose                                                 |
 | ----------------- | ------------------------------------------------------- |
@@ -278,6 +269,17 @@ Filtering logic in projects.tsx
 | `.categoriesList` | Sidebar filter list                                     |
 | `.categoryItem`   | Individual filter item with checkbox and label          |
 
+### Filtering Logic
+
+| Aspect                | Details                                                                                              |
+| --------------------- | ---------------------------------------------------------------------------------------------------- |
+| **State Management**  | `useState` stores the currently selected category labels                                             |
+| **Controlled Inputs** | Each checkbox reflects state through the `checked` prop                                              |
+| **Toggle Handling**   | Selecting a category adds it to the active list; selecting it again removes it                       |
+| **Matching Rule**     | Filtering checks project tags and displays a card when any selected category matches one of its tags |
+| **Fallback Rule**     | When no categories are selected, the full project list is displayed                                  |
+
+
 ## Challenges and Solutions
 
 | Challenge               | Problem                                         | Solution                                                            |
@@ -290,9 +292,11 @@ Filtering logic in projects.tsx
 
 ## Future Enhancements
 
-- **Tag Management**: Dynamic tag generation from project data
-- **Animation**: Add smooth transitions for filter interactions
-- **Search**: Add text search alongside category filters
-- **Empty State**: Add a message for filter combinations with no matching projects
+Some stuff I've searched online which I'm thinking of adding in the future: 
+
+- **Tag Management** - Dynamic tag generation from project data
+- **Animation** - Add smooth transitions for filter interactions
+- **Search** - Add text search alongside category filters
+- **Empty State** - Add a message for filter combinations with no matching projects
 
 
