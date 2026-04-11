@@ -69,6 +69,12 @@
     font-size: 11.5px;
     color: #696f83;
     cursor: pointer;
+
+    @media (min-width: 898px) {
+      &:hover {
+        color: #307186;
+      }
+    }
   }
 
   .clearAllButton {
@@ -476,10 +482,6 @@
         cursor: pointer;
         line-height: 1.2;
         transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-
-        &:hover {
-          color: #307186;
-        }
       }
 
       .categoryToggle:checked + .categoryLabel {
@@ -640,6 +642,12 @@
 
     .categoryLabel {
       color: #b0b3c1;
+
+      @media (min-width: 898px) {
+        &:hover {
+          color: #52baba;
+        }
+      }
     }
 
     .categoryToggle {
@@ -660,10 +668,6 @@
         background-color: #163346;
         border-color: #2b5267;
         color: #d9e3e4;
-
-        &:hover {
-          color: #52baba;
-        }
       }
 
       .categoryToggle:checked + .categoryLabel {
