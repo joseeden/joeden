@@ -702,6 +702,17 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
   scroll-margin-top: 110px;
 }
 
+/* Reduce Docusaurus docs titles, especially generated category pages */
+[class*="docItemContainer_"] > article > header h1[class*="title_"],
+[class*="generatedIndexPage_"] > header h1[class*="title_"] {
+  font-size: clamp(2rem, 3vw, 2.4rem);
+  line-height: 1.15;
+}
+
+[class*="generatedIndexPage_"] > header h1[class*="title_"] {
+  font-size: clamp(1.85rem, 2.4vw, 2.15rem);
+}
+
 /* Admonition icon colors */
 [class*="admonitionIcon_"] {
   color: inherit !important;
@@ -745,6 +756,13 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
 @media (max-width: 500px) {
   .navbar {
     margin: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  [class*="docItemContainer_"] > article > header h1[class*="title_"],
+  [class*="generatedIndexPage_"] > header h1[class*="title_"] {
+    font-size: 1.8rem;
   }
 }
 
