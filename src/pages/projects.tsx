@@ -216,7 +216,6 @@ export default function Projects(): JSX.Element {
                   <button
                     className={styles.clearAllButton}
                     onClick={() => setSelectedCategories([])}
-                    disabled={selectedCategories.length === 0}
                   >
                     Clear All
                   </button>

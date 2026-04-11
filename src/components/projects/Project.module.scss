@@ -83,14 +83,8 @@
     text-underline-offset: 2px;
     display: block;
 
-    &:hover:not(:disabled) {
+    &:hover {
       color: #40939b;
-    }
-
-    &:disabled {
-      opacity: 0.35;
-      cursor: default;
-      text-decoration: none;
     }
   }
 
@@ -502,6 +496,10 @@
             width: 100%;
             max-width: 100%;
         }
+      }
+
+      .clearAllButton {
+        font-size: 11px;
       }
 
       .card__body {
