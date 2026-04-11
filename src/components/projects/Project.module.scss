@@ -452,8 +452,27 @@
   }
 
   @media (max-width: 320px) {
-    .pageContainer .card .card__body>p {
+    .card__body > p {
       display: none;
+    }
+
+    .image {
+      align-items: stretch;
+    }
+
+    .image > div {
+      width: 100%;
+      height: 100%;
+      background-size: cover !important;
+      background-position: center;
+    }
+
+    .image :global(img),
+    .image :global(svg) {
+      width: 100% !important;
+      height: 100% !important;
+      max-width: none !important;
+      object-fit: cover;
     }
   }
 }
