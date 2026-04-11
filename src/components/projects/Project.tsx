@@ -28,32 +28,33 @@ export const Project: FunctionComponent<ProjectData> = ({
         <div className={clsx("card__image", styles.image)}>
           <Image img={image} alt={description} title={title} />
         </div>
-        <div className={clsx("card__body", styles.card__body)}>
-          <h2>{title}</h2>
-          <p>{description}</p>
-          {tags && tags.length > 0 && (
-            <div className={styles.tags}>
-              {tags.map((tag) => (
-                <span key={tag} className={styles.tag}>
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
-        </div>
-        <div className={clsx("card__footer", styles.card__footer)}>
-        {/* <div className="card__footer" style={{ textAlign: "center" }}> */}
-          <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="button button--primary button--outline"
-          >
-            <span className="button__icon">
-              <DiscoverIcon />
-            </span>
-            See Project
-          </a>
+        <div className={styles.cardContentContainer}>
+          <div className={clsx("card__body", styles.card__body)}>
+            <h2>{title}</h2>
+            <p>{description}</p>
+            {tags && tags.length > 0 && (
+              <div className={styles.tags}>
+                {tags.map((tag) => (
+                  <span key={tag} className={styles.tag}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+          <div className={clsx("card__footer", styles.card__footer)}>
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button button--primary button--outline"
+            >
+              <span className="button__icon">
+                <DiscoverIcon />
+              </span>
+              See Project
+            </a>
+          </div>
         </div>
       </div>
     </div>

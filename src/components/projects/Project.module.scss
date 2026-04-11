@@ -122,6 +122,13 @@
     }
   }
 
+  .cardContentContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+  }
+
   .image {
     background: #ffffff;
     position: relative;
@@ -136,9 +143,9 @@
   }
 
   .card__body {
-    padding: 15px 15px 0px;
     h2 {
       font-size: 14px;
+      padding: 0;
       margin-bottom: 0.5rem;
     }
     p {
@@ -146,6 +153,10 @@
     }
   }
 
+    .card__body> div {
+      margin-bottom: 0.5rem;
+    }
+    
   .tag {
     display: inline-block;
     background-color: #eeeef1;
@@ -153,7 +164,6 @@
     border-radius: 4px;
     padding: 2px 8px;
     font-size: 12px;
-    margin-bottom: 8px;
     margin-right: 8px;
     font-weight: bold;
 
@@ -167,7 +177,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15px 15px 20px;
+    padding: 0;
     width: 100%;
     text-align: center;
 
@@ -294,7 +304,7 @@
       }
   }
 
-  @media (max-width: 1171px) {
+  @media (max-width: 1183px) {
     .pageContainer {
         .rightColumn .cardsList {
           gap: 0;
@@ -315,16 +325,13 @@
       .leftColumn .sidebarContainer {
         padding: 20px;
       }
-      .rightColumn .cardsList {
-        gap: 40px !important;
-      }
     }
   }
   
   @media (max-width: 1059px) {
     .pageContainer {
         .rightColumn .cardsList {
-          gap: 30px !important;
+          gap: 30px;
         }
       }
   }
@@ -332,7 +339,7 @@
   @media (max-width: 1018px) {
     .pageContainer {
         .rightColumn .cardsList {
-          gap: 10px !important;
+          gap: 10px;
         }
       }
   }
@@ -348,13 +355,13 @@
   
   @media (max-width: 978px) {
     .pageContainer .cardsList {
-      gap: 40px !important;
+      gap: 40px;
     }
   }
   
   @media (max-width: 947px) {
     .pageContainer .cardsList {
-      gap: 30px !important;
+      gap: 30px;
     }
   }
   
