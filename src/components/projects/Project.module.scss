@@ -482,11 +482,19 @@
         cursor: pointer;
         line-height: 1.2;
         transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+
+        &:hover {
+          color: #4c566f;
+        }
       }
 
       .categoryToggle:checked + .categoryLabel {
         background-color: #40939b;
         border-color: #40939b;
+        color: #ffffff;
+      }
+
+      .categoryToggle:checked + .categoryLabel:hover {
         color: #ffffff;
       }
 
@@ -668,11 +676,19 @@
         background-color: #163346;
         border-color: #2b5267;
         color: #d9e3e4;
+
+        &:hover {
+          color: #d9e3e4;
+        }
       }
 
       .categoryToggle:checked + .categoryLabel {
         background-color: #40939b;
         border-color: #40939b;
+        color: #ffffff;
+      }
+
+      .categoryToggle:checked + .categoryLabel:hover {
         color: #ffffff;
       }
     }
