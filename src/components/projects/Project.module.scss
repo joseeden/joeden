@@ -476,6 +476,10 @@
         cursor: pointer;
         line-height: 1.2;
         transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+
+        &:hover {
+          color: #307186;
+        }
       }
 
       .categoryToggle:checked + .categoryLabel {
@@ -656,6 +660,10 @@
         background-color: #163346;
         border-color: #2b5267;
         color: #d9e3e4;
+
+        &:hover {
+          color: #52baba;
+        }
       }
 
       .categoryToggle:checked + .categoryLabel {
