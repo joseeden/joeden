@@ -115,8 +115,15 @@
     width: 290px;
     max-width: 100%;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
 
-    &:hover {
+  .cardLifted {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .card:hover {
       transform: translateY(-8px) scale(1.05);
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     }
@@ -491,11 +498,17 @@
     .card {
         background: #193549;
         border: none;
-    
-        &:hover {
-          box-shadow: 0 0 0 1px rgba(100, 181, 176, 0.35), 0 10px 22px rgba(3, 14, 25, 0.42);
-        }
       }
+
+    .cardLifted {
+      box-shadow: 0 0 0 1px rgba(100, 181, 176, 0.35), 0 10px 22px rgba(3, 14, 25, 0.42);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .card:hover {
+        box-shadow: 0 0 0 1px rgba(100, 181, 176, 0.35), 0 10px 22px rgba(3, 14, 25, 0.42);
+      }
+    }
 
     .tag {
       background-color: #40939b;
