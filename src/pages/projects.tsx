@@ -186,12 +186,12 @@ export default function Projects(): JSX.Element {
   return (
     <Layout title={title}>
       <main className="margin-vert--lg">
-        <div className="outerprojectsPage">
-          <div className={styles.projectsPage}>
-            <div className={styles.pageWrapper}>
-              <div className={styles.headerBox}>
-                <h1 className={styles.projectsTitle}>{title}</h1>
-              </div>
+        <div className={styles.projectsPage}>
+          <div className={styles.pageWrapper}>
+            <div className={styles.headerBox}>
+              <h1 className={styles.projectsTitle}>{title}</h1>
+            </div>
+            <div className="outerpageContiner">
               <div className={styles.pageContainer}>
                 <div className={styles.leftColumn}>
                   <div className={styles.sidebarContainer}>

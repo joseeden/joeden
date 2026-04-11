@@ -321,90 +321,90 @@
 }
 
 
-// .projectsPage {
+.projectsPage {
 
-//   @media (max-width: 1159PX) {
-//     .headerBox {
-//       padding: 15px;
-//     }
+  @media (max-width: 1159PX) {
+    .headerBox {
+      padding: 15px;
+    }
 
-//     .headerBox .projectsTitle {
-//       margin: 0 3rem;
-//     }
+    .headerBox .projectsTitle {
+      margin: 0 3rem;
+    }
 
-//     .pageContainer {
-//       grid-template-columns: 1fr 2.5fr;
+    .pageContainer {
+      grid-template-columns: 1fr 2.5fr;
 
-//       .leftColumn .sidebarContainer {
-//         padding: 20px;
-//         margin-left: 3rem;
-//       }
-//       .rightColumn {
-//         margin-right: 6rem;
-//       }      
+      .leftColumn .sidebarContainer {
+        padding: 20px;
+      }
+      .rightColumn {
+        margin-right: 6rem;
+      }      
       
-//       .rightColumn .cardsList {
-//         gap: 40px;
-//       }
+      .rightColumn .cardsList {
+        gap: 40px;
+      }
 
-//     }
+    }
+  }
 
-//   @media (max-width: 1093px) {
+  // @media (max-width: 1093px) {
 
-//      .rightColumn {
-//       padding: 20px 0;
-//     }
+  //    .rightColumn {
+  //     padding: 20px 0;
+  //   }
 
-//      .sidebarContainer {
-//       margin-left: 1rem;
-//     }
+  //    .sidebarContainer {
+  //     margin-left: 1rem;
+  //   }
 
-//      .projectsTitle {
-//       padding-left: 1rem;
-//     }
-//   }
+  //    .projectsTitle {
+  //     padding-left: 1rem;
+  //   }
+  // }
   
-//   @media (max-width: 1087px) {
+  // @media (max-width: 1087px) {
 
-//     .projectsPage .pageContainer {
-//       gap: 0;
-//       grid-template-columns: 1fr 3fr;
-//     }
+  //   .projectsPage .pageContainer {
+  //     gap: 0;
+  //     grid-template-columns: 1fr 3fr;
+  //   }
 
-//     .projectsPage .sidebarContainer {
-//       margin-left: 5rem;
-//     }
+  //   .projectsPage .sidebarContainer {
+  //     margin-left: 5rem;
+  //   }
 
-//     .projectsPage .rightColumn {
-//       padding: 20px;
-//     }
+  //   .projectsPage .rightColumn {
+  //     padding: 20px;
+  //   }
 
-//     .projectsPage .cardsList {
-//       gap: 50px;
-//     }
+  //   .projectsPage .cardsList {
+  //     gap: 50px;
+  //   }
 
-//     .projectsPage .projectsTitle {
-//       padding-left: 5rem;
-//     }
-//   }
+  //   .projectsPage .projectsTitle {
+  //     padding-left: 5rem;
+  //   }
+  // }
   
+  // @media (max-width: 1024px) {
 
-//   @media (max-width: 1024px) {
+  //   .projectsPage .pageContainer {
+  //     gap: 0;
+  //     grid-template-columns: 1fr 3fr;
+  //   }
 
-//     .projectsPage .pageContainer {
-//       gap: 0;
-//       grid-template-columns: 1fr 3fr;
-//     }
+  //   .projectsPage .sidebarContainer {
+  //     margin-left: 3rem;
+  //   }
 
-//     .projectsPage .sidebarContainer {
-//       margin-left: 3rem;
-//     }
-
-//     .projectsPage .projectsTitle {
-//       padding-left: 3rem;
-//     }
-//   }
-// }
+  //   .projectsPage .projectsTitle {
+  //     padding-left: 3rem;
+  //   }
+  // }
+  // }
+}
 
 .projectsPage {
 
