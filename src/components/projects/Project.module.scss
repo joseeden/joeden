@@ -76,8 +76,8 @@
     background: none;
     border: none;
     padding: 0;
-    font-size: 0.8rem;
-    color: #696f83;
+    font-size: 11.5px;
+    color: #4c566f;
     cursor: pointer;
     text-decoration: underline;
     text-underline-offset: 2px;
@@ -641,6 +641,14 @@
     .categoryToggle {
       background-color: white;
       accent-color: #40939b;
+    }
+
+    .clearAllButton {
+      color: #d9e3e4;
+
+      &:hover {
+        color: #ffffff;
+      }
     }
 
     @media (max-width: 897px) {
