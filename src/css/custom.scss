@@ -736,6 +736,11 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
   color: #efefef !important;
 }
 
+@media (max-width: 996px) {
+  .navbar {
+    margin: 0 1rem;
+  }
+}
 
 /* Styles for small mobile screens */
 @media (max-width: 600px) {
@@ -813,32 +818,51 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
   display: none !important;
 }
 
-/* Ensure theme toggle is visible on medium screens */
+}
+
+/* Ensure theme toggle and search stay aligned on medium screens */
 @media (max-width: 996px) {
-  /* Force dark mode toggle to stay visible in main navbar */
-  [class*="toggle_"][class*="colorModeToggle_"] {
-    display: block !important;
-    position: relative;
-    z-index: 1001;
-  }
-  
   .navbar__items--right {
     display: flex !important;
     align-items: center;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
     gap: 0.5rem;
+    margin-left: auto;
+    min-width: 0;
   }
-  
-  /* Prevent search from overlapping toggle */
+
+  .navbar__search,
   [class*="navbarSearchContainer_"] {
-    flex-shrink: 1;
-    max-width: calc(100vw - 200px);
+    order: 1;
+    flex: 0 1 auto;
+    min-width: 0;
+    max-width: 100%;
+    margin-right: 0;
   }
-  
-  /* Ensure navbar sidebar doesn't show theme toggle */
-  .navbar-sidebar [class*="toggle_"][class*="colorModeToggle_"] {
+
+  .navbar__search .DocSearch-Button,
+  [class*="navbarSearchContainer_"] .DocSearch-Button {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  [data-theme-toggle],
+  [class*="toggle_"][class*="colorModeToggle_"] {
+    order: 2;
+    flex: 0 0 auto;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    position: static;
+    z-index: auto;
+    margin-left: 0;
+  }
+
+  .navbar-sidebar [class*="toggle_"][class*="colorModeToggle_"],
+  .navbar-sidebar [class*="colorModeToggle_"] {
     display: none !important;
   }
-}
 }
 
 /* Extra small mobile screens */
@@ -971,7 +995,6 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
     
   }
 }
-
 
 // Video player section
 .video-container {
