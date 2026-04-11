@@ -130,18 +130,32 @@
   }
 
   .image {
+    align-items: center;
     background: #ffffff;
+    display: flex;
     position: relative;
     padding: 0;
     width: 100%;
     height: 100%;
-    display: flex;
     justify-content: center;
-    align-items: center;
     overflow: hidden;
     object-fit: cover;
   }
 
+  .image > div {
+    width: 100%;
+    height: 100%;
+    background-size: cover !important;
+    background-position: center;
+  }
+
+  .image img,
+  .image svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
   .card__body {
     h2 {
       font-size: 14px;
@@ -463,27 +477,6 @@
   @media (max-width: 320px) {
     .card__body > p {
       display: none;
-    }
-
-    .cardsList {
-      .image {
-        align-items: stretch !important;
-      }
-
-      .image > div {
-        width: 100%;
-        height: 100%;
-        background-size: cover !important;
-        background-position: center;
-      }
-
-      .image img,
-      .image svg {
-        width: 100% !important;
-        height: 100% !important;
-        max-width: none !important;
-        object-fit: cover;
-      }
     }
   }
 }
