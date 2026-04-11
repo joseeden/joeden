@@ -397,98 +397,6 @@
     }
   }
 
-  @media (max-width: 767px) {
-    .cardsList {
-        gap: 40px;
-      }
-    .card {
-        width: 299px;
-      }
-  }
-
-  @media (max-width: 720px) {
-    .cardsList {
-        gap: 20px;
-      }
-  }
-  
-
-  @media (max-width: 707px) {
-    .cardsList {
-        gap: 10px;
-      }
-  }
-  
-  @media (max-width: 687px) {
-    .cardsList {
-        gap: 30px;
-      }
-  }
-  
-  @media (max-width: 677px) {
-    .cardsList {
-        gap: 20px;
-      }
-  }
-  
-  @media (max-width: 667px) {
-    .cardsList {
-        gap: 15px;
-      }
-  }
-
-  @media (max-width: 647px) {
-    .cardContainer {
-        max-width: 250px;
-      }
-    .cardsList {
-      gap: 30px;
-    }
-  }
-  
-  @media (max-width: 600px) {
-    .cardsList {
-        gap: 30px;
-      }
-    .cardContainer {
-        max-width: 250px;
-      }
-  }
-  
-  @media (max-width: 559px) {
-    .cardsList {
-        gap: 15px;
-      }
-    .cardContainer {
-      flex-basis: 100%;
-      max-width: 100%;
-    }
-
-    .cardsList .card{
-      width: 100%;
-    }
-  }
-  
-  @media (max-width: 400px) {
-
-    .projectsTitle {
-      font-size: 1.2rem;
-      padding-left: 0;
-      margin-bottom: 0;
-    }
-
-    .headerBox {
-      padding: 15px;
-    }
-
-    .cardsList {
-      gap: 5px;
-    }
-    .cardContainer {
-      padding: 0;
-    }
-  }
-
   @media (max-width: 820px) {
     .cardsList {
       display: grid;
@@ -509,8 +417,61 @@
       max-width: 100%;
     }
   }
-} 
- 
+}
+
+.projectsPage {
+  @media (max-width: 767px) {
+    .cardsList {
+        gap: 40px;
+      }
+  }
+  
+  @media (max-width: 670px) {
+    .cardsList {
+        gap: 40px;
+
+      .cardContainer {
+        margin: 0;
+      }
+    }
+  }
+
+  
+  @media (max-width: 500px) {
+    .pageContainer .cardsList {
+      grid-template-columns: 1fr;
+    }
+
+    .projectsPage {
+      padding: 0;
+    }
+  }
+  
+  @media (max-width: 400px) {
+
+    .headerBox {
+        padding: 15px;
+      }
+
+    .projectsTitle {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    .cardsList {
+      .cardContainer {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  @media (max-width: 320px) {
+    .pageContainer .card .card__body>p {
+      display: none;
+    }
+  }
+}
+
 [data-theme="dark"] {
 
   .main-wrapper {
