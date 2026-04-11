@@ -213,6 +213,14 @@ export default function Projects(): JSX.Element {
                       </div>
                     ))}
                   </div>
+                  {selectedCategories.length > 0 && (
+                    <button
+                      className={styles.clearAllButton}
+                      onClick={() => setSelectedCategories([])}
+                    >
+                      Clear All
+                    </button>
+                  )}
                 </div>
               </div>
               <div className={styles.rightColumn}>
