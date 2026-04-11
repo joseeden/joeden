@@ -710,6 +710,12 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
   margin-top: 2rem;
 }
 
+.theme-doc-markdown > h1:first-child {
+  font-size: clamp(1.85rem, 2.4vw, 2.15rem);
+  line-height: 1.15;
+  margin-top: 2rem;
+}
+
 /* Admonition icon colors */
 [class*="admonitionIcon_"] {
   color: inherit !important;
@@ -758,7 +764,8 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
 
 @media (max-width: 576px) {
   [class*="docItemContainer_"] > article > header h1[class*="title_"],
-  [class*="generatedIndexPage_"] > header h1[class*="title_"] {
+  [class*="generatedIndexPage_"] > header h1[class*="title_"],
+  .theme-doc-markdown > h1:first-child {
     font-size: 1.8rem;
   }
 }
