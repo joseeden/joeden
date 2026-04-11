@@ -408,10 +408,62 @@
     }
     .pageContainer {
       grid-template-columns: 1fr !important;
+      grid-template-rows: auto 1fr;
 
       .leftColumn {
-        display: none;
+        display: flex;
       }
+
+      .sidebarContainer {
+        padding: 0 20px 20px;
+      }
+
+      .categoriesHeader {
+        padding-bottom: 12px;
+      }
+
+      .categoriesList {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .categoryItem {
+        position: relative;
+        padding: 0;
+      }
+
+      .categoryToggle {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .categoryLabel {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 14px;
+        border: 1px solid #d2d7e2;
+        border-radius: 999px;
+        background-color: #f4f6fb;
+        color: #4c566f;
+        cursor: pointer;
+        line-height: 1.2;
+        transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+      }
+
+      .categoryToggle:checked + .categoryLabel {
+        background-color: #40939b;
+        border-color: #40939b;
+        color: #ffffff;
+      }
+
+      .categoryToggle:focus-visible + .categoryLabel {
+        outline: 2px solid #40939b;
+        outline-offset: 2px;
+      }
+
       .rightColumn .cardsList {
         gap: 30px !important;
 
@@ -560,6 +612,20 @@
     .categoryToggle {
       background-color: white;
       accent-color: #40939b;
+    }
+
+    @media (max-width: 897px) {
+      .categoryLabel {
+        background-color: #163346;
+        border-color: #2b5267;
+        color: #d9e3e4;
+      }
+
+      .categoryToggle:checked + .categoryLabel {
+        background-color: #40939b;
+        border-color: #40939b;
+        color: #ffffff;
+      }
     }
   }
 }
