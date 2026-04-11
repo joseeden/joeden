@@ -147,6 +147,8 @@ Files modified:
 - `src/pages/projects.tsx`
 - `src/components/projects/Project.module.scss`
 
+**UPDATE:** This has now been changed to allow the category filtering on mobile screen sizes by converting the sidebar categories into pill-shaped buttons laid out in a wrapping row at the top of the page. See [Mobile Category Pills and Reset Button](/docs/001-Personal-Notes/040-Documentation-Notes/001-Docusaurus/028-Mobile-Category-Pills-and-Reset.md).
+
 <div class='img-center'>
 
 ![](/gif/docs/11042026-project-card-hide-category-sidebar.gif)

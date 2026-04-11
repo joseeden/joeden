@@ -26,6 +26,15 @@ The issue came from the responsive CSS, not from Algolia or the Docusaurus navba
 
 See the [Main Cause](#main-cause) section below for a detailed explanation of the root causes and the specific CSS rules that were involved.
 
+**After Fix:**
+
+<div class='img-center'>
+
+![](/gif/docs/11042026-navbar-issue-search-overlap-darkmnodetoggle-fix.gif)
+
+</div>
+
+
 ## Observations
 
 On screen sizes of `996px` and below, the search control and the dark mode toggle did not stay properly aligned beside each other. Instead, the search control could expand into the same horizontal area needed by the toggle, and the toggle could then appear on top of the search control.
