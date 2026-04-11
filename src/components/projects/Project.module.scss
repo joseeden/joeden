@@ -424,13 +424,16 @@
   }
   
   @media (max-width: 500px) {
+    padding: 0 !important;
+
+    .projectsTitle {
+        margin: 0;
+    }
+  
     .pageContainer .cardsList {
       grid-template-columns: 1fr;
     }
 
-    .projectsPage {
-      padding: 0 !important;
-    }
   }
   
   @media (max-width: 400px) {
@@ -441,7 +444,6 @@
 
     .projectsTitle {
       font-size: 1.2rem;
-      margin: 0;
     }
 
     .cardsList {
@@ -456,23 +458,25 @@
       display: none;
     }
 
-    .image {
-      align-items: stretch;
-    }
+    .cardsList {
+      .card__image {
+        align-items: stretch !important;
+      }
 
-    .image > div {
-      width: 100%;
-      height: 100%;
-      background-size: cover !important;
-      background-position: center;
-    }
+      .card__image > div {
+        width: 100%;
+        height: 100%;
+        background-size: cover !important;
+        background-position: center;
+      }
 
-    .image :global(img),
-    .image :global(svg) {
-      width: 100% !important;
-      height: 100% !important;
-      max-width: none !important;
-      object-fit: cover;
+      .card__image img,
+      .card__image svg {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: none !important;
+        object-fit: cover;
+      }
     }
   }
 }
