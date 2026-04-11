@@ -822,6 +822,10 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
 
 /* Ensure theme toggle and search stay aligned on medium screens */
 @media (max-width: 996px) {
+  .navbar__inner {
+    gap: 0.5rem;
+  }
+
   .navbar__items--right {
     display: flex !important;
     align-items: center;
@@ -830,20 +834,37 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
     gap: 0.5rem;
     margin-left: auto;
     min-width: 0;
+    flex: 0 0 auto;
   }
 
   .navbar__search,
   [class*="navbarSearchContainer_"] {
     order: 1;
-    flex: 0 1 auto;
+    flex: 0 0 auto;
     min-width: 0;
-    max-width: 100%;
+    max-width: none;
+    width: auto;
     margin-right: 0;
   }
 
   .navbar__search .DocSearch-Button,
   [class*="navbarSearchContainer_"] .DocSearch-Button {
-    max-width: 100%;
+    width: auto;
+    min-width: auto;
+    max-width: none;
+    margin: 0;
+    padding: 0.45rem;
+  }
+
+  .navbar__search .DocSearch-Button-Placeholder,
+  .navbar__search .DocSearch-Button-Keys,
+  [class*="navbarSearchContainer_"] .DocSearch-Button-Placeholder,
+  [class*="navbarSearchContainer_"] .DocSearch-Button-Keys {
+    display: none;
+  }
+
+  .navbar__search .DocSearch-Button-Container,
+  [class*="navbarSearchContainer_"] .DocSearch-Button-Container {
     margin: 0;
   }
 
