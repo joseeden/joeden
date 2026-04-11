@@ -21,7 +21,7 @@ export interface ProjectData {
   tags?: string[];  
 }
 
-const TABLET_MEDIA_QUERY = "(max-width: 1024px)";
+const TOUCH_CARD_MEDIA_QUERY = "(hover: none), (pointer: coarse)";
 const INTERACTIVE_SELECTOR =
   'a, button, input, textarea, select, summary, [role="button"], [role="link"]';
 
@@ -34,7 +34,7 @@ export const Project: FunctionComponent<ProjectData> = ({
   tags,
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
-  const [isTabletViewport, setIsTabletViewport] = useState(false);
+  const [usesTapToggle, setUsesTapToggle] = useState(false);
   const [isLifted, setIsLifted] = useState(false);
 
   useEffect(() => {
@@ -42,36 +42,36 @@ export const Project: FunctionComponent<ProjectData> = ({
       return undefined;
     }
 
-    const mediaQuery = window.matchMedia(TABLET_MEDIA_QUERY);
-    const updateViewport = (event?: MediaQueryListEvent) => {
-      setIsTabletViewport(event?.matches ?? mediaQuery.matches);
+    const mediaQuery = window.matchMedia(TOUCH_CARD_MEDIA_QUERY);
+    const updateInteractionMode = (event?: MediaQueryListEvent) => {
+      setUsesTapToggle(event?.matches ?? mediaQuery.matches);
     };
 
-    updateViewport();
+    updateInteractionMode();
 
     if (typeof mediaQuery.addEventListener === "function") {
-      mediaQuery.addEventListener("change", updateViewport);
+      mediaQuery.addEventListener("change", updateInteractionMode);
 
       return () => {
-        mediaQuery.removeEventListener("change", updateViewport);
+        mediaQuery.removeEventListener("change", updateInteractionMode);
       };
     }
 
-    mediaQuery.addListener(updateViewport);
+    mediaQuery.addListener(updateInteractionMode);
 
     return () => {
-      mediaQuery.removeListener(updateViewport);
+      mediaQuery.removeListener(updateInteractionMode);
     };
   }, []);
 
   useEffect(() => {
-    if (!isTabletViewport) {
+    if (!usesTapToggle) {
       setIsLifted(false);
     }
-  }, [isTabletViewport]);
+  }, [usesTapToggle]);
 
   useEffect(() => {
-    if (!isTabletViewport || !isLifted) {
+    if (!usesTapToggle || !isLifted) {
       return undefined;
     }
 
@@ -86,7 +86,7 @@ export const Project: FunctionComponent<ProjectData> = ({
     return () => {
       document.removeEventListener("pointerdown", handlePointerDown);
     };
-  }, [isLifted, isTabletViewport]);
+  }, [isLifted, usesTapToggle]);
 
   const shouldIgnoreToggle = (target: EventTarget | null) => {
     if (!(target instanceof HTMLElement)) {
@@ -97,7 +97,7 @@ export const Project: FunctionComponent<ProjectData> = ({
   };
 
   const handleCardClick = (event: MouseEvent<HTMLDivElement>) => {
-    if (!isTabletViewport || shouldIgnoreToggle(event.target)) {
+    if (!usesTapToggle || shouldIgnoreToggle(event.target)) {
       return;
     }
 
@@ -106,7 +106,7 @@ export const Project: FunctionComponent<ProjectData> = ({
 
   const handleCardKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
     if (
-      !isTabletViewport ||
+      !usesTapToggle ||
       shouldIgnoreToggle(event.target) ||
       (event.key !== "Enter" && event.key !== " ")
     ) {
@@ -126,9 +126,9 @@ export const Project: FunctionComponent<ProjectData> = ({
         })}
         onClick={handleCardClick}
         onKeyDown={handleCardKeyDown}
-        role={isTabletViewport ? "button" : undefined}
-        tabIndex={isTabletViewport ? 0 : undefined}
-        aria-pressed={isTabletViewport ? isLifted : undefined}
+        role={usesTapToggle ? "button" : undefined}
+        tabIndex={usesTapToggle ? 0 : undefined}
+        aria-pressed={usesTapToggle ? isLifted : undefined}
       >
         <div className={clsx("card__image", styles.image)}>
           <Image img={image} alt={description} title={title} />

@@ -34,4 +34,11 @@ declare module "@theme/IdealImage" {
 
 declare module "*.jpg";
 declare module "*.png";
+declare module "*.svg" {
+  import type { FunctionComponent, SVGProps } from "react";
+
+  const content: string;
+  export default content;
+  export const ReactComponent: FunctionComponent<SVGProps<SVGSVGElement>>;
+}
 declare module "*.md";
