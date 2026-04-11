@@ -1,9 +1,3 @@
-.outerprojectsPage {
-  max-width: 1536px;
-  width: 100%;
-  margin: auto;
-}
-
 .projectsPage {
   box-sizing: border-box;
   width: 100%;
@@ -11,6 +5,12 @@
   max-width: 1536px;
   margin-left: auto;
   margin-right: auto;
+
+  .outerpageContainer {
+    max-width: 1536px;
+    width: 100%;
+    margin: 0 auto;
+  }
 
   .pageContainer {
     max-width: 1536px;
@@ -221,10 +221,6 @@
 
   @media (max-width: 1579px) {
     padding: 0 34px;
-    
-    .headerBox .projectsTitle {
-      margin-left: 3rem;
-    }
 
     .pageContainer {
       grid-template-columns: 1fr 4fr;
@@ -250,11 +246,6 @@
   }
 
   @media (max-width: 1340px) {
-    
-    .headerBox .projectsTitle {
-      margin-left: 1rem;
-    }
-    
     .pageContainer {
       .leftColumn .sidebarContainer {
         margin-left: 1rem;
@@ -271,11 +262,6 @@
   }
 
   @media (max-width: 1255px) {
-
-    .headerBox .projectsTitle {
-        margin-left: 0;
-      }
-    
     .pageContainer {
       grid-template-columns: 1fr 4fr;
   
@@ -294,9 +280,6 @@
     .headerBox {
       padding: 15px 0;
     }
-    .headerBox .projectsTitle {
-        margin-left: 0;
-     }
 
     .pageContainer {
       grid-template-columns: 1fr 5fr;
@@ -327,9 +310,6 @@
     .headerBox {
       padding: 15px;
     }
-    .headerBox .projectsTitle {
-      margin: 0 3rem;
-    }
     .outerpageContainer {
       padding: 0 3rem;
     }
@@ -347,18 +327,12 @@
   }
 
   @media (max-width: 1143px) {
-    .headerBox .projectsTitle {
-        margin: 0;
-      }
     .outerpageContainer {
         padding: 0;
       }
     }
 
   @media (max-width: 1059px) {
-    .headerBox .projectsTitle {
-        margin: 0;
-      }
     .pageContainer {
         .rightColumn .cardsList {
           gap: 30px;
@@ -396,7 +370,6 @@
   @media (max-width: 897px) {
     .projectsTitle {
         font-size: 1.5rem;
-        padding-left: 3rem;
     }
     .pageContainer {
       grid-template-columns: 1fr;
@@ -424,10 +397,6 @@
   }
 
   @media (max-width: 720px) {
-    .projectsTitle {
-        padding-left: 2rem;
-    }
-
     .cardsList {
         gap: 20px;
       }
@@ -435,10 +404,6 @@
   
 
   @media (max-width: 707px) {
-    .projectsTitle {
-        padding-left: 0;
-    }
-
     .cardsList {
         gap: 10px;
       }
