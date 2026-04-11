@@ -185,7 +185,7 @@ export default function Projects(): JSX.Element {
 
   return (
     <Layout title={title}>
-      <main className="margin-vert--lg">
+      <main className={`${styles.projectsMain} margin-vert--lg`}>
         <div className={styles.projectsPage}>
           <div className={styles.outerpageContainer}>
             <div className={styles.headerBox}>
