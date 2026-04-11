@@ -22,7 +22,7 @@ The intended layout was for both controls to remain visible on the same row, wit
 
 **Root cause summary:** 
 
-The issue was not caused by Algolia itself, or by the Docusaurus navbar configuration, but by the responsive CSS logic in the custom stylesheet and by a generated Docusaurus mobile navbar rule. The right side of the navbar did not constrain the search control and the dark mode toggle strongly enough, the search button kept too much width at medium screen sizes, and the generated mobile stylesheet still positioned the search container absolutely.
+The issue came from the responsive CSS, not from Algolia or the Docusaurus navbar config. On medium screens, the navbar did not size the search control and theme toggle correctly, the search button stayed too wide, and a generated mobile rule still positioned the search container absolutely.
 
 See the [Main Cause](#main-cause) section below for a detailed explanation of the root causes and the specific CSS rules that were involved.
 
@@ -39,7 +39,7 @@ The expected behavior was:
 
 ## Root Cause
 
-The main cause was in `src/css/custom.scss`, and it had three layers.
+The main cause was in `src/css/custom.scss`, and it had four layers.
 
 **Issue 1: Misplaced Responsive Rule**
 
@@ -54,13 +54,13 @@ The main cause was in `src/css/custom.scss`, and it had three layers.
 - This caused both elements to compete for space instead of aligning properly
 - In some cases, the toggle overlapped the search instead of staying beside it
 
-After that was corrected, there was still a second practical issue: the generated DocSearch button was still too wide for the available navbar space at `996px` and below. Even though the search container and the dark mode toggle were siblings in the generated navbar markup, the search button continued to reserve more width than the row could comfortably support.
+**Issue 3: DocSearch Button Was Still Too Wide**
 
-- Search and toggle are sibling elements in the generated navbar
 - The DocSearch button remained too wide at medium widths
+- Search and toggle were siblings, so DOM order was not the problem
 - The layout needed a compact search control, not only better flex rules
 
-**Issue 3: Generated Mobile CSS Still Overrode The Layout**
+**Issue 4: Generated Mobile CSS Still Overrode The Layout**
 
 - Docusaurus generated a mobile rule for `996px` and below
 - That rule set the search container to `position: absolute`
