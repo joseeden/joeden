@@ -837,6 +837,10 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
     flex: 0 0 auto;
   }
 
+  [class*="colorModeToggle_"] {
+    display: flex !important;
+  }
+
   .navbar__search,
   [class*="navbarSearchContainer_"] {
     order: 1;
@@ -845,6 +849,9 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
     max-width: none;
     width: auto;
     margin-right: 0;
+    position: static !important;
+    right: auto !important;
+    padding: 0;
   }
 
   .navbar__search .DocSearch-Button,
@@ -878,6 +885,10 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
     position: static;
     z-index: auto;
     margin-left: 0;
+  }
+
+  [class*="toggle_"][class*="colorModeToggle_"] .toggleButton_gllP {
+    display: flex;
   }
 
   .navbar-sidebar [class*="toggle_"][class*="colorModeToggle_"],
