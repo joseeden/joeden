@@ -742,6 +742,12 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
   }
 }
 
+@media (max-width: 500px) {
+  .navbar {
+    margin: 0;
+  }
+}
+
 /* Styles for small mobile screens */
 @media (max-width: 600px) {
 
