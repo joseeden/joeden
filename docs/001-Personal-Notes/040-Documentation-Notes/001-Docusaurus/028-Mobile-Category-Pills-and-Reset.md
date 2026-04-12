@@ -31,9 +31,23 @@ This page documents two follow-up changes:
 1. Keep category filtering on mobile screen sizes. 
 2. Add a **Clear All** button that resets all active filters.
 
-After the fix: 
+**After the fix:** 
 
+On large screens (light and dark mode):
 
+<div class='img-center'>
+
+![](/gif/docs/11042026-projects-filtering-reset.gif)
+
+</div>
+
+On mobile screens (light and dark mode):
+
+<div class='img-center'>
+
+![](/gif/docs/11042026-projects-filtering-reset-mobile.gif)
+
+</div>
 
 
 ## Files Modified
