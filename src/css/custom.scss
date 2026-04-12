@@ -731,6 +731,18 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
   margin-top: 1rem;
 }
 
+@media (min-width: 997px) {
+  .theme-doc-markdown h2,
+  .markdown h2 {
+    font-size: 1.4rem;
+  }
+
+  .theme-doc-markdown h3,
+  .markdown h3 {
+    font-size: 1.18rem;
+  }
+}
+
 /* Admonition icon colors */
 [class*="admonitionIcon_"] {
   color: inherit !important;
