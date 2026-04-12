@@ -708,7 +708,7 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
 .theme-doc-markdown > header > h1,
 .theme-doc-markdown > h1:first-child,
 .markdown h1:first-child {
-  --ifm-h1-font-size: clamp(1.85rem, 2.4vw, 2.15rem);
+  --ifm-h1-font-size: clamp(2.5rem, 2.4vw, 3rem);
   font-size: var(--ifm-h1-font-size);
   line-height: 1.15;
   margin-top: 2rem;
