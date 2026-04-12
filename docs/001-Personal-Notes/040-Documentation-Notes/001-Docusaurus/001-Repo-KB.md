@@ -15,7 +15,7 @@ This is the running knowledge base for my personal website, which is a Docusauru
 
 ### Unused / Unreferenced Files
 
-TODO: Review all files/folders in the root directory and subdirectories to determine which are active vs. unused. Initial review suggests the following files are unused or unreferenced, but this needs to be verified:
+**TODO:** Review all files/folders in the root directory and subdirectories to determine which are active vs. unused. Initial review suggests the following files are unused or unreferenced, but this needs to be verified:
 
 | File               | Status | Reason                                                                                        |
 | ------------------ | ------ | --------------------------------------------------------------------------------------------- |
