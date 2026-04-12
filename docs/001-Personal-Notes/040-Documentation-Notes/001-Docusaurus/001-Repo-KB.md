@@ -1,6 +1,6 @@
 ---
 title: "Repo Knowledge Base"
-sidebar_position: 0
+sidebar_position: 1
 description: "Reference document tracking the files and folders in this Docusaurus repo"
 tags:
   - Docusaurus
