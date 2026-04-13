@@ -83,7 +83,7 @@ Example:
 
 <div class='img-center'>
 
-![](/img/docs/all-things-ai-token-cost-comparison-gpt-gemini.png)
+![](/img/docs/Screenshot2026-04-13212105.png)
 
 </div>
 
