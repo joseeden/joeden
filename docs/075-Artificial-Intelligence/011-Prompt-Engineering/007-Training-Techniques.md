@@ -1,55 +1,137 @@
 ---
-title: "Training Techniques"
-description: "Adopting ChatGPT"
+title: "Prompting Techniques"
+description: "Techniques for guiding AI model responses through prompts"
 tags:
 - Machine Learning
 - Artificial Intelligence
 - Prompt Engineering
 sidebar_position: 7
-# last_update:
-#   date: 7/7/2022
+last_update:
+  date: 7/12/2023
 ---
 
 
+## Overview
 
-## Techniques 
+Different prompting techniques help guide how a model understands and responds to tasks. Some methods rely on examples, while others guide reasoning or set roles for better output.
 
-These are different ways to guide a model in understanding and answering tasks.
+- **Zero-shot learning** uses no examples and relies on prior knowledge
+- **One-shot learning** uses a single example to guide the response
+- **Few-shot learning** uses multiple examples to show patterns
 
-- **Zero-shot Learning**
+### Zero-shot Learning
 
-  - No examples are given before the task
-  - The model relies on prior training to answer new questions
-  - Example: “Write a poem about the tranquility of mountains.”
+Zero-shot learning means giving the model a task without any examples. It relies fully on what the model already knows.
 
-- **One-shot Learning**
+Example:
 
-  - One example is given before the question
-  - Helps the model learn from a single pattern
-  - Example: “Mexico City is the capital of Mexico. What is the capital of Vatican City?”
+```bash 
+Write a poem about the calmness of mountains.
+```
 
-- **Few-shot Learning**
+The model uses its Prompting to generate a response without any prior pattern shown.
 
-  - Several examples are shown before the task
-  - Helps the model understand context through multiple samples
-  - Example: Asking for the capital of Malaysia while formatting with the country’s flag
+### One-shot Learning
+
+One-shot learning provides a single example before asking the actual question. This helps the model follow a pattern more easily.
+
+Example:
+
+```bash 
+Paris is the capital of France.  
+What is the capital of Japan?
+```
+
+The model uses the example structure to guide its answer.
+
+### Few-shot Learning
+
+Few-shot learning gives multiple examples so the model can learn a pattern more clearly. This improves consistency in formatting and style.
+
+Example:
+
+```bash 
+France – 🇫🇷 Paris  
+Germany – 🇩🇪 Berlin  
+Japan – 🇯🇵 Tokyo  
+What is the capital of Malaysia?
+```
+
+The model follows the same format for the new input.
 
 
 ## Pattern Matching and Recognition
 
-Few-shot learning turns ChatGPT into a pattern-matching and pattern-generation engine:
+Few-shot learning helps the model recognize patterns and repeat them in new outputs.
 
-- Writing style for emails, formatting preferences for reports, etc.
-- Analyzes examples, mirrors patterns, generates new content.
-- Extends ChatGPT's capability beyond simple responses to complex tasks.
+- Learns formatting styles from examples
+- Copies structure for emails or reports
+- Generates consistent outputs based on patterns
+
+This makes the model more reliable when working with structured tasks like templates or formatted content.
 
 
-## Chain of Thought (COT) Prompting
+## Chain of Thought (CoT) Prompting
 
-Chain of Thought Prompting (COT) provides a roadmap for answering:
-- **Zero-shot COT**: Provide a scenario (e.g., traveling to space and encountering aliens) and prompt "think step by step."
-  - **Result**: Thoughtful breakdown, revealing the model's reasoning.
-- **One-shot COT**: Provide one example to teach the model the approach.
-  - **Example**: Acknowledging the number of astronauts interacted with to prevent errors.
+Chain of Thought prompting helps the model solve problems step by step instead of answering in one step. This improves reasoning for complex tasks.
 
-These techniques enhance how you interact with ChatGPT, making it a more effective tool.
+- Zero-shot CoT uses a simple instruction like “think step by step”
+- One-shot CoT provides an example of step-by-step reasoning
+- Structured CoT breaks the task into guided steps
+
+In the example below, the model is encouraged to break down the problem before giving the final answer:
+
+```bash 
+Write a Python function to check if a number is a palindrome. Think step by step.
+```
+
+**Reasoning models don't need explicit COT prompts**
+
+Modern reasoning models are designed to handle step-by-step logic internally. 
+
+They often do not need explicit Chain of Thought prompts.
+
+- Break problems into internal steps automatically
+- Self-check intermediate reasoning
+- Produce more accurate outputs for coding and logic tasks
+
+This reduces the need for manual step-by-step prompting in many cases.
+
+
+## System Roles
+
+A system role defines the behavior or identity the model should follow before answering a prompt. It helps shape tone, depth, and style.
+
+- Defines the model’s role in the conversation
+- Improves consistency in responses
+- Adapts output for different use cases
+
+Example:
+
+```bash 
+You are a friendly programming tutor.  
+Explain concepts in simple terms with examples and analogies.  
+Highlight common mistakes to avoid.
+```
+
+In the example above, the system roles:
+
+- System prompt: 
+
+    ```
+    You are a friendly programming tutor.
+    ```
+
+- User prompt: 
+
+    ```
+    Explain concepts in simple terms with examples and analogies. Highlight common mistakes to avoid.
+    ```
+
+Another example for debugging:
+
+```bash 
+You are a senior software engineer.  
+First explain what the code is trying to do.  
+Then identify possible issues and suggest fixes.
+```

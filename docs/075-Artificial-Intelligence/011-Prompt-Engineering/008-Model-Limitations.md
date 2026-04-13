@@ -1,6 +1,6 @@
 ---
 title: "Model Limitations"
-description: "Adopting ChatGPT"
+description: "Understanding the constraints and challenges of AI models"
 tags:
 - Machine Learning
 - Artificial Intelligence

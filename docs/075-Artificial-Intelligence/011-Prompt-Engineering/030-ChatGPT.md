@@ -5,7 +5,7 @@ tags:
 - Machine Learning
 - Artificial Intelligence
 - Prompt Engineering
-sidebar_position: 10
+sidebar_position: 30
 last_update:
   date: 7/10/2023
 ---
