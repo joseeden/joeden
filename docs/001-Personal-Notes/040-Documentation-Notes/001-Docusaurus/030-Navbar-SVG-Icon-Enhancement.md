@@ -55,92 +55,94 @@ File modified:
 
 I started with creating a wrapper around Docusaurus's default Navbar component which dynamically adds SVG icons to specified external links:
 
-<details><summary> `src/theme/Navbar/index.tsx` </summary>
- 
-```tsx
-// 
+<details>
+  <summary> `src/theme/Navbar/index.tsx` </summary>
+  
+  ```tsx
+  // 
 
-import React, { useEffect } from 'react';
-import NavbarOriginal from '@theme-original/Navbar';
-import './navbar.css';
+  import React, { useEffect } from 'react';
+  import NavbarOriginal from '@theme-original/Navbar';
+  import './navbar.css';
 
-export default function Navbar(props: any): JSX.Element {
-  useEffect(() => {
-    const targetUrls = [
-      'https://www.merriadigital.com',
-      'https://www.velarae.co/'
-    ];
+  export default function Navbar(props: any): JSX.Element {
+    useEffect(() => {
+      const targetUrls = [
+        'https://www.merriadigital.com',
+        'https://www.velarae.co/'
+      ];
 
-    const addArrowIcon = (link: Element | null) => {
-      if (link && !link.querySelector('.navbar-arrow-icon')) {
-        const container = document.createElement('span');
-        container.style.display = 'flex';
-        container.style.alignItems = 'center';
-        container.style.gap = '4px';
-        
-        const text = link.textContent;
-        link.textContent = '';
-        
-        const textSpan = document.createElement('span');
-        textSpan.textContent = text;
-        container.appendChild(textSpan);
-        
-        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        svg.setAttribute('class', 'navbar-arrow-icon');
-        svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-        svg.setAttribute('width', '16');
-        svg.setAttribute('height', '16');
-        svg.setAttribute('viewBox', '0 0 16 16');
-        svg.setAttribute('fill', 'none');
-        svg.setAttribute('stroke', 'currentColor');
-        svg.setAttribute('stroke-width', '1.5');
-        svg.setAttribute('stroke-linecap', 'round');
-        svg.setAttribute('stroke-linejoin', 'round');
-        
-        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-        line.setAttribute('x1', '4.5');
-        line.setAttribute('y1', '11.5');
-        line.setAttribute('x2', '11.5');
-        line.setAttribute('y2', '4.5');
-        
-        const polyline = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
-        polyline.setAttribute('points', '4.5 4.5 11.5 4.5 11.5 11.5');
-        
-        svg.appendChild(line);
-        svg.appendChild(polyline);
-        container.appendChild(svg);
-        
-        link.appendChild(container);
-      }
-    };
+      const addArrowIcon = (link: Element | null) => {
+        if (link && !link.querySelector('.navbar-arrow-icon')) {
+          const container = document.createElement('span');
+          container.style.display = 'flex';
+          container.style.alignItems = 'center';
+          container.style.gap = '4px';
+          
+          const text = link.textContent;
+          link.textContent = '';
+          
+          const textSpan = document.createElement('span');
+          textSpan.textContent = text;
+          container.appendChild(textSpan);
+          
+          const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+          svg.setAttribute('class', 'navbar-arrow-icon');
+          svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+          svg.setAttribute('width', '16');
+          svg.setAttribute('height', '16');
+          svg.setAttribute('viewBox', '0 0 16 16');
+          svg.setAttribute('fill', 'none');
+          svg.setAttribute('stroke', 'currentColor');
+          svg.setAttribute('stroke-width', '1.5');
+          svg.setAttribute('stroke-linecap', 'round');
+          svg.setAttribute('stroke-linejoin', 'round');
+          
+          const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+          line.setAttribute('x1', '4.5');
+          line.setAttribute('y1', '11.5');
+          line.setAttribute('x2', '11.5');
+          line.setAttribute('y2', '4.5');
+          
+          const polyline = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+          polyline.setAttribute('points', '4.5 4.5 11.5 4.5 11.5 11.5');
+          
+          svg.appendChild(line);
+          svg.appendChild(polyline);
+          container.appendChild(svg);
+          
+          link.appendChild(container);
+        }
+      };
 
-    const processAllLinks = () => {
-      targetUrls.forEach(url => {
-        const links = document.querySelectorAll(`a[href="${url}"]`);
-        links.forEach(link => addArrowIcon(link));
-      });
-    };
+      const processAllLinks = () => {
+        targetUrls.forEach(url => {
+          const links = document.querySelectorAll(`a[href="${url}"]`);
+          links.forEach(link => addArrowIcon(link));
+        });
+      };
 
-    processAllLinks();
-
-    const observer = new MutationObserver(() => {
       processAllLinks();
-    });
 
-    observer.observe(document.body, { subtree: true, childList: true });
+      const observer = new MutationObserver(() => {
+        processAllLinks();
+      });
 
-    return () => observer.disconnect();
-  }, []);
+      observer.observe(document.body, { subtree: true, childList: true });
 
-  return <NavbarOriginal {...props} />;
-}
-```
+      return () => observer.disconnect();
+    }, []);
+
+    return <NavbarOriginal {...props} />;
+  }
+  ```
 
 </details>
 
 Next, the navbar component is added to the Docusaurus config to replace the default Navbar:
 
-<details><summary> `docusaurus.config.js` </summary>
+<details>
+  <summary> `docusaurus.config.js` </summary>
  
 ```js
 module.exports = {
