@@ -373,6 +373,7 @@ h3, h4 {
     font-size: 1rem;
     font-weight: bold;
     margin-left: 0;
+    display: none;
   }
 
   .navbar__items {
@@ -442,26 +443,7 @@ h3, h4 {
   margin-left: 0;
 }
 
-/* Center navbar items on the right (search and toggle) */
-.navbar__items--right {
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: nowrap;
-  gap: 0.5rem;
-  margin-left: 0;
-  margin-right: auto;
-}
-
-/* Remove extra spacing from navbar items */
-.navbar__items--right .navbar__item:last-child {
-  margin-right: 0;
-}
-
-/* Hide the extra navbar__item div that wraps theme toggle */
-.navbar__items--right .navbar__item:empty {
-  display: none;
-}
+/* Removed - old conflicting rules for navbar__items--right */
 
 /* Dark theme toggles */
 .navbar-sidebar__brand div button {
@@ -826,19 +808,34 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
     justify-content: center;
   }
 
+  /* Add max-width constraint to navbar__inner__inner */
+  .navbar__inner__inner {
+    max-width: 1536px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
   /* Center all navbar items */
   .navbar__items {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    flex: 1 1 0%;
+    flex: 0 1 auto;
   }
 
-  /* Reduce width of right items container */
+  /* Merge right items with main items - display inline */
   .navbar__items--right {
+    display: flex !important;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 0;
+    margin-right: 0;
     flex: 0 1 auto;
-    width: 0;
+    width: auto;
   }
 }
 
@@ -959,7 +956,6 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
     flex-wrap: nowrap;
     gap: 0.5rem;
     margin-left: auto;
-    min-width: 0;
     flex: 0 0 auto;
   }
 
