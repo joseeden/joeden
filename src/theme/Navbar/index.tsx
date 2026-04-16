@@ -74,6 +74,25 @@ export default function Navbar(props: any): JSX.Element {
       }
     };
 
+    const reorganizeNavbarFor997px = () => {
+      // Only reorganize for 997px and above
+      if (window.innerWidth < 997) return;
+
+      const navbarItems = document.querySelector('.navbar__items');
+      const navbarItemsRight = document.querySelector('.navbar__items--right');
+
+      if (navbarItems && navbarItemsRight) {
+        // Move all children from navbar__items--right into navbar__items
+        const rightChildren = Array.from(navbarItemsRight.children);
+        rightChildren.forEach((child) => {
+          navbarItems.appendChild(child);
+        });
+
+        // Hide the now-empty navbar__items--right
+        navbarItemsRight.style.display = 'none';
+      }
+    };
+
     const processAllLinks = () => {
       targetUrls.forEach(url => {
         const links = document.querySelectorAll(`a[href="${url}"]`);
@@ -83,15 +102,26 @@ export default function Navbar(props: any): JSX.Element {
 
     // Run immediately
     processAllLinks();
+    reorganizeNavbarFor997px();
 
     // Watch for changes in case navbar or sidebar re-renders
     const observer = new MutationObserver(() => {
       processAllLinks();
+      reorganizeNavbarFor997px();
     });
 
     observer.observe(document.body, { subtree: true, childList: true });
 
-    return () => observer.disconnect();
+    // Handle window resize
+    const handleResize = () => {
+      reorganizeNavbarFor997px();
+    };
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return <NavbarOriginal {...props} />;

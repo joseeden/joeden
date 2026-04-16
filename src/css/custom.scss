@@ -435,26 +435,30 @@ h4 {
   display: none !important;
 }
 
-/* Ensure search button is properly positioned */
-.navbar__search {
-  order: 1;
-  margin-right: 1rem;
-}
+/* On screens 997px and above - center all navbar items */
+@media (min-width: 997px) {
+  /* Center navbar inner container */
+  .navbar__inner {
+    justify-content: center;
+  }
 
-/* Ensure theme toggle is after search */
-[data-theme-toggle] {
-  order: 2;
-  margin-left: 0;
-}
+  /* Reset navbar items to fit content and center */
+  .navbar__items {
+    width: auto;
+    flex-basis: auto;
+    justify-content: center;
+    gap: 1rem;
+  }
 
-/* Remove extra spacing from navbar items */
-.navbar__items--right .navbar__item:last-child {
-  margin-right: 0;
-}
+  /* Remove margin from individual items when centered */
+  .navbar__item {
+    margin-right: 0;
+  }
 
-/* Hide the extra navbar__item div that wraps theme toggle */
-.navbar__items--right .navbar__item:empty {
-  display: none;
+  /* Hide the separate right items container entirely */
+  .navbar__items--right {
+    display: none !important;
+  }
 }
 
 /* Dark theme toggles */
