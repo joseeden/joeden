@@ -128,6 +128,7 @@ const config: Config = {
       items: [
         // { to: "/about", label: "About", position: "left" },
         { to: "/", label: "About", position: "left" },
+        { to: "/projects", label: "Projects", position: "left" },
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
@@ -135,7 +136,6 @@ const config: Config = {
           label: 'Docs',
         },
         { to: "/writings", label: "Writings", position: "left" },
-        { to: "/projects", label: "Projects", position: "left" },
         // { to: "/RUNNING", label: "Running", position: "left" },
         // { to: "/", label: "Gallery", position: "left" },
         // { to: "/", label: "Arts", position: "left" },  
