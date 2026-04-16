@@ -35,7 +35,7 @@ export const Hero: FunctionComponent = () => {
                 I also read a lot, especially books that explore complex ideas. I like Andy Weir's <em>The Martian</em> where the protagonist's resourcefulness and problem-solving approach really resonated with me. I love Haruki Murakami's surreal views on reality and consciousness, and everything in between. 
               </p>
               <p>
-                Whether it's hard sci-fi, philosophy, or genre fiction, if it challenges how I think, I'm reading it.
+                Whether it's hard sci-fi, philosophy, or non-fiction, if it challenges how I think, I'm reading it.
               </p>
             </div>
           </div>
