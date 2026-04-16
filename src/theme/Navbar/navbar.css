@@ -1,0 +1,9 @@
+.arrowIcon {
+  transition: transform 0.2s ease;
+}
+
+/* Optional: Add animation on hover */
+a[href="https://www.merriadigital.com"]:hover .navbar-arrow-icon,
+a[href="https://www.velarae.co/"]:hover .navbar-arrow-icon {
+  transform: translate(2px, -2px);
+}
