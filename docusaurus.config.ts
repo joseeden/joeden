@@ -64,6 +64,8 @@ const config: Config = {
           showLastUpdateTime: true,
         },
         blog: {
+          path: 'writings',
+          routeBasePath: 'writings',
           showReadingTime: true,
           onUntruncatedBlogPosts: "ignore",    /* 'ignore' | 'log' | 'warn' | 'throw' */
         },
