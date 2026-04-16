@@ -366,14 +366,13 @@ h3, h4 {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin-right: 0px;
+    margin-right: 1.3rem;
   }
 
   .navbar__title {
     font-size: 1rem;
     font-weight: bold;
     margin-left: 0;
-    margin-right: 2rem;
   }
 
   .navbar__items {
@@ -822,14 +821,24 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
 
 /* On screens 997px and above */
 @media (min-width: 997px) {
-  /* Center all navbar items */
-  .navbar__items {
+  /* Center navbar inner container */
+  .navbar__inner {
     justify-content: center;
   }
 
-  /* Hide navbar brand */
-  .navbar__brand {
-    display: none;
+  /* Center all navbar items */
+  .navbar__items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex: 1 1 0%;
+  }
+
+  /* Reduce width of right items container */
+  .navbar__items--right {
+    flex: 0 1 auto;
+    width: 0;
   }
 }
 
