@@ -461,6 +461,15 @@ h4 {
   }
 }
 
+@media (min-width: 847px) {
+  .navbar__inner {
+    display: block;
+  }
+
+  .navbarSearchContainer {
+    margin-left: auto;
+  }
+}
 /* Dark theme toggles */
 .navbar-sidebar__brand div button {
   margin-left: auto;
