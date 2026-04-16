@@ -23,9 +23,10 @@ const ArrowIcon = () => (
 
 export default function Navbar(props: any): JSX.Element {
   useEffect(() => {
-    // Add arrow icons to specific navbar links
-    const merriaDigitalLink = document.querySelector('a[href="https://www.merriadigital.com"]');
-    const velaraeLink = document.querySelector('a[href="https://www.velarae.co/"]');
+    const targetUrls = [
+      'https://www.merriadigital.com',
+      'https://www.velarae.co/'
+    ];
 
     const addArrowIcon = (link: Element | null) => {
       if (link && !link.querySelector('.navbar-arrow-icon')) {
@@ -73,14 +74,19 @@ export default function Navbar(props: any): JSX.Element {
       }
     };
 
-    // Run immediately and set up observer for potential re-renders
-    addArrowIcon(merriaDigitalLink);
-    addArrowIcon(velaraeLink);
+    const processAllLinks = () => {
+      targetUrls.forEach(url => {
+        const links = document.querySelectorAll(`a[href="${url}"]`);
+        links.forEach(link => addArrowIcon(link));
+      });
+    };
 
-    // Watch for changes in case navbar re-renders
+    // Run immediately
+    processAllLinks();
+
+    // Watch for changes in case navbar or sidebar re-renders
     const observer = new MutationObserver(() => {
-      addArrowIcon(document.querySelector('a[href="https://www.merriadigital.com"]'));
-      addArrowIcon(document.querySelector('a[href="https://www.velarae.co/"]'));
+      processAllLinks();
     });
 
     observer.observe(document.body, { subtree: true, childList: true });
