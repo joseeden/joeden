@@ -15,13 +15,16 @@ export const Hero: FunctionComponent = () => {
           
           <div className={styles.narrative}>
             <p>
-              I'm interested in building things and understanding how they work. I write code, work with cloud infrastructure, and solve problems that matter. When I'm not coding, you'll find me running or reading books that take me to other worlds.
+              I'm interested in building things and solving problems. I love breaking things down, understanding how they work, and figuring out how to make them better.
+           </p>
+            <p>
+              I write code, work with cloud-native environments, and build systems that are reliable, scalable, and built to handle real-world use. When I'm not coding, you'll find me running or reading books that take me to other worlds.
             </p>
             <p>
-              I like creating tools that are simple, useful, and solve real problems. Most of my time is spent learning how systems work, writing better code, and figuring out how to make things work well together. I enjoy the process of turning ideas into working solutions.
+              A big part of my work is around automation, integration, and building tools that glue different things together. I often work with APIs, infrastructure, and open-source tools to reduce manual effort and make things work more seamlessly in production. I work on connecting different pieces and turning ideas into practical solutions.
             </p>
             <p>
-              This site is where I collect some of the things I'm working on and thinking about.
+              This space is where I collect and share the things I’ve worked on and am currently working on, along with the ideas and thoughts that come with them.
             </p>
           </div>
 
@@ -29,10 +32,13 @@ export const Hero: FunctionComponent = () => {
             <h2 className={styles.interestsTitle}>INTERESTS</h2>
             <div className={styles.interestsContent}>
               <p>
-                Beyond code, I spend most of my free time running long distances. It clears my head and helps me focus. I've done multiple half marathons and local runs to be in the moment and and get lost with the experience. I also have a home lab where I work with (and break stuff) with servers and electronics.
+                Outside of code, I spend most of my free time running long distances. It helps me clear my head and stay focused. I’ve done multiple half marathons and local runs, where I can just stay in the moment and enjoy the experience. I also run a small home lab where I experiment with servers, networking, and electronics.
               </p>
               <p>
-                I spend a lot of time reading. I'm drawn to books that explore complex ideas. I heavily enjoyed Andy Weir's <em>The Martian</em> where the protagonist's resourcefulness and problem-solving approach really resonated with me. I enjoyed Haruki Murakami's surreal views on reality and consciousness, and everything in between. Whether it's hard sci-fi, philosophy, or genre fiction, if it challenges how I think, I'm reading it.
+                I also spend a lot of time reading. I'm drawn to books that explore complex ideas. I liked Andy Weir's <em>The Martian</em> where the protagonist's resourcefulness and problem-solving approach really resonated with me. I loved Haruki Murakami's surreal views on reality and consciousness, and everything in between. 
+              </p>
+              <p>
+                Whether it's hard sci-fi, philosophy, or genre fiction, if it challenges how I think, I'm reading it.
               </p>
             </div>
           </div>
