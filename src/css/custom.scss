@@ -781,6 +781,30 @@ article h1, article h2, article h3, article h4, article h5, article h6 {
   .navbar {
     margin: 0 1rem;
   }
+
+  /* Center navbar items */
+  .navbar__items {
+    justify-content: center;
+  }
+
+  /* Hide navbar brand */
+  .navbar__brand {
+    display: none;
+  }
+
+  /* Make search icon-only */
+  .navbar__search-input {
+    display: none;
+  }
+
+  .DocSearch-Button {
+    width: auto !important;
+    padding: 0.4rem 0.6rem !important;
+  }
+
+  .DocSearch-Button-Placeholder {
+    display: none;
+  }
 }
 
 @media (max-width: 500px) {

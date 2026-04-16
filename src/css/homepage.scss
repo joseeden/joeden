@@ -1,9 +1,28 @@
 // src/css/homepage.scss
 .homepage .container {
-  margin: auto; 
+  margin: auto;
+  max-width: 1536px;
 }
 
 .homepage {
   overflow: hidden;  
+}
+
+/* Restrict section widths to 550px */
+.homepage [class*="heroBanner"],
+.homepage > div > div > div {
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Mobile adjustments for screens 996px and below */
+@media (max-width: 996px) {
+  .homepage .container,
+  .homepage_Do5D .container__zOM {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 9rem;
+  }
 }
 
