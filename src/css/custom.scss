@@ -461,13 +461,15 @@ h4 {
   }
 }
 
-@media (min-width: 847px) {
-  .navbar__inner {
-    display: block;
-  }
-
+@media (max-width: 846px) {
+  .navbar__items {
+      justify-content: center;
+    }
   .navbarSearchContainer {
     margin-left: auto;
+  }
+  .navbar .navbar__inner {
+    display: block;
   }
 }
 /* Dark theme toggles */
