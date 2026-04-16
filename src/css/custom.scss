@@ -436,7 +436,7 @@ h4 {
 }
 
 /* On screens 997px and above - center all navbar items */
-@media (min-width: 997px) {
+@media (min-width: 847px) {
   /* Center navbar inner container */
   .navbar__inner {
     justify-content: center;
@@ -1077,14 +1077,6 @@ article h6 {
     padding-right: 1.5rem;
   }
 }
-
-// @media (min-width: 599px) {
-//   .navbar__inner {
-//       padding-left: 10px;
-//       padding-right: 10px;
-//     }
-// }
-
 
 /* Move tags to top on larger screens */
 @media (min-width: 768px) {
