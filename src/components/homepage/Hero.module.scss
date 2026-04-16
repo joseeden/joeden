@@ -7,59 +7,122 @@
 .homepage-wrapper {
   display: flex;
   flex-direction: column;
-  background: #000;
-  height: calc(100vh - 64px);
+  background: #ffffff;
+  height: auto;
+  padding: 6rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .heroBanner {
-  // background: #EFEFEF;
-  // color: #000;
-  background: #000;
-  color: #EFEFEF;
+  background: #ffffff;
+  color: #000000;
   text-align: left;
   flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   padding: 0;
   margin: 0;
   width: 100vw;
-  height: calc(100vh - 100px);
+  height: auto;
+  min-height: auto;
 
   @include small-size {
     padding: 0;
+    min-height: auto;
   }
+}
+
+.contentWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .title {
-  font-size: 7.5rem;
-  text-shadow: 3px 0px 30px rgba(0, 0, 0, 0.2);
-  padding: 1rem 2rem 0rem 2rem;
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
 
   @include small-size {
-    font-size: 2.130rem;
-    padding: 0rem 2rem 0rem 2rem;
+    font-size: 1.875rem;
+    margin: 0 0 0.75rem 0;
   }
 }
 
-.subtitle {
-  font-size: 2rem;
-  margin: 0;
-  padding: 0rem 2rem 3rem 2rem;
-
-  @include small-size {
-    font-size: 1.25rem;
-    padding: 0rem 2rem 0rem 2rem;
-  }
-}
-
-.highlighted {
-  // background: linear-gradient(to left, #46c34c 10%, #FF5F1F 100%);
-  background: linear-gradient(to left, #46c34c 10%, #FF5F1F 100%);
+.name {
+  background: linear-gradient(135deg, #3e8768 0%, #2d6a4f 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-weight: 700;
 }
+
+.narrative {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+
+  p {
+    font-size: 1.0625rem;
+    font-weight: 400;
+    color: #666666;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+
+    @include small-size {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+  }
+}
+
+.interestsSection {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.interestsTitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: 0.05em;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.interestsContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  p {
+    font-size: 1.0625rem;
+    font-weight: 400;
+    color: #949494;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+
+    @include small-size {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+  }
+}
+
+
 
 /* Adjust for larger screens */
 // @media (min-width: 1440px) {
@@ -85,7 +148,6 @@
 
 // }
 
- 
 /* Dark Mode */
 [data-theme="dark"] {
   .homepage-wrapper {
@@ -94,12 +156,34 @@
 
   .heroBanner {
     background: #05192d;
-    color: #f7fafc; 
+    color: #f7fafc;
   }
 
-  .title, 
-  .subtitle {
+  .title {
     background: #05192d;
-    color: #f7fafc; 
+    color: #f7fafc;
+  }
+
+  .name {
+    background: linear-gradient(135deg, #5dd4ac 0%, #3e8768 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .narrative {
+    p {
+      color: #d0d0d0;
+    }
+  }
+
+  .interestsContent {
+    p {
+      color: #b0b0b0;
+    }
+  }
+
+  .interestsTitle {
+    color: #f7fafc;
   }
 }
