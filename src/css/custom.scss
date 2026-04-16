@@ -462,14 +462,30 @@ h4 {
 }
 
 @media (max-width: 846px) {
-  .navbar__items {
-      justify-content: center;
-    }
-  .navbarSearchContainer {
-    margin-left: auto;
+  .navbar__inner {
+    justify-content: space-between;
   }
-  .navbar .navbar__inner {
-    display: block;
+
+  .navbar-sidebar__brand {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    flex: 0;
+  }
+
+  .navbar__brand {
+    margin-right: 0;
+  }
+
+  .navbar__items {
+    display: none;
+  }
+
+  .navbar__items--right {
+    display: flex !important;
+    gap: 1rem;
+    align-items: center;
   }
 }
 /* Dark theme toggles */
