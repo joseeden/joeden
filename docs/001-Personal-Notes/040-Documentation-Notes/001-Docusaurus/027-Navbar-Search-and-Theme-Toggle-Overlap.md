@@ -24,7 +24,7 @@ The intended layout was for both controls to remain visible on the same row, wit
 
 The issue came from the responsive CSS, not from Algolia or the Docusaurus navbar config. On medium screens, the navbar did not size the search control and theme toggle correctly, the search button stayed too wide, and a generated mobile rule still positioned the search container absolutely.
 
-See the [Main Cause](#main-cause) section below for a detailed explanation of the root causes and the specific CSS rules that were involved.
+See the [Main Cause](#root-cause) section below for a detailed explanation of the root causes and the specific CSS rules that were involved.
 
 **After Fix:**
 
