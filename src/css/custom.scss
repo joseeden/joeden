@@ -336,7 +336,7 @@ h4 {
 
   /* Consistent page title sizing across all doc pages */
   [class*="generatedIndexPage_"]>header h1[class*="title_"] {
-    --ifm-h1-font-size: clamp(2.5rem, 2.4vw, 3rem);
+    --ifm-h1-font-size: clamp(2rem, 2vw, 2.4rem);
     font-size: var(--ifm-h1-font-size);
     line-height: 1.15;
     margin-top: 3rem;
@@ -347,7 +347,6 @@ h4 {
     .card.padding--lg {
       padding: 1.5rem !important;
     }
-
     .card h2 {
       padding-top: 5px;
     }
@@ -357,7 +356,7 @@ h4 {
   .theme-doc-markdown>header>h1,
   .theme-doc-markdown>h1:first-child,
   .markdown h1:first-child {
-    --ifm-h1-font-size: clamp(2.5rem, 2.4vw, 3rem);
+    --ifm-h1-font-size: clamp(2rem, 2vw, 2.4rem);
     font-size: var(--ifm-h1-font-size);
     line-height: 1.15;
     margin-top: 1rem;
@@ -606,6 +605,19 @@ h4 {
     display: none !important;
   }
 
+  .docMainContainer .row > .col:not(.col--3) {
+    margin: 0 1rem;
+  }
+
+  .docMainContainer .theme-doc-markdown,
+  .docMainContainer .markdown {
+    margin: 3rem 1rem;
+  }
+
+  .docMainContainer .theme-doc-breadcrumbs {
+    margin-bottom: 3rem;
+  }
+
   .theme-doc-markdown,
   .markdown {
     h2 {
@@ -614,6 +626,43 @@ h4 {
     h3 {
       font-size: 20px;
     }
+  }
+}
+
+@media (min-width: 997px) and (max-width: 1248px) {
+  .docMainContainer .row {
+    flex-wrap: nowrap;
+  }
+
+  .docMainContainer .row > .col.col--3,
+  .docMainContainer .theme-doc-toc-desktop {
+    display: none;
+  }
+
+  .docMainContainer .theme-doc-toc-mobile,
+  .docMainContainer .tocCollapsible_ETCw.theme-doc-toc-mobile.tocMobile_ITEo {
+    display: block;
+  }
+}
+
+@media (min-width: 425px) and (max-width: 996px) {
+  .docMainContainer .row > .col:not(.col--3) {
+    padding: 2rem;
+  }
+
+  .docMainContainer .theme-doc-markdown,
+  .docMainContainer .markdown {
+    margin: 2rem 1rem;
+  }
+
+  .docMainContainer .theme-doc-breadcrumbs {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .docMainContainer .theme-doc-breadcrumbs {
+    margin-bottom: 2rem;
   }
 }
 
@@ -667,7 +716,7 @@ h4 {
 @media (min-width: 599px) {
   [class*="docItemCol_"],
   [class*="generatedIndexPage_"] {
-    padding: 1.5rem
+    padding: 2rem
   }
 }
 
