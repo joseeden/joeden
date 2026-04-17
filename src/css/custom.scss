@@ -224,13 +224,10 @@ h4 {
     color: #05192d;
   }
 
-  .alert--success blockquote,
-  .alert--success .admonition-icon {
-    color: #05192d;
-  }
-
   .alert--info blockquote,
-  .alert--info .admonition-icon {
+  .alert--success blockquote,
+  .alert--info .admonition-icon,
+  .alert--success .admonition-icon {
     color: #05192d;
   }
 
@@ -255,56 +252,6 @@ h4 {
     border-color: #f7899c;
     color: #f7f6f6;
   }
-}
-
-/* Badge styles for sidebar items */
-.badge {
-  border-radius: .25rem;
-  display: inline-block;
-  font-size: 75%;
-  font-weight: 700;
-  line-height: 1;
-  margin-left: 5px;
-  padding: .25em .4em;
-  text-align: center;
-  vertical-align: initial;
-  color: #fff;
-}
-
-.badge.lab {
-  background-color: #9cc2ad;
-  // color: #05192d;
-  color: #ffffff;
-}
-
-.badge.project {
-  background-color: #4899ce !important;
-  color: #dfecf6;
-}
-
-.badge.explore {
-  background-color: #17a2b8;
-}
-
-/* Dark mode badge styles */
-[data-theme="dark"] .badge {
-  &.lab {
-    background-color: #72d2cb;
-    color: #05192d;
-  }
-
-  &.project {
-    background-color: #4899ce !important;
-    color: #dfecf6;
-  }
-}
-
-/* Flex wrapper for sidebar links with badges */
-.link-wrapper,
-.category-wrapper {
-  display: flex;
-  align-items: center;
-  width: 100%;
 }
 
 /* ============================================
@@ -427,7 +374,55 @@ h4 {
 }
 
 /* ============================================
-   DOCUMENTATION PAGE STYLES
+   DOCS - SIDEBAR BADGE STYLES
+  ============================================ */
+/* Badge styles for sidebar items */
+.theme-doc-sidebar-container {
+
+  .badge {
+    border-radius: .25rem;
+    display: inline-block;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    margin-left: 5px;
+    padding: .25em .4em;
+    text-align: center;
+    vertical-align: initial;
+    color: #fff;
+    &.lab {
+      background-color: #9cc2ad;
+      color: #ffffff;
+    }
+    &.project {
+      background-color: #4899ce !important;
+      color: #dfecf6;
+    }
+    &.explore {
+      background-color: #17a2b8;
+    }
+  }
+  
+  [data-theme="dark"] .badge.lab {
+    background-color: #72d2cb;
+    color: #05192d;
+  }
+  [data-theme="dark"] .badge.project {
+    background-color: #4899ce !important;
+    color: #dfecf6;
+  }
+
+  /* Flex wrapper for sidebar links with badges */
+  .link-wrapper,
+  .category-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+/* ============================================
+   DOCS - PAGE STYLES
    ============================================ */
 .docMainContainer {
 
@@ -603,11 +598,6 @@ h4 {
 
   }
 
-  .theme-doc-sidebar-menu .menu__list-item>a.menu__link {
-    line-height: 18px !important;
-
-  }
-
   /* Sidebar section content */
   .theme-doc-sidebar-item-category ul.menu__list {
     margin-top: 0;
@@ -659,10 +649,7 @@ h4 {
 }
 
 /* Dark mode admonition icon colors */
-[data-theme="dark"] .alert--info [class*="admonitionIcon_"] svg[viewBox] {
-  fill: #05192d !important;
-}
-
+[data-theme="dark"] .alert--info [class*="admonitionIcon_"] svg[viewBox],
 [data-theme="dark"] .alert--success [class*="admonitionIcon_"] svg[viewBox] {
   fill: #05192d !important;
 }
@@ -819,11 +806,7 @@ h4 {
 
 /* Docs - doc pages and generated index pages */
 @media (min-width: 599px) {
-  [class*="docItemCol_"] {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
+  [class*="docItemCol_"],
   [class*="generatedIndexPage_"] {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -832,14 +815,14 @@ h4 {
 
 /* Small screens (576px - 600px) */
 @media (max-width: 576px) {
-
   [class*="docItemContainer_"]>article>header h1[class*="title_"],
   [class*="generatedIndexPage_"]>header h1[class*="title_"],
-  .theme-doc-markdown>header>h1,
-  .theme-doc-markdown>h1:first-child,
-  .markdown h1:first-child {
-    --ifm-h1-font-size: 1.8rem;
-    font-size: var(--ifm-h1-font-size);
+  .theme-doc-markdown,
+  .markdown {
+    h1:first-child {
+      --ifm-h1-font-size: 1.8rem;
+      font-size: var(--ifm-h1-font-size);
+    }
   }
 }
 
@@ -993,12 +976,6 @@ h4 {
   display: none;
 }
 
-@media (max-width: 500px) {
-  .navbar {
-    margin: 0;
-  }
-}
-
 /* Styles for small mobile screens */
 @media (max-width: 600px) {
 
@@ -1118,13 +1095,11 @@ h4 {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 767px) {
   .navbar {
     margin: 0;
   }
-}
 
-@media (max-width: 767px) {
   .custom-tags-header {
     display: none;
   }
