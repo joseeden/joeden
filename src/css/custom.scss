@@ -360,7 +360,8 @@ h4 {
     align-items: center;
     margin-left: 0;
     font-size: 14px;
-
+    justify-content: center;
+    gap: 1rem
   }
 
   .navbar__item {
@@ -728,6 +729,12 @@ h4 {
   }
 }
 
+@media (max-width: 996px) {
+  .navbar__brand {
+    margin-right: auto;
+  }
+}
+
 /* Navbar responsive: 847px - 996px */
 @media (min-width: 847px) and (max-width: 996px) {
 
@@ -739,7 +746,6 @@ h4 {
     width: auto;
     flex-basis: auto;
     justify-content: flex-start;
-    gap: 1rem;
     display: flex;
   }
 
@@ -760,14 +766,9 @@ h4 {
   }
 }
 
-/* Move tags to top on larger screens */
 @media (min-width: 768px) {
-  .theme-doc-footer-tags-row {
-    display: block;
-  }
-
-  .custom-tags-header {
-    display: none;
+  .navbar {
+    margin: 0;
   }
 }
 
@@ -1147,10 +1148,6 @@ h4 {
     margin: 0;
   }
 }
-
-/* Documentation page container */
-
-
 
 @media (max-width: 767px) {
   .custom-tags-header {
