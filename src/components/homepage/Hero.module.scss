@@ -121,6 +121,15 @@
 }
 
 
+@media (max-width: 425px) {
+  .contentWrapper {
+    gap: 1rem;
+  }
+
+  .title {
+    margin: 0;
+  }
+}
 
 /* Adjust for larger screens */
 // @media (min-width: 1440px) {

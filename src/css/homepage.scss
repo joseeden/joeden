@@ -13,13 +13,13 @@
 .homepage .container > div {
   max-width: 728px;
   margin: 0 auto;
-  padding: 64px;
+  padding: 60px;
 }
 
 /* On screens 996px and below */
-@media (max-width: 996px) {
+@media (max-width: 425px) {
   .homepage .container > div {
-    padding: 64px 0;
+    padding: 40px 0;
   }
 }
 
