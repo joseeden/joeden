@@ -11,7 +11,6 @@ import DocItemTOCMobile from '@theme/DocItem/TOC/Mobile';
 import DocItemTOCDesktop from '@theme/DocItem/TOC/Desktop';
 import DocItemContent from '@theme/DocItem/Content';
 import DocBreadcrumbs from '@theme/DocBreadcrumbs';
-import styles from '../../../css/styles.module.css';
 import Giscus from '@giscus/react';
 import { useColorMode } from '@docusaurus/theme-common';
 import DocItemInfo from './DocItemInfo';
@@ -41,9 +40,9 @@ export default function DocItemLayout({ children }) {
 
   return (
     <div className="row">
-      <div className={clsx('col', !docTOC.hidden && styles.docItemCol)}>
+      <div className={clsx('col')}>
         <DocVersionBanner />
-        <div className={styles.docItemContainer}>
+        <div>
           <article>
             <DocBreadcrumbs />
             <DocVersionBadge />
