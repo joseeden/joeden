@@ -372,6 +372,20 @@ h4 {
   }
 }
 
+[class*="docMainContainer_"] > .container {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+[class*="docMainContainer_"] > .container > .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+[class*="docMainContainer_"] > .container > .row > .col {
+  min-width: 0;
+}
+
 /* ============================================
    VIDEO CONTAINER STYLES
    ============================================ */
@@ -576,12 +590,13 @@ h4 {
 /* Large screens (min-width: 1440px) */
 @media (min-width: 1440px) {
 
-  .theme-doc-container {
+  [class*="docMainContainer_"] > .container {
     display: flex;
     max-width: 1440px;
-    width: 1440px;
+    width: min(100%, 1440px);
     margin: 0 auto;
     padding: 0 20px;
+    box-sizing: border-box;
   }
 
   .theme-doc-sidebar {
@@ -609,8 +624,11 @@ h4 {
   //   margin: 1rem;
   // }
 
-  [class*="docMainContainer_"] .container {
-    margin: 1.5rem;
+  [class*="docMainContainer_"] > .container {
+    margin: 0;
+    padding: 2rem !important;
+    // padding-left: 1.5rem;
+    // padding-right: 1.5rem;
   }
 
   [class*="docMainContainer_"] .theme-doc-breadcrumbs,
@@ -623,7 +641,8 @@ h4 {
 
     margin: 3rem 0;
     padding: 0;
-    width: 100%;
+    width: auto;
+    max-width: 100%;
 
     h2 {
       font-size: 27px;
