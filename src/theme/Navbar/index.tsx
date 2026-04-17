@@ -81,8 +81,8 @@ export default function Navbar(props: any): JSX.Element {
       // Only reorganize for 997px and above
       if (window.innerWidth < 997) return;
 
-      const navbarItems = document.querySelector('.navbar__items');
-      const navbarItemsRight = document.querySelector('.navbar__items--right');
+      const navbarItems = document.querySelector('.navbar__items') as HTMLElement | null;
+      const navbarItemsRight = document.querySelector('.navbar__items--right') as HTMLElement | null;
 
       if (navbarItems && navbarItemsRight) {
         // Move all children from navbar__items--right into navbar__items
