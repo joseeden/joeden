@@ -139,19 +139,6 @@ h4 {
   --feedback-modal-screnshot-z-index: 100;
 }
 
-/* Mobile font sizes */
-@media (max-width: 600px) {
-  :root {
-    --ifm-font-size-base: 17px;
-    --ifm-h1-font-size: 2rem;
-    --ifm-h2-font-size: 1.75rem;
-    --ifm-h3-font-size: 1.5rem;
-    --ifm-h4-font-size: 1.25rem;
-    --ifm-h5-font-size: 1.1rem;
-    --ifm-h6-font-size: 1rem;
-  }
-}
-
 /* Dark mode */
 [data-theme="dark"] {
   // --ifm-color-primary: #25c1af;
@@ -385,9 +372,6 @@ h4 {
     margin-left: 0;
     font-size: 14px;
 
-    @media (max-width: 600px) {
-      font-size: 16px;
-    }
   }
 
   .navbar__item {
@@ -569,17 +553,11 @@ footer.footer {
   font-size: 14px;
   padding-left: 12px;
 
-  @media (max-width: 600px) {
-    font-size: 16px;
-  }
 }
 
 .theme-doc-sidebar-menu .menu__list-item>a.menu__link {
   line-height: 18px !important;
 
-  @media (max-width: 600px) {
-    line-height: 20px !important;
-  }
 }
 
 /* Sidebar section content */
@@ -606,10 +584,6 @@ footer.footer {
   font-size: 14px;
   line-height: 14px;
 
-  @media (max-width: 600px) {
-    font-size: 16px;
-    line-height: 16px;
-  }
 }
 
 .theme-doc-sidebar-menu .menu__list-item>a.menu__link:hover {
@@ -636,6 +610,8 @@ footer.footer {
     margin: 0 1rem;
   }
 }
+
+
 
 // Medium to large screens (601px - 1400px) 
 @media (min-width: 601px) {
@@ -664,10 +640,25 @@ footer.footer {
 /* Small screens (500px - 600px) */
 @media (max-width: 600px) {
 
+  /* Mobile font sizes */
+  :root {
+    --ifm-font-size-base: 17px;
+    --ifm-h1-font-size: 2rem;
+    --ifm-h2-font-size: 1.75rem;
+    --ifm-h3-font-size: 1.5rem;
+    --ifm-h4-font-size: 1.25rem;
+    --ifm-h5-font-size: 1.1rem;
+    --ifm-h6-font-size: 1rem;
+  }
+
+  .navbar__items {
+    font-size: 16px;
+  }
+
   .theme-doc-sidebar-menu .menu__list-item-collapsible .menu__link,
   .theme-doc-sidebar-menu .menu__list-item>a.menu__link {
-    font-size: 14px;
-    line-height: 14px;
+    font-size: 16px;
+    line-height: 16px;
   }
 
   .theme-doc-markdown {
@@ -732,7 +723,72 @@ footer.footer {
   }
 }
 
+/* ============================================
+   TODO: Find which section this is!
+   ============================================ */
+.header-github-link:hover {
+  opacity: 0.6;
+}
 
+.button--outline {
+  &:focus {
+    --ifm-button-background-color: var(--ifm-button-border-color);
+  }
+
+  &.button--primary:focus {
+    --ifm-button-color: var(--ifm-font-color-base-inverse);
+  }
+}
+
+.main-wrapper {
+  height: 80vh !important;
+  flex: 1 !important;
+  flex-direction: column;
+}
+
+#__docusaurus {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh !important;
+}
+
+.button__icon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  margin-right: 0.5rem;
+  position: relative;
+  top: 3px;
+  fill: var(--ifm-button-color);
+
+  .button--secondary & {
+    fill: var(--ifm-color-gray-900);
+
+    [data-theme="dark"] & {
+      fill: var(--ifm-font-color-base);
+    }
+  }
+
+  .button--outline:hover &,
+  .button--outline:active &,
+  .button--outline:focus &,
+  .button--outline.button--active & {
+    [data-theme="dark"] & {
+      fill: var(--ifm-font-color-base-inverse);
+    }
+  }
+}
+
+/* Optional: Add scroll-up animation */
+.navbar--hide {
+  top: -80px;
+}
+
+/* Custom styles for thin scrollbar */
+.menu.thin-scrollbar {
+  // padding: 20px 0 8.5px 8.5px !important;
+  padding: 40px 0 40px 20px !important;
+}
 
 
 
@@ -974,69 +1030,7 @@ footer.footer {
   background-color: #04284f !important;
 }
 
-.header-github-link:hover {
-  opacity: 0.6;
-}
 
-.button--outline {
-  &:focus {
-    --ifm-button-background-color: var(--ifm-button-border-color);
-  }
-
-  &.button--primary:focus {
-    --ifm-button-color: var(--ifm-font-color-base-inverse);
-  }
-}
-
-.main-wrapper {
-  height: 80vh !important;
-  flex: 1 !important;
-  flex-direction: column;
-}
-
-#__docusaurus {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh !important;
-}
-
-.button__icon {
-  width: 18px;
-  height: 18px;
-  display: inline-block;
-  margin-right: 0.5rem;
-  position: relative;
-  top: 3px;
-  fill: var(--ifm-button-color);
-
-  .button--secondary & {
-    fill: var(--ifm-color-gray-900);
-
-    [data-theme="dark"] & {
-      fill: var(--ifm-font-color-base);
-    }
-  }
-
-  .button--outline:hover &,
-  .button--outline:active &,
-  .button--outline:focus &,
-  .button--outline.button--active & {
-    [data-theme="dark"] & {
-      fill: var(--ifm-font-color-base-inverse);
-    }
-  }
-}
-
-/* Optional: Add scroll-up animation */
-.navbar--hide {
-  top: -80px;
-}
-
-/* Custom styles for thin scrollbar */
-.menu.thin-scrollbar {
-  // padding: 20px 0 8.5px 8.5px !important;
-  padding: 40px 0 40px 20px !important;
-}
 
 
 
