@@ -1,6 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import NavbarOriginal from '@theme-original/Navbar';
 import './navbar.css';
+
+const useIsomorphicLayoutEffect =
+  typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
 const ArrowIcon = () => (
   <svg 
@@ -22,7 +25,7 @@ const ArrowIcon = () => (
 );
 
 export default function Navbar(props: any): JSX.Element {
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const targetUrls = [
       'https://www.merriadigital.com',
       'https://www.velarae.co/'
