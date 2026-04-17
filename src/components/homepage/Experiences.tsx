@@ -1,6 +1,14 @@
 import React, { FunctionComponent } from "react";
 import styles from "./Experiences.module.scss";
 
+declare const require: {
+  context: (
+    path: string,
+    deep?: boolean,
+    filter?: RegExp
+  ) => ((id: string) => string | { default: string }) & { keys: () => string[] };
+};
+
 type ExperienceItem = {
   year: string;
   role: string;
@@ -52,6 +60,20 @@ const EXPERIENCES: ExperienceItem[] = [
   },
 ];
 
+const getResumePdfUrl = (): string | null => {
+  const pdfContext = require.context("./", false, /\.pdf$/);
+  const pdfKeys = pdfContext.keys().sort((first, second) => first.localeCompare(second));
+
+  if (pdfKeys.length === 0) {
+    return null;
+  }
+
+  const moduleValue = pdfContext(pdfKeys[0]);
+  return typeof moduleValue === "string" ? moduleValue : moduleValue.default;
+};
+
+const resumePdfUrl = getResumePdfUrl();
+
 export const Experiences: FunctionComponent = () => {
   return (
     <section className={styles.experiencesSection} aria-label="Experiences">
@@ -71,6 +93,25 @@ export const Experiences: FunctionComponent = () => {
           </div>
         ))}
       </div>
+
+      {resumePdfUrl && (
+        <div className={styles.resumeCta}>
+          <a href={resumePdfUrl} className={styles.resumeButton} download>
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              className={styles.resumeIcon}
+            >
+              <path d="M12 15V3" />
+              <path d="M7 10l5 5l5-5" />
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            </svg>
+            Download full resume
+          </a>
+        </div>
+      )}
     </section>
   );
 };
