@@ -1,8 +1,8 @@
 .experiencesSection {
   width: 100%;
-  max-width: 900px;
+  max-width: 725px;
   margin: 0 auto;
-  padding: 0 2rem 6rem;
+  padding: 0 60px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -40,7 +40,7 @@
 }
 
 .experienceYear {
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: #949494;
   letter-spacing: 0.08em;
@@ -72,9 +72,6 @@
 }
 
 @media (max-width: 996px) {
-  .experiencesSection {
-    padding: 0 2rem 4.5rem;
-  }
 
   .experiencesIntro,
   .experienceRole,
@@ -89,9 +86,15 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 730px) {
   .experiencesSection {
-    padding: 0 2rem 4rem;
+      padding: 0 2rem 4rem;
+    }
+}
+
+@media (max-width: 600px) {
+  .experiencesSection {
+    padding: 0 14px;
   }
 }
 
@@ -115,6 +118,6 @@
   }
 
   .experienceRole {
-    color: #f7fafc;
+    color: #ffffff;
   }
 }
