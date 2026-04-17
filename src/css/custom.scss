@@ -1,5 +1,7 @@
 @use "./mixins.scss" as *;
 
+/* Navbar and DocSearch styles were moved to src/theme/Navbar/navbar.css */
+
 h1,
 h2,
 h3,
@@ -255,102 +257,6 @@ h4 {
 }
 
 /* ============================================
-   NAVBAR STYLES
-  ============================================ */
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  padding: 1rem;
-  margin: 0 1rem;
-  z-index: 1000;
-  transition: top 0.3s;
-  box-shadow: rgba(0, 0, 0, 0) 0px 1px 2px 0px;
-  min-height: 100px;
-
-  .navbar__logo {
-    margin-right: 0.5rem;
-  }
-
-  .navbar__inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1536px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .navbar__brand {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin-right: 1.3rem;
-  }
-
-  .navbar__title {
-    display: none;
-  }
-
-  .navbar__items {
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    margin-left: 0;
-    font-size: 14px;
-    justify-content: center;
-    gap: 1rem
-  }
-
-  .navbar__item {
-    margin-right: 1rem;
-
-    @include small-size {
-      margin-right: 0.5rem;
-    }
-  }
-}
-
-/* ============================================
-   ALGOLIA SEARCH
-  ============================================ */
-/* Fix Algolia search modal positioning */
-.DocSearch-Modal {
-  margin-top: 60px !important;
-  z-index: 9999 !important;
-}
-
-.DocSearch-Container {
-  z-index: 9999 !important;
-}
-
-/* DocSearch styling */
-.DocSearch-SearchBar {
-  border: 2px solid #04284f !important;
-}
-
-[data-theme="dark"] .DocSearch-Button {
-  background-color: #122538 !important;
-  color: #5dd5d0 !important;
-}
-
-.DocSearch-MagnifierLabel {
-  color: #04284f !important;
-}
-
-.DocSearch-Hit[aria-selected="true"] a {
-  background-color: #04284f !important;
-}
-
-/* Hide search field keys globally */
-.DocSearch-Button-Keys {
-  display: none !important;
-}
-
-/* ============================================
    LAYOUT & CONTAINER STYLES
    ============================================ */
 [class*="docRoot_"] {
@@ -358,14 +264,6 @@ h4 {
   margin: 0 auto;
   display: flex;
   width: 100%;
-}
-
-.navbar.navbar--fixed-top {
-  border-bottom: 0.5px solid #dadde1;
-}
-
-[data-theme="dark"] .navbar.navbar--fixed-top {
-  border-bottom: 1px solid var(--ifm-color-emphasis-200);
 }
 
 .col.col--3 {
@@ -719,49 +617,6 @@ h4 {
   }
 }
 
-@media (max-width: 996px) {
-  .navbar__brand {
-    margin-right: auto;
-  }
-}
-
-/* Navbar responsive: 847px - 996px */
-@media (min-width: 847px) and (max-width: 996px) {
-
-  .navbar__inner {
-    justify-content: space-between;
-  }
-
-  .navbar__items {
-    width: auto;
-    flex-basis: auto;
-    justify-content: flex-start;
-    display: flex;
-  }
-
-  .navbar__item {
-    margin-right: 0;
-  }
-
-  .navbar__items--right {
-    display: none !important;
-  }
-
-  .navbar-sidebar__brand {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 0.5rem;
-    flex: 0;
-  }
-}
-
-@media (min-width: 768px) {
-  .navbar {
-    margin: 0;
-  }
-}
-
 /* Small screens (500px - 600px) */
 @media (max-width: 600px) {
 
@@ -924,31 +779,10 @@ h4 {
   }
 }
 
-/* Optional: Add scroll-up animation */
-.navbar--hide {
-  top: -80px;
-}
-
 /* Custom styles for thin scrollbar */
 .menu.thin-scrollbar {
   // padding: 20px 0 8.5px 8.5px !important;
   padding: 40px 0 40px 20px !important;
-}
-
-/* Dark theme toggle positioning */
-.navbar-sidebar__brand div button {
-  margin-left: auto;
-}
-
-/* Sidebar close button on small screens */
-.navbar-sidebar__close {
-  align-items: end;
-  width: 25px;
-  margin: 0;
-}
-
-.navbar-sidebar__brand .navbar-sidebar__close {
-  margin-left: auto;
 }
 
 .img-center {
@@ -965,50 +799,8 @@ h4 {
   display: none !important;
 }
 
-/* Search bar icon-only on all screen sizes */
-.navbar__search-input {
-  display: none;
-}
-
-.DocSearch-Button {
-  width: auto !important;
-  padding: 0.4rem 0.6rem !important;
-}
-
-.DocSearch-Button-Placeholder {
-  display: none;
-}
-
 /* Styles for small mobile screens */
 @media (max-width: 600px) {
-
-  .navbar {
-    flex-direction: row;
-    align-items: center;
-    padding: 0.5rem;
-  }
-
-  .navbar__toggle {
-    order: -1;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-  }
-
-
-  .navbar__brand {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-  }
-
-  .navbar__title {
-    font-size: 1.1rem;
-  }
-
-  .navbar-sidebar__close {
-    width: 20px;
-  }
-
   /* Adjust button sizes */
   .button--primary {
     padding: 0.5rem 1rem;
@@ -1021,88 +813,7 @@ h4 {
   }
 }
 
-/* Ensure theme toggle and search stay aligned on medium screens */
-@media (max-width: 996px) {
-  .navbar__inner {
-    gap: 0.5rem;
-  }
-
-  .navbar__items--right {
-    display: flex !important;
-    align-items: center;
-    justify-content: flex-end;
-    flex-wrap: nowrap;
-    gap: 0.5rem;
-    margin-left: auto;
-    min-width: 0;
-    flex: 0 0 auto;
-  }
-
-  [class*="colorModeToggle_"] {
-    display: flex !important;
-  }
-
-  .navbar__search,
-  [class*="navbarSearchContainer_"] {
-    order: 1;
-    flex: 0 0 auto;
-    min-width: 0;
-    max-width: none;
-    width: auto;
-    margin-right: 0;
-    position: static !important;
-    right: auto !important;
-    padding: 0;
-  }
-
-  .navbar__search .DocSearch-Button,
-  [class*="navbarSearchContainer_"] .DocSearch-Button {
-    width: auto;
-    min-width: auto;
-    max-width: none;
-    margin: 0;
-    padding: 0.45rem;
-  }
-
-  .navbar__search .DocSearch-Button-Placeholder,
-  .navbar__search .DocSearch-Button-Keys,
-  [class*="navbarSearchContainer_"] .DocSearch-Button-Placeholder,
-  [class*="navbarSearchContainer_"] .DocSearch-Button-Keys {
-    display: none;
-  }
-
-  .navbar__search .DocSearch-Button-Container,
-  [class*="navbarSearchContainer_"] .DocSearch-Button-Container {
-    margin: 0;
-  }
-
-  [data-theme-toggle],
-  [class*="toggle_"][class*="colorModeToggle_"] {
-    order: 2;
-    flex: 0 0 auto;
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    position: static;
-    z-index: auto;
-    margin-left: 0;
-  }
-
-  [class*="toggle_"][class*="colorModeToggle_"] .toggleButton_gllP {
-    display: flex;
-  }
-
-  .navbar-sidebar [class*="toggle_"][class*="colorModeToggle_"],
-  .navbar-sidebar [class*="colorModeToggle_"] {
-    display: none !important;
-  }
-}
-
 @media (max-width: 767px) {
-  .navbar {
-    margin: 0;
-  }
-
   .custom-tags-header {
     display: none;
   }
