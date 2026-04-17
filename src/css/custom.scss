@@ -322,7 +322,7 @@ h4 {
 /* ============================================
    DOCS - PAGE STYLES
    ============================================ */
-.docMainContainer {
+[class*="docMainContainer_"] {
 
   /* Fix header overlap issue caused by sticky navbar */
   article h1,
@@ -370,6 +370,10 @@ h4 {
 
   .theme-doc-toc-desktop {
     padding-top: 50px;
+  }
+
+  .container {
+    margin: 0 1.5rem;
   }
 }
 
@@ -605,21 +609,22 @@ h4 {
     display: none !important;
   }
 
-  .docMainContainer .row > .col:not(.col--3) {
+  [class*="docMainContainer_"] > .container > .row > .col:not(.col--3) {
     margin: 0 1rem;
   }
 
-  .docMainContainer .theme-doc-markdown,
-  .docMainContainer .markdown {
+  [class*="docMainContainer_"] .theme-doc-markdown,
+  [class*="docMainContainer_"] .markdown {
     margin: 3rem 1rem;
   }
 
-  .docMainContainer .theme-doc-breadcrumbs {
-    margin-bottom: 3rem;
+  [class*="docMainContainer_"] .theme-doc-breadcrumbs,
+  [class*="docMainContainer_"] [class*="breadcrumbsContainer_"] {
+    margin-bottom: 3rem !important;
   }
 
-  .theme-doc-markdown,
-  .markdown {
+  [class*="docMainContainer_"] .theme-doc-markdown,
+  [class*="docMainContainer_"] .markdown {
     h2 {
       font-size: 27px;
     }
@@ -630,39 +635,41 @@ h4 {
 }
 
 @media (min-width: 997px) and (max-width: 1248px) {
-  .docMainContainer .row {
+  [class*="docMainContainer_"] > .container > .row {
     flex-wrap: nowrap;
   }
 
-  .docMainContainer .row > .col.col--3,
-  .docMainContainer .theme-doc-toc-desktop {
+  [class*="docMainContainer_"] > .container > .row > .col.col--3,
+  [class*="docMainContainer_"] .theme-doc-toc-desktop {
     display: none;
   }
 
-  .docMainContainer .theme-doc-toc-mobile,
-  .docMainContainer .tocCollapsible_ETCw.theme-doc-toc-mobile.tocMobile_ITEo {
+  [class*="docMainContainer_"] .theme-doc-toc-mobile {
     display: block;
   }
 }
 
 @media (min-width: 425px) and (max-width: 996px) {
-  .docMainContainer .row > .col:not(.col--3) {
+  [class*="docMainContainer_"] > .container > .row > .col:not(.col--3),
+  [class*="docMainContainer_"] > .container > .row > .col.col--3 {
     padding: 2rem;
   }
 
-  .docMainContainer .theme-doc-markdown,
-  .docMainContainer .markdown {
+  [class*="docMainContainer_"] .theme-doc-markdown,
+  [class*="docMainContainer_"] .markdown {
     margin: 2rem 1rem;
   }
 
-  .docMainContainer .theme-doc-breadcrumbs {
-    margin-bottom: 3rem;
+  [class*="docMainContainer_"] .theme-doc-breadcrumbs,
+  [class*="docMainContainer_"] [class*="breadcrumbsContainer_"] {
+    margin-bottom: 3rem !important;
   }
 }
 
 @media (max-width: 425px) {
-  .docMainContainer .theme-doc-breadcrumbs {
-    margin-bottom: 2rem;
+  [class*="docMainContainer_"] .theme-doc-breadcrumbs,
+  [class*="docMainContainer_"] [class*="breadcrumbsContainer_"] {
+    margin-bottom: 2rem !important;
   }
 }
 
