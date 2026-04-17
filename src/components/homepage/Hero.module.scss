@@ -1,7 +1,7 @@
 // src/components/homepage/Hero.module.scss
 // @import "../../css/mixins.scss";
 // @import "../../css/homepage.scss";
-@use "../../css/mixins.scss" as *;
+// @use "../../css/mixins.scss" as *;
 @use "../../css/homepage.scss" as *;
 
 .homepage-wrapper {
@@ -28,7 +28,7 @@
   height: auto;
   min-height: auto;
 
-  @include small-size {
+  @media (max-width: 996px) {
     padding: 0;
     min-height: auto;
   }
@@ -49,7 +49,7 @@
   margin: 0;
   line-height: 1.2;
 
-  @include small-size {
+  @media (max-width: 996px) {
     font-size: 1.875rem;
     margin: 0 0 0.75rem 0;
   }
@@ -76,7 +76,7 @@
     padding: 0;
     line-height: 1.7;
 
-    @include small-size {
+    @media (max-width: 996px) {
       font-size: 0.9375rem;
       line-height: 1.6;
     }
@@ -113,7 +113,7 @@
     padding: 0;
     line-height: 1.7;
 
-    @include small-size {
+    @media (max-width: 996px) {
       font-size: 0.9375rem;
       line-height: 1.6;
     }
