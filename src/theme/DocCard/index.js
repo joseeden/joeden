@@ -14,7 +14,7 @@ import {usePluralForm} from '@docusaurus/theme-common';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 import {translate} from '@docusaurus/Translate';
 import Heading from '@theme/Heading';
-import styles from './styles.module.css';
+import styles from './doc-card.styles.module.css';
 
 function useCategoryItemsPlural() {
   const {selectMessage} = usePluralForm();
