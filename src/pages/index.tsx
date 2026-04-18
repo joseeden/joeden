@@ -4,6 +4,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import { Hero } from "../components/homepage/Hero";
 import { Experiences } from "../components/homepage/Experiences";
+import { Skills } from "../components/homepage/Skills";
 import "../css/homepage.scss";
 
 export default function Home(): JSX.Element {
@@ -13,6 +14,7 @@ export default function Home(): JSX.Element {
       <main className="homepage">
         <Hero />
         <Experiences />
+        <Skills />
       </main>
     </Layout>
   );

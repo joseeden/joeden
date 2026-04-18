@@ -1,0 +1,114 @@
+.skillsSection {
+  width: 100%;
+  max-width: 725px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  padding: 0 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: #ffffff;
+}
+
+.skillsTitle {
+  font-size: 17px;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: 0.05em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.skillsIntro {
+  font-size: 1.0625rem;
+  font-weight: 400;
+  color: #949494;
+  margin: 0 0 1.2rem 0;
+  line-height: 1.7;
+}
+
+.skillsCarouselSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.skillsCarouselShell {
+  width: 100%;
+}
+
+.skillsCarouselViewport {
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid transparent;
+  background: transparent;
+  padding: 0;
+  height: 90px;
+}
+
+.skillsCarouselTrackContinuous {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: skillsCarouselScroll 30s linear infinite;
+  height: 90px;
+}
+
+.skillsCarouselSlide {
+  flex: 0 0 auto;
+  width: auto;
+  display: flex;
+  align-items: center;
+  padding-right: 0.35rem;
+  box-sizing: border-box;
+  height: 90px;
+}
+
+.skillsCarouselImage {
+  display: block;
+  width: auto;
+  height: 70px;
+  object-fit: contain;
+  background: #ffffff;
+  border-radius: 10px;
+  margin: 0 6px;
+}
+
+@keyframes skillsCarouselScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 425px) {
+  .skillsSection {
+    padding: 0 10px;
+  }
+  .skillsCarouselImage {
+    height: 50px;
+  }
+  .skillsCarouselSlide {
+    padding-right: 0.2rem;
+  }
+}
+
+[data-theme="dark"] {
+  .skillsSection {
+    background: #05192d;
+  }
+  .skillsTitle {
+    color: #81e6d9;
+  }
+  .skillsIntro {
+    color: #d0d0d0;
+  }
+  .skillsCarouselViewport {
+    border-color: transparent;
+    background: transparent;
+  }
+}
