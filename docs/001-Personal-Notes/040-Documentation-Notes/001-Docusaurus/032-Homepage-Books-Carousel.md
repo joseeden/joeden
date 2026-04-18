@@ -142,12 +142,12 @@ This creates a continuous one-direction loop (right to left) where the first ima
 
 In `Hero.module.scss`:
 
-| Class                      | Description                                                    |
-| -------------------------- | -------------------------------------------------------------- |
-| `.carouselViewport`        | Handles clipping and rounded container edges                   |
-| `.carouselTrackContinuous` | Uses `display: flex` and animation                             |
-| `.carouselSlide`           | Uses content-based width (`auto`) so each slide fits the image |
-| `.bookCarouselImage`       | Uses fixed height + `object-fit: contain` to avoid cropping    |
+| Class                      | Description                                                          |
+| -------------------------- | -------------------------------------------------------------------- |
+| `.carouselViewport`        | Handles clipping and rounded container edges. Also handles animation |
+| `.carouselTrackContinuous` | Uses `display: flex` and animation                                   |
+| `.carouselSlide`           | Uses content-based width (`auto`) so each slide fits the image       |
+| `.bookCarouselImage`       | Uses fixed height + `object-fit: contain` to avoid cropping          |
 
 Current behavior choices:
 
@@ -155,6 +155,13 @@ Current behavior choices:
 - Images have rounded corners
 - Horizontal spacing is controlled by `padding-right` on `.carouselSlide`
 
+To set the animation speed, adjust the `animation` property on `.carouselTrackContinuous`, for example: 
+
+```scss
+.carouselTrackContinuous {
+    animation: scrollContinuous 40s linear infinite;
+}
+```
 
 For mobile screens, media queries are used to override styles:
 
