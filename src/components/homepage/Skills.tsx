@@ -38,7 +38,8 @@ export const Skills: React.FC = () => {
               {[...ICONS, ...ICONS].map((icon, idx) => {
                 let src = "";
                 try {
-                  src = ICON_PATH(`./${icon}`);
+                  const mod = ICON_PATH(`./${icon}`) as string | { default: string };
+                  src = typeof mod === "string" ? mod : mod.default;
                 } catch (e) {
                   return null;
                 }
