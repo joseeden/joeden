@@ -4,6 +4,9 @@
 // @use "../../css/mixins.scss" as *;
 @use "../../css/homepage.scss" as *;
 
+.homepage {
+  padding: 0 14px;
+}
 .homepage-wrapper {
   display: flex;
   flex-direction: column;
@@ -24,7 +27,7 @@
   justify-content: flex-start;
   padding: 0;
   margin: 0;
-  width: 100vw;
+  width: 100%;
   height: auto;
   min-height: auto;
 
@@ -32,6 +35,10 @@
     padding: 0;
     min-height: auto;
   }
+}
+
+.heroBanner > .container {
+  padding: 0;
 }
 
 .contentWrapper {

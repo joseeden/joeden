@@ -2,6 +2,7 @@
   width: 100%;
   max-width: 725px;
   margin: 0 auto;
+  margin-bottom: 60px;
   padding: 0 60px;
   display: flex;
   flex-direction: column;
@@ -97,8 +98,9 @@
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
 
   &:hover {
-    background: #f1f1f1;
-    border-color: #c9c9c9;
+    background: #40939b;
+    border-color: #40939b;
+    color: #ffffff;
     transform: translateY(-1px);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
   }
@@ -140,13 +142,13 @@
 
 @media (max-width: 730px) {
   .experiencesSection {
-      padding: 0 2rem 4rem;
+      padding: 0 60px;
     }
 }
 
 @media (max-width: 600px) {
   .experiencesSection {
-    padding: 0 14px;
+    padding: 0;
   }
 }
 
@@ -180,8 +182,9 @@
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
 
     &:hover {
-      background: #173a56;
-      border-color: #456782;
+      background: #40939b;
+      border-color: #40939b;
+      color: #ffffff;
       box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
     }
 
