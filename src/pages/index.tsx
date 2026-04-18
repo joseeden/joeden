@@ -5,6 +5,7 @@ import Layout from "@theme/Layout";
 import { Hero } from "../components/homepage/Hero";
 import { Experiences } from "../components/homepage/Experiences";
 import { Skills } from "../components/homepage/Skills";
+import { LetsTalk } from "../components/homepage/LetsTalk.tsx";
 import "../css/homepage.scss";
 
 export default function Home(): JSX.Element {
@@ -15,6 +16,7 @@ export default function Home(): JSX.Element {
         <Hero />
         <Experiences />
         <Skills />
+        <LetsTalk />
       </main>
     </Layout>
   );
