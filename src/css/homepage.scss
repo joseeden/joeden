@@ -5,9 +5,11 @@
 }
 
 /* Container with max-width 1536px */
-.homepage .container {
+.homepage .hero .container {
   max-width: 1536px;
   margin: 0 auto;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /* Inner container with 728px width and padding */

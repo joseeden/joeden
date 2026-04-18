@@ -4,10 +4,6 @@
 // @use "../../css/mixins.scss" as *;
 @use "../../css/homepage.scss" as *;
 
-.homepage {
-  padding: 0 14px;
-}
-
 .homepage-wrapper {
   display: flex;
   flex-direction: column;
@@ -38,7 +34,7 @@
   }
 }
 
-.heroBanner > .container {
+.heroBanner > :global(.container) {
   padding: 0 !important;
 }
 
