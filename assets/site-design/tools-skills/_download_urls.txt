@@ -1,0 +1,20 @@
+aws https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg
+azure https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg
+docker https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg
+kubernetes https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg
+terraform https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg
+github-actions https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg
+python https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg
+linux https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg
+prometheus https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg
+grafana https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg
+jenkins https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg
+ansible https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg
+bash https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg
+nodejs https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg
+postgresql https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg
+mysql https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg
+elasticsearch https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elasticsearch/elasticsearch-original.svg
+redis https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg
+nginx https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg
+gcp 
