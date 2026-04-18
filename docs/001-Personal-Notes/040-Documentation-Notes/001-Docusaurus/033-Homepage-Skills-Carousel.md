@@ -29,62 +29,75 @@ The `require.context` (Webpack) is used to dynamically load all images from the 
   <summary>View code</summary>
  
   ```tsx
-  import React from "react";
+  import React, { FunctionComponent, useMemo } from "react";
   import styles from "./Skills.module.scss";
 
-  declare const require: {
-    context: (
-      path: string,
-      deep?: boolean,
-      filter?: RegExp
-    ) => {
-      keys: () => string[];
-      <T>(id: string): T;
-    };
+  type SkillImage = {
+    src: string;
+    alt: string;
   };
 
-  const ICON_PATH = require.context(
-    "../../../assets/site-design/tools-skills/icons",
-    false,
-    /\.(png|jpe?g|gif|webp|avif|svg)$/i
-  );
+  export const Skills: FunctionComponent = () => {
+    const skillImages = useMemo<SkillImage[]>(() => {
+      const imagesContext = (require as any).context(
+        "../../../assets/site-design/tools-skills/icons",
+        false,
+        /\.[^/.]+$/i
+      );
 
-  const ICONS = ICON_PATH.keys().map((key: string) => key.replace(/^\.\//, ""));
+      return imagesContext
+        .keys()
+        .sort((first: string, second: string) =>
+          first.localeCompare(second, undefined, { numeric: true, sensitivity: "base" })
+        )
+        .map((imagePath: string) => {
+          const source = imagesContext(imagePath) as any;
+          const normalizedSource =
+            typeof source === "string"
+              ? source
+              : typeof source?.default === "string"
+                ? source.default
+                : source?.default?.src || source?.src || "";
 
-  export const Skills: React.FC = () => (
-    <section className={styles.skillsSection} aria-label="Skills">
-      <h2 className={styles.skillsTitle}>SKILLS</h2>
-      <p className={styles.skillsIntro}>
-        A selection of technologies, platforms, and tools I use regularly.
-      </p>
-      <div className={styles.skillsCarouselSection}>
-        <div className={styles.skillsCarouselShell}>
-          <div className={styles.skillsCarouselViewport}>
-            <div className={styles.skillsCarouselTrackContinuous}>
-              {[...ICONS, ...ICONS].map((icon, idx) => {
-                let src = "";
-                try {
-                  src = ICON_PATH(`./${icon}`);
-                } catch (e) {
-                  return null;
-                }
-                return (
-                  <div className={styles.skillsCarouselSlide} key={icon + idx}>
+          return {
+            src: normalizedSource,
+            alt: imagePath
+              .replace("./", "")
+              .replace(/\.[^/.]+$/, "")
+              .replace(/[-_]+/g, " "),
+          };
+        })
+        .filter((skillImage: SkillImage) => Boolean(skillImage.src));
+    }, []);
+
+    return (
+      <section className={styles.skillsSection} aria-label="Skills">
+        <h2 className={styles.skillsTitle}>SKILLS</h2>
+        <p className={styles.skillsIntro}>
+          A selection of technologies, platforms, and tools I use regularly.
+        </p>
+        <div className={styles.skillsCarouselSection}>
+          <div className={styles.skillsCarouselShell}>
+            <div className={styles.skillsCarouselViewport}>
+              <div className={styles.skillsCarouselTrackContinuous}>
+                {[...skillImages, ...skillImages].map((skillImage: SkillImage, idx: number) => (
+                  <div className={styles.skillsCarouselSlide} key={`${skillImage.src}-${idx}`}>
                     <img
-                      src={src}
-                      alt={icon.replace(/\..+$/, "").replace(/[-_]+/g, " ")}
+                      src={skillImage.src}
+                      alt={idx < skillImages.length ? skillImage.alt : ""}
                       className={styles.skillsCarouselImage}
                       loading="lazy"
+                      aria-hidden={idx >= skillImages.length}
                     />
                   </div>
-                );
-              })}
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  );
+      </section>
+    );
+  };
   ```
 
 </details>
@@ -134,27 +147,17 @@ As a final step, import and render the `<Skills />` component in the TSX file fo
 
 To add a new skill/tool, just drop a new image in the icons folder, no code changes needed.
 
+The carousel now reads any file extension with this regex:
+
+```tsx
+/\.[^/.]+$/i
+```
+
+This means you do not need to maintain a list of supported image formats.
+
+The file order is sorted with numeric-aware sorting, so prefixed filenames like `1-`, `2-`, `10-` load in expected order.
+
 Notes: 
 
 - This approach is future-proof for Docusaurus/React+Webpack projects.
 - For Vite or other bundlers, use their dynamic import features instead.
-
-## Supported Image Formats
-
-The supported image formats are defined in a single array in the Skills component:
-
-```tsx
-const SUPPORTED_IMAGE_EXTENSIONS = ['png', 'jpe?g', 'gif', 'webp', 'avif', 'svg'];
-```
-
-To add a new supported format (for example, `bmp`):
-
-- Just add it to the `SUPPORTED_IMAGE_EXTENSIONS` array in `Skills.tsx`.
-- No need to update multiple places or regexes.
-- The carousel and dynamic import will automatically support the new format.
-
-Example:
-
-```tsx
-const SUPPORTED_IMAGE_EXTENSIONS = ['png', 'jpe?g', 'gif', 'webp', 'avif', 'svg', 'bmp'];
-```

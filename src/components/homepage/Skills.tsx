@@ -1,38 +1,45 @@
 
-import React from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import styles from "./Skills.module.scss";
 
-// TypeScript declaration for require.context (Webpack)
-declare const require: {
-  context: (
-    path: string,
-    deep?: boolean,
-    filter?: RegExp
-  ) => {
-    keys: () => string[];
-    <T>(id: string): T;
-  };
+type SkillImage = {
+  src: string;
+  alt: string;
 };
 
-// Supported image extensions
-const SUPPORTED_IMAGE_EXTENSIONS = ['png', 'jpe?g', 'gif', 'webp', 'avif', 'svg'];
-const IMAGE_REGEX = new RegExp(`\.(${SUPPORTED_IMAGE_EXTENSIONS.join('|')})$`, 'i');
+export const Skills: FunctionComponent = () => {
+  const skillImages = useMemo<SkillImage[]>(() => {
+    const imagesContext = (require as any).context(
+      "../../../assets/site-design/tools-skills/icons",
+      false,
+      /\.[^/.]+$/i
+    );
 
-// Dynamically import all image files from the icons folder
-const ICON_PATH = require.context(
-  "../../../assets/site-design/tools-skills/icons",
-  false,
-  IMAGE_REGEX
-);
+    return imagesContext
+      .keys()
+      .sort((first: string, second: string) =>
+        first.localeCompare(second, undefined, { numeric: true, sensitivity: "base" })
+      )
+      .map((imagePath: string) => {
+        const source = imagesContext(imagePath) as any;
+        const normalizedSource =
+          typeof source === "string"
+            ? source
+            : typeof source?.default === "string"
+              ? source.default
+              : source?.default?.src || source?.src || "";
 
-// Get all image filenames, sort by filename (number prefix), and filter for supported formats
-const ICONS = ICON_PATH
-  .keys()
-  .map((key: string) => key.replace(/^\.\//, ""))
-  .filter((filename: string) => IMAGE_REGEX.test(filename))
-  .sort((a: string, b: string) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }));
+        return {
+          src: normalizedSource,
+          alt: imagePath
+            .replace("./", "")
+            .replace(/\.[^/.]+$/, "")
+            .replace(/[-_]+/g, " "),
+        };
+      })
+      .filter((skillImage: SkillImage) => Boolean(skillImage.src));
+  }, []);
 
-export const Skills: React.FC = () => {
   return (
     <section className={styles.skillsSection} aria-label="Skills">
       <h2 className={styles.skillsTitle}>SKILLS</h2>
@@ -43,21 +50,15 @@ export const Skills: React.FC = () => {
         <div className={styles.skillsCarouselShell}>
           <div className={styles.skillsCarouselViewport}>
             <div className={styles.skillsCarouselTrackContinuous}>
-              {[...ICONS, ...ICONS].map((icon, idx) => {
-                let src = "";
-                try {
-                  const mod = ICON_PATH(`./${icon}`) as string | { default: string };
-                  src = typeof mod === "string" ? mod : mod.default;
-                } catch (e) {
-                  return null;
-                }
+              {[...skillImages, ...skillImages].map((skillImage: SkillImage, idx: number) => {
                 return (
-                  <div className={styles.skillsCarouselSlide} key={icon + idx}>
+                  <div className={styles.skillsCarouselSlide} key={`${skillImage.src}-${idx}`}>
                     <img
-                      src={src}
-                      alt={icon.replace(/\..+$/, "").replace(/[-_]+/g, " ")}
+                      src={skillImage.src}
+                      alt={idx < skillImages.length ? skillImage.alt : ""}
                       className={styles.skillsCarouselImage}
                       loading="lazy"
+                      aria-hidden={idx >= skillImages.length}
                     />
                   </div>
                 );
