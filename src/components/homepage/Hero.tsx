@@ -72,7 +72,7 @@ export const Hero: FunctionComponent = () => {
 
             {bookImages.length > 0 && (
               <div className={styles.booksCarouselSection}>
-                <p className={styles.booksCarouselTitle}>Books currently on my radar</p>
+                <p className={styles.booksCarouselTitle}>Books in my collection</p>
                 <div className={styles.carouselShell}>
                   <div className={styles.carouselViewport}>
                     <div className={styles.carouselTrackContinuous}>
