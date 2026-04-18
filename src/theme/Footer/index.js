@@ -1,6 +1,9 @@
 import React from 'react';
 import signatureWhite from '@site/assets/site-design/signature-white.png';
 
+const signatureSrc =
+  typeof signatureWhite === 'string' ? signatureWhite : signatureWhite?.default;
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -10,7 +13,7 @@ export default function Footer() {
         <div className="footer-main">
           <div className="footer-signature-wrapper">
             <img
-              src={signatureWhite}
+              src={signatureSrc}
               alt="Eden Jose signature"
               className="footer-signature"
               loading="lazy"

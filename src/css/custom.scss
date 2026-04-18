@@ -436,7 +436,7 @@ h4 {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    padding: 3rem 1.5rem 1rem;
+    padding: 5rem 1.5rem 1rem;
     width: 100%;
     max-width: 48rem;
     margin-left: auto;
@@ -465,6 +465,8 @@ h4 {
     max-width: 100%;
     height: auto;
     opacity: 0.95;
+    /* Source asset is white; make it visible on light backgrounds */
+    filter: invert(1) brightness(0.22);
   }
 
   .footer-socials {
@@ -535,6 +537,10 @@ h4 {
 
 [data-theme="dark"] {
   .custom-footer {
+    .footer-signature {
+      filter: none;
+    }
+
     .footer-socials .social-icon {
       color: var(--ifm-color-emphasis-500);
       border-color: color-mix(in srgb, var(--ifm-color-emphasis-300) 45%, transparent);
