@@ -2,7 +2,9 @@ import React from 'react';
 import signatureWhite from '@site/assets/site-design/signature-white.png';
 
 const signatureSrc =
-  typeof signatureWhite === 'string' ? signatureWhite : signatureWhite?.default;
+  typeof signatureWhite === 'string'
+    ? signatureWhite
+    : signatureWhite?.default?.src || signatureWhite?.default || signatureWhite?.src || '';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
