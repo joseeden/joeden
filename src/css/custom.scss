@@ -436,7 +436,7 @@ h4 {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    padding: 5rem 1.5rem 1rem;
+    padding: 1.5rem;
     width: 100%;
     max-width: 48rem;
     margin-left: auto;
@@ -475,6 +475,7 @@ h4 {
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.55rem;
+    margin-bottom: 0.5rem;
 
     .social-icon {
       color: var(--ifm-color-emphasis-700);

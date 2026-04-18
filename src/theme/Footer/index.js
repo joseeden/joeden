@@ -1,5 +1,5 @@
 import React from 'react';
-import signatureWhite from '@site/assets/site-design/signature-white.png';
+import signatureWhite from '@site/assets/site-design/signature/signature-white.png';
 
 const signatureSrc =
   typeof signatureWhite === 'string'

@@ -29,10 +29,10 @@ export const Hero: FunctionComponent = () => {
             <h2 className={styles.interestsTitle}>INTERESTS</h2>
             <div className={styles.interestsContent}>
               <p>
-                Outside of code, I spend most of my free time running long distances. It helps me clear my head and stay focused. I’ve done multiple half marathons and local runs, where I can just stay in the moment and get lost in the experience. I also run a small home lab where I experiment with servers, networking, and electronics.
+                Outside of code, I spend most of my free time running long distances. It helps me clear my head and stay focused. I’ve done multiple half marathons and local running events, where I can just stay in the moment and get lost in the experience. I also run a small home lab where I experiment with servers, networking, and electronics.
               </p>
               <p>
-                I also read a lot, especially books that explore complex ideas. I like Andy Weir's <em>The Martian</em> where the protagonist's resourcefulness and problem-solving approach really resonated with me. I love Haruki Murakami's surreal views on reality and consciousness, and everything in between. 
+                I read a lot, especially books that explore complex ideas. I like Andy Weir's <em>The Martian</em> where the protagonist's resourcefulness and problem-solving approach really resonated with me. I love Haruki Murakami's surreal views on reality and consciousness, and everything in between. 
               </p>
               <p>
                 Whether it's hard sci-fi, philosophy, or non-fiction, if it challenges how I think, I'm reading it.
