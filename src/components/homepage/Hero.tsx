@@ -1,7 +1,7 @@
 // src/components/homepage/Hero.tsx
 
 import clsx from "clsx";
-import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
+import React, { FunctionComponent, useMemo } from "react";
 import styles from "./Hero.module.scss";
 
 type BookImage = {
@@ -35,34 +35,6 @@ export const Hero: FunctionComponent = () => {
       };
     }).filter((bookImage: BookImage) => Boolean(bookImage.src));
   }, []);
-
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  useEffect(() => {
-    if (bookImages.length <= 1) {
-      return;
-    }
-
-    const timer = setInterval(() => {
-      setCurrentSlide((previousSlide) =>
-        previousSlide === bookImages.length - 1 ? 0 : previousSlide + 1
-      );
-    }, 4000);
-
-    return () => clearInterval(timer);
-  }, [bookImages.length]);
-
-  const showPreviousSlide = () => {
-    setCurrentSlide((previousSlide) =>
-      previousSlide === 0 ? bookImages.length - 1 : previousSlide - 1
-    );
-  };
-
-  const showNextSlide = () => {
-    setCurrentSlide((previousSlide) =>
-      previousSlide === bookImages.length - 1 ? 0 : previousSlide + 1
-    );
-  };
 
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
@@ -102,41 +74,21 @@ export const Hero: FunctionComponent = () => {
               <div className={styles.booksCarouselSection}>
                 <p className={styles.booksCarouselTitle}>Books currently on my radar</p>
                 <div className={styles.carouselShell}>
-                  <button
-                    type="button"
-                    className={styles.carouselButton}
-                    onClick={showPreviousSlide}
-                    aria-label="Show previous book image"
-                  >
-                    ←
-                  </button>
-
                   <div className={styles.carouselViewport}>
-                    <div
-                      className={styles.carouselTrack}
-                      style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-                    >
-                      {bookImages.map((bookImage: BookImage) => (
-                        <div className={styles.carouselSlide} key={bookImage.src}>
+                    <div className={styles.carouselTrackContinuous}>
+                      {[...bookImages, ...bookImages].map((bookImage: BookImage, index: number) => (
+                        <div className={styles.carouselSlide} key={`${bookImage.src}-${index}`}>
                           <img
                             src={bookImage.src}
-                            alt={bookImage.alt}
+                            alt={index < bookImages.length ? bookImage.alt : ""}
                             className={styles.bookCarouselImage}
                             loading="lazy"
+                            aria-hidden={index >= bookImages.length}
                           />
                         </div>
                       ))}
                     </div>
                   </div>
-
-                  <button
-                    type="button"
-                    className={styles.carouselButton}
-                    onClick={showNextSlide}
-                    aria-label="Show next book image"
-                  >
-                    →
-                  </button>
                 </div>
               </div>
             )}

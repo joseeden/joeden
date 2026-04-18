@@ -145,51 +145,46 @@
 }
 
 .carouselShell {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
+  width: 100%;
 }
 
 .carouselViewport {
-  width: min(100%, 700px);
+  width: 100%;
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid #e3e3e3;
   background: #fafafa;
+  padding: 0.7rem 0;
 }
 
-.carouselTrack {
+.carouselTrackContinuous {
   display: flex;
-  transition: transform 0.45s ease;
+  align-items: center;
+  width: max-content;
+  animation: booksCarouselScroll 20s linear infinite;
 }
 
 .carouselSlide {
-  min-width: 100%;
+  flex: 0 0 82%;
+  padding-right: 0.85rem;
+  box-sizing: border-box;
 }
 
 .bookCarouselImage {
   display: block;
   width: 100%;
-  height: 420px;
+  height: 280px;
   object-fit: cover;
+  border-radius: 10px;
 }
 
-.carouselButton {
-  width: 2.3rem;
-  height: 2.3rem;
-  border: 1px solid #d6d6d6;
-  border-radius: 999px;
-  background: #ffffff;
-  color: #2c2c2c;
-  font-size: 1.15rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
+@keyframes booksCarouselScroll {
+  from {
+    transform: translateX(0);
+  }
 
-  &:hover {
-    background: #f4f4f4;
-    border-color: #bcbcbc;
+  to {
+    transform: translateX(-50%);
   }
 }
 
@@ -204,17 +199,11 @@
   }
 
   .carouselShell {
-    gap: 0.45rem;
+    width: 100%;
   }
 
   .bookCarouselImage {
-    height: 300px;
-  }
-
-  .carouselButton {
-    width: 2rem;
-    height: 2rem;
-    font-size: 1rem;
+    height: 220px;
   }
 }
 
@@ -287,16 +276,5 @@
   .carouselViewport {
     border-color: #2d3f51;
     background: #11273a;
-  }
-
-  .carouselButton {
-    border-color: #294259;
-    background: #0f2335;
-    color: #d9ecff;
-
-    &:hover {
-      background: #1a344a;
-      border-color: #3d5b77;
-    }
   }
 }
