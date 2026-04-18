@@ -15,14 +15,24 @@ declare const require: {
 };
 
 
+
+// Supported image extensions
+const SUPPORTED_IMAGE_EXTENSIONS = ['png', 'jpe?g', 'gif', 'webp', 'avif', 'svg'];
+const IMAGE_REGEX = new RegExp(`\.(${SUPPORTED_IMAGE_EXTENSIONS.join('|')})$`, 'i');
+
 // Dynamically import all image files from the icons folder
 const ICON_PATH = require.context(
   "../../../assets/site-design/tools-skills/icons",
   false,
-  /\.(png|jpe?g|gif|webp|avif|svg)$/i
+  IMAGE_REGEX
 );
 
-const ICONS = ICON_PATH.keys().map((key: string) => key.replace(/^\.\//, ""));
+// Get all image filenames, sort by filename (number prefix), and filter for supported formats
+const ICONS = ICON_PATH
+  .keys()
+  .map((key: string) => key.replace(/^\.\//, ""))
+  .filter((filename: string) => IMAGE_REGEX.test(filename))
+  .sort((a: string, b: string) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }));
 
 export const Skills: React.FC = () => {
   return (

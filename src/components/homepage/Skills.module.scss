@@ -22,7 +22,8 @@
   font-size: 1.0625rem;
   font-weight: 400;
   color: #949494;
-  margin: 0 0 1.2rem 0;
+  // margin: 0 0 1.2rem 0;
+  margin: 0 0 0.9rem 0;
   line-height: 1.7;
 }
 
@@ -30,7 +31,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
-  margin-top: 0.5rem;
+  // margin-top: 0.5rem;
 }
 
 .skillsCarouselShell {
@@ -44,7 +45,7 @@
   border: 1px solid transparent;
   background: transparent;
   padding: 0;
-  height: 90px;
+  height: 40px;
 }
 
 .skillsCarouselTrackContinuous {
@@ -52,7 +53,8 @@
   align-items: center;
   width: max-content;
   animation: skillsCarouselScroll 60s linear infinite;
-  height: 90px;
+  height: 40px;
+  gap: 10px;
 }
 
 .skillsCarouselSlide {
@@ -68,9 +70,10 @@
 .skillsCarouselImage {
   display: block;
   width: auto;
-  height: 70px;
+  height: 40px;
   object-fit: contain;
-  background: #ffffff;
+  // background: #ffffff;
+  background: transparent;
   border-radius: 10px;
   margin: 0 6px;
 }
@@ -84,10 +87,14 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 600px) {
   .skillsSection {
-    padding: 0 10px;
+    padding: 0;
   }
+}
+
+@media (max-width: 425px) {
+
   .skillsCarouselImage {
     height: 50px;
   }
