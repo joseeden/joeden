@@ -128,6 +128,71 @@
   }
 }
 
+.booksCarouselSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.booksCarouselTitle {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #5f5f5f;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+.carouselShell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.carouselViewport {
+  width: min(100%, 700px);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #e3e3e3;
+  background: #fafafa;
+}
+
+.carouselTrack {
+  display: flex;
+  transition: transform 0.45s ease;
+}
+
+.carouselSlide {
+  min-width: 100%;
+}
+
+.bookCarouselImage {
+  display: block;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+.carouselButton {
+  width: 2.3rem;
+  height: 2.3rem;
+  border: 1px solid #d6d6d6;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #2c2c2c;
+  font-size: 1.15rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: #f4f4f4;
+    border-color: #bcbcbc;
+  }
+}
+
 
 @media (max-width: 425px) {
   .contentWrapper {
@@ -136,6 +201,20 @@
 
   .title {
     margin-bottom: 0.5rem;
+  }
+
+  .carouselShell {
+    gap: 0.45rem;
+  }
+
+  .bookCarouselImage {
+    height: 300px;
+  }
+
+  .carouselButton {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
   }
 }
 
@@ -199,5 +278,25 @@
 
   .interestsTitle {
     color: #81e6d9;
+  }
+
+  .booksCarouselTitle {
+    color: #a9b4be;
+  }
+
+  .carouselViewport {
+    border-color: #2d3f51;
+    background: #11273a;
+  }
+
+  .carouselButton {
+    border-color: #294259;
+    background: #0f2335;
+    color: #d9ecff;
+
+    &:hover {
+      background: #1a344a;
+      border-color: #3d5b77;
+    }
   }
 }

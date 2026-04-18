@@ -1,10 +1,69 @@
 // src/components/homepage/Hero.tsx
 
 import clsx from "clsx";
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useEffect, useMemo, useState } from "react";
 import styles from "./Hero.module.scss";
 
+type BookImage = {
+  src: string;
+  alt: string;
+};
+
 export const Hero: FunctionComponent = () => {
+  const bookImages = useMemo<BookImage[]>(() => {
+    const imagesContext = (require as any).context(
+      "../../../assets/site-design/books",
+      false,
+      /\.(png|jpe?g|gif|webp|avif)$/i
+    );
+
+    return imagesContext.keys().sort().map((imagePath: string) => {
+      const source = imagesContext(imagePath) as any;
+      const normalizedSource =
+        typeof source === "string"
+          ? source
+          : typeof source?.default === "string"
+            ? source.default
+            : source?.default?.src || source?.src || "";
+
+      return {
+        src: normalizedSource,
+        alt: imagePath
+          .replace("./", "")
+          .replace(/\.[^/.]+$/, "")
+          .replace(/[-_]+/g, " "),
+      };
+    }).filter((bookImage: BookImage) => Boolean(bookImage.src));
+  }, []);
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    if (bookImages.length <= 1) {
+      return;
+    }
+
+    const timer = setInterval(() => {
+      setCurrentSlide((previousSlide) =>
+        previousSlide === bookImages.length - 1 ? 0 : previousSlide + 1
+      );
+    }, 4000);
+
+    return () => clearInterval(timer);
+  }, [bookImages.length]);
+
+  const showPreviousSlide = () => {
+    setCurrentSlide((previousSlide) =>
+      previousSlide === 0 ? bookImages.length - 1 : previousSlide - 1
+    );
+  };
+
+  const showNextSlide = () => {
+    setCurrentSlide((previousSlide) =>
+      previousSlide === bookImages.length - 1 ? 0 : previousSlide + 1
+    );
+  };
+
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className={clsx("container", "homepage-wrapper")}>
@@ -38,6 +97,49 @@ export const Hero: FunctionComponent = () => {
                 Whether it's hard sci-fi, philosophy, or non-fiction, if it challenges how I think, I'm reading it.
               </p>
             </div>
+
+            {bookImages.length > 0 && (
+              <div className={styles.booksCarouselSection}>
+                <p className={styles.booksCarouselTitle}>Books currently on my radar</p>
+                <div className={styles.carouselShell}>
+                  <button
+                    type="button"
+                    className={styles.carouselButton}
+                    onClick={showPreviousSlide}
+                    aria-label="Show previous book image"
+                  >
+                    ←
+                  </button>
+
+                  <div className={styles.carouselViewport}>
+                    <div
+                      className={styles.carouselTrack}
+                      style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                    >
+                      {bookImages.map((bookImage: BookImage) => (
+                        <div className={styles.carouselSlide} key={bookImage.src}>
+                          <img
+                            src={bookImage.src}
+                            alt={bookImage.alt}
+                            className={styles.bookCarouselImage}
+                            loading="lazy"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <button
+                    type="button"
+                    className={styles.carouselButton}
+                    onClick={showNextSlide}
+                    aria-label="Show next book image"
+                  >
+                    →
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
