@@ -1,19 +1,49 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import signatureWhite from '@site/assets/site-design/signature/signature-white.png';
 import EmailIcon from '@site/assets/site-design/footer/email.svg';
 import GithubIcon from '@site/assets/site-design/footer/github.svg';
 import XIcon from '@site/assets/site-design/footer/x.svg';
 import LinkedInIcon from '@site/assets/site-design/footer/linkedin.svg';
 import LocationIcon from '@site/assets/site-design/footer/location.svg';
-import DocusaurusIcon from '@site/assets/site-design/footer/docusaurus.svg';
 
 const signatureSrc =
   typeof signatureWhite === 'string'
     ? signatureWhite
     : signatureWhite?.default?.src || signatureWhite?.default || signatureWhite?.src || '';
 
+const sgtDateTimeFormatter = new Intl.DateTimeFormat('en-SG', {
+  timeZone: 'Asia/Singapore',
+  year: 'numeric',
+  month: 'short',
+  day: '2-digit',
+  hour: '2-digit',
+  minute: '2-digit',
+  second: '2-digit',
+  hour12: false,
+});
+
+function formatSgtDateTime(date) {
+  const parts = sgtDateTimeFormatter.formatToParts(date).reduce((acc, part) => {
+    if (part.type !== 'literal') {
+      acc[part.type] = part.value;
+    }
+    return acc;
+  }, {});
+
+  return `${parts.day} ${parts.month} ${parts.year}, ${parts.hour}:${parts.minute}:${parts.second} SGT`;
+}
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const [now, setNow] = useState(() => new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setNow(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <footer className="custom-footer">
@@ -56,8 +86,15 @@ export default function Footer() {
           </div>
 
           <div className="footer-meta-item">
-            <DocusaurusIcon width="12" height="12" aria-hidden="true" />
-            <a href="https://docusaurus.io" target="_blank" rel="noopener noreferrer">Built with Docusaurus</a>
+            <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </g>
+            </svg>
+            <time className="footer-status-time" dateTime={now.toISOString()}>
+              {formatSgtDateTime(now)}
+            </time>
           </div>
         </div>
       </div>
