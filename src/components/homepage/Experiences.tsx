@@ -61,7 +61,7 @@ const EXPERIENCES: ExperienceItem[] = [
 ];
 
 const getResumePdfUrl = (): string | null => {
-  const pdfContext = require.context("../../../assets/site-design", false, /\.pdf$/);
+  const pdfContext = require.context("../../../assets/site-design/resume", false, /\.pdf$/);
   const pdfKeys = pdfContext.keys().sort((first, second) => first.localeCompare(second));
 
   if (pdfKeys.length === 0) {
