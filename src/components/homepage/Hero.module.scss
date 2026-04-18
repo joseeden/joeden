@@ -4,6 +4,10 @@
 // @use "../../css/mixins.scss" as *;
 @use "../../css/homepage.scss" as *;
 
+.homepage {
+  padding: 0 14px;
+}
+
 .homepage-wrapper {
   display: flex;
   flex-direction: column;
@@ -150,27 +154,28 @@
   overflow: hidden;
   border: 1px solid #e3e3e3;
   background: #fafafa;
-  padding: 0.7rem 0;
+  padding: 0.45rem 0;
 }
 
 .carouselTrackContinuous {
   display: flex;
   align-items: center;
   width: max-content;
-  animation: booksCarouselScroll 20s linear infinite;
+  animation: booksCarouselScroll 14s linear infinite;
 }
 
 .carouselSlide {
-  flex: 0 0 82%;
-  padding-right: 0.85rem;
+  flex: 0 0 34%;
+  padding-right: 0.6rem;
   box-sizing: border-box;
 }
 
 .bookCarouselImage {
   display: block;
   width: 100%;
-  height: 280px;
-  object-fit: cover;
+  height: 190px;
+  object-fit: contain;
+  background: #ffffff;
   border-radius: 10px;
 }
 
@@ -199,7 +204,11 @@
   }
 
   .bookCarouselImage {
-    height: 220px;
+    height: 150px;
+  }
+
+  .carouselSlide {
+    flex: 0 0 68%;
   }
 }
 
