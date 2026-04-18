@@ -427,7 +427,7 @@ h4 {
 .custom-footer {
   width: 100%;
   padding: 0;
-  border-top: 1px solid var(--ifm-color-emphasis-200);
+  border-top: 0;
   background: var(--ifm-footer-background-color);
   margin-top: auto;
   animation: footer-fade-in 500ms ease 250ms both;
@@ -534,6 +534,10 @@ h4 {
       }
     }
   }
+}
+
+html.docs-wrapper .custom-footer {
+  border-top: 1px solid var(--ifm-color-emphasis-200);
 }
 
 [data-theme="dark"] {
