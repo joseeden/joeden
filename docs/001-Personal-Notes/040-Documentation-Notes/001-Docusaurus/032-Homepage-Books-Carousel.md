@@ -155,14 +155,6 @@ Current behavior choices:
 - Images have rounded corners
 - Horizontal spacing is controlled by `padding-right` on `.carouselSlide`
 
-To set the animation speed, adjust the `animation` property on `.carouselTrackContinuous`, for example: 
-
-```scss
-.carouselTrackContinuous {
-    animation: scrollContinuous 40s linear infinite;
-}
-```
-
 For mobile screens, media queries are used to override styles:
 
 - Reduce image height
@@ -200,6 +192,16 @@ Use these style values to tune appearance:
 | Image height   | `.bookCarouselImage { height: ... }`                         |
 | Image spacing  | `.carouselSlide { padding-right: ... }`                      |
 | Roundness      | `.carouselViewport` and `.bookCarouselImage` `border-radius` |
+
+To set the animation speed, adjust the `animation` property on `.carouselTrackContinuous`, for example: 
+
+```scss
+.carouselTrackContinuous {
+    animation: scrollContinuous 60s linear infinite;
+}
+```
+
+After some testing, I found that `60s` and `80s` are both good speeds for the number of images I have, but you can adjust it based on your content and preference.
 
 
 ## Common Issues
