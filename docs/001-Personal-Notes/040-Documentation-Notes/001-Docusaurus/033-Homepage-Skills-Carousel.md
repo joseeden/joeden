@@ -138,3 +138,23 @@ Notes:
 
 - This approach is future-proof for Docusaurus/React+Webpack projects.
 - For Vite or other bundlers, use their dynamic import features instead.
+
+## Supported Image Formats
+
+The supported image formats are defined in a single array in the Skills component:
+
+```tsx
+const SUPPORTED_IMAGE_EXTENSIONS = ['png', 'jpe?g', 'gif', 'webp', 'avif', 'svg'];
+```
+
+To add a new supported format (for example, `bmp`):
+
+- Just add it to the `SUPPORTED_IMAGE_EXTENSIONS` array in `Skills.tsx`.
+- No need to update multiple places or regexes.
+- The carousel and dynamic import will automatically support the new format.
+
+Example:
+
+```tsx
+const SUPPORTED_IMAGE_EXTENSIONS = ['png', 'jpe?g', 'gif', 'webp', 'avif', 'svg', 'bmp'];
+```

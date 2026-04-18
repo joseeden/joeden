@@ -14,8 +14,6 @@ declare const require: {
   };
 };
 
-
-
 // Supported image extensions
 const SUPPORTED_IMAGE_EXTENSIONS = ['png', 'jpe?g', 'gif', 'webp', 'avif', 'svg'];
 const IMAGE_REGEX = new RegExp(`\.(${SUPPORTED_IMAGE_EXTENSIONS.join('|')})$`, 'i');
