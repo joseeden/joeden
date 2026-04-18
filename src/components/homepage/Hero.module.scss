@@ -165,14 +165,17 @@
 }
 
 .carouselSlide {
-  flex: 0 0 34%;
-  padding-right: 0.6rem;
+  flex: 0 0 auto;
+  width: auto;
+  display: flex;
+  align-items: center;
+  padding-right: 0.35rem;
   box-sizing: border-box;
 }
 
 .bookCarouselImage {
   display: block;
-  width: 100%;
+  width: auto;
   height: 190px;
   object-fit: contain;
   background: #ffffff;
@@ -208,7 +211,7 @@
   }
 
   .carouselSlide {
-    flex: 0 0 68%;
+    padding-right: 0.3rem;
   }
 }
 
