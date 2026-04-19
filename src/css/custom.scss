@@ -849,13 +849,13 @@ html.docs-wrapper .custom-footer {
 }
 
 /* Docs - doc pages and generated index pages */
-@media (min-width: 599px) {
+// @media (min-width: 599px) {
 
-  [class*="docItemCol_"],
-  [class*="generatedIndexPage_"] {
-    padding: 2rem
-  }
-}
+//   [class*="docItemCol_"],
+//   [class*="generatedIndexPage_"] {
+//     padding: 2rem
+//   }
+// }
 
 /* Small screens (576px - 600px) */
 @media (max-width: 576px) {
