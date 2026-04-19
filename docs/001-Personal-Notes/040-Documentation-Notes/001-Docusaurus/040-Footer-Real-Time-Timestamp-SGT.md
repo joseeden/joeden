@@ -1,6 +1,6 @@
 ---
 title: "Real-Time Timestamp in Footer"
-sidebar_position: 34
+sidebar_position: 40
 description: "Add live timestamp and clock icon to footer"
 tags:
   - Docusaurus

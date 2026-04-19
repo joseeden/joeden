@@ -1,6 +1,6 @@
 ---
 title: "Adding the Homepage Let's Talk Section"
-sidebar_position: 35
+sidebar_position: 34
 description: "Implementation notes for the homepage contact section"
 tags:
   - Docusaurus
