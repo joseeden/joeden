@@ -65,6 +65,7 @@ export default function BlogListPage({ metadata, items = [] }: BlogListPageProps
     <Layout title={metadata?.blogTitle ?? 'Writings'} description={metadata?.blogDescription}>
       <main className={styles.page}>
         <section className={styles.wrapper} aria-label="Writings list">
+          <h1 className={styles.header}>Writings</h1>
           <ul className={styles.list}>
             {sortedItems.map((item) => {
               const post = item.content?.metadata;
