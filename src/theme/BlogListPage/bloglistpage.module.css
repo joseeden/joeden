@@ -1,13 +1,14 @@
 .page {
-  padding: 1.5rem 1rem 2rem;
+  /* padding: 1.5rem 1rem 2rem; */
+  padding: 0 17px;
 }
 
 .wrapper {
   /* max-width: 700px; */
-  /* margin: 0 auto; */
+  /* margin: 40px auto 0; */
   max-width: 728px;
-  margin: 40px auto 0;
-  padding: 0 60px 60px 60px;
+  margin: 0 auto;
+  padding: 60px;
 }
 
 .header {
@@ -87,13 +88,6 @@
 
 @media (max-width: 639px) {
 
-  .header {
-    margin: 40px 0 2rem;
-    padding-top: 0;
-    /* font-size: 28px; */
-    line-height: 1.2;
-  }
-
   .page {
     /* padding-top: 1rem; */
     padding-top: 0;
@@ -138,6 +132,6 @@
 
 @media (max-width: 600px) {
   .wrapper {
-    padding: 0;
+    padding: 40px 0;
   }
 }
