@@ -72,7 +72,6 @@ const config: Config = {
         theme: {
           customCss: [
             require.resolve("./src/css/custom.scss"),
-            require.resolve("./src/css/blog-pages.css"),
             // Add new css files here as needed
           ],
         },
