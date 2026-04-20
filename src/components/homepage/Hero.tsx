@@ -41,7 +41,7 @@ export const Hero: FunctionComponent = () => {
       <div className={clsx("container", "homepage-wrapper")}>
         <div className={styles.contentWrapper}>
           <h1 className={clsx("hero__title", styles.title)}>
-            <span className={styles.name}>Jose Eden</span>
+            Jose Eden
           </h1>
           
           <div className={styles.narrative}>
