@@ -90,12 +90,13 @@
   .header {
     margin: 40px 0 2rem;
     padding-top: 0;
-    font-size: 28px;
+    /* font-size: 28px; */
     line-height: 1.2;
   }
 
   .page {
-    padding-top: 1rem;
+    /* padding-top: 1rem; */
+    padding-top: 0;
   }
 
   .postLink {
@@ -132,5 +133,11 @@
     text-align: right;
     align-self: start;
     grid-area: reading;
+  }
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    padding: 0;
   }
 }
