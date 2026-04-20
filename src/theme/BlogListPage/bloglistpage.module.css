@@ -14,9 +14,9 @@
   line-height: 1.2;
 }
 
-[data-theme="dark"] .header {
+/* [data-theme="dark"] .header {
   color: #81e6d9;
-}
+} */
 
 .list {
   list-style: none;
