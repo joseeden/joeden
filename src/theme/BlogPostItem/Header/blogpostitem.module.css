@@ -28,7 +28,7 @@
 
 :global(html.blog-wrapper.blog-post-page .main-wrapper > .container) {
   max-width: 728px;
-  margin: 0 auto;
+  margin: 0 auto !important;
   padding: 60px;
 }
 
