@@ -2,7 +2,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  margin-bottom: 0.65rem;
+  /* margin-bottom: 0.65rem; */
+  margin-bottom: 1.5rem;
   color: var(--ifm-color-emphasis-700);
   font-size: 12px;
   text-decoration: none;
