@@ -338,6 +338,9 @@ h4 {
     scroll-margin-top: 110px;
   }
 
+  [class*="generatedIndexPage_"] {
+    padding: 0 14px;
+  }
   /* Consistent page title sizing across all doc pages */
   [class*="generatedIndexPage_"]>header h1[class*="title_"] {
     --ifm-h1-font-size: clamp(2rem, 2vw, 2.4rem);
