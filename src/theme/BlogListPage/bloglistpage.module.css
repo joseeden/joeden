@@ -3,8 +3,11 @@
 }
 
 .wrapper {
-  max-width: 700px;
+  /* max-width: 700px; */
+  /* margin: 0 auto; */
+  max-width: 728px;
   margin: 40px auto 0;
+  padding: 0 60px 60px 60px;
 }
 
 .header {
