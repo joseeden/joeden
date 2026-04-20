@@ -63,9 +63,13 @@
 }
 
 .postLink:hover .title {
-  color: #81e6d9;
+  color: #2e8555;
   text-decoration: underline;
   text-underline-offset: 0.15rem;
+}
+
+[data-theme="dark"] .postLink:hover .title {
+  color: #81e6d9;
 }
 
 .readingTime {
