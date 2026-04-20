@@ -8,10 +8,14 @@
 }
 
 .header {
-  margin: 60px 0 2rem;
+  margin: 40px 0 2rem;
   padding-top: 0;
   font-size: 28px;
   line-height: 1.2;
+}
+
+[data-theme="dark"] .header {
+  color: #81e6d9;
 }
 
 .list {
