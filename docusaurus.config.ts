@@ -70,7 +70,11 @@ const config: Config = {
           onUntruncatedBlogPosts: "ignore",    /* 'ignore' | 'log' | 'warn' | 'throw' */
         },
         theme: {
-          customCss: [require.resolve("./src/css/custom.scss")],
+          customCss: [
+            require.resolve("./src/css/custom.scss"),
+            require.resolve("./src/css/blog-pages.css"),
+            // Add new css files here as needed
+          ],
         },
       } satisfies Preset.Options,
     ],

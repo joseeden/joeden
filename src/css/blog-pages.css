@@ -1,0 +1,42 @@
+/* Blog post page only styles (single-column reading layout) */
+
+/* The "html" prefix is added for precision to ensure styles are applied correctly */
+html.blog-wrapper.blog-post-page .main-wrapper > .container.margin-vert--lg {
+  max-width: 728px;
+  margin: 0 auto;
+  padding: 60px 17px;
+}
+
+html.blog-wrapper.blog-post-page .main-wrapper > .container > .row {
+  display: block;
+  margin: 0;
+}
+
+html.blog-wrapper.blog-post-page .main-wrapper > .container > .row > aside,
+html.blog-wrapper.blog-post-page .main-wrapper > .container > .row > .theme-doc-toc-desktop,
+html.blog-wrapper.blog-post-page .main-wrapper > .container > .row > .col--3 {
+  display: none;
+}
+
+html.blog-wrapper.blog-post-page .main-wrapper > .container > .row > main {
+  width: 100%;
+  max-width: none;
+  padding: 0;
+}
+
+html.blog-wrapper.blog-post-page article > header h1 {
+  font-size: 24px;
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+  padding-top: 0;
+}
+
+html.blog-wrapper.blog-post-page article > header > .row {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  html.blog-wrapper.blog-post-page .main-wrapper > .container.margin-vert--lg {
+    padding: 40px 17px;
+  }
+}
