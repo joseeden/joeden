@@ -120,7 +120,7 @@ This improves readability for rapidly changing time values while preserving the 
 - Interval cleanup is important to prevent duplicate timers during re-renders/hot reload.
 
 
-## Verification 
+## Validation 
 
 1. Footer shows location item unchanged.
 2. Second footer meta item shows clock icon and timestamp.
