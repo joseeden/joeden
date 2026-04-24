@@ -27,7 +27,7 @@ CI/CD (Continuous Integration and Continuous Deployment) is a key part of the de
 - Changes are tested as soon as they are committed.  
 - CI tests each code change to ensure it works.
 
-On the other hand, **Continuous Deployment (CD)** automates the release of validated code after testing.
+**Continuous Deployment (CD)** automates the release of validated code after testing.
 
 - After testing, the new code is deployed automatically.  
 

@@ -10,16 +10,19 @@ last_update:
 ---
 
 
-## Preparing for Deployment  
+## Overview
 
 Before deploying a machine learning model, we need to ensure it runs smoothly in production. This includes managing different runtime environments and using containers for consistency.  
 
-## Development vs. Production  
+## Dev vs Prod
 
 Models go through different stages before deployment.  
 
-- **Development**: Models are trained using sample data on a local machine or cloud.  
-- **Production**: Deployed models process real-world data and make real-time predictions.  
+| Stage       | Description                                                            |
+| ----------- | ---------------------------------------------------------------------- |
+| Development | Models are trained using sample data on a local machine or cloud       |
+| Production  | Deployed models process real-world data and make real-time predictions |
+
 
 Before full deployment, models may also run in a **testing environment** to identify and fix issues. However, differences in runtime environments can still cause problems.  
 
@@ -59,8 +62,10 @@ For more information, please see [Containerization.](/docs/041-Containerization/
 
 Before deploying a machine learning model, we need to decide how to structure the system. This involves choosing between a monolithic or microservices architecture.  
 
-- **Monolith**: All services run as a single application.  
-- **Microservices**: Services are independent and deployed separately.  
+| Type              | Description                                      |
+| ----------------- | ------------------------------------------------ |
+| Monolith          | All services run as a single application         |
+| Microservices     | Services are independent and deployed separately |
 
 A monolithic system can become complex and difficult to scale because all parts are tightly connected. If one part fails, the whole system may go down. On the other hand, microservices allow individual services to fail without affecting the entire system, making them more flexible. However, they require more resources and maintenance.  
 

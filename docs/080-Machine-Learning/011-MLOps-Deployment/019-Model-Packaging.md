@@ -38,15 +38,20 @@ If you choose Pickle format for your model, remember to store the list of depend
 
 Reproducibility means that the model can be recreated at any time using the same conditions. The elements below are necessary for verifying the model's integrity and recreating it if needed.
 
-- **Model pipeline version** – Record the exact training code version
-- **Dataset versions** – Include training datasets and splits
-- **Performance metrics** – Save test set performance results
+| Component              | Description                             |
+| ---------------------- | --------------------------------------- |
+| Model pipeline version | Records the exact training code version |
+| Dataset versions       | Includes training datasets and splits   |
+| Performance metrics    | Saves test set performance results      |
 
 ## Monitoring 
 
 To monitor the model effectively after deployment, we need to ensure that data profiles are included in the package.
 
-- **Input data profile** - Define expectations for input and output data
-- **Output data profile** - Tracks if the model performs as expected over time
+| Concept             | Description                                             |
+| ------------------- | ------------------------------------------------------- |
+| Input data profile  | Defines expectations for input and output data          |
+| Output data profile | Tracks whether the model performs as expected over time |
+
 
 Saving these profiles with the model package makes it easier to monitor and maintain the model’s performance in production.

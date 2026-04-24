@@ -34,9 +34,12 @@ The model build pipeline focuses on creating and saving the model, while the mod
 
 A good model build pipeline does more than just train the model. It makes sure the model can be deployed, monitored, and reproduced.
 
-- **Complete model package** - Includes the model and necessary artifacts for deployment
-- **Deployment artifacts** - Includes specifications for software dependencies
-- **Reproducibility** - Model can be recreated by tracking code and data versions
+| Concept                | Description                                               |
+| ---------------------- | --------------------------------------------------------- |
+| Complete model package | Includes the model and necessary artifacts for deployment |
+| Deployment artifacts   | Includes specifications for software dependencies         |
+| Reproducibility        | Model can be recreated by tracking code and data versions |
+
 
 These features ensure that the model is ready for production, can be easily deployed, and can be trusted to perform consistently.
 
@@ -51,9 +54,12 @@ These features ensure that the model is ready for production, can be easily depl
 
 Reproducibility shows that the model can be recreated with the same code and data, even at a later time.
 
-- **Code versioning** tracks the exact code version used for training
-- **Data versioning** records the version of the training data
-- **Model metadata** store both code and data versions within the model's metadata
+| Concept         | Description                                                    |
+| --------------- | -------------------------------------------------------------- |
+| Code versioning | Tracks the exact code version used for training                |
+| Data versioning | Records the version of the training data                       |
+| Model metadata  | Stores both code and data versions within the model's metadata |
+
 
 With reproducibility in place, we can ensure the model's integrity and trustworthiness over time.
 

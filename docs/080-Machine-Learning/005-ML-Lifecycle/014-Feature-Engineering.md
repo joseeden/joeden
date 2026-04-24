@@ -11,45 +11,63 @@ last_update:
 ---
 
 
+
 ## Overview
 
-Feature engineering improves the quality of the data and helps create better-performing models. It involves creating new features or modifying existing ones to enhance model performance.
+After defining a machine learning model, the next step is **feature engineering**. It is the process of selecting, transforming, and creating variables (features) from raw data to improve model performance.
 
-- **Feature**: A measurable property, like a column in a table.  
-- **Raw vs. Engineered Features**: We can use existing data or create new features.
+- **Feature**
 
-## Example: Customer Data  
+  - A measurable property
+  - Example: a column in a dataset
 
-Consider a dataset with customer orders. Two existing features are:  
+- **Raw vs. Engineered Features**
+
+  - Raw features come directly from data.
+  - Engineered features are derived or transformed.
+
+Consider a dataset with customer orders.
+
+| Customer ID | Number of Orders | Total Expenditure |
+| ----------- | ---------------- | ----------------- |
+| 0           | 11               | $3199             |
+| 1           | 5                | $9851             |
+| 2           | 9                | $574              |
+
+Where: 
 
 - **Number of orders**: Total purchases by a customer.  
 - **Total expenditure**: Total money spent by a customer.  
 
-
-**Customer ID** | **Number of orders** | **Total expenditure** |
-----------------|----------------------|-----------------------|
- 0              | 11                   | $3199                 |
- 1              | 5                    | $9851                 |
- 2              | 9                    | $574                  |
-
-
 We can create a new feature called **Average expenditure** which gets the amount paid by the customer per order.
 
-**Customer ID** | **Number of orders** | **Total expenditure** | **Average expenditure** |
-----------------|----------------------|-----------------------|-------------------------|
- 0              | 11                   | $3199                 | $290.82                 |
- 1              | 5                    | $9851                 | $1970.2                 |
- 2              | 9                    | $574                  | $63.77                  |
+```bash
+Average Expenditure = Total Expenditure / Number of Orders 
+```
+
+| **Customer ID** | **Number of orders** | **Total expenditure** | **Average expenditure** |
+|-----------------|--------------------|---------------------|-----------------------|
+| 0               | 11                 | $3199               | $290.82               |
+| 1               | 5                  | $9851               | $1970.2               |
+| 2               | 9                  | $574                 | $63.77                 |
+
+## Types of Feature Engineering
+
+Feature engineering typically involves three main steps:
+
+1. Data Aggregation
+2. Feature Construction
+3. Feature Transformation
 
 
-## Aggregating Data from Multiple Sources 
+### Data Aggregation
 
 Combining data from various sources helps create a richer dataset and improves model accuracy.  
 
 - Merge different datasets  
 - Use varied data types for better insights  
 
-Example of Data Aggregator class that loads data from three sources into a single dataset for further processing:
+In the example below, the `DataAggregator` class loads data from three sources into a single dataset for further processing:
 
 ```python
 import pandas as pd
@@ -70,9 +88,9 @@ class DataAggregator:
     return pd.concat([data1, data2, data3], axis=0)
 ```
 
-## Feature Construction  
+### Feature Construction  
 
-Feature construction is creating new features from existing ones. This can make the model more interpretable and improve performance.  
+Feature construction creates new features from existing ones. This can make the model more interpretable and improve performance.  
 
 - Combine or modify existing features  
 - Work with domain experts to identify relevant features  
@@ -99,14 +117,15 @@ class FeatureConstructor:
 ```
 
 
-## Feature Transformation  
+### Feature Transformation  
 
-Transforming features ensures they are in a usable form for the model. This can include normalizing data or handling outliers.  
+Feature transformation converts data into a format suitable for machine learning models.
 
 - Normalize data for consistency  
 - Remove outliers to improve model accuracy  
+- Scale features to ensure they are on the same scale
 
-In the example below, the `StandardScaler` transformer in scikit-learn scales the features so they have a mean of 0 and a standard deviation of 1. This helps to bring all the data to the same scale, which can improve the performance of certain machine learning models.
+In the example below, the `StandardScaler` transformer in scikit-learn scales the features so they have a mean of `0` and a standard deviation of `1`. This helps to bring all the data to the same scale, which can improve the performance of certain machine learning models.
 
 ```python
 from sklearn.datasets import load_breast_cancer
@@ -142,25 +161,27 @@ print(f"Accuracy without scaling: {acc_no_scaling}")  # Example output: 0.971
 print(f"Accuracy with scaling: {acc_with_scaling}")   # Example output: 0.982
 ```
 
-## Feature Transformation Techniques 
+## Common Transformation Techniques 
 
 Feature transformation is a broad concept that includes various techniques that modify data into a different form to improve model performance. This includes techniques like:
 
-- **Normalization** - Normalize numeric data to a range of 0 to 1.
-- **Standardization** - Rescales data to have a mean of 0 and a standard deviation of 1.
-- **Log Transformation** - Converts skewed data into a more normal distribution.
-- **Encoding** - Converts categorical variables into numerical form.
-- **Binning** - Groups continuous values into discrete bins.
+| Technique          | Description                                                     |
+| ------------------ | --------------------------------------------------------------- |
+| Normalization      | Normalize numeric data to a range of 0 to 1                     |
+| Standardization    | Rescales data to have a mean of 0 and a standard deviation of 1 |
+| Log Transformation | Converts skewed data into a more normal distribution            |
+| Encoding           | Converts categorical variables into numerical form              |
+| Binning            | Groups continuous values into discrete bins                     |
+
 
 ### Normalization
 
-Normalization scales numeric features to a range between 0 and 1, ensuring no feature dominates due to its scale. This is useful when working with models sensitive to input scale.
+Normalization scales numeric features to a range between `0` and `1`. This ensures no feature dominates due to its scale. 
 
-- Normalize numeric data to a range of 0 to 1.  
-- helpful when features have different scales/ranges. 
+- Helpful when features have different scales/ranges. 
 - Useful for models like K-Nearest Neighbors (KNN) and Neural Networks.  
 
-We can apply normalization using `sklearn.preprocessing.Normalizer`. First, we create a normalizer object, then pass the DataFrame to transform the data and return the normalized version.
+We can apply normalization using `sklearn.preprocessing.Normalizer`. First, we create a `normalizer` object, then pass the `DataFrame` to transform the data and return the normalized version.
 
 ```python
 from sklearn.preprocessing import Normalizer
@@ -172,12 +193,12 @@ normalized_data = normalizer.fit_transform(data)
 
 ### Standardization
 
-Standardization transforms features so they have a **mean of 0** and a **standard deviation of 1**. This is especially useful for models that assume data is normally distributed.
+Standardization transforms features so they have a mean of `0` and a standard deviation of `1`. This is especially useful for models that assume data is normally distributed.
 
-- Standardize data to have mean = 0, std = 1.  
+- Standardize data to have mean = `0`, std = `1`.  
 - Essential for models like Support Vector Machines (SVM) and Linear Regression.  
 
-We can apply standardization using `sklearn.preprocessing.StandardScaler`. Similar to normalization, we first create a scaler object, then pass the DataFrame to transform the data and return the standardized version.
+We can apply standardization using `sklearn.preprocessing.StandardScaler`. Similar to normalization, we first create a `scaler` object, then pass the `DataFrame` to transform the data and return the standardized version.
 
 ```python
 from sklearn.preprocessing import StandardScaler
@@ -187,7 +208,7 @@ scaler = StandardScaler()
 standardized_data = scaler.fit_transform(data)
 ```
 
-## Good Features
+## Feature Selection
 
 To improve prediction accuracy, it's crucial to select relevant and non-redundant features. Avoid using features that are too similar or irrelevant.
 
@@ -195,22 +216,17 @@ To improve prediction accuracy, it's crucial to select relevant and non-redundan
 - Eliminate redundant or irrelevant features.  
 
 Example: 
+
 - Age in years is enough
 - Avoid adding age in months as it provides the same information.
 
-
-## Feature Selection  
-
 Note that adding more features doesn’t always help. The goal is to find the most useful ones.  
 
-- **Feature Selection**: Identifying the most important variables.  
-- **Correlation Check**: Removing redundant features.  
-- **Dimensionality Reduction**: Methods like PCA (Principal Component Analysis) simplify data.  
-
-Feature selection helps by identifying the most relevant features and removing redundant ones, which improves model interpretability and performance.  
-
-- Reduce overfitting  
-- Focus on relevant features  
+| Technique                | Description                                                   |
+| ------------------------ | ------------------------------------------------------------- |
+| Feature Selection        | Identifying the most important variables                      |
+| Correlation Check        | Removing redundant features                                   |
+| Dimensionality Reduction | Methods like PCA (Principal Component Analysis) simplify data |
 
 <div class="img-center"> 
 
@@ -220,7 +236,14 @@ Feature selection helps by identifying the most relevant features and removing r
 
 ### Example: Feature Engineering Pipeline
 
-This pipeline performs a sequence of operations: data aggregation, feature construction, scaling, and feature selection. It uses the Chi-squared test to pick the top 10 features. After fitting, the pipeline can transform new data in the same way.
+This pipeline performs a sequence of operations: 
+
+- Data aggregation
+- Feature construction
+- Scaling
+- Feature selection
+
+It uses the Chi-squared test to pick the top 10 features. After fitting, the pipeline can transform new data in the same way.
 
 ```python
 from sklearn.preprocessing import StandardScaler
@@ -259,7 +282,7 @@ Make sure that `DataAggregator` and `FeatureConstructor` are defined and their `
 
 
 
-### Feature Selection with `sklearn`
+### Using `sklearn`
 
 `sklearn.feature_selection` helps in selecting the most important features while removing redundant ones. This ensures that the model only uses the most valuable data.
 
@@ -279,7 +302,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 ```
 
-### Feature Selection with RandomForest
+### Using RandomForest
 
 `SelectFromModel` helps identify important features using a model like `RandomForestClassifier`. It removes less relevant features to improve efficiency.  
 
@@ -302,24 +325,46 @@ selector = SelectFromModel(model, prefit=True)
 X_selected = selector.transform(X_train)
 ```
 
-### Choosing Best Approach  
+### Choosing the Best Approach  
 
 Here are four options ranked in order of effectiveness for improving feature engineering:  
 
 1. **Consult a domain expert**  
+
    - Get insights from someone with expertise in the field.  
    - Helps identify features that are most relevant to the problem.  
 
 2. **Use a combination of feature selection tools**  
+
    - Apply techniques like univariate selection, PCA, and Recursive Feature Elimination (RFE).  
    - Ensures only the most valuable features are kept.  
 
 3. **Use as many features as possible**  
+
    - Adds all available features, assuming more data improves performance.  
    - Can lead to overfitting and unnecessary complexity.  
 
 4. **Manually create features based on intuition**  
+
    - Develop new features based on gut feeling.  
    - Lacks a systematic approach and may not improve the model.  
 
-Using expert knowledge and selection techniques leads to better results than blindly adding more features.
+
+## Feature Store  
+
+A **feature store** is a central location to save and reuse features across projects. It helps large teams maintain consistency, but smaller projects may not need it.  
+
+For more information, please see [Feature Stores.](/docs/080-Machine-Learning/011-MLOps-Deployment/017-Feature-Stores.md)
+
+<div class="img-center"> 
+
+![](/img/docs/Screenshot-2025-03-18-202541.png)
+
+</div>
+
+## Data Version Control  
+
+Just like Git tracks code changes, **data version control** tracks dataset changes.  
+
+- **Keeps history**: Allows rolling back to previous versions.  
+- **Ensures consistency**: Prevents unexpected changes in model inputs.

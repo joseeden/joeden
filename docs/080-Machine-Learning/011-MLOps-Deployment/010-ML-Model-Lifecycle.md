@@ -37,20 +37,23 @@ The ML Project Life Cycle covers the entire process of solving a problem with ML
 
 An ML application includes more than just the model.
 
-- **Business Rules** - Example: "If fewer than 10 ratings, recommend popular movies."
+| Component      | Description                                                    |
+| -------------- | -------------------------------------------------------------- |
+| Business Rules | Example: "If fewer than 10 ratings, recommend popular movies." |
+| Database       | Stores features and logs model outputs                         |
+| GUI            | Allows admin users to configure and troubleshoot               |
+| API            | Enables external communication securely and consistently       |
 
-- **Database** - Stores features and logs model outputs.
-
-- **GUI** - Allows admin users to configure and troubleshoot.
-
-- **API** - Enables external communication securely and consistently.
 
 ## Monolithic vs. Decoupled
 
 Before deploying a machine learning model, we need to decide how to structure the system. 
 
-- **Monolith**: Model is tightly integrated into the app.
-- **Microservices**: Model and application are separate.
+| Type          | Description                                      |
+| ------------- | ------------------------------------------------ |
+| Monolith      | All services run as a single application         |
+| Microservices | Services are independent and deployed separately |
+
 
 A monolithic system can become complex and difficult to scale because all parts are tightly connected. On the other hand, microservices allow individual services to fail without affecting the entire system.
 
@@ -60,7 +63,10 @@ A monolithic system can become complex and difficult to scale because all parts 
 
 </div>
 
-Decoupling the model from the application results in two distinct life cycles:  the **ML Application Lifecycle** and the **ML Model Lifecycle**.
+Decoupling the model from the application results in two distinct life cycles:  
+
+- **ML Application Lifecycle** has a long lifecycle
+- **ML Model Lifecycle** is more dynamic and frequently updated.
 
 <div class="img-center"> 
 
@@ -68,10 +74,6 @@ Decoupling the model from the application results in two distinct life cycles:  
 
 </div>
 
-Separating the two lifecycles enables independent updates.
-
-- The ML application has a long life cycle.
-- ML models are frequently updated
 
 ## Model Life Cycle
 

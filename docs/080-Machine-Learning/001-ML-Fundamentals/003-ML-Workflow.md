@@ -17,7 +17,7 @@ In machine learning, having a clear workflow is key to getting good results. The
 
 <div class='img-center'>
 
-![](/img/docs/ml-worklow-diagram-detailed.png)
+![](/img/docs/all-things-ml-ml-workflow.png)
 
 </div>
 

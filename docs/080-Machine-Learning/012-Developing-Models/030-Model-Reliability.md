@@ -27,9 +27,11 @@ These metrics help track how well the model supports business goals.
 
 Testing ensures the ML pipeline is working properly and helps identify potential issues early.
 
-- **Unit tests**: Test individual components.
-- **Integration tests**: Test the whole pipeline together.
-- **Smoke tests**: Quick checks for overall system health.
+| Test Type         | Description                            |
+| ----------------- | -------------------------------------- |
+| Unit tests        | Test individual components             |
+| Integration tests | Test the whole pipeline together       |
+| Smoke tests       | Quick checks for overall system health |
 
 Regular testing keeps the pipeline reliable and functional.
 

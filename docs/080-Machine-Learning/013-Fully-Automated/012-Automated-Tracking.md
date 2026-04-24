@@ -33,16 +33,21 @@ Without automated tracking, ML workflows become chaotic.
 
 Logging requirements depend on the project. Common elements include:  
 
-- **Code** - Version of scripts used  
-- **Configuration** - Experiment settings and environment details  
-- **Data** - Source, type, format, preprocessing steps  
-- **Model** - Parameters, hyperparameters, and evaluation metrics  
+| Component     | Description                                         |
+| ------------- | --------------------------------------------------- |
+| Code          | Version of scripts used                             |
+| Configuration | Experiment settings and environment details         |
+| Data          | Source, type, format, preprocessing steps           |
+| Model         | Parameters, hyperparameters, and evaluation metrics |
 
-Logging ensures:  
+Benefits:
 
-- **Reproducibility** - Others can verify and rerun experiments  
-- **Performance tracking** - Compare models and improve results  
-- **Transparency** - Understand decisions and detect issues  
+| Benefit              | Description                             |
+| -------------------- | --------------------------------------- |
+| Reproducibility      | Others can verify and rerun experiments |
+| Performance tracking | Compare models and improve results      |
+| Transparency         | Understand decisions and detect issues  |
+
 
 ## Automated Tracking Systems  
 

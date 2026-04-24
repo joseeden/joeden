@@ -11,11 +11,7 @@ last_update:
 
 ## Overview
 
-This design phase checks data quality and decides how to collect and process it.  
-
-## Data Quality  
-
-Data quality measures how well data serves its purpose.  
+This design phase checks data quality and decides how to collect and process it. Data quality measures how well data serves its purpose.  
 
 - Poor data leads to inaccurate predictions.  
 - Evaluated using accuracy, completeness, consistency, and timeliness.  
@@ -24,32 +20,12 @@ Data quality measures how well data serves its purpose.
 
 A good dataset should meet the following criteria:  
 
-- **Accuracy**  
-  - Data should reflect reality.  
-  - Example: A customer’s age recorded as 18 when they are actually 32 is inaccurate.  
-
-- **Completeness**  
-  - Missing data should be minimal.  
-  - Example: A customer’s last name is missing.  
-
-- **Consistency**  
-  - Data should be uniform across sources.  
-  - Example: One department defines "active customer" differently than another.  
-
-- **Timeliness**  
-  - Data should be available when needed.  
-  - Example: Daily order updates are not real-time.  
-
-## Examples 
-
-Below are some examples:
-
-| **Dimension**     | **Sample Questions**                                            | **Sample Dimension Quality**                                      |  
-|-------------------|-----------------------------------------------------------------|------------------------------------------------------------------|  
-| **Accuracy**      | Does our data correctly describe the customer?                  | The customer's age in the data is 18, but is actually 32.        |  
-| **Completeness**  | Is there any customer data missing?                             | For 80% of the customers, we don't have a last name.            |  
-| **Consistency**   | Is the definition of the customer the same across the company?  | The customer is marked active in one database but inactive in another. |  
-| **Timeliness**    | When is the customer order data available?                      | Orders sync at the end of the day but are not available in real-time. |  
+| Metric       | Description                           | Example                                                                |
+| ------------ | ------------------------------------- | ---------------------------------------------------------------------- |
+| Accuracy     | Data should reflect reality           | A customer’s age recorded as 18 when they are actually 32              |
+| Completeness | Missing data should be minimal        | A customer’s last name is missing                                      |
+| Consistency  | Data should be uniform across sources | The customer is marked active in one database but inactive in another. |
+| Timeliness   | Data should be available when needed  | Orders sync at the end of the day but are not available in real-time.  |
 
 If data quality is low in one or more dimension, we can:  
 

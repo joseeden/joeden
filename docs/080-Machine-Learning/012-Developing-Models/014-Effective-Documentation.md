@@ -17,12 +17,14 @@ Good documentation makes machine learning projects easier to use, understand, an
 
 ML documentation should cover six main areas:  
 
-- **Data sources** – Where the data comes from and how to access it  
-- **Data schemas** – Structure and organization of data  
-- **Labeling methods** – How data is labeled for training  
-- **Model pseudocode** – Steps involved in building and running the model  
-- **Model experiments** – Testing, selection, and hyperparameters  
-- **Training environments** – Software and settings used for training  
+| Component             | Description                                      |
+| --------------------- | ------------------------------------------------ |
+| Data sources          | Where the data comes from and how to access it   |
+| Data schemas          | Structure and organization of data               |
+| Labeling methods      | How data is labeled for training                 |
+| Model pseudocode      | Steps involved in building and running the model |
+| Model experiments     | Testing, selection, and hyperparameters          |
+| Training environments | Software and settings used for training          |
 
 ## Data Sources  
 
@@ -92,9 +94,11 @@ Example pseudocode:
 
 After collecting and labeling data, we document how we tested and chose our ML models. This helps track progress and allows others to improve the process.  
 
-- **Model choices**: List tested architectures and selection criteria.  
-- **Performance metrics**: Explain how the best model was chosen.  
-- **Hyperparameters**: Record different settings tested during training.  
+| Component           | Description                                       |
+| ------------------- | ------------------------------------------------- |
+| Model choices       | List tested architectures and selection criteria  |
+| Performance metrics | Explains how the best model was chosen            |
+| Hyperparameters     | Records different settings tested during training |
 
 
 ## Training Environments  

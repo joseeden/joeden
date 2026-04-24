@@ -113,21 +113,18 @@ In the example below, we have 30 points but only two points was misclassified. T
 
 A confusion matrix helps evaluate model performance beyond accuracy.
 
-- **True Positives**
-  - Correctly classified fraudulent points.
+| Category        | Description                                                  |
+| --------------- | ------------------------------------------------------------ |
+| True Positives  | Correctly classified fraudulent points                       |
+| False Negatives | Fraudulent observations incorrectly classified as legitimate |
+| False Positives | Legitimate points incorrectly predicted as fraudulent        |
+| True Negatives  | Legitimate points correctly predicted as not fraudulent      |
 
-- **False Negatives**
-  - Fraudulent observations incorrectly classified as legitimate.
 
-- **False Positives**
-  - Legitimate points incorrectly predicted as fraudulent.
+**Remembering False Positives and False Negatives**
 
-- **True Negatives**
-  - Legitimate points correctly predicted as not fraudulent.
-
-- **Remembering False Positives and False Negatives**
-  - False Negatives: Like telling a pregnant woman she's not pregnant.
-  - False Positives: Like telling a man he's pregnant.
+- False Negatives: Like telling a pregnant woman she's not pregnant.
+- False Positives: Like telling a man he's pregnant.
 
 Using the same example on fraudulent transactions, we can tally the true positives and negatives, as well as the false ones. 
 
@@ -141,31 +138,32 @@ For more information, please see [Analyzing Vulnerabilities](/docs/025-Cybersecu
 
 In addition to accuracy, we can also use sensitivity and specificity as metrics to evaluate our models.
 
-- **Sensitivity**
-  - Focuses on correctly predicting fraudulent transactions (true positives). 
-  - Formula:
+**Sensitivity** focuses on correctly predicting fraudulent transactions (true positives). 
 
-    ```bash
-    Sensitivity = true positives / (true positives + false negatives) 
-    ```
+Formula: 
 
-  - Using the fraudulent transactions example3, we can see that it has 3% sensitivity, which means the model needs improvement.
+```bash
+Sensitivity = true positives / (true positives + false negatives) 
+```
 
-    ```bash
-    Sensitivity = 1 / (1 + 2) = 1 / 3 or 3%
-    ```
+Using the previous fraudulent transactions example, we can see that it has 3% sensitivity, which means the model needs improvement.
 
-    ![](/img/docs/ml-overfitting-sensitivity-compute.png) 
+```bash
+Sensitivity = 1 / (1 + 2) = 1 / 3 or 3%
+```
 
-- **Specificity**
-  - Focuses on correctly predicting legitimate transactions (true negatives). 
-  - Useful for scenarios like spam filters.
-  - Send spam to inbox rather than send real emails to the spam folder.
-  - Formula:
+![](/img/docs/ml-overfitting-sensitivity-compute.png) 
 
-    ```bash
-    Specificity = true negatives / (true negatives + false positives) 
-    ```
+**Specificity** focuses on correctly predicting legitimate transactions (true negatives). 
+
+- Useful for scenarios like spam filters.
+- Send spam to inbox rather than send real emails to the spam folder.
+
+Formula:
+
+```bash
+Specificity = true negatives / (true negatives + false positives) 
+```
 
 ## Evaluating Regression
 

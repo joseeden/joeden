@@ -15,10 +15,12 @@ last_update:
 
 Automation improve efficiency and reduce human error in ML pipelines. The four main principles are:
 
-- **Continuous Integration (CI)**: Regularly merge code changes into a shared repository.
-- **Continuous Delivery (CD)**: Automatically build, test, and deploy code.
-- **Continuous Training (CT)**: Automatically update models as new data arrives.
-- **Continuous Monitoring (CM)**: Continuously track model performance.
+| Concept                     | Description                                           |
+| --------------------------- | ----------------------------------------------------- |
+| Continuous Integration (CI) | Regularly merge code changes into a shared repository |
+| Continuous Delivery (CD)    | Automatically build, test, and deploy code            |
+| Continuous Training (CT)    | Automatically update models as new data arrives       |
+| Continuous Monitoring (CM)  | Continuously track model performance                  |
 
 ## Continuous Integration and Delivery
 
@@ -59,10 +61,11 @@ Continuous Monitoring is the practice of continuously monitoring performance, id
 
 Here’s how automation works in a typical ML pipeline:
 
-1. **Code Commit**: Commit model code to **Git**.
-2. **CI/CD**: Automatically build and test with **Jenkins**.
-3. **Deploy**: If tests pass, deploy to a test environment.
-4. **Model Deployment**: Package model in **Docker**, deploy to cloud/local.
-5. **Monitoring**: Use **Prometheus** or **Grafana** for performance tracking.
-6. **Retraining**: Trigger retraining if performance dips.
-
+| No. | Step             | Description                                                |
+| ----| ---------------- | ---------------------------------------------------------- |
+| 1   | Code Commit      | Commit model code to **Git**                               |
+| 2   | CI/CD            | Automatically build and test with **Jenkins**              |
+| 3   | Deploy           | If tests pass, deploy to a test environment                |
+| 4   | Model Deployment | Package model in **Docker**, deploy to cloud/local         |
+| 5   | Monitoring       | Use **Prometheus** or **Grafana** for performance tracking |
+| 6   | Retraining       | Trigger retraining if performance dips                     |

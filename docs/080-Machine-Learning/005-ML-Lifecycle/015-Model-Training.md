@@ -23,16 +23,20 @@ Occam's Razor suggests starting with simple models and using complex ones only i
 
 After selecting important features, pick a suitable model for predictions.  
 
-- **Logistic Regression (LR)** – Finds a decision boundary to separate classes.  
-- **Support Vector Classifier (SVC)** – Similar to LR but more flexible.  
-- **Decision Tree** – Uses rules to classify data.  
-- **Random Forest** – Combines multiple decision trees for better predictions.  
+| Model                           | Description                                             |
+| ------------------------------- | ------------------------------------------------------- |
+| Logistic Regression (LR)        | Finds a decision boundary to separate classes           |
+| Support Vector Classifier (SVC) | Similar to LR but more flexible                         |
+| Decision Tree                   | Uses rules to classify data                             |
+| Random Forest                   | Combines multiple decision trees for better predictions |
 
 If simple models don’t work well, try more advanced ones.  
 
-- **Neural Networks** – Good for deep learning tasks.  
-- **K-Nearest Neighbors (KNN)** – Classifies based on closest data points.  
-- **XGBoost** – A powerful boosting algorithm for structured data.  
+| Model                     | Description                                       |
+| ------------------------- | ------------------------------------------------- |
+| Neural Networks           | Good for deep learning tasks                      |
+| K-Nearest Neighbors (KNN) | Classifies based on closest data points           |
+| XGBoost                   | A powerful boosting algorithm for structured data |
 
 ## Training Principles  
 

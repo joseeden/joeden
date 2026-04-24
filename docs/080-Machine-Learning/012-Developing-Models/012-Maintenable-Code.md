@@ -52,11 +52,11 @@ ml_project/
 
 Where: 
 
-- **data/** stores raw and processed datasets  
-- **models/** contains trained models  
-- **notebooks/** helps explore and visualize data  
-- **src/** includes core scripts for ML tasks  
-- **README.md** explains how to use the project  
+- `data/` stores raw and processed datasets  
+- `models/` contains trained models  
+- `notebooks/` helps explore and visualize data  
+- `src/` includes core scripts for ML tasks  
+- `README.md` explains how to use the project  
 
 ## Tracking Code Changes  
 

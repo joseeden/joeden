@@ -34,10 +34,13 @@ Versioning is categorized into two types:
 
 We can version data by labeling it with unique identifiers. For example:
 
-- **Version 1.0**: Initial dataset.
-- **Version 1.1**: Added data transformations (e.g., scaling).
-- **Version 1.2**: Added feature selection (e.g., Chi-squared).
-- **Version 2.0**: Major update with new data.
+| Version     | Description                                 |
+| ----------- | ------------------------------------------- |
+| Version 1.0 | Initial dataset                             |
+| Version 1.1 | Added data transformations (e.g., scaling)  |
+| Version 1.2 | Added feature selection (e.g., Chi-squared) |
+| Version 2.0 | Major update with new data                  |
+
 
 ## Feature Store
 
