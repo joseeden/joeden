@@ -46,3 +46,6 @@
 [submodule "submodules/test-rails-app"]
 	path = submodules/test-rails-app
 	url = git@github.com:joseeden/test-rails-app.git
+[submodule "submodules/labs-kodekloud-engineer-labs"]
+	path = submodules/labs-kodekloud-engineer-labs
+	url = git@github.com:joseeden/KodeKloud_Engineer_Labs.git
