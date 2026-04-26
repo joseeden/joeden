@@ -32,6 +32,14 @@ const projects: ProjectData[] = [
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },  
   {
+    title: "KodeKloud Engineer Labs",
+    description: "Collection of 130+ labs from KodeKloud Engineer interactive platform",
+    url: "https://github.com/joseeden/KodeKloud_Engineer_Labs", 
+    image: require(`/img/docs/all-things-devops-kodekloud-img.png`),
+    tags: ["DevOps"],
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
+  },    
+  {
     title: "CI/CD Pipeline for Flask Application",
     description: "Automated code testing, packaging, and deployment.",
     url: `${baseUrl}/docs/Version-Control-and-CICD/Jenkins-Labs/Single-Server-Deployment`, 
