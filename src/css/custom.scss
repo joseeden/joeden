@@ -295,23 +295,14 @@ h4 {
     }
 
     &.project {
-      background-color: #4899ce !important;
+      // background-color: #4899ce !important;
+      background-color: #4899ce;
       color: #dfecf6;
     }
 
     &.explore {
       background-color: #17a2b8;
     }
-  }
-
-  [data-theme="dark"] .badge.lab {
-    background-color: #29d4c1 !important;
-    color: #05192d;
-  }
-
-  [data-theme="dark"] .badge.project {
-    background-color: #4899ce !important;
-    color: #dfecf6;
   }
 
   /* Flex wrapper for sidebar links with badges */
@@ -321,6 +312,32 @@ h4 {
     align-items: center;
     width: 100%;
   }
+}
+
+/* ============================================
+   DOCS - BADGE DARK MODE OVERRIDES
+  ============================================ */
+// [data-theme="dark"] .theme-doc-sidebar-container{
+
+//   .badge.lab {
+//     background-color: #29d4c1 !important;
+//     color: #05192d;
+//   }
+
+//   .badge.project {
+//     background-color: #4899ce !important;
+//     color: #dfecf6;
+//   }
+// }
+
+html[data-theme="dark"] .theme-doc-sidebar-container .badge.lab {
+  background-color: #29d4c1;
+  color: #05192d;
+}
+
+html[data-theme="dark"] .theme-doc-sidebar-container .badge.project {
+  background-color: #4899ce;
+  color: #dfecf6;
 }
 
 /* ============================================
