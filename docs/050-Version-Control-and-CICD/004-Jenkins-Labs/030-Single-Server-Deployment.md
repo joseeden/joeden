@@ -9,20 +9,31 @@ tags:
 - Jenkins
 sidebar_position: 30
 last_update:
-  date: 5/15/2020
+  date: 9/22/2021
 ---
 
 
+## Overview 
+
+This lab demonstrates how to deploy a sample Flask application to a single server using Jenkins. The pipeline automates the process from code checkout to application deployment.
+
+1. Checkout code
+2. Install dependencies
+3. Test code
+4. Package code
+5. Copy code to server
+6. Install dependencies on the server
+7. Deploy the Flask application 
 
 
 ## Lab Environment
 
-In this lab, we have the following Linux machines, and we will use a local computer (laptop) to connect to each of them. The code is stored in a remote GitHub repository, which will be clone locally for development and testing.
+In this lab, we use two Linux machines and connect to them from a local computer such as a laptop. The application code is stored in a remote GitHub repository, which is cloned locally for development and testing.
 
-- jenkinsmaster
-- prodserver
+- `jenkinsmaster`
+- `prodserver`
 
-You can choose to set up a virtual machine on your computer or create instances in the cloud. In this case, EC2 instances are used.
+You can either run virtual machines on your local system or provision instances in the cloud. In this setup, EC2 instances are used.
 
 <div class='img-center'>
 

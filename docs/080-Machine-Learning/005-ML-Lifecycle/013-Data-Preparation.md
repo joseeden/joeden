@@ -9,7 +9,7 @@ last_update:
   date: 5/12/2023
 ---
 
-## Data Preparation  
+## Overview
 
 Data preparation involves applying EDA insights to identify and perform data-cleaning steps. This ensures that the data is well-structured and suitable for training an accurate model.
 
