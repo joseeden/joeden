@@ -151,7 +151,6 @@ nodes:
       - containerPort: 443
         hostPort: 443
         protocol: TCP
-
 ```
 
 Create the cluster:
