@@ -33,10 +33,10 @@ const projects: ProjectData[] = [
   },  
   {
     title: "KodeKloud Engineer Labs",
-    description: "Collection of 130+ labs from KodeKloud Engineer interactive platform",
+    description: "Collection of 130+ labs from KodeKloud Engineer platform",
     url: "https://github.com/joseeden/KodeKloud_Engineer_Labs", 
     image: require(`/img/docs/all-things-devops-kodekloud-img.png`),
-    tags: ["DevOps"],
+    tags: ["DevOps", "Docker", "Kubernetes"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },    
   {
@@ -44,7 +44,7 @@ const projects: ProjectData[] = [
     description: "Automated code testing, packaging, and deployment.",
     url: `${baseUrl}/docs/Version-Control-and-CICD/Jenkins-Labs/Single-Server-Deployment`, 
     image: require(`/img/docs/jenkins-flask.png`),
-    tags: ["DevOps", "Containers", "Python"],
+    tags: ["DevOps", "Docker", "Python"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },  
   {
@@ -60,7 +60,7 @@ const projects: ProjectData[] = [
     description: "Automated Jenkins installation and setup using Ansible.",
     url: `${baseUrl}/docs/Version-Control-and-CICD/Jenkins-Labs/Setup-Ansible-and-Jenkins/`, 
     image: require(`/img/docs/ansible-jenkins.png`),
-    tags: ["DevOps", "Ansible"],
+    tags: ["DevOps", "Ansible", "Jenkins"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },  
   {
