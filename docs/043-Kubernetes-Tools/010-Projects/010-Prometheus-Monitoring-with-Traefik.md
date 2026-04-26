@@ -20,7 +20,7 @@ last_update:
 
 ## Overview
 
-In this lab, We will create a monitoring stack for our services.
+In this lab, we will create a monitoring stack for our services.
 
 - Docker Swarm services send metrics to Prometheus
 - Grafana displays the data in dashboards

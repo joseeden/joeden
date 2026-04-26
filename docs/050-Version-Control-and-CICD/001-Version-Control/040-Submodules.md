@@ -489,13 +489,26 @@ There are three steps to delete a submodule inside a parent repo:
  
     ```bash 
     cd .git/modules/
-    rm -rf specific-submodule
+    rm -rf <your-submodule-name>
     ```   
 
     If there's **only one submodule**, you can simply delete the entire `modules` directory. 
 
     ```bash 
     rm -rf .git/modules/
+    ```
+
+    **UPDATE:** In my case, my directory structure is like this:
+
+    ```bash
+    parent-repo/.git/modules/submodules
+    ```
+
+    Thus, I need to navigat to the `submodules` and delte the specific submodule from there.
+
+    ```bash
+    cd .git/modules/submodules
+    rm -rf <submodule-name>
     ```
 
 5. If you have a `.gitmodules` file at the root of the parent directory, check first if you have other submodules inside it.
@@ -515,6 +528,9 @@ There are three steps to delete a submodule inside a parent repo:
             path = path/to/specific-submodule
             url = git@github.com:username/remote-repository-specific-submodule
     ```
+
+    Edit the file and delete the specific submodule/s: 
+    
     ```bash
     $ vi .gitmodules 
 
