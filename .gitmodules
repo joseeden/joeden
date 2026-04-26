@@ -46,3 +46,9 @@
 [submodule "submodules/labs-kodekloud-engineer-labs"]
 	path = submodules/labs-kodekloud-engineer-labs
 	url = git@github.com:joseeden/KodeKloud_Engineer_Labs.git
+[submodule "submodules/project-gcp-devops"]
+	path = submodules/project-gcp-devops
+	url = git@github.com:joseeden/gcp-devops-project.git
+[submodule "submodules/project-ml-model-training-with-gha"]
+	path = submodules/project-ml-model-training-with-gha
+	url = git@github.com:joseeden/ML-Model-Training-with-Github-Actions.git
