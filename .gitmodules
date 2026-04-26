@@ -1,6 +1,3 @@
-[submodule "submodules/gcp-devops-project"]
-	path = submodules/gcp-devops-project
-	url = git@github.com:joseeden/gcp-devops-project.git
 [submodule "submodules/test-fastapi-simple-app"]
 	path = submodules/test-fastapi-simple-app
 	url = git@github.com:joseeden/test-fastapi-simple-app.git
