@@ -96,6 +96,11 @@ NodeJS:
   label: 'NodeJS'
   permalink: '/nodejs'
 
+NextJS:
+  label: 'NextJS'
+  permalink: '/nextjs'
+  description: 'Docs related to the Next.js React framework'
+
 Ruby on Rails:
   label: 'Ruby on Rails'
   permalink: '/ruby-on-rails'
