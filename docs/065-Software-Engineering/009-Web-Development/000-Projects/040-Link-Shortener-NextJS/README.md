@@ -839,6 +839,15 @@ Click on the options (showing "Local" by default) and select **Cloud**.
 
 </div>
 
+**UPDATE:** Another way to trigger a cloud agent is to use the `@cloud` syntax in any prompt.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02030039.png)
+
+</div>
+
+
 A few notes:
 
 1. When you choose **Copilot CLI**, it will run in the background, create a new branch, make the necessary code changes to implement the landing page, and then create a pull request with the changes. 
@@ -986,7 +995,11 @@ As best practice, run the development server again to make sure everything is wo
 npm run dev 
 ```
 
+## Orchestrating Agents  
 
+To orchestrate multiple agents together, we can use a combination of custom agents and cloud agents. To start with, we can create go to our Github repository and create a new issue.
+
+For this one, we want to update the Clerk UI components to use the latest shadcn UI components. 
 
 ## Troubleshooting
 
@@ -1199,15 +1212,21 @@ className={`${roboto.variable} ${geistMono.variable} h-full antialiased`}
 
 Those `.variable` values are generated at build/runtime, and if anything causes them to differ between server and client, hydration breaks.
 
+The easiest fix is to revert the fix for [Hot Reload Not Working with WSL](#hot-reload-not-working-with-wsl) issue and use use `next dev`:
 
-
+```json
 {
   "name": "linkshortener",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "WATCHPACK_POLLING=true next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
   },
+  ...
+}
+```
+
+Since I've already have multiple Copilot sessions and moving the files to a new directory would mean deleting those sessions, I chose to simply kill the old terminal running the `npm run dev` and open a new terminal and re-run the same command (closing the old terminal effectively kill all the processes, which is better than stopping the processes individually).
