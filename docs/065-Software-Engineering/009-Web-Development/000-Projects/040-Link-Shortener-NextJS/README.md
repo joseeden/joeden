@@ -332,17 +332,7 @@ Open the URL in your browser to verify the app is running.
 
 </div>
 
-If you are using WSL with files stored under `/mnt/c/...`, hot reload may not work correctly. To fix this, you can edit the `package.json` file and update the `dev` script to use polling for file watching:
-
-```json
-{
-  "name": "linkshortener",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "WATCHPACK_POLLING=true next dev",
-```
-
+If you are using WSL with files stored under `/mnt/c/...`, hot reload may not work correctly. This means changes to the codebase may not automatically refresh the browser. See [Hot Reload Not Working with WSL.](#hot-reload-not-working-with-wsl)
 
 ## Custom Agents and Prompts
 
@@ -354,7 +344,7 @@ This setup includes:
 - A **custom prompt** that creates documentation based on the project structure and codebase.
 
 
-### 1. Create AGENTS.md
+#### 1. Create AGENTS.md
 
 In the root of the project, create a file called:
 
@@ -365,7 +355,7 @@ AGENTS.md
 > In some cases, this file may already be generated automatically when initializing a Next.js project with recommended defaults. If not, create it manually.
 
 
-### 2. Generate the Agent Definition
+#### 2. Generate the Agent Definition
 
 Open GitHub Copilot Chat in VS Code, start a new conversation, and attach `AGENTS.md`.
 
@@ -399,7 +389,7 @@ docs/
 At this stage, Copilot also updates `AGENTS.md` to reference these files.
 
 
-### 3. Reset Documentation Structure 
+#### 3. Reset Documentation Structure 
 
 To enforce a controlled structure, remove the generated files from the previous step:
 
@@ -422,7 +412,7 @@ ALWAYS refer to the relevant .md file BEFORE generating any code.
 </div>
 
 
-### 4. Create a Custom Agent in Copilot
+#### 4. Create a Custom Agent in Copilot
 
 In Copilot Chat:
 
@@ -475,7 +465,7 @@ In Copilot Chat:
 
     </div>
 
-### 5. Define Agent Behavior
+#### 5. Define Agent Behavior
 
 Provide a description for the agent and then uncomment the commented *tools*. A **Configure Tools** will appear in the context dropdown, click on it and then click on **Add new tool**.
 
@@ -515,7 +505,7 @@ This agent takes the provided information and generates a concise and clear .md 
 </div>
 
 
-### 6. Create a Custom Prompt
+#### 6. Create a Custom Prompt
 
 In Copilot Chat:
 
@@ -776,16 +766,231 @@ Copilot will include the source code, UI snapshot, and component context in the 
 
 </div>
 
-
 **Update:** I've updated my application to use Roboto as the default font for the application. If you want to do the same, you can simply add a prompt in a new Copilot Chat conversation in **Agent mode**:
 
 ```bash 
 Update the application's default font to Roboto. Make sure to include the necessary imports and configurations to apply the Roboto font across the entire application.
 ```
 
+## Commit and Push Changes 
+
+After making changes to the codebase, you can use the Git extension in VS Code to commit and push your changes to a remote repository.
+
+Provide a commit message, click **Commit** and then **Publish branch**.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02010015.png)
+
+</div>
+
+Note that at this point, we have not set up a remote repository yet. VS Code will prompt you to choose between publishing to a private repository or a public repository on GitHub. Provide a repo name and choose public repository.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02010056.png)
+
+</div>
+
+It will open a **Connect to Github** promtpt, click on **Sign in with browser** and authorized VS Code to access your GitHub account. After successful authentication, the branch will be published to the new GitHub repository.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02010125.png)
+
+</div>
+
+You should see a confirmation message at the bottom right in VS Code indicating that the branch has been published successfully. 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02010846.png)
+
+</div>
+
+
+## Adding a Landing Page with Copilot Cloud Agent 
+
+There are three ways to use Copilot agents: 
+
+- In-context
+- Custom agents
+- Copilot Cloud Agents
+
+The previous sections covered in-context agents and custom agents, but now we will see use a Copilot Cloud Agent to generate a landing page for our application.
+
+Open a new conversation in Copilot Chat, then click on the **Copilot Cloud Agent** tab. Add the following prompt:
+
+```bash
+Create a landing page for this application. The landing page should be visually appealing and provide a clear value proposition for the application. It should include the following:
+
+- A headline
+- A brief description of the application
+- A call-to-action button that directs users to sign up or log in
+
+Make sure the Roboto font is applied and the landing page is responsive, looking good on both desktop and mobile devices.
+```
+
+Click on the options (showing "Local" by default) and select **Cloud**. 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02012902.png)
+
+</div>
+
+A few notes:
+
+1. When you choose **Copilot CLI**, it will run in the background, create a new branch, make the necessary code changes to implement the landing page, and then create a pull request with the changes. 
+
+2. When you choose **Cloud**, the agent will also create a new branch, but it will work on the task in the cloud instead of your local environment. It will also launch a virtual browser via Playwright to test the landing page. Once its done, it will create a pull request with the changes just like the local agent.
+
+3. Using the Cloud agent takes more resources and time since it’s running in the cloud, but it is also useful because you can launch multiple agents at the same time without worrying about resource constraints on your local machine. 
+
+Once the agent is done, head over to your Github repository. You should see a new branch, as well as a new pull request with the changes for the landing page. Review the changes.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02020651.png)
+
+</div>
+
+Go to **Pull requests** and open the PR created by the agent. 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02020807.png)
+
+</div>
+
+Click on **View session** to see the detailed activity of the agent, including the code changes it made, the tests it ran, and the browser interactions it performed.
+
+**Note:** Make sure to review the code changes made by the agent. DO NOT blindly merge the PR without reviewing the changes, as the agent may make mistakes or introduce bugs.
+
+For our setup, we will not merge the changes yet because we want to test the landing page first. 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02021042.png)
+
+</div>
+
+To test the landing page, go back to VS Code and open Copilot Chat. You should see the cloud icon beside the prompt you used to generate the landing page, indicating that it was generated by a cloud agent.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02022327.png)
+
+</div>
+
+Open the session and click **Checkout** to switch to the new branch created by the agent.
+
+**Note:** Make sure you don't have any uncommitted changes in your current branch before checking out the new branch, as you may lose those changes.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02022453.png)
+
+</div>
+
+If you get this prompt below, you need to install the Github Pull Requests extension. Click on **Install and Checkout** and then **Install (Do not sync)**.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02022954.png)
+
+</div>
+
+In your terminal, confirm that you are now on the new branch created by the agent:
+
+```bash
+git branch
+```
+
+You should see the new branch listed and highlighted with an asterisk (`*`), indicating that it is the currently active branch.
+
+Example output: 
+
+```bash
+joseeden@TOWER-1:linkshortener$ git branch
+* copilot/create-landing-page
+  main 
+```
+
+Run the development server to test the landing page:
+
+```bash
+npm run dev
+```
+
+Open the URL in your browser and verify that the landing page is working correctly.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02023538.png)
+
+</div>
+
+After testing the landing page, go back to the PR created by the agent and click **Add your review**.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02023752.png)
+
+</div>
+
+You can review the changes made the agent and then click **Viewed.**, then click the down arrow on the **Submit review** button. Add any comments here (e.g. changes you want to add). If no changes are needed, you can simply approve the PR by selecting **Approve** and then click **Submit review**.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02024145.png)
+
+</div>
+
+**Note:** The PR may not automatically merge after approval if the agent created a draft PR. In that case, you can simply click on the **Ready for review** button to mark the PR as ready. The **Merge pull request** button should now be available, click on it to merge the PR.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02024550.png)
+
+</div>
+
+Provide a commit message and click **Confirm merge**.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02024636.png)
+
+</div>
+
+
+Back in VS Code, click the branch name at the bottom left and switch back to the main branch. 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02025120.png)
+
+</div>
+
+Click **Sync Changes** to pull down the latest changes from the main branch, which now includes the landing page code.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02025233.png)
+
+</div>
+
+As best practice, run the development server again to make sure everything is working correctly after merging the changes from the landing page branch.
+
+```bash
+npm run dev 
+```
+
+
+
 ## Troubleshooting
 
-### Node.js Version Error
+#### Node.js Version Error
 
 You may encounter this error during setup:
 
@@ -915,3 +1120,94 @@ So your app exists, but it won’t run properly until you upgrade Node.
     npm install
     npm run dev
     ```
+
+#### Hot Reload Not Working with WSL 
+
+If you’re using WSL and your project files are stored under `/mnt/c/...`, you may encounter issues with hot reload not working properly when running the development server. 
+
+**What this means:** When you make changes to your code, the browser does not automatically refresh to reflect those changes (even though you refresh the browser itself). 
+
+Possible solutions:
+
+1. Edit the `package.json` file and update the `dev` script to set the `WATCHPACK_POLLING` to `true` when running the development server. 
+
+    This forces Webpack to use polling to watch for file changes, which can be more reliable in certain environments like WSL.
+
+    ```json
+    {
+      "name": "linkshortener",
+      "version": "0.1.0",
+      "private": true,
+      "scripts": {
+        "dev": "WATCHPACK_POLLING=true next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "eslint"
+      },
+      .... 
+    ```
+
+    :::warning 
+
+    This fix did not work when running `npm run dev`. It actually caused the [hydration mismatch error](#react-hydration-mismatch) in the browser. 
+
+    :::
+
+2. Move the project files into the Linux filesystem (e.g., under `/home/username/...`) instead of the Windows filesystem (`/mnt/c/...`). 
+
+    This is the recommended solution for WSL users, as it provides better performance and compatibility with development tools.
+
+Simple rule of thumb: If you’re using WSL, always keep your project files in the Linux filesystem to avoid issues with file watching and hot reload.
+
+| Project location   | Hot reload | Stability   |
+| ------------------ | ---------- | ----------- |
+| `/home` (WSL)      | ✅ perfect  | ✅ best      |
+| `/mnt/c` (Windows) | ❌ flaky    | ⚠️ meh      |
+| `/mnt/c` + polling | ✅ works    | ⚠️ unstable |
+
+
+#### React Hydration Mismatch 
+
+You may see an issue in the web browser when you run the development server. 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02013834.png)
+
+</div>
+
+When you click the issue details, you may see a hydration mismatch error like this:
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02013902.png)
+
+</div>
+
+This is a classic React hydration mismatch in Next.js, and the diff already points to the real issue:sn
+
+```bash
++ Client className="roboto_... geist_mono_..."
+- Server className="roboto_... geist_mono_..." 
+```
+
+At first glance they look identical, but React is telling you they’re not exactly the same string at runtime. The problem is almost certainly coming from dynamic font class generation (e.g. `next/font`) in the `layout.tsx`.
+
+```tsx
+className={`${roboto.variable} ${geistMono.variable} h-full antialiased`} 
+```
+
+Those `.variable` values are generated at build/runtime, and if anything causes them to differ between server and client, hydration breaks.
+
+
+
+{
+  "name": "linkshortener",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "WATCHPACK_POLLING=true next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
