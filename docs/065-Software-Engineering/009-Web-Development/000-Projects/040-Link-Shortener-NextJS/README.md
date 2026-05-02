@@ -995,11 +995,176 @@ As best practice, run the development server again to make sure everything is wo
 npm run dev 
 ```
 
-## Orchestrating Agents  
+## Orchestrating Cloud and Background Agents  
 
-To orchestrate multiple agents together, we can use a combination of custom agents and cloud agents. To start with, we can create go to our Github repository and create a new issue.
+To orchestrate multiple agents together, we can use a combination of custom agents and cloud agents. To start with, we can create go to our Github repository, go to the **Issues** tab, and create a new issue.
 
-For this one, we want to update the Clerk UI components to use the latest shadcn UI components. 
+For this one, we want to update the Clerk UI components to use the latest shadcn UI components. Provide an issue title and add the description with the necessary details for the task.
+
+Reference: [Clerk Themes](https://clerk.com/docs/nextjs/guides/customizing-clerk/appearance-prop/themes)
+
+```plaintext
+Use the @clerk/themes package:
+`npm install @clerk/themes`
+
+Import:
+`import { shadcn } from '@clerk/ui/themes'
+
+<ClerkProvider
+  appearance={{
+    theme: shadcn,
+  }}
+/>``
+```
+
+Click the **Create** button to create the issue.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02032223.png)
+
+</div>
+
+Typically, the issues are created by the product manager or the project manager, and then the engineers will pick up the issue and work on it. In our case, we will have the agent pick up the issue and work on it automatically.
+
+To do this, click the **Assign to Agent** button 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02032636.png)
+
+</div>
+
+In the prompt window, you can provide additional instructions for the agent if needed. For example, you can specify that the agent should create a new branch for the issue, or that it should run tests after making the changes.
+
+If you click the Copilot icon at the bottom right, it will show the custom agent that was created in previous steps. This means that the Cloud agent can use the tools defined in the custom agent. We'll keep the agent as Copilot for now.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02033032.png)
+
+</div>
+
+Finally, set the model to a specific model  and then click **Assign**.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02033131.png)
+
+</div>
+
+In the issue details page, you should now see that the issue is assigned to a Copilot agent and it is working on the issue (indicated by the "eyes" reaction). The agent also created a pull request with the changes for the issue.
+
+Click the pull request to review the changes made by the agent.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02033744.png)
+
+</div>
+
+**Note:** Make sure to review the changes made by the agent before merging the PR, as the agent may make mistakes or introduce bugs. If there are any issues with the changes, you can request changes in the PR review and provide feedback for the agent to improve.
+
+Same as before, we will not merge the PR yet because we want to test the changes first. Go back to VS Code and switch to the branch created by the agent for the issue.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02035433.png)
+
+</div>
+
+Run the development server to test the changes.
+
+```bash
+npm run dev 
+```
+
+Notice that this will immediately return a `Module not found` error. This is expected because the agent has not installed the new dependency (`@clerk/themes`) in our local environment. The agent only made the necessary code changes and committed those changes to a new branch, but it did not run `npm install` to install the new dependency.
+
+To fix this, install the new dependency.
+
+```bash
+npm install
+```
+
+Additionally, it is recommended to import the `shadcn.css` file in the `global.css` file to apply the shadcn theme styles globally across the application. 
+
+:::info 
+
+For demo purposes, we will have the agent make the necessary code changes.
+
+It is important to note that the cloud agent may use premium requests to make code changes, which means this will count towards your monthly quota for the specific model used. 
+
+If you have a limited quota, and if the changes are small and straightforward, it may be more cost-effective to make the changes manually instead of using the cloud agent.
+
+::::
+
+Instead of manually adding it, we can simply ask the agent to do it for us. Go back to the PR created by the agent, and mention `@copilot` in a comments:
+
+```bash
+@copilot Import the shadcn.css file in the global.css file.
+
+@import 'tailwindcss';
+@import '@clerk/ui/themes/shadcn.css';
+```
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02040424.png)
+
+</div>
+
+The agent immediately picks up the comment and makes the necessary changes. It then commits the changes to the same branch.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02040509.png)
+
+</div>
+
+Back in VS Code, make sure you're on the correct branch, then pull the latest changes to get the new commit with the changes for importing the `shadcn.css` file. 
+
+```bash
+git branch  # Confirm you're on the correct branch
+git pull 
+```
+
+You might need to run `npm install` again if the agent added any new dependenciess
+
+```bash
+npm i 
+```
+
+Then run the development server again to test the changes.
+
+```bash
+npm run dev  
+```
+
+**UPDATE:** After reviewing the changes made by the agent, we noticed that the agent added the wrong `import` statement for the `shadcn.css` file. 
+
+```bash
+## ./app/globals.css 
+
+@import "@clerk/ui/themes/shadcn.css";
+```
+
+Fixed this and updated the import statement to the correct one:
+
+```bash
+## ./app/globals.css
+@import "@clerk/themes/shadcn.css";
+```
+
+Once you're done reviewing the changes and making sure everything is working as expected, go back to the PR and approve the changes. Then merge the PR to main.
+
+Back in VS Code, switch back to the main branch and pull the latest changes to get the merged code.
+
+```bash
+git checkout main
+git pull
+```
+
 
 ## Troubleshooting
 
@@ -1140,7 +1305,7 @@ If you’re using WSL and your project files are stored under `/mnt/c/...`, you 
 
 **What this means:** When you make changes to your code, the browser does not automatically refresh to reflect those changes (even though you refresh the browser itself). 
 
-Possible solutions:
+Possible solutions (No. 3 is what I ultimately use)
 
 1. Edit the `package.json` file and update the `dev` script to set the `WATCHPACK_POLLING` to `true` when running the development server. 
 
@@ -1170,14 +1335,21 @@ Possible solutions:
 
     This is the recommended solution for WSL users, as it provides better performance and compatibility with development tools.
 
-Simple rule of thumb: If you’re using WSL, always keep your project files in the Linux filesystem to avoid issues with file watching and hot reload.
+    Simple rule of thumb: If you’re using WSL, always keep your project files in the Linux filesystem to avoid issues with file watching and hot reload.
 
-| Project location   | Hot reload | Stability   |
-| ------------------ | ---------- | ----------- |
-| `/home` (WSL)      | ✅ perfect  | ✅ best      |
-| `/mnt/c` (Windows) | ❌ flaky    | ⚠️ meh      |
-| `/mnt/c` + polling | ✅ works    | ⚠️ unstable |
+    | Project location   | Hot reload | Stability   |
+    | ------------------ | ---------- | ----------- |
+    | `/home` (WSL)      | ✅ perfect  | ✅ best      |
+    | `/mnt/c` (Windows) | ❌ flaky    | ⚠️ meh      |
+    | `/mnt/c` + polling | ✅ works    | ⚠️ unstable |
 
+3. Closing the old terminal running the dev server and opening a new one. 
+
+    When `npm run dev` is ran, it spawns multiple processes in the terminal. If I need to re-run the command, I would have to get the PID of each of those processes and run `sudo kill -9 <PID>`. 
+    
+    Instead of manually killing each one, I can simply close the terminal and open a new one, which effectively kills all the processes related to the old dev server and allows me to start fresh and run `npm run dev` again without any issues. 
+
+    This is what I ended up doing since I already have multiple Copilot sessions running and moving the files to a new directory would mean deleting those sessions.
 
 #### React Hydration Mismatch 
 
@@ -1230,3 +1402,83 @@ The easiest fix is to revert the fix for [Hot Reload Not Working with WSL](#hot-
 ```
 
 Since I've already have multiple Copilot sessions and moving the files to a new directory would mean deleting those sessions, I chose to simply kill the old terminal running the `npm run dev` and open a new terminal and re-run the same command (closing the old terminal effectively kill all the processes, which is better than stopping the processes individually).
+
+**UPDATE:** This did not fully solved the issue as I still see the hydration error in the browser when I run `npm run dev`. The fix I did was to update the `./app/layout.tsx` file and move the font variable classes from `<html>` to `<body>`.
+
+Before: 
+
+```tsx
+return (
+  <html
+    lang="en"
+    className={`${roboto.variable} ${geistMono.variable} h-full antialiased`}
+  >
+    <head>
+      <script
+        ....
+      />
+    </head>
+    <body className={"min-h-full flex flex-col"}>
+```
+
+After the fix:
+
+```tsx
+return (
+  <html
+    lang="en"
+    className="h-full antialiased"
+  >
+    <head>
+      <script
+        ....
+      />
+    </head>
+    <body className={`min-h-full flex flex-col ${roboto.variable} ${geistMono.variable}`}>
+```
+
+This solved the initial hydration mismatch error in the browser BUT now it's complaining about the `dark` class on the `<html>` element. The script in `<head>` adds the `dark` class to `<html>` on the client, but on the initial server render, it is not present. This causes a mismatch.
+
+**Best practice:**
+
+- Avoid adding classes to `<html>` with client-only scripts to prevent hydration mismatches.
+- Instead, use a React effect to set the theme class after hydration.
+- Additionally, use a theme provider that handles SSR/CSR consistency.
+
+**Fix:**
+
+Let the `ThemeProvider` component handle the dark mode logic and class management. Then remove the `<script>` in `<head>` that adds the `dark` class to `<html>`. This way, the theme class will be applied consistently on both server and client without causing hydration issues.
+
+Before: 
+
+```tsx
+return (
+  <html
+    lang="en"
+    className="h-full antialiased"
+  >
+    <head>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function() {
+              var t=localStorage.getItem('theme');
+              if (t === 'dark'||(t===null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {document.documentElement.classList.add('dark')}
+            })()`,
+        }}
+      />
+    </head>
+```
+
+After the fix: 
+
+```tsx
+return (
+  <html
+    lang="en"
+    className="h-full antialiased"
+  >
+    <head />
+```
+
+Closed the terminal to kill all the processes related to the old dev server, then opened a new terminal and ran `npm run dev` again.
