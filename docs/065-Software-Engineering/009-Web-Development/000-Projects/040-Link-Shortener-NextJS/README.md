@@ -17,14 +17,7 @@ sidebar_position: 5
 
 import React from "react";
 
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000)](#)
-[![NextJS](https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=white)](#)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwind-css&logoColor=white)](#)
-[![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-000?logo=shadcnui&logoColor=fff)](#)
-[![Clerk](https://img.shields.io/badge/Clerk-825dff?logo=clerk&logoColor=white)](#)
-[![Neon DB](https://img.shields.io/badge/Neon_DB-327d53?style=flat-square&logo=postgresql&logoColor=white)](https://neon.tech/)
-![Drizzle](https://img.shields.io/badge/Drizzle_ORM-%23000000?style=flat&logo=drizzle&logoColor=C5F74F)
-[![GitHub Copilot](https://img.shields.io/badge/GitHub%20Copilot-FA520F?logo=githubcopilot&logoColor=fff)](#)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000)](#) [![NextJS](https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=white)](#) [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwind-css&logoColor=white)](#) [![Typescript](https://img.shields.io/badge/Typescript-3178C6?logo=typescript&logoColor=white)](#) [![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-000?logo=shadcnui&logoColor=fff)](#) [![Clerk](https://img.shields.io/badge/Clerk-825dff?logo=clerk&logoColor=white)](#) [![Neon DB](https://img.shields.io/badge/Neon_DB-327d53?style=flat-square&logo=postgresql&logoColor=white)](https://neon.tech/) ![Drizzle](https://img.shields.io/badge/Drizzle_ORM-%23000000?style=flat&logo=drizzle&logoColor=C5F74F) [![GitHub Copilot](https://img.shields.io/badge/GitHub%20Copilot-FA520F?logo=githubcopilot&logoColor=fff)](#)
 
 
 ## Overview 
