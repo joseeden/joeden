@@ -638,6 +638,8 @@ For the UI and frontend-related instructions, use the following information:
 
 </div>
 
+The agent may require installing some tools 
+
 
 ## Test Account and Dashboard Page
 
@@ -1634,7 +1636,6 @@ Next, we will create the data mutation component. Open a new conversation in Cop
 > - Server actions must only be called from **client components**. Client components that call server actions must include `'use client'` as the first line of the file.
 > 
 > - All data passed into a server action must have explicit TypeScript types. NEVER use the `FormData` TypeScript type. NEVER use `any`.
-
 > - All incoming data must be validated inside the server action using **Zod** before any database operations are performed. If validation fails, return `{ error: string }` immediately with a descriptive message.
 > 
 > - Every server action must check for an authenticated user as its first step, before validation and before any database operations. Use `const { userId } = await auth()` imported from `@clerk/nextjs/server`. This is the current and recommended import for Clerk v4+ and Next.js 13/14/16, and should be correct for all current and foreseeable versions.
@@ -1721,6 +1722,20 @@ Open a web browser and confirm that the dashboard page is rendering correctly an
 </div>
 
 ## CRUD and Redirect Links 
+
+This step involves implementing the create, update, and delete operations for the links directly from the dashboard page, as well as implementing the redirect functionality when accessing a shortened URL.
+
+#### Create Shortened Links 
+
+Open a new conversation in Copilo chat, set mode to **Agent**, and provide the prompt below:
+
+> Implement a "Create Link" feature accessible from the dashboard page. Add a button that opens a modal dialog containing a form to input the destination URL (and optional custom slug). On successful submission, the modal should close, and the new link should appear at the top of the dashboard list with a success notification. The list of links ("rds") should always be sorted from newest to oldest.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-03061745.png)
+
+</div>
 
 
 ## Troubleshooting
