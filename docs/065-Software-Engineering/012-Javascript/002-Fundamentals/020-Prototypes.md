@@ -2,10 +2,7 @@
 title: "Prototypes"
 description: "Prototypes in Javascript"
 tags: 
-- Computer Science
-- Application Development
-- Software Development
-- Frontend Development
+- Web Development
 - Javascript
 sidebar_position: 20
 last_update:

@@ -1,15 +1,11 @@
 ---
 title: "Bootstrap Grid"
 description: "Bootstrap Grid"
-tags: 
-- Computer Science
-- Application Development
-- Software Development
+tags:
 - Web Development
 - Frontend Development
-- HTML
-- CSS
 - Bootstrap
+- CSS
 sidebar_position: 41
 last_update:
   date: 03/20/2019

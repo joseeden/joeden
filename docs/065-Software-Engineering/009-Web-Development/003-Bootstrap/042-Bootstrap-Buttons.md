@@ -1,15 +1,11 @@
 ---
 title: "Bootstrap Buttons"
 description: "Bootstrap Buttons"
-tags: 
-- Computer Science
-- Application Development
-- Software Development
+tags:
 - Web Development
 - Frontend Development
-- HTML
-- CSS
 - Bootstrap
+- CSS
 sidebar_position: 42
 last_update:
   date: 03/29/2019

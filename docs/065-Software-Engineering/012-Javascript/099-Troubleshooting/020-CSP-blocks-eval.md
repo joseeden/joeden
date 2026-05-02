@@ -3,10 +3,7 @@ title: Content Security Policy blocks 'eval' in JavaScript
 description: "Content Security Policy (CSP) blocking the use of 'eval' in JavaScript"
 slug: csp-blocks-eval
 tags: 
-- Computer Science
-- Application Development
-- Software Development
-- Frontend Development
+- Web Development
 - Javascript
 sidebar_position: 20
 # last_update:

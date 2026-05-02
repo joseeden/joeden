@@ -2,10 +2,7 @@
 title: "Conditionals"
 description: "Conditionals"
 tags: 
-- Computer Science
-- Application Development
-- Software Development
-- Frontend Development
+- Web Development
 - Javascript
 sidebar_position: 14
 last_update:

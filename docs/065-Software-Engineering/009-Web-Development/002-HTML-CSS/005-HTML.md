@@ -2,9 +2,6 @@
 title: "HTML"
 description: "Notes on HTML"
 tags:
-- Computer Science
-- Application Development
-- Software Development
 - Web Development
 - Frontend Development
 - HTML

@@ -2,9 +2,6 @@
 title: "Combining Selectors"
 description: "Combining Selectors"
 tags:
-- Computer Science
-- Application Development
-- Software Development
 - Web Development
 - Frontend Development
 - HTML

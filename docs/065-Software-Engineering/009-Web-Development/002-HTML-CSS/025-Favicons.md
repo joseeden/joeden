@@ -2,9 +2,6 @@
 title: "Favicons"
 description: "Favicons"
 tags:
-- Computer Science
-- Application Development
-- Software Development
 - Web Development
 - Frontend Development
 - HTML

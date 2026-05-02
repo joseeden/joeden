@@ -2,9 +2,6 @@
 title: "CSS Positioning"
 description: "CSS Positioning"
 tags:
-- Computer Science
-- Application Development
-- Software Development
 - Web Development
 - Frontend Development
 - HTML

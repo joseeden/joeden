@@ -2,10 +2,7 @@
 title: "DOM Manipulation"
 description: "Manipulating the Document Object model (DOM)"
 tags: 
-- Computer Science
-- Application Development
-- Software Development
-- Frontend Development
+- Web Development
 - Javascript
 sidebar_position: 32
 last_update:

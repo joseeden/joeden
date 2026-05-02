@@ -2,10 +2,7 @@
 title: "Operators"
 description: "Operators in Javascript"
 tags: 
-- Computer Science
-- Application Development
-- Software Development
-- Frontend Development
+- Web Development
 - Javascript
 sidebar_position: 11
 last_update:

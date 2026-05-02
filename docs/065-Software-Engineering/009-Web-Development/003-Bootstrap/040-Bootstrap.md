@@ -1,15 +1,11 @@
 ---
 title: "Bootstrap"
 description: "Bootstrap"
-tags: 
-- Computer Science
-- Application Development
-- Software Development
+tags:
 - Web Development
 - Frontend Development
-- HTML
-- CSS
 - Bootstrap
+- CSS
 sidebar_position: 40
 last_update:
   date: 4/11/2023

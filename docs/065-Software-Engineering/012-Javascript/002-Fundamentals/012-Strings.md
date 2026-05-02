@@ -2,10 +2,7 @@
 title: "Strings"
 description: "Strings"
 tags: 
-- Computer Science
-- Application Development
-- Software Development
-- Frontend Development
+- Web Development
 - Javascript
 sidebar_position: 12
 last_update:

@@ -2,10 +2,7 @@
 title: "Javascript Engine"
 description: "Javascript Engine and Runtime"
 tags: 
-- Computer Science
-- Application Development
-- Software Development
-- Frontend Development
+- Web Development
 - Javascript
 sidebar_position: 7
 last_update:

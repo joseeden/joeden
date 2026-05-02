@@ -2,9 +2,6 @@
 title: "CSS Flex Sizing"
 description: "CSS Flex Sizing"
 tags:
-- Computer Science
-- Application Development
-- Software Development
 - Web Development
 - Frontend Development
 - HTML

@@ -2,9 +2,6 @@
 title: "HTML Tables"
 description: "HTML Tables"
 tags:
-- Computer Science
-- Application Development
-- Software Development
 - Web Development
 - Frontend Development
 - HTML

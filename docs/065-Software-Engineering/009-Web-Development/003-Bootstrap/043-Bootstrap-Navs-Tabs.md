@@ -1,15 +1,11 @@
 ---
 title: "Bootstrap Navs-tabs"
 description: "Bootstrap Navs and tabs"
-tags: 
-- Computer Science
-- Application Development
-- Software Development
+tags:
 - Web Development
 - Frontend Development
-- HTML
-- CSS
 - Bootstrap
+- CSS
 sidebar_position: 43
 last_update:
   date: 04/21/2019

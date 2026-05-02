@@ -2,9 +2,6 @@
 title: "Change Icon Color"
 description: "Change Icon Color"
 tags:
-- Computer Science
-- Application Development
-- Software Development
 - Web Development
 - Frontend Development
 - HTML

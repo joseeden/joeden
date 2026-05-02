@@ -2,9 +2,6 @@
 title: "CSS Flexbox"
 description: "CSS Flexbox"
 tags:
-- Computer Science
-- Application Development
-- Software Development
 - Web Development
 - Frontend Development
 - HTML

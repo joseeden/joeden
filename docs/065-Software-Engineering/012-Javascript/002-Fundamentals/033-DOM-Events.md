@@ -2,10 +2,7 @@
 title: "DOM Events"
 description: "DOM Events"
 tags: 
-- Computer Science
-- Application Development
-- Software Development
-- Frontend Development
+- Web Development
 - Javascript
 sidebar_position: 33
 last_update:

@@ -2,9 +2,6 @@
 title: "iOS and Android"
 description: "iOS and Android"
 tags:
-- Computer Science
-- Application Development
-- Software Development
 - Web Development
 - Frontend Development
 - HTML

@@ -1,15 +1,11 @@
 ---
 title: "Swapping Modals"
 description: "Swapping Modals"
-tags: 
-- Computer Science
-- Application Development
-- Software Development
+tags:
 - Web Development
 - Frontend Development
-- HTML
-- CSS
 - Bootstrap
+- CSS
 sidebar_position: 44
 # last_update:
 #   date: 04/21/2019

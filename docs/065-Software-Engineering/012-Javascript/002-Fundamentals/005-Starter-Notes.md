@@ -3,10 +3,7 @@ title: "Starter Notes"
 id: javascript-starter-notes
 description: "Notes on Javascript"
 tags: 
-- Computer Science
-- Application Development
-- Software Development
-- Frontend Development
+- Web Development
 - Javascript
 sidebar_position: 5
 last_update:

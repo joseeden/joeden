@@ -2,10 +2,7 @@
 title: "While Loop"
 description: "While Loop in Javascript"
 tags: 
-- Computer Science
-- Application Development
-- Software Development
-- Frontend Development
+- Web Development
 - Javascript
 sidebar_position: 16
 last_update:

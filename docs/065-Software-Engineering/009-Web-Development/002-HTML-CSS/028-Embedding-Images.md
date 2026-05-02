@@ -2,9 +2,6 @@
 title: "Embedding Images"
 description: "Embedding Images"
 tags:
-- Computer Science
-- Application Development
-- Software Development
 - Web Development
 - Frontend Development
 - HTML

@@ -2,9 +2,6 @@
 title: "CSS Grid"
 description: "CSS Grid"
 tags:
-- Computer Science
-- Application Development
-- Software Development
 - Web Development
 - Frontend Development
 - HTML

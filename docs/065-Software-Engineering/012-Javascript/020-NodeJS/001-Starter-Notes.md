@@ -2,9 +2,7 @@
 title: "Starter Notes"
 description: "Starter Notes on NodeJS"
 tags: 
-- Computer Science
-- Application Development
-- Software Development
+- Web Development
 - Backend Development
 - Javascript
 - NodeJS

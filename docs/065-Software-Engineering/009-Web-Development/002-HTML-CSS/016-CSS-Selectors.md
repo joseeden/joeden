@@ -2,9 +2,6 @@
 title: "CSS Selectors"
 description: "Notes on CSS Selectors"
 tags:
-- Computer Science
-- Application Development
-- Software Development
 - Web Development
 - Frontend Development
 - HTML
