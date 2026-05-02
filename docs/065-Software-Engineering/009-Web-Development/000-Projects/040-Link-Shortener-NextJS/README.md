@@ -237,9 +237,7 @@ Since this project uses test accounts during development, email verification can
 
 **Note:** To ensure compatibility with the latest versions of Next.js and Clerk, I added a prompt instructing the agent to use `proxy.ts` instead of `middleware.tsx`, since `middleware.tsx` is deprecated in newer versions of Next.js.
 
-```bash
-Update this file to clearly state that the agent must NEVER use middleware.tsx, as it is deprecated in newer versions of Next.js, and should use proxy.ts instead.
-```
+> Update this file to clearly state that the agent must NEVER use middleware.tsx, as it is deprecated in newer versions of Next.js, and should use proxy.ts instead.
 
 
 ## Database Setup (Neon + Drizzle)
@@ -361,7 +359,7 @@ In the root of the project, create a file called:
 AGENTS.md
 ```
 
-> In some cases, this file may already be generated automatically when initializing a Next.js project with recommended defaults. If not, create it manually.
+In some cases, this file may already be generated automatically when initializing a Next.js project with recommended defaults. If not, create it manually.
 
 
 #### 2. Generate the Agent Definition
@@ -370,13 +368,11 @@ Open GitHub Copilot Chat in VS Code, start a new conversation, and attach `AGENT
 
 Then enter the following prompt:
 
-```bash
-Build out the content for this agent instructions file for this project. This is an instructions file specifically for LLMs to adhere to the coding standards for this project. 
-
-Agent instructions will be separated into separate .md markdown files located in the /docs directory. Each file will have a specific focus, for example one file may be focused on database instructions, another file may be focused on backend instructions, another file may be focused on frontend instructions and so on. 
-
-Finally, make sure that in the AGENTS.md file, the relevant instructions files in the /docs directory are ALWAYS read and referenced before generating any code.
-```
+> Build out the content for this agent instructions file for this project. This is an instructions file specifically for LLMs to adhere to the coding standards for this project. 
+>
+> Agent instructions will be separated into separate .md markdown files located in the /docs directory. Each file will have a specific focus, for example one file may be focused on database instructions, another file may be focused on backend instructions, another file may be focused on frontend instructions and so on. 
+> 
+> Finally, make sure that in the AGENTS.md file, the relevant instructions files in the /docs directory are ALWAYS read and referenced before generating any code.
 
 <div class='img-center'>
 
@@ -406,13 +402,11 @@ To enforce a controlled structure, remove the generated files from the previous 
 rm -rf docs/*
 ```
 
-Then simplify `AGENTS.md`:
+Then update the `AGENTS.md` file to set the expectation that all agent instructions must be created as separate markdown files in the `/docs` directory:
 
-```bash
-For detailed guidelines on specific topics, refer to the modular documentation in the `/docs` directory. 
-
-ALWAYS refer to the relevant .md file BEFORE generating any code.
-```
+> For detailed guidelines on specific topics, refer to the modular documentation in the `/docs` directory. 
+>
+> **ALWAYS** refer to the relevant .md file **BEFORE** generating any code.
 
 <div class='img-center'>
 
@@ -495,9 +489,7 @@ Select the following tools:
 
 Finally, add the following core instruction:
 
-```bash
-This agent takes the provided information and generates a concise and clear .md (markdown) instructions file in the /docs directory. It can read existing documentation, search for relevant information, and edit or create new documentation as needed. The agent will also create a todo list of tasks to complete the documentation updates.
-```
+> This agent takes the provided information and generates a concise and clear .md (markdown) instructions file in the /docs directory. It can read existing documentation, search for relevant information, and edit or create new documentation as needed. The agent will also create a todo list of tasks to complete the documentation updates.
 
 <div class='img-center'>
 
@@ -538,10 +530,9 @@ In Copilot Chat:
 
     This will create the new prompt file in the `.github/prompts` directory. Provide the following content to the prompt file:
 
-    ```bash
-    Take the information below and create a an agent instructions file in markdown format in the /docs directory of this repository. If a .md filename is provided, use that as the name of the file. If not, use the filename based on the name of the prompt. The instructions should include when to use this prompt, how to use it, and any other relevant information that would help someone understand how to use this prompt effectively. Make sure the instructions are clear, concise, and easy to follow. Use examples if necessary to illustrate your points. Lastly, update the AGENTS.md file to include a link to the new instructions file you created. 
-
-    If no information is provided, prompt the user to provide the necessary details about the layer of the architecture this prompt is designed for, the intended use cases, and any specific guidelines for using this prompt effectively.
+    > Take the information below and create a an agent instructions file in markdown format in the /docs directory of this repository. If a .md filename is provided, use that as the name of the file. If not, use the filename based on the name of the prompt. The instructions should include when to use this prompt, how to use it, and any other relevant information that would help someone understand how to use this prompt effectively. Make sure the instructions are clear, concise, and easy to follow. Use examples if necessary to illustrate your points. Lastly, update the AGENTS.md file to include a link to the new instructions file you created. 
+    >
+    > If no information is provided, prompt the user to provide the necessary details about the layer of the architecture this prompt is designed for, the intended use cases, and any specific guidelines for using this prompt effectively.
     ```
 
     <div class='img-center'>
@@ -580,14 +571,12 @@ Once we provide that information, it will use the `instructions-generator` agent
 
 In Copilot chat, open a new conversation, then type "/" to open the prompt list and select the prompt created in the previous steps. Provide the necessary information about the architectural layer, starting with the authtentication layer.
 
-```bash
-/create-instructions Everything related to authentication will be managed by Clerk.
-NO OTHER AUTHENTICATION METHODS SHOULD BE USED.
-
-Make sure the /dashboard page is a protected route and must require the user to be logged in first. If the user is logged in and is trying to access the homepage, they should be redirected to the /dashboard page. 
-
-Finally, the sign-in and sign-up button should always launched as modal buttons when clicked, instead of redirecting to a separate page.
-```
+> /create-instructions Everything related to authentication will be managed by Clerk.
+> NO OTHER AUTHENTICATION METHODS SHOULD BE USED.
+> 
+> Make sure the /dashboard page is a protected route and must require the user to be logged in first. If the user is logged in and is trying to access the homepage, they should be redirected to the /dashboard page. 
+>
+> Finally, the sign-in and sign-up button should always launched as modal buttons when clicked, instead of redirecting to a separate page.
 
 <div class='img-center'>
 
@@ -643,10 +632,7 @@ Now that the authentication instructions file has been generated, repeat the sam
 
 For the UI and frontend-related instructions, use the following information:
 
-
-```bash
-/create-instructions All UI components should be built using shadcn UI and Tailwind CSS. No other component libraries or custom built components should be used.
-```
+> /create-instructions All UI components should be built using shadcn UI and Tailwind CSS. No other component libraries or custom built components should be used.
 
 <div class='img-center'>
 
@@ -661,18 +647,15 @@ This section implements a protected dashboard route using Clerk authentication a
 
 Open a new conversation in Copilot Chat, switch to **Agent mode**, then provide the following instructions:
 
-```bash
-Create a /dashboard page that is only accessible to authenticated users. The page should contain only a single h1 tag "Dashboard".
-
-No other content, no data fetching.
-
-Route protection must be handled exclusively in the Clerk middleware, do not add any auth checks inside the page component itself.
-
-In the Clerk middleware, enforce the following rules:
-
-1. If an unauthenticated user navigates to /dashboard (or any sub-route), redirect them to "/" (the homepage). 
-2. If an authenticated user navigates to /, redirect them to /dashboard.
-```
+> Create a /dashboard page that is only accessible to authenticated users. The page should contain only a single h1 tag "Dashboard".
+> 
+> No other content, no data fetching.
+> 
+> Route protection must be handled exclusively in the Clerk middleware, do not add any auth checks inside the page component itself.
+> 
+> In the Clerk middleware, enforce the following rules:
+> 1. If an unauthenticated user navigates to /dashboard (or any sub-route), redirect them to "/" (the homepage). 
+> 2. If an authenticated user navigates to /, redirect them to /dashboard.
 
 <div class='img-center'>
 
@@ -722,9 +705,7 @@ This section adds theme switching using Tailwind CSS with persistent user prefer
 
 Open a new Copilot Chat session in **Agent mode**, then provide:
 
-```bash 
-Implement dark mode support for the application using Tailwind CSS. The user should be able to toggle between light and dark mode using a button in the UI. The selected theme should be persisted across sessions so that when the user returns to the application, their preferred theme is automatically applied. Use local storage to persist the user's theme preference. 
-```
+> Implement dark mode support for the application using Tailwind CSS. The user should be able to toggle between light and dark mode using a button in the UI. The selected theme should be persisted across sessions so that when the user returns to the application, their preferred theme is automatically applied. Use local storage to persist the user's theme preference. 
 
 <div class='img-center'>
 
@@ -781,9 +762,7 @@ Copilot will include the source code, UI snapshot, and component context in the 
 
 **Update:** I've updated my application to use Roboto as the default font for the application. If you want to do the same, you can simply add a prompt in a new Copilot Chat conversation in **Agent mode**:
 
-```bash 
-Update the application's default font to Roboto. Make sure to include the necessary imports and configurations to apply the Roboto font across the entire application.
-```
+> Update the application's default font to Roboto. Make sure to include the necessary imports and configurations to apply the Roboto font across the entire application.
 
 ## Commit and Push Changes 
 
@@ -834,15 +813,13 @@ The previous sections covered in-context agents and custom agents, but now we wi
 
 Open a new conversation in Copilot Chat, then click on the **Copilot Cloud Agent** tab. Add the following prompt:
 
-```bash
-Create a landing page for this application. The landing page should be visually appealing and provide a clear value proposition for the application. It should include the following:
-
-- A headline
-- A brief description of the application
-- A call-to-action button that directs users to sign up or log in
-
-Make sure the Roboto font is applied and the landing page is responsive, looking good on both desktop and mobile devices.
-```
+> Create a landing page for this application. The landing page should be visually appealing and provide a clear value proposition for the application. It should include the following:
+>
+> - A headline
+> - A brief description of the application
+> - A call-to-action button that directs users to sign up or log in
+>
+> Make sure the Roboto font is applied and the landing page is responsive, looking good on both desktop and mobile devices.
 
 Click on the options (showing "Local" by default) and select **Cloud**. 
 
@@ -1204,25 +1181,23 @@ For most link shortener use cases, text is preferred unless you have a business 
 
 1. **Plan mode:** Open a new conversation in Copilot Chat, set the mode to **Plan**, and provide the prompt:
 
-    ```bash
-    Plan a simple database schema for a URL shortening service. The schema should include a table for storing shortened links, with columns for the following:
-
-    - Clerk User ID 
-    - The original URL
-    - The shortened slug
-    - Timestamps for when the link was created
-    - Timestamps for when the link was last updated
-
-    The slug should be unique to ensure that each shortened link can be correctly resolved to its original URL.
-
-    Additionally:
-
-    - We don't need any optional fields
-    - All dates must store the timezone data 
-    - All deletes must be permanent deletes, no soft deletes needed
-
-    Lastly, in modern PostgreSQL, check if "GENERATED ALWAYS AS IDENTITY" is the recommended way to create auto-incrementing primary keys, or if using a UUID as a primary key is more common/better practice for this use case.
-    ```
+    > Plan a simple database schema for a URL shortening service. The schema should include a table for storing shortened links, with columns for the following:
+    >
+    > - Clerk User ID 
+    > - The original URL
+    > - The shortened slug
+    > - Timestamps for when the link was created
+    > - Timestamps for when the link was last updated
+    >
+    > The slug should be unique to ensure that each shortened link can be correctly resolved to its original URL.
+    >
+    > Additionally:
+    >
+    > - We don't need any optional fields
+    > - All dates must store the timezone data 
+    > - All deletes must be permanent deletes, no soft deletes needed
+    >
+    > Lastly, in modern PostgreSQL, check if "GENERATED ALWAYS AS IDENTITY" is the recommended way to create auto-incrementing primary keys, or if using a UUID as a primary key is more common/better practice for this use case.
 
     <div class='img-center'>
 
@@ -1234,29 +1209,25 @@ For most link shortener use cases, text is preferred unless you have a business 
 
     Provide the finalized requirements for the database layer:
 
-    ```bash
-    /create-instructions The database layer will use Drizzle ORM with the Neon PostgreSQL. The database schema will be defined in the `./db/schema.ts` file using Drizzle's schema definition syntax.
-
-    The schema must define a single links table representing a shortened link. Each column must be **not null**, meaning there are no optional fields.
-
-    The links table must have the following columns:
-
-    - id - integer, primary key, generated always as identity
-    - userId - the Clerk user ID of the owner
-    - url - the original destination URL
-    - slug - the unique short code used to resolve the link; must have a unique constraint
-    - createdAt - timestamp with timezone, defaults to now
-    - updatedAt - timestamp with timezone, defaults to now, should automatically update to the current time on every update
-
-    Additional requirements:
-
-    - All timestamps must store timezone data
-    - The slug column must have a unique constraint so no two links share the same short code
-    - There are no soft deletes, do not add a deletedAt column or any deletion flag
-    
-    
-    Make sure to create a new branch for this task, and perform the necessary tests to ensure the schema is working correctly. After the implementation is complete, update the `AGENTS.md` file to reference the new instructions file for the database layer.
-    ```
+    > /create-instructions The database layer will use Drizzle ORM with the Neon PostgreSQL. The database schema will be defined in the `./db/schema.ts` file using Drizzle's schema definition syntax.
+    >
+    > The schema must define a single links table representing a shortened link. Each column must be **not null**, meaning there are no optional fields.
+    >
+    > The links table must have the following columns:
+    > - id - integer, primary key, generated always as identity
+    > - userId - the Clerk user ID of the owner
+    > - url - the original destination URL
+    > - slug - the unique short code used to resolve the link; must have a unique constraint
+    > - createdAt - timestamp with timezone, defaults to now
+    > - updatedAt - timestamp with timezone, defaults to now, should automatically update to the current time on every update
+    >
+    > Additional requirements:
+    >
+    > - All timestamps must store timezone data
+    > - The slug column must have a unique constraint so no two links share the same short code
+    > - There are no soft deletes, do not add a deletedAt column or any deletion flag
+    >    
+    > Make sure to create a new branch for this task, and perform the necessary tests to ensure the schema is working correctly. After the implementation is complete, update the `AGENTS.md` file to reference the new instructions file for the database layer.
 
     <div class='img-center'>
     
@@ -1453,9 +1424,7 @@ Click **Authorize** to complete the authentication process.
 
 Back in VS Code, open a new conversation in Copilot Chat, set the mode to **Agent**, and add the prompt:
 
-```bash
-List all all the projects in my Neon account.
-```
+> List all all the projects in my Neon account.
 
 The agent should be able to find the Neon project associated with the database URL in our `.env` file.
 
@@ -1481,13 +1450,9 @@ Go to **Users** tab and click on the test user. Copy the user ID for that test u
 
 Back in VS Code, open a new conversation in Copilot Chat, set the mode to **Ask**, and provide the following prompt:
 
-```bash
-Generate seed data for the database. 
-
-The user ID is: user_3D7sdsdsdsdsdsdsdsdsd
-
-Create 10 entries in the links table and use the schema.ts file as reference for the correct structure of the data. The seed data should be in the form of a JavaScript array of objects, where each object represents a row to be inserted into the links table.
-```
+> Generate seed data for the database. 
+> The user ID is: user_3D7sdsdsdsdsdsdsdsdsd
+> Create 10 entries in the links table and use the schema.ts file as reference for the correct structure of the data. The seed data should be in the form of a JavaScript array of objects, where each object represents a row to be inserted into the links table.
 
 <div class='img-center'>
 
@@ -1523,9 +1488,7 @@ Once the server is started, set the mode to **Agent** and add the prompt below t
 
 **Note:** If you have other projects in Neon, make sure to specify the project name in the prompt to ensure that the seed script is run against the correct database.
 
-```bash
-Create a seed script to populate the Neon Postgresql database  with the generated seed data. Use the Drizzle ORM to insert the seed data into the database. Then run the seed script using MCP to populate the database with the generated seed data.
-```
+> Create a seed script to populate the Neon Postgresql database  with the generated seed data. Use the Drizzle ORM to insert the seed data into the database. Then run the seed script using MCP to populate the database with the generated seed data.
 
 <div class='img-center'>
 
@@ -1610,33 +1573,31 @@ To start with, we will create the data fetching component. Open a new conversati
 
 **Note:** When you press enter, it should automatically use the `instructions-generator` agent to generate the instructions file.
 
-```bash
-/create-instructions This  data fetching component for the dashboard page will be responsible for retrieving the list of links created by the user from the database.
-
-The rules cover how to fetch the list of links created by a user from the database.
-
-- Data fetching should use Drizzle ORM to query the Neon PostgreSQL database. 
-- Each link object must only includes the fields defined in the actual schema. 
-- Do NOT reference or invent columns that are not in the schema (e.g., there is no `clicks` or analytics column).
-
-Additionally, here are some best practices and rules to follow when implementing the data fetching component:
-
-- Always use asynchronous functions when fetching data to avoid blocking the main thread and to improve the user experience on the dashboard page.
-
-- ALWAYS use server components to fetch data. This ensures that the data fetching logic is executed on the server side, which improves performance and security by keeping sensitive database queries away from the client side.
-
-- NEVER use client components for data fetching. Do not use `useAuth` or any other client-side Clerk hook to obtain the user ID.
-
-- ALWAYS place helper functions for fetching data in the `/data` directory at the project root. This directory does not exist yet and must be created alongside `app`, `db`, and `lib`. These functions are designed to handle all interactions with the database and can be reused across different components and pages.
-
-- All helper functions in the `/data` directory must use Drizzle ORM for database interactions. NEVER use raw SQL strings or any ORM other than Drizzle.
-
-- Always import db from `@/db` and table definitions (e.g., links) from `@/db/schema`. All imports must use the `@/` path alias. This keeps imports consistent across the entire codebase regardless of file depth, and ensures the correct modules are used (index.tsx for the database client and schema.ts for table definitions and types). Never use relative paths (e.g., ../../db) or import from the wrong file.
-
-- NEVER define custom TypeScript interfaces for database results. Always use the inferred types exported from schema.ts (e.g., Link, NewLink). Never use `any`. The types should always be automatically derived by Drizzle directly from the schema definition.
-
-- Helper functions should handle potential errors that may occur during database interactions. On error, the function should throw the error rather than swallowing it silently, allowing the calling component to handle it appropriately.
-```
+> /create-instructions This  data fetching component for the dashboard page will be responsible for retrieving the list of links created by the user from the database.
+>
+> The rules cover how to fetch the list of links created by a user from the database.
+>
+> - Data fetching should use Drizzle ORM to query the Neon PostgreSQL database. 
+> - Each link object must only includes the fields defined in the actual schema. 
+> - Do NOT reference or invent columns that are not in the schema (e.g., there is no `clicks` or analytics column).
+>
+> Additionally, here are some best practices and rules to follow when implementing the data fetching component:
+> 
+> - Always use asynchronous functions when fetching data to avoid blocking the main thread and to improve the user experience on the dashboard page.
+>
+> - ALWAYS use server components to fetch data. This ensures that the data fetching logic is executed on the server side, which improves performance and security by keeping sensitive database queries away from the client side.
+>
+> - NEVER use client components for data fetching. Do not use `useAuth` or any other client-side Clerk hook to obtain the user ID.
+>
+> - ALWAYS place helper functions for fetching data in the `/data` directory at the project root. This directory does not exist yet and must be created alongside `app`, `db`, and `lib`. These functions are designed to handle all interactions with the database and can be reused across different components and pages.
+>
+> - All helper functions in the `/data` directory must use Drizzle ORM for database interactions. NEVER use raw SQL strings or any ORM other than Drizzle.
+>
+> - Always import db from `@/db` and table definitions (e.g., links) from `@/db/schema`. All imports must use the `@/` path alias. This keeps imports consistent across the entire codebase regardless of file depth, and ensures the correct modules are used (index.tsx for the database client and schema.ts for table definitions and types). Never use relative paths (e.g., ../../db) or import from the wrong file.
+>
+> - NEVER define custom TypeScript interfaces for database results. Always use the inferred types exported from schema.ts (e.g., Link, NewLink). Never use `any`. The types should always be automatically derived by Drizzle directly from the schema definition.
+>
+> - Helper functions should handle potential errors that may occur during database interactions. On error, the function should throw the error rather than swallowing it silently, allowing the calling component to handle it appropriately.
 
 <div class='img-center'>
 
@@ -1660,36 +1621,35 @@ Next, we will create the data mutation component. Open a new conversation in Cop
 
 **Note:** When you press enter, it should automatically use the `instructions-generator` agent to generate the instructions file.
 
-```bash
-/create-instructions Document the data mutation conventions for this project. This covers data mutation conventions only. Do not modify the instructions for data fetching.
+> /create-instructions Document the data mutation conventions for this project. This covers data mutation conventions only. Do not modify the instructions for data fetching.
+>
+> The rules cover how all create, update, and delete operations are performed in the application.
+>
+> Rules:
+>
+> - ALL data mutations must be implemented as **Next.js Server Actions**. Never perform mutations directly in client components or route handlers.
+>
+> - Server action files must be named `actions.ts` and must include `'use server'` as the first line of the file. This tells Next.js that the file (or function) should be treated as a server action, meaning it will only run on the server, can access secrets, and can perform mutations securely.
+>
+> - Server action files must be colocated in the same directory as the component that invokes them (e.g., `app/dashboard/actions.ts` for actions used by the dashboard page).
+>
+> - Server actions must only be called from **client components**. Client components that call server actions must include `'use client'` as the first line of the file.
+> 
+> - All data passed into a server action must have explicit TypeScript types. NEVER use the `FormData` TypeScript type. NEVER use `any`.
 
-The rules cover how all create, update, and delete operations are performed in the application.
-
-Rules:
-
-- ALL data mutations must be implemented as **Next.js Server Actions**. Never perform mutations directly in client components or route handlers.
-
-- Server action files must be named `actions.ts` and must include `'use server'` as the first line of the file. This tells Next.js that the file (or function) should be treated as a server action, meaning it will only run on the server, can access secrets, and can perform mutations securely.
-
-- Server action files must be colocated in the same directory as the component that invokes them (e.g., `app/dashboard/actions.ts` for actions used by the dashboard page).
-
-- Server actions must only be called from **client components**. Client components that call server actions must include `'use client'` as the first line of the file.
-
-- All data passed into a server action must have explicit TypeScript types. NEVER use the `FormData` TypeScript type. NEVER use `any`.
-
-- All incoming data must be validated inside the server action using **Zod** before any database operations are performed. If validation fails, return `{ error: string }` immediately with a descriptive message.
-
-- Every server action must check for an authenticated user as its first step, before validation and before any database operations. Use `const { userId } = await auth()` imported from `@clerk/nextjs/server`. This is the current and recommended import for Clerk v4+ and Next.js 13/14/16, and should be correct for all current and foreseeable versions.
-
-- If Clerk ever changes the import path in a future release, update the code and instructions to use the new, modern path. If `userId` is `null`, return `{ error: 'Unauthorized' }` immediately.
-
-- Database operations must NOT be performed directly inside server actions using Drizzle queries. All database interactions must be delegated to helper functions located in the `/data` directory. Server actions import and call these helpers; they should not call db directly or contain raw Drizzle queries themselves.
-
-- Server actions must NEVER throw errors. All outcomes, both success and failure, must be communicated by returning a typed result object. Use `{ error: string }` for failures and `{ success: true }` for successes.
-
-- After a successful mutation, call `revalidatePath` imported from `next/navigation` with the relevant path (e.g., `revalidatePath('/dashboard')`) so the UI reflects the updated data. This must happen before returning `{ success: true }`.
-
-- All imports must use the `@/` path alias to ensure it always points to the correct location, starting from project root. Never use relative paths. 
+> - All incoming data must be validated inside the server action using **Zod** before any database operations are performed. If validation fails, return `{ error: string }` immediately with a descriptive message.
+> 
+> - Every server action must check for an authenticated user as its first step, before validation and before any database operations. Use `const { userId } = await auth()` imported from `@clerk/nextjs/server`. This is the current and recommended import for Clerk v4+ and Next.js 13/14/16, and should be correct for all current and foreseeable versions.
+> 
+> - If Clerk ever changes the import path in a future release, update the code and instructions to use the new, modern path. If `userId` is `null`, return `{ error: 'Unauthorized' }` immediately.
+> 
+> - Database operations must NOT be performed directly inside server actions using Drizzle queries. All database interactions must be delegated to helper functions located in the `/data` directory. Server actions import and call these helpers; they should not call db directly or contain raw Drizzle queries themselves.
+> 
+> - Server actions must NEVER throw errors. All outcomes, both success and failure, must be communicated by returning a typed result object. Use `{ error: string }` for failures and `{ success: true }` for successes.
+> 
+> - After a successful mutation, call `revalidatePath` imported from `next/navigation` with the relevant path (e.g., `revalidatePath('/dashboard')`) so the UI reflects the updated data. This must happen before returning `{ success: true }`.
+> 
+> - All imports must use the `@/` path alias to ensure it always points to the correct location, starting from project root. Never use relative paths. 
 ```
 
 After it's done, you should see the new instruction file for data mutation:
@@ -1715,9 +1675,7 @@ It is recommended to specify the exact file to edit. There is a risk that the ag
 
 ::: 
 
-```bash
-Build out the dashboard page in `app/dashboard/page.tsx`. Query for the currently logged-in user's links and display them as a list. Each list item should show the short URL, the destination URL, and the "Created at" date. Use the project’s UI conventions.
-```
+> Build out the dashboard page in `app/dashboard/page.tsx`. Query for the currently logged-in user's links and display them as a list. Each list item should show the short URL, the destination URL, and the "Created at" date. Use the project’s UI conventions.
 
 <div class='img-center'>
 
