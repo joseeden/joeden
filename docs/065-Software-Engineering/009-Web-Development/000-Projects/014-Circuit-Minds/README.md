@@ -2,9 +2,6 @@
 title: "Circuit Minds"
 description: "Landing page for a fictional engineering company"
 tags: 
-- Computer Science
-- Application Development
-- Software Development
 - Web Development
 - HTML
 - CSS

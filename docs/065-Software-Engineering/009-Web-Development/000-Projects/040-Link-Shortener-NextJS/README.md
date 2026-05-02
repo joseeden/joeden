@@ -2,8 +2,6 @@
 title: "Link Shortener using NextJS"
 description: "Link Shortener with NextJS and Clerk Authentication"
 tags: 
-- Computer Science
-- Application Development
 - Web Development
 - HTML
 - CSS

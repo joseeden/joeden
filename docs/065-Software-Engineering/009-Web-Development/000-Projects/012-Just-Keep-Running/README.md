@@ -2,9 +2,6 @@
 title: "Just Keep Running"
 description: "A landing page for a fictional running event."
 tags: 
-- Computer Science
-- Application Development
-- Software Development
 - Web Development
 - HTML
 - CSS

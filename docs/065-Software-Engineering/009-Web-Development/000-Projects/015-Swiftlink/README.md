@@ -2,9 +2,6 @@
 title: "Swiftlink"
 description: "Landing page for a fictional logistics company"
 tags: 
-- Computer Science
-- Application Development
-- Software Development
 - Web Development
 - HTML
 - CSS

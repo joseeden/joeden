@@ -2,9 +2,6 @@
 title: "The Zodiacs"
 description: "A simple page for testing CSS Grid and Responsive Layout"
 tags: 
-- Computer Science
-- Application Development
-- Software Development
 - Web Development
 - HTML
 - CSS
