@@ -235,7 +235,11 @@ Since this project uses test accounts during development, email verification can
 
     </div>
 
+**Note:** To ensure compatibility with the latest versions of Next.js and Clerk, I added a prompt instructing the agent to use `proxy.ts` instead of `middleware.tsx`, since `middleware.tsx` is deprecated in newer versions of Next.js.
 
+```bash
+Update this file to clearly state that the agent must NEVER use middleware.tsx, as it is deprecated in newer versions of Next.js, and should use proxy.ts instead.
+```
 
 
 ## Database Setup (Neon + Drizzle)
@@ -651,7 +655,7 @@ All UI components should be built using shadcn UI and Tailwind CSS. No other com
 </div>
 
 
-## Adding a Dashboard Page
+## Test Account and Dashboard Page
 
 This section implements a protected dashboard route using Clerk authentication and enforces strict routing behavior between authenticated and unauthenticated users.
 
@@ -707,6 +711,10 @@ http://localhost:3000/
 ```
 
 If you sign out, you should be redirected back to the homepage and if you try to access the `/dashboard` page again, you should be redirected back to the homepage since you're no longer authenticated.
+
+**UPDATE:** After some testing, I discovered that after signing in, the app first sends the user to the homepage, then quickly redirects to `/dashboard`. The correct behavior is to redirect directly to `/dashboard` after sign-in. 
+
+See [Sign-in briefly redirects to homepage before dashboard](#sign-in-briefly-redirects-to-homepage-before-dashboard) in the Troubleshooting section for the fix.
 
 ## Dark Mode Support
 
@@ -1533,6 +1541,51 @@ Review the generated seed script to ensure that it accurately reflects the inten
 
 </div>
 
+**UPDATE:** To secure the seed script, I have added the User ID in the `.env` file and updated the seed script to read the User ID from the environment variable instead of hardcoding it in the script.
+
+The `.env`:
+
+```bash
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_************************
+CLERK_SECRET_KEY=sk_test_******************************************************
+DATABASE_URL=postgresql://************************************?sslmode=require
+SEED_USER_ID=user_************************************
+```
+
+The seed script will read the `SEED_USER_ID` from the environment variable and use it in the seed data:
+
+```javascript
+import 'dotenv/config';
+import { drizzle } from 'drizzle-orm/neon-http';
+import { links } from './schema';
+import { type NewLink } from './schema';
+
+const db = drizzle(process.env.DATABASE_URL!);
+
+const userId = process.env.SEED_USER_ID!;
+
+const seedLinks: NewLink[] = [
+  {
+    userId,
+    url: 'https://www.github.com/joseeden',
+    slug: 'github',
+  },
+  ....
+```
+
+To manually run the seed script without using MCP:
+
+```bash
+npx tsx db/seed.ts
+```
+
+Output:
+
+```bash
+Seeding database...
+Inserted 10 rows into links table. 
+```
+
 Login to the [Neon dashboard](https://console.neon.tech/), open your project, and navigate to **Tables**. It should now show the new entries in the `links` table that were inserted by the seed script.
 
 <div class='img-center'>
@@ -1540,6 +1593,9 @@ Login to the [Neon dashboard](https://console.neon.tech/), open your project, an
 ![](/img/docs/Screenshot2026-05-02161502.png)
 
 </div>
+
+
+## Building the Dashboard Page 
 
 
 ## Troubleshooting
@@ -1881,3 +1937,126 @@ This is because the font variable class (e.g., `.roboto_xxxxx-variable`) is appl
   }
 } 
 ```
+
+### Sign-in briefly redirects to homepage before dashboard
+
+After sign-in or sign-up via a Clerk modal, the app briefly shows the homepage (`/`) before redirecting to `/dashboard`. The correct behavior is to go directly to `/dashboard`.
+
+**Root causes:**
+
+1. Clerk's modal, after sign-in, does a client-side navigation back to the current page (`/`) before any redirect fires.
+
+2. Server-side redirect via `auth()` only fires on a full server request.
+
+    It does not prevent the client from briefly painting `/` after modal close.
+
+4. Props like `afterSignInUrl` / `afterSignUpUrl` are not valid Clerk v7 props.
+
+    they get forwarded to child DOM elements (e.g. `Button`), causing React warnings and no redirect effect.
+
+**Three layers of fix were applied:**
+
+1. Environment variables (`.env`) — highest priority, recommended by Clerk docs
+
+    ```env
+    NEXT_PUBLIC_CLERK_SIGN_IN_FORCE_REDIRECT_URL=/dashboard
+    NEXT_PUBLIC_CLERK_SIGN_UP_FORCE_REDIRECT_URL=/dashboard
+    ```
+
+2. Added `ClerkProvider` props in `app/layout.tsx`
+
+    ```tsx
+    <ClerkProvider
+      appearance={{ theme: shadcn }}
+      signInForceRedirectUrl="/dashboard"
+      signUpForceRedirectUrl="/dashboard"
+    >
+    ```
+
+3. Used `forceRedirectUrl` on all `SignInButton` / `SignUpButton` components
+
+    The correct Clerk v7 prop is `forceRedirectUrl` (not `afterSignInUrl` — that doesn't exist in v7 and leaks to DOM children).
+
+    ```tsx
+    // app/page.tsx and app/layout.tsx
+    <SignInButton mode="modal" forceRedirectUrl="/dashboard">
+      <Button>Sign In</Button>
+    </SignInButton>
+
+    <SignUpButton mode="modal" forceRedirectUrl="/dashboard">
+      <Button>Sign Up</Button>
+    </SignUpButton>
+    ```
+
+4. Added server-side guard in `app/page.tsx`
+
+    ```tsx
+    export default async function Home() {
+      const { userId } = await auth()
+      if (userId) redirect('/dashboard')
+      // ...
+    }
+    ```
+
+5. Utilized `AuthRedirect` client component ( eliminates the flash entirely)
+
+    The above layers handle server requests and new page loads but the flash still occurs because the page content renders briefly on the client before Clerk's state updates. The fix is a `'use client'` component that **wraps all page content** and blocks rendering until Clerk confirms the user is not signed in.
+
+    `components/AuthRedirect.tsx`** (new file):
+
+    ```tsx
+    'use client'
+
+    import { useAuth } from '@clerk/nextjs'
+    import { useRouter } from 'next/navigation'
+    import { useEffect } from 'react'
+
+    export function AuthRedirect({ children }: { children: React.ReactNode }) {
+      const { isSignedIn, isLoaded } = useAuth()
+      const router = useRouter()
+
+      useEffect(() => {
+        if (isLoaded && isSignedIn) {
+          router.replace('/dashboard')
+        }
+      }, [isLoaded, isSignedIn, router])
+
+      // Render nothing until Clerk has loaded and confirmed user is NOT signed in.
+      if (!isLoaded || isSignedIn) return null
+
+      return <>{children}</>
+    }
+    ```
+
+    `app/page.tsx`** - wrap all content with `<AuthRedirect>`:
+
+    ```tsx
+    // Before
+    return (
+      <main className="flex flex-1 flex-col">
+        {/* page content */}
+      </main>
+    )
+
+    // After
+    return (
+      <AuthRedirect>
+        <main className="flex flex-1 flex-col">
+          {/* page content */}
+        </main>
+      </AuthRedirect>
+    )
+    ``` 
+
+    **Why this works:** `AuthRedirect` returns `null` while `isLoaded` is false (Clerk resolving) or while `isSignedIn` is true (redirect pending). The page content is completely blocked from rendering in either case, a just-signed-in user never sees it.
+
+
+**What does NOT work:**
+
+| Approach                                                  | Why it fails                                                              |
+| --------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `afterSignInUrl` / `afterSignUpUrl` on `SignInButton`     | Not valid Clerk v7 props — forwarded to DOM child, causing React warnings |
+| `asChild` on `SignInButton` / `SignUpButton`              | Clerk buttons don’t support `asChild` — results in a TypeScript error     |
+| `asChild` on `Button` with `<span>` child                 | Passes Clerk props to `<span>`, causing the same React DOM warning        |
+| Server-side `auth()` redirect alone                       | Only fires on full server requests, not after client-side modal close     |
+| `AuthRedirect` returning `null` without wrapping children | Page content still renders while redirect is pending                      |
