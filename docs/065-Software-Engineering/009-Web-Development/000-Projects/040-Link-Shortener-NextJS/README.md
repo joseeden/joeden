@@ -1606,7 +1606,9 @@ This section requires two logic components:
 
 #### Data Fetching 
 
-To start with, we will create the data fetching component. Open a new conversation in Copilot Chat and provide the prompt below:
+To start with, we will create the data fetching component. Open a new conversation in Copilot Chat and provide the prompt below,
+
+**Note:** When you press enter, it should automatically use the `instructions-generator` agent to generate the instructions file.
 
 ```bash
 /create-instructions This  data fetching component for the dashboard page will be responsible for retrieving the list of links created by the user from the database.
@@ -1642,11 +1644,24 @@ Additionally, here are some best practices and rules to follow when implementing
 
 </div>
 
+Once it's done, you should see the new instruction file for data fetching:
+
+```bash
+docs
+├── auth.md
+├── data-fetching.md
+├── database.md
+└── ui.md
+```
 
 #### Data Mutation 
 
+Next, we will create the data mutation component. Open a new conversation in Copilot Chat and provide the prompt below.
+
+**Note:** When you press enter, it should automatically use the `instructions-generator` agent to generate the instructions file.
+
 ```bash
-Document the data mutation conventions for this project. This covers data mutation conventions only. Do not modify the instructions for data fetching.
+/create-instructions Document the data mutation conventions for this project. This covers data mutation conventions only. Do not modify the instructions for data fetching.
 
 The rules cover how all create, update, and delete operations are performed in the application.
 
@@ -1664,16 +1679,87 @@ Rules:
 
 - All incoming data must be validated inside the server action using **Zod** before any database operations are performed. If validation fails, return `{ error: string }` immediately with a descriptive message.
 
-- Every server action must check for an authenticated user as its first step, before validation and before any database operations. Use `const { userId } = await auth()` imported from `@clerk/nextjs/server`. If `userId` is `null`, return `{ error: 'Unauthorized' }` immediately.
+- Every server action must check for an authenticated user as its first step, before validation and before any database operations. Use `const { userId } = await auth()` imported from `@clerk/nextjs/server`. This is the current and recommended import for Clerk v4+ and Next.js 13/14/16, and should be correct for all current and foreseeable versions.
 
-- Database operations must NOT be performed directly inside server actions using Drizzle queries. All database interactions must be delegated to helper functions located in the `/data` directory. Server actions import and call these helpers — they do not call db directly.
+- If Clerk ever changes the import path in a future release, update the code and instructions to use the new, modern path. If `userId` is `null`, return `{ error: 'Unauthorized' }` immediately.
 
-- Server actions must NEVER throw errors. All outcomes — both success and failure — must be communicated by returning a typed result object. Use `{ error: string }` for failures and `{ success: true }` for successes.
+- Database operations must NOT be performed directly inside server actions using Drizzle queries. All database interactions must be delegated to helper functions located in the `/data` directory. Server actions import and call these helpers; they should not call db directly or contain raw Drizzle queries themselves.
+
+- Server actions must NEVER throw errors. All outcomes, both success and failure, must be communicated by returning a typed result object. Use `{ error: string }` for failures and `{ success: true }` for successes.
 
 - After a successful mutation, call `revalidatePath` imported from `next/navigation` with the relevant path (e.g., `revalidatePath('/dashboard')`) so the UI reflects the updated data. This must happen before returning `{ success: true }`.
 
-- All imports must use the `@/` path alias. Never use relative paths. 
+- All imports must use the `@/` path alias to ensure it always points to the correct location, starting from project root. Never use relative paths. 
 ```
+
+After it's done, you should see the new instruction file for data mutation:
+
+```bash
+docs
+├── auth.md
+├── data-fetching.md
+├── data-mutation.md
+├── database.md
+└── ui.md
+```
+
+#### The Dashboard Page
+
+Now that we have the specific instructions for both data fetching and data mutations, we can now start building our dashboard page. 
+
+Open a new conversation, set the mode to **Agent**, and provide the prompt below.
+
+:::info 
+
+It is recommended to specify the exact file to edit. There is a risk that the agent may not edit the correct file, especially in a Next.js project where multiple pages can exist (e.g., `app/page.tsx`, `app/dashboard/page.tsx`, etc.). The agent might guess based on context, but it is not guaranteed to always pick the intended file.
+
+::: 
+
+```bash
+Build out the dashboard page in `app/dashboard/page.tsx`. Query for the currently logged-in user's links and display them as a list. Each list item should show the short URL, the destination URL, and the "Created at" date. Use the project’s UI conventions.
+```
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-03042738.png)
+
+</div>
+
+The agent *may* use a `Card` component in the design, which is not yet created. It might ask you to allow it to add the `Card` component to the project. 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-03042951.png)
+
+</div>
+
+
+Alternatively, the agent might opt for a simple layout without the `Card` component, such as using `<div>` elements styled with Tailwind CSS classes. Based on out styling guidelines:
+
+> Use Tailwind CSS utility classes and avoid recreating primitives that shadcn already provides. 
+
+For list layouts, the agent may use semantic HTML elements with Tailwind, since there is no dedicated shadcn list component to utilize or override.
+
+Going back to Copilot chat, the agent was able to successfully add the `Card` component and create the helper function and the dashboard page. 
+
+```bash
+app/dashboard/
+└── page.tsx
+
+data/
+└── links.ts
+```
+
+Next, run the development server to see the dashboard page in action.
+
+```bash
+npm run dev
+```
+
+Open a web browser and confirm that the dashboard page is rendering correctly and displaying the list of links for the logged-in user.
+
+
+
 ## Troubleshooting
 
 ### Node.js Version Error

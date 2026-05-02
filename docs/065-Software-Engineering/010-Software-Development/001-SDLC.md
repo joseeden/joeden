@@ -136,4 +136,4 @@ During the maintenance phase, the team:
 
 At the end of the maintenance phase, the team prepares for the next software iteration, restarting the SDLC process with the requirements and analysis phase.
 
-For more information, please see [Operations and Maintenance.](/docs/065-Software-Engineering/014-Software-Development/007-Operations-and-Maintenance.md)
+For more information, please see [Operations and Maintenance.](/docs/065-Software-Engineering/010-Software-Development/007-Operations-and-Maintenance.md)
