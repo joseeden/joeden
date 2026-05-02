@@ -26,7 +26,7 @@ The software development life cycle (SDLC) outlines the process of developing so
 5. Deployment
 6. Maintenance
 
-For more information, please see [Software Development Lifecycle](/docs/065-Software-Engineering/014-Software-Development/001-SDLC.md)
+For more information, please see [Software Development Lifecycle](/docs/065-Software-Engineering/010-Software-Development/001-SDLC.md)
 
 
 ## Waterfall Methodology
@@ -41,7 +41,7 @@ Waterfall follows sequential phases:
 
 > Requirements ➔ Design ➔ Implementation ➔ Testing ➔ Deployment.  
 
-For more information, please see [Waterfall Model](/docs/065-Software-Engineering/014-Software-Development/002-Methodologies.md#waterfall-model)
+For more information, please see [Waterfall Model](/docs/065-Software-Engineering/010-Software-Development/002-Methodologies.md#waterfall-model)
 
 ## Spiral Methodology
 
@@ -50,7 +50,7 @@ The Spiral Model improves on the Waterfall approach by using an iterative proces
 - Each cycle includes planning, risk analysis, engineering, and evaluation.  
 - Suitable for high-risk or complex projects.
 
-For more information, please see [Spiral Model](/docs/065-Software-Engineering/014-Software-Development/002-Methodologies.md#spiral-model)
+For more information, please see [Spiral Model](/docs/065-Software-Engineering/010-Software-Development/002-Methodologies.md#spiral-model)
 
 
 ## Agile Methodology
@@ -87,4 +87,4 @@ Other approaches to software development:
 | **Rapid Application Development (RAD)** | Enables fast development with iterative prototypes.    |
 
 
-For more information, please see [Software Methodologies](/docs/065-Software-Engineering/014-Software-Development/002-Methodologies.md)
+For more information, please see [Software Methodologies](/docs/065-Software-Engineering/010-Software-Development/002-Methodologies.md)

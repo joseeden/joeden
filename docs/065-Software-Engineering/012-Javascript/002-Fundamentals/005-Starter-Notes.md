@@ -76,7 +76,7 @@ function callFunction(fn, name) {
 callFunction(greet, 'Alice'); // Output: Hello, Alice!
 ```
 
-For more information, please see [Functions.](/docs/065-Software-Engineering/055-Javascript/002-Fundamentals/017-Functions.md)
+For more information, please see [Functions.](/docs/065-Software-Engineering/012-Javascript/002-Fundamentals/017-Functions.md)
 
 
 ## Non-Blocking Event Loop  

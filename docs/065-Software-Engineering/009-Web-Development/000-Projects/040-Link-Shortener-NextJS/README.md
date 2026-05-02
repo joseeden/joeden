@@ -581,7 +581,7 @@ Once we provide that information, it will use the `instructions-generator` agent
 In Copilot chat, open a new conversation, then type "/" to open the prompt list and select the prompt created in the previous steps. Provide the necessary information about the architectural layer, starting with the authtentication layer.
 
 ```bash
-Everything related to authentication will be managed by Clerk.
+/create-instructions Everything related to authentication will be managed by Clerk.
 NO OTHER AUTHENTICATION METHODS SHOULD BE USED.
 
 Make sure the /dashboard page is a protected route and must require the user to be logged in first. If the user is logged in and is trying to access the homepage, they should be redirected to the /dashboard page. 
@@ -645,7 +645,7 @@ For the UI and frontend-related instructions, use the following information:
 
 
 ```bash
-All UI components should be built using shadcn UI and Tailwind CSS. No other component libraries or custom built components should be used.
+/create-instructions All UI components should be built using shadcn UI and Tailwind CSS. No other component libraries or custom built components should be used.
 ```
 
 <div class='img-center'>
@@ -1235,7 +1235,7 @@ For most link shortener use cases, text is preferred unless you have a business 
     Provide the finalized requirements for the database layer:
 
     ```bash
-    The database layer will use Drizzle ORM with the Neon PostgreSQL. The database schema will be defined in the `./db/schema.ts` file using Drizzle's schema definition syntax.
+    /create-instructions The database layer will use Drizzle ORM with the Neon PostgreSQL. The database schema will be defined in the `./db/schema.ts` file using Drizzle's schema definition syntax.
 
     The schema must define a single links table representing a shortened link. Each column must be **not null**, meaning there are no optional fields.
 
@@ -1643,6 +1643,37 @@ Additionally, here are some best practices and rules to follow when implementing
 </div>
 
 
+#### Data Mutation 
+
+```bash
+Document the data mutation conventions for this project. This covers data mutation conventions only. Do not modify the instructions for data fetching.
+
+The rules cover how all create, update, and delete operations are performed in the application.
+
+Rules:
+
+- ALL data mutations must be implemented as **Next.js Server Actions**. Never perform mutations directly in client components or route handlers.
+
+- Server action files must be named `actions.ts` and must include `'use server'` as the first line of the file. This tells Next.js that the file (or function) should be treated as a server action, meaning it will only run on the server, can access secrets, and can perform mutations securely.
+
+- Server action files must be colocated in the same directory as the component that invokes them (e.g., `app/dashboard/actions.ts` for actions used by the dashboard page).
+
+- Server actions must only be called from **client components**. Client components that call server actions must include `'use client'` as the first line of the file.
+
+- All data passed into a server action must have explicit TypeScript types. NEVER use the `FormData` TypeScript type. NEVER use `any`.
+
+- All incoming data must be validated inside the server action using **Zod** before any database operations are performed. If validation fails, return `{ error: string }` immediately with a descriptive message.
+
+- Every server action must check for an authenticated user as its first step, before validation and before any database operations. Use `const { userId } = await auth()` imported from `@clerk/nextjs/server`. If `userId` is `null`, return `{ error: 'Unauthorized' }` immediately.
+
+- Database operations must NOT be performed directly inside server actions using Drizzle queries. All database interactions must be delegated to helper functions located in the `/data` directory. Server actions import and call these helpers — they do not call db directly.
+
+- Server actions must NEVER throw errors. All outcomes — both success and failure — must be communicated by returning a typed result object. Use `{ error: string }` for failures and `{ success: true }` for successes.
+
+- After a successful mutation, call `revalidatePath` imported from `next/navigation` with the relevant path (e.g., `revalidatePath('/dashboard')`) so the UI reflects the updated data. This must happen before returning `{ success: true }`.
+
+- All imports must use the `@/` path alias. Never use relative paths. 
+```
 ## Troubleshooting
 
 ### Node.js Version Error
