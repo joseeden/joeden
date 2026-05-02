@@ -17,7 +17,7 @@ sidebar_position: 5
 
 import React from "react";
 
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000)](#) [![NextJS](https://img.shields.io/badge/Next.js-323330?style=for-the-badge&logo=next.js&logoColor=white)](#) [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)](#) [![Typescript](https://img.shields.io/badge/Typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](#) [![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-FA520F?style=for-the-badge&logo=shadcnui&logoColor=fff)](#) [![Clerk](https://img.shields.io/badge/Clerk-825dff?style=for-the-badge&logo=clerk&logoColor=white)](#) [![Neon DB](https://img.shields.io/badge/Neon_DB-327d53?style=for-the-badge&logo=postgresql&logoColor=white)](https://neon.tech/) ![Drizzle](https://img.shields.io/badge/Drizzle_ORM-D72D27?style=for-the-badge&logo=drizzle&logoColor=C5F74F) ![Zod](https://img.shields.io/badge/-Zod-264b80?style=for-the-badge&logo=zod&logoColor=white) [![GitHub Copilot](https://img.shields.io/badge/GitHub%20Copilot-555555?style=for-the-badge&logo=githubcopilot&logoColor=fff)](#) [![MCP](https://img.shields.io/badge/-MCP-4292c6?style=for-the-badge&logo=modelcontextprotocol)](#)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000)](#) [![NextJS](https://img.shields.io/badge/Next.js-323330?style=for-the-badge&logo=next.js&logoColor=white)](#) [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)](#) [![Typescript](https://img.shields.io/badge/Typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](#) [![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-FA520F?style=for-the-badge&logo=shadcnui&logoColor=fff)](#) [![Clerk](https://img.shields.io/badge/Clerk-825dff?style=for-the-badge&logo=clerk&logoColor=white)](#) [![Neon DB](https://img.shields.io/badge/Neon_DB-327d53?style=for-the-badge&logo=postgresql&logoColor=white)](https://neon.tech/) ![Drizzle](https://img.shields.io/badge/Drizzle_ORM-a86938?style=for-the-badge&logo=drizzle&logoColor=fff) ![Zod](https://img.shields.io/badge/-Zod-264b80?style=for-the-badge&logo=zod&logoColor=white) [![GitHub Copilot](https://img.shields.io/badge/GitHub%20Copilot-555555?style=for-the-badge&logo=githubcopilot&logoColor=fff)](#) [![MCP](https://img.shields.io/badge/-MCP-4292c6?style=for-the-badge&logo=modelcontextprotocol)](#)
 
 
 ## Overview 
@@ -1596,6 +1596,51 @@ Login to the [Neon dashboard](https://console.neon.tech/), open your project, an
 
 
 ## Building the Dashboard Page 
+
+The dashboard page will display a list of all the shortened links created by the user, along with some basic analytics such as the number of clicks for each link.
+
+This section requires two logic components:
+
+- A data fetching component that retrieves the list of links created by the user from the database
+- A data mutation component which allows users to create, update, and delete links directly from the dashboard page.
+
+#### Data Fetching 
+
+To start with, we will create the data fetching component. Open a new conversation in Copilot Chat and provide the prompt below:
+
+```bash
+/create-instructions This  data fetching component for the dashboard page will be responsible for retrieving the list of links created by the user from the database.
+
+The rules cover how to fetch the list of links created by a user from the database.
+
+- Data fetching should use Drizzle ORM to query the Neon PostgreSQL database. 
+- Each link object must only includes the fields defined in the actual schema. 
+- Do NOT reference or invent columns that are not in the schema (e.g., there is no `clicks` or analytics column).
+
+Additionally, here are some best practices and rules to follow when implementing the data fetching component:
+
+- Always use asynchronous functions when fetching data to avoid blocking the main thread and to improve the user experience on the dashboard page.
+
+- ALWAYS use server components to fetch data. This ensures that the data fetching logic is executed on the server side, which improves performance and security by keeping sensitive database queries away from the client side.
+
+- NEVER use client components for data fetching. Do not use `useAuth` or any other client-side Clerk hook to obtain the user ID.
+
+- ALWAYS place helper functions for fetching data in the `/data` directory at the project root. This directory does not exist yet and must be created alongside `app`, `db`, and `lib`. These functions are designed to handle all interactions with the database and can be reused across different components and pages.
+
+- All helper functions in the `/data` directory must use Drizzle ORM for database interactions. NEVER use raw SQL strings or any ORM other than Drizzle.
+
+- Always import db from `@/db` and table definitions (e.g., links) from `@/db/schema`. All imports must use the `@/` path alias. This keeps imports consistent across the entire codebase regardless of file depth, and ensures the correct modules are used (index.tsx for the database client and schema.ts for table definitions and types). Never use relative paths (e.g., ../../db) or import from the wrong file.
+
+- NEVER define custom TypeScript interfaces for database results. Always use the inferred types exported from schema.ts (e.g., Link, NewLink). Never use `any`. The types should always be automatically derived by Drizzle directly from the schema definition.
+
+- Helper functions should handle potential errors that may occur during database interactions. On error, the function should throw the error rather than swallowing it silently, allowing the calling component to handle it appropriately.
+```
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02203538.png)
+
+</div>
 
 
 ## Troubleshooting
