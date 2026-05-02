@@ -15,6 +15,18 @@ sidebar_position: 5
 #   date: 4/23/2019
 ---
 
+import React from "react";
+
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000)](#)
+[![NextJS](https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=white)](#)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwind-css&logoColor=white)](#)
+[![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-000?logo=shadcnui&logoColor=fff)](#)
+[![Clerk](https://img.shields.io/badge/Clerk-825dff?logo=clerk&logoColor=white)](#)
+[![Neon DB](https://img.shields.io/badge/Neon_DB-327d53?style=flat-square&logo=postgresql&logoColor=white)](https://neon.tech/)
+![Drizzle](https://img.shields.io/badge/Drizzle_ORM-%23000000?style=flat&logo=drizzle&logoColor=C5F74F)
+[![GitHub Copilot](https://img.shields.io/badge/GitHub%20Copilot-FA520F?logo=githubcopilot&logoColor=fff)](#)
+
+
 ## Overview 
 
 This project is a full-stack Link Shortener application designed to demonstrate how a modern web app is built using multiple architectural layers, including frontend, backend, authentication, and database integration.
@@ -1168,7 +1180,7 @@ git pull
 
 ## Troubleshooting
 
-#### Node.js Version Error
+### Node.js Version Error
 
 You may encounter this error during setup:
 
@@ -1299,7 +1311,7 @@ So your app exists, but it won’t run properly until you upgrade Node.
     npm run dev
     ```
 
-#### Hot Reload Not Working with WSL 
+### Hot Reload Not Working with WSL 
 
 If you’re using WSL and your project files are stored under `/mnt/c/...`, you may encounter issues with hot reload not working properly when running the development server. 
 
@@ -1351,7 +1363,7 @@ Possible solutions (No. 3 is what I ultimately use)
 
     This is what I ended up doing since I already have multiple Copilot sessions running and moving the files to a new directory would mean deleting those sessions.
 
-#### React Hydration Mismatch 
+### React Hydration Mismatch 
 
 You may see an issue in the web browser when you run the development server. 
 
@@ -1482,3 +1494,26 @@ return (
 ```
 
 Closed the terminal to kill all the processes related to the old dev server, then opened a new terminal and ran `npm run dev` again.
+
+This solved the issue BUT now it caused the fonts to revert back to Times New Roman. See [Hydration Mismatch and FOUT](#hydration-mismatch-and-fout) section below for the fix.
+
+### Hydration Mismatch and FOUT (Flash of Unstyled Text)
+
+When a hydration mismatch occurs, React discards the server-rendered HTML and re-renders the app on the client. This can cause a **flash of unstyled text (FOUT)** if the initial HTML does not have the correct font classes or styles, so the browser uses the default font (like Times New Roman) until React finishes rendering and applies the correct classes.
+
+However, if you are using a CSS variable for your font (e.g., `--font-roboto` from `next/font`), you must set the `font-family` on the `body` element (not `html`) in your global CSS.
+
+This is because the font variable class (e.g., `.roboto_xxxxx-variable`) is applied to `<body>`, so the variable is only available there and its descendants. Setting it on `<html>` will not work and will cause a fallback to Times New Roman.
+
+```css
+
+@layer base {
+  * {
+    ....
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-roboto), system-ui, sans-serif;
+  }
+} 
+```
