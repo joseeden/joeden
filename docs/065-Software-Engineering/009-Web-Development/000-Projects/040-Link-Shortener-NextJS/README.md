@@ -1377,9 +1377,151 @@ Provide a commit message for the merge commit and click **Create Merge Commit**.
 
 </div>
 
+Now that the PR is merged, go back to VS Code and switch back to the main branch. Then pull the latest changes to get the merged code.
 
+```bash
+git checkout main
+git pull
+```
 
+## Seed Data, Neon DB, and MCP
 
+In this step, we'll use Copilot to generate seed data 
+(dummy data) for the database, and then use MCP to run the seed script and populate the database with the generated seed data.
+
+:::info 
+
+MCP (Model Context Protocol) is a protocol that allows running code in the context of a specific model. 
+
+In this project, the MCP server will expose the necessary tools to Copilot chat, which Copilot can use to perform actions such as connecting to the Neon database and running scripts.
+
+:::
+
+To start with, go to **Extensions** in VS Code and search for:
+
+```
+@mcp neon
+```
+
+Note that you may need to enable the MCP Marketplace in the settings to see the MCP extensions. 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02153650.png)
+
+</div>
+
+After enabling, you should be able to see the correct MCP server extension. Click on **Install** to install the MCP server for Neon.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02153739.png)
+
+</div>
+
+After installing the MCP server, a prompt window will appear asking to authenticate the MCP server with Neon. Click **Allow**.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02153954.png)
+
+</div>
+
+This will open a new browser window asking you to log in to your Neon account and authorize the MCP server to access your Neon project. Allow the necessary permissions for the MCP server to access your Neon project, then click **Approve**
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02154132.png)
+
+</div>
+
+Click **Authorize** to complete the authentication process.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02154214.png)
+
+</div>
+
+Back in VS Code, open a new conversation in Copilot Chat, set the mode to **Agent**, and add the prompt:
+
+```bash
+List all all the projects in my Neon account.
+```
+
+The agent should be able to find the Neon project associated with the database URL in our `.env` file.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02154658.png)
+
+</div>
+
+Now that the MCP server is authenticated and can access our Neon project, we can ask the agent to generate seed data for our database and run the seed script using MCP.
+
+But first, we need to login to our [Clerk dashboard](https://dashboard.clerk.com/apps) to get the user IDs that we will use for the `userId` column in our `links` table.
+
+> Recall that we created a test account in the [Adding a Dashboard Page](#adding-a-dashboard-page) section.
+
+Go to **Users** tab and click on the test user. Copy the user ID for that test user, as we will use it in our seed data.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02155346.png)
+
+</div>
+
+Back in VS Code, open a new conversation in Copilot Chat, set the mode to **Ask**, and provide the following prompt:
+
+```bash
+Generate seed data for the database. 
+
+The user ID is: user_3D7sdsdsdsdsdsdsdsdsd
+
+Create 10 entries in the links table and use the schema.ts file as reference for the correct structure of the data. The seed data should be in the form of a JavaScript array of objects, where each object represents a row to be inserted into the links table.
+```
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02155813.png)
+
+</div>
+
+It will generate the seed data in the form of a JSON, which we can then use to create a seed script to populate our database.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02155933.png)
+
+</div>
+
+Next, click the MCP Server icon below the chat. If there is a a warning in the icon, it means that the MCP server wasn't unable to start succesfully. 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02160152.png)
+
+</div>
+
+After clicking the icon, a list of available actions for the MCP server will appear. Select **Start server.**
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02160427.png)
+
+</div>
+
+Once the server is started, set the mode to **Agent** and add the prompt below to run the seed script using MCP:
+
+```bash
+Create a seed script to populate the Neon Postgresql database  with the generated seed data. Use the Drizzle ORM to insert the seed data into the database. Then run the seed script using MCP to populate the database with the generated seed data.
+```
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02160825.png)
+
+</div>
 
 
 ## Troubleshooting
