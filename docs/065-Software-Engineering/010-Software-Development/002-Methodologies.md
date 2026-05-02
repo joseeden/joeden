@@ -185,7 +185,7 @@ Lean software development is based on Lean Manufacturing principles, which are f
 - Build integrity in
 - Optimize the whole
 
-For more information, please see [Lean Principles.](/docs/065-Software-Engineering/014-Software-Development/003-Lean-Principles.md)
+For more information, please see [Lean Principles.](/docs/065-Software-Engineering/010-Software-Development/003-Lean-Principles.md)
 
 
 ## Documentation 
