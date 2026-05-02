@@ -1758,6 +1758,13 @@ npm run dev
 
 Open a web browser and confirm that the dashboard page is rendering correctly and displaying the list of links for the logged-in user.
 
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-03051254.png)
+
+</div>
+
+## CRUD and Redirect Links 
 
 
 ## Troubleshooting
