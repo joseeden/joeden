@@ -1511,7 +1511,9 @@ After clicking the icon, a list of available actions for the MCP server will app
 
 </div>
 
-Once the server is started, set the mode to **Agent** and add the prompt below to run the seed script using MCP:
+Once the server is started, set the mode to **Agent** and add the prompt below to run the seed script using MCP.
+
+**Note:** If you have other projects in Neon, make sure to specify the project name in the prompt to ensure that the seed script is run against the correct database.
 
 ```bash
 Create a seed script to populate the Neon Postgresql database  with the generated seed data. Use the Drizzle ORM to insert the seed data into the database. Then run the seed script using MCP to populate the database with the generated seed data.
@@ -1520,6 +1522,22 @@ Create a seed script to populate the Neon Postgresql database  with the generate
 <div class='img-center'>
 
 ![](/img/docs/Screenshot2026-05-02160825.png)
+
+</div>
+
+Review the generated seed script to ensure that it accurately reflects the intended data insertion logic and does not contain any unintended modifications. After reviewing, click **Allow in this session** to run the seed script using MCP.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02161203.png)
+
+</div>
+
+Login to the [Neon dashboard](https://console.neon.tech/), open your project, and navigate to **Tables**. It should now show the new entries in the `links` table that were inserted by the seed script.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02161502.png)
 
 </div>
 
