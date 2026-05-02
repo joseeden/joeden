@@ -17,7 +17,7 @@ sidebar_position: 5
 
 import React from "react";
 
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000)](#) [![NextJS](https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=white)](#) [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwind-css&logoColor=white)](#) [![Typescript](https://img.shields.io/badge/Typescript-3178C6?logo=typescript&logoColor=white)](#) [![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-000?logo=shadcnui&logoColor=fff)](#) [![Clerk](https://img.shields.io/badge/Clerk-825dff?logo=clerk&logoColor=white)](#) [![Neon DB](https://img.shields.io/badge/Neon_DB-327d53?style=flat-square&logo=postgresql&logoColor=white)](https://neon.tech/) ![Drizzle](https://img.shields.io/badge/Drizzle_ORM-%23000000?style=flat&logo=drizzle&logoColor=C5F74F) [![GitHub Copilot](https://img.shields.io/badge/GitHub%20Copilot-FA520F?logo=githubcopilot&logoColor=fff)](#)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000)](#) [![NextJS](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)](#) [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)](#) [![Typescript](https://img.shields.io/badge/Typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](#) [![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-000?style=for-the-badge&logo=shadcnui&logoColor=fff)](#) [![Clerk](https://img.shields.io/badge/Clerk-825dff?style=for-the-badge&logo=clerk&logoColor=white)](#) [![Neon DB](https://img.shields.io/badge/Neon_DB-327d53?style=for-the-badge&logo=postgresql&logoColor=white)](https://neon.tech/) ![Drizzle](https://img.shields.io/badge/Drizzle_ORM-%23000000?style=for-the-badge&logo=drizzle&logoColor=C5F74F) [![GitHub Copilot](https://img.shields.io/badge/GitHub%20Copilot-FA520F?style=for-the-badge&logo=githubcopilot&logoColor=fff)](#)
 
 
 ## Overview 
@@ -255,7 +255,7 @@ After signing up, click **Create database** and choose region closest to you
 This provides an NPX command for connecting to your database using the Neon CLI, along with a connection string that can be used with any Postgres client. 
 
 ```bash
-postgresql://neondb_owner:*************.c-2.ap-southeast-1.aws.neon.tech/neondb?sslmode=req
+postgresql://******************************************************?sslmode=req
 ```
 
 Add it to `.env`:
@@ -264,7 +264,7 @@ Add it to `.env`:
 ```bash
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_********************
 CLERK_SECRET_KEY=************************************************************
-DATABASE_URL=postgresql://neondb_owner:*************.c-2.ap-southeast-1.aws.neon.tech/neondb?sslmode=req
+DATABASE_URL=postgresql://******************************************************?sslmode=req
 ```
 
 Next, we will set up Drizzle ORM to connect to this database. Go to the [Drizzle website](https://orm.drizzle.team/docs/get-started) and then choose the **Neon** option for the setup instructions.
@@ -1169,6 +1169,217 @@ Back in VS Code, switch back to the main branch and pull the latest changes to g
 git checkout main
 git pull
 ```
+
+## Generating DB Table Schema  
+
+Before creating an instruction file for the database layer, it is a good practice to start in Plan mode first because it allows you to:
+
+- Clarify requirements, constraints, and best practices before implementation.
+- Prompts you to consider design decisions and research modern recommendations.
+- Reduces risk of missing important details or having to redo work later.
+- Creates a clear, reviewable artifact for yourself and collaborators.
+
+**Note on slug:** 
+
+In the prompts provided in this section, we use the term "slug" to refer to the unique short code that will be generated for each original URL. 
+
+Example: `https://sho.rt/abc123`, where `abc123` is the slug/shortcode.
+
+There is not strict rule for the type of data that can be used for the slug, as long as it can be stored in the database and can be used to uniquely identify the original URL.
+
+- Use `text` if you don't need a strict length limit.
+- Use `varchar(n)` if you want the database to enforce a maximum length.
+
+For most link shortener use cases, text is preferred unless you have a business rule requiring a maximum slug length.
+
+**Workflow:**
+
+1. **Plan mode:** Open a new conversation in Copilot Chat, set the mode to **Plan**, and provide the prompt:
+
+    ```bash
+    Plan a simple database schema for a URL shortening service. The schema should include a table for storing shortened links, with columns for the following:
+
+    - Clerk User ID 
+    - The original URL
+    - The shortened slug
+    - Timestamps for when the link was created
+    - Timestamps for when the link was last updated
+
+    The slug should be unique to ensure that each shortened link can be correctly resolved to its original URL.
+
+    Additionally:
+
+    - We don't need any optional fields
+    - All dates must store the timezone data 
+    - All deletes must be permanent deletes, no soft deletes needed
+
+    Lastly, in modern PostgreSQL, check if "GENERATED ALWAYS AS IDENTITY" is the recommended way to create auto-incrementing primary keys, or if using a UUID as a primary key is more common/better practice for this use case.
+    ```
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-05-02140559.png)
+
+    </div>
+
+2. **Custom prompt for instructions file:** After reviewing the plan generated by Copilot Chat, open a new conversation and select the `instructions-generator` as the agent for the conversation. 
+
+    Provide the finalized requirements for the database layer:
+
+    ```bash
+    The database layer will use Drizzle ORM with the Neon PostgreSQL. The database schema will be defined in the `./db/schema.ts` file using Drizzle's schema definition syntax.
+
+    The schema must define a single links table representing a shortened link. Each column must be **not null**, meaning there are no optional fields.
+
+    The links table must have the following columns:
+
+    - id - integer, primary key, generated always as identity
+    - userId - the Clerk user ID of the owner
+    - url - the original destination URL
+    - slug - the unique short code used to resolve the link; must have a unique constraint
+    - createdAt - timestamp with timezone, defaults to now
+    - updatedAt - timestamp with timezone, defaults to now, should automatically update to the current time on every update
+
+    Additional requirements:
+
+    - All timestamps must store timezone data
+    - The slug column must have a unique constraint so no two links share the same short code
+    - There are no soft deletes, do not add a deletedAt column or any deletion flag
+    
+    
+    Make sure to create a new branch for this task, and perform the necessary tests to ensure the schema is working correctly. After the implementation is complete, update the `AGENTS.md` file to reference the new instructions file for the database layer.
+    ```
+
+    <div class='img-center'>
+    
+    ![](/img/docs/Screenshot2026-05-02142531.png)
+    
+    </div>
+    
+**Note on creating a branch:**
+
+The agent might not be able to create a new branch for the task. In that case, you can simply create a new branch manually:
+
+```bash
+git checkout -b feat/database-schema
+``` 
+
+In a typical enterprise setup, the schema changes are first tested on a staging PostgreSQL database before being applied to production. This is to ensure that the schema works correctly and does not introduce any issues before it is applied to the production database.
+
+In our case, since we are using a single Neon PostgreSQL for this project, we can simply apply the changes to the same database. 
+
+:::info 
+
+In a real-world scenario, it is recommended to have separate databases for staging and production environments.
+
+::: 
+
+Before applying the schema changes, make sure you have the `.env` file set up with the correct database URL for your Neon PostgreSQL database.
+
+```bash
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_******************
+CLERK_SECRET_KEY=sk_test_************************************
+DATABASE_URL=postgresql://******************************************************?sslmode=req
+```
+
+To push the schema to the Neon PostgreSQL database, use Drizzle's CLI tool to create a migration file:
+
+```bash
+npx drizzle-kit generate
+```
+
+Output:
+
+```bash
+[✓] Your SQL migration file ➜ drizzle/0000_big_midnight.sql 🚀
+```
+
+As best practice, review the generated SQL migration file to ensure that it accurately reflects the intended schema changes and does not contain any unintended modifications.
+
+After reviewing the migration file, you can apply the migration to the database using the following command:
+
+```bash
+npx drizzle-kit push
+```
+
+Output:
+
+```bash
+[✓] Pulling schema from database...
+[✓] Changes applied
+```
+
+Login to the [Neon dashboard](https://console.neon.tech/), open your project, and navigate to **Tables**. It should show the new `links` table , along with the columns defined in the schema.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02145225.png)
+
+</div>
+
+Since everything looks good, we can go back to VS Code and commit the changes for the new database schema. 
+
+:::info 
+
+The files in the drizzle folder (such as migration SQL files) are safe to commit. They only contain schema definitions and migration history, no sensitive data, secrets, or credentials.
+
+:::
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02150855.png)
+
+</div>
+
+Since we only created the new branch locally, we need to publish the branch to the remote repository before we can create a pull request.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02151100.png)
+
+</div>
+
+You'll get a prompt at the bottom right in VS Code asking if you want to create a new pull request for the branch you just published. Click on **Create Pull Request**.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02151232.png)
+
+</div>
+
+**Note:** If you don't see the prompt to create a pull request, you can manually create a PR by going to your Github repository, switching to the new branch, and clicking on the **New Pull Request** button.
+
+This will open the Github Pull Request extension in VS Code, where you can see all the files changed and the commits for the new branch. Review the changes to make sure everything looks good.
+
+After providing the necessary information, click on **Create** to create the pull request.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02151723.png)
+
+</div>
+
+The good thing with having this extension in VS Code is that it will also open the pull request details page in VS Code, so you can review the changes and merge the PR without having to go to the Github website.
+
+Click **Merge Pull Request**.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02152244.png)
+
+</div>
+
+Provide a commit message for the merge commit and click **Create Merge Commit**.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-02152331.png)
+
+</div>
+
+
+
+
 
 
 ## Troubleshooting
