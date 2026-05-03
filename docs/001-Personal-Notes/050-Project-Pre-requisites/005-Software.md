@@ -79,6 +79,59 @@ To install Python 3.12:
     sudo apt install -y python3.12-venv 
     ```
 
+## UV 
+
+Reference: [UV - An extremely fast Python package and project manager, written in Rust.](https://docs.astral.sh/uv/getting-started/installation/#pypi)
+
+For WSL:
+
+```bash
+## Install
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+## Autocompletion 
+echo 'eval "$(uv generate-shell-completion bash)"' >> ~/.bashrc
+
+## Verify:
+uv --version
+```
+
+To ensure you're on the latest version of UV:
+
+```bash
+uv self update
+```
+
+### Initialize a project 
+
+To initialize a project, run the command below. This will create a dependency file (e.g. `pyproject.toml`) in the current directory.
+
+```bash
+uv init 
+uv sync
+```
+
+### Installing dependencies 
+
+To make sure that your environment match your project’s dependency file exactly, run the command below. This will install any missing dependencies and remove any extraneous dependencies.
+
+Note that you need to run this inside a project. It will look for the dependency file (e.g. `pyproject.toml`) in the current directory and install the dependencies specified in that file.
+
+```bash
+uv sync 
+```
+
+If it doesn’t find a dependency file , it has nothing to sync, so it will return an error:
+
+```bash
+error: No `pyproject.toml` found in current directory or any parent directory
+```
+
+If you’re not working on a structured project, don’t use sync. Instead, use:
+
+```bash
+uv pip install requests
+```
 
 
 ## NodeJS
