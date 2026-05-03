@@ -52,3 +52,6 @@
 [submodule "submodules/project-ml-model-training-with-gha"]
 	path = submodules/project-ml-model-training-with-gha
 	url = git@github.com:joseeden/ML-Model-Training-with-Github-Actions.git
+[submodule "submodules/project-link-shortener"]
+	path = submodules/project-link-shortener
+	url = git@github.com:joseeden/linkshortener-using-nextjs.git
