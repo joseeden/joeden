@@ -8,11 +8,11 @@ const baseUrl = "/joeden";
 
 const projects: ProjectData[] = [
   {
-    title: "Link Shortener Site",
+    title: "Link Shortener using NextJS",
     description: "Full-stack link shortener application built with Github Copilot",
     url: `${baseUrl}/docs/Software-Engineering/Web-Development/Projects/Link-Shortener-NextJS/`, 
     image: require(`/img/docs/Screenshot2026-05-03131335.png`),
-    tags: ["Web Development", "Javascript", "NextJS"],
+    tags: ["Web Development", "Javascript"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },  
   {
