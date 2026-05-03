@@ -1971,9 +1971,111 @@ The link is deleted successfully:
 
 </div>
 
+#### Redirect Links 
 
+The final functionality that we will implement is the redirect when accessing a shortened URL. The API route will look up the slug in the database and perform a redirect to the original URL if it finds a match.
 
+Open a new conversation in Copilot chat, set mode to **Agent**, and provide the prompt below:
 
+> Implement the redirect function for each link item so that visiting `/{slug}` (e.g., `/github`) redirects to the original URL, without affecting `/dashboard` or other app routes.
+>
+> For Database/schema changes:
+>
+> - Do not use `drizzle-kit` CLI commands to generate or apply migrations. 
+> - Use **Neon MCP server** tools to apply schema changes directly to the database. 
+> - Still update schema.ts to keep the TypeScript types in sync with the database.
+>
+> Routing and API:
+>
+> - Implement an API route handler (e.g., `/api/redirect/[slug]`) that performs the redirect logic.
+> - Configure `next.config.ts` so that requests to `/{slug}` are internally rewritten to `/api/redirect/[slug]`.
+> - Ensure the `/{slug}` route only matches valid slug patterns.
+> - The rewrite should only apply to valid slugs to avoid conflicts with other routes.
+> - The rewrite must not affect `/dashboard`, `/`, or any other defined pages/routes.
+>
+> Whenever the route handler is hit:
+> 
+> - Only accept GET requests; return a `405 Method Not Allowed` for other methods.
+> - Extract the slug from the request parameters.
+> - Validate and sanitize the slug.
+> - Query the database for a link with the matching slug.
+> 
+> If a link is found:
+> 
+> - Atomically increment the click count for that link in the database.
+> - Redirect the user to the original URL using a 301 (permanent) or 302 (temporary) HTTP status code. 
+> - Default to 302 unless the link is marked as permanent.
+> - The redirect should be performed using an HTTP redirect response.
+> 
+> If no link is found:
+> 
+> - Return a 404 response with an HTML page displaying the message “Link not found”
+> - The text should be in large bold text, centered on the page, and styled in a user-friendly manner.
+> - It should also include a link back to the homepage.
+> 
+> Handle any potential errors gracefully, log them, and return appropriate error responses.
+
+Behind the scenes, the agent will handle click tracking and manage permanent or temporary redirect flags. Implementing these features may require schema changes, which should be applied using the Neon MCP Server.
+
+Note that the agent may request your permission to execute SQL commands directly on the database.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-03085158.png)
+
+</div>
+
+Once its done, it will show the updated/created files:
+
+```bash
+app/api/redirect/
+└── [slug]
+    └── route.ts
+
+data/
+└── links.ts
+
+db/
+├── schema.ts
+
+next.config.ts
+```
+
+**Note:** Make sure to review the code changes done by the agent. DO NOT blindly accept all changes without review, as the agent can make mistakes or introduce bugs.
+
+After reviewing the changes, rerun the development server and verify in the browser by going to one of the shortened URLs:
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-03092000.png)
+
+</div>
+
+For example:
+
+```bash 
+http://localhost:3000/nextjs-docs
+```
+
+Redirects to:
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-03092100.png)
+
+</div>
+
+If we try to access a non-existent slug, it returns the "Link not found" message along with a link back to the homepage.
+
+```bash
+http://localhost:3000/naxtjs-docs
+```
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-03092308.png)
+
+</div>
 
 
 ## Troubleshooting
