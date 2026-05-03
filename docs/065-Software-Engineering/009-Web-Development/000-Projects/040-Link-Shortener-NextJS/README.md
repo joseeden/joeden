@@ -2077,6 +2077,206 @@ http://localhost:3000/naxtjs-docs
 
 </div>
 
+## Ready to Go Live 
+
+But first, we need to ensure that the application is secured and safe to be used in production.
+
+#### Email Verification 
+
+In development, Clerk allows us to use test email addresses that don't require actual email verification. However, in production, we need to set up an email provider to send real verification emails to users.
+
+To set up email verification in production:
+
+1. Log in to [Clerk dashboard](https://dashboard.clerk.com/apps) and select your application.
+2. Go to **Configure** → **User & Authentication** → **Email**.
+3. Enable **Verify at sign-up** and choose **Email verification code.**
+4. Enable **Restrict changes**.
+5. Under **Sign-in with email**, enable **Email verification code.**
+6. Click **Save.**
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-05-03095412.png)
+
+    </div>
+
+7. Go to the **Password** tab, enable **Client Trust**, then click **Save.**
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-05-03095618.png)
+
+    </div>
+
+8. Still in **Password**, click **Update password requirements.**
+
+    Enable **Enforce minimum password length**, then click **Update** → **Save.**
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-05-03095852.png)
+
+    </div>
+
+To verify, navigate to the app in the browser and sign up. 
+
+1. It will open a popup window asking you to verify your email address. 
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-05-03100633.png)
+
+    </div>
+
+
+2. Check your email inbox for the verification code:
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-05-03100747.png)
+
+    </div>
+
+
+3. Go back to the popup window, enter the verification code, and click **Verify**.
+
+    After successfully signing up, you will be redirected to your dashboard.
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-05-03100904.png)
+
+    </div>
+
+
+#### Exclude `.env` from Git Tracking
+
+Currently, the project is set up to use environment variables from a `.env` file, which works well for local development. However, when deploying to Vercel, we need to set these environment variables in the Vercel dashboard to ensure that our application can access them in the production environment.
+
+1. Add `.env` to `.gitignore` if it’s not already there.
+
+    ```bash
+    ## .gitignore
+    .env* 
+    ```
+
+2. Create a `.env.example` file for documentation.
+
+    Commit and push to Github. 
+
+    ```bash
+    ## .env.example 
+
+    NEXT_PUBLIC_CLERK_SIGN_IN_FORCE_REDIRECT_URL=/dashboard
+    NEXT_PUBLIC_CLERK_SIGN_UP_FORCE_REDIRECT_URL=/dashboard
+
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=ENTER_PUBLISHABLE_KEY_HERE
+    CLERK_SECRET_KEY=ENTER_SECRET_KEY
+    DATABASE_URL=ENTER_DATABASE_URL_HERE
+    SEED_USER_ID=ENTER_SEED_USER_ID_HERE
+    ```
+
+#### Hosting the Application 
+
+There are many free hosting options that support Next.js applications, such as:
+
+- Vercel
+- Netlify
+- AWS
+- Render
+- Railway
+
+For this project, I've decided to use Vercel because of its seamless integration with Next.js, easy deployment process, and built-in support for environment variables and serverless functions.
+
+1. Sign-up for a free account here: [Vercel](https://vercel.com/signup)
+2. Click **New Project** and import your GitHub repository.
+3. If the repositories doesn't appear, adjust the permissions in GitHub.
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-05-03102500.png)
+
+    </div>
+
+    When you click **Adjust permissions**, it will redirect you to your Github account.
+
+    Choose **All repositories** for repository access and click **Save**.
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-05-03103051.png)
+
+    </div>
+
+4. Go back to Vercel and click **Refresh**. Your repository should now appear in the list. Click **Import** next to your repository.
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-05-03103241.png)
+
+    </div>
+
+5. In the project settings, it will automatically set the branch to `main` and use Next.js as the preset. 
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-05-03103438.png)
+
+    </div>
+
+6. Open **Environment Variables** and add the necessary environment variables from your `.env` file. Make sure to set the correct values for each variable.
+
+    **UPDATE:** You can also choose **Import .env**, select the `.env` file, and it will auto-populate the environment variables for you.
+
+    Once all the environment variables are set, click **Deploy**.
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-05-03103854.png)
+
+    </div>
+
+7. After the deployment is complete, click **Visit** to see your live application.
+
+    Application is now live.
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-05-03104520.png)
+
+    </div>
+
+#### Testing the Application 
+
+To test the application in production, sign up for a new account using the live URL and verify that all core features are functioning as expected:
+
+- Email verification
+- Creating links
+- Editing links
+- Deleting links
+- Redirecting shortened URLs
+
+**Testing with dummy data:** Seeding is a manual process that can be executed locally or through a one-time script, rather than being included in the production build. To seed the production database:
+
+- Log in to Clerk and retrieve the user ID associated with your email address
+- Update the SEED_USER_ID value in your local .env file
+- Run the seed script locally to populate the production database
+
+    ```bash
+    npx tsx db/seed.ts  
+    ```
+
+After running the script:
+
+- Check the Neon database to confirm that the seed data was successfully inserted
+- Verify the live application to ensure that the seeded links appear correctly in the dashboard
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-03125404.png)
+
+</div>
+
 
 ## Troubleshooting
 
