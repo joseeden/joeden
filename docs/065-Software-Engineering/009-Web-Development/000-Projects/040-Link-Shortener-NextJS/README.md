@@ -22,6 +22,9 @@ import React from "react";
 
 This project is a full-stack Link Shortener application designed to demonstrate how a modern web app is built using multiple architectural layers, including frontend, backend, authentication, and database integration.
 
+- [Live Demo](https://linkshortener-using-nextjs-a91gjaca6-jose-edens-projects.vercel.app/) 
+- [Github](https://github.com/joseeden/linkshortener-using-nextjs)
+
 The goal is not just to build a simple URL shortener, but to simulate a real-world system where:
 
 - Users authenticate securely
@@ -34,6 +37,14 @@ The project also demonstrates advanced workflows using GitHub Copilot, including
 - MCP (Model Context Protocol) for database interaction
 - Custom agents for code and documentation generation
 - Structured multi-layer architecture
+
+Screenshot:
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-03131335.png)
+
+</div>
 
 ## Architecture and Stack
 
