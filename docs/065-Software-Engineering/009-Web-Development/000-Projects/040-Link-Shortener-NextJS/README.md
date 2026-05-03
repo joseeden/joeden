@@ -1727,15 +1727,253 @@ This step involves implementing the create, update, and delete operations for th
 
 #### Create Shortened Links 
 
-Open a new conversation in Copilo chat, set mode to **Agent**, and provide the prompt below:
+Open a new conversation in Copilot chat, set mode to **Agent**, and provide the prompt below:
 
-> Implement a "Create Link" feature accessible from the dashboard page. Add a button that opens a modal dialog containing a form to input the destination URL (and optional custom slug). On successful submission, the modal should close, and the new link should appear at the top of the dashboard list with a success notification. The list of links ("rds") should always be sorted from newest to oldest.
+> Implement a "Create Link" feature accessible from the dashboard page. Add a button that opens a modal dialog containing a form to input the destination URL (required) and an optional custom slug (which can be left blank). 
+> 
+> If the custom slug is blank, the backend should generate a random slug automatically. 
+> 
+> On successful submission, the modal should close, and the new link should appear at the top of the dashboard list with a success notification. The list of links should always be sorted from newest to oldest.
 
-<div class='img-center'>
+<!-- <div class='img-center'>
 
 ![](/img/docs/Screenshot2026-05-03061745.png)
 
+</div> -->
+
+The agent may ask you to allow it to install tools such as: 
+
+- zod 
+- shadcn components (e.g., Dialog, Sonner, Label, Button, Input)
+
+After these are installed, it will proceed to implement the "Create Link" feature, which includes:
+
+- Adding a "Create Link" button on the dashboard page
+- Using a modal dialog that contains a form 
+- The form is used to input the destination URL and optional custom slug
+
+Once its done, you should see the following files created/updated:
+
+```bash
+app
+├── layout.tsx
+
+app/dashboard/
+├── actions.ts
+└── page.tsx
+
+components
+├── CreateLinkModal.tsx
+
+data/
+└── links.ts
+```
+
+**Note:** Make sure to review the code changes done by the agent. DO NOT blindly accept all changes without review, as the agent can make mistakes or introduce bugs.
+
+After reviewing the code changes, run the development server:
+
+```bash
+npm run dev
+```
+
+In the web browser, log in and confirm that the "Create Link" button works as expected. 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-03063617.png)
+
 </div>
+
+When you click the button, it should open a modal dialog where you can input the destination URL and optional custom slug. 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-03064437.png)
+
+</div>
+
+Note that the destination URL follows a format and has to start with `http` or `https`. If you try to submit a URL that doesn't follow the format, the form will show a validation error message.
+
+Using `http` (valid):
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-03064650.png)
+
+</div>
+
+Using `https` (valid):
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-03064731.png)
+
+</div>
+
+Including `www` (valid):
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-03064832.png)
+
+</div>
+
+Without `http/https` (invalid):
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-03064937.png)
+
+</div>
+
+With custom slug (optional):
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-03065037.png)
+
+</div>
+
+Upon successful submission, the modal should close, and the new link/s should appear at the top of the dashboard list.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-03065200.png)
+
+</div>
+
+**UPDATE:** I've updated the card colors and modal colors in both light mode and dark mode to improve the visual design and ensure better contrast and readability.
+
+Prompt: 
+
+> Update the card and modal background colors for both light and dark mode. 
+> 
+> - In light mode, set the card and modal backgrounds to "Bone White" (#F9F6EE). 
+> - In dark mode, set the card and modal backgrounds to "Charcoal Black" (#36454F). 
+> 
+> Apply these colors via the CSS variables `--card` and `--popover` in the Tailwind theme, so all cards and modal dialogs use these backgrounds in both themes.
+
+Light mode:
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-03072113.png)
+
+</div>
+
+Dark mode: 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-03072509.png)
+
+</div>
+
+**Additional:** After signing up for a new account, the user is taken to their dashboard. If there are no links yet, a message saying "You have no shortened links yet" appears below the "Your Shortened Links" header.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-03072850.png)
+
+</div>
+
+When **Create Link** is clicked:
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-03072623.png)
+
+</div>
+
+#### Edit and Delete Links 
+
+Open a new conversation in Copilot chat, set mode to **Agent**, and provide the prompt below:
+
+> Implement "Edit" and "Delete" features for each link item on the dashboard page:
+> 
+> Add an "Edit" button for each link. 
+> 
+> - When clicked, open a modal dialog (centered, blocking background).
+> - Allow the user to update editable fields (e.g., destination URL, title). 
+> - The modal should have "Cancel" and "Save" buttons. 
+> - On cancel, close the modal with no changes.
+> - On save, update the link and refresh the dashboard list. 
+> - Show a success or error toast as appropriate.
+> 
+> Add a "Delete" button for each link. 
+> 
+> - When clicked, open a confirmation dialog asking the user to confirm deletion. 
+> - If confirmed, delete the link, refresh the dashboard list, and show a toast notification. 
+> - If canceled, close the dialog with no action.
+> 
+> Ensure proper loading states and error handling for both actions.
+
+The agent may prompt you to allow it to install dependencies, like shadcn tools (Alert-dialog, etc.). Once its done, the following files will be created/updated:
+
+```bash
+app/dashboard/
+├── actions.ts
+└── page.tsx
+
+components
+├── DeleteLinkDialog.tsx
+├── EditLinkModal.tsx
+
+data/
+└── links.ts
+```
+
+**Note:** Make sure to review the code changes made by the agent. DO NOT blindly merge the PR without reviewing the changes, as the agent may make mistakes or introduce bugs.
+After reviewing the code changes, run the development server:
+
+```bash
+npm run dev
+```
+
+Verify the updates in your web browser. After signing in, you should see all link items, each with edit and delete buttons.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-03075448.png)
+
+</div>
+
+Clicking the **Edit** button opens a modal dialog:
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-03075724.png)
+
+</div>
+
+The link is updated successfully:
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-03075814.png)
+
+</div>
+
+Deleting the same link item:
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-03075854.png)
+
+</div>
+
+The link is deleted successfully:
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-03075943.png)
+
+</div>
+
+
+
+
 
 
 ## Troubleshooting
