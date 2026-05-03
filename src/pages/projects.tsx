@@ -8,6 +8,14 @@ const baseUrl = "/joeden";
 
 const projects: ProjectData[] = [
   {
+    title: "Link Shortener Site",
+    description: "Deployed using NextJS, Neon Postgres, Clerk, MCP, and Github Copilot.",
+    url: `${baseUrl}/docs/Software-Engineering/Web-Development/Projects/Link-Shortener-NextJS/`, 
+    image: require(`/img/docs/Screenshot2026-05-03131335.png`),
+    tags: ["Web Development", "Javascript", "Artificial Intelligence"],
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
+  },  
+  {
     title: "Swiftlink",
     description: "A responsive landing page for a fictional logistics company",
     url: `${baseUrl}/docs/Software-Engineering/Web-Development/Projects/Swiftlink/`, 
