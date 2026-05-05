@@ -118,6 +118,21 @@ Next, modify the docusaurus.config.js.
   onBrokenMarkdownLinks: 'warn', 
 ```
 
+**UPDATE:** The `siteConfig.onBrokenMarkdownLinks` config option is deprecated and will be removed in Docusaurus v4.
+It is recommended to migrate and move this option to `siteConfig.markdown.hooks.onBrokenMarkdownLinks` instead.
+
+Like this:
+
+```js
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
+```
+
+However, the installed version of Docusaurus does NOT support markdown.hooks yet in its TypeScript types, and I don't want to mess with the types, so the workaround I did was to set the `onBrokenMarkdownLinks` to "throw" and ignore the deprecation warning for now.
+
 Create the workflow file. I'm using npm here, so you're configuration may change if you're using yarn.
 
 | If you're using npm             | If you're using yarn  |
