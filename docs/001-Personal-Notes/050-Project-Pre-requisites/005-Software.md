@@ -135,6 +135,43 @@ If you’re not working on a structured project, don’t use sync. Instead, use:
 uv pip install requests
 ```
 
+Note: If you are opening a `.ipynb` file in VS Code, and you're unable to detect the `.venv` virtual environment that you created for your project, you can try the following steps:
+
+1. Check if `ipykernel` is installed in your virtual environment. 
+
+    ```bash
+    pip list | grep ipykernel
+    ```
+
+    If it’s not installed, you can install it using:
+
+    ```bash
+    pip install ipykernel
+    ```
+
+    Another way to check:
+
+    ```bash
+    .venv/bin/python --version
+    .venv/bin/python -m pip show ipykernel
+    ```
+
+    If `ipykernel` says “Package(s) not found”, that’s almost certainly the reason.
+
+2. Now try to activate the virtual environment:
+
+    ```bash
+    source .venv/bin/activate
+    python -m pip install ipykernel. ## if not yet installed inside the .venv
+    ```
+
+3. Finally, register that environment as a kernel in Jupyter:
+
+    ```bash
+    python -m ipykernel install --user --name llm_engineering --display-name "Python (.venv)" 
+    ```
+
+    Note: You can replace `llm_engineering` with the name of your project or virtual environment.
 
 ## NodeJS
 
