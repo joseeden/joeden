@@ -121,6 +121,8 @@ Note that you need to run this inside a project. It will look for the dependency
 uv sync 
 ```
 
+This will create a virtual environment for your project and install the dependencies specified in the dependency file.
+
 If it doesn’t find a dependency file , it has nothing to sync, so it will return an error:
 
 ```bash
