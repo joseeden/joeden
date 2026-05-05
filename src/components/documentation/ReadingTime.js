@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import readingTime from 'reading-time/lib/reading-time';
+// import readingTime from 'reading-time/lib/reading-time';
+import readingTime from "reading-time";
 
 function ReadingTime({ lastUpdated }) {
   const [readingTimeInWords, setReadingTimeInWords] = useState('');
