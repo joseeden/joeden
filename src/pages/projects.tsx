@@ -102,7 +102,7 @@ const projects: ProjectData[] = [
     image: require(`/img/docs/Screenshot2026-05-09203336.png`),
     tags: ["Data Analysis", "Python"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
-  },  
+  },
   {
     title: "A Network Analysis of Game of Thrones",
     description: "Analyze co-occurrence networks of characters in Game of Thrones",
