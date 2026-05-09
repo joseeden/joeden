@@ -60,7 +60,7 @@ const projects: ProjectData[] = [
     description: "Collection of scripts for Google IT Automation with Python Course.",
     url: `${baseUrl}/docs/Google-IT-Automation-with-Python/Capstone-Project/`, 
     image: require(`/img/docs/coursera-google-it-automation-with-python.png`),
-    tags: ["Python", "Automation", "IT"],
+    tags: ["DevOps", "Python", "Automation"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },  
   {
