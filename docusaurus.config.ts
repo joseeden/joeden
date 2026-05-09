@@ -70,26 +70,27 @@ const config: Config = {
   presets: [
     [
       "@docusaurus/preset-classic",
-      {
-        // debug: true,
-        // docs: false,
-        docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
-          showLastUpdateTime: true,
-        },
-        blog: {
-          path: 'writings',
-          routeBasePath: 'writings',
-          showReadingTime: true,
-          onUntruncatedBlogPosts: "ignore",    /* 'ignore' | 'log' | 'warn' | 'throw' */
-        },
-        theme: {
-          customCss: [
-            require.resolve("./src/css/custom.scss"),
-            // Add new css files here as needed
-          ],
-        },
-      } satisfies Preset.Options,
+        {
+          docs: {
+            sidebarPath: require.resolve("./sidebars.js"),
+            showLastUpdateTime: true,
+            exclude: ['**/library/**'],
+          },
+          blog: {
+            path: 'writings',
+            routeBasePath: 'writings',
+            showReadingTime: true,
+            onUntruncatedBlogPosts: "ignore",    /* 'ignore' | 'log' | 'warn' | 'throw' */
+          },
+          theme: {
+            customCss: [
+              require.resolve("./src/css/custom.scss"),
+              // Add new css files here as needed
+            ],
+          },
+          // debug: true,
+          // docs: false,
+        } satisfies Preset.Options,
     ],
   ],
 
