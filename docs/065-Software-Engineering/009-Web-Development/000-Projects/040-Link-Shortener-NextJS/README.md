@@ -1449,7 +1449,7 @@ Now that the MCP server is authenticated and can access our Neon project, we can
 
 But first, we need to login to our [Clerk dashboard](https://dashboard.clerk.com/apps) to get the user IDs that we will use for the `userId` column in our `links` table.
 
-> Recall that we created a test account in the [Adding a Dashboard Page](#adding-a-dashboard-page) section.
+> Recall that we created a test account in the [Adding a Dashboard Page](#test-account-and-dashboard-page) section.
 
 Go to **Users** tab and click on the test user. Copy the user ID for that test user, as we will use it in our seed data.
 
@@ -2608,7 +2608,7 @@ Closed the terminal to kill all the processes related to the old dev server, the
 
 This solved the issue BUT now it caused the fonts to revert back to Times New Roman. See [Hydration Mismatch and FOUT](#hydration-mismatch-and-fout) section below for the fix.
 
-### Hydration Mismatch and FOUT (Flash of Unstyled Text)
+### Hydration Mismatch and FOUT
 
 When a hydration mismatch occurs, React discards the server-rendered HTML and re-renders the app on the client. This can cause a **flash of unstyled text (FOUT)** if the initial HTML does not have the correct font classes or styles, so the browser uses the default font (like Times New Roman) until React finishes rendering and applies the correct classes.
 
