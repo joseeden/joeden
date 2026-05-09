@@ -88,6 +88,14 @@ const projects: ProjectData[] = [
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },  
   {
+    title: "Analyze Runkeeper Running Data",
+    description: "Analyze running data from the Runkeeper app.",
+    url: `${baseUrl}/docs/065-Software-Engineering/021-Jupyter-Notebooks/024-Analyze-Runkeeper-Fitness-Data/`, 
+    image: require(`/img/docs/Screenshot2026-05-09203336.png`),
+    tags: ["Data Analysis", "Python"],
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
+  },  
+  {
     title: "A Network Analysis of Game of Thrones",
     description: "Analyze co-occurrence networks of characters in Game of Thrones",
     url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/065-Software-Engineering/021-Jupyter-Notebooks/020-A-Network-Analysis-of-Game-of-Thrones/network-analysis-on-game-of-thrones.ipynb",
