@@ -211,7 +211,88 @@ In Github, check the Actions tab. We should see the workflow created.
 
 </div>
 
+## Checking the Version 
 
+To check the version of Docusaurus, you can use one of several methods:
+
+1. **Using the Command Line (CLI)**
+
+    If you are within your project directory, run the following command to see the version of the Docusaurus CLI:
+
+    ```bash
+    npx docusaurus --version
+    ```
+
+    Sample output (if there's an update available):
+
+    ```bash
+    ------------------------------------------------------------------------------------------------------------------------------------------------------ 
+                                                                                                                                                          
+                                                              Update available 3.7.0 → 3.10.0                                                             
+                                                                                                                                                          
+                                      To upgrade Docusaurus packages with the latest version, run the following command:                                   
+        `npm i @docusaurus/core@latest @docusaurus/plugin-content-docs@latest @docusaurus/plugin-ideal-image@latest @docusaurus/preset-classic@latest      
+                          @docusaurus/theme-search-algolia@latest @docusaurus/module-type-aliases@latest @docusaurus/types@latest`                         
+                                                                                                                                                          
+    ------------------------------------------------------------------------------------------------------------------------------------------------------ 
+
+    3.7.0
+    ```
+
+2. **Checking the package.json File**
+
+    This is the most reliable way to see which version is defined as a dependency for your project.
+
+    Open the `package.json` file in your project's root directory, then look for `@docusaurus/core` under the `dependencies` section.
+
+    ```json
+    {
+      "name": "joeden",
+      ....
+      "scripts": {
+        ....
+      },
+    "dependencies": {
+      "@docusaurus/core": "3.10.1",
+      ....
+    }
+    ```
+
+3. **Checking for Updates (Outdated Packages)**
+
+    To see both your current version and the latest available version, you can use your package manager's "outdated" command:
+
+    Using npm: 
+
+    ```bash
+    npm outdated @docusaurus/core
+    ```
+
+    Using Yarn: 
+
+    ```bash
+    yarn outdated @docusaurus/core
+    ```
+
+4. **Checking a Live Website**
+
+    If you are visiting a site and want to know what version it was built with, you can often find it in the HTML source code:
+
+    - **Console**: Some sites may log the version to the browser's developer console (F12) upon loading.
+
+    - **Meta Tag**: Right-click the page, select "View Page Source," and look for a `<meta name="generator" content="Docusaurus vX.X.X">` tag in the `<head>` section.
+
+        <div class='img-center'>
+
+        ![](/img/docs/Screenshot2026-05-09095427.png)
+
+        </div>
+
+5. **Official Version List**
+
+    To see what the current stable version of Docusaurus is compared to yours, you can visit the [Official Docusaurus Versions Page](https://docusaurus.io/versions).
+
+    As of May 2026, the latest stable version is 3.10.1. 
 
 
 
