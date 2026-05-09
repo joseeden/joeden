@@ -458,6 +458,8 @@ There are three steps to delete a submodule inside a parent repo:
     git rm --cached /path/to/submodule-name 
     ```
 
+    If you want to delete multiple submodules, you can manually delet the submodule directories. 
+
 2. If you want to keep the directory, move it to a different directory outside of the parent repo and delete `.git` folder inside the submodule directory.
 
     ```bash
@@ -473,15 +475,11 @@ There are three steps to delete a submodule inside a parent repo:
     rm -rf /path/to/submodule-name
     ```
 
-3. There may still be remnants of the submodule so go back to the parent repo (root repo) and find any `.gitmodule` file. 
+3. Before making any deletes, check first if there are other submodules the `modules` directory:
 
     ```bash
-    cd parent-repo
-    ```
+    cd <parent-repo>
 
-4. Before making any deletes, check first if there are other submodules the `modules` directory:
-
-    ```bash
     ls -la .git/modules/submodules/
     ```
 
@@ -511,7 +509,7 @@ There are three steps to delete a submodule inside a parent repo:
     rm -rf <submodule-name>
     ```
 
-5. If you have a `.gitmodules` file at the root of the parent directory, check first if you have other submodules inside it.
+4. If you have a `.gitmodules` file at the root of the parent directory, check first if you have other submodules inside it.
 
     If there are other submodules inside the `.gitmodules` file, edit the file using `vi` or `nano` and delete the specific submodule/s.
 
@@ -555,8 +553,30 @@ There are three steps to delete a submodule inside a parent repo:
     rm -rf .gitmodule 
     ```
     
-6. To verify, run the command below:
+5. To verify, run the command below:
 
     ```bash
     git submodule
     ```
+
+If you’ve already deleted the submodule folders from your disk but they are still showing up in your Git index, you can clean them all up at once using a few different methods.
+
+1. **Recursive removal:** If you deleted a lot of submodules and they were all previously inside a specific directory (e.g., a `libs` folder), you can use a glob pattern:
+
+    ```bash
+    git rm -r --cached libs/ 
+    ```
+
+    Then try re-running:
+
+    ```bash
+    git submodule 
+    ```
+
+2. You can force Git to "notice" that they are gone and stage those removals for you:
+
+    ```bash
+    git add -u 
+    ```
+
+    The `-u` (update) flag looks at files already tracked by Git. If they are missing from your disk, it stages them for removal. This is the fastest way if you've already done the "manual" deleting.
