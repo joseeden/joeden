@@ -28,6 +28,11 @@ Docusaurus:
   permalink: '/Docusaurus'
   description: 'Docs related to Docusaurus'  
   
+Workstation:
+  label: 'Workstation'
+  permalink: '/Workstation'
+  description: 'Docs related to Workstation'  
+  
 
  
     
