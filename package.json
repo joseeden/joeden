@@ -49,6 +49,7 @@
     "eslint-plugin-prettier": "^5.1.3",
     "jasmine": "^6.2.0",
     "jest": "^30.3.0",
+    "raw-loader": "^4.0.2",
     "swc-loader": "^0.2.0"
   },
   "browserslist": {
