@@ -41,17 +41,31 @@ const config: Config = {
           modalTitle: 'Share your thoughts'
       }
     ],
+    function streamPolyfill() {
+      return {
+        name: "stream-polyfill",
+        configureWebpack() {
+          return {
+            resolve: {
+              fallback: {
+                stream: require.resolve("stream-browserify"),
+              },
+            },
+          };
+        },
+      };
+    },    
   ],
 
-  customFields: {
-    webpack: {
-      resolve: {
-        fallback: {
-          "process": require.resolve("process/browser")
-        }
-      }
-    }
-  },
+  // customFields: {
+  //   webpack: {
+  //     resolve: {
+  //       fallback: {
+  //         "process": require.resolve("process/browser")
+  //       }
+  //     }
+  //   }
+  // },
 
   presets: [
     [

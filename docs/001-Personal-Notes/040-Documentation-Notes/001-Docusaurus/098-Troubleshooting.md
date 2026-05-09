@@ -6,6 +6,7 @@ tags:
 - Docusaurus
 # last_update:
 #   date: 7/14/2024
+
 ---
 
 
@@ -171,3 +172,129 @@ You can also write the image in pure Markdown (but you'd lose the `img-center` s
 ```
 
 Or wrap it in a Markdown-style center (via a plugin or CSS targeting `img[src*="Screenshot"]`).
+
+## Build warning: `onBrokenMarkdownLinks` deprecation
+
+**Issue**: During `npm run build` with Docusaurus, the build shows:
+
+```text
+The `siteConfig.onBrokenMarkdownLinks` config option is deprecated and will be removed in Docusaurus v4.
+Please migrate and move this option to `siteConfig.markdown.hooks.onBrokenMarkdownLinks` instead.
+```
+
+**Cause**: The current project version still supports the top-level `onBrokenMarkdownLinks`, but newer Docusaurus versions have marked it as deprecated.
+
+- Current builds continue to work.
+- Future upgrade to Docusaurus v4 may require config changes.
+
+Current config (supported now):
+
+```ts 
+onBrokenMarkdownLinks: "throw",
+```
+
+**Solution:** For the current installed Docusaurus version, keep the existing setting:
+
+```ts 
+onBrokenMarkdownLinks: "throw",
+```
+
+Do **not** move it yet if TypeScript shows:
+
+```text
+'hooks' does not exist in type 'DeepPartial<MarkdownConfig>'
+```
+
+That means the installed version does not yet support the newer schema.
+
+
+
+## Build failure: `reading-time/lib/reading-time`
+
+**Issue**: GitHub Actions build failed with:
+
+```text
+Module not found: Error: Can't resolve 'reading-time/lib/reading-time'
+```
+
+**Cause**: A project component imported an outdated internal path from `reading-time`.
+
+```ts 
+import readingTime from "reading-time/lib/reading-time";
+```
+
+**Fix**: Use the package entrypoint instead:
+
+```ts 
+import readingTime from "reading-time";
+```
+
+**Validation**: Make sure the dependency exists:
+
+```bash
+npm install reading-time
+```
+
+Notes:
+
+- This issue is related to [missing `stream` module.](#docusaurus-client-build-failure-missing-stream-module)
+- After fixing the import path, the build may still fail because the package itself pulls in Node-only modules during browser bundling.
+
+
+## Client build failure: missing `stream` module
+
+**Issue**: After fixing the `reading-time` import (see [`reading-time/lib/reading-time`](#docusaurus-build-failure-reading-time-lib-reading-time)), the client build failed with:
+
+```text
+Module not found: Error: Can't resolve 'stream'
+```
+
+**Cause**: Webpack 5 no longer automatically polyfills Node.js core modules.
+
+The `reading-time` package depends on Node’s `stream`, which is unavailable in the browser bundle used by Docusaurus.
+
+**Fix**: Install the browser polyfill:
+
+```bash
+npm install stream-browserify
+```
+
+Add a webpack fallback plugin in `docusaurus.config.ts`:
+
+```ts 
+plugins: [
+  function streamPolyfill() {
+    return {
+      name: "stream-polyfill",
+      configureWebpack() {
+        return {
+          resolve: {
+            fallback: {
+              stream: require.resolve("stream-browserify"),
+            },
+          },
+        };
+      },
+    };
+  },
+
+  "docusaurus-plugin-sass",
+  "@datalayer/jupyter-docusaurus-plugin",
+],
+```
+
+**Important**: A `customFields.webpack` section does **not** affect webpack bundling.
+
+For example, this does not solve the problem:
+
+```ts 
+customFields: {
+  webpack: {
+    resolve: {
+      fallback: {
+        process: require.resolve("process/browser")
+      }
+    }
+  }
+}
+```

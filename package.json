@@ -28,13 +28,15 @@
     "docusaurus-pushfeedback": "^1.0.1",
     "dotenv": "^16.4.5",
     "gray-matter": "^4.0.3",
-    "process": "^0.11.10",
     "prism-react-renderer": "^2.3.0",
+    "process": "^0.11.10",
     "pushfeedback-react": "^0.1.50",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-player": "^2.16.0",
-    "react-zoom-pan-pinch": "^3.7.0"
+    "react-zoom-pan-pinch": "^3.7.0",
+    "reading-time": "^1.5.0",
+    "stream-browserify": "^3.0.0"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.4.0",
@@ -45,6 +47,8 @@
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
+    "jasmine": "^6.2.0",
+    "jest": "^30.3.0",
     "swc-loader": "^0.2.0"
   },
   "browserslist": {
