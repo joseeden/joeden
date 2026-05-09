@@ -39,98 +39,207 @@ Agent Skills start with just a short description. The model decides if the skill
 
 Each skill is just a simple folder with a few parts.
 
-- skill.md defines the skill
-- Scripts run actions
-- References provide extra info
+- `skill.md` defines the skill
+- `Scripts` run actions
+- `References` provide extra info
 
 The `skill.md` file is required and contains metadata like name and description. The description is important because Copilot uses it to decide when to use the skill.
 
-This structure keeps each tool clean and reusable.
+Reference:
 
-## Example: Creating a Chart Skill
+- [agentskills.io](https://agentskills.io/).
+- [skills.sh](https://skills.sh/)
 
-Here is a simple example of a skill that generates a chart from database data.
+
+## Installing Skills 
+
+You can install community skills, but make sure to only install skills from trusted providers.
+
+Some skills can execute code on your machine, so only install from trusted sources.
+
+For example, you can find skills in [skills.sh](https://skills.sh/), which has a collection of community-created skills.
+
+1. Search for `skill-creator` by anthropics.
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-05-09101120.png)
+
+    </div>
+
+2. Copy the install command from the skill page, which looks like this:
+
+    ```bash
+    npx skills add https://github.com/anthropics/skills --skill skill-creator
+    ```
+
+    Back in your project, run the command to install the skill.
+
+3. Press `y` to confirm the installation.
+
+    ```bash
+    Need to install the following packages:
+    skills@1.5.6
+    Ok to proceed? (y) y 
+    ```
+
+4. You'll be prompted to choose the installation scope.
+
+    You can choose to install the skill for the current project or globally for all projects.
+
+    ```bash
+    ◆  Installation scope
+    │  ● Project (Install in current directory (committed with your project))
+    │  ○ Global
+    ```
+
+    For this example, we will choose "Project" to keep it specific to our current project. 
+
+5. After confirming the scope, the skill will show the security assessment and ask for final confirmation.
+
+    Choose `Yes` to complete the installation.
+
+    ```bash
+    ◇  Security Risk Assessments ───────────────────────────────────╮
+    │                                                               │
+    │                 Gen               Socket            Snyk      │
+    │  skill-creator  Safe              0 alerts          Low Risk  │
+    │                                                               │
+    │  Details: https://skills.sh/anthropics/skills                 │
+    │                                                               │
+    ├───────────────────────────────────────────────────────────────╯
+    │
+    ◆  Proceed with installation?
+    │  ● Yes / ○ No
+    └
+    ```
+
+    
+
+6. You'll also be promtped to install the `find-skills` tool, which is used to manage and list your installed skills.
+
+    Choose `Yes` to install it.
+
+    ```bash
+    ◆  Install find-skills tool? It helps your agent discover and suggest skills.
+    │  ● Yes / ○ No
+    └
+    ```
+
+7. Once the installation is complete, it should return the following message:
+
+    ```bash
+    Done!  Review skills before use; they run with full agent permissions.
+    ```
+
+8. You can verify that the skill is installed by running:
+
+    ```bash
+    npx skills list
+    ```
+
+    Output:
+
+    ```bash
+    Project Skills
+
+    skill-creator ./.agents/skills/skill-creator
+      Agents: GitHub Copilot 
+    ```
+
+## `/create-skill` vs. `/skill-creator`
+
+You might notice that there are two ways to create skills in your Copilot chat. 
+
+- `/create-skill` is the default, built-in skill for creating new skills. It usually comes pre-installed with the skills framework or platform you’re using. It may have basic or limited features, and its interface or capabilities might not be as advanced.
+
+- `/skill-creator` is the enhanced, community-provided skill you installed (in your case, from anthropics). It typically offers a more user-friendly, guided, or feature-rich experience for creating skills. It may include templates, wizards, or additional options that make skill creation easier and more robust.
+
+**Which should you use?**
+- If you want the latest features, better guidance, and a smoother experience, use `/skill-creator`.
+- If you want the most basic, default method, or if you have compatibility issues, use `/create-skill`.
+
+**UPDATE:** If your VS Code window is open in a parent directory that contains multiple repositories and `skill-creator` is installed on specific repositories, Copilot may not load the skill correctly as it looks for a `.agent/skills` directory in the current workspace/parent directory. You can do any of the steps below:
+
+1. Try opening the specific repository in its own VS Code window to ensure the skill is properly loaded.
+2. Install `skill-creator` globally so it is available across all repositories.
+
+
+## Example
+
+### Creating a Chart Skill
+
+In this example, I used another project repository I have called [linkshortener-using-nextjs](https://github.com/joseeden/linkshortener-using-nextjs) which uses a database to store links.
+
+I have installed `/skill-creator` in this project and used it to create a skill that generates a bar chart showing the number of links created per month over the last 12 months. The skill performs the following steps:
 
 - Query database
 - Generate chart
 - Export PNG
 
-In this example, the database URL is stored in `.env`.
+Before running, I created the `.env` file with a variable called `DATABASE_URL`. This contains the connection URL for my Neon Postgres database, which is required for the skill to run.
 
-Before running, make sure your `.env` has a variable like `DATABASE_URL`.
+To create the skill, I simply ran the `/skill-creator` command and provided the prompts below:
 
-In the example below, a Python script queries data and generates a chart.
 
-```python
-import os
-import psycopg2
-import matplotlib.pyplot as plt
+> /skill-creator  
+> Create a skill that performs the following, and place all generated files in the link-activity-bar-chart directory:
+> 
+> 1. **Database Query**:
+>     - Read the database connection URL from the .env file (variable: `DATABASE_URL`).
+>     - Connect to the database using this URL.
+>     - Query for all links created within the past 12 months.
+>     - Aggregate the results to count the total number of links created in each month (grouped by month, for the last 12 months).
+> 
+> 2. **Data Visualization**:
+>     - Use a Python script to generate a bar chart:
+>         - X-axis: Each month (labelled, covering the past 12 months).
+>         - Y-axis: Total number of links created in that month.
+>     - The chart must be clear, with labeled a xes and a title.
+> 
+> 3. **Export**:
+>     - Save the generated bar chart as a PNG image file.
+> 
+> 4. **Python Environment**:
+>     - Check if Python and pip are installed; if not, prompt to install them.
+>     - Create a Python virtual environment in `.agents/skills/link-activity-bar-chart/venv`.
+>     - Generate a `requirements.txt` in the same directory with all required packages.
+>     - Activate the virtual environment and install dependencies using pip.
+>     - Run the script from within the virtual environment.
+> 
+> **Requirements:**
+> - The skill must handle errors gracefully (e.g., missing .env file, invalid `DATABASE_URL`, no data, missing Python/pip).
+> - The Python script should be self-contained and include all necessary imports.
+> - The output PNG file should be saved in the current working directory with a descriptive filename (e.g., `links_created_last_12_months.png`).
+> - All skill files, scripts, and documentation must be created under link-activity-bar-chart.
 
-db_url = os.getenv("DATABASE_URL")
 
-conn = psycopg2.connect(db_url)
-cursor = conn.cursor()
+Once its done, it will print out the skill details and confirm that it was created successfully.
 
-cursor.execute("""
-SELECT DATE_TRUNC('month', created_at) AS month, COUNT(*)
-FROM links
-WHERE created_at >= NOW() - INTERVAL '12 months'
-GROUP BY month
-ORDER BY month;
-""")
+<div class='img-center'>
 
-data = cursor.fetchall()
+![](/img/docs/Screenshot2026-05-09113435.png)
 
-months = [str(row[0]) for row in data]
-counts = [row[1] for row in data]
+</div>
 
-plt.bar(months, counts)
-plt.xticks(rotation=45)
-plt.tight_layout()
-plt.savefig("monthly_links_chart.png")
-```
 
-Expected result:
 
-```bash
-monthly_links_chart.png
-```
+### How Copilot Uses the Skill
 
-This creates a bar chart showing links created per month.
+Next, you can trigger the skill in two ways.
 
-This shows how Agent Skills can automate multi-step workflows.
-
-## How Copilot Uses the Skill
-
-You can trigger the skill in two ways.
-
-- Use a slash command
+- Use a slash command (`/link-activity-bar-chart`) to directly invoke the skill.
 - Use a natural prompt
 
-Example prompt:
+In my case, I used the `/link-activity-bar-chart` command in the Copilot chat to run the skill. It proceeded to execute the steps defined in the skill. 
 
-```bash
-Generate a monthly links chart image
-```
+<div class='img-center'>
 
-Copilot reads the skill description, decides it is relevant, and runs the scripts.
+![](/img/docs/Screenshot2026-05-09114027.png)
 
-This keeps usage simple while still being powerful.
+</div>
 
-## Installing Skills Safely
+After that, it ran the script to query the database, generate the bar chart, and export it as a PNG file.
 
-You can install community skills, but be careful.
+**UPDATE:** I initially used the `GPT-4.1` model, but it did not produce the output that I expected so I switched to just using `Claude Sonnet 4.6`
 
-- Only trust known providers
-- Scripts can run locally
-- Prefer building your own
-
-Some skills can execute code on your machine, so only install from trusted sources.
-
-This keeps your environment secure while still using Agent Skills effectively.
-
-## Key Idea
-
-Agent Skills turn complex tasks into reusable tools that Copilot loads only when needed.
-
-This keeps your workflow efficient, focused, and scalable.
