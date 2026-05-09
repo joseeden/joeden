@@ -83,7 +83,7 @@ const projects: ProjectData[] = [
     title: "Visual History of Nobel Prize Winners",
     description: "Analyze the age and demographics of Nobel Prize winners over time.",
     url: `${baseUrl}/docs/065-Software-Engineering/021-Jupyter-Notebooks/023-A-Visual-History-of-Nobel-Prize-Winners/`, 
-    image: require(`/img/docs/Nobel_Prize.png`),
+    image: require(`/img/docs/nobelinstituttet-prize-medal.jpg`),
     tags: ["Data Analysis", "Python"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },  
