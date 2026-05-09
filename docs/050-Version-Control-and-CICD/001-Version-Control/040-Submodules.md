@@ -10,6 +10,16 @@ last_update:
   date: 7/19/2023
 ---
 
+## UPDATE: 2026 
+
+I have been using submodules for a while now and I find it to be a great way to manage multiple repositories inside a parent repository. 
+
+However, after working extensively on JavaScript projects, I have found that using submodules with JavaScript projects can be a bit tricky because they often have a lot of dependencies and submodules can make it difficult to manage those dependencies.
+
+Consequently, I have decided to move away from submodules in favor of keeping each project as a separate repository. By organizing these repositories within a single parent folder and opening that directory as a VS Code workspace, I can manage every project independently. 
+
+This shift allows for a much cleaner workflow and eliminates the typical complexities associated with submodules.
+
 ## Submodules are Pointers 
 
 For submodules, the remote repository doesn’t display the subrepo inside it but rather points to another remote repository. So when I click the embedded subrepo with the "arrow pointing to the right," it should redirect me to the remote repository of the submodule.
