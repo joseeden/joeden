@@ -56,6 +56,14 @@ const projects: ProjectData[] = [
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },  
   {
+    title: "Capstone: Google IT Automation with Python",
+    description: "Collection of scripts for Google IT Automation with Python Course.",
+    url: `${baseUrl}/docs/Google-IT-Automation-with-Python/Capstone-Project/`, 
+    image: require(`/img/docs/coursera-google-it-automation-with-python.png`),
+    tags: ["Python", "Automation", "IT"],
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
+  },  
+  {
     title: "AWS Serverless Deployment using Jenkins",
     description: "Using Jenkins to deploy a serverless application",
     url: `${baseUrl}/docs/Amazon-Web-Services/Projects/Deploy-Serverless-App-using-Jenkins/`, 
