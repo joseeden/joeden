@@ -80,6 +80,14 @@ const projects: ProjectData[] = [
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },  
   {
+    title: "Visual History of Nobel Prize Winners",
+    description: "Analyze the age and demographics of Nobel Prize winners over time.",
+    url: `${baseUrl}/docs/065-Software-Engineering/021-Jupyter-Notebooks/023-A-Visual-History-of-Nobel-Prize-Winners/`, 
+    image: require(`/img/docs/Nobel_Prize.png`),
+    tags: ["Data Analysis", "Python"],
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
+  },  
+  {
     title: "A Network Analysis of Game of Thrones",
     description: "Analyze co-occurrence networks of characters in Game of Thrones",
     url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/065-Software-Engineering/021-Jupyter-Notebooks/020-A-Network-Analysis-of-Game-of-Thrones/network-analysis-on-game-of-thrones.ipynb",
