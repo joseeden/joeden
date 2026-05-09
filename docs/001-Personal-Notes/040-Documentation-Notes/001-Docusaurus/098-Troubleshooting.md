@@ -237,13 +237,13 @@ npm install reading-time
 
 Notes:
 
-- This issue is related to [missing `stream` module.](#docusaurus-client-build-failure-missing-stream-module)
+- This issue is related to [missing `stream` module.](#client-build-failure-missing-stream-module)
 - After fixing the import path, the build may still fail because the package itself pulls in Node-only modules during browser bundling.
 
 
 ## Client build failure: missing `stream` module
 
-**Issue**: After fixing the `reading-time` import (see [`reading-time/lib/reading-time`](#docusaurus-build-failure-reading-time-lib-reading-time)), the client build failed with:
+**Issue**: After fixing the `reading-time` import (see [`reading-time/lib/reading-time`](#build-failure-reading-time-lib-reading-time)), the client build failed with:
 
 ```text
 Module not found: Error: Can't resolve 'stream'

@@ -179,39 +179,7 @@ I have installed `/skill-creator` in this project and used it to create a skill 
 
 Before running, I created the `.env` file with a variable called `DATABASE_URL`. This contains the connection URL for my Neon Postgres database, which is required for the skill to run.
 
-To create the skill, I simply ran the `/skill-creator` command and provided the prompts below:
-
-
-> /skill-creator  
-> Create a skill that performs the following, and place all generated files in the link-activity-bar-chart directory:
-> 
-> 1. **Database Query**:
->     - Read the database connection URL from the .env file (variable: `DATABASE_URL`).
->     - Connect to the database using this URL.
->     - Query for all links created within the past 12 months.
->     - Aggregate the results to count the total number of links created in each month (grouped by month, for the last 12 months).
-> 
-> 2. **Data Visualization**:
->     - Use a Python script to generate a bar chart:
->         - X-axis: Each month (labelled, covering the past 12 months).
->         - Y-axis: Total number of links created in that month.
->     - The chart must be clear, with labeled a xes and a title.
-> 
-> 3. **Export**:
->     - Save the generated bar chart as a PNG image file.
-> 
-> 4. **Python Environment**:
->     - Check if Python and pip are installed; if not, prompt to install them.
->     - Create a Python virtual environment in `.agents/skills/link-activity-bar-chart/venv`.
->     - Generate a `requirements.txt` in the same directory with all required packages.
->     - Activate the virtual environment and install dependencies using pip.
->     - Run the script from within the virtual environment.
-> 
-> **Requirements:**
-> - The skill must handle errors gracefully (e.g., missing .env file, invalid `DATABASE_URL`, no data, missing Python/pip).
-> - The Python script should be self-contained and include all necessary imports.
-> - The output PNG file should be saved in the current working directory with a descriptive filename (e.g., `links_created_last_12_months.png`).
-> - All skill files, scripts, and documentation must be created under link-activity-bar-chart.
+To create the skill, I simply ran the `/skill-creator` command and provided the prompts from this page: [Link Activity Bar Chart Creator Prompt](./docs/075-Artificial-Intelligence/013-Prompts/020-link-activity-bar-chart-creator.mdx)
 
 
 Once its done, it will print out the skill details and confirm that it was created successfully.
@@ -239,7 +207,15 @@ In my case, I used the `/link-activity-bar-chart` command in the Copilot chat to
 
 </div>
 
-After that, it ran the script to query the database, generate the bar chart, and export it as a PNG file.
+**UPDATE 1:** I was having issues when I agent is trying to create a virtual environment and activating it because the terminal seems to be stuck and doesn't return the output, so I just added a manual step in the skill that prompts the user to run the command to create and activate the virtual environment themselves. 
 
-**UPDATE:** I initially used the `GPT-4.1` model, but it did not produce the output that I expected so I switched to just using `Claude Sonnet 4.6`
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-09163421.png)
+
+</div>
+
+The agent will wait for the user to confirma that the virtual environment is activated before installing the required dependencies.
+
+**UPDATE 2:** I initially used the `GPT-4.1` model, but it did not produce the output that I expected so I switched to just using `Claude Sonnet 4.6`
 
