@@ -58,7 +58,7 @@ const projects: ProjectData[] = [
   {
     title: "Capstone: Google IT Automation with Python",
     description: "Collection of scripts for Google IT Automation with Python Course.",
-    url: `${baseUrl}/docs/Google-IT-Automation-with-Python/Capstone-Project/`, 
+    url: "https://github.com/joseeden/capstone-google_it_automation_with_python", 
     image: require(`/img/docs/coursera-google-it-automation-with-python.png`),
     tags: ["DevOps", "Python", "Automation"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
@@ -90,7 +90,7 @@ const projects: ProjectData[] = [
   {
     title: "Visual History of Nobel Prize Winners",
     description: "Analyze the age and demographics of Nobel Prize winners over time.",
-    url: `${baseUrl}/docs/065-Software-Engineering/021-Jupyter-Notebooks/023-A-Visual-History-of-Nobel-Prize-Winners/`, 
+    url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/065-Software-Engineering/021-Jupyter-Notebooks/023-A-Visual-History-of-Nobel-Prize-Winners/A-Visual-History-of-Nobel-Prize-Winners.ipynb",
     image: require(`/img/docs/nobelinstituttet-prize-medal.jpg`),
     tags: ["Data Analysis", "Python"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
@@ -98,7 +98,7 @@ const projects: ProjectData[] = [
   {
     title: "Analyze Runkeeper Running Data",
     description: "Analyze running data from the Runkeeper app.",
-    url: `${baseUrl}/docs/065-Software-Engineering/021-Jupyter-Notebooks/024-Analyze-Runkeeper-Fitness-Data/`, 
+    url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/065-Software-Engineering/021-Jupyter-Notebooks/024-Analyze-Runkeeper-Fitness-Data/Analyze-Runkeeper-Fitness-Data.ipynb", 
     image: require(`/img/docs/Screenshot2026-05-09203336.png`),
     tags: ["Data Analysis", "Python"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
