@@ -59,7 +59,7 @@ Each step prepares the data so the model can learn properly and produce reliable
 
 ### Preparing the Data
 
-Before training, the dataset must be transformed into a format suitable for machine learning using the following steps:
+Before training, the dataset must be transformed into a format suitable for machine learning. This involves several key steps: 
 
 - Target encoding for categorical features
 - Imputation for missing values
@@ -71,7 +71,7 @@ Categorical features are encoded into numerical values using **target encoding**
 - Avoids creating too many columns
 - Works well for high-cardinality data
 
-For example, if "Location" is a feature, each location is replaced with the average rain outcome for that location. This keeps the data compact and useful.
+For example, if `Location` is a feature, each location is replaced with the average rain outcome for that location. This keeps the data compact and useful.
 
 Missing values are then handled through **imputation**, where numerical fields are filled using the mean. After that, **feature scaling** is applied to standardize the data so all features have a similar range. This helps improve model performance and stability.
 
@@ -121,6 +121,12 @@ X_train, X_test, y_train, y_test = train_test_split(
 model = RandomForestClassifier()
 model.fit(X_train, y_train)
 ``` 
+
+The `random_state` parameter controls the shuffling applied to the data before splitting. Setting it to a specific integer (like `42`) ensures that the split between training and test sets is reproducible every time you run the script. If you use a different value or leave it as `None`, the split will be different each time.
+
+`random_state` is a parameter of the  `train_test_split` function, which is imported from `sklearn.model_selection`. The function itself uses this parameter internally to seed its random number generator.
+
+`42` is an arbitrary choice and can be replaced with any integer you like. The key is to use the same value consistently for reproducibility.
 
 ### Evaluating the Model 
 
@@ -189,7 +195,7 @@ We use **Continuous Machine Learning (CML)** to handle training, evaluation, and
 - Generate metrics and visual reports
 - Post results as comments in pull request
 
-CML provisions the environment, runs the training code, evaluates the model, and shares results automatically in the pull request so changes can be reviewed before merging.
+CML provisions the environment, runs the training code, evaluates the model, and shares results automatically in the pull request so changes can be reviewed before merging. This workflow runs automatically on every pull request and executes the model training pipeline.
 
 <div class='img-center'>
 
@@ -197,7 +203,7 @@ CML provisions the environment, runs the training code, evaluates the model, and
 
 </div>
 
-In the example below, the GitHub Actions workflow uses `setup-cml` and runs the training script `train.py`.
+<!-- In the example below, the GitHub Actions workflow uses `setup-cml` and runs the training script `train.py`.
 
 ```yaml
 name: train-model
@@ -213,9 +219,7 @@ jobs:
       - uses: iterative/setup-cml@v1
       - name: Train model
         run: python train.py
-```
-
-This workflow runs automatically on every pull request and executes the model training pipeline.
+``` -->
 
 After training, CML reads the output files and posts the results back to the pull request. In this example, `results.txt` contains metrics and `plot.png` contains a visualization.
 
@@ -257,19 +261,19 @@ To follow along with the project, you need:
 To get started, clone the repository to your local machine. This will give you access to the code and files needed for the project.
 
 ```bash
-git clone
+git clone https://github.com/joseeden/ML-Model-Training-with-Github-Actions.git
 ```
 
 Then navigate to the project directory:
 
 ```bash
-cd 010-Model-Training-with-Github-Actions
+cd ML-Model-Training-with-Github-Actions
 ```
 
 Project structure:
 
 ```
-010-Model-Training-with-Github-Actions
+ML-Model-Training-with-Github-Actions
 ├── README.md
 ├── outputs/
 ├── processed_dataset/
@@ -288,11 +292,20 @@ Project structure:
 
 As best practice, create a Python virtual environment to manage dependencies for the project. This ensures that the required libraries are installed and isolated from other projects.
 
+**Note**: You should be inside the project directory when running these commands.
+
 Windows:
 
 ```bash
 python -m venv venv
 venv\Scripts\activate 
+```
+
+WSL on Windows:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate 
 ```
 
 macOS/Linux:
@@ -308,6 +321,7 @@ Then install your packages:
 pip install -r requirements.txt
 ```
 
+**Note:** If you are inside WSL on Windows, the installation of Python packages can become slow due to file system performance issues. To speed up the process, you can move the project files to the WSL file system (e.g., `/home/username/`) instead of keeping them on the Windows file system (e.g., `C:\`). This allows for faster read/write operations during package installation and training.
 
 ### Data Preprocessing 
 
@@ -371,9 +385,13 @@ In some cases, the model may use a prediction threshold that is too high. This c
 
 In this step, we will use CML with GitHub Actions to train a Random Forest classifier that predicts rainfall. CML helps automate training, evaluation, and reporting for machine learning workflows.
 
-Training is triggered when a pull request is opened against the main branch. The workflow uses the same weather dataset, and the `preprocess_dataset.p`y script prepares the data as before.
+Training is triggered when a pull request is opened against the main branch. The workflow uses the same weather dataset, and then proceeds with the steps:
 
-After running `train.py`, the process produces a `metrics.json` file with evaluation metrics and a `confusion_matrix.png` file that shows the confusion matrix.
+1. The `preprocess_dataset.py` script prepares the data as before.
+2. The `train.py` script trains the model and produces a `metrics.json` file with evaluation metrics.
+3. The `train.py` script also generates a `confusion_matrix.png` file.
+
+Finally, the workflow creates a comment in the pull request with the latest metrics and the confusion matrix plot.
 
 ```yaml
 name: model-training
