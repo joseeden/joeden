@@ -51,20 +51,15 @@ git init
 dvc init
 ```
 
-Expected result:
+The `dvc` command creates a `.dvcignore` file and a `.dvc` directory which contains important configuration files.
 
 ```bash
-Initialized empty Git repository
-Initialized DVC repository
-```
-
-This creates a `.dvc` directory which contains important configuration files.
-
-```bash
-.dvc
-├── .gitignore
-├── config
-└── tmp
+/project-directory/
+├── .dvcignore
+└── .dvc
+    ├── .gitignore
+    ├── config
+    └── tmp
 ```
 
 | File/Directory | Purpose                              |

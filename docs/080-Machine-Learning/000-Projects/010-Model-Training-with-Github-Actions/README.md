@@ -380,6 +380,16 @@ The confusion matrix shows the number of true positives, true negatives, false p
 
 In some cases, the model may use a prediction threshold that is too high. This can make it more conservative when predicting positive outcomes. Lowering the threshold can improve recall, but it may reduce precision.
 
+### Delete the Output Files
+
+Before proceeding with using CML and Github Actions, delete the output files and the processed dataset to simulate a fresh training run.
+
+```bash
+rm -rf processed_dataset/weather.csv 
+rm -rf outputs/confusion_matrix.png outputs/metrics.json 
+```
+
+These files will be recreated by the DVC pipeline and the GitHub Actions workflow when we run them in later steps.
 
 ### Setup Model Training using CML
 
@@ -438,3 +448,308 @@ jobs:
 ```
 
 Each time the workflow runs, it updates the existing comment instead of creating a new one. This keeps the pull request clean and ensures that only the latest results are shown.
+
+### Data Versioning with DVC 
+
+We'll use Data Version Control (DVC) to track changes in the datasets and model artifacts. DVC allows us to manage large files and datasets without bloating our Git repository. 
+
+**Note:** If you install the packages in the `requirements.txt` file, DVC should already be installed. You can verify this by checking the version:
+
+```bash
+dvc --version
+```
+
+Sample output:
+
+```bash
+3.67.1
+```
+
+Steps: 
+
+1. Inside the project directory, initialize DVC:
+
+    ```bash
+    dvc init
+    ``` 
+
+    Output:
+
+    ```bash
+    Initialized DVC repository.
+
+    You can now commit the changes to git. 
+
+    +---------------------------------------------------------------------+
+    |                                                                     |
+    |        DVC has enabled anonymous aggregate usage analytics.         |
+    |     Read the analytics documentation (and how to opt-out) here:     |
+    |             <https://dvc.org/doc/user-guide/analytics>              |
+    |                                                                     |
+    +---------------------------------------------------------------------+
+    ```
+
+
+    The following files and directories are created:
+
+    ```
+    ├── .dvcignore
+    └── .dvc
+        ├── .gitignore
+        ├── config
+        └── tmp
+    ```
+
+2. Add the raw dataset to DVC tracking:
+
+    ```bash
+    dvc add raw_dataset/weather.csv 
+    ```
+
+    This will create a DVC cache inside the `cache` directory inside `.dvc` and a corresponding `weather.csv.dvc` file that tracks the dataset. The actual data file is not stored in Git, but the metadata is.
+
+    ```bash
+    $ tree .dvc/cache/
+
+    .dvc/cache/
+    └── files
+        └── md5
+            └── e6
+                └── 02b116f50269aa781c0c910cd80db9
+    ```
+
+    Alternative command:
+
+    ```bash
+    $ find .dvc/cache -type f
+
+    .dvc/cache/files/md5/e6/02b116f50269aa781c0c910cd80db9
+    ```
+
+    **Note:** If you previously commited the raw dataset to Git, you will need to remove it from Git tracking first before adding it to DVC. 
+
+    ```bash
+    git rm -r --cached 'raw_dataset/weather.csv'
+    git commit -m "stop tracking raw_dataset/weather.csv"
+    ```
+
+3. Set up a local DVC remote named `dev-remote` pointed at `/tmp/dvc/dev-remote`.
+
+    ```bash
+    dvc remote add -d --local dev-remote /tmp/dvc/dev-remote
+    ```
+
+    Note that if you try to list the contents of the remote directory before pushing, it will return:
+
+    ```bash
+    $ ls -la /tmp/dvc/dev-remote
+
+    ls: cannot access '/tmp/dvc/dev-remote': No such file or directory
+    ```
+
+    This is the expected behavior. DVC does not automatically create the remote directory, it only stores the configuration. The remote directory will be created when you push data to it.
+
+4. To check the remote configuration, you can run:
+
+    ```bash
+    dvc remote list 
+    ```
+    Output:
+
+    ```bash
+    myremote        /tmp/dvc/localremote
+    ```
+
+    Alternatively, you can check the `.dvc/config.local` file to see the remote configuration:
+
+    ```bash
+    $ cat .dvc/config.local 
+
+    [core]
+        remote = dev-remote
+    ['remote "dev-remote"']
+        url = /tmp/dvc/dev-remote
+    ```
+
+5. Push the dataset to the remote:
+
+    ```bash
+    dvc push
+    ```
+
+    Output:
+
+    ```bash
+    Collecting      
+    Pushing
+    1 file pushed 
+    ```
+    Confirm that the remote directory is created and contains the dataset:
+
+    ```bash
+    $ tree /tmp/dvc/dev-remote/
+
+    /tmp/dvc/dev-remote/
+    └── files
+        └── md5
+            └── e6
+                └── 02b116f50269aa781c0c910cd80db9
+    ```
+
+6. Now try to pull the changes:
+
+    ```bash
+    dvc pull 
+    ```
+
+    This will check for any changes in the remote and pull them to the local cache. Since there are no changes, it will return:
+
+    ```bash
+    Collecting                                                        
+    Fetching
+    Building workspace index                                                             
+    Comparing indexes                                                           
+    Applying changes                                                           
+    Everything is up to date.
+    ````
+
+7. Push the changes to Git:   
+    
+    ```bash
+    git add .
+    git commit -m "Add raw dataset to DVC tracking"
+    git push origin main
+    ```
+
+### Create a DVC Pipeline 
+
+In this step, we will create a DVC pipeline to automate the data preprocessing and model training steps. This allows us to track the entire workflow and easily reproduce results.
+
+Run the commands below to create the pipeline stages and run the pipeline:
+
+1. DVC stage for preprocessing:
+
+    ```bash
+    dvc stage add -n preprocess \
+      -d scripts/preprocess_dataset.py \
+      -d scripts/utils_and_constants.py \
+      -d raw_dataset/weather.csv \
+      -o processed_dataset/weather.csv \
+      python scripts/preprocess_dataset.py
+    ```
+
+    In this stage, we specified the dependencies with the `-d` flag, and the output files with the `-o` flag. 
+
+2. DVC stage for training:
+
+    ```bash
+    dvc stage add -n train \
+      -d scripts/metrics_and_plots.py \
+      -d scripts/model.py \
+      -d scripts/train.py \
+      -d scripts/utils_and_constants.py \
+      -d processed_dataset/weather.csv \
+      -o outputs/metrics.json \
+      -o outputs/confusion_matrix.png \
+      python scripts/train.py    
+    ```
+
+    Similar with the previous stage, but here we specified that the training stage depends on the processed dataset which will be generated by the first stage.
+
+3. This will create a `dvc.yaml` file with the defined stages and their dependencies. 
+
+    ```yaml
+    stages:
+      preprocess:
+        cmd: python scripts/preprocess_dataset.py
+        deps:
+        - raw_dataset/weather.csv
+        - scripts/preprocess_dataset.py
+        - scripts/utils_and_constants.py
+        outs:
+        - processed_dataset/weather.csv
+      train:
+        cmd: python scripts/train.py
+        deps:
+        - processed_dataset/weather.csv
+        - scripts/metrics_and_plots.py
+        - scripts/model.py
+        - scripts/train.py
+        - scripts/utils_and_constants.py
+        outs:
+        - outputs/confusion_matrix.png
+        - outputs/metrics.json
+    ```
+
+4. Visualize the pipeline:
+
+    ```bash
+    dvc dag 
+    ```
+
+    Output:
+
+    ```bash
+    +-----------------------------+  
+    | raw_dataset/weather.csv.dvc |  
+    +-----------------------------+  
+                    *                
+                    *                
+                    *                
+            +------------+           
+            | preprocess |           
+            +------------+           
+                    *                
+                    *                
+                    *                
+              +-------+             
+              | train |             
+              +-------+   
+    ```
+
+5. Reproduce the pipeline:
+
+    ```bash
+    dvc repro 
+    ```
+
+    This will run the stages in the correct order based on their dependencies. Since we [deleted the output files](#delete-the-output-files) earlier, all the stages will run:
+
+    ```bash
+    'raw_dataset/weather.csv.dvc' didn't change, skipping                                                            
+    Running stage 'preprocess':                                                                                      
+    > python scripts/preprocess_dataset.py
+    Updating lock file 'dvc.lock'                                                                                    
+
+    Running stage 'train':                                                                                           
+    > python scripts/train.py
+    ====================Test Set Metrics==================
+    {
+      "accuracy": 0.9378,
+      "precision": 0.994,
+      "recall": 0.7292,
+      "f1_score": 0.8412
+    }
+    ======================================================
+    Updating lock file 'dvc.lock'                                                                                    
+
+    To track the changes with git, run:
+
+            git add dvc.lock
+
+    To enable auto staging, run:
+
+            dvc config core.autostage true
+    Use `dvc push` to send your updates to remote storage.
+    ```
+
+6. If the pipeline is successfully reproduced, you should see the output files generated again in the `processed_dataset` and `outputs` directories.
+
+    ```bash
+    processed_dataset/
+    └── weather.csv 
+
+    outputs/
+    ├── confusion_matrix.png
+    └── metrics.json
+    ```
