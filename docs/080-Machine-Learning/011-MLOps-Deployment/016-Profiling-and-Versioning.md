@@ -54,6 +54,8 @@ Data versioning tracks the version of data used for training to ensure models ar
 
 The training pipeline also records metadata to recreate the exact train-test split used for performance evaluation.
 
+For more details on data versioning, please see [DVC for Data Versioning](/docs/080-Machine-Learning/012-Developing-Models/021-DVC-for-Data-Versioning.md).
+
 <div class="img-center"> 
 
 ![](/img/docs/all-things-data-Page-29.png)

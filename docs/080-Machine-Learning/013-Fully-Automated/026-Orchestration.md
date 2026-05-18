@@ -20,7 +20,7 @@ ML pipelines are central to MLOps systems. They run in both development and prod
 
 ML pipelines help teams experiment with models in development and deploy them seamlessly in production.
 
-## Modularity & Reusability  
+## Modularity and Reusability  
 
 ML pipelines are designed in a modular way, which allows independent changes to individual components without disrupting the entire system.
 
@@ -36,7 +36,7 @@ ML pipelines can be easily adapted to different tasks and data sets, making them
 
 </div>
 
-## Orchestration & Automation  
+## Orchestration and Automation  
 
 Orchestration in MLOps refers to automating the flow of tasks within ML pipelines. This includes managing dependencies and executing tasks in sequence.
 

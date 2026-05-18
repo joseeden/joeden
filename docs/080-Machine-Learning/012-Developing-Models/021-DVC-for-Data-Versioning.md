@@ -337,7 +337,7 @@ For example, to run only the training stage:
 dvc repro training
 ```
 
-If you have [a tuning stage and you are not tracking the output parameters file,](/docs/080-Machine-Learning/013-Fully-Automated/024-Hyperparameter-Tuning.md), you can run tuning forcibly without affecting the training stage:
+If you have [a tuning stage and you are not tracking the output parameters file,](/docs/080-Machine-Learning/013-Fully-Automated/024-Hyperparameter-Tuning.md) you can run tuning forcibly without affecting the training stage:
 
 ```bash
 dvc repro -f tuning
