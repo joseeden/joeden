@@ -90,7 +90,7 @@ Tracking dataset versions helps maintain consistency across experiments and depl
 
 DVC helps manage large datasets without storing them directly inside Git repositories.
 
-For more information, please see [DVC for Data Versioning.](/docs/080-Machine-Learning/012-Developing-Models/021-Data-Version-Control.md)
+For more information, please see [DVC for Data Versioning.](/docs/080-Machine-Learning/012-Developing-Models/021-DVC-for-Data-Versioning.md)
 
 <div class='img-center'>
 

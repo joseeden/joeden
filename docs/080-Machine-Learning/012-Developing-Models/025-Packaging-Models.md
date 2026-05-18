@@ -4,7 +4,7 @@ description: "Packaging Machine Learning Models"
 tags: 
 - Machine Learning
 - MLOps
-sidebar_position: 22
+sidebar_position: 25
 last_update:
   date: 5/13/2023
 ---
