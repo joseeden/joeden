@@ -320,6 +320,29 @@ This creates a `dvc.lock` file that captures the exact state of the pipeline exe
 
 It is a good practice to commit the `dvc.lock` file to Git immediately after it is created or modified. This way, you can track changes to the pipeline state over time and ensure that others can reproduce your results accurately.
 
+
+### Triggering Pipeline Stages
+
+Data Version Control (DVC) allows running full pipelines or individual stages. 
+
+To run specific stages:
+
+```bash
+dvc repro <name>
+```
+
+For example, to run only the training stage:
+
+```bash
+dvc repro training
+```
+
+If you have [a tuning stage and you are not tracking the output parameters file,](/docs/080-Machine-Learning/013-Fully-Automated/024-Hyperparameter-Tuning.md), you can run tuning forcibly without affecting the training stage:
+
+```bash
+dvc repro -f tuning
+```
+
 ### Using Cached Results
 
 DVC uses caching to avoid rerunning stages that haven't changed. If the inputs and code for a stage remain the same, DVC will skip executing that stage and use the cached outputs instead.
