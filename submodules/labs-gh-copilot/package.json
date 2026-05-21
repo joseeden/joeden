@@ -1,0 +1,13 @@
+{
+  "name": "labs-gh-copilot",
+  "version": "1.0.0",
+  "description": "Pennywise is a simple static HTML project for tracking monthly income and expenses. It features a clean Bootstrap 5 interface with two tabs:",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
