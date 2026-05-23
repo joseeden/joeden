@@ -17,7 +17,7 @@ sidebar_position: 15
 
 > Legacy notebooks will be replaced by Workspace in the future, but they are still available for use.
 
-Before you can create a notebook, you will need to create a database, schema, and warehouse in Snowflake. See [Using Snowflake](/docs/070-Data-Engineering/050-Snowflake/013-Using-Snowflake.md) for instructions on how to do this.
+Before you can create a notebook, you will need to create a database, schema, and warehouse in Snowflake. See [Using Snowflake](/docs/070-Data-Engineering/050-Snowflake/012-Using-Snowflake.md) for instructions on how to do this.
 
 Oncen you have those set up, you can create a legacy notebook:
 

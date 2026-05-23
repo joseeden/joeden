@@ -7,7 +7,7 @@ tags:
 - Data Analytics
 - Data Warehouse
 - Data Modelling
-sidebar_position: 13
+sidebar_position: 12
 last_update:
   date: 1/14/2022
 ---
@@ -166,3 +166,11 @@ In the example below, the role `SYSADMIN` is granted usage on the `analyst_wh` w
 GRANT USAGE ON WAREHOUSE analyst_wh TO ROLE SYSADMIN;
 ```
 
+## Database and Schema Setup
+
+After setting up users, roles, and warehouses, you need to create a database and a schema (a folder inside the database) to hold it.
+
+```sql
+CREATE DATABASE my_first_db;
+CREATE SCHEMA my_first_db.notebooks; 
+```
