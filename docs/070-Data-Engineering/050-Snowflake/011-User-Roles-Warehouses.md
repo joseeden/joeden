@@ -19,13 +19,13 @@ Snowflake uses roles to control access and warehouses to manage compute resource
 
 ## Snowflake Roles  
 
-| **Role**         | **Description**                                           |  
-|-----------------|------------------------------------------------------|  
-| **ACCOUNTADMIN** | Full account access, including billing and security. |  
-| **SECURITYADMIN** | Manages permissions for all objects (databases, tables, users). |  
-| **USERADMIN**    | Creates and manages users and roles.                  |  
-| **SYSADMIN**     | Manages objects it creates (databases, tables, warehouses). |  
-| **PUBLIC**       | Default role for all users with limited access.        |  
+| **Role**        | **Description**                                                |  
+|-----------------|-----------------------------------------------------------------|  
+| `ACCOUNTADMIN`  | Full account access, including billing and security.             |  
+| `SECURITYADMIN` | Manages permissions for all objects (databases, tables, users). |  
+| `USERADMIN`     | Creates and manages users and roles.                             |  
+| `SYSADMIN`      | Manages objects it creates (databases, tables, warehouses).      |  
+| `PUBLIC`        | Default role for all users with limited access.                  |  
 
 Example: Granting `SYSADMIN` role to a user  
 
@@ -66,7 +66,7 @@ CREATE USER new_analyst PASSWORD = 'SecurePass123' DEFAULT_ROLE = HR_ANALYST;
 When to create a new warehouse:
 
 - When you need larger warehouses for big data processing.  
-- For smaller queryes, use smaller warehouses.
+- For smaller queries, use smaller warehouses.
 - Larger warehouses improve query speed.  
 
 Warehouse sizes:
