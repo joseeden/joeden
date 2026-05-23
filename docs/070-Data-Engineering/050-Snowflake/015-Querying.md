@@ -2,31 +2,53 @@
 title: "Querying"
 description: "Querying"
 tags: 
-- Data Engineering
-- Data Science
-- Data Warehouse
-- Data Analysis
-- Data Modelling
 - Snowflake
+- Data Engineering
+- Data Analytics
+- Data Warehouse
+- Data Modelling
 sidebar_position: 15
 # last_update:
 #   date: 1/14/2022
 --- 
 
 
+## Creating a Legacy Notebook 
 
-## Using Features in Snowsight
+> Legacy notebooks will be replaced by Workspace in the future, but they are still available for use.
+
+Before you can create a notebook, you will need to create a database, schema, and warehouse in Snowflake. See [Using Snowflake](/docs/070-Data-Engineering/050-Snowflake/013-Using-Snowflake.md) for instructions on how to do this.
+
+Oncen you have those set up, you can create a legacy notebook:
+
+1. Go to **Projects** ➜ **Legacy Notebooks** ➜ **+ Legacy Notebooks**.
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-05-23135654.png)
+
+    </div>
+
+2. Provide a name for the notebook and select the notebook location and schema. 
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-23141211.png)
+
+</div>
+
+
+## Features in Snowsight
 
 Snowsight provides several features to help interact with data.
 
-- **Visualize data**: Snowsight can automatically generate a chart of the query results.
-- **Ask CoPilot**: Use this feature to ask more questions about the data you're viewing.
-- **Query shortcuts**: Use keyboard shortcuts like `Cmd + Shift + Enter` to run queries faster.
-- **Format query**: Improve readability by formatting the SQL query.
+| Feature         | Description                                                                                             |
+| --------------- | ------------------------------------------------------------------------------------------------------- |
+| Visualize Data  | Automatically converts query results into charts to help quickly identify patterns and trends           |
+| Ask Copilot     | Lets you ask questions about your data in natural language and explore results without writing full SQL |
+| Query Shortcuts | Keyboard shortcuts like `Cmd + Shift + Enter` help run queries faster and improve workflow speed        |
+| Format Query    | Automatically formats SQL queries to improve readability and make complex queries easier to understand  |
 
-## Tracking Query Versions
-
-Snowsight has a "Code Versions" feature to track the queries you’ve run over time.
+Snowsight ALSO has a "Code Versions" feature to track the queries you’ve run over time.
 
 - Every time you run a query, Snowsight saves the version and time.
 - You can go back to previous versions of your queries if needed.
@@ -34,28 +56,26 @@ Snowsight has a "Code Versions" feature to track the queries you’ve run over t
 
 ## Executing a Query 
 
-Steps:
+In the SQL editor, you can write and execute queries against your Snowflake data. 
 
-1. Click Create > SQL Worksheet
-2. Choose the database.
-3. Expand the schema to see tables.
-4. Query the  table to fetch data.
+In this example, we query the `in_app_purchases` table in the `product` database.
 
-    Example: 
+```sql
+SELECT * FROM product.in_app_purchases;
+```
 
-    ```sql
-    SELECT SUM(amount)
-    FROM "Sales_transactions";
-    ```
+After running the query, the results show below the query editor.
 
-5. Click the Run button.
-6. After running the query, the results show below the query editor.
-7. You can also download the results as a CSV or TSV file using the download icon.
-8. Click **Chart** to see the visualized data. 
-9. To improve readability, click the three dots beside the worksheet name > **Format Query**.  
-10. To view the queries ran, click **Code Versions**. 
+<div class='img-center'>
 
-See below:
+![](/gif/docs/23052026-snowflake-querying-1st-time.gif)
+
+</div>
+
+
+You can also download the results as a CSV or TSV file using the download icon. Click **Chart** to see the visualized data. 
+
+To view all the queries ran, click **Code Versions**. 
 
 <div class="img-center"> 
 

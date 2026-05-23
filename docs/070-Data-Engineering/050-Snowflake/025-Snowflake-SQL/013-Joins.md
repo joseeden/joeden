@@ -2,12 +2,11 @@
 title: "Joins"
 description: "Joins in Snowflake"
 tags: 
-- Data Engineering
-- Data Science
-- Data Warehouse
-- Data Analysis
-- Data Modelling
 - Snowflake
+- Data Engineering
+- Data Analytics
+- Data Warehouse
+- Data Modelling
 sidebar_position: 13
 last_update:
   date: 1/17/2022

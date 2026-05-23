@@ -2,12 +2,11 @@
 title: "Semi-structured Data"
 description: "Handling Semi-structured Data"
 tags: 
-- Data Engineering
-- Data Science
-- Data Warehouse
-- Data Analysis
-- Data Modelling
 - Snowflake
+- Data Engineering
+- Data Analytics
+- Data Warehouse
+- Data Modelling
 sidebar_position: 18
 last_update:
   date: 1/19/2022

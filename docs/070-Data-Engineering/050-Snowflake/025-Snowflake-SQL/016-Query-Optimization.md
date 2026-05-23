@@ -2,12 +2,11 @@
 title: "Query Optimization"
 description: "Snowflake Query Optimization"
 tags: 
-- Data Engineering
-- Data Science
-- Data Warehouse
-- Data Analysis
-- Data Modelling
 - Snowflake
+- Data Engineering
+- Data Analytics
+- Data Warehouse
+- Data Modelling
 sidebar_position: 16
 last_update:
   date: 1/19/2023

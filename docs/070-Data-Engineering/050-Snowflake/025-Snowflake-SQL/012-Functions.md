@@ -2,12 +2,11 @@
 title: "Functions"
 description: "Functions"
 tags: 
-- Data Engineering
-- Data Science
-- Data Warehouse
-- Data Analysis
-- Data Modelling
 - Snowflake
+- Data Engineering
+- Data Analytics
+- Data Warehouse
+- Data Modelling
 sidebar_position: 12
 last_update:
   date: 1/15/2022

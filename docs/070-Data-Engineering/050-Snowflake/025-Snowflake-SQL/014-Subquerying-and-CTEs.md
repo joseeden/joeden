@@ -2,12 +2,11 @@
 title: "Subquerying and CTEs"
 description: "Subquerying and CTEs (Common Table Expressions)"
 tags: 
-- Data Engineering
-- Data Science
-- Data Warehouse
-- Data Analysis
-- Data Modelling
 - Snowflake
+- Data Engineering
+- Data Analytics
+- Data Warehouse
+- Data Modelling
 sidebar_position: 14
 last_update:
   date: 1/18/2022

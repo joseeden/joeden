@@ -2,12 +2,11 @@
 title: "Uploading Data"
 description: "Uploading Data"
 tags: 
-- Data Engineering
-- Data Science
-- Data Warehouse
-- Data Analysis
-- Data Modelling
 - Snowflake
+- Data Engineering
+- Data Analytics
+- Data Warehouse
+- Data Modelling
 sidebar_position: 15
 # last_update:
 #   date: 1/14/2022

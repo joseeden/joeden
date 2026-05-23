@@ -2,12 +2,11 @@
 title: "Starter Notes"
 description: "Starter Notes on Snowflake"
 tags: 
-- Data Engineering
-- Data Science
-- Data Warehouse
-- Data Analysis
-- Data Modelling
 - Snowflake
+- Data Engineering
+- Data Analytics
+- Data Warehouse
+- Data Modelling
 sidebar_position: 10
 # last_update:
 #   date: 1/14/2022
@@ -149,39 +148,12 @@ Snowflake provides several editions for different business needs.
 
 </div>
 
-### Standard Edition
-
-Standard works well for smaller teams and new projects.
-
-- Good for startups
-- Suitable for internal analytics
-- Lower cost option
-
-### Enterprise Edition
-
-Enterprise is designed for larger organizations.
-
-- Better scaling support
-- Longer data retention
-- Useful for multi-team reporting
-
-### Business Critical Edition
-
-Business Critical focuses on compliance and security.
-
-- Supports regulated environments
-- Useful for healthcare and finance
-- Adds stronger security controls
-
-### Virtual Private Snowflake
-
-Virtual Private Snowflake provides dedicated infrastructure.
-
-- Fully isolated environment
-- Designed for strict security requirements
-- Common in government or defense use cases
-
-Each edition matches different operational and compliance needs.
+| Editions                  | Description                                                        | Usecases or useful for                                                               |
+| ------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| Standard Edition          | Basic Snowflake setup for general use                              | Small teams, startups, and internal analytics with lower cost needs                  |
+| Enterprise Edition        | Scalable version designed for growing organizations                | Large teams, multi-department reporting, and workloads needing longer data retention |
+| Business Critical Edition | Security-focused edition with stronger compliance controls         | Finance, healthcare, and regulated industries that need strict security              |
+| Virtual Private Snowflake | Fully isolated Snowflake environment with dedicated infrastructure | Government, defense, and highly sensitive workloads requiring full isolation         |
 
 
 ## Global Cloud Support

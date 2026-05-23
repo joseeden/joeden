@@ -2,12 +2,11 @@
 title: "Snowflake SQL"
 description: "Snowflake SQL"
 tags: 
-- Data Engineering
-- Data Science
-- Data Warehouse
-- Data Analysis
-- Data Modelling
 - Snowflake
+- Data Engineering
+- Data Analytics
+- Data Warehouse
+- Data Modelling
 sidebar_position: 10
 last_update:
   date: 1/15/2022

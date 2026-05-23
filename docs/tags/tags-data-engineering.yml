@@ -62,7 +62,12 @@ Data Analysis:
   label: 'Data Analysis'
   permalink: '/Data Analysis'
   description: 'Docs related to Data Analysis' 
-  
+
+Data Analytics:
+  label: 'Data Analytics'
+  permalink: '/Data Analytics'
+  description: 'Docs related to Data Analytics' 
+
 Data Visualization:
   label: 'Data Visualization'
   permalink: '/Data Visualization'
