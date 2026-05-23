@@ -176,7 +176,7 @@ The app runs inside Snowflake and reads directly from the table. This keeps both
 
 ## Marketplace 
 
-Snowsight includes a marketplace for datasets that can be used for analysis.
+Snowflake Marketplace provides direct access to external datasets inside Snowflake. 
 
 - Free and paid datasets from Snowflake providers.
 - Helps bring in external data to enhance insights.
