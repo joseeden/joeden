@@ -1,0 +1,146 @@
+---
+title: "Skills"
+description: "Creating and using custom skills in Claude Code"
+tags: 
+- Artificial Intelligence
+- Large Language Models
+- AI Agents
+- Claude AI
+sidebar_position: 20
+--- 
+
+## Overview
+
+Skills are reusable instructions that Claude follows whenever a consistent process is needed. They define *how* something should be done, not *who* does it.
+
+Skills help standardize repeatable tasks so the same steps are followed every time.
+
+
+## Unit Testing as a Skill
+
+Unit testing is a good example of a skill because it always follows a predictable structure. Each test checks one function with a clear input and expected output.
+
+- One function per test
+- Clear input and output
+- Pass or fail results
+
+This consistency makes unit tests a reliable safety layer when changing code.
+
+
+## Skills Directory 
+
+Skills are stored inside the `.claude` directory in a dedicated `skills` folder. They can be shared at project level or used personally depending on where they are placed.
+
+Personal skills (all projects):
+
+```bash
+~/.claude
+└── skills
+    └── my-skills
+        └── SKILL.md
+```
+
+Project skills (specific to a project and shared via git):
+
+```bash
+project-directory
+└── .claude
+    └── skills
+        └── my-skills
+            └── SKILL.md
+```
+
+This structure keeps skills organized and reusable across different environments.
+
+
+## `SKILL.md` Structure
+
+Each skill is defined in a `SKILL.md` file that contains metadata and step-by-step instructions. The description tells Claude when to use it, and the body defines the process.
+
+Unlike agents, skills are more manual to create, but still flexible and reusable.
+
+Sample `SKILL.md` structure:
+
+```markdown
+---
+# SKILLS.md
+name: "Unit Testing"
+description: "Use pytest unit tests to verify function behavior in Pyhton."
+---
+When writing unit tests, follow these steps:
+1. Identify the function to test
+2. Define clear input and expected output
+3. Use descriptive test names 
+4. Write the test case for normal cases 
+5. Write the test cases for edge cases (empty input, invalid data)
+6. Run the tests and verify results
+```
+
+## Creating a Skill Manually
+
+1. Create a skill folder in the project root.
+
+    ```bash
+    mkdir -p .claude/skills/skill-unit-tests 
+    ```
+
+2. Add a `SKILL.md` file with the frontmatter and instructions.
+
+    You can open the file in your editor and write the content or ask Claude to generate it for you. 
+
+    ```bash
+    touch .claude/skills/skill-unit-tests/SKILL.md
+    code .claude/skills/skill-unit-tests/SKILL.md
+    ```
+
+3. Save the file and start Claude. 
+
+4. Confirm if the skill is registered and ready to use.
+
+    ```bash
+    /skills
+    ```
+
+This makes the skill available for reuse once it is registered in the system.
+
+
+## Skills vs Agents
+
+Skills and agents solve different problems and are chosen based on workflow needs. 
+
+Skills are ideal for tasks that require consistency and repeatability, while agents are better for tasks that require specialized knowledge or decision-making.
+
+| Aspect   | Skills                       | Agents                          |
+| -------- | ---------------------------- | ------------------------------- |
+| Purpose  | Repeatable process           | Specialized task handling       |
+| Focus    | How to do something          | Who performs the task           |
+| Scope    | Workflow steps               | Independent execution           |
+| Use case | Testing, refactoring, checks | Investigation, planning, review |
+| Location | `.claude/skills`             | `.claude/agents`                |
+| Invocation | `/skill-name` or automatic | `@agent-name` or automatic      |
+
+Skills and agents can work together to create more powerful workflows. An agent can use a skill as part of its toolkit. This pairing allows structured processes to be executed by specialized agents consistently.
+
+## Example: Refactoring as a Skill
+
+**Refactoring** is improving code structure without changing its behavior. The logic stays the same, but the structure becomes cleaner and easier to maintain. It can include:
+
+- Extracting helper functions
+- Renaming unclear variables
+- Simplifying complex logic
+
+**Unit tests** make this process safe by confirming that behavior does not change before and after updates. They act as a safety check while the structure is being improved.
+
+- Run tests before changes
+- Run tests after refactoring
+- Ensure behavior stays the same
+
+Refactoring becomes even more reliable when guided by a structured skill. The process ensures changes are incremental, tested, and predictable.
+
+- Verify tests exist first
+- Make small controlled changes
+- Confirm all tests pass
+
+This ensures refactoring is consistent and repeatable across different developers.
+
+
