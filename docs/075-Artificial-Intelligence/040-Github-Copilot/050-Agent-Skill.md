@@ -179,7 +179,7 @@ I have installed `/skill-creator` in this project and used it to create a skill 
 
 Before running, I created the `.env` file with a variable called `DATABASE_URL`. This contains the connection URL for my Neon Postgres database, which is required for the skill to run.
 
-To create the skill, I simply ran the `/skill-creator` command and provided the prompts from this page: [Link Activity Bar Chart Creator Prompt](docs/075-Artificial-Intelligence/013-Prompts/020-link-activity-bar-chart-creator.mdx)
+To create the skill, I simply ran the `/skill-creator` command and provided the prompts from this page: [Link Activity Bar Chart Creator Prompt](docs/075-Artificial-Intelligence/011-Prompt-Library/020-link-activity-bar-chart-creator.mdx)
 
 
 Once its done, it will print out the skill details and confirm that it was created successfully.

@@ -1,7 +1,7 @@
 ---
-title: "Prompt Engineering Basics"
-id: "prompt-engineering-basics"
-description: "Fundamentals of creating effective prompts for AI models."
+title: "Prompt Basics"
+# id: "prompt-engineering-basics"
+description: "Creating effective prompts for AI models."
 tags:
 - Machine Learning
 - Artificial Intelligence
