@@ -31,7 +31,7 @@ This approach helps ensure the output aligns with existing structure instead of 
 
 ## Project Memory with `CLAUDE.md`
 
-Claude can store project context in a file called `CLAUDE.md`. This file helps it remember structure, rules, and conventions across sessions. This removes the need to repeatedly explain the same setup.
+Claude can store project context in a file called `CLAUDE.md`. This file helps it remember structure, rules, and conventions across sessions. 
 
 To initialize it:
 
@@ -39,7 +39,20 @@ To initialize it:
 /init
 ```
 
-Claude scans the project and generates the file automatically based on the existing codebase.
+Claude scans the project and generates the `CLAUDE.md` file automatically based on the existing codebase. This file should only contain the core project information that Claude can reference in future interactions:
+
+- Project Name And Purpose
+- Common Commands
+- Key Conventions
+
+CLAUDE.md should evolve as the project changes or when mistakes are discovered. Each update improves future behavior and prevents repeated issues.
+
+:::info 
+
+Good results depend on what is inside `CLAUDE.md`, not just the file existing. Too little context reduces accuracy while too much creates noise, so the goal is balance.
+
+::: 
+
 
 
 ## Plan Mode
@@ -97,3 +110,26 @@ To clear the context and start fresh, use:
 
 </div>
 
+
+## File References and Context Layers
+
+File references point Claude directly to source files instead of copying content into prompts, which keeps interactions accurate and up to date.
+
+```text id="q7m2kp"
+@routes.py
+```
+
+Claude Code also separates context into three layers: 
+
+| Context Level       | Location           | Purpose                                                                                                |
+| ------------------- | ------------------ | ------------------------------------------------------------------------------------------------------ |
+| Project `CLAUDE.md` | In git repository  | Shared with the team. Contains test commands, conventions, and project structure                       |
+| `CLAUDE.local.md`   | Not tracked in git | Personal settings like local paths and shortcuts                                                       |
+| Global `CLAUDE.md`  | Home directory     | Applies to all projects and defines global defaults like coding habits (for example, using type hints) |
+
+
+<div class='img-center'>
+
+![](/img/docs/all-things-data-claude-context-layers.png)
+
+</div>
