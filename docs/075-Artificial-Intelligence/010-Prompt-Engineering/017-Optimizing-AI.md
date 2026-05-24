@@ -1,5 +1,5 @@
 ---
-title: "Optimizing AI Performance"
+title: "Optimizing AI"
 description: "Optimizing AI performance using various prompt engineering techniques"
 tags:
 - Artificial Intelligence
