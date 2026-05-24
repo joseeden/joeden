@@ -144,3 +144,58 @@ Refactoring becomes even more reliable when guided by a structured skill. The pr
 This ensures refactoring is consistent and repeatable across different developers.
 
 
+
+## Hooks
+
+Hooks are automatic shell commands that run when Claude performs actions using tools like file edits or reads. They are useful for automating follow-up tasks that should always happen after certain actions, such as running tests after code changes or logging modifications.
+
+Configuration file:
+
+```bash
+.claude/settings.json
+```
+
+Every tool action defined in the settings file follows a consistent flow where hooks can be inserted at different stages. The stages are:
+
+| Stage         | What it does                              | When it runs             |
+| ------------- | ----------------------------------------- | ------------------------ |
+| `PreToolUse`  | Checks or blocks an action before it runs | Before the tool executes |
+| `Tool`        | Performs the requested operation          | During execution         |
+| `PostToolUse` | Runs follow-up actions like tests or logs | After the tool completes |
+
+
+In the example below, a `PostToolUse` hook is set to run after any file write or edit. It executes tests and then logs the change:
+
+```json
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd $CLAUDE_PROJECT_DIR && python -m pytest --tb=short -q"
+          },
+          {
+            "type": "command",
+            "command": "echo 'file modified' >> hook.log"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+Note that hooks run in the background, so their output is not always visible by default. This makes it important to have a logging mechanism to ensure that progress and failures can be tracked over time.
+
+A sample log shows how results appear after each change:
+
+```text
+[11:22:33] Running PostToolUse hooks for Write/Edit...
+[11:22:33] Executing command: cd /path/to/project && python -m pytest --tb=short -q
+[11:22:34] Tests passed successfully.
+[11:22:34] Logged file modification to hook.log.
+```
+
