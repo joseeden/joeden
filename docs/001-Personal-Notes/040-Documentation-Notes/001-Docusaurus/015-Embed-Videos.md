@@ -43,7 +43,7 @@ import ReactPlayerWrapper from '@site/src/components/documentation/ReactPlayerWr
         Output:
 
         ```bash
-        joeden@0.0.0 /mnt/c/Git/joeden
+        joeden@0.0.0 /Git/joeden
         └── react-player@2.16.0
         ```
 
