@@ -20,6 +20,18 @@ It can:
 - Detect edge cases early
 - Highlight weak test coverage
 
+This page covers the following:
+
+- Software quality assessment
+- Coverage analysis
+- Runtime safety
+- Running security checks
+- Dependency management
+- Automated testing with CI
+
+
+## Example Codebase 
+
 For this page, we will use a simple task tracking system as an example to see how AI can help improve testing. 
 
 <!-- This program stores tasks and their statuses, but has limited tests and coverage. -->
@@ -582,6 +594,78 @@ The new workflow run will be triggered on the main branch after the merge, which
 ![](/img/docs/Screenshot2026-06-04235434.png)
 
 </div>
+
+
+## Managing Dependencies
+
+Modern applications rely on libraries, and those libraries often depend on other libraries. This creates a chain where issues can exist even if the main project looks safe.
+
+There are two types of dependencies to consider:
+
+- **Direct dependencies** are the libraries you install yourself
+- **Transitive dependencies** are the hidden libraries pulled in by those dependencies
+
+These hidden dependencies can still contain security problems. Because of this, dependency trees need to be checked regularly using dependency scanning tools to catch issues early.
+
+To detect these issues, we use dependency auditing tools like `pip-audit`. 
+
+```bash
+pip-audit
+```
+
+This command will scan the environment and report any vulnerable packages, including transitive dependencies.
+
+:::info 
+
+`pip-audit` will be used later in the [From Testing to Security](#from-testing-to-security) section to automate dependency checks in CI.
+
+:::
+
+In addition to vulnerabilities, we also need to consider how actively dependencies are maintained. Outdated or abandoned packages can pose long-term risks. 
+
+Another tool we can use is `pip-licenses`, which generates a report of all installed packages and their license information. This helps us identify any risky or unmaintained dependencies.
+
+To use `pip-licenses`, install it first:
+
+```bash
+pip install pip-licenses
+```
+
+Run: 
+
+```bash
+pip-licenses --format=json --with-urls --output-file=licenses.json
+```   
+
+Once we have the `licenses.json` file, we can ask the AI model to  analyze this file to identify any dependencies that may be risky or outdated. 
+
+Sample prompt:
+
+> Attached are the dependency details from `licenses.json`. 
+> 
+> Please analyze this data to identify any dependencies that are potentially risky, unmaintained, or have known vulnerabilities. 
+> 
+> Summarized the findings in a short table with the following columns:
+> 
+> - Dependency Name
+> - Version
+> - License Type
+> - Risk Level for commercial users (Low, Medium, High)
+> 
+> Flag unusual license types or dependencies that have not been updated in over a year, or missing license information.
+> 
+> Finally, provide safer alternatives for any high-risk dependencies identified.
+
+<div class='img-center'>
+
+![](/gif/docs/05062026-ai-assisted-DEPENDENCY-MGT.gif)
+
+</div>
+
+After analyzing dependency reports, AI can suggest safer or more modern alternatives for risky packages. 
+
+For example, if a package is unmaintained, AI can recommend an actively supported equivalent and highlight migration considerations.
+
 
 ## From Testing to Security
 
