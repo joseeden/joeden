@@ -1,0 +1,4 @@
+pipeline:
+  name: tourism_pipeline
+  retries: 3
+  timeout: 120
