@@ -20,6 +20,8 @@ AI can help in this space by supporting schema design, query creation, data vali
 
 For this guide, we will use a simple Postgres database running in Docker to simulate real database workflows. This allows us to experiment with schema mapping, duplicate detection, and query optimization in a consistent environment.
 
+See files here: [Github](https://github.com/joseeden/joeden/tree/master/assets/scripts/055-DB-Design-and-Optimization)
+
 Project structure:
 
 ```
@@ -35,7 +37,6 @@ Project structure:
     └── verify_schema.py
 ```
 
-See files here: [Github](https://github.com/joseeden/joeden/tree/master/assets/scripts/055-DB-Design-and-Optimization)
 
 Steps:
 
@@ -74,8 +75,14 @@ Steps:
 
 4. Start the Postgres and application container using Docker Compose.
 
-    Go to the `docker` directory and run: 
-    
+    Go to the `docker` directory:
+        
+    ```bash
+    cd docker 
+    ```
+
+    Run:
+
     ```bash
     docker-compose up -d --build
     ```
