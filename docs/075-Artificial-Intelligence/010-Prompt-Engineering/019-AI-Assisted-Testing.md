@@ -89,7 +89,7 @@ if __name__ == "__main__":
 Run the app:
 
 ```bash
-python3 app.py  
+python3 initial/app.py  
 ```
 
 Output:
@@ -97,7 +97,7 @@ Output:
 App finished 
 ```
 
-Even though output is simple, the system does a lot of work internally. It inserts 1000 tasks, retrieves one, and marks it as done. This creates many potential paths and edge cases that may not be fully tested.
+Even though output is simple, the system does a lot of work under the hood. It inserts 1000 tasks, retrieves one, and marks it as done. This creates many potential paths and edge cases that may not be fully tested.
 
 
 ## Testing Maturity
@@ -161,7 +161,7 @@ pip install coverage
 In the example below, we measure execution coverage:
 
 ```bash
-coverage run app.py
+coverage run initial/app.py
 coverage report -m
 ```
 
@@ -225,7 +225,7 @@ Sample prompt:
 
 The model generates tests that cover normal operations, edge cases, and error conditions. In my case, it generated a new script. 
 
-**UPDATE:** During this lab, I have updated the codebase. To keep the original files, I created another folder called "optimized" which contains the updated code. The "original" folder contains the original code. 
+**UPDATE:** During this lab, I have updated the codebase. To keep the original files, I created another folder called "optimized" which contains the updated code. The "initial" folder contains the original code. 
 
 ```bash
 project/
@@ -265,7 +265,7 @@ Before running the test, make sure you have `pytest` installed:
 pip install pytest
 ``` 
 
-Run the tests with coverage ("optimized" folder):
+Run the tests with coverage (this runs the tests on the code in the "optimized" folder):
 
 ```bash
 PYTHONPATH=optimized coverage run -m pytest -vv
@@ -320,14 +320,14 @@ TOTAL                         88      1    99%
 
 The results show that `task_store.py` is fully covered, and most of `app.py` is also covered by tests. Only one line remains untested.
 
-That missing line is the script entrypoint:
+If we review the `optimized/app.py` file, the missing line is the script entrypoint:
 
 ```python
 if __name__ == "__main__":
     main() 
 ```
 
-This block is not executed during testing because the module is imported by pytest instead of being run directly. As a result, it is commonly excluded from coverage unless explicitly tested through script execution.
+This block is not executed during testing because the module is imported by `pytest` instead of being run directly. As a result, it is commonly excluded from coverage unless explicitly tested through script execution.
 
 In practice, this is expected behavior, and coverage close to 100% usually indicates that the actual application logic is fully tested even if small entrypoint sections remain unexecuted.
 
