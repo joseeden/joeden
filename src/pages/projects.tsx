@@ -52,7 +52,7 @@ const projects: ProjectData[] = [
     description: "AI-assisted software testing and CI/CD with pytest and GitHub Actions",
     url: `${baseUrl}/docs/Artificial-Intelligence/Prompt-Engineering/Assisted-Testing`, 
     image: require(`/img/docs/pytest-python-usage.jpg`),
-    tags: ["DevOps", "Python", "Artificial Intelligence"],
+    tags: ["Artificial Intelligence", "Python"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },    
   {

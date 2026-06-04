@@ -583,3 +583,176 @@ The new workflow run will be triggered on the main branch after the merge, which
 
 </div>
 
+## From Testing to Security
+
+A well-tested system can still be insecure, so testing alone is not enough. Security-first development adds a layer that focuses on preventing vulnerabilities before deployment.
+
+With AI-assisted security reviews, we can ask the model to act like an application security engineer and evaluate risks using known vulnerability frameworks.
+
+Sample prompt:
+
+> You are an application security engineer.
+> Review this codebase and identify common vulnerabilities and security risks based on CWE Top 25 Most Dangerous Software Weaknesses.
+> 
+> For each finding, include:
+> - Location in code
+> - Description of the issue
+> - Severity level (High, Medium, Low)
+> - Minimal proof of concept input to trigger the issue
+> - Suggested remediation steps
+> 
+> Print the results in a table format.  
+
+The AI returns a prioritized list of issues that can be used as a checklist for further validation.
+
+**Note:** The table format may not be perfectly rendered in this markdown, but the idea is to have a structured output that clearly identifies each issue.
+
+<div class='img-center'>
+
+![](/gif/docs/05062026-ai-assisted-sec-scanning.gif)
+
+</div>
+
+To ensure the issues are not only theoretical, we need to validate the AI findings using real security scanning tools. 
+
+| Tool      | Purpose                           |
+| --------- | --------------------------------- |
+| Pip-audit | Checks dependency vulnerabilities |
+| Semgrep   | Detects insecure code patterns    |
+
+Install both tools:
+
+```bash
+pip install pip-audit semgrep
+```
+
+Run `pip-audit` inside your project environment:
+
+```bash
+pip-audit
+```
+
+Sample output:
+
+```bash
+Found 15 known vulnerabilities in 3 packages
+Name       Version ID               Fix Versions
+---------- ------- ---------------- ------------
+pip        22.0.2  PYSEC-2023-228   23.3
+pip        22.0.2  PYSEC-2023-228   23.3
+pip        22.0.2  CVE-2025-8869    25.3
+pip        22.0.2  CVE-2026-1703    26.0
+pip        22.0.2  CVE-2026-3219    26.1
+pip        22.0.2  CVE-2026-6357    26.1
+pyjwt      2.12.1  PYSEC-2026-179   2.13.0
+pyjwt      2.12.1  PYSEC-2026-175   2.13.0
+pyjwt      2.12.1  PYSEC-2026-177   2.13.0
+pyjwt      2.12.1  PYSEC-2026-178   2.13.0
+setuptools 59.6.0  PYSEC-2022-43012 65.5.1
+setuptools 59.6.0  PYSEC-2022-43012 65.5.1
+setuptools 59.6.0  PYSEC-2025-49    78.1.1
+setuptools 59.6.0  PYSEC-2025-49    78.1.1
+setuptools 59.6.0  CVE-2024-6345    70.0.0  
+```
+
+Next, use `semgrep` to analyze your codebase:
+
+```bash
+semgrep scan
+```
+
+<div class='img-center'>
+
+![](/gif/docs/05062026-ai-assisted-semgrep-scan.gif)
+
+</div>
+
+To save the results in a file, you can use the `--json` flag (use `-f json` for `pip-audit`):
+
+```bash
+semgrep scan --json > semgrep_results.json
+
+pip-audit -f json > pip_audit_results.json
+```
+
+Since scanner outputs can be large and complex, AI can help interpret the results by summarizing them and grouping issues by severity and effort required to fix. 
+
+Sample prompt:
+
+> Attached are the scan outputs.
+> Interpret the results and classify findings by effort and severity, and use their official naming and classification where applicable.
+> 
+> Group the findings into:
+> 
+> - Quick fixes (low effort, high impact)
+> - Medium effort
+> - Long-term improvements (high effort, high impact)
+
+
+<div class='img-center'>
+
+![](/gif/docs/05062026-ai-assisted-scan-results.gif)
+
+</div>
+
+Once issues are identified, the next step is to apply secure coding practices. This ensures fixes address the root cause instead of applying temporary patches.
+
+## Automating Security Checks
+
+Security checks should run automatically to prevent regressions. This is done by integrating validation tools into CI pipelines.
+
+In this example, I've modified the existing `.github/workflows/tests.yml` to include security scanning steps. The updated workflow runs both `pip-audit` and `semgrep` as part of the CI process. 
+
+<!-- Note that `pip-audit` is designed to fail CI when vulnerabilities are detected, while `semgrep` can be configured to report issues without necessarily failing the build, depending on the severity of the findings. -->
+
+Since we know that our codebase has known vulnerabilities, the build **should** fail, which indicates that the CI security gate is working as intended. 
+
+- Vulnerable dependency = block merge
+- Security issue = pipeline failure
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-06-05013419.png)
+
+</div>
+
+To fix this, you can simply create a `requirements.txt` file with the software dependencies and their versions.
+
+```bash
+## requirements.txt
+pytest
+coverage
+pip-audit
+pyjwt==2.13.0
+```
+
+Then update the workflow file to install dependencies from `requirements.txt` before running the security scans.
+
+```yaml
+  - name: Install dependencies
+    run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pipx
+        pipx install semgrep
+```          
+
+**EDIT:** Dependency installation fails when `semgrep` is included in the `requirements.txt` file. This is because it requres a native binary called `semgrep-core` which is not is not available in the GitHub runner environment during `pip install`. As a workaround, it is installed separately using `pipx`.
+
+Once the changes are pushed, the CI pipeline will run again. This time, it should pass the dependency audit since we have updated the vulnerable package versions.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-06-05015142.png)
+
+</div>
+
+The static security scan with `semgrep` reports any code patterns that match known vulnerabilities. If any critical issues are found, the build will fail, which prevents merging insecure code into the main branch.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-06-05015255.png)
+
+</div>
+
+
