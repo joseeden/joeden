@@ -463,3 +463,123 @@ Sample prompt:
 > - Install dependencies
 > - Use Python 3.8 or higher
 > - Run all test suites and report results clearly
+
+
+For this Github repository, the AI model generated a Github Actions workflow file (`.github/workflows/tests.yml`) that runs tests on every push and pull request. The workflow installs dependencies, sets up Python, and executes the test suite with coverage.
+
+**Note 1:** The tests in the CI workflow are run on the "runtime-protection" version of the code to ensure that all new protections are validated in the automated pipeline.
+
+**Note 2:** In actual implementation, you may want to run CI on specific branches instead of all branches to avoid unnecessary runs. Below is an example of a more targeted CI trigger configuration.
+
+```yaml
+name: Python Tests
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - "feature/**"
+
+  pull_request:
+    branches:
+      - main
+      - develop
+```
+
+In our case, we'll just keep it simple and trigger on all pushes and pull requests for lab purposes.
+
+To trigger CI properly on a pull request, we must first create a new branch from our repo. 
+
+```bash
+git checkout -b ci-test
+```
+
+Confirm that the new branch is created and that you are on the new branch:
+
+```bash
+git branch
+```
+
+Output:
+
+```bash
+* ci-test
+  master
+```
+
+Create an empty commit:
+
+```bash
+git commit --allow-empty -m "Trigger CI pipeline" 
+```
+
+Push branch:
+
+```bash
+git push origin ci-test
+```
+
+Checking the **Actions** tab in Github, we should see the workflows are triggered on every push in all branches. 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-06-04234432.png)
+
+</div>
+
+
+We can click into the workflow to see the stages of the pipeline.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-06-04234709.png)
+
+</div>
+
+Expanding the test stage will show the details of the test runs and their results.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-06-04234758.png)
+
+</div>
+
+If we go to the **Pull requests** tab, we should see a notification that the `ci-test` branch has recent changes.
+
+Click **Compare & pull request** to create a new pull request.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-06-04234925.png)
+
+</div>
+
+Provide a title and description for the pull request, then click **Create pull request**.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-06-04235036.png)
+
+</div>
+
+After creating the pull request, we can see that the CI workflow is triggered again for the pull request.
+
+If all the tests pass, we will see a green checkmark next to the workflow in the pull request, which indicates that the code changes are validated by the test suite. 
+
+Click **Merge pull request** to merge the changes into the main branch.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-06-04235152.png)
+
+</div>
+
+The new workflow run will be triggered on the main branch after the merge, which we can see in the **Actions** tab.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-06-04235434.png)
+
+</div>
+
