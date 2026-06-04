@@ -1,0 +1,47 @@
+pipeline:
+  name: tourism_pipeline
+  description: "ETL for tourism data"
+  environment: dev
+  schedule: "0 2 * * *"       # optional cron
+  defaults:
+    retries: 3
+    timeout: 120              # seconds
+    concurrency: 2
+
+runtime:
+  executor: local             # or "k8s", "aws_batch"
+  max_workers: 4
+  logging:
+    level: INFO
+
+connectors:
+  source_db:
+    type: postgres
+    host: db.example.com
+    port: 5432
+    user: report_user
+    password_ref: vault://secret/project/source_db/password
+
+steps:
+  - id: extract
+    type: container
+    image: myrepo/extract:1.2
+    command: ["python", "extract.py", "--out", "/data/out.json"]
+    retries: 2
+    timeout: 300
+    resources:
+      cpu: 1
+      memory: 512Mi
+    outputs:
+      - /data/out.json
+
+  - id: transform
+    type: function
+    handler: transform.process
+    retries: 1
+    timeout: 600
+
+alerts:
+  on_failure:
+    - type: slack
+      target_ref: vault://secret/project/alerts/slack_webhook

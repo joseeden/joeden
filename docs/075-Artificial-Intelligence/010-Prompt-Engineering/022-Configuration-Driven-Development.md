@@ -45,7 +45,29 @@ Examples in real systems:
 
 In all of these, the core logic stays stable, but behavior changes frequently.
 
-The code files can be found here: Github
+The code files can be found here: [Github](https://github.com/joseeden/joeden/tree/master/assets/scripts/053-Configuration-Driven-Development)
+
+Project structure: 
+
+```bash
+├── initial
+│   ├── config.yaml
+│   ├── main.py
+│   └── pipeline.py
+│
+├── modular
+│   ├── config.yaml
+│   ├── main.py
+│   └── pipeline.py
+│
+└── validation-layer
+    ├── config.yaml
+    ├── main.py
+    ├── pipeline.py
+    └── validator.py
+```
+
+The original files stored in ("initial" folder):
 
 - `pipeline.py` contains the core logic
 
@@ -133,9 +155,10 @@ Install the required dependencies.
 pip install pyyaml
 ```
 
-Now run the program.
+Go to the `initial` folder and run the program.
 
 ```bash
+cd initial
 python main.py
 ```
 
@@ -159,88 +182,79 @@ AI can help define what should be configurable versus what should remain in code
 
 Sample prompt: 
 
-You are a software architect designing a configuration-driven pipeline system. 
+> You are a software architect designing a configuration-driven pipeline system. 
+> 
+> Given this pipeline code, identify which parameters should be moved into configuration and propose a clean modular config structure with validation rules.
+> 
+> Include the following:
+> 
+> - Suggested module boundaries for config vs code
+> - Recommended parameter grouping in config files
+> - Validation strategy to ensure config safety
+> - Minimal example config structure
 
-Given this pipeline code, identify which parameters should be moved into configuration and propose a clean modular config structure with validation rules.
+AI will respond with a proposal that includes clear guidelines on what belongs in code (core logic) versus config (parameters), how to group parameters, and how to validate them. 
 
-Include the following:
+<div class='img-center'>
 
-- Suggested module boundaries for config vs code
-- Recommended parameter grouping in config files
-- Validation strategy to ensure config safety
-- Minimal example config structure
+![](/gif/docs/05062026-ai-assisted-config-driven-dev.gif)
 
-AI typically responds with:
+</div>
 
-- Suggested config structure
-- Recommended parameter grouping
-- Validation strategy for safety
 
-This helps avoid over-configuring or under-configuring the system.
+## Choosing a Config Format
 
-## AI-assisted config strategy generation
-
-Instead of guessing architecture, AI can propose a full configuration strategy.
-
-Sample prompt: 
-
-“Design a configuration-driven architecture for this pipeline. Keep logic in code but externalize all tunable parameters and include validation rules.”
-
-This usually results in:
-
-- Clear separation of logic and config
-- Defined schema for config files
-- Validation rules for safety
-
-This makes the system easier to implement correctly from the start.
-
-## Choosing a config format
-
-Selecting a config format affects readability, tooling, and long-term maintainability.
-
-- Impacts how easily teams can edit configs
-- Affects validation and schema tooling
-- Influences integration with CI/CD systems
+After defining the config structure, we need to choose a file format. This choice impacts readability, tooling support, and long-term maintainability. We can use AI to compare popular formats like YAML, JSON, and TOML based on our specific use case.
 
 Sample prompt: 
 
-“Compare YAML, JSON, and TOML for a Python pipeline system and recommend the best option based on readability, tooling, and validation support.”
+> You are a software architect designing a configuration-driven pipeline system. 
+> 
+> Given this Python pipeline system that will be used by multiple teams, choose a configuration file format that balances readability, tooling support, and validation capabilities.
+> 
+> Compare YAML, JSON, and TOML for a Python pipeline system and recommend the best option based on these criteria. Provide reasoning for your choice.
+> 
+> Explain why and when each format might be preferred, and suggest any libraries or tools that would help with validation and parsing in Python.
 
-In most pipeline systems, YAML is commonly chosen due to readability and structure support.
+<div class='img-center'>
 
-## Configuration validation (AI-assisted improvement)
+![](/gif/docs/05062026-ai-assisted-config-driven-dev-choose-format.gif)
 
-Configuration systems fail when values drift or become inconsistent. AI can help detect these issues.
+</div>
 
-Sample prompt: 
+As we can see, the model recommends YAML as the best option for our use case due to its readability and strong support for complex data structures. 
 
-“Here is my config and schema. Identify mismatches, missing validations, and risky type assumptions.”
+It also provides suggestions for libraries like `PyYAML` for parsing and `pydantic` for validation, which can help ensure our configuration files are both easy to read and robust against errors.
 
-Validation ensures:
 
-- Required fields exist
-- Data types are correct
-- Structure stays consistent
 
-This prevents runtime failures caused by bad configuration.
+## Preventing Configuration Drift
 
-## Preventing configuration drift
+Configuration drift occurs when configuration files become inconsistent over time. Some common examples include:
 
-Configuration drift happens when different parts of a system evolve inconsistently.
+- Renamed keys that are not updated everywhere
+- Incorrect data types being introduced
+- Required fields being missing in certain environments
 
-Common issues include:
+These issues can cause unexpected failures even when the application code itself has not changed.
 
-- Renamed keys not updated everywhere
-- Wrong data types introduced
-- Missing fields in new environments
+To prevent this, we can ask the model to generate a validation layer that checks configuration files before execution. The validator ensures that required settings exist and that values have the expected format.
 
-A validation layer ensures all environments follow the same structure.
+Sample prompt:
 
-## Configuration validation layer
+> You are a software architect designing a configuration-driven pipeline system.
+>
+> Given this YAML configuration structure, generate a Python validation function that checks for the following:
+> 
+> - Required fields
+> - Correct data types
+> - Overall consistency before the pipeline runs. 
+> 
+> The validator should raise clear errors if any issues are found in the configuration file.
 
-We add a validator to ensure config correctness before execution.
+The example below validates that the `pipeline` section exists and that the `retries` setting is an integer.
 
-```python id="p1val"
+```python
 # validator.py
 
 def validate_config(config):
@@ -249,19 +263,20 @@ def validate_config(config):
 
     pipeline = config["pipeline"]
 
-    if not isinstance(pipeline["retries"], int):
+    if "defaults" not in pipeline:
+        raise ValueError("Missing defaults section")
+
+    defaults = pipeline["defaults"]
+
+    if not isinstance(defaults["retries"], int):
         raise ValueError("retries must be an integer")
 
     return True
 ```
 
-This protects the pipeline from invalid configuration inputs.
+The validation step can then be added to the application startup process. Before running the pipeline, the configuration is loaded and validated.
 
-## Updated execution with validation
-
-We validate config before running the pipeline.
-
-```python id="p1main2"
+```python
 # main.py
 
 import yaml
@@ -272,25 +287,91 @@ with open("config.yaml", "r") as file:
     config = yaml.safe_load(file)
 
 validate_config(config)
-
 result = run_pipeline(config)
 print(result)
 ```
 
-This ensures only valid configurations are executed.
+By validating configuration before execution, only valid and consistent settings are allowed to reach the pipeline. This reduces the risk of failures caused by configuration drift.
 
-## CI/CD integration for config safety
+We can test if the code still work by running the `main.py` file.
 
-Configuration changes should be treated like production code. CI/CD can enforce validation automatically.
+**EDIT:** The updated files are stored in the `validation-layer` folder. You can run the program from there to see the validation in action.
 
-```yaml id="p1ci"
-steps:
-  - name: validate config
-    run: python validator.py
+```bash
+cd validation-layer
+python main.py
 ```
 
-This prevents invalid configuration changes from reaching production.
+Output:
 
-## Final idea
+```
+Starting pipeline: tourism_pipeline
+Running attempt 1
+Running attempt 2
+Running attempt 3
+Pipeline completed successfully
+{'status': 'success', 'pipeline': 'tourism_pipeline'}
+```
 
-Configuration-driven development separates logic, configuration, and validation into clear layers. With AI assistance, we can design better config structures, validate them automatically, and reduce mistakes across the system while keeping everything flexible and maintainable.
+To test if the validation works, try changing the `retries` value in `config.yaml` to a non-integer value (e.g., "three") and run the program again. 
+
+```yaml
+pipeline:
+  name: tourism_pipeline
+  ...
+  defaults:
+    retries: three
+    # retries: 3
+```
+
+Output:
+
+```bash
+ValueError: retries must be an integer
+```
+
+It returns a clear error message indicating that `retries` must be an integer. This ensures that invalid configurations are caught early and prevents them from causing runtime errors. 
+
+
+
+## CI/CD Integration for Config Safety
+
+Once we have a validation layer in place, we can integrate it into our CI/CD pipeline to automatically check configuration changes before they are deployed to production. 
+
+AI can help generate CI/CD workflows that automatically validate configuration files during pull requests and deployments.
+
+Sample prompt:
+
+> Given this Python validator and YAML configuration structure, generate a CI/CD workflow that:
+> 
+> - Runs configuration validation automatically
+> - Fails the pipeline if validation errors are found
+> - Prevents invalid configuration changes from being deployed
+
+AI responds with a sample GitHub Actions workflow that runs the validator on every pull request and deployment. If the validation fails, the workflow will stop and prevent the changes from being merged or deployed.
+
+```yaml
+name: Config Validation
+
+on:
+  pull_request:
+
+jobs:
+  validate-config:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Validate config
+        run: python validator.py
+```
