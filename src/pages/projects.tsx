@@ -48,6 +48,14 @@ const projects: ProjectData[] = [
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },    
   {
+    title: "AI-Assisted Testing and CI/CD",
+    description: "AI-assisted software testing and CI/CD with pytest and GitHub Actions",
+    url: `${baseUrl}/docs/Artificial-Intelligence/Prompt-Engineering/Assisted-Testing`, 
+    image: require(`/img/docs/pytest-python-usage.jpg`),
+    tags: ["DevOps", "Python", "Artificial Intelligence"],
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
+  },    
+  {
     title: "CI/CD Pipeline for Flask Application",
     description: "Automated code testing, packaging, and deployment.",
     url: `${baseUrl}/docs/Version-Control-and-CICD/Jenkins-Labs/Single-Server-Deployment`, 
