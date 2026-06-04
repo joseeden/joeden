@@ -20,52 +20,148 @@ AI can help in this space by supporting schema design, query creation, data vali
 
 For this guide, we will use a simple Postgres database running in Docker to simulate real database workflows. This allows us to experiment with schema mapping, duplicate detection, and query optimization in a consistent environment.
 
-See files here: Github
+Project structure:
+
+```
+├── docker
+│   ├── app.py
+│   ├── docker-compose.yaml
+│   └── dockerfile
+├── requirements.txt
+└── scripts
+    ├── seed_data.py
+    ├── setup_schema.py
+    ├── verify_data.py
+    └── verify_schema.py
+```
+
+See files here: [Github](https://github.com/joseeden/joeden/tree/master/assets/scripts/055-DB-Design-and-Optimization)
 
 Steps:
 
-1. Before anything else, make sure you have Docker installed.
+1. Before anything else, make sure you have Docker and Docker Compose installed.
 
-    To setup docker, see [Docker Installation Guide](https://docs.docker.com/get-docker/).
+    - [Docker Installation Guide](https://docs.docker.com/get-docker/).
+    - [Docker Compose Installation Guide](https://docs.docker.com/compose/install/).
 
-2. First, create a virtual environment and activate it:
+2. First, create a virtual environment and activate it.
 
     ```bash
     python -m venv ~/venv
     source ~/venv/bin/activate
     ```
 
-3. After activation, install dependencies from requirements.txt. 
+3. After activation, install dependencies from `requirements.txt`. 
 
-This keeps all libraries in one place and ensures consistent setup across machines.
+    This keeps all libraries in one place and ensures consistent setup across machines.
 
-Start a local Postgres container.
-
-```bash id="dbsetup01"
-docker run --name tourism-db \
-  -e POSTGRES_PASSWORD=postgres \
-  -e POSTGRES_DB=tourism \
-  -p 5432:5432 \
-  -d postgres:16
-```
-
-Confirm the database is running:
-
-```bash
-docker ps
-```
-
-Output:
-
-```bash
-ONTAINER ID   IMAGE                            COMMAND                  CREATED         STATUS         PORTS                             NAMES
-77a3d25ae2b8   postgres:16                      "docker-entrypoint.s…"   2 minutes ago   Up 2 minutes   0.0.0.0:5432->5432/tcp            tourism-db
-```
-
-Next, use the `setup_schema.py` script connects to the Postgres database and creates the initial schema.
+    ```bash
+    pip install -r requirements.txt  
+    ```
 
 
+<!-- 4. Next, we will start a local Postgres container to host our tourism dataset. 
 
+    This simulates a real database environment where we can test schema mapping and query optimization.
+
+    ```bash id="dbsetup01"
+    docker run --name tourism-db \
+      -e POSTGRES_PASSWORD=postgres \
+      -e POSTGRES_DB=tourism \
+      -p 5432:5432 \
+      -d postgres:16
+    ``` -->
+
+4. Start the Postgres and application container using Docker Compose.
+
+    Go to the `docker` directory and run: 
+    
+    ```bash
+    docker-compose up -d --build
+    ```
+
+    Output:
+
+    ```bash
+    [+] Running 3/3
+    ✔ Network docker_default  Created                                                                                                                             0.1s 
+    ✔ Container postgres_db   Started                                                                                                                             0.6s 
+    ✔ Container docker-app-1  Started  
+    ```
+
+    Confirm both containers are created:
+
+    ```bash
+    docker ps -a 
+    ```
+    
+    Output:
+
+    ```bash
+    CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS                      PORTS                                            NAMES
+    f9fb9381e708   docker-app     "python app.py"          35 seconds ago   Exited (1) 34 seconds ago                                                    docker-app-1
+    64a6f2cd6a46   postgres:15    "docker-entrypoint.s…"   35 seconds ago   Up 35 seconds               0.0.0.0:5432->5432/tcp                           postgres_db      
+    ```
+
+    **Note**: The `docker-app-1` will fail because it is trying to query the wrong table name. This is intentional to demonstrate the schema mismatch problem later.
+
+5. Connect to the Postgres database and create the initial schema.
+
+    Go to the `scripts` directory:
+
+    ```bash
+    cd scripts
+    ``` 
+
+    Run the `setup_schema.py` script to initialize the database schema:
+
+    ```bash
+    python setup_schema.py
+    ```
+
+    Use the `verify_schema.py` script to confirm the schema state:
+
+    ```bash
+    python verify_schema.py
+    ``` 
+
+    Output:
+
+    ```bash
+    Tables in database:
+    - activity_events      
+    ```
+
+
+    **Alternative**: use the verify_data.py to query the table (it should return zero rows since we haven't added data yet):
+
+    ```bash
+    python verify_data.py
+    ```
+
+6. Add the seed data so queries have something to work with.
+
+    ```bash
+    python seed_data.py
+    ```
+
+    Output:
+
+    ```bash
+    20+ seed records inserted
+    ```
+
+    Use the `verify_data.py` script again to confirm data is present:
+
+    ```bash
+    python verify_data.py
+    ```
+
+    Output:
+
+    ```bash
+    Row count: 20
+    ```
 
 ## Schema Mismatch Problem
 
@@ -75,41 +171,46 @@ In real systems, the application and database can drift out of sync. The code ex
 - Columns are structured differently
 - Application queries fail at runtime
 
-For example, the application expects a table like `activity_events`, but the database contains a similar table with a different name such as `activities_event`.
+For example, we can see that the application container fails to start:
 
-To confirm what exists in the database, we can inspect the schema using Python.
-
-This script connects to Postgres and lists available tables. The connection is handled through `psycopg2`:
-
-```python 
-import psycopg2
-
-conn = psycopg2.connect(
-    dbname="tourism",
-    user="postgres",
-    password="postgres",
-    host="localhost",
-    port=5432
-)
-
-cur = conn.cursor()
-cur.execute("SELECT table_name FROM information_schema.tables WHERE table_schema='public'")
-print(cur.fetchall())
+```bash
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS                      PORTS                                            NAMES
+f9fb9381e708   docker-app     "python app.py"          35 seconds ago   Exited (1) 34 seconds ago                                                    docker-app-1
+64a6f2cd6a46   postgres:15    "docker-entrypoint.s…"   35 seconds ago   Up 35 seconds               0.0.0.0:5432->5432/tcp                           postgres_db      
 ```
 
-The output confirms that the table exists but under a different name. This shows the issue is not missing data, but schema mismatch between application expectations and database structure.
 
-## AI Schema Mapping
+After inspecting the logs for the app container, we see an error indicating a missing table:
+
+```bash
+$ docker logs docker-app-1
+
+Connecting to Postgres... attempt 1
+DB not ready yet: connection to server at "postgres_db" (172.21.0.2), port 5432 failed: Connection refused
+        Is the server running on that host and accepting TCP/IP connections?
+
+Connecting to Postgres... attempt 2
+Database connection established
+
+SCHEMA ERROR DETECTED
+Table does not exist in current database schema.
+Details: relation "activities_event" does not exist
+LINE 1: SELECT * FROM activities_event
+```
+
+The application expects a table like `activity_events`, but the database contains a similar table with a different name (`activities_event`). Here, the issue is not missing data, but a schema mismatch between application expectations and database structure. 
+
+## Schema Mapping using AI
 
 Instead of manually adjusting tables and columns, AI can be used to map one schema to another.
 
-- AI Matches Source And Target Schemas
-- AI Suggests Column Mappings
-- AI Generates Migration Steps
+- AI can match source and target schemas
+- AI suggests column mappings
+- AI generates migration steps
 
 A common approach is to provide both schemas and ask the model to align them.
 
-Example prompt:
+Sample prompt:
 
 > Given two database schemas, generate a mapping between tables and suggest migration steps to align them.
 
