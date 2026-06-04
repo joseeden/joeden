@@ -24,7 +24,7 @@ For this page, we will use a simple task tracking system as an example to see ho
 
 <!-- This program stores tasks and their statuses, but has limited tests and coverage. -->
 
-See the scripts here: [Github](https://github.com/joseeden/joeden/tree/master/assets/scripts/051-AI-Assisted-Testing)
+See the scripts here: [Github](https://github.com/joseeden/labs-ai-assisted-testing)
 
 Project structure:
 
@@ -242,7 +242,7 @@ project/
     └── test_task_store.py   ← NEW FILE (all tests go here)
 ```
 
-See the scripts here: [Github](https://github.com/joseeden/joeden/tree/master/assets/scripts/051-AI-Assisted-Testing)
+See the scripts here: [Github](https://github.com/joseeden/labs-ai-assisted-testing)
 
 The test summary table:
 
@@ -268,13 +268,13 @@ pip install pytest
 Run the tests with coverage (this runs the tests on the code in the "optimized" folder):
 
 ```bash
-PYTHONPATH=optimized coverage run -m pytest -vv
+PYTHONPATH=optimized coverage run -m pytest -vv tests/test_task_store.py
 ```
 
 Output:
 
 ```bash
-============================================================================ test session starts ============================================================================
+========================================  test session starts ============================================================================
 
 platform linux -- Python 3.10.4, pytest-9.0.3, pluggy-1.6.0 -- /usr/bin/python3
 cachedir: .pytest_cache
@@ -292,7 +292,7 @@ tests/test_task_store.py::test_run_app_integration PASSED                       
 tests/test_task_store.py::test_run_app_large PASSED                                                                                                                   [ 90%]
 tests/test_task_store.py::test_process_tasks PASSED                                                                                                                   [100%]
 
-============================================================================ 10 passed in 0.51s =============================================================================
+========================================  10 passed in 0.51s =============================================================================
 ```
 
 This confirms that all generated tests are passing and the system behaves as expected under the tested conditions.
@@ -332,3 +332,134 @@ This block is not executed during testing because the module is imported by `pyt
 In practice, this is expected behavior, and coverage close to 100% usually indicates that the actual application logic is fully tested even if small entrypoint sections remain unexecuted.
 
 
+## Adding Runtime Protections
+
+Even after improving performance and testing, the system still assumes that all input is valid. AI can help identify missing validation and add runtime protections to make the application more robust.
+
+Sample prompt:
+
+> You are a senior software engineer with expertise in writing robust and secure code.
+> Your task is to add runtime protections to the system to handle custom input safely.
+> - Validate all input parameters for type, required fields, and value
+> - Add clear error messages for invalid input
+> - Verify schemas where applicable, never assume upstream data is clean
+> - Provide safe defaults and fallback behavior instead of undefined states
+
+In my case, the model added input validation to the `TaskStore` class before storing the task.
+
+**Note:** The code updated with the runtime protections are stored in the "runtime-protection" folder.
+
+```bash
+project/
+|
+├── initial
+│   ├── app.py
+│   └── task_store.py
+|
+├── optimized
+│   ├── app.py
+│   └── task_store.py
+|
+├── runtime-protection
+│   ├── app.py
+│   └── task_store.py
+|
+└── tests
+    └── test_task_store.py   
+    └── test_runtime_protections.py   ← NEW FILE (tests for runtime protections)   
+```
+
+**Before**: The optimized `task_store.py` in `optimized/task_store.py` had no input validation, so any type of data could be added as a task.
+
+```python
+    def add_task(self, task_id, name):
+        self.tasks[task_id] = {
+            "id": task_id,
+            "name": name,
+            "done": False
+        }
+
+    def get_task(self, task_id):
+        return self.tasks.get(task_id)
+
+    def mark_done(self, task_id):
+        if task_id in self.tasks:
+            self.tasks[task_id]["done"] = True
+            return True
+        return False
+```
+
+**After:** The updated `task_store.py` in `runtime-protection/task_store.py` now includes input validations.
+
+```python
+    def add_task(self, task_id, name):
+        if not isinstance(task_id, int):
+            raise ValueError("task_id must be an integer")
+
+        if not isinstance(name, str):
+            raise ValueError("name must be a string")
+
+        if not name.strip():
+            raise ValueError("name cannot be empty")
+
+        self.tasks[task_id] = {
+            "id": task_id,
+            "name": name,
+            "done": False
+        }
+
+    def get_task(self, task_id):
+        if not isinstance(task_id, int):
+            raise ValueError("task_id must be an integer")
+
+        return self.tasks.get(task_id)
+
+    def mark_done(self, task_id):
+        if not isinstance(task_id, int):
+            raise ValueError("task_id must be an integer")
+
+        if task_id in self.tasks:
+            self.tasks[task_id]["done"] = True
+            return True
+
+        return False
+```
+
+The updated version prevents invalid data from entering the system and provides clear error messages when incorrect input is supplied.
+
+To test the new runtime protections, we can run specific tests that check for invalid input handling. For this example, I've created to test script `test_runtime_protections.py` under the "tests" folder.
+
+```bash
+PYTHONPATH=runtime-protection pytest -vv tests/test_runtime_protections.py
+```
+
+Output:
+
+```bash
+======================================== test session starts ==================================================================================platform linux -- Python 3.10.4, pytest-9.0.3, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /mnt/c/Git/joeden/assets/scripts/051-AI-Assisted-Testing
+collected 5 items                                                                                                                                                                       
+
+tests/test_runtime_protections.py::test_add_task_invalid_id PASSED                                                                                                                [ 20%]
+tests/test_runtime_protections.py::test_add_task_invalid_name_type PASSED                                                                                                         [ 40%]
+tests/test_runtime_protections.py::test_add_task_empty_name PASSED                                                                                                                [ 60%]
+tests/test_runtime_protections.py::test_get_task_invalid_id PASSED                                                                                                                [ 80%]
+tests/test_runtime_protections.py::test_mark_done_invalid_id PASSED                                                                                                               [100%]
+
+======================================== 5 passed in 0.18s ===================================================================================
+```
+
+This shows that all tests for the runtime protections are passing, which confirms that the new input validations are working as intended and the system is now more robust against invalid input.
+
+## Automating Tests with CI
+
+Finally, tests should run automatically whenever code changes. AI can help generate a simple CI setup for this.
+
+Sample prompt:
+
+> Create a minimal CI configuration that runs all tests automatically whenever code changes are pushed. The CI should:
+> - Trigger on every push and pull request to the repository
+> - Install dependencies
+> - Use Python 3.8 or higher
+> - Run all test suites and report results clearly
