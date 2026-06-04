@@ -1,5 +1,5 @@
 ---
-title: "AI-assisted Testing"
+title: "AI-assisted Software Testing"
 description: "AI-assisted techniques for improving software testing"
 tags:
 - Artificial Intelligence
