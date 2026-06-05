@@ -34,8 +34,6 @@ By running these stages inside an automated pipeline, any structural anomalies o
 
 For this lab, we will use a simple Postgres database and a Python application running in Docker to simulate real database workflows. 
 
-See the complete project setup and instructions here: [Github](https://github.com/joseeden/labs-ai-assisted-database-lifecycle-pipeline)
-
 Project structure:
 
 ```
@@ -66,3 +64,4 @@ labs-ai-assisted-database-lifecycle-pipeline
     └── verify_schema.py
 ```
 
+See the complete project setup and instructions here: [Github](https://github.com/joseeden/labs-ai-assisted-database-lifecycle-pipeline)
