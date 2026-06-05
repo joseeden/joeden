@@ -181,6 +181,8 @@ In real systems, the application and database can drift out of sync. The code ex
 For example, we can see that the application container fails to start:
 
 ```bash
+$ docker ps -a 
+
 CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS                      PORTS                                            NAMES
 f9fb9381e708   docker-app     "python app.py"          35 seconds ago   Exited (1) 34 seconds ago                                                    docker-app-1
 64a6f2cd6a46   postgres:15    "docker-entrypoint.s…"   35 seconds ago   Up 35 seconds               0.0.0.0:5432->5432/tcp                           postgres_db      
@@ -191,10 +193,6 @@ After inspecting the logs for the app container, we see an error indicating a mi
 
 ```bash
 $ docker logs docker-app-1
-
-Connecting to Postgres... attempt 1
-DB not ready yet: connection to server at "postgres_db" (172.21.0.2), port 5432 failed: Connection refused
-        Is the server running on that host and accepting TCP/IP connections?
 
 Connecting to Postgres... attempt 2
 Database connection established
@@ -209,19 +207,68 @@ The application expects a table like `activity_events`, but the database contain
 
 ## Schema Mapping using AI
 
-Instead of manually adjusting tables and columns, AI can be used to map one schema to another.
 
-- AI can match source and target schemas
-- AI suggests column mappings
-- AI generates migration steps
+This is especially useful in large systems where hundreds of tables and columns may need to be compared during troubleshooting or migrations.
 
-A common approach is to provide both schemas and ask the model to align them.
+:::info 
 
-Sample prompt:
+If you connected AI (like GitHub Copilot) to your IDE and allow it to access your codebase, you can set it to **Agent** mode and ask it to analyze the error and suggest fixes directly in your code. 
 
-> Given two database schemas, generate a mapping between tables and suggest migration steps to align them.
+::: 
 
-AI produces a mapping plan that aligns table names and resolves column differences. This reduces manual effort and helps standardize schema changes across systems.
+For this example, the updated code files are in the "docker-fixed" folder. To rebuild and recreate only the app container with the fixed code, you can run:
+
+```bash
+docker-compose up -d --build app
+```
+
+Output:
+
+```bash
+✔ Container postgres_db         Running                                                                                                                                                     0.0s 
+✔ Container docker-fixed-app-1  Started
+```
+
+Then, go to the `docker-fixed` directory and spin up the new containers:
+
+```bash
+cd docker-fixed
+docker-compose up -d --build app
+```
+
+Checking the containers again, we see that the app still exits out, but this time it shows `Exit (0)` (previously it was `Exit (1)`) which means it ran successfully and then stopped.
+
+Exit code `0` means the container did not crash. It finished successfully and exited normally.
+
+If we check the logs again, we see that the schema error is resolved and the application can now query the database successfully:
+
+```bash
+$ docker logs docker-fixed-app-1
+
+Connecting to Postgres... attempt 1
+Database connection established
+Data:
+(1, 'City Tour', 'Singapore')
+(2, 'Museum Visit', 'Singapore')
+(3, 'Marina Bay Walk', 'Singapore')
+(4, 'Night Safari', 'Singapore')
+(5, 'Food Tour', 'Singapore')
+(6, 'Eiffel Tower Visit', 'Paris')
+(7, 'Louvre Museum Tour', 'Paris')
+(8, 'Seine River Cruise', 'Paris')
+(9, 'Montmartre Walk', 'Paris')
+(10, 'Paris Food Tasting', 'Paris')
+(11, 'Statue of Liberty Tour', 'New York')
+(12, 'Central Park Walk', 'New York')
+(13, 'Met Museum Visit', 'New York')
+(14, 'Brooklyn Bridge Walk', 'New York')
+(15, 'Times Square Night Tour', 'New York')
+(16, 'Colosseum Tour', 'Rome')
+(17, 'Vatican Museum Visit', 'Rome')
+(18, 'Trevi Fountain Stop', 'Rome')
+(19, 'Roman Food Tour', 'Rome')
+(20, 'Ancient Ruins Walk', 'Rome')
+```
 
 ## Real World Data Updates
 
