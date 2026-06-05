@@ -1,5 +1,3 @@
-# seed_data.py
-
 import psycopg2
 
 conn = psycopg2.connect(
@@ -38,6 +36,30 @@ data = [
     ("Ancient Ruins Walk", "Rome")
 ]
 
+# --- ADDED DUPLICATES (intentional data issues) ---
+duplicates = [
+    ("City Tour", "Singapore"),
+    ("City Tour", "Singapore"),
+    ("Museum Visit", "Singapore"),
+    ("Night Safari", "Singapore"),
+    ("Food Tour", "Singapore"),
+
+    ("Eiffel Tower Visit", "Paris"),
+    ("Eiffel Tower Visit", "Paris"),
+    ("Seine River Cruise", "Paris"),
+
+    ("Central Park Walk", "New York"),
+    ("Met Museum Visit", "New York"),
+    ("Met Museum Visit", "New York"),
+
+    ("Colosseum Tour", "Rome"),
+    ("Vatican Museum Visit", "Rome"),
+    ("Vatican Museum Visit", "Rome"),
+]
+
+# combine original + duplicates
+data.extend(duplicates)
+
 cur.executemany("""
 INSERT INTO activity_events (activity_name, city)
 VALUES (%s, %s)
@@ -47,4 +69,4 @@ conn.commit()
 cur.close()
 conn.close()
 
-print("20+ seed records inserted")
+print(f"{len(data)} seed records inserted (including duplicates)")

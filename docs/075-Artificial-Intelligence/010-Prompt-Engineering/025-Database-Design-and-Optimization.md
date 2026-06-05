@@ -29,7 +29,9 @@ Project structure:
 │   ├── app.py
 │   ├── docker-compose.yaml
 │   └── dockerfile
+│
 ├── requirements.txt
+│
 └── scripts
     ├── seed_data.py
     ├── setup_schema.py
@@ -155,7 +157,7 @@ Steps:
     Output:
 
     ```bash
-    20+ seed records inserted
+    34 seed records inserted (including duplicates)
     ```
 
     Use the `verify_data.py` script again to confirm data is present:
@@ -167,7 +169,7 @@ Steps:
     Output:
 
     ```bash
-    Row count: 20
+    Row count: 34
     ```
 
 ## Schema Mismatch Problem
@@ -207,6 +209,11 @@ The application expects a table like `activity_events`, but the database contain
 
 ## Schema Mapping using AI
 
+Instead of manually adjusting tables and columns, AI can be used to map one schema to another.
+
+- AI can match source and target schemas
+- AI suggests column mappings
+- AI generates migration steps
 
 This is especially useful in large systems where hundreds of tables and columns may need to be compared during troubleshooting or migrations.
 
@@ -216,7 +223,35 @@ If you connected AI (like GitHub Copilot) to your IDE and allow it to access you
 
 ::: 
 
-For this example, the updated code files are in the "docker-fixed" folder. To rebuild and recreate only the app container with the fixed code, you can run:
+For this example, the updated code files are in the "docker-fixed" folder.
+
+```
+├── docker
+│   ├── app.py
+│   ├── docker-compose.yaml
+│   └── dockerfile
+│
+├── docker-fixed
+│   ├── app.py
+│   ├── docker-compose.yaml
+│   └── dockerfile
+│
+├── requirements.txt
+│
+└── scripts
+    ├── seed_data.py
+    ├── setup_schema.py
+    ├── verify_data.py
+    └── verify_schema.py
+```
+
+Go to the `docker-fixed` directory:
+
+```bash
+cd docker-fixed
+```
+
+To rebuild and recreate only the app container with the fixed code, you can run:
 
 ```bash
 docker-compose up -d --build app
@@ -227,13 +262,6 @@ Output:
 ```bash
 ✔ Container postgres_db         Running                                                                                                                                                     0.0s 
 ✔ Container docker-fixed-app-1  Started
-```
-
-Then, go to the `docker-fixed` directory and spin up the new containers:
-
-```bash
-cd docker-fixed
-docker-compose up -d --build app
 ```
 
 Checking the containers again, we see that the app still exits out, but this time it shows `Exit (0)` (previously it was `Exit (1)`) which means it ran successfully and then stopped.
@@ -270,44 +298,126 @@ Data:
 (20, 'Ancient Ruins Walk', 'Rome')
 ```
 
-## Real World Data Updates
 
-In production systems, data is constantly changing through external integrations and event streams.
+## AI-Assisted Duplicate Detection
 
-- Duplicate Records Are Common
-- Corrections Modify Existing Entries
-- Multiple Providers Send Overlapping Data
+In real-world systems, data is constantly being inserted and processed by various services. Without strict controls, duplicate data naturally slips into the database.
 
-Tourism platforms often receive booking events from multiple partners. This creates duplicates unless the system validates data before inserting it.
+Our current Docker environment mirrors this production reality:
 
-To handle this, incoming data must be checked before being stored in the database.
+- **`postgres_db`**: A PostgreSQL container storing all activity data.
+- **`docker-fixed-app-1`**: An application container that connects to and queries the database.
 
-## AI Assisted Duplicate Detection
+Data is populated using `seed_data.py` and read live by the application. However, because data can be re-run or reloaded (especially during development, retries, or pipeline failures), the system remains vulnerable to duplication.
 
-AI can help design rules and queries that detect duplicates in incoming data batches.
+You can view the current state of the database at any time by running the helper script:
 
-- AI Identifies Duplicate Patterns
-- AI Generates SQL Detection Logic
-- AI Improves Data Quality Checks
 
-Instead of writing manual rules for every scenario, we ask AI to generate a reusable SQL query.
+```bash
+$ python3 scripts/query_table.py 
 
-Example prompt:
+ACTIVITY EVENTS TABLE
 
-> Create a SQL query that detects duplicate booking events based on user_id, event_id, and timestamp.
-
-AI produces a query like this:
-
-This SQL checks for duplicate records in a Postgres table:
-
-```sql id="dup01"
-SELECT user_id, event_id, COUNT(*)
-FROM bookings
-GROUP BY user_id, event_id
-HAVING COUNT(*) > 1;
+----+-------------------------+-----------
+ id | activity_name           | city      
+----+-------------------------+-----------
+ 1  | City Tour               | Singapore 
+ 2  | Museum Visit            | Singapore 
+ 3  | Marina Bay Walk         | Singapore 
+ 4  | Night Safari            | Singapore 
+ 5  | Food Tour               | Singapore 
+ 6  | Eiffel Tower Visit      | Paris     
+ 7  | Louvre Museum Tour      | Paris     
+ 8  | Seine River Cruise      | Paris     
+ 9  | Montmartre Walk         | Paris     
+ 10 | Paris Food Tasting      | Paris     
+ 11 | Statue of Liberty Tour  | New York  
+ 12 | Central Park Walk       | New York  
+ 13 | Met Museum Visit        | New York  
+ 14 | Brooklyn Bridge Walk    | New York  
+ 15 | Times Square Night Tour | New York  
+ 16 | Colosseum Tour          | Rome      
+ 17 | Vatican Museum Visit    | Rome      
+ 18 | Trevi Fountain Stop     | Rome      
+ 19 | Roman Food Tour         | Rome      
+ 20 | Ancient Ruins Walk      | Rome      
+ 21 | City Tour               | Singapore 
+ 22 | City Tour               | Singapore 
+ 23 | Museum Visit            | Singapore 
+ 24 | Night Safari            | Singapore 
+ 25 | Food Tour               | Singapore 
+ 26 | Eiffel Tower Visit      | Paris     
+ 27 | Eiffel Tower Visit      | Paris     
+ 28 | Seine River Cruise      | Paris     
+ 29 | Central Park Walk       | New York  
+ 30 | Met Museum Visit        | New York  
+ 31 | Met Museum Visit        | New York  
+ 32 | Colosseum Tour          | Rome      
+ 33 | Vatican Museum Visit    | Rome      
+ 34 | Vatican Museum Visit    | Rome      
+----+-------------------------+-----------  
 ```
 
-This query can be reused in every ingestion process to ensure duplicates are detected before data is inserted.
+As shown above, identical activities like "City Tour" in "Singapore" appear multiple times with different IDs.
+
+Instead of writing detection logic from scratch, we can leverage AI to generate a duplicate detection query based on our schema. 
+
+Sample prompt:
+
+> Given a PostgreSQL table `activity_events(activity_name, city)`, generate a SQL query to detect duplicate activity records.
+
+The AI generates the following query:
+
+```sql
+SELECT activity_name, city, COUNT(*)
+FROM activity_events
+GROUP BY activity_name, city
+HAVING COUNT(*) > 1;
+
+```
+
+In a production pipeline, you can integrate this SQL query to automatically flag or block duplicates before they corrupt downstream analytics, dashboards, or APIs. It can be implemented as:
+
+1. A **pre-insert validation step** during ingestion.
+2. A **post-load data quality check** inside the pipeline container.
+
+For instance, this SQL logic can be executed directly within our validation scripts. We can implement this in `scripts/verify_data_duplicates.py` to automatically check the database after a data load and raise an alarm if duplicates are found.
+
+Run the script:
+
+```bash
+python3 scripts/verify_data_duplicates.py
+```
+
+Output:
+
+```bash
+❌ DATA QUALITY ALERT: Duplicates detected in activity_events!
+ - Eiffel Tower Visit in Paris appears 6 times
+ - City Tour in Singapore appears 6 times
+ - Vatican Museum Visit in Rome appears 6 times
+ - Trevi Fountain Stop in Rome appears 2 times
+ - Times Square Night Tour in New York appears 2 times
+ - Colosseum Tour in Rome appears 4 times
+ - Food Tour in Singapore appears 4 times
+ - Ancient Ruins Walk in Rome appears 2 times
+ - Louvre Museum Tour in Paris appears 2 times
+ - Montmartre Walk in Paris appears 2 times
+ - Brooklyn Bridge Walk in New York appears 2 times
+ - Statue of Liberty Tour in New York appears 2 times
+ - Met Museum Visit in New York appears 6 times
+ - Paris Food Tasting in Paris appears 2 times
+ - Night Safari in Singapore appears 4 times
+ - Roman Food Tour in Rome appears 2 times
+ - Central Park Walk in New York appears 4 times
+ - Seine River Cruise in Paris appears 4 times
+ - Museum Visit in Singapore appears 4 times
+ - Marina Bay Walk in Singapore appears 2 times
+```
+
+By adding this step to your workflow, if `seed_data.py` accidentally runs twice, running the  `python3 scripts/verify_data_duplicates.py` will immediately catch the error and fail the pipeline before the bad data can spread.
+
+
 
 ## Query Performance Optimization
 
