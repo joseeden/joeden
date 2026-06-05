@@ -49,10 +49,18 @@ const projects: ProjectData[] = [
   },    
   {
     title: "AI-Assisted Testing and CI/CD",
-    description: "AI-assisted software testing and CI/CD with pytest and GitHub Actions",
+    description: "Using AI for software testing and CI/CD with pytest and GitHub Actions",
     url: `${baseUrl}/docs/Artificial-Intelligence/Prompt-Engineering/Assisted-Testing`, 
     image: require(`/img/docs/pytest-python-usage.jpg`),
     tags: ["Artificial Intelligence", "Python"],
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
+  },    
+  {
+    title: "AI-Assisted DB Lifecycle Pipeline",
+    description: "Using AI for database lifecycle management with automated testing",
+    url: "https://github.com/joseeden/labs-ai-assisted-database-lifecycle-pipeline", 
+    image: require(`/img/docs/Screenshot2026-06-06033245.png`),
+    tags: ["DevOps", "Artificial Intelligence"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },    
   {
