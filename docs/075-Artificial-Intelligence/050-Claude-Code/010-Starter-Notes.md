@@ -36,6 +36,27 @@ Installing Claude Code:
 - [Quickstart - Claude Code Docs](https://code.claude.com/docs/en/quickstart)
 - [Use Claude Code in VS Code - Claude Code Docs](https://code.claude.com/docs/en/vscode)
 
+## Setting Up 
+
+When you first run `claude`, it will prompt you to configure your settings, such as your user account and login method. You will need to created an account and configure your billing details.
+
+**Important**: Make sure to skip auto-reload.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-06-06043151.png)
+
+</div>
+
+Return to your terminal. You should see a message confirming that login is successful.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-06-06043352.png)
+
+</div>
+
+
 ## Using Claude Code
 
 To see how this works in practice, run `claude` command to start the tool directly inside your current project workspace.
