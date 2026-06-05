@@ -36,7 +36,6 @@ Installing Claude Code:
 - [Quickstart - Claude Code Docs](https://code.claude.com/docs/en/quickstart)
 - [Use Claude Code in VS Code - Claude Code Docs](https://code.claude.com/docs/en/vscode)
 
-
 ## Using Claude Code
 
 To see how this works in practice, run `claude` command to start the tool directly inside your current project workspace.
@@ -54,21 +53,9 @@ This will launch the Claude Code interface, where you can start interacting with
 </div>
 
 
-## Structured Workflow 
+## Concepts 
 
-This simple workflow helps guide Claude through the task step by step.
-
-1. Initialize the project
-2. Explore the codebase
-3. Plan before coding
-4. Review the plan
-5. Write code after review
-6. Test the changes and iterate
-
-This approach helps ensure the output aligns with existing structure instead of introducing random or conflicting changes.
-
-
-## AI Agent
+### AI Agent
 
 An AI agent is a program that interacts with its environment and takes independent actions to achieve a specific goal. 
 
@@ -76,7 +63,7 @@ An AI agent is a program that interacts with its environment and takes independe
 - They run in a continuous feedback loop
 - Teams of agents can talk to each other
 
-## The Agentic Loop
+### The Agentic Loop
 
 Claude Code works by running your instructions through a continuous loop of thinking and doing until the job is done.
 
@@ -93,7 +80,7 @@ If the results look good, Claude stops and waits for your next command, but it l
 
 </div>
 
-## Context Window
+### Context Window
 
 Claude uses a temporary working memory called a **context window** to hold your files and chat history, but this space can fill up quickly.
 
@@ -109,7 +96,7 @@ Make sure to keep an eye on this memory usage to ensure Claude always has enough
 
 ::: 
 
-## Tools
+### Tools
 
 Tools are what turn a basic chatbot into an autonomous assistant that can actually interact with your computer.
 
@@ -119,7 +106,7 @@ Tools are what turn a basic chatbot into an autonomous assistant that can actual
 
 Instead of just spitting out text for you to copy, Claude uses these tools to change files and check documentation on its own. 
 
-## Permission Modes
+### Permission Modes
 
 You can control exactly how much freedom Claude has to change things on your machine by switching between different permission modes.
 
@@ -141,6 +128,20 @@ Claude is super helpful, but you still need to keep an eye on how much it can re
 - Review all generated code for bugs
 
 To prevent mistakes, give Claude a quick rundown of your project before it starts writing code. This ensures the generated code actually fits right into your project structure. -->
+
+## Structured Workflow 
+
+This simple workflow helps guide Claude through the task step by step.
+
+1. Initialize the project
+2. Explore the codebase
+3. Plan before coding
+4. Review the plan
+5. Write code after review
+6. Test the changes and iterate
+
+This approach helps ensure the output aligns with existing structure instead of introducing random or conflicting changes.
+
 
 ## Project Memory with `CLAUDE.md`
 
