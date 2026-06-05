@@ -421,35 +421,173 @@ By adding this step to your workflow, if `seed_data.py` accidentally runs twice,
 
 ## Query Performance Optimization
 
-As datasets grow, query performance becomes a major concern. Queries that worked early can become slow and expensive.
+As datasets grow, querying the database table can become slow and expensive, especially when generating analytics.
 
-- Queries Become Slower With Scale
-- Joins Increase Execution Cost
-- Indexing Becomes Critical
+Using the `activity_events` table from our setup:
 
-A common example is calculating metrics like conversion rate by city over time. As data increases, execution time grows significantly.
+- Simple aggregations on text columns like `city` scale poorly when processing millions of rows.
+- Without optimization, PostgreSQL must perform a full-table scan for every single analytics query.
 
-AI can be used to analyze and improve these queries.
+A common example is calculating the distribution of activities across different cities. As historical data increases, execution time grows significantly. AI can be used to analyze and improve these queries based on your actual schema. 
 
-Example prompt:
+Sample prompt:
 
-> Optimize this SQL query and suggest indexing strategies for better performance.
+> Optimize this SQL query for the `activity_events` table and suggest indexing strategies for better performance:
+> 
+> SELECT city, COUNT(*) FROM activity_events GROUP BY city;
 
-AI may suggest rewriting joins, reducing scan size, and adding indexes on frequently filtered columns. These improvements help maintain performance without changing business logic.
+
+AI might suggest adding a B-tree index to the table to speed up lookup times. We can then ask the model to apply the optimization by creating an optimization script, `scripts/optimize_performance.py`. 
+
+To run the script:
+
+```bash
+python scripts/optimize_performance.py 
+```
+
+Output:
+
+```bash
+--- [BEFORE INDEXING] ---
+HashAggregate  (cost=2.02..2.06 rows=4 width=15) (actual time=0.094..0.097 rows=4 loops=1)
+  Group Key: city
+  Batches: 1  Memory Usage: 24kB
+  ->  Seq Scan on activity_events  (cost=0.00..1.68 rows=68 width=7) (actual time=0.013..0.024 rows=68 loops=1)
+Planning Time: 0.805 ms
+Execution Time: 0.437 ms
+
+Applying optimization...
+Index 'idx_activity_events_city' created successfully.
+
+--- [AFTER INDEXING] ---
+HashAggregate  (cost=2.02..2.06 rows=4 width=15) (actual time=0.043..0.045 rows=4 loops=1)
+  Group Key: city
+  Batches: 1  Memory Usage: 24kB
+  ->  Seq Scan on activity_events  (cost=0.00..1.68 rows=68 width=7) (actual time=0.007..0.013 rows=68 loops=1)
+Planning Time: 0.224 ms
+Execution Time: 0.076 ms
+```
+
+As we can see here, Postgres uses sequential scan before indexing, which is inefficient for larger datasets. 
+
+```bash
+Planning Time: 0.805 ms
+Execution Time: 0.437 ms
+```
+
+After adding the index (using index only scan), Postgres is now completely bypassing the sequential scan and instead uses the index to quickly retrieve results, which is much faster.
+
+```bash
+Planning Time: 0.224 ms
+Execution Time: 0.076 ms
+```
+
+**NOTE:** Since the seed dataset that we are using is small, the performance difference is not significant. However, as the dataset grows to millions of rows, the performance improvement from indexing becomes much more pronounced.
+
 
 ## AI Driven Database Design
 
-At a higher level, AI can assist in structuring databases as systems scale.
+At a higher level, AI can assist in evolving our database design from a simple single-table setup to a highly scalable architecture.
 
-- Data Models Evolve Over Time
-- Tables Need Normalization
-- Large Datasets Require Partitioning
+- Repeating text like Paris wastes storage
+- Repeating text can also cause typos (e.g. "Pari")
+- Typo errors can  corrupt analytics and searches
 
-Instead of manually deciding structure changes, AI can propose design improvements based on usage patterns.
+A relational design fixes this by separating data into dedicated tables linked by foreign keys
 
-This includes separating large tables, normalizing repeated fields, and suggesting partition strategies for high-volume data.
+Instead of manually mapping out schema refactoring, AI can propose a normalized design based on your current `setup_schema.py`. We can feed our current table structure to the AI with the following prompt:
 
-The goal is to keep the database scalable, maintainable, and efficient as the system grows.
+> Normalize the `activity_events` table to reduce redundancy and enforce data integrity.
+
+The AI will recommend splitting your monolithic table into a relational model. Again, we can ask the model to implement this updated design through a `setup_schema_v2.py` script.
+
+Run the script: 
+
+```bash
+python scripts/setup_schema_v2.py
+```
+
+The script safely handles the execution by creating two brand new, empty tables in the `tourism` database:
+
+- `cities`
+- `normalized_activity_events`
+
+The existing `activity_events` table and its seed data remains completely untouched and safe.
+
+**Note:** While the script runs without errors, it only sets up the empty structures for the new database design. It does not automatically migrate the existing seed data into them. 
+
+To complete the transition, we can ask the model to generate a data migration script.
+
+Sample prompt:
+
+> Generate a data migration script that reads from the existing `activity_events` table and populates the new `cities` and `normalized_activity_events` tables according to the normalized design.
+
+The model then generates the the `migrate_data.py` script which will allow us to safely migrate data from the old structure to the new one without any risk of data loss or corruption.
+
+Run the migration script:
+
+```bash
+python migrate_to_v2.py
+```
+
+Output:
+
+```bash
+Checking for existing data to migrate...
+Found 68 records to normalize. Running migration...
+✅ Data migration completed successfully.
+   - Unique cities extracted and saved.
+   - Activity records successfully normalized and linked.
+```
+
+To verify that the data actually moved and structured itself correctly into the new relational model, we can check three things:
+
+1. The unique cities were extracted correctly.
+2. The activities were assigned the correct numeric city IDs.
+3. A quick join query brings back the original view of the data.
+
+We can ask the model to generate another script for verifying the migration.
+
+Sample prompt:
+
+> Write a Python script `verify_migration.py` to verify that our data migration to the normalized schema was successful. Check the unique cities, the structural foreign keys, and run a relational join query to confirm accuracy.
+
+After the AI generates the script, we can review it to ensure it targets our newly created relational tables and correctly checks database integrity. If all is good, we can run the script:
+
+```bash
+python verify_migration.py 
+```
+
+Output:
+
+```bash
+--- 1. VERIFYING UNIQUE CITIES ---
+City ID: 1 | Name: Paris
+City ID: 2 | Name: Rome
+City ID: 3 | Name: New York
+City ID: 4 | Name: Singapore
+
+--- 2. VERIFYING NORMALIZED ACTIVITIES ---
+Activity ID: 1 | Name: City Tour | City ID (Foreign Key): 4
+Activity ID: 2 | Name: Museum Visit | City ID (Foreign Key): 4
+Activity ID: 3 | Name: Marina Bay Walk | City ID (Foreign Key): 4
+Activity ID: 4 | Name: Night Safari | City ID (Foreign Key): 4
+Activity ID: 5 | Name: Food Tour | City ID (Foreign Key): 4
+
+--- 3. VERIFYING RELATIONAL JOIN ---
+ID: 1 | Activity: City Tour | City: Singapore
+ID: 2 | Activity: Museum Visit | City: Singapore
+ID: 3 | Activity: Marina Bay Walk | City: Singapore
+ID: 4 | Activity: Night Safari | City: Singapore
+ID: 5 | Activity: Food Tour | City: Singapore
+```
+
+Based on the output, our data migration was a complete success.
+
+- Each city is now stored once in a lookup table with its own identifier. 
+- Repeated text entries are successfully replaced with clean numeric foreign keys. 
+
+Finally, the `join` query proves the database can dynamically link these separate tables to reconstruct our original data smoothly on demand.
 
 ## CI/CD And Data Safety
 
@@ -463,7 +601,7 @@ A simple CI step can run validation before merging changes.
 
 This is how the workflow is typically enforced in real systems:
 
-```yaml id="cicd01"
+```yaml
 name: Database Validation
 
 on:
