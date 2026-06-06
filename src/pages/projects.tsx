@@ -67,7 +67,8 @@ const projects: ProjectData[] = [
     title: "LLM Engineering Sandbox",
     description: "Collection of engineering patterns for building decoupled LLM integrations.",
     url: "https://github.com/joseeden/llm-engineering-sandbox", 
-    image: require(`/img/docs/llm-engineering-thumbnail.png`), 
+    // image: require(`/img/docs/llm-engineering-thumbnail.png`), 
+    image: require(`/img/docs/llm-engineering-thumbnail.jpg`), 
     tags: ["Artificial Intelligence", "LLM"],
     // level: "Intermediate", // Perfect for an engineering sandbox that focuses on decoupled architecture
   },  
