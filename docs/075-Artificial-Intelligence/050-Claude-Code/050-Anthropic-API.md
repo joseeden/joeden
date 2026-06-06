@@ -211,6 +211,71 @@ Output:
 Code saved to circle_area.py
 ```
 
+## Content Classification System
+
+A content classification system automatically organizes customer messages into categories so they can be handled faster and more efficiently.
+
+- Automatic sorting of messages
+- Routes issues to the right team
+- Detects common and trending problems
+
+In the example below, the `client` object sends a list of customer messages to Claude and the `messages` variable contains the feedback that needs to be classified into predefined categories.
+
+```python 
+## sample-content-classification.py
+import anthropic
+from dotenv import load_dotenv
+
+load_dotenv()
+
+client = anthropic.Anthropic()
+
+messages = [
+    "My app crashes when I try to upload a photo",
+    "I forgot my password and cannot log in",
+    "The app feels very slow after the update"
+]
+
+response = client.messages.create(
+    model="claude-haiku-4-5",
+    max_tokens=300,
+    messages=[
+        {
+            "role": "user",
+            "content": f"""
+                Classify each message into one of these categories:
+                - Bug report
+                - Account issue
+                - Performance issue
+
+                Messages:
+                {messages}
+
+                Return the result as a simple numbered list.
+                """
+        }
+    ]
+)
+
+print(response.content[0].text)
+```
+
+Run the script:
+
+```bash 
+python sample-content-classification.py
+```
+
+Expected output:
+
+```text 
+1. Bug report - My app crashes when I try to upload a photo  
+2. Account issue - I forgot my password and cannot log in  
+3. Performance issue - The app feels very slow after the update
+```
+
+This removes the need for manual review by instantly labeling feedback based on meaning. It helps support and product teams respond faster and focus on the right issues.
+
 
 ## Temperature
 
