@@ -63,6 +63,14 @@ const projects: ProjectData[] = [
     tags: ["DevOps", "Artificial Intelligence"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },    
+{
+    title: "LLM Engineering Sandbox",
+    description: "Collection of engineering patterns for building decoupled LLM integrations.",
+    url: "https://github.com/joseeden/llm-engineering-sandbox", 
+    image: require(`/img/docs/llm-engineering-thumbnail.png`), 
+    tags: ["Artificial Intelligence", "LLM"],
+    // level: "Intermediate", // Perfect for an engineering sandbox that focuses on decoupled architecture
+  },  
   {
     title: "CI/CD Pipeline for Flask Application",
     description: "Automated code testing, packaging, and deployment.",
@@ -217,6 +225,7 @@ const categories = [
   { id: "dataengineering", label: "Data Engineering" },
   { id: "ml", label: "Machine Learning" },
   { id: "ai", label: "Artificial Intelligence" },
+  { id: "llm", label: "LLM" },
 ];
 
 export default function Projects(): JSX.Element {
