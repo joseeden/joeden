@@ -26,7 +26,7 @@ More examples usually improve consistency, but too many can waste context space.
 The code examples in this section use the Anthropic API to demonstrate different prompting techniques. 
 Make sure to [set up your API key and environment](/docs/075-Artificial-Intelligence/050-Claude-Code/050-Anthropic-API.md) before running the code.
 
-See the actual code files here: [Github](https://github.com/joseeden/joeden/tree/master/assets/scripts/060-Anthropic-API-Starter)
+See the actual code files here: [Github](https://github.com/joseeden/llm-engineering-sandbox)
 
 :::
 
@@ -79,21 +79,35 @@ One-shot prompting provides a single example before the actual request. This hel
 Using the same translation task, we give one example before asking for the new translation. 
 
 ```python
-from openai import OpenAI
+# prompt-one-shot.py
+import anthropic
+from dotenv import load_dotenv
 
-client = OpenAI()
+load_dotenv()
 
-response = client.chat.completions.create(
-    model="gpt-4.1-mini",
+client = anthropic.Anthropic()
+
+response = client.messages.create(
+    model="claude-haiku-4-5",
+    max_tokens=200,
     temperature=0,
     messages=[
-        {"role": "user", "content": "Good morning -> Bonjour"},
-        {"role": "assistant", "content": "Understood"},
-        {"role": "user", "content": "Translate to French: Thank you"}
+        {
+            "role": "user",
+            "content": "Translate to French: How are you?"
+        },
+        {
+            "role": "assistant",
+            "content": "Comment ça va ?"
+        },
+        {
+            "role": "user",
+            "content": "Translate to French: How was your flight yesterday?"
+        }
     ]
 )
 
-print(response.choices[0].message.content)
+print(response.content[0].text)
 ```
 
 Output:
@@ -238,7 +252,7 @@ Some common use cases for few-shot prompting include:
 In the example below, we train the model to respond to complaints in a polite, structured way.
 
 ```python
-## prompt-customer-support.py
+# prompt-customer-support.py
 import anthropic
 from dotenv import load_dotenv
 
@@ -348,7 +362,7 @@ For this example, we have the following files:
 └── .env                ## optional
 ```
 
-See the actual code files here: [Github](https://github.com/joseeden/joeden/tree/master/assets/scripts/060-Anthropic-API-Starter)
+See the actual code files here: [Github](https://github.com/joseeden/llm-engineering-sandbox)
 
 
 #### 1. Environment + Client Setup
