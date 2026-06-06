@@ -61,3 +61,9 @@ Once you approve the plan, the development phase begins. To help the AI implemen
 The final phase focuses on checking the quality of the work and saving your progress.
 
 Before you commit the changes, you can run a **subagent reviewer** to check the files. The subagent can give a fresh perspective and removes any bias from the main coding session. 
+
+<div class='img-center'>
+
+![](/gif/docs/06062026-claude-code-subagent-review.gif)
+
+</div>

@@ -1,8 +1,4 @@
 {
   "label": "Agentic AI",
-  "position": 35,
-  "link": {
-    "type": "doc",
-    "id": "agentic-ai-starter-notes"
-  }
+  "position": 35
 }

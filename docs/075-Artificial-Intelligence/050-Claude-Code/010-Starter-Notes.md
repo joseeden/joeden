@@ -109,13 +109,47 @@ Claude uses a temporary working memory called a **context window** to hold your 
 - Claude automatically shrinks the chat history when full
 - Important summaries are kept while extra details get dropped
 
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-06-06135049.png)
+
+</div>
+
 When the limit is reached, Claude smartly compacts the conversation so it can keep working without losing track of your main goal.
 
-:::info 
+You can also manually run it:
 
-Make sure to keep an eye on this memory usage to ensure Claude always has enough background info to write great code.
+```bash
+/compact 
+```
 
-::: 
+You can check how much of the context window is currently being used with:
+
+```bash
+/context
+```
+
+To completely clear the context and start fresh, use:
+
+```bash
+/clear
+``` 
+
+**Compact vs Clear**
+
+When working on a long feature, compact the history if you start running out of memory. This step keeps the active conversation relevant and focused on your current task. 
+
+Once you finish the feature and want to start something new, clear the session completely. Starting fresh prevents old conversations from creating bias in your next task. 
+
+<div class='img-center'>
+
+![](/gif/docs/06062026-claude-code-context-mgt.gif)
+
+</div>
+
+For permanent project details you want remembered across sessions, save them in a `CLAUDE.md` file so the information never has to be rediscovered from scratch.
+
+See the [CLAUDE.md](#claude-md) section below for more details.
 
 ### Tools
 
@@ -152,7 +186,7 @@ To prevent mistakes, give Claude a quick rundown of your project before it start
 
 
 
-## Project Memory with `CLAUDE.md`
+## `CLAUDE.md`
 
 Claude can store project context in a file called `CLAUDE.md`. This file helps it remember structure, rules, and conventions across sessions. 
 
