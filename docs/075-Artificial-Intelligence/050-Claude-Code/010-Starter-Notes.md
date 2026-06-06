@@ -206,19 +206,30 @@ To prevent mistakes, give Claude a quick rundown of your project before it start
 
 ## `CLAUDE.md`
 
-Claude can store project context in a file called `CLAUDE.md`. This file helps it remember structure, rules, and conventions across sessions. 
-
-To initialize it:
-
-```bash
-/init
-```
-
-Claude scans the project and generates the `CLAUDE.md` file automatically based on the existing codebase. This file should only contain the core project information that Claude can reference in future interactions:
+Claude can store project context in a file called `CLAUDE.md`. This file contains the core project information that Claude can reference in future interactions:
 
 - Project Name And Purpose
 - Common Commands
 - Key Conventions
+
+Sample Claude.md structure:
+
+```markdown
+# Project
+
+This is a Next.js 15 app using the App Router, Tailwind, and Drizzle ORM.
+
+# Commands
+- Dev server: `pnpm dev`
+- Run tests: `pnpm test`
+- Lint: `pnpm lint`
+
+# Code Style
+- Use 2-space indentation
+- Prefer named exports
+- All API routes go in app/api/
+- Use server actions instead of API routes where possible
+```
 
 CLAUDE.md should evolve as the project changes or when mistakes are discovered. Each update improves future behavior and prevents repeated issues.
 
@@ -227,6 +238,23 @@ CLAUDE.md should evolve as the project changes or when mistakes are discovered. 
 Good results depend on what is inside `CLAUDE.md`, not just the file existing. Too little context reduces accuracy while too much creates noise, so the goal is balance.
 
 ::: 
+
+
+## Initializing `CLAUDE.md` 
+
+To get started, open Claude Code and run:
+
+```bash
+/init
+```
+
+Claude scans the project directory and generates a `CLAUDE.md` file automatically based on the existing codebase. 
+
+<div class='img-center'>
+
+![](/gif/docs/06062026-claude-code-init-claudemd.gif)
+
+</div>
 
 
 ## Context Layers
