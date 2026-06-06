@@ -150,18 +150,6 @@ Claude is super helpful, but you still need to keep an eye on how much it can re
 
 To prevent mistakes, give Claude a quick rundown of your project before it starts writing code. This ensures the generated code actually fits right into your project structure. -->
 
-## Structured Workflow 
-
-This simple workflow helps guide Claude through the task step by step.
-
-1. Initialize the project
-2. Explore the codebase
-3. Plan before coding
-4. Review the plan
-5. Write code after review
-6. Test the changes and iterate
-
-This approach helps ensure the output aligns with existing structure instead of introducing random or conflicting changes.
 
 
 ## Project Memory with `CLAUDE.md`
@@ -188,24 +176,6 @@ Good results depend on what is inside `CLAUDE.md`, not just the file existing. T
 
 ::: 
 
-
-## Plan Mode
-
-**Plan Mode** forces Claude to think before writing code. It reviews the project and creates a structured plan first.
-
-To swithch to plan mode, use the shortcut `Shift + Tab` or type:
-
-```bash
-/plan 
-```
-
-Then enter your prompt. For example:
-
-```bash
-How to add a new authentication method to the system?
-```
-
-If you skip planning, Claude may generate code immediately without understanding the full context. This can result to a working solution that does not match the project design.
 
 ## Levels of Thinking
 
