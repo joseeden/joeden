@@ -11,19 +11,23 @@ sidebar_position: 20
 
 ## Overview
 
-Skills are reusable instructions that Claude follows whenever a consistent process is needed. They define *how* something should be done, not *who* does it.
+Skills are reusable instructions that guide the AI whenever a consistent process is needed. They define the exact method for a task rather than assigning it to a specific role. 
 
-Skills help standardize repeatable tasks so the same steps are followed every time.
+Skills are loaded in two stages to save memory. 
 
-**Sample Skill: Unit Testing**
+1. The name and description are always available
+2. The full details are only fetched when a request matches. 
 
-Unit testing is a good example of a skill because it always follows a predictable structure. Each test checks one function with a clear input and expected output.
+This keeps your active session clean and efficient by withholding unnecessary guidelines until they are needed.
 
-- One function per test
-- Clear input and output
-- Pass or fail results
+<div class='img-center'>
 
-This consistency makes unit tests a reliable safety layer when changing code.
+![](/gif/docs/06062026-claude-code-skills-demo.gif)
+
+</div>
+
+
+
 
 
 ## Skills Directory 
@@ -74,6 +78,23 @@ When writing unit tests, follow these steps:
 5. Write the test cases for edge cases (empty input, invalid data)
 6. Run the tests and verify results
 ```
+
+
+:::info 
+
+**Sample Skill: Unit Testing**
+
+Unit testing is a good example of a skill because it always follows a predictable structure. Each test checks one function with a clear input and expected output.
+
+- One function per test
+- Clear input and output
+- Pass or fail results
+
+This consistency makes unit tests a reliable safety layer when changing code.
+
+:::
+
+
 
 ## Creating a Skill Manually
 
