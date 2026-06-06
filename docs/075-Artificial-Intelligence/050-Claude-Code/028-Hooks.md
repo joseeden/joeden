@@ -1,5 +1,5 @@
 ---
-title: "Hookes"
+title: "Hooks"
 description: "Using hooks to run commands at specific points in Claude Code's lifecycle"
 tags: 
 - Artificial Intelligence
