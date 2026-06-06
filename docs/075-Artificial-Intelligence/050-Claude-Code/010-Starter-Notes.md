@@ -151,6 +151,24 @@ For permanent project details you want remembered across sessions, save them in 
 
 See the [CLAUDE.md](#claude-md) section below for more details.
 
+
+<!-- ## Context Window Limits
+
+Claude has a limited memory for each session. When this limit is reached, older context may be dropped. Keep sessions focused to maintain better output quality. 
+
+To clear the context and start fresh, use:
+
+```bash
+/clear
+```
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-05-24012347.png)
+
+</div> -->
+
+
 ### Tools
 
 Tools are what turn a basic chatbot into an autonomous assistant that can actually interact with your computer.
@@ -211,6 +229,37 @@ Good results depend on what is inside `CLAUDE.md`, not just the file existing. T
 ::: 
 
 
+## Context Layers
+
+Claude Code separates context into three layers: 
+
+| Context Level       | Location           | Purpose                                                                                                |
+| ------------------- | ------------------ | ------------------------------------------------------------------------------------------------------ |
+| Project `CLAUDE.md` | In git repository  | Shared with the team. Contains test commands, conventions, and project structure                       |
+| `CLAUDE.local.md`   | Not tracked in git | Personal settings like local paths and shortcuts                                                       |
+| Global `CLAUDE.md`  | Home directory     | Applies to all projects and defines global defaults like coding habits (for example, using type hints) |
+
+
+<div class='img-center'>
+
+![](/img/docs/all-things-data-claude-context-layers.png)
+
+</div>
+
+
+## File References
+
+File references point Claude directly to source files instead of copying content into prompts, which keeps interactions accurate and up to date.
+
+As an example, if you want to reference a file called `routes.py`, you can type: 
+
+```text
+@routes.py
+```
+
+Claude will then read the file directly and use its content to inform its response, without needing to copy the entire file into the context window. This method ensures that Claude always has access to the most current version of the file, even as it changes over time.
+
+
 ## Levels of Thinking
 
 Adding `think` to a prompt encourages deeper reasoning before responding. This helps Claude produce more thoughtful and structured responses.
@@ -231,43 +280,3 @@ There are four levels of thinking:
 | `think longer` | Extended time reasoning |
 | `ultrathink  ` | Maximum reasoning depth |
 
-
-## Context Window Limits
-
-Claude has a limited memory for each session. When this limit is reached, older context may be dropped. Keep sessions focused to maintain better output quality. 
-
-To clear the context and start fresh, use:
-
-```bash
-/clear
-```
-
-<div class='img-center'>
-
-![](/img/docs/Screenshot2026-05-24012347.png)
-
-</div>
-
-
-## File References and Context Layers
-
-File references point Claude directly to source files instead of copying content into prompts, which keeps interactions accurate and up to date.
-
-```text id="q7m2kp"
-@routes.py
-```
-
-Claude Code also separates context into three layers: 
-
-| Context Level       | Location           | Purpose                                                                                                |
-| ------------------- | ------------------ | ------------------------------------------------------------------------------------------------------ |
-| Project `CLAUDE.md` | In git repository  | Shared with the team. Contains test commands, conventions, and project structure                       |
-| `CLAUDE.local.md`   | Not tracked in git | Personal settings like local paths and shortcuts                                                       |
-| Global `CLAUDE.md`  | Home directory     | Applies to all projects and defines global defaults like coding habits (for example, using type hints) |
-
-
-<div class='img-center'>
-
-![](/img/docs/all-things-data-claude-context-layers.png)
-
-</div>
