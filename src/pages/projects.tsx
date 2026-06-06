@@ -50,7 +50,7 @@ const projects: ProjectData[] = [
   {
     title: "AI-Assisted Testing and CI/CD",
     description: "Using AI for software testing and CI/CD with pytest and GitHub Actions",
-    url: `${baseUrl}/docs/Artificial-Intelligence/Prompt-Engineering/Assisted-Testing`, 
+    url: "https://github.com/joseeden/labs-ai-assisted-software-testing", 
     image: require(`/img/docs/pytest-python-usage.jpg`),
     tags: ["Artificial Intelligence", "Python"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"

@@ -1,0 +1,14 @@
+060-OpenAI-API
+├── 010-Starter-Notes.md
+├── 020-Setup-and-Auth.md
+├── 030-Chat-Completions.md
+├── 040-Structured-Outputs.md
+├── 050-Function-Calling.md
+├── 060-Embeddings.md
+├── 070-Agents-and-Tools.md
+├── 080-Labs
+│   ├── 001-message-classification.md
+│   ├── 002-rag-basic.md
+│   ├── 003-function-calling-lab.md
+│   └── _category_.json
+└── _category_.json
