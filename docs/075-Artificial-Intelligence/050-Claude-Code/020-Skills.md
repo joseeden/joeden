@@ -15,8 +15,7 @@ Skills are reusable instructions that Claude follows whenever a consistent proce
 
 Skills help standardize repeatable tasks so the same steps are followed every time.
 
-
-## Example Skill: Unit Testing
+**Sample Skill: Unit Testing**
 
 Unit testing is a good example of a skill because it always follows a predictable structure. Each test checks one function with a clear input and expected output.
 
@@ -59,7 +58,7 @@ Each skill is defined in a `SKILL.md` file that contains metadata and step-by-st
 
 Unlike agents, skills are more manual to create, but still flexible and reusable.
 
-Sample `SKILL.md` structure:
+As an example, a `SKILL.md` for unit testing might look like this:
 
 ```markdown
 ---
