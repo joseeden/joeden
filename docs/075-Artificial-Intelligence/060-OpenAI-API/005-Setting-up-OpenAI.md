@@ -5,7 +5,7 @@ tags:
 - Artificial Intelligence
 - OpenAI
 - AI Development
-sidebar_position: 2
+sidebar_position: 5
 # last_update:
 #   date: 5/26/2023
 ---
