@@ -61,10 +61,10 @@ We can use the Anthropic SDK to connect to the AI service and send prompts secur
 
 In this example, we create a client connection (`client`) and send a simple user prompt to generate a concise summary of cloud computing. The `response` object contains the generated text along with metadata about token usage and processing time.
 
-See files here: Github
+See files here: [Github](https://github.com/joseeden/joeden/tree/master/assets/scripts/060-Anthropic-API-Starter)
 
 ```python
-## sample-anthropic-api-request.py
+## sample-api-request.py
 import os
 import anthropic
 from dotenv import load_dotenv
@@ -95,7 +95,7 @@ The server’s `response` object includes extra metadata along with the generate
 Run the script:
 
 ```bash
-python sample-anthropic-api-request.py 
+python sample-api-request.py 
 ```
 
 Output:
@@ -104,95 +104,185 @@ Output:
 Cloud computing is the delivery of computing services—including servers, storage, databases, and software—over the internet on a pay-as-you-go basis, allowing users to access and use resources remotely without owning physical infrastructure 
 ```
 
-
 ## Content Generation and Summarization
 
-Providing explicit constraints in your instructions yields targeted summaries and custom text generation. Adding a foundational role description anchors the tone and behavior of the system across the entire session.
+Content generation and summarization are common use cases for models like Claude and other Anthropic systems. They work best when you provide clear constraints and define a role for the model. 
 
-- Control output lengths by defining explicit word or paragraph limits
-- Focus attention on specific topics like action items or core metrics
-- Inject system guidelines to enforce a distinct corporate identity or style
+- Set clear output limits (length, format)
+- Focus on specific outputs (summary, actions, insights)
+- Use system role to define tone and style
 
-In this example, the `system` parameter sets the professional persona before the user input is processed. Giving the AI a specific perspective ensures the generated content matches your organizational standards every time.
+In the example below, we ask the model to summarize a passage of text and identify key themes. By defining the system role as a literary analyst, we guide the model to produce a focused and relevant response.
+
+See files here: [Github](https://github.com/joseeden/joeden/tree/master/assets/scripts/060-Anthropic-API-Starter)
 
 ```python
-# sample-anthropic-api-summarization.py
-import os
+# sample-api-summarization.py
 import anthropic
 from dotenv import load_dotenv
 
 load_dotenv()
 
-# Request a summary with system instructions
+client = anthropic.Anthropic()
+
+text = """
+To be, or not to be, that is the question:
+Whether 'tis nobler in the mind to suffer
+The slings and arrows of outrageous fortune,
+Or to take arms against a sea of troubles
+And by opposing end them.
+"""
+
 response = client.messages.create(
-    model="claude-3-5-sonnet-20241022",
-    max_tokens=150,
-    system="You are a technical editor who writes in a concise style.",
-    messages=[
-        {"role": "user", "content": "Summarize the project update report."}
-    ]
+    model="claude-haiku-4-5",
+    max_tokens=120,
+    system="You are a literary analyst. Summarize briefly and list key themes.",
+    messages=[{"role": "user", "content": text}]
 )
+
+print(response.content[0].text)
 ```
 
 Run the code:
 
-```bash
-python sample-anthropic-api-summarization.py 
+```bash 
+python sample-api-summarization.py
 ```
 
+Output:
 
+```
+# Summary
+
+Hamlet contemplates the fundamental choice between passive acceptance of life's hardships and active resistance against them. He weighs the pain of enduring suffering against the courage required to confront it directly.
+
+## Key Themes
+
+- **Existential struggle** – The core question of existence and whether life is worth living
+- **Passivity vs. action** – The tension between suffering in silence and taking decisive action
+- **Human suffering** – Life's inevitable hardships and injustices ("slings and arrows")
+- **Courage and cowardice** – The moral and psychological struggle between bravery and fear
+```
 
 
 
 ## Generating Source Code
 
-Code generation requires highly specific technical details to minimize errors and logic issues. Providing clear structural requirements helps the model write production-ready scripts that fit your environment.
+Generating reliable code with Claude models requires clear and structured instructions. 
 
-- Specify the target programming language and version constraints
-- Outline required error handling behavior and edge case management
-- Define the exact input variables and expected outputs explicitly
+- Specify the programming language and constraints
+- Define inputs, outputs, and expected behavior
+- Include error handling and edge cases
 
-Here, requesting a Python function with specific mathematical validation prevents the generation of generic or broken code snippet blocks. Detailed technical specifications allow the system to write reliable code that works immediately within your codebase.
+In this example, we ask the model to generate a Python function that calculates the area of a circle with validation for negative inputs. The model then stores the generated code in a `circle_area.py` file in the same directory. 
+
+See files here: [Github](https://github.com/joseeden/joeden/tree/master/assets/scripts/060-Anthropic-API-Starter)
 
 ```python
-# Request specific code generation
+## sample-api-code.py
+import anthropic
+from dotenv import load_dotenv
+
+load_dotenv()
+
+client = anthropic.Anthropic()
+
 response = client.messages.create(
     model="claude-3-5-sonnet-20241022",
     max_tokens=200,
-    messages=[
-        {"role": "user", "content": "Write a Python function that calculates the area of a circle. Include error handling for negative numbers."}
-    ]
+    messages=[{
+        "role": "user",
+        "content": "Write a Python function to calculate circle area. Handle negative inputs."
+    }]
 )
+
+print(response.content[0].text)
 ```
 
-Runing the code:
+Run the code:
 
-Output 
+```bash
+python sample-api-code.py
+```
+
+Output:
+
+```bash
+Code saved to circle_area.py
+```
+
 
 ## Temperature
 
-You can adjust the predictability and vocabulary selection of the responses using two specific configuration settings. These variables control how random or diverse the word choices are during the generation process.
+Temperature controls randomness in output... temprature range is 0.0 (deterministic) to 1.0 (highly creative).
 
-- Lower the creativity setting to get consistent outputs for technical documents
-- Raise the creativity setting to get highly varied text for brainstorming sessions
-- Adjust the vocabulary diversity parameter to limit or expand word selection range
+| Level  | Range   | Behavior                                   | Use Case                                                                 |
+| ------ | ------- | ------------------------------------------ | ------------------------------------------------------------------------ |
+| Low    | 0.1–0.3 | Consistent, predictable output             | Technical tasks like code generation, documentation, and structured data |
+| Medium | 0.4–0.7 | Balanced mix of creativity and consistency | General writing, summarization, and everyday AI tasks                    |
+| High   | 0.8–1.0 | Highly creative, less predictable output   | Brainstorming, storytelling, and idea generation                         |
 
-In this example, setting the `temperature` to a low value ensures that the text generation stays precise and focused on facts. Tuning these configuration dials allows you to toggle between strict consistency for data pipelines and creative variety for copy generation.
+Here, the previous prompt is used with different temperature settings to show how it affects the output style. 
+
+- Low temperature (0.2) will produce more focused and deterministic content
+- Higher temperature (0.8) would yield more creative and varied responses
+
+See files here: [Github](https://github.com/joseeden/joeden/tree/master/assets/scripts/060-Anthropic-API-Starter)
+
 
 ```python
-# Run a highly predictable request for formal documentation
+## sample-api-temperature.py
+import anthropic
+from dotenv import load_dotenv
+
+load_dotenv()
+
+client = anthropic.Anthropic()
+
 response = client.messages.create(
-    model="claude-3-5-sonnet-20241022",
+    model="claude-haiku-4-5",
+    max_tokens=100,
+    temperature=0.2,
+    messages=[{
+        "role": "user",
+        "content": "Generate a database connection string template."
+    }]
+)
+
+print(response.content[0].text)
+```
+
+In addition to temperature, we can also use the `top_p` parameter to control vocabulary diversity. 
+
+| Temperature Level | Range    | Behavior                                             |
+| ----------------- | -------- | ---------------------------------------------------- |
+| Low               | ~0.1–0.3 | Very predictable, focused, and consistent outputs    |
+| Medium            | ~0.4–0.7 | Balanced mix of creativity and consistency           |
+| High              | ~0.8–1.0 | More creative, diverse, and less predictable outputs |
+
+
+Together, temperature and `top_p` give us fine control over creativity: for instance, using a moderate temperature with low `top_p` for focused but imaginative writing.
+
+```python
+response = client.messages.create(
+    model="claude-haiku-4-5",
     max_tokens=100,
     temperature=0.2,
     top_p=0.3,
-    messages=[
-        {"role": "user", "content": "Generate a standard database connection string template."}
-    ]
-)
-
+    messages=[{
+        "role": "user",
+        "content": "Generate a database connection string template."
+    }]
+) 
 ```
 
-Runing the code:
+**UPDATE:**
 
-Output 
+Older generation models like Claude 3.5 Sonnet and Claude 3 Haiku allow you to set both `temperature` and `top_p` simultaneously. However, Anthropic's API documentation always recommended using only one of these parameters at a time to avoid conflicting sampling behaviors.
+
+For newer generation models (Claude 4.x), such as Claude Sonnet 4.5, Sonnet 4.6, and Opus 4.8, the API prohibits sending both parameters in the same request. 
+
+If you include both, the API will return an error. Some of the most recent iterations (like Claude Opus 4.7) have completely stripped `temperature`, `top_p`, and `top_k` support from the API.
+
+See: https://github.com/lobehub/lobehub/discussions/10093
+
