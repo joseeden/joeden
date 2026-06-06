@@ -16,7 +16,7 @@ Skills are reusable instructions that Claude follows whenever a consistent proce
 Skills help standardize repeatable tasks so the same steps are followed every time.
 
 
-## Unit Testing as a Skill
+## Example Skill: Unit Testing
 
 Unit testing is a good example of a skill because it always follows a predictable structure. Each test checks one function with a clear input and expected output.
 

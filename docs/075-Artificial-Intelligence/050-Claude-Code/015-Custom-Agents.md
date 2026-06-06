@@ -25,7 +25,14 @@ Claude includes a few built-in agents that handle common workflows:
 | Plan    | Prepares structured steps before coding | Designing approach before implementation          |
 | General | Handles most everyday tasks             | Default agent for general prompts and coding work |
 
-Custom agents help enforce consistency across repeated tasks. Instead of rewriting instructions every time, rules are defined once and reused.
+<div class='img-center'>
+
+![](/gif/docs/06062026-claude-code-agent-explore.gif)
+
+</div>
+
+
+We can also create custom agents to help enforce consistency across repeated tasks. Instead of rewriting instructions every time, rules are defined once and reused.
 
 ## Creating an Agent 
 
@@ -42,8 +49,11 @@ Sample agent file structure:
 ```markdown
 ---
 # Code Reviewer Agent
-name: code-reviewer
+name: code-quality-reviewer
 description: Review code for industry standards and best practices
+tools: Bash, Glob, Grep, Read 
+model: claude-2
+color: white
 ---
 Check for:
 1. Clear naming conventions
@@ -69,6 +79,8 @@ Here, the agent is configured at the project level so it is available to the ent
 
 Claude will ask for the required details and generate the agent file automatically. Review the generated content, adjust anything if needed, then approve it.
 
+
+
 After approval, the file is created inside the `.claude/agents` folder and can be reused in future sessions.
 
 ```bash
@@ -80,7 +92,7 @@ project-directory/
 ├── requirements.txt  
 └── .claude
     └── agents
-        └── code-reviewer.md
+        └── code-quality-reviewer.md
 ```
 
 ## How Claude Uses Agents
@@ -100,8 +112,8 @@ Custom agents are triggered by referencing their name in the prompt using `@`. C
 For example, to use the code reviewer agent:
 
 ```bash
-@code-reviewer Please review the code in routes.py for any issues.
+@code-quality-reviewer Please review the code in routes.py for any issues.
 ```
 
-Claude will then execute the instructions defined in the `code-reviewer.md` agent file and return the results.
+Claude will then execute the instructions defined in the `code-quality-reviewer.md` agent file and return the results.
 
