@@ -73,6 +73,18 @@ This will launch the Claude Code interface, where you can start interacting with
 
 </div>
 
+## Claude Models
+
+Anthropic (the company behind Claude) provides different versions of the Claude model family to suit specific development needs. 
+
+| Model      | Best For                                                                |
+| ---------- | ----------------------------------------------------------------------- |
+| **Haiku**  | Fast tasks such as text classification and sorting.                     |
+| **Sonnet** | A balance of speed and reasoning for everyday reporting tasks.          |
+| **Opus**   | Deep analysis and complex data extraction requiring maximum capability. |
+
+Matching your specific task to the appropriate model variant allows you to scale workloads effectively without paying for unnecessary computing power.
+
 
 ## Concepts 
 
