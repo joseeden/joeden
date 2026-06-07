@@ -148,10 +148,7 @@ Asyncio runs everything in a single thread but uses cooperative multitasking. Ta
 The key idea is that instead of switching threads, tasks “pause themselves,” making it very efficient for handling many waiting operations at once. -->
 
 
-
-`threading.Thread` is the main way to create threads in Python. Each thread runs a function concurrently, but they share the same memory space, which can lead to issues like
-
-`asyncio` is another way to achieve concurrency in Python, but it uses a single thread and relies on cooperative multitasking. Tasks yield control when they are waiting, allowing other tasks to run. This is great for I/O-bound work but not for CPU-bound work.
+`threading.Thread` is the main way to create threads in Python. Each thread runs a function concurrently, but they share the same memory space.
 
 
 ## Parallelism
@@ -189,7 +186,7 @@ These are the main ways Python runs tasks in parallel using multiple CPU cores. 
 | `multiprocessing.Pool`                   | Manages a group of worker processes and distributes tasks automatically | When you want simple parallel execution over many tasks |
 | `concurrent.futures.ProcessPoolExecutor` | High-level interface for running functions in parallel using processes  | When you want clean, modern, and easy parallel code     |
 
-all three use multiple processes, but they differ in how much control vs simplicity you want when designing parallel programs.
+All three use multiple processes, but they differ in how much control vs simplicity you want when designing parallel programs.
 
 ### Multiprocessing
 
@@ -197,7 +194,7 @@ Python uses multiprocessing for parallelism. Each process runs on a separate CPU
 
 In the example below, multiple tea processes are created using `Process`. Each process brews tea independently.
 
-Before the code, the function `brew_tea(name)` simulates making tea for a given name.
+<!-- Before the code, the function `brew_tea(name)` simulates making tea for a given name. -->
 
 ```python
 # multiprocessing-example.py
