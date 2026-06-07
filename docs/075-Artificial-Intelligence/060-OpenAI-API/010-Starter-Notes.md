@@ -124,13 +124,39 @@ response.choices[0].message
 response.choices[0].message.content
 ```
 
+## Roles in Single-Turn Tasks 
+
+The role is used to indicate the type of message being sent. This can be seen in the `messages` variable, where the message is sent with the "user" role.
+
+For single-turn tasks, the user role is typically sufficient.
+
+```json
+messages = [
+    {"role": "user", 
+     "content": "Explain what an API is in simple terms"}
+] 
+```
+
+Here, the "user" role indicates that this message is a user instruction or question for the model. The model will interpret this message as a prompt and generate a response accordingly.
+
+Roles are used in both single-turn (includes all the examples in this page) and multi-turn conversations. 
+
+For more information about roles, please see [Roles and Multi-Turn Conversations](/docs/075-Artificial-Intelligence/060-OpenAI-API/013-Roles-and-Multi-Turns.md)
+
+
 ## Tokens and Cost
 
-OpenAI charges based on the number of tokens processed.
+The APIs typically charge based on the usage (which is measured in tokens).
+
+A token is a small unit of text, which can be as short as one character or as long as one word. For example, “a” is one token, and “apple” is also one token. 
+
+The cost can vary depending on several factors:
 
 - Input tokens come from prompts
 - Output tokens come from responses
-- Different models have different prices
+- Model used (different models have different prices)
+
+Larger requests and more powerful models generally cost more than smaller requests and lighter models.
 
 Before deploying AI applications at scale, it is important to estimate costs.
 
@@ -195,16 +221,6 @@ Estimated cost: $0.00030555
 ```
 
 The exact token count will vary, but the calculation process remains the same.
-
-## API Usage Costs
-
-Many APIs charge based on usage. The cost can depend on several factors:
-
-- Model used
-- Input size
-- Output size
-
-Larger requests and more powerful models generally cost more than smaller requests and lighter models.
 
 
 ## Common Use Cases
