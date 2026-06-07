@@ -240,7 +240,7 @@ User123456@testbox:~$
 
 ## ERRORS
 
-### mkvirtualenv: command not found
+### `mkvirtualenv: command not found`
 
 If you get an error "command not found", this might mean virtualenvwrapper was not properly installed. You can simply re-do the installation.
 I had issues also when trying the virtualenvwrapper on Git Bash in VSCode so I decided to run the commands below in WSL.
@@ -256,7 +256,7 @@ echo "source `which virtualenvwrapper.sh`" >> ~/.bashrc
 ```
 
 
-### virtualenvwrapper Command '' not found, but can be installed with...
+### `virtualenvwrapper Command not found, but can be installed with...`
 
 When you create a virtual environment using the *mkvirtualenv* command, you might see this error message:
 
