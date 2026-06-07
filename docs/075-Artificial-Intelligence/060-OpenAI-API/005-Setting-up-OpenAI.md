@@ -3,8 +3,9 @@ title: "Setting up OpenAI"
 description: "Guide to setting up OpenAI for AI development."
 tags: 
 - Artificial Intelligence
+- Large Language Models
+- AI Agents
 - OpenAI
-- AI Development
 sidebar_position: 5
 # last_update:
 #   date: 5/26/2023
