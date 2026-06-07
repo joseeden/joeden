@@ -13,19 +13,21 @@ sidebar_position: 13
 
 ## Overview 
 
-Chat models use structured messages to handle both single-turn tasks and multi-turn conversations. The chat completions endpoint allows for two modes of interaction:
+Chat models use structured messages to control behavior and support both single-turn and multi-turn interactions.
 
-- **Single-turn** 
+Chat completions can work in two main ways:
 
-    - Uses one request and response
-    - Used for text generation, transformation, and classification
-    - No memory of previous interactions
+- **Single-turn**
 
-- **Multi-turn** 
+    - One request and one response
+    - No memory of previous messages
+    - Used for simple tasks like summarization or classification
 
-    - Builds on previous messages
-    - Maintains context across interactions
-    - Enables more complex conversations
+- **Multi-turn**
+
+    - Conversation builds over multiple messages
+    - Model keeps context using message history
+    - Used for chatbots, agents, and iterative tasks
 
 This page focuses on multi-turn conversations and the different roles that can be used in messages to control the behavior of the assistant.
 
@@ -39,17 +41,15 @@ See code files here: [Github](https://github.com/joseeden/llm-engineering-sandbo
 
 :::
 
-
 ## Roles
 
-Roles are used to structure messages and control the behavior of the assistant. There are three main roles:
+Chat models use three roles to structure communication.
 
-| Role      | Purpose                                             | Use case                                                                                                                                                               |
-| --------- | --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| System    | Sets behavior, rules, and constraints for the model | <ul><li>Defining tone and personality</li><li>Enforcing safety or policy rules</li><li>Setting strict output formats for APIs or apps</li></ul>                        |
-| User      | Provides instructions, questions, or task input     | <ul><li>Asking questions or giving prompts</li><li>Requesting summaries, code, or explanations</li><li>Triggering actions in chat-based workflows</li></ul>            |
-| Assistant | Provides previous responses or example outputs      | <ul><li>Storing conversation history for context</li><li>Providing example answers for few-shot prompting</li><li>Maintaining continuity in multi-turn chats</li></ul> |
-
+| Role      | Purpose                               | Use case                                                                                                                        |
+| --------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| System    | Sets behavior, rules, and constraints | <ul><li>Defining tone and personality</li><li>Enforcing safety rules</li><li>Setting output format rules</li></ul>              |
+| User      | Sends instructions or questions       | <ul><li>Asking questions</li><li>Requesting code or summaries</li><li>Triggering tasks in apps</li></ul>                        |
+| Assistant | Stores model responses and examples   | <ul><li>Maintaining conversation history</li><li>Providing example outputs</li><li>Helping the model continue context</li></ul> |
 
 In the example below, the `system_prompt` variable sets behavior rules for a tutoring assistant, while the `messages` list includes both system and user messages to guide the model's response.
 
@@ -106,14 +106,74 @@ Expected output:
 > Functions in Python are reusable blocks of code that perform a specific task and can take inputs (arguments) and return outputs.
 
 
-## Example: Assistant Messages
+## System Messages for Safety
 
-Assistant messages can be used to show examples of desired output format. They are commonly used in chatbot applications to provide context and guide the model's responses.
+System messages are also used as guardrails to ensure the model avoids unwanted or risky responses.
 
-In the example below, the `messages` list contains the entire conversation history. 
+- Blocks sensitive or harmful outputs
+- Defines safe response boundaries
+- Prevents misuse of the model
 
-- System messages define the assistant's role
-- Assistant messages preserve context from earlier responses
+In the example below, a system message is used to block the model from giving harmful financial advice. The user asks for investment guidance, but the system message forces a safe refusal.
+
+```python
+# sample-system-guardrails.py
+
+from openai import OpenAI
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+messages = [
+    {
+        "role": "system",
+        "content": (
+            "You are a finance education assistant. "
+            "You must NOT provide real financial or investment advice. "
+            "If asked, respond by saying you cannot give financial advice."
+        )
+    },
+    {
+        "role": "user",
+        "content": "Should I invest all my savings into tech stocks?"
+    }
+]
+
+response = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=messages,
+    temperature=0.2
+)
+
+print(response.choices[0].message.content)
+```
+
+Run the script:
+
+```bash
+python sample-system-guardrails.py
+```
+
+Expected output:
+
+> I'm sorry, but I cannot give financial advice. It's important to consider various factors and consult with a financial advisor before making investment decisions.
+
+## Examples
+
+### Assistant Messages
+
+Assistant messages store previous responses so the model can continue conversations with context.
+
+They are commonly used for:
+
+- Conversation history
+- Example-based guidance
+- Multi-turn chatbot memory
+
+In the example below, the full conversation history is stored in the `messages` list.
 
 ```python 
 # sample-multi-turn-conversations.py
@@ -208,20 +268,18 @@ Expected output:
 >
 > 4. **Use Mobile Data**: If you have a mobile data plan, try connecting to the VPN using your phone's hotspot as a test.
 
+### AI Chatbot with Multi-Turn Memory
 
+A chatbot works by storing every message in a list and sending it back to the model on each request.
 
-## Preventing Misuse with System Messages
+- System message defines chatbot behavior
+- User messages simulate ongoing interaction
+- Assistant messages store responses for context
 
-System messages are often used to set safety rules so the model avoids unwanted or risky responses.
-
-- Restricts sensitive outputs
-- Defines safe response boundaries
-- Prevents misuse of the model
-
-In the example below, a system message is used to block the model from giving harmful financial advice. The user asks for investment guidance, but the system message forces a safe refusal.
+In the example below, we simulate a chatbot that answers multiple user questions step by step. Each response is appended back into memory so the chatbot becomes stateful.
 
 ```python
-# sample-system-guardrails.py
+# chatbot-multi-turn.py
 
 from openai import OpenAI
 import os
@@ -234,34 +292,64 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 messages = [
     {
         "role": "system",
-        "content": (
-            "You are a finance education assistant. "
-            "You must NOT provide real financial or investment advice. "
-            "If asked, respond by saying you cannot give financial advice."
-        )
-    },
-    {
-        "role": "user",
-        "content": "Should I invest all my savings into tech stocks?"
+        "content": "You are a helpful math tutor that speaks concisely."
     }
 ]
 
-response = client.chat.completions.create(
-    model="gpt-4o-mini",
-    messages=messages,
-    temperature=0.2
-)
+# Multiple user inputs (simulating a real conversation)
+user_msgs = [
+    "Explain what pi is.",
+    "Give a simple example of pi in real life.",
+    "Summarize pi in two bullet points."
+]
 
-print(response.choices[0].message.content)
+# Loop through each user question
+for q in user_msgs:
+    print("User:", q)
+
+    # Add user message to conversation history
+    messages.append({"role": "user", "content": q})
+
+    # Send full conversation to the model
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=messages,
+        max_completion_tokens=120
+    )
+
+    # Extract assistant reply
+    reply = response.choices[0].message.content
+
+    # Store assistant reply back into memory
+    messages.append({"role": "assistant", "content": reply})
+
+    print("Assistant:", reply, "\n")
 ```
 
 Run the script:
 
 ```bash
-python sample-system-guardrails.py
+python chatbot-multi-turn.py
 ```
 
-Expected output:
+The exact wording may vary, but the output will look like this:
 
-> I'm sorry, but I cannot give financial advice. It's important to consider various factors and consult with a financial advisor before making investment decisions.
+> User: Explain what pi is.
+> Assistant: Pi (π) is a mathematical constant representing the ratio of a circle's circumference to its diameter. It is an irrational number, approximately equal to 3.14159, and it has an infinite number of non-repeating decimals. Pi is used in various mathematical and scientific calculations, especially those involving circles and geometry. 
+> 
+> User: Give a simple example of pi in real life.
+> Assistant: A simple example of pi in real life is when measuring a round pizza. If you know the diameter of the pizza (let's say it's 12 inches), you can calculate the circumference (the distance around the pizza) using the formula:
+> 
+> Circumference = π × diameter.
+> 
+> So, for a 12-inch pizza: 
+> 
+> Circumference ≈ 3.14 × 12 ≈ 37.68 inches.
+> 
+> This gives you the total length of the crust around the pizza! 
+> 
+> User: Summarize pi in two bullet points.
+> Assistant: 
+> - Pi (π) is the ratio of a circle's circumference to its diameter, approximately equal to 3.14.
+> - It is an irrational number with infinite non-repeating decimals, commonly used in geometry and trigonometry. 
 
