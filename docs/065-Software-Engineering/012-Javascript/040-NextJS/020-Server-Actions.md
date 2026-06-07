@@ -1,6 +1,6 @@
 ---
-title: "Server Actions and 'use server' Directive"
-description: "Server Actions and using 'use server' directive for secure server-side logic execution."
+title: "Server Actions and `use server` Directive"
+description: "Server Actions and using `use server` directive for secure server-side logic execution."
 tags: 
 - Web Development
 - Frontend Development
