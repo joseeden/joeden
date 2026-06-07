@@ -124,7 +124,8 @@ const projects: ProjectData[] = [
     title: "Analyze Runkeeper Running Data",
     description: "Analyze running data from the Runkeeper app.",
     url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/065-Software-Engineering/021-Jupyter-Notebooks/024-Analyze-Runkeeper-Fitness-Data/Analyze-Runkeeper-Fitness-Data.ipynb", 
-    image: require(`/img/docs/Screenshot2026-05-09203336.png`),
+    // image: require(`/img/docs/Screenshot2026-05-09203336.png`),
+    image: require(`/img/docs/Screenshot2026-06-07154855.png`),
     tags: ["Data Analysis", "Python"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },
