@@ -99,7 +99,7 @@ print("All orders taken and tea brewed")
 To run this file:
 
 ```bash
-python threading_example.py
+python threading-example.py
 ```
 
 Expected output (order may interleave):
@@ -200,7 +200,7 @@ In the example below, multiple tea processes are created using `Process`. Each p
 Before the code, the function `brew_tea(name)` simulates making tea for a given name.
 
 ```python
-# multiprocessing_example.py
+# multiprocessing-example.py
 from multiprocessing import Process
 import time
 
@@ -226,7 +226,7 @@ if __name__ == "__main__":
 To run this file:
 
 ```bash
-python multiprocessing_example.py
+python multiprocessing-example.py
 ```
 
 Expected output (order may vary):
