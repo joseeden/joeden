@@ -1,6 +1,6 @@
 ---
-title: "Concurrency vs Parallelism"
-description: "Concurrency vs Parallelism in Python"
+title: "Python Concurrency"
+description: "Python Concurrency"
 tags: 
 - Computer Science
 - Application Development
