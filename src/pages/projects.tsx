@@ -141,7 +141,8 @@ const projects: ProjectData[] = [
     title: "A New Era of Data Analysis in Baseball",
     description: "Use Statcast data to compare home runs of two of MLB's brightest stars.",
     url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/065-Software-Engineering/021-Jupyter-Notebooks/021-A-New-Era-of-Data-Analysis-in-Baseball/A-New-Era-of-Data-Analysis-in-Baseball.ipynb",
-    image: require(`/img/docs/stanton_wide.jpg`),
+    // image: require(`/img/docs/stanton_wide.jpg`),
+    image: require(`/img/docs/Aaron-Judge-2025-Postseason.jpg`),
     tags: ["Data Analysis", "Python"]
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },
