@@ -82,3 +82,8 @@ Claude AI:
   label: 'Claude AI'
   permalink: '/Claude AI'
   description: 'Docs related to Claude AI'    
+
+Open LLMs:
+  label: 'Open LLMs'
+  permalink: '/Open LLMs'
+  description: 'Docs related to Open LLMs'

@@ -22,7 +22,7 @@ OpenAI, ChatGPT, and the OpenAI API all use the same underlying models, but each
 
 When you use the OpenAI API, you will need to have an API key, which is a unique identifier that allows you to access the OpenAI models programmatically. You can obtain an API key by signing up for an account on the OpenAI website and subscribing to a plan.
 
-See [Setting up OpenAI](/docs/075-Artificial-Intelligence/060-OpenAI-API/005-Setting-up-OpenAI.md)
+See [Setting up OpenAI](/docs/075-Artificial-Intelligence/060-OpenAI/005-Setting-up-OpenAI.md)
 
 Once you have your API key, you will need store it securely and load it in your code to authenticate your requests to the OpenAI API. 
 
@@ -39,7 +39,7 @@ OPENAI_API_KEY=your_openai_key_here
 
 :::info
 
-To run the code examples in this page, make sure to [set up your environment](/docs/075-Artificial-Intelligence/060-OpenAI-API/005-Setting-up-OpenAI.md) before running the code. 
+To run the code examples in this page, make sure to [set up your environment](/docs/075-Artificial-Intelligence/060-OpenAI/005-Setting-up-OpenAI.md) before running the code. 
 
 See code files here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/scripts)
 
@@ -141,7 +141,7 @@ Here, the "user" role indicates that this message is a user instruction or quest
 
 Roles are used in both single-turn (includes all the examples in this page) and multi-turn conversations. 
 
-For more information about roles, please see [Roles and Multi-Turn Conversations](/docs/075-Artificial-Intelligence/060-OpenAI-API/013-Roles-and-Multi-Turns.md)
+For more information about roles, please see [Roles and Multi-Turn Conversations](/docs/075-Artificial-Intelligence/060-OpenAI/013-Roles-and-Multi-Turns.md)
 
 
 ## Tokens and Cost

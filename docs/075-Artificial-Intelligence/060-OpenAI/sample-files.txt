@@ -1,4 +1,4 @@
-060-OpenAI-API
+060-OpenAI
 ├── 010-Starter-Notes.md
 ├── 020-Setup-and-Auth.md
 ├── 030-Chat-Completions.md
