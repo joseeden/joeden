@@ -224,7 +224,7 @@ Whenever that preset is selected, the system prompt is automatically applied to 
 
 <div class='img-center'>
 
-![](/img/docs/06122026-lm-studio-demo-chat-4)
+![](/gif/docs/06122026-lm-studio-demo-chat-4.gif)
 
 </div>
 
