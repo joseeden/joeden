@@ -128,3 +128,76 @@ As model size increases, memory requirements grow very quickly because every par
 - Most consumer laptops cannot run very large models
 
 This is why large models are typically run on powerful GPUs or distributed systems rather than standard personal machines.
+
+## Estimating If a Model Fits
+
+To know if a model can run, you need to estimate how much memory it requires after quantization. This depends mainly on parameter count and precision.
+
+Considerations:
+
+- Parameters define base model size
+- Quantization reduces memory usage
+- Context window also uses memory
+- System RAM and VRAM can be combined
+
+A simple way to estimate is to start with model size and adjust for quantization. 
+
+For example, a 27B model using 4-bit quantization can be roughly estimated by halving the parameter size in gigabytes.
+
+1. So 27B becomes roughly 13.5GB
+2. Add extra memory for context and runtime overhead
+3. The total brings it closer to around 17GB total
+
+This is why memory estimates are always approximate, not exact.
+
+## Check Compatibility
+
+Instead of doing calculations manually, modern tools can estimate whether a model will run on your system.
+
+On Hugging Face, you can sign up for a free account and then set your hardware profile.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-06-11215803.png)
+
+</div>
+
+Back in the models page, you can filter for quantized models and see compatibility indicators.
+
+The model details page will show whether a specific quantized version fits your system. A green indicator usually means it will run.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-06-11215927.png)
+
+</div>
+
+
+Tools like LM Studio also help by warning you if a model is too large before you download it.
+
+This makes model selection much easier without needing deep hardware knowledge.
+
+## Memory Tradeoffs and Model Size
+
+Bigger models are more capable, but they also require more memory. Smaller models are easier to run but may be less powerful depending on the task.
+
+- Larger models need more memory
+- Smaller models run on most laptops
+- Quality improves with size but not linearly
+- Quantization helps reduce memory needs
+
+For example, a 4B or 7B model can run on most machines, while 20B+ models require much more RAM or VRAM.
+
+This is why choosing the right model size is always a balance between capability and hardware limits.
+
+## CPU and GPU Together
+
+If your system has limited VRAM, models can be split across CPU and GPU memory.
+
+- Part of model loads into VRAM
+- Remaining part uses system RAM
+- Works when VRAM is not enough
+- Slower than full GPU execution
+
+For example, if a model needs 17GB and your GPU has 8GB VRAM, the remaining 9GB can be handled by system RAM. This still works, but performance will be slower than running fully on GPU.
+
