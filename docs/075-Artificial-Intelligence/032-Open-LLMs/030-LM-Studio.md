@@ -25,7 +25,9 @@ After downloading, you simply install it like any normal application. If the sys
 Once installed, you launch the app and move into the main interface.
 
 
-## Getting Started
+## Exploring the Interface
+
+When you open LM Studio, you will see a main workspace designed for chatting with local models.
 
 When LM Studio opens, you will see a main workspace designed for chatting with local models.
 
@@ -39,6 +41,112 @@ You may also see different modes such as user mode, power mode, and developer mo
 ![](/img/docs/Screenshot2026-06-12020847.png)
 
 </div>
+
+
+### Developer View
+
+Developer View provides information about the currently loaded model and its activity.
+
+- View model information
+- Configure advanced settings
+- See API endpoints
+- Monitor logs and errors
+
+If you are building applications that communicate with LM Studio, the API endpoint information can be useful.
+
+You can also use this area to troubleshoot issues when a model behaves unexpectedly.
+
+- Error logs show failures
+- Debug logs show model activity
+
+For example, if a model fails to generate a response, the error details may appear in the log viewer.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-06-12053251.png)
+
+</div>
+
+
+### My Models
+
+The My Models page shows all downloaded models and where they are stored.
+
+- View downloaded models
+- See storage location
+- Open model folder
+- Change storage path
+- Delete unused models
+
+You can choose a different folder if you want to store models on another drive.
+
+For example:
+
+```text
+C:\Users\Example\.lmstudio\models
+```
+
+On Linux:
+
+```text
+/home/example/.lmstudio/models
+```
+
+On macOS:
+
+```text
+/Users/example/.lmstudio/models
+```
+
+The exact path depends on your operating system and LM Studio configuration.
+
+<div class='img-center'>
+
+![](/gif/docs/06122026-lm-studio-demo-chat-5.gif)
+
+</div>
+
+<!-- Each downloaded model can be managed individually. You can:
+
+- Adjust default settings
+- View model location
+- Copy model path
+- Delete model
+
+Deleting unused models helps recover disk space since some models can consume many gigabytes. -->
+
+### Embedding Models
+
+LM Studio supports both large language models and embedding models.
+
+| Feature                 | Large Language Model (LLM)               | Embedding Model                             |
+| ----------------------- | ---------------------------------------- | ------------------------------------------- |
+| Purpose                 | Generates text and responses             | Converts text into numerical vectors        |
+| Input                   | Text                                     | Text                                        |
+| Output                  | Natural language text                    | Vector embeddings (numbers)                 |
+| Common Uses             | Chatbots, writing, summarization, coding | Search, retrieval, similarity matching, RAG |
+| Example Output          | "Python is a programming language."      | `[0.12, 0.91, 0.34, ...]`                   |
+| Generates Text?         | Yes                                      | No                                          |
+| Used for Search?        | Indirectly                               | Yes                                         |
+| Supported in LM Studio? | Yes                                      | Yes                                         |
+
+
+Embedding models are commonly used in Retrieval-Augmented Generation (RAG) systems, semantic search, and recommendation systems.
+
+### Model Search
+
+The Model Search built-in search page is usually the easiest way to find models that are already compatible with LM Studio.
+
+- Search supported models
+- Download directly
+- Access model information
+
+<div class='img-center'>
+
+![](/gif/docs/06122026-lm-studio-demo-chat-6.gif)
+
+</div>
+
 
 ### Settings and Customization
 
@@ -57,6 +165,8 @@ These settings are optional but useful for personalizing the experience. Most de
 
 </div>
 
+
+## Getting Started 
 
 ### Using Quantized Models
 
