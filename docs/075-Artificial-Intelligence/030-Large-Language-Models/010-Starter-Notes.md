@@ -13,44 +13,111 @@ last_update:
 
 ## Overview
 
-Artificial Intelligence (AI) powers many tools and systems we use today.
+<!-- Artificial Intelligence (AI) powers many tools and systems we use today.
 
 - Unlocks phones using facial recognition
 - Guides self-driving cars in real time
 - Suggests movies, music, and content based on preferences
 - Detects fraud and analyzes sentiment in data
-- Learns from large datasets to improve decisions
+- Learns from large datasets to improve decisions -->
 
-AI has moved from handling structured tasks to understanding and generating human language. This shift led to **Large Language Models (LLMs)**, which can read, write, and converse like humans, marking a major step forward in AI capabilities.
+AI has moved from handling structured tasks to understanding and generating human language. This shift led to **Large Language Models (LLMs)**, which can read, write, and converse like humans. 
 
-## The AI Landscape
+A Large Language Model is mainly defined by two things:
 
-AI can be understood as a set of layers, each building on the previous one to create smarter systems.
+- The training algorithm
+- The model parameters (weights)
 
-- **Artificial Intelligence (AI)** is the broad field of creating smart systems
-- **Machine Learning (ML)** teaches systems to learn from data
-- **Deep Learning (DL)** discovers complex patterns using layered neural networks
-- **Natural Language Processing (NLP)** helps computers understand human language
+The training algorithm is the code created by engineers to train the model. The result of that training process is a set of model parameters, also called **weights**.
 
-## Large Language Models
+Together, these determine how the model behaves and generates responses.
+
+<div class='img-center'>
+
+![](/img/docs/all-things-ai-llm-core.png)
+
+</div>
+
+
+<!-- ## Large Language Models
 
 LLMs use deep learning and NLP to process and generate text like humans.
 
 - Handle tasks such as summarizing, translating, or classifying text
 - Train on vast amounts of language data
-- Require significant computing resources to function
+- Require significant computing resources to function -->
+
+## Training Algorithm
+
+The training algorithm controls how the model learns from data.
+
+- Engineers create the training process
+- The model learns patterns from large amounts of text
+- The final result is a set of weights
+
+These weights store what the model has learned. When people talk about a "600-billion parameter model", they are referring to the number of weights inside the model.
+
+<div class='img-center'>
+
+![](/img/docs/all-things-ai-model-params.png)
+
+</div>
+
+The training process creates the model, but the weights are what make the model useful after training.
+
+:::info 
 
 They are “large” not just because of size but also because of their ability to understand and produce complex text.
+
+:::
+
 
 ## Models
 
 A model learns patterns and structures from data to make predictions or generate new results.
 
-- LLMs learn from massive text datasets
-- Build connections between words, phrases, and meaning
-- Use these connections to form responses that sound natural
+<div class='img-center'>
 
-For example, an LLM learns that words like “rain” and “umbrella” often appear together and uses that to predict context.
+![](/img/docs/Screenshot2026-06-11185158.png)
+
+</div>
+
+
+## How LLMs Generate Text
+
+An LLM works by breaking your input into smaller pieces called tokens and then predicting what token should come next.
+
+1. Tokens are small pieces of text
+2. Each token has a unique ID
+3. The model predicts the next token based on the input
+4. Multiple token candidates are considered
+5. Each candidate is assigned a probability
+6. The most likely token is usually selected
+
+For example, if the input is:
+
+```text
+The sky is
+```
+
+The model might generate the following candidates:
+
+| Token   | Probability |
+| ------- | ----------- |
+| blue    | 45%         |
+| clear   | 12%         |
+| visible | 21%         |
+
+Since **blue** has the highest probability, it would most likely be selected as the next token.
+
+<div class='img-center'>
+
+![](/img/docs/all-things-ai-model-probabs.png)
+
+</div>
+
+The model then repeats the process using both the original input and the newly generated token. By predicting one token at a time, it gradually builds complete sentences and responses. The probabilities used for these predictions are calculated using the billions of parameters learned during training.
+
 
 ## Language Generators
 

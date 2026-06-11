@@ -20,6 +20,17 @@ It’s important to know if an AI system is actually successful. Success means b
 
 By tracking results carefully, we confirm that AI creates real value and not just theoretical results.
 
+
+## The AI Landscape
+
+AI can be understood as a set of layers, each building on the previous one to create smarter systems.
+
+- **Artificial Intelligence (AI)** is the broad field of creating smart systems
+- **Machine Learning (ML)** teaches systems to learn from data
+- **Deep Learning (DL)** discovers complex patterns using layered neural networks
+- **Natural Language Processing (NLP)** helps computers understand human language
+
+
 ## When to Measure Success
 
 Measuring AI success is not a one-time activity.
