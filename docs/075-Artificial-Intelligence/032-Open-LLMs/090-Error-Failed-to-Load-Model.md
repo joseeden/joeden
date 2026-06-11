@@ -1,5 +1,5 @@
 ---
-title: Failed to load model
+title: "Error: Failed to load model"
 description: "Running LLM locally with LM Studio"
 tags: 
 - Machine Learning

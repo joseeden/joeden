@@ -25,7 +25,7 @@ After downloading, you simply install it like any normal application. If the sys
 Once installed, you launch the app and move into the main interface.
 
 
-## Using LM Studio Interface
+## Getting Started
 
 When LM Studio opens, you will see a main workspace designed for chatting with local models.
 
@@ -40,8 +40,7 @@ You may also see different modes such as user mode, power mode, and developer mo
 
 </div>
 
-
-## Settings and Customization
+### Settings and Customization
 
 LM Studio includes settings that let you adjust how the application looks and behaves.
 
@@ -59,7 +58,7 @@ These settings are optional but useful for personalizing the experience. Most de
 </div>
 
 
-## Using Quantized Models
+### Using Quantized Models
 
 Most local models are not the original full-size versions. Instead, they are compressed (quantized) to reduce memory usage.
 
@@ -73,7 +72,7 @@ Quantization reduces the precision of model weights (for example, 4-bit instead 
 For more information, please see [Quantization.](/docs/075-Artificial-Intelligence/032-Open-LLMs/018-Quantization.md)
 
 
-## Finding Models on Hugging Face
+### Finding Models on Hugging Face
 
 You can browse models directly on Hugging Face and check how they can be used locally.
 
@@ -114,7 +113,7 @@ The choice depends on your system capacity, especially RAM and GPU memory.
 - 12B parameter model ➜ balanced performance and quality
 - 27B parameter model ➜ high quality, needs more RAM
 
-## Loading Models 
+### Loading Models 
 
 After download, you must explicitly load the model before chatting with it.
 
@@ -126,7 +125,7 @@ After download, you must explicitly load the model before chatting with it.
 
 </div>
 
-## System Resource Usage
+### System Resource Usage
 
 When a model runs locally, it consumes system memory and sometimes GPU memory.
 
@@ -137,7 +136,7 @@ When a model runs locally, it consumes system memory and sometimes GPU memory.
 
 On systems like Apple Silicon, memory is shared, so RAM and VRAM are unified. On other systems, GPU memory may be separate.
 
-## Running a Local Chat Session
+### Running a Local Chat Session
 
 Once the model is loaded, you can start chatting normally inside LM Studio.
 
@@ -155,3 +154,115 @@ The model runs fully offline, so internet access is not required after download.
 </div>
 
 
+## System Prompts
+
+A system prompt is a base instruction that guides how an AI model behaves throughout a chat.
+
+- Has higher priority than user messages
+- Applies to the entire conversation
+- Can be saved and reused with presets
+
+You can think of a system prompt as a set of instructions that the model reads before processing user messages.
+
+For example, a system prompt could say:
+
+```text
+You are an creative poet.
+Your answer should always be in rhymes.
+```
+
+If the user then asks:
+
+```text
+Define cloud computing
+```
+
+The model will try to answer in rhymes because the system prompt instructed it to do so.
+
+This makes system prompts useful for controlling behavior, tone, formatting, or other rules throughout a conversation.
+
+<div class='img-center'>
+
+![](/gif/docs/06122026-lm-studio-demo-chat-2.gif)
+
+</div>
+
+All these chats are simply JSON files, which you can view by right-clicking on the chat and selecting "Show in Folder". You can open the JSON file in a text editor to see the system prompt and user messages.
+
+<div class='img-center'>
+
+![](/gif/docs/06122026-lm-studio-demo-chat-3.gif)
+
+</div>
+
+
+### Saving System Prompts as Presets
+
+Many AI tools allow you to save system prompts as presets.
+
+- Reuse common instructions
+- Avoid retyping prompts
+- Apply rules automatically
+- Keep behavior consistent
+
+For example, you might create a preset called:
+
+```text
+You are an expert poet.
+
+Answer in rhymes.
+```
+
+The preset could contain:
+
+```text
+Provide a 3 months roadmap for studying web development.
+```
+
+Whenever that preset is selected, the system prompt is automatically applied to new chats.
+
+
+<div class='img-center'>
+
+![](/img/docs/06122026-lm-studio-demo-chat-4)
+
+</div>
+
+### Practical Uses
+
+In practice, system prompts are usually used for more useful instructions than rhyming.
+
+Common examples include:
+
+- Respond as a technical tutor
+- Use simple language
+- Provide step-by-step explanations
+- Format responses in Markdown
+- Keep answers concise
+- Focus on a specific topic
+
+Example system prompt:
+
+```text
+You are a technical tutor.
+
+Explain concepts in simple language.
+Provide examples where helpful.
+Keep responses concise and beginner-friendly.
+```
+
+With instructions like these, the model can maintain a consistent style throughout the conversation.
+
+### Presets vs Regular Chats
+
+A regular chat may start without a system prompt.
+
+When a preset is selected:
+
+- The system prompt is loaded automatically
+- The same rules apply to every new chat using that preset
+- No need to re-enter instructions
+
+Without a preset, the model uses its default behavior or any system prompt already configured for that conversation.
+
+This makes presets a convenient way to reuse common instructions and keep model behavior consistent across multiple chats.
