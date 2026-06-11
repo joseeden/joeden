@@ -229,3 +229,40 @@ Instead of running models locally, you can also use hosted services that provide
 For example, a service like Groq runs models on their infrastructure and exposes them through an API. You send a request and receive a response without managing any hardware.
 
 This is useful when you want speed and simplicity but do not need full local control.
+
+## Licenses and Usage Rules
+
+Open LLMs can be used locally or in applications, but each model comes with a license that defines what you are allowed to do with it. These rules become especially important when you use models commercially.
+
+- Some allow full commercial use
+- Some include restrictions or limits
+
+Each open model usually has its license listed on its model page. The license badge tells you what rules apply before you download or use the model.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-06-11205237.png)
+
+</div>
+
+
+## Common License Types
+
+Different models use different licenses, but a few are very common.
+
+| **License Type** | **Commercial Use**  | **Attribution Required**                        | **Restrictions**                                  | **Key Idea**                            |
+| ---------------- | ------------------- | ----------------------------------------------- | ------------------------------------------------- | --------------------------------------- |
+| MIT License      | Allowed             | Sometimes recommended but not strictly enforced | Very few restrictions                             | Very permissive and simple to use       |
+| Apache 2.0       | Allowed             | Yes                                             | Patent and notice requirements                    | Commercial use allowed with attribution |
+| Custom License   | Depends on provider | Usually yes                                     | May include usage limits or approval requirements | Rules vary per model provider           |
+
+These licenses usually allow you to use the model freely, but may require attribution or basic conditions.
+
+For example, a model using the MIT license can typically be used in commercial apps without major restrictions.
+
+Key rules when using open models:
+
+- Always verify license before deployment
+- Check for commercial use permissions
+- Look for attribution requirements
+- Confirm any restrictions
