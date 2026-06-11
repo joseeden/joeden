@@ -69,9 +69,11 @@ Document support allows you to analyze and summarize content without manually co
 
 Even if large uploads are allowed, it is generally better to process documents in smaller batches. This helps the model focus on the most relevant information.
 
+<div class='img-center'>
 
+![](/gif/docs/06122026-lm-studio-demo-chat-8.gif)
 
-
+</div>
 
 When you upload a file, LM Studio tries to make the content available to the model.
 
@@ -87,11 +89,11 @@ If the document is too large, LM Studio may automatically split it into smaller 
 
 ## Context Window
 
-The amount of information a model can process at one time is called the context window.
+The amount of information a model can process at one time is called the **context window**.
 
 - Larger context windows handle more information
-- Small context windows have stricter limits
 - Large documents consume context space
+- Small context windows have stricter limits
 - Context size varies by model
 
 A larger context window allows the model to remember and process more content during a conversation.
@@ -111,21 +113,7 @@ Summarizing documents is one of the most useful local AI workflows.
 For example, after uploading a report, you can ask:
 
 ```text
-Summarize this document and extract the key findings.
-```
-
-Expected output:
-
-```text
-Summary:
-- Revenue increased by 12%
-- Expenses decreased by 5%
-- Net profit improved by 18%
-
-Key Findings:
-- Strong quarterly growth
-- Reduced operational costs
-- Positive financial outlook
+Summarize this document and extract the top 10 key findings.
 ```
 
 The exact response depends on the document content.
@@ -133,26 +121,3 @@ The exact response depends on the document content.
 Large language models are particularly effective at summarization and information extraction.
 
 
-## Privacy Benefits
-
-Running models locally helps keep sensitive information private.
-
-- Documents stay on your machine
-- No cloud upload required
-- Useful for confidential data
-- Greater control over information
-
-Examples include:
-
-- Financial reports
-- Internal documentation
-- Contracts
-- Research papers
-- Personal notes
-
-This makes local AI a practical option when privacy is important.
-
-
-## Key Idea Summary
-
-LM Studio can process both images and documents using local AI models. Multimodal models can analyze images and perform OCR, while document uploads allow summarization and information extraction. Because everything runs locally, you can work with sensitive files without sending them to external services.
