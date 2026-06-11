@@ -148,3 +148,10 @@ Once the model is loaded, you can start chatting normally inside LM Studio.
 
 The model runs fully offline, so internet access is not required after download.
 
+<div class='img-center'>
+
+![](/gif/docs/06122026-lm-studio-demo-chat.gif)
+
+</div>
+
+
