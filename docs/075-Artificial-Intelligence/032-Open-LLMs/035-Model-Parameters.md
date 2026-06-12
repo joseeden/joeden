@@ -136,7 +136,7 @@ If you increase the temperature to `1`, you might get a different response becau
 </div>
 
 
-## Simple settings guide
+## Simple Settings Guide
 
 | Goal                | Recommendation               |
 | ------------------- | ---------------------------- |
