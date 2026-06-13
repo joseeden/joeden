@@ -1,6 +1,5 @@
 ---
 title: "Artificial Intelligence (AI)"
-id: starter-notes-on-ai
 description: "Starter Notes on AI"
 tags: 
 - Data Science

@@ -1,8 +1,4 @@
 {
   "label": "Artificial Intelligence",
-  "position": 75,
-  "link": {
-    "type": "doc",
-    "id": "starter-notes-on-ai"
-  }
+  "position": 75
 }
