@@ -9,51 +9,200 @@ tags:
 sidebar_position: 10
 --- 
 
+
 ## Overview
 
-AI agents are systems that can think about a goal and take actions to achieve it. 
+AI workflows and AI agents both use AI to solve problems, but they work differently. The main difference is how much control you have over the process and how decisions are made.
 
-Example: An AI travel assistant named **Alexi**.
+| Feature        | AI Workflow             | AI Agent         |
+| -------------- | ----------------------- | ---------------- |
+| Control        | High                    | Low to moderate  |
+| Process        | Fixed                   | Dynamic          |
+| Planning       | Developer defines steps | AI creates plan  |
+| Tool usage     | Predetermined           | Chosen by AI     |
+| Predictability | High                    | Lower            |
+| Best for       | Known problems          | Unknown problems |
 
-You tell Alexi: *“I am traveling to Seoul from June 26 to July 12. Please organize my trip.”*
+<!-- The key idea is that workflows are predictable, while agents are flexible. -->
 
-- The agent understands natural language
-- The agent identifies your goal
-- The agent breaks the goal into smaller steps
-- The agent prepares a plan before acting
+## AI Workflows
 
-From a simple sentence, the agent extracts the location and dates. It then figures out what needs to happen first, such as checking your schedule, finding flights, and selecting hotels. The key idea is that the agent does not immediately act. It reasons and plans first.
+An AI workflow follows a predefined sequence of steps. The process is predictable because every step is already defined by the developer.
+
+- Follows fixed steps
+- Produces predictable results
+- Gives high control
+- Best for known problems
+
+For example, a workflow might:
+
+1. Open a file
+2. Read the content
+3. Send the content to an AI model
+4. Transform the content
+5. Save the result
+
+The workflow always follows the same path. You know exactly what happens at each step, which makes it easier to manage and troubleshoot.
+
+In this example, the workflow reads a file, performs transformations, and saves the result.
+
+<div class='img-center'>
+
+![](/img/docs/all-things-ai-sample-workflow.png)
+
+</div>
+
+This is a simple workflow because the sequence of actions never changes.
+
+## AI Agents
+
+An AI agent is more flexible. Instead of following a fixed path, it receives a goal and decides how to achieve that goal.
+
+- Creates its own plan
+- Chooses which tools to use
+- Adapts to different inputs
+- Gives lower control
+- Best for unpredictable problems
+
+The developer provides:
+
+- Instructions
+- Available tools
+- The overall goal
+
+The AI model then decides which tools to use and in what order.
+
+The important thing to remember is that the AI model never performs actions directly. It can only use tools that the developer makes available.
+
+<div class='img-center'>
+
+![](/img/docs/all-things-ai-simple-ai-workflow.png)
+
+</div>
 
 
-## Core Capabilities
+## How AI Agents Work
 
-Once the plan is clear, the agent begins executing it.
+An AI agent generally follows three stages:
 
-- It checks your calendar
-- It reviews travel policies
-- It searches booking platforms
-- It confirms the plan before finalizing
+1. Reasoning
+2. Planning
+3. Acting
 
-The agent uses tools to interact with external systems. After gathering information, it shares a proposal. When approved, it completes the bookings.
+The agent first understands the goal, then creates a plan, and finally uses tools to execute that plan.
 
-This shows the three core capabilities of an AI agent:
+For example, imagine a travel assistant called "Candace".
 
-1. **Reasoning** about what needs to be done
-2. **Planning** the steps in the correct order
-3. **Acting** through available tools
+You say:
 
-An AI agent usually has two main parts.
+> I am traveling to Seoul from June 26 to July 12. Please organize my trip.
+
+The agent may:
+
+- Identify the destination and dates
+- Check your calendar
+- Search for flights
+- Compare hotels
+- Create a travel plan
+- Ask for approval
+- Complete bookings
+
+Unlike a workflow, the exact steps are not predefined. The agent decides what to do based on the request.
+
+
+## Agent Components
+
+Most AI agents have two main parts.
 
 1. The brain handles reasoning and decision making
 2. The body represents the tools it can use
 
-Together, these allow the system to interact with its environment instead of only generating text.
+Examples of tools that an agent can use:
+
+- Web search
+- Calendar access
+- Email sending
+- Database queries
+- File operations
+
+Without tools, an AI model can only generate text. Tools allow it to interact with the outside world.
 
 <div class='img-center'>
 
 ![](/img/docs/Screenshot-2026-02-27-175746.png)
 
 </div>
+
+## AI Chatbots Are Often Agents
+
+Many modern AI chatbots behave like AI agents because they can use tools when needed.
+
+Examples include:
+
+- ChatGPT
+- Google Gemini
+- Claude
+- Grok
+
+For example, if you ask ChatGPT:
+
+> Which AI models were released in the last two weeks?
+
+It may decide to:
+
+- Search the web
+- Read recent information
+- Summarize the findings
+
+The developer does not know what every user will ask, so a fixed workflow would not work well. Instead, the chatbot chooses tools based on the request.
+
+This is why many people consider modern AI chatbots to be agentic systems.
+
+## Agentic Systems
+
+The term *agent* is often used broadly.
+
+A system might contain several AI-powered components working together.
+
+For example:
+
+- Blog writing agent
+- Review agent
+- Thumbnail generation agent
+- Social media agent
+
+These components work together to produce a final result.
+
+Some people call this an AI workflow because the steps are predefined. Others call it a multi-agent system because multiple AI components are involved.
+
+Both descriptions can be correct depending on how the term "agent" is defined.
+
+<div class='img-center'>
+
+![](/img/docs/all-things-ai-sample-agentic-workflow.png)
+
+</div>
+
+
+## When to Use Each
+
+Use an AI workflow when:
+
+- Inputs are predictable
+- Outputs are predictable
+- Steps are known in advance
+- Consistency is important
+
+Use an AI agent when:
+
+- Inputs vary significantly
+- Outputs are unknown
+- The solution path is unclear
+- Flexibility is important
+
+In practice, many real-world applications use workflows with AI inside them. This approach provides more control while still benefiting from AI capabilities.
+
+The key idea is simple: workflows follow predefined steps, while agents decide their own steps using the tools available to them.
 
 
 ## The Spectrum of Agency
@@ -142,37 +291,6 @@ Orchestration can be simple with basic rules, or advanced with complex reasoning
 
 </div>
 
-## When To Use AI Agents
-
-AI agents are powerful, but they are not always necessary. The right solution depends on the type of problem you are solving.
-
-Imagine two customer support teams at an online store.
-
-<div class='img-center'>
-
-![](/img/docs/Screenshot-2026-02-27-184614.png)
-
-</div>
-
-Team A mostly receives tickets like tracking an order, returning an item, or changing a shipping address. 
-
-- The questions are predictable and have clear answers. 
-- They do not require accessing customer history or making complex decisions.
-
-Team B mostly receives tickets like double charges, canceled orders with partial refunds, or incorrect store credit. 
-
-- These problems require checking customer records
-- Requires understanding past actions, and deciding on corrective steps.
-
-Because of this difference:
-
-1. Simple and predictable problems need a chatbot
-
-    A chatbot that answers from trained knowledge is enough for Team A. An AI agent is better for Team B because it can access data, reason through edge cases, take actions, and update systems.
-
-2. Complex and adaptive problems need an AI agent
-
-    Use AI agents when the problem requires reasoning, tool usage, and adaptive decision making. Avoid them when simple automation is enough.
 
 
 ## The AI Agent Tooling Ecosystem
