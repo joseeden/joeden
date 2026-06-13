@@ -57,7 +57,7 @@ Local models can also generate articles, posts, summaries, and other content.
 3. Generate reports
 4. Adapt writing styles
 
-**Few-shot prompting*- means giving the model examples before asking it to perform a task.
+**Few-shot prompting** means giving the model examples before asking it to perform a task.
 
 1. Provide examples
 2. Show the desired format
