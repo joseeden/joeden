@@ -373,7 +373,7 @@ This tells Ollama to create a model from the local GGUF file.
 
 Place the `Modelfile` and the GGUF file in the same folder (optional), or you can use a relative path on the Modelfile.
 
-> See codefiles here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/ollama)
+> See codefiles here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/ollama/basics-modelfile)
 
 Example folder:
 
@@ -482,7 +482,6 @@ The model should now respond more normally if the template matches what the mode
 **Note 2:** The template is actually optional if the model already has a default template, which can be seen if you remove the `TEMPLATE` section and run the model. 
 
 If the output is normal, then the default template is working fine. You only need to add a custom template if the default one does not work well.
-
 
 
 ### When to Use Templates
