@@ -320,7 +320,7 @@ In this example, we have a script that sends an image to a local model and asks 
 
 > See the script here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/lm-studio/api-server)
 
-The image:
+Sample image:
 
 <div class='img-center'>
 

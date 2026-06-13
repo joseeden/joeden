@@ -265,6 +265,14 @@ Some Ollama models can understand images.
 
 For example, a vision model can describe an image when the image is converted to Base64.
 
+Sample image: 
+
+<div class='img-center'>
+
+![](/img/docs/taal.jpg)
+
+</div>
+
 > See codefiles here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/ollama/basics-api)
 
 Run the script:
@@ -275,3 +283,8 @@ python image-parser.py
 
 The exact response depends on the image and the model used.
 
+<div class='img-center'>
+
+![](/gif/docs/06122026-ollama-chat-parse-image.gif)
+
+</div>
