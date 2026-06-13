@@ -6,6 +6,7 @@ tags:
 - Artificial Intelligence
 - Large Language Models
 - Open LLMs
+- LM Studio
 sidebar_position: 40
 # last_update:
 #   date: 9/21/2024

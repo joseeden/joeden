@@ -87,3 +87,13 @@ Open LLMs:
   label: 'Open LLMs'
   permalink: '/Open LLMs'
   description: 'Docs related to Open LLMs'
+
+LM Studio:
+  label: 'LM Studio'
+  permalink: '/LM Studio'
+  description: 'Docs related to LM Studio'
+
+Ollama:
+  label: 'Ollama'
+  permalink: '/Ollama'
+  description: 'Docs related to Ollama'
