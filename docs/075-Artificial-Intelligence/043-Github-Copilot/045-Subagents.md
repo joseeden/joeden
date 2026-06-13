@@ -21,7 +21,7 @@ By using subagents, each part of the problem is handled in a more targeted way, 
 
 ## Example: Fix Vulnerabilities from a Security Review 
 
-As example, we'll use the generated security report from the security-review.prompt.md (see [Detect Insecure Code with Copilot Chat](/docs/075-Artificial-Intelligence/040-Github-Copilot/040-Detect-Insecure-Code-with-Copilot-Chat.md)) The report contains a list of identified vulnerabilities, each with a description, location, severity, and recommendation for fixing the issue.
+As example, we'll use the generated security report from the security-review.prompt.md (see [Detect Insecure Code with Copilot Chat](/docs/075-Artificial-Intelligence/043-Github-Copilot/040-Detect-Insecure-Code-with-Copilot-Chat.md)) The report contains a list of identified vulnerabilities, each with a description, location, severity, and recommendation for fixing the issue.
 
 See the report here: [linkshortener-using-nextjs/security-report](https://github.com/joseeden/linkshortener-using-nextjs/tree/main/security-reports)
 

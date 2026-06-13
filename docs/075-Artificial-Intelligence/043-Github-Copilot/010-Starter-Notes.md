@@ -1,6 +1,5 @@
 ---
 title: "Github Copilot"
-id: github-copilot-starter-notes
 description: "Starter Notes on AI Copilot"
 tags: 
 - Artificial Intelligence
