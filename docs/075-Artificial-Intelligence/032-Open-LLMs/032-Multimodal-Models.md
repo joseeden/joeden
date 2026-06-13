@@ -41,6 +41,8 @@ For example, you can upload:
 
 As an example, you can upload an image of a yellowpages directory, and the model can extract details such asnames, titles, and contact details from the image.
 
+Get the sample image here: [Github](https://github.com/joseeden/joeden/tree/master/assets/test-files-llm)
+
 **Note:** The accuracy of image analysis depends on the model's capabilities and the quality of the image. Blurry or low-resolution images may yield less accurate results, while clear images can provide better information extraction.
 
 <div class='img-center'>
@@ -68,6 +70,8 @@ Document support allows you to analyze and summarize content without manually co
 - Large uploads may affect performance
 
 Even if large uploads are allowed, it is generally better to process documents in smaller batches. This helps the model focus on the most relevant information.
+
+Get the sample file here: [Github](https://github.com/joseeden/joeden/tree/master/assets/test-files-llm)
 
 <div class='img-center'>
 

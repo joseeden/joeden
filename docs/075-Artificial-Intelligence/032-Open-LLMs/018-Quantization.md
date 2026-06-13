@@ -66,9 +66,6 @@ You can typically find quantized versions of popular models on model hubs such a
 </div>
 
 
-
-
-
 ## Memory Still Includes Context
 
 Even after quantization, memory is still needed for more than just weights.

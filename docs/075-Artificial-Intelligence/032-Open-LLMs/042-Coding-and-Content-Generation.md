@@ -153,14 +153,11 @@ Here, the model receives example posts before generating a new one.
 
 The content changes, but the writing style now follows the examples.
 
+<div class='img-center'>
 
-<!-- <div class='img-center'>
+![](/gif/docs/06122026-lm-studio-generatecontent-2.gif)
 
-![](/gif/docs/.gif)
-
-</div> -->
-
-
+</div>
 
 
 ### Using Delimiters
