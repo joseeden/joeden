@@ -136,7 +136,7 @@ If you are using Windows, run from PowerShell:
 curl http://localhost:1234/v1/models
 ```
 
-### Prerequisites 
+### Lab: Prerequisites 
 
 See the codefiles here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/lm-studio/api-server)
 
@@ -152,7 +152,18 @@ See the codefiles here: [Github](https://github.com/joseeden/llm-engineering-san
     ```text
     llm-engineering-sandbox/lm-studio/api-server
     |
-
+    ├── README.md
+    ├── chatbot.py
+    ├── image-parser.py
+    ├── images
+    │   └── taal.jpg
+    ├── requirements.txt
+    ├── using-http-request.py
+    ├── using-openai-sdk.py
+    ├── wsl-chatbot.py
+    ├── wsl-image-parser.py
+    ├── wsl-using-http-request.py
+    └── wsl-using-openai-sdk.py
     ```
 
 2. Create a virtual environment and activate it. 
@@ -187,12 +198,21 @@ See the codefiles here: [Github](https://github.com/joseeden/llm-engineering-san
     LM_STUDIO_BASE_URL=<ENTER_LM_STUDIO_API_URL>
     MODEL_NAME=<ENTER_LOCAL_MODEL_NAME>
 
-    ## Example:
+    ## Example (if using localhost):
     # LM_STUDIO_BASE_URL=http://localhost:1234
     # MODEL_NAME=google/gemma-4-e4b
+    ```
 
-    ## If using Windows 
-    # LM_STUDIO_BASE_URL=http://$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):1234
+    If you're using WSL in Windows, get your Windows host IP and use it instead of localhost:
+
+    ```bash
+    cat /etc/resolv.conf | grep nameserver | awk '{print $2}'
+    ```
+
+    Then use it in your `.env` file:
+
+    ```env
+    LM_STUDIO_BASE_URL=http://<ENTER_WINDOWS_HOST_IP>:1234
     ```
 
 
@@ -204,7 +224,7 @@ One of the simplest ways to communicate with a local model is by sending an HTTP
 
 Create a Python script (e.g., `app.py`) that sends a request to the LM Studio API server. You can create this file anywhere on your system since now we're doing everything outside of LM Studio.
 
-See the script here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/lm-studio/api-server)
+> See the script here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/lm-studio/api-server)
 
 <!-- **Note 1:** Replace `"local-model"` with the actual model name you want to use. -->
 
@@ -252,9 +272,9 @@ client = OpenAI(
 )
 ```
 
-See the script here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/lm-studio/api-server)
-
 **Note** If you are using WSL in Windows, please see the [Troubleshooting: Using WSL.](#using-wsl) section below.
+
+> See the script here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/lm-studio/api-server)
 
 Run the script:
 
@@ -274,7 +294,7 @@ The exact response depends on the model currently loaded in LM Studio.
 
 You can build a simple chatbot that uses a local model to respond to user input.
 
-See the script here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/lm-studio/api-server)
+> See the script here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/lm-studio/api-server)
 
 Run the script:
 
@@ -297,6 +317,8 @@ In this example, we have a script that sends an image to a local model and asks 
 3. Sending it to the model with a prompt
 4. Printing the model's response
 
+> See the script here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/lm-studio/api-server)
+
 The image:
 
 <div class='img-center'>
@@ -304,9 +326,6 @@ The image:
 ![](/img/docs/taal.jpg)
 
 </div>
-
-
-See the script here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/lm-studio/api-server)
 
 Run the script:
 
@@ -345,9 +364,11 @@ If you can connect successfully, you can proceed with running the scripts.
 
 For reference, I've created scripts for both direct HTTP requests and using the OpenAI SDK that are compatible with WSL. 
 
-See the script here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/lm-studio/api-server)
+> See the script here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/lm-studio/api-server)
 
 ```bash
+├── wsl-chatbot.py
+├── wsl-image-parser.py
 ├── wsl-using-http-request.py
 └── wsl-using-openai-sdk.py
 ```
