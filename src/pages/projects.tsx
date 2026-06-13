@@ -51,7 +51,7 @@ const projects: ProjectData[] = [
     title: "AI Content Processing Workflow",
     description: "LLM workflow for extracting, summarizing, and transforming website content.",
     url: "https://github.com/joseeden/llm-engineering-sandbox/blob/master/building-ai-workflows/05-multi-step-workflow/README.md", 
-    image: require(`/img/docs/Screenshot2026-06-14055935.png`),
+    image: require(`/img/docs/ai-content-process-thumbnail.png`),
     tags: ["Artificial Intelligence", "LLM", "Python"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },    
