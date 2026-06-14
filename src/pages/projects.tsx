@@ -72,6 +72,14 @@ const projects: ProjectData[] = [
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },    
   {
+    title: "AI Content Workflow with HITL",
+    description: "Multi-step content generation with human-in-the-loop (HITL) review.",
+    url: "https://github.com/joseeden/llm-engineering-sandbox/blob/master/building-ai-workflows/11-ai-content-workflow-with-hitl/README.md", 
+    image: require(`/img/docs/ai-content-publishing-workflow-thumbnail.png`),
+    tags: ["Artificial Intelligence", "LLM"],
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
+  },    
+  {
     title: "AI Blog Post Generator",
     description: "Using AI to generate blog posts from outlines and example posts.",
     url: "https://github.com/joseeden/llm-engineering-sandbox/blob/master/building-ai-workflows/09-ai-blog-post-generator/README.md", 
