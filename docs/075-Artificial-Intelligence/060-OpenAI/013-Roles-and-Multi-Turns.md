@@ -37,7 +37,7 @@ For single-turn tasks, please see [Roles in Single-Turn Tasks.](/docs/075-Artifi
 
 To run the code examples in this page, make sure to [set up your environment](/docs/075-Artificial-Intelligence/060-OpenAI/005-Setting-up-OpenAI.md) before running the code. 
 
-See code files here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/scripts)
+See code files here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/basics)
 
 :::
 

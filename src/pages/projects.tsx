@@ -52,7 +52,7 @@ const projects: ProjectData[] = [
     description: "LLM workflow for extracting and transforming website content.",
     url: "https://github.com/joseeden/llm-engineering-sandbox/blob/master/building-ai-workflows/05-multi-step-workflow/README.md", 
     image: require(`/img/docs/ai-content-process-thumbnail.png`),
-    tags: ["Artificial Intelligence", "LLM", "Python"],
+    tags: ["Artificial Intelligence", "LLM"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },    
   {
@@ -60,7 +60,7 @@ const projects: ProjectData[] = [
     description: "Automated invoice extraction using LLM structured outputs.",
     url: "https://github.com/joseeden/llm-engineering-sandbox/blob/master/building-ai-workflows/07-ai-invoice-procesing-pipeline/README.md", 
     image: require(`/img/docs/ai-invoice-processing-pipeline.png`),
-    tags: ["Artificial Intelligence", "LLM", "Python"],
+    tags: ["Artificial Intelligence", "LLM"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },    
   {

@@ -27,7 +27,7 @@ A good system message gives the model a clear identity, clear boundaries, and cl
 
 The code examples in this page use the Anthropic API to demonstrate different prompting techniques. Make sure to [set up your API key and environment](/docs/075-Artificial-Intelligence/050-Claude-Code/050-Anthropic-API.md) before running the code.
 
-See the actual code files here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/scripts)
+See the actual code files here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/basics)
 
 :::
 

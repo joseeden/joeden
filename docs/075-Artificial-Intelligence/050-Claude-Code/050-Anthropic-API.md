@@ -61,7 +61,7 @@ We can use the Anthropic SDK to connect to the AI service and send prompts secur
 
 In this example, we create a client connection (`client`) and send a simple user prompt to generate a concise summary of cloud computing. The `response` object contains the generated text along with metadata about token usage and processing time.
 
-See files here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/scripts)
+See files here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/basics)
 
 ```python
 ## sample-api-request.py
@@ -114,7 +114,7 @@ Content generation and summarization are common use cases for models like Claude
 
 In the example below, we ask the model to summarize a passage of text and identify key themes. By defining the system role as a literary analyst, we guide the model to produce a focused and relevant response.
 
-See files here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/scripts)
+See files here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/basics)
 
 ```python
 # sample-api-summarization.py
@@ -176,7 +176,7 @@ Generating reliable code with Claude models requires clear and structured instru
 
 In this example, we ask the model to generate a Python function that calculates the area of a circle with validation for negative inputs. The model then stores the generated code in a `circle_area.py` file in the same directory. 
 
-See files here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/scripts)
+See files here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/basics)
 
 ```python
 ## sample-api-code.py
@@ -292,7 +292,7 @@ Here, the previous prompt is used with different temperature settings to show ho
 - Low temperature (0.2) will produce more focused and deterministic content
 - Higher temperature (0.8) would yield more creative and varied responses
 
-See files here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/scripts)
+See files here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/basics)
 
 
 ```python
