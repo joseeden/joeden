@@ -79,6 +79,14 @@ const projects: ProjectData[] = [
     tags: ["DevOps", "Artificial Intelligence"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },    
+  {
+    title: "AI Blog Post Generator",
+    description: "Using AI to generate blog posts from outlines and example posts.",
+    url: "https://github.com/joseeden/llm-engineering-sandbox/blob/master/building-ai-workflows/09-ai-blog-post-generator/README.md", 
+    image: require(`/img/docs/Screenshot2026-06-06033245.png`),
+    tags: ["Artificial Intelligence", "LLM"],
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
+  },    
 {
     title: "LLM Engineering Sandbox",
     description: "Collection of engineering patterns for building decoupled LLM integrations.",
