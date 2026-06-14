@@ -59,7 +59,7 @@ const projects: ProjectData[] = [
     title: "AI Invoice Processing Pipeline",
     description: "Automated invoice extraction using LLM structured outputs.",
     url: "https://github.com/joseeden/llm-engineering-sandbox/blob/master/building-ai-workflows/07-ai-invoice-procesing-pipeline/README.md", 
-    image: require(`/img/docs/ai-invoice-processing-pipeline.png`),
+    image: require(`/img/docs/ai-invoice-processing-pipeline-2.png`),
     tags: ["Artificial Intelligence", "LLM"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },    
