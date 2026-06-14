@@ -83,7 +83,7 @@ const projects: ProjectData[] = [
     title: "AI Blog Post Generator",
     description: "Using AI to generate blog posts from outlines and example posts.",
     url: "https://github.com/joseeden/llm-engineering-sandbox/blob/master/building-ai-workflows/09-ai-blog-post-generator/README.md", 
-    image: require(`/img/docs/Screenshot2026-06-06033245.png`),
+    image: require(`/img/docs/ai-blog-psot-generator-thumbnail.png`),
     tags: ["Artificial Intelligence", "LLM"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },    
