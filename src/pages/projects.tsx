@@ -64,6 +64,22 @@ const projects: ProjectData[] = [
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },    
   {
+    title: "AI Content Publishing Workflow",
+    description: "Multi-step AI workflow for content, image, and social post generation.",
+    url: "https://github.com/joseeden/llm-engineering-sandbox/blob/master/building-ai-workflows/10-ai-content-publishing-pipeline/README.md", 
+    image: require(`/img/docs/ai-content-publishing-workflow-thumbnail.png`),
+    tags: ["Artificial Intelligence", "LLM"],
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
+  },    
+  {
+    title: "AI Blog Post Generator",
+    description: "Using AI to generate blog posts from outlines and example posts.",
+    url: "https://github.com/joseeden/llm-engineering-sandbox/blob/master/building-ai-workflows/09-ai-blog-post-generator/README.md", 
+    image: require(`/img/docs/ai-blog-psot-generator-thumbnail.png`),
+    tags: ["Artificial Intelligence", "LLM"],
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
+  },      
+  {
     title: "AI-Assisted Testing and CI/CD",
     description: "Using AI for software testing and CI/CD with pytest and GitHub Actions",
     url: "https://github.com/joseeden/labs-ai-assisted-software-testing", 
@@ -80,14 +96,6 @@ const projects: ProjectData[] = [
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },    
   {
-    title: "AI Blog Post Generator",
-    description: "Using AI to generate blog posts from outlines and example posts.",
-    url: "https://github.com/joseeden/llm-engineering-sandbox/blob/master/building-ai-workflows/09-ai-blog-post-generator/README.md", 
-    image: require(`/img/docs/ai-blog-psot-generator-thumbnail.png`),
-    tags: ["Artificial Intelligence", "LLM"],
-    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
-  },    
-{
     title: "LLM Engineering Sandbox",
     description: "Collection of engineering patterns for building decoupled LLM integrations.",
     url: "https://github.com/joseeden/llm-engineering-sandbox", 
