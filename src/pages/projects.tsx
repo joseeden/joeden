@@ -96,7 +96,7 @@ const projects: ProjectData[] = [
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },    
   {
-    title: "WhatsApp Integrations for AI Workflows",
+    title: "WhatsApp Cloud API for AI Workflows",
     description: "Integrating AI workflows with WhatsApp for automated notifications.",
     url: "https://github.com/joseeden/llm-engineering-sandbox/blob/master/building-ai-workflows/21-whatsapp-integration-for-ai-workflows/README.md", 
     image: require(`/img/docs/whatsapp-integrations-forai-workflow-thumbnail.png`),
