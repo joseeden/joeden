@@ -96,8 +96,8 @@ const projects: ProjectData[] = [
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },    
   {
-    title: "WhatsApp Cloud API for AI Workflows",
-    description: "Integrating AI workflows with WhatsApp for automated notifications.",
+    title: "WhatsApp API for AI Workflows",
+    description: "Automated WhatsApp notifications for multi-step AI workflows.",
     url: "https://github.com/joseeden/llm-engineering-sandbox/blob/master/building-ai-workflows/21-whatsapp-integration-for-ai-workflows/README.md", 
     image: require(`/img/docs/whatsapp-integrations-forai-workflow-thumbnail.png`),
     tags: ["Artificial Intelligence", "LLM"],
