@@ -175,6 +175,15 @@ Configuration file:
 .claude/settings.json
 ```
 
+
+:::info 
+
+The `settings.json` file is where you define all Claude Code settings, not just hooks. 
+
+For more information, please see [Configuration and Sessions.](/docs/075-Artificial-Intelligence/050-Claude-Code/013-Configuration-and-Sessions.md)
+
+:::
+
 Every tool action defined in the settings file follows a consistent flow where hooks can be inserted at different stages. The stages are:
 
 | Stage         | What it does                              | When it runs             |

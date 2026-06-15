@@ -147,17 +147,7 @@ To completely clear the context and start fresh, use:
 /clear
 ``` 
 
-**Compact vs Clear**
-
-When working on a long feature, compact the history if you start running out of memory. This step keeps the active conversation relevant and focused on your current task. 
-
-Once you finish the feature and want to start something new, clear the session completely. Starting fresh prevents old conversations from creating bias in your next task. 
-
-<div class='img-center'>
-
-![](/gif/docs/06062026-claude-code-context-mgt.gif)
-
-</div>
+> See [Configuration and Sessions](/docs/075-Artificial-Intelligence/050-Claude-Code/013-Configuration-and-Sessions.md) for more details on managing context and sessions.
 
 For permanent project details you want remembered across sessions, save them in a `CLAUDE.md` file so the information never has to be rediscovered from scratch.
 
@@ -195,13 +185,15 @@ Instead of just spitting out text for you to copy, Claude uses these tools to ch
 
 You can control exactly how much freedom Claude has to change things on your machine by switching between different permission modes.
 
-| Mode                 | Behavior                                                                 |
-| -------------------- | ------------------------------------------------------------------------ |
-| **Default Mode**     | Asks for confirmation before every edit or command.                      |
-| **Auto-Accept Mode** | Applies file edits automatically but still asks before running commands. |
-| **Plan Mode**        | Only reads files and creates a strategy before making any changes.       |
+| Mode                  | Behavior                                                                 |
+| --------------------- | ------------------------------------------------------------------------ |
+| `Default Mode`        | Asks for confirmation before every edit or command.                      |
+| `Auto-Accept Mode`    | Applies file edits automatically but still asks before running commands. |
+| `Plan Mode`           | Only reads files and creates a strategy before making any changes.       |
 
 You can tweak all of these options inside your configuration settings file depending on how hands-on you want to be. 
+
+For more information, please see [Configuration and Sessions.](/docs/075-Artificial-Intelligence/050-Claude-Code/013-Configuration-and-Sessions.md)
 
 <!-- 
 ## Effective Usage 

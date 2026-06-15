@@ -26,11 +26,11 @@ You can configure hooks within your configuration files by mapping commands to s
 
 | Hook                 | When It Runs                                          |
 | -------------------- | ----------------------------------------------------- |
-| **UserPromptSubmit** | Runs immediately after you submit a prompt.           |
-| **PreToolUse**       | Triggers just before a tool executes an action.       |
-| **PostToolUse**      | Activates immediately after a tool finishes its work. |
-| **Stop**             | Runs when the AI completes its entire response.       |
-| **Notification**     | Triggers whenever a system alert is generated.        |
+| `UserPromptSubmit` | Runs immediately after you submit a prompt.           |
+| `PreToolUse`       | Triggers just before a tool executes an action.       |
+| `PostToolUse`      | Activates immediately after a tool finishes its work. |
+| `Stop`             | Runs when the AI completes its entire response.       |
+| `Notification`     | Triggers whenever a system alert is generated.        |
 
 In the example below, the `UserPromptSubmit` event intercepts your input before any processing begins. Mapping your automation to these specific lifecycle events ensures that your scripts execute at the precise moment they are needed.
 
@@ -43,6 +43,14 @@ In the example below, the `UserPromptSubmit` event intercepts your input before 
 ```
 
 The `settings.json` is stored at the project level, so any hooks you configure here will be shared across your entire team when checked into your repository. 
+
+:::info 
+
+The `settings.json` file is where you define all Claude Code settings, not just hooks. 
+
+For more information, please see [Configuration and Sessions.](/docs/075-Artificial-Intelligence/050-Claude-Code/013-Configuration-and-Sessions.md)
+
+:::
 
 <div class='img-center'>
 
