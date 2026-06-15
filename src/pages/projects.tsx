@@ -226,46 +226,46 @@ const projects: ProjectData[] = [
     tags: ["Data Analysis", "Python"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },  
-  {
-    title: "Centralized Logging with Graylog SIEM",
-    description: "Deploy Graylog as an SIEM solution to collect logs from AWS resources.",
-    url: "",
-    image: require(`/img/docs/graylog.png`),
-    tags: ["DevOps", "Security", "AWS"],
-    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
-  },
-  {
-    title: "Microservices Deployment on Kubernetes",
-    description: "Deploy microservices-based application on Kubernetes.",
-    url: "",
-    image: require(`/img/docs/aws-eks.png`),
-    tags: ["DevOps", "Kubernetes", "Docker"],
-    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
-  },
-  {
-    title: "End-to-End DevSecOps Pipeline",
-    description: "CICD pipeline with automated testing, security scans, and compliance checks.",
-    url: "",
-    image: require(`/img/docs/devsecops.png`),
-    tags: ["DevOps", "Security"],
-    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
-  },
-  {
-    title: "Machine Learning Pipeline Deployment",
-    description: "Build an ML pipeline for data preprocessing and model training.",
-    url: "",
-    image: require(`/img/docs/mlops.png`),
-    tags: ["Machine Learning", "MLOps", "Python"],
-    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
-  },
-  {
-    title: "ETL Pipeline Deployment",
-    description: "Develop an ETL pipeline to extract, transform, and load large datasets.",
-    url: "",
-    image: require(`/img/docs/etl-pipeline.png`),
-    tags: ["Data Engineering", "ETL", "Python"],
-    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
-  },
+  // {
+  //   title: "Centralized Logging with Graylog SIEM",
+  //   description: "Deploy Graylog as an SIEM solution to collect logs from AWS resources.",
+  //   url: "",
+  //   image: require(`/img/docs/graylog.png`),
+  //   tags: ["DevOps", "Security", "AWS"],
+  //   // level: "Basic",     // "Basic", "Intermediate", "Advanced"
+  // },
+  // {
+  //   title: "Microservices Deployment on Kubernetes",
+  //   description: "Deploy microservices-based application on Kubernetes.",
+  //   url: "",
+  //   image: require(`/img/docs/aws-eks.png`),
+  //   tags: ["DevOps", "Kubernetes", "Docker"],
+  //   // level: "Basic",     // "Basic", "Intermediate", "Advanced"
+  // },
+  // {
+  //   title: "End-to-End DevSecOps Pipeline",
+  //   description: "CICD pipeline with automated testing, security scans, and compliance checks.",
+  //   url: "",
+  //   image: require(`/img/docs/devsecops.png`),
+  //   tags: ["DevOps", "Security"],
+  //   // level: "Basic",     // "Basic", "Intermediate", "Advanced"
+  // },
+  // {
+  //   title: "Machine Learning Pipeline Deployment",
+  //   description: "Build an ML pipeline for data preprocessing and model training.",
+  //   url: "",
+  //   image: require(`/img/docs/mlops.png`),
+  //   tags: ["Machine Learning", "MLOps", "Python"],
+  //   // level: "Basic",     // "Basic", "Intermediate", "Advanced"
+  // },
+  // {
+  //   title: "ETL Pipeline Deployment",
+  //   description: "Develop an ETL pipeline to extract, transform, and load large datasets.",
+  //   url: "",
+  //   image: require(`/img/docs/etl-pipeline.png`),
+  //   tags: ["Data Engineering", "ETL", "Python"],
+  //   // level: "Basic",     // "Basic", "Intermediate", "Advanced"
+  // },
 ];
 
 
