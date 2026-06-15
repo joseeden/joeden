@@ -48,6 +48,14 @@ const projects: ProjectData[] = [
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },    
   {
+    title: "Capstone: Google IT Automation with Python",
+    description: "Collection of scripts for Google IT Automation with Python Course.",
+    url: "https://github.com/joseeden/capstone-google_it_automation_with_python", 
+    image: require(`/img/docs/coursera-google-it-automation-with-python.png`),
+    tags: ["DevOps", "Python", "Automation"],
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
+  },   
+  {
     title: "AI Content Processing Workflow",
     description: "LLM workflow for extracting and transforming website content.",
     url: "https://github.com/joseeden/llm-engineering-sandbox/blob/master/building-ai-workflows/05-multi-step-workflow/README.md", 
@@ -76,6 +84,14 @@ const projects: ProjectData[] = [
     description: "Multi-step content generation with human-in-the-loop (HITL) review.",
     url: "https://github.com/joseeden/llm-engineering-sandbox/blob/master/building-ai-workflows/11-ai-content-workflow-with-hitl/README.md", 
     image: require(`/img/docs/ai-content-workflow-with-hitl.png`),
+    tags: ["Artificial Intelligence", "LLM"],
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
+  },    
+  {
+    title: "Slack Integrations for AI Workflows",
+    description: "Extending AI workflows with Slack notifications for real-time updates.",
+    url: "https://github.com/joseeden/llm-engineering-sandbox/blob/master/building-ai-workflows/20-slack-integration-for-ai-workflows/README.md", 
+    image: require(`/img/docs/slack-integrations-forai-workflow-thumbnail.png`),
     tags: ["Artificial Intelligence", "LLM"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },    
@@ -119,15 +135,7 @@ const projects: ProjectData[] = [
     image: require(`/img/docs/jenkins-flask.png`),
     tags: ["DevOps", "Docker", "Python"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
-  },  
-  {
-    title: "Capstone: Google IT Automation with Python",
-    description: "Collection of scripts for Google IT Automation with Python Course.",
-    url: "https://github.com/joseeden/capstone-google_it_automation_with_python", 
-    image: require(`/img/docs/coursera-google-it-automation-with-python.png`),
-    tags: ["DevOps", "Python", "Automation"],
-    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
-  },  
+  },   
   {
     title: "AWS Serverless Deployment using Jenkins",
     description: "Using Jenkins to deploy a serverless application",
