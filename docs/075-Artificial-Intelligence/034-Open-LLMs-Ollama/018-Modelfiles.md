@@ -373,7 +373,7 @@ This tells Ollama to create a model from the local GGUF file.
 
 Place the `Modelfile` and the GGUF file in the same folder (optional), or you can use a relative path on the Modelfile.
 
-> See codefiles here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/ollama/basics-modelfile)
+> See codefiles here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/openllm-ollama/basics-modelfile)
 
 Example folder:
 

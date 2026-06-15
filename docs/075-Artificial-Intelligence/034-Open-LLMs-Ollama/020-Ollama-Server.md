@@ -27,19 +27,19 @@ This makes Ollama useful for building local AI tools and small automation script
 
 ## Lab: Prerequisites 
 
-See the codefiles here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/ollama/basics-api)
+See the codefiles here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/openllm-ollama/basics-api)
 
 1. Clone the repository and navigate to the directory.
 
     ```bash
     git clone https://github.com/joseeden/llm-engineering-sandbox.git
-    cd llm-engineering-sandbox/ollama/basics-api
+    cd llm-engineering-sandbox/openllm-ollama/basics-api
     ```
 
     Project structure:
 
     ```text
-    llm-engineering-sandbox/ollama/basics-api
+    llm-engineering-sandbox/openllm-ollama/basics-api
     |
     ```
 
@@ -149,7 +149,7 @@ Output:
 
 Ollama has its own API. You can send a prompt to a model using Python.
 
-> See codefiles here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/ollama/basics-api)
+> See codefiles here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/openllm-ollama/basics-api)
 
 
 Run the script:
@@ -188,7 +188,7 @@ minimax-m3:cloud        d03a959f45c0    -         6 hours ago
 
 You can store the model name in an environment variable and use it in your code.
 
-> See codefiles here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/ollama/basics-api)
+> See codefiles here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/openllm-ollama/basics-api)
 
 
 ```bash
@@ -214,7 +214,7 @@ Ollama can return structured JSON if you provide a schema.
 
 This is useful when you want to use the model response in another script or application.
 
-> See codefiles here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/ollama/basics-api)
+> See codefiles here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/openllm-ollama/basics-api)
 
 Run the sample script:
 
@@ -243,7 +243,7 @@ First, install the OpenAI package:
 pip install openai
 ```
 
-> See codefiles here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/ollama/basics-api)
+> See codefiles here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/openllm-ollama/basics-api)
 
 
 Run the script:
@@ -273,7 +273,7 @@ Sample image:
 
 </div>
 
-> See codefiles here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/ollama/basics-api)
+> See codefiles here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/openllm-ollama/basics-api)
 
 Run the script:
 

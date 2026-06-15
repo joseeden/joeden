@@ -34,7 +34,7 @@ Using an API makes it possible to integrate local AI models into your own tools 
 
 :::info 
 
-See code files here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/lm-studio/api-server)
+See code files here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/openllm-lm-studio/api-server)
 
 :::
 
@@ -139,19 +139,19 @@ curl http://localhost:1234/v1/models
 
 ### Lab: Prerequisites 
 
-See the codefiles here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/lm-studio/api-server)
+See the codefiles here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/openllm-lm-studio/api-server)
 
 1. Clone the repository and navigate to the `lm-studio/api-server` directory.
 
     ```bash
     git clone https://github.com/joseeden/llm-engineering-sandbox.git
-    cd llm-engineering-sandbox/lm-studio/api-server
+    cd llm-engineering-sandbox/openllm-lm-studio/api-server
     ```
 
     Project structure:
 
     ```text
-    llm-engineering-sandbox/lm-studio/api-server
+    llm-engineering-sandbox/openllm-lm-studio/api-server
     |
     ├── README.md
     ├── chatbot.py
@@ -225,7 +225,7 @@ One of the simplest ways to communicate with a local model is by sending an HTTP
 
 Create a Python script (e.g., `app.py`) that sends a request to the LM Studio API server. You can create this file anywhere on your system since now we're doing everything outside of LM Studio.
 
-> See the script here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/lm-studio/api-server)
+> See the script here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/openllm-lm-studio/api-server)
 
 <!-- **Note 1:** Replace `"local-model"` with the actual model name you want to use. -->
 
@@ -275,7 +275,7 @@ client = OpenAI(
 
 **Note** If you are using WSL in Windows, please see the [Troubleshooting: Using WSL.](#using-wsl) section below.
 
-> See the script here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/lm-studio/api-server)
+> See the script here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/openllm-lm-studio/api-server)
 
 Run the script:
 
@@ -295,7 +295,7 @@ The exact response depends on the model currently loaded in LM Studio.
 
 You can build a simple chatbot that uses a local model to respond to user input.
 
-> See the script here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/lm-studio/api-server)
+> See the script here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/openllm-lm-studio/api-server)
 
 Run the script:
 
@@ -318,7 +318,7 @@ In this example, we have a script that sends an image to a local model and asks 
 3. Sending it to the model with a prompt
 4. Printing the model's response
 
-> See the script here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/lm-studio/api-server)
+> See the script here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/openllm-lm-studio/api-server)
 
 Sample image:
 
@@ -365,7 +365,7 @@ If you can connect successfully, you can proceed with running the scripts.
 
 For reference, I've created scripts for both direct HTTP requests and using the OpenAI SDK that are compatible with WSL. 
 
-> See the script here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/lm-studio/api-server)
+> See the script here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/openllm-lm-studio/api-server)
 
 ```bash
 ├── wsl-chatbot.py
