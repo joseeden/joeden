@@ -56,6 +56,84 @@ Once you approve the plan, the development phase begins. To help the AI implemen
 
 </div>
 
+## Undoing Changes 
+
+### Using Git 
+
+Git helps you go back to an older version of your code when something goes wrong.
+
+Notes: 
+
+- Commit small changes often
+- Review AI-generated changes with `git diff`
+- Revert unwanted changes safely
+- Avoid mixing too many AI changes in one commit
+
+Commands: 
+
+1. To check which files were changed:
+
+    ```bash
+    git status
+    ```
+
+2. To see the exact changes made in the files:
+
+    ```bash
+    git diff
+    ```
+
+3. To restore a file back to the last committed version:
+
+    ```bash
+    git restore <file-name>
+    ```
+
+4. To restore all uncommitted file changes:
+
+    ```bash
+    git restore .
+    ```
+
+### Using Claude Code Rewind
+
+Claude Code also has two rewind features for undoing changes from the current session.
+
+1. Using the `Esc` key 
+
+    - Press `Esc` twice
+    - Choose the snapshot to restore
+
+2. Using the `/rewind` command
+
+    - Check Git after rewinding
+    - This can help, but it should not replace Git.
+
+    ```bash
+    /rewind
+    ```
+
+When you use rewind, it will show you the available restore points from the current session.
+
+After using rewind, make sure to check the files again with Git.
+
+Then verify:
+
+```bash
+git status
+```
+
+If Git still shows modified files, the rewind did not fully undo the change.
+
+:::info 
+
+Use both Git and Claude Code rewind, but trust Git more.
+
+Git is the main safety net
+Rewind is useful for quick session recovery
+
+:::
+
 ## Reviewing and Committing
 
 The final phase focuses on checking the quality of the work and saving your progress.
