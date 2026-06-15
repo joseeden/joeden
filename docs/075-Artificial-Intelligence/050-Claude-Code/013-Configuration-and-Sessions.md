@@ -44,11 +44,14 @@ Other settings in configuration include:
 
 The configuration menu lets you change settings such as theme, thinking mode, and other Claude Code options.
 
+Other resources to check out: [Claude Code Docs - Available settings](https://code.claude.com/docs/en/settings#available-settings)
+
 <div class='img-center'>
 
 ![](/gif/docs/16062026-CLAUDE-CONFIG.gif)
 
 </div>
+
 
 
 ## Project Configuration

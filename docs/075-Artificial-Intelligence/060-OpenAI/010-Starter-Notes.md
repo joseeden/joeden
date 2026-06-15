@@ -477,4 +477,4 @@ Shot prompting improves results by providing examples.
 
 **Note:** The concept of levels of prompting is not specific to the OpenAI API and can be applied to any language model. 
 
-To see a detailed explanation of shot prompting techniques, see [Levels of Prompting](/docs/075-Artificial-Intelligence/050-Claude-Code/052-Levels-of-Prompting.md)
+To see a detailed explanation of shot prompting techniques, see [Levels of Prompting](/docs/075-Artificial-Intelligence/050-Claude-Code/020-Levels-of-Prompting.md)

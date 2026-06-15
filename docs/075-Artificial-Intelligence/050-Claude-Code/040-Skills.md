@@ -6,7 +6,7 @@ tags:
 - Large Language Models
 - AI Agents
 - Claude AI
-sidebar_position: 20
+sidebar_position: 40
 --- 
 
 ## Overview
