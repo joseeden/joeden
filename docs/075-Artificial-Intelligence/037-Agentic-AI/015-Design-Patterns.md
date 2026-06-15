@@ -182,6 +182,55 @@ Newer generation reasoning models are explciitly trained to think step by step, 
 
 Tools are the action component of AI agents. They connect the model to external data sources and actions, which allows it to interact with the world.
 
+### How tool use works
+
+AI agents need tools because the model cannot do real actions by itself.
+
+A model does not search the web, run code, send emails, or call APIs directly. It only generates text. 
+
+The AI application reads that text, checks if the model is asking for a tool, and then runs the tool in the application code.
+
+1. The model generates text
+2. The application detects a tool request
+3. The application runs the real function
+4. The tool result is sent back to the model
+5. The model uses the result to write the final answer
+
+In the example below, the `fake_web_search()` function is the tool. The `model_output` variable simulates what the model might return when it wants to use that tool.
+
+```python
+def fake_web_search(query):
+    return f"Search result for: {query}"
+
+
+model_output = "web_search: current president of Exampleland"
+
+if model_output.startswith("web_search:"):
+    search_query = model_output.replace("web_search:", "").strip()
+    tool_result = fake_web_search(search_query)
+
+    print(tool_result)
+```
+
+Run the file with Python.
+
+```bash
+python tool_use_example.py
+```
+
+Output:
+
+```text
+Search result for: current president of Exampleland
+```
+
+The model did not really search anything. It only produced text that looked like a tool request, and the application handled the actual function call.
+
+In a real AI agent, the same pattern is used with real tools such as search, database queries, API calls, file readers, or message senders. The model decides what tool it wants to request, and the application controls what actually happens.
+
+Tool use works because the application connects model output to real code.
+
+
 ### Types of Tools
 
 Agentic systems generally use three main types of tools: 
