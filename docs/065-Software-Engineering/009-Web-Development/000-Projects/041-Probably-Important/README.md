@@ -25,7 +25,7 @@ This application allows users to create, edit, and delete notes.
 It is built using Next.js and Tailwind CSS.
 
 
-:: info 
+:::info 
 
 This page sets up the starting point for the application.
 
