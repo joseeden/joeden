@@ -8,7 +8,7 @@ tags:
 - JavaScript
 - NextJS
 - React
-sidebar_position: 5
+sidebar_position: 40
 # last_update:
 #   date: 4/23/2019
 ---

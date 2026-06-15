@@ -5,7 +5,7 @@ tags:
 - Web Development
 - HTML
 - CSS
-sidebar_position: 1
+sidebar_position: 12
 last_update:
   date: 03/20/2019
 ---
