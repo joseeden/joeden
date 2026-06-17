@@ -128,6 +128,13 @@ const projects: ProjectData[] = [
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },    
   {
+    title: "Multi-Tool Customer Service Agent",
+    description: "AI agent using tool calling, customer verification, and refund workflows.",
+    url: "https://github.com/joseeden/llm-engineering-sandbox/tree/master/building-ai-agents/03-multi-tool-customer-service-agent/README.md",
+    image: require(`/img/docs/multi-tool-cs-agent-proj.png`),
+    tags: ["Artificial Intelligence", "LLM"],
+  }  
+  {
     title: "LLM Engineering Sandbox",
     description: "Collection of engineering patterns for building decoupled LLM integrations.",
     url: "https://github.com/joseeden/llm-engineering-sandbox", 
