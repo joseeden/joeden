@@ -73,6 +73,7 @@ const getResumePdfUrl = (): string | null => {
 };
 
 const resumePdfUrl = getResumePdfUrl();
+const RESUME_DOWNLOAD_FILENAME = "Jose Eden.pdf";
 
 export const Experiences: FunctionComponent = () => {
   return (
@@ -96,7 +97,11 @@ export const Experiences: FunctionComponent = () => {
 
       {resumePdfUrl && (
         <div className={styles.resumeCta}>
-          <a href={resumePdfUrl} className={styles.resumeButton} download>
+          <a
+            href={resumePdfUrl}
+            className={styles.resumeButton}
+            download={RESUME_DOWNLOAD_FILENAME}
+          >
             <svg
               width="14"
               height="14"
