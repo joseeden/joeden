@@ -409,7 +409,13 @@ html[data-theme="dark"] .navbar-sidebar .badge.project {
   }
 
   .theme-doc-breadcrumbs,
-  [class*="breadcrumbsContainer_"] {
+  [class*="breadcrumbsContainer_"],
+  .theme-doc-breadcrumbs .breadcrumbs,
+  .theme-doc-breadcrumbs .breadcrumbs__item,
+  .theme-doc-breadcrumbs .breadcrumbs__link,
+  [class*="breadcrumbsContainer_"] .breadcrumbs,
+  [class*="breadcrumbsContainer_"] .breadcrumbs__item,
+  [class*="breadcrumbsContainer_"] .breadcrumbs__link {
     font-size: 12px;
   }
 }
