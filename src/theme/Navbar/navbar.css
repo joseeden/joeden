@@ -117,6 +117,13 @@
   color: var(--ifm-navbar-link-color, var(--ifm-font-color-base)) !important;
 }
 
+[data-theme="dark"] .DocSearch-Button,
+[data-theme="dark"] .DocSearch-Button-Placeholder,
+[data-theme="dark"] .DocSearch-MagnifierLabel,
+[data-theme="dark"] .DocSearch-Search-Icon {
+  color: var(--ifm-color-primary) !important;
+}
+
 .DocSearch-Search-Icon {
   stroke: currentColor !important;
 }
