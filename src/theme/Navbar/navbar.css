@@ -121,7 +121,7 @@
   stroke: currentColor !important;
 }
 
-.DocSearch-Hit[aria-selected="true"] a {
+[data-theme="dark"] .DocSearch-Hit[aria-selected="true"] a {
   background-color: #04284f !important;
 }
 
