@@ -247,6 +247,33 @@ a[href="https://www.velarae.co/"]:hover .navbar-arrow-icon {
   }
 }
 
+@media (min-width: 601px) and (max-width: 996px) {
+  .navbar .navbar__inner {
+    justify-content: space-between;
+  }
+
+  .navbar .navbar__items:not(.navbar__items--right) {
+    flex: 1 1 auto;
+    justify-content: flex-start;
+    min-width: 0;
+  }
+
+  .navbar .navbar__items--right {
+    display: flex !important;
+    flex: 0 0 auto;
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+
+  .navbar .navbar__toggle,
+  .navbar .navbar__brand,
+  .navbar .navbar__search,
+  .navbar [class*="navbarSearchContainer_"],
+  .navbar [class*="colorModeToggle_"] {
+    flex: 0 0 auto;
+  }
+}
+
 @media (min-width: 847px) and (max-width: 996px) {
   .navbar__inner {
     justify-content: space-between;
@@ -261,10 +288,6 @@ a[href="https://www.velarae.co/"]:hover .navbar-arrow-icon {
 
   .navbar__item {
     margin-right: 0;
-  }
-
-  .navbar__items--right {
-    display: none !important;
   }
 
   .navbar-sidebar__brand {

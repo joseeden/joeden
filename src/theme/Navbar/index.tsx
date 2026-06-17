@@ -77,9 +77,30 @@ export default function Navbar(props: any): JSX.Element {
       }
     };
 
+    const restoreRightNavbarItems = () => {
+      const navbarItems = document.querySelector('.navbar__items') as HTMLElement | null;
+      const navbarItemsRight = document.querySelector('.navbar__items--right') as HTMLElement | null;
+
+      if (navbarItems && navbarItemsRight) {
+        const movedRightChildren = Array.from(navbarItems.children).filter(
+          (child) => (child as HTMLElement).dataset.navbarMovedFromRight === 'true'
+        );
+
+        movedRightChildren.forEach((child) => {
+          (child as HTMLElement).removeAttribute('data-navbar-moved-from-right');
+          navbarItemsRight.appendChild(child);
+        });
+
+        navbarItemsRight.style.display = '';
+      }
+    };
+
     const reorganizeNavbarFor997px = () => {
       // Only reorganize for 997px and above
-      if (window.innerWidth < 997) return;
+      if (window.innerWidth < 997) {
+        restoreRightNavbarItems();
+        return;
+      }
 
       const navbarItems = document.querySelector('.navbar__items') as HTMLElement | null;
       const navbarItemsRight = document.querySelector('.navbar__items--right') as HTMLElement | null;
@@ -88,6 +109,7 @@ export default function Navbar(props: any): JSX.Element {
         // Move all children from navbar__items--right into navbar__items
         const rightChildren = Array.from(navbarItemsRight.children);
         rightChildren.forEach((child) => {
+          (child as HTMLElement).dataset.navbarMovedFromRight = 'true';
           navbarItems.appendChild(child);
         });
 
