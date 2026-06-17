@@ -275,7 +275,8 @@ h4 {
    DOCS - SIDEBAR BADGE STYLES
   ============================================ */
 /* Badge styles for sidebar items */
-.theme-doc-sidebar-container {
+.theme-doc-sidebar-container,
+.navbar-sidebar {
 
   .badge {
     border-radius: .25rem;
@@ -323,6 +324,16 @@ html[data-theme="dark"] .theme-doc-sidebar-container .badge.lab {
 }
 
 html[data-theme="dark"] .theme-doc-sidebar-container .badge.project {
+  background-color: #4899ce;
+  color: #05192d;
+}
+
+html[data-theme="dark"] .navbar-sidebar .badge.lab {
+  background-color: #29d4c1;
+  color: #05192d;
+}
+
+html[data-theme="dark"] .navbar-sidebar .badge.project {
   background-color: #4899ce;
   color: #05192d;
 }
