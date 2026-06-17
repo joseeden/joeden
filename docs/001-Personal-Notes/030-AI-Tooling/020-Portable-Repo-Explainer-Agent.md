@@ -1,7 +1,7 @@
 ---
-title: "Portable Explainer Agent"
+title: "Portable Repo Explainer Agent"
 sidebar_position: 20
-description: "Portable Explainer Agent"
+description: "Portable Repo Explainer Agent"
 tags: 
 - Docusaurus
 - Artificial Intelligence
@@ -13,7 +13,7 @@ tags:
 
 ## Overview
 
-This KB documents the setup for a portable `explainer` agent.
+This KB documents the setup for a portable `repo-explainer` agent.
 
 The goal is to analyze any repository from the perspective of a developer who just discovered it.
 
@@ -22,7 +22,7 @@ The agent should explain what the repository does, why it likely exists, how the
 
 ## Purpose
 
-The `explainer` agent is not tied to one repository.
+The `repo-explainer` agent is not tied to one repository.
 
 It is designed to work across different repos, laptops, Macs, and VS Code workspaces.
 
@@ -41,13 +41,13 @@ The agent should infer:
 
 Use a custom agent for the named persona and a skill for the reusable workflow.
 
-| Piece        | Purpose                                                  |
-| ------------ | -------------------------------------------------------- |
-| Custom agent | Provides the named `explainer` persona in VS Code.       |
-| Skill        | Stores the reusable repository analysis workflow.        |
-| Dotfiles     | Keeps the source copy synced across machines.            |
+| Piece        | Purpose                                                   |
+| ------------ | --------------------------------------------------------- |
+| Custom agent | Provides the named `repo-explainer` persona in VS Code.   |
+| Skill        | Stores the reusable repository analysis workflow.         |
+| Dotfiles     | Keeps the source copy synced across machines.             |
 
-This follows the same pattern as the portable `kb-joeden` agent.
+This follows the same pattern as the portable `kb-joeden-docs-writer` agent.
 
 
 ## Source Folder
@@ -59,10 +59,10 @@ On Windows, my VS Code workspace is a folder named "Git" and the source folder i
 ```text
 C:\Git\dotfiles\ai\
   agents\
-    explainer.agent.md
-    explainer.claude.md
+    repo-explainer.agent.md
+    repo-explainer.claude.md
   skills\
-    explainer\
+    repo-explainer\
       SKILL.md
 ```
 
@@ -77,24 +77,24 @@ Install copies into each assistant's user-level folder.
 
 On Windows:
 
-| Tool           | File                                                        |
-| -------------- | ----------------------------------------------------------- |
-| GitHub Copilot | `C:\Users\joseeden\.copilot\agents\explainer.agent.md`      |
-| GitHub Copilot | `C:\Users\joseeden\.copilot\skills\explainer\SKILL.md`     |
-| Claude Code    | `C:\Users\joseeden\.claude\agents\explainer.md`            |
-| Claude Code    | `C:\Users\joseeden\.claude\skills\explainer\SKILL.md`      |
-| Codex          | `C:\Users\joseeden\.codex\skills\explainer\SKILL.md`       |
+| Tool           | File                                                           |
+| -------------- | -------------------------------------------------------------- |
+| GitHub Copilot | `C:\Users\joseeden\.copilot\agents\repo-explainer.agent.md`   |
+| GitHub Copilot | `C:\Users\joseeden\.copilot\skills\repo-explainer\SKILL.md`  |
+| Claude Code    | `C:\Users\joseeden\.claude\agents\repo-explainer.md`         |
+| Claude Code    | `C:\Users\joseeden\.claude\skills\repo-explainer\SKILL.md`   |
+| Codex          | `C:\Users\joseeden\.codex\skills\repo-explainer\SKILL.md`    |
 
 On macOS or Linux, use the same structure under the home directory:
 
 ```text
-~/.copilot/agents/explainer.agent.md
-~/.copilot/skills/explainer/SKILL.md
+~/.copilot/agents/repo-explainer.agent.md
+~/.copilot/skills/repo-explainer/SKILL.md
 
-~/.claude/agents/explainer.md
-~/.claude/skills/explainer/SKILL.md
+~/.claude/agents/repo-explainer.md
+~/.claude/skills/repo-explainer/SKILL.md
 
-~/.codex/skills/explainer/SKILL.md
+~/.codex/skills/repo-explainer/SKILL.md
 ```
 
 
@@ -132,16 +132,16 @@ The full agent instructions should also tell the assistant to explain:
 Use the named agent from VS Code when it is available:
 
 ```text
-@explainer analyze this repository
+@repo-explainer analyze this repository
 ```
 
 Use the skill name directly in Codex when needed:
 
 ```text
-Use $explainer to analyze this repository.
+Use $repo-explainer to analyze this repository.
 ```
 
-**Note**: The `explainer` agent analyzes the active repository or the repository that the assistant can access in the current workspace.
+**Note**: The `repo-explainer` agent analyzes the active repository or the repository that the assistant can access in the current workspace.
 
 
 ## Maintenance
@@ -167,8 +167,8 @@ After creating or updating the portable agent, check these items:
 
 - The source files exist under `C:\Git\dotfiles\ai`.
 - The installed user-level files exist for each assistant.
-- The skill frontmatter has `name: explainer`.
-- The agent frontmatter uses the `explainer` name.
+- The skill frontmatter has `name: repo-explainer`.
+- The agent frontmatter uses the `repo-explainer` name.
 - The assistant can see the agent or skill after restarting the session if needed.
 - The target repository is open or accessible when the agent needs to analyze it.
 
@@ -177,4 +177,3 @@ After creating or updating the portable agent, check these items:
 The portable agent can follow the user across machines, but it can only inspect repositories that the active assistant can access in the current workspace or approved file system scope.
 
 :::
-

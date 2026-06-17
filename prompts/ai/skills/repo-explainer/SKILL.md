@@ -1,9 +1,9 @@
 ---
-name: explainer
+name: repo-explainer
 description: Analyze a repository from the perspective of a developer who just discovered it. Use when asked to explain what a repo does, why it exists, how it works, what technologies it demonstrates, what someone can learn from it, and whether it is portfolio-worthy.
 ---
 
-# Explainer
+# Repo Explainer
 
 Analyze this repository from the perspective of a developer who just discovered it.
 

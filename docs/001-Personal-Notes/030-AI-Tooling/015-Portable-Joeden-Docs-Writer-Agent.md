@@ -1,7 +1,7 @@
 ---
-title: "Portable Joeden KB Writer Agent"
+title: "Portable Joeden Docs Writer Agent"
 sidebar_position: 15
-description: "Portable Joeden KB Writer Agent"
+description: "Portable Joeden Docs Writer Agent"
 tags: 
 - Docusaurus
 - Artificial Intelligence
@@ -13,7 +13,7 @@ tags:
 
 ## Overview
 
-This KB documents the setup for a portable `kb-joeden` writing agent.
+This KB documents the setup for a portable `kb-joeden-docs-writer` writing agent.
 
 The goal is to invoke the same KB writing workflow from different AI assistants in VS Code, across different laptops, Macs, and repositories.
 
@@ -40,11 +40,11 @@ For a reusable VS Code-level workflow, use personal customizations instead.
 
 Use a custom agent for the named persona and a skill for the reusable workflow.
 
-| Piece        | Purpose                                                     |
-| ------------ | ----------------------------------------------------------- |
-| Custom agent | Provides the named `kb-joeden` persona in VS Code or Claude. |
-| Skill        | Stores the portable KB writing workflow and instructions.    |
-| Dotfiles     | Keeps the source copy synced across machines.                |
+| Piece        | Purpose                                                                  |
+| ------------ | ------------------------------------------------------------------------ |
+| Custom agent | Provides the named `kb-joeden-docs-writer` persona in VS Code or Claude. |
+| Skill        | Stores the portable KB writing workflow and instructions.                 |
+| Dotfiles     | Keeps the source copy synced across machines.                             |
 
 This keeps the agent easy to invoke and the workflow easy to reuse.
 
@@ -58,10 +58,10 @@ On Windows, the source folder is:
 ```text
 C:\Git\dotfiles\ai\
   agents\
-    kb-joeden.agent.md
-    kb-joeden.claude.md
+    kb-joeden-docs-writer.agent.md
+    kb-joeden-docs-writer.claude.md
   skills\
-    kb-joeden\
+    kb-joeden-docs-writer\
       SKILL.md
 ```
 
@@ -78,24 +78,24 @@ Install copies into each assistant's user-level folder.
 
 On Windows:
 
-| Tool           | File                                                              |
-| -------------- | ----------------------------------------------------------------- |
-| GitHub Copilot | `C:\Users\joseeden\.copilot\agents\kb-joeden.agent.md`            |
-| GitHub Copilot | `C:\Users\joseeden\.copilot\skills\kb-joeden\SKILL.md`           |
-| Claude Code    | `C:\Users\joseeden\.claude\agents\kb-joeden.md`                  |
-| Claude Code    | `C:\Users\joseeden\.claude\skills\kb-joeden\SKILL.md`            |
-| Codex          | `C:\Users\joseeden\.codex\skills\kb-joeden\SKILL.md`             |
+| Tool           | File                                                                       |
+| -------------- | -------------------------------------------------------------------------- |
+| GitHub Copilot | `C:\Users\joseeden\.copilot\agents\kb-joeden-docs-writer.agent.md`         |
+| GitHub Copilot | `C:\Users\joseeden\.copilot\skills\kb-joeden-docs-writer\SKILL.md`        |
+| Claude Code    | `C:\Users\joseeden\.claude\agents\kb-joeden-docs-writer.md`               |
+| Claude Code    | `C:\Users\joseeden\.claude\skills\kb-joeden-docs-writer\SKILL.md`         |
+| Codex          | `C:\Users\joseeden\.codex\skills\kb-joeden-docs-writer\SKILL.md`          |
 
 On macOS or Linux, use the same structure under the home directory:
 
 ```text
-~/.copilot/agents/kb-joeden.agent.md
-~/.copilot/skills/kb-joeden/SKILL.md
+~/.copilot/agents/kb-joeden-docs-writer.agent.md
+~/.copilot/skills/kb-joeden-docs-writer/SKILL.md
 
-~/.claude/agents/kb-joeden.md
-~/.claude/skills/kb-joeden/SKILL.md
+~/.claude/agents/kb-joeden-docs-writer.md
+~/.claude/skills/kb-joeden-docs-writer/SKILL.md
 
-~/.codex/skills/kb-joeden/SKILL.md
+~/.codex/skills/kb-joeden-docs-writer/SKILL.md
 ```
 
 
@@ -126,13 +126,13 @@ The full agent instructions should also tell the assistant to:
 Use the named agent from VS Code when it is available:
 
 ```text
-@kb-joeden write KB about this conversation
+@kb-joeden-docs-writer write KB about this conversation
 ```
 
 Use the skill name directly in Codex when needed:
 
 ```text
-Use $kb-joeden to create a KB page about debugging Python in VS Code.
+Use $kb-joeden-docs-writer to create a KB page about debugging Python in VS Code.
 ```
 
 **Note**: Invocation syntax can vary by assistant. The important part is that the personal agent and skill files are installed in the user-level folders for that tool.
@@ -159,13 +159,13 @@ The recommended practical setup is to keep a small install script in the dotfile
 On macOS or Linux, the script could be:
 
 ```bash
-./ai/install-kb-joeden.sh
+./ai/install-kb-joeden-docs-writer.sh
 ```
 
 On Windows, the script could be:
 
 ```powershell
-.\ai\install-kb-joeden.ps1
+.\ai\install-kb-joeden-docs-writer.ps1
 ```
 
 The script should create the required folders and copy the source files into the local user-level assistant folders.
@@ -179,8 +179,8 @@ After creating or updating the portable agent, check these items:
 
 - The source files exist under `C:\Git\dotfiles\ai`.
 - The installed user-level files exist for each assistant.
-- The skill frontmatter has `name: kb-joeden`.
-- The agent frontmatter uses the `kb-joeden` name.
+- The skill frontmatter has `name: kb-joeden-docs-writer`.
+- The agent frontmatter uses the `kb-joeden-docs-writer` name.
 - The assistant can see the agent or skill after restarting the session if needed.
 - The `joeden` repo is open or accessible when the agent needs to write under `joeden/docs`.
 

@@ -1,9 +1,9 @@
 ---
-name: kb-joeden
+name: kb-joeden-docs-writer
 description: Create Joeden-style KB pages from a topic and optional notes. Use when asked to create, draft, or update a KB page under a docs folder, especially Docusaurus knowledge base documentation in joeden/docs.
 ---
 
-# KB Joeden
+# Joeden Docs Writer
 
 Create a KB page about the topic provided.
 
