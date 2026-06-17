@@ -108,11 +108,17 @@
 
 [data-theme="dark"] .DocSearch-Button {
   background-color: #122538 !important;
-  color: #5dd5d0 !important;
 }
 
-.DocSearch-MagnifierLabel {
-  color: #04284f !important;
+.DocSearch-Button,
+.DocSearch-Button-Placeholder,
+.DocSearch-MagnifierLabel,
+.DocSearch-Search-Icon {
+  color: var(--ifm-navbar-link-color, var(--ifm-font-color-base)) !important;
+}
+
+.DocSearch-Search-Icon {
+  stroke: currentColor !important;
 }
 
 .DocSearch-Hit[aria-selected="true"] a {
