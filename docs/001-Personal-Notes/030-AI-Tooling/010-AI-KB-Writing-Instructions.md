@@ -1,11 +1,12 @@
 ---
 title: "KB Writing Instructions for AI Assistants"
-sidebar_position: 43
+sidebar_position: 10
 description: "KB Writing Instructions for AI Assistants"
 tags: 
 - Docusaurus
-- Documentation
 - Artificial Intelligence
+- ChatGPT
+- Claude Code
 # last_update:
 #   date: 06/17/2026
 ---
