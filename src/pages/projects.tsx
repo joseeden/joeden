@@ -133,7 +133,7 @@ const projects: ProjectData[] = [
     url: "https://github.com/joseeden/llm-engineering-sandbox/tree/master/building-ai-agents/03-multi-tool-customer-service-agent/README.md",
     image: require(`/img/docs/multi-tool-cs-agent-proj.png`),
     tags: ["Artificial Intelligence", "LLM"],
-  }  
+  },
   {
     title: "LLM Engineering Sandbox",
     description: "Collection of engineering patterns for building decoupled LLM integrations.",
