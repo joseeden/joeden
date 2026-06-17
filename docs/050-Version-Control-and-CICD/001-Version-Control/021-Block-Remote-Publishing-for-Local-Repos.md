@@ -41,7 +41,7 @@ A Git hook can block a normal `git push`, but it may not stop an editor or GitHu
 :::
 
 
-## Recommended Guard
+## Recommendation
 
 Add a deliberately invalid `origin` remote.
 
