@@ -396,6 +396,11 @@ html[data-theme="dark"] .theme-doc-sidebar-container .badge.project {
   .theme-doc-toc-mobile .table-of-contents__link {
     font-size: 12px;
   }
+
+  .theme-doc-breadcrumbs,
+  [class*="breadcrumbsContainer_"] {
+    font-size: 12px;
+  }
 }
 
 [class*="docMainContainer_"] > .container {
