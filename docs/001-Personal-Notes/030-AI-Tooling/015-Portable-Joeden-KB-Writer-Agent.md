@@ -1,7 +1,7 @@
 ---
-title: "Portable KB Joeden Agent"
+title: "Portable Joeden KB Writer Agent"
 sidebar_position: 15
-description: "Portable KB Joeden Agent"
+description: "Portable Joeden KB Writer Agent"
 tags: 
 - Docusaurus
 - Artificial Intelligence
