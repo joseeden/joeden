@@ -43,7 +43,7 @@ The portable agents use descriptive names.
 The source of truth is:
 
 ```text
-C:\Git\dotfiles\ai
+C:\Git\dotfiles
 ```
 
 When renaming an agent, update these source paths.
@@ -71,10 +71,10 @@ This part is actually optional, I only mirrored the agent and skill files to the
 The GitHub-visible mirror that is used is:
 
 ```text
-C:\Git\joeden\prompts\ai
+C:\Git\joeden\prompts
 ```
 
-This mirror should match the agent and skill files from `dotfiles/ai`, except for helper scripts.
+This mirror should match the prompt-related files from `dotfiles`, except for the `.git` folder.
 
 After renaming source files, run:
 
@@ -144,7 +144,7 @@ Use `rg` to find old names before and after the rename.
 Example:
 
 ```powershell
-rg "old-agent-name" C:\Git\dotfiles\ai C:\Git\joeden\prompts\ai C:\Git\joeden\docs\001-Personal-Notes\030-AI-Tooling
+rg "old-agent-name" C:\Git\dotfiles C:\Git\joeden\prompts C:\Git\joeden\docs\001-Personal-Notes\030-AI-Tooling
 ```
 
 Search installed folders too when checking user-level copies:
@@ -164,8 +164,8 @@ After renaming an agent, check these items:
 - Source skill folders use the new folder names.
 - `SKILL.md` frontmatter uses the new `name:`.
 - Agent frontmatter uses the new `name:`.
-- `joeden/prompts/ai` has the new mirrored files.
-- `joeden/prompts/ai` does not have stale old mirrored files.
+- `joeden/prompts` has the new mirrored files.
+- `joeden/prompts` does not have stale old mirrored files.
 - User-level Copilot files use the new names.
 - User-level Claude files use the new names.
 - User-level Codex skill folders use the new names.
@@ -178,4 +178,3 @@ After renaming an agent, check these items:
 After renaming installed agents or skills, restart the assistant session or VS Code if the old name still appears in the UI.
 
 :::
-

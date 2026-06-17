@@ -33,15 +33,46 @@ Use common sections such as:
 
 Adapt the sections to the project. Do not force every section when it does not help.
 
-For `Project Structure`, use a fenced `text` code block and represent the target folder contents with ASCII pipes and tree branches:
+For Markdown tables, always align the pipes in the raw Markdown source.
+
+Example:
+
+```md
+| Item      | Purpose                                  |
+| --------- | ---------------------------------------- |
+| `README`  | Explains how to understand the project.  |
+| `main.py` | Runs the main application workflow.      |
+```
+
+Do not create compact or visually uneven tables.
+
+For `Project Structure`, use a fenced `text` code block and represent the target folder contents with Unicode tree drawing characters:
 
 ```text
 project-folder/
 |
-├── folder/
-|   └── file.txt
+├── data/
+│   ├── customers.csv
+│   └── orders.csv
+|
+├── prompts/
+│   └── developer-prompt.txt
+|
+├── app.py
+├── tools.py
+|
+├── pyproject.toml
 └── README.md
 ```
 
-Use `|`, `├──`, and `└──` consistently in the tree.
+Use `│`, `├──`, and `└──` consistently in the tree.
 
+Group related files together by purpose when it makes the structure easier to scan.
+
+Use a standalone `|` line as a visual separator between purpose-based groups.
+
+Use `│` for nested vertical continuation lines.
+
+Do not use `|--` or `` `-- `` branch styles.
+
+Do not use plain `|` as an indentation or continuation character inside nested entries.

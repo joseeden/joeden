@@ -53,16 +53,17 @@ This keeps the agent easy to invoke and the workflow easy to reuse.
 
 Keep the source copy outside project repos.
 
-On Windows, the source folder is:
+On Windows, the source root is:
 
 ```text
-C:\Git\dotfiles\ai\
-  agents\
-    kb-joeden-docs-writer.agent.md
-    kb-joeden-docs-writer.claude.md
-  skills\
-    kb-joeden-docs-writer\
-      SKILL.md
+C:\Git\dotfiles\
+  ai\
+    agents\
+      kb-joeden-docs-writer.agent.md
+      kb-joeden-docs-writer.claude.md
+    skills\
+      kb-joeden-docs-writer\
+        SKILL.md
 ```
 
 This folder can be committed to a dotfiles repo and synced to other machines.
@@ -143,7 +144,7 @@ Use $kb-joeden-docs-writer to create a KB page about debugging Python in VS Code
 Update the source copy first:
 
 ```text
-C:\Git\dotfiles\ai\
+C:\Git\dotfiles\
 ```
 
 Then copy the updated files into the user-level folders for Copilot, Claude Code, and Codex.
@@ -177,7 +178,8 @@ The script should create the required folders and copy the source files into the
 
 After creating or updating the portable agent, check these items:
 
-- The source files exist under `C:\Git\dotfiles\ai`.
+- The source root exists at `C:\Git\dotfiles`.
+- The agent files exist under `C:\Git\dotfiles\ai`.
 - The installed user-level files exist for each assistant.
 - The skill frontmatter has `name: kb-joeden-docs-writer`.
 - The agent frontmatter uses the `kb-joeden-docs-writer` name.

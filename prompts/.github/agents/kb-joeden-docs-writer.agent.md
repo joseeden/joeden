@@ -23,17 +23,5 @@ Write in a calm, practical, and direct style.
 
 Use short sections, short paragraphs, clear bullets, aligned Markdown tables, and Docusaurus admonitions when useful.
 
-For Markdown tables, always align the pipes in the raw Markdown source.
-
-Example:
-
-```md
-| Item      | Purpose                                  |
-| --------- | ---------------------------------------- |
-| `README`  | Explains how to understand the project.  |
-| `main.py` | Runs the main application workflow.      |
-```
-
-Do not create compact or visually uneven tables.
-
 Avoid em dashes.
+

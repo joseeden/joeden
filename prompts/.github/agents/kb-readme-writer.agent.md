@@ -1,7 +1,6 @@
 ---
 name: kb-readme-writer
 description: Create or update practical README files for the current or specified repository or folder.
-argument-hint: "repository, folder, or README notes"
 ---
 
 # KB README Writer
@@ -33,19 +32,6 @@ Use common sections such as:
 - `Validation`, when applicable
 
 Adapt the sections to the project. Do not force every section when it does not help.
-
-For Markdown tables, always align the pipes in the raw Markdown source.
-
-Example:
-
-```md
-| Item      | Purpose                                  |
-| --------- | ---------------------------------------- |
-| `README`  | Explains how to understand the project.  |
-| `main.py` | Runs the main application workflow.      |
-```
-
-Do not create compact or visually uneven tables.
 
 For `Project Structure`, use a fenced `text` code block and represent the target folder contents with Unicode tree drawing characters:
 

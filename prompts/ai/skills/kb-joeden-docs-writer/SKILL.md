@@ -28,11 +28,29 @@ Use any notes the user provides.
 - Use bullets when they improve scanning.
 - Capitalize the first word of every bullet item.
 - Use tables when the content is easier to compare in rows.
+- Always align Markdown table pipes in the raw source.
 - Use short inline `**Note**:` paragraphs for brief reminders or caveats.
 - Use Docusaurus admonitions when a note, tip, warning, or risk is clearer as a callout.
 - Avoid sub-bullets unless they are needed for clarity.
 - Avoid em dashes.
 - Avoid asyndetons, and use conjunctions when listing related ideas in prose.
+
+## Markdown Tables
+
+When using Markdown tables, always align the pipes in the raw Markdown source.
+
+Good:
+
+```md
+| Item      | Purpose                                  |
+| --------- | ---------------------------------------- |
+| `README`  | Explains how to understand the project.  |
+| `main.py` | Runs the main application workflow.      |
+```
+
+Avoid compact or visually uneven tables.
+
+Do not leave table pipes jagged or unpadded when the raw Markdown is viewed in an editor.
 
 ## Default Prompt
 
@@ -45,4 +63,3 @@ Put it in the correct folder under joeden/docs.
 
 Below are added notes, if any:
 ```
-

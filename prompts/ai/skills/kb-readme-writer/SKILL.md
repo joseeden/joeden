@@ -43,6 +43,23 @@ Prefer these sections when useful:
 
 Do not force every section. Add, remove, or rename sections when the README becomes clearer.
 
+## Markdown Tables
+
+When using Markdown tables, always align the pipes in the raw Markdown source.
+
+Good:
+
+```md
+| Item      | Purpose                                  |
+| --------- | ---------------------------------------- |
+| `README`  | Explains how to understand the project.  |
+| `main.py` | Runs the main application workflow.      |
+```
+
+Avoid compact or visually uneven tables.
+
+Do not leave table pipes jagged or unpadded when the raw Markdown is viewed in an editor.
+
 ## Project Structure
 
 Include `Project Structure` for most READMEs.
@@ -51,13 +68,13 @@ Show the contents of the target folder, not the entire parent repository unless 
 
 Use a fenced `text` code block.
 
-Use ASCII pipes and tree branches.
+Use Unicode tree drawing characters, not ASCII tree fallbacks.
 
 Use these characters consistently:
 
-- `|`
-- `├──`
-- `└──`
+- `│` for vertical continuation lines
+- `├──` for entries that have siblings after them
+- `└──` for the final entry in a folder
 
 Example:
 
@@ -65,14 +82,28 @@ Example:
 project-folder/
 |
 ├── data/
-|   └── sample.csv
+│   ├── customers.csv
+│   └── orders.csv
+|
+├── prompts/
+│   └── developer-prompt.txt
 |
 ├── src/
-|   └── main.py
+│   └── main.py
 |
 ├── pyproject.toml
 └── README.md
 ```
+
+Group related files together by purpose when it makes the structure easier to scan.
+
+Use a standalone `|` line as a visual separator between purpose-based groups.
+
+Use `│` for nested vertical continuation lines.
+
+Do not use `|--` or `` `-- `` branch styles.
+
+Do not use plain `|` as an indentation or continuation character inside nested entries.
 
 Do not use vague placeholders when actual files can be inspected.
 
@@ -85,6 +116,7 @@ Omit noisy generated folders when they do not help the reader, such as `.venv`, 
 - Use numbered steps for setup and run instructions.
 - Use bullets for quick lists.
 - Capitalize the first word of every bullet item.
+- Align Markdown table pipes in the raw source whenever tables are used.
 - Use code blocks for commands, paths, configuration, and examples.
 - Use short inline `**Note**:` paragraphs for brief reminders or caveats.
 - Avoid em dashes.
@@ -101,4 +133,3 @@ Use simple, practical explanations.
 
 Include common README sections such as Overview, Workflow when useful, Project Structure, Prerequisites, and Setup.
 ```
-

@@ -54,48 +54,60 @@ This follows the same pattern as the portable `kb-joeden-docs-writer` agent.
 
 Keep the source copy in the personal dotfiles folder.
 
-On Windows, my VS Code workspace is a folder named "Git" and the source folder is:
+On Windows, my VS Code workspace is a folder named "Git" and the source root is:
 
 ```text
-C:\Git\dotfiles\ai\
+C:\Git\dotfiles\
+  ai\
+    agents\
+      repo-explainer.agent.md
+      repo-explainer.claude.md
+    skills\
+      repo-explainer\
+        SKILL.md
+```
+
+For GitHub Copilot, the repo-scoped copies are in the `.github` folder:
+
+```text
+C:\Git\dotfiles\.github\
+  copilot-instructions.md
   agents\
     repo-explainer.agent.md
-    repo-explainer.claude.md
-  skills\
-    repo-explainer\
-      SKILL.md
 ```
 
 The dotfiles folder is the source of truth.
 
-**Note**: Each laptop or Mac still needs installed copies in the user-level folders for the AI tools installed on that machine.
+**Note**: Each laptop or Mac still needs installed copies or repo-scoped copies for the AI tools used on that machine.
 
 
 ## Installed Files
 
-Install copies into each assistant's user-level folder.
+Install copies into each assistant's supported location.
 
 On Windows:
 
-| Tool           | File                                                           |
-| -------------- | -------------------------------------------------------------- |
-| GitHub Copilot | `C:\Users\joseeden\.copilot\agents\repo-explainer.agent.md`   |
-| GitHub Copilot | `C:\Users\joseeden\.copilot\skills\repo-explainer\SKILL.md`  |
-| Claude Code    | `C:\Users\joseeden\.claude\agents\repo-explainer.md`         |
-| Claude Code    | `C:\Users\joseeden\.claude\skills\repo-explainer\SKILL.md`   |
-| Codex          | `C:\Users\joseeden\.codex\skills\repo-explainer\SKILL.md`    |
+| Tool           | File                                                            |
+| -------------- | --------------------------------------------------------------- |
+| GitHub Copilot | `<repo>\.github\agents\repo-explainer.agent.md`                |
+| GitHub Copilot | `<repo>\.github\copilot-instructions.md`                       |
+| Claude Code    | `C:\Users\joseeden\.claude\agents\repo-explainer.md`          |
+| Claude Code    | `C:\Users\joseeden\.claude\skills\repo-explainer\SKILL.md`    |
+| Codex          | `C:\Users\joseeden\.codex\skills\repo-explainer\SKILL.md`     |
 
-On macOS or Linux, use the same structure under the home directory:
+On macOS or Linux, use the same repo-scoped Copilot paths and the same user-level structure under the home directory for Claude Code and Codex:
 
 ```text
-~/.copilot/agents/repo-explainer.agent.md
-~/.copilot/skills/repo-explainer/SKILL.md
+<repo>/.github/agents/repo-explainer.agent.md
+<repo>/.github/copilot-instructions.md
 
 ~/.claude/agents/repo-explainer.md
 ~/.claude/skills/repo-explainer/SKILL.md
 
 ~/.codex/skills/repo-explainer/SKILL.md
 ```
+
+**Note**: Copilot does not normally read Codex skill files from `~/.codex`. It uses repository instructions such as `.github/copilot-instructions.md` and custom agents such as `.github/agents/*.agent.md`.
 
 
 ## Agent Prompt
@@ -135,6 +147,12 @@ Use the named agent from VS Code when it is available:
 @repo-explainer analyze this repository
 ```
 
+For GitHub Copilot, select or invoke the `repo-explainer` custom agent when the target repository contains:
+
+```text
+.github/agents/repo-explainer.agent.md
+```
+
 Use the skill name directly in Codex when needed:
 
 ```text
@@ -149,14 +167,14 @@ Use $repo-explainer to analyze this repository.
 Update the source copy first:
 
 ```text
-C:\Git\dotfiles\ai\
+C:\Git\dotfiles\
 ```
 
-Then copy the updated files into the user-level folders for Copilot, Claude Code, and Codex.
+Then copy the updated files into the supported locations for Copilot, Claude Code, and Codex.
 
 For a new machine, clone or sync the dotfiles repo first.
 
-Then install the files into that machine's local AI assistant folders.
+Then install the files into that machine's local AI assistant folders, and copy the Copilot files into the repository where Copilot should use them.
 
 Copying is the simplest approach across Windows, macOS, synced folders, and different assistant tools.
 
@@ -165,8 +183,10 @@ Copying is the simplest approach across Windows, macOS, synced folders, and diff
 
 After creating or updating the portable agent, check these items:
 
-- The source files exist under `C:\Git\dotfiles\ai`.
-- The installed user-level files exist for each assistant.
+- The source root exists at `C:\Git\dotfiles`.
+- The agent files exist under `C:\Git\dotfiles\ai`.
+- The Copilot files exist under the target repo's `.github` folder.
+- The installed user-level files exist for Claude Code and Codex.
 - The skill frontmatter has `name: repo-explainer`.
 - The agent frontmatter uses the `repo-explainer` name.
 - The assistant can see the agent or skill after restarting the session if needed.
