@@ -31,11 +31,11 @@ Chat completions can work in two main ways:
 
 This page focuses on multi-turn conversations and the different roles that can be used in messages to control the behavior of the assistant.
 
-For single-turn tasks, please see [Roles in Single-Turn Tasks.](/docs/075-Artificial-Intelligence/060-OpenAI/010-Starter-Notes.md#roles-in-single-turn-tasks) 
+For single-turn tasks, please see [Roles in Single-Turn Tasks.](/docs/075-Artificial-Intelligence/045-OpenAI/010-Starter-Notes.md#roles-in-single-turn-tasks) 
 
 :::info
 
-To run the code examples in this page, make sure to [set up your environment](/docs/075-Artificial-Intelligence/060-OpenAI/005-Setting-up-OpenAI.md) before running the code. 
+To run the code examples in this page, make sure to [set up your environment](/docs/075-Artificial-Intelligence/045-OpenAI/005-Setting-up-OpenAI.md) before running the code. 
 
 See code files here: [Github](https://github.com/joseeden/llm-engineering-sandbox/tree/master/basics)
 
