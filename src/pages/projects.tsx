@@ -135,6 +135,13 @@ const projects: ProjectData[] = [
     tags: ["Artificial Intelligence", "LLM"],
   },
   {
+    title: "Multi-Agent Research Workflow",
+    description: "AI research assistant using planner, web search, and report-generation agents.",
+    url: "https://github.com/joseeden/llm-engineering-sandbox/tree/master/building-ai-agents/05-multi-agent-research-workflow",
+    image: require(`/img/docs/multi-agent-workflow-thumbnail.png`),
+    tags: ["Artificial Intelligence", "LLM"],
+  },  
+    {
     title: "LLM Engineering Sandbox",
     description: "Collection of engineering patterns for building decoupled LLM integrations.",
     url: "https://github.com/joseeden/llm-engineering-sandbox", 
