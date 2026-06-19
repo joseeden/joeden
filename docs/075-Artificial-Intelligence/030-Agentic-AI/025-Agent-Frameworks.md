@@ -32,6 +32,14 @@ These frameworks provide common building blocks that make it easier to create an
 - Pass results between tasks
 
 
+<div class='img-center'>
+
+![](/img/docs/agentoc-framework-sample-diagram.png)
+
+</div>
+
+
+
 ## Build vs Framework
 
 There is always a tradeoff between building from scratch and using a framework.
