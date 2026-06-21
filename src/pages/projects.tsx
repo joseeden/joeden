@@ -142,7 +142,7 @@ const projects: ProjectData[] = [
     tags: ["Artificial Intelligence", "LLM"],
   },  
   {
-    title: "CrewAI Research Agent with SearXNG",
+    title: "CrewAI Research Report Agent",
     description: "Multi-agent research workflow built with CrewAI and SearXNG tooling.",
     url: "https://github.com/joseeden/llm-engineering-sandbox/tree/master/crewai-projects/01-crewai-research-report-agent",
     image: require(`/img/docs/crewai-research-report-agent-thumbnail.png`),
