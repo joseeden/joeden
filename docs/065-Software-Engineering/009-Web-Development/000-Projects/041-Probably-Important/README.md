@@ -132,13 +132,13 @@ bun run dev
 Output:
 
 ```text
-Local: http://localhost:3000
+Local: http://localhost:3030
 ```
 
 Open the application in a browser:
 
 ```text
-http://localhost:3000
+http://localhost:3030
 ```
 
 <div class='img-center'>
@@ -542,7 +542,7 @@ Create a `.env.local` file in the project root and add the following environment
 ```bash
 DATABASE_URL="postgresql://...?...sslmode=require..."
 BETTER_AUTH_SECRET="generate-a-long-random-secret"
-BETTER_AUTH_URL="http://localhost:3000"
+BETTER_AUTH_URL="http://localhost:3030"
 ```
 
 For the `BETTER_AUTH_SECRET`, you can generate a long random string using a password generator or a command like `openssl rand -hex 32`.
@@ -550,6 +550,8 @@ For the `BETTER_AUTH_SECRET`, you can generate a long random string using a pass
 ```bash
 openssl rand -base64 32 
 ```
+
+**NOTE:** The `BETTER_AUTH_URL` value should match the exact origin used by the development server. Since thee app will be run on port `3030`, the value is `http://localhost:3030`. If you use a different port later, update `BETTER_AUTH_URL` to match it before testing signup or login.
 
 
 ### Initial App Structure
@@ -650,11 +652,13 @@ If you want Claude to generate the code without asking for approval, you can cho
 
 Once the code snippets are generated, you can review them and make any necessary adjustments before proceeding with the implementation of the app.
 
-But first, test the app by running the development server (you can change the port as needed):
+But first, test the app by running the development server:
 
 ```bash
 PORT=3030 bun run dev   
 ```
+
+**Note:** You can change the port as needed, but make sure to update `BETTER_AUTH_URL` in `.env.local` accordingly
 
 Access the app in your browser at:
 
@@ -739,7 +743,38 @@ bun run db:generate
 bun run db:migrate
 ```
 
-Then start the development server again:
+**EDIT:** If you get this error:
+
+```bash
+error: script "db:migrate" exited with code 130 
+```
+
+This might mean that Prisma sees the database and migration history are disagreeing. Since this is a development database, the clean fix is usually:
+
+1. Reset the database to clear all data and migration history.
+
+    This will drop and recreate the database schema from the current migration files.
+
+    ```bash
+    bunx prisma migrate reset 
+    ```
+
+2. Generate a new migration from the current Prisma schema, which should now be in sync with the empty database.
+
+    ```bash
+    bun run db:generate
+    bun run db:migrate
+    ```
+
+Once the migration is applied successfully, you should see the new tables in the database (in your Neon dashboard), including the `User` table for better-auth and the `Note` table for the app.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-06-22041409.png)
+
+</div>
+
+If the development server is not already running, start it again:
 
 ```bash
 PORT=3030 bun run dev
@@ -753,13 +788,34 @@ http://localhost:3030/auth
 
 Create a test account from the auth page, then sign out or open a private browser window and try signing in with the same email and password. If signup and login both work without a `500` error, the auth route is talking to better-auth correctly.
 
+<div class='img-center'>
+
+![](/gif/docs/21062026-probab-impt-2.gif)
+
+</div>
+
 To confirm that the database is also being written to, open Prisma Studio:
 
 ```bash
 bun run db:studio
 ```
 
-Check that the new user appears in the `User` table, and that better-auth has also created the related auth records such as sessions or accounts. At this stage, that is enough. We are only verifying that the authentication and database foundation works before adding the actual note features.
+Output:
+
+```bash
+Prisma Studio is running at: http://localhost:51212
+```
+
+Open the provided URL in the browser to access Prisma Studio, which is a visual interface for interacting with your database.
+
+Check that the new user appears in the `User` table, and that better-auth has also created the related auth records such as sessions or accounts. 
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-06-22044247.png)
+
+</div>
+
 
 ### Note CRUD API
 
