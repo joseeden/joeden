@@ -346,4 +346,163 @@ Review the `CLAUDE.md` file and make any necessary adjustments to ensure that it
 Keep the replies extremely concise and focused on the code. Avoid unnecessary explanations or commentary. Only provide information that is directly relevant to the code. Avoid long explanations, background information, or unrelated details. Focus on the code itself and its functionality.  
 ```
 
-##
+## Implementation 
+
+### Database Setup 
+
+The application uses a serverless Postgres database hosted on Neon, which is a cloud-based Postgres service that provides a free tier for small projects.
+
+Go to the Neon website to sign up for a free account: https://neon.com/
+
+After signing up, click Create database and choose region closest to you:
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-06-21203200.png)
+
+</div>
+
+This provides an NPX command for connecting to your database using the Neon CLI, along with a connection string that can be used with any Postgres client. 
+
+```bash
+postgresql://******************************************************?sslmode=require...
+```
+
+Create a `.env.local` file in the project root and add the following environment variables:
+
+```bash
+DATABASE_URL="postgresql://...?...sslmode=require..."
+BETTER_AUTH_SECRET="generate-a-long-random-secret"
+BETTER_AUTH_URL="http://localhost:3000"
+```
+
+For the `BETTER_AUTH_SECRET`, you can generate a long random string using a password generator or a command like `openssl rand -hex 32`.
+
+```bash
+openssl rand -base64 32 
+```
+
+
+### Initial App Structure
+
+To start the implementation of the app, we can use instruct Claude Code to generate code snippets based on the approved `SPEC.md` file.
+
+Using the Claude CLI, use `/plan` to create a plan first without generating any code yet.
+
+Prompt:
+
+```bash
+/plan Build the "Probably Important" app based on the approved `SPEC.md` file.
+
+Start with setting up the core route structure and the main pages for the app. 
+Use dummy message content in the page.tsx files for now, and focus on creating the basic layout and navigation. 
+
+Implement a single /auth route for email and password authentication using better-auth.
+```
+
+**EDIT:** Claude may decide to use separate routes for login and signup, which is fine. In my case, I want a single /auth route. 
+
+It will list the steps to implement the app, and it will ask you some questions about the project. Review the plan and answer the questions. Once you are satisfied with the plan, you can approve it and Claude will start generating code snippets based on the plan.
+
+Since better-auth is used here, it will ask you to select the database type. Choose PostgreSQL:
+
+```bash
+  1. Local SQLite now
+     Set up Prisma with a local SQLite dev DB...
+❯ 2. Neon Postgres now
+     Full SPEC stack now. Requires you to provide a Neon DATABASE_URL in .env....
+  3. Config only, no live DB
+     Wire up the better-auth instance, /api/auth route....
+  4. Type something.
+```
+
+When prompted for the page routes to implement, choose the full spec tree (if its an available option):
+
+```bash
+Which page routes should I scaffold as dummy pages now (alongside the working /auth route)?
+
+❯ 1. Full SPEC tree
+     Scaffold /, /auth, /notes/new, /notes/[id...
+  2. Core only
+     Scaffold just / (dashboard), /auth, and /notes/[id]...
+  3. Type something.
+```
+
+For `/auth` route, choose the option that recommendes a single `/auth` route for both login and signup (this is aligned with the approved `SPEC.md` file):
+
+```bash
+How should the /auth page work?
+
+❯ 1. Combined toggle
+     One /auth page with a toggle/tab switching between Sign in and Sign up...
+  2. Sign-in only + link
+     /auth is sign-in; sign-up is a secondary mode....
+  3. Type something.
+```
+
+It will return all your answers and ask you to confirm. 
+
+Once you confirm, it will generate the code snippets for the app based on the approved `SPEC.md` file.
+
+```bash
+Review your answers
+
+ ● better-auth needs a database to store users/sessions. How should I handle the DB for this step so auth actually works?
+   → Neon Postgres now
+ ● Which page routes should I scaffold as dummy pages now (alongside the working /auth route)?
+   → Full SPEC tree
+ ● How should the /auth page work?
+   → Combined toggle
+
+Ready to submit your answers?
+
+❯ 1. Submit answers
+  2. Cancel 
+```
+
+When prompted to execute, you can choose from the following options:
+
+```bash
+Claude has written up a plan and is ready to execute. Would you like to proceed?
+
+  1. Yes, and use auto mode
+❯ 2. Yes, manually approve edits
+  3. Tell Claude what to change        shift+tab to approve with this feedback
+```
+
+**EDIT:** The options may differ depending on the version of Claude you are using. In my case, I chose option 2 to manually approve edits. Note that there maybe a couple of steps where Claude will ask you to confirm before proceeding. This is to ensure that the generated code aligns with your expectations and the approved `SPEC.md` file.
+
+If you want Claude to generate the code without asking for approval, you can choose option 1 to use auto mode. However, this may result in code that does not align with your expectations or the approved `SPEC.md` file.
+
+### Auth and Database Access
+
+After the initial route structure is in place, the next step is to connect the application to the real authentication and database layer.
+
+This step focuses only on the foundation: 
+
+1. Prisma should connect to the Neon PostgreSQL database
+2. better-auth should use Prisma for users and sessions
+3. The shared database/auth helpers should live in the root-level `lib` folder.
+
+At this stage, we'll avoid building the note CRUD features, editor, search, or public sharing flow. Those features will depend on the auth and database setup, so it is better to get this layer working first.
+
+We'll use Claude to generate the code snippets for the auth and database access.
+ 
+> Implement authentication and database access based on the approved `SPEC.md` file.
+> 
+> Use Prisma with Neon PostgreSQL. Do not use SQLite, Drizzle, or raw SQL.
+> 
+> Add a `lib` folder in the project root for shared authentication and database utilities.
+> 
+> Create:
+> 
+> - `lib/db.ts`
+> - `lib/auth.ts`
+> 
+> In `lib/db.ts`, export a Prisma Client singleton named `db`. It should use the `DATABASE_URL` environment variable through Prisma’s normal datasource configuration in `prisma/schema.prisma`.
+> 
+> In `lib/auth.ts`, configure better-auth using the Prisma adapter and the `db` client from `lib/db.ts`.
+> 
+> Also create or update `prisma/schema.prisma` with the required better-auth models and the app-owned `Note` model from `SPEC.md`.
+> 
+> Focus only on authentication setup, database access, and the Prisma schema. Do not implement any API routes, frontend pages, or other features at this time.
