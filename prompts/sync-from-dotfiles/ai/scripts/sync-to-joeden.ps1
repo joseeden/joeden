@@ -1,6 +1,6 @@
 param(
     [string]$Source = "C:\Git\dotfiles",
-    [string]$Destination = "C:\Git\joeden\prompts"
+    [string]$Destination = "C:\Git\joeden\prompts\sync-from-dotfiles"
 )
 
 $ErrorActionPreference = "Stop"
