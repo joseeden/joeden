@@ -491,9 +491,29 @@ Alternatively, it can be created at the project level to be used only for this p
 
 To ensure that Claude always use the subagent for documentation lookups, we can add a note in the `CLAUDE.md` file:
 
+> When checking documentation, ALWAYS use the `docs-researcher` agent to perform the lookup. Return only the relevant summary and implementation guidance. Avoid pasting large documentation pages into the main conversation.
+
+
+### Using Skills 
+
+Skills are reusable instructions that help Claude handle specific types of tasks consistently. They can be used to guide common workflows such as documentation lookup, code review, or framework-specific implementation steps.
+
+Like subagents, skills can be created at the global level to be used across projects, or at the project level to be used only for this project.
+
+```bash
+/home/joseeden/.claude
+|
+├── agents
+|   └── skills
+|       └── modern-best-practice-react-components
+|           └── SKILL.md
 ```
-When checking documentation, ALWAYS use the `docs-researcher` agent to perform the lookup. Return only the relevant summary and implementation guidance. Avoid pasting large documentation pages into the main conversation.
-```
+
+For this project, we'll create a skill that guides Claude to build React components using modern best practices.
+
+> See [Probably Important - Skills](https://github.com/joseeden/joeden/tree/master/prompts/skills)
+
+
 
 ## Implementation 
 
@@ -540,14 +560,13 @@ Using the Claude CLI, use `/plan` to create a plan first without generating any 
 
 Prompt:
 
-```bash
-/plan Build the "Probably Important" app based on the approved `SPEC.md` file.
-
-Start with setting up the core route structure and the main pages for the app. 
-Use dummy message content in the page.tsx files for now, and focus on creating the basic layout and navigation. 
-
-Implement a single /auth route for email and password authentication using better-auth.
-```
+> /plan Build the "Probably Important" app based on the approved `SPEC.md` file.
+> 
+> Start with setting up the core route structure and the main pages for the app. 
+> 
+> Use dummy message content in the page.tsx files for now, and focus on creating the basic layout and navigation. 
+> 
+> Implement a single /auth route for email and password authentication using better-auth.
 
 **EDIT:** Claude may decide to use separate routes for login and signup, which is fine. In my case, I want a single /auth route. 
 
@@ -652,7 +671,7 @@ http://localhost:3030
 
 After the initial route structure is in place, the next step is to connect the application to the real authentication and database layer.
 
-### Auth and Database Access
+### Authentication and Database Access
 
 After the initial route structure is in place, the next step is to connect the application to the real authentication and database layer.
 
@@ -666,6 +685,8 @@ At this stage, we'll avoid building the note CRUD features, editor, search, or p
 
 We'll use Claude to generate the code snippets for the auth and database access.
  
+Prompt: 
+
 > Implement authentication and database access based on the approved `SPEC.md` file.
 > 
 > Use Prisma with Neon PostgreSQL. Do not use SQLite, Drizzle, or raw SQL.
@@ -684,6 +705,74 @@ We'll use Claude to generate the code snippets for the auth and database access.
 > Also create or update `prisma/schema.prisma` with the required better-auth models and the app-owned `Note` model from `SPEC.md`.
 > 
 > Focus only on authentication setup, database access, and the Prisma schema. Do not implement any API routes, frontend pages, or other features at this time.
+
+
+<!-- BELOW ARE ALREADY IMPLEMENTED. THIS IS ONLY ADDED IF /auth ROUTE IS NOT IMPLEMENTED IN THE PREVIOUS STEP. 
+KEEPING BELOW PROMPT HERE FOR CONTEXT, BUT COMMENTING OUT.
+
+Once the authentication and database foundation is in place, we can add the user-facing authentication page. This keeps the scope focused on the shared `/auth` route for login and signup before moving on to the note features.
+
+Prompt: 
+
+> Add a proper authentication route `/` pages that uses better-auth for email and password authentication. Use the combined toggle approach for login and signup, as specified in the approved `SPEC.md` file.
+> 
+> Users can switch between login and signup modes on the same page. This should be implemented using params or query strings to determine the current mode. For example, `/auth?mode=login` for login and `/auth?mode=signup` for signup.
+> 
+> The form should include fields for email and password, and a submit button that triggers the appropriate better-auth action based on the current mode.
+> 
+> Password reset and email verification flows are not required at this stage, but the form should handle basic validation for email format and password length.
+> 
+> Lastly, do not collect the user's names. If we need it, use the part of the email before the `@` symbol as a default name for the user. -->
+
+
+After Claude generates the code, review the changed files before testing. For this step, the important files are:
+
+- `lib/db.ts`
+- `lib/auth.ts`
+- `prisma/schema.prisma`
+- `app/api/auth/[...all]/route.ts`
+
+If the files look aligned with the prompt, generate the Prisma client and apply the database migration:
+
+```bash
+bun run db:generate
+bun run db:migrate
+```
+
+Then start the development server again:
+
+```bash
+PORT=3030 bun run dev
+```
+
+Open the app in the browser:
+
+```text
+http://localhost:3030/auth
+```
+
+Create a test account from the auth page, then sign out or open a private browser window and try signing in with the same email and password. If signup and login both work without a `500` error, the auth route is talking to better-auth correctly.
+
+To confirm that the database is also being written to, open Prisma Studio:
+
+```bash
+bun run db:studio
+```
+
+Check that the new user appears in the `User` table, and that better-auth has also created the related auth records such as sessions or accounts. At this stage, that is enough. We are only verifying that the authentication and database foundation works before adding the actual note features.
+
+### Note CRUD API
+
+### Notes Dashboard
+
+### Rich Text Editor
+
+### Search
+
+### Public Sharing
+
+### Final Polish
+
 
 ## Resources 
 
