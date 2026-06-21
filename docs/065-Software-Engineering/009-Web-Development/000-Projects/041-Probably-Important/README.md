@@ -794,6 +794,19 @@ Create a test account from the auth page, then sign out or open a private browse
 
 </div>
 
+
+**UPDATE:** You may notice there are already three notes in the dashboard. This is because better-auth creates a default welcome note for new users. This is a good sign that better-auth is working correctly, and it also shows that the `Note` model is properly connected to the `User` model in the database.
+
+For reference, these hardcoded welcome notes are configured in the `page.tsx` file of the `/auth` route, which is where better-auth creates the user and the welcome note during signup.
+
+```tsx
+const dummyNotes = [
+  { id: "1", title: "Welcome to Probably Important", updatedAt: "Just now" },
+  { id: "2", title: "Ideas worth keeping", updatedAt: "Yesterday" },
+  { id: "3", title: "Grocery list", updatedAt: "2 days ago" },
+]; 
+```
+
 To confirm that the database is also being written to, open Prisma Studio:
 
 ```bash
