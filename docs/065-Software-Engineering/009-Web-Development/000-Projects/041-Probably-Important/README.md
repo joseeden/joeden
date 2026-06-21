@@ -1,12 +1,12 @@
 ---
 title: "Probably Important"
-description: "Note-taking application with bun run --bun Next.js, Bun, and Claude-assisted development"
+description: "Note-taking application with Next.js, Bun, and Claude-assisted development"
 tags: 
 - Web Development
 - HTML
 - CSS
 - JavaScript
-- bun run --bun NextJS
+- Next.js
 - TypeScript
 - Claude
 sidebar_position: 41
@@ -16,7 +16,7 @@ sidebar_position: 41
 
 import React from "react";
 
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000)](#) [![bun run --bun NextJS](https://img.shields.io/badge/bun run --bun Next.js-323330?style=for-the-badge&logo=bun run --bun next.js&logoColor=white)](#) [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)](#) [![Typescript](https://img.shields.io/badge/Typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](#) [![Neon PostgreSQL](https://img.shields.io/badge/Neon%20PostgreSQL-1E1E1E?style=for-the-badge&logo=postgresql&logoColor=white)](#) [![TipTap](https://img.shields.io/badge/TipTap-111827?style=for-the-badge&logoColor=white)](#) [![Claude](https://img.shields.io/badge/Claude-D97757?style=for-the-badge&logo=claude&logoColor=fff)](#)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000)](#) [![Next.js](https://img.shields.io/badge/Next.js-323330?style=for-the-badge&logo=next.js&logoColor=white)](#) [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)](#) [![Typescript](https://img.shields.io/badge/Typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](#) [![Neon PostgreSQL](https://img.shields.io/badge/Neon%20PostgreSQL-1E1E1E?style=for-the-badge&logo=postgresql&logoColor=white)](#) [![TipTap](https://img.shields.io/badge/TipTap-111827?style=for-the-badge&logoColor=white)](#) [![Claude](https://img.shields.io/badge/Claude-D97757?style=for-the-badge&logo=claude&logoColor=fff)](#)
 
 ## Overview
 
@@ -28,7 +28,7 @@ The planned stack includes:
 
 | Tool             | Used For           |
 | ---------------- | ------------------ |
-| bun run --bun Next.js          | App framework      |
+| Next.js          | App framework      |
 | Bun              | Runtime            |
 | TypeScript       | Type safety        |
 | Tailwind CSS     | Styling            |
@@ -74,12 +74,12 @@ Create the project directory that will contain the note-taking application.
 mkdir project-probably-important 
 ```
 
-Create the application using the bun run --bun Next.js generator. 
+Create the application using the Next.js generator. 
 
 Make sure to specify the new project directory you just created.
 
 ```bash
-bun create bun run --bun next-app project-probably-important
+bun create next-app project-probably-important
 ```
 
 You can choose the default settings for now, if prompted. 
@@ -95,7 +95,7 @@ App Router: Yes
 Import alias: Yes
 ``` -->
 
-The bun run --bun Next.js generator automatically creates the initial project structure and installs the required dependencies.
+The Next.js generator automatically creates the initial project structure and installs the required dependencies.
 
 **Note:** These files are generated and do not need to be created manually.
 
@@ -106,7 +106,7 @@ project-probably-important/
 ├── package.json
 ├── bun.lock
 ├── tsconfig.json
-├── bun run --bun next.config.ts
+├── next.config.js
 ├── eslint.config.mjs
 ├── postcss.config.mjs
 └── README.md
@@ -153,7 +153,7 @@ To assist with building the app, we can use Claude as a coding assistant.
 
 When asking Claude for help, we can use the following prompt:
 
-> I want to build a note-taking app called "Probably Important" using bun run --bun Next.js.
+> I want to build a note-taking app called "Probably Important" using Next.js.
 > 
 > The app should allow users to create, edit, and delete notes.
 > 
@@ -173,11 +173,11 @@ When asking Claude for help, we can use the following prompt:
 > - Search through their notes
 > - Share notes publicly with a unique URL
 > 
-> The app should be built using bun run --bun Next.js with Bun as the runtime.
+> The app should be built using Next.js with Bun as the runtime.
 > 
 > Typescript should be used for type safety, and Tailwind CSS should be used for styling.
 > 
-> The backend should be implemented using bun run --bun Next.js API routes, and the frontend should be built with React components.
+> The backend should be implemented using Next.js API routes, and the frontend should be built with React components.
 > 
 > Authentication should be implemented using better-auth, and the database should be managed with Prisma and Neon PostgreSQL.
 > 
@@ -238,9 +238,9 @@ After generating the `SPEC.md` file, you can review it and make any necessary ad
 
 ## Install Project Dependencies
 
-The generated bun run --bun Next.js project already includes the basic framework packages:
+The generated Next.js project already includes the basic framework packages:
 
-- `bun run --bun next`
+- `next`
 - `react`
 - `react-dom`
 - `typescript`
@@ -324,7 +324,22 @@ You do not need to manually run every `bun add` command again unless you are add
 },
 ```
 
-## Initialize Claude Project 
+**EDIT:** Since this project uses Prisma, we should avoid running Next.js with the Bun runtime. In testing, Bun and Turbopack caused issues resolving Prisma's externalized client, which can lead to `500` errors during database operations.
+
+Keep using Bun as the package manager, but run Next with the normal Node runtime instead:
+
+```json
+"scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "lint": "eslint"
+},
+```
+
+## Setting up the Claude Project 
+
+### Initialize
 
 To initialize the Claude project, run the following command in the project directory:
 
@@ -344,6 +359,140 @@ Review the `CLAUDE.md` file and make any necessary adjustments to ensure that it
 
 ```
 Keep the replies extremely concise and focused on the code. Avoid unnecessary explanations or commentary. Only provide information that is directly relevant to the code. Avoid long explanations, background information, or unrelated details. Focus on the code itself and its functionality.  
+```
+
+### Using MCP 
+
+When Claude needs to check current documentation, it will often search the web directly from the main conversation. While this works, documentation pages can be very large and may contain extensive examples, migration guides, API references, and unrelated details. This can quickly consume context that would be better spent on the project itself.
+
+This is especially common when working with fast-moving tools such as Next.js, better-auth, Prisma, Neon, Bun, and TipTap.
+
+As an alternative, we can use an MCP server that is designed for documentation lookup. This allows Claude to search external documentation only when needed, and retrieve only the specific information needed for the current task.
+
+Use MCP for:
+
+- Checking the latest API syntax
+- Verifying setup instructions
+- Confirming framework-specific behavior
+- Reviewing version-specific changes
+- Avoiding outdated examples from model memory
+
+The goal is not to copy documentation into the conversation, but to retrieve only the information required for the next implementation step. This keeps the main Claude context focused on the project files, `SPEC.md`, and the implementation plan.
+
+For this project, I used **Context7** as the MCP server because it is focused on current library documentation. It also has a Claude Code plugin that can add documentation lookup tools, skills, commands, and a documentation research subagent.
+
+There are a few possible ways to use it:
+
+| Option                      | When to Use                                                                                           |
+| --------------------------- | ----------------------------------------------------------------------------------------------------- |
+| Context7 Claude Code Plugin | Recommended. Adds MCP tools, automatic docs lookup behavior, commands, and a `docs-researcher` agent. |
+| Context7 MCP Only           | Good if you only need documentation lookup through MCP without the additional plugin features.        |
+| Manual Web Search           | Works, but can fill the main context window with large documentation pages and unrelated details.     |
+
+
+Inside Claude Code, install the Context7 plugin:
+
+```bash
+/plugin marketplace add upstash/context7
+/plugin install context7@context7-marketplace
+```
+
+You can choose to install the plugin for the current project only, or for all projects.
+
+```bash
+  Install for you (user scope)
+  Install for all collaborators on this repository (project scope)
+> Install for you, in this repo only (local scope)     Back to plugin list 
+```
+
+If needed, reload plugins:
+
+```bash
+/reload-plugins
+```
+
+You can also use the Context7 setup command from the terminal:
+
+```bash
+npx ctx7 setup --claude
+```
+
+:::info 
+
+Context7 can work without an API key, but the anonymous tier has lower rate limits. 
+
+For a better experience, create a free Context7 API key from the Context7 dashboard, then add it to your shell profile:
+
+```bash
+export CONTEXT7_API_KEY="your-context7-api-key"
+```
+
+Note that this is optional for this project.
+
+:::
+
+Restart Claude Code after adding the environment variable.
+
+To confirm the MCP server is available in Claude Code, run:
+
+```bash
+/mcp
+```
+
+You can also list configured MCP servers from the terminal:
+
+```bash
+claude mcp list
+```
+
+Output:
+
+```bash
+plugin:context7:context7: https://mcp.context7.com/mcp (HTTP) - ✔ Connected 
+```
+
+After setup, we can now ask Claude to use Context7 for documentation lookups instead of pasting docs into the main conversation.
+
+> Use the documentation MCP server to check the current better-auth Prisma adapter setup. Return only the required imports, configuration shape, and any version-specific warnings. Do not paste the full documentation page.
+
+
+While this works, it would mean adding this reminder every time you want to check documentation. A better approach is to create a subagent that can handle documentation lookup separately from the main conversation.
+
+### Using Subagents 
+
+For documentation-heavy tasks, we can use subagents so the main Claude conversation does not get polluted with long research notes. A subagent can inspect external documentation, compare options, and return a short summary to the main agent. This keeps the main thread focused on decisions and code changes instead of raw documentation.
+
+This is useful when a task requires checking several sources before implementation. For example, better-auth, Prisma 7, Next.js 16, and TipTap may each have version-specific setup details.
+
+If the Context7 plugin is installed, use its `docs-researcher` agent for this. The agent can research documentation in a separate context and return only the useful summary.
+
+The subagent can be created at the global level to be used across projects, like this:
+
+```bash
+/home/joseeden/.claude
+|
+├── agents
+|   └── docs-researcher
+|       └── README.md
+```
+
+Alternatively, it can be created at the project level to be used only for this project:
+
+```bash
+/project-probably-important
+|
+├── .claude
+|   └── agents
+|       └── docs-researcher
+|           └── README.md
+```
+
+> See [Probably Important - Subagent](https://github.com/joseeden/joeden/tree/master/prompts/general)
+
+To ensure that Claude always use the subagent for documentation lookups, we can add a note in the `CLAUDE.md` file:
+
+```
+When checking documentation, ALWAYS use the `docs-researcher` agent to perform the lookup. Return only the relevant summary and implementation guidance. Avoid pasting large documentation pages into the main conversation.
 ```
 
 ## Implementation 
@@ -470,9 +619,38 @@ Claude has written up a plan and is ready to execute. Would you like to proceed?
   3. Tell Claude what to change        shift+tab to approve with this feedback
 ```
 
-**EDIT:** The options may differ depending on the version of Claude you are using. In my case, I chose option 2 to manually approve edits. Note that there maybe a couple of steps where Claude will ask you to confirm before proceeding. This is to ensure that the generated code aligns with your expectations and the approved `SPEC.md` file.
+The options may differ depending on the version of Claude you are using. In my case, I chose option 2 to manually approve edits. 
+
+:::info 
+
+There maybe a couple of steps where Claude will ask you to confirm before proceeding. This is to ensure that the generated code aligns with your expectations and the approved `SPEC.md` file.
 
 If you want Claude to generate the code without asking for approval, you can choose option 1 to use auto mode. However, this may result in code that does not align with your expectations or the approved `SPEC.md` file.
+
+:::
+
+Once the code snippets are generated, you can review them and make any necessary adjustments before proceeding with the implementation of the app.
+
+But first, test the app by running the development server (you can change the port as needed):
+
+```bash
+PORT=3030 bun run dev   
+```
+
+Access the app in your browser at:
+
+```text
+http://localhost:3030
+```
+
+<div class='img-center'>
+
+![](/gif/docs/21062026-probab-impt-1.gif)
+
+</div>
+
+
+After the initial route structure is in place, the next step is to connect the application to the real authentication and database layer.
 
 ### Auth and Database Access
 
@@ -482,7 +660,7 @@ This step focuses only on the foundation:
 
 1. Prisma should connect to the Neon PostgreSQL database
 2. better-auth should use Prisma for users and sessions
-3. The shared database/auth helpers should live in the root-level `lib` folder.
+3. Shared database/auth helpers should live in the root-level `lib` folder.
 
 At this stage, we'll avoid building the note CRUD features, editor, search, or public sharing flow. Those features will depend on the auth and database setup, so it is better to get this layer working first.
 
@@ -506,3 +684,8 @@ We'll use Claude to generate the code snippets for the auth and database access.
 > Also create or update `prisma/schema.prisma` with the required better-auth models and the app-owned `Note` model from `SPEC.md`.
 > 
 > Focus only on authentication setup, database access, and the Prisma schema. Do not implement any API routes, frontend pages, or other features at this time.
+
+## Resources 
+
+- [TipTap Docs - React](https://tiptap.dev/docs/editor/getting-started/install/react)
+- [Neon documentation](https://neon.com/docs/introduction)
