@@ -124,6 +124,88 @@ This consistency makes unit tests a reliable safety layer when changing code.
 This makes the skill available for reuse once it is registered in the system.
 
 
+## Automatic Discoverability
+
+Claude Code decides when to load a skill from the skill name and description. The full skill instructions are only read after Claude decides the skill is relevant.
+
+If a skill is not being used automatically, you can try to improve the description. Good descriptions explain the task and the trigger clearly. 
+
+For example, a code review skill description might say:
+
+> description: Use this skill to optimize React components and check for common best practices.
+
+Or:
+
+> description: Use this skill when reviewing code for bugs, security issues, and performance problems.
+
+The description should be specific enough to match the work, but broad enough to catch the real situations where the skill should apply.
+
+**Note:** The skill body can contain detailed workflow instructions, but the body does not help much with automatic discovery until the skill has already been selected.
+
+## Skill Metadata Controls
+
+Skill frontmatter can control how Claude Code invokes the skill and what tools it may use.
+
+For more information, see the [Claude Code settings documentation](https://code.claude.com/docs/en/tools-reference).
+
+| Metadata                   | Purpose                                                     | When to Use                                                                                                                              |
+| -------------------------- | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `name`                     | Defines the skill identifier.                               | Required for all skills.                                                                                                                 |
+| `description`              | Explains when Claude Code should use the skill.             | Describe the trigger or use case, not the implementation details.                                                                        |
+| `disable-model-invocation` | Prevents automatic model invocation when set to `true`.     | Use when the skill should behave like a custom command only.                                                                             |
+| `user-invocable`           | Prevents direct user invocation when set to `false`.        | Use when the skill should be available for automatic discovery but not callable directly by users.                                       |
+| `allowed-tools`            | Restricts which tools Claude Code may use inside the skill. | Use when the skill should be limited to specific or safer operations. For example, `Read` allows file access but prevents modifications. |
+
+
+## Skill Arguments
+
+Skills can receive extra input with the `$ARGUMENTS` placeholder. This is useful when building a skill that also works like a custom command.
+
+For example, a code-review skill can use `$ARGUMENTS` to change the review mode:
+
+> ---
+> name: code-review
+> description: Review code for bugs, security, or performance issues. Use this skill when asked to perform code reviews, after finishing major tasks, or after refactoring code.
+> allowed-tools: Read
+> ---
+> 
+> MODE: $ARGUMENTS
+> 
+> If MODE is one of the following, adjust the review as described:
+> 
+> - MODE == BUGS: Focus only on logical or other bugs.
+> - MODE == SECURITY: Focus only on security issues.
+> - MODE == PERFORMANCE: Focus only on performance issues.
+> 
+> MODE can also be set to a combination like BUGS,SECURITY. Perform the combined review in that case.
+> 
+> If MODE is set to anything else or nothing at all, perform a thorough general code review.
+> 
+> Perform an in-depth code review of the entire codebase.
+> 
+> Carefully explore the codebase file by file to find potential issues and improvements.
+> 
+> Create a detailed report of all findings.
+
+This pattern keeps one skill reusable across several review styles.
+
+## Third-Party Skills
+
+Custom skills are useful because they let you tune Claude Code to your own project and preferences. You can also install third-party skills and then adapt them to your workflow.
+
+A public skills repository is available at [skills.sh](https://skills.sh/).
+
+Install a skill from that repository with:
+
+```bash
+npx skills add <owner/repo>
+```
+
+This requires Node.js because `npx` is installed with Node.js.
+
+After installing a third-party skill, review the skill contents before relying on it. You can adjust the description, remove parts you do not need, or tighten the allowed tools.
+
+
 ## Skills vs Agents
 
 Skills and agents solve different problems and are chosen based on workflow needs. 
@@ -227,4 +309,3 @@ A sample log shows how results appear after each change:
 [11:22:34] Tests passed successfully.
 [11:22:34] Logged file modification to hook.log.
 ```
-
