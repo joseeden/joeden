@@ -141,7 +141,14 @@ const projects: ProjectData[] = [
     image: require(`/img/docs/multi-agent-workflow-thumbnail.png`),
     tags: ["Artificial Intelligence", "LLM"],
   },  
-    {
+  {
+    title: "CrewAI Research Agent with SearXNG",
+    description: "Multi-agent research workflow built with CrewAI and SearXNG tooling.",
+    url: "https://github.com/joseeden/llm-engineering-sandbox/tree/master/crewai-projects/01-crewai-research-report-agent",
+    image: require(`/img/docs/crewai-research-report-agent-thumbnail.png`),
+    tags: ["Artificial Intelligence", "LLM"],
+  },
+  {
     title: "LLM Engineering Sandbox",
     description: "Collection of engineering patterns for building decoupled LLM integrations.",
     url: "https://github.com/joseeden/llm-engineering-sandbox", 
