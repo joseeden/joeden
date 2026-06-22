@@ -675,7 +675,7 @@ http://localhost:3030
 
 After the initial route structure is in place, the next step is to connect the application to the real authentication and database layer.
 
-### Authentication and Database Access
+### Auth and Database Access
 
 After the initial route structure is in place, the next step is to connect the application to the real authentication and database layer.
 
@@ -878,7 +878,7 @@ After the code is generated, test the behavior in a private browser window.
 </div>
 
 
-### Notes Dashboard and Create Flow
+### Dashboard and Create Flow
 
 Once route protection is in place, the dashboard can serve as the main workspace for authenticated users. This step introduces the application header, the **Add Note** navigation link, and the initial note creation workflow.
 
@@ -1159,11 +1159,19 @@ For this setup, I added the `PostToolUse` hook in the `settings.json` which will
 }
 ```
 
-Restart Claude Code so it reloads the hook configuration. After that, any time Claude edits or writes files, it will automatically run the formatter on the project.
+**UPDATE:** If you are using WSL and you installed Bun there, you may need to use the WSL path for Bun in the hook command. For example:
 
-You can test the hook by asking Claude to make a code change that does not follow the formatting rules. For example, you can ask it to write a new file with double quotes instead of single quotes. After the file is written, the hook should run and reformat the code to use single quotes.
+```json
+"command": "cd \"${CLAUDE_PROJECT_DIR}\" && /home/joseeden/.bun/bin/bun run format 2>/dev/null || true"
+```
 
-For that, you can proceed to adding the public sharing feature, which will require new code to be generated.
+See [Hooks not working](#hooks-not-working) for more details.
+
+Restart Claude Code so it reloads the hook configuration. After that, any time Claude creates or modifies files, the formatter will run automatically.
+
+To verify the hook is working, ask Claude to make a code change that does not follow the project's formatting rules. For example, have it create a file that uses double quotes instead of single quotes. Once the file is written, the hook should automatically reformat the code.
+
+A simple way to test this is by continuing with the public sharing feature in the next step, which requires Claude to generate new code files.
 
 
 ### Public Sharing
@@ -1172,9 +1180,11 @@ After notes can be created, edited, and deleted, the next step is to let users s
 
 This step should allow the note owner to turn sharing on or off. Public visitors should only be able to view shared notes, not edit or delete them.
 
+**Note:** The prompt mentioned using double quotes for string literals in the generated code. This is to test that the formatter hook (from previous steps) is working correctly, since it should automatically convert double quotes to single quotes after the code is generated.
+
 Prompt:
 
-> Add public note sharing.
+> /plan Add public note sharing.
 > 
 > Allow the owner of a note to turn public sharing on or off.
 > 
@@ -1210,12 +1220,54 @@ Review the generated code, then once approved, validate public sharing:
 10. Reload the public share link.
 11. Confirm that the link no longer works and shows a not found page.
 
+<div class='img-center'>
+
+![](/gif/docs/21062026-probab-impt-8.gif)
+
+</div>
+
 
 ### Search
 
 
 
 ### Final Polish
+
+
+
+## Troubleshooting 
+
+### Hooks not working 
+
+If you used the `PostToolUse` hook to run a hook (e.g., formatter) after every edit or write, but it does not seem to be working, below are some places to check.
+
+**Note:** The example here uses bun and `oxfmt` as the formatter, but the same principles apply to any hook command.
+
+1. Confirmed the `CLAUDE_PROJECT_DIR` variable is set correctly.
+
+    This isn't actually checked in the shell, since it's it's only injected by Claude Code's hook runner. It is not available in a regular shell session.
+
+    For this, you can prompt Claude to print the value of `CLAUDE_PROJECT_DIR` in the hook command. For example, you can add a temporary hook that runs `echo $CLAUDE_PROJECT_DIR` after every edit or write.
+
+2. Check the bun path in the hook command.
+
+    If you installed Bun in WSL, the path to the Bun binary may be different than the default `/usr/bin/env bun`. Run the following command:
+
+    ```bash
+    which bun 
+    ```
+
+    Sample output:
+
+    ```bash
+    /home/joseeden/.bun/bin/bun 
+    ```
+
+In my case, I had to use the full path to the Bun binary in the hook command:
+
+```json
+"command": "cd \"${CLAUDE_PROJECT_DIR}\" && /home/joseeden/.bun/bin/bun run format 2>/dev/null || true"
+```
 
 
 ## Resources 
