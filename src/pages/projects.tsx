@@ -42,7 +42,7 @@ const projects: ProjectData[] = [
   {
     title: "KodeKloud Engineer Labs",
     description: "Collection of 130+ labs from KodeKloud Engineer platform",
-    url: "https://github.com/joseeden/KodeKloud_Engineer_Labs", 
+    url: "https://github.com/joseeden/KodeKloud_Engineer_Labs/blob/main/README.md", 
     image: require(`/img/docs/all-things-devops-kodekloud-img.png`),
     tags: ["DevOps", "Docker", "Kubernetes"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
@@ -50,7 +50,7 @@ const projects: ProjectData[] = [
   {
     title: "Capstone: Google IT Automation with Python",
     description: "Collection of scripts for Google IT Automation with Python Course.",
-    url: "https://github.com/joseeden/capstone-google_it_automation_with_python", 
+    url: "https://github.com/joseeden/Capstone-Google-IT-Automation-with-Python/blob/main/README.md", 
     image: require(`/img/docs/coursera-google-it-automation-with-python.png`),
     tags: ["DevOps", "Python", "Automation"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
