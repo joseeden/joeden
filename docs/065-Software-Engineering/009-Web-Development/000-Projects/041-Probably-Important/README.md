@@ -1006,7 +1006,9 @@ Prompt:
 > Add a **Delete** button for each note on the note detail page.
 > 
 > The **Delete** button should open a centered confirmation `<dialog>`.
-> 
+> - The confirmation dialog should be visually centered in the viewport, both horizontally and vertically.
+> - Use the native `<dialog>` element, but add explicit styling so that when it is open, the dialog appears in the center of the screen.
+>
 > If the user confirms deletion, remove the note from the database.
 > 
 > After deletion, redirect the user back to `/dashboard`.
@@ -1033,10 +1035,185 @@ After the code is generated, test edit and delete:
 14. Confirm that the deleted note no longer appears in the dashboard list.
 15. Try to access the deleted note's URL and confirm that it shows a "not found" or similar message.
 
+<div class='img-center'>
+
+![](/gif/docs/21062026-probab-impt-6.gif)
+
+</div>
+
+### Code Formatting with Hooks
+
+Before adding more features, it is useful to make formatting automatic. This keeps generated code consistent with the project style without manually running the formatter after every edit.
+
+This step adds a formatter script and a Claude Code hook that runs the formatter after Claude edits or writes files.
+
+**Note:** To test the hook from the previous section, we added a note in the prompt to use double quotes in the generated code. This should trigger the formatter to change them to single quotes, which confirms that the hook is running after edits.
+
+Prompt:
+
+> /plan Add automatic code formatting for this project.
+> 
+> Install `oxfmt` as a development dependency using Bun.
+> 
+> Add a `format` script to `package.json` that runs `oxfmt --write .`.
+> 
+> Initialize an OxFormat config if one does not already exist.
+> 
+> Configure the formatter to use single quotes, including JSX single quotes.
+> 
+> Add a local Claude Code hook that runs the project formatter after Claude edits or writes files.
+> 
+> Use a `PostToolUse` hook for `Edit|Write`.
+> 
+> The hook command should run from `${CLAUDE_PROJECT_DIR}` and should not interrupt Claude Code if formatting fails.
+> 
+> Keep this step focused only on formatting setup. Do not change application behavior.
+> 
+> After the plan is generated, wait for review before implementing it.
+
+**EDIT:** While Claude can perform the instructions in the prompt, I opted to set up the hook manually to ensure it is configured correctly. This also allows me to test the hook immediately after setting it up.
+
+1. Install `oxfmt` as a development dependency:
+
+    ```bash
+    bun add -D oxfmt  
+    ```
+
+2. Add the `format` script to `package.json`:
+
+    ```json
+    "scripts": {
+        ...
+      "format": "oxfmt --write ."
+    },
+    ```
+
+3. Add a configuration files using the `bunx` command:
+
+    ```bash
+    bunx oxfmt --init
+    ```
+
+    This will create an `oxfmt.config.json` file in the project root. 
+
+4. Update the config and enable `singleQuote` and `jsxSingleQuote`:
+
+    ```json
+    // oxfmt.config.json 
+
+    {
+      "$schema": "./node_modules/oxfmt/configuration_schema.json",
+      "ignorePatterns": [],
+      "singleQuote": true,
+      "jsxSingleQuote": true
+    }
+    ```
+
+5. This formats the project files in place.
+
+    ```bash
+    bun run format  
+    ```
+
+    Output:
+
+    ```bash
+    $ oxfmt --write .
+    Finished in 977ms on 34 files using 48 threads.     
+    ```
+
+Note that I would have to run this manually every time I want to format the code, which can be easy to forget. 
+
+As a solution, we can add a hook in Claude Code that runs the formatter automatically after every edit or write. This way, whenever Claude generates code, it will be formatted according to the project style without needing to remember to run the formatter manually.
+
+The hooks can be added in different places:
+
+| Location              | Scope             | Purpose                                                                    |
+| --------------------- | ----------------- | -------------------------------------------------------------------------- |
+| `settings.json`       | Global            | Defines hooks that apply to all Claude Code projects.                      |
+| `settings.local.json` | User Local        | Defines hooks that apply only to your user account on the current machine. |
+| `CLAUDE.md`           | Project           | Defines hooks that apply only to the current project.                      |
+| `.claude/hooks/`      | Project / Complex | Stores more advanced hooks that require multiple files or custom logic.    |
+
+For this setup, I added the `PostToolUse` hook in the `settings.json` which will be committed to Git. This way, the formatting hook will be available to anyone who clones the project and opens it in Claude Code. 
+
+> For more details on hook, see [Claude Code documentation.](https://code.claude.com/docs/en/hooks#hook-events)
+
+```json
+// settings.json
+
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"${CLAUDE_PROJECT_DIR}\" && bun run format 2>/dev/null || true"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+Restart Claude Code so it reloads the hook configuration. After that, any time Claude edits or writes files, it will automatically run the formatter on the project.
+
+You can test the hook by asking Claude to make a code change that does not follow the formatting rules. For example, you can ask it to write a new file with double quotes instead of single quotes. After the file is written, the hook should run and reformat the code to use single quotes.
+
+For that, you can proceed to adding the public sharing feature, which will require new code to be generated.
+
+
+### Public Sharing
+
+After notes can be created, edited, and deleted, the next step is to let users share selected notes publicly.
+
+This step should allow the note owner to turn sharing on or off. Public visitors should only be able to view shared notes, not edit or delete them.
+
+Prompt:
+
+> Add public note sharing.
+> 
+> Allow the owner of a note to turn public sharing on or off.
+> 
+> When sharing is turned on, generate a unique public share link for the note.
+> 
+> Show the public share link to the note owner so it can be copied.
+> 
+> Unauthenticated users should be able to open the public share link and view the note title and content.
+> 
+> Public visitors must not be able to edit or delete the note.
+> 
+> When sharing is turned off, the old public share link should no longer work and should show a not found page.
+> 
+> Ensure only the note owner can enable or disable sharing.
+> 
+> Write any new or changed JavaScript, TypeScript, TSX, and JSX string literals using double quotes. Do not manually convert them to single quotes. 
+> 
+> Keep this step focused only on public sharing. Do not implement search or other features yet.
+> 
+> After the plan is generated, wait for review before implementing it.
+
+Review the generated code, then once approved, validate public sharing:
+
+1. Log in to the app.
+2. Create or open an existing note.
+3. Turn on public sharing for the note.
+4. Confirm that a public share link is shown.
+5. Copy the public share link.
+6. Open the link in a private browser window.
+7. Confirm that the note title and content are visible without logging in.
+8. Confirm that edit and delete actions are not available on the public page.
+9. Go back to the logged-in session and turn off sharing.
+10. Reload the public share link.
+11. Confirm that the link no longer works and shows a not found page.
+
 
 ### Search
 
-### Public Sharing
+
 
 ### Final Polish
 
