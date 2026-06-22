@@ -1173,7 +1173,7 @@ To verify the hook is working, ask Claude to make a code change that does not fo
 
 A simple way to test this is by continuing with the public sharing feature in the next step, which requires Claude to generate new code files.
 
-
+ 
 ### Public Sharing
 
 After notes can be created, edited, and deleted, the next step is to let users share selected notes publicly.
@@ -1229,11 +1229,196 @@ Review the generated code, then once approved, validate public sharing:
 
 ### Search
 
+After public sharing is working, the next feature is search. Search should only return notes owned by the logged-in user.
+
+This step should add a search box to the dashboard and filter notes by title or content.
+
+Prompt:
+
+> /plan Add search for authenticated notes.
+> 
+> Add a search input to `/dashboard`.
+> 
+> Search should match note titles and note content.
+> 
+> Search results must only include notes owned by the logged-in user.
+> 
+> Keep public shared notes out of the authenticated dashboard search unless they also belong to the current user.
+> 
+> Use a simple database text search for now. Do not add a separate search service.
+> 
+> Preserve the existing dashboard layout, note creation flow, edit flow, delete flow, and public sharing behavior.
+> 
+> Show a helpful empty state when the search has no results.
+> 
+> Keep this step focused only on search. Do not add tags, folders, sorting, or filtering yet.
+> 
+> After the plan is generated, wait for review before implementing it.
+
+After the code is generated, test search:
+
+1. Log in to the app.
+2. Create a few notes with different titles and content.
+3. Search by note title.
+4. Search by note content.
+5. Confirm that matching notes appear in the dashboard.
+6. Confirm that unrelated notes are hidden.
+7. Confirm that an empty state appears when there are no matches.
+8. Confirm that public share links still work.
+9. Confirm that another user's notes do not appear in search results.
+
+
+### Browser Testing with Playwright
+
+After several core workflows are in place, give Claude Code a way to test the application through a real browser.
+
+For this project, the most useful browser checks are:
+
+- Signup and login
+- Dashboard route protection
+- Note creation
+- Rich text formatting
+- Edit and delete
+- Public sharing
+- Search
+
+Claude Code can use Playwright through a plugin or MCP server. The plugin path is convenient because it can be installed from the Claude Code plugin interface.
+
+Inside Claude Code, open the plugin interface:
+
+```bash
+/plugin
+```
+
+Install a Playwright plugin if it is available. It can be installed at user scope if you want browser testing across many projects, or project scope if the team should share the same setup.
+
+When the development server is running, ask Claude to test the app step by step:
+
+> Test the main application features using Playwright.
+> 
+> The development server is running at `http://localhost:3030`.
+> 
+> Test signup, login, route protection, note creation, rich text formatting, edit, delete, public sharing, and search.
+> 
+> If you find an issue, explain the problem, fix it, and test the affected flow again.
+
+:::info
+
+Browser testing is powerful, but it can use a lot of tokens because Claude needs to inspect pages, interact with elements, and sometimes review screenshots or page snapshots.
+
+Use it for important user flows and after larger UI changes.
+
+:::
+
+
+### Unit Tests with Vitest
+
+Browser testing helps validate real user flows, but automated tests are still useful for fast feedback during development.
+
+For this app, start with unit tests for code that can be tested without a browser:
+
+- Validation schemas
+- Note ownership checks
+- Search query helpers
+- Rich text sanitization helpers, if added
+- Server action helper functions, where practical
+
+Install Vitest:
+
+```bash
+bun add -D vitest
+```
+
+Then ask Claude Code to set it up:
+
+> /plan Set up unit testing with Vitest.
+> 
+> Add Vitest as the test runner for this project.
+> 
+> Add a `test` script to `package.json` that runs Vitest. Do not use Bun's built-in test runner for this project.
+> 
+> Add a focused test structure for reusable validation and helper logic.
+> 
+> Add mocks only where needed.
+> 
+> If complex server action logic is hard to test directly, extract small helper functions that can be tested without changing application behavior.
+> 
+> Add tests for the highest-risk logic first, especially validation, authorization checks, and search behavior.
+> 
+> After the plan is generated, wait for review before implementing it.
+
+After tests are added, run:
+
+```bash
+bun run test
+```
+
+:::info
+
+Review AI-generated tests carefully. Claude can write tests that match the current implementation too closely, even when the implementation has a bug.
+
+Good tests should check expected behavior, edge cases, and failure cases.
+
+:::
 
 
 ### Final Polish
 
+After the main features are working, use this section to clean up the application before treating the project as complete.
 
+This step should focus on quality, consistency, and small UX fixes. Avoid adding new product features here.
+
+Prompt:
+
+> /plan Polish the Probably Important app.
+> 
+> Review the app for small UX, accessibility, and consistency issues.
+> 
+> Keep the current feature scope unchanged.
+> 
+> Check the dashboard, auth page, note creation page, note detail page, edit page, delete dialog, public share page, and search states.
+> 
+> Improve empty states, loading states, button labels, form validation messages, focus states, and responsive layout where needed.
+> 
+> Ensure light mode and dark mode are both readable.
+> 
+> Run linting, formatting, and tests after changes.
+> 
+> Do not add folders, tags, password reset, email verification, realtime sync, or advanced search.
+> 
+> After the plan is generated, wait for review before implementing it.
+
+Final validation checklist:
+
+1. Run the formatter:
+
+    ```bash
+    bun run format
+    ```
+
+2. Run linting:
+
+    ```bash
+    bun run lint
+    ```
+
+3. Run tests, if Vitest has been configured:
+
+    ```bash
+    bun run test
+    ```
+
+4. Build the app:
+
+    ```bash
+    bun run build
+    ```
+
+5. Start the app and test the main flows:
+
+    ```bash
+    PORT=3030 bun run dev
+    ```
 
 ## Troubleshooting 
 
