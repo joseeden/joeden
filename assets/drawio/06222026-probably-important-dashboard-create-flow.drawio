@@ -1,0 +1,42 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2">
+  <diagram id="dashboard-create-flow" name="dashboard-create-flow">
+    <mxGraphModel dx="1096" dy="1126" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="980" pageHeight="360" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="fXb6vhCNLcbJms-F19Us-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#E6E6E6;" value="" vertex="1">
+          <mxGeometry height="370" width="990" x="11" y="-30" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Arial;fontSize=24;fontStyle=1;fontColor=#111827;" value="Dashboard and Create Flow" vertex="1">
+          <mxGeometry height="40" width="400" x="320" as="geometry" />
+        </mxCell>
+        <mxCell id="route-protection" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#f9fafb;strokeColor=#374151;strokeWidth=2;fontFamily=Arial;fontSize=14;fontColor=#374151;spacing=8;" value="&lt;b&gt;Route Protection&lt;/b&gt;&lt;br&gt;Only logged-in users&lt;br&gt;can enter" vertex="1">
+          <mxGeometry height="92" width="180" x="50" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="dashboard" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#f9fafb;strokeColor=#374151;strokeWidth=2;fontFamily=Arial;fontSize=14;fontColor=#374151;spacing=8;" value="&lt;b&gt;/dashboard&lt;/b&gt;&lt;br&gt;Main workspace&lt;br&gt;for notes" vertex="1">
+          <mxGeometry height="92" width="180" x="305" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="fXb6vhCNLcbJms-F19Us-2" edge="1" parent="1" source="add-note" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=1;strokeWidth=2;" target="create-note">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="add-note" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#f9fafb;strokeColor=#374151;strokeWidth=2;fontFamily=Arial;fontSize=14;fontColor=#374151;spacing=8;" value="&lt;b&gt;Add Note&lt;/b&gt;&lt;br&gt;Link" vertex="1">
+          <mxGeometry height="92" width="115" x="560" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="create-note" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#f9fafb;strokeColor=#374151;strokeWidth=2;fontFamily=Arial;fontSize=14;fontColor=#374151;spacing=8;" value="&lt;b&gt;Create Note&lt;/b&gt;&lt;br&gt;Save title and content" vertex="1">
+          <mxGeometry height="90" width="220" x="746" y="96" as="geometry" />
+        </mxCell>
+        <mxCell id="later-features" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#ffffff;strokeColor=#9ca3af;strokeWidth=2;dashed=1;fontFamily=Arial;fontSize=14;fontColor=#4b5563;spacing=8;" value="&lt;b&gt;Later Features&lt;/b&gt;&lt;br&gt;Edit, delete, search, and public sharing" vertex="1">
+          <mxGeometry height="70" width="450" x="50" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-route-dashboard" edge="1" parent="1" source="route-protection" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#374151;strokeWidth=2;" target="dashboard" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-dashboard-header" edge="1" parent="1" source="dashboard" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#374151;strokeWidth=2;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="560" y="141" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

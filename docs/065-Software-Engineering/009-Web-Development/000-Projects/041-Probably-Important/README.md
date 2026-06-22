@@ -795,9 +795,9 @@ Create a test account from the auth page, then sign out or open a private browse
 </div>
 
 
-**UPDATE:** You may notice there are already three notes in the dashboard. This is because better-auth creates a default welcome note for new users. This is a good sign that better-auth is working correctly, and it also shows that the `Note` model is properly connected to the `User` model in the database.
+**UPDATE:** You may notice there are already three notes in the dashboard. These are hardcoded placeholder notes, not database records yet. This is expected at this stage because the note CRUD flow has not been implemented.
 
-For reference, these hardcoded welcome notes are configured in the `page.tsx` file of the `/auth` route, which is where better-auth creates the user and the welcome note during signup.
+For reference, these hardcoded notes are configured in the dashboard `page.tsx` file.
 
 ```tsx
 const dummyNotes = [
@@ -830,11 +830,209 @@ Check that the new user appears in the `User` table, and that better-auth has al
 </div>
 
 
-### Note CRUD API
+### Protected App Routes
 
-### Notes Dashboard
+Once signup and login work, the next step is to protect the authenticated parts of the app. This makes the dashboard and note routes behave like private application pages instead of public pages.
+
+For this project, use `/dashboard` as the authenticated dashboard route. If the generated dashboard currently lives at `/`, move or recreate that dashboard page at `/dashboard` and update the redirects, links, and route protection consistently.
+
+We'll use Claude to generate the code snippets for route protection.
+
+Prompt:
+
+> /plan After successful login, redirect users to the authenticated dashboard route.
+> 
+> Use `/dashboard` as the authenticated dashboard route. If the current dashboard page lives at `/`, move or recreate it at `/dashboard` and update all redirects, links, and route protection consistently.
+> 
+> Protect the dashboard route and all note-related routes so only authenticated users can access them. If an unauthenticated user tries to visit one of these routes, redirect them to `/auth`.
+> 
+> Keep the public share route accessible without authentication.
+>
+> Add route protection in a way that fits modern Next.js. 
+> 
+> This project uses Next.js `proxy.ts`, not `middleware.ts`, so update the existing root-level `proxy.ts` if request-level route protection is needed. 
+> 
+> Do not create a `middleware.ts` file. 
+> 
+> Use server-side route checks where stronger per-page authorization is needed, but do not rely on a client-side layout component as the only protection.
+> 
+> After the plan is generated, wait for review before implementing it.
+
+Make sure to review the generated plan. If it is aligned with the project routes, you can proceed to implementing the route protection.
+
+After the code is generated, test the behavior in a private browser window.
+
+**Note:** If you are using the same browser window for testing, you can try refreshing the page or logging out after testing login. You can also use an incognito/private window to avoid session conflicts.
+
+1. Visit the dashboard route without logging in.
+2. Confirm that the app redirects to `/auth`.
+3. Log in with the test account.
+4. Confirm that the app redirects back to the `/dashboard`.
+5. Confirm that note-related routes are blocked when logged out.
+<!-- 6. Confirm that public share routes still work without login. -->
+
+<div class='img-center'>
+
+![](/gif/docs/21062026-probab-impt-3.gif)
+
+</div>
+
+
+### Notes Dashboard and Create Flow
+
+Once route protection is in place, the dashboard can serve as the main workspace for authenticated users. This step introduces the application header, the **Add Note** navigation link, and the initial note creation workflow.
+
+<div class='img-center'>
+
+![](/img/docs/06222026-probably-important-dashboard-create-flow.png)
+
+</div>
+
+The focus at this stage is limited to the dashboard, navigation, and creating notes. Features such as editing, deleting, searching, and public note sharing will be implemented later.
+
+Prompt:
+
+> /plan Finish the first note creation flow.
+> 
+> On `/dashboard`, add one clear "Add Note" link or button that points to `/notes/new`.
+> 
+> If the app header already has a "New Note" or "Add Note" link, remove that duplicate from the header and keep the create-note entry point in the dashboard body only.
+> 
+> Build the `/notes/new` page with a simple form for note title and content. TipTap will be added in a later step, so use a basic text area for now.
+> 
+> Add a server-side create-note action or route handler. The write operation must:
+> 
+> - Run on the server
+> - Validate the current session
+> - Associate the new note with the authenticated user
+> 
+> After creating the note, redirect the user to the created note page at `/notes/[id]`.
+> 
+> Update the note detail page so it loads the created note from the database and displays the note title and content. Do not leave placeholder text such as "Read-only note content will render here."
+> 
+> Update the dashboard so it loads the logged-in user's notes from the database and shows the newly created note in the list.
+> 
+> Keep this step focused only on creating notes. Do not implement edit, delete, search, public sharing, or the rich text editor yet.
+> 
+> After the plan is generated, wait for review before implementing it.
+
+After the code is generated, test the create-note flow:
+
+1. Re-run the dev server if it's not already running:
+
+    ```bash
+    PORT=3030 bun run dev
+    ```
+    
+2. Navigate to the app in your browser and log in.
+3. Go to `/dashboard`.
+4. Confirm that the **Add Note** link is visible.
+5. Click **Add Note** and confirm it opens `/notes/new`.
+6. Create a note with a title and content.
+7. Confirm that the app redirects to the created note page.
+8. Confirm that the note page shows the title and content you entered.
+9. Go back to `/dashboard`.
+10. Confirm that the new note appears in the dashboard list.
+11. Confirm that the saved note belongs to the logged-in user.
+
+
+<div class='img-center'>
+
+![](/gif/docs/21062026-probab-impt-4.gif)
+
+</div>
+
 
 ### Rich Text Editor
+
+Once the basic note creation flow is working, upgrade the content field to use a rich text editor. This step should improve the existing `/notes/new` page without changing the route, redirect, or dashboard behavior that already works.
+
+Prompt:
+
+> /plan Upgrade the existing new-note page to use TipTap.
+> 
+> Keep the existing note title field, create-note server action, redirect to `/notes/[id]`, note detail rendering, and dashboard note list behavior.
+> 
+> Replace only the basic content text area with a TipTap rich text editor.
+> 
+> Include a formatting toolbar with bold, italic, underline, headings, bullet lists, numbered lists, links, blockquotes, and horizontal separator lines.
+> 
+> Submit the TipTap HTML content through the existing create-note flow and save it to the existing `Note.content` field.
+> 
+> Ensure only authenticated users can access the new-note page and submit the form.
+> 
+> Make sure the editor, toolbar, form fields, and submit state work well in both light mode and dark mode.
+> 
+> After the plan is generated, wait for review before implementing it.
+
+After the code is generated, test the rich text editor:
+
+1. Log in to the app and go to `/dashboard`.
+2. Click **Add Note** and enter a note title.
+3. Add formatted content using bold, italic, underline, headings, lists, links, blockquotes, and horizontal lines.
+4. Save the note.
+5. Confirm that the app redirects to the created note page.
+6. Confirm that the note page shows the formatted content correctly.
+7. Go back to `/dashboard`.
+8. Confirm that the note still appears in the notes list.
+9. Test the page in light mode and dark mode.
+
+<div class='img-center'>
+
+![](/gif/docs/21062026-probab-impt-5.gif)
+
+</div>
+
+### Edit and Delete Notes
+
+Since note creation and rich text editing are working, the next step is to support updating and deleting existing notes.
+
+This step should load an existing note into the editor, allow the title and content to be changed, and provide a safe delete flow with confirmation.
+
+Prompt:
+
+> /plan Add edit and delete support for notes.
+> 
+> When the user clicks **Edit** on a note page, open the edit page for that note.
+> 
+> The edit page should load the existing note title and content from the database.
+> 
+> The title should be editable.
+> 
+> The note content should load into the TipTap editor so the user can update the rich text content.
+> 
+> Add a server-side update action or route handler that validates the current session and confirms the note belongs to the logged-in user before saving changes.
+> 
+> Add a **Delete** button for each note on the note detail page.
+> 
+> The **Delete** button should open a centered confirmation `<dialog>`.
+> 
+> If the user confirms deletion, remove the note from the database.
+> 
+> After deletion, redirect the user back to `/dashboard`.
+> 
+> Ensure users cannot edit or delete notes that do not belong to them.
+> 
+> Keep this step focused only on editing and deleting notes. Do not implement search or public sharing yet.
+> 
+> After the plan is generated, wait for review before implementing it.
+
+After the code is generated, test edit and delete:
+
+1. Log in to the app and create a note.
+3. Open the note page then click **Edit**.
+5. Confirm that the title and content are loaded.
+6. Change the title and content.
+7. Save the note.
+8. Confirm that the updated title and content are shown on the note page.
+9. Go back to `/dashboard` and confirm the updated title appears.
+10. Open the note again and click **Delete**.
+11. Confirm that a centered confirmation dialog appears.
+12. Confirm deletion.
+13. Confirm that the app redirects to `/dashboard`.
+14. Confirm that the deleted note no longer appears in the dashboard list.
+15. Try to access the deleted note's URL and confirm that it shows a "not found" or similar message.
+
 
 ### Search
 

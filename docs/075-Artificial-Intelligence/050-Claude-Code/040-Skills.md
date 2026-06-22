@@ -142,6 +142,72 @@ The description should be specific enough to match the work, but broad enough to
 
 **Note:** The skill body can contain detailed workflow instructions, but the body does not help much with automatic discovery until the skill has already been selected.
 
+## Custom Commands and Skills
+
+Custom commands and skills have overlapping purposes. A custom command is basically a reusable prompt that can be invoked when you want Claude Code to perform the same type of work repeatedly.
+
+For example, you might create a reusable code review command instead of rewriting a long review prompt every time.
+
+Common use cases include:
+
+- Running code reviews
+- Checking for security issues
+- Generating reports
+- Applying a repeated project workflow
+
+Custom commands can still be useful, but the same pattern can often be handled with skills. In practice, skills are the more flexible option when the reusable prompt should include clear workflow instructions, tool restrictions, and optional arguments.
+
+:::info 
+
+Some online resources still mention custom commands. If the Claude official docs focus more on skills, treat custom commands as a related older pattern rather than a separate core concept.
+
+:::
+
+### Custom Command Pattern
+
+A custom command is normally stored as a markdown file in a commands folder. The file can contain only a prompt, or it can include optional metadata.
+
+Metadata can define:
+
+- A description that appears when browsing commands
+- Allowed tools that restrict what Claude Code may use
+- Arguments that make the command reusable for different modes
+
+For a code review command, tool restrictions are useful. If the goal is only to review code, the command can be limited to read-only tools so it does not modify files.
+
+### Arguments in Reusable Prompts
+
+Custom commands can accept input through an arguments placeholder. This lets one reusable prompt behave differently depending on the mode you pass in.
+
+For example, a review command could accept:
+
+- `bugs` for logical issues
+- `security` for security issues
+- `bugs,security` for a combined review
+
+Skills support a similar idea with `$ARGUMENTS`. This is why many custom command workflows can be moved into a skill without losing flexibility.
+
+Example:
+
+```markdown
+---
+description: Review code for bugs, security issues, or both.
+allowed-tools: Read, Grep, Glob
+---
+
+MODE: $ARGUMENTS
+
+Review the codebase based on the selected mode.
+
+- If MODE is `bugs`, look for logic errors and behavior regressions.
+- If MODE is `security`, look for secrets, unsafe input handling, and risky dependencies.
+- If MODE is `bugs,security`, perform both review types.
+- If MODE is empty, perform a general code review.
+
+Return findings first, ordered by severity.
+Include file paths, line numbers, impact, and suggested fixes.
+```
+
 ## Skill Metadata Controls
 
 Skill frontmatter can control how Claude Code invokes the skill and what tools it may use.
@@ -163,29 +229,33 @@ Skills can receive extra input with the `$ARGUMENTS` placeholder. This is useful
 
 For example, a code-review skill can use `$ARGUMENTS` to change the review mode:
 
-> ---
-> name: code-review
-> description: Review code for bugs, security, or performance issues. Use this skill when asked to perform code reviews, after finishing major tasks, or after refactoring code.
-> allowed-tools: Read
-> ---
-> 
-> MODE: $ARGUMENTS
-> 
-> If MODE is one of the following, adjust the review as described:
-> 
-> - MODE == BUGS: Focus only on logical or other bugs.
-> - MODE == SECURITY: Focus only on security issues.
-> - MODE == PERFORMANCE: Focus only on performance issues.
-> 
-> MODE can also be set to a combination like BUGS,SECURITY. Perform the combined review in that case.
-> 
-> If MODE is set to anything else or nothing at all, perform a thorough general code review.
-> 
-> Perform an in-depth code review of the entire codebase.
-> 
-> Carefully explore the codebase file by file to find potential issues and improvements.
-> 
-> Create a detailed report of all findings.
+```markdown
+---
+name: code-review
+description: Review code for bugs, security, or performance issues.
+allowed-tools: Read
+---
+
+MODE: $ARGUMENTS
+
+If MODE is one of the following, adjust the review as described:
+
+- MODE == BUGS: Focus only on logical or other bugs.
+- MODE == SECURITY: Focus only on security issues.
+- MODE == PERFORMANCE: Focus only on performance issues.
+
+MODE can also be set to a combination like BUGS,SECURITY. 
+Perform the combined review in that case.
+
+If MODE is set to anything else or nothing at all, 
+perform a thorough general code review.
+
+Perform an in-depth code review of the entire codebase.
+
+Carefully explore the codebase file by file to find potential issues and improvements.
+
+Create a detailed report of all findings.
+```
 
 This pattern keeps one skill reusable across several review styles.
 

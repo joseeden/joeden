@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="360" viewBox="0 0 980 360" role="img" aria-labelledby="title desc">
+  <title id="title">Probably Important dashboard and note creation flow</title>
+  <desc id="desc">A simple flow diagram showing route protection leading to an authenticated dashboard, app header, Add Note link, and note creation.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151" />
+    </marker>
+  </defs>
+
+  <rect width="980" height="360" fill="#ffffff" />
+
+  <text x="490" y="38" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#111827">
+    Dashboard and Create Flow
+  </text>
+
+  <rect x="50" y="95" width="180" height="92" rx="8" fill="#f9fafb" stroke="#374151" stroke-width="2" />
+  <text x="140" y="129" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#111827">
+    Route Protection
+  </text>
+  <text x="140" y="155" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#374151">
+    Only logged-in users
+  </text>
+  <text x="140" y="176" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#374151">
+    can enter
+  </text>
+
+  <line x1="230" y1="141" x2="295" y2="141" stroke="#374151" stroke-width="2" marker-end="url(#arrow)" />
+
+  <rect x="305" y="95" width="180" height="92" rx="8" fill="#f9fafb" stroke="#374151" stroke-width="2" />
+  <text x="395" y="129" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#111827">
+    /dashboard
+  </text>
+  <text x="395" y="155" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#374151">
+    Main workspace
+  </text>
+  <text x="395" y="176" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#374151">
+    for notes
+  </text>
+
+  <line x1="485" y1="141" x2="550" y2="141" stroke="#374151" stroke-width="2" marker-end="url(#arrow)" />
+
+  <rect x="560" y="95" width="180" height="92" rx="8" fill="#f9fafb" stroke="#374151" stroke-width="2" />
+  <text x="650" y="129" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#111827">
+    App Header
+  </text>
+  <text x="650" y="155" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#374151">
+    Product name
+  </text>
+  <text x="650" y="176" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#374151">
+    and navigation
+  </text>
+
+  <line x1="740" y1="141" x2="805" y2="141" stroke="#374151" stroke-width="2" marker-end="url(#arrow)" />
+
+  <rect x="815" y="95" width="115" height="92" rx="8" fill="#f9fafb" stroke="#374151" stroke-width="2" />
+  <text x="872.5" y="133" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#111827">
+    Add Note
+  </text>
+  <text x="872.5" y="160" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#374151">
+    Link
+  </text>
+
+  <line x1="872.5" y1="187" x2="872.5" y2="230" stroke="#374151" stroke-width="2" marker-end="url(#arrow)" />
+
+  <rect x="652" y="240" width="220" height="80" rx="8" fill="#f9fafb" stroke="#374151" stroke-width="2" />
+  <text x="762" y="273" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#111827">
+    Create Note
+  </text>
+  <text x="762" y="299" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#374151">
+    Save title and content
+  </text>
+
+  <rect x="72" y="245" width="450" height="70" rx="8" fill="#ffffff" stroke="#9ca3af" stroke-width="2" stroke-dasharray="8 6" />
+  <text x="297" y="274" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#374151">
+    Later Features
+  </text>
+  <text x="297" y="299" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#4b5563">
+    Edit, delete, search, and public sharing
+  </text>
+</svg>
