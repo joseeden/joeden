@@ -114,7 +114,7 @@ const projects: ProjectData[] = [
   {
     title: "AI-Assisted Testing and CI/CD",
     description: "Using AI for software testing and CI/CD with pytest and GitHub Actions",
-    url: "https://github.com/joseeden/labs-ai-assisted-software-testing", 
+    url: "https://github.com/joseeden/labs-ai-assisted-software-testing/blob/master/README.md", 
     image: require(`/img/docs/pytest-python-usage.jpg`),
     tags: ["Artificial Intelligence", "Python"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
@@ -122,7 +122,7 @@ const projects: ProjectData[] = [
   {
     title: "AI-Assisted DB Lifecycle Pipeline",
     description: "Using AI for database lifecycle management with automated testing",
-    url: "https://github.com/joseeden/labs-ai-assisted-database-lifecycle-pipeline", 
+    url: "https://github.com/joseeden/labs-ai-assisted-database-lifecycle-pipeline/blob/master/README.md", 
     image: require(`/img/docs/Screenshot2026-06-06033245.png`),
     tags: ["DevOps", "Artificial Intelligence"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
@@ -137,21 +137,21 @@ const projects: ProjectData[] = [
   {
     title: "Multi-Agent Research Workflow",
     description: "AI research assistant using planner, search, and report agents.",
-    url: "https://github.com/joseeden/llm-engineering-sandbox/tree/master/building-ai-agents/05-multi-agent-research-workflow",
+    url: "https://github.com/joseeden/LLM-Engineering-Sandbox/blob/master/building-ai-agents/05-multi-agent-research-workflow/README.md",
     image: require(`/img/docs/multi-agent-workflow-thumbnail.png`),
     tags: ["Artificial Intelligence", "LLM"],
   },  
   {
     title: "CrewAI Research Report Agent",
     description: "Multi-agent research workflow built with CrewAI and SearXNG tooling.",
-    url: "https://github.com/joseeden/llm-engineering-sandbox/tree/master/crewai-projects/01-crewai-research-report-agent",
+    url: "https://github.com/joseeden/LLM-Engineering-Sandbox/blob/master/crewai-projects/01-research-report-agent/README.md",
     image: require(`/img/docs/crewai-research-report-agent-thumbnail.png`),
     tags: ["Artificial Intelligence", "LLM"],
   },
   {
     title: "LLM Engineering Sandbox",
     description: "Collection of engineering patterns for building decoupled LLM integrations.",
-    url: "https://github.com/joseeden/llm-engineering-sandbox", 
+    url: "https://github.com/joseeden/LLM-Engineering-Sandbox/blob/master/README.md", 
     // image: require(`/img/docs/llm-engineering-thumbnail.png`), 
     image: require(`/img/docs/llm-engineering-thumbnail.jpg`), 
     tags: ["Artificial Intelligence", "LLM"],
