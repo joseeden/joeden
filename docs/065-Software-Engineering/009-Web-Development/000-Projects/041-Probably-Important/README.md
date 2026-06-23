@@ -1227,7 +1227,7 @@ Review the generated code, then once approved, validate public sharing:
 </div>
 
 
-### Search
+<!-- ### Search
 
 After public sharing is working, the next feature is search. Search should only return notes owned by the logged-in user.
 
@@ -1265,42 +1265,102 @@ After the code is generated, test search:
 6. Confirm that unrelated notes are hidden.
 7. Confirm that an empty state appears when there are no matches.
 8. Confirm that public share links still work.
-9. Confirm that another user's notes do not appear in search results.
+9. Confirm that another user's notes do not appear in search results. -->
 
 
-### Browser Testing with Playwright
+## Testing the Application
 
-After several core workflows are in place, give Claude Code a way to test the application through a real browser.
+### Using Plugins 
 
-For this project, the most useful browser checks are:
+Plugins are a powerful way to extend Claude Code's capabilities. For this project, we can use a Playwright plugin to test the application in a real browser and validate key user workflows.
 
-- Signup and login
+Some of the most valuable browser tests for this application include:
+
+- User signup and login
 - Dashboard route protection
 - Note creation
 - Rich text formatting
-- Edit and delete
-- Public sharing
-- Search
+- Editing and deleting notes
+- Public note sharing
+- Search functionality
 
-Claude Code can use Playwright through a plugin or MCP server. The plugin path is convenient because it can be installed from the Claude Code plugin interface.
+Claude Code can use Playwright through either a plugin or an MCP server. The plugin approach is typically the easiest to set up because it can be installed directly from the Claude Code plugin interface.
 
-Inside Claude Code, open the plugin interface:
+To open the plugin manager, open Claude Code from your terminal and run:
 
 ```bash
 /plugin
 ```
 
-Install a Playwright plugin if it is available. It can be installed at user scope if you want browser testing across many projects, or project scope if the team should share the same setup.
+You can install plugins at:
 
-When the development server is running, ask Claude to test the app step by step:
+- **User scope** if you want browser testing available across multiple projects.
+- **Project scope** if the setup should be shared with other team members working on the project.
 
-> Test the main application features using Playwright.
+The **Marketplaces** show the official Claude marketplace but you can also add an internal marketplace URL if your organization has one. 
+
+For this project, we'll use the official Claude marketplace to install the following plugins:
+
+| Plugin           | Purpose                                                                                                     |
+| ---------------- | ----------------------------------------------------------------------------------------------------------- |
+| `playwright`     | Enables Claude to run browser-based tests and validate application workflows in a real browser.             |
+| `typescript-lsp` | Provides TypeScript language support, including type checking, code navigation, and development assistance. |
+
+If you installed the plugins at project scope, you should see it listed in the `plugins` section of the `.claude/settings.json` file inside the project folder.
+
+```json 
+// project-probably-important/.claude/settings.json 
+
+"enabledPlugins": {
+  "playwright@claude-plugins-official": true,
+  "typescript-lsp@claude-plugins-official": true
+}
+```
+
+If you installed it at user scope, it will be listed in your global `settings.local.json` file.
+
+```json 
+// ~/.claude/settings.json 
+
+"enabledPlugins": {
+  "playwright@claude-plugins-official": true,
+  "typescript-lsp@claude-plugins-official": true
+}
+```
+
+**EDIT:** I installed the plugins at project scope, since I was having issues when they were installed at user scope.
+
+<div class='img-center'>
+
+![](/gif/docs/21062026-probab-impt-9.gif)
+
+</div>
+
+### Browser Testing 
+
+After the plugins are installed, you can use them to test the application in a real browser. 
+
+Start the development server if it is not already running:
+
+```bash
+PORT=3030 bun run dev
+```
+
+We can ask Claude to test the app step by step:
+
+> Test the main application features using Playwright plugin. 
+> Use a real browser to validate the user flows and check for any issues.
 > 
 > The development server is running at `http://localhost:3030`.
 > 
 > Test signup, login, route protection, note creation, rich text formatting, edit, delete, public sharing, and search.
 > 
 > If you find an issue, explain the problem, fix it, and test the affected flow again.
+
+
+It may ask for permissions like running cURL or creating the Playwright configurations. It will also try to open a web browser to perform the sign up using test accounts. 
+
+Grant the permissions so it can open a browser and test the app.
 
 :::info
 
@@ -1310,20 +1370,21 @@ Use it for important user flows and after larger UI changes.
 
 :::
 
-
 ### Unit Tests with Vitest
 
-Browser testing helps validate real user flows, but automated tests are still useful for fast feedback during development.
+Browser tests are useful for validating user workflows, but unit tests provide faster feedback during development.
 
-For this app, start with unit tests for code that can be tested without a browser:
+Start by testing code that does not require a browser, such as:
 
 - Validation schemas
-- Note ownership checks
-- Search query helpers
-- Rich text sanitization helpers, if added
-- Server action helper functions, where practical
+- Note ownership logic
+- Search helper functions
+- Rich text sanitization helpers
+- Utility and server action helper functions
 
-Install Vitest:
+For this project, we'll use Vitest, which is a popular JavaScript testing library.
+
+Install it with:
 
 ```bash
 bun add -D vitest
@@ -1335,17 +1396,28 @@ Then ask Claude Code to set it up:
 > 
 > Add Vitest as the test runner for this project.
 > 
-> Add a `test` script to `package.json` that runs Vitest. Do not use Bun's built-in test runner for this project.
+> Do not use Bun's built-in test runner.
 > 
-> Add a focused test structure for reusable validation and helper logic.
+> Add a `test` script to `package.json` that runs Vitest.
 > 
-> Add mocks only where needed.
+> Create a focused test structure for reusable validation and helper logic.
 > 
-> If complex server action logic is hard to test directly, extract small helper functions that can be tested without changing application behavior.
+> Add unit tests for the highest-risk logic first, especially:
 > 
-> Add tests for the highest-risk logic first, especially validation, authorization checks, and search behavior.
+> - Validation schemas
+> - Authorization and note ownership checks
+> - Search behavior
+> - Reusable helper functions
+> 
+> Use mocks only where needed.
+> 
+> If server action logic is difficult to test directly, extract small helper functions that can be tested without changing application behavior.
+> 
+> Do not make unnecessary changes to the app's behavior or UI.
 > 
 > After the plan is generated, wait for review before implementing it.
+
+It will try to create the test folder, install dependencies for the testing tool, and generate the configuration file for Vitest.
 
 After tests are added, run:
 
