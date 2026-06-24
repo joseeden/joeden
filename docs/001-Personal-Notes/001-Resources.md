@@ -72,6 +72,22 @@ Free DNS Service using [dot.tk](http://www.dot.tk)
 Free DNS Service using [Namecheap](https://www.namecheap.com/)
 - often has promotions for tld’s like .co for just a couple of bucks
 
+## Programming 
+
+### Go 
+
+- [Go Documentation](https://go.dev/doc/)
+- [Go Standard library](https://pkg.go.dev/std)
+- [Effective Go](https://go.dev/doc/effective_go)
+- [The Go Programming Language Specification](https://go.dev/ref/spec)
+- [The Go Blog](https://go.dev/blog/)
+- [Go Forum](https://forum.golangbridge.org/)
+- [Go Proverbs](https://go-proverbs.github.io/)
+- [Practical Go Lessons](https://www.practical-go-lessons.com/)
+- [Tutorial: Create a Go module](https://go.dev/doc/tutorial/create-module)
+- [Using Go Modules](https://go.dev/blog/using-go-modules)
+- [How to Use Go Modules](https://www.digitalocean.com/community/tutorials/how-to-use-go-modules)
+- [Go Modules Reference](https://go.dev/ref/mod)
 
 ## Cloud 
 
@@ -195,7 +211,6 @@ Free DNS Service using [Namecheap](https://www.namecheap.com/)
 - [Traefik Labs](https://community.traefik.io/)
 - [Traefik Github](https://github.com/traefik/traefik)
 - [Monitor Traefik with Prometheus](https://github.com/vegasbrianc/docker-traefik-prometheus)
-
 
 ## Data Engineering
 
