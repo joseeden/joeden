@@ -1275,21 +1275,55 @@ Prompt:
 
 > /plan Polish the Probably Important app.
 > 
-> Review the app for small UX, accessibility, and consistency issues.
+> Add a landing page that introduces the application, including:
 > 
-> Keep the current feature scope unchanged.
+> - App name
+> - Short description
+> - Primary "Get Started" button that links to the authentication page
+> - Feature overview cards highlighting the main capabilities of the app
 > 
-> Check the dashboard, auth page, note creation page, note detail page, edit page, delete dialog, public share page, and search states.
+> Review the application for UX, accessibility, responsiveness, and visual consistency issues.
 > 
-> Improve empty states, loading states, button labels, form validation messages, focus states, and responsive layout where needed.
+> Keep the current feature set unchanged. Focus on improving the existing experience rather than adding new functionality.
 > 
-> Ensure light mode and dark mode are both readable.
+> Review and improve the following areas:
 > 
-> Run linting, formatting, and tests after changes.
+> - Landing page
+> - Authentication page
+> - Dashboard
+> - Note creation page
+> - Note detail page
+> - Note edit page
+> - Delete confirmation dialog
+> - Public sharing page
+> - Search results and empty states
 > 
-> Do not add folders, tags, password reset, email verification, realtime sync, or advanced search.
+> Where appropriate, improve:
 > 
-> After the plan is generated, wait for review before implementing it.
+> - Empty states
+> - Loading states
+> - Error states
+> - Button labels and action text
+> - Form validation messages
+> - Keyboard navigation and focus states
+> - Responsive layouts
+> - Visual consistency between pages
+> 
+> Ensure both light mode and dark mode are fully usable and maintain sufficient contrast.
+> 
+> Run linting, formatting, and tests after all changes.
+> 
+> Do not add new features such as:
+> 
+> - Folders
+> - Tags
+> - Password reset
+> - Email verification
+> - Real-time synchronization
+> - Advanced search
+> 
+> After generating the plan, wait for review and approval before making any changes.
+
 
 Final validation checklist:
 
