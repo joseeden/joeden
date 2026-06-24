@@ -1359,6 +1359,14 @@ Final validation checklist:
     PORT=3030 bun run dev
     ```
 
+Current view of the app in the browser:
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-06-24131132.png)
+
+</div>
+
 
 ## Testing the Application
 
