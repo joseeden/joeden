@@ -9,7 +9,7 @@ tags:
 - Next.js
 - TypeScript
 - Claude
-sidebar_position: 41
+sidebar_position: 1
 # last_update:
 #   date: 4/23/2019
 ---

@@ -1,15 +1,15 @@
 ---
 title: "Going Live"
 description: "Deployment notes for the Probably Important note-taking app"
-tags:
+tags: 
 - Web Development
+- HTML
+- CSS
+- JavaScript
 - Next.js
 - TypeScript
-- Vercel
-- Prisma
-- Neon PostgreSQL
-- better-auth
-sidebar_position: 42
+- Claude
+sidebar_position: 2
 ---
 
 
