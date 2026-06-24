@@ -1,5 +1,5 @@
 ---
-title: "Probably Important"
+title: "Probably Important: Development"
 description: "Note-taking application with Next.js, Bun, and Claude-assisted development"
 tags: 
 - Web Development
@@ -9,7 +9,7 @@ tags:
 - Next.js
 - TypeScript
 - Claude
-sidebar_position: 1
+sidebar_position: 41
 # last_update:
 #   date: 4/23/2019
 ---
