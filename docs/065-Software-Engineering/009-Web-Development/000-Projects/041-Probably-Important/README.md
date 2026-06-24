@@ -16,7 +16,7 @@ sidebar_position: 41
 
 import React from "react";
 
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000)](#) [![Next.js](https://img.shields.io/badge/Next.js-323330?style=for-the-badge&logo=next.js&logoColor=white)](#) [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)](#) [![Typescript](https://img.shields.io/badge/Typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](#) [![Neon PostgreSQL](https://img.shields.io/badge/Neon%20PostgreSQL-1E1E1E?style=for-the-badge&logo=postgresql&logoColor=white)](#) [![TipTap](https://img.shields.io/badge/TipTap-111827?style=for-the-badge&logoColor=white)](#) [![Claude](https://img.shields.io/badge/Claude-D97757?style=for-the-badge&logo=claude&logoColor=fff)](#)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000)](#) [![Next.js](https://img.shields.io/badge/Next.js-323330?style=for-the-badge&logo=next.js&logoColor=white)](#) [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)](#) [![Typescript](https://img.shields.io/badge/Typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](#) [![Neon PostgreSQL](https://img.shields.io/badge/Neon%20PostgreSQL-1E1E1E?style=for-the-badge&logo=postgresql&logoColor=white)](#) [![TipTap](https://img.shields.io/badge/TipTap-111827?style=for-the-badge&logoColor=white)](#) [![Claude](https://img.shields.io/badge/Claude-D97757?style=for-the-badge&logo=claude&logoColor=fff)](#) ![Playwright](https://img.shields.io/badge/-playwright-%232EAD33?style=for-the-badge&logo=playwright&logoColor=white) ![Vitest](https://img.shields.io/badge/-Vitest-252529?style=for-the-badge&logo=vitest&logoColor=FCC72B)
 
 ## Overview
 
@@ -338,8 +338,6 @@ Keep using Bun as the package manager, but run Next with the normal Node runtime
 ```
 
 ## Setting up the Claude Project 
-
-### Initialize
 
 To initialize the Claude project, run the following command in the project directory:
 
@@ -1267,6 +1265,66 @@ After the code is generated, test search:
 8. Confirm that public share links still work.
 9. Confirm that another user's notes do not appear in search results. -->
 
+### Final Polish
+
+After the main features are working, use this section to clean up the application before treating the project as complete.
+
+This step should focus on quality, consistency, and small UX fixes. Avoid adding new product features here.
+
+Prompt:
+
+> /plan Polish the Probably Important app.
+> 
+> Review the app for small UX, accessibility, and consistency issues.
+> 
+> Keep the current feature scope unchanged.
+> 
+> Check the dashboard, auth page, note creation page, note detail page, edit page, delete dialog, public share page, and search states.
+> 
+> Improve empty states, loading states, button labels, form validation messages, focus states, and responsive layout where needed.
+> 
+> Ensure light mode and dark mode are both readable.
+> 
+> Run linting, formatting, and tests after changes.
+> 
+> Do not add folders, tags, password reset, email verification, realtime sync, or advanced search.
+> 
+> After the plan is generated, wait for review before implementing it.
+
+Final validation checklist:
+
+1. Run the formatter.
+
+    ```bash
+    bun run format
+    ```
+
+2. Run linting.
+
+    ```bash
+    bun run lint
+    ```
+
+3. Run tests, if Vitest has been configured.
+
+    **EDIT:** This unit testing is done on later step.
+
+    ```bash
+    bun run test
+    ```
+
+4. Build the app.
+
+    ```bash
+    bun run build
+    ```
+
+5. Start the app and test the main flows.
+
+    ```bash
+    PORT=3030 bun run dev
+    ```
+
 
 ## Testing the Application
 
@@ -1357,10 +1415,7 @@ We can ask Claude to test the app step by step:
 > 
 > If you find an issue, explain the problem, fix it, and test the affected flow again.
 
-
-It may ask for permissions like running cURL or creating the Playwright configurations. It will also try to open a web browser to perform the sign up using test accounts. 
-
-Grant the permissions so it can open a browser and test the app.
+It may ask for permissions like running cURL running commands, opening a browser, and accessing the local development server. Approve these permissions so it can run the tests.
 
 :::info
 
@@ -1369,6 +1424,150 @@ Browser testing is powerful, but it can use a lot of tokens because Claude needs
 Use it for important user flows and after larger UI changes.
 
 :::
+
+After you approve the permissions, Claude will go through the script ad create the necessary configuration and test files. 
+
+It will try opening a browser, and work through the app like a user. It may create a temporary test account, sign in, visit protected routes, create notes, use the TipTap toolbar, edit and delete notes, enable a public share link, and check that the shared URL works without being logged in.
+
+The expected output is not just "tests passed". Claude should give a short summary of what it checked and whether each flow passed or failed.
+
+For example:
+
+```text
+Browser validation completed.
+
+Passed:
+- Signup creates a new account and redirects to /dashboard.
+- Login works with the created test account.
+- /dashboard redirects unauthenticated users to /auth.
+- Notes can be created, edited, and deleted.
+- Rich text formatting is saved and rendered.
+- Public sharing creates a share URL that works in a logged-out browser context.
+
+Failed:
+- Search input is not available on the dashboard yet.
+```
+
+If Claude finds a bug, the expected behavior is:
+
+1. Explain the issue briefly.
+2. Fix only the affected code.
+3. Re-test the affected browser flow.
+4. Summarize the final result.
+
+In my case, Claude returned the summary of the tests, and the only failure was the edit page route returning a 404 error. After restarting the dev server, the edit test passed.
+
+```bash
+Test results summary
+
+┌─────┬───────────────────────────────────────┬────────┐
+│  #  │                 Test                  │ Status │
+├─────┼───────────────────────────────────────┼────────┤
+│ 1   │ Unauthenticated /dashboard → /auth    │ ✓      │
+├─────┼───────────────────────────────────────┼────────┤
+│ 2   │ Unauthenticated /notes/new → /auth    │ ✓      │
+├─────┼───────────────────────────────────────┼────────┤
+│ 3   │ Wrong password shows error            │ ✓      │
+├─────┼───────────────────────────────────────┼────────┤
+│ 4   │ Sign out → /auth                      │ ✓      │
+├─────┼───────────────────────────────────────┼────────┤
+│ 5   │ Create a note, land on note view      │ ✓      │
+├─────┼───────────────────────────────────────┼────────┤
+│ 6   │ Note appears in dashboard list        │ ✓      │
+├─────┼───────────────────────────────────────┼────────┤
+│ 7   │ Bold formatting saved (<strong>)      │ ✓      │
+├─────┼───────────────────────────────────────┼────────┤
+│ 8   │ H1 heading saved (<h1>)               │ ✓      │
+├─────┼───────────────────────────────────────┼────────┤
+│ 9   │ Edit a note title                     │ ✗ BUG  │
+├─────┼───────────────────────────────────────┼────────┤
+│ 10  │ Delete note via confirmation dialog   │ ✓      │
+├─────┼───────────────────────────────────────┼────────┤
+│ 11  │ Enable sharing, public URL accessible │ ✓      │
+├─────┼───────────────────────────────────────┼────────┤
+│ 12  │ Copy share URL → "Copied!"            │ ✓      │
+├─────┼───────────────────────────────────────┼────────┤
+│ 13  │ Disable sharing → public URL 404s     │ ✓      │
+└─────┴───────────────────────────────────────┴────────┘ 
+
+Bug found: Edit page 404
+
+Reproducer: curl http://localhost:3030/notes/any-id-here/edit returns HTTP 404.
+
+Fix: Stop and restart the dev server (bun dev). The Turbopack re-scan at startup will fully register the edit route.
+```
+
+Claude also created Playwright test files so the browser checks could be repeated later without manually clicking through the app every time.
+
+The generated test files are:
+
+```text
+project-probably-important/
+├── playwright.config.ts
+└── tests/
+    ├── global-setup.ts
+    └── app.spec.ts
+```
+
+The `global-setup.ts` file creates a temporary test user and saves an authenticated browser session. The `app.spec.ts` file then uses that session to test the main note workflows.
+
+You can run the browser test suite yourself after Claude creates it.
+
+First, make sure the development server is running:
+
+```bash
+PORT=3030 bun run dev
+```
+
+Then, from another terminal in the project directory, run:
+
+```bash
+bunx playwright test
+```
+
+The expected successful output should show the tests passing in Chromium.
+
+```text
+Running tests using 1 worker
+
+... passed
+```
+
+If a test fails, Playwright writes details into the `test-results/` folder. Open the relevant `error-context.md` file to see what happened on the page.
+
+```text
+project-probably-important/test-results/
+```
+
+Use this to decide whether the problem is:
+
+- A real application bug
+- A missing feature that has not been implemented yet
+- A brittle test selector
+- A local environment issue, such as the dev server, `DATABASE_URL`, or `BETTER_AUTH_URL`
+
+After a browser test run, validate the result manually at least once by opening the app yourself:
+
+```text
+http://localhost:3030
+```
+
+Check the flows that matter most:
+
+1. Sign up with a new test account.
+2. Sign out and sign back in.
+3. Create a note.
+4. Add rich text formatting.
+5. Edit the note.
+6. Delete a different test note.
+7. Turn public sharing on.
+8. Open the public share URL in a private browser window.
+9. Turn sharing off and confirm the public URL stops working.
+10. Search for notes if the search feature has already been implemented.
+
+If search has not been implemented yet, it is fine for Claude or Playwright to report it as missing. Treat that as a pending feature, not a failed browser setup.
+
+**UPDATE:** I decided not to implement search yet, since it is not part of the core note creation and sharing flows. It can be added later as a separate feature.
 
 ### Unit Tests with Vitest
 
@@ -1425,6 +1624,52 @@ After tests are added, run:
 bun run test
 ```
 
+After running the command, Vitest should print a summary of the test files it found and whether each test passed or failed.
+
+A successful run usually looks something like this:
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-06-24103035.png)
+
+</div>
+
+This means the unit tests completed successfully. At this point, read the test names and confirm they are testing the behavior you actually care about, not just checking that the current code returns something.
+
+If a test fails, Vitest will show:
+
+- The failing test name
+- The file and line number
+- The expected value
+- The received value
+- A stack trace or error message
+
+Use that output to decide whether the failure is caused by the application code or by a bad test.
+
+- If the application code is wrong, ask Claude to fix the smallest affected area and run `bun run test` again.
+
+- If the test is wrong, ask Claude to correct the test so it matches the intended behavior from `SPEC.md`.
+
+If Vitest says no tests were found, it means the setup exists but no matching test files have been created yet. In that case, ask Claude to add one small test file first, usually for validation or authorization helper logic.
+
+Example follow-up prompt:
+
+> `bun run test` completed, but I want to review the test quality.
+> 
+> Check the generated Vitest tests and confirm that they test the intended behavior from `SPEC.md`.
+> 
+> If any test only mirrors the current implementation without checking a real requirement, improve it.
+> 
+> Keep the test scope focused on unit tests. Do not add browser tests in this step.
+
+After the unit tests pass, they become part of the normal validation checklist:
+
+```bash
+bun run lint
+bun run test
+bun run build
+```
+
 :::info
 
 Review AI-generated tests carefully. Claude can write tests that match the current implementation too closely, even when the implementation has a bug.
@@ -1434,67 +1679,124 @@ Good tests should check expected behavior, edge cases, and failure cases.
 :::
 
 
-### Final Polish
 
-After the main features are working, use this section to clean up the application before treating the project as complete.
+## Ralph Loop
 
-This step should focus on quality, consistency, and small UX fixes. Avoid adding new product features here.
+The Ralph loop is a small shell script that repeatedly asks Claude Code to pick one unfinished task from `prd.json`, implement it, validate it, and mark the task as complete.
 
-Prompt:
+> See [Ralph Loop](/docs/075-Artificial-Intelligence/050-Claude-Code/053-Ralph-Loop.md) for more information.
 
-> /plan Polish the Probably Important app.
-> 
-> Review the app for small UX, accessibility, and consistency issues.
-> 
-> Keep the current feature scope unchanged.
-> 
-> Check the dashboard, auth page, note creation page, note detail page, edit page, delete dialog, public share page, and search states.
-> 
-> Improve empty states, loading states, button labels, form validation messages, focus states, and responsive layout where needed.
-> 
-> Ensure light mode and dark mode are both readable.
-> 
-> Run linting, formatting, and tests after changes.
-> 
-> Do not add folders, tags, password reset, email verification, realtime sync, or advanced search.
-> 
-> After the plan is generated, wait for review before implementing it.
+The important files for this project are:
 
-Final validation checklist:
+| File       | Purpose                                                                 |
+| ---------- | ----------------------------------------------------------------------- |
+| `ralph.sh`  | Runs Claude Code in a loop and gives it the project-specific prompt.   |
+| `prd.json`  | Stores the task list and the `passes` flag for each task.              |
+| `SPEC.md`   | Defines the approved product and technical direction for the app.      |
+| `CLAUDE.md` | Gives Claude Code project-specific conventions and guardrails.         |
+| `agent-progress.txt` | Stores a running memory of what happened in previous iterations. |
 
-1. Run the formatter:
+The `agent-progress.txt` file is created by the script if it does not exist yet. It gives Claude a running memory of what happened in previous iterations.
 
-    ```bash
-    bun run format
-    ```
+:::info 
 
-2. Run linting:
+This project stores data in Neon PostgreSQL through Prisma, so any database task should use `prisma/schema.prisma`, `lib/db.ts`, and the Neon connection string in `.env.local`.
 
-    ```bash
-    bun run lint
-    ```
+:::
 
-3. Run tests, if Vitest has been configured:
+### Running the Script
 
-    ```bash
-    bun run test
-    ```
+To run the Ralph script, move into the project directory:
 
-4. Build the app:
+```bash
+cd project-probably-important
+```
 
-    ```bash
-    bun run build
-    ```
+Make the script executable if needed:
 
-5. Start the app and test the main flows:
+```bash
+chmod +x ralph.sh
+```
 
-    ```bash
-    PORT=3030 bun run dev
-    ```
+Run the loop with a maximum number of iterations:
+
+```bash
+./ralph.sh 5
+```
+
+Each iteration asks Claude Code to choose one task where `passes` is `false`.
+
+The script also supports overriding the app URL:
+
+```bash
+APP_URL=http://localhost:3030 ./ralph.sh 5
+```
+
+For this project, keep the local app on port `3030` so it matches `BETTER_AUTH_URL` and the Playwright configuration.
+
+### Ralph Prompt
+
+The `ralph.sh` script sends Claude Code a project-specific prompt like this:
+
+> You are running the Ralph loop for the Probably Important Next.js app.
+>
+> Project setup:
+>
+> - Bun is the package manager, but Next.js runs on the normal Node runtime.
+> - The app uses Next.js 16, React 19, TypeScript, Tailwind CSS 4, better-auth, Prisma 7, Neon PostgreSQL, TipTap, and Playwright.
+> - Do not use SQLite or Bun SQLite. Persistence goes through Prisma and Neon PostgreSQL.
+> - Keep secrets in `.env.local`. Never print or commit `DATABASE_URL`, `BETTER_AUTH_SECRET`, or `BETTER_AUTH_URL`.
+> - The development app URL is `http://localhost:3030`.
+>
+> Pick one task from `prd.json` where `passes=false`.
+>
+> You do not have to go in order. Choose the best next task based on dependencies, risk, and what is already implemented.
+>
+> Read `SPEC.md` and `CLAUDE.md` before changing code. Follow the existing root-level `app/`, `components/`, `lib/`, `prisma/`, and `tests/` structure. Use Prisma models and the `db` client in `lib/db.ts` for database work. Enforce note ownership on the server for every private note operation.
+
+This keeps Ralph focused on the actual project instead of the course defaults.
+
+It is recommended to make the prompt as specific as possible for the project. The more context you give Claude Code, the better it can implement tasks without introducing bugs or changing the intended behavior.
+
+### Validation After Each Iteration
+
+After each task, Ralph asks Claude to run the smallest useful validation first.
+
+For most code changes:
+
+```bash
+bun run lint
+```
+
+For framework, auth, database, route, or build-sensitive changes:
+
+```bash
+bun run build
+```
+
+For user flows:
+
+```bash
+bunx playwright test
+```
+
+If a validation command cannot run because the Neon database, environment variables, or dev server are not available, Claude should write the exact blocker in `agent-progress.txt` instead of pretending the task passed.
+
+When a task is complete, Claude should:
+
+1. Mark only that task as `"passes": true` in `prd.json`.
+2. Update `agent-progress.txt`.
+3. Commit the task if the working tree contains only the intended changes.
+
+:::info
+
+The Ralph loop is useful beyond this project. The reusable pattern is documented in [Ralph Loop](/docs/075-Artificial-Intelligence/050-Claude-Code/053-Ralph-Loop.md).
+
+:::
 
 ## Troubleshooting 
 
-### Hooks not working 
+#### Hooks not working 
 
 If you used the `PostToolUse` hook to run a hook (e.g., formatter) after every edit or write, but it does not seem to be working, below are some places to check.
 
