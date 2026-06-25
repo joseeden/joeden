@@ -8,5 +8,5 @@ import (
 func main() {
 	args := os.Args
 	fmt.Printf("Hello, World!\n")
-	fmt.Printf("Arguments: %v\n", args[1:len(args)])
+	fmt.Printf("Arguments: %v\n", args[1:100])
 }

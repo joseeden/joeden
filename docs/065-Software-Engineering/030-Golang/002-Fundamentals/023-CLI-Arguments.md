@@ -8,7 +8,7 @@ tags:
 - DevOps
 - Cloud
 - Golang
-sidebar_position: 20
+sidebar_position: 23
 last_update:
   date: 7/19/2023
 ---
@@ -16,23 +16,9 @@ last_update:
 
 ## Overview
 
-This is a simple way to accept and use command-line arguments in a Go program.
+You can pass arguments to a Go program from the command line. These arguments are available through the `os.Args` slice in the `os` package.
 
-- Use `os.Args` to get arguments
-- `os.Args` includes the program name
-- Slice the arguments to exclude the program name
-
-This helps you write programs that react to inputs like `go run main.go hello world`.
-
-## Create the Program
-
-To read command-line inputs in Go, use the `os` package.
-
-- `os.Args` returns a slice of strings
-- First item is the program name
-- The rest are your arguments
-
-Here’s a sample program:
+Sample program: 
 
 ```go
 package main
@@ -49,97 +35,146 @@ func main() {
 }
 ```
 
-Run on the terminal:
+The os.Args slice contains everything passed to the program:
+
+- The path to the executable (`os.Args[0]`)
+- Any command-line arguments (`os.Args[1]`, `os.Args[2]`, and so on)
+
+An argument is any value that is passed to the program when it is executed. It can be a string, number, or any other data type. The syntax is like this:
+
+```bash
+go run main.go <argument1> <argument2> <argument3> ...
+```
+
+Before we run the program, initialize the Go module first:
+
+```bash
+go mod init cli  ## any name works
+```
+
+This will create a `go.mod` which contains:
+
+```bash
+module cli
+
+go 1.22.0 
+```
+
+## Running without Arguments
+
+Run the program with no arguments:
 
 ```bash
 go run main.go 
-```
-
-Expected result:
-
-```sh
-Hello, World!
-Arguments: [/tmp/go-build1001234567/b001/exe/main] 
-```
-
-## Passing the Argument 
-
-Now run the program with the argument `first`:
-
-```bash
-go run main.go first 
 ```
 
 Output: 
 
 ```sh
 Hello, World!
-Arguments: [/tmp/go-build1001234567/b001/exe/main first] 
+Arguments: [/tmp/go-build1001234567/b001/exe/main] 
 ```
 
-We can pass multiple arguments, `first` and `second`, and it will output both:
+Since there were no arguments passed, the output only shows the path to the temporary binary that Go created to run the program. 
+
+```bash
+/tmp/go-build1001234567/b001/exe/main 
+```
+
+This is the first element of `os.Args`, which is always the path to the executable, and any additional arguments will follow in the slice.
+
+## Passing an Argument 
+
+Now run the program with the argument `oxford`:
+
+```bash
+go run main.go oxford
+```
+
+Output: 
 
 ```sh
 Hello, World!
-Arguments: [/tmp/go-build1001234567/b001/exe/main first second] 
+Arguments: [/tmp/go-build1001234567/b001/exe/main oxford] 
 ```
 
-In the output, we can see that it returned three arguments: 
-
-- `/tmp/go-build1001234567/b001/exe/main`
-- `first`
-- `second`
-
-The first argument is always index 0, so the real arguments actually starts from index 1.
-
-#### Explanation 
-
-When you use:
+We can also pass multiple arguments, `oxford` and `standford`:
 
 ```bash
-go run main.go first
+go run main.go oxford standford
 ```
 
-Go doesn't compile and run `main.go` directly in your current directory. Instead, it:
-- Compiles it into a temporary binary in a path like `/tmp/go-build.../exe/main`
-- Then runs **that** temporary binary with your arguments (in this case, `first`)
+Output: 
 
-Then `os.Args` will show:
-
-- The full path to the binary being executed (the first element)
-- Followed by any arguments you passed (like `first`)
-
-So the full output is just Go showing:
-
-```go
-[<path to temp binary> first]
+```sh
+Hello, World!
+Arguments: [/tmp/go-build1001234567/b001/exe/main oxford standford] 
 ```
 
-#### Build Manually 
+The values in `os.Args` are stored as follows:
 
-If you run `go build` first:
+| Index | Value                                   |
+| ----: | --------------------------------------- |
+|   `0` | `/tmp/go-build1001234567/b001/exe/main` |
+|   `1` | `oxford`                                |
+|   `2` | `standford`                             |
+
+**Note:** The first argument (the path to the executable) is always index 0 (`os.Args[0]`), so the real arguments actually start from index 1 (`os.Args[1]`).
+
+This is because go run does not execute `main.go` directly. Instead, it:
+
+1. Compiles it into a temporary binary in a path like `/tmp/go-build.../exe/main`
+2. Then runs that temporary binary with your arguments
+
+As a result, `os.Args[0]` contains the temporary executable's path, followed by your command-line arguments.
+
+If you build the program yourself instead:
 
 ```bash
-go build -o myapp
-./myapp first
+go build -o cli   ## "cli" is the name of binary I chose, but you can name it anything
 ```
 
-Then `os.Args` will look like:
-```go
-[./myapp first]
+This should usually complete in less than a second (or a few seconds the first time). If its taking too long, you can run this to see what is happening:
+
+```bash
+go build -x -o cli
 ```
 
-Same behavior, just a different binary path.
+Alternatively, you can also time it:
 
+```bash
+time go build -o cli
+```
+
+**Note**: When you run `go build`, Go checks the repository's VCS (Git) information and embeds build metadata into the binary by default. If you're using WSL and your project is located under `/mnt/c`, this step can be slow because Git has to scan the Windows filesystem.
+
+If you don't need the VCS metadata, you can disable it:
+
+```bash
+go build -buildvcs=false -o cli
+```
+
+Once the build is complete, you can run the binary with arguments:
+
+```bash
+./cli oxford standford harvard 
+```
+
+Output:
+
+```bash
+Hello, World!
+Arguments: [/tmp/go-build1001234567/b001/exe/main oxford standford harvard] 
+```
 
 ## Accessing Specific Arguments
 
-You can select a specific argument using an index.
+To access specific arguments, you can use indexing. For example, to access the first argument:
+```go
+fmt.Printf("Arguments: %v\n", args[1])
+```
 
-- Use `args[1]` for the first real argument
-- Use a slice like `args[1:3]` to get a range
-
-Modify the previous code so that it only returns the first actual argument which is at index 1.
+The full program now looks like this: 
 
 ```go
 package main
@@ -156,17 +191,17 @@ func main() {
 }
 ```
 
-Now run the program and pass three arguments: `first`, `second`, and `third`.
+Now run the program and pass three arguments: `ted`, `robin`, and `barney`.
 
 ```bash
-go run main.go first second third
+go run main.go ted robin barney
 ```
 
-Since we only ask for the first item, it will output just the `first`:
+It would return just the first argument:
 
 ```bash
 Hello, World!
-Arguments: first 
+Arguments: ted
 ```
 
 Notice that the output doesn't have square brackets anymore. That's because we're accessing a **single element** (`args[1]`) of the slice, not printing the whole slice. 
@@ -202,6 +237,8 @@ func main() {
 	fmt.Printf("Arguments: %v\n", args[1:3])  // excluding element at index 3
 }
 ```
+
+Here, the index `0` is skipped, which means the temporary binary path is not included in the output. The slice `args[1:3]` will include only the first two arguments passed to the program.
 
 Now run the program and pass the following arguments: 
 
@@ -248,7 +285,7 @@ func main() {
 But only provide a few arguments:
 
 ```bash
-go run main.go first second third fourth 
+go run main.go john paul george ringo
 ```
 
 We'll get a runtime error like this:
@@ -268,7 +305,9 @@ The error occurs because `os.Args` only contains 5 elements in this case (includ
       
 ## Preventing Index Errors 
 
-Accessing beyond the available number of arguments can cause runtime errors. To avoid them:
+Accessing beyond the available number of arguments can cause runtime errors. 
+
+To avoid them:
 
 - Use `len(args)` to determine how many arguments are available  
 - Avoid accessing indexes outside the valid range of the slice
@@ -314,7 +353,7 @@ To test arguments in VS Code, add them in the launch config.
 		go mod init cli  ## any name works
 		```
 
-2. Click Run --> Add configuration 
+2. Click Run ➜ Add configuration 
 3. Select `Go: Launch Package`
 4. This will create a `.vscode/launch.json`
 5. Add `args` to your configuration
@@ -338,7 +377,7 @@ To test arguments in VS Code, add them in the launch config.
     ```
 
 6. Save the file.
-7. Click Run --> Run Without Debugging
+7. Click Run ➜ Run Without Debugging
 8. In the Debug Console, you should see:
 
 		```
@@ -348,4 +387,3 @@ To test arguments in VS Code, add them in the launch config.
 		Arguments: [first second third fourth]
 		Process 28268 has exited with status 0
 		```
-
