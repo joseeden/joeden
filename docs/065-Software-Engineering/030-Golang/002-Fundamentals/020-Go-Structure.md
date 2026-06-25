@@ -179,6 +179,27 @@ Run the built program on Windows:
 .\first-app.exe
 ```
 
+## Print Results
+
+There are multiple ways to print results in Go. The simplest is `fmt.Println()`.
+
+```go
+fmt.Println(results)
+```
+
+`fmt.Println()` prints the result with a new line.
+
+`fmt.Print()` also writes output, but it does not automatically add a new line.
+
+| Function        | Behavior                                    |
+| --------------- | ------------------------------------------- |
+| `fmt.Print()`   | Prints output without adding a new line.    |
+| `fmt.Println()` | Prints output and adds a new line.          |
+| `fmt.Printf()`  | Prints formatted output using placeholders. |
+
+For simple terminal output, `fmt.Println()` is usually the easiest choice.
+
+
 ## File Naming
 
 Go file names should be simple and descriptive.
