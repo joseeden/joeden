@@ -324,3 +324,11 @@ Adjusted Future Value:  824.4592826089025
 ```
 
 Since the inflation rate rate is lower than the return rate, the adjusted future value is lower than the future value.
+
+:::info 
+
+The main difference with constannts is that they cannot be changed after they are set. If you try to change the value of a constant, Go will throw an error.
+
+On the other hand, variables can be changes or re-assigned to a new value at any time.
+
+:::
