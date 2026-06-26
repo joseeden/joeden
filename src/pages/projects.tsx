@@ -363,6 +363,7 @@ const title = "Projects";
 
 const categories = [
   { id: "devops", label: "DevOps" },
+  { id: "observability", label: "Observability" },
   { id: "security", label: "Security" },
   { id: "webdev", label: "Web Development" },
   { id: "dataanalysis", label: "Data Analysis" },
