@@ -38,15 +38,15 @@ const projects: ProjectData[] = [
     image: require(`/img/docs/Screenshot-2025-03-24-075843.png`),
     tags: ["Web Development", "JavaScript"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
-  },  
+  },   
   {
-    title: "KodeKloud Engineer Labs",
-    description: "Collection of 130+ labs from KodeKloud Engineer platform",
-    url: "https://github.com/joseeden/KodeKloud_Engineer_Labs/blob/main/README.md", 
-    image: require(`/img/docs/all-things-devops-kodekloud-img.png`),
-    tags: ["DevOps", "Docker", "Kubernetes"],
-    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
-  },    
+    title: "Probably Important",
+    description: "Full-stack note-taking app with auth and rich text editing.",
+    url: `${baseUrl}/docs/Software-Engineering/Web-Development/Projects/Probably-Important/`,
+    image: require(`/img/docs/Screenshot2026-06-24131132.png`),
+    tags: ["Web Development", "TypeScript"],
+    // level: "Intermediate", // Full-stack Next.js app with auth, database, and rich text editing
+  },  
   {
     title: "Capstone: Google IT Automation with Python",
     description: "Collection of scripts for Google IT Automation with Python Course.",
@@ -157,6 +157,14 @@ const projects: ProjectData[] = [
     tags: ["Artificial Intelligence", "LLM"],
     // level: "Intermediate", // Perfect for an engineering sandbox that focuses on decoupled architecture
   },  
+  {
+    title: "KodeKloud Engineer Labs",
+    description: "Collection of 130+ labs from KodeKloud Engineer platform",
+    url: "https://github.com/joseeden/KodeKloud_Engineer_Labs/blob/main/README.md", 
+    image: require(`/img/docs/all-things-devops-kodekloud-img.png`),
+    tags: ["DevOps", "Docker", "Kubernetes"],
+    // level: "Basic",     // "Basic", "Intermediate", "Advanced"
+  },     
   {
     title: "CI/CD Pipeline for Flask Application",
     description: "Automated code testing, packaging, and deployment.",
