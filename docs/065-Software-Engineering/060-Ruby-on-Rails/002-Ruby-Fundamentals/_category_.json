@@ -1,8 +1,4 @@
 {
   "label": "Ruby Fundamentals",
-  "position": 2,
-  "link": {
-    "type": "doc",
-    "id": "ruby-fundamentals-starter-notes"
-  }
+  "position": 2
 }

@@ -1,6 +1,6 @@
 ---
 title: "Ruby"
-id: ruby-fundamentals-starter-notes
+# id: ruby-fundamentals-starter-notes
 description: "Starter Notes on Ruby"
 tags: 
 - Computer Science

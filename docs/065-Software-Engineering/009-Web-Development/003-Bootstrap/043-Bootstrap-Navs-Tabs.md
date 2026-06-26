@@ -41,6 +41,8 @@ This guide focuses on how to style them.
 
 ## Sticky Tab Bar 
 
+### Problem: Auto-scrolling on Tab Click 
+
 Sometimes when you click a tab, the content changes correctly but the page also scrolls down. This can hide part or all of the tab bar.
 
 <details>
@@ -199,7 +201,9 @@ Add some **padding-top** to your tab content area to create space *below* the st
 This ensures there's enough space above the content so it's not hidden behind the sticky tabs.
 
 
-## Prevent Auto-scrolling, Just Toggle Panels
+## Toggle Panels
+
+### Problem: Auto-scrolling on Tab Click (Bootstrap 5)
 
 Bootstrap 5 triggers scrolling by default when it activates a tab (changing tabs), but you can the scroll jump entirely so it only swaps the content without moving the page at all.
 
