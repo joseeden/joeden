@@ -44,7 +44,7 @@ const projects: ProjectData[] = [
     description: "Full-stack note-taking app with authentication and rich text editing",
     url: `${baseUrl}/docs/Software-Engineering/Web-Development/Projects/Probably-Important/`,
     image: require(`/img/docs/Screenshot2026-06-24131132.png`),
-    tags: ["Web Development", "TypeScript"],
+    tags: ["Web Development", "JavaScript"],
     // level: "Intermediate", // Full-stack Next.js app with auth, database, and rich text editing
   },  
   {
