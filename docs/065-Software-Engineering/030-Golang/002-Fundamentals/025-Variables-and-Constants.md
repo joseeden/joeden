@@ -84,6 +84,14 @@ Variables can be declared inside a function or outside a function.
     }
     ```
 
+    Note that when you declare a variable outside a function, you have to use the `var` keyword. You cannot use the `:=` syntax for package-level variables.
+
+    This will NOT work:
+
+    ```go
+    greeting := "Hello"
+    ```
+
 ## Basic Types
 
 | Type      | Meaning                                 | Example                 |
