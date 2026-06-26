@@ -209,7 +209,7 @@ That means the installed version does not yet support the newer schema.
 
 
 
-## Build failure: `reading-time/lib/reading-time`
+## Build failure: `reading-time`
 
 **Issue**: GitHub Actions build failed with:
 
@@ -243,7 +243,7 @@ Notes:
 
 ## Client build failure: missing `stream` module
 
-**Issue**: After fixing the `reading-time` import (see [`reading-time/lib/reading-time`](#build-failure-reading-time-lib-reading-time)), the client build failed with:
+**Issue**: After fixing the `reading-time` import (see [`reading-time/lib/reading-time`](#build-failure-reading-time)), the client build failed with:
 
 ```text
 Module not found: Error: Can't resolve 'stream'

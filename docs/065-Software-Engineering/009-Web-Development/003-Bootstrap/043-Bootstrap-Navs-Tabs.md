@@ -149,7 +149,7 @@ You can make the navtabs stick to the top of the section when scrolling, by usin
 }
 ```
 
-Note that this only ensures that the tab bar is always in view, **but it doesn't prevent the auto-scrolling** behavior. To do this, please see [Prevent Auto-scrolling, Just Toggle Panels.](#prevent-auto-scrolling-just-toggle-panels)
+Note that this only ensures that the tab bar is always in view, **but it doesn't prevent the auto-scrolling** behavior. To do this, please see [Prevent Auto-scrolling, Just Toggle Panels.](#toggle-panels)
 
 <div class="img-center"> 
 

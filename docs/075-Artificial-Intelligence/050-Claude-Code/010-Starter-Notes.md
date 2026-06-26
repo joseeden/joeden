@@ -151,7 +151,7 @@ To completely clear the context and start fresh, use:
 
 For permanent project details you want remembered across sessions, save them in a `CLAUDE.md` file so the information never has to be rediscovered from scratch.
 
-See the [CLAUDE.md](#claude-md) section below for more details.
+See the [CLAUDE.md](#claudemd) section below for more details.
 
 
 <!-- ## Context Window Limits
@@ -208,7 +208,7 @@ To prevent mistakes, give Claude a quick rundown of your project before it start
 
 
 
-## `CLAUDE.md`
+## CLAUDE.md
 
 Claude can store project context in a file called `CLAUDE.md`. This file contains the core project information that Claude can reference in future interactions:
 
