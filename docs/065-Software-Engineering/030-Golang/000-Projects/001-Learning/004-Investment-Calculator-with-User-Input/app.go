@@ -12,6 +12,10 @@ This program prompts the user for the following inputs:
 
 It also calculates the adjusted future value of the investment based on a constant inflation rate (inflationRate)
 
+To run the code:
+
+	go run app.go
+
 */
 
 import (
@@ -33,6 +37,8 @@ func main() {
 	futureValue := investmentAmount * math.Pow(1+returnRate, float64(years))
 	adjustedFutureValue := futureValue / math.Pow(1+inflationRate, float64(years))
 
-	fmt.Println("Future Value: ", futureValue)
-	fmt.Println("Adjusted Future Value: ", adjustedFutureValue)
+	formattedFutureValue := fmt.Sprintf("Future Value: %.2f\n", futureValue)
+	formattedAdjustedFutureValue := fmt.Sprintf("Adjusted Future Value: %.2f\n", adjustedFutureValue)
+
+	fmt.Print(formattedFutureValue, formattedAdjustedFutureValue)
 }

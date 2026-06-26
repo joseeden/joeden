@@ -15,6 +15,10 @@ Future Value = Investment Amount * (1 + Interest Rate) ^ Number of Years
 
 Future Value (adjusted for inflation) = Future Value / (1 + Inflation Rate) ^ Number of Years
 
+To run the code:
+
+	go run app.go
+
 */
 
 import (

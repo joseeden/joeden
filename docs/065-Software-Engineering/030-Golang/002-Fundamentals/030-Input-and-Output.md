@@ -1,6 +1,6 @@
 ---
-title: "User Input"
-description: "User Input"
+title: "Input and Output"
+description: "User Input and Output"
 tags: 
 - Computer Science
 - Application Development
@@ -18,7 +18,6 @@ last_update:
 Go can read values entered in the terminal with functions from the `fmt` package.
 
 For simple command-line programs, `fmt.Scan()` is an easy way to ask the user for a value and store it in a variable.
-
 
 ## Scan A Value
 
@@ -158,56 +157,6 @@ Go needs the type because there is no value it can use to infer the type.
 
 **Note**: Short variable declaration cannot be used here, because there is no initial value to infer the type from.
 
-## Example: Investment Calculator Input
-
-This version asks the user for the investment amount, expected return rate, and number of years.
-
-```go
-package main
-
-import (
-	"fmt"
-	"math"
-)
-
-func main() {
-	const inflationRate = 0.02
-	var investmentAmount, years float64
-	returnRate := 0.05
-
-	fmt.Print("Enter the investment amount: ")
-	fmt.Scan(&investmentAmount)
-
-	fmt.Print("Enter the number of years to invest: ")
-	fmt.Scan(&years)
-
-	futureValue := investmentAmount * math.Pow(1+returnRate, float64(years))
-	adjustedFutureValue := futureValue / math.Pow(1+inflationRate, float64(years))
-
-	fmt.Println("Future Value: ", futureValue)
-	fmt.Println("Adjusted Future Value: ", adjustedFutureValue)
-}
-```
-
-Run the program:
-
-```bash
-go run .
-```
-
-Example input:
-
-```bash
-Enter the investment amount: 1500
-Enter the number of years to invest: 21
-```
-
-Example output:
-
-```bash
-Future Value:  4178.943885602463
-Adjusted Future Value:  2757.166115370251
-```
 
 ## Scan Limitations
 
@@ -221,3 +170,85 @@ Adjusted Future Value:  2757.166115370251
 | Multi-word string | Not a good fit for beginner examples.        |
 
 For simple calculator input, `fmt.Scan()` is enough.
+
+
+
+## Formatting Floats 
+
+In Go, you can format floating-point numbers using the `fmt.Printf` function with format verbs. For example, `%.2f` formats a float with two decimal places.
+
+```go
+fmt.Printf("Future Value: %.2f\n", futureValue)
+fmt.Printf("Adjusted Future Value: %.2f\n", adjustedFutureValue)
+```
+
+Sample input with expected output would look like this:
+
+```bash
+## Input
+Enter the investment amount: 1000
+Enter the number of years to invest: 10
+
+## Output 
+Future Value: 1628.89
+Adjusted Future Value: 1335.64
+```
+
+**Note:** The `%.2f` format doesn't work with `fmt.Println()`, so you need to use `fmt.Printf()` for formatted output and add a newline character (`\n`) at the end of the string to move to the next line.
+
+If you use `fmt.Println()`, it will print the full precision of the float, which may not be desirable for user-facing output.
+
+```bash
+## Input
+Enter the investment amount: 1000
+Enter the number of years to invest: 10
+
+## Output 
+Future Value: %.2f 1628.8946267774415
+Adjusted Future Value: %.2f 1336.2609377526499
+```
+
+## Formatting Strings 
+
+We can use the `fmt.Sprintf()` function to format the string and return it, which can then be printed with `fmt.Print()`. This allows for more control over the output format.
+
+```go
+formattedFutureValue := fmt.Sprintf("Future Value: %.2f\n", futureValue)
+formattedAdjustedFutureValue := fmt.Sprintf("Adjusted Future Value: %.2f\n", adjustedFutureValue)
+
+fmt.Print(formattedFutureValue, formattedAdjustedFutureValue)
+```
+
+Same input with expected output would look like this:
+
+```bash
+## Input
+Enter the investment amount: 1000
+Enter the number of years to invest: 10
+
+## Output 
+Future Value: 1628.89
+Adjusted Future Value: 1335.64
+```
+
+As we can see, the output didn't change, but we now have more control over how we format the output and can easily reuse the formatted strings if needed.
+
+
+## Multiline Strings 
+
+We can also use backticks (`` ` ``) to create multiline strings in Go. This is useful for formatting output that spans multiple lines.
+
+```go
+multilineString := `This is a
+multiline string
+in Go.`
+fmt.Println(multilineString)
+```
+
+Output:
+
+```bash
+This is a
+multiline string
+in Go.
+```
