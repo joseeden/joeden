@@ -10,6 +10,18 @@ last_update:
 
 ## Overview 
 
+This project uses Boto3 to automate parts of a city service-request workflow for the **GetItDone** app. 
+
+The lab covers the following: 
+
+1. Store and retrieve request data with S3
+2. Publish monthly reports and charts
+3. Send threshold-based alerts with SNS
+4. Detect objects, text, language, translations, and sentiment
+
+
+## Using Boto3 
+
 Boto3 is the Python library used to interact with AWS. It lets us manage AWS services using code instead of the console.
 
 - Import boto3 to start using it
@@ -25,4 +37,3 @@ Some AWS services often used with Boto3.
 - **Comprehend** analyzes text for sentiment or meaning
 - **Rekognition** detects objects or text in images
 - **RDS**, **EC2**, and **Lambda** manage databases, virtual machines, and serverless functions
-
