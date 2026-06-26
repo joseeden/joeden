@@ -209,7 +209,7 @@ const projects: ProjectData[] = [
     description: "Serverless API built with HTTP-triggered endpoints.",
     url: `${baseUrl}/docs/Microsoft-Azure/Projects/Building-a-Weather-API-with-Azure-Function-App/`,
     image: require(`/img/docs/e7f31254-a5fe-4b38-9c54-0fab1631a229.png`),
-    tags: ["DevOps"],
+    tags: ["DevOps", "Azure", "Serverless"],
   },
   {
     title: "NGINX Deployment using Flux and Helm",
