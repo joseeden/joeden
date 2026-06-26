@@ -314,6 +314,24 @@
       }
     }
   }
+
+  @media (min-width: 501px) {
+    .card__body {
+      h2 {
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      p {
+        font-size: 12.25px;
+      }
+    }
+
+    .tag,
+    .card__footer a {
+      font-weight: 400;
+    }
+  }
 }
 
 @media (max-width: 500px) {

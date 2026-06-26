@@ -9,7 +9,7 @@ const baseUrl = "/joeden";
 const projects: ProjectData[] = [
   {
     title: "Link Shortener using NextJS",
-    description: "Full-stack link shortener application built with Github Copilot",
+    description: "Full-stack link shortener application built with Github Copilot and Next.js",
     url: `${baseUrl}/docs/Software-Engineering/Web-Development/Projects/Link-Shortener-NextJS/`, 
     image: require(`/img/docs/Screenshot2026-05-03131335.png`),
     tags: ["Web Development", "Javascript"],
@@ -17,7 +17,7 @@ const projects: ProjectData[] = [
   },  
   {
     title: "Swiftlink",
-    description: "A responsive landing page for a fictional logistics company",
+    description: "A responsive landing page for a fictional logistics company with modern sections",
     url: `${baseUrl}/docs/Software-Engineering/Web-Development/Projects/Swiftlink/`, 
     image: require(`/img/docs/Screenshot-2025-04-18-144904.png`),
     tags: ["Web Development", "JavaScript"],
@@ -25,7 +25,7 @@ const projects: ProjectData[] = [
   },  
   {
     title: "Circuit Minds",
-    description: "Landing page for a fictional electronics company",
+    description: "Landing page for a fictional electronics and engineering company",
     url: `${baseUrl}/docs/Software-Engineering/Web-Development/Projects/Circuit-Minds/`, 
     image: require(`/img/docs/Screenshot-2025-03-28-195824.png`),
     tags: ["Web Development", "JavaScript"],
@@ -33,7 +33,7 @@ const projects: ProjectData[] = [
   },  
   {
     title: "Just Keep Running",
-    description: "A simple landing page for a fictional running event",
+    description: "A simple landing page for a fictional running event with a signup form",
     url: `${baseUrl}/docs/Software-Engineering/Web-Development/Projects/Just-Keep-Running/`, 
     image: require(`/img/docs/Screenshot-2025-03-24-075843.png`),
     tags: ["Web Development", "JavaScript"],
@@ -41,7 +41,7 @@ const projects: ProjectData[] = [
   },   
   {
     title: "Probably Important",
-    description: "Full-stack note-taking app with auth and rich text editing.",
+    description: "Full-stack note-taking app with authentication and rich text editing",
     url: `${baseUrl}/docs/Software-Engineering/Web-Development/Projects/Probably-Important/`,
     image: require(`/img/docs/Screenshot2026-06-24131132.png`),
     tags: ["Web Development", "TypeScript"],
@@ -49,7 +49,7 @@ const projects: ProjectData[] = [
   },  
   {
     title: "Capstone: Google IT Automation with Python",
-    description: "Collection of scripts for Google IT Automation with Python Course.",
+    description: "Collection of scripts for Google IT Automation with Python Course",
     url: "https://github.com/joseeden/Capstone-Google-IT-Automation-with-Python/blob/main/README.md", 
     image: require(`/img/docs/coursera-google-it-automation-with-python.png`),
     tags: ["DevOps", "Python", "Automation"],
@@ -57,7 +57,7 @@ const projects: ProjectData[] = [
   },   
   {
     title: "AI Content Processing Workflow",
-    description: "LLM workflow for extracting and transforming website content.",
+    description: "LLM workflow for extracting and transforming website content",
     url: "https://github.com/joseeden/llm-engineering-sandbox/blob/master/building-ai-workflows/05-multi-step-workflow/README.md", 
     image: require(`/img/docs/ai-content-process-thumbnail.png`),
     tags: ["Artificial Intelligence", "LLM"],
@@ -65,7 +65,7 @@ const projects: ProjectData[] = [
   },    
   {
     title: "AI Invoice Processing Pipeline",
-    description: "Automated invoice extraction using LLM structured outputs.",
+    description: "Automated invoice extraction using LLM structured outputs and validation",
     url: "https://github.com/joseeden/llm-engineering-sandbox/blob/master/building-ai-workflows/07-ai-invoice-procesing-pipeline/README.md", 
     image: require(`/img/docs/ai-invoice-processing-pipeline-2.png`),
     tags: ["Artificial Intelligence", "LLM"],
@@ -73,7 +73,7 @@ const projects: ProjectData[] = [
   },    
   {
     title: "AI Content Publishing Workflow",
-    description: "Multi-step AI workflow for content, image, and social post generation.",
+    description: "Multi-step AI workflow for content, image, and social post generation",
     url: "https://github.com/joseeden/llm-engineering-sandbox/blob/master/building-ai-workflows/10-ai-content-publishing-pipeline/README.md", 
     image: require(`/img/docs/ai-content-publishing-workflow-thumbnail.png`),
     tags: ["Artificial Intelligence", "LLM"],
@@ -81,7 +81,7 @@ const projects: ProjectData[] = [
   },    
   {
     title: "AI Content Workflow with HITL",
-    description: "Multi-step content generation with human-in-the-loop (HITL) review.",
+    description: "Multi-step content generation with human-in-the-loop (HITL) review and approval",
     url: "https://github.com/joseeden/llm-engineering-sandbox/blob/master/building-ai-workflows/11-ai-content-workflow-with-hitl/README.md", 
     image: require(`/img/docs/ai-content-workflow-with-hitl.png`),
     tags: ["Artificial Intelligence", "LLM"],
@@ -89,7 +89,7 @@ const projects: ProjectData[] = [
   },    
   {
     title: "Slack Integrations for AI Workflows",
-    description: "Extending AI workflows with Slack notifications for real-time updates.",
+    description: "Extending AI workflows with Slack notifications for real-time status updates",
     url: "https://github.com/joseeden/llm-engineering-sandbox/blob/master/building-ai-workflows/20-slack-integration-for-ai-workflows/README.md", 
     image: require(`/img/docs/slack-integrations-forai-workflow-thumbnail.png`),
     tags: ["Artificial Intelligence", "LLM"],
@@ -97,7 +97,7 @@ const projects: ProjectData[] = [
   },    
   {
     title: "WhatsApp API for AI Workflows",
-    description: "Automated WhatsApp notifications for multi-step AI workflows.",
+    description: "Automated WhatsApp notifications and alerts for multi-step AI workflows",
     url: "https://github.com/joseeden/llm-engineering-sandbox/blob/master/building-ai-workflows/21-whatsapp-integration-for-ai-workflows/README.md", 
     image: require(`/img/docs/whatsapp-integrations-forai-workflow-thumbnail.png`),
     tags: ["Artificial Intelligence", "LLM"],
@@ -105,7 +105,7 @@ const projects: ProjectData[] = [
   },    
   {
     title: "AI Blog Post Generator",
-    description: "Using AI to generate blog posts from outlines and example posts.",
+    description: "Using AI to generate structured blog posts from outlines and example posts",
     url: "https://github.com/joseeden/llm-engineering-sandbox/blob/master/building-ai-workflows/09-ai-blog-post-generator/README.md", 
     image: require(`/img/docs/ai-blog-psot-generator-thumbnail.png`),
     tags: ["Artificial Intelligence", "LLM"],
@@ -129,28 +129,28 @@ const projects: ProjectData[] = [
   },    
   {
     title: "Multi-Tool Customer Service Agent",
-    description: "AI agent using tool calling, customer verification, and refund workflows.",
+    description: "AI agent using tool calling, customer verification, and refund workflows",
     url: "https://github.com/joseeden/llm-engineering-sandbox/tree/master/building-ai-agents/03-multi-tool-customer-service-agent/README.md",
     image: require(`/img/docs/multi-tool-cs-agent-proj.png`),
     tags: ["Artificial Intelligence", "LLM"],
   },
   {
     title: "Multi-Agent Research Workflow",
-    description: "AI research assistant using planner, search, and report agents.",
+    description: "AI research assistant using planner, web search, and reporting agents",
     url: "https://github.com/joseeden/LLM-Engineering-Sandbox/blob/master/building-ai-agents/05-multi-agent-research-workflow/README.md",
     image: require(`/img/docs/multi-agent-workflow-thumbnail.png`),
     tags: ["Artificial Intelligence", "LLM"],
   },  
   {
     title: "CrewAI Research Report Agent",
-    description: "Multi-agent research workflow built with CrewAI and SearXNG tooling.",
+    description: "Multi-agent research workflow built with CrewAI and SearXNG tooling for reports",
     url: "https://github.com/joseeden/LLM-Engineering-Sandbox/blob/master/crewai-projects/01-research-report-agent/README.md",
     image: require(`/img/docs/crewai-research-report-agent-thumbnail.png`),
     tags: ["Artificial Intelligence", "LLM"],
   },
   {
     title: "LLM Engineering Sandbox",
-    description: "Collection of engineering patterns for building decoupled LLM integrations.",
+    description: "Collection of engineering patterns for building decoupled LLM integrations",
     url: "https://github.com/joseeden/LLM-Engineering-Sandbox/blob/master/README.md", 
     // image: require(`/img/docs/llm-engineering-thumbnail.png`), 
     image: require(`/img/docs/llm-engineering-thumbnail.jpg`), 
@@ -159,7 +159,7 @@ const projects: ProjectData[] = [
   },  
   {
     title: "KodeKloud Engineer Labs",
-    description: "Collection of 130+ labs from KodeKloud Engineer platform",
+    description: "Collection of 130+ labs and exercises from the KodeKloud Engineer platform",
     url: "https://github.com/joseeden/KodeKloud_Engineer_Labs/blob/main/README.md", 
     image: require(`/img/docs/all-things-devops-kodekloud-img.png`),
     tags: ["DevOps", "Docker", "Kubernetes"],
@@ -167,7 +167,7 @@ const projects: ProjectData[] = [
   },     
   {
     title: "CI/CD Pipeline for Flask Application",
-    description: "Automated code testing, packaging, and deployment.",
+    description: "Automated code testing, packaging, and deployment with Jenkins",
     url: `${baseUrl}/docs/Version-Control-and-CICD/Jenkins-Labs/Single-Server-Deployment`, 
     image: require(`/img/docs/jenkins-flask.png`),
     tags: ["DevOps", "Docker", "Python"],
@@ -175,7 +175,7 @@ const projects: ProjectData[] = [
   },   
   {
     title: "AWS Serverless Deployment using Jenkins",
-    description: "Using Jenkins to deploy a serverless application",
+    description: "Using Jenkins to deploy a serverless application to AWS Cloud",
     url: `${baseUrl}/docs/Amazon-Web-Services/Projects/Deploy-Serverless-App-using-Jenkins/`, 
     image: require(`/img/docs/AWS-SAM.png`),
     tags: ["DevOps", "AWS", "Serverless"],
@@ -183,7 +183,7 @@ const projects: ProjectData[] = [
   },  
   {
     title: "Setting Up Jenkins with Ansible",
-    description: "Automated Jenkins installation and setup using Ansible.",
+    description: "Automated Jenkins installation and setup using Ansible playbooks",
     url: `${baseUrl}/docs/Version-Control-and-CICD/Jenkins-Labs/Setup-Ansible-and-Jenkins/`, 
     image: require(`/img/docs/ansible-jenkins.png`),
     tags: ["DevOps", "Ansible", "Jenkins"],
@@ -191,71 +191,71 @@ const projects: ProjectData[] = [
   },  
   {
     title: "Kong Gateway Setup with Docker Compose",
-    description: "Setup Kong API Gateway with ELK, Prometheus, Grafana, and more.",
+    description: "Setup Kong API Gateway with ELK, Prometheus, Grafana, and more",
     url: `${baseUrl}/docs/Software-Engineering/Kong-API-Gateway/Containerized-Kong-and-Other-Apps`, 
     image: require(`/img/docs/kong-elk-prom-graf.png`),
     tags: ["DevOps", "Docker", "Observability"],
     // level: "Basic",     // "Basic", "Intermediate", "Advanced"
   },  
   {
-    title: "GetItDone Automation with AWS Boto3",
-    description: "Python automation for AWS S3, SNS, Rekognition, and Comprehend services.",
+    title: "GetItDone Automation with Boto3",
+    description: "Python automation for AWS S3, SNS, Rekognition, and Comprehend services",
     url: `${baseUrl}/docs/Amazon-Web-Services/Projects/Boto3-Lab-GetItDone/Starter-Notes`,
     image: require(`/img/docs/3add1a95-4c25-4728-8b92-1513eac1a63f.png`),
     tags: ["DevOps", "AWS", "Python"],
   },
   {
     title: "Restaurant APIs with Azure Function App",
-    description: "Serverless API built with HTTP-triggered endpoints.",
+    description: "Serverless API built with HTTP-triggered endpoints on Azure Cloud",
     url: `${baseUrl}/docs/Microsoft-Azure/Projects/Building-a-Weather-API-with-Azure-Function-App/`,
     image: require(`/img/docs/e7f31254-a5fe-4b38-9c54-0fab1631a229.png`),
     tags: ["DevOps", "Azure", "Serverless"],
   },
   {
     title: "NGINX Deployment using Flux and Helm",
-    description: "GitOps deployment of NGINX using Flux and Helm charts.",
+    description: "GitOps-based deployment of NGINX using Flux and Helm charts",
     url: `${baseUrl}/docs/Kubernetes-Tools/Flux/FluxCD-with-Helm/Helm-with-FluxCD`,
     image: require(`/img/docs/a8973bba-5a64-4bd5-83c9-f2f4b95149cc.png`),
     tags: ["DevOps", "Kubernetes"],
   },
   {
     title: "Traefik Edge Routing Labs",
-    description: "Reverse proxy labs with routing, TLS, middleware, and observability.",
+    description: "Reverse proxy labs with routing, TLS, middleware, and observability",
     url: `${baseUrl}/docs/Kubernetes-Tools/Traefik/Configuration/Deploy-Traefik-wth-Docker`,
     image: require(`/img/docs/bce18e5d-d8d4-45bc-8925-4fdc360ad8ad.png`),
     tags: ["DevOps", "Observability"],
   },
   {
     title: "Prometheus Monitoring Labs",
-    description: "Monitoring labs with exporters, PromQL, dashboards, and alerts.",
+    description: "Monitoring labs with exporters, PromQL, dashboards, and alerts in practice",
     url: `${baseUrl}/docs/Observability/Prometheus/Setting-up-Exporters`,
     image: require(`/img/docs/ba815455-ac09-49dd-b093-dcdc7715d5c1.png`),
     tags: ["DevOps", "Observability"],
   },
   {
     title: "Elastic Stack Logging Labs",
-    description: "Centralized logging labs with Elasticsearch, Logstash, and Kibana",
+    description: "Centralized logging labs with Elasticsearch, Logstash, and Kibana (ELK Stack)",
     url: `${baseUrl}/docs/Observability/Elastic-Stack/Setting-up/Offline-Install`,
     image: require(`/img/docs/99877e9f-c902-4e4b-bd7f-664561028686.png`),
     tags: ["DevOps", "Observability"],
   },
   {
     title: "OpenStack Private Cloud Setup",
-    description: "Manual OpenStack deployment across compute, network, and storage.",
+    description: "Manual OpenStack deployment across compute, network, and storage",
     url: `${baseUrl}/docs/OpenStack/Manual-Install/Lab-Setup/Lab-Setup`,
     image: require(`/img/docs/a0254144-dd3e-4bc4-91cc-ba5e4af7c26c.png`),
     tags: ["DevOps", "OpenStack"],
   },
   {
     title: "RHCSA Linux Labs",
-    description: "Linux labs for the RHCSA exam",
+    description: "Collection of Linux labs for the RHCSA exam preparation",
     url: `${baseUrl}/docs/Linux/RHCSA-Labs/Basic Installation/README.md`,
     image: require(`/img/docs/a4eb2c86-c129-4fc0-ac8e-57ac7191146d.png`),
     tags: ["DevOps", "Linux"],
   },
   {
     title: "Visual History of Nobel Prize Winners",
-    description: "Analyze the age and demographics of Nobel Prize winners over time.",
+    description: "Analyze the age and demographics of Nobel Prize winners over time",
     url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/065-Software-Engineering/021-Jupyter-Notebooks/023-A-Visual-History-of-Nobel-Prize-Winners/A-Visual-History-of-Nobel-Prize-Winners.ipynb",
     image: require(`/img/docs/nobelinstituttet-prize-medal.jpg`),
     tags: ["Data Analysis", "Python"],
@@ -263,7 +263,7 @@ const projects: ProjectData[] = [
   },  
   {
     title: "Analyze Runkeeper Running Data",
-    description: "Analyze running data from the Runkeeper app.",
+    description: "Analyze running data from the Runkeeper app over time",
     url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/065-Software-Engineering/021-Jupyter-Notebooks/024-Analyze-Runkeeper-Fitness-Data/Analyze-Runkeeper-Fitness-Data.ipynb", 
     // image: require(`/img/docs/Screenshot2026-05-09203336.png`),
     image: require(`/img/docs/Screenshot2026-06-07154855.png`),
@@ -272,7 +272,7 @@ const projects: ProjectData[] = [
   },
   {
     title: "A Network Analysis of Game of Thrones",
-    description: "Analyze co-occurrence networks of characters in Game of Thrones",
+    description: "Analyze co-occurrence networks of characters in the Game of Thrones books",
     url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/065-Software-Engineering/021-Jupyter-Notebooks/020-A-Network-Analysis-of-Game-of-Thrones/network-analysis-on-game-of-thrones.ipynb",
     image: require(`/img/docs/got_network.jpeg`),
     tags: ["Data Analysis", "Python"]
@@ -280,7 +280,7 @@ const projects: ProjectData[] = [
   },
   {
     title: "A New Era of Data Analysis in Baseball",
-    description: "Use Statcast data to compare home runs of two of MLB's brightest stars.",
+    description: "Using Statcast data to compare home runs of two of MLB's brightest stars ",
     url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/065-Software-Engineering/021-Jupyter-Notebooks/021-A-New-Era-of-Data-Analysis-in-Baseball/A-New-Era-of-Data-Analysis-in-Baseball.ipynb",
     // image: require(`/img/docs/stanton_wide.jpg`),
     image: require(`/img/docs/Aaron-Judge-2025-Postseason.jpg`),
@@ -289,7 +289,7 @@ const projects: ProjectData[] = [
   },
   {
     title: "Investigating Netflix Movies",
-    description: "Exploratory data analysis on 90s movies using Netflix data.",
+    description: "Exploratory data analysis on 90s movie collection using Netflix data",
     url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/065-Software-Engineering/021-Jupyter-Notebooks/010-Investigating-Netflix-Movies/netflix-movies.ipynb",
     image: require(`/img/docs/redpopcorn.jpg`),
     tags: ["Data Analysis", "Python"]
@@ -297,7 +297,7 @@ const projects: ProjectData[] = [
   },
   {
     title: "Hacker Statistics with Python",
-    description: "Using hacker statistics to calculate your chances of winning a bet.",
+    description: "Using hacker statistics to calculate your chances of winning a bet",
     url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/065-Software-Engineering/021-Jupyter-Notebooks/009-Hacker-Statistics/Hacker_Statistics.ipynb",
     image: require(`/img/docs/hacker-statistics.png`),
     tags: ["Data Analysis", "Python"],
@@ -305,7 +305,7 @@ const projects: ProjectData[] = [
   },  
   {
     title: "Exploring NYC Public School Test Result Scores",
-    description: "Analyze scores using summary statistics and data manipulation.",
+    description: "Analyze scores using summary statistics and data manipulation using Pandas",
     url: "https://colab.research.google.com/github/joseeden/joeden/blob/master/docs/065-Software-Engineering/021-Jupyter-Notebooks/022-Exploring-NYC-Public-School-Test-Result-Scores/Exploring-NYC-Public-School-Test-Result-Scores.ipynb",
     image: require(`/img/docs/schoolbus.jpg`),
     tags: ["Data Analysis", "Python"],
