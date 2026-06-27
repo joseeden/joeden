@@ -1,18 +1,56 @@
-<mxfile host="Codex" modified="2026-06-27T10:01:50Z" agent="Codex" version="24.7.17" type="device">
-  <diagram id="crewai-research-report-agent" name="CrewAI Research Report Agent">
+<mxfile host="Codex" modified="2026-06-27T00:00:00Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="project-crewai-research-report-agent" name="CrewAI Research Report Agent">
     <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1120" pageHeight="520" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
-        <mxCell id="id2" value="Topic + year&lt;br&gt;from user" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#2563eb;fillColor=#dbeafe;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="40" y="180" width="170" height="66" as="geometry"/></mxCell>
-        <mxCell id="id3" value="CrewAI loads&lt;br&gt;agents.yaml/tasks.yaml" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="250" y="180" width="170" height="66" as="geometry"/></mxCell>
-        <mxCell id="id4" value="Researcher agent&lt;br&gt;uses SearxNG tool" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="460" y="180" width="170" height="66" as="geometry"/></mxCell>
-        <mxCell id="id5" value="Reporting analyst&lt;br&gt;uses findings" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="670" y="180" width="170" height="66" as="geometry"/></mxCell>
-        <mxCell id="id6" value="report.md&lt;br&gt;with sources" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="880" y="180" width="170" height="66" as="geometry"/></mxCell>
-        <mxCell id="id7" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="id2" target="id3"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="id8" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="id3" target="id4"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="id9" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="id4" target="id5"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="id10" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="id5" target="id6"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="input" value="User input&lt;br&gt;topic + current year" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#2563eb;fillColor=#dbeafe;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="200" width="170" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="yaml" value="CrewAI loads config&lt;br&gt;agents.yaml + tasks.yaml" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="250" y="200" width="180" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="crew" value="ResearchTeam crew&lt;br&gt;sequential process" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="470" y="200" width="170" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="researcher" value="Researcher agent&lt;br&gt;runs research task" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="690" y="120" width="170" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="searxng" value="SearXNG search tool&lt;br&gt;local Docker API" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#7c3aed;fillColor=#ede9fe;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="910" y="120" width="170" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="analyst" value="Reporting analyst&lt;br&gt;uses findings as context" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="690" y="290" width="170" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="report" value="Markdown report&lt;br&gt;report.md with sources" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;strokeColor=#047857;fillColor=#d1fae5;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="910" y="290" width="170" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge1" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="input" target="yaml">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge2" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="yaml" target="crew">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge3" value="creates agents + tasks" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="crew" target="researcher">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge4" value="search queries" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="researcher" target="searxng">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge5" value="findings + URLs" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="searxng" target="researcher">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="995" y="80"/>
+              <mxPoint x="775" y="80"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge6" value="research context" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="researcher" target="analyst">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge7" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="analyst" target="report">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>

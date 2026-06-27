@@ -19,6 +19,15 @@ The lab covers the following:
 3. Send threshold-based alerts with SNS
 4. Detect objects, text, language, translations, and sentiment
 
+## Workflow Diagram
+
+The diagram below summarizes how the Python automation connects the GetItDone request data to AWS services for storage, reporting, notifications, and analysis.
+
+<div class='img-center'>
+
+![](/img/docs/project-getitdone-boto3-automation.png)
+
+</div>
 
 ## Using Boto3 
 

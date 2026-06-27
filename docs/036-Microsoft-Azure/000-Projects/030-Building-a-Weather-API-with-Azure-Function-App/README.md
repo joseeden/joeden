@@ -33,6 +33,15 @@ Azure Function Apps are ideal for this project because they:
 - Automatically scale to handle traffic spikes  
 - Keep costs low when demand is quiet  
 
+## API Flow Diagram
+
+<!-- The diagram below shows how clients call the HTTP-triggered Azure Functions that make up the restaurant API. -->
+
+<div class='img-center'>
+
+![](/img/docs/project-restaurant-apis-azure-functions.png)
+
+</div>
 
 ## Create the Azure Function App
 
