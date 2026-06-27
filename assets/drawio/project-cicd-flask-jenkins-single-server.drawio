@@ -5,22 +5,22 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="22axvIAS_a4AkPhddey3-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#E6E6E6;" value="" vertex="1">
-          <mxGeometry height="250" width="1090" x="-10" y="120" as="geometry" />
+          <mxGeometry height="290" width="1200" x="-130" y="120" as="geometry" />
         </mxCell>
-        <mxCell id="id2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#6c8ebf;fillColor=#dae8fc;fontSize=13;spacing=10;" value="GitHub push" vertex="1">
-          <mxGeometry height="66" width="170" x="40" y="180" as="geometry" />
+        <mxCell id="id2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#6c8ebf;fillColor=#dae8fc;fontSize=18;spacing=10;" value="GitHub push" vertex="1">
+          <mxGeometry height="66" width="160" x="-80" y="180" as="geometry" />
         </mxCell>
-        <mxCell id="id3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" value="Webhook triggers&lt;br&gt;Jenkins" vertex="1">
-          <mxGeometry height="66" width="170" x="245" y="180" as="geometry" />
+        <mxCell id="id3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=18;spacing=10;" value="Webhook triggers&lt;br&gt;Jenkins" vertex="1">
+          <mxGeometry height="66" width="200" x="120" y="180" as="geometry" />
         </mxCell>
-        <mxCell id="id4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" value="Checkout + test&lt;br&gt;package app" vertex="1">
-          <mxGeometry height="66" width="170" x="450" y="180" as="geometry" />
+        <mxCell id="id4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=18;spacing=10;" value="Checkout + test&lt;br&gt;package app" vertex="1">
+          <mxGeometry height="66" width="190" x="380" y="180" as="geometry" />
         </mxCell>
-        <mxCell id="id5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#82b366;fillColor=#d5e8d4;fontSize=13;spacing=10;" value="Deploy&lt;br&gt;to prod server" vertex="1">
-          <mxGeometry height="66" width="170" x="655" y="180" as="geometry" />
+        <mxCell id="id5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#82b366;fillColor=#d5e8d4;fontSize=18;spacing=10;" value="Deploy&lt;br&gt;to prod server" vertex="1">
+          <mxGeometry height="66" width="170" x="625" y="180" as="geometry" />
         </mxCell>
-        <mxCell id="id6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#d6b656;fillColor=#fff2cc;fontSize=13;spacing=10;" value="Restart Flask&lt;br&gt;service" vertex="1">
-          <mxGeometry height="66" width="170" x="860" y="180" as="geometry" />
+        <mxCell id="id6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#d6b656;fillColor=#fff2cc;fontSize=18;spacing=10;" value="Restart Flask&lt;br&gt;service" vertex="1">
+          <mxGeometry height="66" width="170" x="850" y="180" as="geometry" />
         </mxCell>
         <mxCell id="id7" edge="1" parent="1" source="id2" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="id3" value="">
           <mxGeometry relative="1" as="geometry" />
@@ -34,11 +34,11 @@
         <mxCell id="id10" edge="1" parent="1" source="id5" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="id6" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="22axvIAS_a4AkPhddey3-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=none;strokeColor=none;" value="&lt;div style=&quot;line-height: 150%;&quot;&gt;&lt;ul style=&quot;line-height: 180%;&quot;&gt;&lt;li&gt;Install dependencies&lt;/li&gt;&lt;li&gt;Test Code&amp;nbsp;&lt;/li&gt;&lt;li&gt;Package code&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="90" width="180" x="440" y="250" as="geometry" />
+        <mxCell id="22axvIAS_a4AkPhddey3-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=none;strokeColor=none;fontSize=18;" value="&lt;div style=&quot;line-height: 150%;&quot;&gt;&lt;ul style=&quot;line-height: 180%;&quot;&gt;&lt;li&gt;Install dependencies&lt;/li&gt;&lt;li&gt;Test Code&amp;nbsp;&lt;/li&gt;&lt;li&gt;Package code&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="270" x="355" y="270" as="geometry" />
         </mxCell>
-        <mxCell id="22axvIAS_a4AkPhddey3-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=none;strokeColor=none;" value="&lt;div style=&quot;line-height: 150%;&quot;&gt;&lt;ul style=&quot;line-height: 180%;&quot;&gt;&lt;li&gt;Copy code to server&lt;/li&gt;&lt;li&gt;Install dependencies&lt;/li&gt;&lt;li&gt;Deploy application&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="90" width="180" x="640" y="250" as="geometry" />
+        <mxCell id="22axvIAS_a4AkPhddey3-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=none;strokeColor=none;fontSize=18;" value="&lt;div style=&quot;line-height: 150%;&quot;&gt;&lt;ul style=&quot;line-height: 180%;&quot;&gt;&lt;li&gt;Copy code to server&lt;/li&gt;&lt;li&gt;Install dependencies&lt;/li&gt;&lt;li&gt;Deploy application&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="235" x="600" y="270" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
