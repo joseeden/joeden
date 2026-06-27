@@ -174,4 +174,4 @@ func getBalanceFromFile() float64 {
 
 Note that this doesn't tell what the error is, just that there was an error. It tells the caller function (another function that's calling `getBalanceFromFile()`) that something went wrong, and the caller can decide what to do about it.
 
-For more information, please see [Error Handling](/docs/065-Software-Engineering/030-Golang/002-Fundamentals/040-Error-Handling.md])
+For more information, please see [Error Handling](/docs/065-Software-Engineering/030-Golang/002-Fundamentals/040-Error-Handling.md)
