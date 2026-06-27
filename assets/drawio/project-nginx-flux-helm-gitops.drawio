@@ -1,94 +1,94 @@
-<mxfile host="Codex" modified="2026-06-27T00:00:00Z" agent="Codex" version="24.7.17" type="device">
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2">
   <diagram id="project-nginx-flux-helm-gitops" name="NGINX Deployment using Flux and Helm">
-    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1260" pageHeight="700" math="0" shadow="0">
+    <mxGraphModel dx="1309" dy="1466" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1260" pageHeight="700" math="0" shadow="0">
       <root>
-        <mxCell id="0"/>
-        <mxCell id="1" parent="0"/>
-        <mxCell id="group-git" value="Git repository" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#94a3b8;fillColor=none;dashed=1;fontColor=#475569;fontSize=12;spacing=8;" vertex="1" parent="1">
-          <mxGeometry x="30" y="70" width="330" height="330" as="geometry"/>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="group-git" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#94a3b8;fillColor=none;dashed=1;fontColor=#475569;fontSize=12;spacing=8;" value="Git repository" vertex="1">
+          <mxGeometry height="330" width="330" x="30" y="70" as="geometry" />
         </mxCell>
-        <mxCell id="group-cluster" value="Kubernetes cluster" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#94a3b8;fillColor=none;dashed=1;fontColor=#475569;fontSize=12;spacing=8;" vertex="1" parent="1">
-          <mxGeometry x="400" y="50" width="820" height="570" as="geometry"/>
+        <mxCell id="group-cluster" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#94a3b8;fillColor=none;dashed=1;fontColor=#475569;fontSize=12;spacing=8;" value="Kubernetes cluster" vertex="1">
+          <mxGeometry height="570" width="820" x="400" y="50" as="geometry" />
         </mxCell>
-        <mxCell id="dev" value="Developer branch&lt;br&gt;nginx-helm changes" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#2563eb;fillColor=#dbeafe;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1">
-          <mxGeometry x="70" y="120" width="210" height="62" as="geometry"/>
+        <mxCell id="dev" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#2563eb;fillColor=#dbeafe;fontColor=#111827;fontSize=13;spacing=10;" value="Developer branch&lt;br&gt;nginx-helm changes" vertex="1">
+          <mxGeometry height="62" width="210" x="70" y="120" as="geometry" />
         </mxCell>
-        <mxCell id="mr" value="Merge request&lt;br&gt;approved into main" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#2563eb;fillColor=#dbeafe;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1">
-          <mxGeometry x="70" y="210" width="210" height="62" as="geometry"/>
+        <mxCell id="mr" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#2563eb;fillColor=#dbeafe;fontColor=#111827;fontSize=13;spacing=10;" value="Merge request&lt;br&gt;approved into main" vertex="1">
+          <mxGeometry height="62" width="210" x="70" y="210" as="geometry" />
         </mxCell>
-        <mxCell id="repo-files" value="Main branch desired state&lt;br&gt;charts/nginx&lt;br&gt;clusters/dev/helm-nginx&lt;br&gt;HelmRelease + kustomization.yaml" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#2563eb;fillColor=#dbeafe;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1">
-          <mxGeometry x="70" y="300" width="230" height="86" as="geometry"/>
+        <mxCell id="repo-files" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#2563eb;fillColor=#dbeafe;fontColor=#111827;fontSize=13;spacing=10;" value="Main branch desired state&lt;br&gt;charts/nginx&lt;br&gt;clusters/dev/helm-nginx&lt;br&gt;HelmRelease + kustomization.yaml" vertex="1">
+          <mxGeometry height="86" width="230" x="70" y="300" as="geometry" />
         </mxCell>
-        <mxCell id="source" value="source-controller&lt;br&gt;syncs GitRepository&lt;br&gt;flux-system" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#7c3aed;fillColor=#ede9fe;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1">
-          <mxGeometry x="440" y="120" width="190" height="76" as="geometry"/>
+        <mxCell id="source" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#7c3aed;fillColor=#ede9fe;fontColor=#111827;fontSize=13;spacing=10;" value="source-controller&lt;br&gt;syncs GitRepository&lt;br&gt;flux-system" vertex="1">
+          <mxGeometry height="76" width="190" x="440" y="120" as="geometry" />
         </mxCell>
-        <mxCell id="artifact" value="Git artifact&lt;br&gt;latest main revision" style="shape=cylinder3d;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;strokeColor=#7c3aed;fillColor=#ede9fe;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1">
-          <mxGeometry x="455" y="250" width="160" height="72" as="geometry"/>
+        <mxCell id="artifact" parent="1" style="shape=cylinder3d;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;strokeColor=#7c3aed;fillColor=#ede9fe;fontColor=#111827;fontSize=13;spacing=10;" value="Git artifact&lt;br&gt;latest main revision" vertex="1">
+          <mxGeometry height="72" width="160" x="360" y="-72" as="geometry" />
         </mxCell>
-        <mxCell id="kustomize" value="kustomize-controller&lt;br&gt;applies helm-nginx kustomization" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1">
-          <mxGeometry x="690" y="120" width="210" height="76" as="geometry"/>
+        <mxCell id="kustomize" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" value="kustomize-controller&lt;br&gt;applies helm-nginx kustomization" vertex="1">
+          <mxGeometry height="76" width="210" x="690" y="120" as="geometry" />
         </mxCell>
-        <mxCell id="helmrelease" value="HelmRelease nginx&lt;br&gt;chart: ./charts/nginx&lt;br&gt;values override indexHtml" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1">
-          <mxGeometry x="705" y="250" width="190" height="86" as="geometry"/>
+        <mxCell id="helmrelease" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" value="HelmRelease nginx&lt;br&gt;chart: ./charts/nginx&lt;br&gt;values override indexHtml" vertex="1">
+          <mxGeometry height="86" width="190" x="510" y="292" as="geometry" />
         </mxCell>
-        <mxCell id="helm" value="helm-controller&lt;br&gt;renders chart and reconciles release" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1">
-          <mxGeometry x="950" y="120" width="210" height="76" as="geometry"/>
+        <mxCell id="helm" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" value="helm-controller&lt;br&gt;renders chart and reconciles release" vertex="1">
+          <mxGeometry height="76" width="210" x="950" y="120" as="geometry" />
         </mxCell>
-        <mxCell id="resources" value="Kubernetes resources&lt;br&gt;Deployment&lt;br&gt;Service ClusterIP&lt;br&gt;Ingress&lt;br&gt;ConfigMap custom HTML" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#047857;fillColor=#d1fae5;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1">
-          <mxGeometry x="950" y="250" width="210" height="112" as="geometry"/>
+        <mxCell id="resources" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#047857;fillColor=#d1fae5;fontColor=#111827;fontSize=13;spacing=10;" value="Kubernetes resources&lt;br&gt;Deployment&lt;br&gt;Service ClusterIP&lt;br&gt;Ingress&lt;br&gt;ConfigMap custom HTML" vertex="1">
+          <mxGeometry height="112" width="210" x="940" y="300" as="geometry" />
         </mxCell>
-        <mxCell id="nginx" value="NGINX workload&lt;br&gt;pod + service ready" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#047857;fillColor=#d1fae5;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1">
-          <mxGeometry x="705" y="445" width="190" height="70" as="geometry"/>
+        <mxCell id="nginx" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#047857;fillColor=#d1fae5;fontColor=#111827;fontSize=13;spacing=10;" value="NGINX workload&lt;br&gt;pod + service ready" vertex="1">
+          <mxGeometry height="70" width="190" x="705" y="445" as="geometry" />
         </mxCell>
-        <mxCell id="access" value="Browser access&lt;br&gt;port-forward, NodePort, or Ingress" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#2563eb;fillColor=#dbeafe;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1">
-          <mxGeometry x="950" y="445" width="210" height="70" as="geometry"/>
+        <mxCell id="access" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#2563eb;fillColor=#dbeafe;fontColor=#111827;fontSize=13;spacing=10;" value="Browser access&lt;br&gt;port-forward, NodePort, or Ingress" vertex="1">
+          <mxGeometry height="70" width="210" x="950" y="445" as="geometry" />
         </mxCell>
-        <mxCell id="status" value="Reconcile status&lt;br&gt;kubectl get helmrelease&lt;br&gt;Helm install succeeded" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#b45309;fillColor=#fef3c7;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1">
-          <mxGeometry x="455" y="445" width="190" height="82" as="geometry"/>
+        <mxCell id="status" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#b45309;fillColor=#fef3c7;fontColor=#111827;fontSize=13;spacing=10;" value="Reconcile status&lt;br&gt;kubectl get helmrelease&lt;br&gt;Helm install succeeded" vertex="1">
+          <mxGeometry height="82" width="190" x="455" y="445" as="geometry" />
         </mxCell>
-        <mxCell id="e1" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="dev" target="mr">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="e1" edge="1" parent="1" source="dev" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="mr" value="">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e2" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="mr" target="repo-files">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="e2" edge="1" parent="1" source="mr" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="repo-files" value="">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e3" value="poll or manual reconcile" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="repo-files" target="source">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="e3" edge="1" parent="1" source="repo-files" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="source" value="poll or manual reconcile">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e4" value="stores revision" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="source" target="artifact">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="e4" edge="1" parent="1" source="source" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="artifact" value="stores revision">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e5" value="reads artifact" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="artifact" target="kustomize">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="e5" edge="1" parent="1" source="artifact" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="kustomize" value="reads artifact">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e6" value="applies manifest" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="kustomize" target="helmrelease">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="e6" edge="1" parent="1" source="kustomize" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="helmrelease" value="applies manifest">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e7" value="observes HelmRelease" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="helmrelease" target="helm">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="e7" edge="1" parent="1" source="helmrelease" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="helm" value="observes HelmRelease">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e8" value="fetches chart from sourceRef" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="artifact" target="helm">
+        <mxCell id="e8" edge="1" parent="1" source="artifact" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="helm" value="fetches chart from sourceRef">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="535" y="80"/>
-              <mxPoint x="1055" y="80"/>
+              <mxPoint x="710" y="-30" />
+              <mxPoint x="1055" y="80" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="e9" value="creates or updates" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="helm" target="resources">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="e9" edge="1" parent="1" source="helm" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="resources" value="creates or updates">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e10" value="runs" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="resources" target="nginx">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="e10" edge="1" parent="1" source="resources" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="nginx" value="runs">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e11" value="expose" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="nginx" target="access">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="e11" edge="1" parent="1" source="nginx" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="access" value="expose">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e12" value="reports readiness" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="helm" target="status">
+        <mxCell id="e12" edge="1" parent="1" source="helm" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="status" value="reports readiness">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1055" y="570"/>
-              <mxPoint x="550" y="570"/>
+              <mxPoint x="1210" y="570" />
+              <mxPoint x="550" y="570" />
             </Array>
           </mxGeometry>
         </mxCell>

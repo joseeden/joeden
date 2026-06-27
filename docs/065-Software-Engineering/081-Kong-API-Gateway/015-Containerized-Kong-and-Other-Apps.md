@@ -27,6 +27,16 @@ This lab installs the following containerized applications locally on a Windows 
 - Elasticsearch  
 - Zipkin
 
+## Architecture Diagram
+
+The diagram below summarizes how the Docker Compose stack connects Kong Gateway, its database, management tools, and the observability services used in the lab.
+
+<div class='img-center'>
+
+![](/img/docs/project-kong-gateway-docker-compose.png)
+
+</div>
+
 ## Pre-requisites
 
 This guide shows how to install a containerized Kong along with the other applications locally in your computer. Make sure to install the following first:
@@ -75,7 +85,7 @@ cd labs-kong-gateway
 docker-compose up -d --build 
 ```
 
-The build shuold take a few minutes. Once done, it should return:
+The build should take a few minutes. Once done, it should return:
 
 ```bash
 [+] Running 12/12

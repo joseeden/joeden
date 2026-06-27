@@ -1,29 +1,32 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2">
   <diagram id="kong-gateway-setup-with-docker-compose" name="Kong Gateway Setup with Docker Compose">
-    <mxGraphModel dx="2429" dy="766" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1120" pageHeight="520" math="0" shadow="0">
+    <mxGraphModel dx="2429" dy="1286" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1120" pageHeight="520" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="0ECvVOBk7Erubk-wnfbC-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#E6E6E6;" value="" vertex="1">
+          <mxGeometry height="440" width="1020" x="-160" y="-8" as="geometry" />
+        </mxCell>
         <mxCell id="id2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#2563eb;fillColor=#dbeafe;fontColor=#111827;fontSize=18;spacing=10;" value="Client requests" vertex="1">
-          <mxGeometry height="66" width="170" x="-110" y="180" as="geometry" />
+          <mxGeometry height="66" width="170" x="-110" y="160" as="geometry" />
         </mxCell>
         <mxCell id="id3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=18;spacing=10;" value="Kong Gateway&lt;br&gt;proxy ports 8000/8443" vertex="1">
-          <mxGeometry height="66" width="230" x="110" y="180" as="geometry" />
+          <mxGeometry height="66" width="230" x="110" y="160" as="geometry" />
         </mxCell>
         <mxCell id="id4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=18;spacing=10;" value="Upstream APIs&lt;br&gt;FastAPI/services" vertex="1">
-          <mxGeometry height="66" width="180" x="630" y="330" as="geometry" />
+          <mxGeometry height="66" width="180" x="630" y="310" as="geometry" />
         </mxCell>
         <mxCell id="id5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#7c3aed;fillColor=#ede9fe;fontColor=#111827;fontSize=18;spacing=10;" value="Kong Admin API&lt;br&gt;and Manager" vertex="1">
-          <mxGeometry height="66" width="180" x="120" y="340" as="geometry" />
+          <mxGeometry height="66" width="180" x="120" y="320" as="geometry" />
         </mxCell>
         <mxCell id="id6" parent="1" style="shape=cylinder3d;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;strokeColor=#047857;fillColor=#d1fae5;fontColor=#111827;fontSize=18;spacing=10;" value="Postgres&lt;br&gt;Kong database" vertex="1">
-          <mxGeometry height="66" width="170" x="370" y="340" as="geometry" />
+          <mxGeometry height="66" width="170" x="370" y="320" as="geometry" />
         </mxCell>
         <mxCell id="id7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#7c3aed;fillColor=#ede9fe;fontColor=#111827;fontSize=18;spacing=10;" value="Prometheus +&lt;br&gt;Grafana" vertex="1">
-          <mxGeometry height="66" width="170" x="640" y="180" as="geometry" />
+          <mxGeometry height="66" width="170" x="640" y="160" as="geometry" />
         </mxCell>
         <mxCell id="id8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#7c3aed;fillColor=#ede9fe;fontColor=#111827;fontSize=18;spacing=10;" value="Logstash + ELK&lt;br&gt;central logs" vertex="1">
-          <mxGeometry height="66" width="170" x="640" y="60" as="geometry" />
+          <mxGeometry height="66" width="170" x="640" y="40" as="geometry" />
         </mxCell>
         <mxCell id="id9" edge="1" parent="1" source="id2" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="id3" value="">
           <mxGeometry relative="1" as="geometry" />
@@ -46,10 +49,10 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="4fXASk_jL4XQ3RwxnjnX-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=none;fillColor=none;fontColor=#111827;fontSize=18;spacing=10;rotation=-15;" value="Logs" vertex="1">
-          <mxGeometry height="66" width="170" x="390" y="100" as="geometry" />
+          <mxGeometry height="66" width="170" x="390" y="80" as="geometry" />
         </mxCell>
         <mxCell id="4fXASk_jL4XQ3RwxnjnX-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=none;fillColor=none;fontColor=#111827;fontSize=18;spacing=10;rotation=0;" value="Metrics" vertex="1">
-          <mxGeometry height="66" width="170" x="420.00472372295394" y="159.9951711012535" as="geometry" />
+          <mxGeometry height="66" width="170" x="420.00472372295394" y="139.9951711012535" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
