@@ -221,21 +221,21 @@ const projects: ProjectData[] = [
   {
     title: "Traefik Edge Routing Labs",
     description: "Reverse proxy labs with routing, TLS, middleware, and observability",
-    url: `${baseUrl}/docs/Kubernetes-Tools/Traefik/Configuration/Deploy-Traefik-wth-Docker`,
+    url: `${baseUrl}/docs/Kubernetes-Tools/Traefik/Traefik-Labs`,
     image: require(`/img/docs/bce18e5d-d8d4-45bc-8925-4fdc360ad8ad.png`),
     tags: ["DevOps", "Observability"],
   },
   {
     title: "Prometheus Monitoring Labs",
     description: "Monitoring labs with exporters, PromQL, dashboards, and alerts in practice",
-    url: `${baseUrl}/docs/Observability/Prometheus/Setting-up-Exporters`,
+    url: `${baseUrl}/docs/Observability/Prometheus/Prometheus-Labs`,
     image: require(`/img/docs/ba815455-ac09-49dd-b093-dcdc7715d5c1.png`),
     tags: ["DevOps", "Observability"],
   },
   {
     title: "Elastic Stack Logging Labs",
     description: "Centralized logging labs with Elasticsearch, Logstash, and Kibana (ELK Stack)",
-    url: `${baseUrl}/docs/Observability/Elastic-Stack/Setting-up/Offline-Install`,
+    url: `${baseUrl}/docs/Observability/Elastic-Stack/Elastic-Stack-Labs`,
     image: require(`/img/docs/99877e9f-c902-4e4b-bd7f-664561028686.png`),
     tags: ["DevOps", "Observability"],
   },
@@ -249,7 +249,7 @@ const projects: ProjectData[] = [
   {
     title: "RHCSA Linux Labs",
     description: "Collection of Linux labs for the RHCSA exam preparation",
-    url: `${baseUrl}/docs/Linux/RHCSA-Labs/Basic Installation/README.md`,
+    url: `${baseUrl}/docs/Linux/RHCSA-Labs/RHCSA-Labs`,
     image: require(`/img/docs/a4eb2c86-c129-4fc0-ac8e-57ac7191146d.png`),
     tags: ["DevOps", "Linux"],
   },
