@@ -37,3 +37,12 @@ Some AWS services often used with Boto3.
 - **Comprehend** analyzes text for sentiment or meaning
 - **Rekognition** detects objects or text in images
 - **RDS**, **EC2**, and **Lambda** manage databases, virtual machines, and serverless functions
+
+## Next Steps 
+
+See the following pages for the detailed steps for this project:
+
+1. [Initial Testing](/docs/035-Amazon-Web-Services/000-Projects/013-Boto3-Lab-GetItDone/010-Initial-Testing.md) 
+2. [Monthly Report Generation](/docs/035-Amazon-Web-Services/000-Projects/013-Boto3-Lab-GetItDone/011-Monthly-Reports.md)
+3. [Notification Systems](/docs/035-Amazon-Web-Services/000-Projects/013-Boto3-Lab-GetItDone/019-Notification-Systems.md)
+4. [Text Analysis and Image Recognition](/docs/035-Amazon-Web-Services/000-Projects/013-Boto3-Lab-GetItDone/020-Pattern-Recognition.md)

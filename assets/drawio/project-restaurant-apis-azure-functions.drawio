@@ -1,20 +1,45 @@
-<mxfile host="Codex" modified="2026-06-27T10:01:50Z" agent="Codex" version="24.7.17" type="device">
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2">
   <diagram id="restaurant-apis-with-azure-function-app" name="Restaurant APIs with Azure Function App">
-    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1120" pageHeight="520" math="0" shadow="0">
+    <mxGraphModel dx="2429" dy="766" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1120" pageHeight="520" math="0" shadow="0">
       <root>
-        <mxCell id="0"/>
-        <mxCell id="1" parent="0"/>
-        <mxCell id="id2" value="Web/mobile client" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#2563eb;fillColor=#dbeafe;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="40" y="180" width="170" height="66" as="geometry"/></mxCell>
-        <mxCell id="id3" value="HTTP-triggered&lt;br&gt;Azure Function App" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="250" y="180" width="170" height="66" as="geometry"/></mxCell>
-        <mxCell id="id4" value="Menu API" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="470" y="90" width="170" height="66" as="geometry"/></mxCell>
-        <mxCell id="id5" value="Orders API" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="470" y="180" width="170" height="66" as="geometry"/></mxCell>
-        <mxCell id="id6" value="Reservations API" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="470" y="270" width="170" height="66" as="geometry"/></mxCell>
-        <mxCell id="id7" value="Info API" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="690" y="180" width="170" height="66" as="geometry"/></mxCell>
-        <mxCell id="id8" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="id2" target="id3"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="id9" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="id3" target="id4"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="id10" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="id3" target="id5"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="id11" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="id3" target="id6"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="id12" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="id3" target="id7"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="x6vcsmeav6xuJ6ng5bXA-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#E6E6E6;" value="" vertex="1">
+          <mxGeometry height="387" width="870" x="-52" y="19.5" as="geometry" />
+        </mxCell>
+        <mxCell id="id2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#2563eb;fillColor=#dbeafe;fontColor=#111827;fontSize=18;spacing=10;" value="Web/mobile client" vertex="1">
+          <mxGeometry height="66" width="170" x="-10" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="id3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=18;spacing=10;" value="HTTP-triggered&lt;br&gt;Azure Function App" vertex="1">
+          <mxGeometry height="66" width="230" x="230" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="id4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=18;spacing=10;" value="Menu API" vertex="1">
+          <mxGeometry height="66" width="170" x="400" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="id5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=18;spacing=10;" value="Orders API" vertex="1">
+          <mxGeometry height="66" width="170" x="600" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="id6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=18;spacing=10;" value="Reservations API" vertex="1">
+          <mxGeometry height="66" width="170" x="600" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="id7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=18;spacing=10;" value="Info API" vertex="1">
+          <mxGeometry height="66" width="170" x="400" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="id8" edge="1" parent="1" source="id2" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="id3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="id9" edge="1" parent="1" source="id3" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="id4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="id10" edge="1" parent="1" source="id3" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="id5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="id11" edge="1" parent="1" source="id3" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="id6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="id12" edge="1" parent="1" source="id3" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="id7" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
