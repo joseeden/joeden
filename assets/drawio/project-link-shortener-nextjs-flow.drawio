@@ -1,25 +1,25 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2">
   <diagram id="link-shortener-using-nextjs" name="Link Shortener using NextJS">
-    <mxGraphModel dx="2409" dy="901" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1120" pageHeight="520" math="0" shadow="0">
+    <mxGraphModel dx="2429" dy="766" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1120" pageHeight="520" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="rolXRa3hjr0p76_JEdHa-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#E6E6E6;" value="" vertex="1">
-          <mxGeometry height="190" width="1160" x="-70" y="178" as="geometry" />
+          <mxGeometry height="190" width="1210" x="-120" y="178" as="geometry" />
         </mxCell>
-        <mxCell id="id2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#2563eb;fillColor=#dbeafe;fontColor=#111827;fontSize=13;spacing=10;" value="Visitor&lt;br&gt;submits long URL" vertex="1">
-          <mxGeometry height="66" width="170" x="-30" y="240" as="geometry" />
+        <mxCell id="id2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#2563eb;fillColor=#dbeafe;fontColor=#111827;fontSize=18;spacing=10;" value="Visitor&lt;br&gt;submits long URL" vertex="1">
+          <mxGeometry height="66" width="190" x="-80" y="240" as="geometry" />
         </mxCell>
-        <mxCell id="id3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" value="Next.js UI&lt;br&gt;validates input" vertex="1">
-          <mxGeometry height="66" width="170" x="180" y="240" as="geometry" />
+        <mxCell id="id3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=18;spacing=10;" value="Next.js UI&lt;br&gt;validates input" vertex="1">
+          <mxGeometry height="66" width="170" x="150" y="240" as="geometry" />
         </mxCell>
-        <mxCell id="id4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" value="API route&lt;br&gt;creates short code" vertex="1">
-          <mxGeometry height="66" width="170" x="390" y="240" as="geometry" />
+        <mxCell id="id4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=18;spacing=10;" value="API route&lt;br&gt;creates short code" vertex="1">
+          <mxGeometry height="66" width="200" x="360" y="240" as="geometry" />
         </mxCell>
-        <mxCell id="id5" parent="1" style="shape=cylinder3d;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;strokeColor=#047857;fillColor=#d1fae5;fontColor=#111827;fontSize=13;spacing=10;rounded=1;" value="Database&lt;br&gt;stores mapping" vertex="1">
+        <mxCell id="id5" parent="1" style="shape=cylinder3d;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;strokeColor=#047857;fillColor=#d1fae5;fontColor=#111827;fontSize=18;spacing=10;rounded=1;" value="Database&lt;br&gt;stores mapping" vertex="1">
           <mxGeometry height="66" width="170" x="600" y="240" as="geometry" />
         </mxCell>
-        <mxCell id="id6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" value="Short link&lt;br&gt;redirects visitor" vertex="1">
+        <mxCell id="id6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=18;spacing=10;" value="Short link&lt;br&gt;redirects visitor" vertex="1">
           <mxGeometry height="66" width="170" x="880" y="240" as="geometry" />
         </mxCell>
         <mxCell id="id7" edge="1" parent="1" source="id2" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="id3" value="">
