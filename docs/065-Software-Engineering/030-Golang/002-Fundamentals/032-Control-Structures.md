@@ -31,7 +31,7 @@ In Go, the most common control structures are:
 
 This page uses a simple banking application to demonstrate control structures. The program allows the user to check their balance, deposit money, withdraw money, or exit the program.
 
-> See sample code here: [GitHub](https://github.com/joseeden/joeden/tree/master/docs/065-Software-Engineering/030-Golang/000-Projects/001-Learning)
+See sample code here: [GitHub](https://github.com/joseeden/joeden/tree/master/docs/065-Software-Engineering/030-Golang/000-Projects/001-Learning)
 
 :::
 
@@ -103,11 +103,11 @@ if choice == 1 {
 
 You can combine conditions with logical operators.
 
-| Operator | Meaning                              |
-| -------- | ------------------------------------ |
-| `&&`     | Both conditions must be true.        |
-| `||`     | At least one condition must be true. |
-| `!`      | Reverses a Boolean value.            |
+| Operator 									| Meaning                              |
+| ------------------------- | ------------------------------------ |
+| `&&`     									| Both conditions must be true.        |
+| <code>&#124;&#124;</code> | At least one condition must be true. |
+| `!`      									| Reverses a Boolean value.            |
 
 ## Else If And Else
 
