@@ -12,24 +12,13 @@ last_update:
 
 ## Overview
 
-This note talks about:
-- [Overview](#overview)
-- [What is Ansible](#what-is-ansible)
-- [Setting up your Lab and Installing Ansible](#setting-up-your-lab-and-installing-ansible)
-- [Inventory file](#inventory-file)
-- [What is YAML](#what-is-yaml)
-- [References](#references)
-
-## What is Ansible
-
+To do some repetitive tasks, we can resolve to using *scripts* to do these tasks for us. However, you will some coding skills to do this. You'll also have to maintain this scripts over time. This is where Ansible comes into play.
 
 <div class='img-center'>
 
 ![](/img/docs/ansible.png)
 
 </div>
-
-To do some repetitive tasks, we can resolve to using *scripts* to do these tasks for us. However, you will some coding skills to do this. You'll also have to maintain this scripts over time. This is where Ansible comes into play.
 
 **Ansible** is a radically simple IT automation platform that makes easier deployments. The main features of Ansible includes:
 - simple
@@ -64,7 +53,8 @@ The steps I followed in setting up the EC2 instances and installing ansible on *
 1. First created a VPC, a subnet, route table, and internet gateway where I'll be putting my instances. Also created a Security Group allowing SSH Access only from my IP address. This will be used by the instances. 
 (Yeah, it's more work, but it's a way to practice AWS as well)
 If you're using VirtualBox or VMware Workstation, please skip to Step 4.
-**Note:** Do not forget to attach IGW to VPC. Routing won't work if there's no IGW on the VPC.*</sub>
+
+**Note:** Do not forget to attach IGW to VPC. Routing won't work if there's no IGW on the VPC.
 
 2. Launched three CentOS instances from the AWS Marketplace. The AMI ID of the CentOS images I used is **ami-0adfdaea54d40922b**. You can check out the other available CentOS images in their [wiki](https://wiki.centos.org/Cloud/AWS).
 
@@ -147,7 +137,7 @@ If you're using VirtualBox or VMware Workstation, please skip to Step 4.
     10.0.0.246  server1
     ```
 
-7.  You can disable the checking of host-key on the **server** machines so that they won't require ansible to enter a password everytime ansible connects to them by using the command below, but note that **THIS IS NOT RECOMMENDED**
+6.  You can disable the checking of host-key on the **server** machines so that they won't require ansible to enter a password everytime ansible connects to them by using the command below, but note that **THIS IS NOT RECOMMENDED**
 
         sed -i "s/#host_key_checking/host_key_checking/" /etc/ansible/ansible.cfg
 
@@ -176,7 +166,7 @@ If you're using VirtualBox or VMware Workstation, please skip to Step 4.
     
     Here's a [link](https://superuser.com/questions/890128/ssh-copy-id-public-key-denied) which you can check out. You might also want to read this [one](https://www.digitalocean.com/community/questions/ssh-copy-id-not-working-permission-denied-publickey).
 
-9.  Install Ansible on the **master** machine by running:
+8.  Install Ansible on the **master** machine by running:
 
         sudo yum install  -y ansible
     
@@ -202,7 +192,7 @@ If you're using VirtualBox or VMware Workstation, please skip to Step 4.
          
     You can check out the [Ansible documentation](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) for more details on installing Ansible on other operating systems.
 
-10. Lastly, verify Ansible is installed and running.
+9. Lastly, verify Ansible is installed and running.
 
     ```bash
     $ ansible --version
@@ -224,7 +214,7 @@ If you're using VirtualBox or VMware Workstation, please skip to Step 4.
     }
     ```
 
-11. (OPTIONAL) This part is optional if you already have **python** and **nano**. Personally I prefer to have both nano and vi readily available in my Linux machines. There are some instances where I can edit a file faster using nano. but there's also instances where shortcuts in vi become more useful.
+10. (OPTIONAL) This part is optional if you already have **python** and **nano**. Personally I prefer to have both nano and vi readily available in my Linux machines. There are some instances where I can edit a file faster using nano. but there's also instances where shortcuts in vi become more useful.
 
     ```bash
     # To install python and test afterwards:

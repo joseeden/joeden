@@ -21,13 +21,19 @@ last_update:
 </div>
 
 
-Similar with any programming language, variables are used to store information varies with each host. Recall on the notes for [inventory files](1-Ansible_Inventory_YAML.md), we already worked with variables.
+Similar with any programming language, variables are used to store information varies with each host. 
 
-<p align="center">
-    <img src="/img/docs/variable-inventory.png" />
-</p>
+<!-- Recall on the notes for [inventory files](1-Ansible_Inventory_YAML.md), we already worked with variables. -->
 
-We can configure variables in the playbook itself using the **vars** keyword, followed by the key-pairs. Below we have [add-2.yaml](add-2.yaml) which adds a thrid server to the /ansible-test/sample-file.txt in server1
+
+
+<div class='img-center'>
+
+![](/img/docs/variable-inventory.png)
+
+</div>
+
+We can configure variables in the playbook itself using the **vars** keyword, followed by the key-pairs. Below we have `add-2.yaml` which adds a thrid server to the `/ansible-test/sample-file.txt` in `server1`.
 
 ```yaml
 -

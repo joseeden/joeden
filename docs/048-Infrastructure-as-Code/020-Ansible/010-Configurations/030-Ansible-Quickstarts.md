@@ -15,7 +15,7 @@ last_update:
 > *The installation for Ansible can be found on the next post. This post is for quick peak onto using Ansible. Note that there may be redundancy between this post and the succeeding ones.*
 
 
-To see what ansible version is installed in your Linux machine
+To see what ansible version is installed in your Linux machine:
 ```bash
 $ ansible --version
 ansible 2.9.6
@@ -26,7 +26,8 @@ ansible 2.9.6
   python version = 3.8.10 (default, Jun  2 2021, 10:49:15) [GCC 9.4.0]
 ```
 
-To see the default config file and default hosts file for Ansible
+To see the default config file and default hosts file for Ansible:
+
 ```bash
 ## Note that we can override both default files
 
@@ -38,7 +39,8 @@ drwxr-xr-x 93 root root  4096 Oct 20 11:31 ../
 -rw-r--r--  1 root root   982 Dec 19  2018 hosts
 ```
  
-To see the default configuration of Ansible
+To see the default configuration of Ansible:
+
 <details>
 <summary>cat /etc/ansible/ansible.cfg</summary>
 
@@ -534,10 +536,12 @@ $ cat /etc/ansible/ansible.cfg
 # Set how many context lines to show in diff
 # context = 3
 ```
+
 </details>
 
  
-To see default/sample hosts file
+To see default/sample hosts file:
+
 <details>
 <summary>cat /etc/ansible/hosts</summary>
 
@@ -589,9 +593,12 @@ $ cat /etc/ansible/hosts
 
 ```
 
-Note that this sample hosts file or " **inventory** file is for the localhost only and we can override and add entries to it, which are other host/devices to be managed using Ansible
+</details>
 
-To see the list of hosts that are on the hosts file
+Note that this sample hosts file or `inventory` file is for the localhost only and we can override and add entries to it, which are other host/devices to be managed using Ansible
+
+To see the list of hosts that are on the hosts file:
+
 ```bash
 $ ansible --list-hosts all
 [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match

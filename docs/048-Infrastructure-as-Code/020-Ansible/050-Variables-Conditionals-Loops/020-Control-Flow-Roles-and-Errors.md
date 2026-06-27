@@ -181,7 +181,13 @@ optional arguments:
 </details>
  
 
-We can view the details of a role before we install it locally by using the **ansible-galaxy role info <role-name>**. As an example, here's a [role that's available in the Ansible-galaxy site](https://galaxy.ansible.com/kosssi/gitconfig)
+We can view the details of a role before we install it locally by using:
+
+```bash
+ansible-galaxy role info <role-name>
+```
+
+As an example, here's a [role that's available in the Ansible-galaxy site](https://galaxy.ansible.com/kosssi/gitconfig)
 
 To view it in the command line:
 
@@ -258,13 +264,13 @@ Note that when you first install a role from ansible-galaxy, it will create a **
 
 ![](/img/docs/accferrorhandling.png)
 
-In the example playbook above, we see that the **command** module is used to check the status of Apache. This didn't change anything on the server but it the default behavior of the underlying command module to return a "changed" status even when there's no change done.
+In the example playbook above, we see that the `command` module is used to check the status of Apache. This didn't change anything on the server but it the default behavior of the underlying command module to return a "changed" status even when there's no change done.
 
-We can set the **changed_when** property to **false** which will ignore the "changed status" returned by the command module.
+We can set the `changed_when` property to `false` which will ignore the "changed status" returned by the command module.
 
-Another way to disregard errors is by setting the **ignore_errors** property to **yes**.
+Another way to disregard errors is by setting the `ignore_errors` property to `yes`.
 
-Finally, we can suppress warning messages like the one below by using the **args** parameter and its **warn** parameter.
+Finally, we can suppress warning messages like the one below by using the `args` parameter and its `warn` parameter.
 
 ![](/img/docs/accfwarn.png)
 
@@ -277,14 +283,14 @@ tasks:
 ```
 
 
-### any_errors_fatal: true
+### `any_errors_fatal: true`
 
 If one server fail during the parallel deployment, we can tell Ansible to stop all the deployment altogether. This means that when one fails and stop, the execution on the rest of the other server also stop.
 
 ![](/img/docs/kkanyerrorfatal.png)
 
 
-### ignore_errors and failed_when 
+### `ignore_errors` and `failed_when` 
 ![](/img/docs/kkignoreerrfailedwhen.png)
 
 
