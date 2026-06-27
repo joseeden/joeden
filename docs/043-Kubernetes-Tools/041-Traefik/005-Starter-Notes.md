@@ -1,6 +1,5 @@
 ---
 title: "Traefik"
-id: traefik-starter-notes
 description: "Starter Notes on Traefik"
 tags: 
 - Cloud
@@ -9,7 +8,7 @@ tags:
 - Containerization
 - Kubernetes
 - Traefik
-sidebar_position: 9
+sidebar_position: 5
 last_update:
   date: 2/5/2023
 ---
@@ -50,7 +49,7 @@ Traefik works by watching for changes in your system (like a new container start
 
 This means you no longer need to manually edit proxy settings every time your app changes. Traefik takes care of it instantly.
 
-For more information, please see [Traefik Architecture.](/docs/043-Kubernetes-Tools/041-Traefik/010-Traefik-Architecture.md)
+For more information, please see [Traefik Architecture.](/docs/043-Kubernetes-Tools/041-Traefik/007-Traefik-Architecture.md)
 
 ## Key Features
 

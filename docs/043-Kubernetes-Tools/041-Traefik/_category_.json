@@ -1,8 +1,4 @@
 {
   "label": "Traefik",
-  "position": 41,
-  "link": {
-    "type": "doc",
-    "id": "traefik-starter-notes"
-  }
+  "position": 41
 }
