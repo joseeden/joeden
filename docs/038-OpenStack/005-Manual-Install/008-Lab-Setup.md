@@ -24,6 +24,28 @@ Manual installation involves many steps and configuration edits. It may include 
 
 While automation tools can simplify the process, doing it manually helps in understanding the service dependencies and see how components interact.
 
+## Lab Architecture
+
+The lab uses three VMs to represent a small OpenStack environment.
+
+| Node       | Role                                                                        | vCPUs | RAM   | Disk  |
+| ---------- | --------------------------------------------------------------------------- | ----- | ----- | ----- |
+| Controller | Runs core OpenStack services (Identity, Image, Networking, Dashboard, etc.) | 2     | 6 GB  | 20 GB |
+| Compute    | Runs virtual machine instances (Nova compute service)                       | 2     | 4 GB  | 10 GB |
+| Storage    | Provides block storage (Cinder with LVM backend)                            | 2     | 4 GB  | 20 GB |
+
+**NOTE:** The number of compute nodes will be increased to two during the Nova Compute installation step. We will use VirtualBox snapshots to clone the compute node.
+
+To keep things simple, we will begin with only three virtual machines.
+
+<!-- The diagram below shows the starting lab layout, including the controller, compute, and storage nodes used for the manual OpenStack installation. -->
+
+<div class='img-center'>
+
+![](/img/docs/all-things-openstack-manual-install.png)
+
+</div>
+
 ## Host System Recommendation
 
 For a smooth experience:
@@ -34,6 +56,7 @@ For a smooth experience:
 | CPU                | 4 cores     | 2 cores                       |
 
 Running the lab on 8 GB RAM is possible but performance will be constrained, especially when launching multiple instances.
+ 
  
 ## Tools Used
 
@@ -74,27 +97,8 @@ The primary difference between distributions is the **package manager**:
 Most OpenStack configuration files and service concepts remain the same across distributions, although package names and file paths may differ slightly.
 
 
-## Lab Architecture
 
-The lab uses three VMs to represent a small OpenStack environment.
-
-| Node       | Role                                                                        | vCPUs | RAM   | Disk  |
-| ---------- | --------------------------------------------------------------------------- | ----- | ----- | ----- |
-| Controller | Runs core OpenStack services (Identity, Image, Networking, Dashboard, etc.) | 2     | 6 GB  | 20 GB |
-| Compute    | Runs virtual machine instances (Nova compute service)                       | 2     | 4 GB  | 10 GB |
-| Storage    | Provides block storage (Cinder with LVM backend)                            | 2     | 4 GB  | 20 GB |
-
-**NOTE:** The number of compute nodes will be increased to two during the Nova Compute installation step. We will use VirtualBox snapshots to clone the compute node.
-
-To keep things simple, we will begin with only three virtual machines.
-
-<div class='img-center'>
-
-![](/img/docs/all-things-openstack-manual-install.png)
-
-</div>
-
-### Resource Considerations 
+## Resource Considerations 
 
 The values below are recommended for stable operation, but adjustments can be made depending on available hardware.
 
@@ -112,7 +116,7 @@ On the Storage node:
 
 - Reducing RAM is possible but may impact storage performance.
 
-### Virtual Networks
+## Virtual Networks
 
 Three virtual networks are used to separate traffic.
 
@@ -141,7 +145,7 @@ The network configurations can be found here: [Create the Virtual Networks.](/do
 
       :::
 
-### Storage Backend
+## Storage Backend
 
 The storage node uses LVM as the backend.
 
@@ -153,13 +157,12 @@ Production environments often use more advanced backends such as Ceph.
 For learning purposes, LVM keeps the setup simple and focused on OpenStack itself.
 
 
-### Neutron Networking Backend
+## Neutron Networking Backend
 
 Linux Bridge is easier to configure and suitable for a basic learning environment.
 
 - Linux Bridge agent is used
 - Open vSwitch can also be used in other setups
-
 
 
 

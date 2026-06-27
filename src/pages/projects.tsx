@@ -242,7 +242,7 @@ const projects: ProjectData[] = [
   {
     title: "OpenStack Private Cloud Setup",
     description: "Manual OpenStack deployment across compute, network, and storage",
-    url: `${baseUrl}/docs/OpenStack/Manual-Install/Lab-Setup/Lab-Setup`,
+    url: `${baseUrl}/docs/OpenStack/Manual-Install/openstack-lab-setup`,
     image: require(`/img/docs/a0254144-dd3e-4bc4-91cc-ba5e4af7c26c.png`),
     tags: ["DevOps", "OpenStack"],
   },
