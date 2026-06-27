@@ -46,6 +46,16 @@ Screenshot:
 
 </div>
 
+## Application Flow
+
+The diagram below gives a quick view of how the main link-shortening flow works, from submitting a long URL to resolving the generated short link.
+
+<div class='img-center'>
+
+![](/img/docs/project-link-shortener-nextjs-flow.png)
+
+</div>
+
 ## Architecture and Stack
 
 The application is built entirely using Next.js as a full-stack framework, meaning both frontend and backend logic live in the same project.

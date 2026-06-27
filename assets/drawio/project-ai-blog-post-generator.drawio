@@ -1,0 +1,36 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2">
+  <diagram id="ai-blog-post-generator" name="AI Blog Post Generator">
+    <mxGraphModel dx="2429" dy="766" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1120" pageHeight="520" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="JD-y_ZkbYowErJYyTWSM-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#E6E6E6;" value="" vertex="1">
+          <mxGeometry height="180" width="890" x="-10" y="123" as="geometry" />
+        </mxCell>
+        <mxCell id="id2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#2563eb;fillColor=#dbeafe;fontColor=#111827;fontSize=13;spacing=10;" value="Outline file" vertex="1">
+          <mxGeometry height="66" width="170" x="40" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="id3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" value="Example posts&lt;br&gt;for style" vertex="1">
+          <mxGeometry height="66" width="170" x="245" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="id5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" value="LLM generates&lt;br&gt;Markdown article" vertex="1">
+          <mxGeometry height="66" width="170" x="450" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="id6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" value="Save draft&lt;br&gt;for review" vertex="1">
+          <mxGeometry height="66" width="170" x="655" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="id7" edge="1" parent="1" source="id2" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="id3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="id8" edge="1" parent="1" source="id3" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="450" y="213" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="id10" edge="1" parent="1" source="id5" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="id6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

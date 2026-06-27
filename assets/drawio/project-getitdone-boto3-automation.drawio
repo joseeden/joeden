@@ -1,0 +1,19 @@
+<mxfile host="Codex" modified="2026-06-27T10:01:50Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="getitdone-automation-with-boto3" name="GetItDone Automation with Boto3">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1120" pageHeight="520" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="id2" value="Service request&lt;br&gt;data/images" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#2563eb;fillColor=#dbeafe;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="40" y="180" width="170" height="66" as="geometry"/></mxCell>
+        <mxCell id="id3" value="Python Boto3&lt;br&gt;automation" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="245" y="180" width="170" height="66" as="geometry"/></mxCell>
+        <mxCell id="id4" value="S3 stores&lt;br&gt;request artifacts" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="450" y="180" width="170" height="66" as="geometry"/></mxCell>
+        <mxCell id="id5" value="Rekognition +&lt;br&gt;Comprehend analysis" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="655" y="180" width="170" height="66" as="geometry"/></mxCell>
+        <mxCell id="id6" value="SNS sends&lt;br&gt;threshold alerts" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="860" y="180" width="170" height="66" as="geometry"/></mxCell>
+        <mxCell id="id7" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="id2" target="id3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="id8" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="id3" target="id4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="id9" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="id4" target="id5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="id10" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="id5" target="id6"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

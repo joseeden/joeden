@@ -1,0 +1,46 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2">
+  <diagram id="ai-assisted-db-lifecycle-pipeline" name="AI-Assisted DB Lifecycle Pipeline">
+    <mxGraphModel dx="2660" dy="901" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1120" pageHeight="520" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Tf1jEUT8SYeJZCq9en2f-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#E6E6E6;" value="" vertex="1">
+          <mxGeometry height="200" width="1390" x="-20" y="113" as="geometry" />
+        </mxCell>
+        <mxCell id="id2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#2563eb;fillColor=#dbeafe;fontColor=#111827;fontSize=13;spacing=10;" value="Docker app +&lt;br&gt;Postgres lab" vertex="1">
+          <mxGeometry height="66" width="170" x="40" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="id3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" value="Detect schema&lt;br&gt;mismatch" vertex="1">
+          <mxGeometry height="66" width="170" x="260" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="id4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" value="Data quality&lt;br&gt;duplicate checks" vertex="1">
+          <mxGeometry height="66" width="170" x="480" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="id5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" value="Optimize queries&lt;br&gt;with indexes" vertex="1">
+          <mxGeometry height="66" width="170" x="700" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="id6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" value="Normalize schema&lt;br&gt;and migrate data" vertex="1">
+          <mxGeometry height="66" width="170" x="920" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="id7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" value="GitHub Actions&lt;br&gt;validates lifecycle" vertex="1">
+          <mxGeometry height="66" width="170" x="1140" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="id8" edge="1" parent="1" source="id2" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="id3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="id9" edge="1" parent="1" source="id3" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="id4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="id10" edge="1" parent="1" source="id4" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="id5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="id11" edge="1" parent="1" source="id5" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="id6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="id12" edge="1" parent="1" source="id6" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="id7" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

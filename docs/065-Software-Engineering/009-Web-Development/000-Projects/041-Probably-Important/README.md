@@ -57,6 +57,16 @@ The app will provide rich text formatting options:
 - Blockquotes
 - Horizontal Separator Lines
 
+## Application Flow
+
+The diagram below gives a quick view of how the main app flow connects authentication, the dashboard, the editor, and note storage.
+
+<div class='img-center'>
+
+![](/img/docs/project-probably-important-app-flow.png)
+
+</div>
+
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/en/download)

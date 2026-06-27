@@ -1,0 +1,21 @@
+<mxfile host="Codex" modified="2026-06-27T10:01:50Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="traefik-edge-routing-labs" name="Traefik Edge Routing Labs">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1120" pageHeight="520" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="id2" value="Browser/curl&lt;br&gt;Host header" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#2563eb;fillColor=#dbeafe;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="40" y="180" width="170" height="66" as="geometry"/></mxCell>
+        <mxCell id="id3" value="Traefik entrypoint&lt;br&gt;port 80/443" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="250" y="180" width="170" height="66" as="geometry"/></mxCell>
+        <mxCell id="id4" value="Docker provider&lt;br&gt;reads labels" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#7c3aed;fillColor=#ede9fe;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="250" y="310" width="170" height="66" as="geometry"/></mxCell>
+        <mxCell id="id5" value="Router rule&lt;br&gt;whoami host" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="460" y="180" width="170" height="66" as="geometry"/></mxCell>
+        <mxCell id="id6" value="Middleware&lt;br&gt;TLS/auth/rate limits" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="670" y="180" width="170" height="66" as="geometry"/></mxCell>
+        <mxCell id="id7" value="Service pool&lt;br&gt;scaled containers" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="880" y="180" width="170" height="66" as="geometry"/></mxCell>
+        <mxCell id="id8" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="id2" target="id3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="id9" value="dynamic config" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="id4" target="id3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="id10" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="id3" target="id5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="id11" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="id5" target="id6"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="id12" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="id6" target="id7"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

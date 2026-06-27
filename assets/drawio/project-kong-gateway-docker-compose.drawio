@@ -1,0 +1,23 @@
+<mxfile host="Codex" modified="2026-06-27T10:01:50Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="kong-gateway-setup-with-docker-compose" name="Kong Gateway Setup with Docker Compose">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1120" pageHeight="520" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="id2" value="Client requests" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#2563eb;fillColor=#dbeafe;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="40" y="180" width="170" height="66" as="geometry"/></mxCell>
+        <mxCell id="id3" value="Kong Gateway&lt;br&gt;proxy ports 8000/8443" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="240" y="180" width="170" height="66" as="geometry"/></mxCell>
+        <mxCell id="id4" value="Upstream APIs&lt;br&gt;FastAPI/services" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="440" y="180" width="170" height="66" as="geometry"/></mxCell>
+        <mxCell id="id5" value="Kong Admin API&lt;br&gt;and Manager" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#7c3aed;fillColor=#ede9fe;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="240" y="320" width="170" height="66" as="geometry"/></mxCell>
+        <mxCell id="id6" value="Postgres&lt;br&gt;Kong database" style="shape=cylinder3d;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;strokeColor=#047857;fillColor=#d1fae5;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="440" y="320" width="170" height="66" as="geometry"/></mxCell>
+        <mxCell id="id7" value="Prometheus +&lt;br&gt;Grafana" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#7c3aed;fillColor=#ede9fe;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="640" y="180" width="170" height="66" as="geometry"/></mxCell>
+        <mxCell id="id8" value="Logstash + ELK&lt;br&gt;central logs" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#7c3aed;fillColor=#ede9fe;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="840" y="180" width="170" height="66" as="geometry"/></mxCell>
+        <mxCell id="id9" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="id2" target="id3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="id10" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="id3" target="id4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="id11" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="id5" target="id3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="id12" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="id3" target="id6"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="id13" value="metrics" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="id3" target="id7"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="id14" value="logs" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="id3" target="id8"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

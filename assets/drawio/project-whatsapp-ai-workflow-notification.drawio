@@ -1,0 +1,40 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2">
+  <diagram id="whatsapp-api-for-ai-workflows" name="WhatsApp API for AI Workflows">
+    <mxGraphModel dx="2429" dy="766" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1120" pageHeight="520" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="7So0MJ75vCjZ1dlI8hdz-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#E6E6E6;" value="" vertex="1">
+          <mxGeometry height="170" width="1110" x="-10" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="id2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#2563eb;fillColor=#dbeafe;fontColor=#111827;fontSize=13;spacing=10;" value="Content workflow&lt;br&gt;runs normally" vertex="1">
+          <mxGeometry height="66" width="170" x="40" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="id3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" value="Outputs saved&lt;br&gt;blog/image/social" vertex="1">
+          <mxGeometry height="66" width="170" x="250" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="id4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" value="Summary message&lt;br&gt;prepared" vertex="1">
+          <mxGeometry height="66" width="170" x="460" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="id5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#82b366;fillColor=#d5e8d4;fontSize=13;spacing=10;" value="Meta WhatsApp&lt;br&gt;Cloud API" vertex="1">
+          <mxGeometry height="66" width="170" x="670" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="id6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#d79b00;fillColor=#ffe6cc;fontSize=13;spacing=10;" value="Test recipient&lt;br&gt;receives alert" vertex="1">
+          <mxGeometry height="66" width="170" x="880" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="id7" edge="1" parent="1" source="id2" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="id3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="id8" edge="1" parent="1" source="id3" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="id4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="id9" edge="1" parent="1" source="id4" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="id5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="id10" edge="1" parent="1" source="id5" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="id6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

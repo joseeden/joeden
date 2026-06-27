@@ -1,5 +1,5 @@
 ---
-title: "Single Server Deployment"
+title: "CI/CD Pipeline for Flask Application"
 description: "Deploying an App on a Single Server"
 tags:
 - CICD
@@ -25,6 +25,15 @@ This lab demonstrates how to deploy a sample Flask application to a single serve
 6. Install dependencies on the server
 7. Deploy the Flask application 
 
+## Workflow Diagram
+
+The diagram below summarizes the CI/CD path from a GitHub change to the Flask application running on the production server.
+
+<div class='img-center'>
+
+![](/img/docs/project-cicd-flask-jenkins-single-server.png)
+
+</div>
 
 ## Lab Environment
 

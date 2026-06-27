@@ -1,0 +1,19 @@
+<mxfile host="Codex" modified="2026-06-27T10:01:50Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="elastic-stack-logging-labs" name="Elastic Stack Logging Labs">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1120" pageHeight="520" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="id2" value="Application/server&lt;br&gt;logs" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#2563eb;fillColor=#dbeafe;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="40" y="180" width="170" height="66" as="geometry"/></mxCell>
+        <mxCell id="id3" value="Filebeat or agent&lt;br&gt;ships events" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="245" y="180" width="170" height="66" as="geometry"/></mxCell>
+        <mxCell id="id4" value="Logstash&lt;br&gt;parses/enriches" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="450" y="180" width="170" height="66" as="geometry"/></mxCell>
+        <mxCell id="id5" value="Elasticsearch&lt;br&gt;indexes logs" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="655" y="180" width="170" height="66" as="geometry"/></mxCell>
+        <mxCell id="id6" value="Kibana&lt;br&gt;searches dashboards" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" vertex="1" parent="1"><mxGeometry x="860" y="180" width="170" height="66" as="geometry"/></mxCell>
+        <mxCell id="id7" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="id2" target="id3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="id8" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="id3" target="id4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="id9" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="id4" target="id5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="id10" value="" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" edge="1" parent="1" source="id5" target="id6"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
