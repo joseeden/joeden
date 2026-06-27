@@ -1,5 +1,5 @@
 ---
-title: "Starter Notes"
+title: "GetItDone Automation with Boto3"
 tags: 
 - Amazon Web Services
 - Labs

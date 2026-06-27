@@ -27,7 +27,7 @@ func main() {
 
 The `fmt.Println()` call is also a function call. It uses a function from the `fmt` package.
 
-## Define and call a Function
+## Define and Call a Function
 
 Use the `func` keyword to define a function.
 
@@ -276,43 +276,7 @@ Values from user input should stay inside `main()` and then be passed into other
 
 In this example, the `main()` function collects user input and then calls the `calculateFutureValues()` function to calculate the future value and adjusted future value of an investment.
 
-```go
-package main
-
-import (
-	"fmt"
-	"math"
-)
-
-const inflationRate = 0.02
-
-func main() {
-
-	var investmentAmount, years float64
-	var returnRate = 0.05
-
-	fmt.Print("Enter the investment amount: ")
-	fmt.Scan(&investmentAmount)
-
-	fmt.Print("Enter the number of years to invest: ")
-	fmt.Scan(&years)
-
-	futureValue, adjustedFutureValue := calculateValues(investmentAmount, returnRate, years)
-
-	formattedFutureValue := fmt.Sprintf("Future Value: %.2f\n", futureValue)
-	formattedAdjustedFutureValue := fmt.Sprintf("Adjusted Future Value: %.2f\n", adjustedFutureValue)
-
-	fmt.Print(formattedFutureValue, formattedAdjustedFutureValue)
-}
-
-func calculateValues(investmentAmount, returnRate, years float64) (futureValue, adjustedFutureValue float64) {
-
-	futureValue = investmentAmount * math.Pow(1+returnRate, float64(years))
-	adjustedFutureValue = futureValue / math.Pow(1+inflationRate, float64(years))
-
-	return
-}
-```
+> See sample code here: [Investment Calculator using Functions](https://github.com/joseeden/joeden/tree/master/docs/065-Software-Engineering/030-Golang/000-Projects/001-Learning/007-Investment-Calculator-using-Functions)
 
 Run the program:
 
