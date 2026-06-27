@@ -1,18 +1,18 @@
 ---
-title: "Lab 006: Two-tier Design Part 1: Package Management"
-description: "Lab 006: Two-tier Design Part 1: Package Management"
+title: "Two tier Design Part 1 Package Management"
+description: "Two tier Design Part 1 Package Management"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 60
+sidebar_position: 18
 last_update:
   date: 12/7/2020
 ---
 
 ## Overview
 
-**Diagram:**
+Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 
 This particular lab will be divided into phases:

@@ -1,18 +1,18 @@
 ---
-title: "Lab 011: Two-tier Design Part 6: Using Prompts"
-description: "Lab 011: Two-tier Design Part 6: Using Prompts"
+title: "Two tier Design Part 6 Using Prompts"
+description: "Two tier Design Part 6 Using Prompts"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 110
+sidebar_position: 33
 last_update:
   date: 12/12/2020
 ---
 
 ## Overview
 
-**Diagram:**
+Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 
 In this lab, we'll modify the flow by asking the user to answer a yes-no question before proceeding with running the playbook. To do this, we'll use **vars_prompt** and **prompt**.

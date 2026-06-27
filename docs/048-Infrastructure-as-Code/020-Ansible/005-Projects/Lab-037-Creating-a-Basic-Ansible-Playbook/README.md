@@ -1,11 +1,11 @@
 ---
-title: "Lab 037: Creating a Basic Ansible Playbook"
-description: "Lab 037: Creating a Basic Ansible Playbook"
+title: "Creating a Basic Ansible Playbook"
+description: "Creating a Basic Ansible Playbook"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 370
+sidebar_position: 111
 last_update:
   date: 1/22/2021
 ---

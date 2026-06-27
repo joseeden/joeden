@@ -1,18 +1,18 @@
 ---
-title: "Lab 023: Using Jinja2 Templates to Deploy motd"
-description: "Lab 023: Using Jinja2 Templates to Deploy motd"
+title: "Using Jinja2 Templates to Deploy motd"
+description: "Using Jinja2 Templates to Deploy motd"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 230
+sidebar_position: 69
 last_update:
   date: 12/24/2020
 ---
 
 ## Overview
 
-**Diagram:**
+Diagram:
 ![](/img/docs/ansible-lab-diagram-2.png)
 
 The tree-structure of our Project **One** currently looks like this. Don't worry if you see that there's already a lot of files in the directory. These are the files from the previous labs in this series. The only ones we'll really really need are also provided below.

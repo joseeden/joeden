@@ -1,18 +1,18 @@
 ---
-title: "Lab 007: Two-tier Design Part 2: Install services"
-description: "Lab 007: Two-tier Design Part 2: Install services"
+title: "Two tier Design Part 2 Install services"
+description: "Two tier Design Part 2 Install services"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 70
+sidebar_position: 21
 last_update:
   date: 12/8/2020
 ---
 
 ## Overview
 
-**Diagram:**
+Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 
 Here we'll be installing services on our webservers and loadbalancer.

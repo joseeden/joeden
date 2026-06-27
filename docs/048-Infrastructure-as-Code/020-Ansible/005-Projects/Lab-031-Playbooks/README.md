@@ -1,11 +1,11 @@
 ---
-title: "Lab 031: Playbooks"
-description: "Lab 031: Playbooks"
+title: "Playbooks"
+description: "Playbooks"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 310
+sidebar_position: 93
 last_update:
   date: 1/10/2021
 ---

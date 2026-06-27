@@ -1,18 +1,18 @@
 ---
-title: "Lab 020: Using host_vars and group_vars"
-description: "Lab 020: Using host_vars and group_vars"
+title: "Using host vars and group vars"
+description: "Using host vars and group vars"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 200
+sidebar_position: 60
 last_update:
   date: 12/21/2020
 ---
 
 ## Overview
 
-**Diagram:**
+Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 
 This is a continuation of the previous lab. We'll also still be using the same files in project **one** from the first 10 labs. To recap, here is a tree-output of our project **one**:

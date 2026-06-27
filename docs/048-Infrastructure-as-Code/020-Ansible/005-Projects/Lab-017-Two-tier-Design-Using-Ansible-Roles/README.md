@@ -1,18 +1,18 @@
 ---
-title: "Lab 017: Two-tier Design: Using Ansible Roles"
-description: "Lab 017: Two-tier Design: Using Ansible Roles"
+title: "Two tier Design Using Ansible Roles"
+description: "Two tier Design Using Ansible Roles"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 170
+sidebar_position: 51
 last_update:
   date: 12/18/2020
 ---
 
 ## Overview
 
-**Diagram:**
+Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 
 For this lab, we'll rebuilt our setup to use roles. We'll also create a new project folder named **two** and we'll initialize the directory structure using the **ansible-galaxy** command.

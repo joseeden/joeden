@@ -1,11 +1,11 @@
 ---
-title: "Lab 029: Conditionals"
-description: "Lab 029: Conditionals"
+title: "Conditionals"
+description: "Conditionals"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 290
+sidebar_position: 87
 last_update:
   date: 1/6/2021
 ---

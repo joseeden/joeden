@@ -1,18 +1,18 @@
 ---
-title: "Lab 002: Playbook on Uname"
-description: "Lab 002: Playbook on Uname"
+title: "Playbook on Uname"
+description: "Playbook on Uname"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 20
+sidebar_position: 6
 last_update:
   date: 12/3/2020
 ---
 
 ## Overview
 
-**Diagram:**
+Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 
 ```bash

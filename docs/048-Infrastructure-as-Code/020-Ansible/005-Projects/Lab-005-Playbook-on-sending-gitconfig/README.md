@@ -1,18 +1,18 @@
 ---
-title: "Lab 005: Playbook on sending .gitconfig"
-description: "Lab 005: Playbook on sending .gitconfig"
+title: "Playbook on sending gitconfig"
+description: "Playbook on sending gitconfig"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 50
+sidebar_position: 15
 last_update:
   date: 12/6/2020
 ---
 
 ## Overview
 
-**Diagram:**
+Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 
 In our **playbooks** directory, let's create **sample-check-git.yml**

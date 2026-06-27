@@ -1,11 +1,11 @@
 ---
-title: "Lab 030: Loops"
-description: "Lab 030: Loops"
+title: "Loops"
+description: "Loops"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 300
+sidebar_position: 90
 last_update:
   date: 1/8/2021
 ---

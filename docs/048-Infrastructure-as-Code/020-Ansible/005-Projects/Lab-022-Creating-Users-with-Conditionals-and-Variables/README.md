@@ -1,18 +1,18 @@
 ---
-title: "Lab 022: Creating Users with Conditionals and Variables"
-description: "Lab 022: Creating Users with Conditionals and Variables"
+title: "Creating Users with Conditionals and Variables"
+description: "Creating Users with Conditionals and Variables"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 220
+sidebar_position: 66
 last_update:
   date: 12/23/2020
 ---
 
 ## Overview
 
-**Diagram:**
+Diagram:
 ![](/img/docs/ansible-lab-diagram-2.png)
 
 The tree-structure of our Project **One** currently looks like this. Don't worry if you see that there's already a lot of files in the directory. These are the files from the previous labs in this series. The only ones we'll really need are also provided below.

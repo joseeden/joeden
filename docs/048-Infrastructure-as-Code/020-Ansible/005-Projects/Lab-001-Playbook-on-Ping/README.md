@@ -1,18 +1,19 @@
 ---
-title: "Lab 001: Playbook on Ping"
-description: "Lab 001: Playbook on Ping"
+title: "Playbook on Ping"
+description: "Playbook on Ping"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 10
+sidebar_position: 3
 last_update:
   date: 12/2/2020
 ---
 
 ## Overview
 
-**Diagram:**
+Diagram:
+
 ![](/img/docs/ansible-lab-diagram-1.png)
 
 ```bash

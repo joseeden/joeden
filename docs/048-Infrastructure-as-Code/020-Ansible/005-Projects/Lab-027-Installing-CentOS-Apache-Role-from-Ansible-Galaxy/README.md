@@ -1,18 +1,18 @@
 ---
-title: "Lab 027: Installing CentOS-Apache Role from Ansible Galaxy"
-description: "Lab 027: Installing CentOS-Apache Role from Ansible Galaxy"
+title: "Installing CentOS Apache Role from Ansible Galaxy"
+description: "Installing CentOS Apache Role from Ansible Galaxy"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 270
+sidebar_position: 81
 last_update:
   date: 1/2/2021
 ---
 
 ## Overview
 
-**Diagram:**
+Diagram:
 ![](/img/docs/ansible-lab-diagram-2.png)
 
 The tree-structure of our Project **One** currently looks like this. Don't worry if you see that there's already a lot of files in the directory. These are the files from the previous labs in this series. The only ones we'll really really need are also provided below.

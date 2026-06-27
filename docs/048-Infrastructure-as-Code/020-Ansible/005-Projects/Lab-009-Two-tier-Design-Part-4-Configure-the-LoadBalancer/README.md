@@ -1,18 +1,18 @@
 ---
-title: "Lab 009: Two-tier Design Part 4: Configure the LoadBalancer"
-description: "Lab 009: Two-tier Design Part 4: Configure the LoadBalancer"
+title: "Two tier Design Part 4 Configure the LoadBalancer"
+description: "Two tier Design Part 4 Configure the LoadBalancer"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 90
+sidebar_position: 27
 last_update:
   date: 12/10/2020
 ---
 
 ## Overview
 
-**Diagram:**
+Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 
 Here we're configuring the loadbalancer with all the IP addresses of the web servers, which will then be used by the loadbalancer to proxy the requests coming in.

@@ -1,18 +1,18 @@
 ---
-title: "Lab 018: Using Ansible Vault"
-description: "Lab 018: Using Ansible Vault"
+title: "Using Ansible Vault"
+description: "Using Ansible Vault"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 180
+sidebar_position: 54
 last_update:
   date: 12/19/2020
 ---
 
 ## Overview
 
-**Diagram:**
+Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 
 Still in project **two**, we'll create a **secrets.yml** file in our **vars** directory. Once you run the command below, it will prompt you to enter the password twice, afterwards it'll open the file where you can enter any secrets or passwords or keys.

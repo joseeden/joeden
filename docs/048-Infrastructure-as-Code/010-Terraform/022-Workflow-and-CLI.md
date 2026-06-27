@@ -1,0 +1,53 @@
+---
+title: "Workflow and CLI"
+description: "Terraform workflow and CLI commands"
+tags: 
+- DevOps
+- Infrastructure as Code
+- Terraform
+sidebar_position: 22
+last_update:
+  date: 1/24/2021
+---
+
+## Overview
+
+Terraform work usually follows the same rhythm: write configuration, initialize the working directory, review the plan, apply the changes, and destroy the resources when they are no longer needed.
+
+## Common Workflow
+
+| Step       | Command              | Purpose                                      |
+| ---------- | -------------------- | -------------------------------------------- |
+| Initialize | `terraform init`     | Downloads providers and prepares the folder. |
+| Format     | `terraform fmt`      | Rewrites configuration into standard style.  |
+| Validate   | `terraform validate` | Checks syntax and internal consistency.      |
+| Plan       | `terraform plan`     | Shows the changes Terraform intends to make. |
+| Apply      | `terraform apply`    | Creates, updates, or removes resources.      |
+| Destroy    | `terraform destroy`  | Removes resources managed by the state file. |
+
+## Workspaces
+
+Workspaces let one configuration keep separate state for multiple environments.
+
+```bash
+terraform workspace list
+terraform workspace new dev
+terraform workspace select dev
+```
+
+**Note**: Workspaces separate state, but they do not automatically make a design production-ready. Keep environment naming, variables, and backend configuration clear.
+
+## Targeted Operations
+
+Terraform can target one resource or module during troubleshooting.
+
+```bash
+terraform apply -target=module.webserver
+terraform destroy -target=module.webserver
+```
+
+:::warning
+
+Use `-target` for debugging only. Regular applies should let Terraform evaluate the full dependency graph.
+
+:::

@@ -1,18 +1,18 @@
 ---
-title: "Lab 019: Creating Users"
-description: "Lab 019: Creating Users"
+title: "Creating Users"
+description: "Creating Users"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 190
+sidebar_position: 57
 last_update:
   date: 12/20/2020
 ---
 
 ## Overview
 
-**Diagram:**
+Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 
 We'll be using the same project **one** that we used from the first 10 labs. To recap, here is a tree-output of our project **one**:

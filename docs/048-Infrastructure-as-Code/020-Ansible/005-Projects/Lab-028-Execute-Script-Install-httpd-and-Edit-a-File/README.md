@@ -1,11 +1,11 @@
 ---
-title: "Lab 028: Execute Script, Install httpd, and Edit a File"
-description: "Lab 028: Execute Script, Install httpd, and Edit a File"
+title: "Execute Script Install httpd and Edit a File"
+description: "Execute Script Install httpd and Edit a File"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 280
+sidebar_position: 84
 last_update:
   date: 1/4/2021
 ---

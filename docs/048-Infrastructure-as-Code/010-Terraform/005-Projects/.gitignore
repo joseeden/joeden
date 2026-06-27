@@ -1,8 +1,20 @@
+# Terraform generated files
+.terraform/
+**/.terraform/
+**/.terraform.lock.hcl
+**/terraform.tfstate
+**/terraform.tfstate.*
+**/*.tfstate
+**/*.tfstate.*
+**/crash.log
+**/crash.*.log
 
-# ignore some terraform files
-*.terraform*
-*.tfstate.*
-*.tfstate
-.terraform.lock.hcl
-linux_386
-linux_amd64
+# Local variable files and generated packages
+**/*.tfvars.local
+**/*.auto.tfvars
+**/*.auto.tfvars.json
+**/*.zip
+
+# Provider plugin cache
+**/linux_386/
+**/linux_amd64/

@@ -1,18 +1,18 @@
 ---
-title: "Lab 008: Two-tier Design Part 3: Upload application to Web Servers"
-description: "Lab 008: Two-tier Design Part 3: Upload application to Web Servers"
+title: "Two tier Design Part 3 Upload application to Web Servers"
+description: "Two tier Design Part 3 Upload application to Web Servers"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 80
+sidebar_position: 24
 last_update:
   date: 12/9/2020
 ---
 
 ## Overview
 
-**Diagram:**
+Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 
 For this lab, we'll be uploading a PHP file to the webservers' HTML directory, which will then be pulled and served by Apache.

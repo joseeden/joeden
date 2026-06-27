@@ -1,18 +1,18 @@
 ---
-title: "Lab 032: Deploying LAMP Server (TBC)"
-description: "Lab 032: Deploying LAMP Server (TBC)"
+title: "Deploying LAMP Server (TBC)"
+description: "Deploying LAMP Server (TBC)"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 320
+sidebar_position: 96
 last_update:
   date: 1/12/2021
 ---
 
 ## Overview
 
-**Diagram:**
+Diagram:
 ![](/img/docs/ansible-lab-diagram-2.png)
 
 The tree-structure of our Project **One** currently looks like this. Don't worry if you see that there's already a lot of files in the directory. These are the files from the previous labs in this series. The only ones we'll really really need are also provided below.

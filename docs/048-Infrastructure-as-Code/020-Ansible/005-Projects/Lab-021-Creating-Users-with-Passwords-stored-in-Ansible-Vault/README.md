@@ -1,18 +1,18 @@
 ---
-title: "Lab 021: Creating Users with Passwords stored in Ansible Vault"
-description: "Lab 021: Creating Users with Passwords stored in Ansible Vault"
+title: "Creating Users with Passwords stored in Ansible Vault"
+description: "Creating Users with Passwords stored in Ansible Vault"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 210
+sidebar_position: 63
 last_update:
   date: 12/22/2020
 ---
 
 ## Overview
 
-**Diagram:**
+Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 
 We'll also still be using the same files in project **one** from the first 10 labs. To recap, here are some important files that we'll need:

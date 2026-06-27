@@ -1,18 +1,18 @@
 ---
-title: "Lab 003: Copying gitconfig onto the Nodes"
-description: "Lab 003: Copying gitconfig onto the Nodes"
+title: "Copying gitconfig onto the Nodes"
+description: "Copying gitconfig onto the Nodes"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 30
+sidebar_position: 9
 last_update:
   date: 12/4/2020
 ---
 
 ## Overview
 
-**Diagram:**
+Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 
 In our **files** directory, let's create **master.gitconfig** which we will then then we can pass that file onto the managed nodes.

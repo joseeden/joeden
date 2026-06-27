@@ -1,18 +1,18 @@
 ---
-title: "Lab 014: Two-tier Design: Using Variables"
-description: "Lab 014: Two-tier Design: Using Variables"
+title: "Two tier Design Using Variables"
+description: "Two tier Design Using Variables"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 140
+sidebar_position: 42
 last_update:
   date: 12/15/2020
 ---
 
 ## Overview
 
-**Diagram:**
+Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 
 Now that we've tested the page to be working, we'll now incorporate variables in our playbook. Similar with the previous lab on the loadbalancer proxying the requests between the backend web servers, we'll now do the same test to get the werbserver's name that's serving the request and display it on the webpage.

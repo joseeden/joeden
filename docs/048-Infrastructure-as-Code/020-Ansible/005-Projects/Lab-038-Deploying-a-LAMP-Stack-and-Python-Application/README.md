@@ -1,11 +1,11 @@
 ---
-title: "Lab 038: Deploying a LAMP Stack and Python Application"
-description: "Lab 038: Deploying a LAMP Stack and Python Application"
+title: "Deploying a LAMP Stack and Python Application"
+description: "Deploying a LAMP Stack and Python Application"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 380
+sidebar_position: 114
 last_update:
   date: 1/24/2021
 ---
@@ -21,7 +21,7 @@ The work is split into two roles:
 
 This builds on the previous playbook lab and moves the workflow into reusable role structure.
 
-To start with, I connected to the already launched EC2 instance by downloading the *pem and *ppk* file. There's also an option to connect to the instance through the browser-based **Instance Connect** but I prefer to work inside my terminal.
+Start by connecting to the launched EC2 instance. You can connect through browser-based Instance Connect or by downloading the key files and connecting from a terminal.
 
 ```bash
 $ ssh -i "491311302393.pem" ubuntu@54.201.215.21 
@@ -209,7 +209,7 @@ We'll first define the default variables for the directories which store the sou
 ---
 app_download_dest: /tmp/webapp
 app_dest: /var/www/webapp
-app_repo: https://github.com/cloudacademy/ansible_demo.git
+app_repo: https://github.com/example/ansible-demo.git
 
 ```
  

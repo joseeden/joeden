@@ -1,18 +1,18 @@
 ---
-title: "Lab 036: Install and Configure Tomcat as the Staging Environment"
-description: "Lab 036: Install and Configure Tomcat as the Staging Environment"
+title: "Install and Configure Tomcat as the Staging Environment"
+description: "Install and Configure Tomcat as the Staging Environment"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 360
+sidebar_position: 108
 last_update:
   date: 1/20/2021
 ---
 
 ## Overview
 
-**Diagram:**
+Diagram:
 ![](/img/docs/ansible-lab-diagram-3.png)
 
 The tree-structure of our Project **One** currently looks like this. Don't worry if you see that there's already a lot of files in the directory. These are the files from the previous labs in this series. The only ones we'll really really need are provided below.

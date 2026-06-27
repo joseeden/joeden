@@ -1,18 +1,18 @@
 ---
-title: "Lab 015: Two-tier Design: Using Local Variables"
-description: "Lab 015: Two-tier Design: Using Local Variables"
+title: "Two tier Design Using Local Variables"
+description: "Two tier Design Using Local Variables"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 150
+sidebar_position: 45
 last_update:
   date: 12/16/2020
 ---
 
 ## Overview
 
-**Diagram:**
+Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 
 Here we're using **vars** in our playbook just like in any programming language where variables are defined at the beginning.

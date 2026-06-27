@@ -1,18 +1,18 @@
 ---
-title: "Lab 016: Two-tier Design: Using Registered Variables"
-description: "Lab 016: Two-tier Design: Using Registered Variables"
+title: "Two tier Design Using Registered Variables"
+description: "Two tier Design Using Registered Variables"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 160
+sidebar_position: 48
 last_update:
   date: 12/17/2020
 ---
 
 ## Overview
 
-**Diagram:**
+Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 
 Here we're using the output of the tasks inside the play and then save them in a variable using **register**. We can then reference this variable in the next task.

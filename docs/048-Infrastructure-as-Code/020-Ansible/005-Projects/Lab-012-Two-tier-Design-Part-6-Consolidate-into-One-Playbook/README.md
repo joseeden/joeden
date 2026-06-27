@@ -1,18 +1,18 @@
 ---
-title: "Lab 012: Two-tier Design Part 6: Consolidate into One Playbook"
-description: "Lab 012: Two-tier Design Part 6: Consolidate into One Playbook"
+title: "Two tier Design Part 6 Consolidate into One Playbook"
+description: "Two tier Design Part 6 Consolidate into One Playbook"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 120
+sidebar_position: 36
 last_update:
   date: 12/13/2020
 ---
 
 ## Overview
 
-**Diagram:**
+Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 
 Here we'll import the previous playbooks into one.

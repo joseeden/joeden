@@ -1,18 +1,18 @@
 ---
-title: "Lab 010: Two-tier Design Part 5: Health Check Status"
-description: "Lab 010: Two-tier Design Part 5: Health Check Status"
+title: "Two tier Design Part 5 Health Check Status"
+description: "Two tier Design Part 5 Health Check Status"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 100
+sidebar_position: 30
 last_update:
   date: 12/11/2020
 ---
 
 ## Overview
 
-**Diagram:**
+Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 
 As a final check, we'll just create a simple playbook that checks the status of Apache

@@ -1,18 +1,18 @@
 ---
-title: "Lab 013: Two-tier Design: Using Include"
-description: "Lab 013: Two-tier Design: Using Include"
+title: "Two tier Design Using Include"
+description: "Two tier Design Using Include"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Ansible
-sidebar_position: 130
+sidebar_position: 39
 last_update:
   date: 12/14/2020
 ---
 
 ## Overview
 
-**Diagram:**
+Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 
 In this lab, we'll also consolidate and re-used different playbooks. But instead of using **import_playbook**, we'll use **include**.
