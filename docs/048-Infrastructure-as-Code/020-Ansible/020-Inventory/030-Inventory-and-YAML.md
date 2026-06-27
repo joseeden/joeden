@@ -13,6 +13,7 @@ last_update:
 ## Overview
 
 This note talks about:
+- [Overview](#overview)
 - [What is Ansible](#what-is-ansible)
 - [Setting up your Lab and Installing Ansible](#setting-up-your-lab-and-installing-ansible)
 - [Inventory file](#inventory-file)
@@ -21,9 +22,12 @@ This note talks about:
 
 ## What is Ansible
 
-<p align="center">
-    <img src="/img/docs/ansible.png">
-</p>
+
+<div class='img-center'>
+
+![](/img/docs/ansible.png)
+
+</div>
 
 To do some repetitive tasks, we can resolve to using *scripts* to do these tasks for us. However, you will some coding skills to do this. You'll also have to maintain this scripts over time. This is where Ansible comes into play.
 
@@ -34,9 +38,13 @@ To do some repetitive tasks, we can resolve to using *scripts* to do these tasks
 
 A typical comparison of scripts versus an ansible playbook:
 
-<p align="center">
-    <img src="/img/docs/scripts-ansible.png">
-</p>
+
+
+<div class='img-center'>
+
+![](/img/docs/scripts-ansible.png)
+
+</div>
 
 
 ## Setting up your Lab and Installing Ansible
@@ -45,7 +53,7 @@ A typical comparison of scripts versus an ansible playbook:
 > 
 
 <p align="center">
-    <img src="/img/docs/nsible-diagram.png">
+    <img src="/img/docs/nsible-diagram.png" />
 </p>
 
 The steps I followed in setting up the EC2 instances and installing ansible on **master** are:
@@ -235,9 +243,12 @@ If you're using VirtualBox or VMware Workstation, please skip to Step 4.
 
 ## Inventory file ##
 
-<p align="center">
-    <img src="/img/docs/ansible-inventory.png">
-</p>
+
+<div class='img-center'>
+
+![](/img/docs/ansible-inventory.png)
+
+</div>
 
 Recall that Ansible is **agentless** - this means you don't have to install any additional software on the target machines to work with Ansible.
 
@@ -406,17 +417,24 @@ eden@master ansible-lab$ pwd
 
 ## What is YAML ##
 
-<p align="center">
-    <img src="/img/docs/yaml.png">
-</p>
+<div class='img-center'>
+
+![](/img/docs/yaml.png)
+
+</div>
+
 
 All ansible playbooks are written in **YAML**. But before that, what are ansible playbooks?
 
 **Ansible Playbooks** are plain-text files written in YAML, which stands for *YAML Ain't Markup Lanugage.* It is used to represent data. Here is a comparison of the same data in three formats: YAML, XML, and JSON.
 
-<p align="center">
-    <img src="/img/docs/data-formats.png">
-</p>
+
+<div class='img-center'>
+
+![](/img/docs/data-formats.png)
+
+</div>
+
 
 In it's simplest form, YAML are just **key-value pairs**. Anything that begins with a *hash* is a comment and is then ignored when YAML is run.
 

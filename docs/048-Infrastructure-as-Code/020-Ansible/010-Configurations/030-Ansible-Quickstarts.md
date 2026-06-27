@@ -37,7 +37,7 @@ drwxr-xr-x 93 root root  4096 Oct 20 11:31 ../
 -rw-r--r--  1 root root 19985 Mar  5  2020 ansible.cfg
 -rw-r--r--  1 root root   982 Dec 19  2018 hosts
 ```
-</br>
+ 
 To see the default configuration of Ansible
 <details>
 <summary>cat /etc/ansible/ansible.cfg</summary>
@@ -536,7 +536,7 @@ $ cat /etc/ansible/ansible.cfg
 ```
 </details>
 
-</br>
+ 
 To see default/sample hosts file
 <details>
 <summary>cat /etc/ansible/hosts</summary>

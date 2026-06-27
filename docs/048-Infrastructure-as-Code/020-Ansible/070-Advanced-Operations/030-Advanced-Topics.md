@@ -12,9 +12,19 @@ last_update:
 
 ## Overview
 
-<p align="center">
-    <img src="/img/docs/advanced-topics.png">
-</p>
+<div class='img-center'>
+
+    ![](/img/docs/advanced-topics.png)
+
+</div>
+
+<div class='img-center'>
+
+
+![](/img/docs/ .png)
+
+
+</div>
 
 These are just a brief breakdown on topics you can check out for Ansible. There are also no labs here, you can further explore the areas that interest you.
 
@@ -31,9 +41,11 @@ You can check out more details in the [Ansible Documentation page](https://docs.
 
 Recall that the **Ansible Controller** can only be run on Linux. However, Windows machines can be used as target machines, thus they can be part of automation.
 
-<p align="center">
-    <img src="/img/docs/windows-server.png">
-</p>
+<div class='img-center'>
+
+    ![](/img/docs/windows-server.png)
+
+</div>
 
 For Ansible to connect to a Windows machine, we should use **winrm**. This may not always be enable by default in Windows machines. You may follow the following steps to setup winrm on the Windows machines.
 
@@ -60,9 +72,11 @@ Remember that Ansible is *agentless*, so you won't need to install anything from
 
 This is a free site for sharing all kinds of comuunity-develoepd Ansible roles. This is a great way to start on your automation projects. You can visit theit site [here.](https://galaxy.ansible.com/)
 
-<p align="center">
-    <img src="/img/docs/ansible-galaxy.png">
-</p>
+<div class='img-center'>
+
+    ![](/img/docs/ansible-galaxy.png)
+
+</div>
 
 
 ## PATTERNS ##

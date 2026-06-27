@@ -20,9 +20,11 @@ In this lab, we'll do the following:
 
 This is a fairly simple lab and is an iteration of the first few labs, but here we'll checkout how to use the **lookup** function and see what sort of variables can we define in the **vars.tf** file. 
 
-<p align="center">
-<img src="/img/docs/lab9diagram.png">
-</p>
+<div class='img-center'>
+
+![](/img/docs/lab9diagram.png)
+
+</div>
 
 
 ## Pre-requisites 
@@ -203,7 +205,7 @@ variable "instance_size" {
 ```
 
 </details>
-</br>
+ 
 
 Now that we've declared the variables, we can assign values to them through the terraform.tfvars.
 

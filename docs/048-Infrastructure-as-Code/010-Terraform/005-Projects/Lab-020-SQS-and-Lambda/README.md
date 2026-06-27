@@ -108,7 +108,7 @@ variable "my_profile" {
     default     = "vscode-dev"
 }  
 ```
-<br>
+ 
 
 Note that there's also a precedence of the variables. 
 

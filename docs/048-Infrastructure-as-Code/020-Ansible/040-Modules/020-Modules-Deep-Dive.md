@@ -12,9 +12,12 @@ last_update:
 
 ## Overview
 
-<p align="center">
-    <img src="/img/docs/ansible-modules.png">
-</p>
+
+<div class='img-center'>
+
+![](/img/docs/ansible-modules.png)
+
+</div>
 
 Ansible have categorized modules based on their functionalities. You can check out more details about the ansible modules in the [ansible documentation](https://docs.ansible.com/ansible/2.8/modules/list_of_all_modules.html). These are some of them:
 

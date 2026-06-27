@@ -71,7 +71,7 @@ provider "aws" {
 ```
  
 </details>
-<br>
+ 
 
 In addition to this, we can also create the following files inside the project directory. We'll leave them blank for now as we will be configuring them later.
 
@@ -219,7 +219,7 @@ module "application" {
 }
 ```
 </details>
-<br>
+ 
 
 Notice that in the main file, it references the modules, starting with **network**. Next to it, the **security** module defines the configurations for the security groups.
 
@@ -290,7 +290,7 @@ output "private_subnets" {
 ```
 
 </details>
-<br>
+ 
 
 For more details, check out the Hashicorp documentation on [AWS VPC Terraform module](https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest).
 
@@ -439,7 +439,7 @@ resource "aws_security_group" "lab06-sg-mongodb" {
 ```
  
 </details>
-<br>
+ 
 
 Like the previous one, the security module also uses variables which are declared in the vars.tf and returns output values defined in the outputs.tf.
 
@@ -562,7 +562,7 @@ resource "aws_instance" "lab06-mongo" {
 ```
  
 </details>
-</br>
+ 
 
 To bootstrap the instance with MongoDB, the module uses **user_data** to run the **setup-mongodb.sh**.
 
@@ -624,7 +624,7 @@ echo fin v1.00!
 ```
  
 </details>
-</br>
+ 
 
 This module also has variables and output values defined in the vars.tf and outputs.tf, respectively.
 
@@ -822,7 +822,7 @@ resource "aws_autoscaling_group" "lab06-asg" {
 ```
  
 </details>
-</br>
+ 
 
 The module also depends on the output values returned by the network, security, and storage modules.
 
@@ -875,7 +875,7 @@ data "aws_instances" "application" {
 ```
  
 </details>
-</br>
+ 
 
 The bootstraping process is done within the **template_cloudinit_config** data source. It uses a script to install the frontend application and API onto the instances.
 
@@ -928,7 +928,7 @@ echo fin v1.00!
 ```
  
 </details>
-<br>
+ 
 
 In this script, we can see the following lines which pulls the latest frontend release from the Github repo and stores into the NGINX default serving directory.
 
@@ -993,7 +993,7 @@ variable "asg_min_size" {
 ```
  
 </details>
-<br>
+ 
 
 Lastly, the outputs.tf declares the outputs that are returned when the module is ran.
 

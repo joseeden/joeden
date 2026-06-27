@@ -179,7 +179,7 @@ optional arguments:
   -h, --help         show this help message and exit 
 ```
 </details>
-</br>
+ 
 
 We can view the details of a role before we install it locally by using the **ansible-galaxy role info <role-name>**. As an example, here's a [role that's available in the Ansible-galaxy site](https://galaxy.ansible.com/kosssi/gitconfig)
 
@@ -219,7 +219,7 @@ Role: kosssi.gitconfig
 ```
  
 </details>
-</br>
+ 
 
 ![](/img/docs/whkosssi.png)
 

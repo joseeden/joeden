@@ -12,37 +12,48 @@ last_update:
 
 ## Overview
 
-<p align="center">
-    <img src="/img/docs/roles-6.png">
-</p>
+<div class='img-center'>
+
+    ![](/img/docs/roles-6.png)
+
+</div>
+
 
 In the automation world, assigning a role means designating a 'hat' to the particular server or device and that device will do what it needs to do to fulfill its role.
 
-<p align="center">
-    <img src="/img/docs/roles-2.png">
-</p>
+<div class='img-center'>
+
+    ![](/img/docs/roles-2.png)
+
+</div>
 
 But all of these can be done and written in a playbook. So why would you need roles then?
 
 **REUSABILITY**
 Recall that when an ansible-playbook is written, it can be used, copied, and run by those who have access to it. instead of having other use the same code from the same playbook, you can just assign this playbook to a role and then other people can just reference it as **role**.
 
-<p align="center">
-    <img src="/img/docs/roles-3.png">
-</p>
+<div class='img-center'>
+
+    ![](/img/docs/roles-3.png)
+
+</div>
 
 **ORGANIZING CODE**
 Roles also help in organizing your code within Ansible.
 
-<p align="center">
-    <img src="/img/docs/roles-4.png">
-</p>
+<div class='img-center'>
+
+    ![](/img/docs/roles-4.png)
+
+</div>
 
 **SHARING WITH THE COMMUNITY**
 *Ansible Galaxy* is a community where you can find a wide number of roles for almost every task you need.
-<p align="center">
-    <img src="/img/docs/roles-5.png">
-</p>
+<div class='img-center'>
+
+    ![](/img/docs/roles-5.png)
+
+</div>
 
 
 ## HOW TO START WITH ROLES? ##
@@ -50,9 +61,11 @@ Roles also help in organizing your code within Ansible.
 **METHOD 1 - Creating a roles folder**
 From the directory where you are have all your playbooks stored, create a folder for **roles.** You will then intialize a diretory structure within that **roles** folder using the command **ansible-galaxy init *role-name***
 
-<p align="center">
-    <img src="/img/docs/roles-folder.png">
-</p> 
+<div class='img-center'>
+
+    ![](/img/docs/roles-folder.png)
+
+</div> 
 
 For our example, we'll create role called **mysql**. 
 
@@ -96,21 +109,27 @@ ansible-galaxy install sample.mysql
 
 After you've installed the role, you can reference the role in either of this approach:
 
-<p align="center">
-    <img src="/img/docs/roles-7.png">
-</p>
+<div class='img-center'>
+
+    ![](/img/docs/roles-7.png)
+
+</div>
 
 Another example is when you want your server to have two services running on it. In this case, you can assign two roles to it.
 
-<p align="center">
-    <img src="/img/docs/roles-8.png">
-</p>
+<div class='img-center'>
+
+    ![](/img/docs/roles-8.png)
+
+</div>
 
 To view two completely different roles on two separate servers, you can put them as two plays in a single playbook.
 
-<p align="center">
-    <img src="/img/docs/roles-12.png">
-</p>
+<div class='img-center'>
+
+    ![](/img/docs/roles-12.png)
+
+</div>
 
 To see all the roles currently installed in your machine, run the command:
 

@@ -12,14 +12,19 @@ last_update:
 
 ## Overview
 
-<p align="center">
-    <img src="images/variable-4.png">
-</p>
+
+
+<div class='img-center'>
+
+![](/img/docs/variable-4.png)
+
+</div>
+
 
 Similar with any programming language, variables are used to store information varies with each host. Recall on the notes for [inventory files](1-Ansible_Inventory_YAML.md), we already worked with variables.
 
 <p align="center">
-    <img src="/img/docs/variable-inventory.png">
+    <img src="/img/docs/variable-inventory.png" />
 </p>
 
 We can configure variables in the playbook itself using the **vars** keyword, followed by the key-pairs. Below we have [add-2.yaml](add-2.yaml) which adds a thrid server to the /ansible-test/sample-file.txt in server1
@@ -56,9 +61,13 @@ Here we have two playbooks that does the same thing but on different OS - instal
 
 Beside the package manager, you'll also have to specify different *hosts* for each one. Having two playbooks is alright but it can be done altogether using just one. This is where **conditionals** comes into play.
 
-<p align="center">
-    <img src="/img/docs/conditionals-2.png">
-</p>
+
+
+<div class='img-center'>
+
+![](/img/docs/conditionals-2.png)
+
+</div>
 
 We can do a single playbook with two tasks and then we specify the conditions under each task.
 
@@ -301,6 +310,8 @@ Note that each one used their own keyword. There are a lot more of these, but be
 - with_url
 - with_mongodb
 
-<p align="center">
-    <img src="/img/docs/with-items.png">
-</p>
+<div class='img-center'>
+
+![](/img/docs/with-items.png)
+
+</div>

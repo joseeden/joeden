@@ -109,7 +109,7 @@ cidr_block    = "10.0.0.0/16"
 ```
 
 </details>
-<br>
+
 
 Here's the modified main file.
 
@@ -405,7 +405,7 @@ resource "aws_key_pair" "lab04-keypair" {
 ```
  
 </details>
-</br>
+
 
 In here we can see that we now only have two resource **aws_subnet**, one for public and one for private. To understand what's assigned to the variables, we can use the **console** command.
 

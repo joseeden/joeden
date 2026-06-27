@@ -167,13 +167,23 @@ You can find more information about the available modules in the [Ansible docume
 
 **Once you've build the playbook, how do you run it?**
 
-To run the playbook, you just have to simple run *ansible-playbook <yaml file>
+To run the playbook, you just have to simple run:
 
-    ansible-playbook sample.yaml
+```bash
+ansible-playbook <yaml-file>
+```
+
+Example:
+
+```bash
+ansible-playbook sample.yaml
+``` 
 
 You can also check out additional information by using the `--help` flag.
 
-    ansible-playbook --help
+```bash
+ansible-playbook --help
+```
 
 ### PRACTICE 1 - RUNNING ANSIBLE ###
 

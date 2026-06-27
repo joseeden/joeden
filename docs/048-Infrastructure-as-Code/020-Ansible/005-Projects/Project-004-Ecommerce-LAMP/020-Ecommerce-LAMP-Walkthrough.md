@@ -170,7 +170,15 @@ Type in *mysql* to start configuring. Type *exit* once you're done.
             icmp-blocks:
             rich rules:
 
-10. Update the **DirectoryIndex** value to **index.php**. This is originally set to index.html which is the Apache test page. When you try to view your application by opening *http://<ip>:80* on your browser, it will show the index.html by default. To make sure that it points to our application, we'll have to point the **DirectoryIndex** to index.php.
+10. Update the `DirectoryIndex` value to `index.php`. This is originally set to `index.html` which is the Apache test page. 
+
+        When you try to view your application by opening this in the browser:
+        
+        ```bash
+        http://<IP-ADDRESS>:80
+        ```
+
+        It will show the `index.html` by default. To make sure that it points to our application, we'll have to point the `DirectoryIndex` to `index.php`.
 
 
         $ grep DirectoryIndex  /etc/httpd/conf/httpd.conf
@@ -205,5 +213,5 @@ Type in *mysql* to start configuring. Type *exit* once you're done.
     You should see something like this:
 
     <p align="center">
-        <img src="/img/docs/ecom-app.png">
+        <img src="/img/docs/ecom-app.png" />
     </p>

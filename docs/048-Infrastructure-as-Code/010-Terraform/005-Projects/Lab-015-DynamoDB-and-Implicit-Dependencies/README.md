@@ -285,7 +285,7 @@ resource "aws_dynamodb_table" "lab08-ddb-table" {
 ```
  
 </details>
-</br>
+ 
 
 Apply the changes again. It should now succeed.
 

@@ -63,7 +63,11 @@ First, we run a command using the shell module to get the contents of /etc/resol
 
 Add a register directive to store the output of the first command to variable command_output
 
-Then add a conditional to the second command to check if the output contains the name server (10.0.250.10) already. Use command_output.stdout.find(<IP>) == -1
+Then add a conditional to the second command to check if the output contains the name server (10.0.250.10) already. You can use:
+
+```bash
+command_output.stdout.find("10.0.250.10") == -1
+```
 
 Note: A better way to do this would be to use the lineinfile module. This is just for practice.
 
