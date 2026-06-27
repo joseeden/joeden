@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab practices playbook structure by defining plays, hosts, tasks, and commands for managed nodes.
+
 <details><summary> Inventory</summary>
  
 ```bash

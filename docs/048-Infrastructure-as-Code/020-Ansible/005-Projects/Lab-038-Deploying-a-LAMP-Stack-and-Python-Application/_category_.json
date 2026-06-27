@@ -1,8 +1,4 @@
 {
   "label": "Lab 038",
-  "position": 380,
-  "link": {
-    "type": "doc",
-    "id": "048-Infrastructure-as-Code/020-Ansible/005-Projects/Lab-038-Deploying-a-LAMP-Stack-and-Python-Application/README"
-  }
+  "position": 380
 }

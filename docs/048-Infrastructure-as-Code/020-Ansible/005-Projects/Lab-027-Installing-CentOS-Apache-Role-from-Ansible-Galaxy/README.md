@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab installs and applies an Apache role for CentOS-based web server configuration.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-2.png)
 

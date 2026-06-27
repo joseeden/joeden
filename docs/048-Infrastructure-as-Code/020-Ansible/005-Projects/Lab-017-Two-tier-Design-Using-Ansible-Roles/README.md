@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab refactors the two-tier deployment into Ansible roles so the configuration is easier to reuse and maintain.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 

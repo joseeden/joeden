@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab begins the two-tier application build by managing operating system packages across the target hosts.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 

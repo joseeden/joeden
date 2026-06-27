@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab creates a simple Ansible playbook that runs `uname` on the target host groups to confirm the operating system type returned by each managed node.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 

@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab practices Ansible conditionals so tasks run only when host or variable conditions match.
+
 <details><summary> Inventory</summary>
  
 ```bash

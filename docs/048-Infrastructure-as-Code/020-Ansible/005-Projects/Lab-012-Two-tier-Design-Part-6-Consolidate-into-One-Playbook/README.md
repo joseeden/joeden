@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab consolidates multiple playbooks into one workflow so the two-tier deployment can be run more cleanly.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 

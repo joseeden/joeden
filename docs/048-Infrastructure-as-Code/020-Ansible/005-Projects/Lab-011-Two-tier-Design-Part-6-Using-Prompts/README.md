@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab adds runtime prompts to a playbook so the operator can confirm actions before Ansible proceeds.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 

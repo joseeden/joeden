@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab uses Ansible to copy a Git configuration file from the controller to managed nodes, which demonstrates basic file distribution with a playbook.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 

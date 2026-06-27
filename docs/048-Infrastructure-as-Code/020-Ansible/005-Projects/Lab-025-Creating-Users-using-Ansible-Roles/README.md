@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab moves the user-management workflow into an Ansible role for better reuse and structure.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-2.png)
 

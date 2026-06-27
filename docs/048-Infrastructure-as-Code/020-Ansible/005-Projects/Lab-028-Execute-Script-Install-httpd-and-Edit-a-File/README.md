@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab practices common Ansible operations such as running scripts, installing `httpd`, and editing files on managed hosts.
+
 <details><summary> Inventory</summary>
  
 ```bash

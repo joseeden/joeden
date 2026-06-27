@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab organizes user and host configuration with `host_vars` and `group_vars` so inventory data stays easier to maintain.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 

@@ -1,8 +1,4 @@
 {
   "label": "Lab 006",
-  "position": 60,
-  "link": {
-    "type": "doc",
-    "id": "048-Infrastructure-as-Code/020-Ansible/005-Projects/Lab-006-Two-tier-Design-Part-1-Package-Management/README"
-  }
+  "position": 60
 }

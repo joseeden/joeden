@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab uses variables and conditionals to control which user-management tasks run on each host.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-2.png)
 

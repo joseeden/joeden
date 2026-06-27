@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab renders a Jinja2 template to deploy a managed `/etc/motd` file to target hosts.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-2.png)
 

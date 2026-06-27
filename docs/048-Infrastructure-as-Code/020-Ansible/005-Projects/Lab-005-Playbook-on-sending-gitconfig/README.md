@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab turns the Git configuration copy workflow into a reusable playbook that can be run against the inventory.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 

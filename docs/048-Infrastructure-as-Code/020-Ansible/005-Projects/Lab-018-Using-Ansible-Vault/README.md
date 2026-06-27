@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab uses Ansible Vault to store sensitive variables and run playbooks that depend on encrypted values.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 

@@ -1,8 +1,4 @@
 {
   "label": "Lab 017",
-  "position": 170,
-  "link": {
-    "type": "doc",
-    "id": "048-Infrastructure-as-Code/020-Ansible/005-Projects/Lab-017-Two-tier-Design-Using-Ansible-Roles/README"
-  }
+  "position": 170
 }

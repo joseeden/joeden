@@ -1,8 +1,4 @@
 {
   "label": "Lab 011",
-  "position": 110,
-  "link": {
-    "type": "doc",
-    "id": "048-Infrastructure-as-Code/020-Ansible/005-Projects/Lab-011-Two-tier-Design-Part-6-Using-Prompts/README"
-  }
+  "position": 110
 }

@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab automates Linux user creation across managed hosts with an Ansible playbook.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 

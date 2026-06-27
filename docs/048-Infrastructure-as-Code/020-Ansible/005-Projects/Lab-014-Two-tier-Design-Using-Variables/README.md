@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab introduces variables into the two-tier deployment so playbooks can reuse values instead of hardcoding them.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 

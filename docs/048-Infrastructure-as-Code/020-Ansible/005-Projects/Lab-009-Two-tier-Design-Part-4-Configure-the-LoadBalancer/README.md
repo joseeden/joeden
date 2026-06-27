@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab configures the load balancer so it can proxy traffic across the backend web servers.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 

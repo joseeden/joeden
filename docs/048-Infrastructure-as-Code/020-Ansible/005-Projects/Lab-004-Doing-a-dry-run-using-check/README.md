@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab uses Ansible check mode to preview playbook changes before applying them to managed hosts.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 

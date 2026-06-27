@@ -1,8 +1,4 @@
 {
   "label": "Lab 031",
-  "position": 310,
-  "link": {
-    "type": "doc",
-    "id": "048-Infrastructure-as-Code/020-Ansible/005-Projects/Lab-031-Playbooks/README"
-  }
+  "position": 310
 }

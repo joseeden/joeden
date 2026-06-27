@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab uses local playbook variables to keep repeated values close to the tasks that need them.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 

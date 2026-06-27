@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab captures task output with registered variables and reuses that output in later tasks.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 

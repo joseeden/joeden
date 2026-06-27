@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab combines user creation with Ansible Vault so account passwords can be managed without storing plaintext secrets.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 

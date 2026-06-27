@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab continues the two-tier application build by installing and starting the services required by the web and load balancer hosts.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 

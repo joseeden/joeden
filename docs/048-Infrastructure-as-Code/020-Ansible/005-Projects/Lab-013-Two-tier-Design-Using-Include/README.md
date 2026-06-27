@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab reuses playbook content with include-style composition instead of keeping every task in one file.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 

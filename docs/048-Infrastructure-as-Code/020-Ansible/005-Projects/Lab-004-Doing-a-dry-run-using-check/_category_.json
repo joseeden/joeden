@@ -1,8 +1,4 @@
 {
   "label": "Lab 004",
-  "position": 40,
-  "link": {
-    "type": "doc",
-    "id": "048-Infrastructure-as-Code/020-Ansible/005-Projects/Lab-004-Doing-a-dry-run-using-check/README"
-  }
+  "position": 40
 }

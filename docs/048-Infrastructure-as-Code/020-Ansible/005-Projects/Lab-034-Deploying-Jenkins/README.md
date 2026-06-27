@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab deploys Jenkins with Ansible and prepares the server for CI automation work.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-3.png)
 

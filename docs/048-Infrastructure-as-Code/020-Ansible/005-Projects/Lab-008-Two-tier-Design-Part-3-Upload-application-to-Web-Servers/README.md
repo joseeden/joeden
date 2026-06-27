@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab uploads the application file to the web servers so Apache can serve the PHP application content.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 

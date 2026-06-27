@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab installs Maven and supporting tools for Java build automation.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-3.png)
 

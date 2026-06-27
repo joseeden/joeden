@@ -1,8 +1,4 @@
 {
   "label": "Lab 010",
-  "position": 100,
-  "link": {
-    "type": "doc",
-    "id": "048-Infrastructure-as-Code/020-Ansible/005-Projects/Lab-010-Two-tier-Design-Part-5-Health-Check-Status/README"
-  }
+  "position": 100
 }

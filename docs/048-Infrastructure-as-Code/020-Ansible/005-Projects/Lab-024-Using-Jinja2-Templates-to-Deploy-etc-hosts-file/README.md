@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab renders a Jinja2 template to manage `/etc/hosts` entries across the inventory.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-2.png)
 

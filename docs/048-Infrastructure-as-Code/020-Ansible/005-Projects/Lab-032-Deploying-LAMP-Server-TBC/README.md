@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab builds a LAMP server deployment workflow and captures the setup steps for later automation.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-2.png)
 

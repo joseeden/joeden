@@ -1,8 +1,4 @@
 {
   "label": "Lab 003",
-  "position": 30,
-  "link": {
-    "type": "doc",
-    "id": "048-Infrastructure-as-Code/020-Ansible/005-Projects/Lab-003-Copying-gitconfig-onto-the-Nodes/README"
-  }
+  "position": 30
 }

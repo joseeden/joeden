@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab installs and configures Tomcat as a staging environment for application deployment.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-3.png)
 

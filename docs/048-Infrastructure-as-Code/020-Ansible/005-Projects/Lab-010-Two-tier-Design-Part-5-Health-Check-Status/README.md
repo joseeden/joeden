@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab adds a validation playbook that checks whether the Apache service is running after the two-tier deployment.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-1.png)
 

@@ -1,8 +1,4 @@
 {
   "label": "Lab 037",
-  "position": 370,
-  "link": {
-    "type": "doc",
-    "id": "048-Infrastructure-as-Code/020-Ansible/005-Projects/Lab-037-Creating-a-Basic-Ansible-Playbook/README"
-  }
+  "position": 370
 }

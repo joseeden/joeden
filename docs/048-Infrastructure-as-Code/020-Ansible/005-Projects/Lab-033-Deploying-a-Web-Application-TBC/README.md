@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab deploys a web application with Ansible and captures the supporting application configuration.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-2.png)
 

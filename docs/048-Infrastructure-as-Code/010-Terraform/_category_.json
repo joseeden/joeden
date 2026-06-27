@@ -1,8 +1,4 @@
 {
   "label": "Terraform",
-  "position": 10,
-  "link": {
-    "type": "doc",
-    "id": "terraform-starter-notes"
-  }
+  "position": 10
 }

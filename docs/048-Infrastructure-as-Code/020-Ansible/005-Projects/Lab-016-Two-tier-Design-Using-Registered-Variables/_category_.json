@@ -1,8 +1,4 @@
 {
   "label": "Lab 016",
-  "position": 160,
-  "link": {
-    "type": "doc",
-    "id": "048-Infrastructure-as-Code/020-Ansible/005-Projects/Lab-016-Two-tier-Design-Using-Registered-Variables/README"
-  }
+  "position": 160
 }

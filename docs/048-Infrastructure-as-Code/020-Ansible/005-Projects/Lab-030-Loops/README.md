@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab practices Ansible loops to repeat tasks over lists of values.
+
 <details><summary> Task 1</summary>
  
 The playbook currently runs an echo command to print a fruit name. Apply a loop directive (with_items) to the task to print all fruits defined in the fruits variable.

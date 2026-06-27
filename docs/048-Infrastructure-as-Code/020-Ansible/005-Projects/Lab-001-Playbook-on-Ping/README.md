@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab creates a simple Ansible playbook that checks connectivity to the managed hosts with the `ping` module.
+
 Diagram:
 
 ![](/img/docs/ansible-lab-diagram-1.png)

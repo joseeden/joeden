@@ -12,6 +12,8 @@ last_update:
 
 ## Overview
 
+This lab installs and applies a Git configuration role to manage Git settings on target hosts.
+
 Diagram:
 ![](/img/docs/ansible-lab-diagram-2.png)
 

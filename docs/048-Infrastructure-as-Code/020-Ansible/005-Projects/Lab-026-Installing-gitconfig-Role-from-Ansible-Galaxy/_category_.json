@@ -1,8 +1,4 @@
 {
   "label": "Lab 026",
-  "position": 260,
-  "link": {
-    "type": "doc",
-    "id": "048-Infrastructure-as-Code/020-Ansible/005-Projects/Lab-026-Installing-gitconfig-Role-from-Ansible-Galaxy/README"
-  }
+  "position": 260
 }
