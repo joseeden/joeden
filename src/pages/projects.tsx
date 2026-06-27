@@ -214,7 +214,7 @@ const projects: ProjectData[] = [
   {
     title: "NGINX Deployment using Flux and Helm",
     description: "GitOps-based deployment of NGINX using Flux and Helm charts",
-    url: `${baseUrl}/docs/Kubernetes-Tools/Flux/FluxCD-with-Helm/Helm-with-FluxCD`,
+    url: `${baseUrl}/docs/Kubernetes-Tools/Flux/FluxCD-with-Helm/Deploy-Nginx-with-Helm`,
     image: require(`/img/docs/a8973bba-5a64-4bd5-83c9-f2f4b95149cc.png`),
     tags: ["DevOps", "Kubernetes"],
   },
@@ -242,7 +242,7 @@ const projects: ProjectData[] = [
   {
     title: "OpenStack Private Cloud Setup",
     description: "Manual OpenStack deployment across compute, network, and storage",
-    url: `${baseUrl}/docs/OpenStack/Manual-Install/openstack-lab-setup`,
+    url: `${baseUrl}/docs/OpenStack/Manual-Install/Lab-Setup`,
     image: require(`/img/docs/a0254144-dd3e-4bc4-91cc-ba5e4af7c26c.png`),
     tags: ["DevOps", "OpenStack"],
   },

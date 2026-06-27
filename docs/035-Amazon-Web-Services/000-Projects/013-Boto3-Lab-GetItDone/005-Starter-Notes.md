@@ -44,5 +44,5 @@ See the following pages for the detailed steps for this project:
 
 1. [Initial Testing](/docs/035-Amazon-Web-Services/000-Projects/013-Boto3-Lab-GetItDone/010-Initial-Testing.md) 
 2. [Monthly Report Generation](/docs/035-Amazon-Web-Services/000-Projects/013-Boto3-Lab-GetItDone/011-Monthly-Reports.md)
-3. [Notification Systems](/docs/035-Amazon-Web-Services/000-Projects/013-Boto3-Lab-GetItDone/019-Notification-Systems.md)
+3. [Notification Systems](/docs/035-Amazon-Web-Services/000-Projects/013-Boto3-Lab-GetItDone/019-Notification-System.md)
 4. [Text Analysis and Image Recognition](/docs/035-Amazon-Web-Services/000-Projects/013-Boto3-Lab-GetItDone/020-Pattern-Recognition.md)
