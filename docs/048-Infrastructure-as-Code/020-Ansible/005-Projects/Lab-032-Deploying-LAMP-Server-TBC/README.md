@@ -19,12 +19,14 @@ Diagram:
 
 The tree-structure of our Project **One** currently looks like this. Don't worry if you see that there's already a lot of files in the directory. These are the files from the previous labs in this series. The only ones we'll really really need are also provided below.
 
-<details><summary> Project One </summary>
+<details>
+<summary>Project One</summary>
  
 ![](/img/docs/planslab22tree.png)
  
 </details>
-<details><summary> ansible.cfg </summary>
+<details>
+<summary>ansible.cfg</summary>
  
 ```bash
  [defaults]
@@ -58,7 +60,8 @@ pipelining = True
 ```
  
 </details>
-<details><summary> symlink in root directory pointing to projects folder </summary>
+<details>
+<summary>symlink in root directory pointing to projects folder</summary>
 
 ```bash
 $ ls -la | grep "\->"
@@ -73,7 +76,8 @@ Recall that we used a default **edendev.inv** inventory file for the previous la
 
 For this one, we'll be using a different inventory file and instead of changing the ansible.cfg, we'll just specify this new inventory file when we run the playbook.
 
-<details><summary> edensinglenode.inv </summary>
+<details>
+<summary>edensinglenode.inv</summary>
  
 ```bash
 # edensinglenode.inv
@@ -91,7 +95,8 @@ Before we proceed, it's important to lay down the steps that we'll be automating
 
 ![](/img/docs/kklamp1.png)
 
-<details><summary> Breakdown of Steps </summary>
+<details>
+<summary>Breakdown of Steps</summary>
  
 **Install Firewall**
 ```bash

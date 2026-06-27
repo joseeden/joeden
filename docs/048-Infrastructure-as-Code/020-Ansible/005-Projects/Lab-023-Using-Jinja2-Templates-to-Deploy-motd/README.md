@@ -19,12 +19,14 @@ Diagram:
 
 The tree-structure of our Project **One** currently looks like this. Don't worry if you see that there's already a lot of files in the directory. These are the files from the previous labs in this series. The only ones we'll really really need are also provided below.
 
-<details><summary> Project One </summary>
+<details>
+<summary>Project One</summary>
  
 ![](/img/docs/planslab22tree.png)
  
 </details>
-<details><summary> ansible.cfg </summary>
+<details>
+<summary>ansible.cfg</summary>
  
 ```bash
  [defaults]
@@ -58,7 +60,8 @@ pipelining = True
 ```
  
 </details>
-<details><summary> symlink in root directory pointing to projects folder </summary>
+<details>
+<summary>symlink in root directory pointing to projects folder</summary>
 
 ```bash
 $ ls -la | grep "\->"
@@ -69,7 +72,8 @@ lrwxrwxrwx  1 joseeden joseeden    70 Jan 14 23:03 proj-ansible-1 -> /mnt/c/User
 
 For this lab, we'll have **two webservers** and **two dbservers**. Recall that we used a default **edendev.inv** inventory file for the previous labs. We'll be using a different inventory file for this lab and instead of changing the ansible.cfg, we'll just specify this new inventory file when we run the playbook.
 
-<details><summary> edentst.inv </summary>
+<details>
+<summary>edentst.inv</summary>
  
 ```bash
 # edentst.inv
@@ -97,7 +101,8 @@ Instead of manually creating a file for each, we'll utilize Jinja 2 templating.
 
 Our **files/motd.j2** will look something like this:
 
-<details><summary> files/motd.j2 </summary>
+<details>
+<summary>files/motd.j2</summary>
 
 ```jinja2
 {# motd.j2 #}
@@ -113,7 +118,8 @@ The hostname for this system is: {{ ansible_facts['fqdn'] }}
 
 Next, we'll create an Ansible playbook that will deploy the Jinja2 template to the servers.
 
-<details><summary> deploy-jinja2-motd.yml </summary>
+<details>
+<summary>deploy-jinja2-motd.yml</summary>
  
 ```bash
 # deploy-jinja2-motd.yml
@@ -151,7 +157,8 @@ Last login: Sun Jan 16 15:29:25 2022 from 1.2.3.4
 
 Let's modify our motd.j2 and use **inventory_hotname** this time.
 
-<details><summary> files/motd.j2 </summary>
+<details>
+<summary>files/motd.j2</summary>
 
 ```jinja2
 {# motd.j2 #}
@@ -182,7 +189,8 @@ Last login: Sun Jan 16 23:13:47 2022 from 1.2.3.4
 
 Now that we've accomplish the goal, let's do other tests. Let's include the IP of the server in the motd.
 
-<details><summary> files/motd.j2 </summary>
+<details>
+<summary>files/motd.j2</summary>
 
 ```jinja2
 {# motd.j2 #}

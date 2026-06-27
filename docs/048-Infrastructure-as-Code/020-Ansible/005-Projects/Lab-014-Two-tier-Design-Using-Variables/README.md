@@ -20,7 +20,8 @@ Diagram:
 Now that we've tested the page to be working, we'll now incorporate variables in our playbook. Similar with the previous lab on the loadbalancer proxying the requests between the backend web servers, we'll now do the same test to get the werbserver's name that's serving the request and display it on the webpage.
 
 The playbook below will create a **info.php** in the webservers and dump the host's name there.
-<details><summary> setup-app-var.yml </summary>
+<details>
+<summary>setup-app-var.yml</summary>
 
 ```yaml
 # setup-app-var.yml

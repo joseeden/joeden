@@ -14,18 +14,21 @@ last_update:
 
 This lab practices Ansible loops to repeat tasks over lists of values.
 
-<details><summary> Task 1</summary>
+<details>
+<summary>Task 1</summary>
  
 The playbook currently runs an echo command to print a fruit name. Apply a loop directive (with_items) to the task to print all fruits defined in the fruits variable.
 
 </details>
-<details><summary> Task 2</summary>
+<details>
+<summary>Task 2</summary>
  
 To a more realistic use case. We are attempting to install multiple packages using yum module.The current playbook installs only a single package.
 </details>
 
 **Solutions**
-<details><summary> Solution 1 </summary>
+<details>
+<summary>Solution 1</summary>
  
 ```yaml
 --- 
@@ -44,7 +47,8 @@ To a more realistic use case. We are attempting to install multiple packages usi
 ```
  
 </details>
-<details><summary> Solution 2 </summary>
+<details>
+<summary>Solution 2</summary>
  
 ```yaml
 --- 

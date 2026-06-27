@@ -19,12 +19,14 @@ Diagram:
 
 The tree-structure of our Project **One** currently looks like this. Don't worry if you see that there's already a lot of files in the directory. These are the files from the previous labs in this series. The only ones we'll really really need are also provided below.
 
-<details><summary> Project One </summary>
+<details>
+<summary>Project One</summary>
  
 ![](/img/docs/planslab22tree.png)
  
 </details>
-<details><summary> ansible.cfg </summary>
+<details>
+<summary>ansible.cfg</summary>
  
 ```bash
  [defaults]
@@ -58,7 +60,8 @@ pipelining = True
 ```
  
 </details>
-<details><summary> symlink in root directory pointing to projects folder </summary>
+<details>
+<summary>symlink in root directory pointing to projects folder</summary>
 
 ```bash
 $ ls -la | grep "\->"
@@ -66,7 +69,8 @@ lrwxrwxrwx  1 joseeden joseeden    70 Jan 14 23:03 proj-ansible-1 -> /mnt/c/User
 ```
 
 </details>
-<details><summary> edenjen.inv </summary>
+<details>
+<summary>edenjen.inv</summary>
 
 ```bash
 [webservers]
@@ -90,7 +94,8 @@ Before anything else, we will need to install Maven first. Since this is for lab
 
 The steps can be found in this [link.](https://tecadmin.net/install-apache-maven-on-centos/). From these steps, we built our playbook:
 
-<details><summary> install-maven-others.yml </summary>
+<details>
+<summary>install-maven-others.yml</summary>
  
 ```yaml
 # installs maven and git - needed for Jenkins lab
@@ -147,7 +152,8 @@ $ ansible-playbook playbooks/install-maven-others.yml -i inventories/edenjen.inv
 
 The following steps will now be focused on Jenkins.
 
-<details><summary> Now, clone the git repo </summary>
+<details>
+<summary>Now, clone the git repo</summary>
  
 The link for the Github page can be found [here.](https://github.com/jleetutorial/maven-project). Since we will be doing some stuff and pushing it to the repo in the succeeding labs, we'll fork it so that we can push changes to it. Make sure that you have a Github account as well.
 
@@ -216,7 +222,8 @@ drwxr--r-- 1 joseeden joseeden 512 Jan 15 00:47 two/
 
 Our **maven-project** folder looks like this:
 
-<details><summary> tree-output of maven-project </summary>
+<details>
+<summary>tree-output of maven-project</summary>
 
 ![](/img/docs/maventree.png)
 
@@ -252,7 +259,8 @@ Select the **Available** tab and search for Github. Note that the results may di
 
 </details>
 
-<details><summary> Next, create the Jenkins job </summary>
+<details>
+<summary>Next, create the Jenkins job</summary>
  
 Back in the Jenkins landing page, select New item and put in the job name and description. Then select Freestyle project, and hit Ok.
 
@@ -276,7 +284,8 @@ In the **Goals** field, put "clean package*. This is the last phase of a Maven B
 
 </details>
 
-<details><summary> Now, manually trigger </summary>
+<details>
+<summary>Now, manually trigger</summary>
 
 Once we've setup the job, it's time to trigger it. Select the job and click **Build Now** at the left panel.
 

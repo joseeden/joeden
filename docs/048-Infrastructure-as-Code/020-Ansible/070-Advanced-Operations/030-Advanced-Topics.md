@@ -12,7 +12,7 @@ last_update:
 
 ## Overview
 
-<p align=center>
+<p align="center">
     <img src="/img/docs/advanced-topics.png">
 </p>
 
@@ -31,7 +31,7 @@ You can check out more details in the [Ansible Documentation page](https://docs.
 
 Recall that the **Ansible Controller** can only be run on Linux. However, Windows machines can be used as target machines, thus they can be part of automation.
 
-<p align=center>
+<p align="center">
     <img src="/img/docs/windows-server.png">
 </p>
 
@@ -60,7 +60,7 @@ Remember that Ansible is *agentless*, so you won't need to install anything from
 
 This is a free site for sharing all kinds of comuunity-develoepd Ansible roles. This is a great way to start on your automation projects. You can visit theit site [here.](https://galaxy.ansible.com/)
 
-<p align=center>
+<p align="center">
     <img src="/img/docs/ansible-galaxy.png">
 </p>
 

@@ -19,13 +19,15 @@ Diagram:
 
 We'll be using the same project **one** that we used from the first 10 labs. To recap, here is a tree-output of our project **one**:
 
-<details><summary> Project One in tree-output</summary>
+<details>
+<summary>Project One in tree-output</summary>
 
 ![](/img/docs/planstree.png)
 
 </details>
 
-<details><summary> ansible.cfg </summary>
+<details>
+<summary>ansible.cfg</summary>
  
 ```bash
  [defaults]
@@ -60,7 +62,8 @@ pipelining = True
  
 </details>
 
-<details><summary> inventories/edendev.inv </summary>
+<details>
+<summary>inventories/edendev.inv</summary>
  
 ```bash
 [webservers]
@@ -78,7 +81,8 @@ localhost   ansible_connection=local
  
 </details>
 
-<details><summary> symlink in root directory pointing to projects folder </summary>
+<details>
+<summary>symlink in root directory pointing to projects folder</summary>
 
 ```bash
 $ ls -la | grep "\->"

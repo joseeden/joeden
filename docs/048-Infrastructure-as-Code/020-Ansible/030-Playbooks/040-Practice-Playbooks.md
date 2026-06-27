@@ -19,7 +19,7 @@ Use the expandable answers to compare your solution after you finish each exerci
 **1. Create a playbook to be run on the localhost. The play should be titled 'Execute a date command on localhost'**
 
 <details>
-<summary>Answer</summary>
+  <summary>Answer</summary>
 
 ```yaml
 ---
@@ -46,7 +46,7 @@ tasks:
 ```
 
 <details>
-<summary>Answer</summary>
+  <summary>Answer</summary>
 
 ```yaml
 ---
@@ -74,7 +74,7 @@ tasks:
 ```
 
 <details>
-<summary>Answer</summary>
+  <summary>Answer</summary>
 
 ```yaml
 ---
@@ -104,7 +104,7 @@ Note: Use the description below to name the plays and tasks.
 **Warning**: Do not use this playbook in a real setup. There are better ways to do these actions. This is only for simple practice.
 
 <details>
-<summary>Answer</summary>
+  <summary>Answer</summary>
 
 ```yaml
 ---

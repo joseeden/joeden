@@ -12,13 +12,13 @@ last_update:
 
 ## Overview
 
-<p align=center>
+<p align="center">
     <img src="images/variable-4.png">
 </p>
 
 Similar with any programming language, variables are used to store information varies with each host. Recall on the notes for [inventory files](1-Ansible_Inventory_YAML.md), we already worked with variables.
 
-<p align=center>
+<p align="center">
     <img src="/img/docs/variable-inventory.png">
 </p>
 
@@ -56,7 +56,7 @@ Here we have two playbooks that does the same thing but on different OS - instal
 
 Beside the package manager, you'll also have to specify different *hosts* for each one. Having two playbooks is alright but it can be done altogether using just one. This is where **conditionals** comes into play.
 
-<p align=center>
+<p align="center">
     <img src="/img/docs/conditionals-2.png">
 </p>
 
@@ -301,6 +301,6 @@ Note that each one used their own keyword. There are a lot more of these, but be
 - with_url
 - with_mongodb
 
-<p align=center>
+<p align="center">
     <img src="/img/docs/with-items.png">
 </p>

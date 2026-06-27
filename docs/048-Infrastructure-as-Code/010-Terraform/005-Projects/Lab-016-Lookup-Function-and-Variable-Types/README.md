@@ -20,17 +20,17 @@ In this lab, we'll do the following:
 
 This is a fairly simple lab and is an iteration of the first few labs, but here we'll checkout how to use the **lookup** function and see what sort of variables can we define in the **vars.tf** file. 
 
-<p align=center>
+<p align="center">
 <img src="/img/docs/lab9diagram.png">
 </p>
 
 
 ## Pre-requisites 
 
-- [Setup Keys and Permissions](../README.md#pre-requisites)
-- [Setup your Local Environment and Install Extensions](../README.md#pre-requisites) 
-- [Configure the Credentials File](../README.md#pre-requisites) 
-- [Install Terraform](../README.md#pre-requisites) 
+- Setup Keys and Permissions
+- Setup your Local Environment and Install Extensions 
+- Configure the Credentials File 
+- Install Terraform 
 
 
 ## Core Config files 
@@ -46,7 +46,8 @@ $ touch terraform.tfvars
 
 ## Create the Provider file
 
-<details><summary> provider.tf </summary>
+<details>
+  <summary>provider.tf</summary>
 
 ```bash
 terraform {
@@ -76,7 +77,8 @@ We can see that the main.tf file is populated with a lot of variables which we'l
 
 The **ami** field is basically looking through the values inside the map-type **ami_ids** and using **os_type** as a filter. If the os_type is given a "Windows" value, it will then check the ami_ids map and see use the AMI ID that is assocciated with a "windows" key.
 
-<details><summary> main.tf </summary>
+<details>
+  <summary>main.tf</summary>
  
 ```bash
 ### main.tf 
@@ -125,7 +127,8 @@ The **disk** is an object-type variable which allows grouping of values with dif
 
 The **ami_ids** is a map-type variable which consists of a key-value pair.
 
-<details><summary> vars.tf </summary>
+<details>
+  <summary>vars.tf</summary>
  
 ```bash
 # Variables for setting up terraform
@@ -204,7 +207,8 @@ variable "instance_size" {
 
 Now that we've declared the variables, we can assign values to them through the terraform.tfvars.
 
-<details><summary> terraform.tfvars </summary>
+<details>
+  <summary>terraform.tfvars</summary>
  
 ```bash
 # Variables for setting up terraform

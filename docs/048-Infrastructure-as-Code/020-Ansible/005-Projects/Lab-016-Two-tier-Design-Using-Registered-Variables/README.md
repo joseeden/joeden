@@ -21,7 +21,8 @@ Here we're using the output of the tasks inside the play and then save them in a
 
 As an example, we added another task that **List the directory contents** and then save the output to the **dir_contents** variable. We then use **debug** module and use the **msg** parameter to print the variable.
 
-<details><summary> setup-app-regvars.yml </summary>
+<details>
+<summary>setup-app-regvars.yml</summary>
  
 ```bash
 # setup-app-regvars.yml

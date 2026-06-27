@@ -28,7 +28,8 @@ dpkg-query: no packages found matching mysql-server
 
 We then create our first playbook, **lamp.yml**.
 
-<details><summary> lamp.yml </summary>
+<details>
+<summary>lamp.yml</summary>
  
 ```bash
 # lamp.yml
@@ -71,7 +72,8 @@ We now add a second play in our playbook. This play will ensure that the service
 
 Instead we just define the services and then specify the state as "started" and Ansible will take care of the "how". This is the **declarative** approach.
 
-<details><summary> lamp.yml </summary>
+<details>
+<summary>lamp.yml</summary>
  
 ```bash
 # lamp.yml
@@ -120,7 +122,8 @@ Pasting the IP on our web browser, we see the Apache default page.
 
 Since we've crowded our playbook with the packages, we can better organize it using variables. By doing this, we can define all the packages at the begining of the playbook. This also makes it easier to modify in case we need to add more packages to the list.
 
-<details><summary> lamp.yml </summary>
+<details>
+<summary>lamp.yml</summary>
  
 ```bash
 # lamp.yml
@@ -163,7 +166,8 @@ There should be no change when you open the ip in your browser. However, we were
 
 Note that by default, Apache only has HTTP enabled. We will now add another play that will enable HTTPs site in Apache. We also added a play that will restart Apache to reflect the changes.
 
-<details><summary> lamp.yml </summary>
+<details>
+<summary>lamp.yml</summary>
  
 ```bash
 # lamp.yml

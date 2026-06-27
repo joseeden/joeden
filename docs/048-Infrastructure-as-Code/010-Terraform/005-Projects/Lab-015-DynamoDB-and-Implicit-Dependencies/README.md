@@ -22,10 +22,10 @@ In this lab, we'll be doing the following:
 
 ## Pre-requisites 
 
-- [Setup Keys and Permissions](../README.md#pre-requisites)
-- [Setup your Local Environment and Install Extensions](../README.md#pre-requisites) 
-- [Configure the Credentials File](../README.md#pre-requisites) 
-- [Install Terraform](../README.md#pre-requisites) 
+- Setup Keys and Permissions
+- Setup your Local Environment and Install Extensions 
+- Configure the Credentials File 
+- Install Terraform 
 
 ## Config files 
 
@@ -40,7 +40,8 @@ touch terraform.tfvars
 
 ## Create the Provider file
 
-<details><summary> provider.tf </summary>
+<details>
+  <summary>provider.tf</summary>
  
 ```bash
 ### provider.tf
@@ -66,7 +67,8 @@ provider "aws" {
 
 ## Create the Variable files 
 
-<details><summary> vars.tf </summary>
+<details>
+  <summary>vars.tf</summary>
  
 ```bash
 ### vars.tf
@@ -90,7 +92,8 @@ variable "my_profile" {
  
 </details>
 
-<details><summary> terraform.tfvars </summary>
+<details>
+  <summary>terraform.tfvars</summary>
  
 ```bash
 ### terraform.tfvars
@@ -104,7 +107,8 @@ my_profile     = "vscode-dev"
 
 ## Create the Main file 
 
-<details><summary> main.tf </summary>
+<details>
+  <summary>main.tf</summary>
  
 ```bash
 ### main.tf
@@ -245,7 +249,8 @@ hash_key   = aws_dynamodb_table.lab08-ddb-table.hash_key
 
 Our new main.tf should now look like this. 
 
-<details><summary> main.tf </summary>
+<details>
+  <summary>main.tf</summary>
  
 ```bash
 # lab08 - Deploy a DynamoDB and a table item.

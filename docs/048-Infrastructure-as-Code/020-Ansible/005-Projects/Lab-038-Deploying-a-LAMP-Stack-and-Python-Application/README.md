@@ -41,7 +41,8 @@ $ ansible-galaxy init lamp
 
 This will create a **lamp** directory inside **roles**. Our **lamp** folder now has this directory structure created and initialized for us.
 
-<details><summary> tree-output of lamp folder </summary>
+<details>
+<summary>tree-output of lamp folder</summary>
  
 ```bash
 ~/roles/lamp$ tree
@@ -72,7 +73,8 @@ These are actually parts of a playbook but instead of crowding a single playbook
 
 As an example, instead of defining all the tasks in a single playbook, we'll put the tasks in **tasks/main.yml**.
 
-<details><summary> tasks/main.yml </summary>
+<details>
+<summary>tasks/main.yml</summary>
  
 ```bash
 - name: Install our packages
@@ -103,7 +105,8 @@ If you did the previous lab, you'll notice that we utilize the exact same playbo
 
 Now, the last two tasks needs restarting of HTTPD service for changes to reflect. We can simply define a final task which does exactly that but the proper way is to define it as a **handler**. A handler is a task that only gets run when notified. In this case, Apache will only be restarted when something has changed.
 
-<details><summary> handler/main.yml </summary>
+<details>
+<summary>handler/main.yml</summary>
  
 ```yaml
 - name: Restart Apache
@@ -116,7 +119,8 @@ Now, the last two tasks needs restarting of HTTPD service for changes to reflect
 
 Next, we'll call both our tasks and handler in our **~/app.yml** playbook. We'll also define the packages needed to install for the LAMP stack.
 
-<details><summary> app.yml </summary>
+<details>
+<summary>app.yml</summary>
  
 ```yaml
 ---
@@ -142,7 +146,8 @@ Next, we'll call both our tasks and handler in our **~/app.yml** playbook. We'll
 
 Now this is still way too crowded. So let's take out the variables and put them in **defaults/main.yml**.
 
-<details><summary> defaults/main.yml </summary>
+<details>
+<summary>defaults/main.yml</summary>
  
 ```yaml
 ---
@@ -162,7 +167,8 @@ services:
 
 Cleaning up our playbook, we're now left with a much shorter one.
 
-<details><summary> ~/app.yml </summary>
+<details>
+<summary>~/app.yml</summary>
  
 ```bash
 ---
@@ -203,7 +209,8 @@ drwxrwxr-x 10 ubuntu ubuntu 4096 Jan 29 07:54 webapp/
 
 We'll first define the default variables for the directories which store the source code of our application.
 
-<details><summary> webapp/defaults/main.yml </summary>
+<details>
+<summary>webapp/defaults/main.yml</summary>
  
 ```bash
 ---
@@ -217,7 +224,8 @@ app_repo: https://github.com/example/ansible-demo.git
 
 Next is we create two separate tasks for the database and the application.
 
-<details><summary> webapp/tasks/database.yml </summary>
+<details>
+<summary>webapp/tasks/database.yml</summary>
  
 ```yaml
 - apt: name=python-mysqldb state=present
@@ -227,7 +235,8 @@ Next is we create two separate tasks for the database and the application.
 ```
  
 </details>
-<details><summary> webapp/tasks/app.yml</summary>
+<details>
+<summary>webapp/tasks/app.yml</summary>
  
 ```yaml
 - apt: name=libmysqlclient-dev state=present
@@ -242,7 +251,8 @@ Next is we create two separate tasks for the database and the application.
 
 We'll then create the template that will serve as our application page.
 
-<details><summary> webapp/templates/apache.conf </summary>
+<details>
+<summary>webapp/templates/apache.conf</summary>
  
 ```yaml
 <VirtualHost *>
@@ -265,7 +275,8 @@ We'll then create the template that will serve as our application page.
 
 After creating the Apache template file, we have to make sure that it is copied to the correct directory in the remote machine. To do this, we define a third file inside **tasks**.
 
-<details><summary> webapp/tasks/site.yml </summary>
+<details>
+<summary>webapp/tasks/site.yml</summary>
  
 ```yaml
 - apt: name=libapache2-mod-wsgi state=present
@@ -293,7 +304,8 @@ drwxrwxr-x 10 ubuntu ubuntu 4096 Jan 29 08:11 ../
 
 We will now take all three custom YAML files and invoke them inside the **tasks/main.yml** file.
 
-<details><summary> tasks/main.yml </summary>
+<details>
+<summary>tasks/main.yml</summary>
  
 ```yaml
 ---
@@ -307,7 +319,8 @@ We will now take all three custom YAML files and invoke them inside the **tasks/
 
 Finally, let's edit our main ansible playbook and invoke the roles.
 
-<details><summary> ~/app.yml </summary>
+<details>
+<summary>~/app.yml</summary>
  
 ```yaml
 ---

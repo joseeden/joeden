@@ -21,7 +21,7 @@ This note talks about:
 
 ## What is Ansible
 
-<p align=center>
+<p align="center">
     <img src="/img/docs/ansible.png">
 </p>
 
@@ -34,7 +34,7 @@ To do some repetitive tasks, we can resolve to using *scripts* to do these tasks
 
 A typical comparison of scripts versus an ansible playbook:
 
-<p align=center>
+<p align="center">
     <img src="/img/docs/scripts-ansible.png">
 </p>
 
@@ -44,13 +44,14 @@ A typical comparison of scripts versus an ansible playbook:
 > *In my own setup, chose to leverage AWS and spin up 3 EC2 Instances (CentOS) in a VPC in ap-southeast-1.*
 > 
 
-<p align=center>
+<p align="center">
     <img src="/img/docs/nsible-diagram.png">
 </p>
 
 The steps I followed in setting up the EC2 instances and installing ansible on **master** are:
 
-*<details><summary>Open to read more...</summary>*
+<details>
+<summary>Open to read more...</summary>
 
 1. First created a VPC, a subnet, route table, and internet gateway where I'll be putting my instances. Also created a Security Group allowing SSH Access only from my IP address. This will be used by the instances. 
 (Yeah, it's more work, but it's a way to practice AWS as well)
@@ -234,7 +235,7 @@ If you're using VirtualBox or VMware Workstation, please skip to Step 4.
 
 ## Inventory file ##
 
-<p align=center>
+<p align="center">
     <img src="/img/docs/ansible-inventory.png">
 </p>
 
@@ -405,7 +406,7 @@ eden@master ansible-lab$ pwd
 
 ## What is YAML ##
 
-<p align=center>
+<p align="center">
     <img src="/img/docs/yaml.png">
 </p>
 
@@ -413,7 +414,7 @@ All ansible playbooks are written in **YAML**. But before that, what are ansible
 
 **Ansible Playbooks** are plain-text files written in YAML, which stands for *YAML Ain't Markup Lanugage.* It is used to represent data. Here is a comparison of the same data in three formats: YAML, XML, and JSON.
 
-<p align=center>
+<p align="center">
     <img src="/img/docs/data-formats.png">
 </p>
 

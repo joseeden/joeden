@@ -36,10 +36,10 @@ Local environment used for this lab.
 
 ## Pre-requisites 
 
-- [Setup Keys and Permissions](../README.md#pre-requisites)
-- [Setup your Local Environment and Install Extensions](../README.md#pre-requisites) 
-- [Configure the Credentials File](../README.md#pre-requisites) 
-- [Install Terraform](../README.md#pre-requisites) 
+- Setup Keys and Permissions
+- Setup your Local Environment and Install Extensions 
+- Configure the Credentials File 
+- Install Terraform 
 
 ## Create the Config Files
 
@@ -47,7 +47,8 @@ From Hashicorp's documentation on [AWS Provider](https://registry.terraform.io/p
 
 > *Use the Amazon Web Services (AWS) provider to interact with the many resources supported by AWS. You must configure the provider with the proper credentials before you can use it.*
 
-<details><summary> provider.tf </summary>
+<details>
+  <summary>provider.tf</summary>
  
 ```bash
 ### provider.tf
@@ -146,7 +147,8 @@ The project directory should now look like this.
 
 Let's now create the global **main.tf** file.
 
-<details><summary> main.tf </summary>
+<details>
+  <summary>main.tf</summary>
  
 ```bash
 ### main.tf
@@ -231,7 +233,8 @@ Looking inside the network module, we inspect the three files. The first one is 
 
 The modules's main.tf uses variables that are pulled from the global main.tf file. These variables are defined in the module's vars.tf file. Lastly, it also returns output values which are defined in the outputs.tf file.
 
-<details><summary> main.tf </summary>
+<details>
+  <summary>main.tf</summary>
  
 ```bash
 # Creates the vpc.
@@ -256,7 +259,8 @@ module "vpc" {
 
 </details>
  
-<details><summary> vars.tf </summary>
+<details>
+  <summary>vars.tf</summary>
  
 ```bash
 variable "availability_zones" {}
@@ -265,7 +269,8 @@ variable "cidr_block" {}
 
 </details>
 
-<details><summary> outputs.tf </summary>
+<details>
+  <summary>outputs.tf</summary>
  
 ```bash
 output "vpc_id" {
@@ -301,7 +306,8 @@ These contain all the configurations for the security groups. In the module's ma
 
 We can also see the main.tf file that the security module is dependent on the success of the network module as it references the **vpc_id** output which will be returned by the network module.
 
-<details><summary> main.tf </summary>
+<details>
+  <summary>main.tf</summary>
  
 ```bash
 resource "aws_security_group" "lab06-sg-bastion" {
@@ -437,7 +443,8 @@ resource "aws_security_group" "lab06-sg-mongodb" {
 
 Like the previous one, the security module also uses variables which are declared in the vars.tf and returns output values defined in the outputs.tf.
 
-<details><summary> vars.tf </summary>
+<details>
+  <summary>vars.tf</summary>
  
 ```bash
 variable "vpc_id" {}
@@ -446,7 +453,8 @@ variable "workstation_ip" {}
  
 </details>
 
-<details><summary> outputs.tf </summary>
+<details>
+  <summary>outputs.tf</summary>
  
 ```bash
 output "application_sg_id" {
@@ -482,7 +490,8 @@ Notice that the module is also dependent on the success of the previous two modu
 
 The module's main.tf file uses variables that are defined in the vars.tf. This module also returns the bastion's public IP as output values declared in the outputs.tf.
 
-<details><summary> main.tf </summary>
+<details>
+  <summary>main.tf</summary>
  
 ```bash
 resource "aws_instance" "lab06-bastion" {
@@ -501,7 +510,8 @@ resource "aws_instance" "lab06-bastion" {
  
 </details>
 
-<details><summary> vars.tf </summary>
+<details>
+  <summary>vars.tf</summary>
  
 ```bash
 variable "instance_type" {}
@@ -513,7 +523,8 @@ variable "instance_ami" {}
  
 </details>
 
-<details><summary> outputs.tf </summary>
+<details>
+  <summary>outputs.tf</summary>
  
 ```bash
 output "public_ip" {
@@ -531,7 +542,8 @@ This module defines the configuration of the MongoDB database.From the main.tf f
 
 Note that we only configured a single database instance for our lab purposes only. it is best practice to configure [replicasets](https://www.mongodb.com/docs/manual/replication/#:~:text=A%20replica%20set%20is%20a,nodes%20are%20deemed%20secondary%20nodes.) for the database and the data stored in EBS that's provisioned with IOPS.
 
-<details><summary> main.tf </summary>
+<details>
+  <summary>main.tf</summary>
  
 ```bash
 resource "aws_instance" "lab06-mongo" {
@@ -554,7 +566,8 @@ resource "aws_instance" "lab06-mongo" {
 
 To bootstrap the instance with MongoDB, the module uses **user_data** to run the **setup-mongodb.sh**.
 
-<details><summary> setup-mongodb.sh </summary>
+<details>
+  <summary>setup-mongodb.sh</summary>
  
 ```bash
 #!/bin/bash
@@ -615,7 +628,8 @@ echo fin v1.00!
 
 This module also has variables and output values defined in the vars.tf and outputs.tf, respectively.
 
-<details><summary> vars.tf </summary>
+<details>
+  <summary>vars.tf</summary>
  
 ```bash
 variable "instance_type" {}
@@ -627,7 +641,8 @@ variable "instance_ami" {}
  
 </details>
 
-<details><summary> outputs.tf </summary>
+<details>
+  <summary>outputs.tf</summary>
  
 ```bash
 output "private_ip" {
@@ -649,7 +664,8 @@ The application load balancer (ALB) uses two target groups:
 
 The ALB is configured to listen on port 8080 and will forward the traffic to the target group based on the configured listener rules. This ensures traffice is loadbalanced across the instances in the auto caling group (ASG).
 
-<details><summary> main.tf </summary>
+<details>
+  <summary>main.tf</summary>
  
 ```bash
 
@@ -812,7 +828,8 @@ The module also depends on the output values returned by the network, security, 
 
 In addition to this, we can see that the main file uses some [data sources](https://www.terraform.io/language/data-sources) which allows using data that are defined outside of Terraform or are define by another separate file. We've placed all the data sources in its separate file.
 
-<details><summary> datasources.tf </summary>
+<details>
+  <summary>datasources.tf</summary>
  
 ```bash
 data "aws_ami" "ubuntu" {
@@ -862,7 +879,8 @@ data "aws_instances" "application" {
 
 The bootstraping process is done within the **template_cloudinit_config** data source. It uses a script to install the frontend application and API onto the instances.
 
-<details><summary> install-frontend-api.sh </summary>
+<details>
+  <summary>install-frontend-api.sh</summary>
  
 ```bash
 #! /bin/bash
@@ -947,7 +965,8 @@ popd
 
 Next, the vars.tf file contains all the variables that will be passed by the global main.tf (this is the main.tf outside of the modules directory) to the modules.
 
-<details><summary> vars.tf </summary>
+<details>
+  <summary>vars.tf</summary>
  
 ```bash
 variable "instance_type" {}
@@ -978,7 +997,8 @@ variable "asg_min_size" {
 
 Lastly, the outputs.tf declares the outputs that are returned when the module is ran.
 
-<details><summary> outputs.tf </summary>
+<details>
+  <summary>outputs.tf</summary>
  
 ```bash
 output "dns_name" {
@@ -1001,7 +1021,8 @@ Now that we understand the main config file and the modules it uses, there's onl
 
 After that, we can then assign the values onto these variables through the terraform.tfvars file.
 
-<details><summary> variables.tf </summary>
+<details>
+  <summary>variables.tf</summary>
  
 ```bash
 # Variables for setting up terraform
@@ -1061,7 +1082,8 @@ variable "my_ip" {
  
 </details>
 
-<details><summary> terraform.tfvars </summary>
+<details>
+  <summary>terraform.tfvars</summary>
  
 ```bash
 # Variables for setting up terraform
@@ -1088,7 +1110,8 @@ instance_ami = "ami-04d9e855d716f9c99"
 
 One more thing, we have to configure the outputs.tf file with the expected output values that will be returned once we run the template.
 
-<details><summary> outputs.tf </summary>
+<details>
+  <summary>outputs.tf</summary>
  
 ```bash
 output "alb_dns" {

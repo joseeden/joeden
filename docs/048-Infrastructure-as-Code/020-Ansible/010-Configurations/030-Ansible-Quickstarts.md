@@ -39,7 +39,8 @@ drwxr-xr-x 93 root root  4096 Oct 20 11:31 ../
 ```
 </br>
 To see the default configuration of Ansible
-<details><summary> cat /etc/ansible/ansible.cfg </summary>
+<details>
+<summary>cat /etc/ansible/ansible.cfg</summary>
 
 ```bash
 $ cat /etc/ansible/ansible.cfg
@@ -537,7 +538,8 @@ $ cat /etc/ansible/ansible.cfg
 
 </br>
 To see default/sample hosts file
-<details><summary> cat /etc/ansible/hosts </summary>
+<details>
+<summary>cat /etc/ansible/hosts</summary>
 
 ```bash
 $ cat /etc/ansible/hosts

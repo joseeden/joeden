@@ -12,7 +12,7 @@ last_update:
 
 ## Overview
 
-<p align=center>
+<p align="center">
     <img src="/img/docs/ansible-modules.png">
 </p>
 

@@ -14,7 +14,8 @@ last_update:
 
 This lab practices Ansible conditionals so tasks run only when host or variable conditions match.
 
-<details><summary> Inventory</summary>
+<details>
+<summary>Inventory</summary>
  
 ```bash
 # We have created a group for web servers. Similarly create a group for database servers named 'db_servers' and add db1 server to it
@@ -39,19 +40,22 @@ db1
 ```
  
 </details>
-<details><summary> Task 1 </summary>
+<details>
+<summary>Task 1</summary>
 
 The given playbook attempts to start mysql service on all_servers. Use the when condition to run this task if the host (ansible_host) is the database server.
 
 Refer to the inventory file to identify the name of the database server.
  
 </details>
-<details><summary> Task 2 </summary>
+<details>
+<summary>Task 2</summary>
 
 The playbook has a variable defined - age. The two tasks attempt to print if I am a child or an Adult. Use the when conditional to print if I am a child or an Adult based on weather my age is < 18 (child) or >= 18 (Adult).
  
 </details>
-<details><summary> Task 3 </summary>
+<details>
+<summary>Task 3</summary>
  
 The given playbook attempts to add an entry into the /etc/resolv.conf file for nameserver.
 
@@ -68,7 +72,8 @@ Note: shell and command modules are similar in that they are used to execute a c
 </details>
 
 **Solutions**
-<details><summary> Solution 1 </summary>
+<details>
+<summary>Solution 1</summary>
  
 ```yaml
 ---
@@ -82,7 +87,8 @@ Note: shell and command modules are similar in that they are used to execute a c
 ```
  
 </details>
-<details><summary> Solution 2 </summary>
+<details>
+<summary>Solution 2</summary>
  
 ```yaml
 ---
@@ -100,7 +106,8 @@ Note: shell and command modules are similar in that they are used to execute a c
 ```
  
 </details>
-<details><summary> Solution 3 </summary>
+<details>
+<summary>Solution 3</summary>
  
 ```yaml
 ---

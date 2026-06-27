@@ -25,7 +25,7 @@ Use the expandable answers to compare your solution after you finish each exerci
 | weight | 90 g |
 
 <details>
-<summary>Answer</summary>
+  <summary>Answer</summary>
 
 ```yaml
 name: apple
@@ -45,7 +45,7 @@ weight: 90 g
 | age | 24 |
 
 <details>
-<summary>Answer</summary>
+  <summary>Answer</summary>
 
 ```yaml
 employee:
@@ -75,7 +75,7 @@ The details for the address are:
 | country | united states |
 
 <details>
-<summary>Answer</summary>
+  <summary>Answer</summary>
 
 ```yaml
 employee:
@@ -94,7 +94,7 @@ employee:
 **4. Create an array of 4 apples and 2 mangoes.**
 
 <details>
-<summary>Answer</summary>
+  <summary>Answer</summary>
 
 ```yaml
 - apple
@@ -126,7 +126,7 @@ The first one is already created.
 ```
 
 <details>
-<summary>Answer</summary>
+  <summary>Answer</summary>
 
 ```yaml
 - fruit: apple
@@ -167,7 +167,7 @@ The details for john:
 | age | 30 |
 
 <details>
-<summary>Answer</summary>
+  <summary>Answer</summary>
 
 ```yaml
 employee:
@@ -206,7 +206,7 @@ Her payslip details:
 | 4 | july | 110,000 |
 
 <details>
-<summary>Answer</summary>
+  <summary>Answer</summary>
 
 ```yaml
 employee:

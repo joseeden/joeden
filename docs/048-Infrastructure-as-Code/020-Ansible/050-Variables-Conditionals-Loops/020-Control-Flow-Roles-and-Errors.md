@@ -113,7 +113,8 @@ In the example below, we have an option to install two roles on a single host (o
 
 ### Ansible-galaxy CLI tool
 
-<details><summary> ansible-galaxy </summary>
+<details>
+<summary>ansible-galaxy</summary>
  
 ```bash
 $ ansible-galaxy -h
@@ -134,7 +135,8 @@ optional arguments:
 ```
 </details>
 
-<details><summary> ansible-galaxy role</summary>
+<details>
+<summary>ansible-galaxy role</summary>
 
 ```bash
 $ ansible-galaxy role -h
@@ -159,7 +161,8 @@ optional arguments:
 ```
 </details>
 
-<details><summary> ansible-galaxy collection</summary>
+<details>
+<summary>ansible-galaxy collection</summary>
 
 ```bash
 $ ansible-galaxy collection -h
@@ -182,7 +185,8 @@ We can view the details of a role before we install it locally by using the **an
 
 To view it in the command line:
 
-<details><summary> kosssi.gitconfig </summary>
+<details>
+<summary>kosssi.gitconfig</summary>
  
 ```bash
 $ ansible-galaxy role info kosssi.gitconfig

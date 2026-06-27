@@ -14,7 +14,8 @@ last_update:
 
 This lab practices playbook structure by defining plays, hosts, tasks, and commands for managed nodes.
 
-<details><summary> Inventory</summary>
+<details>
+<summary>Inventory</summary>
  
 ```bash
 # Sample Inventory File
@@ -50,39 +51,46 @@ dallas_nodes
 ```
  
 </details>
-<details><summary> Task 1 </summary>
+<details>
+<summary>Task 1</summary>
  
 Update name of the play to Execute a date command on localhost
  
 </details>
-<details><summary> Task 2 </summary>
+<details>
+<summary>Task 2</summary>
  
 Update the task to execute the command cat /etc/hosts and change task name to Execute a command to display hosts file
  
 </details>
-<details><summary> Task 3 </summary>
+<details>
+<summary>Task 3</summary>
  
 Update the playbook to add a second task. The new task must execute the command cat /etc/hosts and change new task name to Execute a command to display hosts file
  
 </details>
-<details><summary> Task 4 </summary>
+<details>
+<summary>Task 4</summary>
  
 We have been running all tasks on localhost. We would now like to run these tasks on the web_node1. Update the play to run the tasks on web_node1.
  
 </details>
-<details><summary> Task 5 </summary>
+<details>
+<summary>Task 5</summary>
  
 Refer to the attached inventory file. We would like to run the tasks defined in the play on all servers in boston.
  
 </details>
-<details><summary> Task 6 </summary>
+<details>
+<summary>Task 6</summary>
  
 Create a new play named Execute a command to display hosts file contents on web_node2 to execute cat /etc/hosts command on second node web_node2 and name the task Execute a command to display hosts file.
 
 Refer to the attached inventory file
  
 </details>
-<details><summary> Task 7 </summary>
+<details>
+<summary>Task 7</summary>
  
 You are assigned a task to restart a number of servers in a particular sequence. The sequence and the commands to be used are given below. Note that the commands should be run on respective servers only. Refer to the inventory file and update the playbook to create the below sequence.
 
@@ -98,7 +106,8 @@ Warning: Do not use this playbook in a real setup. There are better ways to do t
 </details>
 
 **Solutions:**
-<details><summary> Solution 1</summary>
+<details>
+<summary>Solution 1</summary>
  
 ```yaml
 --- 
@@ -113,7 +122,8 @@ Warning: Do not use this playbook in a real setup. There are better ways to do t
 ```
  
 </details>
-<details><summary> Solution 2</summary>
+<details>
+<summary>Solution 2</summary>
  
 ```yaml
 --- 
@@ -127,7 +137,8 @@ Warning: Do not use this playbook in a real setup. There are better ways to do t
 ```
  
 </details>
-<details><summary> Solution 3 </summary>
+<details>
+<summary>Solution 3</summary>
  
 ```yaml
 ---
@@ -144,7 +155,8 @@ Warning: Do not use this playbook in a real setup. There are better ways to do t
 ```
  
 </details>
-<details><summary> Solution 4 </summary>
+<details>
+<summary>Solution 4</summary>
  
 ```yaml
 ---
@@ -162,7 +174,8 @@ Warning: Do not use this playbook in a real setup. There are better ways to do t
 ```
  
 </details>
-<details><summary> Solution 5 </summary>
+<details>
+<summary>Solution 5</summary>
  
 ```yaml
 ---
@@ -180,7 +193,8 @@ Warning: Do not use this playbook in a real setup. There are better ways to do t
 ```
  
 </details>
-<details><summary> Solution 6 </summary>
+<details>
+<summary>Solution 6</summary>
  
 ```yaml
 ---
@@ -203,7 +217,8 @@ Warning: Do not use this playbook in a real setup. There are better ways to do t
 ```
  
 </details>
-<details><summary> Solution 7 </summary>
+<details>
+<summary>Solution 7</summary>
  
 ```yaml
 --- 

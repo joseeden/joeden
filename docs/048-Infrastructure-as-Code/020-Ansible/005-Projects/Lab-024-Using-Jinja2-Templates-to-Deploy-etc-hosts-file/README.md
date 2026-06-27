@@ -19,12 +19,14 @@ Diagram:
 
 The tree-structure of our Project **One** currently looks like this. Don't worry if you see that there's already a lot of files in the directory. These are the files from the previous labs in this series. The only ones we'll really really need are also provided below.
 
-<details><summary> Project One </summary>
+<details>
+<summary>Project One</summary>
  
 ![](/img/docs/planslab22tree.png)
  
 </details>
-<details><summary> ansible.cfg </summary>
+<details>
+<summary>ansible.cfg</summary>
  
 ```bash
  [defaults]
@@ -58,7 +60,8 @@ pipelining = True
 ```
  
 </details>
-<details><summary> symlink in root directory pointing to projects folder </summary>
+<details>
+<summary>symlink in root directory pointing to projects folder</summary>
 
 ```bash
 $ ls -la | grep "\->"
@@ -69,7 +72,8 @@ lrwxrwxrwx  1 joseeden joseeden    70 Jan 14 23:03 proj-ansible-1 -> /mnt/c/User
 
 For this lab, we'll have **two webservers** and **two dbservers**. Recall that we used a default **edendev.inv** inventory file for the previous labs. We'll be using a different inventory file for this lab and instead of changing the ansible.cfg, we'll just specify this new inventory file when we run the playbook.
 
-<details><summary> edentst.inv </summary>
+<details>
+<summary>edentst.inv</summary>
  
 ```bash
 # edentst.inv
@@ -95,7 +99,8 @@ The goal of this lab is to replicate the controller's /etc/hosts file to a Jinja
 
 Let's start off with the **files/hosts.j2** to be used.
 
-<details><summary> files/hosts.j2 </summary>
+<details>
+<summary>files/hosts.j2</summary>
  
 ```jinja2
 {# hosts.j2 #}
@@ -116,7 +121,8 @@ Let's start off with the **files/hosts.j2** to be used.
 
 Next, we create the playbook that will deploy this hosts file.
 
-<details><summary> deploy-jinja2-hosts </summary>
+<details>
+<summary>deploy-jinja2-hosts</summary>
  
 ```yaml
  # deploy-jinja2-hosts.yml

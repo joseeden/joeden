@@ -37,7 +37,7 @@ Do all the necessary additions in the update.yaml below to achieve the task.**
 ```
 
 <details>
-<summary>Answer</summary>
+  <summary>Answer</summary>
 
 ```yaml
 -
@@ -77,7 +77,7 @@ localhost ansible_connection=localhost nameserver_ip=10.1.250.10 snmp_port=160-1
 ```
 
 <details>
-<summary>Answer</summary>
+  <summary>Answer</summary>
 
 ```yaml
 -
@@ -119,7 +119,7 @@ localhost ansible_connection=localhost nameserver_ip=10.1.250.10 snmp_port=160-1
 ```
 
 <details>
-<summary>Answer</summary>
+  <summary>Answer</summary>
 
 ```yaml
     name: 'Update nameserver entry into resolv.conf file on localhost'
@@ -153,7 +153,7 @@ localhost ansible_connection=localhost nameserver_ip=10.1.250.10 snmp_port=160-1
 ```
 
 <details>
-<summary>Answer</summary>
+  <summary>Answer</summary>
 
 ```yaml
 -
@@ -183,7 +183,7 @@ localhost ansible_connection=localhost nameserver_ip=10.1.250.10 snmp_port=160-1
 ```
 
 <details>
-<summary>Answer</summary>
+  <summary>Answer</summary>
 
 ```yaml
 -
@@ -220,7 +220,7 @@ localhost ansible_connection=localhost nameserver_ip=10.1.250.10 snmp_port=160-1
 ```
 
 <details>
-<summary>Answer</summary>
+  <summary>Answer</summary>
 
 ```yaml
 -
@@ -259,7 +259,7 @@ localhost ansible_connection=localhost nameserver_ip=10.1.250.10 snmp_port=160-1
 ```
 
 <details>
-<summary>Answer</summary>
+  <summary>Answer</summary>
 
 ```yaml
 -
@@ -309,7 +309,7 @@ localhost ansible_connection=localhost nameserver_ip=10.1.250.10 snmp_port=160-1
 ```
 
 <details>
-<summary>Answer</summary>
+  <summary>Answer</summary>
 
 ```yaml
 -

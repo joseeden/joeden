@@ -19,12 +19,14 @@ Diagram:
 
 The tree-structure of our Project **One** currently looks like this. Don't worry if you see that there's already a lot of files in the directory. These are the files from the previous labs in this series. The only ones we'll really really need are also provided below.
 
-<details><summary> Project One </summary>
+<details>
+<summary>Project One</summary>
  
 ![](/img/docs/planslab22tree.png)
  
 </details>
-<details><summary> ansible.cfg </summary>
+<details>
+<summary>ansible.cfg</summary>
  
 ```bash
  [defaults]
@@ -58,7 +60,8 @@ pipelining = True
 ```
  
 </details>
-<details><summary> symlink in root directory pointing to projects folder </summary>
+<details>
+<summary>symlink in root directory pointing to projects folder</summary>
 
 ```bash
 $ ls -la | grep "\->"
@@ -69,7 +72,8 @@ lrwxrwxrwx  1 joseeden joseeden    70 Jan 14 23:03 proj-ansible-1 -> /mnt/c/User
 
 For this lab, we'll create a new inventory file named **edenjen.inv**. We've completely removed the loadbalancer, and added a new server called **jenkinsmaster** which will serve as our dedicated buid runner. We will be referring to this inventory file when we run the playbook.
 
-<details><summary> edenjen.inv </summary>
+<details>
+<summary>edenjen.inv</summary>
 
 ```bash
 [webservers]
@@ -111,7 +115,8 @@ sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noa
 
 From the outline above, we build our playbook piece by piece. After some trial and error, I have arrive to this final playbook.
 
-<details><summary> install-jenkins.yml </summary>
+<details>
+<summary>install-jenkins.yml</summary>
  
 ```yaml
 # installs jenkins
@@ -216,7 +221,8 @@ Now, before we forget, we must also setup the Jenkins user account.
 
 #### Build Accounts 
 
-<details><summary> Configure the jenkins user </summary>
+<details>
+<summary>Configure the jenkins user</summary>
  
 
 The default user that Jenkins uses is a *non-interactive user*. This can be seen when you grep for Jenkins in the /etc/passwd file.

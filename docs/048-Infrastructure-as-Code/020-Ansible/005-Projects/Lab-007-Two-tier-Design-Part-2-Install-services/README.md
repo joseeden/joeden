@@ -24,7 +24,8 @@ Here we'll be installing services on our webservers and loadbalancer.
 After installing the services, they would also need to be started.
 
 For the playbook:
-<details><summary>install-services.yml</summary>
+<details>
+<summary>install-services.yml</summary>
 
 ```bash
 # install-services.yml

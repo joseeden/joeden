@@ -28,7 +28,8 @@ The real beenfit of this is if we need to decommision a server or add more to sc
 In our **files** folder, we'll create **lbconfig.j2**.
 The load balancer template is stored with the project files.
 
-<details><summary>lbconfig.j2</summary>
+<details>
+<summary>lbconfig.j2</summary>
 
 ```bash
 # lbconfig.j2
@@ -89,7 +90,8 @@ ProxyPass / balancer://webcluster/
 
 The next step would now be is to upload the Jinja file (j2) to the loadbalancer. In the **playbooks** directory, we'll create a playbook that uploads the template.
 
-<details><summary>setup-lb.yml</summary>
+<details>
+<summary>setup-lb.yml</summary>
 
 ```yaml
 # setup-lb.yml

@@ -19,7 +19,7 @@ Use the expandable answers to compare your solution after you finish each exerci
 **1. Create a  playbook with a play to Execute a script on a group of web server nodes called "web_nodes". The script is located at /tmp/install_script.sh**
 
 <details>
-<summary>Answer</summary>
+  <summary>Answer</summary>
 
 ```yaml
 -
@@ -49,7 +49,7 @@ Use the expandable answers to compare your solution after you finish each exerci
 Hint: use the [service](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/service_module.html) module
 
 <details>
-<summary>Answer</summary>
+  <summary>Answer</summary>
 ```yaml
 -
     name: 'Execute a script on all web server nodes'
@@ -87,7 +87,7 @@ Hint: use the [service](https://docs.ansible.com/ansible/latest/collections/ansi
 Hint: Use the [Lineinfile](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/lineinfile_module.html) module**
 
 <details>
-<summary>Answer</summary>
+  <summary>Answer</summary>
 
 ```yaml
 -
@@ -145,7 +145,7 @@ User details to be used are given below:
 Hint: Use the [user module](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/user_module.html) module.
 
 <details>
-<summary>Answer</summary>
+  <summary>Answer</summary>
 
 ```yaml
 -

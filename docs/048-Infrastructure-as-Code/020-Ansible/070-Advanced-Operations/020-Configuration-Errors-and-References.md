@@ -27,7 +27,8 @@ retry_files_enabled = False
 
 ### Proxy error. Reason: DNS lookup failure
 
-<details><summary> Read more... </summary>
+<details>
+<summary>Read more...</summary>
  
 Got this particular error when I was trying to check if the loadbalancer is proxying the requests to the four backend webservers.
 
@@ -94,7 +95,8 @@ The rest of the other errors encountered along the way were probably irrelevant 
 
 ### AH00558: httpd: Could not reliably determine the server's fully qualified domain name
 
-<details><summary> Read more... </summary>
+<details>
+<summary>Read more...</summary>
  
 Checked the other servers and they had the same error. Googled this, found a solution form this [link.](https://www.digitalocean.com/community/tutorials/apache-configuration-error-ah00558-could-not-reliably-determine-the-server-s-fully-qualified-domain-name) Modified the config file, then reloaded httpd
 ```bash
@@ -124,7 +126,8 @@ Still good. One problem at a time.
 
 ### (13)Permission denied: AH00957: HTTP: attempt to connect to (ip-address) failed
 
-<details><summary> Read more... </summary>
+<details>
+<summary>Read more...</summary>
  
 Searched this online, and found [this.](https://stackoverflow.com/questions/23948527/13-permission-denied-while-connecting-to-upstreamnginx)
 
@@ -139,7 +142,8 @@ $ setsebool -P httpd_can_network_connect 1
 
 ### Failed to connect to repository : Error performing command
 
-<details><summary> Read more... </summary>
+<details>
+<summary>Read more...</summary>
 
 
 Got this error on on the maven-project lab.
@@ -166,7 +170,8 @@ If you are using Windows, you might need to add exe extension to the end of git 
 
 ### Cannot run program "mvn" (in directory : error=2, No such file or directory
 
-<details><summary> Read more... </summary>
+<details>
+<summary>Read more...</summary>
 
 Another issue I encountered when running the maven project lab was that the build was failing with the error message (from the console output)
 
@@ -224,7 +229,8 @@ Finished: FAILURE
 
 ### NB: JAVA_HOME should point to a JDK not a JRE
 
-<details><summary> Read more... </summary>
+<details>
+<summary>Read more...</summary>
 
 Found this [link online.](https://stackoverflow.com/questions/16031515/java-home-is-not-defined-correctly-only-from-jenkins?lq=1).
 
@@ -246,7 +252,8 @@ In the  **Global properties** section, add a **JAVA_HOME** variable. Hit **Save*
 
 ### To know where JDK is installed in RHEL 8
 
-<details><summary> Read more... </summary>
+<details>
+<summary>Read more...</summary>
 
 ```bash
 $ readlink -f $(which java)

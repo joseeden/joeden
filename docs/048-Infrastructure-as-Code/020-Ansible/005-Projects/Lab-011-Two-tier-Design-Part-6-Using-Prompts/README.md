@@ -23,7 +23,8 @@ We'll create a copy of **setup-app-regvars.yml** and name it **setup-app-prompts
 
 Notice that the two "prompts" will store in two separate variables which then be used in the first two tasks. In the first two tasks, we specify that the task will only be ran if the variables or if the user entered "yes"
 
-<details><summary> setup-app-prompts.yml </summary>
+<details>
+<summary>setup-app-prompts.yml</summary>
  
 ```bash
 # setup-app-regvars.yml

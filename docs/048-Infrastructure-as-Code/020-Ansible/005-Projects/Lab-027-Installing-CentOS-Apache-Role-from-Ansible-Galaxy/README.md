@@ -19,12 +19,14 @@ Diagram:
 
 The tree-structure of our Project **One** currently looks like this. Don't worry if you see that there's already a lot of files in the directory. These are the files from the previous labs in this series. The only ones we'll really really need are also provided below.
 
-<details><summary> Project One </summary>
+<details>
+<summary>Project One</summary>
  
 ![](/img/docs/planslab22tree.png)
  
 </details>
-<details><summary> ansible.cfg </summary>
+<details>
+<summary>ansible.cfg</summary>
  
 ```bash
  [defaults]
@@ -58,7 +60,8 @@ pipelining = True
 ```
  
 </details>
-<details><summary> symlink in root directory pointing to projects folder </summary>
+<details>
+<summary>symlink in root directory pointing to projects folder</summary>
 
 ```bash
 $ ls -la | grep "\->"
@@ -69,7 +72,8 @@ lrwxrwxrwx  1 joseeden joseeden    70 Jan 14 23:03 proj-ansible-1 -> /mnt/c/User
 
 For this lab, we'll have **two webservers** and **two dbservers**. Recall that we used a default **edendev.inv** inventory file for the previous labs. We'll be using a different inventory file for this lab and instead of changing the ansible.cfg, we'll just specify this new inventory file when we run the playbook.
 
-<details><summary> edentst.inv </summary>
+<details>
+<summary>edentst.inv</summary>
  
 ```bash
 # edentst.inv
@@ -108,7 +112,8 @@ $ ansible-galaxy install mariuszczyz.centos_apache
 
 Note that when we installed the role, it will be placed in the default *~/.ansible/roles* directory. Here's a tree-output of the directory.
 
-<details><summary> tree-output, centos-apache </summary>
+<details>
+<summary>tree-output, centos-apache</summary>
  
 ```bash
 $ tree ~/.ansible/roles/mariuszczyz.centos_apache/
@@ -142,7 +147,8 @@ one$ cp -r ~/.ansible/roles/mariuszczyz.centos_apache/ roles/
 
 As a recap, the tasks in a playbook are broken down into reusable piece and are place inside the role's **tasks** folder.
 
-<details><summary> tasks/main.yml </summary>
+<details>
+<summary>tasks/main.yml</summary>
  
 ```bash
 ---
@@ -183,7 +189,8 @@ As a recap, the tasks in a playbook are broken down into reusable piece and are 
 
 One file that will be deployed to the webservers is the **templates/custom.conf**. Upon checking, we see that this file is used to set variable parameters. 
 
-<details><summary> templates/custom.conf </summary>
+<details>
+<summary>templates/custom.conf</summary>
  
 ```jinja2
 KeepAlive Off
@@ -201,7 +208,8 @@ KeepAlive Off
 
 Of course, we will also need to check what are the values that will be used for this parameters. We can find that in the **defaults/main.yml**. We can make adjustments on this values over time.
 
-<details><summary> defaults/main.yml </summary>
+<details>
+<summary>defaults/main.yml</summary>
  
 ```yaml
 ---
@@ -227,7 +235,8 @@ MAX_REQUEST_PER_CHILD: 4500
 
 Lastly, let's look at the **handlers/main.yml**.
 
-<details><summary> handlers/main.yml </summary>
+<details>
+<summary>handlers/main.yml</summary>
  
 ```yaml
 ---
@@ -250,7 +259,8 @@ From the [Github repo](https://github.com/mariuszczyz/centos_apache#run-it), we 
 
 We'll create a new playbook in our **playbooks** directory. For our first attempt, we'll run it first on one of the webservers.
 
-<details><summary> playbooks/role-centos-apache.yml </summary>
+<details>
+<summary>playbooks/role-centos-apache.yml</summary>
 
 ```yaml
 # role-centos-apache.yml

@@ -1,6 +1,6 @@
 ---
-title: "Dev Environment in AWS"
-description: "Dev Environment in AWS"
+title: "Dev Environment in AWS Cloud"
+description: "Dev Environment in AWS Cloud"
 tags: 
 - DevOps
 - Infrastructure as Code

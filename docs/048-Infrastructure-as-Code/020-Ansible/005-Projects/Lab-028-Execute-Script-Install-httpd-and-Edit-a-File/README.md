@@ -14,7 +14,8 @@ last_update:
 
 This lab practices common Ansible operations such as running scripts, installing `httpd`, and editing files on managed hosts.
 
-<details><summary> Inventory</summary>
+<details>
+<summary>Inventory</summary>
  
 ```bash
 # Sample Inventory File
@@ -41,20 +42,23 @@ web_nodes
 ```
  
 </details>
-<details><summary> Task 1 </summary>
+<details>
+<summary>Task 1</summary>
  
 - Update the playbook with a play to Execute a script on all web server nodes. 
 - The script is located at /tmp/install_script.sh
 - Use the Script module
  
 </details>
-<details><summary> Task 2 </summary>
+<details>
+<summary>Task 2</summary>
  
 - Add a new task to start httpd services on all web nodes
 - Use the Service module
  
 </details>
-<details><summary> Task 3 </summary>
+<details>
+<summary>Task 3</summary>
  
 - Add a new task in the beginning to add an entry into /etc/resolv.conf file for hosts. 
 - The line to be added is nameserver 10.1.250.10
@@ -62,7 +66,8 @@ web_nodes
 - Use the Lineinfile module
  
 </details>
-<details><summary> Task 4 </summary>
+<details>
+<summary>Task 4</summary>
  
 - Add a new task at second position to create a new web user.
 - Use the user module for this. 
@@ -74,7 +79,8 @@ web_nodes
 </details>
 
 **Solutions:**
-<details><summary> Solution 1 </summary>
+<details>
+<summary>Solution 1</summary>
  
 ```yaml
 # Execute a script on all web server nodes.
@@ -89,7 +95,8 @@ web_nodes
 ```
  
 </details>
-<details><summary> Solution 2 </summary>
+<details>
+<summary>Solution 2</summary>
  
 ```yaml
 # Execute a script on all web server nodes.
@@ -108,7 +115,8 @@ web_nodes
 ```
  
 </details>
-<details><summary> Solution 3 </summary>
+<details>
+<summary>Solution 3</summary>
  
 ```yaml
 # Execute a script on all web server nodes.
@@ -132,7 +140,8 @@ web_nodes
 ```
  
 </details>
-<details><summary> Solution 4 </summary>
+<details>
+<summary>Solution 4</summary>
  
 ```yaml
 # Execute a script on all web server nodes.

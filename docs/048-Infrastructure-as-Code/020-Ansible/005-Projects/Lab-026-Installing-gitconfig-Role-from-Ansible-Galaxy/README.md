@@ -19,12 +19,14 @@ Diagram:
 
 The tree-structure of our Project **One** currently looks like this. Don't worry if you see that there's already a lot of files in the directory. These are the files from the previous labs in this series. The only ones we'll really really need are also provided below.
 
-<details><summary> Project One </summary>
+<details>
+<summary>Project One</summary>
  
 ![](/img/docs/planslab22tree.png)
  
 </details>
-<details><summary> ansible.cfg </summary>
+<details>
+<summary>ansible.cfg</summary>
  
 ```bash
  [defaults]
@@ -58,7 +60,8 @@ pipelining = True
 ```
  
 </details>
-<details><summary> symlink in root directory pointing to projects folder </summary>
+<details>
+<summary>symlink in root directory pointing to projects folder</summary>
 
 ```bash
 $ ls -la | grep "\->"
@@ -69,7 +72,8 @@ lrwxrwxrwx  1 joseeden joseeden    70 Jan 14 23:03 proj-ansible-1 -> /mnt/c/User
 
 For this lab, we'll have **two webservers** and **two dbservers**. Recall that we used a default **edendev.inv** inventory file for the previous labs. We'll be using a different inventory file for this lab and instead of changing the ansible.cfg, we'll just specify this new inventory file when we run the playbook.
 
-<details><summary> edentst.inv </summary>
+<details>
+<summary>edentst.inv</summary>
  
 ```bash
 # edentst.inv
@@ -97,7 +101,8 @@ As a sample role, we'll use this gitconfig role that you can check out in the [A
 
 Going back to our controller machine, we can view a summary of the role from the command line as well.
 
-<details><summary> kosssi.gitconfig </summary>
+<details>
+<summary>kosssi.gitconfig</summary>
  
 ```bash
 $ ansible-galaxy role info kosssi.gitconfig
@@ -194,7 +199,8 @@ $ cat tasks/main.yml
 
 The **main.yml** is the main overview of the tasks and is usually where the other tasks are being called. In the example below, it is calling the two other tasks, **config.yml** and **ignore.yml**.
 
-<details><summary> config.yml </summary>
+<details>
+<summary>config.yml</summary>
  
 ```yaml
 ---
@@ -207,7 +213,8 @@ The **main.yml** is the main overview of the tasks and is usually where the othe
 ```
  
 </details>
-<details><summary> ignore.yml </summary>
+<details>
+<summary>ignore.yml</summary>
  
 ```yaml
 ---
@@ -223,7 +230,8 @@ The **main.yml** is the main overview of the tasks and is usually where the othe
 
 Note that we modified the **config.yml** to reflect the correct path of the Jinja2 template that will be deployed onto app1. We've also changed the destination filename to **jsmith.gitconfig**.
 
-<details><summary> config.yml </summary>
+<details>
+<summary>config.yml</summary>
  
 ```jinja2
 ---

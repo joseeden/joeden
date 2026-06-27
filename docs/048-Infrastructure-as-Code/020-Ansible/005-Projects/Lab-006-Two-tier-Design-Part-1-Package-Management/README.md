@@ -25,7 +25,8 @@ This particular lab will be divided into phases:
 
 For the first one, we're updating all the packages in our servers using yum.
 
-<details><summary>package-update.yml</summary>
+<details>
+<summary>package-update.yml</summary>
 
 ```yaml
 
@@ -56,7 +57,8 @@ Notice that when our playbook fails, it creates a duplicate file appended with *
 
 This means the actions can only be done by the **root** user. To do this, we edit the playbook. "become: true" means become the root user when running the tasks.
 
-<details><summary>package-update.yml</summary>
+<details>
+<summary>package-update.yml</summary>
 
 ```yaml
 # package-update.yml using yum

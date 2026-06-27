@@ -19,12 +19,14 @@ Diagram:
 
 The tree-structure of our Project **One** currently looks like this. Don't worry if you see that there's already a lot of files in the directory. These are the files from the previous labs in this series. The only ones we'll really need are also provided below.
 
-<details><summary> Project One </summary>
+<details>
+<summary>Project One</summary>
  
 ![](/img/docs/planslab22tree.png)
  
 </details>
-<details><summary> ansible.cfg </summary>
+<details>
+<summary>ansible.cfg</summary>
  
 ```bash
  [defaults]
@@ -58,7 +60,8 @@ pipelining = True
 ```
  
 </details>
-<details><summary> symlink in root directory pointing to projects folder </summary>
+<details>
+<summary>symlink in root directory pointing to projects folder</summary>
 
 ```bash
 $ ls -la | grep "\->"
@@ -71,7 +74,8 @@ We'll change our setup a bit for this lab. As a recap, we have four testservers 
 
 For this lab, we'll have **two webservers** and **two dbservers**. Recall that we used a default **edendev.inv** inventory file for the previous labs. We'll be using a different inventory file for this lab and instead of changing the ansible.cfg, we'll just specify this new inventory file when we run the playbook.
 
-<details><summary> edentst.inv </summary>
+<details>
+<summary>edentst.inv</summary>
  
 ```bash
 # edentst.inv
@@ -112,7 +116,8 @@ The playbook we'll use is below. Notice that we want to run the playbook across 
 
 Also notice the **when** condition we used for both tasks in the play. It'll be looking for *dbservers* and *webservers* in the **group_names**. This is the list of all groups defined in your inventory file. This is gathered during the **Gathering facts** phase when you execute your playbook.
 
-<details><summary> create-users-conditionals-vars.yml </summary>
+<details>
+<summary>create-users-conditionals-vars.yml</summary>
  
 ```yaml
 # create-users-conditionals.yml

@@ -21,12 +21,14 @@ The tree-structure of our Project **One** currently looks like this. Don't worry
 
 Note that we also enabled the *privilege escalation* section of our ansible.cfg file by uncommenting them.
 
-<details><summary> Project One </summary>
+<details>
+<summary>Project One</summary>
  
 ![](/img/docs/planslab22tree.png)
  
 </details>
-<details><summary> ansible.cfg </summary>
+<details>
+<summary>ansible.cfg</summary>
  
 ```bash
  [defaults]
@@ -60,7 +62,8 @@ pipelining = True
 ```
  
 </details>
-<details><summary> symlink in root directory pointing to projects folder </summary>
+<details>
+<summary>symlink in root directory pointing to projects folder</summary>
 
 ```bash
 $ ls -la | grep "\->"
@@ -77,7 +80,8 @@ For this one, we'll be using a different inventory file and instead of changing 
 
 > **Note:** Sensitive information should **never** be stored in the files. They should be stored in a vault and pulled during runtime. Below is for lab purposes only and **should not be** practiced on production.
 
-<details><summary> edenmultinode.inv </summary>
+<details>
+<summary>edenmultinode.inv</summary>
  
 ```bash
 # edenmultinode.inv
@@ -94,7 +98,8 @@ localhost   ansible_connection=local
 
 Before we proceed, it's important to lay down the steps that we'll be automating. Here's an outlline of the tasks that we need.
 
-<details><summary> deploy-web-app.yml </summary>
+<details>
+<summary>deploy-web-app.yml</summary>
 
 ```yaml
 # deploy-web-app.yml
@@ -138,7 +143,8 @@ $ ansible -m ping db_web -i inventories/edenmultinode.inv
 
 Inside our **files** folder, let's create our **app.py**.
 
-<details><summary> app.py </summary>
+<details>
+<summary>app.py</summary>
  
 ```python
 import os
@@ -195,7 +201,8 @@ It is recommended to always test on contained environments such as virtual envir
 
 For the sake of keeping the lab simple, I ran pip as root since I can easily destroy and spin up new instances for this lab any time.
 
-<details><summary> deploy-web-app.yml </summary>
+<details>
+<summary>deploy-web-app.yml</summary>
  
 ```yaml
 
@@ -220,7 +227,8 @@ So, I actually run into some blockers here, specifically on the task where the d
 
 Been searching online and trying stuff but still none of it worked. The Ansible code has been quite messy and will need some cleaning up once I'm able to run this.
 
-<details><summary> messy deploy-web-app.yml </summary>
+<details>
+<summary>messy deploy-web-app.yml</summary>
  
 ```yaml
 # deploy-web-app.yml

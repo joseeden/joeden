@@ -26,7 +26,7 @@ Use the expandable answers to compare your solution after you finish each exerci
 | db1 | server4.company.com |
 
 <details>
-<summary>Answer</summary>
+  <summary>Answer</summary>
 
     web1 ansible_host=server1.company.com
     web2 ansible_host=server2.company.com
@@ -46,7 +46,7 @@ Use the expandable answers to compare your solution after you finish each exerci
 | db1 | server4.company.com | windows | administrator | P@ssw0rd |
 
 <details>
-<summary>Answer</summary>
+  <summary>Answer</summary>
 
     # Web Servers
     web1 ansible_host=server1.company.com ansible_connection=ssh ansible_user=root ansible_ssh_pass=P@ssw0rd
@@ -69,7 +69,7 @@ Use the expandable answers to compare your solution after you finish each exerci
 | db_servers | db1 | server4.company.com |
 
 <details>
-<summary>Answer</summary>
+  <summary>Answer</summary>
 
     web1 ansible_host=server1.company.com
     web2 ansible_host=server2.company.com
@@ -113,7 +113,7 @@ You must also group the hosts based on these:
 | disney_nodes | anaheim_nodes, burbank_nodes |
 
 <details>
-<summary>Answer</summary>
+  <summary>Answer</summary>
 
 ```yaml
 # DB Servers

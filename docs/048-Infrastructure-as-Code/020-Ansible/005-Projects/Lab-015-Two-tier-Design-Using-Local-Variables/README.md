@@ -19,7 +19,8 @@ Diagram:
 
 Here we're using **vars** in our playbook just like in any programming language where variables are defined at the beginning.
 
-<details><summary> setup-app-localvars.yml </summary>
+<details>
+<summary>setup-app-localvars.yml</summary>
  
 ```bash
 # setup-app-localvars.yml

@@ -84,7 +84,7 @@ Terraform uses **providers** to interact with various cloud platforms and servic
 - Google Cloud Platform (GCP)
 - Kubernetes
 
-For more information, please see [Providers](/docs/048-Infrastructure-as-Code/010-Terraform/011-Providers.md)
+For more information, please see [Providers](/docs/048-Infrastructure-as-Code/010-Terraform/013-Providers.md)
 
 ## Using Terraform with Git
 

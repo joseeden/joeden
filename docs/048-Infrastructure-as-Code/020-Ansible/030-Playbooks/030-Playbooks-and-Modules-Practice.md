@@ -14,7 +14,7 @@ last_update:
 
 ## ANSIBLE PLAYBOOKS ##
 
-<p align=center>
+<p align="center">
   <img src="/img/docs/ansible-playbook-3.png" />
 </p>
 

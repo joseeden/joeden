@@ -204,6 +204,6 @@ Type in *mysql* to start configuring. Type *exit* once you're done.
 
     You should see something like this:
 
-    <p align=center>
+    <p align="center">
         <img src="/img/docs/ecom-app.png">
     </p>

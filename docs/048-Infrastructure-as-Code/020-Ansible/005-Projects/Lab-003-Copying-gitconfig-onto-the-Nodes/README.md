@@ -54,7 +54,8 @@ user.email=josemanuelitoeden@gmail.com
 
 That one is particularly easy because it's as simple as copying the file from one directory to another. 
 
-<details><summary> Sending git to the hosts</summary>
+<details>
+<summary>Sending git to the hosts</summary>
 
 ```bash
 $ ansible -m copy -a "src=master.gitconfig dest=~/master-bak.gitconfig" webservers -u eden

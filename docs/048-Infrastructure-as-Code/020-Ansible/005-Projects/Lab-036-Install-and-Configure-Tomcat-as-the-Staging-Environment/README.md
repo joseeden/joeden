@@ -19,12 +19,14 @@ Diagram:
 
 The tree-structure of our Project **One** currently looks like this. Don't worry if you see that there's already a lot of files in the directory. These are the files from the previous labs in this series. The only ones we'll really really need are provided below.
 
-<details><summary> Project One </summary>
+<details>
+<summary>Project One</summary>
  
 ![](/img/docs/planslab22tree.png)
  
 </details>
-<details><summary> ansible.cfg </summary>
+<details>
+<summary>ansible.cfg</summary>
  
 ```bash
  [defaults]
@@ -58,7 +60,8 @@ pipelining = True
 ```
  
 </details>
-<details><summary> symlink in root directory pointing to projects folder </summary>
+<details>
+<summary>symlink in root directory pointing to projects folder</summary>
 
 ```bash
 $ ls -la | grep "\->"
@@ -66,7 +69,8 @@ lrwxrwxrwx  1 joseeden joseeden    70 Jan 14 23:03 proj-ansible-1 -> /mnt/c/User
 ```
 
 </details>
-<details><summary> edenjen.inv </summary>
+<details>
+<summary>edenjen.inv</summary>
 
 ```bash
 [webservers]
@@ -92,7 +96,8 @@ Following this two useful links online:
 
 From the steps in the links above, we build our playbook.
 
-<details><summary> install-tomcat.yml </summary>
+<details>
+<summary>install-tomcat.yml</summary>
  
 ```yaml
 # installs tomcat - needed for Jenkins lab

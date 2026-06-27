@@ -19,7 +19,8 @@ Diagram:
 
 We'll also still be using the same files in project **one** from the first 10 labs. To recap, here are some important files that we'll need:
 
-<details><summary> ansible.cfg </summary>
+<details>
+<summary>ansible.cfg</summary>
  
 ```bash
  [defaults]
@@ -54,7 +55,8 @@ pipelining = True
  
 </details>
 
-<details><summary> inventories/edendev.inv </summary>
+<details>
+<summary>inventories/edendev.inv</summary>
  
 ```bash
 [webservers]
@@ -72,7 +74,8 @@ localhost   ansible_connection=local
  
 </details>
 
-<details><summary> symlink in root directory pointing to projects folder </summary>
+<details>
+<summary>symlink in root directory pointing to projects folder</summary>
 
 ```bash
 $ ls -la | grep "\->"
@@ -81,7 +84,8 @@ lrwxrwxrwx  1 joseeden joseeden    70 Jan 14 23:03 proj-ansible-1 -> /mnt/c/User
 
 </details>
 
-<details><summary> tree-output of Project One </summary>
+<details>
+<summary>tree-output of Project One</summary>
 
 ![](/img/docs/plansvaulttree.png)
  
@@ -132,7 +136,8 @@ $ vim playbooks/group_vars/webservers
 
 We'll create a copy of the playbook from the previous lab and rename it to **create-users-vars4.yml**. We'll add a play that loads the encrypted file and after it, a play that uses the **debug** module.
 
-<details><summary> create-users-vars4.yml </summary>
+<details>
+<summary>create-users-vars4.yml</summary>
  
 ```yaml
 # create-users-vars4.yml
@@ -176,7 +181,8 @@ $ ansible-playbook playbooks/create-users-vars4.yml  --ask-vault-pass
 
 Now, we see a problem when the playbook is run. The debug clearly shows that the password is returned as an output. To prevent this, we add the **no_log** property and set it to **true**.
 
-<details><summary> create-users-vars4.yml </summary>
+<details>
+<summary>create-users-vars4.yml</summary>
  
 ```yaml
 # create-users-vars4.yml

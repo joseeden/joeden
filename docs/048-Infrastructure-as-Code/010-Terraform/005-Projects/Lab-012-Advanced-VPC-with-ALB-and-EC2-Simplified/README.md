@@ -23,7 +23,8 @@ As a references, here's the diagram that we'll use.
 
 We'll still use the same set of files.
 
-<details><summary> provider.tf </summary>
+<details>
+  <summary>provider.tf</summary>
  
 ```bash
 terraform {
@@ -47,7 +48,8 @@ provider "aws" {
  
 </details>
 
-<details><summary> variables.tf </summary>
+<details>
+  <summary>variables.tf</summary>
  
 ```bash
 # Variables for setting up terraform
@@ -91,7 +93,8 @@ variable "cidr_block" {
  
 </details>
 
-<details><summary> terraform.tfvars </summary>
+<details>
+  <summary>terraform.tfvars</summary>
 
 ```bash
 # Variables for setting up terraform
@@ -110,7 +113,8 @@ cidr_block    = "10.0.0.0/16"
 
 Here's the modified main file.
 
-<details><summary> main.tf </summary>
+<details>
+  <summary>main.tf</summary>
  
 ```bash
 ### main.tf 
