@@ -1,8 +1,4 @@
 {
   "label": "Lab Walkthroughs",
-  "position": 70,
-  "link": {
-    "type": "doc",
-    "id": "048-Infrastructure-as-Code/020-Ansible/005-Projects/Lab-Walkthroughs/README"
-  }
+  "position": 70
 }
