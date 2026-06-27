@@ -7,22 +7,22 @@
         <mxCell id="13mhb8gywU59RStLdDvJ-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#E6E6E6;" value="" vertex="1">
           <mxGeometry height="192" width="1290" x="-10" y="118" as="geometry" />
         </mxCell>
-        <mxCell id="id2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#82b366;fillColor=#d5e8d4;fontSize=13;spacing=10;" value="Outline + examples" vertex="1">
+        <mxCell id="id2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#82b366;fillColor=#d5e8d4;fontSize=18;spacing=10;" value="Outline + examples" vertex="1">
           <mxGeometry height="66" width="170" x="40" y="180" as="geometry" />
         </mxCell>
-        <mxCell id="id3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" value="Generate&lt;br&gt;blog post" vertex="1">
+        <mxCell id="id3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=18;spacing=10;" value="Generate&lt;br&gt;blog post" vertex="1">
           <mxGeometry height="66" width="170" x="245" y="180" as="geometry" />
         </mxCell>
-        <mxCell id="id4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" value="Evaluate and&lt;br&gt;improve draft" vertex="1">
+        <mxCell id="id4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=18;spacing=10;" value="Evaluate and&lt;br&gt;improve draft" vertex="1">
           <mxGeometry height="66" width="170" x="450" y="180" as="geometry" />
         </mxCell>
-        <mxCell id="id5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" value="Generate thumbnail" vertex="1">
+        <mxCell id="id5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=18;spacing=10;" value="Generate thumbnail" vertex="1">
           <mxGeometry height="66" width="170" x="655" y="180" as="geometry" />
         </mxCell>
-        <mxCell id="id6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" value="Create LinkedIn post" vertex="1">
+        <mxCell id="id6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=18;spacing=10;" value="Create LinkedIn post" vertex="1">
           <mxGeometry height="66" width="170" x="860" y="180" as="geometry" />
         </mxCell>
-        <mxCell id="id7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" value="Save publishing&lt;br&gt;assets" vertex="1">
+        <mxCell id="id7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=18;spacing=10;" value="Save publishing&lt;br&gt;assets" vertex="1">
           <mxGeometry height="66" width="170" x="1065" y="180" as="geometry" />
         </mxCell>
         <mxCell id="id8" edge="1" parent="1" source="id2" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="id3" value="">

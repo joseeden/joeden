@@ -1,26 +1,26 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2">
   <diagram id="google-it-automation-capstone-workflow" name="Google IT Automation Capstone Workflow">
-    <mxGraphModel dx="1096" dy="766" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1120" pageHeight="520" math="0" shadow="0">
+    <mxGraphModel dx="2429" dy="766" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1120" pageHeight="520" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="g5GDifAwSw-1UFbuEz6y-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#E6E6E6;" value="" vertex="1">
-          <mxGeometry height="200" width="1100" x="10" y="133" as="geometry" />
+          <mxGeometry height="200" width="1190" x="-80" y="133" as="geometry" />
         </mxCell>
-        <mxCell id="id2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#82b366;fillColor=#d5e8d4;fontSize=13;spacing=10;" value="Supplier images&lt;br&gt;and descriptions" vertex="1">
-          <mxGeometry height="66" width="170" x="60" y="200" as="geometry" />
+        <mxCell id="id2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#82b366;fillColor=#d5e8d4;fontSize=16;spacing=10;" value="Supplier images&lt;br&gt;and descriptions" vertex="1">
+          <mxGeometry height="66" width="180" x="-30" y="200" as="geometry" />
         </mxCell>
-        <mxCell id="id3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" value="Image upload&lt;br&gt;and format cleanup" vertex="1">
-          <mxGeometry height="66" width="170" x="265" y="200" as="geometry" />
+        <mxCell id="id3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=16;spacing=10;" value="Image upload&lt;br&gt;and format cleanup" vertex="1">
+          <mxGeometry height="66" width="195" x="200" y="200" as="geometry" />
         </mxCell>
-        <mxCell id="id4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" value="Catalog data&lt;br&gt;converted to JSON" vertex="1">
-          <mxGeometry height="66" width="170" x="470" y="200" as="geometry" />
+        <mxCell id="id4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=16;spacing=10;" value="Catalog data&lt;br&gt;converted to JSON" vertex="1">
+          <mxGeometry height="66" width="190" x="430" y="200" as="geometry" />
         </mxCell>
-        <mxCell id="id5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" value="Reports&lt;br&gt;generated as PDF" vertex="1">
-          <mxGeometry height="66" width="170" x="675" y="200" as="geometry" />
+        <mxCell id="id5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=16;spacing=10;" value="Reports&lt;br&gt;generated as PDF" vertex="1">
+          <mxGeometry height="66" width="185" x="660" y="200" as="geometry" />
         </mxCell>
-        <mxCell id="id6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=13;spacing=10;" value="Email alert&lt;br&gt;sent to team" vertex="1">
-          <mxGeometry height="66" width="170" x="880" y="200" as="geometry" />
+        <mxCell id="id6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeColor=#4b5563;fillColor=#f8fafc;fontColor=#111827;fontSize=16;spacing=10;" value="Email alert&lt;br&gt;sent to team" vertex="1">
+          <mxGeometry height="66" width="170" x="890" y="200" as="geometry" />
         </mxCell>
         <mxCell id="id7" edge="1" parent="1" source="id2" style="endArrow=block;html=1;rounded=0;strokeWidth=2;strokeColor=#64748b;fontColor=#475569;fontSize=11;" target="id3" value="">
           <mxGeometry relative="1" as="geometry" />
