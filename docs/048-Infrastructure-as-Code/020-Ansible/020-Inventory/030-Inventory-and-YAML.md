@@ -315,7 +315,7 @@ server1
 server2
 ```
 
-We will first create a directory called **ansible-lab** which will contain all our files. Then we will create another **inventory.txt** where we will group the **server** machines.
+We will first create a directory called **ansible-lab** which will contain all our files. Then we will create another `inventory.txt` where we will group the **server** machines.
 
 ```bash
 eden@master ~$ mkdir ansible-lab
@@ -383,7 +383,7 @@ eden@master ansible-lab$ ansible -m ping linuxservers
 
 Notice that when we try to ping the group **linuxservers**, it failed. The group is not defined in the default /etc/ansible/hosts file which Ansible is checking. We only defined it in the inventory.txt.
 
-Now if we tell Ansible to use the custom **inventory.txt** using the -i flag, the ping will now succeed.
+Now if we tell Ansible to use the custom `inventory.txt` using the -i flag, the ping will now succeed.
 
 ```bash
 eden@master ansible-lab$ ansible -m ping linuxservers -i inventory.txt

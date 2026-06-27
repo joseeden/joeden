@@ -244,9 +244,9 @@ server2 | UNREACHABLE! => {
 ```
 
 **ansible-playbook**
-The real use of Ansible is through playbooks. As mentioned earlier, we can run playbooks by simply issuing the command *ansible-playbook YAML-file*. Note here that we don't have to specify the hosts since the hosts are already defined in the inventory file.
+The real use of Ansible is through playbooks. As mentioned earlier, we can run playbooks by simply issuing the command `ansible-playbook YAML-file`. Note here that we don't have to specify the hosts since the hosts are already defined in the inventory file.
 
-Recall that we have already created the [inventory.txt](inventory.txt) which will contain the two **server** machine. Modify it to look like this:
+Recall that we have already created the `inventory.txt` which will contain the two **server** machine. Modify it to look like this:
 
 ```yaml
 [dbservers]
@@ -260,7 +260,7 @@ server1
 server2
 ```
 
-We'll also create a [ping-text.yaml.](ping-test.yaml)
+We'll also create a `ping-test.yaml`.
 
 ```yaml
 -
@@ -321,7 +321,7 @@ eden@master ansible-lab$ cat /tmp/test-file.txt
 This is a sample file for the Practice 2 in the Ansible lab.
 ```
 
-Writing the [copy-file.yaml](copy-file.yaml):
+Writing the `copy-file.yaml`:
 
 ```yaml
 -

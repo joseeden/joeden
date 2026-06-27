@@ -82,9 +82,9 @@ Ansible have categorized modules based on their functionalities. You can check o
     - and more...
 
 
-## COMMAND MODULE ##
+## COMMAND MODULE 
 
-Executes a command on a remote node. Below is a sample playbook, [command.yaml](command.yaml). Ignore the **register** and **debug** for now as they will be further discussed in other notes.
+Executes a command on a remote node. Below is a sample playbook, `command.yaml`. Ignore the **register** and **debug** for now as they will be further discussed in other notes.
 
 ```yaml
 -
@@ -119,7 +119,7 @@ Executes a command on a remote node. Below is a sample playbook, [command.yaml](
         msg: "{{change}}"
 
 ```
-Now try running the [command.yaml](command.yaml). You should get a verbose output.
+Now try running the `command.yaml`. You should get a verbose output.
 
 ```bash
 eden@master ansible-lab$ ansible-playbook command.yaml 
@@ -209,7 +209,7 @@ PLAY RECAP *********************************************************************
 server1                    : ok=7    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
-Here we have [create-folder.yaml](create-folder.yaml) which uses a parameter called **parameter** which checks first if the folder or file already exists before creating them.
+Here we have `create-folder.yaml` which uses a parameter called **parameter** which checks first if the folder or file already exists before creating them.
 
 ```yaml
 -
@@ -221,7 +221,7 @@ Here we have [create-folder.yaml](create-folder.yaml) which uses a parameter cal
             command: mkdir ./ansible-test creates=./ansible-test 
 ```
 
-Running [create-folder.yaml](create-fodler.yaml):
+Running `create-folder.yaml`
 
 ```bash
 eden@master ansible-lab$ ansible-playbook create-folder.yaml  -i inventory.txt
@@ -252,7 +252,7 @@ total 0
 drwxrwxr-x. 2 eden eden 6 Jan 24 05:19 ansible-test
 ```
 
-## SCRIPT ##
+## SCRIPT 
 
 Runs a local script (located on the master or controller machine) on a remote node after transferring it. The way ansible does this, it copies the script onto the remote nodes and runs them there.
 
@@ -268,7 +268,7 @@ A sample playbook which uses the script module:
             script: /some/local/script.sh -arg1 -arg2
 ```
 
-## SERVICES MODULE ##
+## SERVICES MODULE 
 
 Used to manage and maintain services on a system. This includes **start, stop,** or **restarting** services. For this, there's two ways to write the statements:
 
@@ -307,7 +307,7 @@ Recall that we are telling Ansible the **desired state**. Thus we use **started*
 
 As mentioned before, this is the concept of **IDEMPOTENCY** - an operation is idempotent is the result of performing it once is exactly the same as the result of performing it repeatedly without any intervening actions
 
-## LINEINFILE MODULE ##
+## LINEINFILE MODULE 
 
 Search for a line in a file and replace it or add it if it does nto exist. For example, we're given a task to add servers to the /ansible-test/sample-file.txt file in server1. (Note that you shuold have a ~/ansible-test/sample-file.txt in server1)
 
@@ -315,7 +315,7 @@ Search for a line in a file and replace it or add it if it does nto exist. For e
 - server 10.0.0.126
 
 The way to do this is to use the lineinfile module.
-Here we have [add.yaml](add.yaml)
+Here we have `add.yaml`
 
 ```yaml
 -
@@ -334,7 +334,7 @@ Here we have [add.yaml](add.yaml)
                 line: 'server 10.0.0.126'
 ```
 
-Running [add.yaml](add.yaml):
+Running `add.yaml`
 
 ```bash
 eden@master ansible-lab$ ansible-playbook add.yaml -i inventory.txt 

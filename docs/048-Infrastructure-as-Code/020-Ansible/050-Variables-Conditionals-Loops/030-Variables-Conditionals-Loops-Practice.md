@@ -219,7 +219,7 @@ Otherwise, the value will not be `-1` and it will proceed with the task of sendi
 
 ## LOOPS ##
 
-In the [create-user.yaml](create-user.yaml) below, we'll be using the **user module** to create users on the target machines. As you can see, this is not efficient since we have multiple tasks that just does the same thing.
+In the `create-user.yaml` below, we'll be using the **user module** to create users on the target machines. As you can see, this is not efficient since we have multiple tasks that just does the same thing.
 
 ```yaml
 -
@@ -239,7 +239,7 @@ In the [create-user.yaml](create-user.yaml) below, we'll be using the **user mod
         -
             user: name=mack state=present
 ```
-So we modified the [create-user.yaml](create-user.yaml) to include just one task and **loop over the list** of users.
+So we modified the `create-user.yaml` to include just one task and **loop over the list** of users.
 
 ```yaml
 -
@@ -256,7 +256,7 @@ So we modified the [create-user.yaml](create-user.yaml) to include just one task
                 - ron
                 - mack
 ```
-Now let's say we want to create a user and a corresponding user ID. This would mean we have to loop over a set of *key-pair* values. For this one, we can use **dictionaries**. We have created a second playbook below, [create-user-id.yaml](create-user-id.yaml) which does exactly that.
+Now let's say we want to create a user and a corresponding user ID. This would mean we have to loop over a set of *key-pair* values. For this one, we can use **dictionaries**. We have created a second playbook below, `create-user-id.yaml` which does exactly that.
 
 ```yaml
 -
@@ -288,7 +288,7 @@ Now let's say we want to create a user and a corresponding user ID. This would m
                     name: mack
                     uid: 1005
 ```
-IN another example, [create-user-id-with.yaml](create-user-id-with.yaml), we see another way to write loops using **with_items**.
+IN another example, `create-user-id-with.yaml`, we see another way to write loops using **with_items**.
 
 ```yaml
 -
