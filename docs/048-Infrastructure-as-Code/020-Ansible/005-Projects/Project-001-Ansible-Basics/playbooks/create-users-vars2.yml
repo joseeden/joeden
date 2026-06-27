@@ -1,0 +1,17 @@
+# create-users-vars2.yml
+---
+
+- name: Create users on the webservers
+  hosts: webservers
+  become: true
+  vars:
+    username:
+      testeden-3:
+        uname: testeden-3
+        description: ansible-created-user-3
+  tasks:
+  - name: Create the users
+    user:
+      name: "{{ username['testeden-3']['uname']}}"
+      state: present
+      comment: "{{ username['testeden-3']['description'] }}"

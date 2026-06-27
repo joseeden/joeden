@@ -1,0 +1,14 @@
+*.retry
+.cache/
+.pytest_cache/
+__pycache__/
+vault-password*
+*.vault-password
+*.pem
+*.key
+id_rsa
+id_rsa.pub
+target/
+*.class
+*.jar
+*.war

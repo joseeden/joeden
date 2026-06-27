@@ -1,0 +1,7 @@
+# Variables for the dbservers group
+#---------------------------------------
+    
+db_users:
+    - tstdbmember
+    - tstdbadmin
+    - tstdbdeveloper

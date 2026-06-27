@@ -1,0 +1,11 @@
+# package-update.yml using yum
+---
+
+- name: Update packages on the servers using yum
+  hosts: webservers:loadbalancers
+  become: true
+  tasks:
+    - name: Update packages using yum
+      yum:  
+        name: '*'
+        state: latest

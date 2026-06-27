@@ -1,0 +1,8 @@
+# Variables for the webservers group
+#---------------------------------------
+    
+    username:
+        testeden-5:
+            uname: testeden-5
+            description: ansible-created-user-5
+            password: "{{ secret_password }}"

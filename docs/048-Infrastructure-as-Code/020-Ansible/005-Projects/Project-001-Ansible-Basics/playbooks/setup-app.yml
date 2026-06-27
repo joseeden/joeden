@@ -1,0 +1,12 @@
+# setup-app.yml
+---
+
+- name: Copy app file onto webservers 
+  become: true
+  hosts: webservers
+  tasks:
+    - name: Upload application file
+      copy:
+        src: ~/proj-ansible-1/one/files/index.php
+        dest: /var/www/html
+        mode: 0755

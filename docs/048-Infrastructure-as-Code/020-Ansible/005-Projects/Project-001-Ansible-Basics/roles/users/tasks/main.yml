@@ -1,0 +1,18 @@
+---
+# tasks file for users
+
+    # Iterate on the web_users list defined above
+    - name: Create the webserver users
+      user:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ web_users }}"
+      when: "'webservers' in group_names"
+    
+    # Iterate on the db_users list defined in the group_vars/dbservers file
+    - name: Create the database users
+      user:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ db_users }}"
+      when: "'dbservers' in group_names"

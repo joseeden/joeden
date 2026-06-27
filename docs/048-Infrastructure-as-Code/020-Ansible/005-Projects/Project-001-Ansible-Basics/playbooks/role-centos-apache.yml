@@ -1,0 +1,10 @@
+# role-centos-apache.yml
+---
+
+- name: Install apache on our webservers
+  hosts: app1
+  # user: YOUR USER
+  become: True
+
+  roles:
+    - { role: ../roles/mariuszczyz.centos_apache, tags: ['centos_apache'] }

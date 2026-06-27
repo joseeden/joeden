@@ -1,0 +1,23 @@
+# create-users-vars4.yml
+---
+
+- name: Create users on the webservers
+  hosts: webservers
+  become: true
+  tasks:
+
+  - name: Loads the encrypted file
+    include_vars: 
+      file: ~/proj-ansible-1/one/files/secrets
+
+  - name: Display the encrypted variable
+    debug:
+      msg: " {{ secret_password }}"
+    no_log: true
+
+  - name: Create the users
+    user:
+      name: "{{ username['testeden-5']['uname']}}"
+      comment: "{{ username['testeden-5']['description'] }}"
+      password: "{{ username['testeden-5']['password'] }}"
+      state: present

@@ -1,0 +1,12 @@
+# create-users.yml
+---
+
+- name: Create users on the webservers
+  hosts: webservers
+  become: true
+  tasks:
+  - name: Create the users
+    user:
+      name: testeden-1
+      state: present
+      comment: ansible-created-user-1

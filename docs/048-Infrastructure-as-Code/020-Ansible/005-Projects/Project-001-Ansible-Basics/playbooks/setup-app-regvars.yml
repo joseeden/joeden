@@ -1,0 +1,29 @@
+# setup-app-regvars.yml
+---
+
+- name: Copy app file onto webservers 
+  become: true
+  vars:
+    path_to_app: "/var/www/html"
+  hosts: webservers
+  tasks:
+
+    - name: Upload application file
+      copy:
+        src: ~/proj-ansible-1/one/files/index.php
+        dest: "{{ path_to_app }}"
+        mode: 0755
+ 
+    - name: Create simple info page
+      copy:
+        dest: "{{ path_to_app }}/info.php"
+        content: "<h1> Info about our webserver: {{ ansible_hostname }} </h1>"
+   
+    - name: See directory contents
+      command: ls -la {{ path_to_app }}
+      register: dir_contents
+
+    - name: Use debug module to print out contents
+      debug:
+        msg: "{{ dir_contents }}"
+              

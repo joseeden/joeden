@@ -1,0 +1,35 @@
+---
+title: "Lab 002: Playbook on Uname"
+description: "Lab 002: Playbook on Uname"
+tags: 
+- DevOps
+- Infrastructure as Code
+- Ansible
+sidebar_position: 20
+last_update:
+  date: 12/3/2020
+---
+
+## Overview
+
+**Diagram:**
+![](/img/docs/ansible-lab-diagram-1.png)
+
+```bash
+# sample-uname.yml
+# ansible -m shell -a "uname" webservers
+---
+
+- name: Checks uname
+  hosts: webservers:loadbalancers
+  tasks:
+  - name: Get OS Type
+    shell: uname
+```
+
+To test,
+```bash
+ansible-playbook playbooks/sample-uname.yml
+```
+
+![](/img/docs/accflab2.png)

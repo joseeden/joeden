@@ -1,0 +1,14 @@
+# deploy-jinja2-motd.yml
+#-----------------------------------------
+--- 
+- name: Deploy motd.j2 to the servers
+  hosts: all:!localhost
+  become: true
+  tasks:
+  - name: Deploy motd.j2 to the servers
+    template:
+      src: ../files/motd.j2
+      dest: /etc/motd
+      owner: root
+      group: root
+      mode: "0644"

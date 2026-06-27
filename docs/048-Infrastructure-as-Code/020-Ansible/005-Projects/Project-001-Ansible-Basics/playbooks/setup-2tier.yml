@@ -1,0 +1,10 @@
+# setup-2tier.yml
+---
+
+- import_playbook: package-update.yml
+- import_playbook: install-services.yml
+- import_playbook: setup-app.yml
+- import_playbook: setup-lb.yml
+- import_playbook: setup-check-status.yml
+
+

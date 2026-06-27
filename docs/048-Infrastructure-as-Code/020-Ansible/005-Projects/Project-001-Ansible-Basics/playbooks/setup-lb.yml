@@ -1,0 +1,20 @@
+# setup-lb.yml
+---
+
+- name: Copy app file onto webservers 
+  become: true
+  hosts: loadbalancers
+  tasks:
+
+    - name: Creating the template
+      template:
+        src: ~/proj-ansible-1/one/files/lbconfig.j2
+        dest: /etc/httpd/conf.d/lb.conf
+        owner: bin
+        group: wheel
+        mode: 644
+
+    - name: Restart Apache
+      service: 
+        name: httpd
+        state: restarted

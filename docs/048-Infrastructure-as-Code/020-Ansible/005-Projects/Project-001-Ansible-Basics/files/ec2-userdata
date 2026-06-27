@@ -1,0 +1,13 @@
+#cloud-config
+system_info:
+  default_user:
+    name: eden
+
+
+runcmd:
+ - 'sudo hostnamectl set-hostname jenkinsslave1'
+ - 'sudo sed -i "s/localhost/localhost jenkinsslave1/" /etc/hosts'
+ - 'echo "PS1=\"[\u@\H: \W] $ \"" >> .bashrc'
+ - 'sudo yum install -y vim wget bash-completion python3'
+ - 'sudo pip install --upgrade pip'
+ - 'sudo yum update -y'

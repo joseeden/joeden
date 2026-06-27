@@ -1,0 +1,14 @@
+# deploy-jinja2-hosts.yml
+#-----------------------------------------
+--- 
+- name: Deploy hosts.j2 to the servers
+  hosts: all
+  become: true
+  tasks:
+  - name: Deploy hosts.j2 to the servers
+    template:
+      src: ../files/hosts.j2
+      dest: /etc/hosts
+      owner: root
+      group: root
+      mode: "0644"

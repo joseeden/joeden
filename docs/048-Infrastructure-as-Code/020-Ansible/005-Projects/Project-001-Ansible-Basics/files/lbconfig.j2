@@ -1,0 +1,51 @@
+{#
+## Configures the webservers
+##---------------------------------------------------------------------
+## Format:
+##
+## ProxyRequests off
+## <Proxy balancer://webcluster >
+##	BalancerMember http://<webserver1-ip>
+##	BalancerMember http://<webserver2-ip>
+##	BalancerMember http://<webserver3-ip>
+##	BalancerMember http://<webserver4-ip>
+## <Proxy>
+##
+## However, the problem with this is that we need to update this each
+## time we add, remove servers, or even just change IP addresses. 
+## This is a static approach, and we want it to be more dynamic.
+##
+## To do this, we create a for loop that is wrapped in {% for condition %}
+## And end the loop with a {% endfor %}
+## Inside this loop, we define the expression for the webservers.
+## 
+## Instead of defining each one by one, 
+## we specify a single 'BalancerMember' which will loop through the 
+## "hostvars" which was created during the gathering facts stage.
+## During this stage, Ansible gathers the information on our inventory file.
+## The information is then placed in the "hostvars" in a dictionary format.
+##
+## From the dictionary, the "hosts" and their corresponding IPs are pulled.
+## The IPs are defined by the "ansible_host" which we previously specified
+## in the inventory file.
+##
+## This way, the balance members are dynamically generated.
+##
+##---------------------------------------------------------------------
+#}
+
+ProxyRequests off
+<Proxy balancer://webcluster >
+  {% for hosts in groups['webservers'] %}
+    BalancerMember http://{{hostvars[hosts]['ansible_host']}}
+  {% endfor %}
+    ProxySet lbmethod=byrequests
+</Proxy>
+
+# Optional
+<Location /balancer-manager>
+  SetHandler balancer-manager
+</Location>
+
+ProxyPass /balancer-manager !
+ProxyPass / balancer://webcluster/

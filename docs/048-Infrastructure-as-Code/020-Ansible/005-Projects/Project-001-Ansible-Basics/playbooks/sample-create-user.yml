@@ -1,0 +1,25 @@
+---
+- name: Test
+  hosts: localhost
+  vars:
+    data:
+      testeden41:
+        name: testeden31
+        salary: 70000
+        age: 30
+  tasks:
+    - name: create employee
+      uri:
+        method: POST
+        url: "http://dummy.restapiexample.com/api/v1/create"
+        return_content: yes
+        headers:
+          Accept: application/json
+        body_format: json
+        body: "{{ item.value | to_json }}" 
+      with_dict: "{{ data }}"
+      register: post_content
+
+    - debug:
+        msg: "{{ item.content }}"
+      with_items: "{{ post_content.results }}"

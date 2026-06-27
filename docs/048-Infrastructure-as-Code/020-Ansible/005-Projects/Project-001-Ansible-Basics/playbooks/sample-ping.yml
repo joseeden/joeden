@@ -1,0 +1,10 @@
+---
+
+# sample-ping.yml
+# ansible -m ping hosts
+
+- name: Ping all hosts
+  hosts: all
+  tasks:
+  - name: Ping all servers
+    action: ping

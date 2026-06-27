@@ -1,0 +1,10 @@
+---
+
+# sample-uname.yml
+# ansible -m shell -a "uname" webservers
+
+- name: Checks uname
+  hosts: webservers:loadbalancers
+  tasks:
+  - name: Get OS Type
+    shell: uname

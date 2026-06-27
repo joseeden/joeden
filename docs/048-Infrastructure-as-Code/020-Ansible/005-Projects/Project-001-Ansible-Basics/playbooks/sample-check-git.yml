@@ -1,0 +1,10 @@
+# Here we're converting the adhoc command to a neat playbook.
+# ansible -m copy -a "src=master.gitconfig dest=~/new.gitconfig" localhost
+---
+
+- name: Ensure master.gitconfig is copied to ~/new1.gitconfig
+  hosts: localhost
+  tasks:
+  - copy: 
+      src="~/proj-ansible-1/one/files/master.gitconfig" 
+      dest="~/new1.gitconfig"

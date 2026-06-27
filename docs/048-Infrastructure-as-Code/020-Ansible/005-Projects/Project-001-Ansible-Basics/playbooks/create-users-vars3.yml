@@ -1,0 +1,12 @@
+# create-users-vars3.yml
+---
+
+- name: Create users on the webservers
+  hosts: webservers
+  become: true
+  tasks:
+  - name: Create the users
+    user:
+      name: "{{ username['testeden-4']['uname']}}"
+      state: present
+      comment: "{{ username['testeden-4']['description'] }}"

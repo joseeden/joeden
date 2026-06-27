@@ -1,0 +1,9 @@
+# create-users-conditionals-roles.yml
+---
+
+- name: Create users on the webservers
+  hosts: all:!localhost
+  become: true
+  roles:
+  - roles/users
+  

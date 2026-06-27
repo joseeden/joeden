@@ -1,0 +1,8 @@
+{
+  "label": "Lab 001",
+  "position": 10,
+  "link": {
+    "type": "doc",
+    "id": "048-Infrastructure-as-Code/020-Ansible/005-Projects/Lab-001-Playbook-on-Ping/README"
+  }
+}

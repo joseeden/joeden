@@ -1,0 +1,21 @@
+# setup-app-localvars.yml
+# Similar with setup-app-var.yml, but here we're using local variables
+---
+
+- name: Copy app file onto webservers 
+  become: true
+  vars:
+    path_to_app: "/var/www/html"
+  hosts: webservers
+  tasks:
+
+    - name: Upload application file
+      copy:
+        src: ~/proj-ansible-1/one/files/index.php
+        dest: "{{ path_to_app }}"
+        mode: 0755
+
+    - name: Create simple info page
+      copy:
+        dest: "{{ path_to_app }}/info.php"
+        content: "<h1> Info about our webserver: {{ ansible_hostname }} </h1>"

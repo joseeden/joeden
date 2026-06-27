@@ -1,0 +1,16 @@
+---
+- name: Test
+  hosts: localhost
+  tasks:
+  - name: Check that you can connect (GET) to a page and it returns a status 200
+    uri:
+      method: GET
+      url: "http://dummy.restapiexample.com/api/v1/employees"
+      return_content: yes
+      headers:
+        Accept: application/json
+    register: response
+
+  - debug:
+      msg: "{{ response.content }}"
+      

@@ -1,0 +1,19 @@
+# setup-app-var.yml
+# Similar with setup-app.yml, but here we're getting the hostname from the variable ansible_facts
+---
+
+- name: Copy app file onto webservers 
+  become: true
+  hosts: webservers
+  tasks:
+
+    - name: Upload application file
+      copy:
+        src: ~/proj-ansible-1/one/files/index.php
+        dest: /var/www/html
+        mode: 0755
+
+    - name: Create simple info page
+      copy:
+        dest: /var/www/html/info.php
+        content: "<h1> Info about our webserver: {{ ansible_hostname }} </h1>"

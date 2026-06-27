@@ -1,0 +1,7 @@
+# forward-facts-locally.yml
+#---------------------------------------
+--- 
+
+- name: Download the ansible-facts output into a file locally 
+  hosts: webservers[0]
+  tasks: 

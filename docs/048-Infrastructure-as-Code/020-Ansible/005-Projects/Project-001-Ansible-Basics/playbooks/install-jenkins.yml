@@ -1,0 +1,63 @@
+# installs jenkins
+---
+
+- name: Install jenkins
+  hosts: jenkins
+  become: true
+  tasks:
+
+    - name: Download files
+      get_url:
+        url: https://pkg.jenkins.io/redhat-stable/jenkins.repo
+        dest: /etc/yum.repos.d/jenkins.repo
+    
+    - name: Download apt_key
+      ansible.builtin.rpm_key:
+        key: https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+        state: present
+
+    - name: Upgrade all packages
+      dnf:
+        name: '*'
+        state: latest
+
+    - name: Ensure epel repo is present
+      yum:
+        name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+        state: present
+
+    - name: Install Jenkins and Java using yum
+      yum:
+        name:
+          - jenkins
+          - java-11-openjdk-devel
+        state: present 
+
+    - name: Change shell for user 'jenkins'
+      ansible.builtin.user:
+        name: jenkins
+        shell: /bin/bash
+        state: present   
+
+    - name: Force systemd to reread configs
+      systemd:
+        daemon_reload: yes
+
+    - name: Ensures Jenkins is started
+      systemd:
+        name: jenkins
+        enabled: yes
+        state: started
+    
+    # Uncomment play below if you have firewalld
+    # - name: FirewallD rules
+    #   firewalld:
+    #     permanent: yes
+    #     immediate: yes
+    #     service: 
+    #       - jenkins
+    #       - http
+    #     port: 8080/tcp
+    #     zone: public
+    #     state: enabled
+

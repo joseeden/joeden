@@ -1,0 +1,12 @@
+{# hosts.j2 #}
+{# -------------------------------------------------------------------- #}
+{# Lines enclosed with braces and pound-sign are considered comments #}
+{# This means they are skipped when Jinja2 template is read #}
+{# On the other hand, for loops are enclosed with braces and percent sign #}
+{# for loops are then closed with endfor statement.
+{# -------------------------------------------------------------------- #}
+
+127.0.0.1 localhost
+{% for host in groups['all'] %}
+{{ hostvars[host]['ansible_default_ipv4']['address'] }} {{ hostvars[host]['ansible_fqdn'] }} {{ hostvars[host]['ansible_hostname'] }}
+{% endfor %}

@@ -1,0 +1,24 @@
+---
+
+- name: Connecting to Confluent Cloud
+  become: false
+  gather_facts: false
+  hosts: localhost
+  tasks:
+    - debug:
+        msg: “Let’s call an API”
+
+    - name: List IAM users
+      uri:
+        method: GET
+        url: "https://api.confluent.cloud/iam/v2/users?page_size=5"
+        return_content: yes
+        user: "TWTE2GDC2FWGROAF"
+        password: "693FKJaKwvEuiariWgJ9ccIsyiFtmkyir7yQvBjhTpJLayXWsYR5Qw7HvSA93x5I"
+        force_basic_auth: yes
+        status_code: 200,404
+        timeout: 10        
+        headers:
+          Accept: application/json
+        body_format: json
+   

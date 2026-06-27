@@ -1,0 +1,8 @@
+# setup-2tier-include.yml
+---
+
+- include: package-update.yml
+- include: install-services.yml
+- include: setup-app.yml
+- include: setup-lb.yml
+- include: setup-check-status.yml

@@ -1,0 +1,25 @@
+---
+
+- name: Connecting to Confluent Cloud
+  become: false
+  gather_facts: false
+  hosts: localhost
+  tasks:
+    - debug:
+        msg: “Let’s call an API”
+
+    - name: Create service account
+      uri:
+        method: POST
+        url: "https://api.confluent.cloud/iam/v2/service-accounts"
+        # return_content: yes
+        force_basic_auth: yes
+        status_code: 201
+        # timeout: 10        
+        headers:
+          Accept: application/json
+          Authorization: "Basic VFdURTJHREMyRldHUk9BRjo2OTNGS0phS3d2RXVpYXJpV2dKOWNjSXN5aUZ0bWt5aXI3eVF2QmpoVHBKTGF5WFdzWVI1UXc3SHZTQTkzeDVJ"
+        body_format: json
+        body:
+          display_name: tsteden-api-svc-5
+          description: Sent via ansible

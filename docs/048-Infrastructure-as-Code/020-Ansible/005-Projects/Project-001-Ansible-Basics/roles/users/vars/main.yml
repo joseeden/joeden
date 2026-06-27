@@ -1,0 +1,6 @@
+---
+# vars file for users
+    web_users:
+      - tstmember
+      - tstadmin
+      - tstdeveloper

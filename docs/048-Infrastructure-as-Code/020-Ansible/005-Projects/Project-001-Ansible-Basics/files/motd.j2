@@ -1,0 +1,7 @@
+{# motd.j2 #}
+{# -------------------------------------------------------------------- #}
+{# Lines enclosed with braces and pound-sign are considered comments #}
+{# This means they are skipped when Jinja2 template is read #}
+{# -------------------------------------------------------------------- #}
+
+The hostname for this system is: {{ inventory_hostname }}:{{ ansible_facts["default_ipv4"]['address'] }}

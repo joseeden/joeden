@@ -1,0 +1,307 @@
+# Maintainer: 
+# Jose Eden - eden.noel@yahoo.com
+#----------------------------------------------------------------
+# Templcf-ate: cf-ansible-lab-1
+# Description: This template sets up 4 instances with elastic IPs.
+#----------------------------------------------------------------
+Parameters:
+
+  NameOfService:
+    Description: The tag name associated with this EC2 instances.
+    Type: String
+  KeyName:
+    Description: Name of an existing EC2 KeyPair to enable SSH access into the server
+    Type: AWS::EC2::KeyPair::KeyName
+
+Mappings:
+
+  RegionMap:
+    ap-southeast-1:
+      Description: Red Hat Enterprise Linux version 8 (HVM)
+      AMI: ami-0d6ba217f554f6137 
+
+Resources:
+
+  LnEc2Instancetestserver1:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId:
+        Fn::FindInMap:
+        - RegionMap
+        - !Ref AWS::Region
+        - AMI
+      SecurityGroups:
+        - !Ref LnSecurityGroup
+      KeyName: !Ref KeyName
+      Tags:
+        - Key: Name
+          Value: !Join [ '-', [ !Ref NameOfService, 'tstsvr' ,'1'] ]
+        - Key: Lab
+          Value: cf-ansible-lab-1
+      UserData:
+        Fn::Base64:
+          !Sub |
+          #cloud-config
+          system_info:
+              default_user:
+                  name: eden
+          runcmd:
+          - sudo hostnamectl set-hostname cfans-tstsvr1
+          - sudo sed -i "s/localhost/localhost cfans-tstsvr1/" /etc/hosts
+          - echo "PS1=\"\u@\H:\W $ \"" >> .bashrc  
+          - sudo yum install -y vim bash-completion python3 
+          - sudo pip install --upgrade pip
+          - sudo yum update -y
+
+  LnEc2Instancetestserver2:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId:
+        Fn::FindInMap:
+        - RegionMap
+        - !Ref AWS::Region
+        - AMI
+      SecurityGroups:
+        - !Ref LnSecurityGroup
+      KeyName: !Ref KeyName
+      UserData:
+        Fn::Base64:
+          !Sub |
+            #cloud-config
+            system_info:
+                default_user:
+                    name: eden
+            runcmd:
+            echo "PS1=\"\u@\H:\W $ \"" >> .bashrc   
+      Tags:
+        - Key: Name
+          Value: !Join [ '-', [ !Ref NameOfService, 'tstsvr' ,'2'] ]
+        - Key: Lab
+          Value: cf-ansible-lab-1
+      UserData:
+        Fn::Base64:
+          !Sub |
+          #cloud-config
+          system_info:
+              default_user:
+                  name: eden
+          runcmd:
+          - sudo hostnamectl set-hostname cfans-tstsvr2
+          - sudo sed -i "s/localhost/localhost cfans-tstsvr2/" /etc/hosts        
+          - echo "PS1=\"\u@\H:\W $ \"" >> .bashrc        
+          - sudo pip install --upgrade pip
+          - sudo yum install -y vim bash-completion python3
+          - sudo yum update -y
+
+  LnEc2Instancetestserver3:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId:
+        Fn::FindInMap:
+        - RegionMap
+        - !Ref AWS::Region
+        - AMI
+      SecurityGroups:
+        - !Ref LnSecurityGroup
+      KeyName: !Ref KeyName
+      Tags:
+        - Key: Name
+          Value: !Join [ '-', [ !Ref NameOfService, 'tstsvr' ,'3'] ]
+        - Key: Lab
+          Value: cf-ansible-lab-1 
+      UserData:
+        Fn::Base64:
+          !Sub |
+            #cloud-config
+            system_info:
+                default_user:
+                    name: eden
+            runcmd:
+            - sudo hostnamectl set-hostname cfans-tstsvr3
+            - sudo sed -i "s/localhost/localhost cfans-tstsvr3/" /etc/hosts             
+            - echo "PS1=\"\u@\H:\W $ \"" >> .bashrc                      
+            - sudo pip install --upgrade pip
+            - sudo yum install -y vim bash-completion python3
+            - sudo yum update -y
+
+  LnEc2Instancetestserver4:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId:
+        Fn::FindInMap:
+        - RegionMap
+        - !Ref AWS::Region
+        - AMI
+      SecurityGroups:
+        - !Ref LnSecurityGroup
+      KeyName: !Ref KeyName
+      Tags:
+        - Key: Name
+          Value: !Join [ '-', [ !Ref NameOfService, 'tstsvr' ,'4'] ]
+        - Key: Lab
+          Value: cf-ansible-lab-1    
+      UserData:
+        Fn::Base64:
+          !Sub |
+            #cloud-config
+            system_info:
+                default_user:
+                    name: eden
+            runcmd:
+            - sudo hostnamectl set-hostname cfans-tstsvr4
+            - sudo sed -i "s/localhost/localhost cfans-tstsvr4/" /etc/hosts             
+            - echo "PS1=\"\u@\H:\W $ \"" >> .bashrc                          
+            - sudo pip install --upgrade pip
+            - sudo yum install -y vim bash-completion python3
+            - sudo yum update -y
+
+  LnEc2InstanceLoadBalancer:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId:
+        Fn::FindInMap:
+        - RegionMap
+        - !Ref AWS::Region
+        - AMI
+      SecurityGroups:
+        - !Ref LnSecurityGroup
+      KeyName: !Ref KeyName    
+      Tags:
+        - Key: Name
+          Value: !Join [ '-', [ !Ref NameOfService, 'lb' ,'1'] ]
+        - Key: Lab
+          Value: cf-ansible-lab-1 
+      UserData:
+        Fn::Base64:
+          !Sub |
+            #cloud-config
+            system_info:
+                default_user:
+                    name: eden
+            runcmd:
+            - sudo hostnamectl set-hostname cfans-tstlb1
+            - sudo sed -i "s/localhost/localhost tstlb1/" /etc/hosts             
+            - echo "PS1=\"\u@\H:\W $ \"" >> .bashrc  
+            - sudo pip install --upgrade pip
+            - sudo yum install -y vim bash-completion python3
+            - sudo yum update -y
+
+  LnSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allow SSH and ICMP from Security Group.
+      SecurityGroupIngress:
+
+      - IpProtocol: tcp
+        FromPort: 22
+        ToPort: 22
+        CidrIp: 0.0.0.0/0
+
+      - IpProtocol: tcp
+        FromPort: 80
+        ToPort: 80
+        CidrIp: 0.0.0.0/0
+
+      - IpProtocol: icmp
+        FromPort: 8
+        ToPort: -1
+        CidrIp: 0.0.0.0/0
+
+      Tags:
+        - Key: Name
+          Value: tstlab-2-sg
+        - Key: Description
+          Value: Security Group created for SSH and HTTP access to instances. Plus ICMP
+        - Key: Lab
+          Value: cf-ansible-lab-1       
+  
+  LnElasticIp1:
+    Type: AWS::EC2::EIP
+    Properties:
+      InstanceId: !Ref LnEc2Instancetestserver1
+      Tags:
+        - Key: Name
+          Value: !Join [ '-', [ !Ref NameOfService, 'tstsvr-elip' ,'1'] ]
+        - Key: Lab
+          Value: cf-ansible-lab-1          
+
+  LnElasticIp2:
+    Type: AWS::EC2::EIP
+    Properties:
+      InstanceId: !Ref LnEc2Instancetestserver2
+      Tags:
+        - Key: Name
+          Value: !Join [ '-', [ !Ref NameOfService, 'tstsvr-elip' ,'2'] ]
+        - Key: Lab
+          Value: cf-ansible-lab-1     
+
+  LnElasticIp3:
+    Type: AWS::EC2::EIP
+    Properties:
+      InstanceId: !Ref LnEc2Instancetestserver3
+      Tags:
+        - Key: Name
+          Value: !Join [ '-', [ !Ref NameOfService, 'tstsvr-elip' ,'3'] ]
+        - Key: Lab
+          Value: cf-ansible-lab-1         
+
+  LnElasticIp4:
+    Type: AWS::EC2::EIP
+    Properties:
+      InstanceId: !Ref LnEc2Instancetestserver4
+      Tags:
+        - Key: Name
+          Value: !Join [ '-', [ !Ref NameOfService, 'tstsvr-elip' ,'4'] ]
+        - Key: Lab
+          Value: cf-ansible-lab-1         
+
+  LnElasticIp5:
+    Type: AWS::EC2::EIP
+    Properties:
+      InstanceId: !Ref LnEc2InstanceLoadBalancer
+      Tags:
+        - Key: Name
+          Value: !Join [ '-', [ !Ref NameOfService, 'lb-elip' ,'5'] ]
+        - Key: Lab
+          Value: cf-ansible-lab-1         
+
+Outputs:
+
+  LnPublicIpAddressInstance1:
+    Description: The Public IP address for EC2 instances
+    Value: !GetAtt
+      - LnEc2Instancetestserver1
+      - PublicIp
+
+  LnPublicIpAddressInstance2:
+    Description: The Public IP address for EC2 instances
+    Value: !GetAtt
+      - LnEc2Instancetestserver2
+      - PublicIp
+
+  LnPublicIpAddressInstance3:
+    Description: The Public IP address for EC2 instances
+    Value: !GetAtt
+      - LnEc2Instancetestserver3
+      - PublicIp
+
+  LnPublicIpAddressInstance4:
+    Description: The Public IP address for EC2 instances
+    Value: !GetAtt
+      - LnEc2Instancetestserver4
+      - PublicIp
+
+  LnPublicIpAddressLoadBalancer:
+    Description: The Public IP address for EC2 instances
+    Value: !GetAtt
+      - LnEc2InstanceLoadBalancer
+      - PublicIp
+
+  WebsiteLink:
+    Description: The Public DNS for the EC2 Instance
+    Value: !Sub 'http://${LnEc2InstanceLoadBalancer.PublicDnsName}'

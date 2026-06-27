@@ -1,0 +1,8 @@
+# role-gitconfig.yml
+#------------------------------------------
+# Here we're using the role installed from Ansible Galaxy.
+
+- name: Use the gitconfig test role
+  hosts: app1
+  roles:
+  - roles/kosssi.gitconfig
