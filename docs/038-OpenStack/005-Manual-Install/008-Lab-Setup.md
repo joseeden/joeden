@@ -1,5 +1,5 @@
 ---
-title: "Lab Setup"
+title: "OpenStack - Manual Installation"
 description: "Manual OpenStack Installation in Virtual Machines"
 tags: 
 - Cloud

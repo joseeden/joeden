@@ -1,5 +1,5 @@
 ---
-title: "Terraform"
+title: "Starter Notes"
 id: terraform-starter-notes
 description: "Starter Notes on Terraform"
 tags: 

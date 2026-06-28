@@ -12,16 +12,14 @@ last_update:
 
 ## Overview
 
-<div class='img-center'>
+<!-- <div class='img-center'>
 
-    ![](/img/docs/advanced-topics.png)
+![](/img/docs/advanced-topics.png)
 
 </div>
 
-<div class='img-center'>
+<div class='img-center'> -->
 
-
-![](/img/docs/ .png)
 
 
 </div>
