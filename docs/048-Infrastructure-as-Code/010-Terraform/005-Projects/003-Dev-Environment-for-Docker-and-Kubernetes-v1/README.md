@@ -16,7 +16,7 @@ This project provisions a small public AWS environment for practicing Docker and
 
 - Version 1 is the preconfigured bootstrap version. The EC2 nodes are created with user data that installs the container runtime and common Kubernetes tooling during launch.
 
-- Version 2 is the from-scratch bootstrap version. The EC2 nodes are created first, then you can install and configure the container runtime, Kubernetes packages, and cluster components yourself. See [Version 2.](/docs/048-Infrastructure-as-Code/010-Terraform/005-Projects/Lab-004-Dev-Environment-for-Docker-and-Kubernetes-v2/README.md)
+- Version 2 is the from-scratch bootstrap version. The EC2 nodes are created first, then you can install and configure the container runtime, Kubernetes packages, and cluster components yourself. See [Version 2.](/docs/048-Infrastructure-as-Code/010-Terraform/005-Projects/004-Dev-Environment-for-Docker-and-Kubernetes-v2/README.md)
 
 ## Version 1
 
