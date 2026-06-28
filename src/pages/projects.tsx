@@ -243,7 +243,7 @@ const projects: ProjectData[] = [
     title: "All Things Terraform",
     description: "Terraform projects for AWS, Azure, and infrastructure automation.",
     url: "https://github.com/joseeden/All-Things-Terraform/blob/master/README.md",
-    image: require(`/img/docs/tf-project-thumbnail.png`),
+    image: require(`/img/docs/d02abcfa-c53c-4e00-91d5-696f1772e46b.png`),
     tags: ["DevOps", "Terraform", "Infrastructure as Code"],
   },  
   {
