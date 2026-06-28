@@ -12,7 +12,7 @@ last_update:
 
 ## Overview
 
-This lab builds a small AWS development environment with Terraform. The final environment contains a public EC2 instance running Ubuntu, with Docker installed through user data and an optional VSCode Remote SSH entry generated from Terraform.
+This lab builds a small AWS development environment with Terraform: a public Ubuntu EC2 instance, Docker installed through user data, and an optional VSCode Remote SSH entry generated from Terraform outputs.
 
 The infrastructure includes:
 
@@ -25,13 +25,19 @@ The infrastructure includes:
 - EC2 instance
 - Terraform outputs
 
+Environment 
+
+- Windows 10 machine as the local workstation
+- VSCode and WSL
+- AWS credentials configured locally
+
 <div class='img-center'>
 
 ![](/img/docs/all-things-terraform-lab-001-build-dev-env-with-aws.png)
 
 </div>
 
-The original lab was run from a Windows machine using VSCode, WSL, and AWS credentials configured locally.
+
 
 ## Lab Files
 

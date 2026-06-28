@@ -5,7 +5,7 @@ tags:
 - DevOps
 - Infrastructure as Code
 - Terraform
-sidebar_position: 31
+sidebar_position: 22
 last_update:
   date: 1/24/2021
 ---
@@ -15,6 +15,10 @@ last_update:
 Variables keep Terraform code reusable. Expressions and functions let configuration select values, calculate network ranges, and render small dynamic strings without duplicating resources.
 
 ## Variable Files
+
+Variables are declared in the configuration and assigned through defaults, `.tfvars` files, CLI flags, environment variables, or module inputs. 
+
+For the basic root-module file layout, see [Configurations](/docs/048-Infrastructure-as-Code/010-Terraform/013-Configurations.md#core-files).
 
 | File               | Purpose                                            |
 | ------------------ | -------------------------------------------------- |
@@ -51,7 +55,7 @@ Terraform variables can use simple and complex types.
 | `map`    | `{ linux = "ami-1234567890" }`  | Lookup tables.                   |
 | `object` | `{ size = 20, encrypted = true }` | Grouped settings.              |
 
-## Lookup
+## `lookup`
 
 The `lookup` function selects a value from a map. It is useful when a variable controls which AMI, CIDR block, or setting should be used.
 
@@ -59,7 +63,7 @@ The `lookup` function selects a value from a map. It is useful when a variable c
 ami = lookup(var.ami_ids, var.os_type, null)
 ```
 
-## Cidrsubnet
+## `cidrsubnet`
 
 The `cidrsubnet` function creates smaller subnets from a larger CIDR block.
 

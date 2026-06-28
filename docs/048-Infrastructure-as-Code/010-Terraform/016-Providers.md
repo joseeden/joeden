@@ -5,7 +5,7 @@ tags:
 - DevOps
 - Infrastructure as Code
 - Terraform
-sidebar_position: 13
+sidebar_position: 16
 last_update:
   date: 1/24/2021
 ---
@@ -21,7 +21,9 @@ Terraform uses **providers** to interact with various cloud platforms and servic
 
 For a complete list of providers, see [Terraform registry](https://registry.terraform.io/). 
 
-When you run terraform init, Terraform automatically detects and downloads the required providers for your configuration. The provider configuration has two main parts:
+For more details about registry documentation and provider resource references, see [Registry](/docs/048-Infrastructure-as-Code/010-Terraform/019-Registry.md).
+
+When you run `terraform init`, Terraform automatically detects and downloads the required providers for your configuration. The provider configuration has two main parts:
 
 1. Required provider 
 2. Actual provider configuration
@@ -39,13 +41,13 @@ This allows a single Terraform run to manage resources across multiple environme
 
 Default Azure provider block:
 
-```hcl
+```json
 provider "azurerm" { }
 ```
 
 Example with customized behavior:
 
-```hcl
+```json
 provider "azurerm" {
   features {
     virtual_machine {
@@ -85,7 +87,6 @@ provider "aws" {
 
 You can also specify the access keys. However, hard-coded credentials are not recommended and risks secret leakage should this file ever be committed to a public version control system
 
-
 ```hcl
 provider "aws" {
   # Configuration options
@@ -117,10 +118,12 @@ provider "google" {
 
 ## Provider Versions 
 
-When running `terraform init`, Terraform identifies and downloads the required providers. If no version is specified, it may also upgrade to a newer provider automatically.
+When running `terraform init`, Terraform identifies and downloads the required providers. 
+
+If no version is specified, it may also upgrade to a newer provider automatically.
 
 - Specifying a version (e.g., `= 3.14.0`) locks the provider to that version
 - Using a range (e.g., `~> 3.14.0`) allows automatic upgrades when new versions are released
 - Upgrading automatically can sometimes require changes to your Terraform code
 
-**Best practice:** lock to a specific version during development, and upgrade when convenient to avoid unexpected code changes.
+**Best practice:** Lock to a specific version during development, and upgrade when convenient to avoid unexpected code changes.

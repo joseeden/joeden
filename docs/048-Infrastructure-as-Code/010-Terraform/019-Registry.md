@@ -5,7 +5,7 @@ tags:
 - DevOps
 - Infrastructure as Code
 - Terraform
-sidebar_position: 16
+sidebar_position: 19
 last_update:
   date: 1/24/2021
 ---
@@ -26,7 +26,9 @@ The registry also hosts official documentation for each provider. For example, t
 - You can view docs for older versions using the version dropdown
 - The registry docs are the best resource when creating or modifying Terraform plans
 
-Provider pages include example configurations for resources, including any pre-requisite resources. For instance, an AWS EC2 instance example shows:
+Provider pages include example configurations for resources, including any pre-requisite resources. 
+
+For instance, an AWS EC2 instance example shows:
 
 - `aws_vpc`
 - `aws_subnet`

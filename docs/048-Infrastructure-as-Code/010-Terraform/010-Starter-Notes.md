@@ -28,6 +28,15 @@ Terraform can be used to:
 - Version-controll through git
 - Integrate with CICD systems
 
+<!-- Suggested path through these notes:
+
+1. Start with Terraform basics and installation.
+2. Learn the root module and core files in [Configurations](/docs/048-Infrastructure-as-Code/010-Terraform/013-Configurations.md).
+3. Add providers and registry documentation in [Providers](/docs/048-Infrastructure-as-Code/010-Terraform/016-Providers.md) and [Registry](/docs/048-Infrastructure-as-Code/010-Terraform/019-Registry.md).
+4. Learn reusable inputs in [Variables, Expressions, and Functions](/docs/048-Infrastructure-as-Code/010-Terraform/022-Variables-Expressions-and-Functions.md).
+5. Run the workflow using [Workflow and CLI](/docs/048-Infrastructure-as-Code/010-Terraform/025-Workflow-and-CLI.md) and [Execution](/docs/048-Infrastructure-as-Code/010-Terraform/028-Execution.md).
+6. Continue with [State Management](/docs/048-Infrastructure-as-Code/010-Terraform/031-State-Management.md), [Dependencies and Graph](/docs/048-Infrastructure-as-Code/010-Terraform/034-Dependencies-and-Graph.md), and [Provisioners and Packaging](/docs/048-Infrastructure-as-Code/010-Terraform/037-Provisioners-and-Packaging.md). -->
+
 ## Install Terraform
 
 To use Terraform, it needs to be installed on your machine.
@@ -38,32 +47,18 @@ See: [Install Terraform.](/docs/001-Personal-Notes/050-Project-Pre-requisites/01
 
 We can utilize **workspaces** to manage separate environments using the same set of configuration files.
 
-```bash
-terraform workspace 
-```
-
-To create a new workspace,
-
-```bash
-terraform workpace  new  <name> 
-```
-
-To select a workspace,
-
-```bash
-terraform workspace select <name>
-```
+For more information, please see [Workflow and CLI](/docs/048-Infrastructure-as-Code/010-Terraform/025-Workflow-and-CLI.md#workspaces).
 
 <div class='img-center'>
 
-![](/img/docs/tfworkspaces.png)
+![](/img/docs/terraform-workflow-workspaces-environments.png.png)
 
 </div>
 
 
 ## Root Module
 
-This is a directory on the local filesystem containing all the configuration files and code files. This is typically consists of three files:
+The root module is the working directory that contains the main Terraform configuration files.
 
 - `main.tf`
 - `variables.tf`
@@ -75,6 +70,8 @@ This root directory may also contain:
 - `terraform.state`
 - `terraform.state.backup`
 
+For more information, please see [Configurations](/docs/048-Infrastructure-as-Code/010-Terraform/013-Configurations.md#root-module).
+
 ## Providers 
 
 Terraform uses **providers** to interact with various cloud platforms and services. Some popular providers include:
@@ -84,7 +81,7 @@ Terraform uses **providers** to interact with various cloud platforms and servic
 - Google Cloud Platform (GCP)
 - Kubernetes
 
-For more information, please see [Providers](/docs/048-Infrastructure-as-Code/010-Terraform/013-Providers.md)
+For more information, please see [Providers](/docs/048-Infrastructure-as-Code/010-Terraform/016-Providers.md).
 
 ## Using Terraform with Git
 
@@ -92,7 +89,7 @@ Terraform configurations are often stored in Git for version control. Some files
 
 These files can be added to your `.gitignore` to prevent accidental commits. Sample `.gitignore`:
 
-```bash title="gitignore"
+```bash 
 .terraform*
 .terraform.tfstate*
 *.tfstate.*
@@ -110,17 +107,13 @@ Before writing Terraform code, you need to make sure authentication with API key
 2. Environment variables to store keys securely
 3. `shared_credentials_file` for local credentials
 
+For provider-specific examples, see [Providers](/docs/048-Infrastructure-as-Code/010-Terraform/016-Providers.md).
+
 ## Terraform CLI
 
 See: [Hashicorp documentation.](https://www.terraform.io/cli/commands)
 
-Here is a summarized cheatsheet.
-
-<div class='img-center'>
-
-![](/img/docs/tfclicheatsheet.png)
-
-</div>
+For the common command sequence, see [Workflow and CLI](/docs/048-Infrastructure-as-Code/010-Terraform/025-Workflow-and-CLI.md).
 
 
 ## Provisioning Workflow
@@ -132,6 +125,8 @@ The typical workflow when using Terraform involves the following commands:
 - `terraform plan `
 - `terraform apply`
 - `terraform destroy`
+
+For command details, see [Execution](/docs/048-Infrastructure-as-Code/010-Terraform/028-Execution.md).
 
 ## Terraform HCL Language
 
@@ -145,13 +140,13 @@ You can automatically apply formatting standards using `terraform fmt`.
 
 Comments can be added using the `#` symbol:
 
-```
+```bash
 # This is a comment
 ```
 
 For multi-line comments, use `/* */`:
 
-```
+```go
 /* This is
 a comment
 spanning multiple lines
@@ -160,13 +155,13 @@ spanning multiple lines
 
 Strings can be defined in different ways depending on their length and purpose:
 
-```
+```bash
 "This is a single-line string"
 ```
 
 For multi-line strings, use the `EOF` marker:
 
-```
+```bash
 <<EOF
 This message
 is composed of
@@ -174,4 +169,4 @@ multiple lines.
 EOF
 ```
 
-For more details, refer to the official [Terraform syntax documentation](https://www.terraform.io/language/syntax/configuration).
+For more information, refer to the official [Terraform syntax documentation](https://www.terraform.io/language/syntax/configuration).

@@ -5,7 +5,7 @@ tags:
 - DevOps
 - Infrastructure as Code
 - Terraform
-sidebar_position: 22
+sidebar_position: 25
 last_update:
   date: 1/24/2021
 ---
@@ -25,14 +25,28 @@ Terraform work usually follows the same rhythm: write configuration, initialize 
 | Apply      | `terraform apply`    | Creates, updates, or removes resources.      |
 | Destroy    | `terraform destroy`  | Removes resources managed by the state file. |
 
+For more details about each execution command, see [Execution](/docs/048-Infrastructure-as-Code/010-Terraform/028-Execution.md).
+
 ## Workspaces
 
 Workspaces let one configuration keep separate state for multiple environments.
 
+To list all workspaces: 
+
 ```bash
 terraform workspace list
-terraform workspace new dev
-terraform workspace select dev
+```
+
+To create a new workspace,
+
+```bash
+terraform workpace  new  <name> 
+```
+
+To select a workspace:
+
+```bash
+terraform workspace select <name>
 ```
 
 **Note**: Workspaces separate state, but they do not automatically make a design production-ready. Keep environment naming, variables, and backend configuration clear.

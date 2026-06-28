@@ -5,7 +5,7 @@ tags:
 - DevOps
 - Infrastructure as Code
 - Terraform
-sidebar_position: 25
+sidebar_position: 28
 last_update:
   date: 1/24/2021
 ---
@@ -16,7 +16,7 @@ Terraform provides commands to check, apply, and remove infrastructure safely.
 
 ## Initialize
 
-Terraform needs to prepare your environment before it can create resources. This is done with `terraform init`.
+Terraform needs to prepare your environment before it can create resources. 
 
 - Reads all `.tf` files in your working directory
 - Downloads required providers automatically
@@ -75,7 +75,7 @@ Executes the planned changes and updates the state file.
 
 - Creates or updates resources to match the configuration
 - Only modifies resources that need changes
-- Writes successful actions to `terraform.state`
+- Writes successful actions to `terraform.tfstate`
 
 Command:
 
@@ -83,7 +83,7 @@ Command:
 terraform apply 
 ```
 
-Note that this command requires interactive approval before actually making any changes. To bypass the interactive approva:
+Note that this command requires interactive approval before actually making any changes. To bypass the interactive approval:
 
 ```bash
 terraform apply --auto-approve
@@ -97,7 +97,7 @@ Removes deployed resources in reverse order of creation to respect dependencies 
 terraform destroy
 ```
 
-Similar with `apply`, this also requires interactive approval. To bypass it:
+Similar to `apply`, this also requires interactive approval. To bypass it:
 
 ```bash
 terraform destroy --auto-approve
@@ -113,3 +113,5 @@ terraform destroy --auto-approve --target=module.webserver
 ```
 
 **NOTE**: This should only be used for debugging, not regular production runs
+
+For more details about when targeted operations fit into the workflow, see [Workflow and CLI](/docs/048-Infrastructure-as-Code/010-Terraform/025-Workflow-and-CLI.md#targeted-operations).

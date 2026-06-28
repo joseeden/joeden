@@ -5,7 +5,7 @@ tags:
 - DevOps
 - Infrastructure as Code
 - Terraform
-sidebar_position: 19
+sidebar_position: 13
 last_update:
   date: 1/24/2021
 ---
@@ -13,7 +13,7 @@ last_update:
 
 ## Root Module
 
-This is a directory on the local filesystem containing all the configuration files and code files. This is typically consists of three files:
+This is a directory on the local filesystem containing all the configuration files and code files. This typically consists of these files:
 
 - `main.tf`
 - `variables.tf`
@@ -22,8 +22,10 @@ This is a directory on the local filesystem containing all the configuration fil
 
 This root directory may also contain:
 
-- `terraform.state`
-- `terraform.state.backup`
+- `terraform.tfstate`
+- `terraform.tfstate.backup`
+
+For more details about state files, see [State Management](/docs/048-Infrastructure-as-Code/010-Terraform/031-State-Management.md).
 
 ## Core Files 
 
@@ -88,6 +90,10 @@ output "instance_id" {
 ```
 
 ### `terraform.tfvars` vs `variables.tf`
+
+This section introduces the distinction between declaring variables and assigning values. 
+
+> For variable types and common functions, see [Variables, Expressions, and Functions](/docs/048-Infrastructure-as-Code/010-Terraform/022-Variables-Expressions-and-Functions.md).
 
 Based on a [Stack Overflow discussion](https://stackoverflow.com/questions/56086286/terraform-tfvars-vs-variables-tf-difference):
 
