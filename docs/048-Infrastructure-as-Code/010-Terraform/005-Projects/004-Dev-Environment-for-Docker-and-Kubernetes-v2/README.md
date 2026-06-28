@@ -43,8 +43,8 @@ The user data keeps most Docker and Kubernetes installation commands commented o
 | `version-2/template-files/ssh-linux.tpl`   | Generates a Linux or WSL SSH config entry                          |
 | `version-2/template-files/ssh-windows.tpl` | Generates a Windows SSH config entry                               |
 
-## Runbook
+<!-- ## Runbook
 
 For the full walkthrough, use the version-specific README:
 
-[Version 2 README](./version-2/README.md)
+[Version 2 README](./version-2/README.md) -->

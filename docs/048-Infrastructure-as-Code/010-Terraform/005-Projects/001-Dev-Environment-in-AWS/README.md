@@ -38,7 +38,6 @@ Environment
 </div>
 
 
-
 ## Lab Files
 
 The finished configuration is split into a few files so the intent is easier to follow.
