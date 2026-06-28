@@ -240,6 +240,13 @@ const projects: ProjectData[] = [
     tags: ["DevOps", "Observability"],
   },
   {
+    title: "All Things Terraform",
+    description: "Terraform projects for AWS, Azure, and infrastructure automation.",
+    url: "https://github.com/joseeden/All-Things-Terraform/blob/master/README.md",
+    image: require(`/img/docs/terraform-workflow-workspaces-environments-tf-project-thumbnail.png`),
+    tags: ["DevOps", "Terraform", "Infrastructure as Code"],
+  },  
+  {
     title: "OpenStack Private Cloud Setup",
     description: "Manual OpenStack deployment across compute, network, and storage",
     url: `${baseUrl}/docs/OpenStack/Manual-Install/Lab-Setup`,
