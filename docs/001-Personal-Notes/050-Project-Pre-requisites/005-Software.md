@@ -135,7 +135,7 @@ If you’re not working on a structured project, don’t use sync. Instead, use:
 uv pip install requests
 ```
 
-Note: If you are opening a `.ipynb` file in VS Code, and you're unable to detect the `.venv` virtual environment that you created for your project, you can try the following steps:
+**Note**: If you are opening a `.ipynb` file in VS Code, and you're unable to detect the `.venv` virtual environment that you created for your project, you can try the following steps:
 
 1. Check if `ipykernel` is installed in your virtual environment. 
 
