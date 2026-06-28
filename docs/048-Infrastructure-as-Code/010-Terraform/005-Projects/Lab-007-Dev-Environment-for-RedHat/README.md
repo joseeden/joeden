@@ -1,18 +1,18 @@
 ---
-title: "Dev Environment for Docker and Kubernetes Version 2"
-description: "Dev Environment for Docker and Kubernetes Version 2"
+title: "Dev Environment for RedHat"
+description: "Dev Environment for RedHat"
 tags: 
 - DevOps
 - Infrastructure as Code
 - Terraform
-sidebar_position: 22
+sidebar_position: 25
 last_update:
   date: 1/24/2021
 ---
 
 ## Overview
 
-This is an iteration of "Lab 001-DEV Environment in AWS" but this particular lab is to provision a resource for Docker and Kubernetes labs.
+This is an iteration of "Lab 001-DEV Environment in AWS" but this particular lab is to provision resources for RedHat labs.
 
 For a deep dive of the different configuration files, please check out the "Lab 001".
 
@@ -29,9 +29,9 @@ Local environment used for this lab.
 - Setup your Local Environment and Install Extensions 
 - Configure the Credentials File 
 - Install Terraform 
-              
+         
 
-## Create a Keypair
+## Create a Keypair on your Terminal
 
 In your terminal, generate a keypair. You will use this later to connect to your instance. Make sure to name your keypair **tst-keypair** as this is the name of the keypair defined in the code.
 
@@ -68,18 +68,20 @@ You can change this options by editing the **terraform.tfvars**. Note that if yo
 - Uncomment the variable block for "aws_ami" in the variable.tf file and specify the AMI ID in the default field
 
 
-## How to use this repo
+## How to use this guide
 
-Clone this repo.
+The Terraform files live in the `joeden` docs repo. To download only this project folder, use a sparse checkout.
 
 ```bash
-git clone https://github.com/joseeden/All-Things-Terraform.git
+git clone --depth 1 --filter=blob:none --sparse https://github.com/joseeden/joeden.git
+cd joeden
+git sparse-checkout set docs/048-Infrastructure-as-Code/010-Terraform/005-Projects/Lab-007-Dev-Environment-for-RedHat
 ```
 
-Go to the lab directory.
+Go to the Terraform project directory.
 
 ```bash
-cd Lab_003_Dev_Environment_for_Docker_and_Kubernetes
+cd docs/048-Infrastructure-as-Code/010-Terraform/005-Projects/Lab-007-Dev-Environment-for-RedHat
 ```
 
 Initialize this directory.
@@ -137,88 +139,32 @@ If it doesn't return any errors, apply the changes.
 terraform apply -auto-approve 
 ```
 
+
 ## Outputs 
 
-After successfully provisioning the resource, it returns a public IP. You may go to the AWS Console and verify if it's the same public IP on the EC2 instances.
+After successfully provisioning the resource, it returns a public IP. You may go to the AWS Console and verify if it's the same public IP on the EC2 instance.
 
 ```bash
-Apply complete! Resources: 5 added, 0 changed, 0 destroyed.
+Apply complete! Resources: 9 added, 0 changed, 0 destroyed.
 
 Outputs:
 
-node-master-ip = "11.123.123.123"
-node-worker1-ip = "13.124.123.123"
-node-worker2-ip = "15.123.124.123"
-node-worker3-ip = "14.123.123.124"
-```
-
-## Verify Docker Installation 
-
-On your terminal, go to the directory where you saved the keypair and use it to SSH to your instance.
-
-```bash
-cd ~/.ssh
-ssh -i "tst-keypair.pem" ubuntu@4.5.6.7
-```
-
-Once your logged-in, verify the version of docker installed.
-
-```bash
-docker version  
-```
-
-Run a simple "hello-world" container.
-
-```bash
-sudo docker run hello-world  
-```
-
-You should get an output like this:
-
-```bash
-Hello from Docker!
-This message shows that your installation appears to be working correctly.
-
-To generate this message, Docker took the following steps:
- 1. The Docker client contacted the Docker daemon.
- 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
-    (amd64)
- 3. The Docker daemon created a new container from that image which runs the
-    executable that produces the output you are currently reading.
- 4. The Docker daemon streamed that output to the Docker client, which sent it
-    to your terminal.
-
-To try something more ambitious, you can run an Ubuntu container with:
- $ docker run -it ubuntu bash
-
-Share images, automate workflows, and more with a free Docker ID:
- https://hub.docker.com/
-
-For more examples and ideas, visit:
- https://docs.docker.com/get-started/
-```
-
-Go celebrate, lad. You just run a simple container.
-As a bonus, here's a nyancat for you.
-
-```bash
-sudo docker run -it --rm --name nyancat 06kellyjac/nyancat 
+tst-node-1-ip = "4.5.6.7"
 ```
 
 ## Remote Development
 
-This automation also sets up your VSCode for remote development. You will need to download the [Remote-SSH extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack). There should be an additional icon for Remote-SSH in the left panel of VSCode. 
+This automation also sets up your VSCode for remote development. You will need to download the [Remote-SSH extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack). There shold be an additional icon for Remote-SSH in the left panel of VSCode. 
 
 Once you click it, you should see the IP of your instance there. Right-click, then "Connect to Host in New Window"
 
 Next, click Linux.
-When prompted if you want to proceed, choose Continue.
+
+When prompted "if you want to proceed", choose Continue.
 
 Once connected, you should now be able to open the files in the instance through VSCode.
 
 ## Cleanup
-
-Alright. Time to wrap up. Let's make sure we won't be surprised by unexpected charges in our billing statement.
 
 To delete all the resources, just run the **destroy** command.
 

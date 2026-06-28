@@ -51,7 +51,7 @@ For more information, please see [Workflow and CLI](/docs/048-Infrastructure-as-
 
 <div class='img-center'>
 
-![](/img/docs/terraform-workflow-workspaces-environments.png.png)
+![](/img/docs/terraform-workflow-workspaces-environments.png)
 
 </div>
 
