@@ -112,6 +112,8 @@ terraform apply --auto-approve --target=module.webserver
 terraform destroy --auto-approve --target=module.webserver
 ```
 
-**NOTE**: This should only be used for debugging, not regular production runs
+:::warning
 
-For more details about when targeted operations fit into the workflow, see [Workflow and CLI](/docs/048-Infrastructure-as-Code/010-Terraform/025-Workflow-and-CLI.md#targeted-operations).
+Use `-target` for debugging only. Regular applies should let Terraform evaluate the full dependency graph.
+
+:::

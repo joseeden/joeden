@@ -20,9 +20,7 @@ last_update:
 
 <div class='img-center'> -->
 
-
-
-</div>
+<!-- </div> -->
 
 These are just a brief breakdown on topics you can check out for Ansible. There are also no labs here, you can further explore the areas that interest you.
 

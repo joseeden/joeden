@@ -50,18 +50,3 @@ terraform workspace select <name>
 ```
 
 **Note**: Workspaces separate state, but they do not automatically make a design production-ready. Keep environment naming, variables, and backend configuration clear.
-
-## Targeted Operations
-
-Terraform can target one resource or module during troubleshooting.
-
-```bash
-terraform apply -target=module.webserver
-terraform destroy -target=module.webserver
-```
-
-:::warning
-
-Use `-target` for debugging only. Regular applies should let Terraform evaluate the full dependency graph.
-
-:::
