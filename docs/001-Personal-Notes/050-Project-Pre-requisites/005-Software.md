@@ -135,9 +135,16 @@ If you’re not working on a structured project, don’t use sync. Instead, use:
 uv pip install requests
 ```
 
+### Unable to Detect Virtual Environment as Kernel in VS Code 
+
 **Note**: If you are opening a `.ipynb` file in VS Code, and you're unable to detect the `.venv` virtual environment that you created for your project, you can try the following steps:
 
-1. Check if `ipykernel` is installed in your virtual environment. 
+1. First, it is recommended to open the repo directly in VS Code. 
+
+    This means that if the repo is inside a parent folder, you should open the repo folder directly in VS Code, not the parent folder. This is important because VS Code needs to detect the virtual environment that is created inside the repo folder.
+
+
+2. Check if `ipykernel` is installed in your virtual environment. 
 
     ```bash
     pip list | grep ipykernel
@@ -156,22 +163,97 @@ uv pip install requests
     .venv/bin/python -m pip show ipykernel
     ```
 
-    If `ipykernel` says “Package(s) not found”, that’s almost certainly the reason.
+    <!-- If `ipykernel` says “Package(s) not found”, that’s almost certainly the reason. -->
 
-2. Now try to activate the virtual environment:
+    If both commands return an error, try:
+
+    ```bash
+    uv run python --version
+    uv run python -m ipykernel --version  
+    ```
+
+    <!-- If you get no Python error but got this:
+
+    ```bash
+    .venv/bin/python: No module named pip
+    ```
+
+    It's possible that VS Code is seeing Python 3.10 user packages, but the project `.venv` is Python 3.12 and does not have `pip` installed. The kernel won’t show until `ipykernel` is installed inside that exact `.venv`.
+
+    Add `ipykernel` to your project’s dependency file (e.g. `pyproject.toml`) and run `uv sync` to install it in the virtual environment.
+    
+    Or you can install it directly in the virtual environment:
+
+    ```bash
+    uv add --dev ipykernel
+    python -m pip install ipykernel
+    ``` -->
+
+
+<!-- 2. Now try to activate the virtual environment:
 
     ```bash
     source .venv/bin/activate
-    python -m pip install ipykernel. ## if not yet installed inside the .venv
-    ```
+    
+    ``` -->
 
-3. Finally, register that environment as a kernel in Jupyter:
+3. Register that environment as a kernel in Jupyter:
+
+    <!-- ```bash
+    python -m ipykernel install --user --name llm_engineering --display-name "Python (.venv)" 
+    ``` -->
 
     ```bash
-    python -m ipykernel install --user --name llm_engineering --display-name "Python (.venv)" 
+    uv run python -m ipykernel install \
+    --user \
+    --name llm-engineering \
+    --display-name "Python (.venv llm-engineering)"      
     ```
 
     Note: You can replace `llm_engineering` with the name of your project or virtual environment.
+
+<!-- 4. Check the versions again:
+
+    ```bash
+    uv run python --version
+    uv run python -m ipykernel --version  
+    ```
+
+    You should see the correct versions of Python and `ipykernel` that are installed in your virtual environment.
+
+    ```bash
+    # Python
+    Python 3.12.12     
+
+    # ipykernel 
+    9.7.0
+    ``` -->
+
+5. Still in VS Code, open the command palette (Ctrl+Shift+P) and search for "Developer: Reload Window". 
+
+    Reload the window to ensure that VS Code detects the newly registered kernel.
+
+6. After reloading, open the Juypter Notebook file (.ipynb) again and check the kernel selection dropdown. 
+
+    You should now see the virtual environment you created (e.g., "Python (.venv llm-engineering)") as an option. 
+
+    Select it to use that environment for your notebook.
+
+7. If you still don't see the virtual environment, you can try deleting the `.venv` folder and recreating it. 
+
+    ```bash
+    rm -rf .venv
+    ```
+
+    Then, recreate the virtual environment and install the dependencies again:
+
+    ```bash
+    uv sync
+    ```
+
+    Then do steps 1-5 again to ensure that the virtual environment is detected correctly in VS Code.
+
+
 
 ## NodeJS
 
