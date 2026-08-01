@@ -57,9 +57,9 @@ For large clusters, interruption and recovery costs scale quickly, so goodput di
 
 ML Productivity Goodput is commonly broken into three components.
 
-- Scheduling goodput
+<!-- - Scheduling goodput
 - Runtime goodput
-- Program goodput
+- Program goodput -->
 
 <div class='img-center'>
 
@@ -67,7 +67,7 @@ ML Productivity Goodput is commonly broken into three components.
 
 </div>
 
-AI Hypercomputer is designed to improve these metrics across framework, runtime, and orchestration layers.
+AI Hypercomputer, a supercomputing architecture from Google, is designed with these goodput metrics in mind. It integrates specific capabilities to optimize program and runtime goodput across the framework, runtime, and orchestration layers.
 
 <div class='img-center'>
 
@@ -102,6 +102,8 @@ Runtime goodput measures forward-progress time as a fraction of time when resour
 
 </div>
 
+### Estimating Runtime Goodput
+
 An analytical model can be written as:
 
 $$
@@ -112,7 +114,7 @@ $$
 \text{Runtime Goodput} = \frac{t_w - t_c - \sum_{i=1}^{N} t_{re}}{t_w - \sum_{i=1}^{N} t_{re}}
 $$
 
-Variable definitions:
+Notes:
 
 | Variable  | Description                                           |
 | --------- | ----------------------------------------------------- |
@@ -129,18 +131,18 @@ In practice, improving runtime goodput means reducing `tch` and `trm`, while sch
 
 1. **Enable auto-checkpointing**
 
-Auto-checkpointing can trigger a save on `SIGTERM`, which helps when interruption is imminent from maintenance or preemption.
+    Auto-checkpointing can trigger a save on `SIGTERM`, which helps when interruption is imminent from maintenance or preemption.
 
-- Reduces lost progress since the previous checkpoint.
-- Helps lower `tch`.
-- Available in tools such as Orbax and MaxText.
+    - Reduces lost progress since the previous checkpoint.
+    - Helps lower `tch`.
+    - Available in tools such as Orbax and MaxText.
 
 2. **Use container pre-loading**
 
-Container and model pre-loading can reduce restart delay.
+    Container and model pre-loading can reduce restart delay.
 
-- In GKE, pre-loading from a secondary boot disk can make large image startup much faster than pulling from registry each time.
-- Reduces `trm` by shortening the time to recover node execution state.
+    - In GKE, pre-loading from a secondary boot disk can make large image startup much faster than pulling from registry each time.
+    - Reduces `trm` by shortening the time to recover node execution state.
 
 ## Program Goodput
 
@@ -158,25 +160,25 @@ XLA helps improve program goodput through built-in optimizations and scalable AP
 
 1. **Custom kernels with XLA (JAX/Pallas)**
 
-For complex hotspots, custom kernels can increase performance.
+    For complex hotspots, custom kernels can increase performance.
 
-- Useful for operations such as flash attention and block-sparse kernels.
-- Can improve efficiency for large sequence lengths.
+    - Useful for operations such as flash attention and block-sparse kernels.
+    - Can improve efficiency for large sequence lengths.
 
 2. **Host offload**
 
-Host offload uses host DRAM for selected intermediate states.
+    Host offload uses host DRAM for selected intermediate states.
 
-- Reduces accelerator memory pressure.
-- Can reduce recomputation in backward passes.
-- Can increase effective program goodput for memory-constrained workloads.
+    - Reduces accelerator memory pressure.
+    - Can reduce recomputation in backward passes.
+    - Can increase effective program goodput for memory-constrained workloads.
 
 3. **Int8 mixed-precision with AQT**
 
-Accurately Quantized Training (AQT) can map selected matrix operations to int8.
+    Accurately Quantized Training (AQT) can map selected matrix operations to int8.
 
-- Improves arithmetic efficiency.
-- Can increase program goodput while preserving convergence when applied carefully.
+    - Improves arithmetic efficiency.
+    - Can increase program goodput while preserving convergence when applied carefully.
 
 ## GPU Decision Tree
 
@@ -207,7 +209,6 @@ Use this path when your model is already trained and needs production serving.
 
 - Prioritize latency targets and request throughput.
 - Match GPU size to model footprint and concurrency profile.
-- Consider cost-sensitive serving options and autoscaling behavior.
 
 <div class='img-center'>
 
@@ -223,9 +224,9 @@ Use flowcharts as decision support for cost, efficiency, and training-time trade
 
 This flow focuses on improving value from high-performance GPUs such as A100-class and newer accelerators.
 
-- Start with utilization and interruption analysis.
-- Apply checkpointing, scheduling, and memory optimizations.
-- Re-check whether migration paths, including TPU migration, are feasible.
+1. Start with utilization and interruption analysis.
+2. Apply checkpointing, scheduling, and memory optimizations.
+3. Re-check whether migration paths, including TPU migration, are feasible.
 
 If migration is not feasible, reassess model fit and optimization limits on current hardware.
 
@@ -239,9 +240,9 @@ If migration is not feasible, reassess model fit and optimization limits on curr
 
 This flow focuses on reducing wall-clock training time.
 
-- Identify current bottlenecks.
-- Map bottlenecks to hardware, runtime, and program-level levers.
-- Select GPU and cluster settings that improve the dominant bottleneck first.
+1. Identify current bottlenecks.
+2. Map bottlenecks to hardware, runtime, and program-level levers.
+3. Select GPU and cluster settings that improve the dominant bottleneck first.
 
 Following this structure helps make hardware choices that improve training velocity and cost efficiency together.
 
@@ -259,12 +260,3 @@ A regular goodput review helps catch hidden inefficiencies before they become ma
 
 :::
 
-## Summary
-
-GPU optimization is not only about faster chips.
-
-- Scheduling goodput improves resource availability.
-- Runtime goodput reduces interruption loss.
-- Program goodput improves hardware utilization.
-
-Combining these three views gives a practical framework for improving performance per dollar in large AI training environments.
