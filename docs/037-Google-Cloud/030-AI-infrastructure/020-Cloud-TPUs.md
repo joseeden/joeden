@@ -8,7 +8,7 @@ tags:
 - DevOps
 - AI
 - Machine Learning
-sidebar_position: 15
+sidebar_position: 20
 last_update:
   date: 11/09/2024
 ---
@@ -64,7 +64,7 @@ TPU v4 and later generations also benefit from reconfigurable optical circuit sw
 
 At the hardware level, each Cloud TPU chip combines specialized processing units for tensor operations.
 
-For more information, please see [TPU System Architecture](/docs/037-Google-Cloud/030-AI-infrastructure/016-TPU-System-Architecture.md).
+For more information, please see [TPU System Architecture](/docs/037-Google-Cloud/030-AI-infrastructure/021-TPU-System-Architecture.md).
 
 <div class='img-center'>
 
@@ -76,7 +76,7 @@ For more information, please see [TPU System Architecture](/docs/037-Google-Clou
 
 Cloud TPU workloads can be run through direct VM management or managed platforms.
 
-For more information, please see [TPU Deployment Architecture](/docs/037-Google-Cloud/030-AI-infrastructure/017-TPU-Deployment-Architecture.md).
+For more information, please see [TPU Deployment Architecture](/docs/037-Google-Cloud/030-AI-infrastructure/022-TPU-Deployment-Architecture.md).
 
 <div class='img-center'>
 

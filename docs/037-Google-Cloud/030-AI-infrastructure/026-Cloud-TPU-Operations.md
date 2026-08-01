@@ -8,7 +8,7 @@ tags:
 - DevOps
 - AI
 - Machine Learning
-sidebar_position: 35
+sidebar_position: 26
 last_update:
   date: 11/09/2024
 ---
@@ -19,8 +19,8 @@ This page focuses on workload efficiency and model execution patterns.
 
 For planning and provisioning topics, see:
 
-- [TPU Capacity and Scheduling](/docs/037-Google-Cloud/030-AI-infrastructure/025-TPU-Capacity-and-Scheduling.md)
-- [TPU Runtime and Interoperability](/docs/037-Google-Cloud/030-AI-infrastructure/030-TPU-Runtime-and-Interoperability.md)
+- [TPU Capacity and Scheduling](/docs/037-Google-Cloud/030-AI-infrastructure/024-TPU-Capacity-and-Scheduling.md)
+- [TPU Runtime and Interoperability](/docs/037-Google-Cloud/030-AI-infrastructure/025-TPU-Runtime-and-Interoperability.md)
 
 ## TPU Core Optimization: The MXU
 

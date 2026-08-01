@@ -8,7 +8,7 @@ tags:
 - DevOps
 - AI
 - Machine Learning
-sidebar_position: 25
+sidebar_position: 24
 last_update:
   date: 08/01/2026
 ---

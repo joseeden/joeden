@@ -23,7 +23,7 @@ GPUs are a core accelerator for modern AI workloads on Google Cloud.
 
 Google Cloud offers GPU options that range from foundation model training clusters to cost-optimized inference platforms.
 
-For provisioning paths and software acceleration details, see [GPU Cluster Provisioning](/docs/037-Google-Cloud/030-AI-infrastructure/018-GPU-Cluster-Provisioning.md) and [GPU Framework Acceleration](/docs/037-Google-Cloud/030-AI-infrastructure/031-GPU-Framework-Acceleration.md).
+For provisioning paths and software acceleration details, see [GPU Cluster Provisioning](/docs/037-Google-Cloud/030-AI-infrastructure/014-GPU-Cluster-Provisioning.md) and [GPU Framework Acceleration](/docs/037-Google-Cloud/030-AI-infrastructure/015-GPU-Framework-Acceleration.md).
 
 ## How GPUs Run AI Workloads
 
