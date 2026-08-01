@@ -78,6 +78,8 @@ Their main advantage is high parallel throughput.
 Modern GPUs commonly expose tens of thousands of ALUs in one processor footprint. 
 GPUs' parallel processing model often delivers much higher deep learning training throughput than CPUs.
 
+For Google Cloud GPU machine family choices and workload mapping, see [GPU Options](/docs/037-Google-Cloud/030-AI-infrastructure/013-GPU-Options.md).
+
 <div class='img-center'>
 
 ![](/img/docs/cpuversusgpu.png)

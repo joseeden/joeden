@@ -45,16 +45,21 @@ Ironwood is built for advanced model workloads, including LLMs, Mixture of Exper
 
 **Key performance metrics:**
 
-- Peak compute per chip: 4,614 TFLOPs.
-- HBM capacity per chip: 192 GB.
-- HBM bandwidth per chip: 7.37 TB/s.
-- Inter-Chip Interconnect (ICI) bandwidth: 1.2 TBps bidirectional.
+| Metric                                      | Value                  |
+| ------------------------------------------- | ---------------------- |
+| **Peak compute per chip**                   | 4,614 TFLOPs           |
+| **HBM capacity per chip**                   | 192 GB                 |
+| **HBM bandwidth per chip**                  | 7.37 TB/s              |
+| **Inter-Chip Interconnect (ICI) bandwidth** | 1.2 TBps bidirectional |
+
 
 **Scalability and power efficiency:**
 
-- Pod scale: Up to 9,216 liquid-cooled chips.
-- Aggregate compute: 42.5 exaflops for a 9,216-chip pod.
-- Power efficiency: 2x performance per watt versus Trillium, and about 30x better power efficiency than Cloud TPU v2 (2018).
+| Metric                | Value                                                                                                   |
+| --------------------- | ------------------------------------------------------------------------------------------------------- |
+| **Pod scale**         | Up to 9,216 liquid-cooled chips                                                                         |
+| **Aggregate compute** | 42.5 exaflops for a 9,216-chip pod                                                                      |
+| **Power efficiency**  | 2× performance per watt versus Trillium, and about 30× better power efficiency than Cloud TPU v2 (2018) |
 
 Ironwood is a strong fit for large inference fleets that need both performance and efficiency.
 
@@ -70,8 +75,14 @@ Each Trillium chip has one TensorCore, and each TensorCore includes two Matrix M
 
 </div>
 
+Trillium improves performance, memory behavior, and model flexibility.
 
-Trillium shares core architecture ideas with v5e, while delivering major improvements.
+- Higher peak compute and bandwidth per chip.
+- 2x HBM capacity and 2x HBM bandwidth per chip versus v5e.
+- SparseCore support for embedding-heavy models, including recommendation systems.
+- Optimized for transformer, text-to-image, and CNN training, fine-tuning, and serving.
+
+It shares core architecture ideas with v5e, while delivering major improvements.
 
 How to specify Trillium:
 
@@ -79,16 +90,6 @@ How to specify Trillium:
 | ----------- | ------------------------------------------------------------------------------- |
 | **TPU API** | Use the `AcceleratorType` parameter, such as `v6e-8` for an 8-TensorCore slice. |
 | **GKE API** | Use the `--machine-type` flag, such as `t6e-standard-8t`.                       |
-
-
-### Key benefits
-
-Trillium improves performance, memory behavior, and model flexibility.
-
-- Higher peak compute and bandwidth per chip.
-- 2x HBM capacity and 2x HBM bandwidth per chip versus v5e.
-- SparseCore support for embedding-heavy models, including recommendation systems.
-- Optimized for transformer, text-to-image, and CNN training, fine-tuning, and serving.
 
 Trillium is a practical choice when you need newer-generation training and serving efficiency.
 
@@ -98,7 +99,7 @@ Cloud TPU v5p is a high-performance generation focused on scale and 3D interconn
 
 Each v5p chip includes one TensorCore, with four MXUs, one vector unit, and one scalar unit.
 
-v5p adds reliability features for large-scale distributed workloads.
+v5p also adds reliability features for large-scale distributed workloads.
 
 - ICI resiliency is enabled by default for one-cube-or-larger slices, such as `v5p-128` or `4x4x4`.
 - This improves fault tolerance and scheduling availability.

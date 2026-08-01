@@ -59,7 +59,7 @@ For Cloud TPU workloads, quota behavior depends on how you deploy.
 
     When you run TPU workloads through GKE, capacity checks follow Compute Engine quota paths rather than direct TPU quota paths.
 
-    **Note**: Review quota before launch windows, because scheduling can fail even when code and configuration are correct.
+**Note**: Review quota before launch windows, because scheduling can fail even when code and configuration are correct.
 
 For details, see [Cloud TPU quotas](https://cloud.google.com/tpu/docs/quota).
 

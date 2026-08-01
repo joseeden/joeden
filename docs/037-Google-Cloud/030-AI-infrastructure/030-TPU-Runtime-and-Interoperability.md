@@ -15,9 +15,7 @@ last_update:
 
 ## Overview
 
-Runtime selection and accelerator portability affect both delivery speed and model performance.
-
-This page covers TPU software versions and practical strategies for switching between TPU and GPU paths.
+Runtime selection and accelerator portability affect both delivery speed and model performance. This page covers TPU software versions and practical strategies for switching between TPU and GPU paths.
 
 ## TPU Software Version
 
@@ -85,26 +83,26 @@ Notes:
 
 1. Start with a TPU-first model and check TPU capacity.
 
-    Do you have access to the required TPUs?
-    If yes, you can secure the TPUs and deploy. You've found your match.
+    - Do you have access to the required TPUs?
+    - If yes, you can secure the TPUs and deploy. You've found your match.
 
 2. If TPU capacity is unavailable, check whether the model can run on GPU.
 
-    Many frameworks support both, so this is often possible.
+    - Many frameworks support both, so this is often possible.
 
 3. If it can run on GPU, verify GPU capacity.
 
-    Check if you have access to the required GPUs. 
+    - Check if you have access to the required GPUs.
 
 4. If it cannot run on GPU, your model strictly needs a TPU or significant changes.
 
-    Estimate the effort to convert the model.
+    - Estimate the effort to convert the model.
 
 5. If conversion is feasible, continue with GPU capacity planning.
 
 6. If conversion is not feasible and TPU capacity is unavailable, you're stuck.
 
-    Revisit the model or resource strategy.
+    - Revisit the model or resource strategy.
 
 
 ### 2. Start from GPU-optimized code
@@ -121,32 +119,32 @@ Notes:
 
 1. Start with a GPU-first model and check GPU capacity.
 
-    Do you have access to the required GPUs?
-    If yes, secure the GPUs and deploy. This is the most direct route.
+    - Do you have access to the required GPUs?
+    - If yes, secure the GPUs and deploy. This is the most direct route.
 
 2. If GPU capacity is unavailable, can you use smaller GPUs?
 
-    Sometimes, less powerful GPUs can work for your workload.
+    - Sometimes, less powerful GPUs can work for your workload.
 
 3. If smaller GPUs are viable, secure that capacity and deploy.
 
 4. If smaller GPUs are not viable, check whether the model can run on TPU.
 
-    This is a key flexibility point.
+    - This is a key flexibility point.
 
 5. If it can run on TPU, verify TPU capacity.
 
-    This decision loops you to the TPU access question.
+    - This decision loops you to the TPU access question.
 
 6. If it cannot run on TPU, your model is firmly GPU-bound.
 
-    Estimate the effort to convert the model.
+    - Estimate the effort to convert the model.
 
 7. If conversion is feasible, continue with TPU capacity planning.
 
 8. If conversion is not feasible and GPU capacity is unavailable, you're stuck.
  
-    Revisit the model or resource strategy.
+    - Revisit the model or resource strategy.
 
 
 
