@@ -8,7 +8,7 @@ tags:
 - Google Cloud
 - DevOps
 - Certifications
-sidebar_position: 5
+sidebar_position: 25
 last_update:
   date: 9/21/2020
 ---
