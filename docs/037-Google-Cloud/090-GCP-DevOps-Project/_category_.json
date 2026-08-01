@@ -1,6 +1,6 @@
 {
   "label": "GCP DevOps",
-  "position": 20,
+  "position": 90,
   "link": {
     "type": "doc",
     "id": "gcp-devops-project"

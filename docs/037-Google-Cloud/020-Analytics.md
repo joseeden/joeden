@@ -32,6 +32,7 @@ Databases organize structured data for easy access and management. When many use
 
 
 ## BigQuery 
+
 For analytics, data is collected and structured in a central system called data warehouses. Data warehouses are like central hubs, collecting and organizing data to make insights faster and easier. 
 
 **BigQuery** is GCP’s serverless data warehouse for large-scale analytics.
@@ -41,13 +42,23 @@ For analytics, data is collected and structured in a central system called data 
 
 BigQuery turns large amounts of structured data into actionable insights with minimal setup. It works alongside Cloud SQL but is optimized for large-scale queries, letting you focus on insights instead of setup.
 
+BigQuery also pairs well with BI tools like Looker, which helps teams turn warehouse data into dashboards and reports.
+
 <div class='img-center'>
 
 ![](/img/docs/09282025-bigquery.png)
 
 </div>
 
-GCP can also be integrated with **Looker** for visualizations and dashboards, making it easier to turn data into clear insights and actionable decisions.
+## Looker
+
+Looker is GCP’s business intelligence platform for visualizing and sharing data.
+
+- Creates interactive dashboards and reports
+- Lets teams explore trusted business data
+- Works with BigQuery and many SQL databases
+
+Looker helps teams turn analytics outputs into shared insights and decisions.
 
 <div class='img-center'>
 
