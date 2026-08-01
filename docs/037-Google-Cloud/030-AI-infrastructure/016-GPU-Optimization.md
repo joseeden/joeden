@@ -106,13 +106,18 @@ Runtime goodput measures forward-progress time as a fraction of time when resour
 
 An analytical model can be written as:
 
-$$
-t_c = \sum_{i=1}^{N}(t_{rm} + t_{ch})
-$$
+```text
+tc = Σ(i=1 to N) (trm + tch)
 
-$$
-\text{Runtime Goodput} = \frac{t_w - t_c - \sum_{i=1}^{N} t_{re}}{t_w - \sum_{i=1}^{N} t_{re}}
-$$
+Runtime Goodput = (tw - tc - Σ(i=1 to N) tre) / (tw - Σ(i=1 to N) tre)
+```
+
+
+**EDIT**: How they look like: 
+
+\(t_{c}=\sum _{i=1}^{N}(t_{rm}+t_{ch})\)
+
+\(\text{Runtime\ Goodput}=\frac{t_{w}-t_{c}-\sum _{i=1}^{N}t_{re}}{t_{w}-\sum _{i=1}^{N}t_{re}}\)
 
 Notes:
 
@@ -123,7 +128,7 @@ Notes:
 | `tre`     | Time to reschedule the slice.                         |
 | `tw`      | Goodput evaluation period.                            |
 | `N`       | Number of interruptions.                              |
-| `tc`      | Total interruption cost (badput) in the period.      |
+| `tc`      | Total interruption cost (badput) in the period.       |
 
 In practice, improving runtime goodput means reducing `tch` and `trm`, while scheduling improvements mostly reduce `tre`.
 
