@@ -74,6 +74,23 @@ BigQuery makes it easy to turn data insights into predictive models.
 
 </div>
 
+## BigQuery and Vertex AI
+
+BigQuery and Vertex AI solve different parts of the ML workflow, and they work well together.
+
+- BigQuery is best for storing, querying, and preparing analytical data
+- BigQuery ML lets you train simpler models close to the data
+- Vertex AI is better for managing the full ML lifecycle, including training, deployment, and prediction services
+
+Use BigQuery when the goal is analysis or lightweight model building, and use Vertex AI when you need a broader platform for production ML workflows.
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-08-01163142.png)
+
+</div>
+
+
 
 ## Vertex AI
 
