@@ -3,11 +3,11 @@ title: "AI Hypercomputer"
 description: "GCP AI Hypercomputer for large-scale AI workloads"
 tags: 
 - Cloud
-- GCP 
 - Google
 - Google Cloud
 - DevOps
-- Certifications
+- AI
+- Machine Learning
 sidebar_position: 10
 last_update:
   date: 11/09/2024
