@@ -1,0 +1,152 @@
+<svg viewBox="0 0 1920 1080" width="100%" xmlns="http://www.w3.org/2000/svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap');
+  text { font-family: 'Roboto', sans-serif; }
+  text::selection { background: #fbbc04; color: #202124; }
+  text::-moz-selection { background: #fbbc04; color: #202124; }
+</style>
+<defs>
+  <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#5f6368"/>
+  </marker>
+  <pattern id="dots" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1.5" fill="#e0e0e0"/>
+  </pattern>
+</defs>
+
+<!-- Background -->
+<rect width="1920" height="1080" fill="#ffffff"/>
+<rect width="1920" height="1080" fill="url(#dots)"/>
+
+<!-- Header -->
+<rect x="0" y="0" width="1920" height="88" fill="#f8f9fa"/>
+<line x1="0" y1="88" x2="1920" y2="88" stroke="#e0e0e0" stroke-width="1"/>
+<text x="960" y="54" text-anchor="middle" font-size="38" font-weight="700" fill="#202124" font-family="'Roboto', sans-serif">Security, Privacy &amp; Compliance: Defense in Depth on Google Cloud</text>
+
+<!-- Footer -->
+<rect x="0" y="1008" width="1920" height="72" fill="#f8f9fa"/>
+<line x1="0" y1="1008" x2="1920" y2="1008" stroke="#e0e0e0" stroke-width="1"/>
+<text x="960" y="1051" text-anchor="middle" font-size="22" font-weight="400" fill="#9aa0a6" font-family="'Roboto', sans-serif">Google Cloud Platform · Pillar Deep Dive: Security, Privacy &amp; Compliance</text>
+
+<!-- ============================================================
+     LAYOUT
+     4 cards + 3 arrows
+     CARD_W=340 CARD_H=460 CARD_TOP=200 CARD_BOTTOM=660
+     GAP=80 (breathing room for arrows)
+     Total = 4×340 + 3×80 = 1360+240 = 1600
+     Start x = (1920-1600)/2 = 160
+     card[0]: x=160  cx=330   (Identity)
+     card[1]: x=580  cx=750   (Network)
+     card[2]: x=1000 cx=1170  (Data)
+     card[3]: x=1420 cx=1590  (Visibility)
+     icon_group_y = 200+40 = 240
+     icon bottom  = 240+96 = 336
+     title_y      = 336+40 = 376
+     sub1_y       = 376+38 = 414
+     sub2_y       = 414+38 = 452
+     sub3_y       = 452+38 = 490   (490 < 660-50=610 ✓)
+     note_y       = 200+460-36 = 624  (624 > 490+40=530 ✓)
+     Layer pill y = CARD_TOP - 52 = 148
+     ============================================================ -->
+
+<!-- GCP overlay wrapping all 4 cards -->
+<rect x="120" y="152" width="1680" height="556" rx="16"
+  fill="#e8f0fe" fill-opacity="0.35" stroke="#4285f4" stroke-width="2" stroke-dasharray="8 4"/>
+
+<!-- Layer label pills above each card -->
+<!-- Layer 1 -->
+<rect x="202" y="148" width="256" height="36" rx="18" fill="#1a73e8"/>
+<text x="330" y="172" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff" font-family="'Roboto', sans-serif">Layer 1 · Identity</text>
+<!-- Layer 2 -->
+<rect x="622" y="148" width="256" height="36" rx="18" fill="#1a73e8"/>
+<text x="750" y="172" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff" font-family="'Roboto', sans-serif">Layer 2 · Network</text>
+<!-- Layer 3 -->
+<rect x="1042" y="148" width="256" height="36" rx="18" fill="#1a73e8"/>
+<text x="1170" y="172" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff" font-family="'Roboto', sans-serif">Layer 3 · Data</text>
+<!-- Layer 4 -->
+<rect x="1462" y="148" width="256" height="36" rx="18" fill="#1a73e8"/>
+<text x="1590" y="172" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff" font-family="'Roboto', sans-serif">Layer 4 · Visibility</text>
+
+<!-- ===== CARD 0: IAM x=160 cx=330 ===== -->
+<rect x="160" y="200" width="340" height="460" rx="12" fill="#e8f0fe" stroke="#c5cae9" stroke-width="1.5"/>
+<!-- IAM icon: translate(cx-48, 240) = translate(282, 240) scale(4) -->
+<g transform="translate(282,240) scale(4)">
+  <path fill-rule="evenodd" fill="#669df6" d="M12,2,3.79,5.42v5.63c0,5.06,3.5,9.8,8.21,11,4.71-1.15,8.21-5.89,8.21-10.95V5.42Zm0,3.79a2.63,2.63,0,1,1-1.86.77A2.63,2.63,0,0,1,12,5.79Zm4.11,11.15A8.64,8.64,0,0,1,12,19.87a8.64,8.64,0,0,1-4.11-2.93V14.69c0-1.67,2.74-2.52,4.11-2.52s4.11.85,4.11,2.52v2.25Z"/>
+  <path fill-rule="evenodd" fill="#4285f4" d="M12,2V5.79a2.63,2.63,0,1,1,0,5.26v1.12c1.37,0,4.11.85,4.11,2.52v2.25A8.64,8.64,0,0,1,12,19.87V22c4.71-1.15,8.21-5.89,8.21-10.95V5.42Z"/>
+</g>
+<text x="330" y="376" text-anchor="middle" font-size="26" font-weight="700" fill="#1a73e8" font-family="'Roboto', sans-serif">IAM</text>
+<text x="330" y="414" text-anchor="middle" font-size="21" font-weight="400" fill="#669df6" font-family="'Roboto', sans-serif">Who can access what</text>
+<text x="330" y="452" text-anchor="middle" font-size="21" font-weight="400" fill="#669df6" font-family="'Roboto', sans-serif">Least privilege roles</text>
+<text x="330" y="490" text-anchor="middle" font-size="21" font-weight="400" fill="#669df6" font-family="'Roboto', sans-serif">Identity-Aware Proxy</text>
+<text x="330" y="624" text-anchor="middle" font-size="19" fill="#1a73e8" font-family="'Roboto', sans-serif">✓ Zero trust enforcement</text>
+
+<!-- Arrow 0→1 -->
+<line x1="502" y1="430" x2="576" y2="430" stroke="#5f6368" stroke-width="2.5" marker-end="url(#arr)"/>
+
+<!-- ===== CARD 1: VPC / Network x=580 cx=750 ===== -->
+<rect x="580" y="200" width="340" height="460" rx="12" fill="#e8f0fe" stroke="#c5cae9" stroke-width="1.5"/>
+<!-- VPC icon: translate(cx-48, 240) = translate(702, 240) scale(4) -->
+<g transform="translate(702,240) scale(4)">
+  <rect fill="#aecbfa" x="16" y="2" width="6" height="6"/>
+  <rect fill="#669df6" x="19" y="2" width="3" height="6"/>
+  <rect fill="#aecbfa" x="16" y="16" width="6" height="6"/>
+  <rect fill="#669df6" x="19" y="16" width="3" height="6"/>
+  <rect fill="#aecbfa" x="2" y="2" width="6" height="6"/>
+  <rect fill="#669df6" x="5" y="2" width="3" height="6"/>
+  <rect fill="#aecbfa" x="2" y="16" width="6" height="6"/>
+  <rect fill="#669df6" x="5" y="16" width="3" height="6"/>
+  <rect fill="#669df6" x="8" y="4" width="8" height="2"/>
+  <rect fill="#669df6" x="8" y="18" width="8" height="2"/>
+  <rect fill="#669df6" x="18" y="8" width="2" height="8"/>
+  <rect fill="#669df6" x="4" y="8" width="2" height="8"/>
+  <rect fill="#4285f4" x="4" y="8" width="2" height="2"/>
+  <rect fill="#4285f4" x="18" y="8" width="2" height="2"/>
+  <rect fill="#4285f4" x="8" y="4" width="2" height="2"/>
+  <rect fill="#4285f4" x="8" y="18" width="2" height="2"/>
+</g>
+<text x="750" y="376" text-anchor="middle" font-size="26" font-weight="700" fill="#1a73e8" font-family="'Roboto', sans-serif">VPC &amp; Firewall</text>
+<text x="750" y="414" text-anchor="middle" font-size="21" font-weight="400" fill="#669df6" font-family="'Roboto', sans-serif">Network segmentation</text>
+<text x="750" y="452" text-anchor="middle" font-size="21" font-weight="400" fill="#669df6" font-family="'Roboto', sans-serif">Hierarchical firewall policies</text>
+<text x="750" y="490" text-anchor="middle" font-size="21" font-weight="400" fill="#669df6" font-family="'Roboto', sans-serif">VPC Service Controls</text>
+<text x="750" y="624" text-anchor="middle" font-size="19" fill="#1a73e8" font-family="'Roboto', sans-serif">✓ Blocks data exfiltration</text>
+
+<!-- Arrow 1→2 -->
+<line x1="922" y1="430" x2="996" y2="430" stroke="#5f6368" stroke-width="2.5" marker-end="url(#arr)"/>
+
+<!-- ===== CARD 2: Cloud KMS / Data x=1000 cx=1170 ===== -->
+<rect x="1000" y="200" width="340" height="460" rx="12" fill="#e8f0fe" stroke="#c5cae9" stroke-width="1.5"/>
+<!-- KMS icon: translate(cx-48, 240) = translate(1122, 240) scale(4) -->
+<g transform="translate(1122,240) scale(4)">
+  <path fill-rule="evenodd" fill="#669df6" d="M11.32,17.06H10v1.4h1.37v.63h1.43V12.18a3.47,3.47,0,0,0,2.67-3.34,3.42,3.42,0,1,0-4.1,3.36v2.12H9.26v1.4h2.06ZM12,2l8.21,3.42v5.63c0,5.06-3.5,9.8-8.21,11-4.71-1.15-8.21-5.89-8.21-10.95V5.42Zm0,5a1.88,1.88,0,0,1,.72,3.62A1.88,1.88,0,1,1,12,7Z"/>
+  <path fill-rule="evenodd" fill="#4285f4" d="M12,19.09h.75V12.18a3.47,3.47,0,0,0,2.67-3.34A3.42,3.42,0,0,0,12,5.42V2l8.21,3.42v5.63c0,5.06-3.5,9.8-8.21,11V19.09ZM12,7a1.88,1.88,0,0,1,.72,3.62,1.09,1.09,0,0,1-.72.15Z"/>
+</g>
+<text x="1170" y="376" text-anchor="middle" font-size="26" font-weight="700" fill="#1a73e8" font-family="'Roboto', sans-serif">Cloud KMS</text>
+<text x="1170" y="414" text-anchor="middle" font-size="21" font-weight="400" fill="#669df6" font-family="'Roboto', sans-serif">Encryption at rest</text>
+<text x="1170" y="452" text-anchor="middle" font-size="21" font-weight="400" fill="#669df6" font-family="'Roboto', sans-serif">&amp; in transit by default</text>
+<text x="1170" y="490" text-anchor="middle" font-size="21" font-weight="400" fill="#669df6" font-family="'Roboto', sans-serif">Customer-managed keys</text>
+<text x="1170" y="624" text-anchor="middle" font-size="19" fill="#1a73e8" font-family="'Roboto', sans-serif">✓ You control the keys</text>
+
+<!-- Arrow 2→3 -->
+<line x1="1342" y1="430" x2="1416" y2="430" stroke="#5f6368" stroke-width="2.5" marker-end="url(#arr)"/>
+
+<!-- ===== CARD 3: Security Command Center x=1420 cx=1590 ===== -->
+<rect x="1420" y="200" width="340" height="460" rx="12" fill="#e8f0fe" stroke="#c5cae9" stroke-width="1.5"/>
+<!-- SCC icon: translate(cx-48, 240) = translate(1542, 240) scale(4) -->
+<g transform="translate(1542,240) scale(4)">
+  <path fill="#4285f4" d="M13.31,6.85a5.23,5.23,0,0,1,3.75,3.75h3.53V5.24L13.31,2Z"/>
+  <path fill="#4285f4" d="M6.93,10.61a5.22,5.22,0,0,1,3.75-3.75V2L3.41,5.24v5.37Z"/>
+  <path fill="#4285f4" d="M10.69,17a5.23,5.23,0,0,1-3.75-3.75H3.63A12,12,0,0,0,10.69,22Z"/>
+  <path fill="#4285f4" d="M17.07,13.25A5.23,5.23,0,0,1,13.32,17v5a12,12,0,0,0,7.05-8.75Z"/>
+  <circle fill="#669df6" cx="12" cy="11.92" r="2.63"/>
+</g>
+<text x="1590" y="376" text-anchor="middle" font-size="26" font-weight="700" fill="#1a73e8" font-family="'Roboto', sans-serif">Security Command</text>
+<text x="1590" y="410" text-anchor="middle" font-size="26" font-weight="700" fill="#1a73e8" font-family="'Roboto', sans-serif">Center</text>
+<text x="1590" y="452" text-anchor="middle" font-size="21" font-weight="400" fill="#669df6" font-family="'Roboto', sans-serif">Threat detection</text>
+<text x="1590" y="490" text-anchor="middle" font-size="21" font-weight="400" fill="#669df6" font-family="'Roboto', sans-serif">Misconfiguration alerts</text>
+<text x="1590" y="624" text-anchor="middle" font-size="19" fill="#1a73e8" font-family="'Roboto', sans-serif">✓ Centralised visibility</text>
+
+<!-- Bottom callout bar: "No single layer is sufficient — the strength comes from the combination" -->
+<rect x="160" y="720" width="1600" height="72" rx="12" fill="#1a73e8"/>
+<text x="960" y="764" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff" font-family="'Roboto', sans-serif">No single layer is sufficient — the strength of the architecture comes from the combination</text>
+
+</svg>
