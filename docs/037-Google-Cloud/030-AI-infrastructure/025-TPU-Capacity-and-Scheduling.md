@@ -3,14 +3,12 @@ title: "TPU Capacity and Scheduling"
 description: "Cloud TPU consumption options, quota planning, and DWS scheduling modes"
 tags:
 - Cloud
-- GCP
 - Google
 - Google Cloud
 - DevOps
-- Certifications
 - AI
 - Machine Learning
-sidebar_position: 30
+sidebar_position: 25
 last_update:
   date: 08/01/2026
 ---
@@ -53,21 +51,33 @@ Quota is the pre-approved allowance that controls how many resources your projec
 
 For Cloud TPU workloads, quota behavior depends on how you deploy.
 
-### Direct Cloud TPU API workloads
+- **Direct Cloud TPU API workloads**
 
-When you use Cloud TPU APIs directly, you need TPU core quota for the TPU version and capacity type you request.
+    When you use Cloud TPU APIs directly, you need TPU core quota for the TPU version and capacity type you request.
 
-### GKE-managed TPU workloads
+- **GKE-managed TPU workloads**
 
-When you run TPU workloads through GKE, capacity checks follow Compute Engine quota paths rather than direct TPU quota paths.
+    When you run TPU workloads through GKE, capacity checks follow Compute Engine quota paths rather than direct TPU quota paths.
 
-**Note**: Review quota before launch windows, because scheduling can fail even when code and configuration are correct.
+    **Note**: Review quota before launch windows, because scheduling can fail even when code and configuration are correct.
 
 For details, see [Cloud TPU quotas](https://cloud.google.com/tpu/docs/quota).
 
-## Dynamic Workload Scheduler (DWS)
+## Dynamic Workload Scheduler
 
-DWS improves access to high-demand accelerators by matching requests against finite supply.
+Dynamic Workload Scheduler (DWS)  improves access to high-demand accelerators, such as TPUs and GPUs, by matching requests against finite supply.
+
+DWS offers two provisioning modes, depending on how certain your timing is:
+
+- Flex start mode
+- Calendar mode
+
+DWS is built on Google Borg technology and coordinates accelerators as one schedule. Benefits include:
+
+- Improves access to scarce capacity.
+- Helps control spending for multi-accelerator workloads.
+
+It also supports TPUs and NVIDIA GPUs across MIGs, GKE, Agent Platform, and Batch.
 
 :::info
 
