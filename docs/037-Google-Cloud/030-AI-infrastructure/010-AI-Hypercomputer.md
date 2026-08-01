@@ -48,7 +48,7 @@ This layer provides the raw compute and networking needed for large AI jobs.
 
 Storage options include block, file, and object storage. Hyperdisk ML, Cloud Storage FUSE, Parallelstore, and Google Cloud Managed Lustre are examples of storage services tuned for AI and HPC use cases.
 
-For TPU-specific architecture and usage guidance, see [Cloud TPUs](045-Cloud-TPUs.md).
+<!-- For TPU-specific architecture and usage guidance, see [Cloud TPUs](045-Cloud-TPUs.md). -->
 
 <div class='img-center'>
 

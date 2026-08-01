@@ -25,7 +25,7 @@ Capacity planning for Cloud TPUs is mostly about three decisions:
 
 This page covers consumption options, quota requirements, and Dynamic Workload Scheduler (DWS).
 
-## Choosing Consumption Options
+## Consumption Options
 
 Think of each option as a different rental agreement for TPU compute.
 
