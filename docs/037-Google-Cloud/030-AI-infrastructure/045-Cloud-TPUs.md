@@ -82,7 +82,3 @@ The combination of specialized silicon and TPU-aware software can improve both s
 
 **Note**: TPUs are not a replacement for your ML framework. They are the accelerator layer that works with the TPU compiler and the surrounding Google Cloud infrastructure.
 
-## Related Topics
-
-- [AI Hypercomputer](040-AI-Hypercomputer.md) for the broader infrastructure and scheduling layer
-- [AI and ML](../025-AI-and-ML.md) for the platform-level ML services built on GCP
