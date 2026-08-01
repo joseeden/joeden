@@ -112,12 +112,14 @@ tc = Σ(i=1 to N) (trm + tch)
 Runtime Goodput = (tw - tc - Σ(i=1 to N) tre) / (tw - Σ(i=1 to N) tre)
 ```
 
+**EDIT:** How they actually look like:
 
-**EDIT**: How they look like: 
+<div class='img-center'>
 
-\(t_{c}=\sum _{i=1}^{N}(t_{rm}+t_{ch})\)
+![](/img/docs/Screenshot2026-08-02032815.png)
 
-\(\text{Runtime\ Goodput}=\frac{t_{w}-t_{c}-\sum _{i=1}^{N}t_{re}}{t_{w}-\sum _{i=1}^{N}t_{re}}\)
+</div>
+
 
 Notes:
 
