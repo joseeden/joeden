@@ -10,7 +10,7 @@ tags:
 - Certifications
 sidebar_position: 40
 last_update:
-  date: 9/21/2020
+  date: 11/09/2024
 ---
 
 ## Overview
@@ -47,6 +47,8 @@ This layer provides the raw compute and networking needed for large AI jobs.
 - Optimized storage for large datasets and model serving
 
 Storage options include block, file, and object storage. Hyperdisk ML, Cloud Storage FUSE, Parallelstore, and Google Cloud Managed Lustre are examples of storage services tuned for AI and HPC use cases.
+
+For TPU-specific architecture and usage guidance, see [Cloud TPUs](045-Cloud-TPUs.md).
 
 <div class='img-center'>
 
@@ -239,14 +241,14 @@ Google Cloud provides a structured decision framework for choosing the optimal M
   - Choose GCE when you need direct infrastructure control
   - Choose Cloud Batch when VM-based batch management is the better fit
 
-Practical rule of thumb:
+**Practical rule of thumb:**
 
 - Use Vertex AI for managed ML development
 - Use BQML for data teams working mostly in BigQuery
 - Use GKE or GCE when you need more infrastructure control
 - Use Cloud Run when the workload is event-driven and serverless fits best
 
-**Note**: The decision tree is about platform fit, not model quality. It helps you choose the operational layer that matches your team and workload.
+The decision tree is about platform fit, not model quality. It helps you choose the operational layer that matches your team and workload.
 
 <div class='img-center'>
 
