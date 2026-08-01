@@ -23,6 +23,8 @@ GPUs are a core accelerator for modern AI workloads on Google Cloud.
 
 Google Cloud offers GPU options that range from foundation model training clusters to cost-optimized inference platforms.
 
+For provisioning paths and software acceleration details, see [GPU Cluster Provisioning](/docs/037-Google-Cloud/030-AI-infrastructure/018-GPU-Cluster-Provisioning.md) and [GPU Framework Acceleration](/docs/037-Google-Cloud/030-AI-infrastructure/031-GPU-Framework-Acceleration.md).
+
 ## How GPUs Run AI Workloads
 
 GPUs are built for parallel arithmetic, which makes them effective for tensor-heavy AI workloads.
@@ -174,4 +176,6 @@ Use workload type as the starting point when choosing a GPU machine family.
 | **Serving inference**            | A4, A3 Ultra, A3 Mega, A3 High, A2, and G2                                                                        |
 | **Graphics-intensive workloads** | G2, and N1 with T4                                                                                                 |
 | **High performance computing**   | Any accelerator-optimized machine series. The best choice depends on how much computation is offloaded to the GPU. |
+
+Provisioning platform choice and framework optimization also affect overall results, especially for distributed training and multi-accelerator portability.
 
