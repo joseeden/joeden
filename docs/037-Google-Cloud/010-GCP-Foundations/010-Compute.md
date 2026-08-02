@@ -3,11 +3,10 @@ title: "Compute"
 description: "GCP Compute Services"
 tags: 
 - Cloud
-- GCP 
 - Google
 - Google Cloud
-- DevOps
 - Certifications
+- DevOps
 sidebar_position: 10
 last_update:
   date: 9/21/2020

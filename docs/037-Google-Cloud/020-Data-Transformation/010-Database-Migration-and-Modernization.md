@@ -3,11 +3,10 @@ title: "Database Migration and Modernization"
 description: "Migrating databases to GCP"
 tags: 
 - Cloud
-- GCP 
 - Google
 - Google Cloud
-- DevOps
 - Certifications
+- DevOps
 sidebar_position: 10
 last_update:
   date: 9/21/2020

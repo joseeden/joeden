@@ -3,11 +3,10 @@ title: "GCP Overview"
 description: "First things you need to know"
 tags: 
 - Cloud
-- GCP 
 - Google
 - Google Cloud
-- DevOps
 - Certifications
+- DevOps
 sidebar_position: 1
 last_update:
   date: 9/21/2020

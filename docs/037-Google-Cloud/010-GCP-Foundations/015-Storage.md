@@ -3,11 +3,10 @@ title: "Storage"
 description: "GCP Storage Services"
 tags: 
 - Cloud
-- GCP 
 - Google
 - Google Cloud
-- DevOps
 - Certifications
+- DevOps
 sidebar_position: 15
 last_update:
   date: 9/21/2020

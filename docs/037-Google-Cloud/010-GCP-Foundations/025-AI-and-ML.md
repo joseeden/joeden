@@ -3,11 +3,10 @@ title: "AI and ML"
 description: "GCP AI and ML Services"
 tags: 
 - Cloud
-- GCP 
 - Google
 - Google Cloud
-- DevOps
 - Certifications
+- DevOps
 sidebar_position: 25
 last_update:
   date: 9/21/2020

@@ -3,11 +3,10 @@ title: "Initial Setup"
 description: "Initial setup for GCP"
 tags: 
 - Cloud
-- GCP 
 - Google
 - Google Cloud
-- DevOps
 - Certifications
+- DevOps
 sidebar_position: 5
 last_update:
   date: 9/21/2020

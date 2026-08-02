@@ -3,11 +3,10 @@ title: "Well-Architected Framework"
 description: "Google Cloud Well-Architected Framework for design and PCA decisions"
 tags: 
 - Cloud
-- GCP 
 - Google
 - Google Cloud
-- DevOps
 - Certifications
+- DevOps
 sidebar_position: 50
 last_update:
   date: 9/21/2020

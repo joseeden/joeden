@@ -3,11 +3,10 @@ title: "Analytics"
 description: "GCP Smart Analytics Services"
 tags: 
 - Cloud
-- GCP 
 - Google
 - Google Cloud
-- DevOps
 - Certifications
+- DevOps
 sidebar_position: 20
 last_update:
   date: 9/21/2020
