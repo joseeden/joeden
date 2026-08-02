@@ -1,5 +1,5 @@
 ---
-title: "Business Use Case and Product Strategy"
+title: "Use Case and Product Strategy"
 description: "How to read Google Cloud scenarios by identifying the real business driver and product position"
 tags: 
 - Cloud
@@ -7,7 +7,7 @@ tags:
 - Google Cloud
 - Certifications
 - DevOps
-sidebar_position: 55
+sidebar_position: 25
 last_update:
   date: 8/3/2026
 ---
