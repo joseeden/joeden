@@ -37,11 +37,11 @@ Terraform can be used to:
 5. Run the workflow using [Workflow and CLI](/docs/048-Infrastructure-as-Code/010-Terraform/025-Workflow-and-CLI.md) and [Execution](/docs/048-Infrastructure-as-Code/010-Terraform/028-Execution.md).
 6. Continue with [State Management](/docs/048-Infrastructure-as-Code/010-Terraform/031-State-Management.md), [Dependencies and Graph](/docs/048-Infrastructure-as-Code/010-Terraform/034-Dependencies-and-Graph.md), and [Provisioners and Packaging](/docs/048-Infrastructure-as-Code/010-Terraform/037-Provisioners-and-Packaging.md). -->
 
-## Install Terraform
+## Setup Terraform
 
 To use Terraform, it needs to be installed on your machine.
 
-See: [Install Terraform.](/docs/001-Personal-Notes/050-Project-Pre-requisites/015-Terraform.md)
+See: [Install Terraform](/docs/048-Infrastructure-as-Code/010-Terraform/011-Installation.md)
 
 ## Workspaces
 
