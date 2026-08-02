@@ -6,4 +6,4 @@ last_update:
 ---
 
 
-The instructions for setting up Terraform has been moved to [Terraform Installation and Setup](/docs/048-Infrastructure-as-Code/010-Terraform/011-Installation) page.
+The instructions for setting up Terraform has been moved to [Terraform Installation and Setup](/docs/048-Infrastructure-as-Code/010-Terraform/011-Installation.md) page.
