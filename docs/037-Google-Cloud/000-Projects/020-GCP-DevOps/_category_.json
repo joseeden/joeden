@@ -1,0 +1,7 @@
+{
+  "label": "GCP DevOps",
+  "position": 20,
+  "customProps": {
+    "project": true
+  }
+}

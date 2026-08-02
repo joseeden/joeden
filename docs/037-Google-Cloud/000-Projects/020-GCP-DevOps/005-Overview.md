@@ -1,6 +1,5 @@
 ---
 title: "GCP DevOps Project"
-id: gcp-devops-project
 tags: 
 - Google Cloud
 - DevOps
@@ -44,12 +43,14 @@ Architecture:
 
 ## Sprints 
 
-This project will be broken down into seven sprints. 
+This project will be broken down into six sprints. 
 
-- [Overview](#overview)
-- [Pre-requisites](#pre-requisites)
-- [Sprints](#sprints)
-- [Reference](#reference)
+- [Sprint 1](/docs/037-Google-Cloud/000-Projects/020-GCP-DevOps-Project/011-Sprint-01.md)
+- [Sprint 2](/docs/037-Google-Cloud/000-Projects/020-GCP-DevOps-Project/012-Sprint-02.md)
+- [Sprint 3](/docs/037-Google-Cloud/000-Projects/020-GCP-DevOps-Project/013-Sprint-03.md)
+- [Sprint 4](/docs/037-Google-Cloud/000-Projects/020-GCP-DevOps-Project/014-Sprint-04.md)
+- [Sprint 5](/docs/037-Google-Cloud/000-Projects/020-GCP-DevOps-Project/015-Sprint-05.md)
+- [Sprint 6](/docs/037-Google-Cloud/000-Projects/020-GCP-DevOps-Project/016-Sprint-06.md)
 
 <!-- 
 ## NOTES 
