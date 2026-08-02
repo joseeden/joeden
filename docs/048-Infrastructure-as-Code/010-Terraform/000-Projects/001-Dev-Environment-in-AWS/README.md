@@ -29,7 +29,7 @@ The infrastructure includes:
 - EC2 instance
 - Terraform outputs
 
-Environment:
+Setup:
 
 - Windows 10 machine as the local workstation
 - VSCode and WSL
@@ -59,15 +59,20 @@ The finished configuration is split into a few files so the intent is easier to 
 
 **Note**: Terraform only loads `.tf` files from the current working directory. If you run from `main/`, copy the variable files and templates into that directory or update the file paths in `main.tf`.
 
+See complete lab files in the GitHub repository: [All-Things-Terraform](https://github.com/joseeden/All-Things-Terraform/tree/master)
+
 ## Prerequisites
 
 Before running the lab, make sure the local workstation has:
 
-- Terraform installed
-- AWS credentials configured locally
-- An AWS profile that can create VPC, EC2, security group, route table, and key pair resources
-- An SSH key pair created locally
-- VSCode Remote SSH installed if you want to connect from VSCode
+- [Terraform installed](/docs/048-Infrastructure-as-Code/010-Terraform/011-Installation.md)
+- [AWS credentials configured locally](/docs/048-Infrastructure-as-Code/010-Terraform/011-Installation.md)
+<!-- - An AWS profile that can create VPC, EC2, security group, route table, and key pair resources -->
+- [An SSH key pair created locally](#generating-an-ssh-key-pair)
+- [VSCode Remote SSH installed (if you want to connect from VSCode)](https://code.visualstudio.com/docs/remote/ssh)
+
+
+#### Generating an SSH Key Pair 
 
 Generate a local SSH key if one does not already exist.
 
@@ -135,7 +140,16 @@ terraform init
 
 ## Build the Network
 
-The network layer creates a VPC, public subnet, internet gateway, public route table, default route, and route table association. The subnet uses `map_public_ip_on_launch = true` so instances launched in the subnet receive a public IP.
+The network layer creates the following resources:
+
+- VPC
+- Public subnet
+- Internet gateway
+- Public route table
+- Deefault route
+- Route table association
+
+Additional: The subnet uses `map_public_ip_on_launch = true` so instances launched in the subnet receive a public IP.
 
 ```hcl title="main/main.tf"
 resource "aws_vpc" "tst-vpc" {
@@ -213,17 +227,50 @@ aws_vpc.tst-vpc
 
 You can also verify them from the AWS Console.
 
+<div class='img-center'>
+
 ![](/img/docs/buildddevawsconsolevpccreate.png)
+
+</div>
+
+<div class='img-center'>
+
 ![](/img/docs/consolesubnetcreated.png)
-![](/img/docs/builddevigwcreated.png)
-![](/img/docs/builddevroutetablecreated.png)
+
+</div>
+
+<div class='img-center'>
+
 ![](/img/docs/builddevroutetableassoccreated.png)
+
+</div>
+
+From the VS Code Terraform extension, you can also view the resources in the state.
+
+<div class='img-center'>
+
+![](/img/docs/builddevigwcreated.png)
+
+</div>
+
+<div class='img-center'>
+
+![](/img/docs/builddevroutetablecreated.png)
+
+</div>
 
 ## Add Access and Compute
 
-The compute layer adds a security group, an AWS key pair, an Ubuntu AMI data source, and an EC2 instance.
+The compute layer adds the following:
 
-The security group below allows all inbound traffic from one trusted public IP and all outbound traffic. For a real environment, restrict ingress to the ports you actually need, such as SSH on `22`.
+- A security group
+- An AWS key pair
+- An Ubuntu AMI data source
+- An EC2 instance
+
+The security group below allows all inbound traffic from one trusted public IP and all outbound traffic. 
+
+**Note:** For a real environment, restrict ingress to the ports you actually need, such as SSH on `22`.
 
 ```hcl title="main/main.tf"
 resource "aws_security_group" "tst-sg-1" {
@@ -319,9 +366,23 @@ terraform apply -auto-approve
 
 The instance can take a few minutes to become ready while cloud-init runs the user data script.
 
+Once done, verify the resources from the AWS console. 
+
+<div class='img-center'>
+
 ![](/img/docs/builddevawsconsolesgcreated.png)
+
+</div>
+<div class='img-center'>
+
 ![](/img/docs/builddevkeypaircreated.png)
+
+</div>
+<div class='img-center'>
+
 ![](/img/docs/builddevec2instancecreated.png)
+
+</div>
 
 ## Connect to the Instance
 
@@ -407,18 +468,71 @@ cat /mnt/c/Users/Eden.Jose/.ssh/config
 
 Open VSCode Remote SSH and connect to the generated host.
 
-```text
-View > Command Palette > Remote-SSH: Connect to Host
-```
+Go to View ➜ Command Palette ➜ Remote-SSH: Connect to Host
+
+<div class='img-center'>
 
 ![](/img/docs/builddevremotesshextension.png)
+
+</div>
+
+When prompted, select the host entry that was added by Terraform.
+
+<div class='img-center'>
+
 ![](/img/docs/builddevvscoderemotedev.png)
+
+</div>
+
+Choose the Linux option if prompted for the platform. 
+
+<div class='img-center'>
+
 ![](/img/docs/builddevvscodechooselinux.png)
+
+</div>
+
+It will return the following prompt if the host is not yet trusted. Select "Continue" to add the host to the known hosts file.
+
+<div class='img-center'>
+
 ![](/img/docs/builddevremotedevcontinue.png)
+
+</div>
+
+You should see the VSCode Remote SSH window with the instance hostname (or IP address) in the lower left corner (highlighted in yellow).
+
+<div class='img-center'>
+
 ![](/img/docs/builddevconnectedtoremoteubuntu.png)
+
+</div>
+
+Select File ➜ Open Folder and choose the home folder for the `ubuntu` user. 
+
+<div class='img-center'>
+
 ![](/img/docs/builddevconnectedreoteselecthomefolder.png)
+
+</div>
+
+You'll be prompted to trust the folder. You can enable all features or choose to browse the folder in restricted mode.
+
+Select "Yes" to continue.
+
+<div class='img-center'>
+
 ![](/img/docs/builddevconnectedremotetrustauthors.png)
+
+</div>
+
+The folder will open in VSCode and you can start working on the remote instance. 
+
+<div class='img-center'>
+
 ![](/img/docs/builddevconnectedremotelyopenedfolder.png)
+
+</div>
 
 ## Variables and Outputs
 
