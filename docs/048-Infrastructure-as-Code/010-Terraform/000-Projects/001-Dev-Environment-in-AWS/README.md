@@ -67,7 +67,6 @@ Before running the lab, make sure the local workstation has:
 
 - [Terraform installed](/docs/048-Infrastructure-as-Code/010-Terraform/011-Installation.md)
 - [AWS credentials configured locally](/docs/048-Infrastructure-as-Code/010-Terraform/011-Installation.md)
-<!-- - An AWS profile that can create VPC, EC2, security group, route table, and key pair resources -->
 - [An SSH key pair created locally](#generating-an-ssh-key-pair)
 - [VSCode Remote SSH installed (if you want to connect from VSCode)](https://code.visualstudio.com/docs/remote/ssh)
 
