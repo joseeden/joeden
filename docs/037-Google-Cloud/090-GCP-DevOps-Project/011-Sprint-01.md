@@ -52,17 +52,14 @@ last_update:
 
 3. Enable branch protection on the main branch. 
 
-
     ![](/img/docs/gcp-devops-project-enable-branch-protections-how-it-is.png)
+
 
     To do this, go back to the Github repo > Settings > Branches > Add branch protection rule
 
-
     ![](/img/docs/gcp-devops-projct-enabled-branch-protection-settings.png)
 
-
     Put in "master" for branch  name and then tick the box for "Require a pull reqeust before merging. Click Create at the bottom.
-
 
     ![](/img/docs/gcp-devops-project-enabled-branch-protection-require-pull-request-with-borders.png)
 
@@ -121,15 +118,31 @@ last_update:
 
 7. Back at the Github repo, a new message will appear. Click the "Compare & pull request". The original text and the changes will appear at the bottom, highlighted with red and green. In the "Add a description" box, specify the change made and then click "Create pull request".
 
+    <div class='img-center'>
+
     ![](/img/docs/gcp-devops-project-add-simple-change-to-readme.png)
+
+    </div>
+
+    <div class='img-center'>
 
     ![](/img/docs/gcp-devops-project-create-pull-requestsss.png)
 
+    </div>
+
 8. In a team setting, a review will be done by another team member before it is merged. The members names will appear in the "Reviewer" section at the left. This is a self project, simply clik the Merge pull request > Confirm merge.
+
+    <div class='img-center'>
 
     ![](/img/docs/merging-pull-request-for-self-project.png)
 
+    </div>
+
+    <div class='img-center'>
+
     ![](/img/docs/gcp-devops-project-merged-pull-request-done-self-projectsssss.png)
+
+    </div>
     
     There is an option to delete the branch after every merge to the master branch, as this is a common practice. Whenever changes are merged to the master branch, it means that all changes have undergone testing, has been reviewed, and no additional change is needed. 
 
@@ -195,7 +208,11 @@ last_update:
     localhost:5000 
     ```
 
+    <div class='img-center'>
+
     ![](/img/docs/gcp-devops-project-flask-application-is-alive-can-be-accessed-through-browser.png)
+
+    </div>
 
 12. Since the application is running locally, we can now commit the changes. But first, make sure to check your current branch and verify the changes. Afterwards, commit and push the changes. 
 
@@ -253,18 +270,36 @@ last_update:
     #   
     ```
 
-13. Back at the Github repo, switch to the feature branch and open a pull request. 
+13. Back at the Github repo, switch to the feature branch.
+
+    <div class='img-center'>
 
     ![](/img/docs/gcp-devops-project-working-app-pushing-committing-changes-to-github.png)
 
+    </div>
+
+    Open a pull request.  
+    
+    <div class='img-center'>
+
     ![](/img/docs/gcp-devops-project-opened-pull-requests-for-changes-in-the-flask-app.png)
+
+    </div>
 
     Merge the PR.
 
+    <div class='img-center'>
+
     ![](/img/docs/gcp-devops-project-merged-working-changes-to-the-repo.png)
+
+    </div>
 
 
 14. At this point, we can now safely delete the feature branch. Click Delete branch.
 
+    <div class='img-center'>
+
     ![](/img/docs/gcp-devops-project-safely-deletee-feature-branch-sprint-01.png)
+
+    </div>
 

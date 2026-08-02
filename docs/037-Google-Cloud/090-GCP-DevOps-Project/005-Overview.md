@@ -27,6 +27,7 @@ Architecture:
 ![](/img/docs/gcp-devops-project-architecture-flow-how-app-will-be-deployed.png)
 
 
+
 ## Pre-requisites 
 
 - [Setup Github account](https://docs.github.com/en/get-started/onboarding/getting-started-with-your-github-account)
