@@ -1,6 +1,6 @@
 ---
-title: "Design Tradeoffs and Workload Disposition"
-description: "How to make architecture tradeoffs and decide what to do with an existing workload"
+title: "Design Tradeoffs"
+description: "High-level design tradeoffs for cloud architecture."
 tags: 
 - Cloud
 - Google

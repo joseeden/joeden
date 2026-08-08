@@ -1,11 +1,11 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.5.2 Chrome/142.0.7444.265 Electron/39.6.1 Safari/537.36" version="29.5.2" pages="5">
   <diagram id="p1" name="1-Synchronous-Integration">
-    <mxGraphModel dx="4478" dy="1464" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+    <mxGraphModel dx="2997" dy="993" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="CUTPdwhjqnGR4o4LFZp1-31" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#CCCCCC;" value="" vertex="1">
-          <mxGeometry height="270" width="1301" x="-1460" y="200" as="geometry" />
+        <mxCell id="CUTPdwhjqnGR4o4LFZp1-31" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="300" width="1330" x="-1470" y="190" as="geometry" />
         </mxCell>
         <mxCell id="4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#f2f7ff;strokeColor=#9fc4f5;fontColor=#123c82;fontSize=16;fontStyle=0;spacing=10;" value="" vertex="1">
           <mxGeometry height="120" width="205" x="-1410" y="300" as="geometry" />
@@ -81,12 +81,12 @@
     </mxGraphModel>
   </diagram>
   <diagram id="p2" name="2-Asynchronous-Messaging">
-    <mxGraphModel dx="5198" dy="1830" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+    <mxGraphModel dx="3556" dy="1390" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="NISJtwP7uExyiwvtr83o-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#CCCCCC;" value="" vertex="1">
-          <mxGeometry height="430" width="1200" x="-1430" y="160" as="geometry" />
+        <mxCell id="NISJtwP7uExyiwvtr83o-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="460" width="1250" x="-1450" y="150" as="geometry" />
         </mxCell>
         <mxCell id="3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#333333;fontSize=18;fontStyle=0;spacing=10;" value="Use when systems operate at different speeds or one event&amp;nbsp;&lt;div&gt;has multiple consumers.&lt;/div&gt;" vertex="1">
           <mxGeometry height="45" width="520" x="-1390" y="220" as="geometry" />
@@ -174,12 +174,12 @@
     </mxGraphModel>
   </diagram>
   <diagram id="p3" name="3-Event-Driven-Integration">
-    <mxGraphModel dx="5711" dy="2091" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+    <mxGraphModel dx="3230" dy="1158" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="W6j9EyrUG-StyXCL5a3q-13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#CCCCCC;" value="" vertex="1">
-          <mxGeometry height="620" width="1180" x="-1380" y="130" as="geometry" />
+        <mxCell id="W6j9EyrUG-StyXCL5a3q-13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="650" width="1210" x="-1390" y="120" as="geometry" />
         </mxCell>
         <mxCell id="3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#333333;fontSize=18;fontStyle=0;spacing=10;" value="Use when you need to react to state changes in GCP services." vertex="1">
           <mxGeometry height="40" width="700" x="-1320" y="170" as="geometry" />
@@ -248,7 +248,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="p4" name="4-Legacy-Adapter-Pattern">
-    <mxGraphModel dx="5711" dy="2091" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+    <mxGraphModel dx="3556" dy="1390" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -276,8 +276,8 @@
         <mxCell id="laAlgqFHKifO4AlndsLI-18" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; font-size: 16px;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;font style=&quot;color: rgb(0, 0, 0);&quot;&gt;Analytics Service&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;color: rgb(18, 60, 130);&quot;&gt;&lt;span style=&quot;font-size: 15px; background-color: transparent; line-height: 200%;&quot;&gt;&lt;font style=&quot;color: rgb(0, 0, 0); line-height: 100%;&quot;&gt;Consumer&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="60" width="150" x="-339.25" y="292.5" as="geometry" />
         </mxCell>
-        <mxCell id="WckxN8VXwmz7KvF2ZIDi-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#CCCCCC;" value="" vertex="1">
-          <mxGeometry height="560" width="1570" x="-1330" y="190" as="geometry" />
+        <mxCell id="WckxN8VXwmz7KvF2ZIDi-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="600" width="1620" x="-1350" y="170" as="geometry" />
         </mxCell>
         <mxCell id="WckxN8VXwmz7KvF2ZIDi-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#333333;fontSize=16;fontStyle=0;spacing=10;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Isolate legacy systems with an adapter layer.&lt;/font&gt;" vertex="1">
           <mxGeometry height="45" width="410" x="-1270" y="250" as="geometry" />
@@ -389,12 +389,12 @@
     </mxGraphModel>
   </diagram>
   <diagram id="p5" name="5-Integration-Pattern-Decision-Guide">
-    <mxGraphModel dx="1426" dy="850" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+    <mxGraphModel dx="1397" dy="993" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="LuBFPc4noezXXmhuIJue-20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#CCCCCC;" value="" vertex="1">
-          <mxGeometry height="695" width="1190" x="160" y="45" as="geometry" />
+        <mxCell id="LuBFPc4noezXXmhuIJue-20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="750" width="1250" x="130" y="20" as="geometry" />
         </mxCell>
         <mxCell id="3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;fontColor=#333333;fontSize=16;fontStyle=0;spacing=10;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Start with one key question.&lt;/font&gt;" vertex="1">
           <mxGeometry height="40" width="260" x="520" y="80" as="geometry" />

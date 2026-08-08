@@ -61,7 +61,7 @@ Different integration requirements call for different patterns.
 
 The best pattern depends on latency, reliability, data volume, failure behavior, and the level of control you have over the other system.
 
-## 1. Synchronous Integration
+## Synchronous Integration
 
 Synchronous communication follows a simple model:
 
@@ -116,7 +116,7 @@ The main disadvantage is that the caller is directly affected by the downstream 
 
 This makes timeout handling particularly important for synchronous integrations.
 
-## 2. Asynchronous Messaging
+## Asynchronous Messaging
 
 Asynchronous communication follows a different model:
 
@@ -185,7 +185,7 @@ This allows new consumers to be added without requiring the producer to directly
 
 The producer should generally not need to know or care how many consumers exist.
 
-## 3. Event-Driven Integration
+## Event-Driven Integration
 
 Event-driven integration is useful when processing should happen automatically because **something changed**.
 
@@ -245,7 +245,7 @@ A simple way to distinguish them is:
 
 - **Eventarc:** Something happens in a service and your application reacts to it.
 
-## 4. Legacy Integration and Adapter Pattern
+## Legacy Integration and Adapter Pattern
 
 Legacy systems often use protocols and formats that modern applications do not want to expose throughout the architecture.
 
