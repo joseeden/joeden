@@ -1,6 +1,6 @@
 ---
 title: "Functional and Non-Functional Requirements"
-description: "How to separate what a system must do from how well it must do it"
+description: "Separating what a system must do from how well it must do it"
 tags: 
 - Cloud
 - Google
@@ -22,7 +22,7 @@ Functional requirements describe what the system must do. Non-functional require
 
 Functional requirements describe the behavior or capability the system must provide.
 
-Examples include:
+Examples:
 
 - Users can search for a patient by name
 - Staff can update an electronic health record
@@ -36,7 +36,7 @@ The question is simple: **Did the feature work or not?**
 
 Non-functional requirements describe the quality level the system must meet.
 
-Examples include:
+Examples:
 
 - Search results return in under one second for 99% of requests.
 - The system is available 99.9% of the time.
@@ -44,11 +44,10 @@ Examples include:
 
 These requirements do not add features. They define whether the system is fit for purpose.
 
-## Why The Difference Matters
+**Why the difference matters:** They affect compute choices, database design, networking, security controls, and operational practices.
 
-Functional requirements are mostly answered by application logic.
-
-Non-functional requirements are mostly answered by architecture. They affect compute choices, database design, networking, security controls, and operational practices.
+- Functional requirements are usually answered by application logic. 
+- Non-functional requirements are usually answered by architecture.
 
 ## Constraints
 

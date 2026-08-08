@@ -20,7 +20,9 @@ In cloud architecture, BCP is not a document only. It becomes a design requireme
 
 ## What BCP Covers
 
-BCP asks a simple question: **If something fails, how does the business keep operating?**
+Business continuity planning (BCP) asks a simple question: 
+
+**If something fails, how does the business keep operating?**
 
 Common concerns include:
 
@@ -36,12 +38,28 @@ The goal is to keep critical services usable, even when one part of the environm
 
 Two terms matter most in recovery planning.
 
-| Term    | Full Name                | Meaning                                                                                               | Design Impact                                                          |
-| ------- | ------------------------ | ----------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| **RTO** | Recovery Time Objective  | Maximum acceptable downtime after an outage before services must be restored.                         | Drives failover speed, disaster recovery procedures, and automation.   |
-| **RPO** | Recovery Point Objective | Maximum acceptable data loss, measured as the time between the last recoverable data and the failure. | Drives backup frequency, replication strategy, and snapshot intervals. |
+| Term                               | Description                                                                                           | Design Impact                                                          | Example                                                                       |
+| ---------------------------------- | ----------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| **RTO (Recovery Time Objective)**  | Maximum acceptable downtime after an outage before services must be restored.                         | Drives failover speed, disaster recovery procedures, and automation.   | **RTO = 2 hours:** The service must be restored within 2 hours of an outage.  |
+| **RPO (Recovery Point Objective)** | Maximum acceptable data loss, measured as the time between the last recoverable data and the failure. | Drives backup frequency, replication strategy, and snapshot intervals. | **RPO = 15 minutes:** At most 15 minutes of data can be lost after a failure. |
 
 Shorter RTO and RPO values usually require stronger and more expensive designs.
+
+| RTO Target       | RPO Target    | Required Architecture                                            | DR Strategy          |
+| ---------------- | ------------- | ---------------------------------------------------------------- | -------------------- |
+| **< 15 minutes** | **0**         | Hot standby in second region, synchronous replication, always-on | **Hot Standby**      |
+| **< 1 hour**     | **< 1 hour**  | Warm standby, asynchronous replication, pre-provisioned target   | **Warm Standby**     |
+| **< 4 hours**    | **< 4 hours** | Minimal infrastructure running, scale on recovery                | **Pilot Light**      |
+| **< 24 hours**   | **24 hours**  | Daily backups, cold restore, no standby infrastructure           | **Backup & Restore** |
+
+
+In terms of reliability, the terms below are also important.
+
+| Term                              | Description                                                                                         | Example                                                                         |
+| --------------------------------- | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| **SLI (Service Level Indicator)** | The measured metric, such as successful requests under a latency threshold.                         | **99.8%** of requests complete in **under 200 ms**.                             |
+| **SLO (Service Level Objective)** | The internal target for the SLI metric.                                                             | Target: **99.9%** of requests should complete in **under 200 ms** each month.   |
+| **SLA (Service Level Agreement)** | The external commitment to customers, typically with business or financial consequences if not met. | Customers are guaranteed **99.9% uptime**, or they receive **service credits**. |
 
 ## Resilience Patterns
 
