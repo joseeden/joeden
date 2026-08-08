@@ -20,7 +20,7 @@ In SQL, there are two main types of views: non-materialized and materialized. Ea
 
     - Virtual tables that execute queries in real-time without storing data on disk.
     - When you encounter "views" plainly, they're most likely non-materialized views. 
-    - For more information, please see [Database Views](./006-Database-Views.md) and [Managing Views](./007-Managing-Views.md).
+    - For more information, please see [Database Views](/docs/070-Data-Engineering/021-Database-Design/006-Database-Views.md) and [Managing Views](/docs/070-Data-Engineering/021-Database-Design/007-Managing-Views.md).
 
 - **Materialized views**: 
     

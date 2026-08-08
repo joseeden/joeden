@@ -18,8 +18,8 @@ Data anomalies occur when a database isn't well-organized, leading to issues wit
 
 To learn more about Normalization and Normal Forms, see the links below:
 
-- [Schemas and Normalization](./003-Schemas-and-Normalization.md)
-- [Normal Forms](./004-Normal-Forms.md)
+- [Schemas and Normalization](/docs/070-Data-Engineering/021-Database-Design/003-Schemas-and-Normalization.md)
+- [Normal Forms](/docs/070-Data-Engineering/021-Database-Design/004-Normal-Forms.md)
 
 
 ## Types of Data Anomalies 

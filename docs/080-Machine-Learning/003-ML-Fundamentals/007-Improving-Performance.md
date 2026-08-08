@@ -46,7 +46,7 @@ Hyperparameter Tuning is like a music production console with settings for diffe
 - We can tune the hyperparameter to come up with the better output.
 - Depending on dataset, different hyperparameter values will give better or worse results
 
-Recall the [Support Vector Machine from Supervised Learning](./004-Supervised-Learning.md#using-linear-classifier). We'll switching from a straight line to a curved one by changing the hyperparameter:
+Recall the [Support Vector Machine from Supervised Learning](/docs/080-Machine-Learning/003-ML-Fundamentals/004-Supervised-Learning.md#using-linear-classifier). We'll switching from a straight line to a curved one by changing the hyperparameter:
 
 `kernel` = linear to polynomial. 
 

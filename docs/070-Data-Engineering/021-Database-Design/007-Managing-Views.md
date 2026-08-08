@@ -15,7 +15,7 @@ last_update:
 
 Views in SQL can be as simple or complex as needed, incorporating aggregations, joins, and conditional logic. When designing a view, keep in mind that complex queries might have longer execution times.
 
-For more information, please see [Database Views.](./006-Database-Views.md)
+For more information, please see [Database Views.](/docs/070-Data-Engineering/021-Database-Design/006-Database-Views.md)
 
 
 

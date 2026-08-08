@@ -16,7 +16,8 @@ last_update:
 
 Normal forms are used in normalizing a database, which involves organizing the data to reduce redundancy and improve integrity. Each normal form builds on the previous one, introducing stricter rules for how data should be structured. By following these rules, databases become easier to maintain and less prone to errors, such as update anomalies or data inconsistencies.
 
-To learn more about normalization, please see [Schemas and Normalization.](./003-Schemas-and-Normalization.md)
+To learn more about normalization, please see [Schemas and Normalization.](/docs/070-Data-Engineering/021-Database-Design/003-Schemas-and-Normalization.md)
+
 
 ## Types of Normal Forms 
 

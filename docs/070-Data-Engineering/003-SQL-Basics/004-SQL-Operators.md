@@ -28,7 +28,8 @@ Arithmetic operators perform mathematical operations.
 
 - Modulus (%)
 
-For more information, please see [Arithmetic Operations.](./011-Arithmetic-Operations.md)
+For more information, please see [Arithmetic Operations.](/docs/070-Data-Engineering/003-SQL-Basics/011-Arithmetic-Operations.md)
+
 
 ## Comparison Operators
 
