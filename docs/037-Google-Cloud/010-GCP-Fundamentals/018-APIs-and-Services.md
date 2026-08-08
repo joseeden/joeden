@@ -75,6 +75,12 @@ The API library is project-scoped.
 
 Make sure the correct project is selected before enabling a service API.
 
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-08-09005218.png)
+
+</div>
+
 ## Enable an API
 
 Use these steps to enable an API in the console:
@@ -89,9 +95,22 @@ Use these steps to enable an API in the console:
 
    This opens the API catalog for the selected project.
 
+   <div class='img-center'>
+
+   ![](/img/docs/Screenshot2026-08-09005329.png)
+
+   </div>
+
+
 4. Search for the API.
 
    For example, search for `Cloud Build`.
+
+   <div class='img-center'>
+
+   ![](/img/docs/Screenshot2026-08-09005528.png)
+
+   </div>
 
 5. Open the API details page.
 
@@ -101,25 +120,24 @@ Use these steps to enable an API in the console:
 
    Google Cloud may take a short time to activate the API in the background.
 
+   <div class='img-center'>
+
+   ![](/img/docs/Screenshot2026-08-09005646.png)
+
+   </div>
+
+
 7. Confirm the API is active.
 
    After the API is enabled, the page usually changes from **Enable** to **Manage**.
 
-## Example: Cloud Build API
+8. From the dashboard, monitor the API usage, view metrics, and check quotas.
 
-Cloud Build is used to build, test, and package code.
+   <div class='img-center'>
 
-Before a project can use Cloud Build, the Cloud Build API must be enabled.
+   ![](/img/docs/Screenshot2026-08-09005806.png)
 
-The flow is:
-
-1. Go to **APIs and Services**.
-2. Open **Library**.
-3. Search for `Cloud Build`.
-4. Open **Cloud Build API**.
-5. Click **Enable**.
-6. Wait for the API to finish enabling.
-7. Use **Manage** to view usage, metrics, quotas, or disable options.
+   </div>
 
 After this, Cloud Build is active for the selected project.
 
@@ -160,18 +178,6 @@ When a command fails while creating or managing a resource, check:
 When troubleshooting a new service, check API enablement before assuming the problem is IAM, networking, or application code.
 
 :::
-
-## Exam Notes
-
-Remember these points for Google Cloud certification questions:
-
-- Every Google Cloud service is controlled by an API.
-- APIs are enabled per project.
-- The API library is used to find and enable service APIs.
-- Enabled APIs and services shows active APIs for the selected project.
-- Some core management APIs may already be enabled in a new project.
-- Most service APIs must be enabled before resources can be created.
-- IAM decides who can use a service, and API enablement decides whether the service is available in the project.
 
 ## References
 

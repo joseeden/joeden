@@ -1,6 +1,5 @@
 ---
-title: "Ansible"
-id: ansible-starter-notes
+title: "Starter Notes"
 description: "Starter Notes on Ansible"
 tags: 
 - DevOps

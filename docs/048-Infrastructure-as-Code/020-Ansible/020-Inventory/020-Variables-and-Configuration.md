@@ -1,6 +1,6 @@
 ---
-title: "Inventories and Configuration"
-description: "Inventories and Configuration"
+title: "Variables and Configuration"
+description: "Variables and Configuration"
 tags: 
 - DevOps
 - Infrastructure as Code
@@ -136,9 +136,9 @@ We can also specify in the **ansible config file** the path for the inventory fi
 ![](/img/docs/plans4.png)
 ![](/img/docs/plans5.png)
 
-We can configure the config file to make our configurations global by exporting the **ANSIBLE_CONFIG** variable on the terminal. This is secure since the variable would disappear when we close the terminal.
+We can configure the config file to make our configurations global by exporting the `ANSIBLE_CONFIG` variable on the terminal. This is secure since the variable would disappear when we close the terminal.
 
-Now, editing the **ansible.cfg** file.
+Now, editing the `ansible.cfg` file.
 
 ```bash
 $ vim ansible.cfg
@@ -188,9 +188,9 @@ Some final notes:
 ```
 
 
-## ansible-config
+## `ansible-config`
 
-Another useful tool the ansible configurations that's currently setup in your machine is through the use of **ansible-config** tool.
+Another useful tool the ansible configurations that's currently setup in your machine is through the use of `ansible-config` tool.
 
 ```bash
 # List down and search for the configuration parameter
@@ -198,7 +198,7 @@ $ ansible-config list
 ```
 
 
-## Before anything else, Make sure Nodes trust the Master
+## Make sure Nodes trust the Master
 
 Before we run any commands, we have to make sure the hosts devices trusts the master when it presents the ssh keys to them. We first start with generating ssh keys. Leave the defaults for the succeeding questions, or you can also set the *passphrase* for increased security.
 
@@ -250,7 +250,7 @@ SImilarly, you can just copy the contents of the id_rsa.pub in the master then g
 
 ## Adding aliases
 
-Editing the *edendev/inv*,
+Editing the `edendev/inv` file,
 ```bash
 # edendev-inv
 
@@ -269,7 +269,7 @@ localhost   ansible_connection=local
 
 > *Encountered a* **ProxyError** *when I was trying to check if the loadbalaancer is proxying the requests to the four backend web servers. After a whoel day troubleshooting, I found out that the inventory shoul be using the elastic IPs of the Nodes.*
 
-Changing the *edendev/inv*,
+Changing the `edendev/inv` file,
 ```bash
 [webservers]
 app1    ansible_host=13.251.146.254
