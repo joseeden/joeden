@@ -53,7 +53,7 @@ VNet Peering connects two virtual networks, enabling resources to communicate ac
 - Enables communication between resources in different VNets
 - Facilitates resource sharing across virtual networks
 
-For more information, please see [VNet Peering](./004-VNet-Peering.md)
+For more information, please see [VNet Peering](/docs/036-Microsoft-Azure/003-Azure-Services/004-Networking/004-VNet-Peering.md)
 
 ## Communication with On-Prem Networks
 
@@ -66,7 +66,7 @@ Point-to-Site VPN allows individual computers to connect to the virtual network.
 - Connects a single computer to the virtual network
 - Uses separate connections for each on-premises computer or client
 
-For more information, please see [Point-to-Site VPNs](./005-VPN-Options.md)
+For more information, please see [Point-to-Site VPNs](/docs/036-Microsoft-Azure/003-Azure-Services/004-Networking/005-VPN-Options.md)
 
 
 ![Point-to-Site VPN](/img/docs/azure-vnet-p2s-vpn-with-border.png)
@@ -79,7 +79,7 @@ Site-to-Site VPN connects an entire on-premises network to an Azure virtual netw
 - Connects entire on-premises network to Azure
 - Secure, encrypted connection over the internet
 
-For more information, please see [Site-to-Site VPNs](./005-VPN-Options.md)
+For more information, please see [Site-to-Site VPNs](/docs/036-Microsoft-Azure/003-Azure-Services/004-Networking/005-VPN-Options.md)
 
 
 ![Site-to-Site VPN](/img/docs/azure-vnet-s2s-vpn-with-border.png)
@@ -91,7 +91,7 @@ For more information, please see [Site-to-Site VPNs](./005-VPN-Options.md)
 Azure ExpressRoute provides a private connection between an on-premises network and Azure. It offers a more robust and dedicated connection by avoiding the public internet, established through an ExpressRoute partner.
 
 
-For more information, please see [Azure ExpressRoute](./006-Azure-ExpressRoute.md)
+For more information, please see [Azure ExpressRoute](/docs/036-Microsoft-Azure/003-Azure-Services/004-Networking/006-Azure-ExpressRoute.md)
 
 ![Azure ExpressRoute](/img/docs/azure-expressroute-with-border.png)
 

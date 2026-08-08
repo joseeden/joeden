@@ -52,8 +52,3 @@ The Terraform configuration creates:
 | `version-1/template-files/ssh-linux.tpl`   | Generates a Linux or WSL SSH config entry                |
 | `version-1/template-files/ssh-windows.tpl` | Generates a Windows SSH config entry                     |
 
-<!-- ## Runbook
-
-For the full walkthrough, use the version-specific README:
-
-[Version 1 README](./version-1/README.md) -->

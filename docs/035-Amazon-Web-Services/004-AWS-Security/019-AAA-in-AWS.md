@@ -140,8 +140,7 @@ IAM roles are objects created within IAM and have a defined set of permissions a
 - By having a role associated to the EC2 instance, there's no need to apply access key IDs.
 - Can also be assumed by a user, allowing them to switch from their current set of permissions to take the permissions given by the role.
 
-To learn more, check out [AWS Identity and Access Management.](./050-AWS-IAM.md)
-
+To learn more, check out [AWS Identity and Access Management.](/docs/035-Amazon-Web-Services/004-AWS-Security/050-AWS-IAM.md)
 
 ### Keypairs
 
@@ -163,7 +162,7 @@ The public key uses public key cryptography to encrypt data such as the username
 
 - The private key is our responsibility to keep and to ensure that it is not lost. 
 
-To learn more, check out [EC2 Keypairs.](./030-Infrastructure-Security.md)
+To learn more, check out [EC2 Keypairs.](/docs/035-Amazon-Web-Services/004-AWS-Security/030-Infrastructure-Security.md)
 
 ### Identity Federation 
 
@@ -245,7 +244,7 @@ Important concepts:
 - IAM Roles 
 - IAM Policies
 
-To learn more, check out: [AWS Identity and Access Management](./050-AWS-IAM.md) 
+To learn more, check out: [AWS Identity and Access Management](/docs/035-Amazon-Web-Services/004-AWS-Security/050-AWS-IAM.md) 
 
 
 ### Amazon S3 

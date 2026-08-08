@@ -13,7 +13,7 @@ last_update:
 
 **dd** allows us to take backups of files or entire filesystems and store them as images. It's a powerful tool for creating snapshots that capture the state of a disk at a specific moment.
 
-For this lab, I deleted all the EBS volumes and created a fresh one, `/dev/xvdb`, then partitioned and formatted it with EXT3, mounting it to `/mnt/diskb1`. For detailed instructions on disk partitioning and mounting, please refer to sections on [Managing partitions.](./025-Managing-Partitions.md)
+For this lab, I deleted all the EBS volumes and created a fresh one, `/dev/xvdb`, then partitioned and formatted it with EXT3, mounting it to `/mnt/diskb1`. For detailed instructions on disk partitioning and mounting, please refer to sections on [Managing partitions.](/docs/005-Linux/003-RHCSA-Notes/025-Managing-Partitions.md)
 
 ```bash
 eden@tst-rhel:mnt $ df -h

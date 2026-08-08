@@ -80,7 +80,7 @@ The **motherboard** is the main circuit board that connects all the components o
 
 It's important to note that you can't simply purchase a collection of parts and expect them to work together seamlessly. CPUs are designed to fit into motherboards using specific socket types, and these sockets can vary. Some CPUs have numerous small pins that protrude, while others have contact points that resemble dots.
 
-For more information, please see [Motherboards](./009-Motherboard.md)
+For more information, please see [Motherboards](/docs/002-IT-Foundations/009-Motherboard.md)
 
 ### RAM
 
@@ -94,7 +94,7 @@ The **Random Access Memory** (RAM) is a type of volatile memory that the CPU use
 
 We use RAM to store data that we want to access quickly. This data changes all the time so it isn't permanent. Almost all RAM is volatile, which means that once we power off our machines, the data stored in RAM is cleared.
 
-For more information, please see [RAM](./010-RAM.md)
+For more information, please see [RAM](/docs/002-IT-Foundations/010-RAM.md)
 
 
 ### Storage
@@ -107,7 +107,7 @@ In addition to RAM, computers use storage devices like **Hard Disk Drives** (HDD
 
 </div>
 
-For more information, please see [Storage.](./011-Storage.md)
+For more information, please see [Storage.](/docs/002-IT-Foundations/011-Storage.md)
 
 
 ### Peripherals
@@ -120,7 +120,7 @@ Peripherals are external devices that connect to the computer to extend its func
 
 These peripherals communicate with the computer through various ports and interfaces, allowing users to interact with the system and access additional features.
 
-For more information, please see [Peripherals](./012-Peripherals.md)
+For more information, please see [Peripherals](/docs/002-IT-Foundations/012-Peripherals.md)
 
 ### Cooling Systems
 
@@ -144,6 +144,6 @@ There are two types of electricity:
 
 Our computers use DC voltage, so the PSU converts the AC voltage from our power company into usable DC voltage.
 
-For more information, please [Power supplies](./013-Power-Supply.md)
+For more information, please [Power supplies](/docs/002-IT-Foundations/013-Power-Supply.md)
 
 

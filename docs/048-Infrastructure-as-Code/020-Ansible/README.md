@@ -30,6 +30,6 @@ Start with the short topic pages first, then use the fuller notes and project fo
 
 ## Project Material
 
-Project files are stored in [Projects and Labs](./005-Projects/README.md).
+Project files are stored in [Projects and Labs](/docs/048-Infrastructure-as-Code/020-Ansible/005-Projects/README.md).
 
 The original source files remain in `4-IAC_CICD/1-Ansible`.

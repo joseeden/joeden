@@ -13,7 +13,7 @@ last_update:
 
 A **Logical Volume Group (LVM)** is a way to aggregate multiple physical disks into a single, contiguous space, which can then be divided into logical volumes. This abstraction allows for more flexible disk management by enabling dynamic resizing of file systems, making it easier to expand or contract the available space as needed. 
 
-To learn more about LVMs and how to install it, see [LVMs.](./029-Create-LVM-using-fdisk.md#logical-volume-groups)
+To learn more about LVMs and how to install it, see [LVMs.](/docs/005-Linux/003-RHCSA-Notes/029-Create-LVM-using-fdisk.md#logical-volume-groups)
 
 ## Creating LVMs using parted
 

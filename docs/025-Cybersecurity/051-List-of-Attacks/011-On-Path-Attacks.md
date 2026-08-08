@@ -58,7 +58,7 @@ Ways to conduct on-path or interception attacks:
 
 ## Replaying the Attack 
 
-Occurs when an attacker captures a valid data which is then repeated immediately or delayed and then repeated. See [Replay Attack.](./005-Spoofing-Attacks.md#replay-attack)
+Occurs when an attacker captures a valid data which is then repeated immediately or delayed and then repeated. See [Replay Attack.](/docs/025-Cybersecurity/051-List-of-Attacks/005-Spoofing-Attacks.md#replay-attack)
 
 
 <div class="img-center">
@@ -87,4 +87,4 @@ Occurs when an attacker inserts themselves in between two hosts and become part 
 If the server is using a strong encryption scheme like TLS 1.3, it's going to be difficult for an attacker to insert himself in between the two hosts. To overcome this, the attacker can use SSL stripping.
 
 - Tricking the application to use HTTP instead of HTTPS connection.
-- If it is impossible, attackers can resort to [downgrade attacks.](./002-Cryptographic-Attacks.md#downgrade-attacks)
+- If it is impossible, attackers can resort to [downgrade attacks.](/docs/025-Cybersecurity/051-List-of-Attacks/002-Cryptographic-Attacks.md#downgrade-attacks)

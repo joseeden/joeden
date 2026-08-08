@@ -241,6 +241,7 @@ Examples:
 - Cloud Storage API
 - Cloud Functions API
 
+See [APIs and Services](/docs/037-Google-Cloud/010-GCP-Fundamentals/018-APIs-and-Services.md) for the full workflow.
 
 ## 9. Understand IAM
 
@@ -497,5 +498,4 @@ Until you're comfortable with pricing, avoid:
 - Load Balancers
 - Multi-region storage
 - High-performance SSD storage
-
 
