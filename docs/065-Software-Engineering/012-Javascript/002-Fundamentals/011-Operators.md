@@ -24,7 +24,9 @@ When ran in the browser, this will return boolean.
 
 ## `typeof` bug 
 
-When you run `typeof` with `null`, it should return `null`. But it will evaluate it as an object, which is actually wrong. This wasn't corrected for legacy reasons, but instead treated as a bug.
+When you run `typeof` with `null`, it should return `null`. But it will evaluate it as an object, which is actually wrong. 
+
+This wasn't corrected for legacy reasons, but instead treated as a bug.
 
 ![](/img/docs/12082024-js-typeof-bug.png)
 

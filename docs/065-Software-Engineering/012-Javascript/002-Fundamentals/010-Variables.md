@@ -90,30 +90,30 @@ var job = 'developer';
 job = 'architect';  
 ```
 
-The main difference between the two is that:
+
+## `var` vs `let` 
+
+The main difference between the two:
 
 - `var` is **function-scoped**, meaning it’s only accessible inside the function where it’s declared.
+
+    ```bash
+    function example() {
+      var name = "Alice";
+      console.log(name);    // Works inside the function
+    }
+    console.log(name);      // Error: name is not defined
+    ```  
+
 - `let` is **block-scoped**, which means it’s limited to the block `{}` where it’s defined.
 
-Example of `var` (function-scoped):  
-
-```bash
-function example() {
-  var name = "Alice";
-  console.log(name);    // Works inside the function
-}
-console.log(name);      // Error: name is not defined
-```  
-
-Example of `let` (block-scoped):  
-
-```bash
-if (true) {
-  let age = 30;
-  console.log(age);     // Works inside the block
-}
-console.log(age);       // Error: age is not defined
-```  
+    ```bash
+    if (true) {
+      let age = 30;
+      console.log(age);     // Works inside the block
+    }
+    console.log(age);       // Error: age is not defined
+    ```  
 
 Because of this, `let` is safer to use in modern JavaScript.
 

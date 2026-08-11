@@ -1,6 +1,5 @@
 ---
 title: "Starter Notes"
-id: javascript-starter-notes
 description: "Notes on Javascript"
 tags: 
 - Web Development
@@ -30,18 +29,23 @@ let js = 'boring'
 if (js === 'amazing') alert('Javascript is FUN!') 
 ```
 
+<div class='img-center'>
+
 ![](/img/docs/12072024-js-IF-EXAMPLE.png)
+
+</div>
+
 
 
 ## In a Nutshell
  
 JavaScript is a high-level, object-oriented, and multi-paradigm programming language that powers the dynamic and interactive aspects of web development. Here's a summary of its role:
 
-- **High-Level Language*** Simplify complex processes like memory management using abstractions.
+- **High-Level Language** - Simplify complex processes like memory management using abstractions.
 
-- **Object-Oriented*** Uses objects to organize and store data; foundation for programming techniques.
+- **Object-Oriented** - Uses objects to organize and store data; foundation for programming techniques.
 
-- **Multi-Paradigm*** Supports coding styles, including imperative and declarative programming.
+- **Multi-Paradigm** - Supports coding styles, including imperative and declarative programming.
 
 In web development, JavaScript complements HTML (content) and CSS (style) by:
 
@@ -59,26 +63,54 @@ JavaScript automatically manages memory allocation and deallocation through a ga
 
 ## First-class Functions  
 
-In JavaScript, functions are treated as *first-class citizens*, meaning they can be assigned to variables, passed as arguments, and returned from other functions. This allows for high flexibility in programming.  
+In JavaScript, functions are treated as *first-class citizens*, which means they can be:
 
-```javascript
-function greet(name) {
-  return `Hello, ${name}!`;
-}
+- Stored in a variable and called using the variable name 
 
-function callFunction(fn, name) {
-  console.log(fn(name));
-}
+    ```javascript
+    const greet = function () {
+      console.log("Hello!");
+    };
 
-callFunction(greet, 'Alice'); // Output: Hello, Alice!
-```
+    greet();
+    ```
+
+- Passed as arguments to other functions
+
+    ```javascript
+    // "greet" is passed to "processUser" as an argument.
+    function greet(name) {
+      console.log(`Hello, ${name}!`);
+    }
+
+    function processUser(callback) {
+      callback("Alice");
+    }
+
+    processUser(greet);
+    ```
+
+- Returned from other functions
+
+    ```javascript
+    // "createGreeting()" returns a function, which is stored in "sayHello"
+    function createGreeting(greeting) {
+      return function (name) {
+        console.log(`${greeting}, ${name}!`);
+      };
+    }
+
+    const sayHello = createGreeting("Hello");
+
+    sayHello("Alice");
+    ```
 
 For more information, please see [Functions.](/docs/065-Software-Engineering/012-Javascript/002-Fundamentals/017-Functions.md)
 
 
 ## Non-Blocking Event Loop  
 
-JavaScript operates on a non-blocking event loop; this allows it to perform multiple tasks concurrently without waiting for one task to finish before starting another. This makes JavaScript highly efficient for handling asynchronous operations like I/O or network requests.
+JavaScript operates on a non-blocking event loop. This allows it to perform multiple tasks concurrently without waiting for one task to finish before starting another. This makes JavaScript highly efficient for handling asynchronous operations like I/O or network requests.
 
 - Javascript runs in **single-thread** - it can only do one thing at a time.
 - Long running tasks are placed and ran at the "background".
@@ -99,26 +131,33 @@ JavaScript frameworks simplify web development by providing reusable components 
 
 ## Javascript Releases 
 
-JavaScript has evolved from ES5 to modern versions, starting with ES6 in 2015. Features like strict mode, promises, async/await, optional chaining, and BigInt enhance functionality. New versions are released yearly, often referred to as modern JavaScript.
+JavaScript has evolved from ES5 to modern versions, starting with ES6 in 2015. Features like strict mode, promises, async/await, optional chaining, and BigInt enhance functionality. New versions are released yearly, which are often referred to as *modern JavaScript*.
 
 ![](/img/docs/12072024-js-releases.png)
 
 
 ## Transpiling to ES5 
 
-During development, you can use the latest features in JavaScript, such as ES6+, by testing in modern browsers like Google Chrome. However, in production, you need to transpile your code to ES5 using tools like **Babel** to ensure compatibility with older browsers.
+During development, you can use modern JavaScript features such as ES6+. However, older browsers may not support these features.
 
-- **ES5** is supported in all browsers, for broad compatibility.
-- **ES6+** is supported in **most modern browsers** but may not work in older versions.
+**Transpiling** means converting modern JavaScript into an older version of JavaScript that is more widely supported.
 
-**Babel** is a tool that converts ES6+ code into ES5, which ensures your code runs across a wide range of browsers.
+- **ES5** provides broad compatibility with older browsers.
+- **ES6+** provides newer JavaScript features but may not be supported by older browsers.
+- **Babel** is a common tool used to transpile ES6+ code into ES5.
 
-## Javascript Playground 
+For example:
 
-Below are some online tools where you can play around Javascript without the need to install any software:
+```javascript
+// Modern JavaScript (ES6+)
+const greet = (name) => `Hello, ${name}!`;
 
-- [JS Bin](https://jsbin.com/)
-- [Plunker](https://plnkr.co/)
+// Transpiled JavaScript (ES5)
+var greet = function(name) {
+  return "Hello, " + name + "!";
+};
+```
+
 
 ## Inline and External scripts
 
@@ -164,7 +203,7 @@ The Javascript code is separated from the HTML code:
 console.log("Hello from the other side")
 ```
 
-This is also useful if you want to link multiple Javscript code which does different things:
+This is also useful if you want to link multiple Javascript  code which does different things:
 
 ```html
 <script src="/path/to/name-of-script.js"></script> 
@@ -173,15 +212,26 @@ This is also useful if you want to link multiple Javscript code which does diffe
 <script src="/path/to/could-be-useful-script.js"></script> 
 ```
 
-
-
-
 ## Code Commenting
 
-Javscript will completely ignore the comments during execution.
+JavaScript ignores comments when running the code. Comments are useful for adding notes or explaining what the code does.
 
-  - **Single-line comments**: Use `//` to comment out a line.
-  - **Multi-line comments**: Use `/* */` to comment multiple lines of code.
+- **Single-line comments**: Use `//` to comment out a single line.
+
+    ```javascript
+    // This is a single-line comment
+    const name = "Alice";
+    ```
+
+- **Multi-line comments**: Use `/* */` to comment out multiple lines.
+
+    ```javascript
+    /*
+    This is a multi-line comment.
+    It can span multiple lines.
+    */
+    const name = "Alice";
+    ```
 
 
 ## Strict Mode
@@ -208,3 +258,11 @@ myFunction();
 
 Strict mode helps avoid issues like using undeclared variables or assigning values to read-only properties.
 
+
+
+## Javascript Playground 
+
+Below are some online tools where you can play around Javascript without the need to install any software:
+
+- [JS Bin](https://jsbin.com/)
+- [Plunker](https://plnkr.co/)

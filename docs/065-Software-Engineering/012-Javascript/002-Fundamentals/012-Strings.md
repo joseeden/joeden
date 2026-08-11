@@ -28,7 +28,9 @@ Template literals use backticks (`` ` ``) and allow embedding variables and expr
 ```js
 let name = "Alice";
 let message = `Hello, ${name}! Great to see you!`;
-console.log(message);  // Output: Hello, Alice! Great to see you!
+console.log(message);  
+
+// Output: Hello, Alice! Great to see you!
 ```
 
 ## Multiple Lines  
@@ -59,7 +61,9 @@ This makes it easy to count what you typed.
 
 ```javascript
 var name = "Sam";
-console.log(name.length);  // Output: 3
+console.log(name.length);  
+
+// Output: 3
 ```
 
 ##  `slice`
@@ -76,10 +80,29 @@ Always follow this pattern:
 variable.slice(start, end)
 ```
 
+For example:
+
+```js
+const name = "JavaScript";
+
+console.log(name.slice(0, 4)); 
+
+// Output: "Java"
+```
+
+The example starts at position `0` (`J`) and stops before position `4` (`S`).
+
+```text
+ J  a  v  a  S  c  r  i  p  t
+ 0  1  2  3  4  5  6  7  8  9
+ └─────────┘
+ slice(0, 4)
+```
+
 
 ### Getting the First Character 
 
-To get the first character: 
+To get the first character, you can use `slice(0, 1)` or `slice(0)`.
 
 ```js
 var name = "Archimedes";
@@ -97,12 +120,13 @@ To get the last letter, count the positions properly.
 var name = "Archimedes";
 var lastLetter = name.slice(9, 10);
 console.log(lastLetter);
+
+// Output: "s"
+// The last letter is at index 9
+// The sixth letter is at index 5
 ```
 
-- Output: `s`
-- The sixth letter is at index 5
-
-Another way to write this:
+Another way to write it:
 
 ```js
 var name = "Archimedes";
@@ -121,12 +145,16 @@ You can also grab more than one character at a time.
 var name = "Archimedes";
 var part = name.slice(0, 3);
 console.log(part);
+
+// Output: "Arc"
+// We start at index 0 and stop before index 3 
 ```
 
-- Output: `Arc`
-- Goes from 0 to 3 (but not including 3)
+Quick trick is to subtract the two numbers:
 
-Quick trick: subtract the two numbers. 3 - 0 = 3 characters.
+```bash
+3 - 0 = 3
+```
 
 
 
@@ -141,32 +169,39 @@ You can turn a string into all uppercase or all lowercase letters using built-in
 
 ```javascript
 var name = "harry";
-console.log(name.toUpperCase()); // Output: "HARRY"
+console.log(name.toUpperCase()); 
+
+// Output: "HARRY"
 ```
 
 If you want to update the variable:
 
 ```javascript
 name = name.toUpperCase();
-console.log(name);              // Output: "HARRY"
+console.log(name);              
+
+// Output: "HARRY"
 ```
 
 And to go back to lowercase:
 
 ```javascript
 name = name.toLowerCase();
-console.log(name);              // Output: "harry"
+console.log(name);              
+
+// Output: "harry"
 ```
 
 Changing the case like this is useful when you're handling input, especially if users type in names or emails in different styles.
 
 ### Capitalize Only the First Letter
 
-Sometimes, you want only the first letter to be uppercase, like for names. 
+Sometimes, you want only the first letter to be uppercase, like names. 
 
 ```javascript
 var userInput = prompt("What is your name?");
 var cleanName = userInput.slice(0).toUpperCase() + userInput.slice(1).toLowerCase();
+
 alert("Hello, " + cleanName);
 ```
 
@@ -220,6 +255,7 @@ console.log(Number(year) + 35)  // Output: 2030
 Type coercion is the automatic or implicit conversion of values from one data type to another. JavaScript will attempt to convert one or both of the values to make the operation possible.
 
 **Using the previous example:**
+
 Since the variable is a string, if we concatenate a number, JavaScript converts the number "35" to a string and appends it to the existing string. 
 
 ```js
@@ -227,7 +263,9 @@ const year = `1995`;
 console.log(year + 35)          // Output: 199535
 ```
 
-Note that JavaScript doesn't always perform type coercion in the same way for different operators. In the example below, JavaScript automatically converts the strings to numbers because these operators only work on numbers.
+Note that JavaScript doesn't always perform type coercion in the same way for different operators. 
+
+In the example below, JavaScript automatically converts the strings to numbers because these operators only work on numbers.
 
 ```js
 console.log(`45` - `13` - `8`);   // Output: 24
@@ -245,13 +283,15 @@ It is a bad practice to rely on type coercion in JavaScript because it can lead 
 
 ## Truthy and Falsy Values 
 
-In JavaScript, **truthy** and **falsy** values are important for type coercion. **Falsy values** convert to `false` when coerced to a boolean. These include:
+In JavaScript, **truthy** and **falsy** values are important for type coercion. 
 
-  1. `0`
-  2. `""` (empty string)
-  3. `undefined`
-  4. `null`
-  5. `NaN`
+**Falsy values** convert to `false` when coerced to a boolean. These include:
+
+1. `0`
+2. `""` (empty string)
+3. `undefined`
+4. `null`
+5. `NaN`
 
 Any other value is **truthy** and converts to `true`.
 

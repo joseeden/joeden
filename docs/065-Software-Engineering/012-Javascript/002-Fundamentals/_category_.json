@@ -1,8 +1,4 @@
 {
   "label": "Fundamentals",
-  "position": 2,
-  "link": {
-    "type": "doc",
-    "id": "javascript-starter-notes"
-  }
+  "position": 2
 }
