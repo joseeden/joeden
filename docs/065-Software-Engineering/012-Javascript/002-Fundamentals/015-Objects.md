@@ -42,7 +42,7 @@ Notes:
 - Each key is followed by a colon (`:`) and its value
 - Items are separated by commas (`,`)
 
-::info 
+:::info 
 
 In other programming languages, objects are often called **dictionaries** or **hash maps**.
 

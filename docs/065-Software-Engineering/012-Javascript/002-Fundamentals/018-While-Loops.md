@@ -40,7 +40,13 @@ Output:
 ```
 Iteration 1
 Iteration 2
-...
+Iteration 3
+Iteration 4
+Iteration 5
+Iteration 6
+Iteration 7
+Iteration 8
+Iteration 9
 Iteration 10
 ```
 
@@ -62,12 +68,47 @@ Sample output:
 0.8258020006410827 
 ```
 
-Since `Math.random()` returns a decimal between 0 and 1, multiplying by 6 expands the range. However, this does not ensure whole numbers like a real dice roll. To fix this, we can use `Math.trunc()` to remove decimals and add `1` to make sure it includes 6:  
+Since `Math.random()` returns a decimal between 0 and 1, multiplying by 6 expands the range. However, this does not ensure whole numbers like a real dice roll. To fix this, we can use `Math.trunc()` to remove decimals.
+
+```js
+let dice = Math.trunc(Math.random() * 6);
+console.log(dice);
+```  
+
+However, this produces numbers from 0 to 5:
+
+```js
+// Outputs
+0, 1, 2, 3, 4, 5 
+```
+
+For a normal six-sided die, you want 1 to 6, so add 1:
 
 ```js
 let dice = Math.trunc(Math.random() * 6) + 1;
 console.log(dice);
 ```  
+
+**Useful to know:** JavaScript supports chained dot notation, where you can access another property or call another method on the value returned by the previous operation.
+
+```js
+const name = " alice ";
+console.log(name.trim().toUpperCase());
+```
+
+However, for the dice example, the code below will return an error because `trunc()` is not a method of a number. It belongs to the `Math` object.
+
+```js
+// This will return an ERROR
+let dice = (Math.random() * 6).trunc();
+```
+
+Instead, use `Math.trunc()`:
+
+```js
+let dice = Math.trunc(Math.random() * 6);
+```
+
 
 Now that we know what logic to use, we can now create the loop. We don’t know yet **how many times** we’ll need to roll, so a **while loop** is perfect. 
 
@@ -109,27 +150,53 @@ You rolled a 6
 
 ## `do while` Loop
 
-Each loop is useful in different situations
+A `do...while` loop is similar to a `while` loop, but the condition is checked **after** the code runs.
 
-- `while` loop checks the condition first before running the code
-- `do while` loop runs the code first, then checks the condition
+- A `while` loop checks the condition first, then runs the code.
+- A `do...while` loop runs the code first, then checks the condition.
 
-The `do while` runs the code at least once, even if the condition is false.
+**Note:** A `do...while` loop always runs **at least once**.
 
 ```javascript
 let counter = 10;
+
 do {
-    console.log(counter);
-    counter--;
+  console.log(counter);
+  counter--;
 } while (counter > 0);
 ```
 
-Note: 
+Output:
 
-- Starts with `do`, executes the block
-- Checks the condition after running the block
-- Runs at least once even if `counter` is 0 initially
+```text
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+```
 
-This is useful when you need to execute something before validation.
+Even if the condition is false from the beginning, the code still runs once.
 
+```javascript
+let counter = 0;
+
+do {
+  console.log(counter);
+  counter--;
+} while (counter > 0);
+```
+
+Output:
+
+```text
+0
+```
+
+This is useful when something needs to run at least once before checking whether it should run again.
 
