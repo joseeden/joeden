@@ -190,44 +190,11 @@ true
 ```
 
 
-## Arrays vs Objects
-
-Arrays and objects both store multiple values, but they organize those values differently.
-
-An **array** stores an ordered list of values. Each value has a numerical index starting from `0`.
-
-```javascript
-const friends = ["Alice", "Bob", "Charlie"];
-
-console.log(friends[0]); // Alice
-console.log(friends[1]); // Bob
-```
-
-An **object** stores values using named properties instead of numerical positions.
-
-```javascript
-const person = {
-  name: "Alice",
-  age: 28,
-  city: "New York"
-};
-
-console.log(person.name);    // Alice
-console.log(person["name"]); // Alice
-```
-
-| Item        | Array               | Object                                     |
-| ----------- | ------------------- | ------------------------------------------ |
-| Stores      | List of values      | Properties and values                      |
-| Accessed by | Numerical index     | Property name                              |
-| Example     | `friends[0]`        | `person.name`                              |
-| Best for    | Ordered collections | Describing something with named properties |
-
 ## Looping Through an Object
 
-Objects do not have numerical indexes like arrays. Instead, use a `for...in` loop to iterate through an object's property names.
+Objects store data using named properties instead of numerical positions. Each property is stored as a key-value pair.
 
-Example: Logging Object Keys and Values  
+Unlike arrays, objects do not use numerical indexes. To iterate through an object's property names, use a `for...in` loop.
 
 ```javascript
 const person = {
@@ -245,15 +212,13 @@ for (var key in person) {
 On each iteration, `key` becomes one property name from the object.
 
 ```text
-key = "name"
-key = "age"
-key = "city"
-key = "salary"
+Iteration 1 ➜ key = "name"
+Iteration 2 ➜ key = "age"
+Iteration 3 ➜ key = "city"
+Iteration 4 ➜ key = "salary"
 ```
 
 Then `person[key]` gets the value connected to that property.
-
-Output:
 
 ```
 name: Alice
@@ -261,7 +226,6 @@ age: 28
 city: New York
 salary: 50000
 ```
-
 
 
 ## Looping Backwards

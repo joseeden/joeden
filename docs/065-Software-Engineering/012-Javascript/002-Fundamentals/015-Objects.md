@@ -12,9 +12,31 @@ last_update:
 
 ## Overview
 
-Arrays are **ordered** lists where you access items by their position (index). You can’t name individual items, only refer to them by their number.
+Arrays and objects both store multiple values, but they organize those values differently.
 
-Objects fix this by using **key-value pairs**, so you can name each value.
+An **array** stores an ordered list of values. Each value has a numerical index starting from `0`.
+
+```javascript
+const friends = ["Alice", "Bob", "Charlie"];
+
+console.log(friends[0]); // Alice
+console.log(friends[1]); // Bob
+```
+
+An **object** stores data using named properties instead of numerical positions. Each property is stored as a key-value pair.
+
+```javascript
+const person = {
+  name: "Alice",
+  age: 28,
+  city: "New York"
+};
+
+console.log(person.name);    // Alice
+console.log(person["name"]); // Alice
+```
+
+Notes: 
 
 - Objects use **curly braces `{}`** instead of square brackets
 - Each key is followed by a colon (`:`) and its value
