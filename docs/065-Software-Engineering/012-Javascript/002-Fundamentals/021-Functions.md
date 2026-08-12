@@ -4,7 +4,7 @@ description: "Functions in Javascript"
 tags: 
 - Web Development
 - Javascript
-sidebar_position: 17
+sidebar_position: 21
 last_update:
   date: 12/21/2020
 ---

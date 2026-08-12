@@ -35,11 +35,107 @@ if (js === 'amazing') alert('Javascript is FUN!')
 
 </div>
 
+## Testing with VS Code Live Server
 
+Instead of using Developer Tools in a browser, you can also test JavaScript code using **VS Code** with the **Live Server** extension. This allows you to run your HTML and JavaScript files in a local development server and see changes in real-time. 
+
+First, open VS Code and create a folder with the following files (filenames can be different):
+
+```text
+javascript-test/
+├── index.html
+└── script.js
+```
+
+Add the following to `index.html`:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Test</title>
+</head>
+<body>
+
+  <script src="script.js"></script>
+</body>
+</html>
+```
+
+Add your JavaScript code to `script.js`:
+
+```js
+var userName = prompt("What is your name?");
+
+alert("Hello " + userName);
+
+console.log(userName);
+```
+
+Next, run the Code using **Live Server**
+
+1. Install the **Live Server** extension in VS Code. 
+2. Right-click on `index.html` and select **Open with Live Server**.
+3. This will open your default web browser and load the `index.html` file.
+4. Use the browser Developer Tools **Console** to view `console.log()` output.
+5. Edit and save `script.js`, then refresh the browser to test your changes.
+
+**Why Not Run `script.js` with Node.js?**
+
+You can run standard JavaScript from the VS Code terminal using **node**:
+
+```bash
+node script.js
+```
+
+However, Node.js does not provide browser-specific features such as:
+
+```js
+prompt()
+alert()
+document
+window
+```
+
+For example:
+
+```js
+var userName = prompt("What is your name?");
+```
+
+will return an error when executed with Node.js:
+
+```text
+ReferenceError: prompt is not defined
+```
+
+If the JavaScript uses browser features such as `prompt()`, use an HTML file and run the code in a browser instead.
+
+For simple testing that doesn't require browser features, you can use Node.js. 
+
+1. Install Node.js from [nodejs.org](https://nodejs.org/).
+
+2. Open a terminal in VS Code and run:
+
+    ```bash
+    node 
+    ```
+
+    The `>` prompt indicates that Node.js is ready to accept JavaScript commands.
+
+    Example:
+
+    ```bash
+    joseeden@PC1:Git$ node
+
+    Welcome to Node.js v20.20.2.
+    Type ".help" for more information.
+    >  
+    ```
 
 ## In a Nutshell
  
-JavaScript is a high-level, object-oriented, and multi-paradigm programming language that powers the dynamic and interactive aspects of web development. Here's a summary of its role:
+JavaScript is a high-level, object-oriented, and multi-paradigm programming language that powers the dynamic and interactive aspects of web development. 
 
 - **High-Level Language** - Simplify complex processes like memory management using abstractions.
 

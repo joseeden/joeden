@@ -4,7 +4,7 @@ description: "Types and Scopes in Javascript"
 tags: 
 - Web Development
 - Javascript
-sidebar_position: 18
+sidebar_position: 24
 last_update:
   date: 12/21/2020
 ---

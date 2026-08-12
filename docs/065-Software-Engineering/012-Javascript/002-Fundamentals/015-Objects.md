@@ -4,7 +4,7 @@ description: "Objects in Javascript"
 tags: 
 - Web Development
 - Javascript
-sidebar_position: 19
+sidebar_position: 15
 last_update:
   date: 12/21/2020
 ---
@@ -12,13 +12,19 @@ last_update:
 
 ## Overview
 
-To recap, arrays are **ordered** lists where you access items by their position (index). You can’t name individual items, only refer to them by their number.
+Arrays are **ordered** lists where you access items by their position (index). You can’t name individual items, only refer to them by their number.
 
 Objects fix this by using **key-value pairs**, so you can name each value.
 
 - Objects use **curly braces `{}`** instead of square brackets
 - Each key is followed by a colon (`:`) and its value
 - Items are separated by commas (`,`)
+
+::info 
+
+In other programming languages, objects are often called **dictionaries** or **hash maps**.
+
+:::
 
 ## Creating an Object
 

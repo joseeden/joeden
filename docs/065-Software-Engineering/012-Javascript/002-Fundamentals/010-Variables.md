@@ -57,13 +57,21 @@ let Collector = "John";
 
 When calling an undeclared variable, we'll get an error: 
 
+<div class='img-center'>
+
 ![](/img/docs/12082024-js-undeclared0varss.png)
+
+</div>
 
 ## Changing the Value of a Variable 
 
 When defining a variable for the first time, we need to use the keyword `let`. If we need to change the value of an existing variable, we don't need to use `let` anymore.
 
+<div class='img-center'>
+
 ![](/img/docs/12082024-js-changing-value-of-vars.png)
+
+</div>
 
 Note that when we use `let` to assign a value to a variable, we can change that value later, as seen below:
 
@@ -81,7 +89,11 @@ const name = 'Ken'
 name = 'Barbie` 
 ```
 
+<div class='img-center'>
+
 ![](/img/docs/02022025-js-error.png)
+
+</div>
 
 `var` is the old way of defining variables prior to ES6, working the same way as `let`.
 

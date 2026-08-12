@@ -45,20 +45,22 @@ Arrays are **zero-based**, meaning the first element is at index `0`.
 
 ```js
 const friends = ["Michael", "Steven", "Peter", "Ted"];
-console.log(friends[0]); // "Michael"
-console.log(friends[2]); // "Peter"
+console.log(friends[0]);  // Output: "Michael"
+console.log(friends[2]);  // Output: "Peter"
 ```
 
 To get the number of elements in the list:
 
 ```js
-console.log(friends.length) ;     // 4
+console.log(friends.length) ;     
+// Output: 4
 ```
 
 We can also get the **last element** dynamically:  
 
 ```js
-console.log(friends[friends.length - 1]); // "Ted"
+console.log(friends[friends.length - 1]); 
+// Output: "Ted"
 ```
 
 ## Modifying an Array  
@@ -80,7 +82,8 @@ Output:
 However, we **cannot** reassign or override the entire array with this method:  
 
 ```js
-friends = ["Bob", "Alice"]; // ❌ Error: Assignment to constant variable
+friends = ["Bob", "Alice"]; 
+// Output: ❌ Error: Assignment to constant variable
 ```
 
 ## Arrays with Different Data Types  
@@ -127,14 +130,16 @@ Add "Jay" to the end of the list:
 ```javascript
 const friends = ["Michael", "Steven", "Peter"];
 friends.push("Jay");  
-console.log(friends); // ["Michael", "Steven", "Peter", "Jay"]
+console.log(friends); 
+// Output: ["Michael", "Steven", "Peter", "Jay"]
 ```
 
 Add "John" to the end of the list:
 
 ```js 
 friends.unshift("John");  
-console.log(friends); // ["John", "Michael", "Steven", "Peter", "Jay"]
+console.log(friends); 
+// Output: ["John", "Michael", "Steven", "Peter", "Jay"]
 ```
 
 
@@ -151,58 +156,61 @@ Example:
 const friends = ["Michael", "Steven", "Peter", "Jay"] 
 
 friends.pop();  
-console.log(friends); // ["John", "Michael", "Steven", "Peter"]
+console.log(friends); 
+// Output: ["John", "Michael", "Steven", "Peter"]
 
 friends.shift();  
-console.log(friends); // ["Michael", "Steven", "Peter"]
+console.log(friends); 
+// Output: ["Michael", "Steven", "Peter"]
 ```
 
 
 
 ## Finding Elements  
 
-Methods to check for elements in an array.
+Methods for checking whether an element exists in an array:
 
 - `indexOf()` 
+
   – Returns the position of an element.
   - Returns `-1` if the element is not found.
 
 - `includes()` 
+
   – Returns `true` if the element exists, `false` otherwise.
   - Checks for **strict equality** (no type coercion).
 
 Example:
 
-```javascript
-const friends = ["Michael", "Steven", "Peter", "Jay", "Bob"];
+```javascript id="7qemdx"
+const friends = ["Michael", "Steven", "Peter", "Jay"];
 
-console.log(friends.indexOf("Steven"));   // 1
-console.log(friends.indexOf("Bob"));      // -1
+console.log(friends.indexOf("Steven"));   // Output: 1
+console.log(friends.indexOf("Bob"));      // Output: -1
 
-console.log(friends.includes("Steven"));  // true
-console.log(friends.includes("Bob"));     // false
+console.log(friends.includes("Steven"));  // Output: true
+console.log(friends.includes("Bob"));     // Output: false
 ```
 
-Checking for string versus number:
+`includes()` does not perform type coercion. This means that a number and a string containing the same value are treated as different values.
 
-```javascript
-friends.push(23);                         
-console.log(friends);                     // ['Michael', 'Steven', 'Peter', 23]
-console.log(friends.includes("23"));      // false (string vs number)
-console.log(friends.includes(23));        // true
+```javascript id="8dkz9a"
+friends.push(23);
+
+console.log(friends);                // Output: ["Michael", "Steven", "Peter", "Jay", 23]
+console.log(friends.includes("23")); // Output: false
+console.log(friends.includes(23));   // Output: true
 ```
 
-## Using `includes()` in Conditionals  
+The `includes()` method can also be used in conditionals:
 
-The `includes()` method is useful for writing conditions.
-
-```javascript
-const friends = ["Michael", "Steven", "Peter", "Jay"] 
-
+```javascript id="aw0q61"
 if (friends.includes("Peter")) {
   console.log("You have a friend called Peter.");
 }
 ```
+
+Since `"Peter"` exists in the array, `friends.includes("Peter")` returns `true` and the code inside the `if` statement runs.
 
 
 
@@ -234,6 +242,16 @@ Output:
 
 In the example above, `forEach` runs the function once for each fruit. Each time, `fruit` holds the current item in the array, and `console.log` prints it. This is useful when you want to do something for every item in an array without changing the array itself.
 
+**Note:** `fruit` can be any variable name. It is just a placeholder for the current item in the array. For example:
+
+```javascript
+var fruits = ["apple", "banana", "cherry"];
+
+fruits.forEach(function(foobar) {
+  console.log(foobar);
+});
+```
+
 
 ## `splice`
 
@@ -241,27 +259,31 @@ In the example above, `forEach` runs the function once for each fruit. Each time
 
 **Example 1: Remove from a position**
 
+This removes everything starting from index 3. The original array is shortened, and the removed items are returned.
+
 ```js
 var colors = ["red", "blue", "green", "yellow", "pink", "black"];
 var removed = colors.splice(3);
 
-console.log(colors);      // ["red", "blue", "green"]
-console.log(removed);     // ["yellow", "pink", "black"]
+console.log(colors);      // Output: ["red", "blue", "green"]
+console.log(removed);     // Output: ["yellow", "pink", "black"]
 ```
 
-This removes everything starting from index 3. The original array is shortened, and the removed items are returned.
+
 
 **Example 2: Remove a few items from a position**
+
+This removes 3 items starting from index 2. The rest stay in the original array.
 
 ```js
 var colors = ["red", "blue", "green", "yellow", "pink", "black"];
 var removed = colors.splice(2, 3);
 
-console.log(colors);      // ["red", "blue", "black"]
-console.log(removed);     // ["green", "yellow", "pink"]
+console.log(colors);      // Output: ["red", "blue", "black"]
+console.log(removed);     // Output: ["green", "yellow", "pink"]
 ```
 
-This removes 3 items starting from index 2. The rest stay in the original array.
+
 
 ## `slice`
 
@@ -273,8 +295,8 @@ This removes 3 items starting from index 2. The rest stay in the original array.
 var fruits = ["apple", "banana", "cherry", "date", "fig"];
 var someFruits = fruits.slice(1, 4);
 
-console.log(fruits);      // ["apple", "banana", "cherry", "date", "fig"]
-console.log(someFruits);  // ["banana", "cherry", "date"]
+console.log(fruits);      // Output: ["apple", "banana", "cherry", "date", "fig"]
+console.log(someFruits);  // Output: ["banana", "cherry", "date"]
 ```
 
 This copies items from index 1 up to, but not including, index 4.
@@ -295,11 +317,11 @@ var array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 console.log(array.filter(
   function (value) {
-    return value > 4;     // [5, 6, 7, 8, 9]
+    return value > 4;     // Output: [5, 6, 7, 8, 9]
   }
 ))
 
-console.log(array);       // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+console.log(array);       // Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
 This keeps the original array the same and gives a filtered one with values greater than 4.
@@ -309,34 +331,36 @@ This keeps the original array the same and gives a filtered one with values grea
 
 `map` lets you change each item in an array and gives you a new array with the results.
 
+In the example below, each value is multiplied by 2 and the original array remains unchanged.
+
 ```js
 var array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 console.log(array.map(
   function (value) {
-    return value * 2;     // [2, 4, 6, 8, 10, 12, 14, 16, 18]
+    return value * 2;     // Output: [2, 4, 6, 8, 10, 12, 14, 16, 18]
   }
 ))
 
-console.log(array);       // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+console.log(array);       // Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
-In the example above, it multiplies each value by 2 and keeps the original array unchanged.
 
 
 ## `reverse`
 
 `reverse` flips the order of items in an array and changes the original array.
 
+This is useful when you want to work with the same array in the opposite order.
+
 ```js
 var array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-console.log(array.reverse())    // [9, 8, 7, 6, 5, 4, 3, 2, 1]
+console.log(array.reverse())    // Output: [9, 8, 7, 6, 5, 4, 3, 2, 1]
 
-console.log(array);             // [9, 8, 7, 6, 5, 4, 3, 2, 1]
+console.log(array);             // Output: [9, 8, 7, 6, 5, 4, 3, 2, 1]
 ```
 
-This is useful when you want to work with the same array in the opposite order.
 
 
 ## `concat`
@@ -347,7 +371,7 @@ This is useful when you want to work with the same array in the opposite order.
 var array = [1, 2, 3, 4, 5];
 var array2 = ['cherry', 'apple', 'orange'];
 
-console.log(array.concat(array2))   // [1, 2, 3, 4, 5, "cherry", "apple", "orange"]
+console.log(array.concat(array2))   // Output: [1, 2, 3, 4, 5, "cherry", "apple", "orange"]
 ```
 
 The original arrays stay the same, and the combined version comes back as a new array.
@@ -357,14 +381,17 @@ The original arrays stay the same, and the combined version comes back as a new 
 
 `join` combines all items in an array into a string. You can choose what to put between items.
 
+In the example below, each number is converted to a string and the full `array2` string is placed between them.
+
+
 ```js
 var array = [1, 2, 3];
 var array2 = ['cherry', 'apple', 'orange'];
 
-console.log(array.join(array2))    // "1cherry,apple,orange2cherry,apple,orange3"
+console.log(array.join(array2))    
+// Output: "1cherry,apple,orange2cherry,apple,orange3"
 ```
 
-In the example above, it turns each number into a string and puts the full `array2` string between them.
 
 
 ## `reduce`
@@ -376,9 +403,10 @@ var array = [1, 2, 3, 4, 5];
 
 console.log(array.reduce(
   function(total, value) {
-    return total + value;     // 15
+    return total + value;     
   }
 ))
+// Output: 15
 ```
 
 

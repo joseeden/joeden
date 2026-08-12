@@ -19,8 +19,11 @@ console.log(typeof true)
 
 When ran in the browser, this will return boolean.
 
+<div class='img-center'>
+
 ![](/img/docs/12082024-typeofexample.png)
 
+</div>
 
 ## `typeof` bug 
 
@@ -28,8 +31,11 @@ When you run `typeof` with `null`, it should return `null`. But it will evaluate
 
 This wasn't corrected for legacy reasons, but instead treated as a bug.
 
+<div class='img-center'>
+
 ![](/img/docs/12082024-js-typeof-bug.png)
 
+</div>
 
 ## Assignment Operators  
 

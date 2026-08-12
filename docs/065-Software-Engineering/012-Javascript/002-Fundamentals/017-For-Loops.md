@@ -4,7 +4,7 @@ description: "For Loop in Javascript"
 tags: 
 - Web Development
 - Javascript
-sidebar_position: 15
+sidebar_position: 17
 last_update:
   date: 12/21/2020
 ---
@@ -66,21 +66,21 @@ Picked apple 15
 
 ## Looping Through an Array 
 
-A `for` loop is useful for iterating over arrays. 
+A `for` loop can be used to go through each element in an array.
 
-Consider the array of participant names. We'll use a `for` loop to print each name.
+For example:
 
-```javascript
+```javascript 
 const participants = ["Alice", "Bob", "Charlie", "David", "Eve"];
 
-for (var i = 0; i < participant.length; i++) {
-  console.log(participant[i]);
-};
+for (let i = 0; i < participants.length; i++) {
+  console.log(participants[i]);
+}
 ```
 
 Output:
 
-```
+```text 
 Alice
 Bob
 Charlie
@@ -88,25 +88,46 @@ David
 Eve
 ```
 
-:::info 
+The loop uses `participants.length` instead of a hardcoded number such as `5`.
 
-There is also more modern way of looping through lists and objects. 
+```javascript 
+// Avoid
+for (let i = 0; i < 5; i++) {
+  console.log(participants[i]);
+}
 
-Please see [Modern Looping through an Array](#modern-looping-es6)
-
-:::
-
-
-## Avoid Hardcoded Lengths
-
-Instead of manually setting the loop limit, we use `array.length`. This ensures the loop works even if the array size changes.
-
-```javascript
-participants.push("Frank");
-console.log(participants)
+// Better
+for (let i = 0; i < participants.length; i++) {
+  console.log(participants[i]);
+}
 ```
 
-If we run the loop again, `"Frank"` is automatically included.
+Using `.length` allows the loop to automatically adjust when the size of the array changes.
+
+For example, add another participant:
+
+```javascript 
+participants.push("Frank");
+```
+
+The array now has six elements. When the same loop runs again:
+
+```javascript 
+for (let i = 0; i < participants.length; i++) {
+  console.log(participants[i]);
+}
+```
+
+`participants.length` is now `6`, so `"Frank"` is automatically included without changing the loop.
+
+```text 
+Alice
+Bob
+Charlie
+David
+Eve
+Frank
+```
 
 ## Create New Array Inside a Loop
 
@@ -169,9 +190,42 @@ true
 ```
 
 
-## Looping Through an Object  
+## Arrays vs Objects
 
-Objects don't have numerical indexes like arrays. Instead, we use a `for...in` loop to iterate through an object's properties.  
+Arrays and objects both store multiple values, but they organize those values differently.
+
+An **array** stores an ordered list of values. Each value has a numerical index starting from `0`.
+
+```javascript
+const friends = ["Alice", "Bob", "Charlie"];
+
+console.log(friends[0]); // Alice
+console.log(friends[1]); // Bob
+```
+
+An **object** stores values using named properties instead of numerical positions.
+
+```javascript
+const person = {
+  name: "Alice",
+  age: 28,
+  city: "New York"
+};
+
+console.log(person.name);    // Alice
+console.log(person["name"]); // Alice
+```
+
+| Item        | Array               | Object                                     |
+| ----------- | ------------------- | ------------------------------------------ |
+| Stores      | List of values      | Properties and values                      |
+| Accessed by | Numerical index     | Property name                              |
+| Example     | `friends[0]`        | `person.name`                              |
+| Best for    | Ordered collections | Describing something with named properties |
+
+## Looping Through an Object
+
+Objects do not have numerical indexes like arrays. Instead, use a `for...in` loop to iterate through an object's property names.
 
 Example: Logging Object Keys and Values  
 
@@ -187,6 +241,17 @@ for (var key in person) {
   console.log(`${key}: ${person[key]}`);
 }
 ```
+
+On each iteration, `key` becomes one property name from the object.
+
+```text
+key = "name"
+key = "age"
+key = "city"
+key = "salary"
+```
+
+Then `person[key]` gets the value connected to that property.
 
 Output:
 

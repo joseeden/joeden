@@ -4,7 +4,7 @@ description: "DOM Events"
 tags: 
 - Web Development
 - Javascript
-sidebar_position: 33
+sidebar_position: 43
 last_update:
   date: 12/27/2020
 ---

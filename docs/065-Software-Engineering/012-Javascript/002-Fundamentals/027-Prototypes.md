@@ -4,7 +4,7 @@ description: "Prototypes in Javascript"
 tags: 
 - Web Development
 - Javascript
-sidebar_position: 20
+sidebar_position: 27
 last_update:
   date: 12/23/2020
 ---
