@@ -62,6 +62,8 @@ You can create functions in two ways:
 
 - **Function Declaration**
 
+    A function declaration uses the function keyword followed by the function name.
+
     ```javascript
     function sayHello() {
       console.log("Hello");
@@ -71,6 +73,8 @@ You can create functions in two ways:
     ```
 
 - **Function Expression**
+
+    A function expression creates a function and assigns it to a variable.
 
     ```javascript
     var sayBye = function() {
@@ -85,7 +89,7 @@ You can create functions in two ways:
 
 We can also create a function that accepts an input. 
 
-Example: The `calcAge` function accepts `birthYear` parameter, performs the operation, and returns the result.
+In the example below, the `calcAge` function accepts `birthYear` parameter, performs the operation, and returns the result.
 
 ```js
 function calcAge(birthYear)  {
@@ -109,39 +113,44 @@ Without `return`, the function does not give back a result.
 :::
 
 
-## Function Samples
+## Examples 
 
-- **Example 1: Simple Function**
+1. Simple function
 
     ```js
     function logger() {
       console.log("My name is John");
     }
 
-    logger();       // Output: "My name is John"
+    logger();       
+    // Output: "My name is John"
     ```
 
-- **Example 2: Function with Argument**
+2. Function with a single argument
 
     ```js
     function greet(name) {
       console.log(`Hello, ${name}!`);
     }
 
-    greet("Alice");  // Output: Hello, Alice!
+    greet("Alice");  
+    // Output: Hello, Alice!
     ``` 
 
-- **Example 3: Function with Multiple Arguments**
+3. Function with multiple arguments
 
     ```js
     function add(a, b) {
       return a + b;
     }
 
-    console.log(add(5, 3));  // Output: 8
+    console.log(add(5, 3));  
+    // Output: 8
     ```
 
-- **Example 4: Function with Default Parameters**
+4. Function with default parameters
+
+    Here, the `greet` function uses a default parameter (`"Guest"`) if no argument is passed in.
 
     ```js
     function greet(name = "Guest") {
@@ -152,9 +161,11 @@ Without `return`, the function does not give back a result.
     greet();         // Output: Hello, Guest!
     ```
 
-    Here, the `greet` function uses a default parameter (`"Guest"`) if no argument is passed in.
+    
 
-- **Example 5: Returning Values from Functions**
+5. Returning values from functions
+
+    The `multiply` function returns the product of `a` and `b`, and we store the returned value in the variable `result`.
 
     ```js
     function multiply(a, b) {
@@ -162,7 +173,8 @@ Without `return`, the function does not give back a result.
     }
 
     let result = multiply(4, 2);
-    console.log(result);  // Output: 8
+    console.log(result);  
+    // Output: 8
     ```
 
     The `multiply` function returns the product of `a` and `b`, and we store the returned value in the variable `result`.
@@ -171,6 +183,8 @@ Without `return`, the function does not give back a result.
 ## Anonymous Functions
 
 Anonymous functions are functions that are not given a name. They are typically used as function expressions, which means they must be defined before they are called.
+
+Syntax: 
 
 ```js
 const variable_name = function(parameter)  {
@@ -198,7 +212,7 @@ Unlike function declarations, anonymous functions are **function expressions** a
 
 Arrow functions provide a shorter syntax for writing functions. They are often more concise and don't require the `function` keyword.
 
-Using the previous example:
+Using the anonymour function example:
 
 ```js
 const getAge = function (birthYear) {
@@ -241,6 +255,90 @@ const yearsBeforeRetirement = birthYear => {
 
 const actualAge = yearsBeforeRetirement(1990);
 console.log(actualAge);         // Output: 30
+```
+
+
+## Can You Just Use Arrow Functions?
+
+For learning and most everyday JavaScript, you can default to arrow functions:
+
+```js
+const add = (a, b) => {
+  return a + b;
+}; 
+```
+
+Even make it shorter:
+
+```js
+const add = (a, b) => a + b; 
+```
+
+However, there are situations where a regular function is needed or more appropriate.
+
+The biggest difference you'll encounter is `this`.
+
+Regular functions have their own `this` behavior:
+
+```js
+const person = {
+  name: "Alice",
+
+  greet: function() {
+    console.log(this.name);
+  }
+};
+
+person.greet(); // Alice 
+```
+
+An arrow function does **not** create its own `this`:
+
+```js
+const person = {
+  name: "Alice",
+
+  greet: () => {
+    console.log(this.name);
+  }
+};
+
+person.greet(); // Not "Alice"
+```
+
+So using an arrow function as an object method like this can cause problems.
+
+**A Simple Rule to Follow:**
+
+If you want to minimize switching between formats, I'd use this rule:
+
+| Situation                              | Use                               |
+| -------------------------------------- | --------------------------------- |
+| Normal function stored in a variable   | Arrow function                    |
+| Callback function                      | Arrow function                    |
+| `map()`, `filter()`, `forEach()`, etc. | Arrow function                    |
+| Function that needs its own `this`     | Regular `function`                |
+| Object method using `this`             | Regular function or method syntax |
+| Constructor with `new`                 | Regular `function` / `class`      |
+
+To keep my code consistent, I use arrow functions by default. When regular function behavior is required, I use a regular function instead.
+
+I still recognize and understand anonymous function syntax because it is commonly used in existing JavaScript code, but I do not use it as my default style.
+
+Sample anonymous function:
+
+```js
+button.addEventListener("click", function() {
+  console.log("Clicked!");
+}); 
+```
+
+Same example, but using an arrow function:
+
+```js
+button.addEventListener("click", () => {
+  console.log("Clicked!");
+});
 ```
 
 ## Multiple Parameters

@@ -44,9 +44,12 @@
 
 // ----------------------------------------------
 
-let dice; 
+// let dice; 
 
-while (dice != 6) {
-  dice = Math.trunc(Math.random() * 6) + 1;
-  console.log(`You rolled a ${dice}`)
-};
+// while (dice != 6) {
+//   dice = Math.trunc(Math.random() * 6) + 1;
+//   console.log(`You rolled a ${dice}`)
+// };
+
+// ----------------------------------------------
+
