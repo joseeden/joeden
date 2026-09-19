@@ -50,7 +50,7 @@ You just have to keep doing something every day for 100 days.
 
 Being the adventurous lad that I am, I gathered all the courses I wanted to study, made a list of everything I wanted to accomplish, and started Day 1 on November 6 last year.
 
-I even wrote a post about it back then, which you can read [here](../2020-11-06/index.md).
+I even wrote a post about it back then, which you can read [here](/joeden/writings/day-1-where-to-start).
 
 ![alt text](image-2.png)
 

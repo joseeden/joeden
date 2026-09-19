@@ -2,7 +2,7 @@
 slug: the-examination-day
 title: "The Examination Day"
 tags: [devnotes]
-date: 2021-06-14
+date: 2021-06-04
 hide_table_of_contents: true
 ---
 
