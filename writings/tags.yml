@@ -22,3 +22,7 @@ devnotes:
   label: devnotes
   permalink: /devnotes
   description: devnotes tag description
+personal:
+  label: personal
+  permalink: /personal
+  description: personal tag description  

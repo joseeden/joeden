@@ -1,8 +1,8 @@
 ---
-slug: the-100-a-first-of-many
-title: "The 100: A First of Many"
+slug: the-100-days-later
+title: "The 100: Days Later
 tags: [devnotes]
-date: 2020-11-18
+date: 2021-02-15
 hide_table_of_contents: true
 ---
 
@@ -50,7 +50,7 @@ You just have to keep doing something every day for 100 days.
 
 Being the adventurous lad that I am, I gathered all the courses I wanted to study, made a list of everything I wanted to accomplish, and started Day 1 on November 6 last year.
 
-I even wrote a post about it back then, which you can read [here](https://dev.to/eden_jose08/day-1-where-to-start-53a4).
+I even wrote a post about it back then, which you can read [here](../2020-11-06/index.md).
 
 ![alt text](image-2.png)
 
@@ -84,7 +84,7 @@ And you're still stuck.
 
 Just on a different day.
 
-[Alt Text](https://res.cloudinary.com/practicaldev/image/fetch/s--8owjLurb--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/qa937mv6aug32rrtm39r.jpg)
+![alt text](image-4.png)
 
 ## You also get to see the rabbit hole, but you never really reach the end of it
 
@@ -112,7 +112,7 @@ And before you know it, you've gone deep into a rabbit hole.
 
 You originally wanted to solve one tiny problem, but somehow you've uncovered five other problems along the way.
 
-[Alt Text](https://res.cloudinary.com/practicaldev/image/fetch/s--mexYyYdM--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/kvgmtlhhaq8tfofc81iw.jpg)
+![alt text](image-3.png)
 
 But you know what?
 
@@ -170,7 +170,7 @@ As much as I wanted to just stop and rest completely, that little f*cker inside 
 
 I also wasn't able to follow the original plan I made during Day 1.
 
-For example, I never ended up taking Angela Yu's [Web Development Course](https://www.udemy.com/course/the-complete-web-development-bootcamp/) because I decided to focus more on automation instead.
+For example, I never ended up taking another Web Development Course because I decided to focus more on automation instead.
 
 The second and third months became a bit of a rollercoaster.
 
@@ -198,7 +198,7 @@ And you know what?
 
 He managed to beat those fears every single time.
 
-[Alt Text](https://res.cloudinary.com/practicaldev/image/fetch/s--3r4du7G6--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/ad2hefug10uoxkgftxxy.png)
+![alt text](image-5.png)
 
 ## To close this chapter
 
@@ -249,4 +249,4 @@ But hopefully, there'll also be fewer **what-ifs** waiting for me at the end.
 
 *"You can. You should. And if you are brave enough to start, you will."*
 
-* Stephen King
+- Stephen King

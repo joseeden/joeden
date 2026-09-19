@@ -45,7 +45,7 @@ Of course, there are a few other core concepts you should understand before you 
 
 When you're first learning a new language, let's say Nihongo, you might have this reaction the first time you come across Kanji:
 
-![alt text](image-1.png)
+![alt text](image-2.png)
 
 **Looks complicated, must be complicated.**
 
@@ -79,6 +79,8 @@ Here are some of the things you'll encounter almost everywhere.
 
   These rules might be influenced by earlier languages, but each language will still have its own way of writing instructions.
 
+  ![alt text](image-3.png)
+
   When you first read the title of this post, you might have had this tiny feeling that something was a little off about how it was written.
 
   If you did, then congratulations. You already understand the basic idea of syntax.
@@ -99,6 +101,8 @@ Here are some of the things you'll encounter almost everywhere.
 
   From that point on, your program can simply refer to `age` whenever it needs that value.
 
+  ![alt text](image-4.png)
+
 * **Printing**
 
   Printing is basically telling your program to display something as output.
@@ -117,6 +121,8 @@ Here are some of the things you'll encounter almost everywhere.
 
   You've probably already seen a glimpse of this in the example for variables above.
 
+  ![alt text](image-5.png)  
+
 * **Comments**
 
   Comments are notes that programmers leave inside their code.
@@ -133,6 +139,8 @@ Here are some of the things you'll encounter almost everywhere.
 
   In Python, for example, you can put a **#** at the beginning of a line to tell Python that the line is a comment and should not be executed.
 
+  ![alt text](image-6.png)
+
 * **Strings**
 
   Earlier, we talked about comments and how Python recognizes a line beginning with **#** as something that shouldn't be executed.
@@ -142,6 +150,8 @@ Here are some of the things you'll encounter almost everywhere.
   That's where strings come in.
 
   A string is basically text stored as data.
+
+  ![alt text](image-7.png)
 
   When you assign text to a variable, you'll normally wrap it in quotation marks so the programming language knows that it's dealing with text rather than another instruction.
 
@@ -159,6 +169,8 @@ Here are some of the things you'll encounter almost everywhere.
 
   Python, for example, commonly uses something called a **list** for this purpose.
 
+  ![alt text](image-8.png)
+  
   Another important thing to understand is that values inside these collections have positions.
 
   So if you only want one particular value, you don't necessarily have to retrieve everything. You can refer to its position, usually through something called an **index**.
