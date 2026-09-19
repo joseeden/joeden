@@ -14,3 +14,7 @@ hola:
   label: Hola
   permalink: /hola
   description: Hola tag description
+100daysofcode:
+  label: 100daysofcode
+  permalink: /100daysofcode
+  description: 100daysofcode tag description
