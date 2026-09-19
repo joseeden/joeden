@@ -1,6 +1,6 @@
 ---
 slug: the-100-days-later
-title: "The 100: Days Later
+title: "The 100: Days Later"
 tags: [devnotes]
 date: 2021-02-15
 hide_table_of_contents: true
