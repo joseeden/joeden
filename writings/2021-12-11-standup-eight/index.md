@@ -12,6 +12,8 @@ Whenever I have a bad day, or something shitty happens and everything just refus
 
 I either go outside and run until I completely lose myself in the moment, or I sit down and write whatever's going through my head.
 
+![alt text](image.png)
+
 Unfortunately, there's a storm expected to make landfall in our area, and I didn't exactly want to end up stranded somewhere once the heavy rain started pouring.
 
 I did manage to do some rope skipping in the pool area in my building earlier.
@@ -39,6 +41,8 @@ Going back.
 I finished my first **#100DaysOfCode Challenge** on February 14.
 
 Feeling victorious, I decided to immediately start another round.
+
+![alt text](image-1.png)
 
 The next day became **Day 1** again.
 
@@ -84,11 +88,9 @@ Both showed interest.
 
 I carefully weighed my chances with each one, and after several conversations with my wife, I decided I was ready to step out and move on to something new.
 
-[waiting-1.jpg](https://res.cloudinary.com/practicaldev/image/fetch/s--zW6AFRd1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://cdn.hashnode.com/res/hashnode/image/upload/v1622821799101/XRE_InE9KS.jpeg)
+![alt text](image-2.png)
 
-At that point, there was really only one thing left to do.
-
-Wait.
+At that point, there was really only one thing left to do. Wait.
 
 So I waited.
 
@@ -118,9 +120,7 @@ The second one dragged on for almost two months and involved a lot of follow-ups
 
 Every time I checked, I was told that management was still reviewing everything.
 
-So I waited.
-
-And waited.
+So I waited. And waited.
 
 By this point, I had already stopped entertaining other potential employers because I had pretty much locked myself onto this one opportunity.
 
@@ -198,7 +198,7 @@ Everyone was incredibly kind about it.
 
 My teammates and team leads were warm, generous, and supportive.
 
-Honestly, if it were possible, I probably would've brought some of my team leads with me.
+Honestly, if it were possible, I probably would've brought some of my teammates with me.
 
 Change is hard.
 
@@ -286,13 +286,13 @@ I don't expect things to suddenly become smooth sailing from here.
 
 They probably won't.
 
-What I do know is that we'll try to solve whatever can be solved.
+What I do know is that I'll try to solve whatever can be solved.
 
-We'll take the losses when we have to.
+Take the losses when needed.
 
-We'll take the hits.
+Take the hits.
 
-And then we'll stand up.
+And then stand up.
 
 At eight.
 
@@ -302,7 +302,8 @@ Or at a hundred.
 
 As many times as it takes.
 
-```text
+---------------------------
+
 If you've read up to this point, I'd like to give my utmost thanks.
 
 I know this is usually an avenue for all things technical,
@@ -310,4 +311,3 @@ but I just thought I'd share a side of myself that isn't only
 about work, studying, certifications, or programming.
 
 Sometimes, there's also everything happening in between.
-```
