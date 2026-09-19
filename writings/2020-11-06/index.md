@@ -2,6 +2,7 @@
 slug: day-1-where-to-start
 title: Day 1 - Where to start?
 tags: [100daysofcode]
+date: 2020-11-06
 ---
 
 
