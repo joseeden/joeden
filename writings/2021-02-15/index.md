@@ -1,12 +1,12 @@
 ---
 slug: the-100-a-first-of-many
-title: The 100: A First of Many
+title: "The 100: A First of Many"
 tags: [devnotes]
 date: 2020-11-18
 hide_table_of_contents: true
 ---
 
-# 100 Days: A First of Many 
+# The 100: Days Later
 
 Hi there. If you're reading this, then that probably means you're one of the hundred people looking for some motivation right now, and somehow you ran into the inspiring image of this article.
 
@@ -22,7 +22,9 @@ Honestly, I only really started enjoying it around the fourth episode.
 
 Then somehow I found myself cheering by the finale of Season 5.
 
-[Alt Text](https://res.cloudinary.com/practicaldev/image/fetch/s--IluChFAu--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/gkfbq85hqtdugdrba5z6.png)
+Fun fact: Episode 1 of Season 5 is titled "Eden".
+
+![alt text](image-1.png)
 
 Anyway, where was I again?
 
@@ -50,7 +52,7 @@ Being the adventurous lad that I am, I gathered all the courses I wanted to stud
 
 I even wrote a post about it back then, which you can read [here](https://dev.to/eden_jose08/day-1-where-to-start-53a4).
 
-[Alt Text](https://res.cloudinary.com/practicaldev/image/fetch/s--Idl3_7i---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/vufrl2l9j82csjeucpf1.png)
+![alt text](image-2.png)
 
 I was full of spirit during the first few weeks.
 

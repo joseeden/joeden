@@ -19,6 +19,6 @@ hola:
   permalink: /100daysofcode
   description: 100daysofcode tag description
 devnotes:
-  devnotes
-  devnotes
-  devnotes tag description
+  label: devnotes
+  permalink: /devnotes
+  description: devnotes tag description
