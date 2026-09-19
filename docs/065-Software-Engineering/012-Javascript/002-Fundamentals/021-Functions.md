@@ -236,7 +236,7 @@ const getAge = birthYear => 2040 - birthYear ;
 console.log(getAge(1990));      
 ```
 
-For better readability, we can assigne the `getAge` variable to the variable `actualAge` which will then be printed out.
+For better readability, we can assign the `getAge` variable to the variable `actualAge` which will then be printed out.
 
 ```JS 
 const getAge = birthYear => 2040 - birthYear;
