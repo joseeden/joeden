@@ -1,5 +1,6 @@
 ---
 slug: long-blog-post
+hide_table_of_contents: true
 title: Long Blog Post
 authors: winpool
 tags: [hello, docusaurus]

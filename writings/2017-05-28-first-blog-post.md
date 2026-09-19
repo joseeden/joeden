@@ -1,5 +1,6 @@
 ---
 slug: first-blog-post
+hide_table_of_contents: true
 title: First Blog Post
 authors: mmouser
 tags: [hola, docusaurus]

@@ -3,6 +3,7 @@ slug: day-1-where-to-start
 title: Day 1 - Where to start?
 tags: [100daysofcode]
 date: 2020-11-06
+hide_table_of_contents: true
 ---
 
 
@@ -116,7 +117,7 @@ Now, this is still a rough plan.
 
 If you've read the Python section above, this is only what I'm planning for the first half of the 100 days.
 
-For the second half, I intend to start a Udemy course: *The Complete 2020 Web Development Bootcamp*.
+For the second half, I intend to work on web development stuff.
 
 You might say that 50 days is too short to finish that course.
 

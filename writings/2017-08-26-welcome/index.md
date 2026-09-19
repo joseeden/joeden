@@ -1,5 +1,6 @@
 ---
 slug: welcome
+hide_table_of_contents: true
 title: Welcome
 authors: [mmouser, nfurs]
 tags: [facebook, hello, docusaurus]
