@@ -79,6 +79,7 @@ const config: Config = {
           blog: {
             path: 'writings',
             routeBasePath: 'writings',
+            include: ['*/**/*.{md,mdx}'], // Only publish posts inside folders.
             showReadingTime: true,
             onUntruncatedBlogPosts: "ignore",    /* 'ignore' | 'log' | 'warn' | 'throw' */
           },
