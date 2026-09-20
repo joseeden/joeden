@@ -1,5 +1,6 @@
 // docusaurus.config.ts
 import { themes } from "prism-react-renderer";
+import { GlobExcludeDefault } from "@docusaurus/utils";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
@@ -80,6 +81,7 @@ const config: Config = {
             path: 'writings',
             routeBasePath: 'writings',
             include: ['*/**/*.{md,mdx}'], // Only publish posts inside folders.
+            exclude: [...GlobExcludeDefault, '2017-08-26-welcome/**'],
             showReadingTime: true,
             onUntruncatedBlogPosts: "ignore",    /* 'ignore' | 'log' | 'warn' | 'throw' */
           },
