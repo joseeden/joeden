@@ -64,6 +64,10 @@
   color: #2c3b49;
 }
 
+:global(html[data-theme='dark'].blog-wrapper.blog-post-page article #__blog-post-container) {
+  color: #fff;
+}
+
 @media (max-width: 600px) {
   :global(html.blog-wrapper.blog-post-page .main-wrapper > .container) {
     padding: 0 17px;
