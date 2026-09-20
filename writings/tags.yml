@@ -26,3 +26,7 @@ personal:
   label: personal
   permalink: /personal
   description: personal tag description  
+books:
+  label: books
+  permalink: /books
+  description: books tag description  

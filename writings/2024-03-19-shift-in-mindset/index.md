@@ -2,13 +2,15 @@
 slug: a-shift-in-mindset
 title: "A Shift in Mindset"
 tags: [devnotes, 100daysofcode]
-date: 2021-11-25
+date: 2024-03-19
 hide_table_of_contents: true
 ---
 
 # A Shift in Thinking
 
-> TLDR: And that, I think, is the real shift in thinking:
+> Draft from November 2021. 
+>
+> And that, I think, is the real shift in thinking:
 > When you shift from being a learner to a problem-solver.
 
 ![alt text](image.png)

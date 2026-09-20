@@ -2,11 +2,13 @@
 slug: standup-eight
 title: "Standup Eight"
 tags: [personal]
-date: 2021-12-11
+date: 2024-03-25
 hide_table_of_contents: true
 ---
 
 # Stand up eight
+
+> This was a draft I've written sometime ago, probably around December 2021.
 
 Whenever I have a bad day, or something shitty happens and everything just refuses to go the way I planned, I usually resort to one of two things.
 
