@@ -14,24 +14,27 @@ I woke up with that fucking song playing in my head again.
 
 It had been four days.
 
-At first, I didn't really mind it. It was actually a nice song, although I didn't understand most of the words. You'd think that would make it easier to ignore, but for some stupid reason, it did the opposite. I wanted to understand it.
+At first, I didn't really mind it. It was actually a nice song, even if it was in a language I barely understood. You'd think that would make it easier to ignore, but for some stupid reason, it did the opposite. I wanted to understand it.
 
-So I started learning the language.
+So I started learning it.
 
 Not entirely because of the song, or at least, that's what I kept telling myself.
 
 Learning Spanish had been somewhere on my imaginary list of things I'd eventually do anyway. 
 
 Learn another language. 
+
 Travel more. 
+
 Run consistently. 
+
 Become one of those people who folds their clothes immediately after doing laundry.
 
 You know, impossible things.
 
 But then I heard the song, and suddenly Spanish moved much higher on the list.
 
-I started with a few words, then sentences, then questions. I could understand little pieces though I stil have to translate them first. There was something satisfying about hearing something that would've sounded like noise a few weeks earlier and suddenly realizing that I knew what it meant, or at least maybe parts of it.
+I started with a few words, then sentences, then questions. I could understand little pieces, though I still had to translate most of them first. There was something satisfying about hearing something that would've sounded like noise a few weeks earlier and suddenly realizing that I knew what it meant, or at least maybe parts of it.
 
 The problem was that somewhere along the way, I became a little too fond of the song itself.
 
@@ -43,7 +46,7 @@ I tried working that morning, but I couldn't really concentrate. I tried watchin
 
 Eventually, I opened Spotify.
 
-There it was.
+There it was. The song.
 
 I stared at it for a few seconds and told myself not to play it. Then I played it anyway.
 
@@ -66,12 +69,16 @@ I didn't have a destination, which is generally a terrible way to begin what wou
 There's something useful about cycling when your brain refuses to shut up. Your body eventually becomes too occupied with keeping you alive to entertain whatever nonsense is happening inside your head.
 
 Watch the road. 
+
 Avoid the car. 
+
 Change gears. 
+
 Drink water. 
+
 Don't hit the old man. 
 
-Why is this guy even walking in the bicycle lane?
+*Why is this guy even walking in the bicycle lane?*
 
 For a while, it worked.
 
@@ -87,7 +94,7 @@ This was Singapore, around noon, and for some reason I'd decided that this was t
 
 I stopped somewhere along the way to drink some water and checked my phone. Spotify was still sitting there, obviously, and for a second I considered opening it.
 
-Nope.
+*Nope.*
 
 I knew exactly what would happen.
 
@@ -107,17 +114,25 @@ People sitting on benches underneath the trees.
 
 Normal human beings who apparently understood that you're supposed to relax when you go to the beach.
 
-At one point, I passed a kid building an big sandcastle. It was actually impressive. The kid had built walls around it, several towers, and something resembling a moat. I don't know how long he'd been working on it, but against the blue water behind it, the whole thing looked almost too perfect for a random afternoon at the beach.
+At one point, I passed a kid building a big sandcastle. It was actually impressive. The kid had built walls around it, a few pointed towers, and one taller tower sticking out in the middle. I don't know how long he'd been working on it, but against the blue water behind it, the whole thing looked almost too perfect for a random afternoon at the beach.
 
 For a few seconds, it might've been the happiest place on that entire beach.
 
-Not long after that, some kid in a Mickey Mouse shirt nearly wandered into the cycling lane while his father tried to pull him back.
+I kept cycling, still looking around more than I probably should have been, when some kid in a Mickey Mouse shirt wandered into the cycling lane. His father pulled him back just before I reached them.
 
 Even Mickey was apparently trying to kill me that afternoon.
 
-I laughed and kept cycling.
+I laughed at the idea and rode on.
 
-That's basically how the afternoon went. Every now and then, something completely ordinary would remind me of the song. A word on a sign. Something somebody was wearing. A stupid joke I'd remembered. Sometimes absolutely nothing at all.
+That's basically how the afternoon went. Every now and then, something completely ordinary would remind me of the song. 
+
+A word on a sign. 
+
+Something somebody was wearing. 
+
+A stupid joke I'd remembered. 
+
+Sometimes absolutely nothing at all.
 
 There didn't even need to be a reason.
 
@@ -147,6 +162,8 @@ Maybe because it sounds like you've surrendered control. Maybe because it makes 
 
 I don't know.
 
+Maybe that's why I was out there in the first place. A little distance couldn't hurt.
+
 I preferred **detachment**.
 
 That sounded healthier.
@@ -155,7 +172,7 @@ More mature.
 
 Very psychological.
 
-Apparently the way to achieve that was by cycling across Singapore under the midday sun until my skin started cooking.
+Apparently the way to achieve that was by cycling across the island under the midday sun until my skin started cooking.
 
 Extremely healthy behavior.
 
@@ -163,7 +180,7 @@ So I kept going.
 
 By late afternoon, I had crossed two towns and was well into another. I don't remember exactly when my legs started complaining. Probably several hours before I actually decided to listen to them.
 
-At around 5 PM or 6 PM, I finally stopped at a coffee shop.
+At around 5:00 PM or 6:00 PM, I finally stopped at a coffee shop.
 
 I needed caffeine. Or sugar. Or intravenous fluids.
 
@@ -207,7 +224,9 @@ I collected my coffee and went outside. There were a few empty tables in the al 
 
 In front of me was a cup of coffee.
 
-And a marker. And a small piece of paper.
+And a marker. 
+
+And a small piece of paper.
 
 ----------------------------------------------
 
@@ -265,9 +284,15 @@ And continued cycling.
 
 Then I continued.
 
-There were moments when I actually forgot about the song completely. Ten minutes. Twenty minutes. Maybe longer.
+There were moments when I actually forgot about the song completely. 
 
-Those were good stretches.
+Ten minutes. 
+
+Twenty minutes. 
+
+Maybe longer.
+
+Those were the good parts.
 
 I'd notice the road, the wind, the lights, whatever was playing around me. I'd start thinking about work or something I needed to do the next day.
 
@@ -299,7 +324,7 @@ Across an ocean, perhaps.
 
 But apparently the human brain doesn't give a shit about geography.
 
-By around 9 PM, the road finally ran out.
+By around 9:00 PM, the road finally ran out.
 
 Not metaphorically. Literally.
 
@@ -307,15 +332,17 @@ There was nowhere useful left for me to go.
 
 I stood there with the bike for a while, staring ahead.
 
-Well. Fuck.
+*Well, Fuck.*
 
 If that road had continued, I honestly think I would've continued too.
 
 Maybe until midnight.
 
-Maybe until Saturday. Sunday.
+Maybe until Saturday. 
 
-Maybe until my legs fell off somewhere near Malaysia.
+Maybe until Sunday.
+
+Maybe until I accidentally found my way to the Pacific.
 
 I don't know.
 
@@ -333,7 +360,7 @@ Not the bed.
 
 The floor.
 
-Don't ask.
+*Don't ask.*
 
 For a while, I just stared at the ceiling.
 
@@ -341,9 +368,9 @@ The room was quiet.
 
 And strangely, so was my head.
 
-I remember thinking that maybe I'd done it. It was successful.
+I remember thinking that maybe I'd done it. Maybe it had actually worked.
 
-For several hours that afternoon, the song had become quieter. There had even been stretches when I didn't hear it at all.
+For several hours during the ride, the song had become quieter. There had even been stretches when I didn't hear it at all.
 
 Maybe tomorrow would be better. Maybe the next day would be better still.
 
@@ -359,7 +386,11 @@ Much louder than before.
 
 Fuckin hell.
 
-It felt like it was coming from everywhere. The walls, the ceiling, the air-conditioner, underneath the door. Every stupid little corner of the room seemed to know the melody.
+It felt like it was coming from everywhere. 
+
+The walls, the ceiling, the air-conditioner, underneath the door. 
+
+Every stupid little corner of the room seemed to know the melody.
 
 I rolled over.
 
@@ -367,13 +398,13 @@ Still there.
 
 I picked up my phone.
 
-Spotify. Don't.
+Spotify. *Don't.*
 
 I put it down.
 
 A few minutes later, I picked it up again.
 
-Spotify. Don't.
+Spotify. *Please don't.*
 
 Eventually, I couldn't stand being in the room anymore.
 
@@ -381,13 +412,13 @@ So I left.
 
 I decided I'd sleep somewhere else that night.
 
-I packed a few things into a bag, walked outside, and got on a bus. I sat beside the window and watched Singapore pass outside in streaks of white and yellow light.
+I packed a few things into a bag, walked outside, and got on a bus. I sat beside the window and watched the city pass by in streaks of white and yellow light.
 
-The song followed me.
+But the song followed me.
 
 Of course it did.
 
-Somewhere between one bus stop and another, it became so loud in my head that I finally stopped fighting it.
+Somewhere between one bus stop and another, the song became so loud in my head that I finally stopped fighting it.
 
 I was tired. Really fucking tired.
 
@@ -401,7 +432,11 @@ Maybe I didn't need to outrun the song.
 
 Maybe I just needed to accept that I might never hear it again.
 
-Those are different things. Maybe? I think so.
+Those are different things. 
+
+Maybe? 
+
+I think so.
 
 
 ## Four Days Later
@@ -418,15 +453,15 @@ But something strange happened while I was sick.
 
 The song became quieter.
 
-It was still there when I woke up. Morning was usually the worst.
+It was still there when I woke up. Mornings were usually the worst.
 
-There would be those few seconds after opening my eyes when my brain hadn't completely booted yet. Everything would be quiet.
+There would be those few seconds after opening my eyes when my brain hadn't fully woken up yet. Everything would be quiet.
 
 Then I'd remember.
 
-And there it was.
+And there it was. The song
 
-Sometimes I'd reach for my phone, open Spotify, find the song and play it.
+Sometimes I'd reach for my phone, open Spotify, find the song, and play it.
 
 At first, I'd listen to almost all of it before stopping.
 
@@ -466,7 +501,6 @@ And then there are songs you remember perfectly but eventually stop needing to p
 
 Maybe detachment wasn't deleting something from your head.
 
-Maybe it was being able to remember it without immediately wanting it back.
 
 ## Still Playing
 
@@ -502,7 +536,7 @@ And eventually Spotify did what Spotify does.
 
 The song came on.
 
-That song.
+*That song.*
 
 For a second, my hand instinctively moved toward my phone.
 
