@@ -8,6 +8,8 @@ hide_table_of_contents: true
 
 # Libro: A Wild Sheep Chase 
 
+*A Wild Sheep Chase* by Haruki Murakami
+
 Book 11 of 100
 
 “The light of the morning decomposes everything.”

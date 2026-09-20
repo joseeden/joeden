@@ -8,6 +8,8 @@ hide_table_of_contents: true
 
 # Libro: Norwegian Wood
 
+*Norwegian Wood* by Haruki Murakami
+
 Book 7 of 100
 
 “Love is the loss of innocence.”

@@ -6,7 +6,9 @@ date: 2019-02-13
 hide_table_of_contents: true
 ---
 
-# Libro: The Blind Willow, Sleeping Woman
+# Libro: Blind Willow, Sleeping Woman
+
+*Blind Willow, Sleeping Woman* by Haruki Murakami
 
 Book 9 of 100 
 
@@ -26,7 +28,7 @@ Some stories left me thinking.
 
 Some left me confused.
 
-And some just ended before I could even figure out what exactly I was supposed to feel. 😀
+And some just ended before I could even figure out what exactly I was supposed to feel. 
 
 But I guess that’s part of the charm.
 

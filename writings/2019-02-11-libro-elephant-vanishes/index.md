@@ -8,6 +8,8 @@ hide_table_of_contents: true
 
 # Libro: The Elephant Vanishes
 
+*The Elephant Vanishes* by Haruki Murakami
+
 Book 8 of 100
 
 “People who go through heavy experiences like that are changed men. They change for the better or they change for the worse. On the good side, they become unshakeable.”

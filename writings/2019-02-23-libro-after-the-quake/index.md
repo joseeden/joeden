@@ -8,6 +8,8 @@ hide_table_of_contents: true
 
 # Libro: After the Quake 
 
+*After the Quake* by Haruki Murakami
+
 Book 13 of 100 
 
 “I want to write about people who dream and wait for the night to end; who long for the light so they can hold on to the ones they love.”

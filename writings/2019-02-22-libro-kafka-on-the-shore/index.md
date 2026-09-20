@@ -8,6 +8,8 @@ hide_table_of_contents: true
 
 # Libro: Kafka on the Shore (海辺のカフカ. Umibe no Kafuka)
 
+*Kafka on the Shore* by Haruki Murakami
+
 Book 12 of 100 
 
 “If you remember me, I don’t care if everyone else forgets.”
