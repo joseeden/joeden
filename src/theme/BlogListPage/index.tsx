@@ -11,7 +11,7 @@ type BlogListItem = {
       permalink?: string;
       date?: string;
       readingTime?: number;
-      tags?: {label: string}[];
+      tags?: {label: string; permalink?: string}[];
     };
   };
 };
@@ -46,7 +46,11 @@ export default function BlogListPage({ metadata, items = [] }: BlogListPageProps
     .flatMap(({tags}) => tags));
   const sortedItems = sortByDateDesc(items).filter((item) =>
     selectedCategories.length === 0 || item.content?.metadata?.tags?.some(
-      ({label}) => selectedTags.has(label.toLowerCase()),
+      ({label, permalink}) => {
+        // Display labels are translated, but tag permalink names stay stable.
+        const tagName = permalink?.split('/').filter(Boolean).pop();
+        return selectedTags.has((tagName ?? label).toLowerCase());
+      },
     ),
   );
 
