@@ -1,0 +1,31 @@
+.section {
+  max-width: 728px;
+  margin: 0 auto 60px;
+  padding: 0 60px;
+}
+
+.heading {
+  margin: 0 0 23px;
+  padding: 0;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  a {
+    color: var(--ifm-font-color-base);
+  }
+}
+
+.allWritings {
+  display: block;
+  margin-top: 24px;
+  color: var(--ifm-color-emphasis-700);
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 0;
+  }
+}

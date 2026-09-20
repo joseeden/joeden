@@ -26,6 +26,7 @@ const config: Config = {
   },
 
   plugins: [
+    require.resolve("./plugins/homepage-writings.cjs"),
     "docusaurus-plugin-sass",
     "@datalayer/jupyter-docusaurus-plugin",
     [

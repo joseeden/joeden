@@ -1,4 +1,6 @@
 {
+  "homepage.writings.title": {"message": "Escritos"},
+  "homepage.writings.all": {"message": "Todos los escritos"},
   "homepage.hero.intro": {
     "message": "Me interesa crear cosas y resolver problemas. Escribo código, trabajo con entornos nativos de la nube y desarrollo sistemas fiables y escalables, preparados para el uso en el mundo real. Cuando no estoy programando, suelo salir a correr o leer libros que me llevan a otros mundos."
   },
