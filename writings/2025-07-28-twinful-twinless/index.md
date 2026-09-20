@@ -10,13 +10,13 @@ hide_table_of_contents: true
 # Twinful, Twinless
 
 > "There are many rooms in my Father's house. I am going to prepare a place for you." 
-> - Jesus 
+> Jesus 
 
 July 2025.
 
 I was in Thailand with my wife. We had been occupied most of that day and hadn't really checked our phones.
 
-Around 11 PM, we managed to get some free time and finally looked at phones.
+Around 11 PM, we managed to get some free time and finally looked at our phones.
 
 There were dozens of missed calls from my brother in Canada, from my family in the Philippines, and from my brother-in-law in Singapore. Different people, different places, but all of them were saying the same thing.
 
@@ -24,7 +24,7 @@ There were dozens of missed calls from my brother in Canada, from my family in t
 
 I don't really remember the rest of that night properly. There are pieces of it that I can still recall, but everything else feels blurred together.
 
-I remember arguing with my wife over something. Some disagreements over something, or maybe a lot, I don't know. I remember her telling me she's searching for flights back to Singapore and finding out that the earliest one we could get was around 5 AM the next morning.
+I remember arguing with my wife over something. Some disagreements over something, or maybe a lot, I don't know. I remember her telling me she was searching for flights back to Singapore, only to find out that the earliest one we could get was around 5 AM the next morning.
 
 So I told my family.
 
@@ -51,9 +51,9 @@ But in reality, I didn't.
 
 Growing up, though, we had this strange connection. I don't know if I'd actually call it telepathy because that sounds ridiculous when you say it out loud, but there were moments when it felt like our minds somehow knew what the other was thinking without either of us having to say anything.
 
-Back in college, there was one night when she went drinking with her friends. All girls.
+Back in college, there was this one night when she went drinking with her friends. All girls.
 
-And yes, one of them was my ex. Let's just call her the Joyful Mystery. She was actually one of my sister's best friends. It's complicated, really. Don't ask.
+And yes, one of them was my ex. Let's just call her the *Joyful Mystery*. She was actually one of my sister's best friends. It's complicated, really. Don't ask.
 
 Anyway, I tried to call them since it was already late and our mother will be coming home soon, but I couldn't reach them.
 
@@ -67,17 +67,17 @@ So I went looking for them.
 
 Fortunately, I also drank a lot back in college, which meant I had some useful knowledge about where drunk college kids usually went before heading home.
 
-There were these places where we'd eat something hot and sober up enough that our parents wouldn't immediately know what we'd been doing all night. Usually lugawans (places serving lugaw, arroz caldo, rice porridge, things like that.)
+There were these places where we'd eat something hot and sober up enough that our parents wouldn't immediately know what we'd been doing all night. Usually *lugawans* (places serving lugaw, arroz caldo, rice porridge, things like that.)
 
 I checked one. Nothing.
 
 Then I went to another. And there they were.
 
-My sister, her friends, the Joyful Mystery (we weren't really dating yet at that time).
+My sister, her friends, the *Joyful Mystery* (we weren't really dating yet at that time).
 
 All alive, all drunk.
 
-Of course, I didn't walk in like some amazing brother who had checked multiple streets and hanngouts looking for a missing sister.
+Of course, I didn't walk in like some amazing brother who had checked multiple streets and hangouts looking for a missing sister.
 
 I just approached them, waited for them to finish eating, and then Karen and I went back to our condo.
 
@@ -109,9 +109,9 @@ Maybe there just wasn't a natural way to bring it up, or maybe neither of us kne
 
 So I let it go. or maybe I simply forgot about it. 
 
-There were a lot of things like that between us, no discussions on some thing, just silent understanding.
+There were a lot of things like that between us, no discussions on some things, just silent understanding.
 
-That also included the Joyful Mystery, which was one of her best friends.
+That also included the *Joyful Mystery*, which was one of her best friends.
 
 She had become a mother young and already had a son, and honestly, I don't think Karen ever fully liked the idea of us being together.
 
@@ -119,13 +119,13 @@ She never directly told me not to date her friend. She never really said anythin
 
 Maybe she didn't want me dating her friend. Maybe she didn't want her friend dating me. Or maybe she knew both of us well enough to realize that putting the two together was probably a stupid fucking idea.
 
-I think it was2013, the Joyful Mystery and I were alone inside our condo.
+I think it was 2013, when *Joyful Mystery* and I went to our place.
 
 We weren't doing anything. We were literally just sitting at the dining table when Karen opened the door, and she saw the two of us.
 
 Then she immediately closed the door again and walked away so fast that my brain went into full panic mode.
 
-I left the Joyful Mystery sitting there and chased after my sister, and weirdly enough, I didn't know why I was panicking.
+I left the *Joyful Mystery* sitting there and chased after my sister, and weirdly enough, I didn't know why I was panicking.
 
 Was Karen angry? Also no idea.
 
@@ -173,7 +173,7 @@ I took out my phone and called my brother-in-law.
 
 He answered, struggling to speak. Then somehow he got the words out.
 
-Karen had stopped breathing.
+**Karen had stopped breathing.**
 
 And suddenly my brain caught up.
 
