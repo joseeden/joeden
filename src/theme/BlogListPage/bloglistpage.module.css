@@ -29,6 +29,10 @@
   padding: 0;
 }
 
+.filters {
+  margin-bottom: 1.5rem;
+}
+
 .listItem {
   border-bottom: 1px solid var(--ifm-toc-border-color);
 }

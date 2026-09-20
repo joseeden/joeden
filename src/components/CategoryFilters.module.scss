@@ -1,0 +1,118 @@
+.sidebarContainer {
+  padding: 0;
+  gap: 12px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+}
+
+.categoriesList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.categoryItem {
+  position: relative;
+  padding: 0;
+}
+
+.categoryToggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.categoryLabel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  font-size: 11px;
+  border: 1px solid #d2d7e2;
+  border-radius: 999px;
+  background-color: #f4f6fb;
+  color: #4c566f;
+  cursor: pointer;
+  line-height: 1.2;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    background-color: #e8ecf3;
+    border-color: #c4cce0;
+  }
+
+}
+
+.categoryToggle:checked + .categoryLabel {
+  background-color: #40939b;
+  border-color: #40939b;
+  color: #ffffff;
+}
+
+.categoryToggle:checked + .categoryLabel:hover {
+  color: #ffffff;
+}
+
+.categoryToggle:focus-visible + .categoryLabel {
+  outline: 2px solid #40939b;
+  outline-offset: 2px;
+}
+
+.clearAllButton {
+  margin-top: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 11px;
+  color: #4c566f;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  display: inline-block;
+
+  &:hover {
+    color: #40939b;
+  }
+}
+
+:global([data-theme="dark"]) {
+  .categoryLabel {
+    background-color: #163346;
+    border-color: #2b5267;
+    color: #d9e3e4;
+
+    &:hover {
+      background-color: #1d4457;
+      border-color: #3a6b7f;
+    }
+  }
+
+  .categoryToggle:checked + .categoryLabel {
+    background-color: #40939b;
+    border-color: #40939b;
+    color: #ffffff;
+  }
+
+  .categoryToggle:checked + .categoryLabel:hover {
+    color: #ffffff;
+  }
+
+  .categoryToggle {
+    background-color: white;
+    accent-color: #40939b;
+  }
+
+  .clearAllButton {
+    color: #d9e3e4;
+
+    &:hover {
+      color: #ffffff;
+    }
+  }
+}
