@@ -12,10 +12,7 @@ export function Writings(): JSX.Element | null {
   return (
     <section className={styles.section} aria-labelledby="homepage-writings-title">
       <h2 id="homepage-writings-title" className={styles.heading}>
-        <Link to="/writings">
-          {translate({id: 'homepage.writings.title', message: 'Writings'})}{' '}
-          <span aria-hidden="true">↗</span>
-        </Link>
+        {translate({id: 'homepage.writings.title', message: 'Writings'})}
       </h2>
       <WritingsList posts={posts} linkTo="/writings" titleAs="h3" />
       <Link to="/writings" className={styles.allWritings}>
