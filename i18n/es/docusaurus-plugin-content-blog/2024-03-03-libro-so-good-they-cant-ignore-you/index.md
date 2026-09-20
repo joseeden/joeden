@@ -12,7 +12,7 @@ hide_table_of_contents: true
 
 Libro 2 de 2024
 
-![Imagen del libro](../../../../writings/2024-03-03-so-libro-good-they-cant-ignore-you/image.png)
+![Imagen del libro](../../../../writings/2024-03-03-libro-so-good-they-cant-ignore-you/image.png)
 
 Este libro contiene muchos consejos muy buenos, pero la idea que más se me quedó fue esta:
 
@@ -59,4 +59,3 @@ No esperes a descubrir por arte de magia algo que te apasione para empezar a mej
 Hazte bueno en algo que merezca la pena.
 
 Puede que la pasión llegue después.
-
