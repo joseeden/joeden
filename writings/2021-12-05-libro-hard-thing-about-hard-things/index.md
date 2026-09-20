@@ -1,13 +1,13 @@
 ---
-slug: book-hard-thing-about-hard-things
-title: "Book: The Hard Thing About Hard Things"
+slug: libro-hard-thing-about-hard-things
+title: "Libro: The Hard Thing About Hard Things"
 tags: [books]
 date: 2021-12-05
 hide_table_of_contents: true
 ---
 
 
-# The Hard Thing About Hard Things 
+# Libro: The Hard Thing About Hard Things 
 
 ![alt text](image.png)
 

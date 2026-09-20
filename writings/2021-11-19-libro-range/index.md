@@ -1,13 +1,13 @@
 ---
-slug: book-range
-title: "Book: Range"
+slug: libro-range
+title: "Libro: Range"
 tags: [books]
 date: 2021-11-19
 hide_table_of_contents: true
 ---
 
 
-# Range, by David Epstein 
+# Libro: Range
 
 *"Great things are not done by impulse, but by a series of small things brought together."*
 - Vincent van Gogh
