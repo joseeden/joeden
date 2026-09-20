@@ -8,8 +8,6 @@ hide_table_of_contents: true
 
 # Un café, por favor
 
-*Hay canciones que no sabes que te has aprendido de memoria hasta que intentas desesperadamente no ponerlas.*
-
 Me desperté con esa puta canción sonando otra vez en mi cabeza.
 
 Habían pasado cuatro días.

@@ -8,8 +8,6 @@ hide_table_of_contents: true
 
 # Un café, por favor
 
-*There are some songs you don't realize you've memorized until you're trying desperately not to play them.*
-
 I woke up with that fucking song playing in my head again.
 
 It had been four days.
