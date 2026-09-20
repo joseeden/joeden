@@ -68,12 +68,12 @@ export default function Footer() {
               <GithubIcon width="20" height="20" aria-hidden="true" />
             </a>
 
-            <a href="https://x.com/eden_noel08" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="X">
-              <XIcon width="20" height="20" aria-hidden="true" />
-            </a>
-
             <a href="https://linkedin.com/in/joseeden" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn">
               <LinkedInIcon width="20" height="20" aria-hidden="true" />
+            </a>
+
+            <a href="https://x.com/eden_noel08" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="X">
+              <XIcon width="20" height="20" aria-hidden="true" />
             </a>
           </div>
 
