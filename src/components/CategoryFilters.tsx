@@ -1,4 +1,5 @@
 import React from 'react';
+import {translate} from '@docusaurus/Translate';
 import styles from './CategoryFilters.module.scss';
 
 type Category = {id: string; label: string};
@@ -11,7 +12,7 @@ export default function CategoryFilters({categories, selected, onToggle, onClear
   idPrefix: string;
 }): JSX.Element {
   return (
-    <div className={styles.sidebarContainer} role="group" aria-label="Categories">
+    <div className={styles.sidebarContainer} role="group" aria-label={translate({id: 'categoryFilters.label', message: 'Categories'})}>
       <div className={styles.categoriesList}>
         {categories.map(({id, label}) => (
           <div key={id} className={styles.categoryItem}>
@@ -29,7 +30,7 @@ export default function CategoryFilters({categories, selected, onToggle, onClear
         ))}
       </div>
       <button type="button" className={styles.clearAllButton} onClick={onClear}>
-        Clear All
+        {translate({id: 'categoryFilters.clear', message: 'Clear All'})}
       </button>
     </div>
   );

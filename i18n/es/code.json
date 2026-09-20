@@ -139,6 +139,33 @@
   "footer.email": {
     "message": "Correo electrónico"
   },
+  "writings.title": {
+    "message": "Escritos"
+  },
+  "writings.list": {
+    "message": "Lista de escritos"
+  },
+  "writings.category.myLife": {
+    "message": "Mi Vida"
+  },
+  "writings.category.books": {
+    "message": "Reseñas de libros"
+  },
+  "writings.category.arts": {
+    "message": "Arte"
+  },
+  "writings.category.devnotes": {
+    "message": "Apuntes de desarrollo"
+  },
+  "writings.empty": {
+    "message": "No hay escritos que coincidan con las categorías seleccionadas."
+  },
+  "categoryFilters.label": {
+    "message": "Categorías"
+  },
+  "categoryFilters.clear": {
+    "message": "Limpiar selección"
+  },
   "footer.location": {
     "message": "SINGAPUR, GMT+8"
   }

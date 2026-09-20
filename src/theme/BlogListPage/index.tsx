@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {translate} from '@docusaurus/Translate';
 import CategoryFilters from '../../components/CategoryFilters';
 import WritingsList from '../../components/WritingsList';
 import Layout from '@theme/Layout';
@@ -24,11 +25,11 @@ type BlogListPageProps = {
   items?: BlogListItem[];
 };
 
-const categories = [
-  {id: 'my-life', label: 'My Life', tags: ['personal', 'sketches', 'arts', 'runs']},
-  {id: 'book-reviews', label: 'Book Reviews', tags: ['books']},
-  {id: 'arts', label: 'Arts', tags: ['arts', 'sketches']},
-  {id: 'devnotes', label: 'DevNotes', tags: ['devnotes', '100daysofcode']},
+const getCategories = () => [
+  {id: 'my-life', label: translate({id: 'writings.category.myLife', message: 'My Life'}), tags: ['personal', 'sketches', 'arts', 'runs']},
+  {id: 'book-reviews', label: translate({id: 'writings.category.books', message: 'Book Reviews'}), tags: ['books']},
+  {id: 'arts', label: translate({id: 'writings.category.arts', message: 'Arts'}), tags: ['arts', 'sketches']},
+  {id: 'devnotes', label: translate({id: 'writings.category.devnotes', message: 'DevNotes'}), tags: ['devnotes', '100daysofcode']},
 ];
 
 function sortByDateDesc(items: BlogListItem[]): BlogListItem[] {
@@ -41,6 +42,8 @@ function sortByDateDesc(items: BlogListItem[]): BlogListItem[] {
 
 export default function BlogListPage({ metadata, items = [] }: BlogListPageProps): JSX.Element {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const categories = getCategories();
+  const title = translate({id: 'writings.title', message: 'Writings'});
   const selectedTags = new Set(categories
     .filter(({id}) => selectedCategories.includes(id))
     .flatMap(({tags}) => tags));
@@ -61,10 +64,10 @@ export default function BlogListPage({ metadata, items = [] }: BlogListPageProps
   };
 
   return (
-    <Layout title={metadata?.blogTitle ?? 'Writings'} description={metadata?.blogDescription}>
+    <Layout title={title} description={metadata?.blogDescription}>
       <main className={styles.page}>
-        <section className={styles.wrapper} aria-label="Writings list">
-          <h1 className={styles.header}>Writings</h1>
+        <section className={styles.wrapper} aria-label={translate({id: 'writings.list', message: 'Writings list'})}>
+          <h1 className={styles.header}>{title}</h1>
           <div className={styles.filters}>
             <CategoryFilters
               categories={categories}
@@ -76,7 +79,7 @@ export default function BlogListPage({ metadata, items = [] }: BlogListPageProps
           </div>
           {sortedItems.length > 0
             ? <WritingsList posts={sortedItems.map((item) => item.content?.metadata ?? {})} />
-            : <p role="status">No writings match the selected categories.</p>}
+            : <p role="status">{translate({id: 'writings.empty', message: 'No writings match the selected categories.'})}</p>}
         </section>
       </main>
     </Layout>
