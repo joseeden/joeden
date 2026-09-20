@@ -1,7 +1,7 @@
 ---
 slug: libro-when-breath-becomes-air
 title: "Libro: When Breath Becomes Air"
-tags: [books]
+tags: [Books]
 date: 2019-08-26
 hide_table_of_contents: true
 ---

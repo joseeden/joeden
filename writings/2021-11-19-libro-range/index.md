@@ -1,7 +1,7 @@
 ---
 slug: libro-range
 title: "Libro: Range"
-tags: [books]
+tags: [Books]
 date: 2021-11-19
 hide_table_of_contents: true
 ---

@@ -1,7 +1,7 @@
 ---
 slug: libro-hard-thing-about-hard-things
 title: "Libro: The Hard Thing About Hard Things"
-tags: [books]
+tags: [Books]
 date: 2021-12-05
 hide_table_of_contents: true
 ---

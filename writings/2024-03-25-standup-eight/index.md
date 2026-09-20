@@ -1,7 +1,7 @@
 ---
 slug: standup-eight
 title: "Standup Eight"
-tags: [personal]
+tags: [Personal]
 date: 2024-03-25
 hide_table_of_contents: true
 ---

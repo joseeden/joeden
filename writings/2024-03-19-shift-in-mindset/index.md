@@ -1,7 +1,7 @@
 ---
 slug: a-shift-in-mindset
 title: "A Shift in Mindset"
-tags: [devnotes, 100daysofcode]
+tags: [Personal, Devnotes, 100daysofcode]
 date: 2024-03-19
 hide_table_of_contents: true
 ---

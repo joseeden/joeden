@@ -1,7 +1,7 @@
 ---
 slug: libro-how-to-win-friends-and-influence-people
 title: "Libro: How to Win Friends and Influence People"
-tags: [books]
+tags: [Books]
 date: 2019-11-20
 hide_table_of_contents: true
 ---

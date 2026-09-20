@@ -1,7 +1,7 @@
 ---
 slug: never-ending-improvement
 title: "The Never-Ending Work of Improvement"
-tags: [personal]
+tags: [Personal]
 date: 2021-01-21
 hide_table_of_contents: true
 ---

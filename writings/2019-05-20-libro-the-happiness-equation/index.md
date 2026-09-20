@@ -1,7 +1,7 @@
 ---
 slug: libro-the-happiness-equation
 title: "Libro: The Happiness Equation"
-tags: [books]
+tags: [Books]
 date: 2019-05-20
 hide_table_of_contents: true
 ---

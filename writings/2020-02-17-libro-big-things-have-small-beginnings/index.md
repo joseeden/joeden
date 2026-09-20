@@ -1,7 +1,7 @@
 ---
 slug: libro-big-things-have-small-beginnings
 title: "Libro: Big Things Have Small Beginnings"
-tags: [books]
+tags: [Books]
 date: 2020-02-17
 hide_table_of_contents: true
 ---

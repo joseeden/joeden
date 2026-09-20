@@ -1,7 +1,7 @@
 ---
 slug: libro-kafka-on-the-shore
 title: "Libro: Kafka on the Shore"
-tags: [books]
+tags: [Books]
 date: 2019-02-22
 hide_table_of_contents: true
 ---

@@ -1,7 +1,7 @@
 ---
 slug: libro-daring-greatly
 title: "Libro: Daring Greatly"
-tags: [books]
+tags: [Books]
 date: 2019-05-05
 hide_table_of_contents: true
 ---

@@ -1,7 +1,7 @@
 ---
 slug: libro-peak
 title: "Libro: Peak"
-tags: [books]
+tags: [Books]
 date: 2022-01-25
 hide_table_of_contents: true
 ---

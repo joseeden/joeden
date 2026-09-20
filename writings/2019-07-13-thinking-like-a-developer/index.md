@@ -1,7 +1,7 @@
 ---
 slug: thinking-like-a-developer
 title: "Thinking like a Developer"
-tags: [devnotes]
+tags: [Devnotes, Personal]
 date: 2019-07-13
 hide_table_of_contents: true
 ---

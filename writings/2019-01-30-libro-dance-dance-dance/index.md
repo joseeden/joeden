@@ -1,7 +1,7 @@
 ---
 slug: libro-dance-dance-dance
 title: "Libro: Dance, Dance, Dance"
-tags: [books]
+tags: [Books]
 date: 2019-01-30
 hide_table_of_contents: true
 ---

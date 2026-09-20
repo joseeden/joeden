@@ -1,7 +1,7 @@
 ---
 slug: libro-elephant-vanishes
 title: "Libro: The Elephant Vanishes"
-tags: [books]
+tags: [Books]
 date: 2019-02-11
 hide_table_of_contents: true
 ---

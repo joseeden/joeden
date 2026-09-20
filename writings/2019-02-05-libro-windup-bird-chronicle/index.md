@@ -1,7 +1,7 @@
 ---
 slug: libro-windup-bird-chronicle
 title: "Libro: The Wind-Up Bird Chronicle"
-tags: [books]
+tags: [Books]
 date: 2019-02-05
 hide_table_of_contents: true
 ---

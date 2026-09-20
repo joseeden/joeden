@@ -1,7 +1,7 @@
 ---
 slug: libro-after-the-quake
 title: "Libro: After the Quake"
-tags: [books]
+tags: [Books]
 date: 2019-02-23
 hide_table_of_contents: true
 ---

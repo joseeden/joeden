@@ -1,7 +1,7 @@
 ---
 slug: libro-the-first-20-hours
 title: "Libro: The First 20 Hours"
-tags: [books]
+tags: [Books]
 date: 2021-10-13
 hide_table_of_contents: true
 ---

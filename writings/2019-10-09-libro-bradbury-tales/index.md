@@ -1,7 +1,7 @@
 ---
 slug: libro-bradbury-tales
 title: "Libro: Bradbury Stories: 100 of His Most Celebrated Tales"
-tags: [books]
+tags: [Books]
 date: 2019-10-09
 hide_table_of_contents: true
 ---

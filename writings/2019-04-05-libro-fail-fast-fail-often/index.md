@@ -1,7 +1,7 @@
 ---
 slug: libro-fail-fast-fail-often
 title: "Libro: Fail Fast, Fail Often"
-tags: [books]
+tags: [Books]
 date: 2019-04-05
 hide_table_of_contents: true
 ---

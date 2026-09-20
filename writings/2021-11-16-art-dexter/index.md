@@ -1,7 +1,7 @@
 ---
 slug: art-dexter
 title: "Sketch: Omelette du fromage!"
-tags: [arts, sketches]
+tags: [Arts, Sketches]
 date: 2021-11-16
 hide_table_of_contents: true
 ---

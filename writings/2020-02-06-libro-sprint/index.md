@@ -1,7 +1,7 @@
 ---
 slug: libro-sprint
 title: "Libro: Sprint - How to Solve Big Problems"
-tags: [books]
+tags: [Books]
 date: 2020-02-06
 hide_table_of_contents: true
 ---

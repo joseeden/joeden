@@ -1,7 +1,7 @@
 ---
 slug: libro-dream-architects
 title: "Libro: Dream Architects"
-tags: [books]
+tags: [Books]
 date: 2021-11-20
 hide_table_of_contents: true
 ---

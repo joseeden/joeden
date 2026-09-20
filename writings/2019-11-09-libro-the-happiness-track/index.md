@@ -1,7 +1,7 @@
 ---
 slug: libro-the-happiness-track
 title: "Libro: The Happiness Track"
-tags: [books]
+tags: [Books]
 date: 2019-11-09
 hide_table_of_contents: true
 ---

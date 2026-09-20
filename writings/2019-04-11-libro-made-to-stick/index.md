@@ -1,7 +1,7 @@
 ---
 slug: libro-made-to-stick
 title: "Libro: Made to Stick"
-tags: [books]
+tags: [Books]
 date: 2019-04-11
 hide_table_of_contents: true
 ---

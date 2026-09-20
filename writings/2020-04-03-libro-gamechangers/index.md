@@ -1,7 +1,7 @@
 ---
 slug: libro-gamechangers
 title: "Libro: Gamechangers"
-tags: [books]
+tags: [Books]
 date: 2020-04-03
 hide_table_of_contents: true
 ---

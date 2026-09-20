@@ -1,7 +1,7 @@
 ---
 slug: libro-the-laws-of-human-nature
 title: "Libro: The Laws of Human Nature"
-tags: [books]
+tags: [Books]
 date: 2020-01-03
 hide_table_of_contents: true
 ---

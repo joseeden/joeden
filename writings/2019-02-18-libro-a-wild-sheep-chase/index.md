@@ -1,7 +1,7 @@
 ---
 slug: libro-a-wild-sheep-chase
 title: "Libro: A Wild Sheep Chase"
-tags: [books]
+tags: [Books]
 date: 2019-02-18
 hide_table_of_contents: true
 ---

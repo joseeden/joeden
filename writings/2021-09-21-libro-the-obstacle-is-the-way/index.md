@@ -1,7 +1,7 @@
 ---
 slug: libro-the-obstacle-is-the-way
 title: "Libro: The Obstacle Is the Way"
-tags: [books]
+tags: [Books]
 date: 2021-09-21
 hide_table_of_contents: true
 ---

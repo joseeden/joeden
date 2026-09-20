@@ -1,7 +1,7 @@
 ---
 slug: the-100-days-later
 title: "The 100: Days Later"
-tags: [devnotes]
+tags: [Personal, 100daysofcode, Devnotes]
 date: 2021-02-15
 hide_table_of_contents: true
 ---

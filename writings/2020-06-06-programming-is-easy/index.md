@@ -1,7 +1,7 @@
 ---
 slug: programming-is-easy
 title: Programming is easy, ain't it?
-tags: [100daysofcode]
+tags: [100daysofcode, Devnotes]
 date: 2020-06-06
 hide_table_of_contents: true
 ---

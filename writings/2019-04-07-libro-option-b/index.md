@@ -1,7 +1,7 @@
 ---
 slug: libro-option-b
 title: "Libro: Option B"
-tags: [books]
+tags: [Books]
 date: 2019-04-07
 hide_table_of_contents: true
 ---

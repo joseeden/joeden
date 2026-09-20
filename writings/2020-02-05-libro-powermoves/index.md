@@ -1,7 +1,7 @@
 ---
 slug: libro-powermoves
 title: "Libro: Power Moves from Davos"
-tags: [books]
+tags: [Books]
 date: 2020-02-05
 hide_table_of_contents: true
 ---

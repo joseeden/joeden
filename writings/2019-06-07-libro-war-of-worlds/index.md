@@ -1,7 +1,7 @@
 ---
 slug: libro-war-of-worlds
 title: "Libro: The War of Worlds"
-tags: [books]
+tags: [Books]
 date: 2019-06-07
 hide_table_of_contents: true
 ---

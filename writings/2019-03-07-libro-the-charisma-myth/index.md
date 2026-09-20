@@ -1,7 +1,7 @@
 ---
 slug: libro-the-charisma-myth
 title: "Libro: The Charisma Myth"
-tags: [books]
+tags: [Books]
 date: 2019-03-07
 hide_table_of_contents: true
 ---
