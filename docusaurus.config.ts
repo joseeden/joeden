@@ -80,6 +80,7 @@ const config: Config = {
           blog: {
             path: 'writings',
             routeBasePath: 'writings',
+            postsPerPage: 'ALL',
             include: ['*/**/*.{md,mdx}'], // Only publish posts inside folders.
             exclude: [...GlobExcludeDefault, '2017-08-26-welcome/**'],
             showReadingTime: true,
