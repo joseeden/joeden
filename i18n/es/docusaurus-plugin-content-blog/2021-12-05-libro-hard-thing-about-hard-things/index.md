@@ -8,6 +8,8 @@ hide_table_of_contents: true
 
 # Libro: Lo difícil de las cosas difíciles
 
+Libro: Lo difícil de las cosas difíciles, de Ben Horowitz
+
 ![Imagen del libro](../../../../writings/2021-12-05-libro-hard-thing-about-hard-things/image.png)
 
 Tercera vez que termino este audiolibro.

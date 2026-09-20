@@ -1,15 +1,14 @@
 ---
 slug: twinful-twinless
-title: "Con mi melliza, sin mi melliza"
+title: "Con melliza, sin melliza"
 tags: [personal]
 date: 2025-07-28
 hide_table_of_contents: true
 ---
 
-# Con mi melliza, sin mi melliza
+# Con melliza, sin melliza
 
-> «En la casa de mi Padre hay muchas habitaciones. Voy a prepararles un lugar».
-> Jesús
+> «En la casa de mi Padre hay muchas habitaciones. Voy a prepararles un lugar». — Jesús
 
 Julio de 2025.
 
@@ -39,7 +38,7 @@ Mi cuerpo estaba en Tailandia, tenía el portátil delante, pero mi cabeza volv�
 
 Esta noche no. Ahora no.
 
-## Con mi melliza
+## Con melliza
 
 Tengo una hermana melliza.
 
@@ -293,7 +292,7 @@ Quizá esto. Quizá aquello. Quizá de alguna manera.
 
 Pero tu cuerpo ya se ha rendido ante la verdad.
 
-## Sin mi melliza
+## Sin melliza
 
 Llegó el último día.
 
