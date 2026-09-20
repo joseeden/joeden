@@ -18,7 +18,11 @@ const config: Config = {
 
   i18n: {
     defaultLocale: "en",
-    locales: ["en"],
+    locales: ["en", "es"],
+    localeConfigs: {
+      en: { label: "English" },
+      es: { label: "Español" },
+    },
   },
 
   plugins: [
@@ -164,6 +168,10 @@ const config: Config = {
         // { to: "https://merria.co", label: "Merria", position: "left" },
         { to: "https://www.merriadigital.com", label: "Merria Digital", position: "left" },
         { to: "https://www.velarae.co/", label: "Velarae", position: "left" },
+        {
+          type: 'localeDropdown',
+          position: 'right',
+        },
         {
           type: 'search',
           position: 'right',

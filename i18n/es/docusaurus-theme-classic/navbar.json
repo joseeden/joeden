@@ -1,0 +1,18 @@
+{
+  "item.label.About": {
+    "message": "Sobre mí",
+    "description": "Navbar item with label About"
+  },
+  "item.label.Projects": {
+    "message": "Proyectos",
+    "description": "Navbar item with label Projects"
+  },
+  "item.label.Docs": {
+    "message": "Documentación",
+    "description": "Navbar item with label Docs"
+  },
+  "item.label.Writings": {
+    "message": "Escritos",
+    "description": "Navbar item with label Writings"
+  }
+}
