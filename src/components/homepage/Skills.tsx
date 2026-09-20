@@ -1,3 +1,4 @@
+import {translate} from "@docusaurus/Translate";
 
 import React, { FunctionComponent, useMemo } from "react";
 import styles from "./Skills.module.scss";
@@ -41,10 +42,10 @@ export const Skills: FunctionComponent = () => {
   }, []);
 
   return (
-    <section className={styles.skillsSection} aria-label="Skills">
-      <h2 className={styles.skillsTitle}>SKILLS</h2>
+    <section className={styles.skillsSection} aria-label={translate({id: "homepage.skills.label", message: "Skills"})}>
+      <h2 className={styles.skillsTitle}>{translate({id: "homepage.skills.title", message: "SKILLS"})}</h2>
       <p className={styles.skillsIntro}>
-        A selection of technologies, platforms, and tools I use regularly.
+        {translate({id: "homepage.skills.intro", message: "A selection of technologies, platforms, and tools I use regularly."})}
       </p>
       <div className={styles.skillsCarouselSection}>
         <div className={styles.skillsCarouselShell}>

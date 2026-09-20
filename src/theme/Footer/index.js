@@ -1,3 +1,4 @@
+import {translate} from "@docusaurus/Translate";
 import React, { useEffect, useState } from 'react';
 import signatureWhite from '@site/assets/site-design/signature/signature-white.png';
 import EmailIcon from '@site/assets/site-design/footer/email.svg';
@@ -52,14 +53,14 @@ export default function Footer() {
           <div className="footer-signature-wrapper">
             <img
               src={signatureSrc}
-              alt="Eden Jose signature"
+              alt={translate({id: "footer.signature", message: "Eden Jose signature"})}
               className="footer-signature"
               loading="lazy"
             />
           </div>
 
           <div className="footer-socials">
-            <a href="mailto:josemanuelitoeden@gmail.com" className="social-icon" aria-label="Email">
+            <a href="mailto:josemanuelitoeden@gmail.com" className="social-icon" aria-label={translate({id: "footer.email", message: "Email"})}>
               <EmailIcon width="20" height="20" aria-hidden="true" />
             </a>
 
@@ -82,7 +83,7 @@ export default function Footer() {
         <div className="footer-bottom">
           <div className="footer-meta-item">
             <LocationIcon width="12" height="12" aria-hidden="true" />
-            <span>SINGAPORE, GMT+8</span>
+            <span>{translate({id: "footer.location", message: "SINGAPORE, GMT+8"})}</span>
           </div>
 
           <div className="footer-meta-item">

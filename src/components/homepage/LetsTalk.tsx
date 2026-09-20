@@ -1,3 +1,4 @@
+import {translate} from "@docusaurus/Translate";
 import React, { FunctionComponent, FormEvent, useState } from "react";
 import styles from "./LetsTalk.module.scss";
 
@@ -41,10 +42,10 @@ export const LetsTalk: FunctionComponent = () => {
   };
 
   return (
-    <section className={styles.letsTalkSection} aria-label="Let's Talk" id="lets-talk">
-      <h2 className={styles.letsTalkTitle}>LET&apos;S TALK</h2>
+    <section className={styles.letsTalkSection} aria-label={translate({id: "homepage.contact.label", message: "Let's Talk"})} id="lets-talk">
+      <h2 className={styles.letsTalkTitle}>{translate({id: "homepage.contact.title", message: "LET'S TALK"})}</h2>
       <p className={styles.letsTalkIntro}>
-        Have an idea? Let&apos;s talk and make it happen.
+        {translate({id: "homepage.contact.intro", message: "Have an idea? Let's talk and make it happen."})}
       </p>
 
       <form className={styles.contactForm} onSubmit={handleSubmit} noValidate>
@@ -54,11 +55,11 @@ export const LetsTalk: FunctionComponent = () => {
 
         <div className={styles.rowFields}>
           <label className={styles.fieldLabel}>
-            <span>Name</span>
+            <span>{translate({id: "homepage.contact.name", message: "Name"})}</span>
             <input
               type="text"
               name="name"
-              placeholder="Your name"
+              placeholder={translate({id: "homepage.contact.namePlaceholder", message: "Your name"})}
               autoComplete="name"
               required
               className={styles.inputField}
@@ -66,11 +67,11 @@ export const LetsTalk: FunctionComponent = () => {
           </label>
 
           <label className={styles.fieldLabel}>
-            <span>Email</span>
+            <span>{translate({id: "homepage.contact.email", message: "Email"})}</span>
             <input
               type="email"
               name="email"
-              placeholder="your@email.com"
+              placeholder={translate({id: "homepage.contact.emailPlaceholder", message: "your@email.com"})}
               autoComplete="email"
               required
               className={styles.inputField}
@@ -79,10 +80,10 @@ export const LetsTalk: FunctionComponent = () => {
         </div>
 
         <label className={styles.fieldLabel}>
-          <span>Message</span>
+          <span>{translate({id: "homepage.contact.message", message: "Message"})}</span>
           <textarea
             name="message"
-            placeholder="Tell me about your project..."
+            placeholder={translate({id: "homepage.contact.messagePlaceholder", message: "Tell me about your project..."})}
             rows={5}
             required
             className={styles.messageField}
@@ -91,16 +92,16 @@ export const LetsTalk: FunctionComponent = () => {
 
         <div className={styles.formActions}>
           <button type="submit" className={styles.submitButton} disabled={isSubmitting}>
-            {isSubmitting ? "Sending..." : "Send message"}
+            {isSubmitting ? translate({id: "homepage.contact.sending", message: "Sending..."}) : translate({id: "homepage.contact.send", message: "Send message"})}
           </button>
         </div>
 
         <div className={styles.statusRegion} role="status" aria-live="polite">
           {status === "success" && (
-            <p className={styles.successMessage}>Message sent. I&apos;ll get back to you soon.</p>
+            <p className={styles.successMessage}>{translate({id: "homepage.contact.success", message: "Message sent. I'll get back to you soon."})}</p>
           )}
           {status === "error" && (
-            <p className={styles.errorMessage}>Something went wrong. Please try again.</p>
+            <p className={styles.errorMessage}>{translate({id: "homepage.contact.error", message: "Something went wrong. Please try again."})}</p>
           )}
         </div>
       </form>

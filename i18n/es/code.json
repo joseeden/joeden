@@ -1,0 +1,143 @@
+{
+  "homepage.hero.intro": {
+    "message": "Me interesa crear cosas y resolver problemas. Escribo código, trabajo con entornos nativos de la nube y desarrollo sistemas fiables y escalables, preparados para el uso en el mundo real. Cuando no estoy programando, suelo salir a correr o leer libros que me llevan a otros mundos."
+  },
+  "homepage.hero.work": {
+    "message": "Gran parte de mi trabajo gira en torno a la automatización, la integración y la creación de herramientas que conectan distintos sistemas. Suelo trabajar con API, infraestructura y herramientas de código abierto para reducir el esfuerzo manual y mejorar el funcionamiento en producción. Me dedico a conectar las distintas piezas y convertir ideas en soluciones prácticas."
+  },
+  "homepage.hero.space": {
+    "message": "Este espacio reúne lo que he hecho y lo que estoy haciendo, junto con las ideas y reflexiones que surgen por el camino."
+  },
+  "homepage.hero.running": {
+    "message": "Fuera del código, dedico la mayor parte de mi tiempo libre a correr largas distancias. Me ayuda a despejar la mente y mantener la concentración. He participado en varias medias maratones y carreras locales, donde puedo vivir el momento y dejarme llevar por la experiencia. También tengo un pequeño laboratorio en casa donde experimento con servidores, redes y electrónica."
+  },
+  "homepage.hero.genres": {
+    "message": "Ya sea ciencia ficción dura, filosofía o no ficción, si un libro cuestiona mi forma de pensar, lo leo."
+  },
+  "homepage.hero.books": {
+    "message": "Libros de mi colección"
+  },
+  "homepage.hero.reading": {
+    "message": "Leo mucho, especialmente libros que exploran ideas complejas. Me gusta {book}, de Andy Weir: me identifiqué mucho con el ingenio del protagonista y su manera de resolver problemas. Me encantan las perspectivas surrealistas de Haruki Murakami sobre la realidad, la conciencia y todo lo que hay entre ambas."
+  },
+  "homepage.hero.interests": {
+    "message": "INTERESES"
+  },
+  "homepage.experience.0.role": {
+    "message": "Ingeniero sénior de DevOps en ST Engineering"
+  },
+  "homepage.experience.0.description": {
+    "message": "Lideré la automatización de infraestructura en la nube y la entrega de sistemas a gran escala en proyectos empresariales. Realicé migraciones a la nube, implementé plataformas de observabilidad y SIEM, y mejoré la fiabilidad mediante CI/CD, pruebas y prácticas de DevSecOps."
+  },
+  "homepage.experience.1.role": {
+    "message": "Consultor DevOps en QRinno"
+  },
+  "homepage.experience.1.description": {
+    "message": "Administré plataformas basadas en Kubernetes y desarrollé flujos de datos en tiempo real para sistemas IoT. Integré herramientas distribuidas en entornos de nube y establecí flujos de trabajo de CI/CD para aplicaciones escalables basadas en datos."
+  },
+  "homepage.experience.2.role": {
+    "message": "Especialista en TI en DSV Panalpina"
+  },
+  "homepage.experience.2.description": {
+    "message": "Desarrollé y optimicé flujos de datos y plataformas para aplicaciones SaaS. Mejoré el rendimiento mediante el modelado de datos y facilité la supervisión con paneles y herramientas centralizadas."
+  },
+  "homepage.experience.3.role": {
+    "message": "Ingeniero de NMS (herramientas y automatización) en ATOS"
+  },
+  "homepage.experience.3.description": {
+    "message": "Desarrollé soluciones de monitorización y registro para redes a gran escala. Implementé sistemas de observabilidad y automatización de alertas, métricas y supervisión de infraestructura."
+  },
+  "homepage.experience.4.role": {
+    "message": "Ingeniero de redes en IOPEX Technologies"
+  },
+  "homepage.experience.4.description": {
+    "message": "Me encargué del despliegue de infraestructura de red y de la resolución de problemas, colaborando con proveedores y operadores de Internet para solucionar incidencias de conectividad y circuitos en entornos empresariales."
+  },
+  "homepage.experience.5.role": {
+    "message": "Ingeniero técnico asociado en Finastra"
+  },
+  "homepage.experience.5.description": {
+    "message": "Di soporte a plataformas bancarias mediante el diagnóstico de incidencias en producción, el análisis de causas raíz y el mantenimiento de sistemas de backend para clientes financieros internacionales."
+  },
+  "homepage.experience.6.role": {
+    "message": "Ingeniero I en Eastern Communications"
+  },
+  "homepage.experience.6.description": {
+    "message": "Proporcioné soporte de infraestructura y resolví incidencias, garantizando la fiabilidad de la red mediante la monitorización y la gestión integral de fallos."
+  },
+  "homepage.experience.label": {
+    "message": "Experiencia profesional"
+  },
+  "homepage.experience.title": {
+    "message": "EXPERIENCIA PROFESIONAL"
+  },
+  "homepage.experience.intro": {
+    "message": "Ingeniero de DevOps especializado en infraestructura en la nube, automatización y sistemas resilientes en entornos de producción a gran escala."
+  },
+  "homepage.experience.download": {
+    "message": "Descargar currículum completo"
+  },
+  "homepage.skills.label": {
+    "message": "Habilidades"
+  },
+  "homepage.skills.title": {
+    "message": "HABILIDADES"
+  },
+  "homepage.skills.intro": {
+    "message": "Una selección de tecnologías, plataformas y herramientas que utilizo habitualmente."
+  },
+  "homepage.contact.label": {
+    "message": "Hablemos"
+  },
+  "homepage.contact.title": {
+    "message": "HABLEMOS"
+  },
+  "homepage.contact.intro": {
+    "message": "¿Tienes una idea? Hablemos y hagámosla realidad."
+  },
+  "homepage.contact.namePlaceholder": {
+    "message": "Tu nombre"
+  },
+  "homepage.contact.emailPlaceholder": {
+    "message": "tu@correo.com"
+  },
+  "homepage.contact.messagePlaceholder": {
+    "message": "Cuéntame sobre tu proyecto..."
+  },
+  "homepage.contact.sending": {
+    "message": "Enviando..."
+  },
+  "homepage.contact.send": {
+    "message": "Enviar mensaje"
+  },
+  "homepage.contact.success": {
+    "message": "Mensaje enviado. Te responderé pronto."
+  },
+  "homepage.contact.error": {
+    "message": "Algo salió mal. Por favor, inténtalo de nuevo."
+  },
+  "homepage.contact.name": {
+    "message": "Nombre"
+  },
+  "homepage.contact.email": {
+    "message": "Correo electrónico"
+  },
+  "homepage.contact.message": {
+    "message": "Mensaje"
+  },
+  "homepage.title": {
+    "message": "Inicio"
+  },
+  "homepage.description": {
+    "message": "Ingeniero de día, corredor de noche."
+  },
+  "footer.signature": {
+    "message": "Firma de Eden Jose"
+  },
+  "footer.email": {
+    "message": "Correo electrónico"
+  },
+  "footer.location": {
+    "message": "SINGAPUR, GMT+8"
+  }
+}
