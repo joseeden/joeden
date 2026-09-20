@@ -78,6 +78,24 @@ const config: Config = {
         {
           docs: {
             sidebarPath: require.resolve("./sidebars.js"),
+            sidebarItemsGenerator: async ({ defaultSidebarItemsGenerator, ...args }) => {
+              const categoriesMetadata = { ...args.categoriesMetadata };
+
+              // Use folder paths so repeated category labels have unique i18n keys.
+              for (const doc of args.docs) {
+                const segments = doc.sourceDirName.split('/');
+                for (let depth = 1; depth <= segments.length; depth++) {
+                  const directory = segments.slice(0, depth).join('/');
+                  if (directory === '.') continue;
+                  categoriesMetadata[directory] = {
+                    ...categoriesMetadata[directory],
+                    key: categoriesMetadata[directory]?.key ?? directory,
+                  };
+                }
+              }
+
+              return defaultSidebarItemsGenerator({ ...args, categoriesMetadata });
+            },
             showLastUpdateTime: true,
             exclude: ['**/library/**'],
           },
