@@ -30,3 +30,11 @@ books:
   label: books
   permalink: /books
   description: books tag description  
+arts:
+  label: arts
+  permalink: /arts
+  description: arts tag description    
+sketches:
+  label: sketches
+  permalink: /sketches
+  description: sketches tag description  
