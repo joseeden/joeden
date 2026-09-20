@@ -33,7 +33,13 @@ And how do you learn to ask really good questions?
 
 By asking a lot of bad ones first.
 
-By being wrong. By missing things. By asking something obvious. By realizing afterward that you should've asked something else entirely.
+By being wrong. 
+
+By missing things. 
+
+By asking something obvious. 
+
+By realizing afterward that you should've asked something else entirely.
 
 Eventually, you get better at knowing which questions actually matter.
 
