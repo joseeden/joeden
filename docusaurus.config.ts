@@ -184,8 +184,8 @@ const config: Config = {
         // { to: "/", label: "Gallery", position: "left" },
         // { to: "/", label: "Arts", position: "left" },  
         // { to: "https://merria.co", label: "Merria", position: "left" },
-        { to: "https://www.merriadigital.com", label: "Merria Digital", position: "left" },
-        { to: "https://www.velarae.co/", label: "Velarae", position: "left" },
+        // { to: "https://www.merriadigital.com", label: "Merria Digital", position: "left" },
+        // { to: "https://www.velarae.co/", label: "Velarae", position: "left" },
         {
           type: 'localeDropdown',
           position: 'right',
