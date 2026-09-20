@@ -9,11 +9,9 @@ hide_table_of_contents: true
 
 # Libro: Atomic Habits
 
-“Goals don’t differentiate people because, as you can see, winners and losers often have the same goals. The real question is: who will push through and rise to the occasion?”
-
-*Atomic Habits* by James Clear
-
 Book 45 of 100
+
+“Goals don’t differentiate people because, as you can see, winners and losers often have the same goals. The real question is: who will push through and rise to the occasion?”
 
 ![alt text](image.png)
 
