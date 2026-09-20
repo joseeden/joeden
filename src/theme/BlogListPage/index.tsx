@@ -52,8 +52,8 @@ export default function BlogListPage({ metadata, items = [] }: BlogListPageProps
 
   const toggleCategory = (id: string) => {
     setSelectedCategories((selected) => selected.includes(id)
-      ? selected.filter((category) => category !== id)
-      : [...selected, id]);
+      ? []
+      : [id]);
   };
 
   return (
