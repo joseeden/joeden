@@ -432,12 +432,6 @@ Maybe I didn't need to outrun the song.
 
 Maybe I just needed to accept that I might never hear it again.
 
-Those are different things. 
-
-Maybe? 
-
-I think so.
-
 
 ## Four Days Later
 
@@ -461,7 +455,7 @@ Then I'd remember.
 
 And there it was. The song
 
-Sometimes I'd reach for my phone, open Spotify, find the song, and play it.
+Sometimes I'd reach for my phone, open Spotify, find *that song* , and play it.
 
 At first, I'd listen to almost all of it before stopping.
 
@@ -487,7 +481,7 @@ I actually laughed.
 
 Because naturally, noticing that I hadn't thought about the song immediately made me think about the song.
 
-Brilliant.
+*Brilliant.*
 
 But something had changed.
 
@@ -538,9 +532,7 @@ The song came on.
 
 *That song.*
 
-For a second, my hand instinctively moved toward my phone.
-
-I was going to skip it, I almost did.
+For a second, my fingers instinctively moved to skip.
 
 Then I stopped.
 

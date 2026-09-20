@@ -432,12 +432,6 @@ Quizá no necesitaba dejar atrás la canción.
 
 Quizá solo necesitaba aceptar que tal vez nunca volvería a escucharla.
 
-Son cosas distintas.
-
-¿Quizá?
-
-Creo que sí.
-
 ## Cuatro días después
 
 Me enfermé. Por supuesto.
@@ -460,7 +454,7 @@ Entonces me acordaba.
 
 Y ahí estaba. La canción.
 
-A veces alargaba la mano hacia el teléfono, abría Spotify, buscaba la canción y la ponía.
+A veces alargaba la mano hacia el teléfono, abría Spotify, buscaba *esa canción* y la ponía.
 
 Al principio escuchaba casi toda antes de pararla.
 
@@ -486,7 +480,7 @@ Me eché a reír.
 
 Porque, naturalmente, darme cuenta de que no había pensado en ella me hizo pensar en ella de inmediato.
 
-Brillante.
+*Brillante.*
 
 Pero algo había cambiado.
 
@@ -536,9 +530,7 @@ Empezó a sonar la canción.
 
 *Esa canción.*
 
-Por un segundo, mi mano se movió instintivamente hacia el teléfono.
-
-Iba a saltarla. Casi lo hice.
+Por un segundo, mis dedos se movieron instintivamente para saltarla.
 
 Entonces me detuve.
 
