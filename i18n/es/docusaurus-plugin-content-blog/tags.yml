@@ -1,0 +1,40 @@
+facebook:
+  label: Facebook
+  permalink: /facebook
+  description: Publicaciones sobre Facebook
+hello:
+  label: Hola
+  permalink: /hello
+  description: Publicaciones de bienvenida
+docusaurus:
+  label: Docusaurus
+  permalink: /docusaurus
+  description: Publicaciones sobre Docusaurus
+hola:
+  label: Hola
+  permalink: /hola
+  description: Publicaciones de bienvenida
+100daysofcode:
+  label: 100 días de código
+  permalink: /100daysofcode
+  description: Experiencias y avances del reto de programar durante 100 días
+devnotes:
+  label: Apuntes de desarrollo
+  permalink: /devnotes
+  description: Apuntes y reflexiones sobre desarrollo y tecnología
+personal:
+  label: Personal
+  permalink: /personal
+  description: Experiencias y reflexiones personales
+books:
+  label: Libros
+  permalink: /books
+  description: Lecturas y reflexiones sobre libros
+arts:
+  label: Arte
+  permalink: /arts
+  description: Creaciones artísticas
+sketches:
+  label: Dibujos
+  permalink: /sketches
+  description: Bocetos y dibujos
