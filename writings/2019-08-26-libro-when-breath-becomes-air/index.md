@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: When Breath Becomes Air
 
 *When Breath Becomes Air*, by Paul Kalanithi
+
 Book 33 of 100
 
 “We are never so wise as when we live in the moment.”

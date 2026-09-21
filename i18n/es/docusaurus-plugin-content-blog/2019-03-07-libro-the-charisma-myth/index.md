@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: El mito del carisma
 
 *El mito del carisma*, de Olivia Fox Cabane
+
 Libro 17 de 100
 
 «Habla como si estuvieras compartiendo un secreto».

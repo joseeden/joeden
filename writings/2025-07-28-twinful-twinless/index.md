@@ -9,8 +9,7 @@ hide_table_of_contents: true
 
 # Twinful, Twinless
 
-> "There are many rooms in my Father's house. I am going to prepare a place for you." 
-> Jesus 
+> "There are many rooms in my Father's house. I am going to prepare a place for you."  - Jesus 
 
 July 2025.
 

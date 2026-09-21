@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: El gigante enterrado
 
 *El gigante enterrado*, de Kazuo Ishiguro
+
 Libro 38 de 100
 
 ![Imagen del libro](../../../../writings/2019-11-12-libro-the-buried-giant/image.png)

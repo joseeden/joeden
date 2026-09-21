@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: The Laws of Human Nature
 
 *The Laws of Human Nature*, by Robert Greene
+
 Book 46 of 100
 
 “Man will only become better when you make him see what he is like.”

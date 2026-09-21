@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: Cómo ganar amigos e influir sobre las personas
 
 *Cómo ganar amigos e influir sobre las personas*, de Dale Carnegie
+
 Libro 41 de 100
 
 ![Imagen del libro](../../../../writings/2019-11-20-libro-how-to-win-friends-and-influence-people/image.png)

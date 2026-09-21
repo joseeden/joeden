@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: Option B
 
 *Option B*, by Sheryl Sandberg and Adam Grant
+
 Book 22 of 100
 
 “Life can only be understood looking backward, but it’s meant to be lived by moving forward.”

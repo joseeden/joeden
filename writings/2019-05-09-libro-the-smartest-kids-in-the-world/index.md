@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: The Smartest Kids in the World
 
 *The Smartest Kids in the World*, by Amanda Ripley
+
 Book 25 of 100
 
 “It was relentless and excessive, yes, but it also felt more honest.

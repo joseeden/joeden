@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: The Charisma Myth
 
 *The Charisma Myth*, by Olivia Fox Cabane
+
 Book 17 of 100
 
 “Speak like you’re sharing a secret.”

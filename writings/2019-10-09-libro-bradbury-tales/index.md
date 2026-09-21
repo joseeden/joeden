@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: Bradbury Stories: 100 of His Most Celebrated Tales
 
 *Bradbury Stories: 100 of His Most Celebrated Tales*, by Ray Bradbury
+
 Book 43 of 100
 
 “The world is full of statues.”

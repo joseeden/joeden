@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: The Little Prince
 
 *Le Petit Prince*, by Antoine de Saint-Exupéry
+
 Book 29 of 100
 
 “All grown-ups were once children... but only few of them remember it.”

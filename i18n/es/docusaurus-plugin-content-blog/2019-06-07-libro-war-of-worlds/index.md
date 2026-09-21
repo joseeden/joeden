@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: La guerra de los mundos
 
 *La guerra de los mundos*, de H. G. Wells
+
 Libro 31 de 100
 
 ![Imagen del libro](../../../../writings/2019-06-07-libro-war-of-worlds/image.png)

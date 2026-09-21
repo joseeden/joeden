@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: The Storyteller's Secret
 
 *The Storyteller’s Secret*, by Carmine Gallo
+
 Book 20 of 100
 
 “In the end, you’re never going to be certain that you’re on the right path. You just have to listen to the call and trust that it will all work out.

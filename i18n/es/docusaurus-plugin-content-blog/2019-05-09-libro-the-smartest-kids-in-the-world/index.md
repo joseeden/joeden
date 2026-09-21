@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: Los niños más inteligentes del mundo
 
 *Los niños más inteligentes del mundo*, de Amanda Ripley
+
 Libro 25 de 100
 
 «Era implacable y excesivo, sí, pero también parecía más honesto.

@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: Power Moves from Davos
 
 *Power Moves from Davos*, by Adam Grant
+
 Book 3 of 100
 
 Good leaders tend to fall into one of these categories:

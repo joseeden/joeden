@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: Todo está j*dido
 
 *Todo está j*dido: Un libro sobre la esperanza*, de Mark Manson
+
 Libro 40 de 100
 
 ![Imagen del libro](../../../../writings/2019-11-16-libro-everything-is-fcked/image.png)

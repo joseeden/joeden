@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: El proyecto Unicornio
 
 *El proyecto Unicornio*, de Gene Kim
+
 Libro 2 de 100
 
 «Lo que te mata no es el capital inicial, sino las operaciones y el mantenimiento que vienen después».

@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: La máquina del tiempo
 
 *La máquina del tiempo*, de H. G. Wells
+
 Libro 26 de 100
 
 «Enfréntate a este mundo. Aprende sus costumbres, obsérvalo y ten cuidado con las interpretaciones precipitadas de su significado. Al final encontrarás pistas para entenderlo todo».

@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: De qué hablo cuando hablo de correr
 
 *De qué hablo cuando hablo de correr*, de Haruki Murakami
+
 Libro 1 de 2024
 
 ![Imagen del libro](../../../../writings/2024-03-04-libro-what-i-talk-about-when-i-talk-about-running/image.png)

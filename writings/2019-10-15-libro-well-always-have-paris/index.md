@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: We'll Always Have Paris 
 
 *We'll Always Have Paris*, by Ray Bradbury
+
 Book 44 of 100
 
 “These stories were created by two people: the me who watches and the me who writes.

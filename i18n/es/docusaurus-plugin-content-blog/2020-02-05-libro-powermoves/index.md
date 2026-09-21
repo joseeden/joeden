@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: Movimientos de poder desde Davos
 
 *Movimientos de poder desde Davos*, de Adam Grant
+
 Libro 3 de 100
 
 Los buenos líderes suelen encajar en una de estas categorías:

@@ -8,7 +8,7 @@ hide_table_of_contents: true
 
 # Con melliza, sin melliza
 
-> «En la casa de mi Padre hay muchas habitaciones. Voy a prepararles un lugar». — Jesús
+> «En la casa de mi Padre hay muchas habitaciones. Voy a prepararles un lugar». - Jesús
 
 Julio de 2025.
 
@@ -449,4 +449,3 @@ Entonces el cáncer decidió que solo debía quedar uno de nosotros.
 Así que sí.
 
 **Que te jodan, cáncer.**
-

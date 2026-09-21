@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: The Marshmallow Test
 
 *The Marshmallow Test: Mastering Self-Control*, by Walter Mischel
+
 Book 28 of 100
 
 “We do not come into the world with a bundle of fixed, stable traits that determine who we become. We develop in continuous interactions with people and experience.”

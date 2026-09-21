@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: La ecuación de la felicidad
 
 *La ecuación de la felicidad*, de Neil Pasricha
+
 Libro 27 de 100
 
 «Nadie sabe qué quiere hacer con toda su vida. Nadie. Nadie nace con un único propósito que lo unifique todo y al que quiera dedicarse para siempre.

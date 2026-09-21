@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: The Time Machine
 
 *The Time Machine*, by H.G. Wells
+
 Book 26 of 100
 
 “Face this world. Learn its ways, watch it, be careful of too hasty guesses at its meaning. In the end you will find clues to it all.”

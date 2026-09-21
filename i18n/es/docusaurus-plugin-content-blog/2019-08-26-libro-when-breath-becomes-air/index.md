@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: Cuando el aliento se convierte en aire
 
 *Cuando el aliento se convierte en aire*, de Paul Kalanithi
+
 Libro 33 de 100
 
 «Nunca somos tan sabios como cuando vivimos el presente».

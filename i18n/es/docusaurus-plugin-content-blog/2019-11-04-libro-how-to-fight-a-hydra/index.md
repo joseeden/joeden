@@ -9,11 +9,12 @@ hide_table_of_contents: true
 # Libro: Cómo luchar contra una hidra
 
 *Cómo luchar contra una hidra*, de Josh Kaufman
+
 Libro 36 de 100
 
 «Cuando dejo de aferrarme a lo que soy, me convierto en lo que podría ser».
 
-![Imagen del libro](../../../../writings/2019-11-04-how-to-fight-a-hydra/image.png)
+![Imagen del libro](../../../../writings/2019-11-04-libro-how-to-fight-a-hydra/image.png)
 
 Una lectura bastante breve y, en realidad, más bien una metáfora de las distintas dificultades que afrontamos en la vida.
 
@@ -48,4 +49,3 @@ A veces empieza al decidir avanzar de todas formas. 🚀
 Y, al cerrar la última página, el libro te deja una pregunta:
 
 **¿A qué hidra te enfrentas hoy?**
-

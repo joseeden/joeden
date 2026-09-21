@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: Fail Fast, Fail Often
 
 *Fail Fast, Fail Often*, by Ryan Babineaux
+
 Book 21 of 100
 
 “Do it badly as fast as you can.”

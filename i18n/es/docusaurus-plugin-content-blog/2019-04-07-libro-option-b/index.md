@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: Opción B
 
 *Opción B*, de Sheryl Sandberg y Adam Grant
+
 Libro 22 de 100
 
 «La vida solo puede comprenderse mirando atrás, pero está hecha para vivirse avanzando».

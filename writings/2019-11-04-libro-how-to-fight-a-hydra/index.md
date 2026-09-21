@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: How to Fight a Hydra
 
 *How to Fight a Hydra*, by Josh Kaufman
+
 Book 36 of 100
 
 “When I let go of what I am, I become what I might be.”

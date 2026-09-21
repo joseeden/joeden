@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: El test de la golosina
 
 *El test de la golosina: Cómo dominar el autocontrol*, de Walter Mischel
+
 Libro 28 de 100
 
 «No llegamos al mundo con un conjunto de rasgos fijos y estables que determinen en quién nos convertiremos. Nos desarrollamos mediante la interacción continua con las personas y las experiencias».

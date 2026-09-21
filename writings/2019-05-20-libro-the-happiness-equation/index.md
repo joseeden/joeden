@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: The Happiness Equation
 
 *The Happiness Equation*, by Neil Pasricha
+
 Book 27 of 100
 
 “Nobody knows what they want to do with their entire life. Nobody. Nobody is born with a single unifying sense of purpose that they strive to work forever.

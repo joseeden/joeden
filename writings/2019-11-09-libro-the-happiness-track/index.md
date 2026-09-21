@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: The Happiness Track
 
 *The Happiness Track*, by Emma Seppälä
+
 Book 37 of 100
 
 “Happiness tends to spread up to 3 degrees of separation from you, to those close to you, and even to strangers you will never know.”

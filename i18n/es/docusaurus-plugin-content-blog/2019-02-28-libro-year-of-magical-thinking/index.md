@@ -8,6 +8,8 @@ hide_table_of_contents: true
 
 # Libro: El año del pensamiento mágico
 
+*El año del pensamiento mágico*, de Joan Didion
+
 Libro 15 de 100
 
 «El duelo resulta ser un lugar que ninguno de nosotros conoce hasta que llega a él».
@@ -29,4 +31,3 @@ Llora.
 Acepta.
 
 Sigue adelante.
-

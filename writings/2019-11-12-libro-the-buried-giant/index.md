@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: The Buried Giant
 
 *The Buried Giant*, by Kazuo Ishiguro
+
 Book 38 of 100
 
 ![alt text](image.png)

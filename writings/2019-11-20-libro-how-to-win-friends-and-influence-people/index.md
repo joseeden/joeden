@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: How to Win Friends and Influence People
 
 *How to Win Friends and Influence People*, by Dale Carnegie
+
 Book 41 of 100
 
 ![alt text](image.png)

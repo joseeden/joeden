@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: Cuentos de Bradbury: 100 de sus relatos más celebrados
 
 *Cuentos de Bradbury: 100 de sus relatos más celebrados*, de Ray Bradbury
+
 Libro 43 de 100
 
 «El mundo está lleno de estatuas».

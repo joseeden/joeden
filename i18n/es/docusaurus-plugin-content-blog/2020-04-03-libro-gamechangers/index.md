@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: Los que cambian las reglas del juego
 
 *Los que cambian las reglas del juego*, de Dave Asprey
+
 Libro 5 de 100
 
 ![Imagen del libro](../../../../writings/2020-04-03-libro-gamechangers/image.png)

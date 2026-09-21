@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: Habla como en TED
 
 *Habla como en TED*, de Carmine Gallo
+
 Libro 18 de 100
 
 «Habla como si estuvieras compartiendo un secreto».

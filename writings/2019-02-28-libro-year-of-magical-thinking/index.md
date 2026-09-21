@@ -9,6 +9,8 @@ hide_table_of_contents: true
 
 # Libro: The Year of Magical Thinking
 
+*The Year of Magical Thinking* by Joan Didion
+
 Book 15 of 100
 
 “Grief turns out to be a place none of us know until we reach it.”

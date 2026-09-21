@@ -8,6 +8,8 @@ hide_table_of_contents: true
 
 # Libro: Pensamiento de caja negra
 
+*Pensamiento de caja negra*, de Matthew Syed
+
 Libro 19 de 100.
 
 ![Imagen del libro](../../../../writings/2019-03-31-libro-black-box-of-thinking/image.png)
@@ -43,4 +45,3 @@ Aprende de tus propios errores, pero también de los errores de los demás.
 Como dice Levenson:
 
 **«Aprende de los errores de los demás. No puedes vivir lo suficiente como para cometerlos todos tú mismo».**
-

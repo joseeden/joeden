@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: Ideas que pegan
 
 *Ideas que pegan*, de Chip Heath y Dan Heath
+
 Libro 23 de 100
 
 «Simplicidad. Sorpresa. Concreción. Credibilidad. Emoción. Historias».

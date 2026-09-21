@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: The Unicorn Project
 
 *The Unicorn Project*, by Gene Kim
+
 Book 2 of 100
 
 “It’s not the upfront capital that kills you, it’s the operations and maintenance on the back end.”

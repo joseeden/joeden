@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: Siempre nos quedará París
 
 *Siempre nos quedará París*, de Ray Bradbury
+
 Libro 44 de 100
 
 «Estas historias fueron creadas por dos personas: el yo que observa y el yo que escribe.

@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: El secreto del narrador
 
 *El secreto del narrador*, de Carmine Gallo
+
 Libro 20 de 100
 
 «Al final, nunca tendrás la certeza de estar en el camino correcto. Solo tienes que escuchar la llamada y confiar en que todo saldrá bien.

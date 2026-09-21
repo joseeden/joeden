@@ -10,8 +10,8 @@ hide_table_of_contents: true
 
 > Borrador de noviembre de 2021.
 >
-> Y ese, creo, es el verdadero cambio de mentalidad:
-> pasar de ser alguien que aprende a alguien que resuelve problemas.
+> «Y ese, creo, es el verdadero cambio de mentalidad:
+> pasar de ser alguien que aprende a alguien que resuelve problemas».
 
 ![Ilustración del artículo](../../../../writings/2024-03-19-shift-in-mindset/image.png)
 
@@ -311,4 +311,3 @@ Pasar de ser alguien que **aprende** a alguien que **resuelve problemas**.
 Y quizá, después de resolver suficientes problemas, acabes entrando en otra forma de aprendizaje:
 
 Transmitir lo que has aprendido a otra persona.
-

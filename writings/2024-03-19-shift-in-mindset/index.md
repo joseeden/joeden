@@ -10,8 +10,8 @@ hide_table_of_contents: true
 
 > Draft from November 2021. 
 >
-> And that, I think, is the real shift in thinking:
-> When you shift from being a learner to a problem-solver.
+> "And that, I think, is the real shift in thinking:
+> When you shift from being a learner to a problem-solver.*
 
 ![alt text](image.png)
 

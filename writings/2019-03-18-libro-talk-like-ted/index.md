@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: Talk Like TED
 
 *Talk Like TED*, by Carmine Gallo
+
 Book 18 of 100
 
 “Speak like you’re sharing a secret.”

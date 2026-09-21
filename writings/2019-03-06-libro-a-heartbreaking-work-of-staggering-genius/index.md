@@ -7,6 +7,7 @@ hide_table_of_contents: true
 ---
 
 *A Heartbreaking Work of Staggering Genius*, by Dave Eggers
+
 Book 16 of 100
 
 “I think if you’re not self-obsessed, you’re probably boring.”

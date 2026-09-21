@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: Made to Stick
 
 *Made to Stick*, by Chip Heath and Dan Heath
+
 Book 23 of 100
 
 “Simple. Unexpected. Concrete. Credible. Emotional. Stories.”

@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: Daring Greatly
 
 *Daring Greatly*, by Brené Brown
+
 Book 24 of 100
 
 “It is not the critic who counts; not the man who points out how the strong man stumbles, or where the doer of deeds could have done them better.

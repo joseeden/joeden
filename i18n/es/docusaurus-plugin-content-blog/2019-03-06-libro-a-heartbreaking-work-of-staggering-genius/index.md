@@ -7,6 +7,7 @@ hide_table_of_contents: true
 ---
 
 *Una historia conmovedora, asombrosa y genial*, de Dave Eggers
+
 Libro 16 de 100
 
 «Creo que, si no estás obsesionado contigo mismo, probablemente seas aburrido».

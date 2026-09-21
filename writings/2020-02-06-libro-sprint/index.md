@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: Sprint: How to Solve Big Problems and Test New Ideas in Just Five Days 
 
 *Sprint: How to Solve Big Problems and Test New Ideas in Just Five Days*, by Jake Knapp, John Zeratsky, and Braden Kowitz
+
 Book 4 of 100
 
 “One part is mindset, the second half is method.”

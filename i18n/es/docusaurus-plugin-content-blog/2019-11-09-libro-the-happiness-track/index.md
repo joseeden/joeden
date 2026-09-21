@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: El camino de la felicidad
 
 *El camino de la felicidad*, de Emma Seppälä
+
 Libro 37 de 100
 
 «La felicidad tiende a extenderse hasta tres grados de separación de ti, a quienes tienes cerca e incluso a desconocidos que nunca llegarás a conocer».

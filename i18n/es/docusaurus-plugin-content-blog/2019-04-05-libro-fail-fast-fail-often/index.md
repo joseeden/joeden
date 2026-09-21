@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: Fracasa pronto, fracasa a menudo
 
 *Fracasa pronto, fracasa a menudo*, de Ryan Babineaux
+
 Libro 21 de 100
 
 «Hazlo mal lo más rápido que puedas».

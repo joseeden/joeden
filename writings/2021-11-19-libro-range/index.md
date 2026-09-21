@@ -9,8 +9,7 @@ hide_table_of_contents: true
 
 # Libro: Range
 
-*"Great things are not done by impulse, but by a series of small things brought together."*
-- Vincent van Gogh
+*"Great things are not done by impulse, but by a series of small things brought together."* - Vincent van Gogh
 
 To be a generalist or a specialist?
 

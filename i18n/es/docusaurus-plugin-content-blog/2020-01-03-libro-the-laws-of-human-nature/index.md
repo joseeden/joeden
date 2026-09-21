@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: Las leyes de la naturaleza humana
 
 *Las leyes de la naturaleza humana*, de Robert Greene
+
 Libro 46 de 100
 
 «El ser humano solo mejorará cuando le hagas ver cómo es».

@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: Atreverse a lo grande
 
 *Atreverse a lo grande*, de Brené Brown
+
 Libro 24 de 100
 
 «No es el crítico quien cuenta; no el hombre que señala cómo tropieza el fuerte o en qué podría haber actuado mejor quien hace las cosas.

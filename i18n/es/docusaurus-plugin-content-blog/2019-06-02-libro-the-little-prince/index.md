@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: El principito
 
 *El principito*, de Antoine de Saint-Exupéry
+
 Libro 29 de 100
 
 «Todos los adultos fueron niños alguna vez... pero pocos lo recuerdan».

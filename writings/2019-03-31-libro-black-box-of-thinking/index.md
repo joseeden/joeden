@@ -8,6 +8,8 @@ hide_table_of_contents: true
 
 # Libro: The Black Box of Thinking 
 
+*The Black Box of Thinking* by Matthew Syed 
+
 Book 19 of 100.
 
 ![alt text](image.png)

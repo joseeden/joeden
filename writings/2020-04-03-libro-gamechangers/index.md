@@ -9,6 +9,7 @@ hide_table_of_contents: true
 # Libro: Gamechangers
 
 *Game Changers*, by Dave Asprey
+
 Book 5 of 100
 
 ![alt text](image.png)
