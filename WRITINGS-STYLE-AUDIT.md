@@ -1,33 +1,45 @@
 # Writings style audit
 
-Audited on 2026-09-25 using [writings-checker-if-ai](prompts/skills/writings-checker-if-ai/SKILL.md).
+Rechecked on 2026-09-25 using the updated [writings-checker-if-ai](prompts/skills/writings-checker-if-ai/SKILL.md). This report supersedes the first audit.
 
-Read all 71 Markdown and MDX files under `writings/`, including untracked articles and current working-tree edits. The collection contains 63 prose articles, six Docusaurus samples, and two sketch captions. This report contains editorial findings and proposed replacement prose. The articles themselves have not been changed.
+All 71 Markdown and MDX files under `writings/` were reread against the stricter criteria. The collection has 63 prose articles, six Docusaurus samples, and two sketch captions. This report contains findings and proposed replacement prose; the articles have not been edited.
 
-| Verdict    | Files |
-| ---------- | ----- |
-| Revise     | 28    |
-| Light edit | 24    |
-| Keep       | 11    |
-| Sample     | 6     |
-| Caption    | 2     |
-| Total      | 71    |
+Skill SHA-256: `771FD468BAB970D40205C3933604E8891F7103BB1217E21C6A2268C71F24A8C5`.
 
-**Note**: These are judgments about phrasing and structure, not findings about authorship. The skill's “~90% human” target is a tone preference, not a measurable probability.
+| Verdict    | First audit | Strict recheck |
+| ---------- | ----------- | -------------- |
+| Revise     | 28          | 48             |
+| Light edit | 24          | 13             |
+| Keep       | 11          | 2              |
+| Sample     | 6           | 6              |
+| Caption    | 2           | 2              |
+| Total      | 71          | 71             |
+
+**Note**: These are editorial judgments about observable phrasing, not proof of AI authorship. The skill's “~90% human” target is a tone preference, not a measurable probability.
+
+## What changed
+
+The updated skill explicitly targets symmetrical sentence sequences, safe endings, and overly balanced contrasts. A specific anecdote or an honest criticism no longer earns the surrounding prose a pass. The suggested replacements were also reassessed for those patterns.
+
+Nine previous Keep verdicts changed. Blind Willow, Sleeping Woman and How to Win Friends and Influence People now need substantial revision. A Heartbreaking Work of Staggering Genius, Fail Fast, Fail Often, The Marshmallow Test, The War of the Worlds, The Happiness Track, Day 1, and Killing a defunct process need local edits.
+
+Only **Thinking like a Developer** and **Atomic Habits** retain Keep verdicts. The former uses procedural lists, while the latter is predominantly a short reading update and quotations. The samples and captions remain separately classified; they are not eight additional prose articles that passed.
 
 ## Main findings
 
-- Many book reviews begin with a reaction, expand into advice addressed to “you,” and finish with a polished life lesson. The repetition across reviews is more noticeable than any individual phrase.
-- Isolated fragments often stretch a modest observation into a motivational speech. Short lines work better when they convey an actual sequence, interruption, joke, or emotional pause.
-- Transitions such as “maybe that's the point,” “what stayed with me,” and “and somehow” recur without always adding meaning. They need contextual editing, not a global search-and-replace.
-- Concrete reactions are the strongest material: the unanswered Hoshino question, disappointment with psychobabble, audiobook timelines, troubleshooting details, and unfinished conversations with Karen.
-- The longer personal pieces sometimes explain a feeling after a scene has already conveyed it. Trimming those explanations would preserve more of the narrator's voice.
+- Repeated openings such as “Some,” “Maybe,” “Before,” and “You” often arrange thoughts into a predictable rhythm even when the individual sentences sound casual.
+- Paired reversals such as “not my favorite / but memorable” repeatedly soften opinions. Several earlier passes relied too heavily on the presence of a mixed verdict.
+- “Part of the charm,” “maybe that's the point,” and similar endings turn unresolved reactions into safe praise.
+- Long personal accounts contain concrete events worth keeping, but some surrounding paragraphs use repeated lists and generalized explanations to direct the reader's reaction.
+- Profanity and deliberate fragments do not make a passage less formulaic by themselves. Adding either mechanically would recreate the problem.
 
-## How to read the findings
+## How to use this report
 
-**Revise** means a substantial passage follows the patterns targeted by the skill. **Light edit** means a local change is enough. **Keep** means there is no strong reason to rewrite for this audit. **Sample** and **Caption** describe material that does not support a meaningful personal-voice assessment.
+**Revise** means a substantial passage or several recurring patterns need reworking. **Light edit** means bounded passages can change while most of the article stays. **Keep** means no revision is warranted under this style check. **Sample** and **Caption** identify material that cannot usefully be judged as a personal narrative.
 
-Suggested text uses only reactions, events, and details already in the articles. Keep existing frontmatter, book numbers, titles, quotations, images, and links unless an entry explicitly says otherwise. Replacement boundaries below refer to prose in the body. Quoted book passages are not being assessed as the blogger's voice, and their wording or attribution has not been verified. Technical accuracy and external links are also outside this style audit.
+Replacement text is a proposed draft, not a claim about what the author must have felt. It stays within the existing opinions and events rather than inventing anecdotes. Preserve frontmatter, titles, book numbers, images, links, and attributed quotations unless an entry explicitly identifies a change. Proposed passages appear as blockquotes for review; they would become ordinary prose if applied.
+
+Useful procedural lists, book concepts presented as lists, and attributed quotations are assessed differently from manufactured narrative cadence. This audit does not verify quotations, book facts, technical advice, or external links.
 
 ## File-by-file findings and suggested revisions
 
@@ -49,142 +61,171 @@ Suggested text uses only reactions, events, and details already in the articles.
 
 ### 05. [Ready Player One](writings/2019-01-28-libro-ready-player-one/index.md)
 
-**Revise.** The review's concrete criticism gives way to a familiar technology warning. “Work. Entertainment. Friendships.” and “already practicing for it” manufacture a larger revelation from a brief reading reaction.
+**Revise.** The standalone “Work / Entertainment / Friendships” list builds toward “already practicing for it.” “One thought worth pondering” then announces the intended profundity. The review's complaint about the thin plot gets buried.
 
 Replace the commentary after the image with:
 
-> Some parts felt flat. Honestly, the main plot could probably fit into a single episode of a sci-fi series.
+> The main plot felt thin. You could probably squeeze it into one episode of a sci-fi series.
 >
-> The old games, music, and movie references were the fun part for me. There are a lot of them, and I enjoyed those more than the plot itself.
+> I had more fun with the old games and movie references. The arcade stuff and RPGs did a lot of the work here, honestly.
 >
-> I'll be watching the film too, once I get through the other books and movies already lined up.
+> I'll watch the film too. There's already a queue of books and movies waiting, so we'll see when that happens.
 >
-> The OASIS did make me think about how much time we already spend online, for work and for pretty much everything else. I can see why people in the book would rather stay there.
+> The OASIS is a little uncomfortable to think about when so much of my day already happens through a screen.
 
 ### 06. [Dance, Dance, Dance](writings/2019-01-30-libro-dance-dance-dance/index.md)
 
-**Light edit.** The current working-tree version already has a casual, uncertain reaction. The closing “One foot in front of the other” briefly turns it into familiar encouragement. The dance motif itself belongs here.
-
-Replace from “You don't always get a say” through the end with:
-
-> I kept wanting an explanation for why people disappeared from his life. Not getting one was frustrating, even though I'd already started to expect that from this story.
->
-> I took the dancing as a way to keep going through that confusion. I'm still trying to make sense of the rest.
->
-> **Dance, dance, dance.**
-
-### 07. [The Wind-Up Bird Chronicle](writings/2019-02-05-libro-windup-bird-chronicle/index.md)
-
-**Light edit.** “Where the hell is this story actually going?” is a useful reader reaction. The final maze metaphor and second-person summary explain that reaction again.
-
-Replace from “But if there's one book so far” through the end with:
-
-> I kept waiting for the different stories to connect. Some of them still don't make sense to me, and I'm not sure another Murakami book would clear that up either.
-
-### 08. [Norwegian Wood](writings/2019-02-08-libro-norwegian-wood/index.md)
-
-**Revise.** “Some explanation. Some lesson” builds toward generalized grief advice rather than developing the reading experience. Preserve the tentative third-Murakami observation at the end.
-
-Replace from “This one is definitely more” through “That's what stayed with me most about this one” with:
-
-> The loss and loneliness stood out to me more than the romance. I kept wanting some explanation for why things happened to these people, even though I wasn't sure what explanation would have satisfied me.
->
-> It's a sad read. I don't think I came away understanding the losses any better.
-
-### 09. [The Elephant Vanishes](writings/2019-02-11-libro-elephant-vanishes/index.md)
-
-**Revise.** This is one of the clearest reaction-to-life-lesson arcs. “Some things simply became part of you” and the final fragments replace a specific response to the collection with a universal conclusion.
+**Revise.** Casual wording does not undo the structure: disappearing relationships lead to “Things just happen,” then “One foot in front of the other,” and finally the title as a lesson. The earlier light edit left most of that machinery intact.
 
 Replace the commentary after the image with:
 
-> Damn. I didn't start appreciating some of these stories until I was already near the end.
+> Dansu, dansu, dansu.
 >
-> While reading them, a few parts felt irrelevant. Later, I found myself thinking about those same bits again. I still couldn't explain how everything fit together, but they weren't as easy to dismiss as I'd thought.
+> Still trying to process this one. People disappear from his life, and I kept wanting an explanation that wasn't coming.
 >
-> Also, there are dwarfs to dance with and someone banging on a window. You'll have to read it for that one.
+> I like the dreamlike feeling, but it's frustrating too. Half the time I don't know where Murakami is taking me.
 >
-> An odd collection. Some stories took longer to grow on me than others.
+> I took the dancing as a way of continuing through all that. Not sure I've worked out much else yet.
+
+### 07. [The Wind-Up Bird Chronicle](writings/2019-02-05-libro-windup-bird-chronicle/index.md)
+
+**Revise.** “Maybe they are / Maybe they aren't” is a balanced hedge. The maze metaphor and the lingering-afterward ending turn confusion into a safely positive verdict. Flag both, not just the last paragraph.
+
+Replace the commentary after the image with:
+
+> **Where the hell is this story actually going?**
+>
+> That was me around the middle. It starts out grounded enough, then the histories and dreams pile up until I'm no longer sure which bits are supposed to connect.
+>
+> I kept wondering whether some of these characters turn up in his other books. They felt like they had whole stories happening somewhere else.
+>
+> I still can't explain how all of this fits together. It's a lot.
+
+### 08. [Norwegian Wood](writings/2019-02-08-libro-norwegian-wood/index.md)
+
+**Revise.** “Some explanation / Some lesson” is followed by generic acceptance language. The final “I think / Or at least, I think” also manufactures a small, harmless uncertainty.
+
+Replace the commentary after the image with:
+
+> The loss and loneliness got to me more than the romance. I kept wanting a reason for what happened to these people, which probably wasn't helping.
+>
+> Sad read. I was still trying to understand parts of it when it ended.
+>
+> Apparently there's a Japanese film adaptation too. This is my third Murakami book, and I'm starting to recognize the way he writes.
+
+### 09. [The Elephant Vanishes](writings/2019-02-11-libro-elephant-vanishes/index.md)
+
+**Revise.** The life analogy is announced early, then restated through “You” and “The” lists. “Separate pieces / Part of the whole” is an especially tidy closing contrast.
+
+Replace the commentary after the image with:
+
+> Damn. Some of these stories didn't do much for me until I was nearly finished with the collection.
+>
+> I'd written off a few parts as irrelevant, then found myself thinking about them again later. Still don't know how to explain that properly.
+>
+> There's also dancing with dwarfs and someone banging on a window. You'll have to read it for that one.
+>
+> Took me a while to appreciate this book.
 
 ### 10. [Blind Willow, Sleeping Woman](writings/2019-02-13-libro-blind-willow-sleeping-woman/index.md)
 
-**Keep.** Some familiar Murakami descriptors recur, but the brief account of stories ending before the reader knows what to feel is a recognizable reading reaction. “Ganbatte, Murakami-san!” provides an individual sign-off. No forced life lesson to remove.
+**Revise. Previously Keep.** “Some stories left me thinking / Some left me confused / And some just ended” is the exact metronomic structure the updated skill targets. “But I guess that's part of the charm” resolves the confusion into automatic praise. The earlier pass was too lenient.
+
+Replace the commentary after the image with:
+
+> I kept getting used to a story and then it would end. A few left me confused enough that I wasn't even sure what reaction I was supposed to have.
+>
+> There's a lot of ordinary life in here, until something gets weird and I'm lost again. By the next story we're somewhere else entirely.
+>
+> **Ganbatte, Murakami-san!**
 
 ### 11. [A Wild Sheep Chase](writings/2019-02-18-libro-a-wild-sheep-chase/index.md)
 
-**Light edit.** The dream comparison fits the reaction, but the extended “You wake up” sequence and “part of the charm” ending feel prearranged.
+**Revise.** The extended “book ends / wake up / details fade” sequence arranges the response into a miniature poem. “Part of the charm” supplies approval after the narrator has admitted not understanding it.
 
-Replace from “Then the book ends” through the end with:
+Replace the commentary after the image with:
 
-> Finishing it felt like waking up from a vivid dream. I could remember the strange details, but I couldn't explain what they added up to.
+> A nameless guy looking for something almost mythical, with strange people turning up along the way. I kept following because I wanted to know where it was going.
 >
-> **What the hell was that all about?** I'm still asking.
+> Finishing it felt like waking up from a dream and trying to explain it to someone. I remembered the details, but putting them together was another matter.
+>
+> **What the hell was that all about?**
 
 ### 12. [Kafka on the Shore](writings/2019-02-22-libro-kafka-on-the-shore/index.md)
 
-**Revise.** The Hoshino question is specific and worth keeping. “Maybe that's the point” and “Some stories end. Some just stop” turn genuine frustration into a tidy literary maxim.
+**Revise.** “Not because everything was explained, but because it wasn't” balances the frustration into praise. “Maybe that's the point” and “Some stories end / Some just stop” then package ambiguity as wisdom.
 
-Replace from “But weirdly enough, that's probably why it lingers” through the end with:
+Replace the commentary after the image with:
 
-> The question I'm still stuck on is: **Whatever happened to Hoshino after the cat answered him?**
+> Damn. Such an inconclusive ending.
 >
-> Did something change for him, or was that just another strange encounter? I wanted more after that scene. The ending left me frustrated, and I still don't know what to make of it.
+> I kept waiting for the strange events to connect. We get talking cats and dreams, and then suddenly I'm at the end wondering what I missed.
+>
+> **Whatever happened to Hoshino after the cat answered him?**
+>
+> That's the bit I'm stuck on. Did something change for him? I wanted more after that scene, and the ending annoyed me.
 
 ### 13. [After the Quake](writings/2019-02-23-libro-after-the-quake/index.md)
 
-**Revise.** The smoking and cat observations have a distinct voice. The later pivot, “real life works a little like that too,” grows into a generic acceptance lesson and an unrelated ship metaphor.
+**Revise.** The cat joke has an individual voice. The later “real life” pivot, disconnected-life fragments, and ship metaphor are a separate motivational ending. “Frustrating / interesting” also softens the criticism automatically.
 
-Replace from “And when you think about it” through the end with:
+Keep the observations list and the paragraph beginning “There isn't always a captivating plot.” Replace from “And yes, that can be frustrating” through the end with:
 
-> After this many Murakami books, I know I'm probably going to finish with unanswered questions. That still annoys me sometimes, but I keep reading him anyway.
+> It is frustrating. I still want answers to some of those things.
 >
-> There are a few books left that I haven't downloaded or listened to. For now, though, I'm ready to read someone else.
+> I've gone through enough Murakami for now, even with a few books left that I haven't downloaded or listened to. Time to read someone else.
 
 ### 14. [The Life-Changing Magic of Tidying Up](writings/2019-02-27-libro-llife-changing-magic-of-tidying-up/index.md)
 
-**Revise.** The numbered notes serve a purpose, but many are stretched into isolated instructions. The conclusion restates “what deserves space in your life” several ways before ending on a sentimental maxim.
+**Revise.** The numbered notes have a purpose, but “drawers / shelves / storage boxes” and the isolated instructions add artificial beats. The ending gives the same keep/discard lesson several increasingly sentimental finishes.
 
-Keep the introduction and replace from “A few takeaways” through the end with:
+Keep the introduction. Replace from “A few takeaways” through the end with:
 
-> A few things I wanted to remember:
+> Notes I wanted to keep:
 >
-> 1. Count what you own. It's harder to ignore the amount of stuff once you see it together.
-> 2. Notice why you suddenly want to clean. Sometimes there's another problem you're avoiding.
-> 3. A tidy room can feel good without fixing whatever was bothering you.
-> 4. Moving clutter into drawers doesn't deal with why it keeps accumulating.
-> 5. More storage can just mean more places to keep things you don't need.
-> 6. Sort by category so you can see all your clothes, books, or documents together.
-> 7. Make time for the sorting instead of endlessly shifting the same things around.
-> 8. Decide what to discard before organizing what's left.
-> 9. Think about how you want to use the space.
-> 10. Look at the things you keep and ask whether they still matter to you.
+> - Gather things by category. Seeing all the books or clothes together makes the amount harder to ignore.
+> - Decide what goes before buying storage for it. Another box can just hide the problem.
+> - Set aside time for the sorting. Moving the same things around every day sounds exhausting.
+> - Think about how you want to use the room before deciding where everything belongs.
+> - Pay attention to why you're cleaning. A tidy room won't necessarily fix whatever else is bothering you.
 >
-> I could see some overlap with Lean thinking here, particularly in removing waste. The storage point was useful too. Buying another box is easier than deciding what to get rid of.
+> I could see some overlap with Lean thinking, especially the part about waste. The storage point was useful. Buying a box is an easier decision than sorting through what's going into it.
 >
-> Great read. Now comes the part where I actually have to decide what I'm keeping.
+> Great read. I get the fuss around Kondo now.
 
 ### 15. [The Year of Magical Thinking](writings/2019-02-28-libro-year-of-magical-thinking/index.md)
 
-**Revise.** Hoping for a silver lining and finding none is a strong response. “Cry. Accept. Move forward” imposes a neat recovery sequence that undercuts it.
+**Revise.** “There really wasn't” is an honest disappointment. The following courage paragraph supplies consolation anyway, then “Cry / Accept / Move forward” presents grief as three clean steps.
 
-Replace from “But there's still so much courage” through the end with:
+Replace the commentary after the image with:
 
-> I admired the courage it must have taken to write this, though it didn't make the book any less depressing. I wanted that last page to offer some relief. It didn't.
+> Damn. Such a depressing read.
+>
+> I kept hoping there would be a silver lining on the last page. There wasn't, and I don't know why I expected one after everything I'd just read.
+>
+> I admire the courage it took to write this. Still a hard book to finish.
 
 ### 16. [A Heartbreaking Work of Staggering Genius](writings/2019-03-06-libro-a-heartbreaking-work-of-staggering-genius/index.md)
 
-**Keep.** The description of Eggers stepping outside his own story explains the exhausting reading experience. The mixed verdict and interest in more of his work can coexist without needing a lesson. Some fragments could be joined during copyediting, but a voice rewrite is unnecessary.
+**Light edit. Previously Keep.** “Some people will love / Others will hate” is a stock balanced contrast. “Not my favorite / But definitely memorable” supplies another safe middle verdict. The detailed description of Eggers interrupting his own narrative is worth retaining.
+
+Delete the two paragraphs beginning “Some people” and “Others.” Replace from “It can get messy” through the end with:
+
+> The interruptions wore me out. There was plenty to think about, especially the grief and responsibility, but I didn't always enjoy getting through it.
+>
+> Not my favorite Eggers read. I still want to try more of his work.
 
 ### 17. [The Charisma Myth](writings/2019-03-07-libro-the-charisma-myth/index.md)
 
-**Light edit.** The central idea is clear. The “way you” sequence and “Fresh mind. Fresh perspective” sign-off make an otherwise straightforward note sound rehearsed.
+**Revise.** “The way” repeats three times, followed by paired “You don't” reassurance. “Fresh mind / Fresh perspective” is a manufactured reset. The opening also resembles Talk Like TED.
 
-Replace from “It can be practiced” through “And I think that's what makes the concept useful” with:
+Replace the commentary after the image with:
 
-> It can be practiced through how you listen, carry yourself, and pay attention to someone. The emphasis on presence, warmth, and confidence made the idea seem more useful to me.
-
-Replace the final “So yeah” and “Fresh” lines with:
-
-> The fiction break was good. Let's see how these business reads go.
+> I liked the idea that charisma is something you can practice. Paying attention to how you listen seems more manageable than trying to become a different person.
+>
+> The emphasis on presence and warmth interested me. You don't have to be the loudest person there, which is a relief.
+>
+> If you like Dale Carnegie, this covers some familiar ground. I'm back to business and self-development books after a stretch of fiction.
 
 ### 18. [MDX Blog with Long Title](writings/2019-03-17-mdx-blog-with-long-title.mdx)
 
@@ -192,15 +233,15 @@ Replace the final “So yeah” and “Fresh” lines with:
 
 ### 19. [Talk Like TED](writings/2019-03-18-libro-talk-like-ted/index.md)
 
-**Revise.** The review becomes a chain of presentation commands and finishes with a slogan. It also opens almost identically to The Charisma Myth.
+**Revise.** The audience-category opener resembles The Charisma Myth. “The structure / The emotion / The stories” and a later command ladder lead into a balanced “isn't only about / it's about” ending. That makes the review sound like the presentation it is describing.
 
 Replace the commentary after the image with:
 
-> I liked the way this breaks down why some TED Talks are easy to listen to. Delivery matters, but so do the structure and the stories a speaker chooses.
+> I liked seeing why some TED Talks are easier to follow than others. Delivery is only part of it; the structure and the stories do a lot of the work.
 >
-> The useful part for me was understanding why a talk connects with people, rather than trying to copy the speaker. It made me think about how much information a listener can follow and what gives them a reason to keep listening.
+> The useful part was looking at why a talk connects with people instead of trying to copy the speaker.
 >
-> Worth checking out if you enjoy TED Talks and want to understand how they're put together.
+> There's plenty here about making an idea understandable. I can see myself using that more than any particular speaking style.
 
 ### 20. [Another MDX Blog with Long Title](writings/2019-03-18-mdx-blog-another-blog-with-long-title.mdx)
 
@@ -208,381 +249,509 @@ Replace the commentary after the image with:
 
 ### 21. [The Black Box of Thinking](writings/2019-03-31-libro-black-box-of-thinking/index.md)
 
-**Light edit.** The admission about only writing three notes while listening is good. “Go out. Test your ideas” leads to an overly certain payoff, “This time, I know it's right.”
+**Revise.** The three takeaways are legitimate notes, but the iceberg/mountain image is inflated. “Go out / Test / Be wrong” leads to a certainty payoff that feels written for applause.
 
-Replace from “As the book puts it” through “learn from other people's mistakes too” with:
+Keep the existing final Levenson quotation and attribution. Replace the commentary before it with:
 
-> My takeaway was to test an idea before getting too attached to it. I can come up with an explanation while sitting around, but that doesn't tell me whether it works.
+> Three notes I managed to write down while listening:
 >
-> The case studies also made a good argument for paying attention to other people's mistakes. No need to repeat all of them myself.
-
-Keep the Levenson quotation that follows.
+> - My first explanation could be wrong, however convincing it sounds in my head.
+> - Worrying about messing up can stop me from trying anything.
+> - The finished result doesn't show all the attempts that failed.
+>
+> There were more ideas in the case studies. These are just the ones I got down halfway through. Haha.
+>
+> I liked the emphasis on testing an idea instead of arguing for it from an armchair. And I don't need to repeat every mistake myself to learn something from it.
 
 ### 22. [The Storyteller's Secret](writings/2019-04-04-libro-storyteller-secret/index.md)
 
-**Revise.** “They remember” and “Share the” repeat in parallel sequences. The commentary ends as a public-speaking pep talk, with little room for the reader's response.
+**Revise.** Three “They remember” lines, three story-shape fragments, and three “Share” commands make the review read like a demonstration speech. The final pay-it-forward message adds another neat moral.
 
 Keep the opening quotation, including its continuation after the image. Replace from “What I liked about this one” through the end with:
 
-> I liked the emphasis on giving people a reason to care about the information you're presenting. A clear explanation helps, but a story gives the facts some context and makes the person behind them easier to understand.
+> The bit about giving people a reason to care made sense to me. I can explain something clearly and still lose the person listening.
 >
-> That was the useful part for me. If I'm sharing something I've learned, the struggle or mistake that led to it might be worth including too.
+> I liked the attention to the person telling the story, including what went wrong for them. That's probably worth including when I share something I've learned.
+>
+> **Inform. Illuminate. Inspire.** was a neat line, though the examples were more useful to think about.
 
 ### 23. [Fail Fast, Fail Often](writings/2019-04-05-libro-fail-fast-fail-often/index.md)
 
-**Keep.** The expectation mismatch, Seth Godin comparison, and lukewarm verdict make this a recognizable personal review. The advice list is somewhat over-spaced, but the entry returns to a clear criticism rather than forcing an epiphany.
+**Light edit. Previously Keep.** A mixed opinion does not exempt the “Try / Experiment / Be willing” command ladder. “Not bad / Not particularly memorable” and “good reminders hidden between the pages” cushion the dismissal.
+
+Replace from “Try things” through “You learn more from actually doing the thing” with:
+
+> I liked the push to try something before feeling ready. But the book kept wandering into other self-development advice when I wanted more about failure itself.
+
+Replace from “So yeah” through the end with:
+
+> I got a few useful ideas out of it. I also kept thinking they'd work better as separate blog posts.
 
 ### 24. [Option B](writings/2019-04-07-libro-option-b/index.md)
 
-**Revise.** The useful relationship and practical notes are surrounded by generalized grief language. “Live around the space it left behind” is a polished consolation that also recurs in spirit elsewhere in the collection.
+**Revise.** The grief fragments, “Sometimes support” contrast, and closing empty-space metaphor impose a smooth emotional arc. The relationship and financial notes can remain without the speech around them.
 
-Replace from “The loss of a loved one” up to, but not including, “Ayt” with:
+Replace from “The loss of a loved one” up to “Ayt” with:
 
-> This made me think about what happens to the partner who's left behind, including all the practical things they still have to handle while grieving.
+> I kept thinking about the partner who's left behind, including the practical things they still have to deal with.
 >
-> Three notes I took from it:
+> The relationship advice gave me a few things to think about. Relying on each other is normal, but I can see the value in both people keeping their own skills and confidence. Helping doesn't always have to mean taking over.
 >
-> 1. Depending on each other is part of being a couple, but I still think both people need room to develop their own skills and confidence.
-> 2. Helping doesn't always mean taking over. I liked the idea of staying available while letting your partner work something out.
-> 3. The insurance discussion was a practical part of a difficult subject. It made me think about the expenses a family may be left to handle as well as the loss itself.
+> The insurance discussion was more practical than I expected from a book about grief. There are expenses to handle while the family is already dealing with the loss.
 >
-> A difficult read, with more to think about than I expected.
+> I don't have a neat takeaway from all of that.
 
-Keep the reading-target update after “Ayt.” This revision reports the reader's response rather than expanding financial advice.
+Keep the reading-target update after “Ayt.” Delete “Come rain or shine,” which adds a motivational flourish after the concrete update.
 
 ### 25. [Made to Stick](writings/2019-04-11-libro-made-to-stick/index.md)
 
-**Light edit.** The ironic observation that other books stuck more is worth preserving. The subsequent commands mostly repeat the framework already quoted above.
+**Revise.** The review repeats the quoted framework as a command ladder. “Conception to actual lift-off” turns the ending into promotional copy. The ironic admission that other books stuck more is its best individual detail.
 
-Replace from “Sometimes it's not enough” through the end with:
+Replace the commentary after the image with:
 
-> The framework is useful for checking how an idea is presented. I can see myself referring back to it, even if the book itself wasn't one of my more memorable reads.
+> A useful framework, although I can think of other books that stuck with me more than this one. Which is a little funny.
+>
+> I can see the value in checking whether an idea is concrete and believable before trying to explain it. There's more to presenting it than just understanding it myself.
+>
+> I'd probably return to the framework before rereading the whole book.
 
 ### 26. [Daring Greatly](writings/2019-05-05-libro-daring-greatly/index.md)
 
-**Revise.** The prose repeats the arena quotation as a motivational speech, especially “You might” and “But at least you were there.” The audiobook update is more individual.
+**Revise.** The “You might” ladder and “at least you were there” repeat the arena quotation as a speech. A quotation can stay polished; the commentary need not echo its rhythm.
 
 Replace from “I think that quote” up to “As for the reading challenge” with:
 
-> That quote captures what I liked about the book. Trying something means risking embarrassment and criticism, and Brown takes that discomfort seriously.
+> That quote says most of what I liked about the book. Trying something means risking embarrassment, and I liked that Brown spends time on how uncomfortable that is.
 >
-> I liked the argument that vulnerability doesn't have to be treated as weakness. It doesn't make the risk any less uncomfortable, though.
+> I agree with the point about vulnerability. Knowing that doesn't suddenly make criticism easy to take.
 
-Keep the reading-challenge update.
+Keep the reading update, joining “Still a long way to go” to its following sentence rather than giving the pair a closing-poem layout.
 
 ### 27. [The Smartest Kids in the World](writings/2019-05-09-libro-the-smartest-kids-in-the-world/index.md)
 
-**Revise.** The educator/parent questions, “all matter” sequence, and final “Different” sequence frame the takeaway like a speech. The home-learning point can be stated without making it a universal verdict.
+**Revise.** The paired teacher/parent questions and “Schools / Teachers / all matter” construct a speech. The three “Different” lines then lead into an audience-facing lesson. The home-learning claim is presented more absolutely than the surrounding personal reaction.
 
-Keep the quotation, including its continuation below the image. Replace from “For educators and teachers” through the end with:
+Keep the quotation, including the continuation below the image. Replace from “For educators and teachers” through the end with:
 
-> I was interested in the comparisons between education systems, especially what they expect from students when the work gets difficult.
+> I was interested in how differently these education systems challenge students, especially when the work gets difficult.
 >
-> It also made me think about learning at home. How parents respond to mistakes and questions seems worth considering alongside what happens at school.
+> It made me think about home too. How do parents handle a mistake or a question? That seems relevant long before the kid gets to school.
 >
-> I wouldn't treat this as a definitive guide for parents or teachers. I liked it as a look at how differently students can be taught and challenged.
+> I wouldn't use this as a complete guide to education. I liked getting a look at what students elsewhere are expected to do.
 
 ### 28. [The Time Machine](writings/2019-05-10-libro-the-time-machine/index.md)
 
-**Revise.** Almost the whole commentary could accompany any book about uncertainty. “Find them. Learn from them” ends an advice sequence without returning to the novel.
+**Revise.** Almost all the commentary becomes generic advice. The “A person / A situation / A failure” ladder and “Find them / Learn from them” ending contain little reading-specific response.
 
 Replace the commentary after the image with:
 
-> The part I took from this was how an explanation can seem convincing until another detail turns up. I liked having to reconsider what was happening as the story went along.
+> I took “observe and learn” from this one. An explanation can look convincing until another detail turns up and makes it harder to believe.
 >
-> “Observe and learn” is probably the shortest version of my notes. I'm not sure I have a bigger takeaway than that.
+> I liked that uncertainty. I don't have much more in my notes than that, honestly.
 
 ### 29. [The Happiness Equation](writings/2019-05-20-libro-the-happiness-equation/index.md)
 
-**Revise.** The retirement staircase, “permission to enjoy living,” and final ikigai question turn the reading note into life coaching. The original interest in having a reason to get up is enough.
+**Revise.** The life-stage ladder, retirement contrast, and final ikigai question create several successive epiphanies. “Giving yourself permission” adds coaching language.
 
-Keep the quotation through “An **ikigai**.” Replace the subsequent commentary with:
+Keep the quotation through “An **ikigai**.” Replace the commentary that follows with:
 
-> A reason to get up in the morning. I liked that idea more than the pressure to find one purpose for an entire lifetime.
+> A reason to get up in the morning. I like that better than having to settle on one purpose for the rest of my life.
 >
-> The discussion of retirement interested me too. It's easy to focus on when you'll finally be able to stop working and spend less time thinking about what you'd actually want to do afterward.
+> The retirement discussion interested me. We spend a lot of time thinking about when we can stop working. What would I actually want to do all day afterward?
 >
-> I liked that the reason could change. Work might matter most at one point, and later it could be family, a project, or something you want to learn.
->
-> That's the question I came away with: what would I look forward to doing if work wasn't deciding most of my day?
+> I liked that the answer could change. It might be work now and some other project later. I'm still thinking about that part.
 
 ### 30. [The Marshmallow Test](writings/2019-05-23-libro-marshmallow-test/index.md)
 
-**Keep.** “Can we move on now?” and the preference for The Power of Habit give the entry a clear, mixed opinion. The introductory praise is generic but does not overwhelm the criticism. No rewrite needed for this audit.
+**Light edit. Previously Keep.** The two “How much” questions set up a polished overview. “There are definitely some useful insights / That said” is a stock praise-then-criticism transition. The actual frustration is stronger.
+
+Replace the commentary after the image with:
+
+> Interesting idea, but the psychobabble made this a struggle to finish.
+>
+> I wanted to know more about how self-control develops and how much it can change. At several points I was just thinking, okay, I get it. Can we move on?
+>
+> I'd still pick Charles Duhigg's *The Power of Habit* for this sort of read.
 
 ### 31. [The Little Prince](writings/2019-06-02-libro-the-little-prince/index.md)
 
-**Revise.** The ending uses the familiar “isn't about / maybe it's about” lesson structure. Much of the middle is a broad statement about adults rather than a reader's reaction.
+**Revise.** “Such a simple story, yet” opens on a balanced contrast. The ending turns childhood into a clean “isn't about / maybe it's about” lesson.
 
 Replace the commentary after the image with:
 
-> Such a simple story. I liked how much it says about friendship and growing up without needing a complicated plot.
+> I liked this one. It's simple enough to look like a children's book, but the adults worrying about numbers and responsibilities make a lot more sense to me now.
 >
-> It looks like a children's book, but I think some of it makes more sense once you're older, especially the attention adults give to numbers and responsibilities. The opening quote is a good description of what I enjoyed about it.
+> The quote above is the part I'd keep in my notes. I don't think it needs much explaining.
 
 ### 32. [The War of the Worlds](writings/2019-06-07-libro-war-of-worlds/index.md)
 
-**Keep.** The film-to-book comparison and return to reading provide enough personal context. “Rewire everything” is a loose sign-off, but there is no extended motivational pivot. A more specific scene could enrich a future revision, but the audit should not invent one.
+**Light edit. Previously Keep.** “It's always interesting” substitutes a general reaction for a personal one. The ending stacks three reset metaphors: gears, rewiring, and rhythm. The film comparison itself can stay.
+
+Replace “It's always interesting going back to the source material after already knowing the story through a movie” with:
+
+> I knew the story through the movie, so I was curious about the book.
+
+Replace the final two paragraphs with:
+
+> Anyway, I finally got back to reading. This was a good one to return with.
 
 ### 33. [Thinking like a Developer](writings/2019-07-13-thinking-like-a-developer/index.md)
 
-**Keep.** The question lists, reversal example, and debugging steps serve an instructional purpose. They should not be treated like the formulaic advice in the book reviews. No style rewrite proposed; this verdict does not validate the technical claims or pseudocode.
+**Keep.** Rechecked the repeated “Implement reversing” steps and the three debugging stages. These name actual tasks in a procedure; they do not manufacture an emotional progression or a three-part insight. The prose also stops at the practical instructions. No voice rewrite proposed. This is not a validation of the technical claims or pseudocode.
 
 ### 34. [When Breath Becomes Air](writings/2019-08-26-libro-when-breath-becomes-air/index.md)
 
-**Light edit.** The physician-to-patient shift is relevant to this book. The final “Maybe” and “sometimes” lines explain the preceding reflection again in generalized compassion language.
+**Revise.** “From medicine / From being the physician” doubles the same contrast. “It's one thing / It's another” repeats it, and the final “Maybe / sometimes” sequence supplies a polished compassion lesson.
 
-Keep the quoted reflection beginning “We might not always.” Replace everything after that quotation with:
+Replace the prose after the image and before the quoted reflection beginning “We might not always” with:
 
-> That was the part I wanted to remember: taking the time to listen, even when I don't know what to say.
+> The change from physician to patient was the part that got to me. He knows the medical side, and now he's the person those decisions are being made about.
+>
+> I kept thinking about that while reading. This was the thought I wanted to keep:
+
+Keep that quoted reflection. Delete the commentary after it, which restates it in more general language.
 
 ### 35. [Bradbury Stories](writings/2019-10-09-libro-bradbury-tales/index.md)
 
-**Revise.** Two fragment lists lead into an imagination lesson. The collection-specific reaction gets lost after the opening paragraphs.
+**Revise.** “Fear / Memory / Curiosity” and “A place / A person / A small detail” are two successive fragment lists. “What if?” then cues an imagination lesson and a safe ending.
 
 Replace the commentary after the image with:
 
-> I liked how easily Bradbury moves from an ordinary setting into something strange. With this many stories, I never felt sure what the next one would be like.
+> Bradbury moves from ordinary to weird so quickly. I'd get comfortable with one story and the next would feel completely different.
 >
-> Some felt nostalgic, and others were eerie. Even in the stranger ones, the people's fears and regrets were familiar.
+> I liked the mix of nostalgia and the eerie stuff. Even when the setting got strange, the people still had recognizable fears and regrets.
 >
-> The collection made me notice how much he could do with a small detail or an odd thought. That was as interesting to me as the variety of the stories.
+> A hundred stories is a lot to go through. Plenty of odd little details in here.
 
 ### 36. [We'll Always Have Paris](writings/2019-10-15-libro-well-always-have-paris/index.md)
 
-**Revise.** The quoted “DON'T THINK. DO.” becomes a chain of generic writing instructions. The reader's appreciation of Bradbury's observation is more useful than repeating the slogan.
+**Revise.** The opening observation turns into “Watch / Notice / Write,” then a generalized instruction to start. The final slogan merely repeats the quote.
 
 Replace the commentary after the image with:
 
-> I liked the small details in these stories: the strange encounters and bits of memory that Bradbury seems to notice without explaining everything around them.
+> I liked the small encounters and bits of memory in these stories. Bradbury pays attention to things I might not even think of writing down.
 >
-> The quote above fits what I enjoyed about the collection. There's something appealing about writing an idea down before thinking it to death.
+> The quote above fits the collection. I can see the appeal of getting an idea down before overthinking it.
 
 ### 37. [How to Fight a Hydra](writings/2019-11-04-libro-how-to-fight-a-hydra/index.md)
 
-**Revise.** “Sometimes greatness” and the closing audience question turn a light review into a motivational pitch. The bedtime-story comparison already describes the appeal.
+**Revise.** “A risk / A problem / A decision” leads into “Take / Face / See.” The greatness claim and final audience question turn the review into a motivational pitch.
 
 Replace the commentary after the image with:
 
-> Quite a short read. It felt more like a bedtime story about facing a difficult problem than a self-help book full of frameworks.
+> Short enough to finish in one sitting. It read more like a bedtime story about dealing with something difficult than a book of self-help advice.
 >
-> The Hydra metaphor is easy to follow. I liked being able to finish it in one sitting without working through endless advice.
->
-> Simple, but that suited this one.
+> The Hydra metaphor is pretty obvious, but I didn't mind. I liked not having another pile of frameworks to work through.
 
 ### 38. [The Happiness Track](writings/2019-11-09-libro-the-happiness-track/index.md)
 
-**Keep.** The entry explains its disappointment through perceived repetition and contradictions. The weekend aside is a normal reading-log ending. Preserve that uneven, personal verdict.
+**Light edit. Previously Keep.** “Maybe useful for a first-time reader / For me, though” provides a balanced concession after a clear negative verdict. “Can't love every book” then makes the dismissal harmless. The weekend aside is personal and can stay.
+
+Replace from “Maybe that's useful” up to “Anyway, still a good weekend” with:
+
+> I'd already come across too much of this elsewhere. I wasn't getting much out of it by the end.
+
+Keep the preceding criticism and final weekend sentence.
 
 ### 39. [The Buried Giant](writings/2019-11-12-libro-the-buried-giant/index.md)
 
-**Light edit.** Expecting a time loop is an individual response. The later “Maybe forgetting / Maybe remembering / Maybe both” sequence turns uncertainty into a balanced-sounding formula.
+**Revise.** “Maybe forgetting / Maybe remembering / Maybe both” is explicit symmetry. “Symbolism everywhere / Or maybe there isn't” followed by “interpret it as you will” sidesteps the specific confusion with a safe conclusion.
 
-Replace from “Maybe forgetting can protect us” through the end with:
+Keep the opening quotation. Replace the commentary after it with:
 
-> I still don't know how much to trust those memories. I spent so much of the book expecting a time loop that I'm probably still reading some of it through that assumption.
+> I kept expecting a time loop. Right up to the end, I thought that was where this was going.
 >
-> Interpret it as you will. I'm not settled on mine.
+> The unreliable memories threw me. Were there secrets in the past, or had people convinced themselves of things that hadn't happened?
+>
+> I'm still not sure how to read it. I probably spent too long waiting for that time loop.
 
 ### 40. [Everything Is F*cked](writings/2019-11-16-libro-everything-is-fcked/index.md)
 
-**Light edit.** The disappointment with the ending is clear. “But maybe that fits the point” then supplies a reassuring definition of hope, smoothing over the criticism.
+**Revise.** The “Why” list stages a psychology overview. “But maybe that fits the point” cancels the complaint about the ending and replaces it with a definition of hope. The first audit only caught the latter.
 
-Replace from “But maybe that fits the point” through “something worth doing next” with:
+Keep the opening quotation. Replace the commentary after it with:
 
-> I wasn't satisfied with that ending. There was plenty I found interesting, but I still wanted more from the discussion of hope.
+> Manson is good at making psychology readable. I liked the parts about emotions getting ahead of logic and people repeating mistakes they already understand.
+>
+> The hope discussion left me hanging, though. For a book with that subtitle, I wanted more by the end.
+>
+> I'd read his earlier book first. This felt like a follow-up, and I still wasn't satisfied with where it stopped.
 
-Keep the existing reading recommendation. Its book-title spelling is a separate copyediting matter.
+Keep the existing earlier-book reference if retaining the original recommendation paragraph instead of the final replacement paragraph. Do not include both.
 
 ### 41. [How to Win Friends and Influence People](writings/2019-11-20-libro-how-to-win-friends-and-influence-people/index.md)
 
-**Keep.** The concern about influence becoming manipulation runs through the review and is tied to its sales examples. The questions develop that concern rather than introducing an unrelated lesson. A recognizable opinion with no necessary voice rewrite.
+**Revise. Previously Keep.** “And that's where it gets interesting” stages a pivot already apparent from the sales criticism. The paired questions resolve intent into two neat alternatives. “Maybe not a perfect guide / But definitely” then softens the concern with automatic respectability.
+
+Replace the commentary after the image with:
+
+> Some of this made me uncomfortable. The advice about listening and taking an interest in people is useful, but so many examples seem aimed at getting someone to say yes.
+>
+> I kept wondering how much of that interest was real. If I'm listening just to work out how to get something from a person, that bothers me.
+>
+> I can see how much later writing on influence owes to Carnegie. I still don't agree with all of it.
 
 ### 42. [Atomic Habits](writings/2019-12-28-libro-atomic-habits/index.md)
 
-**Keep.** This is mostly a dated reading update about finishing in October and missing the annual target. The habit metaphor is brief. Do not pad it into a fuller review simply to fit a standard format.
+**Keep.** Rechecked the habit-seed metaphor and the optimistic return-to-reading sentence. They are brief and do not build a staged epiphany. Most of the original prose records when the audiobook was finished and the missed target. The strongest aphorisms are presented as quotations, which this voice audit does not rewrite.
 
 ### 43. [The Laws of Human Nature](writings/2020-01-03-libro-the-laws-of-human-nature/index.md)
 
-**Light edit.** The three-month listening history grounds the entry. The final “closing the books / opening a few new chapters” is a stock new-year ending.
+**Revise.** “Easy to analyze others / harder to notice yourself” is a generic balanced insight. The new-year book/chapter metaphor supplies another neat close. The earlier edit of just the last sentence did not go far enough.
 
-Replace the final sentence with:
+Replace the commentary after the image with:
 
-> That's the last of my 2019 reads written up. Time to start the next one.
+> Last read for 2019. I finished in the final week of December after nearly three months of picking it up and putting it down.
+>
+> It's long. Some of the observations about other people were uncomfortable when I started recognizing them in myself.
+>
+> I missed the reading target this year. At least I finally finished this one.
 
 ### 44. [The Unicorn Project](writings/2020-01-17-libro-unicorn-project/index.md)
 
-**Light edit.** The career history is valuable. The “Developers build / Operations keeps” sequence and puzzle metaphor make the middle read like a generic teamwork explainer.
+**Revise.** The role-by-role list, “Processes clash / Priorities differ,” and puzzle metaphor all arrange the experience too neatly. “Different sides of the same machine” adds a final balanced flourish.
 
-Replace from “Developers build” through “all affect each other” with:
+Replace the commentary after the image with:
 
-> The priorities don't always line up. A change that helps one team can give another team more work, and they still have to get the same system running.
+> I started closer to Ops and later moved into installation and implementation. Seeing those different parts of the work made this book interesting to me.
 >
-> That's what I enjoyed about *The Unicorn Project*. Coming from Ops and then moving into installation and implementation, I liked seeing another perspective on how the work fits together.
-
-Keep the opening background and closing book comparisons.
+> One team's improvement can give another team a problem. I liked getting the developer perspective on that, especially after coming from the other side.
+>
+> I'd point developers toward *The Unicorn Project* and network or systems engineers toward *The Phoenix Project*.
+>
+> Still want to get my hands on *The DevOps Handbook*.
 
 ### 45. [Power Moves from Davos](writings/2020-02-05-libro-powermoves/index.md)
 
-**Revise.** “Maybe that's what good leadership really looks like” expands into an encouragement sequence and a social-media-style audience question. The flexible-leadership observation can stand on its own.
+**Revise.** “People don't fit neatly into one box” is followed by exactly balanced leadership examples. The “Sometimes” triad and audience question finish it like an engagement post.
 
-Keep the category list above the image. Replace the commentary after the image with:
+Keep the leadership category labels above the image; they identify the subject rather than stage a revelation. Replace the commentary below the image with:
 
-> I found the leadership categories interesting, though I wouldn't expect a person to stay in just one of them.
+> I found the categories interesting, but I wouldn't know where to put someone who leads differently depending on what's happening.
 >
-> A leader might need to be decisive in one situation and more supportive in another. That's the part I found useful: thinking about when a style helps, instead of just deciding which label fits someone.
+> A team needing support is a different situation from a difficult decision that someone has to make. I'd rather think about that than settle on one label for a person.
 >
-> I imagine working under someone who can make those adjustments would make a difference.
+> It would be good to work under someone who can make that adjustment.
 
 ### 46. [Sprint](writings/2020-02-06-libro-sprint/index.md)
 
-**Light edit.** The comparison with Lean, Agile, and related approaches makes the opinion clear. The four-line “Less / More” sequence sounds like promotional copy.
+**Light edit.** The Lean/Agile comparison is a useful opinion. “But that's not really a bad thing” preemptively balances the criticism, and “Less / More / Less / More” sounds like advertising.
 
-Replace from “Less guessing” through “whether the damn thing works” with:
+Delete “But that's not really a bad thing.” Replace from “Less guessing” through the end with:
 
-> I liked the emphasis on finding out whether the damn thing works before spending more time debating it.
+> I liked the push to find out whether the damn thing works. Much of it was familiar, but I could see the use of having it in one process.
 
 ### 47. [Big Things Have Small Beginnings](writings/2020-02-17-libro-big-things-have-small-beginnings/index.md)
 
-**Revise.** Almost the entire commentary is motivational generalization. The “Learn. Build. Try” sequence and “are you ambitious enough?” question could sit under many unrelated self-help books.
+**Revise.** The small/big contrast expands into “Learn / Build / Try / Fail / Adjust.” The final ambition question asks for a motivational response rather than recording a reading reaction.
 
-Keep the quotation after the image. Replace from “The title pretty much says it all” through the end with:
+Keep the quotation below the image. Replace the commentary after it with:
 
-> The title gives a pretty good idea of what to expect. I took it as an argument for paying attention to the small decisions and ordinary work that come before a visible result.
+> The title gives most of the idea away. There's a lot here about the small decisions and work that happen before a result becomes noticeable.
 >
-> The discussion of ambition interested me too, especially the difference between wanting more and doing something with that feeling. That's about as far as my notes on this one go.
+> The ambition part interested me. Wanting something bigger is one thing; working out what to do with that frustration is harder.
+>
+> That's most of what I wrote down from this one.
 
 ### 48. [Game Changers](writings/2020-04-03-libro-gamechangers/index.md)
 
-**Revise.** The basic health list builds to a staged reveal, “The body,” and then a polished sound-mind conclusion. The review's actual observation is that familiar advice still drew attention to physical wellbeing.
+**Revise.** The health-command list builds toward “The body” as a staged reveal. “Doesn't begin with doing more / starts with taking better care” creates an overly balanced conclusion.
 
-Keep “It's good to be back” and the quotation. Replace from “A lot of the ideas” through the end with:
+Keep “It's good to be back” and the quotation. Replace the subsequent commentary with:
 
-> A lot of the advice felt familiar, especially the parts about sleep, exercise, and stress.
+> A lot of this was familiar advice about sleep, food, and exercise. Nothing especially surprising there.
 >
-> What interested me was how often the book returned to the body while discussing performance. I'd expected more about productivity and mindset.
+> I hadn't expected it to keep returning to the body while talking about performance. I was expecting more about productivity and mindset.
 >
-> I wouldn't call the ideas revolutionary. The physical side of the discussion was what I took from this read.
+> That was the part I found interesting, even if I'd heard much of the advice before.
 
 ### 49. [Programming is easy, ain't it?](writings/2020-06-06-programming-is-easy/index.md)
 
-**Light edit.** The concept explanations and illustrations are useful instructional material. “You made the right choice opening this post,” “once and for all,” and “Say it with me” oversell the introduction. The ending repeats its reassurance.
+**Light edit.** The tutorial's explanations have a practical purpose, but the introduction invents the reader's thoughts. “Say it with me,” “easy peasy,” the languages-speak/think maxim, and the final syntax/keywords/general-ideas sequence manufacture reassurance.
 
-Replace from “To start with” through “But is it really just that?” with the following, retaining the image after the first paragraph:
+Replace from “To start with” through “But is it really just that?” with the following, retaining the image after the first replacement paragraph:
 
-> Is programming easy? I think the basic instructions are approachable, but learning how to solve a problem with them takes practice.
+> I think the basic instructions in programming are approachable. Figuring out what to do with them is where I get stuck.
 >
-> If you're starting out, it helps to know a few concepts before worrying too much about which language to choose.
+> A few concepts helped me understand what I was looking at when I started. I'll go through them here.
+
+Under “What's the word?”, replace from “But it's really not that difficult” through “easy peasy” with:
+
+> It looks confusing at first. Learning a few pieces gives me somewhere to start, even when I still can't follow the whole thing.
+
+Replace “So I guess you could say that programming languages speak differently, but many of them think in similar ways” with:
+
+> That makes the next language a little less unfamiliar.
+
+Replace “The syntax might change” through “the general ideas are often still there” with:
+
+> I still have new syntax to learn, but at least I recognize some of the concepts.
 
 Replace from “Because programming itself isn't really the scary part” through “the code starts making a lot more sense” with:
 
-> The part I find harder is deciding what the program needs to do and breaking that into steps. Knowing the basic concepts helps me work through those steps.
+> I still spend a lot of time figuring out the steps before I can write the code.
 
-Keep the intervening tutorial, course link, and sign-off. This is a tone edit, not a technical review.
+Keep the code-related explanations, illustrations, links, and closing sign-off. Do not rewrite technical definitions to make them messier.
 
 ### 50. [Day 1: Where to start?](writings/2020-11-06-day-1-where-to-start/index.md)
 
-**Keep.** The Everest metaphor is generic, but the entry is dominated by specific constraints, lab-server experience, course plans, and uncertainty about where to post. Its digressions and final “Git” fit the start of a personal challenge. A general voice rewrite would lose useful texture.
+**Light edit. Previously Keep.** The snowball and Everest metaphors inflate a concrete learning problem. The childhood/adulthood contrast overexplains it, while “put me on the right path” makes the plan sound settled. The specific course choices and uncertainty about posting are worth retaining.
+
+In “You just cannot skip the process,” replace from “I was younger then” through the paragraph ending “snowball on a steep mountain” with:
+
+> I used to jump into a problem because I wanted to see if I could make something work. I still do that. The trouble starts when it breaks and I can't explain what I put together.
+
+Replace the Everest paragraph with:
+
+> I need to spend more time on the basics, even when I'd rather get straight to the problem.
+
+Replace from “To sum it all up” through “put me on the right path” with:
+
+> Mostly, I want to stop dropping this after a week. A hundred days is already more consistency than I've managed on the earlier attempts.
+
+Keep the course plan, platform worries, and final “Git.”
 
 ### 51. [Killing a defunct process](writings/2020-11-18-killing-a-defunct-process/index.md)
 
-**Keep.** The incident, command output, and explanation form a concrete troubleshooting account. The short “Problem solved? Not quite” transition is conventional but functional. Do not alter commands or operating guidance during this voice audit.
+**Light edit. Previously Keep.** “Problem solved, right? / Not quite” is a scripted question-and-reversal. The conclusion restates the same already-dead revelation after the explanation has established it. The commands and output are specific and stay.
+
+Replace from “Problem solved, right?” through “The process still appeared as” and its defunct marker with:
+
+> That didn't remove it. It still showed up as `<defunct>`.
+
+After the paragraph ending “acknowledge that it has already finished,” delete the repeated “So if you ever see” code example and the bold concluding maxim. Keep the earlier safety guidance and the references.
 
 ### 52. [The Never-Ending Work of Improvement](writings/2021-01-21-never-ending-improvement/index.md)
 
-**Revise.** Repeated action fragments stretch a straightforward engineering observation. The half-stability, half-change ending is more symmetrical than the experience being described.
+**Revise.** “You change / You replace / You move” and “You fix / You harden / You secure” turn the engineering process into a metronome. The half-stability/half-change ending is artificially symmetrical.
 
-Keep the heading and image. Replace the commentary with:
+Replace the commentary after the image with:
 
-> I enjoy learning new things, but I also want the systems I work with to be reliable. Those two interests can get in each other's way.
+> I want the systems I work with to stay reliable. I also enjoy finding things to change, which causes problems for that first wish.
 >
-> A new feature or requirement means changing something that already works. Sometimes the change exposes a weak point, and then there's another problem to investigate.
+> A new requirement can mean disturbing something that's already working. Sometimes the change breaks something else and I'm back to gathering facts and working through a fix.
 >
-> I like that part: gathering the facts, finding out why something failed, and working through a fix. I also enjoy seeing a rough proof of concept become something useful in production.
+> I like that work, frustrating as it can be. Seeing a rough proof of concept actually run in production feels good.
 >
-> There's still plenty I haven't built or figured out yet. I don't expect to run out of things to learn from these systems anytime soon.
+> There's plenty I still haven't figured out. I don't expect that to change soon.
 
 ### 53. [The 100: Days Later](writings/2021-02-15-the-100-days-later/index.md)
 
-**Light edit.** The course history and unresolved RHEL/Docker detour are strong personal material. The opening invents the reader's motives, while the “stubborn version of me” passage stages a heroic win over doubt.
+**Light edit.** The course history and unresolved Docker detour have substance. Four separate passages add manufactured rhythm: the opening reader assumptions, the “You” success triad, the “Maybe” doubt triad, and the “I'll probably” closing ladder. The previous suggestions missed two of those sequences.
 
 Replace the first two paragraphs after the heading with:
 
-> I finished my first **#100DaysOfCode Challenge**. I started on November 6, 2020, and managed to keep going through all 100 days.
+> I finished the first round of **#100DaysOfCode**. Started on November 6, 2020, and somehow kept it going for all 100 days.
 
-The later announcement repeats this information; shorten its three paragraphs beginning “I started the” to “Anyway, back to the coding challenge.” Preserve the TV-series digression if it still feels like the author.
+Later, shorten the repeated announcement from “I started the” through “I've completed the 100 days” to “Anyway, back to the coding.”
 
-Replace from “And weirdly enough, I didn't try to completely shut those thoughts out” through “every single time” with:
+In “The uphill,” replace from “Of course, there's that nice spike” through “Then there's the other side of it” with:
 
-> I still had those doubts while doing the labs. Some days I did less, but I kept going. Finishing the challenge didn't depend on feeling confident about it every day.
+> Finishing a lab felt good. Getting stuck on the next one could wipe that feeling out pretty quickly.
 
-Keep the concrete next-round plans and the existing attributed quotation.
+Keep the subsequent stuck-lab account. Replace from “Maybe I was wasting my time” through “every single time” with:
+
+> I wondered whether this would help me at all. Work was already tiring me out, and some days I did very little in the labs. I kept going anyway, with the doubts still there.
+
+Replace from “Again, I'm not expecting everything” up to the attributed Stephen King quotation with:
+
+> I expect to get stuck again. There will also be evenings when I watch YouTube instead of reading the documentation.
+>
+> I've got the next set of topics now. Let's see how much I get through.
+
+Keep the concrete plans and existing quotation.
 
 ### 54. [Bye, Disney](writings/2021-05-21-bye-disney/index.md)
 
-**Light edit.** The thanks to the PH and US teams belong in the farewell. “One last” and “Different teams” create a repeated farewell template; “small pieces of experience” and “close this chapter” explain what the thanks already show.
+**Light edit.** The farewell uses “One last” three times and “Different” three times. The smooth/rough-days contrast then leads to “close this chapter.” The team-specific thanks need less framing.
 
 Replace from “And the day has come” through “One last look at Disneyland” with:
 
-> Signing in for the last time. It feels strange knowing I won't be opening these tools and tickets again tomorrow.
+> Signing in for the last time. Weird to think I won't be opening these tickets tomorrow.
 >
 > One last look at Disneyland.
 
-Replace from “Different teams. Different people. Different problems” up to “Borrowing from” with:
+Keep the PH-team, US-team, and House of Mouse thanks. Replace from “Different teams” up to “Borrowing from” with:
 
-> Some days involved hours of searching, reading documentation, and staring at logs without knowing what I was missing. I learned a lot on those days too, though I probably didn't appreciate it at the time.
+> There were days I spent hours staring at logs and looking things up because I couldn't work out what I was missing. I learned a lot that way too.
 >
-> I'll miss the people who helped me through them. Thanks for everything.
+> I'll miss the people I worked with here.
 
-Keep the existing attributed closing quotation and final sign-off without reproducing them in this report.
+Keep the existing attributed quotation and sign-off. The quoted lyric is not rewritten or reproduced here.
 
 ### 55. [The Humans](writings/2021-05-30-libro-humans/index.md)
 
-**Light edit.** The peanut-butter aside and alien premise have personality. The “We're” sequence turns the plot summary into a broad statement about humanity. Keep the explicit takeaway and premise sections.
+**Revise.** The opening takeaway already settles the meaning. Later, the three family-member introductions and five “We” lines stage the same realization again. “Being human isn't about” and “we still choose to care” make the premise sound like a prepared humanity speech.
 
-Replace from “But the longer he stays here” through “he bargained for” with:
+Keep the title, author, quotation, image, section headings, and final book list. Replace the body of “My personal takeaway” with:
 
-> But living with Isobel, Gulliver, and Newton makes the mission harder. He starts getting attached to the people whose lives he's supposed to interfere with.
+> A lot of what I liked here doesn't make logical sense from the alien's point of view. The peanut butter doesn't help. Lols.
+
+Replace the body of “What does it actually mean to be human?” with:
+
+> Looking at humans from outside makes the ordinary stuff seem ridiculous. The uncomfortable clothes and money worries are familiar enough. Having to explain them to an alien would be another problem.
+
+Replace the prose under “The Premise,” up to the separator, with:
+
+> Professor Andrew Martin figures out something in mathematics that humans apparently aren't supposed to know yet. An alien is sent to replace him and get rid of the evidence.
 >
-> That was the part I found interesting. Understanding humans from a distance turns out to be very different from living with them.
+> He finds us repulsive at first. Then he has to live in Andrew's house with Isobel, their son Gulliver, and Newton the dog.
+>
+> That's where I got more interested. He starts discovering music and food, and getting attached to people he's supposed to be dealing with as part of a mission.
+>
+> I liked watching that assignment get harder for him.
 
 ### 56. [The Examination Day](writings/2021-06-04-the-examination-day/index.md)
 
-**Light edit.** The cancelled attempt, refund delay, and passing result make this a concrete personal account. Repeated “Build. Break. Fix” commands in the final section turn the practical study advice into a pep talk.
+**Light edit.** The cancelled attempt and refund delay give the post its voice. “Learn / Play / Break,” “Seriously / Break them,” and the four “Maybe” reasons repeat a coaching cadence throughout, not only at the end.
 
-Within “Do not go through the exam just for the sake of getting the certification or the badge,” replace from “And the only real way to do that” through “same train ride” with:
+Replace from “Just like with any skill” through “try to fix them afterward” with:
 
-> Working through projects gives me a way to use what I studied. They don't need to involve a huge architecture; even a small setup can leave me with plenty to troubleshoot.
+> I found it easier to follow the operational side once I understood the basic architecture. Working through labs helped too.
+
+Replace from “And besides simply following the labs” through “Google-Fu to good use” with:
+
+> I also found it useful to change things in a lab and troubleshoot the result. Following the instructor's steps didn't always tell me whether I understood the setup.
+
+Replace from “Don't just memorize which option is correct” through “really important” with:
+
+> I read the explanations for the wrong answers too. When two options looked reasonable, that was often the part I needed most.
+
+Replace the entire “FINAL THOUGHTS” section, preserving the closing notes link, with:
+
+> Passing was a relief after the cancelled attempt and all the rescheduling.
 >
-> I'm still trying to get more of that experience myself, especially with Linux, Python, and automation.
+> I still want more practice with Linux, Python, and automation. The exam gave me a reason to study, but there are things I haven't tried building yet.
+>
+> For now, I'm glad this one is done.
 
-Replace the prose under “Learn for the sake of learning,” before the closing link, with:
-
-> Passing was a relief. There are still plenty of things I don't understand, and I want to keep working on them now that the exam is over.
-
-Preserve the exam history and resource links. This audit has not checked whether the historical exam advice remains current.
+Keep the exam narrative and resources. These remain historical recommendations, not newly verified current guidance.
 
 ### 57. [The Obstacle Is the Way](writings/2021-09-21-libro-the-obstacle-is-the-way/index.md)
 
-**Revise.** The commentary repeats the takeaways as a generic setback lesson, ending in “maybe that's where progress starts.” The reading update can carry the personal frame.
+**Revise.** “Don't remove / work with,” “not a blessing / just a problem,” and “wish / act” accumulate tidy contrasts. “Maybe that's where progress starts” converts them into a life lesson.
 
-Replace from “What I liked most” up to “Anyway, good to be reading” with:
+Keep the takeaway list and reading-update lines. Replace from “What I liked most” up to “Anyway, good to be reading” with:
 
-> I liked the idea of working with a problem I can't immediately remove. A setback might mean changing the approach rather than waiting for the situation to improve.
+> I liked the idea of changing the approach when I can't get rid of the problem itself.
 >
-> I wouldn't call every problem a blessing, though. Some of them are just a pain to deal with.
+> I'm less interested in calling the problem a blessing. Some things are just a pain to deal with, and I'd rather work out what's possible from there.
 
-Keep the existing takeaway list and reading-update sentences. The claim about two years without non-technical reading appears inconsistent with other dated book entries; verify it separately rather than silently rewriting the history.
+The “two years” reading-history claim appears inconsistent with other dated entries. Confirm it separately rather than inventing a corrected timeline.
 
 ### 58. [The First 20 Hours](writings/2021-10-13-libro-the-first-20-hours/index.md)
 
-**Light edit.** The reread and possible next book give it a reading-log frame. The mountain comparison and instruction sequence repeat the earlier description of breaking down a skill.
+**Revise.** “You don't / You don't / You just” sets up reassurance before the instruction ladder. “Simple in theory / effort in practice” is another symmetrical payoff. The previous patch would have left the first sequence untouched.
 
-Replace from “That idea alone is pretty useful” up to “Might go for” with:
+Replace the commentary after the image with:
 
-> That's what I liked on this reread: narrowing down what I want to learn before trying to take on everything. It still takes practice, but the starting point feels more manageable.
-
-Keep the closing reference to The Martian.
+> Done with another reread.
+>
+> I like how this narrows down the starting point. Pick what I actually want to learn and work on the important parts first. That's easier for me to get my head around than trying to master the whole subject.
+>
+> Still takes practice, obviously.
+>
+> Might go for *The Martian* next.
 
 ### 59. [Digital: Merc with a Mouth](writings/2021-11-15-art-deadpool/index.md)
 
@@ -594,149 +763,230 @@ Keep the closing reference to The Martian.
 
 ### 61. [Range](writings/2021-11-19-libro-range/index.md)
 
-**Revise.** A useful generalist/specialist question turns into career coaching with a gas-pedal metaphor and “Learn. Unlearn. Then learn again.” The existing change of opinion is enough to structure the review.
+**Revise.** The driving metaphor, “Learn / Understand / Get good,” and “Learn / Unlearn / learn again” turn a reading response into career advice. The balanced generalist/specialist resolution is overworked.
 
-Keep the opening quotation and final image. Replace the intervening commentary with:
+Keep the quotation and final image. Replace the intervening commentary with:
 
-> To be a generalist or a specialist? I used to think I'd eventually have to pick one.
+> I used to think I'd have to pick between being a generalist and a specialist. *Range*, by David Epstein, made me less sure about that.
 >
-> After reading *Range* by David Epstein, I'm less convinced that I need to rush that decision. I liked the idea that experience in one area might become useful somewhere else, even years later.
+> I liked the idea that something I learned elsewhere could turn out to be useful years later. I still want enough depth in a technology to actually work with it, though.
 >
-> I still want to go deep enough into a technology to understand it and build things with it. The book made exploring other interests feel compatible with that.
+> I'm not rushing to choose a label.
 
 ### 62. [The Dream Architects](writings/2021-11-20-libro-dream-architects/index.md)
 
-**Light edit.** The revisions and failed ideas fit creative work. “Being wrong doesn't always mean you failed” turns that observation into a generic growth lesson. Preserve the unexpected Avatar reaction.
-
-Replace from “And I think that takes a certain kind of maturity” through “see the problem differently” with:
-
-> I liked seeing how much the work could change after someone admitted an idea wasn't working. That interested me more than a tidy account of getting everything right from the start would have.
-
-### 63. [The Hard Thing About Hard Things](writings/2021-12-05-libro-hard-thing-about-hard-things/index.md)
-
-**Light edit.** The three listens at different stages of life give the piece its value. “The book itself stayed the same. I didn't” is over-polished, and the “By” sequence stretches a simple point about questions.
-
-Replace “The book itself stayed the same” and “I didn't” with:
-
-> Some parts made more sense to me this time than they did right out of college.
-
-Replace from “Best takeaway?” through the end with:
-
-> The question-asking point was the one I wanted to remember. I won't always know the right thing to ask, but asking an obvious or mistaken question still gives me something to work with.
-
-### 64. [Peak](writings/2022-01-25-libro-peak/index.md)
-
-**Revise.** “Goldmine,” a string of practice commands, and the talent/start/finish maxim make this read like a promotional summary. The interest in deliberate practice can be expressed directly.
+**Revise.** “Not just being good / staying curious,” two “Being” lines, and “wrong doesn't mean failed” form a ready-made growth lesson. The unexpected Avatar aside is more distinctive.
 
 Replace the commentary after the image with:
 
-> I found a lot to think about here, especially the emphasis on deliberate practice and working on the parts you're bad at.
+> I liked seeing how much the work changed as people found out an idea wasn't working. Games go through a lot of revisions, and that interested me more than a straightforward success story would have.
 >
-> I liked the argument that starting ability doesn't settle how much someone can improve. The distinction between learning enough to do a job and continuing to practice beyond that was useful too.
+> Also, I somehow finished this appreciating the *Avatar* universe even more.
+>
+> **Oel ngati kameie.**
+
+### 63. [The Hard Thing About Hard Things](writings/2021-12-05-libro-hard-thing-about-hard-things/index.md)
+
+**Revise.** The book/me contrast, “outgrow / catch up,” staged takeaway questions, and four “By” lines all manufacture a lesson. The three-listen history is enough to carry the response.
+
+Replace the commentary after the image with:
+
+> Third time finishing this audiobook. The first was right out of college, then again about a year later. This time was just last week.
+>
+> Some of the stories made more sense now. I'd heard them before, but I've dealt with more uncertainty and bad decisions at work since those earlier listens.
+>
+> The question-asking part is what I wanted to keep. I won't always know what to ask, and I'm going to ask some obvious things before I get better at it.
+>
+> That still seems preferable to staying quiet because I don't want to sound stupid.
+
+### 64. [Peak](writings/2022-01-25-libro-peak/index.md)
+
+**Revise.** “Goldmine” and the growth-mindset summary lead into a practice-command ladder. The start/finish talent contrast gives it an advertising-style close.
+
+Replace the commentary after the image with:
+
+> The deliberate-practice discussion was useful. I liked the attention to the parts you're bad at instead of just spending more time doing the familiar stuff.
+>
+> Getting good enough to do the job and continuing to improve after that aren't quite the same thing. That's the part I'd want to come back to.
+>
+> Plenty in here to think about.
 
 ### 65. [Shoe Dog](writings/2022-05-24-libro-shoe-dog/index.md)
 
-**Revise.** The three-listen history and “Noice” sound individual. The rest moves through fragment lists to generic perseverance and a brand slogan.
+**Revise.** “Uncertainty / Bad decisions / Cash problems” and “The resources / The people / The mistakes” supply repeated beats before the brand-slogan ending. The reread dates and “Noice” sound more individual.
 
 Keep the reread history through “Noice.” Replace the rest with:
 
-> I liked how uncertain so much of the story felt, even knowing where Nike eventually ended up. The cash problems, bad decisions, and changing plans kept it from feeling like a straightforward success story.
+> I still liked how uncertain the story felt, even knowing where Nike ends up. There are cash problems and decisions that could have gone badly, and the plans keep changing.
 >
-> That's what I enjoyed coming back to this time. They had to keep making decisions without knowing how things would turn out.
+> It's easy to forget that while looking back at a company this big.
 >
-> Third listen done, and I still enjoyed it.
+> Third listen, and I enjoyed it again.
 
 ### 66. [So Good They Can't Ignore You](writings/2024-03-03-libro-so-good-they-cant-ignore-you/index.md)
 
-**Revise.** The passion/craftsman distinction is useful. The second half shifts into repeated commands and a neat “Passion might catch up later” payoff.
+**Revise.** The book's two mindsets are meaningful concepts, but “Sometimes passion / Sometimes competence” duplicates the contrast as a slogan. “Practice it / Deliberately” and “But other people will” stage the ending as a reveal.
 
-Keep the explanation through “That difference sounds small, but it changes how you approach work.” Replace the rest with:
+Replace the commentary after the image with:
 
-> I liked having a more practical question to ask than whether I'd found the perfect job. What can I get better at, and where could that skill be useful?
+> The argument against “follow your passion” interested me. At the start of a career, how am I supposed to know what work will be satisfying years later?
 >
-> The deliberate-practice part matters here too. Trying different things helps, but so does spending time on the parts of the work I'm still weak at.
+> Newport's craftsman mindset gave me something more useful to think about: what can I get good enough at to offer someone?
 >
-> I don't think I could have mapped out satisfying work at the start of my career. The book's emphasis on building skills first made sense to me.
+> I liked the emphasis on practice, including the parts I'm weak at. Exploring different interests still makes sense to me, but eventually I have to spend time getting better at something.
+>
+> I don't think I could have drawn a straight line to the work I'd want from the beginning.
 
 ### 67. [What I Talk About When I Talk About Running](writings/2024-03-04-libro-what-i-talk-about-when-i-talk-about-running/index.md)
 
-**Revise.** The reading dates are specific. The rest moves from running to every repeated activity and ends with “Keep moving. The distance adds up,” a polished lesson detached from those details.
+**Revise.** The bold takeaway preannounces the lesson. “Writing / Learning / Work” generalizes it to everything, and “Keep moving / The distance adds up” gives it a polished close.
 
 Keep the reading-log paragraphs. Replace from “The biggest takeaway for me” through the end with:
 
-> I liked the attention Murakami gives to running as a routine. Something as ordinary as going out for a run can leave a lot of time for thinking, especially when you've been doing it for years.
+> I liked how much Murakami had to say about running. From the outside it looks repetitive, but doing it for years leaves him with a lot to think about.
 >
-> That was the part I took from this: how much there can be to say about an activity that looks repetitive from the outside.
+> The ordinary routine interested me more than I expected. I can see why he kept writing about it.
 
 ### 68. [A Shift in Mindset](writings/2024-03-19-shift-in-mindset/index.md)
 
-**Light edit.** The course-deletion habit, unfinished courses, and delivery constraints are specific and worth keeping. The conclusion repeats the learner-to-problem-solver revelation and adds a further teaching stage that the story hasn't developed.
+**Revise.** The course-deletion habit and delivery constraints are specific. Around them, “You might have,” “They give/show/introduce,” “I learned enough,” and “I'll” create repeated instruction ladders. The apple metaphor and learner-to-problem-solver ending tidy up what was supposed to be a messy account. The earlier ending-only edit missed that repetition.
 
-Replace the prose under “Okay, I think I got it.” through the end with:
+Keep the practical examples, links, and the course-deletion account. Make these replacements:
 
-> I'm still figuring this out. I have courses left to finish and plenty of questions I don't know how to answer yet.
->
-> For now, I'm trying to let the problem in front of me guide what I look up. I'll test what I find and document what happened so I don't have to work through the same issue from scratch next time.
->
-> I still need courses when a subject is new. Once I'm working on something, though, my notes and the documentation are usually where I go first.
+1. Replace from “When I say **college-style learning**” through “moving on to the next lesson” with:
+
+   > With a course, I know what lesson comes next and what I'm supposed to finish. I got used to having that outline.
+
+2. Replace from “You might have help from a vendor” through “answered first” with:
+
+   > There might be a vendor or another team helping. Then a requirement changes halfway through the sprint and I have to work out which problem matters first. Having more people involved doesn't make that decision obvious.
+
+3. Replace from “Is technical debt bad?” through “It depends” with:
+
+   > I don't have a blanket answer for whether that tradeoff is worth it.
+
+4. Under “So, should I stop taking courses and just focus on projects?”, replace all the prose before the next heading with:
+
+   > I'm still using courses for unfamiliar subjects. I need enough of the terminology to know what to search for.
+   >
+   > Sometimes I learn a tool and then discover it won't help with the problem I actually have. Annoying, but at least I know that now.
+
+5. Replace from “Kind of like picking apples” through “my **Google-fu**” with:
+
+   > By then I have notes and enough background to search for the specific problem. I'd rather try that than watch the entire section again.
+
+6. Replace all prose under “Okay, I think I got it.” with:
+
+   > I still have unfinished courses and questions I can't answer. For now, I'll look up what I need for the problem in front of me and write down what happens when I try it.
+   >
+   > Hopefully the notes are good enough that I won't have to work it all out again next time.
+
+Delete the opening pull quote beginning “And that, I think,” since it previews the epiphany being removed. Keep the draft-date note.
 
 ### 69. [Standup Eight](writings/2024-03-25-standup-eight/index.md)
 
-**Light edit.** The recruitment setbacks and family events support an earned reflection. The local “Change is hard” passage and late regroup/refuel sequence sound more generic than the events around them. Preserve the numbered structure.
+**Light edit.** The actual setbacks carry the story. “Both looked / Both showed,” the hard/uncomfortable/necessary change triad, and the regroup/refuel ending add artificial cadence. “The universe lends a hand” gives the outcome a safe explanation.
 
-Replace “Change is hard” through “if you want to grow” with:
+Replace “Both looked promising. Both showed interest” with:
 
-> I wanted the new role, but leaving those teammates was still hard.
+> I thought I had a decent chance at either role.
+
+Replace from “Change is hard” through “if you want to grow” with:
+
+> I wanted the new role. Leaving those teammates was still hard.
 
 Replace from “Sometimes you don't really get a choice” through “As many times as it takes” with:
 
-> I had to slow down several times, whether I wanted to or not. Right now, my wife is recovering, my eyes are getting better, and I've started the new job. That's enough to deal with for the moment.
+> My wife is recovering, and so are my eyes. I'm on Day 3 at the new job and still distracted by everything at home.
 >
-> If the weather holds, I'll try running tomorrow. After that, I'll see what needs doing next.
+> If the weather holds, I'll try running tomorrow. I haven't figured out much beyond that.
 
-Keep the preceding account, the “Stand up eight” heading, and the closing thanks.
+Delete the final “Sometimes, there's also everything happening in between.” The preceding thanks can end the post. Keep the numbered headings and the actual timeline; the week-by-week waiting has a concrete narrative purpose.
 
 ### 70. [Twinful, Twinless](writings/2025-07-28-twinful-twinless/index.md)
 
-**Light edit.** Most of the repetition is doing real narrative work. The forty-minute birth gap, one-hour missed arrival, ashtray incident, and unfinished conversations make the grief specific. Preserve the anger, uncertainty, and “Twinful / Twinless” transition. Do not impose a recovery arc.
+**Revise.** The memories and anger are specific; that does not exempt the prose around them. The body/mind explanation is therapeutic shorthand. In “Twinless,” the “Not,” “No more,” “Before,” and “Sometimes” sequences accumulate manufactured poetic emphasis. “Forty minutes / A lifetime / one hour too late” repeats a contrast the events already establish. The earlier audit was too permissive about this passage.
 
-Two passages become more generalized than the surrounding account:
+Keep the ashtray and college stories, the flight and hospital details, the uncertainty about memories, and the final anger. These are prose changes, not corrections to the events:
 
-- “There are moments when your body seems to understand something before your mind does” explains the empty-space scene through familiar body/mind language.
-- “Maybe you don't 'move on' from some people” turns the late reflection into a generalized grief aphorism.
+1. Delete from “There are moments when your body” through “surrendered to the truth.” Let the hands-over-face action end “The empty space.”
 
-Delete the paragraph beginning “There are moments” and the following three paragraphs through “surrendered to the truth.” The preceding action, sitting with both hands over the face, already carries the scene into “Twinless.”
+2. Replace from “It didn't matter” through “Sometimes that's enough” with:
 
-Replace from “Maybe you don't” through the paragraph ending “expecting them to still be there” with:
+   > They came and stayed with us through the Mass. I appreciated that.
 
-> Every now and then, I look at that empty chair in the living room and expect Karen to be there.
+3. Replace from “That's when something finally clicked” through “No more other day” with:
 
-Keep the rest, including the unresolved question about still being a twin. The longer crematorium sequence is not flagged merely because it uses short lines.
+   > Watching the casket move toward that room was when I couldn't put it off anymore. We weren't going to have any of those conversations we'd left for later.
+
+4. Replace from “For almost my entire life” through the standalone “Twinless” with:
+
+   > I'd never lived without Karen somewhere in the world. I knew that, obviously, but I hadn't really imagined what it would be like if she wasn't.
+   >
+   > Then her casket disappeared into the room. I was still standing there.
+   >
+   > Twinless.
+
+5. Replace from “I don't know if there's supposed to be some grand lesson” through “Sometimes it leaves a twin staring at the word **twin** and wondering whether he still gets to use it” with:
+
+   > I don't have a lesson to pull out of this. I keep thinking about the empty chair and the fact that there won't be another new photograph of her.
+   >
+   > I hadn't even thought about what to call myself afterward.
+
+6. Keep “Am I still a twin” and the following self-directed reaction. Replace from “People say someone lives on through memories” up to “For nearly four decades” with:
+
+   > I remember the things we never talked about. We missed her by an hour, and I still don't know what to do with that.
+   >
+   > Every now and then, I look at the empty chair in the living room and expect Karen to be there.
+
+Keep the final two paragraphs and sign-off. Do not add consolation or a recovery ending.
 
 ### 71. [Un café, por favor](writings/2026-09-11-un-cafe-por-favor/index.md)
 
-**Light edit.** The coffee-shop board, interrupted Spotify plays, cycling discomfort, and recurring jokes give the story its own texture. The repeated song is a narrative device. The late explanation of detachment, however, spells out a lesson that the final ride already conveys.
+**Revise.** The repeated song gives the story continuity, but the prose repeatedly turns it into a set piece. The “Some” board-message triad, “Across” ladder, distance ladder, “Maybe until” sequence, detachment explanation, and final “same song” recap all deserve attention. Profanity and jokes do not cancel those patterns. The earlier three local edits were insufficient.
 
-In “Bus Stops,” replace from “There are things you can run from” through “I might never hear it again” with:
+Preserve the events, private references, coffee-board image, and the song's unspecified identity. Use these replacements:
 
-> I'd changed places again, and the song was still there. I was too tired to keep arguing with myself about it that night.
+1. Replace from “Some were messages for friends” through “two people somewhere in the world” with:
 
-In “Four Days Later,” delete from “For the first time, I understood” through “Maybe detachment wasn't deleting something from your head.” Let the next section follow the comparison to music from another apartment.
+   > A few were clearly meant for someone specific. I couldn't make much sense of the inside jokes.
 
-Near the ending, replace “It sounded different. Or maybe I did” with:
+2. Replace from “Across a city?” through “Then I drank it myself” with:
 
-> I thought I'd want to stop it again. This time, I didn't.
+   > Eleven time zones. The coffee would be cold long before it arrived.
+   >
+   > I laughed at that and drank it.
 
-Then delete the immediately following “I thought about skipping it, but I didn't” to avoid repeating the replacement. Keep the ending about understanding more Spanish; it connects to the beginning without needing another explanation.
+3. Replace from “But going home meant stopping” through “the song became loudest” with:
 
-## Editorial limits
+   > I didn't want to sit in a quiet room with the song in my head again.
 
-- No new anecdotes, plot scenes, or biographical claims should be added just to make a review feel personal. A short note can remain short.
-- The repeated book-log format is intentional and should stay. Similar metadata or a recurring book-number line is not a style defect.
-- Quotations may themselves contain polished maxims. Preserve quoted wording rather than treating it as the author's prose to rewrite.
-- Profanity, uncertainty, and abrupt shifts already occur naturally in these articles. Adding more of them mechanically would create another formula.
-- The Spanish translations and all existing article edits remain outside the changes made by this audit.
+4. Replace from “I think part of me believed” through “doesn't give a shit about geography” with:
+
+   > I was still hoping another stretch of road would help. My legs were already complaining, and the song kept coming back.
+
+5. Replace from “Maybe until midnight” through the “I don't know” before “Eventually, I turned around” with:
+
+   > Probably for hours. I wasn't thinking very far ahead.
+
+6. Replace from “There are things you can run from” through “I might never hear it again” with:
+
+   > I'd left the room, got on a bus, and still couldn't get it out of my head. I was too tired to keep arguing with it.
+
+7. In “Four Days Later,” delete from “For the first time, I understood” through “Maybe detachment wasn't deleting something from your head.” The comparison to music from another apartment already describes the change.
+
+8. Replace from “And there it was again” through the end with:
+
+   > I let it play and kept cycling. Still couldn't understand every word.
+
+Also join the three “Something” paragraphs after “I ignored it” into “I picked something familiar instead.” Compress the earlier “Maybe because” explanation of obsession into:
+
+> I didn't like calling it obsession. I was more attached to the song than I'd meant to get, and I didn't know what to call that.
+
+The laundry joke and the cycling-lane interruption have specific comic payoffs. Their lists are not the same problem as the repeated philosophical ladders. Keep those jokes.
 
 ## Validation
 
-Matched the report's 71 unique article links against every `.md` and `.mdx` file under `writings/`. No article was missing or listed twice, and all article link targets exist. No site build was needed because the only addition is this root-level report. The working-tree whitespace check reported an existing trailing space in `writings/2019-01-30-libro-dance-dance-dance/index.md`; that user edit was left intact.
+The report includes one numbered entry for every Markdown and MDX article under `writings/`. Coverage, verdict totals, and relative link targets are checked against the filesystem. The samples and captions were read rather than silently excluded.
+
+Only this report was changed for the recheck. Article files, translations, and the user's updated skill remain untouched. No site build is needed for an audit report in the repository root.
