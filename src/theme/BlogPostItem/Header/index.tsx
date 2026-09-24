@@ -1,5 +1,6 @@
 import React, {type ReactNode} from 'react';
 import Link from '@docusaurus/Link';
+import {translate} from '@docusaurus/Translate';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import {useBlogPost} from '@docusaurus/plugin-content-blog/client';
 import BlogPostItemHeaderTitle from '@theme/BlogPostItem/Header/Title';
@@ -10,11 +11,16 @@ import './blogpostitem.module.css';
 export default function BlogPostItemHeader(): ReactNode {
   const {isBlogPostPage} = useBlogPost();
   const writingsHref = useBaseUrl('/writings');
+  const backToWritingsLabel = translate({
+    id: 'writings.backToWritings',
+    message: 'Back to Writings',
+    description: 'Link above a blog post title that returns to the writings list',
+  });
 
   return (
     <header>
       {isBlogPostPage ? (
-        <Link className="blog-post-back-link" to={writingsHref} aria-label="Back to Writings">
+        <Link className="blog-post-back-link" to={writingsHref} aria-label={backToWritingsLabel}>
           <svg
             className="blog-post-back-icon"
             xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +36,7 @@ export default function BlogPostItemHeader(): ReactNode {
             <line x1="17" y1="17" x2="7" y2="7" />
             <polyline points="7 17 7 7 17 7" />
           </svg>
-          <span>Back to Writings</span>
+          <span>{backToWritingsLabel}</span>
         </Link>
       ) : null}
       <BlogPostItemHeaderTitle />

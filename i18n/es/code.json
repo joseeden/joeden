@@ -142,6 +142,10 @@
   "writings.title": {
     "message": "Escritos"
   },
+  "writings.backToWritings": {
+    "message": "Volver a Escritos",
+    "description": "Link above a blog post title that returns to the writings list"
+  },
   "writings.list": {
     "message": "Lista de escritos"
   },
