@@ -1,7 +1,7 @@
 ---
 slug: libro-range
 title: "Libro: Range"
-tags: [books]
+tags: [Books]
 date: 2021-11-19
 hide_table_of_contents: true
 ---
@@ -9,9 +9,6 @@ hide_table_of_contents: true
 # Libro: Range
 
 *«Las grandes cosas no se hacen por impulso, sino mediante una serie de pequeñas cosas reunidas».* - Vincent van Gogh
-
-![Imagen del libro](../../../../writings/2021-11-19-libro-range/image.png)
-
 
 ¿Ser generalista o especialista?
 
@@ -54,5 +51,7 @@ Aprende.
 Desaprende.
 
 Y vuelve a aprender.
+
+![Imagen del libro](../../../../writings/2021-11-19-libro-range/image.png)
 
 

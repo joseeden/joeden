@@ -1,7 +1,7 @@
 ---
 slug: libro-black-box-of-thinking
 title: "Libro: Pensamiento de caja negra"
-tags: [books]
+tags: [Books]
 date: 2019-03-31
 hide_table_of_contents: true
 ---

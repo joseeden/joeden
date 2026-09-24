@@ -1,7 +1,7 @@
 ---
 slug: programming-is-easy
 title: "Programar es fácil, ¿a que sí?"
-tags: [100daysofcode]
+tags: [100daysofcode, Devnotes]
 date: 2020-06-06
 hide_table_of_contents: true
 ---

@@ -1,7 +1,7 @@
 ---
 slug: libro-well-always-have-paris
 title: "Libro: Siempre nos quedará París"
-tags: [books]
+tags: [Books]
 date: 2019-10-15
 hide_table_of_contents: true
 ---

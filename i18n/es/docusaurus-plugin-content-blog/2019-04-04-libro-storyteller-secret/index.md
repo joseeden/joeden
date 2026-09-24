@@ -1,7 +1,7 @@
 ---
 slug: libro-the-storyteller-s-secret
 title: "Libro: El secreto del narrador"
-tags: [books]
+tags: [Books]
 date: 2019-04-04
 hide_table_of_contents: true
 ---

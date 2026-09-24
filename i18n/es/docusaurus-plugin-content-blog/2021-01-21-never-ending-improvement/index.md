@@ -1,7 +1,7 @@
 ---
 slug: never-ending-improvement
 title: "El trabajo interminable de mejorar"
-tags: [personal]
+tags: [Personal]
 date: 2021-01-21
 hide_table_of_contents: true
 ---

@@ -1,7 +1,7 @@
 ---
 slug: libro-bradbury-tales
 title: "Libro: Cuentos de Bradbury: 100 de sus relatos más celebrados"
-tags: [books]
+tags: [Books]
 date: 2019-10-09
 hide_table_of_contents: true
 ---

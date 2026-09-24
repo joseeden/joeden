@@ -1,7 +1,7 @@
 ---
 slug: libro-when-breath-becomes-air
 title: "Libro: Cuando el aliento se convierte en aire"
-tags: [books]
+tags: [Books]
 date: 2019-08-26
 hide_table_of_contents: true
 ---

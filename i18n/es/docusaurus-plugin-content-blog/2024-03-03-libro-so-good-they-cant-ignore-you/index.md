@@ -1,7 +1,7 @@
 ---
 slug: libro-so-good-they-cant-ignore-you
 title: "Libro: Hazlo tan bien que no puedan ignorarte"
-tags: [books]
+tags: [Books]
 date: 2024-03-03
 hide_table_of_contents: true
 ---

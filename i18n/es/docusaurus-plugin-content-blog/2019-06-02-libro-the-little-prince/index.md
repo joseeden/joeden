@@ -1,7 +1,7 @@
 ---
 slug: libro-the-little-prince
 title: "Libro: El principito"
-tags: [books]
+tags: [Books]
 date: 2019-06-02
 hide_table_of_contents: true
 ---

@@ -1,7 +1,7 @@
 ---
 slug: libro-a-heartbreaking-work-of-staggering-genius
 title: "Libro: Una historia conmovedora, asombrosa y genial"
-tags: [books]
+tags: [Books]
 date: 2019-03-06
 hide_table_of_contents: true
 ---

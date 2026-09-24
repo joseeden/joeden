@@ -1,7 +1,7 @@
 ---
 slug: libro-blind-willow-sleeping-woman
 title: "Libro: Sauce ciego, mujer dormida"
-tags: [books]
+tags: [Books]
 date: 2019-02-13
 hide_table_of_contents: true
 ---

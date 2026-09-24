@@ -1,7 +1,7 @@
 ---
 slug: libro-the-unicorn-project
 title: "Libro: El proyecto Unicornio"
-tags: [books]
+tags: [Books]
 date: 2020-01-17
 hide_table_of_contents: true
 ---

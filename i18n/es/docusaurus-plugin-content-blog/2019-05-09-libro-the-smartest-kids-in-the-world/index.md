@@ -1,7 +1,7 @@
 ---
 slug: libro-the-smartest-kids-in-the-world
 title: "Libro: Los niños más inteligentes del mundo"
-tags: [books]
+tags: [Books]
 date: 2019-05-09
 hide_table_of_contents: true
 ---

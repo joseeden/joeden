@@ -1,7 +1,7 @@
 ---
 slug: libro-windup-bird-chronicle
 title: "Libro: Crónica del pájaro que da cuerda al mundo"
-tags: [books]
+tags: [Books]
 date: 2019-02-05
 hide_table_of_contents: true
 ---

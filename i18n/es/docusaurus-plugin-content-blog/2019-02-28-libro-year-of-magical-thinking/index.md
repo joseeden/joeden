@@ -1,7 +1,7 @@
 ---
 slug: libro-year-of-magical-thinking
 title: "Libro: El año del pensamiento mágico"
-tags: [books]
+tags: [Books]
 date: 2019-02-28
 hide_table_of_contents: true
 ---

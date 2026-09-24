@@ -1,7 +1,7 @@
 ---
 slug: libro-dream-architects
 title: "Libro: Los arquitectos de sueños"
-tags: [books]
+tags: [Books]
 date: 2021-11-20
 hide_table_of_contents: true
 ---

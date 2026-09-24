@@ -1,7 +1,7 @@
 ---
 slug: libro-everything-is-fcked
 title: "Libro: Todo está j*dido"
-tags: [books]
+tags: [Books]
 date: 2019-10-15
 hide_table_of_contents: true
 ---

@@ -1,7 +1,7 @@
 ---
 slug: libro-shoe-dog
 title: "Libro: Nunca te pares (Shoe Dog)"
-tags: [books]
+tags: [Books]
 date: 2022-05-24
 hide_table_of_contents: true
 ---

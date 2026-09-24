@@ -1,7 +1,7 @@
 ---
 slug: libro-the-time-machine
 title: "Libro: La máquina del tiempo"
-tags: [books]
+tags: [Books]
 date: 2019-05-10
 hide_table_of_contents: true
 ---

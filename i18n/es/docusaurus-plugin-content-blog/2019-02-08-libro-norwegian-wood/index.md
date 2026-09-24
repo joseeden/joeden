@@ -1,7 +1,7 @@
 ---
 slug: libro-norwegian-wood
 title: "Libro: Tokio blues (Norwegian Wood)"
-tags: [books]
+tags: [Books]
 date: 2019-02-08
 hide_table_of_contents: true
 ---

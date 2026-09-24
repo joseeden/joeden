@@ -1,7 +1,7 @@
 ---
 slug: libro-big-things-have-small-beginnings
 title: "Libro: Las grandes cosas tienen pequeños comienzos"
-tags: [books]
+tags: [Books]
 date: 2020-02-17
 hide_table_of_contents: true
 ---

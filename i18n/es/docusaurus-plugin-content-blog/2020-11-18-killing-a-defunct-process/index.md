@@ -1,7 +1,7 @@
 ---
 slug: killing-a-defunct-process
 title: "Terminar un proceso defunct"
-tags: [devnotes]
+tags: [Devnotes]
 date: 2020-11-18
 hide_table_of_contents: true
 ---

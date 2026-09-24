@@ -18,23 +18,23 @@ hola:
   label: 100 días de código
   permalink: /100daysofcode
   description: Experiencias y avances del reto de programar durante 100 días
-devnotes:
+Devnotes:
   label: Apuntes de desarrollo
   permalink: /devnotes
   description: Apuntes y reflexiones sobre desarrollo y tecnología
-personal:
+Personal:
   label: Personal
   permalink: /personal
   description: Experiencias y reflexiones personales
-books:
+Books:
   label: Libros
   permalink: /books
   description: Lecturas y reflexiones sobre libros
-arts:
+Arts:
   label: Arte
   permalink: /arts
   description: Creaciones artísticas
-sketches:
+Sketches:
   label: Dibujos
   permalink: /sketches
   description: Bocetos y dibujos

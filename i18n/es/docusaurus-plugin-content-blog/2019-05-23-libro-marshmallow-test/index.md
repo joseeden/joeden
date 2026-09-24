@@ -1,7 +1,7 @@
 ---
 slug: libro-the-marshmallow-test
 title: "Libro: El test de la golosina"
-tags: [books]
+tags: [Books]
 date: 2019-05-23
 hide_table_of_contents: true
 ---

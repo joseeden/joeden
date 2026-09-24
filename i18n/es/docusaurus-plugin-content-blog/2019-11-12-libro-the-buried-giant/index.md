@@ -1,7 +1,7 @@
 ---
 slug: libro-the-buried-giant
 title: "Libro: El gigante enterrado"
-tags: [books]
+tags: [Books]
 date: 2019-11-12
 hide_table_of_contents: true
 ---

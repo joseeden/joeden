@@ -1,7 +1,7 @@
 ---
 slug: libro-how-to-win-friends-and-influence-people
 title: "Libro: Cómo ganar amigos e influir sobre las personas"
-tags: [books]
+tags: [Books]
 date: 2019-11-20
 hide_table_of_contents: true
 ---

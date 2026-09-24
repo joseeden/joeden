@@ -1,7 +1,7 @@
 ---
 slug: the-100-days-later
 title: "Los 100: Días después"
-tags: [devnotes]
+tags: [Personal, 100daysofcode, Devnotes]
 date: 2021-02-15
 hide_table_of_contents: true
 ---
@@ -108,7 +108,7 @@ Recibía otro error.
 
 Volvía a buscar.
 
-Y, antes de darte cuenta, has caído hasta el fondo de una madriguera.
+Y, antes de darte cuenta, te has adentrado mucho en una madriguera.
 
 Solo querías resolver un problemita, pero, de alguna manera, has descubierto otros cinco por el camino.
 

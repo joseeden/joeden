@@ -1,7 +1,7 @@
 ---
 slug: bye-disney
 title: "Adiós, Disney"
-tags: [personal]
+tags: [Personal]
 date: 2021-05-21
 hide_table_of_contents: true
 ---
@@ -26,7 +26,7 @@ Me llevo mucho de mi tiempo aquí.
 
 Aprendí muchísimo del equipo de Filipinas, especialmente al ver cómo se construyen, mantienen y arreglan las aplicaciones, y cómo a veces se rompen antes de volver a arreglarse.
 
-Aprendí tanto o más del equipo de Estados Unidos. Las redes ya eran un terreno conocido para mí, pero siempre hay una diferencia entre lo que sabes por los libros y las certificaciones y lo que ves cuando todas las piezas funcionan juntas en el mundo real.
+Aprendí igual de mucho del equipo de Estados Unidos. Las redes ya eran un terreno conocido para mí, pero siempre hay una diferencia entre lo que sabes por los libros y las certificaciones y lo que ves cuando todas las piezas funcionan juntas en el mundo real.
 
 Y, por supuesto, también aprendí muchísimo de la **Casa del Ratón**.
 

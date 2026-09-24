@@ -1,7 +1,7 @@
 ---
 slug: libro-atomic-habits
 title: "Libro: Hábitos atómicos"
-tags: [books]
+tags: [Books]
 date: 2019-12-28
 hide_table_of_contents: true
 ---

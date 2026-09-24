@@ -1,7 +1,7 @@
 ---
 slug: libro-what-i-talk-about-when-i-talk-about-running
 title: "Libro: De qué hablo cuando hablo de correr"
-tags: [books]
+tags: [Books]
 date: 2024-03-04
 hide_table_of_contents: true
 ---

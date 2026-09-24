@@ -1,7 +1,7 @@
 ---
 slug: the-examination-day
 title: "El día del examen"
-tags: [devnotes]
+tags: [Devnotes]
 date: 2021-06-04
 hide_table_of_contents: true
 ---

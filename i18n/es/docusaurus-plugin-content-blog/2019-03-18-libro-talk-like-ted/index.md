@@ -1,7 +1,7 @@
 ---
 slug: libro-talk-like-ted
 title: "Libro: Habla como en TED"
-tags: [books]
+tags: [Books]
 date: 2019-03-18
 hide_table_of_contents: true
 ---

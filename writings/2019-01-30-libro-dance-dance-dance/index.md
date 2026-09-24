@@ -16,26 +16,29 @@ Book 5 of 100
 
 ![alt text](image.png)
 
+
 Dansu, dansu, dansu.
 
-A story about losing people, searching for meaning, and somehow continuing even when you’re not completely sure where life is taking you.
+Honestly, still trying to process this one.
 
-People disappear.
+It’s basically a weird, melancholy story about losing people, wandering around looking for answers, and trying to function when life just stops making sense.
 
-Relationships change.
+People drop out of your life.
 
-Some things never get properly explained.
+Relationships fizzle out.
 
-And yet, life keeps playing its music.
+And half the time, there’s zero closure or neat explanation for it.
 
-Maybe that’s the point.
+Things just happen.
 
-You don’t always get to choose the song. You don’t always understand the rhythm, and sometimes you completely lose the beat.
+Murakami has this specific way of writing where everything feels dreamlike and slightly detached, but it somehow still hits close to home.
 
-But you keep moving anyway.
+You don't always get a say in how things go. Sometimes the rhythm gets all messed up and you feel completely lost.
 
-One step after another.
+You just have to keep going anyway. 
 
-With every beat that life plays, all you really have to do is dance.
+One foot in front of the other.
+
+At least, that’s what I took away from it.
 
 **Dance, dance, dance.**

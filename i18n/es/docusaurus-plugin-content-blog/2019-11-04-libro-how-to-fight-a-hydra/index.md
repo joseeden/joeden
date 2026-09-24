@@ -1,7 +1,7 @@
 ---
 slug: libro-how-to-fight-a-hydra
 title: "Libro: Cómo luchar contra una hidra"
-tags: [books]
+tags: [Books]
 date: 2019-11-04
 hide_table_of_contents: true
 ---

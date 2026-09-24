@@ -1,7 +1,7 @@
 ---
 slug: twinful-twinless
 title: "Con melliza, sin melliza"
-tags: [personal]
+tags: [Personal]
 date: 2025-07-28
 hide_table_of_contents: true
 ---
