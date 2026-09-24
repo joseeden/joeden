@@ -2,7 +2,7 @@
 slug: un-cafe-por-favor
 title: "Un café, por favor"
 tags: [Personal]
-date: 2026-09-08
+date: 2026-09-11
 hide_table_of_contents: true
 ---
 
@@ -60,7 +60,7 @@ En cualquier caso, unos minutos después de cerrar Spotify, la canción volvió 
 
 Me cago en todo.
 
-Así que, hacia las once de la mañana, agarré la bicicleta.
+Así que, hacia las 11:00 de la mañana, agarré la bicicleta.
 
 No tenía un destino, lo cual suele ser una forma terrible de empezar lo que acabaría siendo una salida de diez horas en bicicleta. Solo sabía que quería ir a algún sitio. A cualquiera, la verdad.
 
@@ -114,7 +114,7 @@ Seres humanos normales que, al parecer, entendían que a la playa se va a relaja
 
 En un momento pasé junto a un niño que construía un gran castillo de arena. Era impresionante. Había levantado murallas, unas cuantas torres puntiagudas y una torre más alta que sobresalía en el centro. No sé cuánto tiempo llevaba con ello, pero, con el agua azul de fondo, todo parecía casi demasiado perfecto para una tarde cualquiera en la playa.
 
-Durante unos segundos, puede que aquel fuera el lugar más feliz de toda la playa.
+Durante unos segundos, puede que aquel fuera el lugar más feliz de la Tierra.
 
 Seguí pedaleando, todavía mirando alrededor más de lo que probablemente debía, cuando un niño con una camiseta de Mickey Mouse se metió en el carril bici. Su padre lo apartó justo antes de que yo llegara a su altura.
 
@@ -134,7 +134,7 @@ A veces, absolutamente nada.
 
 Ni siquiera hacía falta un motivo.
 
-La canción simplemente decidía que era hora de volver a sonar.
+La canción simplemente decidía que era hora de volver a sonar dentro de mi cabeza.
 
 Y cada vez que lo hacía, yo pedaleaba un poco más lejos.
 
@@ -194,7 +194,7 @@ Estaba cubierto de fotografías y notas escritas a mano.
 
 Me acerqué.
 
-![Panel de fotografías y notas en la cafetería](../../../../writings/2026-09-08-un-cafe-por-favor/image-1.png)
+![Panel de fotografías y notas en la cafetería](../../../../writings/2026-09-11-un-cafe-por-favor/image-1.png)
 
 Algunas parecían reseñas. Otras eran mensajes sueltos que la gente había dejado. Había felicitaciones de cumpleaños, agradecimientos, bromas, dibujitos y notas claramente dirigidas a personas que no estaban allí.
 
@@ -210,7 +210,7 @@ Pasé unos minutos leyéndolas.
 
 Cerca de una esquina del panel había un pequeño soporte con papeles en blanco de distintos colores y tamaños. Al lado, un rotulador.
 
-Y la canción empezó a sonar otra vez.
+Y la canción empezó a sonar otra vez dentro de mi cabeza.
 
 Me cago en todo.
 
@@ -420,6 +420,8 @@ En algún punto entre una parada y otra, la canción empezó a sonar tan fuerte 
 
 Estaba cansado. Cansado de cojones.
 
+*Solo quiero dejarlo ir. Por favor.*
+
 Así que me quedé sentado y escuché.
 
 Hay cosas de las que puedes huir corriendo y, al parecer, también hay cosas de las que puedes huir en bicicleta. Pero otras cruzarán encantadas varios barrios contigo, se sentarán a tu lado en el autobús y te seguirán hasta cualquier habitación que elijas para dormir esa noche.
@@ -534,7 +536,7 @@ Entonces me detuve.
 
 La dejé sonar.
 
-La carretera se extendía frente a mí. Árboles a un lado, agua en algún lugar detrás de ellos y ciclistas que pasaban de vez en cuando en sentido contrario.
+La carretera se extendía frente a mí. Árboles a un lado, destellos del mar entre ellos y ciclistas que pasaban de vez en cuando en sentido contrario.
 
 Y ahí estaba otra vez.
 

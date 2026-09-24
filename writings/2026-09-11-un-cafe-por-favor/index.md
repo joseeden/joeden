@@ -2,7 +2,7 @@
 slug: un-cafe-por-favor
 title: "Un café, por favor"
 tags: [Personal]
-date: 2026-09-08
+date: 2026-09-11
 hide_table_of_contents: true
 ---
 
@@ -60,7 +60,7 @@ Either way, a few minutes after closing Spotify, the song started playing in my 
 
 Fuckin hell.
 
-So at around 11 AM, I grabbed my bike.
+So at around 11:00 AM, I grabbed my bike.
 
 I didn't have a destination, which is generally a terrible way to begin what would eventually become a ten-hour bike ride. I just knew I wanted to go somewhere. Anywhere, really.
 
@@ -114,7 +114,7 @@ Normal human beings who apparently understood that you're supposed to relax when
 
 At one point, I passed a kid building a big sandcastle. It was actually impressive. The kid had built walls around it, a few pointed towers, and one taller tower sticking out in the middle. I don't know how long he'd been working on it, but against the blue water behind it, the whole thing looked almost too perfect for a random afternoon at the beach.
 
-For a few seconds, it might've been the happiest place on that entire beach.
+For a few seconds, it might've been the happiest place on Earth.
 
 I kept cycling, still looking around more than I probably should have been, when some kid in a Mickey Mouse shirt wandered into the cycling lane. His father pulled him back just before I reached them.
 
@@ -134,7 +134,7 @@ Sometimes absolutely nothing at all.
 
 There didn't even need to be a reason.
 
-The song would simply decide it was time to play again.
+The song would simply decide it was time to play again inside my head.
 
 And every time it did, I pedaled a little farther.
 
@@ -210,7 +210,7 @@ I spent a few minutes reading them.
 
 Near one corner of the board was a small holder with blank pieces of paper in different colors and sizes. There was a marker beside it.
 
-And the song started playing again.
+And the song started playing inside my head again.
 
 Fuckin hell.
 
@@ -420,6 +420,8 @@ Somewhere between one bus stop and another, the song became so loud in my head t
 
 I was tired. Really fucking tired.
 
+*I just want to let go. Please.*
+
 So I just sat there and listened.
 
 There are things you can run from, and apparently there are things you can cycle from too. But there are also things that will happily cross several towns with you, sit beside you on the bus, and follow you into whatever room you choose to sleep in that night.
@@ -451,7 +453,7 @@ There would be those few seconds after opening my eyes when my brain hadn't full
 
 Then I'd remember.
 
-And there it was. The song
+And there it was. The song.
 
 Sometimes I'd reach for my phone, open Spotify, find *that song* , and play it.
 
@@ -536,7 +538,7 @@ Then I stopped.
 
 I let it play.
 
-The road stretched ahead of me. Trees on one side, water somewhere beyond them, cyclists occasionally passing in the opposite direction.
+The road stretched ahead of me. Trees on one side, glimpses of the sea through them, cyclists occasionally passing in the opposite direction.
 
 And there it was again.
 
