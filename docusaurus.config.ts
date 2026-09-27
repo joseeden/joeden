@@ -101,6 +101,7 @@ const config: Config = {
             exclude: ['**/library/**'],
           },
           blog: {
+            blogDescription: 'Stories, thoughts, and things I wanted to keep.',
             path: 'writings',
             routeBasePath: 'writings',
             postsPerPage: 'ALL',
@@ -135,7 +136,7 @@ const config: Config = {
     metadata: [
       { name: "og:title", content: "Home | Eden Jose" },
       { name: "og:description", content: "Engineer by day, runner by night." },
-      { name: "og:image", content: "https://joseeden.com/img/about/winnie.jpeg" },
+      { name: "og:image", content: "https://joseeden.com/img/site-thumbnail/disneyland-castle.png" },
       { name: "og:url", content: "https://joseeden.com/" },
       {
         name: "description",
