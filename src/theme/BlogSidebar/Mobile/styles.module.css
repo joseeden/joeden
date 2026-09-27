@@ -1,0 +1,19 @@
+.yearGroupHeading {
+  margin: 1rem 0.75rem 0.5rem;
+}
+
+/* Match Docs navigation sizes only inside the mobile Writings menu. */
+@media (max-width: 996px) {
+  .articleLink,
+  .yearGroupHeading {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 600px) {
+  .articleLink,
+  .yearGroupHeading {
+    font-size: 16px;
+  }
+}

@@ -105,6 +105,7 @@ const config: Config = {
             path: 'writings',
             routeBasePath: 'writings',
             postsPerPage: 'ALL',
+            blogSidebarCount: 'ALL', // Mobile shows all posts; Desktop keeps its five-post limit.
             include: ['*/**/*.{md,mdx}'], // Only publish posts inside folders.
             exclude: [...GlobExcludeDefault, '2017-08-26-welcome/**'],
             showReadingTime: true,
