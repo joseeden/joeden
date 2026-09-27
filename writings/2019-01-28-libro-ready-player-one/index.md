@@ -14,7 +14,7 @@ Best way to describe this one: **NOSTALGIC.**
 
 ![alt text](image.png)
 
-Some parts of the story may feel a little flat, and honestly, the main plot could probably fit into a single episode of a sci-fi series.
+Honestly, some parts of the story feels a little flat. You could probably squeeze it into one episode of a sci-fi series.
 
 But what takes it to another level is everything wrapped around it.
 
@@ -24,7 +24,7 @@ It feels like a giant love letter to a generation that grew up escaping into fic
 
 That’s probably what made this one fun for me.
 
-And yeah, I’ll definitely be watching the film adaptation too, along with the other books and movies already lined up.
+And yeah, I’ll definitely be watching the film adaptation too. There's already a queue of books and movies waiting, so we'll see when that happens.
 
 But there’s also one thought that stuck with me after finishing it.
 

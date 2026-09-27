@@ -1,4 +1,4 @@
-# Writings style audit
+## Writings style audit
 
 Rechecked on 2026-09-25 using the updated [writings-checker-if-ai](prompts/skills/writings-checker-if-ai/SKILL.md). This report supersedes the first audit.
 

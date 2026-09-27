@@ -19,7 +19,7 @@ Book 5 of 100
 
 Dansu, dansu, dansu.
 
-Honestly, still trying to process this one.
+Well, still trying to process this one.
 
 It’s basically a weird, melancholy story about losing people, wandering around looking for answers, and trying to function when life just stops making sense.
 

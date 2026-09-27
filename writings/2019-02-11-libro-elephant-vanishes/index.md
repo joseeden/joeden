@@ -26,9 +26,7 @@ You grow up and encounter all sorts of trivial things that don’t seem to matte
 
 You meet people once and never see them again.
 
-You get tired.
-
-You lose sleep.
+You get tired. You lose sleep.
 
 You start carrying memories you wish you could forget.
 
@@ -50,6 +48,3 @@ The mistakes.
 
 The things that made sense and the ones that absolutely didn’t.
 
-Separate pieces at the time.
-
-Part of the whole when you look back.

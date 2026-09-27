@@ -20,7 +20,7 @@ Damn. Such an inconclusive ending.
 
 There were so many moments in this book where I kept waiting for everything to finally connect, like there had to be one neat explanation tying all the strange events together.
 
-And then Murakami basically said, nope.
+And then Murakami just say, *Nope, those events won't connect like you expected them to.*
 
 You get dreams, memories, talking cats, strange coincidences, metaphors that may or may not be metaphors, and people drifting in and out of each other’s lives.
 
@@ -46,6 +46,4 @@ I honestly don’t know.
 
 And maybe that’s the point.
 
-Some stories end.
-
-Some just stop.
+Some stories end. Some just stop.

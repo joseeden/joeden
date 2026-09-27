@@ -18,15 +18,13 @@ Book 11 of 100
 
 Going through Murakami’s works sometimes feels like going through one long, vivid dream.
 
-You have a nameless character looking for something almost mythical, strange people appearing at the right or wrong moments, and scattered details that seem important while you’re in the middle of the story but don’t necessarily tie themselves up neatly by the end.
+You have a nameless character looking for something almost mythical. Then strange people keep showing up at the worst possible moments. And finally, you get all these scattered details that feel huge while you are reading, but never actually tie themselves up neatly by the end.
 
 And somehow, you just go with it.
 
 You keep following the character deeper into this strange world because you feel like everything has to lead somewhere.
 
-Then the book ends.
-
-You wake up.
+Then the book ends. You wake up.
 
 For a few moments, you can still remember the fantasy clearly, the places, the people, the strange little details.
 
@@ -36,4 +34,3 @@ And all you’re left with is that lingering feeling that something happened, so
 
 Then you wonder: **What the hell was that all about?** 
 
-And weirdly enough, that might be part of the charm.

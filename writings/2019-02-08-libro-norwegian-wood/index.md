@@ -28,16 +28,10 @@ Some explanation.
 
 Some lesson you’re supposed to carry with you.
 
-But sometimes you just don’t understand it.
-
-And maybe you won’t for a long time.
+But sometimes you just don’t understand it. And maybe you won’t for a long time.
 
 You just keep living, keep growing, and somehow learn to carry the things you never really got answers for.
 
 That’s what stayed with me most about this one.
 
-And yeah, there’s also a Japanese film adaptation of the book.
-
-This is already my third Murakami book, and I think I’m starting to understand his particular style now.
-
-Or at least, I *think* I am. 
+Apparently there's a Japanese film adaptation too. This is my third Murakami book, and I'm starting to recognize the way

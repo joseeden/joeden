@@ -18,7 +18,7 @@ Book 9 of 100
 
 A strange mix of the ordinary, the different, and the surreal.
 
-Since this is a collection of short stories, every few pages feels like stepping into a completely different little world. Some stories feel grounded and familiar, while others slowly drift into something weird, dreamlike, or slightly unsettling.
+Since this is a collection of short stories, every few pages feels like stepping into a completely different little world. Some stories feel familiar, while others  slowly drift into something weird, dreamlike, or slightly unsettling.
 
 And somehow, that seems to be where Murakami is most comfortable.
 

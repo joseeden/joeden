@@ -20,25 +20,17 @@ For communicators, speakers, and storytellers, this one is worth checking out.
 
 If you’ve spent a lot of time watching TED Talks and wondering why some speakers are so easy to listen to, this book breaks down a lot of what makes those talks work.
 
-Not just the delivery.
+Not just the delivery, but also :
 
-The structure.
-
-The emotion.
-
-The stories.
-
-The way an idea is simplified enough to be understood without making it feel watered down.
+- The structure
+- The emotion
+- The stories
 
 One thing I liked is that it doesn’t really suggest copying TED speakers word for word. It’s more about understanding why certain talks connect with people in the first place.
 
-Speak with something worth saying.
+Speak with something worth saying. Make it personal.
 
-Make it personal.
-
-Give people a reason to care.
-
-And don’t just dump information on them.
+Give people a reason to care, and don’t just dump information on them.
 
 Tell them something they’ll remember.
 

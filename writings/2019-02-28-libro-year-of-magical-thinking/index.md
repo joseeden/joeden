@@ -32,3 +32,5 @@ Cry.
 Accept.
 
 Move forward. 
+
+I really admire the courage it took to write this. Still a hard book to finish though.
