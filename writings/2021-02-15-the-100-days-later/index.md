@@ -22,7 +22,7 @@ Honestly, I only really started enjoying it around the fourth episode.
 
 Then somehow I found myself cheering by the finale of Season 5.
 
-Fun fact: Episode 1 of Season 5 is titled "Eden".
+**Fun fact:** Episode 1 of Season 5 is titled "Eden".
 
 ![alt text](image-1.png)
 
@@ -62,7 +62,7 @@ I was actually able to get access to all these courses for free through various 
 
 So yeah, that definitely helped.
 
-## The uphill
+## The Uphill
 
 Of course, there's that nice spike of satisfaction whenever you finish a quiz, lab, or checkpoint in a course.
 
@@ -86,7 +86,7 @@ Just on a different day.
 
 ![alt text](image-4.png)
 
-## You also get to see the rabbit hole, but you never really reach the end of it
+## Rabbithole
 
 Another thing I found tiring was dealing with unexpected problems.
 
@@ -111,6 +111,8 @@ Search again.
 And before you know it, you've gone deep into a rabbit hole.
 
 You originally wanted to solve one tiny problem, but somehow you've uncovered five other problems along the way.
+
+You get to see the rabbit hole, but you never really reach the end of it.
 
 ![alt text](image-3.png)
 
@@ -152,9 +154,7 @@ What I did learn is that technical debt is something you shouldn't just allow to
 
 I might still do some light searching someday to figure out why that Docker convenience script didn't work on RHEL 8 after all.
 
-You know.
-
-For closure.
+You know, for closure.
 
 ## Reality setting in
 
@@ -170,7 +170,7 @@ As much as I wanted to just stop and rest completely, that little f*cker inside 
 
 I also wasn't able to follow the original plan I made during Day 1.
 
-For example, I never ended up taking another Web Development Course because I decided to focus more on automation instead.
+For example, I never ended up taking another Web Design Course because I decided to focus more on automation instead.
 
 The second and third months became a bit of a rollercoaster.
 

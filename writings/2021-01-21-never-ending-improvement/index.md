@@ -39,9 +39,9 @@ You move something somewhere else.
 
 You test an assumption and discover that it was wrong.
 
-Sometimes, you break things.
+And sometimes, you break things.
 
-And strangely enough, that's where a lot of the excitement comes from.
+Strangely enough, that's where a lot of the excitement comes from.
 
 There's something satisfying about finding that one weak point in a system, figuring out why it failed, gathering the facts, and then slowly building a solution around it.
 
