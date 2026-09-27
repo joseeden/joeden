@@ -2,7 +2,7 @@
 slug: art-centuries
 title: "Sketch: Centuries"
 tags: [Arts, Sketches]
-date: 2018-11-18
+date: 2018-09-18
 hide_table_of_contents: true
 ---
 

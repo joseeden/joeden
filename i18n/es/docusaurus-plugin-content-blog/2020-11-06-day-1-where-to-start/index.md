@@ -1,7 +1,7 @@
 ---
 slug: day-1-where-to-start
 title: "Día 1: ¿Por dónde empezar?"
-tags: [100daysofcode, Devnotes, Personal]
+tags: [100daysofcode, Technical]
 date: 2020-11-06
 hide_table_of_contents: true
 ---
