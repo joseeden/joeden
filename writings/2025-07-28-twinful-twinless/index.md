@@ -112,7 +112,7 @@ There were a lot of things like that between us, no discussions on some things, 
 
 That also included the *Joyful Mystery*, which was one of her best friends.
 
-She had become a mother young and already had a son, and honestly, I don't think Karen ever fully liked the idea of us being together.
+She had become a mother at a young age and already had a son, and honestly, I don't think Karen ever fully liked the idea of us being together.
 
 She never directly told me not to date her friend. She never really said anything at all.
 
@@ -158,7 +158,7 @@ There was something wrong with her face. Not physically, just the expression. I 
 
 Then she looked at me.
 
-**"Karen is gone."**
+"Karen is gone."
 
 My brain didn't register it. Not immediately.
 
@@ -172,11 +172,13 @@ I took out my phone and called my brother-in-law.
 
 He answered, struggling to speak. Then somehow he got the words out.
 
-**Karen had stopped breathing.**
+*Karen had stopped breathing.*
 
 And suddenly my brain caught up.
 
-It felt like being hit by something massive. A truck, a wall, a bird, an airplane. I don't know.
+It felt like being hit by something massive. 
+
+A truck, a wall, a bird, an airplane. I don't know.
 
 We got off the plane, collected our small luggage, and booked a ride straight to Singapore General Hospital.
 
@@ -190,7 +192,7 @@ And there she was. Karen.
 
 The first thought that came into my head was incredibly stupid.
 
-**This is the first dead body I've ever seen.**
+*This is the first dead body I've ever seen.*
 
 I've seen dead bodies in movies, TV shows, documentaries. You see them enough times that the image itself becomes familiar, somehow.
 
@@ -202,7 +204,9 @@ But this was different, because this wasn't some person or some stranger.
 
 Our mother used to tell us that we shared the same "bed" inside her womb.
 
-Nine months together before either of us even saw the world. Born on the same day, in the same place, forty minutes apart.
+Nine months together before either of us even saw the world. 
+
+Born on the same day, in the same place, forty minutes apart.
 
 Technically, we entered this world together. I had never really thought about what that meant.
 
@@ -243,7 +247,7 @@ There are still stuff to do, calls to make, schedules to arrange, funeral prepar
 
 Life continues doing all these completely ordinary things while yours feels like it just got split in half.
 
-The funeral would be held at the void deck beneath their block.
+The funeral would be held at the void deck, which is what they call the open ground-floor area beneath their apartment block.
 
 I've walked past countless funerals at void decks around Singapore.
 
@@ -253,7 +257,7 @@ And most of the time, when you pass by one, you just keep walking, Because it is
 
 It isn't your family. You're just somebody passing by. An outsider looking in.
 
-This time, I had to walk inside. And not just for somebody I knew.
+This time, I have to walk inside. And not just for somebody I knew.
 
 Really fuckin great, Jesus.
 
@@ -302,21 +306,17 @@ The last day came.
 
 We were at the church, with Karen's casket brought to the front. A priest came in and started the Mass.
 
-I appreciated my brother-in-law's family being there. I don't think most of them were Catholic. Maybe none of them were. 
+I appreciated my brother-in-law's family being there. I don't think some of them were Catholic. Maybe none of them were. 
 
 It didn't matter.
 
-They came.
-
-They sat with us, stood when everyone stood, and stayed.
-
-Sometimes that's enough.
+They came. They sat with us, stood when everyone stood, and stayed.
 
 After Mass, we followed the casket outside as it was brought toward the vehicle that would take her to the crematorium.
 
 Our family and my brother-in-law's family boarded a bus they had rented.
 
-A few minutes later, we arrived.
+After an hour or so on the road, we arrived at the crematorium.
 
 We entered the observation room, where a large glass window overlooked the floor below.
 
@@ -418,13 +418,11 @@ Sometimes it leaves a twin staring at the word **twin** and wondering whether he
 
 Am I still a twin if the other one is gone? I don't know.
 
-Stupid, fucking, selfish thought.
+A fucking stupid, fucking selfish thought.
 
 People say someone lives on through memories.
 
-Maybe that's true.
-
-I have plenty.
+Maybe that's true. I have plenty.
 
 Arguments we never started.
 
@@ -433,8 +431,6 @@ Arguments we never finished.
 Things we understood without saying anything.
 
 Forty minutes.
-
-A lifetime.
 
 And one hour too late.
 
@@ -446,7 +442,7 @@ Maybe you don't "move on" from some people. Maybe you just keep moving while car
 
 And every now and then, you look at that empty chair at living room, expecting them to still be there.
 
-For nearly four decades, somewhere on Earth, I knew there was another person carrying the same birthday, the same childhood, the same parents, and pieces of the same story.
+For more than three decades, somewhere on Earth, I knew there was another person carrying the same birthday, the same childhood, the same parents, and pieces of the same story.
 
 Then cancer decided there should only be one of us.
 
