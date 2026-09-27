@@ -32,13 +32,7 @@ Aren’t we slowly moving toward something similar ourselves?
 
 More and more of our lives now happen through screens.
 
-Work.
-
-Entertainment.
-
-Friendships.
-
-Games.
+Work. Entertainment. Friendships. Games.
 
 Entire communities.
 
