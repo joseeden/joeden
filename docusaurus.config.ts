@@ -101,7 +101,7 @@ const config: Config = {
             exclude: ['**/library/**'],
           },
           blog: {
-            blogDescription: 'Stories, thoughts, and things I wanted to keep.',
+            blogDescription: 'Stories, thoughts, and ideas',
             path: 'writings',
             routeBasePath: 'writings',
             postsPerPage: 'ALL',
