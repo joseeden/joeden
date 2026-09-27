@@ -18,10 +18,10 @@ hola:
   label: 100daysofcode
   permalink: /100daysofcode
   description: 100daysofcode tag description
-devnotes:
-  label: devnotes
-  permalink: /devnotes
-  description: devnotes tag description
+technical:
+  label: technical
+  permalink: /technical
+  description: technical tag description
 personal:
   label: personal
   permalink: /personal

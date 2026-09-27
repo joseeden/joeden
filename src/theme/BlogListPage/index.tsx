@@ -29,7 +29,7 @@ const getCategories = () => [
   {id: 'my-life', label: translate({id: 'writings.category.myLife', message: 'My Life'}), tags: ['personal', 'runs']},
   {id: 'book-reviews', label: translate({id: 'writings.category.books', message: 'Book Reviews'}), tags: ['books']},
   {id: 'arts', label: translate({id: 'writings.category.arts', message: 'Arts'}), tags: ['arts', 'sketches']},
-  {id: 'devnotes', label: translate({id: 'writings.category.devnotes', message: 'DevNotes'}), tags: ['devnotes', '100daysofcode']},
+  {id: 'technical', label: translate({id: 'writings.category.technical', message: 'Technical'}), tags: ['technical', '100daysofcode']},
 ];
 
 function sortByDateDesc(items: BlogListItem[]): BlogListItem[] {

@@ -18,9 +18,9 @@ hola:
   label: 100 días de código
   permalink: /100daysofcode
   description: Experiencias y avances del reto de programar durante 100 días
-Devnotes:
-  label: Apuntes de desarrollo
-  permalink: /devnotes
+technical:
+  label: Técnico
+  permalink: /technical
   description: Apuntes y reflexiones sobre desarrollo y tecnología
 Personal:
   label: Personal
