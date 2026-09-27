@@ -293,57 +293,192 @@ Changing Docusaurus does not rewrite existing Algolia records. Complete this sec
 ### Open the Existing Application
 
 1. Sign in to the [Algolia dashboard](https://dashboard.algolia.com).
-2. Select the application matching `themeConfig.algolia.appId` in `docusaurus.config.ts`. The current value is `1ZR3DE355U`.
-3. Confirm the search index is `joseedenio`.
-4. Open [Crawler](https://dashboard.algolia.com/crawler), or use **Data sources → Crawler**.
-5. Select the existing crawler and save a copy of its configuration before editing.
+2. Select the application matching `themeConfig.algolia.appId` in `docusaurus.config.ts`.
+3. Go to **Search** ➜ **Index**.
+4. Confirm the search index is correct (in my case, its `joseedenio`).
+5. Open [Crawler](https://dashboard.algolia.com/crawler), or use **Data sources → Crawler**.
+6. Select the existing crawler and go to **Editor**.
+
+    Copy the configuration.
+    You should see something like this:
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-09-28003555.png)
+
+    </div>
+
+7. In VS Code, create a new file, paste the full configuration, and save it as `algolia-crawler-before-domain-change.js` in a private folder. Keep this backup unchanged during the migration.
+
+    **Note**: The configuration is JavaScript. A `.txt` backup is also fine. Keep it private because it may contain API credentials, and avoid publishing credentials in screenshots.
 
 Keep the existing application, index name, and search API key unless the account setup requires a change. The domain alone does not require a new frontend integration.
 
-### Add and Verify the New Domain
+### Add New Domain to Crawler
 
-1. Open the crawler's **Domains** area and add `joseeden.com` if it is not already listed.
-2. Select a verification method offered by the dashboard.
-3. For DNS verification, copy Algolia's TXT record into Porkbun using the exact name and value supplied.
-4. Wait for DNS propagation and select **Verify now** in Algolia.
-5. Complete any DocSearch approval requirement shown for the new domain before starting the crawl.
+1. In your Crawler application, go to **Domains**
 
-Algolia's verification is separate from GitHub's TXT record. Keep both records. See [Algolia domain verification](https://docsearch.algolia.com/docs/create-crawler/#verify-your-domain).
+2. Add the new domain and click **Verify Now**.
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-09-28005531.png)
+
+    </div>
+
+3. Select the DNS tab and copy the `Host` and `Value`.
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-09-28005750.png)
+
+    </div>
+
+4. Go to Porkbun, select your domain and go to For DNS Server.  
+
+5. Add a TXT record and use the values from Algolia.
+    
+    If the record name is `@` or `joseeden.com`, leave `Host` blank.
+
+    | Field          | Value                                                           |
+    | -------------- | --------------------------------------------------------------- |
+    | Type           | `TXT`                                                           |
+    | Host           | The name Algolia provides, excluding the `.joseeden.com` suffix |
+    | Answer / Value | The exact TXT value Algolia provides                            |
+    | TTL            | `600`                                                           |
+
+6. Wait for DNS propagation and select **Verify now** in Algolia.
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-09-28005750.png)
+
+    </div>
+
+
+7. If the domain verification is successful, you should see this.
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-09-28010231.png)
+
+    </div>
+
+Algolia's verification is separate from GitHub's TXT record. Keep both records. 
+
+See [Algolia domain verification](https://docsearch.algolia.com/docs/create-crawler/#verify-your-domain).
 
 **Note**: Dashboard labels and access differ between older and newer DocSearch applications. If the domain or crawler cannot be edited, request access through Algolia support rather than creating a replacement crawler.
 
+
+
 ### Change Crawler URLs
 
-1. Open the existing crawler configuration editor.
-2. Find the old domain and `/joeden/` prefix in its URL settings.
-3. Update `startUrls` and any configured `sitemaps` to the new site.
+Make these changes in **Algolia → Crawler → joseedenio → Editor**. Keep the local backup unchanged. Editing the local file does not update Algolia.
+
+1. Find every occurrence of the old website prefix in the editor:
+
+    ```text
+    https://joseeden.github.io/joeden
+    ```
+
+2. Replace that prefix with the new domain:
+
+    ```text
+    https://joseeden.com
+    ```
+
+3. Preserve everything after the prefix, including paths, trailing slashes, and matching patterns. For example:
+
+    ```text
+    https://joseeden.github.io/joeden/**
+    https://joseeden.com/**
+    ```
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-09-28004212.png)
+
+    </div>
+
+4. Check the following for the old addresses:
+
+    - `startUrls`
+    - `sitemaps`
+    - `discoveryPatterns`
+    - Each action's `pathsToMatch`
+    - `exclusionPatterns` too, if present.
+
+5. Keep the API credentials, `indexName`, extraction functions, and language and version metadata unchanged.
+
+6. You should see a notification saying that the configuration is valid.
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-09-28010444.png)
+
+    </div>
+
+    If you get this error message, it means Algolia hasn’t verified the new domain yet. GitHub’s verification doesn’t carry over to Algolia. Please see [Add New Domain to Crawler](#add-new-domain-to-crawler)
+
+    <div class='img-center'>
+
+    ![](/img/docs/Screenshot2026-09-28005304.png)
+
+    </div>
+
+7. Select **Review and Publish** in the Algolia editor. 
+
+8. Confirm the saved configuration contains the new URLs.
+
+For a crawler that already covers the whole site, the relevant settings should look like these examples:
 
 ```javascript
 startUrls: ['https://joseeden.com/'],
 sitemaps: ['https://joseeden.com/sitemap.xml'],
 ```
 
-4. Update each applicable action's `pathsToMatch`. For an action that already indexes the whole site, use:
+Inside the applicable action:
 
 ```javascript
 pathsToMatch: ['https://joseeden.com/**'],
 ```
 
-5. Preserve narrower scopes if they were intentional. For example, replace an old docs-only pattern with `https://joseeden.com/docs/**` and preserve a separate Spanish pattern under `/es/docs/**`.
-6. Review `discoveryPatterns` and `exclusionPatterns`, if present, for old hostnames or path prefixes.
-7. Keep each action's `indexName`, extraction function, and existing language and version metadata.
-8. Save the configuration.
+Keep narrower scopes if they were intentional. For example, a docs-only pattern becomes `https://joseeden.com/docs/**`, while a Spanish docs pattern stays under `https://joseeden.com/es/docs/**`.
 
-These are partial edits to the existing configuration, not a replacement crawler file. The [Algolia start URLs reference](https://www.algolia.com/doc/tools/crawler/apis/configuration/start-urls) explains entry URLs, and the [DocSearch templates](https://docsearch.algolia.com/docs/templates/) show action matching and extraction settings.
+**Note**: These are partial edits to the existing configuration, not a replacement crawler file. Saving the configuration does not by itself confirm that search records have been updated.
+
+See the [Algolia start URLs reference](https://www.algolia.com/doc/tools/crawler/apis/configuration/start-urls) and [DocSearch configuration templates](https://docsearch.algolia.com/docs/templates/) for the URL settings.
+
 
 ### Test and Run the Crawl
 
-1. Confirm `https://joseeden.com/robots.txt` and `https://joseeden.com/sitemap.xml` are accessible.
-2. Inspect the sitemap and confirm its page URLs use the new domain.
-3. Use the crawler's URL tester on a real documentation page copied from the live site.
-4. Check that extracted records contain the correct title, headings, content, and new URL.
-5. Start a full crawl using the crawler interface and wait for completion.
+1. Navigate to `https://joseeden.com/robots.txt` in your web browser. You should see:
+
+    ```bash
+    User-agent: *
+    Disallow: 
+    ```
+
+2. Go to `https://joseeden.com/sitemap.xml`. It should display the XML configuration. 
+3. Inspect the sitemap and confirm its page URLs use the new domain.
+
+    This message is normal:
+
+    ```bash
+    This XML file does not appear to have any style information associated with it. The document tree is shown below. 
+    ```
+
+5. Back in Algolia, go to your Crawler application and start a full crawl (or click Resume Crawling).
+
+<div class='img-center'>
+
+![](/img/docs/Screenshot2026-09-28011120.png)
+
+</div>
+
 6. Review failed or skipped URLs and any publishing or safety-check errors.
+
 7. Browse records in `joseedenio` and confirm their `url` fields use `https://joseeden.com/`.
 
 Do not delete the default DocSearch crawler to force a refresh. Algolia documents manual crawling, URL testing, and access recovery in its [crawler FAQ](https://docsearch.algolia.com/docs/crawler/).
@@ -362,24 +497,42 @@ Keep using a search-only API key in the frontend. For the original integration, 
 ## 8. Validate the Migration
 
 1. Open `https://joseeden.com/` in a private browser window.
+
 2. Confirm `https://www.joseeden.com/` reaches the same site.
+
 3. Confirm plain HTTP redirects to HTTPS after enforcement is enabled.
-4. Open `/writings`, a nested documentation page, and `/es/` directly.
+
+4. Open nested documentations directly. 
+
+    For example:
+
+    ```bash
+    https://joseeden.com/writings/
+    https://joseeden.com/es/writings/
+    ```
+
 5. Refresh each nested page and check for missing CSS, JavaScript, or images.
+
 6. Test search, social sharing, feedback, and downloads.
+
 7. Inspect a page's canonical URL and social metadata in its source.
+
 8. Test an old `joseeden.github.io/joeden/` bookmark, including a nested page, and inspect its final destination.
 
-For response headers, use:
+    It should redirect to the new domain.
 
-```powershell
-curl.exe -I https://joseeden.com/
-curl.exe -I https://www.joseeden.com/
-curl.exe -I http://joseeden.com/
-curl.exe -IL https://joseeden.github.io/joeden/
-```
+9. For response headers, you can use cURL from the terminal and run:
 
-Update profile links and any external service configuration that explicitly names the old domain. Check feedback and comment integrations for hostname restrictions or URL-based page identifiers.
+    ```powershell
+    curl.exe -I https://joseeden.com/
+    curl.exe -I https://www.joseeden.com/
+    curl.exe -I http://joseeden.com/
+    curl.exe -IL https://joseeden.github.io/joeden/
+    ```
+
+Update profile links and any external service configuration that explicitly names the old domain. 
+
+Check feedback and comment integrations for hostname restrictions or URL-based page identifiers.
 
 ## Troubleshooting
 
@@ -390,7 +543,7 @@ Update profile links and any external service configuration that explicitly name
 3. Compare DNS results with the table above.
 4. Allow caches to expire and retry in a private window.
 
-### GitHub Returns a 404
+### GitHub Returns a `404`
 
 1. Confirm the custom domain is saved on `joseeden/joeden`.
 2. Confirm Pages uses GitHub Actions.
@@ -430,4 +583,6 @@ Update profile links and any external service configuration that explicitly name
 7. Arrange redirects from the old custom domain through a service that supports HTTPS and preserves paths. DNS records alone cannot perform URL redirects.
 8. Repeat the validation steps before retiring the old address.
 
-If returning to the original GitHub project address, use `url: 'https://joseeden.github.io'` and `baseUrl: '/joeden/'`. Coordinate that rebuild with removing the custom domain setting and updating DNS and Algolia.
+If returning to the original GitHub project address, use `url: 'https://joseeden.github.io'` and `baseUrl: '/joeden/'`. 
+
+Coordinate that rebuild with removing the custom domain setting and updating DNS and Algolia.
