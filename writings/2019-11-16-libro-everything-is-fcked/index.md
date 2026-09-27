@@ -2,7 +2,7 @@
 slug: libro-everything-is-fcked
 title: "Libro: Everything Is F*cked"
 tags: [Books]
-date: 2019-10-15
+date: 2019-11-16
 hide_table_of_contents: true
 ---
 

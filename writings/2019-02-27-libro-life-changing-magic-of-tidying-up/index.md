@@ -2,7 +2,7 @@
 slug: libro-life-changing-magic
 title: "Libro: The Life-Changing Magic of Tidying Up"
 tags: [Books]
-date: 2019-02-23
+date: 2019-02-27
 hide_table_of_contents: true
 ---
 

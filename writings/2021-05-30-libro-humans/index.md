@@ -1,6 +1,6 @@
 ---
-slug: Humans
-title: "Humans"
+slug: the-humans
+title: "Libro: The Humans"
 tags: [Books]
 date: 2021-05-30
 hide_table_of_contents: true

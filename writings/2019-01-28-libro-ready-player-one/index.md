@@ -2,7 +2,7 @@
 slug: libro-ready-player-one
 title: "Libro: Ready Player One"
 tags: [Books]
-date: 2019-02-23
+date: 2019-01-28
 hide_table_of_contents: true
 ---
 

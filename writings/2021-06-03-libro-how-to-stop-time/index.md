@@ -1,6 +1,6 @@
 ---
 slug: how-to-stop-time
-title: "How to Stop Time"
+title: "Libro: How to Stop Time"
 tags: [Books]
 date: 2021-06-03
 hide_table_of_contents: true

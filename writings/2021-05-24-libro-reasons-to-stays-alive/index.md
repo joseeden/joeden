@@ -1,6 +1,6 @@
 ---
 slug: reasons-to-stay-alive
-title: "Reasons to Stay Alive"
+title: "Libro: Reasons to Stay Alive"
 tags: [Books]
 date: 2021-05-24
 hide_table_of_contents: true

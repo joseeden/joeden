@@ -2,7 +2,7 @@
 slug: project-hail-mary
 title: "Project Hail Mary"
 tags: [Books]
-date: 2021-05-30
+date: 2022-02-16
 hide_table_of_contents: true
 ---
 
