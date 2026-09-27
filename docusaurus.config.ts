@@ -8,8 +8,8 @@ const config: Config = {
   title: "Eden Jose",
   tagline: "Engineer by day, runner by night.",
   favicon: 'img/logo/fourth/favicon.ico',
-  url: 'https://github.com',
-  baseUrl: "/joeden/",
+  url: 'https://joseeden.com',
+  baseUrl: "/",
   organizationName: 'joseeden',
   projectName: 'joeden',
   deploymentBranch: "master",
@@ -135,8 +135,8 @@ const config: Config = {
     metadata: [
       { name: "og:title", content: "Home | Eden Jose" },
       { name: "og:description", content: "Engineer by day, runner by night." },
-      { name: "og:image", content: "https://joseeden.github.io/joeden/img/about/winnie.jpeg" },      
-      { name: "og:url", content: "https://joseeden.github.io/joeden/" },
+      { name: "og:image", content: "https://joseeden.com/img/about/winnie.jpeg" },
+      { name: "og:url", content: "https://joseeden.com/" },
       {
         name: "description",
         content: "I am an engineer who loves to learn things and solve technical challenges.",

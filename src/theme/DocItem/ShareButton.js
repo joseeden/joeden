@@ -1,33 +1,36 @@
 import React from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { useLocation } from 'react-router-dom';
 import { useColorMode } from '@docusaurus/theme-common';
 
 function ShareButton(props) {
   const location = useLocation();
+  const { siteConfig } = useDocusaurusContext();
+  const articleUrl = new URL(location.pathname, siteConfig.url).href;
   const { colorMode } = useColorMode();
   const twitterShareURL =
-    'https://twitter.com/share?url=https://joseeden.github.io/joeden/docs/intro' +
-    `${location.pathname}` +
+    'https://twitter.com/share?url=' +
+    encodeURIComponent(articleUrl) +
     '&text=Check out this article on ' +
     `${props.title}` +
     '' +
     '&hashtags=iamdipakparmar,docsdiary,opensource';
   const linkedinShareURL =
-    'http://www.linkedin.com/shareArticle?mini=true&url=https://joseeden.github.io/joeden/docs/intro' +
-    `${location.pathname}` +
+    'http://www.linkedin.com/shareArticle?mini=true&url=' +
+    encodeURIComponent(articleUrl) +
     '&source=docs.dipak.tech';
   const facebookShareURL =
-    'https://www.facebook.com/sharer/sharer.php?u=https://joseeden.github.io/joeden/docs/intro' +
-    `${location.pathname}`;
+    'https://www.facebook.com/sharer/sharer.php?u=' +
+    encodeURIComponent(articleUrl);
   const emailShareURL =
     'mailto:?subject=Shared Article | ' +
     `${props.title}` +
     " | Eden Jose " +
     '&body=Check out this article on ' +
     `${props.title}` +
-    ' https://joseeden.github.io/joeden/docs/intro' +
-    `${location.pathname}`;
+    ' ' +
+    encodeURIComponent(articleUrl);
 
   const info = [
     {
