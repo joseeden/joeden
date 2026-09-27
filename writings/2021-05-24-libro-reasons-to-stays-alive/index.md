@@ -1,4 +1,3 @@
-
 ---
 slug: reasons-to-stay-alive
 title: "Reasons to Stay Alive"
