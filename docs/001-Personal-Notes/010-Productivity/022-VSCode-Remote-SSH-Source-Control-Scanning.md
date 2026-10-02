@@ -7,7 +7,6 @@ tags:
 - Terminal
 - IDE
 - Visual Studio Code
-- DevOps
 # last_update:
 #   date: 06/22/2026
 ---

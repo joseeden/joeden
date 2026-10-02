@@ -1,5 +1,5 @@
 ---
-title: "VSCode Source Control Extension"
+title: "VS Code Source Control Extension"
 description: "Issues encountered on VSCode Source Control Extension"
 sidebar_position: 21
 tags: 
@@ -7,7 +7,6 @@ tags:
 - Terminal
 - IDE
 - Visual Studio Code
-- DevOps
 last_update:
   date: 11/22/2023
 ---
