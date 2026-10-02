@@ -1,5 +1,5 @@
 ---
-slug: Humans
+slug: the-humans
 title: "Libro: Humanos"
 tags: [Books]
 date: 2021-05-30

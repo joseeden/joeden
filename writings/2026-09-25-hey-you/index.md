@@ -28,9 +28,9 @@ Tal vez estaba intentando entender qué era lo que yo veía ahí arriba.
 
 *“Sí, claro.”*
 
-“I'm thinking about the ceiling.”
+“Estoy pensando en el techo.”
 
-He turned his head toward me.
+Él giró la cabeza hacia mí.
 
 *“¿Ahora el techo tiene nombre?”*
 

@@ -2,7 +2,7 @@
 slug: libro-life-changing-magic
 title: "Libro: La magia del orden"
 tags: [Books]
-date: 2019-02-23
+date: 2019-02-27
 hide_table_of_contents: true
 ---
 
@@ -12,7 +12,7 @@ hide_table_of_contents: true
 
 «Las personas no pueden cambiar sus hábitos sin cambiar primero su forma de pensar».
 
-![Imagen del libro](../../../../writings/2019-02-27-libro-llife-changing-magic-of-tidying-up/image.png)
+![Imagen del libro](../../../../writings/2019-02-27-libro-life-changing-magic-of-tidying-up/image.png)
 
 Ahora entiendo el revuelo alrededor de la serie de Kondo en Netflix.
 
