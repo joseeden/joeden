@@ -12,6 +12,7 @@ import { LetsTalk } from "../components/homepage/LetsTalk.tsx";
 import "../css/homepage.scss";
 
 export default function Home(): JSX.Element {
+  const title = "Eden Jose | joseeden.com";
   const pageUrl = useBaseUrl("/", {absolute: true});
   const profile = {
     "@context": "https://schema.org",
@@ -33,8 +34,10 @@ export default function Home(): JSX.Element {
     },
   };
   return (
-    <Layout title={translate({id: "homepage.title", message: "Home"})} description={translate({id: "homepage.description", message: "Engineer by day, runner by night."})}>
+    <Layout description={translate({id: "homepage.description", message: "Engineer by day, runner by night."})}>
       <Head>
+        <title>{title}</title>
+        <meta property="og:title" content={title} />
         <script type="application/ld+json">{JSON.stringify(profile).replace(/</g, "\\u003c")}</script>
       </Head>
       <main className="homepage">

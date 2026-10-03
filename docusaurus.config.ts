@@ -125,7 +125,7 @@ const config: Config = {
 
   themeConfig: {
     // image: "img/logo/fourth/favicon.ico",
-    image: "img/about/winnie.jpeg",
+    image: "img/site-thumbnail/disneyland-castle.png",
     algolia: {
       appId: '1ZR3DE355U',
       apiKey: '4bdd1224a13d70e9e345de6c9ecbd1f3',
@@ -135,10 +135,6 @@ const config: Config = {
       searchPagePath: 'search',
     },
     metadata: [
-      { name: "og:title", content: "Home | Eden Jose" },
-      { name: "og:description", content: "Engineer by day, runner by night." },
-      { name: "og:image", content: "https://joseeden.com/img/site-thumbnail/disneyland-castle.png" },
-      { name: "og:url", content: "https://joseeden.com/" },
       {
         name: "description",
         content: "I am an engineer who loves to learn things and solve technical challenges.",
