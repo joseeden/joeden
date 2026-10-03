@@ -5,6 +5,7 @@ import EmailIcon from '@site/assets/site-design/footer/email.svg';
 import GithubIcon from '@site/assets/site-design/footer/github.svg';
 import XIcon from '@site/assets/site-design/footer/x.svg';
 import LinkedInIcon from '@site/assets/site-design/footer/linkedin.svg';
+import WhatsAppIcon from '@site/assets/site-design/footer/whatsapp.svg';
 import LocationIcon from '@site/assets/site-design/footer/location.svg';
 
 const signatureSrc =
@@ -70,6 +71,10 @@ export default function Footer() {
 
             <a href="https://linkedin.com/in/joseeden" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn">
               <LinkedInIcon width="20" height="20" aria-hidden="true" />
+            </a>
+
+            <a href="https://wa.me/6586948679" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="WhatsApp">
+              <WhatsAppIcon width="20" height="20" aria-hidden="true" />
             </a>
 
             <a href="https://x.com/eden_noel08" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="X">
