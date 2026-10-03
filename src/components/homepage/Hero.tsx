@@ -4,6 +4,11 @@ import Translate, {translate} from "@docusaurus/Translate";
 import clsx from "clsx";
 import React, { FunctionComponent, useMemo } from "react";
 import styles from "./Hero.module.scss";
+import EmailIcon from "@site/assets/site-design/footer/email.svg";
+import GithubIcon from "@site/assets/site-design/footer/github.svg";
+import LinkedInIcon from "@site/assets/site-design/footer/linkedin.svg";
+import WhatsAppIcon from "@site/assets/site-design/footer/whatsapp.svg";
+import XIcon from "@site/assets/site-design/footer/x.svg";
 
 type BookImage = {
   src: string;
@@ -42,13 +47,31 @@ export const Hero: FunctionComponent = () => {
       <div className={clsx("container", "homepage-wrapper")}>
         <div className={styles.contentWrapper}>
           <h1 className={clsx("hero__title", styles.title)}>
-            Jose Eden
+            Eden Jose
           </h1>
           
           <div className={styles.narrative}>
             <p>{translate({id: "homepage.hero.intro", message: "I'm interested in building things and solving problems. I write code, work with cloud-native environments, and build systems that are reliable, scalable, and built to handle real-world use. When I'm not coding, you'll find me running or reading books that take me to other worlds."})}</p>
             <p>{translate({id: "homepage.hero.work", message: "A big part of my work is around automation, integration, and building tools that glue different things together. I often work with APIs, infrastructure, and open-source tools to reduce manual effort and make things work more seamlessly in production. I work on connecting different pieces and turning ideas into practical solutions."})}</p>
             <p>{translate({id: "homepage.hero.space", message: "This space is where I collect and share the things I’ve worked on and am currently working on, along with the ideas and thoughts that come with them."})}</p>
+          </div>
+
+          <div className={styles.socials}>
+            <a href="mailto:josemanuelitoeden@gmail.com" className={styles.socialIcon} aria-label={translate({id: "footer.email", message: "Email"})}>
+              <EmailIcon width="24" height="24" aria-hidden="true" />
+            </a>
+            <a href="https://github.com/joseeden" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="GitHub">
+              <GithubIcon width="24" height="24" aria-hidden="true" />
+            </a>
+            <a href="https://linkedin.com/in/joseeden" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="LinkedIn">
+              <LinkedInIcon width="24" height="24" aria-hidden="true" />
+            </a>
+            <a href="https://wa.me/6586948679" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="WhatsApp">
+              <WhatsAppIcon width="24" height="24" aria-hidden="true" />
+            </a>
+            <a href="https://x.com/eden_noel08" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="X">
+              <XIcon width="24" height="24" aria-hidden="true" />
+            </a>
           </div>
 
           <div className={styles.interestsSection}>

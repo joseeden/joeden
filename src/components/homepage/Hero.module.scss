@@ -86,6 +86,37 @@
   }
 }
 
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.socialIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 50%;
+  color: var(--ifm-color-emphasis-700);
+  transition: color 0.2s ease, border-color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--ifm-color-primary);
+    border-color: currentColor;
+  }
+
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+}
+
 .interestsSection {
   margin-top: 1.5rem;
   display: flex;
