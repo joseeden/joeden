@@ -67,7 +67,7 @@ const getResumePdfUrl = (): string | null => {
 };
 
 const resumePdfUrl = getResumePdfUrl();
-const RESUME_DOWNLOAD_FILENAME = "Jose Eden.pdf";
+const RESUME_DOWNLOAD_FILENAME = "Eden Jose.pdf";
 
 export const Experiences: FunctionComponent = () => {
   return (
