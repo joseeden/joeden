@@ -43,10 +43,11 @@
 }
 
 .contentWrapper {
+  --content-gap: 2rem;
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--content-gap);
 }
 
 .title {
@@ -88,6 +89,8 @@
 
 .socials {
   margin-top: 1rem;
+  padding-bottom: calc(var(--content-gap) + 1rem);
+  border-bottom: 0.5px solid #dadde1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -222,7 +225,7 @@
 
 @media (max-width: 425px) {
   .contentWrapper {
-    gap: 1rem;
+    --content-gap: 1rem;
   }
 
   .title {
