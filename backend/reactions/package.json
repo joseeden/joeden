@@ -1,0 +1,28 @@
+{
+  "name": "joeden-reactions",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "dev": "neon dev",
+    "plan": "neon config plan",
+    "deploy": "neon deploy",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts"
+  },
+  "dependencies": {
+    "@neon/config": "^1.6.0",
+    "@neon/functions": "^0.8.0",
+    "hono": "^4.0.0",
+    "pg": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/pg": "^8.0.0",
+    "neon": "latest",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0",
+    "@electric-sql/pglite": "^0.3.0"
+  }
+}

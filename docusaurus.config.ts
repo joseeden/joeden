@@ -13,6 +13,10 @@ const config: Config = {
   organizationName: 'joseeden',
   projectName: 'joeden',
   deploymentBranch: "master",
+  customFields: {
+    // Public API URL only. Database credentials must remain in the backend.
+    reactionsApiUrl: process.env.REACTIONS_API_URL || "",
+  },
   onBrokenLinks: "throw", /* throw | warn | ignore */
   onBrokenMarkdownLinks: "throw", /* throw | warn | ignore */
 
