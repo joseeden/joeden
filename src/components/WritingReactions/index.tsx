@@ -62,17 +62,11 @@ export default function WritingReactions({
   const [unavailable, setUnavailable] = useState(false);
   const [temporary, setTemporary] = useState(false);
   const [retryAt, setRetryAt] = useState(0);
-  const [open, setOpen] = useState(false);
-  const [search, setSearch] = useState("");
   const [announcement, setAnnouncement] = useState("");
-  const dialog = useRef<HTMLDialogElement>(null);
-  const trigger = useRef<HTMLButtonElement>(null);
-  const searchInput = useRef<HTMLInputElement>(null);
   const visitorId = useRef("");
   const request = useRef<AbortController | null>(null);
   const locked = useRef(false);
   const mounted = useRef(false);
-  const headingId = useId();
   const statusId = useId();
 
   async function sync(method: "GET" | "PUT" | "DELETE" = "GET", kind?: Kind) {
@@ -122,7 +116,6 @@ export default function WritingReactions({
           ? "Too many requests. Please wait before trying again."
           : "Could not confirm your reactions. Retry to reload the saved counts.",
       );
-      setOpen(false);
     } finally {
       window.clearTimeout(timeout);
       if (request.current === controller) {
@@ -160,25 +153,11 @@ export default function WritingReactions({
     return () => window.clearTimeout(timer);
   }, [retryAt]);
 
-  useEffect(() => {
-    if (open) {
-      dialog.current?.showModal();
-      searchInput.current?.focus();
-    } else if (dialog.current?.open) {
-      dialog.current.close();
-      trigger.current?.focus();
-    }
-  }, [open]);
-
   if (unavailable) return null;
   const disabled = busy || !!error || !!retryAt || !snapshot;
-  const visible = snapshot
-    ? reactions.filter((item) => snapshot.counts[item.id] > 0)
-    : [];
   const toggle = (kind: Kind) => {
     if (disabled) return;
     void sync(snapshot?.selected.includes(kind) ? "DELETE" : "PUT", kind);
-    setOpen(false);
   };
 
   return (
@@ -188,8 +167,8 @@ export default function WritingReactions({
       aria-describedby={statusId}
     >
       <div className={styles.row} aria-busy={busy}>
-        {visible.map((item) => {
-          const selected = snapshot!.selected.includes(item.id);
+        {reactions.map((item) => {
+          const selected = snapshot?.selected.includes(item.id) ?? false;
           return (
             <button
               key={item.id}
@@ -204,38 +183,12 @@ export default function WritingReactions({
               <span aria-hidden="true" className={styles.icon}>
                 {item.icon}
               </span>
-              <span className={styles.count}>{snapshot!.counts[item.id]}</span>
+              <span className={styles.count}>
+                {snapshot ? snapshot.counts[item.id] : "\u2013"}
+              </span>
             </button>
           );
         })}
-        <button
-          ref={trigger}
-          type="button"
-          className={styles.pill}
-          disabled={disabled}
-          aria-haspopup="dialog"
-          aria-expanded={open}
-          aria-label="Add reaction"
-          onClick={() => {
-            setSearch("");
-            setOpen(true);
-          }}
-        >
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-            aria-hidden="true"
-          >
-            <path d="M21 12a9 9 0 1 1-9-9M18 2v6m-3-3h6M8 14s1 3 4 3 4-3 4-3" />
-            <path d="M8 9h.01M14 9h.01" strokeWidth="3" />
-          </svg>
-          {visible.length === 0 && <span>React</span>}
-        </button>
       </div>
       <div id={statusId} className={styles.status} role="status">
         {busy && !snapshot ? "Loading reactions…" : error || announcement}
@@ -255,63 +208,6 @@ export default function WritingReactions({
           Selections are remembered only for this session.
         </p>
       )}
-      <dialog
-        ref={dialog}
-        className={styles.dialog}
-        aria-labelledby={headingId}
-        onCancel={() => setOpen(false)}
-        onClose={() => setOpen(false)}
-        onClick={(event) => {
-          if (event.target === event.currentTarget) setOpen(false);
-        }}
-      >
-        <div className={styles.picker}>
-          <div className={styles.pickerHeader}>
-            <h2 id={headingId}>Add a reaction</h2>
-            <button
-              type="button"
-              aria-label="Close reactions"
-              onClick={() => setOpen(false)}
-            >
-              ×
-            </button>
-          </div>
-          <input
-            ref={searchInput}
-            type="search"
-            value={search}
-            placeholder="Search reactions…"
-            aria-label="Search reactions"
-            onChange={(event) => setSearch(event.target.value)}
-          />
-          <div className={styles.options}>
-            {reactions
-              .filter((item) =>
-                item.label.toLowerCase().includes(search.trim().toLowerCase()),
-              )
-              .map((item) => (
-                <button
-                  key={item.id}
-                  type="button"
-                  disabled={disabled}
-                  aria-pressed={snapshot?.selected.includes(item.id) ?? false}
-                  onClick={() => toggle(item.id)}
-                >
-                  <span aria-hidden="true">{item.icon}</span>
-                  <span>{item.label}</span>
-                  {snapshot?.selected.includes(item.id) && (
-                    <span className={styles.check} aria-hidden="true">
-                      ✓
-                    </span>
-                  )}
-                </button>
-              ))}
-            {!reactions.some((item) =>
-              item.label.toLowerCase().includes(search.trim().toLowerCase()),
-            ) && <p className={styles.status}>No matching reactions.</p>}
-          </div>
-        </div>
-      </dialog>
     </section>
   );
 }

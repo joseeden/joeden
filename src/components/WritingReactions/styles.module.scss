@@ -35,14 +35,11 @@
   }
 }
 
-.reactions button:focus-visible,
-.dialog button:focus-visible,
-.dialog input:focus-visible {
+.reactions button:focus-visible {
   outline: 2px solid var(--ifm-color-primary);
   outline-offset: 3px;
 }
-.reactions button:disabled,
-.dialog button:disabled {
+.reactions button:disabled {
   opacity: 0.55;
   cursor: wait;
 }
@@ -72,76 +69,6 @@
   cursor: pointer;
 }
 
-.dialog {
-  width: min(340px, calc(100vw - 2rem));
-  max-height: calc(100dvh - 2rem);
-  padding: 0;
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: 12px;
-  background: var(--ifm-background-color);
-  color: var(--ifm-font-color-base);
-  box-shadow: 0 16px 60px #0003;
-  &::backdrop {
-    background: #0004;
-  }
-}
-.picker {
-  padding: 0.75rem;
-}
-.pickerHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  h2 {
-    font-size: 0.95rem;
-    margin: 0;
-  }
-  button {
-    min-width: 36px;
-    min-height: 36px;
-    border: 0;
-    background: none;
-    color: inherit;
-    font-size: 1.3rem;
-    cursor: pointer;
-  }
-}
-.picker input {
-  width: 100%;
-  margin: 0.4rem 0;
-  padding: 0.6rem;
-  border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: 6px;
-  color: inherit;
-  background: var(--ifm-background-color);
-  font: inherit;
-}
-.options button {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  width: 100%;
-  min-height: 40px;
-  padding: 0.5rem 0.6rem;
-  border: 0;
-  border-radius: 6px;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  text-align: left;
-  cursor: pointer;
-  &:hover,
-  &:focus-visible {
-    background: var(--ifm-color-emphasis-100);
-  }
-  &[aria-pressed="true"] {
-    font-weight: 600;
-  }
-}
-.check {
-  margin-left: auto;
-}
 @media (pointer: coarse) {
   .pill {
     min-height: 44px;

@@ -845,7 +845,7 @@ NODE
 
 This command uses the installed `pg` dependency and Node.js 24 to execute the SQL file. It writes to the configured Neon database, so check the selected branch before running it.
 
-After the success message, refresh `http://localhost:3000/writings/un-cafe-por-favor` and scroll to the bottom. A writing with no reactions should show a **React** button; neither the website nor the API needs restarting for this database change.
+After the success message, refresh `http://localhost:3000/writings/un-cafe-por-favor` and scroll to the bottom. All eight reaction buttons should appear with zero counts for a writing that has no reactions; neither the website nor the API needs restarting for this database change.
 
 **Note**: If the button is still missing, inspect the `/reactions?postId=` request in browser DevTools. A `404` can mean the path was registered in a different branch or database from the one the API uses.
 
@@ -915,10 +915,10 @@ Keep the reaction interface in a reusable component. A small theme wrapper place
 | File                                                 | Purpose                                  |
 | ---------------------------------------------------- | ---------------------------------------- |
 | `src/components/WritingReactions/index.tsx`          | Load counts and handle selections        |
-| `src/components/WritingReactions/styles.module.scss` | Style the buttons and reaction picker    |
+| `src/components/WritingReactions/styles.module.scss` | Style the reaction buttons and counts    |
 | `src/theme/BlogPostItem/Footer/index.tsx`            | Attach reactions to individual writings  |
 
-The included component displays compact reaction buttons and a searchable, keyboard-accessible picker. The following snippets explain data access and placement; the complete implementation is in the files listed above.
+The included component displays all eight reaction buttons in a row, including reactions with zero counts. The row wraps on smaller screens, and each button supports keyboard access and shows its selected state.
 
 ### Create a Browser Identifier
 
@@ -1020,7 +1020,7 @@ The installed theme calls the footer even when there are no tags. Wrapping it pr
 
 Do not modify `src/theme/DocItem/Layout/index.js` for this phase. That file contains the existing Giscus integration for docs.
 
-### Button and Picker Requirements
+### Reaction Button Requirements
 
 Make the reaction controls easy to use with a mouse, touch, or keyboard. Show saved selections clearly and provide feedback while requests are loading.
 
@@ -1029,7 +1029,7 @@ Make the reaction controls easy to use with a mouse, touch, or keyboard. Show sa
 - Support keyboard focus and visible focus indicators.
 - Mark decorative SVG icons as hidden from assistive technology.
 - Support light and dark themes, and honor reduced-motion preferences.
-- Keep the picker keyboard accessible, and return focus to its trigger when it closes.
+- Keep all eight reaction buttons visible, and allow the row to wrap on smaller screens.
 - Distinguish loading or unavailable counts from confirmed zero counts.
 
 ## Validate the Website
