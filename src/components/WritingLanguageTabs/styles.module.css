@@ -1,3 +1,8 @@
 .languages {
   justify-content: center;
 }
+
+.languages :global(.tabs__item) {
+  font-size: 12px;
+  font-weight: 400;
+}
