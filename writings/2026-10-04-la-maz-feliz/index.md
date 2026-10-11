@@ -63,6 +63,5 @@ I hope your heart will always be in the happiest place on Earth.
 
 ----------------------------------------------
 
-Por más charlas sin rumbo y buenas noches que nunca parecen terminar.
-
-De un escritor frustrado a otra escritora, salud y kanpai.
+*Por más charlas sin rumbo y buenas noches que nunca parecen terminar.*  
+*De un escritor frustrado a otra escritora, salud y kanpai.*

@@ -8,1108 +8,1113 @@ hide_table_of_contents: true
 
 ![alt text](image-1.png)
 
-I was staring at the ceiling again.
+Otra vez estaba mirando el techo.
 
-There wasn't anything particularly interesting about it.
+No tenía nada particularmente interesante.
 
-White paint. A faint shadow from the light coming through the window. One small crack near the corner that I'd noticed months ago and had been meaning to do absolutely nothing about.
+Pintura blanca. Una sombra tenue de la luz que entraba por la ventana. Una pequeña grieta cerca de una esquina que había notado meses atrás y con la que no pensaba hacer absolutamente nada.
 
-Still, some nights I could spend twenty minutes looking at it. Maybe an hour.
+Aun así, algunas noches podía pasarme veinte minutos mirándolo. Quizá una hora.
 
-The man at the other end of the couch shifted his weight.
+El hombre sentado en el otro extremo del sillón se acomodó un poco.
 
-He had been sitting there long enough that the glass in his hand was nearly empty. One leg rested casually over the other, his head tilted back against the couch. For the last few minutes, he'd been looking at the ceiling too.
+Llevaba tanto tiempo sentado ahí que el vaso que tenía en la mano ya estaba casi vacío. Tenía una pierna cruzada sobre la otra, con aire despreocupado, y la cabeza apoyada contra el respaldo. Durante los últimos minutos, él también había estado mirando el techo.
 
-Maybe he was trying to figure out what I saw up there.
+Tal vez estaba intentando entender qué era lo que yo veía ahí arriba.
 
-*“You're thinking about her again.”*
+*“Estás pensando en ella otra vez.”*
 
 “No.”
 
-*“Right.”*
+*“Claro.”*
 
-“I'm thinking about the ceiling.”
+“Estoy pensando en el techo.”
 
-He turned his head toward me.
+Giró la cabeza hacia mí.
 
-*“The ceiling has a name now?”*
+Lo miré.
 
-I looked at him, “Fuck off.”
+“Dejame de joder.”
 
-I went back to staring upward.
+Volví a mirar hacia arriba.
 
-For a while, neither of us spoke.
+Durante un rato, ninguno de los dos dijo nada.
 
-Then:
+Entonces preguntó:
 
-*“What's so special about her?”*
+*“¿Qué tiene de especial?”*
 
-I sighed.
+Suspiré.
 
-“You always start with the easy questions.”
+“Siempre empezás con las preguntas fáciles.”
 
-*“Pretty?”*
+*“¿Es linda?”*
 
-I looked at him.
+Levantó una ceja.
 
-He raised one eyebrow.
+*“¿Y?”*
 
-*“And?”*
+Me quedé pensando.
 
-I thought about it. 
+“Tiene una forma de responder las cosas.”
 
-“She has this way of answering things.”
+Esperó.
 
-He waited.
+*“Eso no significa absolutamente nada.”*
 
-*“That means absolutely nothing.”*
+“Ya sé.”
 
-“I know.”
-
-*“So explain it.”*
+*“Entonces explicámelo.”*
 
 “Ewan ko.”
 
-*“What?”*
+*“¿Qué?”*
 
-“I mean I don't really know how to explain her.”
+“Quiero decir que no sé muy bien cómo explicarte cómo es ella.”
 
-*“Try.”*
+*“Intentá.”*
 
-I sat up a little.
+Me incorporé un poco.
 
-“Sometimes I'll say something stupid just to annoy her. And before she even replies, I already know what she's doing.”
+“A veces digo alguna estupidez solo para molestarla. Y antes de que me conteste siquiera, ya sé lo que está haciendo.”
 
-*“You've never seen what she's doing.”*
+*“Nunca viste lo que está haciendo.”*
 
-“I know.”
+“Ya sé.”
 
-*“You're looking at words on a screen.”*
+*“Estás mirando palabras en una pantalla.”*
 
-“I know.”
+“Ya sé.”
 
-*“You can't see somebody reacting through text.”*
+*“No podés ver cómo reacciona alguien a través de un mensaje.”*
 
-I looked at him for a second.
+Me quedé callado un momento.
 
-“Sometimes I can. Sometimes, I can see her smile through the screen.”
+“A veces sí puedo. A veces puedo ver su sonrisa a través de la pantalla”
 
-He laughed.
+Se rió. Yo no.
 
-I didn't.
+*“¿En serio le dijiste eso?”*
 
-*“You've actually told her that?”*
+“Sí.”
 
-“Yeah.”
+*“¿Y todavía te habla?”*
 
-*“And she still talks to you?”*
+“De vez en cuando.”
 
-“Occasionally.”
+Levantó las cejas.
 
-His eyebrows went up.
+*“Me parece que hay una historia detrás de eso.”*
 
-*“That sounds like there's a story behind it.”*
+“Una larga.”
 
-“Long one.”
+Se acomodó más profundamente en el sofá.
 
-He settled deeper into the couch.
+*“Tenemos tiempo.”*
 
-*“We have time.”*
+## Sin señales de alerta
 
----
+Conocí a una chica en un juego.
 
-The first version of the story was simple.
+No en la oficina.
 
-I met a girl in a game.
+No en la cafetería donde siempre pido comida.
 
-Not at the office. 
+No en una librería.
 
-Not at the foodcenter I always order from.
+No en una estación de tren.
 
-Not in a bookstore.
+No porque algún amigo en común pensara que nos llevaríamos bien.
 
-Not in a train station.
+Ninguna de las formas normales.
 
-Not because some mutual friend thought we'd get along.
+Un juego de celular. Un puto juego de celular.
 
-None of the normal ways.
+*“Qué romántico.”*
 
-A mobile game. A fucking mobile game.
+“Callate.”
 
-*“Romantic.”*
+*“Seguí.”*
 
-“Shut up.”
+Su nombre no era realmente Panterina, y el mío tampoco era Francisco.
 
-*“Continue.”*
+Esa era una de las cosas extrañas de aquel lugar. Todos llegaban usando nombres que no eran los suyos. Pequeñas islas. Alianzas. Personas repartidas por todo el planeta, fingiendo durante unas horas al día que recolectar recursos y mandar diminutas tropas por un mapa congelado eran asuntos de importancia internacional.
 
-Her name wasn't really Panterina, and mine wasn't really Francisco.
+Y en medio de todo eso estaba ella.
 
-That was one of the strange things about the place. Everyone arrived wearing names that weren't theirs. Little islands. Alliances. People scattered across the planet, pretending for a few hours every day that gathering resources and sending tiny troops across a frozen map were matters of international importance.
+Al principio, era un nombre más en el chat. Hasta que dejó de serlo.
 
-Somewhere inside all of that was her.
-
-At first, she was another name in the chat. Then she wasn't.
-
-*“How?”*
-
-“I don't know.”
-
-*“Again?”*
-
-“I told you. That's the problem.”
-
-Things rarely announce themselves while they're happening.
-
-There wasn't some message that appeared on my screen:
-
-**WARNING: THIS PERSON IS ABOUT TO BECOME A PROBLEM. PROCEED WITH CAUTION.**
-
-If there had been, I probably still would've pressed **Accept** anyway.
-
-*“At least you're self-aware.”*
-
-“Barely.”
-
-We started talking. Or I guess I started talking to her.
-
-Sometimes for a few minutes.
-
-Sometimes for hours.
-
-Sometimes we'd start with absolutely nothing and somehow end up somewhere neither of us had intended to go.
-
-Food. 
-
-Sleep. 
-
-Countries. 
-
-School.
-
-Work. 
-
-Hair. 
-
-Stupid jokes.
-
-Things we'd done that day.
-
-Words in different languages.
-
-Why *Ciao* apparently meant whatever the hell she wanted it to mean.
-
-*“Ciao means goodbye.”*
-
-“I know.”
-
-*“And hello.”*
-
-“Apparently.”
-
-He laughed.
-
-*“She corrected you, didn't she?”*
-
-“Several times.”
-
-*“Was she right?”*
-
-“That isn't relevant.”
-
-There were other things.
-
-A reference to something we'd talked about weeks ago.
-
-A stupid joke that somehow survived long enough to come back again.
-
-Words that could pull an entire previous conversation back into the present.
-
-Little references.
-
-Things that probably looked ordinary to anyone else.
-
-And then there was her English. I smiled.
-
-The man beside me noticed.
-
-*“What?”*
-
-“I used to annoy her about her English.”
-
-*“How bad is it?”*
-
-“I'm not answering that honestly because I value my continued survival.”
-
-He laughed.
-
-“I told her once that her English was bad.”
-
-*“Charming.”*
-
-“I think at one point I was about to tell her she sounded like an immigrant, but I held back.”
-
-He stared at me.
-
-*“She's Argentine.”*
-
-“I know.”
-
-*“In Argentina.”*
-
-“Yes.”
-
-*“And English isn't even her first language.”*
-
-“I'm aware.”
-
-*“So you were about to insult her English while she was speaking your language?”*
-
-“When you explain it properly, I sound like an asshole.”
-
-*“You said it, not me.”*
-
-“Maybe that will make her laugh when she reads this.”
-
-He stopped. Slowly, he turned toward me.
-
-*“When she reads this?”*
-
-I stared at the ceiling.
-
-“Hmm?”
-
-*“You said ‘when she reads this.’”*
-
-“Did I?”
-
-*“Yes.”*
-
-He kept staring.
-
-I smiled.
-
-“Maybe that's why this entire page is written in Spanish with no English translation.”
-
-There was a short silence.
-
-*“Wait. What?”*
-
-“Nothing.”
-
-*“Are you writing this down?”*
-
-“No.”
-
-*“Then why would the page be in Spanish?”*
-
-“Future discussions.”
-
-He stared at me for another second.
-
-Then shook his head.
-
-*“You're fucking weird.”*
-
----
-
-There were things about her I started remembering without trying.
-
-San Juan. The siesta. Two until five.
-
-An entire city apparently capable of collectively deciding the afternoon could wait.
-
-I also learned about her studies. Teaching.
-
-What she found annoying.
-
-What made her laugh.
-
-The way she could say something ordinary and somehow I would remember it days later.
-
-Nothing extraordinary. That was the difficult part to explain.
-
-People expect reasons proportionate to feelings.
-
-If someone becomes important to you, there should be an equally important story.
-
-They saved your life.
-
-They swam an entire ocean.
-
-They crossed an entire mountain to reach Chile.
-
-Something enormous enough that anyone hearing the story could nod and say:
-
-*Of course.*
-
-But sometimes someone becomes important while telling you what time they take a nap.
-
-Sometimes it's the way they answer a stupid question.
-
-The way they say hello.
-
-The fact that you want to know what they'll say next.
-
-*“So she's funny.”*
-
-“Very.”
-
-*“Smart?”*
-
-“Yeah.”
-
-*“Interesting?”*
-
-“I wouldn't still be staring at this fucking ceiling otherwise.”
-
-He smiled.
-
-*“You forgot beautiful.”*
-
-“I didn't forget.”
-
----
-
-I told her once that she'd look good with curls.
-
-*“Would she?”*
-
-“Yeah.”
-
-*“Then what's funny?”*
-
-“I actually lied to her.”
-
-*“You lied about her hair?”*
-
-“No. The lie was making it sound like the hairstyle mattered. I think she'd look good in almost anything.”
-
-And there was a new photo once too. I told her it looked nice. That it was a good choice.
-
-“That was a lie too.”
-
-*“The photo didn't look nice?”*
-
-“No. I think she looked beautiful, but ‘nice’ was just easier to say.”
-
-He looked at me for a second.
-
-*“So basically, you keep lying to this girl.”*
-
-“Only when the truth sounds like it would get me into trouble.”
-
-
----
-
-At some point, I stopped opening the game because I cared about the game.
-
-I opened it to see if she was there.
-
-That distinction probably should have worried me sooner.
-
-*“What did you actually know about her?”*
-
-“A lot.”
-
-*“No. I mean really know.”*
-
-"Actually, not so much, but I would take every chance to know more".
-
-I'd been close to people before.
-
-I'd watched attraction turn into attachment, watched attachment become something larger, watched that larger thing eventually end too.
-
-I'd been through beginnings, and endings.
-
-The awful middle bits where you knew something was dying before one person had the courage to say it.
-
-I'd eventually watched people who once occupied half my thoughts become names I could remember without feeling anything sharp.
-
-I wasn't discovering any of this for the first time.
-
-Normally, though, there was evidence.
-
-Memories that existed outside a screen.
-
-You learned how somebody looked when they'd just woken up.
-
-How quickly they walked.
-
-What they do with their hands when they were nervous.
-
-Whether sitting silently beside them felt peaceful or uncomfortable.
-
-*“And with her?”*
-
-“Almost none.”
-
-*“You've never sat across from her.”*
-
-“No. Chances are astronomically low.”
-
-*“Never walked the same street.”*
-
-“No.”
-
-*“Never stood beside her waiting for the traffic light to change so you could cross the street.”*
-
-“No.”
-
-*“Never touched her hand.”*
-
-“No.”
-
-*“You don't know what the spaces between her fingers looks like.”*
-
-“No.”
-
-*“You don't know what her hair feels like.”*
-
-“No.”
-
-*“How fast she walks.”*
-
-“No.”
-
-*“What her laugh sounds like three feet away instead of through a phone.”*
-
-“Well, I did hear her laugh once, from a voice message.”
-
-He leaned his head back against the couch.
-
-*“Then explain it to me.”*
-
-“What?”
-
-*“Why her?”*
-
-There it was. That question. I'd heard it before.
-
-Once, or maybe twice.
-
-Why somebody I'd never met?
-
-Why someone who had never existed in the same place as me?
-
-Why could somebody who had never walked beside me on the same street somehow have that much effect on me?
+*“¿Cómo?”*
 
 “Ewan ko.”
 
-*“Again?”*
+*“¿Otra vez?”*
 
-“I've been trying to answer that.”
+“Ya te dije. Ese es el problema.”
 
-*“And?”*
+Las cosas rara vez avisan mientras están pasando. No apareció ningún mensaje en mi pantalla que dijera:
 
-“And every answer sounds stupid.”
+**ADVERTENCIA: ESTA PERSONA ESTÁ A PUNTO DE CONVERTIRSE EN UN PROBLEMA. PROCEDA CON PRECAUCIÓN.**
 
-*“Try me.”*
+Y si hubiera aparecido, probablemente igual habría apretado **Aceptar**.
 
-I thought about it.
+*“Por lo menos sos consciente de lo que hacés.”*
 
-Maybe the simplest answer was that I hadn't become attached to somebody standing three feet away.
+“Apenas.”
 
-I'd become attached to a presence.
+Empezamos a hablar. O, mejor dicho, creo que yo empecé a hablarle.
 
-A way of thinking, you know, a way of replying.
+A veces durante unos minutos. A veces durante horas.
 
-A person who became recognizable through punctuation and timing.
+A veces empezábamos hablando de absolutamente nada y, de alguna manera, terminábamos en algún lugar al que ninguno de los dos había planeado llegar.
 
-I learned what her amusement looked like without seeing her mouth.
+Comida.
 
-Sometimes I could tell when she was annoyed without seeing her eyes, which is honestly stupid.
+Sueño.  
 
-Sometimes I'd read something she'd written and imagine exactly how she would've said it.
+Países.  
 
-Maybe that's what I meant whenever I told her that I can see her smile through the screen.
+Estudios.  
 
-Not literally.
+Trabajo.  
 
-It was just that I started knowing where the smiles lived between the words.
+Pelo.
 
-“I think that's the part I can't explain,” I said.
+Chistes estúpidos.
 
-*“What?”*
+Cosas que habíamos hecho ese día.
 
-“There are all these things about her I don't know.”
+Palabras en distintos idiomas.
 
-*“A lot, apparently.”*
+Por qué *Ciao* aparentemente significaba lo que a ella se le daba la gana.
 
-“Exactly. And somehow the things I do know were enough.”
+*“Ciao significa adiós.”*
 
-He didn't answer. I continued.
+“Ya sé.”
 
-“I don't know what she's like walking beside me. Whether she'd talk the whole time or go quiet. I don't know those things. But somehow my brain started thinking of them anyway.”
+*“Y hola.”*
 
-*“What kind of things?”*
+“Aparentemente.”
 
-“Nothing impressive.”
+Se rio.
 
-*“Meaning?”*
+*“Ella te corrigió, ¿no?”*
 
-“Coffee.”
+“Varias veces.”
 
-*“That's it?”*
+*“¿Tenía razón?”*
 
-“Sitting somewhere, you know. Her complaining about something. Me annoying her deliberately. Or maybe her annoying me. Seeing her face before she says something sarcastic. You know, hearing her laugh without a screen between us.”
+“Eso no viene al caso.”
 
-*“Ordinary things.”*
+Había otras cosas.
 
-“Yeah.”
+Una referencia a algo de lo que habíamos hablado semanas atrás.
 
-*“That's worse.”*
+Un chiste estúpido que, de alguna manera, había sobrevivido lo suficiente como para volver a aparecer.
 
-“It is.”
+Palabras capaces de traer una conversación entera del pasado de vuelta al presente.
 
-*“Why?”*
+Pequeñas referencias.
 
-“Because ridiculous fantasies are easy to dismiss.”
+Cosas que probablemente parecían completamente normales para cualquier otra persona.
 
-*“And ordinary ones?”*
+Y después estaba su inglés. Sonreí.
 
-I stared at the ceiling.
+El hombre a mi lado se dio cuenta.
 
-“They look possible.”
+*“¿Qué?”*
 
----
+“Solía molestarla por su inglés.”
 
-Of course, possible and realistic weren't the same thing.
+Se rio, *“¿Tan malo es?”*
 
-I knew that, believe me.
+“Una vez le dije que su inglés era malo.”
 
-I knew the reality of it.
+*“Un encanto lo tuyo.”*
 
-Countries. Distance. Time zones. Timing. Circumstances.
+“Creo que en un momento estuve a punto de decirle que hablaba como una inmigrante, pero me contuve.”
 
-An ocean in the middle that is large enough to have its own fucking name.
+Se quedó mirándome, *“Ella es argentina.”*
 
-Some truths don't become more true just because you say them aloud.
+“Ya sé.”
 
----
+*“En Argentina.”*
 
-There was distance, and then there was *distance*.
+“Sí.”
 
-*“So you stopped for a while?”*
 
-“She asked me to.”
+*“Y el inglés ni siquiera es su lengua materna.”*
 
-*“That wasn't the question.”*
+“Soy consciente.”
 
-“I tried.”
+*“¿O sea que estabas a punto de criticarle el inglés mientras ella hablaba tu idioma?”*
 
-I deleted the game. Then eventually installed it again.
+“Cuando lo explicás así, quedo como un pelotudo.”
 
-Then tried not to check. Then checked.
+*“Lo dijiste vos, no yo.”*
 
-Told myself that tomorrow I'd think about her less.
+“Tal vez eso la haga reír cuando lea esto.”
 
-Tomorrow repeatedly failed to cooperate.
+Se detuvo. Lentamente, giró la cabeza hacia mí.
 
-The strange thing about missing somebody is that it doesn't usually look dramatic.
+*“¿Cuando lea esto?”*
 
-You still work. You still eat.
+Me quedé mirando el techo. “¿Hmm?”
 
-Go outside.
+*“Dijiste ‘cuando lea esto’.”*
 
-Talk to people.
+“¿Eso dije?”
 
-Run.
+*“Sí.”*
 
-Cycle.
+Siguió mirándome.
 
-Laugh.
+Sonreí.
 
-You function.
+“Tal vez por eso toda esta página está escrita en español, sin traducción al inglés.”
 
-Then something funny happens, and you have a wonderful story to share.
+Hubo un breve silencio.
 
-*I wonder if she'd—*
+*“Pará. ¿Qué?”*
+
+“Nada.”
+
+*“¿Estás escribiendo todo esto?”*
+
+“No.”
+
+*“¿Entonces de qué página estás hablando?”* 
+
+“Para futuras conversaciones.”
+
+Se quedó mirándome un segundo más y después negó con la cabeza.
+
+*“Sos un puto raro.”*
+
+## De dos a cinco
+
+Había cosas de ella que empecé a recordar sin proponérmelo.
+
+San Juan. La siesta. De dos a cinco.
+
+Una ciudad entera aparentemente capaz de decidir, de común acuerdo, que la tarde podía esperar.
+
+También fui conociendo cosas sobre sus estudios. El profesorado.
+
+Lo que le molestaba.
+
+Lo que la hacía reír.
+
+La forma en que podía decir algo completamente normal y, de alguna manera, yo seguía recordándolo días después.
+
+Nada extraordinario. Esa era la parte difícil de explicar.
+
+La gente espera que las razones estén a la altura de los sentimientos.
+
+Si alguien se vuelve importante para vos, debería haber una historia igual de importante detrás.
+
+Te salvó la vida.
+
+Cruzó nadando un océano entero.
+
+Atravesó toda una cordillera para llegar a Chile.
+
+Algo tan enorme que cualquiera que escuchara la historia pudiera asentir y decir: *Por supuesto.*
+
+Pero a veces alguien se vuelve importante mientras te cuenta a qué hora duerme la siesta.
+
+A veces es la forma en que responde una pregunta estúpida.
+
+La forma en que dice hola.
+
+El hecho de que quieras saber qué va a decir después.
+
+*“O sea que es graciosa.”*
+
+“Mucho.”
+
+*“¿Inteligente?”*
+
+“Sí.”
+
+*“¿Interesante?”*
+
+“Si no lo fuera, no seguiría mirando este puto techo.”
+
+Sonrió. *“Te olvidaste de hermosa.”*
+
+“No me olvidé.”
+
+## Técnicamente, mentí
+
+Una vez le dije que le quedarían bien los rulos.
+
+*“¿Ah, sí?”*
+
+“Sí.” Me reí un poco.
+
+*“¿Entonces qué es lo gracioso?”*
+
+“En realidad, le mentí.”
+
+*“¿Le mentiste sobre su pelo?”*
+
+“No. La mentira fue hacer que pareciera que el peinado importaba. Creo que se vería bien con casi cualquier cosa.”
+
+Me acordé de otra ocasión.
+
+Había cambiado su foto de perfil en el juego. Le dije que la foto estaba linda. Que había sido una buena elección.
+
+“Eso también fue mentira.”
+
+*“¿La foto no estaba linda?”*
+
+“No. Me pareció hermosa. Pero decir que la foto estaba linda me pareció más seguro.”
+
+Me miró un segundo.
+
+*“O sea que básicamente te la pasás mintiéndole a esta chica.”*
+
+“Solo cuando parece que decir la verdad me va a meter en problemas.”
+
+## Sin necesidad de magia
+
+En algún momento, dejé de abrir el juego porque me interesara el juego. Lo abría para ver si ella estaba ahí.
+
+Probablemente debería haberme preocupado antes por esa diferencia.
+
+*“¿Qué sabías realmente de ella?”*
+
+“Mucho.”
+
+*“No. Me refiero a qué sabías de ella de verdad.”*
+
+“No tanto como me hubiera gustado. Pero aprovechaba cada oportunidad que tenía para conocerla un poco más.”
+
+Esa era la parte extraña. Nunca antes había tenido que pensar tanto en lo que realmente significaba conocer a alguien.
+
+Ya había estado cerca de otras personas.
+
+Había visto cómo la atracción se convertía en apego, cómo ese apego se transformaba en algo más grande y cómo, al final, ese algo también terminaba.
+
+Y también había pasado por esas horribles etapas intermedias en las que sabías que algo se estaba muriendo mucho antes de que cualquiera de los dos tuviera el valor de decirlo.
+
+Con el tiempo, había visto cómo personas que alguna vez ocuparon la mitad de mis pensamientos se convertían en simples nombres que podía recordar sin sentir nada que doliera.
+
+No era la primera vez que pasaba por algo así.
+
+Sin embargo, normalmente había algo concreto que podía señalar. Algo que realmente había visto o vivido.
+
+Pequeñas cosas que aprendés de alguien simplemente por estar cerca.
+
+Recuerdos que existían fuera de una pantalla.
+
+Sabías cómo se veía alguien corriendo para alcanzar el colectivo después de haberse despertado tarde, con apenas una galletita para desayunar camino a la universidad.
+
+Qué tan rápido caminaba.
+
+Qué hacía con las manos cuando estaba nervioso.
+
+Si estar sentado en silencio a su lado se sentía tranquilo o incómodo.
+
+*“¿Y con ella?”*
+
+“Casi nada.”
+
+*“¿Nunca estuviste sentado frente a ella?”*
+
+“No. Las probabilidades de que eso pase son astronómicamente bajas.”
+
+*“¿Nunca caminaron por la misma calle?”*
+
+“No.”
+
+*“¿Nunca estuviste parado a su lado esperando que cambiara el semáforo para cruzar la calle?”*
+
+“No.”
+
+*“No sabés qué tan rápido camina.”*
+
+“No.”
+
+*“¿Nunca le tocaste la mano?”*
+
+“No.”
+
+*“No sabés cómo son los espacios entre sus dedos.”*
+
+“No.”
+
+*“No sabés cómo se siente su pelo al tocarlo.”*
+
+“No.”
+
+*“No sabés cómo suena su risa a un metro de distancia, en lugar de escucharla a través de un teléfono.”*
+
+“Bueno, una vez sí la escuché reír. En un mensaje de voz.”
+
+Levantó la cabeza.
+
+*“Entonces explicámelo.”*
+
+“¿Qué?”
+
+*“¿Por qué ella?”*
+
+Ahí estaba. Esa pregunta. Ya la había escuchado antes.
+
+Una vez, o quizá dos.
+
+¿Por qué alguien a quien nunca había conocido en persona?
+
+¿Por qué alguien que nunca había estado en el mismo lugar que yo?
+
+¿Cómo podía alguien que nunca había caminado a mi lado por la misma calle tener semejante efecto en mí?
+
+“Ewan ko.”
+
+*“Otra vez esas palabras molestas.”*
+
+“Estoy tratando de responder esa pregunta.”
+
+*“¿Y?”*
+
+“Y todas las respuestas suenan estúpidas.”
+
+*“A ver, probá conmigo.”*
+
+Me quedé pensando.
+
+Tal vez la respuesta más sencilla era que no me había encariñado con alguien que estuviera a un metro de distancia.
+
+Me había encariñado con una presencia.
+
+Una forma de pensar. Una forma de responder.
+
+Una persona que se había vuelto reconocible por su manera de usar los signos de puntuación y por el momento en que respondía.
+
+Aprendí a reconocer cómo se veía su diversión sin verle la boca.
+
+A veces podía darme cuenta de cuándo estaba molesta sin verle los ojos, lo cual, sinceramente, es una estupidez.
+
+A veces leía algo que había escrito y podía imaginar exactamente cómo lo habría dicho.
+
+Tal vez eso era lo que quería decir cada vez que le decía que podía ver su sonrisa a través de la pantalla.
+
+No literalmente.
+
+Era simplemente que había empezado a reconocer dónde vivían las sonrisas entre las palabras.
+
+“Creo que esa es la parte que no puedo explicar”, dije.
+
+*“¿Cuál?”*
+
+“Hay tantas cosas de ella que no sé.”
+
+*“Un montón, por lo visto.”*
+
+“Exacto. Y, de alguna manera, las cosas que sí sé fueron suficientes.”
+
+No respondió. Continué.
+
+“No sé cómo sería caminar a su lado. Si hablaría todo el tiempo o se quedaría callada. No sé esas cosas. Pero, de alguna manera, empecé a imaginar pequeños momentos así.”
+
+*“¿Como cuáles?”*
+
+“Nada impresionante.”
+
+*“¿Por ejemplo?”*
+
+“Un café.”
+
+*“¿Eso es todo?”*
+
+“Estar sentados en algún lugar. Ella quejándose de algo. Yo molestándola a propósito. O quizá ella molestándome a mí. Verle la cara justo antes de que diga algo sarcástico. Escucharla reír sin una pantalla entre nosotros.”
+
+*“O sea, básicamente, cosas cotidianas.”*
+
+“Sí. Y, de alguna manera, esas son peores.”
+
+*“¿Por qué?”*
+
+“Porque las fantasías ridículas son fáciles de descartar. Todo lo que requiere magia pertenece a Hogwarts. Sabés que nunca va a pasar, así que es fácil reírte de eso y seguir adelante.”
+
+*“¿Y las cosas cotidianas?”*
+
+“No necesitan magia.”
+
+Volví a mirar el techo.
+
+“Y la puta madre, parecen posibles.”
+
+## Todavía hay un océano
+
+Claro que algo fuera posible no significaba que fuera realista.
+
+Lo sabía. Creeme.
+
+Sabía perfectamente cómo eran las cosas.
+
+Países. Distancia. Husos horarios. El momento. Las circunstancias.
+
+Un océano de por medio, tan grande que tiene hasta su propio puto nombre.
+
+Hay verdades que no se vuelven más ciertas solo porque las digas en voz alta.
+
+## Ausencia
+
+Había distancia, y después estaba la *distancia*.
+
+*“¿Entonces dejaste de hablarle por un tiempo?”*
+
+“Ella me lo pidió.”
+
+*“Eso no fue lo que te pregunté.”*
+
+“No le mandé mensajes.”
+
+Pero eso no significaba que hubiera dejado de buscarla.
+
+Borré el juego. Después, con el tiempo, volví a instalarlo.
+
+Después intenté no entrar a mirar. Y terminé mirando.
+
+Me decía que mañana pensaría menos en ella.
+
+Pero el mañana se negaba a cooperar, una y otra vez.
+
+Lo extraño de extrañar a alguien es que, por lo general, no parece algo dramático.
+
+Seguís trabajando.
+
+Seguís comiendo.
+
+Salís.
+
+Hablás con gente.
+
+Corrés.
+
+Andás en bicicleta.
+
+Te reís.
+
+Seguís funcionando.
+
+Entonces pasa algo gracioso y tenés una historia buenísima para contar.
+
+*Me pregunto si a ella le—*
 
 No.
 
-The world continues perfectly well.
+El mundo sigue funcionando perfectamente bien.
 
 ---
 
-Those weeks without her weren't catastrophic.
+Esas semanas sin ella no fueron catastróficas.
 
-They were just bad. Three bad weeks.
+Fueron simplemente malas. Tres semanas malas.
 
-Long enough to begin adjusting to the possibility that maybe I would never really talk to her again.
+Lo suficientemente largas como para empezar a acostumbrarme a la posibilidad de que quizá nunca volviera a hablar realmente con ella.
 
-Eventually I came back to the game properly.
+Finalmente, volví al juego en serio.
 
-And damn, one *"Hey you"* completely erased those three bad weeks.
+Y la puta madre, un simple *“Hey you”* borró por completo esas tres semanas malas.
 
-*“You're smiling.”*
+*“Estás sonriendo.”*
 
-“I wasn't.”
+“No estaba sonriendo.”
 
-*“You are right now.”*
+*“Ahora sí.”*
 
-“Shut up.”
+“Callate.”
 
-*“It erased all three bad weeks?”*
+*“Tres semanas intentando olvidarla, ¿eh?”*
 
-“Not literally.”
+“Sí.”
 
-*“Then why say erased?”*
+*“¿Y solo hicieron falta dos palabras?”*
 
-“Because for about five seconds, I couldn't remember why I'd been trying to forget.”
+Dudé un instante.
 
+“Por un momento, me olvidé de que siquiera lo estaba intentando.”
 
----
+## Una palabra tan pequeña
 
-When we started talking again, I learned the rules.
+Cuando empezamos a hablar de nuevo, aprendí las reglas.
 
-Or at least I tried. Talk normally.
+O al menos lo intenté.
 
-Don't turn every conversation into something serious.
+Hablar con normalidad.
 
-Don't make every joke mean something.
+No convertir cada conversación en algo serio.
 
-Don't confuse things.
+No buscarle un significado especial a cada chiste.
 
-If she says friend, believe friend.
+No confundir las cosas.
 
-He glanced at me.
+Si ella dice *amigo*, creerle.
 
-*“Amigo?”*
+Me miró de reojo.
 
-“Yeah.”
+*“¿Amigo?”*
 
-*“You hate that.”*
+“Sí.”
 
-“I don't hate it.”
+*“Odiás esa palabra.”*
 
-*“You just made the face people make after biting directly into a lemon.”*
+“No la odio.”
 
-“I understand what the word means.”
+*“Acabás de poner la misma cara que pone alguien cuando muerde un limón.”*
 
-*“That wasn't the question.”*
+“Entiendo lo que significa esa palabra.”
 
-Anyway, I learned to stay on my side.
+*“Eso no fue lo que te pregunté.”*
 
-*“Can you actually do that?”*
+En fin, aprendí a mantenerme de mi lado.
 
-“Yes. I'm learning.”
+*“¿Y realmente lo hiciste?”*
 
-*“And if friendship is all you ever get?”*
+“Sí. Estoy aprendiendo a hacerlo.”
 
-“Then I'll be her friend. I'll listen to her stories for the day, for the week.”
+*“¿Y si la amistad es lo único que vas a tener con ella?”*
 
-I looked down at my hands, and I breathed out.
+“Entonces voy a ser su amigo. Voy a escuchar todas las historias que tenga para contarme, semana tras semana.”
 
-“And if friendship is the closest I'm ever allowed to get to her, I'll carry that title proudly.”
+Bajé la mirada hacia mis manos y solté el aire.
 
-The room became quiet. Not awkward, just quiet.
+“Y si ser su amigo es lo más cerca que vamos a estar el uno del otro, voy a llevar ese título con orgullo.”
 
-*“But?”*
+La habitación quedó en silencio. No era un silencio incómodo, simplemente silencio.
 
-“There is no but.”
+*“¿Pero?”*
 
-*“There is always a but.”*
+“No hay ningún pero.”
 
-I looked at the ceiling. 
+*“Siempre hay un pero.”*
 
-“But on some quiet night, when she's asleep and I'm awake halfway across the world, I'll probably still wonder how something that feels this large is supposed to fit inside a word that sounds so small.”
+Apoyé la cabeza contra el respaldo del sillón y volví a mirar el techo.
 
----
+“Pero alguna noche tranquila, cuando ella esté dormida y yo siga despierto al otro lado del mundo, probablemente todavía me pregunte cómo se supone que algo que se siente tan grande puede caber dentro de una palabra que suena tan pequeña.”
 
-Things were different the second time around. Safer.
+## Ah, y otra cosa
 
-I guess we both knew where the edges were? Ewan ko.
+Las cosas eran diferentes la segunda vez. Más seguras.
 
-So we talked, sometimes for a few minutes, or a few hours.
+Supongo que los dos sabíamos dónde estaban los límites. Ewan ko.
 
-Eventually someone would say goodnight.
+Así que hablábamos. A veces durante unos minutos. A veces durante horas.
 
-Then ten minutes later, we'd still be talking.
+En algún momento, alguno de los dos decía *buenas noches.*
 
-Goodnight again.
+Y diez minutos después, seguíamos hablando.
 
-Another subject.
+Buenas noches otra vez.
 
-Another joke.
+*Ah, y otra cosa.*
 
-At some point, *goodnight* stopped functioning as an ending and became more of a recommendation.
+Otro tema.
 
-I think there were some conversations where she'd attempted to end the conversation three times and somehow continued after every one.
+Otro chiste.
 
-I liked those nights more than I admitted.
+En algún momento, *buenas noches* dejó de funcionar como una despedida y pasó a ser más bien una sugerencia.
 
----
+Creo que hubo noches en las que ella intentó despedirse tres veces, pero de alguna manera seguíamos hablando después de cada intento.
 
-I went away for a few days to another place.
+Me gustaban esas noches más de lo que admitía.
 
-Different streets. Different buildings. Different food.
+## En otra parte
 
-I remember being on the plane, my eyes taking in a different view.
+Me fui de viaje por unos días.
 
-But somehow, some part of me was still yearning for another.
+Ya había estado ahí muchas veces antes.
 
-*“So you're fine now?”*
+Otras calles. Otros edificios. Otra comida.
 
-“Did you just listen to what I just said?”
+Otra compañía también.
 
----
+Había faroles colgados sobre las calles. Pasteles de luna en las vidrieras. Familias y amigos reuniéndose.
 
-*“I have another question.”*
+Recorrimos la ciudad. Comimos rico. Nos reímos. Charlamos. Visitamos lugares que ya conocía y algunos en los que nunca había estado.
+
+La pasé bien. De verdad.
+
+Pero hubo momentos.
+
+*“Entonces, ¿disfrutaste el viaje?”*
+
+“Sí.”
+
+*“¿Y cuál es el problema?”*
+
+“No había ninguno.”
+
+Esperó.
+
+*“¿Pero?”*
+
+Solté el aire suavemente antes de responder.
+
+“A veces estaba en algún lugar, disfrutando del momento, y de alguna manera terminábamos hablando.”
+
+*“¿Con ella?”*
+
+“Sí.”
+
+*“¿Y?”*
+
+“Y durante unos minutos, lo que pasaba en esa pequeña pantalla se convertía en lo más interesante de todo lo que me rodeaba.”
+
+No había nada malo con el viaje. Ni con la compañía.
+
+Probablemente esa era la parte frustrante.
+
+Podía cambiar de país, de calles, de paisaje al otro lado de la ventana.
+
+Pero, aparentemente, mis pensamientos no siempre me acompañaban.
+
+*“¿Entonces ya estás bien?”*
+
+“¿Escuchaste algo de lo que acabo de decir?”
+
+## Todos los putos días
+
+*“Tengo otra pregunta.”*
 
 “No.”
 
-*“You don't know what it is.”*
+*“Ni siquiera sabés qué te voy a preguntar.”*
 
-“The answer is still no.”
+“La respuesta sigue siendo no.”
 
-*“What if you'd met her at a better time?”*
+*“¿Y si la hubieras conocido en un mejor momento?”*
 
-My thumb stopped holding my phone. I didn't answer.
+Mi pulgar dejó de moverse por la pantalla. No respondí.
 
-*“You've thought about that.”*
+*“Ya pensaste en eso.”*
 
-“Of course I've thought about that.”
+“Por supuesto que lo pensé.”
 
-*“Closer?”*
+*“¿Qué habrías cambiado?”*
 
-“Maybe.”
+“Quizá la distancia. Quizá el momento en que nos conocimos.”
 
-*“Earlier?”*
+*“¿Y las circunstancias?”*
 
-“Maybe.”
+“Sí.”
 
-*“Different circumstances?”*
+Asintió.
 
-I looked at him.
+*“Entonces deseás que las cosas hubieran sido diferentes.”*
 
-“Yes.”
+Bajé la mirada por un momento.
 
-He nodded.
+“Odio no haberla conocido en un mejor momento.”
 
-*“And then?”*
+La frase quedó flotando en el aire. Lo había pensado muchas veces. Pero decirlo en voz alta se sentía diferente.
 
-I leaned my head back.
+No porque me arrepintiera de haberla conocido.
 
-“I hate that I didn't meet her at a better time.”
+Todo lo contrario.
 
-The sentence hung there. I'd thought it plenty of times.
+Odiaba el momento en que nos habíamos conocido porque conocerla me había dado lo suficiente como para preguntarme cómo podría haber sido todo lo demás.
 
-Saying it aloud felt different.
+“¿Y qué significa siquiera un ‘mejor momento’?”, dije.
 
-Not because I regretted meeting her.
-
-Quite the opposite.
-
-I hated the timing because meeting her gave me just enough to wonder what the rest might have looked like.
-
-“What does ‘better’ even mean?” I said.
-
-*“You're asking me?”*
+*“¿Me lo estás preguntando a mí?”*
 
 “No.”
 
-Maybe better meant no need for rules.
+Tal vez un mejor momento significaba no necesitar reglas.
 
-No need to measure how much warmth could safely fit inside a message.
+No tener que medir cuánta calidez podía caber sin peligro dentro de un mensaje.
 
-No need to take something enormous and find a smaller word for it.
+No tener que tomar algo enorme y buscar una palabra más pequeña para describirlo.
 
-Maybe there was another version of reality where the Pacific wasn't standing between two ordinary afternoons.
+Tal vez existía otra versión de la realidad en la que un océano entero no separaba dos tardes comunes y corrientes.
 
-Maybe I could have found out all the things I didn't know.
+Tal vez podría haber descubierto todas esas cosas que no sabía.
 
-Maybe I could have learned what the spaces between her fingers feels like instead of wondering about it.
+Tal vez podría haber sabido cómo se sentían los espacios entre sus dedos, en lugar de quedarme imaginándolo.
 
-*“Did you just look at your hands?”*
-
-“No.”
-
-*“And if she'd been with you?”*
-
-I thought for a moment.
-
-“I'd try to make her happy.”
-
-*“Try?”*
-
-“I'm not arrogant enough to promise another human being happiness.”
-
-*“But you'd try.”*
-
-“Every fucking day.”
-
-He was quiet.
-
-*“Would you tell her that?”*
+*“¿Acabás de mirarte las manos?”*
 
 “No.”
 
-*“Why?”*
+*“¿Y si ella estuviera con vos?”*
 
-“Because we don't live in that reality.”
+Me quedé pensando un momento.
 
----
+“Intentaría hacerla feliz.”
 
-He looked at me.
+*“¿Intentarías?”*
 
-*“So you accept the rules.”*
+“No soy tan arrogante como para prometerle felicidad a otra persona.”
 
-“I'm learning them.”
+*“Pero lo intentarías.”*
 
-*“There are a lot of rules in this story.”*
+“Todos los putos días.”
 
-“That's why we need a category.”
+Se quedó callado.
 
-*“A category?”*
+*“¿Se lo dirías?”*
 
-“For this topic.”
+“No.”
 
-He laughed.
+*“¿Por qué?”*
 
-*“What, like meeting minutes?”*
+“Porque no vivimos en esa realidad.”
 
-“Exactly.”
 
-*“Pending action items?”*
+## Para futuras conversaciones
 
-“Outstanding issues.”
+Inclinó un poco la cabeza hacia mí.
 
-*“For future discussions.”*
+*“Entonces aceptás las reglas.”*
 
-I tapped my phone against the side of it.
+“Estoy aprendiendo a aceptarlas.”
 
-“For future discussions.”
+*“¿Y qué pasa con las cosas que siempre vuelven a surgir?”*
 
-He looked at me strangely.
+“Esas necesitan una categoría.”
 
-*“That sounds like something you're going to put into the story.”*
+*“¿Una categoría?”*
 
-I stared straight ahead.
+“Para este tema en particular.”
 
-“What story?”
+Se rio.
 
-*“The one apparently being translated into Spanish for a very specific person.”*
+*“¿Qué, como un acta de reunión?”*
 
-“I don't know what you're talking about.”
+“Exactamente.”
 
-*“Does she know she's reading about herself yet?”*
+*“¿Tareas pendientes?”*
 
-That caught me. I looked at him. 
+“Asuntos sin resolver.”
 
-“Probably.”
+*“¿Confidencial?”*
 
-*“Probably?”*
+“O para futuras conversaciones.”
 
-“She's smart.”
+Golpeé suavemente el celular contra el apoyabrazos del sillón.
 
-*“And if she hasn't figured it out?”*
+“Para futuras conversaciones.”
 
-I smiled.
+Entrecerró los ojos.
 
-“She has now.”
+**“Eso suena como algo que vas a poner en la historia.”**
 
----
+Me quedé mirando al frente.
 
-The room was quiet again.
+“¿Qué historia?”
 
-Then he asked:
+“La que aparentemente se está traduciendo al español para alguien muy específico.”
 
-*“If you could tell her something with absolutely no consequences, what would you say?”*
+“No sé de qué estás hablando.”
 
-“That's a terrible question.”
+*“¿Ella ya sabe que está leyendo sobre sí misma?”*
 
-*“Why?”*
+Eso me tomó por sorpresa.
 
-“Because consequences are part of reality.”
+“Probablemente.”
 
-*“Just tell her.”*
+*“¿Probablemente?”*
 
-Well, there were too many answers.
+“Es inteligente.”
 
-I'd tell her I learned the rules because I wanted to keep talking to her more than I wanted to keep arguing with reality.
+*“¿Y si todavía no se dio cuenta?”*
 
-I'd tell her I would take *friend* if that was the word she was comfortable giving me.
+Sonreí.
 
-I'd tell her that I liked her jokes, no matter how terrible they were.
+“Ahora ya lo sabe.”
 
-I'd tell her I liked knowing completely unnecessary information about her day because the information wasn't the point.
+## Febrero
 
-She was.
+La habitación volvió a quedar en silencio. Entonces preguntó:
 
-I'd tell her that she's February. 
+*“Si pudieras decirle algo sin que hubiera absolutamente ninguna consecuencia, ¿qué le dirías?”*
 
-And maybe I'd tell her the one thing I was certain about.
+“Esa es una pregunta terrible.”
 
-“I'm happy she exists.”
+*“¿Por qué?”*
 
-*“That's a strange sentence.”*
+“Porque las consecuencias son parte de la realidad.”
 
-“I know.”
+*“Simplemente decíselo.”*
 
-*“Everyone exists.”*
+Bueno, había demasiadas respuestas.
 
-“That's not what I mean.”
+Le diría que aprendí las reglas porque quería seguir hablando con ella más de lo que quería seguir discutiendo con la realidad.
 
-I struggled with it.
+Le diría que aceptaría ser su *amigo* si esa era la palabra con la que ella se sentía cómoda.
 
-“I mean…”
+Le diría que me gustaban sus chistes, por más malos que fueran.
 
-There are billions of people alive.
+Le diría que me gustaba conocer pequeños detalles completamente innecesarios de su día, porque los detalles no eran lo importante.
 
-Most of them pass through the world without ever becoming real to us individually.
+Ella sí.
 
-Names. Faces. Strangers in crowds.
+Le diría que ella es febrero.
 
-People living entire complicated lives somewhere else that we'll never know anything about.
+Y quizá le diría lo único de lo que estaba seguro.
 
-And then, very occasionally, one of them crosses whatever invisible border separates *somebody in the world* from *somebody in your world.*
+“Me alegra que ella exista.”
 
----
+*“Esa es una frase extraña.”*
 
-My phone lit up.
+“Ya sé.”
 
-Neither of us moved for a second.
+*“Todo el mundo existe.”*
 
-Then he looked at me.
+“No me refiero a eso.”
 
-*“Her?”*
+Me costaba encontrar las palabras adecuadas.
 
-Her name was there.
+“Quiero decir…”
 
-*“What are you going to say?”*
+Hay miles de millones de personas en el mundo.
+
+La mayoría pasa por el mundo sin llegar a convertirse en alguien real para nosotros, de manera individual.
+
+Nombres. Rostros. Desconocidos entre la multitud.
+
+Personas que viven vidas enteras, llenas de complicaciones, en algún otro lugar, de las que nunca llegaremos a saber nada.
+
+Y entonces, muy de vez en cuando, una de esas personas cruza esa frontera invisible que separa a *alguien que existe en el mundo* de *alguien que forma parte de tu mundo.*
+
+## Panterina
+
+Mi teléfono se iluminó.
+
+Ninguno de los dos se movió por un segundo.
+
+*“¿Ella?”*
+
+Su nombre apareció en la notificación.
+
+*“¿Qué vas a decir?”*
 
 “Ewan ko.”
 
-*“That seems to be your answer to everything.”*
+*“Parece que esa es tu respuesta para todo.”*
 
-I tapped the text field.
+Toqué el campo de texto.
 
-Typed:
+Escribí:
 
 **Hello.**
 
-Looked at it. Deleted it.
+Lo miré. Lo borré.
 
-I typed:
+Escribí:
 
 **¡Hola!**
 
-Deleted that too.
+También lo borré.
 
-I typed once again:
+Volví a escribir:
 
 **¿Todo bien?**
 
-He laughed.
+Se rió.
 
-*“You have spent an incredible amount of emotional energy on a greeting.”*
+*“Gastaste una cantidad increíble de energía emocional en un saludo.”*
 
-“You wouldn't understand.”
+“No lo entenderías.”
 
-*“Apparently nobody understands this story except you.”*
+*“Nadie entiende esta historia excepto vos.”*
 
-“And maybe one other person.”
+“Y quizá una persona más.”
 
-I thought about what I actually wanted to type.
+Pensé en lo que realmente quería escribir.
 
-I could say:
+Podía decir:
 
-**I'm happy you're here.**
+**Me alegra que estés acá.**
 
-Safe enough. I could ask about her day.
+Lo bastante seguro.
+
+También podía preguntarle cómo había estado su día.
 
 Normal.
 
-I could tell her something stupid.
+Podía decirle alguna estupidez.
 
-Probably best.
+Probablemente lo mejor.
 
-Or I could pour everything I'd just said onto the screen.
+O podía volcar en la pantalla todo lo que acababa de contar.
 
-The fact that I wasn't merely glad I'd met her.
+El hecho de que no solo me alegraba haberla conocido.
 
-I was glad she exists at all.
+Me alegraba que existiera.
 
-*“Write that.”*
-
-“No.”
-
-*“Why?”*
-
-“Because this is a game chat, not a suicide note.”
-
-*“Dramatic.”*
-
-“Also the censor would destroy half of it.”
-
-*“Maybe that's safer.”*
-
-I stared at the empty text field.
-
-He leaned slightly closer.
-
-*“What would you say if there were no rules?”*
-
-I typed. Slowly.
-
-I read it, then deleted it.
-
-Typed again. Then deleted it.
-
-Typed something else.
-
-I stopped. This draft stayed longer. Then I deleted it too.
-
-Finally:
-
-**How was your day?**
-
-*“That's it?”*
-
-He stared at me.
-
-“That's it.”
-
-*“After all of that?”*
-
-I pressed send.
-
-A few minutes passed. Then her reply appeared.
-
-*“Something funny in her reply?”*
+*“Podrías escribir eso.”*
 
 “No.”
 
-*“Sweet?”*
+*“¿Por qué?”*
+
+“Porque esto es un chat de un juego, no una puta autobiografía.”
+
+*“Dramático.”*
+
+“Además, el filtro del juego censuraría la mitad de lo que escribiera. Hasta censura palabras completamente normales.”
+
+*“Tal vez sea más seguro así.”*
+
+Me quedé mirando el campo de texto vacío.
+
+Se inclinó un poco hacia mí.
+
+*“¿Qué dirías si no hubiera reglas?”*
+
+Escribí algo. Lo leí. Lo borré.
+
+Volví a intentarlo. También lo borré.
+
+Finalmente:
+
+**¿Cómo estuvo tu día?**
+
+*“¿Eso es todo?”*
+
+“Eso es todo.”
+
+*“¿Después de todo eso?”*
+
+Apreté enviar.
+
+Pasaron unos minutos. Entonces apareció su respuesta.
+
+*“¿Algo gracioso en su respuesta?”*
 
 “No.”
 
-*“Then why are you smiling?”*
+*“¿Algo tierno?”*
 
-“You wouldn't understand.”
+“No.”
 
-My fingers hovered over my phone again.
+*“¿Entonces por qué estás sonriendo?”*
 
-There were one or two sentences left.
+“No lo entenderías.”
 
-Something I wouldn't send. Not because it wasn't true.
+Mis dedos volvieron a quedar suspendidos sobre la pantalla. Escribí unas palabras y después las borré.
 
-I deleted them.
+*“¿Otra vez?”*
 
-*“Again?”*
+“Hay cosas que probablemente sea mejor dejar sin escribir.”
 
-“Some things are better left unwritten.”
+*“Literalmente te pasaste toda la noche hablándome de ella.”*
 
-*“You literally just spent all night telling me about her.”*
+Bajé la mirada hacia su nombre una última vez.
 
-I looked down at her name one last time.
+“Bueno. Voy a escribirlo todo. Solo por esta vez.”
 
-“Okay, I'll tell her everything just this one time.”
+*“¿Y después lo vas a mandar, no?”*
 
-*“Finally.”*
+No respondí.
 
-
-I opened the chat once again, and typed.
+Volví al campo de texto vacío y empecé a escribir.
 
 ```
 Una p***e de mí desearía poder v****r a***s y evitar que tuviéramos esa c**********n, y simplemente mantener todo n****l entre nosotros. Pero ya es demasiado tarde para eso. Ya te dije la v****d.

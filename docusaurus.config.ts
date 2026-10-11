@@ -111,7 +111,11 @@ const config: Config = {
             postsPerPage: 'ALL',
             blogSidebarCount: 'ALL', // Mobile shows all posts; Desktop keeps its five-post limit.
             include: ['*/**/*.{md,mdx}'], // Only publish posts inside folders.
-            exclude: [...GlobExcludeDefault, '2017-08-26-welcome/**'],
+            exclude: [
+              ...GlobExcludeDefault,
+              '2017-08-26-welcome/**',
+              '2026-09-25-hey-you-english-unpublished-hidden/**',
+            ],            
             showReadingTime: true,
             onUntruncatedBlogPosts: "ignore",    /* 'ignore' | 'log' | 'warn' | 'throw' */
           },
