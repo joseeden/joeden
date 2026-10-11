@@ -25,13 +25,13 @@ mientras, en otra clase, hay alumnos aprendiendo de vos.
 Un día estás estudiando, al siguiente construyendo la vida que imaginás,  
 y si algo no sale bien… bueno, siempre podés dormir y después intentar una vez más.  
 
-Adonde sea que esa vida te lleve, habrá días en que no sabrás muy bien,  
-cuando todo parezca un laberinto y no sepas hacia dónde ir.  
-No hace falta quemar el mapa ni la llave para encontrar la salida,  
+Adonde sea que la vida te lleve, habrá días en que no sepas muy bien,  
+en que todo parezca un laberinto y no sepas hacia dónde ir.  
+No hace falta quemar la llave ni quedarse sin salida,  
 a veces alguien te encuentra y te ayuda a ver la ruta.  
 
-Deseo que cuando alguien te vea, su corazón quiera saltar y cantar,  
-qué lindo, qué bueno, qué perfecto sentir algo así de verdad.  
+Deseo que cuando alguien te vea, el corazón le salte y cante,  
+qué lindo, qué bueno, qué perfecto es sentir algo así.  
 Espero que tu sonrisa siga encontrando a quienes más la puedan necesitar,  
 y que se quede un rato con ellos, como un recuerdo que quieran guardar.  
 
@@ -40,20 +40,20 @@ menos carreras para alcanzar el colectivo con cien cosas dando vueltas en tu men
 Y cuando manejes, dejá que el teléfono, los mensajes y las distracciones esperen,  
 el resto del mundo también puede esperar, sabés, aunque llegues un poquito tarde.  
 
-Deseo que la luna le cante a tus noches, mientras los Koels despiertan mis mañanas,  
-y que en algún punto de esas horas que pasan, el mundo se sienta un poco menos ajeno.  
-Deseo que tus noches sean amables con vos y que tus mañanas empiecen suaves,  
+Deseo que la luna les cante a tus noches, mientras los Koels despiertan mis mañanas,  
+y que, entre esas horas que pasan, el mundo se sienta un poco menos ajeno.  
+Deseo que tus noches sean amables con vos y que tus mañanas te reciban con calma,  
 y que nunca pierdas de vista las cosas que te hacen feliz.  
 
 Deseo que esta carta tenga más suerte que Magallanes cruzando los mares,  
 y que cada pequeña palabra llegue al lugar exacto donde debe estar.  
 Que atraviese toda la distancia sin perder lo que quería decir,  
-y que te alcance con la calidez que fui dejando entre cada línea al escribir.  
+y que llegue hasta vos con la calidez que fui dejando en cada línea al escribir.  
 
 Te deseo tantas cosas, porque merecés lo mejor y todavía un poco más.  
 Merecés el amor más grande que una persona pueda llegar a esperar.  
 Quizá ya lo dije una o dos veces, pero vale la pena repetirlo:  
-de verdad espero que tu corazón siempre esté en el lugar más feliz de la Tierra.  
+de verdad espero que tu corazón siempre esté en el lugar más feliz del mundo.  
 
 ----------------------------------------------
 

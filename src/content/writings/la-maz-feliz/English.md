@@ -27,7 +27,7 @@ And if things don’t work out? Well, you can always sleep and try another time.
 
 Wherever that life takes you, there’ll be days you won’t quite know,  
 When everything feels like a labyrinth and you’re not sure where to go.  
-You don’t have to burn the map or the key to figure the way out,  
+You don’t have to burn the key or give up on a way out,  
 Sometimes someone finds you, and helps you see the route.  
 
 I wish that when people see you, their hearts would jump and sing.  
