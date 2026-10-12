@@ -47,7 +47,7 @@ And may the things that make you happy never leave your sight.
 
 I wish this letter be more successful than Magellan crossing the seas,  
 That somehow every little word arrives exactly where it should be.  
-May it travel through the distance without losing what it mean,  
+May it travel through the distance without losing what it means,  
 And reach you with the warmth placed in every line in between.  
 
 I wish you many things, because you deserve the best and more.  
