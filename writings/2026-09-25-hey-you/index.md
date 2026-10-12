@@ -318,13 +318,11 @@ Nada extraordinario. Esa era la parte difícil de explicar.
 
 La gente espera que las razones estén a la altura de los sentimientos.
 
-Si alguien se vuelve importante para vos, debería haber una historia igual de importante detrás.
+Si alguien se vuelve importante para vos, la gente espera que haya pasado algo extraordinario. Algo como esto:
 
-Te salvó la vida.
+Navegaron a bordo del Trinidad a través de un océano entero.
 
-Cruzó nadando un océano entero.
-
-Atravesó toda una cordillera para llegar a Chile.
+Cruzaron toda una cordillera, desde Cuyo hasta Chile.
 
 Algo tan enorme que cualquiera que escuchara la historia pudiera asentir y decir: *Por supuesto.*
 

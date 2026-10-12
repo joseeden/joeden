@@ -146,8 +146,6 @@ Hopefully nobody planned on dumping them into the Pacific.
 
 Anyway.
 
-I kept cycling.
-
 At some point, probably after crossing into the second town, I started wondering what exactly I was doing.
 
 There is a word people like to use when you can't stop thinking about something.
@@ -214,7 +212,9 @@ And the song started playing inside my head again.
 
 Fuckin hell.
 
-“One coffee for Chiz.”
+I reached for a piece of paper and picked up the marker.
+
+*“One coffee for Chiz.”*
 
 Right. Reality.
 
@@ -278,9 +278,9 @@ Then I ordered something else.
 
 No particular reason.
 
-And continued cycling.
+Anyway.
 
-Then I continued.
+I left the shop, got back on my bike, and kept going.
 
 There were moments when I actually forgot about the song completely. 
 
@@ -386,7 +386,7 @@ Fuckin hell.
 
 It felt like it was coming from everywhere. 
 
-The walls, the ceiling, the air-conditioner, underneath the door. 
+The walls. The ceiling. The air-conditioner. Even from underneath the door.
 
 Every stupid little corner of the room seemed to know the melody.
 
@@ -467,11 +467,11 @@ There were still days when I'd lose the argument with myself and let the whole t
 
 Fine. Start again tomorrow.
 
-Eventually, stopping halfway didn't feel like some enormous act of self-control anymore. I could hear the beginning and decide I didn't need the rest.
+Eventually, stopping halfway no longer felt like some enormous act of self-control. I could hear the beginning and simply decide I didn't need the rest.
 
-Then there was one morning when I didn't play it at all.
+Then, one morning, I didn't play it at all.
 
-And one afternoon, sometime around lunch, I suddenly realized something.
+Later that afternoon, sometime around lunch, I realized something.
 
 The song hadn't played in my head that day either.
 

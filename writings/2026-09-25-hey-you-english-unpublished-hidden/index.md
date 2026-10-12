@@ -317,13 +317,11 @@ Nothing extraordinary. That was the difficult part to explain.
 
 People expect reasons proportionate to feelings.
 
-If someone becomes important to you, there should be an equally important story.
+If someone becomes important to you, people expect something extraordinary to have happened. Something like:
 
-They saved your life.
+Sailing the Trinidad across an entire ocean.
 
-They swam an entire ocean.
-
-They crossed an entire mountain range to reach Chile.
+Crossing an entire mountain range, from Cuyo to Chile.
 
 Something enormous enough that anyone hearing the story could nod and say: *Of course.*
 
