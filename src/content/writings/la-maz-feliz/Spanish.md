@@ -5,15 +5,15 @@
 
 ----------------------------------------------
 
-Hay una palabra de donde vengo, se llama *maligaya*,  
-una gran palabra para la felicidad, para esos días en que todo parece estar bien.  
+Hay una palabra que usamos en mi tierra, se llama *maligaya*,  
+una pequeña palabra para la felicidad, para esos días en que todo parece estar bien.  
 Y quizá no haya mucho que pueda enviarte desde este lado,  
 así que te mando esa palabra, esperando que esta noche llegue hasta vos.  
 
 Quizá la felicidad suene un poco como tu canción favorita,  
 porque, después de todo, sos una rockola humana desde la mañana hasta el mediodía.  
-Y aunque “it’s hard to believe, but I couldn’t see…”  
-sí, dejá que esta canción se te quede en la cabeza, una y otra vez.  
+Con una simple frase, ya se te viene una canción a la mente,  
+*“It's hard to believe, but I couldn't see…”* Y ahí vas, cantando otra vez.  
 
 Y ya que hablamos de esas cosas que te hacen ser quien sos,  
 podés ganar mención de honor, pero para mí el primer premio es para vos.  
@@ -25,7 +25,7 @@ mientras, en otra clase, hay alumnos aprendiendo de vos.
 Un día estás estudiando, al siguiente construyendo la vida que imaginás,  
 y si algo no sale bien… bueno, siempre podés dormir y después intentar una vez más.  
 
-Adonde sea que la vida te lleve, habrá días en que no sepas muy bien,  
+Adonde sea que esa vida te lleve, habrá días en que no sepas muy bien,  
 en que todo parezca un laberinto y no sepas hacia dónde ir.  
 No hace falta quemar la llave ni quedarse sin salida,  
 a veces alguien te encuentra y te ayuda a ver la ruta.  
@@ -37,11 +37,11 @@ y que se quede un rato con ellos, como un recuerdo que quieran guardar.
 
 Te deseo mañanas más tranquilas antes de correr entre la gente,  
 menos carreras para alcanzar el colectivo con cien cosas dando vueltas en tu mente.  
-Y cuando manejes, dejá que el teléfono, los mensajes y las distracciones esperen,  
+Y cuando manejes, dejá que tu teléfono, sus mensajes y las distracciones esperen,  
 el resto del mundo también puede esperar, sabés, aunque llegues un poquito tarde.  
 
-Deseo que la luna les cante a tus noches, mientras los Koels despiertan mis mañanas,  
-y que, entre esas horas que pasan, el mundo se sienta un poco menos ajeno.  
+Deseo que la luna les cante a tus noches, mientras los Koels despiertan mis mañanas,    
+y que, entre esas horas que pasan, el mundo se sienta un poco menos ajeno.   
 Deseo que tus noches sean amables con vos y que tus mañanas te reciban con calma,  
 y que nunca pierdas de vista las cosas que te hacen feliz.  
 
