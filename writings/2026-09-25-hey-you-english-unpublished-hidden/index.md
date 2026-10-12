@@ -319,7 +319,7 @@ People expect reasons proportionate to feelings.
 
 If someone becomes important to you, people expect something extraordinary to have happened. Something like:
 
-Sailing the Trinidad across an entire ocean.
+Sailing the *Trinidad* across an entire ocean.
 
 Crossing an entire mountain range, from Cuyo to Chile.
 

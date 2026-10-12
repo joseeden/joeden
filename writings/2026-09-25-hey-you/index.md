@@ -320,7 +320,7 @@ La gente espera que las razones estén a la altura de los sentimientos.
 
 Si alguien se vuelve importante para vos, la gente espera que haya pasado algo extraordinario. Algo como:
 
-Haber navegado a bordo del Trinidad a través de un océano entero.
+Haber navegado a bordo del *Trinidad* a través de un océano entero.
 
 O haber cruzado toda una cordillera, desde Cuyo hasta Chile.
 
