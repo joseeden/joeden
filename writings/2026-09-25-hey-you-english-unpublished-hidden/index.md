@@ -248,9 +248,17 @@ He stared at me. *“She's Argentine.”*
 
 “When you explain it properly, I sound like an asshole.”
 
+*“You know you're an immigrant yourself, right?”*
+
+“I know.”
+
+*“English isn't your first language either.”*
+
+“Are you done making me look stupid?”
+
 *“You said it, not me.”*
 
-“Maybe that will make her laugh when she reads this.”
+“Well, maybe she'll laugh when she reads this.”
 
 He stopped. Slowly, he turned toward me.
 
@@ -444,10 +452,6 @@ Whether sitting silently beside them felt peaceful or uncomfortable.
 
 “No.”
 
-*“You don't know what her hair feels like.”*
-
-“No.”
-
 *“You don't know what her laugh sounds like three feet away instead of through a phone.”*
 
 “Well, I did hear her laugh once. In a voice message.”
@@ -557,6 +561,14 @@ I knew the reality of it.
 Countries. Distance. Time zones. Timing. Circumstances.
 
 An ocean in the middle that is large enough to have its own fucking name.
+
+And the ocean wasn't even the whole problem.
+
+There were other things. Things that didn't fit as neatly into a list. Things that wouldn't simply disappear if the ocean did.
+
+After all, there were two different stories. Two entirely different people, living separate lives long before messages were even sent.
+
+And some things weren't as simple as buying a plane ticket or, you know, getting a visa.
 
 Some truths don't become more true just because you say them aloud.
 
@@ -725,19 +737,15 @@ I liked those nights more than I admitted.
 
 ## Elsewhere
 
-I went away for a few days.
+I went away for a few days. I'd been there many times before.
 
-I'd been there many times before.
-
-Different streets. Different buildings. Different food.
+Different streets. Different buildings. Different food. 
 
 Different company, too.
 
-There were lanterns hanging above the streets. Mooncakes in shop windows. Families and friends gathering together.
+There were lanterns hanging above the streets, mooncakes in shop windows, and families and friends gathering together. We went around the city, ate good food, laughed, and talked. 
 
-We went around the city. Ate good food. Laughed. Talked. Visited places I'd seen before and a few I hadn't.
-
-I had a good time. Really, I did.
+I had a good time. Really, I did. And for the most part, I was enjoying myself exactly where I was.
 
 But there were moments.
 
@@ -765,9 +773,17 @@ I let out a quiet breath before answering.
 
 “And for a few minutes, whatever was happening on that little screen became the most interesting thing around me.”
 
-There was nothing wrong with the trip. Nothing wrong with the company.
+He looked at me for a moment.
 
-That was probably the frustrating part.
+*“Even there?”*
+
+“Apparently.”
+
+There was nothing wrong with the trip. Nothing wrong with the company. That was probably the frustrating part.
+
+I'd thought being somewhere else might make a difference. Different surroundings, different conversations, and something new to occupy my thoughts. And for the most part, it did.
+
+Just not quite in the way I'd hoped.
 
 I could change the country, the streets, the view outside the window.
 
@@ -775,7 +791,7 @@ But apparently, my thoughts didn't always follow.
 
 *“So you're fine now?”*
 
-“Did you just listen to what I just said?”
+“Did you listen to anything I just said?”
 
 ## Every Fucking Day
 

@@ -232,7 +232,7 @@ Se rio, *“¿Tan malo es?”*
 
 *“Un encanto lo tuyo.”*
 
-“Creo que en un momento estuve a punto de decirle que hablaba como una inmigrante, pero me contuve.”
+“Creo que en un momento estuve a punto de hacerle un comentario todavía peor sobre su inglés, pero por suerte me contuve.”
 
 Se quedó mirándome, *“Ella es argentina.”*
 
@@ -242,7 +242,6 @@ Se quedó mirándome, *“Ella es argentina.”*
 
 “Sí.”
 
-
 *“Y el inglés ni siquiera es su lengua materna.”*
 
 “Soy consciente.”
@@ -251,9 +250,17 @@ Se quedó mirándome, *“Ella es argentina.”*
 
 “Cuando lo explicás así, quedo como un pelotudo.”
 
+*“Y el inglés tampoco es tu lengua materna.”*
+
+“Ya sé.”
+
+*“Qué caradura.”*
+
+“¿Terminaste de hacerme quedar como un pelotudo?”
+
 *“Lo dijiste vos, no yo.”*
 
-“Tal vez eso la haga reír cuando lea esto.”
+“Bueno, capaz se ríe cuando lea esto.”
 
 Se detuvo. Lentamente, giró la cabeza hacia mí.
 
@@ -445,10 +452,6 @@ Si estar sentado en silencio a su lado se sentía tranquilo o incómodo.
 
 “No.”
 
-*“No sabés cómo se siente su pelo al tocarlo.”*
-
-“No.”
-
 *“No sabés cómo suena su risa a un metro de distancia, en lugar de escucharla a través de un teléfono.”*
 
 “Bueno, una vez sí la escuché reír. En un mensaje de voz.”
@@ -559,7 +562,16 @@ Países. Distancia. Husos horarios. El momento. Las circunstancias.
 
 Un océano de por medio, tan grande que tiene hasta su propio puto nombre.
 
+Y el océano ni siquiera era todo el problema.
+
+Había otras cosas. Cosas que no encajaban tan fácilmente en una lista. Cosas que no desaparecerían simplemente porque el océano dejara de estar ahí.
+
+Después de todo, eran dos historias diferentes. Dos personas completamente distintas, cada una con su propia vida mucho antes de que siquiera empezaran a mandarse mensajes.
+
+Y algunas cosas no eran tan simples como comprar un pasaje de avión o, qué sé yo, conseguir una visa.
+
 Hay verdades que no se vuelven más ciertas solo porque las digas en voz alta.
+
 
 ## Ausencia
 
@@ -725,19 +737,15 @@ Me gustaban esas noches más de lo que admitía.
 
 ## En otra parte
 
-Me fui de viaje por unos días.
-
-Ya había estado ahí muchas veces antes.
+Me fui de viaje por unos días. Ya había estado ahí muchas veces antes.
 
 Otras calles. Otros edificios. Otra comida.
 
 Otra compañía también.
 
-Había faroles colgados sobre las calles. Pasteles de luna en las vidrieras. Familias y amigos reuniéndose.
+Había faroles colgados sobre las calles, pasteles de luna en las vidrieras y familias y amigos reuniéndose. Recorrimos la ciudad, comimos rico, nos reímos y charlamos.
 
-Recorrimos la ciudad. Comimos rico. Nos reímos. Charlamos. Visitamos lugares que ya conocía y algunos en los que nunca había estado.
-
-La pasé bien. De verdad.
+La pasé bien. De verdad. Y, durante la mayor parte del viaje, estaba disfrutando de estar justo donde estaba.
 
 Pero hubo momentos.
 
@@ -765,9 +773,17 @@ Solté el aire suavemente antes de responder.
 
 “Y durante unos minutos, lo que pasaba en esa pequeña pantalla se convertía en lo más interesante de todo lo que me rodeaba.”
 
-No había nada malo con el viaje. Ni con la compañía.
+Me miró un momento.
 
-Probablemente esa era la parte frustrante.
+*“¿Incluso ahí?”*
+
+“Por lo visto.”
+
+No había nada malo con el viaje. Ni con la compañía. Probablemente esa era la parte frustrante.
+
+Había pensado que estar en otro lugar quizá haría alguna diferencia. Otros paisajes, otras conversaciones y algo nuevo en qué ocupar la cabeza. Y, en gran parte, así fue.
+
+Solo que no exactamente como había esperado.
 
 Podía cambiar de país, de calles, de paisaje al otro lado de la ventana.
 
@@ -776,6 +792,7 @@ Pero, aparentemente, mis pensamientos no siempre me acompañaban.
 *“¿Entonces ya estás bien?”*
 
 “¿Escuchaste algo de lo que acabo de decir?”
+
 
 ## Todos los putos días
 
