@@ -90,7 +90,7 @@ Me incorporé un poco.
 
 Me quedé callado un momento.
 
-“A veces sí puedo. A veces puedo ver su sonrisa a través de la pantalla”
+“A veces sí puedo. A veces puedo ver su sonrisa a través de la pantalla.”
 
 Se rió. Yo no.
 
@@ -919,7 +919,7 @@ Golpeé suavemente el celular contra el apoyabrazos del sillón.
 
 Entrecerró los ojos.
 
-**“Eso suena como algo que vas a poner en la historia.”**
+*“Eso suena como algo que vas a poner en la historia.”*
 
 Me quedé mirando al frente.
 
