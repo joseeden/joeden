@@ -908,7 +908,7 @@ Me quedé mirando al frente.
 
 “¿Qué historia?”
 
-“La que aparentemente se está traduciendo al español para alguien muy específico.”
+*“La que aparentemente se está traduciendo al español para alguien muy específico.”*
 
 “No sé de qué estás hablando.”
 
