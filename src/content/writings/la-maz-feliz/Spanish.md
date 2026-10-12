@@ -5,7 +5,7 @@
 
 ----------------------------------------------
 
-Hay una palabra de donde vengo, se llama maligaya,  
+Hay una palabra de donde vengo, se llama *maligaya*,  
 una gran palabra para la felicidad, para esos días en que todo parece estar bien.  
 Y quizá no haya mucho que pueda enviarte desde este lado,  
 así que te mando esa palabra, esperando que esta noche llegue hasta vos.  
