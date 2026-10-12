@@ -1,6 +1,6 @@
 .languages {
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2.5rem;
 }
 
 .languages :global(.tabs__item) {
