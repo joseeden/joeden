@@ -13,7 +13,7 @@ So I'll send that word instead, and hope it finds you tonight.
 Maybe happiness sounds a little like your favorite tune,  
 Because after all, you’re a human jukebox from morning until noon.  
 One little phrase, and suddenly, a song comes to mind,  
-*“It's hard to believe, but I couldn't see…”* Another song, right on time.
+*“It’s hard to believe, but I couldn’t see…”*, and there you go, singing another line.
 
 And while we’re talking about the things that make you who you are,  
 You can win honorable mention, but I’d still give you first prize by far.  

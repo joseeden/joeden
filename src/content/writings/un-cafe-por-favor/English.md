@@ -266,7 +266,7 @@ There were moments when I forgot about the song completely. Ten minutes. Twenty 
 
 Those were the good parts.
 
-I'd notice the road, the wind, the lights, whatever was playing around me. I'd start thinking about work or something I needed to do the next day.
+I'd notice the road, the wind, the lights, the sounds around me. I'd start thinking about work or something I needed to do the next day.
 
 Then I'd realize I hadn't thought about the song.
 
