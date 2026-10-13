@@ -400,8 +400,6 @@ Y entonces me cayó todo encima.
 
 ## Cuatro días después
 
-## Cuatro días después
-
 Me enfermé. Obvio que sí.
 
 Parece que pedalear diez horas bajo el sol tiene consecuencias.
@@ -450,7 +448,7 @@ Porque, naturalmente, darme cuenta de que no había pensado en la canción hizo 
 
 Pero algo había cambiado.
 
-La canción se sentía más lejana, como música que llegaba desde otro departamento. Todavía podía escucharla si me detenía a prestar atención, pero ya no tenía ganas de hacerlo.
+La canción parecía más lejana, como música que llegaba desde otro departamento. Todavía podía escucharla si me detenía a prestar atención, pero ya no tenía ganas de hacerlo.
 
 No la había olvidado. Simplemente ya no necesitaba seguir poniéndola.
 
@@ -458,57 +456,51 @@ Capaz que eso era el desapego.
 
 ## Sigue sonando
 
-Volví a subirme a la bicicleta unos días después.
+Volví a subirme a la bici unos días después.
 
 No para otra salida de diez horas.
 
-Soy estúpido, pero al parecer tengo cierta capacidad de aprendizaje.
+Soy un idiota, pero parece que algo puedo aprender.
 
-Mi piel todavía se estaba recuperando, así que esperé hasta más tarde. Hacía mejor tiempo y esta vez sí tenía alguna idea de adónde iba.
+Todavía me estaba recuperando de las quemaduras del sol, así que esperé hasta más tarde. Hacía mejor tiempo y, esta vez, por lo menos tenía una idea de adónde iba.
 
 Me puse los auriculares y abrí Spotify.
 
-Por un segundo vi la canción ahí.
+Por un segundo, vi la canción ahí.
 
-La ignoré.
+La ignoré y elegí algo conocido. Algo seguro.
 
-Elegí otra cosa.
-
-Algo conocido.
-
-Algo seguro.
-
-Entonces empecé a pedalear.
+Después empecé a pedalear.
 
 Sonaron unas cuantas canciones mientras avanzaba. Después otra. Y otra.
 
-Ya no prestaba mucha atención a lo que elegía Spotify. Pensaba en la carretera, miraba a la gente pasar y me preguntaba qué comería más tarde.
+Ya no prestaba demasiada atención a lo que elegía Spotify. Pensaba en el camino, miraba a la gente pasar y me preguntaba qué iba a comer más tarde.
 
 Cosas normales.
 
-Y al final Spotify hizo lo que hace Spotify.
+Entonces Spotify hizo lo que hace Spotify.
 
 Empezó a sonar la canción.
 
 *Esa canción.*
 
-Por un segundo, mis dedos se movieron instintivamente para saltarla.
+Por un segundo, los dedos se me fueron solos hacia el botón para pasarla.
 
-Entonces me detuve.
+Pero me detuve.
 
 La dejé sonar.
 
-La carretera se extendía frente a mí. Árboles a un lado, destellos del mar entre ellos y ciclistas que pasaban de vez en cuando en sentido contrario.
+El camino se extendía frente a mí. Árboles a un lado, el mar asomándose entre ellos y, de vez en cuando, algún ciclista que venía en sentido contrario.
 
 Y ahí estaba otra vez.
 
-La misma canción que llevaba días intentando no escuchar. La misma que había llevado conmigo a través de varios barrios. La misma que me había seguido a una cafetería, a un autobús, a otra habitación y, de alguna manera, al otro lado de un océano que nunca había cruzado realmente.
+La misma canción que llevaba días intentando no escuchar. La que me había seguido por varios barrios, hasta una cafetería, en un colectivo y, de alguna manera, al otro lado de un océano que en realidad nunca había cruzado.
 
 Sonaba distinta.
 
-O quizá el distinto era yo.
+O capaz que el distinto era yo.
 
-Pensé en saltarla, pero no lo hice.
+Pensé en pasarla, pero no lo hice.
 
 Así que seguí pedaleando y la dejé sonar.
 
