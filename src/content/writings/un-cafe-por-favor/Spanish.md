@@ -1,5 +1,3 @@
-# Un café, por favor
-
 Me desperté con esa puta canción sonándome otra vez en la cabeza.
 
 Ya iban cuatro días.

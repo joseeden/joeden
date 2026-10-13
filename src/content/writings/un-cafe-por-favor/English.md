@@ -1,5 +1,3 @@
-# Un café, por favor
-
 I woke up with that fucking song playing in my head again.
 
 It had been four days.
