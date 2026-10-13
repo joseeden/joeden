@@ -60,14 +60,14 @@ export const Hero: FunctionComponent = () => {
             <a href="mailto:josemanuelitoeden@gmail.com" className={styles.socialIcon} aria-label={translate({id: "footer.email", message: "Email"})}>
               <EmailIcon width="24" height="24" aria-hidden="true" />
             </a>
+            <a href="https://wa.me/6586948679" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="WhatsApp">
+              <WhatsAppIcon width="24" height="24" aria-hidden="true" />
+            </a>
             <a href="https://github.com/joseeden" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="GitHub">
               <GithubIcon width="24" height="24" aria-hidden="true" />
             </a>
             <a href="https://linkedin.com/in/joseeden" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="LinkedIn">
               <LinkedInIcon width="24" height="24" aria-hidden="true" />
-            </a>
-            <a href="https://wa.me/6586948679" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="WhatsApp">
-              <WhatsAppIcon width="24" height="24" aria-hidden="true" />
             </a>
             <a href="https://x.com/eden_noel08" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="X">
               <XIcon width="24" height="24" aria-hidden="true" />

@@ -65,16 +65,16 @@ export default function Footer() {
               <EmailIcon width="20" height="20" aria-hidden="true" />
             </a>
 
+            <a href="https://wa.me/6586948679" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="WhatsApp">
+              <WhatsAppIcon width="20" height="20" aria-hidden="true" />
+            </a>
+
             <a href="https://github.com/joseeden" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="GitHub">
               <GithubIcon width="20" height="20" aria-hidden="true" />
             </a>
 
             <a href="https://linkedin.com/in/joseeden" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="LinkedIn">
               <LinkedInIcon width="20" height="20" aria-hidden="true" />
-            </a>
-
-            <a href="https://wa.me/6586948679" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="WhatsApp">
-              <WhatsAppIcon width="20" height="20" aria-hidden="true" />
             </a>
 
             <a href="https://x.com/eden_noel08" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="X">
