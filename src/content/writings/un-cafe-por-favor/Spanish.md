@@ -276,7 +276,7 @@ Lo cual, naturalmente, me hacía pensar en la canción.
 
 Brillante.
 
-Crucé otro barrio.
+Crucé otra localidad.
 
 Después, otro tramo de camino.
 
@@ -388,7 +388,7 @@ Obvio que sí.
 
 En algún momento, entre una parada y otra, la canción empezó a sonar tan fuerte en mi cabeza que finalmente dejé de luchar contra ella.
 
-Hay cosas de las que podés escapar corriendo y, supongo, otras de las que también podés escapar pedaleando. Pero hay otras que cruzan varios barrios con vos, se sientan a tu lado en el colectivo y te siguen hasta cualquier habitación que elijas para dormir esa noche.
+Hay cosas de las que podés escapar corriendo y, supongo, otras de las que también podés escapar pedaleando. Pero hay otras que cruzan varias localidades con vos, se sientan a tu lado en el colectivo y te siguen hasta cualquier habitación que elijas para dormir esa noche.
 
 Estaba cansado. Cansado de la puta madre.
 
@@ -492,7 +492,7 @@ El camino se extendía frente a mí. Árboles a un lado, el mar asomándose entr
 
 Y ahí estaba otra vez.
 
-La misma canción que llevaba días intentando no escuchar. La que me había seguido por varios barrios, hasta una cafetería, en un colectivo y, de alguna manera, al otro lado de un océano que en realidad nunca había cruzado.
+La misma canción que llevaba días intentando no escuchar. La que me había seguido por varias localidades, hasta una cafetería, en un colectivo y, de alguna manera, al otro lado de un océano que en realidad nunca había cruzado.
 
 Sonaba distinta.
 
