@@ -610,6 +610,8 @@ Laugh.
 
 You function.
 
+You can even spend an entire Friday cycling for no particular reason, and then get sick afterward, too.
+
 Then something funny happens, and you have a wonderful story to share.
 
 *I wonder if she'd—*

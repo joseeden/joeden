@@ -611,6 +611,8 @@ Te reís.
 
 Seguís funcionando.
 
+Hasta podés pasarte un viernes entero andando en bicicleta sin ningún motivo en particular y después enfermarte también.
+
 Entonces pasa algo gracioso y tenés una historia buenísima para contar.
 
 *Me pregunto si a ella le—*
