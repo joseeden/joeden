@@ -2,7 +2,7 @@
 slug: february
 title: "February"
 tags: [Personal]
-date: 2026-10-20
+date: 2026-10-19
 hide_table_of_contents: true
 ---
 
