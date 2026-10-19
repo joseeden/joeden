@@ -1070,15 +1070,13 @@ WIP
 
 
 ----------------------------------------------
-----------------------------------------------
-----------------------------------------------
 
 
-February comes every year.  
+<!-- February comes every year.  
 But the same February doesn't.
 
 A bookstore might still exist somewhere else,  
 but it won't be the same place.
 
 Two people might talk again,  
-but they won't necessarily return to what they were before.
+but they won't necessarily return to what they were before. -->
