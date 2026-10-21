@@ -6,7 +6,7 @@ date: 2026-10-19
 hide_table_of_contents: true
 ---
 
-*Not every question gets to be asked.*   
+*Not every question gets to be asked.*  
 *Not every question will receive an answer.*  
 *Some things remain unfinished because the moment to discuss them passes.*  
 
@@ -1041,28 +1041,37 @@ She smiled a little wider while holding her phone.
 
 WIP
 
-## Letters
 
-WIP
-
-Singpost -> Correo AR, called but no EN -> emaild -> DHL -> unk street, unk route addr
-
-well, tried my best, but afaik, CPT-SJ or RVDV-SJ  
-well, no luck, cant send. ok  
-
-focus: ch + pr + jms
-
-## Sunset 
-
-WIP
 
 ## Elsewhere
 
 WIP
 
-## Bookmarked
+<!-- Zoey and Chiz -->
+
+## Letters
 
 WIP
+
+<!-- Singpost -> Correo AR, called but no EN -> emaild -> DHL -> unk street, unk route addr
+well, tried my best, but afaik, CPT-SJ or RVDV-SJ  
+well, no luck, cant send. ok   -->
+
+<!-- This chapter is the convo between Chiz, Perry, and James -->
+
+## Sunset 
+
+WIP
+
+<!-- Celina and James' 2nd meeting -->
+
+## UNTITLED-YET 
+
+WIP
+
+<!-- James solo chapter, more of his introspection about things -->
+
+<!-- I'm thingkin of adding another chapter here so that it doesn't immediately goes towards the end, but let's see -->
 
 ## Midnight
 
@@ -1071,12 +1080,8 @@ WIP
 
 ----------------------------------------------
 
-
 <!-- February comes every year.  
 But the same February doesn't.
 
 A bookstore might still exist somewhere else,  
-but it won't be the same place.
-
-Two people might talk again,  
-but they won't necessarily return to what they were before. -->
+but it won't be the same place. -->
